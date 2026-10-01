@@ -1,35 +1,84 @@
 
-## metadata/table 1000A-1018: HTTP 200, 1,691 chars
-   title: 'Personen: Religion'
-   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEODL1", "Content": "Deutschland", "Type": "Merkmal", "Values": "1", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS001", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}, {"Code": "GEOBL1", "Content": "Bundesländer", "Type": "Merkmal", "Values": "16", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0006 ,PO0006", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "RELZG2", "Content": "Religion", "Type": "Merkmal", "Values": "3", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
-   other keys: Code, Content, Structure, Time, Updated, Valid
+## https://opendata.cbs.nl/ODataApi/odata/84910NED/Migratieachtergrond?$format=json
+   HTTP 200, 21,050 bytes, application/json 
+   61 matches of '(?:Key.{4,16}Title.{4,90})'
+   ~ Key":"T001040","Title":"Totaal","Description":"","CategoryGroupID":1
+   ~ Key":"1012600","Title":"Nederlandse achtergrond","Description":"Persoon met een Nederlandse achtergrond \r\n \r
+   ~ Key":"2012605","Title":"Met migratieachtergrond","Description":"Persoon met een migratieachtergrond \r\n \r\nPe
+   ~ Key":"2012655","Title":"Westerse migratieachtergrond","Description":"Persoon met een westerse migratieachtergro
+   ~ Key":"2012657","Title":"Niet-westerse migratieachtergrond","Description":"Persoon met een niet-westerse migrati
+   ~ Key":"H008519","Title":"Afrika","Description":"","CategoryGroupID":3
+   ~ Key":"H008520","Title":"Amerika","Description":"","CategoryGroupID":3
+   ~ Key":"H008524","Title":"Azi\u00eb","Description":"","CategoryGroupID":3
+   ~ Key":"H007933","Title":"Europa (excl. Nederlandse achtergrond)","Description":"Europa (exclusief personen met e
+   ~ Key":"H008531","Title":"Oceani\u00eb","Description":"","CategoryGroupID":3
+   ~ Key":"H007935","Title":"Europese Unie (excl. Nederlandse acht...","Description":"Europese Unie (exclusief perso
+   ~ Key":"H007936","Title":"GIPS landen in de EU","Description":"Landen rond de Middellandse zee die zijn toegetred
+   ~ Key":"H007937","Title":"Midden- en Oost-Europese landen in de EU","Description":"Landen in Midden- en Oost-Euro
+   ~ Key":"H008533","Title":"Afghanistan","Description":"","CategoryGroupID":9
+   ~ Key":"H008544","Title":"Aruba","Description":"Nieuw land ontstaan door afscheiding van de Nederlandse Antillen
+   ~ Key":"H008552","Title":"Belgi\u00eb","Description":"","CategoryGroupID":10
+   ~ Key":"H008559","Title":"Bosni\u00eb-Herzegovina","Description":"Nieuw land ontstaan uit de opsplitsing van Joeg
+   ~ Key":"H008562","Title":"Brazili\u00eb","Description":"","CategoryGroupID":8
+   ~ Key":"H008567","Title":"Bulgarije","Description":"","CategoryGroupID":10
+   ~ Key":"H008575","Title":"China","Description":"China, Tibet.","CategoryGroupID":9
+   ~ Key":"H008579","Title":"Colombia","Description":"","CategoryGroupID":8
+   ~ Key":"H008586","Title":"Cura\u00e7ao","Description":"Nieuw land ontstaan na de ontbinding van de Nederlandse An
+   ~ Key":"H008592","Title":"Duitsland","Description":"Bondsrepubliek Duitsland, Duitse Democratische Republiek, Dui
+   ~ Key":"H008594","Title":"Egypte","Description":"Egypte, Verenigde Arabische Republiek.","CategoryGroupID":7
+   ~ Key":"H008597","Title":"Eritrea","Description":"","CategoryGroupID":7
+   ~ Key":"H008599","Title":"Ethiopi\u00eb","Description":"Ethiopi\u00eb, Abessini\u00eb.","CategoryGroupID":7
+   ~ Key":"H008603","Title":"Filippijnen","Description":"","CategoryGroupID":9
+   ~ Key":"H008605","Title":"Frankrijk","Description":"","CategoryGroupID":10
+   ~ Key":"H008612","Title":"Ghana","Description":"Ghana, Goudkust.","CategoryGroupID":7
+   ~ Key":"H008615","Title":"Griekenland","Description":"","CategoryGroupID":10
+   ~ Key":"H008627","Title":"Hongarije","Description":"","CategoryGroupID":10
+   ~ Key":"H008631","Title":"India","Description":"India, Brits-Indi\u00eb, Frans-Indi\u00eb, Goa, Kashmir, Portugee
+   ~ Key":"H008632","Title":"Indonesi\u00eb","Description":"Tot en met 20 mei 2002: Indonesi\u00eb, Nederlands-Indi\
+   ~ Key":"H008633","Title":"Irak","Description":"","CategoryGroupID":9
+   ~ Key":"H008634","Title":"Iran","Description":"","CategoryGroupID":9
+   ~ Key":"H008636","Title":"Itali\u00eb","Description":"","CategoryGroupID":10
+   ~ Key":"H007072","Title":"Joegoslavi\u00eb (oud)","Description":"Betreft het Joegoslavi\u00eb van v\u00f3\u00f3r
+   ~ Key":"H007069","Title":"(voormalig) Joegoslavi\u00eb","Description":"Betreft een samentelling van de landen die
+   ~ Key":"H008644","Title":"Kaapverdi\u00eb","Description":"Kaapverdi\u00eb, Kaapverdische Eilanden.","CategoryGrou
+   ~ Key":"H008673","Title":"Marokko","Description":"Marokko, Ifni, Spaanse Sahara, Westelijke Sahara.","CategoryGro
+   ~ Key":"H007128","Title":"Nederlandse Antillen (oud)","Description":"Betreft de Nederlandse Antillen van v\u00f3\
+   ~ Key":"H007119","Title":"(voormalige) Nederlandse Antillen, Aruba","Description":"Betreft een samentelling van d
+   ~ Key":"H008706","Title":"Oekra\u00efne","Description":"Nieuw land ontstaan uit de opsplitsing van de Sovjet-Unie
+   ~ Key":"H008710","Title":"Pakistan","Description":"","CategoryGroupID":9
+   ~ Key":"H008718","Title":"Polen","Description":"Polen en Dantzig.","CategoryGroupID":10
+   ~ Key":"H008719","Title":"Portugal","Description":"Portugal, Azoren, Madeira-eilanden.","CategoryGroupID":10
+   ~ Key":"H008723","Title":"Roemeni\u00eb","Description":"","CategoryGroupID":10
+   ~ Key":"H008724","Title":"Rusland","Description":"Nieuw land ontstaan uit de opsplitsing van de Sovjet-Unie in 19
+   ~ Key":"H008747","Title":"Somali\u00eb","Description":"Somali\u00eb, Brits-Somaliland, Italiaans-Somaliland.","Ca
+   ~ Key":"H007186","Title":"Sovjet-Unie (oud)","Description":"Betreft de Sovjet-Unie van v\u00f3\u00f3r de opsplits
+   ~ Key":"H007172","Title":"(voormalige) Sovjet-Unie","Description":"Betreft een samentelling van de landen die tot
+   ~ Key":"H008749","Title":"Spanje","Description":"Spanje, Canarische eilanden, Spaans Noord-Afrika.","CategoryGrou
+   ~ Key":"H008751","Title":"Suriname","Description":"","CategoryGroupID":8
+   ~ Key":"H008753","Title":"Syri\u00eb","Description":"","CategoryGroupID":9
+   ~ Key":"H008757","Title":"Thailand","Description":"Thailand, Siam.","CategoryGroupID":9
+   ~ Key":"H007204","Title":"(voormalig) Tsjecho-Slowakije","Description":"Betreft een samentelling van de landen di
+   ~ Key":"H008766","Title":"Turkije","Description":"","CategoryGroupID":10
+   ~ Key":"H008776","Title":"Verenigd Koninkrijk","Description":"Groot-Brittanni\u00eb.","CategoryGroupID":10
+   ~ Key":"H008778","Title":"Verenigde Staten van Amerika","Description":"Verenigde Staten van Amerika, Hawaii-eilan
+   ~ Key":"H008780","Title":"Vietnam","Description":"Vietnam, Frans Indochina, Indochina, Noord-Vietnam, Zuid-Vietna
+   ~ Key":"H008787","Title":"Zuid-Afrika","Description":"","CategoryGroupID":7
 
-## metadata/table 1000A-1019: HTTP 200, 1,713 chars
-   title: 'Personen: Staatsangehörigkeit'
-   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEODL1", "Content": "Deutschland", "Type": "Merkmal", "Values": "1", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS001", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}, {"Code": "GEOBL1", "Content": "Bundesländer", "Type": "Merkmal", "Values": "16", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0006 ,PO0006", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "STAZG1", "Content": "Staatsangehörigkeit", "Type": "Merkmal", "Values": "2", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
-   other keys: Code, Content, Structure, Time, Updated, Valid
-
-## metadata/table 1000A-1020: HTTP 200, 1,733 chars
-   title: 'Personen: Staatsangehörigkeit (Gruppen)'
-   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEODL1", "Content": "Deutschland", "Type": "Merkmal", "Values": "1", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS001", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}, {"Code": "GEOBL1", "Content": "Bundesländer", "Type": "Merkmal", "Values": "16", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0006 ,PO0006", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "STAGR2", "Content": "Staatsangehörigkeit (Gruppen)", "Type": "Merkmal", "Values": "5", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
-   other keys: Code, Content, Structure, Time, Updated, Valid
-
-## metadata/table 1000A-1021: HTTP 200, 1,752 chars
-   title: 'Personen: Staatsangehörigkeit (Häufigste Länder)'
-   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEODL1", "Content": "Deutschland", "Type": "Merkmal", "Values": "1", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS001", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}, {"Code": "GEOBL1", "Content": "Bundesländer", "Type": "Merkmal", "Values": "16", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0006 ,PO0006", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "STALD4", "Content": "Staatsangehörigkeit (Häufigste Länder)", "Type": "Merkmal", "Values": "41", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
-   other keys: Code, Content, Structure, Time, Updated, Valid
-
-## metadata/table 1000A-1023: HTTP 200, 1,733 chars
-   title: 'Personen: Staatsangehörigkeit (Länder)'
-   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEODL1", "Content": "Deutschland", "Type": "Merkmal", "Values": "1", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS001", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}, {"Code": "GEOBL1", "Content": "Bundesländer", "Type": "Merkmal", "Values": "16", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0006 ,PO0006", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "STALD3", "Content": "Staatsangehörigkeit (Länder)", "Type": "Merkmal", "Values": "203", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
-   other keys: Code, Content, Structure, Time, Updated, Valid
-
-## metadata/table 1000A-1011: HTTP 200, 1,749 chars
-   title: 'Personen: Einwanderungsgeschichte (ausführlich)'
-   Structure: {"Head": {"Code": "1000A", "Content": "Bevölkerung kompakt (Gebietsstand 15.05.2022)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Columns": [{"Code": "GEODL1", "Content": "Deutschland", "Type": "Merkmal", "Values": "1", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS001", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0004 ,PO0004", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}, {"Code": "GEOBL1", "Content": "Bundesländer", "Type": "Merkmal", "Values": "16", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS018", "Content": "Personen", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": "ID0006 ,PO0006", "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Rows": [{"Code": "WDGAT1", "Content": "Einwanderungsgeschichte (ausführlich)", "Type": "Merkmal", "Values": "4", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": {"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}, "Subheading": null}
-   other keys: Code, Content, Structure, Time, Updated, Valid
-
-## metadata/table 2000X-1014: HTTP 200, 1,470 chars
-   title: 'Personen: Migrationshintergrund (Länder)'
-   Structure: {"Head": {"Code": "2000X", "Content": "Bev: Bildung, Erwerb, Migration (Stand 09.05.2011)", "Type": "Statistik", "Values": "-1", "Selected": null, "Functions": null, "Structure": [{"Code": "PRS007", "Content": "Personen mit Migrationshintergrund", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": [{"Code": "STAG", "Content": "Stichtag", "Type": "Merkmal", "Values": "-1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Updated": "see parent"}], "Updated": "see parent"}, "Columns": [{"Code": "GEODL3", "Content": "Deutschland", "Type": "Merkmal", "Values": "1", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Rows": [{"Code": "MIGLD2", "Content": "Migrationshintergrund (Ausgewählte Länder)", "Type": "Merkmal", "Values": "14", "Selected": null, "Functions": null, "Structure": null, "Updated": "see parent"}], "Subtitel": null, "Subheading": null}
-   other keys: Code, Content, Structure, Time, Updated, Valid
+## https://opendata.cbs.nl/ODataApi/odata/84910NED/RegioS?$format=json&$filter=startswith(Key,%27GM0457%27)%20or%20startswith(Key,%27GM0363%27)%20or%20startswith(Key,%27PV%27)%20or%20startswith(Key,%27NL%27)
+   HTTP 200, 8,228 bytes, application/json 
+   15 matches of '(?:Key.{4,16}Title.{4,90})'
+   ~ Key":"NL01 ","Title":"Nederland","Description":"Grenswijziging per 01-01-2018:\r\n- Ontvangen van Buitenland
+   ~ Key":"PV20 ","Title":"Groningen (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van he
+   ~ Key":"PV21 ","Title":"Frysl\u00e2n (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van
+   ~ Key":"PV22 ","Title":"Drenthe (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het
+   ~ Key":"PV23 ","Title":"Overijssel (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van h
+   ~ Key":"PV24 ","Title":"Flevoland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van he
+   ~ Key":"PV25 ","Title":"Gelderland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van h
+   ~ Key":"PV26 ","Title":"Utrecht (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het
+   ~ Key":"PV27 ","Title":"Noord-Holland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling va
+   ~ Key":"PV28 ","Title":"Zuid-Holland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van
+   ~ Key":"PV29 ","Title":"Zeeland (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het
+   ~ Key":"PV30 ","Title":"Noord-Brabant (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling va
+   ~ Key":"PV31 ","Title":"Limburg (PV)","Description":"PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het
+   ~ Key":"GM0363","Title":"Amsterdam","Description":"Grenswijziging per 01-01-2014, ontvangen van:\r\n- Haarlemmer
+   ~ Key":"GM0457","Title":"Weesp","Description":"Grenswijziging per 01-01-2016, ontvangen van:\r\n- Muiden (GM0424
