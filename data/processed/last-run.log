@@ -1,9 +1,3 @@
-belgium_nationality: Eurostat cens_21ctz_r3, Belgium, 1 January 2021
-  cens_21ctz_r3: dimensions ['freq', 'citizen', 'sex', 'age', 'unit', 'geo', 'time'], sizes [1, 221, 1, 1, 1, 15, 1]
-  regions against Belgium: parts sum to 11,554,767 = 11,554,767
-  provinces against BE1: parts sum to 1,226,329 = 1,226,329
-  provinces against BE2: parts sum to 6,664,709 = 6,664,709
-  provinces against BE3: parts sum to 3,663,729 = 3,663,729
-  named: Belgian, French, Dutch, Italian, Romanian, Moroccan, Spanish, Polish, Portuguese
-  wrote data/processed/belgium_nationality.json (37 kB)
-  wrote belgium_nationality.json: 14 records
+nordic_church: SWE
+  https://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF(1).pdf: 2,039 lines, 290 kommuner, 21 län, registered without a property: (17847, 5935, 33.2)
+svenska kyrkan: no SCB code for ['Okänd']; codes twice ['0643']
