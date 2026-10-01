@@ -14945,8 +14945,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 40.7,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 96.4,
@@ -15082,18 +15084,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Borsod-Abaúj-Zemplén county",
@@ -15109,6 +15118,7 @@
     "shape_id": "29324351B6414083113465",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, then here); Golop (550 people, then here)). Its figures are the 2022 census's counts summed over the 32 settlements KSH's gazetteer of 1 January 2014 puts in the Gönci district.",
     "ethnicity_year": 2022,
@@ -17165,8 +17175,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 41.3,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 94.2,
@@ -17312,18 +17324,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Borsod-Abaúj-Zemplén county",
@@ -17339,6 +17358,7 @@
     "shape_id": "29324351B12023756452525",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Tállya (1,569 people, now here); Golop (550 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Szerencsi district.",
     "ethnicity_year": 2022,
@@ -19868,8 +19888,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 43.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 94.9,
@@ -20070,18 +20092,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Fejér county",
@@ -20097,6 +20126,7 @@
     "shape_id": "29324351B82209146768719",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Gánt (747 people, now here)). Its figures are the 2022 census's counts summed over the 14 settlements KSH's gazetteer of 1 January 2014 puts in the Bicskei district.",
     "ethnicity_year": 2022,
@@ -20410,8 +20440,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 44.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 96.2,
@@ -20567,18 +20599,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Fejér county",
@@ -20594,6 +20633,7 @@
     "shape_id": "29324351B88573603654075",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Mezőszentgyörgy (1,271 people, now here); Lepsény (3,082 people, now here); Mátyásdomb (698 people, now here); Kisláng (2,440 people, now here)). Its figures are the 2022 census's counts summed over the 5 settlements KSH's gazetteer of 1 January 2014 puts in the Enyingi district.",
     "ethnicity_year": 2022,
@@ -21166,8 +21206,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 44.3,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 94.1,
@@ -21338,18 +21380,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Fejér county",
@@ -21365,6 +21414,7 @@
     "shape_id": "29324351B71845769198435",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Magyaralmás (1,629 people, now here)). Its figures are the 2022 census's counts summed over the 12 settlements KSH's gazetteer of 1 January 2014 puts in the Móri district.",
     "ethnicity_year": 2022,
@@ -21633,8 +21683,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 44.9,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 92.6,
@@ -21870,18 +21922,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Fejér county",
@@ -21897,6 +21956,7 @@
     "shape_id": "29324351B96157182813674",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, now here); Nádasdladány (1,673 people, now here); Gánt (747 people, then here); Jenő (1,211 people, now here); Polgárdi (6,628 people, now here); Magyaralmás (1,629 people, then here); Kőszárhegy (1,576 people, now here)). Its figures are the 2022 census's counts summed over the 22 settlements KSH's gazetteer of 1 January 2014 puts in the Székesfehérvári district.",
     "ethnicity_year": 2022,
@@ -22464,8 +22524,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 46.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 96.4,
@@ -22621,18 +22683,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Győr-Moson-Sopron county",
@@ -22648,6 +22717,7 @@
     "shape_id": "29324351B81254697002874",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, now here)). Its figures are the 2022 census's counts summed over the 19 settlements KSH's gazetteer of 1 January 2014 puts in the Kapuvári district.",
     "ethnicity_year": 2022,
@@ -23424,14 +23494,14 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
@@ -23458,7 +23528,7 @@
     "shape_id": "29324351B85982525713850",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, then here)). Its figures are the 2022 census's counts summed over the 39 settlements KSH's gazetteer of 1 January 2014 puts in the Soproni district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2022 census's count of the district by sex and single year of age. It is the 2022 district's, which differs from the drawn one by 0.9% of its people (Agyagosszergény (959 people, then here)); KSH publishes age by settlement in ten-year groups only.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, then here)). Its figures are the 2022 census's counts summed over the 39 settlements KSH's gazetteer of 1 January 2014 puts in the Soproni district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Agyagosszergény (959 people, then here)). Its figures are the 2022 census's counts summed over the 39 settlements KSH's gazetteer of 1 January 2014 puts in the Soproni district.",
     "ethnicity_year": 2022,
@@ -26954,8 +27024,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 45.8,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 90.2,
@@ -27171,18 +27243,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Heves county",
@@ -27198,6 +27277,7 @@
     "shape_id": "29324351B27767094770808",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, then here)). Its figures are the 2022 census's counts summed over the 25 settlements KSH's gazetteer of 1 January 2014 puts in the Gyöngyösi district.",
     "ethnicity_year": 2022,
@@ -27222,8 +27302,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 44.9,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 92.7,
@@ -27429,18 +27511,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Heves county",
@@ -27456,6 +27545,7 @@
     "shape_id": "29324351B59642904520588",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Szűcsi (1,452 people, now here)). Its figures are the 2022 census's counts summed over the 13 settlements KSH's gazetteer of 1 January 2014 puts in the Hatvani district.",
     "ethnicity_year": 2022,
@@ -33343,8 +33433,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 41.2,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 93.9,
@@ -33555,18 +33647,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Pest county",
@@ -33582,6 +33681,7 @@
     "shape_id": "29324351B45686510905327",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, now here)). Its figures are the 2022 census's counts summed over the 11 settlements KSH's gazetteer of 1 January 2014 puts in the Monori district.",
     "ethnicity_year": 2022,
@@ -33606,8 +33706,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 43.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 96.4,
@@ -33808,18 +33910,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Pest county",
@@ -33835,6 +33944,7 @@
     "shape_id": "29324351B84817632279640",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district. Its single years are its 2022 namesake's single years of age (WBS001), less the settlements that have joined it since and with those that have left it: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Pánd (1,894 people, then here)). Its figures are the 2022 census's counts summed over the 16 settlements KSH's gazetteer of 1 January 2014 puts in the Nagykátai district.",
     "ethnicity_year": 2022,
@@ -51112,8 +51222,10 @@
       "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "Not written: The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district. KSH publishes age by settlement in ten-year groups only, too coarse for a median."
+      "value": 42.5,
+      "unit": "years",
+      "year": 2022,
+      "source": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)"
     },
     "sex_ratio": {
       "value": 98.4,
@@ -51259,18 +51371,25 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS003)",
         "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
         "license": "KSH (free reuse with attribution)",
         "year": 2022
       },
       {
-        "field": "population/sex_ratio/religion/ethnicity/language",
+        "field": "population/median_age/sex_ratio/religion/ethnicity/language",
         "name": "KSH, Magyarország helységnévtára, 1 January 2014 (hnt_letoltes_2014.xls)",
         "url": "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls",
         "license": "KSH (free reuse with attribution)",
         "year": 2014
+      },
+      {
+        "field": "median_age",
+        "name": "Hungarian Central Statistical Office (KSH), Census 2022 database (WBS001)",
+        "url": "https://nepszamlalas2022.ksh.hu/adatbazis/",
+        "license": "KSH (free reuse with attribution)",
+        "year": 2022
       }
     ],
     "parent_name": "Fejér county",
@@ -51286,6 +51405,7 @@
     "shape_id": "29324351B59079160651156",
     "population_note": "The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district.",
     "sex_ratio_note": "Males per 100 females counted by the 2022 census, same settlements.",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district. Its single years are those of its settlements, none of which has a 2022 district of its own: KSH publishes age by settlement in ten-year groups only (WBS003), so each such settlement's groups are spread over their single years as the 2022 district it lies in now has them. Tried on all 174 districts of 2022 outside Budapest, spreading each district's own ten-year groups over its county's single years (a looser fit than the one used here) misses the district's single-year median by 0.07 years on average and 0.3 at most.",
     "religion_year": 2022,
     "religion_note": "Religion, Census 2022 (1 October 2022): one answer per person, voluntary; everyone counted, with 'Not stated' for those who did not answer. Catholics who named neither the Roman nor the Greek rite are 'Catholic (unspecified)'. KSH blanks cells of a few people for confidentiality; they are left out. The map draws the districts of 2013-2014, and this one's settlements have changed since (Füle (846 people, then here); Mezőszentgyörgy (1,271 people, then here); Lepsény (3,082 people, then here); Nádasdladány (1,673 people, then here); Jenő (1,211 people, then here); Mátyásdomb (698 people, then here); Polgárdi (6,628 people, then here); Kisláng (2,440 people, then here); Kőszárhegy (1,576 people, then here)). Its figures are the 2022 census's counts summed over the 9 settlements KSH's gazetteer of 1 January 2014 puts in the Polgárdi district.",
     "ethnicity_year": 2022,
