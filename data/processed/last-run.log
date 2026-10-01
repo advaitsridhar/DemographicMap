@@ -1,13 +1,8 @@
-nordic_origin: DNK
-  FOLK1C 2026K3: 101,640 rows, 105 areas
-    FOLK1C regions -> Denmark: 5 parts sum to 6,031,699 against 6,031,699
-    FOLK1C kommuner -> Region Nordjylland: 11 parts sum to 593,299 against 593,299
-    FOLK1C kommuner -> Region Midtjylland: 19 parts sum to 1,385,488 against 1,385,488
-    FOLK1C kommuner -> Region Syddanmark: 22 parts sum to 1,244,118 against 1,244,118
-    FOLK1C kommuner -> Region Hovedstaden: 30 parts sum to 1,949,336 against 1,949,336
-    FOLK1C kommuner -> Region Sjælland: 17 parts sum to 859,458 against 859,458
-  named (42): Danish, Turkish, Ukrainian, Polish, Romanian, Syrian, German, Iraqi, Pakistani, Iranian, Lebanese, Indian, Bosnian, Afghan, Somali, Vietnamese, British, Swedish, Chinese, Norwegian, Lithuanian, Nepalese, Filipino, Italian, Thai, Bulgarian, Sri Lankan, Moroccan, American, Yugoslav, Russian, Icelandic, Spanish, Dutch, French, Eritrean, Bangladeshi, Hungarian, North Macedonian, Latvian, Argentine, Brazilian
-  DNK admin2: 98 of 99 office units bound to 98 polygons (0 set aside as pieces)
-    office units with no polygon (1): Christiansø (411)
-  103 records: admin1 5, admin2 98; labels the group tree cannot place: ['Eritrean']
-  wrote data/processed/denmark_origin.json (551 kB)
+nordic_origin: NOR
+  09817: 426 kommuner of 2017; by year read: 2017: 8, 2019: 108, 2025: 1, 2026: 309
+  named (43): Norwegian, Polish, Ukrainian, Lithuanian, Syrian, Somali, Pakistani, Swedish, Iraqi, Eritrean, German, Filipino, Afghan, Russian, Iranian, Indian, Thai, Vietnamese, Turkish, Romanian, Danish, Bosnian, British, Kosovar, Sri Lankan, Latvian, Ethiopian, Chinese, American, Moroccan, Serbian, Dutch, Spanish, Bulgarian, French, Sudanese, Chilean, Finnish, Brazilian, Icelandic, Italian, Congolese, Croatian
+  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
+    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
+    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
+  430 records: admin1 11, admin2 419; labels the group tree cannot place: ['Congolese', 'Eritrean', 'Ethiopian', 'Kosovar']
+  wrote data/processed/norway_origin.json (1990 kB)
