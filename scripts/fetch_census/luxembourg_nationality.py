@@ -124,7 +124,8 @@ NOTE = note("Population by citizenship", "8 November 2021",
             "the 2021 census's count of each resident's citizenship (STATEC, LUSTAT DF_B1625), "
             "which STATEC publishes by commune only in groups: Luxembourgers, citizens of the "
             "other EU-27 countries, of non-EU countries, the stateless and the not stated",
-            extra="A Luxembourger with another citizenship too is counted as a Luxembourger.")
+            extra="A Luxembourger with another citizenship too is counted as a Luxembourger.",
+            residual=None)
 
 
 def build() -> list[dict[str, Any]]:
@@ -197,7 +198,7 @@ def build() -> list[dict[str, Any]]:
                             extra=(f"{shape['name']} merged into {merged} in 2018 and the 2021 "
                                    f"census counts {merged} as one commune; the map draws the "
                                    f"communes of 2015-2017, so this polygon takes the last count "
-                                   f"of the commune itself."))
+                                   f"of the commune itself."), residual=None)
                 records.append(record(
                     f"LUX-RP2011-{fold(shape['name'])}-nat", shape["name"], level="admin2",
                     parent=shape["parent"], country="LUX", codes={"statec_name": name},

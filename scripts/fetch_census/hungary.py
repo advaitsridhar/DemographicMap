@@ -38,10 +38,14 @@ they have since left. Every settlement's district in KSH's own gazetteer of
 the 2022 census's; each district whose settlements changed is summed from
 its 2014 settlements, which WBS003 also answers for: population, sex ratio
 and the three compositions. A move between counties stops the run. KSH
-publishes age by settlement in ten-year groups only, so such a district keeps
-the single-year median of its 2022 namesake only where the two differ by no
-more than 2% of the people, and says by whom; otherwise the median is a
-stated gap.
+publishes age by settlement in ten-year groups only, so such a district's
+single years are its 2022 namesake's (WBS001), less the settlements that
+have joined it since and with those that have left it, each of those spread
+from its ten-year groups over the single years of the 2022 district it lies
+in now. The spread is tried first on every 2022 district outside Budapest,
+from its county's single years, against the district's own single years; a
+miss of more than ``SPREAD_TOLERANCE`` years stops the run, and the note
+gives the misses.
 
 **First level.** The map files Budapest's districts under Pest, whose
 polygon therefore covers Budapest too, so the Pest record is Pest county and
@@ -64,6 +68,7 @@ from ._shared import (NOT_AVAILABLE, PROCESSED, dated, gap, http_get, http_json,
                       shares, write_json)
 from .central_ages import (SEX_RATIO_UNIT, age_sex_fields, check_national_median, check_sum, fold,
                            report_unbound, sex_ratio, units)
+from .redatam import median_age
 
 API = "https://nepszamlalas2022.ksh.hu/api"
 GAZETTEER = "https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2014.xls"
@@ -84,9 +89,14 @@ IRREGULAR = {"Egri": "Eger", "Szeghalmi": "Szeghalom", "Mórahalmi": "Mórahalom
 # polygon the map draws for it; its settlements are now in Enying (079) and
 # Székesfehérvár (085).
 GONE_2014 = {"083": ("Polgard", "085")}
-# A district rebuilt from its settlements keeps its 2022 namesake's median
-# only when the settlements that differ hold at most this share of it.
-MEDIAN_TOLERANCE = 0.02
+# KSH's ten-year age groups by settlement (WBS003): code, first and last
+# year; the last group is open.
+AGE10 = (("Y_LT10", 0, 9), ("Y10-19", 10, 19), ("Y20-29", 20, 29), ("Y30-39", 30, 39),
+         ("Y40-49", 40, 49), ("Y50-59", 50, 59), ("Y60-69", 60, 69), ("Y70-79", 70, 79),
+         ("Y80-89", 80, 89), ("Y_GE90", 90, None))
+# Spread from its county's single years, no 2022 district's median may miss
+# its own by more than this many years.
+SPREAD_TOLERANCE = 1.0
 RELIGION = {"RE_RC": "Roman Catholic", "RE_GC": "Greek Catholic", "RE_CA": "Reformed (Calvinist)",
             "RE_LU": "Lutheran", "RE_OC": "Orthodox", "RE_CD": "Other Christian",
             "RE_J": "Judaism", "RE_OCD": "Other religion", "RE_NOT": "No religion",
@@ -227,6 +237,14 @@ def build() -> list[dict[str, Any]]:
     for shape in shapes:
         by_key.setdefault(fold(shape["name"]), []).append(shape)
     rebuilt = drawn_2014(ver, totals, parent_of)
+    single = {code: Counter(males[code]) + Counter(females[code]) for code in males}
+    outside = [d for d in districts if parent_of[d] != "HU110"]
+    trial = spread_trial({d: comp[d] for d in outside}, {d: single[parent_of[d]] for d in outside},
+                         {d: single[d] for d in outside}, name_of)
+    medians = {code: median_age(rebuilt_ages(code, unit, single)) for code, unit in rebuilt.items()}
+    for code, unit in rebuilt.items():
+        log(f"  2014 district {code} {unit['name']}: median {medians[code]} (its 2022 namesake's "
+            f"{median_age(single[code]) if code in single else '-'})")
     for code in districts:
         label = name_of[code]
         if parent_of[code] == "HU110":
@@ -247,7 +265,8 @@ def build() -> list[dict[str, Any]]:
                                 ratio_note="Males per 100 females counted by the 2022 census.")
         if code in rebuilt:
             records.append(drawn_record(code, rebuilt[code], shape, source_age,
-                                        county=name_of[parent_of[code]], median=fields))
+                                        county=name_of[parent_of[code]], median=medians[code],
+                                        trial=trial, namesake=True))
             continue
         fields.update(fields_of[code])
         records.append(record(
@@ -258,7 +277,8 @@ def build() -> list[dict[str, Any]]:
         shape = next(s for s in shapes if s["name"] == drawn)
         used.add(shape["id"])
         records.append(drawn_record(code14, rebuilt[code14], shape, source_age,
-                                    county=name_of[parent_of[GONE_2014[code14][1]]], median=None))
+                                    county=name_of[parent_of[GONE_2014[code14][1]]],
+                                    median=medians[code14], trial=trial, namesake=False))
     report_unbound("hungary", unbound, [s["name"] for s in shapes if s["id"] not in used])
     if unbound:
         raise SystemExit(f"hungary: {len(unbound)} districts unbound")
@@ -415,6 +435,8 @@ def drawn_2014(ver: str, totals: dict[str, float],
                      "codes": sorted(group), "blanked": sum(blanked.get(c, 0) for c in group),
                      "name": old[group[0]][2] or code,
                      "differ": [(names[c], cells[c]["VALLAS_V1"], c in group) for c in differ],
+                     "moves": [(c, now[c], age_groups(cells[c], names[c]), c not in group)
+                               for c in differ],
                      "share": differ_people / summed["VALLAS_V1"]}
         log(f"  2014 district {code} {out[code]['name']}: {len(group)} settlements, "
             f"{summed['VALLAS_V1']:,.0f} people, {out[code]['blanked']} blanked cells; differs from "
@@ -428,10 +450,13 @@ def drawn_2014(ver: str, totals: dict[str, float],
 
 
 def drawn_record(code14: str, unit: dict[str, Any], shape: dict[str, Any], source_age: str,
-                 county: str, median: dict[str, Any] | None) -> dict[str, Any]:
+                 county: str, median: float | None, trial: str = "",
+                 namesake: bool = True) -> dict[str, Any]:
     """The record for one district drawn as in 2013-2014, from its settlements' sums.
 
-    ``median`` is the 2022 namesake's age fields, or None where there is none.
+    ``median`` is the one ``rebuilt_ages`` gives it (None writes a gap),
+    ``trial`` the sentence saying how the spread fared on the 2022 districts,
+    and ``namesake`` whether a 2022 district of the same code was its start.
     """
     fields = composition(unit["cells"], shape["name"], blanked=unit["blanked"])
     moved = "; ".join(f"{n} ({p:,.0f} people, {'then here' if here else 'now here'})"
@@ -442,15 +467,22 @@ def drawn_record(code14: str, unit: dict[str, Any], shape: dict[str, Any], sourc
            f"{unit['name']} district.")
     for key in ("religion", "ethnicity", "language"):
         fields[f"{key}_note"] = fields[f"{key}_note"] + " " + why
-    if median is not None and unit["share"] <= MEDIAN_TOLERANCE:
-        age = {"median_age": median["median_age"],
-               "median_age_note": (median["median_age_note"] + f" It is the 2022 district's, which "
-                                   f"differs from the drawn one by {100 * unit['share']:.1f}% of its "
-                                   f"people ({moved}); KSH publishes age by settlement in ten-year "
-                                   f"groups only.")}
+    if median is not None:
+        start = ("its 2022 namesake's single years of age (WBS001), less the settlements that have "
+                 "joined it since and with those that have left it" if namesake else
+                 "those of its settlements, none of which has a 2022 district of its own")
+        age = {"median_age": measure(median, unit="years", year=YEAR, source=source_age),
+               "median_age_note": (
+                   f"Interpolated within the single year of age that holds the middle person. "
+                   f"{why} Its single years are {start}: KSH publishes age by settlement in "
+                   f"ten-year groups only (WBS003), so each such settlement's groups are spread "
+                   f"over their single years as the 2022 district it lies in now has them. "
+                   f"{trial}").strip()}
     else:
         age = {"median_age": gap(NOT_AVAILABLE, "Not written: " + why + " KSH publishes age by "
                                  "settlement in ten-year groups only, too coarse for a median.")}
+    fields_from = ("population/median_age/sex_ratio/religion/ethnicity/language"
+                   if "median_age_note" in age else "population/sex_ratio/religion/ethnicity/language")
     return record(
         f"HUN-KSH2014-{code14}", shape["name"], level="admin2", parent=shape["parent"],
         parent_name=county, country="HUN",
@@ -461,14 +493,85 @@ def drawn_record(code14: str, unit: dict[str, Any], shape: dict[str, Any], sourc
         sex_ratio=measure(sex_ratio(unit["cells"]["M"], unit["cells"]["F"]), unit=SEX_RATIO_UNIT,
                           year=YEAR, source=source_age),
         sex_ratio_note="Males per 100 females counted by the 2022 census, same settlements.",
-        sources=[{"field": "population/sex_ratio/religion/ethnicity/language",
-                  "name": SOURCE.format(flow="WBS003"), "url": PORTAL, "license": LICENCE,
-                  "year": YEAR},
-                 {"field": "population/sex_ratio/religion/ethnicity/language",
-                  "name": GAZETTEER_SOURCE, "url": GAZETTEER, "license": LICENCE, "year": 2014}]
+        sources=[{"field": fields_from, "name": SOURCE.format(flow="WBS003"), "url": PORTAL,
+                  "license": LICENCE, "year": YEAR},
+                 {"field": fields_from, "name": GAZETTEER_SOURCE, "url": GAZETTEER,
+                  "license": LICENCE, "year": 2014}]
         + ([{"field": "median_age", "name": source_age, "url": PORTAL, "license": LICENCE,
              "year": YEAR}] if "median_age_note" in age else []),
         **age, **fields)
+
+
+def age_groups(cells: dict[str, float], name: str) -> dict[str, float]:
+    """A place's ten-year age groups from its WBS003 cells, which must make its
+    people to within a few blanked cells."""
+    groups = {code: cells.get(code, 0.0) for code, _, _ in AGE10}
+    short = cells["VALLAS_V1"] - sum(groups.values())
+    if not 0 <= short <= max(3, 0.002 * cells["VALLAS_V1"]):
+        raise SystemExit(f"hungary: {name}: the ten-year age groups make {sum(groups.values()):,.0f} "
+                         f"of {cells['VALLAS_V1']:,.0f} people")
+    return groups
+
+
+def spread(groups: dict[str, float], profile: Counter) -> Counter:
+    """Single years from ten-year groups: each group's people spread over its
+    years as ``profile`` (people by single year) has them within the group."""
+    top = max(profile)
+    out: Counter = Counter()
+    for code, first, last in AGE10:
+        n = groups.get(code, 0.0)
+        if not n:
+            continue
+        years = range(first, (top if last is None else last) + 1)
+        within = sum(profile.get(y, 0.0) for y in years)
+        if within <= 0:
+            raise SystemExit(f"hungary: nobody aged {first} to {last} to spread {n:,.0f} people over")
+        for y in years:
+            out[y] += n * profile.get(y, 0.0) / within
+    return out
+
+
+def rebuilt_ages(code: str, unit: dict[str, Any], single: dict[str, Counter]) -> Counter:
+    """A drawn district's people by single year: its 2022 namesake's (none for
+    a district gone since), less each settlement that has joined it and with
+    each that has left it, those spread over the single years of the 2022
+    district they lie in now."""
+    ages = Counter(single.get(code, Counter()))
+    for _, district, groups, joined in unit["moves"]:
+        for year, n in spread(groups, single[district]).items():
+            ages[year] = ages.get(year, 0.0) + (-n if joined else n)
+    if any(n < -0.5 for n in ages.values()):
+        raise SystemExit(f"hungary: district {code}: taking out its newer settlements leaves fewer "
+                         f"than nobody at some age")
+    made = sum(ages.values())
+    people = unit["cells"]["VALLAS_V1"]
+    if abs(made - people) > max(5, 0.002 * people):
+        raise SystemExit(f"hungary: district {code}: its single years make {made:,.0f}, its "
+                         f"settlements {people:,.0f}")
+    return Counter({year: max(n, 0.0) for year, n in ages.items()})
+
+
+def spread_trial(cells: dict[str, dict[str, float]], profiles: dict[str, Counter],
+                 exact: dict[str, Counter], name_of: dict[str, str]) -> str:
+    """How far the spread misses: each 2022 district's ten-year groups spread
+    over its county's single years, its median against its own single years'.
+    A miss over ``SPREAD_TOLERANCE`` stops the run; the sentence saying how it
+    went is returned for the notes."""
+    misses = {}
+    for code, c in cells.items():
+        guess = median_age(spread(age_groups(c, name_of[code]), profiles[code]))
+        misses[code] = abs(guess - median_age(exact[code]))
+    worst = max(misses, key=misses.get)
+    mean = sum(misses.values()) / len(misses)
+    log(f"  spread trial on {len(misses)} districts: median missed by {mean:.2f} years on average, "
+        f"{misses[worst]:.1f} at most ({name_of[worst]})")
+    if misses[worst] > SPREAD_TOLERANCE:
+        raise SystemExit(f"hungary: spreading ten-year groups misses {name_of[worst]}'s median by "
+                         f"{misses[worst]:.1f} years")
+    return (f"Tried on all {len(misses)} districts of 2022 outside Budapest, spreading each "
+            f"district's own ten-year groups over its county's single years (a looser fit than "
+            f"the one used here) misses the district's single-year median by {mean:.2f} years on "
+            f"average and {misses[worst]:.1f} at most.")
 
 
 def composition(c: dict[str, float], name: str, blanked: int = 0) -> dict[str, Any]:

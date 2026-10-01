@@ -342,18 +342,86 @@ class HungaryDrawnIn2013(unittest.TestCase):
                  "RE_NOT": 300.0, "RE_NA": 300.0, "EG": 1000.0, "EG_HU": 1000.0, "MT": 1000.0,
                  "MT_HU": 1000.0}
         return {"cells": cells, "settlements": ["A", "B"], "codes": ["1", "2"], "blanked": 0,
-                "name": "Bicskei", "differ": [("C", 1000.0 * share, False)], "share": share}
+                "name": "Bicskei", "differ": [("C", 1000.0 * share, False)], "share": share,
+                "moves": []}
 
-    def test_the_2022_median_is_kept_only_where_the_two_differ_by_two_percent_or_less(self):
+    def test_a_rebuilt_district_writes_the_median_it_is_given_and_says_how(self):
         shape = {"id": "s", "name": "Bicske", "parent": "p"}
-        median = {"median_age": {"value": 44.0}, "median_age_note": "Interpolated."}
-        close = hungary.drawn_record("077", self.unit(0.015), shape, "KSH", "Fejér", median)
-        self.assertEqual(close["median_age"], {"value": 44.0})
-        self.assertIn("differs from the drawn one by 1.5%", close["median_age_note"])
-        far = hungary.drawn_record("077", self.unit(0.05), shape, "KSH", "Fejér", median)
-        self.assertEqual(far["median_age"]["status"], "not_available")
-        self.assertEqual(far["population"]["value"], 1000)
-        self.assertEqual(far["sex_ratio"]["value"], 96.1)
+        out = hungary.drawn_record("077", self.unit(0.05), shape, "KSH", "Fejér", 44.3,
+                                   trial="Tried on all.")
+        self.assertEqual(out["median_age"]["value"], 44.3)
+        self.assertIn("namesake's single years", out["median_age_note"])
+        self.assertIn("ten-year groups only", out["median_age_note"])
+        self.assertTrue(out["median_age_note"].endswith("Tried on all."))
+        self.assertIn("median_age", out["sources"][0]["field"])
+        gone = hungary.drawn_record("083", self.unit(1.0), shape, "KSH", "Fejér", 45.0,
+                                    namesake=False)
+        self.assertIn("none of which has a 2022 district", gone["median_age_note"])
+        blank = hungary.drawn_record("077", self.unit(0.05), shape, "KSH", "Fejér", None)
+        self.assertEqual(blank["median_age"]["status"], "not_available")
+        self.assertNotIn("median_age", blank["sources"][0]["field"])
+        self.assertEqual(blank["population"]["value"], 1000)
+        self.assertEqual(blank["sex_ratio"]["value"], 96.1)
+
+    @staticmethod
+    def groups(**given):
+        out = {code: 0.0 for code, _, _ in hungary.AGE10}
+        out.update({k.replace("_", "-") if k[1].isdigit() else k: v for k, v in given.items()})
+        return out
+
+    FLAT = Counter({year: 100.0 for year in range(101)})        # 10,100 people, 0 to 100+
+
+    def test_ten_year_groups_are_spread_as_the_profile_has_them_within_each(self):
+        profile = Counter(self.FLAT)
+        profile[0] = 300.0
+        out = hungary.spread(self.groups(Y_LT10=120.0, Y_GE90=11.0), profile)
+        self.assertAlmostEqual(out[0], 30.0)                     # 120 x 300 / 1,200
+        self.assertAlmostEqual(out[5], 10.0)
+        self.assertAlmostEqual(out[100], 1.0)                    # the open group runs to 100+
+        self.assertAlmostEqual(sum(out.values()), 131.0)
+
+    def test_a_rebuilt_district_is_its_namesake_less_joiners_and_with_leavers(self):
+        other = Counter({year: 50.0 for year in range(101)})
+        joined = self.groups(Y20_29=100.0)
+        left = self.groups(Y60_69=50.0)
+        unit = {"cells": {"VALLAS_V1": 10050.0},
+                "moves": [("1", "077", joined, True), ("2", "085", left, False)]}
+        ages = hungary.rebuilt_ages("077", unit, {"077": self.FLAT, "085": other})
+        self.assertAlmostEqual(ages[25], 90.0)
+        self.assertAlmostEqual(ages[65], 105.0)
+        self.assertAlmostEqual(ages[45], 100.0)
+        self.assertAlmostEqual(sum(ages.values()), 10050.0)
+
+    def test_a_district_gone_since_is_its_settlements_spread(self):
+        unit = {"cells": {"VALLAS_V1": 100.0}, "moves": [("1", "085", self.groups(Y_LT10=100.0), False)]}
+        ages = hungary.rebuilt_ages("083", unit, {"085": self.FLAT})
+        self.assertAlmostEqual(ages[3], 10.0)
+        self.assertAlmostEqual(sum(ages.values()), 100.0)
+
+    def test_single_years_that_miss_the_settlements_people_stop_the_run(self):
+        with self.assertRaises(SystemExit):
+            hungary.rebuilt_ages("077", {"cells": {"VALLAS_V1": 500.0}, "moves": []},
+                                 {"077": self.FLAT})
+
+    def test_age_groups_short_of_the_people_stop_the_run(self):
+        cells = {"VALLAS_V1": 1000.0, **self.groups(Y_LT10=900.0)}
+        with self.assertRaises(SystemExit):
+            hungary.age_groups(cells, "x")
+        self.assertEqual(hungary.age_groups({**cells, "VALLAS_V1": 902.0}, "x")["Y_LT10"], 900.0)
+
+    def test_the_trial_passes_a_close_spread_and_stops_a_far_one(self):
+        cells = {"VALLAS_V1": 1010.0, **self.groups(Y_LT10=100.0, Y10_19=100.0, Y20_29=100.0,
+                                                    Y30_39=100.0, Y40_49=100.0, Y50_59=100.0,
+                                                    Y60_69=100.0, Y70_79=100.0, Y80_89=100.0,
+                                                    Y_GE90=110.0)}
+        flat = Counter({year: 10.0 for year in range(101)})
+        said = hungary.spread_trial({"077": cells}, {"077": flat}, {"077": flat}, {"077": "Bicskei"})
+        self.assertIn("0.00 years on average", said)
+        # Everyone at the top of their group: the median is 59.0, the spread puts it at 50.5.
+        bunched = Counter({first + 9: 100.0 for _, first, _ in hungary.AGE10[:-1]})
+        bunched[100] = 110.0
+        with self.assertRaises(SystemExit):
+            hungary.spread_trial({"077": cells}, {"077": flat}, {"077": bunched}, {"077": "Bicskei"})
 
     def test_a_settlement_whose_sexes_miss_its_people_stops_the_run(self):
         cells = {"17525": {"VALLAS_V1": 10.0, "M": 4.0, "F": 5.0}}
