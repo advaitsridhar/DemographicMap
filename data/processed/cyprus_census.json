@@ -8145,6 +8145,65 @@
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by community, sex and age group (1891108E): CYSTAT publishes nothing finer by community."
   },
   {
+    "id": "CYP-2021-4014",
+    "level": "admin2",
+    "name": "Dromolaxia",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6838,
+      "year": 2021,
+      "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, population enumerated by district, municipality/community, sex and age (1891108E)"
+    },
+    "median_age": {
+      "value": 41.3,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, population enumerated by district, municipality/community, sex and age (1891108E)"
+    },
+    "sex_ratio": {
+      "value": 95.5,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, population enumerated by district, municipality/community, sex and age (1891108E)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "CYSTAT publishes the 2021 census's language by district only, and its religion and ethnic/religious group for the whole country only (1891616E, 1891632E, 1891642E); no table of any of the three is published by municipality or community."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "CYSTAT publishes the 2021 census's language by district only, and its religion and ethnic/religious group for the whole country only (1891616E, 1891632E, 1891642E); no table of any of the three is published by municipality or community."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "CYSTAT publishes the 2021 census's language by district only, and its religion and ethnic/religious group for the whole country only (1891616E, 1891632E, 1891642E); no table of any of the three is published by municipality or community."
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, population enumerated by district, municipality/community, sex and age (1891108E)",
+        "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891108E.px",
+        "page": "https://cystatdb23px.cystat.gov.cy/pxweb/en/8.CYSTAT-DB/",
+        "year": 2021,
+        "license": "Statistical Service of Cyprus (reuse with attribution)"
+      }
+    ],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B21347225976460",
+    "codes": {
+      "cystat": "4014"
+    },
+    "parent_name": "Larnaca",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by community, sex and age group (1891108E): CYSTAT publishes nothing finer by community."
+  },
+  {
     "id": "CYP-2021-4100",
     "level": "admin2",
     "name": "Kellia",
@@ -26605,48 +26664,6 @@
     "parent_name": "Kyrenia"
   },
   {
-    "id": "CYP-2021-none-46923920B21347225976460",
-    "level": "admin2",
-    "name": "Dromolaxia",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B21347225976460",
-    "parent_name": "Larnaca"
-  },
-  {
     "id": "CYP-2021-none-46923920B69592041186855",
     "level": "admin2",
     "name": "Dyo Potamoi",
@@ -30214,48 +30231,6 @@
     "country": "CYP",
     "match_by": "shape_id",
     "shape_id": "46923920B81614403917932",
-    "parent_name": "Larnaca"
-  },
-  {
-    "id": "CYP-2021-none-46923920B15655385768829",
-    "level": "admin2",
-    "name": "Meneou",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "CYSTAT's 2021 census counts Dromolaxia - Meneou (4014) as one community of 6,838 residents, which the boundary file draws as Dromolaxia and Meneou; its figures go on them once they are drawn as one."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B15655385768829",
     "parent_name": "Larnaca"
   },
   {
