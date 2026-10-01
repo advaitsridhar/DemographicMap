@@ -184,6 +184,17 @@ class SwedishChurch(unittest.TestCase):
                          {"Karlshamns": "1082", "Borås": "1490", "Faluns": "2080"})
         with self.assertRaises(SystemExit):
             church.match_names(["Atlantis"], scb)
+    def test_a_parish_across_two_kommuner_is_found_and_nothing_else_is_excused(self):
+        names = {"1762": "Munkfors", "1763": "Forshaga"}
+        lines = ["Forshaga kommun 15 269 10 693 70,0% 70,0% 0,13% 0,31% 0,91%",
+                 "Forshaga-Munkfors församling (176301) 15 269 10 693 70,0% 70,0% 0,13% 0,31% "
+                 "0,91%"]
+        self.assertEqual(church.joined_kommuner(["1762"], {"1763"}, names, lines),
+                         {"1762": ("1763", "Forshaga-Munkfors")})
+        with self.assertRaises(SystemExit):
+            church.joined_kommuner(["1762"], {"1763"}, names, lines[:1])
+
+    def test_genitive_names_find_scbs_codes_spelled_before_folded(self):
         # Folded, Håbo and Habo are one name; spelled, they are two kommuner.
         self.assertEqual(church.match_names(["Håbo", "Habo"], {"0305": "Håbo", "0643": "Habo"}),
                          {"Håbo": "0305", "Habo": "0643"})

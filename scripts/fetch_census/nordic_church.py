@@ -54,7 +54,7 @@ import re
 from collections import defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, log, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, shares, write_json
 from .binding import fold
 from .nordic_common import bind_rows, request, request_json, unplaced
 from .pxweb import unstack
@@ -197,6 +197,34 @@ def match_names(printed: list[str], scb: dict[str, str]) -> dict[str, str]:
     return out
 
 
+PARISH = re.compile(r"^(?P<name>.+?) församling \((?P<code>\d{6})\)")
+
+
+def joined_kommuner(unread: list[str], read: set[str], names: dict[str, str],
+                    lines: list[str]) -> dict[str, tuple[str, str]]:
+    """Kommuner the table prints no row for -> (the kommun whose row holds
+    them, the parish that joins them).
+
+    A parish that spans two kommuner (Forshaga-Munkfors församling) is counted
+    whole under the kommun its code places it in, and the other kommun gets
+    no row. It is found by a parish row naming the missing kommun in its
+    hyphenated name; a missing kommun no one such parish explains stops the
+    run."""
+    out: dict[str, tuple[str, str]] = {}
+    for code in unread:
+        hosts = set()
+        for line in lines:
+            found = PARISH.match(" ".join(line.split()))
+            if found and fold(names[code]) in {fold(p) for p in found.group("name").split("-")}:
+                hosts.add((found.group("code")[:4], found.group("name")))
+        hosts = {(h, parish) for h, parish in hosts if h != code}
+        if len(hosts) != 1 or next(iter(hosts))[0] not in read:
+            raise SystemExit(f"svenska kyrkan: no row for {names[code]} ({code}), and no one "
+                             f"parish places it in another kommun's: {sorted(hosts)}")
+        out[code] = next(iter(hosts))
+    return out
+
+
 def sweden() -> list[dict[str, Any]]:
     import pdfplumber
     from .sweden import BASE, bind_kommuner
@@ -228,14 +256,13 @@ def sweden() -> list[dict[str, Any]]:
     sv = dict(zip(meta["Region"]["values"], meta["Region"]["valueTexts"]))
     scb_kommuner = {c: n for c, n in sv.items() if len(c) == 4}
     code_of = match_names(list(kommuner), scb_kommuner)
-    if len(code_of) != len(scb_kommuner):
-        unread = sorted(set(scb_kommuner) - set(code_of.values()))
-        for code in unread:
-            stem = fold(scb_kommuner[code])
-            log(f"  {code} {scb_kommuner[code]}: lines naming it: "
-                f"{[ln for ln in lines if stem in fold(ln)][:4]}")
-        raise SystemExit(f"svenska kyrkan: {len(code_of)} kommuner of SCB's "
-                         f"{len(scb_kommuner)}; not read: {[scb_kommuner[c] for c in unread]}")
+    read = set(code_of.values())
+    joined = joined_kommuner(sorted(set(scb_kommuner) - read), read, scb_kommuner, lines)
+    partners: dict[str, list[str]] = defaultdict(list)
+    for code, (host, parish) in sorted(joined.items()):
+        partners[host].append(code)
+        log(f"  {scb_kommuner[code]} has no row: {parish} församling counts it under "
+            f"{scb_kommuner[host]}")
     # The kommuner must make their län, and the län with the people registered
     # without a property the whole of Sweden.
     lan_code = {name: next((c for c, n in sv.items() if len(c) == 2 and
@@ -252,7 +279,11 @@ def sweden() -> list[dict[str, Any]]:
     # SCB's own count of the same day: the table's kommun populations leave
     # out only the people SCB cannot place on a property.
     scb = scb_population()
-    worst = max((abs(scb[c] - kommuner[k][0]) / scb[c], k) for k, c in code_of.items())
+
+    def scb_of(code: str) -> float:
+        return scb[code] + sum(scb[c] for c in partners.get(code, []))
+
+    worst = max((abs(scb_of(c) - kommuner[k][0]) / scb_of(c), k) for k, c in code_of.items())
     log(f"  the table's kommun populations against SCB's of the same day: worst "
         f"{100 * worst[0]:.2f}% ({worst[1]})")
     if worst[0] > 0.03:
@@ -265,8 +296,25 @@ def sweden() -> list[dict[str, Any]]:
     log(f"  län and the people without a property make {total:,} against SCB's {scb['00']:,.0f}")
     bound = bind_kommuner(sv, sorted(scb_kommuner))
     records = []
+    source = {"field": "religion", "name": "Church of Sweden (Svenska kyrkan), members against "
+              f"population 31 December {SVK_YEAR}, counted by SCB", "url": used,
+              "year": SVK_YEAR}
     for name, code in sorted(code_of.items(), key=lambda kv: kv[1]):
         pop, members, residents = kommuner[name]
+        if code in partners:
+            together = [code] + partners[code]
+            parish = joined[partners[code][0]][1]
+            why = (f"The Church of Sweden counts {parish} församling, which spans "
+                   f"{' and '.join(sv[c] for c in together)} kommuner, whole under {sv[code]}, "
+                   "so neither kommun's own membership can be given: together they hold "
+                   f"{members:,} members of the Church among {pop:,} people "
+                   f"({100 * members / pop:.1f}%) on 31 December {SVK_YEAR}.")
+            records += [record(f"SWE-SVK-{c}", sv[c], level="admin2", parent="SWE",
+                               country="SWE", parent_name=sv[c[:2]], codes={"scb": c},
+                               match_by="shape_id", shape_id=bound[c],
+                               religion=gap(NOT_AVAILABLE, why), sources=[source])
+                        for c in together]
+            continue
         elsewhere = (f" Of the kommun's residents, {residents:.1f}% are members, in whatever "
                      "parish; the count above is of the members of its own parishes, wherever "
                      "they live -- the two differ where a parish without territory (Karlskrona's "
@@ -288,9 +336,7 @@ def sweden() -> list[dict[str, Any]]:
                 "records religion, and the Church's is the only membership count published by "
                 "kommun. The population leaves out the few people registered in the kommun "
                 "without a property, whom SCB cannot place in a parish." + elsewhere),
-            sources=[{"field": "religion", "name": "Church of Sweden (Svenska kyrkan), "
-                      f"members against population 31 December {SVK_YEAR}, counted by SCB",
-                      "url": used, "year": SVK_YEAR}]))
+            sources=[source]))
     return records
 
 
