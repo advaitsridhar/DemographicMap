@@ -178,11 +178,35 @@ def fold(name: Any) -> str:
 
 
 def shapes(iso3: str, level: str) -> list[dict[str, Any]]:
-    """The map's polygons for one country and level, as the site draws them."""
+    """The map's polygons for one country and level, as the site draws them.
+
+    Less the second-level polygons a redraw replaces (``admin2_redrawn.geojson``,
+    from scripts/make_redrawn.py): a merge keeps its first feature's id and
+    name and the others stop being drawn, whether or not the site has been
+    rebuilt since. Read from the built site alone, Croatia's three Pirovac
+    polygons still looked apart after the merge was written, and a reader run
+    between the two steps wrote the cluster as three gaps.
+    """
     units = read_json(shard_path(level, iso3), [])
     if not units:
         raise SystemExit(f"no {level} shapes for {iso3} at {shard_path(level, iso3)}")
+    if level == "admin2":
+        gone = redrawn_away(iso3)
+        units = [u for u in units if u.get("id") not in gone]
     return units
+
+
+def redrawn_away(iso3: str) -> set[str]:
+    """Shape ids of ``iso3``'s second-level polygons a redraw replaces."""
+    from ._shared import PROCESSED
+    payload = read_json(PROCESSED / "admin2_redrawn.geojson", {}) or {}
+    gone: set[str] = set()
+    for feature in payload.get("features") or []:
+        props = feature.get("properties") or {}
+        if props.get("shapeGroup") != iso3:
+            continue
+        gone |= set(props.get("replaces") or []) - {props.get("shapeID")}
+    return gone
 
 
 def match_names(units: dict[str, str], polygons: list[dict[str, Any]], *,
