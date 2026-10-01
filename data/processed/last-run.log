@@ -1,14 +1,9 @@
-iceland: Hagstofa MAN09000 (2017) and MAN02005 (latest)
-    MAN09000 2017: municipalities -> Iceland: 74 parts sum to 348,220 against 348,220
-  74 municipalities on 1 December 2017
-  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
-    office units with no polygon (1): Vestmannaeyjabær (8000)
-  MAN02005 2026: national median 37.5 against Eurostat's 37.2 for 1 January 2025 (+0.30 years, bound 0.7)
-  53 of 74 municipalities are the same territory today; renumbered: ['Sveitarfélagið Hornafjörður 7708->8401']; number taken by a merger: ['Tálknafjarðarhreppur 4604: 1,243 against 245']; merged: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Skagafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
-  1 January 2018 in today's division against 1 December 2017: largest gaps Grundarfjarðarbær 3.5%, Skorradalshreppur 3.6%, Norðurþing 3.6%, Súðavíkurhreppur 4.6%, Skeiða- og Gnúpverjahreppur 4.9%
-  merged municipalities, 1 December 2017 against today's in 1 January 2018: Eastern Region 9,751/9,650, Northeastern Region 2,034/1,977, Northwestern Region 5,510/5,469, Southern Peninsula 3,384/3,335, Western Region 1,237/1,215, Westfjords 1,268/1,243
-  merged municipalities' last own count (1 December): Sandgerðisbær 2017; Sveitarfélagið Garður 2017; Fjarðabyggð 2017; Breiðdalshreppur 2017; Seyðisfjarðarkaupstaður 2019; Borgarfjarðarhreppur 2019; Djúpavogshreppur 2019; Fljótsdalshérað 2019; Helgafellssveit 2021; Stykkishólmsbær 2021; Sveitarfélagið Skagafjörður 2021; Blönduósbær 2021; Húnavatnshreppur 2021; Akrahreppur 2021; Skútustaðahreppur 2021; Þingeyjarsveit 2021; Svalbarðshreppur 2021; Langanesbyggð 2021; Tálknafjarðarhreppur 2022; Vesturbyggð 2022; Skagabyggð 2022
-  summed into the region the map draws them in, not their number's: ['Sveitarfelagid Hornafjordur (Eastern Region, numbered in Southern Region)']
-    MAN02005 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
-  wrote data/processed/iceland_municipality.json (157 kB)
-  wrote iceland_municipality.json: 81 records
+pxweb: Statistics Finland (FIN)
+  vaerak/11rl.px
+    left out (code does not start 'MK'): 2 — MA1 MA1 MAINLAND FINLAND, MA2 MA2 ÅLAND
+    left out (the country itself): 1 — SSS WHOLE COUNTRY
+    19 units, categories sum to the published total in each
+    ...and to 5,652,881 against a published national 5,652,881
+  language labels the group tree cannot place: none
+  wrote data/processed/finland_region.json (74 kB)
+  19 records
