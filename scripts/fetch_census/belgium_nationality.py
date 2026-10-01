@@ -63,7 +63,7 @@ def leaf(code: str) -> bool:
 def read() -> dict[str, dict[str, float]]:
     """{NUTS code: {citizenship code: people}} for Belgium and its regions and provinces."""
     geos = ["BE", *REGIONS, *PROVINCES]
-    params = [("format", "JSON"), ("lang", "EN"), ("sex", "T")] + [("geo", g) for g in geos]
+    params = [("format", "JSON"), ("lang", "EN"), ("sex", "T"), ("age", "TOTAL")] + [("geo", g) for g in geos]
     payload = http_json(API + "?" + urllib.parse.urlencode(params), timeout=300)
     dims = payload["id"]
     log(f"  {DATASET}: dimensions {dims}, sizes {payload['size']}")

@@ -115,6 +115,11 @@ def build(year: int) -> list[dict[str, Any]]:
     total = national.pop(TOTAL)
     check_sum(national.values(), total, "nationalities against Switzerland")
     labels = {c: label_for(nat_names[c], GERMAN) for c in national}
+    unlabelled = [f"{c} {nat_names[c]!r} ({n:,.0f})" for c, n in national.items()
+                  if labels[c] is None and n / total >= NAMED_SHARE]
+    if unlabelled:
+        raise SystemExit(f"switzerland_nationality: nationalities above the naming threshold "
+                         f"with no label: {unlabelled}")
     names = named(national, total, labels, share=NAMED_SHARE, always=["8100"])
     log(f"  named: {', '.join(str(labels[n]) for n in names)}")
 

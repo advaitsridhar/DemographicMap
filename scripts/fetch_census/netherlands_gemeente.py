@@ -86,6 +86,9 @@ CHUNK = 40
 AGE_CHUNK = 20
 # A background is named when its people are at least this share of the country.
 NAMED_SHARE = 0.003
+# How far StatLine's counts of a gemeente may sit from the key figures' before
+# they are not the same register on the same day.
+AGREE = 0.0005
 DUTCH = "Dutch"
 OTHER_BACKGROUND = "Other migration background"
 CARIBBEAN = "Dutch Caribbean"
@@ -372,18 +375,26 @@ def build() -> list[dict[str, Any]]:
     # Single years of age by sex, the same register on the same day.
     codes = sorted(gemeenten)
     ages = read_ages(codes + ["NL01"])
+    worst = (0.0, "")
     for code, g in gemeenten.items():
         unit = ages.get(code)
         if unit is None:
             raise SystemExit(f"netherlands_gemeente: 03759ned has no {g['name']} ({code})")
-        if abs(sum(unit["m"].values()) - g["men"]) > 0.5 or abs(sum(unit["f"].values()) - g["women"]) > 0.5:
-            raise SystemExit(f"netherlands_gemeente: {g['name']}: 03759ned counts "
-                             f"{sum(unit['m'].values()):,.0f} men and {sum(unit['f'].values()):,.0f} "
-                             f"women, the key figures {g['men']:,.0f} and {g['women']:,.0f}")
-    log("  03759ned: every gemeente's men and women by age are the key figures' men and women")
+        for got, want, who in ((sum(unit["m"].values()), g["men"], "men"),
+                               (sum(unit["f"].values()), g["women"], "women")):
+            # The key figures and StatLine are the same register on the same
+            # day, published a year apart; a handful of later corrections
+            # separates them, never more than AGREE of a gemeente.
+            if abs(got - want) > max(10.0, AGREE * want):
+                raise SystemExit(f"netherlands_gemeente: {g['name']}: 03759ned counts {got:,.0f} "
+                                 f"{who}, the key figures {want:,.0f}")
+            if abs(got - want) / max(want, 1) > worst[0]:
+                worst = (abs(got - want) / max(want, 1), f"{g['name']} {who} {got:,.0f} / {want:,.0f}")
+    log(f"  03759ned against the key figures, men and women: largest difference {worst[0]:.4%} "
+        f"({worst[1]})")
     both = Counter(ages["NL01"]["m"])
     both.update(ages["NL01"]["f"])
-    check_sum([ages["NL01"]["total"]], NATIONAL, "03759ned's national row")
+    check_sum([ages["NL01"]["total"]], NATIONAL, "03759ned's national row", tolerance=AGREE)
     check_national_median(both, "NL", YEAR)
 
     # Migration background, gemeenten, provinces and the country.
@@ -392,13 +403,13 @@ def build() -> list[dict[str, Any]]:
     part = background_parts(titles)
     for code, g in gemeenten.items():
         got = origins.get(code, {}).get(part["total"])
-        if got is None or abs(got - g["total"]) > 0.5:
+        if got is None or abs(got - g["total"]) > max(10.0, AGREE * g["total"]):
             raise SystemExit(f"netherlands_gemeente: {g['name']}: 84910NED counts {got}, the key "
                              f"figures {g['total']:,.0f}")
     names = named_backgrounds(origins["NL01"], titles)
     log(f"  named backgrounds: {', '.join(BACKGROUND[t] for t in names)}")
     check_sum((origins[f"PV{n}"][part["total"]] for n in range(20, 32)), NATIONAL,
-              "provinces against the Netherlands, 84910NED")
+              "provinces against the Netherlands, 84910NED", tolerance=AGREE)
 
     by_name = {g["name"]: code for code, g in gemeenten.items()}
     for part_name, whole in MERGED_INTO.items():
