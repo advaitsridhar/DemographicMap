@@ -2238,6 +2238,82 @@ def deu_zensus() -> None:
         post("data/tablefile", params, show_bytes=400)
 
 
+def zensus(argv: list[str]) -> int:
+    """``zensus meta TABLE ...``: each table's variables and the regional cuts it offers.
+    ``zensus table TABLE REGIONALVARIABLE [GREP]``: the tablefile's size, header, the
+    distinct values of each variable column and the lines matching GREP.
+
+    The account is read from the environment and scrubbed out of everything printed.
+    """
+    import io as _io
+    import os
+    import zipfile
+    base = "https://ergebnisse.zensus2022.de/api/rest/2020"
+    user = os.environ.get("ZENSUS_USER", "").strip()
+    password = os.environ.get("ZENSUS_PASSWORD", "").strip()
+
+    def scrub(value: str) -> str:
+        for secret in (user, password):
+            if secret:
+                value = value.replace(secret, "***")
+        return value
+
+    def post(path: str, params: dict[str, str]) -> tuple[int, str]:
+        headers = {"Accept": "*/*", "Content-Type": "application/x-www-form-urlencoded",
+                   "username": user, "password": password}
+        status, _, blob = fetch(f"{base}/{path}", data=urllib.parse.urlencode(params).encode(),
+                                headers=headers, timeout=600)
+        if blob[:2] == b"PK":
+            with zipfile.ZipFile(_io.BytesIO(blob)) as archive:
+                blob = archive.read(archive.namelist()[0])
+        return status, scrub(blob.decode("utf-8-sig", "replace"))
+
+    if argv[:1] == ["meta"]:
+        for name in argv[1:]:
+            status, page = post("metadata/table", {"name": name, "area": "all", "language": "de"})
+            log(f"\n## metadata/table {name}: HTTP {status}, {len(page):,} chars")
+            try:
+                data = json.loads(page)
+            except json.JSONDecodeError:
+                log("   " + " ".join(page[:500].split()))
+                continue
+            content = data.get("Object") or {}
+            log(f"   title: {content.get('Content')!r}")
+            for key in ("Structure", "Columns", "Rows", "Variables"):
+                if content.get(key):
+                    log(f"   {key}: " + json.dumps(content[key], ensure_ascii=False)[:1800])
+            log("   other keys: " + ", ".join(sorted(content)))
+        return 0
+    if argv[:1] == ["table"] and len(argv) >= 3:
+        name, region = argv[1], argv[2]
+        grep = re.compile(argv[3], re.I) if len(argv) > 3 else None
+        params = {"name": name, "area": "all", "format": "ffcsv", "compress": "false",
+                  "language": "de", "regionalvariable": region}
+        status, page = post("data/tablefile", params)
+        lines = page.splitlines()
+        log(f"\n## tablefile {name} {region}: HTTP {status}, {len(lines):,} lines")
+        if status != 200 or not lines:
+            log("   " + " ".join(page[:600].split()))
+            return 0
+        header = lines[0].split(";")
+        log("   header: " + " | ".join(header))
+        rows = [line.split(";") for line in lines[1:]]
+        for i, column in enumerate(header):
+            if column.endswith(("_attribute_label", "value_unit", "_variable_code")):
+                values = sorted({r[i] for r in rows if len(r) > i})
+                log(f"   {column}: {len(values)} values: " + " | ".join(values[:70])[:2500])
+        for line in lines[1:4]:
+            log("   > " + line[:400])
+        if grep:
+            hits = [line for line in lines[1:] if grep.search(line)]
+            log(f"   {len(hits)} lines match {argv[3]!r}")
+            for line in hits[:60]:
+                log("   ~ " + line[:300])
+        return 0
+    log("usage: zensus meta TABLE ... | zensus table TABLE REGIONALVARIABLE [GREP]")
+    return 0
+
+
 PROBES: dict[str, Callable[[], None]] = {
     "deu_zensus": deu_zensus,
     "che16": che16,
@@ -2289,6 +2365,8 @@ def main(argv: list[str]) -> int:
         return 0
     if argv[0] in ("fetch", "cdx"):
         return generic(argv)
+    if argv[0] == "zensus":
+        return zensus(argv[1:])
     if argv[0] == "px":
         for url in argv[1:]:
             pxweb_meta(url)
