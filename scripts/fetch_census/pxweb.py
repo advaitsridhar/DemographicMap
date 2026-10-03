@@ -60,8 +60,29 @@ class Table:
                  keep: dict[str, str] | None = None, year: int | None = None,
                  note: str = "", drop: tuple[str, ...] = (),
                  geo_len: int | None = None, geo_stem: int | None = None,
-                 geo_prefix: str | None = None, national: str | None = None):
+                 geo_prefix: str | None = None, national: str | None = None,
+                 withhold: dict[str, str] | None = None,
+                 relabel: dict[str, str] | None = None,
+                 fold_into: str | None = None, fold_keep: tuple[str, ...] = (),
+                 unknown: str | None = None):
         self.path = path
+        # A classification with a long tail -- Finland's register names 166
+        # languages -- is drawn as a list in which most rows read 0.0% and the
+        # shares sum to 99.3%. Where ``fold_into`` is set, every category under
+        # 0.05% of its unit is counted in that category instead (nordic_common.
+        # fold_small), except those in ``fold_keep``; the note says how many
+        # and how many people. ``unknown`` names the category that is no
+        # answer at all, so the note does not call it a language.
+        self.fold_into = fold_into
+        self.fold_keep = fold_keep
+        self.unknown = unknown
+        # The office's category label -> the map's. The group tree files a
+        # people by its English adjective ("Polish") and knows the residuals
+        # only by the map's words ("Other", "Not stated", "Other or not
+        # stated"); an office's plural or its own wording for a residual is
+        # otherwise drawn "unclassified". A label not listed is kept as the
+        # office writes it.
+        self.relabel = relabel or {}
         self.field = field
         self.geo = geo
         self.group = group
@@ -95,6 +116,14 @@ class Table:
         # "Latvia", so looking for the word "total" found Estonia's and missed
         # Latvia's -- in the one table the check was written for.
         self.national = national
+        # Units read and checked like any other -- they belong in the sum to
+        # the country -- but not written, each with the reason. A unit is
+        # withheld when the office's figure is for a different territory
+        # from the polygon its name would reach: the office's current county
+        # or municipality is a merger or a redrawing of the one the boundary
+        # file draws, and the figure for the drawn unit comes from an adapter
+        # that reads the drawn vintage.
+        self.withhold = withhold or {}
 
 
 # Filled in from what scripts/probe_pxweb.py actually found. An office is only
@@ -159,9 +188,25 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # counties, so counting them beside their parents would double
             # those two counties' people.
             drop=("unk", "784", "793"), national="00",
+            # The boundary file draws Estonia's counties as they were before
+            # the 2017 reform (it files Hanila and Lihula under Lääne), and
+            # this table is by the counties formed then. Statistics Estonia
+            # gave every county whose territory the reform changed a new
+            # code; only Harju, Hiiu, Saare and Viljandi kept theirs, so only
+            # those four are the drawn territory. The other eleven come from
+            # estonia.py, which reads the archived table by the old counties.
+            withhold={code: "its territory changed in 2017 (new county code); the drawn "
+                            "county is the pre-reform one, which estonia.py reads"
+                      for code in ("45", "50", "52", "56", "60", "64", "68", "71", "79",
+                                   "81", "87")},
+            # The same words estonia.py writes for the eleven other counties.
+            relabel={"Estonians": "Estonian", "Russians": "Russian",
+                     "Other ethnic nationalities": "Other",
+                     "Ethnic nationality unknown": "Not stated"},
             note="Ethnic nationality as recorded in the population register on "
                  "1 January 2026, not a census answer. Estonia asks it of "
-                 "residents rather than inferring it from citizenship."),
+                 "residents rather than inferring it from citizenship. 'Not "
+                 "stated' is the register's 'ethnic nationality unknown'."),
         ],
     },
     "FIN": {
@@ -216,6 +261,11 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # most of the country twice, and neither label is a word is_total()
             # knows.
             drop=("01", "02"),
+            # The national languages are always listed, however few speak one
+            # in a region; the rest of the tail goes into the register's own
+            # "Other language", as finland.py does for the sub-regions.
+            fold_into="Other language", fold_keep=("Finnish", "Swedish", "Sami"),
+            unknown="Unknown",
             note="Mother tongue as recorded in the population register on 31 "
                  "December 2025. Finland registers one language per resident, "
                  "so these are shares of everyone rather than of the people "
@@ -244,10 +294,24 @@ INSTANCES: dict[str, dict[str, Any]] = {
             # statistical regions, defined before and after 1 January 2024,
             # which overlap each other.
             geo_len=9, geo_stem=6, national="LV",
+            # Madona absorbed Varakļāni on 1 July 2025; the boundary file
+            # still draws both. The merged municipality's figure would land
+            # on the old Madona polygon by name. latvia.py writes both drawn
+            # municipalities from the beginning of 2025, before the merger.
+            withhold={"LV0038001": "Madona after absorbing Varakļāni on 1 July 2025; the map "
+                                   "draws the two apart, and latvia.py writes each"},
+            # latvia.py's words for the same table (IRE031), so the two files
+            # agree label for label.
+            relabel={"Latvians": "Latvian", "Russians": "Russian",
+                     "Belarusians": "Belarusian", "Ukrainians": "Ukrainian",
+                     "Poles": "Polish", "Lithuanians": "Lithuanian", "Jews": "Jewish",
+                     "Roma": "Romani", "Estonians": "Estonian", "Germans": "German",
+                     "Other ethnicities, including not selected and not indicated "
+                     "ethnicity": "Other or not stated"},
             note="Ethnicity as recorded in the population register at the "
-                 "beginning of 2026. 'Other ethnicities' also holds people who "
-                 "selected none and people who did not indicate one, so it is "
-                 "not a count of anyone in particular."),
+                 "beginning of 2026. 'Other or not stated' is CSB's own residual: "
+                 "other ethnicities together with people who selected none or did "
+                 "not indicate one, so it is not a count of anyone in particular."),
         ],
     },
 }
@@ -522,7 +586,8 @@ def fetch(base: str, table: Table) -> tuple[dict[str, dict[str, Any]], float | N
         elif group_label.startswith(CHILD_MARKER):
             continue                    # counted already inside its parent
         elif group_code not in table.drop:
-            entry["counts"][group_label] = entry["counts"].get(group_label, 0.0) + value
+            label = table.relabel.get(group_label, group_label)
+            entry["counts"][label] = entry["counts"].get(label, 0.0) + value
     # Containment can only be seen once every code is in hand: a town looks
     # exactly like a municipality until the municipality turns up beside it.
     for code, parent in drop_nested(list(areas), table).items():
@@ -576,6 +641,37 @@ def check(iso3: str, table: Table, areas: dict[str, dict[str, Any]],
     log(f"    ...and to {summed:,.0f} against a published national {national:,.0f}")
 
 
+NOUNS = {"language": "languages", "religion": "religions", "ethnicity": "groups"}
+
+
+def composition(table: Table, counts: dict[str, float],
+                total: float | None) -> tuple[list[dict[str, Any]], str]:
+    """One unit's shares and their note.
+
+    A category with nobody in it says nothing a reader can use, so it is
+    dropped; where the table folds its tail (``Table.fold_into``), every
+    category under 0.05% of the unit is counted in the fold, and the note says
+    how many and how many people.
+    """
+    kept = {k: v for k, v in counts.items() if v}
+    note = table.note
+    if table.fold_into:
+        from .nordic_common import fold_small
+        folded, _n, people = fold_small(kept, total or sum(kept.values()), table.fold_into,
+                                        keep=table.fold_keep)
+        gone = set(kept) - set(folded)
+        unknown = kept.get(table.unknown, 0) if table.unknown in gone else 0
+        named = len(gone - {table.unknown})
+        if gone:
+            note += (f" '{table.fold_into}' also counts the {named} "
+                     f"{NOUNS.get(table.field, 'categories')} each under 0.05% of the "
+                     "people here" + (f", and the {int(round(unknown)):,} recorded as unknown"
+                                      if unknown else "")
+                     + f" -- {int(round(people)):,} people in all.")
+        kept = folded
+    return shares(kept, total=total), note
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -596,7 +692,12 @@ def main() -> int:
         areas, national = fetch(spec["base"], table)
         check(iso3, table, areas, national)
         local = local_names(spec["base"], table, spec["local"]) if spec.get("local") else {}
+        for code, reason in sorted(table.withhold.items()):
+            if code in areas:
+                log(f"    withheld {code} {areas[code]['name']}: {reason}")
         for code, entry in areas.items():
+            if code in table.withhold:
+                continue
             # The local name leads because it is what the boundary file
             # carries; the English one follows as an alias so a search for
             # "Aizkraukle municipality" still finds the place.
@@ -605,8 +706,8 @@ def main() -> int:
                 "aliases": [entry["name"]] if local.get(code) else [],
                 "fields": {}, "population": None, "notes": {}})
             slot["population"] = slot["population"] or entry["total"]
-            slot["fields"][table.field] = shares(entry["counts"], total=entry["total"])
-            slot["notes"][table.field] = table.note
+            slot["fields"][table.field], slot["notes"][table.field] = composition(
+                table, entry["counts"], entry["total"])
             slot["year"] = table.year
 
     source = {"field": "/".join(sorted({t.field for t in spec["tables"]})),
@@ -631,6 +732,11 @@ def main() -> int:
                         if slot["population"] else gap(NOT_AVAILABLE)),
             sources=[source], **fields))
 
+    from .nordic_common import unplaced
+    for field in sorted({t.field for t in spec["tables"]}):
+        labels = {g["group"] for r in records if isinstance(r.get(field), list)
+                  for g in r[field]}
+        log(f"  {field} labels the group tree cannot place: {unplaced(field, labels) or 'none'}")
     out = args.out or PROCESSED / f"{spec['file']}.json"
     write_json(out, records)
     log(f"  {len(records)} records")

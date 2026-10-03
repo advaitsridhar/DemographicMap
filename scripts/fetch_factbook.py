@@ -30,6 +30,7 @@ from common import (  # noqa: E402
     NOT_AVAILABLE,
     NOT_COLLECTED_POLICY,
     collection_gap,
+    collection_policy,
     NOT_COLLECTED,
     PROCESSED,
     RAW,
@@ -472,14 +473,29 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
     policy = NOT_COLLECTED_POLICY.get(iso3 or "", {})
 
     def composition(field: str, text: str | None, parsed: Any = None) -> Any:
-        """The Factbook's figure for one field, unless the country declares it
-        uncollected -- in which case the declaration is the answer.
+        """The Factbook's figure for one field, or the country's declaration
+        that its census does not gather it where the Factbook has no shares.
 
         ``parsed`` is for language, whose reader is not ``parse_composition``:
         it keeps a named language with no share rather than dropping it. The
         policy gate is in front of both, because which parser produced a
         composition has nothing to do with whether the country gathers it.
+
+        A declaration used to be the answer whatever the Factbook printed, on
+        the ground that an outside estimate is no evidence against what a state
+        gathers. By the owner's instruction of 27 September 2026 a census that
+        does not ask is not the end of the search: Italy's "Christian 80.8%,
+        Muslim 4.9%, unaffiliated 13.4% (2020 est.)" is a measurement, and
+        erasing it left the country saying "not collected" while one existed.
+        So whatever the Factbook gives stands -- a composition with shares, or a
+        list of the languages spoken, which is information even where it cannot
+        colour the map -- and the declaration goes into its note
+        (``factbook_notes``). Only where the Factbook gives nothing the parsers
+        can read is the declaration the answer.
         """
+        comp = parse_composition(text) if parsed is None else parsed
+        if field in policy and comp:
+            return comp
         if field in policy:
             # collection_gap, not gap(NOT_COLLECTED, policy[field]): a policy
             # entry is either a plain reason or a {status, note} pair, and this
@@ -494,7 +510,6 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
             # answers for the same field, so there is no fallback to write --
             # and the one that was here was the nested-dict bug itself.
             return collection_gap(iso3, field)
-        comp = parse_composition(text) if parsed is None else parsed
         if comp:
             return comp
         if text:
@@ -521,7 +536,7 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
     # Factbook does not still say in its own file.
     language = composition("language", language_text, parsed=parse_languages(profile))
 
-    return {
+    record = {
         "id": iso3 or f"GEC-{gec.upper()}",
         "level": "admin0",
         "name": name,
@@ -568,6 +583,38 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
             "retrieved_via": "factbook/factbook.json mirror",
         }],
     }
+    record.update(factbook_notes(iso3, {"religion": (religion, religion_text),
+                                        "language": (language, language_text),
+                                        "ethnicity": (ethnicity, ethnic_text)}))
+    return record
+
+
+def has_shares(comp: Any) -> bool:
+    """A composition that gives at least one group a share, not a bare list."""
+    return isinstance(comp, list) and any(
+        isinstance(row, dict) and isinstance(row.get("pct"), (int, float))
+        for row in comp)
+
+
+def factbook_notes(iso3: str | None, fields: dict[str, tuple[Any, str | None]]) -> dict[str, str]:
+    """The note a Factbook estimate carries where the census does not ask.
+
+    The country's declaration stays true -- its census does not gather the
+    field -- and the figure beside it is the Factbook's, with the Factbook's
+    own words for where it comes from, so the panel says what the number is
+    rather than letting it pass for a census count.
+    """
+    notes: dict[str, str] = {}
+    for field, (value, text) in fields.items():
+        reason = collection_policy(iso3, field)
+        if reason and isinstance(value, list) and value:
+            quoted = re.sub(r"\s+", " ", text or "").strip()
+            if len(quoted) > 300:
+                quoted = quoted[:297].rsplit(" ", 1)[0] + "..."
+            what = ("figure shown is the CIA World Factbook's estimate" if has_shares(value)
+                    else "list shown is the CIA World Factbook's, with no shares")
+            notes[f"{field}_note"] = f"{reason} The {what}, which reads: \"{quoted}\"."
+    return notes
 
 
 # ---------------------------------------------------------------------------
@@ -585,8 +632,17 @@ def main() -> int:
 
     index = read_json(RAW / "codes" / "country_index.json", [])
     if not index:
-        log("  ERROR: run scripts/fetch_natural_earth.py first "
-            "(it writes data/raw/codes/country_index.json).")
+        # data/raw is not committed, so a fresh checkout -- a runner -- has no
+        # index. Build it here from Natural Earth's countries, as
+        # fetch_natural_earth does, without that script's other output
+        # (cities.json), which this run has no business rewriting.
+        from fetch_natural_earth import build_country_index, load
+        log("  no country index; building it from Natural Earth's admin-0 countries")
+        index = build_country_index(load("ne_10m_admin_0_countries"))
+        write_json(RAW / "codes" / "country_index.json", index)
+    if not index:
+        log("  ERROR: no country index, and Natural Earth gave none "
+            "(fetch_natural_earth.py writes data/raw/codes/country_index.json).")
         return 1
     resolver = CountryResolver(index)
 

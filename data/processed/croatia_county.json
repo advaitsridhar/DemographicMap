@@ -16,10 +16,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 44.4,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 93.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -110,6 +116,11 @@
         "count": 630
       },
       {
+        "group": "Slovenian",
+        "pct": 0.2,
+        "count": 430
+      },
+      {
         "group": "German",
         "pct": 0.1,
         "count": 219
@@ -133,11 +144,6 @@
         "group": "Serbo-Croatian",
         "pct": 0.1,
         "count": 177
-      },
-      {
-        "group": "Slovenian",
-        "pct": 0.1,
-        "count": 430
       },
       {
         "group": "Bulgarian",
@@ -218,12 +224,12 @@
     "ethnicity": [
       {
         "group": "Croatian",
-        "pct": 96.6,
+        "pct": 96.7,
         "count": 289929
       },
       {
         "group": "Not stated",
-        "pct": 0.7,
+        "pct": 0.8,
         "count": 2246
       },
       {
@@ -368,6 +374,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -380,7 +392,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-krapinsko-zagorska",
@@ -399,10 +412,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 45.4,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 94.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -451,14 +470,14 @@
         "count": 218
       },
       {
-        "group": "Eastern religions",
-        "pct": 0.1,
-        "count": 72
-      },
-      {
         "group": "Protestant",
         "pct": 0.1,
         "count": 73
+      },
+      {
+        "group": "Eastern religions",
+        "pct": 0.0,
+        "count": 72
       },
       {
         "group": "Judaism",
@@ -605,6 +624,11 @@
         "count": 190
       },
       {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 171
+      },
+      {
         "group": "Albanian",
         "pct": 0.1,
         "count": 87
@@ -615,9 +639,9 @@
         "count": 73
       },
       {
-        "group": "Other",
+        "group": "Macedonian",
         "pct": 0.1,
-        "count": 171
+        "count": 41
       },
       {
         "group": "Regional affiliation",
@@ -658,11 +682,6 @@
         "group": "Italian",
         "pct": 0.0,
         "count": 11
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 41
       },
       {
         "group": "Montenegrin",
@@ -721,6 +740,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -733,7 +758,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-sisačko-moslavačka",
@@ -752,10 +778,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 48.2,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 94.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -836,6 +868,11 @@
         "count": 1580
       },
       {
+        "group": "Bosnian",
+        "pct": 0.5,
+        "count": 626
+      },
+      {
         "group": "Croato-Serbian",
         "pct": 0.5,
         "count": 652
@@ -846,9 +883,9 @@
         "count": 653
       },
       {
-        "group": "Bosnian",
-        "pct": 0.4,
-        "count": 626
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 346
       },
       {
         "group": "Serbo-Croatian",
@@ -856,14 +893,19 @@
         "count": 411
       },
       {
-        "group": "Albanian",
-        "pct": 0.2,
-        "count": 346
-      },
-      {
         "group": "Czech",
         "pct": 0.1,
         "count": 154
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 61
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 62
       },
       {
         "group": "Other",
@@ -881,11 +923,6 @@
         "count": 8
       },
       {
-        "group": "German",
-        "pct": 0.0,
-        "count": 61
-      },
-      {
         "group": "Hungarian",
         "pct": 0.0,
         "count": 42
@@ -894,11 +931,6 @@
         "group": "Italian",
         "pct": 0.0,
         "count": 53
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 62
       },
       {
         "group": "Montenegrin",
@@ -1089,6 +1121,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -1101,7 +1139,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-karlovačka",
@@ -1120,10 +1159,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 48.3,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 94.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -1200,7 +1245,7 @@
       },
       {
         "group": "Bosnian",
-        "pct": 0.5,
+        "pct": 0.6,
         "count": 616
       },
       {
@@ -1224,6 +1269,11 @@
         "count": 242
       },
       {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 167
+      },
+      {
         "group": "Slovenian",
         "pct": 0.2,
         "count": 239
@@ -1237,11 +1287,6 @@
         "group": "Macedonian",
         "pct": 0.1,
         "count": 64
-      },
-      {
-        "group": "Other",
-        "pct": 0.1,
-        "count": 167
       },
       {
         "group": "Bulgarian",
@@ -1322,7 +1367,7 @@
       },
       {
         "group": "Serbian",
-        "pct": 7.7,
+        "pct": 7.8,
         "count": 8683
       },
       {
@@ -1337,8 +1382,13 @@
       },
       {
         "group": "Not stated",
-        "pct": 0.6,
+        "pct": 0.7,
         "count": 723
+      },
+      {
+        "group": "Religious affiliation given as ethnicity",
+        "pct": 0.3,
+        "count": 273
       },
       {
         "group": "Albanian",
@@ -1349,11 +1399,6 @@
         "group": "Other",
         "pct": 0.2,
         "count": 255
-      },
-      {
-        "group": "Religious affiliation given as ethnicity",
-        "pct": 0.2,
-        "count": 273
       },
       {
         "group": "Slovene",
@@ -1369,6 +1414,11 @@
         "group": "Not classified",
         "pct": 0.1,
         "count": 62
+      },
+      {
+        "group": "Roma",
+        "pct": 0.1,
+        "count": 55
       },
       {
         "group": "Austrian",
@@ -1421,11 +1471,6 @@
         "count": 24
       },
       {
-        "group": "Roma",
-        "pct": 0.0,
-        "count": 55
-      },
-      {
         "group": "Romanian",
         "pct": 0.0,
         "count": 3
@@ -1457,6 +1502,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -1469,7 +1520,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-varaždinska",
@@ -1488,10 +1540,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 44.8,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 94.6,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -1511,7 +1569,7 @@
       },
       {
         "group": "Not stated",
-        "pct": 2.3,
+        "pct": 2.4,
         "count": 3730
       },
       {
@@ -1577,19 +1635,24 @@
         "count": 484
       },
       {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 221
+      },
+      {
         "group": "Other",
         "pct": 0.2,
         "count": 344
       },
       {
-        "group": "Albanian",
-        "pct": 0.1,
-        "count": 221
-      },
-      {
         "group": "Bosnian",
         "pct": 0.1,
         "count": 154
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 59
       },
       {
         "group": "Serbian",
@@ -1610,11 +1673,6 @@
         "group": "Czech",
         "pct": 0.0,
         "count": 27
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 59
       },
       {
         "group": "Hungarian",
@@ -1704,19 +1762,24 @@
         "count": 444
       },
       {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 226
+      },
+      {
         "group": "Not declared",
         "pct": 0.2,
         "count": 287
       },
       {
-        "group": "Albanian",
-        "pct": 0.1,
-        "count": 226
-      },
-      {
         "group": "Bosniak",
         "pct": 0.1,
         "count": 100
+      },
+      {
+        "group": "Not classified",
+        "pct": 0.1,
+        "count": 52
       },
       {
         "group": "Austrian",
@@ -1762,11 +1825,6 @@
         "group": "Montenegrin",
         "pct": 0.0,
         "count": 24
-      },
-      {
-        "group": "Not classified",
-        "pct": 0.0,
-        "count": 52
       },
       {
         "group": "Polish",
@@ -1820,6 +1878,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -1832,7 +1896,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-koprivničko-križevačka",
@@ -1851,10 +1916,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 45.9,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 94.3,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -2087,6 +2158,11 @@
         "count": 62
       },
       {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 42
+      },
+      {
         "group": "Other",
         "pct": 0.1,
         "count": 124
@@ -2125,11 +2201,6 @@
         "group": "Jewish",
         "pct": 0.0,
         "count": 4
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 42
       },
       {
         "group": "Montenegrin",
@@ -2188,6 +2259,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -2200,7 +2277,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-bjelovarsko-bilogorska",
@@ -2219,10 +2297,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.7,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -2556,6 +2640,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -2568,7 +2658,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-primorsko-goranska",
@@ -2587,10 +2678,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 48.3,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 91.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -2701,6 +2798,11 @@
         "count": 840
       },
       {
+        "group": "German",
+        "pct": 0.2,
+        "count": 388
+      },
+      {
         "group": "Macedonian",
         "pct": 0.2,
         "count": 516
@@ -2711,14 +2813,14 @@
         "count": 340
       },
       {
-        "group": "German",
-        "pct": 0.1,
-        "count": 388
-      },
-      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 259
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 123
       },
       {
         "group": "Romani",
@@ -2744,11 +2846,6 @@
         "group": "Hebrew",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Montenegrin",
-        "pct": 0.0,
-        "count": 123
       },
       {
         "group": "Polish",
@@ -2848,11 +2945,6 @@
         "count": 443
       },
       {
-        "group": "Montenegrin",
-        "pct": 0.2,
-        "count": 414
-      },
-      {
         "group": "Regional affiliation",
         "pct": 0.2,
         "count": 493
@@ -2871,6 +2963,11 @@
         "group": "Hungarian",
         "pct": 0.1,
         "count": 302
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 414
       },
       {
         "group": "Not classified",
@@ -2939,6 +3036,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -2951,7 +3054,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-ličko-senjska",
@@ -2970,10 +3074,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 49.2,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.3,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -3022,14 +3132,14 @@
         "count": 141
       },
       {
+        "group": "Protestant",
+        "pct": 0.1,
+        "count": 21
+      },
+      {
         "group": "Eastern religions",
         "pct": 0.0,
         "count": 11
-      },
-      {
-        "group": "Protestant",
-        "pct": 0.0,
-        "count": 21
       }
     ],
     "language": [
@@ -3161,6 +3271,11 @@
         "count": 4062
       },
       {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 191
+      },
+      {
         "group": "Religious affiliation given as ethnicity",
         "pct": 0.5,
         "count": 206
@@ -3169,11 +3284,6 @@
         "group": "Not declared",
         "pct": 0.4,
         "count": 151
-      },
-      {
-        "group": "Not stated",
-        "pct": 0.4,
-        "count": 191
       },
       {
         "group": "Albanian",
@@ -3292,6 +3402,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -3304,7 +3420,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-virovitičko-podravska",
@@ -3323,10 +3440,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.5,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 93.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -3375,14 +3498,14 @@
         "count": 251
       },
       {
+        "group": "Eastern religions",
+        "pct": 0.1,
+        "count": 33
+      },
+      {
         "group": "Protestant",
         "pct": 0.1,
         "count": 81
-      },
-      {
-        "group": "Eastern religions",
-        "pct": 0.0,
-        "count": 33
       },
       {
         "group": "Judaism",
@@ -3437,6 +3560,16 @@
         "count": 101
       },
       {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 33
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
         "group": "Serbo-Croatian",
         "pct": 0.1,
         "count": 80
@@ -3467,19 +3600,9 @@
         "count": 4
       },
       {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
         "group": "Polish",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Romani",
-        "pct": 0.0,
-        "count": 31
       },
       {
         "group": "Romanian",
@@ -3520,7 +3643,7 @@
       },
       {
         "group": "Not stated",
-        "pct": 0.5,
+        "pct": 0.6,
         "count": 386
       },
       {
@@ -3530,7 +3653,7 @@
       },
       {
         "group": "Albanian",
-        "pct": 0.2,
+        "pct": 0.3,
         "count": 173
       },
       {
@@ -3650,6 +3773,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -3662,7 +3791,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-požeško-slavonska",
@@ -3681,10 +3811,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.4,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 94.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -3795,6 +3931,11 @@
         "count": 74
       },
       {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
         "group": "Other",
         "pct": 0.1,
         "count": 45
@@ -3818,11 +3959,6 @@
         "group": "Hungarian",
         "pct": 0.0,
         "count": 30
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 31
       },
       {
         "group": "Montenegrin",
@@ -4013,6 +4149,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -4025,7 +4167,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-brodsko-posavska",
@@ -4044,10 +4187,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.4,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -4143,6 +4292,16 @@
         "count": 150
       },
       {
+        "group": "Croato-Serbian",
+        "pct": 0.1,
+        "count": 50
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 51
+      },
+      {
         "group": "Other",
         "pct": 0.1,
         "count": 74
@@ -4163,19 +4322,9 @@
         "count": 6
       },
       {
-        "group": "Croato-Serbian",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
         "group": "Czech",
         "pct": 0.0,
         "count": 24
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 51
       },
       {
         "group": "Hungarian",
@@ -4275,6 +4424,16 @@
         "count": 161
       },
       {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 46
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 56
+      },
+      {
         "group": "Other",
         "pct": 0.1,
         "count": 134
@@ -4298,16 +4457,6 @@
         "group": "Bulgarian",
         "pct": 0.0,
         "count": 5
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 46
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 56
       },
       {
         "group": "Hungarian",
@@ -4386,6 +4535,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -4398,7 +4553,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-zadarska",
@@ -4417,10 +4573,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 45.7,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -4444,11 +4606,6 @@
         "count": 4666
       },
       {
-        "group": "Not stated",
-        "pct": 1.2,
-        "count": 1844
-      },
-      {
         "group": "Agnostics and sceptics",
         "pct": 1.1,
         "count": 1727
@@ -4457,6 +4614,11 @@
         "group": "Not declared",
         "pct": 1.1,
         "count": 1706
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.1,
+        "count": 1844
       },
       {
         "group": "Islam",
@@ -4531,11 +4693,6 @@
         "count": 291
       },
       {
-        "group": "Czech",
-        "pct": 0.1,
-        "count": 80
-      },
-      {
         "group": "Hungarian",
         "pct": 0.1,
         "count": 86
@@ -4559,6 +4716,11 @@
         "group": "Bulgarian",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 80
       },
       {
         "group": "Montenegrin",
@@ -4759,6 +4921,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -4771,7 +4939,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-osječko-baranjska",
@@ -4790,10 +4959,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.1,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 92.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -4865,7 +5040,7 @@
       },
       {
         "group": "Serbian",
-        "pct": 2.5,
+        "pct": 2.6,
         "count": 6571
       },
       {
@@ -4884,14 +5059,14 @@
         "count": 969
       },
       {
+        "group": "Serbo-Croatian",
+        "pct": 0.4,
+        "count": 890
+      },
+      {
         "group": "Not stated",
         "pct": 0.3,
         "count": 839
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 0.3,
-        "count": 890
       },
       {
         "group": "Albanian",
@@ -4899,19 +5074,24 @@
         "count": 630
       },
       {
+        "group": "Bosnian",
+        "pct": 0.2,
+        "count": 386
+      },
+      {
         "group": "Croato-Serbian",
         "pct": 0.2,
         "count": 482
       },
       {
-        "group": "Bosnian",
-        "pct": 0.1,
-        "count": 386
-      },
-      {
         "group": "German",
         "pct": 0.1,
         "count": 237
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 128
       },
       {
         "group": "Other",
@@ -4932,11 +5112,6 @@
         "group": "Italian",
         "pct": 0.0,
         "count": 34
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 128
       },
       {
         "group": "Montenegrin",
@@ -4992,18 +5167,18 @@
       },
       {
         "group": "Hungarian",
-        "pct": 2.3,
+        "pct": 2.4,
         "count": 6059
+      },
+      {
+        "group": "Roma",
+        "pct": 0.7,
+        "count": 1660
       },
       {
         "group": "Slovak",
         "pct": 0.7,
         "count": 1723
-      },
-      {
-        "group": "Roma",
-        "pct": 0.6,
-        "count": 1660
       },
       {
         "group": "Not declared",
@@ -5132,6 +5307,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -5144,7 +5325,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-šibensko-kninska",
@@ -5163,10 +5345,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 49.3,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 97.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -5233,7 +5421,7 @@
     "language": [
       {
         "group": "Croatian",
-        "pct": 92.5,
+        "pct": 92.6,
         "count": 89199
       },
       {
@@ -5272,6 +5460,11 @@
         "count": 204
       },
       {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
         "group": "German",
         "pct": 0.1,
         "count": 120
@@ -5300,11 +5493,6 @@
         "group": "Bulgarian",
         "pct": 0.0,
         "count": 3
-      },
-      {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 43
       },
       {
         "group": "Hebrew",
@@ -5404,6 +5592,11 @@
         "count": 58
       },
       {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
         "group": "Macedonian",
         "pct": 0.1,
         "count": 68
@@ -5447,11 +5640,6 @@
         "group": "Czech",
         "pct": 0.0,
         "count": 39
-      },
-      {
-        "group": "Italian",
-        "pct": 0.0,
-        "count": 43
       },
       {
         "group": "Jewish",
@@ -5505,6 +5693,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -5517,7 +5711,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-vukovarsko-srijemska",
@@ -5536,10 +5731,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 46.7,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 93.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -5554,7 +5755,7 @@
       },
       {
         "group": "Other Christian",
-        "pct": 2.6,
+        "pct": 2.7,
         "count": 3786
       },
       {
@@ -5630,6 +5831,11 @@
         "count": 606
       },
       {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 498
+      },
+      {
         "group": "Serbo-Croatian",
         "pct": 0.4,
         "count": 518
@@ -5640,9 +5846,9 @@
         "count": 404
       },
       {
-        "group": "Not stated",
+        "group": "Croato-Serbian",
         "pct": 0.3,
-        "count": 498
+        "count": 349
       },
       {
         "group": "Albanian",
@@ -5650,9 +5856,9 @@
         "count": 303
       },
       {
-        "group": "Croato-Serbian",
-        "pct": 0.2,
-        "count": 349
+        "group": "German",
+        "pct": 0.1,
+        "count": 63
       },
       {
         "group": "Other",
@@ -5678,11 +5884,6 @@
         "group": "Czech",
         "pct": 0.0,
         "count": 13
-      },
-      {
-        "group": "German",
-        "pct": 0.0,
-        "count": 63
       },
       {
         "group": "Italian",
@@ -5728,7 +5929,7 @@
     "ethnicity": [
       {
         "group": "Croatian",
-        "pct": 81.6,
+        "pct": 81.7,
         "count": 116847
       },
       {
@@ -5758,12 +5959,12 @@
       },
       {
         "group": "Not declared",
-        "pct": 0.4,
+        "pct": 0.5,
         "count": 633
       },
       {
         "group": "Not stated",
-        "pct": 0.3,
+        "pct": 0.4,
         "count": 498
       },
       {
@@ -5785,6 +5986,11 @@
         "group": "German",
         "pct": 0.1,
         "count": 119
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 69
       },
       {
         "group": "Religious affiliation given as ethnicity",
@@ -5820,11 +6026,6 @@
         "group": "Jewish",
         "pct": 0.0,
         "count": 6
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 69
       },
       {
         "group": "Montenegrin",
@@ -5873,6 +6074,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -5885,7 +6092,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-splitsko-dalmatinska",
@@ -5904,10 +6112,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 44.4,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 94.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -6003,9 +6217,19 @@
         "count": 1005
       },
       {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 184
+      },
+      {
         "group": "German",
         "pct": 0.1,
         "count": 429
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 188
       },
       {
         "group": "Macedonian",
@@ -6038,19 +6262,9 @@
         "count": 103
       },
       {
-        "group": "Czech",
-        "pct": 0.0,
-        "count": 184
-      },
-      {
         "group": "Hebrew",
         "pct": 0.0,
         "count": 6
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 188
       },
       {
         "group": "Italian",
@@ -6106,7 +6320,7 @@
     "ethnicity": [
       {
         "group": "Croatian",
-        "pct": 96.8,
+        "pct": 96.9,
         "count": 410041
       },
       {
@@ -6145,6 +6359,11 @@
         "count": 285
       },
       {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 199
+      },
+      {
         "group": "Macedonian",
         "pct": 0.1,
         "count": 269
@@ -6165,6 +6384,11 @@
         "count": 583
       },
       {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 211
+      },
+      {
         "group": "Slovene",
         "pct": 0.1,
         "count": 410
@@ -6183,11 +6407,6 @@
         "group": "Czech",
         "pct": 0.0,
         "count": 172
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 199
       },
       {
         "group": "Italian",
@@ -6218,11 +6437,6 @@
         "group": "Romanian",
         "pct": 0.0,
         "count": 24
-      },
-      {
-        "group": "Russian",
-        "pct": 0.0,
-        "count": 211
       },
       {
         "group": "Rusyn",
@@ -6256,6 +6470,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -6268,7 +6488,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-istarska",
@@ -6287,10 +6508,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 47.2,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 93.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -6315,7 +6542,7 @@
       },
       {
         "group": "Islam",
-        "pct": 4.3,
+        "pct": 4.4,
         "count": 8475
       },
       {
@@ -6406,14 +6633,14 @@
         "count": 657
       },
       {
+        "group": "Romani",
+        "pct": 0.3,
+        "count": 481
+      },
+      {
         "group": "German",
         "pct": 0.2,
         "count": 384
-      },
-      {
-        "group": "Romani",
-        "pct": 0.2,
-        "count": 481
       },
       {
         "group": "Croato-Serbian",
@@ -6439,6 +6666,11 @@
         "group": "Slovak",
         "pct": 0.1,
         "count": 131
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 85
       },
       {
         "group": "Bulgarian",
@@ -6469,11 +6701,6 @@
         "group": "Turkish",
         "pct": 0.0,
         "count": 49
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 85
       },
       {
         "group": "Vlach",
@@ -6519,7 +6746,7 @@
       },
       {
         "group": "Albanian",
-        "pct": 1.1,
+        "pct": 1.0,
         "count": 2055
       },
       {
@@ -6548,11 +6775,6 @@
         "count": 531
       },
       {
-        "group": "German",
-        "pct": 0.2,
-        "count": 305
-      },
-      {
         "group": "Hungarian",
         "pct": 0.2,
         "count": 360
@@ -6571,6 +6793,11 @@
         "group": "Czech",
         "pct": 0.1,
         "count": 112
+      },
+      {
+        "group": "German",
+        "pct": 0.1,
+        "count": 305
       },
       {
         "group": "Russian",
@@ -6634,6 +6861,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -6646,7 +6879,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-dubrovačko-neretvanska",
@@ -6665,10 +6899,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 44.5,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -6735,7 +6975,7 @@
     "language": [
       {
         "group": "Croatian",
-        "pct": 96.2,
+        "pct": 96.3,
         "count": 111230
       },
       {
@@ -6754,19 +6994,24 @@
         "count": 611
       },
       {
+        "group": "Serbian",
+        "pct": 0.4,
+        "count": 400
+      },
+      {
         "group": "Albanian",
         "pct": 0.3,
         "count": 323
       },
       {
-        "group": "Serbian",
-        "pct": 0.3,
-        "count": 400
-      },
-      {
         "group": "German",
         "pct": 0.1,
         "count": 152
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 54
       },
       {
         "group": "Macedonian",
@@ -6812,11 +7057,6 @@
         "group": "Hebrew",
         "pct": 0.0,
         "count": 2
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 54
       },
       {
         "group": "Italian",
@@ -6872,7 +7112,7 @@
       },
       {
         "group": "Serbian",
-        "pct": 1.2,
+        "pct": 1.3,
         "count": 1433
       },
       {
@@ -6931,6 +7171,11 @@
         "count": 156
       },
       {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 48
+      },
+      {
         "group": "Slovene",
         "pct": 0.1,
         "count": 126
@@ -6976,11 +7221,6 @@
         "count": 9
       },
       {
-        "group": "Russian",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
         "group": "Rusyn",
         "pct": 0.0,
         "count": 1
@@ -7007,6 +7247,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -7019,7 +7265,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-međimurska",
@@ -7038,10 +7285,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 43.8,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -7081,7 +7334,7 @@
       },
       {
         "group": "Protestant",
-        "pct": 0.5,
+        "pct": 0.4,
         "count": 478
       },
       {
@@ -7132,14 +7385,14 @@
         "count": 230
       },
       {
+        "group": "Bosnian",
+        "pct": 0.2,
+        "count": 153
+      },
+      {
         "group": "Other",
         "pct": 0.2,
         "count": 224
-      },
-      {
-        "group": "Bosnian",
-        "pct": 0.1,
-        "count": 153
       },
       {
         "group": "German",
@@ -7150,6 +7403,11 @@
         "group": "Hungarian",
         "pct": 0.1,
         "count": 59
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 48
       },
       {
         "group": "Russian",
@@ -7175,11 +7433,6 @@
         "group": "Italian",
         "pct": 0.0,
         "count": 9
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 48
       },
       {
         "group": "Montenegrin",
@@ -7269,6 +7522,16 @@
         "count": 92
       },
       {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 47
+      },
+      {
         "group": "Russian",
         "pct": 0.1,
         "count": 118
@@ -7294,11 +7557,6 @@
         "count": 40
       },
       {
-        "group": "Hungarian",
-        "pct": 0.0,
-        "count": 43
-      },
-      {
         "group": "Italian",
         "pct": 0.0,
         "count": 10
@@ -7307,11 +7565,6 @@
         "group": "Jewish",
         "pct": 0.0,
         "count": 8
-      },
-      {
-        "group": "Macedonian",
-        "pct": 0.0,
-        "count": 47
       },
       {
         "group": "Montenegrin",
@@ -7355,6 +7608,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -7367,7 +7626,8 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   },
   {
     "id": "HRV-grad-zagreb",
@@ -7386,10 +7646,16 @@
       "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 43.1,
+      "unit": "years",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 87.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results"
     },
     "religion": [
       {
@@ -7449,7 +7715,7 @@
       },
       {
         "group": "Judaism",
-        "pct": 0.0,
+        "pct": 0.1,
         "count": 347
       }
     ],
@@ -7490,6 +7756,11 @@
         "count": 1212
       },
       {
+        "group": "Slovenian",
+        "pct": 0.2,
+        "count": 1140
+      },
+      {
         "group": "Croato-Serbian",
         "pct": 0.1,
         "count": 613
@@ -7523,11 +7794,6 @@
         "group": "Serbo-Croatian",
         "pct": 0.1,
         "count": 1094
-      },
-      {
-        "group": "Slovenian",
-        "pct": 0.1,
-        "count": 1140
       },
       {
         "group": "Bulgarian",
@@ -7672,6 +7938,11 @@
         "count": 1126
       },
       {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 380
+      },
+      {
         "group": "Austrian",
         "pct": 0.0,
         "count": 84
@@ -7700,11 +7971,6 @@
         "group": "Romanian",
         "pct": 0.0,
         "count": 71
-      },
-      {
-        "group": "Russian",
-        "pct": 0.0,
-        "count": 380
       },
       {
         "group": "Rusyn",
@@ -7738,6 +8004,12 @@
         "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results",
         "url": "https://dzs.gov.hr/vijesti/objavljeni-konacni-rezultati-popisa-2021/1270",
         "license": "DZS open data (free reuse with attribution)"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Croatian Bureau of Statistics (DZS), Census of Population, Households and Dwellings 2021, final results, sheet 20",
+        "url": "https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx",
+        "license": "DZS open data (free reuse with attribution)"
       }
     ],
     "country": "HRV",
@@ -7750,6 +8022,7 @@
     "religion_year": 2021,
     "religion_note": "Religion (vjera), Popis 2021, one answer per person, voluntary, at the categories the bureau publishes; agnostics, the not religious, the undeclared and the unknown are kept as their own bars.",
     "language_year": 2021,
-    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept."
+    "language_note": "Mother tongue (materinski jezik), Popis 2021, one answer per person, at the languages the bureau publishes; Other and Unknown are kept.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the census's population by age group and sex (sheet 20 of the towns and municipalities workbook): the bureau publishes nothing finer by town."
   }
 ]

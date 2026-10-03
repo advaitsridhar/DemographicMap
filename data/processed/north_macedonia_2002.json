@@ -1,0 +1,517 @@
+[
+  {
+    "id": "MKD-2002-kichevo",
+    "level": "admin2",
+    "name": "Kichevo",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 53.9,
+        "count": 16234
+      },
+      {
+        "group": "Islam",
+        "pct": 45.5,
+        "count": 13703
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 164
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 36
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Macedonian",
+        "pct": 61.0,
+        "count": 18385
+      },
+      {
+        "group": "Albanian",
+        "pct": 30.5,
+        "count": 9199
+      },
+      {
+        "group": "Turkish",
+        "pct": 7.3,
+        "count": 2209
+      },
+      {
+        "group": "Other",
+        "pct": 0.5,
+        "count": 143
+      },
+      {
+        "group": "Romani",
+        "pct": 0.4,
+        "count": 114
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 64
+      },
+      {
+        "group": "Aromanian",
+        "pct": 0.1,
+        "count": 17
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 3, total population by mother tongue, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      },
+      {
+        "field": "religion",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 4, total population by declared religion, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      }
+    ],
+    "country": "MKD",
+    "match_by": "shape_id",
+    "shape_id": "65306769B34923793156893",
+    "language_year": 2002,
+    "language_note": "Mother tongue, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes mother tongue for the merged Kichevo only. The book's Vlach is shown as Aromanian, as for the rest of the country.",
+    "religion_year": 2002,
+    "religion_note": "Declared religion, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes religion for the merged Kichevo only. 'Other religion' is the book's 'others', which it does not divide."
+  },
+  {
+    "id": "MKD-2002-drugovo",
+    "level": "admin2",
+    "name": "Drugovo",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 85.9,
+        "count": 2790
+      },
+      {
+        "group": "Islam",
+        "pct": 13.8,
+        "count": 448
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 9
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
+    "language": [
+      {
+        "group": "Macedonian",
+        "pct": 86.2,
+        "count": 2802
+      },
+      {
+        "group": "Turkish",
+        "pct": 8.5,
+        "count": 275
+      },
+      {
+        "group": "Albanian",
+        "pct": 4.7,
+        "count": 153
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 7
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 8
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.1,
+        "count": 4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 3, total population by mother tongue, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      },
+      {
+        "field": "religion",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 4, total population by declared religion, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      }
+    ],
+    "country": "MKD",
+    "match_by": "shape_id",
+    "shape_id": "65306769B99207835594431",
+    "language_year": 2002,
+    "language_note": "Mother tongue, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes mother tongue for the merged Kichevo only. The book's Vlach is shown as Aromanian, as for the rest of the country.",
+    "religion_year": 2002,
+    "religion_note": "Declared religion, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes religion for the merged Kichevo only. 'Other religion' is the book's 'others', which it does not divide."
+  },
+  {
+    "id": "MKD-2002-oslomej",
+    "level": "admin2",
+    "name": "Oslomej",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 98.4,
+        "count": 10260
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.9,
+        "count": 98
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 62
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "language": [
+      {
+        "group": "Albanian",
+        "pct": 98.4,
+        "count": 10261
+      },
+      {
+        "group": "Macedonian",
+        "pct": 1.0,
+        "count": 103
+      },
+      {
+        "group": "Other",
+        "pct": 0.6,
+        "count": 59
+      },
+      {
+        "group": "Aromanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 3, total population by mother tongue, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      },
+      {
+        "field": "religion",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 4, total population by declared religion, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      }
+    ],
+    "country": "MKD",
+    "match_by": "shape_id",
+    "shape_id": "65306769B21440943325425",
+    "language_year": 2002,
+    "language_note": "Mother tongue, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes mother tongue for the merged Kichevo only. The book's Vlach is shown as Aromanian, as for the rest of the country.",
+    "religion_year": 2002,
+    "religion_note": "Declared religion, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes religion for the merged Kichevo only. 'Other religion' is the book's 'others', which it does not divide."
+  },
+  {
+    "id": "MKD-2002-vraneshtica",
+    "level": "admin2",
+    "name": "Vraneshtitsa",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 78.1,
+        "count": 1033
+      },
+      {
+        "group": "Islam",
+        "pct": 21.7,
+        "count": 287
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 2
+      }
+    ],
+    "language": [
+      {
+        "group": "Macedonian",
+        "pct": 80.8,
+        "count": 1068
+      },
+      {
+        "group": "Turkish",
+        "pct": 18.1,
+        "count": 239
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.8,
+        "count": 10
+      },
+      {
+        "group": "Bosnian",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 3, total population by mother tongue, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      },
+      {
+        "field": "religion",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 4, total population by declared religion, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      }
+    ],
+    "country": "MKD",
+    "match_by": "shape_id",
+    "shape_id": "65306769B74199760072032",
+    "language_year": 2002,
+    "language_note": "Mother tongue, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes mother tongue for the merged Kichevo only. The book's Vlach is shown as Aromanian, as for the rest of the country.",
+    "religion_year": 2002,
+    "religion_note": "Declared religion, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes religion for the merged Kichevo only. 'Other religion' is the book's 'others', which it does not divide."
+  },
+  {
+    "id": "MKD-2002-zajas",
+    "level": "admin2",
+    "name": "Zajas",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 97.4,
+        "count": 11303
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.8,
+        "count": 208
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 85
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 9
+      }
+    ],
+    "language": [
+      {
+        "group": "Albanian",
+        "pct": 97.5,
+        "count": 11317
+      },
+      {
+        "group": "Macedonian",
+        "pct": 1.7,
+        "count": 202
+      },
+      {
+        "group": "Other",
+        "pct": 0.7,
+        "count": 78
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Aromanian",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 3, total population by mother tongue, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      },
+      {
+        "field": "religion",
+        "name": "State Statistical Office of the Republic of North Macedonia, Census of Population, Households and Dwellings 2002, Book X, Table 4, total population by declared religion, by sex",
+        "url": "https://www.stat.gov.mk/Publikacii/knigaX.pdf",
+        "page": "https://www.stat.gov.mk/PrikaziPoslednaPublikacija_en.aspx?id=54",
+        "year": 2002,
+        "license": "State Statistical Office of the Republic of North Macedonia (reuse with attribution)"
+      }
+    ],
+    "country": "MKD",
+    "match_by": "shape_id",
+    "shape_id": "65306769B7192425425597",
+    "language_year": 2002,
+    "language_note": "Mother tongue, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes mother tongue for the merged Kichevo only. The book's Vlach is shown as Aromanian, as for the rest of the country.",
+    "religion_year": 2002,
+    "religion_note": "Declared religion, 2002 census, for the municipality as it was before its 2013 merger into Kichevo -- the unit the map draws; the 2021 census publishes religion for the merged Kichevo only. 'Other religion' is the book's 'others', which it does not divide."
+  }
+]

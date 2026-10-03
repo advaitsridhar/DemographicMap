@@ -184,6 +184,12 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "FRA": {
         "ethnicity": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007).",
         "religion": "France does not collect religion in its census for the same reason.",
+        "language": "France's census does not ask language. INSEE's Enquete Famille "
+                    "(1999, run with the census) and INED and INSEE's Trajectoires et "
+                    "Origines surveys (2008-09, 2019-20) ask which languages people were "
+                    "raised in or speak, and are published for France as a whole, not by "
+                    "region or departement; the European Social Survey fills the regions "
+                    "where it has 100 respondents (12 of 13; not Corse).",
     },
     "DEU": {
         "ethnicity": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID.",
@@ -427,23 +433,19 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "ESP": {
         "ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
         "religion": "Spain's census does not ask religion (CIS survey data exists instead).",
+        "language": "Spain's census (INE) does not ask language. Some regional "
+                    "governments survey it in their own communities -- Eustat's census "
+                    "for the Basque Country and its provinces, the IGE's survey for "
+                    "Galicia and its provinces, Idescat's EULP survey for Catalonia (not "
+                    "published by province) -- and the units those reach carry it, as do "
+                    "the communities where the European Social Survey has 100 "
+                    "respondents.",
     },
     "CHN": {
         "religion": "China's census does not ask religion; it records the 56 official "
                     "nationalities (minzu) instead. The China Family Panel Studies asked "
                     "it in 2012 and supports province-level figures for five provinces "
                     "(Shanghai, Liaoning, Henan, Gansu, Guangdong), which carry them.",
-    },
-    # Ireland asks about language twice and neither answer is a composition.
-    # Census 2022 publishes "Speakers of foreign languages" -- a count of only
-    # those people, split by which language, with English absent from it
-    # entirely -- and "Ability to Speak Irish", which is a skill, not a
-    # language spoken. Religion and ethnicity are read from the same census.
-    "IRL": {
-        "language": "Ireland's census asks which foreign languages a person "
-                    "speaks and whether they can speak Irish. Neither is a "
-                    "breakdown of the population by language: the first "
-                    "excludes English speakers, the second counts an ability.",
     },
     # Measured rather than recalled: MEDAS, TUIK's statistical database, lists
     # 92 subjects and not one of them is religion, ethnicity or mother tongue.
@@ -495,8 +497,10 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "ethnicity": "Iraq's 2024 census, the first nationwide count since 1987, deliberately excluded ethnicity from the questionnaire; religion was asked, sect was not.",
         "language": "Iraq's 2024 census deliberately excluded language from the questionnaire with ethnicity.",
     },
+    # Corrected: the 1897 census of the Empire and the Soviet census of 1937
+    # both asked religion (the 1937 results were suppressed); none since has.
     "RUS": {
-        "religion": "Russia's census has never asked religion; the 2020 census asked nationality and native language, which are on the map.",
+        "religion": "Russia's census has not asked religion since 1937 (the 1897 and 1937 censuses did); the 2002, 2010 and 2020 censuses asked nationality and native language, which are on the map. Where religion is shown by federal subject it is a survey estimate (Sreda's Arena, 2012, 56,900 adults); Chechnya, Ingushetia, Chukotka and Nenets AO were not surveyed.",
     },
     "ARG": {
         "religion": "Argentina's census has not asked religion since 1960; only the 1947 and 1960 censuses carried the question. The 2022 census asks indigenous and Afro-descendant self-recognition instead.",
@@ -670,12 +674,26 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity.",
             "religion": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000.",
             "language": "Sweden's census is compiled from registers, and no register records mother tongue."},
-    "NOR": {"ethnicity": "Norway records immigrant background, not ethnicity."},
-    "DNK": {"ethnicity": "Denmark records ancestry/citizenship, not ethnicity."},
+    "NOR": {"ethnicity": "Norway records immigrant background, not ethnicity.",
+            "language": "Norway's census is compiled from registers (wholly since 2011), and no "
+                        "Norwegian register records a resident's language. Statistics Norway "
+                        "publishes language only for pupils -- those taught Sami (tables 07587, "
+                        "07683) or given mother-tongue tuition (03742, closed in 2017) -- and "
+                        "not for the population."},
+    "DNK": {"ethnicity": "Denmark records ancestry/citizenship, not ethnicity.",
+            "language": "Denmark's census is compiled from the Civil Registration System, "
+                        "which records no language. Of Statistics Denmark's 5,732 StatBank "
+                        "tables, the only four with a language variable count books (BOG03, "
+                        "BOG06, BOGS02, BOGS03)."},
     "BEL": {"ethnicity": "Belgium does not collect ethnicity; language community is administrative, not a census question.",
             "religion": "Belgium's census is compiled from registers and has never carried religion.",
             "language": "Belgium's language census was abolished by the law of 24 July 1961 after the 1947 count; the register-based census records none."},
-    "ITA": {"ethnicity": "Italy's census records citizenship, not ethnicity."},
+    "ITA": {"ethnicity": "Italy's census records citizenship, not ethnicity.",
+            "religion": "Italy's census does not ask religion (neither the 2011 "
+                        "questionnaire nor the permanent census since 2018 has the "
+                        "question), and ISTAT's household surveys ask religious practice, "
+                        "not affiliation; the European Social Survey fills the regions "
+                        "where it has 100 respondents."},
     "AUT": {
         "ethnicity": "Austria's census has been register-based since 2011 (Registerzählung) and records citizenship and country of birth; no register holds ethnicity.",
         "religion": "Austria's register-based census carries no religion; the last religion question was in the 2001 census.",
@@ -689,9 +707,34 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "ISL": {
         "ethnicity": "Iceland's census is register-based and records citizenship and country of birth, not ethnicity.",
         "language": "Iceland's register-based census carries no language.",
+        # Asked, and published in a shape the map cannot draw below the
+        # country: the Bangladesh form, not_available and not not_collected.
+        "religion": {
+            "status": NOT_AVAILABLE,
+            "note": "Registers Iceland records every resident's religious or life-stance "
+                    "organisation, but Statistics Iceland publishes the count for the whole "
+                    "country only: MAN10001 (by organisation, 1998-2026) and the older "
+                    "MAN10200 (by organisation, sex and registrations, 1997-2017) have no "
+                    "geography, and the tables below the country (MAN10289-MAN10310) count "
+                    "members of the National Church by the Church's parishes and deaneries, "
+                    "which are not municipalities or regions. Registers Iceland's own "
+                    "releases are national too.",
+        },
     },
     "FIN": {
         "ethnicity": "Finland's census is register-based and records citizenship, country of birth and mother tongue, not ethnicity.",
+        # Recorded by the population register, published for the country.
+        "religion": {
+            "status": NOT_AVAILABLE,
+            "note": "Finland's population register records membership of a religious "
+                    "community for everyone, but Statistics Finland publishes it for the "
+                    "whole country only (table 11rx, by age and sex); no StatFin table, and "
+                    "none of the municipal key figures, gives it by region or municipality. "
+                    "The register keeper (DVV) publishes election statistics, citizens by "
+                    "municipality and lists of parishes, not membership counts. The "
+                    "Evangelical Lutheran Church publishes its own members by municipality, "
+                    "which is one church's count and not the register's.",
+        },
     },
     "CHE": {
         "ethnicity": "Switzerland's census records nationality, not ethnicity; religion and language come from the structural survey.",
@@ -702,9 +745,24 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "PRT": {
         "ethnicity": "Portugal's census records nationality, not ethnicity; an ethno-racial question was considered for 2021 and not included.",
+        "language": "Portugal's census (Censos 2021) does not ask language, and INE "
+                    "publishes no survey of the language spoken at home by district or "
+                    "municipality; the European Social Survey fills the one district "
+                    "where it has 100 respondents (Faro).",
+    },
+    "MCO": {
+        "religion": "Monaco's census has been register-based since 2023 (2025 Census "
+                    "report, introduction) and records nationality, not religion.",
+        "language": "Monaco's census has been register-based since 2023 (2025 Census "
+                    "report, introduction) and records nationality, not language.",
+        "ethnicity": "Monaco's census records nationality, not ethnicity. A resident can "
+                     "hold several nationalities and Monaco Statistics counts each one, "
+                     "so the nationality table does not add to the population.",
     },
     "LVA": {
-        "religion": "Latvia's census does not ask religion; it asks ethnicity and language.",
+        "religion": "Latvia's censuses do not ask religion: the 2011 census asked ethnicity "
+                    "and the language spoken at home, and the 2021 census was compiled from "
+                    "registers, none of which records a religion.",
     },
     "UKR": {
         "religion": "Ukraine's 2001 census asked nationality and language, not religion.",
@@ -756,6 +814,17 @@ def _policy_entry(iso3: str | None, field: str) -> dict[str, str] | None:
     if isinstance(declared, str):
         return {"status": NOT_COLLECTED, "note": declared}
     return {"status": declared["status"], "note": declared["note"]}
+
+
+def as_drawn(units: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Units under the boundary file's own labels, as readers find them.
+
+    The build gives a polygon the name of the census row bound to it by id
+    and keeps the boundary file's label as ``shape_name``; a reader that
+    matches the office's names to the drawn labels must see the labels, or
+    each rebuild would move the ground under its matching.
+    """
+    return [{**u, "name": u["shape_name"]} if u.get("shape_name") else u for u in units]
 
 
 def collection_policy(iso3: str | None, field: str) -> str | None:

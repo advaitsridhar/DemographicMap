@@ -1,0 +1,346 @@
+[
+  {
+    "id": "GRC-demo_r_d2jan-93993887B93147517098288",
+    "level": "admin1",
+    "name": "Macedonia-Thrace",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2337595,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "median_age": {
+      "value": 47.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 95.4,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B93147517098288",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL51, EL52, summed. Eurostat's Central Macedonia (EL52) includes Mount Athos, which the map draws as a unit of its own: its 1,746 residents (2021 census, all men) are counted in these figures, 0.07% of them.",
+    "population_note": "Eurostat's Central Macedonia (EL52) includes Mount Athos, which the map draws as a unit of its own: its 1,746 residents (2021 census, all men) are counted in these figures, 0.07% of them.",
+    "sex_ratio_note": "Eurostat's Central Macedonia (EL52) includes Mount Athos, which the map draws as a unit of its own: its 1,746 residents (2021 census, all men) are counted in these figures, 0.07% of them."
+  },
+  {
+    "id": "GRC-demo_r_d2jan-93993887B75841959134679",
+    "level": "admin1",
+    "name": "Epirus-Western Macedonia",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 567636,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "median_age": {
+      "value": 49.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 99.0,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B75841959134679",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL53, EL54, summed."
+  },
+  {
+    "id": "GRC-demo_r_d2jan-93993887B20638565859558",
+    "level": "admin1",
+    "name": "Thessalia-Central Greece",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1183208,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "median_age": {
+      "value": 48.9,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 99.5,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B20638565859558",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL61, EL64, summed."
+  },
+  {
+    "id": "GRC-demo_r_d2jan-93993887B43116936981453",
+    "level": "admin1",
+    "name": "Peloponisos-W. Greece & Ionian",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1363540,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "median_age": {
+      "value": 48.6,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B43116936981453",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL62, EL63, EL65, summed."
+  },
+  {
+    "id": "GRC-demo_r_d2jan-93993887B85814589700959",
+    "level": "admin1",
+    "name": "Egean",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 534963,
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "sex_ratio": {
+      "value": 107.7,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Eurostat, population on 1 January by age, sex and NUTS 2 region (demo_r_d2jan), from ELSTAT; summed over the administration's regions",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan?format=JSON&lang=EN",
+        "year": 2025
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B85814589700959",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Eurostat's population by single year of age of the regions EL41, EL42, summed."
+  },
+  {
+    "id": "GRC-athos-admin1",
+    "level": "admin1",
+    "name": "Agion Oros",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1746,
+      "year": 2021,
+      "source": "ELSTAT, 2021 Population-Housing Census, resident population by region, regional unit and municipality (mon_plith_2021.xlsx)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Mount Athos is counted inside the Central Macedonia region by Eurostat, and ELSTAT's 2021 census tables by age stop at the region, so no age structure is published for it alone."
+    },
+    "sex_ratio": {
+      "status": "not_applicable",
+      "note": "ELSTAT's 2021 census counts 1,746 residents on Mount Athos, 1,746 men and 0 women -- women may not enter it -- so a ratio of men to women is not defined."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "ELSTAT, 2021 Population-Housing Census, resident population by region, regional unit and municipality (mon_plith_2021.xlsx)",
+        "url": "https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/7adf2ca4-0baf-7b19-2860-1e7caea81e7f",
+        "page": "https://www.statistics.gr/el/2021-census-res-pop-results",
+        "year": 2021
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "93993887B40019078264500"
+  },
+  {
+    "id": "GRC-athos-admin2",
+    "level": "admin2",
+    "name": "Agion Oros",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1746,
+      "year": 2021,
+      "source": "ELSTAT, 2021 Population-Housing Census, resident population by region, regional unit and municipality (mon_plith_2021.xlsx)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Mount Athos is counted inside the Central Macedonia region by Eurostat, and ELSTAT's 2021 census tables by age stop at the region, so no age structure is published for it alone."
+    },
+    "sex_ratio": {
+      "status": "not_applicable",
+      "note": "ELSTAT's 2021 census counts 1,746 residents on Mount Athos, 1,746 men and 0 women -- women may not enter it -- so a ratio of men to women is not defined."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "ELSTAT, 2021 Population-Housing Census, resident population by region, regional unit and municipality (mon_plith_2021.xlsx)",
+        "url": "https://www.statistics.gr/documents/20181/17286366/mon_plith_2021.xlsx/7adf2ca4-0baf-7b19-2860-1e7caea81e7f",
+        "page": "https://www.statistics.gr/el/2021-census-res-pop-results",
+        "year": 2021
+      }
+    ],
+    "country": "GRC",
+    "match_by": "shape_id",
+    "shape_id": "26713481B40019078264500"
+  }
+]

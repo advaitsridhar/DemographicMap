@@ -1,0 +1,1990 @@
+[
+  {
+    "id": "ARM-2011-6114869B51735422330893",
+    "level": "admin1",
+    "name": "Yerevan",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 95.0,
+        "count": 1007130
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.2,
+        "count": 23072
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 9771
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.6,
+        "count": 6703
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 3504
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 3440
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 2236
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.2,
+        "count": 1670
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 1276
+      },
+      {
+        "group": "Molokan",
+        "pct": 0.1,
+        "count": 690
+      },
+      {
+        "group": "Paganism",
+        "pct": 0.1,
+        "count": 646
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 98.5,
+        "count": 1043885
+      },
+      {
+        "group": "Russian",
+        "pct": 1.1,
+        "count": 11771
+      },
+      {
+        "group": "Ezidian",
+        "pct": 0.2,
+        "count": 2459
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 609
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 299
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 184
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 393
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 305
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 98.9,
+        "count": 1048940
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 4940
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.3,
+        "count": 3268
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 1075
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 603
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 264
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 300
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 468
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.4",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B51735422330893",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian, Yazidi, Ukrainian, Persian, Greek, Georgian, Assyrian -- and counts every other in 'Other' (1,075 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-60910142B16508502425174",
+    "level": "admin2",
+    "name": "Yerevan",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 95.0,
+        "count": 1007130
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.2,
+        "count": 23072
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 9771
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.6,
+        "count": 6703
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 3504
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 3440
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 2236
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.2,
+        "count": 1670
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 1276
+      },
+      {
+        "group": "Molokan",
+        "pct": 0.1,
+        "count": 690
+      },
+      {
+        "group": "Paganism",
+        "pct": 0.1,
+        "count": 646
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 98.5,
+        "count": 1043885
+      },
+      {
+        "group": "Russian",
+        "pct": 1.1,
+        "count": 11771
+      },
+      {
+        "group": "Ezidian",
+        "pct": 0.2,
+        "count": 2459
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 609
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "English",
+        "pct": 0.0,
+        "count": 299
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 184
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 393
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 305
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 98.9,
+        "count": 1048940
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 4940
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.3,
+        "count": 3268
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 1075
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1,
+        "count": 603
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.0,
+        "count": 226
+      },
+      {
+        "group": "Georgian",
+        "pct": 0.0,
+        "count": 264
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 300
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Persian",
+        "pct": 0.0,
+        "count": 468
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Yerevan: table 5.4",
+        "url": "https://armstat.am/am/?nid=533",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "60910142B16508502425174",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian, Yazidi, Ukrainian, Persian, Greek, Georgian, Assyrian -- and counts every other in 'Other' (1,075 people), so a group absent here may still live in the marz. Yerevan is a marz and a city at once, which the map draws at both levels; this is the city's own row.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish. Yerevan is a marz and a city at once, which the map draws at both levels; this is the city's own row.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded. Yerevan is a marz and a city at once, which the map draws at both levels; this is the city's own row."
+  },
+  {
+    "id": "ARM-2011-6114869B21685892816693",
+    "level": "admin1",
+    "name": "Aragatsotn",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 90.2,
+        "count": 119875
+      },
+      {
+        "group": "Yazidi",
+        "pct": 4.0,
+        "count": 5310
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.7,
+        "count": 3557
+      },
+      {
+        "group": "Paganism",
+        "pct": 1.0,
+        "count": 1393
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.8,
+        "count": 1037
+      },
+      {
+        "group": "No religion",
+        "pct": 0.8,
+        "count": 1099
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 290
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 233
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 131
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 95.0,
+        "count": 126331
+      },
+      {
+        "group": "Ezidian",
+        "pct": 3.4,
+        "count": 4502
+      },
+      {
+        "group": "Kurdish",
+        "pct": 1.2,
+        "count": 1618
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 393
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 81
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 94.5,
+        "count": 125552
+      },
+      {
+        "group": "Yazidi",
+        "pct": 4.1,
+        "count": 5474
+      },
+      {
+        "group": "Kurdish",
+        "pct": 1.2,
+        "count": 1616
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 103
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 180
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Aragatsotn: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=534",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Aragatsotn: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=534",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Aragatsotn: table 5.4",
+        "url": "https://armstat.am/am/?nid=534",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B21685892816693",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Yazidi, Kurdish, Russian -- and counts every other in 'Other' (103 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B31075086997569",
+    "level": "admin1",
+    "name": "Ararat",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 91.9,
+        "count": 239270
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.3,
+        "count": 8709
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.3,
+        "count": 3437
+      },
+      {
+        "group": "Yazidi",
+        "pct": 1.2,
+        "count": 3171
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 1938
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 1458
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 877
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 759
+      },
+      {
+        "group": "Paganism",
+        "pct": 0.2,
+        "count": 593
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 155
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 97.1,
+        "count": 252881
+      },
+      {
+        "group": "Ezidian",
+        "pct": 1.8,
+        "count": 4574
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.6,
+        "count": 1453
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 1285
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 168
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 97.2,
+        "count": 253125
+      },
+      {
+        "group": "Yazidi",
+        "pct": 1.9,
+        "count": 4975
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.6,
+        "count": 1625
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 436
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 197
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Ararat: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=535",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Ararat: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=535",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Ararat: table 5.4",
+        "url": "https://armstat.am/am/?nid=535",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B31075086997569",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Yazidi, Assyrian, Russian -- and counts every other in 'Other' (197 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B3426889126469",
+    "level": "admin1",
+    "name": "Armavir",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 90.0,
+        "count": 239089
+      },
+      {
+        "group": "Yazidi",
+        "pct": 4.5,
+        "count": 11892
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.8,
+        "count": 4775
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.3,
+        "count": 3541
+      },
+      {
+        "group": "Paganism",
+        "pct": 0.9,
+        "count": 2284
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 1261
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 1414
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 921
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 405
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 188
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 93.7,
+        "count": 249047
+      },
+      {
+        "group": "Ezidian",
+        "pct": 5.8,
+        "count": 15429
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 847
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.1,
+        "count": 150
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 173
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.0,
+        "count": 123
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 93.3,
+        "count": 247853
+      },
+      {
+        "group": "Yazidi",
+        "pct": 6.4,
+        "count": 16906
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 426
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.1,
+        "count": 178
+      },
+      {
+        "group": "Kurdish",
+        "pct": 0.1,
+        "count": 157
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 241
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Armavir: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=536",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Armavir: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=536",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Armavir: table 5.4",
+        "url": "https://armstat.am/am/?nid=536",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B3426889126469",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Yazidi, Russian, Assyrian, Kurdish -- and counts every other in 'Other' (241 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B91778422332839",
+    "level": "admin1",
+    "name": "Gegharkunik",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 95.5,
+        "count": 224535
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.4,
+        "count": 5567
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.0,
+        "count": 2459
+      },
+      {
+        "group": "No religion",
+        "pct": 0.6,
+        "count": 1440
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 526
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 230
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 318
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 99.7,
+        "count": 234267
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 629
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 175
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 99.7,
+        "count": 234474
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 272
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 328
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Gegharkunik: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=537",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Gegharkunik: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=537",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Gegharkunik: table 5.4",
+        "url": "https://armstat.am/am/?nid=537",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B91778422332839",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian -- and counts every other in 'Other' (272 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B99267739496878",
+    "level": "admin1",
+    "name": "Lori",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 89.8,
+        "count": 211555
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.7,
+        "count": 6402
+      },
+      {
+        "group": "Evangelical",
+        "pct": 2.2,
+        "count": 5159
+      },
+      {
+        "group": "No religion",
+        "pct": 2.2,
+        "count": 5207
+      },
+      {
+        "group": "Catholic",
+        "pct": 1.3,
+        "count": 3080
+      },
+      {
+        "group": "Molokan",
+        "pct": 0.8,
+        "count": 2002
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.3,
+        "count": 757
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 685
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 395
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.1,
+        "count": 295
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 98.0,
+        "count": 230756
+      },
+      {
+        "group": "Russian",
+        "pct": 1.7,
+        "count": 3904
+      },
+      {
+        "group": "Ezidian",
+        "pct": 0.2,
+        "count": 543
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 134
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 198
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 98.1,
+        "count": 231066
+      },
+      {
+        "group": "Russian",
+        "pct": 1.3,
+        "count": 3152
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.3,
+        "count": 652
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 360
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 295
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Lori: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=538",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Lori: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=538",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Lori: table 5.4",
+        "url": "https://armstat.am/am/?nid=538",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B99267739496878",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian, Yazidi, Greek -- and counts every other in 'Other' (295 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B17514330158920",
+    "level": "admin1",
+    "name": "Kotayk",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 93.0,
+        "count": 236624
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.3,
+        "count": 5867
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.4,
+        "count": 3548
+      },
+      {
+        "group": "No religion",
+        "pct": 1.0,
+        "count": 2604
+      },
+      {
+        "group": "Yazidi",
+        "pct": 1.0,
+        "count": 2429
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5,
+        "count": 1221
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 1114
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 537
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 231
+      },
+      {
+        "group": "Paganism",
+        "pct": 0.1,
+        "count": 222
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 98.0,
+        "count": 249265
+      },
+      {
+        "group": "Ezidian",
+        "pct": 1.1,
+        "count": 2861
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 1313
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.2,
+        "count": 624
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 332
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 98.1,
+        "count": 249508
+      },
+      {
+        "group": "Yazidi",
+        "pct": 1.3,
+        "count": 3211
+      },
+      {
+        "group": "Assyrian",
+        "pct": 0.3,
+        "count": 676
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.2,
+        "count": 410
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 590
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Kotayk: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=539",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Kotayk: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=539",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Kotayk: table 5.4",
+        "url": "https://armstat.am/am/?nid=539",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B17514330158920",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Yazidi, Assyrian, Russian -- and counts every other in 'Other' (410 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B14983463018500",
+    "level": "admin1",
+    "name": "Shirak",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 92.0,
+        "count": 231893
+      },
+      {
+        "group": "Catholic",
+        "pct": 3.4,
+        "count": 8592
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.9,
+        "count": 7207
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 1022
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.4,
+        "count": 882
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.3,
+        "count": 861
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 543
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 437
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.2,
+        "count": 395
+      },
+      {
+        "group": "Paganism",
+        "pct": 0.0,
+        "count": 109
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 99.0,
+        "count": 249373
+      },
+      {
+        "group": "Russian",
+        "pct": 0.7,
+        "count": 1698
+      },
+      {
+        "group": "Ezidian",
+        "pct": 0.2,
+        "count": 586
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 197
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 86
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 99.1,
+        "count": 249742
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 1100
+      },
+      {
+        "group": "Yazidi",
+        "pct": 0.3,
+        "count": 727
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 253
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 113
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Shirak: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=540",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Shirak: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=540",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Shirak: table 5.4",
+        "url": "https://armstat.am/am/?nid=540",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B14983463018500",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian, Yazidi, Ukrainian -- and counts every other in 'Other' (253 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B3680049481024",
+    "level": "admin1",
+    "name": "Syunik",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 85.8,
+        "count": 121643
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.7,
+        "count": 15124
+      },
+      {
+        "group": "No religion",
+        "pct": 2.8,
+        "count": 4019
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.3,
+        "count": 379
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 266
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.1,
+        "count": 88
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 168
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 84
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 99.3,
+        "count": 140844
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 822
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 105
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 99.7,
+        "count": 141353
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 259
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 155
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Syunik: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=541",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Syunik: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=541",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Syunik: table 5.4",
+        "url": "https://armstat.am/am/?nid=541",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B3680049481024",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian -- and counts every other in 'Other' (155 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B77774582045190",
+    "level": "admin1",
+    "name": "Vayots Dzor",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 93.2,
+        "count": 48780
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.1,
+        "count": 2134
+      },
+      {
+        "group": "No religion",
+        "pct": 1.2,
+        "count": 651
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.0,
+        "count": 539
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 166
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.1,
+        "count": 54
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 99.6,
+        "count": 52109
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 188
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 27
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 99.7,
+        "count": 52187
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 57
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 77
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Vayots Dzor: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=542",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Vayots Dzor: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=542",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Vayots Dzor: table 5.4",
+        "url": "https://armstat.am/am/?nid=542",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B77774582045190",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian -- and counts every other in 'Other' (57 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  },
+  {
+    "id": "ARM-2011-6114869B33842112003829",
+    "level": "admin1",
+    "name": "Tavush",
+    "parent": "ARM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Armenian Apostolic",
+        "pct": 90.3,
+        "count": 116125
+      },
+      {
+        "group": "No religion",
+        "pct": 4.2,
+        "count": 5361
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.7,
+        "count": 4800
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.3,
+        "count": 1617
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 333
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 205
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.1,
+        "count": 168
+      }
+    ],
+    "language": [
+      {
+        "group": "Armenian",
+        "pct": 99.4,
+        "count": 127857
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 634
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 118
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Armenian",
+        "pct": 99.5,
+        "count": 128001
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 423
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 185
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Tavush: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=543",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "language",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Tavush: table 5.2-1",
+        "url": "https://armstat.am/am/?nid=543",
+        "license": "Armstat, open publication",
+        "year": 2011
+      },
+      {
+        "field": "religion",
+        "name": "Statistical Committee of the Republic of Armenia (Armstat), 2011 population census of the Republic of Armenia, Tavush: table 5.4",
+        "url": "https://armstat.am/am/?nid=543",
+        "license": "Armstat, open publication",
+        "year": 2011
+      }
+    ],
+    "country": "ARM",
+    "match_by": "shape_id",
+    "shape_id": "6114869B33842112003829",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Nationality (ազգություն) as each person stated it, 2011 census, the permanent population. The 2022 census has published no table by marz yet. Table 5.2-1 names only the nationalities numerous in the marz -- here Armenian, Russian -- and counts every other in 'Other' (185 people), so a group absent here may still live in the marz.",
+    "language_year": 2011,
+    "language_note": "Mother tongue (մայրենի լեզու), 2011 census, the permanent population; 'Ezidian' is the Yezidi tongue the census names apart from Kurdish.",
+    "religion_year": 2011,
+    "religion_note": "Religious belief (կրոնական դավանանք), 2011 census, the permanent population; 'Yazidi' is the census's Sharfadin. 'Not stated' joins those who refused to answer and those whose belief was not recorded."
+  }
+]

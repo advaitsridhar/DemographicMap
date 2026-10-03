@@ -1049,6 +1049,24 @@ PARENT: dict[str, dict[str, str]] = {
         # entirely and so rolled up to nothing, join it.
         "Irreligious": "No religion",
         "Freethinker": "No religion",
+        # Norway's registers. SSB 08531's Christian communities outside the
+        # Church of Norway are Catholic above all, with the Pentecostal,
+        # Orthodox and free churches: no one tradition, so the family. Its
+        # kommune rows join every faith and life stance outside the Church in
+        # one: members of named bodies, so other religions, never "not stated"
+        # (Oslo's 156,183 are 66,832 Muslims and 58,085 Christians).
+        "Christian communities outside the Church of Norway": "Christianity",
+        "Member of another faith or life-stance community": "Other religions",
+        # Sreda's Arena survey (Russia, 2012): "I believe in God (a higher
+        # power) but profess no particular religion" -- a quarter of
+        # Russians. A belief without a body, filed where Czechia's, Nicaragua's
+        # and Venezuela's "believer, no church" are (RELIGION_PATTERNS): not
+        # with the atheists the same card counts beside it.
+        "Believe in God, no specific religion": "Unaffiliated or not reported",
+        # Armenia's 2011 census counts Molokans apart: Spiritual Christians,
+        # neither Orthodox nor Protestant, whom the "Christian" pattern would
+        # otherwise file under Protestantism.
+        "Molokan": "Christianity",
     },
     # Genealogical classification, as the standard references give it. A
     # family is one hue on the map and closely related languages are shades of
@@ -1213,6 +1231,13 @@ RESIDUAL: frozenset[str] = frozenset({
     "other or not stated", "none or not stated", "Other and unspecified",
     "Other or unspecified", "other/not stated", "Other/not stated",
     "No ethnic group", "Unknown ethnicity", "Not declared",
+    # The Nordic membership registers' rows for everyone outside one church
+    # (Denmark), outside every registered body (Norway), or inside some body
+    # other than the Church of Norway: 51% of Copenhagen is the first, and none
+    # of the three is a religion's majority.
+    "Not a member of the national church",
+    "Member of another faith or life-stance community",
+    "Not a member of a registered faith or life-stance community",
     # Mongolia's two residuals: the ethnic groups its census does not name
     # because each has fewer than a hundred people in the country, and the
     # Mongolian citizens it records under a foreign nationality.
@@ -1241,6 +1266,9 @@ RESIDUAL: frozenset[str] = frozenset({
     # by the adapter, and this set is matched exactly, so the lower-case
     # "other or not stated" above does not cover the ethnicity one.
     "No religion or not stated", "Other or not stated",
+    # A bar of the people in cells an office does not publish: no answer is
+    # named by it (Romania's, Montenegro's and Albania's census tables).
+    "Suppressed (disclosure control)", "Cannot determine", "No language data",
 })
 
 

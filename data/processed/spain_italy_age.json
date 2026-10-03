@@ -1,0 +1,167 @@
+[
+  {
+    "id": "ESP-INE-35",
+    "level": "admin2",
+    "name": "Palmas, Las",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1181260,
+      "year": 2026,
+      "source": "INE, Estadística Continua de Población (table 69792)"
+    },
+    "median_age": {
+      "value": 45.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "INE, Estadística Continua de Población (table 69792)"
+    },
+    "sex_ratio": {
+      "value": 984,
+      "unit": "males_per_1000_females",
+      "year": 2026,
+      "source": "INE, Estadística Continua de Población (table 69792)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "INE, Estadística Continua de Población (table 69792)",
+        "url": "https://www.ine.es/jaxiT3/Tabla.htm?t=69792",
+        "year": 2026
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B54089872197538",
+    "codes": {
+      "ine_province": "35"
+    },
+    "median_age_note": "Interpolated within the single year of age holding the middle person. The province's residents on 1 January 2026, by sex and single year of age (INE's Estadística Continua de Población). Eurostat divides the Canary Islands by island, so no NUTS region is this province.",
+    "population_note": "The province's residents on 1 January 2026, by sex and single year of age (INE's Estadística Continua de Población). Eurostat divides the Canary Islands by island, so no NUTS region is this province."
+  },
+  {
+    "id": "ESP-INE-38",
+    "level": "admin2",
+    "name": "Santa Cruz de Tenerife",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1094985,
+      "year": 2026,
+      "source": "INE, Estadística Continua de Población (table 69792)"
+    },
+    "median_age": {
+      "value": 46.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "INE, Estadística Continua de Población (table 69792)"
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2026,
+      "source": "INE, Estadística Continua de Población (table 69792)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "INE, Estadística Continua de Población (table 69792)",
+        "url": "https://www.ine.es/jaxiT3/Tabla.htm?t=69792",
+        "year": 2026
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B89945777125881",
+    "codes": {
+      "ine_province": "38"
+    },
+    "median_age_note": "Interpolated within the single year of age holding the middle person. The province's residents on 1 January 2026, by sex and single year of age (INE's Estadística Continua de Población). Eurostat divides the Canary Islands by island, so no NUTS region is this province.",
+    "population_note": "The province's residents on 1 January 2026, by sex and single year of age (INE's Estadística Continua de Población). Eurostat divides the Canary Islands by island, so no NUTS region is this province."
+  },
+  {
+    "id": "ITA-ISTAT-TAA",
+    "level": "admin2",
+    "name": "Trentino-Alto Adige",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1086252,
+      "year": 2025,
+      "source": "ISTAT, population on 1 January by sex and single year of age (Eurostat demo_r_d2jan)"
+    },
+    "median_age": {
+      "value": 46.8,
+      "unit": "years",
+      "year": 2025,
+      "source": "ISTAT, population on 1 January by sex and single year of age (Eurostat demo_r_d2jan)"
+    },
+    "sex_ratio": {
+      "value": 983,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "ISTAT, population on 1 January by sex and single year of age (Eurostat demo_r_d2jan)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "ISTAT, population on 1 January by sex and single year of age (Eurostat demo_r_d2jan)",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_d2jan",
+        "year": 2025
+      }
+    ],
+    "country": "ITA",
+    "match_by": "shape_id",
+    "shape_id": "23120603B10307341449000",
+    "codes": {
+      "nuts": [
+        "ITH1",
+        "ITH2"
+      ]
+    },
+    "median_age_note": "Interpolated within the single year of age holding the middle person. The residents of the autonomous provinces of Bolzano/Bozen (ITH1) and Trento (ITH2) on 1 January 2025, added age by age: the region is two NUTS-2 regions and has no NUTS figure of its own.",
+    "population_note": "The residents of the autonomous provinces of Bolzano/Bozen (ITH1) and Trento (ITH2) on 1 January 2025, added age by age: the region is two NUTS-2 regions and has no NUTS figure of its own."
+  }
+]

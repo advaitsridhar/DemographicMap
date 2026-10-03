@@ -1,5 +1,5 @@
 {
- "_readme": "Country-level detail for the three compositions, applied by scripts/build_entities.py after the roll-ups. Each row names one country and one field. A row with 'groups' replaces the field with a census's own division of it and is always preferred; a row with only a 'note' says what a large residual holds and why it is not divided. Neither invents a split. This is the admin-0 counterpart of admin1_seed.json, and it is curated for the same reason: adapter output lands on admin1 and admin2 shapes, and the country record is the Factbook profile plus whatever its children roll up into it.",
+ "_readme": "Country-level detail for the three compositions, applied by scripts/build_entities.py after the roll-ups. Each row names one country and one field. A row with 'groups' replaces the field with a census's own division of it and is always preferred -- or, where the census does not ask, a survey's, whose 'basis' says it is a survey estimate; a row with only a 'note' says what a large residual holds and why it is not divided. Neither invents a split. This is the admin-0 counterpart of admin1_seed.json, and it is curated for the same reason: adapter output lands on admin1 and admin2 shapes, and the country record is the Factbook profile plus whatever its children roll up into it.",
  "rows": [
   {
    "country": "UGA",
@@ -1069,6 +1069,3486 @@
      "count": 1771
     }
    ]
+  },
+  {
+   "country": "AUT",
+   "field": "religion",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Roman Catholic",
+     "pct": 57.6,
+     "count": 6062
+    },
+    {
+     "group": "No religion",
+     "pct": 30.5,
+     "count": 3214
+    },
+    {
+     "group": "Islam",
+     "pct": 4.7,
+     "count": 497
+    },
+    {
+     "group": "Protestant",
+     "pct": 3.8,
+     "count": 397
+    },
+    {
+     "group": "Orthodox",
+     "pct": 1.7,
+     "count": 177
+    },
+    {
+     "group": "Other Christian",
+     "pct": 0.9,
+     "count": 96
+    },
+    {
+     "group": "Eastern religions",
+     "pct": 0.4,
+     "count": 43
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.2,
+     "count": 17
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.2,
+     "count": 19
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 10,524 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "AUT",
+   "field": "language",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "German",
+     "pct": 91.9,
+     "count": 9750
+    },
+    {
+     "group": "Turkish",
+     "pct": 2.3,
+     "count": 244
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.9,
+     "count": 92
+    },
+    {
+     "group": "Serbian",
+     "pct": 0.7,
+     "count": 78
+    },
+    {
+     "group": "Bosnian",
+     "pct": 0.6,
+     "count": 66
+    },
+    {
+     "group": "Albanian",
+     "pct": 0.4,
+     "count": 40
+    },
+    {
+     "group": "English",
+     "pct": 0.4,
+     "count": 41
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.4,
+     "count": 38
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.3,
+     "count": 33
+    },
+    {
+     "group": "Persian",
+     "pct": 0.3,
+     "count": 31
+    },
+    {
+     "group": "Arabic",
+     "pct": 0.2,
+     "count": 21
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 0.2,
+     "count": 16
+    },
+    {
+     "group": "Croatian",
+     "pct": 0.2,
+     "count": 26
+    },
+    {
+     "group": "Polish",
+     "pct": 0.2,
+     "count": 18
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "Chechen",
+     "pct": 0.1,
+     "count": 12
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.1,
+     "count": 14
+    },
+    {
+     "group": "Czech",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "French",
+     "pct": 0.1,
+     "count": 10
+    },
+    {
+     "group": "Italian",
+     "pct": 0.1,
+     "count": 11
+    },
+    {
+     "group": "Russian",
+     "pct": 0.1,
+     "count": 15
+    },
+    {
+     "group": "Slovak",
+     "pct": 0.1,
+     "count": 14
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.1,
+     "count": 14
+    },
+    {
+     "group": "Slovene",
+     "pct": 0.0,
+     "count": 5
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 10,606 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "BEL",
+   "field": "religion",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "No religion",
+     "pct": 56.6,
+     "count": 4647
+    },
+    {
+     "group": "Roman Catholic",
+     "pct": 32.5,
+     "count": 2669
+    },
+    {
+     "group": "Islam",
+     "pct": 6.8,
+     "count": 561
+    },
+    {
+     "group": "Orthodox",
+     "pct": 1.1,
+     "count": 89
+    },
+    {
+     "group": "Protestant",
+     "pct": 1.1,
+     "count": 93
+    },
+    {
+     "group": "Other Christian",
+     "pct": 0.8,
+     "count": 66
+    },
+    {
+     "group": "Eastern religions",
+     "pct": 0.4,
+     "count": 33
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.4,
+     "count": 36
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.1,
+     "count": 9
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 8,205 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "BEL",
+   "field": "language",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Dutch",
+     "pct": 52.1,
+     "count": 4281
+    },
+    {
+     "group": "French",
+     "pct": 38.5,
+     "count": 3162
+    },
+    {
+     "group": "Arabic",
+     "pct": 2.1,
+     "count": 175
+    },
+    {
+     "group": "Other languages",
+     "pct": 1.6,
+     "count": 127
+    },
+    {
+     "group": "English",
+     "pct": 1.5,
+     "count": 122
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.8,
+     "count": 66
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.5,
+     "count": 39
+    },
+    {
+     "group": "Polish",
+     "pct": 0.4,
+     "count": 28
+    },
+    {
+     "group": "Portuguese",
+     "pct": 0.4,
+     "count": 30
+    },
+    {
+     "group": "German",
+     "pct": 0.3,
+     "count": 22
+    },
+    {
+     "group": "Italian",
+     "pct": 0.3,
+     "count": 20
+    },
+    {
+     "group": "Russian",
+     "pct": 0.3,
+     "count": 21
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.3,
+     "count": 26
+    },
+    {
+     "group": "Albanian",
+     "pct": 0.2,
+     "count": 17
+    },
+    {
+     "group": "Berber",
+     "pct": 0.2,
+     "count": 14
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 0.1,
+     "count": 6
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "Greek",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "Lingala",
+     "pct": 0.1,
+     "count": 6
+    },
+    {
+     "group": "Low German",
+     "pct": 0.1,
+     "count": 8
+    },
+    {
+     "group": "Persian",
+     "pct": 0.1,
+     "count": 6
+    },
+    {
+     "group": "Walloon",
+     "pct": 0.1,
+     "count": 5
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,219 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "FRA",
+   "field": "religion",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "No religion",
+     "pct": 49.2,
+     "count": 4751
+    },
+    {
+     "group": "Roman Catholic",
+     "pct": 38.9,
+     "count": 3753
+    },
+    {
+     "group": "Islam",
+     "pct": 7.5,
+     "count": 719
+    },
+    {
+     "group": "Protestant",
+     "pct": 2.0,
+     "count": 196
+    },
+    {
+     "group": "Other Christian",
+     "pct": 0.8,
+     "count": 74
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.5,
+     "count": 47
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.5,
+     "count": 46
+    },
+    {
+     "group": "Orthodox",
+     "pct": 0.4,
+     "count": 37
+    },
+    {
+     "group": "Eastern religions",
+     "pct": 0.3,
+     "count": 25
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 9,655 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "GRC",
+   "field": "religion",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Orthodox",
+     "pct": 90.0,
+     "count": 4959
+    },
+    {
+     "group": "No religion",
+     "pct": 7.6,
+     "count": 418
+    },
+    {
+     "group": "Other Christian",
+     "pct": 1.1,
+     "count": 60
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.6,
+     "count": 34
+    },
+    {
+     "group": "Islam",
+     "pct": 0.4,
+     "count": 20
+    },
+    {
+     "group": "Roman Catholic",
+     "pct": 0.3,
+     "count": 14
+    },
+    {
+     "group": "Eastern religions",
+     "pct": 0.1,
+     "count": 6
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 10, 11 (2020-2024), national samples pooled: religion",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 5,513 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "GRC",
+   "field": "language",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Greek",
+     "pct": 97.5,
+     "count": 5404
+    },
+    {
+     "group": "Albanian",
+     "pct": 1.4,
+     "count": 77
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.6,
+     "count": 33
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 0.2,
+     "count": 11
+    },
+    {
+     "group": "Urdu",
+     "pct": 0.2,
+     "count": 9
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.1,
+     "count": 6
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 10, 11 (2020-2024), national samples pooled: language",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 10, 11 (2020-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 5,545 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "ISL",
+   "field": "language",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Icelandic",
+     "pct": 92.4,
+     "count": 3206
+    },
+    {
+     "group": "English",
+     "pct": 2.7,
+     "count": 93
+    },
+    {
+     "group": "Polish",
+     "pct": 2.6,
+     "count": 89
+    },
+    {
+     "group": "Other languages",
+     "pct": 1.9,
+     "count": 67
+    },
+    {
+     "group": "Portuguese",
+     "pct": 0.2,
+     "count": 7
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.2,
+     "count": 8
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 8, 9, 10, 11 (2016-2024), national samples pooled: language",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 8, 9, 10, 11 (2016-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 3,471 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "LVA",
+   "field": "religion",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "No religion",
+     "pct": 61.2,
+     "count": 1930
+    },
+    {
+     "group": "Roman Catholic",
+     "pct": 13.3,
+     "count": 420
+    },
+    {
+     "group": "Protestant",
+     "pct": 11.8,
+     "count": 373
+    },
+    {
+     "group": "Orthodox",
+     "pct": 10.1,
+     "count": 319
+    },
+    {
+     "group": "Other Christian",
+     "pct": 3.0,
+     "count": 93
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.3,
+     "count": 9
+    },
+    {
+     "group": "Eastern religions",
+     "pct": 0.2,
+     "count": 7
+    },
+    {
+     "group": "Islam",
+     "pct": 0.1,
+     "count": 2
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.1,
+     "count": 2
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 9, 10, 11 (2018-2024), national samples pooled: religion",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 9, 10, 11 (2018-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 3,157 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "NLD",
+   "field": "language",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Dutch",
+     "pct": 92.5,
+     "count": 7779
+    },
+    {
+     "group": "Frisian",
+     "pct": 2.1,
+     "count": 178
+    },
+    {
+     "group": "English",
+     "pct": 1.0,
+     "count": 82
+    },
+    {
+     "group": "Arabic",
+     "pct": 0.7,
+     "count": 55
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.7,
+     "count": 56
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.6,
+     "count": 52
+    },
+    {
+     "group": "Limburgish",
+     "pct": 0.4,
+     "count": 32
+    },
+    {
+     "group": "Polish",
+     "pct": 0.3,
+     "count": 23
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.2,
+     "count": 12
+    },
+    {
+     "group": "German",
+     "pct": 0.2,
+     "count": 15
+    },
+    {
+     "group": "Papiamento",
+     "pct": 0.2,
+     "count": 15
+    },
+    {
+     "group": "Russian",
+     "pct": 0.2,
+     "count": 13
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.2,
+     "count": 12
+    },
+    {
+     "group": "Berber",
+     "pct": 0.1,
+     "count": 11
+    },
+    {
+     "group": "Hindi",
+     "pct": 0.1,
+     "count": 6
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "Kurdish",
+     "pct": 0.1,
+     "count": 12
+    },
+    {
+     "group": "Persian",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "Portuguese",
+     "pct": 0.1,
+     "count": 8
+    },
+    {
+     "group": "Serbian",
+     "pct": 0.1,
+     "count": 6
+    },
+    {
+     "group": "Somali",
+     "pct": 0.1,
+     "count": 9
+    },
+    {
+     "group": "Vietnamese",
+     "pct": 0.1,
+     "count": 7
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,411 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "SVN",
+   "field": "religion",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Roman Catholic",
+     "pct": 52.4,
+     "count": 3298
+    },
+    {
+     "group": "No religion",
+     "pct": 41.2,
+     "count": 2594
+    },
+    {
+     "group": "Islam",
+     "pct": 2.8,
+     "count": 173
+    },
+    {
+     "group": "Orthodox",
+     "pct": 2.4,
+     "count": 150
+    },
+    {
+     "group": "Protestant",
+     "pct": 0.7,
+     "count": 42
+    },
+    {
+     "group": "Other Christian",
+     "pct": 0.3,
+     "count": 15
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.2,
+     "count": 10
+    },
+    {
+     "group": "Eastern religions",
+     "pct": 0.0,
+     "count": 1
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.0,
+     "count": 1
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 6,292 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "SVN",
+   "field": "language",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Slovene",
+     "pct": 95.4,
+     "count": 6036
+    },
+    {
+     "group": "Bosnian",
+     "pct": 2.0,
+     "count": 126
+    },
+    {
+     "group": "Serbian",
+     "pct": 0.9,
+     "count": 54
+    },
+    {
+     "group": "Albanian",
+     "pct": 0.5,
+     "count": 32
+    },
+    {
+     "group": "Croatian",
+     "pct": 0.3,
+     "count": 20
+    },
+    {
+     "group": "Macedonian",
+     "pct": 0.3,
+     "count": 19
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.2,
+     "count": 10
+    },
+    {
+     "group": "Italian",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.1,
+     "count": 9
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "Russian",
+     "pct": 0.1,
+     "count": 8
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 6,325 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "ESP",
+   "field": "religion",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Roman Catholic",
+     "pct": 54.5,
+     "count": 5224
+    },
+    {
+     "group": "No religion",
+     "pct": 40.0,
+     "count": 3834
+    },
+    {
+     "group": "Islam",
+     "pct": 1.8,
+     "count": 174
+    },
+    {
+     "group": "Other Christian",
+     "pct": 1.5,
+     "count": 147
+    },
+    {
+     "group": "Orthodox",
+     "pct": 1.1,
+     "count": 101
+    },
+    {
+     "group": "Protestant",
+     "pct": 0.6,
+     "count": 53
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.3,
+     "count": 25
+    },
+    {
+     "group": "Eastern religions",
+     "pct": 0.2,
+     "count": 18
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.0,
+     "count": 2
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 9,581 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "SWE",
+   "field": "religion",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "No religion",
+     "pct": 65.8,
+     "count": 5493
+    },
+    {
+     "group": "Protestant",
+     "pct": 26.0,
+     "count": 2171
+    },
+    {
+     "group": "Islam",
+     "pct": 3.4,
+     "count": 285
+    },
+    {
+     "group": "Roman Catholic",
+     "pct": 1.5,
+     "count": 124
+    },
+    {
+     "group": "Orthodox",
+     "pct": 1.1,
+     "count": 89
+    },
+    {
+     "group": "Other Christian",
+     "pct": 1.1,
+     "count": 88
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.6,
+     "count": 50
+    },
+    {
+     "group": "Eastern religions",
+     "pct": 0.4,
+     "count": 34
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.1,
+     "count": 7
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: religion",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): \"Do you consider yourself as belonging to any particular religion or denomination?\" and, if so, which; \"no\" is written as No religion. A survey estimate, not a count: 8,348 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "SWE",
+   "field": "language",
+   "year": 2023,
+   "basis": "survey estimate: self-identification, residents aged 15 and over in private households",
+   "groups": [
+    {
+     "group": "Swedish",
+     "pct": 91.4,
+     "count": 7597
+    },
+    {
+     "group": "Arabic",
+     "pct": 1.5,
+     "count": 121
+    },
+    {
+     "group": "English",
+     "pct": 1.3,
+     "count": 111
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.9,
+     "count": 71
+    },
+    {
+     "group": "Persian",
+     "pct": 0.6,
+     "count": 46
+    },
+    {
+     "group": "Kurdish",
+     "pct": 0.5,
+     "count": 37
+    },
+    {
+     "group": "Bosnian",
+     "pct": 0.4,
+     "count": 29
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.4,
+     "count": 35
+    },
+    {
+     "group": "Finnish",
+     "pct": 0.3,
+     "count": 28
+    },
+    {
+     "group": "Somali",
+     "pct": 0.3,
+     "count": 24
+    },
+    {
+     "group": "Danish",
+     "pct": 0.2,
+     "count": 15
+    },
+    {
+     "group": "German",
+     "pct": 0.2,
+     "count": 17
+    },
+    {
+     "group": "Polish",
+     "pct": 0.2,
+     "count": 18
+    },
+    {
+     "group": "Serbian",
+     "pct": 0.2,
+     "count": 12
+    },
+    {
+     "group": "Tigrinya",
+     "pct": 0.2,
+     "count": 12
+    },
+    {
+     "group": "Albanian",
+     "pct": 0.1,
+     "count": 11
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.1,
+     "count": 10
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "Croatian",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "French",
+     "pct": 0.1,
+     "count": 9
+    },
+    {
+     "group": "Greek",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "Icelandic",
+     "pct": 0.1,
+     "count": 9
+    },
+    {
+     "group": "Italian",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "Macedonian",
+     "pct": 0.1,
+     "count": 4
+    },
+    {
+     "group": "Norwegian",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "Russian",
+     "pct": 0.1,
+     "count": 10
+    },
+    {
+     "group": "Syriac",
+     "pct": 0.1,
+     "count": 5
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.1,
+     "count": 7
+    },
+    {
+     "group": "Dutch",
+     "pct": 0.0,
+     "count": 2
+    }
+   ],
+   "source": "European Social Survey (ESS ERIC), ESS rounds 7, 8, 9, 10, 11 (2014-2024), national samples pooled: language",
+   "url": "https://ess.sikt.no/en/series/321b06ad-1b98-4b7d-93ad-ca8a24e8788a",
+   "license": "CC BY-NC-SA 4.0 (ESS ERIC)",
+   "note": "European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: the language most often spoken at home, first mentioned (lnghom1); a language named by fewer than 5 respondents here is in Other languages. A survey estimate, not a count: 8,312 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate (ess_region_survey.json)."
+  },
+  {
+   "country": "CYP",
+   "field": "religion",
+   "year": 2021,
+   "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, table 1891632E",
+   "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891632E.px",
+   "license": "Statistical Service of Cyprus (reuse with attribution)",
+   "note": "Religion, 2021 census, resident population, CYSTAT's table 1891632E at its total of citizenship groups and sexes -- published for the country only, not by district. 'Not stated' is the census's 'not recorded/not stated'; the Maronite and Armenian churches are the census's own rows. The census was taken in the areas under the effective control of the Government of the Republic of Cyprus (923,381 residents on 1 October 2021); it was not taken in the north, so these shares describe that area and not the whole island.",
+   "groups": [
+    {
+     "group": "Orthodox",
+     "pct": 74.5,
+     "count": 688075
+    },
+    {
+     "group": "Not stated",
+     "pct": 17.3,
+     "count": 159835
+    },
+    {
+     "group": "Islam",
+     "pct": 2.1,
+     "count": 19534
+    },
+    {
+     "group": "Catholic",
+     "pct": 1.5,
+     "count": 13860
+    },
+    {
+     "group": "No religion",
+     "pct": 1.0,
+     "count": 9591
+    },
+    {
+     "group": "Protestant",
+     "pct": 1.0,
+     "count": 9621
+    },
+    {
+     "group": "Buddhism",
+     "pct": 0.9,
+     "count": 7868
+    },
+    {
+     "group": "Maronite Catholic",
+     "pct": 0.5,
+     "count": 4486
+    },
+    {
+     "group": "Other religion",
+     "pct": 0.5,
+     "count": 4545
+    },
+    {
+     "group": "Armenian Apostolic",
+     "pct": 0.2,
+     "count": 2025
+    },
+    {
+     "group": "Hinduism",
+     "pct": 0.2,
+     "count": 1681
+    },
+    {
+     "group": "Sikhism",
+     "pct": 0.2,
+     "count": 2260
+    }
+   ]
+  },
+  {
+   "country": "CYP",
+   "field": "ethnicity",
+   "year": 2021,
+   "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, table 1891642E",
+   "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891642E.px",
+   "license": "Statistical Service of Cyprus (reuse with attribution)",
+   "note": "Ethnic/religious group, 2021 census, resident population, CYSTAT's table 1891642E at its total of citizenship groups and sexes -- published for the country only. The question records the constitutional communities (Greek-Cypriot, Turkish-Cypriot, and the Maronite, Armenian and Latin religious groups) and, for everyone else, a national group, which is why most rows below Greek-Cypriot name a country. The census was taken in the areas under the effective control of the Government of the Republic of Cyprus (923,381 residents on 1 October 2021); it was not taken in the north, so these shares describe that area and not the whole island.",
+   "groups": [
+    {
+     "group": "Greek-Cypriot",
+     "pct": 74.7,
+     "count": 689412
+    },
+    {
+     "group": "Greek",
+     "pct": 4.3,
+     "count": 39384
+    },
+    {
+     "group": "Romanian",
+     "pct": 2.3,
+     "count": 20926
+    },
+    {
+     "group": "British",
+     "pct": 2.2,
+     "count": 20098
+    },
+    {
+     "group": "Other",
+     "pct": 2.1,
+     "count": 19768
+    },
+    {
+     "group": "Russian",
+     "pct": 1.9,
+     "count": 17086
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 1.8,
+     "count": 16579
+    },
+    {
+     "group": "Syrian",
+     "pct": 1.5,
+     "count": 13975
+    },
+    {
+     "group": "Not stated",
+     "pct": 1.3,
+     "count": 11845
+    },
+    {
+     "group": "Filipino",
+     "pct": 0.9,
+     "count": 8716
+    },
+    {
+     "group": "Indian",
+     "pct": 0.9,
+     "count": 8535
+    },
+    {
+     "group": "Sri Lankan",
+     "pct": 0.7,
+     "count": 6747
+    },
+    {
+     "group": "Cypriot Maronite",
+     "pct": 0.6,
+     "count": 5245
+    },
+    {
+     "group": "Georgian",
+     "pct": 0.6,
+     "count": 5240
+    },
+    {
+     "group": "Nepalese",
+     "pct": 0.6,
+     "count": 5989
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.6,
+     "count": 5616
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.4,
+     "count": 3434
+    },
+    {
+     "group": "Egyptian",
+     "pct": 0.3,
+     "count": 3192
+    },
+    {
+     "group": "Lebanese",
+     "pct": 0.3,
+     "count": 2404
+    },
+    {
+     "group": "Polish",
+     "pct": 0.3,
+     "count": 2459
+    },
+    {
+     "group": "Vietnamese",
+     "pct": 0.3,
+     "count": 2646
+    },
+    {
+     "group": "Bangladeshi",
+     "pct": 0.2,
+     "count": 1430
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.2,
+     "count": 2227
+    },
+    {
+     "group": "German",
+     "pct": 0.2,
+     "count": 2072
+    },
+    {
+     "group": "Moldovan",
+     "pct": 0.2,
+     "count": 1593
+    },
+    {
+     "group": "Turkish-Cypriot",
+     "pct": 0.2,
+     "count": 1617
+    },
+    {
+     "group": "Cameroonian",
+     "pct": 0.1,
+     "count": 1081
+    },
+    {
+     "group": "Iranian",
+     "pct": 0.1,
+     "count": 1218
+    },
+    {
+     "group": "Jewish",
+     "pct": 0.1,
+     "count": 1243
+    },
+    {
+     "group": "Pakistani",
+     "pct": 0.1,
+     "count": 1303
+    },
+    {
+     "group": "Cypriot Latin",
+     "pct": 0.0,
+     "count": 301
+    }
+   ]
+  },
+  {
+   "country": "CYP",
+   "field": "language",
+   "year": 2021,
+   "source": "Statistical Service of Cyprus (CYSTAT), Census of Population and Housing 2021, table 1891616E",
+   "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Language%2C%20Religion%2C%20Ethnic%20Religious%20Group/1891616E.px",
+   "license": "Statistical Service of Cyprus (reuse with attribution)",
+   "note": "Language, 2021 census, resident population, the five districts of table 1891616E summed (cyprus_census.py). The rows 'Indian', 'Sri Lankan' and 'Yugoslavian', which name a country rather than a language, are within Other. The census was taken in the areas under the effective control of the Government of the Republic of Cyprus (923,381 residents on 1 October 2021); it was not taken in the north, so these shares describe that area and not the whole island.",
+   "groups": [
+    {
+     "group": "Greek",
+     "pct": 79.5,
+     "count": 733732
+    },
+    {
+     "group": "English",
+     "pct": 4.8,
+     "count": 44482
+    },
+    {
+     "group": "Russian",
+     "pct": 2.3,
+     "count": 21642
+    },
+    {
+     "group": "Arabic",
+     "pct": 2.1,
+     "count": 19663
+    },
+    {
+     "group": "Other",
+     "pct": 2.0,
+     "count": 18351
+    },
+    {
+     "group": "Romanian",
+     "pct": 2.0,
+     "count": 18691
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 1.6,
+     "count": 14678
+    },
+    {
+     "group": "Not stated",
+     "pct": 1.2,
+     "count": 11111
+    },
+    {
+     "group": "Filipino",
+     "pct": 0.8,
+     "count": 7554
+    },
+    {
+     "group": "Georgian",
+     "pct": 0.4,
+     "count": 3445
+    },
+    {
+     "group": "Nepali",
+     "pct": 0.4,
+     "count": 3421
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.4,
+     "count": 4090
+    },
+    {
+     "group": "French",
+     "pct": 0.3,
+     "count": 2546
+    },
+    {
+     "group": "Vietnamese",
+     "pct": 0.3,
+     "count": 2500
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.2,
+     "count": 2179
+    },
+    {
+     "group": "German",
+     "pct": 0.2,
+     "count": 2281
+    },
+    {
+     "group": "Polish",
+     "pct": 0.2,
+     "count": 2013
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.2,
+     "count": 1551
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.1,
+     "count": 1067
+    },
+    {
+     "group": "Bengali",
+     "pct": 0.1,
+     "count": 657
+    },
+    {
+     "group": "Hebrew",
+     "pct": 0.1,
+     "count": 885
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.1,
+     "count": 559
+    },
+    {
+     "group": "Italian",
+     "pct": 0.1,
+     "count": 846
+    },
+    {
+     "group": "Latvian",
+     "pct": 0.1,
+     "count": 733
+    },
+    {
+     "group": "Moldovan",
+     "pct": 0.1,
+     "count": 678
+    },
+    {
+     "group": "Persian",
+     "pct": 0.1,
+     "count": 1166
+    },
+    {
+     "group": "Slovak",
+     "pct": 0.1,
+     "count": 703
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.1,
+     "count": 657
+    },
+    {
+     "group": "Swedish",
+     "pct": 0.1,
+     "count": 605
+    },
+    {
+     "group": "Urdu",
+     "pct": 0.1,
+     "count": 492
+    },
+    {
+     "group": "Dutch",
+     "pct": 0.0,
+     "count": 403
+    }
+   ]
+  },
+  {
+   "country": "GEO",
+   "field": "ethnicity",
+   "year": 2014,
+   "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2014 census, table 17, Total population by regions and ethnicity, row 'GEORGIA'",
+   "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+   "license": "Geostat, open publication",
+   "note": "Ethnicity (ეროვნება) as each person declared it, 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, which is why the country's population on the map (an estimate with them) is larger than this count, and why its regions are not summed into it.",
+   "groups": [
+    {
+     "group": "Georgian",
+     "pct": 86.8,
+     "count": 3224564
+    },
+    {
+     "group": "Azerbaijani",
+     "pct": 6.3,
+     "count": 233024
+    },
+    {
+     "group": "Armenian",
+     "pct": 4.5,
+     "count": 168102
+    },
+    {
+     "group": "Russian",
+     "pct": 0.7,
+     "count": 26453
+    },
+    {
+     "group": "Ossetian",
+     "pct": 0.4,
+     "count": 14385
+    },
+    {
+     "group": "Other",
+     "pct": 0.4,
+     "count": 14346
+    },
+    {
+     "group": "Yazidi",
+     "pct": 0.3,
+     "count": 12174
+    },
+    {
+     "group": "Kist",
+     "pct": 0.2,
+     "count": 5697
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.2,
+     "count": 6034
+    },
+    {
+     "group": "Assyrian",
+     "pct": 0.1,
+     "count": 2377
+    },
+    {
+     "group": "Greek",
+     "pct": 0.1,
+     "count": 5544
+    },
+    {
+     "group": "Not declared",
+     "pct": 0.0,
+     "count": 591
+    },
+    {
+     "group": "Not stated",
+     "pct": 0.0,
+     "count": 513
+    }
+   ]
+  },
+  {
+   "country": "GEO",
+   "field": "religion",
+   "year": 2014,
+   "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2014 census, table 22, Population by regions and religion, row 'GEORGIA'",
+   "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+   "license": "Geostat, open publication",
+   "note": "Religion (აღმსარებლობა), 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, which is why the country's population on the map (an estimate with them) is larger than this count, and why its regions are not summed into it.",
+   "groups": [
+    {
+     "group": "Orthodox",
+     "pct": 83.4,
+     "count": 3097573
+    },
+    {
+     "group": "Muslim",
+     "pct": 10.7,
+     "count": 398677
+    },
+    {
+     "group": "Armenian Apostolic",
+     "pct": 2.9,
+     "count": 109041
+    },
+    {
+     "group": "Not stated",
+     "pct": 1.2,
+     "count": 43886
+    },
+    {
+     "group": "Catholic",
+     "pct": 0.5,
+     "count": 19195
+    },
+    {
+     "group": "No religion",
+     "pct": 0.5,
+     "count": 19080
+    },
+    {
+     "group": "Jehovah's Witnesses",
+     "pct": 0.3,
+     "count": 12395
+    },
+    {
+     "group": "Yazidi",
+     "pct": 0.2,
+     "count": 8591
+    },
+    {
+     "group": "Protestant",
+     "pct": 0.1,
+     "count": 2520
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.0,
+     "count": 1417
+    },
+    {
+     "group": "Other religion",
+     "pct": 0.0,
+     "count": 1429
+    }
+   ]
+  },
+  {
+   "country": "GEO",
+   "field": "language",
+   "year": 2014,
+   "source": "National Statistics Office of Georgia (Geostat), PC-Axis database: 2014 census, table 20, Population by region, by native languages, row 'GEORGIA'",
+   "url": "https://pc-axis.geostat.ge/PXweb/pxweb/en/Database/",
+   "license": "Geostat, open publication",
+   "note": "Native language (მშობლიური ენა), 2014 census, the country's own row: everyone enumerated, 3,713,804 people. The census covered the territory under the government's control; Abkhazia and the Tskhinvali region were not enumerated, which is why the country's population on the map (an estimate with them) is larger than this count, and why its regions are not summed into it.",
+   "groups": [
+    {
+     "group": "Georgian",
+     "pct": 87.6,
+     "count": 3254852
+    },
+    {
+     "group": "Azerbaijani",
+     "pct": 6.2,
+     "count": 231436
+    },
+    {
+     "group": "Armenian",
+     "pct": 3.9,
+     "count": 144812
+    },
+    {
+     "group": "Russian",
+     "pct": 1.2,
+     "count": 45920
+    },
+    {
+     "group": "Other",
+     "pct": 0.8,
+     "count": 30742
+    },
+    {
+     "group": "Ossetian",
+     "pct": 0.2,
+     "count": 5698
+    },
+    {
+     "group": "Abkhaz",
+     "pct": 0.0,
+     "count": 272
+    },
+    {
+     "group": "Not stated",
+     "pct": 0.0,
+     "count": 72
+    }
+   ]
+  },
+  {
+   "country": "RUS",
+   "field": "ethnicity",
+   "year": 2021,
+   "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 5: Национальный состав и владение языками, retrieved via the Internet Archive capture of 2025-01-05",
+   "url": "https://rosstat.gov.ru/vpn/2020/Tom5_Nacionalnyj_sostav_i_vladenie_yazykami",
+   "license": "Rosstat open data",
+   "note": "Nationality (национальная принадлежность) as each person stated it in the 2020 census (reference date 1 October 2021), summed over the 83 federal subjects the map draws -- Crimea and Sevastopol, which the census counts too, are drawn in Ukraine. The shares are of the 128,354,693 who stated one; 16,344,980 of the 144,699,673 counted (11.3%) have no answer on their form and are left out. Peoples Rosstat lists inside another are counted with it. Volume 5, table 1.",
+   "groups": [
+    {
+     "group": "Russian",
+     "pct": 80.9,
+     "count": 103872517
+    },
+    {
+     "group": "Tatar",
+     "pct": 3.6,
+     "count": 4682717
+    },
+    {
+     "group": "Chechen",
+     "pct": 1.3,
+     "count": 1674241
+    },
+    {
+     "group": "Bashkir",
+     "pct": 1.2,
+     "count": 1571211
+    },
+    {
+     "group": "Other ethnicity",
+     "pct": 1.1,
+     "count": 1384284
+    },
+    {
+     "group": "Avar",
+     "pct": 0.8,
+     "count": 1011842
+    },
+    {
+     "group": "Chuvash",
+     "pct": 0.8,
+     "count": 1065863
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.7,
+     "count": 937156
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.6,
+     "count": 712847
+    },
+    {
+     "group": "Dargin",
+     "pct": 0.5,
+     "count": 626426
+    },
+    {
+     "group": "Kazakh",
+     "pct": 0.5,
+     "count": 591164
+    },
+    {
+     "group": "Azerbaijani",
+     "pct": 0.4,
+     "count": 471301
+    },
+    {
+     "group": "Buryat",
+     "pct": 0.4,
+     "count": 459946
+    },
+    {
+     "group": "Ingush",
+     "pct": 0.4,
+     "count": 517058
+    },
+    {
+     "group": "Kabardian",
+     "pct": 0.4,
+     "count": 523298
+    },
+    {
+     "group": "Kumyk",
+     "pct": 0.4,
+     "count": 565709
+    },
+    {
+     "group": "Lezgin",
+     "pct": 0.4,
+     "count": 488342
+    },
+    {
+     "group": "Mordvin",
+     "pct": 0.4,
+     "count": 483611
+    },
+    {
+     "group": "No ethnicity",
+     "pct": 0.4,
+     "count": 535016
+    },
+    {
+     "group": "Ossetian",
+     "pct": 0.4,
+     "count": 485085
+    },
+    {
+     "group": "Yakut",
+     "pct": 0.4,
+     "count": 478346
+    },
+    {
+     "group": "Mari",
+     "pct": 0.3,
+     "count": 423307
+    },
+    {
+     "group": "Tajik",
+     "pct": 0.3,
+     "count": 349362
+    },
+    {
+     "group": "Udmurt",
+     "pct": 0.3,
+     "count": 386063
+    },
+    {
+     "group": "Belarusian",
+     "pct": 0.2,
+     "count": 197447
+    },
+    {
+     "group": "Karachay",
+     "pct": 0.2,
+     "count": 226226
+    },
+    {
+     "group": "German",
+     "pct": 0.2,
+     "count": 194114
+    },
+    {
+     "group": "Tuvan",
+     "pct": 0.2,
+     "count": 295364
+    },
+    {
+     "group": "Uzbek",
+     "pct": 0.2,
+     "count": 320451
+    },
+    {
+     "group": "Adyghe",
+     "pct": 0.1,
+     "count": 111406
+    },
+    {
+     "group": "Altai",
+     "pct": 0.1,
+     "count": 78107
+    },
+    {
+     "group": "Balkar",
+     "pct": 0.1,
+     "count": 125003
+    },
+    {
+     "group": "Georgian",
+     "pct": 0.1,
+     "count": 111612
+    },
+    {
+     "group": "Jewish",
+     "pct": 0.1,
+     "count": 80507
+    },
+    {
+     "group": "Kalmyk",
+     "pct": 0.1,
+     "count": 179425
+    },
+    {
+     "group": "Kyrgyz",
+     "pct": 0.1,
+     "count": 137599
+    },
+    {
+     "group": "Komi",
+     "pct": 0.1,
+     "count": 143400
+    },
+    {
+     "group": "Korean",
+     "pct": 0.1,
+     "count": 85809
+    },
+    {
+     "group": "Lak",
+     "pct": 0.1,
+     "count": 173334
+    },
+    {
+     "group": "Moldovan",
+     "pct": 0.1,
+     "count": 75698
+    },
+    {
+     "group": "Nogai",
+     "pct": 0.1,
+     "count": 108790
+    },
+    {
+     "group": "Tabasaran",
+     "pct": 0.1,
+     "count": 151310
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.1,
+     "count": 115654
+    },
+    {
+     "group": "Romani",
+     "pct": 0.1,
+     "count": 171713
+    },
+    {
+     "group": "Circassian",
+     "pct": 0.1,
+     "count": 114649
+    },
+    {
+     "group": "Abaza",
+     "pct": 0.0,
+     "count": 41774
+    },
+    {
+     "group": "Abkhaz",
+     "pct": 0.0,
+     "count": 8121
+    },
+    {
+     "group": "Agul",
+     "pct": 0.0,
+     "count": 34564
+    },
+    {
+     "group": "Aleut",
+     "pct": 0.0,
+     "count": 396
+    },
+    {
+     "group": "American",
+     "pct": 0.0,
+     "count": 1107
+    },
+    {
+     "group": "Arab",
+     "pct": 0.0,
+     "count": 16049
+    },
+    {
+     "group": "Assyrian",
+     "pct": 0.0,
+     "count": 4373
+    },
+    {
+     "group": "Afghan",
+     "pct": 0.0,
+     "count": 3511
+    },
+    {
+     "group": "Besermyan",
+     "pct": 0.0,
+     "count": 2035
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 0.0,
+     "count": 10846
+    },
+    {
+     "group": "Bosnian",
+     "pct": 0.0,
+     "count": 97
+    },
+    {
+     "group": "British",
+     "pct": 0.0,
+     "count": 1134
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.0,
+     "count": 1381
+    },
+    {
+     "group": "Veps",
+     "pct": 0.0,
+     "count": 4530
+    },
+    {
+     "group": "Votic",
+     "pct": 0.0,
+     "count": 99
+    },
+    {
+     "group": "Vietnamese",
+     "pct": 0.0,
+     "count": 7899
+    },
+    {
+     "group": "Gagauz",
+     "pct": 0.0,
+     "count": 9078
+    },
+    {
+     "group": "Mountain Jew",
+     "pct": 0.0,
+     "count": 263
+    },
+    {
+     "group": "Greek",
+     "pct": 0.0,
+     "count": 52181
+    },
+    {
+     "group": "Georgian Jew",
+     "pct": 0.0,
+     "count": 14
+    },
+    {
+     "group": "Dolgan",
+     "pct": 0.0,
+     "count": 8156
+    },
+    {
+     "group": "Dungan",
+     "pct": 0.0,
+     "count": 3025
+    },
+    {
+     "group": "Yazidi",
+     "pct": 0.0,
+     "count": 26163
+    },
+    {
+     "group": "Izhorian",
+     "pct": 0.0,
+     "count": 210
+    },
+    {
+     "group": "Indian",
+     "pct": 0.0,
+     "count": 7640
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.0,
+     "count": 1151
+    },
+    {
+     "group": "Italian",
+     "pct": 0.0,
+     "count": 1378
+    },
+    {
+     "group": "Itelmen",
+     "pct": 0.0,
+     "count": 2596
+    },
+    {
+     "group": "Kamchadal",
+     "pct": 0.0,
+     "count": 1545
+    },
+    {
+     "group": "Karaim",
+     "pct": 0.0,
+     "count": 182
+    },
+    {
+     "group": "Karakalpak",
+     "pct": 0.0,
+     "count": 835
+    },
+    {
+     "group": "Karelian",
+     "pct": 0.0,
+     "count": 32367
+    },
+    {
+     "group": "Kerek",
+     "pct": 0.0,
+     "count": 22
+    },
+    {
+     "group": "Ket",
+     "pct": 0.0,
+     "count": 1087
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.0,
+     "count": 19619
+    },
+    {
+     "group": "Komi-Permyak",
+     "pct": 0.0,
+     "count": 55695
+    },
+    {
+     "group": "Koryak",
+     "pct": 0.0,
+     "count": 7481
+    },
+    {
+     "group": "Crimean Tatar",
+     "pct": 0.0,
+     "count": 4022
+    },
+    {
+     "group": "Krymchak",
+     "pct": 0.0,
+     "count": 55
+    },
+    {
+     "group": "Cuban",
+     "pct": 0.0,
+     "count": 693
+    },
+    {
+     "group": "Kumandin",
+     "pct": 0.0,
+     "count": 2407
+    },
+    {
+     "group": "Kurd",
+     "pct": 0.0,
+     "count": 24538
+    },
+    {
+     "group": "Latvian",
+     "pct": 0.0,
+     "count": 8331
+    },
+    {
+     "group": "Lithuanian",
+     "pct": 0.0,
+     "count": 13020
+    },
+    {
+     "group": "Macedonian",
+     "pct": 0.0,
+     "count": 149
+    },
+    {
+     "group": "Mansi",
+     "pct": 0.0,
+     "count": 12224
+    },
+    {
+     "group": "Mongol",
+     "pct": 0.0,
+     "count": 1312
+    },
+    {
+     "group": "Nagaybak",
+     "pct": 0.0,
+     "count": 5717
+    },
+    {
+     "group": "Nanai",
+     "pct": 0.0,
+     "count": 11621
+    },
+    {
+     "group": "Nganasan",
+     "pct": 0.0,
+     "count": 687
+    },
+    {
+     "group": "Negidal",
+     "pct": 0.0,
+     "count": 481
+    },
+    {
+     "group": "Nenets",
+     "pct": 0.0,
+     "count": 49633
+    },
+    {
+     "group": "Nivkh",
+     "pct": 0.0,
+     "count": 3841
+    },
+    {
+     "group": "Oroch",
+     "pct": 0.0,
+     "count": 527
+    },
+    {
+     "group": "Pakistani",
+     "pct": 0.0,
+     "count": 407
+    },
+    {
+     "group": "Pamiri",
+     "pct": 0.0,
+     "count": 467
+    },
+    {
+     "group": "Persian",
+     "pct": 0.0,
+     "count": 2390
+    },
+    {
+     "group": "Polish",
+     "pct": 0.0,
+     "count": 20620
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.0,
+     "count": 1762
+    },
+    {
+     "group": "Rusyn",
+     "pct": 0.0,
+     "count": 563
+    },
+    {
+     "group": "Rutul",
+     "pct": 0.0,
+     "count": 34232
+    },
+    {
+     "group": "Sami",
+     "pct": 0.0,
+     "count": 1526
+    },
+    {
+     "group": "Selkup",
+     "pct": 0.0,
+     "count": 3458
+    },
+    {
+     "group": "Serbian",
+     "pct": 0.0,
+     "count": 2121
+    },
+    {
+     "group": "Slovak",
+     "pct": 0.0,
+     "count": 182
+    },
+    {
+     "group": "Slovene",
+     "pct": 0.0,
+     "count": 104
+    },
+    {
+     "group": "Soyot",
+     "pct": 0.0,
+     "count": 4368
+    },
+    {
+     "group": "Bukharan Jew",
+     "pct": 0.0,
+     "count": 18
+    },
+    {
+     "group": "Taz",
+     "pct": 0.0,
+     "count": 235
+    },
+    {
+     "group": "Talysh",
+     "pct": 0.0,
+     "count": 3582
+    },
+    {
+     "group": "Tat",
+     "pct": 0.0,
+     "count": 574
+    },
+    {
+     "group": "Teleut",
+     "pct": 0.0,
+     "count": 2216
+    },
+    {
+     "group": "Tofalar",
+     "pct": 0.0,
+     "count": 719
+    },
+    {
+     "group": "Meskhetian Turk",
+     "pct": 0.0,
+     "count": 4068
+    },
+    {
+     "group": "Turkmen",
+     "pct": 0.0,
+     "count": 41240
+    },
+    {
+     "group": "Udi",
+     "pct": 0.0,
+     "count": 2550
+    },
+    {
+     "group": "Udege",
+     "pct": 0.0,
+     "count": 1325
+    },
+    {
+     "group": "Uyghur",
+     "pct": 0.0,
+     "count": 2186
+    },
+    {
+     "group": "Uilta",
+     "pct": 0.0,
+     "count": 268
+    },
+    {
+     "group": "Ulch",
+     "pct": 0.0,
+     "count": 2472
+    },
+    {
+     "group": "Finnish",
+     "pct": 0.0,
+     "count": 7750
+    },
+    {
+     "group": "French",
+     "pct": 0.0,
+     "count": 1434
+    },
+    {
+     "group": "Khakas",
+     "pct": 0.0,
+     "count": 61335
+    },
+    {
+     "group": "Khanty",
+     "pct": 0.0,
+     "count": 31450
+    },
+    {
+     "group": "Hemshin",
+     "pct": 0.0,
+     "count": 2082
+    },
+    {
+     "group": "Croatian",
+     "pct": 0.0,
+     "count": 174
+    },
+    {
+     "group": "Tsakhur",
+     "pct": 0.0,
+     "count": 12541
+    },
+    {
+     "group": "Central Asian Romani",
+     "pct": 0.0,
+     "count": 12
+    },
+    {
+     "group": "Montenegrin",
+     "pct": 0.0,
+     "count": 85
+    },
+    {
+     "group": "Czech",
+     "pct": 0.0,
+     "count": 983
+    },
+    {
+     "group": "Chuvan",
+     "pct": 0.0,
+     "count": 900
+    },
+    {
+     "group": "Chukchi",
+     "pct": 0.0,
+     "count": 16193
+    },
+    {
+     "group": "Chulym",
+     "pct": 0.0,
+     "count": 382
+    },
+    {
+     "group": "Shapsug",
+     "pct": 0.0,
+     "count": 1914
+    },
+    {
+     "group": "Shor",
+     "pct": 0.0,
+     "count": 10496
+    },
+    {
+     "group": "Evenk",
+     "pct": 0.0,
+     "count": 39216
+    },
+    {
+     "group": "Even",
+     "pct": 0.0,
+     "count": 19909
+    },
+    {
+     "group": "Enets",
+     "pct": 0.0,
+     "count": 201
+    },
+    {
+     "group": "Yupik",
+     "pct": 0.0,
+     "count": 1655
+    },
+    {
+     "group": "Estonian",
+     "pct": 0.0,
+     "count": 7677
+    },
+    {
+     "group": "Yukaghir",
+     "pct": 0.0,
+     "count": 1801
+    },
+    {
+     "group": "Japanese",
+     "pct": 0.0,
+     "count": 658
+    }
+   ]
+  },
+  {
+   "country": "RUS",
+   "field": "language",
+   "year": 2021,
+   "source": "Федеральная служба государственной статистики (Rosstat), Всероссийская перепись населения 2020 года, Том 5: Национальный состав и владение языками, retrieved via the Internet Archive capture of 2025-01-05",
+   "url": "https://rosstat.gov.ru/vpn/2020/Tom5_Nacionalnyj_sostav_i_vladenie_yazykami",
+   "license": "Rosstat open data",
+   "note": "Native language (родной язык) as each person stated it in the 2020 census (reference date 1 October 2021), summed over the 83 federal subjects the map draws -- Crimea and Sevastopol, which the census counts too, are drawn in Ukraine. The shares are of the 128,294,640 who stated one; 16,405,033 of the 144,699,673 counted (11.3%) have no answer on their form and are left out. Peoples Rosstat lists inside another are counted with it. Volume 5, table 6.",
+   "groups": [
+    {
+     "group": "Russian",
+     "pct": 85.5,
+     "count": 109641294
+    },
+    {
+     "group": "Tatar",
+     "pct": 3.1,
+     "count": 4014662
+    },
+    {
+     "group": "Chechen",
+     "pct": 1.3,
+     "count": 1643814
+    },
+    {
+     "group": "Bashkir",
+     "pct": 1.0,
+     "count": 1319355
+    },
+    {
+     "group": "Avar",
+     "pct": 0.7,
+     "count": 907798
+    },
+    {
+     "group": "Chuvash",
+     "pct": 0.6,
+     "count": 799649
+    },
+    {
+     "group": "Armenian",
+     "pct": 0.5,
+     "count": 669777
+    },
+    {
+     "group": "Dargin",
+     "pct": 0.5,
+     "count": 587265
+    },
+    {
+     "group": "Kabardian",
+     "pct": 0.5,
+     "count": 609296
+    },
+    {
+     "group": "Ingush",
+     "pct": 0.4,
+     "count": 507002
+    },
+    {
+     "group": "Kumyk",
+     "pct": 0.4,
+     "count": 523650
+    },
+    {
+     "group": "Ossetian",
+     "pct": 0.4,
+     "count": 456298
+    },
+    {
+     "group": "Yakut",
+     "pct": 0.4,
+     "count": 479450
+    },
+    {
+     "group": "Azerbaijani",
+     "pct": 0.3,
+     "count": 391393
+    },
+    {
+     "group": "Buryat",
+     "pct": 0.3,
+     "count": 392936
+    },
+    {
+     "group": "Kazakh",
+     "pct": 0.3,
+     "count": 400334
+    },
+    {
+     "group": "Karachay-Balkar",
+     "pct": 0.3,
+     "count": 343305
+    },
+    {
+     "group": "Lezgin",
+     "pct": 0.3,
+     "count": 412887
+    },
+    {
+     "group": "Mari",
+     "pct": 0.2,
+     "count": 318299
+    },
+    {
+     "group": "Mordvin",
+     "pct": 0.2,
+     "count": 274688
+    },
+    {
+     "group": "Tajik",
+     "pct": 0.2,
+     "count": 302117
+    },
+    {
+     "group": "Tuvan",
+     "pct": 0.2,
+     "count": 294010
+    },
+    {
+     "group": "Udmurt",
+     "pct": 0.2,
+     "count": 271776
+    },
+    {
+     "group": "Uzbek",
+     "pct": 0.2,
+     "count": 267523
+    },
+    {
+     "group": "Ukrainian",
+     "pct": 0.2,
+     "count": 237631
+    },
+    {
+     "group": "Adyghe",
+     "pct": 0.1,
+     "count": 114399
+    },
+    {
+     "group": "Altai",
+     "pct": 0.1,
+     "count": 68683
+    },
+    {
+     "group": "Georgian",
+     "pct": 0.1,
+     "count": 75622
+    },
+    {
+     "group": "Kalmyk",
+     "pct": 0.1,
+     "count": 166650
+    },
+    {
+     "group": "Kyrgyz",
+     "pct": 0.1,
+     "count": 115674
+    },
+    {
+     "group": "Komi",
+     "pct": 0.1,
+     "count": 99580
+    },
+    {
+     "group": "Lak",
+     "pct": 0.1,
+     "count": 144483
+    },
+    {
+     "group": "Nogai",
+     "pct": 0.1,
+     "count": 104052
+    },
+    {
+     "group": "Tabasaran",
+     "pct": 0.1,
+     "count": 143457
+    },
+    {
+     "group": "Turkish",
+     "pct": 0.1,
+     "count": 114939
+    },
+    {
+     "group": "Romani",
+     "pct": 0.1,
+     "count": 140484
+    },
+    {
+     "group": "Abaza",
+     "pct": 0.0,
+     "count": 40145
+    },
+    {
+     "group": "Abkhaz",
+     "pct": 0.0,
+     "count": 5491
+    },
+    {
+     "group": "Agul",
+     "pct": 0.0,
+     "count": 33173
+    },
+    {
+     "group": "Circassian",
+     "pct": 0.0,
+     "count": 6921
+    },
+    {
+     "group": "Albanian",
+     "pct": 0.0,
+     "count": 146
+    },
+    {
+     "group": "Aleut",
+     "pct": 0.0,
+     "count": 136
+    },
+    {
+     "group": "Alyutor",
+     "pct": 0.0,
+     "count": 168
+    },
+    {
+     "group": "Amharic",
+     "pct": 0.0,
+     "count": 144
+    },
+    {
+     "group": "English",
+     "pct": 0.0,
+     "count": 7714
+    },
+    {
+     "group": "Andi",
+     "pct": 0.0,
+     "count": 21150
+    },
+    {
+     "group": "Arabic",
+     "pct": 0.0,
+     "count": 15030
+    },
+    {
+     "group": "Archi",
+     "pct": 0.0,
+     "count": 1709
+    },
+    {
+     "group": "Assyrian",
+     "pct": 0.0,
+     "count": 2382
+    },
+    {
+     "group": "Akhvakh",
+     "pct": 0.0,
+     "count": 7521
+    },
+    {
+     "group": "Bagvalal",
+     "pct": 0.0,
+     "count": 2297
+    },
+    {
+     "group": "Bezhta",
+     "pct": 0.0,
+     "count": 8138
+    },
+    {
+     "group": "Belarusian",
+     "pct": 0.0,
+     "count": 43439
+    },
+    {
+     "group": "Bengali",
+     "pct": 0.0,
+     "count": 258
+    },
+    {
+     "group": "Burmese",
+     "pct": 0.0,
+     "count": 10
+    },
+    {
+     "group": "Bulgarian",
+     "pct": 0.0,
+     "count": 4021
+    },
+    {
+     "group": "Botlikh",
+     "pct": 0.0,
+     "count": 5073
+    },
+    {
+     "group": "Bulgar",
+     "pct": 0.0,
+     "count": 157
+    },
+    {
+     "group": "Hungarian",
+     "pct": 0.0,
+     "count": 764
+    },
+    {
+     "group": "Veps",
+     "pct": 0.0,
+     "count": 1275
+    },
+    {
+     "group": "Votic",
+     "pct": 0.0,
+     "count": 21
+    },
+    {
+     "group": "Vietnamese",
+     "pct": 0.0,
+     "count": 7298
+    },
+    {
+     "group": "Gagauz",
+     "pct": 0.0,
+     "count": 4886
+    },
+    {
+     "group": "Hinukh",
+     "pct": 0.0,
+     "count": 635
+    },
+    {
+     "group": "Godoberi",
+     "pct": 0.0,
+     "count": 3021
+    },
+    {
+     "group": "Hill Mari",
+     "pct": 0.0,
+     "count": 18331
+    },
+    {
+     "group": "Greek",
+     "pct": 0.0,
+     "count": 14972
+    },
+    {
+     "group": "Hunzib",
+     "pct": 0.0,
+     "count": 3466
+    },
+    {
+     "group": "Dagestani",
+     "pct": 0.0,
+     "count": 34146
+    },
+    {
+     "group": "Dari",
+     "pct": 0.0,
+     "count": 363
+    },
+    {
+     "group": "Danish",
+     "pct": 0.0,
+     "count": 65
+    },
+    {
+     "group": "Dolgan",
+     "pct": 0.0,
+     "count": 5346
+    },
+    {
+     "group": "Dungan",
+     "pct": 0.0,
+     "count": 2651
+    },
+    {
+     "group": "Jewish (unspecified)",
+     "pct": 0.0,
+     "count": 3612
+    },
+    {
+     "group": "Hebrew",
+     "pct": 0.0,
+     "count": 3759
+    },
+    {
+     "group": "Yiddish",
+     "pct": 0.0,
+     "count": 530
+    },
+    {
+     "group": "Izhorian",
+     "pct": 0.0,
+     "count": 76
+    },
+    {
+     "group": "Indonesian",
+     "pct": 0.0,
+     "count": 102
+    },
+    {
+     "group": "Irish",
+     "pct": 0.0,
+     "count": 23
+    },
+    {
+     "group": "Icelandic",
+     "pct": 0.0,
+     "count": 6
+    },
+    {
+     "group": "Spanish",
+     "pct": 0.0,
+     "count": 2803
+    },
+    {
+     "group": "Italian",
+     "pct": 0.0,
+     "count": 1071
+    },
+    {
+     "group": "Itelmen",
+     "pct": 0.0,
+     "count": 807
+    },
+    {
+     "group": "Karaim",
+     "pct": 0.0,
+     "count": 6
+    },
+    {
+     "group": "Karakalpak",
+     "pct": 0.0,
+     "count": 404
+    },
+    {
+     "group": "Karata",
+     "pct": 0.0,
+     "count": 9549
+    },
+    {
+     "group": "Karelian",
+     "pct": 0.0,
+     "count": 8740
+    },
+    {
+     "group": "Kerek",
+     "pct": 0.0,
+     "count": 4
+    },
+    {
+     "group": "Ket",
+     "pct": 0.0,
+     "count": 153
+    },
+    {
+     "group": "Chinese",
+     "pct": 0.0,
+     "count": 17536
+    },
+    {
+     "group": "Komi-Permyak",
+     "pct": 0.0,
+     "count": 40269
+    },
+    {
+     "group": "Korean",
+     "pct": 0.0,
+     "count": 17238
+    },
+    {
+     "group": "Koryak",
+     "pct": 0.0,
+     "count": 4162
+    },
+    {
+     "group": "Crimean Tatar",
+     "pct": 0.0,
+     "count": 1878
+    },
+    {
+     "group": "Kumandin",
+     "pct": 0.0,
+     "count": 654
+    },
+    {
+     "group": "Kurdish",
+     "pct": 0.0,
+     "count": 42993
+    },
+    {
+     "group": "Latin",
+     "pct": 0.0,
+     "count": 151
+    },
+    {
+     "group": "Latvian",
+     "pct": 0.0,
+     "count": 3156
+    },
+    {
+     "group": "Lithuanian",
+     "pct": 0.0,
+     "count": 4995
+    },
+    {
+     "group": "Meadow Mari",
+     "pct": 0.0,
+     "count": 225
+    },
+    {
+     "group": "Macedonian",
+     "pct": 0.0,
+     "count": 135
+    },
+    {
+     "group": "Malay",
+     "pct": 0.0,
+     "count": 36
+    },
+    {
+     "group": "Mansi",
+     "pct": 0.0,
+     "count": 2229
+    },
+    {
+     "group": "Mingrelian",
+     "pct": 0.0,
+     "count": 311
+    },
+    {
+     "group": "Moksha",
+     "pct": 0.0,
+     "count": 23176
+    },
+    {
+     "group": "Moldovan",
+     "pct": 0.0,
+     "count": 44529
+    },
+    {
+     "group": "Mongolian",
+     "pct": 0.0,
+     "count": 1037
+    },
+    {
+     "group": "Nanai",
+     "pct": 0.0,
+     "count": 6648
+    },
+    {
+     "group": "Nganasan",
+     "pct": 0.0,
+     "count": 416
+    },
+    {
+     "group": "Negidal",
+     "pct": 0.0,
+     "count": 29
+    },
+    {
+     "group": "German",
+     "pct": 0.0,
+     "count": 25361
+    },
+    {
+     "group": "Nenets",
+     "pct": 0.0,
+     "count": 38403
+    },
+    {
+     "group": "Nivkh",
+     "pct": 0.0,
+     "count": 1277
+    },
+    {
+     "group": "Dutch",
+     "pct": 0.0,
+     "count": 104
+    },
+    {
+     "group": "Nogai-Karagash",
+     "pct": 0.0,
+     "count": 159
+    },
+    {
+     "group": "Norwegian",
+     "pct": 0.0,
+     "count": 65
+    },
+    {
+     "group": "Oroch",
+     "pct": 0.0,
+     "count": 119
+    },
+    {
+     "group": "Persian",
+     "pct": 0.0,
+     "count": 3377
+    },
+    {
+     "group": "Polish",
+     "pct": 0.0,
+     "count": 3081
+    },
+    {
+     "group": "Portuguese",
+     "pct": 0.0,
+     "count": 795
+    },
+    {
+     "group": "Pashto",
+     "pct": 0.0,
+     "count": 2201
+    },
+    {
+     "group": "Romanian",
+     "pct": 0.0,
+     "count": 4025
+    },
+    {
+     "group": "Rusyn",
+     "pct": 0.0,
+     "count": 819
+    },
+    {
+     "group": "Russian Sign Language",
+     "pct": 0.0,
+     "count": 1380
+    },
+    {
+     "group": "Rutul",
+     "pct": 0.0,
+     "count": 33093
+    },
+    {
+     "group": "Sami",
+     "pct": 0.0,
+     "count": 341
+    },
+    {
+     "group": "Selkup",
+     "pct": 0.0,
+     "count": 1589
+    },
+    {
+     "group": "Serbo-Croatian",
+     "pct": 0.0,
+     "count": 1878
+    },
+    {
+     "group": "Slovak",
+     "pct": 0.0,
+     "count": 107
+    },
+    {
+     "group": "Slovene",
+     "pct": 0.0,
+     "count": 325
+    },
+    {
+     "group": "Old Church Slavonic",
+     "pct": 0.0,
+     "count": 71
+    },
+    {
+     "group": "Swahili",
+     "pct": 0.0,
+     "count": 256
+    },
+    {
+     "group": "Thai",
+     "pct": 0.0,
+     "count": 157
+    },
+    {
+     "group": "Talysh",
+     "pct": 0.0,
+     "count": 2637
+    },
+    {
+     "group": "Tamil",
+     "pct": 0.0,
+     "count": 154
+    },
+    {
+     "group": "Tat",
+     "pct": 0.0,
+     "count": 716
+    },
+    {
+     "group": "Teleut",
+     "pct": 0.0,
+     "count": 1570
+    },
+    {
+     "group": "Tibetan",
+     "pct": 0.0,
+     "count": 34
+    },
+    {
+     "group": "Tindi",
+     "pct": 0.0,
+     "count": 4457
+    },
+    {
+     "group": "Tofalar",
+     "pct": 0.0,
+     "count": 67
+    },
+    {
+     "group": "Tubalar",
+     "pct": 0.0,
+     "count": 930
+    },
+    {
+     "group": "Turkmen",
+     "pct": 0.0,
+     "count": 35549
+    },
+    {
+     "group": "Turkic",
+     "pct": 0.0,
+     "count": 936
+    },
+    {
+     "group": "Udi",
+     "pct": 0.0,
+     "count": 1860
+    },
+    {
+     "group": "Udege",
+     "pct": 0.0,
+     "count": 674
+    },
+    {
+     "group": "Uyghur",
+     "pct": 0.0,
+     "count": 725
+    },
+    {
+     "group": "Uilta",
+     "pct": 0.0,
+     "count": 116
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.0,
+     "count": 34000
+    },
+    {
+     "group": "Ulch",
+     "pct": 0.0,
+     "count": 835
+    },
+    {
+     "group": "Urdu",
+     "pct": 0.0,
+     "count": 152
+    },
+    {
+     "group": "Finnish",
+     "pct": 0.0,
+     "count": 1050
+    },
+    {
+     "group": "French",
+     "pct": 0.0,
+     "count": 3552
+    },
+    {
+     "group": "Khakas",
+     "pct": 0.0,
+     "count": 46712
+    },
+    {
+     "group": "Khanty",
+     "pct": 0.0,
+     "count": 13898
+    },
+    {
+     "group": "Khwarshi",
+     "pct": 0.0,
+     "count": 3296
+    },
+    {
+     "group": "Hindi",
+     "pct": 0.0,
+     "count": 5311
+    },
+    {
+     "group": "Tsakhur",
+     "pct": 0.0,
+     "count": 11412
+    },
+    {
+     "group": "Tsez",
+     "pct": 0.0,
+     "count": 17574
+    },
+    {
+     "group": "Chamalal",
+     "pct": 0.0,
+     "count": 5171
+    },
+    {
+     "group": "Chelkan",
+     "pct": 0.0,
+     "count": 648
+    },
+    {
+     "group": "Czech",
+     "pct": 0.0,
+     "count": 396
+    },
+    {
+     "group": "Chukchi",
+     "pct": 0.0,
+     "count": 8525
+    },
+    {
+     "group": "Chulym",
+     "pct": 0.0,
+     "count": 38
+    },
+    {
+     "group": "Swedish",
+     "pct": 0.0,
+     "count": 106
+    },
+    {
+     "group": "Shor",
+     "pct": 0.0,
+     "count": 5530
+    },
+    {
+     "group": "Evenki",
+     "pct": 0.0,
+     "count": 8723
+    },
+    {
+     "group": "Even",
+     "pct": 0.0,
+     "count": 7206
+    },
+    {
+     "group": "Enets",
+     "pct": 0.0,
+     "count": 69
+    },
+    {
+     "group": "Erzya",
+     "pct": 0.0,
+     "count": 46238
+    },
+    {
+     "group": "Yupik",
+     "pct": 0.0,
+     "count": 816
+    },
+    {
+     "group": "Estonian",
+     "pct": 0.0,
+     "count": 2772
+    },
+    {
+     "group": "Yug",
+     "pct": 0.0,
+     "count": 3
+    },
+    {
+     "group": "Siberian Yupik",
+     "pct": 0.0,
+     "count": 1
+    },
+    {
+     "group": "Yukaghir",
+     "pct": 0.0,
+     "count": 516
+    },
+    {
+     "group": "Yurt Tatar",
+     "pct": 0.0,
+     "count": 18
+    },
+    {
+     "group": "Japanese",
+     "pct": 0.0,
+     "count": 521
+    }
+   ]
+  },
+  {
+   "country": "RUS",
+   "field": "religion",
+   "year": 2012,
+   "basis": "survey estimate: self-identification, adults 18+",
+   "groups": [
+    {
+     "group": "Russian Orthodox Church",
+     "pct": 41.1,
+     "count": 23411
+    },
+    {
+     "group": "Believe in God, no specific religion",
+     "pct": 25.2,
+     "count": 14314
+    },
+    {
+     "group": "Atheist",
+     "pct": 13.0,
+     "count": 7408
+    },
+    {
+     "group": "Don't know",
+     "pct": 5.5,
+     "count": 3104
+    },
+    {
+     "group": "Muslim (neither Sunni nor Shia)",
+     "pct": 4.7,
+     "count": 2651
+    },
+    {
+     "group": "Non-denominational Christian",
+     "pct": 4.1,
+     "count": 2310
+    },
+    {
+     "group": "Sunni Islam",
+     "pct": 1.7,
+     "count": 943
+    },
+    {
+     "group": "Orthodox (outside the Russian Orthodox Church)",
+     "pct": 1.5,
+     "count": 852
+    },
+    {
+     "group": "Traditional religion of ancestors",
+     "pct": 1.2,
+     "count": 693
+    },
+    {
+     "group": "Other religion",
+     "pct": 0.6,
+     "count": 347
+    },
+    {
+     "group": "Buddhism",
+     "pct": 0.5,
+     "count": 261
+    },
+    {
+     "group": "Orthodox Old Believers",
+     "pct": 0.3,
+     "count": 183
+    },
+    {
+     "group": "Protestant",
+     "pct": 0.2,
+     "count": 122
+    },
+    {
+     "group": "Shia Islam",
+     "pct": 0.2,
+     "count": 120
+    },
+    {
+     "group": "Catholic",
+     "pct": 0.1,
+     "count": 73
+    },
+    {
+     "group": "Eastern religions and spiritual practices",
+     "pct": 0.1,
+     "count": 37
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.1,
+     "count": 37
+    },
+    {
+     "group": "Pentecostalism",
+     "pct": 0.1,
+     "count": 34
+    }
+   ],
+   "source": "Sreda, Arena: Atlas of Religions and Nationalities of Russia (2012), arena_statistic.xls -- 'Распределение ответов в регионах РФ', column 'Население в целом'",
+   "url": "http://sreda.org/arena",
+   "license": "Sreda, published aggregate tabulation",
+   "note": "Sreda's Arena survey (fieldwork by the Public Opinion Foundation, MegaFOM omnibus, 29 May-25 June 2012, face to face at home): 56,900 adults aged 18 and over in 79 of the 83 federal subjects the map draws, 500 to 800 in each, which Sreda puts at 98.8% of the population -- Chechnya, Ingushetia, Chukotka and Nenets AO were not surveyed. Sreda's own figure for Russia as a whole, its subjects weighted by their populations; the counts are those weighted shares of the 56,900 respondents, not people. One answer from a card: 'Russian Orthodox Church' is 'I profess Orthodoxy and belong to the Russian Orthodox Church', 'Believe in God, no specific religion' is 'I believe in God (a higher power) but profess no particular religion', 'Atheist' is 'I do not believe in God'. A survey estimate, not a count: no Russian census since 1937 has asked religion. The subjects carry the same survey's own figures (russia_religion_survey.json)."
   }
  ]
 }

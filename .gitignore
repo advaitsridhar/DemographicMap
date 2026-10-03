@@ -143,6 +143,14 @@ data/raw/*
 # bind an office's codes to them. query.wikidata.org refuses this sandbox.
 !data/raw/wikidata_points/
 !data/raw/wikidata_points/*.json
+# The European Social Survey's tables by NUTS region and by country (religion,
+# home language; weighted and unweighted counts), as the ESS Data Portal's open
+# tabulation service returns them: about 400 kB of aggregates and no microdata,
+# so scripts/fetch_census/ess_region.py rebuilds and is checked without the
+# network. api.nsd.no refuses this sandbox.
+!data/raw/ess/
+!data/raw/ess/*.json.gz
+!data/raw/ess/*.json
 data/processed/http_cache/
 
 # Intermediate tiling artefacts

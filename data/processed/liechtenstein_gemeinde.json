@@ -1,0 +1,6236 @@
+[
+  {
+    "id": "LIE-vaduz-admin1",
+    "level": "admin1",
+    "name": "Vaduz",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6099,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 46.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 97.6,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 62.1,
+        "count": 3564
+      },
+      {
+        "group": "No religion",
+        "pct": 11.5,
+        "count": 663
+      },
+      {
+        "group": "Islam",
+        "pct": 8.6,
+        "count": 491
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.6,
+        "count": 435
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.7,
+        "count": 211
+      },
+      {
+        "group": "Orthodox",
+        "pct": 2.6,
+        "count": 150
+      },
+      {
+        "group": "Lutheran",
+        "pct": 1.0,
+        "count": 58
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.9,
+        "count": 53
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8,
+        "count": 48
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 48
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 20
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 89.2,
+        "count": 5119
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.4,
+        "count": 78
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.3,
+        "count": 75
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.1,
+        "count": 61
+      },
+      {
+        "group": "Italian",
+        "pct": 1.1,
+        "count": 63
+      },
+      {
+        "group": "English",
+        "pct": 1.0,
+        "count": 58
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 1.0,
+        "count": 60
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.7,
+        "count": 43
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 43
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "West Asian languages",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.2,
+        "count": 9
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Danish",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Norwegian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other European languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 57.8,
+        "count": 3533
+      },
+      {
+        "group": "Swiss",
+        "pct": 9.8,
+        "count": 601
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 8.6,
+        "count": 523
+      },
+      {
+        "group": "German",
+        "pct": 6.9,
+        "count": 420
+      },
+      {
+        "group": "Austrian",
+        "pct": 5.8,
+        "count": 357
+      },
+      {
+        "group": "Italian",
+        "pct": 2.9,
+        "count": 180
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.0,
+        "count": 122
+      },
+      {
+        "group": "Kosovan",
+        "pct": 1.9,
+        "count": 114
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.6,
+        "count": 98
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.2,
+        "count": 75
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.7,
+        "count": 45
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 40
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B54479018835512",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-vaduz-admin2",
+    "level": "admin2",
+    "name": "Vaduz",
+    "parent": "41692755B54479018835512",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6099,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 46.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 97.6,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 62.1,
+        "count": 3564
+      },
+      {
+        "group": "No religion",
+        "pct": 11.5,
+        "count": 663
+      },
+      {
+        "group": "Islam",
+        "pct": 8.6,
+        "count": 491
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.6,
+        "count": 435
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.7,
+        "count": 211
+      },
+      {
+        "group": "Orthodox",
+        "pct": 2.6,
+        "count": 150
+      },
+      {
+        "group": "Lutheran",
+        "pct": 1.0,
+        "count": 58
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.9,
+        "count": 53
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.8,
+        "count": 48
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 48
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 20
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 89.2,
+        "count": 5119
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.4,
+        "count": 78
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.3,
+        "count": 75
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.1,
+        "count": 61
+      },
+      {
+        "group": "Italian",
+        "pct": 1.1,
+        "count": 63
+      },
+      {
+        "group": "English",
+        "pct": 1.0,
+        "count": 58
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 1.0,
+        "count": 60
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.7,
+        "count": 43
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 43
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "West Asian languages",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.2,
+        "count": 9
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Danish",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Norwegian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other European languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 57.8,
+        "count": 3533
+      },
+      {
+        "group": "Swiss",
+        "pct": 9.8,
+        "count": 601
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 8.6,
+        "count": 523
+      },
+      {
+        "group": "German",
+        "pct": 6.9,
+        "count": 420
+      },
+      {
+        "group": "Austrian",
+        "pct": 5.8,
+        "count": 357
+      },
+      {
+        "group": "Italian",
+        "pct": 2.9,
+        "count": 180
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.0,
+        "count": 122
+      },
+      {
+        "group": "Kosovan",
+        "pct": 1.9,
+        "count": 114
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.6,
+        "count": 98
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.2,
+        "count": 75
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.7,
+        "count": 45
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 40
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B54479018835512",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-triesen-admin1",
+    "level": "admin1",
+    "name": "Triesen",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5785,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 45.4,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 95.7,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 66.9,
+        "count": 3564
+      },
+      {
+        "group": "No religion",
+        "pct": 10.3,
+        "count": 547
+      },
+      {
+        "group": "Islam",
+        "pct": 7.3,
+        "count": 389
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.3,
+        "count": 389
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.1,
+        "count": 220
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.5,
+        "count": 80
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.8,
+        "count": 42
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7,
+        "count": 37
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.5,
+        "count": 28
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 21
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 13
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 91.9,
+        "count": 4899
+      },
+      {
+        "group": "Italian",
+        "pct": 1.5,
+        "count": 80
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.2,
+        "count": 66
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.2,
+        "count": 63
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.8,
+        "count": 42
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.5,
+        "count": 28
+      },
+      {
+        "group": "English",
+        "pct": 0.5,
+        "count": 28
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.5,
+        "count": 25
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 21
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 14
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "West Asian languages",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 59.7,
+        "count": 3454
+      },
+      {
+        "group": "Swiss",
+        "pct": 11.4,
+        "count": 662
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 7.2,
+        "count": 417
+      },
+      {
+        "group": "Austrian",
+        "pct": 4.5,
+        "count": 259
+      },
+      {
+        "group": "German",
+        "pct": 4.3,
+        "count": 246
+      },
+      {
+        "group": "Italian",
+        "pct": 3.8,
+        "count": 220
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.3,
+        "count": 191
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.6,
+        "count": 150
+      },
+      {
+        "group": "Kosovan",
+        "pct": 1.3,
+        "count": 78
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.1,
+        "count": 66
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.4,
+        "count": 26
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.3,
+        "count": 16
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B66371769109520",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-triesen-admin2",
+    "level": "admin2",
+    "name": "Triesen",
+    "parent": "41692755B66371769109520",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5785,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 45.4,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 95.7,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 66.9,
+        "count": 3564
+      },
+      {
+        "group": "No religion",
+        "pct": 10.3,
+        "count": 547
+      },
+      {
+        "group": "Islam",
+        "pct": 7.3,
+        "count": 389
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.3,
+        "count": 389
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.1,
+        "count": 220
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.5,
+        "count": 80
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.8,
+        "count": 42
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.7,
+        "count": 37
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.5,
+        "count": 28
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 21
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 13
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 91.9,
+        "count": 4899
+      },
+      {
+        "group": "Italian",
+        "pct": 1.5,
+        "count": 80
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.2,
+        "count": 66
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.2,
+        "count": 63
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.8,
+        "count": 42
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.5,
+        "count": 28
+      },
+      {
+        "group": "English",
+        "pct": 0.5,
+        "count": 28
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.5,
+        "count": 25
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 21
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 14
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "West Asian languages",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 59.7,
+        "count": 3454
+      },
+      {
+        "group": "Swiss",
+        "pct": 11.4,
+        "count": 662
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 7.2,
+        "count": 417
+      },
+      {
+        "group": "Austrian",
+        "pct": 4.5,
+        "count": 259
+      },
+      {
+        "group": "German",
+        "pct": 4.3,
+        "count": 246
+      },
+      {
+        "group": "Italian",
+        "pct": 3.8,
+        "count": 220
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.3,
+        "count": 191
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.6,
+        "count": 150
+      },
+      {
+        "group": "Kosovan",
+        "pct": 1.3,
+        "count": 78
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.1,
+        "count": 66
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.4,
+        "count": 26
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.3,
+        "count": 16
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B66371769109520",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-balzers-admin1",
+    "level": "admin1",
+    "name": "Balzers",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4835,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 95.9,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 75.3,
+        "count": 3527
+      },
+      {
+        "group": "No religion",
+        "pct": 7.7,
+        "count": 360
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.8,
+        "count": 274
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.9,
+        "count": 181
+      },
+      {
+        "group": "Islam",
+        "pct": 3.7,
+        "count": 173
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.5,
+        "count": 71
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.7,
+        "count": 32
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.5,
+        "count": 23
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.4,
+        "count": 18
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 12
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 13
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 93.2,
+        "count": 4366
+      },
+      {
+        "group": "Italian",
+        "pct": 3.2,
+        "count": 148
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.8,
+        "count": 37
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.7,
+        "count": 33
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 17
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.4,
+        "count": 18
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 14
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 9
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 9
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other European languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 71.9,
+        "count": 3474
+      },
+      {
+        "group": "Swiss",
+        "pct": 9.7,
+        "count": 467
+      },
+      {
+        "group": "Italian",
+        "pct": 6.2,
+        "count": 302
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.1,
+        "count": 149
+      },
+      {
+        "group": "Austrian",
+        "pct": 2.6,
+        "count": 127
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.3,
+        "count": 113
+      },
+      {
+        "group": "German",
+        "pct": 1.6,
+        "count": 79
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.5,
+        "count": 71
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.4,
+        "count": 17
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.3,
+        "count": 13
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 12
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.2,
+        "count": 11
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B63992629942054",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-balzers-admin2",
+    "level": "admin2",
+    "name": "Balzers",
+    "parent": "41692755B63992629942054",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4835,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 95.9,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 75.3,
+        "count": 3527
+      },
+      {
+        "group": "No religion",
+        "pct": 7.7,
+        "count": 360
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.8,
+        "count": 274
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.9,
+        "count": 181
+      },
+      {
+        "group": "Islam",
+        "pct": 3.7,
+        "count": 173
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.5,
+        "count": 71
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.7,
+        "count": 32
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.5,
+        "count": 23
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.4,
+        "count": 18
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 12
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 13
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 93.2,
+        "count": 4366
+      },
+      {
+        "group": "Italian",
+        "pct": 3.2,
+        "count": 148
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.8,
+        "count": 37
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.7,
+        "count": 33
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 17
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.4,
+        "count": 18
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 14
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.3,
+        "count": 16
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 9
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 9
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other European languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other language",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 71.9,
+        "count": 3474
+      },
+      {
+        "group": "Swiss",
+        "pct": 9.7,
+        "count": 467
+      },
+      {
+        "group": "Italian",
+        "pct": 6.2,
+        "count": 302
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.1,
+        "count": 149
+      },
+      {
+        "group": "Austrian",
+        "pct": 2.6,
+        "count": 127
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.3,
+        "count": 113
+      },
+      {
+        "group": "German",
+        "pct": 1.6,
+        "count": 79
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.5,
+        "count": 71
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.4,
+        "count": 17
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.3,
+        "count": 13
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 12
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.2,
+        "count": 11
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B63992629942054",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-triesenberg-admin1",
+    "level": "admin1",
+    "name": "Triesenberg",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2743,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 49.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 102.3,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 77.9,
+        "count": 2053
+      },
+      {
+        "group": "No religion",
+        "pct": 9.0,
+        "count": 237
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.5,
+        "count": 144
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.0,
+        "count": 106
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.8,
+        "count": 21
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.7,
+        "count": 18
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 17
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 13
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.5,
+        "count": 13
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 4
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 97.9,
+        "count": 2580
+      },
+      {
+        "group": "Italian",
+        "pct": 0.4,
+        "count": 11
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 76.8,
+        "count": 2106
+      },
+      {
+        "group": "Swiss",
+        "pct": 7.4,
+        "count": 204
+      },
+      {
+        "group": "German",
+        "pct": 5.4,
+        "count": 149
+      },
+      {
+        "group": "Austrian",
+        "pct": 3.5,
+        "count": 97
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.1,
+        "count": 85
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.0,
+        "count": 54
+      },
+      {
+        "group": "Italian",
+        "pct": 1.2,
+        "count": 32
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.4,
+        "count": 11
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.1,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B18610673403937",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-triesenberg-admin2",
+    "level": "admin2",
+    "name": "Triesenberg",
+    "parent": "41692755B18610673403937",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2743,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 49.1,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 102.3,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 77.9,
+        "count": 2053
+      },
+      {
+        "group": "No religion",
+        "pct": 9.0,
+        "count": 237
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.5,
+        "count": 144
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.0,
+        "count": 106
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.8,
+        "count": 21
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.7,
+        "count": 18
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 17
+      },
+      {
+        "group": "Islam",
+        "pct": 0.5,
+        "count": 13
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.5,
+        "count": 13
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.2,
+        "count": 4
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 97.9,
+        "count": 2580
+      },
+      {
+        "group": "Italian",
+        "pct": 0.4,
+        "count": 11
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 76.8,
+        "count": 2106
+      },
+      {
+        "group": "Swiss",
+        "pct": 7.4,
+        "count": 204
+      },
+      {
+        "group": "German",
+        "pct": 5.4,
+        "count": 149
+      },
+      {
+        "group": "Austrian",
+        "pct": 3.5,
+        "count": 97
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.1,
+        "count": 85
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.0,
+        "count": 54
+      },
+      {
+        "group": "Italian",
+        "pct": 1.2,
+        "count": 32
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.4,
+        "count": 11
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.1,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B18610673403937",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-schaan-admin1",
+    "level": "admin1",
+    "name": "Schaan",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6300,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 47.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 96.0,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 68.5,
+        "count": 4138
+      },
+      {
+        "group": "No religion",
+        "pct": 10.8,
+        "count": 650
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.8,
+        "count": 471
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.5,
+        "count": 272
+      },
+      {
+        "group": "Islam",
+        "pct": 4.1,
+        "count": 246
+      },
+      {
+        "group": "Orthodox",
+        "pct": 2.1,
+        "count": 126
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6,
+        "count": 35
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.6,
+        "count": 34
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.5,
+        "count": 30
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 19
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 16
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 89.9,
+        "count": 5425
+      },
+      {
+        "group": "Spanish",
+        "pct": 2.3,
+        "count": 139
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.0,
+        "count": 123
+      },
+      {
+        "group": "Italian",
+        "pct": 1.3,
+        "count": 77
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.7,
+        "count": 40
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.7,
+        "count": 42
+      },
+      {
+        "group": "English",
+        "pct": 0.5,
+        "count": 30
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.4,
+        "count": 23
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 21
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 18
+      },
+      {
+        "group": "Greek",
+        "pct": 0.3,
+        "count": 19
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 14
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "West Asian languages",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 62.2,
+        "count": 3915
+      },
+      {
+        "group": "Swiss",
+        "pct": 9.6,
+        "count": 602
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 6.4,
+        "count": 401
+      },
+      {
+        "group": "Austrian",
+        "pct": 5.6,
+        "count": 352
+      },
+      {
+        "group": "German",
+        "pct": 4.9,
+        "count": 307
+      },
+      {
+        "group": "Italian",
+        "pct": 3.0,
+        "count": 187
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.8,
+        "count": 179
+      },
+      {
+        "group": "Spanish",
+        "pct": 2.4,
+        "count": 151
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.4,
+        "count": 85
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.7,
+        "count": 44
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.7,
+        "count": 45
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.4,
+        "count": 26
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B26730620500431",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-schaan-admin2",
+    "level": "admin2",
+    "name": "Schaan",
+    "parent": "41692755B26730620500431",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6300,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 47.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 96.0,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 68.5,
+        "count": 4138
+      },
+      {
+        "group": "No religion",
+        "pct": 10.8,
+        "count": 650
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.8,
+        "count": 471
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.5,
+        "count": 272
+      },
+      {
+        "group": "Islam",
+        "pct": 4.1,
+        "count": 246
+      },
+      {
+        "group": "Orthodox",
+        "pct": 2.1,
+        "count": 126
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6,
+        "count": 35
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.6,
+        "count": 34
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.5,
+        "count": 30
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 19
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 16
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 89.9,
+        "count": 5425
+      },
+      {
+        "group": "Spanish",
+        "pct": 2.3,
+        "count": 139
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.0,
+        "count": 123
+      },
+      {
+        "group": "Italian",
+        "pct": 1.3,
+        "count": 77
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.7,
+        "count": 40
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.7,
+        "count": 42
+      },
+      {
+        "group": "English",
+        "pct": 0.5,
+        "count": 30
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.4,
+        "count": 23
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.3,
+        "count": 21
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 18
+      },
+      {
+        "group": "Greek",
+        "pct": 0.3,
+        "count": 19
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 14
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Czech",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "West Asian languages",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Danish",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Polish",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 62.2,
+        "count": 3915
+      },
+      {
+        "group": "Swiss",
+        "pct": 9.6,
+        "count": 602
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 6.4,
+        "count": 401
+      },
+      {
+        "group": "Austrian",
+        "pct": 5.6,
+        "count": 352
+      },
+      {
+        "group": "German",
+        "pct": 4.9,
+        "count": 307
+      },
+      {
+        "group": "Italian",
+        "pct": 3.0,
+        "count": 187
+      },
+      {
+        "group": "Portuguese",
+        "pct": 2.8,
+        "count": 179
+      },
+      {
+        "group": "Spanish",
+        "pct": 2.4,
+        "count": 151
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.4,
+        "count": 85
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.7,
+        "count": 44
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.7,
+        "count": 45
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.4,
+        "count": 26
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B26730620500431",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-planken-admin1",
+    "level": "admin1",
+    "name": "Planken",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 499,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 47.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 101.2,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 71.8,
+        "count": 347
+      },
+      {
+        "group": "Protestant",
+        "pct": 10.8,
+        "count": 52
+      },
+      {
+        "group": "No religion",
+        "pct": 10.1,
+        "count": 49
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.3,
+        "count": 21
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.9,
+        "count": 9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 2
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 97.7,
+        "count": 472
+      },
+      {
+        "group": "English",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 2
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Italian",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 70.9,
+        "count": 354
+      },
+      {
+        "group": "German",
+        "pct": 11.2,
+        "count": 56
+      },
+      {
+        "group": "Swiss",
+        "pct": 8.8,
+        "count": 44
+      },
+      {
+        "group": "Austrian",
+        "pct": 5.4,
+        "count": 27
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 1.6,
+        "count": 8
+      },
+      {
+        "group": "Italian",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B23424129986871",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-planken-admin2",
+    "level": "admin2",
+    "name": "Planken",
+    "parent": "41692755B23424129986871",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 499,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 47.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 101.2,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 71.8,
+        "count": 347
+      },
+      {
+        "group": "Protestant",
+        "pct": 10.8,
+        "count": 52
+      },
+      {
+        "group": "No religion",
+        "pct": 10.1,
+        "count": 49
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.3,
+        "count": 21
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.9,
+        "count": 9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 2
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 97.7,
+        "count": 472
+      },
+      {
+        "group": "English",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 2
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Italian",
+        "pct": 0.2,
+        "count": 1
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 70.9,
+        "count": 354
+      },
+      {
+        "group": "German",
+        "pct": 11.2,
+        "count": 56
+      },
+      {
+        "group": "Swiss",
+        "pct": 8.8,
+        "count": 44
+      },
+      {
+        "group": "Austrian",
+        "pct": 5.4,
+        "count": 27
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 1.6,
+        "count": 8
+      },
+      {
+        "group": "Italian",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.6,
+        "count": 3
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B23424129986871",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-eschen-admin1",
+    "level": "admin1",
+    "name": "Eschen",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4694,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 101.4,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 65.9,
+        "count": 2982
+      },
+      {
+        "group": "Islam",
+        "pct": 11.9,
+        "count": 538
+      },
+      {
+        "group": "No religion",
+        "pct": 8.6,
+        "count": 387
+      },
+      {
+        "group": "Protestant",
+        "pct": 4.9,
+        "count": 222
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.0,
+        "count": 181
+      },
+      {
+        "group": "Orthodox",
+        "pct": 2.0,
+        "count": 89
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.0,
+        "count": 47
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.6,
+        "count": 29
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 18
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 15
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 91.7,
+        "count": 4146
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.2,
+        "count": 101
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 1.7,
+        "count": 78
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.0,
+        "count": 45
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 33
+      },
+      {
+        "group": "Italian",
+        "pct": 0.5,
+        "count": 22
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.5,
+        "count": 23
+      },
+      {
+        "group": "English",
+        "pct": 0.4,
+        "count": 20
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 10
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.2,
+        "count": 7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 10
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "West Asian languages",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 64.3,
+        "count": 3074
+      },
+      {
+        "group": "Swiss",
+        "pct": 7.9,
+        "count": 379
+      },
+      {
+        "group": "Austrian",
+        "pct": 7.7,
+        "count": 367
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 4.2,
+        "count": 200
+      },
+      {
+        "group": "German",
+        "pct": 4.1,
+        "count": 194
+      },
+      {
+        "group": "Turkish",
+        "pct": 3.1,
+        "count": 149
+      },
+      {
+        "group": "Kosovan",
+        "pct": 2.2,
+        "count": 107
+      },
+      {
+        "group": "Italian",
+        "pct": 1.7,
+        "count": 79
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.5,
+        "count": 71
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 1.4,
+        "count": 68
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.2,
+        "count": 56
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.8,
+        "count": 37
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B941757218579",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-eschen-admin2",
+    "level": "admin2",
+    "name": "Eschen",
+    "parent": "41692755B941757218579",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4694,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 101.4,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 65.9,
+        "count": 2982
+      },
+      {
+        "group": "Islam",
+        "pct": 11.9,
+        "count": 538
+      },
+      {
+        "group": "No religion",
+        "pct": 8.6,
+        "count": 387
+      },
+      {
+        "group": "Protestant",
+        "pct": 4.9,
+        "count": 222
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.0,
+        "count": 181
+      },
+      {
+        "group": "Orthodox",
+        "pct": 2.0,
+        "count": 89
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.0,
+        "count": 47
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.6,
+        "count": 29
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 18
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 15
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 91.7,
+        "count": 4146
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.2,
+        "count": 101
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 1.7,
+        "count": 78
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.0,
+        "count": 45
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 33
+      },
+      {
+        "group": "Italian",
+        "pct": 0.5,
+        "count": 22
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.5,
+        "count": 23
+      },
+      {
+        "group": "English",
+        "pct": 0.4,
+        "count": 20
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 10
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.2,
+        "count": 7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 10
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Other language",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "West Asian languages",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 64.3,
+        "count": 3074
+      },
+      {
+        "group": "Swiss",
+        "pct": 7.9,
+        "count": 379
+      },
+      {
+        "group": "Austrian",
+        "pct": 7.7,
+        "count": 367
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 4.2,
+        "count": 200
+      },
+      {
+        "group": "German",
+        "pct": 4.1,
+        "count": 194
+      },
+      {
+        "group": "Turkish",
+        "pct": 3.1,
+        "count": 149
+      },
+      {
+        "group": "Kosovan",
+        "pct": 2.2,
+        "count": 107
+      },
+      {
+        "group": "Italian",
+        "pct": 1.7,
+        "count": 79
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.5,
+        "count": 71
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 1.4,
+        "count": 68
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.2,
+        "count": 56
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.8,
+        "count": 37
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B941757218579",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-mauren-admin1",
+    "level": "admin1",
+    "name": "Mauren",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4712,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 44.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 70.2,
+        "count": 3106
+      },
+      {
+        "group": "No religion",
+        "pct": 8.5,
+        "count": 374
+      },
+      {
+        "group": "Islam",
+        "pct": 7.4,
+        "count": 327
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.9,
+        "count": 260
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.1,
+        "count": 225
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.0,
+        "count": 44
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.8,
+        "count": 36
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.8,
+        "count": 35
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.1,
+        "count": 3
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 92.6,
+        "count": 4098
+      },
+      {
+        "group": "Italian",
+        "pct": 1.5,
+        "count": 66
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.2,
+        "count": 53
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.9,
+        "count": 38
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.8,
+        "count": 34
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.7,
+        "count": 30
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.6,
+        "count": 25
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 14
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 8
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Danish",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Norwegian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other European languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 61.9,
+        "count": 2888
+      },
+      {
+        "group": "Austrian",
+        "pct": 9.5,
+        "count": 445
+      },
+      {
+        "group": "Swiss",
+        "pct": 8.9,
+        "count": 414
+      },
+      {
+        "group": "German",
+        "pct": 5.6,
+        "count": 261
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 5.4,
+        "count": 251
+      },
+      {
+        "group": "Italian",
+        "pct": 2.9,
+        "count": 137
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.6,
+        "count": 73
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.3,
+        "count": 60
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.8,
+        "count": 37
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.7,
+        "count": 32
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.7,
+        "count": 32
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 33
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B54662867343220",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-mauren-admin2",
+    "level": "admin2",
+    "name": "Mauren",
+    "parent": "41692755B54662867343220",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4712,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 44.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 70.2,
+        "count": 3106
+      },
+      {
+        "group": "No religion",
+        "pct": 8.5,
+        "count": 374
+      },
+      {
+        "group": "Islam",
+        "pct": 7.4,
+        "count": 327
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.9,
+        "count": 260
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.1,
+        "count": 225
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.0,
+        "count": 44
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.8,
+        "count": 36
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 0.8,
+        "count": 35
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.1,
+        "count": 3
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 92.6,
+        "count": 4098
+      },
+      {
+        "group": "Italian",
+        "pct": 1.5,
+        "count": 66
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.2,
+        "count": 53
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.9,
+        "count": 38
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.8,
+        "count": 34
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.7,
+        "count": 30
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.6,
+        "count": 25
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 14
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.3,
+        "count": 15
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 8
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Danish",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Czech",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Norwegian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other European languages",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Swedish",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 61.9,
+        "count": 2888
+      },
+      {
+        "group": "Austrian",
+        "pct": 9.5,
+        "count": 445
+      },
+      {
+        "group": "Swiss",
+        "pct": 8.9,
+        "count": 414
+      },
+      {
+        "group": "German",
+        "pct": 5.6,
+        "count": 261
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 5.4,
+        "count": 251
+      },
+      {
+        "group": "Italian",
+        "pct": 2.9,
+        "count": 137
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.6,
+        "count": 73
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.3,
+        "count": 60
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.8,
+        "count": 37
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.7,
+        "count": 32
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.7,
+        "count": 32
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.7,
+        "count": 33
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B54662867343220",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-gamprin-admin1",
+    "level": "admin1",
+    "name": "Gamprin",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1813,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 45.4,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 98.8,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 71.2,
+        "count": 1200
+      },
+      {
+        "group": "No religion",
+        "pct": 10.6,
+        "count": 179
+      },
+      {
+        "group": "Islam",
+        "pct": 6.1,
+        "count": 103
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.6,
+        "count": 94
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.3,
+        "count": 56
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.1,
+        "count": 18
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.0,
+        "count": 17
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.6,
+        "count": 10
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 6
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 94.5,
+        "count": 1594
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.2,
+        "count": 21
+      },
+      {
+        "group": "Italian",
+        "pct": 1.0,
+        "count": 17
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.9,
+        "count": 16
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 10
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 6
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 5
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.3,
+        "count": 5
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 3
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 66.8,
+        "count": 1184
+      },
+      {
+        "group": "Swiss",
+        "pct": 8.9,
+        "count": 158
+      },
+      {
+        "group": "German",
+        "pct": 6.5,
+        "count": 115
+      },
+      {
+        "group": "Austrian",
+        "pct": 5.9,
+        "count": 105
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.3,
+        "count": 58
+      },
+      {
+        "group": "Italian",
+        "pct": 2.1,
+        "count": 37
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.9,
+        "count": 33
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.5,
+        "count": 27
+      },
+      {
+        "group": "Kosovan",
+        "pct": 1.1,
+        "count": 20
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.1,
+        "count": 20
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.8,
+        "count": 15
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B90684947638296",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-gamprin-admin2",
+    "level": "admin2",
+    "name": "Gamprin",
+    "parent": "41692755B90684947638296",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1813,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 45.4,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 98.8,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 71.2,
+        "count": 1200
+      },
+      {
+        "group": "No religion",
+        "pct": 10.6,
+        "count": 179
+      },
+      {
+        "group": "Islam",
+        "pct": 6.1,
+        "count": 103
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.6,
+        "count": 94
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.3,
+        "count": 56
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.1,
+        "count": 18
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.0,
+        "count": 17
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.6,
+        "count": 10
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4,
+        "count": 6
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 94.5,
+        "count": 1594
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.2,
+        "count": 21
+      },
+      {
+        "group": "Italian",
+        "pct": 1.0,
+        "count": 17
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.9,
+        "count": 16
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.6,
+        "count": 10
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.4,
+        "count": 6
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 5
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.3,
+        "count": 5
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 3
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 66.8,
+        "count": 1184
+      },
+      {
+        "group": "Swiss",
+        "pct": 8.9,
+        "count": 158
+      },
+      {
+        "group": "German",
+        "pct": 6.5,
+        "count": 115
+      },
+      {
+        "group": "Austrian",
+        "pct": 5.9,
+        "count": 105
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.3,
+        "count": 58
+      },
+      {
+        "group": "Italian",
+        "pct": 2.1,
+        "count": 37
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.9,
+        "count": 33
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.5,
+        "count": 27
+      },
+      {
+        "group": "Kosovan",
+        "pct": 1.1,
+        "count": 20
+      },
+      {
+        "group": "Portuguese",
+        "pct": 1.1,
+        "count": 20
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.8,
+        "count": 15
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B90684947638296",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-ruggell-admin1",
+    "level": "admin1",
+    "name": "Ruggell",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2568,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 43.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 98.5,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 76.0,
+        "count": 1828
+      },
+      {
+        "group": "No religion",
+        "pct": 8.4,
+        "count": 201
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.3,
+        "count": 175
+      },
+      {
+        "group": "Islam",
+        "pct": 2.5,
+        "count": 59
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.3,
+        "count": 56
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.6,
+        "count": 38
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.6,
+        "count": 15
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 14
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 4
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 96.2,
+        "count": 2313
+      },
+      {
+        "group": "English",
+        "pct": 0.6,
+        "count": 14
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.6,
+        "count": 15
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.5,
+        "count": 13
+      },
+      {
+        "group": "Italian",
+        "pct": 0.4,
+        "count": 9
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 9
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 10
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 6
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 71.8,
+        "count": 1843
+      },
+      {
+        "group": "Swiss",
+        "pct": 10.4,
+        "count": 268
+      },
+      {
+        "group": "Austrian",
+        "pct": 6.7,
+        "count": 171
+      },
+      {
+        "group": "German",
+        "pct": 3.9,
+        "count": 100
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.5,
+        "count": 91
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.4,
+        "count": 36
+      },
+      {
+        "group": "Italian",
+        "pct": 1.1,
+        "count": 28
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.5,
+        "count": 12
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 10
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B33734108210637",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-ruggell-admin2",
+    "level": "admin2",
+    "name": "Ruggell",
+    "parent": "41692755B33734108210637",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2568,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 43.7,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 98.5,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 76.0,
+        "count": 1828
+      },
+      {
+        "group": "No religion",
+        "pct": 8.4,
+        "count": 201
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.3,
+        "count": 175
+      },
+      {
+        "group": "Islam",
+        "pct": 2.5,
+        "count": 59
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.3,
+        "count": 56
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.6,
+        "count": 38
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.6,
+        "count": 15
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.6,
+        "count": 14
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 4
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 96.2,
+        "count": 2313
+      },
+      {
+        "group": "English",
+        "pct": 0.6,
+        "count": 14
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.6,
+        "count": 15
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.5,
+        "count": 13
+      },
+      {
+        "group": "Italian",
+        "pct": 0.4,
+        "count": 9
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 9
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 10
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.2,
+        "count": 6
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Dutch",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Asian languages",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 71.8,
+        "count": 1843
+      },
+      {
+        "group": "Swiss",
+        "pct": 10.4,
+        "count": 268
+      },
+      {
+        "group": "Austrian",
+        "pct": 6.7,
+        "count": 171
+      },
+      {
+        "group": "German",
+        "pct": 3.9,
+        "count": 100
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.5,
+        "count": 91
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.4,
+        "count": 36
+      },
+      {
+        "group": "Italian",
+        "pct": 1.1,
+        "count": 28
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.5,
+        "count": 12
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.4,
+        "count": 10
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B33734108210637",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-schellenberg-admin1",
+    "level": "admin1",
+    "name": "Schellenberg",
+    "parent": "LIE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1180,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 45.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 98.0,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 78.4,
+        "count": 870
+      },
+      {
+        "group": "No religion",
+        "pct": 9.4,
+        "count": 104
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.0,
+        "count": 56
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.2,
+        "count": 24
+      },
+      {
+        "group": "Islam",
+        "pct": 1.5,
+        "count": 17
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.1,
+        "count": 12
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.0,
+        "count": 11
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.8,
+        "count": 9
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.5,
+        "count": 5
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 97.0,
+        "count": 1076
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.6,
+        "count": 7
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.5,
+        "count": 6
+      },
+      {
+        "group": "English",
+        "pct": 0.4,
+        "count": 4
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.4,
+        "count": 4
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.3,
+        "count": 3
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.3,
+        "count": 3
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 71.8,
+        "count": 847
+      },
+      {
+        "group": "Swiss",
+        "pct": 8.9,
+        "count": 105
+      },
+      {
+        "group": "Austrian",
+        "pct": 6.9,
+        "count": 81
+      },
+      {
+        "group": "German",
+        "pct": 6.4,
+        "count": 76
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.5,
+        "count": 41
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.7,
+        "count": 8
+      },
+      {
+        "group": "Italian",
+        "pct": 0.6,
+        "count": 7
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.5,
+        "count": 6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.4,
+        "count": 5
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B68962474767900",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "LIE-schellenberg-admin2",
+    "level": "admin2",
+    "name": "Schellenberg",
+    "parent": "41692755B68962474767900",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1180,
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "median_age": {
+      "value": 45.3,
+      "unit": "years",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "sex_ratio": {
+      "value": 98.0,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 78.4,
+        "count": 870
+      },
+      {
+        "group": "No religion",
+        "pct": 9.4,
+        "count": 104
+      },
+      {
+        "group": "Protestant",
+        "pct": 5.0,
+        "count": 56
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.2,
+        "count": 24
+      },
+      {
+        "group": "Islam",
+        "pct": 1.5,
+        "count": 17
+      },
+      {
+        "group": "Other Protestant",
+        "pct": 1.1,
+        "count": 12
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.0,
+        "count": 11
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.8,
+        "count": 9
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.5,
+        "count": 5
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "German",
+        "pct": 97.0,
+        "count": 1076
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.6,
+        "count": 7
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.5,
+        "count": 6
+      },
+      {
+        "group": "English",
+        "pct": 0.4,
+        "count": 4
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.4,
+        "count": 4
+      },
+      {
+        "group": "East Asian languages",
+        "pct": 0.3,
+        "count": 3
+      },
+      {
+        "group": "Serbo-Croatian",
+        "pct": 0.3,
+        "count": 3
+      },
+      {
+        "group": "Finnish",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Other African languages",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Romansh",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Liechtensteiner",
+        "pct": 71.8,
+        "count": 847
+      },
+      {
+        "group": "Swiss",
+        "pct": 8.9,
+        "count": 105
+      },
+      {
+        "group": "Austrian",
+        "pct": 6.9,
+        "count": 81
+      },
+      {
+        "group": "German",
+        "pct": 6.4,
+        "count": 76
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.5,
+        "count": 41
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.7,
+        "count": 8
+      },
+      {
+        "group": "Italian",
+        "pct": 0.6,
+        "count": 7
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.5,
+        "count": 6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.4,
+        "count": 5
+      },
+      {
+        "group": "Portuguese",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.2,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.004 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      },
+      {
+        "field": "religion",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.001d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "language",
+        "name": "Amt für Statistik Liechtenstein, Volkszählung 2020, eTab 213.011d",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2020
+      },
+      {
+        "field": "ethnicity",
+        "name": "Amt für Statistik Liechtenstein, eTab 211.002 (Bevölkerungsstatistik, 2025)",
+        "url": "https://www.statistikportal.li/de/anwendungen-datenbanken/etab",
+        "license": "Amt für Statistik Liechtenstein (free reuse with attribution)",
+        "year": 2025
+      }
+    ],
+    "country": "LIE",
+    "match_by": "shape_id",
+    "shape_id": "41692755B68962474767900",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the Amt für Statistik's count of the Gemeinde's permanent population on 31 December 2025 by single year of age (eTab 211.004).",
+    "sex_ratio_note": "Males per 100 females in the permanent population on 31 December 2025.",
+    "religion_year": 2020,
+    "religion_note": "Religious affiliation, Volkszählung 2020 (31 December 2020): one answer per person, the whole permanent population; 'Not stated' is kept as its own bar.",
+    "language_year": 2020,
+    "language_note": "Main language (Hauptsprache) -- the language a person thinks in and knows best -- Volkszählung 2020: one answer per person, the whole permanent population.",
+    "ethnicity_year": 2025,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Permanent population by citizenship (Staatsbürgerschaft) on 31 December 2025: the population register's count of each resident's citizenship (eTab 211.002) -- NATIONALITY, not ethnicity, which this country's census does not ask. A person's own nationality is counted, naturalised citizens with the country's own nationals; nationalities below the naming threshold are 'Other nationalities'. Written by the map owner's decision of 19 September 2026."
+  }
+]

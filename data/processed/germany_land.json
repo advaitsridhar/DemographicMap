@@ -41,14 +41,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 91.2,
+        "count": 2668988
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 2.7,
+        "count": 78009
+      },
+      {
+        "group": "Syrian",
+        "pct": 1.1,
+        "count": 31895
+      },
+      {
+        "group": "Polish",
+        "pct": 0.8,
+        "count": 24110
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.8,
+        "count": 24299
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.6,
+        "count": 17296
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.5,
+        "count": 15566
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.5,
+        "count": 15592
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.4,
+        "count": 10758
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.3,
+        "count": 8779
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 7359
+      },
+      {
+        "group": "Italian",
+        "pct": 0.2,
+        "count": 5150
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.1,
+        "count": 2786
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.1,
+        "count": 1829
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 3437
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 3789
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 1617
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.1,
+        "count": 3231
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 3052
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -56,7 +156,10 @@
       "ags": "01"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-02",
@@ -100,14 +203,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 83.1,
+        "count": 1503568
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 6.8,
+        "count": 123195
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.0,
+        "count": 36815
+      },
+      {
+        "group": "Afghan",
+        "pct": 1.3,
+        "count": 23193
+      },
+      {
+        "group": "Polish",
+        "pct": 1.3,
+        "count": 22909
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.9,
+        "count": 16269
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.8,
+        "count": 13858
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.6,
+        "count": 10139
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.5,
+        "count": 8573
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 8438
+      },
+      {
+        "group": "Italian",
+        "pct": 0.4,
+        "count": 8096
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.3,
+        "count": 6162
+      },
+      {
+        "group": "Greek",
+        "pct": 0.3,
+        "count": 5557
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.3,
+        "count": 4726
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 6143
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.2,
+        "count": 4002
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.2,
+        "count": 3558
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 1278
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.1,
+        "count": 2367
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -115,7 +318,10 @@
       "ags": "02"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-03",
@@ -159,14 +365,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 89.7,
+        "count": 7126640
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.1,
+        "count": 243646
+      },
+      {
+        "group": "Polish",
+        "pct": 1.0,
+        "count": 83076
+      },
+      {
+        "group": "Syrian",
+        "pct": 1.0,
+        "count": 80578
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.0,
+        "count": 77480
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.7,
+        "count": 59220
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7,
+        "count": 57319
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.5,
+        "count": 37739
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.4,
+        "count": 27924
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.3,
+        "count": 22418
+      },
+      {
+        "group": "Italian",
+        "pct": 0.3,
+        "count": 25146
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 20147
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 15329
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.2,
+        "count": 16019
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 18451
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.1,
+        "count": 6151
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.1,
+        "count": 7591
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 10873
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 7518
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -174,7 +480,10 @@
       "ags": "03"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-04",
@@ -218,14 +527,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 79.4,
+        "count": 550746
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 6.9,
+        "count": 47821
+      },
+      {
+        "group": "Turkish",
+        "pct": 3.2,
+        "count": 22357
+      },
+      {
+        "group": "Syrian",
+        "pct": 2.9,
+        "count": 20115
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 1.3,
+        "count": 9324
+      },
+      {
+        "group": "Polish",
+        "pct": 1.3,
+        "count": 8674
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.7,
+        "count": 4702
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.6,
+        "count": 4106
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.6,
+        "count": 4129
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5,
+        "count": 3744
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.5,
+        "count": 3604
+      },
+      {
+        "group": "Italian",
+        "pct": 0.4,
+        "count": 2461
+      },
+      {
+        "group": "Greek",
+        "pct": 0.3,
+        "count": 1969
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.3,
+        "count": 2275
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.3,
+        "count": 2353
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.2,
+        "count": 1573
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.2,
+        "count": 1617
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.1,
+        "count": 785
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 849
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -233,7 +642,10 @@
       "ags": "04"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-05",
@@ -277,14 +689,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 85.6,
+        "count": 15322409
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 4.2,
+        "count": 748551
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.4,
+        "count": 427496
+      },
+      {
+        "group": "Syrian",
+        "pct": 1.3,
+        "count": 232789
+      },
+      {
+        "group": "Polish",
+        "pct": 1.0,
+        "count": 183326
+      },
+      {
+        "group": "Italian",
+        "pct": 0.7,
+        "count": 124854
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.7,
+        "count": 133286
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7,
+        "count": 127904
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.5,
+        "count": 84677
+      },
+      {
+        "group": "Greek",
+        "pct": 0.5,
+        "count": 82306
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.4,
+        "count": 77419
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.3,
+        "count": 49209
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.3,
+        "count": 52744
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.3,
+        "count": 58694
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 47594
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 60391
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.2,
+        "count": 39387
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.1,
+        "count": 19574
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 17879
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -292,7 +804,10 @@
       "ags": "05"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-06",
@@ -336,14 +851,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 83.2,
+        "count": 5166668
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 5.4,
+        "count": 335662
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.2,
+        "count": 137805
+      },
+      {
+        "group": "Italian",
+        "pct": 1.0,
+        "count": 63439
+      },
+      {
+        "group": "Polish",
+        "pct": 1.0,
+        "count": 64705
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.0,
+        "count": 63616
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.8,
+        "count": 50267
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.8,
+        "count": 48909
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.8,
+        "count": 51033
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.7,
+        "count": 42651
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.6,
+        "count": 38874
+      },
+      {
+        "group": "Greek",
+        "pct": 0.5,
+        "count": 29892
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.5,
+        "count": 28271
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.4,
+        "count": 21884
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 16993
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.2,
+        "count": 11955
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 10877
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.2,
+        "count": 9858
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.2,
+        "count": 13919
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -351,7 +966,10 @@
       "ags": "06"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-07",
@@ -395,14 +1013,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 87.5,
+        "count": 3582453
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.7,
+        "count": 153434
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.3,
+        "count": 54212
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.0,
+        "count": 41812
+      },
+      {
+        "group": "Syrian",
+        "pct": 1.0,
+        "count": 42064
+      },
+      {
+        "group": "Polish",
+        "pct": 0.9,
+        "count": 38512
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.9,
+        "count": 36404
+      },
+      {
+        "group": "Italian",
+        "pct": 0.7,
+        "count": 28271
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.6,
+        "count": 24002
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.4,
+        "count": 14992
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.4,
+        "count": 14810
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.3,
+        "count": 13040
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.2,
+        "count": 7043
+      },
+      {
+        "group": "Greek",
+        "pct": 0.2,
+        "count": 8359
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 8750
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 9894
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.2,
+        "count": 7739
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.1,
+        "count": 4742
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 3636
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -410,7 +1128,10 @@
       "ags": "07"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-08",
@@ -454,14 +1175,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 83.4,
+        "count": 9259797
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 4.2,
+        "count": 464006
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.1,
+        "count": 238060
+      },
+      {
+        "group": "Italian",
+        "pct": 1.5,
+        "count": 170582
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.4,
+        "count": 158876
+      },
+      {
+        "group": "Croatian",
+        "pct": 1.1,
+        "count": 120761
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.8,
+        "count": 85503
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.8,
+        "count": 89899
+      },
+      {
+        "group": "Greek",
+        "pct": 0.7,
+        "count": 73462
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.7,
+        "count": 74328
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 74062
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.4,
+        "count": 44439
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.4,
+        "count": 45737
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.4,
+        "count": 47032
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.4,
+        "count": 42983
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.3,
+        "count": 29203
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.3,
+        "count": 29672
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 30533
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.2,
+        "count": 25105
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -469,7 +1290,10 @@
       "ags": "08"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-09",
@@ -513,14 +1337,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 85.7,
+        "count": 11178159
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.8,
+        "count": 496056
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.3,
+        "count": 168812
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.3,
+        "count": 170880
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.9,
+        "count": 119026
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.8,
+        "count": 110799
+      },
+      {
+        "group": "Italian",
+        "pct": 0.7,
+        "count": 94128
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 96741
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.6,
+        "count": 75253
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.6,
+        "count": 74942
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.5,
+        "count": 58899
+      },
+      {
+        "group": "Greek",
+        "pct": 0.5,
+        "count": 63763
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.5,
+        "count": 62005
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.5,
+        "count": 66694
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.4,
+        "count": 53233
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.3,
+        "count": 39705
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.3,
+        "count": 33852
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 37638
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.3,
+        "count": 38139
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -528,7 +1452,10 @@
       "ags": "09"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-10",
@@ -572,14 +1499,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 86.9,
+        "count": 875271
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 3.5,
+        "count": 35055
+      },
+      {
+        "group": "Syrian",
+        "pct": 2.8,
+        "count": 28307
+      },
+      {
+        "group": "Italian",
+        "pct": 1.6,
+        "count": 15713
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.0,
+        "count": 9779
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.9,
+        "count": 9220
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7,
+        "count": 6932
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.5,
+        "count": 5531
+      },
+      {
+        "group": "Polish",
+        "pct": 0.5,
+        "count": 4706
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.3,
+        "count": 2559
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.2,
+        "count": 1739
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.2,
+        "count": 1664
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2,
+        "count": 1894
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 2192
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.1,
+        "count": 838
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 1505
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 1367
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 1345
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 1247
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -587,7 +1614,10 @@
       "ags": "10"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-11",
@@ -631,14 +1661,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 80.5,
+        "count": 2894022
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 8.6,
+        "count": 310285
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.3,
+        "count": 82146
+      },
+      {
+        "group": "Polish",
+        "pct": 1.3,
+        "count": 45228
+      },
+      {
+        "group": "Syrian",
+        "pct": 1.1,
+        "count": 39448
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.9,
+        "count": 33101
+      },
+      {
+        "group": "Italian",
+        "pct": 0.8,
+        "count": 27751
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.7,
+        "count": 24284
+      },
+      {
+        "group": "Russian",
+        "pct": 0.7,
+        "count": 24395
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.6,
+        "count": 21502
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.4,
+        "count": 15990
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.4,
+        "count": 15019
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.3,
+        "count": 10451
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.3,
+        "count": 10260
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.3,
+        "count": 11763
+      },
+      {
+        "group": "Greek",
+        "pct": 0.3,
+        "count": 11768
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.2,
+        "count": 8717
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.2,
+        "count": 5775
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 5094
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -646,7 +1776,10 @@
       "ags": "11"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-12",
@@ -690,14 +1823,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 94.2,
+        "count": 2387846
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 1.8,
+        "count": 44489
+      },
+      {
+        "group": "Polish",
+        "pct": 0.9,
+        "count": 22758
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.8,
+        "count": 19612
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.6,
+        "count": 15730
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4,
+        "count": 9369
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.3,
+        "count": 8489
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.3,
+        "count": 6798
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.2,
+        "count": 3867
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.1,
+        "count": 1437
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 3083
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 1386
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 1671
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 1456
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 1882
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 1379
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.0,
+        "count": 1021
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 1036
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.0,
+        "count": 766
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -705,7 +1938,10 @@
       "ags": "12"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-13",
@@ -749,14 +1985,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 95.1,
+        "count": 1494602
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 1.4,
+        "count": 22758
+      },
+      {
+        "group": "Polish",
+        "pct": 0.7,
+        "count": 11564
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7,
+        "count": 11116
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.6,
+        "count": 10043
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.2,
+        "count": 3651
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.2,
+        "count": 3845
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 3262
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 1774
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 980
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 1188
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 1159
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 1630
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 584
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.0,
+        "count": 377
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 635
+      },
+      {
+        "group": "Greek",
+        "pct": 0.0,
+        "count": 768
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.0,
+        "count": 235
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 646
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -764,7 +2100,10 @@
       "ags": "13"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-14",
@@ -808,14 +2147,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 93.7,
+        "count": 3785668
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 2.4,
+        "count": 98285
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.9,
+        "count": 34354
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.6,
+        "count": 25006
+      },
+      {
+        "group": "Polish",
+        "pct": 0.5,
+        "count": 20191
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.3,
+        "count": 10802
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.3,
+        "count": 13674
+      },
+      {
+        "group": "Russian",
+        "pct": 0.3,
+        "count": 10979
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.2,
+        "count": 6434
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1,
+        "count": 5290
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 3236
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 5472
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 4212
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 5863
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 1978
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.0,
+        "count": 930
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0,
+        "count": 1986
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.0,
+        "count": 1765
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0,
+        "count": 2006
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -823,7 +2262,10 @@
       "ags": "14"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-15",
@@ -867,14 +2309,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 94.2,
+        "count": 2022844
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 1.7,
+        "count": 36979
+      },
+      {
+        "group": "Syrian",
+        "pct": 1.0,
+        "count": 22268
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.8,
+        "count": 17133
+      },
+      {
+        "group": "Polish",
+        "pct": 0.5,
+        "count": 10014
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.4,
+        "count": 8061
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.3,
+        "count": 6011
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.2,
+        "count": 3702
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 3702
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 1262
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 1422
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 2324
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 1815
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 1199
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.1,
+        "count": 1504
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 1570
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.1,
+        "count": 3098
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 585
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.0,
+        "count": 950
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -882,7 +2424,10 @@
       "ags": "15"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   },
   {
     "id": "DEU-16",
@@ -926,14 +2471,114 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "German",
+        "pct": 93.7,
+        "count": 1978253
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 2.0,
+        "count": 41356
+      },
+      {
+        "group": "Syrian",
+        "pct": 0.8,
+        "count": 16556
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7,
+        "count": 14500
+      },
+      {
+        "group": "Polish",
+        "pct": 0.6,
+        "count": 12316
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.6,
+        "count": 11953
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.4,
+        "count": 8006
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.2,
+        "count": 4633
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.2,
+        "count": 4231
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2,
+        "count": 4347
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.2,
+        "count": 3170
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1,
+        "count": 1080
+      },
+      {
+        "group": "Greek",
+        "pct": 0.1,
+        "count": 1143
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1,
+        "count": 2704
+      },
+      {
+        "group": "Italian",
+        "pct": 0.1,
+        "count": 1786
+      },
+      {
+        "group": "Kosovan",
+        "pct": 0.1,
+        "count": 1376
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1,
+        "count": 1609
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.0,
+        "count": 765
+      },
+      {
+        "group": "Bosnian and Herzegovinian",
+        "pct": 0.0,
+        "count": 612
+      }
+    ],
     "sources": [
       {
         "field": "religion/population",
         "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1018 (Personen: Religion, Bundeslaender)",
         "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1018",
+        "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistisches Bundesamt, Zensus 2022, Tabelle 1000A-1021 (Personen: Staatsangehörigkeit (Häufigste Länder))",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/1000A/table/1000A-1021",
         "license": "Destatis, Datenlizenz Deutschland Namensnennung 2.0"
       }
     ],
@@ -941,6 +2586,9 @@
       "ags": "16"
     },
     "religion_note": "Zensus 2022 records membership of a religious body incorporated under public law -- the church-tax register -- not religious belief. Only the Roman Catholic and Protestant churches are counted separately; Muslims, Jews, Orthodox Christians and free-church Protestants fall inside 'Other, none, or not stated' along with people of no religion and those who did not answer, because their communities are mostly not public-law corporations. Germany publishes a seven-category classification for the country as a whole but not by Land.",
-    "religion_year": 2022
+    "religion_year": 2022,
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Population by citizenship (Staatsangehörigkeit) on 15 May 2022, Zensus 2022 (table 1000A-1021, the 41 nationalities most frequent in Germany): NATIONALITY, not ethnicity, which Germany's census does not ask. A person holding German citizenship is counted as German whatever other citizenship they also hold, naturalised citizens and ethnic German resettlers included; nationalities below 0.2% of Germany's population, those the table does not list, the stateless and those whose citizenship is unclear are 'Other nationalities'. Zensus 2022 protects its cells with the cell key method, which can move a count by a few people. Written by the map owner's decision of 19 September 2026."
   }
 ]

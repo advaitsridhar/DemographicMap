@@ -81,6 +81,45 @@ ADAPTER_FILES = [
     # Round 8 fills a region Round 9 is short of and overwrites none.
     "afrobarometer_r8_language.json",
     "afrobarometer_region.json",
+    # The European Social Survey, rounds 7-11 (2014-2024; from 2010 where a
+    # region needs it to reach 100 respondents): religion and home language by
+    # NUTS region, from the ESS portal's open tabulation service, bound by the
+    # outline crosswalk. A survey, so it only fills (its name says so), and a
+    # cross-national one, so a national survey stands in front of it too.
+    "ess_region_survey.json",
+    # National offices' surveys for the fields their censuses do not ask, each
+    # a *_survey.json, so behind any count and in front of the ESS above.
+    # Austria's religion by Land in 2021 (austria_religion): Statistik Austria's
+    # estimate from questions added to the 2021 Mikrozensus (27,656
+    # respondents), cells under its own 3,000 threshold withheld.
+    "austria_religion_survey.json",
+    # Religion by canton from BFS's structural survey, the mean of the
+    # 2022-2024 annual estimates (switzerland_religion), each note with BFS's
+    # drawn sample for the canton.
+    "switzerland_religion_survey.json",
+    # Main languages by canton from BFS's structural survey 2024 (switzerland):
+    # a survey estimate with its drawn sample per canton, in its own file so
+    # counts outrank it; it replaces switzerland_canton.json and writes no
+    # population.
+    "switzerland_language_survey.json",
+    # Religion by province from CBS's own survey workbook, 2021/2025
+    # (netherlands_religion); CBS's 'ander geloof' kept as the residual it is.
+    "netherlands_religion_survey.json",
+    # ISTAT's 2015 survey 'I cittadini e il tempo libero' (24,000 households,
+    # every region a domain): language used mostly in the family, persons aged
+    # 6+, for the 20 regions and, added up, the 5 ripartizioni. Each note
+    # gives ISTAT's own sampling error (Prospetto C) and the effective sample
+    # it implies (980 to 8,250).
+    "italy_language_survey.json",
+    # Spain's regional offices' language surveys: the IGE's (table 2953, 2023)
+    # language usually spoken for Galicia and its four provinces, 5+ (design:
+    # 1,620 to 3,240 dwellings a province), and Idescat's EULP 2023 habitual
+    # language for Catalonia, 15+ (effective sample 8,682; not by province).
+    "spain_language_survey.json",
+    # Russia's religion by federal subject from Sreda's Arena survey (FOM,
+    # 2012: 56,900 adults, 500 to 800 in each of 79 subjects). No census has
+    # asked religion since 1937 (russia_religion).
+    "russia_religion_survey.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
@@ -214,6 +253,11 @@ ADAPTER_FILES = [
     # FILL_ONLY): most are the offices' projections, and a census's own figure
     # stands whatever year either is for.
     "cod_ps_age.json",
+    # Turkey's 972 districts from TUIK's address-based register for 31
+    # December 2022, by sex and five-year age group, as OCHA's COD-PS relays
+    # it: count, median age and men per hundred women. Fill-only, so TUIK's own
+    # tables would win (turkey_districts).
+    "turkey_districts.json",
     # Uzbekistan's permanent population on 1 January, every region and
     # district, from the Statistics Agency's open-data portal (uzbekistan_siat).
     # Where the agency counts a district the boundary file does not draw, the
@@ -285,7 +329,36 @@ ADAPTER_FILES = [
     # beside it. It writes no composition -- the country asks none of the
     # three, which this file's own reading of the report is what established.
     "northkorea_county.json",
-    "eurostat_nuts2.json", "eurostat_nuts3.json",
+    # NUTS-1 where it is a first-level unit -- France's regions, Germany's
+    # Laender, Belgium's regions, Italy's macro-regions, Mazowieckie -- placed
+    # only by outline; the finer files follow and hold their own ground.
+    "eurostat_nuts1.json", "eurostat_nuts2.json", "eurostat_nuts3.json",
+    # The three second-level shapes NUTS cannot reach (spain_italy_age): Las
+    # Palmas and Santa Cruz de Tenerife from INE's Estadistica Continua (single
+    # years, 1 January 2026; Eurostat splits the Canaries by island), and
+    # Trentino-Alto Adige as ISTAT's Bolzano plus Trento, age by age.
+    "spain_italy_age.json",
+    # Portugal's Censos 2021 from INE's JSON API (portugal_census): 308
+    # municipalities and the 20 districts and autonomous regions (summed from
+    # them) -- single years of age (median, sex ratio, head count) and
+    # religion aged 15+ with the unanswered as Not stated. The 21 km2 second
+    # 'Oliveira de Frades' polygon is written as a stated gap.
+    "portugal_census.json",
+    # Malta's 2021 census for the 68 localities, which both levels draw
+    # (malta_census): single years, religion 15+ (Table 5.3), racial origin
+    # (Table 4.3) and the Maltese citizens' main language (Vol. 3 Table 3.6)
+    # as shares of all residents 5+, read from the Internet Archive's copies
+    # (nso.gov.mt answers 403).
+    "malta_census.json",
+    # The Basque Country's language spoken at home, Eustat's 2021 Population
+    # and Housing Statistics (its own census, cepv3_lhc04): the community and
+    # its three provinces, everyone aged 2+ (basque_language).
+    "basque_language.json",
+    # The microstates' own offices (microstates): San Marino's castelli by sex
+    # at 31 December 2025, Monaco's 2025 register-based census (districts of
+    # Sovereign Order 4,481 of 2013) and Andorra's parishes in 2025, summed
+    # from the Departament d'Estadistica's settlements.
+    "microstates.json",
     # The 2020 census's median age for every municipality, bound by JIS code.
     "japan_municipal.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
@@ -392,11 +465,47 @@ ADAPTER_FILES = [
     "haiti_cod_ps_age.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
-    "switzerland_canton.json",
     # After Eurostat, which covers both countries at NUTS 3 with population and
     # nothing else: these are the national registers, and ethnicity is a
     # question Eurostat does not ask.
     "estonia_county.json", "latvia_municipality.json", "finland_region.json",
+    # Estonia's pre-2017 municipalities and counties (estonia): RV0241's single
+    # years on 1 January 2017 for all 214 drawn units; mother tongue, religion
+    # and (91 units) ethnicity from the 2011 census. After estonia_county.json.
+    "estonia_municipality.json",
+    # Latvia's 43 municipalities and 589 parishes and towns (latvia): CSB's
+    # 2026 register population, median age, sex ratio and ethnicity; home
+    # language from the 2011 census for 41 municipalities. After
+    # latvia_municipality.json, which it supersedes field for field.
+    "latvia_territorial.json",
+    # Finland's 70 sub-regions of 2020 (finland): 11rf's single years summed by
+    # the classification's key -- 31 December 2025 for the 57 unchanged since,
+    # 2020 for the rest -- and the register's mother tongue (11rm, 2025).
+    "finland_subregion.json",
+    # Lithuania's 60 municipalities and 10 counties (lithuania): the OSP's
+    # single years for 1 January 2026; mother tongue from the 2021 census;
+    # ethnicity 2021 for Vilnius county and 15 municipalities, 2011 elsewhere;
+    # religion from 2011.
+    "lithuania_municipality.json",
+    # Sweden's 290 kommuner and 21 lan (sweden): SCB's register population on
+    # 31 December 2025 by single year of age and sex (BefolkningCKM), with
+    # median age and sex ratio.
+    "sweden_kommun.json",
+    # Norway's 2017 kommuner and 2020-2023 fylker (norway): SSB 07459 today
+    # where no merger has touched a kommune, else its last whole year (2017,
+    # 2019, 2025); Church and other-faith membership (12026; 08531 by religion
+    # for fylker); Klepp and Time withheld, as SSB's own note advises.
+    "norway_kommune.json",
+    # Denmark's 98 kommuner and 5 regions (denmark): StatBank FOLK1A's single
+    # years (third quarter 2026) and KM6's National Church membership for every
+    # resident on 1 January 2026 -- membership, not belief, non-members one
+    # group.
+    "denmark_kommune.json",
+    # Iceland's 74 municipalities of 2017 and 8 regions (iceland): Hagstofa
+    # MAN02005's 2026 count for the 52 no merger has touched, MAN09000's last
+    # own 1 December count for each merged one; the regions summed from
+    # MAN02005's municipalities.
+    "iceland_municipality.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
     # Timor-Leste's 13 municipalities and 65 administrative posts: mother
@@ -454,9 +563,48 @@ ADAPTER_FILES = [
     # its place here is alphabetical company rather than precedence.
     "brunei.json",
     "poland_voivodeship.json", "poland_powiat.json",
+    # GUS's own population, median age and sex ratio for the 380 powiats and
+    # all 16 voivodeships (poland_ages, BDL, 31 December 2025): one definition
+    # at both levels, 2.3% above Eurostat's usual-resident figures, which the
+    # note measures and says.
+    "poland_powiat_age.json",
     "czechia_kraj.json", "czechia_okres.json",
+    # CZSO single years of age by okres, 31 December 2024 (czechia_ages):
+    # median age, sex ratio and population; Prague is the kraj and the okres
+    # at once.
+    "czechia_okres_age.json",
     "croatia_county.json", "croatia_unit.json",
     "bosnia_entity.json", "bosnia_canton.json",
+    # Bosnia's 2013 census by age and sex: median age and sex ratio for the
+    # entities and Brcko from single years (FR_T1), for the ten cantons from
+    # five-year groups (FR_T2). After bosnia_canton.json, which writes neither.
+    "bosnia_age.json",
+    # South-east Europe from its statistics offices' own tables, after the
+    # europe_wiki_* files (whose Wikipedia transcriptions these replace at
+    # the same year) and after Wikidata's head counts. Romania's 2021 census by
+    # county and UAT (romania_census), after romania_uat.json, the Wikipedia
+    # charts of the same INS tables; Bulgaria's 2021 by district and
+    # municipality (bulgaria_census); Serbia's 2022 by district and
+    # municipality from RZS's open data (serbia_census); Montenegro's 2023
+    # (montenegro_census), North Macedonia's 2021 (north_macedonia_census) and
+    # Kosovo's 2024 (kosovo_census) by municipality and region; Albania's 2023
+    # compositions by prefecture, and its 36 former districts' head count and
+    # sex ratio summed from the 2011 census's communes, or the 2023 count
+    # where a district is one municipality (albania_census); Cyprus's 2021 by
+    # district and community, with every polygon it does not reach saying why
+    # (cyprus_census); Moldova's 2024 age and sex by district
+    # (moldova_age); Greece's decentralized administrations' ages from
+    # Eurostat's single years and Mount Athos's 2021 count (greece_age); and
+    # Bucharest's six sectors' median age from DRSMB's population by legal
+    # domicile of July 2022, which the census's ages do not reach
+    # (bucharest_sectors); and the 2002 census's religion and mother tongue
+    # for the five municipalities merged into Kichevo in 2013, which the map
+    # draws as they were and the 2021 census does not reach
+    # (north_macedonia_2002).
+    "romania_census.json", "bulgaria_census.json", "serbia_census.json",
+    "montenegro_census.json", "north_macedonia_census.json", "kosovo_census.json",
+    "albania_census.json", "cyprus_census.json", "moldova_age.json", "greece_age.json",
+    "bucharest_sectors.json", "north_macedonia_2002.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "peru_department.json",
     # Guatemala's 2018 census, read from INE's person database: pueblo and
@@ -470,6 +618,36 @@ ADAPTER_FILES = [
     # now carry RGPH5 2022 for all three fields.
     "mali_rgph5_region.json",
     "drc_province.json", "russia_subject.json",
+    # Russia's 2020 census count and men per hundred women for the municipal
+    # districts and urban okrugs, bound one to one by name, kind and the towns
+    # inside. Okrugs merged since the boundary file was drawn, and Chechnya's
+    # 2019-2020 redrawing, are written as gaps that say why (russia_municipal).
+    "russia_municipal.json",
+    # Ukraine's 2001 census by raion and city council -- count, median age,
+    # sex, native language and nationality -- placed on the pre-2020 raion
+    # outlines by name and by the census's own outlines, each seat city by
+    # area; the oblasts' median age and sex from the 2017 estimate. After
+    # ukraine_oblast so a tie goes to the office (ukraine_raion).
+    "ukraine_raion.json",
+    # Belarus's 2019 census, volume 2: count and sex for every raion with the
+    # oblast-subordinate cities it holds; nationality and home language by
+    # oblast (belarus).
+    "belarus.json",
+    # Georgia from Geostat: the 1 January 2026 count; the 2014 census's age,
+    # sex, nationality, religion and native language by region; sex and median
+    # age by municipality; nationality by municipality from 2002 (georgia).
+    "georgia.json",
+    # Armenia's marzes and Yerevan on 1 January 2026 from Armstat's age-sex
+    # workbook; the map's pre-1995 raions are gaps that say why (armenia).
+    "armenia.json",
+    # Armenia's 2011 census by marz, with Yerevan at both levels: nationality,
+    # mother tongue and religion, the latest published below the republic
+    # (armenia_2011).
+    "armenia_2011.json",
+    # Azerbaijan's rayons and cities on 1 January 2026 by age and sex (Azstat
+    # table 1.23), with the four cities the map draws apart from table 1.19
+    # (azerbaijan).
+    "azerbaijan_rayon.json",
     "colombia_department.json", "jamaica_parish.json",
     "bahamas_island.json",
     # The Caribbean from its statistics offices' own tables, after the Census
@@ -503,16 +681,108 @@ ADAPTER_FILES = [
     "caribbean_gaps.json",
     "brazil_state.json", "brazil_municipality.json",
     "germany_land.json", "germany_regierungsbezirk.json",
+    # Austria's 94 political districts (austria): population, median age and
+    # sex ratio on 1 January 2026, summed from Statistik Austria's OGD
+    # population by municipality, sex and single year of age; Vienna's 23
+    # Gemeindebezirke as the one district the map draws.
+    "austria_bezirk.json",
+    # Religion and Umgangssprache for the same 94 districts from the 2001
+    # census, the last to ask (austria_census): Statistik Austria's
+    # per-municipality census sheets, a municipality merged since 2001 read as
+    # its 2001 parts; municipalities checked to 8,032,926.
+    "austria_census.json",
+    # Liechtenstein's eleven Gemeinden at both levels (liechtenstein):
+    # population, median age and sex ratio on 31 December 2025 from eTab
+    # 211.004, religion and main language from the 2020 census.
+    "liechtenstein_gemeinde.json",
+    # Switzerland's districts as the map draws them (2009) (switzerland_ages):
+    # population, median age and sex ratio on 31 December 2025 from BFS
+    # STATPOP through AGVCH; the 27 a merged commune straddles take BFS's
+    # population for the last year their communes nested.
+    "switzerland_bezirk.json",
+    # Religion and main language for the same 2009 districts from the 2000
+    # census, the last to ask everyone (switzerland_census): BFS's commune
+    # tables carried to 2009 through AGVCH, communes and units each checked to
+    # 7,288,010.
+    "switzerland_census.json",
+    # Slovakia's 2021 census nationality, mother tongue and religion by kraj
+    # and okres (slovakia_census), the office's own tables; after
+    # europe_wiki_slovakia, whose Wikipedia-read compositions it replaces on
+    # all 87 units.
+    "slovakia_census.json",
+    # The office's own median age by okres, with population and sex ratio from
+    # DATAcube, 31 December 2025 (slovakia).
+    "slovakia_okres.json",
+    # Hungary's 2022 census by county and district (hungary): ages, sex,
+    # religion, nationality and mother tongue from KSH's census database; the
+    # 13 districts of 2013-14 whose settlements moved since (Polgardi among
+    # them) summed from settlements via KSH's 2014 gazetteer.
+    "hungary_census.json",
+    # Slovenia's 212 municipalities, 1 January 2026 (slovenia): SiStat single
+    # years of age and population by sex; an outlying sex ratio or median says
+    # why, from SiStat's settlements.
+    "slovenia_obcina.json",
+    # Ethnicity, religion and mother tongue from the 2002 census, the last to
+    # ask (slovenia_census): the 168 municipalities unchanged since 2002 and
+    # both cohesion regions; the 45 others are stated gaps.
+    "slovenia_census.json",
+    # The 344 gemeenten (Weesp inside Amsterdam) with CBS's key figures of 1
+    # January 2022, read from the wijk- en buurtkaart WFS on PDOK: population
+    # and sex ratio (netherlands_gemeente).
+    "netherlands_gemeente.json",
+    # Luxembourg's communes and cantons from the 2021 census (luxembourg):
+    # population, median age (five-year groups) and sex ratio; the six
+    # communes merged in 2018 take STATEC's 2017 population and the 2011
+    # census's age and sex.
+    "luxembourg_commune.json",
+    # Ethnicity where the state records nationality, country of birth or
+    # origin rather than ethnicity, by the owner's decision of 19 September
+    # 2026 (the Korean and Japanese model), each under an ethnicity_basis
+    # naming exactly what was counted: Austria's citizenship by Bezirk and
+    # Land (austria_nationality), Switzerland's by district and canton
+    # (switzerland_nationality), Belgium's by province and region
+    # (belgium_nationality), Luxembourg's by commune and canton
+    # (luxembourg_nationality); Sweden's country of birth, Norway's immigrant
+    # background, Denmark's ancestry and Iceland's citizenship by municipality
+    # and region (nordic_origin).
+    "austria_nationality.json", "switzerland_nationality.json",
+    "belgium_nationality.json", "luxembourg_nationality.json",
+    "sweden_origin.json", "norway_origin.json", "denmark_origin.json",
+    "iceland_origin.json",
     "canada_province.json", "canada_economic_region.json",
     "australia_state.json", "australia_lga.json",
     "uk_lad.json", "uk_county.json",
+    # England and Wales themselves, the map's first level: the same ONS 2021
+    # tables (TS021 ethnic group, TS030 religion, TS024 main language) asked
+    # of Nomis for the two nations rather than rolled up -- the Isles of
+    # Scilly are drawn outside England, so England's children are one short
+    # of it (uk_nomis --level nation).
+    "uk_nation.json",
     # Scotland's councils and Northern Ireland's districts are shapes the ONS
     # census cannot reach: it covers England and Wales. Neither overlaps the
     # two files above or each other, so the order between them never arises.
     "scotland_council.json", "northern_ireland_district.json",
+    # Population, median age and sex ratio for all 216 UK second-level shapes
+    # and the four nations (uk_mye): the ONS, NRS and NISRA mid-year estimates
+    # by single year of age (Nomis NM_2002_1), mid-2025 (Northern Ireland
+    # mid-2024). Newer than the census head counts above, which it replaces;
+    # Cumbria and Northamptonshire are their successor unitaries added age by
+    # age, and a figure far from its mid-2021 one carries the office's series
+    # in its note (City of London).
+    "uk_mye.json",
     # The other island. No overlap with anything above: the CSO's areas are in
     # the Republic and every UK file stops at the border.
     "ireland_lea.json",
+    # Ireland's four provinces (ireland): religion, ethnicity and home
+    # language, Census 2022, each the sum of its own local electoral areas by
+    # the county the CSO names -- not of the areas drawn inside its outline,
+    # which put Newport (Tipperary), a Munster area, inside Connacht.
+    "ireland_province.json",
+    # Ireland's median age and sex ratio, Census 2022 (ireland_age): the
+    # provinces from single years by county (FY006B, State median 38.8, the
+    # CSO's), the 166 local electoral areas interpolated within five-year
+    # groups (SAP2022T1T1ALEA22).
+    "ireland_age.json",
     "us_state.json", "us_county.json",
     # Guam, the Virgin Islands, American Samoa and the Northern Marianas, which
     # the ACS does not survey: their 2020 census, territory and district.
@@ -1663,7 +1933,9 @@ def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
 #
 # Two kinds of answer go in data/curated/admin0_detail.json. A row with
 # ``groups`` replaces the field with a census's own division of it, which is
-# always the better answer and is used wherever such a table exists. A row with
+# always the better answer and is used wherever such a table exists -- or,
+# where the census does not ask, a survey's, marked as one by its ``basis``
+# (the European Social Survey's pooled national samples). A row with
 # only a ``note`` says what the bucket holds and why it is not divided, which
 # is what is left when the census published one number and no break-up of it.
 # Neither invents a split.
@@ -1859,8 +2131,52 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "cod_ps_age.json",
                        # Haiti's median ages: a 2024 projection from the 2003
                        # census, which a count would always replace.
-                       "haiti_cod_ps_age.json"})
+                       "haiti_cod_ps_age.json",
+                       # Bucharest's sectors' median age by legal domicile,
+                       # which is not the census's usual residence: it only
+                       # fills a sector no census median reaches.
+                       "bucharest_sectors.json",
+                       # Turkey's districts as OCHA relays TUIK's 2022 register.
+                       "turkey_districts.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
+
+# A survey's share is an estimate from a sample, and a census's or a
+# register's is a count of everyone: where both describe a unit, the count
+# stands, however much older it is. Survey readers written for the fields a
+# census does not ask -- Europe's religion and home language -- name their
+# output ``*_survey.json``, and their compositions only fill what no count
+# has written. Between two surveys the newer stands, as between two counts.
+SURVEY_FIELDS = frozenset({"religion", "language", "ethnicity"})
+
+# And a national office's survey -- the Mikrozensus, a statistics office's
+# language survey, a large national sample -- stands in front of a
+# cross-national one, whose few hundred respondents a region are drawn to
+# compare countries rather than to describe a region.
+CROSS_NATIONAL_SURVEYS = frozenset({"ess_region_survey.json"})
+
+
+def is_survey(filename: str | None) -> bool:
+    """A file of survey estimates, which fills compositions and replaces none."""
+    return bool(filename) and filename.endswith("_survey.json")
+
+
+def composition_rank(filename: str | None) -> int:
+    """0 for a count, 1 for a national survey, 2 for a cross-national one."""
+    if filename in CROSS_NATIONAL_SURVEYS:
+        return 2
+    return 1 if is_survey(filename) else 0
+
+
+# A census composition as Wikipedia transcribes it (europe_wiki.py) is the
+# office's figure at one remove, and dated by whatever the article cites --
+# often the year the results were published. Serbia's district articles cite
+# the 2022 census's 2023 release, so 22 districts' Wikipedia ethnicity read as
+# 2023 and held RZS's own 2022 tables back as the older. The office's table
+# stands in front of the transcription whatever the two years say, as the
+# Europe brief has it; between two transcriptions, or two tables, the newer
+# still stands.
+def is_wiki_composition(filename: str | None) -> bool:
+    return bool(filename) and filename.startswith("europe_wiki_")
 
 
 def year_of(container: dict[str, Any], key: str) -> int | None:
@@ -1910,16 +2226,31 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     # old province's shape, against the 2019 census's 1,908,352. A newer figure
     # can be a different unit's.
     encyclopaedic = row.get("_source") in FILL_ONLY
+    rank = composition_rank(row.get("_source"))
     origin = entity.get("_from") or {}
+    transcribed = is_wiki_composition(row.get("_source"))
     dated = {key: (year_of(row, key), year_of(entity, key)) for key in VALUE_FIELDS
              if not is_gap(row.get(key)) and not is_gap(entity.get(key))
-             and (origin.get(key) in FILL_ONLY) == encyclopaedic}
+             and (origin.get(key) in FILL_ONLY) == encyclopaedic
+             and composition_rank(origin.get(key)) == rank
+             and not (key in SURVEY_FIELDS and origin.get(key)
+                      and is_wiki_composition(origin.get(key)) != transcribed)}
     newer = {key for key, (theirs, ours) in dated.items()
              if theirs is not None and ours is not None and theirs > ours}
     older = {key for key, (theirs, ours) in dated.items()
              if theirs is not None and ours is not None and theirs < ours}
     held = {key for key in FILL_ONLY_FIELDS
             if encyclopaedic and not is_gap(entity.get(key)) and key not in newer} | older
+    # A survey's estimate stands behind any count already written, and a
+    # cross-national survey's behind a national one's.
+    held |= {key for key in SURVEY_FIELDS
+             if not is_gap(row.get(key)) and not is_gap(entity.get(key))
+             and composition_rank(origin.get(key)) < rank}
+    # And a Wikipedia transcription stands behind an office's own table.
+    held |= {key for key in SURVEY_FIELDS
+             if transcribed and not is_gap(row.get(key)) and not is_gap(entity.get(key))
+             and origin.get(key) and composition_rank(origin.get(key)) == 0
+             and not is_wiki_composition(origin.get(key))}
     # What was held back is kept aside, not thrown away: a check that later
     # refuses the figure in front of it can fall back to it (see fall_back).
     for key in held:
@@ -1966,6 +2297,28 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # link, the settlement check below would read the town's classes and
         # refuse the municipality's figure as a town's.
         if key == "wikidata" and "population" in held and entity.get("wikidata"):
+            continue
+        # A statistics office's statement that its census does not reach a
+        # unit displaces an encyclopaedia's figure for it that is older than
+        # the year the statement names (``displaces_before``). Cyprus's
+        # censuses since 1974 are taken only where its Government governs,
+        # and Wikidata's figures for the communities beyond are the 1973
+        # census's: 1973 read as the population of Kyrenia. A count is never
+        # displaced, nor an encyclopaedia's figure of that year or later, and
+        # the figure is not kept aside to fall back to: the statement is
+        # that there is none for now.
+        if (key in FILL_ONLY_FIELDS and is_gap(value) and isinstance(value, dict)
+                and isinstance(value.get("displaces_before"), int) and not encyclopaedic
+                and not is_gap(entity.get(key)) and origin.get(key) in FILL_ONLY
+                and (year_of(entity, key) or value["displaces_before"]) < value["displaces_before"]):
+            entity[key] = value
+            for suffix in SATELLITES:
+                if f"{key}{suffix}" not in row:
+                    entity.pop(f"{key}{suffix}", None)
+            entity.get("_from", {}).pop(key, None)
+            entity.get("_how", {}).pop(key, None)
+            entity["sources"] = [src for src in entity.get("sources", [])
+                                 if set(str(src.get("field") or "").split("/")) != {key}]
             continue
         if is_gap(value) and not is_gap(entity.get(key)):
             continue
@@ -3233,6 +3586,42 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # Factbook prints it (Protestant 23.6%, Hindu 22.3%, Roman Catholic 21.6%).
     ("SUR", "religion"): "its districts' religion comes from two censuses, 2004 "
                          "and 2012, and no sum across them is either",
+    # malta_census gives each locality the main language of its Maltese
+    # citizens (Volume 3, Table 3.6) as shares of all its residents aged 5 and
+    # over; the NSO tabulates the other fifth of residents by district only.
+    # Summed, the localities would describe Malta's citizens as if they were
+    # its population.
+    ("MLT", "language"): "its localities' language counts Maltese citizens only; "
+                         "the other residents are tabulated by district, not by locality",
+    # lithuania_municipality gives the ten counties the 2011 census's religion
+    # (the 2021 census published religion for the country only), and nine of
+    # them the 2011 census's ethnicity beside Vilnius county's 2021 figure. The
+    # country carries the 2021 census; a sum would put 2011 over it.
+    ("LTU", "religion"): "its counties' religion is the 2011 census's, and the "
+                         "country's is the 2021 census's",
+    ("LTU", "ethnicity"): "its counties' ethnicity is the 2011 census's for nine of "
+                          "them and the 2021 census's for Vilnius county",
+    # estonia_municipality draws the fifteen counties of before the 2017
+    # reform: eleven carry the 2011 census's language and religion and the
+    # register's ethnicity of 2017, and the four the reform left alone the
+    # 2021 census and the register of 2026 (estonia_county). A sum is of no
+    # one year, and older than the country's own 2021 figures.
+    ("EST", "religion"): "its pre-2017 counties mix the 2011 and 2021 censuses",
+    ("EST", "language"): "its pre-2017 counties mix the 2011 and 2021 censuses",
+    ("EST", "ethnicity"): "its pre-2017 counties mix the register of 2017 and of 2026",
+    # norway_kommune's fylker carry registered membership for 2020, the last
+    # year SSB counts the communities outside the Church by fylke (08531 is a
+    # closed series); the country's figure is 2021's.
+    ("NOR", "religion"): "its fylker's membership is 2020's, older than the country's "
+                         "2021 figure",
+    # armenia_2011 gives the marzes the 2011 census's nationality and religion,
+    # the latest Armstat has published below the republic; the country keeps
+    # the 2022 census's national shares (the Factbook's, 2022). A sum would put
+    # 2011 over 2022.
+    ("ARM", "ethnicity"): "its marzes' nationality is the 2011 census's, and the "
+                          "country's is the 2022 census's",
+    ("ARM", "religion"): "its marzes' religion is the 2011 census's, and the "
+                         "country's is the 2022 census's",
 }
 
 
@@ -4832,6 +5221,343 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
     ("IDN", "Q239494"): ("Danau Sentarum National Park in West Kalimantan, a park "
                          "and not any of the four lakes on Sumatra and Sulawesi "
                          "the shape called Danau draws"),
+    # Portugal's boundary file draws two polygons named Oliveira de Frades: a
+    # 144 km2 one under Aveiro, the municipality (145 km2), which
+    # portugal_census binds by id, and a 21 km2 one under Viseu, wedged
+    # between Tondela, Vouzela and Agueda, which is not the municipality and
+    # whose identity could not be established. By name and parent the
+    # Wikidata item took the second, and the municipality was shown twice.
+    ("PRT", "Q861584"): ("the municipality of Oliveira de Frades, whose census count "
+                         "is on the 144 km2 polygon of that name; this 21 km2 polygon "
+                         "is not the municipality"),
+    # Russia's okrugs of today on the polygons of the units they were made
+    # from. Each item's own series shows the merger's jump, and the boundary
+    # file draws only part of the okrug -- the rest is a polygon of its own.
+    # russia_municipal refuses the census's count on these polygons for the
+    # same reason.
+    ("RUS", "Q4145666"): ("the Kolomna urban okrug of today, the city with the "
+                          "Kolomensky District (2017) and Ozyory (2020): 144,125 people "
+                          "in 2017, 217,703 in 2021 and 215,146 in 2025; the polygon "
+                          "draws the city, and the district and Ozyory are polygons of "
+                          "their own"),
+    ("RUS", "Q1773432"): ("the Pushkinsky urban okrug of 2019, the district with "
+                          "Ivanteyevka and Krasnoarmeysk: 178,536 people in 2020 and "
+                          "299,385 in 2021; the map draws both towns as polygons of "
+                          "their own"),
+    ("RUS", "Q1254433"): ("the Georgiyevsky urban okrug of 2017, the district with the "
+                          "town of Georgiyevsk: 100,518 people in 2017 and 167,262 in "
+                          "2018; the map draws the town as a polygon of its own"),
+    ("RUS", "Q27477659"): ("the Serpukhov urban okrug of today, the city with the "
+                           "Serpukhovsky District and more: 124,897 people in 2019, "
+                           "181,030 in 2021 and 239,430 in 2025; the polygon draws the "
+                           "city, and the district is a polygon of its own"),
+    ("RUS", "Q27532886"): ("the Novozybkov urban okrug of 2019, the town with the "
+                           "Novozybkovsky District (49,379 people in 2021, 38,680 of "
+                           "them in the town); the district is a polygon of its own"),
+    ("RUS", "Q27572811"): ("the Manturovo urban okrug of 2019, the town with the rural "
+                           "part of the Manturovsky District (15,452 people in 2018, "
+                           "18,863 in 2019); the district is a polygon of its own"),
+    ("RUS", "Q1653098"): ("the Manturovsky District of Kostroma Oblast, merged into the "
+                          "Manturovo okrug in 2019: 3,852 people in 2018, and 14,900 in "
+                          "2025 for the okrug, town and all, which the map draws as a "
+                          "polygon of its own"),
+    # Chechnya's districts after their 2019-2020 redrawing, on the older
+    # outlines the boundary file draws. Each item's own series shows the change
+    # (Groznensky fell from 132,719 to 76,808 between 2019 and 2020); the census
+    # files Starye Atagi, Kulary, Chechen-Aul and Bamut in districts other than
+    # the polygons that hold them. russia_municipal refuses the census's counts
+    # on these polygons for the same reason.
+    ("RUS", "Q1027864"): ("the Groznensky District after 2019-2020, without Starye "
+                          "Atagi, Kulary, Chechen-Aul and other villages (132,719 "
+                          "people in 2019, 76,808 in 2020, 86,700 in 2024); the polygon "
+                          "is the district of before"),
+    ("RUS", "Q1026606"): ("the Urus-Martanovsky District after it took in Starye Atagi "
+                          "in 2019-2020 (144,708 people in 2019, 159,518 in 2020, "
+                          "171,261 in 2024); the polygon is the district of before, and "
+                          "Starye Atagi lies in the map's Groznensky District"),
+    ("RUS", "Q482011"): ("the Achkhoy-Martanovsky District after 2019-2020, with Kulary "
+                         "and without Bamut (99,296 people in 2024); the polygon is the "
+                         "district of before"),
+    ("RUS", "Q856394"): ("the Sernovodsky District of 2020, the Sunzhensky District "
+                         "renamed with Bamut added (23,040 people in 2019, 28,772 in "
+                         "2020, 27,505 in 2025); the polygon is the Sunzhensky District "
+                         "of before, and Bamut lies in the map's Achkhoy-Martanovsky "
+                         "District"),
+    # Ukraine's pre-2020 raion polygons that ukraine_raion refuses, joined by
+    # name to items whose figure describes another area: the Zviahel raion of
+    # 2020, four cities, and raions whose polygon the 2001 census's own
+    # outlines (the Census Bureau's) show to be largely something else -- the
+    # reason is the one ukraine_raion writes on the polygon. Sevastopol's
+    # districts stay: their polygons are refused for the census's grain only.
+    ("UKR", "Q2994010"): ("the Amvrosiivka raion of before 2020 (44,379 people in "
+                          "2017), whose figure does not describe this polygon: 42% of "
+                          "the area the 2001 census counts as Makiivka (Miskrada) lies "
+                          "in this polygon, and that area's people are drawn in no "
+                          "polygon by a majority of its area"),
+    ("UKR", "Q2216511"): ("the Antratsyt raion of before 2020 (30,070 people), whose "
+                          "figure does not describe this polygon: 45% of the area the "
+                          "2001 census counts as Snizhne (Miskrada) lies in this "
+                          "polygon, and that area's people are counted with "
+                          "'Shakhtarsk'"),
+    ("UKR", "Q2883763"): ("the Borodianka raion of before 2020 (57,301 people in 2019), "
+                          "whose figure does not describe this polygon: only 57% of the "
+                          "area the 2001 census counts as Irpin (Miskrada) lies in this "
+                          "polygon"),
+    ("UKR", "Q161984"): ("the city of Fastiv (45,907 people in 2019), not the Fastiv "
+                         "raion of before 2020 that the polygon is named for"),
+    ("UKR", "Q2599695"): ("the Horodok raion of before 2020 (68,544 people in 2019), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Horodotskyi Raion (Lvivska "
+                          "Oblast), but only 35% of the area the 2001 census counts as "
+                          "that raion lies in it and 40% in 'Sambir'"),
+    ("UKR", "Q2996142"): ("the Illintsi raion of before 2020 (37,059 people in 2017), "
+                          "whose figure does not describe this polygon: 49% of the area "
+                          "the 2001 census counts as Haisynskyi Raion lies in this "
+                          "polygon, and that area's people are placed in no polygon: "
+                          "the map's name for it and its outline disagree"),
+    ("UKR", "Q2996222"): ("the Kaharlyk raion of before 2020 (32,814 people in 2019), "
+                          "whose figure does not describe this polygon: only 65% of the "
+                          "area the 2001 census counts as M. Rzhyshchiv lies in this "
+                          "polygon"),
+    ("UKR", "Q1995820"): ("the Kamianka raion of before 2020 (25,933 people in 2019), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Kamianskyi Raion, but only 41% "
+                          "of the area the 2001 census counts as that raion lies in it "
+                          "and 44% in 'Smila'"),
+    ("UKR", "Q2494465"): ("the Khoroshiv raion of before 2020 (34,553 people in 2018), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Volodarsko-Volynskyi Raion, but "
+                          "only 46% of the area the 2001 census counts as that raion "
+                          "lies in it and 51% in 'Pulyny'"),
+    ("UKR", "Q2996158"): ("the Kryzhopil raion of before 2020 (32,976 people in 2018), "
+                          "whose figure does not describe this polygon: 52% of the area "
+                          "the 2001 census counts as Pishchanskyi Raion lies in this "
+                          "polygon, and that area's people are placed in no polygon: "
+                          "the map's name for it and its outline disagree"),
+    ("UKR", "Q2996231"): ("the Kyiv-Sviatoshyn raion of before 2020 (198,674 people in "
+                          "2019), whose figure does not describe this polygon: 43% of "
+                          "the area the 2001 census counts as Irpin (Miskrada) lies in "
+                          "this polygon, and that area's people are counted with "
+                          "'Borodianka'"),
+    ("UKR", "Q2620746"): ("the Luhyny raion of before 2020 (16,321 people in 2018), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Luhynskyi Raion, but only 40% of "
+                          "the area the 2001 census counts as that raion lies in it and "
+                          "52% in 'Yemilchyne'"),
+    ("UKR", "Q2628102"): ("the Manhush raion of before 2020 (26,510 people in 2017), "
+                          "whose figure does not describe this polygon: only 68% of the "
+                          "area the 2001 census counts as Mariupol (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q2994031"): ("the Marinka raion of before 2020 (90,434 people in 2001), "
+                          "whose figure does not describe this polygon: only 50% of the "
+                          "area the 2001 census counts as Selidove (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q2992440"): ("the Mlyniv raion of before 2020 (37,579 people), whose "
+                          "figure does not describe this polygon: 40% of the area the "
+                          "2001 census counts as M. Dubno lies in this polygon, and "
+                          "that area's people are counted with 'Dubno'"),
+    ("UKR", "Q2996182"): ("the Murovani Kurylivtsi raion of before 2020 (24,919 people "
+                          "in 2018), whose figure does not describe this polygon: 48% "
+                          "of the area the 2001 census counts as M. Novodnistrovsk lies "
+                          "in this polygon, and that area's people are counted with "
+                          "'Mohyliv-Podilskyi'"),
+    ("UKR", "Q582804"): ("the Nosivka raion of before 2020 (28,814 people in 2017), "
+                         "whose figure does not describe this polygon: the boundary "
+                         "file names this polygon for Nosivskyi Raion, but only 33% of "
+                         "the area the 2001 census counts as that raion lies in it and "
+                         "34% in 'Kozelets'"),
+    ("UKR", "Q1011303"): ("the city of Obukhiv (33,204 people in 2019), not the Obukhiv "
+                          "raion of before 2020 that the polygon is named for"),
+    ("UKR", "Q2639686"): ("the Oleshky raion of before 2020 (70,367 people in 2019), "
+                          "whose figure does not describe this polygon: only 52% of the "
+                          "area the 2001 census counts as Nova Kakhovka (Miskrada) lies "
+                          "in this polygon"),
+    ("UKR", "Q2216338"): ("the Perevalsk raion of before 2020 (69,738 people), whose "
+                          "figure does not describe this polygon: only 63% of the area "
+                          "the 2001 census counts as Krasnyi Luch (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q1728636"): ("the Piatykhatky raion of before 2020 (44,575 people in "
+                          "2018), whose figure does not describe this polygon: 36% of "
+                          "the area the 2001 census counts as M. Vilnohirsk lies in "
+                          "this polygon, and that area's people are counted with "
+                          "'Verkhnodniprovsk'"),
+    ("UKR", "Q2619410"): ("the Pishchanka raion of before 2020 (20,678 people in 2018), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Pishchanskyi Raion, but only 42% "
+                          "of the area the 2001 census counts as that raion lies in it "
+                          "and 52% in 'Kryzhopil'"),
+    ("UKR", "Q2620082"): ("the Pulyny raion of before 2020 (22,784 people in 2018), "
+                          "whose figure does not describe this polygon: 51% of the area "
+                          "the 2001 census counts as Volodarsko-Volynskyi Raion lies in "
+                          "this polygon, and that area's people are placed in no "
+                          "polygon: the map's name for it and its outline disagree"),
+    ("UKR", "Q2997697"): ("the Rokytne raion of before 2020 (26,153 people in 2019), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Rokytnianskyi Raion, but only "
+                          "41% of the area the 2001 census counts as that raion lies in "
+                          "it and 58% in 'Bila Tserkva'"),
+    ("UKR", "Q156593"): ("the city of Sambir (34,444 people in 2021), not the Sambir "
+                         "raion of before 2020 that the polygon is named for"),
+    ("UKR", "Q2627813"): ("the Shakhtarsk raion of before 2020 (18,952 people in 2019), "
+                          "whose figure does not describe this polygon: only 62% of the "
+                          "area the 2001 census counts as Horlivka (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q2996242"): ("the Skvyra raion of before 2020 (36,328 people in 2019), "
+                          "whose figure does not describe this polygon: 44% of the area "
+                          "the 2001 census counts as M. Bila Tserkva lies in this "
+                          "polygon, and that area's people are counted with 'Bila "
+                          "Tserkva'"),
+    ("UKR", "Q2216840"): ("the Slovianoserbsk raion of before 2020 (53,784 people), "
+                          "whose figure does not describe this polygon: only 59% of the "
+                          "area the 2001 census counts as Luhansk (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q2216649"): ("the Stanytsia-Luhanska raion of before 2020 (49,759 people), "
+                          "whose figure does not describe this polygon: 31% of the area "
+                          "the 2001 census counts as Luhansk (Miskrada) lies in this "
+                          "polygon, and that area's people are counted with "
+                          "'Slovianoserbsk'"),
+    ("UKR", "Q2997764"): ("the Teplyk raion of before 2020 (27,818 people in 2018), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Teplytskyi Raion, but only 19% "
+                          "of the area the 2001 census counts as that raion lies in it "
+                          "and 73% in 'Haisyn'"),
+    ("UKR", "Q2639671"): ("the Tomakivka raion of before 2020 (24,658 people in 2018), "
+                          "whose figure does not describe this polygon: only 60% of the "
+                          "area the 2001 census counts as Marhanets (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q997421"): ("the city of Vasylkiv (37,696 people in 2019), not the "
+                         "Vasylkiv raion of before 2020 that the polygon is named for"),
+    ("UKR", "Q2637060"): ("the Verkhnodniprovsk raion of before 2020 (52,858 people in "
+                          "2018), whose figure does not describe this polygon: only 61% "
+                          "of the area the 2001 census counts as M. Vilnohirsk lies in "
+                          "this polygon"),
+    ("UKR", "Q2216204"): ("the Zmiiv raion of before 2020 (72,587 people), whose figure "
+                          "does not describe this polygon: 100% of the area the 2001 "
+                          "census counts as Chuhuiv (Miskrada) lies in this polygon, "
+                          "and that area's people are drawn by the boundary file "
+                          "outside the polygon of the raion it is the seat of (Zmiiv "
+                          "100%)"),
+    ("UKR", "Q102451616"): ("the Zviahel Raion established in 2020 by merging the "
+                            "Novohrad-Volynskyi raion with its neighbours (164,972 "
+                            "people in 2022); the polygon is the Novohrad-Volynskyi "
+                            "raion of before"),
+    # Armenia's second level is the raions of before the 1995 reform into
+    # marzes. The items joined to them by name are the municipalities formed
+    # by consolidating communities from 2016 on, which Wikidata describes as
+    # such: another unit, whose figure does not describe the raion's polygon.
+    # armenia.py writes each raion as a gap that says why.
+    ("ARM", "Q138827280"): ("Akhuryan Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (41,546 people in "
+                            "2011); the polygon is the Akhuryan raion of before the "
+                            "1995 reform, another unit"),
+    ("ARM", "Q138827356"): ("Amasia Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (6,306 people in "
+                            "2011); the polygon is the Amasia raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q65225951"): ("Ani Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (18,958 people in "
+                           "2011); the polygon is the Ani raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138679185"): ("Ararat Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (41,725 people in "
+                            "2011); the polygon is the Ararat raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138682414"): ("Armavir Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (51,974 people in "
+                            "2011); the polygon is the Armavir raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138679138"): ("Artashat Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (91,182 people in "
+                            "2011); the polygon is the Artashat raion of before the "
+                            "1995 reform, another unit"),
+    ("ARM", "Q138828005"): ("Artik Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (54,065 people in "
+                            "2011); the polygon is the Artik raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138666250"): ("Ashtarak Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (63,926 people in "
+                            "2011); the polygon is the Ashtarak raion of before the "
+                            "1995 reform, another unit"),
+    ("ARM", "Q138684251"): ("Baghramyan Municipality, one of the municipalities formed "
+                            "by consolidating communities from 2016 on (16,255 people "
+                            "in 2011); the polygon is the Baghramyan raion of before "
+                            "the 1995 reform, another unit"),
+    ("ARM", "Q138701168"): ("Gavar Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (52,687 people in "
+                            "2011); the polygon is the Gavar raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q48862719"): ("Goris Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (29,319 people in "
+                           "2011); the polygon is the Goris raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138710451"): ("Hrazdan Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (52,283 people in "
+                            "2022); the polygon is the Hrazdan raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q55075050"): ("Kapan Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (49,788 people in "
+                           "2011); the polygon is the Kapan raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138701606"): ("Martuni Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (90,224 people in "
+                            "2011); the polygon is the Martuni raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138679271"): ("Masis Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (78,442 people in "
+                            "2011); the polygon is the Masis raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q55394256"): ("Meghri Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (11,377 people in "
+                           "2011); the polygon is the Meghri raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138748713"): ("Nairi Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (31,590 people in "
+                            "2011); the polygon is the Nairi raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138666528"): ("Noyemberyan Municipality, one of the municipalities formed "
+                            "by consolidating communities from 2016 on (29,346 people "
+                            "in 2011); the polygon is the Noyemberyan raion of before "
+                            "the 1995 reform, another unit"),
+    ("ARM", "Q138702189"): ("Sevan Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (39,776 people in "
+                            "2011); the polygon is the Sevan raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q50495586"): ("Sisian Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (30,265 people in "
+                           "2011); the polygon is the Sisian raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138794219"): ("Spitak Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (38,037 people in "
+                            "2022); the polygon is the Spitak raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q65226139"): ("Stepanavan Municipality, one of the municipalities formed "
+                           "by consolidating communities from 2016 on (14,557 people in "
+                           "2011); the polygon is the Stepanavan raion of before the "
+                           "1995 reform, another unit"),
+    ("ARM", "Q138666308"): ("Talin Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (32,472 people in "
+                            "2011); the polygon is the Talin raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q65226147"): ("Tashir Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (22,185 people in "
+                           "2011); the polygon is the Tashir raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138690894"): ("Vagharshapat Municipality, one of the municipalities "
+                            "formed by consolidating communities from 2016 on (50,031 "
+                            "people in 2011); the polygon is the Vagharshapat raion of "
+                            "before the 1995 reform, another unit"),
+    ("ARM", "Q65226141"): ("Vardenis Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (38,240 people in "
+                           "2011); the polygon is the Vardenis raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q48862592"): ("Vayk Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (11,928 people in "
+                           "2011); the polygon is the Vayk raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138666686"): ("Yeghegnadzor Municipality, one of the municipalities "
+                            "formed by consolidating communities from 2016 on (16,304 "
+                            "people in 2022); the polygon is the Yeghegnadzor raion of "
+                            "before the 1995 reform, another unit"),
 }
 
 # Countries whose boundary file draws their first level one level down: under
@@ -5477,6 +6203,12 @@ def main() -> int:
                     # An unnamed polygon's label is its id, not a spelling.
                     if label != entity["id"]:
                         row["aliases"] = [*(row.get("aliases") or []), label]
+                        # And the label itself is kept where nothing renames it
+                        # (``shape_name``): readers find their polygons by the
+                        # boundary file's labels, and a reader re-run after a
+                        # build that renamed one -- "District of Bardejov" to
+                        # "Bardejov" -- no longer found it under either name.
+                        entity.setdefault("shape_name", label)
                 matched.append((row, entity, "shape_id"))
                 continue
             if row.get("level") == "admin1":

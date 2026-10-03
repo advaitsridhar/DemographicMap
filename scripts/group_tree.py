@@ -162,13 +162,30 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
                    "other and unaffiliated", "other or unaffiliated",
                    "agnostics and other", "not applicable", "undeclared",
                    "No Data", "No religion data",
+                   # Cells an office does not publish (Romania's "*",
+                   # Montenegro's "z", Albania's ".."), which the Balkan
+                   # readers keep together as one bar so a row still adds up.
+                   "Suppressed (disclosure control)",
+                   # Bulgaria's 2021 census: "cannot determine" (не мога да
+                   # определя), an answer that names no religion.
+                   "Cannot determine",
                    # Laos's residual, in the words the Socio-Economic Atlas
                    # uses for it. The census counts a religion only where it
                    # has written doctrines, so the animist beliefs of most
                    # non-Lao-Tai people fall in here beside the 1.8% who
                    # stated nothing -- a third of the country, and not a
                    # statement that any of them has no religion.
-                   "No religion or not stated"),
+                   "No religion or not stated",
+                   # The Nordic membership registers' rows for everyone outside
+                   # one church or every registered body. Denmark's register
+                   # records the national church alone, so its non-members --
+                   # Muslims, Catholics and the unaffiliated alike -- are one
+                   # row, which welds real answers to none exactly as "other
+                   # or none" above does. Norway's second row is the people in
+                   # no registered body, believers among them. Neither names a
+                   # religion or its absence.
+                   "Not a member of the national church",
+                   "Not a member of a registered faith or life-stance community"),
 }
 
 # The Philippines names 82 churches in its 2020 census and Northern Ireland
@@ -272,6 +289,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Montenegrin", "Serbo-Croatian", "Slovenian", "Slovene", "Sorbian",
         "Rusyn", "Kashubian", "Silesian", "Bosnian-Croatian-Serbian",
         "Russian, Polish, or other Slavic",
+        # Serbia's 2022 census counts the Bunjevac mother tongue apart, and
+        # Montenegro's 2023 the Gorani one (a South Slavic dialect).
+        "Bunjevac", "Gorani",
     ),
     "Indo-Aryan languages": (
         "Hindi", "Urdu", "Bengali", "Panjabi", "Punjabi", "Marathi",
@@ -386,6 +406,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Karakalpak", "Gagauz", "Crimean Tatar", "Kumyk", "Nogai",
         "Karachay-Balkar", "Balkar", "Karachay", "Tuvan", "Khakas", "Altai",
         "Shor", "Karaim", "Salar", "Dolgan",
+        # Russia's 2020 census: "Bulgar" (булгарский), the answer of Volga
+        # Tatars who name their tongue after the Volga Bulgars (25 subjects).
+        "Bulgar",
     ),
     "Mongolic languages": ("Mongolian", "Buryat", "Kalmyk", "Oirat"),
     "Tungusic languages": ("Evenki", "Evenk", "Even", "Nanai", "Udege",
@@ -678,6 +701,15 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # people who speak three or more languages, which it does not name
         # (and which the patterns read as Mooré).
         "Not published (small counts)", "Three or more languages",
+        # The same, as the Balkan readers label it (Romania, Montenegro).
+        "Suppressed (disclosure control)",
+        # Those who would not name a mother tongue or home language: Albania's
+        # "prefer not to answer", Bulgaria's "не желая да отговоря",
+        # Montenegro's and Serbia's "nije se izjasnio".
+        "Not declared",
+        # Bulgaria's "cannot determine", and North Macedonia's row for the
+        # residents counted from administrative sources, who were not asked.
+        "Cannot determine", "No language data",
         # Guatemala's 2018 census: "No habla", a person who learned no language.
         "Does not speak",
         # Bands that span families rather than naming one. "Other African
@@ -697,6 +729,10 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         "two languages", "two mother tongues", "Two mother tongues",
         "multilingual", "persons 5 or mute", "none", "Unstated",
         "undeclared or unknown", "other or unspecified", "Not applicable",
+        # Slovakia's 2021 census (slovakia_census): its map layers name the
+        # largest mother tongues and pool the rest with those who stated
+        # none as "ostatné", as the ethnicity tree already files it.
+        "Other or not stated",
         # Constructed and classical languages, filed with Esperanto, Latin
         # and Sanskrit above: nobody answers a mother-tongue question with
         # them, and a census that lists them is printing a code list.
@@ -708,6 +744,11 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # Canada counts the combinations a household speaks, which name no one
         # language and cannot be filed under any family.
         "English and French", "English and non-official language(s)",
+        # The same kind of answer in Spain: Eustat's census counts Basque and
+        # Spanish spoken together at home ("las dos"), an isolate beside a
+        # Romance language, and Catalonia's EULP pools every other pair of
+        # languages as "other language combinations".
+        "Basque and Spanish", "Other language combinations",
         "French and non-official language(s)",
         "English, French and non-official language(s)",
         "Multiple non-official languages", "None (eg too young to talk)",
@@ -722,6 +763,10 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # that a unit led by one reads as unclassified rather than as
         # speaking something the tree has failed to place.
         "mixed", "unknown",
+        # Russia's 2020 census: "Jewish" (еврейский) as a native language,
+        # which is neither its Yiddish (идиш) nor its Hebrew (иврит) and
+        # names no one language (77 subjects).
+        "Jewish (unspecified)",
     ),
 }
 
@@ -750,6 +795,10 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         # One figure for two answers, as a Moldovan district's table gives it;
         # both halves are Romance, so it is too.
         "Moldovan or Romanian",
+        # Cyprus's Latins: the Roman Catholic community its constitution names,
+        # of Venetian, Genoese and French descent, which the census records as
+        # an ethnic/religious group (only in the curated country row).
+        "Cypriot Latin",
     ),
     "Slavic peoples": (
         "Russian", "Ukrainian", "Belarusian", "Polish", "Czech", "Slovak",
@@ -758,6 +807,9 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Kashubian", "Rusyn", "Lemko", "Boyko", "Sorbian", "Goral",
         "Yugoslav", "Czechoslovak", "Moravian", "Masurian", "Ruthenian",
         "Pomak",
+        # Serbia's Bunjevci, a South Slavic, Catholic people of Backa whom its
+        # census counts apart from Croats.
+        "Bunjevac",
     ),
     "Baltic peoples": ("Lithuanian", "Latvian", "Latgalian"),
     "Greek and Albanian peoples": ("Greek", "Albanian", "Arvanite"),
@@ -772,6 +824,10 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Palestinian", "Jordanian", "Yemeni", "Saudi", "Moroccan",
         "Algerian", "Tunisian", "Libyan", "Sudanese", "Bedouin", "Emirati",
         "Kuwaiti", "Omani", "Qatari", "Bahraini",
+        # Cyprus's Maronites, of Levantine origin, whose heritage language is
+        # Cypriot Maronite Arabic; the census records them as an
+        # ethnic/religious group (only in the curated country row).
+        "Cypriot Maronite",
     ),
     "Iranian peoples": (
         "Persian", "Kurd", "Kurdish", "Pashtun", "Tajik", "Baloch",
@@ -787,6 +843,9 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Tabasaran", "Rutul", "Tsakhur", "Agul", "Udi", "Kabardian",
         "Adyghe", "Abkhaz", "Abaza", "Circassian", "Mingrelian", "Svan",
         "Andi",
+        # Georgia's Pankisi Chechens, a nationality of their own in its 2002
+        # and 2014 censuses (georgia.json).
+        "Kist",
     ),
     "Armenian peoples": ("Armenian",),
     "Assyrian and Aramean peoples": ("Assyrian", "Aramean", "Chaldean",
@@ -909,6 +968,12 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Mongolian", "Mongol", "Buryat", "Kalmyk", "Evenk", "Evenki", "Even",
         "Nanai", "Udege", "Chukchi", "Koryak", "Nivkh", "Yupik", "Itelmen",
         "Ulchi", "Oroch", "Ket", "Selkup", "Tofalar", "Eskimo",
+        # Russia's 2020 census: the Taz of Primorye, one of its small peoples
+        # of the North, of Udege and Nanai descent with Chinese.
+        "Taz",
+        # The Enets, where ETHNIC_PATTERNS already files them, named here so
+        # that a spelling variant ("Ent", below) can resolve to them.
+        "Enets",
     ),
     "Mainland Southeast Asian peoples": (
         "Vietnamese", "Thai", "Lao", "Khmer", "Hmong", "Miao",
@@ -1049,6 +1114,7 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
 # the people families in the same ancestry -- never a parent of them.
 ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     "White or European (census category)": (
+        "Other EU nationals",
         "White", "White (non-Hispanic)", "White British", "White Irish",
         "White Other", "White European", "Caucasian", "European",
         "Other White", "Other European", "Branca",
@@ -1151,6 +1217,10 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         "Peruvian",
     ),
     "Other national identities": (
+        # European registers' nationality and country-of-birth rows for
+        # states of many peoples (the owner's 19 September 2026 decision):
+        # a nationality, which names no one ethnic group.
+        "Eritrean", "Ethiopian", "Congolese", "Kosovar", "Non-EU nationals",
         "Belgian", "Yugoslavian", "Sri Lankan", "Iranian national",
         "Nigerian", "Kenyan", "Cameroonian", "Malian", "Senegalese",
         "Congolese (Kinshasa)", "Congolese (Brazzaville)", "Chadian",
@@ -1257,6 +1327,13 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     # Laos: what its ten ethno-linguistic categories leave, which is the
     # census's own other-and-not-stated together with the foreign population.
     "Other or not stated",
+    # Cells an office does not publish, kept as one bar (Romania's "*",
+    # Montenegro's "z", Albania's "..").
+    "Suppressed (disclosure control)",
+    # Bulgaria's "cannot determine"; and Transnistria's own 2015 census's
+    # "Transnistrian", a regional self-description like "Regional
+    # affiliation" above rather than a people.
+    "Cannot determine", "Transnistrian",
     # The drawer each census keeps for everyone it did not name, in the
     # words it keeps it in.
     "Other ethnic group", "Other ethnicities", "Other tribe",
@@ -1626,9 +1703,19 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # or Spanish Creole" and "French, Haitian, or Cajun" already sit.
     "Romance languages": ("Aragonese", "French or French Creole",
                           # Bolivia's census: the Catalan of Valencia, by its own name.
-                          "Valencian"),
+                          "Valencian",
+                          # The European Social Survey's home languages (ess_region),
+                          # by their ISO 639 names: Spain's and Italy's regional
+                          # languages, and Judaeo-Spanish.
+                          "Asturian", "Sicilian", "Neapolitan", "Venetian", "Ladino",
+                          # Hungary's 2022 census (hungary_census): Beás, the
+                          # archaic Romanian the Boyash Roma speak, counted apart
+                          # from Romani as a mother tongue.
+                          "Boyash"),
     "Germanic languages": ("Limburgish",
-                           "Limburgish, Limburgan, Limburger"),
+                           "Limburgish, Limburgan, Limburger",
+                           # ess_region: Alemannic as a French respondent names it.
+                           "Alsatian"),
     # -- The Atlas of the Languages of Iran, twelve provinces.
     #
     # ALI names a variety at the grain it surveyed, far finer than any
@@ -2070,7 +2157,12 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # Asian ancestry would be the likelier guess and still a guess: the
     # census asks about religion there, and the honest answer is to say the
     # category is not an ancestry rather than to pick one for it.
-    "Unclassified ethnicity answers": ("Hindou", "Musulman"),
+    "Unclassified ethnicity answers": ("Hindou", "Musulman",
+                                       # Registers' residual rows: STATEC's
+                                       # unknown and stateless, CBS's other
+                                       # migration background.
+                                       "Nationality unknown", "Stateless",
+                                       "Other migration background"),
     # Viet Nam's Hoa are its Han Chinese, and the Ngái its Hakka-speaking
     # Chinese of the north-east; the census counts them as two groups. The
     # Thai Chinese are Thailand's, the Ethnolinguistic Maps' own label.
@@ -2206,6 +2298,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "mixed European and African ancestry", "Mestico", "Baster",
         # Mexico's people who answered yes to both of its questions.
         "Indigenous and Afro-Mexican",
+        # Malta's 2021 census, "What is your racial origin?": the sixth of its
+        # published groups beside Caucasian, Asian, Arab, African and Hispanic
+        # or Latino (malta_census).
+        "More than one racial origin",
     ),
     "Middle Eastern or North African (census category)": (
         "Arab, Arab Scottish or Arab British",
@@ -2375,6 +2471,10 @@ ETHNIC_VARIANTS: dict[str, str] = {
     "Ingushetian": "Ingush", "Buriat": "Buryat", "Nenet": "Nenets",
     "Vep": "Veps", "Liv": "Livonian", "Aghul": "Agul", "Abazin": "Abaza",
     "Afghani": "Afghan", "Kazak": "Kazakh",
+    # Two more of the Bureau's (ukraine_oblast, 2001): "Ent" is the Enets
+    # (энцы) of Donetsk Oblast's ten, "Hunt" the Khanty (ханты) of Kyiv's
+    # twelve.
+    "Ent": "Enets", "Hunt": "Khanty",
     # The Congo basin, Uganda and southern Africa, where one people is
     # written a dozen ways across three colonial languages.
     "Kanioka": "Kanyok", "Lugbala": "Lugbara",
@@ -2707,9 +2807,20 @@ def _folded(field: str) -> dict[str, str]:
     return cached
 
 
+# Names left without a parent by decision, where a rule would otherwise hand
+# them one. The Egyptians of Albania, Kosovo, Montenegro and North Macedonia
+# are an Albanian-speaking Balkan community whose claim of Egyptian descent is
+# argued over, as the Ashkali's origin is; agreed_parent reads "Balkan
+# Egyptian" as Egypt's Egyptians and files it under Arab peoples, on another
+# continent. Like Ashkali (which no rule reaches), it is left unplaced.
+UNPLACED: dict[str, frozenset[str]] = {"ethnicity": frozenset({"Balkan Egyptian"})}
+
+
 def parent_of(field: str, name: str, table: dict[str, str] | None = None,
               ) -> str | None:
     """The one step up from ``name``: exact, then folded, then by rule."""
+    if name in UNPLACED.get(field, ()):
+        return None
     table = merged_parents(field) if table is None else table
     # A tier-1 node is the top by definition, and saying so here rather than
     # relying on no rule matching is what keeps the tree a tree: the rules

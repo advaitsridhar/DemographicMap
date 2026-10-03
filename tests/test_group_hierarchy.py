@@ -491,6 +491,10 @@ class TheTailOfNamesTheTablesNowCarry(unittest.TestCase):
                 # A nationality that is argued over, not a spelling.
                 ("ethnicity", "Muslim"),
                 ("ethnicity", "Ashkali"),
+                # And the Balkan Egyptians, whose claimed descent is argued
+                # over as the Ashkali's is -- not Egypt's Egyptians, where
+                # the compound rule would file them.
+                ("ethnicity", "Balkan Egyptian"),
                 # (Ecuador's Montubio and Bolivia's Cholo/Chola were here, as
                 # identities of mixture each census treats as its own. So are
                 # Brazil's pardo and Guatemala's ladino, and all four are now

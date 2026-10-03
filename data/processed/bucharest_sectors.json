@@ -1,0 +1,332 @@
+[
+  {
+    "id": "ROU-domicile-2022-sector1",
+    "level": "admin2",
+    "name": "SECTOR 1",
+    "parent": "ROU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.9,
+      "unit": "years",
+      "year": 2022,
+      "source": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data",
+        "url": "https://web.archive.org/web/20240526051610id_/https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "page": "https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "year": 2022,
+        "license": "Institutul Național de Statistică (reuse with attribution)"
+      },
+      {
+        "field": "median_age",
+        "name": "Institutul Național de Statistică, RPL 2021, definitive results, Tabel 1.03 (resident population by age group)",
+        "url": "https://web.archive.org/web/20230601175321id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls",
+        "year": 2021,
+        "license": "Institutul Național de Statistică (reuse with attribution)",
+        "note": "the city's median, the check"
+      }
+    ],
+    "country": "ROU",
+    "match_by": "shape_id",
+    "shape_id": "2599482B44480573036225",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DRSMB's population by legal domicile on 1 July 2022 by age group (definitive): the 2021 census publishes Bucharest's ages for the city as a whole only. Domicile counts everyone registered in the sector, 265,149 people here, including those living elsewhere, not the census's usual residents; for the city as a whole it gives a median of 43.1 against the census's 42.8."
+  },
+  {
+    "id": "ROU-domicile-2022-sector2",
+    "level": "admin2",
+    "name": "SECTOR 2",
+    "parent": "ROU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2022,
+      "source": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data",
+        "url": "https://web.archive.org/web/20240526051610id_/https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "page": "https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "year": 2022,
+        "license": "Institutul Național de Statistică (reuse with attribution)"
+      },
+      {
+        "field": "median_age",
+        "name": "Institutul Național de Statistică, RPL 2021, definitive results, Tabel 1.03 (resident population by age group)",
+        "url": "https://web.archive.org/web/20230601175321id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls",
+        "year": 2021,
+        "license": "Institutul Național de Statistică (reuse with attribution)",
+        "note": "the city's median, the check"
+      }
+    ],
+    "country": "ROU",
+    "match_by": "shape_id",
+    "shape_id": "2599482B90996716719963",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DRSMB's population by legal domicile on 1 July 2022 by age group (definitive): the 2021 census publishes Bucharest's ages for the city as a whole only. Domicile counts everyone registered in the sector, 366,070 people here, including those living elsewhere, not the census's usual residents; for the city as a whole it gives a median of 43.1 against the census's 42.8."
+  },
+  {
+    "id": "ROU-domicile-2022-sector3",
+    "level": "admin2",
+    "name": "SECTOR 3",
+    "parent": "ROU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data",
+        "url": "https://web.archive.org/web/20240526051610id_/https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "page": "https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "year": 2022,
+        "license": "Institutul Național de Statistică (reuse with attribution)"
+      },
+      {
+        "field": "median_age",
+        "name": "Institutul Național de Statistică, RPL 2021, definitive results, Tabel 1.03 (resident population by age group)",
+        "url": "https://web.archive.org/web/20230601175321id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls",
+        "year": 2021,
+        "license": "Institutul Național de Statistică (reuse with attribution)",
+        "note": "the city's median, the check"
+      }
+    ],
+    "country": "ROU",
+    "match_by": "shape_id",
+    "shape_id": "2599482B73874901058237",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DRSMB's population by legal domicile on 1 July 2022 by age group (definitive): the 2021 census publishes Bucharest's ages for the city as a whole only. Domicile counts everyone registered in the sector, 494,022 people here, including those living elsewhere, not the census's usual residents; for the city as a whole it gives a median of 43.1 against the census's 42.8."
+  },
+  {
+    "id": "ROU-domicile-2022-sector4",
+    "level": "admin2",
+    "name": "SECTOR 4",
+    "parent": "ROU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 43.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data",
+        "url": "https://web.archive.org/web/20240526051610id_/https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "page": "https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "year": 2022,
+        "license": "Institutul Național de Statistică (reuse with attribution)"
+      },
+      {
+        "field": "median_age",
+        "name": "Institutul Național de Statistică, RPL 2021, definitive results, Tabel 1.03 (resident population by age group)",
+        "url": "https://web.archive.org/web/20230601175321id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls",
+        "year": 2021,
+        "license": "Institutul Național de Statistică (reuse with attribution)",
+        "note": "the city's median, the check"
+      }
+    ],
+    "country": "ROU",
+    "match_by": "shape_id",
+    "shape_id": "2599482B40400618914194",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DRSMB's population by legal domicile on 1 July 2022 by age group (definitive): the 2021 census publishes Bucharest's ages for the city as a whole only. Domicile counts everyone registered in the sector, 337,093 people here, including those living elsewhere, not the census's usual residents; for the city as a whole it gives a median of 43.1 against the census's 42.8."
+  },
+  {
+    "id": "ROU-domicile-2022-sector5",
+    "level": "admin2",
+    "name": "SECTOR 5",
+    "parent": "ROU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.5,
+      "unit": "years",
+      "year": 2022,
+      "source": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data",
+        "url": "https://web.archive.org/web/20240526051610id_/https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "page": "https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "year": 2022,
+        "license": "Institutul Național de Statistică (reuse with attribution)"
+      },
+      {
+        "field": "median_age",
+        "name": "Institutul Național de Statistică, RPL 2021, definitive results, Tabel 1.03 (resident population by age group)",
+        "url": "https://web.archive.org/web/20230601175321id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls",
+        "year": 2021,
+        "license": "Institutul Național de Statistică (reuse with attribution)",
+        "note": "the city's median, the check"
+      }
+    ],
+    "country": "ROU",
+    "match_by": "shape_id",
+    "shape_id": "2599482B58123345185343",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DRSMB's population by legal domicile on 1 July 2022 by age group (definitive): the 2021 census publishes Bucharest's ages for the city as a whole only. Domicile counts everyone registered in the sector, 304,087 people here, including those living elsewhere, not the census's usual residents; for the city as a whole it gives a median of 43.1 against the census's 42.8."
+  },
+  {
+    "id": "ROU-domicile-2022-sector6",
+    "level": "admin2",
+    "name": "SECTOR 6",
+    "parent": "ROU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 43.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Direcția Regională de Statistică a Municipiului București (INS), population by legal domicile on 1 July 2022 by age group and sex, definitive data",
+        "url": "https://web.archive.org/web/20240526051610id_/https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "page": "https://bucuresti.insse.ro/wp-content/uploads/2024/02/Populatia-dupa-domiciliu-la-1-iulie-2022-pe-grupe-de-varsta-si-sexe.xlsx",
+        "year": 2022,
+        "license": "Institutul Național de Statistică (reuse with attribution)"
+      },
+      {
+        "field": "median_age",
+        "name": "Institutul Național de Statistică, RPL 2021, definitive results, Tabel 1.03 (resident population by age group)",
+        "url": "https://web.archive.org/web/20230601175321id_/https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.03_1.3.1-si-1.03.2.xls",
+        "year": 2021,
+        "license": "Institutul Național de Statistică (reuse with attribution)",
+        "note": "the city's median, the check"
+      }
+    ],
+    "country": "ROU",
+    "match_by": "shape_id",
+    "shape_id": "2599482B66456356420035",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from DRSMB's population by legal domicile on 1 July 2022 by age group (definitive): the 2021 census publishes Bucharest's ages for the city as a whole only. Domicile counts everyone registered in the sector, 397,874 people here, including those living elsewhere, not the census's usual residents; for the city as a whole it gives a median of 43.1 against the census's 42.8."
+  }
+]

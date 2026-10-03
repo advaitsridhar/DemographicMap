@@ -18,6 +18,13 @@ interval exceeds :data:`MAX_INTERVAL` are dropped rather than shown, because a
 share of 0.9% that could be anywhere between 0.4% and 1.4% is not a fact about
 Uri, and 'X' marks cells the FSO suppressed outright for disclosure control.
 
+So the records go to ``switzerland_language_survey.json`` with a
+``language_basis`` that begins "survey estimate", which the build ranks
+behind any count, and each note gives the sample the FSO drew in the canton
+that year (from its stratification table, as ``switzerland_religion`` reads
+it). The survey's weighted total is the population in private households,
+not the canton's population, so no population is written.
+
 Usage:
     python -m scripts.fetch_census.switzerland
 """
@@ -29,14 +36,19 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, gap, log, record, shares, write_json,
 )
+from .central_ages import fold
+from .switzerland_religion import sample_drawn
 
 WORKBOOK = RAW / "switzerland" / "languages_canton_se2024.xlsx"
 SHEET = "Canton"
 SOURCE = "Office fédéral de la statistique (OFS), relevé structurel 2024"
 PORTAL = "https://www.bfs.admin.ch/"
 YEAR = 2024
+OUT = PROCESSED / "switzerland_language_survey.json"
+BASIS = ("survey estimate: structural survey 2024, permanent resident population in private "
+         "households, up to three main languages a person")
 
 # Column index -> display label. Each is followed by its confidence interval.
 LANGUAGES = {5: "German", 7: "French", 9: "Italian", 11: "Romansh",
@@ -66,7 +78,8 @@ NOTE = (
     "to three. The shares are therefore of responses rather than of people and "
     "sum to more than 100% -- nationally about 119%. It is a sample survey, so "
     "every figure is an estimate; those whose confidence interval exceeded "
-    f"±{MAX_INTERVAL:.0f}% of the estimate have been dropped rather than shown.")
+    f"±{MAX_INTERVAL:.0f}% of the estimate have been dropped rather than shown. "
+    "The census has not asked every resident since 2000.")
 
 
 def clean(name: Any) -> str:
@@ -136,22 +149,31 @@ def check(cantons: list[dict[str, Any]], national: dict[str, Any]) -> None:
         f"languages total {overflow:.1f}% of it (multiple answers allowed)")
 
 
-def build(cantons: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def build(cantons: list[dict[str, Any]], drawn: dict[str, float]) -> list[dict[str, Any]]:
+    """One record a canton; ``drawn`` is the sample the FSO drew there, by canton name."""
+    by_fold = {fold(k): v for k, v in drawn.items()}
     out = []
     for canton in cantons:
-        note = NOTE
+        n = by_fold.get(fold(canton["name"]))
+        if n is None:
+            raise SystemExit(f"no sample size for {canton['name']}")
+        if n < 100:
+            raise SystemExit(f"{canton['name']}: only {n:,.0f} people drawn")
+        note = NOTE + (f" Sample: the FSO drew about {n:,.0f} people aged 15 and over in the "
+                       f"canton in {YEAR} (its population considered times its sampling rate, "
+                       f"from the FSO's stratification table cc-t-40-se_strata-{YEAR})"
+                       + ("; low precision." if n < 300 else "."))
         if canton["dropped"]:
             note += (" Not shown for this canton: "
                      + ", ".join(canton["dropped"]) + ".")
         out.append(record(
             f"CHE-{canton['name'].replace(' ', '-')}", canton["name"],
             level="admin1", parent="CHE", codes={"canton": canton["name"]},
-            population=measure(int(round(canton["total"])), year=YEAR, source=SOURCE,
-                               unit="permanent residents in private households"),
             language=shares(canton["counts"], total=canton["total"]) or gap(NOT_AVAILABLE),
             language_note=note,
             language_year=YEAR,
-            sources=[{"field": "language/population", "name": SOURCE, "url": PORTAL,
+            language_basis=BASIS,
+            sources=[{"field": "language", "name": SOURCE, "url": PORTAL,
                       "year": YEAR,
                       "note": "Permanent resident population in private "
                               "households; diplomats and people in collective "
@@ -172,9 +194,9 @@ def main() -> int:
                          "the canton sum has nothing independent to check against")
     cantons = [r for r in rows if r is not national]
     check(cantons, national)
-    out = build(cantons)
+    out = build(cantons, sample_drawn([YEAR]))
     log(f"  {len(out)} cantons with main-language shares")
-    write_json(PROCESSED / "switzerland_canton.json", out)
+    write_json(OUT, out)
     return 0
 
 

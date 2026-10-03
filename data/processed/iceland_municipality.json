@@ -1,0 +1,4660 @@
+[
+  {
+    "id": "ISL-HAG-2017-0000",
+    "level": "admin2",
+    "name": "Reykjavíkurborg",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 139804,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 103.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Capital Region",
+    "codes": {
+      "hagstofa": "0000",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B48219786980381",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (71,096 males, 68,587 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-1000",
+    "level": "admin2",
+    "name": "Kópavogsbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 40286,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 102.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Capital Region",
+    "codes": {
+      "hagstofa": "1000",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B4103585132621",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (20,353 males, 19,923 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-1100",
+    "level": "admin2",
+    "name": "Seltjarnarnesbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4609,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 40.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 98.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Capital Region",
+    "codes": {
+      "hagstofa": "1100",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B41148599816454",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (2,289 males, 2,317 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-1300",
+    "level": "admin2",
+    "name": "Garðabær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20724,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 98.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Capital Region",
+    "codes": {
+      "hagstofa": "1300",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B25721014671193",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (10,265 males, 10,456 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-1400",
+    "level": "admin2",
+    "name": "Hafnarfjarðarkaupstaður",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32398,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 36.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 105.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Capital Region",
+    "codes": {
+      "hagstofa": "1400",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B99927833063684",
+    "aliases": [
+      "Hafnarfjarðarbær"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (16,606 males, 15,772 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-1604",
+    "level": "admin2",
+    "name": "Mosfellsbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13772,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 108.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Capital Region",
+    "codes": {
+      "hagstofa": "1604",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B92465939344192",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (7,174 males, 6,595 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-1606",
+    "level": "admin2",
+    "name": "Kjósarhreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 319,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 51.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 121.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Capital Region",
+    "codes": {
+      "hagstofa": "1606",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B42175048354153",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (175 males, 144 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-2000",
+    "level": "admin2",
+    "name": "Reykjanesbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22697,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 35.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 116.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Peninsula",
+    "codes": {
+      "hagstofa": "2000",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B48140939724428",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (12,206 males, 10,485 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-2300",
+    "level": "admin2",
+    "name": "Grindavíkurbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 819,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 47.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 154.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Peninsula",
+    "codes": {
+      "hagstofa": "2300",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B76002453234506",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count. Grindavík was evacuated on 10 November 2023, when the volcanic unrest on the Reykjanes peninsula began, and most of its residents have since registered a home elsewhere: 819 people were registered here on 1 January 2026 against 3,562 on 1 January 2023, so the age and sex figures are of the few who remain.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (497 males, 322 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count. Grindavík was evacuated on 10 November 2023, when the volcanic unrest on the Reykjanes peninsula began, and most of its residents have since registered a home elsewhere: 819 people were registered here on 1 January 2026 against 3,562 on 1 January 2023, so the age and sex figures are of the few who remain."
+  },
+  {
+    "id": "ISL-HAG-2017-2503",
+    "level": "admin2",
+    "name": "Sandgerðisbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1785,
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 34.5,
+      "unit": "years",
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 118.8,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2017
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Peninsula",
+    "codes": {
+      "hagstofa": "2503",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B94929237668673",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (969 males, 816 females).",
+    "population_note": "Registered residents on 1 December 2017. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-2504",
+    "level": "admin2",
+    "name": "Sveitarfélagið Garður",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1599,
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 35.1,
+      "unit": "years",
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 115.8,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2017
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Peninsula",
+    "codes": {
+      "hagstofa": "2504",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B4203273652382",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (858 males, 741 females).",
+    "population_note": "Registered residents on 1 December 2017. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-2506",
+    "level": "admin2",
+    "name": "Sveitarfélagið Vogar",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1896,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 35.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 108.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Peninsula",
+    "codes": {
+      "hagstofa": "2506",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B53257850023541",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (987 males, 909 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-3000",
+    "level": "admin2",
+    "name": "Akraneskaupstaður",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8440,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 36.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 104.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3000",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B30892314657027",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (4,303 males, 4,131 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-3506",
+    "level": "admin2",
+    "name": "Skorradalshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 72,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 53.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 118.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3506",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B18273074009309",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (39 males, 33 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-3511",
+    "level": "admin2",
+    "name": "Hvalfjarðarsveit",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 805,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 43.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 116.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3511",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B64770191202242",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (432 males, 372 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-3609",
+    "level": "admin2",
+    "name": "Borgarbyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4082,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 40.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 112.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3609",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B50787148750106",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (2,160 males, 1,922 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-3709",
+    "level": "admin2",
+    "name": "Grundarfjarðarbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 857,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 113.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3709",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B76246482597042",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (455 males, 401 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-3710",
+    "level": "admin2",
+    "name": "Helgafellssveit",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 79,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 38.5,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 132.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3710",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B42475995928988",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (45 males, 34 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-3711",
+    "level": "admin2",
+    "name": "Stykkishólmsbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1214,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 37.5,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 104.4,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3711",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B37463664010444",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (620 males, 594 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-3713",
+    "level": "admin2",
+    "name": "Eyja- og Miklaholtshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 119,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 41.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 83.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3713",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B92076156941754",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (54 males, 65 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-3714",
+    "level": "admin2",
+    "name": "Snæfellsbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1669,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 111.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3714",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B30460955116065",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (881 males, 788 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-3811",
+    "level": "admin2",
+    "name": "Dalabyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 653,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 44.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 110.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Western Region",
+    "codes": {
+      "hagstofa": "3811",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B70126368142347",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (343 males, 310 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-4100",
+    "level": "admin2",
+    "name": "Bolungarvíkurkaupstaður",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1003,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 39.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 110.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4100",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B6311767935335",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (527 males, 476 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-4200",
+    "level": "admin2",
+    "name": "Ísafjarðarbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3987,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 108.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4200",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B55108803715122",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (2,073 males, 1,909 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-4502",
+    "level": "admin2",
+    "name": "Reykhólahreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 243,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 46.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 102.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4502",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B19971250001035",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (123 males, 120 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-4604",
+    "level": "admin2",
+    "name": "Tálknafjarðarhreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 268,
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 35.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 125.2,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2022
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4604",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B74336956547693",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2022; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count in this table, which ends in 2022; it was merged later.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2022 (149 males, 119 females).",
+    "population_note": "Registered residents on 1 December 2022. The municipality as the map draws it (the division of 2017), at its last count in this table, which ends in 2022; it was merged later."
+  },
+  {
+    "id": "ISL-HAG-2017-4607",
+    "level": "admin2",
+    "name": "Vesturbyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1174,
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 35.2,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 130.2,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2022
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4607",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B84482513465742",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2022; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count in this table, which ends in 2022; it was merged later.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2022 (664 males, 510 females).",
+    "population_note": "Registered residents on 1 December 2022. The municipality as the map draws it (the division of 2017), at its last count in this table, which ends in 2022; it was merged later."
+  },
+  {
+    "id": "ISL-HAG-2017-4803",
+    "level": "admin2",
+    "name": "Súðavíkurhreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 219,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 41.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 125.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4803",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B7322015257461",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (122 males, 97 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-4901",
+    "level": "admin2",
+    "name": "Árneshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 59.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 130.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4901",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B92022671609099",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (34 males, 26 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-4902",
+    "level": "admin2",
+    "name": "Kaldrananeshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 117,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 52.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 88.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4902",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B77106600698129",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (55 males, 62 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-4911",
+    "level": "admin2",
+    "name": "Strandabyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 422,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 45.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 111.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Westfjords",
+    "codes": {
+      "hagstofa": "4911",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B90835463390859",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (222 males, 200 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-5200",
+    "level": "admin2",
+    "name": "Sveitarfélagið Skagafjörður",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4102,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 39.1,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 103.0,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northwestern Region",
+    "codes": {
+      "hagstofa": "5200",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B28940040244957",
+    "aliases": [
+      "Sveitarfélagið Skagafjörðu"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (2,081 males, 2,021 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-5508",
+    "level": "admin2",
+    "name": "Húnaþing vestra",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1190,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 44.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 100.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northwestern Region",
+    "codes": {
+      "hagstofa": "5508",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B78038893235430",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (596 males, 592 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-5604",
+    "level": "admin2",
+    "name": "Blönduósbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 929,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 39.0,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 114.1,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northwestern Region",
+    "codes": {
+      "hagstofa": "5604",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B97005072200428",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (495 males, 434 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-5609",
+    "level": "admin2",
+    "name": "Sveitarfélagið Skagaströnd",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 450,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 39.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 106.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northwestern Region",
+    "codes": {
+      "hagstofa": "5609",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B17586381133924",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (232 males, 218 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-5611",
+    "level": "admin2",
+    "name": "Skagabyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 89,
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 49.5,
+      "unit": "years",
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 93.5,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2022
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northwestern Region",
+    "codes": {
+      "hagstofa": "5611",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B21592329160761",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2022; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count in this table, which ends in 2022; it was merged later.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2022 (43 males, 46 females).",
+    "population_note": "Registered residents on 1 December 2022. The municipality as the map draws it (the division of 2017), at its last count in this table, which ends in 2022; it was merged later."
+  },
+  {
+    "id": "ISL-HAG-2017-5612",
+    "level": "admin2",
+    "name": "Húnavatnshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 385,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 42.9,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 118.8,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northwestern Region",
+    "codes": {
+      "hagstofa": "5612",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B27584551294957",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (209 males, 176 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-5706",
+    "level": "admin2",
+    "name": "Akrahreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 204,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 41.5,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 87.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northwestern Region",
+    "codes": {
+      "hagstofa": "5706",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B74034306834774",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (95 males, 109 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-6000",
+    "level": "admin2",
+    "name": "Akureyrarbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20284,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 102.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6000",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B9807446828123",
+    "aliases": [
+      "Akureyrarkaupstaður"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (10,251 males, 10,020 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6100",
+    "level": "admin2",
+    "name": "Norðurþing",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3017,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 39.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 110.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6100",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B18729557885943",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,586 males, 1,431 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6250",
+    "level": "admin2",
+    "name": "Fjallabyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1969,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 43.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 102.5,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6250",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B2207988314752",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (996 males, 972 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6400",
+    "level": "admin2",
+    "name": "Dalvíkurbyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1925,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 39.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 103.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6400",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B31014041409595",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (977 males, 947 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6513",
+    "level": "admin2",
+    "name": "Eyjafjarðarsveit",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1206,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 102.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6513",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B64056494481770",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (609 males, 597 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6515",
+    "level": "admin2",
+    "name": "Hörgársveit",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 937,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 33.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 104.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6515",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B22444435927366",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (479 males, 458 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6601",
+    "level": "admin2",
+    "name": "Svalbarðsstrandarhreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 517,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 112.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6601",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B70204278120324",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (274 males, 243 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6602",
+    "level": "admin2",
+    "name": "Grýtubakkahreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 373,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 40.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 108.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6602",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B60639573794911",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (194 males, 179 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6607",
+    "level": "admin2",
+    "name": "Skútustaðahreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 485,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 36.5,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 108.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6607",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B58365339597746",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (252 males, 233 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-6611",
+    "level": "admin2",
+    "name": "Tjörneshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 54,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 59.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 92.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6611",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B23966539039805",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (26 males, 28 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-6612",
+    "level": "admin2",
+    "name": "Þingeyjarsveit",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 864,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 47.1,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 108.7,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6612",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B2873245088627",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (450 males, 414 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-6706",
+    "level": "admin2",
+    "name": "Svalbarðshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 95,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 43.8,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 115.9,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6706",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B84342259441214",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (51 males, 44 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-6709",
+    "level": "admin2",
+    "name": "Langanesbyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 509,
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 37.5,
+      "unit": "years",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 124.2,
+      "unit": "males_per_100_females",
+      "year": 2021,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2021
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Northeastern Region",
+    "codes": {
+      "hagstofa": "6709",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B59191424948734",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2021; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2021 (282 males, 227 females).",
+    "population_note": "Registered residents on 1 December 2021. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-7000",
+    "level": "admin2",
+    "name": "Seyðisfjarðarkaupstaður",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 682,
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 44.3,
+      "unit": "years",
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 111.1,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2019
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7000",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B63317643398592",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2019; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2019 (359 males, 323 females).",
+    "population_note": "Registered residents on 1 December 2019. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-7300",
+    "level": "admin2",
+    "name": "Fjarðabyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4780,
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 35.2,
+      "unit": "years",
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 113.6,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2017
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7300",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B48850905136863",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged. Fjarðabyggð took in Breiðdalshreppur in 2018, so its own territory ends in 2017.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (2,542 males, 2,238 females).",
+    "population_note": "Registered residents on 1 December 2017. The municipality as the map draws it (the division of 2017), at its last count before it was merged. Fjarðabyggð took in Breiðdalshreppur in 2018, so its own territory ends in 2017."
+  },
+  {
+    "id": "ISL-HAG-2017-7502",
+    "level": "admin2",
+    "name": "Vopnafjarðarhreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 633,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 42.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 97.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7502",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B85031335132444",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (312 males, 321 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-7505",
+    "level": "admin2",
+    "name": "Fljótsdalshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 115,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 42.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 130.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7505",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B28727550371532",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (65 males, 50 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-7509",
+    "level": "admin2",
+    "name": "Borgarfjarðarhreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 122,
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 48.0,
+      "unit": "years",
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 130.2,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2019
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7509",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B88653491645149",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2019; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2019 (69 males, 53 females).",
+    "population_note": "Registered residents on 1 December 2019. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-7613",
+    "level": "admin2",
+    "name": "Breiðdalshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 183,
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 46.5,
+      "unit": "years",
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 140.8,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2017
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7613",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B15837177030035",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2017; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2017 (107 males, 76 females).",
+    "population_note": "Registered residents on 1 December 2017. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-7617",
+    "level": "admin2",
+    "name": "Djúpavogshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 501,
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 38.3,
+      "unit": "years",
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 118.8,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2019
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7617",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B85487583844878",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2019; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2019 (272 males, 229 females).",
+    "population_note": "Registered residents on 1 December 2019. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-7620",
+    "level": "admin2",
+    "name": "Fljótsdalshérað",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3620,
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "median_age": {
+      "value": 36.9,
+      "unit": "years",
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "sex_ratio": {
+      "value": 104.1,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "Statistics Iceland, MAN09000"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN09000",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__x_eldraefni/MAN09000.px",
+        "year": 2019
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7620",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B83679589752148",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN09000's count of residents by single year of age on 1 December 2019; the office tabulates the ages, not this median. The municipality as the map draws it (the division of 2017), at its last count before it was merged.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 December 2019 (1,846 males, 1,774 females).",
+    "population_note": "Registered residents on 1 December 2019. The municipality as the map draws it (the division of 2017), at its last count before it was merged."
+  },
+  {
+    "id": "ISL-HAG-2017-7708",
+    "level": "admin2",
+    "name": "Sveitarfélagið Hornafjörður",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2631,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 34.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 110.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Eastern Region",
+    "codes": {
+      "hagstofa": "7708",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B97448762640394",
+    "aliases": [
+      "Sveitarfélagið Hornafjörðu"
+    ],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,378 males, 1,253 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8200",
+    "level": "admin2",
+    "name": "Sveitarfélagið Árborg",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12671,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 103.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8200",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B44443724675216",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (6,437 males, 6,226 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8508",
+    "level": "admin2",
+    "name": "Mýrdalshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1004,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 32.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 115.9,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8508",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B6689541001554",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (539 males, 465 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8509",
+    "level": "admin2",
+    "name": "Skaftárhreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 651,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 35.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 126.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8509",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B24957701647142",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (363 males, 288 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8610",
+    "level": "admin2",
+    "name": "Ásahreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 305,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 34.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 120.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8610",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B31453435550318",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (166 males, 138 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8613",
+    "level": "admin2",
+    "name": "Rangárþing eystra",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2142,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 107.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8613",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B21062297179388",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,110 males, 1,032 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8614",
+    "level": "admin2",
+    "name": "Rangárþing ytra",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1966,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 39.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 110.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8614",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B57462919825437",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,031 males, 935 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8710",
+    "level": "admin2",
+    "name": "Hrunamannahreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 912,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 120.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8710",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B85072287894251",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (498 males, 414 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8716",
+    "level": "admin2",
+    "name": "Hveragerðisbær",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3344,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.8,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 101.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8716",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B51739533992730",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,685 males, 1,659 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8717",
+    "level": "admin2",
+    "name": "Sveitarfélagið Ölfus",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2907,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 118.2,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8717",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B93058264602287",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (1,575 males, 1,332 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8719",
+    "level": "admin2",
+    "name": "Grímsnes- og Grafningshreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 658,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 49.7,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 111.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8719",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B74100778143587",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (347 males, 311 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8720",
+    "level": "admin2",
+    "name": "Skeiða- og Gnúpverjahreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 667,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.6,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 112.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8720",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B10209439874100",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (352 males, 314 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8721",
+    "level": "admin2",
+    "name": "Bláskógabyggð",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1453,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 33.0,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 100.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8721",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B85102906551816",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (729 males, 724 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-2017-8722",
+    "level": "admin2",
+    "name": "Flóahreppur",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 741,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 40.1,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 103.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "parent_name": "Southern Region",
+    "codes": {
+      "hagstofa": "8722",
+      "vintage": 2017
+    },
+    "match_by": "shape_id",
+    "shape_id": "244011B29431294757890",
+    "aliases": [],
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. The municipality has not been merged since 2017, the division the map draws, so this is its latest count.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (376 males, 365 females).",
+    "population_note": "Registered residents on 1 January 2026. The municipality has not been merged since 2017, the division the map draws, so this is its latest count."
+  },
+  {
+    "id": "ISL-HAG-capitalregion",
+    "level": "admin1",
+    "name": "Capital Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 251912,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 103.4,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "match_by": "shape_id",
+    "shape_id": "53860390B39552912285510",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the municipalities the map draws in the region.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (127,958 males, 123,794 females).",
+    "population_note": "Registered residents on 1 January 2026. Summed from the municipalities the map draws in the region."
+  },
+  {
+    "id": "ISL-HAG-easternregion",
+    "level": "admin1",
+    "name": "Eastern Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13842,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 109.8,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "match_by": "shape_id",
+    "shape_id": "53860390B32173012790841",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the municipalities the map draws in the region. That includes Sveitarfélagið Hornafjörður, which Hagstofa has numbered in another region since it was renumbered.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (7,241 males, 6,595 females).",
+    "population_note": "Registered residents on 1 January 2026. Summed from the municipalities the map draws in the region. That includes Sveitarfélagið Hornafjörður, which Hagstofa has numbered in another region since it was renumbered."
+  },
+  {
+    "id": "ISL-HAG-northeasternregion",
+    "level": "admin1",
+    "name": "Northeastern Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32296,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.5,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 104.1,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "match_by": "shape_id",
+    "shape_id": "53860390B58519509441334",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the municipalities the map draws in the region.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (16,463 males, 15,817 females).",
+    "population_note": "Registered residents on 1 January 2026. Summed from the municipalities the map draws in the region."
+  },
+  {
+    "id": "ISL-HAG-northwesternregion",
+    "level": "admin1",
+    "name": "Northwestern Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7353,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 40.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 102.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "match_by": "shape_id",
+    "shape_id": "53860390B72464321703569",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the municipalities the map draws in the region.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (3,711 males, 3,640 females).",
+    "population_note": "Registered residents on 1 January 2026. Summed from the municipalities the map draws in the region."
+  },
+  {
+    "id": "ISL-HAG-southernpeninsula",
+    "level": "admin1",
+    "name": "Southern Peninsula",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29644,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 35.9,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 116.6,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "match_by": "shape_id",
+    "shape_id": "53860390B87574894134156",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the municipalities the map draws in the region.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (15,954 males, 13,682 females).",
+    "population_note": "Registered residents on 1 January 2026. Summed from the municipalities the map draws in the region."
+  },
+  {
+    "id": "ISL-HAG-southernregion",
+    "level": "admin1",
+    "name": "Southern Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33939,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 37.3,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 108.3,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "match_by": "shape_id",
+    "shape_id": "53860390B85658391135359",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the municipalities the map draws in the region. It leaves out Sveitarfélagið Hornafjörður (drawn in the Eastern Region), which Hagstofa now numbers here.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (17,642 males, 16,286 females).",
+    "population_note": "Registered residents on 1 January 2026. Summed from the municipalities the map draws in the region. It leaves out Sveitarfélagið Hornafjörður (drawn in the Eastern Region), which Hagstofa now numbers here."
+  },
+  {
+    "id": "ISL-HAG-westernregion",
+    "level": "admin1",
+    "name": "Western Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17997,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 38.2,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 108.0,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "match_by": "shape_id",
+    "shape_id": "53860390B73804128945228",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the municipalities the map draws in the region.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (9,342 males, 8,647 females).",
+    "population_note": "Registered residents on 1 January 2026. Summed from the municipalities the map draws in the region."
+  },
+  {
+    "id": "ISL-HAG-westfjords",
+    "level": "admin1",
+    "name": "Westfjords",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7341,
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "median_age": {
+      "value": 39.4,
+      "unit": "years",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "sex_ratio": {
+      "value": 111.7,
+      "unit": "males_per_100_females",
+      "year": 2026,
+      "source": "Statistics Iceland, MAN02005"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Statistics Iceland, MAN02005",
+        "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN02005.px",
+        "year": 2026
+      }
+    ],
+    "country": "ISL",
+    "match_by": "shape_id",
+    "shape_id": "53860390B51423153689858",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from Statistics Iceland, MAN02005's count of residents by single year of age on 1 January 2026; the office tabulates the ages, not this median. Summed from the municipalities the map draws in the region.",
+    "sex_ratio_note": "Males per 100 females among residents on 1 January 2026 (3,870 males, 3,466 females).",
+    "population_note": "Registered residents on 1 January 2026. Summed from the municipalities the map draws in the region."
+  }
+]

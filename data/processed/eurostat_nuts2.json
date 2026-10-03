@@ -3651,6 +3651,62 @@
     ]
   },
   {
+    "id": "EU-EL42",
+    "level": "admin2",
+    "name": "Notioy Aigaioy",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 327036,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 44.6,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 1035,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "GRC",
+    "codes": {
+      "nuts": "EL42",
+      "nuts_level": 2
+    },
+    "match_by": "shape_id",
+    "shape_id": "26713481B52894455575268",
+    "aliases": [
+      "Notio Aigaio"
+    ]
+  },
+  {
     "id": "EU-EL43-admin1",
     "level": "admin1",
     "name": "Crete",
@@ -4040,6 +4096,62 @@
     "shape_id": "26713481B23289270995723",
     "aliases": [
       "Thessalia"
+    ]
+  },
+  {
+    "id": "EU-EL62",
+    "level": "admin2",
+    "name": "Ionion Nison",
+    "parent": "GRC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 198421,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 48.5,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 970,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "GRC",
+    "codes": {
+      "nuts": "EL62",
+      "nuts_level": 2
+    },
+    "match_by": "shape_id",
+    "shape_id": "26713481B82557054028644",
+    "aliases": [
+      "Ionia Nisia"
     ]
   },
   {
@@ -6519,6 +6631,60 @@
     },
     "match_by": "shape_id",
     "shape_id": "6811986B7118592816602"
+  },
+  {
+    "id": "EU-NL34",
+    "level": "admin1",
+    "name": "Zeeland",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 392969,
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "median_age": {
+      "value": 47.2,
+      "unit": "years",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "sex_ratio": {
+      "value": 992,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "The Netherlands records migration background, not ethnicity."
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio",
+        "name": "Eurostat",
+        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
+        "license": "Eurostat re-use policy (attribution)"
+      }
+    ],
+    "country": "NLD",
+    "codes": {
+      "nuts": "NL34",
+      "nuts_level": 2
+    },
+    "match_by": "shape_id",
+    "shape_id": "6811986B50931527975892"
   },
   {
     "id": "EU-NL36",
@@ -9154,108 +9320,6 @@
     "country": "DNK",
     "codes": {
       "nuts": "DK05",
-      "nuts_level": 2
-    }
-  },
-  {
-    "id": "EU-EL42",
-    "level": "admin1",
-    "name": "Notio Aigaio",
-    "parent": "GRC",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 327036,
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 44.6,
-      "unit": "years",
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "value": 1035,
-      "unit": "males_per_1000_females",
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age/sex ratio",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GRC",
-    "codes": {
-      "nuts": "EL42",
-      "nuts_level": 2
-    }
-  },
-  {
-    "id": "EU-EL62",
-    "level": "admin1",
-    "name": "Ionia Nisia",
-    "parent": "GRC",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 198421,
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 48.5,
-      "unit": "years",
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "value": 970,
-      "unit": "males_per_1000_females",
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age/sex ratio",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GRC",
-    "codes": {
-      "nuts": "EL62",
       "nuts_level": 2
     }
   },
@@ -12253,58 +12317,6 @@
     "country": "NLD",
     "codes": {
       "nuts": "NL23",
-      "nuts_level": 2
-    }
-  },
-  {
-    "id": "EU-NL34",
-    "level": "admin1",
-    "name": "Zeeland",
-    "parent": "NLD",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 392969,
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 47.2,
-      "unit": "years",
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "value": 992,
-      "unit": "males_per_1000_females",
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "The Netherlands records migration background, not ethnicity."
-    },
-    "sources": [
-      {
-        "field": "population/median age/sex ratio",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "NLD",
-    "codes": {
-      "nuts": "NL34",
       "nuts_level": 2
     }
   },

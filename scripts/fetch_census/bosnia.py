@@ -90,6 +90,8 @@ LABELS = {
     "ethnicity": {
         "Serb": "Serbian", "Croat": "Croatian", "Turk": "Turkish",
         "Slovenian": "Slovene", "Orthodox": "Orthodox (written as ethnicity)",
+        # "Musliman" as a nationality, as Serbia and Montenegro count it too.
+        "Muslim": "Muslim (ethnic)",
         "Others": "Other", "Undeclared": "Not declared",
     },
     "religion": {

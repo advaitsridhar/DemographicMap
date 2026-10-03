@@ -38,12 +38,21 @@ from ._shared import (
 
 YEAR = 2021        # England and Wales; Scotland ran 2022 and has its own adapter
 BASE = "https://www.nomisweb.co.uk/api/v01/dataset"
-DATASETS = {
+DATASETS: dict[str, tuple[str, str, str | None]] = {
     "ethnicity": ("NM_2041_1", "TS021 Ethnic group", "c2021_eth_20"),
     "religion": ("NM_2049_1", "TS030 Religion", "c2021_religion_10"),
+    # The category dimension's name is read off the answer (None), not
+    # written here: it is the one key of each observation that is a census
+    # classification.
+    "language": ("NM_2043_1", "TS024 Main language (detailed)", None),
 }
 # TYPE154 = 2021 local authority districts; TYPE499 = regions; TYPE480 = countries.
 DEFAULT_GEOGRAPHY = "TYPE154"
+# The most cells Nomis returns an anonymous caller in one answer, and how many
+# parts a truncated table is read in (by category; 94 languages in four parts
+# of 23 or 24 is under 8,000 cells a part for 331 districts).
+PAGE_CELLS = 25000
+CATEGORY_PARTS = 4
 
 # Two geographies, because one is not enough to cover the shapes that exist.
 #
@@ -61,6 +70,11 @@ DEFAULT_GEOGRAPHY = "TYPE154"
 LEVELS: dict[str, tuple[str, str]] = {
     "district": ("TYPE154", "uk_lad.json"),
     "county": ("TYPE155", "uk_county.json"),
+    # England and Wales themselves, the map's first level. Asked for rather
+    # than rolled up: the Isles of Scilly are drawn under the United Kingdom
+    # rather than under England, so England's second-level shapes are one
+    # short of the country, and the office publishes the country's figure.
+    "nation": ("TYPE499", "uk_nation.json"),
 }
 
 
@@ -121,15 +135,56 @@ def reconcile(table: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return table
 
 
-def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, Any]]:
+def truncated(page: dict[str, Any]) -> bool:
+    """Whether Nomis says it cut this answer short."""
+    return str((page.get("header") or {}).get("truncated", "")).lower() == "true"
+
+
+def classification(dataset: str, observations: list[dict[str, Any]]) -> str:
+    """The one census classification among an observation's keys (c2021_...)."""
+    cells = [k for k in (observations[0] if observations else {}) if k.startswith("c2021")]
+    if len(cells) != 1:
+        raise SystemExit(f"uk_nomis: {dataset}: no single census classification among "
+                         f"{sorted(observations[0]) if observations else []}")
+    return cells[0]
+
+
+def fetch_table(dataset: str, cell: str | None, geography: str) -> dict[str, dict[str, Any]]:
     # No `select=`: that parameter switches Nomis to a flat column format and
     # empties the nested "obs" list this parser reads.  Leaving the category
     # dimension unspecified returns every category, totals included, which is
     # exactly what shares() needs.
     url = f"{BASE}/{dataset}.data.json?geography={geography}&measures=20100"
-    payload = http_json(url, timeout=300)
+    # Nomis answers an anonymous caller at most about 25,000 cells at a time,
+    # and TS024's 94 languages by 331 districts is 31,114: read whole, the
+    # answer stops at 24,910 cells, 95 districts short. The JSON answer says
+    # so itself (header.truncated) and ignores RecordOffset -- measured: an
+    # offset of 30,000 answers the same first 24,910 cells -- so a truncated
+    # table is read again in parts by category, each part checked whole.
+    page = http_json(url, timeout=300)
+    observations: list[dict[str, Any]] = page.get("obs", [])
+    if truncated(page):
+        name = cell or classification(dataset, observations)
+        codes = sorted({obs[name]["value"] for obs in observations})
+        parts = [codes[i::CATEGORY_PARTS] for i in range(CATEGORY_PARTS)]
+        observations = []
+        for part in parts:
+            piece = http_json(f"{url}&{name}={','.join(str(c) for c in part)}", timeout=300)
+            if truncated(piece):
+                raise SystemExit(f"uk_nomis: {dataset}: a part of {len(part)} categories "
+                                 "was truncated too")
+            observations.extend(piece.get("obs", []))
+        log(f"  {dataset}: truncated whole, read as {CATEGORY_PARTS} parts by category: "
+            f"{len(observations):,} cells")
     out: dict[str, dict[str, Any]] = {}
-    for obs in payload.get("obs", []):
+    for obs in observations:
+        if cell is None:
+            cells = [k for k in obs if k.startswith("c2021")]
+            if len(cells) != 1:
+                raise SystemExit(f"uk_nomis: {dataset}: no single census classification "
+                                 f"among {sorted(obs)}")
+            cell = cells[0]
+            log(f"  {dataset}: categories are {cell}")
         code = obs["geography"]["geogcode"]
         name = obs["geography"]["description"]
         label = obs[cell]["description"]
@@ -152,6 +207,22 @@ def fetch_table(dataset: str, cell: str, geography: str) -> dict[str, dict[str, 
         keep = set(leaves(entry["counts"]))
         entry["counts"] = {k: v for k, v in entry["counts"].items() if k in keep}
     return out
+
+
+def check_complete(tables: dict[str, dict[str, dict[str, Any]]]) -> None:
+    """Every area with figures in one table has them in all three.
+
+    A read cut short leaves the last areas of one table empty while the other
+    tables have them, and the run used to write those areas with a gap marker.
+    """
+    filled = {field: {code for code, entry in table.items() if entry.get("counts")}
+              for field, table in tables.items()}
+    every = set().union(*filled.values())
+    short = {field: sorted(every - codes) for field, codes in filled.items() if every - codes}
+    if short:
+        raise SystemExit("uk_nomis: a table was read short -- areas missing from "
+                         + "; ".join(f"{field}: {len(codes)} ({', '.join(codes[:5])} ...)"
+                                     for field, codes in short.items()))
 
 
 def list_datasets(match: str) -> int:
@@ -257,19 +328,34 @@ def main() -> int:
         log(f"uk_nomis: {label} ({dataset})")
         tables[field] = reconcile(fetch_table(dataset, cell, geography))
 
-    codes = sorted(set().union(*(set(t) for t in tables.values())) if tables else set())
+    # Nomis lists Scotland and Northern Ireland among the countries and has
+    # nothing for them: the 2021 census it serves is England and Wales'.
+    codes = sorted(c for c in set().union(*(set(t) for t in tables.values()))
+                   if any(tables[f].get(c, {}).get("counts") for f in tables))
+    if args.level == "nation":
+        # TYPE499 also holds England and Wales together (K04000001), which is
+        # no shape; left in, its name reached England's by containment.
+        codes = [c for c in codes if c[:3] in ("E92", "W92")]
+    check_totals(tables)
+    check_complete(tables)
     src = f"ONS Census {YEAR} (England and Wales) via Nomis"
+    level = "admin1" if args.level == "nation" else "admin2"
     records: list[dict[str, Any]] = []
     for code in codes:
         eth = tables["ethnicity"].get(code, {})
         rel = tables["religion"].get(code, {})
+        lang = tables["language"].get(code, {})
         name = eth.get("name") or rel.get("name") or code
         total = eth.get("total") or rel.get("total")
         merged = MERGED_AUTHORITIES.get(code)
-        eth_rows = shares(eth.get("counts", {}), total=eth.get("total"))
-        rel_rows = shares(rel.get("counts", {}), total=rel.get("total"))
+        eth_rows = to_tenths(shares(eth.get("counts", {}), total=eth.get("total")),
+                             eth.get("total"))
+        rel_rows = to_tenths(shares(rel.get("counts", {}), total=rel.get("total")),
+                             rel.get("total"))
+        lang_rows = to_tenths(shares(language_counts(lang.get("counts", {}), code),
+                                     total=lang.get("total")), lang.get("total"))
         records.append(record(
-            f"GBR-{code}", name, level="admin2", parent="GBR",
+            f"GBR-{code}", name, level=level, parent="GBR",
             # A merged row is not a published unit, so it does not claim a
             # single ONS code -- it names the codes it was added up from.
             codes={"ons_codes": list(merged[1])} if merged else {"ons_code": code},
@@ -281,14 +367,125 @@ def main() -> int:
             religion_year=dated(rel_rows, YEAR),
             religion_note=(f"ONS {YEAR} religion question (TS030) is voluntary; 'Not answered' is "
                            "reported as its own category rather than excluded."),
-            sources=[{"field": "ethnicity/religion", "name": src,
+            language=lang_rows or gap(NOT_AVAILABLE),
+            language_year=dated(lang_rows, YEAR),
+            language_note=language_note(code),
+            sources=[{"field": "ethnicity/religion/language", "name": src,
                       "url": f"{BASE}/{DATASETS['ethnicity'][0]}.data.json",
                       "license": "Open Government Licence v3.0"}],
         ))
+    unplaced = unplaced_languages(records)
+    if unplaced:
+        log(f"  language labels the group tree does not place: {unplaced}")
     write_json(args.out or PROCESSED / filename, records)
     log(f"  {len(records)} records")
-    log(f"  {len(records)} local authority records")
+    log(f"  {len(records)} {'nation' if level == 'admin1' else 'local authority'} records")
     return 0
+
+
+def to_tenths(rows: list[dict[str, Any]], total: float | None) -> list[dict[str, Any]]:
+    """Re-round shares to one decimal by largest remainder.
+
+    TS024 has some ninety languages, and in most districts sixty or seventy of
+    them are each well under 0.05% -- a dozen Latvian speakers in Hartlepool.
+    Rounded one by one they all print as 0.0, and the column added to 99.2 to
+    99.5 where the counts add to the district's total exactly: 96 council
+    areas drew a "not accounted for" sliver the census does not have.
+
+    Largest remainder keeps every share within a tenth of its exact value and
+    makes the tenths add to what the counts add to -- 100.0 when they are the
+    whole universe, and a real shortfall, if a table ever had one, is kept
+    (the target is the counts' own sum, not 100). Counts are untouched.
+    """
+    if not rows or not total:
+        return rows
+    exact = [1000.0 * row["count"] / total for row in rows]
+    floors = [int(e) for e in exact]
+    target = round(1000.0 * sum(row["count"] for row in rows) / total)
+    order = sorted(range(len(rows)), key=lambda i: (-(exact[i] - floors[i]), rows[i]["group"]))
+    for i in order[:max(0, target - sum(floors))]:
+        floors[i] += 1
+    out = [dict(row, pct=floors[i] / 10) for i, row in enumerate(rows)]
+    out.sort(key=lambda r: (-r["pct"], r["group"]))
+    return out
+
+
+def check_totals(tables: dict[str, dict[str, dict[str, Any]]]) -> None:
+    """Every composition's categories must make its published total.
+
+    Ethnicity and language are read at their leaves, religion at its one
+    level; a set that misses or doubles a group stops the run here rather
+    than reaching the map as 93% or 200% of an area.
+    """
+    for field, table in tables.items():
+        for code, entry in table.items():
+            total, made = entry.get("total"), sum(entry.get("counts", {}).values())
+            if total and abs(made - total) > 0.005 * total:
+                raise SystemExit(f"uk_nomis: {entry['name']} ({code}) {field}: categories make "
+                                 f"{made:,.0f} against the published {total:,.0f}")
+
+
+# TS024's leaves under the names the rest of this map uses. "Other European
+# language (EU): Polish" is Polish; a residual inside a family ("Any other
+# South Asian language") keeps its family, which is all it says. Several
+# residuals of one kind become one label and their counts are added.
+LANGUAGE_RESPELLINGS = {
+    "Gaelic (Irish)": "Irish",
+    "Gaelic (Scottish)": "Scottish Gaelic",
+    "Gaelic (Not otherwise specified)": "Gaelic (not otherwise specified)",
+    "Nepalese": "Nepali",
+    "English-based Caribbean Creole": "Caribbean Creole",
+    "All other Chinese": "Other Chinese",
+    "Any other European language (EU)": "Other European language",
+    "Any other Eastern European language (non EU)": "Other European language",
+    "Northern European language (non EU)": "Other European language",
+    "Any other Nigerian language": "Other African language",
+    "Any other West African language": "Other African language",
+    # ONS's "Other language: North or South American language" is the
+    # Americas' indigenous languages (Quechua, Guarani, Nahuatl and the rest).
+    "North or South American language": "Indigenous American languages",
+}
+
+
+def language_label(label: str, code: str) -> str:
+    if label.startswith("English (English or Welsh in Wales)"):
+        # In Wales the question offered "English or Welsh" as one answer, so
+        # the two are not separable there; in England it is English.
+        return "English or Welsh" if code.startswith("W") else "English"
+    if label.startswith("Welsh or Cymraeg"):
+        return "Welsh"
+    detail = label.split(":", 1)[1].strip() if ":" in label else label.strip()
+    detail = LANGUAGE_RESPELLINGS.get(detail, detail)
+    if detail.startswith("Any other ") or detail.startswith("All other "):
+        detail = "Other " + detail.split(" ", 2)[2]
+    return detail
+
+
+def language_counts(counts: dict[str, float], code: str) -> dict[str, float]:
+    out: dict[str, float] = {}
+    for label, value in counts.items():
+        key = language_label(label, code)
+        out[key] = out.get(key, 0.0) + value
+    return out
+
+
+def language_note(code: str) -> str:
+    note = (f"ONS {YEAR} main language (TS024, detailed), of usual residents aged 3 and "
+            "over: the one language each person names as their main one.")
+    if code.startswith("W"):
+        note += (" In Wales the answer 'English or Welsh' was one box, so the census does "
+                 "not separate the two there; Welsh ability is a separate question.")
+    return note
+
+
+def unplaced_languages(records: list[dict[str, Any]]) -> list[str]:
+    try:
+        import group_tree                              # scripts/ is on the path
+    except Exception:                                  # noqa: BLE001 -- a check only
+        return []
+    labels = {g["group"] for r in records if isinstance(r.get("language"), list)
+              for g in r["language"]}
+    return sorted(label for label in labels if group_tree.parent_of("language", label) is None)
 
 
 if __name__ == "__main__":

@@ -11,10 +11,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1588080,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -62,7 +59,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -72,8 +69,9 @@
     "codes": {
       "canton": "Zürich"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 36,729 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Bern",
@@ -87,10 +85,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1048181,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -133,7 +128,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -143,8 +138,9 @@
     "codes": {
       "canton": "Bern"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±26%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 25,238 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±26%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Luzern",
@@ -158,10 +154,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 429943,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -209,7 +202,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -219,8 +212,9 @@
     "codes": {
       "canton": "Luzern"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 19,818 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Uri",
@@ -234,10 +228,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 37469,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -265,7 +256,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -275,8 +266,9 @@
     "codes": {
       "canton": "Uri"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±57%), Italian (±39%), Romansh (suppressed), English (±28%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 904 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: French (±57%), Italian (±39%), Romansh (suppressed), English (±28%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Schwyz",
@@ -290,10 +282,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 166108,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -336,7 +325,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -346,8 +335,9 @@
     "codes": {
       "canton": "Schwyz"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±43%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 3,967 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±43%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Obwalden",
@@ -361,10 +351,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 38946,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -392,7 +379,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -402,8 +389,9 @@
     "codes": {
       "canton": "Obwalden"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±41%), Italian (±39%), Romansh (±91%), English (±27%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 894 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: French (±41%), Italian (±39%), Romansh (±91%), English (±27%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Nidwalden",
@@ -417,10 +405,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 44590,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -458,7 +443,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -468,8 +453,9 @@
     "codes": {
       "canton": "Nidwalden"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±35%), Romansh (suppressed).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 1,128 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: French (±35%), Romansh (suppressed).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Glarus",
@@ -483,10 +469,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 41311,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -524,7 +507,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -534,8 +517,9 @@
     "codes": {
       "canton": "Glarus"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±56%), Romansh (±98%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 921 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: French (±56%), Romansh (±98%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Zug",
@@ -549,10 +533,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 130734,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -595,7 +576,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -605,8 +586,9 @@
     "codes": {
       "canton": "Zug"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±35%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 6,235 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±35%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Fribourg",
@@ -620,10 +602,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 339643,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -666,7 +645,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -676,8 +655,9 @@
     "codes": {
       "canton": "Fribourg"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±70%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 7,928 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±70%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Solothurn",
@@ -691,10 +671,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 285487,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -717,14 +694,14 @@
         "count": 58220
       },
       {
-        "group": "Italian",
-        "pct": 4.3,
-        "count": 12410
-      },
-      {
         "group": "English",
         "pct": 4.3,
         "count": 12395
+      },
+      {
+        "group": "Italian",
+        "pct": 4.3,
+        "count": 12410
       },
       {
         "group": "French",
@@ -737,7 +714,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -747,8 +724,9 @@
     "codes": {
       "canton": "Solothurn"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±51%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 6,589 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±51%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Basel-Stadt",
@@ -762,10 +740,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 195895,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -808,7 +783,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -818,8 +793,9 @@
     "codes": {
       "canton": "Basel-Stadt"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±77%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 4,416 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±77%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Basel-Landschaft",
@@ -833,10 +809,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 296353,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -879,7 +852,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -889,8 +862,9 @@
     "codes": {
       "canton": "Basel-Landschaft"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±53%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 7,059 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±53%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Schaffhausen",
@@ -904,10 +878,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 87066,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -945,7 +916,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -955,8 +926,9 @@
     "codes": {
       "canton": "Schaffhausen"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±26%), Romansh (suppressed).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 1,977 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: French (±26%), Romansh (suppressed).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Appenzell-Ausserrhoden",
@@ -970,10 +942,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 55740,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1006,7 +975,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1016,8 +985,9 @@
     "codes": {
       "canton": "Appenzell Ausserrhoden"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±37%), Italian (±28%), Romansh (±75%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 1,283 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: French (±37%), Italian (±28%), Romansh (±75%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Appenzell-Innerrhoden",
@@ -1031,10 +1001,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 16355,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1057,7 +1024,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1067,8 +1034,9 @@
     "codes": {
       "canton": "Appenzell Innerrhoden"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: French (±82%), Italian (±44%), Romansh (suppressed), English (±49%), Other languages (±27%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 383 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: French (±82%), Italian (±44%), Romansh (suppressed), English (±49%), Other languages (±27%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-St.-Gallen",
@@ -1082,10 +1050,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 531119,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1133,7 +1098,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1143,8 +1108,9 @@
     "codes": {
       "canton": "St. Gallen"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 12,358 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Graubünden",
@@ -1158,10 +1124,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 202369,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1209,7 +1172,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1219,8 +1182,9 @@
     "codes": {
       "canton": "Graubünden"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 4,930 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Aargau",
@@ -1234,10 +1198,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 725074,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1285,7 +1246,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1295,8 +1256,9 @@
     "codes": {
       "canton": "Aargau"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown.",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 33,715 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Thurgau",
@@ -1310,10 +1272,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 295432,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1356,7 +1315,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1366,8 +1325,9 @@
     "codes": {
       "canton": "Thurgau"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±43%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 6,795 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±43%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Ticino",
@@ -1381,10 +1341,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 352214,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1427,7 +1384,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1437,8 +1394,9 @@
     "codes": {
       "canton": "Ticino"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±33%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 16,667 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±33%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Vaud",
@@ -1452,10 +1410,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 832130,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1498,7 +1453,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1508,8 +1463,9 @@
     "codes": {
       "canton": "Vaud"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±36%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 37,593 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±36%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Valais",
@@ -1523,10 +1479,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 364225,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1569,7 +1522,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1579,8 +1532,9 @@
     "codes": {
       "canton": "Valais"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±62%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 8,352 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±62%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Neuchâtel",
@@ -1594,10 +1548,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 176462,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1640,7 +1591,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1650,8 +1601,9 @@
     "codes": {
       "canton": "Neuchâtel"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±71%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 8,215 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±71%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Genève",
@@ -1665,10 +1617,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 482070,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1711,7 +1660,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1721,8 +1670,9 @@
     "codes": {
       "canton": "Genève"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (±47%).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 20,330 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (±47%).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   },
   {
     "id": "CHE-Jura",
@@ -1736,10 +1686,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 73434,
-      "unit": "permanent residents in private households",
-      "year": 2024,
-      "source": "Office fédéral de la statistique (OFS), relevé structurel 2024"
+      "status": "not_available"
     },
     "median_age": {
       "status": "not_available"
@@ -1782,7 +1729,7 @@
     },
     "sources": [
       {
-        "field": "language/population",
+        "field": "language",
         "name": "Office fédéral de la statistique (OFS), relevé structurel 2024",
         "url": "https://www.bfs.admin.ch/",
         "year": 2024,
@@ -1792,7 +1739,8 @@
     "codes": {
       "canton": "Jura"
     },
-    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. Not shown for this canton: Romansh (suppressed).",
-    "language_year": 2024
+    "language_note": "FSO structural survey 2024: main languages, of which a person may name up to three. The shares are therefore of responses rather than of people and sum to more than 100% -- nationally about 119%. It is a sample survey, so every figure is an estimate; those whose confidence interval exceeded ±25% of the estimate have been dropped rather than shown. The census has not asked every resident since 2000. Sample: the FSO drew about 1,802 people aged 15 and over in the canton in 2024 (its population considered times its sampling rate, from the FSO's stratification table cc-t-40-se_strata-2024). Not shown for this canton: Romansh (suppressed).",
+    "language_year": 2024,
+    "language_basis": "survey estimate: structural survey 2024, permanent resident population in private households, up to three main languages a person"
   }
 ]

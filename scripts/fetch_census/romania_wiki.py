@@ -69,7 +69,7 @@ RELIGION = {
     "Musulmani": "Islam", "Unitarieni": "Unitarian", "Martorii lui Iehova": "Jehovah's Witnesses",
     "Martori ai lui Iehova": "Jehovah's Witnesses", "Evanghelici augustani": "Lutheranism",
     "Creștini după Evanghelie": "Evangelicalism", "Evanghelici": "Evangelicalism",
-    "Creștini de rit vechi": "Old Believers", "Evanghelici luterani": "Lutheranism",
+    "Creștini de rit vechi": "Old Believer", "Evanghelici luterani": "Lutheranism",
     "Luterani": "Lutheranism", "Evanghelici de confesiune augustană": "Lutheranism",
     "Ortodocși sârbi": "Serbian Orthodox", "Mozaici": "Judaism",
     "Armeni apostolici": "Armenian Apostolic", "Alte religii": "Other religion",

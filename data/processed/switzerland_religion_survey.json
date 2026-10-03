@@ -1,0 +1,2086 @@
+[
+  {
+    "id": "CHE-SE2024-vaud",
+    "level": "admin1",
+    "name": "Vaud",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 41.0,
+        "count": 282893
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 25.5,
+        "count": 175787
+      },
+      {
+        "group": "Reformed",
+        "pct": 18.2,
+        "count": 125532
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.3,
+        "count": 43354
+      },
+      {
+        "group": "Islam",
+        "pct": 6.0,
+        "count": 41534
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.4,
+        "count": 9747
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 8670
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.3,
+        "count": 2020
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B85268669280160",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 114,525 people in Vaud over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-valais",
+    "level": "admin1",
+    "name": "Valais",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 62.7,
+        "count": 191750
+      },
+      {
+        "group": "No religion",
+        "pct": 23.2,
+        "count": 70848
+      },
+      {
+        "group": "Reformed",
+        "pct": 5.1,
+        "count": 15509
+      },
+      {
+        "group": "Islam",
+        "pct": 3.8,
+        "count": 11682
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.2,
+        "count": 9768
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.3,
+        "count": 4012
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 2072
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 263
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B38573473865054",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 25,525 people in Valais over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-geneve",
+    "level": "admin1",
+    "name": "Genève",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 47.6,
+        "count": 190378
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 27.6,
+        "count": 110265
+      },
+      {
+        "group": "Islam",
+        "pct": 7.5,
+        "count": 30089
+      },
+      {
+        "group": "Reformed",
+        "pct": 7.0,
+        "count": 28069
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.7,
+        "count": 22703
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.1,
+        "count": 8440
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.5,
+        "count": 5871
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.9,
+        "count": 3738
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B83881285484717",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 61,779 people in Genève over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-bern",
+    "level": "admin1",
+    "name": "Bern",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Reformed",
+        "pct": 42.5,
+        "count": 377244
+      },
+      {
+        "group": "No religion",
+        "pct": 30.0,
+        "count": 266028
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 13.9,
+        "count": 123835
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.6,
+        "count": 58783
+      },
+      {
+        "group": "Islam",
+        "pct": 4.6,
+        "count": 41279
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.5,
+        "count": 13050
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 6755
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 926
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B78940680080703",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 76,206 people in Bern over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-fribourg",
+    "level": "admin1",
+    "name": "Fribourg",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 51.4,
+        "count": 143226
+      },
+      {
+        "group": "No religion",
+        "pct": 27.8,
+        "count": 77559
+      },
+      {
+        "group": "Reformed",
+        "pct": 10.7,
+        "count": 29774
+      },
+      {
+        "group": "Islam",
+        "pct": 4.6,
+        "count": 12780
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.8,
+        "count": 10652
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 2677
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 1906
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B87604960987122",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 23,849 people in Fribourg over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 100.0%."
+  },
+  {
+    "id": "CHE-SE2024-solothurn",
+    "level": "admin1",
+    "name": "Solothurn",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 40.8,
+        "count": 98015
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 26.6,
+        "count": 63920
+      },
+      {
+        "group": "Reformed",
+        "pct": 16.4,
+        "count": 39341
+      },
+      {
+        "group": "Islam",
+        "pct": 8.2,
+        "count": 19747
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.5,
+        "count": 13322
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6,
+        "count": 3863
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 1963
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B36749553910786",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 20,042 people in Solothurn over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 99.9%."
+  },
+  {
+    "id": "CHE-SE2024-neuchatel",
+    "level": "admin1",
+    "name": "Neuchâtel",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 54.4,
+        "count": 80860
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 17.8,
+        "count": 26402
+      },
+      {
+        "group": "Reformed",
+        "pct": 15.5,
+        "count": 23034
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 7349
+      },
+      {
+        "group": "Islam",
+        "pct": 4.8,
+        "count": 7212
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.5,
+        "count": 2218
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 1494
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 156
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B64873726514121",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 25,030 people in Neuchâtel over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-jura",
+    "level": "admin1",
+    "name": "Jura",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 58.8,
+        "count": 36504
+      },
+      {
+        "group": "No religion",
+        "pct": 23.9,
+        "count": 14855
+      },
+      {
+        "group": "Reformed",
+        "pct": 8.0,
+        "count": 4993
+      },
+      {
+        "group": "Islam",
+        "pct": 3.8,
+        "count": 2367
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.8,
+        "count": 2364
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.9,
+        "count": 573
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 370
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B19914004537681",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 5,383 people in Jura over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 99.8%."
+  },
+  {
+    "id": "CHE-SE2024-baselstadt",
+    "level": "admin1",
+    "name": "Basel-Stadt",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 57.2,
+        "count": 95620
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 13.3,
+        "count": 22189
+      },
+      {
+        "group": "Reformed",
+        "pct": 12.3,
+        "count": 20521
+      },
+      {
+        "group": "Islam",
+        "pct": 8.4,
+        "count": 13974
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 8973
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.0,
+        "count": 3270
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.0,
+        "count": 1716
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5,
+        "count": 895
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B62987387977087",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 13,363 people in Basel-Stadt over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-basellandschaft",
+    "level": "admin1",
+    "name": "Basel-Landschaft",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 39.3,
+        "count": 98546
+      },
+      {
+        "group": "Reformed",
+        "pct": 24.6,
+        "count": 61578
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 22.4,
+        "count": 56048
+      },
+      {
+        "group": "Islam",
+        "pct": 5.8,
+        "count": 14441
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 13630
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.7,
+        "count": 4309
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 1641
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 384
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B84766611276082",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 21,340 people in Basel-Landschaft over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-aargau",
+    "level": "admin1",
+    "name": "Aargau",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 38.0,
+        "count": 229200
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 26.6,
+        "count": 160438
+      },
+      {
+        "group": "Reformed",
+        "pct": 18.6,
+        "count": 112142
+      },
+      {
+        "group": "Islam",
+        "pct": 8.0,
+        "count": 48081
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.9,
+        "count": 41365
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 8088
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 3588
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 571
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B11338788345342",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 100,651 people in Aargau over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-zurich",
+    "level": "admin1",
+    "name": "Zürich",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 39.2,
+        "count": 521379
+      },
+      {
+        "group": "Reformed",
+        "pct": 22.8,
+        "count": 303153
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 21.9,
+        "count": 291879
+      },
+      {
+        "group": "Islam",
+        "pct": 6.9,
+        "count": 91760
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.4,
+        "count": 85575
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.7,
+        "count": 22532
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 8528
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.5,
+        "count": 6273
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B4468941998498",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 110,862 people in Zürich over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-glarus",
+    "level": "admin1",
+    "name": "Glarus",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Reformed",
+        "pct": 29.0,
+        "count": 10144
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 28.4,
+        "count": 9926
+      },
+      {
+        "group": "No religion",
+        "pct": 27.2,
+        "count": 9504
+      },
+      {
+        "group": "Islam",
+        "pct": 7.4,
+        "count": 2581
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 1903
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.8,
+        "count": 622
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B11753136967749",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 2,746 people in Glarus over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism, Not stated; the shares shown sum to 99.2%."
+  },
+  {
+    "id": "CHE-SE2024-schaffhausen",
+    "level": "admin1",
+    "name": "Schaffhausen",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 34.7,
+        "count": 25334
+      },
+      {
+        "group": "Reformed",
+        "pct": 29.3,
+        "count": 21368
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 18.6,
+        "count": 13577
+      },
+      {
+        "group": "Islam",
+        "pct": 8.0,
+        "count": 5838
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.9,
+        "count": 5071
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6,
+        "count": 1202
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 516
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B22837365779622",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 5,983 people in Schaffhausen over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 99.8%."
+  },
+  {
+    "id": "CHE-SE2024-appenzellausserrhoden",
+    "level": "admin1",
+    "name": "Appenzell Ausserrhoden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Reformed",
+        "pct": 32.4,
+        "count": 15057
+      },
+      {
+        "group": "No religion",
+        "pct": 29.4,
+        "count": 13649
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 27.0,
+        "count": 12577
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.7,
+        "count": 3133
+      },
+      {
+        "group": "Islam",
+        "pct": 2.9,
+        "count": 1367
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 397
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 273
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B71472094577065",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 3,850 people in Appenzell Ausserrhoden over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 99.9%."
+  },
+  {
+    "id": "CHE-SE2024-appenzellinnerrhoden",
+    "level": "admin1",
+    "name": "Appenzell Innerrhoden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 68.7,
+        "count": 9362
+      },
+      {
+        "group": "No religion",
+        "pct": 16.3,
+        "count": 2220
+      },
+      {
+        "group": "Reformed",
+        "pct": 10.0,
+        "count": 1361
+      },
+      {
+        "group": "Islam",
+        "pct": 2.1,
+        "count": 290
+      },
+      {
+        "group": "Other Christian",
+        "pct": 2.1,
+        "count": 290
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B73029947081098",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 1,112 people in Appenzell Innerrhoden over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism, Other religion, Not stated; the shares shown sum to 99.2%."
+  },
+  {
+    "id": "CHE-SE2024-stgallen",
+    "level": "admin1",
+    "name": "St. Gallen",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 37.8,
+        "count": 167618
+      },
+      {
+        "group": "No religion",
+        "pct": 28.2,
+        "count": 125001
+      },
+      {
+        "group": "Reformed",
+        "pct": 17.1,
+        "count": 75853
+      },
+      {
+        "group": "Islam",
+        "pct": 8.4,
+        "count": 37024
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.7,
+        "count": 29496
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.2,
+        "count": 5223
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 2591
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B27205007293794",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 36,858 people in St. Gallen over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 100.0%."
+  },
+  {
+    "id": "CHE-SE2024-graubunden",
+    "level": "admin1",
+    "name": "Graubünden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 37.3,
+        "count": 65180
+      },
+      {
+        "group": "No religion",
+        "pct": 28.2,
+        "count": 49255
+      },
+      {
+        "group": "Reformed",
+        "pct": 27.1,
+        "count": 47309
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.6,
+        "count": 6270
+      },
+      {
+        "group": "Islam",
+        "pct": 2.3,
+        "count": 3943
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 1365
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 1099
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B85432491504073",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 14,830 people in Graubünden over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 99.9%."
+  },
+  {
+    "id": "CHE-SE2024-thurgau",
+    "level": "admin1",
+    "name": "Thurgau",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 31.2,
+        "count": 76514
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 27.6,
+        "count": 67760
+      },
+      {
+        "group": "Reformed",
+        "pct": 26.4,
+        "count": 64799
+      },
+      {
+        "group": "Islam",
+        "pct": 6.9,
+        "count": 17047
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.3,
+        "count": 15521
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 2411
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.5,
+        "count": 1190
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B73326014959541",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 27,068 people in Thurgau over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 99.9%."
+  },
+  {
+    "id": "CHE-SE2024-luzern",
+    "level": "admin1",
+    "name": "Luzern",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 51.4,
+        "count": 184051
+      },
+      {
+        "group": "No religion",
+        "pct": 28.2,
+        "count": 101066
+      },
+      {
+        "group": "Reformed",
+        "pct": 8.5,
+        "count": 30410
+      },
+      {
+        "group": "Islam",
+        "pct": 5.1,
+        "count": 18247
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 17403
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 4540
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 2047
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 325
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B29073934101403",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 60,315 people in Luzern over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-uri",
+    "level": "admin1",
+    "name": "Uri",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 69.2,
+        "count": 21818
+      },
+      {
+        "group": "No religion",
+        "pct": 20.4,
+        "count": 6416
+      },
+      {
+        "group": "Reformed",
+        "pct": 3.9,
+        "count": 1221
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.4,
+        "count": 1063
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9,
+        "count": 601
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8,
+        "count": 244
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B76174754463268",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 2,753 people in Uri over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism, Other religion; the shares shown sum to 99.6%."
+  },
+  {
+    "id": "CHE-SE2024-schwyz",
+    "level": "admin1",
+    "name": "Schwyz",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 51.5,
+        "count": 72350
+      },
+      {
+        "group": "No religion",
+        "pct": 28.3,
+        "count": 39731
+      },
+      {
+        "group": "Reformed",
+        "pct": 9.6,
+        "count": 13491
+      },
+      {
+        "group": "Islam",
+        "pct": 4.8,
+        "count": 6694
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.3,
+        "count": 6060
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 1385
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 606
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B29858350399599",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 12,033 people in Schwyz over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 99.9%."
+  },
+  {
+    "id": "CHE-SE2024-obwalden",
+    "level": "admin1",
+    "name": "Obwalden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 60.2,
+        "count": 19724
+      },
+      {
+        "group": "No religion",
+        "pct": 24.9,
+        "count": 8157
+      },
+      {
+        "group": "Reformed",
+        "pct": 7.0,
+        "count": 2292
+      },
+      {
+        "group": "Islam",
+        "pct": 3.2,
+        "count": 1060
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.1,
+        "count": 1025
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B39944874342149",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 2,850 people in Obwalden over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism, Other religion, Not stated; the shares shown sum to 98.4%."
+  },
+  {
+    "id": "CHE-SE2024-nidwalden",
+    "level": "admin1",
+    "name": "Nidwalden",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 57.0,
+        "count": 21790
+      },
+      {
+        "group": "No religion",
+        "pct": 26.4,
+        "count": 10085
+      },
+      {
+        "group": "Reformed",
+        "pct": 9.0,
+        "count": 3437
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.3,
+        "count": 1276
+      },
+      {
+        "group": "Islam",
+        "pct": 2.6,
+        "count": 999
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.9,
+        "count": 355
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 248
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B45925471978558",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 3,263 people in Nidwalden over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata). Withheld here because BFS suppressed them in at least one year: Judaism; the shares shown sum to 99.9%."
+  },
+  {
+    "id": "CHE-SE2024-zug",
+    "level": "admin1",
+    "name": "Zug",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 43.3,
+        "count": 47618
+      },
+      {
+        "group": "No religion",
+        "pct": 33.0,
+        "count": 36293
+      },
+      {
+        "group": "Reformed",
+        "pct": 11.4,
+        "count": 12580
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.8,
+        "count": 6413
+      },
+      {
+        "group": "Islam",
+        "pct": 4.2,
+        "count": 4658
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.5,
+        "count": 1597
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 663
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 237
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B70106229378933",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 18,811 people in Zug over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  },
+  {
+    "id": "CHE-SE2024-ticino",
+    "level": "admin1",
+    "name": "Ticino",
+    "parent": "CHE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 57.3,
+        "count": 175171
+      },
+      {
+        "group": "No religion",
+        "pct": 29.6,
+        "count": 90379
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.6,
+        "count": 17119
+      },
+      {
+        "group": "Reformed",
+        "pct": 3.3,
+        "count": 10188
+      },
+      {
+        "group": "Islam",
+        "pct": 2.2,
+        "count": 6864
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 3676
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.7,
+        "count": 2233
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 190
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Federal Statistical Office (BFS/OFS), Strukturerhebung, je-d-01.08.02.02 (Religionszugehörigkeit nach Grossregion und Kanton)",
+        "url": "https://www.bfs.admin.ch/asset/de/36347568",
+        "license": "BFS open data (free reuse with attribution)",
+        "year": 2024
+      }
+    ],
+    "country": "CHE",
+    "match_by": "shape_id",
+    "shape_id": "70761945B95773795125249",
+    "religion_year": 2024,
+    "religion_basis": "survey estimate: structural survey, permanent resident population 15+",
+    "religion_note": "BFS structural survey (Strukturerhebung) 2022-2024: religious affiliation of the permanent resident population aged 15 and over, weighted by BFS; the shares are of the average of the 3 annual weighted estimates, which narrows the sampling error of a single year (whose confidence intervals, for the small groups of the small cantons, run past ±50%). A group BFS suppresses in any of the years for too few respondents is left out, so the shares can fall short of 100. The census has not asked every resident since 2000. Sample: BFS drew about 50,862 people in Ticino over 2022-2024 (its population considered times its sampling rate, from BFS's stratification tables cc-t-40-se_strata)."
+  }
+]
