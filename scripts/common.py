@@ -497,8 +497,10 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "ethnicity": "Iraq's 2024 census, the first nationwide count since 1987, deliberately excluded ethnicity from the questionnaire; religion was asked, sect was not.",
         "language": "Iraq's 2024 census deliberately excluded language from the questionnaire with ethnicity.",
     },
+    # Corrected: the 1897 census of the Empire and the Soviet census of 1937
+    # both asked religion (the 1937 results were suppressed); none since has.
     "RUS": {
-        "religion": "Russia's census has never asked religion; the 2020 census asked nationality and native language, which are on the map.",
+        "religion": "Russia's census has not asked religion since 1937 (the 1897 and 1937 censuses did); the 2002, 2010 and 2020 censuses asked nationality and native language, which are on the map. Where religion is shown by federal subject it is a survey estimate (Sreda's Arena, 2012, 56,900 adults); Chechnya, Ingushetia, Chukotka and Nenets AO were not surveyed.",
     },
     "ARG": {
         "religion": "Argentina's census has not asked religion since 1960; only the 1947 and 1960 censuses carried the question. The 2022 census asks indigenous and Afro-descendant self-recognition instead.",

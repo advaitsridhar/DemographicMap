@@ -203,6 +203,14 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.netherlands_gemeente
   soft python3 -m scripts.fetch_census.netherlands_religion
   soft python3 -m scripts.fetch_census.luxembourg
+  soft python3 -m scripts.fetch_census.austria_nationality
+  soft python3 -m scripts.fetch_census.switzerland_nationality
+  soft python3 -m scripts.fetch_census.belgium_nationality
+  soft python3 -m scripts.fetch_census.luxembourg_nationality
+  soft python3 -m scripts.fetch_census.nordic_origin --country SWE
+  soft python3 -m scripts.fetch_census.nordic_origin --country NOR
+  soft python3 -m scripts.fetch_census.nordic_origin --country DNK
+  soft python3 -m scripts.fetch_census.nordic_origin --country ISL
   soft python3 -m scripts.fetch_census.romania_census
   soft python3 -m scripts.fetch_census.bulgaria_census
   soft python3 -m scripts.fetch_census.serbia_census
@@ -270,6 +278,15 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # ordinary trust store carries, so this reads the same files from a
   # public archive and the citation says which capture.
   soft python3 -m scripts.fetch_census.russia
+  soft python3 -m scripts.fetch_census.russia_municipal
+  soft python3 -m scripts.fetch_census.russia_religion
+  soft python3 -m scripts.fetch_census.ukraine_raion
+  soft python3 -m scripts.fetch_census.belarus
+  soft python3 -m scripts.fetch_census.georgia
+  soft python3 -m scripts.fetch_census.armenia
+  soft python3 -m scripts.fetch_census.armenia_2011
+  soft python3 -m scripts.fetch_census.azerbaijan
+  soft python3 -m scripts.fetch_census.turkey_districts
   # Needs ZENSUS_USER and ZENSUS_PASSWORD. Without them the adapter
   # refuses outright rather than fetching a 401 and reporting it as a
   # table that went away -- soft, so a refresh without the account

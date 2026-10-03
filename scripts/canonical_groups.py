@@ -1057,6 +1057,16 @@ PARENT: dict[str, dict[str, str]] = {
         # (Oslo's 156,183 are 66,832 Muslims and 58,085 Christians).
         "Christian communities outside the Church of Norway": "Christianity",
         "Member of another faith or life-stance community": "Other religions",
+        # Sreda's Arena survey (Russia, 2012): "I believe in God (a higher
+        # power) but profess no particular religion" -- a quarter of
+        # Russians. A belief without a body, filed where Czechia's, Nicaragua's
+        # and Venezuela's "believer, no church" are (RELIGION_PATTERNS): not
+        # with the atheists the same card counts beside it.
+        "Believe in God, no specific religion": "Unaffiliated or not reported",
+        # Armenia's 2011 census counts Molokans apart: Spiritual Christians,
+        # neither Orthodox nor Protestant, whom the "Christian" pattern would
+        # otherwise file under Protestantism.
+        "Molokan": "Christianity",
     },
     # Genealogical classification, as the standard references give it. A
     # family is one hue on the map and closely related languages are shades of

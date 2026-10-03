@@ -116,6 +116,10 @@ ADAPTER_FILES = [
     # 1,620 to 3,240 dwellings a province), and Idescat's EULP 2023 habitual
     # language for Catalonia, 15+ (effective sample 8,682; not by province).
     "spain_language_survey.json",
+    # Russia's religion by federal subject from Sreda's Arena survey (FOM,
+    # 2012: 56,900 adults, 500 to 800 in each of 79 subjects). No census has
+    # asked religion since 1937 (russia_religion).
+    "russia_religion_survey.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
@@ -249,6 +253,11 @@ ADAPTER_FILES = [
     # FILL_ONLY): most are the offices' projections, and a census's own figure
     # stands whatever year either is for.
     "cod_ps_age.json",
+    # Turkey's 972 districts from TUIK's address-based register for 31
+    # December 2022, by sex and five-year age group, as OCHA's COD-PS relays
+    # it: count, median age and men per hundred women. Fill-only, so TUIK's own
+    # tables would win (turkey_districts).
+    "turkey_districts.json",
     # Uzbekistan's permanent population on 1 January, every region and
     # district, from the Statistics Agency's open-data portal (uzbekistan_siat).
     # Where the agency counts a district the boundary file does not draw, the
@@ -609,6 +618,36 @@ ADAPTER_FILES = [
     # now carry RGPH5 2022 for all three fields.
     "mali_rgph5_region.json",
     "drc_province.json", "russia_subject.json",
+    # Russia's 2020 census count and men per hundred women for the municipal
+    # districts and urban okrugs, bound one to one by name, kind and the towns
+    # inside. Okrugs merged since the boundary file was drawn, and Chechnya's
+    # 2019-2020 redrawing, are written as gaps that say why (russia_municipal).
+    "russia_municipal.json",
+    # Ukraine's 2001 census by raion and city council -- count, median age,
+    # sex, native language and nationality -- placed on the pre-2020 raion
+    # outlines by name and by the census's own outlines, each seat city by
+    # area; the oblasts' median age and sex from the 2017 estimate. After
+    # ukraine_oblast so a tie goes to the office (ukraine_raion).
+    "ukraine_raion.json",
+    # Belarus's 2019 census, volume 2: count and sex for every raion with the
+    # oblast-subordinate cities it holds; nationality and home language by
+    # oblast (belarus).
+    "belarus.json",
+    # Georgia from Geostat: the 1 January 2026 count; the 2014 census's age,
+    # sex, nationality, religion and native language by region; sex and median
+    # age by municipality; nationality by municipality from 2002 (georgia).
+    "georgia.json",
+    # Armenia's marzes and Yerevan on 1 January 2026 from Armstat's age-sex
+    # workbook; the map's pre-1995 raions are gaps that say why (armenia).
+    "armenia.json",
+    # Armenia's 2011 census by marz, with Yerevan at both levels: nationality,
+    # mother tongue and religion, the latest published below the republic
+    # (armenia_2011).
+    "armenia_2011.json",
+    # Azerbaijan's rayons and cities on 1 January 2026 by age and sex (Azstat
+    # table 1.23), with the four cities the map draws apart from table 1.19
+    # (azerbaijan).
+    "azerbaijan_rayon.json",
     "colombia_department.json", "jamaica_parish.json",
     "bahamas_island.json",
     # The Caribbean from its statistics offices' own tables, after the Census
@@ -696,6 +735,20 @@ ADAPTER_FILES = [
     # communes merged in 2018 take STATEC's 2017 population and the 2011
     # census's age and sex.
     "luxembourg_commune.json",
+    # Ethnicity where the state records nationality, country of birth or
+    # origin rather than ethnicity, by the owner's decision of 19 September
+    # 2026 (the Korean and Japanese model), each under an ethnicity_basis
+    # naming exactly what was counted: Austria's citizenship by Bezirk and
+    # Land (austria_nationality), Switzerland's by district and canton
+    # (switzerland_nationality), Belgium's by province and region
+    # (belgium_nationality), Luxembourg's by commune and canton
+    # (luxembourg_nationality); Sweden's country of birth, Norway's immigrant
+    # background, Denmark's ancestry and Iceland's citizenship by municipality
+    # and region (nordic_origin).
+    "austria_nationality.json", "switzerland_nationality.json",
+    "belgium_nationality.json", "luxembourg_nationality.json",
+    "sweden_origin.json", "norway_origin.json", "denmark_origin.json",
+    "iceland_origin.json",
     "canada_province.json", "canada_economic_region.json",
     "australia_state.json", "australia_lga.json",
     "uk_lad.json", "uk_county.json",
@@ -2082,7 +2135,9 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        # Bucharest's sectors' median age by legal domicile,
                        # which is not the census's usual residence: it only
                        # fills a sector no census median reaches.
-                       "bucharest_sectors.json"})
+                       "bucharest_sectors.json",
+                       # Turkey's districts as OCHA relays TUIK's 2022 register.
+                       "turkey_districts.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 # A survey's share is an estimate from a sample, and a census's or a
@@ -3559,6 +3614,14 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # closed series); the country's figure is 2021's.
     ("NOR", "religion"): "its fylker's membership is 2020's, older than the country's "
                          "2021 figure",
+    # armenia_2011 gives the marzes the 2011 census's nationality and religion,
+    # the latest Armstat has published below the republic; the country keeps
+    # the 2022 census's national shares (the Factbook's, 2022). A sum would put
+    # 2011 over 2022.
+    ("ARM", "ethnicity"): "its marzes' nationality is the 2011 census's, and the "
+                          "country's is the 2022 census's",
+    ("ARM", "religion"): "its marzes' religion is the 2011 census's, and the "
+                         "country's is the 2022 census's",
 }
 
 
@@ -5167,6 +5230,334 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
     ("PRT", "Q861584"): ("the municipality of Oliveira de Frades, whose census count "
                          "is on the 144 km2 polygon of that name; this 21 km2 polygon "
                          "is not the municipality"),
+    # Russia's okrugs of today on the polygons of the units they were made
+    # from. Each item's own series shows the merger's jump, and the boundary
+    # file draws only part of the okrug -- the rest is a polygon of its own.
+    # russia_municipal refuses the census's count on these polygons for the
+    # same reason.
+    ("RUS", "Q4145666"): ("the Kolomna urban okrug of today, the city with the "
+                          "Kolomensky District (2017) and Ozyory (2020): 144,125 people "
+                          "in 2017, 217,703 in 2021 and 215,146 in 2025; the polygon "
+                          "draws the city, and the district and Ozyory are polygons of "
+                          "their own"),
+    ("RUS", "Q1773432"): ("the Pushkinsky urban okrug of 2019, the district with "
+                          "Ivanteyevka and Krasnoarmeysk: 178,536 people in 2020 and "
+                          "299,385 in 2021; the map draws both towns as polygons of "
+                          "their own"),
+    ("RUS", "Q1254433"): ("the Georgiyevsky urban okrug of 2017, the district with the "
+                          "town of Georgiyevsk: 100,518 people in 2017 and 167,262 in "
+                          "2018; the map draws the town as a polygon of its own"),
+    ("RUS", "Q27477659"): ("the Serpukhov urban okrug of today, the city with the "
+                           "Serpukhovsky District and more: 124,897 people in 2019, "
+                           "181,030 in 2021 and 239,430 in 2025; the polygon draws the "
+                           "city, and the district is a polygon of its own"),
+    ("RUS", "Q27532886"): ("the Novozybkov urban okrug of 2019, the town with the "
+                           "Novozybkovsky District (49,379 people in 2021, 38,680 of "
+                           "them in the town); the district is a polygon of its own"),
+    ("RUS", "Q27572811"): ("the Manturovo urban okrug of 2019, the town with the rural "
+                           "part of the Manturovsky District (15,452 people in 2018, "
+                           "18,863 in 2019); the district is a polygon of its own"),
+    ("RUS", "Q1653098"): ("the Manturovsky District of Kostroma Oblast, merged into the "
+                          "Manturovo okrug in 2019: 3,852 people in 2018, and 14,900 in "
+                          "2025 for the okrug, town and all, which the map draws as a "
+                          "polygon of its own"),
+    # Chechnya's districts after their 2019-2020 redrawing, on the older
+    # outlines the boundary file draws. Each item's own series shows the change
+    # (Groznensky fell from 132,719 to 76,808 between 2019 and 2020); the census
+    # files Starye Atagi, Kulary, Chechen-Aul and Bamut in districts other than
+    # the polygons that hold them. russia_municipal refuses the census's counts
+    # on these polygons for the same reason.
+    ("RUS", "Q1027864"): ("the Groznensky District after 2019-2020, without Starye "
+                          "Atagi, Kulary, Chechen-Aul and other villages (132,719 "
+                          "people in 2019, 76,808 in 2020, 86,700 in 2024); the polygon "
+                          "is the district of before"),
+    ("RUS", "Q1026606"): ("the Urus-Martanovsky District after it took in Starye Atagi "
+                          "in 2019-2020 (144,708 people in 2019, 159,518 in 2020, "
+                          "171,261 in 2024); the polygon is the district of before, and "
+                          "Starye Atagi lies in the map's Groznensky District"),
+    ("RUS", "Q482011"): ("the Achkhoy-Martanovsky District after 2019-2020, with Kulary "
+                         "and without Bamut (99,296 people in 2024); the polygon is the "
+                         "district of before"),
+    ("RUS", "Q856394"): ("the Sernovodsky District of 2020, the Sunzhensky District "
+                         "renamed with Bamut added (23,040 people in 2019, 28,772 in "
+                         "2020, 27,505 in 2025); the polygon is the Sunzhensky District "
+                         "of before, and Bamut lies in the map's Achkhoy-Martanovsky "
+                         "District"),
+    # Ukraine's pre-2020 raion polygons that ukraine_raion refuses, joined by
+    # name to items whose figure describes another area: the Zviahel raion of
+    # 2020, four cities, and raions whose polygon the 2001 census's own
+    # outlines (the Census Bureau's) show to be largely something else -- the
+    # reason is the one ukraine_raion writes on the polygon. Sevastopol's
+    # districts stay: their polygons are refused for the census's grain only.
+    ("UKR", "Q2994010"): ("the Amvrosiivka raion of before 2020 (44,379 people in "
+                          "2017), whose figure does not describe this polygon: 42% of "
+                          "the area the 2001 census counts as Makiivka (Miskrada) lies "
+                          "in this polygon, and that area's people are drawn in no "
+                          "polygon by a majority of its area"),
+    ("UKR", "Q2216511"): ("the Antratsyt raion of before 2020 (30,070 people), whose "
+                          "figure does not describe this polygon: 45% of the area the "
+                          "2001 census counts as Snizhne (Miskrada) lies in this "
+                          "polygon, and that area's people are counted with "
+                          "'Shakhtarsk'"),
+    ("UKR", "Q2883763"): ("the Borodianka raion of before 2020 (57,301 people in 2019), "
+                          "whose figure does not describe this polygon: only 57% of the "
+                          "area the 2001 census counts as Irpin (Miskrada) lies in this "
+                          "polygon"),
+    ("UKR", "Q161984"): ("the city of Fastiv (45,907 people in 2019), not the Fastiv "
+                         "raion of before 2020 that the polygon is named for"),
+    ("UKR", "Q2599695"): ("the Horodok raion of before 2020 (68,544 people in 2019), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Horodotskyi Raion (Lvivska "
+                          "Oblast), but only 35% of the area the 2001 census counts as "
+                          "that raion lies in it and 40% in 'Sambir'"),
+    ("UKR", "Q2996142"): ("the Illintsi raion of before 2020 (37,059 people in 2017), "
+                          "whose figure does not describe this polygon: 49% of the area "
+                          "the 2001 census counts as Haisynskyi Raion lies in this "
+                          "polygon, and that area's people are placed in no polygon: "
+                          "the map's name for it and its outline disagree"),
+    ("UKR", "Q2996222"): ("the Kaharlyk raion of before 2020 (32,814 people in 2019), "
+                          "whose figure does not describe this polygon: only 65% of the "
+                          "area the 2001 census counts as M. Rzhyshchiv lies in this "
+                          "polygon"),
+    ("UKR", "Q1995820"): ("the Kamianka raion of before 2020 (25,933 people in 2019), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Kamianskyi Raion, but only 41% "
+                          "of the area the 2001 census counts as that raion lies in it "
+                          "and 44% in 'Smila'"),
+    ("UKR", "Q2494465"): ("the Khoroshiv raion of before 2020 (34,553 people in 2018), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Volodarsko-Volynskyi Raion, but "
+                          "only 46% of the area the 2001 census counts as that raion "
+                          "lies in it and 51% in 'Pulyny'"),
+    ("UKR", "Q2996158"): ("the Kryzhopil raion of before 2020 (32,976 people in 2018), "
+                          "whose figure does not describe this polygon: 52% of the area "
+                          "the 2001 census counts as Pishchanskyi Raion lies in this "
+                          "polygon, and that area's people are placed in no polygon: "
+                          "the map's name for it and its outline disagree"),
+    ("UKR", "Q2996231"): ("the Kyiv-Sviatoshyn raion of before 2020 (198,674 people in "
+                          "2019), whose figure does not describe this polygon: 43% of "
+                          "the area the 2001 census counts as Irpin (Miskrada) lies in "
+                          "this polygon, and that area's people are counted with "
+                          "'Borodianka'"),
+    ("UKR", "Q2620746"): ("the Luhyny raion of before 2020 (16,321 people in 2018), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Luhynskyi Raion, but only 40% of "
+                          "the area the 2001 census counts as that raion lies in it and "
+                          "52% in 'Yemilchyne'"),
+    ("UKR", "Q2628102"): ("the Manhush raion of before 2020 (26,510 people in 2017), "
+                          "whose figure does not describe this polygon: only 68% of the "
+                          "area the 2001 census counts as Mariupol (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q2994031"): ("the Marinka raion of before 2020 (90,434 people in 2001), "
+                          "whose figure does not describe this polygon: only 50% of the "
+                          "area the 2001 census counts as Selidove (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q2992440"): ("the Mlyniv raion of before 2020 (37,579 people), whose "
+                          "figure does not describe this polygon: 40% of the area the "
+                          "2001 census counts as M. Dubno lies in this polygon, and "
+                          "that area's people are counted with 'Dubno'"),
+    ("UKR", "Q2996182"): ("the Murovani Kurylivtsi raion of before 2020 (24,919 people "
+                          "in 2018), whose figure does not describe this polygon: 48% "
+                          "of the area the 2001 census counts as M. Novodnistrovsk lies "
+                          "in this polygon, and that area's people are counted with "
+                          "'Mohyliv-Podilskyi'"),
+    ("UKR", "Q582804"): ("the Nosivka raion of before 2020 (28,814 people in 2017), "
+                         "whose figure does not describe this polygon: the boundary "
+                         "file names this polygon for Nosivskyi Raion, but only 33% of "
+                         "the area the 2001 census counts as that raion lies in it and "
+                         "34% in 'Kozelets'"),
+    ("UKR", "Q1011303"): ("the city of Obukhiv (33,204 people in 2019), not the Obukhiv "
+                          "raion of before 2020 that the polygon is named for"),
+    ("UKR", "Q2639686"): ("the Oleshky raion of before 2020 (70,367 people in 2019), "
+                          "whose figure does not describe this polygon: only 52% of the "
+                          "area the 2001 census counts as Nova Kakhovka (Miskrada) lies "
+                          "in this polygon"),
+    ("UKR", "Q2216338"): ("the Perevalsk raion of before 2020 (69,738 people), whose "
+                          "figure does not describe this polygon: only 63% of the area "
+                          "the 2001 census counts as Krasnyi Luch (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q1728636"): ("the Piatykhatky raion of before 2020 (44,575 people in "
+                          "2018), whose figure does not describe this polygon: 36% of "
+                          "the area the 2001 census counts as M. Vilnohirsk lies in "
+                          "this polygon, and that area's people are counted with "
+                          "'Verkhnodniprovsk'"),
+    ("UKR", "Q2619410"): ("the Pishchanka raion of before 2020 (20,678 people in 2018), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Pishchanskyi Raion, but only 42% "
+                          "of the area the 2001 census counts as that raion lies in it "
+                          "and 52% in 'Kryzhopil'"),
+    ("UKR", "Q2620082"): ("the Pulyny raion of before 2020 (22,784 people in 2018), "
+                          "whose figure does not describe this polygon: 51% of the area "
+                          "the 2001 census counts as Volodarsko-Volynskyi Raion lies in "
+                          "this polygon, and that area's people are placed in no "
+                          "polygon: the map's name for it and its outline disagree"),
+    ("UKR", "Q2997697"): ("the Rokytne raion of before 2020 (26,153 people in 2019), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Rokytnianskyi Raion, but only "
+                          "41% of the area the 2001 census counts as that raion lies in "
+                          "it and 58% in 'Bila Tserkva'"),
+    ("UKR", "Q156593"): ("the city of Sambir (34,444 people in 2021), not the Sambir "
+                         "raion of before 2020 that the polygon is named for"),
+    ("UKR", "Q2627813"): ("the Shakhtarsk raion of before 2020 (18,952 people in 2019), "
+                          "whose figure does not describe this polygon: only 62% of the "
+                          "area the 2001 census counts as Horlivka (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q2996242"): ("the Skvyra raion of before 2020 (36,328 people in 2019), "
+                          "whose figure does not describe this polygon: 44% of the area "
+                          "the 2001 census counts as M. Bila Tserkva lies in this "
+                          "polygon, and that area's people are counted with 'Bila "
+                          "Tserkva'"),
+    ("UKR", "Q2216840"): ("the Slovianoserbsk raion of before 2020 (53,784 people), "
+                          "whose figure does not describe this polygon: only 59% of the "
+                          "area the 2001 census counts as Luhansk (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q2216649"): ("the Stanytsia-Luhanska raion of before 2020 (49,759 people), "
+                          "whose figure does not describe this polygon: 31% of the area "
+                          "the 2001 census counts as Luhansk (Miskrada) lies in this "
+                          "polygon, and that area's people are counted with "
+                          "'Slovianoserbsk'"),
+    ("UKR", "Q2997764"): ("the Teplyk raion of before 2020 (27,818 people in 2018), "
+                          "whose figure does not describe this polygon: the boundary "
+                          "file names this polygon for Teplytskyi Raion, but only 19% "
+                          "of the area the 2001 census counts as that raion lies in it "
+                          "and 73% in 'Haisyn'"),
+    ("UKR", "Q2639671"): ("the Tomakivka raion of before 2020 (24,658 people in 2018), "
+                          "whose figure does not describe this polygon: only 60% of the "
+                          "area the 2001 census counts as Marhanets (Miskrada) lies in "
+                          "this polygon"),
+    ("UKR", "Q997421"): ("the city of Vasylkiv (37,696 people in 2019), not the "
+                         "Vasylkiv raion of before 2020 that the polygon is named for"),
+    ("UKR", "Q2637060"): ("the Verkhnodniprovsk raion of before 2020 (52,858 people in "
+                          "2018), whose figure does not describe this polygon: only 61% "
+                          "of the area the 2001 census counts as M. Vilnohirsk lies in "
+                          "this polygon"),
+    ("UKR", "Q2216204"): ("the Zmiiv raion of before 2020 (72,587 people), whose figure "
+                          "does not describe this polygon: 100% of the area the 2001 "
+                          "census counts as Chuhuiv (Miskrada) lies in this polygon, "
+                          "and that area's people are drawn by the boundary file "
+                          "outside the polygon of the raion it is the seat of (Zmiiv "
+                          "100%)"),
+    ("UKR", "Q102451616"): ("the Zviahel Raion established in 2020 by merging the "
+                            "Novohrad-Volynskyi raion with its neighbours (164,972 "
+                            "people in 2022); the polygon is the Novohrad-Volynskyi "
+                            "raion of before"),
+    # Armenia's second level is the raions of before the 1995 reform into
+    # marzes. The items joined to them by name are the municipalities formed
+    # by consolidating communities from 2016 on, which Wikidata describes as
+    # such: another unit, whose figure does not describe the raion's polygon.
+    # armenia.py writes each raion as a gap that says why.
+    ("ARM", "Q138827280"): ("Akhuryan Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (41,546 people in "
+                            "2011); the polygon is the Akhuryan raion of before the "
+                            "1995 reform, another unit"),
+    ("ARM", "Q138827356"): ("Amasia Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (6,306 people in "
+                            "2011); the polygon is the Amasia raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q65225951"): ("Ani Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (18,958 people in "
+                           "2011); the polygon is the Ani raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138679185"): ("Ararat Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (41,725 people in "
+                            "2011); the polygon is the Ararat raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138682414"): ("Armavir Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (51,974 people in "
+                            "2011); the polygon is the Armavir raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138679138"): ("Artashat Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (91,182 people in "
+                            "2011); the polygon is the Artashat raion of before the "
+                            "1995 reform, another unit"),
+    ("ARM", "Q138828005"): ("Artik Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (54,065 people in "
+                            "2011); the polygon is the Artik raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138666250"): ("Ashtarak Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (63,926 people in "
+                            "2011); the polygon is the Ashtarak raion of before the "
+                            "1995 reform, another unit"),
+    ("ARM", "Q138684251"): ("Baghramyan Municipality, one of the municipalities formed "
+                            "by consolidating communities from 2016 on (16,255 people "
+                            "in 2011); the polygon is the Baghramyan raion of before "
+                            "the 1995 reform, another unit"),
+    ("ARM", "Q138701168"): ("Gavar Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (52,687 people in "
+                            "2011); the polygon is the Gavar raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q48862719"): ("Goris Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (29,319 people in "
+                           "2011); the polygon is the Goris raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138710451"): ("Hrazdan Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (52,283 people in "
+                            "2022); the polygon is the Hrazdan raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q55075050"): ("Kapan Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (49,788 people in "
+                           "2011); the polygon is the Kapan raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138701606"): ("Martuni Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (90,224 people in "
+                            "2011); the polygon is the Martuni raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138679271"): ("Masis Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (78,442 people in "
+                            "2011); the polygon is the Masis raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q55394256"): ("Meghri Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (11,377 people in "
+                           "2011); the polygon is the Meghri raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138748713"): ("Nairi Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (31,590 people in "
+                            "2011); the polygon is the Nairi raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q138666528"): ("Noyemberyan Municipality, one of the municipalities formed "
+                            "by consolidating communities from 2016 on (29,346 people "
+                            "in 2011); the polygon is the Noyemberyan raion of before "
+                            "the 1995 reform, another unit"),
+    ("ARM", "Q138702189"): ("Sevan Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (39,776 people in "
+                            "2011); the polygon is the Sevan raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q50495586"): ("Sisian Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (30,265 people in "
+                           "2011); the polygon is the Sisian raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138794219"): ("Spitak Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (38,037 people in "
+                            "2022); the polygon is the Spitak raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q65226139"): ("Stepanavan Municipality, one of the municipalities formed "
+                           "by consolidating communities from 2016 on (14,557 people in "
+                           "2011); the polygon is the Stepanavan raion of before the "
+                           "1995 reform, another unit"),
+    ("ARM", "Q138666308"): ("Talin Municipality, one of the municipalities formed by "
+                            "consolidating communities from 2016 on (32,472 people in "
+                            "2011); the polygon is the Talin raion of before the 1995 "
+                            "reform, another unit"),
+    ("ARM", "Q65226147"): ("Tashir Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (22,185 people in "
+                           "2011); the polygon is the Tashir raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138690894"): ("Vagharshapat Municipality, one of the municipalities "
+                            "formed by consolidating communities from 2016 on (50,031 "
+                            "people in 2011); the polygon is the Vagharshapat raion of "
+                            "before the 1995 reform, another unit"),
+    ("ARM", "Q65226141"): ("Vardenis Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (38,240 people in "
+                           "2011); the polygon is the Vardenis raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q48862592"): ("Vayk Municipality, one of the municipalities formed by "
+                           "consolidating communities from 2016 on (11,928 people in "
+                           "2011); the polygon is the Vayk raion of before the 1995 "
+                           "reform, another unit"),
+    ("ARM", "Q138666686"): ("Yeghegnadzor Municipality, one of the municipalities "
+                            "formed by consolidating communities from 2016 on (16,304 "
+                            "people in 2022); the polygon is the Yeghegnadzor raion of "
+                            "before the 1995 reform, another unit"),
 }
 
 # Countries whose boundary file draws their first level one level down: under

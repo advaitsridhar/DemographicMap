@@ -406,6 +406,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Karakalpak", "Gagauz", "Crimean Tatar", "Kumyk", "Nogai",
         "Karachay-Balkar", "Balkar", "Karachay", "Tuvan", "Khakas", "Altai",
         "Shor", "Karaim", "Salar", "Dolgan",
+        # Russia's 2020 census: "Bulgar" (булгарский), the answer of Volga
+        # Tatars who name their tongue after the Volga Bulgars (25 subjects).
+        "Bulgar",
     ),
     "Mongolic languages": ("Mongolian", "Buryat", "Kalmyk", "Oirat"),
     "Tungusic languages": ("Evenki", "Evenk", "Even", "Nanai", "Udege",
@@ -760,6 +763,10 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # that a unit led by one reads as unclassified rather than as
         # speaking something the tree has failed to place.
         "mixed", "unknown",
+        # Russia's 2020 census: "Jewish" (еврейский) as a native language,
+        # which is neither its Yiddish (идиш) nor its Hebrew (иврит) and
+        # names no one language (77 subjects).
+        "Jewish (unspecified)",
     ),
 }
 
@@ -836,6 +843,9 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Tabasaran", "Rutul", "Tsakhur", "Agul", "Udi", "Kabardian",
         "Adyghe", "Abkhaz", "Abaza", "Circassian", "Mingrelian", "Svan",
         "Andi",
+        # Georgia's Pankisi Chechens, a nationality of their own in its 2002
+        # and 2014 censuses (georgia.json).
+        "Kist",
     ),
     "Armenian peoples": ("Armenian",),
     "Assyrian and Aramean peoples": ("Assyrian", "Aramean", "Chaldean",
@@ -958,6 +968,12 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Mongolian", "Mongol", "Buryat", "Kalmyk", "Evenk", "Evenki", "Even",
         "Nanai", "Udege", "Chukchi", "Koryak", "Nivkh", "Yupik", "Itelmen",
         "Ulchi", "Oroch", "Ket", "Selkup", "Tofalar", "Eskimo",
+        # Russia's 2020 census: the Taz of Primorye, one of its small peoples
+        # of the North, of Udege and Nanai descent with Chinese.
+        "Taz",
+        # The Enets, where ETHNIC_PATTERNS already files them, named here so
+        # that a spelling variant ("Ent", below) can resolve to them.
+        "Enets",
     ),
     "Mainland Southeast Asian peoples": (
         "Vietnamese", "Thai", "Lao", "Khmer", "Hmong", "Miao",
@@ -1098,6 +1114,7 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
 # the people families in the same ancestry -- never a parent of them.
 ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     "White or European (census category)": (
+        "Other EU nationals",
         "White", "White (non-Hispanic)", "White British", "White Irish",
         "White Other", "White European", "Caucasian", "European",
         "Other White", "Other European", "Branca",
@@ -1200,6 +1217,10 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         "Peruvian",
     ),
     "Other national identities": (
+        # European registers' nationality and country-of-birth rows for
+        # states of many peoples (the owner's 19 September 2026 decision):
+        # a nationality, which names no one ethnic group.
+        "Eritrean", "Ethiopian", "Congolese", "Kosovar", "Non-EU nationals",
         "Belgian", "Yugoslavian", "Sri Lankan", "Iranian national",
         "Nigerian", "Kenyan", "Cameroonian", "Malian", "Senegalese",
         "Congolese (Kinshasa)", "Congolese (Brazzaville)", "Chadian",
@@ -2136,7 +2157,12 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # Asian ancestry would be the likelier guess and still a guess: the
     # census asks about religion there, and the honest answer is to say the
     # category is not an ancestry rather than to pick one for it.
-    "Unclassified ethnicity answers": ("Hindou", "Musulman"),
+    "Unclassified ethnicity answers": ("Hindou", "Musulman",
+                                       # Registers' residual rows: STATEC's
+                                       # unknown and stateless, CBS's other
+                                       # migration background.
+                                       "Nationality unknown", "Stateless",
+                                       "Other migration background"),
     # Viet Nam's Hoa are its Han Chinese, and the Ngái its Hakka-speaking
     # Chinese of the north-east; the census counts them as two groups. The
     # Thai Chinese are Thailand's, the Ethnolinguistic Maps' own label.
@@ -2445,6 +2471,10 @@ ETHNIC_VARIANTS: dict[str, str] = {
     "Ingushetian": "Ingush", "Buriat": "Buryat", "Nenet": "Nenets",
     "Vep": "Veps", "Liv": "Livonian", "Aghul": "Agul", "Abazin": "Abaza",
     "Afghani": "Afghan", "Kazak": "Kazakh",
+    # Two more of the Bureau's (ukraine_oblast, 2001): "Ent" is the Enets
+    # (энцы) of Donetsk Oblast's ten, "Hunt" the Khanty (ханты) of Kyiv's
+    # twelve.
+    "Ent": "Enets", "Hunt": "Khanty",
     # The Congo basin, Uganda and southern Africa, where one people is
     # written a dozen ways across three colonial languages.
     "Kanioka": "Kanyok", "Lugbala": "Lugbara",
