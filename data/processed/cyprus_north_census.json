@@ -481,7 +481,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B11647519105740",
     "parent_name": "Kyrenia",
-    "population_note": "The census counts this community as Çatalköy, a quarter (mahalle) of Çatalköy municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "The census counts this community as Çatalköy, a quarter (mahalle) of Çatalköy municipality. By OpenStreetMap's mapped buildings, about 3% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B200198305742",
@@ -1238,7 +1238,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B56157666761112",
     "parent_name": "Nicosia",
-    "population_note": "The census counts this community as Alayköy, a quarter (mahalle) of Alayköy municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "The census counts this community as Alayköy, a quarter (mahalle) of Alayköy municipality. By OpenStreetMap's mapped buildings, about 3% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B29030775604089",
@@ -1344,7 +1344,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B15488277877643",
     "parent_name": "Famagusta",
-    "population_note": "The fifteen quarters of Gazimağusa (Famagusta) municipality other than Tuzla (the village of Enkomi) and Mutluyaka (Stylloi), each lying in this polygon by OpenStreetMap's outlines (86-100% of each quarter's area, 93-100% of its mapped buildings). Some buildings of Sakarya, Karakol and Çanakkale stand in the Enkomi and Deryneia polygons next door: about 2% of this figure, by their share of the buildings. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "The fifteen quarters of Gazimağusa (Famagusta) municipality other than Tuzla (the village of Enkomi) and Mutluyaka (Stylloi), each lying in this polygon by OpenStreetMap's outlines (86-100% of each quarter's area, 93-100% of its mapped buildings). Some buildings of Sakarya, Karakol and Çanakkale stand in the Enkomi and Deryneia polygons next door: about 2% of this figure, by their share of the buildings. By OpenStreetMap's mapped buildings, about 2% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B7308228974018",
@@ -1614,7 +1614,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B73133986650844",
     "parent_name": "Nicosia",
-    "population_note": "The census counts this community as Akçay, a quarter (mahalle) of Güzelyurt municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "The census counts this community as Akçay, a quarter (mahalle) of Güzelyurt municipality. By OpenStreetMap's mapped buildings, about 4% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B52091218012578",
@@ -1885,60 +1885,6 @@
     "shape_id": "46923920B2873986073585",
     "parent_name": "Famagusta",
     "population_note": "The census counts this community as Kurtuluş, a quarter (mahalle) of İskele municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
-  },
-  {
-    "id": "CYP-north-2011-46923920B81569607832165",
-    "level": "admin2",
-    "name": "Belapais",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 918,
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "value": 107.7,
-      "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)",
-        "url": "https://istatistik.gov.ct.tr/Portals/39/Tablo-3-Mahalle_Cinsiyet.xls",
-        "page": "https://istatistik.gov.ct.tr/TEMEL-%C4%B0STAT%C4%B0ST%C4%B0KLER/N%C3%9CFUS-SAYIMLARI/N%C3%BCfus-Say%C4%B1m%C4%B1-2011",
-        "year": 2011,
-        "license": "Published by the İstatistik Kurumu; terms of reuse not stated"
-      }
-    ],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B81569607832165",
-    "parent_name": "Kyrenia",
-    "population_note": "The census counts this community as Beylerbeyi, a quarter (mahalle) of Girne municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B35066056619311",
@@ -3074,7 +3020,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B84708400671300",
     "parent_name": "Nicosia",
-    "population_note": "The census counts this community as Kalkanlı, a quarter (mahalle) of Güzelyurt municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here.",
+    "population_note": "The census counts this community as Kalkanlı, a quarter (mahalle) of Güzelyurt municipality. By OpenStreetMap's mapped buildings, about 1% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here.",
     "sex_ratio_note": "As the census counts it: 1,423 men and 882 women."
   },
   {
@@ -3617,7 +3563,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B4985084471398",
     "parent_name": "Nicosia",
-    "population_note": "The census counts this community as Aşağı Bostancı, a quarter (mahalle) of Güzelyurt municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "The census counts this community as Aşağı Bostancı, a quarter (mahalle) of Güzelyurt municipality. By OpenStreetMap's mapped buildings, about 2% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B85367038784493",
@@ -3672,60 +3618,6 @@
     "shape_id": "46923920B85367038784493",
     "parent_name": "Nicosia",
     "population_note": "The census counts this community as Zümrütköy, a quarter (mahalle) of Güzelyurt municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
-  },
-  {
-    "id": "CYP-north-2011-46923920B35244398471877",
-    "level": "admin2",
-    "name": "Kazafani",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 3792,
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "value": 112.2,
-      "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)",
-        "url": "https://istatistik.gov.ct.tr/Portals/39/Tablo-3-Mahalle_Cinsiyet.xls",
-        "page": "https://istatistik.gov.ct.tr/TEMEL-%C4%B0STAT%C4%B0ST%C4%B0KLER/N%C3%9CFUS-SAYIMLARI/N%C3%BCfus-Say%C4%B1m%C4%B1-2011",
-        "year": 2011,
-        "license": "Published by the İstatistik Kurumu; terms of reuse not stated"
-      }
-    ],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B35244398471877",
-    "parent_name": "Kyrenia",
-    "population_note": "Ozanköy (Kazafani) and Karakum (Karakoumi), which the boundary file draws as one polygon (GeoNames' points for both communities lie in it). Of Karakum's mapped buildings 83% stand in this polygon and 17% in Kyrenia's; a few of Doğanköy's and Beylerbeyi's stand in this one. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B14139084564412",
@@ -3833,7 +3725,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B20243992884618",
     "parent_name": "Kyrenia",
-    "population_note": "Girne municipality's town quarters, Aşağı Girne and Yukarı Girne (94-100% of their mapped buildings inside). The municipality's other quarters are villages with polygons of their own; Aşağı Karaman (675 residents), which no evidence places, is not in this figure. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "Girne municipality's town quarters, Aşağı Girne and Yukarı Girne (94-100% of their mapped buildings inside). The municipality's other quarters are villages with polygons of their own; Aşağı Karaman (675 residents), which no evidence places, is not in this figure. By OpenStreetMap's mapped buildings, about 4% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B15009716922247",
@@ -3996,7 +3888,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B14813142167534",
     "parent_name": "Nicosia",
-    "population_note": "Gönyeli municipality's quarters Gönyeli and Yenikent (99-100% of their mapped buildings in this polygon); its third, Kanlıköy, is the village of Kanli. Fringes of neighbouring quarters (Ortaköy, Aydemet, Alayköy, Aşağı Dikmen) also reach into the polygon by OpenStreetMap's outlines; their residents there, at most about a tenth of this figure by building counts, are not in it. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "Gönyeli municipality's quarters Gönyeli and Yenikent (99-100% of their mapped buildings in this polygon); its third, Kanlıköy, is the village of Kanli. Fringes of neighbouring quarters (Ortaköy, Aşağı Dikmen, Alayköy, Aydemet) also reach into the polygon by OpenStreetMap's outlines, and their residents there are not in this figure. By OpenStreetMap's mapped buildings, about 5% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B25595466119807",
@@ -6154,7 +6046,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B39754802683787",
     "parent_name": "Nicosia",
-    "population_note": "Güzelyurt municipality's town quarters Lala Mustafa Paşa, Piyale Paşa and İsmet Paşa, and the hamlet of Yuvacık (Chrysiliou), 96-99% of whose mapped buildings stand in this polygon; the municipality's other quarters are villages with polygons of their own. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "Güzelyurt municipality's town quarters Lala Mustafa Paşa, Piyale Paşa and İsmet Paşa, and the hamlet of Yuvacık (Chrysiliou), 96-99% of whose mapped buildings stand in this polygon; the municipality's other quarters are villages with polygons of their own. By OpenStreetMap's mapped buildings, about 2% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B47977238929858",
@@ -6209,60 +6101,6 @@
     "shape_id": "46923920B47977238929858",
     "parent_name": "Famagusta",
     "population_note": "The census counts this community as Kurudere, a quarter (mahalle) of Paşaköy municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
-  },
-  {
-    "id": "CYP-north-2011-46923920B74910454629938",
-    "level": "admin2",
-    "name": "Myrtou",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 872,
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "value": 114.8,
-      "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)",
-        "url": "https://istatistik.gov.ct.tr/Portals/39/Tablo-3-Mahalle_Cinsiyet.xls",
-        "page": "https://istatistik.gov.ct.tr/TEMEL-%C4%B0STAT%C4%B0ST%C4%B0KLER/N%C3%9CFUS-SAYIMLARI/N%C3%BCfus-Say%C4%B1m%C4%B1-2011",
-        "year": 2011,
-        "license": "Published by the İstatistik Kurumu; terms of reuse not stated"
-      }
-    ],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B74910454629938",
-    "parent_name": "Kyrenia",
-    "population_note": "The census counts this community as Çamlıbel, a quarter (mahalle) of Lapta municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B38170479802577",
@@ -6370,7 +6208,7 @@
     "match_by": "shape_id",
     "shape_id": "46923920B78041797088340",
     "parent_name": "Nicosia",
-    "population_note": "The census counts this community as Güneşköy, a quarter (mahalle) of Güzelyurt municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
+    "population_note": "The census counts this community as Güneşköy, a quarter (mahalle) of Güzelyurt municipality. By OpenStreetMap's mapped buildings, about 8% of this count is on the wrong side of the polygon's lines (residents of these quarters outside it, and of others inside it); a count is put on a polygon only when that is at most a tenth. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B94328330432967",
@@ -6533,114 +6371,6 @@
     "shape_id": "46923920B63602794647925",
     "parent_name": "Nicosia",
     "population_note": "The census counts this community as Balıkesir, a quarter (mahalle) of Değirmenlik municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
-  },
-  {
-    "id": "CYP-north-2011-46923920B46239783627479",
-    "level": "admin2",
-    "name": "Panagra",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 220,
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "value": 134.0,
-      "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)",
-        "url": "https://istatistik.gov.ct.tr/Portals/39/Tablo-3-Mahalle_Cinsiyet.xls",
-        "page": "https://istatistik.gov.ct.tr/TEMEL-%C4%B0STAT%C4%B0ST%C4%B0KLER/N%C3%9CFUS-SAYIMLARI/N%C3%BCfus-Say%C4%B1m%C4%B1-2011",
-        "year": 2011,
-        "license": "Published by the İstatistik Kurumu; terms of reuse not stated"
-      }
-    ],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B46239783627479",
-    "parent_name": "Kyrenia",
-    "population_note": "The census counts this community as Geçitköy, a quarter (mahalle) of Lapta municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
-  },
-  {
-    "id": "CYP-north-2011-46923920B27145570377181",
-    "level": "admin2",
-    "name": "Pano Dikomo",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 416,
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "value": 103.9,
-      "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)",
-        "url": "https://istatistik.gov.ct.tr/Portals/39/Tablo-3-Mahalle_Cinsiyet.xls",
-        "page": "https://istatistik.gov.ct.tr/TEMEL-%C4%B0STAT%C4%B0ST%C4%B0KLER/N%C3%9CFUS-SAYIMLARI/N%C3%BCfus-Say%C4%B1m%C4%B1-2011",
-        "year": 2011,
-        "license": "Published by the İstatistik Kurumu; terms of reuse not stated"
-      }
-    ],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B27145570377181",
-    "parent_name": "Kyrenia",
-    "population_note": "The census counts this community as Yukarı Dikmen, a quarter (mahalle) of Dikmen municipality. The count is of usual residents (de jure), by the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally); the Republic of Cyprus's censuses since 1974 have not been taken here."
   },
   {
     "id": "CYP-north-2011-46923920B57147511667034",
@@ -8494,7 +8224,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census's quarters of north Nicosia do not follow this polygon's lines. By OpenStreetMap's outlines and buildings Kızılay, Marmara and Taşkınköy (10,463 residents) lie almost wholly in it, but so do 44% of Göçmenköy's mapped buildings, 48% of Kumsal's and parts of Yenişehir's and Ortaköy's: no sum of whole quarters is the polygon's population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8536,7 +8266,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census's quarters of north Nicosia do not follow this polygon's lines. Ortaköy (8,868 residents) has 86% of its mapped buildings here, but 56% of Göçmenköy's and 23% of Kumsal's are here too: no sum of whole quarters is the polygon's population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8577,8 +8307,8 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Hamitköy (5,338 residents) is this village and lies wholly in the polygon, but so does the northern edge of Küçük Kaymaklı, 295 of its 2,967 buildings mapped in OpenStreetMap, about a thousand residents by their share: Hamitköy's count would leave them out.",
-      "displaces_before": 1974
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Hamitköy (5,338 residents) is this village and lies wholly in the polygon, but so does the northern edge of Küçük Kaymaklı, 295 of its 2,967 buildings mapped in OpenStreetMap, about a thousand residents by their share: Hamitköy's count would leave them out. By those buildings, at each quarter's residents per building, about 22% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth.",
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8586,7 +8316,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Hamitköy (5,338 residents) is this village and lies wholly in the polygon, but so does the northern edge of Küçük Kaymaklı, 295 of its 2,967 buildings mapped in OpenStreetMap, about a thousand residents by their share: Hamitköy's count would leave them out."
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Hamitköy (5,338 residents) is this village and lies wholly in the polygon, but so does the northern edge of Küçük Kaymaklı, 295 of its 2,967 buildings mapped in OpenStreetMap, about a thousand residents by their share: Hamitköy's count would leave them out. By those buildings, at each quarter's residents per building, about 22% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth."
     },
     "religion": {
       "status": "not_available",
@@ -8620,7 +8350,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census's Esentepe quarter (1,754 residents) spans this polygon and Trapeza's: of its buildings mapped in OpenStreetMap, 48% stand here and 46% in Trapeza.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8662,7 +8392,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Beşparmak (30 residents) is that census's quarter for this village, but nearly half of the Esentepe quarter's mapped buildings stand in this polygon too, so Beşparmak's count is not its population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8704,7 +8434,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census's Boğazköy quarter (1,943 residents) spans Agirda and Kato Dikomo: OpenStreetMap's outline of it lies 62% and 32% in them, and its lower part, Aşağı Boğazköy, is in Kato Dikomo's. Neither Ağırdağ's count (745) nor Aşağı Dikmen's is its polygon's population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8746,7 +8476,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Aşağı Dikmen (3,553 residents) is this village, but the Boğazköy quarter (1,943) spans it and Agirda (OpenStreetMap's outline lies 32% here, with its lower part, Aşağı Boğazköy), so Aşağı Dikmen's count is not the polygon's population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8788,7 +8518,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census counts the villages of Trachoni (Demirhan, 530 residents) and Neo Chorio (Minareliköy, 1,334) apart, but GeoNames', Wikidata's and OpenStreetMap's points all put Demirhan's houses in the polygon labelled Neo Chorio Lefkosias, 170-320 m from this one, while OpenStreetMap's outline of Demirhan lies 73% here: which polygon its people live in is not settled.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8830,7 +8560,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Minareliköy (1,334 residents) is this village, but GeoNames', Wikidata's and OpenStreetMap's points all put the houses of Demirhan (Trachoni, 530) in this polygon too, while OpenStreetMap's outline of Demirhan lies mostly in Trachoni's: which polygon its people live in is not settled.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8872,7 +8602,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Mutluyaka (407 residents) is this village, but OpenStreetMap's outline of the quarter holds a cluster of 86 buildings inside the polygon labelled Limnia, so Mutluyaka's count is not this polygon's population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8914,7 +8644,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Mormenekşe (1,033 residents) is this village, but a cluster of 86 buildings of the Mutluyaka quarter (Stylloi) stands in this polygon too, by OpenStreetMap's outlines, so Mormenekşe's count is not the polygon's population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8956,7 +8686,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census counts this village and Pigi as one quarter, Alaniçi (860 residents), which the map draws as two polygons.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -8998,7 +8728,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census counts this village and Peristerona as one quarter, Alaniçi (860 residents), which the map draws as two polygons.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9040,7 +8770,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census counts Malatya (this village) and İncesu (Motides) as one quarter, Malatya - İncesu (180 residents), which the map draws as two polygons.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9082,7 +8812,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census counts İncesu (this village) and Malatya (Palaiosofos) as one quarter, Malatya - İncesu (180 residents), which the map draws as two polygons.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9124,7 +8854,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Ilgaz (72 residents) is this village, but a quarter of the buildings OpenStreetMap maps in the Malatya - İncesu quarter's outline stand in this polygon, so Ilgaz's count is not all of its residents.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9166,7 +8896,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census counts the old village as Karaman (Yukarı Karmi), 55 residents, and the lower part of its land as Aşağı Karaman (675), a quarter of Girne municipality that no evidence places for certain (Wikidata's point for Karaman falls in the lower part of this polygon), so neither count alone is the polygon's population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9207,8 +8937,8 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Zeytinlik Köy and Zeytinlik Kesim (1,090 residents together) are this village, but buildings of Kyrenia's Yukarı Girne quarter, some 150 residents by their share, stand in this polygon too.",
-      "displaces_before": 1974
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Zeytinlik Köy and Zeytinlik Kesim (1,090 residents together) are this village, but buildings of Kyrenia's Yukarı Girne quarter, some 150 residents by their share, stand in this polygon too. By those buildings, at each quarter's residents per building, about 17% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth.",
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9216,7 +8946,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Zeytinlik Köy and Zeytinlik Kesim (1,090 residents together) are this village, but buildings of Kyrenia's Yukarı Girne quarter, some 150 residents by their share, stand in this polygon too."
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Zeytinlik Köy and Zeytinlik Kesim (1,090 residents together) are this village, but buildings of Kyrenia's Yukarı Girne quarter, some 150 residents by their share, stand in this polygon too. By those buildings, at each quarter's residents per building, about 17% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth."
     },
     "religion": {
       "status": "not_available",
@@ -9250,7 +8980,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Doğanköy (868 residents) is this village, but only 79% of its mapped buildings stand in this small polygon (0.8 km2); the rest are in Kazafani's and Kyrenia's.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9279,6 +9009,132 @@
     "parent_name": "Kyrenia"
   },
   {
+    "id": "CYP-north-2011-none-46923920B35244398471877",
+    "level": "admin2",
+    "name": "Kazafani",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Ozanköy and Karakum (3,792 residents together) are the villages of Kazafani and Karakoumi, which the boundary file draws as this one polygon, but 10 of Karakum's 60 mapped buildings stand in Kyrenia's polygon, and some of Doğanköy's, Çatalköy's, Beylerbeyi's and Yukarı Girne's stand in this one. By those buildings, at each quarter's residents per building, about 15% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth.",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Ozanköy and Karakum (3,792 residents together) are the villages of Kazafani and Karakoumi, which the boundary file draws as this one polygon, but 10 of Karakum's 60 mapped buildings stand in Kyrenia's polygon, and some of Doğanköy's, Çatalköy's, Beylerbeyi's and Yukarı Girne's stand in this one. By those buildings, at each quarter's residents per building, about 15% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B35244398471877",
+    "parent_name": "Kyrenia"
+  },
+  {
+    "id": "CYP-north-2011-none-46923920B81569607832165",
+    "level": "admin2",
+    "name": "Belapais",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Beylerbeyi (918 residents) is this village, but 43 of its 641 mapped buildings stand in Kazafani's polygon, and 20 of Ozanköy's in this one. By those buildings, at each quarter's residents per building, about 12% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth.",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Beylerbeyi (918 residents) is this village, but 43 of its 641 mapped buildings stand in Kazafani's polygon, and 20 of Ozanköy's in this one. By those buildings, at each quarter's residents per building, about 12% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B81569607832165",
+    "parent_name": "Kyrenia"
+  },
+  {
+    "id": "CYP-north-2011-none-46923920B27145570377181",
+    "level": "admin2",
+    "name": "Pano Dikomo",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Yukarı Dikmen (416 residents) is this village, but 7 of the 551 mapped buildings of Aşağı Dikmen, the larger village below it, stand in this polygon too. By those buildings, at each quarter's residents per building, about 11% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth.",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Yukarı Dikmen (416 residents) is this village, but 7 of the 551 mapped buildings of Aşağı Dikmen, the larger village below it, stand in this polygon too. By those buildings, at each quarter's residents per building, about 11% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B27145570377181",
+    "parent_name": "Kyrenia"
+  },
+  {
     "id": "CYP-north-2011-none-46923920B44802407724135",
     "level": "admin2",
     "name": "Agkomi Ammochostou",
@@ -9291,8 +9147,8 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Tuzla (2,645 residents) is the village of Enkomi, but buildings of Famagusta's Sakarya and Karakol quarters, some 470 residents by their share, stand in this polygon too.",
-      "displaces_before": 1974
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Tuzla (2,645 residents) is the village of Enkomi, but buildings of Famagusta's Sakarya and Karakol quarters, some 470 residents by their share, stand in this polygon too. By those buildings, at each quarter's residents per building, about 18% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth.",
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9300,7 +9156,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Tuzla (2,645 residents) is the village of Enkomi, but buildings of Famagusta's Sakarya and Karakol quarters, some 470 residents by their share, stand in this polygon too."
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Tuzla (2,645 residents) is the village of Enkomi, but buildings of Famagusta's Sakarya and Karakol quarters, some 470 residents by their share, stand in this polygon too. By those buildings, at each quarter's residents per building, about 18% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth."
     },
     "religion": {
       "status": "not_available",
@@ -9334,7 +9190,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Güzelyurt municipality's Yayla quarter (850 residents) is this village, but 21% of its mapped buildings stand in Morfou's polygon.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9376,7 +9232,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. İskele municipality's quarters include İskele (1,948 residents) and Cevizli (1,110), which no evidence places: Perivolia (Bahçeler) has no quarter of its own, so Cevizli may be Perivolia or part of Trikomo, and İskele's count alone may not be this polygon's population.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9418,7 +9274,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter named for this village (Bahçeler); İskele municipality's Cevizli quarter (1,110 residents), which no evidence places, may be it or part of Trikomo.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9459,8 +9315,8 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. The village of Avlona (Gayretköy, 367 residents) lies in the polygon labelled Fyllia, by GeoNames', Wikidata's and OpenStreetMap's points and by 90% of OpenStreetMap's outline of Gayretköy; its count is there.",
-      "displaces_before": 1974
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. The village of Avlona (Gayretköy, 367 residents) lies in the polygon labelled Fyllia, by GeoNames', Wikidata's and OpenStreetMap's points and by 90% of OpenStreetMap's outline of Gayretköy; its count is there. This polygon lies 90% in the United Nations buffer zone, by OpenStreetMap's outline of the zone.",
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9468,7 +9324,7 @@
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. The village of Avlona (Gayretköy, 367 residents) lies in the polygon labelled Fyllia, by GeoNames', Wikidata's and OpenStreetMap's points and by 90% of OpenStreetMap's outline of Gayretköy; its count is there."
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. The village of Avlona (Gayretköy, 367 residents) lies in the polygon labelled Fyllia, by GeoNames', Wikidata's and OpenStreetMap's points and by 90% of OpenStreetMap's outline of Gayretköy; its count is there. This polygon lies 90% in the United Nations buffer zone, by OpenStreetMap's outline of the zone."
     },
     "religion": {
       "status": "not_available",
@@ -9489,6 +9345,90 @@
     "parent_name": "Nicosia"
   },
   {
+    "id": "CYP-north-2011-none-46923920B46239783627479",
+    "level": "admin2",
+    "name": "Panagra",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Geçitköy (220 residents) is this village, but only 30 of its 79 mapped buildings stand in this polygon: 46 stand in Myrtou's, where GeoNames' and OpenStreetMap's points for the village fall too. By those buildings, at each quarter's residents per building, about 58% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth.",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Geçitköy (220 residents) is this village, but only 30 of its 79 mapped buildings stand in this polygon: 46 stand in Myrtou's, where GeoNames' and OpenStreetMap's points for the village fall too. By those buildings, at each quarter's residents per building, about 58% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B46239783627479",
+    "parent_name": "Kyrenia"
+  },
+  {
+    "id": "CYP-north-2011-none-46923920B74910454629938",
+    "level": "admin2",
+    "name": "Myrtou",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Çamlıbel (872 residents) is this village, but 46 of the 79 mapped buildings of Geçitköy, the village of Panagra, stand in this polygon too. By those buildings, at each quarter's residents per building, about 15% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth.",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. Çamlıbel (872 residents) is this village, but 46 of the 79 mapped buildings of Geçitköy, the village of Panagra, stand in this polygon too. By those buildings, at each quarter's residents per building, about 15% of the count would be on the wrong side of the polygon's lines; a count is put on a polygon only when that is at most a tenth."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B74910454629938",
+    "parent_name": "Kyrenia"
+  },
+  {
     "id": "CYP-north-2011-none-46923920B60275250769381",
     "level": "admin2",
     "name": "Agia Marina Skyllouras",
@@ -9502,7 +9442,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Gürpınar in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9531,132 +9471,6 @@
     "parent_name": "Nicosia"
   },
   {
-    "id": "CYP-north-2011-none-46923920B58040369726665",
-    "level": "admin2",
-    "name": "Agios Georgios Soleas",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Madenliköy in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Madenliköy in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B58040369726665",
-    "parent_name": "Nicosia"
-  },
-  {
-    "id": "CYP-north-2011-none-46923920B8865059682023",
-    "level": "admin2",
-    "name": "Agios Ioannis Selemani",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Süleymaniye in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Süleymaniye in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B8865059682023",
-    "parent_name": "Nicosia"
-  },
-  {
-    "id": "CYP-north-2011-none-46923920B64835616919063",
-    "level": "admin2",
-    "name": "Alevga",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Alevkayası in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Alevkayası in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B64835616919063",
-    "parent_name": "Nicosia"
-  },
-  {
     "id": "CYP-north-2011-none-46923920B28653091355318",
     "level": "admin2",
     "name": "Ammadies",
@@ -9670,7 +9484,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Günebakan in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9712,7 +9526,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (İkidere in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9741,48 +9555,6 @@
     "parent_name": "Nicosia"
   },
   {
-    "id": "CYP-north-2011-none-46923920B95052440954476",
-    "level": "admin2",
-    "name": "Frodisia",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Yağmuralan in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Yağmuralan in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B95052440954476",
-    "parent_name": "Nicosia"
-  },
-  {
     "id": "CYP-north-2011-none-46923920B41086018803178",
     "level": "admin2",
     "name": "Galini",
@@ -9796,7 +9568,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Ömerli in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9825,48 +9597,6 @@
     "parent_name": "Nicosia"
   },
   {
-    "id": "CYP-north-2011-none-46923920B20193016295799",
-    "level": "admin2",
-    "name": "Katydata",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Ayyorgi, the Agios Georgios of Lefka in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Ayyorgi, the Agios Georgios of Lefka in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B20193016295799",
-    "parent_name": "Nicosia"
-  },
-  {
     "id": "CYP-north-2011-none-46923920B39759064245656",
     "level": "admin2",
     "name": "Kokkina",
@@ -9880,7 +9610,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Erenköy in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9922,7 +9652,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Margo in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -9964,7 +9694,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Taşköy in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -10006,7 +9736,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Gaziler in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -10035,90 +9765,6 @@
     "parent_name": "Nicosia"
   },
   {
-    "id": "CYP-north-2011-none-46923920B45268143409663",
-    "level": "admin2",
-    "name": "Selladi tou Appi",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Selçuklu in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Selçuklu in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B45268143409663",
-    "parent_name": "Nicosia"
-  },
-  {
-    "id": "CYP-north-2011-none-46923920B52002347954875",
-    "level": "admin2",
-    "name": "Variseia",
-    "parent": "CYP",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Şirinköy in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by sub-district (bucak) at the finest (its Tablo 4), which is no community's, so no community has a median age; the Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Şirinköy in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one."
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Neither census publishes it for this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) published nine population tables -- by sex, age, citizenship and birthplace -- and none of religion, language or ethnicity; its citizenship (tabiiyet) is by district (ilçe) only. The Republic of Cyprus's censuses since 1974 have not been taken here."
-    },
-    "sources": [],
-    "country": "CYP",
-    "match_by": "shape_id",
-    "shape_id": "46923920B52002347954875",
-    "parent_name": "Nicosia"
-  },
-  {
     "id": "CYP-north-2011-none-46923920B3651826109354",
     "level": "admin2",
     "name": "Artemi",
@@ -10132,7 +9778,7 @@
     "population": {
       "status": "not_available",
       "note": "The Republic of Cyprus's censuses since 1974 have been taken only in the areas under the effective control of its Government, which do not include this community. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and none of its counts is put on this polygon. That census lists no quarter for this village (Arıdamı in its own naming), and nor does its comparison of 2011 with the 2006 census, quarter by quarter; its 250 quarters are where its 286,257 residents live, so it counts no one here as a quarter of its own, and does not say whether anyone living here is counted in a neighbouring one.",
-      "displaces_before": 1974
+      "displaces_before": 2011
     },
     "median_age": {
       "status": "not_available",
@@ -10161,6 +9807,216 @@
     "parent_name": "Famagusta"
   },
   {
+    "id": "CYP-north-2011-zone-46923920B37444624958942",
+    "level": "admin2",
+    "name": "Agios Nikolaos Soleas",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: GeoNames', Wikidata's and OpenStreetMap's points for the village lie 200 to 370 m inside the zone, and so does 82% of this polygon. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Yamaç in its own naming).",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: GeoNames', Wikidata's and OpenStreetMap's points for the village lie 200 to 370 m inside the zone, and so does 82% of this polygon. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Yamaç in its own naming)."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B37444624958942",
+    "parent_name": "Nicosia"
+  },
+  {
+    "id": "CYP-north-2011-zone-46923920B8865059682023",
+    "level": "admin2",
+    "name": "Agios Ioannis Selemani",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: GeoNames', Wikidata's and OpenStreetMap's points for the village lie 320 to 410 m inside the zone, and so does 59% of this polygon. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Süleymaniye in its own naming).",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: GeoNames', Wikidata's and OpenStreetMap's points for the village lie 320 to 410 m inside the zone, and so does 59% of this polygon. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Süleymaniye in its own naming)."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B8865059682023",
+    "parent_name": "Nicosia"
+  },
+  {
+    "id": "CYP-north-2011-zone-46923920B20193016295799",
+    "level": "admin2",
+    "name": "Katydata",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: this polygon holds the village of Agios Georgios of Lefka by GeoNames' and Wikidata's points, 180 m inside the zone, and 78% of it lies in the zone. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Ayyorgi in its own naming).",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: this polygon holds the village of Agios Georgios of Lefka by GeoNames' and Wikidata's points, 180 m inside the zone, and 78% of it lies in the zone. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Ayyorgi in its own naming)."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B20193016295799",
+    "parent_name": "Nicosia"
+  },
+  {
+    "id": "CYP-north-2011-zone-46923920B58040369726665",
+    "level": "admin2",
+    "name": "Agios Georgios Soleas",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: OpenStreetMap's point for the village lies 150 m inside the zone, though 93% of this polygon lies north of it. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Madenliköy in its own naming).",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: OpenStreetMap's point for the village lies 150 m inside the zone, though 93% of this polygon lies north of it. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Madenliköy in its own naming)."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B58040369726665",
+    "parent_name": "Nicosia"
+  },
+  {
+    "id": "CYP-north-2011-zone-46923920B52002347954875",
+    "level": "admin2",
+    "name": "Variseia",
+    "parent": "CYP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: GeoNames', Wikidata's and OpenStreetMap's points for the village lie 560 to 730 m inside the zone, as does a quarter of this polygon, most of the rest being on the Government's side. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Şirinköy in its own naming).",
+      "displaces_before": 2011
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The village lies in the United Nations buffer zone between the two sides, by OpenStreetMap's outline of the zone: GeoNames', Wikidata's and OpenStreetMap's points for the village lie 560 to 730 m inside the zone, as does a quarter of this polygon, most of the rest being on the Government's side. Neither census counts anyone there: the Republic of Cyprus's 2021 census lists no community for it, and the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts the residents of the north, lists no quarter for it (Şirinköy in its own naming)."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Neither census counts anyone in this village, which lies in the United Nations buffer zone between the two sides."
+    },
+    "sources": [],
+    "country": "CYP",
+    "match_by": "shape_id",
+    "shape_id": "46923920B52002347954875",
+    "parent_name": "Nicosia"
+  },
+  {
     "id": "CYP-north-2011-kyrenia",
     "level": "admin1",
     "name": "Kyrenia",
@@ -10172,21 +10028,17 @@
       "status": "not_available"
     },
     "population": {
-      "value": 69163,
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
+      "status": "not_available",
+      "note": "Kyrenia district has been outside the effective control of the Government of the Republic of Cyprus since 1974, and the Republic's censuses since then have not counted it. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and its quarters are bound to 31 of this district's 46 community polygons, which hold 51,980 of the 69,163 residents it counts in the district. The other 15 (Agios Amvrosios Keryneias, Agirda, Belapais, Ftericha, Karmi, Kato Dikomo, Kazafani, Motides, Myrtou, Palaiosofos, Panagra, Pano Dikomo, Templos, Thermeia, Trapeza) carry none of its counts, each saying why, so no sum of the district's villages is its population, and that census's figures for its own districts (ilçe) are not put on the Republic's.",
+      "displaces_before": 2011
     },
     "median_age": {
-      "value": 32.0,
-      "unit": "years",
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 4, usually resident (de jure) population by single year of age, district, sub-district and sex; published by its statistics institute (İstatistik Kurumu)"
+      "status": "not_available",
+      "note": "Kyrenia district has been outside the effective control of the Government of the Republic of Cyprus since 1974, and the Republic's censuses since then have not counted it. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) publishes ages by its own districts and sub-districts (ilçe, bucak) at the finest, whose figures are not put on the Republic's districts, and by no village."
     },
     "sex_ratio": {
-      "value": 113.2,
-      "unit": "males_per_100_females",
-      "year": 2011,
-      "source": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)"
+      "status": "not_available",
+      "note": "Kyrenia district has been outside the effective control of the Government of the Republic of Cyprus since 1974, and the Republic's censuses since then have not counted it. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts the north's residents by quarter (mahalle), and its quarters are bound to 31 of this district's 46 community polygons, which hold 51,980 of the 69,163 residents it counts in the district. The other 15 (Agios Amvrosios Keryneias, Agirda, Belapais, Ftericha, Karmi, Kato Dikomo, Kazafani, Motides, Myrtou, Palaiosofos, Panagra, Pano Dikomo, Templos, Thermeia, Trapeza) carry none of its counts, each saying why, so no sum of the district's villages is its population, and that census's figures for its own districts (ilçe) are not put on the Republic's."
     },
     "religion": {
       "status": "not_available",
@@ -10196,101 +10048,13 @@
       "status": "not_available",
       "note": "Kyrenia district has been outside the effective control of the Government of the Republic of Cyprus since 1974, and the Republic's censuses since then have not counted it. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), which counts its residents, published no table of religion or language."
     },
-    "ethnicity": [
-      {
-        "group": "TRNC citizen",
-        "pct": 39.2,
-        "count": 27142
-      },
-      {
-        "group": "Turkish citizen",
-        "pct": 34.5,
-        "count": 23844
-      },
-      {
-        "group": "TRNC and Turkish citizen",
-        "pct": 10.8,
-        "count": 7438
-      },
-      {
-        "group": "TRNC and other citizen",
-        "pct": 5.6,
-        "count": 3853
-      },
-      {
-        "group": "British citizen",
-        "pct": 4.4,
-        "count": 3057
-      },
-      {
-        "group": "Other",
-        "pct": 2.9,
-        "count": 1974
-      },
-      {
-        "group": "Bulgarian citizen",
-        "pct": 0.7,
-        "count": 493
-      },
-      {
-        "group": "Pakistani citizen",
-        "pct": 0.7,
-        "count": 485
-      },
-      {
-        "group": "Turkmen citizen",
-        "pct": 0.6,
-        "count": 387
-      },
-      {
-        "group": "Nigerian citizen",
-        "pct": 0.3,
-        "count": 238
-      },
-      {
-        "group": "Iranian citizen",
-        "pct": 0.2,
-        "count": 164
-      },
-      {
-        "group": "Azerbaijani citizen",
-        "pct": 0.1,
-        "count": 88
-      }
-    ],
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 3, usually resident (de jure) population by district, sub-district, municipality, quarter (mahalle) and sex; published by its statistics institute (İstatistik Kurumu)",
-        "url": "https://istatistik.gov.ct.tr/Portals/39/Tablo-3-Mahalle_Cinsiyet.xls",
-        "page": "https://istatistik.gov.ct.tr/TEMEL-%C4%B0STAT%C4%B0ST%C4%B0KLER/N%C3%9CFUS-SAYIMLARI/N%C3%BCfus-Say%C4%B1m%C4%B1-2011",
-        "year": 2011,
-        "license": "Published by the İstatistik Kurumu; terms of reuse not stated"
-      },
-      {
-        "field": "median_age",
-        "name": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 4, usually resident (de jure) population by single year of age, district, sub-district and sex; published by its statistics institute (İstatistik Kurumu)",
-        "url": "https://istatistik.gov.ct.tr/Portals/39/Tablo-4-Yas_YasGrubu.xls",
-        "page": "https://istatistik.gov.ct.tr/TEMEL-%C4%B0STAT%C4%B0ST%C4%B0KLER/N%C3%9CFUS-SAYIMLARI/N%C3%BCfus-Say%C4%B1m%C4%B1-2011",
-        "year": 2011,
-        "license": "Published by the İstatistik Kurumu; terms of reuse not stated"
-      },
-      {
-        "field": "ethnicity",
-        "name": "Census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), 2011 Nüfus ve Konut Sayımı, Tablo 5, usually resident (de jure) population by district, sex and citizenship; published by its statistics institute (İstatistik Kurumu)",
-        "url": "https://istatistik.gov.ct.tr/Portals/39/Tablo-5-Citizenship.xls",
-        "page": "https://istatistik.gov.ct.tr/TEMEL-%C4%B0STAT%C4%B0ST%C4%B0KLER/N%C3%9CFUS-SAYIMLARI/N%C3%BCfus-Say%C4%B1m%C4%B1-2011",
-        "year": 2011,
-        "license": "Published by the İstatistik Kurumu; terms of reuse not stated"
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Kyrenia district has been outside the effective control of the Government of the Republic of Cyprus since 1974, and the Republic's censuses since then have not counted it. The census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) asks citizenship, not ethnicity, and publishes it by its own districts (ilçe) only, whose figures are not put on the Republic's districts."
+    },
+    "sources": [],
     "country": "CYP",
     "match_by": "shape_id",
-    "shape_id": "96831152B33829437974548",
-    "population_note": "The usual residents (de jure) of the quarters in the district, as the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts them. Kyrenia district holds every quarter (mahalle) of that census's Girne district (ilçe) and no other: OpenStreetMap's outlines put 92-100% of each Girne quarter it maps inside the district and at most 5% of any other quarter, and the one quarter it does not map, Aşağı Karaman, belongs to Girne, the municipality of the town of Kyrenia. Kyrenia district has been outside the effective control of the Government of the Republic of Cyprus since 1974, and the Republic's censuses since then have not counted it.",
-    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the population by single year of age and district (Tablo 4) of the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally), its Girne district's column. Kyrenia district holds every quarter (mahalle) of that census's Girne district (ilçe) and no other: OpenStreetMap's outlines put 92-100% of each Girne quarter it maps inside the district and at most 5% of any other quarter, and the one quarter it does not map, Aşağı Karaman, belongs to Girne, the municipality of the town of Kyrenia.",
-    "ethnicity_year": 2011,
-    "ethnicity_basis": "citizenship",
-    "ethnicity_note": "Citizenship (tabiiyet) as the census taken on 4 December 2011 by the Turkish Cypriot administration in the north of Cyprus (not recognised internationally) counts it in its Girne district (Tablo 5): CITIZENSHIP, not ethnicity, which that census does not ask. 'TRNC citizen' counts those who hold only the citizenship that administration issues (KKTC in the census's Turkish); 'TRNC and Turkish citizen' and 'TRNC and other citizen' those who hold it with a second; the other rows are citizens of the countries the table names, and 'Other' of those it does not. Kyrenia district holds every quarter (mahalle) of that census's Girne district (ilçe) and no other: OpenStreetMap's outlines put 92-100% of each Girne quarter it maps inside the district and at most 5% of any other quarter, and the one quarter it does not map, Aşağı Karaman, belongs to Girne, the municipality of the town of Kyrenia."
+    "shape_id": "96831152B33829437974548"
   }
 ]
