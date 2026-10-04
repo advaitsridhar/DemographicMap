@@ -3,8 +3,14 @@
    HTTP 200, 70,712 bytes, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet attachment; filename="Kerkelijke gezindte en kerkbezoek naar gemeenten.xlsx"
    2 sheets: Blad1 | Blad3
    -- sheet 'Blad1': 396 rows x 18 cols
-     r28: GM0060 | Ameland | 0060 | . |  | . | . | . | 0 | . | . | . | . | . | . | . | . | 
-     r38: GM0088 | Schiermonnikoog | 0088 | . |  | . | . | . | 0 | . | . | . | . | . | . | . | . | 
-     r40: GM0093 | Terschelling | 0093 | . |  | . | . | . | 0 | . | . | . | . | . | . | . | . | 
-     r41: GM0096 | Vlieland | 0096 | . |  | . | . | . | 0 | . | . | . | . | . | . | . | . | 
-     r99: GM0277 | Rozendaal | 0277 | . |  | . | . | . | 0 | . | . | . | . | . | . | . | . | 
+     r0: Kerkelijke gezindte en kerkbezoek naar gemeenten 2010/2015 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     r1:  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     r2:  |  |  | Kerkbezoek, minimaal 1x per maand (percentage van gehele 18+ populatie) |  | Geen kerkelijke gezindte | Wel kerkelijke gezindte | waarvan |  |  |  |  |  |  |  |  |  | 
+     r3:  |  |  |  |  |  |  | Rooms-katholiek | Protestants | waarvan |  |  | Islam | Joods | Hindoe | Boeddhist | anders | 
+     r4:  |  |  |  |  |  |  |  |  | Nederlands hervormd | Gereformeerde kerken | Protestantse Kerk Nederland(PKN) |  |  |  |  |  | 
+     r5:  | Nederland totaal |  | 16.85 |  | 47.93 | 52.07 | 25.49 | 16.27 | 7.04 | 3.46 | 5.77 | 4.77 | 0.12 | 0.62 | 0.37 | 4.44 | 
+   -- sheet 'Blad3': 4 rows x 1 cols
+     r0: Toelichting op de tabel
+     r1: De tabel is gebaseerd op de Enquête beroepsbevolking en betreft de periode 2010 tot en met 2015, waarin de vragen naar kerkelijke gezindte en bezoek aan religieuze diensten zijn opgenomen.
+     r2: De cijfers hebben betrekking op gemeenten, waarbij de grens is aangehouden van minstens 150 personen per gemeente.
+     r3: In totaal zijn de vragen door meer dan 600 duizend personen beantwoord.
