@@ -34,6 +34,20 @@ language for the provinces only, because Catalonia's language is Idescat's
 EULP (2023, habitual language, a dedicated language survey with a larger
 sample), which this file does not write over.
 
+**What the religion question counts.** It asks which religion people have,
+whatever their practice, so nominal Catholics answer Catholicism. That puts
+Catholics first in Catalonia (53% in waves 62-64, against 38% for atheism and
+agnosticism together), where the European Social Survey -- which first asks
+whether one belongs to any religion at all -- puts no religion first (54%
+against 39% Roman Catholic, rounds 7-11, 2014-2024, residents aged 15 and
+over). The CIS's own question lands where this one does: its 2021 survey of
+Catalonia (study 3306, 4,106 respondents) found Catholics 52% and its three
+irreligious answers 43%, and Catholics within 1 to 3 points of this file's
+figures in each province. So Catalonia's comunidad is written here as well,
+in front of the ESS as the build ranks a national office's survey: it agrees
+with its own provinces at the zoom below and with the comunidades the CIS
+fills. Every religion note says what the question counts.
+
 **Weights and sample.** The CEO's weight (``PONDERA``) is applied; it is 1 for
 every respondent of these waves, the sample being drawn in proportion to the
 population by province, and the note says so when that holds. A province
@@ -233,6 +247,25 @@ def describe(waves: list[int], dates: dict[int, tuple[int, int]]) -> str:
     return "BOP " + (", ".join(parts[:-1]) + " and " + parts[-1] if len(parts) > 1 else parts[0])
 
 
+# What the religion question counts, beside the survey the map shows where
+# this file does not reach: the European Social Survey first asks whether one
+# belongs to a religion at all, and in Catalonia that is the difference between
+# Catholics leading and no religion leading. The CIS's own question, which asks
+# what one is "en materia religiosa", lands where this one does.
+WORDING = ("The question asks which religion people have, practising or not, so it counts "
+           "nominal Catholics as Catholics, as the CIS's question does; surveys that first ask "
+           "whether one belongs to any religion at all, such as the European Social Survey, find "
+           "fewer Catholics and more people with none.")
+CENSUS = {
+    "religion": ("No Spanish census since the Constitution of 1978, which provides that no one "
+                 "may be obliged to declare their religion (art. 16.2), has asked it."),
+    "language": ("Spain's census does not ask anyone's first or usual language: its 2021 round "
+                 "was drawn from registers, and its 2011 and earlier rounds asked people in "
+                 "Catalonia only how well they knew Catalan. Idescat's language survey (EULP) is "
+                 "not published by province."),
+}
+
+
 def note(field: str, n: int, where: str, waves: str, uniform: bool) -> str:
     precision = " Low precision: under 300 respondents." if n < LOW_PRECISION else ""
     weighting = ("unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these "
@@ -243,17 +276,17 @@ def note(field: str, n: int, where: str, waves: str, uniform: bool) -> str:
                 "Islam, Jehovah's Witnesses, Buddhism, Orthodox Christianity, Judaism, none "
                 "(agnosticism), none (atheism) or another; don't know and no answer are Not "
                 "stated.")
-        census = "Spain's census does not ask religion."
+        wording = f" {WORDING}"
     else:
         what = (f"{FIRST_QUESTION}: Catalan, Spanish, both equally, Aranese, Arabic, Romanian, "
                 "or other languages or combinations; don't know and no answer are Not stated.")
-        census = ("Spain's census does not ask language, and Idescat's language survey is not "
-                  "published by province.")
+        wording = ""
     return (f"Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, "
             f"face-to-face waves {waves}, pooled: {what} A survey estimate, not a count: {n:,} "
             f"respondents in {where} ({weighting}).{precision} Universe: Spanish citizens aged "
-            f"18 and over resident in Catalonia, so foreign residents are not in it. Read from "
-            f"the CEO's anonymised microdata on the Generalitat's open-data portal. {census}")
+            f"18 and over resident in Catalonia, so foreign residents, among whom Muslims and "
+            f"Orthodox Christians are many, are not in it.{wording} Read from the CEO's "
+            f"anonymised microdata on the Generalitat's open-data portal. {CENSUS[field]}")
 
 
 def build(got: dict[str, Any], dates: dict[int, tuple[int, int]],

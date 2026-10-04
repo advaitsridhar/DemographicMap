@@ -127,6 +127,12 @@ class TestRecords(unittest.TestCase):
         self.assertIsInstance(catalonia["religion"], list)
         self.assertNotIsInstance(catalonia["language"], list)   # EULP's, not this file's
         self.assertIn("800 respondents in Catalonia", catalonia["religion_note"])
+        # Since when the census has not asked, and what the question counts.
+        self.assertIn("Constitution of 1978", lleida["religion_note"])
+        self.assertIn("2021 round was drawn from registers", lleida["language_note"])
+        self.assertIn("European Social Survey", catalonia["religion_note"])
+        self.assertIn("nominal Catholics", catalonia["religion_note"])
+        self.assertNotIn("European Social Survey", lleida["language_note"])
 
 
 if __name__ == "__main__":
