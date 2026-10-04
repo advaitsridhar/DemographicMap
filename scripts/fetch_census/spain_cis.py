@@ -30,7 +30,8 @@ comunidad and one per province, the realised sample and the mean weight of
 each province in "Tabla ponderaciones", and the design in "Ficha técnica".
 Four are published that way (``WORKBOOKS``): Extremadura (study 3538,
 fieldwork late 2025), Aragón (3543), Castilla y León (3545) and Andalucía
-(3558), all 2026 -- 22 provinces and their four comunidades. For Galicia
+(3558), all 2026 -- 22 provinces and their four comunidades, of which
+Cáceres is withheld because its sheet is a copy of Badajoz's (see below). For Galicia
 (3437) and the Basque Country (3448) the 2024 surveys are on the CIS's site
 for the comunidad only (``TOTALS``, HTML marginals with a ficha técnica PDF):
 their study pages still link province tables, which answer 404, so only the
@@ -54,7 +55,12 @@ Checks, each of which stops the run:
 * every answer is one the question offers, and every offered answer is there;
 * each unit's shares make 100 (to 0.5 points);
 * each province's respondents are the realised sample the weights table gives
-  it, and the provinces make the comunidad's respondents and the table's total;
+  it, and the provinces make the comunidad's respondents and the table's total
+  -- with one exception, which is withheld rather than stopping the rest: a
+  province whose sheet is, figure for figure, another province's (study
+  3538's "Provincia de Cáceres" sheet repeats Badajoz's shares and its 1,215
+  respondents; Cáceres's realised sample is 822), so Cáceres is left out;
+* no two provinces carry the same shares;
 * the comunidad's shares are, to 1 point in every answer, the provinces'
   shares weighted by their realised samples and mean weights (the CIS
   weights the comunidad and each province separately, PESO and PESOPROV, so
@@ -417,7 +423,7 @@ def read_workbook(raw: bytes, study: Study) -> dict[str, Any]:
     if region_sheet is None:
         raise SystemExit(f"spain_cis: {where}: no sheet for {region_names[0]} among {names}")
     region, region_n = religion_block(rows_of(region_sheet), f"{where} {region_sheet!r}")
-    provinces: dict[str, dict[str, Any]] = {}
+    read: dict[str, dict[str, Any]] = {}
     for code, entry in weights.items():
         if code not in PROVINCES or PROVINCES[code][1] != study.ccaa:
             raise SystemExit(f"spain_cis: {where}: province code {code} ({entry['name']}) is not "
@@ -430,22 +436,60 @@ def read_workbook(raw: bytes, study: Study) -> dict[str, Any]:
         if title is None:
             raise SystemExit(f"spain_cis: {where}: no results sheet for {entry['name']}")
         shares, n = religion_block(rows_of(title), f"{where} {title!r}")
-        if n != entry["realised"]:
-            raise SystemExit(f"spain_cis: {where}: {entry['name']} has {n:,} respondents to the "
-                             f"religion question and a realised sample of {entry['realised']:,}")
-        provinces[code] = {"name": entry["name"], "shares": shares, "n": n,
-                           "weight": entry["weight"], "sheet": title}
+        read[code] = {"name": entry["name"], "shares": shares, "n": n,
+                      "weight": entry["weight"], "sheet": title, "realised": entry["realised"]}
+    provinces, withheld = sort_out(read, where)
     expected = {c for c, (_, ccaa, _) in PROVINCES.items() if ccaa == study.ccaa}
-    if set(provinces) != expected:
-        raise SystemExit(f"spain_cis: {where}: provinces {sorted(provinces)}, expected "
+    if set(provinces) | set(withheld) != expected:
+        raise SystemExit(f"spain_cis: {where}: provinces {sorted(read)}, expected "
                          f"{sorted(expected)}")
     if region_n != total:
         raise SystemExit(f"spain_cis: {where}: the comunidad has {region_n:,} respondents, the "
                          f"weights table {total:,}")
-    check_region(region, provinces, where)
+    if withheld:
+        log(f"  {where}: the comunidad is not checked against its provinces: "
+            f"{', '.join(read[c]['name'] for c in withheld)} withheld")
+    else:
+        check_region(region, provinces, where)
     modified = getattr(book.properties, "modified", None)
     return {"design": design, "region": {"shares": region, "n": region_n},
-            "provinces": provinces, "modified": modified.date().isoformat() if modified else None}
+            "provinces": provinces, "withheld": withheld,
+            "modified": modified.date().isoformat() if modified else None}
+
+
+def sort_out(read: dict[str, dict[str, Any]], where: str
+             ) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
+    """Provinces whose sheet is theirs, and those whose sheet is another's copy.
+
+    A province's respondents to the religion question are its realised sample;
+    a sheet that disagrees stops the run -- except where it is, figure for
+    figure, another province's sheet, whose own sample it carries. That is the
+    CIS's workbook repeating one province under another's name, as study 3538
+    does: its "Provincia de Cáceres" sheet is Badajoz's, every share to the
+    fifteenth decimal and its 1,215 respondents (Cáceres's realised sample is
+    822). Such a province is withheld and said so, never given the copy.
+    """
+    good = {c: p for c, p in read.items() if p["n"] == p["realised"]}
+    withheld: dict[str, str] = {}
+    for code, prov in read.items():
+        if code in good:
+            continue
+        twin = next((c for c, p in good.items()
+                     if p["n"] == prov["n"] and p["shares"] == prov["shares"]), None)
+        if twin is None:
+            raise SystemExit(f"spain_cis: {where}: {prov['name']} has {prov['n']:,} respondents "
+                             f"to the religion question and a realised sample of "
+                             f"{prov['realised']:,}")
+        withheld[code] = (f"the CIS's sheet for {prov['name']} repeats {good[twin]['name']}'s, "
+                          f"every share and its {prov['n']:,} respondents ({prov['name']}'s "
+                          f"realised sample is {prov['realised']:,})")
+        log(f"  {where}: {prov['name']} withheld: {withheld[code]}")
+    for code, prov in good.items():
+        twins = [p["name"] for c, p in good.items() if c != code and p["shares"] == prov["shares"]]
+        if twins:
+            raise SystemExit(f"spain_cis: {where}: {prov['name']} and {twins} carry the same "
+                             f"shares")
+    return good, withheld
 
 
 def check_region(region: dict[str, float], provinces: dict[str, dict[str, Any]],
@@ -609,6 +653,8 @@ def build(results: list[tuple[Study, dict[str, Any]]], provinces: dict[str, dict
                 codes={"ine_ccaa": study.ccaa, "cis_study": study.number, "cis_n": region["n"]},
                 **fields(study, design, unit["name"], region["n"], region["shares"],
                          unit["name"], updated)))
+        for code, why in sorted(got.get("withheld", {}).items()):
+            skipped.append(f"{provinces[code]['name']}: {why} (study {study.number})")
         for code, prov in sorted(got.get("provinces", {}).items()):
             shape = provinces[code]
             if shape["parent"] != unit["id"]:

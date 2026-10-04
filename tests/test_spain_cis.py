@@ -72,7 +72,9 @@ def marginal_rows(title, shares, n):
 
 
 def workbook(provinces=CYL, region_shares=None, header="3545/0 PREELECTORAL ELECCIONES",
-             total=None, drop=None):
+             total=None, drop=None, copy=None, sample=None):
+    """A study workbook; ``copy`` = (province, source) writes source's sheet under province's
+    name, and ``sample`` = (province, n) gives a province's sheet another (N)."""
     import openpyxl
     book = openpyxl.Workbook()
     first = book.active
@@ -94,11 +96,17 @@ def workbook(provinces=CYL, region_shares=None, header="3545/0 PREELECTORAL ELEC
     book.create_sheet("Resultados_Castilla y León")
     for row in marginal_rows("Total", region, sum(n for _, _, n, _ in provinces)):
         book["Resultados_Castilla y León"].append(row)
+    index = {name: i for i, (_, name, _, _) in enumerate(provinces)}
     for i, (code, name, n, _) in enumerate(provinces):
         if name == drop:
             continue
+        source = copy[1] if copy and copy[0] == name else name
+        j = index[source]
+        n_shown = provinces[j][2]
+        if sample and sample[0] == name:
+            n_shown = sample[1]
         sheet = book.create_sheet(f"Resultados_{name}")
-        for row in marginal_rows(f"Provincia de {name}", province_shares(i), n):
+        for row in marginal_rows(f"Provincia de {name}", province_shares(j), n_shown):
             sheet.append(row)
     book.create_sheet("Sexo")
     buf = io.BytesIO()
@@ -226,6 +234,25 @@ class TestWorkbook(unittest.TestCase):
             s.read_workbook(workbook(drop="Soria"), STUDY)
         with self.assertRaises(SystemExit):
             s.read_workbook(workbook(total=8040), STUDY)
+
+    def test_a_province_answered_by_other_than_its_sample_stops(self):
+        with self.assertRaises(SystemExit):
+            s.read_workbook(workbook(sample=("Soria", 600)), STUDY)
+
+    def test_a_sheet_that_is_another_provinces_copy_is_withheld(self):
+        # Study 3538: the Cáceres sheet is Badajoz's, figure for figure.
+        got = s.read_workbook(workbook(copy=("Soria", "Burgos")), STUDY)
+        self.assertNotIn("42", got["provinces"])
+        self.assertIn("repeats Burgos's", got["withheld"]["42"])
+        self.assertIn("realised sample is 542", got["withheld"]["42"])
+        self.assertEqual(got["provinces"]["09"]["n"], 1044)
+        self.assertEqual(len(got["provinces"]), 8)
+
+    def test_two_provinces_with_one_set_of_shares_stop(self):
+        # The same copy, but with the province's own sample: nothing tells
+        # which sheet is whose, so nothing is written.
+        with self.assertRaises(SystemExit):
+            s.read_workbook(workbook(copy=("Soria", "Burgos"), sample=("Soria", 542)), STUDY)
 
 
 HTML = """<html><head><title>3448 Preelectoral del País Vasco</title></head><body>
