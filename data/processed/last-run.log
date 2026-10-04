@@ -1,198 +1,33 @@
-https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G09_LGA/1.0.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1 1,107,841 bytes
-  [1] SEXP  codelist=CL_C21_SEXP01 (3 codes) 3 constrained
-                     3  Persons
-                     1  Males
-                     2  Females
-  [2] BPLP  codelist=CL_C21_BPLP11 (53 codes) 53 constrained
-                    _T  Total
-                  7201  Afghanistan
-                    11  Australia
-                  7101  Bangladesh
-                  3202  Bosnia and Herzegovina
-                  8203  Brazil
-                  5102  Cambodia
-                  8102  Canada
-                  8204  Chile
-                  6101  China (excludes SARs and Taiwan)
-                  3204  Croatia
-                  4102  Egypt
-                  2102  England
-                  1502  Fiji
-                  2303  France
-                  2304  Germany
-                  3207  Greece
-                  6102  Hong Kong (SAR of China)
-                  7103  India
-                  5202  Indonesia
-                  4203  Iran
-                  4204  Iraq
-                  2201  Ireland
-                  3104  Italy
-                  6201  Japan
-                  6203  Korea, Republic of (South)
-                  4208  Lebanon
-                  5203  Malaysia
-                  3105  Malta
-                  9214  Mauritius
-                  5101  Myanmar
-                  7105  Nepal
-                  2308  Netherlands
-                  1201  New Zealand
-                  3206  North Macedonia
-                  7106  Pakistan
-                  1302  Papua New Guinea
-                  5204  Philippines
-                  3307  Poland
-                  1505  Samoa
-                  2105  Scotland
-                  5205  Singapore
-                  9225  South Africa
-                  7107  Sri Lanka
-                  6105  Taiwan
-                  5104  Thailand
-                  4215  Turkey
-                  8104  United States of America
-                  5105  Vietnam
-                  2106  Wales
-                  9232  Zimbabwe
-                    _O  Born elsewhere
-                    _N  Not stated
-  [3] AGEP  codelist=CL_C21_AGEP27 (10 codes) 10 constrained
-                    _T  Total
-                   0_4  0 - 4 years
-                  5_14  5 - 14 years
-                 15_24  15 - 24 years
-                 25_44  25 - 44 years
-                 45_54  45 - 54 years
-                 55_64  55 - 64 years
-                 65_74  65 - 74 years
-                 75_84  75 - 84 years
-                  GE85  85 years and over
-  [4] REGION  codelist=CL_LGA_2021 (578 codes) 565 constrained
-                   AUS  Australia
-                     1  New South Wales
-                 10050  Albury
-                 10180  Armidale Regional
-                 10250  Ballina
-                 10300  Balranald
-                 10470  Bathurst Regional
-                 10500  Bayside (NSW)
-                 10550  Bega Valley
-                 10600  Bellingen
-                 10650  Berrigan
-                 10750  Blacktown
-                 10800  Bland
-                 10850  Blayney
-                 10900  Blue Mountains
-                 10950  Bogan
-                 11150  Bourke
-                 11200  Brewarrina
-                 11250  Broken Hill
-                 11300  Burwood
-                 11350  Byron
-                 11400  Cabonne
-                 11450  Camden
-                 11500  Campbelltown (NSW)
-                 11520  Canada Bay
-                 11570  Canterbury-Bankstown
-                 11600  Carrathool
-                 11650  Central Coast (NSW)
-                 11700  Central Darling
-                 11720  Cessnock
-                 11730  Clarence Valley
-                 11750  Cobar
-                 11800  Coffs Harbour
-                 12000  Coolamon
-                 12150  Coonamble
-                 12160  Cootamundra-Gundagai Regional
-                 12350  Cowra
-                 12380  Cumberland
-                 12390  Dubbo Regional
-                 12700  Dungog
-                 12730  Edward River
-                 12750  Eurobodalla
-                 12850  Fairfield
-                 12870  Federation
-                 12900  Forbes
-                 12930  Georges River
-                 12950  Gilgandra
-                 13010  Glen Innes Severn
-                 13310  Goulburn Mulwaree
-                 13340  Greater Hume Shire
-                 13450  Griffith
-                 13550  Gunnedah
-                 13660  Gwydir
-                 13800  Hawkesbury
-                 13850  Hay
-                 13910  Hilltops
-                 14000  Hornsby
-                 14100  Hunters Hill
-                 14170  Inner West
-                 14220  Inverell
-                 14300  Junee
-                 14350  Kempsey
-                 14400  Kiama
-                 14500  Ku-ring-gai
-                 14550  Kyogle
-                 14600  Lachlan
-                 14650  Lake Macquarie
-                 14700  Lane Cove
-                 14750  Leeton
-                 14850  Lismore
-  [5] REGION_TYPE  codelist=CL_REGION_TYPE (43 codes) 1 constrained
-                   AUS  Australia
-                   STE  States and Territories
-                   SA4  Statistical Area Level 4
-                   SA3  Statistical Area Level 3
-                   SA2  Statistical Area Level 2
-                   SA1  Statistical Area Level 1
-                    RA  Remoteness Area
-                   SOS  Section of State
-                  SOSR  Section of State Ranges
-                    UC  Urban Centres
-                    UL  Urban Locations
-                  IREG  Indigenous Regions
-                  IARE  Indigenous Areas
-                  ILOC  Indigenous Locations
-                 GCCSA  Greater Capital City Statistical Areas
-                   SUA  Significant Urban Areas
-                   SLA  2011 Statistical Local Areas
-                   DZN  Destination Zones
-                   CED  Commonwealth Electoral Divisions
-                   SED  State Electoral Divisions
-                   LGA  Local Government Areas
-               LGA2011  Local Government Areas (2011)
-               LGA2012  Local Government Areas (2012)
-               LGA2013  Local Government Areas (2013)
-               LGA2014  Local Government Areas (2014)
-               LGA2015  Local Government Areas (2015)
-               LGA2016  Local Government Areas (2016)
-               LGA2017  Local Government Areas (2017)
-               LGA2018  Local Government Areas (2018)
-               LGA2019  Local Government Areas (2019)
-               LGA2020  Local Government Areas (2020)
-               LGA2021  Local Government Areas (2021)
-               LGA2022  Local Government Areas (2022)
-               LGA2023  Local Government Areas (2023)
-               LGA2024  Local Government Areas (2024)
-               LGA2025  Local Government Areas (2025)
-                   FED  Federal Electoral Division
-                   POA  Postal Areas
-                  NRMR  National Resource Management Regions
-                   ADD  Australian Drainage Divisions
-                    TR  Tourism Regions
-                   SSC  State Suburbs
-                    OT  Other
-  [6] STATE  codelist=CL_STATE (10 codes) 9 constrained
-                   AUS  Australia
-                     1  New South Wales
-                     2  Victoria
-                     3  Queensland
-                     4  South Australia
-                     5  Western Australia
-                     6  Tasmania
-                     7  Northern Territory
-                     8  Australian Capital Territory
-                     9  Other Territories
-  [7] TIME_PERIOD  codelist= (0 codes) 0 constrained
+
+== GET https://censusresults.nsonepal.gov.np/
+  200 text/html; charset=utf-8 16301737 https://censusresults.nsonepal.gov.np/
+    'National' -> https://censusresults.nsonepal.gov.np/downloads/national?type=report
+    'thematic' -> https://censusresults.nsonepal.gov.np/downloads/thematic?type=report
+    'Province/ District/ Local Report' -> https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=report
+    'Caste/ Ethnicity Report' -> https://censusresults.nsonepal.gov.np/downloads/caste-ethnicity?type=report
+    'Urban/ Rural Report' -> https://censusresults.nsonepal.gov.np/downloads/urban-rural?type=report
+    'Post Enumeration Survey Report' -> https://censusresults.nsonepal.gov.np/downloads/post-enumeration-report-survey?type=report
+    'Census in Nepal' -> https://censusresults.nsonepal.gov.np/downloads/census-in-nepal?type=report
+    'Report on Degree of Urbanization in Nepal' -> https://censusresults.nsonepal.gov.np/downloads/degree-urbanization-report?type=report
+    'Community Report' -> https://censusresults.nsonepal.gov.np/downloads/community?type=report
+    'Local Level Report' -> https://censusresults.nsonepal.gov.np/downloads/local-level-report?type=report
+    'Child Statistics' -> https://censusresults.nsonepal.gov.np/downloads/child-statistics-report?type=report
+    'National' -> https://censusresults.nsonepal.gov.np/downloads/national?type=data
+    'thematic' -> https://censusresults.nsonepal.gov.np/downloads/thematic?type=data
+    'Province/ District/ Local Report' -> https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=data
+    'Ward Report' -> https://censusresults.nsonepal.gov.np/downloads/ward?type=data
+    'Caste/ Ethnicity Report' -> https://censusresults.nsonepal.gov.np/downloads/caste-ethnicity?type=data
+    'Disability' -> https://censusresults.nsonepal.gov.np/downloads/disability?type=data
+    'Urban/ Rural Report' -> https://censusresults.nsonepal.gov.np/downloads/urban-rural?type=data
+    'House and Household Listing Results' -> https://censusresults.nsonepal.gov.np/downloads/household-results?type=data
+    'Community Report' -> https://censusresults.nsonepal.gov.np/downloads/community?type=data
+    'Child Statistics' -> https://censusresults.nsonepal.gov.np/downloads/child-statistics-report?type=data
+    'Dalit statistics' -> https://censusresults.nsonepal.gov.np/downloads/dalit-statistics-report?type=data
+    'Degurba' -> https://censusresults.nsonepal.gov.np/downloads/degurba-report?type=data
+    'Census Dataset' -> https://censusresults.nsonepal.gov.np/downloads/census-dataset
+
+== GET https://censusresults.nsonepal.gov.np/results/downloads
+  404 text/html; charset=utf-8 47759 https://censusresults.nsonepal.gov.np/results/downloads
+
+== GET https://censusresults.nsonepal.gov.np/results
+  404 text/html; charset=utf-8 47759 https://censusresults.nsonepal.gov.np/results
