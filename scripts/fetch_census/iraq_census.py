@@ -1060,17 +1060,14 @@ def governorate_ages(text: str, table: dict[str, Any]) -> dict[str, dict[str, An
             if figures:
                 unstated += figures[0]
             continue
-        if line.startswith("Total") or re.match(r"^Total\b", line):
-            figures = first_three(line)
-            if not figures:
-                continue
+        m = AGE_LABEL.search(line)
+        figures = first_three(line)
+        # A block's total row is the row with no age group whose total is a
+        # governorate's count in Table 11/2: the layout prints "Total" before
+        # it, the Arabic word after it, on a line of its own, or not at all.
+        if figures and not m and groups and figures[0] in by_total:
             total = figures[0]
-            gov = by_total.get(total)
-            if gov is None:
-                if groups:
-                    raise SystemExit(f"iraq_census: a Table 10/2 block totals {total:,}, "
-                                     f"no governorate's count in Table 11/2")
-                continue
+            gov = by_total[total]
             made = sum(n for _a, _b, n in groups) + unstated
             if made != total:
                 raise SystemExit(f"iraq_census: Table 10/2's {GOVERNORATE[gov]}: age groups "
@@ -1078,11 +1075,11 @@ def governorate_ages(text: str, table: dict[str, Any]) -> dict[str, dict[str, An
             if [(a, b) for a, b, _n in groups] != [(a, a + 4) for a in range(0, 85, 5)] + [(85, None)]:
                 raise SystemExit(f"iraq_census: Table 10/2's {GOVERNORATE[gov]}: age groups "
                                  f"{[(a, b) for a, b, _n in groups]}")
+            if gov in out:
+                raise SystemExit(f"iraq_census: Table 10/2 gives {GOVERNORATE[gov]} twice")
             out[gov] = {"groups": groups, "unstated": unstated, "total": total, "odd": odd}
             groups, unstated, odd = [], 0, []
             continue
-        m = AGE_LABEL.search(line)
-        figures = first_three(line)
         if not m or not figures:
             continue
         low = int(m.group(1)) if m.group(1) else 85
