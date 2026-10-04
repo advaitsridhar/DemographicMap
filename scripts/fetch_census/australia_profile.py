@@ -15,10 +15,11 @@ level and the nine states and territories at its first:
   ancestry share is taken of.
 * **G08 Ancestry by country of birth of parents** -- read in its "Total
   responses" column (``BPPP=_T``), which is each ancestry's count of the people
-  who named it. Up to two ancestries are recorded for each person, so these are
-  responses, and each share is the percentage of the unit's people who reported
-  that ancestry: they sum to about 130%, as the ABS's own QuickStats present
-  them ("English 33.0%, Australian 29.9% ...").
+  who named it; the table's own total row (``ANCP=_T``) counts persons. Up to
+  two ancestries are recorded for each person, so the ancestries are responses,
+  and each share is the percentage of the unit's people who reported that
+  ancestry: they sum to about 130%, as the ABS's own QuickStats present them
+  ("English 33.0%, Australian 29.9% ...").
 
 **Ancestry on the ethnicity field.** The census asks no ethnicity question as
 such; ancestry is the question it asks instead, and the ABS codes the answers
@@ -41,8 +42,8 @@ the unit in stops the run; so does a code the tables do not know.
   perturbation of small cells;
 * every state's LGAs (the "no usual address" and "migratory" codes among them)
   make the state, and the states make Australia;
-* each unit's ancestries make its total responses, and the responses come to
-  between one and two per person;
+* each unit's ancestry responses come to between one and two for every person
+  G08 counts there, and G08's persons are G01's;
 * Australia's English and Australian ancestry shares are the published 33.0%
   and 29.9%.
 
@@ -160,7 +161,14 @@ def medians(rows: Iterable[tuple[dict[str, str], float]]) -> dict[str, float]:
 
 def ancestries(rows: Iterable[tuple[dict[str, str], float]]
                ) -> dict[str, tuple[dict[str, float], float]]:
-    """{region: ({ancestry: responses}, total responses)} from G08's total column."""
+    """{region: ({ancestry: responses}, persons)} from G08's total column.
+
+    The table's own total row (``ANCP=_T``) counts persons, not responses --
+    Albury's is 56,093, its population -- and the ancestries above it count
+    responses, up to two a person. So the responses must come to between one
+    and two for every person the total counts, and that total is what each
+    share is taken of, as QuickStats takes it.
+    """
     counts: dict[str, dict[str, float]] = defaultdict(dict)
     totals: dict[str, float] = {}
     for labels, value in rows:
@@ -174,13 +182,15 @@ def ancestries(rows: Iterable[tuple[dict[str, str], float]]
             counts[labels["REGION_CODE"]][label] = value
     out = {}
     for region, parts in counts.items():
-        total = totals.get(region)
-        if total is None:
+        people = totals.get(region)
+        if people is None:
             raise SystemExit(f"australia_profile: G08 region {region} has no total")
-        if abs(sum(parts.values()) - total) > tolerance(total):
-            raise SystemExit(f"australia_profile: G08 region {region}: ancestries sum to "
-                             f"{sum(parts.values()):,.0f}, total responses {total:,.0f}")
-        out[region] = (parts, total)
+        responses, slack = sum(parts.values()), tolerance(people)
+        if not people - slack <= responses <= 2 * people + slack:
+            raise SystemExit(f"australia_profile: G08 region {region}: {responses:,.0f} "
+                             f"ancestry responses for {people:,.0f} people; the census "
+                             "records one or two for each person")
+        out[region] = (parts, people)
     return out
 
 
@@ -204,9 +214,9 @@ def check_national(people: dict[str, dict[str, float]], median: dict[str, float]
     if median.get("AUS") != NATIONAL["median_age"]:
         raise SystemExit(f"australia_profile: Australia's median age read {median.get('AUS')}, "
                          f"published {NATIONAL['median_age']}")
-    parts, _ = ancestry["AUS"]
+    parts, counted = ancestry["AUS"]
     for label in ("English", "Australian"):
-        share = round(100.0 * parts.get(label, 0) / nation["persons"], 1)
+        share = round(100.0 * parts.get(label, 0) / counted, 1)
         log(f"  Australia {label} ancestry {share}% (published {NATIONAL[label]}%)")
         if abs(share - NATIONAL[label]) > 0.15:
             raise SystemExit(f"australia_profile: Australia's {label} ancestry is {share}%, "
@@ -276,13 +286,12 @@ def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
             "The ABS's own median age of persons for this area (2021 Census, G02), "
             "published in whole years; the census counts people at their usual address.")
     if ancestry is not None:
-        parts, responses = ancestry
-        slack = tolerance(people["persons"])
-        if not people["persons"] - slack <= responses <= 2 * people["persons"] + slack:
-            raise SystemExit(f"australia_profile: {name} ({code}): {responses:,.0f} ancestry "
-                             f"responses for {people['persons']:,.0f} people; the census "
-                             "records one or two for each person")
-        fields["ethnicity"] = ancestry_shares(parts, people["persons"])
+        parts, counted = ancestry
+        responses = sum(parts.values())
+        if abs(counted - people["persons"]) > tolerance(people["persons"]):
+            raise SystemExit(f"australia_profile: {name} ({code}): G08 counts {counted:,.0f} "
+                             f"people, G01 {people['persons']:,.0f}")
+        fields["ethnicity"] = ancestry_shares(parts, counted)
         fields["ethnicity_year"] = YEAR
         fields["ethnicity_basis"] = "ancestry (multi-response)"
         fields["ethnicity_note"] = (
@@ -291,7 +300,7 @@ def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
             "Classification of Cultural and Ethnic Groups; recorded on the ethnicity field by "
             "the owner's decision of 19 September 2026. Up to two ancestries are recorded for "
             f"each person, so the {responses:,.0f} responses here exceed the "
-            f"{people['persons']:,.0f} people and each share is the percentage of the people "
+            f"{counted:,.0f} people and each share is the percentage of the people "
             "who reported that ancestry: the shares sum to more than 100, as in the ABS's own "
             "QuickStats. G08 names 30 ancestries; every other one is in 'Other', and 'Not "
             "stated' is people who gave none. ABS 2021 Census, G08 (total responses).")

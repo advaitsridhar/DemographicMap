@@ -21,9 +21,12 @@ def g02(region, median):
             ({"MEDAVG_CODE": "2", "REGION_CODE": region}, 805.0)]
 
 
-def g08(region, parts):
+def g08(region, parts, persons=None):
+    # The table's own total row counts persons, not responses: Albury's G08
+    # total is 56,093, its population, beside some 73,000 responses.
+    persons = persons if persons is not None else round(sum(parts.values()) / 1.3)
     rows = [({"ANCP_CODE": "_T", "ANCP": "Total", "BPPP_CODE": "_T",
-              "REGION_CODE": region}, sum(parts.values()))]
+              "REGION_CODE": region}, persons)]
     for i, (label, value) in enumerate(parts.items()):
         rows.append(({"ANCP_CODE": str(i), "ANCP": label, "BPPP_CODE": "_T",
                       "REGION_CODE": region}, value))
@@ -49,10 +52,10 @@ class Persons(unittest.TestCase):
 
 class Ancestry(unittest.TestCase):
     def test_only_the_total_responses_column_is_read(self):
-        parts, total = ap.ancestries(g08("10050", {"English": 20000, "Australian": 18000,
-                                                   "Not stated": 4000}))["10050"]
+        parts, people = ap.ancestries(g08("10050", {"English": 20000, "Australian": 18000,
+                                                    "Not stated": 4000}, 32000))["10050"]
         self.assertEqual(parts, {"English": 20000, "Australian": 18000, "Not stated": 4000})
-        self.assertEqual(total, 42000)
+        self.assertEqual(people, 32000)
 
     def test_shares_are_of_people_and_may_pass_100(self):
         rows = ap.ancestry_shares({"English": 30000, "Australian": 28000, "Irish": 9000},
@@ -61,11 +64,13 @@ class Ancestry(unittest.TestCase):
         self.assertEqual(rows[0]["pct"], 60.0)
         self.assertGreater(sum(r["pct"] for r in rows), 100)
 
-    def test_parts_that_miss_the_total_stop_the_run(self):
-        rows = g08("10050", {"English": 20000, "Australian": 18000})
-        rows[0] = (rows[0][0], 60000.0)
+    def test_more_than_two_responses_a_person_stop_the_run(self):
         with self.assertRaises(SystemExit):
-            ap.ancestries(rows)
+            ap.ancestries(g08("10050", {"English": 20000, "Australian": 18000}, 15000))
+
+    def test_fewer_responses_than_people_stop_the_run(self):
+        with self.assertRaises(SystemExit):
+            ap.ancestries(g08("10050", {"English": 20000, "Australian": 18000}, 60000))
 
 
 def unit(uid, name, code, parent, population):
@@ -100,7 +105,7 @@ class Record(unittest.TestCase):
         people = {"persons": 56093, "male": 27416, "female": 28677}
         rec = ap.unit_record("10050", "Albury", ALBURY, "admin2", people=people,
                              median=39.0, ancestry=({"English": 20000, "Not stated": 4000},
-                                                    60000.0),
+                                                    56093.0),
                              parent_name="New South Wales")
         self.assertEqual(rec["median_age"]["value"], 39)
         self.assertIsInstance(rec["median_age"]["value"], int)
@@ -112,11 +117,11 @@ class Record(unittest.TestCase):
         # Nothing the tables do not carry is claimed: population stays the map's.
         self.assertEqual(rec["population"]["status"], "not_available")
 
-    def test_more_than_two_responses_a_person_stop_the_run(self):
+    def test_g08_and_g01_disagreeing_about_the_people_stop_the_run(self):
         people = {"persons": 1000, "male": 500, "female": 500}
         with self.assertRaises(SystemExit):
             ap.unit_record("10050", "Albury", ALBURY, "admin2", people=people, median=39,
-                           ancestry=({"English": 2500}, 2500.0), parent_name=None)
+                           ancestry=({"English": 2500}, 2000.0), parent_name=None)
 
 
 class Build(unittest.TestCase):
@@ -134,11 +139,11 @@ class Build(unittest.TestCase):
         # NSW's people outside the two drawn LGAs, under a code no polygon has.
         lgas += g01("19399", rest, rest // 2, rest - rest // 2, "Unincorporated NSW")
         top_ancestry = g08("AUS", {"English": 8_389_400, "Australian": 7_601_400,
-                                   "Other": 16_000_000})
+                                   "Other": 16_000_000}, 25_422_788)
         for code in "123456789":
-            scale = (self.NSW if code == "1" else 1000) / 1000
-            top_ancestry += g08(code, {"English": 330 * scale, "Australian": 300 * scale,
-                                       "Other": 700 * scale})
+            people = self.NSW if code == "1" else 1000
+            top_ancestry += g08(code, {"English": 0.33 * people, "Australian": 0.3 * people,
+                                       "Other": 0.7 * people}, people)
         return {
             ("G01", "LGA"): g01("10050", 56093, 27416, 28677, "Albury")
             + g01("10500", 175184, 85000, 90184, "Bayside (NSW)") + lgas,
@@ -146,8 +151,8 @@ class Build(unittest.TestCase):
             ("G02", "LGA"): g02("10050", 39.0) + g02("10500", 38.0),
             ("G02", "SA2"): g02("AUS", 38.0) + [r for c in "123456789" for r in g02(c, 40.0)],
             ("G08", "LGA"): g08("10050", {"English": 20000, "Australian": 19000,
-                                         "Other": 30000})
-            + g08("10500", {"English": 50000, "Australian": 40000, "Other": 130000}),
+                                         "Other": 30000}, 56093)
+            + g08("10500", {"English": 50000, "Australian": 40000, "Other": 130000}, 175184),
             ("G08", "SA2"): top_ancestry,
         }
 
