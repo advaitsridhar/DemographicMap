@@ -451,7 +451,10 @@ class TheNote(unittest.TestCase):
         note = m.unit_note(unit, "N", rows, 250.0)
         self.assertIn("N covers what in 2014 were the gemeenten A and B", note)
         self.assertIn("Low precision", note)
-        self.assertNotIn("Low precision", m.unit_note(unit, "N", rows, 300.0))
+        self.assertIn("would give about 250.", note)
+        larger = m.unit_note(unit, "N", rows, 1234.0)
+        self.assertNotIn("Low precision", larger)
+        self.assertIn("would give about 1,234.", larger)
 
     def test_the_note_says_what_the_survey_was(self):
         self.assertIn("Enquête Beroepsbevolking", m.NOTE)

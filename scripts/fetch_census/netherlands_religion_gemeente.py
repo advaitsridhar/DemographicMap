@@ -647,9 +647,9 @@ def unit_note(unit: Unit, name: str, table: dict[str, dict[str, Any]], responden
     if unit.events:
         what += (f" Since 2014, {'; '.join(unit.events)} (70739ned): {share(unit.moved)} of its "
                  f"people, within the {100 * tolerance:.0f}% a boundary correction may move.")
-    if respondents < LOW_PRECISION:
-        what += (" Low precision: CBS does not print the number of respondents, and at the survey's "
-                 f"national rate this gemeente's adults would give about {respondents:,.0f}.")
+    what += (f" {'Low precision: ' if respondents < LOW_PRECISION else ''}CBS does not print the "
+             f"number of respondents; at the survey's national rate (about {RESPONDENTS:,} of the "
+             f"country's adults) this gemeente's adults would give about {respondents:,.0f}.")
     return NOTE + what
 
 
