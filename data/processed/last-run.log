@@ -1,17 +1,102 @@
-== https://documents.dadesobertes.gencat.cat/ceo/docs/microdades_anonimitzades_bop_presencial.sav
-  HTTP 200; application/octet-stream; 238,862,365 bytes; final https://documents.dadesobertes.gencat.cat/ceo/docs/microdades_anonimitzades_bop_presencial.sav
-  (the file): 59,838 rows, 1535 variables; file label None; encoding WINDOWS-1252
-  6,000 rows with BOP_NUM >= 62
-  LLENGUA_PRIMERA_ALTRES (Concretament, quina llengua o llengües va parlar primer vostè a casa quan era petit/a?) value labels: 1=Català i castellà per igual; 2=Aranès; 3=Àrab; 4=Romanès; 80=Altres llengües o combinacions
-  LLENGUA_PRIMERA_ALTRES by LLENGUA_PRIMERA_1_3: columns 1.0=Català i castellà , 3.0=Àrab, 4.0=Romanès, 80.0=Altres llengües o , NaN=
-    1.0 Català                 n= 2241: 0 0 0 0 2241
-    2.0 Castellà               n= 3314: 0 0 0 0 3314
-    80.0 Altres opcions         n=  427: 191 55 5 176 0
-    98.0 No ho sap              n=   14: 0 0 0 0 14
-    99.0 No contesta            n=    4: 0 0 0 0 4
-  LLENGUA_PRIMERA_ALTRES_LITERALS by LLENGUA_PRIMERA_1_3: columns =, ALEMAN=, ALEMANY=, AMASIK=, AMAZIGH=, ANGLES=, ANemany=, ARAB=, ARABE=, Amazig=, Angles=, Arab=, Arab i frances=, Arabe=, Arabe castellano=, BAMBARA=, BERBER=, BEREBER=, BRASILEÑO=, Bangla=, CALÓ=, CASTELLANO EUSKERA=, CASTELLÀ I GALLEC=, Castellano portugues=, Catala=, Catala frances=, Catala i frances=, DARIJA=, EUSKARA=, EUSKERA=, EUSKERA / BASC I CASTELLÀ=, Euskera=, FANCES=, FILIPINA=, FR=, FRANCES=, FRANCÉS, EUSKERA, INGLES=, FULAH=, Fatdambu=, Filipino=, Fines=, Frances=, Frances i Catala=, GALEGO=, GALLEC=, GALLEG=, GALLEGO=, GALLEGO Y CASTELLANO=, Galego=, Gallec=, Gallego=, Guarani=, HINDI=, HOLANDÉS=, INGLES=, ITALIA=, ITALIANO=, ITALIANO Y ALEMÁN.=, Ilocano=, Ingles; castelkano=, Japones=, Ketchua=, LA FABLA ARAGONESS=, MANDINGA=, NEERLANDES=, NORUEGO=, PERSA=, PORTUGUES=, PORTUGUES I CATALA LES DUES=, PORTUGUÈS=, PORTUGUÉS=, POTUGUÉS=, PUNJABI=, PUNJHABI=, Panjabi=, Portugues=, Propia=, Punjabi=, RIFINIO=, RIFIÑO=, RUS=, RUSO=, Ruso=, SARA JOLE=, SONINKE=, Sonike=, TURCO=, Twi=, URDU=, Ucraniano=, Urdu=, VALENCIA=, Valencia=, Valenciano=, WALOP=, XINES=
-    1.0 Català                 n= 2241: 2241 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-    2.0 Castellà               n= 3314: 3314 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-    80.0 Altres opcions         n=  427: 246 2 3 1 1 4 1 1 1 1 3 2 1 2 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 3 1 3 1 1 1 10 1 1 1 1 1 3 1 1 2 2 14 1 1 4 7 2 1 1 1 2 4 1 1 1 1 1 1 1 1 1 1 13 1 1 4 1 2 1 1 2 2 1 1 1 2 2 3 1 1 1 1 1 4 1 4 2 3 1 1 1
-    98.0 No ho sap              n=   14: 14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-    99.0 No contesta            n=    4: 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+## https://www.cbs.nl/nl-nl/maatwerk/2015/20/religie-en-kerkbezoek-naar-gemeente-2010-2014
+   HTTP 200, 49,927 bytes, text/html; charset=utf-8 
+   link: 'Aanvullend statistisch onderzoek' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/publicaties/recent
+   link: 'Religie en kerkbezoek naar gemeente 2010-2014' -> https://www.cbs.nl/-/media/imported/documents/2015/20/religie-en-kerkbezoek-naar-gemeente-2010-2014.xls?sc_lang=nl-nl
+   link: 'kerkbezoek' -> https://www.cbs.nl/nl-nl/zoeken?q=keyword:kerkbezoek
+   link: 'Deel deze pagina op LinkedIn' -> https://www.linkedin.com/shareArticle?mini=true&url=https://www.cbs.nl/nl-nl/maatwerk/2015/20/religie-en-kerkbezoek-naar-gemeente-2010-2014?pk_campaign=social_share&pk_source=linkedin&title=&summary=&source=
+   link: 'Deel deze pagina op Facebook' -> https://www.facebook.com/sharer/sharer.php?u=https://www.cbs.nl/nl-nl/maatwerk/2015/20/religie-en-kerkbezoek-naar-gemeente-2010-2014?pk_campaign=social_share&pk_source=facebook
+   link: 'Mail deze pagina' -> mailto:?&subject=&body=https://www.cbs.nl/nl-nl/maatwerk/2015/20/religie-en-kerkbezoek-naar-gemeente-2010-2014?pk_campaign=social_share&pk_source=mail
+   link: 'Hernieuwbare energie in Nederland, 2025' -> https://www.cbs.nl/nl-nl/publicatie/2026/40/hernieuwbare-energie-in-nederland-2025
+   link: 'Aanvullend statistisch onderzoek Overzicht publicaties' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/publicaties/recent
+   link: 'Nieuwbouwkoopwoningen - prijzen en aantallen 5-10-2026 06:30 Studieschuld studenten en oud' -> https://www.cbs.nl/nl-nl/publicatieplanning
+   link: 'Microdata' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen
+   link: 'Aanvullend statistisch onderzoek' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/aanvullend-statistisch-onderzoek
+   link: 'Publicaties' -> https://www.cbs.nl/nl-nl/onze-diensten/overzicht-publicaties
+   link: 'Abonnementen' -> https://www.cbs.nl/nl-nl/cbs-publicatie-abonnementen
+   link: 'Publicatieplanning' -> https://www.cbs.nl/nl-nl/publicatieplanning
+   (90 links in all)
+   text: Religie en kerkbezoek naar gemeente 2010-2014 | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine voor samenwerkingspartners Open data Aanvullend statistisch onderzoek Arbeid en inkomen Arbeid en sociale zekerheid Inkomen en bestedingen Economie Bedrijven Bouwen en wonen Financiële en zakelijke diensten Handel en horeca Industrie en energie Internationale handel Landbouw Macro-economie Overheid en politiek Prijzen Maatschappij Bevolking Gezondheid en welzijn Natuur en milieu Onderwijs Veiligheid en recht Verkeer en vervoer Vrije tijd en cultuur Regio Over ons Taal: English (EN) Home Home Religie en kerkbezoek naar gemeente 2010-2014 13-5-2015 07:00 De gegevens over religie zijn ontleend aan de Enqu&#xEA;te Beroepsbevolking (EBB), waar in de periode 2010&#x2013;2014 circa 460 duizend volwassen personen (18 jaar of ouder) aan hebben meegewerkt. De gegevens zijn verzameld met behulp van het internet, telefonisch en met een bezoek aan huis. Downloads Tabel - Religie en kerkbezoek naar gemeente 2010-2014 Lees meer over kerkbezoek Deel deze pagina D
+
+## https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015
+   HTTP 200, 47,888 bytes, text/html; charset=utf-8 
+   link: 'Aanvullend statistisch onderzoek' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/publicaties/recent
+   link: 'De religieuze kaart van Nederland, 2010-2015' -> https://www.cbs.nl/-/media/_pdf/2016/51/religie-regionaal-2010-2015.pdf
+   link: 'kerkbezoek' -> https://www.cbs.nl/nl-nl/zoeken?q=keyword:kerkbezoek
+   link: 'Deel deze pagina op LinkedIn' -> https://www.linkedin.com/shareArticle?mini=true&url=https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015?pk_campaign=social_share&pk_source=linkedin&title=&summary=&source=
+   link: 'Deel deze pagina op Facebook' -> https://www.facebook.com/sharer/sharer.php?u=https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015?pk_campaign=social_share&pk_source=facebook
+   link: 'Mail deze pagina' -> mailto:?&subject=&body=https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015?pk_campaign=social_share&pk_source=mail
+   link: 'Hernieuwbare energie in Nederland, 2025' -> https://www.cbs.nl/nl-nl/publicatie/2026/40/hernieuwbare-energie-in-nederland-2025
+   link: 'Aanvullend statistisch onderzoek Overzicht publicaties' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/publicaties/recent
+   link: 'Nieuwbouwkoopwoningen - prijzen en aantallen 5-10-2026 06:30 Studieschuld studenten en oud' -> https://www.cbs.nl/nl-nl/publicatieplanning
+   link: 'Microdata' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen
+   link: 'Aanvullend statistisch onderzoek' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/aanvullend-statistisch-onderzoek
+   link: 'Publicaties' -> https://www.cbs.nl/nl-nl/onze-diensten/overzicht-publicaties
+   link: 'Abonnementen' -> https://www.cbs.nl/nl-nl/cbs-publicatie-abonnementen
+   link: 'Publicatieplanning' -> https://www.cbs.nl/nl-nl/publicatieplanning
+   (92 links in all)
+   text: De religieuze kaart van Nederland, 2010&#x2013;2015 | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine voor samenwerkingspartners Open data Aanvullend statistisch onderzoek Arbeid en inkomen Arbeid en sociale zekerheid Inkomen en bestedingen Economie Bedrijven Bouwen en wonen Financiële en zakelijke diensten Handel en horeca Industrie en energie Internationale handel Landbouw Macro-economie Overheid en politiek Prijzen Maatschappij Bevolking Gezondheid en welzijn Natuur en milieu Onderwijs Veiligheid en recht Verkeer en vervoer Vrije tijd en cultuur Regio Over ons Taal: English (EN) Home Home De religieuze kaart van Nederland, 2010&#x2013;2015 22-12-2016 15:30 Regionaal overzicht van de kerkelijke gezindte en het bijwonen van religieuze diensten in provincies en gemeenten. Op basis van regionaal gedetailleerde cijfers over de periode 2010&ndash;2015, is een religieuze kaart gemaakt. Deze toont de kerkelijke gezindte en het bijwonen van religieuze diensten in provincies en gemeenten. Er zijn grote verschillen tussen de regionale gebieden in de
+
+## https://www.cbs.nl/nl-nl/zoeken?q=religie%20gemeente%20maatwerk
+   HTTP 200, 78,085 bytes, text/html; charset=utf-8 
+   link: 'Aanvullend statistisch onderzoek' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/publicaties/recent
+   link: 'Religieuze betrokkenheid; persoonskenmerken' -> https://www.cbs.nl/nl-nl/cijfers/detail/82904NED?q=religie%20gemeente%20maatwerk
+   link: 'Religie naar regio, 2021/2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025
+   link: 'Daling aandeel mensen dat aangeeft bij religie te horen stagneert' -> https://www.cbs.nl/nl-nl/nieuws/2025/16/daling-aandeel-mensen-dat-aangeeft-bij-religie-te-horen-stagneert
+   link: 'Tijdlijn kerkelijke gezindte' -> https://www.cbs.nl/nl-nl/visualisaties/tijdlijn-125-jaar-kerkelijke-gezindte
+   link: 'Maatwerk in de Bijstandsuitkeringenstatistiek' -> https://www.cbs.nl/nl-nl/maatwerk/2025/07/maatwerk-in-de-bijstandsuitkeringenstatistiek
+   link: 'Kerkelijke gezindten langs de meetlat, 1849&#x2013;2023' -> https://www.cbs.nl/nl-nl/corporate/2024/13/kerkelijke-gezindten-langs-de-meetlat-1849-2023
+   link: 'Verhuisde personen; binnen gemeenten, tussen gemeenten, regio' -> https://www.cbs.nl/nl-nl/cijfers/detail/60048ned?q=religie%20gemeente%20maatwerk
+   link: '1889-1971: Ontkerkelijking vanuit het noorden' -> https://www.cbs.nl/nl-nl/visualisaties/tijdlijn-125-jaar-kerkelijke-gezindte/1889-1971-ontkerkelijking-vanuit-het-noorden
+   link: 'Tussen gemeenten verhuisde personen' -> https://www.cbs.nl/nl-nl/cijfers/detail/81734NED?q=religie%20gemeente%20maatwerk
+   link: 'Huishoudelijk restafval; nascheiding per gemeente' -> https://www.cbs.nl/nl-nl/cijfers/detail/86053NED?q=religie%20gemeente%20maatwerk
+   link: 'Huishoudelijk afval per gemeente per inwoner' -> https://www.cbs.nl/nl-nl/cijfers/detail/83452NED?q=religie%20gemeente%20maatwerk
+   link: 'Barometer Culturele Diversiteit Gemeente Arnhem, juni 2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/39/barometer-culturele-diversiteit-gemeente-arnhem-juni-2026
+   link: 'Voorlopige achterstandsscores gemeenten 2025/2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/32/voorlopige-achterstandsscores-gemeenten-2025-2026
+   link: 'Indicatoren jeugdzorg in natura; gemeenten' -> https://www.cbs.nl/nl-nl/cijfers/detail/85098NED?q=religie%20gemeente%20maatwerk
+   link: 'Woonlasten huishoudens; kenmerken huishouden, woning, gemeente' -> https://www.cbs.nl/nl-nl/cijfers/detail/85950NED?q=religie%20gemeente%20maatwerk
+   link: 'Kinderopvang in gemeente Groningen, 2023-2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/31/kinderopvang-in-gemeente-groningen-2023-2025
+   link: 'Pagina 1' -> https://www.cbs.nl/nl-nl/zoeken?q=religie%20gemeente%20maatwerk&amp;selectedperiod=all-periods&amp;pageindex=1
+   link: 'Pagina 2' -> https://www.cbs.nl/nl-nl/zoeken?q=religie%20gemeente%20maatwerk&selectedperiod=all-periods&pageindex=2
+   link: 'Pagina 3' -> https://www.cbs.nl/nl-nl/zoeken?q=religie%20gemeente%20maatwerk&selectedperiod=all-periods&pageindex=3
+   link: 'Pagina 327' -> https://www.cbs.nl/nl-nl/zoeken?q=religie%20gemeente%20maatwerk&amp;selectedperiod=all-periods&amp;pageindex=327
+   link: 'Volgende Volgende Pagina &gt;' -> https://www.cbs.nl/nl-nl/zoeken?q=religie%20gemeente%20maatwerk&amp;selectedperiod=all-periods&amp;pageindex=2
+   link: 'Microdata' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen
+   link: 'Aanvullend statistisch onderzoek' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/aanvullend-statistisch-onderzoek
+   link: 'Publicaties' -> https://www.cbs.nl/nl-nl/onze-diensten/overzicht-publicaties
+   link: 'Abonnementen' -> https://www.cbs.nl/nl-nl/cbs-publicatie-abonnementen
+   link: 'Publicatieplanning' -> https://www.cbs.nl/nl-nl/publicatieplanning
+   (105 links in all)
+   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine voor samenwerkingspartners Open data Aanvullend statistisch onderzoek Arbeid en inkomen Arbeid en sociale zekerheid Inkomen en bestedingen Economie Bedrijven Bouwen en wonen Financiële en zakelijke diensten Handel en horeca Industrie en energie Internationale handel Landbouw Macro-economie Overheid en politiek Prijzen Maatschappij Bevolking Gezondheid en welzijn Natuur en milieu Onderwijs Veiligheid en recht Verkeer en vervoer Vrije tijd en cultuur Regio Over ons Taal: English (EN) Home Home Zoekresultaten 8158 resultaten voor religie gemeente maatwerk Filteren Filteren en sorteren Type Uitleg Type Cijfers Cijfers in tabellen op StatLine, de databank van het CBS, en resultaten van aanvullend statistisch onderzoek. Artikelen Korte nieuwsberichten over de onderzoeksresultaten en diverse achtergrondartikelen. Publicaties Langere publicaties, vaak met een jaarlijks terugkerend karakter, die een onderwerp uitgebreid beschrijven. Dashboards Dashboards met grafieken en andere visualisaties di
+
+## https://www.cbs.nl/nl-nl/zoeken?q=kerkelijke%20gezindte%20gemeente
+   HTTP 200, 78,200 bytes, text/html; charset=utf-8 
+   link: 'Aanvullend statistisch onderzoek' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/publicaties/recent
+   link: 'Religieuze betrokkenheid; persoonskenmerken' -> https://www.cbs.nl/nl-nl/cijfers/detail/82904NED?q=kerkelijke%20gezindte%20gemeente
+   link: 'Religie naar regio, 2021/2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025
+   link: 'Kerkelijke gezindten langs de meetlat, 1849&#x2013;2023' -> https://www.cbs.nl/nl-nl/corporate/2024/13/kerkelijke-gezindten-langs-de-meetlat-1849-2023
+   link: 'Daling aandeel mensen dat aangeeft bij religie te horen stagneert' -> https://www.cbs.nl/nl-nl/nieuws/2025/16/daling-aandeel-mensen-dat-aangeeft-bij-religie-te-horen-stagneert
+   link: 'Tijdlijn kerkelijke gezindte' -> https://www.cbs.nl/nl-nl/visualisaties/tijdlijn-125-jaar-kerkelijke-gezindte
+   link: '1971-2023: Groei kleinere gezindten' -> https://www.cbs.nl/nl-nl/visualisaties/tijdlijn-125-jaar-kerkelijke-gezindte/1971-2023-groei-kleinere-gezindten
+   link: '1889-1971: Ontkerkelijking vanuit het noorden' -> https://www.cbs.nl/nl-nl/visualisaties/tijdlijn-125-jaar-kerkelijke-gezindte/1889-1971-ontkerkelijking-vanuit-het-noorden
+   link: 'Verhuisde personen; binnen gemeenten, tussen gemeenten, regio' -> https://www.cbs.nl/nl-nl/cijfers/detail/60048ned?q=kerkelijke%20gezindte%20gemeente
+   link: '1889-1971: Grotere kerkelijke pluriformiteit' -> https://www.cbs.nl/nl-nl/visualisaties/tijdlijn-125-jaar-kerkelijke-gezindte/1889-1971-grotere-kerkelijke-pluriformiteit
+   link: 'Tussen gemeenten verhuisde personen' -> https://www.cbs.nl/nl-nl/cijfers/detail/81734NED?q=kerkelijke%20gezindte%20gemeente
+   link: 'Huishoudelijk restafval; nascheiding per gemeente' -> https://www.cbs.nl/nl-nl/cijfers/detail/86053NED?q=kerkelijke%20gezindte%20gemeente
+   link: 'Huishoudelijk afval per gemeente per inwoner' -> https://www.cbs.nl/nl-nl/cijfers/detail/83452NED?q=kerkelijke%20gezindte%20gemeente
+   link: 'Barometer Culturele Diversiteit Gemeente Arnhem, juni 2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/39/barometer-culturele-diversiteit-gemeente-arnhem-juni-2026
+   link: 'Voorlopige achterstandsscores gemeenten 2025/2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/32/voorlopige-achterstandsscores-gemeenten-2025-2026
+   link: 'Indicatoren jeugdzorg in natura; gemeenten' -> https://www.cbs.nl/nl-nl/cijfers/detail/85098NED?q=kerkelijke%20gezindte%20gemeente
+   link: 'Woonlasten huishoudens; kenmerken huishouden, woning, gemeente' -> https://www.cbs.nl/nl-nl/cijfers/detail/85950NED?q=kerkelijke%20gezindte%20gemeente
+   link: 'Pagina 1' -> https://www.cbs.nl/nl-nl/zoeken?q=kerkelijke%20gezindte%20gemeente&amp;selectedperiod=all-periods&amp;pageindex=1
+   link: 'Pagina 2' -> https://www.cbs.nl/nl-nl/zoeken?q=kerkelijke%20gezindte%20gemeente&selectedperiod=all-periods&pageindex=2
+   link: 'Pagina 3' -> https://www.cbs.nl/nl-nl/zoeken?q=kerkelijke%20gezindte%20gemeente&selectedperiod=all-periods&pageindex=3
+   link: 'Pagina 307' -> https://www.cbs.nl/nl-nl/zoeken?q=kerkelijke%20gezindte%20gemeente&amp;selectedperiod=all-periods&amp;pageindex=307
+   link: 'Volgende Volgende Pagina &gt;' -> https://www.cbs.nl/nl-nl/zoeken?q=kerkelijke%20gezindte%20gemeente&amp;selectedperiod=all-periods&amp;pageindex=2
+   link: 'Microdata' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen
+   link: 'Aanvullend statistisch onderzoek' -> https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/aanvullend-statistisch-onderzoek
+   link: 'Publicaties' -> https://www.cbs.nl/nl-nl/onze-diensten/overzicht-publicaties
+   link: 'Abonnementen' -> https://www.cbs.nl/nl-nl/cbs-publicatie-abonnementen
+   link: 'Publicatieplanning' -> https://www.cbs.nl/nl-nl/publicatieplanning
+   (105 links in all)
+   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine voor samenwerkingspartners Open data Aanvullend statistisch onderzoek Arbeid en inkomen Arbeid en sociale zekerheid Inkomen en bestedingen Economie Bedrijven Bouwen en wonen Financiële en zakelijke diensten Handel en horeca Industrie en energie Internationale handel Landbouw Macro-economie Overheid en politiek Prijzen Maatschappij Bevolking Gezondheid en welzijn Natuur en milieu Onderwijs Veiligheid en recht Verkeer en vervoer Vrije tijd en cultuur Regio Over ons Taal: English (EN) Home Home Zoekresultaten 7665 resultaten voor kerkelijke gezindte gemeente Filteren Filteren en sorteren Type Uitleg Type Cijfers Cijfers in tabellen op StatLine, de databank van het CBS, en resultaten van aanvullend statistisch onderzoek. Artikelen Korte nieuwsberichten over de onderzoeksresultaten en diverse achtergrondartikelen. Publicaties Langere publicaties, vaak met een jaarlijks terugkerend karakter, die een onderwerp uitgebreid beschrijven. Dashboards Dashboards met grafieken en andere visualisaties
