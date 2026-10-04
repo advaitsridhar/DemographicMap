@@ -254,6 +254,35 @@ def cmd_get(urls: list[str], chars: int, grep: str | None, links: str | None,
             log("  " + " ".join(text[:chars].split()))
 
 
+def cmd_xlsx(url: str, sheets: list[str], first: int, last: int, width: int,
+             grep: str | None, cols: int) -> None:
+    """Rows ``first``..``last`` of named sheets of a workbook (all sheets if none)."""
+    import openpyxl
+    status, ctype, body = fetch(url)
+    log(f"== {url}\n  HTTP {status} {ctype} {len(body):,} bytes")
+    if status != 200:
+        return
+    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+    pattern = re.compile(grep, re.I) if grep else None
+    for sheet in book.worksheets:
+        if sheets and sheet.title not in sheets and sheet.title.replace(" ", "_") not in sheets:
+            continue
+        log(f"  -- {sheet.title!r}")
+        for n, row in enumerate(sheet.iter_rows(values_only=True), start=1):
+            if n < first:
+                continue
+            if n > last:
+                break
+            cells = ["" if c is None else str(c)[:width] for c in row[:cols]]
+            while cells and cells[-1] == "":
+                cells.pop()
+            line = " | ".join(cells)
+            if pattern and not pattern.search(line):
+                continue
+            if line:
+                log(f"    {n:>4}: {line}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -282,7 +311,19 @@ def main() -> int:
     g.add_argument("--links")
     g.add_argument("--context", type=int, default=120)
     g.add_argument("--rows", type=int, default=60)
+    x = sub.add_parser("xlsx")
+    x.add_argument("url")
+    x.add_argument("--sheet", action="append", default=[],
+                   help="a sheet to print (repeatable; write a space as an underscore)")
+    x.add_argument("--first", type=int, default=1)
+    x.add_argument("--last", type=int, default=60)
+    x.add_argument("--width", type=int, default=40)
+    x.add_argument("--cols", type=int, default=40)
+    x.add_argument("--grep")
     args = ap.parse_args()
+    if args.cmd == "xlsx":
+        cmd_xlsx(args.url, args.sheet, args.first, args.last, args.width, args.grep, args.cols)
+        return 0
     if args.cmd == "flows":
         cmd_flows(args.service, args.match)
     elif args.cmd == "struct":
