@@ -14,26 +14,30 @@ person, and the note says so.
 **What the map draws is not quite what the census counted.** The census has
 74 districts and, beside them, the six self-administered zones and divisions
 -- Naga, Danu, Pa-O, Pa Laung, Kokang and Wa -- whose townships belong to no
-district. The boundary file draws 74 districts and no zone: the Kokang zone is
-its Laukkaing district, the Wa division is its Hopang and Matman districts,
-and the townships of the Naga, Danu, Pa-O and Pa Laung zones lie inside its
-Hkamti, Taunggyi and Kyaukme districts. A district's census figures would be
-the wrong thing to put on those six polygons, so each of them is built from
-the census's own townships instead -- the district's townships plus the zone's
-that the polygon takes in -- and the note lists them. Every other drawn
-district is the census district of that name, matched by name (and by the
-romanisations ``ALIASES`` declares, pair by pair). Nay Pyi Taw has no shape of
-its own: its two districts are drawn under Mandalay, and are matched there.
+district. The boundary file draws 74 districts too, but older ones: Mindat
+before Matupi district was cut from it, Katha before Kawlin, Tachileik before
+Mong Hpayak, and no zone at all -- the Kokang zone is its Laukkaing district,
+the Wa division its Hopang and Matman districts, and the townships of the
+Naga, Danu, Pa-O and Pa Laung zones lie inside its Hkamti, Taunggyi and
+Kyaukme districts. Those nine polygons are each built from the census's own
+units -- whole districts, and a zone's townships -- placed by their seats in
+the map's own polygons (``COMPOSED``), and the note lists what each holds.
+Every other drawn district is the census district of that name, matched by
+name (and by the spellings ``ALIASES`` declares, pair by pair). Nay Pyi Taw
+has no shape of its own: its two districts are drawn under Mandalay.
+
+**Population** is written with the ages: the drawn districts' figures on the
+map are COD-PS projections for 2023 of the census's own districts, which for
+the nine polygons above are not the area drawn.
 
 **States and regions** are the sum of the districts the map draws inside each
 polygon (so Mandalay takes in Nay Pyi Taw), which is what the polygon holds.
 
 **Checks**, each a refusal: every row's age groups and its sexes make its
-total; every district's townships make the district; every township and every
-district is used exactly once across the 74 polygons; the 74 polygons make
-the census's national 50,279,900; and the Union's median recomputed from the
-same five-year groups is within 0.3 years of the census's 27.1 (Union report,
-the median from single years).
+total; every district's and zone's townships make it; every census district
+and zone township is used exactly once across the 74 polygons; the polygons
+make the census's national 50,279,900; and the Union's median recomputed from
+the same five-year groups is within 0.3 years of the census's 27.1.
 
 Usage:
     python -m scripts.fetch_census.myanmar_age
@@ -62,27 +66,44 @@ NATIONAL = 50_279_900
 NATIONAL_MEDIAN = 27.1
 MEDIAN_TOLERANCE = 0.3
 
-# The boundary file's district -> the census's, where the romanisations
-# differ (uscb.MYANMAR declares the same pairs for the religion sheet).
+# The boundary file's district -> the census's, where the names differ by
+# more than case, accents and spacing (uscb.MYANMAR declares the same
+# romanisation pairs for the religion sheet).
 ALIASES = {
     "Bawlake": "BAWLAKHE", "Hakha": "HAKA", "Kawthoung": "KAWTHAUNG",
     "Kyaukpyu": "KYAUNKPYU", "Langkho": "LANGHKO", "Loilen": "LOILEM",
     "Mrauk-U": "MYAUK U", "Hpapun": "PHARPON", "Thayarwady": "THARRAWADDY",
-    "Yinmarbin": "YINMARPIN", "Puta-O": "PUTAO", "Det Khi Na": "DEKKHINA",
-    "Oke Ta Ra": "OTTARA",
+    "Yinmarbin": "YINMARPIN", "Maubin": "MA-UBIN", "Muse": "MU SE",
+    "Monghsat": "MONG HSAT", "Kale": "KALE DISTRICT", "Tamu": "TAMU DISTRICT",
+    "Gangaw": "GANGAW DISTRICT", "Lashio": "LASHIO DISTRICT",
+    "Yangon (North)": "YANGON NORTH DISTRICT", "Yangon (East)": "YANGON EAST DISTRICT",
+    "Yangon (South)": "YANGON SOUTH DISTRICT", "Yangon (West)": "YANGON",
 }
-# The six polygons built from townships: the drawn district -> (census
-# district or zone, township) pairs. A district named here contributes all
-# of its own townships; a zone, only the townships listed.
+# The polygons that are not one census district. The boundary file is older
+# than the 2014 census's districts: it draws Mindat before Matupi district
+# was cut from it, Katha before Kawlin, Tachileik before Mong Hpayak, and no
+# self-administered zone at all -- the Naga zone's townships lie in its
+# Hkamti, the Danu and Pa-O zones' in its Taunggyi, the Pa Laung zone's in
+# its Kyaukme, the Kokang zone is its Laukkaing and the Wa division its
+# Hopang and Matman. Each township's seat was placed in the map's own
+# polygons (site/tiles/admin2.pmtiles, zoom 8), and the Wa division's six
+# townships split three and three, north and south, as the two polygons do
+# (Hopang 22.70-23.49 N, Matman 21.48-22.89 N). A drawn district here takes
+# whole census districts, and the listed townships of a zone.
 COMPOSED: dict[str, dict[str, Any]] = {
-    "Hkamti": {"districts": ["HKAMTI"], "zone": "NAGA", "townships": ["LAHE", "LESHI", "NANYUN"]},
-    "Taunggyi": {"districts": ["TAUNGGYI"], "zone": None,
-                 "townships": ["PINDAYA", "YWANGAN", "HOPONG", "HSIHSENG", "PINLAUNG"]},
-    "Kyaukme": {"districts": ["KYAUKME"], "zone": "PA LAUNG", "townships": ["NAMHSAN", "MANTON"]},
-    "Laukkaing": {"districts": [], "zone": "KOKANG", "townships": ["LAUKKAING", "KONKYAN"]},
-    "Hopang": {"districts": [], "zone": "WA", "townships": ["HOPANG", "MONGMAO", "PANWAING"]},
-    "Matman": {"districts": [], "zone": "WA", "townships": ["MATMAN", "NAMPHAN", "PANGSANG"]},
+    "Mindat": {"districts": ["MINDAT", "MATUPI"]},
+    "Katha": {"districts": ["KATHA", "KAWLIN"]},
+    "Tachileik": {"districts": ["TACHILEIK", "MONG HPAYAK"]},
+    "Hkamti": {"districts": ["HKAMTI"], "zones": {"NAGA": ["LAY SHI", "LAHE", "NANYUN"]}},
+    "Taunggyi": {"districts": ["TAUNGGYI"],
+                 "zones": {"DANU": ["PINDAYA", "YWANGAN"],
+                           "PAO": ["HOPONG", "HSIHSENG", "PINLAUNG"]}},
+    "Kyaukme": {"districts": ["KYAUKME"], "zones": {"PALAUNG": ["NAMHSAN", "MANTON"]}},
+    "Laukkaing": {"districts": [], "zones": {"KOKANG": ["LAUKINE", "KONKYAN"]}},
+    "Hopang": {"districts": [], "zones": {"WA": ["HOPAN", "MONGMAO", "PANGWAUN"]}},
+    "Matman": {"districts": [], "zones": {"WA": ["MAKMAN", "NARPHAN", "PANGSANG"]}},
 }
+ZONES = ("NAGA", "DANU", "PAO", "PALAUNG", "KOKANG", "WA")
 
 
 def read_rows() -> tuple[list[dict[str, Any]], dict[str, int]]:
@@ -121,12 +142,12 @@ def read_rows() -> tuple[list[dict[str, Any]], dict[str, int]]:
 
 
 def zone_of(name: str) -> str | None:
-    """'NAGA SAZ' / 'WA SAD' / 'Kokang Self-Administered Zone' -> 'NAGA' / 'WA' / 'KOKANG'."""
-    up = " ".join(name.upper().replace("-", " ").split())
-    for z in ("NAGA", "DANU", "PA O", "PA LAUNG", "KOKANG", "WA"):
-        if up.startswith(z + " ") and any(k in up for k in ("SAZ", "SAD", "SELF")):
-            return z.replace("PA O", "PA-O")
-    return None
+    """'NAGA SELF-ADMINISTERED ZONE' -> 'NAGA', 'WA SELF-ADMINISTERED DIVISION' -> 'WA'."""
+    key = fold(name)
+    if "selfadministered" not in key:
+        return None
+    hits = [z for z in ZONES if key.startswith(fold(z) + "selfadministered")]
+    return hits[0] if len(hits) == 1 else None
 
 
 def add(units: list[dict[str, Any]]) -> dict[str, Any]:
@@ -158,64 +179,62 @@ def check_townships(rows: list[dict[str, Any]]) -> None:
 
 def compose(rows: list[dict[str, Any]], admin2: list[dict[str, Any]]
             ) -> dict[str, dict[str, Any]]:
-    """Each drawn district -> its census figures and the parts they came from."""
-    districts = [r for r in rows if r["level"] == 2]
-    towns = [r for r in rows if r["level"] == 3]
-    by_district = defaultdict(list)
-    for d in districts:
-        by_district[fold(d["adm2"])].append(d)
-    used_districts: set[int] = set()
-    used_towns: set[int] = set()
+    """Each drawn district -> its census figures and the parts they came from.
+
+    Every census district and every township of a zone must be used exactly
+    once across the polygons, and the polygons must make the Union.
+    """
+    districts = [r for r in rows if r["level"] == 2 and zone_of(r["adm2"]) is None]
+    zone_towns = [r for r in rows if r["level"] == 3 and zone_of(r["adm2"]) is not None]
+    used: dict[int, str] = {}
+
+    def take(unit: dict[str, Any], polygon: str) -> dict[str, Any]:
+        if id(unit) in used:
+            raise SystemExit(f"myanmar_age: {unit['where']} is in both {used[id(unit)]!r} "
+                             f"and {polygon!r}")
+        used[id(unit)] = polygon
+        return unit
+
+    def district(name: str, polygon: str) -> dict[str, Any]:
+        hits = [d for d in districts if fold(d["adm2"]) == fold(name)]
+        if len(hits) != 1:
+            raise SystemExit(f"myanmar_age: {len(hits)} census districts named {name!r} for "
+                             f"the polygon {polygon!r}; census districts: "
+                             f"{sorted(d['adm2'] for d in districts)}")
+        return take(hits[0], polygon)
+
     out: dict[str, dict[str, Any]] = {}
     for shape in admin2:
         name = shape["name"]
-        if name in COMPOSED:
-            spec = COMPOSED[name]
-            parts = []
-            for dn in spec["districts"]:
-                hits = [t for t in towns if fold(t["adm2"]) == fold(dn)]
-                if not hits:
-                    raise SystemExit(f"myanmar_age: no townships under district {dn}")
-                parts.extend(hits)
-            for tn in spec["townships"]:
-                hits = [t for t in towns if fold(t["adm3"]) == fold(tn)
-                        and zone_of(t["adm2"]) is not None
-                        and (spec["zone"] is None or zone_of(t["adm2"]) == spec["zone"])]
-                if len(hits) != 1:
-                    raise SystemExit(f"myanmar_age: {len(hits)} zone townships named {tn} "
-                                     f"for {name}")
-                parts.extend(hits)
-            for p in parts:
-                if id(p) in used_towns:
-                    raise SystemExit(f"myanmar_age: township {p['where']} used twice")
-                used_towns.add(id(p))
-            out[shape["id"]] = {**add(parts), "parts": [p["adm3"].title() for p in parts],
-                                "kind": "townships"}
+        spec = COMPOSED.get(name)
+        if spec is None:
+            d = district(ALIASES.get(name, name), name)
+            out[shape["id"]] = {**add([d]), "parts": [d["adm2"].title()], "kind": "district"}
             continue
-        key = fold(ALIASES.get(name, name))
-        hits = by_district.get(key, [])
-        if len(hits) != 1:
-            raise SystemExit(f"myanmar_age: {len(hits)} census districts for the polygon "
-                             f"{name!r} (looked for {ALIASES.get(name, name)!r}); census "
-                             f"districts: {sorted({d['adm2'] for d in districts})}")
-        d = hits[0]
-        if id(d) in used_districts:
-            raise SystemExit(f"myanmar_age: census district {d['where']} bound twice")
-        used_districts.add(id(d))
-        for t in towns:
-            if fold(t["adm2"]) == key:
-                used_towns.add(id(t))
-        out[shape["id"]] = {**add([d]), "parts": [d["adm2"].title()], "kind": "district"}
-    left_towns = [t["where"] for t in towns if id(t) not in used_towns]
-    if left_towns:
-        raise SystemExit(f"myanmar_age: townships on no polygon: {left_towns}")
+        parts = [district(dn, name) for dn in spec["districts"]]
+        labels = [f"{p['adm2'].title()} district" for p in parts]
+        for zone, townships in (spec.get("zones") or {}).items():
+            for tn in townships:
+                hits = [t for t in zone_towns if zone_of(t["adm2"]) == zone
+                        and fold(t["adm3"]) == fold(tn)]
+                if len(hits) != 1:
+                    raise SystemExit(f"myanmar_age: {len(hits)} townships named {tn} in the "
+                                     f"{zone} zone, for the polygon {name!r}")
+                parts.append(take(hits[0], name))
+            labels.append(f"{', '.join(t.title() for t in townships)} of the "
+                          f"{zone.title() if zone != 'PAO' else 'Pa-O'} "
+                          f"self-administered {'division' if zone == 'WA' else 'zone'}")
+        out[shape["id"]] = {**add(parts), "parts": labels, "kind": "composed"}
+    left = [u["where"] for u in districts + zone_towns if id(u) not in used]
+    if left:
+        raise SystemExit(f"myanmar_age: census units on no polygon: {left}")
     total = sum(v["total"] for v in out.values())
     if total != NATIONAL:
         raise SystemExit(f"myanmar_age: the {len(out)} polygons make {total:,}, against the "
                          f"census's {NATIONAL:,}")
     log(f"  {len(out)} polygons: {sum(1 for v in out.values() if v['kind'] == 'district')} "
-        f"census districts and {sum(1 for v in out.values() if v['kind'] == 'townships')} "
-        f"built from townships; every township used once; they make {total:,}")
+        f"census districts and {sum(1 for v in out.values() if v['kind'] == 'composed')} "
+        f"composed; every census district and zone township used once; they make {total:,}")
     return out
 
 
@@ -230,7 +249,7 @@ def check_national(rows: list[dict[str, Any]]) -> None:
     log(f"  Union median from five-year groups {median}, the census's {NATIONAL_MEDIAN}")
 
 
-def fields(fig: dict[str, Any], whose: str) -> dict[str, Any]:
+def fields(fig: dict[str, Any], whose: str, population: bool) -> dict[str, Any]:
     median = grouped(fig["groups"])
     if median is None:
         raise SystemExit(f"myanmar_age: {whose}: the middle person is in the open 75+ group")
@@ -239,7 +258,10 @@ def fields(fig: dict[str, Any], whose: str) -> dict[str, Any]:
                                 f"middle person, from the 2014 census's count of {whose} by "
                                 f"sex and five-year age group (to an open 75+); the census "
                                 f"publishes nothing finer below the Union."),
-                   ratio_note=f"Males per 100 females in the 2014 census's count of {whose}.")
+                   ratio_note=f"Males per 100 females in the 2014 census's count of {whose}.",
+                   population=fig["total"] if population else None,
+                   population_note=(f"The 2014 census's count of {whose}."
+                                    if population else None))
 
 
 def build(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
@@ -251,11 +273,13 @@ def build(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
     for shape in admin2:
         f = figs[shape["id"]]
         whose = (f"the census district of {f['parts'][0]}" if f["kind"] == "district" else
-                 f"the townships the boundary file draws in this district "
-                 f"({', '.join(f['parts'])})")
+                 f"everyone in what the boundary file draws as this district, which the "
+                 f"2014 census counted as {'; '.join(f['parts'])}")
         out.append(record(f"MMR-CEN2014-{fold(shape['name'])}", shape["name"], level="admin2",
                           parent="MMR", country="MMR", match_by="shape_id",
-                          shape_id=shape["id"], sources=src, **fields(f, whose)))
+                          shape_id=shape["id"],
+                          sources=[{**src[0], "field": "population/median_age/sex_ratio"}],
+                          **fields(f, whose, population=True)))
     for region in admin1:
         kids = [s for s in admin2 if s["parent"] == region["id"]]
         if not kids:
@@ -266,7 +290,7 @@ def build(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
                           level="admin1", parent="MMR", country="MMR", match_by="shape_id",
                           shape_id=region["id"], sources=src,
                           **fields(f, f"the {len(kids)} districts the map draws in this "
-                                      f"state or region ({names})")))
+                                      f"state or region ({names})", population=False)))
     return out
 
 
