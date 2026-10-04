@@ -83,14 +83,18 @@ def latest(url: str) -> str | None:
     return rows[-1][0] if len(rows) > 1 else None
 
 
-def fetch(url: str, wayback: str | None = None) -> bytes:
+def fetch(url: str, wayback: str | None = None, aia: bool = False) -> bytes:
+    """``aia`` repairs a server that sends its leaf certificate without the
+    intermediate (ws.dgbas.gov.tw is one): common.http_get fetches the missing
+    link from the certificate's own Authority Information Access extension and
+    verifies against it plus the public roots. It never skips the check."""
     if wayback:
         stamp = latest(url) if wayback == "latest" else wayback
         if not stamp:
             raise SystemExit(f"no capture of {url}")
         url = f"https://web.archive.org/web/{stamp}id_/{url}"
         print(f"  via {url}")
-    blob = http_get(url, binary=True, cache=False, retries=2, timeout=180)
+    blob = http_get(url, binary=True, cache=False, retries=2, timeout=180, aia=aia)
     assert isinstance(blob, bytes)
     return blob
 
@@ -185,6 +189,12 @@ def describe(blob: bytes, args: argparse.Namespace, ctype: str = "") -> None:
             break
 
 
+def cmd_get(args: argparse.Namespace) -> None:
+    """A file -- workbook, CSV, JSON or page -- described as ``post`` describes
+    an answer."""
+    describe(fetch(args.target, args.wayback, aia=args.aia), args)
+
+
 def cmd_post(args: argparse.Namespace) -> None:
     fields = []
     for f in args.field:
@@ -266,10 +276,12 @@ def cmd_nlsc(args: argparse.Namespace) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["page", "form", "post", "pxweb", "ris", "nlsc"])
+    ap.add_argument("cmd", choices=["page", "form", "post", "get", "pxweb", "ris", "nlsc"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--encoding")
     ap.add_argument("--wayback")
+    ap.add_argument("--aia", action="store_true",
+                    help="complete a missing intermediate certificate from its AIA extension")
     ap.add_argument("--links")
     ap.add_argument("--grep")
     ap.add_argument("--context", type=int, default=120)
@@ -286,7 +298,8 @@ def main() -> int:
         print(f"== {args.cmd} {target}")
         args.target = target
         try:
-            {"page": cmd_page, "form": cmd_form, "post": cmd_post, "pxweb": cmd_pxweb,
+            {"page": cmd_page, "form": cmd_form, "post": cmd_post, "get": cmd_get,
+             "pxweb": cmd_pxweb,
              "ris": cmd_ris, "nlsc": cmd_nlsc}[args.cmd](args)
         except urllib.error.HTTPError as exc:
             print(f"  HTTP {exc.code} {exc.reason}: "
