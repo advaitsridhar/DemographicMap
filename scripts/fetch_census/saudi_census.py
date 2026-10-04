@@ -58,6 +58,8 @@ ALIASES = {
     "easternprovince": "Eastern Region",
     "ashsharqiyah": "Eastern Region",
     "alhududashshamaliyah": "Northern Borders Region",
+    "alquassim": "Al-Qassim Region",
+    "alqasim": "Al-Qassim Region",
 }
 # The census's count of the kingdom: GASTAT, Saudi Census 2022 results
 # (published 31 May 2023), 32,175,224 people. The regions must make it.
