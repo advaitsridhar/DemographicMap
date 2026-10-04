@@ -1,39 +1,5 @@
-https://siat.stat.uz/: HTTP 200 text/html 3,139 B
-  script https://www.googletagmanager.com/gtag/js?id=G-BD23F7RXZW: HTTP 200 533,452 B, 23 paths
-  script https://siat.stat.uz/js/chunk-vendors.baaa6dd8.js: HTTP 200 705,932 B, 8 paths
-  script https://siat.stat.uz/js/app.76f27eab.js: HTTP 200 84,333 B, 3 paths
-    http://localhost
-    http://www.w3.org/1998/Math/MathML
-    http://www.w3.org/1999/xhtml
-    http://www.w3.org/1999/xlink
-    http://www.w3.org/2000/svg
-    https://ad.doubleclick.net/activity;
-    https://ade.googlesyndication.com
-    https://adservice.google.com/pagead/regclk
-    https://cct.google/taggy/agent.js
-    https://github.com/zloirock/core-js
-    https://github.com/zloirock/core-js/blob/v3.49.0/LICENSE
-    https://m.youtube.com
-    https://muloqot.gov.uz/api/v1/portalRating.js?portal-rating-widget
-    https://pagead2.googlesyndication.com
-    https://pagead2.googlesyndication.com/pagead/gen_204?id=tcfe
-    https://siat.stat.uz
-    https://siat.stat.uz/api/
-    https://stat.uz\\
-    https://stats.g.doubleclick.net/g/collect
-    https://stats.g.doubleclick.net/g/collect?
-    https://www.%/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&
-    https://www.facebook.com/tr/
-    https://www.google.com
-    https://www.google.com/
-    https://www.google.com/ccm/geo
-    https://www.googleadservices.com
-    https://www.googletagmanager.com
-    https://www.googletagmanager.com/
-    https://www.googletagmanager.com/static/service_worker/
-    https://www.highcharts.com?credits
-    https://www.merchant-center-analytics.goog
-    https://www.youtube.com
-    https://www.youtube.com/iframe_api
-    https://{ga4CollectionSubdomain.}analytics.google.com/g/s/collect
-    https://{ga4CollectionSubdomain.}google-analytics.com/g/s/collect
+https://www.stat.gov.kg/ru/: HTTP 200 text/html; charset=utf-8 106,275 B
+  Статистические переписи -> https://www.stat.gov.kg/ru/statisticheskie-perepisi/
+  1 links match '(?:перепис|census|perepis|2022|2009|xls|pdf)'
+https://stat.gov.kg/ru/census/: HTTP 404 text/html 1,612 B
+  0 links match '(?:перепис|census|perepis|2022|2009|xls|pdf)'
