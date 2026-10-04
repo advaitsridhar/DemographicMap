@@ -17,6 +17,7 @@ Wayback CDX, links, workbooks, PDFs) are nordic_probe's.
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import time
 import urllib.parse
@@ -32,6 +33,7 @@ CLASS = ("https://data.stat.fi/api/classifications/v2/correspondenceTables/"
          "{src}_1_{y}0101%23{tgt}_1_{y}0101/maps?content=data&meta=max&lang=fi")
 SVK = "https://www.svenskakyrkan.se/filer/1374643/"
 EVL = "https://www.kirkontilastot.fi/"
+NEW_CLASS = "https://api.stat.fi/classificationservice/open/api/classifications/v2"
 
 
 def searches(base: str, queries: list[str], limit: int = 25) -> None:
@@ -293,6 +295,28 @@ PROBES: dict[str, Any] = {
     "c5_class_cdx2": lambda: cdx(
         "url=data.stat.fi/api/classifications/v2/correspondenceTables/*&filter=original:.*"
         "(?:seutukunta|maakunta).*", limit=60),
+    # Round c6: round c5 found the maps list answering without parameters,
+    # pointing at a new host, and classification items answering with them.
+    "c6_class_routes": lambda: heads([
+        f"{NEW_CLASS}/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps"
+        "?content=data&meta=max&lang=fi",
+        f"{NEW_CLASS}/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps"
+        "?content=data&lang=fi",
+        f"{NEW_CLASS}/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/832/178",
+        f"{NEW_CLASS}/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/832/178"
+        "?content=data&meta=max&lang=fi",
+        "https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+        "kunta_1_20200101%23seutukunta_1_20200101/maps?content=data&lang=fi",
+        "https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+        "kunta_1_20200101%23seutukunta_1_20200101/maps?lang=fi",
+        "https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+        "kunta_1_20200101%23maakunta_1_20200101/maps",
+        f"{NEW_CLASS}/classifications/seutukunta_1_20200101/classificationItems"
+        "?content=data&meta=max&lang=fi",
+    ], show=700),
+    "c6_class_item": lambda: print("  " + json.dumps(get_json(
+        "https://data.stat.fi/api/classifications/v2/classifications/kunta_1_20200101/"
+        "classificationItems?content=data&meta=max&lang=fi")[0], ensure_ascii=False)[:2500]),
     # Round c4: Forshaga and Munkfors share one parish in the 2020 and 2021
     # editions. Do the older editions still count them apart?
     "c4_swe_2019": lambda: pdf(SVK + "NyckeltalLKF.pdf",
