@@ -196,10 +196,41 @@ def cmd_dgs(terms: list[str], pages: int) -> None:
     log(f"  {hits} datasets name all of {terms}")
 
 
+def cmd_wpmedia(base: str, searches: list[str], pages: int) -> None:
+    """A WordPress site's uploads matching each search: the real file paths.
+
+    Brunei's DEPS taught this: the links its pages print redirect to a 404,
+    and the media API lists where every upload actually is.
+    """
+    for search in searches:
+        total = 0
+        for page in range(1, pages + 1):
+            url = (f"{base.rstrip('/')}/wp-json/wp/v2/media?per_page=100&page={page}"
+                   f"&search={urllib.parse.quote(search)}")
+            status, _, body = fetch(url, accept="application/json")
+            if status != 200:
+                log(f"  {search!r} page {page}: HTTP {status} "
+                    f"{' '.join(body[:160].decode('utf-8', 'replace').split())}")
+                break
+            items = json.loads(body)
+            if not items:
+                break
+            for item in items:
+                total += 1
+                log(f"  {str(item.get('date'))[:10]} {item.get('source_url')}")
+            if len(items) < 100:
+                break
+        log(f"== {search!r}: {total} uploads")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    w = sub.add_parser("wpmedia")
+    w.add_argument("base")
+    w.add_argument("searches", help="comma-separated search words")
+    w.add_argument("--pages", type=int, default=5)
     d = sub.add_parser("dgs")
     d.add_argument("terms", help="comma-separated words every name must contain")
     d.add_argument("--pages", type=int, default=480)
@@ -217,6 +248,8 @@ def main() -> int:
                 not args.no_tables)
     elif args.cmd == "spa":
         cmd_spa(args.url)
+    elif args.cmd == "wpmedia":
+        cmd_wpmedia(args.base, [s for s in args.searches.split(",") if s], args.pages)
     elif args.cmd == "dgs":
         cmd_dgs([t.strip().lower() for t in args.terms.split(",") if t.strip()], args.pages)
     else:
