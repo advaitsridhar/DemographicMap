@@ -1,3 +1,9 @@
-== https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_punjab_districts.pdf
-  200 application/pdf 4168650 https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_punjab_districts.pdf
-    53 pages
+timor_age: Population and Housing Census 2022, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Main Report basic table 4.05: population by urban/rural location, age, municipality and sex
+  fetched Chapter-4-TLPHC-Census-report-Basic-tables.xlsx (0.5 MB)
+  table 4.05 cells printed '-' where their row's other figures show people, read as the difference: atauro M at 83: '-' read as 2
+  table 4.05: 14 municipalities, single years to 85+, making the country's 1,341,737; national median 21.7
+  table 4.01: 67 posts in 14 municipalities, each municipality's posts making it
+  admin1: 13 units; median [19.6]..[22.5]; sex ratio 99.1-108.7
+  admin2: 65 units; median []..[]; sex ratio 95.1-110.8
+  wrote data/processed/timor_age.json (157 kB)
+  wrote timor_age.json: 78 records
