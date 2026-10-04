@@ -1,72 +1,30 @@
-== https://www.cis.es/documents/d/guest/es3538mar_00extremadura-pdf
-  HTTP 200; application/pdf; 224,618 bytes
-  21 pages, 842 lines
-    p1| PREELECTORAL ELECCIONES
-    p1| AUTONÓMICAS 2025. COMUNIDAD
-    p1| AUTÓNOMA DE EXTREMADURA
-    p1| Estudio nº 3538
-    p1| Noviembre 2025
-    p2| PREELECTORAL ELECCIONES
-    p2| AUTONÓMICAS 2025. COMUNIDAD
-    p2| AUTÓNOMA DE EXTREMADURA
-    p2| FICHA TÉCNICA
-== https://www.cis.es/documents/d/guest/es3538mar_01badajoz-pdf
-  HTTP 200; application/pdf; 209,954 bytes
-  18 pages, 792 lines
-    p1| PREELECTORAL ELECCIONES
-    p1| AUTONÓMICAS 2025. COMUNIDAD
-    p1| AUTÓNOMA DE EXTREMADURA.
-    p1| Provincia de Badajoz
-    p1| Estudio nº 3538_1
-    p1| Noviembre 2025
-    p2| PREELECTORAL ELECCIONES
-    p2| AUTONÓMICAS 2025. COMUNIDAD
-    p2| AUTÓNOMA DE EXTREMADURA.
-== https://www.cis.es/documents/d/guest/es3538mar_02caceres-pdf
-  HTTP 200; application/pdf; 209,121 bytes
-  18 pages, 786 lines
-    p1| PREELECTORAL ELECCIONES
-    p1| AUTONÓMICAS 2025. COMUNIDAD
-    p1| AUTÓNOMA DE EXTREMADURA.
-    p1| Provincia de Cáceres
-    p1| Estudio nº 3538_2
-    p1| Noviembre 2025
-    p2| PREELECTORAL ELECCIONES
-    p2| AUTONÓMICAS 2025. COMUNIDAD
-    p2| AUTÓNOMA DE EXTREMADURA.
-== https://www.cis.es/documents/20117/1557131/es3286mar.pdf
-  HTTP 200; application/pdf; 170,004 bytes
-  20 pages, 762 lines
-    p1| PREELECTORAL DEL PAÍS VASCO.
-    p1| ELECCIONES AUTONÓMICAS JULIO 2020
-    p1| Estudio nº 3286
-    p1| Junio 2020
-    p2| PREELECTORAL DEL PAÍS VASCO.
-    p2| ELECCIONES AUTONÓMICAS JULIO 2020
-    p2| DISTRIBUCIONES MARGINALES
-    p2| Estudio nº 3286
-    p2| Junio 2020
-== https://www.cis.es/documents/20117/1557131/es3286mar_Guipuzcoa.pdf
-  HTTP 200; application/pdf; 171,598 bytes
-  20 pages, 761 lines
-    p1| PREELECTORAL DEL PAÍS VASCO.
-    p1| ELECCIONES AUTONÓMICAS JULIO 2020.
-    p1| GIPUZKOA
-    p1| Estudio nº 3286_2
-    p1| Junio 2020
-    p2| PREELECTORAL DEL PAÍS VASCO.
-    p2| ELECCIONES AUTONÓMICAS JULIO 2020.
-    p2| GIPUZKOA
-    p2| DISTRIBUCIONES MARGINALES
-== https://www.cis.es/documents/20117/1557131/es3286mar_Vizcaya.pdf
-  HTTP 200; application/pdf; 171,558 bytes
-  20 pages, 763 lines
-    p1| PREELECTORAL DEL PAÍS VASCO.
-    p1| ELECCIONES AUTONÓMICAS JULIO 2020.
-    p1| BIZKAIA
-    p1| Estudio nº 3286_3
-    p1| Junio 2020
-    p2| PREELECTORAL DEL PAÍS VASCO.
-    p2| ELECCIONES AUTONÓMICAS JULIO 2020.
-    p2| BIZKAIA
-    p2| DISTRIBUCIONES MARGINALES
+
+## https://opendata.cbs.nl/ODataCatalog/Tables?$format=json&$select=Identifier,Title,Period,Modified
+   HTTP 200, 940,337 bytes, application/json;odata=minimalmetadata;streaming=true;charset=utf-8 
+   26 matches of 'religi|kerkelijk|kerkbezoek|gezindte'
+   ~ 2022-09-27T02:00:00","Period":"2013, 2017/2018, 2021"},{"Identifier":"82868NED","Title":"Caribisch Nederland; kerkelijke gezindte, persoonskenmerken","Modified":"2022-09-27T02:00:00","Period":"2013, 2017/2018, 2021"},{"Identifier
+   ~ 02:00:00","Period":"2013, 2017/2018, 2021"},{"Identifier":"82868NED","Title":"Caribisch Nederland; kerkelijke gezindte, persoonskenmerken","Modified":"2022-09-27T02:00:00","Period":"2013, 2017/2018, 2021"},{"Identifier":"82869NE
+   ~ oneel, baten en lasten","Modified":"2022-03-30T02:00:00","Period":"2018-2020"},{"Identifier":"37944","Title":"Kerkelijke gezindte en kerkbezoek; vanaf 1849; 18 jaar of ouder","Modified":"2019-10-07T02:00:00","Period":"1849 - 2018
+   ~ n en lasten","Modified":"2022-03-30T02:00:00","Period":"2018-2020"},{"Identifier":"37944","Title":"Kerkelijke gezindte en kerkbezoek; vanaf 1849; 18 jaar of ouder","Modified":"2019-10-07T02:00:00","Period":"1849 - 2018"},{"Ident
+   ~ ,"Modified":"2022-03-30T02:00:00","Period":"2018-2020"},{"Identifier":"37944","Title":"Kerkelijke gezindte en kerkbezoek; vanaf 1849; 18 jaar of ouder","Modified":"2019-10-07T02:00:00","Period":"1849 - 2018"},{"Identifier":"82904N
+   ~ 18 jaar of ouder","Modified":"2019-10-07T02:00:00","Period":"1849 - 2018"},{"Identifier":"82904NED","Title":"Religieuze betrokkenheid; persoonskenmerken","Modified":"2026-03-13T06:30:00","Period":"2010-2025"},{"Identifier":"8
+   ~ 8T02:00:00","Period":"2013-2021"},{"Identifier":"60027ned","Title":"Maatschappelijke participatie; contacten, kerkelijke gezindte 1997-2011","Modified":"2012-03-23T02:00:00","Period":"1997 - 2011."},{"Identifier":"82249NED","Titl
+   ~ ,"Period":"2013-2021"},{"Identifier":"60027ned","Title":"Maatschappelijke participatie; contacten, kerkelijke gezindte 1997-2011","Modified":"2012-03-23T02:00:00","Period":"1997 - 2011."},{"Identifier":"82249NED","Title":"Social
+   ~ ling 2019) 1965 - 2019","Modified":"2020-06-02T02:00:00","Period":"1965-2019"},{"Identifier":"37202","Title":"Kerkelijke gezindte per corop 1999","Modified":"2001-11-30T09:10:00","Period":"1999"},{"Identifier":"37850","Title":"Ke
+   ~ 1965 - 2019","Modified":"2020-06-02T02:00:00","Period":"1965-2019"},{"Identifier":"37202","Title":"Kerkelijke gezindte per corop 1999","Modified":"2001-11-30T09:10:00","Period":"1999"},{"Identifier":"37850","Title":"Kerkelijke g
+   ~ jke gezindte per corop 1999","Modified":"2001-11-30T09:10:00","Period":"1999"},{"Identifier":"37850","Title":"Kerkelijke gezindte per provincie vanaf 1849","Modified":"2001-11-30T09:01:00","Period":"1849 - 1999 "},{"Identifier":"
+   ~ e per corop 1999","Modified":"2001-11-30T09:10:00","Period":"1999"},{"Identifier":"37850","Title":"Kerkelijke gezindte per provincie vanaf 1849","Modified":"2001-11-30T09:01:00","Period":"1849 - 1999 "},{"Identifier":"70794ned",
+   ~ incie vanaf 1849","Modified":"2001-11-30T09:01:00","Period":"1849 - 1999 "},{"Identifier":"70794ned","Title":"Religie; naar regio; 2000/2002 of 2003","Modified":"2004-04-20T14:00:00","Period":"2000/2002 of 2003"},{"Identifier"
+   ~ 002 of 2003","Modified":"2004-04-20T14:00:00","Period":"2000/2002 of 2003"},{"Identifier":"83288NED","Title":"Religieuze betrokkenheid; kerkelijke gezindte; regio; 2010-2015","Modified":"2016-12-22T15:30:00","Period":"2010-201
+   ~ 004-04-20T14:00:00","Period":"2000/2002 of 2003"},{"Identifier":"83288NED","Title":"Religieuze betrokkenheid; kerkelijke gezindte; regio; 2010-2015","Modified":"2016-12-22T15:30:00","Period":"2010-2015"},{"Identifier":"70026ned",
+   ~ 4:00:00","Period":"2000/2002 of 2003"},{"Identifier":"83288NED","Title":"Religieuze betrokkenheid; kerkelijke gezindte; regio; 2010-2015","Modified":"2016-12-22T15:30:00","Period":"2010-2015"},{"Identifier":"70026ned","Title":"c
+   ~ -27T11:27:00","Period":"1930"},{"Identifier":"71140NED","Title":"Beroepstelling; bedrijfsgroepen en -klassen; kerkelijke gezindten, 1930","Modified":"2006-09-27T12:17:00","Period":"1930"},{"Identifier":"71142NED","Title":"Beroeps
+   ~ 0","Period":"1930"},{"Identifier":"71140NED","Title":"Beroepstelling; bedrijfsgroepen en -klassen; kerkelijke gezindten, 1930","Modified":"2006-09-27T12:17:00","Period":"1930"},{"Identifier":"71142NED","Title":"Beroepstelling; b
+   ~ 2006-09-26T13:57:00","Period":"1930"},{"Identifier":"71124NED","Title":"Volkstelling; bewoners naar geslacht, kerkelijke gezindte en gemeente, 1930","Modified":"2006-09-26T13:43:00","Period":"1930"},{"Identifier":"71128NED","Titl
+   ~ 13:57:00","Period":"1930"},{"Identifier":"71124NED","Title":"Volkstelling; bewoners naar geslacht, kerkelijke gezindte en gemeente, 1930","Modified":"2006-09-26T13:43:00","Period":"1930"},{"Identifier":"71128NED","Title":"Volkst
+   ~ ified":"1999-09-02T10:39:00","Period":"1899"},{"Identifier":"7378vt","Title":"Volkstelling; indeeling naar de kerkelijke gezindten en den leeftijd, 1899","Modified":"1999-09-02T10:31:00","Period":"1899"},{"Identifier":"7379vt","T
+   ~ 9-09-02T10:39:00","Period":"1899"},{"Identifier":"7378vt","Title":"Volkstelling; indeeling naar de kerkelijke gezindten en den leeftijd, 1899","Modified":"1999-09-02T10:31:00","Period":"1899"},{"Identifier":"7379vt","Title":"Vol
+   ~ 1996, 1998, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016,2018"},{"Identifier":"37581","Title":"Leefsituatie kerkelijke gezindte en kerkbezoek 1999","Modified":"2001-12-03T13:58:00","Period":"1999"},{"Identifier":"80909ned","Tit
+   ~ 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016,2018"},{"Identifier":"37581","Title":"Leefsituatie kerkelijke gezindte en kerkbezoek 1999","Modified":"2001-12-03T13:58:00","Period":"1999"},{"Identifier":"80909ned","Title":"Actie
+   ~ 2006, 2008, 2010, 2012, 2014, 2016,2018"},{"Identifier":"37581","Title":"Leefsituatie kerkelijke gezindte en kerkbezoek 1999","Modified":"2001-12-03T13:58:00","Period":"1999"},{"Identifier":"80909ned","Title":"Actieve en passieve
+   ~ odified":"2024-04-12T02:00:00","Period":"2012-2023"},{"Identifier":"82868ENG","Title":"Caribbean Netherlands; Religious denomination, personal characteristics","Modified":"2019-04-04T15:30:00","Period":"2013, 2017/2018"},{"Ide
