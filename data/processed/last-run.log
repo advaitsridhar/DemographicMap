@@ -1,128 +1,132 @@
-== c1_fin_search
-  -- StatFin ?query=uskonnollinen
-  1 hits
-    13wb.px | /yrti | 13wb -- Voittoa tavoittelemattomat yhteisöt oikeudellisen muodon mukaan, 2018-2024
-  -- StatFin ?query=uskontokunta
-  1 hits
-    11rx.px | /vaerak | 11rx -- Uskonnolliseen yhdyskuntaan kuuluminen iän ja sukupuolen mukaan, 1990-2025
-  -- StatFin ?query=uskonto
-  5 hits
-    159d.px | /ava | 159d -- Katsomusaineiden opiskelu perusopetuksen vuosiluokilla 1-9 ja aikuisten perusopetuksen päättövaiheessa, 2024
-    11bb.px | /tkker | 11bb -- Valtion tutkimus- ja kehittämisrahoitus yhteiskuntapoliittisen tavoiteluokan (NABS 2007) mukaan, 2008-2026*
-    159n.px | /ava | 159n -- Katsomusaineiden opiskelu perusopetuksen vuosiluokilla 1-9 ja aikuisten perusopetuksen päättövaiheessa maakunnittain, 2024
-    12a6.px | /jmete | 12a6 -- Julkisyhteisöjen menot tehtävittäin, vuosittain, 1990-2024*
-    159h.px | /oaiop | 159h -- Vapaan sivistystyön koulutukset, opiskelijat ja opetustunnit koulutuksen sisällön mukaan, 2024
-  -- StatFin ?query=kirkkoon kuuluvat
-  15 hits
-    12hc.px | /klaiv | 12hc -- Kauppalaivastoon kuuluvat alukset, 2000-2025
-    12h8.px | /klaiv | 12h8 -- Kauppalaivastoon kuuluvat alukset jääluokittain, 2018-2025
-    12h9.px | /klaiv | 12h9 -- Kauppalaivastoon kuuluvat alukset kunnittain, 2018-2025
-    154g.px | /klaiv | 154g -- Kauppalaivastoon kuuluvat alukset jääluokittain ja vuosineljänneksittäin, 2019Q1-2026Q2
-    154h.px | /klaiv | 154h -- Kauppalaivastoon kuuluvat alukset kunnittain ja vuosineljänneksittäin, 2019Q1-2026Q2
-    13wn.px | /eot | 13wn -- Vakavassa aineellisessa ja sosiaalisessa puutteessa olevat ja vajaatyöllisiin kotitalouksiin kuuluvat henkilöt, 2015-2024
-    14yz.px | /alvaa | 14yz -- Äänioikeutettujen, ehdokkaiden ja valittujen pääasiallinen toiminta, koulutus, työnantajasektori, ylin ja alin tulokymmenys, kieli ja syntyperä aluevaaleissa, 2022-2025
-    14w4.px | /kvaa | 14w4 -- Äänioikeutettujen, ehdokkaiden ja valittujen pääasiallinen toiminta, koulutus, työnantajasektori, ylin ja alin tulokymmenys, kieli ja syntyperä, Kuntavaalit, 2012-2025
-    13su.px | /evaa | 13su -- Äänioikeutettujen, ehdokkaiden ja valittujen pääasiallinen toiminta, koulutus, työnantajasektori, ylin ja alin tulokymmenys, kieli ja syntyperä eduskuntavaaleissa, 2011-2023
-    13z9.px | /mmtal | 13z9 -- Maatilayritys: Yhteenlasketut tulot ja menot, 2004-2024
-    13za.px | /mmtal | 13za -- Maatilayritys: Tiedot maakunnittain ja kunnittain, 2004-2024
-    13zc.px | /mmtal | 13zc -- Maatilayritys: Tiedot maakunnittain ja tilakoon mukaan, 2004-2024
-    13zd.px | /mmtal | 13zd -- Maatilayritys: Tiedot tuotantosuunnan ja tukialueen mukaan, 2004-2024
-    11ra.px | /vaerak | 11ra -- Tunnuslukuja väestöstä alueittain, 1990-2025
-    15in.px | /tti | 15in -- Teollisuustuotanto tuotenimikkeittäin, 2025
-  -- StatFin ?query=evankelis
-  4 hits
-    13wb.px | /yrti | 13wb -- Voittoa tavoittelemattomat yhteisöt oikeudellisen muodon mukaan, 2018-2024
-    11rx.px | /vaerak | 11rx -- Uskonnolliseen yhdyskuntaan kuuluminen iän ja sukupuolen mukaan, 1990-2025
-    159d.px | /ava | 159d -- Katsomusaineiden opiskelu perusopetuksen vuosiluokilla 1-9 ja aikuisten perusopetuksen päättövaiheessa, 2024
-    159n.px | /ava | 159n -- Katsomusaineiden opiskelu perusopetuksen vuosiluokilla 1-9 ja aikuisten perusopetuksen päättövaiheessa maakunnittain, 2024
-== c1_fin_passiivi
-  -- StatFin_Passiivi ?query=uskonnollinen
-  7 hits
-    statfinpas_yrti_pxt_010_201700.px | /yrti | 010 -- Voittoa tavoittelemattomat yhteisöt oikeudellisen muodon mukaan, 2013-2017
-    statfinpas_yrti_pxt_11i2_2021.px | /yrti | 11i2 -- Voittoa tavoittelemattomat yhteisöt oikeudellisen muodon mukaan, 2013-2021
-    statfinpas_vpa_pxt_002.px | /vpa | 002 -- Osallistunut jonkin yhdistyksen toimintaan 12 kuukauden aikana, 15 vuotta täyttäneet (1981, 1991, 2002, 2017) %
-    statfinpas_vpa_pxt_001.px | /vpa | 001 -- Osallistunut jonkin yhdistyksen toimintaan 12 kuukauden aikana, 10 vuotta täyttäneet (1981, 1991, 2002, 2017) %
-    statfinpas_akay_pxt_005.px | /akay | 005 -- Ajankäyttö (82 lk) sukupuolen mukaan
-    statfinpas_akay_pxt_006.px | /akay | 006 -- Ajankäyttö (82 lk) iän mukaan
-    statfinpas_akay_pxt_007.px | /akay | 007 -- Yli 10-vuotiaiden ajankäyttö (132 lk) sukupuolen mukaan. Käytetty aika, toimintoon osallistuneita (%) ja aika osallistuneilla. Koko vuosi.
-  -- StatFin_Passiivi ?query=uskontokunta
-  0 hits
-  -- StatFin_Passiivi ?query=uskonto
-  21 hits
-    statfinpas_vkp_pxt_004_201700_fi.px | /vkp | 004 -- Valtion kuukausipalkat koulutuksen mukaan vuonna 2017
-    statfinpas_ksp_pxt_003_201700_fi.px | /ksp | 003 -- Kuntasektorin kuukausipalkat koulutusluokituksen mukaan vuonna 2017
-    statfinpas_ystp_pxt_12rj_2019.px | /ystp | 12rj -- Yksityisen sektorin tuntipalkat koulutusluokituksen mukaan, 2019
-    statfinpas_ystp_pxt_138s_202000.px | /ystp | 138s -- Yksityisen sektorin tuntipalkat koulutusluokituksen mukaan, 2020
-    statfinpas_ystp_pxt_13qd_202100.px | /ystp | 13qd -- Yksityisen sektorin tuntipalkat koulutusluokituksen mukaan vuonna, 2021
-    statfinpas_ystp_pxt_143f_202200.px | /ystp | 143f -- Yksityisen sektorin tuntipalkat koulutusluokituksen mukaan, 2022
-    statfinpas_ystp_pxt_14tx.px | /ystp | 14tx -- Yksityisen sektorin tuntipalkat koulutusluokituksen mukaan vuonna, 2023
-    statfinpas_ksp_pxt_11am.px | /ksp | 11am -- Paikallishallinnon kuukausipalkat koulutusluokituksen mukaan, 2023
-    statfinpas_ksp_pxt_11am_2018.px | /ksp | 11am -- Kuntasektorin kuukausipalkat koulutusluokituksen mukaan, 2018
-    statfinpas_ksp_pxt_11am_2019.px | /ksp | 11am -- Kuntasektorin kuukausipalkat koulutusluokituksen mukaan, 2019
-    statfinpas_ksp_pxt_11am_2020.px | /ksp | 11am -- Kuntasektorin kuukausipalkat koulutusluokituksen mukaan, 2020
-    statfinpas_ksp_pxt_11am_2021.px | /ksp | 11am -- Kuntasektorin kuukausipalkat koulutusluokituksen mukaan, 2021
-    statfinpas_ksp_pxt_11am_2022.px | /ksp | 11am -- Kuntasektorin kuukausipalkat koulutusluokituksen mukaan, 2022
-    stafinpas_vkp_pxt_13me_2021.px | /vkp | 13me -- Valtion kuukausipalkat koulutuksen mukaan, 2021
-    statfinpas_vkp_pxt_11x9_2018.px | /vkp | 11x9 -- Valtion kuukausipalkat koulutuksen mukaan, 2018
-    statfinpas_vkp_pxt_12mu_2019.px | /vkp | 12mu -- Valtion kuukausipalkat koulutuksen mukaan, 2019
-    statfinpas_vkp_pxt_135q.px | /vkp | 135q -- Valtion kuukausipalkat koulutuksen mukaan, 2020
-    statfinpas_vkp_pxt_13z3_2022.px | /vkp | 13z3 -- Valtion kuukausipalkat koulutuksen mukaan, 2022
-    statfinpas_vkp_pxt_14ru.px | /vkp | 14ru -- Valtion kuukausipalkat koulutuksen mukaan, 2023
-    statfinpas_ystp_pxt_114q_201700.px | /ystp | 114q -- Yksityisen sektorin tuntipalkat koulutusluokituksen mukaan, 2017
-    statfinpas_ystp_pxt_125p_2018.px | /ystp | 125p -- Yksityisen sektorin tuntipalkat koulutusluokituksen mukaan, 2018
-  -- StatFin_Passiivi ?query=kirkko
-  71 hits
-    statfinpas_yrti_pxt_010_201700.px | /yrti | 010 -- Voittoa tavoittelemattomat yhteisöt oikeudellisen muodon mukaan, 2013-2017
-    statfinpas_yrti_pxt_11i2_2021.px | /yrti | 11i2 -- Voittoa tavoittelemattomat yhteisöt oikeudellisen muodon mukaan, 2013-2021
-    010_haloikr_tau_101_fi.px | /haloikr | Hallinto-oikeuksien käsittelemät asiat 2005-2013
-    010_khaloikr_tau_101_fi.px | /khaloikr | Korkeimman hallinto-oikeuden käsittelemät asiat 1991-2013
-    172_evaa_tau_172_fi.px | /evaa | 7.3 Varsinais-Suomen vaalipiiri, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain eduskuntavaaleissa 2011
-    oi57_statfin_ehdok03_2007_fi.px | /evaa | Eduskuntavaalit 2007, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain, Varsinais-Suomen vaalipiiri
-    172_evaa_2019_tau_172.px | /evaa | 172 -- 7.3 Varsinais-Suomen vaalipiiri, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain eduskuntavaaleissa 2019
-    172_evaa_tau_172.px | /evaa | 7.3 Varsinais-Suomen vaalipiiri, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain eduskuntavaaleissa 2015
-    178_evaa_2019_tau_178.px | /evaa | 178 -- 7.9 Vaasan vaalipiiri, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain eduskuntavaaleissa 2019
-    178_evaa_tau_178.px | /evaa | 7.9 Vaasan vaalipiiri, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain eduskuntavaaleissa 2015
-    180_evaa_tau_180_fi.px | /evaa | 7.11 Vaasan vaalipiiri, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain eduskuntavaaleissa 2011
-    oi57_statfin_ehdok03_2003_fi.px | /evaa | Eduskuntavaalit 2003, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain, Varsinais-Suomen vaalipiiri
-    oi57_statfin_ehdok12_2003_fi.px | /evaa | Eduskuntavaalit 2003, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain, Vaasan vaalipiiri
-    oi57_statfin_ehdok12_2007_fi.px | /evaa | Eduskuntavaalit 2007, ehdokkaiden äänimäärät kunnittain ja äänestysalueittain, Vaasan vaalipiiri
-    120_evaa_2019_tau_102.px | /evaa | 102 -- 2. Äänestystiedot eduskuntavaaleissa 2019
-    130_evaa_2019_tau_103.px | /evaa | 103 -- 3. Puolueiden kannatus eduskuntavaaleissa 2019
-    610_euvaa_2019_tau_107.px | /euvaa | 107 -- 2.5. Europarlamenttivaalit 2019, äänestystiedot
-    620_euvaa_2019_tau_108.px | /euvaa | 108 -- 2.6. Europarlamenttivaalit 2019, puolueiden kannatus
-    statfinpas_kvaa_pxt_12wx_2021.px | /kvaa | 12wx -- Kuntavaalit äänestystiedot, 2021
-    statfinpas_kvaa_pxt_12wy_2021.px | /kvaa | 12wy -- Kuntavaalit puolueiden kannatus, 2021
-    statfinpas_alvaa_pxt_13d6_2022.px | /alvaa | 13d6 -- Ehdokkaat äänestysalueittain aluevaaleissa Etelä-Pohjanmaan hyvinvointialue, 2022
-    statfinpas_alvaa_pxt_13bw_2022.px | /alvaa | 13bw -- Aluevaalit äänestystiedot, 2022
-    statfinpas_alvaa_pxt_13bx_2022.px | /alvaa | 13bx -- Aluevaalit äänestystiedot, hylätyt äänet äänestysalueittain, 2022
-    statfinpas_alvaa_pxt_13by_2022.px | /alvaa | 13by -- Aluevaalit puolueiden kannatus, 2022
-    001_oi57_statfin_tulos1_2007_fi.px | /evaa | Eduskuntavaalit 2007, äänestystiedot
-== c1_fin_11rx
-  title: Väestö 31.12. muuttujina Uskontokunta, Sukupuoli, Ikä, Vuosi ja Tiedot
-  var 'uskontokunta_10_20190101' (Uskontokunta) [elimination]: 26 values
-      SSS=YHTEENSÄ; A00=ALKUPERÄISUSKONNOT JA UUSPAKANUUS; B00=BUDDHALAISUUS; C00=HINDULAISUUS; D00=ISLAM; E00=JUUTALAISUUS ... G02=Jehovan todistajat; G03=Myöh. Aik. Pyhien Jeesuksen Kristuksen Kirkko; G04=Suomen Kristiyhteisö; G05=Vapaa katolinen kirkko; G06=Muut; H00=USKONTOKUNTIIN KUULUMATTOMAT
-      code lengths {3: 26}; prefixes {'F': 12, 'G': 7, 'SSS': 1, 'A': 1, 'B': 1, 'C': 1, 'D': 1, 'E': 1}
-      ALL: SSS=YHTEENSÄ; A00=ALKUPERÄISUSKONNOT JA UUSPAKANUUS; B00=BUDDHALAISUUS; C00=HINDULAISUUS; D00=ISLAM; E00=JUUTALAISUUS; F00=KRISTINUSKO; F01=Adventismi; F02=Anglikaaniset kirkot; F03=Baptismi; F04=Evankelisluterilaiset vapaaseurakunnat; F05=Helluntailaisuus; F06=Katolinen kirkko; F07=Metodistikirkot; F08=Ortodoksiset kirkot; F09=Suomen evankelis-luterilainen kirkko; F10=Vapaakirkot; F11=Muut kristilliset; G00=MUUT USKONTOKUNNAT; G01=Bahá'í  yhdyskunnat; G02=Jehovan todistajat; G03=Myöh. Aik. Pyhien Jeesuksen Kristuksen Kirkko; G04=Suomen Kristiyhteisö; G05=Vapaa katolinen kirkko; G06=Muut; H00=USKONTOKUNTIIN KUULUMATTOMAT
-  var 'sukupuoli_9_20180101' (Sukupuoli) [elimination]: 3 values
-      SSS=Yhteensä; 1=Miehet; 2=Naiset
-  var 'ikaryhma_10_20180101' (Ikä) [elimination]: 6 values
-      SSS=Yhteensä; 0-14=0 - 14; 15-24=15 - 24; 25-44=25 - 44; 45-64=45 - 64; 65-=65 -
-  var 'timeperiod_y' (Vuosi) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
-  var 'contentscode' (Tiedot): 1 values
-      vaerak-vaesto=Väestö 31.12.
-      ALL: vaerak-vaesto=Väestö 31.12.
-== c1_fin_11ra
-  title: Tunnuslukuja väestöstä muuttujina Alue, Tiedot ja Vuosi
-  var 'alue_23_20260101' (Alue) [elimination]: 568 values
-      SSS=KOKO MAA; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... FI1D7=FI1D7 Lappi; FI1D8=FI1D8 Kainuu; FI1D9=FI1D9 Pohjois-Pohjanmaa; FI2=FI2 ÅLAND; FI20=FI20 Åland; FI200=FI200 Åland
-      code lengths {3: 18, 4: 89, 5: 449, 6: 12}; prefixes {'KU': 308, 'SK': 69, 'TA': 46, 'FI': 26, 'HVA': 23, 'KO': 20, 'MK': 19, 'VP': 13}
-      /^(KU091|SK011|MK01|SSS) /: 4 -- SSS=KOKO MAA; KU091=Helsinki; MK01=MK01 Uusimaa; SK011=SK011 Helsinki
-  var 'contentscode' (Tiedot): 43 values
-      vaerak-vaesto=Väestö 31.12.; vaerak-kokmuutos=Väkiluvun muutos; kokmuutos_p=Väkiluvun muutos, %; vaesto_alle15_p=Alle 15-vuotiaiden osuus, %; vaesto_15_64_p=15-64-vuotiaiden osuus, %; vaesto_yli64_p=65 vuotta täyttäneiden osuus, % ... vaesto_k3_p=Kaupungin kehysalueella asuvien osuus, %; vaesto_ms_p=Maaseutualueella asuvien osuus, %; vaesto_m4_p=Maaseudun paikalliskeskuksissa asuvien osuus, %; vaesto_m5_p=Kaupungin läheisellä maaseudulla asuvien osuus, %; vaesto_m6_p=Ydinmaaseudulla asuvien osuus, %; vaesto_m7_p=Harvaan asutulla maaseudulla asuvien osuus, %
-      code lengths {11: 10, 13: 3, 14: 2, 15: 5, 16: 5, 17: 3, 18: 8, 19: 1, 20: 2, 21: 1, 23: 3}; prefixes {'vaesto': 36, 'vaerak-vaesto': 2, 'vaerak-kokmuutos': 1, 'kokmuutos': 1, 'vaerak-dem': 1, 'vaerak-tal': 1, 'vaerak-maa': 1}
-      ALL: vaerak-vaesto=Väestö 31.12.; vaerak-kokmuutos=Väkiluvun muutos; kokmuutos_p=Väkiluvun muutos, %; vaesto_alle15_p=Alle 15-vuotiaiden osuus, %; vaesto_15_64_p=15-64-vuotiaiden osuus, %; vaesto_yli64_p=65 vuotta täyttäneiden osuus, %; vaerak-dem_huoltos=Väestöllinen huoltosuhde; vaerak-tal_huoltos=Taloudellinen huoltosuhde; vaesto_keski_ika=Keski-ikä, molemmat sukupuolet; vaesto_keski_ika_1=Keski-ikä, miehet; vaesto_keski_ika_2=Keski-ikä, naiset; vaesto_kieli_fi=Suomenkielisiä; vaesto_kieli_fi_p=Suomenkielisten osuus, %; vaesto_kieli_sv=Ruotsinkielisiä; vaesto_kieli_sv_p=Ruotsinkielisten osuus, %; vaesto_kieli_se=Saamenkielisiä; vaesto_kieli_ulk=Vieraskielisiä; vaesto_kieli_ulk_p=Vieraskielisten osuus, %; vaesto_kansa_ulk=Ulkomaan kansalaisia; vaesto_kansa_ulk_p=Ulkomaan kansalaisten osuus, %; vaesto_svaltio_ulk=Ulkomailla syntyneitä; vaesto_svaltio_ulk_p=Ulkomailla syntyneiden osuus, %; vaesto_tausta_ulk=Ulkomaalaistaustaisia; vaesto_tausta_ulk_p=Ulkomaalaistaustaisten osuus, %; vaesto_usk_evlut_p=Ev.lut kirkkoon kuuluvien osuus, %; vaesto_usk_muu_p=Muihin uskontokuntiin kuuluvien osuus, %; vaesto_usk_ei_p=Uskontokuntiin kuulumattomien osuus, %; vaerak-maa_pa=Maapinta-ala, km²; vaerak-vaesto_maa_pa=Väestöntiheys; vaesto_skunta=Alueella syntyneitä, jotka ovat Suomen väestössä; vaesto_askunta_skunta=Alueella asuvia, jotka ovat syntyneet alueella; vaesto_askunta_eiskunta=Alueella asuvia, jotka ovat syntyneet muualla; vaesto_askunta_skunta_p=Asuinalueellaan syntyneiden osuus, %; vaesto_skunta_askunta_p=Syntymäalueellaan asuvien osuus, %; vaesto_ks_p=Kaupunkialueella asuvien osuus, %; vaesto_k1_p=Sisemmällä kaupunkialueella asuvien osuus, %; vaesto_k2_p=Ulommalla kaupunkialueella asuvien osuus, %; vaesto_k3_p=Kaupungin kehysalueella asuvien osuus, %; vaesto_ms_p=Maaseutualueella asuvien osuus, %; vaesto_m4_p=Maaseudun paikalliskeskuksissa asuvien osuus, %; vaesto_m5_p=Kaupungin läheisellä maaseudulla asuvien osuus, %; vaesto_m6_p=Ydinmaaseudulla asuvien osuus, %; vaesto_m7_p=Harvaan asutulla maaseudulla asuvien osuus, %
-  var 'timeperiod_y' (Vuosi) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
+== c1_swe_cdx
+  29 captures
+    20220120151620 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20december%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf application/pdf 200
+    20220120125532 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20december%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf?id=2195455 application/pdf 200
+    20220120135300 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20december%202020%20per%20forsamling,%20pastorat%20och%20stift%20samt%20riket%20(pdf).pdf application/pdf 200
+    20220120123847 https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20december%202020%20per%20forsamling,%20pastorat%20och%20stift%20samt%20riket%20(pdf).pdf?id=2195456 application/pdf 200
+    20220710030454 https://www.svenskakyrkan.se/filer/1374643/Medlemsutveckling%202019- text/html 404
+    20220710030509 https://www.svenskakyrkan.se/filer/1374643/Medlemsutveckling%202019-2020,%20lan,%20kommun%20och%20forsamling%20samt%20riket%20(pdf text/html 404
+    20220120132225 https://www.svenskakyrkan.se/filer/1374643/Medlemsutveckling%202019-2020,%20lan,%20kommun%20och%20forsamling%20samt%20riket%20(pdf).pdf application/pdf 200
+    20220120130612 https://www.svenskakyrkan.se/filer/1374643/Medlemsutveckling%202019-2020,%20lan,%20kommun%20och%20forsamling%20samt%20riket%20(pdf).pdf?id=2195458 application/pdf 200
+    20221223184800 http://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingLKF(1 unk 301
+    20220401215811 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingLKF(1).pdf application/pdf 200
+    20220401215759 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingLKF(1).pdf?id=2398412 application/pdf 200
+    20220401215810 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingSKP(1).pdf application/pdf 200
+    20221029093500 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingSKP(1).pdf?id=2398410&fbclid=IwAR1Fw4qH4Va9JLKXXfIrzmo0a65EKfkQyeeX3Oyd2tAr8EeUf7Xy-lS4Yss application/pdf 200
+    20220331171106 https://www.svenskakyrkan.se/filer/1374643/MedlemsutvecklingSKP(1).pdf?id=2398410 application/pdf 200
+    20241119125037 http://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF(1 unk 302
+    20220401215825 https://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF(1).pdf application/pdf 200
+    20220401215753 https://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF(1).pdf?id=2398408 application/pdf 200
+    20220205191123 https://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF.pdf application/pdf 200
+    20230803085005 https://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF.pdf/favicon.ico application/pdf 200
+    20220401215834 https://www.svenskakyrkan.se/filer/1374643/NyckeltalSKP(1).pdf application/pdf 200
+    20220401215852 https://www.svenskakyrkan.se/filer/1374643/NyckeltalSKP(1).pdf?id=2398409 application/pdf 200
+    20220710011218 https://www.svenskakyrkan.se/filer/Medlemmar%20i%20Svenska%20kyrkan%20i%20f%C3%B6rh%C3%A5llande%20till%20folkm%C3%A4ngd%20den%2031.12.2016%20per%20f%C3%B6rsamling,%20kommun%20och%20l%C3%A4n%20samt%20riket%20(pdf,%2059%20sidor).pdf application/pdf 200
+    20240622002911 https://www.svenskakyrkan.se/filer/Medlemmar%20i%20svk%20i%20f%C3%B6rh%C3%A5llande%20t%20folkm%C3%A4ngd%2031.12.2018%20per%20f%C3%B6rsaml,%20pastorat,%20stift%20och%20riket(1).PDF application/pdf 200
+    20251010225005 https://www.svenskakyrkan.se/filer/Medlemmar%20i%20svk%20i%20f%C3%B6rh%C3%A5llande%20till%20folkm%C3%A4ngd%2031.12.2018%20per%20f%C3%B6rsamling warc/revisit -
+    20241220034531 https://www.svenskakyrkan.se/filer/Medlemmar%20i%20svk%20i%20f%C3%B6rh%C3%A5llande%20till%20folkm%C3%A4ngd%2031.12.2018%20per%20f%C3%B6rsamling,%20kommun,%20l%C3%A4n%20och%20riket(1).PDF application/pdf 200
+    20250126131901 https://www.svenskakyrkan.se/filer/Medlemsutveckling%202015-2016,%20per%20f%C3%B6rsamling,%20kommun%20och%20l%C3%A4n%20samt%20riket%20(pdf,%2038%20sidor).pdf application/pdf 200
+    20241118172902 https://www.svenskakyrkan.se/filer/Medlemsutveckling%202015-2016,%20per%20f%C3%B6rsamling,%20pastorat%20och%20stift%20samt%20riket%20(pdf,%2047%20sidor).pdf application/pdf 200
+    20220813191021 https://www.svenskakyrkan.se/filer/Motion%202017_117%20Medlemsutvecklingsstrategi.pdf application/pdf 200
+    20220412114905 https://www.svenskakyrkan.se/filer/Svenska%20kyrkans%20medlemsutveckling%201972%e2%80%932015%20(pdf,%202%20sidor).pdf warc/revisit -
+== c1_swe_page
+  61,543 characters, 94 links
+     -> https://www.svenskakyrkan.se/statistik
+     -> https://www.svenskakyrkan.se/assets/presentation/verktygsladan/main.css?v=2.17.3
+     -> https://www.svenskakyrkan.se/assets/presentation/verktygsladan/assets/favicons/favicon.svg?v=2.17.3
+     -> https://www.svenskakyrkan.se/assets/presentation/verktygsladan/assets/favicons/apple-touch-icon.png?v=2.17.3
+     -> https://www.svenskakyrkan.se/assets/presentation/verktygsladan/assets/favicons/favicon-32x32.png?v=2.17.3
+     -> https://www.svenskakyrkan.se/assets/presentation/verktygsladan/assets/favicons/favicon-16x16.png?v=2.17.3
+     -> https://www.svenskakyrkan.se/assets/presentation/verktygsladan/assets/favicons/safari-pinned-tab.svg?v=2.17.3
+     -> https://www.svenskakyrkan.se/assets/presentation/verktygsladan/assets/favicons/favicon.ico?v=2.17.3
+     -> https://www.svenskakyrkan.se/
+     -> https://www.svenskakyrkan.se/kalender?webId=1374643
+     -> https://www.svenskakyrkan.se/platser
+    Dop -> https://www.svenskakyrkan.se/dop
+    Konfirmation -> https://www.svenskakyrkan.se/konfirmation
+    Vigsel -> https://www.svenskakyrkan.se/vigsel
+    Begravning -> https://www.svenskakyrkan.se/begravning
+    Du behövs -> https://www.svenskakyrkan.se/du-behovs
+    Hjälp och stöd -> https://www.svenskakyrkan.se/fa-hjalp
+    Årets högtider -> https://www.svenskakyrkan.se/hogtider
+    Bli medlem -> https://www.svenskakyrkan.se/medlem
+    Kristen tro -> https://www.svenskakyrkan.se/om-kristen-tro
+    Om oss -> https://www.svenskakyrkan.se/om-oss
+    Vårt arbete -> https://www.svenskakyrkan.se/vart-arbete
+    Pressrum -> https://www.svenskakyrkan.se/press
+    Andra språk – Other languages -> https://www.svenskakyrkan.se/sprak
+     -> https://www.svenskakyrkan.se/kalender?webId=1374643
+     -> https://www.svenskakyrkan.se/platser
+     -> https://www.svenskakyrkan.se/kyrkoaret/bibeltexter
+     -> https://www.svenskakyrkan.se/default.aspx?id=1374643
+     -> https://www.svenskakyrkan.se/om-oss
+     -> https://www.svenskakyrkan.se/fakta-om-kyrkan
+     -> https://app-eu.readspeaker.com/cgi-bin/rsent?customerid=4936&lang=sv_se&readid=innehall&url=https%3a%2f%2fwww.svenskakyrkan.se%2fstatistik%3fid%3d645562
+    Medlemmar i Svenska kyrkan 1972-2025 -> https://www.svenskakyrkan.se/filer/1374643/Medlemmar%20i%20Svenska%20kyrkan%201972-2025.pdf?id=3016165
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fMedlemmar%2520i%2520Svenska%2520kyrkan%25201972-2025.pdf%3fid%3d3016165
+    In- och utträden 1970-2025 -> https://www.svenskakyrkan.se/filer/1374643/In-%20och%20uttr%c3%a4den%201970-2025.pdf?id=3016152
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fIn-%2520och%2520uttr%25c3%25a4den%25201970-2025.pdf%3fid%3d3016152
+    Döpta, konfirmerade, vigda och begravda i Svenska kyrkan 1970-2025 -> https://www.svenskakyrkan.se/filer/1374643/D%c3%b6pta,%20konfirmerade,%20vigda%20och%20begravda%20i%20Svenska%20kyrkan%201970-2025.pdf?id=3016163
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fD%25c3%25b6pta%2c%2520konfirmerade%2c%2520vigda%2520och%2520begravda%2520i%2520Svenska%2520kyrkan%25201970-2025.pdf%3fid%3d3016163
+    Gudstjänstbesök 1990-2025 -> https://www.svenskakyrkan.se/filer/1374643/Gudstj%c3%a4nstbes%c3%b6k%201990-2025.pdf?id=3016161
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fGudstj%25c3%25a4nstbes%25c3%25b6k%25201990-2025.pdf%3fid%3d3016161
+    Barn- och ungdomsverksamhet 2001-2025 -> https://www.svenskakyrkan.se/filer/1374643/Barn-%20och%20ungdomsverksamhet%202001-2025.pdf?id=3016162
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fBarn-%2520och%2520ungdomsverksamhet%25202001-2025.pdf%3fid%3d3016162
+    Syföreningar och arbetskretsar 2001-2025 -> https://www.svenskakyrkan.se/filer/1374643/Syf%c3%b6reningar%20och%20arbetskretsar%202001-2025.pdf?id=3016166
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fSyf%25c3%25b6reningar%2520och%2520arbetskretsar%25202001-2025.pdf%3fid%3d3016166
+    Körer 2001-2025 -> https://www.svenskakyrkan.se/filer/1374643/K%c3%b6rer%202001-2025.pdf?id=3016164
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fK%25c3%25b6rer%25202001-2025.pdf%3fid%3d3016164
+    Diakonalt arbete - uppsökande verksamhet, kontakttillfällen och ekonomiska bidrag 2015-2025 -> https://www.svenskakyrkan.se/filer/1374643/Diakonalt%20arbete%20-%20upps%c3%b6kande%20verksamhet,%20kontakttillf%c3%a4llen%20och%20ekonomiska%20bidrag%202015-2025.pdf?id=3016174
+     -> https://docreader.readspeaker.com/docreader/?cid=bphrm&amp;lang=sv_se&amp;url=https%3a%2f%2fwww.svenskakyrkan.se%2ffiler%2f1374643%2fDiakonalt%2520arbete%2520-%2520upps%25c3%25b6kande%2520verksamhet%2c%2520kontakttillf%25c3%25a4llen%2520och%2520ekonomiska%2520bidrag%25202015-2025.pdf%3fid%3d3016174
+    Antal sverigefinländare per stift och församling 31 december 2025 -> https://www.svenskakyrkan.se/filer/1374643/Antal%20sverigefinl%c3%a4ndare%20per%20stift%20och%20f%c3%b6rsamling%2031%20december%202025%20.xlsx?id=3085875
+    Preliminär månadsstatistik för aktiva in- och utträden 2004-juli 2026 (pdf). -> https://www.svenskakyrkan.se/default.aspx?id=3115155
+    Svenska kyrkans enhet f&#246;r forskning och analys. -> https://www.svenskakyrkan.se/forskning
+     -> mailto:redaktionen@svenskakyrkan.se
+    Om oss -> https://www.svenskakyrkan.se/om-oss
+    Fakta om kyrkan -> https://www.svenskakyrkan.se/fakta-om-kyrkan
+    Arkiv -> https://www.svenskakyrkan.se/arkiv
+    Ekonomi -> https://www.svenskakyrkan.se/ekonomi
+    Gå till källan -> https://www.svenskakyrkan.se/ga-till-kallan
+    Historia -> https://www.svenskakyrkan.se/historik
+    Statistik -> https://www.svenskakyrkan.se/statistik
+    Svenska kyrkans offentlighetsprincip -> https://www.svenskakyrkan.se/svenska-kyrkans-offentlighetsprincip
+    Upphandlingar -> https://www.svenskakyrkan.se/om-oss/svenska-kyrkans-upphandlingar
+    Jobba i Svenska kyrkan -> https://www.svenskakyrkan.se/jobb
+    Kontakta oss -> https://www.svenskakyrkan.se/kontakt
+    Om webbplatsen -> https://www.svenskakyrkan.se/valkommen-till-svenskakyrkanse
+    Organisation -> https://www.svenskakyrkan.se/organisation
+    Personuppgifter (GDPR) -> https://www.svenskakyrkan.se/om-oss/personuppgifter
+    Utbildning -> https://www.svenskakyrkan.se/om-oss/utbildning
+    Hitta din församling -> https://www.svenskakyrkan.se/sok-forsamling
+    Kontaktuppgifter till Svenska kyrkan -> https://www.svenskakyrkan.se/kyrkokansliet
+    Hj&#228;lp och st&#246;d -> https://www.svenskakyrkan.se/fa-hjalp
+    Anledningar att vara medlem -> https://www.svenskakyrkan.se/medlem/anledningar
+    S&#246;k f&#246;rsamling -> https://www.svenskakyrkan.se/sokforsamling
+    Lediga jobb i Svenska kyrkan -> https://www.svenskakyrkan.se/jobb/svenska-kyrkan
+    Kristen tro -> https://www.svenskakyrkan.se/om-kristen-tro
+    Kyrko&#229;rets bibeltexter -> https://www.svenskakyrkan.se/kyrkoaret/bibeltexter
+    Sidkarta -> https://www.svenskakyrkan.se/sidkarta
+    Facebook -> https://www.facebook.com/svenskakyrkan
+    Instagram -> https://www.instagram.com/svenskakyrkan
+    Vimeo -> https://vimeo.com/user14652877
+    Bloggportalen -> https://blogg.svenskakyrkan.se/
+     -> https://stod.svenskakyrkan.se/jp/chatt
+     -> https://stod.svenskakyrkan.se/jp/brev/skriv
+     -> tel:112
+    Hitta församling -> https://www.svenskakyrkan.se/sokforsamling
+    Bli medlem -> https://www.svenskakyrkan.se/medlem
+    Lediga jobb -> https://www.svenskakyrkan.se/jobb
+    Ge en gåva -> https://www.svenskakyrkan.se/du-behovs/ge-en-gava
+    Organisation -> https://www.svenskakyrkan.se/organisation
+    Act Svenska kyrkan -> https://www.svenskakyrkan.se/act
+    Svenska kyrkan i utlandet -> https://www.svenskakyrkan.se/iutlandet
+    Press – nationell nivå -> https://www.svenskakyrkan.se/press
+    Behandling av personuppgifter -> https://www.svenskakyrkan.se/om-oss/personuppgifter
+    Kakor -> https://www.svenskakyrkan.se/om-oss/kakor
+    Lyssna -> https://www.svenskakyrkan.se/lyssna
+    Tillgänglighetsredogörelse -> https://www.svenskakyrkan.se/tillganglighet-pa-svenskakyrkanse
+== c1_swe_kolada
+  FAILED: RuntimeError: HTTP 410: {"error": "This endpoint is deprecated. Please use /v3 instead."}
+== c1_swe_2021
+  NyckeltalLKF(1).pdf: 56 pages -- Medlemmar i Svenska kyrkan i förhållande till folkmängd den 31.12.2021 per församling, kommun och län samt riket | Obs! Informationen är preliminär och kan justeras i maj i samband med publiceringen av Svenska kyrkans verksamhetsstatis | Uppgifter om folkmängd, medlemmar samt icke-medlemmar tas fram av SCB på uppdrag av Svenska kyrkan.
+  NyckeltalLKF.pdf: 56 pages -- Medlemmar i Svenska kyrkan i förhållande till folkmängd den 31.12.2019 per församling, kommun och län samt riket | Obs! Informationen är preliminär och kan justeras i maj i samband med publiceringen av Svenska kyrkans verksamhetsstatis | Uppgifter om folkmängd, medlemmar samt icke-medlemmar tas fram av SCB på uppdrag av Svenska kyrkan.
