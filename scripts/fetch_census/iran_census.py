@@ -76,6 +76,7 @@ import argparse
 import io
 import re
 import sys
+import time
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -388,8 +389,37 @@ def read_citizenship(row: list[Any], columns: dict[int, str], total_col: int,
 # --------------------------------------------------------------------------
 # Reading the workbooks.
 
+PAUSE = 10.0                          # seconds between two Wayback requests
+COOLDOWNS = (120, 240, 300, 300)      # waits after the Archive refuses us
+_last_request = [0.0]
+
+
 def fetch(url: str) -> bytes:
-    blob = http_get(WAYBACK.format(url=url), binary=True, timeout=180, retries=5)
+    """One workbook from the Wayback Machine, spaced out and waited out.
+
+    The Archive refuses connections for a minute or more when one address asks
+    too often, and each capture costs two requests (the redirect to the exact
+    timestamp, then the file). The first run was refused after six or seven
+    workbooks in a row, so requests are spaced PAUSE seconds apart and a refusal
+    is waited out for minutes rather than retried at once.
+    """
+    target = WAYBACK.format(url=url)
+    blob: bytes | str = b""
+    for cooldown in (*COOLDOWNS, None):
+        wait = PAUSE - (time.monotonic() - _last_request[0])
+        if wait > 0:
+            time.sleep(wait)
+        try:
+            blob = http_get(target, binary=True, timeout=180, retries=1)
+            break
+        except RuntimeError as err:
+            if cooldown is None:
+                raise
+            log(f"  the Archive refused {url.rsplit('/', 1)[-1]} ({err.__cause__}); "
+                f"waiting {cooldown}s")
+            time.sleep(cooldown)
+        finally:
+            _last_request[0] = time.monotonic()
     assert isinstance(blob, bytes)
     if blob[:8] != b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1":
         raise SystemExit(f"iran_census: {url} came back as something other than a "
