@@ -213,6 +213,15 @@ def parse_age_tables(pages: list[str]) -> tuple[dict[str, dict[str, Any]], Count
                 continue
             label = " ".join(m.group("label").split())
             kind, name = vn.classify(label)
+            words = label.split()
+            while kind not in ("province", "region", "country") and len(words) > 1:
+                # A wrapped bilingual region name arrives as the last word of its
+                # Vietnamese half and the whole English one: "Trung North and
+                # South Central Coast". Its English tail is the region.
+                words = words[1:]
+                kind, name = vn.classify(" ".join(words))
+                if kind == "province":
+                    kind = "other"        # a tail that names a province is no region
             if kind not in ("province", "region", "country"):
                 raise SystemExit(f"vietnam_district: Table 5 page {number}: {label!r} is no "
                                  "unit this reader knows")
