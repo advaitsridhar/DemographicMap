@@ -17,10 +17,14 @@
       "note": "The census's own total for Duhok is 1,599,871. It counts Shikhan district (69,279), Akri district (216,146), Bardresh district (129,715) under Duhok, which the map draws in Ninewa. The figure is the census's count of the ground drawn here."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The census's age table counts Duhok on its own boundaries (1,599,871 people), and some of that ground the map draws in another governorate (see the population note), so its median age is not this shape's."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -33,8 +37,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
@@ -42,7 +51,8 @@
     "aliases": [
       "Dohuk",
       "Dahuk"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 597,482 men and 587,249 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-12",
@@ -62,10 +72,14 @@
       "note": "The census's own total for Ninewa is 4,261,980. It counts Makhmoor district (212,357) under Ninewa, which the map draws in Erbil; it counts Shikhan district (69,279), Akri district (216,146), Bardresh district (129,715) under Duhok, which the map draws in Ninewa. The figure is the census's count of the ground drawn here."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The census's age table counts Ninewa on its own boundaries (4,261,980 people), and some of that ground the map draws in another governorate (see the population note), so its median age is not this shape's."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -78,8 +92,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
@@ -87,7 +106,8 @@
     "aliases": [
       "Ninawa",
       "Nineveh"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 2,229,148 men and 2,235,615 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-13",
@@ -107,10 +127,14 @@
       "note": "The census's own total for Al-Sulaymaniyah is 2,401,724. It counts Kifri district (50,714), Khanakeen district (18,054) under Al-Sulaymaniyah, which the map draws in Diyala. The figure is the census's count of the ground drawn here."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The census's age table counts Al-Sulaymaniyah on its own boundaries (2,401,724 people), and some of that ground the map draws in another governorate (see the population note), so its median age is not this shape's."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -123,8 +147,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
@@ -132,7 +161,8 @@
     "aliases": [
       "Al-Sulaimaniyah",
       "Sulaymaniyah"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 1,180,255 men and 1,152,701 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-14",
@@ -151,10 +181,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 21.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -167,12 +203,19 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 1,011,761 men and 1,022,866 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-15",
@@ -192,10 +235,14 @@
       "note": "The census's own total for Erbil is 2,517,534. It counts Makhmoor district (212,357) under Ninewa, which the map draws in Erbil. The figure is the census's count of the ground drawn here."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The census's age table counts Erbil on its own boundaries (2,517,534 people), and some of that ground the map draws in another governorate (see the population note), so its median age is not this shape's."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -208,12 +255,18 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 1,370,544 men and 1,359,347 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-21",
@@ -233,10 +286,14 @@
       "note": "The census's own total for Diyala is 1,934,504. It counts Kifri district (50,714), Khanakeen district (18,054) under Al-Sulaymaniyah, which the map draws in Diyala. The figure is the census's count of the ground drawn here."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The census's age table counts Diyala on its own boundaries (1,934,504 people), and some of that ground the map draws in another governorate (see the population note), so its median age is not this shape's."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -249,12 +306,18 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 1,001,631 men and 1,001,641 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-22",
@@ -273,10 +336,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -289,12 +358,19 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 1,001,598 men and 1,002,820 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-23",
@@ -313,10 +389,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 22.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -329,12 +411,19 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 4,904,977 men and 4,875,452 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2). The 4 people of unstated age are left out."
   },
   {
     "id": "IRQ-CEN-24",
@@ -353,10 +442,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 21.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -369,12 +464,19 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 1,253,643 men and 1,228,681 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-25",
@@ -393,10 +495,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 21.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -409,15 +517,22 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
     "country": "IRQ",
     "aliases": [
       "Karbala"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 879,455 men and 874,610 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-26",
@@ -436,10 +551,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -452,15 +573,22 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
     "country": "IRQ",
     "aliases": [
       "Wasit"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 826,035 men and 818,238 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-27",
@@ -479,10 +607,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -495,15 +629,22 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
     "country": "IRQ",
     "aliases": [
       "Salah al-Din"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 881,547 men and 892,995 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-28",
@@ -522,10 +663,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 21.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -538,8 +685,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
@@ -547,7 +699,9 @@
     "aliases": [
       "An-Najaf",
       "Najaf"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 981,453 men and 969,380 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-31",
@@ -566,10 +720,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -582,8 +742,13 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
@@ -591,7 +756,9 @@
     "aliases": [
       "Al-Qadisiyah",
       "Qadisiyah"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 741,898 men and 735,412 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-32",
@@ -610,10 +777,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -626,12 +799,19 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 523,763 men and 519,324 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-33",
@@ -650,10 +830,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -666,15 +852,22 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
     "country": "IRQ",
     "aliases": [
       "Dhi Qar"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 1,264,589 men and 1,234,879 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-34",
@@ -693,10 +886,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -709,12 +908,19 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 655,077 men and 638,559 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2)."
   },
   {
     "id": "IRQ-CEN-35",
@@ -733,10 +939,16 @@
       "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -749,12 +961,19 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      },
+      {
+        "field": "median_age",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
     ],
-    "country": "IRQ"
+    "country": "IRQ",
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this governorate: 1,856,748 men and 1,807,420 women, from the same sub-district rows of Table 11/2 as its population.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2024 census's count of everyone by five-year age group (Table 10/2). The 3 people of unstated age are left out."
   },
   {
     "id": "IRQ-CEN-babil-al-hilla",
@@ -777,7 +996,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -790,7 +1012,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -799,7 +1021,8 @@
     "parent_name": "Babil",
     "aliases": [
       "الحلة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 527,718 men and 513,185 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-babil-al-mahaweel",
@@ -822,7 +1045,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -835,7 +1061,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -844,7 +1070,8 @@
     "parent_name": "Babil",
     "aliases": [
       "المحاويل"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 213,223 men and 209,623 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-babil-al-mussyab",
@@ -866,7 +1093,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -879,7 +1109,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -888,7 +1118,8 @@
     "parent_name": "Babil",
     "aliases": [
       "المسيب"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 206,693 men and 204,961 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-babil-al-hashimiya",
@@ -911,7 +1142,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -924,7 +1158,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -933,7 +1167,8 @@
     "parent_name": "Babil",
     "aliases": [
       "الهاشمية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 306,009 men and 300,912 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-salah-al-din-al-daur",
@@ -955,7 +1190,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 97.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -968,7 +1206,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -977,7 +1215,8 @@
     "parent_name": "Salah Al-Din",
     "aliases": [
       "الدور"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 27,205 men and 28,025 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-salah-al-din-tikrit",
@@ -1000,7 +1239,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 97.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1013,7 +1255,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1022,7 +1264,8 @@
     "parent_name": "Salah Al-Din",
     "aliases": [
       "تكريت"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 169,102 men and 172,725 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-salah-al-din-balad",
@@ -1045,7 +1288,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1058,7 +1304,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1067,7 +1313,8 @@
     "parent_name": "Salah Al-Din",
     "aliases": [
       "بلد"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 221,978 men and 226,290 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-salah-al-din-samarra",
@@ -1089,7 +1336,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1102,7 +1352,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1111,7 +1361,8 @@
     "parent_name": "Salah Al-Din",
     "aliases": [
       "سامراء"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 153,079 men and 154,481 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-salah-al-din-beygee",
@@ -1133,7 +1384,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.3,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1146,7 +1400,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1155,7 +1409,8 @@
     "parent_name": "Salah Al-Din",
     "aliases": [
       "بيجي"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 93,012 men and 93,660 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-salah-al-din-tooz-khurmato",
@@ -1178,7 +1433,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1191,7 +1449,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1200,7 +1458,8 @@
     "parent_name": "Salah Al-Din",
     "aliases": [
       "طوز خورماتو"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 86,172 men and 86,887 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-salah-al-din-al-shirqat",
@@ -1222,7 +1481,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1235,7 +1497,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1244,7 +1506,8 @@
     "parent_name": "Salah Al-Din",
     "aliases": [
       "الشرقاط"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 130,999 men and 130,927 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-baghdad-al-kadhmiyah",
@@ -1563,7 +1826,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1576,7 +1842,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1585,7 +1851,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "السليمانية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 564,088 men and 552,736 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-sulaymaniyah-kalar",
@@ -1607,7 +1874,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1620,7 +1890,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1629,7 +1899,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "كلار"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 107,565 men and 105,887 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-sulaymaniyah-halabcha",
@@ -1652,7 +1923,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1665,7 +1939,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1674,7 +1948,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "حلبجة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 140,445 men and 137,886 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-sulaymaniyah-rania",
@@ -1697,7 +1972,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1710,7 +1988,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1719,7 +1997,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "رانية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 134,276 men and 130,212 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-sulaymaniyah-dokan",
@@ -1741,7 +2020,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1754,7 +2036,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1763,7 +2045,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "دوكان"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 39,034 men and 36,133 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-sulaymaniyah-pshdar",
@@ -1785,7 +2068,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.3,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1798,7 +2084,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1807,7 +2093,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "بشدر"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 71,145 men and 69,543 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-sulaymaniyah-panjwin",
@@ -1829,7 +2116,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1842,7 +2132,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1851,7 +2141,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "بنجوين"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 26,623 men and 25,628 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-sulaymaniyah-derbendikhan",
@@ -1873,7 +2164,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1886,7 +2180,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1895,7 +2189,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "دربندخان"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 28,473 men and 27,673 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-sulaymaniyah-sharbazher",
@@ -1918,7 +2213,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1931,7 +2229,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1940,7 +2238,8 @@
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
       "شهربازار"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 13,435 men and 12,672 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-thi-qar-suq-al-shoyokh",
@@ -1963,7 +2262,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -1976,7 +2278,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -1985,7 +2287,8 @@
     "parent_name": "Thi Qar",
     "aliases": [
       "سوق الشيوخ"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 189,522 men and 183,856 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-thi-qar-al-nasiriya",
@@ -2008,7 +2311,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2021,7 +2327,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2030,7 +2336,8 @@
     "parent_name": "Thi Qar",
     "aliases": [
       "الناصرية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 492,374 men and 476,389 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-thi-qar-al-shatra",
@@ -2053,7 +2360,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.5,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2066,7 +2376,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2075,7 +2385,8 @@
     "parent_name": "Thi Qar",
     "aliases": [
       "الشطرة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 266,683 men and 262,648 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-thi-qar-al-rifai",
@@ -2098,7 +2409,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2111,7 +2425,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2120,7 +2434,8 @@
     "parent_name": "Thi Qar",
     "aliases": [
       "الرفاعي"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 256,396 men and 252,409 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-thi-qar-al-chibayish",
@@ -2143,7 +2458,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2156,7 +2474,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2165,7 +2483,8 @@
     "parent_name": "Thi Qar",
     "aliases": [
       "الجبايش"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 59,614 men and 59,577 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-kirkuk-al-hawiga",
@@ -2187,7 +2506,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 97.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2200,7 +2522,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2209,7 +2531,8 @@
     "parent_name": "Kirkuk",
     "aliases": [
       "الحويجة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 158,712 men and 162,587 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-kirkuk-kirkuk",
@@ -2232,7 +2555,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2245,7 +2571,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2254,7 +2580,8 @@
     "parent_name": "Kirkuk",
     "aliases": [
       "كركوك"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 744,314 men and 750,280 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-kirkuk-daquq",
@@ -2276,7 +2603,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2289,7 +2619,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2298,7 +2628,8 @@
     "parent_name": "Kirkuk",
     "aliases": [
       "داقوق"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 41,934 men and 43,839 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-kirkuk-dibis",
@@ -2321,7 +2652,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2334,7 +2668,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2343,7 +2677,8 @@
     "parent_name": "Kirkuk",
     "aliases": [
       "دبس"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 66,801 men and 66,160 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-maysan-al-mejar-al-kabir",
@@ -2366,7 +2701,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2379,7 +2717,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2388,7 +2726,8 @@
     "parent_name": "Maysan",
     "aliases": [
       "المجر الكبير"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 99,795 men and 97,486 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-maysan-al-kahla",
@@ -2447,7 +2786,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 104.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2460,7 +2802,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2469,7 +2811,8 @@
     "parent_name": "Maysan",
     "aliases": [
       "الميمونة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 50,827 men and 48,877 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-maysan-al-amara",
@@ -2528,7 +2871,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2541,7 +2887,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2550,7 +2896,8 @@
     "parent_name": "Maysan",
     "aliases": [
       "علي الغربي"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 31,945 men and 31,277 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-maysan-qalat-saleh",
@@ -2572,7 +2919,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2585,7 +2935,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2594,7 +2944,8 @@
     "parent_name": "Maysan",
     "aliases": [
       "قلعة صالح"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 33,944 men and 32,683 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-wassit-al-namaniya",
@@ -2617,7 +2968,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2630,7 +2984,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2639,7 +2993,8 @@
     "parent_name": "Wassit",
     "aliases": [
       "النعمانية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 98,318 men and 97,688 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-wassit-al-suwaira",
@@ -2662,7 +3017,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2675,7 +3033,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2684,7 +3042,8 @@
     "parent_name": "Wassit",
     "aliases": [
       "الصويرة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 282,098 men and 278,632 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-wassit-al-hai",
@@ -2707,7 +3066,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2720,7 +3082,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2729,7 +3091,8 @@
     "parent_name": "Wassit",
     "aliases": [
       "الحي"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 99,199 men and 98,770 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-wassit-badra",
@@ -2752,7 +3115,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 104.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2765,7 +3131,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2774,7 +3140,8 @@
     "parent_name": "Wassit",
     "aliases": [
       "بدرة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 18,110 men and 17,348 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-wassit-al-kut",
@@ -2796,7 +3163,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2809,7 +3179,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2818,7 +3188,8 @@
     "parent_name": "Wassit",
     "aliases": [
       "الكوت"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 328,310 men and 325,800 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-anbar-al-falluja",
@@ -2841,7 +3212,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2854,7 +3228,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2863,7 +3237,8 @@
     "parent_name": "Al-Anbar",
     "aliases": [
       "الفلوجة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 354,013 men and 356,760 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-anbar-heet",
@@ -2885,7 +3260,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2898,7 +3276,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2907,7 +3285,8 @@
     "parent_name": "Al-Anbar",
     "aliases": [
       "هيت"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 94,567 men and 93,803 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-anbar-al-ramadi",
@@ -2930,7 +3309,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2943,7 +3325,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2952,7 +3334,8 @@
     "parent_name": "Al-Anbar",
     "aliases": [
       "الرمادي"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 359,918 men and 356,396 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-anbar-haditha",
@@ -2974,7 +3357,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -2987,7 +3373,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -2996,7 +3382,8 @@
     "parent_name": "Al-Anbar",
     "aliases": [
       "حديثة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 57,380 men and 57,317 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-anbar-al-kaim",
@@ -3019,7 +3406,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 96.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3032,7 +3422,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3041,7 +3431,8 @@
     "parent_name": "Al-Anbar",
     "aliases": [
       "القائم"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 91,161 men and 94,068 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-anbar-al-rutba",
@@ -3063,7 +3454,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3076,7 +3470,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3085,7 +3479,8 @@
     "parent_name": "Al-Anbar",
     "aliases": [
       "الرطبة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 20,728 men and 20,557 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-anbar-ana",
@@ -3108,7 +3503,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3121,7 +3519,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3130,7 +3528,8 @@
     "parent_name": "Al-Anbar",
     "aliases": [
       "عنه"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 23,831 men and 23,919 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-diyala-al-khalis",
@@ -3153,7 +3552,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3166,7 +3568,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3175,7 +3577,8 @@
     "parent_name": "Diyala",
     "aliases": [
       "الخالص"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 215,757 men and 215,427 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-diyala-khanaqin",
@@ -3198,7 +3601,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3211,7 +3617,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3220,7 +3626,8 @@
     "parent_name": "Diyala",
     "aliases": [
       "خانقين"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 139,792 men and 139,169 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-diyala-al-muqdadiya",
@@ -3242,7 +3649,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3255,7 +3665,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3264,7 +3674,8 @@
     "parent_name": "Diyala",
     "aliases": [
       "المقدادية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 127,134 men and 127,212 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-diyala-baquba",
@@ -3286,7 +3697,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3299,7 +3713,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3308,7 +3722,8 @@
     "parent_name": "Diyala",
     "aliases": [
       "بعقوبة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 376,929 men and 377,856 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-diyala-kifri",
@@ -3331,7 +3746,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.5,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3344,7 +3762,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3353,7 +3771,8 @@
     "parent_name": "Diyala",
     "aliases": [
       "كفري"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 58,414 men and 58,737 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-diyala-baladruz",
@@ -3376,7 +3795,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3389,7 +3811,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3398,7 +3820,8 @@
     "parent_name": "Diyala",
     "aliases": [
       "مندلي"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 83,605 men and 83,240 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-ninewa-telafar",
@@ -3420,7 +3843,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3433,7 +3859,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3442,7 +3868,8 @@
     "parent_name": "Ninewa",
     "aliases": [
       "تلعفر"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 272,412 men and 273,999 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-ninewa-al-mosul",
@@ -3464,7 +3891,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3477,7 +3907,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3486,7 +3916,8 @@
     "parent_name": "Ninewa",
     "aliases": [
       "الموصل"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 1,168,523 men and 1,178,011 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-ninewa-al-baaj",
@@ -3508,7 +3939,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3521,7 +3955,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3530,7 +3964,8 @@
     "parent_name": "Ninewa",
     "aliases": [
       "البعاج"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 60,271 men and 60,804 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-ninewa-sinjar",
@@ -3552,7 +3987,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3565,7 +4003,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3574,7 +4012,8 @@
     "parent_name": "Ninewa",
     "aliases": [
       "سنجار"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 100,702 men and 100,300 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-ninewa-tilkaef",
@@ -3596,7 +4035,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.5,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3609,7 +4051,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3618,7 +4060,8 @@
     "parent_name": "Ninewa",
     "aliases": [
       "تلكيف"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 203,846 men and 202,886 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-ninewa-al-shikhan",
@@ -3641,7 +4084,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3654,7 +4100,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3663,7 +4109,8 @@
     "parent_name": "Ninewa",
     "aliases": [
       "الشيخان"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 94,237 men and 92,663 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-ninewa-aqra",
@@ -3722,7 +4169,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3735,7 +4185,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3744,7 +4194,8 @@
     "parent_name": "Ninewa",
     "aliases": [
       "الحمدانية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 125,599 men and 124,209 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-ninewa-al-hatra",
@@ -3766,7 +4217,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.5,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -3779,7 +4233,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -3788,7 +4242,8 @@
     "parent_name": "Ninewa",
     "aliases": [
       "الحضر"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 29,994 men and 30,446 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-basrah-al-faw",
@@ -4070,7 +4525,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.3,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4083,7 +4541,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4092,7 +4550,8 @@
     "parent_name": "Al-Qadissiya",
     "aliases": [
       "عفك"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 107,623 men and 106,276 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-qadissiya-al-diwaniya",
@@ -4115,7 +4574,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4128,7 +4590,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4137,7 +4599,8 @@
     "parent_name": "Al-Qadissiya",
     "aliases": [
       "الديوانية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 352,770 men and 351,973 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-qadissiya-al-shamiya",
@@ -4160,7 +4623,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4173,7 +4639,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4182,7 +4648,8 @@
     "parent_name": "Al-Qadissiya",
     "aliases": [
       "الشامية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 147,650 men and 144,458 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-qadissiya-al-hamza",
@@ -4205,7 +4672,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4218,7 +4688,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4227,7 +4697,8 @@
     "parent_name": "Al-Qadissiya",
     "aliases": [
       "الحمزة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 133,855 men and 132,705 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-duhok-duhok",
@@ -4249,7 +4720,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4262,7 +4736,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4271,7 +4745,8 @@
     "parent_name": "Duhok",
     "aliases": [
       "دهوك"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 250,272 men and 246,757 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-duhok-al-amadiya",
@@ -4293,7 +4768,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 102.5,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4306,7 +4784,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4315,7 +4793,8 @@
     "parent_name": "Duhok",
     "aliases": [
       "العمادية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 52,383 men and 51,124 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-duhok-sumail",
@@ -4412,7 +4891,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4425,7 +4907,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4434,7 +4916,8 @@
     "parent_name": "Kerbala",
     "aliases": [
       "كربلاء"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 684,874 men and 683,185 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-kerbala-al-hindiya",
@@ -4457,7 +4940,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4470,7 +4956,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4479,7 +4965,8 @@
     "parent_name": "Kerbala",
     "aliases": [
       "الهندية"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 177,858 men and 174,645 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-kerbala-ain-al-tamur",
@@ -4501,7 +4988,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4514,7 +5004,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4523,7 +5013,8 @@
     "parent_name": "Kerbala",
     "aliases": [
       "عين التمر"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 16,723 men and 16,780 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-najaf-al-najaf",
@@ -4545,7 +5036,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.5,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4558,7 +5052,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4567,7 +5061,8 @@
     "parent_name": "Al-Najaf",
     "aliases": [
       "النجف"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 542,416 men and 539,675 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-najaf-al-manathera",
@@ -4590,7 +5085,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4603,7 +5101,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4612,7 +5110,8 @@
     "parent_name": "Al-Najaf",
     "aliases": [
       "المناذرة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 141,698 men and 137,629 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-najaf-al-kufa",
@@ -4634,7 +5133,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4647,7 +5149,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4656,7 +5158,8 @@
     "parent_name": "Al-Najaf",
     "aliases": [
       "الكوفة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 297,339 men and 292,076 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-muthanna-al-rumaitha",
@@ -4679,7 +5182,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.2,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4692,7 +5198,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4701,7 +5207,8 @@
     "parent_name": "Al-Muthanna",
     "aliases": [
       "الرميثة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 222,100 men and 219,411 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-muthanna-al-samawa",
@@ -4724,7 +5231,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4737,7 +5247,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4746,7 +5256,8 @@
     "parent_name": "Al-Muthanna",
     "aliases": [
       "السماوة"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 222,580 men and 221,076 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-muthanna-al-khidhir",
@@ -4768,7 +5279,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4781,7 +5295,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4790,7 +5304,8 @@
     "parent_name": "Al-Muthanna",
     "aliases": [
       "الخضر"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 73,796 men and 73,516 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-al-muthanna-al-salman",
@@ -4812,7 +5327,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "religion": {
       "status": "not_available"
@@ -4825,7 +5343,7 @@
     },
     "sources": [
       {
-        "field": "population",
+        "field": "population/sex_ratio",
         "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
         "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
       }
@@ -4834,7 +5352,8 @@
     "parent_name": "Al-Muthanna",
     "aliases": [
       "السلمان"
-    ]
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2024 census's count of the ground drawn as this district: 5,287 men and 5,321 women, from the same sub-district rows of Table 11/2 as its population."
   },
   {
     "id": "IRQ-CEN-erbil-rawanduz",
