@@ -1,10 +1,20 @@
-  e-Stat 0004019308: 1965 values
-  e-Stat 0004019309: 86460 values
-  e-Stat 0003445244: 33405 values
-  national median 48.5, prefectures 44.1-56.4
-  ages: 1965 areas; every area's groups add to its total; Japan 61,349,581 men, 64,796,518 women
-  nationality: 1965 areas; every row's parts add up and its total is the age table's
-  the municipalities of every prefecture add up to it
-  grouped medians against the Bureau's over 1916 areas: mean gap 0.08 years, largest 0.69
-  1731 municipal polygons written (1730 bound, 1 sliver), 47 prefectures; people in no drawn polygon, by prefecture: Tokyo 2,351, Niigata 353, Kagawa Prefecture 3,103, Nagasaki Prefecture 2,288, Oita 1,725, Kagoshima Prefecture 5,520, Okinawa Prefecture 590
-  wrote data/processed/japan_municipal.json (6973 kB)
+== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development/Population%20and%20household/DT_NSO_0300_067V2.px
+  table: 'RESIDENT POPULATION IN MONGOLIA, by age group, soum and district, and by year'
+    'Насны бүлэг' ('Age group') 16 values: 0=Total, 1=    0-4, 2=    5-9, 3=    10-14, 4=    15-19, 5=    20-24, 6=    25-29, 7=    30-34, 8=    35-39, 9=    40-44, 10=    45-49, 11=    50-54, 12=    55-59, 13=    60-64, 14=    65-69, 15=    70+
+    'Бүс' ('Region') 369 values: 0=Total, 1=Khangai region, 165=Arkhangai, 16501=Erdenebulgan, 16513=Ikhtamir, 16528=Tuvshruulekh, 16546=Tsenkher, 16507=Bulgan, 16552=Chuluut, 16504=Battsengel, 16555=Erdenemandal, 16531=Khairkhan, 16549=Tsetserleg, 16510=Jargalant, 16540=Khotont, 16516=Ugiinuur, 16519=Ulziit, 16537=Khashaat, 16525=Tariat, 16522=Undur-Ulaan, 16543=Tsakhir, 16534=Khangai, 164=Bayankhongor, 16401=Bayankhongor, 16428=Bumbugur, 16434=Galuut, 16449=Ulziit, 16416=Bayan-Ovoo, 16458=Erdenetsogt, 16425=Bogd, 16413=Bayanlig, 16443=Jinst, 16410=Bayangovi, 16422=Bayantsagaan, 16455=Shinejinst, 16404=Baatsagaan, 16419=Bayan-Undur, 16440=Jargalant, 16446=Zag, 16437=Gurvanbulag
+    'Он' ('Year') 26 values: 2025=2025, =2024, =2023, =2022, =2021, =2020, =2019, =2018, =2017, =2016, =2015, =2014, =2013, =2012, =2011, =2010, =2009, =2008, =2007, =2006, =2005, =2004, =2003, =2002, =2001, =2000
+== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development/Population%20and%20household/DT_NSO_0300_068V2.px
+  table: 'RESIDENT POPULATION IN MONGOLIA, by sex, by soum and district, and by year'
+    'Хүйс' ('Sex') 3 values: 0=Total, 1= Male, 2= Female
+    'Бүс' ('Region') 369 values: 0=Total, 1=Khangai region, 165=Arkhangai, 16501=Erdenebulgan, 16513=Ikhtamir, 16528=Tuvshruulekh, 16546=Tsenkher, 16507=Bulgan, 16552=Chuluut, 16504=Battsengel, 16555=Erdenemandal, 16531=Khairkhan, 16549=Tsetserleg, 16510=Jargalant, 16540=Khotont, 16516=Ugiinuur, 16519=Ulziit, 16537=Khashaat, 16525=Tariat, 16522=Undur-Ulaan, 16543=Tsakhir, 16534=Khangai, 164=Bayankhongor, 16401=Bayankhongor, 16428=Bumbugur, 16434=Galuut, 16449=Ulziit, 16416=Bayan-Ovoo, 16458=Erdenetsogt, 16425=Bogd, 16413=Bayanlig, 16443=Jinst, 16410=Bayangovi, 16422=Bayantsagaan, 16455=Shinejinst, 16404=Baatsagaan, 16419=Bayan-Undur, 16440=Jargalant, 16446=Zag, 16437=Gurvanbulag
+    'Он' ('Year') 36 values: 2025=2025, =2024, =2023, =2022, =2021, =2020, =2019, =2018, =2017, =2016, =2015, =2014, =2013, =2012, =2011, =2010, =2009, =2008, =2007, =2006, =2005, =2004, =2003, =2002, =2001, =2000, =1999, =1998, =1997, =1996, =1995, =1994, =1993, =1992, =1991, =1990
+== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development/Population%20and%20household/DT_NSO_0300_004V5.px
+  table: 'RESIDENT POPULATION IN MONGOLIA, by soum and district, and by year'
+    'Бүс' ('Region') 369 values: 0=Total, 1=Khangai region, 165=Arkhangai, 16501=Erdenebulgan, 16513=Ikhtamir, 16528=Tuvshruulekh, 16546=Tsenkher, 16507=Bulgan, 16552=Chuluut, 16504=Battsengel, 16555=Erdenemandal, 16531=Khairkhan, 16549=Tsetserleg, 16510=Jargalant, 16540=Khotont, 16516=Ugiinuur, 16519=Ulziit, 16537=Khashaat, 16525=Tariat, 16522=Undur-Ulaan, 16543=Tsakhir, 16534=Khangai, 164=Bayankhongor, 16401=Bayankhongor, 16428=Bumbugur, 16434=Galuut, 16449=Ulziit, 16416=Bayan-Ovoo, 16458=Erdenetsogt, 16425=Bogd, 16413=Bayanlig, 16443=Jinst, 16410=Bayangovi, 16422=Bayantsagaan, 16455=Shinejinst, 16404=Baatsagaan, 16419=Bayan-Undur, 16440=Jargalant, 16446=Zag, 16437=Gurvanbulag
+    'Байршил' ('Location') 3 values: 0=Total, 1= Urban, 2= Rural
+    'Он' ('Year') 12 values: 0=2025, 1=2024, 2=2023, 3=2022, 4=2021, 5=2020, 6=2019, 7=2018, 8=2017, 9=2016, 10=2015, 11=2014
+== pxweb https://data.1212.mn/api/v1/mn/NSO/Regional%20development/Population%20and%20household/DT_NSO_0300_068V2.px
+  table: 'МОНГОЛ УЛСАД ОРШИН СУУГАА ХҮН АМЫН ТОО, хүйс, сум, дүүрэг, жилээр'
+    'Хүйс' ('Хүйс') 3 values: 0=Нийт дүн, 1=Эрэгтэй, 2=Эмэгтэй
+    'Бүс' ('Бүс') 369 values: 0=Улсын дүн, 1=Хангайн бүс, 165=Архангай, 16501=Эрдэнэбулган, 16513=Их тамир, 16528=Төвшрүүлэх, 16546=Цэнхэр, 16507=Булган, 16552=Чулуут, 16504=Батцэнгэл, 16555=Эрдэнэмандал, 16531=Хайрхан, 16549=Цэцэрлэг, 16510=Жаргалант, 16540=Хотонт, 16516=Өгийнуур, 16519=Өлзийт, 16537=Хашаат, 16525=Тариат, 16522=Өндөр-Улаан, 16543=Цахир, 16534=Хангай, 164=Баянхонгор, 16401=Баянхонгор сум, 16428=Бөмбөгөр, 16434=Галуут, 16449=Өлзийт, 16416=Баян-Овоо, 16458=Эрдэнэцогт, 16425=Богд, 16413=Баянлиг, 16443=Жинст, 16410=Баянговь, 16422=Баянцагаан, 16455=Шинэжинст, 16404=Баацагаан, 16419=Баян-Өндөр, 16440=Жаргалант, 16446=Заг, 16437=Гурванбулаг
+    'Он' ('Он') 36 values: 2025=2025, =2024, =2023, =2022, =2021, =2020, =2019, =2018, =2017, =2016, =2015, =2014, =2013, =2012, =2011, =2010, =2009, =2008, =2007, =2006, =2005, =2004, =2003, =2002, =2001, =2000, =1999, =1998, =1997, =1996, =1995, =1994, =1993, =1992, =1991, =1990
