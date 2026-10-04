@@ -51736,6 +51736,56 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
   },
   {
+    "id": "LAO-CODPSAGE-admin2-champasack-619641",
+    "level": "admin2",
+    "name": "Champasack",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.4,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 92.7,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "54806243B29706107619641",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
     "id": "LAO-CODPSAGE-admin2-champhone-023105",
     "level": "admin2",
     "name": "Champhone",
