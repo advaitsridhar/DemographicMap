@@ -1,4 +1,135 @@
-  retry 1/2 after 2s :: https://jumin.mois.go.kr/ageStatMonth.do :: <urlopen error [Errno 110] Connection timed out>
-  retry 2/2 after 4s :: https://jumin.mois.go.kr/ageStatMonth.do :: <urlopen error [Errno 110] Connection timed out>
 == form https://jumin.mois.go.kr/ageStatMonth.do
-  failed: RuntimeError('GET failed after 2 retries: https://jumin.mois.go.kr/ageStatMonth.do')
+  141,861 bytes, 2 forms
+  form 0: name='search' id=None action='ageStatMonth.do' method='post'
+    input 'tableChart' type='hidden' value='T' id=None
+    input 'sltOrgType' type='hidden' value='1' id=None
+    input 'nowYear' type='hidden' value='2026' id='nowYear'
+    input 'searchYearMonth' type='radio' value='month' id='searchYearMonth'
+    input 'searchYearMonth' type='radio' value='year' id='searchYearMonth'
+    input 'sum' type='checkbox' value='sum' id='sum'
+    input 'gender' type='checkbox' value='gender' id='gender'
+    input None type='submit' value='검색' id=None
+    input None type='reset' value='초기화' id=None
+    select 'sltOrgLvl1' id='sltOrgLvl1' 0 options: 
+    select 'sltOrgLvl2' id='sltOrgLvl2' 0 options: 
+    select 'sltUndefType' id='register' 4 options: '':전체, 'Y':거주자, 'N':거주불명자, 'O':재외국민
+    select 'searchYearStart' id='searchYearStart' 19 options: '2026':2026년, '2025':2025년, '2024':2024년, '2023':2023년, '2022':2022년, '2021':2021년, '2020':2020년, '2019':2019년, '2018':2018년, '2017':2017년
+    select 'searchMonthStart' id='searchMonthStart' 12 options: '12':12월, '11':11월, '10':10월, '09':09월, '08':08월, '07':07월, '06':06월, '05':05월, '04':04월, '03':03월
+    select 'searchYearEnd' id='searchYearEnd' 19 options: '2026':2026년, '2025':2025년, '2024':2024년, '2023':2023년, '2022':2022년, '2021':2021년, '2020':2020년, '2019':2019년, '2018':2018년, '2017':2017년
+    select 'searchMonthEnd' id='searchMonthEnd' 12 options: '12':12월, '11':11월, '10':10월, '09':09월, '08':08월, '07':07월, '06':06월, '05':05월, '04':04월, '03':03월
+    select 'sltOrderType' id='sltOrderType' 1 options: '1':행정기관코드
+    select 'sltOrderValue' id='sltOrderValue' 2 options: 'ASC':오름차순, 'DESC':내림차순
+    select 'sltArgTypes' id='sltArgTypes' 3 options: '10':10세, '5':5세, '1':1세
+    select 'sltArgTypeA' id='sltArgTypeA' 0 options: 
+    select 'sltArgTypeB' id='sltArgTypeB' 0 options: 
+  form 1: name='formXlsDown' id='formXlsDown' action=None method='post'
+    input 'sltOrgType' type='hidden' value='1' id=None
+    input 'sltOrgLvl1' type='hidden' value='A' id=None
+    input 'sltOrgLvl2' type='hidden' value='' id=None
+    input 'gender' type='hidden' value='gender' id=None
+    input 'sum' type='hidden' value='sum' id=None
+    input 'sltUndefType' type='hidden' value='' id=None
+    input 'searchYearStart' type='hidden' value='2026' id=None
+    input 'searchMonthStart' type='hidden' value='09' id=None
+    input 'searchYearEnd' type='hidden' value='2026' id=None
+    input 'searchMonthEnd' type='hidden' value='09' id=None
+    input 'sltOrderType' type='hidden' value='1' id=None
+    input 'sltOrderValue' type='hidden' value='ASC' id=None
+    input 'sltArgTypes' type='hidden' value='10' id=None
+    input 'sltArgTypeA' type='hidden' value='0' id=None
+    input 'sltArgTypeB' type='hidden' value='100' id=None
+    input 'category' type='hidden' value='month' id=None
+    input 'state' type='radio' value='1' id='down1'
+    input 'state' type='radio' value='2' id='down2'
+    input 'state' type='radio' value='3' id='down3'
+    select 'stateMobile' id=None 3 options: '1':현재화면, '2':전체시군구현황, '3':전체읍면동현황
+== form https://jumin.mois.go.kr/ageStatMonth.do
+  141,861 bytes, 2 forms
+  form 0: name='search' id=None action='ageStatMonth.do' method='post'
+    input 'tableChart' type='hidden' value='T' id=None
+    input 'sltOrgType' type='hidden' value='1' id=None
+    input 'nowYear' type='hidden' value='2026' id='nowYear'
+    input 'searchYearMonth' type='radio' value='month' id='searchYearMonth'
+    input 'searchYearMonth' type='radio' value='year' id='searchYearMonth'
+    input 'sum' type='checkbox' value='sum' id='sum'
+    input 'gender' type='checkbox' value='gender' id='gender'
+    input None type='submit' value='검색' id=None
+    input None type='reset' value='초기화' id=None
+    select 'sltOrgLvl1' id='sltOrgLvl1' 0 options: 
+    select 'sltOrgLvl2' id='sltOrgLvl2' 0 options: 
+    select 'sltUndefType' id='register' 4 options: '':전체, 'Y':거주자, 'N':거주불명자, 'O':재외국민
+    select 'searchYearStart' id='searchYearStart' 19 options: '2026':2026년, '2025':2025년, '2024':2024년, '2023':2023년, '2022':2022년, '2021':2021년, '2020':2020년, '2019':2019년, '2018':2018년, '2017':2017년
+    select 'searchMonthStart' id='searchMonthStart' 12 options: '12':12월, '11':11월, '10':10월, '09':09월, '08':08월, '07':07월, '06':06월, '05':05월, '04':04월, '03':03월
+    select 'searchYearEnd' id='searchYearEnd' 19 options: '2026':2026년, '2025':2025년, '2024':2024년, '2023':2023년, '2022':2022년, '2021':2021년, '2020':2020년, '2019':2019년, '2018':2018년, '2017':2017년
+    select 'searchMonthEnd' id='searchMonthEnd' 12 options: '12':12월, '11':11월, '10':10월, '09':09월, '08':08월, '07':07월, '06':06월, '05':05월, '04':04월, '03':03월
+    select 'sltOrderType' id='sltOrderType' 1 options: '1':행정기관코드
+    select 'sltOrderValue' id='sltOrderValue' 2 options: 'ASC':오름차순, 'DESC':내림차순
+    select 'sltArgTypes' id='sltArgTypes' 3 options: '10':10세, '5':5세, '1':1세
+    select 'sltArgTypeA' id='sltArgTypeA' 0 options: 
+    select 'sltArgTypeB' id='sltArgTypeB' 0 options: 
+  form 1: name='formXlsDown' id='formXlsDown' action=None method='post'
+    input 'sltOrgType' type='hidden' value='1' id=None
+    input 'sltOrgLvl1' type='hidden' value='A' id=None
+    input 'sltOrgLvl2' type='hidden' value='' id=None
+    input 'gender' type='hidden' value='gender' id=None
+    input 'sum' type='hidden' value='sum' id=None
+    input 'sltUndefType' type='hidden' value='' id=None
+    input 'searchYearStart' type='hidden' value='2026' id=None
+    input 'searchMonthStart' type='hidden' value='09' id=None
+    input 'searchYearEnd' type='hidden' value='2026' id=None
+    input 'searchMonthEnd' type='hidden' value='09' id=None
+    input 'sltOrderType' type='hidden' value='1' id=None
+    input 'sltOrderValue' type='hidden' value='ASC' id=None
+    input 'sltArgTypes' type='hidden' value='10' id=None
+    input 'sltArgTypeA' type='hidden' value='0' id=None
+    input 'sltArgTypeB' type='hidden' value='100' id=None
+    input 'category' type='hidden' value='month' id=None
+    input 'state' type='radio' value='1' id='down1'
+    input 'state' type='radio' value='2' id='down2'
+    input 'state' type='radio' value='3' id='down3'
+    select 'stateMobile' id=None 3 options: '1':현재화면, '2':전체시군구현황, '3':전체읍면동현황
+== form https://jumin.mois.go.kr/ageStatMonth.do
+  141,861 bytes, 2 forms
+  form 0: name='search' id=None action='ageStatMonth.do' method='post'
+    input 'tableChart' type='hidden' value='T' id=None
+    input 'sltOrgType' type='hidden' value='1' id=None
+    input 'nowYear' type='hidden' value='2026' id='nowYear'
+    input 'searchYearMonth' type='radio' value='month' id='searchYearMonth'
+    input 'searchYearMonth' type='radio' value='year' id='searchYearMonth'
+    input 'sum' type='checkbox' value='sum' id='sum'
+    input 'gender' type='checkbox' value='gender' id='gender'
+    input None type='submit' value='검색' id=None
+    input None type='reset' value='초기화' id=None
+    select 'sltOrgLvl1' id='sltOrgLvl1' 0 options: 
+    select 'sltOrgLvl2' id='sltOrgLvl2' 0 options: 
+    select 'sltUndefType' id='register' 4 options: '':전체, 'Y':거주자, 'N':거주불명자, 'O':재외국민
+    select 'searchYearStart' id='searchYearStart' 19 options: '2026':2026년, '2025':2025년, '2024':2024년, '2023':2023년, '2022':2022년, '2021':2021년, '2020':2020년, '2019':2019년, '2018':2018년, '2017':2017년
+    select 'searchMonthStart' id='searchMonthStart' 12 options: '12':12월, '11':11월, '10':10월, '09':09월, '08':08월, '07':07월, '06':06월, '05':05월, '04':04월, '03':03월
+    select 'searchYearEnd' id='searchYearEnd' 19 options: '2026':2026년, '2025':2025년, '2024':2024년, '2023':2023년, '2022':2022년, '2021':2021년, '2020':2020년, '2019':2019년, '2018':2018년, '2017':2017년
+    select 'searchMonthEnd' id='searchMonthEnd' 12 options: '12':12월, '11':11월, '10':10월, '09':09월, '08':08월, '07':07월, '06':06월, '05':05월, '04':04월, '03':03월
+    select 'sltOrderType' id='sltOrderType' 1 options: '1':행정기관코드
+    select 'sltOrderValue' id='sltOrderValue' 2 options: 'ASC':오름차순, 'DESC':내림차순
+    select 'sltArgTypes' id='sltArgTypes' 3 options: '10':10세, '5':5세, '1':1세
+    select 'sltArgTypeA' id='sltArgTypeA' 0 options: 
+    select 'sltArgTypeB' id='sltArgTypeB' 0 options: 
+  form 1: name='formXlsDown' id='formXlsDown' action=None method='post'
+    input 'sltOrgType' type='hidden' value='1' id=None
+    input 'sltOrgLvl1' type='hidden' value='A' id=None
+    input 'sltOrgLvl2' type='hidden' value='' id=None
+    input 'gender' type='hidden' value='gender' id=None
+    input 'sum' type='hidden' value='sum' id=None
+    input 'sltUndefType' type='hidden' value='' id=None
+    input 'searchYearStart' type='hidden' value='2026' id=None
+    input 'searchMonthStart' type='hidden' value='09' id=None
+    input 'searchYearEnd' type='hidden' value='2026' id=None
+    input 'searchMonthEnd' type='hidden' value='09' id=None
+    input 'sltOrderType' type='hidden' value='1' id=None
+    input 'sltOrderValue' type='hidden' value='ASC' id=None
+    input 'sltArgTypes' type='hidden' value='10' id=None
+    input 'sltArgTypeA' type='hidden' value='0' id=None
+    input 'sltArgTypeB' type='hidden' value='100' id=None
+    input 'category' type='hidden' value='month' id=None
+    input 'state' type='radio' value='1' id='down1'
+    input 'state' type='radio' value='2' id='down2'
+    input 'state' type='radio' value='3' id='down3'
+    select 'stateMobile' id=None 3 options: '1':현재화면, '2':전체시군구현황, '3':전체읍면동현황
