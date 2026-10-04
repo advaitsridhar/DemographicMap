@@ -28,6 +28,17 @@ summing to 100% never would.
 districts, which is arithmetic on official counts rather than estimation, and
 the sums are required to reproduce the national totals exactly.
 
+**The median age comes from a fourth table, read from the Department's site.**
+A1 splits each district's people into four broad groups only (under 15,
+15-59, 60-64, 65 and over), and a median interpolated across a 45-year group
+would be a guess. The Department also publishes *Population by five-year age
+group* for every Grama Niladhari division, with a row for each district and
+the nation above its divisions; the district rows are read, checked to add up
+to A1's district totals to the person and, group by group, to the national
+row, and the median is interpolated within the five-year group that holds the
+middle person -- the finest the census publishes below the nation. Provinces
+are their districts' groups summed.
+
 Sri Lanka does not ask mother tongue, so ``language`` is marked *not collected*
 rather than merely missing. What the census asks instead is literacy: the
 ability to speak, read and write Sinhala, Tamil and English, for people aged 10
@@ -51,13 +62,26 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, http_get, log, measure,
+    record, shares, write_json,
 )
+from .south_asia_common import check_contiguous, median_grouped
 
 WORKBOOKS = RAW / "srilanka"
 SOURCE = ("Census of Population and Housing 2024, Department of Census and "
           "Statistics, Sri Lanka")
 CATALOG = "https://www.statistics.gov.lk/"
+
+# Population by five-year age group, by GN division, with district and
+# national rows above the divisions. The site sends a short certificate chain,
+# completed from the certificate's own AIA extension (common.http_get).
+AGES_URL = ("https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/"
+            "GNLevel/GN_Level_Population_by_Five_Year_Age_Group")
+AGE_SOURCE = ("Census of Population and Housing 2024, Department of Census and "
+              "Statistics, Sri Lanka: population by five-year age group")
+AGE_GROUP = re.compile(r"^(\d{1,3})\s*-\s*(\d{1,3})$")
+AGE_OPEN = re.compile(r"^(\d{1,3})\s*(?:\+|and (?:above|over)|& (?:above|over)|or more)$",
+                      re.I)
 
 # Column positions, which the three-row trilingual banner makes worth naming.
 A1_TOTAL, A1_MALE, A1_FEMALE = 3, 4, 5
@@ -250,11 +274,141 @@ def validate(units: dict[str, Any]) -> None:
         f"Sinhalese {100 * merged['Sinhalese'] / country['population']:.1f}%")
 
 
+def fold(name: Any) -> str:
+    """A district name for matching: letters only, lower case."""
+    return re.sub(r"[^a-z]", "", str(name or "").lower())
+
+
+def age_columns(rows: list[tuple]) -> tuple[int, int, list[tuple[int, int | None, int]]]:
+    """(header row index, Total column, [(low, high, column)]) from the header.
+
+    The header names the groups "0 - 4", "10-14" ... and an open last group;
+    a group whose label reads neither way stops the run rather than being
+    skipped, since a dropped group would leave the ages short of the total.
+    """
+    for index, row in enumerate(rows[:12]):
+        cells = [str(c).strip() if c is not None else "" for c in row]
+        if "Total" not in cells:
+            continue
+        total_at = cells.index("Total")
+        groups: list[tuple[int, int | None, int]] = []
+        for column in range(total_at + 1, len(cells)):
+            label = cells[column]
+            if not label:
+                continue
+            closed, open_ = AGE_GROUP.match(label), AGE_OPEN.match(label)
+            if closed:
+                groups.append((int(closed.group(1)), int(closed.group(2)), column))
+            elif open_:
+                groups.append((int(open_.group(1)), None, column))
+            else:
+                raise SystemExit(f"sri lanka: age column {label!r} is neither a "
+                                 "group nor an open group")
+        if groups:
+            return index, total_at, groups
+    raise SystemExit("sri lanka: no header row naming Total and the age groups")
+
+
+def read_age_groups(rows: list[tuple]) -> dict[str, dict[str, Any]]:
+    """{district as A1 names it, or "Sri Lanka": {"total", "groups"}}.
+
+    The district rows carry a district code and name and nothing in the
+    division columns; the divisions' own rows, which follow, are not read.
+    """
+    header, total_at, columns = age_columns(rows)
+    check_contiguous([(low, high, 0) for low, high, _ in columns], "sri lanka: ages")
+    out: dict[str, dict[str, Any]] = {}
+    for row in rows[header + 1:]:
+        if len(row) <= total_at:
+            continue
+        first = str(row[0]).strip() if row[0] is not None else ""
+        if first == "Sri Lanka":
+            name = "Sri Lanka"
+        elif first and row[2] in (None, "") and row[4] in (None, ""):
+            name = str(row[1] or "").strip()
+        else:
+            continue
+        if not isinstance(row[total_at], (int, float)):
+            continue
+        groups = []
+        for low, high, column in columns:
+            value = row[column]
+            if not isinstance(value, (int, float)):
+                raise SystemExit(f"sri lanka: {name} has no figure for ages {low}-{high}")
+            groups.append((low, high, int(value)))
+        if name in out:
+            raise SystemExit(f"sri lanka: the age table prints {name} twice")
+        out[name] = {"total": int(row[total_at]), "groups": groups}
+    return out
+
+
+def check_ages(ages: dict[str, dict[str, Any]], units: dict[str, Any]) -> dict[str, Any]:
+    """The age table against itself and against A1; returns it keyed by A1's names.
+
+    Every district's groups add up to its own total, which must be A1's
+    population for that district to the person; the districts, group by
+    group, add up to the national row; and the national row is the pinned
+    national total.
+    """
+    names = {fold(n): n for n in units}
+    names.update({fold(alias): n for n, alias in DISTRICT_ALIASES.items() if n in units})
+    out: dict[str, Any] = {}
+    for name, row in ages.items():
+        known = names.get(fold(name))
+        if known is None:
+            raise SystemExit(f"sri lanka: the age table names {name!r}, which A1 does not")
+        if sum(n for _, _, n in row["groups"]) != row["total"]:
+            raise SystemExit(f"sri lanka: {name}'s age groups add up to "
+                             f"{sum(n for _, _, n in row['groups']):,}, not its "
+                             f"{row['total']:,}")
+        if row["total"] != units[known]["population"]:
+            raise SystemExit(f"sri lanka: {name} is {row['total']:,} in the age table "
+                             f"and {units[known]['population']:,} in A1")
+        out[known] = row
+    missing = sorted(set(units) - set(out))
+    if missing:
+        raise SystemExit(f"sri lanka: the age table has no row for {missing}")
+    national = out["Sri Lanka"]
+    if national["total"] != NATIONAL_CONTROLS["_total"]:
+        raise SystemExit(f"sri lanka: the age table's nation is {national['total']:,}")
+    for i, (low, high, n) in enumerate(national["groups"]):
+        summed = sum(row["groups"][i][2] for name, row in out.items() if name != "Sri Lanka")
+        if summed != n:
+            raise SystemExit(f"sri lanka: ages {low}-{high}: the districts add up to "
+                             f"{summed:,} and the nation prints {n:,}")
+    log(f"  age table: {len(out) - 1} districts; each adds up to A1's population "
+        "and the districts make the nation group by group")
+    return out
+
+
+def age_fields(groups: list[tuple[int, int | None, int]]) -> dict[str, Any]:
+    median = median_grouped(groups)
+    if median is None:
+        return {}
+    people = sum(n for _, _, n in groups)
+    return {
+        "median_age": measure(median, unit="years", year=2024, source=AGE_SOURCE),
+        "median_age_note": (
+            "Census 2024, population by five-year age group: the median of "
+            f"{people:,} people, interpolated within the five-year group that "
+            "holds the middle person. The census publishes nothing finer below "
+            "the nation."),
+    }
+
+
 def build_record(name: str, unit: dict[str, Any], *, level: str,
-                 entity_id: str, codes: dict[str, Any]) -> dict[str, Any]:
+                 entity_id: str, codes: dict[str, Any],
+                 groups: list[tuple[int, int | None, int]] | None = None
+                 ) -> dict[str, Any]:
     population = unit["population"]
     male, female = unit["male"], unit["female"]
     ratio = round(1000.0 * female / male) if male else None
+    ages = age_fields(groups) if groups else {}
+    sources = [{"field": "population/religion/ethnicity", "name": SOURCE,
+                "url": CATALOG, "year": 2024}]
+    if ages:
+        sources.append({"field": "median_age", "name": AGE_SOURCE,
+                        "url": AGES_URL, "year": 2024})
     return record(
         entity_id, name, level=level, parent="LKA", codes=codes,
         population=measure(population, year=2024, source=SOURCE),
@@ -280,12 +434,13 @@ def build_record(name: str, unit: dict[str, Any], *, level: str,
                      "Nor is language inferred from ethnicity here: most Sri Lankan "
                      "Moors speak Tamil, which would put a tenth of the country in "
                      "the wrong column."),
-        sources=[{"field": "population/religion/ethnicity", "name": SOURCE,
-                  "url": CATALOG, "year": 2024}],
+        sources=sources,
+        **ages,
     )
 
 
-def districts(units: dict[str, Any]) -> list[dict[str, Any]]:
+def districts(units: dict[str, Any],
+              ages: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     out = []
     for name, unit in units.items():
         if name == "Sri Lanka":
@@ -293,15 +448,18 @@ def districts(units: dict[str, Any]) -> list[dict[str, Any]]:
         shape = DISTRICT_ALIASES.get(name, name)
         out.append(build_record(f"{shape} District", unit, level="admin2",
                                 entity_id=f"LKA-D-{shape.replace(' ', '-')}",
-                                codes={"census2024_district": name}))
+                                codes={"census2024_district": name},
+                                groups=(ages or {}).get(name, {}).get("groups")))
     return out
 
 
-def provinces(units: dict[str, Any]) -> list[dict[str, Any]]:
+def provinces(units: dict[str, Any],
+              ages: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     """Province totals summed from their districts.
 
     Plain arithmetic on official counts: the nine sums reproduce the national
-    population exactly, which is asserted rather than assumed.
+    population exactly, which is asserted rather than assumed. The age groups
+    are summed the same way, group by group, before the median is taken.
     """
     out = []
     covered = 0
@@ -318,14 +476,36 @@ def provinces(units: dict[str, Any]) -> list[dict[str, Any]]:
             agg["female"] += unit["female"] or 0
             agg["ethnicity"].update(unit["ethnicity"])
             agg["religion"].update(unit["religion"])
+        groups = None
+        if ages:
+            parts = [ages[m]["groups"] for m in members]
+            groups = [(low, high, sum(p[i][2] for p in parts))
+                      for i, (low, high, _n) in enumerate(parts[0])]
         covered += agg["population"]
         out.append(build_record(f"{province} Province", agg, level="admin1",
                                 entity_id=f"LKA-P-{province.replace(' ', '-')}",
-                                codes={"province": province}))
+                                codes={"province": province}, groups=groups))
     if covered != NATIONAL_CONTROLS["_total"]:
         raise SystemExit(f"provinces sum to {covered:,}, national total is "
                          f"{NATIONAL_CONTROLS['_total']:,}")
     return out
+
+
+def load_ages(units: dict[str, Any]) -> dict[str, Any]:
+    try:
+        import openpyxl
+    except ImportError as exc:  # pragma: no cover - environment problem
+        raise SystemExit("pip install openpyxl to read the Sri Lanka workbooks") from exc
+    import io
+
+    blob = http_get(AGES_URL, binary=True, aia=True)
+    log(f"  age table: {len(blob):,} bytes from {AGES_URL}")
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    try:
+        rows = list(book.worksheets[0].iter_rows(values_only=True))
+    finally:
+        book.close()
+    return check_ages(read_age_groups(rows), units)
 
 
 def main() -> int:
@@ -335,7 +515,9 @@ def main() -> int:
 
     units = load()
     validate(units)
-    rows = districts(units) if args.level == "district" else provinces(units)
+    ages = load_ages(units)
+    rows = (districts(units, ages) if args.level == "district"
+            else provinces(units, ages))
     log(f"  {args.level}: {len(rows)} records")
     write_json(PROCESSED / f"srilanka_{args.level}.json", rows)
     return 0
