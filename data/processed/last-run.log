@@ -1,57 +1,10 @@
-== page https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502
-  21,694 bytes, charset utf-8
-  ~ <!-- SSO 적용 START 개발pc에서 사용시 해당 부분 제외--> <!-- SSO 적용 END --> <!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml" lang="ko"
-  ~ e( name ){ var nameOfCookie = name + "="; var x = 0; while ( x <= document.cookie.length ) { var y = (x+nameOfCookie.length); if ( documen
-  ~ x <= document.cookie.length ) { var y = (x+nameOfCookie.length); if ( document.cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.coo
-  ~ length); if ( document.cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.
-  ~ if ( document.cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length;
-  ~ Cookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, e
-  ~ if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOfCookie )
-  ~ ";", y )) == -1 ) endOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf(
-  ~ fCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf( " ", x ) + 1; if ( x == 0
-  ~ return unescape( document.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf( " ", x ) + 1; if ( x == 0 ) break; } ret
-  ~ return ""; } function fn_openHelp(){ if(fn_getCookie("popHelp") != "done"){ var popWidth=646; var popHeight=730; var popX = (window
-  ~ "done"){ var popWidth=646; var popHeight=730; var popX = (window.screen.width/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2);
-  ~ 730; var popX = (window.screen.width/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.js
-  ~ dth/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.jsp", "popHelp", "width="+popWidth+", height="+pop
-  ~ opWidth/2); var popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.jsp", "popHelp", "width="+popWidth+", height="+popHeight+",
-  ~ avascript"> //<![CDATA[ var rightWidth = 0; //시간체크용 var dateChk; $(document).ready(function(){ // 대상 Element 선택 const resizer = document.getElementById
-  ~ ar dateChk; $(document).ready(function(){ // 대상 Element 선택 const resizer = document.getElementById('division'); const leftSide = resizer.previousElementSibling;
-  ~ = resizer.previousElementSibling; const rightSide = resizer.nextElementSibling; document.ParamInfo.url = "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&l
-  ~ zer.nextElementSibling; document.ParamInfo.url = "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&pub=&conn_path=&list_id=&vw_cd=MT_ZTITLE&itm_id=&d
-  ~ 기 위해 선언 let leftWidth = 0; // resizer에 마우스 이벤트가 발생하면 실행하는 Handler const mouseDownHandler = function (e) { // 마우스 위치값을 가져와 x, y에 할당 x = e.clientX;
-  ~ eftWidth = leftSide.getBoundingClientRect().width; // 마우스 이동과 해제 이벤트를 등록 document.addEventListener('mousemove', mouseMoveHandler); document.addEventListener(
-  ~ 스 이동과 해제 이벤트를 등록 document.addEventListener('mousemove', mouseMoveHandler); document.addEventListener('mouseup', mouseUpHandler); }; const mouseMoveHandler =
-  ~ 조절 중 마우스 커서를 변경함 // class="resizer"에 적용하면 위치가 변경되면서 커서가 해제되기 때문에 body에 적용 document.body.style.cursor = 'col-resize'; // 이동 중 양쪽 영역(왼쪽, 오른쪽)에서 마우스 이벤트
-  ~ // 모든 커서 관련 사항은 마우스 이동이 끝나면 제거됨 resizer.style.removeProperty('cursor'); document.body.style.removeProperty('cursor'); leftSide.style.removeProperty('user-
-  ~ rightSide.style.removeProperty('pointer-events'); // 등록한 마우스 이벤트를 제거 document.removeEventListener('mousemove', mouseMoveHandler); document.removeEventLis
-  ~ 한 마우스 이벤트를 제거 document.removeEventListener('mousemove', mouseMoveHandler); document.removeEventListener('mouseup', mouseUpHandler); resizer.style.cursor = 'ew-
-  ~ mouseup', mouseUpHandler); resizer.style.cursor = 'ew-resize'; }; // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler); dateChk =
-  ~ .cursor = 'ew-resize'; }; // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler); dateChk = new Date(); fn_loading("loading"); $lef
-  ~ w-resize'; }; // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler); dateChk = new Date(); fn_loading("loading"); $leftMenu = $("#
-  ~ teChk = new Date(); fn_loading("loading"); $leftMenu = $("#leftMenu"); // $(window).resize(function(){ // var leftWidth = $leftMenu.width(); // if($leftMenu.css(
-  ~ isplay") == "none"){ // leftWidth = 0; // } // var rightWidth = $(window).width() - (leftWidth+10); // //var rightWidth = $(window).width(); // $("#cen
-  ~ / var rightWidth = $(window).width() - (leftWidth+10); // //var rightWidth = $(window).width(); // $("#centerMenu").css("width", rightWidth+"px"); // $("#iframe_rig
-  ~ ("width", "100%"); // //윈도우 창 사이즈 변경시 height 자동조절 // var conHeight = $(window).height() - 50; // $("#leftMenu").height(conHeight + 10); // $("#centerMenu")
-  ~ Table(fn_calTblId, tblid, tblnm); //iframe_leftMenu 호출 //var rightForm = document.ParamInfo; var leftForm = document.iframeform; leftForm.orgId = "101";
-  ~ //iframe_leftMenu 호출 //var rightForm = document.ParamInfo; var leftForm = document.iframeform; leftForm.orgId = "101"; leftForm.tblId = "DT_1PM1502";
-  ~ rderBy = ""; leftForm.serverType = "service"; leftForm.action = "includeLeftTree.do"; leftForm.target = "iframe_leftMenu"; leftForm.submit(); }); func
-  ~ }); function fn_initRightFrame() { //iframe_rightMenu 호출 //var rightForm = document.ParamInfo; var rightForm = document.iframeform; rightForm.orgId
-  ~ /iframe_rightMenu 호출 //var rightForm = document.ParamInfo; var rightForm = document.iframeform; rightForm.orgId = "101"; rightForm.tblId = "DT_1PM1502";
-  ~ rightForm.tblSe = ""; rightForm.tblNm = ""; rightForm.action = "right_layout.do"; rightForm.target = "iframe_rightMenu"; rightForm.query = ""; rightForm.tabY
-  ~ abYn = ""; rightForm.submit(); } function fn_callIframeFunction(){ //document.getElementById("iframe_rightMenu").contentWindow.testFunc(); document.getElemen
-  ~ ction fn_callIframeFunction(){ //document.getElementById("iframe_rightMenu").contentWindow.testFunc(); document.getElementById("iframe_rightMenu").contentWindow.frames[0].fn_f
-  ~ unction(){ //document.getElementById("iframe_rightMenu").contentWindow.testFunc(); document.getElementById("iframe_rightMenu").contentWindow.frames[0].fn_fusionChartCtrl();
-  ~ Menu").contentWindow.testFunc(); document.getElementById("iframe_rightMenu").contentWindow.frames[0].fn_fusionChartCtrl(); } function fn_resizeNormal(){ var rightWid
-  ~ 0].fn_fusionChartCtrl(); } function fn_resizeNormal(){ var rightWidth = $(window).width()-$(".left_layout").width(); $("#centerMenu").css("width", rightWidth+"px");
-  ~ lang = "ko"; if(url.indexOf("nsist.nsi.go.kr") > -1){ url = url + "/nsistN/index.do"; } if(url.indexOf("kosis.kr") > -1){ if(lang.indexOf("en") > -1){ url
-  ~ f("en") > -1){ url = url + "/eng";//영문접근시 영문kosis로 이동 2023.02.27 } } window.open(url, "KOSIS", "width="+cw+",height="+ch +" , location=yes, status=yes, directories=
-  ~ $("#iframe_rightMenu").css("width", "100%"); //$(".right_layout", iframe_rightMenu.document).css("width", "98%"); //$("iframe[name='iframe_centerMenu']", iframe_rightMenu.
-  ~ ocument).css("width", "98%"); //$("iframe[name='iframe_centerMenu']", iframe_rightMenu.document).css("width", "100%"); $("#iframe_rightMenu").css("width", "100%
-  ~ -direction: column;"> <form id="ParamInfo" name="ParamInfo" action="/statHtml/statHtml.do?sso=ok&amp;returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3FtblId%3DDT_1
-  ~ atHtml/statHtml.do?sso=ok&amp;returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3FtblId%3DDT_1PM1502%26orgId%3D101%26" method="post"> <input type="hidden" id="jsonSt
-  ~ "/> <input id="viewSubKind" name="viewSubKind" type="hidden" value=""/> <input id="doAnal" name="doAnal" type="hidden" value="N"/> <input id="analType" name="analType" typ
-  ~ id="viewSubKind" name="viewSubKind" type="hidden" value=""/> <input id="doAnal" name="doAnal" type="hidden" value="N"/> <input id="analType" name="analType" type="hidden" val
-  ~ alue=""/> <input id="markType" name="markType" type="hidden" value=""/> <input id="docId" name="docId" type="hidden" value=""/> <input id="itmNm" name="itmNm" type="hidden
-  ~ <input id="markType" name="markType" type="hidden" value=""/> <input id="docId" name="docId" type="hidden" value=""/> <input id="itmNm" name="itmNm" type="hidden" value=""/>
-  ~ <form name="form_join" method="post" action="https://kosis.kr/oneid/cmmn/login/LoginView.do" > <input type="hidden" id="SYS_CD1" name="SYS_CD" value="K" /> <input type="
+== post https://jumin.mois.go.kr/downloadCsvAge.do?searchYearMonth=month&xlsStats=2
+  answered 'application/octet-stream;charset=utf-8' 'attachment; filename="202512_202512_%EC%97%B0%EB%A0%B9%EB%B3%84%EC%9D%B8%EA%B5%AC%ED%98%84%ED%99%A9_%EC%9B%94%EA%B0%84.csv";'
+  631,617 bytes, type 'application/octet-stream;charset=utf-8', begins b'"\xc7\xe0\xc1\xa4\xb1\xb8\xbf\xaa","'
+  csv: 295 rows; first row 310 columns
+    r0: 행정구역 | 2025년12월_계_총인구수 | 2025년12월_계_연령구간인구수 | 2025년12월_계_0세 | 2025년12월_계_1세 | 2025년12월_계_2세 | 2025년12월_계_3세 | 2025년12월_계_4세 | 2025년12월_계_5세 | 2025년12월_계_6세 | 2025년12월_계_7세 | 2025년12월_계_8세
+    r1: 서울특별시  (1100000000 | 9,299,548 | 9,299,548 | 43,645 | 39,703 | 37,268 | 39,955 | 42,056 | 43,053 | 47,447 | 50,486 | 54,961
+    r2: 서울특별시 종로구 (1111000 | 137,048 | 137,048 | 427 | 444 | 416 | 445 | 472 | 477 | 526 | 546 | 634
+    r3: 서울특별시 중구 (11140000 | 117,805 | 117,805 | 601 | 484 | 410 | 511 | 501 | 462 | 459 | 476 | 507
+    r4: 서울특별시 용산구 (1117000 | 201,894 | 201,894 | 1,052 | 951 | 852 | 917 | 912 | 955 | 1,016 | 983 | 1,042
+    r5: 서울특별시 성동구 (1120000 | 274,606 | 274,606 | 1,812 | 1,587 | 1,365 | 1,485 | 1,540 | 1,484 | 1,512 | 1,570 | 1,588
