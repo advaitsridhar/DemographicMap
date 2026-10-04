@@ -170,7 +170,8 @@ def show_pdf(url: str, wayback: str | None, pages: str | None, grep: str | None,
             log(text[:chars])
 
 
-def show_xls(url: str, wayback: str | None, rows: int = 40) -> None:
+def show_xls(url: str, wayback: str | None, rows: int = 40, start: int = 0, width: int = 24,
+             cols: int = 16) -> None:
     target = raw_url(url, wayback)
     log(f"== workbook {target}")
     status, ctype, body = fetch(target, timeout=300)
@@ -183,16 +184,17 @@ def show_xls(url: str, wayback: str | None, rows: int = 40) -> None:
         for ws in wb.worksheets:
             log(f"  sheet {ws.title!r} {ws.max_row}x{ws.max_column}")
             for r, row in enumerate(ws.iter_rows(values_only=True)):
-                if r >= rows:
+                if r >= start + rows:
                     break
-                log("   " + " | ".join("" if v is None else str(v)[:24] for v in row[:16]))
+                if r >= start:
+                    log(f"   {r}: " + " | ".join("" if v is None else str(v)[:width] for v in row[:cols]))
     elif body[:4] == b"\xd0\xcf\x11\xe0":
         import xlrd
         wb = xlrd.open_workbook(file_contents=body)
         for ws in wb.sheets():
             log(f"  sheet {ws.name!r} {ws.nrows}x{ws.ncols}")
-            for r in range(min(rows, ws.nrows)):
-                log("   " + " | ".join(str(v)[:24] for v in ws.row_values(r)[:16]))
+            for r in range(start, min(start + rows, ws.nrows)):
+                log(f"   {r}: " + " | ".join(str(v)[:width] for v in ws.row_values(r)[:cols]))
 
 
 # --- named probes -----------------------------------------------------------
@@ -239,13 +241,75 @@ def p_pdf(a: argparse.Namespace) -> None:
 
 def p_xls(a: argparse.Namespace) -> None:
     for url in a.url:
-        show_xls(url, a.wayback, a.rows)
+        show_xls(url, a.wayback, a.rows, a.start, a.width, a.cols)
+
+
+def p_geonames(a: argparse.Namespace) -> None:
+    """GeoNames' Cyprus features that are places (class P) or areas (A), each
+    with its point and its Latin-script alternate names: binding evidence for
+    the census's Turkish names, never data. One line each, tab-separated:
+    GN, id, name, lat, lon, feature code, alternate names joined by '|'."""
+    import zipfile
+    status, ctype, body = fetch("https://download.geonames.org/export/dump/CY.zip", timeout=300)
+    log(f"== GeoNames CY.zip HTTP {status} {len(body):,} bytes")
+    if status != 200:
+        return
+    with zipfile.ZipFile(io.BytesIO(body)) as zf:
+        text = zf.read("CY.txt").decode("utf-8")
+    n = 0
+    for line in text.splitlines():
+        f = line.split("\t")
+        if len(f) < 15 or f[6] not in ("P", "A"):
+            continue
+        alts = sorted({x for x in f[3].split(",")
+                       if x and not re.search(r"[\u0370-\u03ff\u1f00-\u1fff]", x) and not x.startswith("http")})
+        log("\t".join(["GN", f[0], f[1], f[4], f[5], f[7], "|".join(alts)]))
+        n += 1
+    log(f"== GeoNames: {n} features of class P or A")
+
+
+WIKIDATA_QUERY = """
+SELECT ?item ?lat ?lon ?tr ?el ?en (GROUP_CONCAT(DISTINCT ?alt; separator="|") AS ?alts)
+       (GROUP_CONCAT(DISTINCT STRAFTER(STR(?cls), "entity/"); separator="|") AS ?classes) WHERE {
+  SERVICE wikibase:box {
+    ?item wdt:P625 ?loc .
+    bd:serviceParam wikibase:cornerSouthWest "Point(32.2 34.5)"^^geo:wktLiteral .
+    bd:serviceParam wikibase:cornerNorthEast "Point(34.7 35.75)"^^geo:wktLiteral .
+  }
+  ?item wdt:P31 ?cls .
+  ?item p:P625/psv:P625 [wikibase:geoLatitude ?lat; wikibase:geoLongitude ?lon] .
+  ?item rdfs:label ?tr FILTER(LANG(?tr) = "tr")
+  OPTIONAL { ?item rdfs:label ?el FILTER(LANG(?el) = "el") }
+  OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en) = "en") }
+  OPTIONAL { ?item skos:altLabel ?alt FILTER(LANG(?alt) IN ("tr", "en")) }
+} GROUP BY ?item ?lat ?lon ?tr ?el ?en
+"""
+
+
+def p_wikidata(a: argparse.Namespace) -> None:
+    """Wikidata's items on the island with a Turkish label and a point, with
+    their Greek and English labels and classes: binding evidence only. One
+    line each: WD, item, lat, lon, tr, el, en, alternate labels, classes."""
+    url = "https://query.wikidata.org/sparql?" + urllib.parse.urlencode(
+        {"query": WIKIDATA_QUERY, "format": "json"})
+    status, ctype, body = fetch(url, timeout=300)
+    log(f"== Wikidata HTTP {status} {len(body):,} bytes")
+    if status != 200:
+        log(body[:300].decode("utf-8", "replace"))
+        return
+    rows = json.loads(body)["results"]["bindings"]
+    for r in rows:
+        v = {k: r[k]["value"] for k in r}
+        log("\t".join(["WD", v["item"].rsplit("/", 1)[-1], v.get("lat", ""), v.get("lon", ""),
+                       v.get("tr", ""), v.get("el", ""), v.get("en", ""), v.get("alts", ""),
+                       v.get("classes", "")]))
+    log(f"== Wikidata: {len(rows)} items")
 
 
 PROBES: dict[str, Callable[[argparse.Namespace], None]] = {
     "cdx_devplan": p_cdx_devplan, "cdx_istatistik": p_cdx_istatistik,
     "cdx_istatistik_files": p_cdx_istatistik_files, "home": p_home, "links": p_links,
-    "head": p_head, "pdf": p_pdf, "xls": p_xls,
+    "head": p_head, "pdf": p_pdf, "xls": p_xls, "geonames": p_geonames, "wikidata": p_wikidata,
 }
 
 
@@ -259,6 +323,9 @@ def main() -> int:
     ap.add_argument("--pages", help="PDF pages to print, e.g. 1-3,9")
     ap.add_argument("--chars", type=int, default=4000)
     ap.add_argument("--rows", type=int, default=40)
+    ap.add_argument("--start", type=int, default=0, help="first workbook row to print")
+    ap.add_argument("--width", type=int, default=24, help="characters per cell")
+    ap.add_argument("--cols", type=int, default=16, help="cells per row")
     args = ap.parse_args()
     for name in args.run.split(","):
         if name not in PROBES:
