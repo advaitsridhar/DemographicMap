@@ -1,70 +1,50 @@
-== https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Paro.pdf
-  200 application/pdf 1005412 https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Paro.pdf
-    73 pages
-
-  -- page 4
-    2.7 Dependency Ratios ...................................................................................................5
-    2.8 Population Age-sex Pyramid ......................................................................................6
-    2.9 Population by Type of Household ................................................................................6
-    2.10 Bhutanese and Non-Bhutanese Population ................................................................8
-    Section 3: EDUCATION ...............................................................................................................9
-    Introduction .....................................................................................................................9
-    3.1 Literacy ...................................................................................................................9
-
-  -- page 7
-    Improved drinking Water Source (%) 99.1
-    Sufficiency
-    Improved Sanitation Facility (%) 75.1
-    Note: *Excludes 3,012 tourists/non-Bhutanese found in hotels on the census day
-    vi
-
-  -- page 13
-    2.2 Population of Paro Tsento 3,122 2,824 5,946
-    Wangchang 758 599 1,357
-    The total population of Paro Dzongkhag Total 23,941 22,375 46,316
-    as of 30 May 2017 was 49,328 persons Note: *Excludes 3,012 tourists/non-Bhutanese found in hotels on
-    the census day
-    (Annex Table A2.1). This is the total num-
-    2.3 Size and Change of
-    ber of people found within the territory
-    Population
-    of Paro Dzongkhag on the census refer-
-    ence day irrespective of their nationality. Paro Dzongkhag experienced an increase
-    It includes 3,012 non-Bhutanese/tour- in population size by about 12,885 per-
-    ists staying in hotels and a few of those sons during the intercensal period, which
-    on the move on the census reference day. is an increase of about 35.4% between
-    The analysis is based on 46,316 persons 2005 and 2017. The population of Paro
-    since no detailed information was col- Dzongkhag in 2005 was 36,433 persons.
-    lected from the 3,012 non-Bhutanese/ When compared with other Dzongkhags,
-    tourists. Paro Dzongkhag ranks fourth highest in
-    Table 2.1 presents the population terms of population size in the country.
-    by sex, and by Gewog and Town. Of the
-
-  -- page 17
-    were females. Across the Dzongkhag,
-    11,211 persons lived in urban areas and
-    32,151 persons in rural area. The total
-    number of non-Bhutanese population in
-    Paro Dzongkhag was 2,954 persons.
-    8
-
-  -- page 41
-    Lamgong 2,972 2,874 5,846 50.8 49.2 100.0 103.4
-    Tsento 3,122 2,824 5,946 52.5 47.5 100.0 110.6
-    Wangchang 758 599 1,357 55.9 44.1 100.0 126.5
-    Note: Excludes 3,012 tourists/non-Bhutanese found in hotels on the census reference day
-    32
-
-  -- page 43
-    Lamgong 5,233 594 19 5,846 89.5 10.2 0.3 100.0
-    Tsento 4,839 1,078 29 5,946 81.4 18.1 0.5 100.0
-    Wangchang 1,119 238 0 1,357 82.5 17.5 0.0 100.0
-    Note: Excludes 3,012 tourists/non-Bhutanese found in hotels on the census reference day
-    34
-
-  -- page 48
-    111 0 0 0 0 0 0 0 0 0
-    112 0 0 0 0 0 0 0 0 0
-    All Ages 6,058 5,855 11,913 17,883 16,520 34,403 23,941 22,375 46,316
-    Note: Excludes 3,012 tourists/non-Bhutanese found in hotels on the census reference day
-    39
+https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G13_LGA/1.0.0?references=all
+  HTTP 200 application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1 1,103,531 bytes
+  [1] SEXP  codelist=CL_C21_SEXP01 (3 codes) 3 constrained
+                     3  Persons
+                     1  Males
+                     2  Females
+  [2] LANP  codelist=CL_C21_LANP02 (47 codes) 47 constrained
+                    _T  Total
+                     1  Speaks English only
+                   O_T  Other Languages Total
+                  1403  Afrikaans
+                  4202  Arabic
+                     8  Australian Indigenous Languages
+                    71  Chinese: Total
+                  7101  Chinese: Cantonese
+  [3] ENGLP  codelist=CL_C21_ENGLP02 (6 codes) 6 constrained
+                    _T  Total
+                     1  Speaks English only
+                     4  Uses other language and speaks English: Total
+                     2  Uses other language and speaks English: Very well or well
+                     3  Uses other language and speaks English: Not well or not at all
+                    _N  Not stated
+  [4] REGION  codelist=CL_LGA_2021 (578 codes) 565 constrained
+                   AUS  Australia
+                     1  New South Wales
+                 10050  Albury
+                 10180  Armidale Regional
+                 10250  Ballina
+                 10300  Balranald
+                 10470  Bathurst Regional
+                 10500  Bayside (NSW)
+  [5] REGION_TYPE  codelist=CL_REGION_TYPE (43 codes) 1 constrained
+                   AUS  Australia
+                   STE  States and Territories
+                   SA4  Statistical Area Level 4
+                   SA3  Statistical Area Level 3
+                   SA2  Statistical Area Level 2
+                   SA1  Statistical Area Level 1
+                    RA  Remoteness Area
+                   SOS  Section of State
+  [6] STATE  codelist=CL_STATE (10 codes) 9 constrained
+                   AUS  Australia
+                     1  New South Wales
+                     2  Victoria
+                     3  Queensland
+                     4  South Australia
+                     5  Western Australia
+                     6  Tasmania
+                     7  Northern Territory
+  [7] TIME_PERIOD  codelist= (0 codes) 0 constrained
