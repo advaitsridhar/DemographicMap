@@ -1,47 +1,15 @@
-https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G08_LGA/1.0.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1 1,122,534 bytes
-  [1] ANCP  codelist=CL_C21_ANCP01 (33 codes) 33 constrained
-                    _T  Total
-                  1101  Australian
-                  1102  Australian Aboriginal
-                  6101  Chinese
-                  3204  Croatian
-                  2303  Dutch
-                  2101  English
-                  5201  Filipino
-                  2305  French
-                  2306  German
-                  3205  Greek
-                  3304  Hungarian
-                  7106  Indian
-                  2201  Irish
-                  3103  Italian
-                  6902  Korean
-                  4106  Lebanese
-                  3206  Macedonian
-                  3104  Maltese
-                  1201  Maori
-                  1202  New Zealander
-                  3307  Polish
-                  3308  Russian
-                  1504  Samoan
-                  2102  Scottish
-                  3213  Serbian
-                  9215  South African
-                  3106  Spanish
-                  7126  Sri Lankan
-                  5107  Vietnamese
-                  2103  Welsh
-                    _O  Other
-                    _N  Not stated
-  [2] BPPP  codelist=CL_C21_BPPP01 (6 codes) 6 constrained
-                    _T  Total responses
-                     1  Both parents born overseas
-                     2  Father only born overseas
-                     3  Mother only born overseas
-                     4  Both parents born in Australia
-                    _N  Birthplace for either or both parents not stated
-  [3] REGION  codelist=CL_LGA_2021 (578 codes) 565 constrained
+https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G02_LGA/1.0.0?references=all
+  HTTP 200 application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1 671,315 bytes
+  [1] MEDAVG  codelist=CL_C21_MEDAVG01 (8 codes) 8 constrained
+                     1  Median age of persons
+                     2  Median total personal income ($/weekly)
+                     3  Median total family income ($/weekly)
+                     4  Median total household income ($/weekly)
+                     5  Median mortgage repayment ($/monthly)
+                     6  Median rent ($/weekly)
+                     7  Average number of persons per bedroom
+                     8  Average household size
+  [2] REGION  codelist=CL_LGA_2021 (578 codes) 565 constrained
                    AUS  Australia
                      1  New South Wales
                  10050  Albury
@@ -54,40 +22,7 @@ https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G08_LGA/1.0.0?references=all
                  10600  Bellingen
                  10650  Berrigan
                  10750  Blacktown
-                 10800  Bland
-                 10850  Blayney
-                 10900  Blue Mountains
-                 10950  Bogan
-                 11150  Bourke
-                 11200  Brewarrina
-                 11250  Broken Hill
-                 11300  Burwood
-                 11350  Byron
-                 11400  Cabonne
-                 11450  Camden
-                 11500  Campbelltown (NSW)
-                 11520  Canada Bay
-                 11570  Canterbury-Bankstown
-                 11600  Carrathool
-                 11650  Central Coast (NSW)
-                 11700  Central Darling
-                 11720  Cessnock
-                 11730  Clarence Valley
-                 11750  Cobar
-                 11800  Coffs Harbour
-                 12000  Coolamon
-                 12150  Coonamble
-                 12160  Cootamundra-Gundagai Regional
-                 12350  Cowra
-                 12380  Cumberland
-                 12390  Dubbo Regional
-                 12700  Dungog
-                 12730  Edward River
-                 12750  Eurobodalla
-                 12850  Fairfield
-                 12870  Federation
-                 12900  Forbes
-  [4] REGION_TYPE  codelist=CL_REGION_TYPE (43 codes) 1 constrained
+  [3] REGION_TYPE  codelist=CL_REGION_TYPE (43 codes) 1 constrained
                    AUS  Australia
                    STE  States and Territories
                    SA4  Statistical Area Level 4
@@ -100,38 +35,7 @@ https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G08_LGA/1.0.0?references=all
                     UC  Urban Centres
                     UL  Urban Locations
                   IREG  Indigenous Regions
-                  IARE  Indigenous Areas
-                  ILOC  Indigenous Locations
-                 GCCSA  Greater Capital City Statistical Areas
-                   SUA  Significant Urban Areas
-                   SLA  2011 Statistical Local Areas
-                   DZN  Destination Zones
-                   CED  Commonwealth Electoral Divisions
-                   SED  State Electoral Divisions
-                   LGA  Local Government Areas
-               LGA2011  Local Government Areas (2011)
-               LGA2012  Local Government Areas (2012)
-               LGA2013  Local Government Areas (2013)
-               LGA2014  Local Government Areas (2014)
-               LGA2015  Local Government Areas (2015)
-               LGA2016  Local Government Areas (2016)
-               LGA2017  Local Government Areas (2017)
-               LGA2018  Local Government Areas (2018)
-               LGA2019  Local Government Areas (2019)
-               LGA2020  Local Government Areas (2020)
-               LGA2021  Local Government Areas (2021)
-               LGA2022  Local Government Areas (2022)
-               LGA2023  Local Government Areas (2023)
-               LGA2024  Local Government Areas (2024)
-               LGA2025  Local Government Areas (2025)
-                   FED  Federal Electoral Division
-                   POA  Postal Areas
-                  NRMR  National Resource Management Regions
-                   ADD  Australian Drainage Divisions
-                    TR  Tourism Regions
-                   SSC  State Suburbs
-                    OT  Other
-  [5] STATE  codelist=CL_STATE (10 codes) 9 constrained
+  [4] STATE  codelist=CL_STATE (10 codes) 9 constrained
                    AUS  Australia
                      1  New South Wales
                      2  Victoria
@@ -142,4 +46,4 @@ https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G08_LGA/1.0.0?references=all
                      7  Northern Territory
                      8  Australian Capital Territory
                      9  Other Territories
-  [6] TIME_PERIOD  codelist= (0 codes) 0 constrained
+  [5] TIME_PERIOD  codelist= (0 codes) 0 constrained
