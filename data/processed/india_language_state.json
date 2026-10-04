@@ -44,11 +44,6 @@
         "count": 621001
       },
       {
-        "group": "Koya",
-        "pct": 0.6,
-        "count": 225707
-      },
-      {
         "group": "Gondi",
         "pct": 0.6,
         "count": 213947
@@ -57,6 +52,11 @@
         "group": "Kannada",
         "pct": 0.6,
         "count": 205224
+      },
+      {
+        "group": "Koya",
+        "pct": 0.6,
+        "count": 225707
       },
       {
         "group": "Tamil",
@@ -74,14 +74,14 @@
         "count": 53065
       },
       {
-        "group": "Gujarati",
-        "pct": 0.1,
-        "count": 49496
-      },
-      {
         "group": "Bengali",
         "pct": 0.1,
         "count": 44145
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.1,
+        "count": 49496
       },
       {
         "group": "Malayalam",
@@ -363,6 +363,16 @@
         "count": 34830
       },
       {
+        "group": "Bengali",
+        "pct": 0.2,
+        "count": 18684
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.2,
+        "count": 18814
+      },
+      {
         "group": "Marathi",
         "pct": 0.2,
         "count": 21003
@@ -381,16 +391,6 @@
         "group": "Urdu",
         "pct": 0.2,
         "count": 19725
-      },
-      {
-        "group": "Gujarati",
-        "pct": 0.2,
-        "count": 18814
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.2,
-        "count": 18684
       },
       {
         "group": "Afghani/Kabuli/Pashto",
@@ -481,14 +481,14 @@
         "count": 21322
       },
       {
-        "group": "Other languages (unspecified)",
-        "pct": 0.2,
-        "count": 13677
-      },
-      {
         "group": "Lahauli",
         "pct": 0.2,
         "count": 11073
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 0.2,
+        "count": 13677
       },
       {
         "group": "Gujarati",
@@ -612,14 +612,14 @@
         "count": 10595
       },
       {
-        "group": "Nepali",
-        "pct": 0.6,
-        "count": 6546
-      },
-      {
         "group": "Bengali",
         "pct": 0.6,
         "count": 6236
+      },
+      {
+        "group": "Nepali",
+        "pct": 0.6,
+        "count": 6546
       },
       {
         "group": "Other small languages",
@@ -652,14 +652,14 @@
         "count": 1573
       },
       {
-        "group": "Telugu",
-        "pct": 0.1,
-        "count": 1339
-      },
-      {
         "group": "Kashmiri",
         "pct": 0.1,
         "count": 1330
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.1,
+        "count": 1339
       }
     ],
     "ethnicity": {
@@ -911,9 +911,9 @@
         "count": 40613
       },
       {
-        "group": "Odia",
+        "group": "Marathi",
         "pct": 0.2,
-        "count": 37645
+        "count": 27239
       },
       {
         "group": "Nepali",
@@ -921,14 +921,14 @@
         "count": 37468
       },
       {
+        "group": "Odia",
+        "pct": 0.2,
+        "count": 37645
+      },
+      {
         "group": "Sindhi",
         "pct": 0.2,
         "count": 31177
-      },
-      {
-        "group": "Marathi",
-        "pct": 0.2,
-        "count": 27239
       }
     ],
     "ethnicity": {
@@ -1208,14 +1208,14 @@
         "count": 41889
       },
       {
-        "group": "Limbu",
-        "pct": 6.3,
-        "count": 38733
-      },
-      {
         "group": "Lepcha",
         "pct": 6.3,
         "count": 38313
+      },
+      {
+        "group": "Limbu",
+        "pct": 6.3,
+        "count": 38733
       },
       {
         "group": "Sherpa",
@@ -1444,14 +1444,14 @@
         "count": 91010
       },
       {
-        "group": "Sangtam",
-        "pct": 3.8,
-        "count": 75841
-      },
-      {
         "group": "Bengali",
         "pct": 3.8,
         "count": 74753
+      },
+      {
+        "group": "Sangtam",
+        "pct": 3.8,
+        "count": 75841
       },
       {
         "group": "Yimchungre",
@@ -1660,14 +1660,14 @@
         "count": 17981
       },
       {
-        "group": "Other languages (unspecified)",
-        "pct": 1.0,
-        "count": 10919
-      },
-      {
         "group": "Hindi",
         "pct": 1.0,
         "count": 10677
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 1.0,
+        "count": 10919
       },
       {
         "group": "Nepali",
@@ -1763,16 +1763,6 @@
         "count": 25967
       },
       {
-        "group": "Manipuri",
-        "pct": 0.6,
-        "count": 23779
-      },
-      {
-        "group": "Halam",
-        "pct": 0.6,
-        "count": 23089
-      },
-      {
         "group": "Bishnupuriya",
         "pct": 0.6,
         "count": 22112
@@ -1781,6 +1771,16 @@
         "group": "Garo",
         "pct": 0.6,
         "count": 21019
+      },
+      {
+        "group": "Halam",
+        "pct": 0.6,
+        "count": 23089
+      },
+      {
+        "group": "Manipuri",
+        "pct": 0.6,
+        "count": 23779
       },
       {
         "group": "Ao",
@@ -1886,14 +1886,14 @@
         "count": 23199
       },
       {
-        "group": "Rabha",
-        "pct": 0.7,
-        "count": 21671
-      },
-      {
         "group": "Marathi",
         "pct": 0.7,
         "count": 20751
+      },
+      {
+        "group": "Rabha",
+        "pct": 0.7,
+        "count": 21671
       },
       {
         "group": "Karbi/Mikir",
@@ -1999,14 +1999,14 @@
         "count": 213139
       },
       {
-        "group": "Other languages (unspecified)",
-        "pct": 0.6,
-        "count": 196436
-      },
-      {
         "group": "Garo",
         "pct": 0.6,
         "count": 172520
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 0.6,
+        "count": 196436
       },
       {
         "group": "Manipuri",
@@ -2273,14 +2273,14 @@
         "count": 862590
       },
       {
-        "group": "Urdu",
-        "pct": 1.6,
-        "count": 670572
-      },
-      {
         "group": "Telugu",
         "pct": 1.6,
         "count": 667693
+      },
+      {
+        "group": "Urdu",
+        "pct": 1.6,
+        "count": 670572
       },
       {
         "group": "Bengali",
@@ -2303,14 +2303,14 @@
         "count": 298655
       },
       {
-        "group": "Other languages (unspecified)",
-        "pct": 0.5,
-        "count": 227179
-      },
-      {
         "group": "Kisan",
         "pct": 0.5,
         "count": 194716
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 0.5,
+        "count": 227179
       }
     ],
     "ethnicity": {
@@ -2386,11 +2386,6 @@
         "count": 243597
       },
       {
-        "group": "Telugu",
-        "pct": 0.6,
-        "count": 152100
-      },
-      {
         "group": "Marathi",
         "pct": 0.6,
         "count": 144035
@@ -2401,19 +2396,24 @@
         "count": 151321
       },
       {
+        "group": "Telugu",
+        "pct": 0.6,
+        "count": 152100
+      },
+      {
         "group": "Sindhi",
         "pct": 0.4,
         "count": 93424
       },
       {
-        "group": "Urdu",
-        "pct": 0.3,
-        "count": 79962
-      },
-      {
         "group": "Punjabi",
         "pct": 0.3,
         "count": 65425
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.3,
+        "count": 79962
       },
       {
         "group": "Parji",
@@ -2494,11 +2494,6 @@
         "count": 470386
       },
       {
-        "group": "Sindhi",
-        "pct": 0.3,
-        "count": 245161
-      },
-      {
         "group": "Gujarati",
         "pct": 0.3,
         "count": 187211
@@ -2509,14 +2504,19 @@
         "count": 250252
       },
       {
-        "group": "Punjabi",
-        "pct": 0.2,
-        "count": 139658
+        "group": "Sindhi",
+        "pct": 0.3,
+        "count": 245161
       },
       {
         "group": "Bengali",
         "pct": 0.2,
         "count": 109185
+      },
+      {
+        "group": "Punjabi",
+        "pct": 0.2,
+        "count": 139658
       }
     ],
     "ethnicity": {
@@ -2592,14 +2592,14 @@
         "count": 479206
       },
       {
-        "group": "Odia",
-        "pct": 0.3,
-        "count": 183549
-      },
-      {
         "group": "Khandeshi",
         "pct": 0.3,
         "count": 153622
+      },
+      {
+        "group": "Odia",
+        "pct": 0.3,
+        "count": 183549
       },
       {
         "group": "Other small languages",
@@ -2612,9 +2612,9 @@
         "count": 79648
       },
       {
-        "group": "Telugu",
+        "group": "Malayalam",
         "pct": 0.1,
-        "count": 73568
+        "count": 64998
       },
       {
         "group": "Other languages (unspecified)",
@@ -2622,9 +2622,9 @@
         "count": 66603
       },
       {
-        "group": "Malayalam",
+        "group": "Telugu",
         "pct": 0.1,
-        "count": 64998
+        "count": 73568
       }
     ],
     "ethnicity": {
@@ -2643,222 +2643,6 @@
       "census2011_state": "24"
     },
     "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 91 mother-tongue groups were reported here; the 79 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. 'Other languages (unspecified)' (0.1%) is the census's own catch-all group, not a tail summed here: the Registrar General published no breakdown beneath it at this level.",
-    "language_year": 2011
-  },
-  {
-    "id": "IND-S-Daman-&-Diu",
-    "level": "admin1",
-    "name": "Daman & Diu",
-    "parent": "IND",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": [
-      {
-        "group": "Gujarati",
-        "pct": 50.8,
-        "count": 123648
-      },
-      {
-        "group": "Hindi",
-        "pct": 36.3,
-        "count": 88312
-      },
-      {
-        "group": "Marathi",
-        "pct": 4.5,
-        "count": 11008
-      },
-      {
-        "group": "Bengali",
-        "pct": 2.2,
-        "count": 5232
-      },
-      {
-        "group": "Odia",
-        "pct": 1.8,
-        "count": 4421
-      },
-      {
-        "group": "Other small languages",
-        "pct": 1.0,
-        "count": 2485
-      },
-      {
-        "group": "Other languages (unspecified)",
-        "pct": 0.7,
-        "count": 1716
-      },
-      {
-        "group": "Nepali",
-        "pct": 0.6,
-        "count": 1401
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.5,
-        "count": 1229
-      },
-      {
-        "group": "Assamese",
-        "pct": 0.5,
-        "count": 1201
-      },
-      {
-        "group": "Maithili",
-        "pct": 0.4,
-        "count": 1044
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.4,
-        "count": 1032
-      },
-      {
-        "group": "Bhili/Bhilodi",
-        "pct": 0.2,
-        "count": 518
-      }
-    ],
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "language",
-        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
-        "url": "https://censusindia.gov.in/nada/index.php/catalog",
-        "year": 2011,
-        "license": "Government of India open data (GODL-India)"
-      }
-    ],
-    "codes": {
-      "census2011_state": "25"
-    },
-    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 40 mother-tongue groups were reported here; the 28 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. 'Other languages (unspecified)' (0.7%) is the census's own catch-all group, not a tail summed here: the Registrar General published no breakdown beneath it at this level.",
-    "language_year": 2011
-  },
-  {
-    "id": "IND-S-Dadra-&-Nagar-Haveli",
-    "level": "admin1",
-    "name": "Dadra & Nagar Haveli",
-    "parent": "IND",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": [
-      {
-        "group": "Bhili/Bhilodi",
-        "pct": 37.3,
-        "count": 128078
-      },
-      {
-        "group": "Hindi",
-        "pct": 26.2,
-        "count": 89905
-      },
-      {
-        "group": "Gujarati",
-        "pct": 21.5,
-        "count": 73831
-      },
-      {
-        "group": "Marathi",
-        "pct": 7.0,
-        "count": 24105
-      },
-      {
-        "group": "Konkani",
-        "pct": 2.3,
-        "count": 7756
-      },
-      {
-        "group": "Other small languages",
-        "pct": 1.4,
-        "count": 4898
-      },
-      {
-        "group": "Odia",
-        "pct": 1.3,
-        "count": 4463
-      },
-      {
-        "group": "Bengali",
-        "pct": 0.9,
-        "count": 3116
-      },
-      {
-        "group": "Maithili",
-        "pct": 0.6,
-        "count": 2187
-      },
-      {
-        "group": "Malayalam",
-        "pct": 0.6,
-        "count": 2172
-      },
-      {
-        "group": "Nepali",
-        "pct": 0.3,
-        "count": 1152
-      },
-      {
-        "group": "Urdu",
-        "pct": 0.3,
-        "count": 1089
-      },
-      {
-        "group": "Assamese",
-        "pct": 0.3,
-        "count": 957
-      }
-    ],
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "language",
-        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
-        "url": "https://censusindia.gov.in/nada/index.php/catalog",
-        "year": 2011,
-        "license": "Government of India open data (GODL-India)"
-      }
-    ],
-    "codes": {
-      "census2011_state": "26"
-    },
-    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 42 mother-tongue groups were reported here; the 30 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated.",
     "language_year": 2011
   },
   {
@@ -2941,14 +2725,14 @@
         "count": 509887
       },
       {
-        "group": "Gondi",
-        "pct": 0.4,
-        "count": 458806
-      },
-      {
         "group": "Bengali",
         "pct": 0.4,
         "count": 442090
+      },
+      {
+        "group": "Gondi",
+        "pct": 0.4,
+        "count": 458806
       }
     ],
     "ethnicity": {
@@ -3049,14 +2833,14 @@
         "count": 299020
       },
       {
-        "group": "Gujarati",
-        "pct": 0.2,
-        "count": 114616
-      },
-      {
         "group": "Coorgi/Kodagu",
         "pct": 0.2,
         "count": 110508
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.2,
+        "count": 114616
       }
     ],
     "ethnicity": {
@@ -3152,14 +2936,14 @@
         "count": 7099
       },
       {
-        "group": "Tamil",
-        "pct": 0.5,
-        "count": 6947
-      },
-      {
         "group": "Gujarati",
         "pct": 0.5,
         "count": 6846
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 6947
       },
       {
         "group": "Odia",
@@ -3230,14 +3014,14 @@
         "count": 234
       },
       {
-        "group": "Hindi",
-        "pct": 0.2,
-        "count": 160
-      },
-      {
         "group": "Bengali",
         "pct": 0.2,
         "count": 140
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 160
       }
     ],
     "ethnicity": {
@@ -3293,14 +3077,14 @@
         "count": 502516
       },
       {
-        "group": "Tulu",
-        "pct": 0.4,
-        "count": 124266
-      },
-      {
         "group": "Other small languages",
         "pct": 0.4,
         "count": 122314
+      },
+      {
+        "group": "Tulu",
+        "pct": 0.4,
+        "count": 124266
       },
       {
         "group": "Kannada",
@@ -3308,14 +3092,14 @@
         "count": 86995
       },
       {
-        "group": "Konkani",
-        "pct": 0.2,
-        "count": 69449
-      },
-      {
         "group": "Hindi",
         "pct": 0.2,
         "count": 51928
+      },
+      {
+        "group": "Konkani",
+        "pct": 0.2,
+        "count": 69449
       },
       {
         "group": "Telugu",
@@ -3489,11 +3273,6 @@
         "count": 2910
       },
       {
-        "group": "Kannada",
-        "pct": 0.1,
-        "count": 1870
-      },
-      {
         "group": "Bengali",
         "pct": 0.1,
         "count": 1509
@@ -3502,6 +3281,11 @@
         "group": "Gujarati",
         "pct": 0.1,
         "count": 1428
+      },
+      {
+        "group": "Kannada",
+        "pct": 0.1,
+        "count": 1870
       }
     ],
     "ethnicity": {
@@ -3628,6 +3412,111 @@
       "census2011_state": "35"
     },
     "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 62 mother-tongue groups were reported here; the 50 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. 'Other languages (unspecified)' (0.8%) is the census's own catch-all group, not a tail summed here: the Registrar General published no breakdown beneath it at this level.",
+    "language_year": 2011
+  },
+  {
+    "id": "IND-S-Dadra-and-Nagar-Haveli-and-Daman-and-Diu",
+    "level": "admin1",
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "parent": "IND",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Gujarati",
+        "pct": 33.6,
+        "count": 197479
+      },
+      {
+        "group": "Hindi",
+        "pct": 30.4,
+        "count": 178217
+      },
+      {
+        "group": "Bhili/Bhilodi",
+        "pct": 21.9,
+        "count": 128596
+      },
+      {
+        "group": "Marathi",
+        "pct": 6.0,
+        "count": 35113
+      },
+      {
+        "group": "Odia",
+        "pct": 1.5,
+        "count": 8884
+      },
+      {
+        "group": "Other small languages",
+        "pct": 1.5,
+        "count": 8696
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.4,
+        "count": 8348
+      },
+      {
+        "group": "Konkani",
+        "pct": 1.3,
+        "count": 7898
+      },
+      {
+        "group": "Maithili",
+        "pct": 0.6,
+        "count": 3231
+      },
+      {
+        "group": "Malayalam",
+        "pct": 0.6,
+        "count": 3401
+      },
+      {
+        "group": "Assamese",
+        "pct": 0.4,
+        "count": 2158
+      },
+      {
+        "group": "Nepali",
+        "pct": 0.4,
+        "count": 2553
+      },
+      {
+        "group": "Other languages (unspecified)",
+        "pct": 0.4,
+        "count": 2382
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "Census of India 2011, table C-16 population by mother tongue (Registrar General & Census Commissioner)",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog",
+        "year": 2011,
+        "license": "Government of India open data (GODL-India)"
+      }
+    ],
+    "language_note": "Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 47 mother-tongue groups were reported here; the 35 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. 'Other languages (unspecified)' (0.4%) is the census's own catch-all group, not a tail summed here: the Registrar General published no breakdown beneath it at this level. Summed from Daman & Diu (243,247) and Dadra & Nagar Haveli (343,709), the union territories the 2011 census enumerated separately and that were merged into Dadra and Nagar Haveli and Daman and Diu in 2020. Nothing is apportioned: the two rows exhaust the territory, so their sum is that census's figure for it.",
     "language_year": 2011
   }
 ]
