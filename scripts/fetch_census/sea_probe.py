@@ -12,6 +12,8 @@ answers one question and prints only what decides it.
   scripts, and every ``api/...`` path those scripts name.
 * ``get URL [URL...]`` -- status, type, length and the opening of each body,
   for endpoints found by ``spa``.
+* ``xl URL --sheet NAME`` -- named sheets of a workbook, a window of rows.
+* ``zip URL`` -- a zip's members and the opening lines of the first few.
 
 Usage:
     python -m scripts.fetch_census.sea_probe hdx THA,LAO
@@ -128,9 +130,9 @@ def cmd_hdx(codes: list[str], tables: bool) -> None:
                     read_resource(r)
 
 
-def cmd_res(datasets: list[str], peek: bool) -> None:
+def cmd_res(datasets: list[str], peek: bool, rows: int = 5) -> None:
     """An HDX dataset's resources with their URLs; with --peek, each workbook's
-    sheets and first rows, read on the runner."""
+    sheets and first ``rows`` rows, read on the runner."""
     for name in datasets:
         p = hdx("package_show", id=name)
         log(f"== {name}: licence={p.get('license_id')} "
@@ -155,10 +157,70 @@ def cmd_res(datasets: list[str], peek: bool) -> None:
             for sheet in book.worksheets:
                 log(f"    sheet {sheet.title!r}: {sheet.max_row} rows x {sheet.max_column} cols")
                 for i, row in enumerate(sheet.iter_rows(values_only=True)):
-                    if i >= 5:
+                    if i >= rows:
                         break
                     cells = ["" if c is None else str(c) for c in row]
                     log(f"    | {' | '.join(cells[:24])[:400]}")
+
+
+def cmd_xl(url: str, sheets: list[str], rows: int, cols: int, width: int,
+           start: int) -> None:
+    """Named sheets of a workbook (xlsx or xls), rows ``start`` to ``start + rows``."""
+    status, _, body = fetch(url, timeout=600)
+    log(f"{url}: HTTP {status} {len(body):,} B")
+    if status != 200:
+        return
+    if url.lower().split("?")[0].endswith(".xls"):
+        import xlrd
+        book = xlrd.open_workbook(file_contents=body)
+        names = book.sheet_names()
+        get = lambda n: [[book.sheet_by_name(n).cell_value(r, c)  # noqa: E731
+                          for c in range(book.sheet_by_name(n).ncols)]
+                         for r in range(book.sheet_by_name(n).nrows)]
+    else:
+        import openpyxl
+        book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+        names = book.sheetnames
+        get = lambda n: [list(r) for r in book[n].iter_rows(values_only=True)]  # noqa: E731
+    log(f"  sheets: {names}")
+    for name in names:
+        if sheets and not any(re.fullmatch(s, name) for s in sheets):
+            continue
+        table = get(name)
+        log(f"  -- {name!r}: {len(table)} rows")
+        for i, row in enumerate(table[start:start + rows], start=start):
+            cells = ["" if c is None else str(c).strip()[:width] for c in row[:cols]]
+            log(f"   {i:>4} | " + " | ".join(cells))
+
+
+def cmd_zip(url: str, members: int, lines: int, encoding: str) -> None:
+    """A zip's members, and the first lines of the first few of them."""
+    import zipfile
+    try:
+        status, _, body = fetch(url, timeout=900)
+    except Exception as err:  # noqa: BLE001 -- reported
+        log(f"{url}: {type(err).__name__}: {err}")
+        return
+    log(f"{url}: HTTP {status} {len(body):,} B")
+    if status != 200:
+        log("  " + " ".join(body[:300].decode("utf-8", "replace").split()))
+        return
+    zf = zipfile.ZipFile(io.BytesIO(body))
+    infos = zf.infolist()
+    log(f"  {len(infos)} members")
+    for info in infos[:400]:
+        log(f"    {info.filename}  {info.file_size:,} B")
+    for info in infos[:members]:
+        if info.is_dir():
+            continue
+        raw = zf.read(info)
+        log(f"  == {info.filename}")
+        if info.filename.lower().endswith((".xls", ".xlsx")):
+            log("    (workbook; read with xl)")
+            continue
+        text = raw.decode(encoding, "replace")
+        for line in text.splitlines()[:lines]:
+            log(f"    | {line[:300]}")
 
 
 def cmd_spa(url: str) -> None:
@@ -291,6 +353,20 @@ def main() -> int:
     r = sub.add_parser("res")
     r.add_argument("datasets", nargs="+")
     r.add_argument("--peek", action="store_true")
+    r.add_argument("--rows", type=int, default=5)
+    xl = sub.add_parser("xl")
+    xl.add_argument("url")
+    xl.add_argument("--sheet", action="append", default=[],
+                    help="a regular expression a sheet's whole name must match; repeatable")
+    xl.add_argument("--rows", type=int, default=40)
+    xl.add_argument("--from", dest="start", type=int, default=0)
+    xl.add_argument("--cols", type=int, default=16)
+    xl.add_argument("--width", type=int, default=24)
+    z = sub.add_parser("zip")
+    z.add_argument("url")
+    z.add_argument("--members", type=int, default=3)
+    z.add_argument("--lines", type=int, default=8)
+    z.add_argument("--encoding", default="utf-8")
     x = sub.add_parser("cdx")
     x.add_argument("pattern")
     x.add_argument("--limit", type=int, default=2000)
@@ -317,7 +393,11 @@ def main() -> int:
     elif args.cmd == "spa":
         cmd_spa(args.url)
     elif args.cmd == "res":
-        cmd_res(args.datasets, args.peek)
+        cmd_res(args.datasets, args.peek, args.rows)
+    elif args.cmd == "xl":
+        cmd_xl(args.url, args.sheet, args.rows, args.cols, args.width, args.start)
+    elif args.cmd == "zip":
+        cmd_zip(args.url, args.members, args.lines, args.encoding)
     elif args.cmd == "cdx":
         cmd_cdx(args.pattern, args.limit, args.match)
     elif args.cmd == "wpmedia":
