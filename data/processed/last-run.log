@@ -1,186 +1,258 @@
-== https://data.humdata.org/dataset/53e6df8b-ca6e-42b8-a13a-d16e033865eb/resource/3741b707-50b4-4a98-9713-bd79d2d46aac/download/slb_admpop_adm3_2023.csv
-  HTTP 200 text/csv 53,192 bytes
-  columns: year, ISO3, ADM0_PCODE, ADM0_NAME, ADM1_NAME, ADM1_PCODE, ADM2_PCODE, ADM2_NAME, ADM3_NAME, ADM3_NAME_ALT, ADM3_PCODE, F_TL, M_TL, T_TL, F_00_04, F_05_09, F_10_14, F_15_19, F_20_24, F_25_29, F_30_34, F_35_39, F_40_44, F_45_49, F_50_54, F_55_59, F_60_64, F_65_69, F_70_74, F_75_79, F_80Plus, M_00_04, M_05_09, M_10_14, M_15_19, M_20_24, M_25_29, M_30_34, M_35_39, M_40_44, M_45_49, M_50_54, M_55_59, M_60_64, M_65_69, M_70_74, M_75_79, M_80Plus, T_00_04, T_05_09, T_10_14, T_15_19, T_20_24, T_25_29, T_30_34, T_35_39, T_40_44, T_45_49, T_50_54, T_55_59, T_60_64, T_65_69, T_70_74, T_75_79, T_80Plus
-    Central | SB040430 | Nggela | SB0404300403 | East Gela | East Gela | 2658
-    Central | SB040430 | Nggela | SB0404300407 | North East Gela | North East Gela | 2739
-    Central | SB040430 | Nggela | SB0404300408 | North West Gela | North West Gela | 2163
-    Central | SB040430 | Nggela | SB0404300401 | Sandfly-Buenavista | Sandfly/Buenavista | 3975
-    Central | SB040430 | Nggela | SB0404300406 | South East Gela | South East Gela | 1940
-    Central | SB040430 | Nggela | SB0404300405 | South West Gela | South West Gela | 3360
-    Central | SB040430 | Nggela | SB0404300404 | Tulagi | Tulagi | 1577
-    Central | SB040430 | Nggela | SB0404300402 | West Gela | West Gela | 2762
-    Central | SB040431 | Savo-Russull Islands | SB0404310411 | Lovukol | Lovukol | 2745
-    Central | SB040431 | Savo-Russull Islands | SB0404310409 | Mbanika | Banika | 2253
-    Central | SB040431 | Savo-Russull Islands | SB0404310412 | North Savo | North Savo | 1666
-    Central | SB040431 | Savo-Russull Islands | SB0404310410 | Pavuvu | Pavuvu | 2185
-    Central | SB040431 | Savo-Russull Islands | SB0404310413 | South Savo | South Savo | 2294
-    Choiseul | SB010103 | East Choiseul | SB0101030113 | Kerepangara | Kerepangara | 1330
-    Choiseul | SB010103 | East Choiseul | SB0101030114 | Kirugela | Kirugela | 1562
-    Choiseul | SB010103 | East Choiseul | SB0101030112 | Senga | Senga | 2254
-    Choiseul | SB010103 | East Choiseul | SB0101030111 | Susuka | Susuka | 2068
-    Choiseul | SB010102 | North West Choiseul | SB0101020110 | Bangara | Bangera | 1707
-    Choiseul | SB010102 | North West Choiseul | SB0101020107 | Batava | Batava | 6052
-    Choiseul | SB010102 | North West Choiseul | SB0101020109 | Polo | Polo | 2137
-    Choiseul | SB010102 | North West Choiseul | SB0101020108 | Tavula | Tavula | 2935
-    Choiseul | SB010102 | North West Choiseul | SB0101020106 | Tepakaza | Tepazaka | 2425
-    Choiseul | SB010101 | South Choiseul | SB0101010105 | Babatana | Babatana | 2168
-    Choiseul | SB010101 | South Choiseul | SB0101010102 | Katupika | Katupika | 2470
-    Choiseul | SB010101 | South Choiseul | SB0101010103 | Vasiduki | Vasipuki | 2079
-    Choiseul | SB010101 | South Choiseul | SB0101010104 | Viviru | Viviru | 1720
-    Choiseul | SB010101 | South Choiseul | SB0101010101 | Waghina | Wagina | 1899
-    Guadalcanal | SB060640 | Central Guadalcanal | SB0606400620 | Malango | Malango | 26279
-    Guadalcanal | SB060640 | Central Guadalcanal | SB0606400619 | Vulolo | Vulolo | 6682
-    Guadalcanal | SB060636 | East Guadalcanal | SB0606360609 | Avuavu | Avuavu | 3108
-    Guadalcanal | SB060636 | East Guadalcanal | SB0606360612 | Birao | Birao | 4311
-    Guadalcanal | SB060636 | East Guadalcanal | SB0606360610 | Moli | Moli | 4809
-    Guadalcanal | SB060636 | East Guadalcanal | SB0606360611 | Tetekanji | Tetekanji | 1706
-    Guadalcanal | SB060637 | East-Central | SB0606370616 | Aola | Aola | 6800
-    Guadalcanal | SB060637 | East-Central | SB0606370614 | Kolokarako | Kolokarako | 2823
-    Guadalcanal | SB060637 | East-Central | SB0606370615 | Longgu | Longgu | 4897
-    Guadalcanal | SB060637 | East-Central | SB0606370613 | Valasi | Valasi | 2206
-    Guadalcanal | SB060639 | North Guadalcanal | SB0606390622 | East Ghaobata | East Ghaobata | 6633
-    Guadalcanal | SB060639 | North Guadalcanal | SB0606390621 | West Ghaobata | West Ghaobata | 7950
-    Guadalcanal | SB060633 | North West Guadalcanl | SB0606330602 | Saghalu | Saghalu | 11760
-    Guadalcanal | SB060633 | North West Guadalcanl | SB0606330601 | Tandai | Tandai | 35243
-    Guadalcanal | SB060638 | North-East | SB0606380618 | East Tasimboko | East Tasimboko | 10758
-    Guadalcanal | SB060638 | North-East | SB0606380617 | Paripao | Paripao | 4097
-    Guadalcanal | SB060635 | South Guadalcanal | SB0606350606 | Duidui | Duidui | 5655
-    Guadalcanal | SB060635 | South Guadalcanal | SB0606350608 | Talise | Talise | 2804
-    Guadalcanal | SB060635 | South Guadalcanal | SB0606350607 | Vatukulau | Vatukulau | 2706
-    Guadalcanal | SB060634 | West Guadalcanal | SB0606340603 | Savulei | Savulei | 4617
-    Guadalcanal | SB060634 | West Guadalcanal | SB0606340604 | Tangarare | Tangarare | 4106
-    Guadalcanal | SB060634 | West Guadalcanal | SB0606340605 | Wanderer Bay | Wanderer Bay | 4283
-    Honiara | SB101042 | Central Honiara | SB1010421004 | Cruz | Cruz | 417
-    Honiara | SB101042 | Central Honiara | SB1010421008 | Kola'A | Kola'a | 22161
-    Honiara | SB101042 | Central Honiara | SB1010421007 | Mataniko | Mataniko | 6102
-    Honiara | SB101042 | Central Honiara | SB1010421005 | Vavaea | Vavaea | 11526
-    Honiara | SB101042 | Central Honiara | SB1010421006 | Vuhokesa | Vuhokesa | 1416
-    Honiara | SB101041 | East Honiara | SB1010411009 | Kukum | Kukum | 2706
-    Honiara | SB101041 | East Honiara | SB1010411010 | Naha | Naha | 496
-    Honiara | SB101041 | East Honiara | SB1010411012 | Panatina | Panatina | 34877
-    Honiara | SB101041 | East Honiara | SB1010411011 | Vura | Vura | 19999
-    Honiara | SB101043 | West Honiara | SB1010431002 | Mbumburu | Mbumburu | 6192
-    Honiara | SB101043 | West Honiara | SB1010431001 | Nggosi | Nggossi | 27732
-    Honiara | SB101043 | West Honiara | SB1010431003 | Rove - Lengakiki | Rove/Lengakiki | 4519
-    Isabel | SB030315 | Gao-Bugotu | SB0303150312 | Japuana | Japuana | 2768
-    Isabel | SB030315 | Gao-Bugotu | SB0303150309 | Kaloka | Kaloka | 1319
-    Isabel | SB030315 | Gao-Bugotu | SB0303150311 | Sigana | Sigana | 2871
-    Isabel | SB030315 | Gao-Bugotu | SB0303150310 | Tatamba | Tatamba | 1756
-    Isabel | SB030313 | Hograno-Kia-Havulei | SB0303130302 | Havulei | Baolo | 1927
-    Isabel | SB030313 | Hograno-Kia-Havulei | SB0303130301 | Kia | Kia | 2036
-    Isabel | SB030313 | Hograno-Kia-Havulei | SB0303130313 | Kolomola | Kolomola | 1243
-    Isabel | SB030313 | Hograno-Kia-Havulei | SB0303130314 | Kolotubi | Kolotubi | 2111
-    Isabel | SB030313 | Hograno-Kia-Havulei | SB0303130316 | Samasodu | Samasodu | 2647
-    Isabel | SB030313 | Hograno-Kia-Havulei | SB0303130315 | Susubona | Susubona | 2496
-    Isabel | SB030314 | Marigne-Kokota | SB0303140305 | Buala | Buala | 3594
-    Isabel | SB030314 | Marigne-Kokota | SB0303140304 | Hovukoilo | Hovikoilo | 2625
-    Isabel | SB030314 | Marigne-Kokota | SB0303140308 | Kmaga | Kmaga | 2368
-    Isabel | SB030314 | Marigne-Kokota | SB0303140303 | Kokota | Kokota | 1781
-    Isabel | SB030314 | Marigne-Kokota | SB0303140307 | Koviloko | Koviloko | 1223
-    Isabel | SB030314 | Marigne-Kokota | SB0303140306 | Tirotonga | Tirotongana | 738
-    Makira-Ulawa | SB080845 | Central Makira | SB0808450810 | Bauro Central | Bauro Central | 5923
-    Makira-Ulawa | SB080845 | Central Makira | SB0808450811 | Bauro East | Bauro East | 2574
-    Makira-Ulawa | SB080845 | Central Makira | SB0808450809 | Bauro West | Bauro West | 5564
-    Makira-Ulawa | SB080846 | East Makira | SB0808460818 | Rawo | Rawo | 997
-    Makira-Ulawa | SB080846 | East Makira | SB0808460815 | Santa Ana | Santa Ana | 2068
-    Makira-Ulawa | SB080846 | East Makira | SB0808460816 | Santa Catalina | Santa Catalina | 1080
-    Makira-Ulawa | SB080846 | East Makira | SB0808460814 | Star Harbour North | Star Harbour North | 4376
-    Makira-Ulawa | SB080846 | East Makira | SB0808460817 | Star Harbour South | Star Harbour South | 1665
-    Makira-Ulawa | SB080846 | East Makira | SB0808460813 | Wainoni East | Wainoni East | 3465
-    Makira-Ulawa | SB080846 | East Makira | SB0808460812 | Wainoni West | Wainoni West | 3457
-    Makira-Ulawa | SB080846 | East Makira | SB0808460819 | Weather Coast | Weather Coast | 2511
-    Makira-Ulawa | SB080847 | Ulawa-Ugi | SB0808470801 | North Ulawa | North Ulawa | 1521
-    Makira-Ulawa | SB080847 | Ulawa-Ugi | SB0808470802 | South Ulawa | South Ulawa | 1599
-    Makira-Ulawa | SB080847 | Ulawa-Ugi | SB0808470804 | Ugi And Pio | Ugi and Pio | 1704
-    Makira-Ulawa | SB080847 | Ulawa-Ugi | SB0808470803 | West Ulawa | West Ulawa | 1135
-    Makira-Ulawa | SB080844 | West Makira | SB0808440808 | Arosi East | Arosi East | 2928
-    Makira-Ulawa | SB080844 | West Makira | SB0808440807 | Arosi North | Arosi North | 3007
-    Makira-Ulawa | SB080844 | West Makira | SB0808440805 | Arosi South | Arosi South | 3376
-    Makira-Ulawa | SB080844 | West Makira | SB0808440806 | Arosi West | Arosi West | 2586
-    Makira-Ulawa | SB080844 | West Makira | SB0808440820 | Haununu | Haununu | 3452
-    Malaita | SB070723 | Auki-Langalanga | SB0707230701 | Auki | Auki | 7487
-    Malaita | SB070723 | Auki-Langalanga | SB0707230730 | Langalanga | Langalanga | 3319
-    Malaita | SB070718 | Baegu-Asifola | SB0707180711 | East Baegu | East Baegu | 7237
-    Malaita | SB070718 | Baegu-Asifola | SB0707180713 | Sulufou - Kwarande | Sulufou/Kwarande | 2932
-    Malaita | SB070721 | Central Kwara'ae | SB0707210702 | Aimela | Aimela | 9312
-    Malaita | SB070721 | Central Kwara'ae | SB0707210729 | Kwaimela - Radefasu | Kwaimela/Radefasu | 12389
-    Malaita | SB070726 | East AreAre | SB0707260719 | Aiaisi | Aiaisi | 4468
-    Malaita | SB070726 | East AreAre | SB0707260720 | Areare | Are'are | 4277
-    Malaita | SB070724 | East Kwaio | SB0707240717 | Gulalafou | Gulalofou | 9182
-    Malaita | SB070724 | East Kwaio | SB0707240718 | Waneagu - Taelanasin | Waneagu/Taelanasina | 3926
-    Malaita | SB070722 | East Malaita | SB0707220716 | Faumamanu - Kwai | Faumamanu/Kwai | 3946
-    Malaita | SB070722 | East Malaita | SB0707220715 | Nafinua | Nafinua | 4899
-    Malaita | SB070719 | Fataleka | SB0707190714 | Sububenu- Burianias | Sububenu/Burianiasi | 4745
-    Malaita | SB070719 | Fataleka | SB0707190705 | West Baegu  - Fatale | West Baegu/Fataleka | 6630
-    Malaita | SB070717 | Lau-Mbaelela | SB0707170712 | Fouenda | Fouenda | 2538
-    Malaita | SB070717 | Lau-Mbaelela | SB0707170706 | Mandalua - Folotana | Mandalua/Folotana | 4200
-    Malaita | SB070717 | Lau-Mbaelela | SB0707170710 | Takwa | Takwa | 13273
-    Malaita | SB070729 | Malaita Outer Island | SB0707290731 | Luaniua | Luaniua | 2095
-    Malaita | SB070729 | Malaita Outer Island | SB0707290732 | Pelau | Pelau | 1109
-    Malaita | SB070729 | Malaita Outer Island | SB0707290733 | Sikaiana | Sikaiana | 385
-    Malaita | SB070716 | North Malaita | SB0707160707 | Foondo - Gwaiau | Fo'ondo/Gwaiau | 7025
-    Malaita | SB070716 | North Malaita | SB0707160708 | Malu'U | Malu'u | 6047
-    Malaita | SB070716 | North Malaita | SB0707160709 | Matakwalao | Matakwalao | 3798
-    Malaita | SB070728 | Small Malaita | SB0707280722 | Aba - Asimeuru | Aba/Asimeuru | 6326
-    Malaita | SB070728 | Small Malaita | SB0707280723 | Asimae | Asimae | 4445
-    Malaita | SB070728 | Small Malaita | SB0707280721 | Raroisuu | Raroisu'u | 6450
-    Malaita | SB070727 | West Areare | SB0707270724 | Mareho | Mareho | 3006
-    Malaita | SB070727 | West Areare | SB0707270725 | Tai | Tai | 5531
-    Malaita | SB070725 | West Kwaio | SB0707250726 | Kwarekwareo | Kwarekwareo | 2967
-    Malaita | SB070725 | West Kwaio | SB0707250727 | Siesie | Siesie | 4806
-    Malaita | SB070725 | West Kwaio | SB0707250728 | Weagu Silana Sina | Waneagu Silana Sina | 6206
-    Malaita | SB070720 | West Kwara'ae | SB0707200703 | Buma | Buma | 8658
-    Malaita | SB070720 | West Kwara'ae | SB0707200704 | Fauabu | Fauabu | 10583
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320508 | East Ghongau | East Gaongau | 242
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320501 | East Te Nggano | East Tenggano | 359
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320504 | Kangava | Kanava | 331
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320503 | Lughu | Lughu | 459
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320507 | Matangi | Matangi | 229
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320506 | Mugihenua | Mugi Henua | 234
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320510 | Sa'Aiho | Sa'aiho | 358
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320505 | Tetau Nangoto | Te Tau Gangoto | 938
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320509 | West Ghongau | West Gaongau | 831
-    Rennell-Bell | SB050532 | Rennell-Bellona | SB0505320502 | West Te Nggano | West Tenggano | 402
-    Temotu | SB090948 | Temotu Pele | SB0909480901 | Fenualoa | Fenualoa | 1346
-    Temotu | SB090948 | Temotu Pele | SB0909480904 | Lipe-Temua | Lipe/Temua | 797
-    Temotu | SB090948 | Temotu Pele | SB0909480905 | Manuopo | Manuopo | 1185
-    Temotu | SB090948 | Temotu Pele | SB0909480906 | Nenumpo | Nenumpo | 1150
-    Temotu | SB090948 | Temotu Pele | SB0909480903 | Nipua-Nopoli | Nipua/Nopoli | 971
-    Temotu | SB090948 | Temotu Pele | SB0909480902 | Polynesian Outer Islands | Polynesian Outer Islands | 299
-    Temotu | SB090950 | Temotu Vatu | SB0909500913 | Duff Islands | Duff Islands | 529
-    Temotu | SB090950 | Temotu Vatu | SB0909500916 | Tikopia | Tikopia | 1130
-    Temotu | SB090950 | Temotu Vatu | SB0909500914 | Utupua | Utupua | 1447
-    Temotu | SB090950 | Temotu Vatu | SB0909500915 | Vanikoro | Vanikoro | 1782
-    Temotu | SB090949 | Temotu-Nende | SB0909490909 | Graciosa Bay | Graciosa Bay | 1550
-    Temotu | SB090949 | Temotu-Nende | SB0909490908 | Luva Station | Luava Station | 2083
-    Temotu | SB090949 | Temotu-Nende | SB0909490912 | Nanggu-Lord Howe | Nanggu/Lord Howe | 2289
-    Temotu | SB090949 | Temotu-Nende | SB0909490910 | Nea-Noole | Nea/Noole | 1962
-    Temotu | SB090949 | Temotu-Nende | SB0909490917 | Neo | Neo | 1813
-    Temotu | SB090949 | Temotu-Nende | SB0909490907 | Nevenema | Nevenema | 1153
-    Temotu | SB090949 | Temotu-Nende | SB0909490911 | North East Santa Cruz | North East Santa Cruz | 2323
-    Western | SB020208 | Gizo-Kolombangara | SB0202080211 | Gizo | Gizo | 10081
-    Western | SB020208 | Gizo-Kolombangara | SB0202080226 | North Kolombangara | North Kolombangara | 3114
-    Western | SB020208 | Gizo-Kolombangara | SB0202080212 | South Kolombangara | South Kolombangara | 5258
-    Western | SB020212 | Marovo | SB0202120221 | Buini Tusu | Mbuini Tusu | 4050
-    Western | SB020212 | Marovo | SB0202120223 | Nggatokae | Nggatokae | 3662
-    Western | SB020212 | Marovo | SB0202120222 | Nono | Nono | 4335
-    Western | SB020212 | Marovo | SB0202120224 | North Vangunu | North Vangunu | 3426
-    Western | SB020210 | North New Georgia | SB0202100220 | Kolombaghea | Kolombaghea | 3799
-    Western | SB020210 | North New Georgia | SB0202100214 | Kusaghe | Kusaghe | 2675
-    Western | SB020205 | North Vella la Vella | SB0202050209 | Dovele | Ndovele | 2194
-    Western | SB020205 | North Vella la Vella | SB0202050210 | Iringgila | Irringgilla | 3516
-    Western | SB020207 | Ranongga-Simbo | SB0202070205 | Central Ranongga | Central Ranongga | 3019
-    Western | SB020207 | Ranongga-Simbo | SB0202070204 | North Ranongga | North Ranongga | 588
-    Western | SB020207 | Ranongga-Simbo | SB0202070203 | Simbo | Simbo | 1899
-    Western | SB020207 | Ranongga-Simbo | SB0202070206 | South Ranongga | South Ranongga | 3578
-    Western | SB020204 | Shortland Islands | SB0202040202 | Inner Shortlands | Inner Shortlands | 3224
-    Western | SB020204 | Shortland Islands | SB0202040201 | Outer Shortlands | Outer Shortlands | 1539
-    Western | SB020211 | South New Georgia-Rendova | SB0202110208 | Bilua | Mbilua | 4802
-    Western | SB020211 | South New Georgia-Rendova | SB0202110219 | North Rendova | North Rendova | 2033
-    Western | SB020211 | South New Georgia-Rendova | SB0202110217 | Roviana Lagoon | Roviana Lagoon | 5547
-    Western | SB020211 | South New Georgia-Rendova | SB0202110218 | South Rendova | South Rendova | 2818
-    Western | SB020206 | South Vella la Vella | SB0202060207 | Vonunu | Vonunu | 4181
-    Western | SB020209 | West New Georgia-Vonavona | SB0202090215 | Munda | Munda | 4048
-    Western | SB020209 | West New Georgia-Vonavona | SB0202090225 | Noro | Noro | 7680
-    Western | SB020209 | West New Georgia-Vonavona | SB0202090216 | Nusa Roviana | Nusa Roviana | 2436
-    Western | SB020209 | West New Georgia-Vonavona | SB0202090213 | Vonavona | Vonavona | 6820
+probe_pdf: https://lao.unfpa.org/sites/default/files/pub-pdf/PHC-ENG-FNAL-WEB_0.pdf
+  5,346,121 bytes
+  282 pages
+probe_pdf: 282 pages, printing [111, 112, 114, 116, 118, 120, 122, 124]
+
+--- page 111 ----------------------------------------------------
+The 4th Population and Housing Census (PHC) 2015
+110
+Table P2.2 Total Population by Sex, by Urban-Rural and 5-year Age Group
+Urban-Rural and Age Group
+Population Percent
+Total Female Male Total Female Male
+Lao PDR 6,492,228 3,237,458 3,254,770 100.0 100.0 100.0
+0 Years - 4 Years 681,983 335,521 346,462 10.5 10.4 10.6
+5 Years - 9 Years 679,209 333,829 345,380 10.5 10.3 10.6
+10 Years - 14 Years 718,606 355,580 363,026 11.1 11.0 11.2
+15 Years - 19 Years 699,010 344,650 354,360 10.8 10.6 10.9
+20 Years - 24 Years 654,037 328,436 325,601 10.1 10.1 10.0
+25 Years - 29 Years 615,988 307,000 308,988 9.5 9.5 9.5
+30 Years - 34 Years 496,234 245,851 250,383 7.6 7.6 7.7
+35 Years - 39 Years 420,083 207,560 212,523 6.5 6.4 6.5
+40 Years - 44 Years 343,870 173,062 170,808 5.3 5.3 5.2
+45 Years - 49 Years 295,907 146,251 149,656 4.6 4.5 4.6
+50 Years - 54 Years 267,418 140,146 127,272 4.1 4.3 3.9
+55 Years - 59 Years 197,607 98,992 98,615 3.0 3.1 3.0
+60 Years - 64 Years 147,179 73,073 74,106 2.3 2.3 2.3
+65 Years - 69 Years 98,901 51,338 47,563 1.5 1.6 1.5
+70 Years - 74 Years 71,427 38,497 32,930 1.1 1.2 1.0
+75 Years - 79 Years 47,078 25,207 21,871 0.7 0.8 0.7
+80 Years - 84 Years 30,190 16,671 13,519 0.5 0.5 0.4
+85 Years - 89 Years 15,267 8,523 6,744 0.2 0.3 0.2
+90 Years - 94 Years 7,036 3,995 3,041 0.1 0.1 0.1
+95 Years and Over 5,198 3,276 1,922 0.1 0.1 0.1
+Urban 2,135,437 1,059,490 1,075,947 100.0 100.0 100.0
+0 Years - 4 Years 188,398 92,018 96,380 8.8 8.7 9.0
+5 Years - 9 Years 175,335 85,826 89,509 8.2 8.1 8.3
+10 Years - 14 Years 189,427 93,462 95,965 8.9 8.8 8.9
+15 Years - 19 Years 222,240 10
+
+--- page 112 ----------------------------------------------------
+The 4th Population and Housing Census (PHC) 2015
+111
+Urban-Rural and Age Group
+Population Percent
+Total Female Male Total Female Male
+85 Years - 89 Years 5,714 3,261 2,453 0.3 0.3 0.2
+90 Years - 94 Years 2,420 1,336 1,084 0.1 0.1 0.1
+95 Years and Over 1,695 1,092 603 0.1 0.1 0.1
+Rural with road 3,838,937 1,917,639 1,921,298 100.0 100.0 100.0
+0 Years - 4 Years 427,217 210,534 216,683 11.1 11.0 11.3
+5 Years - 9 Years 432,909 212,913 219,996 11.3 11.1 11.5
+10 Years - 14 Years 459,366 227,364 232,002 12.0 11.9 12.1
+15 Years - 19 Years 420,632 207,510 213,122 11.0 10.8 11.1
+20 Years - 24 Years 364,065 185,239 178,826 9.5 9.7 9.3
+25 Years - 29 Years 343,266 172,339 170,927 8.9 9.0 8.9
+30 Years - 34 Years 278,063 137,597 140,466 7.2 7.2 7.3
+35 Years - 39 Years 240,085 117,928 122,157 6.3 6.1 6.4
+40 Years - 44 Years 195,153 97,764 97,389 5.1 5.1 5.1
+45 Years - 49 Years 166,324 81,663 84,661 4.3 4.3 4.4
+50 Years - 54 Years 153,000 80,863 72,137 4.0 4.2 3.7
+55 Years - 59 Years 112,865 57,078 55,787 2.9 3.0 2.9
+60 Years - 64 Years 86,319 43,106 43,213 2.2 2.2 2.2
+65 Years - 69 Years 57,906 30,284 27,622 1.5 1.6 1.4
+70 Years - 74 Years 41,703 22,496 19,207 1.1 1.2 1.0
+75 Years - 79 Years 26,874 14,371 12,503 0.7 0.7 0.7
+80 Years - 84 Years 17,452 9,566 7,886 0.5 0.5 0.4
+85 Years - 89 Years 8,532 4,716 3,816 0.2 0.2 0.2
+90 Years - 94 Years 4,101 2,359 1,742 0.1 0.1 0.1
+95 Years and Over 3,105 1,949 1,156 0.1 0.1 0.1
+Rural without Road 513,431 257,144 256,287 100.0 100.0 100.0
+0 Years - 4 Years 65,671 32,626 33,045 12.8 12.7 12.9
+5 Years - 9 Years 70,271 34,746 35,525 13.7 13.5 13.9
+10 Y
+
+--- page 114 ----------------------------------------------------
+The 4th Population and Housing Census (PHC) 2015
+113
+Table P2.3 Household Population* by Sex, by Urban-Rural and 5-year Age Group
+Urban-Rural and Age Group
+Population Percent
+Total Female Male Total Female Male
+All Areas 6,277,592 3,186,004 3,091,588 100.0 100.0 100.0
+0 Years - 4 Years 679,753 334,439 345,314 10.8 10.5 11.2
+5 Years - 9 Years 677,319 332,987 344,332 10.8 10.5 11.1
+10 Years - 14 Years 703,588 350,705 352,883 11.2 11.0 11.4
+15 Years - 19 Years 659,573 331,067 328,506 10.5 10.4 10.6
+20 Years - 24 Years 587,773 311,113 276,660 9.4 9.8 8.9
+25 Years - 29 Years 574,093 300,551 273,542 9.1 9.4 8.8
+30 Years - 34 Years 477,697 243,391 234,306 7.6 7.6 7.6
+35 Years - 39 Years 411,000 206,236 204,764 6.5 6.5 6.6
+40 Years - 44 Years 337,794 172,047 165,747 5.4 5.4 5.4
+45 Years - 49 Years 291,278 145,489 145,789 4.6 4.6 4.7
+50 Years - 54 Years 264,230 139,573 124,657 4.2 4.4 4.0
+55 Years - 59 Years 195,660 98,634 97,026 3.1 3.1 3.1
+60 Years - 64 Years 145,852 72,816 73,036 2.3 2.3 2.4
+65 Years - 69 Years 97,972 51,152 46,820 1.6 1.6 1.5
+70 Years - 74 Years 70,663 38,347 32,316 1.1 1.2 1.0
+75 Years - 79 Years 46,474 25,118 21,356 0.7 0.8 0.7
+80 Years - 84 Years 29,770 16,606 13,164 0.5 0.5 0.4
+85 Years - 89 Years 15,027 8,490 6,537 0.2 0.3 0.2
+90 Years - 94 Years 6,943 3,974 2,969 0.1 0.1 0.1
+95 Years and Over 5,133 3,269 1,864 0.1 0.1 0.1
+Urban 2,003,046 1,026,057 976,989 100.0 100.0 100.0
+0 Years - 4 Years 187,818 91,732 96,086 9.4 8.9 9.8
+5 Years - 9 Years 174,803 85,579 89,224 8.7 8.3 9.1
+10 Years - 14 Years 183,595 91,826 91,769 9.2 9.0 9.4
+15 Years - 19 Years 197,763 
+
+--- page 116 ----------------------------------------------------
+The 4th Population and Housing Census (PHC) 2015
+115
+Urban-Rural and Age Group
+Population Percent
+Total Female Male Total Female Male
+75 Years - 79 Years 3,069 1,666 1,403 0.6 0.7 0.6
+80 Years - 84 Years 1,916 1,059 857 0.4 0.4 0.3
+85 Years - 89 Years 996 537 459 0.2 0.2 0.2
+90 Years - 94 Years 500 293 207 0.1 0.1 0.1
+95 Years and Over 390 228 162 0.1 0.1 0.1
+* Household population refer to those people who live in regular private household
+
+--- page 118 ----------------------------------------------------
+The 4th Population and Housing Census (PHC) 2015
+117
+Table P2.5 Native and Foreign-born Population by Sex and 5-year Age Group
+Sex and Age Group Total Native Population Foreign-born Population
+Number Percent Number Percent Number Percent
+Both Sexes 6,492,228 100.0 6,446,690 100.0 45,538 100.0
+0 Years - 4 Years 681,983 10.5 679,696 10.5 2,287 5.0
+5 Years - 9 Years 679,209 10.5 678,079 10.5 1,130 2.5
+10 Years - 14 Years 718,606 11.1 717,527 11.1 1,079 2.4
+15 Years - 19 Years 699,010 10.8 696,909 10.8 2,101 4.6
+20 Years - 24 Years 654,037 10.1 649,193 10.1 4,844 10.6
+25 Years - 29 Years 615,988 9.5 609,266 9.5 6,722 14.8
+30 Years - 34 Years 496,234 7.6 490,133 7.6 6,101 13.4
+35 Years - 39 Years 420,083 6.5 414,945 6.4 5,138 11.3
+40 Years - 44 Years 343,870 5.3 338,913 5.3 4,957 10.9
+45 Years - 49 Years 295,907 4.6 291,856 4.5 4,051 8.9
+50 Years - 54 Years 267,418 4.1 264,439 4.1 2,979 6.5
+55 Years - 59 Years 197,607 3.0 196,045 3.0 1,562 3.4
+60 Years - 64 Years 147,179 2.3 146,138 2.3 1,041 2.3
+65 Years - 69 Years 98,901 1.5 98,301 1.5 600 1.3
+70 Years - 74 Years 71,427 1.1 71,088 1.1 339 0.7
+75 Years - 79 Years 47,078 0.7 46,813 0.7 265 0.6
+80 Years and Over 57,691 0.9 57,349 0.9 342 0.8
+Female 3,237,458 100.0 3,221,255 100.0 16,203 100.0
+0 Years - 4 Years 335,521 10.4 334,396 10.4 1,125 6.9
+5 Years - 9 Years 333,829 10.3 333,287 10.3 542 3.3
+10 Years - 14 Years 355,580 11.0 355,071 11.0 509 3.1
+15 Years - 19 Years 344,650 10.6 343,699 10.7 951 5.9
+20 Years - 24 Years 328,436 10.1 326,437 10.1 1,999 12.3
+25 Years - 29 Years 307,000 9.5 304,565 9.5 2,435 15.0
+30 Years - 34 Yea
+
+--- page 120 ----------------------------------------------------
+The 4th Population and Housing Census (PHC) 2015
+119
+Table P2.6 Population by Marital Status, by Sex and 5-year Age Group
+Sex and Age Group
+Marital Status
+Total Never married Married Divorced/
+separated Widowed Consensual
+Union
+Both Sexes 4,412,430 1,295,493 2,799,719 109,906 179,167 28,145
+15 Years - 19 Years 699,010 604,966 85,859 3,397 825 3,963
+20 Years - 24 Years 654,037 361,689 272,247 13,308 1,398 5,395
+25 Years - 29 Years 615,988 176,458 412,493 19,352 2,590 5,095
+30 Years - 34 Years 496,234 67,854 403,751 17,689 3,604 3,336
+35 Years - 39 Years 420,083 30,919 367,301 14,160 5,148 2,555
+40 Years - 44 Years 343,870 15,736 308,147 10,461 7,696 1,830
+45 Years - 49 Years 295,907 10,292 264,901 8,579 10,639 1,496
+50 Years - 54 Years 267,418 7,712 232,347 7,528 18,541 1,290
+55 Years - 59 Years 197,607 5,208 165,567 5,323 20,579 930
+60 Years - 64 Years 147,179 4,131 114,817 3,839 23,653 739
+65 Years - 69 Years 98,901 2,944 71,145 2,523 21,777 512
+70 Years - 74 Years 71,427 2,586 45,631 1,631 21,169 410
+75 Years and Over 104,769 4,998 55,513 2,116 41,548 594
+Female 2,212,528 550,147 1,425,583 76,489 145,372 14,937
+15 Years - 19 Years 344,650 276,538 62,358 2,790 678 2,286
+20 Years - 24 Years 328,436 142,529 171,510 10,229 1,083 3,085
+25 Years - 29 Years 307,000 61,761 227,261 13,418 1,992 2,568
+30 Years - 34 Years 245,851 24,677 205,023 11,595 2,847 1,709
+35 Years - 39 Years 207,560 12,870 180,104 9,100 4,155 1,331
+40 Years - 44 Years 173,062 7,828 150,817 7,095 6,351 971
+45 Years - 49 Years 146,251 5,680 125,077 5,958 8,755 781
+50 Years - 54 Years 140,146 4,889 113,306 5,56
+
+--- page 122 ----------------------------------------------------
+The 4th Population and Housing Census (PHC) 2015
+121
+Table P2.7 Total Lao Citizen Population by Sex and Ethnicity
+Ethnicity Number Percent
+Total Female Male Total Female Male
+Total 6,446,690 3,221,255 3,225,435 100.0 100.0 100.0
+1   Lao 3,427,665 1,716,221 1,711,444 53.2 53.3 53.1
+2   Tai 201,576 99,354 102,222 3.1 3.1 3.2
+3   Phouthay 218,108 111,213 106,895 3.4 3.5 3.3
+4   Lue 126,229 63,284 62,945 2.0 2.0 2.0
+5   Nhoaun 27,779 14,024 13,755 0.4 0.4 0.4
+6   Yang 5,843 2,848 2,995 0.1 0.1 0.1
+7   Xaek 3,841 1,973 1,868 0.1 0.1 0.1
+8   Thaineau 14,148 7,100 7,048 0.2 0.2 0.2
+9   Khmou 708,412 351,387 357,025 11.0 10.9 11.1
+10  Pray 28,732 14,473 14,259 0.4 0.4 0.4
+11   Xingmoun 9,874 4,819 5,055 0.2 0.1 0.2
+12   Phong 30,696 15,226 15,470 0.5 0.5 0.5
+13   Thaen 828 429 399 * * *
+14   Oedou 602 302 300 * * *
+15   Bid 2,372 1,157 1,215 * * *
+16   Lamed 22,383 11,591 10,792 0.3 0.4 0.3
+17   Samtao 3,417 1,680 1,737 0.1 0.1 0.1
+18   Katang 144,255 72,876 71,379 2.2 2.3 2.2
+19   Makong 163,285 82,672 80,613 2.5 2.6 2.5
+20   Tri 37,446 18,819 18,627 0.6 0.6 0.6
+21   Yrou 56,411 28,932 27,479 0.9 0.9 0.9
+22   Trieng 38,407 19,427 18,980 0.6 0.6 0.6
+23   Ta-oy 45,991 23,102 22,889 0.7 0.7 0.7
+24   Yae 11,452 5,782 5,670 0.2 0.2 0.2
+25   Brao 26,010 13,171 12,839 0.4 0.4 0.4
+26   Katu 28,378 14,341 14,037 0.4 0.4 0.4
+27   Harak 25,430 12,964 12,466 0.4 0.4 0.4
+28   Oy 23,513 11,876 11,637 0.4 0.4 0.4
+29   Kriang 16,807 8,368 8,439 0.3 0.3 0.3
+30   Cheng 8,688 4,435 4,253 0.1 0.1 0.1
+31   Sadang 898 440 458 * * *
+32   Xuay 46,592 23,954 22,638 0.7 0.7 0.7
+33   Nhaheun 8,976 4,398 4,5
+
+--- page 124 ----------------------------------------------------
+The 4th Population and Housing Census (PHC) 2015
+123
+Table P2.8 Total Foreign Population by Sex and Citizenship
+Citizenship Population Percent
+Total Female Male Total Female Male
+Total 45,538 16,203 29,335 100.0 100.0 100.0
+Cambodia 3,428 1,608 1,820 7.5 9.9 6.2
+China 13,400 3,845 9,555 29.4 23.7 32.6
+Myanmar 2,835 1,305 1,530 6.2 8.1 5.2
+Thailand 3,293 656 2,637 7.2 4.1 9.0
+Vietnam 18,938 7,576 11,362 41.6 46.8 38.7
+Other Asia 1,276 330 946 2.8 2.0 3.2
+Europe 964 336 628 2.1 2.1 2.1
+Africa 110 40 70 0.2 0.3 0.2
+America 591 245 346 1.3 1.5 1.2
+Australia/Oceania 205 61 144 0.5 0.4 0.5
+Other 123 45 78 0.3 0.3 0.3
+Not Stated 375 156 219 0.8 1.0 0.8
+Table P2.9 Total Population by Sex and Religion
+Religion Population Percent
+Total Female Male Total Female Male
+Total 6,492,228 3,237,458 3,254,770 100.0 100.0 100.0
+Buddhist 4,201,993 2,104,718 2,097,275 64.7 65.0 64.4
+Christian 112,230 56,403 55,827 1.7 1.7 1.7
+Bahai 2,122 943 1,179 * * *
+Islam 1,605 749 856 * * *
+Other 19,901 8,279 11,622 0.3 0.3 0.4
+No religion 2,040,365 1,009,893 1,030,472 31.4 31.2 31.7
+Not stated 114,012 56,473 57,539 1.8 1.7 1.8
