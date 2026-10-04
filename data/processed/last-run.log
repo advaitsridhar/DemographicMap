@@ -1,23 +1,127 @@
-20,857,972 bytes
-bare CSV (not a zip)
-columns: ['state', 'district', 'date', 'sex', 'age', 'ethnicity', 'population']
-         | 'overall' | 
-         | '0-4' | 
-         | '5-9' | 
-         | '10-14' | 
-         | '15-19' | 
-         | '20-24' | 
-         | '25-29' | 
-         | '30-34' | 
-         | '35-39' | 
-         | '40-44' | 
-         | '45-49' | 
-         | '50-54' | 
-         | '55-59' | 
-         | '60-64' | 
-         | '65-69' | 
-         | '70-74' | 
-         | '75-79' | 
-         | '80-84' | 
-         | '85+' | 
-19 distinct values of age; 19 printed
+https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx
+  523,872 bytes
+  18 sheet(s)
+  -- 'List A': 54 rows x 17 cols
+     ['Jadual', '', 'Tajuk', '', '', '', '', '', '', '', '', '']
+     ['Table', '', 'Title', '', '', '', '', '', '', '', '', '']
+     ['A1', '', 'Penduduk mengikut Tara', '', '', '', '', '', '', '', '', '']
+     ['', '', 'Population by Resident', '', '', '', '', '', '', '', '', '']
+     ['A2', '', 'Penduduk mengikut Kump', '', '', '', '', '', '', '', '', '']
+  -- 'A1': 31 rows x 35 cols
+     ['Jadual A1 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A1 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Brunei Muara', '', '', 'Belait', '', '', 'Tutong', '']
+     ['Taraf Penduduk', 'Total', '', '', '', '', '', '', '', '', '', '']
+     ['Residential Status', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A2': 31 rows x 37 cols
+     ['Jadual A2 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A2 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Brunei Muara', '', '', 'Belait', '', '', 'Tutong', '']
+     ['Kumpulan Umur', 'Total', '', '', '', '', '', '', '', '', '', '']
+     ['Age Group', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A3': 31 rows x 35 cols
+     ['Jadual A3 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A3 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Brunei Muara', '', '', 'Belait', '', '', 'Tutong', '']
+     ['Bangsa', 'Total', '', '', '', '', '', '', '', '', '', '']
+     ['Race', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A4': 30 rows x 39 cols
+     ['Jadual A4 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A4 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Brunei Muara', '', '', 'Belait', '', '', 'Tutong', '']
+     ['Ugama', 'Total', '', '', '', '', '', '', '', '', '', '']
+     ['Religion', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A5': 33 rows x 40 cols
+     ['Jadual A5 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A5 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Rakyat Brunei', '', '', 'Penduduk Tetap', '', '', 'Penduduk Sementara', '']
+     ['Kumpulan Umur', 'Total', '', '', 'Brunei Citizens', '', '', 'Permanent Residents', '', '', 'Temporary Residents', '']
+     ['Age Group', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A6 (a)-(d)': 128 rows x 36 cols
+     ['Jadual A6 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A6 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', '', '', '', '', '', '', '', '(a) DAERAH BRUNEI MUAR', '', '', '']
+     ['', 'Jumlah', '', '', 'Rakyat Brunei', '', '', 'Penduduk Tetap', '', '', 'Penduduk Sementara', '']
+     ['Kumpulan Umur', 'Total', '', '', 'Brunei Citizens', '', '', 'Permanent Residents', '', '', 'Temporary Residents', '']
+     ['Age Group', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+  -- 'A7': 159 rows x 18 cols
+     ['21Jadual A7 : Penduduk', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A7 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Brunei Muara', '', '', 'Belait', '', '', 'Tutong', '']
+     ['Umur', 'Total', '', '', '', '', '', '', '', '', '', '']
+     ['Age', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A8': 159 rows x 16 cols
+     ['Jadual A8 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A8 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Rakyat Brunei', '', '', 'Penduduk Tetap', '', '', 'Penduduk Sementara', '']
+     ['Umur', 'Total', '', '', 'Brunei Citizens', '', '', 'Permanent Residents', '', '', 'Temporary Residents', '']
+     ['Age', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A9': 32 rows x 18 cols
+     ['Jadual A9 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A9 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Islam', '', '', 'Kristian', '', '', 'Buddha', '']
+     ['Kumpulan Umur', 'Total', '', '', 'Islam', '', '', 'Christianity', '', '', 'Buddhism', '']
+     ['Age Group', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A10 (a)-(d)': 131 rows x 19 cols
+     ['Jadual A10 : Penduduk ', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A10 : Population', '', '', '', '', '', '', '', '', '', '', '']
+     ['', '', '', '', '', '', '', '', '', '(a) DAERAH BRUNEI MUAR', '', '']
+     ['', 'Jumlah', '', '', 'Islam', '', '', 'Kristian', '', '', 'Buddha', '']
+     ['Kumpulan Umur', 'Total', '', '', 'Islam', '', '', 'Christianity', '', '', 'Buddhism', '']
+     ['Age Group', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+  -- 'A11': 31 rows x 16 cols
+     ['Jadual A11 : Penduduk ', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A11 : Population', '', '', '', '', '', '', '', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Rakyat Brunei', '', '', 'Penduduk Tetap', '', '', 'Penduduk Sementara', '']
+     ['Ugama', 'Total', '', '', 'Brunei Citizens', '', '', 'Permanent Residents', '', '', 'Temporary Residents', '']
+     ['Religion', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+     ['', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males', 'Females', 'Persons', 'Males']
+  -- 'A12 (a)-(d)': 126 rows x 16 cols
+     ['Jadual A12 : Penduduk ', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table A12 : Population', '', '', '', '', '', '', '', '', '', '', '']
+     ['', '', '', '', '', '', '', '(a) DAERAH BRUNEI MUAR', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Rakyat Brunei', '', '', 'Penduduk Tetap', '', '', 'Penduduk Sementara', '']
+     ['Ugama', 'Total', '', '', 'Brunei Citizens', '', '', 'Permanent Residents', '', '', 'Temporary Residents', '']
+     ['Religion', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+  -- 'List B': 73 rows x 16 cols
+     ['Jadual', '', 'Tajuk', '', '', '', '', '', '', '', '', '']
+     ['Table', '', 'Title', '', '', '', '', '', '', '', '', '']
+     ['B1', '', 'Jumlah Penduduk, Isiru', '', '', '', '', '', '', '', '', '']
+     ['', '', 'Total Population, Hous', '', '', '', '', '', '', '', '', '']
+     ['B2', '', 'Jumlah Penduduk, Isiru', '', '', '', '', '', '', '', '', '']
+  -- 'B1-B6': 1459 rows x 22 cols
+     ['Jadual B1 : Jumlah Pen', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table B1 : Total Popul', '', '', '', '', '', '', '', '', '', '', '']
+     ['', '2011', '', '', '', '', '', '2021', '', '', '', '']
+     ['Daerah', 'Penduduk', '', '', '', 'Tempat Kediaman', '', 'Penduduk', '', '', '', 'Tempat Kediaman']
+     ['District', 'Population', '', '', 'Isirumah', 'Didiami', '', 'Population', '', '', 'Isirumah', 'Didiami']
+     ['', 'Orang', 'Lelaki', 'Perempuan', 'Households', 'Occupied Living', '', 'Orang', 'Lelaki', 'Perempuan', 'Households', 'Occupied Living']
+  -- 'List C': 150 rows x 17 cols
+     ['Jadual', '', 'Tajuk', '', '', '', '', '', '', '', '', '']
+     ['Table', '', 'Title', '', '', '', '', '', '', '', '', '']
+     ['C1', '', 'Penduduk mengikut Muki', '', '', '', '', '', '', '', '', '']
+     ['', '', 'Population by Mukim, R', '', '', '', '', '', '', '', '', '']
+     ['', '', '(a)', 'Daerah Brunei Muara/Br', '', '', '', '', '', '', '', '']
+     ['', '', '(b)', 'Daerah Belait/Belait D', '', '', '', '', '', '', '', '']
+  -- 'C1-C5': 1437 rows x 16 cols
+     ['Jadual C1: Penduduk me', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table C1 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', '', '', '', '', '', '', '(a) DAERAH BRUNEI MUAR', '', '', '', '']
+     ['', 'Jumlah', '', '', 'Rakyat Brunei', '', '', 'Penduduk Tetap', '', '', 'Penduduk Sementara', '']
+     ['Daerah dan Mukim', 'Total', '', '', 'Brunei Citizens', '', '', 'Permanent Residents', '', '', 'Temporary Residents', '']
+     ['District and Mukim', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
+  -- 'C6-C10': 1426 rows x 19 cols
+     ['Jadual C6 : Penduduk m', '', '', '', '', '', '', '', '', '', '', '']
+     ['Table C6 : Population ', '', '', '', '', '', '', '', '', '', '', '']
+     ['', '', '', '', '', '', '', '', '', '(a) DAERAH BRUNEI MUAR', '', '']
+     ['', 'Jumlah', '', '', '00-14', '', '', '15-24', '', '', '25-64', '']
+     ['Daerah dan Mukim', 'Total', '', '', '', '', '', '', '', '', '', '']
+     ['District and Mukim', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki', 'Perempuan', 'Orang', 'Lelaki']
