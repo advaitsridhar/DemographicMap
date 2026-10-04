@@ -427,9 +427,9 @@ def cmd_data(args: argparse.Namespace) -> int:
             values = sorted({v for c in table.values() for v in c}, key=lambda v: str(v))
             log(f"  {var} by {by}: columns " + ", ".join(
                 f"{v}={label_of(meta, var, v)[:18]}" for v in values))
-            for key in sorted(table, key=lambda v: str(v)):
-                row = table[key]
-                log(f"    {key} {label_of(meta, by, key)[:22]:<22} n={sum(row.values()):>5}: "
+            for group in sorted(table, key=lambda v: str(v)):
+                row = table[group]
+                log(f"    {group} {label_of(meta, by, group)[:22]:<22} n={sum(row.values()):>5}: "
                     + " ".join(f"{row.get(v, 0)}" for v in values))
     return 0
 
