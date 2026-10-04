@@ -1,11 +1,62 @@
-  retry 1/2 after 2s :: https://www.1212.mn/ :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
-  retry 2/2 after 4s :: https://www.1212.mn/ :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
-== get https://www.stats.gov.cn/sj/pcsj/rkpc/7rp/zk/indexch.htm
-  891 bytes, begins b'<html>\r\n\r\n<head>'
-  text: �й��˿��ղ����-2020 ����ҳʹ���˿�ܣ��������������֧�ֿ�ܡ�
-== get https://www.1212.mn/
-  failed: RuntimeError('GET failed after 2 retries: https://www.1212.mn/')
-== get https://data.1212.mn/
-  11,135 bytes, begins b'\r\n\r\n<!DOCTYPE ht'
-  (9 links in all)
-  text: PxWeb - Select database Үндэсний статистикийн хороо Төрийн нэгдсэн мэдээллийн сан Төрийн мета өгөгдлийн нэгдсэн сан Буцах Jump to main content Нүүр хуудас en Мэдээллийн сан This page is for selecting the database where your want to seach for a table. Статистикийн мэдээллийн нэгдсэн сан
+== get https://jumin.mois.go.kr/ageStatMonth.do
+  141,861 bytes, begins b'\r\n\r\n\r\n\r\n\r\n<!DOCT'
+  ~ if(checkStatExcel == "1"){ $("#formXlsDown").attr("action", "downloadCsvAge.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=1").submit(); }else if(checkStatExcel
+  ~ lse if(checkStatExcel == "2"){ $("#formXlsDown").attr("action", "downloadCsvAge.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=2").submit(); }else if(checkStatExcel
+  ~ lse if(checkStatExcel == "3"){ $("#formXlsDown").attr("action", "downloadCsvAge.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=3").submit(); window.parent.progressSta
+  ~ if(checkStatExcel == "1"){ $("#formXlsDown").attr("action", "downloadExcelAge.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=1").submit(); }else if(checkStatExcel =
+  ~ se if(checkStatExcel == "2"){ $("#formXlsDown").attr("action", "downloadExcelAge.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=2").submit(); }else if(checkStatExcel =
+  ~ se if(checkStatExcel == "3"){ $("#formXlsDown").attr("action", "downloadExcelAge.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=3").submit(); } }); $("#xlsxD
+  ~ if(checkStatExcel == "1"){ $("#formXlsDown").attr("action", "downloadExcelAge2.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=1").submit(); }else if(checkStatExcel
+  ~ if(checkStatExcel == "2"){ $("#formXlsDown").attr("action", "downloadExcelAge2.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=2").submit(); }else if(checkStatExcel
+  ~ if(checkStatExcel == "3"){ $("#formXlsDown").attr("action", "downloadExcelAge2.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=3").submit(); window.parent.progressSta
+  ~ heckStatExcelMobile == "1"){ $("#formXlsDown").attr("action", "downloadExcelAge2.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=1").submit(); }else if(checkStatExcelMo
+  ~ heckStatExcelMobile == "2"){ $("#formXlsDown").attr("action", "downloadExcelAge2.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=2").submit(); }else if(checkStatExcelMo
+  ~ heckStatExcelMobile == "3"){ $("#formXlsDown").attr("action", "downloadExcelAge2.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=3").submit(); window.parent.progressStar
+  ~ dow.parent.excelDownEndLonger(7200); } }); //연간월간 구분 $("input[name=searchYearMonth]").change(function(){ var rdoValue=$(this).val(); var nowYear=$("#nowYear").v
+  ~ s).val(); var nowYear=$("#nowYear").val(); if (rdoValue=="month"){ $("#searchMonthStart").attr("disabled",false); $("#searchMonthEnd").attr("disabled",false); if($
+  ~ if (rdoValue=="month"){ $("#searchMonthStart").attr("disabled",false); $("#searchMonthEnd").attr("disabled",false); if($("#searchYearStart option:eq(0)").val() != nowYear){
+  ~ attr("disabled",false); $("#searchMonthEnd").attr("disabled",false); if($("#searchYearStart option:eq(0)").val() != nowYear){ $("#searchYearStart").prepend("<option value='"
+  ~ bled",false); if($("#searchYearStart option:eq(0)").val() != nowYear){ $("#searchYearStart").prepend("<option value='"+nowYear+"'>"+nowYear+"년</option>"); $("#search
+  ~ rStart").prepend("<option value='"+nowYear+"'>"+nowYear+"년</option>"); $("#searchYearEnd").prepend("<option value='"+nowYear+"'>"+nowYear+"년</option>"); } }el
+  ~ tion value='"+nowYear+"'>"+nowYear+"년</option>"); } }else{ $("#searchMonthStart").attr("disabled",true); $("#searchMonthEnd").attr("disabled",true); $("#se
+  ~ } }else{ $("#searchMonthStart").attr("disabled",true); $("#searchMonthEnd").attr("disabled",true); $("#searchMonthStart").val(12); $("#searchMonthEnd
+  ~ rt").attr("disabled",true); $("#searchMonthEnd").attr("disabled",true); $("#searchMonthStart").val(12); $("#searchMonthEnd").val(12); $("#searchYearStart option:first")
+  ~ searchMonthEnd").attr("disabled",true); $("#searchMonthStart").val(12); $("#searchMonthEnd").val(12); $("#searchYearStart option:first").remove(); $("#searchYearEnd o
+  ~ ); $("#searchMonthStart").val(12); $("#searchMonthEnd").val(12); $("#searchYearStart option:first").remove(); $("#searchYearEnd option:first").remove(); $("#sea
+  ~ #searchMonthEnd").val(12); $("#searchYearStart option:first").remove(); $("#searchYearEnd option:first").remove(); $("#searchYearStart option:eq(0)").attr("selected","selec
+  ~ art option:first").remove(); $("#searchYearEnd option:first").remove(); $("#searchYearStart option:eq(0)").attr("selected","selected"); $("#searchYearEnd option:eq(0)").attr(
+  ~ move(); $("#searchYearStart option:eq(0)").attr("selected","selected"); $("#searchYearEnd option:eq(0)").attr("selected","selected"); } }); var shType = "10";
+  ~ ageTenWA"+i+"']").hide(); } } } // 연령 조회 범위 변경 시 텍스트 변경( 세-> 세(이상)) $('#sltArgTypeB').change(function(e) { var selectVal = $('#sltArgTypeB option:selected').val(); if(
+  ~ 위 변경 시 텍스트 변경( 세-> 세(이상)) $('#sltArgTypeB').change(function(e) { var selectVal = $('#sltArgTypeB option:selected').val(); if(selectVal == 100){ $("#ageChange").text('세(이상)'); }
+  ~ n/x-www-form-urlencoded; charset=UTF-8", success : function(data) { loadSidonm($("#sltOrgLvl1"), data.locations); } }); } function loadSidonm(target, data) { var dataArr =
+  ~ -www-form-urlencoded; charset=UTF-8", success : function(data) { loadSikunkunm($("#sltOrgLvl2"), data.locations); } }); } function loadSikunkunm(target, data) { var dataAr
+  ~ mpty(); $(data).each( function() { if(this.levels == 2){ if(this.sidonm == $("#sltOrgLvl1 option:selected").text()){ //상위 시군 값으로 구를 찾아온다. if("" == this.hangkikcd){ d
+  ~ on/x-www-form-urlencoded; charset=UTF-8", success : function(data) { loadSidoG($("#sltOrgLvl1G"), data.locations); if($("#sltOrgTypeG").val() != undefined){ if($("#sltOrgT
+  ~ success : function(data) { loadSidoG($("#sltOrgLvl1G"), data.locations); if($("#sltOrgTypeG").val() != undefined){ if($("#sltOrgTypeG").val()=="2"){ document.frmSido.sltO
+  ~ tOrgLvl1G"), data.locations); if($("#sltOrgTypeG").val() != undefined){ if($("#sltOrgTypeG").val()=="2"){ document.frmSido.sltOrgLvl2G.style.display = "block"; } else {
+  ~ ypeG").val() != undefined){ if($("#sltOrgTypeG").val()=="2"){ document.frmSido.sltOrgLvl2G.style.display = "block"; } else { document.frmSido.sltOrgLvl2G.style.display
+  ~ ocument.frmSido.sltOrgLvl2G.style.display = "block"; } else { document.frmSido.sltOrgLvl2G.style.display = "none"; } } } }); changeSearchYearMonth(); } functi
+  ~ document.frmSido.sltOrgLvl2G.style.display = "none"; } } } }); changeSearchYearMonth(); } function loadSidoG(target, data) { var dataArr = []; var inx = 0; target.e
+  ~ x-www-form-urlencoded; charset=UTF-8", success : function(data) { loadSikunkuG($("#sltOrgLvl2G"), data.locations); } }); } function loadSikunkuG(target, data) { var dataAr
+  ~ mpty(); $(data).each( function() { if(this.levels == 2){ if(this.sidonm == $("#sltOrgLvl1G option:selected").text()){ //상위 시군 값으로 구를 찾아온다. if("" == this.hangkikcd){
+  ~ 데이터가 없습니다. 다시검색해주세요"); history.go(0); } //20161213 추가 테이블 클릭시 검색버튼 클릭한 기능 function searchClick(){ document.search.submit(); } // 검색시 유효성 검사 function goSearch(){ var frm = docu
+  ~ istory.go(0); } //20161213 추가 테이블 클릭시 검색버튼 클릭한 기능 function searchClick(){ document.search.submit(); } // 검색시 유효성 검사 function goSearch(){ var frm = document.search; /*
+  ~ 한 기능 function searchClick(){ document.search.submit(); } // 검색시 유효성 검사 function goSearch(){ var frm = document.search; /* sltOrgType = '1' 시도 선택 sltOrgType = '2' 시군구 선택
+  ~ document.search.submit(); } // 검색시 유효성 검사 function goSearch(){ var frm = document.search; /* sltOrgType = '1' 시도 선택 sltOrgType = '2' 시군구 선택 */ if(frm.sltOrgLvl1.va
+  ~ .submit(); } // 검색시 유효성 검사 function goSearch(){ var frm = document.search; /* sltOrgType = '1' 시도 선택 sltOrgType = '2' 시군구 선택 */ if(frm.sltOrgLvl1.value == 'A'){ frm.
+  ~ 효성 검사 function goSearch(){ var frm = document.search; /* sltOrgType = '1' 시도 선택 sltOrgType = '2' 시군구 선택 */ if(frm.sltOrgLvl1.value == 'A'){ frm.sltOrgType.value = '1';
+  ~ cument.search; /* sltOrgType = '1' 시도 선택 sltOrgType = '2' 시군구 선택 */ if(frm.sltOrgLvl1.value == 'A'){ frm.sltOrgType.value = '1'; }else if(frm.sltOrgLvl1.value != 'A'){
+  ~ = '1' 시도 선택 sltOrgType = '2' 시군구 선택 */ if(frm.sltOrgLvl1.value == 'A'){ frm.sltOrgType.value = '1'; }else if(frm.sltOrgLvl1.value != 'A'){ frm.sltOrgType.value = '2'; }
+  ~ */ if(frm.sltOrgLvl1.value == 'A'){ frm.sltOrgType.value = '1'; }else if(frm.sltOrgLvl1.value != 'A'){ frm.sltOrgType.value = '2'; } if (Number(frm.sltArgTypeB.value)
+  ~ e == 'A'){ frm.sltOrgType.value = '1'; }else if(frm.sltOrgLvl1.value != 'A'){ frm.sltOrgType.value = '2'; } if (Number(frm.sltArgTypeB.value) < Number(frm.sltArgTypeA.value) )
+  ~ se if(frm.sltOrgLvl1.value != 'A'){ frm.sltOrgType.value = '2'; } if (Number(frm.sltArgTypeB.value) < Number(frm.sltArgTypeA.value) ) { alert("연령 구분단위의 시작값이 마지막값보다 클 수 없습니다.");
+  ~ ){ frm.sltOrgType.value = '2'; } if (Number(frm.sltArgTypeB.value) < Number(frm.sltArgTypeA.value) ) { alert("연령 구분단위의 시작값이 마지막값보다 클 수 없습니다."); frm.sltArgTypeB.focus(); ret
+  ~ ) < Number(frm.sltArgTypeA.value) ) { alert("연령 구분단위의 시작값이 마지막값보다 클 수 없습니다."); frm.sltArgTypeB.focus(); return false; } if (frm.searchYearStart.value > frm.searchYearEnd.value
+  ~ 단위의 시작값이 마지막값보다 클 수 없습니다."); frm.sltArgTypeB.focus(); return false; } if (frm.searchYearStart.value > frm.searchYearEnd.value) { alert('조회 기간이 잘못 되었습니다.'); frm.searchYearStart.f
+  ~ frm.sltArgTypeB.focus(); return false; } if (frm.searchYearStart.value > frm.searchYearEnd.value) { alert('조회 기간이 잘못 되었습니다.'); frm.searchYearStart.focus(); return false;
+  ~ m.searchYearStart.value > frm.searchYearEnd.value) { alert('조회 기간이 잘못 되었습니다.'); frm.searchYearStart.focus(); return false; } if(frm.searchYearStart.value == frm.searchYearEnd.value
+  ~ lert('조회 기간이 잘못 되었습니다.'); frm.searchYearStart.focus(); return false; } if(frm.searchYearStart.value == frm.searchYearEnd.value){ if (frm.searchMonthStart.value > frm.searchMonthEnd
+  ~ frm.searchYearStart.focus(); return false; } if(frm.searchYearStart.value == frm.searchYearEnd.value){ if (frm.searchMonthStart.value > frm.searchMonthEnd.value) { alert('조회 기간이
+  ~ eturn false; } if(frm.searchYearStart.value == frm.searchYearEnd.value){ if (frm.searchMonthStart.value > frm.searchMonthEnd.value) { alert('조회 기간이 잘못 되었습니다.'); frm.searchMonthSta
+  ~ earchYearStart.value == frm.searchYearEnd.value){ if (frm.searchMonthStart.value > frm.searchMonthEnd.value) { alert('조회 기간이 잘못 되었습니다.'); frm.searchMonthStart.focus(); return fals
+  ~ archMonthStart.value > frm.searchMonthEnd.value) { alert('조회 기간이 잘못 되었습니다.'); frm.searchMonthStart.focus(); return false; } } if (frm.sltOrgType.value == '2' && frm.sltOrgLvl1
