@@ -1,149 +1,222 @@
-https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/CEN23_POP_006/1.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 1,547,025 bytes
-  codelist CL_CEN23_AGE_001: 146 codes
-                99  Total - age
-                 1  Under 15 years
-                 2  15-29 years
-                 3  30-64 years
-                 4  65 years and over
-                01  0-4 years
-                02  5-9 years
-                03  10-14 years
-                04  15-19 years
-                05  20-24 years
-                06  25-29 years
-                07  30-34 years
-                08  35-39 years
-                09  40-44 years
-                10  45-49 years
-                11  50-54 years
-                12  55-59 years
-                13  60-64 years
-                14  65-69 years
-                15  70-74 years
-                16  75-79 years
-                17  80-84 years
-                18  85-89 years
-                19  90 years and over
-               000  Less than one year
-               001  One year
-               002  Two years
-               003  Three years
-               004  Four years
-               005  Five years
-               006  Six years
-               007  Seven years
-               008  Eight years
-               009  Nine years
-               010  10 years
-               011  11 years
-               012  12 years
-               013  13 years
-               014  14 years
-               015  15 years
-               016  16 years
-               017  17 years
-               018  18 years
-               019  19 years
-               020  20 years
-               021  21 years
-               022  22 years
-               023  23 years
-               024  24 years
-               025  25 years
-               026  26 years
-               027  27 years
-               028  28 years
-               029  29 years
-               030  30 years
-               031  31 years
-               032  32 years
-               033  33 years
-               034  34 years
-               035  35 years
-               036  36 years
-               037  37 years
-               038  38 years
-               039  39 years
-               040  40 years
-               041  41 years
-               042  42 years
-               043  43 years
-               044  44 years
-               045  45 years
-               046  46 years
-               047  47 years
-               048  48 years
-               049  49 years
-               050  50 years
-               051  51 years
-               052  52 years
-               053  53 years
-               054  54 years
-               055  55 years
-               056  56 years
-               057  57 years
-               058  58 years
-               059  59 years
-               060  60 years
-               061  61 years
-               062  62 years
-               063  63 years
-               064  64 years
-               065  65 years
-               066  66 years
-               067  67 years
-               068  68 years
-               069  69 years
-               070  70 years
-               071  71 years
-               072  72 years
-               073  73 years
-               074  74 years
-               075  75 years
-               076  76 years
-               077  77 years
-               078  78 years
-               079  79 years
-               080  80 years
-               081  81 years
-               082  82 years
-               083  83 years
-               084  84 years
-               085  85 years
-               086  86 years
-               087  87 years
-               088  88 years
-               089  89 years
-               090  90 years
-               091  91 years
-               092  92 years
-               093  93 years
-               094  94 years
-               095  95 years
-               096  96 years
-               097  97 years
-               098  98 years
-               099  99 years
-               100  100 years
-               101  101 years
-               102  102 years
-               103  103 years
-               104  104 years
-               105  105 years
-               106  106 years
-               107  107 years
-               108  108 years
-               109  109 years
-               110  110 years
-               111  111 years
-               112  112 years
-               113  113 years
-               114  114 years
-               115  115 years
-               116  116 years
-               117  117 years
-               118  118 years
-               119  119 years
-               120  120 years and over
-            Median  Median - age
+https://stats-sdmx-disseminate.pacificdata.org/rest/dataflow/SPC/DF_HHCOUNTS/1.0?references=all
+  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 232,720 bytes
+  codelist CL_COM_GEO_PICT: 219 codes
+                _T  Pacific region
+               MEL  Melanesia
+               MIC  Micronesia
+               POL  Polynesia
+                AS  American Samoa
+              AS-1  Eastern
+              AS-2  Manu'a
+              AS-3  Unorganized
+              AS-4  Western
+                CK  Cook Islands
+              CK-1  Northern Group
+              CK-2  Rarotonga
+              CK-3  Southern Group
+                FJ  Fiji
+              FJ-1  Central
+              FJ-2  Eastern
+              FJ-3  Northern
+              FJ-5  Western
+                FM  Micronesia (Federated States of)
+              FM-1  Chuuk
+              FM-2  Kosrae
+              FM-3  Pohnpei
+              FM-4  Yap
+                GU  Guam
+              GU-1  Agana Heights
+              GU-2  Agat
+              GU-3  Asan
+              GU-4  Barrigada
+              GU-5  Chalan-Pago-Ordot
+              GU-6  Dededo
+              GU-7  Hagåtña
+              GU-8  Inarajan
+              GU-9  Mangilao
+             GU-10  Merizo
+             GU-11  Mongmong-Toto-Maite
+             GU-12  Piti
+             GU-13  Santa Rita
+             GU-14  Sinajana
+             GU-15  Talofofo
+             GU-16  Tamuning
+             GU-17  Umatac
+             GU-18  Yigo
+             GU-19  Yona
+                KI  Kiribati
+              KI-1  Banaba
+              KI-2  Makin
+              KI-3  Butaritari
+              KI-4  Marakei
+              KI-5  Abaiang
+              KI-6  Nth.Tarawa
+              KI-7  Sth.Tarawa
+              KI-8  Maiana
+              KI-9  Abemama
+             KI-10  Kuria
+             KI-11  Aranuka
+             KI-12  Nonouti
+             KI-13  Tabiteuea.Nth
+             KI-14  Tabiteuea.Sth
+             KI-15  Beru
+             KI-16  Nikunau
+             KI-17  Onotoa
+             KI-18  Tamana
+             KI-19  Arorae
+             KI-20  Teeraina
+             KI-21  Tabuaeran
+             KI-22  Kiritimati
+             KI-23  Kanton
+                MH  Marshall Islands
+              MH-1  Ailinglaplap
+              MH-2  Ailuk
+              MH-3  Arno
+              MH-4  Aur
+              MH-5  Eneu
+              MH-6  Ebon
+              MH-7  Enewetak
+              MH-8  Jabat
+              MH-9  Jaluit
+             MH-10  Kili
+             MH-11  Kwajalein
+             MH-12  Lae
+             MH-13  Lib
+             MH-14  Likiep
+             MH-15  Majuro
+             MH-16  Maloelap
+             MH-17  Mejit
+             MH-18  Mili
+             MH-19  Namdrik
+             MH-20  Namu
+             MH-21  Rongelap
+             MH-22  Ujae
+             MH-24  Utirik
+             MH-25  Wotho
+             MH-26  Wotje
+                MP  Northern Mariana Islands
+              MP-1  Saipan
+              MP-2  Tinian
+              MP-3  Rota
+                NC  New Caledonia
+              NC-1  Loyalty Islands
+              NC-2  Northern Province
+              NC-3  Southern Province
+                NR  Naoero
+              NR-1  Yaren
+              NR-2  Boe
+              NR-3  Aiwo
+              NR-4  Buada
+              NR-5  Denigomodu
+              NR-6  Nibok
+              NR-7  Uaeboe
+              NR-8  Baitsi
+              NR-9  Ewa
+             NR-13  Anibare
+             NR-10  Anetan
+             NR-11  Anabar
+             NR-12  Ijuw
+             NR-14  Meneng
+             NR-15  Location
+                NU  Niue
+             NU-50  Alofi South
+             NU-51  Alofi North
+             NU-52  Makefu
+             NU-53  Tuapa
+             NU-54  Namukulu
+             NU-55  Hikutavake
+             NU-56  Toi
+             NU-57  Mutalau
+             NU-58  Lakepa
+             NU-59  Liku
+             NU-60  Hakupu
+             NU-61  Vaiea
+             NU-62  Avatele
+             NU-63  Tamakautoga
+                PF  French Polynesia
+              PF-1  Îles Australes
+              PF-2  Îles du Vent
+              PF-3  Îles Marquises
+              PF-4  Îles Sous-le-Vent
+              PF-5  Îles Tuamotu-Gambier
+                PG  Papua New Guinea
+              PG-1  Bougainville
+              PG-2  Central
+              PG-3  Chimbu
+              PG-4  East New Britain
+              PG-5  East Sepik
+              PG-6  Eastern Highlands
+              PG-7  Enga
+              PG-8  Gulf
+              PG-9  Hela
+             PG-10  Jiwaka
+             PG-11  Madang
+             PG-12  Manus
+             PG-13  Milne Bay
+             PG-14  Morobe
+             PG-15  National Capital District
+             PG-16  New Ireland
+             PG-17  Oro
+             PG-18  Sandaun
+             PG-19  Southern Highlands
+             PG-20  West New Britain
+             PG-22  Western
+             PG-21  Western Highlands
+                PN  Pitcairn
+                PW  Palau
+              PW-1  Koror
+              PW-2  Airai
+              PW-3  Outlying States
+              PW-4  West Babeldaob
+              PW-5  East Babeldaob
+                SB  Solomon Islands
+              SB-1  Choiseul
+              SB-2  Western
+              SB-3  Isabel
+              SB-4  Central
+              SB-5  Rennell-Bell
+              SB-6  Guadalcanal
+              SB-7  Malaita
+              SB-8  Makira-Ulawa
+              SB-9  Temotu
+             SB-10  Honiara
+                TK  Tokelau
+              TK-1  Anafu
+              TK-2  Fakaofo
+              TK-3  Nukunonu
+                TO  Tonga
+              TO-1  Ha'apai
+              TO-2  'Eua
+              TO-3  Niuas
+              TO-4  Tongatapu
+              TO-5  Vava'u
+                TV  Tuvalu
+              TV-1  Nanumea
+              TV-2  Nanumanga
+              TV-3  Niutao
+              TV-4  Nui
+              TV-5  Vaitupu
+              TV-6  Nukufetau
+              TV-7  Funafuti
+              TV-8  Nukulaelae
+              TV-9  Niulakita
+                VU  Vanuatu
+              VU-1  Torba
+              VU-2  Sanma
+              VU-3  Penama
+              VU-4  Malampa
+              VU-5  Shefa
+              VU-6  Tafea
+                WF  Wallis and Futuna
+              WF-1  Alo
+              WF-2  Sigave
+              WF-5  Hahake
+              WF-6  Hihifo
+              WF-7  Mua
+                WS  Samoa
+              WS-1  Apia Urban Area
+              WS-2  North West Upolu
+              WS-3  Rest of Upolu
+              WS-4  Savaii
+            _TXPNG  Pacific region (excluding PNG)
+           MELXPNG  Melanesia (excluding PNG)
