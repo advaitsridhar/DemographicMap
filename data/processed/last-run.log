@@ -1,5 +1,11 @@
-nordic_church: SWE
-  https://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF(1).pdf: 2,039 lines, 289 kommuner, 21 län; the country (10452326, 5633867, 53.9); registered without a property (17847, 5935, 33.2), as 'Okänd' (17847, 5933, 33.2)
-  the kommuner make their län, and the län with the unplaced the country: 10,452,326 people, 5,633,867 members
-  the country's row against SCB's 10,452,326: +0; kommun rows against SCB's: from -23.30% (Töreboda) to +41.78% (Gullspångs); 19 beyond 0.5%: Töreboda -23.30%, Svenljunga -9.03%, Tranemo -7.28%, Grästorps -4.57%, Gnosjö -4.16%, Helsingborgs -3.60%, Höörs -3.10%, Härjedalens -2.37%, Motala -0.65%, Trollhättans +0.52%, Värnamo +1.30%, Borås +1.77%, Eslövs +1.80%, Bergs +3.50%, Landskrona +4.60%, Vadstena +4.64%, Essunga +4.77%, Bjuvs +23.51%, Gullspångs +41.78%
-svenska kyrkan: Gullspångs is +41.8% off SCB's count
+finland_religion: Statistics Finland 11ra by the units of the map's year
+  11ra 2025 in the division of 2026: {'SSS': 1, 'KU': 308, 'MA': 2, 'SA': 5, 'MK': 19, 'YTA': 6, 'HVA': 23, 'SK': 69, 'EVK': 10, 'TA': 46, 'TK': 3, 'VP': 13, 'PL': 12, 'HO': 5, 'KO': 20, 'FI': 26}; every area's three shares make 100 to within 0.10
+  11rx agrees: Evangelical Lutheran Church of Finland 3,457,125; Member of another religious community 165,265; Not a member of any religious community 2,030,491
+  the 2020 keys: 310 municipalities in 70 sub-regions and 19 regions
+  308 municipalities make the country's 5,652,881 in 70 sub-regions and 19 regions of 2020
+  units unchanged since 2020: their municipalities' sums agree with 11ra's own figures to within 0.09 points
+  FIN admin2: 70 of 70 office units bound to 70 polygons (0 set aside as pieces)
+  59 of 70 sub-regions and 10 of 19 regions take 11ra's own figure; the rest are summed; populations written for 20 units whose 2020 territory is not today's
+  89 records; religion labels the group tree cannot place: ['Member of another religious community', 'Not a member of any religious community']
+  wrote data/processed/finland_religion.json (205 kB)
+  wrote finland_religion.json: 89 records
