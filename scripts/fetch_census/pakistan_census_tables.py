@@ -499,6 +499,14 @@ def main() -> int:
     suffix = "" if not only else "_" + "_".join(sorted(only))
     write_json(PROCESSED / f"pakistan_age{suffix}.json", ages)
     write_json(PROCESSED / f"pakistan_nationality{suffix}.json", nationality)
+    if not only:
+        # A whole run supersedes the trial runs of single provinces, whose
+        # files no build reads; leaving them would be litter that looks like
+        # data.
+        for stale in [*PROCESSED.glob("pakistan_age_*.json"),
+                      *PROCESSED.glob("pakistan_nationality_*.json")]:
+            stale.unlink()
+            log(f"  removed the trial file {stale.name}")
     log(f"  {len(ages)} age records, {len(nationality)} nationality records")
     return 0
 

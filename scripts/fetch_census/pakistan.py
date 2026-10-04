@@ -2514,7 +2514,8 @@ def say_ethnicity(records: list[dict[str, Any]]) -> int:
             # question: the census's nationality count, which the map carries
             # on this field for the provinces (pakistan_census_tables), is
             # published for neither territory.
-            row["ethnicity"] = gap(NOT_AVAILABLE, TERRITORY_NATIONALITY_GAP)
+            row["ethnicity"] = gap(NOT_AVAILABLE, TERRITORY_NATIONALITY_GAP
+                                   + ETHNICITY_NO_TONGUE)
             said += 1
             continue
         tongues = row.get("language")
