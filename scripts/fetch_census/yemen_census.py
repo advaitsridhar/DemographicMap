@@ -92,6 +92,11 @@ def census(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
         code = code_of(row)
         total, men, women = (count(row.get(k)) for k in ("POP_TPOP", "POP_MPOP", "POP_FPOP"))
         where = f"{row.get('AREA_NAME')} ({code})"
+        if (total, men, women) == (None, None, None):
+            # A unit made after 2004 -- Socotra governorate, split from
+            # Hadramawt in 2013 -- has no census row of its own.
+            log(f"    {where}: no 2004 count (a unit made since)")
+            continue
         check(None not in (total, men, women), f"yemen_census: {where}: no census count")
         check(round(men + women) == round(total),
               f"yemen_census: {where}: men and women do not make {total:,.0f}")
@@ -132,6 +137,8 @@ def nests(table: dict[str, dict[str, Any]], what: str, slack: float = 0.0) -> No
         elif len(code) == 2 and code != "YE":
             govs += row["total"]
     for gov, made in kids.items():
+        check(gov in table, f"yemen_census: {what}: districts of governorate {gov}, "
+                            f"which has no row of its own")
         check(abs(made - table[gov]["total"]) <= max(1.0, slack * table[gov]["total"]),
               f"yemen_census: {what}: governorate {gov}'s districts make {made:,.1f}, "
               f"not {table[gov]['total']:,.1f}")

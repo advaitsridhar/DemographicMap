@@ -115,15 +115,19 @@ def ages(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
         check(total is not None and men is not None and women is not None,
               f"syria_census: {where}: no total or sex count")
         groups = age_groups(row, "B")
-        check(round(sum(g[2] for g in groups)) == round(total),
-              f"syria_census: {where}: age groups make {sum(g[2] for g in groups):,.0f}, "
-              f"not {total:,.0f}")
+        # People whose age the census did not record are in the total and in
+        # no group; they are left out of the median.
+        unstated = count(row.get("B_UNSTATED")) or 0
+        check(round(sum(g[2] for g in groups) + unstated) == round(total),
+              f"syria_census: {where}: age groups make {sum(g[2] for g in groups):,.0f} "
+              f"and {unstated:,.0f} of unstated age, not {total:,.0f}")
         check(round(men + women) == round(total),
               f"syria_census: {where}: men {men:,.0f} and women {women:,.0f} do not "
               f"make {total:,.0f}")
         out[code if row["_level"] else "SY"] = {
             "name": str(row.get("AREA_NAME") or ""), "level": row["_level"],
-            "total": total, "men": men, "women": women, "groups": groups}
+            "total": total, "men": men, "women": women, "groups": groups,
+            "unstated": unstated}
     return out
 
 
@@ -258,7 +262,10 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                 median_age=median_age(a["groups"], year=YEAR, source=SOURCE),
                 median_age_note=("Interpolated within the five-year age group holding the "
                                  "middle person, from the 2004 census's count of everyone by "
-                                 "five-year age group (CBS, Man and Nah, Table 2)." + golan),
+                                 "five-year age group (CBS, Man and Nah, Table 2)."
+                                 + (f" The {a['unstated']:,.0f} people whose age was not "
+                                    f"stated are left out." if a["unstated"] else "")
+                                 + golan),
                 sex_ratio=sex_ratio(a["men"], a["women"], year=YEAR, source=SOURCE),
                 sex_ratio_note=(f"Males per 100 females in the 2004 census: "
                                 f"{a['men']:,.0f} men and {a['women']:,.0f} women." + golan),
