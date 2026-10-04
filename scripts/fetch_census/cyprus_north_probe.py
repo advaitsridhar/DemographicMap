@@ -410,15 +410,25 @@ BUILDING_BOXES = {
     "mesarya": (35.15, 33.70, 35.25, 33.82),
     "morfou": (35.17, 32.93, 35.23, 33.08),
     "trikomo": (35.26, 33.86, 35.31, 33.93),
+    # Geçitköy (Panagra) and Çamlıbel (Myrtou), whose shared edge runs close
+    # to Geçitköy's houses.
+    "panagra": (35.30, 33.04, 35.36, 33.11),
 }
 
 
 def p_osm_buildings(a: argparse.Namespace) -> None:
-    """OpenStreetMap's buildings in the boxes above, counted per cell of a
-    thousandth of a degree (about 90 by 110 metres): one line per cell, BLD,
-    box, lat, lon of the cell's corner, count. Binding evidence only."""
+    """OpenStreetMap's buildings in the boxes above (or only those named by
+    --boxes), counted per cell of a thousandth of a degree (about 90 by 110
+    metres): one line per cell, BLD, box, lat, lon of the cell's corner,
+    count. Binding evidence only."""
     from collections import Counter
+    wanted = set(filter(None, (a.boxes or "").split(",")))
+    unknown = wanted - set(BUILDING_BOXES)
+    if unknown:
+        raise SystemExit(f"cyprus_north_probe: no building box {sorted(unknown)}")
     for name, (s, w, n, e) in BUILDING_BOXES.items():
+        if wanted and name not in wanted:
+            continue
         query = f'[out:json][timeout:240];way["building"]({s},{w},{n},{e});out center;'
         cells: Counter = Counter()
         for el in overpass(query):
@@ -430,7 +440,110 @@ def p_osm_buildings(a: argparse.Namespace) -> None:
             log(f"BLD\t{name}\t{la / 1000:.3f}\t{lo / 1000:.3f}\t{k}")
 
 
+# Names OpenStreetMap may give the United Nations buffer zone between the two
+# sides (the "Green Line"), in English, Turkish and Greek.
+GREEN_NAMES = ("buffer|tampon|ara b[oö]lge|unficyp|green line|ye[sş]il hat|ate[sş]kes|ceasefire|"
+               "νεκρή|ουδέτερ|πράσινη γραμμή")
+ISLAND = (34.5, 32.2, 35.8, 34.7)
+
+
+def relation_polygon(el: dict[str, Any]) -> Any:
+    """A relation's (or closed way's) area as one shapely geometry: its outer
+    rings polygonised, less its inner ones; None where nothing closes."""
+    from shapely.geometry import LineString
+    from shapely.ops import polygonize, unary_union
+
+    def rings(roles: tuple[str, ...]) -> Any:
+        if el.get("type") == "way":
+            pts = [(p["lon"], p["lat"]) for p in el.get("geometry") or []]
+            lines = [LineString(pts)] if roles != ("inner",) and len(pts) >= 4 else []
+        else:
+            lines = [LineString([(p["lon"], p["lat"]) for p in m["geometry"]])
+                     for m in el.get("members", [])
+                     if m.get("type") == "way" and m.get("role") in roles
+                     and len(m.get("geometry") or []) >= 2]
+        faces = list(polygonize(unary_union(lines))) if lines else []
+        return unary_union(faces) if faces else None
+
+    outer = rings(("outer", ""))
+    if outer is None:
+        return None
+    inner = rings(("inner",))
+    return outer.difference(inner) if inner is not None else outer
+
+
+def p_green_line(a: argparse.Namespace) -> None:
+    """Which side of the line between the two sides a place is on, by
+    OpenStreetMap: binding evidence only.
+
+    * ISIN: every OpenStreetMap area that holds each --point (label,lat,lon);
+    * CAND: the relations and ways on the island named for the United Nations
+      buffer zone, and the island's boundaries of admin level 3 to 4;
+    * ZONE: the outline of each such area clipped to --box (south,west,north,
+      east), to about three metres, and of the buffer zone island-wide, to
+      about fifty; with each --point's distance to it, in metres (negative
+      inside).
+    """
+    from shapely import to_wkt
+    from shapely.geometry import Point, box
+    points = []
+    for spec in a.point:
+        label, lat, lon = spec.split(",")
+        points.append((label, float(lat), float(lon)))
+        for el in overpass(f"[out:json][timeout:90];is_in({lat},{lon});out tags;"):
+            t = el.get("tags", {})
+            extra = "|".join(f"{k}={v}" for k, v in sorted(t.items())
+                             if k in ("military", "landuse", "place", "disputed", "type", "border_type",
+                                      "de_facto", "political_division", "protect_class"))
+            log("\t".join(["ISIN", label, lat, lon, el.get("type", ""), str(el.get("id")),
+                           t.get("name", ""), t.get("name:en", ""), t.get("admin_level", ""),
+                           t.get("boundary", ""), extra]))
+    s, w, n, e = ISLAND
+    query = (f'[out:json][timeout:180];(relation["name"~"{GREEN_NAMES}",i]({s},{w},{n},{e});'
+             f'way["name"~"{GREEN_NAMES}",i]({s},{w},{n},{e});'
+             f'relation["name:en"~"{GREEN_NAMES}",i]({s},{w},{n},{e});'
+             f'relation["boundary"]["admin_level"~"^[34]$"]({s},{w},{n},{e}););out tags;')
+    found = overpass(query)
+    zone_ids = set()
+    for el in found:
+        t = el.get("tags", {})
+        green = bool(re.search(GREEN_NAMES, " ".join([t.get("name", ""), t.get("name:en", "")]), re.I))
+        if green:
+            zone_ids.add((el["type"], el["id"]))
+        log("\t".join(["CAND", el["type"], str(el["id"]), t.get("name", ""), t.get("name:en", ""),
+                       t.get("admin_level", ""), t.get("boundary", ""),
+                       "|".join(f"{k}={v}" for k, v in sorted(t.items())
+                                if k in ("military", "landuse", "type", "disputed", "border_type")),
+                       "green" if green else ""]))
+    clip = None
+    if a.box:
+        south, west, north, east = map(float, a.box.split(","))
+        clip = box(west, south, east, north)
+    for kind, ident in sorted(zone_ids | {("relation", el["id"]) for el in found
+                                           if el["type"] == "relation"
+                                           and el.get("tags", {}).get("admin_level") in ("3", "4")}):
+        geo = overpass(f"[out:json][timeout:240];{kind}({ident});out geom;")
+        if not geo:
+            continue
+        shape_ = relation_polygon(geo[0])
+        name = geo[0].get("tags", {}).get("name", "")
+        if shape_ is None or shape_.is_empty:
+            log(f"ZONE\t{kind}\t{ident}\t{name}\tnone\tEMPTY")
+            continue
+        for label, lat, lon in points:
+            pt = Point(lon, lat)
+            d = shape_.boundary.distance(pt) * 111_000 * (-1 if shape_.contains(pt) else 1)
+            log(f"DIST\t{kind}\t{ident}\t{name}\t{label}\t{d:.0f}")
+        if clip is not None:
+            part = shape_.intersection(clip).simplify(0.00003)
+            log(f"ZONE\t{kind}\t{ident}\t{name}\tbox\t{to_wkt(part, rounding_precision=5, trim=True)}")
+        if (kind, ident) in zone_ids:
+            whole = shape_.simplify(0.0005)
+            log(f"ZONE\t{kind}\t{ident}\t{name}\tisland\t{to_wkt(whole, rounding_precision=4, trim=True)}")
+
+
 PROBES: dict[str, Callable[[argparse.Namespace], None]] = {
+    "green_line": p_green_line,
     "osm_buildings": p_osm_buildings,
     "osm_places": p_osm_places, "osm_admin": p_osm_admin, "osm_geom": p_osm_geom,
     "cdx_devplan": p_cdx_devplan, "cdx_istatistik": p_cdx_istatistik,
@@ -452,6 +565,10 @@ def main() -> int:
     ap.add_argument("--start", type=int, default=0, help="first workbook row to print")
     ap.add_argument("--width", type=int, default=24, help="characters per cell")
     ap.add_argument("--cols", type=int, default=16, help="cells per row")
+    ap.add_argument("--boxes", help="osm_buildings: only these boxes, comma-separated")
+    ap.add_argument("--point", action="append", default=[],
+                    help="green_line: label,lat,lon (repeatable; no spaces)")
+    ap.add_argument("--box", help="green_line: south,west,north,east to clip outlines to")
     args = ap.parse_args()
     for name in args.run.split(","):
         if name not in PROBES:
