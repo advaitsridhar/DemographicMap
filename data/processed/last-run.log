@@ -1,44 +1,93 @@
-https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx
-  2,681,931 bytes
-  49 sheet(s)
-  -- 'Link': 58 rows x 1 cols
-     ['LIST OF TABLES']
-     ['Table 1:Total population by sex, single age and place of residence,2021']
-     ['Table 2. Total population by sex, religion and place of residence,2021']
-     ['Table 3. Total population by sex, martial status and place of residence,2021']
-     ['Table 4. Married population by sex, registration at BDM status and place of residence,2021']
-     ['Table 5. Total population by sex, raised place and current place of residence, 2021']
-     ['Table 5a:Lifetime migration by place of residence,2021']
-     ['Table 6. Population 5years and over by sex, place in last 12 month current place of residence, 2021']
-     ['Table 6a:Last 12months migration by place of residence,2021']
-     ['Table 7. Population 5years and over by sex, place in last 5years and current place of residence, 2021']
-     ['Table 7a:Last 5years migration by place of residence,2021']
-     ['Table 8a. Total population by sex, Samoan citizenship status and place of residence,2021']
-     ['Table 8b. Non citizen population by sex, main purpose of staying in Samoa and place of residence,2021']
-     ['Table 9a. Population 21years and over by matai title status , sex, and place of residence,2021']
-     ['Table 9b. Population with matai title by sex, registration status and place of residence,2021']
-     ['Table 10.Population 5years and over by sex, disability status and place of residence,2021']
-     ['Table 11a. Population 5years and over by sex, difficulty in seeing and place of residence,2021']
-     ['Table 11b. Population5years and over having seeing difficulties by sex, cause of difficulties and place of residence,2021']
-     ['Table 12a. Population 5years and over by sex, difficulty in hearing and place of residence,2021']
-     ['Table 12b. Population5years and over having hearing difficulties by sex, cause of difficulties and place of residence,2021']
-     ['Table 13a. Population 5years and over by sex, difficulty in walking and place of residence,2021']
-     ['Table 13b. Population5years and over having walking difficulties by sex, cause of difficulties and place of residence,2021']
-     ['Table 14a. Population 5years and over by sex, difficulty in remebering and place of residence,2021']
-     ['Table 14b. Population5years and over having remebering difficulties by sex, cause of difficulties and place of residence,2021']
-     ['Table 15a. Population 5years and over by sex, difficulty in self care and place of residence,2021']
-     ['Table 15b. Population5years and over having self care difficulties by sex, cause of difficulties and place of residence,2021']
-     ['Table 16a. Population 5years and over by sex, difficulty in communicating and place of residence,2021']
-     ['Table 16b. Population5years and over having communicating difficulties by sex, cause of difficulties and place of residence,2021']
-     ['Table 17a.Population 3years and over ever attended school by sex and place of residence,2021']
-     ['Table 17b:Population ever attended school by sex, level of school ever attended and place of residence,2021']
-     ['Table 18. Population 15years and over by sex,highest qualification ever attained and place of residence,2021']
-     ['Table 20. Population 15years and over by sex, main activity and place of residence,2021']
-     ['Table 21. Population 15years and over by sex, main occupation and place of residence,2021']
-     ['Table 22. Population 15years and over by sex, main industry n and place of residence,2021']
-     ['Table 23. Population 15years and over by sex, having saving and place of residence,2021']
-     ['Table 24. Population 15years and over by sex, type of insurance and place of residence,2021']
-     ['Table 25. Population 15years and over by sex, with gender identity same as sex registered and place of residence,2021']
-     ['Table 26. Population 15years and over by sex, ownership of mobile phones and place of residence,2021']
-     ['Table 27 .Population 15years and over who owns mobile phones by sex, service providers and place of residence,2021']
-     ['Table 28a:Female population 15-49years of age by ever given birth status and place of residence,2021']
+
+== GET https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv03_PopulationBySingleYear.csv
+  200 text/csv; charset=UTF-8 7136898 https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv03_PopulationBySingleYear.csv
+    > 0,0,0,95,"NEPAL","NEPAL","NEPAL","95 Year",4361,1870,2491
+    > 0,0,0,96,"NEPAL","NEPAL","NEPAL","96 Year",2249,920,1329
+    > 0,0,0,97,"NEPAL","NEPAL","NEPAL","97 Year",1536,616,920
+    > 0,0,0,98,"NEPAL","NEPAL","NEPAL","98 Year",2580,1008,1572
+    > 0,0,0,99,"NEPAL","NEPAL","NEPAL","99 Year",1579,646,933
+    > 0,0,0,100,"NEPAL","NEPAL","NEPAL","100 Year and above",4929,1750,3179
+    > 1,0,0,-1,"PROVINCE - 1","PROVINCE - 1","PROVINCE - 1","All Ages",4961412,2417328,2544084
+    > 1,1,0,-1,"Province-1","TAPLEJUNG","Taplejung (TOTAL)","All Ages",120590,60773,59817
+    > 1,2,0,-1,"Province-1","SANKHUWASABHA","Sankhuwasabha (TOTAL)","All Ages",158041,79579,78462
+    > 1,3,0,-1,"Province-1","SOLUKHUMBU","Solukhumbu (TOTAL)","All Ages",104851,52747,52104
+    > 1,4,0,-1,"Province-1","OKHALDHUNGA","Okhaldhunga (TOTAL)","All Ages",139552,68080,71472
+    > 1,5,0,-1,"Province-1","KHOTANG","Khotang (TOTAL)","All Ages",175298,86637,88661
+    > 1,6,0,-1,"Province-1","BHOJPUR","Bhojpur (TOTAL)","All Ages",157923,78211,79712
+    > 1,7,0,-1,"Province-1","DHANKUTA","Dhankuta (TOTAL)","All Ages",150599,73824,76775
+    > 1,8,0,-1,"Province-1","TERHATHUM","Terhathum (TOTAL)","All Ages",88731,43581,45150
+    > 1,9,0,-1,"Province-1","PANCHTHAR","Panchthar (TOTAL)","All Ages",172400,85683,86717
+    > 1,10,0,-1,"Province-1","ILAM","Ilam (TOTAL)","All Ages",279534,139431,140103
+    > 1,11,0,-1,"Province-1","JHAPA","Jhapa (TOTAL)","All Ages",998054,478509,519545
+    > 1,12,0,-1,"Province-1","MORANG","Morang (TOTAL)","All Ages",1148156,557512,590644
+    > 1,13,0,-1,"Province-1","SUNSARI","Sunsari (TOTAL)","All Ages",926962,449023,477939
+    > 1,14,0,-1,"Province-1","UDAYAPUR","Udayapur (TOTAL)","All Ages",340721,163738,176983
+    > 2,0,0,-1,"MADHESH","MADHESH","MADHESH","All Ages",6114600,3065751,3048849
+    > 2,15,0,-1,"Madhesh","SAPTARI","Saptari (TOTAL)","All Ages",706255,351368,354887
+    > 2,16,0,-1,"Madhesh","SIRAHA","Siraha (TOTAL)","All Ages",739953,363724,376229
+    > 2,17,0,-1,"Madhesh","DHANUSA","Dhanusa (TOTAL)","All Ages",867747,429893,437854
+    > 2,18,0,-1,"Madhesh","MAHOTTARI","Mahottari (TOTAL)","All Ages",706994,349159,357835
+    > 2,19,0,-1,"Madhesh","SARLAHI","Sarlahi (TOTAL)","All Ages",862470,435131,427339
+    > 2,20,0,-1,"Madhesh","RAUTAHAT","Rautahat (TOTAL)","All Ages",813573,408403,405170
+    > 2,21,0,-1,"Madhesh","BARA","Bara (TOTAL)","All Ages",763137,389787,373350
+    > 2,22,0,-1,"Madhesh","PARSA","Parsa (TOTAL)","All Ages",654471,338286,316185
+    > 3,0,0,-1,"BAGMATI","BAGMATI","BAGMATI","All Ages",6116866,3048684,3068182
+    > 3,23,0,-1,"Bagmati","DOLAKHA","Dolakha (TOTAL)","All Ages",172767,83720,89047
+    > 3,24,0,-1,"Bagmati","SINDHUPALCHOK","Sindhupalchok (TOTAL)","All Ages",262624,129205,133419
+    > 3,25,0,-1,"Bagmati","RASUWA","Rasuwa (TOTAL)","All Ages",46689,24035,22654
+    > 3,26,0,-1,"Bagmati","DHADING","Dhading (TOTAL)","All Ages",325710,159048,166662
+    > 3,27,0,-1,"Bagmati","NUWAKOT","Nuwakot (TOTAL)","All Ages",263391,128998,134393
+    > 3,28,0,-1,"Bagmati","KATHMANDU","Kathmandu (TOTAL)","All Ages",2041587,1035726,1005861
+    > 3,29,0,-1,"Bagmati","BHAKTAPUR","Bhaktapur (TOTAL)","All Ages",432132,218418,213714
+    > 3,30,0,-1,"Bagmati","LALITPUR","Lalitpur (TOTAL)","All Ages",551667,277131,274536
+    > 3,31,0,-1,"Bagmati","KAVREPALANCHOK","Kavrepalanchok (TOTAL)","All Ages",364039,178909,185130
+    > 3,32,0,-1,"Bagmati","RAMECHHAP","Ramechhap (TOTAL)","All Ages",170302,80824,89478
+    > 3,33,0,-1,"Bagmati","SINDHULI","Sindhuli (TOTAL)","All Ages",300026,147065,152961
+    > 3,34,0,-1,"Bagmati","MAKWANPUR","Makwanpur (TOTAL)","All Ages",466073,233816,232257
+    > 3,35,0,-1,"Bagmati","CHITAWAN","Chitawan (TOTAL)","All Ages",719859,351789,368070
+    > 4,0,0,-1,"GANDAKI","GANDAKI","GANDAKI","All Ages",2466427,1170833,1295594
+    > 4,36,0,-1,"Gandaki","GORKHA","Gorkha (TOTAL)","All Ages",251027,118155,132872
+    > 4,37,0,-1,"Gandaki","MANANG","Manang (TOTAL)","All Ages",5658,3192,2466
+    > 4,38,0,-1,"Gandaki","MUSTANG","Mustang (TOTAL)","All Ages",14452,7934,6518
+    > 4,39,0,-1,"Gandaki","MYAGDI","Myagdi (TOTAL)","All Ages",107033,52153,54880
+    > 4,40,0,-1,"Gandaki","KASKI","Kaski (TOTAL)","All Ages",600051,292791,307260
+    > 4,41,0,-1,"Gandaki","LAMJUNG","Lamjung (TOTAL)","All Ages",155852,74077,81775
+    > 4,42,0,-1,"Gandaki","TANAHU","Tanahu (TOTAL)","All Ages",321153,150094,171059
+    > 4,43,0,-1,"Gandaki","NAWALPARASI (BARDAGHAT SUSTA EAST)","Nawalparasi (Bardaghat Susta East) (TOTAL)","All Ages",378079,177887,200192
+    > 4,44,0,-1,"Gandaki","SYANGJA","Syangja (TOTAL)","All Ages",253024,116678,136346
+    > 4,45,0,-1,"Gandaki","PARBAT","Parbat (TOTAL)","All Ages",130887,61678,69209
+    > 4,46,0,-1,"Gandaki","BAGLUNG","Baglung (TOTAL)","All Ages",249211,116194,133017
+    > 5,0,0,-1,"LUMBINI","LUMBINI","LUMBINI","All Ages",5122078,2454408,2667670
+    > 5,47,0,-1,"Lumbini","RUKUM (EAST)","Rukum (East) (TOTAL)","All Ages",56786,27516,29270
+    > 5,48,0,-1,"Lumbini","ROLPA","Rolpa (TOTAL)","All Ages",234793,109871,124922
+    > 5,49,0,-1,"Lumbini","PYUTHAN","Pyuthan (TOTAL)","All Ages",232019,104132,127887
+    > 5,50,0,-1,"Lumbini","GULMI","Gulmi (TOTAL)","All Ages",246494,112025,134469
+    > 5,51,0,-1,"Lumbini","ARGHAKHANCHI","Arghakhanchi (TOTAL)","All Ages",177086,80672,96414
+    > 5,52,0,-1,"Lumbini","PALPA","Palpa (TOTAL)","All Ages",245027,112761,132266
+    > 5,53,0,-1,"Lumbini","NAWALPARASI (BARDAGHAT SUSTA WEST)","Nawalparasi (Bardaghat Susta West) (TOTAL)","All Ages",386868,188182,198686
+    > 5,54,0,-1,"Lumbini","RUPANDEHI","Rupandehi (TOTAL)","All Ages",1121957,550478,571479
+    > 5,55,0,-1,"Lumbini","KAPILBASTU","Kapilbastu (TOTAL)","All Ages",682961,334687,348274
+    > 5,56,0,-1,"Lumbini","DANG","Dang (TOTAL)","All Ages",674993,320573,354420
+    > 5,57,0,-1,"Lumbini","BANKE","Banke (TOTAL)","All Ages",603194,296745,306449
+    > 5,58,0,-1,"Lumbini","BARDIYA","Bardiya (TOTAL)","All Ages",459900,216766,243134
+    > 6,0,0,-1,"KARNALI","KARNALI","KARNALI","All Ages",1688412,823761,864651
+    > 6,59,0,-1,"Karnali","DOLPA","Dolpa (TOTAL)","All Ages",42774,21371,21403
+    > 6,60,0,-1,"Karnali","MUGU","Mugu (TOTAL)","All Ages",64549,32381,32168
+    > 6,61,0,-1,"Karnali","HUMLA","Humla (TOTAL)","All Ages",55394,27886,27508
+    > 6,62,0,-1,"Karnali","JUMLA","Jumla (TOTAL)","All Ages",118349,59228,59121
+    > 6,63,0,-1,"Karnali","KALIKOT","Kalikot (TOTAL)","All Ages",145292,72245,73047
+    > 6,64,0,-1,"Karnali","DAILEKH","Dailekh (TOTAL)","All Ages",252313,120774,131539
+    > 6,65,0,-1,"Karnali","JAJARKOT","Jajarkot (TOTAL)","All Ages",189360,94063,95297
+    > 6,66,0,-1,"Karnali","RUKUM (WEST)","Rukum (West) (TOTAL)","All Ages",166740,81091,85649
+    > 6,67,0,-1,"Karnali","SALYAN","Salyan (TOTAL)","All Ages",238515,114982,123533
+    > 6,68,0,-1,"Karnali","SURKHET","Surkhet (TOTAL)","All Ages",415126,199740,215386
+    > 7,0,0,-1,"SUDURPASCHIM","SUDURPASCHIM","SUDURPASCHIM","All Ages",2694783,1272786,1421997
+    > 7,69,0,-1,"Sudurpaschim","BAJURA","Bajura (TOTAL)","All Ages",138523,67070,71453
+    > 7,70,0,-1,"Sudurpaschim","BAJHANG","Bajhang (TOTAL)","All Ages",189085,88470,100615
+    > 7,71,0,-1,"Sudurpaschim","DARCHULA","Darchula (TOTAL)","All Ages",133310,64424,68886
+    > 7,72,0,-1,"Sudurpaschim","BAITADI","Baitadi (TOTAL)","All Ages",242157,113864,128293
+    > 7,73,0,-1,"Sudurpaschim","DADELDHURA","Dadeldhura (TOTAL)","All Ages",139602,65893,73709
+    > 7,74,0,-1,"Sudurpaschim","DOTI","Doti (TOTAL)","All Ages",204831,93604,111227
+    > 7,75,0,-1,"Sudurpaschim","ACHHAM","Achham (TOTAL)","All Ages",228852,105319,123533
+    > 7,76,0,-1,"Sudurpaschim","KAILALI","Kailali (TOTAL)","All Ages",904666,433456,471210
+    > 7,77,0,-1,"Sudurpaschim","KANCHANPUR","Kanchanpur (TOTAL)","All Ages",513757,240686,273071
