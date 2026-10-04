@@ -1,32 +1,8 @@
-  HTTP 200; application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; 1,512,065 bytes; final https://www.cis.es/documents/20117/13765729/3545-multi.xlsx
-== https://www.cis.es/documents/20117/13765729/3545-multi.xlsx
-  1,512,065 bytes, 24 sheets: Contenidos | Ficha técnica | Tabla ponderaciones | Notas | Resultados_Castilla y León | Resultados_Ávila | Resultados_Burgos | Resultados_León | Resultados_Palencia | Resultados_Salamanca | Resultados_Segovia | Resultados_Soria | Resultados_Valladolid | Resultados_Zamora | Sexo | Edad | Nivel de estudios | Tamaño de municipio | RV EA22 | RV EG23 | Ocupación | Clase social | Escala de ideología | Religiosidad
-  -- sheet 'Contenidos': 10 rows match /Ponderaci|provincia|PESO/; header and matches
-    r6: ☞ Tabla ponderaciones | Tabla de Ponderaciones |  | Estudios electorales
-    r9: ☞ Resultados_provincia de Ávila | Resumen de marginales (provincia de Ávila) |  | 001_004 Partidos y líderes políticos
-    r10: ☞ Resultados_provincia de Burgos | Resumen de marginales (provincia de Burgos) |  | 001_005 Elecciones
-    r11: ☞ Resultados_provincia de León | Resumen de marginales (provincia de León) |  | 001_005_002_012 Elecciones Autonómicas en Castilla y León
-    r12: ☞ Resultados_provincia de Palencia | Resumen de marginales (provincia de Palencia)
-    r13: ☞ Resultados_provincia de Salamanca | Resumen de marginales (provincia de Salamanca)
-    r14: ☞ Resultados_provincia de Segovia | Resumen de marginales (provincia de Segovia)
-    r15: ☞ Resultados_provincia de Soria | Resumen de marginales (provincia de Soria)
-  -- sheet 'Ficha técnica': 4 rows match /Ponderaci|provincia|PESO/; header and matches
-    r13:  | Partiendo de una distribución proporcional por provincias, se ajusta de forma que todas ellas alcancen un mínimo de 600 entrevistas._x000D_
-_x000D_
-Luego se realiza un diseño proporcional en las cuotas de tamaño de hábitat, sexo y edad.
-    r14: Ponderación | Para tratar la muestra en su conjunto es necesario aplicar coeficientes de ponderación (PESO). Los valores medios de estos coeficientes se adjuntan en la ficha técnica._x000D_
-_x000D_
-Para el cálculo de la ponderación PESO se introducen en el procedimiento iterativo variables mínimas como sexo, edad, región NUTS III (regiones básicas definidas por la nomenclatura de unidades territoriales para estadísticas de EUROSTAT), nivel educativo (utilizando la clasificación de programas, titulaciones y certificaciones en niveles de formación alcanzados (CNED-A)) y tamaño de hábitat. Esta ponderación post estratificación también se conoce como 'ponderación de corrección' o 'de no respuesta total’._x000D_
-_x000D_
-Para la estimación a nivel de cada provincia, en el fichero de microdatos se incluye la ponderación para cada una de ellas (variable PESOPROV)._x000D_
-_x000D_
-Para el cálculo de la ponderación post estratificación a nivel provincial PESOPROV se incluyen las variables tamaño de hábitat, nivel educativo (utilizando la clasificación de programas, titulaciones y certificaciones en niveles de formación alcanzados (CNED-A)), sexo y edad.
-    r15: Puntos de muestreo | 1.086 municipios y 9 provincias
-    r16: Procedimiento de muestreo | Se ha procedido a la selección aleatoria de teléfonos fijos y móviles con un porcentaje del 21,0% y del 79,0%, respectivamente. La selección de las personas se ha llevado a cabo mediante la aplicación de cuotas de sexo y edad._x000D_
-_x000D_
-Los estratos se han formado por el cruce de las 9 provincias con el tamaño de hábitat, dividido en 7 categorías: menor o igual a 2.000 habitantes; de 2.001 a 10.000; de 10.001 a 50.000; de 50.001 a 100.000; de 100.001 a 400.000; de 400.001 a 1.000.000; y más de 1.000.000 de habitantes._x000D_
-_x000D_
-Los cuestionarios se han aplicado mediante entrevista telefónica asistida por ordenador (CATI).
-  -- sheet 'Tabla ponderaciones': 2 rows match /Ponderaci|provincia|PESO/; header and matches
-    r3:  | Muestra diseñada, realizada, coeficientes de ponderación y error (%)
-    r8: cpr | Provincia | Diseñada | Realizada
+  bound 52 provinces and 19 comunidades by code
+  study 3558: the provinces make the comunidad's shares to within 0.32 points weighted by their samples and mean weights (0.40 unweighted)
+  study 3558: 8 provinces, 8,017 respondents, fieldwork Del 10 al 18 de abril de 2026
+  study 3545: the provinces make the comunidad's shares to within 0.54 points weighted by their samples and mean weights (0.64 unweighted)
+  study 3545: 9 provinces, 8,039 respondents, fieldwork Del 6 al 13 de febrero de 2026
+  study 3543: the provinces make the comunidad's shares to within 0.37 points weighted by their samples and mean weights (0.96 unweighted)
+  study 3543: 3 provinces, 3,313 respondents, fieldwork Del 12 al 15 de enero de 2026
+spain_cis: study 3538: Cáceres has 1,215 respondents to the religion question and a realised sample of 822
