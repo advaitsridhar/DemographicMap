@@ -1,59 +1,246 @@
-https://api.data.stats.govt.nz/rest/data/STATSNZ,CEN23_POP_006,1.0/2023.9999+999999+01+99+001+067+999+07601.999.Median+99.999+11+22
-  HTTP 200 application/vnd.sdmx.data+csv; charset=utf-8 2,788 bytes
-  48 rows; columns ['DATAFLOW', 'CEN23_YEAR_001', 'CEN23_GEO_002', 'CEN23_ETH_002', 'CEN23_AGE_001', 'CEN23_SAB_002', 'OBS_VALUE', 'OBS_STATUS']
-  DATAFLOW: 1 distinct: STATSNZ:CEN23_POP_006(1.0)
-  CEN23_YEAR_001: 1 distinct: 2023
-  CEN23_GEO_002: 8 distinct: 999, 01, 067, 999999, 07601, 99, 9999, 001
-  CEN23_ETH_002: 1 distinct: 999
-  CEN23_AGE_001: 2 distinct: 99, Median
-  CEN23_SAB_002: 3 distinct: 22, 999, 11
-  OBS_VALUE: 40 distinct: 27, 43.2, 42.7, 2523030, 38967, 44, 72, 95949, 38.1, 44.3, 194007, 39, 44.1, 43.4, 41.7
-  OBS_STATUS: 1 distinct: 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999 | 999 | 99 | 22 | 27 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 01 | 999 | Median | 999 | 43.2 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 067 | 999 | Median | 11 | 42.7 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999999 | 999 | 99 | 22 | 2523030 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 07601 | 999 | 99 | 22 | 38967 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 99 | 999 | Median | 11 | 44 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999 | 999 | 99 | 999 | 72 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 01 | 999 | 99 | 11 | 95949 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 9999 | 999 | Median | 999 | 38.1 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 001 | 999 | Median | 999 | 44.3 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 01 | 999 | 99 | 999 | 194007 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999999 | 999 | Median | 22 | 39 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 99 | 999 | Median | 999 | 44.1 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 001 | 999 | Median | 11 | 43.4 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 07601 | 999 | Median | 22 | 41.7 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 067 | 999 | 99 | 11 | 315 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999999 | 999 | 99 | 999 | 4993923 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 07601 | 999 | 99 | 999 | 77949 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 99 | 999 | 99 | 22 | 297 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999999 | 999 | Median | 999 | 38.1 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 9999 | 999 | Median | 22 | 39 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999999 | 999 | Median | 11 | 37.1 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 01 | 999 | Median | 22 | 44.2 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 9999 | 999 | 99 | 11 | 2470893 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 99 | 999 | Median | 22 | 45.2 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 9999 | 999 | 99 | 999 | 4993923 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 01 | 999 | 99 | 22 | 98055 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 067 | 999 | 99 | 999 | 612 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 99 | 999 | 99 | 11 | 336 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999 | 999 | 99 | 11 | 48 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 001 | 999 | 99 | 22 | 35811 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 001 | 999 | 99 | 11 | 35619 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 9999 | 999 | 99 | 22 | 2523030 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 07601 | 999 | 99 | 11 | 38982 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999 | 999 | Median | 999 | 54.5 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 07601 | 999 | Median | 999 | 41.3 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 067 | 999 | Median | 22 | 45.6 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 067 | 999 | 99 | 22 | 297 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999 | 999 | Median | 11 | 52.7 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 001 | 999 | 99 | 999 | 71430 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 9999 | 999 | Median | 11 | 37.1 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 99 | 999 | 99 | 999 | 633 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 01 | 999 | Median | 11 | 42.1 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 067 | 999 | Median | 999 | 44 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999 | 999 | Median | 22 | 57.3 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 001 | 999 | Median | 22 | 45 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 999999 | 999 | 99 | 11 | 2470893 | 
-    STATSNZ:CEN23_POP_006(1.0) | 2023 | 07601 | 999 | Median | 11 | 40.8 | 
+https://stat.uz/ru/ofitsialnaya-statistika/demography: HTTP 200 text/html; charset=utf-8 234,946 B
+  НАЦИОНАЛЬНЫЙ КОМИТЕТ -> https://stat.uz/ru/
+  Call Center -> https://stat.uz/img/news/call-center_rus_p54141.pdf
+  Принять участие в опросе -> https://docs.google.com/forms/d/e/1FAIpQLSdVuVgCUon_uwxQOeX2RotoN8gwo5AJeH_09zzOMowDy1L5Cg/viewform
+  Национальная стратегия развития статистики -> https://stat.uz/ru/normativnye-akty/natsional-naya-strategiya-razvitiya-statistiki
+  Национальные счета -> https://stat.uz/ru/ofitsialnaya-statistika/national-accounts
+  расширенная Общая Система Распространения Данных (р-ОСРД) Национальная Страница Сводных Данных (НССД) -> https://stat.uz/ru/ofitsialnaya-statistika/e-gdds-imf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_223.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_223.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_224.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_224.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_225.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_225.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_226.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_226.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_227.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_227.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_228.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_228.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_229.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_229.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_230.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_230.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_232.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_232.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_233.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_233.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_235.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_235.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_238.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_238.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_239.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_239.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_241.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_241.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_242.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_242.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_243.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_243.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_268.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_268.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_269.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_269.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_270.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_270.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_273.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_273.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_280.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_280.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_287.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_287.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_290.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_290.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_295.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_295.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_297.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_297.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_300.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_300.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_302.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_302.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_305.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_305.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_307.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_307.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_564.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_564.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_576.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_576.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_664.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_664.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_665.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_665.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_667.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_667.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_669.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_669.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3163.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3163.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_236.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_236.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_244.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_244.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_245.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_245.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_247.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_247.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_248.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_248.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_561.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_561.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_589.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_589.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_600.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_600.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_607.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_607.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_617.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_617.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_626.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_626.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_632.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_632.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_638.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_638.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_643.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_643.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_647.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_647.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_650.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_650.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1190.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1190.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1191.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1191.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2834.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2834.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2835.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2835.pdf
+  220 links match '(?:xls|xlsx|pdf|doc|zip|национ|nation|millat)'
+https://stat.uz/en/official-statistics/demography: HTTP 200 text/html; charset=utf-8 220,368 B
+  Attend to survey -> https://docs.google.com/forms/d/e/1FAIpQLSdVuVgCUon_uwxQOeX2RotoN8gwo5AJeH_09zzOMowDy1L5Cg/viewform
+  International partership -> https://stat.uz/en/about/international-partership
+  National Strategy for Development of Statistics -> https://stat.uz/en/legal-acts/national-strategy-for-development-of-statistics
+  National Accounts -> https://stat.uz/en/official-statistics/national-accounts
+  Enhanced General Data Dissemination System (e-GDDS) National Summary Data Page (NSDP) -> https://stat.uz/en/official-statistics/e-gdds-imf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_223.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_223.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_224.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_224.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_225.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_225.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_226.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_226.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_227.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_227.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_228.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_228.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_229.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_229.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_230.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_230.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_232.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_232.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_233.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_233.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_235.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_235.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_238.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_238.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_239.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_239.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_241.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_241.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_242.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_242.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_243.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_243.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_268.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_268.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_269.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_269.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_270.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_270.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_273.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_273.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_280.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_280.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_287.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_287.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_290.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_290.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_295.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_295.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_297.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_297.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_300.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_300.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_302.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_302.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_305.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_305.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_307.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_307.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_564.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_564.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_576.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_576.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_664.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_664.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_665.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_665.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_667.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_667.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_669.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_669.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3163.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_3163.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_236.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_236.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_244.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_244.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_245.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_245.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_247.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_247.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_248.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_248.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_561.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_561.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_589.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_589.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_600.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_600.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_607.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_607.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_617.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_617.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_626.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_626.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_632.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_632.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_638.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_638.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_643.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_643.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_647.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_647.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_650.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_650.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1190.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1190.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1191.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_1191.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2834.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2834.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2835.xlsx
+  pdf -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2835.pdf
+  xlsx -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_2838.xlsx
+  218 links match '(?:xls|xlsx|pdf|doc|zip|национ|nation|millat)'
+https://stat.uz/uz/rasmiy-statistika/demography: HTTP 404 text/html; charset=UTF-8 2,993 B
+  0 links match '(?:xls|xlsx|pdf|doc|zip|национ|nation|millat)'
