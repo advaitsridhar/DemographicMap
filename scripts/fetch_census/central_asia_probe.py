@@ -20,6 +20,10 @@ answers one question and prints only what decides it.
   first ``--rows`` items of a list there.
 * ``tree URL --match RE`` -- the nodes of a nested JSON catalogue (SIAT's)
   whose names match, with their ids and codes.
+* ``siat ID [ID...]`` -- what each SIAT indicator's data file holds: rows by
+  code length (region or district) and the years covered.
+* ``xlsx URL`` -- a big workbook's structure: every row whose first cell is a
+  label rather than a number, with that row's non-empty cells.
 
 Usage:
     python -m scripts.fetch_census.central_asia_probe get https://stat.gov.kg/ru/ --links census
@@ -340,10 +344,51 @@ def cmd_siat(ids: list[str], rows: int) -> None:
             log(f"   {json.dumps(row, ensure_ascii=False)[:300]}")
 
 
+def cmd_xlsx(url: str, sheets: list[str], rows: int, width: int, skip: str) -> None:
+    """A big workbook's structure: the rows whose first cell is a label.
+
+    A census workbook that stacks one block per region down a sheet is read
+    by where its blocks start; printing every row whose first cell is not a
+    plain number (an age, a code) shows that, with each such row's non-empty
+    cells, without printing the thousands of figures between them.
+    """
+    import openpyxl
+    status, _, body, _ = fetch(url, timeout=600)
+    log(f"{url}: HTTP {status} {len(body):,} B")
+    if status != 200:
+        return
+    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+    log(f"  sheets: {book.sheetnames}")
+    for name in sheets or book.sheetnames:
+        if name not in book.sheetnames:
+            log(f"  no sheet {name!r}")
+            continue
+        sheet = book[name]
+        log(f"  -- {name!r}: {sheet.max_row} rows x {sheet.max_column} cols")
+        shown = 0
+        for i, row in enumerate(sheet.iter_rows(values_only=True), start=1):
+            first = "" if not row or row[0] is None else str(row[0]).strip()
+            if skip and re.fullmatch(skip, first):
+                continue
+            cells = [str(c).strip()[:width] for c in row if c not in (None, "")]
+            if not cells:
+                continue
+            shown += 1
+            if shown > rows:
+                break
+            log(f"  r{i}: {' | '.join(cells)[:900]}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    x2 = sub.add_parser("xlsx")
+    x2.add_argument("url")
+    x2.add_argument("--sheets", default="")
+    x2.add_argument("--rows", type=int, default=80)
+    x2.add_argument("--width", type=int, default=40)
+    x2.add_argument("--skip", default=r"\d+|\d+\D{0,3}", help="first-cell pattern to leave out")
     s2 = sub.add_parser("siat")
     s2.add_argument("ids", nargs="+")
     s2.add_argument("--rows", type=int, default=3)
@@ -386,7 +431,10 @@ def main() -> int:
     j.add_argument("--chars", type=int, default=400)
     j.add_argument("--data", default=None)
     args = ap.parse_args()
-    if args.cmd == "siat":
+    if args.cmd == "xlsx":
+        cmd_xlsx(args.url, [s for s in args.sheets.split(",") if s], args.rows,
+                 args.width, args.skip)
+    elif args.cmd == "siat":
         cmd_siat(args.ids, args.rows)
     elif args.cmd == "tree":
         cmd_tree(args.url, args.match, [k for k in args.keys.split(",") if k], args.rows)
