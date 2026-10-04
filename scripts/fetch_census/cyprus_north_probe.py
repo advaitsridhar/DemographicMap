@@ -519,8 +519,11 @@ def p_green_line(a: argparse.Namespace) -> None:
              f'way["name"~"{GREEN_NAMES}",i]({s},{w},{n},{e});'
              f'relation["name:en"~"{GREEN_NAMES}",i]({s},{w},{n},{e});'
              f'relation["boundary"]["admin_level"~"^[34]$"]({s},{w},{n},{e}););out tags;')
-    found = overpass(query)
-    zone_ids = set()
+    # --rel names the relations outright (the buffer zone's, the north's),
+    # once a search has found them, and skips the search.
+    rels = getattr(a, "rel", None)
+    found = [] if rels else overpass(query)
+    zone_ids = {("relation", int(r)) for r in (rels or "").split(",") if r}
     for el in found:
         t = el.get("tags", {})
         green = bool(re.search(GREEN_NAMES, " ".join([t.get("name", ""), t.get("name:en", "")]), re.I))
@@ -587,6 +590,8 @@ def main() -> int:
     ap.add_argument("--box", help="green_line: south,west,north,east to clip outlines to")
     ap.add_argument("--no-isin", action="store_true",
                     help="green_line: measure the points against the outlines only")
+    ap.add_argument("--rel", help="green_line: relation ids to outline, comma-separated, "
+                                  "instead of searching for them")
     args = ap.parse_args()
     for name in args.run.split(","):
         if name not in PROBES:
