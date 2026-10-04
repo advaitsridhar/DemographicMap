@@ -1,12 +1,392 @@
-== https://data.humdata.org/api/3/action/package_show?id=cod-ps-slb
-  HTTP 200 application/json;charset=utf-8 26,394 bytes
-    ...https://data.humdata.org/dataset/53e6df8b-ca6e-42b8-a13a-d16e033865eb/resource/b84d42cf-a0b2-48e8-bac2-14458754ab07/download/slb_admpop_adm2_2023.csv...
-    ...https://data.humdata.org/dataset/53e6df8b-ca6e-42b8-a13a-d16e033865eb/resource/b84d42cf-a0b2-48e8-bac2-14458754ab07/download/slb_admpop_adm2_2023.csv...
-    ...https://data.humdata.org/dataset/53e6df8b-ca6e-42b8-a13a-d16e033865eb/resource/b84d42cf-a0b2-48e8-bac2-14458754ab07/download/slb_admpop_adm2_2023.csv...
-    ...https://data.humdata.org/dataset/53e6df8b-ca6e-42b8-a13a-d16e033865eb/resource/3741b707-50b4-4a98-9713-bd79d2d46aac/download/slb_admpop_adm3_2023.csv...
-    ...https://data.humdata.org/dataset/53e6df8b-ca6e-42b8-a13a-d16e033865eb/resource/3741b707-50b4-4a98-9713-bd79d2d46aac/download/slb_admpop_adm3_2023.csv...
-    ...https://data.humdata.org/dataset/53e6df8b-ca6e-42b8-a13a-d16e033865eb/resource/3741b707-50b4-4a98-9713-bd79d2d46aac/download/slb_admpop_adm3_2023.csv...
-  6 matches shown for '(?:https://[^"]*(?:adm3|adm2)[^"]*csv)'
 == https://www.sbs.gov.ws/digi/2-2016%20Census%20Brief%20No.1%20Tables.xlsx
   HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 106,868 bytes
-  0 matches shown for '(?:https://[^"]*(?:adm3|adm2)[^"]*csv)'
+  -- 'Table 1 Pop by sex_sex'
+       2:  | Table 1. Population by place of residenc
+       3:  |  | Total | Male | Female
+       4:  | Samoa | 195979 | 100892 | 95087
+       5:  |     Apia Urban Area | 37391 | 18760 | 18631
+       6:  |         Vaimauga West | 23527 | 11794 | 11733
+       7:  |             Moataa | 1467 | 718 | 749
+       8:  |             Vaivase Tai | 1039 | 536 | 503
+       9:  |             Vaivase Uta | 953 | 477 | 476
+      10:  |             Magiagi Tai | 1830 | 947 | 883
+      11:  |             Magiagi Uta | 238 | 123 | 115
+      12:  |             Toomatagi | 226 | 107 | 119
+      13:  |             Tanoaleia | 712 | 372 | 340
+      14:  |             Faatoialemanu | 897 | 454 | 443
+      15:  |             Vaiala Tai | 593 | 294 | 299
+      16:  |             Vaiala Uta | 397 | 201 | 196
+      17:  |             Vinifou | 71 | 36 | 35
+      18:  |             Vaipuna | 339 | 179 | 160
+      19:  |             Levili | 74 | 39 | 35
+      20:  |             Matautu Tai | 190 | 107 | 83
+      21:  |             Matautu Uta | 751 | 360 | 391
+      22:  |             Leone | 591 | 311 | 280
+      23:  |             Vaisagano | 254 | 117 | 137
+      24:  |             Aai o Niue | 172 | 90 | 82
+      25:  |             Maluafou | 77 | 33 | 44
+      26:  |             Malifa | 160 | 85 | 75
+      27:  |             Lelata | 200 | 95 | 105
+      28:  |             Leifiifi | 31 | 11 | 20
+      29:  |             Motootua | 453 | 220 | 233
+      30:  |             Leufisa | 235 | 112 | 123
+      31:  |             Tanugamanono | 855 | 433 | 422
+      32:  |             Papauta | 431 | 184 | 247
+      33:  |             Vailima | 825 | 418 | 407
+      34:  |             Avele | 405 | 199 | 206
+      35:  |             Letava | 591 | 297 | 294
+      36:  |             Vaoala | 952 | 468 | 484
+      37:  |             Tiapapata | 150 | 81 | 69
+      38:  |             Afiamalu East | 147 | 78 | 69
+      39:  |             Afiamalu West | 53 | 29 | 24
+      40:  |             Apia | 208 | 100 | 108
+      41:  |             Tauese | 155 | 68 | 87
+      42:  |             Tufuiopa | 427 | 209 | 218
+      43:  |             Lalovaea West | 333 | 182 | 151
+      44:  |             Palisi | 1134 | 586 | 548
+      45:  |             Matafele | 6 | 4 | 2
+      46:  |             Mulivai | 9 | 9 | 0
+      47:  |             Tuloto | 151 | 82 | 69
+      48:  |             Togafuafua | 423 | 216 | 207
+      49:  |             Taufusi | 380 | 186 | 194
+      50:  |             Alamagoto | 939 | 434 | 505
+      51:  |             Vaimea | 479 | 232 | 247
+      52:  |             Fugalei | 241 | 116 | 125
+      53:  |             Saleufi | 64 | 29 | 35
+      54:  |             Savalalo | 126 | 60 | 66
+      55:  |             Sogi | 279 | 140 | 139
+      56:  |             Mulinuu | 27 | 14 | 13
+      57:  |             Aai o Fiti | 161 | 76 | 85
+      58:  |             Moataa Uta | 173 | 101 | 72
+      59:  |             Nafanua | 374 | 193 | 181
+      60:  |             Tanumaleko | 84 | 40 | 44
+      61:  |             Papaloloa | 257 | 124 | 133
+      62:  |             Lalovaea East | 472 | 244 | 228
+      63:  |             Malololelei | 258 | 132 | 126
+      64:  |             Tiavi | 8 | 6 | 2
+      65:  |         Faleata East | 13864 | 6966 | 6898
+      66:  |             Sinamoga | 1443 | 724 | 719
+      67:  |             Moamoa | 1396 | 706 | 690
+      68:  |             Vaimoso | 2513 | 1230 | 1283
+      69:  |             Pesega | 143 | 79 | 64
+      70:  |             Lotopa | 1629 | 811 | 818
+      71:  |             Alafua | 1438 | 736 | 702
+      72:  |             Tuaefu | 198 | 108 | 90
+      73:  |             Tuanaimato East | 493 | 256 | 237
+      74:  |             Seesee | 598 | 307 | 291
+      75:  |             Lepea | 628 | 306 | 322
+      76:  |             Vaitoloa | 670 | 336 | 334
+      77:  |             Vailoa | 1691 | 863 | 828
+      78:  |             Moamoa Fou | 1024 | 504 | 520
+      79:  |     North West Upolu | 69376 | 35704 | 33672
+      80:  |         Vaimauga East | 8151 | 4148 | 4003
+      81:  |             Laulii | 2167 | 1098 | 1069
+      82:  |             Letogo | 1330 | 697 | 633
+      83:  |             Fagalii | 1532 | 796 | 736
+      84:  |             Vailele Uta | 968 | 477 | 491
+      85:  |             Vailele Tai | 2154 | 1080 | 1074
+      86:  |         Faleata West | 22989 | 11814 | 11175
+      87:  |             Tulaele | 858 | 429 | 429
+      88:  |             Talimatau | 597 | 300 | 297
+      89:  |             Vaiusu | 2686 | 1412 | 1274
+      90:  |             Vaigaga | 789 | 428 | 361
+      91:  |             Elise Fou | 198 | 92 | 106
+      92:  |             Saina | 216 | 110 | 106
+      93:  |             Toamua | 1725 | 884 | 841
+      94:  |             Safune  I | 311 | 157 | 154
+      95:  |             Puipaa | 1065 | 528 | 537
+      96:  |             Falelauniu | 221 | 112 | 109
+      97:  |             Leaupani | 56 | 37 | 19
+      98:  |             Tapatapao | 251 | 136 | 115
+      99:  |             Tanumapua | 487 | 247 | 240
+     100:  |             Tafaigata | 1456 | 905 | 551
+     101:  |             Siusega | 3034 | 1546 | 1488
+     102:  |             Ululoloa | 883 | 439 | 444
+     103:  |             Vaitele Tai | 857 | 431 | 426
+     104:  |             Vaitele Uta | 2992 | 1520 | 1472
+     105:  |             Vaitele Fou | 4307 | 2101 | 2206
+     106:  |         Sagaga La Falefa | 12760 | 6563 | 6197
+     107:  |             Faleula | 2948 | 1522 | 1426
+     108:  |             Alamutu | 397 | 203 | 194
+     109:  |             Levi | 983 | 514 | 469
+     110:  |             Lotosoa | 841 | 438 | 403
+     111:  |             Salepouae | 723 | 374 | 349
+     112:  |             Nonoa | 492 | 252 | 240
+     113:  |             Malua | 398 | 213 | 185
+     114:  |             Utualii | 506 | 262 | 244
+     115:  |             Tufulele | 1353 | 688 | 665
+     116:  |             Aleisa East | 903 | 468 | 435
+     117:  |             Aleisa West | 744 | 373 | 371
+     118:  |             Aele Fou | 635 | 335 | 300
+     119:  |             Nuu | 1761 | 890 | 871
+     120:  |             Fatitu | 76 | 31 | 45
+     121:  |         Sagaga Le Usoga | 6005 | 3118 | 2887
+     122:  |             Malie | 2412 | 1245 | 1167
+     123:  |             Afega | 2137 | 1110 | 1027
+     124:  |             Tuanai | 1456 | 763 | 693
+     125:  |         Aana Alofi I | 6548 | 3416 | 3132
+     126:  |             Faleasiu | 4260 | 2199 | 2061
+     127:  |             Fasitoouta | 2141 | 1138 | 1003
+     128:  |             Lepale | 147 | 79 | 68
+     129:  |         Aana Alofi II | 3239 | 1648 | 1591
+     130:  |             Nofoalii | 2009 | 1017 | 992
+     131:  |             Leulumoega | 1230 | 631 | 599
+     132:  |         Aana Alofi III | 6227 | 3213 | 3014
+     133:  |             Fasitoo Tai | 1582 | 802 | 780
+     134:  |             Vailuutai | 869 | 455 | 414
+     135:  |             Faleatiu | 680 | 360 | 320
+     136:  |             Satapuala | 1975 | 1016 | 959
+     137:  |             Faleolo | 25 | 17 | 8
+     138:  |             Afia | 230 | 125 | 105
+     139:  |             Satuimalufilufi | 750 | 371 | 379
+     140:  |             Falepuna | 116 | 67 | 49
+     141:  |         Gagaemauga I | 3457 | 1784 | 1673
+     142:  |             Leauvaa | 3457 | 1784 | 1673
+     143:  |     Rest of Upolu | 45652 | 23774 | 21878
+     144:  |         Safata | 6269 | 3236 | 3033
+     145:  |             Saanapu Tai | 103 | 45 | 58
+     146:  |             Saanapu Uta | 1180 | 604 | 576
+     147:  |             Sataoa Tai | 240 | 119 | 121
+     148:  |             Sataoa Uta | 1088 | 571 | 517
+     149:  |             Lotofaga | 742 | 395 | 347
+     150:  |             Niusuatia | 464 | 242 | 222
+     151:  |             Vaiee | 558 | 296 | 262
+     152:  |             Fusi | 738 | 379 | 359
+     153:  |             Fausaga | 304 | 152 | 152
+     154:  |             Tafitoala | 472 | 236 | 236
+     155:  |             Mulivai | 380 | 197 | 183
+     156:  |         Siumu | 2342 | 1212 | 1130
+     157:  |             Maninoa | 460 | 233 | 227
+     158:  |             Siumu | 1184 | 621 | 563
+     159:  |             Siumu Uta | 304 | 156 | 148
+     160:  |             Saaga | 394 | 202 | 192
+     161:  |         Falelatai & Samatau | 3192 | 1656 | 1536
+     162:  |             Samatau | 1144 | 577 | 567
+     163:  |             Siufaga | 639 | 347 | 292
+     164:  |             Pata | 485 | 264 | 221
+     165:  |             Nefunefu | 161 | 83 | 78
+     166:  |             Matautu | 217 | 105 | 112
+     167:  |             Levi | 118 | 65 | 53
+     168:  |             Matanofo | 76 | 38 | 38
+     169:  |             Falevai | 227 | 117 | 110
+     170:  |             Samai | 125 | 60 | 65
+     171:  |         Lefaga & Faleseela | 4059 | 2094 | 1965
+     172:  |             Matafaa | 181 | 93 | 88
+     173:  |             Faleseela | 838 | 429 | 409
+     174:  |             Tanumalala | 163 | 89 | 74
+     175:  |             Safaatoa | 581 | 312 | 269
+     176:  |             Tafagamanu | 356 | 183 | 173
+     177:  |             Savaia | 386 | 211 | 175
+     178:  |             Gagaifo O Le Vao | 584 | 293 | 291
+     179:  |             Matautu | 970 | 484 | 486
+     180:  |         Aiga I Le Tai | 5029 | 2619 | 2410
+     181:  |             Tausagi | 55 | 52 | 3
+     182:  |             Olo | 32 | 18 | 14
+     183:  |             Paepaeala | 165 | 78 | 87
+     184:  |             Samea | 145 | 71 | 74
+     185:  |             Fuailoloo | 1214 | 624 | 590
+     186:  |             Lalovi | 524 | 282 | 242
+     187:  |             Apolima Fou | 509 | 259 | 250
+     188:  |             Manono Uta | 1405 | 731 | 674
+     189:  |             Faleu | 249 | 136 | 113
+     190:  |             Lepuiai | 183 | 92 | 91
+     191:  |             Apai | 124 | 67 | 57
+     192:  |             Satuilagi | 90 | 46 | 44
+     193:  |             Salua | 136 | 61 | 75
+     194:  |             Satoi | 102 | 48 | 54
+     195:  |             Apolima Island | 96 | 54 | 42
+     196:  |         Falealili | 4784 | 2545 | 2239
+     197:  |             Togitogiga | 37 | 22 | 15
+     198:  |             Saleilua | 708 | 384 | 324
+     199:  |             Poutasi | 406 | 205 | 201
+     200:  |             Vaovai | 505 | 265 | 240
+     201:  |             Matautu | 426 | 238 | 188
+     202:  |             Tafatafa | 219 | 114 | 105
+     203:  |             Malaemalu | 243 | 122 | 121
+     204:  |             Satalo | 370 | 213 | 157
+     205:  |             Piu | 49 | 28 | 21
+     206:  |             Sapunaoa | 462 | 241 | 221
+     207:  |             Salesatele | 347 | 172 | 175
+     208:  |             Siuniu | 136 | 69 | 67
+     209:  |             Salani | 551 | 293 | 258
+     210:  |             Utulaelae | 194 | 113 | 81
+     211:  |             Sapoe | 131 | 66 | 65
+     212:  |         Lotofaga | 1841 | 961 | 880
+     213:  |             Matatufu | 470 | 238 | 232
+     214:  |             Lotofaga | 980 | 514 | 466
+     215:  |             Vavau | 391 | 209 | 182
+     216:  |         Lepa | 1521 | 803 | 718
+     217:  |             Aufaga | 463 | 241 | 222
+     218:  |             Vaigalu | 106 | 56 | 50
+     219:  |             Lepa | 178 | 93 | 85
+     220:  |             Siupapa | 18 | 10 | 8
+     221:  |             Saleapaga | 593 | 308 | 285
+     222:  |             Lealatele | 163 | 95 | 68
+     223:  |         Aleipata Itupa I Luga | 1246 | 638 | 608
+     224:  |             Lalomanu | 706 | 355 | 351
+     225:  |             Vailoa | 325 | 171 | 154
+     226:  |             Ulutogia | 215 | 112 | 103
+     227:  |         Aleipata Itupa I Lalo | 4188 | 2157 | 2031
+     228:  |             Satitoa | 713 | 364 | 349
+     229:  |             Malaela | 208 | 107 | 101
+     230:  |             Lotopue | 240 | 133 | 107
+     231:  |             Mutiatele | 350 | 188 | 162
+     232:  |             Saleaaumua | 553 | 281 | 272
+     233:  |             Utufaalalafa | 154 | 81 | 73
+     234:  |             Samusu | 835 | 418 | 417
+     235:  |             Amaile | 205 | 102 | 103
+     236:  |             Tiavea | 916 | 473 | 443
+     237:  |             Alafou | 14 | 10 | 4
+     238:  |         Anoamaa East | 4196 | 2228 | 1968
+     239:  |             Saletele | 168 | 95 | 73
+     240:  |             Sauano | 238 | 115 | 123
+     241:  |             Falevao | 685 | 377 | 308
+     242:  |             Lalomauga | 380 | 210 | 170
+     243:  |             Manunu | 221 | 126 | 95
+     244:  |             Sauniatu | 34 | 18 | 16
+     245:  |             Lufilufi | 907 | 467 | 440
+     246:  |             Falefa | 1563 | 820 | 743
+     247:  |         Anoamaa West | 4993 | 2582 | 2411
+     248:  |             Saolufata | 829 | 427 | 402
+     249:  |             Fusi | 396 | 213 | 183
+     250:  |             Salelesi | 393 | 204 | 189
+     251:  |             Eva | 283 | 157 | 126
+     252:  |             Solosolo | 1841 | 935 | 906
+     253:  |             Luatuanuu | 834 | 432 | 402
+     254:  |             Leusoalii | 417 | 214 | 203
+     255:  |             Solaua | 0 | 0 | 0
+     256:  |         Vaa O Fonoti | 1621 | 845 | 776
+     257:  |             Uafato | 257 | 131 | 126
+     258:  |             Samamea | 45 | 21 | 24
+     259:  |             Lona | 191 | 110 | 81
+     260:  |             Maasina | 129 | 72 | 57
+     261:  |             Taelefaga | 244 | 129 | 115
+     262:  |             Salimu | 64 | 34 | 30
+     263:  |             Musumusu | 80 | 42 | 38
+     264:  |             Faleapuna | 611 | 306 | 305
+     265:  |         Gagaemauga II | 371 | 198 | 173
+     266:  |             Salamumu Tai | 33 | 17 | 16
+     267:  |             Salamumu Uta | 338 | 181 | 157
+     268:  |     Savaii | 43560 | 22654 | 20906
+     269:  |         Faasaleleaga I | 6328 | 3281 | 3047
+     270:  |             Maota | 280 | 147 | 133
+     271:  |             Fataloa | 308 | 158 | 150
+     272:  |             Sapulu | 1220 | 650 | 570
+     273:  |             Satalafai | 198 | 108 | 90
+     274:  |             Falefia | 416 | 215 | 201
+     275:  |             Foua | 320 | 166 | 154
+     276:  |             Saletagaloa | 260 | 140 | 120
+     277:  |             Salelavalu Tai | 488 | 238 | 250
+     278:  |             Salelavalu Uta | 614 | 325 | 289
+     279:  |             Vaifou | 272 | 136 | 136
+     280:  |             Tino I Iva | 754 | 394 | 360
+     281:  |             Vaiafai | 438 | 219 | 219
+     282:  |             Vaisaulu | 147 | 77 | 70
+     283:  |             Lalomalava | 304 | 159 | 145
+     284:  |             Safua | 309 | 149 | 160
+     285:  |         Faasaleleaga II | 2910 | 1537 | 1373
+     286:  |             Sapapalii | 908 | 492 | 416
+     287:  |             Vaimaga | 385 | 214 | 171
+     288:  |             Eveeve | 132 | 72 | 60
+     289:  |             Fusi | 200 | 92 | 108
+     290:  |             Fuifatu | 52 | 27 | 25
+     291:  |             Fatausi | 205 | 106 | 99
+     292:  |             Fogapoa | 302 | 146 | 156
+     293:  |             Tuasivi | 193 | 102 | 91
+     294:  |             Tapueleele | 297 | 143 | 154
+     295:  |             Vaiola | 153 | 77 | 76
+     296:  |             Vaiaata | 83 | 66 | 17
+     297:  |         Faaleleaga III | 2787 | 1450 | 1337
+     298:  |             Siufaga | 575 | 296 | 279
+     299:  |             Sapini | 210 | 111 | 99
+     300:  |             Luua | 300 | 145 | 155
+     301:  |             Malae | 219 | 112 | 107
+     302:  |             Salimu | 260 | 124 | 136
+     303:  |             Saasaai | 529 | 286 | 243
+     304:  |             Saipipi | 694 | 376 | 318
+     305:  |         Faasaleleaga IV | 1541 | 804 | 737
+     306:  |             Lano | 702 | 370 | 332
+     307:  |             Asaga | 296 | 150 | 146
+     308:  |             Puapua | 543 | 284 | 259
+     309:  |         Gagaemauga I | 1717 | 905 | 812
+     310:  |             Patamea | 618 | 319 | 299
+     311:  |             Samalaeulu | 936 | 503 | 433
+     312:  |             Mauga | 163 | 83 | 80
+     313:  |         Gagaemauga II | 600 | 296 | 304
+     314:  |             Saleaula | 600 | 296 | 304
+     315:  |         Gagaemauga III | 1695 | 876 | 819
+     316:  |             Safai | 226 | 114 | 112
+     317:  |             Satoalepai | 263 | 125 | 138
+     318:  |             Fagamalo | 383 | 195 | 188
+     319:  |             Lelepa | 279 | 154 | 125
+     320:  |             Avao | 279 | 142 | 137
+     321:  |             Saleia | 221 | 121 | 100
+     322:  |             Vaipouli | 44 | 25 | 19
+     323:  |         Gagaifomauga I | 1387 | 751 | 636
+     324:  |             Manase | 123 | 65 | 58
+     325:  |             Safotu | 1264 | 686 | 578
+     326:  |         Gagaifomauga II | 2043 | 1067 | 976
+     327:  |             Paia | 280 | 153 | 127
+     328:  |             Samauga | 367 | 182 | 185
+     329:  |             Leagiagi | 203 | 110 | 93
+     330:  |             Lefagaoalii | 484 | 260 | 224
+     331:  |             3Matavai | 147 | 71 | 76
+     332:  |             Faletagaloa | 368 | 196 | 172
+     333:  |             Fatuvalu | 194 | 95 | 99
+     334:  |         Gagaifomauga III | 1448 | 762 | 686
+     335:  |             Fagaee | 200 | 109 | 91
+     336:  |             Sasina | 571 | 297 | 274
+     337:  |             Letui | 294 | 154 | 140
+     338:  |             Aopo | 383 | 202 | 181
+     339:  |         Vaisigano East | 2102 | 1060 | 1042
+     340:  |             Utuloa | 20 | 10 | 10
+     341:  |             Matavai (Asau) | 1111 | 535 | 576
+     342:  |             Auala | 506 | 273 | 233
+     343:  |             Vaisala | 465 | 242 | 223
+     344:  |         Vaisigano West | 1599 | 848 | 751
+     345:  |             Fagasa | 265 | 129 | 136
+     346:  |             Sataua | 827 | 446 | 381
+     347:  |             Papa Uta | 507 | 273 | 234
+     348:  |         Falealupo | 1092 | 553 | 539
+     349:  |             Falealupo | 545 | 270 | 275
+     350:  |             Vaotupua | 186 | 96 | 90
+     351:  |             Avata | 361 | 187 | 174
+     352:  |         Alataua West | 1750 | 944 | 806
+     353:  |             Tufutafoe | 434 | 231 | 203
+     354:  |             Neiafu Tai | 307 | 178 | 129
+     355:  |             Neiafu Uta | 597 | 306 | 291
+     356:  |             Falelima | 412 | 229 | 183
+     357:  |         Salega | 3323 | 1737 | 1586
+     358:  |             Fagafau | 237 | 123 | 114
+     359:  |             Samata I Tai | 417 | 229 | 188
+     360:  |             Samata I Uta | 640 | 312 | 328
+     361:  |             Fogatuli | 251 | 137 | 114
+     362:  |             Faiaai | 392 | 195 | 197
+     363:  |             Vaipua | 421 | 228 | 193
+     364:  |             Fogasavaii | 346 | 182 | 164
+     365:  |             Sagone | 619 | 331 | 288
+     366:  |         Palauli West | 3334 | 1686 | 1648
+     367:  |             Foailuga | 555 | 283 | 272
+     368:  |             Foailalo | 335 | 179 | 156
+     369:  |             Satuiatua | 291 | 139 | 152
+     370:  |             Salailua | 902 | 471 | 431
+     371:  |             Siutu | 449 | 223 | 226
+     372:  |             Taga | 802 | 391 | 411
+     373:  |         Palauli Le Falefa | 3567 | 1887 | 1680
+     374:  |             Gataivai | 1118 | 593 | 525
+     375:  |             Gautavai | 141 | 67 | 74
+     376:  |             Vaiala | 213 | 118 | 95
+     377:  |             Sili | 1068 | 567 | 501
+     378:  |             Puleia | 266 | 136 | 130
+     379:  |             Papa | 357 | 188 | 169
+     380:  |             Tafua | 404 | 218 | 186
+     381:  |         Satupaitea | 1938 | 993 | 945
+     382:  |             Satufia | 561 | 266 | 295
+     383:  |             Vaega | 570 | 302 | 268
+     384:  |             Pitonuu | 283 | 150 | 133
+     385:  |             Moasula | 524 | 275 | 249
+     386:  |         Palauli East | 2399 | 1217 | 1182
+     387:  |             Vailoa | 786 | 394 | 392
+     388:  |             Vaitoomuli | 684 | 364 | 320
+     389:  |             Faala | 929 | 459 | 470
+     391:  | Source: Samoa Bureau of Statistics, Popu
