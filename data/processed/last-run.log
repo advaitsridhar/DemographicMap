@@ -1,10 +1,65 @@
 
-## https://opendata.cbs.nl/ODataApi/odata/83288NED/RegioS?$format=json
-   HTTP 200, 4,551 bytes, application/json 
-   json: {"odata.metadata": "https://opendata.cbs.nl/ODataApi/OData/83288NED/$metadata#Cbs.OData.WebAPI.RegioS", "value": [{"Key": "NL01  ", "Title": "Nederland", "Description": "", "CategoryGroupID": null}, {"Key": "LD01  ", "Title": "Noord-Nederland (LD)", "Description": "Noord-Nederland: Groningen, Friesland, Drenthe\r\n\r\nLD = Landsdeel\r\n\r\nRegionale groepering van provincies. Nederland telt 4 landsdelen.", "CategoryGroupID": null}, {"Key": "LD02  ", "Title": "Oost-Nederland (LD)", "Description": "Oost-Nederland: Overijssel, Flevoland, Gelderland\r\n\r\nLD = Landsdeel\r\n\r\nRegionale groepering van provincies. Nederland telt 4 landsdelen.", "CategoryGroupID": null}, {"Key": "LD03  ", "Title": "West-Nederland (LD)", "Description": "West-Nederland: Utrecht, Noord-Holland, Zuid-Holland, Zeeland\r\n\r\nLD = Landsdeel\r\n\r\nRegionale groepering van provincies. Nederland telt 4 landsdelen.", "CategoryGroupID": null}, {"Key": "LD04  ", "Title": "Zuid-Nederland (LD)", "Description": "Zuid-Nederland: Noord-Brabant, Limburg\r\n\r\nLD = Landsdeel\r\n\r\nRegionale groepering van provincies. Nederland telt 4 landsdelen.", "CategoryGroupID": null}, {"Key": "PV20  ", "Title": "Groningen (PV)", "Description": "PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het Nederlands grondgebied. Sinds het\r\ninstellen van de provincie Flevoland per 1 januari 1986 telt Nederland 12\r\nprovincies.", "CategoryGroupID": null}, {"Key": "PV21  ", "Title": "Friesland (PV)", "Description": "PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het Nederlands grondgebied. Sinds het\r\ninstellen van de provincie Flevoland per 1 januari 1986 telt Nederland 12\r\nprovincies.", "CategoryGroupID": null}, {"Key": "PV22  ", "Title": "Drenthe (PV)", "Description": "PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het Nederlands grondgebied. Sinds het\r\ninstellen van de provincie Flevoland per 1 januari 1986 telt Nederland 12\r\nprovincies.", "CategoryGroupID": null}, {"Key": "PV23  ", "Title": "Overijssel (PV)", "Description": "PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het Nederlands grondgebied. Sinds het\r\ninstellen van de provincie Flevoland per 1 januari 1986 telt Nederland 12\r\nprovincies.", "CategoryGroupID": null}, {"Key": "PV24  ", "Title": "Flevoland (PV)", "Description": "PV = Provincie\r\n\r\nBestuurlijke onderverdeling van het Nederlands grondgebied. Sinds het\r\ninstellen van de provincie Flevoland per 1 januari 1986 telt Nederland 12\r\nprovincies.", "Categor
-
-## https://www.cbs.nl/nl-nl/maatwerk/2021/30/kerkelijke-gezindte-noord-brabant-2016-2019
-   HTTP 200, 50,488 bytes, text/html; charset=utf-8 
-   link: 'Kerkelijke gezindte, Noord-Brabant, 2016-2019' -> https://www.cbs.nl/-/media/_excel/2021/30/religie-brabant-2016-2019.xlsx
-   (92 links in all)
-   text: Kerkelijke gezindte, Noord-Brabant, 2016-2019 | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine voor samenwerkingspartners Open data Aanvullend statistisch onderzoek Arbeid en inkomen Arbeid en sociale zekerheid Inkomen en bestedingen Economie Bedrijven Bouwen en wonen Financiële en zakelijke diensten Handel en horeca Industrie en energie Internationale handel Landbouw Macro-economie Overheid en politiek Prijzen Maatschappij Bevolking Gezondheid en welzijn Natuur en milieu Onderwijs Veiligheid en recht Verkeer en vervoer Vrije tijd en cultuur Regio Over ons Taal: English (EN) Home Home Kerkelijke gezindte, Noord-Brabant, 2016-2019 27-7-2021 00:00 Deze tabel bevat het percentage mensen van 15 jaar of ouder dat zich rekent tot een bepaalde kerkelijke gezindte, voor de provincie Noord-Brabant, over de periode 2016-2019. Percentage mensen in Noord-Brabant dat aangeeft zich te rekenen tot een bepaalde kerkelijke gezindte, te weten geen religie, Rooms-Katholiek, Protestants, Islam of een andere religie, voor de jaren 2016-2019. Downloads Tabel - Kerkelijke gezindte, Noord-Brabant, 2016-2019 Lees meer over religie Noord-Brabant kerkbezoek Deel deze pagina Deel deze pagina op LinkedIn Deel deze pagina op Facebook Mail deze pagina Afdrukken Uitgelicht Hernieuwbare energie in Nederland, 2025 Dierlijke mest en mineralen 2025 Podcast Traag &amp; Van Mulligen Peter Hein en Tanja zien cijfers nieuwsbrief CBS Datacursus voor journalisten Vacatures Jouw carri&#xE8;re bij het CBS Aanvullend statistisch onderzoek Overzicht publicaties CBS-video De schaduwzijden van economische groei Verwacht Nieuwbouwkoopwoningen - prijzen en aantallen 5-10-2026 06:30 Studieschuld studenten en oud-studenten 5-10-2026 06:30 Arbeidsproductiviteit 7-10-2026 06:30 Consumptie door huishoudens 8-10-2026 06:30 Recent nieuws Inflatie in september 3,4 procent bij snelle raming 2-10-2026 06:30 Cao-lonen in derde kwartaal 4,0 procent gestegen 1-10-2026 06:30 Omzet detailhandel groeit met 3,5 procent in augustus 1-10-2026 06:30 Onze diensten Cijfers/StatLine Bereken huurverhoging Open data Microdata Aanvullend statistisch onderzoek Regionale data Publicaties Methoden Blaise Voor deelnemers enqu&#xEA;tes Bedrijven Centrale overheid Decentrale overheden Personen Privacy Beloningen Over ons Contact Pers Dit zijn wij Onderzoek en innovatie Werken bij Leren met het C
+## https://www.cbs.nl/-/media/imported/documents/2015/20/religie-en-kerkbezoek-naar-gemeente-2010-2014.xls
+   HTTP 200, 112,640 bytes, application/vnd.ms-excel attachment; filename="Religie en kerkbezoek naar gemeente 2010-2014.xls"
+   3 sheets: Tabel | Toelichting | Blad3
+   -- sheet 'Tabel': 413 rows x 15 cols
+     r0: Kerkelijke gezindte en kerkbezoek in 403 gemeenten, 2010/2014 (18 jaar en ouder 1) |  |  | 
+     r1: - |  |  | 
+     r2:  |  |  | Maandelijks bezoek religieuze diensten
+     r3:  |  |  | 
+     r4:  |  |  | 
+     r5:  |  |  | %
+     r6: Provincie | Gemeente | Gemcode | 
+     r7: Groningen | Appingedam | 3.0 | 10.3
+     r8: Groningen | Bedum | 5.0 | 38.1
+     r9: Groningen | Bellingwedde | 7.0 | 7.7
+     r10: Groningen | De Marne | 1663.0 | 20.4
+     r11: Groningen | Delfzijl | 10.0 | 12.3
+     r12: Groningen | Eemsmond | 1651.0 | 25.4
+     r13: Groningen | Groningen | 14.0 | 11.1
+     r14: Groningen | Grootegast | 15.0 | 45.0
+     r15: Groningen | Haren | 17.0 | 18.4
+     r16: Groningen | Hoogezand-Sappemeer | 18.0 | 12.4
+     r17: Groningen | Leek | 22.0 | 18.4
+     r18: Groningen | Loppersum | 24.0 | 25.7
+     r19: Groningen | Marum | 25.0 | 14.3
+     r20: Groningen | Menterwolde | 1987.0 | 4.3
+     r21: Groningen | Oldambt | 1895.0 | 9.7
+     r22: Groningen | Pekela | 765.0 | 8.1
+     r23: Groningen | Slochteren | 40.0 | 18.6
+     r24: Groningen | Stadskanaal | 37.0 | 25.5
+     r25: Groningen | Ten Boer | 9.0 | 15.4
+     r26: Groningen | Veendam | 47.0 | 12.4
+     r27: Groningen | Vlagtwedde | 48.0 | 16.6
+     r28: Groningen | Winsum | 53.0 | 24.7
+     r29: Groningen | Zuidhorn | 56.0 | 43.3
+     r30: Friesland | Achtkarspelen | 59.0 | 37.2
+     r31: Friesland | Ameland | 60.0 | .
+     r32: Friesland | Dantumadiel | 1891.0 | 34.5
+     r33: Friesland | De Friese Meren | 1921.0 | 20.5
+     r34: Friesland | Dongeradeel | 58.0 | 35.8
+     r35: Friesland | Ferwerderadiel | 1722.0 | 37.2
+     r36: Friesland | Franekeradeel | 70.0 | 19.9
+     r37: Friesland | Harlingen | 72.0 | 15.8
+     r38: Friesland | Heerenveen | 74.0 | 11.8
+     r39: Friesland | het Bildt | 63.0 | 18.1
+     r40: Friesland | Kollumerland en Nieuwkruisland | 79.0 | 25.1
+     r41: Friesland | Leeuwarden | 80.0 | 12.2
+     r42: Friesland | Leeuwarderadeel | 81.0 | 14.6
+     r43: Friesland | Littenseradiel | 140.0 | 18.3
+     r44: Friesland | Menameradiel | 1908.0 | 17.9
+     r45: Friesland | Ooststellingwerf | 85.0 | 16.6
+     r46: Friesland | Opsterland | 86.0 | 17.4
+     r47: Friesland | Schiermonnikoog | 88.0 | .
+     r48: Friesland | Smallingerland | 90.0 | 24.6
+     r49: Friesland | Súdwest-Fryslân | 1900.0 | 20.3
+     r50: Friesland | Terschelling | 93.0 | .
+     r51: Friesland | Tytsjerksteradiel | 737.0 | 27.3
+     r52: Friesland | Vlieland | 96.0 | .
+     r53: Friesland | Weststellingwerf | 98.0 | 14.7
+     r54: Drenthe | Aa en Hunze | 1680.0 | 8.0
+     r55: Drenthe | Assen | 106.0 | 19.3
+     r56: Drenthe | Borger-Odoorn | 1681.0 | 14.3
+     r57: Drenthe | Coevorden | 109.0 | 14.4
+     r58: Drenthe | De Wolden | 1690.0 | 14.0
+     r59: Drenthe | Emmen | 114.0 | 14.9
