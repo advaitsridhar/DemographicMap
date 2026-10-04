@@ -1,7 +1,10 @@
-  read 25 districts from A1/A2/A3
-  every share agrees with the Department's own printed percentages (within 0.1pp)
-  national row matches the pinned 2024 figures: 21,781,800 people, Buddhist 69.8%, Sinhalese 74.1%
-  age table: 2,144,495 bytes from https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group
-  age table: 25 districts; each adds up to A1's population and the districts make the nation group by group
-  district: 25 records
-  wrote data/processed/srilanka_district.json (105 kB)
+sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
+  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  THA admin2: 926 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 0 refused by the checks; rows on no polygon (2): Bang Sai (1) (Phra Nakhon Si Ayutthaya): 0 polygons; Bang Sai (2) (Phra Nakhon Si Ayutthaya): 0 polygons; polygons with no row (2): Bang Sai, Bang Sai
+sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
+  LAO admin1: 8 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (10): Bolikhamxai (-): 0 polygons; Champasack (-): 0 polygons; Khammouan (-): 0 polygons; Louangnamtha (-): 0 polygons; Louangphabang (-): 0 polygons; Oudomxai (-): 0 polygons; Sekong (-): 0 polygons; Xaignabouly (-): 0 polygons; Xaisomboon (-): 0 polygons; Xiengkhouang (-): 0 polygons; polygons with no row (10): Bolikhamsai, Champasak, Khammouane, Luang Namtha, Luang Prabang, Oudomxay, Xaignabouli, Xaisomboun, Xekong, Xiangkhouang
+  LAO admin2: 145 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (3): Phonthong (Champasack): 0 polygons; Phonthong (Louangphabang): 0 polygons; Viengkham (Louangphabang): 0 polygons; polygons with no row (3): Phonthong, Phonthong, Viengkham
+sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
+  KHM admin1: 22 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (3): Banteay Meanchey (-): 0 polygons; Ratanak Kiri (-): 0 polygons; Tboung Khmum (-): 0 polygons; polygons with no row (3): Bantey Meanchey, Ratanakiri Province, Tbong Khmum
+  wrote data/processed/sea_cod_ps_age.json (2653 kB)
+  wrote sea_cod_ps_age.json: 1178 records
