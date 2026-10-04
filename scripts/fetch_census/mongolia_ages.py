@@ -276,6 +276,8 @@ def diagnose(years: int, labels_en: dict[str, str]) -> None:
     """For each of the latest years: every area whose two tables disagree,
     and each aimag's total against its soums' in each table."""
     base = API.format(lang="en")
+    # The year variable's codes are blank but for the latest year's in both
+    # tables, so "top" is the one selection that reaches more than one.
     top = {"filter": "top", "values": [str(years)]}
     sex = http_json(f"{base}/{SEX_TABLE}", {"query": [
         {"code": SEX_VAR, "selection": {"filter": "item", "values": [TOTAL]}},

@@ -32,6 +32,11 @@ Subcommands:
         Taiwan's household-register open data API
         (www.ris.gov.tw/rs-opendata/api/v1/datastore/DATASET/PERIOD): each
         dataset's answer for each period, its first record's keys and values.
+    nlsc LEVEL
+        Every drawn Taiwanese unit's label point (site/data/LEVEL/TWN.units.json)
+        put to the National Land Surveying and Mapping Center's point query
+        (api.nlsc.gov.tw/other/TownVillagePointQuery1/LON/LAT), one line each:
+        shape id, the point, and the county and township the NLSC places it in.
 """
 
 from __future__ import annotations
@@ -237,10 +242,31 @@ def cmd_ris(args: argparse.Namespace) -> None:
                 print("    " + json.dumps(rec, ensure_ascii=False)[:args.bytes])
 
 
+NLSC = "https://api.nlsc.gov.tw/other/TownVillagePointQuery1/{lon}/{lat}"
+
+
+def cmd_nlsc(args: argparse.Namespace) -> None:
+    import time
+    from pathlib import Path
+    site = Path(__file__).resolve().parents[2] / "site" / "data" / args.target / "TWN.units.json"
+    units = json.loads(site.read_text(encoding="utf-8"))
+    print(f"  {len(units)} units in {site.name}")
+    for unit in units:
+        lon, lat = unit["point"]
+        url = NLSC.format(lon=f"{lon:.6f}", lat=f"{lat:.6f}")
+        try:
+            blob = http_get(url, binary=True, cache=False, retries=2, timeout=60)
+            text = plain(decode(blob, "utf-8"))
+        except Exception as exc:  # noqa: BLE001
+            text = f"failed {exc!r}"
+        print(f"  {unit['id']}|{lon:.6f}|{lat:.6f}|{unit['name']}|{text}")
+        time.sleep(0.2)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["page", "form", "post", "pxweb", "ris"])
+    ap.add_argument("cmd", choices=["page", "form", "post", "pxweb", "ris", "nlsc"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--encoding")
     ap.add_argument("--wayback")
@@ -261,7 +287,7 @@ def main() -> int:
         args.target = target
         try:
             {"page": cmd_page, "form": cmd_form, "post": cmd_post, "pxweb": cmd_pxweb,
-             "ris": cmd_ris}[args.cmd](args)
+             "ris": cmd_ris, "nlsc": cmd_nlsc}[args.cmd](args)
         except urllib.error.HTTPError as exc:
             print(f"  HTTP {exc.code} {exc.reason}: "
                   + " ".join(exc.read()[:300].decode("utf-8", "replace").split()))
