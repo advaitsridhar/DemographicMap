@@ -89,6 +89,14 @@ TOTAL = "0"
 # the one the boundary file draws them in: code -> (the office's English
 # name for the soum, the drawn aimag). The name is checked, so a code the
 # office reuses for another soum is a refusal rather than a wrong polygon.
+# A soum the office spells, in both its trees, otherwise than its own census
+# books and the boundary file do: code -> (the office's Cyrillic, the
+# soum's name). Used only when the office's spelling is exactly this, so a
+# corrected table binds by its own name.
+SPELLED: dict[str, tuple[str, str]] = {
+    "52310": ("Баян-Адарга", "Баян-Адрага"),     # Khentii's Bayan-Adraga
+}
+
 MOVED: dict[str, tuple[str, str]] = {
     "36134": ("Selenge", "Bulgan"),
     "36140": ("Khangal", "Bulgan"),
@@ -255,6 +263,8 @@ def bind(aimags: dict[str, str], soums: dict[str, str], admin1: list[dict[str, A
             parent = by_name[MOVED[code][1]]["id"]
         else:
             parent = aimag_units[code[:3]]["id"]
+        if code in SPELLED and SPELLED[code][0] == name:
+            name = SPELLED[code][1]
         unit = drawn_soums[parent].get(soum_key(name))
         if unit is None and english_names and code in english_names:
             # The Cyrillic tree misspells two soums by a transposed letter

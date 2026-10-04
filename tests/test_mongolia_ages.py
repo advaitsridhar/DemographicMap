@@ -139,6 +139,9 @@ class Build(unittest.TestCase):
         records = ma.build(sex_payload(by_area), age_payload(by_area), EN, mn, admin1, admin2)
         self.assertIn("S2", {r["shape_id"] for r in records})
 
+    def test_a_declared_spelling(self):
+        self.assertEqual(ma.SPELLED["52310"][1], "Баян-Адрага")
+
     def test_district(self):
         self.assertIn("this district", self.records["S6"]["median_age_note"])
         self.assertEqual(self.records["A-hov"]["level"], "admin1")
