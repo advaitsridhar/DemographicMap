@@ -1,12 +1,2 @@
-philippines_age: Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)
-  fetched 2020 Census Total Popn_Single Age_MaleFemale_Admin4.xlsx (48.7 MB)
-  42,041 barangays in 1,655 cities and municipalities of 87 provinces, every one making its own totals
-  the barangays make 109,033,245 (-2,098 on the proclaimed 109,035,343); national median 25.3 against the PSA's 25.3; top class 80+
-  CITY OF COTABATO (325,079) taken out of MAGUINDANAO for the polygon Cotabato City
-  84 polygons with a count; polygons without: ['Cotabato', 'Maguindanao']; census provinces written nowhere: COTABATO (NORTH COTABATO) (its polygon 'Cotabato' is left out: the boundary file's polygon covers some 5,900 km2 of the province's 9,008; the rest lies inside its 'Maguindanao'); INTERIM PROVINCE (the boundary file draws no polygon for it); MAGUINDANAO (its polygon 'Maguindanao' is left out: the boundary file's polygon takes in Sultan Kudarat, which it does not draw, and more (9,144 km2 against Maguindanao's ~4,900)); SULTAN KUDARAT (the boundary file draws no polygon for it)
-  ARMM: not written; its drawn provinces ['Maguindanao'] have no count
-  Soccsksargen: not written; its drawn provinces ['Cotabato'] have no count
-  admin1: 15 units; median 22.7-27.5; sex ratio 99.9-105.8
-  admin2: 84 units; median 18.4-29.9; sex ratio 97.9-109.8
-  wrote data/processed/philippines_age.json (251 kB)
-  wrote philippines_age.json: 99 records
+cdx amar.org.ir/Portals/0/census/1390/*: 1 captures, 1 matching ''
+      1  /portals/0/census/1390/docs/1390_census_def.pdf
