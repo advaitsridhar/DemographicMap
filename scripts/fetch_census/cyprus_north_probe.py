@@ -306,7 +306,52 @@ def p_wikidata(a: argparse.Namespace) -> None:
     log(f"== Wikidata: {len(rows)} items")
 
 
+OVERPASS = "https://overpass-api.de/api/interpreter"
+OSM_PLACES = """[out:json][timeout:180];
+node["place"](34.95,32.5,35.75,34.65);
+out body;"""
+OSM_ADMIN = """[out:json][timeout:180];
+relation["boundary"="administrative"]["admin_level"~"^(6|7|8|9|10)$"](34.95,32.5,35.75,34.65);
+out tags;"""
+
+
+def overpass(query: str) -> list[dict[str, Any]]:
+    url = OVERPASS + "?" + urllib.parse.urlencode({"data": query})
+    status, ctype, body = fetch(url, timeout=300)
+    log(f"== Overpass HTTP {status} {len(body):,} bytes")
+    if status != 200:
+        log(body[:300].decode("utf-8", "replace"))
+        return []
+    return json.loads(body).get("elements", [])
+
+
+def p_osm_places(a: argparse.Namespace) -> None:
+    """OpenStreetMap's place nodes in the north half of the island, with their
+    Turkish, Greek and other names: binding evidence only. One line each:
+    OSM, node id, lat, lon, place, name, name:tr, name:el, name:en, alt/old names."""
+    for el in overpass(OSM_PLACES):
+        t = el.get("tags", {})
+        alts = "|".join(v for k, v in sorted(t.items())
+                        if k in ("alt_name", "old_name", "alt_name:tr", "old_name:tr", "alt_name:el",
+                                 "old_name:el", "official_name", "name:tr-CY", "short_name"))
+        log("\t".join(["OSM", str(el["id"]), str(el.get("lat")), str(el.get("lon")),
+                       t.get("place", ""), t.get("name", ""), t.get("name:tr", ""),
+                       t.get("name:el", ""), t.get("name:en", ""), alts]))
+
+
+def p_osm_admin(a: argparse.Namespace) -> None:
+    """OpenStreetMap's administrative boundary relations on the island (levels
+    6-10): which of the north's districts, municipalities and quarters it
+    draws, before any geometry is asked for."""
+    for el in overpass(OSM_ADMIN):
+        t = el.get("tags", {})
+        log("\t".join(["ADM", str(el["id"]), t.get("admin_level", ""), t.get("name", ""),
+                       t.get("name:tr", ""), t.get("name:el", ""), t.get("name:en", ""),
+                       t.get("ref", ""), t.get("is_in", "")]))
+
+
 PROBES: dict[str, Callable[[argparse.Namespace], None]] = {
+    "osm_places": p_osm_places, "osm_admin": p_osm_admin,
     "cdx_devplan": p_cdx_devplan, "cdx_istatistik": p_cdx_istatistik,
     "cdx_istatistik_files": p_cdx_istatistik_files, "home": p_home, "links": p_links,
     "head": p_head, "pdf": p_pdf, "xls": p_xls, "geonames": p_geonames, "wikidata": p_wikidata,
