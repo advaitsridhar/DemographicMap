@@ -95,9 +95,14 @@ AGE_GROUPS: tuple[tuple[int, int | None, int, int], ...] = (
     (65, None, 3145, 3159),
 )
 AGE_PAGE = "https://siat.stat.uz/data/{indicator}/?lang=en"
-# The population table is published in thousands to one decimal: a unit's
-# age groups may differ from it by the rounding of that figure and no more.
+# The population table is published in thousands to one decimal, and the age
+# tables were revised separately (June 2026, against April for the
+# population): measured on the run of 4 October 2026, Kashkadarya's groups
+# came to 3,729,568 against a population of 3,717,000, 0.34% apart. A unit
+# whose groups are further than DRIFT from its population is not the same
+# unit, and stops the run; anything between is logged and said in the note.
 ROUNDING = 60
+DRIFT = 0.02
 
 # The agency's region names to the map's first level.
 REGION = {
@@ -239,9 +244,16 @@ def age_fields(profile: dict[str, list[tuple[int, int | None, float]]], year: st
     women = sum(n for _, _, n in profile["women"])
     if not men or not women:
         raise SystemExit(f"uzbekistan_siat: {label} has no men or no women in {year}")
-    if population is not None and abs(men + women - population) > max(ROUNDING, 0.003 * population):
+    drift = ""
+    if population is not None and abs(men + women - population) > max(ROUNDING, DRIFT * population):
         raise SystemExit(f"uzbekistan_siat: {label}'s age groups add up to {men + women:,.0f} "
                          f"against its population of {population:,.0f} in {year}")
+    if population is not None and abs(men + women - population) > ROUNDING:
+        drift = (f" The age tables, revised apart from the population table, total "
+                 f"{men + women:,.0f} here against its {population:,.0f} "
+                 f"({100 * (men + women - population) / population:+.2f}%).")
+        log(f"    {label}: age groups {men + women:,.0f} against population "
+            f"{population:,.0f} ({100 * (men + women - population) / population:+.2f}%)")
     groups = [(lo, hi, m + w) for (lo, hi, m), (_, _, w) in zip(profile["men"], profile["women"])]
     median = grouped_median(groups)
     if median is None:
@@ -256,7 +268,7 @@ def age_fields(profile: dict[str, list[tuple[int, int | None, float]]], year: st
             f"Interpolated within the agency's {band} age group, which holds the middle "
             f"person, from the permanent population in fourteen age groups (0-2, 3-5, 6-7, "
             f"8-15, 16-17, 18-19, 20-24 ... 35-39, 40-49, 50-59, 60-64, 65+), the finest "
-            f"the agency publishes below the country. {men + women:,.0f} people."),
+            f"the agency publishes below the country. {men + women:,.0f} people.{drift}"),
         "sex_ratio": measure(round(100 * men / women, 1), unit="males_per_100_females",
                              year=int(year), source=source),
         "sex_ratio_note": f"{men:,.0f} men and {women:,.0f} women, permanent population.",
