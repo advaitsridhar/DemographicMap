@@ -200,6 +200,56 @@
     "population_note": "The 2019 census: the 2019 census's count of An Khê (town), Gia Lai (Table 1)."
   },
   {
+    "id": "VNM-D-haiphong-anlao",
+    "level": "admin2",
+    "name": "An Lao",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 146712,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 102.5,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B65658789050233",
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of An Lão (district), Hải Phòng (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of An Lão (district), Hải Phòng (Table 1)."
+  },
+  {
     "id": "VNM-D-binhdinh-anlao",
     "level": "admin2",
     "name": "An Lao",
@@ -3361,7 +3411,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 85013,
+      "value": 176463,
       "year": 2019,
       "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
     },
@@ -3369,7 +3419,7 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 110.0,
+      "value": 105.6,
       "unit": "males_per_100_females",
       "year": 2019,
       "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
@@ -3395,9 +3445,11 @@
     "country": "VNM",
     "match_by": "shape_id",
     "shape_id": "81297802B78542366840504",
-    "aliases": [],
-    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Bù Gia Mập (district), Bình Phước (Table 1).",
-    "population_note": "The 2019 census: the 2019 census's count of Bù Gia Mập (district), Bình Phước (Table 1)."
+    "aliases": [
+      "Phú Riềng"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Bù Gia Mập (district) and Phú Riềng (district), Bình Phước -- one polygon, drawn before the census divided it (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Bù Gia Mập (district) and Phú Riềng (district), Bình Phước -- one polygon, drawn before the census divided it (Table 1)."
   },
   {
     "id": "VNM-D-daklak-buondon",
@@ -5050,6 +5102,56 @@
     "population_note": "The 2019 census: the 2019 census's count of Châu Phú (district), An Giang (Table 1)."
   },
   {
+    "id": "VNM-D-haugiang-chauthanh",
+    "level": "admin2",
+    "name": "Chau Thanh",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 88079,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 101.9,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B83209776142835",
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Châu Thành (district), Hậu Giang (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Châu Thành (district), Hậu Giang (Table 1)."
+  },
+  {
     "id": "VNM-D-tayninh-chauthanh",
     "level": "admin2",
     "name": "Chau Thanh",
@@ -6398,6 +6500,56 @@
     "aliases": [],
     "sex_ratio_note": "Males per 100 females in the 2019 census's count of Con Cuông (district), Nghệ An (Table 1).",
     "population_note": "The 2019 census: the 2019 census's count of Con Cuông (district), Nghệ An (Table 1)."
+  },
+  {
+    "id": "VNM-D-bariavungtau-condao",
+    "level": "admin2",
+    "name": "Con Dao",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8827,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 107.7,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B83873736556753",
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Côn Đảo (district), Bà Rịa–Vũng Tàu (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Côn Đảo (district), Bà Rịa–Vũng Tàu (Table 1)."
   },
   {
     "id": "VNM-D-hochiminh-cuchi",
@@ -9848,6 +10000,56 @@
     "aliases": [],
     "sex_ratio_note": "Males per 100 females in the 2019 census's count of Duy Xuyên (district), Quảng Nam (Table 1).",
     "population_note": "The 2019 census: the 2019 census's count of Duy Xuyên (district), Quảng Nam (Table 1)."
+  },
+  {
+    "id": "VNM-D-travinh-duyenhai",
+    "level": "admin2",
+    "name": "Duyen Hai",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 126654,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 101.8,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B81116648730753",
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Duyên Hải (district) and Duyên Hải (town), Trà Vinh -- one polygon, drawn before the census divided it (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Duyên Hải (district) and Duyên Hải (town), Trà Vinh -- one polygon, drawn before the census divided it (Table 1)."
   },
   {
     "id": "VNM-D-daklak-eahleo",
@@ -13600,6 +13802,162 @@
     "population_note": "The 2019 census: the 2019 census's count of Hữu Lũng (district), Lạng Sơn (Table 1)."
   },
   {
+    "id": "VNM-D-tiengiang-cailay",
+    "level": "admin2",
+    "name": "Huyen Cai Lay",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 193328,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 99.1,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B21182108853425",
+    "aliases": [
+      "Cai Lậy"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Cai Lậy (district), Tiền Giang (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Cai Lậy (district), Tiền Giang (Table 1)."
+  },
+  {
+    "id": "VNM-D-dongthap-caolanh",
+    "level": "admin2",
+    "name": "Huyen Cao Lanh",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 197614,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 101.0,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B29684412204466",
+    "aliases": [
+      "Cao Lãnh"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Cao Lãnh (district), Đồng Tháp (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Cao Lãnh (district), Đồng Tháp (Table 1)."
+  },
+  {
+    "id": "VNM-D-dongthap-hongngu",
+    "level": "admin2",
+    "name": "Huyen Hong Ngu",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 120571,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 99.2,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B50587214410487",
+    "aliases": [
+      "Hồng Ngự"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Hồng Ngự (district), Đồng Tháp (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Hồng Ngự (district), Đồng Tháp (Table 1)."
+  },
+  {
     "id": "VNM-D-gialai-iagrai",
     "level": "admin2",
     "name": "Ia Grai",
@@ -15098,6 +15456,56 @@
     "aliases": [],
     "sex_ratio_note": "Males per 100 females in the 2019 census's count of Krông Pắc (district), Đắk Lắk (Table 1).",
     "population_note": "The 2019 census: the 2019 census's count of Krông Pắc (district), Đắk Lắk (Table 1)."
+  },
+  {
+    "id": "VNM-D-hatinh-kyanh",
+    "level": "admin2",
+    "name": "Ky Anh",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 204617,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 104.7,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B12468750690576",
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Kỳ Anh (district) and Kỳ Anh (town), Hà Tĩnh -- one polygon, drawn before the census divided it (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Kỳ Anh (district) and Kỳ Anh (town), Hà Tĩnh -- one polygon, drawn before the census divided it (Table 1)."
   },
   {
     "id": "VNM-D-hoabinh-kyson",
@@ -17248,6 +17656,58 @@
     "aliases": [],
     "sex_ratio_note": "Males per 100 females in the 2019 census's count of Mang Yang (district), Gia Lai (Table 1).",
     "population_note": "The 2019 census: the 2019 census's count of Mang Yang (district), Gia Lai (Table 1)."
+  },
+  {
+    "id": "VNM-D-daklak-mdrak",
+    "level": "admin2",
+    "name": "Mdrak District",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 72153,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 102.1,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B27744921596224",
+    "aliases": [
+      "M'Đrắk"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of M'Đrắk (district), Đắk Lắk (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of M'Đrắk (district), Đắk Lắk (Table 1)."
   },
   {
     "id": "VNM-D-hanoi-melinh",
@@ -21800,6 +22260,58 @@
     "population_note": "The 2019 census: the 2019 census's count of Phú Quốc (district), Kiên Giang (Table 1)."
   },
   {
+    "id": "VNM-D-binhthuan-phuqui",
+    "level": "admin2",
+    "name": "Phu Quy",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 26918,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 107.3,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B90799057915407",
+    "aliases": [
+      "Phú Quí"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Phú Quí (district), Bình Thuận (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Phú Quí (district), Bình Thuận (Table 1)."
+  },
+  {
     "id": "VNM-D-angiang-phutan",
     "level": "admin2",
     "name": "Phu Tan",
@@ -24411,7 +24923,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 49914,
+      "value": 60124,
       "year": 2019,
       "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
     },
@@ -24419,7 +24931,7 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "value": 101.9,
+      "value": 106.8,
       "unit": "males_per_100_females",
       "year": 2019,
       "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
@@ -24445,9 +24957,11 @@
     "country": "VNM",
     "match_by": "shape_id",
     "shape_id": "81297802B78907971348627",
-    "aliases": [],
-    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Sa Thầy (district), Kon Tum (Table 1).",
-    "population_note": "The 2019 census: the 2019 census's count of Sa Thầy (district), Kon Tum (Table 1)."
+    "aliases": [
+      "Ia H' Drai"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Sa Thầy (district) and Ia H' Drai (district), Kon Tum -- one polygon, drawn before the census divided it (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Sa Thầy (district) and Ia H' Drai (district), Kon Tum -- one polygon, drawn before the census divided it (Table 1)."
   },
   {
     "id": "VNM-D-thanhhoa-samson",
@@ -24948,6 +25462,56 @@
     "aliases": [],
     "sex_ratio_note": "Males per 100 females in the 2019 census's count of Sơn La (city), Sơn La (Table 1).",
     "population_note": "The 2019 census: the 2019 census's count of Sơn La (city), Sơn La (Table 1)."
+  },
+  {
+    "id": "VNM-D-quangngai-sontay",
+    "level": "admin2",
+    "name": "Son Tay",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 21174,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 104.6,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B56181672233009",
+    "aliases": [],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Sơn Tây (district), Quảng Ngãi (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Sơn Tây (district), Quảng Ngãi (Table 1)."
   },
   {
     "id": "VNM-D-hanoi-sontay",
@@ -26548,6 +27112,58 @@
     "aliases": [],
     "sex_ratio_note": "Males per 100 females in the 2019 census's count of Tân Sơn (district), Phú Thọ (Table 1).",
     "population_note": "The 2019 census: the 2019 census's count of Tân Sơn (district), Phú Thọ (Table 1)."
+  },
+  {
+    "id": "VNM-D-bariavungtau-phumy",
+    "level": "admin2",
+    "name": "Tan Thanh",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 179786,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 107.1,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B41485876419304",
+    "aliases": [
+      "Phú Mỹ"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Phú Mỹ (town), Bà Rịa–Vũng Tàu (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Phú Mỹ (town), Bà Rịa–Vũng Tàu (Table 1)."
   },
   {
     "id": "VNM-D-longan-tanthanh",
@@ -28498,6 +29114,162 @@
     "aliases": [],
     "sex_ratio_note": "Males per 100 females in the 2019 census's count of Tháp Mười (district), Đồng Tháp (Table 1).",
     "population_note": "The 2019 census: the 2019 census's count of Tháp Mười (district), Đồng Tháp (Table 1)."
+  },
+  {
+    "id": "VNM-D-tiengiang-cailay",
+    "level": "admin2",
+    "name": "Thi xa Cai Lay",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 125615,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 95.6,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B17596796998347",
+    "aliases": [
+      "Cai Lậy"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Cai Lậy (town), Tiền Giang (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Cai Lậy (town), Tiền Giang (Table 1)."
+  },
+  {
+    "id": "VNM-D-dongthap-caolanh",
+    "level": "admin2",
+    "name": "Thi xa Cao Lanh",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 164835,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 96.2,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B60372874404879",
+    "aliases": [
+      "Cao Lãnh"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Cao Lãnh (city), Đồng Tháp (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Cao Lãnh (city), Đồng Tháp (Table 1)."
+  },
+  {
+    "id": "VNM-D-dongthap-hongngu",
+    "level": "admin2",
+    "name": "Thi xa Hong Ngu",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 76462,
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 99.5,
+      "unit": "males_per_100_females",
+      "year": 2019,
+      "source": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019",
+        "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+        "year": 2019,
+        "license": "Official statistics of the General Statistics Office of Viet Nam (the National Statistics Office since 2025), Nhà xuất bản Thống kê 2020, cited as published"
+      }
+    ],
+    "country": "VNM",
+    "match_by": "shape_id",
+    "shape_id": "81297802B45020933584847",
+    "aliases": [
+      "Hồng Ngự"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2019 census's count of Hồng Ngự (town), Đồng Tháp (Table 1).",
+    "population_note": "The 2019 census: the 2019 census's count of Hồng Ngự (town), Đồng Tháp (Table 1)."
   },
   {
     "id": "VNM-D-thanhhoa-thieuhoa",
