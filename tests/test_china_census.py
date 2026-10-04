@@ -160,6 +160,47 @@ class Build(unittest.TestCase):
         self.assertEqual(mo["sex_ratio"]["value"], round(100 * 320285 / 361785, 1))
 
 
+def admin2():
+    """Three county polygons, an island drawn under the country, and the SARs."""
+    return [{"id": "C-1", "name": "Panyushi", "parent": "S-Guangdong"},
+            {"id": "C-2", "name": "Akesaihashakezuzizhixian", "parent": "S-Gansu Province"},
+            {"id": "C-3", "name": "Changhaixian", "parent": "CHN"},
+            {"id": "C-HK", "name": "Xianggang", "parent": "S-HK"},
+            {"id": "C-MO", "name": "C-MO", "parent": "S-MO"}]
+
+
+class Counties(unittest.TestCase):
+    def setUp(self):
+        provinces = cc.build(tables(), admin1(), HK_ROWS, MO_TEXT)
+        self.records = {r["shape_id"]: r for r in cc.county_records(admin1(), admin2(), provinces)}
+
+    def test_every_polygon(self):
+        self.assertEqual(sorted(self.records), ["C-1", "C-2", "C-3", "C-HK", "C-MO"])
+        self.assertTrue(all(r["level"] == "admin2" and r["match_by"] == "shape_id"
+                            for r in self.records.values()))
+
+    def test_a_mainland_county_carries_its_reasons(self):
+        r = self.records["C-1"]
+        self.assertEqual(r["language"]["status"], "not_collected")
+        for field in ("population", "median_age", "sex_ratio", "ethnicity"):
+            self.assertEqual(r[field], {"status": "not_available", "note": cc.COUNTY_NOTE})
+        self.assertEqual(r["parent"], "CHN-Guangdong")
+        self.assertEqual(self.records["C-3"]["parent"], "CHN")
+
+    def test_the_sars_take_their_own_figures(self):
+        hk = self.records["C-HK"]
+        self.assertEqual(hk["median_age"]["value"], 46.3)
+        self.assertEqual(hk["sex_ratio"]["value"], 83.9)
+        self.assertEqual(hk["language"], {"status": "not_available"})
+        self.assertEqual(self.records["C-MO"]["median_age"]["value"], 38.4)
+
+    def test_a_sar_drawn_in_two_is_refused(self):
+        provinces = cc.build(tables(), admin1(), HK_ROWS, MO_TEXT)
+        units = admin2() + [{"id": "C-HK2", "name": "Lantau", "parent": "S-HK"}]
+        with self.assertRaises(SystemExit):
+            cc.county_records(admin1(), units, provinces)
+
+
 class Refusals(unittest.TestCase):
     def test_tables_must_agree(self):
         t = tables()

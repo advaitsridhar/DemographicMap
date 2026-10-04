@@ -38,6 +38,19 @@ short forms record 民族 (nationality) and no language, and none of the
 yearbook's volumes -- 概要, 民族, 年龄, 教育, ... -- carries a table of
 it. Every province's record says so. Religion is the China policy's.
 
+**The county polygons** (``china_census_county.json``). The yearbook's
+tables stop at the province, and the 2,370 second-level polygons the map
+draws follow a county division older than 2000 -- Guangdong's Panyu,
+Huadu, Nanhai and Shunde are drawn as the county-level cities they were
+before they became districts in 2000 and 2002 -- so no 2020 county table is
+laid on them here. Every mainland polygon gets its reasons instead:
+language is not collected (as above), and the population, median age, sex
+ratio and nationality, which the census did count by county, are a stated
+gap saying where the figures are and why they are not drawn. A population
+another file gives a polygon is not touched: a gap never displaces a
+figure. The two polygons that are the SARs themselves take their SAR's
+median age and sex ratio, the same figures as the first level.
+
 Usage:
     python -m scripts.fetch_census.china_census
 """
@@ -55,6 +68,7 @@ from .china_wiki import DIVISIONS, NATIONALITIES, RESIDUAL
 from .east_asia_common import drawn, grouped_median, hundred, sex_ratio, single_year_median
 
 OUT = "china_census_province.json"
+OUT_COUNTY = "china_census_county.json"
 YEAR = 2020
 BASE = "https://www.stats.gov.cn/sj/pcsj/rkpc/7rp/zk/html/{table}.xls"
 INDEX = "https://www.stats.gov.cn/sj/pcsj/rkpc/7rp/zk/indexch.htm"
@@ -76,6 +90,15 @@ LANGUAGE_NOTE = (
     "China's census asks no question about language: the 2020 census forms record "
     "nationality (民族) and nothing about the language a person speaks, and no volume of the "
     "census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it.")
+
+COUNTY_NOTE = (
+    "The 2020 census counted every county's people by age, sex and nationality (民族). The "
+    "National Bureau of Statistics' census yearbook (中国人口普查年鉴-2020) publishes its "
+    "tables by province, and the province carries them; the county figures, in provincial "
+    "census volumes, are not drawn here, because these county polygons follow a division "
+    "older than 2000 -- Guangdong's Panyu, Huadu, Nanhai and Shunde are drawn as the "
+    "county-level cities they were before becoming districts in 2000 and 2002 -- and a 2020 "
+    "county table cannot be laid on them without a crosswalk.")
 
 # Hong Kong and Macau: their own 2021 censuses.
 HK_URL = "https://www.census2021.gov.hk/doc/pub/21c-main-results.xlsx"
@@ -415,6 +438,46 @@ def build(tables: dict[str, list[list[Any]]], admin1: list[dict[str, Any]],
     return records
 
 
+def county_records(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+                   provinces: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """A record for every second-level polygon: the reasons for the mainland's,
+    and for the two polygons that are the SARs themselves, their SAR's median
+    age and sex ratio."""
+    names = {u["id"]: u["name"] for u in admin1}
+    sars = {r["shape_id"]: r for r in provinces if r["name"] in (HK_NAME, MO_NAME)}
+    out: list[dict[str, Any]] = []
+    seen: Counter = Counter()
+    for unit in admin2:
+        parent_shape = unit.get("parent")
+        if parent_shape in sars:
+            seen[parent_shape] += 1
+            sar = sars[parent_shape]
+            out.append(record(
+                f"CHN-{unit['id']}", unit["name"], level="admin2",
+                parent=f"CHN-{names[parent_shape]}", country="CHN",
+                match_by="shape_id", shape_id=unit["id"],
+                median_age=sar["median_age"], median_age_note=sar["median_age_note"],
+                sex_ratio=sar["sex_ratio"], sex_ratio_note=sar["sex_ratio_note"],
+                sources=sar["sources"]))
+            continue
+        parent = f"CHN-{names[parent_shape]}" if parent_shape in names else "CHN"
+        out.append(record(
+            f"CHN-{unit['id']}", unit["name"], level="admin2", parent=parent, country="CHN",
+            match_by="shape_id", shape_id=unit["id"],
+            population=gap("not_available", COUNTY_NOTE),
+            median_age=gap("not_available", COUNTY_NOTE),
+            sex_ratio=gap("not_available", COUNTY_NOTE),
+            ethnicity=gap("not_available", COUNTY_NOTE),
+            language=gap(NOT_COLLECTED, LANGUAGE_NOTE)))
+    if len(sars) != 2 or any(seen[s] != 1 for s in sars):
+        raise SystemExit(f"china_census: the SARs are drawn as {dict(seen)} second-level "
+                         "polygons, not one each; a SAR's figures cannot be given to a part "
+                         "of it")
+    log(f"  {len(out)} second-level polygons: {len(out) - 2} with their reasons, the two "
+        "SARs with their own median age and sex ratio")
+    return out
+
+
 def fetch_book(url: str) -> list[list[Any]]:
     import xlrd
     blob = http_get(url, binary=True, cache=False, retries=2, timeout=120)
@@ -445,8 +508,10 @@ def main() -> int:
     ap.parse_args()
     log(f"china_census: {YEARBOOK}")
     tables = {t: fetch_book(BASE.format(table=t)) for t in SOURCES}
-    records = build(tables, drawn("CHN", "admin1"), fetch_hk(), fetch_mo())
+    admin1 = drawn("CHN", "admin1")
+    records = build(tables, admin1, fetch_hk(), fetch_mo())
     write_json(PROCESSED / OUT, records)
+    write_json(PROCESSED / OUT_COUNTY, county_records(admin1, drawn("CHN", "admin2"), records))
     return 0
 
 
