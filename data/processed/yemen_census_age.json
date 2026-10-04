@@ -1,0 +1,151 @@
+[
+  {
+    "id": "YEM-PROJ-32",
+    "level": "admin1",
+    "name": "Socotra",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 16.2,
+      "unit": "years",
+      "year": 2017,
+      "source": "Central Statistical Organization (Yemen), 2016 Population Projections by Governorate & District, Sex & Age Disaggregated (2017 column), as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Central Statistical Organization (Yemen), 2016 Population Projections by Governorate & District, Sex & Age Disaggregated (2017 column), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY, published via HDX"
+      }
+    ],
+    "country": "YEM",
+    "match_by": "shape_id",
+    "shape_id": "18629408B57175931824869",
+    "codes": {
+      "cso": "32"
+    },
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the CSO's projection of this unit's population by five-year age group for 2017 -- a projection from the 2004 census, not a count, made before the war's displacement."
+  },
+  {
+    "id": "YEM-PROJ-3201",
+    "level": "admin2",
+    "name": "Hadibu",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 16.4,
+      "unit": "years",
+      "year": 2017,
+      "source": "Central Statistical Organization (Yemen), 2016 Population Projections by Governorate & District, Sex & Age Disaggregated (2017 column), as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Central Statistical Organization (Yemen), 2016 Population Projections by Governorate & District, Sex & Age Disaggregated (2017 column), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY, published via HDX"
+      }
+    ],
+    "country": "YEM",
+    "parent_name": "Socotra",
+    "match_by": "shape_id",
+    "shape_id": "15242507B399982580631",
+    "codes": {
+      "cso": "3201"
+    },
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the CSO's projection of this unit's population by five-year age group for 2017 -- a projection from the 2004 census, not a count, made before the war's displacement."
+  },
+  {
+    "id": "YEM-PROJ-3202",
+    "level": "admin2",
+    "name": "Qalansiyah wa Abd Al Kuri",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 15.6,
+      "unit": "years",
+      "year": 2017,
+      "source": "Central Statistical Organization (Yemen), 2016 Population Projections by Governorate & District, Sex & Age Disaggregated (2017 column), as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age",
+        "name": "Central Statistical Organization (Yemen), 2016 Population Projections by Governorate & District, Sex & Age Disaggregated (2017 column), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY, published via HDX"
+      }
+    ],
+    "country": "YEM",
+    "parent_name": "Socotra",
+    "match_by": "shape_id",
+    "shape_id": "15242507B10596271459975",
+    "codes": {
+      "cso": "3202"
+    },
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the CSO's projection of this unit's population by five-year age group for 2017 -- a projection from the 2004 census, not a count, made before the war's displacement."
+  }
+]

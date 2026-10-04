@@ -1,0 +1,169 @@
+[
+  {
+    "id": "YEM-CEN-32",
+    "level": "admin1",
+    "name": "Socotra",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44120.0,
+      "year": 2004,
+      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
+      "note": "The 2004 census count (16 December 2004). The sum of the 2 census districts the governorate is drawn with; the governorate was made after the census. Its nationality, published only for the census's row, is not written."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 113.3,
+      "unit": "males_per_100_females",
+      "year": 2004,
+      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
+        "year": 2004,
+        "license": "CC BY, published via HDX"
+      }
+    ],
+    "country": "YEM",
+    "match_by": "shape_id",
+    "shape_id": "18629408B57175931824869",
+    "codes": {
+      "cso": "32"
+    },
+    "aliases": [
+      "32"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2004 census: 23,437 men and 20,683 women."
+  },
+  {
+    "id": "YEM-CEN-3201",
+    "level": "admin2",
+    "name": "Hadibu",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 34011.0,
+      "year": 2004,
+      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
+      "note": "The 2004 census count (16 December 2004)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 111.3,
+      "unit": "males_per_100_females",
+      "year": 2004,
+      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
+        "year": 2004,
+        "license": "CC BY, published via HDX"
+      }
+    ],
+    "country": "YEM",
+    "parent_name": "Socotra",
+    "match_by": "shape_id",
+    "shape_id": "15242507B399982580631",
+    "codes": {
+      "cso": "3201"
+    },
+    "aliases": [
+      "Ḩadībū"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2004 census: 17,917 men and 16,094 women."
+  },
+  {
+    "id": "YEM-CEN-3202",
+    "level": "admin2",
+    "name": "Qalansiyah wa Abd Al Kuri",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10109.0,
+      "year": 2004,
+      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
+      "note": "The 2004 census count (16 December 2004)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 120.3,
+      "unit": "males_per_100_females",
+      "year": 2004,
+      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
+        "year": 2004,
+        "license": "CC BY, published via HDX"
+      }
+    ],
+    "country": "YEM",
+    "parent_name": "Socotra",
+    "match_by": "shape_id",
+    "shape_id": "15242507B10596271459975",
+    "codes": {
+      "cso": "3202"
+    },
+    "aliases": [
+      "Qulansīyah Wa ‘Abd Al Kūrī"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2004 census: 5,520 men and 4,589 women."
+  }
+]
