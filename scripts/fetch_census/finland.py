@@ -144,15 +144,20 @@ def item(entry: dict[str, Any], side: str) -> tuple[str, str]:
 
 
 def key_for(year: int) -> tuple[dict[str, str], dict[str, str]]:
-    """{municipality code: sub-region code} and {sub-region code: name} for one year."""
-    maps = request_json(KEY.format(y=year), pause=PAUSE)
-    muni, names = {}, {}
-    for entry in maps:
-        k, _ = item(entry, "source")
-        s, name = item(entry, "target")
-        muni[k] = s
-        names[s] = name
-    return muni, names
+    """{municipality code: sub-region code} and {sub-region code: name} for one year.
+
+    Since early October 2026 the classification service answers HTTP 500 to
+    KEY's parameters. Its bare maps list still answers, each map's address
+    ending in the two codes it joins (finland_religion.key_pairs), and the
+    names are the sub-region classification's own items."""
+    from .finland_religion import CLASS_API, item_names, key_pairs
+    muni = key_pairs(request_json(
+        f"{CLASS_API}/correspondenceTables/kunta_1_{year}0101%23seutukunta_1_{year}0101/maps",
+        pause=PAUSE))
+    names = item_names(request_json(
+        f"{CLASS_API}/classifications/seutukunta_1_{year}0101/classificationItems"
+        "?content=data&meta=max&lang=fi", pause=PAUSE))
+    return muni, {c: n for c, n in names.items() if c in set(muni.values())}
 
 
 def match(names: dict[str, str]) -> tuple[dict[str, str], list[str]]:

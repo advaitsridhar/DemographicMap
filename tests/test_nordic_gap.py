@@ -15,7 +15,6 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from scripts.fetch_census import (estonia, iceland, nordic_church as church,  # noqa: E402
                                   nordic_origin as origin, norway)
-from scripts.fetch_census.binding import fold  # noqa: E402
 
 
 def stat2(dims: list[tuple[str, list[str]]], values: list[float]) -> dict:
@@ -200,30 +199,9 @@ class SwedishChurch(unittest.TestCase):
                          {"Håbo": "0305", "Habo": "0643"})
 
 
-class FinnishChurch(unittest.TestCase):
-    def test_the_units_must_make_the_sheets_own_total(self):
-        rows = [("Talousyksiköiden jäsenmäärä 31.12.2020",),
-                ("Talousyksikkö", "Tunnus", "Hiippakunta", "Jäsenet"),
-                ("Akaa", "000123", "Tampere", 10000),
-                ("Tyska", "000999", "Borgå", 1000),
-                ("Talousyksiköt yhteensä", None, None, 11000)]
-        units, total = church.evl_units(rows)
-        self.assertEqual(units, {"Akaa": 10000, "Tyska": 1000})
-        self.assertEqual(total, 11000)
-        with self.assertRaises(SystemExit):
-            church.evl_units(rows[:-1] + [("Talousyksiköt yhteensä", None, None, 12000)])
-
-    def test_a_unit_is_placed_by_the_table_its_name_or_its_hyphenated_parts(self):
-        by_name = {fold(n): c for n, c in (("Loviisa", "434"), ("Lapinjärvi", "407"),
-                                           ("Brändö", "035"), ("Kumlinge", "295"),
-                                           ("Akaa", "020"))}
-        self.assertEqual(church.unit_municipalities(
-            "Loviisanseudun srky-Lovisanejdens ksamf", by_name), ("407", "434"))
-        self.assertEqual(church.unit_municipalities("Brändö-Kumlinge", by_name),
-                         ("035", "295"))
-        self.assertEqual(church.unit_municipalities("Akaa", by_name), ("020",))
-        with self.assertRaises(SystemExit):     # Inari and Utsjoki are not in this key
-            church.unit_municipalities("Pohjois-Lapin srky", by_name)
+# Finland's religion is read from the population register now
+# (finland_religion.py, tests/test_church.py), not from the Lutheran church's
+# economic units, so the church reader's Finnish helpers and their tests are gone.
 
 
 class SmallFixes(unittest.TestCase):

@@ -148,7 +148,20 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
         # named religions are out of it.
         "Other religions (not separately named)",
     ),
-    "No religion": ("No religion",),
+    "No religion": ("No religion",
+                    # Finland's population register: everyone in no registered
+                    # religious community (StatFin 11ra by area, 11rx for the
+                    # country), which Statistics Finland's own English calls no
+                    # religious affiliation and the Factbook's Finland "none".
+                    # Unlike Denmark's row under "Not stated" below, it is not
+                    # everyone outside one church: the members of every other
+                    # community are a row of their own. Norway's row of those
+                    # in no registered body, below, counts the same kind of
+                    # thing and stays where it was filed. A count of
+                    # membership, so some in it hold a faith and join no
+                    # registered body, as its notes say; kept as its own group
+                    # under no religion, not folded into it.
+                    "Not a member of any religious community"),
     "Not stated": ("Not stated", "Unaffiliated or not reported",
                    "Scheduled Castes",
                    # Chile's 2024 census prints "*" for a count too small to
@@ -749,6 +762,10 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # Romance language, and Catalonia's EULP pools every other pair of
         # languages as "other language combinations".
         "Basque and Spanish", "Other language combinations",
+        # And the CEO barometer's "altres llengües o combinacions" (catalonia_ceo),
+        # every first language but Catalan, Spanish, both, Aranese, Arabic and
+        # Romanian, alone or paired: no one language either.
+        "Other languages or combinations",
         "French and non-official language(s)",
         "English, French and non-official language(s)",
         "Multiple non-official languages", "None (eg too young to talk)",

@@ -9135,6 +9135,17 @@ class TheResidualOneLevelDown(unittest.TestCase):
         self.assertEqual(blank["language"]["inputs"], ["XXX-1", "d1", "d2"])
         self.assertIn("Derived by subtraction", blank["language"]["note"])
 
+    def test_a_field_with_a_stated_policy_is_not_derived(self):
+        # Sweden's religion: the län sums its parishes, and the one kommun
+        # left out because its row is another territory would get that row
+        # back by subtraction.
+        parent, known, blank = self.province_and_districts()
+        with mock.patch.object(be, "collection_gap", return_value={"status": "not_available"}):
+            filled, refused = be.residual_grandchild(
+                {"XXX": [parent]}, {"XXX": [*known, blank]})
+        self.assertEqual((filled, refused), ([], []))
+        self.assertEqual(blank["language"]["status"], common.NOT_AVAILABLE)
+
     def test_two_unread_districts_are_left_alone(self):
         # The parent fixes their *sum* and nothing about either one. Handing
         # each the parent's own composition would assert that every district

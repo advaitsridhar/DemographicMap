@@ -432,14 +432,35 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "ESP": {
         "ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
-        "religion": "Spain's census does not ask religion (CIS survey data exists instead).",
+        "religion": "Spain's census (INE) has not asked religion since the Constitution "
+                    "of 1978, which provides that no one may be obliged to declare it "
+                    "(art. 16.2). Surveys measure it, and the units they reach carry it: "
+                    "the CIS's regional pre-electoral surveys -- by province for "
+                    "Andalucía, Aragón, Castilla y León and Extremadura (2025-2026) and "
+                    "the Basque Country (2020), and for the comunidad as a whole for "
+                    "Galicia and the Basque Country (2024), the Community of Madrid "
+                    "(2021) and La Rioja (2019); the Catalan government's CEO barometer, "
+                    "for Catalonia and its provinces; and the European Social Survey, for "
+                    "the communities where it has 100 respondents. None reaches the rest: "
+                    "the CIS's regional surveys of Castilla-La Mancha and the Canaries "
+                    "(2015) and the Comunitat Valenciana (2015, 2019) did not ask it, and "
+                    "the tables of their 2023 successors went with its former website; it "
+                    "publishes its Galician surveys for the comunidad only; its 2019 "
+                    "macro-survey, published by comunidad, reached Ceuta and Melilla with "
+                    "60 respondents each, too few to use; and its monthly barometers are "
+                    "published by no region, their microdata only through a request form.",
         "language": "Spain's census (INE) does not ask language. Some regional "
                     "governments survey it in their own communities -- Eustat's census "
                     "for the Basque Country and its provinces, the IGE's survey for "
                     "Galicia and its provinces, Idescat's EULP survey for Catalonia (not "
-                    "published by province) -- and the units those reach carry it, as do "
+                    "published by province), the CEO barometer's first language for "
+                    "Catalonia's provinces -- and the units those reach carry it, as do "
                     "the communities where the European Social Survey has 100 "
-                    "respondents.",
+                    "respondents. The CIS's monthly barometer and its regional "
+                    "pre-electoral surveys of 2025-2026 ask no language question; of the "
+                    "2024 ones, the Basque Country's asks mother tongue and is published "
+                    "for the comunidad only, and Catalonia's tables are no longer on the "
+                    "CIS's site.",
     },
     "CHN": {
         "religion": "China's census does not ask religion; it records the 56 official "
@@ -672,7 +693,29 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity.",
             "language": "The Netherlands has had no questionnaire census since 1971 and no register records language."},
     "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity.",
-            "religion": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000.",
+            # No state register records religion, and SCB publishes none; the
+            # Church of Sweden's own membership count (nordic_church.py) gives
+            # all 21 län and every kommun but the fifteen this says why it
+            # cannot.
+            "religion": {
+                "status": NOT_AVAILABLE,
+                "note": "Sweden's census is compiled from registers, and no state register "
+                        "records religion; the state kept none after the Church of Sweden "
+                        "separated in 2000. The Church's own count of its members by kommun "
+                        "and län, made by Statistics Sweden for the Church (31 December "
+                        "2021, or 2019 where only that edition's row is the kommun's), gives "
+                        "every län and every kommun but fifteen. The table sums each "
+                        "kommun's parishes, and a parish that crosses a kommun boundary is "
+                        "counted whole under one kommun. "
+                        "Forshaga and Munkfors share one parish, Forshaga-Munkfors "
+                        "församling, in every edition since 2016; and in each of the 2019, "
+                        "2020 and 2021 editions the rows for Berg, Essunga, Gnosjö, Grästorp, "
+                        "Gullspång, Helsingborg, Härjedalen, Höör, Landskrona, Svenljunga, "
+                        "Tranemo, Töreboda and Vadstena count more or fewer people than "
+                        "Statistics Sweden finds in the kommun, beyond what the people "
+                        "registered without a property explain: each is another territory "
+                        "than its kommun.",
+            },
             "language": "Sweden's census is compiled from registers, and no register records mother tongue."},
     "NOR": {"ethnicity": "Norway records immigrant background, not ethnicity.",
             "language": "Norway's census is compiled from registers (wholly since 2011), and no "
@@ -723,18 +766,11 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "FIN": {
         "ethnicity": "Finland's census is register-based and records citizenship, country of birth and mother tongue, not ethnicity.",
-        # Recorded by the population register, published for the country.
-        "religion": {
-            "status": NOT_AVAILABLE,
-            "note": "Finland's population register records membership of a religious "
-                    "community for everyone, but Statistics Finland publishes it for the "
-                    "whole country only (table 11rx, by age and sex); no StatFin table, and "
-                    "none of the municipal key figures, gives it by region or municipality. "
-                    "The register keeper (DVV) publishes election statistics, citizens by "
-                    "municipality and lists of parishes, not membership counts. The "
-                    "Evangelical Lutheran Church publishes its own members by municipality, "
-                    "which is one church's count and not the register's.",
-        },
+        # No religion entry: Statistics Finland publishes the register's
+        # religious community by municipality, sub-region and region among its
+        # key figures on the population (StatFin 11ra: the Evangelical
+        # Lutheran Church, other religious groups, none), and
+        # finland_religion.py reads it for every unit the map draws.
     },
     "CHE": {
         "ethnicity": "Switzerland's census records nationality, not ethnicity; religion and language come from the structural survey.",

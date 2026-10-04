@@ -66,8 +66,13 @@ COLLECTION_POLICY: dict[str, dict[str, str]] = {
     "FR": {"ethnicity": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law).",
            "religion": "France does not collect religion in its census."},
     "DE": {"ethnicity": "Germany's census records citizenship and migration background, not ethnicity."},
-    "ES": {"ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
-           "religion": "Spain's census does not ask religion."},
+    # Spain's religion is left to common.NOT_COLLECTED_POLICY, which says what
+    # the CIS publishes and where: a noted not_collected here would stand in
+    # front of it on every province the CIS does not reach, because the build
+    # replaces only a bare not_available with the policy. The note is stored in
+    # eurostat_nuts2.json and eurostat_nuts3.json, so it goes only when both
+    # levels are re-run (--level nuts2, --level nuts3).
+    "ES": {"ethnicity": "Spain's census records nationality and birthplace, not ethnicity."},
     "IT": {"ethnicity": "Italy's census records citizenship, not ethnicity."},
     "NL": {"ethnicity": "The Netherlands records migration background, not ethnicity."},
     "SE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity."},
@@ -231,6 +236,35 @@ def by_level(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         kept.extend(rows)
         log(f"  {iso3}: {len(rows)} NUTS-3 regions kept at {level} -- {why}")
     return kept
+
+
+def level_from_outlines(placed: list[dict[str, Any]], records: list[dict[str, Any]],
+                        decided: dict[str, str]) -> dict[str, str]:
+    """The level of a country's leftover rows, from the rows its outlines placed.
+
+    The name test says nothing when a country's two levels share names:
+    Albania's municipalities are named after its counties' seats, so its
+    13 NUTS-3 names matched 12 counties and 12 municipalities alike and the
+    tie left Lezhe, the one county the outlines did not place, with no
+    figure. When most of a country's rows were placed by outline, and all at
+    one level, the file is that level's, and its leftover rows are looked for
+    there by name.
+    """
+    out = dict(decided)
+    countries = {r["country"] for r in records if r["id"] not in decided}
+    for iso3 in sorted(countries):
+        levels = {r["level"] for r in placed if r["country"] == iso3}
+        n_placed = sum(1 for r in placed if r["country"] == iso3)
+        n_left = sum(1 for r in records if r["country"] == iso3)
+        if len(levels) != 1 or n_placed <= n_left:
+            continue
+        level = levels.pop()
+        for r in records:
+            if r["country"] == iso3 and r["id"] not in out:
+                out[r["id"]] = level
+        log(f"  {iso3}: {n_left} rows left to their names looked for at {level}, "
+            f"where the outlines placed {n_placed}")
+    return out
 
 
 # A region's name split into the units it may be made of: at commas and
@@ -407,6 +441,7 @@ def main() -> int:
                 + ", ".join(r["codes"]["nuts"] for r in records))
         records = []
     if decided is not None:
+        decided = level_from_outlines(placed, records, decided)
         records = [{**r, "level": decided[r["id"]]} for r in records if r["id"] in decided]
     records = placed + joined_units(records)
     write_json(args.out or PROCESSED / f"eurostat_{args.level}.json", records)

@@ -141,6 +141,13 @@ SWAPPED = ("Pano Koutrafas", "Kato Koutrafas")
 # GeoNames' Anthoupoli (Archangelos-Anthoupoli) lies in Lakatameia's, its
 # Troodos in Pano Platres's.
 HOLDS = {"Lakatameia": "Synoikismos Anthoupolis", "Pano Platres": "Troodos"}
+# Communities CYSTAT lists with no residents because the part of them under
+# the Government's control is empty, while the village itself lies beyond it
+# and is counted by the census taken in the north in 2011 (cyprus_north_census,
+# which writes its figure once this file leaves a gap there). Their 0 is not
+# the village's population, so the polygon gets a statement instead: by code,
+# the village's name in that census.
+COUNTED_IN_THE_NORTH = {"1110": "Akıncılar", "1350": "Yukarı Bostancı"}
 # Below this many residents a community's median age and sex ratio are not
 # shown: 19 people with 18 men read as a ratio of 1,800.
 MIN_RESIDENTS = 50
@@ -537,6 +544,20 @@ def build() -> list[dict[str, Any]]:
                                  "draw; its people are not in this figure.")
     for code, shape in bound.items():
         unit = pooled.get(code) or comms[code]
+        if code in COUNTED_IN_THE_NORTH and not unit["total"]:
+            why = (f"CYSTAT's 2021 census lists {unit['name']} ({code}) with no residents: the part "
+                   "of the community under the effective control of the Government of the Republic "
+                   f"of Cyprus is empty, and the village ({COUNTED_IN_THE_NORTH[code]}) lies outside "
+                   "it, where the Republic's censuses since 1974 have not been taken.")
+            records.append(record(
+                f"CYP-2021-{code}", shape["name"], level="admin2", parent="CYP", country="CYP",
+                match_by="shape_id", shape_id=shape["id"], codes={"cystat": code},
+                parent_name=district_of.get(shape["parent"]),
+                population=dict(gap(NOT_AVAILABLE, why), displaces_before=DISPLACES_BEFORE),
+                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+                religion=gap(NOT_AVAILABLE, WHY_COMMUNITY), language=gap(NOT_AVAILABLE, WHY_COMMUNITY),
+                ethnicity=gap(NOT_AVAILABLE, WHY_COMMUNITY)))
+            continue
         fields = {"population": measure(int(unit["total"]), year=YEAR, source=src["community"])}
         notes = []
         if code in pooled:

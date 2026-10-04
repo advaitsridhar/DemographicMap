@@ -203,14 +203,25 @@ def single_ages(rows: list[dict[str, Any]]) -> dict[str, int]:
     return singles
 
 
+def open_classes(rows: list[dict[str, Any]]) -> dict[str, int]:
+    """{age key: first year} of every "N jaar of ouder" class."""
+    out = {}
+    for r in rows:
+        m = re.fullmatch(r"(\d+) jaar of ouder", str(r.get("Title", "")).strip())
+        if m:
+            out[r["Key"].strip()] = int(m.group(1))
+    return out
+
+
 def regions_filter(codes: list[str]) -> str:
     """CBS pads its region keys to six characters ("NL01  ", "PV20  "), and an
     OData filter matches the key exactly."""
     return "(" + " or ".join(f"RegioS eq '{c.ljust(6)}'" for c in codes) + ")"
 
 
-def read_ages(codes: list[str]) -> dict[str, dict[str, Any]]:
-    """{region code: {"m": Counter, "f": Counter, "total": all ages, both sexes}}."""
+def read_ages(codes: list[str], period: str = PERIOD) -> dict[str, dict[str, Any]]:
+    """{region code: {"m": Counter, "f": Counter, "total": all ages, both sexes}} on the
+    1 January ``period`` stands for, in the gemeenten of that date."""
     measure_key = topic(AGE_TABLE)
     sexes = odata(AGE_TABLE, "Geslacht")
     sex_total = total_key(sexes, "Geslacht")
@@ -219,12 +230,16 @@ def read_ages(codes: list[str]) -> dict[str, dict[str, Any]]:
     ages_rows = odata(AGE_TABLE, "Leeftijd")
     age_total = total_key(ages_rows, "Leeftijd")
     ages = single_ages(ages_rows)
+    # The other open classes, for a date whose single years stop sooner: by
+    # gemeente on 1 January 2014 CBS gives single years to 94 and then "95 jaar
+    # of ouder", where 2022 runs to 104 and "105 jaar of ouder".
+    tops = {k: v for k, v in open_classes(ages_rows).items() if k not in ages}
     marital = total_key(odata(AGE_TABLE, "BurgerlijkeStaat"), "BurgerlijkeStaat")
-    asked = "(" + " or ".join(f"Leeftijd eq '{k}'" for k in [age_total, *ages]) + ")"
+    asked = "(" + " or ".join(f"Leeftijd eq '{k}'" for k in [age_total, *ages, *tops]) + ")"
     out: dict[str, dict[str, Any]] = {}
     for start in range(0, len(codes), AGE_CHUNK):
         chunk = codes[start:start + AGE_CHUNK]
-        flt = (f"Perioden eq '{PERIOD}' and BurgerlijkeStaat eq '{marital}' and {asked} and "
+        flt = (f"Perioden eq '{period}' and BurgerlijkeStaat eq '{marital}' and {asked} and "
                f"{regions_filter(chunk)}")
         for row in odata(AGE_TABLE, "TypedDataSet",
                          {"$filter": flt, "$select": f"Geslacht,Leeftijd,RegioS,{measure_key}"}):
@@ -239,7 +254,18 @@ def read_ages(codes: list[str]) -> dict[str, dict[str, Any]]:
                 unit["m"][ages[age]] += float(value)
             elif age in ages and sex == women:
                 unit["f"][ages[age]] += float(value)
+            elif age in tops and sex in (men, women):
+                unit.setdefault("open", {}).setdefault("m" if sex == men else "f", {})[tops[age]] = \
+                    float(value)
     for region, unit in out.items():
+        # An open class counts only where it continues the single years given
+        # for that date; elsewhere it is a subtotal of them.
+        for key in ("m", "f"):
+            after = max(unit[key]) + 1 if unit[key] else None
+            top = unit.get("open", {}).get(key, {}).get(after)
+            if top is not None:
+                unit[key][after] = top
+        unit.pop("open", None)
         made = sum(unit["m"].values()) + sum(unit["f"].values())
         if unit["total"] is None or abs(made - unit["total"]) > 0.5:
             raise SystemExit(f"netherlands_gemeente: {region}: men and women by age make "

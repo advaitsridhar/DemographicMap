@@ -1,46 +1,73 @@
 #!/usr/bin/env python3
-"""Religion from the national churches' own membership counts: Sweden's kommuner, Finland's sub-regions.
+"""Religion from the Church of Sweden's own membership count, for Sweden's kommuner and län.
 
-Neither country's statistics office publishes religion below the country.
-Sweden's census is compiled from registers and the state has kept no record
-of religion since the Church of Sweden separated from it in 2000; Finland's
-population register does record every resident's religious community, but
-Statistics Finland publishes it for the whole country only (table 11rx). What
-each majority church does publish is its own membership by municipality, and
-the gap round's brief allows exactly that "where the statistics office
-publishes none": the church's members against everyone else, with the
-official population as the denominator, a count of membership and not of
-belief, said so in every note.
+Sweden's census is compiled from registers, and no state register has recorded
+religion since the Church of Sweden separated from the state in 2000; SCB
+publishes no religion table. What the Church publishes is its own membership by
+parish, kommun and län, against the population of the same day -- both columns
+produced by Statistics Sweden on the Church's commission, as the table's first
+page says. The gap round's brief allows exactly that where the statistics
+office publishes nothing: the Church's members against everyone else, a count
+of membership and not of belief, said so in every note.
 
-* **Sweden** -- the Church of Sweden's "Medlemmar i Svenska kyrkan i
-  förhållande till folkmängd den 31.12.2021 per församling, kommun och län
-  samt riket" (its statistics folder, ``NyckeltalLKF(1).pdf``), the latest
-  edition by kommun. Both columns read here -- the population and the
-  Church's members -- are Statistics Sweden's, produced for the Church (the
-  table's own first page says so). The 290 kommuner have not changed since
-  2003; they are bound by SCB's codes, as ``sweden.py`` binds them. The län
-  are not written: the European Social Survey already gives each a fuller
-  composition, which a two-row count would displace.
-* **Finland** -- the Evangelical Lutheran Church's membership on 31 December
-  2020 by economic unit (``Jäsenmäärä2020.xlsx`` on kirkontilastot.fi: every
-  parish union and independent parish), the last year it published as a
-  file; later years are on Tableau only. A unit is a municipality's parishes
-  or a few neighbouring municipalities', so each is placed in the 2020
-  sub-region its municipalities lie in -- the map's own -- and set against
-  Statistics Finland's population of the same day (11rf). A unit whose
-  municipalities lie in two sub-regions (Sund-Vårdö on Åland) is left out
-  with those municipalities' people, and the note says so; a parish with no
-  territory (the German congregation) is left out of every sub-region.
+The table is "Medlemmar i Svenska kyrkan i förhållande till folkmängd den
+31.12.2021 per församling, kommun och län samt riket" (``NyckeltalLKF(1).pdf``
+in the Church's statistics folder), the latest edition by kommun: the Church's
+statistics page lists national series only since, the folder holds no later
+edition under any name the Wayback Machine has seen, and Kolada carries no
+membership figure (church_probe rounds c1-c3). The 290 kommuner have not changed
+since 2003; they are bound by SCB's codes, as ``sweden.py`` binds them, and the
+21 län by their names, as ``sweden.py`` binds those.
 
-Labels: "Church of Sweden" and "Not a member of the national church" for
-Sweden, as Denmark's register reads; "Evangelical Lutheran Church of Finland"
-and "Not a member of the Evangelical Lutheran Church of Finland" for Finland,
-where the Orthodox Church is a national church too.
+**What a row counts.** A kommun's row, and a län's, is the sum of its parishes:
+the members of those parishes, wherever they live, against the people
+registered in them. The share written is that ratio. Its denominator is not
+quite SCB's count of the unit: it leaves out the people registered in the
+kommun without a property, whom SCB places in no parish (17,847 in the whole
+country in 2021, set apart in the table), and where a parish crosses a kommun
+boundary it is counted whole under one of them. Every note gives the row's
+population against SCB's count of the unit the same day. Its numerator is the
+parishes' own members: a parish without territory (Stockholm's language
+parishes, Karlskrona's admiralty parish) counts members who live in other
+kommuner, so the table's other share -- the people living in the unit who are
+members of any parish -- differs from it by up to a few tenths of a point; every
+note gives both.
 
-Checks: every row is read with its own percentage (Sweden) or the file's own
-total (Finland); the kommuner make their län and the Church's population of
-each kommun sits within a few per cent of SCB's own; every drawn unit is bound
-one to one; a sub-region's members never exceed its people.
+**A kommun row is its parishes, not always its territory.** A parish that
+crosses a kommun boundary is counted whole under one kommun: in 2021
+Gullspång's row holds 42% fewer people than SCB counts in Gullspång and
+Töreboda's 23% more, and seventeen other rows are more than half a per cent
+off. A row that is another territory is not the kommun's figure. So each
+kommun takes the newest of the 2021, 2020 and 2019 editions in which its row is
+within KOMMUN_TOLERANCE of SCB's count of the kommun on the same day, and a
+kommun with no such edition is left out and named in the log. Forshaga and
+Munkfors are always out: their one parish, Forshaga-Munkfors församling
+(176301), is counted whole under one of the two in every edition since 2016
+(church_probe round c4).
+
+**The län** are written from the same edition's län rows: each is its
+kommuner's sum, checked exactly, and must be within LAN_TOLERANCE of SCB's
+count of the län -- the parishes that cross a kommun boundary all stay inside
+their län. A count outranks a survey, so these replace the European Social
+Survey's regional estimates the län carried before. Finland is read from its
+population register instead (``finland_religion.py``), which counts every
+community and beats any one church's figures.
+
+**Preliminary.** The 2019 and 2021 editions say on their first page that the
+figures are preliminary, to be adjusted in May when the Church publishes its
+annual statistics; a note says so wherever its edition does. No final edition
+by kommun has been found.
+
+Labels: "Church of Sweden" and "Not a member of the national church", as
+Denmark's register rows read; the group tree files the second with the
+answers that name no religion.
+
+Checks, in every edition read: every row is read with its own percentage; the
+kommuner make their län and the län with the people registered without a
+property make the country's row, population and members; the country's
+population is SCB's of the same day; every kommun written has a row within
+KOMMUN_TOLERANCE of SCB's count of it, and every län within LAN_TOLERANCE;
+every kommun and län is bound one to one.
 
 Usage:
     python -m scripts.fetch_census.nordic_church --country SWE
@@ -52,42 +79,73 @@ import argparse
 import io
 import re
 from collections import defaultdict
+from dataclasses import dataclass
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, shares, write_json
+from ._shared import PROCESSED, log, record, shares, write_json
 from .binding import fold
-from .nordic_common import bind_rows, request, request_json, unplaced
+from .nordic_common import request, request_json, unplaced
 from .pxweb import unstack
 
 BASIS = "registered membership"
 
-# ---------------------------------------------------------------------------
-# Sweden
-# ---------------------------------------------------------------------------
-
-SVK_URLS = (
-    "https://www.svenskakyrkan.se/filer/1374643/NyckeltalLKF(1).pdf",
-    "https://web.archive.org/web/20220401215825id_/https://www.svenskakyrkan.se/filer/1374643/"
-    "NyckeltalLKF(1).pdf",
+SVK = "https://www.svenskakyrkan.se/filer/1374643/"
+WAYBACK = "https://web.archive.org/web/{ts}id_/{url}"
+LKF_2020 = ("Medlemmar%20i%20Svenska%20kyrkan%20i%20forhallande%20till%20folkmangd%2031%20"
+            "december%202020%20per%20forsamling,%20kommun%20och%20lan%20samt%20riket%20(pdf).pdf")
+# The editions read, newest first, each with the copies to try: the file names
+# are the Church's own, which it reuses ("NyckeltalLKF.pdf" holds 2019's), so
+# every copy is checked by the title on its first page.
+EDITIONS: tuple[tuple[int, tuple[str, ...]], ...] = (
+    (2021, (SVK + "NyckeltalLKF(1).pdf",
+            WAYBACK.format(ts="20220401215825", url=SVK + "NyckeltalLKF(1).pdf"))),
+    (2020, (SVK + LKF_2020, WAYBACK.format(ts="20220120151620", url=SVK + LKF_2020))),
+    (2019, (SVK + "NyckeltalLKF.pdf",
+            WAYBACK.format(ts="20220205191123", url=SVK + "NyckeltalLKF.pdf"))),
 )
 SVK_PAGE = "https://www.svenskakyrkan.se/statistik"
-SVK_YEAR = 2021
-SVK_TITLE = "Medlemmar i Svenska kyrkan i förhållande till folkmängd den 31.12.2021"
+SVK_TITLE = "Medlemmar i Svenska kyrkan i förhållande till folkmängd"
 SWEDEN_CHURCH = "Church of Sweden"
 SWEDEN_OUTSIDE = "Not a member of the national church"
-# Each row prints two shares after its counts: the residents who are members
-# of the Church, in whatever parish ("Folkbokförda medlemmar inom
-# församlingen i % av folkmängden"), and the members of its own parishes
+# Each row prints two shares after its counts: the people living in the area
+# who are members of the Church, in whatever parish ("Folkbokförda medlemmar
+# inom församlingen i % av folkmängden"), and the members of its own parishes
 # against its population ("Medlemmar i församlingen i % av folkmängden") --
 # the second is the counts' own ratio, rounded. They differ only where a
-# parish without territory counts members who live elsewhere (Karlskrona's
-# admiralty parish: 66.0% against 66.1%). The split of the counts must match
-# the second to rounding, or the first within PCT_SLACK when only it is printed.
+# parish without territory counts members who live elsewhere. The split of the
+# counts must match the second to rounding, or the first within PCT_SLACK when
+# only it is printed.
 RATIO_SLACK = 0.06
 PCT_SLACK = 0.6
 ROW = re.compile(r"^(?P<name>.+?) (?P<kind>kommun|län)(?: \(\d+\))? (?P<rest>\d.*)$")
+# The country's row: "Riket" in the 2016-2020 editions, "Totalsumma" in 2021's.
+RIKET = re.compile(r"^(?:Riket|Totalsumma) (?P<rest>\d.*)$")
 UNPLACED = "På kommunen skrivna "
 UNKNOWN_NAME = "Okänd"
+# The first page's warning, in the 2019 and 2021 editions: "Obs! Informationen
+# är preliminär och kan justeras i maj i samband med publiceringen av Svenska
+# kyrkans verksamhetsstatistik" (church_probe round c1).
+PRELIMINARY = re.compile(r"prelimin[äa]r", re.IGNORECASE)
+# The table prints the people without a property twice -- as the parish "På
+# kommunen skrivna" and as the kommun "Okänd" that holds it -- and the 2021
+# edition's two rows differ by two members (5,935 against 5,933). The
+# country's members are allowed that much against the län and the kommun.
+MEMBER_SLACK = 10
+# A kommun row is the sum of the parishes printed under it, against SCB's count
+# of the kommun: they differ by the people registered without a property (never
+# more than 0.5% of a kommun in 2021) and wherever a parish crosses the
+# boundary. A row within 2% is the kommun's -- the gate the build uses when a
+# unit's parts are summed -- and a share taken from it is good to about 0.4
+# points (2% of the people, at most 20 points apart); a row further off is
+# another territory.
+KOMMUN_TOLERANCE = 0.02
+# A län row differs from SCB's count of the län by its people registered
+# without a property alone, unless a parish crossed a län boundary: half a per
+# cent, the most those people make of any kommun.
+LAN_TOLERANCE = 0.005
+# Below this, a row's population is SCB's count less the people registered
+# without a property, and no crossing parish need be invoked to explain it.
+UNPLACED_SHARE = 0.005
 
 
 def numbers(groups: list[str]) -> int | None:
@@ -103,13 +161,15 @@ def numbers(groups: list[str]) -> int | None:
 
 
 def percent(token: str) -> float | None:
-    found = re.fullmatch(r"(\d+),(\d)%", token)
+    """'71,8%' -> 71.8; the national row of some editions prints two decimals."""
+    found = re.fullmatch(r"(\d+),(\d{1,2})%", token)
     return float(f"{found.group(1)}.{found.group(2)}") if found else None
 
 
 def population_and_members(rest: str) -> tuple[int, int, float]:
     """The first two numbers of a row, told apart by the shares printed after
-    them, and the first share: the residents who are members, in whatever parish.
+    them, and the first share: the people living there who are members, in
+    whatever parish.
 
     The table prints thousands with a space, so "556 399 71,8%" could be one
     number or two; it is the split whose members-over-population matches the
@@ -166,6 +226,39 @@ def svk_rows(lines: list[str]) -> tuple[dict[str, Row], dict[str, Row], Row | No
     return kommuner, lan, unplaced_row
 
 
+def riket_row(lines: list[str], optional: bool = False) -> Row | None:
+    """The country's row ("Riket", or "Totalsumma"), printed exactly once; the
+    2020 edition prints none, and with ``optional`` that is None."""
+    found = [RIKET.match(" ".join(line.split())) for line in lines]
+    rows = [population_and_members(m.group("rest")) for m in found if m]
+    if len(rows) > 1 or (not rows and not optional):
+        raise SystemExit(f"svenska kyrkan: {len(rows)} rows for the whole country")
+    return rows[0] if rows else None
+
+
+def preliminary(lines: list[str]) -> str | None:
+    """The first page's warning that the figures are preliminary, if it has
+    one: looked for only above the first row of figures, so a parish's name
+    cannot be taken for it."""
+    for line in lines:
+        line = " ".join(line.split())
+        if ROW.match(line) or RIKET.match(line) or line.startswith(UNPLACED):
+            return None
+        if PRELIMINARY.search(line):
+            return line
+    return None
+
+
+def check_country(lan: dict[str, Row], unknown: Row, riket: Row) -> None:
+    """The län with the people registered without a property make the
+    country's row: its population exactly, its members to MEMBER_SLACK."""
+    people = sum(r[0] for r in lan.values()) + unknown[0]
+    members = sum(r[1] for r in lan.values()) + unknown[1]
+    if people != riket[0] or abs(members - riket[1]) > MEMBER_SLACK:
+        raise SystemExit(f"svenska kyrkan: the län and the unplaced make {people:,} people and "
+                         f"{members:,} members; the country's row {riket[0]:,} and {riket[1]:,}")
+
+
 def match_names(printed: list[str], scb: dict[str, str]) -> dict[str, str]:
     """The table's genitive names ("Karlshamns", "Faluns", "Borås") -> SCB's
     codes: the name as printed, else without its genitive s; each as spelled
@@ -201,22 +294,33 @@ PARISH = re.compile(r"^(?P<name>.+?) församling \((?P<code>\d{6})\)")
 
 
 def joined_kommuner(unread: list[str], read: set[str], names: dict[str, str],
-                    lines: list[str]) -> dict[str, tuple[str, str]]:
+                    lines: list[str], code_of: dict[str, str] | None = None
+                    ) -> dict[str, tuple[str, str]]:
     """Kommuner the table prints no row for -> (the kommun whose row holds
     them, the parish that joins them).
 
     A parish that spans two kommuner (Forshaga-Munkfors församling) is counted
-    whole under the kommun its code places it in, and the other kommun gets
-    no row. It is found by a parish row naming the missing kommun in its
-    hyphenated name; a missing kommun no one such parish explains stops the
-    run."""
+    whole under one of them, and the other kommun gets no row. It is found by a
+    parish row naming the missing kommun in its hyphenated name. The kommun
+    that holds it is the one whose row the parish is printed under -- given
+    ``code_of``, the table's kommun names' codes -- because the parish's own
+    code does not say: 176301 sat under Munkfors in the 2018-2020 editions and
+    under Forshaga in 2016's and 2021's. Without ``code_of`` the code's first
+    four digits stand in. A missing kommun no one such parish explains stops
+    the run."""
     out: dict[str, tuple[str, str]] = {}
     for code in unread:
         hosts = set()
+        under = None
         for line in lines:
-            found = PARISH.match(" ".join(line.split()))
+            line = " ".join(line.split())
+            row = ROW.match(line)
+            if row and row.group("kind") == "kommun" and "församling" not in row.group("name"):
+                under = (code_of or {}).get(row.group("name"))
+            found = PARISH.match(line)
             if found and fold(names[code]) in {fold(p) for p in found.group("name").split("-")}:
-                hosts.add((found.group("code")[:4], found.group("name")))
+                host = under if code_of is not None else found.group("code")[:4]
+                hosts.add((host, found.group("name")))
         hosts = {(h, parish) for h, parish in hosts if h != code}
         if len(hosts) != 1 or next(iter(hosts))[0] not in read:
             raise SystemExit(f"svenska kyrkan: no row for {names[code]} ({code}), and no one "
@@ -225,123 +329,242 @@ def joined_kommuner(unread: list[str], read: set[str], names: dict[str, str],
     return out
 
 
-def sweden() -> list[dict[str, Any]]:
-    import pdfplumber
-    from .sweden import BASE, bind_kommuner
-    raw, used = None, None
-    for url in SVK_URLS:
-        try:
-            raw = request(url, accept="application/pdf,*/*", attempts=3)
-        except (SystemExit, Exception) as exc:
-            log(f"  {url}: {str(exc)[:120]}")
-            continue
-        if raw.startswith(b"%PDF"):
-            used = url
-            break
-    if not used:
-        raise SystemExit("svenska kyrkan: no copy of the table answered")
-    with pdfplumber.open(io.BytesIO(raw)) as doc:
-        lines = [line for page in doc.pages for line in (page.extract_text() or "").splitlines()]
-    if not any(SVK_TITLE in " ".join(line.split()) for line in lines[:5]):
-        raise SystemExit(f"svenska kyrkan: {used} is not the 2021 table: {lines[:2]}")
-    kommuner, lan, nowhere = svk_rows(lines)
-    # The people SCB cannot place in a parish are printed as a parish of their
-    # own ("På kommunen skrivna") of a kommun and a län called "Okänd"
-    # (unknown): one count, set aside from the kommuner and the län.
-    unknown = [rows.pop(UNKNOWN_NAME) for rows in (lan, kommuner) if UNKNOWN_NAME in rows]
-    log(f"  {used}: {len(lines):,} lines, {len(kommuner)} kommuner, {len(lan)} län, "
-        f"registered without a property: {nowhere}; '{UNKNOWN_NAME}' rows: {unknown}")
-    meta = {v["code"]: v for v in request_json(BASE.format(lang="sv", table="BefolkningNy"))
-            ["variables"]}
-    sv = dict(zip(meta["Region"]["values"], meta["Region"]["valueTexts"]))
-    scb_kommuner = {c: n for c, n in sv.items() if len(c) == 4}
-    code_of = match_names(list(kommuner), scb_kommuner)
-    read = set(code_of.values())
-    joined = joined_kommuner(sorted(set(scb_kommuner) - read), read, scb_kommuner, lines)
-    partners: dict[str, list[str]] = defaultdict(list)
-    for code, (host, parish) in sorted(joined.items()):
-        partners[host].append(code)
-        log(f"  {scb_kommuner[code]} has no row: {parish} församling counts it under "
-            f"{scb_kommuner[host]}")
-    # The kommuner must make their län, and the län with the people registered
-    # without a property the whole of Sweden.
-    lan_code = {name: next((c for c, n in sv.items() if len(c) == 2 and
-                            fold(n.removesuffix(" län").rstrip("s")) ==
-                            fold(name.rstrip("s"))), None) for name in lan}
-    if None in lan_code.values() or len(set(lan_code.values())) != 21:
-        raise SystemExit(f"svenska kyrkan: län not matched: {lan_code}")
+def lan_codes(lan: list[str], sv: dict[str, str]) -> dict[str, str]:
+    """The table's län names ("Stockholms", "Kalmars") -> SCB's two-digit codes,
+    one to one for all 21, or the run stops."""
+    out = {name: next((c for c, n in sv.items() if len(c) == 2 and c != "00" and
+                       fold(n.removesuffix(" län").rstrip("s")) == fold(name.rstrip("s"))),
+                      None) for name in lan}
+    if None in out.values() or len(set(out.values())) != 21 or len(out) != 21:
+        raise SystemExit(f"svenska kyrkan: län not matched: {out}")
+    return out
+
+
+def check_lan(kommuner: dict[str, Row], lan: dict[str, Row], code_of: dict[str, str],
+              lan_code: dict[str, str]) -> None:
+    """Each län's kommuner make its row, population and members, exactly."""
     for name, code in lan_code.items():
         parts = [kommuner[k] for k, c in code_of.items() if c[:2] == code]
         for i, what in ((0, "population"), (1, "members")):
             if sum(p[i] for p in parts) != lan[name][i]:
                 raise SystemExit(f"svenska kyrkan: {name}'s kommuner make "
                                  f"{sum(p[i] for p in parts):,} {what} of {lan[name][i]:,}")
-    # SCB's own count of the same day: the table's kommun populations leave
-    # out only the people SCB cannot place on a property.
-    scb = scb_population()
 
-    def scb_of(code: str) -> float:
-        return scb[code] + sum(scb[c] for c in partners.get(code, []))
 
-    worst = max((abs(scb_of(c) - kommuner[k][0]) / scb_of(c), k) for k, c in code_of.items())
-    log(f"  the table's kommun populations against SCB's of the same day: worst "
-        f"{100 * worst[0]:.2f}% ({worst[1]})")
-    if worst[0] > 0.03:
-        raise SystemExit(f"svenska kyrkan: {worst[1]} is {100 * worst[0]:.1f}% off SCB's count")
-    unplaced_people = (unknown or [nowhere or (0, 0, 0.0)])[0][0]
-    total = sum(row[0] for row in lan.values()) + unplaced_people
-    if abs(total - scb["00"]) > 0.0005 * scb["00"]:
-        raise SystemExit(f"svenska kyrkan: the län and the unplaced make {total:,} against "
-                         f"SCB's {scb['00']:,.0f}")
-    log(f"  län and the people without a property make {total:,} against SCB's {scb['00']:,.0f}")
-    bound = bind_kommuner(sv, sorted(scb_kommuner))
-    records = []
-    source = {"field": "religion", "name": "Church of Sweden (Svenska kyrkan), members against "
-              f"population 31 December {SVK_YEAR}, counted by SCB", "url": used,
-              "year": SVK_YEAR}
-    for name, code in sorted(code_of.items(), key=lambda kv: kv[1]):
-        pop, members, residents = kommuner[name]
-        if code in partners:
-            together = [code] + partners[code]
-            parish = joined[partners[code][0]][1]
-            why = (f"The Church of Sweden counts {parish} församling, which spans "
-                   f"{' and '.join(sv[c] for c in together)} kommuner, whole under {sv[code]}, "
-                   "so neither kommun's own membership can be given: together they hold "
-                   f"{members:,} members of the Church among {pop:,} people "
-                   f"({100 * members / pop:.1f}%) on 31 December {SVK_YEAR}.")
-            records += [record(f"SWE-SVK-{c}", sv[c], level="admin2", parent="SWE",
-                               country="SWE", parent_name=sv[c[:2]], codes={"scb": c},
-                               match_by="shape_id", shape_id=bound[c],
-                               religion=gap(NOT_AVAILABLE, why), sources=[source])
-                        for c in together]
+@dataclass
+class Edition:
+    """One edition of the table, read and checked: the kommun and län rows by
+    SCB code, the kommuner joined to another's row by a shared parish, SCB's
+    count of each unit the same day, and whether the edition calls itself
+    preliminary."""
+    year: int
+    url: str
+    rows: dict[str, Row]                   # SCB code (kommun or län) -> its own row
+    joined: dict[str, tuple[str, str]]     # code -> (the code whose row holds it, parish)
+    scb: dict[str, float]                  # SCB code -> SCB's count of the unit that day
+    preliminary: bool = False
+
+    def off(self, code: str) -> float:
+        """(SCB's count - the row's population) / SCB's count."""
+        return (self.scb[code] - self.rows[code][0]) / self.scb[code]
+
+
+def read_edition(year: int, urls: tuple[str, ...], sv: dict[str, str]) -> Edition | None:
+    """An edition's rows, every sum checked; None when no copy of it answers."""
+    import pdfplumber
+    title = f"{SVK_TITLE} den 31.12.{year}"
+    lines, used = None, None
+    for url in urls:
+        try:
+            raw = request(url, accept="application/pdf,*/*", attempts=3)
+        except (SystemExit, Exception) as exc:
+            log(f"  {year}: {url}: {str(exc)[:120]}")
             continue
-        elsewhere = (f" Of the kommun's residents, {residents:.1f}% are members, in whatever "
-                     "parish; the count above is of the members of its own parishes, wherever "
-                     "they live -- the two differ where a parish without territory (Karlskrona's "
-                     "admiralty parish) has members in more than one kommun."
-                     if abs(residents - 100 * members / pop) >= 0.15 else "")
-        records.append(record(
-            f"SWE-SVK-{code}", sv[code], level="admin2", parent="SWE", country="SWE",
-            parent_name=sv[code[:2]], codes={"scb": code}, match_by="shape_id",
-            shape_id=bound[code],
-            religion=shares({SWEDEN_CHURCH: members, SWEDEN_OUTSIDE: pop - members}, total=pop),
-            religion_year=SVK_YEAR, religion_basis=BASIS,
-            religion_note=(
-                f"Members of the Church of Sweden on 31 December {SVK_YEAR} against the kommun's "
-                f"population the same day, {members:,} of {pop:,}, both counted by Statistics "
-                "Sweden for the Church (Svenska kyrkan, 'Medlemmar i Svenska kyrkan i förhållande "
-                f"till folkmängd den 31.12.{SVK_YEAR} per församling, kommun och län samt "
-                "riket'): the Church's registered membership, not belief. Everyone else -- "
-                "members of other faiths and of none alike -- is one group: no Swedish register "
-                "records religion, and the Church's is the only membership count published by "
-                "kommun. The population leaves out the few people registered in the kommun "
-                "without a property, whom SCB cannot place in a parish." + elsewhere),
-            sources=[source]))
+        if not raw.startswith(b"%PDF"):
+            log(f"  {year}: {url}: not a PDF")
+            continue
+        with pdfplumber.open(io.BytesIO(raw)) as doc:
+            got = [line for page in doc.pages for line in (page.extract_text() or "").splitlines()]
+        if any(title in " ".join(line.split()) for line in got[:5]):
+            lines, used = got, url
+            break
+        log(f"  {year}: {url} holds another edition: {got[:1]}")
+    if lines is None:
+        return None
+    warning = preliminary(lines)
+    kommuner, lan, nowhere = svk_rows(lines)
+    riket = riket_row(lines, optional=True)
+    # The people SCB cannot place in a parish are printed as a parish of their
+    # own ("På kommunen skrivna"), under a kommun called "Okänd" (unknown) in
+    # the 2019 and 2021 editions and on its own in 2020's: one count, set
+    # aside from the kommuner and the län.
+    unknown = [rows.pop(UNKNOWN_NAME) for rows in (lan, kommuner) if UNKNOWN_NAME in rows]
+    if len(unknown) > 1 or not (unknown or nowhere):
+        raise SystemExit(f"svenska kyrkan {year}: {len(unknown)} rows for '{UNKNOWN_NAME}' and "
+                         f"{'one' if nowhere else 'no'} row of people without a property")
+    unplaced = unknown[0] if unknown else nowhere
+    if riket is not None:
+        check_country(lan, unplaced, riket)
+    people = sum(r[0] for r in lan.values()) + unplaced[0]
+    scb_kommuner = {c: n for c, n in sv.items() if len(c) == 4}
+    code_of = match_names(list(kommuner), scb_kommuner)
+    read = set(code_of.values())
+    joined = joined_kommuner(sorted(set(scb_kommuner) - read), read, scb_kommuner, lines,
+                             code_of)
+    lan_code = lan_codes(list(lan), sv)
+    check_lan(kommuner, lan, code_of, lan_code)
+    # SCB's own count of the same day. The table's rows leave out the people
+    # SCB cannot place on a property, and count a parish that crosses a
+    # kommun boundary whole under one kommun.
+    scb = scb_population(year)
+    if abs(people - scb["00"]) > 0.0005 * scb["00"]:
+        raise SystemExit(f"svenska kyrkan {year}: the län and the people without a property "
+                         f"make {people:,}, SCB counts {scb['00']:,.0f}")
+    hosts = {host for host, _ in joined.values()}
+    rows = {c: kommuner[k] for k, c in code_of.items() if c not in hosts}
+    rows.update({lan_code[name]: row for name, row in lan.items()})
+    missing = sorted(c for c in rows if not scb.get(c))
+    if missing:
+        raise SystemExit(f"svenska kyrkan {year}: SCB has no count for {missing}")
+    edition = Edition(year, used, rows, joined, {c: scb[c] for c in rows}, bool(warning))
+    beyond = sorted((edition.off(c), c) for c in rows
+                    if len(c) == 4 and abs(edition.off(c)) > UNPLACED_SHARE)
+    country = (f"the country's row ({riket[0]:,} people, {riket[1]:,} members)"
+               if riket is not None else "no country row printed")
+    log(f"  {year} ({used}): {len(lines):,} lines; "
+        + (f"marked preliminary ({warning[:90]!r}); " if warning else "not marked preliminary; ")
+        + f"{len(kommuner)} kommun rows make their 21 "
+        f"län, and the län with {unplaced[0]:,} people without a property make {people:,}; "
+        f"{country}; SCB's count {scb['00']:,.0f}; "
+        f"joined: {sorted((sv[c], sv[h], p) for c, (h, p) in joined.items())}; kommun rows "
+        f"more than {100 * UNPLACED_SHARE:.1f}% off SCB's count: "
+        + ", ".join(f"{sv[c]} {100 * d:+.2f}%" for d, c in beyond))
+    log(f"  {year}: län rows short of SCB's count of the län by "
+        + ", ".join(f"{sv[c].removesuffix(' län')} {100 * d:+.2f}%"
+                    for d, c in sorted((edition.off(c), c) for c in rows if len(c) == 2)))
+    return edition
+
+
+def choose(editions: list[Edition], codes: list[str], tolerance: float = KOMMUN_TOLERANCE
+           ) -> tuple[dict[str, Edition], dict[str, list[str]]]:
+    """Each unit -> the newest edition whose row is the unit's (within
+    ``tolerance`` of SCB's count), and each unit with none -> why not."""
+    chosen: dict[str, Edition] = {}
+    why: dict[str, list[str]] = defaultdict(list)
+    for code in codes:
+        for ed in editions:
+            if code in ed.rows and abs(ed.off(code)) <= tolerance:
+                chosen[code] = ed
+                break
+            if code in ed.rows:
+                why[code].append(f"{ed.year}: its row counts {100 * -ed.off(code):+.1f}% "
+                                 "against SCB's count of it")
+            else:
+                joined = ed.joined.get(code) or next(
+                    ((c, p) for c, (h, p) in ed.joined.items() if h == code), None)
+                why[code].append(f"{ed.year}: one parish, {joined[1] if joined else '?'} "
+                                 "församling, joins it to a neighbour")
+    return chosen, {c: w for c, w in why.items() if c not in chosen}
+
+
+def religion_fields(code: str, edition: Edition, kind: str) -> dict[str, Any]:
+    """One unit's religion fields from its row in ``edition``; ``kind`` is
+    "kommun" or "län"."""
+    pop, members, residents = edition.rows[code]
+    year, off, counted = edition.year, edition.off(code), edition.scb[code]
+    newest = ("the latest edition by kommun and län" if year == EDITIONS[0][0] else
+              f"the latest edition in which the {kind}'s own parishes make it; in the "
+              f"{EDITIONS[0][0]} edition they do not")
+    caution = (" The table marks its figures as preliminary, to be adjusted when the Church "
+               "publishes its annual statistics in May; no final edition by kommun has been "
+               "found." if edition.preliminary else "")
+    if off == 0:
+        why = "the same number."
+    elif 0 < off <= UNPLACED_SHARE:
+        why = (f"it leaves out the people registered in the {kind} without a property, whom "
+               "SCB places in no parish.")
+    else:
+        why = (f"beyond the people registered without a property, whom SCB places in no "
+               f"parish, a parish crossing the {kind}'s boundary is counted whole on one side "
+               f"of it, so the share describes almost but not exactly the {kind}.")
+    return {
+        "religion": shares({SWEDEN_CHURCH: members, SWEDEN_OUTSIDE: pop - members}, total=pop),
+        "religion_year": year, "religion_basis": BASIS,
+        "religion_note": (
+            f"Members of the Church of Sweden on 31 December {year}: the {members:,} members of "
+            f"the {kind}'s parishes, wherever they live, against the {pop:,} people registered "
+            "in those parishes, both counted by Statistics Sweden for the Church (Svenska "
+            "kyrkan, 'Medlemmar i Svenska kyrkan i förhållande till folkmängd den "
+            f"31.12.{year} per församling, kommun och län samt riket', {newest})." + caution
+            + " The Church's registered membership, not belief. Everyone else -- members of "
+            "other faiths and of none alike -- is one group: no state register records "
+            "religion, and the Church's is the only membership count published by kommun and "
+            f"län. The parishes' population is {100 * -off:+.2f}% against Statistics Sweden's "
+            f"count of the {kind} the same day ({counted:,.0f}): " + why
+            + f" Of the people living in those parishes, {residents:.1f}% are members of the "
+            "Church in whatever parish (the table's other share); the share shown, "
+            f"{100 * members / pop:.1f}%, counts the parishes' own members, and the two differ "
+            "where a parish without territory counts members who live elsewhere."),
+        "sources": [{"field": "religion", "name": "Church of Sweden (Svenska kyrkan), members "
+                     f"against population 31 December {year}, counted by SCB",
+                     "url": edition.url, "year": year}],
+    }
+
+
+def kommun_record(code: str, edition: Edition, sv: dict[str, str],
+                  shape_id: str) -> dict[str, Any]:
+    return record(
+        f"SWE-SVK-{code}", sv[code], level="admin2", parent="SWE", country="SWE",
+        parent_name=sv[code[:2]], codes={"scb": code}, match_by="shape_id", shape_id=shape_id,
+        **religion_fields(code, edition, "kommun"))
+
+
+def lan_record(code: str, edition: Edition, sv: dict[str, str],
+               shape: dict[str, Any]) -> dict[str, Any]:
+    return record(
+        f"SWE-SVK-{code}", shape["name"], level="admin1", parent="SWE", country="SWE",
+        codes={"scb": code}, match_by="shape_id", shape_id=shape["id"],
+        aliases=[sv[code]] if sv[code] != shape["name"] else [],
+        **religion_fields(code, edition, "län"))
+
+
+def sweden() -> list[dict[str, Any]]:
+    from .sweden import BASE, bind_kommuner, bind_lan
+    meta = {v["code"]: v for v in request_json(BASE.format(lang="sv", table="BefolkningNy"))
+            ["variables"]}
+    sv = dict(zip(meta["Region"]["values"], meta["Region"]["valueTexts"]))
+    codes = sorted(c for c in sv if len(c) == 4)
+    counties = sorted(c for c in sv if len(c) == 2 and c != "00")
+    editions = []
+    for year, urls in EDITIONS:
+        edition = read_edition(year, urls, sv)
+        if edition is None:
+            if year == EDITIONS[0][0]:
+                raise SystemExit(f"svenska kyrkan: no copy of the {year} table answered")
+            log(f"  {year}: no copy answered; the kommuner it would fill stay out")
+            continue
+        editions.append(edition)
+    chosen, left = choose(editions, codes, KOMMUN_TOLERANCE)
+    chosen_lan, left_lan = choose(editions, counties, LAN_TOLERANCE)
+    bound = bind_kommuner(sv, codes)
+    lan_shapes = bind_lan(sv, counties)
+    records = [kommun_record(c, chosen[c], sv, bound[c]) for c in codes if c in chosen]
+    records += [lan_record(c, chosen_lan[c], sv, lan_shapes[c])
+                for c in counties if c in chosen_lan]
+    for what, picked in (("kommuner", chosen), ("län", chosen_lan)):
+        by_year = defaultdict(list)
+        for c in picked:
+            by_year[picked[c].year].append(sv[c])
+        log(f"  {what} by edition: " + "; ".join(
+            f"{y}: {len(n)}" + (f" ({', '.join(sorted(n))})" if y != EDITIONS[0][0] else "")
+            for y, n in sorted(by_year.items(), reverse=True)))
+    for c, reasons in sorted({**left, **left_lan}.items()):
+        log(f"  left out: {sv[c]} ({c}) -- " + "; ".join(reasons))
     return records
 
 
-def scb_population() -> dict[str, float]:
-    """SCB's register population on 31 December of SVK_YEAR, by region."""
+def scb_population(year: int) -> dict[str, float]:
+    """SCB's register population on 31 December of ``year``, by region."""
     from .sweden import BASE
     url = BASE.format(lang="en", table="BefolkningNy")
     meta = {v["code"]: v for v in request_json(url)["variables"]}
@@ -349,7 +572,7 @@ def scb_population() -> dict[str, float]:
     body = request_json(url, {"query": [
         {"code": "Region", "selection": {"filter": "item", "values": meta["Region"]["values"]}},
         {"code": "ContentsCode", "selection": {"filter": "item", "values": [content]}},
-        {"code": "Tid", "selection": {"filter": "item", "values": [str(SVK_YEAR)]}},
+        {"code": "Tid", "selection": {"filter": "item", "values": [str(year)]}},
     ], "response": {"format": "json-stat2"}})
     out: dict[str, float] = defaultdict(float)
     for key, value in unstack(body):
@@ -357,243 +580,7 @@ def scb_population() -> dict[str, float]:
     return dict(out)
 
 
-# ---------------------------------------------------------------------------
-# Finland
-# ---------------------------------------------------------------------------
-
-EVL_URLS = (
-    "https://www.kirkontilastot.fi/tiedostot/J%C3%A4senm%C3%A4%C3%A4r%C3%A42020.xlsx",
-    "https://web.archive.org/web/20220705145540id_/https://www.kirkontilastot.fi/tiedostot/"
-    "J%C3%A4senm%C3%A4%C3%A4r%C3%A42020.xlsx",
-)
-EVL_PAGE = "https://www.kirkontilastot.fi/"
-EVL_YEAR = 2020
-EVL_SHEET = "TalousyksikötEkonomiskaenheter"
-FINLAND_CHURCH = "Evangelical Lutheran Church of Finland"
-FINLAND_OUTSIDE = "Not a member of the Evangelical Lutheran Church of Finland"
-POP_TABLE = "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/vaerak/11rf.px"
-POP_PAGE = ("https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__vaerak/"
-            "statfin_vaerak_pxt_11rf.px")
-NAMES_KEY = ("https://data.stat.fi/api/classifications/v2/correspondenceTables/"
-             "kunta_1_{y}0101%23seutukunta_1_{y}0101/maps?content=data&meta=max&lang={lang}")
-
-# Economic units whose name is not a municipality's, or is a parish union's
-# genitive: the municipalities their parishes cover. A unit spanning several
-# municipalities need only be placed in the sub-region they share, and the
-# run checks that they share one.
-UNITS: dict[str, tuple[str, ...]] = {
-    "Espoon ev.lut.srky-Esbo ev.luth.ksamf": ("Espoo",),
-    "Hangö ksamf-Hangon srky": ("Hanko",),
-    "Helsingin srky-Helsingfors ksamf": ("Helsinki",),
-    "Hämeenlinnan srky": ("Hämeenlinna",),
-    "Joensuun ev.lut.srky": ("Joensuu",),
-    "Kauniaisten srky-Grankulla ksamf": ("Kauniainen",),
-    "Kirkkonummen srky-Kyrkslätts ksamf": ("Kirkkonummi",),
-    "Kokkolan srky-Karleby ksamf": ("Kokkola",),
-    "Korsholms ksamf-Mustasaaren srky": ("Mustasaari",),
-    "Kotka-Kymi": ("Kotka",),                 # Kymi joined Kotka in 1977
-    "Kouvolan srky": ("Kouvola",),
-    "Kristinestads ksamf-Kristiinankaupungin srky": ("Kristiinankaupunki",),
-    "Kuopion ev.lut.srky": ("Kuopio",),
-    "Lahden srky": ("Lahti",),
-    "Lappeenrannan srky": ("Lappeenranta",),
-    "Lapuan Tuomiokirkko": ("Lapua",),
-    "Loviisanseudun srky-Lovisanejdens ksamf": ("Loviisa", "Lapinjärvi"),
-    "Malax ksamf-Maalahden srky": ("Maalahti",),
-    "Mikkelin Tuomiokirkko": ("Mikkeli",),
-    "Naantalin srky": ("Naantali",),
-    "Oulun ev.lut.srky": ("Oulu",),
-    "Pargas ksamf-Paraisten srky": ("Parainen",),
-    "Pedersörenejdens ksamf-Pietarsaarenseudun srky": ("Pietarsaari", "Pedersören kunta"),
-    "Pohjois-Lapin srky": ("Inari", "Utsjoki"),
-    "Porin ev.lut.srky": ("Pori",),
-    "Porvoon srky-Borgå ksamf": ("Porvoo",),
-    "Raseborgs ksamf-Raaseporin srky": ("Raasepori",),
-    "Sipoon srky-Sibbo ksamf": ("Sipoo",),
-    "Siuntion srky-Sjundeå ksamf": ("Siuntio",),
-    "Säkylä-Köyliö": ("Säkylä",),             # Köyliö joined Säkylä in 2016
-    "Sääksmäki": ("Valkeakoski",),
-    "Tampereen ev.lut.srky-Tammerfors ev.luth.ksamf": ("Tampere",),
-    "Turun ja Kaarinan srky-Åbo och St.Karins ksamf": ("Turku", "Kaarina"),
-    "Vaasan srky-Vasa ksamf": ("Vaasa",),
-    "Vantaan srky-Vanda ksamf": ("Vantaa",),
-    "Ylä-Savon srky": ("Iisalmi", "Lapinlahti", "Sonkajärvi", "Pielavesi"),
-    # Parishes formed across municipalities, each within one sub-region:
-    # Jämijärvi and Pomarkku (Martinkoski), Tervo and Vesanto (Niinivesi),
-    # Lemi, Savitaipale and Taipalsaari (Taipale), Hartola, Sysmä and
-    # Padasjoki (Tainionvirta), and Föglö, Kökar and Sottunga.
-    "Martinkoski": ("Jämijärvi", "Pomarkku"),
-    "Niinivesi": ("Tervo", "Vesanto"),
-    "Taipale": ("Lemi", "Savitaipale", "Taipalsaari"),
-    "Tainionvirta": ("Hartola", "Sysmä", "Padasjoki"),
-    "Ålands södra skärgård": ("Föglö", "Kökar", "Sottunga"),
-}
-# Parishes with no territory of their own, whose members live anywhere: the
-# German congregation, and one this reader cannot place in one sub-region.
-NO_TERRITORY = {"Tyska": "the German congregation (Deutsche Gemeinde), which has no territory",
-                "Olaus Petri": "Olaus Petri församling, which this reader cannot place in one "
-                               "sub-region"}
-
-
-def evl_units(rows: list[tuple]) -> tuple[dict[str, int], int]:
-    """The economic units sheet -> {unit: members} and the sheet's own total."""
-    units: dict[str, int] = {}
-    total = None
-    for row in rows:
-        cells = [c for c in row]
-        if not cells or not isinstance(cells[0], str):
-            continue
-        name = " ".join(cells[0].split())
-        value = next((c for c in reversed(cells) if isinstance(c, (int, float))), None)
-        if value is None:
-            continue
-        if name.lower().startswith("talousyksiköt yhteensä"):
-            total = int(value)
-        elif not name.lower().startswith(("talousyksikkö", "seurakunta")):
-            if name in units:
-                raise SystemExit(f"jäsenmäärä: {name} twice")
-            units[name] = int(value)
-    if total is None:
-        raise SystemExit("jäsenmäärä: no total row")
-    if sum(units.values()) != total:
-        raise SystemExit(f"jäsenmäärä: the units make {sum(units.values()):,} of {total:,}")
-    return units, total
-
-
-def unit_municipalities(unit: str, by_name: dict[str, str]) -> tuple[str, ...]:
-    """An economic unit's municipality codes: from UNITS, else its own name, or
-    each part of a name joined by a hyphen ("Brändö-Kumlinge", "Ingå-Inkoo")."""
-    if unit in UNITS:
-        missing = [n for n in UNITS[unit] if fold(n) not in by_name]
-        if missing:
-            raise SystemExit(f"jäsenmäärä: {unit}: no municipality called {missing}")
-        return tuple(sorted({by_name[fold(n)] for n in UNITS[unit]}))
-    if fold(unit) in by_name:
-        return (by_name[fold(unit)],)
-    parts = {by_name[fold(p)] for p in re.split(r"\s*-\s*", unit) if fold(p) in by_name}
-    return tuple(sorted(parts))
-
-
-def finland() -> list[dict[str, Any]]:
-    import openpyxl
-    from . import finland as fi
-    from .nordic_origin import drawn_subregion_key
-    raw, used = None, None
-    for url in EVL_URLS:
-        try:
-            raw = request(url, accept="*/*", attempts=3)
-        except (SystemExit, Exception) as exc:
-            log(f"  {url}: {str(exc)[:120]}")
-            continue
-        if raw.startswith(b"PK"):
-            used = url
-            break
-    if not used:
-        raise SystemExit("jäsenmäärä: no copy of the workbook answered")
-    book = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
-    sheet = book[EVL_SHEET]
-    rows = list(sheet.iter_rows(values_only=True))
-    if f"31.12.{EVL_YEAR}" not in str(rows[0][0]):
-        raise SystemExit(f"jäsenmäärä: the sheet is not for 31.12.{EVL_YEAR}: {rows[0][0]!r}")
-    units, total = evl_units(rows)
-    key_year, sk_of, sk_names, found = drawn_subregion_key()
-    names: dict[str, str] = {}
-    for lang in ("fi", "sv"):
-        for entry in request_json(NAMES_KEY.format(y=key_year, lang=lang), pause=fi.PAUSE):
-            code, name = fi.item(entry, "source")
-            names[fold(name)] = code
-            # "Pedersören kunta - Pedersöre", "Maarianhamina - Mariehamn"
-            for part in re.split(r"\s+-\s+", name):
-                names.setdefault(fold(part), code)
-    placed: dict[str, int] = defaultdict(int)
-    left_out: dict[str, int] = {}
-    spanning: dict[str, tuple[str, ...]] = {}
-    covered: set[str] = set()
-    for unit, members in units.items():
-        if unit in NO_TERRITORY:
-            left_out[unit] = members
-            continue
-        munis = unit_municipalities(unit, names)
-        if not munis:
-            raise SystemExit(f"jäsenmäärä: no municipality for the unit {unit!r}")
-        homes = {sk_of[m] for m in munis}
-        covered |= set(munis)
-        if len(homes) > 1:
-            spanning[unit] = munis
-            left_out[unit] = members
-            continue
-        placed[homes.pop()] += members
-    log(f"  {used}: {len(units)} units, {total:,} members; left out of every sub-region: "
-        f"{left_out}; municipalities named by no unit (in a union's parishes): "
-        f"{sorted(set(sk_of) - covered)}")
-    # The population of the same day, in the same year's municipalities.
-    meta = {v["code"]: v for v in request_json(POP_TABLE, pause=fi.PAUSE)["variables"]}
-    area = next(c for c in meta if c.startswith("kunta"))
-    codes = [f"KU{k}" for k in sorted(sk_of)]
-    people: dict[str, float] = {}
-    for chunk in (codes[i:i + 150] for i in range(0, len(codes), 150)):
-        for key, value in unstack(request_json(POP_TABLE, {"query": [
-            {"code": area, "selection": {"filter": "item", "values": chunk}},
-            {"code": "timeperiod_y", "selection": {"filter": "item", "values": [str(EVL_YEAR)]}},
-            {"code": "sukupuoli_9_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
-            {"code": "ikaryhma_10_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
-            {"code": "contentscode", "selection": {"filter": "item", "values": ["vaerak-vaesto"]}},
-        ], "response": {"format": "json-stat2"}}, pause=fi.PAUSE)):
-            people[key[area][0][2:]] = value
-    missing = [c for c in sk_of if not people.get(c)]
-    if missing:
-        raise SystemExit(f"11rf {EVL_YEAR}: no population for the key's municipalities {missing}")
-    excluded = {m for munis in spanning.values() for m in munis}
-    pop: dict[str, float] = defaultdict(float)
-    for code, sk in sk_of.items():
-        if code not in excluded:
-            pop[sk] += people[code]
-    for sk in set(sk_of.values()):
-        share = placed.get(sk, 0) / pop[sk] if pop[sk] else 0
-        if not 0.4 <= share <= 0.97:
-            raise SystemExit(f"jäsenmäärä: {sk_names[sk]}: {placed.get(sk, 0):,} members of "
-                             f"{pop[sk]:,.0f} people ({100 * share:.1f}%)")
-    shapes_rows = {found[d]: (d, "") for d in fi.DRAWN}
-    bound, missing_rows, left, _p = bind_rows("FIN", "admin2", shapes_rows)
-    if missing_rows or left:
-        raise SystemExit(f"finland: sub-regions unbound {missing_rows}")
-    away = "; ".join(f"{u} ({left_out[u]:,} members): {why}" for u, why in NO_TERRITORY.items()
-                     if u in left_out)
-    records = []
-    for sk, (drawn, _) in sorted(shapes_rows.items()):
-        members, total_people = placed.get(sk, 0), pop[sk]
-        cut = sorted(f"{unit} ({', '.join(m for m in munis)})" for unit, munis in spanning.items()
-                     if any(sk_of[m] == sk for m in munis))
-        records.append(record(
-            f"FIN-EVL-SK{key_year}-{sk}", drawn, level="admin2", parent="FIN", country="FIN",
-            codes={"seutukunta": sk, "vintage": key_year}, match_by="shape_id",
-            shape_id=bound[sk],
-            religion=shares({FINLAND_CHURCH: members, FINLAND_OUTSIDE: total_people - members},
-                            total=total_people),
-            religion_year=EVL_YEAR, religion_basis=BASIS,
-            religion_note=(
-                f"Members of the Evangelical Lutheran Church of Finland on 31 December {EVL_YEAR} "
-                f"by the church's own count ('Talousyksiköiden jäsenmäärä 31.12.{EVL_YEAR}', "
-                "its membership by parish union and independent parish), summed into the "
-                f"sub-region of {key_year} and set against Statistics Finland's population of "
-                f"the same day (table 11rf): {members:,} of {total_people:,.0f}. The church's "
-                "registered membership, not belief. Everyone else -- members of the Orthodox "
-                "Church of Finland, of other communities and of none -- is one group: the "
-                "population register records every resident's religious community, but "
-                "Statistics Finland publishes it for the whole country only (table 11rx)."
-                + (f" Left out with their people: {'; '.join(cut)}, a parish whose "
-                   "municipalities lie in two sub-regions, so its members cannot be placed in "
-                   "either." if cut else "")
-                + (f" Counted in no sub-region: {away}." if away else "")),
-            sources=[{"field": "religion", "name": "Evangelical Lutheran Church of Finland, "
-                      f"membership by economic unit 31 December {EVL_YEAR} (kirkontilastot.fi)",
-                      "url": used, "year": EVL_YEAR},
-                     {"field": "religion", "name": "Statistics Finland, table 11rf",
-                      "url": POP_PAGE, "year": EVL_YEAR}]))
-    return records
-
-
-READERS = {"SWE": (sweden, "sweden_church.json"), "FIN": (finland, "finland_church.json")}
+READERS = {"SWE": (sweden, "sweden_church.json")}
 
 
 def main() -> int:
@@ -606,8 +593,11 @@ def main() -> int:
     records = reader()
     labels = {g["group"] for r in records for g in r.get("religion") or []
               if isinstance(r.get("religion"), list)}
-    log(f"  {len(records)} records; religion labels the group tree cannot place: "
-        f"{unplaced('religion', labels) or 'none'}")
+    levels = defaultdict(int)
+    for r in records:
+        levels[r["level"]] += 1
+    log(f"  {len(records)} records ({dict(levels)}); religion labels the group tree cannot "
+        f"place: {unplaced('religion', labels) or 'none'}")
     write_json(PROCESSED / out, records)
     return 0
 
