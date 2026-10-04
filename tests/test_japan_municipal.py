@@ -193,6 +193,14 @@ class Refusals(unittest.TestCase):
         with self.assertRaises(SystemExit):
             build(f)
 
+    def test_the_wards_aggregate_is_not_counted_twice(self):
+        f = fixture()
+        f["levels"]["13100"] = ("4", "特別区部")
+        f["nat"]["13100"] = dict(f["nat"]["13201"])
+        f["ages"]["13100"] = copy.deepcopy(f["ages"]["13201"])
+        records = build(f)
+        self.assertEqual(sum(1 for r in records if r["level"] == "admin1"), 47)
+
     def test_a_ward_is_not_a_municipality(self):
         f = fixture()
         f["levels"]["05201"] = ("5", "区")

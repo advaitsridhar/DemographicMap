@@ -303,9 +303,10 @@ LANGUAGE_NOTE = (
 
 def area_levels(payload: dict[str, Any]) -> dict[str, tuple[str, str]]:
     """{area code: (level, Japanese name)} from a getMetaInfo answer. The levels
-    are e-Stat's: 1 the nation, 2 a prefecture, 3 an aggregate (Tokyo's ward
-    area), 4 a city or a Tokyo ward, 5 a designated city's ward, 6 a town or
-    village."""
+    are e-Stat's: 1 the nation, 2 a prefecture, 4 a city or a Tokyo ward, 5 a
+    designated city's ward, 6 a town or village; Tokyo's 特別区部, the wards
+    taken together, sits at a ward's level and is told apart by its name
+    (``AGGREGATES``)."""
     status, message, inner = result_of(payload, "GET_META_INFO")
     if status != 0:
         raise SystemExit(f"japan_municipal: getMetaInfo: status {status}: {message}")
@@ -435,13 +436,28 @@ def check_nationality(nat: dict[str, dict[str, int]], ages: dict[str, dict[str, 
         "age table's")
 
 
+# Tokyo's 特別区部 (13100), the 23 special wards taken together, is a row of
+# the tables beside the 23 wards themselves. e-Stat files it at the wards'
+# own level, so it is told apart by its name, and it is never a municipality:
+# counting it would count 9.7 million people twice.
+AGGREGATES = ("特別区部",)
+
+
+def is_municipality(code: str, levels: dict[str, tuple[str, str]]) -> bool:
+    """A city, a Tokyo ward, a town or a village: e-Stat level 4 or 6, and not
+    an aggregate of wards. A designated city's wards (level 5) are inside
+    their city."""
+    level, name = levels.get(code, ("", ""))
+    return level in ("4", "6") and not name.endswith(AGGREGATES)
+
+
 def check_children(nat: dict[str, dict[str, int]], levels: dict[str, tuple[str, str]]) -> None:
     """The municipalities of each prefecture (cities, towns and villages, and
     Tokyo's wards; a designated city's wards are inside their city and are not
-    counted again) add up to the prefecture."""
+    counted again, nor is the 23 wards' aggregate) add up to the prefecture."""
     sums: Counter = Counter()
-    for code, (level, _) in levels.items():
-        if level in ("4", "6") and code in nat:
+    for code in levels:
+        if is_municipality(code, levels) and code in nat:
             sums[code[:2]] += nat[code][CODE_TOTAL]
     for code, row in nat.items():
         if not is_prefecture(code):
@@ -617,7 +633,7 @@ def build(median: dict[str, float], ages: dict[str, dict[str, dict[str, int]]],
         if any(c not in nat or c not in ages for c in codes):
             missing.append(f"{name} {codes}")
             continue
-        if any(levels.get(c, ("",))[0] not in ("4", "6") for c in codes):
+        if not all(is_municipality(c, levels) for c in codes):
             raise SystemExit(f"japan_municipal: {name} is bound to {codes}, which are not all "
                              "municipalities (e-Stat levels "
                              f"{[levels.get(c, ('?',))[0] for c in codes]})")
