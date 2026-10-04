@@ -19,6 +19,9 @@ Subcommands:
   técnica, a questionnaire), whole or the lines carrying a term.
 * ``cdx PATTERN [--grep a,b] [--limit N]`` -- the Internet Archive's index of
   captured addresses under a prefix, to learn an official host's file naming.
+* ``xlsx URL [--find REGEX] [--sheets N] [--rows N]`` -- a tabulation
+  workbook ("Resultados y cruces"): its sheets, the first rows of some, and
+  the header and rows of every sheet where a term appears.
 * ``data URL [--vars REGEX] [--labels A,B] [--freq A,B] [--by VAR]
   [--weight VAR]`` -- a study's data file (a zip holding an SPSS file, or the
   SPSS file itself): its members, its size, the variables whose name or label
@@ -182,6 +185,54 @@ def cmd_pdf(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_xlsx(args: argparse.Namespace) -> int:
+    """A tabulation workbook: its sheets, their first rows, and where a term sits."""
+    import openpyxl                                    # noqa: PLC0415 -- runner only
+    raw = download(args.url, args.timeout)
+    book = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
+    names = book.sheetnames
+    log(f"== {args.url}\n  {len(raw):,} bytes, {len(names)} sheets: "
+        + " | ".join(names)[:args.width * 4])
+
+    def rows_of(sheet: Any) -> list[list[Any]]:
+        out = []
+        for row in sheet.iter_rows(values_only=True):
+            out.append(list(row[:args.cols]))
+            if len(out) >= args.scan:
+                break
+        return out
+
+    def show(rows: list[list[Any]], first: int, last: int) -> None:
+        for i in range(max(0, first), min(len(rows), last)):
+            cells = ["" if v is None else str(v).strip()[:args.cell] for v in rows[i]]
+            while cells and not cells[-1]:
+                cells.pop()
+            if any(cells):
+                log(f"    r{i + 1}: " + " | ".join(cells)[:args.width])
+
+    for name in names[:args.sheets]:
+        rows = rows_of(book[name])
+        log(f"  -- sheet {name!r}: first {args.rows} rows")
+        show(rows, 0, args.rows)
+    if args.find:
+        rx = re.compile(args.find, re.I)
+        hits = 0
+        for name in names:
+            rows = rows_of(book[name])
+            found = [i for i, row in enumerate(rows)
+                     if any(v is not None and rx.search(str(v)) for v in row)]
+            if not found:
+                continue
+            hits += 1
+            log(f"  -- sheet {name!r}: {len(found)} rows match /{args.find}/; header and matches")
+            show(rows, 0, args.header)
+            for i in found[:args.limit]:
+                show(rows, i, i + 1 + args.after)
+            if hits >= args.max_sheets:
+                break
+    return 0
+
+
 def download(url: str, timeout: int) -> bytes:
     import hashlib
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -323,6 +374,21 @@ def main() -> int:
     p.add_argument("--width", type=int, default=160)
     p.add_argument("--timeout", type=int, default=120)
     p.set_defaults(func=cmd_cdx)
+    p = sub.add_parser("xlsx")
+    p.add_argument("url")
+    p.add_argument("--find")
+    p.add_argument("--sheets", type=int, default=1)
+    p.add_argument("--rows", type=int, default=12)
+    p.add_argument("--cols", type=int, default=60)
+    p.add_argument("--scan", type=int, default=3000)
+    p.add_argument("--header", type=int, default=8)
+    p.add_argument("--after", type=int, default=0)
+    p.add_argument("--max-sheets", type=int, default=3)
+    p.add_argument("--limit", type=int, default=20)
+    p.add_argument("--cell", type=int, default=24)
+    p.add_argument("--width", type=int, default=400)
+    p.add_argument("--timeout", type=int, default=180)
+    p.set_defaults(func=cmd_xlsx)
     p = sub.add_parser("data")
     p.add_argument("url")
     p.add_argument("--vars")
