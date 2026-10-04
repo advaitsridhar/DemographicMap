@@ -1,9 +1,45 @@
-
-== GET https://nsia.gov.af/
-  -1  0 https://nsia.gov.af/  !! URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nsia.gov.af'. (_ssl.c:1016)>
-
-== GET https://www.nsia.gov.af/library
-  -1  0 https://www.nsia.gov.af/library  !! URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.nsia.gov.af'. (_ssl.c:1016)>
-
-== GET https://nsia.gov.af:8080/
-  -1  0 https://nsia.gov.af:8080/  !! URLError: <urlopen error timed out>
+https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/POPES_SUB_001/1.0?references=all
+  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 124,320 bytes
+  [1] YEAR_POPES_SUB_001  codelist=CL_YEAR_POPES_SUB_001 (8 codes) 8 constrained
+                  2018  2018
+                  2019  2019
+                  2020  2020
+                  2021  2021
+                  2022  2022
+                  2023  2023
+                  2024  2024
+                  2025  2025
+  [2] AREA_POPES_SUB_001  codelist=CL_AREA_POPES_SUB_001 (108 codes) 108 constrained
+                RC9999  Total New Zealand by regional council
+                    01  Northland region
+                    02  Auckland
+                    03  Waikato region
+                    04  Bay of Plenty region
+                    05  Gisborne region
+                    06  Hawke's Bay region
+                    07  Taranaki region
+                    08  Manawatū-Whanganui region
+                    09  Wellington region
+                    16  Tasman region
+                    17  Nelson region
+                    18  Marlborough region
+                    12  West Coast region
+                    13  Canterbury region
+                    14  Otago region
+                    15  Southland region
+                    99  Area outside region
+              TALB9999  Total New Zealand by territorial authority
+                 00100  Far North district
+                 00200  Whangarei district
+                 00300  Kaipara district
+                 07600  Auckland
+                 07601  Rodney local board area
+                 07602  Hibiscus and Bays local board area
+  [3] MEASURE_POPES_SUB_001  codelist=CL_MEASURE_POPES_SUB_001 (7 codes) 7 constrained
+                NATINC  Natural increase
+                NETMIG  Net migration
+        NETINTERNATIONAL  Net international migration
+           NETINTERNAL  Net internal migration
+             INCENDISC  Intercensal discrepancy
+                   POP  Population
+                MEDAGE  Median age
