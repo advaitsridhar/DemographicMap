@@ -99,15 +99,24 @@ def parse_table1(pages: list[str]) -> tuple[list[dict[str, Any]], dict[str, list
     provinces: dict[str, list[int]] = {}
     country: list[int] = []
     province = None
+    problems: list[str] = []
     for number, page in enumerate(pages, 1):
         if not is_table(page, 1):
             continue
+        carried = None
         for line in page.splitlines():
             m = LINE.match(line)
             if not m:
+                # A long name breaks after its type: "Thành phố - City" alone on
+                # one line, the name and its figures on the next.
+                bare = TYPE.match(" ".join(line.split()))
+                carried = bare if bare and not bare.group("name") else None
                 continue
             label = " ".join(m.group("label").split())
             tokens = m.group("tail").split()
+            if carried and not TYPE.match(label):
+                label = f"{carried.group('vi')} - {carried.group('en')} {label}"
+            carried = None
             if "ENTIRE COUNTRY" in label.upper() or key(label).startswith("toanquoc"):
                 country = vn.figures(tokens)
                 continue
@@ -131,10 +140,13 @@ def parse_table1(pages: list[str]) -> tuple[list[dict[str, Any]], dict[str, list
                 province = prov
                 continue
             if province is None or kind is None:
-                raise SystemExit(f"vietnam_district: page {number}: {label!r} is neither a "
-                                 "province nor a typed district")
+                problems.append(f"page {number}: {label!r}")
+                continue
             rows.append({"province": province, "type": kind, "name": name,
                          "n": vn.figures(tokens), "page": number})
+    if problems:
+        raise SystemExit(f"vietnam_district: {len(problems)} Table 1 rows are neither a "
+                         f"province nor a typed district: {problems}")
     return rows, provinces, country
 
 
