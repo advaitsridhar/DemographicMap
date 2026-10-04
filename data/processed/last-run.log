@@ -1,7 +1,42 @@
-brunei: race and religion by district, population by mukim, BPP 2021
-  A3: national column matches the report Malay 297,016, Chinese 42,132, Others 101,567; the four districts sum to it and to 440,715 people
-  A4: national column matches the report Islam 362,035, Christianity 29,462, Buddhism 27,745, Other, none, or not stated 21,473; the four districts sum to it and to 440,715 people
-  A2: 18 five-year groups for the four districts, each making its own total and the four making 440,715
-  C1: 39 mukims read; each district's mukims sum to its printed total
-  4 districts with race and religion; 38 mukims with a head count and a stated gap; language not published at any level
-  wrote data/processed/brunei.json (153 kB)
+== https://tongastats.gov.to/download/266/general-tables/7660/2-ethnicity.xlsx
+  HTTP 200 application/octet-stream 123,497 bytes
+  -- 'G 11'
+       1: Table G 11: Total population ethnic origin by sex, region, d
+       3: Region/ Division/ District/ Village | Tongan |  | European  |  | Fijian  |  | Samoan  |  | Indian  |  | Chinese |  | Other Pacific Island  |  | Other Asian  |  | Other 
+       6: TONGA | 47894 | 50680 | 468 | 407 | 395 | 439 | 251 | 277 | 118 | 106 | 381 | 254 | 130 | 180 | 98 | 89 | 10 | 9
+      10: Tongatapu | 35242 | 37714 | 338 | 314 | 357 | 409 | 202 | 222 | 104 | 94 | 322 | 222 | 107 | 151 | 91 | 84 | 10 | 8
+      16: Tukutonga | 312 | 327 | 9 | 10 | 7 | 12 | 14 | 6 | 1 | 1 | 1 | 4 | 2 | 2 | 0 | 1 | 0 | 0
+      36: Tatakamotonga | 3421 | 3707 | 27 | 29 | 10 | 19 | 18 | 22 | 1 | 2 | 19 | 9 | 5 | 6 | 10 | 2 | 0 | 0
+      37: Tatakamotonga | 917 | 907 | 7 | 2 | 1 | 3 | 9 | 3 | 0 | 0 | 8 | 3 | 0 | 2 | 1 | 1 | 0 | 0
+      43: Lavengatonga | 167 | 193 | 2 | 6 | 0 | 1 | 0 | 1 | 0 | 1 | 2 | 0 | 0 | 0 | 4 | 0 | 0 | 0
+      83: Vava'u | 6945 | 7070 | 108 | 76 | 23 | 20 | 32 | 42 | 9 | 5 | 35 | 20 | 11 | 19 | 6 | 5 | 0 | 0
+     132: Ha'apai | 2766 | 2858 | 7 | 11 | 8 | 3 | 10 | 6 | 0 | 1 | 15 | 5 | 0 | 1 | 1 | 0 | 0 | 0
+     166: Eua | 2369 | 2466 | 10 | 5 | 5 | 7 | 1 | 3 | 5 | 6 | 8 | 7 | 8 | 5 | 0 | 0 | 0 | 1
+     167: Eua Motu'a | 1339 | 1379 | 4 | 5 | 1 | 0 | 1 | 1 | 0 | 1 | 6 | 6 | 4 | 0 | 0 | 0 | 0 | 1
+     174: Eua Fo'ou | 1030 | 1087 | 6 | 0 | 4 | 7 | 0 | 2 | 5 | 5 | 2 | 1 | 4 | 5 | 0 | 0 | 0 | 0
+     181: Tongamama'o | 75 | 88 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+     184: Ongo Niua | 572 | 572 | 5 | 1 | 2 | 0 | 6 | 4 | 0 | 0 | 1 | 0 | 4 | 4 | 0 | 0 | 0 | 0
+     185: Niuatoputapu | 354 | 363 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+     190: Niuafo'ou | 218 | 209 | 4 | 1 | 2 | 0 | 6 | 3 | 0 | 0 | 0 | 0 | 4 | 4 | 0 | 0 | 0 | 0
+     197: Tongamama'o | 10 | 11 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0
+     199: Note: Ethinicity were multiple selected 
+  -- 'G 12'
+       1: Table G 12: Total population ethnic origin by division, dist
+       3: Division/ District/ Village | Tongan  | European  | Fijian  | Samoan  | Indian  | Chinese  | Other Pacific Islander  | Other Asian  | Other 
+       5: TONGA | 98574 | 875 | 834 | 528 | 224 | 635 | 310 | 187 | 19
+       6: Tongatapu | 72956 | 652 | 766 | 424 | 198 | 544 | 258 | 175 | 18
+      12: Tukutonga | 639 | 19 | 19 | 20 | 2 | 5 | 4 | 1 | 0
+      32: Tatakamotonga | 7128 | 56 | 29 | 40 | 3 | 28 | 11 | 12 | 0
+      33: Tatakamotonga | 1824 | 9 | 4 | 12 | 0 | 11 | 2 | 2 | 0
+      39: Lavengatonga | 360 | 8 | 1 | 1 | 1 | 2 | 0 | 4 | 0
+      79: Vava'u | 14015 | 184 | 43 | 74 | 14 | 55 | 30 | 11 | 0
+     128: Ha'apai | 5624 | 18 | 11 | 16 | 1 | 20 | 1 | 1 | 0
+     162: Eua | 4835 | 15 | 12 | 4 | 11 | 15 | 13 | 0 | 1
+     163: Eua Motu'a | 2718 | 9 | 1 | 2 | 1 | 12 | 4 | 0 | 1
+     170: Eua Fo'ou | 2117 | 6 | 11 | 2 | 10 | 3 | 9 | 0 | 0
+     177: Tongamama'o | 163 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+     180: Ongo Niua | 1144 | 6 | 2 | 10 | 0 | 1 | 8 | 0 | 0
+     181: Niuatoputapu | 717 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 0
+     186: Niuafo'ou | 427 | 5 | 2 | 9 | 0 | 0 | 8 | 0 | 0
+     193: Tongamama'o | 21 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0
+     195: Note: Ethinicity were multiple selected 
