@@ -309,10 +309,44 @@ def cmd_tree(url: str, match: str, keys: list[str], rows: int) -> None:
     log(f"  {found} nodes match {match!r}")
 
 
+def cmd_siat(ids: list[str], rows: int) -> None:
+    """What each SIAT indicator's data file holds: units by code length, years."""
+    for ident in ids:
+        pointer_url = (f"https://api.siat.stat.uz/sdmx/{ident}/table/download/"
+                       f"?download_format=json")
+        status, _, body, _ = fetch(pointer_url, accept="application/json")
+        if status != 200:
+            log(f"siat {ident}: pointer HTTP {status}")
+            continue
+        pointer = json.loads(body)
+        url = pointer.get("file") or pointer.get("file_2")
+        status, _, body, _ = fetch(str(url), timeout=240)
+        if status != 200:
+            log(f"siat {ident}: data HTTP {status} {url}")
+            continue
+        doc = json.loads(body)
+        head = doc[0] if isinstance(doc, list) else doc
+        data = head.get("data") or []
+        meta = {k: v for k, v in head.items() if k != "data"}
+        lengths: dict[int, int] = {}
+        for row in data:
+            lengths[len(str(row.get("Code") or ""))] = lengths.get(
+                len(str(row.get("Code") or "")), 0) + 1
+        years = sorted(k for k in (data[0] if data else {}) if re.fullmatch(r"\d{4}", k))
+        log(f"siat {ident}: {len(data)} rows; code lengths {lengths}; years "
+            f"{years[:2]}..{years[-2:]}; updated {pointer.get('updated_at')}")
+        log(f"  meta: {json.dumps(meta, ensure_ascii=False)[:600]}")
+        for row in data[:rows]:
+            log(f"   {json.dumps(row, ensure_ascii=False)[:300]}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    s2 = sub.add_parser("siat")
+    s2.add_argument("ids", nargs="+")
+    s2.add_argument("--rows", type=int, default=3)
     t = sub.add_parser("tree")
     t.add_argument("url")
     t.add_argument("--match", required=True)
@@ -352,7 +386,9 @@ def main() -> int:
     j.add_argument("--chars", type=int, default=400)
     j.add_argument("--data", default=None)
     args = ap.parse_args()
-    if args.cmd == "tree":
+    if args.cmd == "siat":
+        cmd_siat(args.ids, args.rows)
+    elif args.cmd == "tree":
         cmd_tree(args.url, args.match, [k for k in args.keys.split(",") if k], args.rows)
     elif args.cmd == "get":
         cmd_get(args.urls, links=args.links, grep=args.grep, chars=args.chars,
