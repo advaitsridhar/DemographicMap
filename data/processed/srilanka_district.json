@@ -16,7 +16,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 37.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1057,
@@ -97,14 +100,14 @@
         "count": 3136
       },
       {
-        "group": "Sri Lankan Chetty",
-        "pct": 0.0,
-        "count": 239
-      },
-      {
         "group": "Bharatha",
         "pct": 0.0,
         "count": 560
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 239
       },
       {
         "group": "Vedda",
@@ -118,6 +121,12 @@
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
         "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
+        "year": 2024
       }
     ],
     "codes": {
@@ -126,7 +135,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 2,375,415 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Gampaha",
@@ -145,7 +155,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 37.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1072,
@@ -211,14 +224,14 @@
         "count": 9488
       },
       {
-        "group": "Indian Tamil",
-        "pct": 0.3,
-        "count": 6575
-      },
-      {
         "group": "Burgher",
         "pct": 0.3,
         "count": 7030
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.3,
+        "count": 6575
       },
       {
         "group": "Sri Lankan Chetty",
@@ -231,14 +244,14 @@
         "count": 346
       },
       {
-        "group": "Vedda",
-        "pct": 0.0,
-        "count": 12
-      },
-      {
         "group": "Other",
         "pct": 0.0,
         "count": 1111
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 12
       }
     ],
     "sources": [
@@ -246,6 +259,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -255,7 +274,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 2,436,142 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Kalutara",
@@ -274,7 +294,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 37.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1069,
@@ -345,9 +368,19 @@
         "count": 840
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
         "group": "Malay",
         "pct": 0.0,
         "count": 476
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 313
       },
       {
         "group": "Sri Lankan Chetty",
@@ -355,19 +388,9 @@
         "count": 24
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 51
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 313
       }
     ],
     "sources": [
@@ -375,6 +398,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -384,7 +413,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 1,305,784 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Kandy",
@@ -403,7 +433,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 36.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1098,
@@ -479,24 +512,24 @@
         "count": 1001
       },
       {
-        "group": "Sri Lankan Chetty",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
         "group": "Bharatha",
         "pct": 0.0,
         "count": 29
       },
       {
-        "group": "Vedda",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Other",
         "pct": 0.0,
         "count": 652
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
       }
     ],
     "sources": [
@@ -504,6 +537,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -513,7 +552,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 1,461,895 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Matale",
@@ -532,7 +572,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 36.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1064,
@@ -608,24 +651,24 @@
         "count": 283
       },
       {
-        "group": "Sri Lankan Chetty",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
         "group": "Bharatha",
         "pct": 0.0,
         "count": 7
       },
       {
-        "group": "Vedda",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Other",
         "pct": 0.0,
         "count": 70
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 0
       }
     ],
     "sources": [
@@ -633,6 +676,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -642,7 +691,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 526,870 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Nuwara-Eliya",
@@ -661,7 +711,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 34.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1093,
@@ -732,9 +785,19 @@
         "count": 1252
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
         "group": "Malay",
         "pct": 0.0,
         "count": 216
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 51
       },
       {
         "group": "Sri Lankan Chetty",
@@ -742,19 +805,9 @@
         "count": 11
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 51
       }
     ],
     "sources": [
@@ -762,6 +815,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -771,7 +830,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 725,280 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Galle",
@@ -790,7 +850,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 36.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1080,
@@ -856,6 +919,11 @@
         "count": 2883
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 244
@@ -866,24 +934,19 @@
         "count": 85
       },
       {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 488
+      },
+      {
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 20
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 488
       }
     ],
     "sources": [
@@ -891,6 +954,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -900,7 +969,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 1,097,372 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Matara",
@@ -919,7 +989,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 36.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1084,
@@ -985,6 +1058,11 @@
         "count": 8082
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 259
@@ -995,24 +1073,19 @@
         "count": 44
       },
       {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 136
+      },
+      {
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 10
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 136
       }
     ],
     "sources": [
@@ -1020,6 +1093,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -1029,7 +1108,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 837,889 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Hambantota",
@@ -1048,7 +1128,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 35.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1039,
@@ -1073,14 +1156,14 @@
         "count": 1401
       },
       {
-        "group": "Roman Catholic",
-        "pct": 0.2,
-        "count": 1017
-      },
-      {
         "group": "Other Christian",
         "pct": 0.2,
         "count": 1247
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.2,
+        "count": 1017
       },
       {
         "group": "Other",
@@ -1114,9 +1197,9 @@
         "count": 2054
       },
       {
-        "group": "Indian Tamil",
+        "group": "Bharatha",
         "pct": 0.0,
-        "count": 121
+        "count": 8
       },
       {
         "group": "Burgher",
@@ -1124,24 +1207,24 @@
         "count": 99
       },
       {
-        "group": "Sri Lankan Chetty",
+        "group": "Indian Tamil",
         "pct": 0.0,
-        "count": 9
-      },
-      {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Vedda",
-        "pct": 0.0,
-        "count": 1
+        "count": 121
       },
       {
         "group": "Other",
         "pct": 0.0,
         "count": 112
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 1
       }
     ],
     "sources": [
@@ -1149,6 +1232,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -1158,7 +1247,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 671,418 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Jaffna",
@@ -1177,7 +1267,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 35.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1112,
@@ -1243,6 +1336,11 @@
         "count": 782
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 64
@@ -1253,24 +1351,19 @@
         "count": 7
       },
       {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 7
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 48
       }
     ],
     "sources": [
@@ -1278,6 +1371,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -1287,7 +1386,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 594,751 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Mannar",
@@ -1306,7 +1406,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 30.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1027,
@@ -1372,6 +1475,11 @@
         "count": 319
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 3
@@ -1382,12 +1490,12 @@
         "count": 5
       },
       {
-        "group": "Sri Lankan Chetty",
+        "group": "Other",
         "pct": 0.0,
-        "count": 1
+        "count": 5
       },
       {
-        "group": "Bharatha",
+        "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 1
       },
@@ -1395,11 +1503,6 @@
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 5
       }
     ],
     "sources": [
@@ -1407,6 +1510,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -1416,7 +1525,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 123,756 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Vavuniya",
@@ -1435,7 +1545,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 31.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1080,
@@ -1506,6 +1619,11 @@
         "count": 272
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 32
@@ -1521,11 +1639,6 @@
         "count": 7
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
@@ -1537,6 +1650,12 @@
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
         "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
+        "year": 2024
       }
     ],
     "codes": {
@@ -1545,7 +1664,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 172,312 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Mullaitivu",
@@ -1564,7 +1684,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 30.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1053,
@@ -1630,6 +1753,11 @@
         "count": 223
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 12
@@ -1640,24 +1768,19 @@
         "count": 3
       },
       {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 1
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 6
       }
     ],
     "sources": [
@@ -1665,6 +1788,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -1674,7 +1803,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 122,619 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Kilinochchi",
@@ -1693,7 +1823,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 29.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1067,
@@ -1759,6 +1892,11 @@
         "count": 685
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 21
@@ -1769,12 +1907,12 @@
         "count": 0
       },
       {
-        "group": "Sri Lankan Chetty",
+        "group": "Other",
         "pct": 0.0,
-        "count": 1
+        "count": 2
       },
       {
-        "group": "Bharatha",
+        "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 1
       },
@@ -1782,11 +1920,6 @@
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 2
       }
     ],
     "sources": [
@@ -1794,6 +1927,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -1803,7 +1942,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 136,710 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Batticaloa",
@@ -1822,7 +1962,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 29.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1137,
@@ -1893,9 +2036,19 @@
         "count": 992
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
         "group": "Malay",
         "pct": 0.0,
         "count": 17
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 72
       },
       {
         "group": "Sri Lankan Chetty",
@@ -1903,19 +2056,9 @@
         "count": 6
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 74
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 72
       }
     ],
     "sources": [
@@ -1923,6 +2066,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -1932,7 +2081,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 595,918 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Ampara",
@@ -1951,7 +2101,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 30.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1103,
@@ -2027,24 +2180,24 @@
         "count": 840
       },
       {
-        "group": "Malay",
-        "pct": 0.0,
-        "count": 136
-      },
-      {
-        "group": "Sri Lankan Chetty",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
         "group": "Bharatha",
         "pct": 0.0,
         "count": 13
       },
       {
+        "group": "Malay",
+        "pct": 0.0,
+        "count": 136
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 89
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 17
       }
     ],
     "sources": [
@@ -2052,6 +2205,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -2061,7 +2220,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 744,551 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Trincomalee",
@@ -2080,7 +2240,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 28.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1034,
@@ -2141,14 +2304,14 @@
         "count": 108676
       },
       {
-        "group": "Indian Tamil",
-        "pct": 0.2,
-        "count": 765
-      },
-      {
         "group": "Burgher",
         "pct": 0.2,
         "count": 861
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.2,
+        "count": 765
       },
       {
         "group": "Malay",
@@ -2156,24 +2319,24 @@
         "count": 311
       },
       {
-        "group": "Sri Lankan Chetty",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
         "group": "Bharatha",
         "pct": 0.0,
         "count": 7
       },
       {
-        "group": "Vedda",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Other",
         "pct": 0.0,
         "count": 43
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 1
       }
     ],
     "sources": [
@@ -2181,6 +2344,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -2190,7 +2359,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 442,745 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Kurunegala",
@@ -2209,7 +2379,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 37.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1082,
@@ -2275,6 +2448,11 @@
         "count": 1788
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 478
@@ -2285,24 +2463,19 @@
         "count": 796
       },
       {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 471
+      },
+      {
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 29
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 5
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 471
       }
     ],
     "sources": [
@@ -2310,6 +2483,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -2319,7 +2498,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 1,768,156 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Puttalam",
@@ -2338,7 +2518,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 33.7,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1077,
@@ -2399,14 +2582,14 @@
         "count": 48544
       },
       {
-        "group": "Indian Tamil",
-        "pct": 0.2,
-        "count": 1229
-      },
-      {
         "group": "Burgher",
         "pct": 0.2,
         "count": 1726
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.2,
+        "count": 1229
       },
       {
         "group": "Malay",
@@ -2419,14 +2602,14 @@
         "count": 454
       },
       {
-        "group": "Sri Lankan Chetty",
-        "pct": 0.0,
-        "count": 46
-      },
-      {
         "group": "Bharatha",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 46
       },
       {
         "group": "Vedda",
@@ -2440,6 +2623,12 @@
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
         "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
+        "year": 2024
       }
     ],
     "codes": {
@@ -2448,7 +2637,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 818,816 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Anuradhapura",
@@ -2467,7 +2657,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 34.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1058,
@@ -2533,14 +2726,19 @@
         "count": 977
       },
       {
-        "group": "Indian Tamil",
+        "group": "Bharatha",
         "pct": 0.0,
-        "count": 412
+        "count": 11
       },
       {
         "group": "Burgher",
         "pct": 0.0,
         "count": 174
+      },
+      {
+        "group": "Indian Tamil",
+        "pct": 0.0,
+        "count": 412
       },
       {
         "group": "Malay",
@@ -2551,11 +2749,6 @@
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 10
-      },
-      {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 11
       },
       {
         "group": "Vedda",
@@ -2569,6 +2762,12 @@
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
         "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
+        "year": 2024
       }
     ],
     "codes": {
@@ -2577,7 +2776,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 960,080 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Polonnaruwa",
@@ -2596,7 +2796,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 34.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1037,
@@ -2662,9 +2865,9 @@
         "count": 228
       },
       {
-        "group": "Indian Tamil",
+        "group": "Bharatha",
         "pct": 0.0,
-        "count": 94
+        "count": 0
       },
       {
         "group": "Burgher",
@@ -2672,24 +2875,24 @@
         "count": 55
       },
       {
+        "group": "Indian Tamil",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
         "group": "Malay",
         "pct": 0.0,
         "count": 25
       },
       {
-        "group": "Sri Lankan Chetty",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
         "group": "Other",
         "pct": 0.0,
         "count": 77
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 8
       }
     ],
     "sources": [
@@ -2697,6 +2900,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -2706,7 +2915,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 447,530 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Badulla",
@@ -2725,7 +2935,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 35.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1063,
@@ -2801,24 +3014,24 @@
         "count": 715
       },
       {
-        "group": "Sri Lankan Chetty",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
         "group": "Bharatha",
         "pct": 0.0,
         "count": 16
       },
       {
-        "group": "Vedda",
-        "pct": 0.0,
-        "count": 187
-      },
-      {
         "group": "Other",
         "pct": 0.0,
         "count": 137
+      },
+      {
+        "group": "Sri Lankan Chetty",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Vedda",
+        "pct": 0.0,
+        "count": 187
       }
     ],
     "sources": [
@@ -2826,6 +3039,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -2835,7 +3054,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 872,307 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Monaragala",
@@ -2854,7 +3074,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 33.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1022,
@@ -2920,6 +3143,11 @@
         "count": 1249
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 61
@@ -2930,24 +3158,19 @@
         "count": 17
       },
       {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 10
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 6
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 18
       }
     ],
     "sources": [
@@ -2955,6 +3178,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -2964,7 +3193,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 527,585 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Ratnapura",
@@ -2983,7 +3213,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 36.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1036,
@@ -3049,6 +3282,11 @@
         "count": 23991
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 481
@@ -3059,24 +3297,19 @@
         "count": 65
       },
       {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 170
+      },
+      {
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 14
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 0
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 170
       }
     ],
     "sources": [
@@ -3084,6 +3317,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -3093,7 +3332,8 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 1,145,423 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   },
   {
     "id": "LKA-D-Kegalle",
@@ -3112,7 +3352,10 @@
       "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 37.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group"
     },
     "sex_ratio": {
       "value": 1092,
@@ -3178,6 +3421,11 @@
         "count": 21244
       },
       {
+        "group": "Bharatha",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
         "group": "Burgher",
         "pct": 0.0,
         "count": 179
@@ -3188,24 +3436,19 @@
         "count": 117
       },
       {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 250
+      },
+      {
         "group": "Sri Lankan Chetty",
         "pct": 0.0,
         "count": 9
       },
       {
-        "group": "Bharatha",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
         "group": "Vedda",
         "pct": 0.0,
         "count": 5
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 250
       }
     ],
     "sources": [
@@ -3213,6 +3456,12 @@
         "field": "population/religion/ethnicity",
         "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka",
         "url": "https://www.statistics.gov.lk/",
+        "year": 2024
+      },
+      {
+        "field": "median_age",
+        "name": "Census of Population and Housing 2024, Department of Census and Statistics, Sri Lanka: population by five-year age group",
+        "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
         "year": 2024
       }
     ],
@@ -3222,6 +3471,7 @@
     "religion_note": "Census of Population and Housing 2024, table A3.",
     "religion_year": 2024,
     "ethnicity_note": "Census 2024 table A2. Sri Lanka's ethnic classification distinguishes Sri Lankan Tamils from Indian Tamils (Malaiyaga Thamilar), whose ancestors were brought to the plantations under British rule, and counts Moors as an ethnic group rather than a religious one.",
-    "ethnicity_year": 2024
+    "ethnicity_year": 2024,
+    "median_age_note": "Census 2024, population by five-year age group: the median of 870,476 people, interpolated within the five-year group that holds the middle person. The census publishes nothing finer below the nation."
   }
 ]
