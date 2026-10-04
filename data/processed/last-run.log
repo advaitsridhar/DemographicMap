@@ -1,63 +1,73 @@
-https://stats-sdmx-disseminate.pacificdata.org/rest/dataflow/SPC/DF_POP_AGE/1.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 107,178 bytes
-  [0]   codelist= (0 codes) 
-  [0]   codelist= (0 codes) 
-  [1] FREQ  codelist=CL_COM_FREQ (7 codes) 1 constrained
-                     X  Non-periodic
-                     A  Annual
-                     Q  Quarterly
-                     M  Monthly
-                     D  Daily
-                     W  Weekly
-                     S  Semestrial
-  [2] GEO_PICT  codelist=CL_COM_GEO_PICT (28 codes) 27 constrained
-                    _T  Pacific region
-                   MEL  Melanesia
-                   MIC  Micronesia
-                   POL  Polynesia
-                    AS  American Samoa
-                    CK  Cook Islands
-                    FJ  Fiji
-                    FM  Micronesia (Federated States of)
-                    GU  Guam
-                    KI  Kiribati
-                    MH  Marshall Islands
-                    MP  Northern Mariana Islands
-                    NC  New Caledonia
-                    NR  Naoero
-                    NU  Niue
-                    PF  French Polynesia
-                    PG  Papua New Guinea
-                    PN  Pitcairn
-                    PW  Palau
-                    SB  Solomon Islands
-                    TK  Tokelau
-                    TO  Tonga
-                    TV  Tuvalu
-                    VU  Vanuatu
-                    WF  Wallis and Futuna
-                    WS  Samoa
-                _TXPNG  Pacific region (excluding PNG)
-               MELXPNG  Melanesia (excluding PNG)
-  [3] INDICATOR  codelist=CL_POP_AGE_INDICATORS (16 codes) 16 constrained
-             MEDIANAGE  Median age
-              POPCHILD  Proportion of children (<14)
-              POPYOUTH  Proportion of youth (15-24)
-            POPELDER60  Proportion of elderly (60+)
-            POPELDER65  Proportion of elderly (65+)
-          DEPRATIO1559  Dependency ratio (15-59)
-          DEPRATIO1564  Dependency ratio (15-64)
-             POP12PLUS  Population 12+
-             POP18PLUS  Population 18+
-              POP5PLUS  Population 5+
-              POP00T14  Population 00-14
-              POP15T24  Population 15-24
-              POP15T59  Population 15-59
-              POP15T64  Population 15-64
-             POP60PLUS  Population 60+
-             POP65PLUS  Population 65+
-  [4] SEX  codelist=CL_COM_SEX (3 codes) 3 constrained
-                    _T  Total
-                     M  Male
-                     F  Female
-  [5] TIME_PERIOD  codelist= (0 codes) 0 constrained
+https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/CEN23_POP_006/1.0?references=all
+  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 1,547,025 bytes
+  [1] CEN23_YEAR_001  codelist=CL_CEN23_YEAR_001 (3 codes) 3 constrained
+                  2013  2013
+                  2018  2018
+                  2023  2023
+  [2] CEN23_GEO_002  codelist=CL_CEN23_GEO_002 (2528 codes) 2528 constrained
+                  9999  Total - New Zealand by regional council
+                    01  Northland Region
+                    02  Auckland Region
+                    03  Waikato Region
+                    04  Bay of Plenty Region
+                    05  Gisborne Region
+                    06  Hawke's Bay Region
+                    07  Taranaki Region
+                    08  Manawatū-Whanganui Region
+                    09  Wellington Region
+                    16  Tasman Region
+                    17  Nelson Region
+                    18  Marlborough Region
+                    12  West Coast Region
+                    13  Canterbury Region
+                    14  Otago Region
+                    15  Southland Region
+                    99  Area Outside Region
+                999999  Total - New Zealand by territorial authority and Auckland local board/SA2
+                   001  Far North District
+                100100  North Cape
+                100200  Rangaunu Harbour
+                100301  Inlets Far North District
+                100400  Karikari Peninsula
+                100500  Tangonge
+  [3] CEN23_ETH_002  codelist=CL_CEN23_ETH_002 (10 codes) 10 constrained
+                   999  Total - ethnicity
+                     1  European
+                     2  Māori
+                     3  Pacific Peoples
+                     4  Asian
+                     5  Middle Eastern/Latin American/African
+                    61  New Zealander
+                    69  Other ethnicity nec
+                   777  Total stated - ethnicity
+                     9  Not elsewhere included
+  [4] CEN23_AGE_001  codelist=CL_CEN23_AGE_001 (146 codes) 146 constrained
+                    99  Total - age
+                     1  Under 15 years
+                     2  15-29 years
+                     3  30-64 years
+                     4  65 years and over
+                    01  0-4 years
+                    02  5-9 years
+                    03  10-14 years
+                    04  15-19 years
+                    05  20-24 years
+                    06  25-29 years
+                    07  30-34 years
+                    08  35-39 years
+                    09  40-44 years
+                    10  45-49 years
+                    11  50-54 years
+                    12  55-59 years
+                    13  60-64 years
+                    14  65-69 years
+                    15  70-74 years
+                    16  75-79 years
+                    17  80-84 years
+                    18  85-89 years
+                    19  90 years and over
+                   000  Less than one year
+  [5] CEN23_SAB_002  codelist=CL_CEN23_SAB_002 (3 codes) 3 constrained
+                   999  Total - sex at birth
+                    11  Male / Tāne
+                    22  Female / Wahine
