@@ -398,6 +398,11 @@ def cmd_data(args: argparse.Namespace) -> int:
     by = None
     if args.by:
         by = next((n for n in meta.column_names if n.lower() == args.by.lower()), None)
+    def key(value: Any) -> Any:
+        # A missing value is NaN, which equals nothing -- itself included --
+        # so each one would count as a category of its own.
+        return "NaN" if value != value else value
+
     for var in terms(args.freq):
         var = next((n for n in meta.column_names if n.lower() == var), None)
         if var is None:
@@ -407,6 +412,7 @@ def cmd_data(args: argparse.Namespace) -> int:
             counts: Counter = Counter()
             weighted: Counter = Counter()
             for i, value in enumerate(frame[var]):
+                value = key(value)
                 counts[value] += 1
                 if weight:
                     weighted[value] += float(frame[weight].iat[i])
@@ -417,7 +423,7 @@ def cmd_data(args: argparse.Namespace) -> int:
         else:
             table: dict[Any, Counter] = defaultdict(Counter)
             for a, b in zip(frame[by], frame[var]):
-                table[a][b] += 1
+                table[key(a)][key(b)] += 1
             values = sorted({v for c in table.values() for v in c}, key=lambda v: str(v))
             log(f"  {var} by {by}: columns " + ", ".join(
                 f"{v}={label_of(meta, var, v)[:18]}" for v in values))
