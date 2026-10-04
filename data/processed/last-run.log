@@ -1,15 +1,93 @@
-== 14 candidate(s) of https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_{}_punjab_districts.pdf
-  200     571387 application/pdf                1 pdf
-  200     938647 application/pdf                2 pdf
-  200     902677 application/pdf                3 pdf
-  200    4168650 application/pdf                4 pdf
-  200    2823585 application/pdf                5 pdf
-  200    4312823 application/pdf                6 pdf
-  200    2574590 application/pdf                7 pdf
-  200   27324156 application/pdf                8 pdf
-  200    3494163 application/pdf                10 pdf
-  200    3626093 application/pdf                12 pdf
-  200     692898 application/pdf                13 pdf
-  200     592632 application/pdf                14 pdf
-  200     926298 application/pdf                15 pdf
-  200    1703204 application/pdf                16 pdf
+
+== GET https://statisticsmaldives.gov.mv/census-2022/
+  200 text/html; charset=UTF-8 120292 https://statisticsmaldives.gov.mv/census-2022/
+    'MBS' -> https://statisticsmaldives.gov.mv/census-2022/
+    'Census 2000' -> https://statisticsmaldives.gov.mv/census-2000/
+    'Census 2006' -> https://statisticsmaldives.gov.mv/census-2006/
+    'Census 2014' -> https://statisticsmaldives.gov.mv/census-2014/
+    'Census 2022' -> https://statisticsmaldives.gov.mv/census-2022-statistical-releases/
+    '' -> https://www.facebook.com/sharer/sharer.php?u=https://statisticsmaldives.gov.mv/census-2022/"e=Census 2022
+    '' -> https://twitter.com/intent/tweet?text=Census 2022&url=https://statisticsmaldives.gov.mv/census-2022/
+    'Constituency Indicator Sheets' -> https://statisticsmaldives.gov.mv/census-2022/#constituency-indicator
+    'Island and Atoll Level Indicator Sheets' -> https://statisticsmaldives.gov.mv/census-2022/#island-atoll-indicator
+    'Census Analysis' -> https://statisticsmaldives.gov.mv/census-2022/#census-analysis
+    'Atoll Profiles' -> https://statisticsmaldives.gov.mv/census-2022/#atoll-profiles
+    'Block Maps of Maldives' -> https://statisticsmaldives.gov.mv/census-2022/#block-maps
+    'Census 2022 Results' -> https://statisticsmaldives.gov.mv/census-2022/#census-2022-results
+    'Provisional Results' -> https://statisticsmaldives.gov.mv/census-2022/#provisional-results
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2025/08/parliment_indicator-pop.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2025/08/parliment_indicator-edu.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2025/08/parliment_indicator-emp.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Definitions-Population.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Atoll-Level-Indicator-Sheet-Population.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Island-Level-Indicator-Sheet-Population.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Definitions-Employment.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/10/Atoll-Level-Indicator-Sheet-Emp.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/10/Island-Level-Indicator-Sheet-Emp.xlsx
+    '' -> https://statisticsmaldives.gov.mv/economic-census/
+    '' -> https://statisticsmaldives.gov.mv/atoll-profiles/
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/WPD2023.pdf
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Umemployment-Census-2022.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P1.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P1.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P2.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P2.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P3.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P3.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P4.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P4.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P5.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P5.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P6.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P6.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC1_090423.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC2_090423.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC3_090423.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC4_090423.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC5_090423.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC6_090423.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H1.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H1.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H2.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H2.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H3.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H3.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H4.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H4.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H5.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H5.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H6.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H6.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H7.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H7.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H8.xlsx
+    'PDF' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H8.pdf
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG1.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG2.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG3.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG4.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG5.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG6.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG7.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG8.xlsx
+    'XLS' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG9.xlsx
+    ...
+
+== GET https://census.gov.mv/2022/
+  404 text/html 1251 https://census.gov.mv/2022/
+
+== GET https://statisticsmaldives.gov.mv/
+  200 text/html; charset=UTF-8 74520 https://statisticsmaldives.gov.mv/
+    'Census' -> https://statisticsmaldives.gov.mv/
+    'Census 2000' -> https://statisticsmaldives.gov.mv/census-2000/
+    'Census 2006' -> https://statisticsmaldives.gov.mv/census-2006/
+    'Census 2014' -> https://statisticsmaldives.gov.mv/census-2014/
+    'Census 2022' -> https://statisticsmaldives.gov.mv/census-2022-statistical-releases/
+    '' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2024/10/Statistical-Pocketbook-of-Maldives-2024-Updated.pdf
+    '' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2024/10/NSDSActionPlan.pdf
+    '' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2021/11/NSDS-Maldives.pdf
+    '' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2024/10/TheRoleOfGenderData_Report.pdf
+    '' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2024/09/EmploymentInResorts2022.pdf
+    '' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2024/06/Environment-Roadmap-2024.pdf
+    '' -> https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/10/Statistical-Pocketbook-of-Maldives-2023-241023.pdf
+    'Download Dataset' -> https://app.statisticsmaldives.gov.mv/census-data/
