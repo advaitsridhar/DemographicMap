@@ -103,6 +103,19 @@ def cmd_url(args: argparse.Namespace) -> int:
         body = raw.decode("utf-8", errors="replace")
         if args.chars:
             log("  " + re.sub(r"\s+", " ", body[:args.chars]))
+        if args.jsonld:
+            for block in re.findall(r'(?is)<script[^>]+application/ld\+json[^>]*>(.*?)</script>', body):
+                try:
+                    data = json.loads(block)
+                except ValueError:
+                    continue
+                for item in data if isinstance(data, list) else [data]:
+                    if not isinstance(item, dict) or "distribution" not in item:
+                        continue
+                    log(f"  dataset {item.get('name')!r}; modified {item.get('dateModified')}; "
+                        f"free {item.get('isAccessibleForFree')}")
+                    for dist in item.get("distribution") or []:
+                        log(f"    {dist.get('name')}: {dist.get('contentUrl')}")
         if args.around:
             spans = [m.start() for m in re.finditer(args.around, body, re.I)]
             log(f"  {len(spans)} raw matches of /{args.around}/")
@@ -406,6 +419,8 @@ def main() -> int:
     p.add_argument("--links")
     p.add_argument("--chars", type=int, default=0)
     p.add_argument("--around", help="print the raw page around each match of this regex")
+    p.add_argument("--jsonld", action="store_true",
+                   help="print the files a page's schema.org Dataset lists")
     p.add_argument("--context", type=int, default=300)
     p.add_argument("--limit", type=int, default=40)
     p.add_argument("--width", type=int, default=200)
