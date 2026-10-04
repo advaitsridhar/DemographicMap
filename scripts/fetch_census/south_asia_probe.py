@@ -351,6 +351,47 @@ def cmd_pdftitles(args: argparse.Namespace) -> None:
             print(f"    unreadable: {type(err).__name__}: {err}")
 
 
+def cmd_rows(args: argparse.Namespace) -> None:
+    """A PDF's words grouped into rows by their vertical position, with x.
+
+    What a word-box table reader sees: each row as ``text@x0`` words, so a
+    label printed a point above its figures, or a figure split in two, shows.
+    """
+    import pdfplumber                               # noqa: PLC0415
+    status, headers, body, _ = fetch(args.url, aia=args.aia)
+    print(f"== {args.url}")
+    describe(args.url, status, headers, body)
+    if status != 200 or body[:4] != b"%PDF":
+        return
+    wanted = {int(p) for p in args.pages.split(",") if p}
+    pattern = re.compile(args.grep, re.I) if args.grep else None
+    with pdfplumber.open(io.BytesIO(body)) as pdf:
+        print(f"    {len(pdf.pages)} pages")
+        for number, page in enumerate(pdf.pages, 1):
+            if wanted and number not in wanted:
+                continue
+            words = page.extract_words(use_text_flow=False, keep_blank_chars=False)
+            rows: list[tuple[float, list]] = []
+            for word in sorted(words, key=lambda w: (round(w["top"], 1), w["x0"])):
+                top = round(word["top"], 1)
+                if rows and abs(rows[-1][0] - top) <= args.tolerance:
+                    rows[-1][1].append(word)
+                else:
+                    rows.append((top, [word]))
+            print(f"  -- page {number}: {len(rows)} rows")
+            shown = 0
+            for top, row in rows:
+                line = " ".join(w["text"] for w in sorted(row, key=lambda w: w["x0"]))
+                if pattern and not pattern.search(line):
+                    continue
+                cells = " ".join(f"{w['text']}@{w['x0']:.0f}-{w['x1']:.0f}"
+                                 for w in sorted(row, key=lambda w: w["x0"]))
+                print(f"    y={top:6.1f} {cells[:args.width]}")
+                shown += 1
+                if shown >= args.lines:
+                    break
+
+
 def cmd_cdx(args: argparse.Namespace) -> None:
     url = ("https://web.archive.org/cdx/search/cdx?"
            + urllib.parse.urlencode({"url": args.pattern, "output": "json",
@@ -447,6 +488,15 @@ def main() -> int:
     t.add_argument("--layout", action="store_true")
     t.add_argument("--aia", action="store_true")
 
+    w = sub.add_parser("rows")
+    w.add_argument("url")
+    w.add_argument("--pages", default="1")
+    w.add_argument("--grep", default="")
+    w.add_argument("--lines", type=int, default=80)
+    w.add_argument("--width", type=int, default=400)
+    w.add_argument("--tolerance", type=float, default=2.0)
+    w.add_argument("--aia", action="store_true")
+
     c = sub.add_parser("cdx")
     c.add_argument("pattern")
     c.add_argument("--match", default="")
@@ -456,7 +506,7 @@ def main() -> int:
     args = ap.parse_args()
     {"get": cmd_get, "heads": cmd_heads, "nada": cmd_nada, "nadafiles": cmd_nadafiles,
      "xls": cmd_xls, "pdf": cmd_pdf, "pdftitles": cmd_pdftitles,
-     "cdx": cmd_cdx}[args.cmd](args)
+     "rows": cmd_rows, "cdx": cmd_cdx}[args.cmd](args)
     return 0
 
 
