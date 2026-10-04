@@ -104,14 +104,29 @@ def cmd_url(args: argparse.Namespace) -> int:
         if args.chars:
             log("  " + re.sub(r"\s+", " ", body[:args.chars]))
         if args.jsonld:
-            for block in re.findall(r'(?is)<script[^>]+application/ld\+json[^>]*>(.*?)</script>', body):
+            def datasets(node: Any) -> list[dict[str, Any]]:
+                if isinstance(node, list):
+                    return [d for child in node for d in datasets(child)]
+                if not isinstance(node, dict):
+                    return []
+                found = [node] if "distribution" in node else []
+                return found + [d for key, child in node.items() if key != "distribution"
+                                for d in datasets(child)]
+
+            blocks = re.findall(r'(?is)<script[^>]*ld\+json[^>]*>(.*?)</script>', body)
+            pairs = sorted(set(re.findall(
+                r'"contentUrl"\s*:\s*"([^"]+)"\s*,\s*"@type"\s*:\s*"DataDownload"\s*,\s*"name"\s*:\s*"([^"]+)"',
+                body)))
+            log(f"  {len(blocks)} JSON-LD blocks; {len(pairs)} DataDownload entries in the page")
+            for link, name in pairs:
+                log(f"    {name}: {link}")
+            for block in blocks:
                 try:
-                    data = json.loads(block)
-                except ValueError:
+                    data = json.loads(block, strict=False)
+                except ValueError as err:
+                    log(f"  JSON-LD unreadable: {err}")
                     continue
-                for item in data if isinstance(data, list) else [data]:
-                    if not isinstance(item, dict) or "distribution" not in item:
-                        continue
+                for item in datasets(data):
                     log(f"  dataset {item.get('name')!r}; modified {item.get('dateModified')}; "
                         f"free {item.get('isAccessibleForFree')}")
                     for dist in item.get("distribution") or []:
