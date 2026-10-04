@@ -132,6 +132,13 @@ class Build(unittest.TestCase):
         self.assertEqual(ub["population"]["value"], sum(sum(x) for x in counts(10)))
         self.assertIn("leaves out Bayan", ub["population_note"])
 
+    def test_a_misspelt_cyrillic_name_falls_back_to_the_english(self):
+        mn = dict(MN, **{"16513": "Ихтамр"})
+        by_area = tables()
+        admin1, admin2 = drawn()
+        records = ma.build(sex_payload(by_area), age_payload(by_area), EN, mn, admin1, admin2)
+        self.assertIn("S2", {r["shape_id"] for r in records})
+
     def test_district(self):
         self.assertIn("this district", self.records["S6"]["median_age_note"])
         self.assertEqual(self.records["A-hov"]["level"], "admin1")

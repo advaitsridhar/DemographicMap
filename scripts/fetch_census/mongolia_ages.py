@@ -216,8 +216,8 @@ def hierarchy(labels_en: dict[str, str], labels_mn: dict[str, str]
 
 
 def bind(aimags: dict[str, str], soums: dict[str, str], admin1: list[dict[str, Any]],
-         admin2: list[dict[str, Any]]) -> tuple[dict[str, dict[str, Any]],
-                                                dict[str, dict[str, Any]]]:
+         admin2: list[dict[str, Any]], english_names: dict[str, str] | None = None
+         ) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
     """({aimag code: drawn unit}, {soum code: drawn unit}), one to one; a
     soum in MOVED is looked for in the aimag the boundary file draws it in."""
     by_key: dict[str, dict[str, Any]] = {}
@@ -256,8 +256,17 @@ def bind(aimags: dict[str, str], soums: dict[str, str], admin1: list[dict[str, A
         else:
             parent = aimag_units[code[:3]]["id"]
         unit = drawn_soums[parent].get(soum_key(name))
+        if unit is None and english_names and code in english_names:
+            # The Cyrillic tree misspells two soums by a transposed letter
+            # (Дарив for Дарви, Баян-Адарга for Баян-Адрага); the English
+            # tree spells them as the boundary file does. Still inside the
+            # one aimag, and still one to one.
+            unit = drawn_soums[parent].get(soum_key(english_names[code]))
+            if unit is not None:
+                log(f"  {name} ({code}) bound by its English name {english_names[code]!r}")
         if unit is None:
-            unmatched.append(f"{name} ({code}, {aimags[code[:3]]})")
+            unmatched.append(f"{name} / {(english_names or {}).get(code)} ({code}, "
+                             f"{aimags[code[:3]]})")
             continue
         soum_units[code] = unit
     if unmatched:
@@ -318,7 +327,7 @@ def build(sex_payload: dict[str, Any], age_payload: dict[str, Any],
     year = int(sex_year)
     aimags, soums = hierarchy(labels_en, labels_mn)
     check(sex, ages, aimags, soums)
-    aimag_units, soum_units = bind(aimags, soums, admin1, admin2)
+    aimag_units, soum_units = bind(aimags, soums, admin1, admin2, labels_en)
     records = []
     # Every soum under the polygon of the aimag the boundary file draws it in.
     drawn_children: dict[str, list[str]] = defaultdict(list)
