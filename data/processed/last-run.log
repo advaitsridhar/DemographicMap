@@ -1,10 +1,656 @@
-sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
-  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  THA admin2: 926 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 0 refused by the checks; rows on no polygon (2): Bang Sai (1) (Phra Nakhon Si Ayutthaya): 0 polygons; Bang Sai (2) (Phra Nakhon Si Ayutthaya): 0 polygons; polygons with no row (2): Bang Sai, Bang Sai
-sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
-  LAO admin1: 8 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (10): Bolikhamxai (-): 0 polygons; Champasack (-): 0 polygons; Khammouan (-): 0 polygons; Louangnamtha (-): 0 polygons; Louangphabang (-): 0 polygons; Oudomxai (-): 0 polygons; Sekong (-): 0 polygons; Xaignabouly (-): 0 polygons; Xaisomboon (-): 0 polygons; Xiengkhouang (-): 0 polygons; polygons with no row (10): Bolikhamsai, Champasak, Khammouane, Luang Namtha, Luang Prabang, Oudomxay, Xaignabouli, Xaisomboun, Xekong, Xiangkhouang
-  LAO admin2: 145 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (3): Phonthong (Champasack): 0 polygons; Phonthong (Louangphabang): 0 polygons; Viengkham (Louangphabang): 0 polygons; polygons with no row (3): Phonthong, Phonthong, Viengkham
-sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
-  KHM admin1: 22 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (3): Banteay Meanchey (-): 0 polygons; Ratanak Kiri (-): 0 polygons; Tboung Khmum (-): 0 polygons; polygons with no row (3): Bantey Meanchey, Ratanakiri Province, Tbong Khmum
-  wrote data/processed/sea_cod_ps_age.json (2653 kB)
-  wrote sea_cod_ps_age.json: 1178 records
+probe_pdf: https://statistics.gov.sb/download/60/solomon-islands-2019-population-and-housing-census-national-report_volume-1-and-2/1207/solomon-islands-2019-census-report-vol-2_basic-tables_operations.pdf
+  5,094,197 bytes
+  318 pages
+probe_pdf: 318 pages, 33 mention ['onstituenc', 'eligio', 'anguage', 'thnic', 'Median']
+=== front matter ===
+ 
+ 
+ 
+ 
+ 
+Solomon Island Government 
+________________________________________________________________________________________ 
+ 
+2019 POPULATION AND HOUSING CENSUS 
+BASIC TABLES AND CENSUS DESCRIPTION 
+(Volume 2) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+September 2023 
+ 
+Solomon Islands National Statistics Office 
+Ministry of Finance and Treasury 
+Honiara, Solomon Islands
+
+                   
+ 
+ 
+ 
+ 
+Solomon Island Government 
+__________________________________________________________________________________________ 
+ 
+REPORT ON 2019 POPULATION AND HOUSING CENSUS 
+ 
+BASIC TABLES AND CENSUS DESCRIPTION 
+(Volume 2) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Solomon Island National Statistical Office 
+Ministry of Finance and Treasury 
+PO Box G6 
+Enquiries: Tel: (677) 23951/21427, Email: STATS –Social@mof.gov.sb
+
+                   
+i 
+ 
+ 
+Preface 
+ 
+This report provides basic table information to the analytical report (‘2019 National Population and Housing 
+Census National Report (Volume 1 ) of the 2019 Population and Housing Census of Solomon Islands. The data 
+presented is referenced to the census date of the midnight of the 24th of November 2019. It is anticipated that the 
+extended statistical information contained in this report will further inform, not only the wider community, but 
+decision-makers in various capacities in the Solomon Islands. 
+ 
+The report is presented in two parts. Part 1, presents the statistical tables (person tables  and household tables) 
+itemizing the data provided in the analytical report. Part 2 provides a summary of the operations of the 2019 
+Census and Part 3 contains the appendices. It is noted that additional information on the population projections 
+will be provided separately through an excel file that will be uploaded on the SINSO website. 
+ 
+While the set of tables presented here adheres to the United Nations Principles and Recommendations for 
+Population and Housing Censuses, and where there is continuity in m aintaining formatting standards of 
+comparability with the previous censuses, caution should be considered in any direct or explicit comparisons on 
+specific variables amongst past censuses noting certain changes in operations, definitions, and methods over time.  
+ 
+Although there may have been slight changes to the numbering and ordering of the tables corresponding to each 
+subject matter grouping, as well as situations where the titles may have changed due to the structure and the 
+formatting specifications, it is important to note that the table numberings relating to the categorizing of persons 
+and households correspond to the respective chapters in the volume 1 report. 
+ 
+The tireless efforts of a number of people and agencies towards the successful implementation of the 2019 Census 
+enumeration and the final release of the key findings through the analytical report and this report are 
+acknowledged. Firstly, the government of Solomon Islands is acknowledged through the Minister of Finance and 
+Treasury (MOFT), Honorable Harry Kuma for his leadership and support in terms of funding for the 2019 Census 
+operation, and Mr McKinnie Dentana, Permanent Secretary for MOFT for his leadership and management 
+oversight of the census operations at the ministry level.  
+ 
+Dr.Michael Levins and Jomer Manongsong are commended for technical advice on data processing and training, 
+and Mr. Joshua Neale, Data Analyst under the New Zealand Volunteer (VSA) Programme for his assistance in 
+data processing and data analysis. Mr. Dougl as Kimi is also credited for his leadership and chairmanship of the 
+Census Users Committee that comprised of members of key government ministries who contributed in the design 
+of the questionnaire. Moreover, special appreciation is conveyed to Dr. Willie Lahari, MOFT-SINSO Technical 
+Adviser for his technical assistance and capacity building in the planning and design, and implementation of the 
+2019 census enumeration, and the analysis of the data. 
+ 
+Sincere thanks also go to the following donors by share of grant funding support: to our Solomon Island 
+Government (SIG) for being the main provider of funding support for the 2019 Census Project with grant 
+financing (93.2%); Republic of China (ROC-Taiwan (4.9%); Central Bank of Solomon Islands (0.2%); R-Wash  
+(1.2%), Ministry of Health and Medical Services; and UNICEF,(0.5%), Their financial assistance has 
+tremendously supported the activities of the 2019 Census Project of the Solomon Island.  Details of the 2019 
+Census budget is provided in Appendix 2. 
+ 
+ 
+                   
+ii 
+ 
+Further words of commendations are conveyed to the Census Provincial Coordinators namely, Loyce Pabulu, 
+Elleni Taisia, Anna Pitaboe, Clera Sao’hu, Alfred Palo, Josephat Tako, Desmond Papage, Joy Talo Mazini, 
+Anterlyn Tuzakana, Reginald Mara, Hilda Diudi, a nd Michael Dimola, Late Raphael Aipaina and NSDS Staff 
+are also thanked for their valuable contributions rendered to the success of 2019 Census.  
+ 
+The Solomon Island National Statistics Office (SINSO) and Census Management further expresses its 
+appreciation to all the Census Project staff and the rest of the staff of the SINSO including Michael Dimola for 
+his leadership in census logistics and management, Samson Kanamoli for support in GIS/Mapping and oversight 
+over data processing, and Reginald Mara for support provided in data processing. The support from the Provincial 
+Governments during the census enumeration is also appreciated including all the hard work undertaken by the 
+Census District Supervisors, Chief Area Managers, Area Managers, Supervisors and Enumerators and Trainers. 
+ 
+The SINSO is also grateful to the following media outlets: SINSO Media, Solomon Islands Broadcasting 
+Cooperation (SIBC), Solomon Star Newspaper and Island Sun Newspaper for the publicity programs since the 
+initial stage of conducting 2019 Census.  
+  
+Finally, let me salute the people of Solomon Islands including families, households and expatriate residents who 
+participated in the 2019 Census enumeration, for availing their time to answer the questions asked and in 
+cooperating with the enumerators during interviews. Your contributions have contributed to the success of the 
+2019 Population and Housing Census for the Solomon Islands. 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Douglas Kimi 
+Census Commissioner and Government Statistician 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                   
+iii 
+ 
+ 
+LIST OF ABBREVIATIONS 
+ 
+AM  Area Manager 
+CA  Census Act (cap 53) 
+CBSI               Central Bank of Solomon Island 
+CAPI               Computer Assisted Personal Interview  
+CAM  Chief Area Manager 
+CC  Census Commissioner 
+CDS  Census District Superintendent 
+CDF                Constituency Development Fund  
+CO  Census Office 
+CSC                 Census Steering Committee 
+CTA  Census Technical Advisor 
+CTC                Census Technical Committee 
+CUC  Census Users Committee 
+DGS  Deputy Government Statistician 
+DHS                Demographics Health Survey 
+EA  Enumeration Area 
+EEZ                Exclusive Economic Zone 
+FC                   Financial Controller 
+GIS   Geographic Information System 
+GPS                Global Positioning System 
+GS            Government Statistician 
+HCC               Honiara City Council 
+HIES              Household Income & Expenditure Survey 
+Hh            Household 
+HhH               Household Head  
+HhL            Household Listing 
+ H                   Household Tables 
+ILO                 International Labor Organization 
+ISCO              International Standard Classification of occupation 
+ISIC                International Standard Industry Classification 
+MGA              Main Group Archipelago 
+MDPAC         Ministry of Development Planning & Aid Coordination 
+MECDM        Ministry of Environment Climate Changes Development Management 
+MHMS           Ministry of Health Medical Services 
+MLHS            Ministry of Land Housing and Survey 
+MoFT            Ministry of Finance and Treasury 
+MRD              Ministry of Rural Development 
+MTDS            Medium -Term Development Strategy 
+NDMO           National Disaster Management Office 
+NDS               National Development Strategy 
+NGO            Non-Government Organization 
+NPP                National Population Policy 
+NPD               Non- Private Dwelling 
+NSDS             National Statistics Development Strategy 
+NISC              National & International Standard Classification 
+ 
+                   
+iv 
+ 
+P                     Person Table 
+PM            Prime Minister 
+PNG               Papua New Guinea 
+PS                   Permanent Secretary 
+QGIS              Quantum Geographical Information System (free online software) 
+ROC            Republic of China 
+R-WASH       Rural Water Supply & Hygiene 
+SA            Statistics Act 1970 
+SBD               Solomon Bokolo Dollar 
+SIBC            Solomon Islands Broadcasting Cooperation  
+SIG             Solomon Islands Government 
+SINSO            Solomon Islands National Statistics Office 
+SINU              Solomon Island National University 
+ToT                Trainer of Trainers 
+UNICEF         United Nation International Children Emergency Fund 
+UN            United Nation  
+VRS               Village Resources Survey 
+VSA               Volunteer Services Abroad (NZ Gov’t) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                   
+v 
+ 
+CONTENTS  
+Preface .....................................................................................................................................................................................................i 
+LIST OF ABBREVIATIONS ............................................................................................................................................................... iii 
+SUMMARY OF MAIN INDICATORS ............................................................................................................................................... vii 
+Part 1: KEY FINDINGS ....................................................................................................................................................................... 1 
+Part 2: Census Operation and Procedures ........................................................................................................................... 265 
+1.1 Introduction ............................................................................................................................................................................ 266 
+2.1 Census history ...................................................................................................................................................................... 267 
+3.1 Census planning and management ................................................................................................................................. 268 
+3.2 Management ............................................................................................................................................................................ 270 
+4.1 Project budget ......................................................................................................................................................................... 271 
+5.1 Geographical division .......................................................................................................................................................... 271 
+6.1 Mapping ..................................................................................................................................................................................... 272 
+7.1 Questionnaire design ........................................................................................................................................................... 273 
+8.1 Village Resource Survey /Household listing ................................................................................................................ 273 
+9.1  Pilot census .................................................................................................................................................................... 274 
+10.1 Organizational structure of census office .................................................................................................................. 275 
+11.1  Staffing and recruitment ........................................................................................................................................... 275 
+12.1  Publicity .......................................................................................................................................................................... 276 
+12.2 Radio Programs/Solomon Island Broadcasting Corporations (SIBC) ...................................................... 277 
+12.3 Talkback Show Program ........................................................................................................................................... 277 
+13.1  Training ........................................................................................................................................................................... 277 
+14.1  Field Operation ............................................................................................................................................................. 278 
+14.2 Non-Private Dwellings (NPDs) or Institution ........................................................................................................... 280 
+15.1  Data processing ............................................................................................................................................................ 280 
+16.1 Data Analysis and Data Dissemination ....................................................................................................................... 281 
+17.1  Key Challenges .............................................................................................................................................................. 281 
+18.1 Way forward .................................................................................................................................................................. 283 
+ 
+                   
+vi 
+ 
+      PART 1: KEY FINDINGS          Page 
+List of Tables……………………………………………………………………………………………..……..2 
+      
+      PART 2: Census Operation and Procedures ……………………………………………………………265 
+ 
+      PART 3: APPENDICES 
+    
+Appendix 1: Glossary…………………………………………………………………………………………..284 
+Appendix 2: Census Budget…………………………………………………………………………………….287 
+Appendix 3: Organizational Structure …………………………………………………………………………288 
+Appendix 4: 2019 Census Questionnaire……………………………………………………………………….290 
+Appendix 5: Country Maps……………………………………………………………………………………..294 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                   
+vii 
+ 
+SUMMARY OF MAIN INDICATORS
+Total Population 720,956 199,138 521,818 30,775 94,106 31,420 30,318 4,100 154,022 172,740 51,587 22,319 129,569
+ Males 369,396 102,591 266,805 15,863 48,933 16,627 15,562 2,222 78,972 86,691 26,662 11,055 66,809
+ Females 351,560 96,547 255,013 14,912 45,173 14,793 14,756 1,878 75,050 86,049 24,925 11,264 62,760
+Average annual population growth rate,  2009-20191 2.6 5.9 1.5 1.5 2.0 1.8 1.5 3.0 3.6 0.9 2.4 0.4 5.6
+Population density (number of people/Km) 23.7 - - 8.0 12.5 7.6 49.3 6.1 28.9 40.9 16.2 25.7 5916.4
+Urbarnisation
+Urban population 199,138 - - 1,053 14,608 1,342 1,481 - 40,152 7,020 2,107 1,806 129,569
+Percent Urban (%) 27.6 - - 3.4 15.5 4.3 4.9 - 26.1 4.1 4.1 8.1 100.0
+Average annual urban growth rate, 2009-20191 5.9 - - 2.6 4.0 3.2 1.7 - 9.5 3.2 0.2 0.9 5.6
+Population Structure
+Number of children(<15 years) 264,799 58,994 205,805 12,282 34,895 11,374 11,562 1,355 57,734 68,968 21,776 8,275 36,578
+Youth Population (15-34 years)2 249,831 83,790 166,041 9,238 30,610 9,761 9,698 1,255 55,900 55,269 15,617 6,321 56,162
+Population aged (30-59 years) 217,625 66,114 151,511 9,298 29,040 10,166 9,158 1,350 45,018 48,490 14,667 6,913 43,525
+Older population (60 years and older ) 42,074 8,242 33,832 1,988 6,148 2,322 2,005 416 7,140 11,421 3,000 2,230 5,404
+Median age 21.4 23.9 20 20.4 21.7 22.6 20.9 25.3 20.9 19.5 18.6 22.2 24.2
+Dependency ratio (0-14 and 60+) 74 51 85 86 77 77 81 76 73 87 92 89 48
+Sex ratio 105 106 105 106 108 112 105 118 105 101 107 98 106
+Marriage
+Mean age at first marriage (SMAM) 24.7 25.6 24.2 23.9 24.8 24.3 24.3 26.7 23.9 24.4 24 23.5 26.1
+  Males 26.5 27.2 26.2 26 26.9 26.5 26.3 28.2 25.7 26.3 26.1 25.6 27.6
+  Females 22.8 24 22.1 21.7 22.7 21.9 22.2 24.6 22.1 22.5 21.9 21.6 24.5
+Labour and E conomic Activity
+Working Age (12+) population 506,009 150,765 355,244 20,680 65,723 22,254 20,971 3,013 106,917 117,410 33,744 15,661 99,636
+Labour Force 280,510 79,105 201,405 11,423 40,433 13,762 11,236 1,886 61,806 62,214 18,475 8,330 50,945
+  Males 150,975 44,286 106,689 6,354 22,222 7,668 5,992 1,157 32,954 31,698 9,953 4,246 28,731
+  Females 129,535 34,819 94,716 5,069 18,211 6,094 5,244 729 28,852 30,516 8,522 4,084 22,214
+Total E mployment 258,383 69,564 188,819 10,674 38,011 13,315 10,838 1,813 56,640 58,324 17,127 7,572 44,069
+  Males 139,041 39,202 99,839 5,907 20,900 7,438 5,763 1,125 30,197 29,579 9,176 3,861 25,095
+  Females 119,342 30,362 88,980 4,767 17,111 5,877 5,075 688 26,443 28,745 7,951 3,711 18,974
+Employee (Gov.& Private-NGO). 72,918 40,807 32,111 2,711 10,818 3,146 1,622 757 13,333 8,781 2,727 1,336 27,687
+  Males 49,253 25,985 23,268 1,989 7,286 2,538 1,127 614 9,174 6,109 1,967 926 17,523
+  Females 23,665 14,822 8,843 722 3,532 608 495 143 4,159 2,672 760 410 10,164
+Employer 3,458 1,274 2,184 155 635 295 165 16 768 471 188 53 712
+  Males 2,464 840 1,624 115 494 241 96 9 528 345 129 40 467
+  Females 994 434 560 40 141 54 69 7 240 126 59 13 245
+Self employed 38,825 12,183 26,642 1,698 5,501 903 1,807 150 11,024 7,751 1,588 966 7,437
+  Males 23,776 7,172 16,604 1,118 3,393 642 1,174 87 6,306 4,896 1,052 575 4,533
+  Females 15,049 5,011 10,038 580 2,108 261 633 63 4,718 2,855 536 391 2,904
+Voluntary work 447 76 371 33 85 38 22 1 73 94 43 9 49
+  Males 307 41 266 29 64 31 12 1 47 64 31 4 24
+  Females 140 35 105 4 21 7 10 0 26 30 12 5 25
+Western Indicator Solomon 
+Islands Urban Rural Choiseul Temotu HoniaraIsabel Central  Rennell-      
+Bellona 
+ Guadal- 
+canal Malaita  Makira-
+Ulawa 
+ 
+SUMMARY OF MAIN INDICATORS 
+                   
+viii 
+ 
+SUMMARY OF MAIN INDICATORS (Cont..)
+Unpaid family work 34,222 4,756 29,466 1,319 5,348 1,661 1,864 79 7,214 10,236 2,594 1,270 2,637
+  Males 15,175 1,410 13,765 564 2,459 816 873 19 3,319 4,623 1,278 552 672
+  Females 19,047 3,346 15,701 755 2,889 845 991 60 3,895 5,613 1,316 718 1,965
+Unpaid Work: producing goods-service (sale) 24,645 3,588 21,057 989 3,882 1,181 1,271 73 5,342 7,264 1,835 877 1,931
+  Males 11,045 1,062 9,983 436 1,802 592 608 26 2,411 3,365 897 386 522
+  Females 13,600 2,526 11,074 553 2,080 589 663 47 2,931 3,899 938 491 1,409
+Unpaid Work: producing (own-use, subsistence) 83,868 6,880 76,988 3,769 11,742 6,091 4,087 737 18,886 23,727 8,152 3,061 3,616
+  Males 37,021 2,692 34,329 1,656 5,402 2,578 1,873 369 8,412 10,177 3,822 1,378 1,354
+  Females 46,847 4,188 42,659 2,113 6,340 3,513 2,214 368 10,474 13,550 4,330 1,683 2,262
+Youth-Employment (15-34 yrs) 114,505 32,356 82,149 4,511 16,607 5,232 4,580 662 27,637 24,815 7,413 2,791 20,257
+  Males 59,898 17,619 42,279 2,463 9,028 2,916 2,331 450 14,229 12,112 3,886 1,349 11,134
+  Females 54,607 14,737 39,870 2,048 7,579 2,316 2,249 212 13,408 12,703 3,527 1,442 9,123
+E mployment by key industry (population)
+All Industries 258,383 69,564 258,383 10,674 38,011 13,315 10,838 1,813 56,640 58,324 17,127 7,572 44,069
+Agriculture, Forestry, Fishery 176,613 22,954 176,613 8,445 27,511 10,160 9,386 914 41,014 47,754 14,006 6,279 11,144
+  Males (%) 49.6 43.6 49.6 54.2 52.7 53.1 51.2 54.8 49.2 48.3 50.8 48.4 39.6
+  Females (%) 50.4 56.4 50.4 45.8 47.3 46.9 48.8 45.2 50.8 51.7 49.2 51.6 60.4
+Industry 16,711 8,965 16,711 448 3,389 873 194 176 3,320 2,027 548 170 5,566
+  Males (%) 86.3 87.5 86.3 98.0 73.8 93.6 97.4 98.9 84.0 78.9 94.0 97.1 93.9
+  Females (%) 13.7 12.5 13.7 2.0 26.2 6.4 2.6 1.1 16.0 21.1 6.0 2.9 6.1
+Services 65,059 37,645 65,059 1,781 7,111 2,282 1,258 723 12,306 8,543 2,573 1,123 27,359
+  Males (%) 56.9 56.7 56.9 49.9 55.0 53.7 61.1 62.2 58.6 57.3 59.9 58.3 56.5
+  Females (%) 43.1 43.3 43.1 50.1 45.0 46.3 38.9 37.8 41.4 42.7 40.1 41.7 43.5
+E mployment to population ratio (% ) 35.8 34.9 36.2 34.7 40.4 42.4 35.7 44.2 36.8 33.8 33.2 33.9 34.0
+Total Unemployment 22,127 9,541 12,586 749 2,422 447 398 73 5,166 3,890 1,348 758 6,876
+  Males 11,934 5,084 6,850 447 1,322 230 229 32 2,757 2,119 777 385 3,636
+  Females 10,193 4,457 5,736 302 1,100 217 169 41 2,409 1,771 571 373 3,240
+Unemployment Rate (official) 7.9 12.1 6.2 6.6 6.0 3.2 3.5 3.9 8.4 6.3 7.3 9.1 13.5
+  Males 7.90 11.5 6.4 7.0 5.9 3.0 3.8 2.8 8.4 6.7 7.8 9.1 12.7
+  Females 7.87 23.8 6.5 6.0 6.0 3.6 3.2 5.6 8.3 5.8 6.7 9.1 14.6
+Youth-Unemployment Rate (15-34 yrs) 11.1 18.8 7.6 9.5 8.8 5.2 4.6 6.2 10.8 8.2 9.8 12.6 19.5
+  Males 11.1 16.7 7.8 9.9 8.6 4.5 5.1 4.7 11.0 8.7 10.2 12.9 18.7
+  Females 11.0 21.3 7.4 8.9 9.0 6.0 4.1 9.4 10.6 7.7 9.3 12.4 20.4
+Not In Labour Force 225,499 71,660 153,839 9,257 25,290 8,492 9,735 1,127 45,111 55,196 15,269 7,331 48,691
+  Males 106,832 33,187 73,645 4,312 11,994 4,143 4,684 523 21,513 26,336 7,364 3,372 22,591
+  Females 118,667 38,473 80,194 4,945 13,296 4,349 5,051 604 23,598 28,860 7,905 3,959 26,100
+Labour force participation rate
+
+=== pages mentioning ['onstituenc', 'eligio', 'anguage', 'thnic', 'Median'] (first 6) ===
+
+--- page 5 ----------------------------------------------------
+iii
+LIST OF ABBREVIATIONS
+AM  Area Manager
+CA  Census Act (cap 53)
+CBSI               Central Bank of Solomon Island
+CAPI               Computer Assisted Personal Interview
+CAM  Chief Area Manager
+CC  Census Commissioner
+CDS  Census District Superintendent
+CDF                Constituency Development Fund
+CO  Census Office
+CSC                 Census Steering Committee
+CTA  Census Technical Advisor
+CTC                Census Technical Committee
+CUC  Census Users Committee
+DGS  Deputy Government Statistician
+DHS                Demographics Health Survey
+EA  Enumeration Area
+EEZ                Exclusive Economic Zone
+FC                   Financial Controller
+GIS   Geographic Information System
+GPS                Global Positioning System
+GS            Government Statistician
+HCC               Honiara City Council
+HIES              Household Income & Expenditure Survey
+Hh            Household
+HhH               Household Head
+HhL            Household Listing
+ H                   Household Tables
+ILO                 International Labor Organization
+ISCO              International Standard Classification of occupation
+ISIC                International Standard Industry Classification
+MGA              Main Group Archipelago
+MDPAC         Ministry of Development Planning & Aid Coordination
+MECDM        Ministry of Environment Climate Changes Development Management
+MHMS           Ministry of Health Medical Services
+MLHS            Ministry of Land Housing and Survey
+MoFT            Ministry of Finance and Treasury
+MRD              Ministry of Rural Development
+MTDS            Medium -Term Development Strategy
+NDMO           National Disaster Management Office
+NDS               National Development Strategy
+NGO            Non-Government Organization
+NPP                National Population Policy
+NPD               Non- Private Dwelling
+NSDS             National Statistics Development Strategy
+NISC              National & International Standard Classification
+
+--- page 9 ----------------------------------------------------
+vii
+SUMMARY OF MAIN INDICATORS
+Total Population 720,956 199,138 521,818 30,775 94,106 31,420 30,318 4,100 154,022 172,740 51,587 22,319 129,569
+ Males 369,396 102,591 266,805 15,863 48,933 16,627 15,562 2,222 78,972 86,691 26,662 11,055 66,809
+ Females 351,560 96,547 255,013 14,912 45,173 14,793 14,756 1,878 75,050 86,049 24,925 11,264 62,760
+Average annual population growth rate,  2009-20191 2.6 5.9 1.5 1.5 2.0 1.8 1.5 3.0 3.6 0.9 2.4 0.4 5.6
+Population density (number of people/Km) 23.7 - - 8.0 12.5 7.6 49.3 6.1 28.9 40.9 16.2 25.7 5916.4
+Urbarnisation
+Urban population 199,138 - - 1,053 14,608 1,342 1,481 - 40,152 7,020 2,107 1,806 129,569
+Percent Urban (%) 27.6 - - 3.4 15.5 4.3 4.9 - 26.1 4.1 4.1 8.1 100.0
+Average annual urban growth rate, 2009-20191 5.9 - - 2.6 4.0 3.2 1.7 - 9.5 3.2 0.2 0.9 5.6
+Population Structure
+Number of children(<15 years) 264,799 58,994 205,805 12,282 34,895 11,374 11,562 1,355 57,734 68,968 21,776 8,275 36,578
+Youth Population (15-34 years)2 249,831 83,790 166,041 9,238 30,610 9,761 9,698 1,255 55,900 55,269 15,617 6,321 56,162
+Population aged (30-59 years) 217,625 66,114 151,511 9,298 29,040 10,166 9,158 1,350 45,018 48,490 14,667 6,913 43,525
+Older population (60 years and older ) 42,074 8,242 33,832 1,988 6,148 2,322 2,005 416 7,140 11,421 3,000 2,230 5,404
+Median age 21.4 23.9 20 20.4 21.7 22.6 20.9 25.3 20.9 19.5 18.6 22.2 24.2
+Dependency ratio (0-14 and 60+) 74 51 85 86 77 77 81 76 73 87 92 89 48
+Sex ratio 105 106 105 106 108 112 105 118 105 101 107 98 106
+Marriage
+Mean age at first marriage (SMAM) 24.7 25.6 24.2 23.9 24.8 24.3 24.3 26.7 23.9 24.4 24 23.5 26.1
+  Males 26.5 27.2 26.2 26 26.9 26.5 26.3 28.2 25.7 26.3 26.1 25.6 27.6
+  Females 22.8 24 22.1 21.7 22.7 21.9 22.2 24.6 22.1 22.5 21.9 21.6 24.5
+Labour and E conomic Activity
+Working Age (12+) population 506,009 150,765 355,244 20,680 65,723 22,254 20,971 3,013 106,917 117,410 33,744 15,661 99,636
+Labour Force 280,510 79,105 201,405 11,423 40,433 13,762 11,236 1,886 61,806 62,214 18,475 8,330 50,945
+  Males 150,975 44,286 106,689 6,354 22,222 7,668 5,992 1,157 32,954 31,698 9,953 4,246 28,731
+  Females 129,535 34,819 94,716 5,069 18,211 6,094 5,244 729 28,852 30,516 8,522 4,084 22,214
+Total E mployment 258,383 69,564 188,819 10,674 38,011 13,315 10,838 1,813 56,640 58,324 17,127 7,572 44,069
+  Males 139,041 39,202 99,839 5,907 20,900 7,438 5,763 1,125 30,197 29,579 9,176 3,861 25,095
+  Females 119,342 30,362 88,980 4,767 17,111 5,877 5,075 688 26,443 28,745 7,951 3,71
+
+--- page 11 ----------------------------------------------------
+ix
+SUMMARY OF MAIN INDICATORS (Cont..)
+  School enrolment rates, 15-19 years old (%) 69.9 70.1 69.8 65.8 60.9 69.3 72.2 70.0 62.9 78.0 70.1 71.1 73.0
+    Males 69.6 70.5 69.3 65.4 58.2 68.0 72.0 67.2 62.0 79.2 69.6 71.2 73.8
+    Females 70.2 70.4 69.7 66.2 63.9 70.7 72.4 73.5 63.7 76.9 70.7 71.0 72.2
+Percentage of pop aged 12 and older with:
+  No school completed 14.4 7.0 17.6 7.8 5.9 13.1 18.0 3.3 16.3 25.7 10.5 19.0 6.5
+  Primary education 46.2 33.9 51.4 58.1 56.1 45.2 48.5 50.4 46.5 47.4 55.8 51.8 30.9
+  Secondary education 28.4 40.1 23.4 25.9 28.5 30.5 26.0 30.6 27.7 20.2 24.6 21.8 41.3
+  Tertiary education 7.9 16.2 4.4 4.9 6.2 6.2 5.1 11.2 6.7 3.6 4.8 4.3 18.5
+  Vocational /professional qualifications 1.4 1.6 1.3 1.6 1.8 2.5 0.9 3.7 1.3 0.8 2.0 0.6 1.6
+Literacy rate,15+(%)3 85.5 92.9 82.3 94.0 94.9 88.9 86.3 95.2 82.3 73.8 87.3 76.2 94.0
+  Males 88.5 94.6 85.7 93.8 94.6 91.8 90.5 96.3 85.1 79.3 89.5 83.9 95.6
+  Females 82.5 91.1 78.7 94.2 95.1 85.5 82.0 93.9 79.4 68.6 85.0 69.0 92.2
+Literacy rate,15-24(%)4 90.2 95.1 87.9 94.4 94.6 94.6 91.9 94.7 87.2 83.7 91.3 89.3 96.0
+    Males 90.0 95.1 87.7 92.6 93.6 94.4 91.9 94.9 86.9 83.7 90.6 89.5 96.1
+    Females 90.5 95.1 88.2 96.3 95.7 94.8 91.9 94.3 87.4 83.6 92.0 89.1 95.8
+Language ability,5+(%)5
+  English 72.9 85.5 67.9 76.8 80.7 74.6 69.8 80.6 68.9 61.0 72.3 69.1 87.4
+    Males 75.0 75.0 75.0 76.2 80.4 76.5 74.2 79.5 70.7 64.7 73.8 74.4 88.9
+    Females 70.7 84.0 65.5 77.6 81.1 72.4 65.3 81.9 67.0 57.2 70.7 64.0 85.7
+  Pidgin 68.4 79.7 63.9 75.8 77.6 71.0 68.7 70.8 65.4 55.8 67.0 60.2 81.0
+    Males 70.1 80.8 65.9 74.4 76.9 72.6 72.4 70.9 67.0 59.0 68.2 64.8 82.3
+    Females 66.5 78.5 61.9 77.2 78.3 69.2 64.9 70.7 63.8 52.6 65.7 55.8 79.6
+  Local language 64.4 68.3 62.8 79.5 76.3 71.2 70.0 80.4 62.1 55.1 64.1 39.2 68.1
+    Males 65.8 69.5 64.4 77.4 75.1 71.4 72.6 78.5 63.6 58.0 65.1 42.9 69.4
+    Females 62.9 67.1 61.3 81.7 77.6 70.9 67.3 82.7 60.6 52.3 63.1 35.6 66.8
+  Other langauages 6.6 5.2 7.1 13.5 10.3 9.5 6.2 6.9 4.9 5.9 5.2 3.3 5.6
+    Males 7.3 5.9 7.9 14.2 11.0 11.1 7.0 9.9 5.6 6.6 5.8 3.8 6.3
+    Females 5.8 4.4 6.3 12.8 9.6 7.8 5.5 3.1 4.2 5.3 4.7 2.7 4.8
+Population 5 years and older with severe disability
+Seeing 569 52 517 27 90 26 18 5 150 158 36 30 29
+Hearing 783 113 670 43 118 38 36 2 165 222 56 27 76
+Walking 1206 159 1047 61 232 63 47 11 248 278 85 88 93
+Remembering 790 92 698 54 135 56 27 5 166 188 65 33 61
+Self care 1322 187 1135 89 240 110 46 26 299 268 101 42 101
+Communicating 1109 
+
+--- page 13 ----------------------------------------------------
+xi
+SUMMARY OF MAIN INDICATORS (Cont..)
+Households
+  Number of private households 131,566 33,206 98,360 5,520 17,531 320 5,872 720 28,746 32,332 9,057 4,699 20,839
+  Average household size (number of people per household) 5.4 5.9 5.2 5.4 5.1 4.6 5.1 5.1 5.3 5.3 5.5 4.7 6.1
+  Number of non private dwellings (institutions)7 926 311 615 57 235 121 43 11 130 123 52 16 138
+Households characteristics
+  Wages/salaries is main household income (%) 28.4 66.2 15.6 22.8 28.8 18.8 14 22.4 27 13.3 14.5 15.8 70.6
+  Receiving remittances (%) 21.1 4.3 16.8 37.4 32.4 34.7 19.5 61.1 9.7 23.8 19.3 20.3 14.9
+  With insecticide treated bednets (%) 83.9 67.3 89.6 91.7 88.0 94.3 91.8 58.2 84.6 89.2 88.9 92.3 60.9
+  With improved drinking water sources (%) 78.3 90.6 74.2 85.3 80.8 90.9 82.0 93.3 64.9 76.5 74.2 75.0 92.9
+  With improved sanitation facilities (%) 35.4 83.8 19.0 15.0 35.4 24.9 9.4 48.9 32.2 22.1 12.4 8.6 91.8
+  With hand washing facilities (%) 90.0 46.9 14.3 95.5 97.7 92.1 93.5 98.3 87.8 83.1 85.9 87.9 96.5
+  Wood/coconut as main energy source for cooking (%) 84.0 48.8 95.9 95.6 88.6 92.7 95.3 88.9 88.0 97.0 96.2 97.2 37.1
+  Solar as main energy source of lighting 81.1 85.5 14.5 89.7 80.4 92.1 94.4 85.7 87.1 94.2 93.1 93.8 35.5
+  Connected to electricity grid (%) 15.3 50.3 3.5 6.9 12.9 6.2 3.7 9.6 8.0 3.5 3.2 3.3 62.3
+  With radio (%) 23.9 34.8 20.2 16.4 16.0 17.9 21.5 14.4 25.9 24.4 17.6 9.0 37.6
+  With mobile phone (%) 44.6 65.6 37.6 46.7 51.2 51.1 30.1 22.5 37.4 39.1 31.0 37.9 67.5
+Climate change and vulnerability
+  Households exposure to sea level rise (%) 16.8 5.2 20.7 28.5 20.1 23.7 40.9 10.0 10.2 20.2 14.1 36.6 2.7
+  Households with No disaster plan (%) 25.9 30.3 24.4 26.3 29.0 27.8 10.3 3.6 22.1 27.7 24.2 17.7 32.8
+Constitutional Development Fund (CDF)
+  Households that were aware of CDF (%) 98.9 98.9 99.0 99.5 99.3 99.7 99.4 99.7 98.2 99.1 99.4 99.2 98.5
+  Households with housing materials, positive CDF assistance (%) 18.8 12.2 21.0 18.3 20.1 28.4 11.4 20.6 21.1 22.1 12.0 16.8 11.8
+  Households with solar supplies, positive CDF assistance (%) 12.2 4.1 14.9 21.5 14.3 13.3 8.4 18.2 11.6 14.2 13.8 20.1 3.5
+  Households with No (positive) impact of CDF assistance (%) 64.2 78.7 59.3 55.4 59.6 54.2 73.0 51.7 63.9 59.3 67.6 57.3 79.4
+Notes:
+1 The 2009 figures are adjusted (based on 8.3% undercount in 2009 Census); For urban growth rate, only the total and Honiara are adjusted
+2 Based on the Solomon Islands youth definition
+³ Proportion of population 15 years and ol
+
+--- page 14 ----------------------------------------------------
+1
+Part 1: KEY FINDINGS
+The Population and Household tables included in this Volume 2 Basic Table report were derived from the
+Solomon Island 2019 Population and Housing Census. Significantly, these statistical tables are useful for wider
+audience but specifically meant for users  with statistical background such as planners and policy makers,
+researches, specialists, and donor representatives.
+The set of tables presented here adhere to the United Nations principles and recommendations for population and
+housing censuses to ensure a consistent standard of comparabilit y with the previous census. Inclusion of new
+tables are included thus make changes to the numbering, ordering and table titles of tables in each group. It is
+important to note that numbering of each person table links to the chapters in Volume 1 Census report. Therefore,
+table 1 starts with P2.1 in which P stands for “Persons” , 2 represent the Geography chapter in Volume 1 report
+and 1 shows the first table of Geography chapter and presented in ascending order. Whilst numbering of
+household tables starts with H1 where ‘H’ stands for Household.
+The Volume 2 Basic Table report contains 105 tables in total distributed into fifteen (15) subject matters. The
+person tables comprises of 70 tables and 35 tables household tables. The main subject matter topics are:
+1. Geography
+2. Age structure
+3. Population Dynamics
+4. Urbanisation
+5. Fertility
+6. Mortality
+7. Migration
+8. Social Characteristic
+9. Education and Literacy
+10. Disability
+11. Communication and Internet
+12. Economic and Labour Force
+13. Formal and Informal Sectors
+14. Household and Housing
+15. Constituency Development Fund
+
+--- page 17 ----------------------------------------------------
+4
+P7.7: Total Population and whether place of usual residence 5 years ago same
+ward as place of enumeration, Solomon Islands: 2019
+125
+P7.8: Total Population by province and place of usual residence 5 years ago if
+different from current place of residence (ward), Solomon Islands: 2019
+126
+P7.9: Population who lived overseas 5 years ago by country of residence, Solomon
+Islands: 2019
+126
+P7.10: Total Population by place of enumeration and place of residence 5 years ago,
+Solomon   Islands: 2019
+127
+8.     Social Characteristics
+P8.1: Population 15 years and older by marital status, 5 year age group and sex,
+province and urban-rural residence, Solomon Islands: 2019
+129
+P8.2: Total populations by province and religious denominations, Solomon Islands:
+2019
+142
+P8.3: Total Population by ward and religious denomination province, Solomon
+Islands: 2019
+143
+P8.4: Total Population by ethnic group by sex and province Solomon Islands: 2019150
+P8.5: Total Population by ethnic group, 5 year age group and sex, Solomon
+Islands: 2019
+152
+P8.6: Total Population by citizenship and sex, province and urban-rural residence,
+Solomon Islands: 2019
+154
+P8.7: Total Population by age and sex, and citizenship Solomon Islands: 2019 154
+9.     Education and Literacy
+P9.1: Population 5 years and older by sex and whether attending a formal
+educational institute by ward, Solomon Islands: 2019
+155
+P9.2: Population 5 years and older by age and sex whether attending a formal
+educational Institute, Solomon Island: 2019
+161
+P9.3: Population 5 years and older who attended a formal educational Institute by
+sex and level of education attended, Solomon Islands: 2019
+162
+P9.4: Population 5 years and older who attended a formal educational Institute by
+age and sex and level of education attended, Solomon Islands: 2019
+164
+P9.5: Population 12 years and older by sex and highest level of education
+completed by province and urban-rural residence, Solomon Islands: 2019
+167
+P9.6: Population 12 years and older by age and sex and highest level of education
+completed, Solomon Islands: 2019
+169
+P9.7: Population 5 years and older by age, sex, and literacy by language, Solomon
+Islands: 2019
+171
+P9.8: Population 5 years and older by sex and literacy by language and province,
+Solomon Islands: 2019
+174
+P9.9: Population 5 years and older by age and sex literate in any language by
+province and urban-rural, residence, Solomon Islands: 2019
+175
+P9.10: Population by 5 years and older by age and sex not literate* by provi
+
+... and 27 further pages match; re-run with a narrower --terms to see them.
