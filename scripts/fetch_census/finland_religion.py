@@ -424,7 +424,7 @@ def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
             sources=[dict(source, field="religion" + ("/population" if extra else ""))]))
     log(f"  {own['admin2']} of {len(shapes_rows)} sub-regions and {own['admin1']} of "
         f"{len(FIN_REGIONS)} regions take 11ra's own figure; the rest are summed; "
-        f"populations written for {sum('population' in r for r in records)} units whose "
+        f"populations written for {sum('value' in r['population'] for r in records)} units whose "
         f"{key_year} territory is not today's")
     # The drawn sub-regions under another drawn region than their maakunta's:
     # said, not stopped on -- the regions are summed from municipalities.

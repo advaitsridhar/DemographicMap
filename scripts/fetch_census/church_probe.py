@@ -155,6 +155,40 @@ def municipal_changes(then: int, now: int) -> None:
                   + ", ".join(f"{m} {old[m]}" for m, t in sorted(key.items()) if t == key.get(c)))
 
 
+def successor_check(gone: str, candidates: tuple[str, ...], year: str) -> None:
+    """Which candidate a gone municipality joined: 11ra lays ``year`` out in
+    today's division, with the merged municipality's people in its successor's
+    figure, and 11rf lays it out in that year's own division, both apart."""
+    from .pxweb import unstack
+    base = "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/vaerak/"
+    meta = {v["code"]: v for v in get_json(base + "11rf.px")["variables"]}
+    area = next(c for c in meta if c.startswith(("alue", "kunta")))
+    then = {key[area][0]: v for key, v in unstack(get_json(base + "11rf.px", {"query": [
+        {"code": area, "selection": {"filter": "item",
+                                     "values": [f"KU{c}" for c in (gone, *candidates)]}},
+        {"code": "timeperiod_y", "selection": {"filter": "item", "values": [year]}},
+        {"code": "sukupuoli_9_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
+        {"code": "ikaryhma_10_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
+        {"code": "contentscode", "selection": {"filter": "item", "values": ["vaerak-vaesto"]}},
+    ], "response": {"format": "json-stat2"}}))}
+    time.sleep(1.5)
+    meta = {v["code"]: v for v in get_json(base + "11ra.px")["variables"]}
+    area = next(c for c in meta if c.startswith("alue"))
+    now = {key[area][0]: v for key, v in unstack(get_json(base + "11ra.px", {"query": [
+        {"code": area, "selection": {"filter": "item",
+                                     "values": [f"KU{c}" for c in candidates]}},
+        {"code": "contentscode", "selection": {"filter": "item", "values": ["vaerak-vaesto"]}},
+        {"code": "timeperiod_y", "selection": {"filter": "item", "values": [year]}},
+    ], "response": {"format": "json-stat2"}}))}
+    print(f"  {year} in {year}'s division (11rf): {then}")
+    print(f"  {year} in today's division (11ra): {now}")
+    for c in candidates:
+        own, merged = then.get(f"KU{c}"), now.get(f"KU{c}")
+        print(f"    KU{c}: 11ra {merged} - 11rf {own} = "
+              f"{None if own is None or merged is None else merged - own} "
+              f"(KU{gone} in 11rf: {then.get(f'KU{gone}')})")
+
+
 RELIGION_CONTENTS = ["vaerak-vaesto", "vaesto_usk_evlut_p", "vaesto_usk_muu_p",
                      "vaesto_usk_ei_p"]
 
@@ -348,6 +382,13 @@ PROBES: dict[str, Any] = {
     # Round c7: which municipalities of 2020 are gone today, and where the
     # 2020 keys (read from the maps lists) put them and their neighbours.
     "c7_fin_merges": lambda: municipal_changes(2020, 2026),
+    # Round c8: the 2021 table's own country row (round c7's run found no
+    # "Riket" line), and which municipality Pertunmaa joined: 11ra combines a
+    # merged municipality into its successor in every year, 11rf counts each
+    # year in that year's division.
+    "c8_swe_2021_tail": lambda: pdf(SVK + "NyckeltalLKF(1).pdf",
+                                    grep=r"riket|totalt|summa|okänd|kommunen skrivna|hela"),
+    "c8_fin_pertunmaa": lambda: successor_check("588", ("507", "491", "213", "097"), "2024"),
     # Round c4: Forshaga and Munkfors share one parish in the 2020 and 2021
     # editions. Do the older editions still count them apart?
     "c4_swe_2019": lambda: pdf(SVK + "NyckeltalLKF.pdf",
