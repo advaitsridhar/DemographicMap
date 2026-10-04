@@ -1,0 +1,141 @@
+[
+  {
+    "id": "PAK-NAT-ict",
+    "level": "admin1",
+    "name": "Islamabad Capital Territory",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 97.5,
+        "count": 2227199
+      },
+      {
+        "group": "Afghan",
+        "pct": 2.3,
+        "count": 52056
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.2,
+        "count": 3527
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 388
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_islamabad.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "70912109B38683933016378",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 56,045 of the 2,283,244 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-ict-islamabad",
+    "level": "admin2",
+    "name": "Islamabad",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 97.5,
+        "count": 2227199
+      },
+      {
+        "group": "Afghan",
+        "pct": 2.3,
+        "count": 52056
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.2,
+        "count": 3527
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 388
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_islamabad.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Islamabad Capital Territory",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B38683933016378",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 56,045 of the 2,283,244 people counted here are not Pakistani nationals."
+  }
+]

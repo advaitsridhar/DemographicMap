@@ -1,0 +1,103 @@
+[
+  {
+    "id": "PAK-AGE-ict",
+    "level": "admin1",
+    "name": "Islamabad Capital Territory",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.5,
+      "unit": "years",
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 4: population by single year age, sex and rural/urban"
+    },
+    "sex_ratio": {
+      "value": 112.6,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 4: population by single year age, sex and rural/urban"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 4: population by single year age, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_islamabad.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "70912109B38683933016378",
+    "median_age_note": "Census 2023 Table 4: the median of the single years of age of all 2,283,244 people, interpolated within the year that holds the middle person (75 and over is the open top group).",
+    "sex_ratio_note": "Census 2023 Table 4: 1,209,000 males against 1,073,974 females. The 270 transgender persons the census counted are in the population and in neither figure."
+  },
+  {
+    "id": "PAK-AGE-ict-islamabad",
+    "level": "admin2",
+    "name": "Islamabad",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.5,
+      "unit": "years",
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 4: population by single year age, sex and rural/urban"
+    },
+    "sex_ratio": {
+      "value": 112.6,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 4: population by single year age, sex and rural/urban"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 4: population by single year age, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_islamabad.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Islamabad Capital Territory",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B38683933016378",
+    "median_age_note": "Census 2023 Table 4: the median of the single years of age of all 2,283,244 people, interpolated within the year that holds the middle person (75 and over is the open top group).",
+    "sex_ratio_note": "Census 2023 Table 4: 1,209,000 males against 1,073,974 females. The 270 transgender persons the census counted are in the population and in neither figure."
+  }
+]
