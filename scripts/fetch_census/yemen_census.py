@@ -48,7 +48,7 @@ from collections import defaultdict
 from typing import Any
 
 from . import uscb
-from ._shared import PROCESSED, log, measure, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
 from .west_asia_common import (age_groups, bind_by_gazetteer, check, count, gazetteer,
                                hdx_resource, infer_parents, key, median_age, parents_by_id,
                                report, sex_ratio, units, uscb_table, workbook)
@@ -81,6 +81,14 @@ NAT_TOLERANCE = 0.005
 # another code: Hadramawt's 2004 row (19) counts the two Socotra districts the
 # Bureau files under Socotra (32), made a governorate in 2013.
 COUNTS_ALSO = {"19": ("32",)}
+# Census districts whose ground the boundary file draws as two polygons in two
+# governorates: OCHA cut the parts of Hamdan and of Sanhan wa Bani Bahlul
+# nearest the capital into "Sana'a City Outskirts" units (its YE1319 and
+# YE1324) under Amanat al-Asimah, leaving the rest of each district (YE2319,
+# YE2324) in Sana'a governorate. The census counts each district whole, so
+# neither polygon's figure is known, and neither is either governorate's.
+SPLIT = {"2319": "1319", "2324": "1324"}
+SPLIT_GOVERNORATES = {"13", "23"}
 
 
 def code_of(row: dict[str, Any]) -> str:
@@ -128,7 +136,7 @@ def projection(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
               f"{sum(g[2] for g in groups):,.1f}, not {total:,.1f}")
         check(abs(men + women - total) <= SLACK * 2,
               f"yemen_census: {where}: projected sexes do not make {total:,.1f}")
-        out[code] = {"total": total, "groups": groups}
+        out[code] = {"total": total, "groups": groups, "name": str(row.get("AREA_NAME") or "")}
     return out
 
 
@@ -205,7 +213,7 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
     for gov, made in sums.items():
         row = cen.get(gov)
         same = row is not None and round(row["total"]) == round(made["total"])
-        cen[gov] = {"name": row["name"] if row else gov, **made,
+        cen[gov] = {"name": row["name"] if row else proj.get(gov, {}).get("name", gov), **made,
                     "yemeni": row["yemeni"] if same else None,
                     "foreign": row["foreign"] if same else None,
                     "note": None if same else (
@@ -262,9 +270,33 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
     rows, age_rows = [], []
     sources = [{"field": "population/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
                 "license": LICENCE}]
+    outskirts = {v: k for k, v in SPLIT.items()}
     for level, drawn, codes in (("admin1", admin1, codes1), ("admin2", admin2, codes2)):
         for unit in drawn:
             code = codes.get(unit["id"])
+            why = None
+            if level == "admin2" and code in SPLIT:
+                why = (f"The 2004 census counts {cen[code]['name'].title()} district whole "
+                       f"({cen[code]['total']:,.0f} people); the boundary file draws the part "
+                       f"of it nearest Sana'a apart, under Amanat al-Asimah, so the district's "
+                       f"figures are not this shape's and the part's are not published.")
+            elif level == "admin2" and code in outskirts:
+                why = (f"Part of {cen[outskirts[code]]['name'].title()} district, which the "
+                       f"2004 census counts whole with the rest of the district (drawn in "
+                       f"Sana'a governorate); nothing counts this part alone.")
+            elif level == "admin1" and code in SPLIT_GOVERNORATES:
+                why = ("The boundary file draws the Sana'a City outskirts of Hamdan and of "
+                       "Sanhan wa Bani Bahlul in Amanat al-Asimah, while the 2004 census and "
+                       "the CSO's projections count both districts whole in Sana'a "
+                       "governorate, so neither governorate's figures are this shape's.")
+            if why:
+                rows.append(record(
+                    f"YEM-CEN-{code}-{unit['id'][-6:]}", unit["name"], level=level,
+                    parent=ISO3, country=ISO3, match_by="shape_id", shape_id=unit["id"],
+                    parent_name=parents.get(unit["parent"]) if level == "admin2" else None,
+                    population=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+                    median_age=gap(NOT_AVAILABLE, why)))
+                continue
             if code is None or code not in cen:
                 continue
             c = cen[code]
