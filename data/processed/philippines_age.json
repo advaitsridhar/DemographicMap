@@ -4542,6 +4542,56 @@
     "population_note": "The census count of 2020: the 2020 Census of Population and Housing's count of everyone in the 779 barangays the PSA tabulates under ZAMBOANGA DEL SUR."
   },
   {
+    "id": "PHL-CPH2020-R-armm",
+    "level": "admin1",
+    "name": "ARMM",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)"
+    },
+    "sex_ratio": {
+      "value": 100.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)",
+        "url": "https://data.humdata.org/dataset/popn-single-year-age-sex-and-barangay-census-2020",
+        "year": 2020,
+        "license": "CC BY (Creative Commons Attribution International), per the HDX dataset"
+      }
+    ],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "36201628B49646111072560",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2020 Census of Population and Housing's count of everyone in Basilan, Lanao del Sur, Maguindanao, Sulu, Tawi-Tawi -- the region as its polygon draws it, before the Bangsamoro region of 2019, by single year of age to an open 80+.",
+    "sex_ratio_note": "Males per 100 females in the 2020 Census of Population and Housing's count of everyone in Basilan, Lanao del Sur, Maguindanao, Sulu, Tawi-Tawi -- the region as its polygon draws it, before the Bangsamoro region of 2019."
+  },
+  {
     "id": "PHL-CPH2020-R-bicolregion",
     "level": "admin1",
     "name": "Bicol Region",
@@ -5190,6 +5240,56 @@
     "shape_id": "36201628B97761566458517",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2020 Census of Population and Housing's count of everyone in the 5 provinces the map draws inside this region (Bukidnon, Camiguin, Lanao del Norte, Misamis Occidental, Misamis Oriental), by single year of age to an open 80+.",
     "sex_ratio_note": "Males per 100 females in the 2020 Census of Population and Housing's count of everyone in the 5 provinces the map draws inside this region (Bukidnon, Camiguin, Lanao del Norte, Misamis Occidental, Misamis Oriental)."
+  },
+  {
+    "id": "PHL-CPH2020-R-soccsksargen",
+    "level": "admin1",
+    "name": "Soccsksargen",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 23.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)"
+    },
+    "sex_ratio": {
+      "value": 104.5,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)",
+        "url": "https://data.humdata.org/dataset/popn-single-year-age-sex-and-barangay-census-2020",
+        "year": 2020,
+        "license": "CC BY (Creative Commons Attribution International), per the HDX dataset"
+      }
+    ],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "36201628B76469343449086",
+    "median_age_note": "Interpolated within the single year of age that holds the middle person, from the 2020 Census of Population and Housing's count of everyone in Cotabato, Interim Province, Sarangani, South Cotabato, Sultan Kudarat, Cotabato City -- the region as its polygon draws it, before the Bangsamoro region of 2019, by single year of age to an open 80+.",
+    "sex_ratio_note": "Males per 100 females in the 2020 Census of Population and Housing's count of everyone in Cotabato, Interim Province, Sarangani, South Cotabato, Sultan Kudarat, Cotabato City -- the region as its polygon draws it, before the Bangsamoro region of 2019."
   },
   {
     "id": "PHL-CPH2020-R-westernvisayas",
