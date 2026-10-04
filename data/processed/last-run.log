@@ -1,77 +1,161 @@
-https://data.api.abs.gov.au/rest/data/ABS,C21_G08_LGA,1.0.0/._T.13660+10050..
-  HTTP 200 application/vnd.sdmx.data+csv; charset=utf-8 3,789 bytes
-  66 rows; columns ['DATAFLOW', 'ANCP', 'BPPP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD', 'OBS_VALUE']
-  DATAFLOW: 1 distinct: ABS:C21_G08_LGA(1.0.0)
-  ANCP: 33 distinct: 6101, 3307, 5201, 3308, _T, 2305, 1102, 2101, 2102, 3103, 3106, 2201, 2103, 3206, 3213, 5107, 1101, 1504, 6902, _O, 2306, 2303, 1201, 1202, 7106, 7126, 4106, 3104, 3304, 3204, 3205, 9215, _N
-  BPPP: 1 distinct: _T
-  REGION: 2 distinct: 10050, 13660
-  REGION_TYPE: 1 distinct: LGA2021
-  STATE: 1 distinct: 1
-  TIME_PERIOD: 1 distinct: 2021
-  OBS_VALUE: 57 distinct: 455, 354, 578, 3, 104, 4910, 8, 2038, 22224, 537, 41, 14, 7399, 280, 19, 6, 79, 21454, 177, 31, 60, 98, 4138, 29, 1377, 6068, 16, 281, 5, 22, 0, 153, 162, 918, 2274, 12, 10, 988, 4548, 346
-    ABS:C21_G08_LGA(1.0.0) | 6101 | _T | 10050 | LGA2021 | 1 | 2021 | 455
-    ABS:C21_G08_LGA(1.0.0) | 3307 | _T | 10050 | LGA2021 | 1 | 2021 | 354
-    ABS:C21_G08_LGA(1.0.0) | 5201 | _T | 10050 | LGA2021 | 1 | 2021 | 578
-    ABS:C21_G08_LGA(1.0.0) | 3307 | _T | 13660 | LGA2021 | 1 | 2021 | 3
-    ABS:C21_G08_LGA(1.0.0) | 3308 | _T | 10050 | LGA2021 | 1 | 2021 | 104
-    ABS:C21_G08_LGA(1.0.0) | _T | _T | 13660 | LGA2021 | 1 | 2021 | 4910
-    ABS:C21_G08_LGA(1.0.0) | 2305 | _T | 13660 | LGA2021 | 1 | 2021 | 8
-    ABS:C21_G08_LGA(1.0.0) | 1102 | _T | 10050 | LGA2021 | 1 | 2021 | 2038
-    ABS:C21_G08_LGA(1.0.0) | 2101 | _T | 10050 | LGA2021 | 1 | 2021 | 22224
-    ABS:C21_G08_LGA(1.0.0) | 2102 | _T | 13660 | LGA2021 | 1 | 2021 | 537
-    ABS:C21_G08_LGA(1.0.0) | 3103 | _T | 13660 | LGA2021 | 1 | 2021 | 41
-    ABS:C21_G08_LGA(1.0.0) | 3106 | _T | 13660 | LGA2021 | 1 | 2021 | 14
-    ABS:C21_G08_LGA(1.0.0) | 2201 | _T | 10050 | LGA2021 | 1 | 2021 | 7399
-    ABS:C21_G08_LGA(1.0.0) | 2103 | _T | 10050 | LGA2021 | 1 | 2021 | 280
-    ABS:C21_G08_LGA(1.0.0) | 3206 | _T | 10050 | LGA2021 | 1 | 2021 | 19
-    ABS:C21_G08_LGA(1.0.0) | 3213 | _T | 13660 | LGA2021 | 1 | 2021 | 6
-    ABS:C21_G08_LGA(1.0.0) | 5107 | _T | 10050 | LGA2021 | 1 | 2021 | 79
-    ABS:C21_G08_LGA(1.0.0) | 1101 | _T | 10050 | LGA2021 | 1 | 2021 | 21454
-    ABS:C21_G08_LGA(1.0.0) | 3106 | _T | 10050 | LGA2021 | 1 | 2021 | 177
-    ABS:C21_G08_LGA(1.0.0) | 1504 | _T | 10050 | LGA2021 | 1 | 2021 | 31
-    ABS:C21_G08_LGA(1.0.0) | 6902 | _T | 10050 | LGA2021 | 1 | 2021 | 60
-    ABS:C21_G08_LGA(1.0.0) | _O | _T | 13660 | LGA2021 | 1 | 2021 | 98
-    ABS:C21_G08_LGA(1.0.0) | 2306 | _T | 10050 | LGA2021 | 1 | 2021 | 4138
-    ABS:C21_G08_LGA(1.0.0) | 2303 | _T | 13660 | LGA2021 | 1 | 2021 | 29
-    ABS:C21_G08_LGA(1.0.0) | 3103 | _T | 10050 | LGA2021 | 1 | 2021 | 1377
-    ABS:C21_G08_LGA(1.0.0) | 2102 | _T | 10050 | LGA2021 | 1 | 2021 | 6068
-    ABS:C21_G08_LGA(1.0.0) | 1201 | _T | 13660 | LGA2021 | 1 | 2021 | 16
-    ABS:C21_G08_LGA(1.0.0) | 1202 | _T | 10050 | LGA2021 | 1 | 2021 | 281
-    ABS:C21_G08_LGA(1.0.0) | 7106 | _T | 13660 | LGA2021 | 1 | 2021 | 5
-    ABS:C21_G08_LGA(1.0.0) | 6101 | _T | 13660 | LGA2021 | 1 | 2021 | 22
-    ABS:C21_G08_LGA(1.0.0) | 5107 | _T | 13660 | LGA2021 | 1 | 2021 | 0
-    ABS:C21_G08_LGA(1.0.0) | 7126 | _T | 13660 | LGA2021 | 1 | 2021 | 0
-    ABS:C21_G08_LGA(1.0.0) | 1504 | _T | 13660 | LGA2021 | 1 | 2021 | 8
-    ABS:C21_G08_LGA(1.0.0) | 4106 | _T | 10050 | LGA2021 | 1 | 2021 | 153
-    ABS:C21_G08_LGA(1.0.0) | 3104 | _T | 10050 | LGA2021 | 1 | 2021 | 162
-    ABS:C21_G08_LGA(1.0.0) | 6902 | _T | 13660 | LGA2021 | 1 | 2021 | 0
-    ABS:C21_G08_LGA(1.0.0) | 7106 | _T | 10050 | LGA2021 | 1 | 2021 | 918
-    ABS:C21_G08_LGA(1.0.0) | 1101 | _T | 13660 | LGA2021 | 1 | 2021 | 2274
-    ABS:C21_G08_LGA(1.0.0) | 3304 | _T | 13660 | LGA2021 | 1 | 2021 | 5
-    ABS:C21_G08_LGA(1.0.0) | 1202 | _T | 13660 | LGA2021 | 1 | 2021 | 12
-    ABS:C21_G08_LGA(1.0.0) | 5201 | _T | 13660 | LGA2021 | 1 | 2021 | 10
-    ABS:C21_G08_LGA(1.0.0) | 2303 | _T | 10050 | LGA2021 | 1 | 2021 | 988
-    ABS:C21_G08_LGA(1.0.0) | 3308 | _T | 13660 | LGA2021 | 1 | 2021 | 10
-    ABS:C21_G08_LGA(1.0.0) | 3204 | _T | 13660 | LGA2021 | 1 | 2021 | 0
-    ABS:C21_G08_LGA(1.0.0) | _O | _T | 10050 | LGA2021 | 1 | 2021 | 4548
-    ABS:C21_G08_LGA(1.0.0) | 3205 | _T | 10050 | LGA2021 | 1 | 2021 | 346
-    ABS:C21_G08_LGA(1.0.0) | 3205 | _T | 13660 | LGA2021 | 1 | 2021 | 11
-    ABS:C21_G08_LGA(1.0.0) | 3206 | _T | 13660 | LGA2021 | 1 | 2021 | 0
-    ABS:C21_G08_LGA(1.0.0) | 3304 | _T | 10050 | LGA2021 | 1 | 2021 | 179
-    ABS:C21_G08_LGA(1.0.0) | 3204 | _T | 10050 | LGA2021 | 1 | 2021 | 230
-    ABS:C21_G08_LGA(1.0.0) | 3104 | _T | 13660 | LGA2021 | 1 | 2021 | 9
-    ABS:C21_G08_LGA(1.0.0) | 4106 | _T | 13660 | LGA2021 | 1 | 2021 | 0
-    ABS:C21_G08_LGA(1.0.0) | 2306 | _T | 13660 | LGA2021 | 1 | 2021 | 189
-    ABS:C21_G08_LGA(1.0.0) | 9215 | _T | 13660 | LGA2021 | 1 | 2021 | 4
-    ABS:C21_G08_LGA(1.0.0) | 7126 | _T | 10050 | LGA2021 | 1 | 2021 | 67
-    ABS:C21_G08_LGA(1.0.0) | 9215 | _T | 10050 | LGA2021 | 1 | 2021 | 128
-    ABS:C21_G08_LGA(1.0.0) | 1201 | _T | 10050 | LGA2021 | 1 | 2021 | 172
-    ABS:C21_G08_LGA(1.0.0) | 2305 | _T | 10050 | LGA2021 | 1 | 2021 | 224
-    ABS:C21_G08_LGA(1.0.0) | 2201 | _T | 13660 | LGA2021 | 1 | 2021 | 514
-    ABS:C21_G08_LGA(1.0.0) | 2103 | _T | 13660 | LGA2021 | 1 | 2021 | 19
-    ABS:C21_G08_LGA(1.0.0) | _T | _T | 10050 | LGA2021 | 1 | 2021 | 56093
-    ABS:C21_G08_LGA(1.0.0) | 1102 | _T | 13660 | LGA2021 | 1 | 2021 | 286
-    ABS:C21_G08_LGA(1.0.0) | _N | _T | 10050 | LGA2021 | 1 | 2021 | 3395
-    ABS:C21_G08_LGA(1.0.0) | 2101 | _T | 13660 | LGA2021 | 1 | 2021 | 2064
-    ABS:C21_G08_LGA(1.0.0) | 3213 | _T | 10050 | LGA2021 | 1 | 2021 | 119
-    ABS:C21_G08_LGA(1.0.0) | _N | _T | 13660 | LGA2021 | 1 | 2021 | 451
+== https://tongastats.gov.to/census-2/population-census-3/census-tables/
+  HTTP 200 text/html; charset=UTF-8 190,824 bytes
+  46 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
+    https://tongastats.gov.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftongastats.gov.to%2Fcensus-2%2Fpopulation-census-3%2Fcensus-tables%2F
+    https://tongastats.gov.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftongastats.gov.to%2Fcensus-2%2Fpopulation-census-3%2Fcensus-tables%2F&#038;format=xml
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/includes/divi/styles/style.min.css?ver=1.0.0
+    https://tongastats.gov.to/census-2/population-census-3/census-tables/
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/front.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/colorbox.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/viewer.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/material-design-iconic-font.min.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/jaofiletree.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/search_filter.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/themes/wpfd-table/css/style.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/video-js.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/themes/wpfd-table/css/jquery.mediaTable.css?ver=7.1.2
+    https://tongastats.gov.to/census-2/
+    https://tongastats.gov.to/census-2/population-census-3/
+    https://tongastats.gov.to/census-2/population-census-3/census-report-and-factsheet/
+    https://tongastats.gov.to/census-2/population-census-3/constituency-reports/
+    https://tongastats.gov.to/census-2/population-census-3/census-story/
+    https://tongastats.gov.to/census-2/population-census-3/census-metadata/
+    https://tongastats.gov.to/census-2/population-census-3/census-documentation/
+    https://tongastats.gov.to/census-2/population-census-3/census-pre-activities/
+    https://tongastats.gov.to/census-2/population-census-2/
+    https://tongastats.gov.to/census-2/agriculture-census/
+    https://tongastats.gov.to/census-2/population-census-3/census-tables/{{linkdownload}}
+    https://tongastats.gov.to/census-2/population-census-3/census-tables/{{openpdflink}}
+    https://tongastats.gov.to/census-2/population-census-3/census-tables/{{viewerlink}}
+    https://tongastats.gov.to/download/266/general-tables/8089/1-population-trends.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7660/2-ethnicity.xlsx
+    https://tongastats.gov.to/download/266/general-tables/11475/3-marital-status.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7664/4-religion.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7666/5-childrens-biological-parents-civil-registration.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7673/6-health-ncd-health-complaint.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7661/7-covid-19.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7667/8-functionality.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7672/9-education.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7665/10-literacy.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7670/11-internet-and-communication.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7663/12-alcohol-and-tobacco.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7668/13-electoral-vote.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7669/14-fertility.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7676/1-dwelling-characteristics.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7677/2-household-characteristics.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7678/3-household-income.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7674/4-labour-mobility-scheme.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7679/5-toilet-facility.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7675/6-household-members-no-longer-in-the-household.xlsx
+== https://tongastats.gov.to/census-2/population-census-3/census-report-and-factsheet/
+  HTTP 200 text/html; charset=UTF-8 165,208 bytes
+  36 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
+    https://tongastats.gov.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftongastats.gov.to%2Fcensus-2%2Fpopulation-census-3%2Fcensus-report-and-factsheet%2F
+    https://tongastats.gov.to/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftongastats.gov.to%2Fcensus-2%2Fpopulation-census-3%2Fcensus-report-and-factsheet%2F&#038;format=xml
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/includes/divi/styles/style.min.css?ver=1.0.0
+    https://tongastats.gov.to/census-2/population-census-3/census-report-and-factsheet/
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/front.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/colorbox.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/viewer.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/material-design-iconic-font.min.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/jaofiletree.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/search_filter.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/themes/wpfd-table/css/style.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/video-js.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/themes/wpfd-table/css/jquery.mediaTable.css?ver=7.1.2
+    https://tongastats.gov.to/census-2/
+    https://tongastats.gov.to/census-2/population-census-3/
+    https://tongastats.gov.to/census-2/population-census-3/constituency-reports/
+    https://tongastats.gov.to/census-2/population-census-3/census-story/
+    https://tongastats.gov.to/census-2/population-census-3/census-metadata/
+    https://tongastats.gov.to/census-2/population-census-3/census-documentation/
+    https://tongastats.gov.to/census-2/population-census-3/census-pre-activities/
+    https://tongastats.gov.to/census-2/population-census-3/census-tables/
+    https://tongastats.gov.to/census-2/population-census-2/
+    https://tongastats.gov.to/census-2/agriculture-census/
+    https://tongastats.gov.to/census-2/population-census-3/census-report-and-factsheet/{{linkdownload}}
+    https://tongastats.gov.to/census-2/population-census-3/census-report-and-factsheet/{{openpdflink}}
+    https://tongastats.gov.to/census-2/population-census-3/census-report-and-factsheet/{{viewerlink}}
+    https://tongastats.gov.to/download/272/census-report-and-factsheet/7759/census-factsheet-2021-final.pdf
+    https://docs.google.com/viewer?url=https%3A%2F%2Ftongastats.gov.to%2Fwp-admin%2Fadmin-ajax.php%3Fjuwpfisadmin%3Dfalse%26action%3Dwpfd%26task%3Dfile.download%26wpfd_category_id%3D272%26wpfd_file_id%3D7759%26token%3D%26preview%3D1&#038;embedded=true
+    https://tongastats.gov.to/download/272/census-report-and-factsheet/8337/2021-census-factsheet.pdf
+    https://docs.google.com/viewer?url=https%3A%2F%2Ftongastats.gov.to%2Fwp-admin%2Fadmin-ajax.php%3Fjuwpfisadmin%3Dfalse%26action%3Dwpfd%26task%3Dfile.download%26wpfd_category_id%3D272%26wpfd_file_id%3D8337%26token%3D%26preview%3D1&#038;embedded=true
+    https://tongastats.gov.to/download/272/census-report-and-factsheet/10956/tonga-2021-population-and-housing-volume-2-_analytical-report-1.pdf
+    https://docs.google.com/viewer?url=https%3A%2F%2Ftongastats.gov.to%2Fwp-admin%2Fadmin-ajax.php%3Fjuwpfisadmin%3Dfalse%26action%3Dwpfd%26task%3Dfile.download%26wpfd_category_id%3D272%26wpfd_file_id%3D10956%26token%3D%26preview%3D1&#038;embedded=true
+    https://tongastats.gov.to/download/272/census-report-and-factsheet/7647/census-report-vol1-2021.pdf
+    https://docs.google.com/viewer?url=https%3A%2F%2Ftongastats.gov.to%2Fwp-admin%2Fadmin-ajax.php%3Fjuwpfisadmin%3Dfalse%26action%3Dwpfd%26task%3Dfile.download%26wpfd_category_id%3D272%26wpfd_file_id%3D7647%26token%3D%26preview%3D1&#038;embedded=true
+    https://tongastats.gov.to/download/272/census-report-and-factsheet/7646/census-2021-preliminary-results_dec-2021-2.pdf
+    https://docs.google.com/viewer?url=https%3A%2F%2Ftongastats.gov.to%2Fwp-admin%2Fadmin-ajax.php%3Fjuwpfisadmin%3Dfalse%26action%3Dwpfd%26task%3Dfile.download%26wpfd_category_id%3D272%26wpfd_file_id%3D7646%26token%3D%26preview%3D1&#038;embedded=true
+== https://nso.gov.ki/census-surveys/
+  HTTP 200 text/html; charset=UTF-8 295,781 bytes
+  20 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
+    https://nso.gov.ki/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnso.gov.ki%2Fcensus-surveys%2F
+    https://nso.gov.ki/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnso.gov.ki%2Fcensus-surveys%2F&#038;format=xml
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/includes/divi/styles/style.min.css?ver=1.0.0
+    https://nso.gov.ki/census-surveys/
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/front.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/themes/wpfd-tree/css/style.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/wp-file-download/icons/svg/styles-1791154789.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/material-design-iconic-font.min.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/jaofiletree.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/search_filter.css?ver=6.3.0
+    https://nso.gov.ki/census/kiribati-2020-2021-population-and-housing-census-data/
+    https://nso.gov.ki/statistics/census/
+    https://nso.gov.ki/population/kiribati-census-atlas-2022/
+    https://nso.gov.ki/census/kiribati-agriculture-and-fisheries-report-based-on-2020-census/
+    https://nso.gov.ki/population/kiribati-2020-population-and-housing-census-provisional-figures/
+    https://nso.gov.ki/population/population-and-housing-census-2015/
+    https://nso.gov.ki/census-surveys/page/2/?et_blog
+    https://nso.gov.ki/census-surveys/{{linkdownload}}
+    https://nso.gov.ki/census-surveys/{{openpdflink}}
+    https://nso.gov.ki/census-surveys/{{viewerlink}}
+== https://nso.gov.ki/statistics/census/
+  HTTP 200 text/html; charset=UTF-8 178,110 bytes
+  31 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
+    https://nso.gov.ki/statistics/census/feed/
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/includes/divi/styles/style.min.css?ver=1.0.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/front.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/themes/wpfd-default/css/style.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/viewer.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/admin/assets/ui/fonts/material-icons.min.css?ver=7.1.2
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/material-design-iconic-font.min.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/wp-file-download/icons/svg/styles-1791154789.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/video-js.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/colorbox.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/admin/assets/ui/css/singlefile.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/wp-file-download/wpfd-single-file-button.css?ver=cef17882839ffd14d1af6616f978702a
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/themes/wpfd-tree/css/style.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/jaofiletree.css?ver=6.3.0
+    https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/search_filter.css?ver=6.3.0
+    https://nso.gov.ki/census-surveys/
+    https://nso.gov.ki/statistics/census/
+    https://nso.gov.ki/download/151/2023-24-hies-reports/2139/kiribati-2023-2024-household-income-and-expenditure-survey-report
+    https://nso.gov.ki/download/151/2023-24-hies-reports/2136/kiribati-food-consumption-pattern-based-on-the-analysis-of-the-food-data-collected-in-the-kiribati-2023-24-hies.pdf
+    https://nso.gov.ki/download/151/2023-24-hies-reports/2140/kiribati-2023-2024-household-income-and-expenditure-survey-report-copra-brief.pdf
+    https://nso.gov.ki/download/151/2023-24-hies-reports/2167/kiribati-natural-disasters-and-climate-change-report-2023-2024
+    https://nso.gov.ki/download/82/health/2143/kiribati-disability-monograph-from-the-2020-population-and-housing-census
+    https://nso.gov.ki/download/151/2023-24-hies-reports/2169/poverty-and-inequality-in-kiribati-2023-2024-analysis-based-on-the-2023-2024-household-income-and-expenditure-survey
+    https://nso.gov.ki/download/151/2023-24-hies-reports/2168/kiribati-labour-market-monograph-2023-24-report
+    https://nso.gov.ki/download/151/2023-24-hies-reports/2138/kiribati-2023-health-report
+    https://nso.gov.ki/population/kiribati-census-atlas-2022/
+    https://nso.gov.ki/census/kiribati-agriculture-and-fisheries-report-based-on-2020-census/
+    https://nso.gov.ki/census/kiribati-2020-2021-population-and-housing-census-data/
+    https://nso.gov.ki/population/kiribati-2020-population-and-housing-census-provisional-figures/
+    https://nso.gov.ki/population/population-and-housing-census-2015/
+    https://nso.gov.ki/statistics/census/page/2/
+== https://stats.gov.tv/census/
+  HTTP 200 text/html; charset=UTF-8 182,339 bytes
+  13 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
+    https://stats.gov.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fstats.gov.tv%2Fcensus%2F
+    https://stats.gov.tv/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fstats.gov.tv%2Fcensus%2F&#038;format=xml
+    https://stats.gov.tv/wp-content/plugins/wp-file-download/app/includes/divi/styles/style.min.css?ver=1.0.0
+    https://stats.gov.tv/census/
+    https://stats.gov.tv/wp-content/plugins/wp-file-download/app/site/assets/css/front.css?ver=6.3.0
+    https://stats.gov.tv/wp-content/plugins/wp-file-download/app/site/themes/wpfd-tree/css/style.css?ver=6.3.0
+    https://stats.gov.tv/wp-content/wp-file-download/icons/svg/styles-1791154816.css?ver=6.3.0
+    https://stats.gov.tv/wp-content/plugins/wp-file-download/app/site/assets/css/material-design-iconic-font.min.css?ver=6.3.0
+    https://stats.gov.tv/wp-content/plugins/wp-file-download/app/site/assets/css/jaofiletree.css?ver=6.3.0
+    https://stats.gov.tv/wp-content/plugins/wp-file-download/app/site/assets/css/search_filter.css?ver=6.3.0
+    https://stats.gov.tv/census/{{linkdownload}}
+    https://stats.gov.tv/census/{{openpdflink}}
+    https://stats.gov.tv/census/{{viewerlink}}
