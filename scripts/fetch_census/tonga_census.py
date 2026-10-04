@@ -110,6 +110,19 @@ def text(cell: Any) -> str:
     return " ".join(str(cell or "").split())
 
 
+def header_row(rows: list[list[Any]], test, table: str) -> int:
+    """The index of a table's heading row, found by what it says.
+
+    The workbooks put their headings a row or two down, and an empty row
+    above one is not always there; reading the heading where it is found
+    keeps a moved row from shifting every column read under it.
+    """
+    for i, row in enumerate(rows[:10]):
+        if test([text(c) for c in row]):
+            return i
+    raise SystemExit(f"tonga_census: {table} has no heading row in its first ten")
+
+
 # ---------------------------------------------------------------------------
 # G 1: population by sex, division and district
 # ---------------------------------------------------------------------------
@@ -171,7 +184,8 @@ def age_of(label: str) -> tuple[int, bool] | None:
 def division_medians(rows: list[list[Any]], people: dict[str, dict[str, float]]
                      ) -> dict[str, float]:
     """Median age of each division from G 6's single years (its Total columns)."""
-    header = [text(c) for c in rows[1]]
+    head = header_row(rows, lambda cells: any(fold(c) == "tonga" for c in cells[1:]), "G 6")
+    header = [text(c) for c in rows[head]]
     columns = {}
     for i, cell in enumerate(header):
         for division in DIVISIONS + ("TONGA",):
@@ -181,7 +195,7 @@ def division_medians(rows: list[list[Any]], people: dict[str, dict[str, float]]
           f"tonga_census: G 6 header carries {sorted(columns)}")
     ages: dict[str, dict[int, float]] = {d: {} for d in columns}
     opened = False
-    for row in rows[3:]:
+    for row in rows[head + 1:]:
         label = text(row[0])
         if label.lower() == "total":
             continue
@@ -230,10 +244,11 @@ def find_rows(rows: list[list[Any]], names: list[str], fits) -> dict[str, list[A
 
 def district_medians(rows: list[list[Any]], districts: list[str],
                      people: dict[str, dict[str, float]]) -> dict[str, float]:
-    header = [text(c) for c in rows[1]]
-    check(header[1].lower() == "total" and header[2].startswith("0-4")
-          and header[17].startswith("75"), f"tonga_census: G 5 header is {header[:18]}")
-    found = find_rows(rows[3:], districts,
+    head = header_row(rows, lambda c: len(c) > 17 and c[1].lower() == "total"
+                      and c[2].startswith("0-4"), "G 5")
+    header = [text(c) for c in rows[head]]
+    check(header[17].startswith("75"), f"tonga_census: G 5 header is {header[:18]}")
+    found = find_rows(rows[head + 1:], districts,
                       lambda name, row: number(row[1]) == people[name]["total"])
     out = {}
     for name, row in found.items():
@@ -249,14 +264,15 @@ def district_medians(rows: list[list[Any]], districts: list[str],
 # ---------------------------------------------------------------------------
 
 def read_religion(rows: list[list[Any]], names: list[str]) -> dict[str, dict[str, float]]:
-    header = [text(c).upper() for c in rows[1]]
-    check(header[1] == "TOTAL", f"tonga_census: G 19 header is {header[:3]}")
+    head = header_row(rows, lambda c: len(c) > 2 and c[1].upper() == "TOTAL"
+                      and c[2].upper() == "FWC", "G 19")
+    header = [text(c).upper() for c in rows[head]]
     codes = header[2:]
     unknown = [c for c in codes if c and c not in RELIGIONS]
     check(not unknown, f"tonga_census: G 19 abbreviations this reader does not know: {unknown}")
     out = {}
     wanted = {fold(n): n for n in names}
-    for row in rows[2:]:
+    for row in rows[head + 1:]:
         key = wanted.get(fold(text(row[0])))
         if key is None or key in out:
             continue
@@ -276,7 +292,8 @@ def read_religion(rows: list[list[Any]], names: list[str]) -> dict[str, dict[str
 
 def read_ethnicity(rows: list[list[Any]], divisions: list[str], districts: list[str],
                    people: dict[str, dict[str, float]]) -> dict[str, dict[str, float]]:
-    header = [text(c) for c in rows[2]]
+    head = header_row(rows, lambda c: "Tongan" in c, "G 12")
+    header = [text(c) for c in rows[head]]
     labels = []
     for cell in header[1:]:
         if not cell:
@@ -294,7 +311,7 @@ def read_ethnicity(rows: list[list[Any]], divisions: list[str], districts: list[
         found, persons = counts(row), people[name]["total"]
         return found is not None and 0.97 * persons <= sum(found.values()) <= 1.1 * persons + 5
 
-    body = rows[3:]
+    body = rows[head + 1:]
     out = {}
     for division in divisions:
         row = next((r for r in body if fold(text(r[0])) == fold(division)), None)
