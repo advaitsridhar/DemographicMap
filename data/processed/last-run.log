@@ -1,8 +1,84 @@
-  bound 52 provinces and 19 comunidades by code
-  study 3558: the provinces make the comunidad's shares to within 0.32 points weighted by their samples and mean weights (0.40 unweighted)
-  study 3558: 8 provinces, 8,017 respondents, fieldwork Del 10 al 18 de abril de 2026
-  study 3545: the provinces make the comunidad's shares to within 0.54 points weighted by their samples and mean weights (0.64 unweighted)
-  study 3545: 9 provinces, 8,039 respondents, fieldwork Del 6 al 13 de febrero de 2026
-  study 3543: the provinces make the comunidad's shares to within 0.37 points weighted by their samples and mean weights (0.96 unweighted)
-  study 3543: 3 provinces, 3,313 respondents, fieldwork Del 12 al 15 de enero de 2026
-spain_cis: study 3538: Cáceres has 1,215 respondents to the religion question and a realised sample of 822
+  HTTP 200; application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; 866,278 bytes; final https://www.cis.es/documents/20117/13697506/3538-multi.xlsx
+== https://www.cis.es/documents/20117/13697506/3538-multi.xlsx
+  866,278 bytes, 16 sheets: Contenidos | Ficha técnica | Tabla ponderaciones | Notas | Resultados Extremadura  | Resultados Badajoz | Resultados Cáceres | Sexo | Edad | Nivel de estudios | Tamaño de municipio | RV EA23 | RV EG23 | Ocupación | Clase social | Escala de ideología
+  -- sheet 'Contenidos': 3 rows match /PROVINCIA|Badajoz|C.ceres|Realizada|^Total/; header and matches
+    r2:  | 3538/0 PREELECTORAL ELECCIONES AUTONÓMICAS 2025. COMUNIDAD A
+    r3:  | Total Extremadura
+    r5: ÍNDICE DE CONTENIDOS |  |  | CLASIFICACIÓN
+    r3:  | Total Extremadura
+    r10: ☞ Resultados Badajoz | Resumen de marginales de la muestra de Badajoz
+    r11: ☞ Resultados Cáceres | Resumen de marginales de la muestra de Cáceres
+  -- sheet 'Ficha técnica': 6 rows match /PROVINCIA|Badajoz|C.ceres|Realizada|^Total/; header and matches
+    r2:  | 3538/0 PREELECTORAL ELECCIONES AUTONÓMICAS 2025. COMUNIDAD A
+    r3:  | Total Extremadura
+    r4:  | FICHA TÉCNICA DEL ESTUDIO
+    r3:  | Total Extremadura
+    r12: Realizada | 2.037 entrevistas.
+    r14:  | Se ajusta el diseño no proporcional de forma que se asignan 
+    r15: Ponderación | Para tratar la muestra en su conjunto es necesario aplicar c
+    r16: Puntos de muestreo | 293 municipios y 2 provincias
+    r17: Procedimiento de muestreo | Se ha procedido a la selección aleatoria de teléfonos fijos 
+  -- sheet 'Tabla ponderaciones': 6 rows match /PROVINCIA|Badajoz|C.ceres|Realizada|^Total/; header and matches
+    r2:  | 3538/0 PREELECTORAL ELECCIONES AUTONÓMICAS 2025. COMUNIDAD A
+    r3:  | Total Extremadura
+    r4:  | Muestra diseñada, realizada, coeficientes de ponderación y e
+    r3:  | Total Extremadura
+    r4:  | Muestra diseñada, realizada, coeficientes de ponderación y e
+    r9: Cpr | Provincia | Diseñada | Realizada | Ponderación | Error (%)
+    r10: 06 | Badajoz | 1200 | 1215 | 1.0496 | 2.9
+    r11: 10 | Cáceres | 800 | 822 | 0.9267 | 3.5
+    r12:  | Total | 2000 | 2037 |  | 2.2
+  -- sheet 'Notas': 2 rows match /PROVINCIA|Badajoz|C.ceres|Realizada|^Total/; header and matches
+    r2:  | 3538/0 PREELECTORAL ELECCIONES AUTONÓMICAS 2025. COMUNIDAD A
+    r3:  | Total Extremadura
+    r4:  | NOTAS ADICIONALES
+    r3:  | Total Extremadura
+    r6: NOTAS:
+
+A. Los/as entrevistadores/as no ofrecen las opciones
+  -- sheet 'Resultados Badajoz': 1 rows match /PROVINCIA|Badajoz|C.ceres|Realizada|^Total/; header and matches
+    r2:  | 3538/0 PREELECTORAL ELECCIONES AUTONÓMICAS 2025. COMUNIDAD A
+    r3:  | PROVINCIA DE BADAJOZ
+    r4:  | INFORME DE MARGINALES
+    r5: Pregunta A1
+    r3:  | PROVINCIA DE BADAJOZ
+  -- sheet 'Resultados Cáceres': 1 rows match /PROVINCIA|Badajoz|C.ceres|Realizada|^Total/; header and matches
+    r2:  | 3538/0 PREELECTORAL ELECCIONES AUTONÓMICAS 2025. COMUNIDAD A
+    r3:  | PROVINCIA DE CÁCERES
+    r4:  | INFORME DE MARGINALES
+    r5: Pregunta A1
+    r3:  | PROVINCIA DE CÁCERES
+  -- sheet 'Sexo': 51 rows match /PROVINCIA|Badajoz|C.ceres|Realizada|^Total/; header and matches
+    r2:  | 3538/0 PREELECTORAL ELECCIONES AUTONÓMICAS 2025. COMUNIDAD A
+    r3:  | Total Extremadura
+    r4:  | CRUCE POR SEXO DE LA PERSONA ENTREVISTADA (PORCENTAJES VERTI
+    r5: Pregunta A1
+    r3:  | Total Extremadura
+    r8:  | TOTAL | Hombre | Mujer
+    r17:  | TOTAL | Hombre | Mujer
+    r31:  | TOTAL | Hombre | Mujer
+    r41:  | TOTAL | Hombre | Mujer
+    r51:  | TOTAL | Hombre | Mujer
+    r62:  | TOTAL | Hombre | Mujer
+    r85:  | TOTAL | Hombre | Mujer
+    r99:  | TOTAL | Hombre | Mujer
+    r113:  | TOTAL | Hombre | Mujer
+    r155:  | TOTAL | Hombre | Mujer
+    r169:  | TOTAL | Hombre | Mujer
+  -- sheet 'Edad': 51 rows match /PROVINCIA|Badajoz|C.ceres|Realizada|^Total/; header and matches
+    r2:  | 3538/0 PREELECTORAL ELECCIONES AUTONÓMICAS 2025. COMUNIDAD A
+    r3:  | Total Extremadura
+    r4:  | CRUCE POR EDAD DE LA PERSONA ENTREVISTADA (PORCENTAJES VERTI
+    r5: Pregunta A1
+    r3:  | Total Extremadura
+    r8:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r17:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r31:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r41:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r51:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r62:  | TOTAL | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años | 75 y más años
+    r85:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r99:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r113:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r155:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
+    r169:  | TOTAL | De 18 a 24 años | De 25 a 34 años | De 35 a 44 años | De 45 a 54 años | De 55 a 64 años | De 65 a 74 años
