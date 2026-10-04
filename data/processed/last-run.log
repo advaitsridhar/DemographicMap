@@ -1,103 +1,30 @@
-== c2_fin_11ra_en
-  title: Key figures on population
-  var 'alue_23_20260101' (Area) [elimination]: 568 values
-      SSS=WHOLE COUNTRY; KU020=Akaa; KU005=Alajärvi; KU009=Alavieska; KU010=Alavus; KU016=Asikkala ... FI1D7=FI1D7Lapland; FI1D8=FI1D8 Kainuu; FI1D9=FI1D9 North Ostrobothnia; FI2=FI2 ÅLAND; FI20=FI20 Åland; FI200=FI200 Åland
-      code lengths {3: 18, 4: 89, 5: 449, 6: 12}; prefixes {'KU': 308, 'SK': 69, 'TA': 46, 'FI': 26, 'HVA': 23, 'KO': 20, 'MK': 19, 'VP': 13}
-  var 'contentscode' (Information): 43 values
-      vaerak-vaesto=Population 31 Dec; vaerak-kokmuutos=Increase of population; kokmuutos_p=Increase of population, %; vaesto_alle15_p=Share of persons aged under 15, %; vaesto_15_64_p=Share of persons aged 15 to 64, %; vaesto_yli64_p=Share of persons aged 65 or over, % ... vaesto_k3_p=Share of persons in peri-urban area, %; vaesto_ms_p=Share of persons in rural areas, %; vaesto_m4_p=Share of persons in local centres in rural areas, %; vaesto_m5_p=Share of persons in rural areas close to urban areas, %; vaesto_m6_p=Share of persons in rural heartland areas, %; vaesto_m7_p=Share of persons in sparsely populated rural areas, %
-      code lengths {11: 10, 13: 3, 14: 2, 15: 5, 16: 5, 17: 3, 18: 8, 19: 1, 20: 2, 21: 1, 23: 3}; prefixes {'vaesto': 36, 'vaerak-vaesto': 2, 'vaerak-kokmuutos': 1, 'kokmuutos': 1, 'vaerak-dem': 1, 'vaerak-tal': 1, 'vaerak-maa': 1}
-      ALL: vaerak-vaesto=Population 31 Dec; vaerak-kokmuutos=Increase of population; kokmuutos_p=Increase of population, %; vaesto_alle15_p=Share of persons aged under 15, %; vaesto_15_64_p=Share of persons aged 15 to 64, %; vaesto_yli64_p=Share of persons aged 65 or over, %; vaerak-dem_huoltos=Demographic dependency ratio; vaerak-tal_huoltos=Economic dependency ratio; vaesto_keski_ika=Average age, both sexes; vaesto_keski_ika_1=Average age, men; vaesto_keski_ika_2=Average age, women; vaesto_kieli_fi=Finnish speakers; vaesto_kieli_fi_p=Share of Finnish speakers, %; vaesto_kieli_sv=Swedish speakers; vaesto_kieli_sv_p=Share of Swedish speakers, %; vaesto_kieli_se=Sami speakers; vaesto_kieli_ulk=Foreign-language speakers; vaesto_kieli_ulk_p=Share of foreign-language speakers, %; vaesto_kansa_ulk=Citizens of foreign countries; vaesto_kansa_ulk_p=Share of foreign citizens, %; vaesto_svaltio_ulk=Persons born abroad; vaesto_svaltio_ulk_p=Share of persons born abroad, %; vaesto_tausta_ulk=Persons with foreign background; vaesto_tausta_ulk_p=Share of persons with foreign background , %; vaesto_usk_evlut_p=Share of persons belonging to the Evangelical Lutheran Church, %; vaesto_usk_muu_p=Share of persons belonging to other religious groups, %; vaesto_usk_ei_p=Share of persons with no religious affiliation, %; vaerak-maa_pa=Land area, km²; vaerak-vaesto_maa_pa=Population density; vaesto_skunta=Persons born in the area belonging to the population; vaesto_askunta_skunta=Persons born in their area of residence; vaesto_askunta_eiskunta=Persons born elsewhere than in their area of residence; vaesto_askunta_skunta_p=Share of persons born in the area of residence, %; vaesto_skunta_askunta_p=Share of persons living in the area of birth, %; vaesto_ks_p=Share of persons in urban areas, %; vaesto_k1_p=Share of persons in inner urban area, %; vaesto_k2_p=Share of persons in outer urban area, %; vaesto_k3_p=Share of persons in peri-urban area, %; vaesto_ms_p=Share of persons in rural areas, %; vaesto_m4_p=Share of persons in local centres in rural areas, %; vaesto_m5_p=Share of persons in rural areas close to urban areas, %; vaesto_m6_p=Share of persons in rural heartland areas, %; vaesto_m7_p=Share of persons in sparsely populated rural areas, %
-  var 'timeperiod_y' (Year) [time]: 36 values
-      1990=1990; 1991=1991; 1992=1992; 1993=1993; 1994=1994; 1995=1995 ... 2020=2020; 2021=2021; 2022=2022; 2023=2023; 2024=2024; 2025=2025
-      code lengths {4: 36}; prefixes {'': 36}
-== c2_fin_11ra_data
-  area variable alue_23_20260101; 568 areas; status keys []
-  1136 area-years answered of 1136; 0 with an empty cell: []
-  2025: areas by kind {'SSS': 1, 'KU': 308, 'MA': 2, 'SA': 5, 'MK': 19, 'YTA': 6, 'HVA': 23, 'SK': 69, 'EVK': 10, 'TA': 46, 'TK': 3, 'VP': 13, 'PL': 12, 'HO': 5, 'KO': 20, 'FI': 26}; worst |sum of shares - 100| by kind EVK 0.10 (EVK01); FI 0.10 (FI1); HO 0.10 (HO6); HVA 0.10 (HVA04); KO 0.10 (KO706); KU 0.10 (KU071); MA 0.10 (MA1); MK 0.10 (MK01); PL 0.10 (PL5500); SA 0.10 (SA1); SK 0.10 (SK014); SSS 0.00 (SSS); TA 0.10 (TA34); TK 0.10 (TK1); VP 0.10 (VP01); YTA 0.10 (YTA5)
-    SSS WHOLE COUNTRY: vaesto=5652881.0, evlut_p=61.2, muu_p=2.9, ei_p=35.9
-    MA1 MA1 MAINLAND FINLAND: vaesto=5622045.0, evlut_p=61.1, muu_p=2.9, ei_p=35.9
-    MA2 MA2 ÅLAND: vaesto=30836.0, evlut_p=64.0, muu_p=1.2, ei_p=34.8
-    MK01 MK01 Uusimaa: vaesto=1799629.0, evlut_p=49.6, muu_p=3.8, ei_p=46.5
-    MK10 MK10 South Savo: vaesto=128144.0, evlut_p=70.1, muu_p=2.1, ei_p=27.8
-    MK13 MK13 Central Finland: vaesto=273731.0, evlut_p=64.8, muu_p=2.8, ei_p=32.4
-    SK011 SK011 Helsinki: vaesto=1683184.0, evlut_p=48.6, muu_p=4.0, ei_p=47.4
-    SK212 SK212 Ålands landsbygd: vaesto=16889.0, evlut_p=68.0, muu_p=0.9, ei_p=31.1
-    KU091 Helsinki: vaesto=694392.0, evlut_p=44.0, muu_p=4.6, ei_p=51.3
-    KU049 Espoo: vaesto=325716.0, evlut_p=47.6, muu_p=4.0, ei_p=48.5
-    KU020 Akaa: vaesto=16429.0, evlut_p=65.7, muu_p=2.3, ei_p=32.0
-    KU099 None: vaesto=None, evlut_p=None, muu_p=None, ei_p=None
-    KU214 Kankaanpää: vaesto=12508.0, evlut_p=73.2, muu_p=1.8, ei_p=25.0
-    KU290 Kuhmo: vaesto=7300.0, evlut_p=77.0, muu_p=2.2, ei_p=20.8
-    KU478 Mariehamn: vaesto=11957.0, evlut_p=58.1, muu_p=1.8, ei_p=40.2
-  2020: areas by kind {'SSS': 1, 'KU': 308, 'MA': 2, 'SA': 5, 'MK': 19, 'YTA': 6, 'HVA': 23, 'SK': 69, 'EVK': 10, 'TA': 46, 'TK': 3, 'VP': 13, 'PL': 12, 'HO': 5, 'KO': 20, 'FI': 26}; worst |sum of shares - 100| by kind EVK 0.00 (EVK02); FI 0.10 (FI1C1); HO 0.10 (HO2); HVA 0.10 (HVA05); KO 0.10 (KO725); KU 0.10 (KU020); MA 0.10 (MA1); MK 0.10 (MK02); PL 0.10 (PL5620); SA 0.10 (SA5); SK 0.10 (SK015); SSS 0.00 (SSS); TA 0.10 (TA27); TK 0.00 (TK1); VP 0.10 (VP03); YTA 0.10 (YTA5)
-    SSS WHOLE COUNTRY: vaesto=5533793.0, evlut_p=67.8, muu_p=2.8, ei_p=29.4
-    MA1 MA1 MAINLAND FINLAND: vaesto=5503664.0, evlut_p=67.7, muu_p=2.8, ei_p=29.4
-    MA2 MA2 ÅLAND: vaesto=30129.0, evlut_p=70.5, muu_p=1.3, ei_p=28.1
-    MK01 MK01 Uusimaa: vaesto=1702678.0, evlut_p=56.8, muu_p=3.6, ei_p=39.6
-    MK10 MK10 South Savo: vaesto=132702.0, evlut_p=76.7, muu_p=2.1, ei_p=21.2
-    MK13 MK13 Central Finland: vaesto=272617.0, evlut_p=70.6, muu_p=2.8, ei_p=26.6
-    SK011 SK011 Helsinki: vaesto=1585220.0, evlut_p=55.8, muu_p=3.8, ei_p=40.5
-    SK212 SK212 Ålands landsbygd: vaesto=16356.0, evlut_p=74.0, muu_p=1.0, ei_p=24.9
-    KU091 Helsinki: vaesto=656920.0, evlut_p=50.3, muu_p=4.5, ei_p=45.2
-    KU049 Espoo: vaesto=292796.0, evlut_p=56.0, muu_p=3.7, ei_p=40.3
-    KU020 Akaa: vaesto=16391.0, evlut_p=71.1, muu_p=2.5, ei_p=26.3
-    KU099 None: vaesto=None, evlut_p=None, muu_p=None, ei_p=None
-    KU214 Kankaanpää: vaesto=12758.0, evlut_p=79.8, muu_p=1.9, ei_p=18.3
-    KU290 Kuhmo: vaesto=8042.0, evlut_p=81.7, muu_p=2.1, ei_p=16.2
-    KU478 Mariehamn: vaesto=11705.0, evlut_p=65.5, muu_p=1.9, ei_p=32.6
-== c2_fin_11ra_notes
-  14,006 bytes
-    CONTENTS="Tunnuslukuja väestöstä";
-    CONTACT("Ev.lut kirkkoon kuuluvien osuus, %")="<A HREF='https://stat.fi/tilasto/vaerak' TARGET=_blank>Tilaston kotisivu</A>";
-    CONTACT("Muihin uskontokuntiin kuuluvien osuus, %")="<A HREF='https://stat.fi/tilasto/vaerak' TARGET=_blank>Tilaston kotisivu</A>";
-    CONTACT("Uskontokuntiin kuulumattomien osuus, %")="<A HREF='https://stat.fi/tilasto/vaerak' TARGET=_blank>Tilaston kotisivu</A>";
-    SOURCE="Tilastokeskus, väestörakenne";
-    NOTE="<A HREF='https://stat.fi/tilasto/dokumentaatio/vaerak' TARGET=_blank>Tilaston dokumentaatio</A>##. tieto on puuttuva##<A HREF=http://guides.stat.fi/historiallisentilastotiedonopas TARGET=_blank>Historiallisen tilastotiedon opas, ks. linkki</A># # Väestötilastoja vuodesta 1750 alkaen pdf-muodossa:# <A HREF=https://tilastokeskus.finna.fi/Search/Results?sort=main_date_str+desc%2Cid+asc&filter%5B%5D=%7Ebuilding%3A%221%2FSTAT%2Fdoria%2F%22&join=AND&bool0%5B%5D=OR&lookfor0%5B%5D=v%C3%A4est%C3%B6rakenne&lookfor0%5B%5D=v%C3%A4est%C3%B6nmuutokset&type0%5B%5D=Subject&type0%5B%5D=Subject&limit=50&filter%5B%5D=%7Ebuilding%3A%221%2FSTAT%2Fdoria%2F%22&bool0%5B%5D=OR&lookfor0%5B%5D=v%C3%A4est%C3%B6rakenne&lookfor0%5B%5D=v%C3%A4est%C3%B6nmuutokset&type0%5B%5D=Subject&type0%5B%5D=Subject TARGET=_blank> Väestörakenne ja Väestönmuutokset-julkaisuja (Finna) </A># <A HREF=https://tilastokeskus.finna.fi
-    NOTE("Alue")="Tilastossa käytetään 1.1.2026 aluejakoa koko aikasarjassa. Alueliitoskuntien tiedot yhdistetty. Osakuntaliitoksia ei ole huomioitu liitosta edeltävinä vuosina.";
-    VALUENOTE("Tiedot","Väestö 31.12.")="Väkiluku tilastoajanjakson lopussa.";
-    VALUENOTE("Tiedot","Ev.lut kirkkoon kuuluvien osuus, %")="Uskontokunta on muodostettu Tilastokeskuksessa seurakuntatiedon perusteella.";
-    VALUENOTE("Tiedot","Muihin uskontokuntiin kuuluvien osuus, %")="Uskontokunta on muodostettu Tilastokeskuksessa seurakuntatiedon perusteella.";
-    CONTENTS[sv]="Nyckeltal för befolkningen";
-    SOURCE[sv]="Statistikcentralen, befolkningsstruktur";
-    NOTE[sv]="<A HREF='https://stat.fi/sv/statistik/dokumentation/vaerak' TARGET=_blank>Dokumentation för statistiken</A>##. uppgift saknas##Befolkningsstatistik fr.o.m. år 1750 har digitaliserats till pdf-format:# <A HREF=https://tilastokeskus.finna.fi/Search/Results?sort=main_date_str+desc%2Cid+asc&filter%5B%5D=%7Ebuilding%3A%221%2FSTAT%2Fdoria%2F%22&join=AND&bool0%5B%5D=OR&lookfor0%5B%5D=v%C3%A4est%C3%B6rakenne&lookfor0%5B%5D=v%C3%A4est%C3%B6nmuutokset&type0%5B%5D=Subject&type0%5B%5D=Subject&limit=50&filter%5B%5D=%7Ebuilding%3A%221%2FSTAT%2Fdoria%2F%22&bool0%5B%5D=OR&lookfor0%5B%5D=v%C3%A4est%C3%B6rakenne&lookfor0%5B%5D=v%C3%A4est%C3%B6nmuutokset&type0%5B%5D=Subject&type0%5B%5D=Subject TARGET=_blank> Publikationer om Befolkningsstruktur och befolkningsförändringar (Finna) (på finska)</A># <A HREF=https://tilastokeskus.finna.fi/Search/Results?limit=50&filter%5B%5D=%7Ebuilding%3A%221%2FSTAT
-    NOTE[sv]("Område")="I statistiken används områdesindelningen 1.1.2026 i hela tidsserien. Uppgifterna om de inkorporerade kommunerna har sammanslagits. Partiella kommunsammanslagningar har inte beaktats åren före sammanslagningen.";
-    VALUENOTE[sv]("Uppgifter","Befolkning 31.12.")="Folkmängden vid slutet av statistikperioden.";
-    VALUENOTE[sv]("Uppgifter","Andel medlemmar i ev.luth.kyrkan, %")="Trossamfundet har bildats vid Statistikcentralen på basis av uppgift om församling.";
-    VALUENOTE[sv]("Uppgifter","Andel medlemmar i andra trossamfund, %")="Trossamfundet har bildats vid Statistikcentralen på basis av uppgift om församling.";
-    CONTENTS[en]="Key figures on population";
-    CONTACT[en]("Share of persons belonging to the Evangelical Lutheran Church, %")="<A HREF='https://stat.fi/en/statistics/vaerak' TARGET=_blank>Statistics' homepage</A>";
-    CONTACT[en]("Share of persons belonging to other religious groups, %")="<A HREF='https://stat.fi/en/statistics/vaerak' TARGET=_blank>Statistics' homepage</A>";
-    CONTACT[en]("Share of persons with no religious affiliation, %")="<A HREF='https://stat.fi/en/statistics/vaerak' TARGET=_blank>Statistics' homepage</A>";
-    SOURCE[en]="Statistics Finland, population structure";
-    NOTE[en]="<A HREF='https://stat.fi/en/statistics/documentation/vaerak' TARGET=_blank>Documentation of statistics</A>##. missing##Starting from 1750 Population statistics in PDF format:# <A HREF=https://tilastokeskus.finna.fi/Search/Results?sort=main_date_str+desc%2Cid+asc&filter%5B%5D=%7Ebuilding%3A%221%2FSTAT%2Fdoria%2F%22&join=AND&bool0%5B%5D=OR&lookfor0%5B%5D=v%C3%A4est%C3%B6rakenne&lookfor0%5B%5D=v%C3%A4est%C3%B6nmuutokset&type0%5B%5D=Subject&type0%5B%5D=Subject&limit=50&filter%5B%5D=%7Ebuilding%3A%221%2FSTAT%2Fdoria%2F%22&bool0%5B%5D=OR&lookfor0%5B%5D=v%C3%A4est%C3%B6rakenne&lookfor0%5B%5D=v%C3%A4est%C3%B6nmuutokset&type0%5B%5D=Subject&type0%5B%5D=Subject TARGET=_blank> Publications on Population structure and Vital statistics in Finna (in Finnish)</A># <A HREF=https://tilastokeskus.finna.fi/Search/Results?limit=50&filter%5B%5D=%7Ebuilding%3A%221%2FSTAT%2Fdoria%2F%22&join=AND&bool0%
-    NOTE[en]("Area")="These statistics apply the regional division of 1 January 2026 to the whole time series. Data for merged municipalities have been combined. Partial municipal mergers have not been taken into account in the years preceding the merger.";
-    VALUENOTE[en]("Information","Population 31 Dec")="Population at the end of the statistical reference period.";
-    VALUENOTE[en]("Information","Share of persons belonging to the Evangelical Lutheran Church, %")="The religious community is formed at Statistics Finland based on parish data.";
-    VALUENOTE[en]("Information","Share of persons belonging to other religious groups, %")="The religious community is formed at Statistics Finland based on parish data.";
-== c2_fin_11rx
-    SSS TOTAL: 5652881.0
-    A00 INDIGENEOUS RELIGIONS AND NEO-PAGANISM: 65.0
-    B00 BUDDHISM: 1845.0
-    C00 HINDUISM: 1072.0
-    D00 ISLAM: 28512.0
-    E00 JUDAISM: 1013.0
-    F00 CHRISTIANITY: 3569853.0
-    F01 Adventism: 3067.0
-    F02 Anglican churches: 208.0
-    F03 Baptism: 2266.0
-    F04 Evangelical Lutheran free congregations: 759.0
-    F05 Pentecostalism: 14129.0
-    F06 Roman Catholic Church: 16783.0
-    F07 Methodism: 1226.0
-    F08 Greek Orthodox Church: 58073.0
-    F09 Evangelical Lutheran Church of Finland: 3457125.0
-    F10 Free churches: 14175.0
-    F11 Other Christian: 2042.0
-    G00 OTHER RELIGIOUS GROUPS: 20030.0
-    G01 Bahá'í communities: 620.0
-    G02 Jehovah's Witnesses: 15447.0
-    G03 Church of Jesus Christ of Latter-day Saints: 3034.0
-    G04 Christian Community of Finland: 260.0
-    G05 Liberal Catholic Church: 102.0
-    G06 Others: 567.0
-    H00 PERSONS NOT MEMBERS OF ANY RELIGIOUS COMMUNITY: 2030491.0
+== c2_fin_kunta_mk_2020
+  FAILED: RuntimeError: HTTP 500: 
+== c2_fin_kunta_sk_2020
+  FAILED: RuntimeError: HTTP 500: 
+== c2_fin_kunta_mk_2026
+  FAILED: RuntimeError: HTTP 500: 
+== c2_swe_kolada3
+  kyrka: 0 KPIs
+  medlem: 0 KPIs
+  trossamfund: 0 KPIs
+== c2_swe_scb
+  -- ssd ?query=kyrkan
+    FAILED RuntimeError: HTTP 400: Bad Request
+  -- ssd ?query=trossamfund
+    FAILED RuntimeError: HTTP 400: Bad Request
+  -- ssd ?query=medlemmar
+    FAILED RuntimeError: HTTP 400: Bad Request
+== c2_swe_fakta
+  51,936 characters, 79 links
+    Bli medlem -> https://www.svenskakyrkan.se/medlem
+    Svenska kyrkan i siffror -> https://www.svenskakyrkan.se/statistik
+    Mer än många tror (pdf 2,6 MB) -> https://www.svenskakyrkan.se/default.aspx?id=2535400
+    Statistik -> https://www.svenskakyrkan.se/statistik
+    Anledningar att vara medlem -> https://www.svenskakyrkan.se/medlem/anledningar
+    Bli medlem -> https://www.svenskakyrkan.se/medlem
+== c2_swe_forskning
+  45,313 characters, 53 links
+    Statistik och omvärldsanalys -> https://www.svenskakyrkan.se/forskning/statistik
+    Statistik och omv&#228;rldsanalys -> https://www.svenskakyrkan.se/forskning/statistik
+    Bli medlem -> https://www.svenskakyrkan.se/medlem
