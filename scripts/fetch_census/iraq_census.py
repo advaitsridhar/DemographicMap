@@ -45,6 +45,18 @@ The governorates are the census's count of the ground the map draws, which
 for Duhok, Ninewa, Erbil, Sulaymaniyah and Diyala is not the census's own
 total; each says what moved.
 
+**Sex ratio** comes from the same rows: Table 11/2 prints every sub-district
+by women and men as well as in all, so each district and governorate placed
+here is also given its men per hundred women, summed from exactly the rows
+its population is summed from (a row whose women and men do not make its
+total is not read for sex, and nothing built on it gets a ratio).
+
+**Median age** is the governorates' only, from Table 10/2 of the same Part
+(everyone by sex and five-year age group, governorate by governorate; the
+census publishes no ages below the governorate). It is written only where
+the census's governorate is the ground the map draws -- not for the five
+whose ground moved, which carry a reason instead.
+
 ``--dump`` writes the table's pages, OCHA's gazetteer and OCHA's populated
 places to data/raw/iraq; ``--grid`` writes Kontur's population inside each of
 OCHA's districts there; ``--offline`` reads them all from there.
@@ -65,6 +77,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import PROCESSED, log, record, write_json
+from .cod_ps_age import grouped_median
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import NOT_AVAILABLE, gap, measure, slugify  # noqa: E402
@@ -101,6 +114,11 @@ BOUNDS = ("https://data.humdata.org/dataset/488bb3cd-3ce9-49d3-862a-3ce7975c63e1
 ROOT = Path(__file__).resolve().parent.parent.parent
 GRID_DUMP = ROOT / "data" / "raw" / "iraq" / "kontur_adm2.txt"
 DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table11.txt"
+# Table 10/2 of the same Part, every governorate by sex and five-year age
+# group: what the governorates' median ages are read from.
+AGES_DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table10.txt"
+AGE_SOURCE = ("COSIT, Annual Abstract of Statistics 2024, Table 10/2 (General "
+              "Population and Housing Census 2024)")
 GAZ_DUMP = ROOT / "data" / "raw" / "iraq" / "ocha_admin3.txt"
 PLACES_DUMP = ROOT / "data" / "raw" / "iraq" / "ocha_places.txt"
 OUT = PROCESSED / "iraq_census.json"
@@ -239,6 +257,27 @@ def label(line: str) -> str:
     return re.sub(r"^\s*(?:(?:\d{1,3}(?:,\d{3})+|\d+|-)\s+)+", "", line)
 
 
+LEADING = re.compile(r"^\s*((?:(?:\d{1,3}(?:,\d{3})+|\d+|-)\s+)+)")
+
+
+def sexes_of(line: str) -> tuple[int, int] | None:
+    """(women, men) from a row's leading figures, or None if they do not add up.
+
+    Table 11/2 prints each row as everyone, women and men, then rural and
+    urban the same way; laid out right to left, the first three figures are
+    the row's total, its women and its men. A row whose second and third do
+    not make its first is not read for sex.
+    """
+    m = LEADING.match(line)
+    if not m:
+        return None
+    figures = [int(t.replace(",", "")) if t != "-" else None for t in m.group(1).split()]
+    if len(figures) < 3 or None in figures[:3]:
+        return None
+    total, women, men = figures[:3]
+    return (women, men) if women + men == total else None
+
+
 def parse(text: str) -> dict[str, Any]:
     """The table's districts, sub-districts and governorates, with their totals."""
     districts: dict[str, int] = {}
@@ -254,6 +293,13 @@ def parse(text: str) -> dict[str, Any]:
     loose: list[tuple[int, int, str]] = []
     ends: list[tuple[int, str | None]] = []
     grand = None
+    # Women and men, by sub-district, district and governorate code, and by
+    # line for the rows whose code the layout lost.
+    nahiya_sex: dict[str, tuple[int, int] | None] = {}
+    district_sex: dict[str, tuple[int, int] | None] = {}
+    gov_sex: dict[str, tuple[int, int] | None] = {}
+    loose_sex: dict[int, tuple[int, int] | None] = {}
+    unlabelled_sex: dict[int, tuple[int, int] | None] = {}
     for i, line in enumerate(text.split("\n")):
         tail = label(line)
         for m in EN_BEFORE.finditer(tail):
@@ -285,6 +331,7 @@ def parse(text: str) -> dict[str, Any]:
                     rest = re.search(r"[)(]*[؀-ۿ][^A-Za-z\d]*", tail[nahiya.end(2):])
                     ar = rest.group(0) if rest else ""
                 nahiyas[code] = (clean(en), arabic(ar), value)
+                nahiya_sex[code] = sexes_of(line)
                 if (CENTRE.search(nahiya.group(1) or "")
                         or re.search(r"م\s?\.\s?ق|ق\s?\.\s?م", nahiya.group(3) or "")):
                     centres.add(code)
@@ -296,6 +343,7 @@ def parse(text: str) -> dict[str, Any]:
                 for code in CODE4.findall(tail):
                     candidates[code].append(value)
                 loose.append((i, value, tail))
+                loose_sex[i] = sexes_of(line)
             continue
         if "Grand Total" in tail:
             grand = value
@@ -304,12 +352,16 @@ def parse(text: str) -> dict[str, Any]:
             code = CODE2.search(tail.split("Governorate", 1)[1])
             if code:
                 governorates[code.group(1)] = value
+                gov_sex[code.group(1)] = sexes_of(line)
             else:
                 unlabelled.append(value)
+                unlabelled_sex[value] = sexes_of(line)
             ends.append((i, None))
         else:
             codes = CODE4.findall(tail)
             if codes:
+                if codes[-1] not in districts:
+                    district_sex[codes[-1]] = sexes_of(line)
                 districts.setdefault(codes[-1], value)
                 ends.append((i, codes[-1]))
     by_district: Counter = Counter()
@@ -335,6 +387,7 @@ def parse(text: str) -> dict[str, Any]:
                     centres.add(code + "0")
                 else:
                     nahiyas[code + "0"] = (f"{own} (a row printed without its code)", "", rest)
+                nahiya_sex[code + "0"] = loose_sex.get(found[0][0])
                 by_district[code] += rest
         start = end
     # A governorate total printed without its code is the one its districts
@@ -346,10 +399,49 @@ def parse(text: str) -> dict[str, Any]:
         owners = [g for g, s in sums.items() if s == value and g not in governorates]
         if len(owners) == 1:
             governorates[owners[0]] = value
+            gov_sex[owners[0]] = unlabelled_sex.get(value)
     return {"districts": districts, "governorates": governorates, "names": names,
             "ar_names": ar_names, "nahiyas": nahiyas, "centres": centres,
             "grand": grand, "sums": sums,
-            "whole": {c for c, v in districts.items() if by_district[c] == v}}
+            "whole": {c for c, v in districts.items() if by_district[c] == v},
+            "sexes": sex_table(nahiyas, nahiya_sex, districts, district_sex,
+                               governorates, gov_sex)}
+
+
+def sex_table(nahiyas: dict[str, tuple[str, str, int]],
+              nahiya_sex: dict[str, tuple[int, int] | None],
+              districts: dict[str, int], district_sex: dict[str, tuple[int, int] | None],
+              governorates: dict[str, int], gov_sex: dict[str, tuple[int, int] | None]
+              ) -> dict[str, tuple[int, int]]:
+    """Women and men for every code whose figures make its own total.
+
+    A sub-district's are its row's. A district's are its total row's, or,
+    where its total was printed without them (Panjwin's), its
+    sub-districts' added up when those make the total. A governorate's are
+    its total row's. Each is kept only where its women and men make the
+    figure the crosswalk counts for it, so a sex ratio is never built on a
+    different number of people from the population beside it; a unit with
+    none is given no ratio.
+    """
+    out: dict[str, tuple[int, int]] = {}
+    for code, sexes in nahiya_sex.items():
+        if sexes is not None and sum(sexes) == nahiyas[code][2]:
+            out[code] = sexes
+    for code, total in districts.items():
+        own = district_sex.get(code)
+        if own is not None and sum(own) == total:
+            out[code] = own
+            continue
+        parts = [n for n in nahiyas if n[:4] == code]
+        if parts and all(n in out for n in parts):
+            made = (sum(out[n][0] for n in parts), sum(out[n][1] for n in parts))
+            if sum(made) == total:
+                out[code] = made
+    for code, total in governorates.items():
+        own = gov_sex.get(code)
+        if own is not None and sum(own) == total:
+            out[code] = own
+    return out
 
 
 def clean(name: str) -> str:
@@ -590,6 +682,20 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
     gov_unknown: dict[str, list[str]] = defaultdict(list)
     moved: list[tuple[str, str, str, int]] = []   # census gov, map gov, what, people
     notes: list[str] = []
+    # Women and men beside each count, from the same rows; a place any of
+    # whose parts has none gets none.
+    known = table.get("sexes", {})
+    sex: dict[Any, list[int]] = defaultdict(lambda: [0, 0])
+    sexless: set[Any] = set()
+
+    def add_sex(place: Any, code: str) -> None:
+        pair = known.get(code)
+        if pair is None:
+            sexless.add(place)
+            return
+        sex[place][0] += pair[0]
+        sex[place][1] += pair[1]
+
     for code, total in sorted(districts.items()):
         census_gov = GOVERNORATE[code[:2]]
         ns = members[code]
@@ -612,6 +718,7 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
             if len(govs) == 1:
                 gov = next(iter(govs))
                 gov_value[gov] += total
+                add_sex(("gov", gov), code)
                 if gov != census_gov:
                     moved.append((census_gov, gov, f"{own(code)} district", total))
             else:
@@ -621,10 +728,12 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
         if len(homes) == 1:
             key = next(iter(homes))
             value[key] += total
+            add_sex(key, code)
             parts[key].append((own(code), total))
             if any(n not in by_name for n in ns):
                 soft.add(key)
             gov_value[key[0]] += total
+            add_sex(("gov", key[0]), code)
             if key[0] != census_gov:
                 moved.append((census_gov, key[0], f"{own(code)} district", total))
             continue
@@ -638,10 +747,12 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
         for n in ns:
             key, (en, _ar, v) = place[n], nahiyas[n]
             value[key] += v
+            add_sex(key, n)
             parts[key].append((f"{en or n} ({own(code)})", v))
             if n not in by_name:
                 soft.add(key)
             gov_value[key[0]] += v
+            add_sex(("gov", key[0]), n)
             if key[0] != census_gov:
                 moved.append((census_gov, key[0], f"{en or n} sub-district", v))
 
@@ -705,6 +816,8 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
             else:
                 entry["value"] = value[key]
                 entry["parts"] = parts[key]
+                if key not in sexless and sum(sex[key]) == value[key]:
+                    entry["sexes"] = tuple(sex[key])
             out[f"{gov}/{district}"] = entry
         written = sum(1 for d in candidates if (gov, d) not in tainted)
         notes.append(f"{gov}: {written} of {len(candidates)} districts")
@@ -719,6 +832,8 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
                 f"them, so the governorate's count on these boundaries is not known.")}
             continue
         entry = {"value": gov_value[gov]}
+        if ("gov", gov) not in sexless and sum(sex[("gov", gov)]) == gov_value[gov]:
+            entry["sexes"] = tuple(sex[("gov", gov)])
         into = [m for m in moved if m[1] == gov]
         away = [m for m in moved if m[0] == gov]
         if into or away:
@@ -892,7 +1007,135 @@ def table_pages(text: str) -> list[str]:
     return [page for page in text.split(PAGE_BREAK) if "Nahiya" in page]
 
 
-def build(text: str, gazetteer_text: str, places_text: str = "") -> list[dict[str, Any]]:
+def age_pages(text: str) -> list[str]:
+    """The pages of Table 10/2: population by age group, sex and governorate."""
+    return [page for page in text.split(PAGE_BREAK) if "(10/2)" in page]
+
+
+# A row's age group is the last thing on it, with nothing but words after:
+# "00-04", or "85+" and the Arabic for "and over".
+AGE_LABEL = re.compile(r"(?<![\d,])(?:(\d{2})\s*-\s*(\d{2})|(85)\s*\+?)\s*[^\d]*$")
+FIGURE = re.compile(r"^\d{1,3}(?:,\d{3})*$|^-$")
+
+
+def first_three(line: str) -> tuple[int, int, int] | None:
+    """A Table 10/2 row's everyone, women and men: its first three figures.
+
+    The table is laid out right to left, total first, and only those three
+    columns come out of the PDF whole -- the rural and urban figures after
+    them are split mid-number ("37 ,010"). A governorate's label is printed
+    into one of its rows ("Basrah-35 162,947 ..."), so a leading word with
+    its code is passed over.
+    """
+    tokens = re.sub(r"^(?:Total\s+)?(?:[A-Za-z][A-Za-z' ]*-\d{2}\s+)?", "",
+                    line.strip()).split()
+    out = []
+    for token in tokens[:3]:
+        if not FIGURE.match(token):
+            return None
+        out.append(0 if token == "-" else int(token.replace(",", "")))
+    return tuple(out) if len(out) == 3 else None
+
+
+def governorate_ages(text: str, table: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    """Each census governorate's people by five-year age group, from Table 10/2.
+
+    A governorate's block is the rows above its "Total" row; which
+    governorate it is, is found by that total, which must be one of Table
+    11/2's eighteen. Every block's age groups and its not-specified row must
+    make its total, or the run stops. A row whose women and men do not make
+    its own total (Maysan's 30-34 prints 416,665 women for 41,665) is
+    reported; its total is what the median reads, and the block's sum is the
+    check on it.
+    """
+    by_total = {v: g for g, v in table["governorates"].items()}
+    out: dict[str, dict[str, Any]] = {}
+    groups: list[tuple[int, int | None, int]] = []
+    unstated = 0
+    odd: list[str] = []
+    for raw in text.split("\n"):
+        line = raw.strip()
+        if re.search(r"Not\s+sp[ae]c?ified|غير\s*مبين|نيبم\s*ريغ", line):
+            figures = first_three(line)
+            if figures:
+                unstated += figures[0]
+            continue
+        if line.startswith("Total") or re.match(r"^Total\b", line):
+            figures = first_three(line)
+            if not figures:
+                continue
+            total = figures[0]
+            gov = by_total.get(total)
+            if gov is None:
+                if groups:
+                    raise SystemExit(f"iraq_census: a Table 10/2 block totals {total:,}, "
+                                     f"no governorate's count in Table 11/2")
+                continue
+            made = sum(n for _a, _b, n in groups) + unstated
+            if made != total:
+                raise SystemExit(f"iraq_census: Table 10/2's {GOVERNORATE[gov]}: age groups "
+                                 f"make {made:,}, not {total:,}")
+            if [(a, b) for a, b, _n in groups] != [(a, a + 4) for a in range(0, 85, 5)] + [(85, None)]:
+                raise SystemExit(f"iraq_census: Table 10/2's {GOVERNORATE[gov]}: age groups "
+                                 f"{[(a, b) for a, b, _n in groups]}")
+            out[gov] = {"groups": groups, "unstated": unstated, "total": total, "odd": odd}
+            groups, unstated, odd = [], 0, []
+            continue
+        m = AGE_LABEL.search(line)
+        figures = first_three(line)
+        if not m or not figures:
+            continue
+        low = int(m.group(1)) if m.group(1) else 85
+        high = int(m.group(2)) if m.group(2) else None
+        if low == 85 and high is not None:
+            high = None                 # never printed so; kept to the open group
+        total, women, men = figures
+        if women + men != total:
+            odd.append(f"{low}-{high or ''}: {women:,} women and {men:,} men against {total:,}")
+        groups.append((low, high, total))
+    return out
+
+
+def age_fields(gov: str, code: str, entry: dict[str, Any],
+               ages: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """A governorate's median age, where the census's ground is the map's."""
+    found = ages.get(code)
+    if found is None:
+        return {}
+    if entry.get("note"):
+        return {"median_age": gap(NOT_AVAILABLE, (
+            f"The census's age table counts {gov} on its own boundaries "
+            f"({found['total']:,} people), and some of that ground the map draws in "
+            f"another governorate (see the population note), so its median age is not "
+            f"this shape's."))}
+    median = grouped_median([(a, b, n) for a, b, n in found["groups"]])
+    if median is None:
+        return {}
+    note = ("Interpolated within the five-year age group holding the middle person, from "
+            "the 2024 census's count of everyone by five-year age group (Table 10/2).")
+    if found["unstated"]:
+        note += f" The {found['unstated']:,} people of unstated age are left out."
+    return {"median_age": measure(median, unit="years", year=YEAR, source=AGE_SOURCE),
+            "median_age_note": note}
+
+
+def sex_fields(entry: dict[str, Any], what: str) -> dict[str, Any]:
+    """Males per 100 females from the women and men counted with the figure."""
+    if entry.get("value") is None or not entry.get("sexes"):
+        return {}
+    women, men = entry["sexes"]
+    if not women or women + men != entry["value"]:
+        return {}
+    return {"sex_ratio": measure(round(100 * men / women, 1), unit="males_per_100_females",
+                                 year=YEAR, source=SOURCE),
+            "sex_ratio_note": (f"Males per 100 females in the 2024 census's count of the "
+                               f"ground drawn as this {what}: {men:,} men and {women:,} "
+                               f"women, from the same sub-district rows of Table 11/2 as "
+                               f"its population.")}
+
+
+def build(text: str, gazetteer_text: str, places_text: str = "",
+          ages_text: str = "") -> list[dict[str, Any]]:
     table = parse(text)
     govs = table["governorates"]
     bad = {g: (v, table["sums"][g]) for g, v in govs.items() if table["sums"][g] != v}
@@ -909,20 +1152,33 @@ def build(text: str, gazetteer_text: str, places_text: str = "") -> list[dict[st
     grid = read_grid(GRID_DUMP.read_text(encoding="utf-8")) if GRID_DUMP.exists() else {}
     for line in grid_check(result, grid):
         log(f"  grid {line}")
-    cite = [{"field": "population", "name": SOURCE, "url": URL}]
+    cite = [{"field": "population/sex_ratio", "name": SOURCE, "url": URL}]
     rows = []
     codes = {gov: code for code, gov in GOVERNORATE.items()}
+    ages = governorate_ages(ages_text, table) if ages_text else {}
+    log(f"  Table 10/2: {len(ages)} governorates by age group"
+        + "".join(f"; {GOVERNORATE[g]}: {', '.join(a['odd'])}" for g, a in ages.items()
+                  if a["odd"]))
+    if ages_text and len(ages) != len(GOVERNORATE):
+        raise SystemExit(f"iraq_census: Table 10/2 gives {len(ages)} of "
+                         f"{len(GOVERNORATE)} governorates")
     for gov, entry in result["governorates"].items():
+        extra: dict[str, Any] = {}
         if entry["value"] is None:
             population = gap(NOT_AVAILABLE, entry["why"])
         else:
             population = measure(entry["value"], year=YEAR, source=SOURCE)
             if entry.get("note"):
                 population["note"] = entry["note"]
+            extra = sex_fields(entry, "governorate")
+            extra.update(age_fields(gov, codes[gov], entry, ages))
         rows.append(record(f"IRQ-CEN-{codes[gov]}", gov, level="admin1", parent="IRQ",
                            country="IRQ", population=population,
                            aliases=MAP_NAMES.get(gov),
-                           sources=cite if entry["value"] is not None else None))
+                           sources=(cite + ([{"field": "median_age", "name": AGE_SOURCE,
+                                              "url": URL}] if "median_age" in extra else []))
+                           if entry["value"] is not None else None,
+                           **extra))
     for entry in mapped.values():
         if entry["value"] is None:
             rows.append(record(
@@ -944,7 +1200,7 @@ def build(text: str, gazetteer_text: str, places_text: str = "") -> list[dict[st
             entry["district"], level="admin2", parent="IRQ", country="IRQ",
             parent_name=entry["governorate"],
             aliases=[a for a in (entry["arabic"],) if a],
-            population=population, sources=cite))
+            population=population, sources=cite, **sex_fields(entry, "district")))
     written = sum(1 for r in rows if r["level"] == "admin2" and "value" in r["population"])
     log(f"  {written} map districts with a figure, "
         f"{len(mapped) - written} with the reason they have none")
@@ -968,21 +1224,25 @@ def main() -> int:
         text = DUMP.read_text(encoding="utf-8")
         gazetteer = GAZ_DUMP.read_text(encoding="utf-8")
         places = PLACES_DUMP.read_text(encoding="utf-8") if PLACES_DUMP.exists() else ""
+        ages = AGES_DUMP.read_text(encoding="utf-8") if AGES_DUMP.exists() else ""
     else:
         blob = fetch_blob(URL)
         log(f"  {URL}: {len(blob):,} bytes")
-        text = PAGE_BREAK.join(table_pages(laid_out(blob)))
+        pages = laid_out(blob)
+        text = PAGE_BREAK.join(table_pages(pages))
+        ages = PAGE_BREAK.join(age_pages(pages))
         gazetteer = "\n".join("\t".join(r) for r in gazetteer_rows(fetch_blob(GAZETTEER)))
         places = "\n".join("\t".join(r) for r in place_rows(fetch_blob(PLACES)))
         if args.dump:
             DUMP.parent.mkdir(parents=True, exist_ok=True)
             DUMP.write_text(text, encoding="utf-8")
+            AGES_DUMP.write_text(ages, encoding="utf-8")
             GAZ_DUMP.write_text(gazetteer, encoding="utf-8")
             PLACES_DUMP.write_text(places + "\n", encoding="utf-8")
-            log(f"  wrote {DUMP.relative_to(ROOT)}, {GAZ_DUMP.relative_to(ROOT)} "
-                f"and {PLACES_DUMP.relative_to(ROOT)}")
+            log(f"  wrote {DUMP.relative_to(ROOT)}, {AGES_DUMP.relative_to(ROOT)}, "
+                f"{GAZ_DUMP.relative_to(ROOT)} and {PLACES_DUMP.relative_to(ROOT)}")
             return 0
-    write_json(OUT, build(text, gazetteer, places))
+    write_json(OUT, build(text, gazetteer, places, ages))
     return 0
 
 
