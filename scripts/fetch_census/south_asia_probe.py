@@ -324,6 +324,29 @@ def cmd_pdf(args: argparse.Namespace) -> None:
                 print("    " + ln[:args.width])
 
 
+def cmd_pdftitles(args: argparse.Namespace) -> None:
+    """The opening lines of each PDF's first pages: which table a file is."""
+    import pdfplumber                               # noqa: PLC0415
+    for value in [v for v in args.values.split(",") if v] or [""]:
+        url = args.template.replace("{}", value)
+        status, headers, body, _ = fetch(url, aia=args.aia)
+        print(f"\n== {url}")
+        if status != 200 or body[:4] != b"%PDF":
+            describe(url, status, headers, body)
+            continue
+        try:
+            with pdfplumber.open(io.BytesIO(body)) as pdf:
+                print(f"    {len(pdf.pages)} pages, {len(body):,} bytes")
+                for number in range(min(args.pages, len(pdf.pages))):
+                    text = pdf.pages[number].extract_text(layout=args.layout) or ""
+                    lines = [ln.rstrip() for ln in text.splitlines() if ln.strip()]
+                    print(f"  -- page {number + 1}")
+                    for ln in lines[:args.lines]:
+                        print("    " + ln[:args.width])
+        except Exception as err:                   # noqa: BLE001 -- reported
+            print(f"    unreadable: {type(err).__name__}: {err}")
+
+
 def cmd_cdx(args: argparse.Namespace) -> None:
     url = ("https://web.archive.org/cdx/search/cdx?"
            + urllib.parse.urlencode({"url": args.pattern, "output": "json",
@@ -409,6 +432,15 @@ def main() -> int:
     p.add_argument("--layout", action="store_true")
     p.add_argument("--aia", action="store_true")
 
+    t = sub.add_parser("pdftitles")
+    t.add_argument("template")
+    t.add_argument("--values", default="")
+    t.add_argument("--pages", type=int, default=1)
+    t.add_argument("--lines", type=int, default=14)
+    t.add_argument("--width", type=int, default=180)
+    t.add_argument("--layout", action="store_true")
+    t.add_argument("--aia", action="store_true")
+
     c = sub.add_parser("cdx")
     c.add_argument("pattern")
     c.add_argument("--match", default="")
@@ -417,7 +449,8 @@ def main() -> int:
 
     args = ap.parse_args()
     {"get": cmd_get, "heads": cmd_heads, "nada": cmd_nada, "nadafiles": cmd_nadafiles,
-     "xls": cmd_xls, "pdf": cmd_pdf, "cdx": cmd_cdx}[args.cmd](args)
+     "xls": cmd_xls, "pdf": cmd_pdf, "pdftitles": cmd_pdftitles,
+     "cdx": cmd_cdx}[args.cmd](args)
     return 0
 
 
