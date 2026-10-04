@@ -1,30 +1,11 @@
-== c5_class_api
-  //data.stat.fi/api/classifications/v2/classifications?content=data&meta=max&lang=fi&page=0: HTTP 500: 
-  ions/v2/classifications/kunta_1_20200101/classificationItems?content=data&meta=max&lang=fi: 172,727 bytes, starts b'[{"classification":{"localId":"kunta_1_20200101","internationalRecommendation":false,"nationalRecommendation":true,"classificationName":[{"langName":"suomi","la'
-  pondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps?content=data&meta=min&lang=fi: HTTP 500: 
-  /api/classifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps: 45,571 bytes, starts b'["https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/832/178","https://api'
-  orrespondenceTables/kunta_1_20200101%23seutukunta_1_20200101?content=data&meta=max&lang=fi: HTTP 500: 
-  pondenceTables/kunta_1_20250101%23seutukunta_1_20250101/maps?content=data&meta=max&lang=fi: HTTP 500: 
-  https://www.stat.fi/fi/luokitukset/corrmap/kunta_1_20200101%23seutukunta_1_20200101/: HTTP 403: <!DOCTYPE html> <html lang="en"> <title>Forbidden 403</title> <meta charset="UTF-8"> <head> <style> 
-== c5_class_cdx
-  1 captures
-    20220816080121 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20200101%23vaalipiiri_1_20200101/maps?content=data&meta=min&lang=fi text/html 200
-== c5_class_cdx2
-  17 captures
-    20220816070630 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20110101%23maakunta_1_20110101/maps?content=data&meta=min&lang=fi text/html 200
-    20220816072531 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20120101%23seutukunta_1_20120101/maps?content=data&meta=min&lang=fi text/html 200
-    20211208121748 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20140101%23seutukunta_1_20140101/maps?content=data&meta=min&lang=fi text/html 200
-    20211208130240 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20150101%23seutukunta_1_20150101/maps?content=data&meta=min&lang=fi text/html 200
-    20220629120558 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20160101%23maakunta_1_20160101/maps?content=data&meta=min&lang=fi text/html 200
-    20230217215130 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20170101%23maakunta_1_20170101/maps?content=data&meta=min&lang=fi application/json 200
-    20240721095928 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20170101%23seutukunta_1_20170101/maps?content=data&meta=min&lang=fi text/html 200
-    20230218222446 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20180101%23maakunta_1_20180101/maps?content=data&meta=min&lang=fi application/json 200
-    20230201014418 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20190101%23seutukunta_1_20190101/maps?content=data&meta=min&lang=fi text/html 200
-    20230312080923 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20210101%23seutukunta_1_20210101/maps?content=data&meta=min&lang=fi text/html 200
-    20230928212142 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20220101%23seutukunta_1_20220101/maps?content=data&meta=min&lang=fi text/html 200
-    20240317155247 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20230101%23seutukunta_1_20230101/maps?content=data&meta=min&lang=en text/html 200
-    20240222153815 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20240101%23seutukunta_1_20240101/maps?content=data&meta=min&lang=en text/html 200
-    20240224200219 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20240101%23seutukunta_1_20240101/maps?content=data&meta=min&lang=fi text/html 200
-    20240822064759 https://data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_20240101%23seutukunta_1_20240101/maps?content=data&meta=min&lang=sv text/html 200
-    20251015024008 https://data.stat.fi/api/classifications/v2/correspondenceTables/seutukunta_1_20030101 text/html 200
-    20240916160436 https://data.stat.fi/api/classifications/v2/correspondenceTables/seutukunta_1_20030101%23maakunta_1_19980301/maps?content=data&meta=min&lang=fi text/html 200
+== c6_class_routes
+  pondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps?content=data&meta=max&lang=fi: HTTP 500: 
+  v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps?content=data&lang=fi: HTTP 500: 
+  ssifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/832/178: 148 bytes, starts b'["https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/832/178"]'
+  Tables/kunta_1_20200101%23seutukunta_1_20200101/maps/832/178?content=data&meta=max&lang=fi: HTTP 500: 
+  v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps?content=data&lang=fi: HTTP 500: 
+  ssifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps?lang=fi: 45,571 bytes, starts b'["https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/305/178","https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/832/178","https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/434/016","https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23seutukunta_1_20200101/maps/407/016","https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23'
+  fi/api/classifications/v2/correspondenceTables/kunta_1_20200101%23maakunta_1_20200101/maps: 44,641 bytes, starts b'["https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23maakunta_1_20200101/maps/108/06","https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23maakunta_1_20200101/maps/177/06","https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23maakunta_1_20200101/maps/508/06","https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23maakunta_1_20200101/maps/702/06","https://api.stat.fi/classificationservice/open/api/classifications/v2/correspondenceTables/kunta_1_20200101%23maakunta_1_2'
+  v2/classifications/seutukunta_1_20200101/classificationItems?content=data&meta=max&lang=fi: 48,951 bytes, starts b'[{"classification":{"localId":"seutukunta_1_20200101","internationalRecommendation":false,"nationalRecommendation":true,"classificationName":[{"langName":"suomi","lang":"fi","name":"Seutukunnat 2020"}],"classificationDescription":[{"langName":"suomi","lang":"fi","description":"Seutukunnat ovat kahden tai useamman kunnan muodostamia aluekokonaisuuksia. Ne on alun perin m\xc3\xa4\xc3\xa4ritelty aluepoliittisen tukialuejaon perusalueiksi.\\r\\n"}]},"localId":"seutukunta_1_20200101/063","level":1.00,"code":"063","order":10,"parentItemLocalId":null,"parentCode":null,"classificationItemNames":[{"langName":"suomi","lang":"fi","name":"Etel\xc3\xa4-Pirkanmaa"}],"explanatoryNotes":[],"classificationIndexEntry":[{"text":['
+== c6_class_item
+  {"classification": {"localId": "kunta_1_20200101", "internationalRecommendation": false, "nationalRecommendation": true, "classificationName": [{"langName": "suomi", "lang": "fi", "name": "Kunnat 2020"}], "classificationDescription": [{"langName": "suomi", "lang": "fi", "description": "Voimassa olevat kunnat 2020"}]}, "localId": "kunta_1_20200101/020", "level": 1.0, "code": "020", "order": 10, "parentItemLocalId": null, "parentCode": null, "classificationItemNames": [{"langName": "suomi", "lang": "fi", "name": "Akaa"}], "explanatoryNotes": [{"type": ["päivitettävä"], "langName": ["suomi"], "lang": ["fi"], "generalNote": [""], "includes": [""], "includesAlso": [""], "excludes": [""]}], "classificationIndexEntry": [{"text": []}]}
