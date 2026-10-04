@@ -76,6 +76,20 @@ Nothing here is an estimate: every figure written is either a row of Table 2 or
 a sum of rows of Table 2, and the checks below refuse the run unless those sums
 close on the publisher's own totals.
 
+**Median age.** Table 4, *Population by 5-year Age Group and by Sex, by
+Province and by Urban-Rural*, is the report's one table of ages below the
+country, and it is by the 2008 first-level areas. Seven of them are the
+ground the boundary file draws today -- Ryanggang, North and South
+Hamgyong, Kangwon, Jagang, North Phyongan and South Hwanghae -- and carry
+the median interpolated within the five-year group that holds the middle
+person. The other four (Nampo, South Pyongan, Pyongyang, North Hwanghae)
+are drawn on ground no 2008 row describes, and an age table cannot be split
+the way Table 2's counties can be moved, so they carry the reason instead;
+so do the 179 counties, since no table of the 53 gives ages below the
+province. Each Table 4 block's age groups must add up to its Total in all
+nine columns, each province's Total must be its Table 2 total, and the ten
+must make the country's 23,349,859.
+
 **Self-checks**, each of which refuses rather than writing:
 
 * every row's Male plus Female must equal the Both Sexes printed beside it, and
@@ -117,6 +131,7 @@ from ._shared import (
     PROCESSED, RAW, collection_gap, download, gap, log, measure, record,
     write_json, NOT_AVAILABLE,
 )
+from .east_asia_common import grouped_median
 
 OUT = "northkorea_county.json"
 YEAR = 2008
@@ -508,6 +523,140 @@ def rows(pages: list[str], numbers: list[int]) -> list[tuple[str, list[int]]]:
     return out
 
 
+# ---------------------------------------------------------------------------
+# Reading Table 4: the five-year age groups, by the 2008 first-level area.
+# ---------------------------------------------------------------------------
+
+AGE_CAPTION = "Population by 5-year Age Group and by Sex, by Province and by Urban-Rural"
+AGE_SOURCE = ("Central Bureau of Statistics, DPR Korea, 2008 Population Census -- "
+              "National Report (Pyongyang, 2009), Table 4")
+# The table's age groups: under one, one to four, five-year groups to 79,
+# and an open 80 and over.
+AGE_GROUPS: dict[str, tuple[int, int | None]] = {
+    "0": (0, 1), "1-4": (1, 4),
+    **{f"{a}-{a + 4}": (a, 5) for a in range(5, 80, 5)},
+    "80+": (80, None)}
+AGE_ROW = re.compile(r"^\s*(Total|80\+|\d{1,2}-\d{1,2}|0)\s+(\d.*)$")
+AGE_AREAS = ("DPR Korea", *PROVINCES)
+# The four shapes whose ground is not a 2008 first-level area's: Nampo was
+# six of South Phyongan's units, and three of Pyongyang's counties are drawn
+# in North Hwanghae. Table 4 prints the 2008 areas whole, and an age table
+# cannot be split the way Table 2's counties can be moved.
+REDRAWN = ("Nampo", "South Pyongan", "Pyongyang", "North Hwanghae")
+
+AGE_NOTE = (
+    "Interpolated within the five-year age group that holds the middle person, from "
+    "Table 4 of the 2008 census's National Report (five-year groups by sex and by "
+    "province, the finest the report publishes below the country). Like the head count "
+    "beside it, Table 4 leaves out the 702,372 people living in military camps, most of "
+    "them young men, so this runs above the median of everyone.")
+REDRAWN_AGE_NOTE = (
+    "The 2008 census publishes ages only by its own first-level areas (Table 4) and for "
+    "the country. {why} No age table is published for the ground this unit covers.")
+REDRAWN_WHY = {
+    "Nampo": "Nampo was not one of them: its six units were part of South Phyongan.",
+    "South Pyongan": "South Phyongan's row includes the six units that are now Nampo.",
+    "Pyongyang": ("Pyongyang's row includes Kangnam, Junghwa and Sangwon, which the "
+                  "boundary file draws in North Hwanghae."),
+    "North Hwanghae": ("North Hwanghae's row leaves out Kangnam, Junghwa and Sangwon, "
+                       "which were Pyongyang's in 2008."),
+}
+COUNTY_AGE_NOTE = (
+    "The 2008 census publishes no age table below the province: of the report's 53 "
+    "tables, Table 2 (sex and urban/rural) is the only one by city, district or "
+    "county, and the ages are in Table 4, by province.")
+
+
+def age_pages(pages: list[str]) -> list[int]:
+    """The pages carrying Table 4 itself, not the List of Tables' line for it."""
+    found = [n for n, page in enumerate(pages, 1)
+             if AGE_CAPTION in " ".join(page.split()) and "All Areas" in page]
+    if not found:
+        raise SystemExit(f"northkorea: no page of the report carries Table 4 ({AGE_CAPTION!r})")
+    return found
+
+
+def age_table(pages: list[str], numbers: list[int]) -> dict[str, dict[str, list[int]]]:
+    """{2008 area: {age group or "Total": nine figures}}, checked: each area's
+    groups add up to its Total in all nine columns, and the ten provinces to
+    the DPR Korea row, which is Table 2's own total."""
+    out: dict[str, dict[str, list[int]]] = {}
+    current: str | None = None
+    for page in numbers:
+        for line in pages[page - 1].splitlines():
+            stripped = " ".join(line.split())
+            if stripped in AGE_AREAS:
+                current = stripped
+                out.setdefault(current, {})
+                continue
+            # An area's name and its Total row run together on one line.
+            joined = next((a for a in AGE_AREAS if stripped.startswith(f"{a} Total ")), None)
+            if joined:
+                current = joined
+                out.setdefault(current, {})
+                stripped = stripped[len(joined):].strip()
+            found = AGE_ROW.match(stripped)
+            if not found:
+                continue
+            if current is None:
+                raise SystemExit(f"northkorea: Table 4, page {page}: the row {stripped[:40]!r} "
+                                 "comes before any area")
+            label = found.group(1)
+            if label in out[current]:
+                raise SystemExit(f"northkorea: Table 4 prints {current} {label} twice")
+            out[current][label] = split_row(found.group(2).split(),
+                                            f"Table 4, page {page}, {current} {label}")
+    missing = [a for a in AGE_AREAS if a not in out]
+    if missing:
+        raise SystemExit(f"northkorea: Table 4 has no block for {missing}")
+    for area, rows_ in out.items():
+        lacking = [g for g in [*AGE_GROUPS, "Total"] if g not in rows_]
+        if lacking:
+            raise SystemExit(f"northkorea: Table 4's {area} block lacks {lacking}")
+        summed = [sum(rows_[g][i] for g in AGE_GROUPS) for i in range(9)]
+        if summed != rows_["Total"]:
+            raise SystemExit(f"northkorea: Table 4's {area} age groups come to {summed[0]:,} "
+                             f"against its Total of {rows_['Total'][0]:,}")
+    provinces = [sum(out[p]["Total"][i] for p in PROVINCES) for i in range(9)]
+    if provinces != out["DPR Korea"]["Total"] or provinces[0] != CIVILIAN_TOTAL:
+        raise SystemExit(f"northkorea: Table 4's provinces come to {provinces[0]:,}, its DPR "
+                         f"Korea row to {out['DPR Korea']['Total'][0]:,}, against "
+                         f"{CIVILIAN_TOTAL:,}")
+    log(f"  Table 4: {len(PROVINCES)} provinces and the country, every block's age groups "
+        f"adding up to its Total, the provinces to {CIVILIAN_TOTAL:,}")
+    return out
+
+
+def median_of(rows_: dict[str, list[int]]) -> float | None:
+    """Both sexes, all areas: interpolated within the five-year group."""
+    return grouped_median((AGE_GROUPS[g][0], AGE_GROUPS[g][1], rows_[g][0])
+                          for g in AGE_GROUPS)
+
+
+def ages_by_shape(ages: dict[str, dict[str, list[int]]],
+                  table: dict[str, dict[str, list[int]]]) -> dict[str, dict[str, Any]]:
+    """{shape province: median_age field} -- a figure for the seven provinces
+    whose ground is the 2008 area's, a stated gap for the other four. Each
+    2008 province's Table 4 total must be its Table 2 total."""
+    for province, rows_ in table.items():
+        printed = [sum(r[i] for r in rows_.values()) for i in range(3)]
+        if ages[province]["Total"][:3] != printed:
+            raise SystemExit(f"northkorea: Table 4 counts {ages[province]['Total'][0]:,} in "
+                             f"{province}, Table 2 {printed[0]:,}")
+    out: dict[str, dict[str, Any]] = {}
+    for report, shape in PROVINCES.items():
+        if shape in REDRAWN:
+            continue
+        out[shape] = measure(median_of(ages[report]), unit="years", year=YEAR,
+                             source=AGE_SOURCE)
+    for shape in REDRAWN:
+        out[shape] = gap(NOT_AVAILABLE, REDRAWN_AGE_NOTE.format(why=REDRAWN_WHY[shape]))
+    national = median_of(ages["DPR Korea"])
+    log(f"  medians: the country {national:.1f}; " + ", ".join(
+        f"{s} {v['value']:.1f}" for s, v in sorted(out.items()) if "value" in v))
+    return out
+
+
 def counties(read: list[tuple[str, list[int]]]) -> dict[str, dict[str, list[int]]]:
     """The report's rows as {first-level area: {county: figures}}, checked.
 
@@ -661,7 +810,8 @@ def slug(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 
 
-def build(shaped: dict[str, dict[str, County]]) -> list[dict[str, Any]]:
+def build(shaped: dict[str, dict[str, County]],
+          medians: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     # The three fields are left to the country's own declaration rather than
     # copied into 190 rows. `apply_collection_policy` replaces a noted
     # not_available with the policy's own marker at build time, so improving
@@ -688,6 +838,12 @@ def build(shaped: dict[str, dict[str, County]]) -> list[dict[str, Any]]:
         rows_ = shaped[shape]
         figures = [sum(v.figures[i] for v in rows_.values()) for i in range(9)]
         ratio = sex_ratio(figures, shape)
+        median = (medians or {}).get(shape)
+        aged = {}
+        if median is not None:
+            aged["median_age"] = median
+            if "value" in median:
+                aged["median_age_note"] = AGE_NOTE
         out.append(record(
             f"PRK-{slug(shape)}", shape, level="admin1", parent="PRK",
             country="PRK", aliases=PROVINCE_ALIASES.get(shape, []),
@@ -695,7 +851,8 @@ def build(shaped: dict[str, dict[str, County]]) -> list[dict[str, Any]]:
                                unit="persons"),
             population_note=province_note(shape),
             sex_ratio=ratio, sex_ratio_note=SEX_RATIO_NOTE,
-            sources=cite(), **declared))
+            sources=cite() + (cite_ages() if "median_age_note" in aged else []),
+            **aged, **declared))
         for name in sorted(rows_):
             county = rows_[name]
             note = county.note
@@ -711,6 +868,7 @@ def build(shaped: dict[str, dict[str, County]]) -> list[dict[str, Any]]:
                 population_note=note,
                 sex_ratio=sex_ratio(county.figures, f"{shape}/{name}"),
                 sex_ratio_note=SEX_RATIO_NOTE,
+                median_age=gap(NOT_AVAILABLE, COUNTY_AGE_NOTE) if medians else None,
                 sources=cite(), **declared))
     return out
 
@@ -718,6 +876,10 @@ def build(shaped: dict[str, dict[str, County]]) -> list[dict[str, Any]]:
 def cite() -> list[dict[str, Any]]:
     return [{"field": field, "name": SOURCE, "url": REPORT, "license": LICENCE}
             for field in ("population", "sex_ratio")]
+
+
+def cite_ages() -> list[dict[str, Any]]:
+    return [{"field": "median_age", "name": AGE_SOURCE, "url": REPORT, "license": LICENCE}]
 
 
 def check(records: list[dict[str, Any]]) -> None:
@@ -771,7 +933,8 @@ def run() -> int:
         f"{males - civilian_males:,} men and "
         f"{IN_CAMPS - (males - civilian_males):,} women, which is why a sex "
         "ratio here runs above the census's own")
-    records = build(regroup(table))
+    ages = age_table(pages, age_pages(pages))
+    records = build(regroup(table), ages_by_shape(ages, table))
     check(records)
     for row in records:
         if row["level"] == "admin1":
