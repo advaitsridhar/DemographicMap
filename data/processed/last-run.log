@@ -1,43 +1,19 @@
-mongolia_ages: National Statistics Office of Mongolia, RESIDENT POPULATION IN MONGOLIA, by sex, by soum and district (data.1212.mn, DT_NSO_0300_068V2); National Statistics Office of Mongolia, RESIDENT POPULATION IN MONGOLIA, by age group, soum and district (data.1212.mn, DT_NSO_0300_067V2)
-  2025: 369 areas; the tables disagree on 2; the age groups miss the age total in 0
-    361 Orkhon: sex table 106356.0, age table 113938.0
-    363 Bulgan: sex table 59110.0, age table 51528.0
-    361 Orkhon: sex table 106356.0, its soums 113938.0
-      36101 Bayan-Undur: 103118.0
-      36104 Jargalant: 3238.0
-      36134 Selenge: 3184.0
-      36140 Khangal: 4398.0
-    363 Bulgan: sex table 59110.0, its soums 51528.0
-      36301 Bulgan: 12236.0
-      36304 Bayan-Agt: 3259.0
-      36307 Bayannuur: 1850.0
-      36310 Bugat: 2176.0
-      36313 Buregkhangai: 2946.0
-      36316 Gurvanbulag: 3131.0
-      36319 Dashinchilen: 2860.0
-      36322 Mogod: 2536.0
-      36325 Orkhon: 3164.0
-      36328 Rashaant: 2993.0
-      36331 Saikhan: 3271.0
-      36337 Teshig: 3473.0
-      36343 Khishig-Undur: 2791.0
-      36346 Khutag-Undur: 4842.0
-    711 Ulaanbaatar: sex table 1673279.0, its soums 1688720.0
-      71101 Baganuur: 28949.0
-      71104 Bagakhangai: 4249.0
-      71107 Bayangol: 254710.0
-      71110 Bayanzurkh: 452195.0
-      71113 Nalaikh: 40824.0
-      71116 Songinokhairkhan: 339203.0
-      71119 Sukhbaatar: 141023.0
-      71122 Khan-Uul: 283010.0
-      71125 Chingeltei: 129116.0
-      71126 Bayan: 2253.0
-      71127 Bayantsagaan: 1845.0
-      71128 Bayanjargalan: 2663.0
-      71129 Bayandelger: 1647.0
-      71130 Arkhust: 1284.0
-      71131 Mungunmorit: 2100.0
-      71132 Erdene: 3649.0
-    711 Ulaanbaatar: age table 1673279.0, its soums 1688720.0
-    codes of other lengths: []
+australia_profile: ABS 2021 Census G01, G02 and G08
+  C21_G01_LGA [1+2+3.P_1...]: 1,695 observations
+  C21_G01_SA2 [1+2+3.P_1..AUS+STE.]: 30 observations
+  C21_G02_LGA [1...]: 565 observations
+  C21_G02_SA2 [1..AUS+STE.]: 10 observations
+  C21_G08_LGA [._T...]: 18,645 observations
+  C21_G08_SA2 [._T..AUS+STE.]: 330 observations
+  Australia English ancestry 33.0% (published 33.0%)
+  Australia Australian ancestry 29.9% (published 29.9%)
+  state 1: LGAs sum to 8,072,171, the state's own 8,072,163
+  state 2: LGAs sum to 6,503,503, the state's own 6,503,491
+  state 3: LGAs sum to 5,156,158, the state's own 5,156,138
+  state 4: LGAs sum to 1,781,501, the state's own 1,781,516
+  state 5: LGAs sum to 2,662,304, the state's own 2,660,026
+  state 6: LGAs sum to 557,570, the state's own 557,571
+  state 7: LGAs sum to 232,621, the state's own 232,605
+  state 8: LGAs sum to 454,495, the state's own 454,499
+  state 9: LGAs sum to 2,505, the state's own 4,788
+australia_profile: state 9's LGAs make 2,505, not its 4,788
