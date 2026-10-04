@@ -1,73 +1,115 @@
-https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/CEN23_POP_006/1.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 1,547,025 bytes
-  [1] CEN23_YEAR_001  codelist=CL_CEN23_YEAR_001 (3 codes) 3 constrained
-                  2013  2013
-                  2018  2018
-                  2023  2023
-  [2] CEN23_GEO_002  codelist=CL_CEN23_GEO_002 (2528 codes) 2528 constrained
-                  9999  Total - New Zealand by regional council
-                    01  Northland Region
-                    02  Auckland Region
-                    03  Waikato Region
-                    04  Bay of Plenty Region
-                    05  Gisborne Region
-                    06  Hawke's Bay Region
-                    07  Taranaki Region
-                    08  Manawatū-Whanganui Region
-                    09  Wellington Region
-                    16  Tasman Region
-                    17  Nelson Region
-                    18  Marlborough Region
-                    12  West Coast Region
-                    13  Canterbury Region
-                    14  Otago Region
-                    15  Southland Region
-                    99  Area Outside Region
-                999999  Total - New Zealand by territorial authority and Auckland local board/SA2
-                   001  Far North District
-                100100  North Cape
-                100200  Rangaunu Harbour
-                100301  Inlets Far North District
-                100400  Karikari Peninsula
-                100500  Tangonge
-  [3] CEN23_ETH_002  codelist=CL_CEN23_ETH_002 (10 codes) 10 constrained
-                   999  Total - ethnicity
-                     1  European
-                     2  Māori
-                     3  Pacific Peoples
-                     4  Asian
-                     5  Middle Eastern/Latin American/African
-                    61  New Zealander
-                    69  Other ethnicity nec
-                   777  Total stated - ethnicity
-                     9  Not elsewhere included
-  [4] CEN23_AGE_001  codelist=CL_CEN23_AGE_001 (146 codes) 146 constrained
-                    99  Total - age
-                     1  Under 15 years
-                     2  15-29 years
-                     3  30-64 years
-                     4  65 years and over
-                    01  0-4 years
-                    02  5-9 years
-                    03  10-14 years
-                    04  15-19 years
-                    05  20-24 years
-                    06  25-29 years
-                    07  30-34 years
-                    08  35-39 years
-                    09  40-44 years
-                    10  45-49 years
-                    11  50-54 years
-                    12  55-59 years
-                    13  60-64 years
-                    14  65-69 years
-                    15  70-74 years
-                    16  75-79 years
-                    17  80-84 years
-                    18  85-89 years
-                    19  90 years and over
-                   000  Less than one year
-  [5] CEN23_SAB_002  codelist=CL_CEN23_SAB_002 (3 codes) 3 constrained
-                   999  Total - sex at birth
-                    11  Male / Tāne
-                    22  Female / Wahine
+== cod-ps-qat: licence=cc-by-igo  method=Census
+  - QAT_AdminBoundaries_TabularData.xlsx (XLSX, 28272 B)
+    https://data.humdata.org/dataset/206e28e6-3a8a-4a5c-828b-4e92d9273056/resource/017352db-72dd-4748-8b4d-eb01cc8172a7/download/qat_adminboundaries_tabulardata.xlsx
+    sheet 'Admin2': 520 rows x 41 cols
+    | OBJECTID * | Shape * | admin2Name_en | admin2Name_ar | admin2Pcode | admin2RefName | admin1Name_en | admin1Name_ar | admin1Pcode | admin0Name_en | admin0Name_ar | admin0Pcode | date | validOn | validTo | Shape_Length | Shape_Area |  |  |  |  |  |  | 
+    | 1 | Polygon | Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat 69 | جبل ثعيلب / الخرايج / لوسيل / العقلة / وادي البنات 69 | QAT001069 | <Null> | Al Daayen Municipality | بلدية الظعاين | QAT001 | Qatar | قطر | QAT | 2020-12-01 00:00:00 | 2022-12-07 00:00:00 | <Null> | 0.442948 | 0.004587 |  |  |  |  |  |  | 
+    | 2 | Polygon | Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen 70 | لعبيب / العب / جريان جنيحات / الخيسة / روضة الحمامة / وادي الوسعة / الصخامة / المسروحية / وادي لوسيل / لوسيل / ام قرن / الظعاين 70 | QAT001070 | <Null> | Al Daayen Municipality | بلدية الظعاين | QAT001 | Qatar | قطر | QAT |
+    | 3 | Polygon | Simaisma / Al Jeryan / Al Khor 74 | سميسمة / الجريان / الخور 74 | QAT002074 | <Null> | Al Khor and Al Thakhira Municipality | بلدية الخور و الذخيرة | QAT002 | Qatar | قطر | QAT | 2020-12-01 00:00:00 | 2022-12-07 00:00:00 | <Null> | 1.423198 | 0.033653 |  |  |  |  |  |  | 
+    | 4 | Polygon | Al Thakhira/Rass Laffan/Umm Birka 75 | الذخيرة/راس لفان/ام بركة 75 | QAT002075 | <Null> | Al Khor and Al Thakhira Municipality | بلدية الخور و الذخيرة | QAT002 | Qatar | قطر | QAT | 2020-12-01 00:00:00 | 2022-12-07 00:00:00 | <Null> | 2.21614 | 0.054535 |  |  |  |  |  |  | 
+    sheet 'Admin1': 35 rows x 41 cols
+    | OBJECTID * | Shape * | admin1Name_en | admin1Name_ar | admin1Pcode | admin0Name_en | admin0Name_ar | admin0Pcode | date | validOn | validTo | Shape_Length | Shape_Area |  |  |  |  |  |  |  |  |  |  | 
+    | 1 | Polygon | Al Daayen Municipality | بلدية الظعاين | QAT001 | Qatar | قطر | QAT | 2020-12-01 00:00:00 | 2022-12-07 00:00:00 | <Null> | 1.423213 | 0.026963 |  |  |  |  |  |  |  |  |  |  | 
+    | 2 | Polygon | Al Khor and Al Thakhira Municipality | بلدية الخور و الذخيرة | QAT002 | Qatar | قطر | QAT | 2020-12-01 00:00:00 | 2022-12-07 00:00:00 | <Null> | 3.798491 | 0.145481 |  |  |  |  |  |  |  |  |  |  | 
+    | 3 | Polygon | Al Rayyan Municipality | بلدية الريان | QAT003 | Qatar | قطر | QAT | 2020-12-01 00:00:00 | 2022-12-07 00:00:00 | <Null> | 3.747014 | 0.21894 |  |  |  |  |  |  |  |  |  |  | 
+    | 4 | Polygon | Al Shamal Municipality | بلدية الشمال | QAT004 | Qatar | قطر | QAT | 2020-12-01 00:00:00 | 2022-12-07 00:00:00 | <Null> | 2.58218 | 0.077573 |  |  |  |  |  |  |  |  |  |  | 
+    sheet 'Admin0': 2 rows x 41 cols
+    | OBJECTID* | Shape * | admin0Name_en | admin0Name_ar | admin0Pcode | date | validOn | validTo | Shape_Length | Shape_Area |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 1 | Polygon | Qatar | قطر | QAT | 2020-12-01 00:00:00 | 2022-12-07 00:00:00 | <Null> | 1900-01-11 22:47:54.643000 | 1.042731 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+  - qat_admpop_2020.xlsx (XLSX, 608023 B)
+    https://data.humdata.org/dataset/206e28e6-3a8a-4a5c-828b-4e92d9273056/resource/956c6432-076f-47e9-806f-cf357882d2d5/download/qat_admpop_2020.xlsx
+    sheet 'Metadata': 1000 rows x 26 cols
+    | Item | Metadata |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Country | Qatar |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Basline population | 2020 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Reference year of projections | 2020 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Source(s) | Qatar Planning and Statistics Authority - Administrative Record-Based Census |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    sheet 'qat_admpop_adm0_2020': 2 rows x 56 cols
+    | year | ISO3 | ADM0_EN | ADM0_AR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75Plus
+    | 2020 | QAT | Qatar | قطر | QAT | 811600 | 2034518 | 2846118 | 79380 | 77665 | 62919 | 46399 | 46506 | 91359 | 117140 | 98223 | 72413 | 45936 | 29712 | 18655 | 11762 | 6281 | 3389 | 3861
+    sheet 'qat_admpop_adm1_2020': 9 rows x 59 cols
+    | year | ISO3 | ADM0_EN | ADM0_AR | ADM0_PCODE | ADM1_PCODE | ADM1_EN | ADM1_AR | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64
+    | 2020 | QAT | Qatar | قطر | QAT | QAT002 | Al Khor and Al Thakhira Municipality | بلدية الخور و الذخيرة | 27510 | 112943 | 140453 | 2753 | 2935 | 2630 | 1861 | 1559 | 2606 | 3358 | 3195 | 2649 | 1755 | 1049 | 536 | 300
+    | 2020 | QAT | Qatar | قطر | QAT | QAT003 | Al Rayyan Municipality | بلدية الريان | 290103 | 536683 | 826786 | 29028 | 29311 | 24545 | 18399 | 17889 | 30305 | 38461 | 33771 | 25904 | 16266 | 10330 | 6391 | 4162
+    | 2020 | QAT | Qatar | قطر | QAT | QAT005 | Al Wakra Municipality | بلدية الوكرة | 80275 | 184827 | 265102 | 9286 | 9223 | 6903 | 4788 | 4495 | 8372 | 11362 | 9392 | 6636 | 3989 | 2497 | 1432 | 853
+    | 2020 | QAT | Qatar | قطر | QAT | QAT001 | Al Daayen Municipality | بلدية الظعاين | 44617 | 55466 | 100083 | 4193 | 4033 | 3529 | 2688 | 2521 | 4909 | 6230 | 5592 | 4215 | 2706 | 1551 | 964 | 695
+    sheet 'Explanatory Technical Note': 1000 rows x 26 cols
+    | Explanatory Technical Note - Qatar COD-PS, 2022 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | This COD-PS is based on the census results prepared by the national statistics office (NSO). For basic attributes of the COD-PS, please refer to the COD-PS Metadata. |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | At ADM-0, the implied intercensal (2015-2020) population growth rates of this COD-PS (4.36% per year: female: 6.45%, male: 2.26%) are generally consistent with the UN's population projections published in the 2022 revision of the World Population Prospects (WPP) (8.28% in 2015 and 6.22% in 2016 to 1.52% in 2019 then falling to -4.95% in 2022 due to the COVID-19 pandemic). Similarly, the age- an
+    sheet 'Growth rates since last census': 1000 rows x 26 cols
+    | ADM_1 | F_census | M_census | F_TL | M_TL | pgr_f | pgr_m | pgr_t |  | country | Year | PGR_WPP |  |  |  |  |  |  |  |  |  |  |  | 
+    | Al Khor and Al Thakhira | 21031 | 181000 | 27510 | 112943 | 5.37 | -9.43 | -2.03 |  | Qatar | 2015 | 8.277 |  |  |  |  |  |  |  |  |  |  |  | 
+    | Al Rayyan | 198929 | 406783 | 290103 | 536683 | 7.55 | 5.54 | 6.54 |  | Qatar | 2016 | 6.223 |  |  |  |  |  |  |  |  |  |  |  | 
+    | Al Wakra | 50934 | 248103 | 80275 | 184827 | 9.1 | -5.89 | 1.6 |  | Qatar | 2017 | 2.646 |  |  |  |  |  |  |  |  |  |  |  | 
+    | Daayen | 18294 | 36045 | 44617 | 55466 | 17.83 | 8.62 | 13.22 |  | Qatar | 2018 | 1.381 |  |  |  |  |  |  |  |  |  |  |  | 
+    sheet 'Figure 1': 1000 rows x 26 cols
+    | Age | WPP_ADM0_F | WPP_ADM0_M | NSO_ADM0_F | NSO_ADM0_M | F_NSO_minus_WPP | M_NSO_minus_WPP | F_NSO_minus_WPP_pct | M_NSO_minus_WPP_pct |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 0-4 | 74235 | -77409 | 79380 | -82805 | 5145 | 5396 | 6.93069306930693 | 6.97076567324213 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 5-9 | 73688.5 | -76547.5 | 77665 | -80716 | 3976.5 | 4168.5 | 5.39636442592806 | 5.44563832914204 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 10-14 | 59855.5 | -62029.5 | 62919 | -65829 | 3063.5 | 3799.5 | 5.11815956762536 | 6.1253113437961 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 15-19 | 41088 | -43622.5 | 46399 | -50657 | 5311 | 7034.5 | 12.9259151090343 | 16.1258524843831 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    sheet 'Figure 2': 1000 rows x 1 cols
+    | 
+    | 
+    | 
+    | 
+    | 
+  - qat_admpop_adm0_2020.csv (CSV, 791 B)
+    https://data.humdata.org/dataset/206e28e6-3a8a-4a5c-828b-4e92d9273056/resource/e74965d7-5702-4eec-9f04-e3ff21648178/download/qat_admpop_adm0_2020.csv
+    | year,ISO3,ADM0_EN,ADM0_AR,ADM0_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_69,M_70_74
+    | 2020,QAT,Qatar,قطر,QAT,811600,2034518,2846118,79380,77665,62919,46399,46506,91359,117140,98223,72413,45936,29712,18655,11762,6281,3389,3861,82805,80716,65829,50657,157399,308692,372192,330722,232389,152937,96671,53734,28580,11821,4987,4387,162185,158381,128748,97056,203905,400051,489332,428945,30480
+    2 lines
+== cod-ps-sau: licence=cc-by-igo  method=Census
+  - sau_admpop_2022.xlsx (XLSX, 20866 B)
+    https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/da0a1e29-dcca-4c65-a1a0-d1203de91012/download/sau_admpop_2022.xlsx
+    sheet 'Metadata': 15 rows x 2 cols
+    | Item | Metadata
+    | Country | Saudi Arabia
+    | Source(s) | General Authority for Statistics (GASTAT) Saudi Arabia
+    | Source(s) Link(s) | https://portal.saudicensus.sa/portal/public/1/15/100647?type=TABLE, https://portal.saudicensus.sa/portal/public/1/15?type=TABLE, https://portal.saudicensus.sa/portal/public/methodology
+    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Census enumeration
+    sheet 'Methodological Documentation': 9 rows x 2 cols
+    | Item | Methodological_Documentation
+    | Methodology Used | This COD-PS is based in the 2022 population census of Saudi Arabia.
+    | Baseline Population | 2022 census
+    | Post-enumeration survey (PES) | GASTAT conducted follow-up phone interviews with a random sample of over 1 million people and found data provided during the census to be 95% accurate.
+    | Assessment and Adjustment of the Baseline Population | The NSO used several methods, including a follow-up phone survey and crosschecks with administrative data, to validate 2022 census data. If any coverage errors were found or corrected for, records of such adjustments could not be located in public sphere. The NSO states high confidence in the accuracy of the 2022 census, but suspects data qual
+    sheet 'sau_admpop_adm0_2022': 2 rows x 72 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74
+    | 2022 | SAU | Saudi Arabia | SA | Tabuk | SA07 | 12496629 | 19678595 | 32175224 | 1263917 | 1354766 | 1249029 | 1079884 | 1050547 | 1242388 | 1250860 | 1113283 | 839031 | 592256 | 463843 | 351281 | 253046 | 156115 | 94864
+    sheet 'sau_admpop_adm1_2022': 14 rows x 72 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74
+    | 2022 | SAU | Saudi Arabia | SA | `Asir | SA14 | 823254 | 1201031 | 2024285 | 86076 | 93547 | 89842 | 80089 | 70589 | 72715 | 72725 | 67430 | 52938 | 37683 | 29511 | 22073 | 15812 | 10451 | 7801
+    | 2022 | SAU | Saudi Arabia | SA | Al Bahah | SA11 | 144916 | 194258 | 339174 | 13905 | 16234 | 15738 | 13866 | 11620 | 11446 | 11901 | 11884 | 9903 | 7009 | 5688 | 4579 | 3352 | 2299 | 1733
+    | 2022 | SAU | Saudi Arabia | SA | Al Hudud ash Shamaliyah | SA08 | 159045 | 214532 | 373577 | 20196 | 20538 | 17737 | 14648 | 13565 | 14994 | 14226 | 12524 | 9305 | 6337 | 4665 | 3456 | 2374 | 1574 | 1153
+    | 2022 | SAU | Saudi Arabia | SA | Al Jawf | SA12 | 250135 | 345687 | 595822 | 35470 | 35016 | 29566 | 23021 | 20968 | 22434 | 20599 | 17799 | 13194 | 9392 | 7480 | 5395 | 3673 | 2299 | 1415
+  - SAU-COD-PS-2024-Explanatory-Note.pdf (PDF, 4533275 B)
+    https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/ca96600f-cf61-4a9c-8605-a015c15f4660/download/sau-cod-ps-2024-explanatory-note.pdf
+  - sau_admgz.xlsx (XLSX, 10629 B)
+    https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/cf9aff07-e1e6-455a-8fca-f2fd2b05df44/download/sau_admgz.xlsx
+    sheet 'Admin1': 14 rows x 36 cols
+    | OBJECTID * | Shape * | admin1Name_en | admin1Pcode | admin1RefName | admin1AltName1_en | admin1AltName2_en | admin0Name_en | admin0Pcode |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 1 | Polygon | `Asir | SA14 | Asir | <Null> | <Null> | Saudi Arabia | SA |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 2 | Polygon | Al Bahah | SA11 | <Null> | <Null> | <Null> | Saudi Arabia | SA |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 3 | Polygon | Al Hudud ash Shamaliyah | SA08 | <Null> | <Null> | <Null> | Saudi Arabia | SA |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 4 | Polygon | Al Jawf | SA12 | <Null> | <Null> | <Null> | Saudi Arabia | SA |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    sheet 'Admin0': 2 rows x 36 cols
+    | OBJECTID * | Shape * | admin0Name_en | admin0Pcode | admin0RefName | admin0AltName1_en | admin0AltName2_en |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | 1 | Polygon | Saudi Arabia | SA | <Null> | <Null> | <Null> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+  - sau_admpop_adm1_2022.csv (CSV, 6005 B)
+    https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/e5e20775-057c-446b-aa4d-aab2dc5a79db/download/sau_admpop_adm1_2022.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80_84,F_85_89,F_90_94,F_95_99,F_100Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_4
+    | 2022,SAU,Saudi Arabia,SA,`Asir,SA14,823254,1201031,2024285,86076,93547,89842,80089,70589,72715,72725,67430,52938,37683,29511,22073,15812,10451,7801,5808,3861,2218,1110,499,476,89700,97241,92719,83336,97290,143912,147078,130793,101461,71396,52222,35437,22158,13111,8653,6074,4529,2380,913,350,278,1757
+    | 2022,SAU,Saudi Arabia,SA,Al Bahah,SA11,144916,194258,339174,13905,16234,15738,13866,11620,11446,11901,11884,9903,7009,5688,4579,3352,2299,1733,1473,1009,661,324,149,143,14292,16718,16437,14215,15217,20851,21944,20061,16681,11834,8822,6346,4088,2179,1598,1041,979,538,251,91,75,28197,32952,32175,28081
+    | 2022,SAU,Saudi Arabia,SA,Al Hudud ash Shamaliyah,SA08,159045,214532,373577,20196,20538,17737,14648,13565,14994,14226,12524,9305,6337,4665,3456,2374,1574,1153,754,487,277,124,58,53,21493,21322,18266,14774,17474,25486,25299,22060,17011,11211,7805,5053,2929,1857,1039,696,410,212,79,36,20,41689,41860,36
+    | 2022,SAU,Saudi Arabia,SA,Al Jawf,SA12,250135,345687,595822,35470,35016,29566,23021,20968,22434,20599,17799,13194,9392,7480,5395,3673,2299,1415,1048,679,365,180,58,84,36359,36051,30401,23527,26933,38384,39371,34839,27317,18381,13791,9059,4997,2816,1478,928,600,301,95,30,29,71829,71067,59967,46548,479
+    | 2022,SAU,Saudi Arabia,SA,Al Madinah,SA03,859866,1278117,2137983,92536,97216,91346,78252,73438,79175,79749,71754,53914,38174,31603,24029,17581,11692,7385,5243,3438,1799,792,395,355,95669,100259,94512,81401,103970,159005,164382,143363,109340,74418,56330,39536,24701,13964,7281,4569,3013,1485,536,219,16
+    14 lines
+  - sau_admpop_adm0_2022.csv (CSV, 1085 B)
+    https://data.humdata.org/dataset/4f40ced2-b095-4489-bd1c-52e785ed6c2f/resource/13914f3b-4ba0-4de5-ab43-77cb29dfce03/download/sau_admpop_adm0_2022.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80_84,F_85_89,F_90_94,F_95_99,F_100Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_4
+    | 2022,SAU,Saudi Arabia,SA,Tabuk,SA07,12496629,19678595,32175224,1263917,1354766,1249029,1079884,1050547,1242388,1250860,1113283,839031,592256,463843,351281,253046,156115,94864,64100,40686,20470,9200,3893,3170,1314242,1407551,1297385,1116816,1565435,2503327,2641972,2351673,1814846,1232924,924529,64393
+    2 lines
