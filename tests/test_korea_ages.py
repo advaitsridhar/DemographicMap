@@ -151,6 +151,19 @@ class Refusals(unittest.TestCase):
         with self.assertRaises(SystemExit):
             ka.build(table, a1, a2)
 
+    def test_empty_branch_office_is_skipped(self):
+        table, a1, a2 = fixture()
+        zeros = row("북부출장소", "4110500000", [0] * 101, [0] * 101)
+        table.insert(5, zeros)
+        self.assertEqual(len(ka.build(table, a1, a2)), 245)
+
+    def test_branch_office_with_people_is_a_refusal(self):
+        table, a1, a2 = fixture()
+        men, women = pyramid(1)
+        table.insert(5, row("경기도 송탄출장소", "4122200000", men, women))
+        with self.assertRaises(SystemExit):
+            ka.build(table, a1, a2)
+
     def test_undrawn_county_counts_only_in_its_province(self):
         table, a1, a2 = fixture()
         self.assertIn(("South Jeolla", "영광군"), UNDRAWN)

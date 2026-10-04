@@ -92,6 +92,7 @@ FIELDS: list[tuple[str, str]] = [
 ]
 
 SEXES = {"계": "all", "남": "men", "여": "women"}
+OFFICE = "출장소"
 COLUMN = re.compile(r"^\s*(\d{4})년\s*(\d{1,2})월_(계|남|여)_(.+?)\s*$")
 AGE = re.compile(r"^(\d+)세(\s*이상)?$")
 
@@ -183,10 +184,20 @@ def classify(rows: dict[str, tuple[str, dict[str, Any]]]
     provinces: dict[str, dict[str, Any]] = {}
     districts: dict[tuple[str, str], dict[str, Any]] = {}
     skipped = 0
+    offices = 0
     for code, (area, by_sex) in rows.items():
         words = area.split()
         if words[0] == "전국":
             national = by_sex
+            continue
+        # A branch office (출장소: 인천광역시 중구영종출장소, 북부출장소) is listed
+        # with nobody registered to it -- its residents are its district's.
+        # One with people in it would be counted twice, and is a refusal.
+        if area.endswith(OFFICE):
+            if by_sex["all"]["total"]:
+                raise SystemExit(f"korea_ages: the branch office {area} lists "
+                                 f"{by_sex['all']['total']:,} people")
+            offices += 1
             continue
         if words[0] not in SIDO:
             raise SystemExit(f"korea_ages: {area!r} names no province")
@@ -207,6 +218,8 @@ def classify(rows: dict[str, tuple[str, dict[str, Any]]]
         if key in districts:
             raise SystemExit(f"korea_ages: two rows for {key}")
         districts[key] = by_sex
+    if offices:
+        log(f"  {offices} branch offices (출장소) listed with nobody registered, skipped")
     return national, provinces, districts, skipped
 
 
@@ -334,8 +347,12 @@ def build(table: list[list[str]], admin1: list[dict[str, Any]],
         raise SystemExit(f"korea_ages: drawn districts with no row: "
                          f"{[k for k, v in district_shapes.items() if v in missing]}")
     medians = [r["median_age"]["value"] for r in records if r["level"] == "admin2"]
+    nation: Counter = Counter()
+    for cell in provinces.values():
+        nation.update(cell["all"]["ages"])
     log(f"  {len(records)} records: 17 provinces, {len(medians)} districts; district medians "
-        f"{min(medians):.1f}-{max(medians):.1f}")
+        f"{min(medians):.1f}-{max(medians):.1f}; the register's national median "
+        f"{single_year_median(dict(nation)):.1f}")
     return records
 
 
