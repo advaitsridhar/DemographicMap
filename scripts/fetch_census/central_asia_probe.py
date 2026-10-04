@@ -18,6 +18,8 @@ answers one question and prints only what decides it.
   ``--peek`` each CSV's or workbook sheet's header and first rows.
 * ``json URL`` -- a JSON document's shape: the keys at ``--path`` and the
   first ``--rows`` items of a list there.
+* ``tree URL --match RE`` -- the nodes of a nested JSON catalogue (SIAT's)
+  whose names match, with their ids and codes.
 
 Usage:
     python -m scripts.fetch_census.central_asia_probe get https://stat.gov.kg/ru/ --links census
@@ -272,10 +274,50 @@ def cmd_json(urls: list[str], path: str, rows: int, data: str | None, chars: int
             log(f"  {json.dumps(doc, ensure_ascii=False)[:chars]}")
 
 
+def cmd_tree(url: str, match: str, keys: list[str], rows: int) -> None:
+    """Every node of a nested JSON catalogue whose name matches, with its id.
+
+    SIAT's catalogue is one 3 MB tree of sections, groups and indicators;
+    this walks it and prints the nodes a pattern picks out, so an indicator
+    can be found by what it measures rather than by paging the site.
+    """
+    status, _, body, _ = fetch(url, timeout=240, accept="application/json")
+    log(f"{url}: HTTP {status} {len(body):,} B")
+    found = 0
+
+    def visit(node: Any, path: list[str]) -> None:
+        nonlocal found
+        if isinstance(node, list):
+            for item in node:
+                visit(item, path)
+            return
+        if not isinstance(node, dict):
+            return
+        names = [str(node.get(k) or "") for k in keys]
+        label = " | ".join(n for n in names if n)
+        if label and re.search(match, label, re.I):
+            found += 1
+            if found <= rows:
+                log(f"  id={node.get('id')} code={node.get('code')} {label[:220]}"
+                    f"  <- {' / '.join(path[-2:])[:120]}")
+        here = path + ([names[0][:40]] if names and names[0] else [])
+        for value in node.values():
+            if isinstance(value, (list, dict)):
+                visit(value, here)
+
+    visit(json.loads(body), [])
+    log(f"  {found} nodes match {match!r}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    t = sub.add_parser("tree")
+    t.add_argument("url")
+    t.add_argument("--match", required=True)
+    t.add_argument("--keys", default="name_en,name_ru")
+    t.add_argument("--rows", type=int, default=150)
     g = sub.add_parser("get")
     g.add_argument("urls", nargs="+")
     g.add_argument("--links", default="")
@@ -310,7 +352,9 @@ def main() -> int:
     j.add_argument("--chars", type=int, default=400)
     j.add_argument("--data", default=None)
     args = ap.parse_args()
-    if args.cmd == "get":
+    if args.cmd == "tree":
+        cmd_tree(args.url, args.match, [k for k in args.keys.split(",") if k], args.rows)
+    elif args.cmd == "get":
         cmd_get(args.urls, links=args.links, grep=args.grep, chars=args.chars,
                 context=args.context, rows=args.rows, charset=args.charset,
                 data=args.data, accept=args.accept, ctype=args.ctype, raw=args.raw)
