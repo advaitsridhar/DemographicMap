@@ -1,38 +1,51 @@
-== https://www.cis.es/
-  HTTP 200; text/html;charset=UTF-8; 357,752 bytes; final https://www.cis.es/en/
-  380 lines, 2 with ['barómetro', 'microdatos', 'fichero', 'registro', 'descarga']
-    | Centro de Investigaciones Sociológicas (CIS) – Estudios y barómetros de opinión
-    | 23 Sep 2026 Study available 3577 'Barómetro de septiembre 2026'
-  14 links with ['estudio', 'catalog', 'barom', 'microdat', 'fichero', 'analisis', 'datos', 'banco', 'descarga']
-    -> https://www.cis.es/en/estudios/faqs-preguntas-frecuentes  [FAQs - Frequently Asked Questions]
-    -> https://www.cis.es/estudios/catalogo?catalogo=estudio&sort=createDateBDE-&t=0  [Catalogue of Studies]
-    -> https://www.cis.es/en/catalogo-estudios/peticiones-especificas  [Specific requests]
-    -> /estudios/preguntas-frecuentes/comprobacion-extension-telefonica-cis  [Verificar extensión CIS]
-    -> https://www.cis.es/en/w/avance-de-resultados-del-estudio-3579-actitudes-hacia-el-estado-de-bienestar-iii-  [Advance on study results 3579 'Actitudes hacia el estado de bienestar (III)']
-    -> https://www.cis.es/en/w/avance-de-resultados-del-estudio-3578-protecci%C3%B3n-civil-iv-  [Advance on study results 3578 'Protección Civil (IV)']
-    -> https://www.cis.es/en/surveys/barometro-de-septiembre-2026  [Study available 3577 'Barómetro de septiembre 2026']
-    -> /en/studies/catalogue?catalogo=estudio&sort=publishDate-  [See Catalog of Studies]
-    -> https://www.cis.es/en/w/la-biblioteca-del-cis-se-incorpora-al-cat%C3%A1logo-colectivo-biblespage  [The CIS Library joins the BIBLESPAGE collective catalogue]
-    -> /estudios/preguntas-frecuentes-proceso-encuestacion  [Access to FAQs]
-== https://www.cis.es/es/estudios/catalogo-de-estudios
-  HTTP 404; text/html;charset=UTF-8; 261,356 bytes; final https://www.cis.es/es/estudios/catalogo-de-estudios
-  298 lines, 7 with ['barómetro', 'microdatos', 'fichero', 'registro', 'descarga']
-    | Centro de Investigaciones Sociológicas (CIS) – Estudios y barómetros de opinión
-    | Ficheros Integrados de Datos
-    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
-    | Recopilación de los principales datos obtenidos a través de los barómetros de opinión realizados a lo largo de un año por esta institución
-    | Ficheros Integrados de Datos
-    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
-    | Recopilación de los principales datos obtenidos a través de los barómetros de opinión realizados a lo largo de un año por esta institución
-  17 links with ['estudio', 'catalog', 'barom', 'microdat', 'fichero', 'analisis', 'datos', 'banco', 'descarga']
-    -> https://www.cis.es/es/estudios/informacion-general  [Información General]
-    -> https://www.cis.es/es/estudios/faqs-preguntas-frecuentes  [FAQs - Preguntas frecuentes]
-    -> https://www.cis.es/es/estudios/metodologias  [Metodologías]
-    -> https://www.cis.es/estudios/catalogo?catalogo=estudio&sort=createDateBDE-&t=0  [Catálogo de estudios]
-    -> https://www.cis.es/es/catalogo-estudios/fid  [Ficheros Integrados de Datos]
-    -> https://www.cis.es/es/catalogo-estudios/peticiones-especificas  [Peticiones Específicas]
-    -> https://www.cis.es/es/condiciones-reutilizaci%C3%B3n-datos-del-cis  [Condiciones Reutilización datos del CIS]
-    -> https://www.cis.es/es/servicios-ciudadano/proteccion-de-datos-caracter-personal  [Protección de Datos de Carácter Personal]
-    -> /estudios/preguntas-frecuentes/comprobacion-extension-telefonica-cis  [Verificar extensión CIS]
-== https://analisis.cis.es/
-  URLError: <urlopen error [Errno -5] No address associated with hostname>
+== CDX www.cis.es/documents/d/cis/*: HTTP 200, 1,090,591 bytes
+  6165 captured addresses, 49 with ['md3', 'md2', 'fid', 'zip', 'sav', 'datos', 'mar3', '3450', '3460', '3470', '3480', '3490', '3500']
+    20240411124206 200 application/pdf https://www.cis.es/documents/d/cis/3450_estimacion
+    20240603111133 200 application/pdf https://www.cis.es/documents/d/cis/3460_estimacion
+    20241007233501 200 application/pdf https://www.cis.es/documents/d/cis/3460_InformeTecnico_estimacionEPE
+    20240429132824 200 application/pdf https://www.cis.es/documents/d/cis/3500_estimacion
+    20231118011020 200 image/png https://www.cis.es/documents/d/cis/Datos%20abiertos%20Borrar
+    20240908061725 200 application/pdf https://www.cis.es/documents/d/cis/es3450creencias_a
+    20240504192345 200 application/pdf https://www.cis.es/documents/d/cis/es3450mar-pdf
+    20240411135538 200 application/pdf https://www.cis.es/documents/d/cis/es3450mar_a
+    20240920075813 200 application/pdf https://www.cis.es/documents/d/cis/es3450sd_a
+    20240920175523 200 application/pdf https://www.cis.es/documents/d/cis/es3450se_a
+    20240428124839 200 application/pdf https://www.cis.es/documents/d/cis/es3450vp_a
+    20240907160750 200 application/pdf https://www.cis.es/documents/d/cis/es3460creencias_a
+    20250429120715 200 application/pdf https://www.cis.es/documents/d/cis/es3460mar-pdf
+    20240603111137 200 application/pdf https://www.cis.es/documents/d/cis/es3460mar_a
+    20240609225357 200 application/pdf https://www.cis.es/documents/d/cis/es3460sd_a
+    20240910025630 200 application/pdf https://www.cis.es/documents/d/cis/es3460se_a
+    20240603122504 200 application/pdf https://www.cis.es/documents/d/cis/es3460vp_a
+    20241003135253 200 application/pdf https://www.cis.es/documents/d/cis/es3470mar-pdf
+    20250215130809 200 application/pdf https://www.cis.es/documents/d/cis/es3480creencias_a
+    20241206061855 200 application/pdf https://www.cis.es/documents/d/cis/es3480mar-pdf
+    20260212204106 301 text/html http://www.cis.es/documents/d/cis/es3480mar-pdfConsejo
+    20241030153259 200 application/pdf https://www.cis.es/documents/d/cis/es3480mar_a
+    20250218071519 200 application/pdf https://www.cis.es/documents/d/cis/es3480sd_a
+    20250218004103 200 application/pdf https://www.cis.es/documents/d/cis/es3480se_a
+    20250218003319 200 application/pdf https://www.cis.es/documents/d/cis/es3480vp_a
+    20250124084911 200 application/pdf https://www.cis.es/documents/d/cis/es3490creenciasMT_a
+    20250217045103 200 application/pdf https://www.cis.es/documents/d/cis/es3490mar-pdf
+    20250121135742 200 application/pdf https://www.cis.es/documents/d/cis/es3490marMT_a
+    20250328123526 200 application/pdf https://www.cis.es/documents/d/cis/es3490sdMT_a
+    20250328122124 200 application/pdf https://www.cis.es/documents/d/cis/es3490seMT_a
+    20250328120813 200 application/pdf https://www.cis.es/documents/d/cis/es3490vpMT_a
+    20240908062924 200 application/pdf https://www.cis.es/documents/d/cis/es3500creencias_a
+    20250610153607 404 text/html https://www.cis.es/documents/d/cis/es3500mar
+    20240429132829 200 application/pdf https://www.cis.es/documents/d/cis/es3500mar_a
+    20260326213457 301 text/html https://www.cis.es/documents/d/cis/es3500mara
+    20260326213113 301 text/html https://www.cis.es/documents/d/cis/es3500mara)
+    20250610151107 404 text/html https://www.cis.es/documents/d/cis/es3500mara).
+    20240429172630 200 application/pdf https://www.cis.es/documents/d/cis/es3500sd_a
+    20240908072733 200 application/pdf https://www.cis.es/documents/d/cis/es3500se_a
+    20240429144034 200 application/pdf https://www.cis.es/documents/d/cis/es3500vp_a
+    20240101232612 200 image/jpeg https://www.cis.es/documents/d/cis/FID-info-general
+    20240322004259 - warc/revisit http://www.cis.es/documents/d/cis/fid_contacto
+    20240321183545 301 text/html http://www.cis.es/documents/d/cis/fid_normativa
+    20240214184908 200 image/svg+xml https://www.cis.es/documents/d/cis/icomenu_fid
+    20240214184908 200 image/svg+xml https://www.cis.es/documents/d/cis/icomenu_fid_faqs
+    20240214185043 200 image/svg+xml https://www.cis.es/documents/d/cis/icomenu_fidaccesodatos
+    20231212104402 200 image/jpeg https://www.cis.es/documents/d/cis/proteccion-de-datos
+    20240722211930 200 application/pdf https://www.cis.es/documents/d/cis/proteccion-de-datos-personales_encuesta-social-general
+    20231114142847 200 image/svg+xml https://www.cis.es/documents/d/cis/zip
