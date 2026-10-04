@@ -1,314 +1,130 @@
-probe_pdf: https://statistics.gov.sb/download/60/solomon-islands-2019-population-and-housing-census-national-report_volume-1-and-2/1207/solomon-islands-2019-census-report-vol-2_basic-tables_operations.pdf
-  5,094,197 bytes
-  318 pages
-probe_pdf: 318 pages, printing [15, 16, 18, 19, 20, 21]
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
 
---- page 15 ----------------------------------------------------
-2
-List of Table Page
-A.    Population Characteristics
-2.     Geography
-P2.1: Total population and number of private households, by census years and
-province, Solomon Islands: 1970-2019
-8
-P2.2: Total population by sex and number of private households and Non-Private
-Dwelling by ward, Solomon Islands: 2019
-9
-3.     Age Structure
-P3.1: Total Population by 5-year age groups and sex, province and ward, Solomon
-Islands: 2019
-14
-P3.2: Male Population by 5-year age groups and sex, province and ward, Solomon
-Islands: 2019
-21
- P3.3: Female Population by 5-year age groups and sex, province and ward,
-Solomon Islands: 2019
-28
-4.     Urbanization
-P4.1: Total Population by sex, by urban-rural distribution and province, Solomon
-Islands 2019
-35
-P4.2: Total Population by sex and number of private households and Non private
-dwellings/Institutions by urban-rural
-36
-distributions and ward, Solomon Islands: 2019
-P4.3: Total Population by 5-year age group and sex, province and urban-rural
-residence, Solomon Island: 2019
-42
-P4.4: Total Population by urban centers by 5-year age group and sex, Solomon
-Islands: 2019
-50
-5.     Fertility
-P5.1: Female Population 15 years and older by 5-years age group and whether
-ever giving birth by province and urban-rural residence, Solomon Islands:
-2019
-54
-P5.2: Female Population 15 years and older by 5-years age group and total
-number of children Ever borne alive by province and urban-rural
-56
-residence, Solomon Islands: 2019
-P5.3: Female Population 15 years and older by 5-years age group and total
-number of male Children ever borne alive by province and Urban-rural
-residence, Solomon Island: 2019
-64
-P5.4: Female Population 15 years and older by 5-years age group and total
-number of female Children ever borne alive by province and Urban-rural
-72
-residence, Solomon Island: 2019
-P5.5: Female Population 15 years and older by 5-years age group and number of
-surviving  children by sex of child, province and urban-rural residence,
-Solomon Islands: 2019
-80
+== GET https://data.humdata.org/api/3/action/package_show?id=cod-ps-bgd
+  200 application/json;charset=utf-8 14481 https://data.humdata.org/api/3/action/package_show?id=cod-ps-bgd
 
---- page 16 ----------------------------------------------------
-3
-P5.6: Female Population 15 years and older by 5-years age group and number of
-children, living in mother’s  household by sex of child, province and urban-
-rural residence, Solomon Islands: 2019
-82
-P5.7: Female Population 15 years and older by 5-years age group and number of
-children, Not living in mother’s household by sex of a child, province and
-urban-rural residence, Solomon Islands: 2019
-84
-P5.8: Female Population age 15 -54 years by live births in 12 months preceding the
-census by Solomon Islands: 2019
-86
-P5.9: Years of birth of last child born by province and residence of mother,
-Solomon Islands: 2019
-87
-6.     Mortality
-P6.1: Total Population by 5-year age group and whether biological mother is still
-alive, Solomon Islands: 2019
-88
-P6.2: Total Population by 5-year age group and whether biological father is still
-alive, Solomon Islands: 2019
-90
-P6.3: Female population 15 years and older by 5 year age group and total number
-of children Death by Province and urban-rural residence,
-92
-Solomon Islands: 2019
-P6.4: Female population 15 years and older by 5 year age group and number of
-male children Death by province and urban-rural province
-100
-and urban-rural residence, Solomon Islands: 2019
-P6.5: Female population 15 years and older by 5 year age group and number of
-female children Death by and urban-rural residence,
-108
-Solomon Islands: 2019
-P6.6: Number of private households with death of household residents during the
-12 months Preceding the census by province and urban-rural
-116
-residence, Solomon Island: 2019
-P6.7: Number of deaths of households residents during the 12 months preceding
-the census by age and sex of deceased by province and urban-rural
-residence, Solomon Island: 2019
-117
-7.     Migration
-P7.1: Total Population and whether place of birth same ward as place of
-enumeration, Solomon Islands: 2019
-120
-P7.2: Total Population by place of enumeration and place of birth, Solomon
-Islands: 2019
-120
-P7.3: Overseas born Population by country of birth, Solomon Islands: 2019 122
-P7.4: Total Population and whether place of usual residence same ward as place of
-enumeration, Solomon Islands: 2019
-123
-P7.5: Total Population by province and place of usual residence if different from
-current place of residence (Ward), Solomon Islands: 2019
-124
-P7.6: Population usually residing overseas by country of residence, Solomon
-Islands: 2019
-125
-
---- page 18 ----------------------------------------------------
-5
-10.  Disability
-P10.1: Population 5 years older by sex, reporting difficulties in seeing, Solomon
-Islands: 2019
-180
-P10.2: Population 5 years older by sex, reporting difficulties in hearing, Solomon
-Islands:    2019
-181
-P10.3: Population 5 years older by sex, reporting difficulties in walking, Solomon
-Islands: 2019
-182
-P10.4: Population 5 years older by sex, reporting difficulties in remembering,
-Solomon Islands:  2019
-183
-P10.5: Population 5 years older by sex, reporting difficulties in seif-care, Solomon
-Islands: 2019
-184
-P10.6: Population 5 years older by sex, reporting difficulties in communicating,
-Solomon Islands: 2019
-185
-P10.7: Population 5 years older by sex, reporting severe disability by sex and
-province, Solomon Islands: 2019
-186
-11.  Mobile and Internet
-P11.1:       Population 12 years and above who owns a mobile phone by sex and
-province, Solomon Islands: 2019
-187
-P11.2: Population 12 years and older by mobile phone in working condition by
-province, Solomon Islands: 2019
-187
-P11.3: Population 12 years and above by use of internet by sex, ward and province,
-Solomon Islands: 2019
-188
-P11.4: Population 12 years and older by reason for using internet from mobile/cell
-phone by province, Solomon Islands: 2019
-195
-P11.5: Male Population 12 years and older by reason for using internet from
-mobile/cell phone by urban-rural, Solomon Islands: 2019
-196
-P11.6: Female Population 12 years and older by reason for using internet from
-mobile/cell phone by urban- rural and province, Solomon Islands: 2019
-197
-12.  Economic and labour force
-P12.1: Number of Persons 12 years+ in Employment within Province by Sex and
-Urban-Rural area, Solomon Islands 2019
-198
-P12.2: Number of Persons 12 years+ in Unemployment within Province by Sex and
-Urban-Rural area, Solomon Islands 2019
-206
-P12.3: Number of Persons 12 years+ Not in Labour Force within Province by Sex
-and Urban-Rural area, Solomon Islands 2019
-214
-P12.4: Number of Persons 12 years+ in Economic Activity (industry) and Sex by
-Province and urban-rural area, Solomon Islands 2019
-222
-P12.5: Number of Persons 12 years+ in Main Economic Activity (industry)
-Category and Sex by Province and urban-rural area, Solomon Islands: 2019
-225
-
---- page 19 ----------------------------------------------------
-6
-B. Housing and Household
-H1: Number of private households by number of occupants by sex, and average
-household size, by ward and urban-rural distribution, Solomon Islands: 2019
-226
-H2: Population living in private households by sex and relationship to head of
-households, by province and urban-rural residence, Solomon Islands: 2019
-233
-H3: Number of private households by main source of household income by
-province, Solomon Islands: 2019
-234
-H4: Number of private households receiving remittances in the last 12 months by
-total amount (SI$) received, and by province, Solomon Islands: 2019
-235
-H4a: Number of private households that receive remittances by province, and
-location of sender of remittances, Solomon Islands: 2019
-235
-H4b: Number of private households that receive remittances by province, and
-location of Oversea sender of remittances, Solomon Islands: 2019
-236
-H5: Number of private households involved in growing food by type of cash crop
-and province, Solomon Islands: 2019
-237
-H6: Number of private households and whether raising livestock by province,
-Solomon Islands: 2019
-238
-H6a: Total number of livestock by province, Solomon Islands: 2019 238
-H7: Types of Fish species catch by males and females in the household by
-province, Solomon Islands: 2019
-239
-H7.a: Number of private households involved in fishing by type of activity and
-province, Solomon Islands: 2019
-239
-H7.b: Number of private households catching fish or shellfish by frequency and
-province, Solomon Islands: 2019
-240
-H7.c: Number of private households buying fish or shellfish by frequency and
-province, Solomon Islands: 2019
-241
-H8: Number of private households by housing tenure by province, Solomon
-Islands: 2019
-241
-H9: Number of private households by land tenure by province, Solomon Islands:
-2019
-242
-H10: Number of private households by type of living quarters, by province and
-ward, Solomon Islands: 2019
-243
-H11: Main material used for walls, floors and roof by province and urban-rural
-distribution, Solomon Islands: 2019
-250
-H12: Number of private households by number of rooms, by province and urban-
-rural distribution, Solomon Islands: 2019
-251
-H13: Number of private households by main source of drinking water by province,
-Solomon Islands: 2019
-251
-H14: Number of private households by Hand washing facility by province,
-Solomon Islands: 2019
-252
-H15: Number of private households by main toilet facility by province, Solomon
-Islands: 2019
-252
-H16: Number of private households by main form of household rubbish disposal
-by province, Solomon Islands: 2019
-253
-
---- page 20 ----------------------------------------------------
-7
-H17: Number of private households by main source of lighting by province,
-Solomon Islands: 2019
-253
-H18: Number of private households by main source of cooking energy by
-province, Solomon Islands: 2019
-254
-H19: Number of private households by availability of at least one household
-durable in working order by province, Solomon Island: 2019
-254
-H20: Total number of household items in working order by province, Solomon
-Islands: 2019
-257
-H21: Number of private households by number of bed nets (insecticide treated) by
-province, Solomon Islands: 2019
-258
-H22: Number of private households by expose to Hazards by Province, Solomon
-Islands: 2019
-258
-H22a: Number of private households by frequency of Hazards by Province,
-Solomon Islands: 2019
-260
-H22b: Number of private households with disaster plan and Province, Solomon
-Islands: 2019
-260
-H22c: Number of private households with preparedness measures by Province,
-Solomon Islands: 2019
-261
-H22d: Number of private households by mode of accessing Hazards warning by
-Province, Solomon Islands: 2019
-262
-H22e: Number of private households by knowledge of understand Hazard
-Messages by Province, Solomon Islands: 2019
-263
-H22f: Number of private households by Vulnerable groups of people to Hazard by
-Province, Solomon Islands: 2019
-263
-H23: Perception of households on the main impact of CDF, main area of
-assistance, issues, and suggestions by province and urban-rural areas,
-Solomon Islands: 2019
-264
-
---- page 21 ----------------------------------------------------
-8
-A. POPULATION CHARACTERISTICS
-P2.1: Total population and number of private households, by census year and province, Solomon Islands: 1970 - 2019
-Province
-Population Households Population Households Population Households Population Households Population Households Population Households
-Solomon Islands 160,998 29,940 196,823 34,849 285,176 43,738 409,042 65,014 515,870     91,251       720,956 131,566
- Choiseul 8,017 1,329 10,349 1,605 13,569 1,889 20,008 3,142 26,372        4,712          30,775 5,520
- Western 24,214 3,942 29,980 4,753 41,681 5,962 62,739 9,992 76,649        13,762        94,106 17,531
- Isabel 8,653 1,644 10,420 1,951 14,616 2,362 20,421 3,556 26,158        5,143          31,420 6,250
- Central 9,418 1,845 11,683 2,284 16,655 2,768 21,577 3,625 26,051        4,905          30,318 5,872
- Rennell-Bellona 1,504 331 1,893 417 1,802 311 2,377 432 3,041          688             4,100 720
- Guadalcanal 23,996 4,670 31,677 5,957 49,831 8,072 60,275 10,399 93,613        17,163        154,022 28,746
- Malaita 51,722 9,998 60,043 10,564 80,032 12,417 122,620 18,606 137,596      24,421        172,740 32,332
- Makira-Ulawa 12,390 2,237 14,891 2,556 21,796 3,271 31,006 4,926 40,419        7,173          51,587 9,057
- Temotu 9,078 1,735 10,945 2,028 14,781 2,370 18,912 3,415 21,362        4,303          22,319 4,699
- Honiara 12,006 2,209 14,942 2,734 30,413 4,316 49,107 6,921 64,609        8,981          129,569 20,839
-1976 2009 2019
-Population and households in census year
-1970 1986 1999
+== GET https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census
+   (redirected to https://bbs.gov.bd/pages/static-pages/6922e0ff933eb65569e297dc)
+  200 text/html; charset=utf-8 150922 https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census
+    'বিবিএস সম্পর্কে' -> https://bbs.gov.bd/pages/static-pages/6922e0ff933eb65569e297dc
+    'সাবেক মহাপরিচালকগণ' -> https://bbs.gov.bd/pages/static-pages/6922dc61933eb65569e10062
+    'ভিশন ও মিশন' -> https://bbs.gov.bd/pages/static-pages/6922e13c933eb65569e2b089
+    'সিটিজেন চার্টার' -> https://bbs.gov.bd/pages/static-pages/6922db5c933eb65569e09a5b
+    'প্রশিক্ষণ ল্যাব' -> https://bbs.gov.bd/pages/static-pages/6922dcc3933eb65569e11e91
+    'উপাত্ত প্রকাশ নীতিমালা, ২০২৬' -> https://bbs.gov.bd/pages/static-pages/6922e124933eb65569e2a7b3
+    'প্রকাশনা বিক্রয়' -> https://bbs.gov.bd/pages/static-pages/6922dc34933eb65569e0ef9f
+    'সাংগঠনিক কাঠামো' -> https://bbs.gov.bd/pages/static-pages/6922dc0a933eb65569e0e191
+    'এগ্রিকালচার উইং' -> https://bbs.gov.bd/pages/static-pages/6922dd5f933eb65569e14c92
+    'সেন্সাস উইং' -> https://bbs.gov.bd/pages/static-pages/6922dffb933eb65569e24ec5
+    'কম্পিউটার উইং' -> https://bbs.gov.bd/pages/static-pages/6922dfdf933eb65569e246bb
+    'ডেমোগ্রাফী এন্ড হেলথ উইং' -> https://bbs.gov.bd/pages/static-pages/6922de2d933eb65569e18c93
+    'ন্যাশনাল একাউন্টিং উইং' -> https://bbs.gov.bd/pages/static-pages/6922e040933eb65569e2632f
+    'ইন্ডাস্ট্রি এন্ড লেবার উইং' -> https://bbs.gov.bd/pages/static-pages/6922ddeb933eb65569e17160
+    'ফিন্যান্স, এ্যাডমিনিস্ট্রেশন এন্ড এমআইএস' -> https://bbs.gov.bd/pages/static-pages/6922dfc3933eb65569e23dbc
+    'স্ট্যাটিসটিক্যাল স্টাফ ট্রেনিং ইনস্টিটিউট' -> https://bbs.gov.bd/pages/static-pages/6922e0be933eb65569e286b2
+    'সর্বশেষ প্রকাশনা' -> https://bbs.gov.bd/pages/static-pages/6922e07a933eb65569e27407
+    'কি ফাইন্ডিং' -> https://bbs.gov.bd/pages/static-pages/6922dd56933eb65569e1491b
+    'জনশুমারি ও গৃহগণনা (২০২২ ও ২০১১)' -> https://bbs.gov.bd/pages/static-pages/6922dc2a933eb65569e0ebd5
+    'অর্থনৈতিক শুমারি (২০২৪ ও ২০১৩)' -> https://bbs.gov.bd/pages/static-pages/695b97c8c4774958d7b702b7
+    'কৃষি' -> https://bbs.gov.bd/pages/static-pages/6922e0f6933eb65569e29564
+    'কৃষি শুমারি ২০১৯' -> https://bbs.gov.bd/pages/static-pages/6922dc81933eb65569e10b9e
+    'ডেমোগ্রাফী এন্ড হেলথ' -> https://bbs.gov.bd/pages/static-pages/6922e096933eb65569e27b7b
+    'পরিবেশ, প্রাকৃতিক সম্পদ, জলবায়ু ও দুর্যোগ পরিসংখ্যান (ইসিডিএস)' -> https://bbs.gov.bd/pages/static-pages/6922dcc8933eb65569e12081
+    'বৈদেশিক বাণিজ্য পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922e14e933eb65569e2b6c9
+    'ন্যাশনাল একাউন্টস পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922deda933eb65569e1dd83
+    'জিডিপি' -> https://bbs.gov.bd/pages/static-pages/6922df6e933eb65569e21f3f
+    'আইসিটি পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922e012933eb65569e25543
+    'জিও-কোড' -> https://bbs.gov.bd/pages/static-pages/6922ded1933eb65569e1d95d
+    'আয়, ব্যয় ও দারিদ্র্য' -> https://bbs.gov.bd/pages/static-pages/6922dc57933eb65569e0fd4c
+    'ইন্ডাস্ট্রিয়াল স্ট্যাটিসটিকস' -> https://bbs.gov.bd/pages/static-pages/6922de09933eb65569e17bb3
+    'লেবার এন্ড ইমপ্লয়মেন্ট' -> https://bbs.gov.bd/pages/static-pages/6922ddd1933eb65569e166e7
+    'মূল্য এবং মজুরী (সিপিআই, কিউআইআইপি)' -> https://bbs.gov.bd/pages/static-pages/6922de7a933eb65569e1ae8f
+    'শিক্ষা ও স্বাক্ষরতা' -> https://bbs.gov.bd/pages/static-pages/6922ddc4933eb65569e16288
+    'বস্তি শুমারি ২০১৪' -> https://bbs.gov.bd/pages/static-pages/6922df13933eb65569e1faf0
+    'ভাইটাল স্ট্যাটিসটিকস' -> https://bbs.gov.bd/pages/static-pages/6922db9a933eb65569e0b356
+    'মহিলা এবং শিশু' -> https://bbs.gov.bd/pages/static-pages/6922e143933eb65569e2b2ee
+    'অন্যান্য প্রকাশনা' -> https://bbs.gov.bd/pages/static-pages/6922e064933eb65569e26d37
+    'জেলা পরিসংখ্যান ২০১১' -> https://bbs.gov.bd/pages/static-pages/6922de73933eb65569e1ab86
+    'স্মল এরিয়া এটলাস বাংলাদেশ' -> https://bbs.gov.bd/pages/static-pages/6922e05a933eb65569e26a69
+    'ডিজাস্টার প্রন এরিয়া এটলাস বাংলাদেশ' -> https://bbs.gov.bd/pages/static-pages/6922e02b933eb65569e25d04
+    'পরিসংখ্যান বুলেটিন' -> https://bbs.gov.bd/pages/static-pages/6922dc4b933eb65569e0f8eb
+    'পরিসংখ্যান পকেটবুক' -> https://bbs.gov.bd/pages/static-pages/6922de53933eb65569e19e10
+    'পরিসংখ্যান বর্ষগ্রন্হ' -> https://bbs.gov.bd/pages/static-pages/6922de79933eb65569e1ae07
+    'বাংলাদেশ পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922dd65933eb65569e14e10
+    'কৃষি পরিসংখ্যান বর্ষগ্রন্থ' -> https://bbs.gov.bd/pages/static-pages/6922e0d6933eb65569e28cbf
+    'বার্ষিক প্রতিবেদন' -> https://bbs.gov.bd/pages/static-pages/6922dbeb933eb65569e0d6a0
+    'বাংলাদেশ কিছু মৌলিক পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922dea7933eb65569e1c5d6
+    '৯ম ও তদুর্ধ্ব গ্রেডের কর্মকর্তাগণ (উইং ভিত্তিক)' -> https://bbs.gov.bd/pages/officers?filters=%7B%22officer_category%22%3A%226922d2ad81fc96cef9e99d57%22%7D
+    '১০ম গ্রেড থেকে ২০তম গ্রেডের কর্মকর্তা ও কর্মচারীবৃন্দ (উইং ভিত্তিক)' -> https://bbs.gov.bd/pages/static-pages/6922e11b933eb65569e2a3c7
+    'তথ্য প্রদানকারী কর্মকর্তা' -> https://bbs.gov.bd/pages/info-officers
+    'সেবা প্রদান প্রতিশ্রুতি ফোকাল পয়েন্ট কর্মকর্তা' -> https://bbs.gov.bd/pages/static-pages/citizen-charter-comittees-802f9d-6922dd26933eb65569e13b22
+    'ফোকাল পয়েন্ট কর্মকর্তা' -> https://bbs.gov.bd/pages/static-pages/focal-point-officer-vkkol3-6abcb1a184370efb87a94cc0
+    'অধীনস্ত অফিস' -> https://bbs.gov.bd/pages/static-pages/6922dc7d933eb65569e10a48
+    'বরিশাল বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922dcd8933eb65569e125cd
+    'চট্টগ্রাম বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922dd8e933eb65569e15717
+    'ঢাকা বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922e01d933eb65569e258b2
+    'ময়মনসিংহ বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922e09c933eb65569e27d00
+    'খুলনা বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922e096933eb65569e27b72
+    'রাজশাহী বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922ddc3933eb65569e16269
+    'রংপুর বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922e0d9933eb65569e28db2
+    'সিলেট বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922ddd4933eb65569e16864
+    'সাম্প্রতিক ফটো গ্যালারি' -> https://bbs.gov.bd/pages/photo-galleries
+    'টিভিসি/ভিডিও/ডকুমেন্টরি' -> https://bbs.gov.bd/pages/static-pages/6922dec3933eb65569e1d311
+    'ছবি' -> https://bbs.gov.bd/pages/static-pages/6922dc6d933eb65569e1051b
+    'জনশুমারি ও গৃহগণনা ২০২২: ন্যাশনাল রিপোর্ট (ভলিউম ১)' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/9ce5bd160bb14a1ab1eabe886adddb9a.pdf
+    'Post Enumeration Check (PEC) Adjusted Population' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/20d9218dadf64c0a866afe13d84b8542.pdf
+    'Preliminary Report on Population and Housing Census 2022' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/6be42f15c1d342029649fa3baca69ab7.pdf
+    'Preliminary Report on Population and Housing Census 2022' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/64cfb2e2a63042c9b96acfc276275836.pdf
+    'National Report Volume-05 : Administrative Report' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/NRV-5Report2011.pdf
+    'National Report Volume-04: Socio economic and Demograpuic Report, 2011' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/SED_REPORT_Vol-4.pdf
+    'National Report Volume-03: Urban Area Rport, 2011' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/Population Housing Census 2011.pdf
+    'National Report Volume-02 : Union Statistics, 2011' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/Union%20Statistics.pdf
+    'National Report Volume-01 : Analytical Report, 2011' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/NRV-1Report2011.pdf
+    'Post Enumaration Check (PEC) Report (Population and Housing Census 201' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/LatestReports/PEC%20Report%202011.pdf
+    'Preliminary Report (Population and Housing Census 2011)' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0ea528bd7abd4f0b84dd5102112c32e0.pdf
+    'Bangladesh at a glance' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/Census2011/Bangladesh_glance.pdf
+    'BARISHAL' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Barisal.pdf
+    'BHOLA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_BHOLA.pdf
+    'PIROJPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Pirojpur.pdf
+    'PATUAKHALI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Patuakhali.pdf
+    'BARGUNA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Barguna.pdf
+    'JHALAKHATI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Jhalokathi.pdf
+    'CHATTOGRAM' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Chittagong.pdf
+    'COX’S BAZAR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_CoxsBazar.pdf
+    'BANDARBAN' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Bandarban.pdf
+    'RANGAMATI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Rangamati.pdf
+    'NOAKHALI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Noakhali.pdf
+    'FENI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Feni.pdf
+    'CUMILLA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Comilla.pdf
+    'CHANDPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Chandpur.pdf
+    'BRAHMMANBARIA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Brahmanbaria.pdf
+    'KHAGRACHHARI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Khagrachhari.pdf
+    'LAKSHMIPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Lakshmipur.pdf
+    'DHAKA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Dhaka.pdf
+    'NARAYANGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Narayanganj.pdf
+    'GAZIPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Gazipur.pdf
+    'MANIKGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Manikganj.pdf
+    'NARSINGDI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Narsingdi.pdf
+    'FARIDPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Faridpur.pdf
+    'GOPALGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Gopalganj.pdf
+    'RAJBARI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Rajbari.pdf
+    'SHARIATPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Shariatpur.pdf
+    'KISHOREGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Kishoreganj.pdf
+    'MUNSHIGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Munshiganj.pdf
+    'MADARIPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Madaripur.pdf
+    'TANGAIL' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Tangail.pdf
+    'MYMENSINGH' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Mymensingh.pdf
+    'JAMALPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_JAMALPUR.pdf
+    'SHERPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_%20Sherpur.pdf
+    'NETRAKONA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Netrokona.pdf
+    'KHULNA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Khulna.pdf
+    'BAGERHAT' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Bagerhat.pdf
+    'SATKHIRA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Satkhira.pdf
+    'JHENAIDAH' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_JENAIDAH.pdf
+    'CHUADANGA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Chuadanga.pdf
+    'MAGURA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Magura.pdf
+    'KUSHTIA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Kushtia.pdf
+    'MEHERPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Meherpur.pdf
+    'JASHORE' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Jessore.pdf
+    ...
