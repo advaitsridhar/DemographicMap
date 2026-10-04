@@ -13,13 +13,16 @@ no area) is its control. The FIN religion policy says Statistics Finland
 publishes religion for the whole country only; 11ra is the table that shows
 otherwise.
 
-**The units.** The map draws Finland as it was divided in 2020: the seventy
-sub-regions finland.py binds, and nineteen regions that still hold Kuhmoinen in
-Central Finland and Joroinen and Heinavesi in Southern Savonia, all three moved
-on 1 January 2021 (the drawn polygons hold them). 11ra lays every year out in
-the division of 1 January 2026. Today's municipalities are placed in the units
-of 2020 by their codes (Honkajoki, merged into Kankaanpaa in 2021, lay in the
-same units as Kankaanpaa); then
+**The units.** The map draws Finland's seventy sub-regions as they were in
+2020 (finland.py binds them), and nineteen regions that are 2020's too --
+Kuhmoinen in Central Finland, Joroinen and Heinävesi in Southern Savonia,
+Isokyrö in Ostrobothnia, all moved on 1 January 2021 -- but for two
+municipalities: Iitti is drawn in Päijät-Häme, where it moved in 2021, and
+Vaala in Kainuu, which it left in 2016 (DRAWN_REGION says how that was
+measured). 11ra lays every year out in the division of 1 January 2026. Today's
+municipalities are placed in the drawn units by their codes (Honkajoki and
+Pertunmaa, merged since 2020, lay in the same units as the municipalities they
+joined); then
 
 * a unit whose code is today's and whose people are exactly 11ra's for that
   code is the same territory, and takes 11ra's own shares for it;
@@ -90,11 +93,20 @@ PAUSE = 1.5                     # StatFin answers 429 to a brisker pace
 # Municipalities of the map's year (2020) gone by 11ra's division, and the one
 # each joined, whose figure now holds its people in every year. Each pair lay
 # in the same 2020 sub-region and region, which place() checks.
-#   Honkajoki (099) joined Kankaanpaa (214) on 1 January 2021.
-#   Pertunmaa (588) joined Mantyharju (507) by 2026: 11ra's 2024 figure for
-#   Mantyharju, in today's division, is 7,057 -- 11rf's 5,532 for Mantyharju
+#   Honkajoki (099) joined Kankaanpää (214) on 1 January 2021.
+#   Pertunmaa (588) joined Mäntyharju (507) by 2026: 11ra's 2024 figure for
+#   Mäntyharju, in today's division, is 7,057 -- 11rf's 5,532 for Mäntyharju
 #   and 1,525 for Pertunmaa in 2024's own (church_probe round c8).
 MERGED_SINCE = {"099": "214", "588": "507"}
+# The map's regions are not quite 2020's. Rebuilt from the site's tiles, every
+# drawn sub-region lies (98% or more of it) inside one drawn region but two:
+# 19.0% of the Kouvola sub-region is inside the drawn Päijät-Häme, which is
+# Iitti's share of it -- Iitti moved there from Kymenlaakso in 2021 -- and
+# 15.3% of Oulunkaari is inside the drawn Kainuu, Vaala's share -- Vaala left
+# Kainuu for Northern Ostrobothnia in 2016. So the regions are summed from the
+# 2020 key with those two municipalities in the regions the map draws them in:
+# {code: (its name, the drawn region's maakunta code)}.
+DRAWN_REGION = {"142": ("Iitti", "07"), "785": ("Vaala", "18")}
 
 Rows = dict[str, dict[str, float]]
 
@@ -219,19 +231,20 @@ def check_agreement(row: dict[str, float], groups: dict[str, float], people: flo
 
 
 def composition(rows: Rows, prefix: str, unit: str, people: float,
-                groups: dict[str, float], parts: int, year: int, key_year: int,
+                groups: dict[str, float], parts: int, year: int, drawn: str,
                 kind: str) -> tuple[dict[str, Any], bool]:
-    """A unit's religion fields, and whether they are 11ra's own figure."""
+    """A unit's religion fields, and whether they are 11ra's own figure.
+    ``drawn`` says which division the map draws ("the sub-regions of 2020")."""
     row = own_row(rows, prefix, unit, people)
     if row is not None:
         counts = counts_of(row)
-        how = (f"Statistics Finland's own figure for the {kind}, whose municipalities are "
-               f"the same today as in {key_year}, the division the map draws.")
+        how = (f"Statistics Finland's own figure for the {kind}, which today holds the same "
+               f"municipalities as in {drawn}.")
     else:
         counts = groups
-        how = (f"Summed from the {parts} municipalities that made the {kind} in {key_year}, "
-               "the division the map draws, each one's shares weighed by its population; "
-               f"Statistics Finland's own {kind} figures are for today's units, which differ.")
+        how = (f"Summed from its {parts} municipalities in {drawn}, each one's shares weighed "
+               f"by its population; Statistics Finland's own {kind} figures are for today's "
+               f"{kind}s, which differ.")
     total = sum(counts.values())
     shown = {label: 100.0 * n / people for label, n in counts.items()}
     note = (f"Membership of a religious community as Finland's population register records "
@@ -281,9 +294,10 @@ CLASS_API = "https://data.stat.fi/api/classifications/v2"
 
 
 def load_keys(year: int) -> tuple[dict[str, str], dict[str, str], dict[str, str],
-                                  dict[str, str], dict[str, str]]:
+                                  dict[str, str], dict[str, str], dict[str, str]]:
     """The map's year's keys: {municipality: sub-region}, {sub-region: name},
-    {drawn name: sub-region}, {municipality: region}, {region: name}.
+    {drawn name: sub-region}, {municipality: region}, {region: name},
+    {municipality: name}.
 
     Every municipality of the year must be in both keys, every sub-region and
     region named, and the sub-regions must be the seventy finland.py binds."""
@@ -317,7 +331,20 @@ def load_keys(year: int) -> tuple[dict[str, str], dict[str, str], dict[str, str]
                          f"it lacks: {missing}")
     log(f"  the {year} keys: {len(munis)} municipalities in {len(sk_names)} sub-regions and "
         f"{len(mk_names)} regions")
-    return sk_of, sk_names, found, mk_of, mk_names
+    return sk_of, sk_names, found, mk_of, mk_names, munis
+
+
+def drawn_regions(mk_of: dict[str, str], munis: dict[str, str]) -> dict[str, str]:
+    """The 2020 key's municipality -> region, with DRAWN_REGION's municipalities
+    in the regions the map draws them in. Each must be the municipality named,
+    and lie in another region in the key, or the run stops."""
+    out = dict(mk_of)
+    for code, (name, region) in DRAWN_REGION.items():
+        if munis.get(code) != name or mk_of.get(code) in (None, region):
+            raise SystemExit(f"finland: municipality {code} is {munis.get(code)!r} in region "
+                             f"{mk_of.get(code)}, not {name} outside region {region}")
+        out[code] = region
+    return out
 
 
 def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
@@ -361,14 +388,15 @@ def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
     counted = check_national(rows, national)
     log("  11rx agrees: " + "; ".join(f"{k} {v:,.0f}" for k, v in counted.items()))
 
-    sk_of, sk_names, found, mk_of, mk_names = keys(key_year)
+    sk_of, sk_names, found, mk_of, mk_names, munis = keys(key_year)
     for sk in set(sk_of.values()):
         homes = {mk_of.get(k) for k, s in sk_of.items() if s == sk}
         if len(homes) != 1 or None in homes:
             raise SystemExit(f"finland: sub-region {sk_names[sk]} lies in regions {homes}")
+    mk_drawn = drawn_regions(mk_of, munis)
     current = sorted(c[2:] for c in rows if c.startswith("KU"))
     place_sk = place(current, sk_of, MERGED_SINCE, f"11ra -> {key_year} sub-regions")
-    place_mk = place(current, mk_of, MERGED_SINCE, f"11ra -> {key_year} regions")
+    place_mk = place(current, mk_drawn, MERGED_SINCE, "11ra -> the drawn regions")
     people_sk, groups_sk, parts_sk = sum_units(rows, place_sk)
     people_mk, groups_mk, parts_mk = sum_units(rows, place_mk)
     whole = rows["SSS"][POPULATION]
@@ -401,26 +429,33 @@ def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
     records: list[dict[str, Any]] = []
     own = {"admin2": 0, "admin1": 0}
 
-    def population(prefix: str, unit: str, people: float, kind: str) -> dict[str, Any]:
-        """The territory's own count, where 11ra's row of the same code is
-        another territory: the map's figure for it is then not this one."""
+    sk_drawn = f"the sub-regions of {key_year}, which the map draws"
+    mk_drawn_text = (f"the regions of {key_year} as the map draws them -- with Iitti in "
+                     "Päijät-Häme, as since 2021, and Vaala in Kainuu, as before 2016")
+
+    def population(prefix: str, unit: str, people: float, kind: str,
+                   drawn: str) -> dict[str, Any]:
+        """The unit's people on the same day as its religion: 11ra's own count
+        where today's unit of its code is the same territory, else the sum of
+        its municipalities -- the count for the territory the map draws, which
+        no figure for today's units gives."""
         row = rows.get(f"{prefix}{unit}")
         if row is not None and abs(row[POPULATION] - people) <= 0.5:
-            return {}
-        today = (f"Today's {kind} of the same code is another territory, so its own figure "
-                 "is not this unit's." if row is not None else
-                 f"Statistics Finland has no {kind} of this code today.")
+            how = (f"Statistics Finland's own count for the {kind} (table 11ra), which today "
+                   f"holds the same municipalities as in {drawn}.")
+        else:
+            how = (f"Summed from today's municipalities in {drawn} (Statistics Finland, table "
+                   "11ra). " + (f"Today's {kind} of the same code is another territory, so its "
+                                "own figure is not this unit's." if row is not None else
+                                f"Statistics Finland has no {kind} of this code today."))
         return {"population": measure(int(round(people)), year=int(year), source=SOURCE),
-                "population_note": (
-                    f"Registered residents on 31 December {year}, summed from today's "
-                    f"municipalities that made the {kind} in {key_year}, the division the map "
-                    f"draws (Statistics Finland, table 11ra). " + today)}
+                "population_note": f"Registered residents on 31 December {year}. " + how}
 
     for sk, (drawn, _) in sorted(shapes_rows.items()):
         fields, is_own = composition(rows, "SK", sk, people_sk[sk], groups_sk[sk],
-                                     parts_sk[sk], int(year), key_year, "sub-region")
+                                     parts_sk[sk], int(year), sk_drawn, "sub-region")
         own["admin2"] += is_own
-        extra = population("SK", sk, people_sk[sk], "sub-region")
+        extra = population("SK", sk, people_sk[sk], "sub-region", sk_drawn)
         records.append(record(
             f"FIN-REL-SK{key_year}-{sk}", drawn, level="admin2", parent="FIN", country="FIN",
             codes={"seutukunta": sk, "vintage": key_year}, match_by="shape_id",
@@ -428,18 +463,18 @@ def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
             sources=[dict(source, field="religion" + ("/population" if extra else ""))]))
     for mk in sorted(FIN_REGIONS):
         fields, is_own = composition(rows, "MK", mk, people_mk[mk], groups_mk[mk],
-                                     parts_mk[mk], int(year), key_year, "region")
+                                     parts_mk[mk], int(year), mk_drawn_text, "region")
         own["admin1"] += is_own
-        extra = population("MK", mk, people_mk[mk], "region")
+        extra = population("MK", mk, people_mk[mk], "region", mk_drawn_text)
         records.append(record(
             f"FIN-REL-MK{key_year}-{mk}", FIN_REGIONS[mk], level="admin1", parent="FIN",
             country="FIN", codes={"maakunta": mk, "vintage": key_year}, match_by="shape_id",
             shape_id=admin1[FIN_REGIONS[mk]]["id"], **fields, **extra,
             sources=[dict(source, field="religion" + ("/population" if extra else ""))]))
+    summed = sorted(r["name"] for r in records if "Summed" in r["religion_note"])
     log(f"  {own['admin2']} of {len(shapes_rows)} sub-regions and {own['admin1']} of "
-        f"{len(FIN_REGIONS)} regions take 11ra's own figure; the rest are summed; "
-        f"populations written for {sum('value' in r['population'] for r in records)} units whose "
-        f"{key_year} territory is not today's")
+        f"{len(FIN_REGIONS)} regions take 11ra's own figure; summed from their municipalities, "
+        f"religion and population alike ({len(summed)}): {summed}")
     # The drawn sub-regions under another drawn region than their maakunta's:
     # said, not stopped on -- the regions are summed from municipalities.
     shape_parent = {s["id"]: s["parent"] for s in load_units("FIN", "admin2")}

@@ -100,7 +100,8 @@ class FinnishHelpers(unittest.TestCase):
         self.assertLessEqual(fr.check_agreement(own, groups["A"], 4000, "SKA"), 0.1)
         with self.assertRaises(SystemExit):
             fr.check_agreement(row(4000, 69.0, 1.8, 29.2), groups["A"], 4000, "SKA")
-        fields, is_own = fr.composition(rows, "SK", "A", 4000, groups["A"], 2, 2025, 2020,
+        drawn = "the sub-regions of 2020, which the map draws"
+        fields, is_own = fr.composition(rows, "SK", "A", 4000, groups["A"], 2, 2025, drawn,
                                         "sub-region")
         self.assertTrue(is_own)
         self.assertEqual({g["group"]: g["pct"] for g in fields["religion"]},
@@ -109,11 +110,21 @@ class FinnishHelpers(unittest.TestCase):
         self.assertIn("not of belief", fields["religion_note"])
         self.assertIn("own figure", fields["religion_note"])
         fields, is_own = fr.composition({**rows, "SKA": row(3900, 67.5, 1.8, 30.8)}, "SK",
-                                        "A", 4000, groups["A"], 2, 2025, 2020, "sub-region")
+                                        "A", 4000, groups["A"], 2, 2025, drawn, "sub-region")
         self.assertFalse(is_own)
         self.assertEqual({g["group"]: g["pct"] for g in fields["religion"]},
                          {fr.LUTHERAN: 67.5, fr.OTHER: 1.8, fr.NONE: 30.8})
-        self.assertIn("Summed from the 2 municipalities", fields["religion_note"])
+        self.assertIn("Summed from its 2 municipalities in the sub-regions of 2020",
+                      fields["religion_note"])
+
+    def test_iitti_and_vaala_are_put_in_the_regions_the_map_draws_them_in(self):
+        mk_of = {"142": "08", "785": "17", "020": "06"}
+        munis = {"142": "Iitti", "785": "Vaala", "020": "Akaa"}
+        self.assertEqual(fr.drawn_regions(mk_of, munis), {"142": "07", "785": "18", "020": "06"})
+        with self.assertRaises(SystemExit):                 # the code is not Iitti's
+            fr.drawn_regions(mk_of, {**munis, "142": "Isokyrö"})
+        with self.assertRaises(SystemExit):                 # already where the map draws it
+            fr.drawn_regions({**mk_of, "785": "18"}, munis)
 
     def test_the_labels_are_never_filed_under_a_named_religion_but_the_church(self):
         self.assertEqual(group_tree.ancestry("religion", fr.LUTHERAN)[1], "Protestantism")
@@ -182,10 +193,13 @@ class FinnishReader(unittest.TestCase):
     def keys(self, year):
         self.assertEqual(year, 2020)
         names = {mk: FIN_REGIONS[mk] for mk in FIN_REGIONS}
-        return self.sk_of, self.sk_names, self.found, self.mk_of, names
+        munis = {code: f"Municipality {code}" for code in self.sk_of}
+        return self.sk_of, self.sk_names, self.found, self.mk_of, names, munis
 
     def test_every_drawn_unit_is_written_once_and_only_changed_ones_take_a_population(self):
+        # The made-up register has neither Iitti nor Vaala to move.
         with mock.patch.object(fr, "request_json", self.fake_request), \
+                mock.patch.object(fr, "DRAWN_REGION", {}), \
                 mock.patch.object(fr, "log"), \
                 mock.patch("scripts.fetch_census.nordic_common.log"):
             records = fr.finland(keys=self.keys)
@@ -193,11 +207,16 @@ class FinnishReader(unittest.TestCase):
         admin1 = [r for r in records if r["level"] == "admin1"]
         self.assertEqual((len(admin2), len(admin1)), (70, 19))
         self.assertEqual(len({r["shape_id"] for r in records}), 89)
-        with_people = sorted(r["id"] for r in records if "value" in r["population"])
-        self.assertEqual(with_people, ["FIN-REL-MK2020-06", "FIN-REL-SK2020-s05"])
+        self.assertTrue(all("value" in r["population"] for r in records))
+        summed = sorted(r["id"] for r in records if "Summed" in r["population_note"])
+        self.assertEqual(summed, ["FIN-REL-MK2020-06", "FIN-REL-SK2020-s05"])
         changed = next(r for r in records if r["id"] == "FIN-REL-SK2020-s05")
         self.assertEqual(changed["population"]["value"], 1005 + 3000)
-        self.assertIn("Summed from the 2 municipalities", changed["religion_note"])
+        self.assertIn("Summed from its 2 municipalities", changed["religion_note"])
+        self.assertIn("another territory", changed["population_note"])
+        same = next(r for r in records if r["id"] == "FIN-REL-SK2020-s06")
+        self.assertIn("own count", same["population_note"])
+        self.assertEqual(same["population"]["value"], self.rows["SKs06"][POP])
         for r in records:
             self.assertEqual(r["religion_year"], 2025)
             self.assertEqual({g["group"] for g in r["religion"]},
