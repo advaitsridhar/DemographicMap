@@ -41,14 +41,30 @@ their outlines lie in it (Famagusta, Kythrea, Lapithos, Morfou, Rizokarpaso,
 Karavas). The probe module ``cyprus_north_probe`` reads all of this evidence,
 and its logs are where the figures in the notes come from.
 
+**The binding rule**, one for every polygon. A quarter is placed in a polygon
+when at least 85% of the buildings OpenStreetMap maps in its outline stand in
+it, or, where its buildings were not all counted, when at least 70% of its
+outline lies in it and the village's point does. A polygon carries the sum of
+the quarters placed in it only when the residents of those quarters estimated
+to live outside it, plus those of other quarters estimated to live inside it,
+come to at most a tenth of that sum (``MAX_OVERLAP``): estimated from the
+buildings, at each quarter's own residents per building, wherever its whole
+outline was counted and five or more of its buildings stand across the line.
+``OVERLAP`` keeps the measured share for every polygon where any was found,
+and the run stops if a bound polygon's exceeds the tenth or a polygon left off
+for its overlap does not.
+
 What is left off, and why, is in ``UNPLACED`` (quarters) and ``LEFT_OFF``
 (polygons): a quarter that the census counts as one and the map draws as two
 villages; the quarters of north Nicosia and of Kyrenia's edge, whose outlines
-and buildings cross the polygons' lines; and the villages both censuses count
-a part of (``BOTH``: Pyla, Pergamos, Acheritou, Agios Dometios and Nicosia's
-own polygon), on which the Republic's 2021 count stands and nothing is
-written here. Every quarter of Tablo 3 is placed exactly once, on a polygon
-or in a district, and the run stops if one is not.
+and buildings cross the polygons' lines; villages the census lists no quarter
+for; and the villages both censuses count a part of (``BOTH``: Pyla,
+Pergamos, Acheritou, Agios Dometios and Nicosia's own polygon), on which the
+Republic's 2021 count stands and nothing is written here. Every quarter of
+Tablo 3 is placed exactly once, on a polygon or in a district, and the run
+stops if one is not. A polygon left off displaces an encyclopaedia's figure
+from before 2011 (``displaces_before``): the census taken that year counted
+the whole north, and gives the polygon no count of its own.
 
 **The Republic's count stands.** ``check_republic`` reads cyprus_census.json
 and stops the run if any polygon written here is one the Republic's 2021
@@ -59,16 +75,27 @@ they are written only once cyprus_census.json gives them a gap instead of its
 never stand side by side.
 
 **Kyrenia.** Every quarter of the census's Girne ilçe lies in the Republic's
-Kyrenia district and no quarter of another ilçe does (``check_kyrenia``), so
-the ilçe's people are the district's: Kyrenia takes the ilçe's head count, sex
-ratio, median age (from its single years) and citizenship. No other district
-of the Republic is wholly in the north, and no ilçe figure goes on one.
+Kyrenia district and no quarter of another ilçe does (``check_kyrenia``). The
+district is filled only as the sum of the villages bound to its polygons, and
+only when they cover it completely: every polygon of the district bound, and
+their quarters all of the district's (then the ilçe's ages and citizenship
+are theirs). Today 33 of its 46 polygons are bound, holding 53,072 of its
+69,163 residents, so every field of the district says why it is empty. No
+ilçe figure is put on a district of the Republic.
 
 **What the census does not give.** Ages are published by bucak at the finest,
 which is no drawn unit, so no village has a median age. Citizenship is
 published by ilçe only. No table of religion, language or ethnicity was
 published (the institute's 2011 page lists nine population tables: sex,
 municipality and quarter, age, citizenship, birthplace); each polygon says so.
+Tablo 4 and Tablo 5 are still read: they are checked against Tablo 3, district
+by district and sub-district by sub-district.
+
+**Nothing newer.** The institute's population and demography bulletin of
+4 March 2025 says the north has had three censuses, of 21 December 1996,
+30 April 2006 and 4 December 2011; its figures since are projections for the
+north as a whole, and its note of 11 November 2024 says figures by settlement
+await an address-based population register still being set up.
 
 Usage:
     python -m scripts.fetch_census.cyprus_north_census
@@ -438,7 +465,6 @@ BIND: dict[str, tuple[str, ...]] = {
     "46923920B6105070977728": ("Askeia", "PAŞAKÖY/PAŞAKÖY"),
     "46923920B22292626900654": ("Asomatos Keryneias", "LAPTA (ÇAMLIBEL)/ÖZHAN"),
     "46923920B2873986073585": ("Avgolida", "İSKELE/KURTULUŞ"),
-    "46923920B81569607832165": ("Belapais", "GİRNE/BEYLERBEYİ"),
     "46923920B35066056619311": ("Beïkioï", "DEĞİRMENLİK/BEYKÖY"),
     "46923920B54371485006502": ("Charkeia", "ESENTEPE/KARAAĞAÇ"),
     "46923920B64844622441299": ("Davios", "BÜYÜKKONUK/KAPLICA", "KANTARA/KANTARA"),
@@ -473,7 +499,6 @@ BIND: dict[str, tuple[str, ...]] = {
     "46923920B2275839415846": ("Karpaseia", "LAPTA (ÇAMLIBEL)/KARPAŞA"),
     "46923920B4985084471398": ("Kato Zodeia", "GÜZELYURT/AŞAĞI BOSTANCI"),
     "46923920B85367038784493": ("Katokopia", "GÜZELYURT/ZÜMRÜTKÖY"),
-    "46923920B35244398471877": ("Kazafani", "GİRNE/KARAKUM", "GİRNE/OZANKÖY"),
     "46923920B14139084564412": ("Kazivera", "LEFKE/GAZİVEREN"),
     "46923920B20243992884618": ("Keryneia", "GİRNE/AŞAĞI GİRNE", "GİRNE/YUKARI GİRNE"),
     "46923920B15009716922247": ("Kiados", "SERDARLI/SERDARLI"),
@@ -534,7 +559,6 @@ BIND: dict[str, tuple[str, ...]] = {
     "46923920B72580164360540": ("Ovgoros", "İSKELE/ERGAZİ"),
     "46923920B63602794647925": ("Palaikythro", "DEĞİRMENLİK/BALIKESİR"),
     "46923920B46239783627479": ("Panagra", "LAPTA (ÇAMLIBEL)/GEÇİTKÖY"),
-    "46923920B27145570377181": ("Pano Dikomo", "DİKMEN/YUKARI DİKMEN"),
     "46923920B57147511667034": ("Patanissos", "MEHMETÇİK/BALALAN"),
     "46923920B77958582681624": ("Patriki", "BÜYÜKKONUK/TUZLUCA"),
     "46923920B34029116615265": ("Pentageia", "LEFKE/YEŞİLYURT"),
@@ -603,10 +627,6 @@ NOTES = {
         "Gemikonağı (Karavostasi), Yedidalga (Potamos tou Kampou) and Denizli (Xeros): villages the "
         "Republic's community list does not keep apart from Karavostasi, whose OpenStreetMap outlines "
         "lie 91-100% in this polygon."),
-    "46923920B35244398471877": (
-        "Ozanköy (Kazafani) and Karakum (Karakoumi), which the boundary file draws as one polygon "
-        "(GeoNames' points for both communities lie in it). Of Karakum's mapped buildings 83% stand in "
-        "this polygon and 17% in Kyrenia's; a few of Doğanköy's and Beylerbeyi's stand in this one."),
     "46923920B20243992884618": (
         "Girne municipality's town quarters, Aşağı Girne and Yukarı Girne (94-100% of their mapped "
         "buildings inside). The municipality's other quarters are villages with polygons of their own; "
@@ -730,6 +750,17 @@ LEFT_OFF: dict[str, tuple[str, str]] = {
     "46923920B3571581876318": ("Thermeia", (
         "Doğanköy (868 residents) is this village, but only 79% of its mapped buildings stand in this "
         "small polygon (0.8 km2); the rest are in Kazafani's and Kyrenia's.")),
+    "46923920B35244398471877": ("Kazafani", (
+        "Ozanköy and Karakum (3,792 residents together) are the villages of Kazafani and Karakoumi, "
+        "which the boundary file draws as this one polygon, but 10 of Karakum's 60 mapped buildings "
+        "stand in Kyrenia's polygon, and some of Doğanköy's, Çatalköy's, Beylerbeyi's and Yukarı "
+        "Girne's stand in this one.")),
+    "46923920B81569607832165": ("Belapais", (
+        "Beylerbeyi (918 residents) is this village, but 43 of its 641 mapped buildings stand in "
+        "Kazafani's polygon, and 20 of Ozanköy's in this one.")),
+    "46923920B27145570377181": ("Pano Dikomo", (
+        "Yukarı Dikmen (416 residents) is this village, but 7 of the 551 mapped buildings of Aşağı "
+        "Dikmen, the larger village below it, stand in this polygon too.")),
     "46923920B44802407724135": ("Agkomi Ammochostou", (
         "Tuzla (2,645 residents) is the village of Enkomi, but buildings of Famagusta's Sakarya and "
         "Karakol quarters, some 470 residents by their share, stand in this polygon too.")),
@@ -808,6 +839,10 @@ UNPLACED: dict[str, tuple[str, str]] = {
     "GÜZELYURT/YAYLA": ("Nicosia", "Syrianochori"),
     "GİRNE/AŞAĞI KARAMAN": (KYRENIA, ""),
     "GİRNE/DOĞANKÖY": (KYRENIA, "Thermeia"),
+    "GİRNE/OZANKÖY": (KYRENIA, "Kazafani"),
+    "GİRNE/KARAKUM": (KYRENIA, "Kazafani"),
+    "GİRNE/BEYLERBEYİ": (KYRENIA, "Belapais"),
+    "DİKMEN/YUKARI DİKMEN": (KYRENIA, "Pano Dikomo"),
     "GİRNE/ZEYTİNLİK KESİM": (KYRENIA, "Templos"),
     "GİRNE/ZEYTİNLİK KÖY": (KYRENIA, "Templos"),
     "ALSANCAK/ILGAZ": (KYRENIA, "Ftericha"),
@@ -820,6 +855,40 @@ UNPLACED: dict[str, tuple[str, str]] = {
     "KARAMAN (YUKARI KARMİ)/KARAMAN (YUKARI KARMİ)": (KYRENIA, "Karmi"),
 }
 
+# The binding rule (module docstring). A quarter is placed in a polygon when
+# 85% of its mapped buildings stand in it, or, where its buildings were not
+# all counted, 70% of its outline lies in it with the village's point; and a
+# polygon carries the sum of the quarters placed in it only when the
+# residents on the wrong side of its lines -- its quarters' outside it, other
+# quarters' inside it -- come to at most this share of that sum.
+MAX_OVERLAP = 0.10
+# That share as measured, for every polygon where any was found, and for the
+# polygons left off because of it (the rest of LEFT_OFF are left for other
+# reasons: a quarter spanning two polygons, one quarter for two villages, no
+# quarter at all). OpenStreetMap's buildings in cyprus_north_probe's boxes
+# (runs 0c9bd20 and 9c2da10), each quarter's residents spread evenly over
+# its mapped buildings, and only where five or more of them stand across the
+# line; a quarter whose outline was not counted whole is placed by area and
+# its own buildings across a line are not estimated.
+OVERLAP: dict[str, tuple[str, float]] = {
+    "46923920B85136596681423": ("Mandres Lefkosias", 0.224),   # 5,338: 31 out, 1,165 in
+    "46923920B44802407724135": ("Agkomi Ammochostou", 0.177),  # 2,645: 0 out, 469 in
+    "46923920B79471002373027": ("Templos", 0.173),             # 1,090: 31 out, 158 in
+    "46923920B35244398471877": ("Kazafani", 0.150),            # 3,792: 168 out, 401 in
+    "46923920B81569607832165": ("Belapais", 0.119),            # 918: 62 out, 48 in
+    "46923920B27145570377181": ("Pano Dikomo", 0.109),         # 416: 0 out, 45 in
+    "46923920B78041797088340": ("Nikitas", 0.078),             # 505: 0 out, 40 in
+    "46923920B14813142167534": ("Kioneli", 0.046),             # 17,045: 114 out, 664 in
+    "46923920B73133986650844": ("Argaki", 0.041),              # 1,008: 0 out, 42 in
+    "46923920B20243992884618": ("Keryneia", 0.035),            # 20,851: 541 out, 198 in
+    "46923920B56157666761112": ("Alayköy", 0.030),             # 2,777: 59 out, 23 in
+    "46923920B11647519105740": ("Agios Epiktitos", 0.027),     # 5,110: 138 out, 0 in
+    "46923920B4985084471398": ("Kato Zodeia", 0.022),          # 1,822: 40 out, 0 in
+    "46923920B15488277877643": ("Ammochostos", 0.018),         # 37,868: 700 out, 0 in
+    "46923920B39754802683787": ("Morfou", 0.017),              # 7,465: 92 out, 34 in
+    "46923920B84708400671300": ("Kalo Chorio Kapouti", 0.007),  # 2,305: 0 out, 17 in
+}
+
 
 # ---------------------------------------------------------------------------
 # Checks
@@ -828,11 +897,14 @@ UNPLACED: dict[str, tuple[str, str]] = {
 # Below this many residents no sex ratio is shown, as in cyprus_census: 21
 # people with 19 men would read as a ratio of 950.
 MIN_RESIDENTS = 50
-# As in cyprus_census: a statement that no count goes on a polygon displaces
-# an encyclopaedia's figure for it from before 1974 (the build's
-# ``displaces_before``), Wikidata's 1973 counts being the last census of the
-# whole island.
-DISPLACES_BEFORE = 1974
+# A polygon in the north given no count here displaces an encyclopaedia's
+# figure for it from before the census taken in 2011 (the build's
+# ``displaces_before``). That census counted the whole north, so an older
+# figure -- Wikidata's 1973 counts, the last census of the whole island, or a
+# later one like the 85 of 1976 it gives Agios Nikolaos of Lefka -- is not the
+# polygon's population now. A count is never displaced, nor a figure of 2011
+# or later.
+DISPLACES_BEFORE = YEAR
 WHO_CAP = WHO[0].upper() + WHO[1:]
 # Quarters the census attaches to no municipality (Tablo 3's footnote).
 NO_MUNICIPALITY = {"pile", "karamanyukarikarmi", "kantara"}
@@ -936,6 +1008,17 @@ def check_binding(t3: dict[str, Any], admin1: list[dict[str, Any]],
     several = [entry[0] for sid, entry in BIND.items() if len(entry) > 2 and sid not in NOTES]
     if several:
         raise SystemExit(f"cyprus_north_census: polygons of several quarters with no note: {several}")
+    for sid, (label, share) in OVERLAP.items():
+        table = "BIND" if sid in BIND else "LEFT_OFF" if sid in LEFT_OFF else None
+        if table is None or (BIND.get(sid) or LEFT_OFF.get(sid))[0] != label:
+            raise SystemExit(f"cyprus_north_census: OVERLAP names {label} ({sid}), which neither BIND nor "
+                             "LEFT_OFF has under that label")
+        if table == "BIND" and share > MAX_OVERLAP:
+            raise SystemExit(f"cyprus_north_census: {label} is bound with {share:.1%} of its count across "
+                             f"its lines, over the {MAX_OVERLAP:.0%} the rule allows")
+        if table == "LEFT_OFF" and share <= MAX_OVERLAP:
+            raise SystemExit(f"cyprus_north_census: {label} is left off for an overlap of {share:.1%}, "
+                             f"which the rule's {MAX_OVERLAP:.0%} allows")
     where: dict[str, str] = {}
 
     def place(spec: str, dname: str, what: str) -> None:
@@ -1099,6 +1182,11 @@ def build(t3: dict[str, Any], ages: dict[tuple[str, str | None], dict[str, Any]]
     for sid, (label, *specs) in BIND.items():
         qs = [quarter[spec_key(s)] for s in specs]
         lead = NOTES.get(sid) or f"The census counts this community as {quarter_phrase(qs[0])}."
+        if sid in OVERLAP:
+            lead += (f" By OpenStreetMap's mapped buildings, about {OVERLAP[sid][1]:.0%} of this count is "
+                     "on the wrong side of the polygon's lines (residents of these quarters outside it, "
+                     "and of others inside it); a count is put on a polygon only when that is at most a "
+                     "tenth.")
         records.append(community(sid, by_id[sid], district[by_id[sid]["parent"]], qs, lead, ABOUT,
                                  src, urls))
     for sid in sorted(zero_written):
@@ -1112,6 +1200,10 @@ def build(t3: dict[str, Any], ages: dict[tuple[str, str | None], dict[str, Any]]
     for sid, (label, reason) in LEFT_OFF.items():
         why = (f"{NOT_REPUBLIC} {WHO_CAP} counts the north's residents by quarter (mahalle), and "
                f"none of its counts is put on this polygon. {reason}")
+        if sid in OVERLAP:
+            why += (f" By those buildings, at each quarter's residents per building, about "
+                    f"{OVERLAP[sid][1]:.0%} of the count would be on the wrong side of the polygon's "
+                    "lines; a count is put on a polygon only when that is at most a tenth.")
         records.append(record(
             f"CYP-north-{YEAR}-none-{sid}", label, level="admin2", parent="CYP", country="CYP",
             match_by="shape_id", shape_id=sid, parent_name=district[by_id[sid]["parent"]],
@@ -1121,33 +1213,85 @@ def build(t3: dict[str, Any], ages: dict[tuple[str, str | None], dict[str, Any]]
             language=gap(NOT_AVAILABLE, WHY_NO_COMPOSITION),
             ethnicity=gap(NOT_AVAILABLE, WHY_NO_COMPOSITION)))
 
-    # Kyrenia: the sum of the quarters in it, which is the Girne district's
-    # head count, and so that district's ages and citizenship.
+    records.append(kyrenia(t3, ages, cit, admin1, admin2, kyrenia_total, src, urls))
+
+    bound_people = sum(r["population"]["value"] for r in records
+                       if r["level"] == "admin2" and r["shape_id"] in BIND)
+    log(f"  {len(BIND)} polygons carry {sum(len(e) - 1 for e in BIND.values())} quarters, "
+        f"{bound_people:,} residents of {t3['total']['total']:,.0f}; {len(zero_written)} of "
+        f"{len(ZERO_IN_REPUBLIC)} the Republic lists empty written; {len(LEFT_OFF)} northern polygons "
+        f"say why they have no figure; {len(UNPLACED)} quarters on no polygon "
+        f"({sum(quarter[spec_key(s)]['total'] for s in UNPLACED):,.0f} residents)")
+    return records
+
+
+def kyrenia(t3: dict[str, Any], ages: dict[tuple[str, str | None], dict[str, Any]],
+            cit: dict[str, dict[str | None, float]], admin1: list[dict[str, Any]],
+            admin2: list[dict[str, Any]], total: float, src: dict[str, str], urls: dict[str, str],
+            bind: dict[str, tuple[str, ...]] | None = None) -> dict[str, Any]:
+    """Kyrenia district's record. Its figures are the sum of the villages bound
+    to its polygons, written only when those cover it completely: every polygon
+    of the district bound, and their quarters all of the residents the census
+    counts in it (``total``, the Girne district's, by check_kyrenia), whose
+    ages and citizenship are then theirs. Otherwise each field says why it is
+    empty, with the coverage measured."""
+    bind = BIND if bind is None else bind
     shape = next((s for s in admin1 if s["name"] == KYRENIA), None)
     if shape is None:
         raise SystemExit("cyprus_north_census: the map draws no Kyrenia district")
+    polygons = [s for s in admin2 if s.get("parent") == shape["id"]]
+    bound = [s for s in polygons if s["id"] in bind]
+    left = sorted(s["name"] for s in polygons if s["id"] not in bind)
+    qs = [t3["quarters"][spec_key(spec)] for s in bound for spec in bind[s["id"]][1:]]
+    people = sum(q["total"] for q in qs)
     g = t3["ilces"][GIRNE]
     unit = ages[(GIRNE, None)]
-    check_sum(sum(unit["ages"].values()), kyrenia_total, "cyprus_north_census: Tablo 4's ages of Girne")
+    check_sum(sum(unit["ages"].values()), total, "cyprus_north_census: Tablo 4's ages of Girne")
     groups = {k: v for k, v in cit[GIRNE].items() if k is not None}
-    check_sum(sum(groups.values()), kyrenia_total, "cyprus_north_census: Tablo 5's Girne")
+    check_sum(sum(groups.values()), total, "cyprus_north_census: Tablo 5's Girne")
     median = median_age(unit["ages"])
+    log(f"  Kyrenia: {len(bound)} of its {len(polygons)} polygons bound, holding {people:,.0f} of the "
+        f"{total:,.0f} residents the census counts in it ({100 * people / total:.1f}%); not bound: "
+        + (", ".join(left) or "none"))
+    log(f"  (the census's Girne district: median {median}, "
+        f"{round(100 * g['men'] / g['women'], 1)} men per 100 women)")
+    sid = f"CYP-north-{YEAR}-kyrenia"
+    other_why = (f"{KYRENIA_OUTSIDE} {WHO_CAP}, which counts its residents, published no table of "
+                 "religion or language.")
+    if left or people != total:
+        rest = (f"The other {len(left)} ({', '.join(left)}) carry none of its counts, each saying why, so"
+                if left else "The rest live in quarters bound to no polygon, so")
+        why = (f"{KYRENIA_OUTSIDE} {WHO_CAP} counts the north's residents by quarter (mahalle), and its "
+               f"quarters are bound to {len(bound)} of this district's {len(polygons)} community "
+               f"polygons, which hold {people:,.0f} of the {total:,.0f} residents it counts in the "
+               f"district. {rest} no sum of the district's villages is its population, and that "
+               "census's figures for its own districts (ilçe) are not put on the Republic's.")
+        return record(
+            sid, KYRENIA, level="admin1", parent="CYP", country="CYP", match_by="shape_id",
+            shape_id=shape["id"],
+            population=dict(gap(NOT_AVAILABLE, why), displaces_before=DISPLACES_BEFORE),
+            sex_ratio=gap(NOT_AVAILABLE, why),
+            median_age=gap(NOT_AVAILABLE, (
+                f"{KYRENIA_OUTSIDE} {WHO_CAP} publishes ages by its own districts and sub-districts "
+                "(ilçe, bucak) at the finest, whose figures are not put on the Republic's districts, "
+                "and by no village.")),
+            ethnicity=gap(NOT_AVAILABLE, (
+                f"{KYRENIA_OUTSIDE} {WHO_CAP} asks citizenship, not ethnicity, and publishes it by its "
+                "own districts (ilçe) only, whose figures are not put on the Republic's districts.")),
+            religion=gap(NOT_AVAILABLE, other_why), language=gap(NOT_AVAILABLE, other_why))
     composition = exact_shares(groups, cit[GIRNE][None])
     if abs(sum(r["pct"] for r in composition) - 100.0) > 0.05:
         raise SystemExit(f"cyprus_north_census: Kyrenia's citizenship adds to {sum(r['pct'] for r in composition)}")
-    placed = ("Kyrenia district holds every quarter (mahalle) of that census's Girne district (ilçe) "
-              "and no other: OpenStreetMap's outlines put 92-100% of each Girne quarter it maps inside "
-              "the district and at most 5% of any other quarter, and the one quarter it does not map, "
-              "Aşağı Karaman, belongs to Girne, the municipality of the town of Kyrenia.")
-    why_other = (f"{KYRENIA_OUTSIDE} {WHO_CAP}, which counts its residents, published no table of "
-                 "religion or language.")
-    records.append(record(
-        f"CYP-north-{YEAR}-kyrenia", KYRENIA, level="admin1", parent="CYP", country="CYP",
-        match_by="shape_id", shape_id=shape["id"],
-        population=measure(int(kyrenia_total), year=YEAR, source=src["mahalle"]),
-        population_note=(f"The usual residents (de jure) of the quarters in the district, as {WHO} "
+    men, women = sum(q["men"] for q in qs), sum(q["women"] for q in qs)
+    placed = (f"Every polygon of the district carries the quarters (mahalle) of {WHO} bound to it, and "
+              "together they are all of its Girne district (ilçe), and nothing else.")
+    return record(
+        sid, KYRENIA, level="admin1", parent="CYP", country="CYP", match_by="shape_id",
+        shape_id=shape["id"],
+        population=measure(int(people), year=YEAR, source=src["mahalle"]),
+        population_note=(f"The sum of the district's villages, usual residents (de jure) as {WHO} "
                          f"counts them. {placed} {KYRENIA_OUTSIDE}"),
-        sex_ratio=sex_ratio(g["men"], g["women"], year=YEAR, source=src["mahalle"]),
+        sex_ratio=sex_ratio(men, women, year=YEAR, source=src["mahalle"]),
         median_age=measure(median, unit="years", year=YEAR, source=src["ages"]),
         median_age_note=("Interpolated within the single year of age that holds the middle person, "
                          f"from the population by single year of age and district (Tablo 4) of {WHO}, "
@@ -1160,22 +1304,10 @@ def build(t3: dict[str, Any], ages: dict[tuple[str, str | None], dict[str, Any]]
             "Turkish citizen' and 'TRNC and other citizen' those who hold it with a second; the other "
             "rows are citizens of the countries the table names, and 'Other' of those it does not. "
             + placed),
-        religion=gap(NOT_AVAILABLE, why_other), language=gap(NOT_AVAILABLE, why_other),
+        religion=gap(NOT_AVAILABLE, other_why), language=gap(NOT_AVAILABLE, other_why),
         sources=[cite("mahalle", "population/sex_ratio", urls["mahalle"]),
                  cite("ages", "median_age", urls["ages"]),
-                 cite("citizenship", "ethnicity", urls["citizenship"])]))
-
-    bound_people = sum(r["population"]["value"] for r in records
-                       if r["level"] == "admin2" and r["shape_id"] in BIND)
-    log(f"  {len(BIND)} polygons carry {sum(len(e) - 1 for e in BIND.values())} quarters, "
-        f"{bound_people:,} residents of {t3['total']['total']:,.0f}; {len(zero_written)} of "
-        f"{len(ZERO_IN_REPUBLIC)} the Republic lists empty written; {len(LEFT_OFF)} northern polygons "
-        f"say why they have no figure; {len(UNPLACED)} quarters on no polygon "
-        f"({sum(quarter[spec_key(s)]['total'] for s in UNPLACED):,.0f} residents)")
-    log(f"  Kyrenia: {kyrenia_total:,.0f} residents, median {median}, "
-        f"{records[-1]['sex_ratio']['value']} men per 100 women; citizenship "
-        + ", ".join(f"{r['group']} {r['pct']}" for r in composition))
-    return records
+                 cite("citizenship", "ethnicity", urls["citizenship"])])
 
 
 def main() -> int:

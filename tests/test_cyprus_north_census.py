@@ -3,6 +3,7 @@
 import copy
 import unittest
 from collections import Counter
+from unittest import mock
 
 from scripts.fetch_census import cyprus_north_census as north
 from scripts.fetch_census.balkans_common import shapes
@@ -304,25 +305,43 @@ class BuildTest(unittest.TestCase):
         santalaris = admin2["46923920B66935539070734"]
         self.assertEqual(santalaris["sex_ratio"]["status"], "not_available")
         self.assertIn("16 men and 12 women", santalaris["sex_ratio"]["note"])
-        # A polygon left off says why, and displaces a pre-1974 figure.
+        # A polygon left off says why, and displaces an encyclopaedia's
+        # figure from before the census taken in 2011.
         avlona = admin2["46923920B38965206429869"]
-        self.assertEqual(avlona["population"]["displaces_before"], 1974)
+        self.assertEqual(avlona["population"]["displaces_before"], 2011)
         self.assertIn("Fyllia", avlona["population"]["note"])
         self.assertIn("effective control", avlona["population"]["note"])
+        # A polygon left off for its overlap gives the share measured.
+        belapais = admin2["46923920B81569607832165"]
+        self.assertNotIn("value", belapais["population"])
+        self.assertIn("about 12% of the count", belapais["population"]["note"])
+        self.assertIn("at most a tenth", belapais["population"]["note"])
+        # A bound polygon with an overlap says how much, within the tenth.
+        kioneli = admin2["46923920B14813142167534"]
+        self.assertIn("about 5% of this count", kioneli["population_note"])
         # Nothing on the polygons both censuses count a part of, nor (yet) on
         # those the Republic lists empty.
         for sid in list(north.BOTH) + list(north.ZERO_IN_REPUBLIC):
             self.assertNotIn(sid, admin2)
-        # Kyrenia: the Girne district's head count, ages and citizenship.
+        # Kyrenia: its villages do not cover it, so every field says why it
+        # is empty, with the coverage measured, and no district figure of the
+        # census is put on it.
         kyrenia = next(r for r in records if r["level"] == "admin1")
         self.assertEqual(kyrenia["name"], "Kyrenia")
-        self.assertEqual(kyrenia["population"]["value"], t3["ilces"]["girne"]["total"])
-        self.assertEqual(kyrenia["median_age"]["value"], 31.0)
-        self.assertEqual(kyrenia["ethnicity_basis"], "citizenship")
-        self.assertAlmostEqual(sum(r["pct"] for r in kyrenia["ethnicity"]), 100.0, places=6)
-        self.assertEqual(kyrenia["religion"]["status"], "not_available")
-        fields = {s["field"] for s in kyrenia["sources"]}
-        self.assertEqual(fields, {"population/sex_ratio", "median_age", "ethnicity"})
+        for field in ("population", "sex_ratio", "median_age", "ethnicity", "religion", "language"):
+            self.assertEqual(kyrenia[field]["status"], "not_available", field)
+            self.assertIn("effective control", kyrenia[field]["note"], field)
+        self.assertEqual(kyrenia["population"]["displaces_before"], 2011)
+        kyrenia_ids = {s["id"] for s in self.admin2 if s["parent"] == kyrenia["shape_id"]}
+        bound = [sid for sid in north.BIND if sid in kyrenia_ids]
+        held = sum(t3["quarters"][north.spec_key(s)]["total"] for sid in bound for s in north.BIND[sid][1:])
+        note = kyrenia["population"]["note"]
+        self.assertIn(f"bound to {len(bound)} of this district's {len(kyrenia_ids)} community polygons", note)
+        self.assertIn(f"hold {held:,.0f} of the {t3['ilces']['girne']['total']:,.0f} residents", note)
+        self.assertIn("Templos", note)
+        self.assertIn("citizenship", kyrenia["ethnicity"]["note"])
+        self.assertNotIn("ethnicity_basis", kyrenia)
+        self.assertFalse(kyrenia.get("sources"))
 
     def test_the_empty_communities_are_written_once_the_republic_gives_a_gap(self):
         t3, ages, cit, republic = synthetic(self.admin1, self.admin2)
@@ -356,6 +375,69 @@ class BuildTest(unittest.TestCase):
         t3["quarters"]["lefkosa/yeni"] = dict(t3["quarters"][north.spec_key("LEFKOŞA/AKKAVUK")])
         with self.assertRaises(SystemExit):
             self.build(t3, ages, cit, republic)
+
+    def test_the_overlap_rule_is_held_to(self):
+        t3, ages, cit, republic = synthetic(self.admin1, self.admin2)
+        # A bound polygon measured over the tenth stops the run...
+        with mock.patch.dict(north.OVERLAP, {"46923920B83418385302054": ("Agia Kepir", 0.12)}):
+            with self.assertRaises(SystemExit):
+                self.build(t3, ages, cit, republic)
+        # ...and so does one left off for an overlap within it...
+        with mock.patch.dict(north.OVERLAP, {"46923920B79471002373027": ("Templos", 0.08)}):
+            with self.assertRaises(SystemExit):
+                self.build(t3, ages, cit, republic)
+        # ...or an entry whose label is not the polygon's.
+        with mock.patch.dict(north.OVERLAP, {"46923920B79471002373027": ("Templo", 0.2)}):
+            with self.assertRaises(SystemExit):
+                self.build(t3, ages, cit, republic)
+        # The table as it stands keeps the rule.
+        for sid, (label, share) in north.OVERLAP.items():
+            self.assertEqual(share <= north.MAX_OVERLAP, sid in north.BIND, label)
+
+
+class KyreniaTest(unittest.TestCase):
+    """The district is filled only from villages that cover it completely."""
+
+    ADMIN1 = [{"id": "K", "name": "Kyrenia"}, {"id": "N", "name": "Nicosia"}]
+    ADMIN2 = [{"id": "p1", "name": "Keryneia", "parent": "K"}, {"id": "p2", "name": "Templos", "parent": "K"},
+              {"id": "p3", "name": "Kanli", "parent": "N"}]
+    URLS = {k: f"https://example.invalid/{k}" for k in ("mahalle", "ilce", "ages", "citizenship")}
+
+    def kyrenia(self, bind, admin2=None):
+        t3 = north.quarters(TABLO_3, PUBLISHED)
+        ilces = set(t3["ilces"])
+        ages = north.single_years(TABLO_4, ilces)
+        cit = north.citizenship(TABLO_5, ilces)
+        src = {k: north.SOURCE.format(title=v) for k, v in north.TITLES.items()}
+        return north.kyrenia(t3, ages, cit, self.ADMIN1, admin2 or self.ADMIN2, 20.0, src, self.URLS,
+                             bind=bind)
+
+    def test_complete_coverage_fills_the_district(self):
+        rec = self.kyrenia({"p1": ("Keryneia", "GİRNE/AŞAĞI GİRNE"), "p2": ("Templos", "GİRNE/YUKARI GİRNE")})
+        self.assertEqual(rec["population"]["value"], 20)
+        self.assertEqual(rec["sex_ratio"]["value"], 122.2)       # 11 men, 9 women
+        self.assertEqual(rec["median_age"]["value"], 3.0)
+        self.assertEqual(rec["ethnicity_basis"], "citizenship")
+        groups = {r["group"] for r in rec["ethnicity"]}
+        self.assertIn("TRNC citizen", groups)
+        self.assertLessEqual(groups, set(north.CITIZENSHIP.values()))
+        self.assertAlmostEqual(sum(r["pct"] for r in rec["ethnicity"]), 100.0, places=6)
+        self.assertEqual(rec["religion"]["status"], "not_available")
+
+    def test_a_polygon_left_unbound_leaves_the_district_with_its_reason(self):
+        rec = self.kyrenia({"p1": ("Keryneia", "GİRNE/AŞAĞI GİRNE")})
+        for field in ("population", "sex_ratio", "median_age", "ethnicity"):
+            self.assertEqual(rec[field]["status"], "not_available", field)
+        self.assertIn("bound to 1 of this district's 2 community polygons, which hold 12 of the 20 "
+                      "residents", rec["population"]["note"])
+        self.assertIn("The other 1 (Templos)", rec["population"]["note"])
+
+    def test_villages_short_of_the_district_leave_it(self):
+        # Every polygon of the district bound, but one of its quarters on none.
+        admin2 = [s for s in self.ADMIN2 if s["id"] != "p2"]
+        rec = self.kyrenia({"p1": ("Keryneia", "GİRNE/AŞAĞI GİRNE")}, admin2)
+        self.assertEqual(rec["population"]["status"], "not_available")
+        self.assertIn("which hold 12 of the 20 residents", rec["population"]["note"])
 
 
 if __name__ == "__main__":
