@@ -50,8 +50,8 @@ from typing import Any
 from . import uscb
 from ._shared import PROCESSED, log, measure, record, shares, write_json
 from .west_asia_common import (age_groups, bind_by_gazetteer, check, count, gazetteer,
-                               hdx_resource, median_age, parents_by_id, report,
-                               sex_ratio, units, uscb_table, workbook)
+                               hdx_resource, infer_parents, key, median_age, parents_by_id,
+                               report, sex_ratio, units, uscb_table, workbook)
 
 ISO3 = "YEM"
 OUT = "yemen_census.json"
@@ -228,12 +228,24 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
     copies = copied_governorates(proj)
 
     g2 = gazetteer(gaz, 2)
-    bound2, left2, spare2 = bind_by_gazetteer(admin2, parents, g2, 2)
+    # The boundary file's governorates are "Hajjah Governorate", "Hadhramaut";
+    # OCHA's "Hajjah", "Hadramawt": paired by the districts they share.
+    aliases = infer_parents(admin2, parents, g2, 2)
+    log(f"  governorates paired with OCHA's: {len(aliases)} of {len(admin1)}")
+    bound2, left2, spare2 = bind_by_gazetteer(admin2, parents, g2, 2, parent_alias=aliases)
     report("districts not bound", left2)
     report("OCHA districts no drawn unit took", spare2)
     codes2 = {sid: (p[2:] if p.upper().startswith("YE") else p) for sid, p in bound2.items()}
     missing = sorted(f"{c}" for c in codes2.values() if c not in cen)
     report("bound districts the census has no row for", missing)
+    # The code is the binding; the names are a check on it. A drawn label
+    # and the Bureau's romanisation of the same code that share no spelling
+    # are listed for a person to read.
+    labels = {u["id"]: u["name"] for u in admin2}
+    differ = [f"{labels[sid]} = {cen[c]['name']} ({c})" for sid, c in sorted(codes2.items())
+              if c in cen and key(labels[sid]) != key(cen[c]["name"])
+              and key(labels[sid])[:4] != key(cen[c]["name"])[:4]]
+    report("bound by code, spelt differently", differ, limit=80)
     # A drawn governorate is the governorate code its bound districts share.
     gov_of: dict[str, set[str]] = defaultdict(set)
     for unit in admin2:

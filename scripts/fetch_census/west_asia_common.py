@@ -128,6 +128,37 @@ def field(row: dict[str, str], level: int, what: str) -> str:
     return ""
 
 
+def infer_parents(drawn: list[dict[str, Any]], parents: dict[str, str],
+                  rows: list[dict[str, str]], level: int) -> dict[str, str]:
+    """The map's first-level label -> OCHA's, by the children they share.
+
+    The boundary file writes "Hajjah Governorate" where OCHA writes "Hajjah",
+    and "Hadhramaut" for "Hadramawt": a parent is OCHA's parent whose
+    children's names are, more than half of them, the drawn parent's
+    children's names, and no other OCHA parent comes close. A parent with no
+    such match is left out, and its children with it.
+    """
+    theirs: dict[str, set[str]] = {}
+    for row in rows:
+        theirs.setdefault(field(row, level - 1, "name"), set()).add(fold(field(row, level, "name")))
+    mine: dict[str, set[str]] = {}
+    for unit in drawn:
+        mine.setdefault(parents.get(unit["parent"], unit["parent"]), set()).add(fold(unit["name"]))
+    out: dict[str, str] = {}
+    for parent, kids in mine.items():
+        scored = sorted(((len(kids & names), other) for other, names in theirs.items()),
+                        reverse=True)
+        if not scored:
+            continue
+        best, other = scored[0]
+        runner_up = scored[1][0] if len(scored) > 1 else 0
+        if best * 2 > len(kids) and best > 2 * runner_up:
+            out[parent] = other
+        else:
+            log(f"    no OCHA parent for {parent}: best {other} with {best} of {len(kids)}")
+    return out
+
+
 def bind_by_gazetteer(drawn: list[dict[str, Any]], parents: dict[str, str],
                       rows: list[dict[str, str]], level: int,
                       parent_alias: dict[str, str] | None = None,
