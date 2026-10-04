@@ -1,6 +1,390 @@
-usage: probe_pdf.py [-h] [--url URL] [--aia] [--boxes] [--layout]
-                    [--terms TERMS] [--contents CONTENTS]
-                    [--max-pages MAX_PAGES] [--excerpt EXCERPT]
-                    [--pages PAGES] [--tables] [--context CONTEXT]
-                    [text]
-probe_pdf.py: error: unrecognized arguments: age,age group and province,Age group
+probe_pdf: https://nis.gov.kh/wp-content/uploads/2025/09/Thematic-Report-Population-Distribution-and-Urbanization-Eng_Re4.pdf
+  97,529,722 bytes
+  104 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/TVUJNA+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 77, '/FontDescriptor': IndirectObject(1125, 0, 139769005426256), '/LastChar': 77, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [804]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/TVUJNA+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 77, '/FontDescriptor': IndirectObject(1125, 0, 139769005426256), '/LastChar': 77, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [804]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 104 pages, 26 mention ['District', 'district', 'Annex']
+=== front matter ===
+KINGDOM OF CAMBODIA
+Nation-Religion-King
+323
+General Population Census of Cambodia 2019
+Series Thematic Report
+on
+POPULATION DISTRIBUTION AND URBANIZATION
+National Institute of Statistics, Ministry of Planning
+Phnom Penh, Cambodia
+April 2022
+Additional information about the General Population Census of Cambodia 2019 may be obtained from the
+National Institute of Statistics, Ministry of Planning, 386 Monivng Buolevard, Sangkat Beong Keng Kang 1,
+Chmkar Mon, Phnom Penh, Cambodia. 
+Telephone: (855) 23-213 650, Email: linahang2002@gmail.com, Website: www.nis.gov.kh
+KINGDOM OF CAMBODIA
+Nation-Religion-King
+323
+General Population Census of Cambodia 2019
+Series Thematic Report
+on
+POPULATION DISTRIBUTION AND URBANIZATION
+National Institute of Statistics, Ministry of Planning
+Phnom Penh, Cambodia
+April 2022
+Additional information about the General Population Census of Cambodia 2019 may be obtained from the
+National Institute of Statistics, Ministry of Planning, 386 Monivng Buolevard, Sangkat Beong Keng Kang 1,
+Chmkar Mon, Phnom Penh, Cambodia. 
+Telephone: (855) 23-213 650, Email: linahang2002@gmail.com, Website: www.nis.gov.kh
+KINGDOM OF CAMBODIA
+Nation-Religion-King
+323
+General Population Census of Cambodia 2019
+Series Thematic Report
+on
+POPULATION DISTRIBUTION AND URBANIZATION
+National Institute of Statistics, Ministry of Planning
+Phnom Penh, Cambodia
+April 2022
+
+i
+The Kingdom of Cambodia 
+i
+The Kingdom of Cambodia 
+
+
+
+iii
+ iv
+iv
+The report was drafted by Emeritus Professor Gavin Jones.
+
+Table of Contents
+Forward...............................................................................................................................................ii
+Acknowledgements............................................................................................................................iv
+Abbrevia�ons and Glossary..............................................................................................................viii
+Execu�ve Summary.............................................................................................................................1
+ Chapter 1: Introduc�on ................................................................................................................6
+ Chapter 2: Data and Methods ......................................................................................................9
+  A. The Changing Designa�ons of Urban Areas in Cambodia—1998, 2008, and 2019......9
+  B. Applica�on of the Criteria in Designa�ng Urban Areas..............................................11
+  C. Urban Communes in 2008 and 2019 Compared........................................................12
+ Chapter 3: Regional Popula�on Distribu�on and Redistribu�on ..............................................16
+ Chapter 4: Urbaniza�on Pa�erns and Trends, 1998–2019 ........................................................18
+  A. Urban and Rural Popula�on Growth and Declin........................................................18
+  B. Provincial Trends in the Urban Share of the Total Popula�on....................................20
+  C. Popula�on Growth in Urban Areas and the Designa�on of New Urban Communes,  
+   2008–2019................................................................................................................23
+  D. Growth of the Largest Ci�es and Towns.....................................................................27
+  E. City and Town Popula�on Sizes..................................................................................33
+ Chapter 5: Characteris�cs of Cambodia’s Urban and Rural Popula�ons...................................35
+  A. Age–Sex Structure.....................................................................................................35
+  B. Educa�on and Literacy...............................................................................................39
+  C. Labor Force Par�cipa�on and Employment...............................................................44
+  D. Marital Status............................................................................................................47
+  E. Housing Condi�ons...................................................................................................49
+  F. Household Assets......................................................................................................51
+ Chapter 6: Migra�on Flows between Provinces and between Urban and Rural Areas.............54
+ Chapter 7: Phnom Penh—Cambodia’s Primate City..................................................................62
+ Chapter 8: Conclusions and Policy Recommenda�ons..............................................................71
+TABLES:
+Table 2:    Communes Considered Urban, by Province, 2008 and 2019...................................13
+TABLES:
+Table 2:    Communes Considered Urban, by Province, 2008 and 2019...................................13
+vii
+.................................................69
+.....................................................70
+....................................................................77
+............................................................................................................78
+..............................36
+............................................8
+.......................................................12
+......................................................14
+....................15
+...............................................15
+.......................................................22
+.............................31
+........................32
+.....................................32
+................................64
+......................................................................65
+.........................................................................................................66
+........................37
+..........................37
+........................38
+............................40
+...........................43
+................................................66
+FIGURES
+MAPS
+vii
+.................................................69
+.....................................................70
+....................................................................77
+............................................................................................................78
+..............................36
+............................................8
+.......................................................12
+......................................................14
+....................15
+...............................................15
+
+=== pages mentioning ['District', 'district', 'Annex'] (first 8) ===
+
+--- page 18 ----------------------------------------------------
+2
+Urbanization patterns and trends
+The urban population increased very rapidly from 1998 to 2008, though a large part of this growth
+was due to the reclassification of many communes  from rural to urban status. This raised the
+proportion of the urban population from 18.2% in 1998 to 27.1% in 2008, and then to 39.1% in
+2019. While the urban population rose by 68.8% from 2008 to 2019, the rural population declined
+by 3.5%.
+There were wide variations in the levels of urbanization among the provinces in 2019, and in the
+urbanization trends between the 2008 and 2019 censuses. The provinces of Kampong Thom,
+Kampot, Preah Vihear, and Prey Veng had less than 11% of their population living in urban areas
+in 2019. At the other end of the scale, Phnom Penh is 100% urban, followed by Preah Sihanouk
+(80%), Kep and Pailin (both above 75%), Kandal (65%), and Kampong Speu (59%).  Whereas the
+level of urbanization of some provinces (e.g ., Kampong Chhnang, Kandal, and Svay Rieng)
+increased rapidly over during 2008–2019, in some provinces the urban population (as well as the
+urban share of the total population) actually declined (Battambang, Kampong Cham, and Tbong
+Khmum).
+During 2008–2019, Cambodia’s urban population increased by 2.5 million, from 3.6 million to 6.1
+million. More than two-thirds of this growth wa s the result of communes being declared urban.
+It is important to recognize that most of th e urban population growth did not result from
+migration, but reflected “in situ” urbanization—the change in the “urbanity” of locations, without
+people necessarily moving there. Phnom Penh’s dominance of the urban scene is demonstrated
+by the fact that when its own share of Cambodia ’s urban growth (28%) is added to the share of
+growth of newly created urban communes in the Phnom Penh Extended Metropolitan Region
+(EMR) (47%), it comes to three-quarters of Cambodia’s total urban population growth.
+This study estimated the proportions of urban po pulation growth from 2008 to 2019 that 
+
+--- page 19 ----------------------------------------------------
+2
+Urbanization patterns and trends
+The urban population increased very rapidly from 1998 to 2008, though a large part of this growth
+was due to the reclassification of many communes  from rural to urban status. This raised the
+proportion of the urban population from 18.2% in 1998 to 27.1% in 2008, and then to 39.1% in
+2019. While the urban population rose by 68.8% from 2008 to 2019, the rural population declined
+by 3.5%.
+There were wide variations in the levels of urbanization among the provinces in 2019, and in the
+urbanization trends between the 2008 and 2019 censuses. The provinces of Kampong Thom,
+Kampot, Preah Vihear, and Prey Veng had less than 11% of their population living in urban areas
+in 2019. At the other end of the scale, Phnom Penh is 100% urban, followed by Preah Sihanouk
+(80%), Kep and Pailin (both above 75%), Kandal (65%), and Kampong Speu (59%).  Whereas the
+level of urbanization of some provinces (e.g ., Kampong Chhnang, Kandal, and Svay Rieng)
+increased rapidly over during 2008–2019, in some provinces the urban population (as well as the
+urban share of the total population) actually declined (Battambang, Kampong Cham, and Tbong
+Khmum).
+During 2008–2019, Cambodia’s urban population increased by 2.5 million, from 3.6 million to 6.1
+million. More than two-thirds of this growth wa s the result of communes being declared urban.
+It is important to recognize that most of th e urban population growth did not result from
+migration, but reflected “in situ” urbanization—the change in the “urbanity” of locations, without
+people necessarily moving there. Phnom Penh’s dominance of the urban scene is demonstrated
+by the fact that when its own share of Cambodia ’s urban growth (28%) is added to the share of
+growth of newly created urban communes in the Phnom Penh Extended Metropolitan Region
+(EMR) (47%), it comes to three-quarters of Cambodia’s total urban population growth.
+This study estimated the proportions of urban po pulation growth from 2008 to 2019 that 
+
+--- page 20 ----------------------------------------------------
+city.
+5
+population growth in 2008–2019 of the districts in  these three provinces that were included in
+the Phnom Penh EMR in 2019 (19.6%) was more ra pid than that of Cambodia’s population as a
+whole (16.1%), and more rapid than that of Cambodia’s population excluding Phnom Penh
+(10.6%) over the same period. But it was not rapid enough to signify major in-migration.
+Conclusions
+The author of this report considers careful anal ysis of comparative data on regional population
+distribution and urbanization to be necessary  in order to fully understand the changing
+socioeconomic situation and some of the developmental implications.
+Cambodia experienced rapid urbanization from 2008 to 2019. Th e main reason was the change
+in the classification of many communes from rural to urban in 2019. Cambodia’s urban structure
+is increasingly dominated by Phnom Penh, but this dominance is not based solely on the
+geographic spread of the Phnom Penh EMR; it al so results from the city’s expanding economic
+role in the neighboring provinces.
+The “missing link” in Cambodia’s urban hierarchy is a city in the half-million to 1 million category.
+It will likely take more than a decade for any of  the next-largest cities to reach that population
+size. Does that really matter? Perhaps not. In this relatively small country, with Phnom Penh fairly
+centrally placed, it is not surprising that Phnom Penh dominates the urban hierarchy. Its
+“economic density” could benefit the whole country if it leads to more rapid economic growth
+and if the benefits are spread wisely through public policy.
+
+--- page 21 ----------------------------------------------------
+5
+population growth in 2008–2019 of the districts in  these three provinces that were included in
+the Phnom Penh EMR in 2019 (19.6%) was more ra pid than that of Cambodia’s population as a
+whole (16.1%), and more rapid than that of Cambodia’s population excluding Phnom Penh
+(10.6%) over the same period. But it was not rapid enough to signify major in-migration.
+Conclusions
+The author of this report considers careful anal ysis of comparative data on regional population
+distribution and urbanization to be necessary  in order to fully understand the changing
+socioeconomic situation and some of the developmental implications.
+Cambodia experienced rapid urbanization from 2008 to 2019. Th e main reason was the change
+in the classification of many communes from rural to urban in 2019. Cambodia’s urban structure
+is increasingly dominated by Phnom Penh, but this dominance is not based solely on the
+geographic spread of the Phnom Penh EMR; it al so results from the city’s expanding economic
+role in the neighboring provinces.
+The “missing link” in Cambodia’s urban hierarchy is a city in the half-million to 1 million category.
+It will likely take more than a decade for any of  the next-largest cities to reach that population
+size. Does that really matter? Perhaps not. In this relatively small country, with Phnom Penh fairly
+centrally placed, it is not surprising that Phnom Penh dominates the urban hierarchy. Its
+“economic density” could benefit the whole country if it leads to more rapid economic growth
+and if the benefits are spread wisely through public policy.
+
+--- page 26 ----------------------------------------------------
+10
+required that designations be made at a low er administrative level—the commune or, ideally,
+the village. While there were only 183 district s in Cambodia, there were 1,609 communes and
+13,406 villages.
+There were a number of problems associated with the urban designations in 1998:
+(i) Districts are quite large in area, and a number of communes in the districts where the
+provincial capitals were located were very rural in character. By considering these
+rural communes as urban, the populations of most provincial capitals were somewhat
+exaggerated.
+(ii) In some cases, adjoining communes in another district were actually part of the built-
+up area of a provincial capital, but were not included because of the restriction of the
+town population to the district in which the town was located.
+(iii) Each district within the Phnom Penh municipality had to be declared as either 100%
+urban or 100% rural, resulting in miscon ceptions about the na ture of the built-up
+areas of the city. Many of these districts contained both urban and rural areas.
+(iv) While parts of the Phnom Penh municipality were rural, some areas of Kandal
+province immediately adjoining the Phnom Penh municipality were built-up. For
+planning purposes, these areas should have been included as part of the Phnom Penh
+urban agglomeration.
+(v) Large areas of what are now Preah Sihanouk, Kep, and Pailin provinces were rural, so
+their designation as entirely urban caused the sizes of their urban populations to be
+exaggerated.
+(vi) A number of small towns that were not provincial capitals were not counted as urban
+because of the prevailing criteria for urban status. As a result, they were included in
+the rural population although they had distinctly urban characteristics.
+An exercise was therefore conducted focusi ng on the commune level, which enabled a
+considerable refinement of the existing urban cl assifications. The procedure was to define the
+appropriate cut-off points based on three criteria for designati
+
+--- page 27 ----------------------------------------------------
+10
+required that designations be made at a low er administrative level—the commune or, ideally,
+the village. While there were only 183 district s in Cambodia, there were 1,609 communes and
+13,406 villages.
+There were a number of problems associated with the urban designations in 1998:
+(i) Districts are quite large in area, and a number of communes in the districts where the
+provincial capitals were located were very rural in character. By considering these
+rural communes as urban, the populations of most provincial capitals were somewhat
+exaggerated.
+(ii) In some cases, adjoining communes in another district were actually part of the built-
+up area of a provincial capital, but were not included because of the restriction of the
+town population to the district in which the town was located.
+(iii) Each district within the Phnom Penh municipality had to be declared as either 100%
+urban or 100% rural, resulting in miscon ceptions about the na ture of the built-up
+areas of the city. Many of these districts contained both urban and rural areas.
+(iv) While parts of the Phnom Penh municipality were rural, some areas of Kandal
+province immediately adjoining the Phnom Penh municipality were built-up. For
+planning purposes, these areas should have been included as part of the Phnom Penh
+urban agglomeration.
+(v) Large areas of what are now Preah Sihanouk, Kep, and Pailin provinces were rural, so
+their designation as entirely urban caused the sizes of their urban populations to be
+exaggerated.
+(vi) A number of small towns that were not provincial capitals were not counted as urban
+because of the prevailing criteria for urban status. As a result, they were included in
+the rural population although they had distinctly urban characteristics.
+An exercise was therefore conducted focusi ng on the commune level, which enabled a
+considerable refinement of the existing urban cl assifications. The procedure was to define the
+appropriate cut-off points based on three criteria for designati
+
+--- page 28 ----------------------------------------------------
+13
+Table 2: Communes Considered Urban, by Province, 2008 and 2019
+Province
+Number of Urban Communes
+2008a 2019
+Banteay Meanchey 12 17
+Battambang 17 17
+Kampong Cham  12 13
+Kampong Chhnang   4 11
+Kampong Speu   7 47
+Kampong Thom   9 10
+Kampot   9 10
+Kandal 27                      78
+Kep   3   4
+Koh Kong   5   6
+Kratie   6   7
+Mondul Kiri   4   6
+Otdar Meanchey   5   6
+Pailin    4   4
+Preah Sihanouk   9 17
+Preah Vihear   2   2
+Prey Veng   6   8
+Pursat   8   9
+Ratanak Kiri   4   4
+Siem Reap 16 19
+Stung Treng   4   4
+Svay Rieng 12 20
+Takeo   3 22
+Tboung Khmum   5b   4
+Cambodia (except Phnom
+Penh)
+193 345
+a The urban designations listed in this column (for 2008) are based on the criteria established in 2011.
+b None of these communes were the same as those considered urban in 2019.
+Source: Government of Cambodia, National Institute of Statistics (NIS). 2012. Reclassification of Urban
+Areas in Cambodia, 2011. Phnom Penh (Table 4); 2019 data from the NIS.
+Table 2 shows that in Cambodia, excluding Phno m Penh, the number of communes designated
+as urban increased by 79% between 2008 and 2019. In four provinces, the number of communes
+designated as urban more than doubled. The greatest absolute increases were in Kandal (from
+27 to 78), Kampong Speu (from 7 to 47), Takeo (from 3 to 22), and Svay Rieng (from 12 to 20).
+Notably, the first three of these provinces are close to Phnom Penh, and the growth in the
+number of their urban communes accounted for almost three-quarters (72.4%) of the total
+increase between 2008 and 2019 (leaving aside Phnom Penh itself). As will be discussed later,
+the great majority of the communes accorded urban status in these three provinces had met the
+three objective criteria for urban status. Indeed, in Cambodia as a whole, when the reasons for
+communes receiving urban status are compared over time, a much higher proportion was based
+on meeting the objective criteria during 2008–2019 than was the case during 1998–2008.
+Since the three criteria for urb
+
+--- page 29 ----------------------------------------------------
+13
+Table 2: Communes Considered Urban, by Province, 2008 and 2019
+Province
+Number of Urban Communes
+2008a 2019
+Banteay Meanchey 12 17
+Battambang 17 17
+Kampong Cham  12 13
+Kampong Chhnang   4 11
+Kampong Speu   7 47
+Kampong Thom   9 10
+Kampot   9 10
+Kandal 27                      78
+Kep   3   4
+Koh Kong   5   6
+Kratie   6   7
+Mondul Kiri   4   6
+Otdar Meanchey   5   6
+Pailin    4   4
+Preah Sihanouk   9 17
+Preah Vihear   2   2
+Prey Veng   6   8
+Pursat   8   9
+Ratanak Kiri   4   4
+Siem Reap 16 19
+Stung Treng   4   4
+Svay Rieng 12 20
+Takeo   3 22
+Tboung Khmum   5b   4
+Cambodia (except Phnom
+Penh)
+193 345
+a The urban designations listed in this column (for 2008) are based on the criteria established in 2011.
+b None of these communes were the same as those considered urban in 2019.
+Source: Government of Cambodia, National Institute of Statistics (NIS). 2012. Reclassification of Urban
+Areas in Cambodia, 2011. Phnom Penh (Table 4); 2019 data from the NIS.
+Table 2 shows that in Cambodia, excluding Phno m Penh, the number of communes designated
+as urban increased by 79% between 2008 and 2019. In four provinces, the number of communes
+designated as urban more than doubled. The greatest absolute increases were in Kandal (from
+27 to 78), Kampong Speu (from 7 to 47), Takeo (from 3 to 22), and Svay Rieng (from 12 to 20).
+Notably, the first three of these provinces are close to Phnom Penh, and the growth in the
+number of their urban communes accounted for almost three-quarters (72.4%) of the total
+increase between 2008 and 2019 (leaving aside Phnom Penh itself). As will be discussed later,
+the great majority of the communes accorded urban status in these three provinces had met the
+three objective criteria for urban status. Indeed, in Cambodia as a whole, when the reasons for
+communes receiving urban status are compared over time, a much higher proportion was based
+on meeting the objective criteria during 2008–2019 than was the case during 1998–2008.
+Since the three criteria for urb
+
+... and 18 further pages match; re-run with a narrower --terms to see them.
