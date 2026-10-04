@@ -1,15 +1,38 @@
-  1,642,963 bytes
-  https://cosit.gov.iq/documents/AAS2024/02.pdf: 1,642,963 bytes
-  39 pages
-  98,126 bytes
-  sheet 'irq_admin0': 1 rows, ['iso2', 'iso3', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3', 'adm0_pcode', 'valid_on', 'valid_to', 'version', 'area_sqkm', 'lang', 'lang1', 'lang2']
-  sheet 'irq_admin1': 18 rows, ['adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3', 'adm1_pcode', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3', 'adm0_pcode', 'valid_on', 'valid_to', 'area_sqkm', 'version']
-  sheet 'irq_admin2': 101 rows, ['adm2_name', 'adm2_name1', 'adm2_name2', 'adm2_name3', 'adm2_pcode', 'adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3', 'adm1_pcode', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3']
-  sheet 'irq_admin3': 294 rows, ['adm3_name', 'adm3_name1', 'adm3_name2', 'adm3_name3', 'adm3_pcode', 'adm2_name', 'adm2_name1', 'adm2_name2', 'adm2_name3', 'adm2_pcode', 'adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3']
-  sheet 'irq_adminlines': 864 rows, ['adm_level', 'name', 'valid_on', 'valid_to', 'version', 'right_pcod', 'left_pcod']
-  sheet 'irq_adminpoints': 414 rows, ['admin_level', 'name', 'name1', 'name2', 'name3', 'x_coord', 'y_coord', 'adm4_name', 'adm4_name1', 'adm4_name2', 'adm4_name3', 'adm4_pcode', 'adm3_name', 'adm3_name1']
-  2,525,029 bytes
 /opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
   warn("""Cannot parse header or footer so it will be ignored""")
-  https://data.humdata.org/dataset/93170987-276d-4526-9e3d-c982759d8eba/resource/cf461e2e-4ae2-439d-a6c6-ec0c5e2f5bad/download/iraq-populated-places-2021-p-coded.xlsx: 12,074 places
-  wrote data/raw/iraq/aas2024_table11.txt, data/raw/iraq/aas2024_table10.txt, data/raw/iraq/ocha_admin3.txt and data/raw/iraq/ocha_places.txt
+    ARKHABĪL SUQUŢRÁ (32): no 2004 count (a unit made since)
+    governorate 19: drawn as the sum of its districts, 984,428 (the census row counts 1,028,548)
+    governorate 32: drawn as the sum of its districts, 44,120 (no census row)
+  census: 333 districts, 22 governorates, 19,682,162 people
+  projected national median age for 2017: 17.5
+    governorate 11: 20 districts, largest age-share departure from the governorate's 0.0369
+    governorate 12: 11 districts, largest age-share departure from the governorate's 0.0329
+    governorate 13: 10 districts, largest age-share departure from the governorate's 0.0358
+    governorate 14: 20 districts, largest age-share departure from the governorate's 0.0360
+    governorate 15: 23 districts, largest age-share departure from the governorate's 0.0413
+    governorate 16: 12 districts, largest age-share departure from the governorate's 0.1448
+    governorate 17: 31 districts, largest age-share departure from the governorate's 0.0668
+    governorate 18: 26 districts, largest age-share departure from the governorate's 0.0596
+    governorate 19: 28 districts, largest age-share departure from the governorate's 0.0563
+    governorate 20: 12 districts, largest age-share departure from the governorate's 0.0310
+    governorate 21: 17 districts, largest age-share departure from the governorate's 0.0666
+    governorate 22: 15 districts, largest age-share departure from the governorate's 0.0888
+    governorate 23: 16 districts, largest age-share departure from the governorate's 0.0397
+    governorate 24: 8 districts, largest age-share departure from the governorate's 0.0247
+    governorate 25: 15 districts, largest age-share departure from the governorate's 0.0451
+    governorate 26: 14 districts, largest age-share departure from the governorate's 0.0574
+    governorate 27: 9 districts, largest age-share departure from the governorate's 0.0305
+    governorate 28: 9 districts, largest age-share departure from the governorate's 0.0281
+    governorate 29: 20 districts, largest age-share departure from the governorate's 0.0468
+    governorate 30: 9 districts, largest age-share departure from the governorate's 0.0211
+    governorate 31: 6 districts, largest age-share departure from the governorate's 0.0097
+    governorate 32: 2 districts, largest age-share departure from the governorate's 0.0131
+  governorates paired with OCHA's: 22 of 22
+  districts not bound: 0
+  OCHA districts no drawn unit took: 0
+  bound districts the census has no row for: 2: 1319; 1324
+  bound by code, spelt differently: 48: Dhamar City = MADĪNAT DHAMĀR (2008); Qalansiyah wa Abd Al Kuri = QULANSĪYAH WA ‘ABD AL KŪRĪ (3202); Brum Mayf'ah = BURŪM MAYFA‘ (1925); Dhibain = DHĪ BĪN (2909); Al Mutun = AL MATŪN (1606); Sarar = SIRĀR (1207); Melhan = MILḨĀN (2705); Zamakh wa Manwokh = ZAMŪKH WA MANWAKH (1904); Al Qaff = AL QUFF (1903); Eyal Surayh = ‘IYĀL SURAYḨ (2918); Al Mudhaffar = AL MUZ̧AFFAR (1517); Jardan = JIRDĀN (2103); Rassd = RAŞAD (1206); Nu'man = NA‘AMĀN (1401); Thula = THILĀ’ (2917); Barat Al Anan = BARŢ AL ‘ANĀN (1610); Hajjah City = MADĪNAT ḨAJJAH (1728); Saqin = SĀQAYN (2209); Al Khukhah = AL KHAWKHAH (1820); Ar Rujum = AR RUJM (2703); Al Bayda City = MADĪNAT AL BAYḐĀ’ (1409); Al Mukalla City = MADĪNAT AL MUKALLĀ (1927); Al Mahwit City = MADĪNAT AL MAḨWĪT (2708); Radum = RUḐŪM (2117); Mahliyah = MĀHILĪYAH (2610); Halmin = ḨĀLIMAYN (2506); Wald Rabi' = WALAD RABĪ‘ (1415); Al Hasayn = AL ḨUŞAYN (3005); Al Ghaydhah = AL GHAYZ̧AH (2804); Kritar - Sirah = ŞĪRAH (2407); Ad Dohi = AḐ ḐAḨĪ (1809); Al Makha = AL MUKHĀ’ (1505); Al Ma'afer = AL MA‘ĀFIR (1521); Adh Dhihar = AZ̧ Z̧IHĀR (1119); Old City = ŞAN‘Ā’ AL QADĪMAH (1301); Shahin = SHIḨAN (2801); Adh Dhahir = AZ̧ Z̧ĀHIR (2207); Khur Maksar = KHAWR MAKSAR (2408); Hatib = ḨUŢAYB (2111); Al Qatn = AL QAŢAN (1907); Ad Dulay'ah = AḐ ḐALĪ‘AH (1922); Alluhayah = AL LUḨAYYAH (1802); Haridah = ḨURAYḐAH (1928); Al Malah = AL MILĀḨ (2508); Ma'rib City = MADĪNAT MA’RIB (2612); Al Mu'alla = AL MA‘ALLĀ (2406); Maghrib Ans = MAGHIRIB ‘ANS (2004); Dhulaymat Habur = ḨABŪR Z̧ULAYMAH (2908)
+  census: 22 governorates and 333 districts; projection medians: 22 governorates and 333 districts
+  wrote data/processed/yemen_census.json (647 kB)
+  wrote data/processed/yemen_census_age.json (598 kB)
+  wrote yemen_census.json (355) and yemen_census_age.json (355)
