@@ -1,267 +1,148 @@
-probe_pdf: https://nis.gov.kh/wp-content/uploads/2025/09/23.Kep-Provincial-Report.pdf
-  32,447,778 bytes
-  140 pages
-probe_pdf: 143 pages, 0 mention ['District', 'Religion', 'Mother']
-=== front matter ===
 
+== GET https://censusresults.nsonepal.gov.np/downloads/national?type=data
+  200 text/html; charset=utf-8 205077 https://censusresults.nsonepal.gov.np/downloads/national?type=data
+    'National' -> https://censusresults.nsonepal.gov.np/downloads/national?type=report
+    'thematic' -> https://censusresults.nsonepal.gov.np/downloads/thematic?type=report
+    'Province/ District/ Local Report' -> https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=report
+    'Caste/ Ethnicity Report' -> https://censusresults.nsonepal.gov.np/downloads/caste-ethnicity?type=report
+    'Urban/ Rural Report' -> https://censusresults.nsonepal.gov.np/downloads/urban-rural?type=report
+    'Post Enumeration Survey Report' -> https://censusresults.nsonepal.gov.np/downloads/post-enumeration-report-survey?type=report
+    'Census in Nepal' -> https://censusresults.nsonepal.gov.np/downloads/census-in-nepal?type=report
+    'Report on Degree of Urbanization in Nepal' -> https://censusresults.nsonepal.gov.np/downloads/degree-urbanization-report?type=report
+    'Community Report' -> https://censusresults.nsonepal.gov.np/downloads/community?type=report
+    'Local Level Report' -> https://censusresults.nsonepal.gov.np/downloads/local-level-report?type=report
+    'Child Statistics' -> https://censusresults.nsonepal.gov.np/downloads/child-statistics-report?type=report
+    'National' -> https://censusresults.nsonepal.gov.np/downloads/national?type=data
+    'thematic' -> https://censusresults.nsonepal.gov.np/downloads/thematic?type=data
+    'Province/ District/ Local Report' -> https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=data
+    'Ward Report' -> https://censusresults.nsonepal.gov.np/downloads/ward?type=data
+    'Caste/ Ethnicity Report' -> https://censusresults.nsonepal.gov.np/downloads/caste-ethnicity?type=data
+    'Disability' -> https://censusresults.nsonepal.gov.np/downloads/disability?type=data
+    'Urban/ Rural Report' -> https://censusresults.nsonepal.gov.np/downloads/urban-rural?type=data
+    'House and Household Listing Results' -> https://censusresults.nsonepal.gov.np/downloads/household-results?type=data
+    'Community Report' -> https://censusresults.nsonepal.gov.np/downloads/community?type=data
+    'Child Statistics' -> https://censusresults.nsonepal.gov.np/downloads/child-statistics-report?type=data
+    'Dalit statistics' -> https://censusresults.nsonepal.gov.np/downloads/dalit-statistics-report?type=data
+    'Degurba' -> https://censusresults.nsonepal.gov.np/downloads/degurba-report?type=data
+    'Census Dataset' -> https://censusresults.nsonepal.gov.np/downloads/census-dataset
 
+== GET https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=data
+  200 text/html; charset=utf-8 209368 https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=data
+    'National' -> https://censusresults.nsonepal.gov.np/downloads/national?type=report
+    'thematic' -> https://censusresults.nsonepal.gov.np/downloads/thematic?type=report
+    'Province/ District/ Local Report' -> https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=report
+    'Caste/ Ethnicity Report' -> https://censusresults.nsonepal.gov.np/downloads/caste-ethnicity?type=report
+    'Urban/ Rural Report' -> https://censusresults.nsonepal.gov.np/downloads/urban-rural?type=report
+    'Post Enumeration Survey Report' -> https://censusresults.nsonepal.gov.np/downloads/post-enumeration-report-survey?type=report
+    'Census in Nepal' -> https://censusresults.nsonepal.gov.np/downloads/census-in-nepal?type=report
+    'Report on Degree of Urbanization in Nepal' -> https://censusresults.nsonepal.gov.np/downloads/degree-urbanization-report?type=report
+    'Community Report' -> https://censusresults.nsonepal.gov.np/downloads/community?type=report
+    'Local Level Report' -> https://censusresults.nsonepal.gov.np/downloads/local-level-report?type=report
+    'Child Statistics' -> https://censusresults.nsonepal.gov.np/downloads/child-statistics-report?type=report
+    'National' -> https://censusresults.nsonepal.gov.np/downloads/national?type=data
+    'thematic' -> https://censusresults.nsonepal.gov.np/downloads/thematic?type=data
+    'Province/ District/ Local Report' -> https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=data
+    'Ward Report' -> https://censusresults.nsonepal.gov.np/downloads/ward?type=data
+    'Caste/ Ethnicity Report' -> https://censusresults.nsonepal.gov.np/downloads/caste-ethnicity?type=data
+    'Disability' -> https://censusresults.nsonepal.gov.np/downloads/disability?type=data
+    'Urban/ Rural Report' -> https://censusresults.nsonepal.gov.np/downloads/urban-rural?type=data
+    'House and Household Listing Results' -> https://censusresults.nsonepal.gov.np/downloads/household-results?type=data
+    'Community Report' -> https://censusresults.nsonepal.gov.np/downloads/community?type=data
+    'Child Statistics' -> https://censusresults.nsonepal.gov.np/downloads/child-statistics-report?type=data
+    'Dalit statistics' -> https://censusresults.nsonepal.gov.np/downloads/dalit-statistics-report?type=data
+    'Degurba' -> https://censusresults.nsonepal.gov.np/downloads/degurba-report?type=data
+    'Census Dataset' -> https://censusresults.nsonepal.gov.np/downloads/census-dataset
 
-
-..................................................................................................................................................ii
-...............................................................................................................................................iv
-.....................................................................................vi
-...........................................................................................................................១
-.....................................................................................៤
-...................................................៨
-..........................................................................................................១៩
-....................................................................................................៣០
-..................................................................................................................៥២
-..............................................................................................................៥៨
-.........................................................................................................................៦១
-..........................................................................................................................៦៥
-...............................................៧១
-...........................................................................................៨៣
-.........................................................................................................................................៩០
-................................................................................................១០១
-...........................................................................................................................១០៤
-.......................១០៥
-.......................................................................................១១០
-.................................................................................១១១
-
-  
-ɆɭɈƛȲǃ 
- 
-ȹɸɳɌȟɅɃɮɳǵƙɆƺȹɅɳǷƙɈɹǍƺǁȷƙȲȲɊƕɭƺ ƹƒɸʒʐʑʙ ǇɅɇƎɍɽƳǎɅɭɎɁƎǊɈǌɻȶɑɸƴɅɽȼɍɽƳɌ
-ǏɋɁɵɊƚɑɊɩɃƑɇɍǆǆɴȼɍɑɳƙɊȷǇɅȲƒɭȶɔɁɪɁƳɍ ɅɩȶǇɅȷȶơɭɍɆƷƟȻɅɮɎƙɆɑɩɃƑǊɈɵɅƳɌɔɅɭɎɁƎɴɇɅƳɌ
-ɅɩȶɋɭɃƑǒȜɑƎɔɉɩɎȾƌɅɿǄɸȶǔɋɑƙǋɆɽɔǆȴɁʆ ɳƽɋɳɊɪɍɳȵɪȻɔɸɈɪǒɌɺɑɸƴɅɽǌɻȶɄɸɳɄȶɵɅƳɌƷɌȹɸɳɌȟɅ    
-ǍȹɌƽƊɉɩǇɍȲɊƕɭƺȲƒɭȶǊɈƺǋƃɑɽǇɅɆɳȶžɪɅƳɌɳƙɆɪƙǇɑɽɂɎɩƳƺɁɩȼʁɳƙȷɪɅ ɴȼɍƳɌɳɄƛɪȹɸɳɌȟɅɌɋɺƳɍȲɅƚȶɊȲ 
-ɈɫȶɴɇơȲȹɸɅɯɋɒɌɩȥƈɎɁƏɭɳɑƐɪɌǄɸȶƙɑȩȶɈɪɵȼȴɮɔɉɩɎȾƌɅɿʆ 
-ȳƇɭɸɈɩɁƺǋɅɳɑȷȲƎɪɌɪȲǍɋ ɴȼɍȹɸɳɌȟɅɳɅɹǇɅɔɅɭɎɁƎɳƽɋɳƺȴȹʂɋ ɅɩȶǇɅɇƎɍɽɃɩɅƒɅʂɋƙɆȲɆɳƽɋ
-ǊɈɳȹȟɃɭȲȷɩɁƎɅ ɩȶǄɅɽɳɈɍɳɎǎ ɑƙǋɆɽɔƒȲǂȲɽɴɁȶɳƵɍɅɳǌǇɋ ɅɩȶɔƒȲɳɄƛɪɳɑȷȲƎɪɑɳƙɊȷǆǆɌɆɑɽ     
-ǍȹɌƽƊɉɩǇɍ ɅɩȶɑƙǋɆɽɔƒȲɳƙɆɪƙǇɑɽɃɮɳǵʆ ȳƇɭɸɑɮɊɆƷƟȻȹɮɅɅɮɎɌǇɋƳɌɀɿɌɆɑɽɳȳɁƎɴȲɆɴȼɍɌɯɊǋɅɁɯɳɍȳ 
-ȷɸɅɯɅƙɆƺȹɅ ɅɩȶɍɃƑɇɍɑɸƴɅɽʉȼɵɃɳɃȢɁɴȼɍǄȲɽɃȶɅɫȶɳȳɁƎɳɅɹɌɆɑɽȹɸɳɌȟɅɃɮɳǵƙɆƺȹɅɳǷƙɈɹǍƺǁ
-ȷƙȲȲɊƕɭƺƹƒɸʒʐʑʙʆ ɌǇɋƳɌɀɿɳɅɹƺɴɇƒȲɊɯɋɵɅɳɑɼɌɪɌǇɋƳɌɀɿǂɊɳȳɁƎɴȼɍɆɸɴɆȲɳȷȻƺɌǇɋƳɌɀɿ  ɳƽɋ
-ɴɓȲǂɊɳȳɁƎɅɩɊɯɋʉɵɅɳȳɁƎǄɸȶʒʔɅɩȶǍȹǅɅɪɉƒɸɳɈȻɴȼɍƙɁȪɎɳǇɹɈɭɊƕɇǜɋɳɒɪɋȳƇɭɸɳȹȟƺȲɽǃɌǇɋƳɌɀɿǄɸȶ
-ɔɑɽɳɅɹɅɫȶɇƎɍɽȹɮɅɅɮɎɈʂɁɾǋɅɔɸɈɪƙɆƺȹɅɅɩȶɃɩɅƒɅʂɋƙɆƺȹɅ ȼɍɽɊȜɅƎɪɌȼƊǇɍɅɩȶɊȜɅƎɪɴɇɅƳɌɳȳɁƎǄɸȶɔɑɽʆ    
-ȳƇɭɸɑɮɊɑɴɊƎȶɅɮɎȲɁƎȥƈɮǂɄɊɾȼʁƙƺɍɳƙǫɆɸɇɭɁȹɮɅȷɸɳǉɹ ɑɳɊƎȷɔȴƀɊǓɳɑǆɆɁɪɳɁɳƺɒɼɭɅɴɑɅ 
-ǆɋȲɌȼƊɊȜɅƎɪɵɅƙɈɹǍƺǁȷƙȲȲɊƕɭƺ ɴȼɍɑɳɊƎȷǇɅƵɸƙɃǌɻȶɳɈȻɃɸɒɫȶ ɅɩȶǇɅɴɀǆɸȼʁɵɂƚǃƚ
-ȼɍɽƳɌɔɅɭɎɁƎȹɸɳɌȟɅɃɮɳǵƙɆƺȹɅɳǷƙɈɹƺǁȷƙȲȲɊƕɭƺƹƒɸʒʐʑʙ ɳɅɹɃɃɯɍǇɅɳƺȴȹʂɋǌɻȶƙɁȷɹƙɁȷȶɽʆ 
-ȳƇɭɸɑɮɊɳƵɌɈɴɂƚȶɔɸɀɌȴɭɀȹɮɅȷɸɳǉɹ ɑɳɊƎȷƙȲǔɳǓɊ ɑ ɳȳȶ əɆǆɋȲɌȼƊɊȜɅƎɪɌȼƊɊȜɅƎɪ ƙȲɑɯȶɊǓɵɇƐ 
-ɅɩȶƺƙɆǅɅȴɀɺȲǋƗɄɩƳɌƺɁɩȹɸɳɌȟɅɃɮɳǵƙɆƺȹɅɳǷƙɈɹǍƺǁȷƙȲȲɊƕɭƺƹƒɸʒʐʑʙ ɴȼɍɑɳɊƎȷǇɅɇƎɍɽ
-ɔɅɭǒɑɅɿȷȶơɭɍɆƷƟȻǌɻȶȷǙɑɽǎɑɽƙȴɆɽɳɈɍɳɎǎɳǷȲƒɭȶȼɸɳɀɪɌƳɌȹɸɳɌȟɅɃɮɳǵɳɅɹʆ 
-ȳƇɭɸɈɩɁƺǋɅɳɑȷȲƎɪɳǒɊɅɑƞɌɪȲǍɋɵƙȲɴɍȶ ȲƒɭȶǆɊƙȲɑɯȶɴɇɅƳɌ ɅɩȶȲƒɭȶǆɊƙɆǅɅȴɀɺȲɊƗƳɌ     
-ɆɳȷƃȲɳɃɑȹɸɳɌȟɅ ɅɩȶƺƙɆǅɅȴɀɺȲɊƗƳɌɳƶɑǆȹɸɳɌȟɅɃɮɳǵƙɆƺȹɅɳǷƙɈɹǍƺǁȷƙȲȲɊƕɭƺƹƒɸʒʐʑʙ
-ɅɩȶɑɮɊɴɂƚȶɔɸɀɌȴɭɀɇȶɴȼɌȷɸɳǉɹɑǋȹɩȲɵɅȴɀɺȲǋƗɄɩƳɌȹɸɳɌȟɅǃƒȲɽȲǁƎ ɍȴɀɺȲǋƗɄɩƳɌȹɸɳɌȟɅǍȹǅɅɪ 
-ɳȳɁƎƙȲȩȶƙɑȩȲ ȳɀƋȵɭɸɑƷžɁɽǄɸȶɔɑɽɴȼɍǇɅɆɸɳɈȻƳɌƷɌǌɻȶɍơɌɒɮɁɃɃɯɍǇɅɅɮɎɍɃƑɇɍƺɴɇƚǈžƙɑɆ
-ɳǵǂɊɳɈɍɳɎǎɴȼɍǇɅɳƙƵȶɃɭȲʆ 
-ȳƇɭɸɑɮɊɴɂƚȶɔɸɀɌȴɭɀȼɍɽɊɮɍɅɩɄɩɑɒƙɆƺƺɁɩɑƙǋɆɽƙɆƺȹɅ	 UNFPA
-ɃɪǊƒȲɽƷɌɑɒƙɆɁɩɆɁƎɩƳɌ
-ɔɅƎɌƺɁɩǕɍƚɬɊɻȶɽ	(*;
-Ʌ ɩȶɃɪǊƒȲɽƷɌɑɒƙɆɁɩɆɁƎɩƳɌɔɉɩɎȾƌɅɿɔɅƎɌƺɁɩɑɼɭɋɴɔɁ	4JEB
-ɴȼɍǇɅɌ ɯɊȷɸɴɀȲ 
-ɇƎɍɽƳɌƵɸƙɃɴɇƒȲɒɌɩȥƈɎɁƏɭɅɩȶǇɅɇƎɍɽȹɸɅɯɋɴɇƒȲɆɳȷƃȲɳɃɑȲƒɭȶƳɌɳɌȢɆȷɸɴɇɅƳɌȹɸɳɌȟɅƳɌɳɌȢɆȷɸɆǁƎ ȻǏɋ
-ii 
-
-
-
-
-
-  
-ȹɸɳɌȟɅɃɮɳǵƙɆƺȹɅɳǷƙɈɹǍƺǁȷƙȲȲɊƕɭƺ ƹƒ ɸʒʐʑʙ 
-ɍɃƊɇɍȷɭȶɳƙƳɋɳȳɁƎɴȲɆ 
-ɁɁɯɳɍȳɑɳȶſɆ 
- 
-ʑ ȷɸɅɯɅǍȹǅɅɪ   ʐ 
-ʒ ȷɸɅɯɅɳȳɁƎ   ʑ 
-ʓ ȷɸɅɯɅƙȲȩȶ   ʑ 
-ʔ ȷɸɅɯɅȳɀƋ    ʐ 
-ʕ ȷɸɅɯɅƙɑȩȲ   ʑ 
-ʖ ȷɸɅɯɅɑƷžɁɽ   ʓ 
-ʗ ȷɸɅɯɅȵɭɸ   ʒ 
-ʘ ȷɸɅɯɅɉɮɊɩ   ʑʘ 
-ʙ ȷɸɅɯɅƙɆƺȹɅǂɊɃɪƙɆȹɭɸȹɅȹɅɆɃɅɩȶǂɊɳɉɃ 
-  ɁɸɆɅɽ ɑɌɭɆ ƙɆȩɑ ƙɑɪ 
-  ɑɌɭɆ 42.665 21.064 21.601 
-  ɃɪƙɆȹɭɸȹɅ 33.999 16.790 17.209 
-  ȹɅɆɃ 8.666 4.274 4.392 
-ʑʐ ǊȴɌɋƙɆƺȹɅɳǷɃɪƙɆȹɭɸȹɅ   79,7 
-ʑʑ ɔƙǂȲɸɳɀɪɅƙɆƺȹɅƙɆƸɸƹƒɸ   ʑ
-ʖ 
-ʑʒ ɑɌɭɆȷɸɅɯɅƙȴȫǒɌ   9.605 
-ʑʓ ɃɸɒɸƙȴȫǒɌɊɄƘɊ	ɴɇơȲɳɍɪƙȴȫǒɌɄɊƗǂɞƙȴȫǒɌƙɆƙȲɁɪ
- 
-   ɑɌɭɆ  4,3 
-   ɃɪƙɆȹɭɸȹɅ  4,3 
-   ȹɅɆɃ  4,6 
-ʑʔ ǊȴɌɋȜɑƎɪƺɳɊƙȴȫǒɌ   ʒʐ
-ʒ 
-ʑʕ ȼȶɽɑɭɪɳɁƙɆƺȹɅȲƒɭȶɊɯɋȴɪɓɮɴɊɻƙɁƳɳɌɻ   ʑʒʗ 
-ʑʖ ǊȴɌɋɵɅƙɆƺȹɅǂɊƙȲȩɊǕɋɭ    
-  ǊȴɌɋƙɆƺȹɅǕɋɭʐ-ʑʔƹƒɸ  29,5 
-  ǊȴɌɋƙɆƺȹɅǕɋɭʑʕ-ʕʙƹƒɸ  62,3 
-  ǊȴɌɋƙɆƺȹɅǕɋɭʖʐƹƒɸɳɓɪȶ  8,2 
- 
- 
-    
-vi 
-  
-ʑʗ ɇɍɳɄȢɆɔƒȲȲƒɭȶɆɅƐɭȲ    
-   ɑɌɭɆ  60,6 
-   ɃɪƙɆȹɭɸȹɅ  58,4 
-   ȹɅɆɃ  70,0 
-ʑʘ ɇɍɳɄȢɆɳɉɃ    
-   ɑɌɭɆ  97,5 
-   ɃɪƙɆȹɭɸȹɅ  97,6 
-   ȹɅɆɃ  97,3 
-ʑʙ ɳɊȼǚɅǕɋɭ    
-   ɑɌɭɆ  25 
-   ɃɪƙɆȹɭɸȹɅ  26 
-   ȹɅɆɃ  24 
-ʒʐ ǊȴɌɋƙɆƺȹɅǕɋɭʑʕ ƹƒɸɳɓɪȶǂɊǒƏɅǊɈǕǉɒɿɈɩǉɒɿ	ǊȴɌɋ
-  
-  
-ɳɉɃ 
-ǒƏɅǊɈǕǉɒɿɈɩǉɒɿ	ǊȴɌɋ
- 
-  
-ɊɩɅɴȼɍ 
-ɳɌȢɆƳɌ 
-ɳɌȢɆƳɌɳɒɪɋ 
-ɳɊǋɻɋ 
-ɳǉɹǋɻɋ 
-ɴɍȶɍɹ 
-ɌɑɽɳǷ 
-ɳɇƞȶƵƒ  
-  ɑɌɭɆ 27,5 66,5 3,7 2,2 0,1 
-  ƙɆȩɑ 32,1 65,6 1,1 1,2 0,0 
-  ƙɑɪ 23,2 67,3 6,1 3,3 0,1 
-ʒʑ ǕɋɭɊɄƘɊɳɌȢɆǕǉɒɿɈɩǉɒɿȼɸɆɮȶ    
-  ɁɸɆɅɽ  ƙɆȩɑ ƙɑɪ 
-  ɑɌɭɆ  26 23 
-  ɃɪƙɆȹɭɸȹɅ  26 23 
-  ȹɅɆɃ  25 22 
-ʒʒ ǊȴɌɋɔȲſɌǊɈɊɅɭɑƞɳɈȻɎʂɋ	ƙɆƺȹɅǕɋɭʑʕƹƒɸɳɓɪȶ)   
-  ɁɸɆɅɽ ɑɌɭɆ ƙɆȩɑ ƙɑɪ 
-  ɑɌɭɆ 86,7 90,5 83,2 
-  ɃɪƙɆȹɭɸȹɅ 88,7 92,2 85,3 
-  ȹɅɆɃ 78,8 83,6 74,2 
-     
-     
- 
- 
- 
-   
-vii 
-  
-ʒʓ ǊȴɌɋɔȲſɌǊɈǂɊȲƙɊɩɁɑɩȲǜɔɆɽɌɸ	ƙɆƺȹɅǕɋɭʑʕƹƒɸɳɓɪȶ)  
-  ȲƙɊɩɁɑɩȲǜ ɑɌɭɆ ƙɆȩɑ ƙɑɪ 
-  ɊɩɅǇɅɆȥƃɆɽǃƒȲɽǁɊɯɋ 1,8 1,8 1,8 
-  ɊɩɅǇɅɆȥƃɆɽǃƒȲɽɆȽɊɑɩȲǜ 43,3 41,3 45,4 
-  ǇɅɆȥƃɆɽǃƒȲɽɆȽɊɑɩȲǜ 27,6 28,0 27,2 
-  ǇɅɆȥƃɆɽǃƒȲɽɊɄƘɊɑɩȲǜɆȽɊɉɮɊɩ 17,9 18,4 17,5 
-  
-ǇɅɆȥƃɆɽǃƒȲɽɊɄƘɊɑɩȲǜǋɅɑȦƈɆƙɁ
-ɃɭɁɩɋɉɮɊɩǇɅɆȥƃɆɽǃƒȲɽɊɄƘɊɑɩȲǜɆȽɊ 
-6,0 6,2 5,7 
-  
-ɉɮɊɩǋɅɑȦƈɆƙɁɆɳȷƃȲɳɃɑ ɎɩƺƅȹɪɎɺɑȦƈɆ
-ƙɁɃɭɁɩɋɉɮɊɩǋɅɑȦƈɆƙɁɆɳȷƃȲɳɃɑɎɩƺƅȹɪɎɺ 
-  
- 
-  ɑȦƈɆƙɁɊǓɎɩɃǚɍʂɋ ɑȦƈɆƙɁɔɅɭɆɀƋɩɁ/ 3,4 4,3 2,5 
-  ɑȦƈɆƙɁɆɀƋɩɁ    
-ʒʔ ǊȴɌɋȲɸɈɭȶɑɩȲǜɳǷǒǎɞƙȴɫɹǒƏɅɑɩȲǜ   
-  ƙȲȩɊǕɋɭ ɑɌɭɆ ƙɆȩɑ ƙɑɪ 
-  ʐʖ-ʑʑ 89,6 88,7 90,6 
-  ʑʒ-ʑʔ 89,6 87,3 92,1 
-  ʑʕ-ʑʗ 68,0 65,2 71,1 
-  ʑʘ-ʒʔ 22,4 22,7 22,0 
-  ʒʕ ƹƒɸɳɓɪȶ 0,7 0,9 0,6 
-ʒʕ ǊȴɌɋƙɆƺȹɅɈɩƳɌɳɄȢɆƙɆƺȹɅɑɌɭɆ    
-  ȲƙɊɩɁɵɅɈɩƳɌǊɈ ɑɌɭɆ ƙɆȩɑ ƙɑɪ 
-  ɍɸǇȲȳƚɹ 3,5 3,0 4,0 
-  ɍɸǇȲƴƚɸȶɅɩȶɊɩɅǕȷɳɄƛɪɔƛɪǄɸȶɔɑɽ 1,ʐ 0,8 ʑ,ʓ 
-ʒʖ ƙɆɳɉɃɈɩƳɌǊɈ    
-  ƙɆɳɉɃɈɩƳɌǊɈ    
-  ɍɸǇȲȲƒɭȶƳɌɳɊɪɍ ɑɌɭɆ ƙɆȩɑ ƙɑɪ 
-  ɍɸǇȲȳƚɹ 2,8 2,3 3,2 
-  ɍɸǇȲƴƚɸȶɅɩȶɊɩɅǕȷɳɄƛɪɔƛɪǄɸȶɔɑɽ 0,5 0,4 0,5 
-  ɍɸǇȲȲƒɭȶƳɌǒƎɆɽ    
-  ɍɸǇȲȳƚɹ 1,9 1,5 2,4 
-  ɍɸǇȲƴƚɸȶɅɩȶɊɩɅǕȷɳɄƛɪɔƛɪǄɸȶɔɑɽ 0,4 0,3 0,5 
-  ɍɸǇȲȲƒɭȶƳɌǈƚɑɽɃɪɞɳɓɪȶȹɳɀƎɪɌ    
-  ɍɸǇȲȳƚɹ 2 1,6 2,5 
-viii 
-  
-  ɍɸǇȲƴƚɸȶɅɩȶɊɩɅǕȷɳɄƛɪɔƛɪǄɸȶɔɑɽ 0,5 0,4 0,6 
-  ɍɸǇȲȲƒɭȶƳɌȷȶƸɸɞƳɌȴɩɁ    
-  ɍɸǇȲȳƚɹ 1,9 1,4 2,4 
-  ɍɸǇȲƴƚɸȶɅɩȶɊɩɅǕȷɳɄƛɪɔƛɪǄɸȶɔɑɽ 0,4 0,3 0,6 
-  ɍɸǇȲȲƒɭȶƳɌɴɂǄɸȳƚɯɅɅɩȶɳɑƚȣȲǉȲɽ    
-  ɍɸǇȲȳƚɹ 1,2 0,8 1,6 
-  ɍɸǇȲƴƚɸȶɅɩȶɊɩɅǕȷɳɄƛɪɔƛɪǄɸȶɔɑɽ 0,4 0,3 0,4 
-  ɍɸǇȲȲƒɭȶƳɌɅɩǌɋ    
-  ɍɸǇȲȳƚɹ 1,2 0,8 1,5 
-  ɍɸǇȲƴƚɸȶɅɩȶɊɩɅǕȷɳɄƛɪɔƛɪǄɸȶɔɑɽ 0,3 0,3 0,5 
-ʒʗ ƙɆƺȹɅǕɋɭ ʑʕ ƹƒɸɳɓɪȶǂɊǒƏɅǊɈƳɌƷɌƺȲɽɴɑƎȶ   
-  ɑȲɊƗǊɈɳɑȼƊȲɩȷƃ ɑɌɭɆ ƙɆȩɑ ƙɑɪ 
-  ɔƙǂȷɮɍɌɯɊȲǋƚ ɸȶɈɍȲɊƗ 77,2 83,9 70,9 
-  ɔƙǂǋɅƳɌƷɌɄƛɪ 97,9 98,5 97,3 
-  ɔƙǂƵƗɅƳɌƷɌɄƛɪ 2,1 1,5 2,7 
-  ɔɑȲɊƗȹɅɳɑȼƊȲɩȷƃ 22,8 16,1 29,1 
-ʒʘ ǊȴɌɋƙɆƺȹɅǈƚɑɽɍɸɳǷƽƊɅǂɊɁɸɆɅɽ   
-  ƳɌǈƚɑɽɍɸɳǷƽƊɅ ɑɌɭɆ ƙɆȩɑ ƙɑɪ 
-  ȹɅɆɃɳǵȹɅɆɃ 4,6 5,4 3,7 
-  ȹɅɆɃɳǵ ɃɪƙɆȹɭɸȹɅ 59,3 58,3 60,5 
-  ɃɪƙɆȹɭɸȹɅɳǵȹɅɆɃ 3,5 4,0 2,9 
-  ɃɪƙɆȹɭɸȹɅɳǵɃɪƙɆȹɭɸȹɅ 32,6 32,4 32,9 
-ʒʙ ǊȴɌɋǕƵɌ ǂɊɍȲſɀɺɑɸɀȶɽ   
-  ɍȲſɀɺɑɸɀȶɽ ɑɌɭɆ ɃɪƙɆȹɭɸȹɅ ȹɅɆɃ 
-  ɔȷɩɵȜɅƎɋɿ 97,2 97,2 97,1 
-  ǉȲɽȲǁƎ ɍɔȷɩɵȜɅƎɋɿ 2,3 2,3 2,6 
-  ɆɳǁƎ ɹǕɑɅƒ 0,5 0,5 0,3 
-ʓʐ ǊȴɌɋƙȴȫǒɌɴɆȶɴȷȲǂɊƙɆɉɈɃɫȲɑƙǋɆɽɈɩǒ   
-  ƙɆɳɉɃƙɆɉɈɃɫȲ ɑɌɭɆ ɃɪƙɆȹɭɸȹɅ ȹɅɆɃ 
-  ɃɫȲǋɻɑɭɪɅɆǁƎ Ȼ 2,1 2,4 1,2 
-  ɃɫȲɆɸɈȶɽɆǁƎ ȻȲƒɭȶɃɪǅƚɆɌɩɳɎɀɍɸɳǷƽƊɅ 0,7 0,7 0,5 
-  ɃɫȲɆɸɈȶɽǒǅɌɀɺ 1,5 1,2 3,0 
-  ɃɫȲɔɀƎɮȶɑƒɆɽ 16,7 19,4 6,0 
-ix 
-  
-  ɃɫȲɔɀƎɮȶȹɪȲǋɅȴƙɊɆƳɌǉɌ 7,3 8,9 0,7 
-  ɃɫȲɔɀƎɮȶȹɪȲƵƗɅȴƙɊɆƳɌǉɌ 11,2 10,9 12,4 
-  ɃɫȲɳȷȻɳƙƳɊȼɪǋɅƳɌƳɌǉɌ 0,3 0,3 0,1 
-  ɃɫȲɳȷȻɳƙƳɊȼɪƵƗɅƳɌƳɌǉɌ 0,2 0,1 0,9 
-  ɃɫȲɳɉƚȣȶ 4,0 2,8 8,8 
-  ɃɫȲɳɍɪȼɪ	ɃɳɅƚɔɮɌɆɫȶƙɁǉɸȶ
- 5,2 3,4 12,4 
-  ɃɫȲɃɩȻǔɅɑɭɪɴɃɅ 7,9 8,3 6,2 
-  ɃɫȲɃɩȻɄɭȶɌɳɃɹ 15,8 11,3 34,1 
-  ɃɫȲȼɆɃɫȲɈɩǒȼɆ 26,5 29,9 12,7 
-  ƙɆɉɈɃɫȲɳɇƞȶɳɃȢɁ 0,6 0,4 1,1 
-ʓʑ ǊȴɌɋƙȴȫǒɌɳƙɆɪƙǇɑɽɔȴƀɩɑɅɪƺƙɆɉɈɑɸƴɅɽɑƙǋɆɽɆɸɉƚɬ   
-  ɑɌɭɆ   79,4 
-  ɃɪƙɆȹɭɸȹɅ   81,0 
-  ȹɅɆɃ   72,5 
-ʓʒ ǊȴɌɋƙȴȫǒɌɴɆȶɴȷȲǂɊɗɅƊɅɺȷɊơɩɅǕǓɌ   
-  ƙɆɳɉɃɗɅƑɅɺ ɑɌɭɆ ɃɪƙɆȹɭɸȹɅ ȹɅɆɃ 
-  əɑ 34,0 35,0 29,0 
-  ɄƘɮȶ 5,2 5,4 4,4 
-  ɳƙɆȶƳɁ 0,5 0,5 0,3 
-  əɑƗʂɅǓƀɑ 57,8 56,3 65,5 
-  ɔȴƀɩɑɅɪ 2,2 2,5 0,7 
-  ƵƗɅ 0,2 0,2 0,2 
-  ɳɇƞȶɳɃȢɁ 0,0 0,0 0,0 
-ʓʓ ǊȴɌɋƙȴȫǒɌǇɅɳƙɆɪƙǇɑɽɆȶƀɅɽɅɩȶƙɆɳɉɃɆȶƀɅɽ   
- ƙɆɳɉɃɆȶƀɅɽ ɑɌɭɆ ɃɪƙɆȹɭɸȹɅ ȹɅɆɃ 
- ɊɩɅɳƙɆɪɆȶƀɅɽ 24,6 21,3 38,1 
- ɆȶƀɅɽƸȲɽɃɫȲɞ	ȷɭȷɆȶƟɮɌɃɫȲ
-ɁǊƅɆɽɳǵƙɆɈʂɅƑɍɮ 7,8 7,8 7,8 
- ɆȶƀɅɽƸȲɽɃɫȲɞ	ȷɭȷɆȶƟɮɌɃɫȲ
-ɁǊƅɆɽɳǵǕȶɑƎɭȲɞɌɳǲƎ  56,1 59,6 42,0 
- ɆȶƀɅɽƸȲɽɃɫȲɞ	ȷɭȷɆȶƟɮɌɃɫȲ
-ɆȶƟɮɌɳǵȲɴɅƚȶɳɇƞȶ 8,7 8,4 9,7 
- ɆȶƀɅɽɌɳǲƉ ǋɅƸɅɆȶƀɅɽ 1,4 1,6 0,5 
- ɆȶƀɅɽɌɳǲƎ ƵƗɅƸɅɆȶƀɅɽ 0,8 0,9 0,6 
-
-=== pages mentioning ['District', 'Religion', 'Mother'] (first 6) ===
+== GET https://censusresults.nsonepal.gov.np/downloads/census-dataset
+  200 text/html; charset=utf-8 278385 https://censusresults.nsonepal.gov.np/downloads/census-dataset
+    'National' -> https://censusresults.nsonepal.gov.np/downloads/national?type=report
+    'thematic' -> https://censusresults.nsonepal.gov.np/downloads/thematic?type=report
+    'Province/ District/ Local Report' -> https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=report
+    'Caste/ Ethnicity Report' -> https://censusresults.nsonepal.gov.np/downloads/caste-ethnicity?type=report
+    'Urban/ Rural Report' -> https://censusresults.nsonepal.gov.np/downloads/urban-rural?type=report
+    'Post Enumeration Survey Report' -> https://censusresults.nsonepal.gov.np/downloads/post-enumeration-report-survey?type=report
+    'Census in Nepal' -> https://censusresults.nsonepal.gov.np/downloads/census-in-nepal?type=report
+    'Report on Degree of Urbanization in Nepal' -> https://censusresults.nsonepal.gov.np/downloads/degree-urbanization-report?type=report
+    'Community Report' -> https://censusresults.nsonepal.gov.np/downloads/community?type=report
+    'Local Level Report' -> https://censusresults.nsonepal.gov.np/downloads/local-level-report?type=report
+    'Child Statistics' -> https://censusresults.nsonepal.gov.np/downloads/child-statistics-report?type=report
+    'National' -> https://censusresults.nsonepal.gov.np/downloads/national?type=data
+    'thematic' -> https://censusresults.nsonepal.gov.np/downloads/thematic?type=data
+    'Province/ District/ Local Report' -> https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=data
+    'Ward Report' -> https://censusresults.nsonepal.gov.np/downloads/ward?type=data
+    'Caste/ Ethnicity Report' -> https://censusresults.nsonepal.gov.np/downloads/caste-ethnicity?type=data
+    'Disability' -> https://censusresults.nsonepal.gov.np/downloads/disability?type=data
+    'Urban/ Rural Report' -> https://censusresults.nsonepal.gov.np/downloads/urban-rural?type=data
+    'House and Household Listing Results' -> https://censusresults.nsonepal.gov.np/downloads/household-results?type=data
+    'Community Report' -> https://censusresults.nsonepal.gov.np/downloads/community?type=data
+    'Child Statistics' -> https://censusresults.nsonepal.gov.np/downloads/child-statistics-report?type=data
+    'Dalit statistics' -> https://censusresults.nsonepal.gov.np/downloads/dalit-statistics-report?type=data
+    'Degurba' -> https://censusresults.nsonepal.gov.np/downloads/degurba-report?type=data
+    'Census Dataset' -> https://censusresults.nsonepal.gov.np/downloads/census-dataset
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld01_OwnershipOfHouse.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld02_FoundationOfHouse.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld03_OuterwallOfHouse.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld04_RoofOfHouse.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld05_FloorOfHouse.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld06_SourceOfDrinkingWater.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld07_TypeOfCookingFuel.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld08_SourceOfLighting.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld09_TypeOfToiletUsed.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld10_HouseholdFacility.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld11_FemaleOwnershipOfFixedAsset.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld12_SmallScaleBusiness.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld13_HouseholdHavingDeath.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld14_NumberOfDeathBySex.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld15_NumberOfDeathByCauseOfDeath.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld16_FemaleDeathByStatus.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld17_AbsentHousehold.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld18_AbsentPopnBySex.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld19_AbsentPopnByCountry.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld20_AbsentPopnByReasonOfAbsence.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld21_AbsentPopnByCountry.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld22_AbsentPopnByAgeAtDeparture.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Hhld23_AbsentPopnByLevelOfEdu.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv01_PopulationBySex.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv02_SizeOfPerson.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv03_PopulationBySingleYear.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv04_PopulationByFiveYear.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv05_SizeOfLocalities.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv06_HouseholdHeadBySex.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv07_PopulationByRelationship.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv09_PopulationByNationality.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv10_PopulationByMaritalStatus.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv11_PopulationByAgeAtFirstMarriage.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv16_PopulationByDisability.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv17_PopulationByLiteracyStatus.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv18_PopulationByEduLevel.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv19_PopulationBySchoolAttendance.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv20_PopulationBySchoolAttendance.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv21_PopulationByFieldOfEducatn.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv22_PopulationByPlaceOfBirth.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv23_MigratedPopulationByProv.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv24_PopulationByCountryOfBirth.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv25_PopulationByPlaceOfStay.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv26_MigratedPopulationByEcoBelt.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv27_MigratedPopulationByProv.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv28_MigratedPopulationByLengthOfStay.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv29_MigratedPopulationByReasonOfStay.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv30_PopulationByCountryOfStay.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv31_MigratedPopulationByLengthOfStay.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv32_MigratedPopulationByReasonOfStay.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv33_NumberOfChildrenEverBorn.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv34_NumberOfChildrenDead.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv35_NumberOfChildrenBorn.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv36_ReportedNumberOfChildren.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv37_NumberOfCEBbyLiteracyStatus.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv38_NumberOfChildrenDeadByLiteracyStatus.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv39_NumberOfChildrenBornByLiteracyStatus.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv40_NumberOfCEBbyOccupation.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv41_NumberOfChildrenDeadbyOccupation.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv42_NumberOfChildrenBornAlivebyOccupation.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv43_NumberOfCEBbyIndustry.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv44_NumberOfChildrenDeadbyIndustry.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv45_NumberOfChildrenBornAlivebyIndustry.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv46_NumberOfCEBbyReasonNotActive.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv47_NumberOfChildrenDeadbyReasonNotActive.csv
+    'csv' -> https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv48_NumberOfChildrenBornAlivebyReasonNotActive.csv
+    ...
