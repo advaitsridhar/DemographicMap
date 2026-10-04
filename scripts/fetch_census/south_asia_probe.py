@@ -363,13 +363,24 @@ def cmd_rows(args: argparse.Namespace) -> None:
     describe(args.url, status, headers, body)
     if status != 200 or body[:4] != b"%PDF":
         return
-    wanted = {int(p) for p in args.pages.split(",") if p}
+    wanted = {int(p) for p in args.pages.split(",") if p and p != "all"}
     pattern = re.compile(args.grep, re.I) if args.grep else None
+    # --find picks the pages by their text instead of by number: the first
+    # --max-pages pages whose extracted text matches, each shown whole (or
+    # filtered by --grep).
+    find = re.compile(args.find) if args.find else None
+    found = 0
     with pdfplumber.open(io.BytesIO(body)) as pdf:
         print(f"    {len(pdf.pages)} pages")
         for number, page in enumerate(pdf.pages, 1):
             if wanted and number not in wanted:
                 continue
+            if find:
+                if found >= args.max_pages:
+                    break
+                if not find.search(page.extract_text() or ""):
+                    continue
+                found += 1
             words = page.extract_words(use_text_flow=False, keep_blank_chars=False)
             rows: list[tuple[float, list]] = []
             for word in sorted(words, key=lambda w: (round(w["top"], 1), w["x0"])):
@@ -495,6 +506,8 @@ def main() -> int:
     w.add_argument("--lines", type=int, default=80)
     w.add_argument("--width", type=int, default=400)
     w.add_argument("--tolerance", type=float, default=2.0)
+    w.add_argument("--find", default="", help="pick pages whose text matches")
+    w.add_argument("--max-pages", type=int, default=4)
     w.add_argument("--aia", action="store_true")
 
     c = sub.add_parser("cdx")
