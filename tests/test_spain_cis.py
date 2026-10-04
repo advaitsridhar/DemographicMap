@@ -32,7 +32,9 @@ FICHA_ROWS = [
     ["Afijación", "No proporcional"],
     [None, "Partiendo de una distribución proporcional por provincias, ..._x000D_"],
     ["Ponderación", "Para tratar la muestra en su conjunto es necesario aplicar coeficientes "
-                    "de ponderación (PESO)."],
+                    "de ponderación (PESO)._x000D_ Para la estimación a nivel de cada provincia, "
+                    "en el fichero de microdatos se incluye la ponderación para cada una de ellas "
+                    "(variable PESOPROV)."],
     ["Procedimiento de muestreo", "Los cuestionarios se han aplicado mediante entrevista "
                                   "telefónica asistida por ordenador (CATI)."],
     ["Fecha de realización", "Del 6 al 13 de febrero de 2026."],
@@ -173,11 +175,13 @@ class TestReading(unittest.TestCase):
         self.assertEqual(got["year"], 2026)
         self.assertEqual(got["fieldwork"], "Del 6 al 13 de febrero de 2026")
         self.assertTrue(got["voters"] and got["telephone"] and got["weighted"])
-        # A barometer's universe names no election.
+        self.assertTrue(got["province_weight"])
+        # A barometer's universe names no election, and it has no provincial weight.
         barometer = ("Ámbito: Nacional. Universo: Población española de ambos sexos de 18 años "
                      "y más. Tamaño de la muestra: Diseñada: 4.000 entrevistas. Realizada: 4.042 "
                      "entrevistas. Fecha de realización: Del 1 al 4 de septiembre de 2026.")
-        self.assertFalse(s.ficha(barometer, "test")["voters"])
+        plain = s.ficha(barometer, "test")
+        self.assertFalse(plain["voters"] or plain["province_weight"] or plain["weighted"])
         with self.assertRaises(SystemExit):
             s.ficha(barometer.replace("española", "residente"), "test")
 
@@ -206,9 +210,14 @@ class TestWorkbook(unittest.TestCase):
             s.read_workbook(workbook(header="3453/0 PREELECTORAL DE CATALUÑA"), STUDY)
 
     def test_a_comunidad_its_provinces_do_not_make_stops(self):
+        # Separate weights put the comunidad a few tenths away: that passes.
         region = region_of(CYL)
-        region[0] += 1.0
-        region[1] -= 1.0
+        region[0] += 0.6
+        region[1] -= 0.6
+        s.read_workbook(workbook(region_shares=region), STUDY)
+        # A point and a half is not weighting.
+        region[0] += 0.9
+        region[1] -= 0.9
         with self.assertRaises(SystemExit):
             s.read_workbook(workbook(region_shares=region), STUDY)
 
@@ -285,10 +294,12 @@ class TestRecords(unittest.TestCase):
         pcts = [row["pct"] for row in soria["religion"]]
         self.assertEqual(pcts, sorted(pcts, reverse=True))
         self.assertEqual(soria["religion_year"], 2026)
+        self.assertIn("PESOPROV", soria["religion_note"])
         region = by["Castilla y León"]
         self.assertEqual(region["level"], "admin1")
         self.assertEqual(region["shape_id"], comunidades["07"]["id"])
         self.assertNotIn("Low precision", region["religion_note"])
+        self.assertIn("(PESO)", region["religion_note"])
         self.assertEqual(region["sources"][0]["field"], "religion")
 
 

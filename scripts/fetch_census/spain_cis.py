@@ -55,9 +55,10 @@ Checks, each of which stops the run:
 * each unit's shares make 100 (to 0.5 points);
 * each province's respondents are the realised sample the weights table gives
   it, and the provinces make the comunidad's respondents and the table's total;
-* the comunidad's shares are the provinces' shares weighted by their realised
-  samples and mean weights, which is what the CIS's own weighting makes them
-  (to 0.5 points in every answer);
+* the comunidad's shares are, to 1 point in every answer, the provinces'
+  shares weighted by their realised samples and mean weights (the CIS
+  weights the comunidad and each province separately, PESO and PESOPROV, so
+  the two agree to a few tenths of a point rather than exactly);
 * the ficha técnica still describes Spanish citizens aged 18 and over, and the
   workbook is the study it is listed as;
 * every unit has at least 100 respondents (100-299 is marked low precision);
@@ -89,6 +90,8 @@ SITE = PROCESSED.parent.parent / "site" / "data"
 MIN_N = 100
 LOW_PRECISION = 300
 SHARE_TOLERANCE = 0.5
+# How far a comunidad's share may sit from its provinces' combined: see check_region.
+REGION_TOLERANCE = 1.0
 LICENCE = ("CIS reuse conditions (Ley 37/2007): source to be cited as "
            "'Origen de los datos: Centro de Investigaciones Sociológicas'")
 
@@ -348,7 +351,8 @@ def ficha(text: str, where: str) -> dict[str, Any]:
     out = {"universe": universe.group(1).strip(), "realised": int(number(realised.group(1))),
            "fieldwork": dates.group(1).strip(), "year": int(dates.group(1)[-4:]),
            "telephone": bool(re.search(r"CATI|telef[oó]nic", flat, re.I)),
-           "weighted": "PESO" in flat}
+           "weighted": bool(re.search(r"\bPESO\b", flat)),
+           "province_weight": "PESOPROV" in flat}
     universe_text = fold(out["universe"])
     if "espanola" not in universe_text or "18" not in out["universe"]:
         raise SystemExit(f"spain_cis: {where}: the universe is now {out['universe']!r}; the "
@@ -448,21 +452,29 @@ def check_region(region: dict[str, float], provinces: dict[str, dict[str, Any]],
                  where: str) -> float:
     """The comunidad's shares against its provinces' weighted by sample and mean weight.
 
-    The CIS weights every respondent (PESO) and a province's mean weight times
-    its realised sample is that province's weighted size, so the comunidad's
-    share is the provinces' shares in those proportions -- exactly, up to the
-    four decimals the table gives the weights in.
+    A province's realised sample times its mean weight is its weighted size,
+    so the comunidad's share is close to the provinces' shares in those
+    proportions. Not exactly: the CIS weights the comunidad's marginals with
+    PESO (calibrated to sex, age, province, education and size of
+    municipality) and each province's with PESOPROV (calibrated within the
+    province), so the two agree to a few tenths of a point -- 0.32 at most in
+    Andalucía, 0.54 in Castilla y León. The log gives the agreement for each
+    study, beside what the provinces' shares make added up unweighted.
     """
     mass = {c: p["n"] * p["weight"] for c, p in provinces.items()}
     whole = sum(mass.values())
-    worst = 0.0
+    sample = sum(p["n"] for p in provinces.values())
+    worst, plain = 0.0, 0.0
     for label in region:
         made = sum(mass[c] * p["shares"].get(label, 0.0) for c, p in provinces.items()) / whole
+        flat = sum(p["n"] * p["shares"].get(label, 0.0) for p in provinces.values()) / sample
         worst = max(worst, abs(made - region[label]))
-        if abs(made - region[label]) > SHARE_TOLERANCE:
+        plain = max(plain, abs(flat - region[label]))
+        if abs(made - region[label]) > REGION_TOLERANCE:
             raise SystemExit(f"spain_cis: {where}: the provinces make {label} {made:.2f}%, the "
                              f"comunidad {region[label]:.2f}%")
-    log(f"  {where}: the provinces make the comunidad's shares to within {worst:.3f} points")
+    log(f"  {where}: the provinces make the comunidad's shares to within {worst:.2f} points "
+        f"weighted by their samples and mean weights ({plain:.2f} unweighted)")
     return worst
 
 
@@ -544,12 +556,19 @@ def rows_of(shares: dict[str, float]) -> list[dict[str, Any]]:
 
 
 def fields(study: Study, design: dict[str, Any], unit: str, n: int,
-           shares: dict[str, float], what: str, updated: str | None) -> dict[str, Any]:
+           shares: dict[str, float], what: str, updated: str | None,
+           province: bool = False) -> dict[str, Any]:
     precision = (" Low precision: under 300 respondents." if n < LOW_PRECISION else "")
     method = ("telephone interviews (CATI) with quotas of sex and age, " if design["telephone"]
               else "")
-    weighting = ("weighted by the CIS's own coefficients (PESO); these are its published "
-                 "weighted shares" if design["weighted"] else "as the CIS publishes them")
+    if province and design.get("province_weight"):
+        weighting = ("weighted by the CIS's post-stratification coefficients for the province "
+                     "(PESOPROV); these are its published weighted shares")
+    elif not province and design.get("weighted"):
+        weighting = ("weighted by the CIS's coefficients for the comunidad (PESO); these are "
+                     "its published weighted shares")
+    else:
+        weighting = "shares as the CIS publishes them"
     comunidad = COMUNIDADES[study.ccaa][0]
     voters = design.get("voters", False)
     return {
@@ -602,7 +621,7 @@ def build(results: list[tuple[Study, dict[str, Any]]], provinces: dict[str, dict
                 parent="ESP", country="ESP", match_by="shape_id", shape_id=shape["id"],
                 codes={"ine_province": code, "cis_study": study.number, "cis_n": prov["n"]},
                 **fields(study, design, prov["name"], prov["n"], prov["shares"],
-                         f"the province of {prov['name']}", updated)))
+                         f"the province of {prov['name']}", updated, province=True)))
     ids = [r["shape_id"] for r in records]
     if len(ids) != len(set(ids)):
         raise SystemExit("spain_cis: a polygon was written twice")
