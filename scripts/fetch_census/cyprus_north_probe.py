@@ -319,20 +319,28 @@ OVERPASS_MIRRORS = (OVERPASS, "https://overpass.private.coffee/api/interpreter",
                     "https://maps.mail.ru/osm/tools/overpass/api/interpreter")
 
 
+# Hosts that failed once in this run are tried last after that: a run of a
+# dozen queries otherwise waits out the same overloaded instance each time.
+_FAILED: set[str] = set()
+
+
 def overpass(query: str) -> list[dict[str, Any]]:
     """The query's elements, from the main instance or a mirror: one run had
     the main instance answer 'Network is unreachable' where the run before
     had read it."""
-    for host in OVERPASS_MIRRORS:
+    hosts = sorted(OVERPASS_MIRRORS, key=lambda h: h in _FAILED)
+    for host in hosts:
         url = host + "?" + urllib.parse.urlencode({"data": query})
         try:
-            status, ctype, body = fetch(url, timeout=300)
+            status, ctype, body = fetch(url, timeout=240)
         except Exception as exc:                          # noqa: BLE001 -- reported
             log(f"== Overpass {host}: {type(exc).__name__}: {str(exc)[:150]}")
+            _FAILED.add(host)
             continue
         log(f"== Overpass {host} HTTP {status} {len(body):,} bytes")
         if status == 200:
             return json.loads(body).get("elements", [])
+        _FAILED.add(host)
         log(body[:300].decode("utf-8", "replace"))
     return []
 
@@ -496,6 +504,8 @@ def p_green_line(a: argparse.Namespace) -> None:
     for spec in a.point:
         label, lat, lon = spec.split(",")
         points.append((label, float(lat), float(lon)))
+        if getattr(a, "no_isin", False):
+            continue
         for el in overpass(f"[out:json][timeout:90];is_in({lat},{lon});out tags;"):
             t = el.get("tags", {})
             extra = "|".join(f"{k}={v}" for k, v in sorted(t.items())
@@ -575,6 +585,8 @@ def main() -> int:
     ap.add_argument("--point", action="append", default=[],
                     help="green_line: label,lat,lon (repeatable; no spaces)")
     ap.add_argument("--box", help="green_line: south,west,north,east to clip outlines to")
+    ap.add_argument("--no-isin", action="store_true",
+                    help="green_line: measure the points against the outlines only")
     args = ap.parse_args()
     for name in args.run.split(","):
         if name not in PROBES:
