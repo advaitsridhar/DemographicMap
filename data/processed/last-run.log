@@ -1,137 +1,24 @@
-https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G01_LGA/1.0.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 1,093,334 bytes
-  [1] SEXP  codelist=CL_C21_SEXP01 (3 codes) 3 constrained
-                     3  Persons
-                     1  Males
-                     2  Females
-  [2] PCHAR  codelist=CL_C21_PCHAR01 (36 codes) 36 constrained
-                   P_1  Total persons
-                   0_4  Age groups: 0-4 years
-                  5_14  Age groups: 5-14 years
-                 15_19  Age groups: 15-19 years
-                 20_24  Age groups: 20-24 years
-                 25_34  Age groups: 25-34 years
-                 35_44  Age groups: 35-44 years
-                 45_54  Age groups: 45-54 years
-                 55_64  Age groups: 55-64 years
-                 65_74  Age groups: 65-74 years
-                 75_84  Age groups: 75-84 years
-                  GE85  Age groups: 85 years and over
-                   N_1  Counted on Census Night: At home
-                   N_2  Counted on Census Night: Elsewhere in Australia
-                   A_2  Aboriginal and/or Torres Strait Islander persons: Aboriginal
-                   A_3  Aboriginal and/or Torres Strait Islander persons: Torres Strait Islander
-                   A_4  Aboriginal and/or Torres Strait Islander persons: Both Aboriginal and Torres Strait Islander
-                   A_T  Aboriginal and/or Torres Strait Islander persons: Total
-                  B_11  Birthplace: Australia
-                   B_O  Birthplace: Elsewhere
-                L_1201  Language used at home: English only
-                   L_O  Language used at home: Other language
-                   C_1  Australian citizen
-                   E_1  Age of persons attending an education institution: 0-4 years
-                   E_2  Age of persons attending an education institution: 5-14 years
-                   E_3  Age of persons attending an education institution: 15-19 years
-                   E_4  Age of persons attending an education institution: 20-24 years
-                   E_5  Age of persons attending an education institution: 25 years and over
-                   S_1  Highest year of school completed: Year 12 or equivalent
-                   S_2  Highest year of school completed: Year 11 or equivalent
-                   S_3  Highest year of school completed: Year 10 or equivalent
-                   S_4  Highest year of school completed: Year 9 or equivalent
-                   S_5  Highest year of school completed: Year 8 or below
-                   S_6  Highest year of school completed: Did not go to school
-                 D_1_3  Count of persons in occupied private dwellings
-                   D_O  Count of persons in other dwellings
-  [3] REGION  codelist=CL_LGA_2021 (578 codes) 565 constrained
-                   AUS  Australia
-                     1  New South Wales
-                 10050  Albury
-                 10180  Armidale Regional
-                 10250  Ballina
-                 10300  Balranald
-                 10470  Bathurst Regional
-                 10500  Bayside (NSW)
-                 10550  Bega Valley
-                 10600  Bellingen
-                 10650  Berrigan
-                 10750  Blacktown
-                 10800  Bland
-                 10850  Blayney
-                 10900  Blue Mountains
-                 10950  Bogan
-                 11150  Bourke
-                 11200  Brewarrina
-                 11250  Broken Hill
-                 11300  Burwood
-                 11350  Byron
-                 11400  Cabonne
-                 11450  Camden
-                 11500  Campbelltown (NSW)
-                 11520  Canada Bay
-                 11570  Canterbury-Bankstown
-                 11600  Carrathool
-                 11650  Central Coast (NSW)
-                 11700  Central Darling
-                 11720  Cessnock
-                 11730  Clarence Valley
-                 11750  Cobar
-                 11800  Coffs Harbour
-                 12000  Coolamon
-                 12150  Coonamble
-                 12160  Cootamundra-Gundagai Regional
-                 12350  Cowra
-                 12380  Cumberland
-                 12390  Dubbo Regional
-                 12700  Dungog
-  [4] REGION_TYPE  codelist=CL_REGION_TYPE (43 codes) 1 constrained
-                   AUS  Australia
-                   STE  States and Territories
-                   SA4  Statistical Area Level 4
-                   SA3  Statistical Area Level 3
-                   SA2  Statistical Area Level 2
-                   SA1  Statistical Area Level 1
-                    RA  Remoteness Area
-                   SOS  Section of State
-                  SOSR  Section of State Ranges
-                    UC  Urban Centres
-                    UL  Urban Locations
-                  IREG  Indigenous Regions
-                  IARE  Indigenous Areas
-                  ILOC  Indigenous Locations
-                 GCCSA  Greater Capital City Statistical Areas
-                   SUA  Significant Urban Areas
-                   SLA  2011 Statistical Local Areas
-                   DZN  Destination Zones
-                   CED  Commonwealth Electoral Divisions
-                   SED  State Electoral Divisions
-                   LGA  Local Government Areas
-               LGA2011  Local Government Areas (2011)
-               LGA2012  Local Government Areas (2012)
-               LGA2013  Local Government Areas (2013)
-               LGA2014  Local Government Areas (2014)
-               LGA2015  Local Government Areas (2015)
-               LGA2016  Local Government Areas (2016)
-               LGA2017  Local Government Areas (2017)
-               LGA2018  Local Government Areas (2018)
-               LGA2019  Local Government Areas (2019)
-               LGA2020  Local Government Areas (2020)
-               LGA2021  Local Government Areas (2021)
-               LGA2022  Local Government Areas (2022)
-               LGA2023  Local Government Areas (2023)
-               LGA2024  Local Government Areas (2024)
-               LGA2025  Local Government Areas (2025)
-                   FED  Federal Electoral Division
-                   POA  Postal Areas
-                  NRMR  National Resource Management Regions
-                   ADD  Australian Drainage Divisions
-  [5] STATE  codelist=CL_STATE (10 codes) 9 constrained
-                   AUS  Australia
-                     1  New South Wales
-                     2  Victoria
-                     3  Queensland
-                     4  South Australia
-                     5  Western Australia
-                     6  Tasmania
-                     7  Northern Territory
-                     8  Australian Capital Territory
-                     9  Other Territories
-  [6] TIME_PERIOD  codelist= (0 codes) 0 constrained
+https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_15.xlsx
+  2,056 bytes
+  HTML, not a workbook -- the capture played back rewritten
+https://www.cbs.gov.il/he/publications/doclib/2025/2.shnatonpopulation/st02_15.xlsx
+  2,056 bytes
+  HTML, not a workbook -- the capture played back rewritten
+https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_10.xlsx
+  91,226 bytes
+  9 sheet(s)
+  -- 'ST02-10a': 48 rows x 11 cols
+     ['תחזית אוכלוסייה(1)', '', '', '', '', '', '', '', '', '', '']
+     ['לפי קבוצת אוכלוסיי', '', '', '', '', '', '', '', '', '', '']
+     ['PROJECTION OF POPU', '', '', '', '', '', '', '', '', '', '']
+     ['BY POPULATION GROU', '', '', '', '', '', '', '', '', '', '']
+     ['Thousands; end of ', '', '', '', '', '', '', '', '', '', 'אלפים; סוף שנה']
+     ['Age', '2065', '2060', '2055', '2050', '2045', '2040', '2035', '2030', '2025', 'גיל']
+     ['', 'HIGH VARIANT', '', '', '', '', '', '', '', 'חלופה גבוהה', '']
+     ['', 'TOTAL POPULATION', '', '', '', '', '', '', '', 'כל האוכלוסייה', '']
+https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19.xlsx
+  2,056 bytes
+  HTML, not a workbook -- the capture played back rewritten
+https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_20.xlsx
+  2,056 bytes
+  HTML, not a workbook -- the capture played back rewritten
