@@ -1,5 +1,31 @@
-vietnam_district: General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019
-  fetched Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf (9.5 MB)
-  842 pages
-  Table 1: 712 districts in 63 provinces, each province's districts making its own row; the provinces make 96,208,984
-vietnam_district: Table 5 page 243: 'Trung North and South Central Coast' is no unit this reader knows
+tonga_census: 2021 Census General Tables 1, 2 and 4
+  https://tongastats.gov.to/download/266/general-tables/8089/1-population-trends.xlsx: 12,136 bytes
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/tonga_census.py", line 412, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/tonga_census.py", line 403, in main
+    books = {key: workbook(url) for key, url in URLS.items()}
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/tonga_census.py", line 403, in <dictcomp>
+    books = {key: workbook(url) for key, url in URLS.items()}
+                  ^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_common.py", line 40, in workbook
+    return openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 346, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/zipfile.py", line 1330, in __init__
+    self._RealGetContents()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/zipfile.py", line 1397, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
