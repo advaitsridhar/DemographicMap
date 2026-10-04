@@ -1,3 +1,8 @@
-https://gis.dukcapil.kemendagri.go.id/arcgis/rest/services?f=json: URLError: <urlopen error timed out>
-https://gis.dukcapil.kemendagri.go.id/peta/: URLError: <urlopen error timed out>
-https://gis.dukcapil.kemendagri.go.id/server/rest/services?f=json: URLError: <urlopen error timed out>
+korea_ages: Ministry of the Interior and Safety, resident registration population by single year of age and sex, every city, county and district, December 2025 (주민등록 인구통계, 연령별 인구현황, jumin.mois.go.kr)
+  reading the kept jumin_age_202512_sigungu.json
+  13 branch offices (출장소) listed with nobody registered, skipped
+  294 rows: 17 provinces, 229 districts, 35 districts of cities skipped (their city carries them)
+  17 provinces and 229 districts add up, age by age; 51,117,378 registered people (the file prints no national row)
+  South Jeolla 영광군 (Yeonggwang-gun): no polygon; counted in its province only
+  245 records: 17 provinces, 228 districts; district medians 40.9-64.7; the register's national median 47.4
+  wrote data/processed/korea_ages.json (774 kB)
