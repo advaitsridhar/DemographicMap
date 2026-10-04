@@ -21,6 +21,32 @@ class ByLevel(unittest.TestCase):
             self.assertEqual(eurostat.by_level([{"country": "PRT", "name": "Alto Minho"}]), [])
 
 
+class LevelFromOutlines(unittest.TestCase):
+    def test_a_tied_country_takes_the_level_its_outlines_placed(self):
+        # Albania: names tie between levels; 11 placed at admin1, Lezhe left.
+        placed = [{"id": f"EU-AL0{i}", "country": "ALB", "level": "admin1"} for i in range(11)]
+        left = [{"id": "EU-AL014", "country": "ALB", "level": "admin2"}]
+        with mock.patch.object(eurostat, "log"):
+            out = eurostat.level_from_outlines(placed, left, {})
+        self.assertEqual(out, {"EU-AL014": "admin1"})
+
+    def test_a_decided_row_keeps_its_level(self):
+        placed = [{"id": "EU-X1", "country": "ESP", "level": "admin2"}]
+        left = [{"id": "EU-X2", "country": "ESP", "level": "admin2"}]
+        self.assertEqual(eurostat.level_from_outlines(placed, left, {"EU-X2": "admin1"}),
+                         {"EU-X2": "admin1"})
+
+    def test_too_few_placed_or_mixed_levels_settle_nothing(self):
+        few = [{"id": "EU-P1", "country": "PRT", "level": "admin1"}]
+        left = [{"id": f"EU-P{i}", "country": "PRT", "level": "admin2"} for i in range(2, 4)]
+        self.assertEqual(eurostat.level_from_outlines(few, left, {}), {})
+        mixed = [{"id": "EU-M1", "country": "MKD", "level": "admin1"},
+                 {"id": "EU-M2", "country": "MKD", "level": "admin2"},
+                 {"id": "EU-M3", "country": "MKD", "level": "admin1"}]
+        self.assertEqual(eurostat.level_from_outlines(mixed, [{"id": "EU-M4", "country": "MKD",
+                                                               "level": "admin2"}], {}), {})
+
+
 class JoinedUnits(unittest.TestCase):
     def test_a_region_holding_a_drawn_unit_and_more_is_left_out(self):
         from scripts.fetch_census import cod_ps
