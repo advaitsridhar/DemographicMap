@@ -496,9 +496,15 @@ def classify(code: str, walk: Crosswalk, population: dict[str, float],
             f"boundary correction may move -- and a gemeente's figure is never split"), "changed")
     dark = sorted(table[i]["name"] for i in whole if table[i]["total"] is None)
     if dark:
-        return Unit(code, whole, foreign, moved, events, (
-            f"CBS printed no figure for {' and '.join(dark)}: fewer than {MINIMUM} of its people "
-            f"answered in 2010-2014"), "suppressed")
+        names = sorted(table[i]["name"] for i in whole)
+        if len(names) > 1:
+            text = (f"covers what in 2014 were the gemeenten {', '.join(names[:-1])} and "
+                    f"{names[-1]}, and CBS printed no figure for {' or '.join(dark)}, with fewer "
+                    f"than {MINIMUM} respondents in 2010-2014, so their union has none")
+        else:
+            text = (f"is the gemeente of 2014, for which CBS printed no figure: it had fewer than "
+                    f"{MINIMUM} respondents in 2010-2014")
+        return Unit(code, whole, foreign, moved, events, text, "suppressed")
     return Unit(code, whole, foreign, moved, events, None)
 
 
@@ -696,7 +702,7 @@ def build(tolerance: float = TOLERANCE) -> list[dict[str, Any]]:
                     shape_id=shape["id"], aliases=[shape["name"]] if shape["name"] != name else [])
         if unit.reason:
             why[unit.kind] += 1
-            said = f"{name} {unit.reason}" if unit.kind == "changed" else unit.reason
+            said = f"{name} {unit.reason}"
             log(f"  {name} ({code}): no figure -- {said}")
             records.append(record(
                 f"NLD-CBS-EBB-REL-{code}", name, codes={"cbs_gemeente": code}, **base,

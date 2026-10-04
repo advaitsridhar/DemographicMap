@@ -343,6 +343,57 @@ class Binding(unittest.TestCase):
         self.assertNotIn(None, codes)
 
 
+class AgesOnAnOlderDate(unittest.TestCase):
+    """03759ned by gemeente gives single years to 94 and then "95 jaar of
+    ouder" on 1 January 2014, where 2022 runs to 104 and "105 jaar of ouder"
+    (probe of 4 October 2026: Almere's single years fell 82 short of its
+    total, the 82 aged 95 or over). Shrunk here to four single years."""
+
+    META = {
+        "DataProperties": [{"Type": "Topic", "Key": "Pop_1"}],
+        "Geslacht": [{"Key": "T", "Title": "Totaal mannen en vrouwen"},
+                     {"Key": "M", "Title": "Mannen"}, {"Key": "V", "Title": "Vrouwen"}],
+        "Leeftijd": [{"Key": "TOT", "Title": "Totaal"},
+                     *({"Key": f"A{n}", "Title": f"{n} jaar"} for n in range(4)),
+                     {"Key": "T2", "Title": "2 jaar of ouder"},
+                     {"Key": "T4", "Title": "4 jaar of ouder"}],
+        "BurgerlijkeStaat": [{"Key": "BT", "Title": "Totaal burgerlijke staat"}],
+    }
+
+    def read(self, rows):
+        from unittest import mock
+        from fetch_census import netherlands_gemeente as nld
+
+        def fake(table, path, params=None):
+            return rows if path == "TypedDataSet" else self.META[path]
+        with mock.patch.object(nld, "odata", fake):
+            return nld.read_ages(["GM0001"], period="2014JJ00")
+
+    @staticmethod
+    def rows(values):
+        return [{"RegioS": "GM0001", "Geslacht": sex, "Leeftijd": age, "Pop_1": value}
+                for (sex, age), value in values.items()]
+
+    def test_the_open_class_after_the_last_single_year_given_is_counted(self):
+        out = self.read(self.rows({("T", "TOT"): 100, ("M", "A0"): 10, ("M", "A1"): 20,
+                                   ("M", "A2"): None, ("M", "T4"): None, ("M", "T2"): 15,
+                                   ("V", "A0"): 12, ("V", "A1"): 18, ("V", "T2"): 25}))
+        self.assertEqual(dict(out["GM0001"]["m"]), {0: 10, 1: 20, 2: 15})
+        self.assertEqual(dict(out["GM0001"]["f"]), {0: 12, 1: 18, 2: 25})
+
+    def test_where_the_single_years_go_on_it_is_a_subtotal_and_not_counted(self):
+        out = self.read(self.rows({("T", "TOT"): 20, ("M", "A0"): 1, ("M", "A1"): 2, ("M", "A2"): 3,
+                                   ("M", "A3"): 2, ("M", "T4"): 1, ("M", "T2"): 6,
+                                   ("V", "A0"): 2, ("V", "A1"): 2, ("V", "A2"): 3, ("V", "A3"): 3,
+                                   ("V", "T4"): 1, ("V", "T2"): 7}))
+        self.assertEqual(sum(out["GM0001"]["m"].values()) + sum(out["GM0001"]["f"].values()), 20)
+        self.assertEqual(out["GM0001"]["m"][4], 1)
+
+    def test_ages_that_still_do_not_make_the_total_stop_the_run(self):
+        with self.assertRaises(SystemExit):
+            self.read(self.rows({("T", "TOT"): 100, ("M", "A0"): 10, ("V", "A0"): 12}))
+
+
 class TheNote(unittest.TestCase):
 
     def test_a_union_names_its_parts_and_a_small_one_says_low_precision(self):
