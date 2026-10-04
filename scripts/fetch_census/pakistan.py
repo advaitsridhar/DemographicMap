@@ -413,7 +413,80 @@ MERGED: dict[str, tuple[str, ...]] = {
     "KOHISTAN": ("LOWER KOHISTAN", "UPPER KOHISTAN", "KOLAI PALAS KOHISTAN"),
     "KARACHI": ("KARACHI CENTRAL", "KARACHI EAST", "KARACHI SOUTH",
                 "KARACHI WEST", "KORANGI", "MALIR", "KEAMARI"),
+    # The same thing the other way up, and the half this file had wrong.
+    # geoBoundaries draws twelve districts as they were before a newer one was
+    # carved out of them, and the 2023 census counts the two apart. Bound by
+    # name, the shape that kept the old name wore only the remainder's people:
+    # Sheikhupura's polygon, which still holds Nankana Sahib, carried
+    # 4,049,377 against the 5,684,248 who live inside it, and Larkana's 1.78
+    # million had no shape at all -- the polygon geoBoundaries labels
+    # "Qambar Shahdadkot" is the undivided district of before 2004, Larkana
+    # city inside it. Each pair below was placed by the carved-out district's
+    # seat falling inside the drawn polygon (point in polygon, against this
+    # map's own tiles) and by the district's own history, which names the one
+    # parent it was cut from (MERGED_WHY). The key is the census district
+    # whose name the shape still carries, so it is one of its own parts.
+    "MANSEHRA": ("MANSEHRA", "TORGHAR"),
+    "JHANG": ("JHANG", "CHINIOT"),
+    "SHEIKHUPURA": ("SHEIKHUPURA", "NANKANA SAHIB"),
+    "KAMBAR SHAHDAD KOT": ("KAMBAR SHAHDAD KOT", "LARKANA"),
+    "THATTA": ("THATTA", "SUJAWAL"),
+    "KILLA ABDULLAH": ("KILLA ABDULLAH", "CHAMAN"),
+    "LORALAI": ("LORALAI", "DUKI"),
+    "SIBI": ("SIBI", "HARNAI"),
+    "ZHOB": ("ZHOB", "SHERANI"),
+    "JAFFARABAD": ("JAFFARABAD", "SOHBATPUR"),
+    "KALAT": ("KALAT", "SURAB"),
+    "KHARAN": ("KHARAN", "WASHUK"),
 }
+
+# Why each of those shapes is more than one census district, for the note on
+# the record. The first three are divisions geoBoundaries draws whole; the
+# rest are districts it draws as they stood before a split.
+MERGED_WHY: dict[str, str] = {
+    "CHITRAL": "the boundary file draws Chitral undivided; it was split into "
+               "Lower and Upper Chitral in 2018",
+    "KOHISTAN": "the boundary file draws Kohistan undivided; it was split "
+                "into Upper and Lower Kohistan in 2014, and Kolai-Palas was "
+                "cut from Lower Kohistan in 2017",
+    "KARACHI": "the boundary file draws Karachi as one shape; the census counts "
+               "its seven districts",
+    "MANSEHRA": "the boundary file draws Mansehra as it was before Torghar "
+                "(the Kala Dhaka area) became a district of its own in 2011",
+    "JHANG": "the boundary file draws Jhang as it was before Chiniot was "
+             "carved out of it in 2009",
+    "SHEIKHUPURA": "the boundary file draws Sheikhupura as it was before "
+                   "Nankana Sahib was carved out of it in 2005",
+    "KAMBAR SHAHDAD KOT": "the boundary file draws, under the name Qambar "
+                          "Shahdadkot, the undivided Larkana district of "
+                          "before 2004 -- Larkana city lies inside the shape",
+    "THATTA": "the boundary file draws Thatta as it was before Sujawal was "
+              "carved out of it in 2013",
+    "KILLA ABDULLAH": "the boundary file draws Killa Abdullah as it was before "
+                      "Chaman was carved out of it in 2021",
+    "LORALAI": "the boundary file draws Loralai as it was before Duki was "
+               "carved out of it in 2016",
+    "SIBI": "the boundary file draws Sibi as it was before Harnai was carved "
+            "out of it in 2007",
+    "ZHOB": "the boundary file draws Zhob as it was before Sherani was carved "
+            "out of it in 2006",
+    "JAFFARABAD": "the boundary file draws Jaffarabad as it was before "
+                  "Sohbatpur was carved out of it in 2013",
+    "KALAT": "the boundary file draws Kalat as it was before Surab was carved "
+             "out of it in 2017",
+    "KHARAN": "the boundary file draws Kharan as it was before Washuk was "
+              "carved out of it in 2005",
+}
+
+
+def merged_note(name: str, parts: tuple[str, ...]) -> str:
+    """The sentence a summed shape carries, saying which districts and why."""
+    listed = ", ".join(p.title() for p in parts[:-1]) + " and " + parts[-1].title()
+    why = MERGED_WHY.get(name)
+    return (f" This shape is {listed} summed: {why}, and the census counts "
+            f"them apart." if why else
+            f" The boundary file draws one shape here, so this is "
+            f"{', '.join(p.title() for p in parts)} summed.")
 
 
 # Table 9's columns, in the order the numbered header row gives them. Column 1
@@ -750,14 +823,18 @@ def merge(province: str, found: dict[str, dict[str, int]],
             raise SystemExit(
                 f"{province}: {name} is {', '.join(parts)} and only "
                 f"{', '.join(here)} were read")
-        if name in found:
+        # A shape that kept one part's name is assembled under that name, so
+        # the name being in the table is expected; a name that is printed and
+        # is not one of the parts would be counted twice.
+        if name in found and name not in parts:
             raise SystemExit(
                 f"{province}: {name} is both printed in the table and "
                 "assembled from its parts here, so it would be counted twice")
-        found[name] = {column: sum(found[part][column] for part in parts)
-                       for column in columns}
+        summed = {column: sum(found[part][column] for part in parts)
+                  for column in columns}
         for part in parts:
             del found[part]
+        found[name] = summed
         assembled[name] = parts
         log(f"    {name} is one shape in the boundaries: summed "
             f"{len(parts)} districts, {found[name]['TOTAL']:,} people")
@@ -2432,6 +2509,14 @@ def say_ethnicity(records: list[dict[str, Any]]) -> int:
     for row in records:
         if isinstance(row.get("ethnicity"), list):
             continue
+        if is_territory(row):
+            # The two territories' reason is about publication, not the
+            # question: the census's nationality count, which the map carries
+            # on this field for the provinces (pakistan_census_tables), is
+            # published for neither territory.
+            row["ethnicity"] = gap(NOT_AVAILABLE, TERRITORY_NATIONALITY_GAP)
+            said += 1
+            continue
         tongues = row.get("language")
         first = tongues[0] if isinstance(tongues, list) and tongues else None
         note = ETHNICITY_GAP + (
@@ -2439,6 +2524,47 @@ def say_ethnicity(records: list[dict[str, Any]]) -> int:
             if first else ETHNICITY_NO_TONGUE)
         row["ethnicity"] = gap(NOT_COLLECTED, note)
         said += 1
+    return said
+
+
+# The territories' records carry the two age fields' reason too: Table 4, the
+# single years of age by sex, is published for the four provinces and
+# Islamabad and for neither territory, and their own booklets print
+# population without sex or age.
+TERRITORY_AGE_GAP = (
+    "The 7th Population and Housing Census 2023 enumerated Azad Jammu and "
+    "Kashmir and Gilgit-Baltistan apart from the census proper, and the Bureau "
+    "of Statistics publishes no Table 4 (population by single year age and "
+    "sex) for either -- the four provinces and Islamabad have it, at every "
+    "path the office files it under, and these two do not. Gilgit-Baltistan "
+    "at a Glance prints each district's 2017 and 2023 counts with no split by "
+    "sex or age, and the AJ&K Statistical Year Book's census tables are of "
+    "religion and population. So no median age or sex ratio is published for "
+    "this unit.")
+TERRITORY_NATIONALITY_GAP = (
+    "Pakistan's census asks no ethnicity question. What it counts instead is "
+    "nationality (Table 10), which the map carries on this field for the four "
+    "provinces and Islamabad; Azad Jammu and Kashmir and Gilgit-Baltistan were "
+    "enumerated apart from the census proper, and the Bureau of Statistics "
+    "publishes no Table 10 for either, as it publishes no Table 9 or Table 11.")
+
+
+def is_territory(row: dict[str, Any]) -> bool:
+    return any(str(row.get("id", "")).startswith(f"PAK-{slug}")
+               for slug in TERRITORIES)
+
+
+def say_ages(records: list[dict[str, Any]]) -> int:
+    """Give the territories' records the reason their ages are empty."""
+    said = 0
+    for row in records:
+        if not is_territory(row):
+            continue
+        for field in ("median_age", "sex_ratio"):
+            value = row.get(field)
+            if isinstance(value, dict) and value.get("status") and not value.get("note"):
+                row[field] = gap(NOT_AVAILABLE, TERRITORY_AGE_GAP)
+                said += 1
     return said
 
 
@@ -2512,9 +2638,7 @@ def main() -> int:
             parts = {k: v for k, v in counts.items() if k != "TOTAL"}
             note = NOTE + RELIGION_DISTRICT_NOTES.get(name, "")
             if name in assembled:
-                note += (" The boundary file draws one shape here, so this is "
-                         + ", ".join(p.title() for p in assembled[name])
-                         + " summed.")
+                note += merged_note(name, assembled[name])
             said = spoken(tongues[name], name) if name in tongues else {}
             records.append(record(
                 f"PAK-{slug}-{name.lower().replace(' ', '-')}",
@@ -2660,6 +2784,8 @@ def main() -> int:
     # cannot slip past it.
     log(f"  {say_ethnicity(records)} units say why their ethnicity field is "
         f"empty, which is that the census does not ask it")
+    log(f"  {say_ages(records)} territory fields say why no age or sex ratio "
+        f"is published for them")
     bare = [row["id"] for row in records
             if isinstance(row.get("ethnicity"), dict)
             and not row["ethnicity"].get("note")]
