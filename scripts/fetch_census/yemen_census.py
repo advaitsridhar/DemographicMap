@@ -77,6 +77,10 @@ SAME_SHAPE = 0.0005
 # The nationality table and the population table count a governorate within
 # this share of each other, or its nationality is not written.
 NAT_TOLERANCE = 0.005
+# The census's governorates whose own row counts ground the Bureau files under
+# another code: Hadramawt's 2004 row (19) counts the two Socotra districts the
+# Bureau files under Socotra (32), made a governorate in 2013.
+COUNTS_ALSO = {"19": ("32",)}
 
 
 def code_of(row: dict[str, Any]) -> str:
@@ -128,7 +132,14 @@ def projection(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return out
 
 
-def nests(table: dict[str, dict[str, Any]], what: str, slack: float = 0.0) -> None:
+def nests(table: dict[str, dict[str, Any]], what: str, slack: float = 0.0,
+          also: dict[str, tuple[str, ...]] | None = None) -> None:
+    """Districts make their governorate and governorates the country.
+
+    ``also`` names, for a governorate whose own row counts ground the table
+    files under another code, the codes whose districts its row includes.
+    """
+    also = also or {}
     kids: dict[str, float] = defaultdict(float)
     govs = 0.0
     for code, row in table.items():
@@ -136,6 +147,9 @@ def nests(table: dict[str, dict[str, Any]], what: str, slack: float = 0.0) -> No
             kids[code[:2]] += row["total"]
         elif len(code) == 2 and code != "YE":
             govs += row["total"]
+    for gov, extra in also.items():
+        for other in extra:
+            kids[gov] += kids.pop(other, 0.0)
     for gov, made in kids.items():
         check(gov in table, f"yemen_census: {what}: districts of governorate {gov}, "
                             f"which has no row of its own")
@@ -176,8 +190,36 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
     check("2004" in meta, "yemen_census: the workbook's metadata never names 2004")
     cen = census(uscb_table(book, "Census Population")[0])
     proj = projection(uscb_table(book, "Age-Sex Estimates")[0])
-    nests(cen, "census")
+    nests(cen, "census", also=COUNTS_ALSO)
     nests(proj, "projection", slack=0.0005)
+    # A governorate as the map draws it is the sum of the census districts
+    # filed under its code: for Hadramawt that leaves out Socotra, which its
+    # 2004 row counts. Its nationality, published only for the row, is kept
+    # only where the row and the sum are the same ground.
+    sums: dict[str, dict[str, float]] = defaultdict(lambda: {"total": 0.0, "men": 0.0,
+                                                             "women": 0.0})
+    for code, row in cen.items():
+        if len(code) == 4:
+            for k in ("total", "men", "women"):
+                sums[code[:2]][k] += row[k]
+    for gov, made in sums.items():
+        row = cen.get(gov)
+        same = row is not None and round(row["total"]) == round(made["total"])
+        cen[gov] = {"name": row["name"] if row else gov, **made,
+                    "yemeni": row["yemeni"] if same else None,
+                    "foreign": row["foreign"] if same else None,
+                    "note": None if same else (
+                        f" The sum of the {sum(1 for c in cen if len(c) == 4 and c[:2] == gov)} "
+                        f"census districts the governorate is drawn with"
+                        + (f"; the census's own row for it, {row['total']:,.0f}, also counts "
+                           f"ground drawn in another governorate." if row else
+                           "; the governorate was made after the census.")
+                        + " Its nationality, published only for the census's row, is not "
+                          "written.")}
+        if not same:
+            log(f"    governorate {gov}: drawn as the sum of its districts, "
+                f"{made['total']:,.0f}" + (f" (the census row counts {row['total']:,.0f})"
+                                            if row else " (no census row)"))
     log(f"  census: {sum(1 for c in cen if len(c) == 4)} districts, "
         f"{sum(1 for c in cen if len(c) == 2 and c != 'YE')} governorates, "
         f"{cen['YE']['total']:,.0f} people")
@@ -215,7 +257,7 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                 continue
             c = cen[code]
             population = measure(c["total"], year=YEAR, source=SOURCE)
-            population["note"] = "The 2004 census count (16 December 2004)."
+            population["note"] = "The 2004 census count (16 December 2004)." + (c.get("note") or "")
             fields: dict[str, Any] = {}
             if level == "admin1" and c["yemeni"] is not None and c["foreign"] is not None:
                 made = c["yemeni"] + c["foreign"]
