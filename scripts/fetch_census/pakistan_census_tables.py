@@ -195,11 +195,22 @@ def ages_from_pages(pages, slug: str) -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
     current: str | None = None
     block: dict[str, Any] | None = None
+    # Where the label column ends: the left edge of the first figure in the
+    # district's ALL AGES row, which is always the block's first row. A word
+    # left of it is a label word; right of it, a figure.
+    edge: float | None = None
+    # A label whose figures were set a few points lower than it, on a line of
+    # their own. On the first row of a continuation page the repeated district
+    # heading is drawn over the row, and Attock's age 57 comes out as "57"
+    # beside the mangled heading and "1 4,540 7,605 6,935 -" on the next line.
+    pending: re.Match | None = None
     for rows in pages:
         for cells in rows:
             line = line_of(cells)
             name = heading(line, slug)
             if name:
+                if name == current:
+                    continue                   # the heading repeated on a new page
                 if block is not None:
                     raise SystemExit(f"pakistan: Table 4 {current} is interrupted "
                                      f"by {name} before its 75 & ABOVE row")
@@ -209,17 +220,37 @@ def ages_from_pages(pages, slug: str) -> dict[str, dict[str, Any]]:
                 block = {"total": None, "ages": {"T": Counter(), "M": Counter(),
                                                   "F": Counter()},
                          "groups": {}}
+                edge, pending = None, None
                 continue
             if is_subunit(line):
                 if block is not None:
                     raise SystemExit(f"pakistan: Table 4 {current} is interrupted "
                                      f"by '{line}' before its 75 & ABOVE row")
                 continue
-            if block is None:
+            if block is None or is_column_numbers(line):
                 continue
-            match, figures = labelled(cells)
-            if match is None or not figures:
-                continue
+            if edge is None:
+                match, figures = labelled(cells)
+                if match is None or match.group(0) != "ALL AGES" or not figures:
+                    continue
+                words = len(match.group(0).split())
+                edge = cells[words][0] - 1.0
+            else:
+                label_words = [c for c in cells if c[0] < edge]
+                data = [c for c in cells if c[0] >= edge]
+                match = AGE_LABEL.fullmatch(line_of(label_words)) if label_words else None
+                figures = printed(data)
+                if label_words and match is None:
+                    continue                   # a header or a mangled line
+                if match is not None and not figures:
+                    pending = match            # its figures are on the next line
+                    continue
+                if match is None:
+                    if pending is None or not figures:
+                        continue
+                    match, pending = pending, None
+                else:
+                    pending = None
             where = f"Table 4 {current} '{match.group(0)}'"
             persons, males, females = sexes(figures, where)
             label = match.group(0)

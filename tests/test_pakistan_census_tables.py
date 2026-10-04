@@ -25,9 +25,19 @@ def row(*cells: str):
 
 
 def label_row(label: str, *cells: str):
-    """A row whose label is several words (ALL AGES, 00 -- 04)."""
-    words = label.split()
-    return row(*words, *cells)
+    """A table row as the Bureau sets it: the label in its own column at the
+    left margin, each figure in a column of its own at a fixed position."""
+    out, x = [], 10.0
+    for word in label.split():
+        out.append((x, x + 4.0 * len(word), word))
+        x += 4.0 * len(word) + 4.0
+    for i, cell in enumerate(cells):
+        x = 100.0 + 45.0 * i
+        for word in cell.split("^"):
+            width = 4.0 * len(word)
+            out.append((x, x + width, word))
+            x += width
+    return out
 
 
 def block(name: str, ages: dict[int, tuple[int, int]], *, tg: int = 0,
@@ -112,6 +122,27 @@ class TestTable4(unittest.TestCase):
         rows = block("ATTOCK", ages_for())
         cut = len(rows) // 2
         pages = [rows[:cut], [row(*[str(i) for i in range(1, 14)])] + rows[cut:]]
+        out = t.ages_from_pages(pages, "punjab")
+        t.check_ages("ATTOCK", out["ATTOCK"])
+
+    def test_a_label_whose_figures_slipped_to_the_next_line(self):
+        # Attock's age 57, as the first row of a continuation page: the label
+        # beside the repeated heading's mangled glyphs, the figures a few
+        # points lower on a line of their own.
+        rows = block("ATTOCK", ages_for())
+        at = next(i for i, cells in enumerate(rows)
+                  if t.line_of(cells).startswith("57 "))
+        figures = rows[at][1:]
+        rows[at:at + 1] = [[rows[at][0], (300.0, 330.0, "0,781AT"),
+                            (331.0, 340.0, "I,S6T1R7ICT")], figures]
+        out = t.ages_from_pages([rows], "punjab")
+        t.check_ages("ATTOCK", out["ATTOCK"])
+        self.assertEqual(out["ATTOCK"]["ages"]["T"][57], sum(ages_for()[57]))
+
+    def test_the_heading_repeated_on_a_new_page_is_not_a_new_block(self):
+        rows = block("ATTOCK", ages_for())
+        cut = len(rows) // 2
+        pages = [rows[:cut], [row("ATTOCK", "DISTRICT")] + rows[cut:]]
         out = t.ages_from_pages(pages, "punjab")
         t.check_ages("ATTOCK", out["ATTOCK"])
 

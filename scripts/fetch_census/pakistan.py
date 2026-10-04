@@ -2538,10 +2538,9 @@ TERRITORY_AGE_GAP = (
     "of Statistics publishes no Table 4 (population by single year age and "
     "sex) for either -- the four provinces and Islamabad have it, at every "
     "path the office files it under, and these two do not. Gilgit-Baltistan "
-    "at a Glance prints each district's 2017 and 2023 counts with no split by "
-    "sex or age, and the AJ&K Statistical Year Book's census tables are of "
-    "religion and population. So no median age or sex ratio is published for "
-    "this unit.")
+    "at a Glance, the territory's own booklet of the 2023 count, prints each "
+    "district's 2017 and 2023 population with no split by sex or age. So no "
+    "census median age or sex ratio is published for this unit.")
 TERRITORY_NATIONALITY_GAP = (
     "Pakistan's census asks no ethnicity question. What it counts instead is "
     "nationality (Table 10), which the map carries on this field for the four "
