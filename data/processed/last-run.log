@@ -1,10 +1,4 @@
-tonga_census: 2021 Census General Tables 1, 2, 4 and 10
-  https://tongastats.gov.to/download/266/general-tables/8089/1-population-trends.xlsx: 218,239 bytes
-  https://tongastats.gov.to/download/266/general-tables/7660/2-ethnicity.xlsx: 123,497 bytes
-  https://tongastats.gov.to/download/266/general-tables/7664/4-religion.xlsx: 96,551 bytes
-  https://tongastats.gov.to/download/266/general-tables/7665/10-literacy.xlsx: 89,481 bytes
-  Tonga's median age 22.2
-  no polygon: Lulunga (723 people), counted in its division
-  no polygon: Niuatoputapu (718 people), counted in its division
-  26 records: admin1 ethnicity 5, admin1 language 4, admin1 median_age 5, admin1 population 5, admin1 religion 5, admin1 sex_ratio 5, admin2 ethnicity 21, admin2 median_age 21, admin2 population 21, admin2 religion 21, admin2 sex_ratio 21
-  wrote data/processed/tonga_census.json (124 kB)
+  areas bound: 105 of 137 drawn; census areas unused: 52
+  drawn areas the census does not count alone: 30: Abdali; Ardhiya_Hkomeya; El_Kehran_Loloet_Elkheran; El_Noyseep; Elkeran_Elgededa; Elwafra; Elwafra_Elgededa; Magwa; Mina_Doha; North_Shuaiba; Saba_Elahmad; Sebak_Al_Hegen; Sikrab; South Doha; South_Coast_Strip; South_East_Jahra; South_Shuaiba; South_Wista; Sulaibiya_Agricultural_1; Sulaibiya_Agriculture_2; Suwaikh_Commercial; Suwaikh_Educational; Suwaikh_Industrail-1; Suwaikh_Industrial-2; Suwaikh_Industrial-3; Suwaikh_Port; The_Green_Belt; The_Sea_Front; West_Jahra; Wista
+  wrote data/processed/kuwait_census.json (222 kB)
+  wrote kuwait_census.json (111)
