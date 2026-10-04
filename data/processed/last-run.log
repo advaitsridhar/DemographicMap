@@ -1,3 +1,81 @@
-https://www.cis.es//documents/20117/14250083/3577-multi_abs.xlsx/bd39d043-cffc-8a0e-ce55-43d7249a93f1?version=1.0&t=1790163562271&download=true
-  908,445 bytes
-  cannot open: XLRDError: Excel xlsx file; not supported
+  HTTP 200; application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; 908,445 bytes; final https://www.cis.es//documents/20117/14250083/3577-multi_abs.xlsx/bd39d043-cffc-8a0e-ce55-43d7249a93f1?version=1.0&t=1790163562271&download=true
+== https://www.cis.es//documents/20117/14250083/3577-multi_abs.xlsx/bd39d043-cffc-8a0e-ce55-43d7249a93f1?version=1.0&t=1790163562271&download=true
+  908,445 bytes, 16 sheets: Contenidos | Ficha técnica | Tabla ponderaciones | Notas | Resultados | Sexo | Edad | Nivel de estudios | Tamaño de municipio | RV EG23 | Ocupación | Clase social | Escala de ideología | Religiosidad | Nota estimación | Estimación de Voto
+  -- sheet 'Contenidos': first 14 rows
+    r2:  | 3577/0 BARÓMETRO DE SEPT
+    r4: ÍNDICE DE CONTENIDOS |  |  | DESCRIPCION
+    r5: ☞ Ficha técnica | Ficha técnica del estudi |  | Encuesta mensual que ind
+    r6: ☞ Tabla ponderaciones | Tabla de Ponderaciones
+    r7: ☞ Notas | Notas adicionales del es
+    r8: ☞ Resultados | Resumen de marginales
+    r9: ☞ Sexo | Cruce por Sexo de la per
+    r10: ☞ Edad | Cruce por Edad de la per
+    r11: ☞ Nivel de estudios | Cruce por Estudios de la
+    r12: ☞ Tamaño de municipio | Cruce por Tamaño de muni |  | CLASIFICACIÓN
+    r13: ☞ RV EG23 | Cruce por Participación  |  | Colecciones
+    r14: ☞ Ocupación | Cruce por Población acti |  | Barómetros CIS
+  -- sheet 'Ficha técnica': first 14 rows
+    r2:  | 3577/0 BARÓMETRO DE SEPT
+    r3:  | FICHA TÉCNICA DEL ESTUDI
+    r5: FICHA TÉCNICA
+    r7: Ámbito | Nacional (con Ceuta y Me
+    r8: Universo | Población española de am
+    r9: Tamaño de la muestra:
+    r10: Diseñada | 4.000 entrevistas.
+    r11: Realizada | 4.042 entrevistas.
+    r12: Afijación | No proporcional
+    r13:  | Partiendo de una distrib
+    r14: Ponderación | Para tratar la muestra e
+  -- sheet 'Contenidos': 1 rows match /religi|provincia|comunidad.aut/; header and matches
+    r2:  | 3577/0 BARÓMETRO DE SEPT
+    r4: ÍNDICE DE CONTENIDOS |  |  | DESCRIPCION
+    r5: ☞ Ficha técnica | Ficha técnica del estudi |  | Encuesta mensual que ind
+    r6: ☞ Tabla ponderaciones | Tabla de Ponderaciones
+    r7: ☞ Notas | Notas adicionales del es
+    r8: ☞ Resultados | Resumen de marginales
+    r9: ☞ Sexo | Cruce por Sexo de la per
+    r10: ☞ Edad | Cruce por Edad de la per
+    r17: ☞ Religiosidad | Cruce por Religiosidad d |  | 002_003 Conflictos inter
+    r18: ☞ Nota estimación | Nota metodológica estima |  | 006 MEDIO AMBIENTE
+    r19: ☞ Estimación de Voto | Estimación de Voto |  | 006_001 Catástrofes
+  -- sheet 'Ficha técnica': 1 rows match /religi|provincia|comunidad.aut/; header and matches
+    r2:  | 3577/0 BARÓMETRO DE SEPT
+    r3:  | FICHA TÉCNICA DEL ESTUDI
+    r5: FICHA TÉCNICA
+    r7: Ámbito | Nacional (con Ceuta y Me
+    r8: Universo | Población española de am
+    r9: Tamaño de la muestra:
+    r10: Diseñada | 4.000 entrevistas.
+    r15: Puntos de muestreo | 1.211 municipios y 50 pr
+    r16: Procedimiento de muestre | Se ha procedido a la sel
+    r17: Error muestral | Para un nivel de confian
+    r18: Fecha de realización | Del 1 al 4 de septiembre
+  -- sheet 'Tabla ponderaciones': 1 rows match /religi|provincia|comunidad.aut/; header and matches
+    r2:  | 3577/0 BARÓMETRO DE SEPT
+    r3:  | Muestra diseñada, realiz
+    r7:  |  |  | Muestra
+    r8: Código |  | Comunidad autónoma | Diseñada | Realizada | Ponderación | Error (%)
+    r9: 01 |  | Andalucía | 683 | 671 | 1.0933 | 3.9
+    r10: 02 |  | Aragón | 105 | 105 | 1.0376 | 9.8
+    r8: Código |  | Comunidad autónoma | Diseñada | Realizada | Ponderación | Error (%)
+    r9: 01 |  | Andalucía | 683 | 671 | 1.0933 | 3.9
+    r10: 02 |  | Aragón | 105 | 105 | 1.0376 | 9.8
+    r11: 03 |  | Asturias (Principado de) | 100 | 98 | 0.9513 | 10.1
+    r12: 04 |  | Balears (Illes) | 100 | 102 | 0.9751 | 9.9
+    r13: 05 |  | Canarias | 175 | 186 | 1.1702 | 7.3
+    r14: 06 |  | Cantabria | 100 | 98 | 0.5819 | 10.1
+    r15: 07 |  | Castilla-La Mancha | 166 | 172 | 1.1042 | 7.6
+    r16: 08 |  | Castilla y León | 203 | 206 | 1.0622 | 7
+    r17: 09 |  | Cataluña | 584 | 612 | 1.0141 | 4
+    r18: 10 |  | Comunitat Valenciana | 388 | 394 | 1.1529 | 5
+    r19: 11 |  | Extremadura | 100 | 102 | 0.9911 | 9.9
+    r20: 12 |  | Galicia | 235 | 224 | 1.0177 | 6.7
+  -- sheet 'Notas': 1 rows match /religi|provincia|comunidad.aut/; header and matches
+    r2:  | 3577/0 BARÓMETRO DE SEPT
+    r3:  | NOTAS ADICIONALES
+    r5: NOTAS:
+
+A. Los/as entrev
+    r5: NOTAS:
+
+A. Los/as entrev
