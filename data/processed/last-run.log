@@ -1,78 +1,55 @@
-https://stats-sdmx-disseminate.pacificdata.org/rest/dataflow/SPC/DF_HHCOUNTS/1.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 232,720 bytes
-  [0]   codelist= (0 codes) 
-  [0]   codelist= (0 codes) 
-  [1] FREQ  codelist=CL_COM_FREQ (7 codes) 1 constrained
-                     X  Non-periodic
-                     A  Annual
-                     Q  Quarterly
-                     M  Monthly
-                     D  Daily
-                     W  Weekly
-                     S  Semestrial
-  [2] TIME_PERIOD  codelist= (0 codes) 0 constrained
-  [3] GEO_PICT  codelist=CL_COM_GEO_PICT (219 codes) 213 constrained
-                    _T  Pacific region
-                   MEL  Melanesia
-                   MIC  Micronesia
-                   POL  Polynesia
-                    AS  American Samoa
-                  AS-1  Eastern
-                  AS-2  Manu'a
-                  AS-3  Unorganized
-                  AS-4  Western
-                    CK  Cook Islands
-                  CK-1  Northern Group
-                  CK-2  Rarotonga
-                  CK-3  Southern Group
-                    FJ  Fiji
-                  FJ-1  Central
-                  FJ-2  Eastern
-                  FJ-3  Northern
-                  FJ-5  Western
-                    FM  Micronesia (Federated States of)
-                  FM-1  Chuuk
-                  FM-2  Kosrae
-                  FM-3  Pohnpei
-                  FM-4  Yap
-                    GU  Guam
-                  GU-1  Agana Heights
-                  GU-2  Agat
-                  GU-3  Asan
-                  GU-4  Barrigada
-                  GU-5  Chalan-Pago-Ordot
-                  GU-6  Dededo
-                  GU-7  Hagåtña
-                  GU-8  Inarajan
-                  GU-9  Mangilao
-                 GU-10  Merizo
-                 GU-11  Mongmong-Toto-Maite
-                 GU-12  Piti
-                 GU-13  Santa Rita
-                 GU-14  Sinajana
-                 GU-15  Talofofo
-                 GU-16  Tamuning
-                 GU-17  Umatac
-                 GU-18  Yigo
-                 GU-19  Yona
-                    KI  Kiribati
-                  KI-1  Banaba
-                  KI-2  Makin
-                  KI-3  Butaritari
-                  KI-4  Marakei
-                  KI-5  Abaiang
-                  KI-6  Nth.Tarawa
-                  KI-7  Sth.Tarawa
-                  KI-8  Maiana
-                  KI-9  Abemama
-                 KI-10  Kuria
-                 KI-11  Aranuka
-                 KI-12  Nonouti
-                 KI-13  Tabiteuea.Nth
-                 KI-14  Tabiteuea.Sth
-                 KI-15  Beru
-                 KI-16  Nikunau
-  [4] INDICATOR  codelist=CL_HHCOUNTS_INDICATORS (3 codes) 3 constrained
-                   NHH  Number of households
-                   POP  Population
-                  HHSZ  Average household size
+https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G02_SA2/1.0.0?references=all
+  HTTP 200 application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1 3,304,424 bytes
+  [1] MEDAVG  codelist=CL_C21_MEDAVG01 (8 codes) 8 constrained
+                     1  Median age of persons
+                     2  Median total personal income ($/weekly)
+                     3  Median total family income ($/weekly)
+                     4  Median total household income ($/weekly)
+                     5  Median mortgage repayment ($/monthly)
+                     6  Median rent ($/weekly)
+                     7  Average number of persons per bedroom
+                     8  Average household size
+  [2] REGION  codelist=CL_ASGS_2021 (2985 codes) 2981 constrained
+                   AUS  Australia
+                     1  New South Wales
+                 1GSYD  Greater Sydney
+                   102  Central Coast
+                 10201  Gosford
+             102011028  Avoca Beach - Copacabana
+             102011029  Box Head - MacMasters Beach
+             102011030  Calga - Kulnura
+             102011031  Erina - Green Point
+             102011032  Gosford - Springfield
+             102011033  Kariong
+             102011034  Kincumber - Picketts Valley
+             102011035  Narara
+             102011036  Niagara Park - Lisarow
+             102011037  Point Clare - Koolewong
+  [3] REGION_TYPE  codelist=CL_REGION_TYPE (43 codes) 6 constrained
+                   AUS  Australia
+                   STE  States and Territories
+                   SA4  Statistical Area Level 4
+                   SA3  Statistical Area Level 3
+                   SA2  Statistical Area Level 2
+                   SA1  Statistical Area Level 1
+                    RA  Remoteness Area
+                   SOS  Section of State
+                  SOSR  Section of State Ranges
+                    UC  Urban Centres
+                    UL  Urban Locations
+                  IREG  Indigenous Regions
+                  IARE  Indigenous Areas
+                  ILOC  Indigenous Locations
+                 GCCSA  Greater Capital City Statistical Areas
+  [4] STATE  codelist=CL_STATE (10 codes) 10 constrained
+                   AUS  Australia
+                     1  New South Wales
+                     2  Victoria
+                     3  Queensland
+                     4  South Australia
+                     5  Western Australia
+                     6  Tasmania
+                     7  Northern Territory
+                     8  Australian Capital Territory
+                     9  Other Territories
+  [5] TIME_PERIOD  codelist= (0 codes) 0 constrained
