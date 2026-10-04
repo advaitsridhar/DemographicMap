@@ -1,512 +1,342 @@
-probe_ckan: 2 host(s), timeout 20s
-  https://data.opendevelopmentcambodia.net/ -> 200 text/html "Dataset OD Mekong Datahub"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.9
-    package_search q='census' -> 200, 531 matches, 60 shown, printing those matching '(?i)(census|population|district|commune|srok|khan)'
-      - census-results-in-brief-laos-population-census-2005-and-1995: Census results in brief (Laos population census 2005 and 1995)  [1 res: pdf]
-          PDF datastore=False f54fadc4-8dca-4c0a-a9a8-a6a12f88657c https://data.opendevelopmentmekong.net/dataset/126050ca-c1b1-4fd9-a6f4-53b9c499ca87/resource/f54fadc4-8dca-4c0a-a9a8-a6a12f88657c/download/update-population-2005.pdf
-      - myanmar-census-atlas: Myanmar Census Atlas  [1 res: pdf]
-          PDF datastore=False 0f2ca8c7-3f5c-40ea-8c00-fc0f9be6a2fc https://data.opendevelopmentmekong.net/dataset/1cf43794-c093-4a98-a4c5-66e3fbdb0d32/resource/0f2ca8c7-3f5c-40ea-8c00-fc0f9be6a2fc/download/myanmarcensusatlaslowres.pdf
-      - census-of-agriculture-cambodia-2023-national-report-on-final-census-results: Census of Agriculture Cambodia 2023: National report on final census results  [2 res: pdf]
-          PDF datastore=False 49ea7cd2-114f-47e5-9140-f7e654dabe87 https://data.opendevelopmentcambodia.net/en/dataset/03c77439-dc4b-4798-bcf6-02bc0a643a3c/resource/49ea7cd2-114f-47e5-9140-f7e654dabe87/download/1-cac2023-main-report_kh.pdf
-          PDF datastore=False 4cf70b80-482c-4756-905f-e8629d6d85e6 https://data.opendevelopmentcambodia.net/en/dataset/03c77439-dc4b-4798-bcf6-02bc0a643a3c/resource/4cf70b80-482c-4756-905f-e8629d6d85e6/download/2-cac2023-main-report_en.pdf
-      - the-2003-agricultural-census-thailand: The 2003 agricultural census (Thailand)  [1 res: url]
-          URL datastore=False 125b1612-ec5f-420f-928a-62a3e37506c1 http://web.nso.go.th/en/census/agricult/cen_agri03-1.htm
-      - census-2014---population-prod2: Census 2014 - Population Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 9aa6aeaf-5a4e-4a42-83ac-f8429ef9b722 https://data.opendevelopmentmekong.net/dataset/48feb92b-adf5-4b78-b168-f03d7bf161ec/resource/9aa6aeaf-5a4e-4a42-83ac-f8429ef9b722/download/cs14_population_20190511.csv
-          XLSX datastore=False 9886680b-37d6-4e57-93c9-0e1259f8a501 https://data.opendevelopmentmekong.net/dataset/48feb92b-adf5-4b78-b168-f03d7bf161ec/resource/9886680b-37d6-4e57-93c9-0e1259f8a501/download/cs14_population_20190511.xlsx
-          TXT datastore=False e33d1329-ce34-462e-87a9-18bca6195880 https://data.opendevelopmentmekong.net/dataset/48feb92b-adf5-4b78-b168-f03d7bf161ec/resource/e33d1329-ce34-462e-87a9-18bca6195880/download/codebook_cs14_population.txt
-      - census-2014---age-prod2: Census 2014 - Age Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False cf065b45-faa1-44c7-b99a-1d4a0727657f https://data.opendevelopmentmekong.net/dataset/f20407e1-de91-4b08-bf7f-3b69964e4e7e/resource/cf065b45-faa1-44c7-b99a-1d4a0727657f/download/cs14_age_20190513.csv
-          XLSX datastore=False 0f25be15-5c87-41c3-8eb1-72204fd9639c https://data.opendevelopmentmekong.net/dataset/f20407e1-de91-4b08-bf7f-3b69964e4e7e/resource/0f25be15-5c87-41c3-8eb1-72204fd9639c/download/cs14_age_20190513.xlsx
-          TXT datastore=False 56e3380d-5118-4817-8dd4-45b400b6cb40 https://data.opendevelopmentmekong.net/dataset/f20407e1-de91-4b08-bf7f-3b69964e4e7e/resource/56e3380d-5118-4817-8dd4-45b400b6cb40/download/codebook_cs14_age.txt
-      - census-2014---households-prod2: Census 2014 - Households Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 2ba8b612-6ad4-4ab4-a52c-e2bb0cc2c141 https://data.opendevelopmentmekong.net/dataset/c7228f0f-3132-43e6-a248-b7626fa3d22a/resource/2ba8b612-6ad4-4ab4-a52c-e2bb0cc2c141/download/cs14_households_20191011.csv
-          XLSX datastore=False b6d8adaa-3cf3-44f5-973d-dec188bf8553 https://data.opendevelopmentmekong.net/dataset/c7228f0f-3132-43e6-a248-b7626fa3d22a/resource/b6d8adaa-3cf3-44f5-973d-dec188bf8553/download/cs14_households_20191011.xlsx
-          TXT datastore=False f60a7b97-0159-4d6b-8f5b-e3f63eede8cf https://data.opendevelopmentmekong.net/dataset/c7228f0f-3132-43e6-a248-b7626fa3d22a/resource/f60a7b97-0159-4d6b-8f5b-e3f63eede8cf/download/codebook_cs14_households.txt
-      - census-2014---sanitation-prod2: Census 2014 - Sanitation Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 167193d6-72af-4452-8908-c47895036d96 https://data.opendevelopmentmekong.net/dataset/dc51c7a8-ff77-4bf0-bd45-6fb78591aa89/resource/167193d6-72af-4452-8908-c47895036d96/download/cs14_sanitation_20190510.csv
-          XLSX datastore=False 2b36204f-6307-4183-87be-2cc56a748b82 https://data.opendevelopmentmekong.net/dataset/dc51c7a8-ff77-4bf0-bd45-6fb78591aa89/resource/2b36204f-6307-4183-87be-2cc56a748b82/download/cs14_sanitation_20190510.xlsx
-          TXT datastore=False c376679a-e4f4-4f97-a844-eda6def10abc https://data.opendevelopmentmekong.net/dataset/dc51c7a8-ff77-4bf0-bd45-6fb78591aa89/resource/c376679a-e4f4-4f97-a844-eda6def10abc/download/codebook_cs14_sanitation.txt
-      - census-2014---phone-prod2: Census 2014 - Phone Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 9685d279-4923-4f76-bb3c-c79e7a9c5ab0 https://data.opendevelopmentmekong.net/dataset/c5197a4b-c1e8-487b-adaa-f7ad158ce8ba/resource/9685d279-4923-4f76-bb3c-c79e7a9c5ab0/download/cs14_phone_20190510.csv
-          XLSX datastore=False e97b37e1-1edb-4157-97e6-f5c617542602 https://data.opendevelopmentmekong.net/dataset/c5197a4b-c1e8-487b-adaa-f7ad158ce8ba/resource/e97b37e1-1edb-4157-97e6-f5c617542602/download/cs14_phone_20190510.xlsx
-          TXT datastore=False 6d09c7ea-d27e-4336-8014-445fed9d23c0 https://data.opendevelopmentmekong.net/dataset/c5197a4b-c1e8-487b-adaa-f7ad158ce8ba/resource/6d09c7ea-d27e-4336-8014-445fed9d23c0/download/codebook_cs14_phone.txt
-      - census-2014---motor-prod2: Census 2014 - Motor Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 20fc6534-7ce9-4d24-9b7a-58c999f93422 https://data.opendevelopmentmekong.net/dataset/dd936621-5368-4ddb-ada5-894522f02787/resource/20fc6534-7ce9-4d24-9b7a-58c999f93422/download/cs14_motor_20190510.csv
-          XLSX datastore=False 8bb6e2b9-3de6-4ff3-9424-584fb5ad04f1 https://data.opendevelopmentmekong.net/dataset/dd936621-5368-4ddb-ada5-894522f02787/resource/8bb6e2b9-3de6-4ff3-9424-584fb5ad04f1/download/cs14_motor_20190510.xlsx
-          TXT datastore=False e2d75189-ac1a-4aa0-8f17-0a3dd25a7cca https://data.opendevelopmentmekong.net/dataset/dd936621-5368-4ddb-ada5-894522f02787/resource/e2d75189-ac1a-4aa0-8f17-0a3dd25a7cca/download/codebook_cs14_motor.txt
-      - census-2014---light-prod2: Census 2014 - Light Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False df32822e-4a66-4fa1-b151-6deef04fd727 https://data.opendevelopmentmekong.net/dataset/55e75569-c53f-4eea-8b4e-343a8622f691/resource/df32822e-4a66-4fa1-b151-6deef04fd727/download/cs14_light_20190510.csv
-          XLSX datastore=False 0c97f3e4-9438-465c-a705-65ff9033ea52 https://data.opendevelopmentmekong.net/dataset/55e75569-c53f-4eea-8b4e-343a8622f691/resource/0c97f3e4-9438-465c-a705-65ff9033ea52/download/cs14_light_20190510.xlsx
-          TXT datastore=False b2d3bf5e-8920-49fa-91ac-28b87fa95190 https://data.opendevelopmentmekong.net/dataset/55e75569-c53f-4eea-8b4e-343a8622f691/resource/b2d3bf5e-8920-49fa-91ac-28b87fa95190/download/codebook_cs14_light.txt
-      - census-2014---floor-prod2: Census 2014 - Floor Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False ec1576dc-c8f2-4959-8b2a-88e3f5245188 https://data.opendevelopmentmekong.net/dataset/cea6e2e4-71c5-484c-bdb9-a8b99cfabef8/resource/ec1576dc-c8f2-4959-8b2a-88e3f5245188/download/cs14_floor_20190510.csv
-          XLSX datastore=False ffca9c21-44d7-4eb4-a97b-ab8a22369523 https://data.opendevelopmentmekong.net/dataset/cea6e2e4-71c5-484c-bdb9-a8b99cfabef8/resource/ffca9c21-44d7-4eb4-a97b-ab8a22369523/download/cs14_floor_20190510.xlsx
-          TXT datastore=False 8f47a848-85c3-4088-8a9a-b08b8a86d7f4 https://data.opendevelopmentmekong.net/dataset/cea6e2e4-71c5-484c-bdb9-a8b99cfabef8/resource/8f47a848-85c3-4088-8a9a-b08b8a86d7f4/download/codebook_cs14_floor.txt
-      - census-2014---tv-prod2: Census 2014 - TV Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 4f894ce9-a419-46ec-ae43-03368698ab0f https://data.opendevelopmentmekong.net/dataset/ce6d9d22-65ea-494c-95fd-d77505087144/resource/4f894ce9-a419-46ec-ae43-03368698ab0f/download/cs14_tv_20190510.csv
-          XLSX datastore=False 01c4eb00-07cd-483d-9596-350237eb7370 https://data.opendevelopmentmekong.net/dataset/ce6d9d22-65ea-494c-95fd-d77505087144/resource/01c4eb00-07cd-483d-9596-350237eb7370/download/cs14_tv_20190510.xlsx
-          TXT datastore=False cc8d7139-cb19-4558-a082-c5063e062161 https://data.opendevelopmentmekong.net/dataset/ce6d9d22-65ea-494c-95fd-d77505087144/resource/cc8d7139-cb19-4558-a082-c5063e062161/download/codebook_cs14_tv.txt
-      - census-2014---radio-prod2: Census 2014 - Radio Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 645962af-15cc-4c89-9c69-7a5f43048c19 https://data.opendevelopmentmekong.net/dataset/bd3ab697-5e09-4baf-ab2d-656add20ab4d/resource/645962af-15cc-4c89-9c69-7a5f43048c19/download/cs14_radio_20190510.csv
-          XLSX datastore=False e03490fe-dc96-47f4-8e01-3467c3f23522 https://data.opendevelopmentmekong.net/dataset/bd3ab697-5e09-4baf-ab2d-656add20ab4d/resource/e03490fe-dc96-47f4-8e01-3467c3f23522/download/cs14_radio_20190510.xlsx
-          TXT datastore=False f2a28efd-21fb-4a8e-a013-4ddca49cfb4c https://data.opendevelopmentmekong.net/dataset/bd3ab697-5e09-4baf-ab2d-656add20ab4d/resource/f2a28efd-21fb-4a8e-a013-4ddca49cfb4c/download/codebook_cs14_radio.txt
-      - census-2014---bike-prod2: Census 2014 - Bike Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False c7450f7c-220e-4ae3-b891-12c3cc21cac2 https://data.opendevelopmentmekong.net/dataset/67ea6c15-04d9-42ff-aa24-6429abb4c4ca/resource/c7450f7c-220e-4ae3-b891-12c3cc21cac2/download/cs14_bike_20190510.csv
-          XLSX datastore=False 86e71dac-3d2e-4d84-9747-e038e1238b54 https://data.opendevelopmentmekong.net/dataset/67ea6c15-04d9-42ff-aa24-6429abb4c4ca/resource/86e71dac-3d2e-4d84-9747-e038e1238b54/download/cs14_bike_20190510.xlsx
-          TXT datastore=False e3a3b094-9b20-4288-9e8d-c656f5aaaca1 https://data.opendevelopmentmekong.net/dataset/67ea6c15-04d9-42ff-aa24-6429abb4c4ca/resource/e3a3b094-9b20-4288-9e8d-c656f5aaaca1/download/codebook_cs14_bike.txt
-      - census-2008: Population census 2008  [11 res: csv,jpeg,shp,wms]
-          SHP datastore=False 939608e9-4b1f-404b-8174-f0d6be609ecb https://data.opendevelopmentcambodia.net/km/dataset/c70a9555-2918-4455-a144-9716a96fc3da/resource/939608e9-4b1f-404b-8174-f0d6be609ecb/download/shp_census_2008.zip
-          CSV datastore=True 4b99aba0-ce2d-4790-8d74-8fb30f83f5b7 https://data.opendevelopmentcambodia.net/km/dataset/c70a9555-2918-4455-a144-9716a96fc3da/resource/4b99aba0-ce2d-4790-8d74-8fb30f83f5b7/download/csv_census_2008.zip
-          WMS datastore=False f288ee25-1f3a-4a36-9b82-5bb28a159079 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_provinces_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_provinces_kh
-          WMS datastore=False f38f17f8-7a9f-46de-9d0f-e9e3a7875d8e https://data.opendevelopmentmekong.net/geoserver/ODCambodia/Census_2008_by_provinces/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3ACensus_2008_by_provinces
-          WMS datastore=False 14a84a3e-5893-4596-8686-c03cd2e44216 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_districts_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_districts_kh
-          WMS datastore=False 349ffa1d-1b5a-456c-8df6-9f42d7cce240 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_districts/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_districts
-          WMS datastore=False 83240aad-4e61-4449-9fca-b3fa1181050d https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_communes_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_communes_kh
-          WMS datastore=False ecffc02b-21da-4a84-a0e9-81180bb92d8e https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/census_2008_by_commune/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:census_2008_by_commune
-          WMS datastore=False 986945ff-28aa-4cf0-8f5e-bc54dde8159a https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_villages_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_villages_kh
-          WMS datastore=False 7535cdee-665e-4dbf-9d59-36918ca8722c https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_villages/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_villages
-          JPEG datastore=False a206e972-6f11-41a5-b432-f63e72ca18ef https://data.opendevelopmentcambodia.net/km/dataset/c70a9555-2918-4455-a144-9716a96fc3da/resource/a206e972-6f11-41a5-b432-f63e72ca18ef/download/census_2008.jpg
-      - census-1998: Population census 1998  [15 res: csv,db_table,jpeg,shp,wms]
-          SHP datastore=False e9369d74-95db-463a-bfb8-232ce85c82d7 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/e9369d74-95db-463a-bfb8-232ce85c82d7/download/shp_census_1998.zip
-          CSV datastore=True 14acec99-2330-406a-9b6e-ccc675f15b89 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/14acec99-2330-406a-9b6e-ccc675f15b89/download/csv_census_1998.zip
-          SHP datastore=False 18d6f08b-339d-4473-88dc-5bf658676a8d https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/18d6f08b-339d-4473-88dc-5bf658676a8d/download/census_1998_provinces.zip
-          DB_TABLE datastore=True 22e25b6b-4f59-451c-bbb6-bce1e8506b8e https://data.opendevelopmentmekong.net/datastore/dump/22e25b6b-4f59-451c-bbb6-bce1e8506b8e
-          WMS datastore=False ebcf52cf-bbc5-4204-9bb3-de18ced0b3e0 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/census-1998/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Acensus-1998
-          SHP datastore=False 6fc1eb5f-6f2d-4417-a52e-8777b032a0be https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/6fc1eb5f-6f2d-4417-a52e-8777b032a0be/download/census_1998_districts.zip
-          DB_TABLE datastore=True cdc26291-45af-4084-a5e1-5622e799f9c8 https://data.opendevelopmentmekong.net/datastore/dump/cdc26291-45af-4084-a5e1-5622e799f9c8
-          WMS datastore=False 11385408-fa9d-4eb6-82d1-8654988a3e1f https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/district/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Adistrict
-          SHP datastore=False 99c55b5c-4ae3-47cc-8303-b101f287d398 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/99c55b5c-4ae3-47cc-8303-b101f287d398/download/census_1998_communes.zip
-          DB_TABLE datastore=True 38083477-c570-4f01-b877-f05dfcc69172 https://data.opendevelopmentmekong.net/datastore/dump/38083477-c570-4f01-b877-f05dfcc69172
-          WMS datastore=False 21dee684-150b-4a3f-b1ac-66809bfcf137 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/99c55b5c-4ae3-47cc-8303-b101f287d398/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3A99c55b5c-4ae3-47cc-8303-b101f287d398
-          SHP datastore=False 398f518c-855b-4b1d-a2be-a7f570b95db8 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/398f518c-855b-4b1d-a2be-a7f570b95db8/download/census_1998_villages.zip
-          DB_TABLE datastore=True 31779447-1561-4eca-a66b-785aa18d3abc https://data.opendevelopmentmekong.net/datastore/dump/31779447-1561-4eca-a66b-785aa18d3abc
-          WMS datastore=False b4e2231a-3d01-421f-b43e-9674db30990c https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/village/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Avillage
-          JPEG datastore=False bb3530e5-7345-422d-916d-7131f074fc85 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/bb3530e5-7345-422d-916d-7131f074fc85/download/census_1998_provinces.jpg
-      - mylaff-4415-1: 1931 Burma Population Census  [1 res: pdf]
-          PDF datastore=False bfdb7f49-31ac-4199-ae5f-4c76db6bb585 http://www.mylaff.org/document/download/4415
-      - economic-census-2011: Economic census 2011  [12 res: csv,db_table,jpeg,shp,sqlite,wms]
-          SHP datastore=False 469c49f2-a91d-434c-8420-235790448ade https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/469c49f2-a91d-434c-8420-235790448ade/download/shp_economic_census_2011.zip
-          CSV datastore=True 84298178-e25b-494f-8ba6-559a01c69b4e https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/84298178-e25b-494f-8ba6-559a01c69b4e/download/csv_economic_census_2011.zip
-          SQLITE datastore=False 47a2a6e6-1143-4a79-90df-bd5d4b32a2bc https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/47a2a6e6-1143-4a79-90df-bd5d4b32a2bc/download/province-2011.sqlite
-          DB_TABLE datastore=True 5a3eb097-69ec-46c9-b6ff-647ca36ac7a0 https://data.opendevelopmentcambodia.net/km/datastore/dump/5a3eb097-69ec-46c9-b6ff-647ca36ac7a0
-          WMS datastore=False 7ebd44cf-a69e-4052-b717-c11a1be3e2ed https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/province-2011/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Aprovince-2011
-          SHP datastore=False d73e6fb0-15f4-421e-890b-c60fbd0ef464 https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/d73e6fb0-15f4-421e-890b-c60fbd0ef464/download/district-2011.zip
-          DB_TABLE datastore=True ac9dc43f-7726-4885-a418-9830a88a4acb https://data.opendevelopmentcambodia.net/km/datastore/dump/ac9dc43f-7726-4885-a418-9830a88a4acb
-          WMS datastore=False 4e107b99-9285-41e0-8d06-15bb9e5ff4db https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/District-2011/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3ADistrict-2011
-          SHP datastore=False 8a313b92-7b1f-4409-9128-866be1f7a48f https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/8a313b92-7b1f-4409-9128-866be1f7a48f/download/commune-2011.zip
-          DB_TABLE datastore=True 4cc9ca8e-983e-4333-a079-fd2549289bf2 https://data.opendevelopmentcambodia.net/km/datastore/dump/4cc9ca8e-983e-4333-a079-fd2549289bf2
-          WMS datastore=False bcddbb31-18f8-4f94-bf0a-7863f839cd17 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Commune-2011/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3ACommune-2011
-          JPEG datastore=False e71f7d0e-ca7b-4afa-aade-f44e401023bb https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/e71f7d0e-ca7b-4afa-aade-f44e401023bb/download/economic_census_2011.jpg
-      - general-population-census-of-the-kingdom-of-cambodia-2019-national-report-on-final-census-results: General population census of the Kingdom of Cambodia 2019 national report on final census results  [6 res: jpeg,pdf]
-          PDF datastore=False 14606f72-fa2d-49a8-b10b-93c75daf5b59 https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/14606f72-fa2d-49a8-b10b-93c75daf5b59/download/final_general_population_census_kh__2019.pdf
-          PDF datastore=False dd6f15e0-0d7a-4ca7-b660-cbe42213f4ff https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/dd6f15e0-0d7a-4ca7-b660-cbe42213f4ff/download/final_general_population_census_en__2019.pdf
-          JPEG datastore=False dc6f9bb8-48e4-4329-ad1d-07216cc024a6 https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/dc6f9bb8-48e4-4329-ad1d-07216cc024a6/download/figures-at-a-glance_khmer.jpg
-          JPEG datastore=False ccc6c3fe-4f30-4771-9a2e-ad1638581fc8 https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/ccc6c3fe-4f30-4771-9a2e-ad1638581fc8/download/figures-at-a-glance_english.jpg
-          JPEG datastore=False 69f84bf1-4a86-4559-b5ef-5d5fd63dba5e https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/69f84bf1-4a86-4559-b5ef-5d5fd63dba5e/download/population-change_khmer.jpg
-          JPEG datastore=False a57850e9-cc8a-4cce-a733-bdbdb78d523c https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/a57850e9-cc8a-4cce-a733-bdbdb78d523c/download/population-change_english.jpg
-      - national-report-on-final-census-result-of-economic-census-of-cambodia-2022: National report on the final census result of the economic census of Cambodia 2022  [2 res: pdf]
-          PDF datastore=False acd577b1-cfae-4f28-8b77-ba196f8ab11f https://data.opendevelopmentcambodia.net/km/dataset/bf29f282-703c-4cd6-9b3c-50424c39b151/resource/acd577b1-cfae-4f28-8b77-ba196f8ab11f/download/economic_censue_kh__2022.pdf
-          PDF datastore=False fd345f84-ec3c-4196-9621-b7faeb548378 https://data.opendevelopmentcambodia.net/km/dataset/bf29f282-703c-4cd6-9b3c-50424c39b151/resource/fd345f84-ec3c-4196-9621-b7faeb548378/download/economic_census_en__2022.pdf
-      - general-population-census-of-cambodia-2008-national-report-on-final-census-results: General Population Census of Cambodia 2008 National Report on Final Census Results  [1 res: pdf]
-          PDF datastore=False 1a95f8c4-dcde-41b5-9d62-20486f20b6f0 https://data.opendevelopmentcambodia.net/dataset/31f573aa-f90a-4bea-b128-c46fd076cded/resource/1a95f8c4-dcde-41b5-9d62-20486f20b6f0/download/9df3e4ca-d66b-4e91-9720-fb20d0e32488.pdf
-      - population-census-lao-pdr-20051: Population Census Lao PDR 2005  [1 res: pdf]
-          PDF datastore=False 9f24c10c-6234-47fe-a7c7-409c5dea994d https://data.opendevelopmentmekong.net/dataset/af8f9e99-8d9b-484b-9301-321da2051ae7/resource/9f24c10c-6234-47fe-a7c7-409c5dea994d/download/lao-census-updatepopulation2005.pdf
-      - lao-census-of-agriculture-2010-11-highlights: Lao census of agriculture 2010/11 highlights  [1 res: pdf]
-          PDF datastore=False 5b6adae9-78b1-4031-a690-fdcc1f6817b0 https://data.opendevelopmentmekong.net/dataset/6dbf2be8-9334-4fff-888a-61f2c79a0598/resource/5b6adae9-78b1-4031-a690-fdcc1f6817b0/download/lao-agriculture-census20102011english.pdf
-      - census-2014---marital-status-prod2: Census 2014 - Marital Status Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False ad40bae1-ee9a-45db-8775-14fe707d5d83 https://data.opendevelopmentmekong.net/dataset/d59fd253-a2af-47d2-af04-c964ecfd65a3/resource/ad40bae1-ee9a-45db-8775-14fe707d5d83/download/cs14_maritalstatus15_20190511.csv
-          XLSX datastore=False 8b3164fb-0ba4-4cd4-a36d-998393c13eec https://data.opendevelopmentmekong.net/dataset/d59fd253-a2af-47d2-af04-c964ecfd65a3/resource/8b3164fb-0ba4-4cd4-a36d-998393c13eec/download/cs14_maritalstatus15_20190511.xlsx
-          TXT datastore=False ed6bb6ba-823c-47ec-a7ae-5076c9aab0e7 https://data.opendevelopmentmekong.net/dataset/d59fd253-a2af-47d2-af04-c964ecfd65a3/resource/ed6bb6ba-823c-47ec-a7ae-5076c9aab0e7/download/codebook_cs14_maritalstatus15.txt
-      - census-2014---drinking-water-prod2: Census 2014 - Drinking Water Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False f54da11c-2d75-42d7-8dbf-1f7e7a35996c https://data.opendevelopmentmekong.net/dataset/a32cbf4b-d038-49c7-b15a-0952cfc9163c/resource/f54da11c-2d75-42d7-8dbf-1f7e7a35996c/download/cs14_drinkingwater_20190510.csv
-          XLSX datastore=False 33d6d20e-9976-456c-a42e-ad27f942c316 https://data.opendevelopmentmekong.net/dataset/a32cbf4b-d038-49c7-b15a-0952cfc9163c/resource/33d6d20e-9976-456c-a42e-ad27f942c316/download/cs14_drinkingwater_20190510.xlsx
-          TXT datastore=False 3514d55d-c4bf-43a3-a132-9c394ad80ef9 https://data.opendevelopmentmekong.net/dataset/a32cbf4b-d038-49c7-b15a-0952cfc9163c/resource/3514d55d-c4bf-43a3-a132-9c394ad80ef9/download/codebook_cs14_drinkingwater.txt
-      - census-2014---cooking-fuel-prod2: Census 2014 - Cooking Fuel Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 94bfe2a5-3940-4205-9573-c6ab7c9161a7 https://data.opendevelopmentmekong.net/dataset/37dc09ec-87f6-430d-8158-568b621e6701/resource/94bfe2a5-3940-4205-9573-c6ab7c9161a7/download/cs14_cookingfuel_20190510.csv
-          XLSX datastore=False e82100e8-4cc5-4e86-9ef0-900fe88ad18a https://data.opendevelopmentmekong.net/dataset/37dc09ec-87f6-430d-8158-568b621e6701/resource/e82100e8-4cc5-4e86-9ef0-900fe88ad18a/download/cs14_cookingfuel_20190510.xlsx
-          TXT datastore=False 6a4dc7e5-b50f-4c49-86e0-e35d3d9b64f1 https://data.opendevelopmentmekong.net/dataset/37dc09ec-87f6-430d-8158-568b621e6701/resource/6a4dc7e5-b50f-4c49-86e0-e35d3d9b64f1/download/codebook_cs14_cookingfuel.txt
-      - census-2014---walking-disability-prod2: Census 2014 - Walking Disability Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 058dc114-2b18-42c8-bf4d-57cd8bc8d6e9 https://data.opendevelopmentmekong.net/dataset/7e0aa9fd-ea9a-44c2-8bac-755629d4eaac/resource/058dc114-2b18-42c8-bf4d-57cd8bc8d6e9/download/cs14_walkingdisability_20190510.csv
-          XLSX datastore=False e19b71cd-0b51-4e6f-8c9c-211b142ba73e https://data.opendevelopmentmekong.net/dataset/7e0aa9fd-ea9a-44c2-8bac-755629d4eaac/resource/e19b71cd-0b51-4e6f-8c9c-211b142ba73e/download/cs14_walkingdisability_20190510.xlsx
-          TXT datastore=False 3385b5ec-8e50-49f9-9701-eba598fe61ec https://data.opendevelopmentmekong.net/dataset/7e0aa9fd-ea9a-44c2-8bac-755629d4eaac/resource/3385b5ec-8e50-49f9-9701-eba598fe61ec/download/codebook_cs14_walkingdisability.txt
-      - census-2014---seeing-disability-prod2: Census 2014 - Seeing Disability Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 9f6da9d1-f0c4-487d-9d1a-dc88d49fcdb2 https://data.opendevelopmentmekong.net/dataset/58a51704-597b-4dd2-9a2a-4daa5ba51d74/resource/9f6da9d1-f0c4-487d-9d1a-dc88d49fcdb2/download/cs14_seeingdisability_20190510.csv
-          XLSX datastore=False 57e7a84e-a43e-4932-8d16-9b5a894008dd https://data.opendevelopmentmekong.net/dataset/58a51704-597b-4dd2-9a2a-4daa5ba51d74/resource/57e7a84e-a43e-4932-8d16-9b5a894008dd/download/cs14_seeingdisability_20190510.xlsx
-          TXT datastore=False 28769baf-b122-4362-8cf8-ae55821abf9f https://data.opendevelopmentmekong.net/dataset/58a51704-597b-4dd2-9a2a-4daa5ba51d74/resource/28769baf-b122-4362-8cf8-ae55821abf9f/download/codebook_cs14_seeingdisability.txt
-      - census-2014---remembering-disability-prod2: Census 2014 - Remembering Disability Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False ba39cf95-cb26-4248-bd3b-50aa46979c96 https://data.opendevelopmentmekong.net/dataset/b45913eb-ff21-427b-9a7e-612d57553dbd/resource/ba39cf95-cb26-4248-bd3b-50aa46979c96/download/cs14_rememberingdisability_20190510.csv
-          XLSX datastore=False e1a7c2df-01f2-46a2-a6c8-9989a6fc275b https://data.opendevelopmentmekong.net/dataset/b45913eb-ff21-427b-9a7e-612d57553dbd/resource/e1a7c2df-01f2-46a2-a6c8-9989a6fc275b/download/cs14_rememberingdisability_20190510.xlsx
-          TXT datastore=False c9dfdc97-f945-4b3c-9794-e7687d864a18 https://data.opendevelopmentmekong.net/dataset/b45913eb-ff21-427b-9a7e-612d57553dbd/resource/c9dfdc97-f945-4b3c-9794-e7687d864a18/download/codebook_cs14_rememberingdisability.txt
-      - economic-census-of-cambodia-2022: Economic census of Cambodia 2022  [5 res: csv,db_table,jpeg,sqlite,wms]
-          sqlite datastore=False c02ee37d-989d-43a9-8048-655d41f13ea7 https://data.opendevelopmentcambodia.net/km/dataset/4fc806c8-e7e8-4408-9b60-faa8081aa303/resource/c02ee37d-989d-43a9-8048-655d41f13ea7/download/economic_census_2022.sqlite
-          DB_TABLE datastore=True 21b882db-153a-4b51-85aa-1674bf5adb2e https://data.opendevelopmentcambodia.net/km/datastore/dump/21b882db-153a-4b51-85aa-1674bf5adb2e
-          WMS datastore=False fb9c16d8-1d16-4abe-9bfc-82d4bb28eef1 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/economic_census_2022/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Aeconomic_census_2022
-          CSV datastore=True 85acd18b-679b-42e0-a118-bf05e0dfb19b https://data.opendevelopmentcambodia.net/km/dataset/4fc806c8-e7e8-4408-9b60-faa8081aa303/resource/85acd18b-679b-42e0-a118-bf05e0dfb19b/download/economic-census-2022-attribute.csv
-          JPEG datastore=False 5c6504e2-aeea-4db2-9439-70f3c5a9dddf https://data.opendevelopmentcambodia.net/km/dataset/4fc806c8-e7e8-4408-9b60-faa8081aa303/resource/5c6504e2-aeea-4db2-9439-70f3c5a9dddf/download/economic-census-2022.jpeg
-      - census-2014---hearing-disability-prod2: Census 2014 - Hearing Disability Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False db4893fa-de47-4f18-859a-7142555f8640 https://data.opendevelopmentmekong.net/dataset/5d70b7e4-9a00-4262-bcd0-135e4c3cc2b4/resource/db4893fa-de47-4f18-859a-7142555f8640/download/cs14_hearingdisability_20190510.csv
-          XLSX datastore=False fd514329-0720-4da3-a3bd-b45d64764260 https://data.opendevelopmentmekong.net/dataset/5d70b7e4-9a00-4262-bcd0-135e4c3cc2b4/resource/fd514329-0720-4da3-a3bd-b45d64764260/download/cs14_hearingdisability_20190510.xlsx
-          TXT datastore=False e53fc2b7-b252-4345-acf9-9a835e471dc2 https://data.opendevelopmentmekong.net/dataset/5d70b7e4-9a00-4262-bcd0-135e4c3cc2b4/resource/e53fc2b7-b252-4345-acf9-9a835e471dc2/download/codebook_cs14_hearingdisability.txt
-      - census-2014---non-drinking-water-prod2: Census 2014 - Non Drinking Water Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False f7b8a730-44a1-4889-9404-59224409014a https://data.opendevelopmentmekong.net/dataset/9aff92be-f748-4637-a063-728503edf477/resource/f7b8a730-44a1-4889-9404-59224409014a/download/cs14_nondrinkingwater_20190510.csv
-          XLSX datastore=False 136d6b37-1d54-4300-ae0a-74d6679cfdea https://data.opendevelopmentmekong.net/dataset/9aff92be-f748-4637-a063-728503edf477/resource/136d6b37-1d54-4300-ae0a-74d6679cfdea/download/cs14_nondrinkingwater_20190510.xlsx
-          TXT datastore=False e46446b9-aefa-4d2f-96a3-0c4cd37f19b7 https://data.opendevelopmentmekong.net/dataset/9aff92be-f748-4637-a063-728503edf477/resource/e46446b9-aefa-4d2f-96a3-0c4cd37f19b7/download/codebook_cs14_nondrinkingwater.txt
-      - economic-census-in-the-kingdom-of-cambodia-2022: Economic census in the Kingdom of Cambodia 2022  [1 res: pdf]
-          PDF datastore=False 5e558c48-f016-409b-b1ca-6990745de8ea https://data.opendevelopmentcambodia.net/km/dataset/88e54330-6deb-43c2-a667-047f50522762/resource/5e558c48-f016-409b-b1ca-6990745de8ea/download/economic_census_cambodia__00.12.2022.pdf.pdf
-      - census-2014---literacy-rate-over-15-year-old--prod2: Census 2014 - Literacy Rate (over 15 year old) Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False ef9a723c-2df0-4fb6-8c87-cd618f04628e https://data.opendevelopmentmekong.net/dataset/25caa9bb-4254-49dc-bff1-e7e0a68c1195/resource/ef9a723c-2df0-4fb6-8c87-cd618f04628e/download/cs14_literacyrate15_20190510.csv
-          XLSX datastore=False 88559260-3e73-4267-8546-fa84c90e2140 https://data.opendevelopmentmekong.net/dataset/25caa9bb-4254-49dc-bff1-e7e0a68c1195/resource/88559260-3e73-4267-8546-fa84c90e2140/download/cs14_literacyrate15_20190510.xlsx
-          TXT datastore=False 34e30870-7c80-4440-9df1-028769a287e8 https://data.opendevelopmentmekong.net/dataset/25caa9bb-4254-49dc-bff1-e7e0a68c1195/resource/34e30870-7c80-4440-9df1-028769a287e8/download/codebook_cs14_literacyrate15.txt
-      - population-census-2019-final-population-totals: Population census 2019 (Final population totals)  [7 res: db_table,jpeg,sqlite,wms]
-          SQLITE datastore=False 8aa65700-32b1-445d-8a1f-d616eff9e9a5 https://data.opendevelopmentcambodia.net/dataset/f64ebfd0-73f5-4595-9288-cbd078063754/resource/8aa65700-32b1-445d-8a1f-d616eff9e9a5/download/final_census2019_en.sqlite
-          DB_TABLE datastore=True 6095b312-5e7d-4723-8cab-9631a38a2f21 https://data.opendevelopmentcambodia.net/datastore/dump/6095b312-5e7d-4723-8cab-9631a38a2f21
-          WMS datastore=False 57803859-0219-418c-b62b-0386ba396806 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/final_census2019_en/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Afinal_census2019_en
-          SQLITE datastore=False 95814bb0-66fd-462e-ba0c-5c0c2b67473b https://data.opendevelopmentcambodia.net/dataset/f64ebfd0-73f5-4595-9288-cbd078063754/resource/95814bb0-66fd-462e-ba0c-5c0c2b67473b/download/final_census2019_kh.sqlite
-          DB_TABLE datastore=True 14669168-54bc-416c-8bea-d6e51e5227e8 https://data.opendevelopmentcambodia.net/datastore/dump/14669168-54bc-416c-8bea-d6e51e5227e8
-          WMS datastore=False 1e047940-3114-48d7-b3e3-1d3797bcabb1 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/final_census2019_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Afinal_census2019_kh
-          JPEG datastore=False 513279f9-7f42-4dd0-8ca9-438dafa958b3 https://data.opendevelopmentcambodia.net/dataset/f64ebfd0-73f5-4595-9288-cbd078063754/resource/513279f9-7f42-4dd0-8ca9-438dafa958b3/download/final-census-2019.jpg
-      - census-2014---activity-status-15-64-year-old-prod2: Census 2014 - Activity Status (15-64 year-old) Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 0559e673-2bf5-4086-be87-40413bf03dc9 https://data.opendevelopmentmekong.net/dataset/bdc2638e-ccb0-47f1-8307-58207817e2c8/resource/0559e673-2bf5-4086-be87-40413bf03dc9/download/cs14_activitystatus1564_20190511.csv
-          XLSX datastore=False f5168f94-2e54-4b92-9b37-91bbeed411ba https://data.opendevelopmentmekong.net/dataset/bdc2638e-ccb0-47f1-8307-58207817e2c8/resource/f5168f94-2e54-4b92-9b37-91bbeed411ba/download/cs14_activitystatus1564_20190511.xlsx
-          TXT datastore=False b820b71e-a79b-4bc7-a979-93eda6bbd2cf https://data.opendevelopmentmekong.net/dataset/bdc2638e-ccb0-47f1-8307-58207817e2c8/resource/b820b71e-a79b-4bc7-a979-93eda6bbd2cf/download/codebook_cs14_activitystatus1564_20190511.txt
-      - census-2014---activity-status-10-14-year-old-prod2: Census 2014 - Activity Status (10-14 year-old) Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False bf13b6ea-e368-4dc1-9792-c08e7ab381dc https://data.opendevelopmentmekong.net/dataset/b071fb76-a1bc-4b1f-8b03-f59e4104af5f/resource/bf13b6ea-e368-4dc1-9792-c08e7ab381dc/download/cs14_activitystatus1014_20190511.csv
-          XLSX datastore=False ef2d6b24-a858-4f10-95c9-9028177ae0dd https://data.opendevelopmentmekong.net/dataset/b071fb76-a1bc-4b1f-8b03-f59e4104af5f/resource/ef2d6b24-a858-4f10-95c9-9028177ae0dd/download/cs14_activitystatus1014_20190511.xlsx
-          TXT datastore=False c55e829e-aee5-480b-a7e9-10518fb9ffe6 https://data.opendevelopmentmekong.net/dataset/b071fb76-a1bc-4b1f-8b03-f59e4104af5f/resource/c55e829e-aee5-480b-a7e9-10518fb9ffe6/download/codebook_cs14_activitystatus1014_20190511.txt
-      - lao-population-and-housing-census-2015-general-demographic: Lao Population and Housing Census 2015  [17 res: shp,wms,xlsx]
-          SHP datastore=False 476e5d08-c7ef-4647-90f7-b5b6e3c822f5 https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/476e5d08-c7ef-4647-90f7-b5b6e3c822f5/download/laos_population_census_2015.zip
-          XLSX datastore=True 130665a5-1e64-477a-a756-51fa65eeec02 https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/130665a5-1e64-477a-a756-51fa65eeec02/download/lao-population-census-2015.xlsx
-          WMS datastore=False fec898f3-d2c6-44c7-9973-da775edd7caa https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Census_2015 u_pop_density/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Census_2015 u_pop_density
-          WMS datastore=False 6fe4bef2-b6de-4fab-8841-06eb7352cc28 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_water_source_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_water_source_main
-          WMS datastore=False 70e86952-378b-4b82-8d9c-73fe234d183b https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_energy_cooking_type_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_energy_cooking_type_main
-          WMS datastore=False 3a41b68b-b03a-4ddf-a040-ce38a7ec9796 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_eth_cat/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_eth_cat
-          WMS datastore=False a2d10419-7c3a-4029-8a70-20fb64a25bc4 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_head_f_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_head_f_pct
-          WMS datastore=False b92228d2-c914-4456-a6c4-6a72b69a78c9 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_w_electricity_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_w_electricity_pct
-          WMS datastore=False 31a3317b-c544-4fe4-afac-ad997732180c https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_with_disabled/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_with_disabled
-          WMS datastore=False 626df1fe-98a0-4775-a2c4-817a938db2fe https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_with_farm_land_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_with_farm_land_pct
-          WMS datastore=False 5f73028b-1e7d-411a-878d-71612ac84423 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_literacy_rate_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_literacy_rate_pct
-          WMS datastore=False eaa734df-5dd9-4cee-9eed-335f80ca90b4 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_literacy_sex_ratio/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_literacy_sex_ratio
-          WMS datastore=False eff56adb-4d73-4126-95e2-63954897c29b https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_pop_activity_unemployed/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_pop_activity_unemployed
-          WMS datastore=False c6eec362-1031-4080-8934-b09e2202c307 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_pop_econ_active_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_pop_econ_active_pct
-          WMS datastore=False 2ad1172a-b8b5-467b-87ae-3a5b28e9e366 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_poverty_incidence/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_poverty_incidence
-          WMS datastore=False 8c8ce827-8312-48e6-ab5b-aca836e80d70 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_sex_ratio/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_sex_ratio
-          WMS datastore=False 63a04d22-c17b-421b-bff4-dcf727d834df https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_toilet_type_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_toilet_type_main
-      - myanmar-population-2019: Myanmar Census 2019: Population, WASH and Education  [18 res: db_table,shp,sqlite,wms]
-          SHP datastore=False 70f1ab08-346f-47d0-ab7e-b4375a4017f3 https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/70f1ab08-346f-47d0-ab7e-b4375a4017f3/download/myanmar_population_2019.zip
-          DB_TABLE datastore=True 50dd506d-4889-4949-8cbf-00def3a3e6a8 https://data.opendevelopmentmekong.net/datastore/dump/50dd506d-4889-4949-8cbf-00def3a3e6a8
-          WMS datastore=False 3e489ca1-eda2-4254-8436-1539ddde1e5f https://data.opendevelopmentmekong.net/geoserver/ODMekong/Myanmar_Population_2019/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3AMyanmar_Population_2019
-          SHP datastore=False 92a7ce3d-f241-48fa-9d47-ec6cea54011f https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/92a7ce3d-f241-48fa-9d47-ec6cea54011f/download/myanmar_population_2019__mm.zip
-          DB_TABLE datastore=True abe6dee5-90b5-4124-8530-ab48d921319a https://data.opendevelopmentmekong.net/datastore/dump/abe6dee5-90b5-4124-8530-ab48d921319a
-          WMS datastore=False df3da166-72fd-46a4-86fb-f007ac5691c5 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Myanmar_Population_2019__MM/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3AMyanmar_Population_2019__MM
-          sqlite datastore=False 8249f8a3-fce4-4a3d-b587-9c266ea1ab68 https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/8249f8a3-fce4-4a3d-b587-9c266ea1ab68/download/myanmar_education_en.sqlite
-          DB_TABLE datastore=True 7d63d4e3-fef5-42fd-97d7-693c50bf9c18 https://data.opendevelopmentmekong.net/datastore/dump/7d63d4e3-fef5-42fd-97d7-693c50bf9c18
-          WMS datastore=False 47fdcb59-dcab-498f-8fb0-6e58cc482185 https://data.opendevelopmentmekong.net/geoserver/ODMekong/myanmar_education_en/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3Amyanmar_education_en
-          sqlite datastore=False 98c98ecc-6eb7-42db-b467-ffb26205832a https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/98c98ecc-6eb7-42db-b467-ffb26205832a/download/myanmar_education_mm.sqlite
-          DB_TABLE datastore=True b62fb837-c64c-4cb5-8354-0e22878d9fb6 https://data.opendevelopmentmekong.net/datastore/dump/b62fb837-c64c-4cb5-8354-0e22878d9fb6
-          WMS datastore=False ab0f62a0-b992-452a-959b-7760b4818f2d https://data.opendevelopmentmekong.net/geoserver/ODMekong/myanmar_education_mm/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3Amyanmar_education_mm
-          sqlite datastore=False 05e456dd-9ef9-4044-997d-2126f4a728bd https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/05e456dd-9ef9-4044-997d-2126f4a728bd/download/myanmar_wash_en.sqlite
-          DB_TABLE datastore=True df08586f-4a60-4659-a4b2-a269c4269394 https://data.opendevelopmentmekong.net/datastore/dump/df08586f-4a60-4659-a4b2-a269c4269394
-          WMS datastore=False 3f52b45f-e714-452c-b8f1-0090f0b25c20 https://data.opendevelopmentmekong.net/geoserver/ODMekong/myanmar_wash_en/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3Amyanmar_wash_en
-          sqlite datastore=False 06d22a6e-48ed-4f75-af57-85ef17d4c804 https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/06d22a6e-48ed-4f75-af57-85ef17d4c804/download/myanmar_wash_mm.sqlite
-          DB_TABLE datastore=True 9a7b31ff-8c11-45fe-8afb-c57af523f2d7 https://data.opendevelopmentmekong.net/datastore/dump/9a7b31ff-8c11-45fe-8afb-c57af523f2d7
-          WMS datastore=False 1a0bace6-f3f7-4a09-903b-c32020c9549a https://data.opendevelopmentmekong.net/geoserver/ODMekong/myanmar_wash_mm/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3Amyanmar_wash_mm
-      - sub-decree-on-agricultural-census-in-cambodia-2013: Sub-Decree on the Agricultural Census in Cambodia 2013  [1 res: pdf]
-          PDF datastore=False 95b1f321-8c48-4ffe-b67a-3e259d15ee55 https://data.opendevelopmentmekong.net/dataset/754b0bb3-94c2-4192-82c0-287a54ced8ae/resource/95b1f321-8c48-4ffe-b67a-3e259d15ee55/download/1439f67e-1959-4cb0-9e70-93c570cd767b.pdf
-      - 2008-general-population-census-plan-of-cambodia: 2008 General population census plan of Cambodia  [1 res: pdf]
-          PDF datastore=False 99d8ab1e-304d-4058-8906-0a1c49c6fd26 https://data.opendevelopmentmekong.net/dataset/b94c5a0a-ce6b-4445-877c-b5722035e1dc/resource/99d8ab1e-304d-4058-8906-0a1c49c6fd26/download/workplan.pdf
-      - current-population-census-of-cambodia-2008: Presentation: Current population census of Cambodia 2008  [1 res: pdf]
-          PDF datastore=False b3930d48-e508-409a-ae26-69559a38f88b https://data.opendevelopmentmekong.net/dataset/e7e0454c-1b99-480c-8837-6514b3dc8d44/resource/b3930d48-e508-409a-ae26-69559a38f88b/download/t1cmbpp.pdf
-      - the-2014-myanmar-population-and-housing-census-sintgaing-township-report: The 2014 Myanmar Population and Housing Census: Sintgaing Township Report  [2 res: pdf]
-          PDF datastore=False 0d518736-b86d-4f0d-a97e-1ae60331a46c https://data.opendevelopmentmyanmar.net/my/dataset/9e4bdb4a-d04a-4823-8ed1-4fdc59128008/resource/0d518736-b86d-4f0d-a97e-1ae60331a46c/download/singaing.pdf
-          PDF datastore=False aa8c5928-59a8-4fa4-8405-a48c11243c15 https://data.opendevelopmentmyanmar.net/my/dataset/9e4bdb4a-d04a-4823-8ed1-4fdc59128008/resource/aa8c5928-59a8-4fa4-8405-a48c11243c15/download/singaing.pdf
-      - the-2014-myanmar-population-and-housing-census-padaung-township-report: The 2014 Myanmar Population and Housing Census: Padaung Township Report  [2 res: pdf]
-          PDF datastore=False dc5e1d29-161a-49dc-a526-c0590a47d6d6 https://data.opendevelopmentmyanmar.net/my/dataset/a4d89187-2688-4ce8-9916-3bedd29762cd/resource/dc5e1d29-161a-49dc-a526-c0590a47d6d6/download/padaung.pdf
-          PDF datastore=False 7277b931-f2f0-47af-b3ec-24c176eee5d4 https://data.opendevelopmentmyanmar.net/my/dataset/a4d89187-2688-4ce8-9916-3bedd29762cd/resource/7277b931-f2f0-47af-b3ec-24c176eee5d4/download/padaung.pdf
-      - the-2014-myanmar-population-and-housing-census-lahe-township-report: The 2014 Myanmar Population and Housing Census: Lahe Township Report  [2 res: pdf]
-          PDF datastore=False a642dde0-fb84-47d6-b2ca-c534b8128491 https://data.opendevelopmentmyanmar.net/my/dataset/f7da9fff-73b4-4f0c-9eac-5856ff621b56/resource/a642dde0-fb84-47d6-b2ca-c534b8128491/download/lehe.pdf
-          PDF datastore=False be02b166-67df-4135-94e6-aa6fda6946f9 https://data.opendevelopmentmyanmar.net/my/dataset/f7da9fff-73b4-4f0c-9eac-5856ff621b56/resource/be02b166-67df-4135-94e6-aa6fda6946f9/download/lehe.pdf
-      - the-2014-myanmar-population-and-housing-census-thegon-township-report: The 2014 Myanmar Population and Housing Census: Thegon Township Report  [1 res: pdf]
-          PDF datastore=False 4b1fc41f-9989-4165-8952-ef1db9a4168c https://data.opendevelopmentmyanmar.net/my/dataset/3793dad2-9940-40a9-a2f8-859494d6e9ad/resource/4b1fc41f-9989-4165-8952-ef1db9a4168c/download/thegon.pdf
-      - the-2014-myanmar-population-and-housing-census-thazi-township-report: The 2014 Myanmar Population and Housing Census: Thazi Township Report  [1 res: pdf]
-          PDF datastore=False aea281c8-d805-45fe-b59a-0e012c0f4df0 https://data.opendevelopmentmyanmar.net/my/dataset/d4de7421-2938-47cc-891d-718b3ce3c523/resource/aea281c8-d805-45fe-b59a-0e012c0f4df0/download/tharzi.pdf
-      - the-2014-myanmar-population-and-housing-census-thayetchaung-township-report: The 2014 Myanmar Population and Housing Census: Thayetchaung Township Report  [1 res: pdf]
-          PDF datastore=False 0f9b11f6-af83-4be3-afbb-dac5f8cc001d https://data.opendevelopmentmyanmar.net/my/dataset/c7f3b733-9c2d-46a0-a855-97e1bf939d23/resource/0f9b11f6-af83-4be3-afbb-dac5f8cc001d/download/thayetchaung.pdf
-      - the-2014-myanmar-population-and-housing-census-thingangyun-township-report: The 2014 Myanmar Population and Housing Census: Thingangyun Township Report  [1 res: pdf]
-          PDF datastore=False c7a1b94c-330e-425c-b9a4-7f9e0277e306 https://data.opendevelopmentmyanmar.net/my/dataset/0bd314fc-4109-4445-a4c8-7b2a573524a4/resource/c7a1b94c-330e-425c-b9a4-7f9e0277e306/download/thingangyun.pdf
-      - the-2014-myanmar-population-and-housing-census-thongwa-township-report: The 2014 Myanmar Population and Housing Census: Thongwa Township Report  [1 res: pdf]
-          PDF datastore=False 21124e0b-1525-415c-a06c-0176339a7c23 https://data.opendevelopmentmyanmar.net/my/dataset/5db01b1b-d15c-4286-a83d-969571f43214/resource/21124e0b-1525-415c-a06c-0176339a7c23/download/thongwa.pdf
-      - the-2014-myanmar-population-and-housing-census-tigyaing-township-report: The 2014 Myanmar Population and Housing Census: Tigyaing Township Report  [1 res: pdf]
-          PDF datastore=False fb0e4886-ed76-44c1-95ba-be64cbaeed15 https://data.opendevelopmentmyanmar.net/my/dataset/47111598-1dea-42f7-9535-90bbc762cfc3/resource/fb0e4886-ed76-44c1-95ba-be64cbaeed15/download/tigyaing.pdf
-      - the-2014-myanmar-population-and-housing-census-tilin-township-report: The 2014 Myanmar Population and Housing Census: Tilin Township Report  [1 res: pdf]
-          PDF datastore=False 662a6094-571f-4e37-9260-5f1821406b5e https://data.opendevelopmentmyanmar.net/my/dataset/ff306e58-9f54-4b39-8bbe-9e23da0e1da7/resource/662a6094-571f-4e37-9260-5f1821406b5e/download/htilin.pdf
-      - the-2014-myanmar-population-and-housing-census-tsawlaw-township-report: The 2014 Myanmar Population and Housing Census: Tsawlaw Township Report  [1 res: pdf]
-          PDF datastore=False 4c3c625b-e8c4-4211-b264-ad80459795e7 https://data.opendevelopmentmyanmar.net/my/dataset/9e3608b5-1652-479b-8665-4507dc9d88ab/resource/4c3c625b-e8c4-4211-b264-ad80459795e7/download/tsawlaw.pdf
-      - the-2014-myanmar-population-and-housing-census-toungup-township-report: The 2014 Myanmar Population and Housing Census: Toungup Township Report  [1 res: pdf]
-          PDF datastore=False eaff657a-4133-4020-8fa1-b62e303f1907 https://data.opendevelopmentmyanmar.net/my/dataset/c3e00f35-5f21-4349-b598-f469a7587376/resource/eaff657a-4133-4020-8fa1-b62e303f1907/download/toungup.pdf
-      - the-2014-myanmar-population-and-housing-census-tonzang-township: The 2014 Myanmar Population and Housing Census: Tonzang Township  [1 res: pdf]
-          PDF datastore=False 8c7d6f99-a8fd-48a9-b7c5-26c683c15c08 https://data.opendevelopmentmyanmar.net/my/dataset/33315fc2-e61c-49e2-997b-6af8c51a4abf/resource/8c7d6f99-a8fd-48a9-b7c5-26c683c15c08/download/tonzang.pdf
-      - the-2014-myanmar-population-and-housing-census-thayet-township-report: The 2014 Myanmar Population and Housing Census: Thayet Township Report  [1 res: pdf]
-          PDF datastore=False 8fd6b3c2-0735-4138-80ad-2c1c683e4af0 https://data.opendevelopmentmyanmar.net/my/dataset/1b072959-0458-439f-9f65-5bab4adb7d3c/resource/8fd6b3c2-0735-4138-80ad-2c1c683e4af0/download/thayet.pdf
-      - the-2014-myanmar-population-and-housing-census-tamu-township-report: The 2014 Myanmar Population and Housing Census: Tamu Township Report  [1 res: pdf]
-          PDF datastore=False 026a9482-7661-407a-b6cd-428abba83c23 https://data.opendevelopmentmyanmar.net/my/dataset/90b5eb90-f7fe-454e-8f8b-64dc34a13b20/resource/026a9482-7661-407a-b6cd-428abba83c23/download/tamu.pdf
-      - the-2014-myanmar-population-and-housing-census-takaung-township-report: The 2014 Myanmar Population and Housing Census: Takaung Township Report  [1 res: pdf]
-          PDF datastore=False 7bbe265f-c2f9-4328-b745-47f4314ee5aa https://data.opendevelopmentmyanmar.net/my/dataset/a7ac6b5e-491b-46ef-baee-e3e6fc1508da/resource/7bbe265f-c2f9-4328-b745-47f4314ee5aa/download/tagaung.pdf
-      - the-2014-myanmar-population-and-housing-census-taikkyi-township-report: The 2014 Myanmar Population and Housing Census: Taikkyi Township Report  [1 res: pdf]
-          PDF datastore=False f3f54d41-b03a-42fd-8ebd-570294831d21 https://data.opendevelopmentmyanmar.net/my/dataset/af2e8390-d9e9-4c0d-bed4-edd4fa643214/resource/f3f54d41-b03a-42fd-8ebd-570294831d21/download/taikkyi.pdf
-  https://data.opendevelopmentmekong.net/ -> 200 text/html "Dataset OD Mekong Datahub"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.9
-    package_search q='census' -> 200, 531 matches, 60 shown, printing those matching '(?i)(census|population|district|commune|srok|khan)'
-      - census-results-in-brief-laos-population-census-2005-and-1995: Census results in brief (Laos population census 2005 and 1995)  [1 res: pdf]
-          PDF datastore=False f54fadc4-8dca-4c0a-a9a8-a6a12f88657c https://data.opendevelopmentmekong.net/dataset/126050ca-c1b1-4fd9-a6f4-53b9c499ca87/resource/f54fadc4-8dca-4c0a-a9a8-a6a12f88657c/download/update-population-2005.pdf
-      - myanmar-census-atlas: Myanmar Census Atlas  [1 res: pdf]
-          PDF datastore=False 0f2ca8c7-3f5c-40ea-8c00-fc0f9be6a2fc https://data.opendevelopmentmekong.net/dataset/1cf43794-c093-4a98-a4c5-66e3fbdb0d32/resource/0f2ca8c7-3f5c-40ea-8c00-fc0f9be6a2fc/download/myanmarcensusatlaslowres.pdf
-      - census-of-agriculture-cambodia-2023-national-report-on-final-census-results: Census of Agriculture Cambodia 2023: National report on final census results  [2 res: pdf]
-          PDF datastore=False 49ea7cd2-114f-47e5-9140-f7e654dabe87 https://data.opendevelopmentcambodia.net/en/dataset/03c77439-dc4b-4798-bcf6-02bc0a643a3c/resource/49ea7cd2-114f-47e5-9140-f7e654dabe87/download/1-cac2023-main-report_kh.pdf
-          PDF datastore=False 4cf70b80-482c-4756-905f-e8629d6d85e6 https://data.opendevelopmentcambodia.net/en/dataset/03c77439-dc4b-4798-bcf6-02bc0a643a3c/resource/4cf70b80-482c-4756-905f-e8629d6d85e6/download/2-cac2023-main-report_en.pdf
-      - the-2003-agricultural-census-thailand: The 2003 agricultural census (Thailand)  [1 res: url]
-          URL datastore=False 125b1612-ec5f-420f-928a-62a3e37506c1 http://web.nso.go.th/en/census/agricult/cen_agri03-1.htm
-      - census-2014---population-prod2: Census 2014 - Population Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 9aa6aeaf-5a4e-4a42-83ac-f8429ef9b722 https://data.opendevelopmentmekong.net/dataset/48feb92b-adf5-4b78-b168-f03d7bf161ec/resource/9aa6aeaf-5a4e-4a42-83ac-f8429ef9b722/download/cs14_population_20190511.csv
-          XLSX datastore=False 9886680b-37d6-4e57-93c9-0e1259f8a501 https://data.opendevelopmentmekong.net/dataset/48feb92b-adf5-4b78-b168-f03d7bf161ec/resource/9886680b-37d6-4e57-93c9-0e1259f8a501/download/cs14_population_20190511.xlsx
-          TXT datastore=False e33d1329-ce34-462e-87a9-18bca6195880 https://data.opendevelopmentmekong.net/dataset/48feb92b-adf5-4b78-b168-f03d7bf161ec/resource/e33d1329-ce34-462e-87a9-18bca6195880/download/codebook_cs14_population.txt
-      - census-2014---age-prod2: Census 2014 - Age Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False cf065b45-faa1-44c7-b99a-1d4a0727657f https://data.opendevelopmentmekong.net/dataset/f20407e1-de91-4b08-bf7f-3b69964e4e7e/resource/cf065b45-faa1-44c7-b99a-1d4a0727657f/download/cs14_age_20190513.csv
-          XLSX datastore=False 0f25be15-5c87-41c3-8eb1-72204fd9639c https://data.opendevelopmentmekong.net/dataset/f20407e1-de91-4b08-bf7f-3b69964e4e7e/resource/0f25be15-5c87-41c3-8eb1-72204fd9639c/download/cs14_age_20190513.xlsx
-          TXT datastore=False 56e3380d-5118-4817-8dd4-45b400b6cb40 https://data.opendevelopmentmekong.net/dataset/f20407e1-de91-4b08-bf7f-3b69964e4e7e/resource/56e3380d-5118-4817-8dd4-45b400b6cb40/download/codebook_cs14_age.txt
-      - census-2014---households-prod2: Census 2014 - Households Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 2ba8b612-6ad4-4ab4-a52c-e2bb0cc2c141 https://data.opendevelopmentmekong.net/dataset/c7228f0f-3132-43e6-a248-b7626fa3d22a/resource/2ba8b612-6ad4-4ab4-a52c-e2bb0cc2c141/download/cs14_households_20191011.csv
-          XLSX datastore=False b6d8adaa-3cf3-44f5-973d-dec188bf8553 https://data.opendevelopmentmekong.net/dataset/c7228f0f-3132-43e6-a248-b7626fa3d22a/resource/b6d8adaa-3cf3-44f5-973d-dec188bf8553/download/cs14_households_20191011.xlsx
-          TXT datastore=False f60a7b97-0159-4d6b-8f5b-e3f63eede8cf https://data.opendevelopmentmekong.net/dataset/c7228f0f-3132-43e6-a248-b7626fa3d22a/resource/f60a7b97-0159-4d6b-8f5b-e3f63eede8cf/download/codebook_cs14_households.txt
-      - census-2014---sanitation-prod2: Census 2014 - Sanitation Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 167193d6-72af-4452-8908-c47895036d96 https://data.opendevelopmentmekong.net/dataset/dc51c7a8-ff77-4bf0-bd45-6fb78591aa89/resource/167193d6-72af-4452-8908-c47895036d96/download/cs14_sanitation_20190510.csv
-          XLSX datastore=False 2b36204f-6307-4183-87be-2cc56a748b82 https://data.opendevelopmentmekong.net/dataset/dc51c7a8-ff77-4bf0-bd45-6fb78591aa89/resource/2b36204f-6307-4183-87be-2cc56a748b82/download/cs14_sanitation_20190510.xlsx
-          TXT datastore=False c376679a-e4f4-4f97-a844-eda6def10abc https://data.opendevelopmentmekong.net/dataset/dc51c7a8-ff77-4bf0-bd45-6fb78591aa89/resource/c376679a-e4f4-4f97-a844-eda6def10abc/download/codebook_cs14_sanitation.txt
-      - census-2014---phone-prod2: Census 2014 - Phone Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 9685d279-4923-4f76-bb3c-c79e7a9c5ab0 https://data.opendevelopmentmekong.net/dataset/c5197a4b-c1e8-487b-adaa-f7ad158ce8ba/resource/9685d279-4923-4f76-bb3c-c79e7a9c5ab0/download/cs14_phone_20190510.csv
-          XLSX datastore=False e97b37e1-1edb-4157-97e6-f5c617542602 https://data.opendevelopmentmekong.net/dataset/c5197a4b-c1e8-487b-adaa-f7ad158ce8ba/resource/e97b37e1-1edb-4157-97e6-f5c617542602/download/cs14_phone_20190510.xlsx
-          TXT datastore=False 6d09c7ea-d27e-4336-8014-445fed9d23c0 https://data.opendevelopmentmekong.net/dataset/c5197a4b-c1e8-487b-adaa-f7ad158ce8ba/resource/6d09c7ea-d27e-4336-8014-445fed9d23c0/download/codebook_cs14_phone.txt
-      - census-2014---motor-prod2: Census 2014 - Motor Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 20fc6534-7ce9-4d24-9b7a-58c999f93422 https://data.opendevelopmentmekong.net/dataset/dd936621-5368-4ddb-ada5-894522f02787/resource/20fc6534-7ce9-4d24-9b7a-58c999f93422/download/cs14_motor_20190510.csv
-          XLSX datastore=False 8bb6e2b9-3de6-4ff3-9424-584fb5ad04f1 https://data.opendevelopmentmekong.net/dataset/dd936621-5368-4ddb-ada5-894522f02787/resource/8bb6e2b9-3de6-4ff3-9424-584fb5ad04f1/download/cs14_motor_20190510.xlsx
-          TXT datastore=False e2d75189-ac1a-4aa0-8f17-0a3dd25a7cca https://data.opendevelopmentmekong.net/dataset/dd936621-5368-4ddb-ada5-894522f02787/resource/e2d75189-ac1a-4aa0-8f17-0a3dd25a7cca/download/codebook_cs14_motor.txt
-      - census-2014---light-prod2: Census 2014 - Light Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False df32822e-4a66-4fa1-b151-6deef04fd727 https://data.opendevelopmentmekong.net/dataset/55e75569-c53f-4eea-8b4e-343a8622f691/resource/df32822e-4a66-4fa1-b151-6deef04fd727/download/cs14_light_20190510.csv
-          XLSX datastore=False 0c97f3e4-9438-465c-a705-65ff9033ea52 https://data.opendevelopmentmekong.net/dataset/55e75569-c53f-4eea-8b4e-343a8622f691/resource/0c97f3e4-9438-465c-a705-65ff9033ea52/download/cs14_light_20190510.xlsx
-          TXT datastore=False b2d3bf5e-8920-49fa-91ac-28b87fa95190 https://data.opendevelopmentmekong.net/dataset/55e75569-c53f-4eea-8b4e-343a8622f691/resource/b2d3bf5e-8920-49fa-91ac-28b87fa95190/download/codebook_cs14_light.txt
-      - census-2014---floor-prod2: Census 2014 - Floor Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False ec1576dc-c8f2-4959-8b2a-88e3f5245188 https://data.opendevelopmentmekong.net/dataset/cea6e2e4-71c5-484c-bdb9-a8b99cfabef8/resource/ec1576dc-c8f2-4959-8b2a-88e3f5245188/download/cs14_floor_20190510.csv
-          XLSX datastore=False ffca9c21-44d7-4eb4-a97b-ab8a22369523 https://data.opendevelopmentmekong.net/dataset/cea6e2e4-71c5-484c-bdb9-a8b99cfabef8/resource/ffca9c21-44d7-4eb4-a97b-ab8a22369523/download/cs14_floor_20190510.xlsx
-          TXT datastore=False 8f47a848-85c3-4088-8a9a-b08b8a86d7f4 https://data.opendevelopmentmekong.net/dataset/cea6e2e4-71c5-484c-bdb9-a8b99cfabef8/resource/8f47a848-85c3-4088-8a9a-b08b8a86d7f4/download/codebook_cs14_floor.txt
-      - census-2014---tv-prod2: Census 2014 - TV Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 4f894ce9-a419-46ec-ae43-03368698ab0f https://data.opendevelopmentmekong.net/dataset/ce6d9d22-65ea-494c-95fd-d77505087144/resource/4f894ce9-a419-46ec-ae43-03368698ab0f/download/cs14_tv_20190510.csv
-          XLSX datastore=False 01c4eb00-07cd-483d-9596-350237eb7370 https://data.opendevelopmentmekong.net/dataset/ce6d9d22-65ea-494c-95fd-d77505087144/resource/01c4eb00-07cd-483d-9596-350237eb7370/download/cs14_tv_20190510.xlsx
-          TXT datastore=False cc8d7139-cb19-4558-a082-c5063e062161 https://data.opendevelopmentmekong.net/dataset/ce6d9d22-65ea-494c-95fd-d77505087144/resource/cc8d7139-cb19-4558-a082-c5063e062161/download/codebook_cs14_tv.txt
-      - census-2014---radio-prod2: Census 2014 - Radio Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 645962af-15cc-4c89-9c69-7a5f43048c19 https://data.opendevelopmentmekong.net/dataset/bd3ab697-5e09-4baf-ab2d-656add20ab4d/resource/645962af-15cc-4c89-9c69-7a5f43048c19/download/cs14_radio_20190510.csv
-          XLSX datastore=False e03490fe-dc96-47f4-8e01-3467c3f23522 https://data.opendevelopmentmekong.net/dataset/bd3ab697-5e09-4baf-ab2d-656add20ab4d/resource/e03490fe-dc96-47f4-8e01-3467c3f23522/download/cs14_radio_20190510.xlsx
-          TXT datastore=False f2a28efd-21fb-4a8e-a013-4ddca49cfb4c https://data.opendevelopmentmekong.net/dataset/bd3ab697-5e09-4baf-ab2d-656add20ab4d/resource/f2a28efd-21fb-4a8e-a013-4ddca49cfb4c/download/codebook_cs14_radio.txt
-      - census-2014---bike-prod2: Census 2014 - Bike Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False c7450f7c-220e-4ae3-b891-12c3cc21cac2 https://data.opendevelopmentmekong.net/dataset/67ea6c15-04d9-42ff-aa24-6429abb4c4ca/resource/c7450f7c-220e-4ae3-b891-12c3cc21cac2/download/cs14_bike_20190510.csv
-          XLSX datastore=False 86e71dac-3d2e-4d84-9747-e038e1238b54 https://data.opendevelopmentmekong.net/dataset/67ea6c15-04d9-42ff-aa24-6429abb4c4ca/resource/86e71dac-3d2e-4d84-9747-e038e1238b54/download/cs14_bike_20190510.xlsx
-          TXT datastore=False e3a3b094-9b20-4288-9e8d-c656f5aaaca1 https://data.opendevelopmentmekong.net/dataset/67ea6c15-04d9-42ff-aa24-6429abb4c4ca/resource/e3a3b094-9b20-4288-9e8d-c656f5aaaca1/download/codebook_cs14_bike.txt
-      - census-2008: Population census 2008  [11 res: csv,jpeg,shp,wms]
-          SHP datastore=False 939608e9-4b1f-404b-8174-f0d6be609ecb https://data.opendevelopmentcambodia.net/km/dataset/c70a9555-2918-4455-a144-9716a96fc3da/resource/939608e9-4b1f-404b-8174-f0d6be609ecb/download/shp_census_2008.zip
-          CSV datastore=True 4b99aba0-ce2d-4790-8d74-8fb30f83f5b7 https://data.opendevelopmentcambodia.net/km/dataset/c70a9555-2918-4455-a144-9716a96fc3da/resource/4b99aba0-ce2d-4790-8d74-8fb30f83f5b7/download/csv_census_2008.zip
-          WMS datastore=False f288ee25-1f3a-4a36-9b82-5bb28a159079 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_provinces_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_provinces_kh
-          WMS datastore=False f38f17f8-7a9f-46de-9d0f-e9e3a7875d8e https://data.opendevelopmentmekong.net/geoserver/ODCambodia/Census_2008_by_provinces/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3ACensus_2008_by_provinces
-          WMS datastore=False 14a84a3e-5893-4596-8686-c03cd2e44216 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_districts_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_districts_kh
-          WMS datastore=False 349ffa1d-1b5a-456c-8df6-9f42d7cce240 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_districts/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_districts
-          WMS datastore=False 83240aad-4e61-4449-9fca-b3fa1181050d https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_communes_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_communes_kh
-          WMS datastore=False ecffc02b-21da-4a84-a0e9-81180bb92d8e https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/census_2008_by_commune/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:census_2008_by_commune
-          WMS datastore=False 986945ff-28aa-4cf0-8f5e-bc54dde8159a https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_villages_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_villages_kh
-          WMS datastore=False 7535cdee-665e-4dbf-9d59-36918ca8722c https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Census_2008_by_villages/wms?service=WMS&request=GetCapabilities&layers=ODCambodia:Census_2008_by_villages
-          JPEG datastore=False a206e972-6f11-41a5-b432-f63e72ca18ef https://data.opendevelopmentcambodia.net/km/dataset/c70a9555-2918-4455-a144-9716a96fc3da/resource/a206e972-6f11-41a5-b432-f63e72ca18ef/download/census_2008.jpg
-      - census-1998: Population census 1998  [15 res: csv,db_table,jpeg,shp,wms]
-          SHP datastore=False e9369d74-95db-463a-bfb8-232ce85c82d7 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/e9369d74-95db-463a-bfb8-232ce85c82d7/download/shp_census_1998.zip
-          CSV datastore=True 14acec99-2330-406a-9b6e-ccc675f15b89 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/14acec99-2330-406a-9b6e-ccc675f15b89/download/csv_census_1998.zip
-          SHP datastore=False 18d6f08b-339d-4473-88dc-5bf658676a8d https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/18d6f08b-339d-4473-88dc-5bf658676a8d/download/census_1998_provinces.zip
-          DB_TABLE datastore=True 22e25b6b-4f59-451c-bbb6-bce1e8506b8e https://data.opendevelopmentmekong.net/datastore/dump/22e25b6b-4f59-451c-bbb6-bce1e8506b8e
-          WMS datastore=False ebcf52cf-bbc5-4204-9bb3-de18ced0b3e0 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/census-1998/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Acensus-1998
-          SHP datastore=False 6fc1eb5f-6f2d-4417-a52e-8777b032a0be https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/6fc1eb5f-6f2d-4417-a52e-8777b032a0be/download/census_1998_districts.zip
-          DB_TABLE datastore=True cdc26291-45af-4084-a5e1-5622e799f9c8 https://data.opendevelopmentmekong.net/datastore/dump/cdc26291-45af-4084-a5e1-5622e799f9c8
-          WMS datastore=False 11385408-fa9d-4eb6-82d1-8654988a3e1f https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/district/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Adistrict
-          SHP datastore=False 99c55b5c-4ae3-47cc-8303-b101f287d398 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/99c55b5c-4ae3-47cc-8303-b101f287d398/download/census_1998_communes.zip
-          DB_TABLE datastore=True 38083477-c570-4f01-b877-f05dfcc69172 https://data.opendevelopmentmekong.net/datastore/dump/38083477-c570-4f01-b877-f05dfcc69172
-          WMS datastore=False 21dee684-150b-4a3f-b1ac-66809bfcf137 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/99c55b5c-4ae3-47cc-8303-b101f287d398/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3A99c55b5c-4ae3-47cc-8303-b101f287d398
-          SHP datastore=False 398f518c-855b-4b1d-a2be-a7f570b95db8 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/398f518c-855b-4b1d-a2be-a7f570b95db8/download/census_1998_villages.zip
-          DB_TABLE datastore=True 31779447-1561-4eca-a66b-785aa18d3abc https://data.opendevelopmentmekong.net/datastore/dump/31779447-1561-4eca-a66b-785aa18d3abc
-          WMS datastore=False b4e2231a-3d01-421f-b43e-9674db30990c https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/village/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Avillage
-          JPEG datastore=False bb3530e5-7345-422d-916d-7131f074fc85 https://data.opendevelopmentmekong.net/dataset/5fea98c9-acdc-4777-b553-81159da6f6b6/resource/bb3530e5-7345-422d-916d-7131f074fc85/download/census_1998_provinces.jpg
-      - mylaff-4415-1: 1931 Burma Population Census  [1 res: pdf]
-          PDF datastore=False bfdb7f49-31ac-4199-ae5f-4c76db6bb585 http://www.mylaff.org/document/download/4415
-      - economic-census-2011: Economic census 2011  [12 res: csv,db_table,jpeg,shp,sqlite,wms]
-          SHP datastore=False 469c49f2-a91d-434c-8420-235790448ade https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/469c49f2-a91d-434c-8420-235790448ade/download/shp_economic_census_2011.zip
-          CSV datastore=True 84298178-e25b-494f-8ba6-559a01c69b4e https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/84298178-e25b-494f-8ba6-559a01c69b4e/download/csv_economic_census_2011.zip
-          SQLITE datastore=False 47a2a6e6-1143-4a79-90df-bd5d4b32a2bc https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/47a2a6e6-1143-4a79-90df-bd5d4b32a2bc/download/province-2011.sqlite
-          DB_TABLE datastore=True 5a3eb097-69ec-46c9-b6ff-647ca36ac7a0 https://data.opendevelopmentcambodia.net/km/datastore/dump/5a3eb097-69ec-46c9-b6ff-647ca36ac7a0
-          WMS datastore=False 7ebd44cf-a69e-4052-b717-c11a1be3e2ed https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/province-2011/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Aprovince-2011
-          SHP datastore=False d73e6fb0-15f4-421e-890b-c60fbd0ef464 https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/d73e6fb0-15f4-421e-890b-c60fbd0ef464/download/district-2011.zip
-          DB_TABLE datastore=True ac9dc43f-7726-4885-a418-9830a88a4acb https://data.opendevelopmentcambodia.net/km/datastore/dump/ac9dc43f-7726-4885-a418-9830a88a4acb
-          WMS datastore=False 4e107b99-9285-41e0-8d06-15bb9e5ff4db https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/District-2011/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3ADistrict-2011
-          SHP datastore=False 8a313b92-7b1f-4409-9128-866be1f7a48f https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/8a313b92-7b1f-4409-9128-866be1f7a48f/download/commune-2011.zip
-          DB_TABLE datastore=True 4cc9ca8e-983e-4333-a079-fd2549289bf2 https://data.opendevelopmentcambodia.net/km/datastore/dump/4cc9ca8e-983e-4333-a079-fd2549289bf2
-          WMS datastore=False bcddbb31-18f8-4f94-bf0a-7863f839cd17 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/Commune-2011/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3ACommune-2011
-          JPEG datastore=False e71f7d0e-ca7b-4afa-aade-f44e401023bb https://data.opendevelopmentcambodia.net/km/dataset/dc9ece30-76ca-47bb-82ff-e7b2be53ed08/resource/e71f7d0e-ca7b-4afa-aade-f44e401023bb/download/economic_census_2011.jpg
-      - general-population-census-of-the-kingdom-of-cambodia-2019-national-report-on-final-census-results: General population census of the Kingdom of Cambodia 2019 national report on final census results  [6 res: jpeg,pdf]
-          PDF datastore=False 14606f72-fa2d-49a8-b10b-93c75daf5b59 https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/14606f72-fa2d-49a8-b10b-93c75daf5b59/download/final_general_population_census_kh__2019.pdf
-          PDF datastore=False dd6f15e0-0d7a-4ca7-b660-cbe42213f4ff https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/dd6f15e0-0d7a-4ca7-b660-cbe42213f4ff/download/final_general_population_census_en__2019.pdf
-          JPEG datastore=False dc6f9bb8-48e4-4329-ad1d-07216cc024a6 https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/dc6f9bb8-48e4-4329-ad1d-07216cc024a6/download/figures-at-a-glance_khmer.jpg
-          JPEG datastore=False ccc6c3fe-4f30-4771-9a2e-ad1638581fc8 https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/ccc6c3fe-4f30-4771-9a2e-ad1638581fc8/download/figures-at-a-glance_english.jpg
-          JPEG datastore=False 69f84bf1-4a86-4559-b5ef-5d5fd63dba5e https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/69f84bf1-4a86-4559-b5ef-5d5fd63dba5e/download/population-change_khmer.jpg
-          JPEG datastore=False a57850e9-cc8a-4cce-a733-bdbdb78d523c https://data.opendevelopmentcambodia.net/km/dataset/1b4d05f0-c4a7-41f8-a733-b0b8a72465a2/resource/a57850e9-cc8a-4cce-a733-bdbdb78d523c/download/population-change_english.jpg
-      - national-report-on-final-census-result-of-economic-census-of-cambodia-2022: National report on the final census result of the economic census of Cambodia 2022  [2 res: pdf]
-          PDF datastore=False acd577b1-cfae-4f28-8b77-ba196f8ab11f https://data.opendevelopmentcambodia.net/km/dataset/bf29f282-703c-4cd6-9b3c-50424c39b151/resource/acd577b1-cfae-4f28-8b77-ba196f8ab11f/download/economic_censue_kh__2022.pdf
-          PDF datastore=False fd345f84-ec3c-4196-9621-b7faeb548378 https://data.opendevelopmentcambodia.net/km/dataset/bf29f282-703c-4cd6-9b3c-50424c39b151/resource/fd345f84-ec3c-4196-9621-b7faeb548378/download/economic_census_en__2022.pdf
-      - general-population-census-of-cambodia-2008-national-report-on-final-census-results: General Population Census of Cambodia 2008 National Report on Final Census Results  [1 res: pdf]
-          PDF datastore=False 1a95f8c4-dcde-41b5-9d62-20486f20b6f0 https://data.opendevelopmentcambodia.net/dataset/31f573aa-f90a-4bea-b128-c46fd076cded/resource/1a95f8c4-dcde-41b5-9d62-20486f20b6f0/download/9df3e4ca-d66b-4e91-9720-fb20d0e32488.pdf
-      - population-census-lao-pdr-20051: Population Census Lao PDR 2005  [1 res: pdf]
-          PDF datastore=False 9f24c10c-6234-47fe-a7c7-409c5dea994d https://data.opendevelopmentmekong.net/dataset/af8f9e99-8d9b-484b-9301-321da2051ae7/resource/9f24c10c-6234-47fe-a7c7-409c5dea994d/download/lao-census-updatepopulation2005.pdf
-      - lao-census-of-agriculture-2010-11-highlights: Lao census of agriculture 2010/11 highlights  [1 res: pdf]
-          PDF datastore=False 5b6adae9-78b1-4031-a690-fdcc1f6817b0 https://data.opendevelopmentmekong.net/dataset/6dbf2be8-9334-4fff-888a-61f2c79a0598/resource/5b6adae9-78b1-4031-a690-fdcc1f6817b0/download/lao-agriculture-census20102011english.pdf
-      - census-2014---marital-status-prod2: Census 2014 - Marital Status Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False ad40bae1-ee9a-45db-8775-14fe707d5d83 https://data.opendevelopmentmekong.net/dataset/d59fd253-a2af-47d2-af04-c964ecfd65a3/resource/ad40bae1-ee9a-45db-8775-14fe707d5d83/download/cs14_maritalstatus15_20190511.csv
-          XLSX datastore=False 8b3164fb-0ba4-4cd4-a36d-998393c13eec https://data.opendevelopmentmekong.net/dataset/d59fd253-a2af-47d2-af04-c964ecfd65a3/resource/8b3164fb-0ba4-4cd4-a36d-998393c13eec/download/cs14_maritalstatus15_20190511.xlsx
-          TXT datastore=False ed6bb6ba-823c-47ec-a7ae-5076c9aab0e7 https://data.opendevelopmentmekong.net/dataset/d59fd253-a2af-47d2-af04-c964ecfd65a3/resource/ed6bb6ba-823c-47ec-a7ae-5076c9aab0e7/download/codebook_cs14_maritalstatus15.txt
-      - census-2014---drinking-water-prod2: Census 2014 - Drinking Water Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False f54da11c-2d75-42d7-8dbf-1f7e7a35996c https://data.opendevelopmentmekong.net/dataset/a32cbf4b-d038-49c7-b15a-0952cfc9163c/resource/f54da11c-2d75-42d7-8dbf-1f7e7a35996c/download/cs14_drinkingwater_20190510.csv
-          XLSX datastore=False 33d6d20e-9976-456c-a42e-ad27f942c316 https://data.opendevelopmentmekong.net/dataset/a32cbf4b-d038-49c7-b15a-0952cfc9163c/resource/33d6d20e-9976-456c-a42e-ad27f942c316/download/cs14_drinkingwater_20190510.xlsx
-          TXT datastore=False 3514d55d-c4bf-43a3-a132-9c394ad80ef9 https://data.opendevelopmentmekong.net/dataset/a32cbf4b-d038-49c7-b15a-0952cfc9163c/resource/3514d55d-c4bf-43a3-a132-9c394ad80ef9/download/codebook_cs14_drinkingwater.txt
-      - census-2014---cooking-fuel-prod2: Census 2014 - Cooking Fuel Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 94bfe2a5-3940-4205-9573-c6ab7c9161a7 https://data.opendevelopmentmekong.net/dataset/37dc09ec-87f6-430d-8158-568b621e6701/resource/94bfe2a5-3940-4205-9573-c6ab7c9161a7/download/cs14_cookingfuel_20190510.csv
-          XLSX datastore=False e82100e8-4cc5-4e86-9ef0-900fe88ad18a https://data.opendevelopmentmekong.net/dataset/37dc09ec-87f6-430d-8158-568b621e6701/resource/e82100e8-4cc5-4e86-9ef0-900fe88ad18a/download/cs14_cookingfuel_20190510.xlsx
-          TXT datastore=False 6a4dc7e5-b50f-4c49-86e0-e35d3d9b64f1 https://data.opendevelopmentmekong.net/dataset/37dc09ec-87f6-430d-8158-568b621e6701/resource/6a4dc7e5-b50f-4c49-86e0-e35d3d9b64f1/download/codebook_cs14_cookingfuel.txt
-      - census-2014---walking-disability-prod2: Census 2014 - Walking Disability Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 058dc114-2b18-42c8-bf4d-57cd8bc8d6e9 https://data.opendevelopmentmekong.net/dataset/7e0aa9fd-ea9a-44c2-8bac-755629d4eaac/resource/058dc114-2b18-42c8-bf4d-57cd8bc8d6e9/download/cs14_walkingdisability_20190510.csv
-          XLSX datastore=False e19b71cd-0b51-4e6f-8c9c-211b142ba73e https://data.opendevelopmentmekong.net/dataset/7e0aa9fd-ea9a-44c2-8bac-755629d4eaac/resource/e19b71cd-0b51-4e6f-8c9c-211b142ba73e/download/cs14_walkingdisability_20190510.xlsx
-          TXT datastore=False 3385b5ec-8e50-49f9-9701-eba598fe61ec https://data.opendevelopmentmekong.net/dataset/7e0aa9fd-ea9a-44c2-8bac-755629d4eaac/resource/3385b5ec-8e50-49f9-9701-eba598fe61ec/download/codebook_cs14_walkingdisability.txt
-      - census-2014---seeing-disability-prod2: Census 2014 - Seeing Disability Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 9f6da9d1-f0c4-487d-9d1a-dc88d49fcdb2 https://data.opendevelopmentmekong.net/dataset/58a51704-597b-4dd2-9a2a-4daa5ba51d74/resource/9f6da9d1-f0c4-487d-9d1a-dc88d49fcdb2/download/cs14_seeingdisability_20190510.csv
-          XLSX datastore=False 57e7a84e-a43e-4932-8d16-9b5a894008dd https://data.opendevelopmentmekong.net/dataset/58a51704-597b-4dd2-9a2a-4daa5ba51d74/resource/57e7a84e-a43e-4932-8d16-9b5a894008dd/download/cs14_seeingdisability_20190510.xlsx
-          TXT datastore=False 28769baf-b122-4362-8cf8-ae55821abf9f https://data.opendevelopmentmekong.net/dataset/58a51704-597b-4dd2-9a2a-4daa5ba51d74/resource/28769baf-b122-4362-8cf8-ae55821abf9f/download/codebook_cs14_seeingdisability.txt
-      - census-2014---remembering-disability-prod2: Census 2014 - Remembering Disability Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False ba39cf95-cb26-4248-bd3b-50aa46979c96 https://data.opendevelopmentmekong.net/dataset/b45913eb-ff21-427b-9a7e-612d57553dbd/resource/ba39cf95-cb26-4248-bd3b-50aa46979c96/download/cs14_rememberingdisability_20190510.csv
-          XLSX datastore=False e1a7c2df-01f2-46a2-a6c8-9989a6fc275b https://data.opendevelopmentmekong.net/dataset/b45913eb-ff21-427b-9a7e-612d57553dbd/resource/e1a7c2df-01f2-46a2-a6c8-9989a6fc275b/download/cs14_rememberingdisability_20190510.xlsx
-          TXT datastore=False c9dfdc97-f945-4b3c-9794-e7687d864a18 https://data.opendevelopmentmekong.net/dataset/b45913eb-ff21-427b-9a7e-612d57553dbd/resource/c9dfdc97-f945-4b3c-9794-e7687d864a18/download/codebook_cs14_rememberingdisability.txt
-      - economic-census-of-cambodia-2022: Economic census of Cambodia 2022  [5 res: csv,db_table,jpeg,sqlite,wms]
-          sqlite datastore=False c02ee37d-989d-43a9-8048-655d41f13ea7 https://data.opendevelopmentcambodia.net/km/dataset/4fc806c8-e7e8-4408-9b60-faa8081aa303/resource/c02ee37d-989d-43a9-8048-655d41f13ea7/download/economic_census_2022.sqlite
-          DB_TABLE datastore=True 21b882db-153a-4b51-85aa-1674bf5adb2e https://data.opendevelopmentcambodia.net/km/datastore/dump/21b882db-153a-4b51-85aa-1674bf5adb2e
-          WMS datastore=False fb9c16d8-1d16-4abe-9bfc-82d4bb28eef1 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/economic_census_2022/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Aeconomic_census_2022
-          CSV datastore=True 85acd18b-679b-42e0-a118-bf05e0dfb19b https://data.opendevelopmentcambodia.net/km/dataset/4fc806c8-e7e8-4408-9b60-faa8081aa303/resource/85acd18b-679b-42e0-a118-bf05e0dfb19b/download/economic-census-2022-attribute.csv
-          JPEG datastore=False 5c6504e2-aeea-4db2-9439-70f3c5a9dddf https://data.opendevelopmentcambodia.net/km/dataset/4fc806c8-e7e8-4408-9b60-faa8081aa303/resource/5c6504e2-aeea-4db2-9439-70f3c5a9dddf/download/economic-census-2022.jpeg
-      - census-2014---hearing-disability-prod2: Census 2014 - Hearing Disability Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False db4893fa-de47-4f18-859a-7142555f8640 https://data.opendevelopmentmekong.net/dataset/5d70b7e4-9a00-4262-bcd0-135e4c3cc2b4/resource/db4893fa-de47-4f18-859a-7142555f8640/download/cs14_hearingdisability_20190510.csv
-          XLSX datastore=False fd514329-0720-4da3-a3bd-b45d64764260 https://data.opendevelopmentmekong.net/dataset/5d70b7e4-9a00-4262-bcd0-135e4c3cc2b4/resource/fd514329-0720-4da3-a3bd-b45d64764260/download/cs14_hearingdisability_20190510.xlsx
-          TXT datastore=False e53fc2b7-b252-4345-acf9-9a835e471dc2 https://data.opendevelopmentmekong.net/dataset/5d70b7e4-9a00-4262-bcd0-135e4c3cc2b4/resource/e53fc2b7-b252-4345-acf9-9a835e471dc2/download/codebook_cs14_hearingdisability.txt
-      - census-2014---non-drinking-water-prod2: Census 2014 - Non Drinking Water Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False f7b8a730-44a1-4889-9404-59224409014a https://data.opendevelopmentmekong.net/dataset/9aff92be-f748-4637-a063-728503edf477/resource/f7b8a730-44a1-4889-9404-59224409014a/download/cs14_nondrinkingwater_20190510.csv
-          XLSX datastore=False 136d6b37-1d54-4300-ae0a-74d6679cfdea https://data.opendevelopmentmekong.net/dataset/9aff92be-f748-4637-a063-728503edf477/resource/136d6b37-1d54-4300-ae0a-74d6679cfdea/download/cs14_nondrinkingwater_20190510.xlsx
-          TXT datastore=False e46446b9-aefa-4d2f-96a3-0c4cd37f19b7 https://data.opendevelopmentmekong.net/dataset/9aff92be-f748-4637-a063-728503edf477/resource/e46446b9-aefa-4d2f-96a3-0c4cd37f19b7/download/codebook_cs14_nondrinkingwater.txt
-      - economic-census-in-the-kingdom-of-cambodia-2022: Economic census in the Kingdom of Cambodia 2022  [1 res: pdf]
-          PDF datastore=False 5e558c48-f016-409b-b1ca-6990745de8ea https://data.opendevelopmentcambodia.net/km/dataset/88e54330-6deb-43c2-a667-047f50522762/resource/5e558c48-f016-409b-b1ca-6990745de8ea/download/economic_census_cambodia__00.12.2022.pdf.pdf
-      - census-2014---literacy-rate-over-15-year-old--prod2: Census 2014 - Literacy Rate (over 15 year old) Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False ef9a723c-2df0-4fb6-8c87-cd618f04628e https://data.opendevelopmentmekong.net/dataset/25caa9bb-4254-49dc-bff1-e7e0a68c1195/resource/ef9a723c-2df0-4fb6-8c87-cd618f04628e/download/cs14_literacyrate15_20190510.csv
-          XLSX datastore=False 88559260-3e73-4267-8546-fa84c90e2140 https://data.opendevelopmentmekong.net/dataset/25caa9bb-4254-49dc-bff1-e7e0a68c1195/resource/88559260-3e73-4267-8546-fa84c90e2140/download/cs14_literacyrate15_20190510.xlsx
-          TXT datastore=False 34e30870-7c80-4440-9df1-028769a287e8 https://data.opendevelopmentmekong.net/dataset/25caa9bb-4254-49dc-bff1-e7e0a68c1195/resource/34e30870-7c80-4440-9df1-028769a287e8/download/codebook_cs14_literacyrate15.txt
-      - population-census-2019-final-population-totals: Population census 2019 (Final population totals)  [7 res: db_table,jpeg,sqlite,wms]
-          SQLITE datastore=False 8aa65700-32b1-445d-8a1f-d616eff9e9a5 https://data.opendevelopmentcambodia.net/dataset/f64ebfd0-73f5-4595-9288-cbd078063754/resource/8aa65700-32b1-445d-8a1f-d616eff9e9a5/download/final_census2019_en.sqlite
-          DB_TABLE datastore=True 6095b312-5e7d-4723-8cab-9631a38a2f21 https://data.opendevelopmentcambodia.net/datastore/dump/6095b312-5e7d-4723-8cab-9631a38a2f21
-          WMS datastore=False 57803859-0219-418c-b62b-0386ba396806 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/final_census2019_en/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Afinal_census2019_en
-          SQLITE datastore=False 95814bb0-66fd-462e-ba0c-5c0c2b67473b https://data.opendevelopmentcambodia.net/dataset/f64ebfd0-73f5-4595-9288-cbd078063754/resource/95814bb0-66fd-462e-ba0c-5c0c2b67473b/download/final_census2019_kh.sqlite
-          DB_TABLE datastore=True 14669168-54bc-416c-8bea-d6e51e5227e8 https://data.opendevelopmentcambodia.net/datastore/dump/14669168-54bc-416c-8bea-d6e51e5227e8
-          WMS datastore=False 1e047940-3114-48d7-b3e3-1d3797bcabb1 https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/final_census2019_kh/wms?service=WMS&request=GetCapabilities&layers=ODCambodia%3Afinal_census2019_kh
-          JPEG datastore=False 513279f9-7f42-4dd0-8ca9-438dafa958b3 https://data.opendevelopmentcambodia.net/dataset/f64ebfd0-73f5-4595-9288-cbd078063754/resource/513279f9-7f42-4dd0-8ca9-438dafa958b3/download/final-census-2019.jpg
-      - census-2014---activity-status-15-64-year-old-prod2: Census 2014 - Activity Status (15-64 year-old) Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False 0559e673-2bf5-4086-be87-40413bf03dc9 https://data.opendevelopmentmekong.net/dataset/bdc2638e-ccb0-47f1-8307-58207817e2c8/resource/0559e673-2bf5-4086-be87-40413bf03dc9/download/cs14_activitystatus1564_20190511.csv
-          XLSX datastore=False f5168f94-2e54-4b92-9b37-91bbeed411ba https://data.opendevelopmentmekong.net/dataset/bdc2638e-ccb0-47f1-8307-58207817e2c8/resource/f5168f94-2e54-4b92-9b37-91bbeed411ba/download/cs14_activitystatus1564_20190511.xlsx
-          TXT datastore=False b820b71e-a79b-4bc7-a979-93eda6bbd2cf https://data.opendevelopmentmekong.net/dataset/bdc2638e-ccb0-47f1-8307-58207817e2c8/resource/b820b71e-a79b-4bc7-a979-93eda6bbd2cf/download/codebook_cs14_activitystatus1564_20190511.txt
-      - census-2014---activity-status-10-14-year-old-prod2: Census 2014 - Activity Status (10-14 year-old) Prod2  [3 res: csv,txt,xlsx]
-          CSV datastore=False bf13b6ea-e368-4dc1-9792-c08e7ab381dc https://data.opendevelopmentmekong.net/dataset/b071fb76-a1bc-4b1f-8b03-f59e4104af5f/resource/bf13b6ea-e368-4dc1-9792-c08e7ab381dc/download/cs14_activitystatus1014_20190511.csv
-          XLSX datastore=False ef2d6b24-a858-4f10-95c9-9028177ae0dd https://data.opendevelopmentmekong.net/dataset/b071fb76-a1bc-4b1f-8b03-f59e4104af5f/resource/ef2d6b24-a858-4f10-95c9-9028177ae0dd/download/cs14_activitystatus1014_20190511.xlsx
-          TXT datastore=False c55e829e-aee5-480b-a7e9-10518fb9ffe6 https://data.opendevelopmentmekong.net/dataset/b071fb76-a1bc-4b1f-8b03-f59e4104af5f/resource/c55e829e-aee5-480b-a7e9-10518fb9ffe6/download/codebook_cs14_activitystatus1014_20190511.txt
-      - lao-population-and-housing-census-2015-general-demographic: Lao Population and Housing Census 2015  [17 res: shp,wms,xlsx]
-          SHP datastore=False 476e5d08-c7ef-4647-90f7-b5b6e3c822f5 https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/476e5d08-c7ef-4647-90f7-b5b6e3c822f5/download/laos_population_census_2015.zip
-          XLSX datastore=True 130665a5-1e64-477a-a756-51fa65eeec02 https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/130665a5-1e64-477a-a756-51fa65eeec02/download/lao-population-census-2015.xlsx
-          WMS datastore=False fec898f3-d2c6-44c7-9973-da775edd7caa https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Census_2015 u_pop_density/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Census_2015 u_pop_density
-          WMS datastore=False 6fe4bef2-b6de-4fab-8841-06eb7352cc28 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_water_source_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_water_source_main
-          WMS datastore=False 70e86952-378b-4b82-8d9c-73fe234d183b https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_energy_cooking_type_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_energy_cooking_type_main
-          WMS datastore=False 3a41b68b-b03a-4ddf-a040-ce38a7ec9796 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_eth_cat/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_eth_cat
-          WMS datastore=False a2d10419-7c3a-4029-8a70-20fb64a25bc4 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_head_f_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_head_f_pct
-          WMS datastore=False b92228d2-c914-4456-a6c4-6a72b69a78c9 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_w_electricity_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_w_electricity_pct
-          WMS datastore=False 31a3317b-c544-4fe4-afac-ad997732180c https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_with_disabled/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_with_disabled
-          WMS datastore=False 626df1fe-98a0-4775-a2c4-817a938db2fe https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_with_farm_land_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_with_farm_land_pct
-          WMS datastore=False 5f73028b-1e7d-411a-878d-71612ac84423 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_literacy_rate_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_literacy_rate_pct
-          WMS datastore=False eaa734df-5dd9-4cee-9eed-335f80ca90b4 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_literacy_sex_ratio/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_literacy_sex_ratio
-          WMS datastore=False eff56adb-4d73-4126-95e2-63954897c29b https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_pop_activity_unemployed/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_pop_activity_unemployed
-          WMS datastore=False c6eec362-1031-4080-8934-b09e2202c307 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_pop_econ_active_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_pop_econ_active_pct
-          WMS datastore=False 2ad1172a-b8b5-467b-87ae-3a5b28e9e366 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_poverty_incidence/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_poverty_incidence
-          WMS datastore=False 8c8ce827-8312-48e6-ab5b-aca836e80d70 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_sex_ratio/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_sex_ratio
-          WMS datastore=False 63a04d22-c17b-421b-bff4-dcf727d834df https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_toilet_type_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_toilet_type_main
-      - myanmar-population-2019: Myanmar Census 2019: Population, WASH and Education  [18 res: db_table,shp,sqlite,wms]
-          SHP datastore=False 70f1ab08-346f-47d0-ab7e-b4375a4017f3 https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/70f1ab08-346f-47d0-ab7e-b4375a4017f3/download/myanmar_population_2019.zip
-          DB_TABLE datastore=True 50dd506d-4889-4949-8cbf-00def3a3e6a8 https://data.opendevelopmentmekong.net/datastore/dump/50dd506d-4889-4949-8cbf-00def3a3e6a8
-          WMS datastore=False 3e489ca1-eda2-4254-8436-1539ddde1e5f https://data.opendevelopmentmekong.net/geoserver/ODMekong/Myanmar_Population_2019/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3AMyanmar_Population_2019
-          SHP datastore=False 92a7ce3d-f241-48fa-9d47-ec6cea54011f https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/92a7ce3d-f241-48fa-9d47-ec6cea54011f/download/myanmar_population_2019__mm.zip
-          DB_TABLE datastore=True abe6dee5-90b5-4124-8530-ab48d921319a https://data.opendevelopmentmekong.net/datastore/dump/abe6dee5-90b5-4124-8530-ab48d921319a
-          WMS datastore=False df3da166-72fd-46a4-86fb-f007ac5691c5 https://data.opendevelopmentmekong.net/geoserver/ODMekong/Myanmar_Population_2019__MM/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3AMyanmar_Population_2019__MM
-          sqlite datastore=False 8249f8a3-fce4-4a3d-b587-9c266ea1ab68 https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/8249f8a3-fce4-4a3d-b587-9c266ea1ab68/download/myanmar_education_en.sqlite
-          DB_TABLE datastore=True 7d63d4e3-fef5-42fd-97d7-693c50bf9c18 https://data.opendevelopmentmekong.net/datastore/dump/7d63d4e3-fef5-42fd-97d7-693c50bf9c18
-          WMS datastore=False 47fdcb59-dcab-498f-8fb0-6e58cc482185 https://data.opendevelopmentmekong.net/geoserver/ODMekong/myanmar_education_en/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3Amyanmar_education_en
-          sqlite datastore=False 98c98ecc-6eb7-42db-b467-ffb26205832a https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/98c98ecc-6eb7-42db-b467-ffb26205832a/download/myanmar_education_mm.sqlite
-          DB_TABLE datastore=True b62fb837-c64c-4cb5-8354-0e22878d9fb6 https://data.opendevelopmentmekong.net/datastore/dump/b62fb837-c64c-4cb5-8354-0e22878d9fb6
-          WMS datastore=False ab0f62a0-b992-452a-959b-7760b4818f2d https://data.opendevelopmentmekong.net/geoserver/ODMekong/myanmar_education_mm/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3Amyanmar_education_mm
-          sqlite datastore=False 05e456dd-9ef9-4044-997d-2126f4a728bd https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/05e456dd-9ef9-4044-997d-2126f4a728bd/download/myanmar_wash_en.sqlite
-          DB_TABLE datastore=True df08586f-4a60-4659-a4b2-a269c4269394 https://data.opendevelopmentmekong.net/datastore/dump/df08586f-4a60-4659-a4b2-a269c4269394
-          WMS datastore=False 3f52b45f-e714-452c-b8f1-0090f0b25c20 https://data.opendevelopmentmekong.net/geoserver/ODMekong/myanmar_wash_en/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3Amyanmar_wash_en
-          sqlite datastore=False 06d22a6e-48ed-4f75-af57-85ef17d4c804 https://data.opendevelopmentmekong.net/dataset/aa70756a-6cec-4043-bef9-07da4951965b/resource/06d22a6e-48ed-4f75-af57-85ef17d4c804/download/myanmar_wash_mm.sqlite
-          DB_TABLE datastore=True 9a7b31ff-8c11-45fe-8afb-c57af523f2d7 https://data.opendevelopmentmekong.net/datastore/dump/9a7b31ff-8c11-45fe-8afb-c57af523f2d7
-          WMS datastore=False 1a0bace6-f3f7-4a09-903b-c32020c9549a https://data.opendevelopmentmekong.net/geoserver/ODMekong/myanmar_wash_mm/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3Amyanmar_wash_mm
-      - sub-decree-on-agricultural-census-in-cambodia-2013: Sub-Decree on the Agricultural Census in Cambodia 2013  [1 res: pdf]
-          PDF datastore=False 95b1f321-8c48-4ffe-b67a-3e259d15ee55 https://data.opendevelopmentmekong.net/dataset/754b0bb3-94c2-4192-82c0-287a54ced8ae/resource/95b1f321-8c48-4ffe-b67a-3e259d15ee55/download/1439f67e-1959-4cb0-9e70-93c570cd767b.pdf
-      - 2008-general-population-census-plan-of-cambodia: 2008 General population census plan of Cambodia  [1 res: pdf]
-          PDF datastore=False 99d8ab1e-304d-4058-8906-0a1c49c6fd26 https://data.opendevelopmentmekong.net/dataset/b94c5a0a-ce6b-4445-877c-b5722035e1dc/resource/99d8ab1e-304d-4058-8906-0a1c49c6fd26/download/workplan.pdf
-      - current-population-census-of-cambodia-2008: Presentation: Current population census of Cambodia 2008  [1 res: pdf]
-          PDF datastore=False b3930d48-e508-409a-ae26-69559a38f88b https://data.opendevelopmentmekong.net/dataset/e7e0454c-1b99-480c-8837-6514b3dc8d44/resource/b3930d48-e508-409a-ae26-69559a38f88b/download/t1cmbpp.pdf
-      - the-2014-myanmar-population-and-housing-census-sintgaing-township-report: The 2014 Myanmar Population and Housing Census: Sintgaing Township Report  [2 res: pdf]
-          PDF datastore=False 0d518736-b86d-4f0d-a97e-1ae60331a46c https://data.opendevelopmentmyanmar.net/my/dataset/9e4bdb4a-d04a-4823-8ed1-4fdc59128008/resource/0d518736-b86d-4f0d-a97e-1ae60331a46c/download/singaing.pdf
-          PDF datastore=False aa8c5928-59a8-4fa4-8405-a48c11243c15 https://data.opendevelopmentmyanmar.net/my/dataset/9e4bdb4a-d04a-4823-8ed1-4fdc59128008/resource/aa8c5928-59a8-4fa4-8405-a48c11243c15/download/singaing.pdf
-      - the-2014-myanmar-population-and-housing-census-padaung-township-report: The 2014 Myanmar Population and Housing Census: Padaung Township Report  [2 res: pdf]
-          PDF datastore=False dc5e1d29-161a-49dc-a526-c0590a47d6d6 https://data.opendevelopmentmyanmar.net/my/dataset/a4d89187-2688-4ce8-9916-3bedd29762cd/resource/dc5e1d29-161a-49dc-a526-c0590a47d6d6/download/padaung.pdf
-          PDF datastore=False 7277b931-f2f0-47af-b3ec-24c176eee5d4 https://data.opendevelopmentmyanmar.net/my/dataset/a4d89187-2688-4ce8-9916-3bedd29762cd/resource/7277b931-f2f0-47af-b3ec-24c176eee5d4/download/padaung.pdf
-      - the-2014-myanmar-population-and-housing-census-lahe-township-report: The 2014 Myanmar Population and Housing Census: Lahe Township Report  [2 res: pdf]
-          PDF datastore=False a642dde0-fb84-47d6-b2ca-c534b8128491 https://data.opendevelopmentmyanmar.net/my/dataset/f7da9fff-73b4-4f0c-9eac-5856ff621b56/resource/a642dde0-fb84-47d6-b2ca-c534b8128491/download/lehe.pdf
-          PDF datastore=False be02b166-67df-4135-94e6-aa6fda6946f9 https://data.opendevelopmentmyanmar.net/my/dataset/f7da9fff-73b4-4f0c-9eac-5856ff621b56/resource/be02b166-67df-4135-94e6-aa6fda6946f9/download/lehe.pdf
-      - the-2014-myanmar-population-and-housing-census-thegon-township-report: The 2014 Myanmar Population and Housing Census: Thegon Township Report  [1 res: pdf]
-          PDF datastore=False 4b1fc41f-9989-4165-8952-ef1db9a4168c https://data.opendevelopmentmyanmar.net/my/dataset/3793dad2-9940-40a9-a2f8-859494d6e9ad/resource/4b1fc41f-9989-4165-8952-ef1db9a4168c/download/thegon.pdf
-      - the-2014-myanmar-population-and-housing-census-thazi-township-report: The 2014 Myanmar Population and Housing Census: Thazi Township Report  [1 res: pdf]
-          PDF datastore=False aea281c8-d805-45fe-b59a-0e012c0f4df0 https://data.opendevelopmentmyanmar.net/my/dataset/d4de7421-2938-47cc-891d-718b3ce3c523/resource/aea281c8-d805-45fe-b59a-0e012c0f4df0/download/tharzi.pdf
-      - the-2014-myanmar-population-and-housing-census-thayetchaung-township-report: The 2014 Myanmar Population and Housing Census: Thayetchaung Township Report  [1 res: pdf]
-          PDF datastore=False 0f9b11f6-af83-4be3-afbb-dac5f8cc001d https://data.opendevelopmentmyanmar.net/my/dataset/c7f3b733-9c2d-46a0-a855-97e1bf939d23/resource/0f9b11f6-af83-4be3-afbb-dac5f8cc001d/download/thayetchaung.pdf
-      - the-2014-myanmar-population-and-housing-census-thingangyun-township-report: The 2014 Myanmar Population and Housing Census: Thingangyun Township Report  [1 res: pdf]
-          PDF datastore=False c7a1b94c-330e-425c-b9a4-7f9e0277e306 https://data.opendevelopmentmyanmar.net/my/dataset/0bd314fc-4109-4445-a4c8-7b2a573524a4/resource/c7a1b94c-330e-425c-b9a4-7f9e0277e306/download/thingangyun.pdf
-      - the-2014-myanmar-population-and-housing-census-thongwa-township-report: The 2014 Myanmar Population and Housing Census: Thongwa Township Report  [1 res: pdf]
-          PDF datastore=False 21124e0b-1525-415c-a06c-0176339a7c23 https://data.opendevelopmentmyanmar.net/my/dataset/5db01b1b-d15c-4286-a83d-969571f43214/resource/21124e0b-1525-415c-a06c-0176339a7c23/download/thongwa.pdf
-      - the-2014-myanmar-population-and-housing-census-tigyaing-township-report: The 2014 Myanmar Population and Housing Census: Tigyaing Township Report  [1 res: pdf]
-          PDF datastore=False fb0e4886-ed76-44c1-95ba-be64cbaeed15 https://data.opendevelopmentmyanmar.net/my/dataset/47111598-1dea-42f7-9535-90bbc762cfc3/resource/fb0e4886-ed76-44c1-95ba-be64cbaeed15/download/tigyaing.pdf
-      - the-2014-myanmar-population-and-housing-census-tilin-township-report: The 2014 Myanmar Population and Housing Census: Tilin Township Report  [1 res: pdf]
-          PDF datastore=False 662a6094-571f-4e37-9260-5f1821406b5e https://data.opendevelopmentmyanmar.net/my/dataset/ff306e58-9f54-4b39-8bbe-9e23da0e1da7/resource/662a6094-571f-4e37-9260-5f1821406b5e/download/htilin.pdf
-      - the-2014-myanmar-population-and-housing-census-tsawlaw-township-report: The 2014 Myanmar Population and Housing Census: Tsawlaw Township Report  [1 res: pdf]
-          PDF datastore=False 4c3c625b-e8c4-4211-b264-ad80459795e7 https://data.opendevelopmentmyanmar.net/my/dataset/9e3608b5-1652-479b-8665-4507dc9d88ab/resource/4c3c625b-e8c4-4211-b264-ad80459795e7/download/tsawlaw.pdf
-      - the-2014-myanmar-population-and-housing-census-toungup-township-report: The 2014 Myanmar Population and Housing Census: Toungup Township Report  [1 res: pdf]
-          PDF datastore=False eaff657a-4133-4020-8fa1-b62e303f1907 https://data.opendevelopmentmyanmar.net/my/dataset/c3e00f35-5f21-4349-b598-f469a7587376/resource/eaff657a-4133-4020-8fa1-b62e303f1907/download/toungup.pdf
-      - the-2014-myanmar-population-and-housing-census-tonzang-township: The 2014 Myanmar Population and Housing Census: Tonzang Township  [1 res: pdf]
-          PDF datastore=False 8c7d6f99-a8fd-48a9-b7c5-26c683c15c08 https://data.opendevelopmentmyanmar.net/my/dataset/33315fc2-e61c-49e2-997b-6af8c51a4abf/resource/8c7d6f99-a8fd-48a9-b7c5-26c683c15c08/download/tonzang.pdf
-      - the-2014-myanmar-population-and-housing-census-thayet-township-report: The 2014 Myanmar Population and Housing Census: Thayet Township Report  [1 res: pdf]
-          PDF datastore=False 8fd6b3c2-0735-4138-80ad-2c1c683e4af0 https://data.opendevelopmentmyanmar.net/my/dataset/1b072959-0458-439f-9f65-5bab4adb7d3c/resource/8fd6b3c2-0735-4138-80ad-2c1c683e4af0/download/thayet.pdf
-      - the-2014-myanmar-population-and-housing-census-tamu-township-report: The 2014 Myanmar Population and Housing Census: Tamu Township Report  [1 res: pdf]
-          PDF datastore=False 026a9482-7661-407a-b6cd-428abba83c23 https://data.opendevelopmentmyanmar.net/my/dataset/90b5eb90-f7fe-454e-8f8b-64dc34a13b20/resource/026a9482-7661-407a-b6cd-428abba83c23/download/tamu.pdf
-      - the-2014-myanmar-population-and-housing-census-takaung-township-report: The 2014 Myanmar Population and Housing Census: Takaung Township Report  [1 res: pdf]
-          PDF datastore=False 7bbe265f-c2f9-4328-b745-47f4314ee5aa https://data.opendevelopmentmyanmar.net/my/dataset/a7ac6b5e-491b-46ef-baee-e3e6fc1508da/resource/7bbe265f-c2f9-4328-b745-47f4314ee5aa/download/tagaung.pdf
-      - the-2014-myanmar-population-and-housing-census-taikkyi-township-report: The 2014 Myanmar Population and Housing Census: Taikkyi Township Report  [1 res: pdf]
-          PDF datastore=False f3f54d41-b03a-42fd-8ebd-570294831d21 https://data.opendevelopmentmyanmar.net/my/dataset/af2e8390-d9e9-4c0d-bed4-edd4fa643214/resource/f3f54d41-b03a-42fd-8ebd-570294831d21/download/taikkyi.pdf
-probe_ckan: 2 of 2 answered; 2 speak CKAN: data.opendevelopmentcambodia.net, data.opendevelopmentmekong.net
+https://nis.gov.kh/wp-content/uploads/2025/09/Final-Priority-Tables-A-H.xlsx: HTTP 200 1,646,065 B
+  sheets: ['Tables A', 'Tables B', 'Tables C', 'Tables D', 'Tables E', 'Tables F', 'Tables G', 'Tables H']
+  -- 'Tables A': 168 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table A1. P |  |  |  |  |  |  |  |  |  |  |  |  | Table A2. P |  |  |  |  |  |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Age | Urban/Rural |  |  |  |  |  |  |  |  |  |  |  | Age group | Marital Sta |  |  |  |  |  | 
+      4 |  |  | Total |  |  | Urban |  |  | Rural |  |  |  |  |  |  | Total | Never Marri | Married | Widowed | Divorced | Separated | Not Stated
+      5 |  |  | P04. Sex |  |  | P04. Sex |  |  | P04. Sex |  |  |  |  |  |  |  |  |  |  |  |  | 
+      6 |  |  | Total | Male | Female | Total | Male | Female | Total | Male | Female |  |  |  | Total |  |  |  |  |  |  | 
+      7 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Total | 15552211 | 7587739 | 7266628 | 441217 | 238281 | 14633 | 3713
+      8 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 0 - 4 | 1450159 | 1450159 | 0 | 0 | 0 | 0 | 0
+      9 |  | Total | 15552211 | 7571837 | 7980374 | 6135194 | 2993339 | 3141855 | 9417017 | 4578498 | 4838519 |  |  |  | 5 - 9 | 1473104 | 1473104 | 0 | 0 | 0 | 0 | 0
+     10 |  | Under 1 | 227999 | 117090 | 110909 | 78000 | 40341 | 37659 | 149999 | 76749 | 73250 |  |  |  | 10 - 14 | 1647877 | 1646660 | 592 | 34 | 20 | 17 | 554
+     11 |  | 1 | 263480 | 136523 | 126957 | 93942 | 48593 | 45349 | 169538 | 87930 | 81608 |  |  |  | 15 - 19 | 1409350 | 1336242 | 70195 | 544 | 1469 | 155 | 745
+     12 |  | 2 | 316292 | 161464 | 154828 | 112198 | 57199 | 54999 | 204094 | 104265 | 99829 |  |  |  | 20 - 24 | 1255180 | 769535 | 469400 | 3064 | 11400 | 908 | 873
+     13 |  | 3 | 326661 | 168055 | 158606 | 116545 | 59795 | 56750 | 210116 | 108260 | 101856 |  |  |  | 25 - 29 | 1428248 | 449238 | 946808 | 6570 | 23381 | 1670 | 581
+     14 |  | 4 | 315727 | 162831 | 152896 | 111639 | 57801 | 53838 | 204088 | 105030 | 99058 |  |  |  | 30 - 34 | 1306011 | 196247 | 1070400 | 9355 | 27892 | 1830 | 287
+     15 |  | 5 | 304571 | 155403 | 149168 | 107403 | 54579 | 52824 | 197168 | 100824 | 96344 |  |  |  | 35 - 39 | 1306222 | 106411 | 1146117 | 21886 | 29865 | 1776 | 167
+     16 |  | 6 | 309890 | 159766 | 150124 | 108900 | 56259 | 52641 | 200990 | 103507 | 97483 |  |  |  | 40 - 44 | 753013 | 37385 | 674045 | 22200 | 18407 | 899 | 77
+     17 |  | 7 | 294179 | 150832 | 143347 | 103094 | 52978 | 50116 | 191085 | 97854 | 93231 |  |  |  | 45 - 49 | 789334 | 29689 | 701614 | 24581 | 32351 | 1037 | 62
+     18 |  | 8 | 283906 | 144635 | 139271 | 95403 | 48537 | 46866 | 188503 | 96098 | 92405 |  |  |  | 50 - 54 | 714816 | 25545 | 629450 | 34737 | 24127 | 909 | 48
+     19 |  | 9 | 280558 | 142905 | 137653 | 92507 | 46967 | 45540 | 188051 | 95938 | 92113 |  |  |  | 55 - 59 | 640209 | 20380 | 551067 | 45848 | 19609 | 3269 | 36
+     20 |  | 10 | 351077 | 180728 | 170349 | 118999 | 60936 | 58063 | 232078 | 119792 | 112286 |  |  |  | 60 - 64 | 466242 | 15843 | 380549 | 53923 | 15140 | 760 | 27
+     21 |  | 11 | 309056 | 158164 | 150892 | 105935 | 54175 | 51760 | 203121 | 103989 | 99132 |  |  |  | 65 - 69 | 359494 | 12369 | 275897 | 58519 | 12132 | 555 | 22
+     22 |  | 12 | 354779 | 181228 | 173551 | 117837 | 60153 | 57684 | 236942 | 121075 | 115867 |  |  |  | 70 - 74 | 241380 | 7949 | 168764 | 55694 | 8528 | 418 | 27
+     23 |  | 13 | 326158 | 168187 | 157971 | 106101 | 54804 | 51297 | 220057 | 113383 | 106674 |  |  |  | 75 + | 311572 | 10983 | 181730 | 104262 | 13960 | 430 | 207
+     24 |  | 14 | 306807 | 154584 | 152223 | 103357 | 52095 | 51262 | 203450 | 102489 | 100961 |  |  |  | Male |  |  |  |  |  |  | 
+     25 |  | 15 | 308936 | 159847 | 149089 | 106098 | 54428 | 51670 | 202838 | 105419 | 97419 |  |  |  | Total | 7571837 | 3971068 | 3447629 | 79358 | 66357 | 5571 | 1854
+     26 |  | 16 | 266936 | 135329 | 131607 | 97710 | 48647 | 49063 | 169226 | 86682 | 82544 |  |  |  | 0 - 4 | 745963 | 745963 | 0 | 0 | 0 | 0 | 0
+     27 |  | 17 | 263859 | 133885 | 129974 | 100386 | 50437 | 49949 | 163473 | 83448 | 80025 |  |  |  | 5 - 9 | 753541 | 753541 | 0 | 0 | 0 | 0 | 0
+     28 |  | 18 | 296176 | 145009 | 151167 | 122225 | 58407 | 63818 | 173951 | 86602 | 87349 |  |  |  | 10 - 14 | 842891 | 842337 | 216 | 11 | 5 | 11 | 311
+     29 |  | 19 | 273443 | 136167 | 137276 | 120556 | 59135 | 61421 | 152887 | 77032 | 75855 |  |  |  | 15 - 19 | 710237 | 696802 | 12759 | 119 | 184 | 25 | 348
+     30 |  | 20 | 269212 | 132621 | 136591 | 119470 | 57943 | 61527 | 149742 | 74678 | 75064 |  |  |  | 20 - 24 | 611377 | 446925 | 160262 | 755 | 2760 | 265 | 410
+     31 |  | 21 | 229817 | 113346 | 116471 | 102489 | 50016 | 52473 | 127328 | 63330 | 63998 |  |  |  | 25 - 29 | 698485 | 275295 | 412978 | 1743 | 7587 | 579 | 303
+     32 |  | 22 | 242378 | 117595 | 124783 | 111297 | 53305 | 57992 | 131081 | 64290 | 66791 |  |  |  | 30 - 34 | 639662 | 114739 | 511807 | 2550 | 9699 | 708 | 159
+     33 |  | 23 | 256524 | 124169 | 132355 | 117364 | 56009 | 61355 | 139160 | 68160 | 71000 |  |  |  | 35 - 39 | 645922 | 53148 | 574286 | 8217 | 9575 | 608 | 88
+     34 |  | 24 | 257249 | 123646 | 133603 | 119766 | 57204 | 62562 | 137483 | 66442 | 71041 |  |  |  | 40 - 44 | 366712 | 14347 | 339172 | 7711 | 5112 | 330 | 40
+     35 |  | 25 | 318743 | 156032 | 162711 | 146645 | 71436 | 75209 | 172098 | 84596 | 87502 |  |  |  | 45 - 49 | 380651 | 9118 | 354935 | 4859 | 11385 | 327 | 27
+     36 |  | 26 | 273204 | 132677 | 140527 | 125680 | 60741 | 64939 | 147524 | 71936 | 75588 |  |  |  | 50 - 54 | 331302 | 5769 | 313087 | 5213 | 6930 | 287 | 16
+     37 |  | 27 | 283854 | 139904 | 143950 | 131770 | 64746 | 67024 | 152084 | 75158 | 76926 |  |  |  | 55 - 59 | 295613 | 3877 | 279617 | 6655 | 3783 | 1665 | 16
+     38 |  | 28 | 282150 | 136836 | 145314 | 132906 | 64532 | 68374 | 149244 | 72304 | 76940 |  |  |  | 60 - 64 | 188485 | 2517 | 176614 | 6731 | 2363 | 253 | 7
+     39 |  | 29 | 270297 | 133036 | 137261 | 125589 | 62046 | 63543 | 144708 | 70990 | 73718 |  |  |  | 65 - 69 | 144774 | 2044 | 133190 | 7420 | 1939 | 177 | 4
+     40 |  | 30 | 293720 | 143561 | 150159 | 135883 | 66812 | 69071 | 157837 | 76749 | 81088 |  |  |  | 70 - 74 | 96255 | 1596 | 84887 | 8031 | 1587 | 147 | 7
+     41 |  | 31 | 259395 | 129007 | 130388 | 116809 | 58277 | 58532 | 142586 | 70730 | 71856 |  |  |  | 75 + | 119967 | 3050 | 93819 | 19343 | 3448 | 189 | 118
+     42 |  | 32 | 273225 | 134000 | 139225 | 127413 | 62803 | 64610 | 145812 | 71197 | 74615 |  |  |  | Female |  |  |  |  |  |  | 
+     43 |  | 33 | 248708 | 120848 | 127860 | 111585 | 54666 | 56919 | 137123 | 66182 | 70941 |  |  |  | Total | 7980374 | 3616671 | 3818999 | 361859 | 171924 | 9062 | 1859
+     44 |  | 34 | 230963 | 112246 | 118717 | 105879 | 51452 | 54427 | 125084 | 60794 | 64290 |  |  |  | 0 - 4 | 704196 | 704196 | 0 | 0 | 0 | 0 | 0
+     45 |  | 35 | 291012 | 144302 | 146710 | 130153 | 65027 | 65126 | 160859 | 79275 | 81584 |  |  |  | 5 - 9 | 719563 | 719563 | 0 | 0 | 0 | 0 | 0
+     46 |  | 36 | 249385 | 121753 | 127632 | 112656 | 55187 | 57469 | 136729 | 66566 | 70163 |  |  |  | 10 - 14 | 804986 | 804323 | 376 | 23 | 15 | 6 | 243
+     47 |  | 37 | 256663 | 126908 | 129755 | 114736 | 56551 | 58185 | 141927 | 70357 | 71570 |  |  |  | 15 - 19 | 699113 | 639440 | 57436 | 425 | 1285 | 130 | 397
+     48 |  | 38 | 262320 | 128974 | 133346 | 114512 | 56528 | 57984 | 147808 | 72446 | 75362 |  |  |  | 20 - 24 | 643803 | 322610 | 309138 | 2309 | 8640 | 643 | 463
+     49 |  | 39 | 246842 | 123985 | 122857 | 110083 | 55741 | 54342 | 136759 | 68244 | 68515 |  |  |  | 25 - 29 | 729763 | 173943 | 533830 | 4827 | 15794 | 1091 | 278
+     50 |  | 40 | 238059 | 115865 | 122194 | 100435 | 50200 | 50235 | 137624 | 65665 | 71959 |  |  |  | 30 - 34 | 666349 | 81508 | 558593 | 6805 | 18193 | 1122 | 128
+     51 |  | 41 | 136450 | 67748 | 68702 | 52389 | 26238 | 26151 | 84061 | 41510 | 42551 |  |  |  | 35 - 39 | 660300 | 53263 | 571831 | 13669 | 20290 | 1168 | 79
+     52 |  | 42 | 134691 | 66083 | 68608 | 52778 | 26599 | 26179 | 81913 | 39484 | 42429 |  |  |  | 40 - 44 | 386301 | 23038 | 334873 | 14489 | 13295 | 569 | 37
+     53 |  | 43 | 121175 | 58346 | 62829 | 46092 | 22900 | 23192 | 75083 | 35446 | 39637 |  |  |  | 45 - 49 | 408683 | 20571 | 346679 | 19722 | 20966 | 710 | 35
+     54 |  | 44 | 122638 | 58670 | 63968 | 48872 | 23986 | 24886 | 73766 | 34684 | 39082 |  |  |  | 50 - 54 | 383514 | 19776 | 316363 | 29524 | 17197 | 622 | 32
+     55 |  | 45 | 167216 | 81624 | 85592 | 64080 | 32285 | 31795 | 103136 | 49339 | 53797 |  |  |  | 55 - 59 | 344596 | 16503 | 271450 | 39193 | 15826 | 1604 | 20
+     56 |  | 46 | 142529 | 66766 | 75763 | 57653 | 26314 | 31339 | 84876 | 40452 | 44424 |  |  |  | 60 - 64 | 277757 | 13326 | 203935 | 47192 | 12777 | 507 | 20
+     57 |  | 47 | 153936 | 73539 | 80397 | 58820 | 28375 | 30445 | 95116 | 45164 | 49952 |  |  |  | 65 - 69 | 214720 | 10325 | 142707 | 51099 | 10193 | 378 | 18
+     58 |  | 48 | 164314 | 79630 | 84684 | 61410 | 31650 | 29760 | 102904 | 47980 | 54924 |  |  |  | 70 - 74 | 145125 | 6353 | 83877 | 47663 | 6941 | 271 | 20
+     59 |  | 49 | 161339 | 79092 | 82247 | 62742 | 31305 | 31437 | 98597 | 47787 | 50810 |  |  |  | 75 + | 191605 | 7933 | 87911 | 84919 | 10512 | 241 | 89
+     60 |  | 50 | 168803 | 77571 | 91232 | 63083 | 30182 | 32901 | 105720 | 47389 | 58331 |  |  |  | Urban |  |  |  |  |  |  | 
+     61 |  | 51 | 135109 | 64731 | 70378 | 50529 | 25044 | 25485 | 84580 | 39687 | 44893 |  |  |  | Total | 6135194 | 2988739 | 2850424 | 170654 | 114756 | 8433 | 2188
+     62 |  | 52 | 143518 | 66245 | 77273 | 53381 | 25300 | 28081 | 90137 | 40945 | 49192 |  |  |  | 0 - 4 | 512324 | 512324 | 0 | 0 | 0 | 0 | 0
+     63 |  | 53 | 139762 | 64367 | 75395 | 49418 | 23298 | 26120 | 90344 | 41069 | 49275 |  |  |  | 5 - 9 | 507307 | 507307 | 0 | 0 | 0 | 0 | 0
+     64 |  | 54 | 127624 | 58388 | 69236 | 46153 | 21741 | 24412 | 81471 | 36647 | 44824 |  |  |  | 10 - 14 | 552229 | 551911 | 202 | 5 | 6 | 11 | 94
+     65 |  | 55 | 151836 | 71105 | 80731 | 52922 | 25130 | 27792 | 98914 | 45975 | 52939 |  |  |  | 15 - 19 | 546975 | 524486 | 21383 | 186 | 523 | 54 | 343
+     66 |  | 56 | 130787 | 61404 | 69383 | 47463 | 22487 | 24976 | 83324 | 38917 | 44407 |  |  |  | 20 - 24 | 570386 | 386145 | 177289 | 1206 | 4594 | 406 | 746
+     67 |  | 57 | 124376 | 57389 | 66987 | 44287 | 20556 | 23731 | 80089 | 36833 | 43256 |  |  |  | 25 - 29 | 662590 | 252880 | 394845 | 2792 | 10708 | 882 | 483
+     68 |  | 58 | 124556 | 55883 | 68673 | 44395 | 19973 | 24422 | 80161 | 35910 | 44251 |  |  |  | 30 - 34 | 597569 | 117752 | 460551 | 4184 | 13828 | 1017 | 237
+     69 |  | 59 | 108654 | 49832 | 58822 | 42021 | 19514 | 22507 | 66633 | 30318 | 36315 |  |  |  | 35 - 39 | 582140 | 63722 | 487747 | 14236 | 15293 | 1023 | 119
+     70 |  | 60 | 121041 | 50280 | 70761 | 44458 | 18882 | 25576 | 76583 | 31398 | 45185 |  |  |  | 40 - 44 | 300566 | 19275 | 258511 | 13591 | 8666 | 471 | 52
+     71 |  | 61 | 88843 | 36703 | 52140 | 33316 | 13977 | 19339 | 55527 | 22726 | 32801 |  |  |  | 45 - 49 | 304705 | 14244 | 258192 | 10575 | 21164 | 489 | 41
+     72 |  | 62 | 91213 | 37082 | 54131 | 35022 | 14578 | 20444 | 56191 | 22504 | 33687 |  |  |  | 50 - 54 | 262564 | 11081 | 225679 | 12578 | 12823 | 388 | 15
+     73 |  | 63 | 88508 | 34702 | 53806 | 32814 | 12943 | 19871 | 55694 | 21759 | 33935 |  |  |  | 55 - 59 | 231088 | 8548 | 194969 | 16404 | 8411 | 2741 | 15
+     74 |  | 64 | 76637 | 29718 | 46919 | 29742 | 11855 | 17887 | 46895 | 17863 | 29032 |  |  |  | 60 - 64 | 175352 | 6597 | 142653 | 19654 | 6083 | 353 | 12
+     75 |  | 65 | 97031 | 38241 | 58790 | 36481 | 14806 | 21675 | 60550 | 23435 | 37115 |  |  |  | 65 - 69 | 133911 | 4913 | 103150 | 20993 | 4614 | 237 | 4
+     76 |  | 66 | 66391 | 26676 | 39715 | 24458 | 10241 | 14217 | 41933 | 16435 | 25498 |  |  |  | 70 - 74 | 87719 | 3188 | 61397 | 19685 | 3251 | 193 | 5
+     77 |  | 67 | 73797 | 30219 | 43578 | 27334 | 11400 | 15934 | 46463 | 18819 | 27644 |  |  |  | 75 + | 107769 | 4366 | 63856 | 34565 | 4792 | 168 | 22
+     78 |  | 68 | 66584 | 26341 | 40243 | 23916 | 9533 | 14383 | 42668 | 16808 | 25860 |  |  |  | Male |  |  |  |  |  |  | 
+     79 |  | 69 | 55691 | 23297 | 32394 | 21722 | 9189 | 12533 | 33969 | 14108 | 19861 |  |  |  | Total | 2993339 | 1555495 | 1362284 | 35671 | 35332 | 3507 | 1050
+     80 |  | 70 | 64603 | 25169 | 39434 | 23218 | 8988 | 14230 | 41385 | 16181 | 25204 |  |  |  | 0 - 4 | 263729 | 263729 | 0 | 0 | 0 | 0 | 0
+     81 |  | 71 | 45645 | 18459 | 27186 | 16570 | 6748 | 9822 | 29075 | 11711 | 17364 |  |  |  | 5 - 9 | 259320 | 259320 | 0 | 0 | 0 | 0 | 0
+     82 |  | 72 | 49729 | 19831 | 29898 | 18545 | 7232 | 11313 | 31184 | 12599 | 18585 |  |  |  | 10 - 14 | 282163 | 282034 | 67 | 0 | 2 | 10 | 50
+     83 |  | 73 | 43492 | 17250 | 26242 | 15534 | 5988 | 9546 | 27958 | 11262 | 16696 |  |  |  | 15 - 19 | 271054 | 266831 | 3960 | 41 | 66 | 12 | 144
+     84 |  | 74 | 37911 | 15546 | 22365 | 13852 | 5665 | 8187 | 24059 | 9881 | 14178 |  |  |  | 20 - 24 | 274477 | 212239 | 60381 | 315 | 1089 | 124 | 329
+     85 |  | 75 | 43562 | 17529 | 26033 | 15238 | 6040 | 9198 | 28324 | 11489 | 16835 |  |  |  | 25 - 29 | 323501 | 148292 | 170412 | 776 | 3443 | 331 | 247
+     86 |  | 76 | 29044 | 11659 | 17385 | 10231 | 4042 | 6189 | 18813 | 7617 | 11196 |  |  |  | 30 - 34 | 294010 | 67654 | 220051 | 1172 | 4572 | 423 | 138
+     87 |  | 77 | 29458 | 11478 | 17980 | 10082 | 3910 | 6172 | 19376 | 7568 | 11808 |  |  |  | 35 - 39 | 289034 | 32629 | 244752 | 6386 | 4856 | 345 | 66
+     88 |  | 78 | 31047 | 11974 | 19073 | 10489 | 3960 | 6529 | 20558 | 8014 | 12544 |  |  |  | 40 - 44 | 149923 | 8296 | 132989 | 5971 | 2458 | 182 | 27
+     89 |  | 79 | 21433 | 8845 | 12588 | 7517 | 3073 | 4444 | 13916 | 5772 | 8144 |  |  |  | 45 - 49 | 149929 | 5146 | 133250 | 2569 | 8780 | 163 | 21
+     90 |  | 80 | 25932 | 9717 | 16215 | 8699 | 3215 | 5484 | 17233 | 6502 | 10731 |  |  |  | 50 - 54 | 125565 | 3134 | 115530 | 1965 | 4805 | 125 | 6
+     91 |  | 81 | 17342 | 6678 | 10664 | 6159 | 2357 | 3802 | 11183 | 4321 | 6862 |  |  |  | 55 - 59 | 107660 | 2041 | 99829 | 2414 | 1901 | 1468 | 7
+     92 |  | 82 | 16925 | 6400 | 10525 | 5841 | 2201 | 3640 | 11084 | 4199 | 6885 |  |  |  | 60 - 64 | 72235 | 1237 | 67283 | 2582 | 1005 | 124 | 4
+     93 |  | 83 | 15810 | 6061 | 9749 | 5456 | 2058 | 3398 | 10354 | 4003 | 6351 |  |  |  | 65 - 69 | 55169 | 947 | 50764 | 2646 | 734 | 76 | 2
+     94 |  | 84 | 14118 | 5239 | 8879 | 4995 | 1844 | 3151 | 9123 | 3395 | 5728 |  |  |  | 70 - 74 | 34621 | 699 | 30634 | 2695 | 531 | 59 | 3
+     95 |  | 85 | 14027 | 5006 | 9021 | 4734 | 1625 | 3109 | 9293 | 3381 | 5912 |  |  |  | 75 + | 40949 | 1267 | 32382 | 6139 | 1090 | 65 | 6
+     96 |  | 86 | 10475 | 3856 | 6619 | 3620 | 1372 | 2248 | 6855 | 2484 | 4371 |  |  |  | Female |  |  |  |  |  |  | 
+     97 |  | 87 | 9246 | 3380 | 5866 | 3108 | 1097 | 2011 | 6138 | 2283 | 3855 |  |  |  | Total | 3141855 | 1433244 | 1488140 | 134983 | 79424 | 4926 | 1138
+     98 |  | 88 | 7633 | 2716 | 4917 | 2531 | 874 | 1657 | 5102 | 1842 | 3260 |  |  |  | 0 - 4 | 248595 | 248595 | 0 | 0 | 0 | 0 | 0
+     99 |  | 89 | 5455 | 2046 | 3409 | 1936 | 729 | 1207 | 3519 | 1317 | 2202 |  |  |  | 5 - 9 | 247987 | 247987 | 0 | 0 | 0 | 0 | 0
+    100 |  | 90 | 4702 | 1625 | 3077 | 1603 | 500 | 1103 | 3099 | 1125 | 1974 |  |  |  | 10 - 14 | 270066 | 269877 | 135 | 5 | 4 | 1 | 44
+    101 |  | 91 | 2704 | 1004 | 1700 | 941 | 328 | 613 | 1763 | 676 | 1087 |  |  |  | 15 - 19 | 275921 | 257655 | 17423 | 145 | 457 | 42 | 199
+    102 |  | 92 | 2496 | 910 | 1586 | 898 | 322 | 576 | 1598 | 588 | 1010 |  |  |  | 20 - 24 | 295909 | 173906 | 116908 | 891 | 3505 | 282 | 417
+    103 |  | 93 | 1945 | 682 | 1263 | 681 | 239 | 442 | 1264 | 443 | 821 |  |  |  | 25 - 29 | 339089 | 104588 | 224433 | 2016 | 7265 | 551 | 236
+    104 |  | 94 | 1557 | 537 | 1020 | 607 | 190 | 417 | 950 | 347 | 603 |  |  |  | 30 - 34 | 303559 | 50098 | 240500 | 3012 | 9256 | 594 | 99
+    105 |  | 95 | 1358 | 429 | 929 | 470 | 131 | 339 | 888 | 298 | 590 |  |  |  | 35 - 39 | 293106 | 31093 | 242995 | 7850 | 10437 | 678 | 53
+    106 |  | 96 | 527 | 206 | 321 | 180 | 68 | 112 | 347 | 138 | 209 |  |  |  | 40 - 44 | 150643 | 10979 | 125522 | 7620 | 6208 | 289 | 25
+    107 |  | 97 | 539 | 213 | 326 | 218 | 88 | 130 | 321 | 125 | 196 |  |  |  | 45 - 49 | 154776 | 9098 | 124942 | 8006 | 12384 | 326 | 20
+    108 |  | 98 | 537 | 221 | 316 | 204 | 90 | 114 | 333 | 131 | 202 |  |  |  | 50 - 54 | 136999 | 7947 | 110149 | 10613 | 8018 | 263 | 9
+    109 |  | 99 | 557 | 226 | 331 | 207 | 89 | 118 | 350 | 137 | 213 |  |  |  | 55 - 59 | 123428 | 6507 | 95140 | 13990 | 6510 | 1273 | 8
+    110 |  | 100 | 508 | 223 | 285 | 185 | 95 | 90 | 323 | 128 | 195 |  |  |  | 60 - 64 | 103117 | 5360 | 75370 | 17072 | 5078 | 229 | 8
+    111 |  | 101 | 536 | 209 | 327 | 187 | 80 | 107 | 349 | 129 | 220 |  |  |  | 65 - 69 | 78742 | 3966 | 52386 | 18347 | 3880 | 161 | 2
+    112 |  | 102 | 523 | 231 | 292 | 170 | 79 | 91 | 353 | 152 | 201 |  |  |  | 70 - 74 | 53098 | 2489 | 30763 | 16990 | 2720 | 134 | 2
+    113 |  | 103 | 506 | 206 | 300 | 174 | 70 | 104 | 332 | 136 | 196 |  |  |  | 75 + | 66820 | 3099 | 31474 | 28426 | 3702 | 103 | 16
+    114 |  | 104 | 531 | 222 | 309 | 199 | 85 | 114 | 332 | 137 | 195 |  |  |  | Rural |  |  |  |  |  |  | 
+    115 |  | 105 | 539 | 239 | 300 | 209 | 98 | 111 | 330 | 141 | 189 |  |  |  | Total | 9417017 | 4599000 | 4416204 | 270563 | 123525 | 6200 | 1525
+    116 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 0 - 4 | 937835 | 937835 | 0 | 0 | 0 | 0 | 0
+    117 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 5 - 9 | 965797 | 965797 | 0 | 0 | 0 | 0 | 0
+    118 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 10 - 14 | 1095648 | 1094749 | 390 | 29 | 14 | 6 | 460
+    119 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 15 - 19 | 862375 | 811756 | 48812 | 358 | 946 | 101 | 402
+    120 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 20 - 24 | 684794 | 383390 | 292111 | 1858 | 6806 | 502 | 127
+    121 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 25 - 29 | 765658 | 196358 | 551963 | 3778 | 12673 | 788 | 98
+    122 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 30 - 34 | 708442 | 78495 | 609849 | 5171 | 14064 | 813 | 50
+    123 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 35 - 39 | 724082 | 42689 | 658370 | 7650 | 14572 | 753 | 48
+    124 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 40 - 44 | 452447 | 18110 | 415534 | 8609 | 9741 | 428 | 25
+    125 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 45 - 49 | 484629 | 15445 | 443422 | 14006 | 11187 | 548 | 21
+    126 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 50 - 54 | 452252 | 14464 | 403771 | 22159 | 11304 | 521 | 33
+    127 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 55 - 59 | 409121 | 11832 | 356098 | 29444 | 11198 | 528 | 21
+    128 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 60 - 64 | 290890 | 9246 | 237896 | 34269 | 9057 | 407 | 15
+    129 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 65 - 69 | 225583 | 7456 | 172747 | 37526 | 7518 | 318 | 18
+    130 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 70 - 74 | 153661 | 4761 | 107367 | 36009 | 5277 | 225 | 22
+    131 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 75 + | 203803 | 6617 | 117874 | 69697 | 9168 | 262 | 185
+    132 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Male |  |  |  |  |  |  | 
+    133 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Total | 4578498 | 2415573 | 2085345 | 43687 | 31025 | 2064 | 804
+    134 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 0 - 4 | 482234 | 482234 | 0 | 0 | 0 | 0 | 0
+    135 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 5 - 9 | 494221 | 494221 | 0 | 0 | 0 | 0 | 0
+    136 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 10 - 14 | 560728 | 560303 | 149 | 11 | 3 | 1 | 261
+    137 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 15 - 19 | 439183 | 429971 | 8799 | 78 | 118 | 13 | 204
+    138 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 20 - 24 | 336900 | 234686 | 99881 | 440 | 1671 | 141 | 81
+    139 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 25 - 29 | 374984 | 127003 | 242566 | 967 | 4144 | 248 | 56
+    140 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 30 - 34 | 345652 | 47085 | 291756 | 1378 | 5127 | 285 | 21
+    141 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 35 - 39 | 356888 | 20519 | 329534 | 1831 | 4719 | 263 | 22
+    142 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 40 - 44 | 216789 | 6051 | 206183 | 1740 | 2654 | 148 | 13
+    143 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 45 - 49 | 230722 | 3972 | 221685 | 2290 | 2605 | 164 | 6
+    144 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 50 - 54 | 205737 | 2635 | 197557 | 3248 | 2125 | 162 | 10
+    145 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 55 - 59 | 187953 | 1836 | 179788 | 4241 | 1882 | 197 | 9
+    146 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 60 - 64 | 116250 | 1280 | 109331 | 4149 | 1358 | 129 | 3
+    147 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 65 - 69 | 89605 | 1097 | 82426 | 4774 | 1205 | 101 | 2
+    148 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 70 - 74 | 61634 | 897 | 54253 | 5336 | 1056 | 88 | 4
+    149 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 75 + | 79018 | 1783 | 61437 | 13204 | 2358 | 124 | 112
+    150 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Female |  |  |  |  |  |  | 
+    151 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Total | 4838519 | 2183427 | 2330859 | 226876 | 92500 | 4136 | 721
+    152 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 0 - 4 | 455601 | 455601 | 0 | 0 | 0 | 0 | 0
+    153 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 5 - 9 | 471576 | 471576 | 0 | 0 | 0 | 0 | 0
+    154 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 10 - 14 | 534920 | 534446 | 241 | 18 | 11 | 5 | 199
+    155 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 15 - 19 | 423192 | 381785 | 40013 | 280 | 828 | 88 | 198
+    156 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 20 - 24 | 347894 | 148704 | 192230 | 1418 | 5135 | 361 | 46
+    157 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 25 - 29 | 390674 | 69355 | 309397 | 2811 | 8529 | 540 | 42
+    158 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 30 - 34 | 362790 | 31410 | 318093 | 3793 | 8937 | 528 | 29
+    159 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 35 - 39 | 367194 | 22170 | 328836 | 5819 | 9853 | 490 | 26
+    160 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 40 - 44 | 235658 | 12059 | 209351 | 6869 | 7087 | 280 | 12
+    161 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 45 - 49 | 253907 | 11473 | 221737 | 11716 | 8582 | 384 | 15
+    162 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 50 - 54 | 246515 | 11829 | 206214 | 18911 | 9179 | 359 | 23
+    163 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 55 - 59 | 221168 | 9996 | 176310 | 25203 | 9316 | 331 | 12
+    164 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 60 - 64 | 174640 | 7966 | 128565 | 30120 | 7699 | 278 | 12
+    165 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 65 - 69 | 135978 | 6359 | 90321 | 32752 | 6313 | 217 | 16
+    166 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 70 - 74 | 92027 | 3864 | 53114 | 30673 | 4221 | 137 | 18
+    167 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 75 + | 124785 | 4834 | 56437 | 56493 | 6810 | 138 | 73
+  -- 'Tables E': 341 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table E1.   |  |  |  |  |  |  |  |  |  |  |  |  | Table E2 .  |  |  |  |  |  |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Capital/Pro | Both Sexes |  |  | Male |  |  | Female |  |  |  |  |  | Age group | Seeing |  |  |  |  |  | Hearing
+      4 |  |  | Total | No disabili | With disabi | Total | No disabili | With disabi | Total | No disabili | With disabi |  |  |  |  | Total | None | Some diffic | Major diffi | Fully disab | Not Stated | Total
+      5 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      6 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Both sexes |  |  |  |  |  |  | 
+      7 |  | Total | 14102052 | 13412520 | 689532 | 6825874 | 6539215 | 286659 | 7276178 | 6873305 | 402873 |  |  |  | Total | 14102052 | 13599799 | 412240 | 71725 | 18288 | 0 | 14102052
+      8 |  | Banteay Mea | 784594 | 740410 | 44184 | 387690 | 367996 | 19694 | 396904 | 372414 | 24490 |  |  |  | 5 - 9 | 1473104 | 1462791 | 7771 | 1544 | 998 | 0 | 1473104
+      9 |  | Battambang | 901043 | 839373 | 61670 | 440781 | 414380 | 26401 | 460262 | 424993 | 35269 |  |  |  | 10 - 14 | 1647877 | 1640630 | 4604 | 1481 | 1162 | 0 | 1647877
+     10 |  | Kampong Cha | 818646 | 768360 | 50286 | 389365 | 368970 | 20395 | 429281 | 399390 | 29891 |  |  |  | 15 - 19 | 1409350 | 1402376 | 4497 | 1529 | 948 | 0 | 1409350
+     11 |  | Kampong Chh | 475006 | 444401 | 30605 | 225493 | 213869 | 11624 | 249513 | 230532 | 18981 |  |  |  | 20 - 24 | 1255180 | 1245924 | 6004 | 2258 | 994 | 0 | 1255180
+     12 |  | Kampong Spe | 797088 | 761468 | 35620 | 383897 | 369253 | 14644 | 413191 | 392215 | 20976 |  |  |  | 25 - 29 | 1428248 | 1416268 | 8202 | 2637 | 1141 | 0 | 1428248
+     13 |  | Kampong Tho | 610185 | 578006 | 32179 | 294242 | 280812 | 13430 | 315943 | 297194 | 18749 |  |  |  | 30 - 34 | 1306011 | 1292427 | 9872 | 2652 | 1060 | 0 | 1306011
+     14 |  | Kampot | 538875 | 516104 | 22771 | 259232 | 249855 | 9377 | 279643 | 266249 | 13394 |  |  |  | 35 - 39 | 1306222 | 1289208 | 13097 | 2869 | 1048 | 0 | 1306222
+     15 |  | Kandal | 1094630 | 1041906 | 52724 | 526676 | 504980 | 21696 | 567954 | 536926 | 31028 |  |  |  | 40 - 44 | 753013 | 736193 | 14199 | 1967 | 654 | 0 | 753013
+     16 |  | Koh Kong | 114308 | 109507 | 4801 | 57629 | 55563 | 2066 | 56679 | 53944 | 2735 |  |  |  | 45 - 49 | 789334 | 761218 | 24815 | 2565 | 736 | 0 | 789334
+     17 |  | Kratie | 333931 | 319000 | 14931 | 165737 | 159392 | 6345 | 168194 | 159608 | 8586 |  |  |  | 50 - 54 | 714816 | 674691 | 36173 | 3214 | 738 | 0 | 714816
+     18 |  | Mondul Kiri | 81486 | 77500 | 3986 | 41727 | 39823 | 1904 | 39759 | 37677 | 2082 |  |  |  | 55 - 59 | 640209 | 590365 | 44999 | 4016 | 829 | 0 | 640209
+     19 |  | Phnom Penh | 2113118 | 2039206 | 73912 | 1018933 | 987558 | 31375 | 1094185 | 1051648 | 42537 |  |  |  | 60 - 64 | 466242 | 408541 | 52137 | 4784 | 780 | 0 | 466242
+     20 |  | Preah Vihea | 224829 | 212697 | 12132 | 113124 | 107643 | 5481 | 111705 | 105054 | 6651 |  |  |  | 65 - 69 | 359494 | 300770 | 52017 | 5757 | 950 | 0 | 359494
+     21 |  | Prey Veng | 952544 | 896353 | 56191 | 444550 | 423887 | 20663 | 507994 | 472466 | 35528 |  |  |  | 70 - 74 | 241380 | 180085 | 52110 | 8086 | 1099 | 0 | 241380
+     22 |  | Pursat | 375039 | 353935 | 21104 | 180928 | 172664 | 8264 | 194111 | 181271 | 12840 |  |  |  | 75 + | 311572 | 198312 | 81743 | 26366 | 5151 | 0 | 311572
+     23 |  | Ratanak Kir | 194972 | 187922 | 7050 | 98494 | 95224 | 3270 | 96478 | 92698 | 3780 |  |  |  | Male |  |  |  |  |  |  | 
+     24 |  | Siemreap | 910242 | 869657 | 40585 | 444011 | 426409 | 17602 | 466231 | 443248 | 22983 |  |  |  | Total | 6825874 | 6623605 | 166606 | 27903 | 7760 | 0 | 6825874
+     25 |  | Sihanoukvil | 287147 | 270699 | 16448 | 149400 | 142282 | 7118 | 137747 | 128417 | 9330 |  |  |  | 5 - 9 | 753541 | 748126 | 4047 | 806 | 562 | 0 | 753541
+     26 |  | Stung Treng | 146145 | 139595 | 6550 | 74360 | 71378 | 2982 | 71785 | 68217 | 3568 |  |  |  | 10 - 14 | 842891 | 839123 | 2379 | 800 | 589 | 0 | 842891
+     27 |  | Svay Rieng | 473536 | 451786 | 21750 | 222980 | 214256 | 8724 | 250556 | 237530 | 13026 |  |  |  | 15 - 19 | 710237 | 706733 | 2201 | 809 | 494 | 0 | 710237
+     28 |  | Takeo | 820554 | 786078 | 34476 | 389884 | 375914 | 13970 | 430670 | 410164 | 20506 |  |  |  | 20 - 24 | 611377 | 606826 | 2868 | 1167 | 516 | 0 | 611377
+     29 |  | Oddar Meanc | 246340 | 234409 | 11931 | 124214 | 118693 | 5521 | 122126 | 115716 | 6410 |  |  |  | 25 - 29 | 698485 | 692689 | 3947 | 1305 | 544 | 0 | 698485
+     30 |  | Kep | 38474 | 36732 | 1742 | 18897 | 18184 | 713 | 19577 | 18548 | 1029 |  |  |  | 30 - 34 | 639662 | 633024 | 4802 | 1288 | 548 | 0 | 639662
+     31 |  | Pailin | 67567 | 64584 | 2983 | 34141 | 32760 | 1381 | 33426 | 31824 | 1602 |  |  |  | 35 - 39 | 645922 | 637717 | 6185 | 1483 | 537 | 0 | 645922
+     32 |  | Tbong Khmum | 701753 | 672832 | 28921 | 339489 | 327470 | 12019 | 362264 | 345362 | 16902 |  |  |  | 40 - 44 | 366712 | 358860 | 6586 | 940 | 326 | 0 | 366712
+     33 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 45 - 49 | 380651 | 367507 | 11541 | 1253 | 350 | 0 | 380651
+     34 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 50 - 54 | 331302 | 313278 | 16155 | 1532 | 337 | 0 | 331302
+     35 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 55 - 59 | 295613 | 273783 | 19594 | 1840 | 396 | 0 | 295613
+     36 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 60 - 64 | 188485 | 167002 | 19347 | 1821 | 315 | 0 | 188485
+     37 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 65 - 69 | 144774 | 123974 | 18534 | 1904 | 362 | 0 | 144774
+     38 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 70 - 74 | 96255 | 74507 | 18768 | 2584 | 396 | 0 | 96255
+     39 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 75 + | 119967 | 80456 | 29652 | 8371 | 1488 | 0 | 119967
+     40 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Female |  |  |  |  |  |  | 
+     41 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | Total | 7276178 | 6976194 | 245634 | 43822 | 10528 | 0 | 7276178
+     42 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 5 - 9 | 719563 | 714665 | 3724 | 738 | 436 | 0 | 719563
+     43 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 10 - 14 | 804986 | 801507 | 2225 | 681 | 573 | 0 | 804986
+     44 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 15 - 19 | 699113 | 695643 | 2296 | 720 | 454 | 0 | 699113
+     45 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 20 - 24 | 643803 | 639098 | 3136 | 1091 | 478 | 0 | 643803
+     46 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 25 - 29 | 729763 | 723579 | 4255 | 1332 | 597 | 0 | 729763
+     47 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 30 - 34 | 666349 | 659403 | 5070 | 1364 | 512 | 0 | 666349
+     48 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 35 - 39 | 660300 | 651491 | 6912 | 1386 | 511 | 0 | 660300
+     49 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 40 - 44 | 386301 | 377333 | 7613 | 1027 | 328 | 0 | 386301
+     50 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 45 - 49 | 408683 | 393711 | 13274 | 1312 | 386 | 0 | 408683
+     51 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 50 - 54 | 383514 | 361413 | 20018 | 1682 | 401 | 0 | 383514
+     52 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 55 - 59 | 344596 | 316582 | 25405 | 2176 | 433 | 0 | 344596
+     53 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 60 - 64 | 277757 | 241539 | 32790 | 2963 | 465 | 0 | 277757
+     54 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 65 - 69 | 214720 | 176796 | 33483 | 3853 | 588 | 0 | 214720
+     55 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 70 - 74 | 145125 | 105578 | 33342 | 5502 | 703 | 0 | 145125
+     56 |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 75 + | 191605 | 117856 | 52091 | 17995 | 3663 | 0 | 191605
+     57 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     58 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     59 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     60 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     61 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     62 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     63 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     64 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     65 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     66 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     67 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     68 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     69 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     70 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     71 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     72 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     73 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     74 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     75 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     76 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     77 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     78 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     79 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     80 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     81 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     82 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     83 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     84 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     85 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     86 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     87 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     88 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     89 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     90 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     91 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     92 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     93 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     94 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     95 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     96 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     97 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     98 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+     99 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    100 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    101 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    102 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    103 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    104 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    105 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    106 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    107 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    108 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    109 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    110 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    111 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    112 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    113 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    114 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    115 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    116 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    117 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    118 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    119 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    120 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    121 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    122 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    123 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    124 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    125 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    126 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    127 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    128 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    129 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    130 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    131 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    132 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    133 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    134 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    135 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    136 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    137 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    138 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    139 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    140 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    141 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    142 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    143 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    144 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    145 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    146 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    147 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    148 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    149 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    150 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    151 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    152 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    153 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    154 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    155 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    156 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    157 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    158 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    159 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    160 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    161 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    162 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    163 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    164 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    165 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    166 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    167 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    168 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    169 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
