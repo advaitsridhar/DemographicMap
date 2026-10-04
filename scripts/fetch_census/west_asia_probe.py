@@ -121,24 +121,39 @@ def cmd_ods(base: str, search: str | None, rows: int) -> None:
 
 def cmd_odsrows(base: str, dataset: str, where: str | None, select: str | None,
                 group_by: str | None, rows: int) -> None:
+    """Records, a hundred a page, until ``rows`` are shown.
+
+    The arguments are percent-decoded first: a quote cannot be passed through
+    the workflow, so ``%22`` stands for it (``--where zone=%2213%22``).
+    """
     base = base.rstrip("/")
     params = {"limit": str(min(rows, 100))}
     if where:
-        params["where"] = where
+        params["where"] = urllib.parse.unquote(where)
     if select:
-        params["select"] = select
+        params["select"] = urllib.parse.unquote(select)
     if group_by:
-        params["group_by"] = group_by
-    url = (f"{base}/api/explore/v2.1/catalog/datasets/{dataset}/records?"
-           + urllib.parse.urlencode(params))
-    status, ctype, body = fetch(url, accept="application/json")
-    if status != 200:
-        log(f"{url}: {status} {ctype} {body[:500]!r}")
-        return
-    data = json.loads(body)
-    log(f"{dataset}: total_count={data.get('total_count')}")
-    for rec in data.get("results") or []:
-        log("  " + json.dumps(rec, ensure_ascii=False)[:600])
+        params["group_by"] = urllib.parse.unquote(group_by)
+    shown = offset = 0
+    while shown < rows:
+        params["offset"] = str(offset)
+        url = (f"{base}/api/explore/v2.1/catalog/datasets/{dataset}/records?"
+               + urllib.parse.urlencode(params))
+        status, ctype, body = fetch(url, accept="application/json")
+        if status != 200:
+            log(f"{url}: {status} {ctype} {body[:500]!r}")
+            return
+        data = json.loads(body)
+        results = data.get("results") or []
+        if offset == 0:
+            log(f"{dataset}: total_count={data.get('total_count')}")
+        for rec in results:
+            rec = {k: v for k, v in rec.items() if k not in ("geo_shape", "geo_point")}
+            log("  " + json.dumps(rec, ensure_ascii=False)[:600])
+            shown += 1
+        if group_by or len(results) < int(params["limit"]):
+            break
+        offset += len(results)
 
 
 def cmd_get(urls: list[str], grep: str | None, links: str | None, chars: int,
