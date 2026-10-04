@@ -1,25 +1,87 @@
-== https://ceo.gencat.cat/ca/barometre/
-  HTTP 200; text/html;charset=utf-8; 131,611 bytes; final https://web.gencat.cat/ca/generalitat/dades-indicadors/centre-estudis-opinio/estudis-ceo
-  287 lines, 7 with ['microdad', 'matriu', 'fusionad', 'registr', 'descarreg']
-    | Registrar un document
-    | Oficines de registre
-    | Informació clau per crear i gestionar una entitat sense ànim de lucre, des dels primers passos i la documentació bàsica fins a les inscripcions als registres i la gestió dels comptes.
-    | Inscriure's als registres
-    | Registres sectorials, serveis i tràmits destacats i cercadors d'entitats. Tot organitzat per temes.
-    | Registre d'Estudis d'Opinió (REO)
-    | Consulteu al portal de Dades obertes tots els estudis del Registre d'Estudis d'Opinió
-  0 links with ['microdad', 'matriu', 'fusion', 'zip', 'sav', 'csv', 'barometre', 'bop']
-== https://ceo.gencat.cat/ca/estudis/registre-estudis-dopinio/
-  HTTP 200; text/html;charset=utf-8; 124,276 bytes; final https://web.gencat.cat/ca/generalitat/dades-indicadors/centre-estudis-opinio/registre-estudis-opinio
-  274 lines, 10 with ['microdad', 'matriu', 'fusionad', 'registr', 'descarreg']
-    | Registre d'Estudis d'Opinió
-    | Registrar un document
-    | Oficines de registre
-    | Informació clau per crear i gestionar una entitat sense ànim de lucre, des dels primers passos i la documentació bàsica fins a les inscripcions als registres i la gestió dels comptes.
-    | Inscriure's als registres
-    | Registres sectorials, serveis i tràmits destacats i cercadors d'entitats. Tot organitzat per temes.
-    | Registre d'Estudis d'Opinió
-    | Registre d'Estudis d'Opinió
-    | El Registre d’Estudis d’Opinió (REO) recull els estudis d’opinió del CEO (Estudis d'Opinió del CEO) i els de la resta d’àmbits de la Generalitat de Catalunya (Estudis de la Generalitat).
-    | Consulteu al portal de Dades obertes tots els estudis del Registre d'Estudis d'Opinió
-  0 links with ['microdad', 'matriu', 'fusion', 'zip', 'sav', 'csv', 'barometre', 'bop']
+  HTTP 200; application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; 1,485,080 bytes; final https://www.cis.es/documents/20117/13957047/3558-multi.xlsx
+== https://www.cis.es/documents/20117/13957047/3558-multi.xlsx
+  1,485,080 bytes, 23 sheets: Contenidos | Ficha técnica | Tabla ponderaciones | Notas | Andalucía | Almería | Cádiz | Córdoba | Granada | Huelva | Jaén | Málaga | Sevilla | Sexo | Edad | Nivel de estudios | Tamaño de municipio | RV EA22 | RV EG23 | Ocupación | Clase social | Escala de ideología | Religiosidad
+  -- sheet 'Contenidos': 1 rows match /religi|lengua|idioma/; header and matches
+    r2:  | 3558/0 PREELECTORAL ELEC
+    r4: ÍNDICE DE CONTENIDOS |  |  | CLASIFICACIÓN
+    r5: ☞ Ficha técnica | Ficha técnica del estudi |  | Colecciones
+    r6: ☞ Tabla ponderaciones | Tabla de Ponderaciones |  | Estudios electorales
+    r7: ☞ Notas | Notas adicionales del es |  | Elecciones autonómicas
+    r8: ☞ Resultados Andalucía | Resumen de marginales de
+    r9: ☞ Resultados Almería | Resumen de marginales de |  | Claves temáticas
+    r10: ☞ Resultados Cádiz | Resumen de marginales de |  | 001_003 Cultura política
+    r11: ☞ Resultados Córdoba | Resumen de marginales de |  | 001_004 Partidos y líder
+    r12: ☞ Resultados Granada | Resumen de marginales de |  | 001_005 Elecciones
+    r26: ☞ Religiosidad | Cruce por Religiosidad d
+  -- sheet 'Andalucía': 2 rows match /religi|lengua|idioma/; header and matches
+    r2:  | 3558/0 PREELECTORAL ELEC
+    r3:  | INFORME DE MARGINALES
+    r4: Pregunta A0001
+    r5: Sexo:
+    r6: Hombre | 48.64177243741322
+    r7: Mujer | 51.35822756258834
+    r8: (N) | 8017
+    r11: Pregunta A0002
+    r12: ¿Qué edad tiene Ud.?
+    r690: ¿Cómo se define Ud. en m
+    r691: Católico/a practicante | 24.474531730581532
+    r692: Católico/a no practicant | 38.481475808751895
+    r693: Creyente de otra religió | 2.3702665873528326
+    r694: Agnóstico/a (no niegan l | 9.294969044817341
+    r695: Indiferente, no creyente | 10.208434196474887
+    r696: Ateo/a (niegan la existe | 12.722546032535242
+    r697: N.C. | 2.4477765994876597
+    r698: (N) | 8017
+    r701: Pregunta C6
+    r702: ¿Cuál es su estado civil
+    r703: Casado/a | 50.133402674196276
+    r704: Soltero/a | 34.34580188344171
+    r693: Creyente de otra religió | 2.3702665873528326
+    r694: Agnóstico/a (no niegan l | 9.294969044817341
+    r695: Indiferente, no creyente | 10.208434196474887
+    r696: Ateo/a (niegan la existe | 12.722546032535242
+    r697: N.C. | 2.4477765994876597
+    r698: (N) | 8017
+    r701: Pregunta C6
+    r702: ¿Cuál es su estado civil
+    r703: Casado/a | 50.133402674196276
+    r704: Soltero/a | 34.34580188344171
+    r705: Viudo/a | 7.103113279997838
+    r706: Separado/a | 1.6689128616303996
+    r707: Divorciado/a | 6.431549005794673
+  -- sheet 'Almería': 2 rows match /religi|lengua|idioma/; header and matches
+    r2:  | 3558/0 PREELECTORAL ELEC
+    r3:  | Provincia de Almería
+    r4:  | INFORME DE MARGINALES
+    r5: Pregunta A0001
+    r6: Sexo:
+    r7: Hombre | 49.26509278809652
+    r8: Mujer | 50.7349072119033
+    r9: (N) | 602
+    r12: Pregunta A0002
+    r633: ¿Cómo se define Ud. en m
+    r634: Católico/a practicante | 24.29207376365881
+    r635: Católico/a no practicant | 38.904674580936
+    r636: Creyente de otra religió | 2.808100703126984
+    r637: Agnóstico/a (no niegan l | 7.315359131623012
+    r638: Indiferente, no creyente | 9.841941737743241
+    r639: Ateo/a (niegan la existe | 11.989703078085423
+    r640: N.C. | 4.848147004826303
+    r641: (N) | 602
+    r644: Pregunta C6
+    r645: ¿Cuál es su estado civil
+    r646: Casado/a | 48.18260825230947
+    r647: Soltero/a | 34.43592987896227
+    r636: Creyente de otra religió | 2.808100703126984
+    r637: Agnóstico/a (no niegan l | 7.315359131623012
+    r638: Indiferente, no creyente | 9.841941737743241
+    r639: Ateo/a (niegan la existe | 11.989703078085423
+    r640: N.C. | 4.848147004826303
+    r641: (N) | 602
+    r644: Pregunta C6
+    r645: ¿Cuál es su estado civil
+    r646: Casado/a | 48.18260825230947
+    r647: Soltero/a | 34.43592987896227
+    r648: Viudo/a | 7.342628449042804
+    r649: Separado/a | 2.0156759172282324
+    r650: Divorciado/a | 6.8083659513953325
