@@ -1,110 +1,72 @@
-pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
-    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
-    and its 31 districts are Table 9's districts
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
-    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
-    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 36 districts add up to the province
-    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
-    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
-    and its 34 districts are Table 9's districts
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
-    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
-    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
-    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
-    and its 22 districts are Table 9's districts
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
-    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
-    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
-    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
-    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
-    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
-    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
-    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 34 districts add up to the province
-    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
-    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
-    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
-    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
-    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
-    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
-    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
-    and its 27 districts are Table 9's districts
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's mother tongues sum to its own printed total
-    and the 1 districts add up to the province
-    and its 1 districts are Table 9's districts
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  6 districts say what their Other language holds, and 1 what their Other religion does
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  Azad Jammu and Kashmir, from the territory's own yearbook
-    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-    Table 15.24 named on page 15 with no rows under it: the contents, not the table
-    Table 15.24 on page 209: 10 districts
-    all 7 columns sum to the printed AJ&K row
-    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
-    Table 15.33 named on page 16 with no heading row under it: the contents, not the table
-    Table 15.33 on page 213: 10 districts, 8 languages
-    Mirpur: Table 15.33 sums to 97%, rescaled to 100 across its own languages
-    AJ&K languages: Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%
-  Gilgit-Baltistan, from the territory's own At a Glance
-    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
-    10 districts on page 3, summing to the territory's own printed 1,709,049
-  Gilgit-Baltistan's language, from the territory's own MICS
-    22,827,802 bytes from https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf
-    Table SR.3.1 named on page 6 with no language block under it: the contents, not the table
-    Table SR.3.1 on page 57: 6 languages over 6,929 households, 2025
-  11 records declaring what is not published, rather than leaving the field empty
-  133 units say why their ethnicity field is empty, which is that the census does not ask it
-  26 territory fields say why no age or sex ratio is published for them
-  wrote data/processed/pakistan_district.json (800 kB)
-  126 districts and 7 provinces
+== pxweb https://data.1212.mn/api/v1/en/NSO
+  folder: 8 entries
+    l 'Economy, environment': Economy, environment
+    l 'Education, health': Education, health
+    l 'Historical data': Historical data
+    l 'Industry, service': Industry, service
+    l 'Labour, business': Labour, business
+    l 'Population, household': Population, household
+    l 'Regional development': Regional development
+    l 'Society, development': Society, development
+== pxweb https://data.1212.mn/api/v1/en/NSO/Population,%20household
+  folder: 6 entries
+    l '1_Population, household': 1_Population, household
+    l '2_Regular movement of population': 2_Regular movement of population
+    l '3_Herdsmen': 3_Herdsmen
+    l '3_Infrastructure, housing': 3_Infrastructure, housing
+    l '4_Population projection': 4_Population projection
+    l '5_Adminstrative units, territory': 5_Adminstrative units, territory
+== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development
+  folder: 24 entries
+    l 'Agriculture': Agriculture
+    l 'Construction': Construction
+    l 'Culture, Tourism, Exercise, and Sports': Culture, Tourism, Exercise, and Sports
+    l 'Disability': Disability
+    l 'Education, Science, and Intellectual Property': Education, Science, and Intellectual Property
+    l 'Election': Election
+    l 'Government budget': Government budget
+    l 'Health': Health
+    l 'Human development': Human development
+    l 'Infrastructure, housing': Infrastructure, housing
+    l 'Justice and crime': Justice and crime
+    l 'Labour and business': Labour and business
+    l 'Livestock': Livestock
+    l 'Monasteries, Temples and Churches': Monasteries, Temples and Churches
+    l 'Money and Finance': Money and Finance
+    l 'National accounts': National accounts
+    l 'Population and household': Population and household
+    l 'Population livelihood': Population livelihood
+    l 'Price': Price
+    l 'SMEs': SMEs
+    l 'Statistical business register': Statistical business register
+    l 'Territory, administrative units': Territory, administrative units
+    l 'Trade': Trade
+    l 'Transportation': Transportation
+== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development/Population%20and%20household
+  folder: 26 entries
+    t 'DT_NSO_0300_002V4.px': MID-YEAR RESIDENT POPULATION, by soum and district, and by year by Region and Year (updated 2026-06-08T15:39:43)
+    t 'DT_NSO_0300_004V1.px': POPULATION OF MONGOLIA, by location, aimags and the Capital, and by year by Location, Region and Year (updated 2026-05-18T20:09:38)
+    t 'DT_NSO_0300_004V5.px': RESIDENT POPULATION IN MONGOLIA, by soum and district, and by year by Region, Location and Year (updated 2026-07-28T09:08:55)
+    t 'DT_NSO_0300_006V2.px': NUMBER OF HOUSEHOLDS, by soum and discrict, and by year by Region and Year (updated 2026-05-06T13:57:07)
+    t 'DT_NSO_0300_006V5.px': NUMBER OF HOUSEHOLDS, by location, soum and discrict, and by year by Location, Region and Year (updated 2026-05-13T15:50:41)
+    t 'DT_NSO_0300_007V1_1.px': NUMBER OF ORPHAN CHILDREN, by aimags and the Capital, and by year by Region and Year (updated 2026-05-15T16:40:42)
+    t 'DT_NSO_0300_008V1_2.px': CHILD LIVING WITH ONE OF THE PARENTS, by aimags and the Capital, and by year by Region and Year (updated 2026-05-15T16:36:20)
+    t 'DT_NSO_0300_013V4.px': NUMBER OF DEATHS, by sex, soum and district, and by year by Sex, Region and Year (updated 2026-05-13T16:22:15)
+    t 'DT_NSO_0300_013V6.px': NUMBER OF BIRTHS, by sex, soum and discrict, and by year by Sex, Region and Year (updated 2026-05-13T16:51:08)
+    t 'DT_NSO_0300_016V3.px': NUMBER OF DEATHS, by age group, soum and district, and by year by Age group, Region and Year (updated 2026-05-13T20:06:17)
+    t 'DT_NSO_0300_018V2.px': NUMBER OF MARRIAGES AND DIVORCES, by soum and district, and by year by Indicator, Region and Year (updated 2026-05-06T13:57:24)
+    t 'DT_NSO_0300_019V6.px': REGISTERED MARRIAGES, by sex, soum and district, and by year by Sex, Age group, Region and Year (updated 2026-05-15T10:24:24)
+    t 'DT_NSO_0300_020V1.px': MARRIAGES AND DIVORCES, by per 1000 population, aimags and the Capital, and by year by Marital status, Region  (updated 2026-05-18T19:45:29)
+    t 'DT_NSO_0300_023V4.px': NUMBER OF BIRTHS, by mother's age group, soum and discrict, and by year by Age group, Region and Year (updated 2026-05-14T19:18:03)
+    t 'DT_NSO_0300_024V2.px': DEATH PER 1000, by sex, soum and district, and by year by Sex, Region and Year (updated 2026-05-19T11:43:01)
+    t 'DT_NSO_0300_029V3.px': CRUDE BIRTH RATE, by soum and district, and by year by Sex, Region and Year (updated 2026-05-19T15:20:15)
+    t 'DT_NSO_0300_030V1.px': LIFE EXPECTANCY AT BIRTH, by sex, aimags and the Capital, and by year by Sex, Region and Year (updated 2026-05-29T21:25:27)
+    t 'DT_NSO_0300_032V3.px': SEX RATIO AT BIRTH, by soum and discrict, and by year by Region and Year (updated 2026-05-14T11:29:31)
+    t 'DT_NSO_0300_034V2.px': DENSITY, by soum and discrict, and by year by Region and Year (updated 2026-05-18T16:53:21)
+    t 'DT_NSO_0300_035V2.px': DEPENDENCY RATIO, by soum and district, and by year by Indicator, Region and Year (updated 2026-05-18T12:11:38)
+    t 'DT_NSO_0300_038V4.px': WOMEN WHO GAVE BIRTH, by mother's educational level, soum and district, and by year by Education level, Region (updated 2026-05-06T13:57:36)
+    t 'DT_NSO_0300_040V1.px': POPULATION MIGRATION, by aimags and the Capital, and by year by Indicator, Region and Year (updated 2026-04-15T21:16:14)
+    t 'DT_NSO_0300_051V3.px': WOMEN WHO GAVE BIRTH, by marital status, soum and district, and by year by Indicator, Region and Year (updated 2026-05-14T12:01:53)
+    t 'DT_NSO_0300_052V2.px': ADOPTION, by soum and district, and by year by Region and Year (updated 2026-05-18T10:56:21)
+    t 'DT_NSO_0300_067V2.px': RESIDENT POPULATION IN MONGOLIA, by age group, soum and district, and by year by Age group, Region and Year (updated 2026-05-25T10:08:25)
+    t 'DT_NSO_0300_068V2.px': RESIDENT POPULATION IN MONGOLIA, by sex, by soum and district, and by year by Sex, Region and Year (updated 2026-05-19T18:54:31)
