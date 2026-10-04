@@ -22,6 +22,10 @@ Subcommands:
         match, the links whose address or label match, or the opening.
     wayback URL [--rows N]
         The Internet Archive's captures of a URL pattern (CDX), newest last.
+    uscb DATASET SHEET [--grep REGEX] [--rows N] [--level L]
+        One sheet of the US Census Bureau's workbook in an HDX dataset: its
+        field names and aliases, and the rows (of ADM_LEVEL L, if given) with
+        the geography columns and the fields whose name matches REGEX.
 
 Usage:
     python -m scripts.fetch_census.west_asia_probe ods https://www.data.gov.bh --search population
@@ -183,10 +187,42 @@ def cmd_wayback(pattern: str, rows: int) -> None:
         log("  " + " ".join(str(c) for c in row[1:5]))
 
 
+def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
+             level: int | None) -> None:
+    import io
+
+    import openpyxl
+
+    from . import uscb
+    url = uscb.workbook_url(dataset)
+    status, ctype, body = fetch(url)
+    log(f"{dataset}: {url} {status} {len(body):,} bytes")
+    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+    table = uscb.sheet_rows(book, sheet)
+    names, aliases = uscb.columns(table)
+    pat = re.compile(grep or "^$")
+    geo = [i for i, n in enumerate(names) if n in uscb.GEOGRAPHY and n not in
+           ("GEO_CONCAT", "CNTRY_NAME", "USCBCMNT", "GENC_CODE", "FIPS_CODE")]
+    picked = [i for i, n in enumerate(names) if n and n not in uscb.GEOGRAPHY and pat.search(n)]
+    log(f"  {sheet}: {len(table) - 2} rows; fields: {', '.join(n for n in names if n)}"[:3000])
+    for i in picked[:40]:
+        log(f"    {names[i]} = {aliases[i]}")
+    at = {n: i for i, n in enumerate(names)}
+    shown = 0
+    for row in table[2:]:
+        if level is not None and uscb.number(row[at["ADM_LEVEL"]]) != level:
+            continue
+        cells = [str(row[i]) for i in geo] + [str(row[i]) for i in picked[:30]]
+        log("  | " + " | ".join(cells)[:700])
+        shown += 1
+        if shown >= rows:
+            break
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback"])
+    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--search")
     ap.add_argument("--where")
@@ -197,7 +233,11 @@ def main() -> int:
     ap.add_argument("--links")
     ap.add_argument("--chars", type=int, default=1500)
     ap.add_argument("--context", type=int, default=150)
+    ap.add_argument("--level", type=int)
     args = ap.parse_args()
+    if args.cmd == "uscb":
+        cmd_uscb(args.target[0], args.target[1], args.grep, args.rows, args.level)
+        return 0
     if args.cmd == "ods":
         for base in args.target:
             cmd_ods(base, args.search, args.rows)
