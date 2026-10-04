@@ -1,45 +1,33 @@
-== https://documents.dadesobertes.gencat.cat/ceo/docs/microdades_anonimitzades_bop_presencial.sav
-  HTTP 200; application/octet-stream; 238,862,365 bytes; final https://documents.dadesobertes.gencat.cat/ceo/docs/microdades_anonimitzades_bop_presencial.sav
-  (the file): 59,838 rows, 1535 variables; file label None; encoding WINDOWS-1252
-  18,000 rows with BOP_NUM >= 56
-  LLENGUA_PRIMERA (Quina llengua va parlar primer vostè, a casa, quan era petit?) value labels: 1=Català (valencià / balear); 2=Castellà; 3=Totes dues igual: català (valencià / balear) i castellà; 4=Aranès; 80=Altres llengües o altres combinacions; 98=No ho sap; 99=No contesta
-  LLENGUA_PRIMERA by BOP_NUM: columns NaN=
-    56.0 Juny 23 - 1061         n= 2000: 2000
-    57.0 Oct. 23 - 1071         n= 2000: 2000
-    58.0 Feb. 24 - 1082         n= 2000: 2000
-    59.0 Juliol 24 - 1101       n= 2000: 2000
-    60.0 Oct. 24 -  1112        n= 2000: 2000
-    61.0 Feb. 25 - 1119         n= 2000: 2000
-    62.0 Juny 25 - 1142         n= 2000: 2000
-    63.0 Oct. 25 - 1145         n= 2000: 2000
-    64.0 Juny 26 - 1167         n= 2000: 2000
-  LLENGUA_IDENTIFICACIO by BOP_NUM: columns NaN=
-    56.0 Juny 23 - 1061         n= 2000: 2000
-    57.0 Oct. 23 - 1071         n= 2000: 2000
-    58.0 Feb. 24 - 1082         n= 2000: 2000
-    59.0 Juliol 24 - 1101       n= 2000: 2000
-    60.0 Oct. 24 -  1112        n= 2000: 2000
-    61.0 Feb. 25 - 1119         n= 2000: 2000
-    62.0 Juny 25 - 1142         n= 2000: 2000
-    63.0 Oct. 25 - 1145         n= 2000: 2000
-    64.0 Juny 26 - 1167         n= 2000: 2000
-  LLENGUA_IDENT_1_3 by BOP_NUM: columns 1.0=Català, 2.0=Castellà, 80.0=Altres opcions, 98.0=No ho sap, 99.0=No contesta
-    56.0 Juny 23 - 1061         n= 2000: 861 907 229 2 1
-    57.0 Oct. 23 - 1071         n= 2000: 843 936 212 3 6
-    58.0 Feb. 24 - 1082         n= 2000: 861 914 223 1 1
-    59.0 Juliol 24 - 1101       n= 2000: 867 883 247 2 1
-    60.0 Oct. 24 -  1112        n= 2000: 868 899 230 3 0
-    61.0 Feb. 25 - 1119         n= 2000: 882 944 169 2 3
-    62.0 Juny 25 - 1142         n= 2000: 860 928 209 0 3
-    63.0 Oct. 25 - 1145         n= 2000: 864 948 183 3 2
-    64.0 Juny 26 - 1167         n= 2000: 858 947 191 3 1
-  LLENGUA_PRIMERA_1_3 by BOP_NUM: columns 1.0=Català, 2.0=Castellà, 80.0=Altres opcions, 98.0=No ho sap, 99.0=No contesta
-    56.0 Juny 23 - 1061         n= 2000: 733 1127 131 8 1
-    57.0 Oct. 23 - 1071         n= 2000: 720 1156 116 6 2
-    58.0 Feb. 24 - 1082         n= 2000: 741 1104 150 4 1
-    59.0 Juliol 24 - 1101       n= 2000: 739 1091 160 7 3
-    60.0 Oct. 24 -  1112        n= 2000: 750 1089 154 6 1
-    61.0 Feb. 25 - 1119         n= 2000: 757 1123 116 4 0
-    62.0 Juny 25 - 1142         n= 2000: 749 1079 166 4 2
-    63.0 Oct. 25 - 1145         n= 2000: 758 1118 121 2 1
-    64.0 Juny 26 - 1167         n= 2000: 734 1117 140 8 1
+== https://analisi.transparenciacatalunya.cat/api/views/gp4k-sxxn.json
+  HTTP 200; application/json; charset=utf-8; 14,626 bytes; final https://analisi.transparenciacatalunya.cat/api/views/gp4k-sxxn.json
+  446 lines, 54 with ['licen', 'attribution', 'termsofuse', 'rowsupdatedat', 'publicationdate', 'name']
+    |   "name" : "Microdades acumulades de les enquestes del Centre d’Estudis d’Opinió",
+    |   "attribution" : "Centre d'Estudis d'Opinió (CEO)",
+    |   "attributionLink" : "https://administraciodigital.gencat.cat/ca/dades/dades-obertes/informacio-practica/llicencies/",
+    |   "licenseId" : "SEE_TERMS_OF_USE",
+    |   "publicationDate" : 1768212813,
+    |   "rowsUpdatedAt" : 1785760431,
+    |       "displayName" : "SGOID"
+    |     "name" : "Codi de sèrie",
+    |     "dataTypeName" : "text",
+    |     "fieldName" : "codi_serie",
+    |     "renderTypeName" : "text",
+    |     "name" : "Títol de sèrie",
+    |     "dataTypeName" : "text",
+    |     "fieldName" : "titol_serie",
+    |     "renderTypeName" : "text",
+    |     "name" : "Mode d’administració",
+    |     "dataTypeName" : "text",
+    |     "fieldName" : "mode_admin",
+    |     "renderTypeName" : "text",
+    |     "name" : "Data d’inici",
+    |     "dataTypeName" : "calendar_date",
+    |     "fieldName" : "data_inici",
+    |     "renderTypeName" : "calendar_date",
+    |     "name" : "Data final",
+    |     "dataTypeName" : "calendar_date",
+    |     "fieldName" : "data_fi",
+    |     "renderTypeName" : "calendar_date",
+    |     "name" : "Codi Registre d’Estudis d’Opinió",
+    |     "dataTypeName" : "text",
+    |     "fieldName" : "reo",
