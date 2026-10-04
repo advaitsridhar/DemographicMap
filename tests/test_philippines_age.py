@@ -14,9 +14,10 @@ HEADER = (["Region", "Province", "Mun", "Bgy", "BgyCode_new", "BgyCode_old"]
           + [f"{a}_{s}" for s in ("MF", "M", "F") for a in ["Total"] + AGES])
 
 
-def row(region: str, province: str, bgy: str, males: list[int], females: list[int]) -> list:
+def row(region: str, province: str, bgy: str, males: list[int], females: list[int],
+        mun: str = "Mun") -> list:
     both = [m + f for m, f in zip(males, females)]
-    return ([region, province, "Mun", bgy, "PH0", "PH0"]
+    return ([region, province, mun, bgy, "PH0", "PH0"]
             + [sum(both)] + both + [sum(males)] + males + [sum(females)] + females)
 
 
@@ -24,10 +25,14 @@ def flat(n: int) -> list[int]:
     return [n] * len(AGES)
 
 
-ADMIN1 = [{"id": "R1", "name": "NCR"}, {"id": "R2", "name": "Davao Region"}]
+ADMIN1 = [{"id": "R1", "name": "NCR"}, {"id": "R2", "name": "Davao Region"},
+          {"id": "R3", "name": "Soccsksargen"}]
 ADMIN2 = [{"id": "S1", "name": "NCR, Second District", "parent": "R1"},
           {"id": "S2", "name": "Compostela Valley", "parent": "R2"},
-          {"id": "S3", "name": "Davao del Sur", "parent": "R2"}]
+          {"id": "S3", "name": "Davao del Sur", "parent": "R2"},
+          {"id": "S4", "name": "Samar", "parent": "R3"},
+          {"id": "S5", "name": "Cotabato City", "parent": "R3"},
+          {"id": "S6", "name": "Maguindanao", "parent": "R3"}]
 
 
 class ColumnsTest(unittest.TestCase):
@@ -54,7 +59,7 @@ class AggregateTest(unittest.TestCase):
         rows = [row("NCR", "NCR, Second District (Not a Province)", "B1", flat(2), flat(1)),
                 row("NCR", "NCR, Second District (Not a Province)", "B2", flat(1), flat(1))]
         units = p.aggregate(rows, cols)
-        u = units[("NCR", "NCR, Second District")]
+        u = units[("NCR, Second District", "Mun")]
         self.assertEqual(u["barangays"], 2)
         self.assertEqual(u["totals"]["M"], 3 * 81)
         self.assertEqual(u["ages"]["MF"][0], 5)
@@ -67,36 +72,50 @@ class AggregateTest(unittest.TestCase):
             p.aggregate([bad], cols)
 
 
+class NamesTest(unittest.TestCase):
+    def test_bracketed_old_names_are_candidates(self):
+        self.assertIn("COMPOSTELA VALLEY", p.names_of("DAVAO DE ORO (COMPOSTELA VALLEY)"))
+        self.assertIn("SAMAR", p.names_of("SAMAR (WESTERN SAMAR)"))
+
+
 class BuildTest(unittest.TestCase):
-    def units(self):
+    def units(self, extra=()):
         cols = p.columns(HEADER)
         rows = [row("NCR", "NCR, Second District (Not a Province)", "B1", flat(10), flat(10)),
-                row("Region XI", "Davao de Oro", "B2", flat(10), flat(12)),
-                row("Region XI", "Davao del Sur", "B3", flat(12), flat(10))]
+                row("Region XI", "DAVAO DE ORO (COMPOSTELA VALLEY)", "B2", flat(10), flat(12)),
+                row("Region XI", "Davao del Sur", "B3", flat(12), flat(10)),
+                row("Region VIII", "SAMAR (WESTERN SAMAR)", "B4", flat(3), flat(3)),
+                row("BARMM", "MAGUINDANAO", "B5", flat(4), flat(4), mun="COTABATO CITY"),
+                row("BARMM", "MAGUINDANAO", "B6", flat(5), flat(5), mun="DATU PIANG"),
+                row("XII", "SULTAN KUDARAT", "B7", flat(1), flat(1)),
+                *extra]
         return p.aggregate(rows, cols)
 
-    def test_alias_and_region_sum(self):
+    def test_brackets_cities_exclusions_and_regions(self):
         recs = p.build(self.units(), 80, ADMIN1, ADMIN2)
         by = {r["shape_id"]: r for r in recs}
-        self.assertEqual(set(by), {"S1", "S2", "S3", "R1", "R2"})
-        self.assertEqual(by["S2"]["aliases"], ["Davao de Oro"])
+        # Maguindanao's polygon is excluded; Soccsksargen therefore unwritten.
+        self.assertEqual(set(by), {"S1", "S2", "S3", "S4", "S5", "R1", "R2"})
+        self.assertEqual(by["S2"]["aliases"], ["DAVAO DE ORO (COMPOSTELA VALLEY)"])
         # 81 equal single years from 0 to 80+: the middle person is in the year 40.
         self.assertEqual(by["S1"]["median_age"]["value"], 40.5)
         self.assertEqual(by["S2"]["sex_ratio"]["value"], round(100 * 10 / 12, 1))
         self.assertEqual(by["R2"]["sex_ratio"]["value"], 100.0)
         self.assertEqual(by["S2"]["population"]["value"], 22 * 81)
+        # Cotabato City taken out of Maguindanao for its own polygon.
+        self.assertEqual(by["S5"]["population"]["value"], 8 * 81)
         self.assertIsNone(by["R2"]["population"].get("value"))
         self.assertEqual(by["R1"]["level"], "admin1")
 
     def test_a_province_with_no_polygon_refuses(self):
+        cols = p.columns(HEADER)
         units = self.units()
-        units[("Region XI", "Nowhere")] = {**units[("Region XI", "Davao del Sur")],
-                                           "province": "Nowhere"}
+        units.update(p.aggregate([row("X", "NOWHERE", "B9", flat(1), flat(1))], cols))
         with self.assertRaises(SystemExit):
             p.build(units, 80, ADMIN1, ADMIN2)
 
     def test_a_region_with_an_unbound_province_is_not_written(self):
-        admin2 = ADMIN2 + [{"id": "S4", "name": "Davao Oriental", "parent": "R2"}]
+        admin2 = ADMIN2 + [{"id": "S7", "name": "Davao Oriental", "parent": "R2"}]
         recs = p.build(self.units(), 80, ADMIN1, admin2)
         self.assertNotIn("R2", {r["shape_id"] for r in recs})
 
