@@ -1,0 +1,364 @@
+"""The Dutch gemeenten's religion: CBS's 2014 table carried to the gemeenten of 2022.
+
+The descriptions below are CBS's own text from StatLine 70739ned, as the
+probe (scripts/fetch_census/netherlands_probe.py) printed it; the table rows
+copy the layout of the workbook as the probe dumped it. No network.
+"""
+
+from __future__ import annotations
+
+import sys
+import unittest
+from collections import Counter
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+
+from fetch_census import netherlands_religion_gemeente as m  # noqa: E402
+
+LITTENSERADIEL = (
+    "Opgeheven per 01-01-2018, overgegaan naar: - Leeuwarden (GM0080), ... 4330 hectare met 1416 "
+    "woningen en 3394 inwoners - Súdwest-Fryslân (GM1900), ... 6738 hectare met 2325 woningen en "
+    "5411 inwoners - Waadhoeke (GM1949), ... 1999 hectare met 806 woningen en 1878 inwoners "
+    "Naamswijziging per 26-01-1985, oude naam: Littenseradeel (GM0103) Begindatum 26-01-1985")
+KRIMPENERWAARD = (
+    "Ontstaan per 01-01-2015, ontvangen van: - Bergambacht (GM0491) ... 3510 hectare met 4231 "
+    "woningen en 10186 inwoners - Nederlek (GM0643) ... 2777 hectare met 6388 woningen en 14143 "
+    "inwoners - Ouderkerk (GM0644) ... 2707 hectare met 3343 woningen en 8241 inwoners - "
+    "Schoonhoven (GM0608) ... 628 hectare met 5302 woningen en 11898 inwoners - Vlist (GM0623) ... "
+    "5373 hectare met 4001 woningen en 9740 inwoners Begindatum 01-01-2015")
+MAASDONK = (
+    "Opgeheven per 01-01-2015, overgegaan naar: - 's-Hertogenbosch (GM0796), ... 2619 hectare met "
+    "2818 woningen en 6719 inwoners - Oss (GM0828), ... 1106 hectare met 1845 woningen en 4629 "
+    "inwoners Grenswijziging per 01-01-2000, ontvangen van: - Oss (GM0828), ... 20 hectare met 0 "
+    "woningen en 0 inwoners")
+LEERDAM = (
+    "Opgeheven per 01-01-2019, overgegaan naar: - Vijfheerenlanden (GM1961), ... 3376 hectare met "
+    "8988 woningen en 21248 inwoners Provinciale wijziging per 01-01-2019: - overgegaan van "
+    "provincie Zuid-Holland naar provincie Utrecht Wijziging per 01-01-1986, ontvangen van: - "
+    "Heukelum (GM0533), ... 15 hectare met 1 woning en 1 inwoner - Kedichem (GM0538), ... 867 "
+    "hectare met 466 woningen en 1084 inwoners Begindatum voor 1830")
+FRIESE_MEREN = (
+    "Naamswijziging per 01-07-2015, nieuwe naam: De Fryske Marren (GM1940) Ontstaan per "
+    "01-01-2014, ontvangen van: - Boarnsterhim (GM0055), ... 531 hectare met 277 woningen en 783 "
+    "inwoners - Lemsterland (GM0082), ... 7577 hectare met 6146 woningen en 13524 inwoners "
+    "Begindatum 01-01-2014")
+BINNENMAAS = (
+    "Gemeentelijke herindeling per 01-01-2007, ontvangen van: - Binnenmaas (GM0585), ... 5026 "
+    "hectare 8104 woningen en 19614 inwoners - 's-Gravendeel (GM0517), ... 1885 hectare 3709 "
+    "woningen en 9035 inwoners")
+
+
+class CBSsRecordOfChanges(unittest.TestCase):
+
+    def test_a_divided_gemeente_names_each_successor_and_its_people(self):
+        events = m.parse_events(LITTENSERADIEL)
+        self.assertEqual([(e.kind, e.date, e.direction) for e in events],
+                         [("Opgeheven", "20180101", "out"),
+                          ("Naamswijziging", "19850126", "renamed_from")])
+        self.assertEqual(events[0].entries, [("Leeuwarden", "GM0080", 3394),
+                                             ("Súdwest-Fryslân", "GM1900", 5411),
+                                             ("Waadhoeke", "GM1949", 1878)])
+
+    def test_entries_without_the_comma_before_the_dots_still_read(self):
+        (event,) = m.parse_events(KRIMPENERWAARD)
+        self.assertEqual(event.direction, "in")
+        self.assertEqual([(c, p) for _, c, p in event.entries],
+                         [("GM0491", 10186), ("GM0643", 14143), ("GM0644", 8241),
+                          ("GM0608", 11898), ("GM0623", 9740)])
+
+    def test_a_name_with_an_apostrophe_and_a_later_event(self):
+        events = m.parse_events(MAASDONK)
+        self.assertEqual(events[0].entries[0], ("'s-Hertogenbosch", "GM0796", 6719))
+        self.assertEqual((events[1].kind, events[1].direction, events[1].entries),
+                         ("Grenswijziging", "in", [("Oss", "GM0828", 0)]))
+
+    def test_a_province_change_takes_nothing_from_the_events_around_it(self):
+        events = m.parse_events(LEERDAM)
+        self.assertEqual([e.kind for e in events],
+                         ["Opgeheven", "Provinciale wijziging", "Wijziging"])
+        self.assertEqual(events[0].entries, [("Vijfheerenlanden", "GM1961", 21248)])
+        self.assertEqual(events[1].entries, [])
+        self.assertEqual(events[2].entries, [("Heukelum", "GM0533", 1), ("Kedichem", "GM0538", 1084)])
+
+    def test_a_change_of_name_points_to_the_new_code(self):
+        events = m.parse_events(FRIESE_MEREN)
+        self.assertEqual((events[0].direction, events[0].entries),
+                         ("renamed_to", [("De Fryske Marren", "GM1940", None)]))
+
+    def test_an_entry_missing_its_met_still_counts_its_people(self):
+        (event,) = m.parse_events(BINNENMAAS)
+        self.assertEqual([p for *_, p in event.entries], [19614, 9035])
+
+    def test_a_kind_not_listed_does_not_run_into_the_event_before(self):
+        events = m.parse_events(
+            "Opgeheven per 01-01-2019, overgegaan naar: - A (GM0001), ... 10 inwoners "
+            "Splitsing per 01-01-2010, overgegaan naar: - B (GM0002), ... 5 inwoners")
+        self.assertEqual(events[0].entries, [("A", "GM0001", 10)])
+        self.assertEqual(events[1].kind, "Splitsing")
+
+
+def gemeente(title: str, begin: str, end: str, description: str) -> dict:
+    return {"title": title, "begin": begin, "end": end, "events": m.parse_events(description)}
+
+
+def mini_history(e_records: int = 40) -> dict:
+    """A, B merge into N (2015); C is shared out between D and E (2018); N gives
+    E 40 people (2019); E is renamed F (2020)."""
+    return {
+        "GM0001": gemeente("A", "18300101", "20150101",
+                           "Opgeheven per 01-01-2015, overgegaan naar: - N (GM0100), ... 1000 inwoners"),
+        "GM0002": gemeente("B", "18300101", "20150101",
+                           "Opgeheven per 01-01-2015, overgegaan naar: - N (GM0100), ... 3000 inwoners"),
+        "GM0100": gemeente("N", "20150101", "",
+                           "Grenswijziging per 01-01-2019, overgegaan naar: - E (GM0005), ... 4 hectare "
+                           "met 10 woningen en 40 inwoners Ontstaan per 01-01-2015, ontvangen van: - "
+                           "A (GM0001), ... 1000 inwoners - B (GM0002), ... 3000 inwoners"),
+        "GM0003": gemeente("C", "18300101", "20180101",
+                           "Opgeheven per 01-01-2018, overgegaan naar: - D (GM0004), ... 600 inwoners "
+                           "- E (GM0005), ... 400 inwoners"),
+        "GM0004": gemeente("D", "18300101", "",
+                           "Gemeentelijke herindeling per 01-01-2018, ontvangen van: - D (GM0004), ... "
+                           "9000 inwoners - C (GM0003), ... 600 inwoners"),
+        "GM0005": gemeente("E", "18300101", "20200101",
+                           "Naamswijziging per 01-01-2020, nieuwe naam: F (GM0200) Grenswijziging per "
+                           f"01-01-2019, ontvangen van: - N (GM0100), ... {e_records} inwoners "
+                           "Gemeentelijke herindeling per 01-01-2018, ontvangen van: - C (GM0003), ... "
+                           "400 inwoners"),
+        "GM0200": gemeente("F", "20200101", "",
+                           "Naamswijziging per 01-01-2020, oude naam: E (GM0005) Begindatum 01-01-2020"),
+        "GM0998": gemeente("Buitenland", "18300101", "", ""),
+    }
+
+
+POPULATION = {"GM0001": 1000.0, "GM0002": 3000.0, "GM0003": 1000.0, "GM0004": 10000.0,
+              "GM0005": 2000.0}
+
+
+class FollowingTheChanges(unittest.TestCase):
+
+    def setUp(self):
+        self.walk = m.follow(mini_history(), POPULATION, "20140101", "20221231")
+
+    def test_the_gemeenten_on_the_last_day(self):
+        self.assertEqual(set(self.walk.content), {"GM0100", "GM0004", "GM0200"})
+
+    def test_a_merger_holds_its_parts_less_what_it_gave_away(self):
+        self.assertAlmostEqual(self.walk.content["GM0100"]["GM0001"], 0.99)
+        self.assertAlmostEqual(self.walk.content["GM0100"]["GM0002"], 0.99)
+
+    def test_a_divided_gemeente_is_shared_by_its_people(self):
+        self.assertAlmostEqual(self.walk.content["GM0004"]["GM0003"], 0.6)
+        self.assertAlmostEqual(self.walk.content["GM0200"]["GM0003"], 0.4)
+
+    def test_a_new_name_carries_everything(self):
+        self.assertAlmostEqual(self.walk.content["GM0200"]["GM0005"], 1.0)
+        self.assertAlmostEqual(self.walk.identity["GM0200"]["GM0005"], 1.0)
+
+    def test_every_start_gemeente_is_placed_once(self):
+        for code in POPULATION:
+            self.assertAlmostEqual(sum(c.get(code, 0) for c in self.walk.content.values()), 1.0)
+
+    def test_a_recipient_that_disagrees_with_its_donor_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            m.follow(mini_history(e_records=41), POPULATION, "20140101", "20221231")
+
+    def test_a_transfer_the_recipient_does_not_record_stops_the_run(self):
+        history = mini_history()
+        history["GM0004"]["events"] = []
+        with self.assertRaises(SystemExit):
+            m.follow(history, POPULATION, "20140101", "20221231")
+
+
+def table(**suppressed) -> dict:
+    full = {k: 0.0 for k in m.COLUMNS}
+    rows = {}
+    for code, name in (("GM0001", "A"), ("GM0002", "B"), ("GM0003", "C"), ("GM0004", "D"),
+                       ("GM0005", "E")):
+        parts = dict(full, Katholiek=20.0, PKN=10.0, Islam=5.0, Anders=5.0)
+        rows[code] = {"name": name, "province": "P", "total": 40.0, "parts": parts}
+    for code in suppressed:
+        rows[code] = {**rows[code], "total": None, "parts": {}}
+    return rows
+
+
+TITLES = {"GM0001": "A", "GM0002": "B", "GM0003": "C", "GM0004": "D", "GM0005": "E",
+          "GM0100": "N", "GM0200": "F"}
+
+
+class WhichGemeentenTakeAFigure(unittest.TestCase):
+
+    def setUp(self):
+        self.walk = m.follow(mini_history(), POPULATION, "20140101", "20221231")
+
+    def test_a_union_that_gave_away_one_percent_is_still_its_parts(self):
+        unit = m.classify("GM0100", self.walk, POPULATION, table(), TITLES)
+        self.assertIsNone(unit.reason)
+        self.assertEqual(set(unit.whole), {"GM0001", "GM0002"})
+        self.assertAlmostEqual(unit.moved, 0.01)
+        self.assertEqual(unit.events, ["it gave 40 inhabitants to E on 1 January 2019"])
+
+    def test_part_of_a_divided_gemeente_takes_nothing(self):
+        unit = m.classify("GM0004", self.walk, POPULATION, table(), TITLES)
+        self.assertEqual(unit.kind, "changed")
+        self.assertIn("it received 600 of the inhabitants of C when C was dissolved on 1 January "
+                      "2018", unit.reason)
+        self.assertIn("C gave 400 inhabitants to E on 1 January 2018", unit.reason)
+        self.assertIn("never split", unit.reason)
+
+    def test_a_suppressed_part_leaves_the_union_without_a_figure(self):
+        unit = m.classify("GM0100", self.walk, POPULATION, table(GM0002=True), TITLES)
+        self.assertEqual(unit.kind, "suppressed")
+        self.assertIn("CBS printed no figure for B", unit.reason)
+
+    def test_a_wider_tolerance_is_a_choice_the_caller_makes(self):
+        # E took 400 of C and 40 of N on top of its own 2,000: 18% of its people.
+        strict = m.classify("GM0200", self.walk, POPULATION, table(), TITLES)
+        loose = m.classify("GM0200", self.walk, POPULATION, table(), TITLES, tolerance=0.2)
+        self.assertIsNotNone(strict.reason)
+        self.assertIsNone(loose.reason)
+
+
+def sheet(*data: list) -> list[list]:
+    """Rows laid out as CBS's workbook lays them out (probe of 4 October 2026)."""
+    blank = [""] * 15
+    return [
+        ["Kerkelijke gezindte en kerkbezoek naar gemeente, 2010-2014 1)"] + [""] * 14,
+        ["-"] + [""] * 14,
+        ["", "", "", "Maandelijks bezoek religieuze dienst",
+         "Kerkelijke gezindte of levensbeschouwelijke groepering", "", "w.v."] + [""] * 8,
+        ["", "", "", "", "", ""] + ["---"] * 9,
+        ["", "", "", "", "", "", "Katholiek", "Hervormd", "Gereformeerd", "PKN", "Islam", "Joods",
+         "Hindoe", "Boeddhist", "Anders"],
+        ["", "", "", "%"] + [""] * 11,
+        ["Provincie", "Gemeente", "Gemcode"] + [""] * 12,
+        *data,
+        ["-"] + [""] * 14,
+        ["1) Gemeentelijke indeling 2014, minimaal 150 waarnemingen per gemeente"] + [""] * 14,
+        ["Bron: CBS"] + [""] * 14,
+        blank,
+    ]
+
+
+APPINGEDAM = ["Groningen", "Appingedam", 3.0, 10.3, 44.7, "", 3.2, 11.4, 8.2, 10.9, 3.4, 0.0, 0.0,
+              0.3, 7.4]
+AMELAND = ["Friesland", "Ameland", 60.0, ".", ".", "", ".", ".", ".", ".", ".", ".", ".", ".", "."]
+
+
+class TheWorkbook(unittest.TestCase):
+
+    def test_a_printed_and_a_suppressed_gemeente(self):
+        rows = m.parse_table(sheet(APPINGEDAM, AMELAND))
+        self.assertEqual(set(rows), {"GM0003", "GM0060"})
+        self.assertEqual(rows["GM0003"]["total"], 44.7)
+        self.assertEqual(rows["GM0003"]["parts"]["Katholiek"], 3.2)
+        self.assertEqual(rows["GM0003"]["province"], "Groningen")
+        self.assertIsNone(rows["GM0060"]["total"])
+        m.check_table(rows)
+
+    def test_the_total_is_the_column_under_its_heading_not_the_title(self):
+        rows = m.parse_table(sheet(APPINGEDAM))
+        self.assertEqual(rows["GM0003"]["total"], 44.7)        # not the attendance, 10.3
+
+    def test_categories_that_do_not_make_the_total_stop_the_run(self):
+        wrong = list(APPINGEDAM)
+        wrong[6] = 5.2                                          # Katholiek two points too many
+        with self.assertRaises(SystemExit):
+            m.check_table(m.parse_table(sheet(wrong)))
+
+    def test_a_total_with_a_share_missing_stops_the_run(self):
+        wrong = list(APPINGEDAM)
+        wrong[10] = "."
+        with self.assertRaises(SystemExit):
+            m.parse_table(sheet(wrong))
+
+
+class TheComposition(unittest.TestCase):
+
+    def test_no_religion_is_the_rest_and_zeros_are_left_out(self):
+        rows = m.parse_table(sheet(APPINGEDAM))["GM0003"]
+        out = m.composition(rows["parts"], rows["total"])
+        shares = {r["group"]: r["pct"] for r in out}
+        self.assertEqual(shares["No religion"], 55.3)
+        self.assertEqual(shares["Dutch Reformed"], 11.4)
+        self.assertNotIn("Judaism", shares)
+        self.assertAlmostEqual(sum(shares.values()), 100.1, places=1)
+        self.assertEqual(out[0]["group"], "No religion")
+
+    def test_a_union_is_weighted_by_its_adults(self):
+        rows = {"GM0001": {"total": 40.0, "parts": dict({k: 0.0 for k in m.COLUMNS}, Katholiek=40.0)},
+                "GM0002": {"total": 80.0, "parts": dict({k: 0.0 for k in m.COLUMNS}, Katholiek=80.0)}}
+        total, parts = m.blend(rows, {"GM0001": 3000.0, "GM0002": 1000.0})
+        self.assertAlmostEqual(total, 50.0)
+        self.assertAlmostEqual(parts["Katholiek"], 50.0)
+
+    def test_every_label_has_a_place_in_the_group_tree(self):
+        import group_tree
+        for label in m.COLUMNS.values():
+            self.assertIsNotNone(group_tree.parent_of("religion", label), label)
+        self.assertEqual(group_tree.parent_of("religion", "Roman Catholic"), "Catholicism")
+        for label in ("Dutch Reformed", "Reformed (Gereformeerd)",
+                      "Protestant Church in the Netherlands"):
+            self.assertEqual(group_tree.parent_of("religion", label), "Protestantism", label)
+
+    def test_the_basis_says_survey_estimate(self):
+        self.assertTrue(m.BASIS.startswith("survey estimate"))
+        self.assertTrue(m.OUT.name.endswith("_survey.json"))
+
+
+class Binding(unittest.TestCase):
+
+    SHAPES = [{"id": "s1", "name": "Hengelo (O)", "codes": {"cbs_gemeente": "GM0164"}},
+              {"id": "s2", "name": "Groningen", "codes": {"cbs_gemeente": "GM0014"}},
+              {"id": "s3", "name": "Bergen (L)", "codes": {}},
+              {"id": "s4", "name": "Bergen (NH)", "codes": {}}]
+
+    def test_by_code_and_checked_by_label(self):
+        bound, problems = m.bind(["GM0164", "GM0014"],
+                                 {"GM0164": "Hengelo (O.)", "GM0014": "Groningen"}, self.SHAPES)
+        self.assertEqual(problems, [])
+        self.assertEqual({c: s["id"] for c, s in bound.items()}, {"GM0164": "s1", "GM0014": "s2"})
+
+    def test_a_code_on_a_polygon_of_another_name_is_refused(self):
+        _, problems = m.bind(["GM0014"], {"GM0014": "Haren"}, self.SHAPES)
+        self.assertEqual(len(problems), 1)
+
+    def test_two_polygons_for_one_name_are_refused_not_guessed(self):
+        _, problems = m.bind(["GM0893"], {"GM0893": "Bergen"}, self.SHAPES)
+        self.assertIn("2 polygons", problems[0])
+
+    def test_statlines_suffix_and_a_province_qualifier_are_not_the_name(self):
+        self.assertTrue(m.same_place("Groningen (gemeente)", "Groningen"))
+        self.assertTrue(m.same_place("Beek (L.)", "Beek"))
+        self.assertTrue(m.same_place("Hengelo (O.)", "Hengelo (O)"))
+        self.assertFalse(m.same_place("Haren", "Groningen"))
+
+    def test_every_drawn_gemeente_carries_its_cbs_code(self):
+        import json
+        path = Path(__file__).resolve().parent.parent / "site" / "data" / "admin2" / "NLD.units.json"
+        if not path.exists():
+            self.skipTest("no built NLD file")
+        codes = Counter((u.get("codes") or {}).get("cbs_gemeente") for u in json.loads(path.read_text()))
+        self.assertEqual(len(codes), m.DRAWN)
+        self.assertNotIn(None, codes)
+
+
+class TheNote(unittest.TestCase):
+
+    def test_a_union_names_its_parts_and_a_small_one_says_low_precision(self):
+        unit = m.Unit("GM0100", {"GM0001": 1.0, "GM0002": 1.0}, {}, 0.0, [], None)
+        rows = {"GM0001": {"name": "A"}, "GM0002": {"name": "B"}}
+        note = m.unit_note(unit, "N", rows, 250.0)
+        self.assertIn("N covers what in 2014 were the gemeenten A and B", note)
+        self.assertIn("Low precision", note)
+        self.assertNotIn("Low precision", m.unit_note(unit, "N", rows, 300.0))
+
+    def test_the_note_says_what_the_survey_was(self):
+        self.assertIn("Enquête Beroepsbevolking", m.NOTE)
+        self.assertIn("18 and over", m.NOTE)
+        self.assertIn("150 respondents", m.NOTE)
+        self.assertIn("no questionnaire census since 1971", m.NOTE)
+
+
+if __name__ == "__main__":
+    unittest.main()

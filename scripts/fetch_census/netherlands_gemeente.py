@@ -209,8 +209,9 @@ def regions_filter(codes: list[str]) -> str:
     return "(" + " or ".join(f"RegioS eq '{c.ljust(6)}'" for c in codes) + ")"
 
 
-def read_ages(codes: list[str]) -> dict[str, dict[str, Any]]:
-    """{region code: {"m": Counter, "f": Counter, "total": all ages, both sexes}}."""
+def read_ages(codes: list[str], period: str = PERIOD) -> dict[str, dict[str, Any]]:
+    """{region code: {"m": Counter, "f": Counter, "total": all ages, both sexes}} on the
+    1 January ``period`` stands for, in the gemeenten of that date."""
     measure_key = topic(AGE_TABLE)
     sexes = odata(AGE_TABLE, "Geslacht")
     sex_total = total_key(sexes, "Geslacht")
@@ -224,7 +225,7 @@ def read_ages(codes: list[str]) -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
     for start in range(0, len(codes), AGE_CHUNK):
         chunk = codes[start:start + AGE_CHUNK]
-        flt = (f"Perioden eq '{PERIOD}' and BurgerlijkeStaat eq '{marital}' and {asked} and "
+        flt = (f"Perioden eq '{period}' and BurgerlijkeStaat eq '{marital}' and {asked} and "
                f"{regions_filter(chunk)}")
         for row in odata(AGE_TABLE, "TypedDataSet",
                          {"$filter": flt, "$select": f"Geslacht,Leeftijd,RegioS,{measure_key}"}):
