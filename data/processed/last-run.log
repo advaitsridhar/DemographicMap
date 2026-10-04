@@ -1,30 +1,106 @@
-
-== 1436: 200 https://censusindia.gov.in/nada/index.php/catalog/1436/related-materials
-    'Download [XLS, 559.5 KB]' -> https://censusindia.gov.in/nada/index.php/catalog/1436/download/4513
-    'https://censusindia.gov.in/nada/index.php/catalog/1436/downl' -> https://censusindia.gov.in/nada/index.php/catalog/1436/download/4513
-
-== 1436: 200 https://censusindia.gov.in/nada/index.php/catalog/1436/get-microdata
-    no download links
-
-== 1436: 200 https://censusindia.gov.in/nada/index.php/api/catalog/1436/resources
-    <html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 7895626423230155745<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>
-
-== 1464: 200 https://censusindia.gov.in/nada/index.php/catalog/1464/related-materials
-    'Download [XLS, 340 KB]' -> https://censusindia.gov.in/nada/index.php/catalog/1464/download/4541
-    'https://censusindia.gov.in/nada/index.php/catalog/1464/downl' -> https://censusindia.gov.in/nada/index.php/catalog/1464/download/4541
-
-== 1464: 200 https://censusindia.gov.in/nada/index.php/catalog/1464/get-microdata
-    no download links
-
-== 1464: 200 https://censusindia.gov.in/nada/index.php/api/catalog/1464/resources
-    <html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 7895626423231181695<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>
-
-== 1438: 200 https://censusindia.gov.in/nada/index.php/catalog/1438/related-materials
-    'Download [XLS, 385.5 KB]' -> https://censusindia.gov.in/nada/index.php/catalog/1438/download/4515
-    'https://censusindia.gov.in/nada/index.php/catalog/1438/downl' -> https://censusindia.gov.in/nada/index.php/catalog/1438/download/4515
-
-== 1438: 200 https://censusindia.gov.in/nada/index.php/catalog/1438/get-microdata
-    no download links
-
-== 1438: 200 https://censusindia.gov.in/nada/index.php/api/catalog/1438/resources
-    <html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 7895626423231486162<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>
+https://data.api.abs.gov.au/rest/data/ABS,C21_G13_LGA,1.0.0/3.._T.71300+74680..
+  HTTP 200 application/vnd.sdmx.data+csv; charset=utf-8 5,426 bytes
+  94 rows; columns ['DATAFLOW', 'SEXP', 'LANP', 'ENGLP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD', 'OBS_VALUE']
+  DATAFLOW: 1 distinct: ABS:C21_G13_LGA(1.0.0)
+  SEXP: 1 distinct: 3
+  LANP: 47 distinct: O_T, 52_O, 5201
+  ENGLP: 1 distinct: _T
+  REGION: 2 distinct: 74680, 71300
+  REGION_TYPE: 1 distinct: LGA2021
+  STATE: 1 distinct: 7
+  TIME_PERIOD: 1 distinct: 2021
+  OBS_VALUE: 20 distinct: 2506, 0, 4
+    ABS:C21_G13_LGA(1.0.0) | 3 | O_T | _T | 74680 | LGA2021 | 7 | 2021 | 2506
+    ABS:C21_G13_LGA(1.0.0) | 3 | 52_O | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5201 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6902 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 4106 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 71_O | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5202 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 2305 | _T | 71300 | LGA2021 | 7 | 2021 | 4
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3204 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3206 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 1504 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 2302 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5103 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 7104 | _T | 71300 | LGA2021 | 7 | 2021 | 8
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3204 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3307 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3106 | _T | 74680 | LGA2021 | 7 | 2021 | 5
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3205 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6402 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 7101 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 65 | _T | 71300 | LGA2021 | 7 | 2021 | 11
+    ABS:C21_G13_LGA(1.0.0) | 3 | 4106 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 1 | _T | 74680 | LGA2021 | 7 | 2021 | 355
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3106 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5202 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 65_O | _T | 71300 | LGA2021 | 7 | 2021 | 3
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3213 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5211 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3308 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | _O | _T | 74680 | LGA2021 | 7 | 2021 | 2402
+    ABS:C21_G13_LGA(1.0.0) | 3 | 7201 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5212 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 1504 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 2302 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 4301 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5102 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6511 | _T | 71300 | LGA2021 | 7 | 2021 | 3
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3213 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 1 | _T | 71300 | LGA2021 | 7 | 2021 | 504
+    ABS:C21_G13_LGA(1.0.0) | 3 | _N | _T | 74680 | LGA2021 | 7 | 2021 | 109
+    ABS:C21_G13_LGA(1.0.0) | 3 | 71 | _T | 71300 | LGA2021 | 7 | 2021 | 8
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5107 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5212 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | _T | _T | 74680 | LGA2021 | 7 | 2021 | 2973
+    ABS:C21_G13_LGA(1.0.0) | 3 | 8 | _T | 71300 | LGA2021 | 7 | 2021 | 7676
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5207 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 65 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6902 | _T | 74680 | LGA2021 | 7 | 2021 | 3
+    ABS:C21_G13_LGA(1.0.0) | 3 | O_T | _T | 71300 | LGA2021 | 7 | 2021 | 7803
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6512 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5107 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6512 | _T | 71300 | LGA2021 | 7 | 2021 | 3
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5203 | _T | 71300 | LGA2021 | 7 | 2021 | 3
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3205 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 1403 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5206 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 2305 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5203 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6402 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 4301 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 7101 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 1403 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3103 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3103 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6511 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 65_O | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5103 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 4202 | _T | 71300 | LGA2021 | 7 | 2021 | 6
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5102 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 71 | _T | 74680 | LGA2021 | 7 | 2021 | 4
+    ABS:C21_G13_LGA(1.0.0) | 3 | 8 | _T | 74680 | LGA2021 | 7 | 2021 | 2477
+    ABS:C21_G13_LGA(1.0.0) | 3 | 52 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5201 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6301 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6301 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | _O | _T | 71300 | LGA2021 | 7 | 2021 | 7580
+    ABS:C21_G13_LGA(1.0.0) | 3 | 2306 | _T | 71300 | LGA2021 | 7 | 2021 | 9
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3206 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | _T | _T | 71300 | LGA2021 | 7 | 2021 | 8778
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5211 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 52_O | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 52 | _T | 71300 | LGA2021 | 7 | 2021 | 8
+    ABS:C21_G13_LGA(1.0.0) | 3 | 2306 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 7104 | _T | 74680 | LGA2021 | 7 | 2021 | 3
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3307 | _T | 71300 | LGA2021 | 7 | 2021 | 3
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6504 | _T | 71300 | LGA2021 | 7 | 2021 | 3
+    ABS:C21_G13_LGA(1.0.0) | 3 | 6504 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 3308 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5207 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 5206 | _T | 71300 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 4202 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | _N | _T | 71300 | LGA2021 | 7 | 2021 | 469
+    ABS:C21_G13_LGA(1.0.0) | 3 | 7201 | _T | 74680 | LGA2021 | 7 | 2021 | 0
+    ABS:C21_G13_LGA(1.0.0) | 3 | 71_O | _T | 71300 | LGA2021 | 7 | 2021 | 0
