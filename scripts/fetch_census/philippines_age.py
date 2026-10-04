@@ -47,11 +47,14 @@ boundary file draws on its own, is taken out of whichever province the table
 files it under (``CITIES``).
 
 **Regions** are the first level, and the boundary file's regions are not
-quite the PSA's of 2020 (it files Cotabato City under Soccsksargen, which the
-city left for the Bangsamoro region in 2019). So a region's figures here are
-the sum of the provinces the map draws inside that region's polygon, which
-is what the polygon holds; the note says so. A region with any of its drawn
-provinces unbound or excluded is not written.
+quite the PSA's of 2020: they are the regions before the Bangsamoro region
+replaced the ARMM in 2019, so Cotabato City and the 63 barangays of the
+"Interim Province" lie in its Soccsksargen. A region's figures here are the
+sum of the provinces the map draws inside that region's polygon, which is
+what the polygon holds; the note says so. The ARMM and Soccsksargen, two of
+whose drawn provinces get no figure, are instead the sum of the census
+provinces that made them before 2019 (``REGIONS``), placed on the map's admin1
+tiles.
 
 **Checks**, each a refusal: every barangay's ages make its own total for both
 sexes and for each, and its males and females make its total; the country's
@@ -111,6 +114,19 @@ NO_POLYGON = {"Sultan Kudarat", "Interim Province"}
 # Cities the boundary file draws apart from the province the PSA files them
 # under: the polygon's name -> the municipality as the table may name it.
 CITIES = {"Cotabato City": ("Cotabato City", "City of Cotabato")}
+# Two regions whose drawn provinces cannot all be given a figure (above), but
+# whose own polygons are the regions as they stood before the Bangsamoro
+# region replaced the ARMM in 2019 -- placed on the map's admin1 tiles: the
+# capitals of Basilan, Lanao del Sur, Maguindanao and Sulu fall in "ARMM", the
+# city of Isabela in Zamboanga Peninsula, and Isulan, Lebak, Kidapawan,
+# Kabacan, Midsayap, Pikit, General Santos, Koronadal, Alabel and Cotabato
+# City in "Soccsksargen". Each is the sum of these census provinces (and of
+# the City of Cotabato, taken out of Maguindanao above).
+REGIONS = {
+    "ARMM": ["Basilan", "Lanao del Sur", "Maguindanao", "Sulu", "Tawi-Tawi"],
+    "Soccsksargen": ["Cotabato", "Interim Province", "Sarangani", "South Cotabato",
+                     "Sultan Kudarat", "Cotabato City"],
+}
 SEXES = ("MF", "M", "F")
 HEADER = re.compile(r"^(?P<age>.+?)_(?P<sex>MF|M|F)$")
 
@@ -241,8 +257,9 @@ def check_national(units: dict[Any, dict[str, Any]], top: int) -> Counter:
 
 
 def places(units: dict[tuple[str, str], dict[str, Any]], shapes: list[dict[str, Any]]
-           ) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
-    """Each polygon's census figures: {shape id: merged unit}, and what was left out.
+           ) -> tuple[dict[str, dict[str, Any]], dict[str, str], dict[str, dict[str, Any]]]:
+    """Each polygon's census figures: {shape id: merged unit}, what was left
+    out, and every census province (and split city) by its folded names.
 
     A city of ``CITIES`` goes to its own polygon whatever province files it; a
     province goes to the one polygon one of its names folds to; a polygon of
@@ -254,6 +271,7 @@ def places(units: dict[tuple[str, str], dict[str, Any]], shapes: list[dict[str, 
     cities = {fold(m): poly for poly, ms in CITIES.items() for m in ms}
     groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     left: dict[str, str] = {}
+    census: dict[str, dict[str, Any]] = {}
     provinces = sorted({k[0] for k in units})
     for prov in provinces:
         muns = [u for k, u in units.items() if k[0] == prov]
@@ -265,12 +283,15 @@ def places(units: dict[tuple[str, str], dict[str, Any]], shapes: list[dict[str, 
                 if len(hits) != 1:
                     raise SystemExit(f"philippines_age: {len(hits)} polygons named {poly}")
                 groups[hits[0]["id"]].append(u)
+                census[fold(poly)] = merge([u])
                 log(f"  {u['municipality']} ({sum(u['ages']['MF'].values()):,}) taken out of "
                     f"{prov} for the polygon {poly}")
             else:
                 rest.append(u)
         if not rest:
             continue
+        for n in names_of(prov):
+            census[fold(n)] = {**merge(rest), "provinces": [prov]}
         hits = {s["id"]: s for n in names_of(prov) for s in by_name.get(fold(n), [])}
         if len(hits) > 1:
             raise SystemExit(f"philippines_age: {prov!r} names {len(hits)} polygons: "
@@ -290,7 +311,7 @@ def places(units: dict[tuple[str, str], dict[str, Any]], shapes: list[dict[str, 
     out = {sid: merge(parts) for sid, parts in groups.items()}
     for sid, parts in groups.items():
         out[sid]["provinces"] = sorted({p["province"] for p in parts})
-    return out, left
+    return out, left, census
 
 
 def figures(ages: dict[str, Counter], top: int, where: str) -> tuple[float, int, int, int]:
@@ -302,7 +323,7 @@ def figures(ages: dict[str, Counter], top: int, where: str) -> tuple[float, int,
 
 def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    figs, left = places(units, admin2)
+    figs, left, census = places(units, admin2)
     names2 = {s["id"]: s["name"] for s in admin2}
     unbound = sorted(s["name"] for s in admin2 if s["id"] not in figs)
     log(f"  {len(figs)} polygons with a count; polygons without: {unbound or '-'}; "
@@ -334,20 +355,33 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
                       population_note=f"The census count of {YEAR}: {whose}."),
         ))
     for region in admin1:
-        kids = [s for s in admin2 if s["parent"] == region["id"]]
-        missing = [s["name"] for s in kids if s["id"] not in figs]
-        if not kids or missing:
-            log(f"  {region['name']}: not written; its drawn provinces "
-                f"{missing or '(none)'} have no count")
-            continue
+        if region["name"] in REGIONS:
+            wanted = REGIONS[region["name"]]
+            found = [census.get(fold(p)) for p in wanted]
+            if any(f is None for f in found):
+                raise SystemExit(f"philippines_age: {region['name']}: no census province "
+                                 f"{[p for p, f in zip(wanted, found) if f is None]}")
+            pieces = found
+            parts = ", ".join(wanted)
+            whose = (f"the 2020 Census of Population and Housing's count of everyone in "
+                     f"{parts} -- the region as its polygon draws it, before the Bangsamoro "
+                     f"region of 2019")
+        else:
+            kids = [s for s in admin2 if s["parent"] == region["id"]]
+            missing = [s["name"] for s in kids if s["id"] not in figs]
+            if not kids or missing:
+                log(f"  {region['name']}: not written; its drawn provinces "
+                    f"{missing or '(none)'} have no count")
+                continue
+            pieces = [figs[s["id"]] for s in kids]
+            parts = ", ".join(sorted(names2[s["id"]] for s in kids))
+            whose = (f"the 2020 Census of Population and Housing's count of everyone in the "
+                     f"{len(kids)} provinces the map draws inside this region ({parts})")
         ages = {s: Counter() for s in SEXES}
-        for s in kids:
+        for piece in pieces:
             for sex in SEXES:
-                ages[sex].update(figs[s["id"]]["ages"][sex])
+                ages[sex].update(piece["ages"][sex])
         median, men, women, total = figures(ages, top, region["name"])
-        parts = ", ".join(sorted(names2[s["id"]] for s in kids))
-        whose = (f"the 2020 Census of Population and Housing's count of everyone in the "
-                 f"{len(kids)} provinces the map draws inside this region ({parts})")
         records.append(record(
             f"PHL-CPH2020-R-{fold(region['name'])}", region["name"], level="admin1",
             parent="PHL", country="PHL", match_by="shape_id", shape_id=region["id"],

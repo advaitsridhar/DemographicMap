@@ -5,6 +5,7 @@ label columns, then Total and every single year for MF, M and F).
 """
 
 import unittest
+from unittest import mock
 from collections import Counter
 
 from scripts.fetch_census import philippines_age as p
@@ -26,7 +27,7 @@ def flat(n: int) -> list[int]:
 
 
 ADMIN1 = [{"id": "R1", "name": "NCR"}, {"id": "R2", "name": "Davao Region"},
-          {"id": "R3", "name": "Soccsksargen"}]
+          {"id": "R3", "name": "Region Three"}]
 ADMIN2 = [{"id": "S1", "name": "NCR, Second District", "parent": "R1"},
           {"id": "S2", "name": "Compostela Valley", "parent": "R2"},
           {"id": "S3", "name": "Davao del Sur", "parent": "R2"},
@@ -106,6 +107,16 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(by["S5"]["population"]["value"], 8 * 81)
         self.assertIsNone(by["R2"]["population"].get("value"))
         self.assertEqual(by["R1"]["level"], "admin1")
+
+    def test_a_pre_2019_region_is_summed_from_census_provinces(self):
+        admin1 = ADMIN1 + [{"id": "R4", "name": "ARMM"}]
+        regions = {"ARMM": ["Maguindanao", "Cotabato City"]}
+        with mock.patch.object(p, "REGIONS", regions):
+            recs = p.build(self.units(), 80, admin1, ADMIN2)
+        by = {r["shape_id"]: r for r in recs}
+        # Maguindanao less the city (10 a year) and the city (8 a year): even sexes.
+        self.assertEqual(by["R4"]["sex_ratio"]["value"], 100.0)
+        self.assertIn("Maguindanao, Cotabato City", by["R4"]["median_age_note"])
 
     def test_a_province_with_no_polygon_refuses(self):
         cols = p.columns(HEADER)
