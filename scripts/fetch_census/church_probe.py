@@ -63,12 +63,13 @@ def ckan(base: str, queries: list[str], rows: int = 12) -> None:
                 print(f"      - {res.get('format')} {res.get('name')} -> {res.get('url')}")
 
 
-def heads(urls: list[str]) -> None:
+def heads(urls: list[str], show: int = 4) -> None:
     """Each URL's outcome: size and first bytes, or the HTTP error."""
     for url in urls:
         try:
             raw = fetch(url, accept="*/*")
-            print(f"  {url[-90:]}: {len(raw):,} bytes, starts {raw[:4]!r}")
+            text = raw[:show] if raw[:2] == b"PK" or raw[:4] == b"%PDF" else raw[:max(show, 160)]
+            print(f"  {url[-90:]}: {len(raw):,} bytes, starts {text!r}")
         except Exception as exc:
             print(f"  {url[-90:]}: {str(exc)[:110]}")
         time.sleep(1.0)
@@ -269,6 +270,29 @@ PROBES: dict[str, Any] = {
     "c3_swe_research": lambda: links("https://www.svenskakyrkan.se/forskning/statistik",
                                      r"statistik|pdf|xlsx|medlem|kommun|siffror|folkm",
                                      limit=120),
+    # Round c5: the classification service answered 500 to every key in
+    # rounds c2 and c3. Which of its endpoints answer at all, and what the
+    # Wayback holds of the keys.
+    "c5_class_api": lambda: heads([
+        "https://data.stat.fi/api/classifications/v2/classifications?content=data&meta=max"
+        "&lang=fi&page=0",
+        "https://data.stat.fi/api/classifications/v2/classifications/kunta_1_20200101/"
+        "classificationItems?content=data&meta=max&lang=fi",
+        "https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+        "kunta_1_20200101%23seutukunta_1_20200101/maps?content=data&meta=min&lang=fi",
+        "https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+        "kunta_1_20200101%23seutukunta_1_20200101/maps",
+        "https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+        "kunta_1_20200101%23seutukunta_1_20200101?content=data&meta=max&lang=fi",
+        "https://data.stat.fi/api/classifications/v2/correspondenceTables/"
+        "kunta_1_20250101%23seutukunta_1_20250101/maps?content=data&meta=max&lang=fi",
+        "https://www.stat.fi/fi/luokitukset/corrmap/kunta_1_20200101%23seutukunta_1_20200101/",
+    ]),
+    "c5_class_cdx": lambda: cdx(
+        "url=data.stat.fi/api/classifications/v2/correspondenceTables/kunta_1_2020*", limit=40),
+    "c5_class_cdx2": lambda: cdx(
+        "url=data.stat.fi/api/classifications/v2/correspondenceTables/*&filter=original:.*"
+        "(?:seutukunta|maakunta).*", limit=60),
     # Round c4: Forshaga and Munkfors share one parish in the 2020 and 2021
     # editions. Do the older editions still count them apart?
     "c4_swe_2019": lambda: pdf(SVK + "NyckeltalLKF.pdf",
