@@ -1,23 +1,27 @@
-https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G14_SA2/1.0.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; charset=utf-8; version=2.1 3,601,358 bytes
-  [1] RELP  codelist=CL_C21_RELP01 (34 codes) 34 constrained
-                    _T  Total
-                     1  Buddhism
-                     2  Christianity Total
-  [2] SEXP  codelist=CL_C21_SEXP01 (3 codes) 3 constrained
+https://data.api.abs.gov.au/rest/dataflow/ABS/C21_G13_SA2/1.0.0?references=all
+  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 3,613,184 bytes
+  [1] SEXP  codelist=CL_C21_SEXP01 (3 codes) 3 constrained
                      3  Persons
                      1  Males
                      2  Females
-  [3] REGION  codelist=CL_ASGS_2021 (2985 codes) 2981 constrained
+  [2] LANP  codelist=CL_C21_LANP02 (47 codes) 47 constrained
+                    _T  Total
+                     1  Speaks English only
+                   O_T  Other Languages Total
+  [3] ENGLP  codelist=CL_C21_ENGLP02 (6 codes) 6 constrained
+                    _T  Total
+                     1  Speaks English only
+                     4  Uses other language and speaks English: Total
+  [4] REGION  codelist=CL_ASGS_2021 (2985 codes) 2981 constrained
                    AUS  Australia
                      1  New South Wales
                  1GSYD  Greater Sydney
-  [4] REGION_TYPE  codelist=CL_REGION_TYPE (43 codes) 6 constrained
+  [5] REGION_TYPE  codelist=CL_REGION_TYPE (43 codes) 6 constrained
                    AUS  Australia
                    STE  States and Territories
                    SA4  Statistical Area Level 4
-  [5] STATE  codelist=CL_STATE (10 codes) 10 constrained
+  [6] STATE  codelist=CL_STATE (10 codes) 10 constrained
                    AUS  Australia
                      1  New South Wales
                      2  Victoria
-  [6] TIME_PERIOD  codelist= (0 codes) 0 constrained
+  [7] TIME_PERIOD  codelist= (0 codes) 0 constrained
