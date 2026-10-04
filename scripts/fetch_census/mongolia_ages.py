@@ -315,6 +315,11 @@ def diagnose(years: int, labels_en: dict[str, str]) -> None:
                 if summed != rows[aimag].get(table):
                     log(f"    {aimag} {labels_en.get(aimag)}: {table} table {rows[aimag].get(table)}"
                         f", its soums {summed}")
+                    if table == "sex":
+                        for c in sorted(c for c in rows if len(c) == 5 and c.startswith(aimag)):
+                            log(f"      {c} {labels_en.get(c)}: {rows[c].get('sex')}")
+        others = sorted(c for c in rows if len(c) not in (1, 3, 5))
+        log(f"    codes of other lengths: {[(c, labels_en.get(c)) for c in others][:40]}")
 
 
 def labels(lang: str, table: str) -> dict[str, str]:
