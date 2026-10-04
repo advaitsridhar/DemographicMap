@@ -1,61 +1,263 @@
-== https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 2,681,931 bytes
-  -- 'Link'
-       1: LIST OF TABLES
-       2: Table 1:Total population by sex, single age and place of residence,2021
-       3: Table 2. Total population by sex, religion and place of residence,2021
-       4: Table 3. Total population by sex, martial status and place of residence,2021
-       5: Table 4. Married population by sex, registration at BDM status and place of residence,2021
-       6: Table 5. Total population by  sex,  raised place and current place of residence, 2021
-       7: Table 5a:Lifetime migration by place of residence,2021
-       8: Table 6. Population 5years and over  by  sex,  place in last 12 month current place of residence, 2021
-       9: Table 6a:Last 12months  migration by place of residence,2021
-      10: Table 7. Population 5years and over  by  sex,  place in last 5years and  current place of residence, 2021
-      11: Table 7a:Last 5years   migration by place of residence,2021
-      12: Table 8a. Total population by sex, Samoan citizenship status and place of residence,2021
-      13: Table 8b. Non citizen population by sex, main purpose of staying in Samoa and place of residence,2021
-      14: Table 9a. Population 21years and over by matai title status , sex,  and place of residence,2021
-      15: Table 9b. Population with matai title by  sex, registration status  and place of residence,2021
-      16: Table 10.Population 5years and over by  sex, disability status and place of residence,2021
-      17: Table 11a. Population 5years and over  by sex, difficulty in seeing and place of residence,2021
-      18: Table 11b. Population5years and over  having seeing difficulties by sex,  cause of difficulties and place of residence,2021
-      19: Table 12a. Population 5years and over  by sex, difficulty in hearing  and place of residence,2021
-      20: Table 12b. Population5years and over  having hearing  difficulties by sex,  cause of difficulties and place of residence,2021
-      21: Table 13a. Population 5years and over  by sex, difficulty in walking  and place of residence,2021
-      22: Table 13b. Population5years and over  having walking   difficulties by sex,  cause of difficulties and place of residence,2021
-      23: Table 14a. Population 5years and over  by sex, difficulty in remebering  and place of residence,2021
-      24: Table 14b. Population5years and over  having remebering    difficulties by sex,  cause of difficulties and place of residence,2021
-      25: Table 15a. Population 5years and over  by sex, difficulty in self care  and place of residence,2021
-      26: Table 15b. Population5years and over  having self care  difficulties by sex,  cause of difficulties and place of residence,2021
-      27: Table 16a. Population 5years and over  by sex, difficulty in communicating  and place of residence,2021
-      28: Table 16b. Population5years and over  having communicating difficulties by sex,  cause of difficulties and place of residence,2021
-      29: Table 17a.Population 3years and over ever attended school   by sex  and place of residence,2021
-      30: Table 17b:Population ever attended school  by sex, level  of school ever attended and place of residence,2021
-      31: Table 18. Population 15years and over by sex,highest qualification ever attained  and place of residence,2021
-      32: Table 20. Population 15years and over  by sex, main activity and place of residence,2021
-      33: Table 21. Population 15years and over by sex, main occupation and place of residence,2021
-      34: Table 22. Population 15years and over by sex, main industry n and place of residence,2021
-      35: Table 23. Population 15years and over by sex, having saving  and place of residence,2021
-      36: Table 24. Population 15years and over  by sex, type of insurance  and place of residence,2021
-      37: Table 25. Population 15years and over by sex, with gender identity  same as sex registered and place of residence,2021
-      38: Table 26. Population 15years and over  by sex, ownership of mobile phones  and place of residence,2021
-      39: Table 27 .Population 15years and over  who owns mobile phones by sex, service providers   and place of residence,2021
-      40: Table 28a:Female population 15-49years of age  by ever given birth status and place of residence,2021
-      41: Table 28b:Female population 15-49years of age  ever given birth in the last 12months  and place of residence,2021
-      42: Table 28c:Female population 15-49years of age  ever given birth in the last 12months ,place of birth and place of residence,2021
-      43: Table 29.  Total houses listed, types of houses  and place of residence,2021
-      44: Table 30.  Total houses listed with main types of roof used and by place of residence,2021
-      45: Table 31.  Total houses listed with main types of outer walls   and  place of residence,2021
-      46: Table 32.  Total households by types of houses they owned and  place of residence,2022
-      47: Table 33.  Total households by types of land tenure they are living on and  place of residence,2021
-      48: Table 34. Total households by main types  of  cooking facility  and by place of residence,2021
-      49: Table 35a: Total households by main  types of cooking stove and by place of residence,2021
-      50: Table 35b.  Total households withType of Cooking fuel ,by place of residence,2021
-      51: Table 36. Total households by main source of light and  place of residence,2021
-      52: Table 37.  Total households who use elctrictty and type of electricity meters they used  and  place of residence,2021
-      53: Table 38 Total households who used electricity by amount spent on electricity and  place of residence,2021
-      54: Table 39. Household who used electricity,  with the satisfaction of electricity cost and   by place of residence,2021
-      55: Table 40.  Household Afforability of electricity cost ,by place of residence,2021
-      56: Table 41.  Total households by main source of drinking water and  place of residence,2021
-      57: Table 42.  Total households by main source of drinking water supplier and  place of residence,2021
-      58: Table 43.  Households who used  pipe water and types of meter water and  place of residence,2021
+probe_pdf: https://tongastats.gov.to/download/272/census-report-and-factsheet/7647/census-report-vol1-2021.pdf
+  15,283,448 bytes
+  367 pages
+probe_pdf: 367 pages, 25 mention ['ethnic', 'Ethnic', 'language', 'Language', 'religio']
+=== front matter ===
+Tonga 2021 Census of Population and Housing 
+1 
+ 
+ 
+  
+
+Tonga 2021 Census of Population and Housing 
+2 
+ 
+© 2022 Tonga Statistics Department  
+All rights for commercial for profit reproduction or translation, in any form, reserved. TDS authorises the 
+partial reproduction or translation of this material for scientific, educational or research purposes, provided 
+that TDS and the source document are properly acknowledged.  
+This report was prepared by the staff of Tonga Statistics Department – Census Team with the assistance of 
+SPC.  
+ 
+More information  
+For more information about the Tonga 2021 Census of Population and Housing, or request additional 
+statistical information from the Census not included in this Volume, please contact the Tonga Statistics 
+Department  
+ 
+Tonga Statistics Department  
+PO Box 149  
+Nuku’alofa  
+Tonga  
+Telephone: + (676) 23300  
+Facsimile: + (676) 24303  
+Email: info@stats.gov.to 
+Website: https://tongastats.gov.to/ 
+ 
+Suggested citation:  
+Tonga Statistics Department, 2021. Tonga Census of Population and Housing 2021, Nuku'alofa, Tonga: Tonga 
+Statistics Department.  
+Tonga 2021 Census of Population and Housing 
+3 
+ 
+Preface 
+ 
+The Population and Housing Census 2021 was the 9th census carried out in Tonga since 1956, and the 7th census 
+conducted by the Statistics Department. The Population and Housing  Census is a vast and complex 
+undertaking. It is certainly the largest statistical exercise we can contemplate, touching, as it does, every 
+individual and household in the Kingdom. The result of the census has an important role in producing official 
+statistics for Tonga and providing fundamental information for measuring SDG indicators. 
+The 2021 Tonga Population and Housing Census is the third census undertaken following the 5 -year interval 
+census. This census will provide up -to-date information regarding the size,  distribution, and structure of the 
+Tonga population as well as other social and economic information. 
+Periodic national population and housing census are critical to countries ’ development policy and planning 
+efforts, in that they represent from most countries’ only national snapshot of its social, demographic, and 
+economic conditions, as well as information on recent developments in these areas, that impact on the overall 
+well-being of its population. 
+Population Census provides us with the opportunity to get an accurate, comprehensive and consistent picture 
+of the country’s population. The results are invaluable for policy formation, planning and effective targeting 
+of resources. It provides the only source of directly comparable statistics both for small areas and different 
+population groups. It is used as a reference base for many statistical series such as population  profiles, 
+infographics and detailed demographic analysis; population estimates, projections and sample survey frame. 
+The census date was midnight, the 30th of November 2021, everyone in Tonga was counted, so that leaves no 
+one behind through the census . The Census of Population and Housing 2021 Volume 1 is the fir st of two 
+statistical publications of detailed census results. The report comprises detailed statistical tables to facilitate 
+users carrying out more comprehensive studies and further analyses.  
+I would like to thank all who have, in one way or another, co ntributed to the success of Census 2021, which 
+was conducted under challenging conditions with the evolving COVID - 19 situation  and the significant 
+disruptions of the Volcanic Eruption . My deep appreciation is extended to all participating households who 
+had given their full support and co-operation to the Census. 
+Lastly, I would like to commend all the staff of Tonga Statistics Department for their continuous commitment 
+in making the 2021 Population and Housing census a success. 
+ 
+Mālō ‘Aupito, 
+ 
+…………………………… 
+Hon. Prime Minister Hu’akavameiliku 
+  
+Tonga 2021 Census of Population and Housing 
+4 
+ 
+Acknowledgement 
+ 
+The success of the whole census operations is attributed to detailed planning and cohesive implementation, 
+which could not have been achieved without the support and efforts of many people and organizations.  
+I would like to thank the  Minister of Finance, under whose authority the Census was undertaken: the 
+Chairperson of the Steering Committee, the CEO and Acting CEO of Finance at the time, and all the members 
+for their valuable contributions and suggestions. Former Government Statistician for his leadership, guidance 
+and coordination for the success of the census operations. 
+My appreciation is extended all agencies under United Nations Tonga, and the Australian Aid for your kind 
+donations towards Tonga Census 2021.  I also would like to thank the valuable contribution from the World 
+Bank HIES tablets for census data collection.  I would also commend the Statistics for Development Division 
+(SDD) of The Pacific Community (SPC), for all the technical assistance they provided.  
+My sincere gratitude to the CEO of Education  and other school system – FWC and Sia’atoutai College  for 
+allowing some of the teachers and Students to take part in Tonga Census 2021. I also extend sincere thanks to 
+every individual who participated Census 2021 as an enumerator and supervisor. I wish to thank the Census 
+team of 2021 and all the staffs of the Statistics Department for their valuable contributions throughout the 
+Census period.  
+Last but not the least, my heartfelt gratefulness to all the people of Tonga for your time, participation and 
+honest responses. Your contributions are of vital importance in shaping Tonga’s future and making sure that 
+No One is Left Behind. 
+For the continuous improvement of statisti cal database for the Kingdom, TSD would welcome constructive 
+comments and suggestions from users, planners and policy -makers to indicate areas of interests for future 
+report releases. 
+ 
+Faka’apa’apa atu, 
+ 
+……………………………………… 
+Sione Lolohea 
+Acting Government Statistician 
+ 
+Tonga 2021 Census of Population and Housing 
+5 
+ 
+ 
+Tonga 2021 Census of Population and Housing 
+6 
+ 
+Table of Contents 
+Preface _________________________________________________________________________ 3 
+Acknowledgement ________________________________________________________________ 4 
+Table of Contents _________________________________________________________________ 6 
+Abbreviations ___________________________________________________________________ 10 
+Glossary ________________________________________________________________________ 11 
+Key Indicators ___________________________________________________________________ 13 
+Executive Summary _______________________________________________________________ 17 
+Demographic Tables ______________________________________________________________ 20 
+
+=== pages mentioning ['ethnic', 'Ethnic', 'language', 'Language', 'religio'] (first 6) ===
+
+--- page 6 ----------------------------------------------------
+Tonga 2021 Census of Population and Housing
+6
+Table of Contents
+Preface _________________________________________________________________________ 3
+Acknowledgement ________________________________________________________________ 4
+Table of Contents _________________________________________________________________ 6
+Abbreviations ___________________________________________________________________ 10
+Glossary ________________________________________________________________________ 11
+Key Indicators ___________________________________________________________________ 13
+Executive Summary _______________________________________________________________ 17
+Demographic Tables ______________________________________________________________ 20
+Population Trend _______________________________________________________________________20
+Table G 1: Total population by sex, division, district and region (2011,2016 and 2021) 20
+Table G 2: Total household and household population by sex, division, district and village (2021) 21
+Table G 3: Population growth by division, district, village and region (2016-2021) 26
+Table G 4: Population density by sex, division, region and island 31
+Table G 5: Total households and population by age, division, district, village and region 33
+Table G 6: Total population by single year of age, sex, division and region 39
+Table G 7: Total population by age, sex, division and region 42
+Table G 8: Household population by age, sex and division 44
+Population Characteristi
+
+--- page 7 ----------------------------------------------------
+Tonga 2021 Census of Population and Housing
+7
+Health _____________________________________________________________________________ 105
+Table G 23: Population ever told to have NCD or chronic illness by sex, division and district 105
+Table G 24: Population ever told to have NCD or chronic illness by age and sex 108
+Table G 25: Population with illness or injury by sex, division, district and village 110
+Table G 26: Population with illness or injury by sex and age 115
+Table G 27: Population with illness or injury who sought care by sex, division and region 116
+Table G 28: Population (5 years +) experiencing mental illness by division, district and region 117
+COVID-19 ___________________________________________________________________________ 118
+Table G 29: Total population experienced stress, anxiety, depression due to COVID-19 by sex and age 118
+Table G 30: Total population experienced stress, anxiety, depression due to COVID-19 by sex and division, district.
+ 119
+Table G 31: Population (aged 12+) with COVID-19 vaccination by sex and age 120
+Table G 32: Population (aged 12+) with COVID-19 vaccination by sex, division and district. 121
+Table G 33: Population (aged 12+) with reason for no COVID-19 vaccination by age. 122
+Table G 34: Population (aged 12+) with reason for no COVID-19 vaccination by sex, division and district. 124
+Functionality ________________________________________________________________________ 127
+Table G 35: Population (5 years +) with type of disability and
+
+--- page 8 ----------------------------------------------------
+Tonga 2021 Census of Population and Housing
+8
+Table G 52: Population (10 years +) internet use by age and sex 165
+Table G 53: Population (10 years +) use of internet by division, district and village 166
+Table G 54: Population (10 years +) place of internet access by age and sex 170
+Table G 55: Population (10 years +) place of internet access by division, district and village. 171
+Table G 56: Population (10 years +) reasons for using the internet by age and sex 175
+Table G 57: Population (10 years +) reasons for using the internet by division, district and village 177
+Alcohol and Tobacco __________________________________________________________________ 184
+Table G 58: Population (10 years +) smoking imported cigarettes or local tobacco by age and sex 184
+Table G 59: Population (10 years +) smoking imported cigarettes and local tobacco by division, district, village and
+region. 186
+Table G 60: Population (10 years +) and How often they drink Alcohol and Kava Tonga by age and sex 192
+Table G 61: Population (10 years +) and How often they drink Alcohol and Kava Tonga by division, district, village
+and region. 194
+Electoral Vote Registration _____________________________________________________________ 200
+Table G 62: Population (21 years +) registered to vote by division and region 200
+Table G 63: Population (21 years +) registered to vote by age 201
+Table G 64: Population (21 years +) constituency by sex and age 202
+Table G 65: Population (21 years +) voting status by division
+
+--- page 9 ----------------------------------------------------
+Tonga 2021 Census of Population and Housing
+9
+Table H 10: Households main source of fuel for cooking and cooking location by division, district, village and region
+ 251
+Table H 11: Households main source of lighting by division, district, village and region 258
+Table H 12: Households access to internet, type and internet provider by division, district, village and region 262
+Table H 13: Households waste disposal by division, district, village and region 269
+Table H 14: Households’ disaster preparedness by division, district and village 273
+Table H 15: Household consumption of fatty food by division, district, village and region 277
+Household Income ___________________________________________________________________ 281
+Table H 16: Households main source of income by division, district, village and region 281
+Table H 17: Households main source of income by household ethnicity, division and region 288
+Table H 18: Households receiving remittances by division, district and village. 290
+Table H 19: Total households on how often they receive remittances by division and region 298
+Table H 20: Households’ regular salary earners by division and district 300
+Labour Mobility Scheme _______________________________________________________________ 301
+Table H 21: Household main remitter being seasonal workers by division, district, village and region 301
+Table H 22: Household participation in labour mobility scheme by division, district, village and region 306
+Table H 23: Household partici
+
+--- page 11 ----------------------------------------------------
+Tonga 2021 Census of Population and Housing
+11
+Glossary
+Census  The total process of collecting, compiling, evaluating, analyzing and publishing or
+otherwise, disseminating demographic, economic and social data pertaining, at a
+specified time, to all persons in a country or in a well-delimited part of a country.
+Disability People with disability categorize as compilation of two level of difficulties – a lot of
+difficulties and cannot do at all specified as disability.
+ Division The five ‘main island’ (Tongatapu, Vava’u, Ha’apai, ‘Eua and Ongo Niua) in Tonga.
+Each division is divided into districts and each district is divided into villages.
+Ethnic Origin Relates to the ethnic group a person belongs to , (i.e. the ancestry with which
+he/she is identified).
+Greater Nuku’alofa Greater Nuku’alofa includes the district of Kolofo’ou and Kolomotu’a.
+Household Consists of person(s) who usually eat together and share the work of preparing the
+food and/ or the cost of work providing it. Generally, household members live and
+sleep in the same building although this is not always the case. Hence, the definition
+is based on eating together rather than on living or sleeping in the same building or
+dwelling.
+Household Head The person with the primary authority and responsibility for household affairs. This
+person is usually designated by the members of the household.
+Institution An organization providing specific services or performing some general function for
+a group of residents or inmat
+
+--- page 17 ----------------------------------------------------
+Tonga 2021 Census of Population and Housing
+17
+Executive Summary
+Tonga’s total population in 2021 was 100,179, which dropped by 0.1 per cent a year between 2016 and
+2021. Most Divisions observed similar dropped pattern in the population with the highest drop of 1.6 per
+cent per year in Ha’apai since the last census while an increase of 0.6 per cent per year in Vava’u between
+2016 and 2021. The population that resides in households were of 99,429 while population resides in
+institutions were of 750. About 98 per cent of the total population in Tonga is of Tongan ethnic origin.
+Of the 100,179 people on census night, 48,749 were male and 51,430 were female. This gives a sex ratio of
+95 males per 100 females.
+Tonga has a relatively young population, with a median age of 22 years. About 42% of the total population
+were of children age 0-17 while those of 65 years of age and above were only 6%.
+Tongatapu’s population was 74,320, constituting of 74% of Tonga’s total population.
+The urban population was 21,185 which is slightly more than one fifth of the total population. The urban
+population includes the villages of Kolofo’ou, Ma’ufanga and Kolomotu’a, which make up Nuku’alofa in
+Tongatapu.
+The average population density was 154 people/km2. However, this varies widely across island division and
+districts. For example, the population density in Tongatapu was 285 people/km2 compared to only 16
+people/km2 in Ongo Niua.
+Households
+The census counted 18,847 households with 99,429 househo
+
+... and 19 further pages match; re-run with a narrower --terms to see them.
