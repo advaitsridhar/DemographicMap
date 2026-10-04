@@ -66,6 +66,15 @@ stops if one is not. A polygon left off displaces an encyclopaedia's figure
 from before 2011 (``displaces_before``): the census taken that year counted
 the whole north, and gives the polygon no count of its own.
 
+**The line between the two sides.** Every polygon here is placed against
+OpenStreetMap's outlines of the north and of the United Nations buffer zone
+(cyprus_north_probe's green_line). Five villages lie in the zone
+(``IN_ZONE``), where neither census counts anyone, and their polygons say so;
+the villages of every bound polygon lie in the north. Polygons whose villages
+lie on the Government's side are not written here, though the Republic's
+census lists no community for them (Alevga, Frodisia, Selladi tou Appi):
+cyprus_census's reasons stand on them.
+
 **The Republic's count stands.** ``check_republic`` reads cyprus_census.json
 and stops the run if any polygon written here is one the Republic's 2021
 census counts anyone in. Two it lists with no residents, Louroukina and Pano
@@ -79,7 +88,7 @@ Kyrenia district and no quarter of another ilçe does (``check_kyrenia``). The
 district is filled only as the sum of the villages bound to its polygons, and
 only when they cover it completely: every polygon of the district bound, and
 their quarters all of the district's (then the ilçe's ages and citizenship
-are theirs). Today 33 of its 46 polygons are bound, holding 53,072 of its
+are theirs). Today 31 of its 46 polygons are bound, holding 51,980 of its
 69,163 residents, so every field of the district says why it is empty. No
 ilçe figure is put on a district of the Republic.
 
@@ -552,13 +561,11 @@ BIND: dict[str, tuple[str, ...]] = {
         "GÜZELYURT/LALA MUSTAFA PAŞA", "GÜZELYURT/PİYALE PAŞA", "GÜZELYURT/İSMET PAŞA",
         "GÜZELYURT/YUVACIK"),
     "46923920B47977238929858": ("Mousoulita", "PAŞAKÖY/KURUDERE"),
-    "46923920B74910454629938": ("Myrtou", "LAPTA (ÇAMLIBEL)/ÇAMLIBEL"),
     "46923920B38170479802577": ("Neta", "YENİ ERENKÖY/TAŞLICA"),
     "46923920B78041797088340": ("Nikitas", "GÜZELYURT/GÜNEŞKÖY"),
     "46923920B94328330432967": ("Orga", "LAPTA (ÇAMLIBEL)/KAYALAR"),
     "46923920B72580164360540": ("Ovgoros", "İSKELE/ERGAZİ"),
     "46923920B63602794647925": ("Palaikythro", "DEĞİRMENLİK/BALIKESİR"),
-    "46923920B46239783627479": ("Panagra", "LAPTA (ÇAMLIBEL)/GEÇİTKÖY"),
     "46923920B57147511667034": ("Patanissos", "MEHMETÇİK/BALALAN"),
     "46923920B77958582681624": ("Patriki", "BÜYÜKKONUK/TUZLUCA"),
     "46923920B34029116615265": ("Pentageia", "LEFKE/YEŞİLYURT"),
@@ -776,24 +783,49 @@ LEFT_OFF: dict[str, tuple[str, str]] = {
     "46923920B38965206429869": ("Avlona", (
         "The village of Avlona (Gayretköy, 367 residents) lies in the polygon labelled Fyllia, by "
         "GeoNames', Wikidata's and OpenStreetMap's points and by 90% of OpenStreetMap's outline of "
-        "Gayretköy; its count is there.")),
+        "Gayretköy; its count is there. This polygon lies 90% in the United Nations buffer zone, by "
+        "OpenStreetMap's outline of the zone.")),
+    "46923920B46239783627479": ("Panagra", (
+        "Geçitköy (220 residents) is this village, but only 30 of its 79 mapped buildings stand in "
+        "this polygon: 46 stand in Myrtou's, where GeoNames' and OpenStreetMap's points for the "
+        "village fall too.")),
+    "46923920B74910454629938": ("Myrtou", (
+        "Çamlıbel (872 residents) is this village, but 46 of the 79 mapped buildings of Geçitköy, the "
+        "village of Panagra, stand in this polygon too.")),
     "46923920B60275250769381": ("Agia Marina Skyllouras", WHY_NO_QUARTER.format(tr="Gürpınar")),
-    "46923920B58040369726665": ("Agios Georgios Soleas", WHY_NO_QUARTER.format(tr="Madenliköy")),
-    "46923920B8865059682023": ("Agios Ioannis Selemani", WHY_NO_QUARTER.format(tr="Süleymaniye")),
-    "46923920B64835616919063": ("Alevga", WHY_NO_QUARTER.format(tr="Alevkayası")),
     "46923920B28653091355318": ("Ammadies", WHY_NO_QUARTER.format(tr="Günebakan")),
     "46923920B69592041186855": ("Dyo Potamoi", WHY_NO_QUARTER.format(tr="İkidere")),
-    "46923920B95052440954476": ("Frodisia", WHY_NO_QUARTER.format(tr="Yağmuralan")),
     "46923920B41086018803178": ("Galini", WHY_NO_QUARTER.format(tr="Ömerli")),
-    "46923920B20193016295799": ("Katydata", WHY_NO_QUARTER.format(
-        tr="Ayyorgi, the Agios Georgios of Lefka")),
     "46923920B39759064245656": ("Kokkina", WHY_NO_QUARTER.format(tr="Erenköy")),
     "46923920B73680512248487": ("Margo", WHY_NO_QUARTER.format(tr="Margo")),
     "46923920B47303866383678": ("Petra", WHY_NO_QUARTER.format(tr="Taşköy")),
     "46923920B75368188924059": ("Pyrogi", WHY_NO_QUARTER.format(tr="Gaziler")),
-    "46923920B45268143409663": ("Selladi tou Appi", WHY_NO_QUARTER.format(tr="Selçuklu")),
-    "46923920B52002347954875": ("Variseia", WHY_NO_QUARTER.format(tr="Şirinköy")),
     "46923920B3651826109354": ("Artemi", WHY_NO_QUARTER.format(tr="Arıdamı")),
+}
+
+# Villages in the United Nations buffer zone between the two sides, by
+# OpenStreetMap's outlines of the zone (relation 3263909) and of the north
+# (2514541), measured in cyprus_north_probe's run 4d3b47d: neither census
+# counts anyone in them. (label, the village's name in the census taken in
+# the north, the evidence.) Polygons whose villages lie on the Government's
+# side (Alevga, Frodisia, Selladi tou Appi: 1.2 to 7.5 km from either line)
+# are not the north's, and are left to cyprus_census.
+IN_ZONE: dict[str, tuple[str, str, str]] = {
+    "46923920B37444624958942": ("Agios Nikolaos Soleas", "Yamaç", (
+        "GeoNames', Wikidata's and OpenStreetMap's points for the village lie 200 to 370 m inside the "
+        "zone, and so does 82% of this polygon")),
+    "46923920B8865059682023": ("Agios Ioannis Selemani", "Süleymaniye", (
+        "GeoNames', Wikidata's and OpenStreetMap's points for the village lie 320 to 410 m inside the "
+        "zone, and so does 59% of this polygon")),
+    "46923920B20193016295799": ("Katydata", "Ayyorgi", (
+        "this polygon holds the village of Agios Georgios of Lefka by GeoNames' and Wikidata's points, "
+        "180 m inside the zone, and 78% of it lies in the zone")),
+    "46923920B58040369726665": ("Agios Georgios Soleas", "Madenliköy", (
+        "OpenStreetMap's point for the village lies 150 m inside the zone, though 93% of this polygon "
+        "lies north of it")),
+    "46923920B52002347954875": ("Variseia", "Şirinköy", (
+        "GeoNames', Wikidata's and OpenStreetMap's points for the village lie 560 to 730 m inside the "
+        "zone, as does a quarter of this polygon, most of the rest being on the Government's side")),
 }
 
 # Communities both censuses count a part of: the Republic's 2021 census
@@ -839,6 +871,8 @@ UNPLACED: dict[str, tuple[str, str]] = {
     "GİRNE/AŞAĞI KARAMAN": (KYRENIA, ""),
     "GİRNE/DOĞANKÖY": (KYRENIA, "Thermeia"),
     "GİRNE/OZANKÖY": (KYRENIA, "Kazafani"),
+    "LAPTA (ÇAMLIBEL)/GEÇİTKÖY": (KYRENIA, "Panagra"),
+    "LAPTA (ÇAMLIBEL)/ÇAMLIBEL": (KYRENIA, "Myrtou"),
     "GİRNE/KARAKUM": (KYRENIA, "Kazafani"),
     "GİRNE/BEYLERBEYİ": (KYRENIA, "Belapais"),
     "DİKMEN/YUKARI DİKMEN": (KYRENIA, "Pano Dikomo"),
@@ -865,15 +899,17 @@ MAX_OVERLAP = 0.10
 # polygons left off because of it (the rest of LEFT_OFF are left for other
 # reasons: a quarter spanning two polygons, one quarter for two villages, no
 # quarter at all). OpenStreetMap's buildings in cyprus_north_probe's boxes
-# (runs 0c9bd20 and 9c2da10), each quarter's residents spread evenly over
+# (runs 0c9bd20, 9c2da10 and 4d3b47d), each quarter's residents spread evenly over
 # its mapped buildings, and only where five or more of them stand across the
 # line; a quarter whose outline was not counted whole is placed by area and
 # its own buildings across a line are not estimated.
 OVERLAP: dict[str, tuple[str, float]] = {
+    "46923920B46239783627479": ("Panagra", 0.582),             # 220: 128 out, 0 in
     "46923920B85136596681423": ("Mandres Lefkosias", 0.224),   # 5,338: 31 out, 1,165 in
     "46923920B44802407724135": ("Agkomi Ammochostou", 0.177),  # 2,645: 0 out, 469 in
     "46923920B79471002373027": ("Templos", 0.173),             # 1,090: 31 out, 158 in
     "46923920B35244398471877": ("Kazafani", 0.150),            # 3,792: 168 out, 401 in
+    "46923920B74910454629938": ("Myrtou", 0.147),              # 872: 0 out, 128 in
     "46923920B81569607832165": ("Belapais", 0.119),            # 918: 62 out, 48 in
     "46923920B27145570377181": ("Pano Dikomo", 0.109),         # 416: 0 out, 45 in
     "46923920B78041797088340": ("Nikitas", 0.078),             # 505: 0 out, 40 in
@@ -896,13 +932,14 @@ OVERLAP: dict[str, tuple[str, float]] = {
 # Below this many residents no sex ratio is shown, as in cyprus_census: 21
 # people with 19 men would read as a ratio of 950.
 MIN_RESIDENTS = 50
-# A polygon in the north given no count here displaces an encyclopaedia's
-# figure for it from before the census taken in 2011 (the build's
-# ``displaces_before``). That census counted the whole north, so an older
-# figure -- Wikidata's 1973 counts, the last census of the whole island, or a
-# later one like the 85 of 1976 it gives Agios Nikolaos of Lefka -- is not the
-# polygon's population now. A count is never displaced, nor a figure of 2011
-# or later.
+# A polygon in the north or the buffer zone given no count here displaces an
+# encyclopaedia's figure for it from before the census taken in 2011 (the
+# build's ``displaces_before``). That census counted the whole north, and the
+# Republic's of 2021 lists no community in the zone's empty villages, so an
+# older figure -- Wikidata's 1973 counts, the last census of the whole island,
+# or a later one like the 85 of 1976 it gives Agios Nikolaos of Lefka -- is
+# not the polygon's population now. A count is never displaced, nor a figure
+# of 2011 or later.
 DISPLACES_BEFORE = YEAR
 WHO_CAP = WHO[0].upper() + WHO[1:]
 # Quarters the census attaches to no municipality (Tablo 3's footnote).
@@ -927,6 +964,12 @@ WHY_NO_COMPOSITION = (
 KYRENIA_OUTSIDE = ("Kyrenia district has been outside the effective control of the Government of "
                    "the Republic of Cyprus since 1974, and the Republic's censuses since then have "
                    "not counted it.")
+ZONE_WHY = ("The village lies in the United Nations buffer zone between the two sides, by "
+            "OpenStreetMap's outline of the zone: {evidence}. Neither census counts anyone there: the "
+            "Republic of Cyprus's 2021 census lists no community for it, and " + WHO + ", which counts "
+            "the residents of the north, lists no quarter for it ({tr} in its own naming).")
+ZONE_OTHER = ("Neither census counts anyone in this village, which lies in the United Nations buffer "
+              "zone between the two sides.")
 
 
 def spec_key(spec: str) -> str:
@@ -988,7 +1031,7 @@ def check_binding(t3: dict[str, Any], admin1: list[dict[str, Any]],
     district = {s["id"]: s["name"] for s in admin1}
     seen: dict[str, str] = {}
     for name, entries in (("BIND", BIND), ("ZERO_IN_REPUBLIC", ZERO_IN_REPUBLIC),
-                          ("LEFT_OFF", LEFT_OFF), ("BOTH", BOTH)):
+                          ("LEFT_OFF", LEFT_OFF), ("IN_ZONE", IN_ZONE), ("BOTH", BOTH)):
         for sid, entry in entries.items():
             if sid in seen:
                 raise SystemExit(f"cyprus_north_census: polygon {sid} is in {seen[sid]} and in {name}")
@@ -1077,7 +1120,7 @@ def check_republic(republic: dict[str, dict[str, Any]]) -> set[str]:
             raise SystemExit(f"cyprus_north_census: cyprus_census.json has no record for polygon {sid}")
         return rec.get("population")
 
-    for name, entries in (("BIND", BIND), ("LEFT_OFF", LEFT_OFF)):
+    for name, entries in (("BIND", BIND), ("LEFT_OFF", LEFT_OFF), ("IN_ZONE", IN_ZONE)):
         counted = [entry[0] for sid, entry in entries.items() if has_value(population(sid))]
         if counted:
             raise SystemExit(f"cyprus_north_census: {name} has polygons the Republic's census counts: {counted}")
@@ -1212,6 +1255,16 @@ def build(t3: dict[str, Any], ages: dict[tuple[str, str | None], dict[str, Any]]
             language=gap(NOT_AVAILABLE, WHY_NO_COMPOSITION),
             ethnicity=gap(NOT_AVAILABLE, WHY_NO_COMPOSITION)))
 
+    for sid, (label, tr, evidence) in IN_ZONE.items():
+        why = ZONE_WHY.format(evidence=evidence, tr=tr)
+        records.append(record(
+            f"CYP-north-{YEAR}-zone-{sid}", label, level="admin2", parent="CYP", country="CYP",
+            match_by="shape_id", shape_id=sid, parent_name=district[by_id[sid]["parent"]],
+            population=dict(gap(NOT_AVAILABLE, why), displaces_before=DISPLACES_BEFORE),
+            sex_ratio=gap(NOT_AVAILABLE, why), median_age=gap(NOT_AVAILABLE, ZONE_OTHER),
+            religion=gap(NOT_AVAILABLE, ZONE_OTHER), language=gap(NOT_AVAILABLE, ZONE_OTHER),
+            ethnicity=gap(NOT_AVAILABLE, ZONE_OTHER)))
+
     records.append(kyrenia(t3, ages, cit, admin1, admin2, kyrenia_total, src, urls))
 
     bound_people = sum(r["population"]["value"] for r in records
@@ -1219,7 +1272,8 @@ def build(t3: dict[str, Any], ages: dict[tuple[str, str | None], dict[str, Any]]
     log(f"  {len(BIND)} polygons carry {sum(len(e) - 1 for e in BIND.values())} quarters, "
         f"{bound_people:,} residents of {t3['total']['total']:,.0f}; {len(zero_written)} of "
         f"{len(ZERO_IN_REPUBLIC)} the Republic lists empty written; {len(LEFT_OFF)} northern polygons "
-        f"say why they have no figure; {len(UNPLACED)} quarters on no polygon "
+        f"say why they have no figure, and {len(IN_ZONE)} in the buffer zone; {len(UNPLACED)} quarters "
+        "on no polygon "
         f"({sum(quarter[spec_key(s)]['total'] for s in UNPLACED):,.0f} residents)")
     return records
 

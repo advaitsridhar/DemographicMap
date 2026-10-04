@@ -213,13 +213,14 @@ class TablesTest(unittest.TestCase):
         self.assertEqual(len(keys), 250)          # Tablo 3's quarters
 
     def test_every_polygon_once(self):
-        ids = [sid for t in (north.BIND, north.ZERO_IN_REPUBLIC, north.LEFT_OFF, north.BOTH) for sid in t]
+        ids = [sid for t in (north.BIND, north.ZERO_IN_REPUBLIC, north.LEFT_OFF, north.IN_ZONE, north.BOTH)
+               for sid in t]
         self.assertEqual(len(ids), len(set(ids)))
         self.assertLessEqual(set(north.NOTES), set(north.BIND))
 
     def test_labels_are_the_maps(self):
         drawn = {s["id"]: s["name"] for s in shapes("CYP", "admin2")}
-        for table in (north.BIND, north.ZERO_IN_REPUBLIC, north.LEFT_OFF, north.BOTH):
+        for table in (north.BIND, north.ZERO_IN_REPUBLIC, north.LEFT_OFF, north.IN_ZONE, north.BOTH):
             for sid, entry in table.items():
                 self.assertEqual(drawn.get(sid), entry[0], sid)
 
@@ -259,7 +260,7 @@ def synthetic(admin1, admin2):
                               "women": 0.0}}
     cit = {"girne": {None: g, "TRNC citizen": g - 10, "Other": 10.0}}
     republic = {}
-    for sid in list(north.BIND) + list(north.LEFT_OFF):
+    for sid in list(north.BIND) + list(north.LEFT_OFF) + list(north.IN_ZONE):
         republic[sid] = {"population": {"status": "not_available", "note": "not counted"}}
     for sid, (_, count) in north.BOTH.items():
         republic[sid] = {"population": {"value": count, "year": 2021}}
@@ -283,7 +284,7 @@ class BuildTest(unittest.TestCase):
         t3, ages, cit, republic = synthetic(self.admin1, self.admin2)
         records = self.build(t3, ages, cit, republic)
         admin2 = {r["shape_id"]: r for r in records if r["level"] == "admin2"}
-        self.assertEqual(len(admin2), len(north.BIND) + len(north.LEFT_OFF))
+        self.assertEqual(len(admin2), len(north.BIND) + len(north.LEFT_OFF) + len(north.IN_ZONE))
         drawn = {s["id"]: s["name"] for s in self.admin2}
         for sid, rec in admin2.items():
             self.assertEqual(rec["name"], drawn[sid])
@@ -311,6 +312,18 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(avlona["population"]["displaces_before"], 2011)
         self.assertIn("Fyllia", avlona["population"]["note"])
         self.assertIn("effective control", avlona["population"]["note"])
+        # A village in the buffer zone says neither census counts it, and
+        # displaces an encyclopaedia's figure from before 2011 (Wikidata's 85
+        # of 1976 for Agios Nikolaos of Lefka).
+        nikolaos = admin2["46923920B37444624958942"]
+        self.assertEqual(nikolaos["population"]["displaces_before"], 2011)
+        self.assertIn("United Nations buffer zone", nikolaos["population"]["note"])
+        self.assertIn("Yamaç", nikolaos["population"]["note"])
+        self.assertIn("Neither census counts anyone there", nikolaos["population"]["note"])
+        self.assertEqual(nikolaos["religion"]["status"], "not_available")
+        # Villages on the Government's side are not written here at all.
+        for sid in ("46923920B64835616919063", "46923920B95052440954476", "46923920B45268143409663"):
+            self.assertNotIn(sid, admin2)
         # A polygon left off for its overlap gives the share measured.
         belapais = admin2["46923920B81569607832165"]
         self.assertNotIn("value", belapais["population"])
