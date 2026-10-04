@@ -1,130 +1,779 @@
-https://stats-sdmx-disseminate.pacificdata.org/rest/dataflow/all/all/latest
-  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 358,703 bytes
-  127 dataflows
-  SPC,DF_ADBKI,1.2  Selection of Asian Development Bank Key Indicators (ADB KI) for Pacific Island Countries and Territories
-  SPC,DF_AGRICULTURAL_PRODUCTION,1.0  Agricultural production
-  SPC,DF_AGRICULTURE_HIES,1.0  Food security: Number and proportion of households by geography, sex, age and urbanization in the Pacific which were involved in agriculture farming
-  SPC,DF_BOP,2.0  Balance of payments
-  SPC,DF_BP50,1.0  Blue Pacific 2050 (all)
-  SPC,DF_BP50_1,1.0  Blue Pacific 2050: Political Leadership And Regionalism (Thematic Area 1)
-  SPC,DF_BP50_2,1.0  Blue Pacific 2050: People-Centered Development (Thematic Area 2)
-  SPC,DF_BP50_3,1.0  Blue Pacific 2050: Peace And Security (Thematic Area 3)
-  SPC,DF_BP50_4,1.0  Blue Pacific 2050: Resources And Economic Development (Thematic Area 4)
-  SPC,DF_BP50_5,1.0  Blue Pacific 2050: Climate Change And Disasters (Thematic Area 5)
-  SPC,DF_BP50_6,1.0  Blue Pacific 2050: Ocean And Environment (Thematic Area 6)
-  SPC,DF_BP50_7,1.0  Blue Pacific 2050: Technology And Connectivity (Thematic Area 7)
-  SPC,DF_CIVIL_REGISTRATION,1.1  Civil Registration Completeness within 12 months of Birth or Death
-  SPC,DF_CLIMATE_CHANGE,1.0  Climate Change indicators
-  SPC,DF_COMMODITY_PRICES,1.0  Selected International Commodity Prices
-  SPC,DF_COVID,1.0  [Archived] COVID-19 cases in Pacific Island Countries and Territories
-  SPC,DF_COVID_VACCINATION,1.0  [Archived] COVID-19 vaccination
-  SPC,DF_CPI,3.2  Consumer Price Index (Inflation rate and Index)
-  SPC,DF_CROPS,1.1  Crops and livestock products
-  SPC,DF_CURRENCIES,2.0  Currency exchange rates
-  SPC,DF_CYBERLAW,1.0  Summary of adoption of e-commerce legislation (UNCTAD)
-  SPC,DF_DIGITAL_DEVELOPMENT,1.0  Digital development
-  SPC,DF_DISABILITY,1.0  Disability statistics
-  SPC,DF_ECOLEAD,1.0  COVID-19 economic lead indicators
-  SPC,DF_EDUCATION,1.0  Education Attainment by country age, sex, urbanisation, and disability status
-  SPC,DF_EGOV,1.0  E-Government development index
-  SPC,DF_EMPLOYED,1.0  Employed population by education, occupation and economic sector
-  SPC,DF_EMPLOYED_FTPT,1.0  Employed population by full-time/part-time employment
-  SPC,DF_EMPLOYED_HHCOMP,1.0  Employed population by household composition
-  SPC,DF_EMPLOYED_OCCUPATION,1.0  Employed population by occupation
-  SPC,DF_EMPLOYED_SECTOR,1.0  Employed population by economic sector
-  SPC,DF_EMPRATES,1.0  Labour force participation rates and unemployment rates
-  SPC,DF_ENERGY,1.0  Energy indicators
-  SPC,DF_ENV_TAXES,1.0  Environmental Taxes
-  SPC,DF_FISHING_LOCATION_HIES,1.0  Food security: Number and proportion of households by geography, sex, age and urbanization in the Pacific which were involved fishing in various fishi
-  SPC,DF_FISHING_METHOD_HIES,1.0  Food security: Number and proportion of households by geography, sex, age and urbanization in the Pacific which were involved fishing using various me
-  SPC,DF_FOOD_NUTRIENTS,1.0  Food nutrients
-  SPC,DF_FOOD_SECURITY_HIES_1,1.0  Food security: Income and expenditure indicators by poverty and food security status, by geography, sex, age and urbanization (Kiribati, Solomon Islan
-  SPC,DF_FOOD_SECURITY_HIES_2,1.0  Food security: Number and proportion of households by poverty, food security status and food activity, by geography, sex, age and urbanization from th
-  SPC,DF_FOOD_SECURITY_HIES_3,1.0  Food security: Nutritional facts by type of food, by geography, sex, age and urbanization (Kiribati, Solomon Islands and Vanuatu)
-  SPC,DF_FOOD_SECURITY_PHC_1,1.0  Food security: Number of households engaged in crops, livestock, fishing and handicraft, by geography, sex, age, urbanization and wealth (Kiribati, Tu
-  SPC,DF_FOOD_SECURITY_PHC_2,1.0  Food security: Number of households engaged in crops by type of crop, by geography, sex, age, urbanization and wealth (Kiribati, Tuvalu and Vanuatu)
-  SPC,DF_FOOD_SECURITY_PHC_3,1.0  Food security: Number of households engaged in livestock by type of animal, by geography, sex, age, urbanisation and wealth (Kiribati, Tuvalu and Vanu
-  SPC,DF_GFS,1.0  Government Finance Statistics
-  SPC,DF_GWG,1.0  Gender Pay Gap in Wages by country, urbanisation, and disability status
-  SPC,DF_HEALTH,1.0  Health indicators
-  SPC,DF_HEALTH_FACILITIES,1.0  Health facilities
-  SPC,DF_HHCOUNTS,1.0  Household counts, population and average household size
-  SPC,DF_HHEXP,1.0  Household expenditure
-  SPC,DF_HHHEAD,1.0  Household Head by sex, country, urbanisation, occupation, economic sector, household composition and disability status
-  SPC,DF_HRMI,1.0  Selection of indicators from the Human Rights Measurement Initiative (HRMI)
-  SPC,DF_IMFFAS,2.0  Financial Access Survey
-  SPC,DF_IMTS,4.1  International Merchandise Trade Statistics (IMTS)
-  SPC,DF_KAVA,1.0  Kava
-  SPC,DF_KEYFACTS,1.0  About PICTs
-  SPC,DF_LABEMP,1.0  Population by labour force and employment status
-  SPC,DF_LAND_USE,1.0  Land areas of Pacific Island Countries and Territories
-  SPC,DF_LIVESTOCK,1.0  Food security: Number and proportion of households by geography, sex, age and urbanization in the Pacific who were involved in raising livestock
-  SPC,DF_MARITAL_STATUS,1.0  Married women aged 15-17 by country, urbanisation, and disability status
-  SPC,DF_METEO_MONITOR_NET,1.0  Meteorological monitoring network
-  SPC,DF_MICS,1.0  Selection of indicators from the Multiple Indicator Cluster Surveys programme (MICS) for PICTs
-  SPC,DF_NATIONAL_ACCOUNTS,1.0  Gross Domestic Product for Pacific Island Countries and Territories
-  SPC,DF_NCSI,1.0  Selection of National Cyber Security Index (NCSI) indicators for Pacific Island Countries and Territories
-  SPC,DF_NEET,1.0  NEET - Youth not in education, employment or training (15-24 years)
-  SPC,DF_NMDI,1.0  National Minimum Development Indicators (NMDI) - All topics
-  SPC,DF_NMDI_DEV,1.0  National Minimum Development Indicators (NMDI) for Human Development
-  SPC,DF_NMDI_EDU,1.0  National Minimum Development Indicators (NMDI) for Education
-  SPC,DF_NMDI_FIS,1.0  National Minimum Development Indicators (NMDI) for Fisheries, Aquaculture, Agriculture and Forestry
-  SPC,DF_NMDI_HEA,1.0  National Minimum Development Indicators (NMDI) for Public Health
-  SPC,DF_NMDI_INF,1.0  National Minimum Development Indicators (NMDI) for Communication and Infrastructure
-  SPC,DF_NMDI_OTH,1.0  National Minimum Development Indicators (NMDI) for other topics not elsewhere classified
-  SPC,DF_NMDI_POP,1.0  National Minimum Development Indicators (NMDI) for Population
-  SPC,DF_OLYMPICS,1.0  Olympic games
-  SPC,DF_OVERSEAS_VISITORS,2.0  Overseas visitor arrivals
-  SPC,DF_PACCOMTRADE_KI_HS2022,1.0  Pacific Commodity Trade Dataset for Kiribati (PACComtrade, HS2022 Classification)
-  SPC,DF_PACCOMTRADE_TO_HS2017,1.0  Pacific Commodity Trade Dataset for Tonga (PACComtrade, HS2017 Classification)
-  SPC,DF_PACCOMTRADE_TV_HS2022,1.0  Pacific Commodity Trade Dataset for Tuvalu (PACComtrade, HS2022 Classification)
-  SPC,DF_PAM,1.0  Pacific aid and development finance data from the Lowy Institute
-  SPC,DF_POCKET,3.1  Pocket summary (latest available value per year)
-  SPC,DF_POP_AGE,1.0  Population structure by age
-  SPC,DF_POP_COAST,2.0  Coastal population (1, 5 and 10km from coast)
-  SPC,DF_POP_DENSITY,1.0  Population densities
-  SPC,DF_POP_LECZ,1.0  Population living in low elevation coastal zones (0-10m and 0-20m above sea level)
-  SPC,DF_POP_PROJ,3.0  Population projections
-  SPC,DF_POP_SEX,1.0  Population structure by sex
-  SPC,DF_POP_URBAN,1.0  Degree of urbanization
-  SPC,DF_POWER_GEN,1.0  Power generation
-  SPC,DF_PRISON,1.0  Persons held in prisons
-  SPC,DF_PUBLIC_DEBT,1.0  Public debt
-  SPC,DF_RESERVES,1.0  Reserves
-  SPC,DF_REVENUE,1.0  Government Revenue Statistics
-  SPC,DF_SAM_CATCH,2.0  Fish stock assessment of Tuna, Billfish and Sharks in the Pacific Ocean
-  SPC,DF_SDG,4.4  Sustainable Development Goals (all)
-  SPC,DF_SDG_01,4.4  Sustainable Development Goal 01 - No Poverty
-  SPC,DF_SDG_02,4.4  Sustainable Development Goal 02 - Zero Hunger
-  SPC,DF_SDG_03,4.4  Sustainable Development Goal 03 - Good Health and Well-Being
-  SPC,DF_SDG_04,4.4  Sustainable Development Goal 04 - Quality Education
-  SPC,DF_SDG_05,4.4  Sustainable Development Goal 05 - Gender Equality
-  SPC,DF_SDG_06,4.4  Sustainable Development Goal 06 - Clean Water and Sanitation
-  SPC,DF_SDG_07,4.4  Sustainable Development Goal 07 - Affordable and Clean Energy
-  SPC,DF_SDG_08,4.4  Sustainable Development Goal 08 - Decent Work and Economic Growth
-  SPC,DF_SDG_09,4.4  Sustainable Development Goal 09 - Industry, Innovation and Infrastructure
-  SPC,DF_SDG_10,4.4  Sustainable Development Goal 10 - Reduced Inequalities
-  SPC,DF_SDG_11,4.4  Sustainable Development Goal 11 - Sustainable Cities and Communities
-  SPC,DF_SDG_12,4.4  Sustainable Development Goal 12 - Responsible Consumption and Production
-  SPC,DF_SDG_13,4.4  Sustainable Development Goal 13 - Climate Action
-  SPC,DF_SDG_14,4.4  Sustainable Development Goal 14 - Life Below Water
-  SPC,DF_SDG_15,4.4  Sustainable Development Goal 15 - Life on Land
-  SPC,DF_SDG_16,4.4  Sustainable Development Goal 16 - Peace, Justice and Strong Institutions
-  SPC,DF_SDG_17,4.4  Sustainable Development Goal 17 - Partnerships for the Goals
-  SPC,DF_SOCECO,1.0  COVID-19 socio-economic impact indicators
-  SPC,DF_STRI,1.0  Services Trade Restrictions Index
-  SPC,DF_TOURISM_ARRIVALS,1.0  Tourism Arrivals
-  SPC,DF_TOURISM_EARNINGS,1.0  International tourism earnings
-  SPC,DF_TRADE_FOOD,2.0  Pacific food and beverage trade: The Pacific Food Trade Database
-  SPC,DF_TRADE_ICT,1.0  Digital economy: Trade in ICT products and services
-  SPC,DF_TRADE_SERVICES,1.0  International trade in services
-  SPC,DF_UIS,1.0  Thematic indicators on Education (UIS/UNESCO data)
-  SPC,DF_UPU,1.0  Selection of indicators from the Universal Postal Union (UPU)
-  SPC,DF_VAW,1.0  Violence against women
-  SPC,DF_VITAL,1.0  Vital statistics
-  SPC,DF_WASH,1.0  Selection of Water, Sanitation and Hygiene (WASH) indicators for Pacific Island Countries and Territories
-  SPC,DF_WASTE,1.0  Municipal solid waste
-  SPC,DF_WBDAI,1.0  Selection of indicators from World Bank Digital Adoption Index (WB DAI) for Pacific Island Countries and Territories
-  SPC,DF_WBWDI,1.0  Selection of World Bank World Development Indicators (WB WDI) for Pacific Island Countries and Territories
-  SPC,DF_WBWGI,1.0  Selection of World Bank Worldwide Governance Indicators (WB WGI) for Pacific Island Countries and Territories
-  SPC,DF_YOUTH_PARL,1.1  Youth Representation in Parliament
+https://api.data.stats.govt.nz/rest/dataflow/all/all/latest
+  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 2,143,977 bytes
+  776 dataflows matching '(?:CEN23|CEN18|POP|DPE|age)'
+  STATSNZ,CEN13_ECI_001,1.0  Ethnic group (total responses), for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_ECI_002,1.0  Ethnic group (total responses) by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA)
+  STATSNZ,CEN13_ECI_003,1.0  Ethnic group (grouped total responses) by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 (RC, TA, AU)
+  STATSNZ,CEN13_ECI_004,1.0  Ethnic group (grouped total responses) and Maori descent indicator by sex, for the census usually resident population count, 2001, 2006, and 2013 (RC,
+  STATSNZ,CEN13_ECI_005,1.0  Ethnic group (grouped total responses) by number of ethnic groups specified, for the census usually resident population count, 2001, 2006, and 2013 (R
+  STATSNZ,CEN13_ECI_006,1.0  Ethnic group (grouped total responses) by number of languages spoken, for the census usually resident population count, 2001, 2006, and 2013 (RC, TA, 
+  STATSNZ,CEN13_ECI_007,1.0  Ethnic group (single and combination) by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 (RC, TA)
+  STATSNZ,CEN13_ECI_008,1.0  Ethnic group (single and combination) by sex, for the census usually resident population count, 2001, 2006, and 2013 (RC, TA, AU)
+  STATSNZ,CEN13_ECI_009,1.0  Ethnic group (detailed single and combination) by age group and sex, for the census usually resident population count, 2013 (RC, TA)
+  STATSNZ,CEN13_ECI_010,1.0  Selected ethnic groups (total responses) by age group, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_ECI_011,1.0  Selected ethnic groups (total responses) by birthplace (detailed), for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC
+  STATSNZ,CEN13_ECI_012,1.0  Selected ethnic groups (total responses) by language spoken (total responses), for the census usually resident population count, 2001, 2006, and 2013 
+  STATSNZ,CEN13_ECI_013,1.0  Selected ethnic groups (total responses) by religious affiliation (total responses), for the census usually resident population count, 2001, 2006, and
+  STATSNZ,CEN13_ECI_014,1.0  Selected ethnic groups (total responses) and cigarette smoking behaviour by sex, for the census usually resident population count aged 15 years and ov
+  STATSNZ,CEN13_ECI_015,1.0  Selected ethnic groups (total responses) by highest qualification, for the census usually resident population count aged 15 years and over, 2006 and 2
+  STATSNZ,CEN13_ECI_016,1.0  Selected ethnic groups (total responses) and study participation by sex, for the census usually resident population count aged 15 years and over, 2006
+  STATSNZ,CEN13_ECI_017,1.0  Selected ethnic groups (total responses) by total personal income (grouped), for the census usually resident population count aged 15 years and over, 
+  STATSNZ,CEN13_ECI_018,1.0  Selected ethnic groups (total responses) by sources of personal income, for the census usually resident population count aged 15 years and over, 2001,
+  STATSNZ,CEN13_ECI_019,1.0  Selected ethnic groups (total responses) and work and labour force status by sex, for the census usually resident population count aged 15 years and o
+  STATSNZ,CEN13_ECI_020,1.0  Selected ethnic groups (total responses) by occupation (ANZSCO V1.1 major group), for the employed census usually resident population count aged 15 ye
+  STATSNZ,CEN13_ECI_021,1.0  Selected ethnic groups (total responses) and unpaid activities (total responses) by sex, for the census usually resident population count aged 15 year
+  STATSNZ,CEN13_ECI_022,1.0  Birthplace (detailed), for the census usually resident population count, 2001, 2006, and 2013 (RC, TA)
+  STATSNZ,CEN13_ECI_023,1.0  Birthplace (broad geographic areas) by sex, for the census usually resident population count, 2001, 2006, and 2013 (RC, TA, AU)
+  STATSNZ,CEN13_ECI_024,1.0  Birthplace (detailed overseas born) and years since arrival in New Zealand by sex, for the overseas born census usually resident population count, 200
+  STATSNZ,CEN13_ECI_025,1.0  Birthplace (broad geographic area) by years since arrival in New Zealand, for the overseas-born census usually resident population count, 2001, 2006, 
+  STATSNZ,CEN13_ECI_026,1.0  Birthplace (broad geographic area) by highest qualification, for the census usually resident population count aged 15 years and over, 2006 and 2013 Ce
+  STATSNZ,CEN13_ECI_027,1.0  Birthplace (broad geographic area) by total personal income (grouped), for the census usually resident population count aged 15 years and over, 2013 C
+  STATSNZ,CEN13_ECI_028,1.0  Birthplace (broad geographic area) by sources of personal income, for the census usually resident population count aged 15 years and over, 2001, 2006,
+  STATSNZ,CEN13_ECI_029,1.0  Birthplace (broad geographic area) and work and labour force status by sex, for the census usually resident population count aged 15 years and over, 2
+  STATSNZ,CEN13_ECI_030,1.0  Birthplace (broad geographic areas) by occupation (ANZSCO major group), for the employed census usually resident population count aged 15 years and ov
+  STATSNZ,CEN13_ECI_031,1.0  Birthplace (New Zealand or overseas) and ethnic group (grouped total responses) by languages spoken (total responses), for the census usually resident
+  STATSNZ,CEN13_ECI_032,1.0  Maori descent indicator by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_ECI_033,1.0  Iwi (total responses) and iwi groupings, for the Maori descent census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_ECI_034,1.0  Iwi (total responses) and iwi groupings by age group and sex, for the Maori descent census usually resident population count, 2001, 2006, and 2013 Cen
+  STATSNZ,CEN13_ECI_035,1.0  Iwi (total responses) and iwi groupings and languages spoken by age group, for the Maori descent census usually resident population count, 2001, 2006,
+  STATSNZ,CEN13_ECI_036,1.0  Iwi (total responses) and iwi groupings by religious affiliation (total responses), for the Maori descent census usually resident population count, 20
+  STATSNZ,CEN13_ECI_037,1.0  Iwi (total responses) and iwi groupings and cigarette smoking behaviour by sex, for the Maori descent census usually resident population count aged 15
+  STATSNZ,CEN13_ECI_038,1.0  Iwi (total responses) and iwi groupings by tenure holder, for the Maori descent census usually resident population count aged 15 years and over, 2001,
+  STATSNZ,CEN13_ECI_039,1.0  Iwi (total responses) and iwi groupings by highest qualification, for the Maori descent census usually resident population count aged 15 years and ove
+  STATSNZ,CEN13_ECI_040,1.0  Iwi (total responses) and iwi groupings and study participation by sex, for the Maori descent census usually resident population count aged 15 years a
+  STATSNZ,CEN13_ECI_041,1.0  Iwi (total responses) and iwi groupings by total personal income (grouped), for the Maori descent census usually resident population count aged 15 yea
+  STATSNZ,CEN13_ECI_042,1.0  Iwi (total responses) and iwi groupings by sources of personal income, for the Maori descent census usually resident population count aged 15 years an
+  STATSNZ,CEN13_ECI_043,1.0  Iwi (total responses) and iwi groupings and work and labour force status by sex, for the Maori descent census usually resident population count aged 1
+  STATSNZ,CEN13_ECI_044,1.0  Iwi (total responses) and iwi groupings and status in employment by sex, for the employed Maori descent census usually resident population count aged 
+  STATSNZ,CEN13_ECI_045,1.0  Iwi (total responses) and iwi groupings by occupation (ANZSCO major group), for the employed Maori descent census usually resident population count ag
+  STATSNZ,CEN13_ECI_046,1.0  Iwi (total responses) and iwi groupings by industry (ANZSIC06 division), for the employed Maori descent census usually resident population count aged 
+  STATSNZ,CEN13_ECI_047,1.0  Iwi (total responses) and iwi groupings and unpaid activities by sex, for the Maori descent census usually resident population count aged 15 years and
+  STATSNZ,CEN13_ECI_048,1.0  Languages spoken (total responses) by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_ECI_049,1.0  Languages spoken (total responses) by birthplace (broad geographic area), for the census usually resident population count, 2001, 2006, and 2013 Censu
+  STATSNZ,CEN13_ECI_050,1.0  Number of languages spoken by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_ECI_051,1.0  Official language indicator by age group, for the census usually resident population count, 2013 Census (RC, TA, AU)
+  STATSNZ,CEN13_ECI_052,1.0  Religious affiliation (total responses) by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA,
+  STATSNZ,CEN13_ECI_053,1.0  Religious affiliation (total responses) by birthplace (broad geographic area), for the census usually resident population count, 2001, 2006, and 2013 
+  STATSNZ,CEN13_ECI_054,1.0  Selected ethnic groups (total responses) by sex, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_EDU_001,1.0  Highest qualification, for the census usually resident population count aged 15 years and over, 2006 and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_EDU_002,1.0  Highest qualification by age group and sex, for the census usually resident population count aged 15 years and over, 2013 Census (RC, TA, AU)
+  STATSNZ,CEN13_EDU_003,1.0  Highest qualification and ethnic group (grouped total responses) by sex, for the census usually resident population count aged 15 years and over, 2006
+  STATSNZ,CEN13_EDU_004,1.0  Highest qualification and ethnic group (grouped total responses) by age group, for the census usually resident population count aged 15 years and over
+  STATSNZ,CEN13_EDU_005,1.0  Highest qualification and status in employment by sex, for the employed census usually resident population count aged 15 years and over, 2006 and 2013
+  STATSNZ,CEN13_EDU_006,1.0  Highest qualification and status in employment by age group, for the employed census usually resident population count aged 15 years and over, 2013 Ce
+  STATSNZ,CEN13_EDU_007,1.0  Highest qualification and occupation (ANZSCO major group) by sex, for the employed census usually resident population count aged 15 years and over, 20
+  STATSNZ,CEN13_EDU_008,1.0  Highest qualification and industry (ANZSIC06 division) by sex, for the employed census usually resident population count aged 15 years and over, 2006 
+  STATSNZ,CEN13_EDU_009,1.0  Highest secondary school qualification by age group and sex, for the census usually resident population count aged 15 years and over, 2013 Census (RC,
+  STATSNZ,CEN13_EDU_010,1.0  Highest secondary school qualification and ethnic group (grouped total responses) by sex, for the census usually resident population count aged 15 yea
+  STATSNZ,CEN13_EDU_011,1.0  Highest secondary school qualification and ethnic group (grouped total responses) by age group, for the census usually resident population count aged 
+  STATSNZ,CEN13_EDU_012,1.0  Post-school qualification field of study (broad) by age group and sex, for the census usually resident population count aged 15 years and over, 2013 C
+  STATSNZ,CEN13_EDU_013,1.0  Post-school qualification field of study (broad) and ethnic group (grouped total responses) by sex, for the census usually resident population count a
+  STATSNZ,CEN13_EDU_014,1.0  Post-school qualification field of study (broad) and work and labour force status by sex, for the census usually resident population count aged 15 yea
+  STATSNZ,CEN13_EDU_015,1.0  Post-school qualification field of study (broad) and industry (ANZSIC06 division) by sex, for the employed census usually resident population count ag
+  STATSNZ,CEN13_EDU_016,1.0  Study participation by age group and sex, for the census usually resident population count aged 15 years and over, 2013 Census (RC, TA, AU)
+  STATSNZ,CEN13_EDU_017,1.0  Study participation and birthplace (broad geographic area) by sex, for the census usually resident population count aged 15 years and over, 2006 and 2
+  STATSNZ,CEN13_EDU_018,1.0  Study participation and ethnic group (grouped total responses) by age group, for the census usually resident population count aged 15 years and over, 
+  STATSNZ,CEN13_EDU_019,1.0  Study participation and ethnic group (grouped total responses) by sex, for the census usually resident population count aged 15 years and over, 2006 a
+  STATSNZ,CEN13_EDU_020,1.0  Study participation and status in employment by sex, for the employed census usually resident population count aged 15 years and over, 2006 and 2013 C
+  STATSNZ,CEN13_EDU_021,1.0  Study participation and status in employment by age group, for the employed census usually resident population count aged 15 years and over, 2013 Cens
+  STATSNZ,CEN13_EDU_022,1.0  Study participation and industry (ANZSIC06 division) by sex, for the employed census usually resident population count aged 15 years and over, 2006 an
+  STATSNZ,CEN13_FHH_005,1.0  Age group of youngest dependent child in family, for couples with dependent child(ren) in occupied private dwellings, 2001, 2006, and 2013 Censuses (R
+  STATSNZ,CEN13_FHH_006,1.0  Age group of parent in families with dependent child(ren) in occupied private dwellings, 2001, 2006, and 2013 Censuses (RC, TA)
+  STATSNZ,CEN13_FHH_007,1.0  Age group of mother, age group of father, and total number of children in family, for opposite-sex couples with dependent child(ren) in occupied priva
+  STATSNZ,CEN13_FHH_008,1.0  Age group of mother, age group of father, and total number of dependent children in family, for opposite-sex couples with dependent child(ren) in occu
+  STATSNZ,CEN13_FHH_011,1.0  Work and labour force status of mother and work and labour force status of father by age group of youngest dependent child in family, for opposite-sex
+  STATSNZ,CEN13_FHH_013,1.0  Age group of youngest dependent child in family, for one parent with dependent child(ren) families in occupied private dwellings, 2001, 2006, and 2013
+  STATSNZ,CEN13_FHH_015,1.0  Age group of sole parent, for one parent with dependent child(ren) families in occupied private dwellings, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_FHH_016,1.0  Age group and sex of sole parent, for one parent with dependent child(ren) families in occupied private dwellings, 2001, 2006, and 2013 Censuses (RC, 
+  STATSNZ,CEN13_FHH_018,1.0  Work and labour force status and sex of sole parent by age group of youngest dependent child in family, for one parent with dependent child(ren) famil
+  STATSNZ,CEN13_FHH_020,1.0  Age group of people in couples without children in occupied private dwellings, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_FHH_022,1.0  Age group of people in same-sex couples in occupied private dwellings, 2013 Census (RC, TA)
+  STATSNZ,CEN13_FHH_031,1.0  Sex and age group, for people in one-person households in occupied private dwellings, 2001, 2006, and 2013 Censuses (RC, TA)
+  STATSNZ,CEN13_HAD_001,1.0  Cigarette smoking behaviour by age group and sex, for the census usually resident population count aged 15 years and over, 2006 and 2013 Censuses (RC,
+  STATSNZ,CEN13_HAD_002,1.0  Cigarette smoking behaviour and ethnic group (grouped total responses) by age group and sex, for the census usually resident population count aged 15 
+  STATSNZ,CEN13_HAD_003,1.0  Cigarette smoking behaviour and ethnic group (detailed total responses) by age group and sex, for the census usually resident population count aged 15
+  STATSNZ,CEN13_HAD_004,1.0  Cigarette smoking behaviour and ethnic group (detailed total responses) by age group and sex, for the census usually resident population count aged 15
+  STATSNZ,CEN13_HAD_005,1.0  Cigarette smoking behaviour and total personal income (grouped) by age group and sex, for the census usually resident population count aged 15 years a
+  STATSNZ,CEN13_HAD_006,1.0  Cigarette smoking behaviour and highest qualification by age group and sex, for the census usually resident population count aged 15 years and over, 2
+  STATSNZ,CEN13_HAD_007,1.0  Cigarette smoking behaviour and work and labour force status by age group and sex, for the census usually resident population count aged 15 years and 
+  STATSNZ,CEN13_HOU_005,1.0  Occupied dwelling type by age group of usual residents, for usual residents in occupied dwellings, 2013 Census (RC, TA)
+  STATSNZ,CEN13_HOU_009,1.0  Tenure holder by age group and sex, for the census usually resident population count aged 15 years and over, 2001, 2006 and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_HOU_010,1.0  Tenure holder and ethnic group (grouped total responses) by sex, for the census usually resident population count aged 15 years and over, 2001, 2006 a
+  STATSNZ,CEN13_HOU_011,1.0  Tenure holder and total personal income by sex, for the census usually resident population count aged 15 years and over, 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_INC_001,1.0  Total personal income by age group and sex, for the census usually resident population count aged 15 years and over, 2006 and 2013 Censuses (RC, TA)
+  STATSNZ,CEN13_INC_002,1.0  Total personal income (grouped) by age group and sex, for the census usually resident population count aged 15 years and over, 2006 and 2013 Censuses 
+  STATSNZ,CEN13_INC_003,1.0  Total personal income (grouped) and ethnic group (grouped total responses) by sex, for the census usually resident population count aged 15 years and 
+  STATSNZ,CEN13_INC_004,1.0  Total personal income and ethnic group (grouped total responses) by age group, for the census usually resident population count aged 15 years and over
+  STATSNZ,CEN13_INC_005,1.0  Total personal income (grouped) and highest qualification by sex, for the census usually resident population count aged 15 years and over, 2013 Census
+  STATSNZ,CEN13_INC_006,1.0  Total personal income and highest qualification by age group, for the census usually resident population count aged 15 years and over, 2013 Census (RC
+  STATSNZ,CEN13_INC_007,1.0  Total personal income (grouped) and work and labour force status by age group, for the census usually resident population count aged 15 years and over
+  STATSNZ,CEN13_INC_008,1.0  Total personal income, work and labour force status, and ethnic group (grouped total responses) by sex, for the census usually resident population cou
+  STATSNZ,CEN13_INC_009,1.0  Total personal income and status in employment by age group and sex, for the employed census usually resident population count aged 15 years and over,
+  STATSNZ,CEN13_INC_010,1.0  Total personal income (grouped) by occupation (ANZSCO major group), for the employed census usually resident population count aged 15 years and over, 
+  STATSNZ,CEN13_INC_011,1.0  Total personal income (grouped) and occupation (ANZSCO sub-major group) by age group, for the employed census usually resident population count aged 1
+  STATSNZ,CEN13_INC_012,1.0  Total personal income, occupation (ANZSCO major group), and ethnic group (grouped total responses) by sex, for the employed census usually resident po
+  STATSNZ,CEN13_INC_013,1.0  Total personal income (grouped) by industry (ANZSIC06 division), for the employed census usually resident population count aged 15 years and over, 201
+  STATSNZ,CEN13_INC_014,1.0  Total personal income (grouped) and industry (ANZSIC06 division) by age group and sex, for the employed census usually resident population count aged 
+  STATSNZ,CEN13_INC_015,1.0  Total personal income (grouped) and hours worked in employment per week by sex, for the employed census usually resident population count aged 15 year
+  STATSNZ,CEN13_INC_016,1.0  Total personal income and hours worked in employment per week by age group, for the employed census usually resident population count aged 15 years an
+  STATSNZ,CEN13_INC_017,1.0  Total personal income and hours worked in employment per week by ethnic group (grouped total responses), for the employed census usually resident popu
+  STATSNZ,CEN13_INC_018,1.0  Sources of personal income by age group and sex, for the census usually resident population count aged 15 years and over, 2001, 2006, and 2013 Censuse
+  STATSNZ,CEN13_INC_019,1.0  Sources of personal income by ethnic group (grouped total responses), for the census usually resident population count aged 15 years and over, 2013 Ce
+  STATSNZ,CEN13_INC_020,1.0  Sources of personal income by ethnic group (grouped total responses), age group and sex, for the census usually resident population count aged 15 year
+  STATSNZ,CEN13_INC_021,1.0  Sources of personal income and work and labour force status by age group and sex, for the census usually resident population count aged 15 years and o
+  STATSNZ,CEN13_INC_022,1.0  Number of sources of personal income by age group and sex, for the census usually resident population count aged 15 years and over, 2001, 2006, and 20
+  STATSNZ,CEN13_INC_029,1.0  Total personal income by age group and sex, for the census usually resident population count aged 15 years and over, 2013 Census (RC, TA, AU)
+  STATSNZ,CEN13_POP_001,1.0  Age by sex, for the census usually resident population count, 1996, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_POP_002,1.0  Age by sex, for the census night population count, 1996, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_POP_003,1.0  Years at usual residence by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA, AU)
+  STATSNZ,CEN13_POP_004,1.0  Usual residence five years ago indicator (2008) by age group and sex, for the census usually resident population count, 2013 Census (RC, TA, AU)
+  STATSNZ,CEN13_POP_005,1.0  Regional council area of usual residence five years ago (2008) by regional council area (2013), for the census usually resident population count, 2013
+  STATSNZ,CEN13_POP_006,1.0  Territorial authority area of usual residence five years ago (2008) by territorial authority area (2013), for the census usually resident population c
+  STATSNZ,CEN13_POP_007,1.0  Legally registered relationship status by age group and sex, for the census usually resident population count aged 15 years and over, 2001, 2006, and 
+  STATSNZ,CEN13_POP_008,1.0  Legally registered relationship status and ethnic group (grouped total responses) by age group and sex, for the census usually resident population cou
+  STATSNZ,CEN13_POP_009,1.0  Partnership status in current relationship by age group and sex, for the census usually resident population count aged 15 years and over, 2001, 2006, 
+  STATSNZ,CEN13_POP_010,1.0  Partnership status in current relationship and ethnic group (grouped total responses) by age group and sex, for the census usually resident population
+  STATSNZ,CEN13_POP_011,1.0  Legally registered relationship status and partnership status in current relationship by sex, for the census usually resident population count aged 15
+  STATSNZ,CEN13_POP_012,1.0  Legally registered relationship status and partnership status in current relationship by age group and sex, for the census usually resident population
+  STATSNZ,CEN13_POP_013,1.0  Number of children born alive by age group and ethnic group (grouped total responses) of woman, for the female census usually resident population coun
+  STATSNZ,CEN13_POP_014,1.0  Number of children born alive and highest qualification by age group of woman, for the female census usually resident population count aged 15 years a
+  STATSNZ,CEN13_POP_015,1.0  Number of children born alive and work and labour force status by age group of woman, for the female census usually resident population count aged 15 
+  STATSNZ,CEN13_TRA_001,1.0  Main means of travel to work, for the employed census usually resident population count aged 15 years and over, 2001, 2006, and 2013 Censuses (RC, TA,
+  STATSNZ,CEN13_TRA_002,1.0  Main means of travel to work by sex, for the employed census usually resident population count aged 15 years and over, 2001, 2006, and 2013 Censuses (
+  STATSNZ,CEN13_TRA_003,1.0  Main means of travel to work by age group, for the employed census usually resident population count aged 15 years and over, 2001, 2006, and 2013 Cens
+  STATSNZ,CEN13_TRA_004,1.0  Main means of travel to work and work status by status in employment, for the employed census usually resident population count aged 15 years and over
+  STATSNZ,CEN13_TRA_005,1.0  Main means of travel to work by occupation (ANZSCO major group) , for the employed census usually resident population count aged 15 years and over, 20
+  STATSNZ,CEN13_TRA_006,1.0  Main means of travel to work by industry (ANZSIC06 division) , for the employed census usually resident population count aged 15 years and over, 2006 
+  STATSNZ,CEN13_WRK_001,1.0  Work and labour force status and ethnic group (grouped total responses) by sex, for the census usually resident population count aged 15 years and ove
+  STATSNZ,CEN13_WRK_002,1.0  Work and labour force status and ethnic group (grouped total responses) by age group, for the census usually resident population count aged 15 years a
+  STATSNZ,CEN13_WRK_003,1.0  Work and labour force status and highest qualification by age group, for the census usually resident population count aged 15 years and over, 2013 Cen
+  STATSNZ,CEN13_WRK_004,1.0  Status in employment and work status by total personal income, for the employed census usually resident population count aged 15 years and over, 2013 
+  STATSNZ,CEN13_WRK_005,1.0  Occupation (ANZSCO major group) by age group and sex, for the employed census usually resident population count aged 15 years and over, 2006 and 2013 
+  STATSNZ,CEN13_WRK_006,1.0  Occupation (ANZSCO sub-major group) by age group and sex, for the employed census usually resident population count aged 15 years and over, 2006 and 2
+  STATSNZ,CEN13_WRK_007,1.0  Occupation (ANZSCO major group) by ethnic group (grouped total responses), for the employed census usually resident population count aged 15 years and
+  STATSNZ,CEN13_WRK_008,1.0  Occupation (ANZSCO sub-major group) and total personal income by sex, for the employed census usually resident population count aged 15 years and over
+  STATSNZ,CEN13_WRK_009,1.0  Occupation (ANZSCO major group) and work status by sex, for the employed census usually resident population count aged 15 years and over, 2006 and 201
+  STATSNZ,CEN13_WRK_010,1.0  Occupation (ANZSCO sub-major group) and work status by sex, for the employed census usually resident population count aged 15 years and over, 2006 and
+  STATSNZ,CEN13_WRK_011,1.0  Occupation (ANZSCO major group) and industry (ANZSIC06 division) by sex, for the employed census usually resident population count aged 15 years and o
+  STATSNZ,CEN13_WRK_012,1.0  Industry (ANZSIC06 division) by age group and sex, for the employed census usually resident population count aged 15 years and over, 2006 and 2013 Cen
+  STATSNZ,CEN13_WRK_013,1.0  Industry (ANZSIC06 division) and ethnic group (grouped total responses) by sex, for the employed census usually resident population count aged 15 year
+  STATSNZ,CEN13_WRK_014,1.0  Industry (ANZSIC06 division) and work status by sex, for the employed census usually resident population count aged 15 years and over, 2006 and 2013 C
+  STATSNZ,CEN13_WRK_015,1.0  Industry (ANZSIC06 subdivision) and work status by sex, for the employed census usually resident population count aged 15 years and over, 2006 and 201
+  STATSNZ,CEN13_WRK_016,1.0  Industry (ANZSIC06 division) and work status by age group, for the employed census usually resident population count aged 15 years and over, 2006 and 
+  STATSNZ,CEN13_WRK_017,1.0  Industry (ANZSIC06 division) and status in employment by sex, for the employed census usually resident population count aged 15 years and over, 2006 a
+  STATSNZ,CEN13_WRK_018,1.0  Sector of ownership (employer) and total personal income (grouped) by sex, for the employed census usually resident population count aged 15 years and
+  STATSNZ,CEN13_WRK_019,1.0  Workplace address and main means of travel to work, for the employed census usually resident population count aged 15 years and over, 2001, 2006, and 
+  STATSNZ,CEN13_WRK_020,1.0  Workplace address and occupation (ANZSCO major group) by ethnic group (grouped total responses), for the employed census usually resident population c
+  STATSNZ,CEN13_WRK_021,1.0  Workplace address and industry (ANZSIC06 division) by work status, for the employed census usually resident population count aged 15 years and over, 2
+  STATSNZ,CEN13_WRK_022,1.0  Hours worked in employment per week by sex, for the employed census usually resident population count aged 15 years and over, 2001, 2006, and 2013 Cen
+  STATSNZ,CEN13_WRK_023,1.0  Hours worked in employment per week and status in employment by age group and sex, for the employed census usually resident population count aged 15 y
+  STATSNZ,CEN13_WRK_024,1.0  Hours worked in employment per week and occupation (ANZSCO major group) by sex, for the employed census usually resident population count aged 15 year
+  STATSNZ,CEN13_WRK_025,1.0  Job search methods (total responses) by age group and sex, for the unemployed census usually resident population count aged 15 years and over, 2013 Ce
+  STATSNZ,CEN13_WRK_026,1.0  Unpaid activities (total responses) by age group and sex, for the census usually resident population count aged 15 years and over, 2006 and 2013 Censu
+  STATSNZ,CEN13_WRK_027,1.0  Unpaid activities (total responses) by ethnic group (grouped total responses) and sex, for the census usually resident population count aged 15 years 
+  STATSNZ,CEN13_WRK_028,1.0  Unpaid activities (total responses) by total personal income (grouped) and sex, for the census usually resident population count aged 15 years and ove
+  STATSNZ,CEN13_WRK_029,1.0  Unpaid activities (total responses) by work and labour force status and sex, for the census usually resident population count aged 15 years and over, 
+  STATSNZ,CEN13_WRK_030,1.0  Unpaid activities (total responses) by status in employment and sex, for the employed census usually resident population count aged 15 years and over,
+  STATSNZ,CEN13_WRK_031,1.0  Unpaid activities (total responses) by hours worked in employment per week and sex, for the employed census usually resident population count aged 15 
+  STATSNZ,CEN18_ECI_001,1.0  Birthplace (broad geographic areas) and work and labour force status by age and sex, for the census usually resident population count aged 15 years an
+  STATSNZ,CEN18_ECI_002,1.0  Birthplace (broad geographic areas) and years since arrival in New Zealand by age and sex, for the overseas born census usually resident population co
+  STATSNZ,CEN18_ECI_003,1.0  Birthplace (broad geographic areas) by highest qualification by age and sex, for the census usually resident population count aged 15 years and over, 
+  STATSNZ,CEN18_ECI_004,1.0  Birthplace (detailed overseas born) and years since arrival in New Zealand by age and sex, for the overseas born census usually resident population co
+  STATSNZ,CEN18_ECI_005,1.0  Birthplace (detailed), for the census usually resident population count, 2006, 2013, and 2018 Censuses (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_ECI_006,1.0  Birthplace (New Zealand or overseas) and ethnic group (grouped total responses) by languages spoken (17 languages), for the census usually resident po
+  STATSNZ,CEN18_ECI_007,1.0  Ethnic group (detailed single and combination) by age and sex, for the census usually resident population count, 2013 and 2018 Censuses (RC, TA, SA2, 
+  STATSNZ,CEN18_ECI_008,1.0  Ethnic group (detailed total response - level 3) and cigarette smoking behaviour by age group, for the census usually resident population count aged 1
+  STATSNZ,CEN18_ECI_009,1.0  Ethnic group (detailed total response - level 3) and highest qualification by age group, for the census usually resident population count aged 15 year
+  STATSNZ,CEN18_ECI_010,1.0  Ethnic group (detailed total response - level 3) and languages spoken by sex, for the census usually resident population count, 2006, 2013, and 2018 C
+  STATSNZ,CEN18_ECI_011,1.0  Ethnic group (detailed total response - level 3) and occupation by sex, for the employed census usually resident population count aged 15 years and ov
+  STATSNZ,CEN18_ECI_012,1.0  Ethnic group (detailed total response - level 3) and religious affiliation (total responses) by sex, for the census usually resident population count,
+  STATSNZ,CEN18_ECI_013,1.0  Ethnic group (detailed total response - level 3) and sources of personal income by sex, for the census usually resident population count aged 15 years
+  STATSNZ,CEN18_ECI_014,1.0  Ethnic group (detailed total response - level 3) and total personal income (grouped) by age group, for the census usually resident population count ag
+  STATSNZ,CEN18_ECI_015,1.0  Ethnic group (detailed total response - level 3) and unpaid activities by sex, for the census usually resident population count aged 15 years and over
+  STATSNZ,CEN18_ECI_016,1.0  Ethnic group (detailed total response - level 3) and work and labour force status by sex, for the census usually resident population count aged 15 yea
+  STATSNZ,CEN18_ECI_017,1.0  Ethnic group (detailed total response - level 3) by age and sex, for the census usually resident population count, 2006, 2013, and 2018 Censuses (RC, 
+  STATSNZ,CEN18_ECI_018,1.0  Ethnic group (detailed total response - level 3) by birthplace (detailed NZ or overseas born) by age group, for the census usually resident population
+  STATSNZ,CEN18_ECI_019,1.0  Ethnic group (detailed total response - level 4), by age group and sex, for the census usually resident population count, 2006, 2013, and 2018 Censuse
+  STATSNZ,CEN18_ECI_020,1.0  Ethnic group (grouped total responses) and number of ethnic groups specified by age group and sex, for the census usually resident population count, 2
+  STATSNZ,CEN18_ECI_021,1.0  Ethnic group (grouped total responses) and number of languages spoken by age group and sex, for the census usually resident population count, 2006, 20
+  STATSNZ,CEN18_ECI_022,1.0  Ethnic group (single and combination) by age and sex, for the census usually resident population count, 2006, 2013, and 2018 Censuses (RC, TA, SA2, DH
+  STATSNZ,CEN18_ECI_023,1.0  Languages spoken (total responses) and birthplace (broad geographic areas) by age group and sex, for the census usually resident population count, 200
+  STATSNZ,CEN18_ECI_024,1.0  Number of languages spoken and birthplace (broad geographic areas) by age group and sex, for the census usually resident population count, 2006, 2013,
+  STATSNZ,CEN18_ECI_025,1.0  Official language indicator and birthplace (broad geographic areas) by age group and sex, for the census usually resident population count, 2013 and 2
+  STATSNZ,CEN18_ECI_026,1.0  Religious affiliation (total responses) and birthplace (broad geographic areas) by age group, for the census usually resident population count, 2006, 
+  STATSNZ,CEN18_ECI_027,1.0  Religious affiliation (total responses) by age group and sex, for the census usually resident population count, 2006, 2013, and 2018 Censuses (RC, TA,
+  STATSNZ,CEN18_EDU_001,1.0  Highest qualification and ethnic group (grouped total responses) by age group and sex, for the census usually resident population count aged 15 years 
+  STATSNZ,CEN18_EDU_002,1.0  Highest qualification and industry (ANZSIC06 division) by sex, for the employed census usually resident population count aged 15 years and over, 2006,
+  STATSNZ,CEN18_EDU_003,1.0  Highest qualification and occupation (ANZSCO major group) by sex, for the employed census usually resident population count aged 15 years and over, 20
+  STATSNZ,CEN18_EDU_004,1.0  Highest qualification and status in employment by age group and sex, for the employed census usually resident population count aged 15 years and over,
+  STATSNZ,CEN18_EDU_005,1.0  Highest secondary school qualification and ethnic group (grouped total responses) by age group and sex, for the census usually resident population cou
+  STATSNZ,CEN18_EDU_006,1.0  Post-school qualification field of study (broad) and ethnic group (grouped total responses) by sex, for the census usually resident population count a
+  STATSNZ,CEN18_EDU_007,1.0  Post-school qualification field of study (broad) and industry (ANZSIC06 division) by sex, for the employed census usually resident population count ag
+  STATSNZ,CEN18_EDU_008,1.0  Post-school qualification field of study (broad) and work and labour force status by age group and sex, for the census usually resident population cou
+  STATSNZ,CEN18_EDU_009,1.0  Study participation and birthplace by sex, for the census usually resident population count aged 15 years and over, 2006, 2013, and 2018 Censuses (RC,
+  STATSNZ,CEN18_EDU_010,1.0  Study participation and ethnic group (grouped total responses) by age group and sex, for the census usually resident population count aged 15 years an
+  STATSNZ,CEN18_EDU_011,1.0  Study participation and ethnic group (grouped total responses) by age group and sex, for the census usually resident population count, 2018 Census (RC
+  STATSNZ,CEN18_EDU_012,1.0  Study participation and industry (ANZSIC06 division) by sex, for the employed census usually resident population count aged 15 years and over, 2006, 2
+  STATSNZ,CEN18_EDU_013,1.0  Study participation and status in employment by age group and sex, for the employed census usually resident population count aged 15 years and over, 2
+  STATSNZ,CEN18_EDU_014,1.0  Study participation and work and labour force status by age group and sex, for the census usually resident population count aged 15 years and over, 20
+  STATSNZ,CEN18_FHH_001,1.0  Access to telecommunication systems (total responses) by tenure of household, for households in occupied private dwellings, 2006, 2013, and 2018 Censu
+  STATSNZ,CEN18_FHH_002,1.0  Access to telecommunication systems (total responses) by total household income (grouped), for households in occupied private dwellings, 2013 and 2018
+  STATSNZ,CEN18_FHH_003,1.0  Age group and sex of sole parent, for one parent with dependent child(ren) families in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, 
+  STATSNZ,CEN18_FHH_004,1.0  Age group and sex, for people in one-person households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_005,1.0  Age group of youngest dependent child in family by family type, for families with dependent children in occupied private dwellings, 2006, 2013, and 20
+  STATSNZ,CEN18_FHH_006,1.0  Extended family type, for extended families in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_007,1.0  Family type by child dependency status, for families in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_008,1.0  Family type, for people in families in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_009,1.0  Household composition by age group, for people in households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_010,1.0  Household composition by child dependency status, for households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_011,1.0  Household composition by number of dependent children in household, for households in occupied private dwellings, 2013 and 2018 Censuses (RC, TA, DHB,
+  STATSNZ,CEN18_FHH_012,1.0  Household composition by tenure of household and access to telecommunication systems, for households in occupied private dwellings, 2006, 2013, and 20
+  STATSNZ,CEN18_FHH_013,1.0  Household composition by tenure of household, for households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC ,TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_014,1.0  Household composition, for households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_015,1.0  Main types of heating used (total responses) by household composition, for households in occupied private dwellings, 2018 Census (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_016,1.0  Number of dependent children and total number of children, for couples with child(ren) in occupied private dwellings, 2006, 2013, and 2018 Censuses (R
+  STATSNZ,CEN18_FHH_017,1.0  Number of motor vehicles by tenure of household, for households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_018,1.0  Number of usual residents in household by number of rooms, for households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, S
+  STATSNZ,CEN18_FHH_019,1.0  Sources of family income by family type, for families in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_020,1.0  Sources of household income by household composition, for households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_021,1.0  Total family income (grouped) by family type, for families in occupied private dwellings, 2013 and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_FHH_022,1.0  Total household income (grouped) by household composition, for households in occupied private dwellings, 2013 and 2018 Censuses (RC, TA, DHB, SA2)
+  STATSNZ,CEN18_HAD_001,1.0  Cigarette smoking behaviour and ethnic group (detailed total response - level 4) by age group and sex, for the census usually resident population coun
+  STATSNZ,CEN18_HAD_002,1.0  Cigarette smoking behaviour and ethnic group (grouped total responses) by age group and sex, for the census usually resident population count aged 15 
+  STATSNZ,CEN18_HAD_003,1.0  Cigarette smoking behaviour and highest qualification by age group and sex, for the census usually resident population count aged 15 years and over, 2
+  STATSNZ,CEN18_HAD_004,1.0  Cigarette smoking behaviour and total personal income (grouped) by age group and sex, for the census usually resident population count aged 15 years a
+  STATSNZ,CEN18_HAD_005,1.0  Cigarette smoking behaviour and work and labour force status by age group and sex, for the census usually resident population count aged 15 years and 
+  STATSNZ,CEN18_HOU_001,1.0  Access to basic amenities (total responses) by sector of landlord, for households in rented occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_002,1.0  Access to basic amenities (total responses) by tenure of household, for households in occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_003,1.0  Dwelling dampness indicator and dwelling mould indicator by total household income (grouped), for households in occupied private dwellings, 2018 Censu
+  STATSNZ,CEN18_HOU_004,1.0  Dwelling dampness indicator by dwelling mould indicator, for occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_005,1.0  Dwelling dampness indicator by ethnic group (grouped total responses), age group and sex, for people in occupied private dwellings, 2018 Census (RC, T
+  STATSNZ,CEN18_HOU_006,1.0  Dwelling dampness indicator by main types of heating used (single and combination), for occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_007,1.0  Dwelling dampness indicator by sector of landlord, for households in rented occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_008,1.0  Dwelling dampness indicator by tenure of household, for households in occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_009,1.0  Dwelling mould indicator by ethnic group (grouped total responses), age group and sex, for people in occupied private dwellings, 2018 Census (RC, TA, 
+  STATSNZ,CEN18_HOU_010,1.0  Dwelling mould indicator by main types of heating used (single and combination), for occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_011,1.0  Dwelling mould indicator by sector of landlord, for households in rented occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_012,1.0  Dwelling mould indicator by tenure of household, for households in occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_013,1.0  Individual home ownership and ethnic group (grouped total responses) by age group and sex, for the usually resident population count aged 15 years and
+  STATSNZ,CEN18_HOU_014,1.0  Individual home ownership and total personal income (grouped) by age group and sex, for the usually resident population count aged 15 years and over, 
+  STATSNZ,CEN18_HOU_015,1.0  Main types of heating used (total responses) by occupied dwelling type, for occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_016,1.0  Main types of heating used (total responses) by sector of landlord, for households in rented occupied private dwellings, 2018 Census (RC, TA, SA2, DHB
+  STATSNZ,CEN18_HOU_017,1.0  Main types of heating used (total responses) by tenure of household, for households in occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_018,1.0  Number of basic amenities available by ethnic group (grouped total responses), age group and sex, for people in occupied private dwellings, 2018 Censu
+  STATSNZ,CEN18_HOU_019,1.0  Number of basic amenities available by tenure of household, for households in occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_020,1.0  Number of bedrooms by occupied dwelling type for occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_021,1.0  Number of rooms by occupied dwelling type, for occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_022,1.0  Occupied dwellings, unoccupied dwellings, and dwellings under construction, for private and non-private dwellings, 2006, 2013, and 2018 Censuses (RC, 
+  STATSNZ,CEN18_HOU_023,1.0  Sector of landlord and weekly rent paid by household, by number of bedrooms, for households in rented private occupied dwellings, 2006, 2013, and 2018
+  STATSNZ,CEN18_HOU_024,1.0  Tenure of household by number of bedrooms, for households in occupied private dwellings, 2006, 2013, and 2018 Censuses (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_025,1.0  Tenure of household by total household income (grouped), for households in occupied private dwellings, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_HOU_026,1.0  Weekly rent paid by household, by number of bedrooms, for households in rented private occupied dwellings, 2006, 2013, and 2018 Censuses (RC, TA, SA2,
+  STATSNZ,CEN18_HOU_027,1.0  Weekly rent paid by household, by total household income (grouped), for households in rented occupied private dwellings, 2018 Census (RC, TA, SA2, DHB
+  STATSNZ,CEN18_MAO_001,1.0  Maori descent indicator and ethnic group (grouped total responses) by age group and sex, for the census usually resident population count, 2006, 2013,
+  STATSNZ,CEN18_MAO_002,1.0  Maori descent indicator and languages spoken (official and common) by age group and sex, for the census usually resident population count, 2006, 2013,
+  STATSNZ,CEN18_MAO_003,1.0  Maori descent indicator and Maori ethnicity indicator by age group and sex, for the census usually resident population count, 2006, 2013, and 2018 Cen
+  STATSNZ,CEN18_MAO_004,1.0  Maori descent indicator and religious affiliation by age group and sex, for the census usually resident population count, 2006, 2013, and 2018 Censuse
+  STATSNZ,CEN18_MAO_005,1.0  Maori descent indicator by age group and sex, for the census usually resident population count, 2006, 2013 and 2018 Censuses (RC, TA, SA2, DHB, urban 
+  STATSNZ,CEN18_MAO_006,1.0  Maori descent indicator by highest qualification, for the census usually resident population count aged 15 years and over, 2018 Census
+  STATSNZ,CEN18_MAO_007,1.0  Maori descent indicator by industry (division), for the employed census usually resident population count aged 15 years and over, 2018 Census
+  STATSNZ,CEN18_MAO_008,1.0  Maori descent indicator by sources of personal income (total responses), for the census usually resident population count aged 15 years and over, 2018
+  STATSNZ,CEN18_MAO_009,1.0  Maori descent indicator by status in employment, for the employed census usually resident population count aged 15 years and over, 2018 Census
+  STATSNZ,CEN18_MAO_010,1.0  Maori descent indicator by total personal income (grouped), for the census usually resident population count aged 15 years and over, 2018 Census
+  STATSNZ,CEN18_POP_001,1.0  Age and sex by ethnic group (grouped total response), for census usually resident population counts, 2006, 2013, and 2018 Censuses (urban rural areas)
+  STATSNZ,CEN18_POP_002,1.0  Age and sex by ethnic group (grouped total responses), for census night population counts, 2006, 2013, and 2018 Censuses (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_POP_003,1.0  Age and sex by ethnic group (grouped total responses), for census usually resident population counts, 2006, 2013, and 2018 Censuses (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_POP_004,1.0  Legally registered relationship status and partnership status in current relationship by age and sex, for the census usually resident population count
+  STATSNZ,CEN18_POP_005,1.0  Number of children born by age and ethnic group (grouped total responses) and birthplace (New Zealand or overseas) of woman, for the female census usu
+  STATSNZ,CEN18_POP_006,1.0  Partnership status in current relationship and ethnic group (grouped total responses) by age group and sex, for the census usually resident population
+  STATSNZ,CEN18_POP_007,1.0  Regional council area of usual residence five years ago (2013) by regional council area (2018), for the census usually resident population count, 2018
+  STATSNZ,CEN18_POP_008,1.0  Regional council area of usual residence one year ago (2017) by regional council area (2018), for the census usually resident population count, 2018 C
+  STATSNZ,CEN18_POP_009,1.0  Territorial authority area of usual residence five years ago (2013) by territorial authority area (2018), for the census usually resident population c
+  STATSNZ,CEN18_POP_010,1.0  Territorial authority area of usual residence one year ago (2017) by territorial authority area (2018), for the census usually resident population cou
+  STATSNZ,CEN18_POP_011,1.0  Usual residence five years ago indicator (2013) by age group and sex, for the census usually resident population count, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_POP_012,1.0  Usual residence one year ago indicator (2017) by age group and sex, for the census usually resident population count, 2018 Census (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_POP_013,1.0  Years at usual residence by age group and sex, for the census usually resident population count, 2006, 2013, and 2018 Censuses (RC, TA, SA2, DHB)
+  STATSNZ,CEN18_TRA_001,1.0  Main means of travel to education and educational institution address by age group and sex, for the census usually resident population count attending
+  STATSNZ,CEN18_TRA_002,1.0  Main means of travel to education by age group and sex, for the census usually resident population count attending, studying, or enrolled in education
+  STATSNZ,CEN18_TRA_003,1.0  Main means of travel to education by study participation, for the census usually resident population count attending, studying, or enrolled in educati
+  STATSNZ,CEN18_TRA_004,1.0  Main means of travel to work and work status by status in employment, for the employed census usually resident population count aged 15 years and over
+  STATSNZ,CEN18_TRA_005,1.0  Main means of travel to work and workplace address by age group and sex, for the employed census usually resident population count aged 15 years and o
+  STATSNZ,CEN18_TRA_006,1.0  Main means of travel to work by age group and sex, for the employed census usually resident population count aged 15 years and over, 2018 Census (RC, 
+  STATSNZ,CEN18_WRK_001,1.0  Hours worked in employment per week and occupation (major group) by sex, for the employed census usually resident population count aged 15 years and o
+  STATSNZ,CEN18_WRK_002,1.0  Hours worked in employment per week and status in employment by age group and sex, for the employed census usually resident population count aged 15 y
+  STATSNZ,CEN18_WRK_003,1.0  Industry (division) and ethnic group (grouped total responses) by sex, for the employed census usually resident population count aged 15 years and ove
+  STATSNZ,CEN18_WRK_004,1.0  Industry (division) and status in employment by sex, for the employed census usually resident population count aged 15 years and over, 2006, 2013 and 
+  STATSNZ,CEN18_WRK_005,1.0  Industry (subdivision) and work status by age group and sex, for the employed census usually resident population count aged 15 years and over, 2006, 2
+  STATSNZ,CEN18_WRK_006,1.0  Number of sources of personal income by age group and sex, for the census usually resident population count aged 15 years and over, 2018 Census (RC, T
+  STATSNZ,CEN18_WRK_007,1.0  Occupation (major group) and industry (division) by age group and sex, for the employed census usually resident population count aged 15 years and ove
+  STATSNZ,CEN18_WRK_008,1.0  Occupation (major group) by age group and sex, for the employed census usually resident population count aged 15 years and over, 2006, 2013 and 2018 C
+  STATSNZ,CEN18_WRK_009,1.0  Occupation (sub-major group) and total personal income (grouped) by sex, for the employed census usually resident population count aged 15 years and o
+  STATSNZ,CEN18_WRK_010,1.0  Occupation (sub-major group) by age group and sex, for the employed census usually resident population count aged 15 years and over, 2006, 2013 and 20
+  STATSNZ,CEN18_WRK_011,1.0  Sector of ownership (employer) and total personal income (grouped) by sex, for the employed census usually resident population count aged 15 years and
+  STATSNZ,CEN18_WRK_012,1.0  Sources of personal income and ethnic group (grouped total responses) by age group, for the census usually resident population count aged 15 years and
+  STATSNZ,CEN18_WRK_013,1.0  Sources of personal income and work and labour force status by age group and sex, for the census usually resident population count aged 15 years and o
+  STATSNZ,CEN18_WRK_014,1.0  Status in employment and work status by total personal income and sex, for the employed census usually resident population count aged 15 years and ove
+  STATSNZ,CEN18_WRK_015,1.0  Total personal income (grouped and median) and ethnic group (grouped total responses) by age group and sex, for the census usually resident population
+  STATSNZ,CEN18_WRK_016,1.0  Total personal income (grouped) and industry (division) by age group and sex, for the employed census usually resident population count aged 15 years 
+  STATSNZ,CEN18_WRK_017,1.0  Total personal income and highest qualification by age group and sex, for the census usually resident population count aged 15 years and over, 2013 an
+  STATSNZ,CEN18_WRK_018,1.0  Total personal income and occupation (major group) by age group and sex, for the employed census usually resident population count aged 15 years and o
+  STATSNZ,CEN18_WRK_019,1.0  Total personal income by age group and sex, for the census usually resident population count aged 15 years and over, 2013 and 2018 Censuses (RC, TA, S
+  STATSNZ,CEN18_WRK_020,1.0  Total personal income, work and labour force status, and ethnic group (grouped total responses) by age group and sex, for the census usually resident 
+  STATSNZ,CEN18_WRK_021,1.0  Unpaid activities (total responses) by age group and sex, for the census usually resident population count aged 15 years and over, 2006, 2013 and 2018
+  STATSNZ,CEN18_WRK_022,1.0  Work and labour force status and ethnic group (grouped total responses) by age group and sex, for the census usually resident population count aged 15
+  STATSNZ,CEN23_DEP_001,1.0  New Zealand index of socioeconomic deprivation, ethnicity (detailed total responses level 3), age, and gender for the census usually resident populati
+  STATSNZ,CEN23_DEP_002,1.0  New Zealand index of socioeconomic deprivation, cigarette smoking behaviour, ethnicity, age, and gender for the census usually resident population cou
+  STATSNZ,CEN23_DEP_003,1.0  New Zealand index of socioeconomic deprivation, highest qualification, ethnicity, age, and gender for the census usually resident population count age
+  STATSNZ,CEN23_DEP_004,1.0  New Zealand index of socioeconomic deprivation, post-school qualification field of study, ethnicity, age, and gender for the census usually resident p
+  STATSNZ,CEN23_DEP_005,1.0  New Zealand index of socioeconomic deprivation, highest secondary school qualification, ethnicity, age, and gender for the census usually resident pop
+  STATSNZ,CEN23_DEP_006,1.0  New Zealand index of socioeconomic deprivation, study participation, ethnicity, age, and gender for the census usually resident population count, (RC,
+  STATSNZ,CEN23_DEP_007,1.0  New Zealand index of socioeconomic deprivation, languages spoken, ethnicity, age, and gender for the census usually resident population count, (RC, TA
+  STATSNZ,CEN23_DEP_008,1.0  New Zealand index of socioeconomic deprivation, birthplace, ethnicity, age, and gender for the census usually resident population count, (RC, TALB, He
+  STATSNZ,CEN23_DEP_009,1.0  New Zealand index of socioeconomic deprivation, religious affiliation, ethnicity, age, and gender for the census usually resident population count, (R
+  STATSNZ,CEN23_DEP_010,1.0  New Zealand index of socioeconomic deprivation, sources of personal income, ethnicity, age, and gender for the census usually resident population coun
+  STATSNZ,CEN23_DEP_011,1.0  New Zealand index of socioeconomic deprivation, occupation, ethnicity, age, and gender for the employed census usually resident population count aged 
+  STATSNZ,CEN23_DEP_012,1.0  New Zealand index of socioeconomic deprivation, unpaid activities, ethnicity, age, and gender for the census usually resident population count aged 15
+  STATSNZ,CEN23_DEP_013,1.0  New Zealand index of socioeconomic deprivation, dwelling mould, ethnicity, age, and gender for the census usually resident population in occupied priv
+  STATSNZ,CEN23_DEP_014,1.0  New Zealand index of socioeconomic deprivation, dwelling dampness, ethnicity, age, and gender for the census usually resident population in occupied p
+  STATSNZ,CEN23_DEP_015,1.0  New Zealand index of socioeconomic deprivation, individual home ownership, ethnicity, age, and gender for the census usually resident population count
+  STATSNZ,CEN23_DEP_016,1.0  New Zealand index of socioeconomic deprivation, total personal income, ethnicity, age, and gender for the census usually resident population count age
+  STATSNZ,CEN23_DEP_017,1.0  New Zealand index of socioeconomic deprivation, industry, ethnicity, age, and gender for the employed census usually resident population count aged 15
+  STATSNZ,CEN23_DEP_018,1.0  New Zealand index of socioeconomic deprivation, work and labour force status, ethnicity, age, and gender for the census usually resident population co
+  STATSNZ,CEN23_DEP_019,1.0  New Zealand index of socioeconomic deprivation, ethnicity (detailed single / combination), age, and gender for the census usually resident population 
+  STATSNZ,CEN23_ECI_001,1.0  Birthplace, occupation, highest qualification, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, 
+  STATSNZ,CEN23_ECI_002,1.0  Birthplace, work and labour force status, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, Hea
+  STATSNZ,CEN23_ECI_003,1.0  Birthplace, years since arrival in New Zealand, age, and gender for the overseas-born census usually resident population count, (RC, TALB, SA2, Health
+  STATSNZ,CEN23_ECI_004,1.0  Birthplace, occupation, and years since arrival in New Zealand for the overseas-born employed census usually resident population count aged 15 years a
+  STATSNZ,CEN23_ECI_005,1.0  Birthplace, years since arrival in New Zealand, age, and gender for the overseas-born census usually resident population count, (RC, TALB, Health), 20
+  STATSNZ,CEN23_ECI_006,1.0  Birthplace and age for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_ECI_007,1.0  Languages spoken, birthplace, and ethnicity for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_ECI_008,1.0  Ethnicity (detailed single / combination), age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 
+  STATSNZ,CEN23_ECI_009,1.0  Birthplace, ethnicity (detailed total responses level 3), and age for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 201
+  STATSNZ,CEN23_ECI_010,1.0  Highest qualification, ethnicity (detailed total responses level 3), and age (life cycle groups) for the census usually resident population count aged
+  STATSNZ,CEN23_ECI_011,1.0  Languages spoken, ethnicity, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_ECI_012,1.0  Occupation, ethnicity (detailed total responses level 3), and gender for the employed census usually resident population count aged 15 years and over,
+  STATSNZ,CEN23_ECI_013,1.0  Sources of personal income, ethnicity (detailed total responses level 3), age, and gender for the census usually resident population count aged 15 yea
+  STATSNZ,CEN23_ECI_014,1.0  Total personal income, ethnicity (detailed total responses level 3), and age for the census usually resident population count aged 15 years and over, 
+  STATSNZ,CEN23_ECI_015,1.0  Work and labour force status, ethnicity (detailed total responses level 3), and gender for the census usually resident population count aged 15 years 
+  STATSNZ,CEN23_ECI_016,1.0  Ethnicity (detailed total responses level 3), age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, a
+  STATSNZ,CEN23_ECI_017,1.0  Religious affiliation, ethnicity, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_ECI_018,1.0  Ethnicity (detailed total responses level 4), age, and gender for the census usually resident population count, (RC, TALB, Health), 2013, 2018, and 20
+  STATSNZ,CEN23_ECI_019,1.0  Ethnicity (grouped total responses level 1), number of ethnic groups specified, age, and gender for the census usually resident population count, (RC,
+  STATSNZ,CEN23_ECI_020,1.0  Number of languages spoken, ethnicity, age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 2023
+  STATSNZ,CEN23_ECI_021,1.0  Languages spoken, birthplace, age, and gender for the census usually resident population count, (RC, TALB, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_ECI_022,1.0  Number of languages spoken, birthplace, age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 202
+  STATSNZ,CEN23_ECI_023,1.0  Official language indicator, birthplace, age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 20
+  STATSNZ,CEN23_ECI_024,1.0  Religious affiliation, birthplace, and age for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_ECI_025,1.0  Religious affiliation, age, and gender for the census usually resident population count, (RC, TALB, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_ECI_026,1.0  Religious affiliation, unpaid activities, ethnicity, and age for the census usually resident population count aged 15 years and over, (RC, TALB, Healt
+  STATSNZ,CEN23_ECI_027,1.0  Religious affiliation, status in employment, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TA
+  STATSNZ,CEN23_ECI_028,1.0  Religious affiliation, highest qualification, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, Heal
+  STATSNZ,CEN23_ECI_029,1.0  Religious affiliation, occupation, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, Health), 20
+  STATSNZ,CEN23_ECI_030,1.0  Religious affiliation, tenure of household, and age for people in households in occupied private dwellings, (RC, TALB, Health), 2013, 2018, and 2023 C
+  STATSNZ,CEN23_ECI_031,1.0  Religious affiliation, total personal income, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, Heal
+  STATSNZ,CEN23_ECI_032,1.0  Rainbow/LGBTIQ+ indicator, ethnicity, and age for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health), 2023 C
+  STATSNZ,CEN23_ECI_033,1.0  Rainbow/LGBTIQ+ indicator, highest qualification, occupation, and age for the employed census usually resident population count aged 15 years and over
+  STATSNZ,CEN23_ECI_034,1.0  Rainbow/LGBTIQ+ indicator, total personal income, work and labour force status, and age for the census usually resident population count aged 15 years
+  STATSNZ,CEN23_ECI_035,1.0  Rainbow/LGBTIQ+ indicator, post-school qualification field of study, industry, and age for the employed census usually resident population count aged 
+  STATSNZ,CEN23_ECI_036,1.0  Rainbow/LGBTIQ+ indicator, study participation, and age for the census usually resident population count aged 15 years and over, (RC, TALB, Health), 2
+  STATSNZ,CEN23_ECI_037,1.0  Rainbow/LGBTIQ+ indicator, total family income, family type by number of dependent children, and age for people aged 15 years and over in families in 
+  STATSNZ,CEN23_ECI_038,1.0  Rainbow/LGBTIQ+ indicator, weekly rent paid by household, sector of landlord, and age for people aged 15 years and over in households in rented occupi
+  STATSNZ,CEN23_ECI_039,1.0  Rainbow/LGBTIQ+ indicator, individual home ownership, total personal income, and age for the census usually resident population count aged 15 years an
+  STATSNZ,CEN23_ECI_040,1.0  Rainbow/LGBTIQ+ indicator, household composition, tenure of household, and age for people aged 15 years and over in households in occupied private dwe
+  STATSNZ,CEN23_ECI_041,1.0  Rainbow/LGBTIQ+ indicator, cigarette smoking behaviour, ethnicity, and age for the census usually resident population count aged 15 years and over, (R
+  STATSNZ,CEN23_ECI_042,1.0  Rainbow/LGBTIQ+ indicator, dwelling type, and age for the census usually resident population aged 15 years and over in occupied dwellings, (RC, TALB, 
+  STATSNZ,CEN23_ECI_043,1.0  Rainbow/LGBTIQ+ indicator, access to basic amenities, total household income, and age for people aged 15 years and over in households in occupied priv
+  STATSNZ,CEN23_ECI_044,1.0  Rainbow/LGBTIQ+ indicator, access to telecommunication systems, total household income, and age for people aged 15 years and over in households in occ
+  STATSNZ,CEN23_ECI_045,1.0  Rainbow/LGBTIQ+ indicator, dwelling dampness, dwelling mould, tenure of household, and age for people aged 15 years and over in households in occupied
+  STATSNZ,CEN23_ECI_046,1.0  Rainbow/LGBTIQ+ indicator, household crowding index, ethnicity, and age for people aged 15 years and over in households in occupied private dwellings,
+  STATSNZ,CEN23_ECI_047,1.0  Rainbow/LGBTIQ+ indicator, number of basic amenities available, total household income, and age for people aged 15 years and over in households in occ
+  STATSNZ,CEN23_ECI_048,1.0  Rainbow/LGBTIQ+ indicator, usual residence five years ago summary (RC), and age for the census usually resident population count aged 15 years and ove
+  STATSNZ,CEN23_ECI_049,1.0  Rainbow/LGBTIQ+ indicator, usual residence one year ago summary (RC), and age for the census usually resident population count aged 15 years and over,
+  STATSNZ,CEN23_ECI_050,1.0  Rainbow/LGBTIQ+ indicator, sources of personal income, work and labour force status, and age for the census usually resident population count aged 15 
+  STATSNZ,CEN23_ECI_051,1.0  Rainbow/LGBTIQ+ indicator, hours worked in employment per week, status in employment, and age for the employed census usually resident population coun
+  STATSNZ,CEN23_ECI_052,1.0  Sexual identity, cisgender and transgender status, ethnicity, and age for the census usually resident population count aged 15 years and over, (RC, TA
+  STATSNZ,CEN23_EDU_002,1.0  Highest qualification, ethnicity (grouped total responses level 1), age (5-year groups), and gender for the census usually resident population count a
+  STATSNZ,CEN23_EDU_003,1.0  Highest qualification, industry, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health),
+  STATSNZ,CEN23_EDU_004,1.0  Highest qualification, occupation, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health
+  STATSNZ,CEN23_EDU_005,1.0  Highest qualification, status in employment, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TA
+  STATSNZ,CEN23_EDU_006,1.0  Post-school qualification field of study, occupation, and gender for the employed census usually resident population count aged 15 years and over, (RC
+  STATSNZ,CEN23_EDU_007,1.0  Study participation, ethnicity, age, and gender for the census usually resident population count, (RC, TALB, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_EDU_008,1.0  Study participation, work and labour force status, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB,
+  STATSNZ,CEN23_FHH_001,1.0  Age of sole parent, gender of sole parent, and number of dependent children in family for one parent families with dependent child(ren) in households 
+  STATSNZ,CEN23_FHH_002,1.0  Age and gender for people aged 15 years and over in one-person households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023
+  STATSNZ,CEN23_FHH_003,1.0  Age of female partner, age of male partner, and number of dependent children in family for male-female gender couples with dependent child(ren) in hou
+  STATSNZ,CEN23_FHH_007,1.0  Age of youngest dependent child in family and family type for families with dependent child(ren) in households in occupied private dwellings, (RC, TAL
+  STATSNZ,CEN23_FHH_009,1.0  Total family income, family type, ethnicity, and age for people in families in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013
+  STATSNZ,CEN23_FHH_010,1.0  Sources of family income, family type, ethnicity, and age for people in families in households in occupied private dwellings, (RC, TALB, SA2, Health),
+  STATSNZ,CEN23_FHH_011,1.0  Ethnicity of at least one member of the family and number of people in family for families in households in occupied private dwellings, (RC, TALB, SA2
+  STATSNZ,CEN23_FHH_012,1.0  Ethnicity of at least one member of the family and family type by child dependency status for families in households in occupied private dwellings, (R
+  STATSNZ,CEN23_FHH_013,1.0  Ethnicity of at least one member of the family, number of dependent children in family, and number of children in family for families with child(ren) 
+  STATSNZ,CEN23_FHH_014,1.0  Family type by child dependency status for families in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuse
+  STATSNZ,CEN23_FHH_015,1.0  Family type by type of couple by gender for families in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013 and 2023 Censuses
+  STATSNZ,CEN23_FHH_016,1.0  Access to telecommunication systems, total household income, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Hea
+  STATSNZ,CEN23_FHH_017,1.0  Access to telecommunication systems, ethnicity, age, and gender for people in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013,
+  STATSNZ,CEN23_FHH_018,1.0  Household composition, age, and gender for people in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_FHH_019,1.0  Household composition by child dependency status, and number of dependent children in household for households in occupied private dwellings, (RC, TAL
+  STATSNZ,CEN23_FHH_020,1.0  Household equivalised income (OECD), tenure of household, ethnicity, and age for people in households in occupied private dwellings, (RC, TALB, SA2, H
+  STATSNZ,CEN23_FHH_021,1.0  Number of motor vehicles, household equivalised income (OECD), household composition, ethnicity, and age for people in households in occupied private 
+  STATSNZ,CEN23_FHH_022,1.0  Ethnicity of at least one member of the household, number of bedrooms, and tenure of household for households in occupied private dwellings, (RC, TALB
+  STATSNZ,CEN23_FHH_023,1.0  Ethnicity of at least one member of the household, number of usual residents in household, and tenure of household for households in occupied private 
+  STATSNZ,CEN23_FHH_024,1.0  Access to telecommunication systems, household equivalised income (OECD), ethnicity, and age for people in households in occupied private dwellings, (
+  STATSNZ,CEN23_FHH_025,1.0  Ethnicity of at least one member of the household, household crowding index, and tenure of household for households in occupied private dwellings, (RC
+  STATSNZ,CEN23_FHH_026,1.0  Ethnicity of at least one member of the household, dwelling dampness, dwelling mould, and tenure of household for households in occupied private dwell
+  STATSNZ,CEN23_FHH_027,1.0  Ethnicity of at least one member of the household and household composition by child dependency status for households in occupied private dwellings, (
+  STATSNZ,CEN23_FHH_029,1.0  Ethnicity of at least one member of the household, weekly rent paid by household, and sector of landlord for households in rented occupied private dwe
+  STATSNZ,CEN23_FHH_030,1.0  Ethnicity of at least one member of the household, access to basic amenities, and tenure of household for households in occupied private dwellings, (R
+  STATSNZ,CEN23_FHH_031,1.0  Ethnicity of at least one member of the household, number of basic amenities available, and tenure of household for households in occupied private dwe
+  STATSNZ,CEN23_FHH_032,1.0  Ethnicity of at least one member of the household, main types of heating used, and tenure of household for households in occupied private dwellings, (
+  STATSNZ,CEN23_FHH_033,1.0  Sources of household income, household composition, ethnicity, and age for people in households in occupied private dwellings, (RC, TALB, Health), 201
+  STATSNZ,CEN23_FHH_034,1.0  Main types of heating used and household composition for households in occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Censuses
+  STATSNZ,CEN23_FHH_035,1.0  Number of dependent children in family, number of children in family, and family type by type of couple by gender for families with child(ren) in hous
+  STATSNZ,CEN23_FHH_036,1.0  Individual's role in family nucleus, ethnicity, age, and gender for people in households in occupied private dwellings, (RC, TALB, Health), 2013, 2018
+  STATSNZ,CEN23_FHH_037,1.0  Number of motor vehicles, total household income, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Health), 2013,
+  STATSNZ,CEN23_FHH_038,1.0  Household composition by number of usual residents and number of bedrooms for households in occupied private dwellings, (RC, TALB, SA2, Health), 2013,
+  STATSNZ,CEN23_FHH_040,1.0  Sources of family income and family type for families in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censu
+  STATSNZ,CEN23_FHH_041,1.0  Sources of household income and household composition for households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Cens
+  STATSNZ,CEN23_FHH_042,1.0  Total family income and family type for families in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_FHH_043,1.0  Total household income and household composition by number of usual residents for households in occupied private dwellings, (RC, TALB, Health), 2013, 
+  STATSNZ,CEN23_FHH_045,1.0  Family type, ethnicity, age, and gender for people in families in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2
+  STATSNZ,CEN23_FHH_046,1.0  Work and labour force status of sole parent, gender of sole parent, and age of youngest dependent child in family for one parent families with depende
+  STATSNZ,CEN23_FHH_047,1.0  Work and labour force status of female parent, work and labour force status of male parent, and age of youngest dependent child in family for male-fem
+  STATSNZ,CEN23_FHH_048,1.0  Sources of household income, ethnicity, and age for people in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 
+  STATSNZ,CEN23_HAD_001,1.0  Activity limitations, highest qualification, occupation, age, and gender for the employed census usually resident population count aged 15 years and o
+  STATSNZ,CEN23_HAD_002,1.0  Activity limitations, study participation, age, and gender for the census usually resident population count aged 5 years and over, (RC, TALB, Health),
+  STATSNZ,CEN23_HAD_003,1.0  Activity limitations, highest qualification, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, Healt
+  STATSNZ,CEN23_HAD_004,1.0  Activity limitations, official language indicator, ethnicity, and age for the census usually resident population count aged 5 years and over, (RC, TAL
+  STATSNZ,CEN23_HAD_005,1.0  Activity limitations, ethnicity, age, and gender for the census usually resident population count aged 5 years and over, (RC, TALB, Health), 2018 and 
+  STATSNZ,CEN23_HAD_006,1.0  Activity limitations, ethnicity, age, and gender for the census usually resident population count aged 5 years and over, (RC, TALB, SA2, Health), 2018
+  STATSNZ,CEN23_HAD_007,1.0  Activity limitations, access to telecommunication systems, ethnicity, and age for people aged 5 years and over in households in occupied private dwell
+  STATSNZ,CEN23_HAD_008,1.0  Activity limitations, household composition, age, and gender for people aged 5 years and over in households in occupied private dwellings, (RC, TALB, 
+  STATSNZ,CEN23_HAD_009,1.0  Activity limitations, individual's role in family nucleus, age, and gender for people aged 5 years and over in households in occupied private dwelling
+  STATSNZ,CEN23_HAD_010,1.0  Activity limitations, sector of landlord, ethnicity, and age for people aged 5 years and over in households in rented occupied private dwellings, (RC,
+  STATSNZ,CEN23_HAD_011,1.0  Activity limitations, dwelling type, ethnicity, and age for the census usually resident population count aged 5 years and over in occupied dwellings, 
+  STATSNZ,CEN23_HAD_014,1.0  Activity limitations, main means of travel to education, and age for the census usually resident population count aged 5 years and over who are studyi
+  STATSNZ,CEN23_HAD_015,1.0  Activity limitations, main means of travel to work, and age for the employed census usually resident population count aged 15 years and over, (RC, TAL
+  STATSNZ,CEN23_HAD_016,1.0  Activity limitations, work and labour force status, total personal income, and age for the census usually resident population count aged 15 years and 
+  STATSNZ,CEN23_HAD_017,1.0  Activity limitations, occupation, industry, and age for the employed census usually resident population count aged 15 years and over, (RC, TALB, Healt
+  STATSNZ,CEN23_HAD_018,1.0  Activity limitations, sources of personal income, ethnicity, and age for the census usually resident population count aged 15 years and over, (RC, TAL
+  STATSNZ,CEN23_HAD_019,1.0  Activity limitations, hours worked in employment per week, status in employment, age, and gender for the employed census usually resident population c
+  STATSNZ,CEN23_HAD_020,1.0  Cigarette smoking behaviour, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, Health), 2
+  STATSNZ,CEN23_HAD_021,1.0  Cigarette smoking behaviour, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, Healt
+  STATSNZ,CEN23_HAD_022,1.0  Cigarette smoking behaviour, highest qualification, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB
+  STATSNZ,CEN23_HAD_023,1.0  Cigarette smoking behaviour, work and labour force status, age, and gender for the census usually resident population count aged 15 years and over, (R
+  STATSNZ,CEN23_HAD_024,1.0  Cigarette smoking behaviour, total personal income, work and labour force status, age, and gender for the census usually resident population count age
+  STATSNZ,CEN23_HAD_026,1.0  Disability indicator, highest qualification, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, 
+  STATSNZ,CEN23_HAD_027,1.0  Disability indicator, study participation, ethnicity, age, and gender for the census usually resident population count aged 5 years and over, (RC, TAL
+  STATSNZ,CEN23_HAD_028,1.0  Disability indicator, highest qualification, occupation, age, and gender for the employed census usually resident population count aged 15 years and o
+  STATSNZ,CEN23_HAD_029,1.0  Disability indicator, ethnicity (grouped total responses level 1), age, and gender for the census usually resident population count aged 5 years and o
+  STATSNZ,CEN23_HAD_030,1.0  Disability indicator, ethnicity (detailed total responses level 3), age, and gender for the census usually resident population count aged 5 years and 
+  STATSNZ,CEN23_HAD_031,1.0  Disability indicator, birthplace, work and labour force status, age, and gender for the census usually resident population count aged 15 years and ove
+  STATSNZ,CEN23_HAD_032,1.0  Disability indicator, birthplace, highest qualification, age, and gender for the census usually resident population count aged 15 years and over, (RC,
+  STATSNZ,CEN23_HAD_033,1.0  Disability indicator, languages spoken, ethnicity, age, and gender for the census usually resident population count aged 5 years and over, (RC, TALB, 
+  STATSNZ,CEN23_HAD_034,1.0  Disability indicator, rainbow/LGBTIQ+ indicator, ethnicity, and age for the census usually resident population count aged 15 years and over, (RC, TALB
+  STATSNZ,CEN23_HAD_035,1.0  Disability indicator, religious affiliation, ethnicity, age, and gender for the census usually resident population count aged 5 years and over, (RC, T
+  STATSNZ,CEN23_HAD_036,1.0  Disability indicator, household composition, ethnicity, and age for people aged 5 years and over in households in occupied private dwellings, (RC, TAL
+  STATSNZ,CEN23_HAD_037,1.0  Disability indicator, individual's role in family nucleus, ethnicity, and age for people aged 5 years and over in households in occupied private dwell
+  STATSNZ,CEN23_HAD_038,1.0  Disability indicator, number of children born, ethnicity, and age for the sex-at-birth female census usually resident population count aged 15 years a
+  STATSNZ,CEN23_HAD_039,1.0  Disability indicator, extended family type, ethnicity, and age for people aged 5 years and over in extended families in households in occupied private
+  STATSNZ,CEN23_HAD_040,1.0  Disability indicator, sources of family income, family type, ethnicity, and age for people aged 5 years and over in families in households in occupied
+  STATSNZ,CEN23_HAD_041,1.0  Disability indicator, sources of household income, household composition, and age for people aged 5 years and over in households in occupied private d
+  STATSNZ,CEN23_HAD_042,1.0  Disability indicator, total family income, family type, ethnicity, and age for people aged 5 years and over in families in households in occupied priv
+  STATSNZ,CEN23_HAD_043,1.0  Disability indicator, access to telecommunication systems, household equivalised income (OECD), ethnicity, and age for people aged 5 years and over in
+  STATSNZ,CEN23_HAD_044,1.0  Disability indicator, number of motor vehicles, household equivalised income (OECD), ethnicity, and age for people aged 5 years and over in households
+  STATSNZ,CEN23_HAD_045,1.0  Disability indicator, cigarette smoking behaviour, ethnicity, age, and gender for the census usually resident population count aged 15 years and over,
+  STATSNZ,CEN23_HAD_046,1.0  Disability indicator, dwelling type, ethnicity, age, and gender for the census usually resident population count aged 5 years and over in occupied dwe
+  STATSNZ,CEN23_HAD_047,1.0  Disability indicator, tenure of household, ethnicity, age, and gender for people aged 5 years and over in households in occupied private dwellings, (R
+  STATSNZ,CEN23_HAD_048,1.0  Disability indicator, access to basic amenities, tenure of household, ethnicity, and age for people aged 5 years and over in households in occupied pr
+  STATSNZ,CEN23_HAD_049,1.0  Disability indicator, main types of heating used, tenure of household, and age for people aged 5 years and over in households in occupied private dwel
+  STATSNZ,CEN23_HAD_050,1.0  Disability indicator, total household income, dwelling dampness, dwelling mould, and age for people aged 5 years and over in households in occupied pr
+  STATSNZ,CEN23_HAD_051,1.0  Disability indicator, weekly rent paid by household, sector of landlord, and age for people aged 5 years and over in households in rented occupied pri
+  STATSNZ,CEN23_HAD_052,1.0  Disability indicator, individual home ownership, total personal income, ethnicity, and age for the census usually resident population count aged 15 ye
+  STATSNZ,CEN23_HAD_053,1.0  Disability indicator, partnership status in current relationship, age, and gender for the census usually resident population count aged 15 years and o
+  STATSNZ,CEN23_HAD_054,1.0  Disability indicator, main means of travel to education, age, and gender for the census usually resident population count aged 5 years and over who ar
+  STATSNZ,CEN23_HAD_055,1.0  Disability indicator, main means of travel to work, age, and gender for the employed census usually resident population count aged 15 years and over, 
+  STATSNZ,CEN23_HAD_056,1.0  Disability indicator, total personal income, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, 
+  STATSNZ,CEN23_HAD_057,1.0  Disability indicator, unpaid activities, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB
+  STATSNZ,CEN23_HAD_058,1.0  Disability indicator, work and labour force status, ethnicity, age, and gender for the census usually resident population count aged 15 years and over
+  STATSNZ,CEN23_HAD_059,1.0  Disability indicator, hours worked in employment per week, industry, age, and gender for the employed census usually resident population count aged 15
+  STATSNZ,CEN23_HAD_060,1.0  Disability indicator, hours worked in employment per week, status in employment, age, and gender for the employed census usually resident population c
+  STATSNZ,CEN23_HAD_061,1.0  Disability indicator, occupation, industry, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TAL
+  STATSNZ,CEN23_HAD_062,1.0  Disability indicator, sources of personal income, work and labour force status, age, and gender for the census usually resident population count aged 
+  STATSNZ,CEN23_HAD_063,1.0  Disability indicator, total personal income, occupation, age, and gender for the employed census usually resident population count aged 15 years and o
+  STATSNZ,CEN23_HOU_001,1.0  Access to basic amenities, total household income, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Health), 2018
+  STATSNZ,CEN23_HOU_002,1.0  Access to basic amenities and sector of landlord for households in rented occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Censuses
+  STATSNZ,CEN23_HOU_003,1.0  Dwelling dampness, dwelling mould, and total household income for households in occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Cen
+  STATSNZ,CEN23_HOU_004,1.0  Dwelling dampness, ethnicity, age, and gender for the census usually resident population in occupied private dwellings, (RC, TALB, SA2, Health), 2018 
+  STATSNZ,CEN23_HOU_005,1.0  Dwelling mould, sector of landlord, and weekly rent paid by household for households in rented occupied private dwellings, (RC, TALB, SA2, Health), 20
+  STATSNZ,CEN23_HOU_006,1.0  Dwelling dampness, dwelling mould, and main types of heating used for occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Censuses
+  STATSNZ,CEN23_HOU_007,1.0  Dwelling dampness, dwelling mould, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Census
+  STATSNZ,CEN23_HOU_008,1.0  Dwelling mould, ethnicity, age, and gender for the census usually resident population in occupied private dwellings, (RC, TALB, SA2, Health), 2018 and
+  STATSNZ,CEN23_HOU_009,1.0  Dwelling type, ethnicity, age, and gender for the census usually resident population in occupied dwellings, (RC, TALB, Health), 2013, 2018, and 2023 C
+  STATSNZ,CEN23_HOU_010,1.0  Individual home ownership, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health)
+  STATSNZ,CEN23_HOU_011,1.0  Individual home ownership, total personal income, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, 
+  STATSNZ,CEN23_HOU_012,1.0  Main types of heating used and private dwelling type for occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Censuses
+  STATSNZ,CEN23_HOU_013,1.0  Main types of heating used and sector of landlord for households in rented occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Censuses
+  STATSNZ,CEN23_HOU_014,1.0  Main types of heating used, total household income, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Health), 201
+  STATSNZ,CEN23_HOU_015,1.0  Number of basic amenities available, total household income, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Hea
+  STATSNZ,CEN23_HOU_016,1.0  Number of basic amenities available, ethnicity, age, and gender for the census usually resident population in occupied private dwellings, (RC, TALB, S
+  STATSNZ,CEN23_HOU_017,1.0  Number of rooms and private dwelling type for occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_HOU_018,1.0  Dwelling occupancy status and dwelling type for dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_HOU_019,1.0  Weekly rent paid by household, number of bedrooms, and sector of landlord for households in rented occupied private dwellings, (RC, TALB, SA2, Health)
+  STATSNZ,CEN23_HOU_020,1.0  Number of bedrooms, tenure of household, and private dwelling type for households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, 
+  STATSNZ,CEN23_HOU_021,1.0  Tenure of household, ethnicity, age, and gender for people in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 
+  STATSNZ,CEN23_HOU_022,1.0  Weekly rent paid by household, total household income, and household composition for households in rented occupied private dwellings, (RC, TALB, SA2, 
+  STATSNZ,CEN23_HOU_023,1.0  Household crowding index, ethnicity, and age for people in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2018, and 2023 Cen
+  STATSNZ,CEN23_HOU_024,1.0  Household crowding index, tenure of household, household composition, and total household income for households in occupied private dwellings, (RC, TA
+  STATSNZ,CEN23_HOU_025,1.0  Household crowding index, weekly rent paid by household, and sector of landlord for households in rented occupied private dwellings, (RC, TALB, SA2, H
+  STATSNZ,CEN23_HOU_026,1.0  Household crowding index, access to basic amenities, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Health), 20
+  STATSNZ,CEN23_HOU_027,1.0  Household crowding index and family type by number of dependent children for families in households in occupied private dwellings, (RC, TALB, SA2, Hea
+  STATSNZ,CEN23_HOU_028,1.0  Household crowding index, dwelling dampness, dwelling mould, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Hea
+  STATSNZ,CEN23_HOU_029,1.0  Private dwelling in a registered retirement village indicator, ethnicity, age, and gender for the census usually resident population in occupied priva
+  STATSNZ,CEN23_HOU_030,1.0  Private dwelling in a registered retirement village indicator, tenure of household, and number of usual residents in household for households in occup
+  STATSNZ,CEN23_HOU_033,1.0  Dwelling dampness, sector of landlord, and weekly rent paid by household for households in rented occupied private dwellings, (RC, TALB, SA2, Health),
+  STATSNZ,CEN23_HOU_100,1.0  Severe housing deprivation estimate and ethnicity for the census usually resident population count, (RC, TALB, Health), 2018 and 2023 Censuses
+  STATSNZ,CEN23_HOU_101,1.0  Severe housing deprivation estimate, ethnicity, age, and gender for the census usually resident population count, (NZ total), 2018 and 2023 Censuses
+  STATSNZ,CEN23_HOU_102,1.0  Severe housing deprivation estimate, disability indicator, ethnicity, age, and gender for the census usually resident population count aged 5 years an
+  STATSNZ,CEN23_HOU_103,1.0  Severe housing deprivation estimate, rainbow/LGBTIQ+ indicator, ethnicity, and age for the census usually resident population count aged 15 years and 
+  STATSNZ,CEN23_HOU_104,1.0  Severe housing deprivation estimate, ethnicity (detailed total responses level 3), and age for the census usually resident population count, (NZ total
+  STATSNZ,CEN23_INC_001,1.0  Number of personal income sources, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health), 2
+  STATSNZ,CEN23_INC_002,1.0  Sources of personal income, ethnicity, and age for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health), 2013,
+  STATSNZ,CEN23_INC_003,1.0  Sources of personal income, work and labour force status, age, and gender for the census usually resident population count aged 15 years and over, (RC
+  STATSNZ,CEN23_INC_004,1.0  Total personal income, ethnicity, age (life cycle groups), and gender for the census usually resident population count aged 15 years and over, (RC, TA
+  STATSNZ,CEN23_INC_005,1.0  Total personal income, industry, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, Hea
+  STATSNZ,CEN23_INC_006,1.0  Total personal income, highest qualification, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA2,
+  STATSNZ,CEN23_INC_007,1.0  Occupation, total personal income, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, H
+  STATSNZ,CEN23_INC_008,1.0  Total personal income, ethnicity, age (5-year groups), and gender for the census usually resident population count aged 15 years and over, (RC, TALB, 
+  STATSNZ,CEN23_INC_009,1.0  Total personal income, work and labour force status, ethnicity, age, and gender for the census usually resident population count aged 15 years and ove
+  STATSNZ,CEN23_LOC_001,1.0  Usual residence five years ago (RC) and age for the census usually resident population count, by usual residence address (RC), 2013, 2018, and 2023 Ce
+  STATSNZ,CEN23_LOC_002,1.0  Usual residence one year ago (RC) and age for the census usually resident population count, by usual residence address (RC), 2018 and 2023 Censuses
+  STATSNZ,CEN23_LOC_003,1.0  Usual residence five years ago (TALB) and age for the census usually resident population count, by usual residence address (TALB), 2013, 2018, and 202
+  STATSNZ,CEN23_LOC_004,1.0  Usual residence one year ago (TALB) and age for the census usually resident population count, by usual residence address (TALB), 2018 and 2023 Censuse
+  STATSNZ,CEN23_LOC_005,1.0  Usual residence five years ago summary (RC), ethnicity, age, and gender for the census usually resident population count, by usual residence address (
+  STATSNZ,CEN23_LOC_006,1.0  Usual residence five years ago summary (TALB), ethnicity, age, and gender for the census usually resident population count, by usual residence address
+  STATSNZ,CEN23_LOC_007,1.0  Usual residence one year ago summary (RC), ethnicity, age, and gender for the census usually resident population count, by usual residence address (RC
+  STATSNZ,CEN23_LOC_008,1.0  Usual residence one year ago summary (TALB), ethnicity, age, and gender for the census usually resident population count, by usual residence address (
+  STATSNZ,CEN23_LOC_009,1.0  Years at usual residence, tenure of household, age, and gender for people in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 
+  STATSNZ,CEN23_MAO_003,1.0  Māori descent indicator, highest qualification, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA
+  STATSNZ,CEN23_MAO_005,1.0  Māori descent indicator, study participation, age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018, a
+  STATSNZ,CEN23_MAO_006,1.0  Māori descent indicator, ethnicity (grouped total responses level 1), age, and gender for the census usually resident population count, (RC, TALB, SA2
+  STATSNZ,CEN23_MAO_008,1.0  Māori descent indicator, rainbow/LGBTIQ+ indicator, and age for the census usually resident population count aged 15 years and over, (RC, TALB, Health
+  STATSNZ,CEN23_MAO_009,1.0  Māori descent indicator, Māori ethnicity indicator, age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2
+  STATSNZ,CEN23_MAO_010,1.0  Māori descent indicator, official language indicator, age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013,
+  STATSNZ,CEN23_MAO_011,1.0  Māori descent indicator, religious affiliation, age, and gender for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 2018,
+  STATSNZ,CEN23_MAO_013,1.0  Māori descent indicator, individual home ownership, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB
+  STATSNZ,CEN23_MAO_015,1.0  Māori descent indicator, tenure of household, age, and gender for people in households in occupied private dwellings, (RC, TALB, SA2, Health), 2013, 2
+  STATSNZ,CEN23_MAO_016,1.0  Māori descent indicator, activity limitations, age, and gender for the census usually resident population count aged 5 years and over, (RC, TALB, SA2,
+  STATSNZ,CEN23_MAO_018,1.0  Māori descent indicator, cigarette smoking behaviour, age, and gender for the census usually resident population count aged 15 years and over, (RC, TA
+  STATSNZ,CEN23_MAO_019,1.0  Māori descent indicator, access to telecommunication systems, age, and gender for people in households in occupied private dwellings, (RC, TALB, SA2, 
+  STATSNZ,CEN23_MAO_021,1.0  Māori descent indicator and usual residence five years ago summary (TALB) for the census usually resident population count, by usual residence address
+  STATSNZ,CEN23_MAO_023,1.0  Māori descent indicator, industry, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, H
+  STATSNZ,CEN23_MAO_024,1.0  Māori descent indicator, occupation, and main means of travel to work for the employed census usually resident population count aged 15 years and over
+  STATSNZ,CEN23_MAO_025,1.0  Māori descent indicator, sources of personal income, age, and gender for the census usually resident population count aged 15 years and over, (RC, TAL
+  STATSNZ,CEN23_MAO_026,1.0  Māori descent indicator, status in employment, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, 
+  STATSNZ,CEN23_MAO_027,1.0  Māori descent indicator, total personal income, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA
+  STATSNZ,CEN23_MAO_028,1.0  Māori descent indicator, unpaid activities, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, H
+  STATSNZ,CEN23_MAO_029,1.0  Māori descent indicator, work and labour force status, age, and gender for the census usually resident population count aged 15 years and over, (RC, T
+  STATSNZ,CEN23_MAO_032,1.0  Māori descent indicator, disability indicator, age, and gender for the census usually resident population count aged 5 years and over, (RC, TALB, Heal
+  STATSNZ,CEN23_MAO_044,1.0  Māori descent indicator, individual's role in family nucleus, age, and gender for people in households in occupied private dwellings, (RC, TALB, SA2, 
+  STATSNZ,CEN23_MAO_048,1.0  Māori descent indicator, number of children born, and age for the sex-at-birth female census usually resident population count aged 15 years and over,
+  STATSNZ,CEN23_MAO_049,1.0  Māori descent indicator, dwelling type, age, and gender for the census usually resident population in occupied dwellings, (RC, TALB, SA2, Health), 201
+  STATSNZ,CEN23_MAO_053,1.0  Māori descent indicator, total family income, family type, and age for people in families in households in occupied private dwellings, (RC, TALB, SA2,
+  STATSNZ,CEN23_MAO_058,1.0  Māori descent indicator and number of usual residents in household for households in occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 202
+  STATSNZ,CEN23_MAO_059,1.0  Māori descent indicator, weekly rent paid by household, and sector of landlord for households in rented occupied private dwellings, (RC, TALB, SA2, He
+  STATSNZ,CEN23_MAO_060,1.0  Māori descent indicator, household equivalised income (OECD), household composition, and age for people in households in occupied private dwellings, (
+  STATSNZ,CEN23_MAO_061,1.0  Māori descent indicator and access to basic amenities for households in occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Censuses
+  STATSNZ,CEN23_MAO_062,1.0  Māori descent indicator, dwelling dampness, and dwelling mould for households in occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2023 Ce
+  STATSNZ,CEN23_MAO_066,1.0  Māori descent indicator, number of bedrooms, and tenure of household for households in occupied private dwellings, (RC, TALB, SA2, Health), 2018 and 2
+  STATSNZ,CEN23_MAO_069,1.0  Iwi affiliation and highest qualification for the Māori descent census usually resident population count aged 15 years and over, (RC, TALB, Health), 2
+  STATSNZ,CEN23_MAO_071,1.0  Iwi affiliation, study participation, age, and gender for the Māori descent census usually resident population count, (RC, TALB, Health), 2013 and 202
+  STATSNZ,CEN23_MAO_072,1.0  Iwi affiliation, ethnicity, age, and gender for the Māori descent census usually resident population count, (RC, TALB, Health), 2013 and 2023 Censuses
+  STATSNZ,CEN23_MAO_074,1.0  Iwi affiliation, Māori ethnicity indicator, age, and gender for the Māori descent census usually resident population count, (RC, TALB, Health), 2013 a
+  STATSNZ,CEN23_MAO_075,1.0  Iwi affiliation, number of ethnic groups specified, age, and gender for the Māori descent census usually resident population count, (RC, TALB, Health)
+  STATSNZ,CEN23_MAO_076,1.0  Iwi affiliation, official language indicator, age, and gender for the Māori descent census usually resident population count, (RC, TALB, Health), 2013
+  STATSNZ,CEN23_MAO_077,1.0  Iwi affiliation and religious affiliation for the Māori descent census usually resident population count, (RC, TALB, Health), 2013 and 2023 Censuses
+  STATSNZ,CEN23_MAO_079,1.0  Iwi affiliation, individual home ownership, age, and gender for the Māori descent census usually resident population count aged 15 years and over, (RC
+  STATSNZ,CEN23_MAO_081,1.0  Iwi affiliation, tenure of household, age, and gender for people of Māori descent in households in occupied private dwellings, (RC, TALB, Health), 201
+  STATSNZ,CEN23_MAO_082,1.0  Iwi affiliation, activity limitations, age, and gender for the Māori descent census usually resident population count aged 5 years and over, (RC, TALB
+  STATSNZ,CEN23_MAO_084,1.0  Iwi affiliation, cigarette smoking behaviour, and gender for the Māori descent census usually resident population count aged 15 years and over, (RC, T
+  STATSNZ,CEN23_MAO_085,1.0  Iwi affiliation, access to telecommunication systems, age, and gender for people of Māori descent in households in occupied private dwellings, (RC, TA
+  STATSNZ,CEN23_MAO_086,1.0  Iwi affiliation and usual residence five years ago summary (TALB) for the Māori descent census usually resident population count, by usual residence a
+  STATSNZ,CEN23_MAO_088,1.0  Iwi affiliation and industry for the employed Māori descent census usually resident population count aged 15 years and over, (RC, TALB, Health), 2013 
+  STATSNZ,CEN23_MAO_090,1.0  Iwi affiliation and occupation for the employed Māori descent census usually resident population count aged 15 years and over, (RC, TALB, Health), 201
+  STATSNZ,CEN23_MAO_091,1.0  Iwi affiliation and sources of personal income for the Māori descent census usually resident population count aged 15 years and over, (RC, TALB, Healt
+  STATSNZ,CEN23_MAO_092,1.0  Iwi affiliation, status in employment, and gender for the employed Māori descent census usually resident population count aged 15 years and over, (RC,
+  STATSNZ,CEN23_MAO_093,1.0  Iwi affiliation and total personal income for the Māori descent census usually resident population count aged 15 years and over, (RC, TALB, Health), 2
+  STATSNZ,CEN23_MAO_094,1.0  Iwi affiliation, unpaid activities, and gender for the Māori descent census usually resident population count aged 15 years and over, (RC, TALB, Healt
+  STATSNZ,CEN23_MAO_095,1.0  Iwi affiliation, work and labour force status, age, and gender for the Māori descent census usually resident population count aged 15 years and over, 
+  STATSNZ,CEN23_MAO_096,1.0  Iwi affiliation, disability indicator, age, and gender for the Māori descent census usually resident population count aged 5 years and over, (RC, TALB
+  STATSNZ,CEN23_MAO_097,1.0  Iwi affiliation, access to basic amenities, and age for the Māori descent census usually resident population in occupied private dwellings, (RC, TALB,
+  STATSNZ,CEN23_MAO_108,1.0  Iwi affiliation, individual's role in family nucleus, age, and gender for people of Māori descent in households in occupied private dwellings, (RC, TA
+  STATSNZ,CEN23_MAO_110,1.0  Iwi affiliation, number of children born, and age for the sex-at-birth female Māori descent census usually resident population count aged 15 years and
+  STATSNZ,CEN23_MAO_111,1.0  Iwi affiliation, dwelling type, age, and gender for the Māori descent census usually resident population in occupied dwellings, (RC, TALB, Health), 20
+  STATSNZ,CEN23_MAO_133,1.0  Māori descent indicator, occupation, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, Heal
+  STATSNZ,CEN23_MAO_137,1.0  Iwi affiliation, household composition, and age for people of Māori descent in households in occupied private dwellings, (RC, TALB, Health), 2013 and 
+  STATSNZ,CEN23_MAO_140,1.0  Iwi affiliation, total household income, and age for people of Māori descent in households in occupied private dwellings, (RC, TALB, Health), 2013 and
+  STATSNZ,CEN23_MAO_142,1.0  Iwi affiliation, number of bedrooms, and number of usual residents in household for people of Māori descent in households in occupied private dwelling
+  STATSNZ,CEN23_MAO_143,1.0  Iwi affiliation, dwelling dampness, dwelling mould, and age for the Māori descent census usually resident population in occupied private dwellings, (R
+  STATSNZ,CEN23_MAO_147,1.0  Iwi affiliation, total family income, family type, and age for people of Māori descent in families in households in occupied private dwellings, (RC, T
+  STATSNZ,CEN23_POP_001,1.0  Ethnicity (grouped total responses level 1), age, and gender for the census usually resident population count, (RC, TALB, SA2), 2013, 2018, and 2023 C
+  STATSNZ,CEN23_POP_002,1.0  Ethnicity (grouped total responses level 1), age, and gender for the census usually resident population count, (UR), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_POP_003,1.0  Ethnicity (grouped total responses level 1), age, and gender for the census usually resident population count, (TA, SA3), 2013, 2018, and 2023 Censuse
+  STATSNZ,CEN23_POP_004,1.0  Ethnicity (grouped total responses level 1), age, and gender for the census usually resident population count, (TA, Ward), 2013, 2018, and 2023 Census
+  STATSNZ,CEN23_POP_005,1.0  Ethnicity (grouped total responses level 1), age, and gender for the census usually resident population count, (Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_POP_006,1.0  Ethnicity (grouped total responses level 1), age, and sex at birth for the census usually resident population count, (RC, TALB, SA2, Health), 2013, 20
+  STATSNZ,CEN23_POP_007,1.0  Ethnicity (grouped total responses level 1), age, and gender for the census night population count, by census night address (RC, TALB, SA2, Health), 2
+  STATSNZ,CEN23_POP_008,1.0  Legally registered relationship status, partnership status in current relationship, age, and gender for the census usually resident population count a
+  STATSNZ,CEN23_POP_009,1.0  Number of children born, ethnicity, birthplace, and age for the sex-at-birth female census usually resident population count aged 15 years and over, (
+  STATSNZ,CEN23_POP_010,1.0  Partnership status in current relationship, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, T
+  STATSNZ,CEN23_TBT_001,1.0  Totals by topic for dwellings, (NZ total), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_TBT_002,1.0  Totals by topic for families and extended families, (NZ total), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_TBT_003,1.0  Totals by topic for households, (NZ total), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_TBT_004,1.0  Totals by topic for individuals, (NZ total), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_TBT_005,1.0  Totals by topic for dwellings, (RC, TALB, UR, SA3, SA2, Ward, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_TBT_006,1.0  Totals by topic for families and extended families, (RC, TALB, UR, SA3, SA2, Ward, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_TBT_007,1.0  Totals by topic for households, (RC, TALB, UR, SA3, SA2, Ward, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_TBT_008,1.0  Totals by topic for individuals, (RC, TALB, UR, SA3, SA2, Ward, Health), 2013, 2018, and 2023 Censuses
+  STATSNZ,CEN23_TBT_009,1.0  Totals by topic for dwellings, (SA1), 2013, 2018, and 2023 Censuses (Download recommended - see overview for more information)
+  STATSNZ,CEN23_TBT_010,1.0  Totals by topic for families and extended families, (SA1), 2013, 2018, and 2023 Censuses (Download recommended - see overview for more information)
+  STATSNZ,CEN23_TBT_011,1.0  Totals by topic for households, (SA1), 2013, 2018, and 2023 Censuses (Download recommended - see overview for more information)
+  STATSNZ,CEN23_TBT_012,1.0  Totals by topic for individuals, (SA1), 2013, 2018, and 2023 Censuses (Download recommended - see overview for more information)
+  STATSNZ,CEN23_TRA_001,1.0  Main means of travel to education, age, and gender for the census usually resident population who are studying, by educational institution address (RC
+  STATSNZ,CEN23_TRA_002,1.0  Main means of travel to education, age, and gender for the census usually resident population who are studying, (RC, TALB, SA2, Health), 2018 and 2023
+  STATSNZ,CEN23_TRA_003,1.0  Main means of travel to work, age, and gender for the employed census usually resident population count aged 15 years and over, by workplace address (
+  STATSNZ,CEN23_TRA_004,1.0  Main means of travel to work, total personal income, age, and gender for the employed census usually resident population count aged 15 years and over,
+  STATSNZ,CEN23_TRA_005,1.0  Work status, status in employment, total personal income, age, and gender for the employed census usually resident population count aged 15 years and 
+  STATSNZ,CEN23_WRK_002,1.0  Hours worked in employment per week, occupation, age, and gender for the employed census usually resident population count aged 15 years and over, (RC
+  STATSNZ,CEN23_WRK_003,1.0  Hours worked in employment per week, status in employment, age, and gender for the employed census usually resident population count aged 15 years and
+  STATSNZ,CEN23_WRK_004,1.0  Industry, ethnicity, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health), 2013, 2018,
+  STATSNZ,CEN23_WRK_005,1.0  Industry, status in employment, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health), 
+  STATSNZ,CEN23_WRK_007,1.0  Industry, work status, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, Health), 2013, 201
+  STATSNZ,CEN23_WRK_008,1.0  Occupation, industry, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, Health), 2013, 2018
+  STATSNZ,CEN23_WRK_009,1.0  Occupation, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health), 2013, 2018, and
+  STATSNZ,CEN23_WRK_010,1.0  Occupation, ethnicity, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, Health), 2013, 201
+  STATSNZ,CEN23_WRK_011,1.0  Occupation (sub-major level 2), total personal income, age, and gender for the employed census usually resident population count aged 15 years and ove
+  STATSNZ,CEN23_WRK_012,1.0  Sector of ownership, occupation, total personal income, age, and gender for the employed census usually resident population count aged 15 years and ov
+  STATSNZ,CEN23_WRK_013,1.0  Unpaid activities, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, Health), 2013, 
+  STATSNZ,CEN23_WRK_014,1.0  Unpaid activities, status in employment, age, and gender for the employed census usually resident population count aged 15 years and over, (RC, TALB, 
+  STATSNZ,CEN23_WRK_015,1.0  Work and labour force status, ethnicity, age, and gender for the census usually resident population count aged 15 years and over, (RC, TALB, SA2, Heal
+  STATSNZ,CORR_CAL_001,1.0  Annual Community Sentence Offender Population for the latest Calendar Years (ANZSOC)
+  STATSNZ,CORR_CAL_002,1.0  Annual Completed Community Work Offender Population for the latest Calendar Years (ANZSOC)
+  STATSNZ,CORR_CAL_003,1.0  Annual Post-prison Offender Population for the latest Calendar Years (ANZSOC)
+  STATSNZ,CORR_CAL_004,1.0  Annual Remand Prisoner Population for the latest Calendar Years (ANZSOC)
+  STATSNZ,CORR_CAL_005,1.0  Annual Sentenced Prisoner Population for the latest Calendar Years (ANZSOC)
+  STATSNZ,CORR_FIS_001,1.0  Annual Community Sentence Offender Population for the latest Fiscal Years (ANZSOC)
+  STATSNZ,CORR_FIS_002,1.0  Annual Completed Community Work Offender Population for the latest Fiscal Years (ANZSOC)
+  STATSNZ,CORR_FIS_003,1.0  Annual Post-prison Offender Population for the latest Fiscal Years (ANZSOC)
+  STATSNZ,CORR_FIS_004,1.0  Annual Remand Prisoner Population for the latest Fiscal Years (ANZSOC)
+  STATSNZ,CORR_FIS_005,1.0  Annual Sentenced Prisoner Population for the latest Fiscal Years (ANZSOC)
+  STATSNZ,INC_INC_001,1.0  Earnings for people in paid employment by region, sex, age groups and ethnic groups
+  STATSNZ,INC_INC_002,1.0  Earnings from main wage and salary job by industry (ANZSIC 2006), sex, age groups, and ethnic groups
+  STATSNZ,INC_INC_003,1.0  Earnings from main wage and salary job by industry (ANZSIC 2006), sex, and highest qualification
+  STATSNZ,INC_INC_004,1.0  Earnings from main wage and salary job by occupation (ANZSCO 2006), sex, age groups, and ethnic groups
+  STATSNZ,INC_INC_005,1.0  Earnings from main wage and salary job by occupation (ANZSCO 2006), sex, and highest qualification
+  STATSNZ,INC_INC_006,1.0  Earnings from wage and salary jobs by sex, age groups, ethnic groups, and full-time and part-time status
+  STATSNZ,INC_INC_007,1.0  Earnings from wage and salary jobs by sex, age groups, region, and full-time and part-time status
+  STATSNZ,INC_INC_008,1.0  Earnings from wages and salaries and self-employment, by sex, age groups and ethnic groups
+  STATSNZ,INC_INC_009,1.0  Earnings from wages and salaries and self-employment, by sex, region and ethnic groups
+  STATSNZ,INC_INC_010,1.0  Gender pay gap by age groups (based on median hourly earnings)
+  STATSNZ,INC_INC_012,1.0  Income by disability status, age groups and income source
+  STATSNZ,INC_INC_013,1.0  Income by region, sex, age groups and ethnic groups
+  STATSNZ,INC_INC_014,1.0  Income by sex, age groups, ethnic groups and income source
+  STATSNZ,INC_INC_016,1.0  Earnings from wages and salaries by disability status and age groups
+  STATSNZ,INJ_INJ_001,1.0  Count of fatal and serious non-fatal injuries by sex, age group, ethnicity, cause, and severity of injury, 2000-2024
+  STATSNZ,IWI18_EST_001,1.0  Iwi affiliation (estimated count), for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_EST_002,1.0  Iwi affiliation (estimated count) by age group, for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_EST_003,1.0  Iwi affiliation (estimated count) by highest qualification, for the Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_EST_004,1.0  Iwi affiliation (estimated count) by industry, for the employed Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_EST_005,1.0  Iwi affiliation (estimated count) by religious affiliation, for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_EST_006,1.0  Iwi affiliation (estimated count) by sex, for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_EST_007,1.0  Iwi affiliation (estimated count) by sources of personal income, for the Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_EST_008,1.0  Iwi affiliation (estimated count) by status in employment, for the employed Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_EST_009,1.0  Iwi affiliation (estimated count) by total personal income (grouped), for the Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_EST_010,1.0  Iwi affiliation (estimated count) by usual residence address (Auckland local board), for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_EST_011,1.0  Iwi affiliation (estimated count) by usual residence address (regional council area), for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_EST_012,1.0  Iwi affiliation (estimated count) by usual residence address (territorial authority area), for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_GRP_001,1.0  Iwi grouping (estimated count), for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_GRP_002,1.0  Iwi grouping (estimated count) by age group, for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_GRP_003,1.0  Iwi grouping (estimated count) by highest qualification, for the Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_GRP_004,1.0  Iwi grouping (estimated count) by industry, for the employed Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_GRP_005,1.0  Iwi grouping (estimated count) by religious affiliation, for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_GRP_006,1.0  Iwi grouping (estimated count) by sex, for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_GRP_007,1.0  Iwi grouping (estimated count) by sources of personal income, for the Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_GRP_008,1.0  Iwi grouping (estimated count) by status in employment, for the employed Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_GRP_009,1.0  Iwi grouping (estimated count) by total personal income (grouped), for the Maori descent usually resident population aged 15 years and over, 2018
+  STATSNZ,IWI18_GRP_010,1.0  Iwi grouping (estimated count) by usual residence address (Auckland local board), for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_GRP_011,1.0  Iwi grouping (estimated count) by usual residence address (regional council area), for the Maori descent usually resident population, 2018
+  STATSNZ,IWI18_GRP_012,1.0  Iwi grouping (estimated count) by usual residence address (territorial authority area), for the Maori descent usually resident population, 2018
+  STATSNZ,LEED_AP5_001,1.0  Table 5.1: Main earnings source, by average firm size
+  STATSNZ,LEED_AP5_002,1.0  Table 5.2: Wages and salaries as main source of taxable income and self-employment as secondary source (ANZSIC06)
+  STATSNZ,LEED_AP5_003,1.0  Table 5.3: Self-employment as main source of taxable income and wages and salaries as secondary source (ANZSIC06)
+  STATSNZ,LEED_Q1W_001,1.0  Table 01: LEED measures, by age
+  STATSNZ,LEED_Q2W_001,1.0  Table 08: LEED measures, by age and sector
+  STATSNZ,LEED_Q2W_002,1.0  Table 07: LEED measures, by age and sex
+  STATSNZ,LEED_Q2W_003,1.0  Table 09: LEED measures, by age and industry (based on ANZSIC06)
+  STATSNZ,LEED_Q2W_004,1.0  Table 10: LEED measures, by age and region
+  STATSNZ,LEED_Q2W_005,1.0  Table 11: LEED measures, by age and firm size
+  STATSNZ,LEED_Q3W_001,1.0  Table 21: LEED measures, by age, sex, and sector
+  STATSNZ,LEED_Q3W_002,1.0  Table 22: LEED measures, by age, sex, and industry (based on ANZSIC06)
+  STATSNZ,LEED_Q3W_003,1.0  Table 23: LEED measures, by age, sex and, region
+  STATSNZ,LEED_Q3W_004,1.0  Table 24: LEED measures, by age, sex, and firm size
+  STATSNZ,LEED_Q3W_005,1.0  Table 25: LEED measures, by age, sector, and region
+  STATSNZ,LEED_Q3W_006,1.0  Table 26: LEED measures, by age, sector and firm size
+  STATSNZ,LEED_Q3W_007,1.0  Table 27: LEED measures, by age, industry (based on ANZSIC06) and region
+  STATSNZ,LEED_Q3W_008,1.0  Table 28: LEED measures, by age, industry (based on ANZSIC06) and firm size
+  STATSNZ,LEED_Q3W_009,1.0  Table 29: LEED measures, by age, region and firm size
+  STATSNZ,POPES_ERP_001,1.0  Estimated components of subnational intercensal population change (RC, TA), 1981-2023
+  STATSNZ,POPES_ERP_002,1.0  Estimated resident population of Māori descent, age and sex, at 30 June 2001, 2006, 2013, 2018 and 2023
+  STATSNZ,POPES_ERP_003,1.0  Estimated resident population (ERP), adjustments to derive ERP at 30 June 2013 (from census usually resident population)
+  STATSNZ,POPES_ERP_004,1.0  Estimated resident population (ERP), adjustments to derive ERP at 30 June 2018 (from census usually resident population)
+  STATSNZ,POPES_ERP_005,1.0  Estimated resident population (ERP), national population by ethnic group, age and sex, 30 June 1996, 2001, 2006, 2013, 2018, and 2023
+  STATSNZ,POPES_ERP_007,1.0  Estimated resident population (ERP), subnational population estimates (urban rural) by ethnic group, age and sex, 30 June 1996, 2001, 2006, 2013, 2018
+  STATSNZ,POPES_ERP_008,1.0  Estimated resident population (ERP), subnational population estimates (RC, SA2) by ethnic group, age and sex, 30 June 1996, 2001, 2006, 2013, 2018, an
+  STATSNZ,POPES_ERP_009,1.0  Estimated resident population (ERP), subnational population estimates (TALB, SA3, SA2) by ethnic group, age and sex, 30 June 1996, 2001, 2006, 2013, 2
+  STATSNZ,POPES_ERP_010,1.0  Estimated resident population (ERP), subnational population estimates (health region, health district, DHB) by ethnic group, age and sex, 30 June 1996
+  STATSNZ,POPES_ERP_012,1.0  Estimated resident population (ERP), subnational population estimates (functional urban area) by ethnic group, age and sex, 30 June 1996, 2001, 2006, 
+  STATSNZ,POPES_ERP_013,1.0  Estimated resident population (ERP), adjustments to derive ERP at 30 June 2023 (from census usually resident population)
+  STATSNZ,POPES_SUB_001,1.0  Subnational population component changes and median age (RC, TALB), at 30 June 2018-25 (2025 boundaries)
+  STATSNZ,POPES_SUB_002,1.0  Subnational population estimates (Health regions and Health districts), by age and sex, at 30 June 1996-25 (2023 boundaries)
+  STATSNZ,POPES_SUB_003,1.0  Subnational population estimates (RC, constituency), by age and sex, at 30 June 2023-25 (2026 boundaries)
+  STATSNZ,POPES_SUB_004,1.0  Subnational population estimates (RC, SA2), by age and sex, at 30 June 1996-2025 (2025 boundaries)
+  STATSNZ,POPES_SUB_005,1.0  Subnational population estimates (TA, community board), by age and sex, at 30 June 2023-25 (2026 boundaries)
+  STATSNZ,POPES_SUB_006,1.0  Subnational population estimates (TALB, SA3, SA2), by age and sex, at 30 June 1996-2025 (2025 boundaries)
+  STATSNZ,POPES_SUB_007,1.0  Subnational population estimates (TA, subdivision), by age and sex, at 30 June 2023-25 (2026 boundaries)
+  STATSNZ,POPES_SUB_008,1.0  Subnational population estimates (TA, ward), by age and sex, at 30 June 2023-25 (2026 boundaries)
+  STATSNZ,POPES_SUB_009,1.0  Subnational population estimates (urban rural), by age and sex, at 30 June 1996-2025 (2025 boundaries)
+  STATSNZ,POPES_SUB_010,1.0  Subnational population estimates (functional urban areas), by age and sex, at 30 June 1996-2025 (2023 boundaries)
+  STATSNZ,POPPR_ETH_004,1.0  Subnational ethnic population projections, by age and sex, 2018(base)-2043
+  STATSNZ,POPPR_ETH_005,1.0  Subnational ethnic population projections, characteristics, 2018(base)-2043
+  STATSNZ,POPPR_ETH_006,1.0  Subnational ethnic population projections, projection assumptions, 2018(base)-2043
+  STATSNZ,POPPR_ETH_010,1.0  Subnational ethnic population projections, by age and sex, 2018(base)-2043 update
+  STATSNZ,POPPR_ETH_011,1.0  Subnational ethnic population projections, characteristics, 2018(base)-2043 update
+  STATSNZ,POPPR_ETH_012,1.0  Subnational ethnic population projections, projection assumptions, 2018(base)-2043 update
+  STATSNZ,POPPR_ETH_013,1.0  National ethnic population projections, by age and sex, 2023(base)-2048
+  STATSNZ,POPPR_ETH_014,1.0  National ethnic population projections, characteristics, 2023(base)-2048
+  STATSNZ,POPPR_ETH_015,1.0  National ethnic population projections, projection assumptions, 2023(base)-2048
+  STATSNZ,POPPR_FHH_001,1.0  National family and household projections, population by living arrangement type, age, and sex, 2018(base)-2043
+  STATSNZ,POPPR_FHH_002,1.0  National family projections, by family type, 2018(base)-2043
+  STATSNZ,POPPR_FHH_003,1.0  National household projections, by household type, 2018(base)-2043
+  STATSNZ,POPPR_FHH_004,1.0  Statistical area 2 (SA2) household projections, 2018(base)-2043
+  STATSNZ,POPPR_FHH_005,1.0  Subnational family and household projections, population by living arrangement type, and age, 2018(base)-2043
+  STATSNZ,POPPR_FHH_006,1.0  Subnational family projections, by family type, 2018(base)-2043
+  STATSNZ,POPPR_FHH_007,1.0  Subnational household projections, by household type, 2018(base)-2043
+  STATSNZ,POPPR_LAB_003,1.0  National labour force projections, by age and sex, 2024(base)-2078
+  STATSNZ,POPPR_LAB_004,1.0  National labour force projections, characteristics, 2024(base)-2078
+  STATSNZ,POPPR_NAT_007,1.0  National population projections, by age and sex, 2024(base)-2078
+  STATSNZ,POPPR_NAT_008,1.0  National population projections, characteristics, 2024(base)-2078
+  STATSNZ,POPPR_NAT_009,1.0  National population projections, projection assumptions, 2024(base)-2078
+  STATSNZ,POPPR_SUB_001,1.0  Statistical area 2 population projections, by age and sex, 2018(base)-2048
+  STATSNZ,POPPR_SUB_002,1.0  Statistical area 2 population projections, characteristics, 2018(base)-2048
+  STATSNZ,POPPR_SUB_003,1.0  Statistical area 2 population projections, projection assumptions, 2018(base)-2048
+  STATSNZ,POPPR_SUB_007,1.0  Statistical area 2 population projections, by age and sex, 2018(base)-2048 (update)
+  STATSNZ,POPPR_SUB_008,1.0  Statistical area 2 population projections, projection assumptions, 2018(base)-2048(update)
+  STATSNZ,POPPR_SUB_009,1.0  Statistical area 2 population projections, characteristics, 2018(base)-2048(update)
+  STATSNZ,POPPR_SUB_014,1.0  Subnational population projections, by age and sex, 2023(base)-2053
+  STATSNZ,POPPR_SUB_015,1.0  Subnational population projections, characteristics, 2023(base)-2053
+  STATSNZ,POPPR_SUB_016,1.0  Subnational population projections, projection assumptions, 2023(base)–2053
+  STATSNZ,POPPR_SUB_017,1.0  Statistical area 2 and 3 population projections, by age and sex, 2023(base)-2053
+  STATSNZ,POPPR_SUB_018,1.0  Statistical area 2 and 3 population projections, projection assumptions, 2023(base)-2053
+  STATSNZ,POPPR_SUB_019,1.0  Statistical area 2 and 3 population projections, characteristics, 2023(base)-2053
