@@ -1,66 +1,26 @@
-yemen-subnational-boundaries-and-tabular-data: https://data.humdata.org/dataset/5ed3a78c-ef75-49ee-bf8c-fab7a142228b/resource/98134e24-e45b-4f1b-b233-7d3672b943c8/download/yemen_uscb_201806.xlsx 200 900,659 bytes
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-  Census-Population: 356 rows; fields: AREA_NAME, GEO_CONCAT, GEO_MATCH, CNTRY_NAME, ADM1_NAME, ADM2_NAME, ADM_LEVEL, USCBCMNT, GENC_CODE, FIPS_CODE, NSO_CODE, NSO_NAME, POP_TPOP, POP_MPOP, POP_FPOP, POP_DPLA_B, POP_DPLA_M, POP_DPLA_F, POP_BFDP, POP_BFDP_M, POP_BFDP_F, POP_B018, POP_TPOP_U, POP_MPOP_U, POP_FPOP_U, POP_TPOP_R, POP_MPOP_R, POP_FPOP_R, NAT_YEM _B, NAT_YEM _M, NAT_YEM _F, NAT_NYEM_B, NAT_NYEM_M, NAT_NYEM_F
-    POP_TPOP = Both Sexes Population
-    POP_MPOP = Male Population
-    POP_FPOP = Female Population
-    POP_DPLA_B = Diplomats Living Abroad, Both Sexes
-    POP_DPLA_M = Diplomats Living Abroad, Males
-    POP_DPLA_F = Diplomats Living Abroad, Females
-    POP_BFDP = Foreign Diplomats
-    POP_BFDP_M = Foreign Diplomats, Males
-    POP_BFDP_F = Foreign Diplomats, Females
-    POP_B018 = Population 0-18 years
-    POP_TPOP_U = Both Sexes Population, Urban
-    POP_MPOP_U = Male Population, Urban
-    POP_FPOP_U = Female Population, Urban
-    POP_TPOP_R = Both Sexes Population, Rural
-    POP_MPOP_R = Male Population, Rural
-    POP_FPOP_R = Female Population, Rural
-    NAT_YEM _B = Yemeni, Both Sexes
-    NAT_YEM _M = Yemeni, Males
-    NAT_YEM _F = Yemeni, Females
-    NAT_NYEM_B = Non-Yemeni, Both Sexes
-    NAT_NYEM_M = Non-Yemeni, Males
-    NAT_NYEM_F = Non-Yemeni, Females
-  | AL QAFR | YEM_01_01 | IBB | AL QAFR | 2 | 1101 | القفر | 103272 | 51899 | 51373 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | YARĪM | YEM_01_02 | IBB | YARĪM | 2 | 1102 | يريم | 175014 | 88016 | 86998 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AR RAḐMAH | YEM_01_03 | IBB | AR RAḐMAH | 2 | 1103 | الرضمة | 76576 | 38417 | 38159 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AN NĀDIRAH | YEM_01_04 | IBB | AN NĀDIRAH | 2 | 1104 | النادرة | 73755 | 36321 | 37434 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | ASH SHA‘IR | YEM_01_05 | IBB | ASH SHA‘IR | 2 | 1105 | الشعر | 39805 | 19322 | 20483 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AS SADDAH | YEM_01_06 | IBB | AS SADDAH | 2 | 1106 | السدة | 82502 | 39696 | 42806 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AL MAKHĀDIR | YEM_01_07 | IBB | AL MAKHĀDIR | 2 | 1107 | المخادر | 113892 | 57195 | 56697 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | ḨUBAYSH | YEM_01_08 | IBB | ḨUBAYSH | 2 | 1108 | حبيش | 105998 | 48953 | 57045 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | ḨAZM AL ‘UDAYN | YEM_01_09 | IBB | ḨAZM AL ‘UDAYN | 2 | 1109 | حزم العدين | 79483 | 36899 | 42584 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | FAR‘ AL ‘UDAYN | YEM_01_10 | IBB | FAR‘ AL ‘UDAYN | 2 | 1110 | فرع العدين | 89011 | 41651 | 47360 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AL ‘UDAYN | YEM_01_11 | IBB | AL ‘UDAYN | 2 | 1111 | العدين | 143578 | 68786 | 74792 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | JIBLAH | YEM_01_12 | IBB | JIBLAH | 2 | 1112 | جبلة | 112481 | 54694 | 57787 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | BA‘ADĀN | YEM_01_13 | IBB | BA‘ADĀN | 2 | 1113 | بعدان | 116045 | 54957 | 61088 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AS SABRAH | YEM_01_14 | IBB | AS SABRAH | 2 | 1114 | السبرة | 69872 | 34089 | 35783 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AS SAYYĀNĪ | YEM_01_15 | IBB | AS SAYYĀNĪ | 2 | 1115 | السياني | 110515 | 54237 | 56278 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | DHĪ AS SUFĀL | YEM_01_16 | IBB | DHĪ AS SUFĀL | 2 | 1116 | ذي السفال | 163019 | 80264 | 82755 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | MUDHAYKHIRAH | YEM_01_17 | IBB | MUDHAYKHIRAH | 2 | 1117 | مذيخرة | 77835 | 36908 | 40927 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AL MASHANNAH | YEM_01_18 | IBB | AL MASHANNAH | 2 | 1118 | المشنة | 101148 | 52461 | 48687 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AZ̧ Z̧IHĀR | YEM_01_19 | IBB | AZ̧ Z̧IHĀR | 2 | 1119 | الظهار | 154399 | 79687 | 74712 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | IBB | YEM_01_20 | IBB | IBB | 2 | 1120 | إب | 143641 | 69899 | 73742 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AL MAḨFID | YEM_02_01 | ABYAN | AL MAḨFID | 2 | 1201 | المحفد | 26870 | 13621 | 13249 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | MŪDĪYAH | YEM_02_02 | ABYAN | MŪDĪYAH | 2 | 1202 | موديه | 34879 | 17813 | 17066 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | JAYSHĀN | YEM_02_03 | ABYAN | JAYSHĀN | 2 | 1203 | جيشان | 14800 | 7649 | 7151 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | LAWDAR | YEM_02_04 | ABYAN | LAWDAR | 2 | 1204 | لودر | 88155 | 45456 | 42699 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | SIBĀḨ | YEM_02_05 | ABYAN | SIBĀḨ | 2 | 1205 | سباح | 15946 | 8061 | 7885 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | RAŞAD | YEM_02_06 | ABYAN | RAŞAD | 2 | 1206 | رصد | 54825 | 27354 | 27471 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | SIRĀR | YEM_02_07 | ABYAN | SIRĀR | 2 | 1207 | سرار | 15093 | 7360 | 7733 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AL WAḐĪ‘ | YEM_02_08 | ABYAN | AL WAḐĪ‘ | 2 | 1208 | الوضيع | 23400 | 11951 | 11449 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AḨWAR | YEM_02_09 | ABYAN | AḨWAR | 2 | 1209 | احوار | 25246 | 12929 | 12317 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | ZINJIBĀR | YEM_02_10 | ABYAN | ZINJIBĀR | 2 | 1210 | زنجبار | 25524 | 13123 | 12401 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | KHANFIR | YEM_02_11 | ABYAN | KHANFIR | 2 | 1211 | خنفر | 109044 | 55890 | 53154 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | ŞAN‘Ā’ AL QADĪMAH | YEM_03_01 | AMĀNAT AL ‘ĀŞIMAH | ŞAN‘Ā’ AL QADĪMAH | 2 | 1301 | صنعاء القديمة | 63398 | 34355 | 29043 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | SHU‘ŪB | YEM_03_02 | AMĀNAT AL ‘ĀŞIMAH | SHU‘ŪB | 2 | 1302 | شعوب | 213939 | 115786 | 98153 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AZĀL | YEM_03_03 | AMĀNAT AL ‘ĀŞIMAH | AZĀL | 2 | 1303 | أزال | 115054 | 61187 | 53867 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AŞ ŞĀFĪYAH | YEM_03_04 | AMĀNAT AL ‘ĀŞIMAH | AŞ ŞĀFĪYAH | 2 | 1304 | الصافية | 109109 | 63356 | 45753 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AS SAB‘ĪN | YEM_03_05 | AMĀNAT AL ‘ĀŞIMAH | AS SAB‘ĪN | 2 | 1305 | السبعين | 431231 | 237842 | 193389 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AL WAḨDAH | YEM_03_06 | AMĀNAT AL ‘ĀŞIMAH | AL WAḨDAH | 2 | 1306 | الوحدة | 125855 | 69036 | 56819 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | AT TAḨRĪR | YEM_03_07 | AMĀNAT AL ‘ĀŞIMAH | AT TAḨRĪR | 2 | 1307 | التحرير | 66898 | 38648 | 28250 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | MA‘ĪN | YEM_03_08 | AMĀNAT AL ‘ĀŞIMAH | MA‘ĪN | 2 | 1308 | معين | 265469 | 149319 | 116150 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
-  | ATH THAWRAH | YEM_03_09 | AMĀNAT AL ‘ĀŞIMAH | ATH THAWRAH | 2 | 1309 | الثورة | 170145 | 94147 | 75998 | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None | None
+https://stat.gov.kz/upload/iblock/0d0/g3z40d9x5wlhfjm16towszs4cvrohp8c/%D0%A7%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%BD%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%B2%D0%BE%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%BD%D1%8B%D0%BC%20%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0%D0%BC.xlsx
+  16,354 bytes
+  1 sheet(s)
+  -- 'Лист1': 24 rows x 5 cols
+     ['Численность насе', '', '', '', '']
+     ['', '0-15', '16-62(60)', '63(61)&+', '']
+     ['Абай', '160652', '337623', '97445', '']
+     ['Акмолинская', '194345', '465890', '129373', '']
+     ['Актюбинская', '301340', '542270', '112360', '']
+     ['Алматинская', '510700', '909609', '176223', '']
+     ['Атырауская', '249125', '397915', '69031', '']
+     ['Западно-Казахста', '194394', '399731', '101524', '']
+     ['Жамбылская', '401965', '674419', '139272', '']
+     ['Жетісу', '210431', '383547', '93723', '']
+     ['Карагандинская', '275745', '665847', '189761', '']
+     ['Костанайская', '176605', '490560', '154308', '']
+https://stat.gov.kz/upload/iblock/ec3/j63epb67yx79igabh5pi5pg6hf98s7m7/%D0%A7%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%BD%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%BB%D1%83%20%D0%B8%20%D1%82%D0%B8%D0%BF%D1%83%20%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8..xlsx
+  14,845 bytes
+  1 sheet(s)
+  -- 'Лист1': 6 rows x 3 cols
+     ['Численность насе', '', '']
+     ['женщины', '10479139', '51.1181950750596']
+     ['мужчины', '10020683', '48.8818049249403']
+     ['сельское', '7414712', '36.1696408876135']
+     ['городское', '13085110', '63.8303591123864']
+     ['все население', '20499822', '100']
