@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Read-only probes for the Dutch gemeente readers.
 
-CBS's religion-by-gemeente table counts the gemeenten of 2014 and the map
-draws those of 2022. What happened to each gemeente in between is recorded by
+CBS's religion-by-gemeente tables count the gemeenten of 2016 (2010-2015) and
+of 2014 (2010-2014), and the map draws those of 2022. What happened to each gemeente in between is recorded by
 CBS itself in StatLine 70739ned, "Gebieden; overzicht vanaf 1830": every
 gemeente's begin and end date, and in its explanation (the RegioS
 description) every merger and boundary change. These probes print that

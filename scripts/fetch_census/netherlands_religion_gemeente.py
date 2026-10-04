@@ -44,6 +44,11 @@ gemeenten, and
   so, with the transfers, in place of a bare gap; so does a gemeente CBS
   suppressed.
 
+The run of 4 October 2026 gives 329 of the 344 a figure, 19 of them unions;
+10 changed too much since 2016 and 5 were suppressed by CBS (the 2010-2014
+table gave 324, its 2014 division leaving out Alkmaar, Edam-Volendam,
+'s-Hertogenbosch, Oss and Renswoude).
+
 A boundary change moving at most ``TOLERANCE`` (2%) of a gemeente's people is
 a correction, not a different unit; every one is named in the log and the
 note. ``--tolerance`` sets another share.
