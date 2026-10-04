@@ -198,7 +198,11 @@ def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
     status, ctype, body = fetch(url)
     log(f"{dataset}: {url} {status} {len(body):,} bytes")
     book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
-    table = uscb.sheet_rows(book, sheet)
+    # A sheet name with a space cannot be one argument; '-' or '_' stands for it.
+    wanted = re.sub(r"[-_]", " ", sheet).strip().lower()
+    actual = next((s for s in book.sheetnames
+                   if re.sub(r"[-_]", " ", s).strip().lower() == wanted), sheet)
+    table = uscb.sheet_rows(book, actual)
     names, aliases = uscb.columns(table)
     pat = re.compile(grep or "^$")
     geo = [i for i, n in enumerate(names) if n in uscb.GEOGRAPHY and n not in
