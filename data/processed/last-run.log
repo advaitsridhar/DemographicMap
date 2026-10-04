@@ -1,425 +1,57 @@
-probe_ckan: 3 host(s), timeout 20s
-  https://data.go.th/ -> 403 text/html "Access Denied"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-w
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-w
-  https://gdcatalog.go.th/ -> 200 text/html "ยินดีต้อนรับ - Government Data Catalog : GD Catalog"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.2
-    package_search q='ประชากร อายุ' -> 200, 384 matches, 40 shown
-      - gdpublish-os_01_00011: อายุคาดเฉลี่ยของประชากร จากสำรวจ  [1 res: csv]
-          CSV datastore=True 0668c21b-9a5f-4689-83f0-85a65df61f87 https://catalogapi.nso.go.th/api/index?table=OS_01_0011_01&format=csv
-      - gdpublish-os_01_00012: อายุมัธยฐานของประชากร จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True e0af52d6-2059-4685-a444-4fbcd8d3d05e https://catalogapi.nso.go.th/api/index?table=OS_01_00012_01&format=csv
-          XLSX datastore=True 047f24f8-845b-47ea-bc18-ce99083d365b https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0012&format=csv
-      - gdpublish-dataset-40-441: การสูบบุหรี่ของประชากร อายุ 15 ปีขึ้นไป  [2 res: csv,xlsx]
-          XLSX datastore=True 6c5e066a-575d-4680-b742-b24efe163fba https://trang.gdcatalog.go.th/dataset/0d3b9240-2d5a-4537-b12e-7a190d69e357/resource/5cf50d7a-f160-4cd8-b780-284db410af4e/download/untitled.xlsx
-          CSV datastore=True 0ee6c795-3b57-44f5-b557-cc588919904a https://trang.gdcatalog.go.th/dataset/0d3b9240-2d5a-4537-b12e-7a190d69e357/resource/37b98a18-1a66-4700-8cce-b043e73493d8/download/untitled.csv
-      - gdpublish-dataset-40-027: จำนวนประชากรสูงอายุ 60 ปีขึ้นไป  [1 res: csv]
-          CSV datastore=True ee49c413-eecb-4327-ab3f-5b705e8d46ed https://prachinburi.gdcatalog.go.th/dataset/db1f1b72-8550-4b40-b676-af09543cab09/resource/27a3fdd8-8364-4461-b58c-b5091caa7193/download/untitled.csv
-      - gdpublish-dataset-30-462: ประชากรวัยสูงอายุ  [1 res: csv]
-          CSV datastore=True 380ac44c-7942-4a04-9f0e-3e2770dfd023 https://nan.gdcatalog.go.th/dataset/abebabfd-e1d5-402c-898e-9dfd7412d898/resource/ed849d3b-7e37-421e-b3e5-d0afeb5c423f/download/untitled.csv
-      - gdpublish-dataset-22-17: ประชากรสูงอายุ 60 ปี ขึ้นไป  [1 res: csv]
-          CSV datastore=True d606b595-ac20-44f6-a6a2-20e2f1d0b27b https://amnatcharoen.gdcatalog.go.th/dataset/bcf32240-d3cb-41ba-bc5d-92eea8d6c059/resource/58c279dc-57f1-4d18-b949-9d2800964561/download/-60-.csv
-      - gdpublish-017: จำนวนประชากรแยกอายุ  [2 res: csv,xlsx]
-          XLSX datastore=True 0c5cdcf3-ba13-42ee-9eb0-02bba1c478ba https://chaiyaphum.gdcatalog.go.th/dataset/0b0b9f1a-a2c0-45f4-b55d-f5089382dfdf/resource/8116bc01-2bdf-4c31-8491-cc8a7b290b70/download/.xlsx
-          CSV datastore=True 7df78f1b-bfde-4447-b38a-29b59ad4f6ed https://chaiyaphum.gdcatalog.go.th/dataset/0b0b9f1a-a2c0-45f4-b55d-f5089382dfdf/resource/1eeb8b1d-25fa-43aa-985a-45bd3906fb03/download/.csv
-      - gdpublish-os0113: ประชากรอายุ 60 ปีขึ้นไป  [1 res: csv]
-          CSV datastore=True 070048ad-613d-4529-b6be-a59a89d2d364 https://surin.gdcatalog.go.th/dataset/132b7a5f-54e3-4c42-bbbf-9544274cb965/resource/04d075c1-ad85-4049-9b23-6b01f2ae609e/download/os0147.csv
-      - gdpublish-os0111: ประชากรอายุ 0 - 14 ปี  [1 res: csv]
-          CSV datastore=True 7b5b7f16-1679-4e30-8d21-c7142cf2e9f1 https://surin.gdcatalog.go.th/dataset/55386e36-9c1f-456d-bdbb-8aff18cf047f/resource/57397853-d063-4c6c-9385-3658ce4b5162/download/os0145.csv
-      - gdpublish-os0112: ประชากรอายุ 15 - 59 ปี  [1 res: csv]
-          CSV datastore=True bd3e2296-7ce0-4be5-accd-c9b39446204b https://surin.gdcatalog.go.th/dataset/4c4542c2-2681-4fe7-8d6d-fd2d4efbe519/resource/bc822641-49c7-4d9b-985e-13630c085388/download/os0146.csv
-      - gdpublish-population-age: ประชากรรายอายุ  [1 res: csv]
-          CSV datastore=True fe5456ad-dc28-4747-8728-28cc1db31473 https://narathiwat.gdcatalog.go.th/dataset/25e9e775-5fb1-4f9e-9410-2e9281b32398/resource/2c8ecee5-7067-4dd5-aaec-098da03a5bd1/download/population66-68.csv
-      - gdpublish-dataset-14-121: ประชากรสูงอายุ  [4 res: csv,xlsx]
-          XLSX datastore=True 0a27bfac-a153-486c-aa9a-f536c1c54c3c https://khonkaen.gdcatalog.go.th/dataset/6a3a5e12-84b3-4109-8bb0-29cc759862ee/resource/6de5b45b-3688-48ea-8f6b-36a0959c89ae/download/dataset_14_12.xlsx
-          CSV datastore=True d8a9a91c-9b60-4574-93a5-c42261672e85 https://khonkaen.gdcatalog.go.th/dataset/6a3a5e12-84b3-4109-8bb0-29cc759862ee/resource/d52148bf-b7df-43e7-b779-f60c9bfdda0f/download/dataset_14_12.csv
-          XLSX datastore=True 1d2f8240-c21b-4525-9ca9-27653b065cca https://khonkaen.gdcatalog.go.th/dataset/6a3a5e12-84b3-4109-8bb0-29cc759862ee/resource/42b5c0eb-6240-4e49-acd0-9d1ca86795a8/download/untitled.xlsx
-          CSV datastore=True 8b8692ce-671c-4567-8771-c9f35bbe1b48 https://khonkaen.gdcatalog.go.th/dataset/6a3a5e12-84b3-4109-8bb0-29cc759862ee/resource/82bd4c78-2b9d-4b88-9f27-f927fb470771/download/untitled.csv
-      - gdpublish-dataset-20-453: ประชากรอายุ 15 -75 ปีที่มีภาวะน้ำหนักเกิน  [1 res: csv]
-          CSV datastore=True 5b371576-4b5a-49cf-a84d-d7a88487eeef https://ranong.gdcatalog.go.th/dataset/696ee629-8c34-4458-9f88-f4d2e1547756/resource/8972a9fc-feea-4fe3-a0a7-1c0994ab589c/download/untitled.csv
-      - gdpublish-60: จำนวนประชากรผู้สูงอายุ  [1 res: csv]
-          CSV datastore=True 794f48a8-f548-4cf3-81a0-7fb668509cae https://nakhonsawan.gdcatalog.go.th/dataset/f22bfe93-7ae8-47c0-bb03-8e19f3094e49/resource/92c67ec4-eb12-4fc8-b138-ed298f247592/download/dopa60up-1.csv
-      - gdpublish-statbyagemonth-64: สถิติจำนวนประชากรไทยที่มีชื่ออยู่ในทะเบียนบ้านแยกรายอายุ  [22 res: text,zip]
-          TEXT datastore=False c0cda534-e706-4f1e-8962-17f16c4f2d6d https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=65
-          TEXT datastore=False ed5d948a-df36-4ef1-ab34-76e977a7c6fe https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=64
-          TEXT datastore=False 0c47f430-f05e-43bc-853a-129f7964c655 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=63
-          TEXT datastore=False d4a5d4b1-0a29-4f78-9bac-cbc3387adce3 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=62
-          TEXT datastore=False 76d5c202-731b-474d-b4c3-97479622a3f8 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=61
-          TEXT datastore=False b35a5801-085e-48f5-9c91-3e2622a07524 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=60
-          TEXT datastore=False f808ca99-0619-43c6-a920-ff621dc4b86f https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=61
-          TEXT datastore=False 816de7b3-65e4-439b-a38a-e4539b3a64c7 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=60
-          TEXT datastore=False f673aa9b-ab3d-4080-ab5f-48b74c8ce4ce https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=59
-          TEXT datastore=False 6cdf8651-32fb-44e1-8784-fb3c34a16c11 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=58
-          TEXT datastore=False 3b9b08ba-1ca4-4c41-bbc6-47465bbf76b2 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=57
-          TEXT datastore=False da5ef27a-af20-4997-871f-67f88504de0d https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=56
-          TEXT datastore=False ee0d49a0-f194-4f82-99fd-d7672b0a5593 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=55
-          TEXT datastore=False e37d79b5-25c2-4922-a4d7-f8b971a56357 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=54
-          TEXT datastore=True 91196097-4045-4964-9b0b-41d158938f98 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=53
-          TEXT datastore=True e5d07c24-5ef0-4a68-88e0-882d4a4ec4fd https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=52
-          TEXT datastore=True ed25ae4c-9706-4a06-b7dd-a9d19244161a https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=51
-          TEXT datastore=True 18455c45-4a15-4270-b2ad-0bb3f2fb96fa https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=50
-          ZIP datastore=False ccc1ec08-0be7-4bae-a90e-e04cef0d2cf6 https://catalog.dopa.go.th/dataset/3b030975-a91e-45b7-8d7e-c771337eee10/resource/3ebe603c-0b85-44de-8b7f-353e31f2482b/download/stat_age2537_2565.zip
-          TEXT datastore=False 25c89569-4c0d-4a39-9e92-d71826747e6d https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=68
-          TEXT datastore=False 6bb8e55e-7909-4cb9-a8ad-35df11846f96 https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=67
-          TEXT datastore=False ad6b5949-93f4-4962-975c-96ad00fd58eb https://stat.bora.dopa.go.th/new_stat/webPage/statByProvince.php?year=66
-      - gdpublish-statbyagemonth-66: สถิติจำนวนประชากรไทยที่มีชื่ออยู่ในทะเบียนบ้านแยกรายอายุรายเดือน  [13 res: xls]
-          XLS datastore=False 8374f2b0-3f48-46a6-a2db-fa3ac96389c6 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=66
-          XLS datastore=False e088ff57-bc62-4103-9386-474de9ced642 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=65
-          XLS datastore=False 03411bed-b9f6-4e3a-888c-2579aca5c7c5 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=64
-          XLS datastore=False c145b95a-1a99-4dee-b675-0cd96351bcd3 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=63
-          XLS datastore=False 7a434679-7e63-4618-a864-9a53cc57ad1a https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=62
-          XLS datastore=False cd0b9b08-cf7c-496b-a3ad-e5cb987f258c https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=61
-          XLS datastore=False 01b8e864-b474-4a11-aac0-7e6b5d82fafd https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=60
-          XLS datastore=False fccc883e-e89a-4f89-8400-ea66169a20f4 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=59
-          XLS datastore=False e15f3c8a-2666-489e-a588-6a8f303204a2 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=58
-          XLS datastore=False faefe56d-7f9a-4d26-b0c8-9190cbd691af https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=57
-          XLS datastore=False 9476fd11-cfb9-4239-810f-4b8dce41e554 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=56
-          XLS datastore=False 8461e50f-b8e4-4e1e-afa0-ed64c283bc53 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=67
-          XLS datastore=False 62010f25-0cdd-43af-9c00-5bd459d1b6b0 https://stat.bora.dopa.go.th/new_stat/webPage/statByMooBan.php?year=68
-      - gdpublish-dataset-1-02: จำนวนประชากรสูงอายุ 60 ปี ขึ้นไป  [2 res: csv,xlsx]
-          XLSX datastore=True 75ae4252-dfb4-4f22-9193-350d1d6c5f28 https://chanthaburi.gdcatalog.go.th/dataset/d2fe185c-665a-41f2-825c-4e2d1557c584/resource/4eb49b22-7e80-4b09-842e-12d04ac7d836/download/-60-.xlsx
-          CSV datastore=True 7e8a3f29-9608-47ff-a437-89283132b1b2 https://chanthaburi.gdcatalog.go.th/dataset/d2fe185c-665a-41f2-825c-4e2d1557c584/resource/22076bed-a5c6-41cb-8d5b-607857d35c82/download/-60-1.csv
-      - gdpublish-dataset-03-23: ประชากรวัยทำงานที่เตรียมพร้อมสู่วัยสูงอายุที่มีสุขภาพดี  [1 res: csv]
-          CSV datastore=True 7c124eb2-dd07-405d-b721-d2069b54a678 https://songkhla.gdcatalog.go.th/dataset/f4196530-b2b7-4908-9bf5-9e8050af45d5/resource/41a7ae94-cdc1-4c68-b55a-c73bc97b9a44/download/dataset_03_23.csv
-      - gdpublish-dataset-03-24: ประชากรผู้สูงอายุ 60 ปีขึ้นไป มีค่าดัชนีมวลกายปกติ  [1 res: csv]
-          CSV datastore=True c990ee24-0e5f-44a4-8a84-551482858efa https://songkhla.gdcatalog.go.th/dataset/f10e8ba5-8e11-482e-8421-a0af6b201a62/resource/5e8bc68f-1751-48fe-b3ff-1e19c078e5fc/download/dataset_03_24.csv
-      - gdpublish-dataset-rg_11_02: รายงานจำนวนประชากรตามเพศและช่วงอายุ  [1 res: html]
-          HTML datastore=False 8d269d81-3f8b-423e-90f1-4be015f08b1b https://ucinfo.nhso.go.th/ucinfo/RptRegisPop-2
-      - gdpublish-154: การคัดกรองประชากรอายุ 15 ปีขึ้นไป ที่สูบบุหรี่  [1 res: csv]
-          CSV datastore=True 2b2df6ee-9493-4f0e-b89f-424abe6c55f4 https://kamphaengphet.gdcatalog.go.th/dataset/2a1ecab4-4e4e-4e66-b3ab-2c1117c28622/resource/ef8c27d8-539c-4d42-a5d4-7b19f6420a37/download/t16.csv
-      - gdpublish-dopa-001: ประชากรตามกลุ่มอายุ  [7 res: csv]
-          CSV datastore=True 7cd1d8f1-3e00-4df5-8b9f-12f61c105f86 https://sisaket.gdcatalog.go.th/dataset/82de7ead-f241-4790-95b2-754d846e69e0/resource/f2968b33-ced4-43bd-a087-86ef9145e14d/download/-.csv
-          CSV datastore=True 6c378665-2929-41e4-9a34-5c8f3a979f2d https://sisaket.gdcatalog.go.th/dataset/82de7ead-f241-4790-95b2-754d846e69e0/resource/8207224e-febc-44d5-88b4-fb7431e98514/download/2566.csv
-          CSV datastore=True 87f7e87d-2250-4b1c-89c4-fee49bc0dccb https://sisaket.gdcatalog.go.th/dataset/82de7ead-f241-4790-95b2-754d846e69e0/resource/6c172161-3748-42fc-a250-53e3814c7cab/download/6c172161-3748-42fc-a250-53e3814c7cab-1.csv
-          CSV datastore=True b6b9485a-a99a-4cab-9fe2-a63be9a481b6 https://sisaket.gdcatalog.go.th/dataset/82de7ead-f241-4790-95b2-754d846e69e0/resource/8f0ee805-4c2e-49d3-95a3-795b158104c2/download/8f0ee805-4c2e-49d3-95a3-795b158104c2-1.csv
-          CSV datastore=True 3c92bca2-b447-4427-b890-8eacc6ac3a10 https://sisaket.gdcatalog.go.th/dataset/82de7ead-f241-4790-95b2-754d846e69e0/resource/dcb5eb5a-62d4-414d-a001-29f53e214ab7/download/.csv
-          CSV datastore=True 712a4c6f-1592-4a57-b72e-b86c9b5d55bb https://sisaket.gdcatalog.go.th/dataset/82de7ead-f241-4790-95b2-754d846e69e0/resource/f4357155-be6a-41fc-b548-2bf560fdb0a8/download/.csv
-          CSV datastore=True 6707b054-f3e8-4d78-95f0-dd2478f972a3 https://sisaket.gdcatalog.go.th/dataset/82de7ead-f241-4790-95b2-754d846e69e0/resource/3f72aacb-0446-4c2b-b923-5d22f387ac46/download/.csv
-      - gdpublish-dataset-14-25: ร้อยละของประชากรอายุ 15 ปีขึ้นไปที่ต้องการพัฒนาขีดความสามารถ  [6 res: csv,xlsx]
-          XLSX datastore=True ae35e075-30a4-44f8-974b-d2c3c7fca9dc https://khonkaen.gdcatalog.go.th/dataset/bbb4bfd3-9243-49ae-b7d1-f3c081b7e4d2/resource/94aa0ae1-f9f0-4cbf-b305-7b6b39c4e97f/download/dataset_14_23.01.xlsx
-          CSV datastore=True 9d672afb-9b80-4923-aa10-5225b68fa2e6 https://khonkaen.gdcatalog.go.th/dataset/bbb4bfd3-9243-49ae-b7d1-f3c081b7e4d2/resource/fdf64143-cf90-4c6f-a117-9b48817c4975/download/dataset_14_23.01-csv.csv
-          CSV datastore=True 91028c03-95ea-4b95-a895-f7484522683a https://khonkaen.gdcatalog.go.th/dataset/bbb4bfd3-9243-49ae-b7d1-f3c081b7e4d2/resource/6af4436b-f2fc-4bc2-a7d4-0f84b5fba868/download/dataset_14_23.02-csv.csv
-          XLSX datastore=True 12b9df20-1094-4c81-a4dc-19535628b721 https://khonkaen.gdcatalog.go.th/dataset/bbb4bfd3-9243-49ae-b7d1-f3c081b7e4d2/resource/763cf91a-0917-4573-af80-dee4adef4321/download/dataset_14_23.02.xlsx
-          CSV datastore=True 06333b88-fbd0-4927-88f8-eca7b4585cbb https://khonkaen.gdcatalog.go.th/dataset/bbb4bfd3-9243-49ae-b7d1-f3c081b7e4d2/resource/2862a093-5580-4984-bae3-b30d25c6dfc4/download/dataset_14_23.03-csv.csv
-          XLSX datastore=True 8e438b2c-298d-4e78-9799-79336111af31 https://khonkaen.gdcatalog.go.th/dataset/bbb4bfd3-9243-49ae-b7d1-f3c081b7e4d2/resource/b2ec1eb0-3771-44e5-88fe-72b2925a6563/download/dataset_14_23.03.xlsx
-      - gdpublish-os_01_00004: สัดส่วนประชากรที่มีอายุ 15-59 ปี จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True a1925f60-1003-4ff2-a3b7-0e99a6f9f8eb https://catalogapi.nso.go.th/api/index?table=OS_01_00004_01&format=csv
-          XLSX datastore=True 23724e27-19ed-44d6-8d22-2806f7fa5d64 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0004&format=csv
-      - gdpublish-os_01_00034: จำนวนประชากรอายุ 13 ปีขึ้นไป จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True d662590e-b432-45cc-afd4-4eed0aa610f1 https://catalogapi.nso.go.th/api/index?table=OS_01_00034_01&format=csv
-          XLSX datastore=True 22502033-be43-4cba-99c6-e32f3b5de949 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0034&format=csv
-      - gdpublish-os_01_00037: จำนวนประชากรหญิงอายุ 15-49 ปี จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True d6d7218b-f77b-40ba-8404-11187c4560e2 https://catalogapi.nso.go.th/api/index?table=OS_01_00037_01&format=csv
-          XLSX datastore=True a44534ec-1c14-458b-9cf3-1d64c071f356 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0037&format=csv
-      - gdpublish-os_01_00005: สัดส่วนประชากรที่มีอายุ 60 ปีขึ้นไป จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True 2e1b5818-9def-4bd0-92dd-6b94151ac854 https://catalogapi.nso.go.th/api/index?table=OS_01_00005_01&format=csv
-          XLSX datastore=True cee06e4b-4713-4f54-878d-bea9c2b98c7e https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0005&format=csv
-      - gdpublish-os_01_00035: จำนวนประชากรอายุ 13 ปีขึ้นไป จากสำรวจ  [1 res: csv]
-          CSV datastore=True b59a896a-1881-46af-81f8-3a87b850c47b https://catalogapi.nso.go.th/api/index?table=OS_01_0035_01&format=csv
-      - gdpublish-os_01_00003: สัดส่วนประชากรที่มีอายุต่ำกว่า 15 ปี จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True aec7cb0a-0006-4e28-b44e-0e2fcda06e4c https://catalogapi.nso.go.th/api/index?table=OS_01_00003_01&format=csv
-          XLSX datastore=True 0a2b6267-2ada-4cc5-a823-79b95c7ab240 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0003&format=csv
-      - gdpublish-0704-01-0002: จํานวนประชากรสูงอายุ  [9 res: csv,json]
-          CSV datastore=True 76c3b125-caac-4679-856f-7dd63e8cfaa5 https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_1&format=csv
-          CSV datastore=True 9de6dc9d-d67d-409b-a9b4-b7617e4d56e3 https://catalogapi.nso.go.th/api/datadic?table=ST_01_2011001_1&format=csv
-          CSV datastore=True 785f2c47-00b3-4714-a8b7-08903c9fe1c5 https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_2&format=csv
-          CSV datastore=True a5861baa-6107-424b-8179-1a04004b33ad https://catalogapi.nso.go.th/api/datadic?table=ST_01_2011001_2&format=csv
-          CSV datastore=True 6f79c46b-5c84-4ab8-9634-115712e4a4cf https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_3&format=csv
-          CSV datastore=True 083596e4-6e2b-4da6-b557-94bb4ca12dd9 https://catalogapi.nso.go.th/api/datadic?table=ST_01_2011001_3&format=csv
-          JSON datastore=False b0a93ab6-3d51-4a4a-b6fa-f6a08da974da https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_1&format=json
-          JSON datastore=False 771aeca2-e895-4bb1-9fbe-84cda3c987ae https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_2&format=json
-          JSON datastore=False c4c01095-b55e-4538-aaa6-83c1e9a913b7 https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_3&format=json
-      - gdpublish-10-032: จำนวนประชากรสูงอายุ 60 ปีขึ้นไป  [2 res: csv,xlsx]
-          XLSX datastore=True 56873651-f75f-43ae-9140-3024d00307ab https://kanchanaburi.gdcatalog.go.th/dataset/e2fd8762-3ef1-48ac-8060-2cf4eb932716/resource/bd3e00cb-f683-481d-859a-8870b79140f5/download/2.dataset_10_03elderly_people.xlsx
-          CSV datastore=True 86374ca7-a8af-493e-99ca-af6de8929e63 https://kanchanaburi.gdcatalog.go.th/dataset/e2fd8762-3ef1-48ac-8060-2cf4eb932716/resource/e0ef7c27-ec11-4c8f-9b27-702df3d15059/download/2.dataset_10_03elderly_people.csv
-      - gdpublish-dataset-40-038: ประชากรวัยสูงอายุ (60 ปีขึ้นไป)  [1 res: csv]
-          CSV datastore=True 7e4de975-8e8c-4adf-918a-277487511137 https://phayao.gdcatalog.go.th/dataset/fd73ce22-677e-458b-ba2c-d8ac1d1d089c/resource/07bbb9eb-f75e-4d0e-91ee-e5018a88ad1f/download/dataset_40_03.csv
-      - gdpublish-os_01_00048: จำนวนประชากรที่พิการอายุตั้งแต่ 15 ปีขึ้นไป ที่ไม่ได้ทำงาน จากสำรวจ  [6 res: csv,json]
-          CSV datastore=True 42015a75-889c-49c0-a02d-f65d4455ae0b https://catalogapi.nso.go.th/api/index?table=OS_01_00048_01&format=csv
-          CSV datastore=True 43676128-17d5-4f7a-9ebb-b47bd686b028 https://catalogapi.nso.go.th/api/index?table=OS_01_00048_02&format=csv
-          JSON datastore=False e1d8d344-e5fe-4220-a5e5-6f48a4fdbd2c https://catalogapi.nso.go.th/api/index?table=OS_01_00048_01&format=json
-          JSON datastore=False 116891f6-e129-4641-a76b-df24703915e0 https://catalogapi.nso.go.th/api/index?table=OS_01_00048_02&format=json
-          CSV datastore=True 76ee1999-9790-401b-b9c3-4c1325e5af67 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0048_01&format=csv
-          CSV datastore=True 709176a6-5847-4231-bb6d-44e7986e16b0 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0048_02&format=csv
-      - gdpublish-os_01_00051: จำนวนประชากรพิการอายุตั้งแต่ 5 ปีขึ้นไป ที่มีความลำบากระดับรุนแรงในการดูแลตนเอง จากสำรวจ  [9 res: csv,json]
-          CSV datastore=True a6d0cd86-91ea-47bc-ae2f-2fed3fdb0dd4 https://catalogapi.nso.go.th/api/index?table=OS_01_00051_01&format=csv
-          CSV datastore=True 8903b6ed-e58e-4265-aaec-a79793e7ad86 https://catalogapi.nso.go.th/api/index?table=OS_01_00051_02&format=csv
-          CSV datastore=True fbd612bc-3426-4991-9471-f01e3bbb358f https://catalogapi.nso.go.th/api/index?table=OS_01_00051_03&format=csv
-          JSON datastore=False 66ef6fcb-7182-444f-8763-b3fb06458578 https://catalogapi.nso.go.th/api/index?table=OS_01_00051_01&format=json
-          JSON datastore=False 085f0485-c14d-4bf3-b4ec-8b12b4f9a815 https://catalogapi.nso.go.th/api/index?table=OS_01_00051_02&format=json
-          JSON datastore=False c284d333-30b4-4330-981e-10c135d545dc https://catalogapi.nso.go.th/api/index?table=OS_01_00051_03&format=json
-          CSV datastore=True 3b92f2c6-cd56-40db-ae6f-3505616a23ce https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0051_01&format=csv
-          CSV datastore=True 4463dd22-edc6-4a27-86d0-59f9d1ed80e1 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0051_02&format=csv
-          CSV datastore=True b6fe7ddd-d895-420e-8b87-b7f74551c518 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0051_03&format=csv
-      - gdpublish-0704-01-0003: จำนวนประชากรวัยแรงงานจากการสำรวจประชากรสูงอายุในประเทศไทย  [3 res: csv,json]
-          CSV datastore=True 86390072-81b4-4c01-9f27-4f79950b7e29 https://catalogapi.nso.go.th/api/index?table=ST_01_2011002_TABLE_1&format=csv
-          CSV datastore=True 0219daf5-fd8d-4e4a-87c3-547b17164cf5 https://catalogapi.nso.go.th/api/datadic?table=ST_01_2011002_1&format=csv
-          JSON datastore=False 2645dc05-1eca-4301-8f15-fa85ff358f75 https://catalogapi.nso.go.th/api/index?table=ST_01_2011002_TABLE_1&format=json
-      - gdpublish-0403-01-0002: จำนวนประชากรคาดประมาณเป็นรายอายุ  [7 res: csv,json]
-          CSV datastore=True d605e568-3d9b-46b6-9e6c-b4b77962791d https://catalogapi.nso.go.th/api/index?table=SFD_0403_01_0002_01&div=1&format=csv
-          CSV datastore=True 804b8067-cfea-4673-aa5a-64521c85e92e https://catalogapi.nso.go.th/api/datadic?table=SFD_0403_01_0002_01&div=1&format=csv
-          JSON datastore=False f29692c2-47b1-4450-8327-00a1631e4b2b https://catalogapi.nso.go.th/api/index?table=SFD_0403_01_0002_01&div=1&format=json
-          CSV datastore=True 3681a97a-9c38-4e1f-9137-57948f74799a https://catalogapi.nso.go.th/api/index?table=SFD_ADD_0403_01_0002_01&format=csv
-          JSON datastore=False 36cda84f-ecc1-4bbc-8138-ac993a082393 https://catalogapi.nso.go.th/api/index?table=SFD_ADD_0403_01_0002_01&format=json&div=1
-          CSV datastore=True 4c7cb890-ece4-4ba7-afa6-a35e21716d20 https://catalogapi.nso.go.th/api/index?table=SFD_0403_01_0002_03&format=csv&div=1
-          JSON datastore=False fc893b94-f4e4-4adb-971c-eacd4a0713b9 https://catalogapi.nso.go.th/api/index?table=SFD_0403_01_0002_03&format=json&div=1
-      - gdpublish-os_05_00005: ร้อยละของประชากรอายุ 6 ปีขึ้นไป  [3 res: csv,json,xlsx]
-          CSV datastore=True d71bba7f-bd51-4556-8858-d1f22aedb3a2 https://catalogapi.nso.go.th/api/index?table=OS_05_0005_01&format=csv
-          XLSX datastore=True 63772fc5-c53e-4465-9f50-a6b0460d0b66 https://catalogapi.nso.go.th/api/datadic?table=OS_05_0005_01&format=csv
-          JSON datastore=False 7ce97aa7-5b85-4c1b-985e-a84e4faa1539 https://catalogapi.nso.go.th/api/index?table=OS_05_0005_01&format=json
-      - gdpublish-os_07_00003: จำนวนประชากรอายุ 15 ปีขึ้นไป ที่มีพฤติกรรมการสูบบุหรี่  [3 res: csv,json]
-          CSV datastore=True b1d19c47-2478-4ab9-9825-d165c53dda5d https://catalogapi.nso.go.th/api/index?table=OS_07_0003_01&format=csv
-          CSV datastore=True 7617bc0a-88cc-4323-8087-5f2fc8bbc10e https://catalogapi.nso.go.th/api/datadic?table=OS_07_0003_01&format=csv
-          JSON datastore=False e6106630-2ec9-4cad-be28-986a6a1931d4 https://catalogapi.nso.go.th/api/index?table=OS_07_0003_01&format=json
-      - gdpublish-os_01_00050: จำนวนประชากรที่พิการอายุ 5-30 ปี ที่ไม่เรียนหนังสือ จากสำรวจ  [3 res: csv,json]
-          CSV datastore=True 887aba49-8639-480e-8cb6-154431043a90 https://catalogapi.nso.go.th/api/index?table=OS_01_00050_01&format=csv
-          JSON datastore=False 978c1ac5-c8d0-4992-8bd4-6bb1b6faf389 https://catalogapi.nso.go.th/api/index?table=OS_01_00050_01&format=json
-          CSV datastore=True cac1bdad-dea8-47d8-8fa4-cecd85619166 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0050_01&format=csv
-      - gdpublish-os_01_00049: จำนวนประชากรที่พิการอายุตั้งแต่ 5 ปีขึ้นไป จากสำรวจ  [6 res: csv,json]
-          CSV datastore=True 4ee16a9c-29ac-41a5-9623-ae2405c19f41 https://catalogapi.nso.go.th/api/index?table=OS_01_00049_01&format=csv
-          CSV datastore=True 50a1752b-5df7-4420-ac27-c7199d06befb https://catalogapi.nso.go.th/api/index?table=OS_01_00049_02&format=csv
-          JSON datastore=False 5344911f-f15f-42db-89d8-169d899c768c https://catalogapi.nso.go.th/api/index?table=OS_01_00049_01&format=json
-          JSON datastore=False 65a89484-7d0f-4a87-8eca-15fa1f27acb7 https://catalogapi.nso.go.th/api/index?table=OS_01_00049_02&format=json
-          CSV datastore=True 96773b52-64eb-4445-ab0c-81be960a51c6 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0049_01&format=csv
-          CSV datastore=True c72b369f-24d5-4402-aabd-5168f0b91497 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0049_02&format=csv
-    package_search q='สถิติประชากร' -> 200, 65 matches, 40 shown
-      - gdpublish-0051: สถิติประชากรในเขตเทศบาล  [1 res: csv]
-          CSV datastore=True 27649f10-f368-4faa-bd1d-4d7c1511ec0f https://surin.gdcatalog.go.th/dataset/b48d93f0-93e5-4a20-9759-030656025c6f/resource/58e2e240-1e4b-4d38-9713-a76b65ecc272/download/untitled.csv
-      - gdpublish-dataset-spb0101-39: จำนวนประชากรจากการทะเบียน  [1 res: csv]
-          CSV datastore=True 18133117-7e27-4a04-867f-2f1b3d181467 https://nongbualamphu.gdcatalog.go.th/dataset/f7db4516-f2e3-4dee-a1b3-124836e5fa36/resource/03b88975-36e5-46e1-b0fa-0456f0a37193/download/untitled.csv
-      - gdpublish-os_01_00040: อายุเฉลี่ยเมื่อแรกสมรส จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True 3cdde3cf-f5ea-481a-99c7-c004fa9c0c34 https://catalogapi.nso.go.th/api/index?table=OS_01_00040_01&format=csv
-          XLSX datastore=True aee05a07-a396-4074-881c-f440563bed08 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0040&format=csv
-      - gdpublish-os_01_00014: ความหนาแน่นของประชากร จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True aad92c72-2bfe-43a7-bc43-1bf23da52c68 https://catalogapi.nso.go.th/api/index?table=OS_01_00014_01&format=csv
-          XLSX datastore=True 0bcf574a-372d-4d30-a8a8-6f05fac2b10b https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0014&format=csv
-      - gdpublish-os_01_00052: จำนวนประชากรที่ไม่มีสัญชาติไทย จากสำมะโน  [3 res: csv,xlsx]
-          CSV datastore=True ea63efbe-1a2b-4e16-8478-9fec2cf3604f https://catalogapi.nso.go.th/api/index?table=OS_01_00052_01&format=csv
-          XLSX datastore=True 4989ff2e-89a6-4433-afbd-f454d7d29de1 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0052&format=csv
-          CSV datastore=True 3c041bd7-0c6d-48c6-8a2a-acb86bc40798 https://catalogapi.nso.go.th/api/index?table=OS_01_00052_02&format=csv
-      - gdpublish-os_01_00004: สัดส่วนประชากรที่มีอายุ 15-59 ปี จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True a1925f60-1003-4ff2-a3b7-0e99a6f9f8eb https://catalogapi.nso.go.th/api/index?table=OS_01_00004_01&format=csv
-          XLSX datastore=True 23724e27-19ed-44d6-8d22-2806f7fa5d64 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0004&format=csv
-      - gdpublish-os_01_00033: ร้อยละของประชากรที่ไม่ได้อาศัยอยู่ในจังหวัดที่เกิด จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True a29dc4b1-fcdb-4031-85e7-d8f6bc05d500 https://catalogapi.nso.go.th/api/index?table=OS_01_00033_01&format=csv
-          XLSX datastore=True 934292b1-11b2-4940-ade9-9f1e8744a143 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0033&format=csv
-      - gdpublish-os_01_00018: ร้อยละของประชากรที่อาศัยอยู่ในเขตเทศบาล  [2 res: csv,xlsx]
-          CSV datastore=True 207cd982-1836-486c-8e85-f460a8b0cfaa https://catalogapi.nso.go.th/api/index?table=OS_01_00018_01&format=csv
-          XLSX datastore=True 77bcdb66-c819-4a6c-b4b6-b697f28bb55e https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0018&format=csv
-      - gdpublish-os_01_00039: อัตราเจริญพันธุ์ตามช่วงอายุมารดา จากสำรวจ  [1 res: csv]
-          CSV datastore=True ae2bfa83-4a95-417d-85fb-4f1e39e6c835 https://catalogapi.nso.go.th/api/index?table=OS_01_0039_01&format=csv
-      - gdpublish-os_01_00057: จำนวนครัวเรือนส่วนบุคคล  [10 res: csv,xlsx]
-          CSV datastore=True 3ee65b93-145a-4815-b9eb-bb0f069aad3f https://catalogapi.nso.go.th/api/index?table=OS_01_00057_01&format=csv
-          CSV datastore=True 2941e324-ef11-43ef-9e83-0cf956f26dff https://catalogapi.nso.go.th/api/index?table=OS_01_00057_02&format=csv
-          CSV datastore=True 011fea7b-340d-4455-a1d2-42f8a7731907 https://catalogapi.nso.go.th/api/index?table=OS_01_00057_03&format=csv
-          CSV datastore=True efa95fea-f5a9-48b8-aa96-dfe116f6b497 https://catalogapi.nso.go.th/api/index?table=OS_01_00057_04&format=csv
-          CSV datastore=True 24acaad5-08e7-487e-ba45-e9edb8992149 https://catalogapi.nso.go.th/api/index?table=OS_01_00057_05&format=csv
-          CSV datastore=True 63f0fe7a-4aaa-4fdd-919a-8c300a2d6fc5 https://catalogapi.nso.go.th/api/index?table=OS_01_00057_06&format=csv
-          CSV datastore=True 2ffaaab5-c475-4c31-84f1-e85ebe38f220 https://catalogapi.nso.go.th/api/index?table=OS_01_00057_07&format=csv
-          CSV datastore=True 5abc6a66-920a-4bdf-8c4a-62e1c42cccd1 https://catalogapi.nso.go.th/api/index?table=OS_01_00057_08&format=csv
-          XLSX datastore=True b31917bf-4c1f-45d9-af99-fd4c9f809e0b https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0057&format=csv
-          CSV datastore=True a25f76f9-948d-4113-9b5c-08185bb288d5 https://catalogapi.nso.go.th/api/index?table=OS_01_00057_09&format=csv
-      - gdpublish-os_01_00007: อัตราเพิ่มของประชากร จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True 26137034-5d84-45e7-80cf-444fbbfc2304 https://catalogapi.nso.go.th/api/index?table=OS_01_00007_01&format=csv
-          XLSX datastore=True 35c12550-19b2-45a1-afb0-ca2ca463906f https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0007&format=csv
-      - gdpublish-os_01_00038: อัตราเจริญพันธุ์รวมจากการสำรวจ  [1 res: csv]
-          CSV datastore=True 3db38a1d-3937-49b7-9567-ad24e8f4ed58 https://catalogapi.nso.go.th/api/index?table=OS_01_0038_01&format=csv
-      - gdpublish-os_01_00061: ร้อยละของครัวเรือนที่มีน้ำดื่มสะอาด  [2 res: csv,xlsx]
-          CSV datastore=True 54be57dc-81ed-4a7a-9865-22930fef2c20 https://catalogapi.nso.go.th/api/index?table=OS_01_00061_01&format=csv
-          XLSX datastore=True 544c606a-03fd-4e62-bb70-70c27d5b805d https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0061&format=csv
-      - gdpublish-os_01_00010: อัตราส่วนการเป็นภาระวัยสูงอายุ 60 ปีขึ้นไป  [2 res: csv,xlsx]
-          CSV datastore=True 6678571a-4d4c-4db0-9c68-b0e2b288ff4f https://catalogapi.nso.go.th/api/index?table=OS_01_00010_01&format=csv
-          XLSX datastore=True 9d50acf7-4833-4966-8e0c-693e3c4cd19f https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0010&format=csv
-      - gdpublish-os_01_00045: จำนวนผู้สูงอายุ จากสำรวจ  [69 res: csv,json]
-          CSV datastore=True 290e4f8c-119e-4ef1-a4c6-755971bbac8d https://catalogapi.nso.go.th/api/index?table=OS_01_0045_01&format=csv
-          CSV datastore=True 7bfa431e-a2f3-42d4-988c-e006e323c4a7 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_05&format=csv
-          CSV datastore=True d19e148b-80bd-4bb0-8a1a-c357bf95621e https://catalogapi.nso.go.th/api/index?table=OS_01_0045_07&format=csv
-          CSV datastore=True 783077d2-1139-4f64-a2a3-04bb88d26f4a https://catalogapi.nso.go.th/api/index?table=OS_01_0045_09&format=csv
-          CSV datastore=True f4ab7129-0283-4fbb-82b1-0a442b29b425 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_11&format=csv
-          CSV datastore=True 85c47bb1-5708-4b29-83bd-a82e750eb0a5 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_12&format=csv
-          CSV datastore=True 2bf7660a-b2c6-4b12-ac56-5c7e1b851f0b https://catalogapi.nso.go.th/api/index?table=OS_01_0045_13&format=csv
-          CSV datastore=True 9febb429-bd6f-4a3b-a591-10bf2f4b2b30 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_14&format=csv
-          CSV datastore=True df9bae58-dda6-44d6-86f8-e5c2bc36fcae https://catalogapi.nso.go.th/api/index?table=OS_01_0045_15&format=csv
-          CSV datastore=True 569d0d77-e7b0-496c-9546-17cdc5806695 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_16&format=csv
-          CSV datastore=True d06a3038-7076-44c8-afb5-befedcbbbf3f https://catalogapi.nso.go.th/api/index?table=OS_01_0045_17&format=csv
-          CSV datastore=True 0b4c4fa9-edf9-4e4f-b521-1428208300d2 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_18&format=csv
-          CSV datastore=True da6e07b8-34e3-4aab-82db-5dd4977878ec https://catalogapi.nso.go.th/api/index?table=OS_01_0045_21&format=csv
-          CSV datastore=True 61efcac7-d4f2-4c28-b515-597e4d5beb45 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_22&format=csv
-          CSV datastore=True 9bac1ff5-65a8-478d-8b90-f14520a275f7 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_23&format=csv
-          CSV datastore=True fbf1e45b-fe4c-46c8-8514-6f93924e829f https://catalogapi.nso.go.th/api/index?table=OS_01_0045_24&format=csv
-          CSV datastore=True 0014c2ee-f3aa-4bee-9277-93580e7addc7 https://catalogapi.nso.go.th/api/index?table=OS_01_0095_01&format=csv
-          CSV datastore=True add7f368-ddc5-4ac0-9607-2730f1dea5fc https://catalogapi.nso.go.th/api/index?table=OS_01_0096_01&format=csv
-          CSV datastore=True 23f4680a-a94e-4a55-aa4d-6aba05bb596a https://catalogapi.nso.go.th/api/index?table=OS_01_0096_02&format=csv
-          CSV datastore=True f56061bc-3301-494d-b76a-63fa2c6e9b63 https://catalogapi.nso.go.th/api/index?table=OS_01_0096_03&format=csv
-          CSV datastore=True e89f978b-eb71-445c-9ef1-bbdda5728d2a https://catalogapi.nso.go.th/api/index?table=OS_01_0098_01&format=csv
-          CSV datastore=True 774fae6c-f33a-411d-ac1c-fa7cedb57e8f https://catalogapi.nso.go.th/api/index?table=OS_01_0099_01&format=csv
-          JSON datastore=False 46a74289-250e-4d60-9dcb-9ec63f39895b https://catalogapi.nso.go.th/api/index?table=OS_01_0045_01&format=json
-          JSON datastore=False e9a0f883-a3ae-47dc-85c2-08fa2b4f7c0a https://catalogapi.nso.go.th/api/index?table=OS_01_0045_05&format=json
-          JSON datastore=False f7d959d5-db11-4bec-b810-272814277e3d https://catalogapi.nso.go.th/api/index?table=OS_01_0045_07&format=json
-          JSON datastore=False 638094a9-7d9c-4602-a7ba-511a5350b4de https://catalogapi.nso.go.th/api/index?table=OS_01_0045_09&format=json
-          JSON datastore=False 93389f05-3a93-418e-9c53-3ccbdbddaa1b https://catalogapi.nso.go.th/api/index?table=OS_01_0045_11&format=json
-          JSON datastore=False 5b94a445-38df-4164-9be7-a0070f76e583 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_12&format=json
-          JSON datastore=False 0ebb9fea-560d-49e3-b3cd-1a1797c1b14a https://catalogapi.nso.go.th/api/index?table=OS_01_0045_13&format=json
-          JSON datastore=False d85a6ae1-af85-4dc3-b3a1-761318ba8891 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_14&format=json
-          JSON datastore=False 0ad6980a-865d-4813-bba7-287a79fe3a23 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_15&format=json
-          JSON datastore=False 7e2ca9de-5bc8-48e2-a9a6-6062de39420d https://catalogapi.nso.go.th/api/index?table=OS_01_0045_16&format=json
-          JSON datastore=False 0c1ba57b-842c-476a-b317-777b4908304e https://catalogapi.nso.go.th/api/index?table=OS_01_0045_17&format=json
-          JSON datastore=False 7bf7207f-5174-4099-b021-ad3038ddf6c2 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_18&format=json
-          JSON datastore=False b6571c8e-2faa-4772-ae8f-8477609aa7c9 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_21&format=json
-          JSON datastore=False 1c29eec0-9181-4ec4-a5c5-1d69b2f170c9 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_22&format=json
-          JSON datastore=False 722798ff-1e72-4d9c-87e7-2b9ab546ac7b https://catalogapi.nso.go.th/api/index?table=OS_01_0045_23&format=json
-          JSON datastore=False 58a6b9eb-cea8-4f9d-b14b-c5c237103a22 https://catalogapi.nso.go.th/api/index?table=OS_01_0045_24&format=json
-          JSON datastore=False 41dd9b43-c38e-4987-9146-0b8bf75c2fb0 https://catalogapi.nso.go.th/api/index?table=OS_01_0095_01&format=json
-          JSON datastore=False 15f333d0-4a72-4c17-bf80-296129921cff https://catalogapi.nso.go.th/api/index?table=OS_01_0096_01&format=json
-          JSON datastore=False f354ca3f-b374-4758-907b-4f3db1660e03 https://catalogapi.nso.go.th/api/index?table=OS_01_0096_02&format=json
-          JSON datastore=False 5d7a77b5-212b-49fa-944d-48eb1012e17f https://catalogapi.nso.go.th/api/index?table=OS_01_0096_03&format=json
-          JSON datastore=False 1c4b9bff-3101-4483-9d8b-e611ce779304 https://catalogapi.nso.go.th/api/index?table=OS_01_0098_01&format=json
-          JSON datastore=False 0048cf3b-3c53-43c7-ae4a-d5f7b1bd8617 https://catalogapi.nso.go.th/api/index?table=OS_01_0099_01&format=json
-          CSV datastore=True c0b4411a-38aa-438f-924d-8512f7731db4 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_01&format=csv
-          CSV datastore=True da074c03-715b-4bd5-9098-398c5a73ede0 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_05&format=csv
-          CSV datastore=True 450b10af-5455-4a0e-8af0-525936567d7f https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_07&format=csv
-          CSV datastore=True 996d918b-7ee4-4164-ac74-b8c73f9ec860 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_09&format=csv
-          CSV datastore=True 00e8abd3-4cef-45df-a73f-e9a4619c83d2 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_11&format=csv
-          CSV datastore=True 9ddf40d0-b67a-46a3-a218-1892109e122b https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_12&format=csv
-          CSV datastore=True 36985ed5-a027-4a87-b5d8-0798c02c362e https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_13&format=csv
-          CSV datastore=True ff46f333-e512-4979-900a-db7f8c6e0cc8 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_14&format=csv
-          CSV datastore=True b40ae889-ae74-45d4-919f-6aa8fc0d72fd https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_15&format=csv
-          CSV datastore=True 58c5b142-f808-41ac-aefa-2cdd85d7575c https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_16&format=csv
-          CSV datastore=True 9d66fd28-ff43-431b-89b1-280477421fc1 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_17&format=csv
-          CSV datastore=True 4622523f-f12d-454b-a47e-835a3b16f928 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_18&format=csv
-          CSV datastore=True 69ebf947-f6d6-4b41-96a5-ba7e41c0fdb4 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_21&format=csv
-          CSV datastore=True 8f420113-ee11-4ec6-bd3c-a815977ccca4 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_22&format=csv
-          CSV datastore=True ba52f4f6-638d-4939-a0c0-b82d551b71f6 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_23&format=csv
-          CSV datastore=True 73174906-953a-40e4-887b-6d04171849d9 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0045_24&format=csv
-          CSV datastore=True 11406bde-2e91-4d64-933d-0d6ada414f91 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0095_01&format=csv
-          CSV datastore=True bfb39104-f201-4541-92ad-5db9d0641b28 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0096_01&format=csv
-          CSV datastore=True 3c180de4-7659-41ae-87d8-a72b636349b0 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0096_02&format=csv
-          CSV datastore=True 5d130152-eb87-41b1-8949-06529d99f1e3 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0096_03&format=csv
-          CSV datastore=True 4280bf5b-bebf-47fe-b230-51e40185c145 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0098_01&format=csv
-          CSV datastore=True 370d6fb3-6e56-4747-92ef-b89e14e3a1d3 https://catalogapi.nso.go.th/api/datadic?table=OS_01_0099_01&format=csv
-          CSV datastore=True 3bfaa1bd-6a42-4b2e-bf63-61ce9cb82363 https://catalogapi.nso.go.th/api/index?table=OS_07_0006_01&format=csv
-          JSON datastore=False c7311b6d-bbf7-47d6-9ac2-a956f613effd https://catalogapi.nso.go.th/api/index?table=OS_07_0006_01&format=json
-          CSV datastore=True c53f0a3b-c5fc-4974-b193-a6b6ddea4f2b https://catalogapi.nso.go.th/api/datadic?table=OS_07_0006_01&format=csv
-      - gdpublish-os_05_00010: ร้อยละของครัวเรือนที่มีการใช้เชื้อเพลิงแข็งในการประกอบอาหาร  [2 res: csv,xlsx]
-          CSV datastore=True a5a66730-3bb3-4eff-8e63-9bb1dc4c028f https://catalogapi.nso.go.th/api/index?table=OS_05_00010_01&format=csv
-          XLSX datastore=True c0cb2f96-6917-46d6-b2d4-dff3fc7baf3b https://catalogapi.nso.go.th/api/datadic?table=datadict_05_0010&format=csv
-      - gdpublish-os_01_00008: อัตราส่วนการเป็นภาระรวม  [2 res: csv,xlsx]
-          CSV datastore=True 07967317-4fcc-4402-8eaf-57cdaceafcbe https://catalogapi.nso.go.th/api/index?table=OS_01_00008_01&format=csv
-          XLSX datastore=True cd00c3dd-40cc-47e9-9a32-e5215bf4dbb3 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0008&format=csv
-      - gdpublish-os_01_00060: ร้อยละของครัวเรือนที่มีส้วมถูกสุขลักษณะ  [2 res: csv,xlsx]
-          CSV datastore=True 026cd170-a8ed-4cd6-a511-6c25e6c46034 https://catalogapi.nso.go.th/api/index?table=OS_01_00060_01&format=csv
-          XLSX datastore=True 9f40f230-3afb-4558-8e4f-81183712d320 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0060&format=csv
-      - gdpublish-os_01_00059: ร้อยละของครัวเรือนที่เป็นเจ้าของที่อยู่อาศัย  [2 res: csv,xlsx]
-          CSV datastore=True efac5815-53ec-4786-9853-bc623f6df0b6 https://catalogapi.nso.go.th/api/index?table=OS_01_00059_01&format=csv
-          XLSX datastore=True b6c555e8-52b2-497b-b3b1-619f8bd65817 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0059&format=csv
-      - gdpublish-os_01_00034: จำนวนประชากรอายุ 13 ปีขึ้นไป จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True d662590e-b432-45cc-afd4-4eed0aa610f1 https://catalogapi.nso.go.th/api/index?table=OS_01_00034_01&format=csv
-          XLSX datastore=True 22502033-be43-4cba-99c6-e32f3b5de949 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0034&format=csv
-      - gdpublish-os_01_00037: จำนวนประชากรหญิงอายุ 15-49 ปี จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True d6d7218b-f77b-40ba-8404-11187c4560e2 https://catalogapi.nso.go.th/api/index?table=OS_01_00037_01&format=csv
-          XLSX datastore=True a44534ec-1c14-458b-9cf3-1d64c071f356 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0037&format=csv
-      - gdpublish-os_01_00009: อัตราส่วนการเป็นภาระวัยเด็ก ต่ำกว่า 15 ปี  [2 res: csv,xlsx]
-          CSV datastore=True dbdae7ef-eb5e-4bda-853b-dbd47157948c https://catalogapi.nso.go.th/api/index?table=OS_01_00009_01&format=csv
-          XLSX datastore=True 91b546b6-bb71-4b5e-b9ae-f9816fb36ccd https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0009&format=csv
-      - gdpublish-os_01_00005: สัดส่วนประชากรที่มีอายุ 60 ปีขึ้นไป จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True 2e1b5818-9def-4bd0-92dd-6b94151ac854 https://catalogapi.nso.go.th/api/index?table=OS_01_00005_01&format=csv
-          XLSX datastore=True cee06e4b-4713-4f54-878d-bea9c2b98c7e https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0005&format=csv
-      - gdpublish-os_01_00029: อัตราส่วนร้อยของความครบถ้วนสมบูรณ์ของการจดทะเบียนการตาย  [1 res: csv]
-          CSV datastore=True 2cf63695-47af-4187-a673-b59fe6da62c5 https://catalogapi.nso.go.th/api/index?table=OS_01_0029_01&format=csv
-      - gdpublish-os_01_00023: อัตราส่วนร้อยของความครบถ้วนสมบูรณ์ของการจดทะเบียนการเกิด  [1 res: csv]
-          CSV datastore=True 9d3109fa-ce7a-4f10-94c0-92130ba162bb https://catalogapi.nso.go.th/api/index?table=OS_01_0023_01&format=csv
-      - gdpublish-os_05_00011: ร้อยละของครัวเรือนที่มีการใช้ส้วมที่ถูกสุขลักษณะ  [2 res: csv,xlsx]
-          CSV datastore=True 1cdfa404-74dd-4d98-8d50-c9029a554522 https://catalogapi.nso.go.th/api/index?table=OS_05_00011_01&format=csv
-          XLSX datastore=True aa734007-de01-4718-a49f-ce4c6edf3113 https://catalogapi.nso.go.th/api/datadic?table=datadict_05_0011&format=csv
-      - gdpublish-os_01_00011: อายุคาดเฉลี่ยของประชากร จากสำรวจ  [1 res: csv]
-          CSV datastore=True 0668c21b-9a5f-4689-83f0-85a65df61f87 https://catalogapi.nso.go.th/api/index?table=OS_01_0011_01&format=csv
-      - gdpublish-os_01_00026: อัตราตาย จากสำรวจ  [1 res: csv]
-          CSV datastore=True 3580a53c-1e28-44ae-a321-8ecac447cf19 https://catalogapi.nso.go.th/api/index?table=OS_01_0026_01&format=csv
-      - gdpublish-os_01_00032: ร้อยละของประชากรที่ย้ายถิ่นภายใน 5 ปี จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True c06c0065-64bc-43d6-a03e-b52214ea2627 https://catalogapi.nso.go.th/api/index?table=OS_01_00032_01&format=csv
-          XLSX datastore=True 5bea38bb-cfc2-44e5-a4a3-0f9b4d758c39 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0032&format=csv
-      - gdpublish-os_01_00020: ร้อยละคนเกิดทั้งปี จากสำรวจ  [1 res: csv]
-          CSV datastore=True 414b02dc-fe11-4ce3-b7ce-f614977a7ffb https://catalogapi.nso.go.th/api/index?table=OS_01_0020_01&format=csv
-      - gdpublish-os_01_00006: อัตราส่วนเพศของประชากร จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True f0be8be7-232e-4dd9-b66a-6b6304ba3fa8 https://catalogapi.nso.go.th/api/index?table=OS_01_00006_01&format=csv
-          XLSX datastore=True 3e74c620-62a7-4029-8ae2-58ba041ae007 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0006&format=csv
-      - gdpublish-os_01_00036: จำนวนบุตรเกิดรอดเฉลี่ยของหญิงเคยสมรสอายุ 15-49 ปี  [2 res: csv,xlsx]
-          CSV datastore=True 81cdb341-bd55-481c-88a0-f9c6a490614e https://catalogapi.nso.go.th/api/index?table=OS_01_00036_01&format=csv
-          XLSX datastore=True 87554943-7a5a-40b0-9db4-a0938de3b0f0 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0036&format=csv
-      - gdpublish-os_01_00012: อายุมัธยฐานของประชากร จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True e0af52d6-2059-4685-a444-4fbcd8d3d05e https://catalogapi.nso.go.th/api/index?table=OS_01_00012_01&format=csv
-          XLSX datastore=True 047f24f8-845b-47ea-bc18-ce99083d365b https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0012&format=csv
-      - gdpublish-os_01_00025: ร้อยละคนตายทั้งปี จากสำรวจ  [1 res: csv]
-          CSV datastore=True 0f01b24d-8406-4231-a239-c5575ee01431 https://catalogapi.nso.go.th/api/index?table=OS_01_0025_01&format=csv
-      - gdpublish-os_01_00035: จำนวนประชากรอายุ 13 ปีขึ้นไป จากสำรวจ  [1 res: csv]
-          CSV datastore=True b59a896a-1881-46af-81f8-3a87b850c47b https://catalogapi.nso.go.th/api/index?table=OS_01_0035_01&format=csv
-      - gdpublish-os_01_00013: จำนวนประชากรตามพื้นที่ จากสำมะโน  [17 res: csv,xlsx]
-          XLSX datastore=True bc7e0269-0892-4988-aa3e-55e2510feacd https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0013&format=csv
-          CSV datastore=False f43ca2ae-2178-4ea0-95fd-73837a17a7c5 https://catalog.nso.go.th/dataset/6ae75bc9-e46c-44a5-9c3b-99c98f21880e/resource/a1aa1cec-bd4f-4829-ae7e-46aef2f6d6c4/download/os_01_00013_01.csv
-          CSV datastore=True 7ecccdf1-8de9-40cb-9cd8-c1d6c8b058e0 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2533&area=ในเขตเทศบาล
-          CSV datastore=True 3f2b45db-c705-41d5-90f0-0d2374b065fd https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2533&area=นอกเขตเทศบาล
-          CSV datastore=True c7b18106-e409-42f5-9d03-776d0515cb23 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2533&area=รวม
-          CSV datastore=True 47facf3c-5d41-445c-8a7e-1eb8c7e27f9b https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2543&area=ในเขตเทศบาล
-          CSV datastore=True 17849d13-77d6-4944-8a63-f18e3c7b8605 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2543&area=นอกเขตเทศบาล
-          CSV datastore=True 30de1d8d-70a7-43b8-9078-631dd349bbb2 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2543&area=รวม
-          CSV datastore=True 825a69ee-da7c-432f-ab9f-c3f9c0fe5105 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2553&area=ในเขตเทศบาล
-          CSV datastore=True d8cab7a0-0597-4959-b262-7296bd38bf44 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2553&area=นอกเขตเทศบาล
-          CSV datastore=True d249cf13-9fda-4969-8f4c-42207f116634 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01&format=csv&year=2553&area=รวม
-          CSV datastore=True c30c55b3-5335-465c-9781-cd0bea2b4a9d https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01_T&format=csv
-          CSV datastore=True 3e3c1223-7724-495f-8325-0a03b7f274e4 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01_BKK&format=csv
-          CSV datastore=True e80149fc-f1ae-40be-ac26-540736685b86 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01_N&format=csv
-          CSV datastore=True 0152d0be-6454-4cf4-b1e1-8fd9736bfc69 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01_C&format=csv
-          CSV datastore=True 44d669f9-44f1-46bd-8cf4-9bdecb0dfd25 https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01_S&format=csv
-          CSV datastore=True bd9fe01e-4c2a-4dfe-9b3b-55f0a6a55ccb https://catalogapi.nso.go.th/api/index?table=OS_01_00013_01_NS&format=csv
-      - gdpublish-os_01_00003: สัดส่วนประชากรที่มีอายุต่ำกว่า 15 ปี จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True aec7cb0a-0006-4e28-b44e-0e2fcda06e4c https://catalogapi.nso.go.th/api/index?table=OS_01_00003_01&format=csv
-          XLSX datastore=True 0a2b6267-2ada-4cc5-a823-79b95c7ab240 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0003&format=csv
-      - gdpublish-os_01_00056: ร้อยละของครัวเรือนที่มีหัวหน้าครัวเรือนเป็นหญิง  [2 res: csv,xlsx]
-          CSV datastore=True c066b2ca-b6db-452e-a17c-65bcd2ae16a9 https://catalogapi.nso.go.th/api/index?table=OS_01_00056_01&format=csv
-          XLSX datastore=True bc4b2ece-7cdf-44cd-a3b8-f72716badad6 https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0056&format=csv
-      - gdpublish-os_01_00021: อัตราเกิด จากสำรวจ  [1 res: csv]
-          CSV datastore=True c6929fc7-253f-41dc-8913-c8070dd76874 https://catalogapi.nso.go.th/api/index?table=OS_01_0021_01&format=csv
-      - gdpublish-os_01_00024: จำนวนคนตายทั้งปี จากสำรวจ  [1 res: csv]
-          CSV datastore=True 014c3a10-73c7-4e92-b229-88e184363787 https://catalogapi.nso.go.th/api/index?table=OS_01_0024_01&format=csv
-    package_search q='population age' -> 200, 8 matches, 8 shown
-      - gdpublish-0704-01-0006: ดัชนีการสูงอายุ  [3 res: csv,json]
-          CSV datastore=True 50bc8336-6257-4f16-a352-af3e401f8b61 https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0006_table_1&format=csv
-          JSON datastore=False 3b5378e9-8e17-462c-954f-45a59e4ba181 https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0006_table_1&format=json
-          CSV datastore=True 1ec5130c-5b9e-4f5b-a102-66299e84172a https://catalogapi.nso.go.th/api/datadic?table=OLD_0704_01_0006_table_1&format=csv
-      - gdpublish-0704-01-0007: อัตราส่วนเกื้อหนุน  [3 res: csv,json]
-          CSV datastore=True 9ba53403-6745-41f5-b544-88be1b236e79 https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0007_table_1&format=csv
-          JSON datastore=False 6f6dfd8c-e430-4fc9-948a-173c81c67713 https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0007_table_1&format=json
-          CSV datastore=True e2cb76fe-5bdd-4102-a86d-9953cdfc046b https://catalogapi.nso.go.th/api/datadic?table=OLD_0704_01_0007_table_1&format=csv
-      - gdpublish-0704-01-0008: บ้านที่มีสภาพแวดล้อมที่เหมาะสมของผู้สูงอายุ  [3 res: csv,json]
-          CSV datastore=True e3e1f9a0-67a3-401b-bbf1-58741634bf7f https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0008_table_1&format=csv
-          JSON datastore=False 85c39fdf-b50a-4bd5-ab19-165b1fffa088 https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0008_table_1&format=json
-          CSV datastore=True 148f5731-d374-44e0-88cf-222bfe126553 https://catalogapi.nso.go.th/api/datadic?table=OLD_0704_01_0008_table_1&format=csv
-      - gdpublish-0704-01-0011: การหกล้มของผู้สูงอายุ  [6 res: csv,json]
-          CSV datastore=True 17808209-db31-46c3-ade0-729d3ef51aad https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0011_table_1&format=csv
-          JSON datastore=False 7351d598-9f33-49e6-ad62-8a09c2a29ea0 https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0011_table_1&format=json
-          CSV datastore=True b35612cc-5a98-498b-8a6f-4b587ad52096 https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0011_table_2&format=csv
-          JSON datastore=False e38c3ab8-4a28-4a28-b40c-5c238f7ad05e https://catalogapi.nso.go.th/api/index?table=OLD_0704_01_0011_table_2&format=json
-          CSV datastore=True 0fb1373a-c19b-489e-8c62-ec3c5db98e11 https://catalogapi.nso.go.th/api/datadic?table=OLD_0704_01_0011_table_1&format=csv
-          CSV datastore=True fbc8f52b-c6d6-48f9-9720-f065db7a218d https://catalogapi.nso.go.th/api/datadic?table=OLD_0704_01_0011_table_2&format=csv
-      - gdpublish-os_01_00012: อายุมัธยฐานของประชากร จากสำมะโน  [2 res: csv,xlsx]
-          CSV datastore=True e0af52d6-2059-4685-a444-4fbcd8d3d05e https://catalogapi.nso.go.th/api/index?table=OS_01_00012_01&format=csv
-          XLSX datastore=True 047f24f8-845b-47ea-bc18-ce99083d365b https://catalogapi.nso.go.th/api/datadic?table=datadict_01_0012&format=csv
-      - gdpublish-0704-01-0003: จำนวนประชากรวัยแรงงานจากการสำรวจประชากรสูงอายุในประเทศไทย  [3 res: csv,json]
-          CSV datastore=True 86390072-81b4-4c01-9f27-4f79950b7e29 https://catalogapi.nso.go.th/api/index?table=ST_01_2011002_TABLE_1&format=csv
-          CSV datastore=True 0219daf5-fd8d-4e4a-87c3-547b17164cf5 https://catalogapi.nso.go.th/api/datadic?table=ST_01_2011002_1&format=csv
-          JSON datastore=False 2645dc05-1eca-4301-8f15-fa85ff358f75 https://catalogapi.nso.go.th/api/index?table=ST_01_2011002_TABLE_1&format=json
-      - gdpublish-population-age: ประชากรรายอายุ  [1 res: csv]
-          CSV datastore=True fe5456ad-dc28-4747-8728-28cc1db31473 https://narathiwat.gdcatalog.go.th/dataset/25e9e775-5fb1-4f9e-9410-2e9281b32398/resource/2c8ecee5-7067-4dd5-aaec-098da03a5bd1/download/population66-68.csv
-      - gdpublish-0704-01-0002: จํานวนประชากรสูงอายุ  [9 res: csv,json]
-          CSV datastore=True 76c3b125-caac-4679-856f-7dd63e8cfaa5 https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_1&format=csv
-          CSV datastore=True 9de6dc9d-d67d-409b-a9b4-b7617e4d56e3 https://catalogapi.nso.go.th/api/datadic?table=ST_01_2011001_1&format=csv
-          CSV datastore=True 785f2c47-00b3-4714-a8b7-08903c9fe1c5 https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_2&format=csv
-          CSV datastore=True a5861baa-6107-424b-8179-1a04004b33ad https://catalogapi.nso.go.th/api/datadic?table=ST_01_2011001_2&format=csv
-          CSV datastore=True 6f79c46b-5c84-4ab8-9634-115712e4a4cf https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_3&format=csv
-          CSV datastore=True 083596e4-6e2b-4da6-b557-94bb4ca12dd9 https://catalogapi.nso.go.th/api/datadic?table=ST_01_2011001_3&format=csv
-          JSON datastore=False b0a93ab6-3d51-4a4a-b6fa-f6a08da974da https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_1&format=json
-          JSON datastore=False 771aeca2-e895-4bb1-9fbe-84cda3c987ae https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_2&format=json
-          JSON datastore=False c4c01095-b55e-4538-aaa6-83c1e9a913b7 https://catalogapi.nso.go.th/api/index?table=ST_01_2011001_TABLE_3&format=json
-  https://catalog.dopa.go.th/ -> 0  timeout after 20s
-  http://catalog.dopa.go.th/ -> 0  timeout after 20s
-probe_ckan: 2 of 3 answered; 1 speak CKAN: gdcatalog.go.th
+== page https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502
+  21,694 bytes, charset utf-8
+  ~ <!-- SSO 적용 START 개발pc에서 사용시 해당 부분 제외--> <!-- SSO 적용 END --> <!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml" lang="ko"
+  ~ e( name ){ var nameOfCookie = name + "="; var x = 0; while ( x <= document.cookie.length ) { var y = (x+nameOfCookie.length); if ( documen
+  ~ x <= document.cookie.length ) { var y = (x+nameOfCookie.length); if ( document.cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.coo
+  ~ length); if ( document.cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.
+  ~ if ( document.cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length;
+  ~ Cookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, e
+  ~ if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOfCookie )
+  ~ ";", y )) == -1 ) endOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf(
+  ~ fCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf( " ", x ) + 1; if ( x == 0
+  ~ return unescape( document.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf( " ", x ) + 1; if ( x == 0 ) break; } ret
+  ~ return ""; } function fn_openHelp(){ if(fn_getCookie("popHelp") != "done"){ var popWidth=646; var popHeight=730; var popX = (window
+  ~ "done"){ var popWidth=646; var popHeight=730; var popX = (window.screen.width/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2);
+  ~ 730; var popX = (window.screen.width/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.js
+  ~ dth/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.jsp", "popHelp", "width="+popWidth+", height="+pop
+  ~ opWidth/2); var popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.jsp", "popHelp", "width="+popWidth+", height="+popHeight+",
+  ~ avascript"> //<![CDATA[ var rightWidth = 0; //시간체크용 var dateChk; $(document).ready(function(){ // 대상 Element 선택 const resizer = document.getElementById
+  ~ ar dateChk; $(document).ready(function(){ // 대상 Element 선택 const resizer = document.getElementById('division'); const leftSide = resizer.previousElementSibling;
+  ~ = resizer.previousElementSibling; const rightSide = resizer.nextElementSibling; document.ParamInfo.url = "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&l
+  ~ zer.nextElementSibling; document.ParamInfo.url = "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&pub=&conn_path=&list_id=&vw_cd=MT_ZTITLE&itm_id=&d
+  ~ 기 위해 선언 let leftWidth = 0; // resizer에 마우스 이벤트가 발생하면 실행하는 Handler const mouseDownHandler = function (e) { // 마우스 위치값을 가져와 x, y에 할당 x = e.clientX;
+  ~ eftWidth = leftSide.getBoundingClientRect().width; // 마우스 이동과 해제 이벤트를 등록 document.addEventListener('mousemove', mouseMoveHandler); document.addEventListener(
+  ~ 스 이동과 해제 이벤트를 등록 document.addEventListener('mousemove', mouseMoveHandler); document.addEventListener('mouseup', mouseUpHandler); }; const mouseMoveHandler =
+  ~ 조절 중 마우스 커서를 변경함 // class="resizer"에 적용하면 위치가 변경되면서 커서가 해제되기 때문에 body에 적용 document.body.style.cursor = 'col-resize'; // 이동 중 양쪽 영역(왼쪽, 오른쪽)에서 마우스 이벤트
+  ~ // 모든 커서 관련 사항은 마우스 이동이 끝나면 제거됨 resizer.style.removeProperty('cursor'); document.body.style.removeProperty('cursor'); leftSide.style.removeProperty('user-
+  ~ rightSide.style.removeProperty('pointer-events'); // 등록한 마우스 이벤트를 제거 document.removeEventListener('mousemove', mouseMoveHandler); document.removeEventLis
+  ~ 한 마우스 이벤트를 제거 document.removeEventListener('mousemove', mouseMoveHandler); document.removeEventListener('mouseup', mouseUpHandler); resizer.style.cursor = 'ew-
+  ~ mouseup', mouseUpHandler); resizer.style.cursor = 'ew-resize'; }; // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler); dateChk =
+  ~ .cursor = 'ew-resize'; }; // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler); dateChk = new Date(); fn_loading("loading"); $lef
+  ~ w-resize'; }; // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler); dateChk = new Date(); fn_loading("loading"); $leftMenu = $("#
+  ~ teChk = new Date(); fn_loading("loading"); $leftMenu = $("#leftMenu"); // $(window).resize(function(){ // var leftWidth = $leftMenu.width(); // if($leftMenu.css(
+  ~ isplay") == "none"){ // leftWidth = 0; // } // var rightWidth = $(window).width() - (leftWidth+10); // //var rightWidth = $(window).width(); // $("#cen
+  ~ / var rightWidth = $(window).width() - (leftWidth+10); // //var rightWidth = $(window).width(); // $("#centerMenu").css("width", rightWidth+"px"); // $("#iframe_rig
+  ~ ("width", "100%"); // //윈도우 창 사이즈 변경시 height 자동조절 // var conHeight = $(window).height() - 50; // $("#leftMenu").height(conHeight + 10); // $("#centerMenu")
+  ~ Table(fn_calTblId, tblid, tblnm); //iframe_leftMenu 호출 //var rightForm = document.ParamInfo; var leftForm = document.iframeform; leftForm.orgId = "101";
+  ~ //iframe_leftMenu 호출 //var rightForm = document.ParamInfo; var leftForm = document.iframeform; leftForm.orgId = "101"; leftForm.tblId = "DT_1PM1502";
+  ~ rderBy = ""; leftForm.serverType = "service"; leftForm.action = "includeLeftTree.do"; leftForm.target = "iframe_leftMenu"; leftForm.submit(); }); func
+  ~ }); function fn_initRightFrame() { //iframe_rightMenu 호출 //var rightForm = document.ParamInfo; var rightForm = document.iframeform; rightForm.orgId
+  ~ /iframe_rightMenu 호출 //var rightForm = document.ParamInfo; var rightForm = document.iframeform; rightForm.orgId = "101"; rightForm.tblId = "DT_1PM1502";
+  ~ rightForm.tblSe = ""; rightForm.tblNm = ""; rightForm.action = "right_layout.do"; rightForm.target = "iframe_rightMenu"; rightForm.query = ""; rightForm.tabY
+  ~ abYn = ""; rightForm.submit(); } function fn_callIframeFunction(){ //document.getElementById("iframe_rightMenu").contentWindow.testFunc(); document.getElemen
+  ~ ction fn_callIframeFunction(){ //document.getElementById("iframe_rightMenu").contentWindow.testFunc(); document.getElementById("iframe_rightMenu").contentWindow.frames[0].fn_f
+  ~ unction(){ //document.getElementById("iframe_rightMenu").contentWindow.testFunc(); document.getElementById("iframe_rightMenu").contentWindow.frames[0].fn_fusionChartCtrl();
+  ~ Menu").contentWindow.testFunc(); document.getElementById("iframe_rightMenu").contentWindow.frames[0].fn_fusionChartCtrl(); } function fn_resizeNormal(){ var rightWid
+  ~ 0].fn_fusionChartCtrl(); } function fn_resizeNormal(){ var rightWidth = $(window).width()-$(".left_layout").width(); $("#centerMenu").css("width", rightWidth+"px");
+  ~ lang = "ko"; if(url.indexOf("nsist.nsi.go.kr") > -1){ url = url + "/nsistN/index.do"; } if(url.indexOf("kosis.kr") > -1){ if(lang.indexOf("en") > -1){ url
+  ~ f("en") > -1){ url = url + "/eng";//영문접근시 영문kosis로 이동 2023.02.27 } } window.open(url, "KOSIS", "width="+cw+",height="+ch +" , location=yes, status=yes, directories=
+  ~ $("#iframe_rightMenu").css("width", "100%"); //$(".right_layout", iframe_rightMenu.document).css("width", "98%"); //$("iframe[name='iframe_centerMenu']", iframe_rightMenu.
+  ~ ocument).css("width", "98%"); //$("iframe[name='iframe_centerMenu']", iframe_rightMenu.document).css("width", "100%"); $("#iframe_rightMenu").css("width", "100%
+  ~ -direction: column;"> <form id="ParamInfo" name="ParamInfo" action="/statHtml/statHtml.do?sso=ok&amp;returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3FtblId%3DDT_1
+  ~ atHtml/statHtml.do?sso=ok&amp;returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3FtblId%3DDT_1PM1502%26orgId%3D101%26" method="post"> <input type="hidden" id="jsonSt
+  ~ "/> <input id="viewSubKind" name="viewSubKind" type="hidden" value=""/> <input id="doAnal" name="doAnal" type="hidden" value="N"/> <input id="analType" name="analType" typ
+  ~ id="viewSubKind" name="viewSubKind" type="hidden" value=""/> <input id="doAnal" name="doAnal" type="hidden" value="N"/> <input id="analType" name="analType" type="hidden" val
+  ~ alue=""/> <input id="markType" name="markType" type="hidden" value=""/> <input id="docId" name="docId" type="hidden" value=""/> <input id="itmNm" name="itmNm" type="hidden
+  ~ <input id="markType" name="markType" type="hidden" value=""/> <input id="docId" name="docId" type="hidden" value=""/> <input id="itmNm" name="itmNm" type="hidden" value=""/>
+  ~ <form name="form_join" method="post" action="https://kosis.kr/oneid/cmmn/login/LoginView.do" > <input type="hidden" id="SYS_CD1" name="SYS_CD" value="K" /> <input type="
