@@ -1,16 +1,62 @@
-page: https://portal.saudicensus.sa/portal
-  unreachable: URLError: <urlopen error [Errno -2] Name or service not known>
-page: https://www.stats.gov.sa/en/
-  267,585 bytes
-  1 matching link(s)
-  - Saudi Census Statistics 2022
-    https://www.stats.gov.sa/statistics?index=119025&amp;subindex=127380
-page: https://www.paci.gov.kw/stat/
-  unreachable: URLError: <urlopen error timed out>
-page: https://www.csb.gov.kw/
-  141,718 bytes
-  2 matching link(s)
-  - موقع التعداد
-    https://census.csb.gov.kw/
-  - 
-    https://www.csb.gov.kw/images/census_img/1.png
+== pxweb https://data.1212.mn/api/v1/en/NSO/Population,%20household/1_Population,%20household
+  folder: 27 entries
+    t 'DT_NSO_0300_001V2.px': RESIDENT POPULATION IN MONGOLIA, by sex, single year of age, and by year by Sex, Age and Year (updated 2026-09-11T11:34:12)
+    t 'DT_NSO_0300_001V3.px': POPULATION OF MONGOLIA, by sex, single year of age, and by year by Sex, Age and Year (updated 2026-09-11T11:38:28)
+    t 'DT_NSO_0300_002V1.px': MID-YEAR TOTAL POPULATION, by aimags and the Capital, and by year by Region and Year (updated 2026-05-04T14:42:21)
+    t 'DT_NSO_0300_002V4.px': MID-YEAR RESIDENT POPULATION, by bag, khoroo, and by year by Region and Year (updated 2026-05-30T17:30:53)
+    t 'DT_NSO_0300_003V1.px': POPULATION OF MONGOLIA, by sex, age group, and by year by Sex, Age group and Year (updated 2026-04-10T11:59:13)
+    t 'DT_NSO_0300_004V1.px': POPULATION OF MONGOLIA, by region, aimags and the Capital, urban and rural by Total, Aimag and Year (updated 2026-04-22T10:34:08)
+    t 'DT_NSO_0300_004V5.px': RESIDENT POPULATION IN MONGOLIA, by location, bag, khoroo, and by year by Region, Location and Year (updated 2026-07-28T09:01:17)
+    t 'DT_NSO_0300_006V1.px': NUMBER OF HOUSEHOLDS, by location, aimags and the Capital, and by year by Location, Region and Year (updated 2026-04-11T21:56:02)
+    t 'DT_NSO_0300_006V2.px': NUMBER OF HOUSEHOLDS, by soum and discrict, and by year by Region and Year (updated 2026-04-11T21:56:09)
+    t 'DT_NSO_0300_006V5.px': NUMBER OF HOUSEHOLDS, by location, bag, khoroo, and by year by Location, Region and Year (updated 2026-06-15T11:12:24)
+    t 'DT_NSO_0300_007V1.px': NUMBER OF ORPHAN CHILDREN, by aimags and the Capital, and by year by Indicators, Region and Year (updated 2026-05-15T12:17:37)
+    t 'DT_NSO_0300_008V1.px': CHILD LIVING WITH ONE OF THE PARENTS, by aimags and the Capital, and by year by Indicators, Region and Year (updated 2026-05-15T12:17:48)
+    t 'DT_NSO_0300_010V1.px': NUMBER OF MOTHERS HEADED HOUSEHOLD, number of household members, by aimags and the Capital, and by year by Ind (updated 2025-10-06T17:54:57)
+    t 'DT_NSO_0300_011V3.px': HOUSEHOLDS WITN 4 AND MORE CHILDREN AGED BELOW 18 YEARS OLD, by aimags and the Capital, and by year by Indicat (updated 2026-05-15T12:18:03)
+    t 'DT_NSO_0300_014V1.px': Number of old aged living single headed households, by sex, by aimags and the Capital, and by year by Indicato (updated 2026-09-11T12:09:30)
+    t 'DT_NSO_0300_027V1.px': POPULATION OF MONGOLIA, by sex and urban/rural by Location and Year (updated 2026-09-11T16:46:47)
+    t 'DT_NSO_0300_033V1.px': NUMBER OF HOUSEHOLDS, by aimags and the Capital, and by year by Region and Year (updated 2026-04-11T21:56:22)
+    t 'DT_NSO_0300_034V1.px': DENSITY, by aimags and the Capital, and by year by Region and Year (updated 2026-04-16T18:41:13)
+    t 'DT_NSO_0300_034V2.px': DENSITY, by soum and discrict, and by year by Region and Year (updated 2026-05-18T16:32:59)
+    t 'DT_NSO_0300_035V1.px': DEPENDENCY RATIO, by aimags and the Capital, and by year by Indicator, Region and Year (updated 2026-05-06T19:43:52)
+    t 'DT_NSO_0300_035V2.px': DEPENDENCY RATIO, by soum and district, and by year by Indicator, Region and Year (updated 2026-05-06T19:43:59)
+    t 'DT_NSO_0300_040V1.px': POPULATION MIGRATION, by aimags and the Capital, and by year by Indicator, Region and Year (updated 2026-04-09T11:09:01)
+    t 'DT_NSO_0300_067V2.px': RESIDENT POPULATION IN MONGOLIA, by age group, bag, khoroo, and by year by Age group, Region and Year (updated 2026-05-12T10:38:32)
+    t 'DT_NSO_0300_068V2.px': RESIDENT POPULATION IN MONGOLIA, by sex, bag, khoroo, and by year by Sex, Region and Year (updated 2026-09-11T16:54:01)
+    t 'DT_NSO_0300_077V2.px': RESIDENT POPULTATION AGED 15 AND OVER, by age group, sex, marital status, and by census years by Marital statu (updated 2026-09-03T10:36:43)
+    t 'DT_NSO_3300_044V1.px': Single parent household, by aimags and the Capital, and by year by Total, Region and Year (updated 2025-12-08T09:42:13)
+    t 'DT_NSO_3300_045V1.px': MOTHERS WHO HEAD HOUSEHOLD WITH CHILDREN AGED BELOW 18 YEARS OLD, by aimags and the Capital, and by year by In (updated 2026-05-15T16:48:11)
+== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development/Population%20and%20household
+  folder: 26 entries
+    t 'DT_NSO_0300_002V4.px': MID-YEAR RESIDENT POPULATION, by soum and district, and by year by Region and Year (updated 2026-06-08T15:39:43)
+    t 'DT_NSO_0300_004V1.px': POPULATION OF MONGOLIA, by location, aimags and the Capital, and by year by Location, Region and Year (updated 2026-05-18T20:09:38)
+    t 'DT_NSO_0300_004V5.px': RESIDENT POPULATION IN MONGOLIA, by soum and district, and by year by Region, Location and Year (updated 2026-07-28T09:08:55)
+    t 'DT_NSO_0300_006V2.px': NUMBER OF HOUSEHOLDS, by soum and discrict, and by year by Region and Year (updated 2026-05-06T13:57:07)
+    t 'DT_NSO_0300_006V5.px': NUMBER OF HOUSEHOLDS, by location, soum and discrict, and by year by Location, Region and Year (updated 2026-05-13T15:50:41)
+    t 'DT_NSO_0300_007V1_1.px': NUMBER OF ORPHAN CHILDREN, by aimags and the Capital, and by year by Region and Year (updated 2026-05-15T16:40:42)
+    t 'DT_NSO_0300_008V1_2.px': CHILD LIVING WITH ONE OF THE PARENTS, by aimags and the Capital, and by year by Region and Year (updated 2026-05-15T16:36:20)
+    t 'DT_NSO_0300_013V4.px': NUMBER OF DEATHS, by sex, soum and district, and by year by Sex, Region and Year (updated 2026-05-13T16:22:15)
+    t 'DT_NSO_0300_013V6.px': NUMBER OF BIRTHS, by sex, soum and discrict, and by year by Sex, Region and Year (updated 2026-05-13T16:51:08)
+    t 'DT_NSO_0300_016V3.px': NUMBER OF DEATHS, by age group, soum and district, and by year by Age group, Region and Year (updated 2026-05-13T20:06:17)
+    t 'DT_NSO_0300_018V2.px': NUMBER OF MARRIAGES AND DIVORCES, by soum and district, and by year by Indicator, Region and Year (updated 2026-05-06T13:57:24)
+    t 'DT_NSO_0300_019V6.px': REGISTERED MARRIAGES, by sex, soum and district, and by year by Sex, Age group, Region and Year (updated 2026-05-15T10:24:24)
+    t 'DT_NSO_0300_020V1.px': MARRIAGES AND DIVORCES, by per 1000 population, aimags and the Capital, and by year by Marital status, Region  (updated 2026-05-18T19:45:29)
+    t 'DT_NSO_0300_023V4.px': NUMBER OF BIRTHS, by mother's age group, soum and discrict, and by year by Age group, Region and Year (updated 2026-05-14T19:18:03)
+    t 'DT_NSO_0300_024V2.px': DEATH PER 1000, by sex, soum and district, and by year by Sex, Region and Year (updated 2026-05-19T11:43:01)
+    t 'DT_NSO_0300_029V3.px': CRUDE BIRTH RATE, by soum and district, and by year by Sex, Region and Year (updated 2026-05-19T15:20:15)
+    t 'DT_NSO_0300_030V1.px': LIFE EXPECTANCY AT BIRTH, by sex, aimags and the Capital, and by year by Sex, Region and Year (updated 2026-05-29T21:25:27)
+    t 'DT_NSO_0300_032V3.px': SEX RATIO AT BIRTH, by soum and discrict, and by year by Region and Year (updated 2026-05-14T11:29:31)
+    t 'DT_NSO_0300_034V2.px': DENSITY, by soum and discrict, and by year by Region and Year (updated 2026-05-18T16:53:21)
+    t 'DT_NSO_0300_035V2.px': DEPENDENCY RATIO, by soum and district, and by year by Indicator, Region and Year (updated 2026-05-18T12:11:38)
+    t 'DT_NSO_0300_038V4.px': WOMEN WHO GAVE BIRTH, by mother's educational level, soum and district, and by year by Education level, Region (updated 2026-05-06T13:57:36)
+    t 'DT_NSO_0300_040V1.px': POPULATION MIGRATION, by aimags and the Capital, and by year by Indicator, Region and Year (updated 2026-04-15T21:16:14)
+    t 'DT_NSO_0300_051V3.px': WOMEN WHO GAVE BIRTH, by marital status, soum and district, and by year by Indicator, Region and Year (updated 2026-05-14T12:01:53)
+    t 'DT_NSO_0300_052V2.px': ADOPTION, by soum and district, and by year by Region and Year (updated 2026-05-18T10:56:21)
+    t 'DT_NSO_0300_067V2.px': RESIDENT POPULATION IN MONGOLIA, by age group, soum and district, and by year by Age group, Region and Year (updated 2026-05-25T10:08:25)
+    t 'DT_NSO_0300_068V2.px': RESIDENT POPULATION IN MONGOLIA, by sex, by soum and district, and by year by Sex, Region and Year (updated 2026-05-19T18:54:31)
+== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development/Monasteries,%20Temples%20and%20Churches
+  folder: 3 entries
+    t 'DT_NSO_2003_001V1.px': TEMPLES AND CHURCHES, by type of religion, aimags and the Capital, and by year by Type of religion, Region and (updated 2026-04-09T17:04:20)
+    t 'DT_NSO_2003_002V1.px': MONKS AND MISSIONARIES, by type of religion, aimags and the Capital, and by year by Type of religion, Region a (updated 2026-05-18T15:13:43)
+    t 'DT_NSO_2003_003V1.px': STUDENTS STUDYING IN RELIGIOUS SCHOOLS AND COLLEGES, by type of religion, aimags and the Capital, and by year  (updated 2026-05-18T16:09:10)
