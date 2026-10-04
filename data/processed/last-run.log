@@ -1,33 +1,48 @@
-== https://www.cis.es/documents/20117/1559686/Es3453_mapa-html.html
-  HTTP 200; text/html; charset=UTF-8; 2,034 bytes; final https://www.cis.es/documents/20117/1559686/Es3453_mapa-html.html; disposition inline; filename="Es3453_mapa-html.html"
-  5 lines, 1 with ['religi', 'provincia', 'araba', 'bizkaia', 'gipuzkoa', 'coru', 'lugo', 'ourense', 'pontevedra']
-    | Resultados por provincias
-  0 links with ['.html', '.pdf', '.htm']
-== https://www.cis.es/documents/20117/1544721/es3402marhtml_enlace.html
-  HTTP 200; text/html; charset=UTF-8; 1,829 bytes; final https://www.cis.es/documents/20117/1544721/es3402marhtml_enlace.html; disposition inline; filename="es3402marhtml_enlace.html"
-  8 lines, 0 with ['religi', 'provincia', 'araba', 'bizkaia', 'gipuzkoa', 'coru', 'lugo', 'ourense', 'pontevedra']
-  3 links with ['.html', '.pdf', '.htm']
-    -> /cis/opencms/-Archivos/Marginales/3400_3419/3402/Mapas/EA2023pre_mapaCCAAmarHTML.html  [Comunidades autónomas]
-    -> /cis/opencms/-Archivos/Marginales/3400_3419/3402/Mapas/EM2023pre_mapaMUNmarHTML_enlace.html  [Municipios]
-    -> /cis/opencms/-Archivos/Marginales/3400_3419/3402/Marginales/es3402mar_TotalMUN.html  [Muestra Total]
-== https://www.cis.es/documents/20117/1544721/es3402marpdf_enlacehtml.html
-  HTTP 200; text/html; charset=UTF-8; 1,824 bytes; final https://www.cis.es/documents/20117/1544721/es3402marpdf_enlacehtml.html; disposition inline; filename="es3402marpdf_enlacehtml.html"
-  8 lines, 0 with ['religi', 'provincia', 'araba', 'bizkaia', 'gipuzkoa', 'coru', 'lugo', 'ourense', 'pontevedra']
-  3 links with ['.html', '.pdf', '.htm']
-    -> /cis/opencms/-Archivos/Marginales/3400_3419/3402/Mapas/EA2023pre_mapaCCAAmarPDF.html  [Comunidades autónomas]
-    -> /cis/opencms/-Archivos/Marginales/3400_3419/3402/Mapas/EM2023pre_mapaMUNmarpdf_enlace.html  [Municipios]
-    -> /cis/opencms/-Archivos/Marginales/3400_3419/3402/Marginales/es3402mar_TotalMUN.pdf  [Muestra Total]
-== https://www.cis.es/documents/20117/1559601/es3448mar-html.html
-  HTTP 200; text/html; charset=UTF-8; 195,214 bytes; final https://www.cis.es/documents/20117/1559601/es3448mar-html.html; disposition inline; filename="es3448mar-html.html"
-  1642 lines, 2 with ['religi', 'provincia', 'araba', 'bizkaia', 'gipuzkoa', 'coru', 'lugo', 'ourense', 'pontevedra']
-    | ¿Cómo se define Ud. en materia religiosa: católico/a practicante, católico/a no practicante, creyente de otra religión, agnóstico/a, indiferente o no creyente, o ateo/a?
-    | Creyente de otra religión
-  0 links with ['.html', '.pdf', '.htm']
-== https://www.cis.es/documents/20117/1559046/es3437mar-htm.html
-  HTTP 200; text/html; charset=UTF-8; 197,164 bytes; final https://www.cis.es/documents/20117/1559046/es3437mar-htm.html; disposition inline; filename="es3437mar-htm.html"
-  1647 lines, 4 with ['religi', 'provincia', 'araba', 'bizkaia', 'gipuzkoa', 'coru', 'lugo', 'ourense', 'pontevedra']
-    | ¿Cómo se define Ud. en materia religiosa: católico/a practicante, católico/a no practicante, creyente de otra religión, agnóstico/a, indiferente o no creyente, o ateo/a?
-    | Creyente de otra religión
-    | SÓLO A QUIENES SE DEFINEN EN MATERIA RELIGIOSA COMO CATÓLICOS/AS O CREYENTES DE OTRA RELIGIÓN
-    | ¿Con qué frecuencia asiste Ud. a misa u otros oficios religiosos, sin contar las ocasiones relacionadas con ceremonias de tipo social, por ejemplo, bodas, comuniones o funerales?
-  0 links with ['.html', '.pdf', '.htm']
+  HTTP 200; application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; 1,512,065 bytes; final https://www.cis.es/documents/20117/13765729/3545-multi.xlsx
+== https://www.cis.es/documents/20117/13765729/3545-multi.xlsx
+  1,512,065 bytes, 24 sheets: Contenidos | Ficha técnica | Tabla ponderaciones | Notas | Resultados_Castilla y León | Resultados_Ávila | Resultados_Burgos | Resultados_León | Resultados_Palencia | Resultados_Salamanca | Resultados_Segovia | Resultados_Soria | Resultados_Valladolid | Resultados_Zamora | Sexo | Edad | Nivel de estudios | Tamaño de municipio | RV EA22 | RV EG23 | Ocupación | Clase social | Escala de ideología | Religiosidad
+  -- sheet 'Resultados_Castilla y León': 1 rows match /materia.religiosa|lengua|idioma/; header and matches
+    r2:  | 3545/0 PREELECTORAL ELEC
+    r3:  | INFORME DE MARGINALES
+    r4: Pregunta A1
+    r5: Sexo:
+    r6: Hombre | 48.935401248379065
+    r669: ¿Cómo se define Ud. en m
+    r670: Católico/a practicante | 26.42519188972316
+    r671: Católico/a no practicant | 36.186863927976866
+    r672: Creyente de otra religió | 2.0321634333855276
+    r673: Agnóstico/a (no niegan l | 9.536245840139554
+    r674: Indiferente, no creyente | 10.639679684748835
+    r675: Ateo/a (niegan la existe | 13.117468022452778
+    r676: N.C. | 2.0623872015732156
+    r677: (N) | 8039
+  -- sheet 'Resultados_Ávila': 1 rows match /materia.religiosa|lengua|idioma/; header and matches
+    r2:  | 3545/0 PREELECTORAL ELEC
+    r3:  | Provincia de Ávila
+    r4:  | INFORME DE MARGINALES
+    r5: Pregunta A1
+    r6: Sexo:
+    r596: ¿Cómo se define Ud. en m
+    r597: Católico/a practicante | 32.42768219726812
+    r598: Católico/a no practicant | 35.23943006279875
+    r599: Creyente de otra religió | 1.4882811149620132
+    r600: Agnóstico/a (no niegan l | 7.576030782981462
+    r601: Indiferente, no creyente | 8.505394127556572
+    r602: Ateo/a (niegan la existe | 12.586479059143192
+    r603: N.C. | 2.1767026552898305
+    r604: (N) | 587
+  -- sheet 'Resultados_Burgos': 1 rows match /materia.religiosa|lengua|idioma/; header and matches
+    r2:  | 3545/0 PREELECTORAL ELEC
+    r3:  | Provincia de Burgos
+    r4:  | INFORME DE MARGINALES
+    r5: Pregunta A1
+    r6: Sexo:
+    r608: ¿Cómo se define Ud. en m
+    r609: Católico/a practicante | 26.637598834713234
+    r610: Católico/a no practicant | 35.130343974958095
+    r611: Creyente de otra religió | 2.260572303661745
+    r612: Agnóstico/a (no niegan l | 10.154979100031309
+    r613: Indiferente, no creyente | 10.166710665531934
+    r614: Ateo/a (niegan la existe | 13.837453405698312
+    r615: N.C. | 1.8123417154054564
+    r616: (N) | 1044
