@@ -87,6 +87,30 @@ def hdx_resource(dataset: str, pattern: str) -> str:
     return str(found[0]["url"])
 
 
+def ods_records(base: str, dataset: str, *, limit: int = 100) -> list[dict[str, Any]]:
+    """Every record of one OpenDataSoft dataset (Explore API v2.1), paged.
+
+    Bahrain's data.gov.bh and Qatar's data.gov.qa publish their census
+    tables this way. The count the API reports is checked against what was
+    read, so a page lost on the way stops the run.
+    """
+    import urllib.parse
+    out: list[dict[str, Any]] = []
+    total = None
+    while total is None or len(out) < total:
+        url = (f"{base.rstrip('/')}/api/explore/v2.1/catalog/datasets/{dataset}/records?"
+               + urllib.parse.urlencode({"limit": limit, "offset": len(out)}))
+        page = http_json(url, cache=False)
+        total = int(page.get("total_count") or 0)
+        got = page.get("results") or []
+        if not got:
+            break
+        out.extend({k: v for k, v in r.items() if k not in ("geo_shape", "geo_point")}
+                   for r in got)
+    check(len(out) == total, f"{dataset}: read {len(out)} records of {total}")
+    return out
+
+
 def workbook(url: str) -> dict[str, list[list[Any]]]:
     """Every sheet of an .xlsx as rows of values."""
     import openpyxl
