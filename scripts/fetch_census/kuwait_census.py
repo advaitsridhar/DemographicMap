@@ -283,7 +283,9 @@ def table52(rows: list[list[Any]], govs: dict[str, dict[str, float]]
 
 
 def nationality_shares(kuwaiti: float, other: float, total: float) -> list[dict[str, Any]]:
-    return shares({"Kuwaiti": kuwaiti, "Foreign nationals": other}, total=total)
+    """Kuwaitis and everyone else; a group nobody in the area holds is left out."""
+    counts = {"Kuwaiti": kuwaiti, "Foreign nationals": other}
+    return shares({k: v for k, v in counts.items() if v}, total=total)
 
 
 def build(t1: list[list[Any]], t2: list[list[Any]], t6: list[list[Any]], t52: list[list[Any]],
