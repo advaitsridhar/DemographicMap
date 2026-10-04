@@ -7600,6 +7600,112 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
   },
   {
+    "id": "THA-CODPSAGE-admin2-bangsai-473539",
+    "level": "admin2",
+    "name": "Bang Sai",
+    "parent": "THA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 43.0,
+      "unit": "years",
+      "year": 2023,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
+    },
+    "sex_ratio": {
+      "value": 99.4,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023",
+        "url": "https://data.humdata.org/dataset/cod-ps-tha",
+        "year": 2023,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "THA",
+    "match_by": "shape_id",
+    "shape_id": "78962969B26505935473539",
+    "aliases": [
+      "Bang Sai (1)"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2023: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
+  },
+  {
+    "id": "THA-CODPSAGE-admin2-bangsai-347556",
+    "level": "admin2",
+    "name": "Bang Sai",
+    "parent": "THA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 45.1,
+      "unit": "years",
+      "year": 2023,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
+    },
+    "sex_ratio": {
+      "value": 96.4,
+      "unit": "males_per_100_females",
+      "year": 2023,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023",
+        "url": "https://data.humdata.org/dataset/cod-ps-tha",
+        "year": 2023,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "THA",
+    "match_by": "shape_id",
+    "shape_id": "78962969B611560347556",
+    "aliases": [
+      "Bang Sai (2)"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2023: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
+  },
+  {
     "id": "THA-CODPSAGE-admin2-bangsaothong-499709",
     "level": "admin2",
     "name": "Bang Sao Thong",
@@ -50250,6 +50356,112 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
   },
   {
+    "id": "LAO-CODPSAGE-admin1-bolikhamsai-059818",
+    "level": "admin1",
+    "name": "Bolikhamsai",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B52686694059818",
+    "aliases": [
+      "Bolikhamxai"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-champasak-251916",
+    "level": "admin1",
+    "name": "Champasak",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 26.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 97.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B26227132251916",
+    "aliases": [
+      "Champasack"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
     "id": "LAO-CODPSAGE-admin1-houaphan-540000",
     "level": "admin1",
     "name": "Houaphan",
@@ -50296,6 +50508,218 @@
     "country": "LAO",
     "match_by": "shape_id",
     "shape_id": "31783359B1064119540000",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-khammouane-126582",
+    "level": "admin1",
+    "name": "Khammouane",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 25.9,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 100.5,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B32687543126582",
+    "aliases": [
+      "Khammouan"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-luangnamtha-933928",
+    "level": "admin1",
+    "name": "Luang Namtha",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 98.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B96178998933928",
+    "aliases": [
+      "Louangnamtha"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-luangprabang-946490",
+    "level": "admin1",
+    "name": "Luang Prabang",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 101.0,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B8337285946490",
+    "aliases": [
+      "Louangphabang"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-oudomxay-510083",
+    "level": "admin1",
+    "name": "Oudomxay",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 23.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 98.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B43569910510083",
+    "aliases": [
+      "Oudomxai"
+    ],
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
   },
@@ -50546,6 +50970,218 @@
     "country": "LAO",
     "match_by": "shape_id",
     "shape_id": "31783359B97264007138888",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-xaignabouli-027275",
+    "level": "admin1",
+    "name": "Xaignabouli",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.3,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 103.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B80437097027275",
+    "aliases": [
+      "Xaignabouly"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-xaisomboun-896223",
+    "level": "admin1",
+    "name": "Xaisomboun",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 21.8,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 109.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B37921942896223",
+    "aliases": [
+      "Xaisomboon"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-xekong-362620",
+    "level": "admin1",
+    "name": "Xekong",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 21.1,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 104.3,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B64397225362620",
+    "aliases": [
+      "Sekong"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin1-xiangkhouang-024719",
+    "level": "admin1",
+    "name": "Xiangkhouang",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 23.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "31783359B28405124024719",
+    "aliases": [
+      "Xiengkhouang"
+    ],
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
   },
@@ -51096,56 +51732,6 @@
     "country": "LAO",
     "match_by": "shape_id",
     "shape_id": "54806243B82377713639337",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
-    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
-  },
-  {
-    "id": "LAO-CODPSAGE-admin2-champasack-619641",
-    "level": "admin2",
-    "name": "Champasack",
-    "parent": "LAO",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "value": 27.4,
-      "unit": "years",
-      "year": 2024,
-      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
-    },
-    "sex_ratio": {
-      "value": 92.7,
-      "unit": "males_per_100_females",
-      "year": 2024,
-      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "median_age/sex_ratio",
-        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
-        "url": "https://data.humdata.org/dataset/cod-ps-lao",
-        "year": 2024,
-        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
-      }
-    ],
-    "country": "LAO",
-    "match_by": "shape_id",
-    "shape_id": "54806243B29706107619641",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
   },
@@ -55050,6 +55636,106 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
   },
   {
+    "id": "LAO-CODPSAGE-admin2-phonthong-908614",
+    "level": "admin2",
+    "name": "Phonthong",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.5,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 95.1,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "54806243B67434402908614",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
+    "id": "LAO-CODPSAGE-admin2-phonthong-317737",
+    "level": "admin2",
+    "name": "Phonthong",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 21.6,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 101.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "54806243B14812805317737",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
     "id": "LAO-CODPSAGE-admin2-phonxay-655609",
     "level": "admin2",
     "name": "Phonxay",
@@ -56600,6 +57286,56 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
   },
   {
+    "id": "LAO-CODPSAGE-admin2-viengkham-673591",
+    "level": "admin2",
+    "name": "Viengkham",
+    "parent": "LAO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 22.4,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 98.9,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-lao",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "LAO",
+    "match_by": "shape_id",
+    "shape_id": "54806243B97421577673591",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
+  },
+  {
     "id": "LAO-CODPSAGE-admin2-viengkham-433294",
     "level": "admin2",
     "name": "Viengkham",
@@ -57800,6 +58536,59 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.\"."
   },
   {
+    "id": "KHM-CODPSAGE-admin1-banteymeanchey-187871",
+    "level": "admin1",
+    "name": "Bantey Meanchey",
+    "parent": "KHM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 99.6,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-khm",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "KHM",
+    "match_by": "shape_id",
+    "shape_id": "37992800B60639331187871",
+    "aliases": [
+      "Banteay Meanchey"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\"."
+  },
+  {
     "id": "KHM-CODPSAGE-admin1-battambang-497621",
     "level": "admin1",
     "name": "Battambang",
@@ -58700,6 +59489,59 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\"."
   },
   {
+    "id": "KHM-CODPSAGE-admin1-ratanakiriprovince-085463",
+    "level": "admin1",
+    "name": "Ratanakiri Province",
+    "parent": "KHM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 23.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 103.4,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-khm",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "KHM",
+    "match_by": "shape_id",
+    "shape_id": "37992800B4485162085463",
+    "aliases": [
+      "Ratanak Kiri"
+    ],
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\"."
+  },
+  {
     "id": "KHM-CODPSAGE-admin1-siemreap-629120",
     "level": "admin1",
     "name": "Siem Reap",
@@ -58896,6 +59738,59 @@
     "country": "KHM",
     "match_by": "shape_id",
     "shape_id": "37992800B77204168518017",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\".",
+    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\"."
+  },
+  {
+    "id": "KHM-CODPSAGE-admin1-tbongkhmum-566901",
+    "level": "admin1",
+    "name": "Tbong Khmum",
+    "parent": "KHM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.2,
+      "unit": "years",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024"
+    },
+    "sex_ratio": {
+      "value": 95.8,
+      "unit": "males_per_100_females",
+      "year": 2024,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-khm), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-khm",
+        "year": 2024,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
+      }
+    ],
+    "country": "KHM",
+    "match_by": "shape_id",
+    "shape_id": "37992800B90014860566901",
+    "aliases": [
+      "Tboung Khmum"
+    ],
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2024: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\".",
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2024: a projection, not a count. The dataset gives its method as \"The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method\"."
   }
