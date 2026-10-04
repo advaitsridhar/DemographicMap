@@ -83,9 +83,19 @@ def snippets(url: str, pattern: str, width: int = 160, limit: int = 30) -> None:
         print("    ..." + " ".join(raw[max(0, at - width):at + width].split()) + "...")
 
 
-def correspondence(src: str, tgt: str, year: int) -> None:
+def correspondence(src: str, tgt: str, year: int, langs: tuple[str, ...] = ("fi",)) -> None:
     """A classification key, compactly: each target and the sources in it."""
-    body = get_json(CLASS.format(src=src, tgt=tgt, y=year))
+    body = None
+    for lang in langs:
+        try:
+            body = get_json(CLASS.format(src=src, tgt=tgt, y=year).replace("lang=fi",
+                                                                          f"lang={lang}"))
+            break
+        except Exception as exc:
+            print(f"  lang={lang}: {str(exc)[:160]}")
+            time.sleep(5)
+    if body is None:
+        return
     groups: dict[str, list[str]] = defaultdict(list)
     names: dict[str, str] = {}
     for entry in body:
@@ -249,6 +259,16 @@ PROBES: dict[str, Any] = {
                                   r"statistik|pdf|xlsx|medlem|kommun|siffror", limit=80),
     "c2_swe_forskning": lambda: links("https://www.svenskakyrkan.se/forskning",
                                       r"statistik|pdf|xlsx|medlem|kommun|siffror", limit=80),
+    # Round c3: the classification keys again (round c2 had HTTP 500 for all
+    # four), and the Church of Sweden's research unit's statistics page.
+    "c3_fin_keys": lambda: [correspondence(s, t, y, ("fi", "en", "sv"))
+                            for s, t, y in (("kunta", "seutukunta", 2020),
+                                            ("kunta", "maakunta", 2020),
+                                            ("kunta", "seutukunta", 2026),
+                                            ("kunta", "maakunta", 2026))],
+    "c3_swe_research": lambda: links("https://www.svenskakyrkan.se/forskning/statistik",
+                                     r"statistik|pdf|xlsx|medlem|kommun|siffror|folkm",
+                                     limit=120),
 }
 
 
