@@ -324,7 +324,9 @@ def read_language_table(rows: list[list[Any]], county: str) -> dict[str, dict[st
     table: dict[str, dict[str, Any]] = {}
     for row in rows[block + 1:]:
         name = compact(row[label_col]) if label_col < len(row) else ""
-        if not name or name.startswith("註"):
+        # The block ends at a note, a blank row or the next block's head
+        # (按性別分 follows on the same sheet in some counties' tables).
+        if not name or name.startswith(("註", "按")) or compact(row[base_col]) == "":
             break
         main = {label: share(row[c]) for label, c in zip(LANGUAGE_COLUMNS, cols)}
         if sign is not None:
@@ -355,6 +357,7 @@ def fetch_language() -> dict[str, dict[str, Any]]:
 
     import openpyxl
     out: dict[str, dict[str, Any]] = {}
+    failed: list[str] = []
     for county, page in CENSUS_REPORTS.items():
         url = CENSUS_TABLE.format(page=page)
         blob = http_get(url, binary=True, cache=False, retries=2, timeout=120, aia=True)
@@ -363,12 +366,21 @@ def fetch_language() -> dict[str, dict[str, Any]]:
         sheets = [[list(r) for r in ws.iter_rows(values_only=True)] for ws in book.worksheets]
         rows = next((rows for rows in sheets
                      if any(BLOCK in [compact(c) for c in row] for row in rows)), None)
-        if rows is None:
-            raise SystemExit(f"taiwan_townships: {county}'s Table 6 has no sheet by township")
-        table = read_language_table(rows, county)
+        try:
+            if rows is None:
+                raise SystemExit(f"taiwan_townships: {county}'s Table 6 has no sheet by "
+                                 "township")
+            table = read_language_table(rows, county)
+        except SystemExit as exc:
+            # Every county is read before refusing, so one run names every
+            # table that reads otherwise than expected.
+            failed.append(str(exc))
+            continue
         out.update(table)
         log(f"  {county}: {len(table)} townships, {sum(t['base'] for t in table.values()):,} "
             "residents 6+")
+    if failed:
+        raise SystemExit("\n".join(failed))
     return out
 
 

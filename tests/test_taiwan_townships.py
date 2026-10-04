@@ -278,6 +278,20 @@ class Language(unittest.TestCase):
         with self.assertRaises(SystemExit):
             tt.read_language_table(table6("臺北市", [COUNTY, BANQIAO, WULAI]), "新北市")
 
+    def test_the_block_ends_at_the_next_block(self):
+        # Keelung's sheet runs straight on into 按性別分 with no note between.
+        rows = table6("新北市", [COUNTY, BANQIAO, WULAI])
+        note = rows.pop()
+        width = len(note)
+        head = [None] * width
+        head[1] = "按性別分"
+        total = [None] * width
+        total[1], total[2] = "總計", 400
+        for j, v in enumerate(COUNTY[2]):
+            total[3 + j] = v
+        table = tt.read_language_table(rows + [head, total, note], "新北市")
+        self.assertEqual(sorted(table), ["新北市板橋區", "新北市烏來區"])
+
     def test_the_rows(self):
         rows = tt.language_rows({"Mandarin": 83.1, "Taiwanese Hokkien": 11.9, "Hakka": 0.1,
                                  "Taiwanese indigenous languages": 4.9, "Other languages": 0})
