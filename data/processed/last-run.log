@@ -1,22 +1,326 @@
-
-## https://web.archive.org/web/20200621204358id_/https://www.cbs.nl/-/media/_excel/2016/51/kerkelijke-gezindte-en-kerkbezoek-naar-gemeenten.xlsx
-   HTTP 200, 70,712 bytes, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet attachment; filename="Kerkelijke gezindte en kerkbezoek naar gemeenten.xlsx"
-   2 sheets: Blad1 | Blad3
-   -- sheet 'Blad1': 396 rows x 18 cols
-     r0: Kerkelijke gezindte en ker |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-     r1:  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-     r2:  |  |  | Kerkbezoek, minimaal 1x pe |  | Geen kerkelijke gezindte | Wel kerkelijke gezindte | waarvan |  |  |  |  |  |  |  |  |  | 
-     r3:  |  |  |  |  |  |  | Rooms-katholiek | Protestants | waarvan |  |  | Islam | Joods | Hindoe | Boeddhist | anders | 
-     r4:  |  |  |  |  |  |  |  |  | Nederlands hervormd | Gereformeerde kerken | Protestantse Kerk Nederlan |  |  |  |  |  | 
-     r5:  | Nederland totaal |  | 16.85 |  | 47.93 | 52.07 | 25.49 | 16.27 | 7.04 | 3.46 | 5.77 | 4.77 | 0.12 | 0.62 | 0.37 | 4.44 | 
-     r6: GM0003 | Appingedam | 0003 | 11.91 |  | 55.17 | 44.83 | 3.71 | 28.880000000000003 | 10.24 | 8.29 | 10.35 | 3.85 | 0 | 0 | 0.28 | 8.1 | 
-     r7: GM0005 | Bedum | 0005 | 38 |  | 48.17 | 51.83 | 3.67 | 45.739999999999995 | 3.97 | 22.16 | 19.61 | 0.56 | 0 | 0 | 0 | 1.86 | 
-     r8: GM0007 | Bellingwedde | 0007 | 7.09 |  | 69.2 | 30.799999999999997 | 7.55 | 16.75 | 15.33 | 0.34 | 1.08 | 0.41 | 0 | 0 | 0.19 | 5.91 | 
-     r9: GM0009 | Ten Boer | 0009 | 19.06 |  | 63.01 | 36.99 | 1.09 | 32.989999999999995 | 9.3 | 15.28 | 8.41 | 0.54 | 0 | 0 | 0 | 2.36 | 
-     r10: GM0010 | Delfzijl | 0010 | 14.79 |  | 67.48 | 32.519999999999996 | 4.74 | 21 | 6.44 | 3.58 | 10.98 | 1.6 | 0 | 0.08 | 0.11 | 4.99 | 
-     r11: GM0014 | Groningen | 0014 | 10.92 |  | 71.53 | 28.47 | 5.95 | 13.690000000000001 | 3.59 | 5.16 | 4.94 | 2.43 | 0.09 | 0.46 | 0.47 | 5.39 | 
-   -- sheet 'Blad3': 4 rows x 1 cols
-     r0: Toelichting op de tabel
-     r1: De tabel is gebaseerd op d
-     r2: De cijfers hebben betrekki
-     r3: In totaal zijn de vragen d
+== https://www.cis.es/documents/20117/1557011/FT3263.pdf
+  HTTP 200; application/pdf; 109,919 bytes
+  2 pages, 690 lines
+    p1| ESTUDIO CIS nº
+    p1| 3
+    p1| 2
+    p1| 63
+    p1| MACROBARÓMETRO DE
+    p1| OCTUBRE
+    p1| 2019. P
+    p1| REELECTORAL ELECCIONES GENERALES 20
+    p1| 1
+    p1| 9
+    p1| FICHA TÉCNICA
+    p1| Ámbito:
+    p1| Nacional
+    p1| .
+    p1| Universo:
+    p1| Población
+    p1| con derecho a voto en elecciones generales y residente en España
+    p1| .
+    p1| Tamaño de la muestra:
+    p1| Diseñada:
+    p1| 1
+    p1| 8
+    p1| .
+    p1| 00
+    p1| 0
+    p1| entrevistas.
+    p1| Realizada:
+    p1| 1
+    p1| 7
+    p1| .
+    p1| 650
+    p1| entrevistas.
+    p1| La distribución provincial se incluye en el Cuadro 1, al final de esta ficha técnica.
+    p1| Afijación:
+    p1| No proporcional.
+    p1| Ponderación:
+    p1| Para tratar la muestra en su conjunto es necesaria la aplicación de los
+    p1| coeficientes de ponderación que figuran en el
+    p1| Cuadro 1, al final de esta ficha técnica.
+    p1| Puntos de Muestreo:
+    p1| 1.
+    p1| 0
+    p1| 85
+    p1| municipios
+    p1| en
+    p1| 5
+    p1| 0
+    p1| provincias
+    p1| y las c
+    p1| iudades
+    p1| a
+    p1| utónomas de Ceuta y Melilla
+    p1| .
+    p1| La distribución provincial se incluye en el Cuadro 1, al final de
+    p1| esta ficha técnica.
+    p1| Procedimiento de muestreo:
+    p1| Polietápico, estratificado por conglomerados, con selección de las unidades primarias de muestreo (municipios) y de las
+    p1| unidades secundarias (secciones) de forma aleatoria proporcional, y de las unidades últ
+    p1| imas (individuos) por rutas
+    p1| aleatorias y cuotas de sexo y edad.
+    p1| Los estratos se han formado por el cruce de las
+    p1| 50 provincias
+    p1| y las dos
+    p1| c
+    p1| iudades
+    p1| a
+    p1| utónomas
+    p1| con el tamaño de hábitat,
+    p1| dividido en 7 categorías: menor o igual a 2.000 habitantes; de 2
+    p1| .
+    p1| 001 a 10.0
+    p1| 00; de 10.001 a 50.000; de 50.001 a 100.000;
+    p1| de 100.001 a 400.000; de 400.001 a
+    p1| 1.000.000;
+    p1| y más de 1.000.000 de habitantes.
+    p1| Los cuestionarios se han aplicado mediante entrevista personal en los domicilios.
+    p1| Error muestral:
+    p1| Para un nivel de c
+    p1| onfianza del
+    p1| 95,5% (dos sigmas)
+    p1| y P = Q, el error es de
+    p1| ±
+    p1| 0
+    p1| ,
+    p1| 7
+    p1| 5
+    p1| %
+    p1| para el conjunto de la muestra y en el
+    p1| supuest
+    p1| o de muestreo aleatorio simple.
+    p1| Los errores correspondientes a cada una de las provincias se encuentran en el Cuadro 1, al final de esta ficha técnica.
+    p1| Fecha
+    p1| de realización:
+    p1| Del
+    p1| 2
+    p1| 1
+    p1| de septiembre
+    p1| al
+    p1| 1
+    p1| 3
+    p1| de
+    p1| octubre
+    p1| de 20
+    p1| 1
+    p1| 9
+    p1| .
+    p2| Cuadro 1.
+    p2| -
+    p2| Puntos de muestreo, entrevistas y coeficientes de ponderación
+    p2| Núm
+    p2| .
+    p2| m
+    p2| unicipios
+    p2| Entrevistas
+    p2| Ponderación
+    p2| Cód
+    p2| Co
+    p2| munidad autónoma
+    p2| Cód
+    p2| Provincia
+    p2| Diseño
+    p2| Real
+    p2| Diseñada
+    p2| Realizada
+    p2| Error (%)
+    p2| Nacional
+    p2| Autonómica
+    p2| 1
+    p2| Andalucía
+    p2| 187
+    p2| 187
+    p2| 3.034
+    p2| 3.019
+    p2| 1,8
+    p2| 4
+    p2| Almería
+    p2| 17
+    p2| 17
+    p2| 300
+    p2| 299
+    p2| 5,8
+    p2| 0,7798
+    p2| 0,7348
+    p2| 11
+    p2| Cádiz
+    p2| 20
+    p2| 20
+    p2| 399
+    p2| 398
+    p2| 5,0
+    p2| 1,2377
+    p2| 1,1663
+    p2| 14
+    p2| Córdoba
+    p2| 22
+    p2| 22
+    p2| 352
+    p2| 352
+    p2| 5,3
+    p2| 0,9059
+== https://www.cis.es/documents/20117/1556866/FT3245pdf.pdf
+  HTTP 200; application/pdf; 111,540 bytes
+  3 pages, 521 lines
+    p1| ESTUDIO CIS nº
+    p1| 3
+    p1| 2
+    p1| 4
+    p1| 5
+    p1| MACROBARÓMETRO DE ABRIL 2019. PREELECTORAL ELECCIONES AL PARLAMENTO EUROPEO,
+    p1| AUTONÓMICAS Y MUNICIPALES 2019
+    p1| FICHA TÉCNICA
+    p1| Ámbito:
+    p1| Nacional
+    p1| .
+    p1| Universo:
+    p1| Población
+    p1| con derecho a voto
+    p1| y residente en España
+    p1| .
+    p1| Tamaño de la muestra:
+    p1| Diseñada:
+    p1| 1
+    p1| 8
+    p1| .
+    p1| 065
+    p1| entrevistas.
+    p1| Realizada:
+    p1| 1
+    p1| 7
+    p1| .
+    p1| 641
+    p1| entrevistas
+    p1| .
+    p1| La distribución se incluye en el Cuadro 1, al final de esta ficha técnica.
+    p1| Hay que tener en cuenta que en el cuestionario hay cuatro bloques distintos: el primero corresponde a la población
+    p1| encuestada con derecho a voto en las elecciones generales (17.398); el segundo, a l
+    p1| a población encuestada
+    p1| con
+    p1| derecho a voto en las elecciones
+    p1| al Parlamento Europeo
+    p1| (17.576); el tercero, a l
+    p1| a población encuestada
+    p1| con derecho
+    p1| a voto en las elecciones municipales (17.641); y el cuarto corresponde a l
+    p1| a población encuestada
+    p1| con derecho a
+    p1| voto en las doce
+    p1| c
+    p1| omunidades
+    p1| a
+    p1| utónomas en las que se celebran elecciones (7.754).
+    p1| Afijación:
+    p1| No proporcional.
+    p1| Ponderación:
+    p1| Par
+    p1| a tratar la muestra en su conjunto
+    p1| , por comunidades autónomas y por provincias,
+    p1| es necesaria la aplicación de
+    p1| los coeficientes de ponderación
+    p1| -
+    p1| PESO, PESOC
+    p1| CAA
+    p1| Y PESOPR
+    p1| OV
+    p1| -
+    p1| que figuran en las posiciones finales del
+    p1| fichero de microdatos
+    p1| .
+    p1| Puntos de Muestreo:
+    p1| 8
+    p1| 2
+    p1| 3
+    p1| municipios
+    p1| ,
+    p1| 5
+    p1| 0
+    p1| provincias
+    p1| y las c
+    p1| iudades
+    p1| a
+    p1| utónomas de Ceuta y Melilla
+    p1| .
+    p1| La distribución se incluye en el Cuadro 1, al final de esta ficha técnica.
+    p2| Procedimiento de muestreo:
+    p2| Polietápico, estratificado por conglomerados, con selección de las
+    p2| unidades primarias de muestreo (municipios) y
+    p2| de las unidades secundarias (secciones) de forma aleatoria proporcional, y de las unidades últimas (individuos) por
+    p2| rutas aleatorias y cuotas de sexo y edad.
+    p2| Los estratos se han formado por el cruce de
+    p2| los dif
+    p2| erentes ámbitos
+    p2| definidos (ver Cuadro 1)
+    p2| con el tamaño de hábitat
+    p2| dividido en 7 categorías: menor o igual a 2.000 habitantes; de 2
+    p2| .
+    p2| 001 a 10.000; de 10.001 a 50.000; de 50.001 a
+    p2| 100.000; de 100.001 a 400.000; de 400.001 a 1.000.000
+    p2| ;
+    p2| y más de 1.000.000 de ha
+    p2| bitantes.
+    p2| Los cuestionarios se han aplicado mediante entrevista personal en los domicilios.
+    p2| Error muestral:
+    p2| Para un nivel de c
+    p2| onfianza del 95,5% (dos sigmas)
+    p2| y P = Q, el error es de
+    p2| ±
+    p2| 0
+    p2| ,
+    p2| 75
+    p2| %
+    p2| para el conjunto de la muestra y
+    p2| en el supuest
+    p2| o de muestreo
+    p2| aleatorio simple.
+    p2| Los errores correspondientes a cada un
+    p2| o
+    p2| de l
+    p2| os ámbitos
+    p2| se encuentran en el Cuadro 1, al final de esta ficha técnica.
+    p2| Fecha de realización:
+    p2| Del
+    p2| 21 de marzo
+    p2| al
+    p2| 23 de abril
+    p2| de 20
+    p2| 1
+    p2| 9
+    p2| .
+    p3| Cuadro 1.
+    p3| -
+    p3| Puntos de muestreo,
+    p3| entrevistas y errores de muestreo
+    p3| Núm
+    p3| .
+    p3| municipios
+    p3| Entrevistas
+    p3| Cód
+    p3| CA
+    p3| Comunidad autónoma
+    p3| Estrato
+    p3| Diseñado
+    p3| Realizado
+    p3| Diseñada
+    p3| Realizada
+    p3| Error (%)
+    p3| 01
+    p3| Andalucía
+    p3| 94
+    p3| 94
+    p3| 2.290
+    p3| 2.278
+    p3| 2,1
+    p3| Sevilla municipio
+    p3| 1
+    p3| 1
+    p3| 500
+    p3| 497
+    p3| 4,5
+    p3| Resto municipios de Andalucía
+    p3| 93
+    p3| 93
+    p3| 1.790
+    p3| 1.781
