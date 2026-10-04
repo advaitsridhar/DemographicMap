@@ -1,1 +1,8 @@
-https://gis.dukcapil.kemendagri.go.id/peta/: URLError: <urlopen error timed out>
+probe_ckan: 1 host(s), timeout 20s
+  https://gdcatalog.go.th/ -> 200 text/html "ยินดีต้อนรับ - Government Data Catalog : GD Catalog"
+    /api/3/action/status_show -> 200 application/json CKAN 2.9.2
+    datastore_search e0af52d6-2059-4685-a444-4fbcd8d3d05e -> 200, total 3, fields ['_id', 'year', 'value', 'unit', 'source']
+      {"_id": 1, "year": 2533, "value": 24.6, "unit": "ปี", "source": "สำนักงานสถิติแห่งชาติ"}
+      {"_id": 2, "year": 2543, "value": 29.2, "unit": "ปี", "source": "สำนักงานสถิติแห่งชาติ"}
+      {"_id": 3, "year": 2553, "value": 34.7, "unit": "ปี", "source": "สำนักงานสถิติแห่งชาติ"}
+probe_ckan: 1 of 1 answered; 1 speak CKAN: gdcatalog.go.th
