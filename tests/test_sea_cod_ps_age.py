@@ -63,6 +63,40 @@ class BindTest(unittest.TestCase):
         self.assertEqual(bound[0]["id"], "C")
 
 
+class SpellingAndSeatTest(unittest.TestCase):
+    def test_a_parent_spelt_the_datasets_way(self):
+        admin1 = [{"id": "CH", "name": "Champasak"}, {"id": "LP", "name": "Luang Prabang"}]
+        admin2 = [{"id": "P1", "name": "Phonthong", "parent": "CH", "point": [105.8, 15.0]},
+                  {"id": "P2", "name": "Phonthong", "parent": "LP", "point": [102.2, 19.9]}]
+        rows = [{"ADM1_EN": "Champasack", "ADM2_EN": "Phonthong"},
+                {"ADM1_EN": "Louangphabang", "ADM2_EN": "Phonthong"}]
+        with mock.patch.object(s, "drawn", lambda iso3, level: admin1 if level == "admin1"
+                               else admin2), \
+                mock.patch.object(s, "locate", return_value={"P1": "CH", "P2": "LP"}):
+            bound, left, _ = s.bind_rows("LAO", "admin2", rows, "ADM2_EN", "ADM1_EN")
+        self.assertEqual({i: u["id"] for i, u in bound.items()}, {0: "P1", 1: "P2"})
+
+    def test_twins_placed_by_their_seats(self):
+        admin1 = [{"id": "AY", "name": "Phra Nakhon Si Ayutthaya Province"}]
+        admin2 = [{"id": "E", "name": "Bang Sai", "parent": "AY", "point": [100.47, 14.22]},
+                  {"id": "W", "name": "Bang Sai", "parent": "AY", "point": [100.30, 14.30]}]
+        rows = [{"ADM1_EN": "Phra Nakhon Si Ayutthaya", "ADM2_EN": "Bang Sai (1)",
+                 "ADM2_PCODE": "TH1404"},
+                {"ADM1_EN": "Phra Nakhon Si Ayutthaya", "ADM2_EN": "Bang Sai (2)",
+                 "ADM2_PCODE": "TH1413"}]
+
+        def where(points, level, iso3):
+            if level == "admin2":
+                return {"TH1404": "E", "TH1413": "W"}
+            return {k: "AY" for k in points}
+        with mock.patch.object(s, "drawn", lambda iso3, level: admin1 if level == "admin1"
+                               else admin2), \
+                mock.patch.object(s, "locate", side_effect=where):
+            bound, left, unbound = s.bind_rows("THA", "admin2", rows, "ADM2_EN", "ADM1_EN")
+        self.assertEqual({i: u["id"] for i, u in bound.items()}, {0: "E", 1: "W"})
+        self.assertEqual((left, unbound), ([], []))
+
+
 class RecordsTest(unittest.TestCase):
     def test_median_and_ratio(self):
         cols_ = columns()

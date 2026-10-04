@@ -65,8 +65,37 @@ WHERE = {"THA": ["admin1", "admin2"], "LAO": ["admin1", "admin2"], "KHM": ["admi
 KIND = re.compile(r"\b(?:province|changwat|khwaeng|khaet)\b", re.I)
 
 
+# The dataset's spelling -> the boundary file's, where the two romanise one
+# name differently (Laos's provinces, three of Cambodia's). Applied to a row's
+# own name and to the parent it names.
+SPELLINGS = {
+    ("LAO", "Bolikhamxai"): "Bolikhamsai", ("LAO", "Champasack"): "Champasak",
+    ("LAO", "Khammouan"): "Khammouane", ("LAO", "Louangnamtha"): "Luang Namtha",
+    ("LAO", "Louangphabang"): "Luang Prabang", ("LAO", "Oudomxai"): "Oudomxay",
+    ("LAO", "Sekong"): "Xekong", ("LAO", "Xaignabouly"): "Xaignabouli",
+    ("LAO", "Xaisomboon"): "Xaisomboun", ("LAO", "Xiengkhouang"): "Xiangkhouang",
+    ("KHM", "Banteay Meanchey"): "Bantey Meanchey", ("KHM", "Ratanak Kiri"): "Ratanakiri",
+    ("KHM", "Tboung Khmum"): "Tbong Khmum",
+}
+# Rows two districts share a romanised name with: Phra Nakhon Si Ayutthaya's
+# Bang Sai (บางไทร, TH1404) and Bang Sai (บางซ้าย, TH1413), "Bang Sai (1)" and
+# "(2)" in the dataset and both plain "Bang Sai" in the boundary file. Each is
+# placed by its district office -- บางไทร's on the Chao Phraya at 14.20N
+# 100.48E, บางซ้าย's by the Suphan Buri line at 14.33N 100.32E -- on the
+# map's own admin2 tiles; the two polygons' extents do not overlap in
+# longitude (100.41-100.58 and 100.23-100.37), so neither seat can fall in
+# the other.
+SEATS = {("THA", "TH1404"): (100.48, 14.20), ("THA", "TH1413"): (100.32, 14.33)}
+TWIN_MARK = re.compile(r"\s*\(\d\)\s*$")
+
+
 def key(name: Any) -> str:
     return fold(KIND.sub(" ", str(name or "")))
+
+
+def spelled(iso3: str, name: Any) -> str:
+    text = str(name or "").strip()
+    return SPELLINGS.get((iso3, text), text)
 
 
 def newest_tables(package: dict[str, Any]) -> dict[str, tuple[int, dict[str, Any], dict[str, Any]]]:
@@ -116,9 +145,29 @@ def bind_rows(iso3: str, level: str, rows: list[dict[str, Any]], unit_col: str,
     bound: dict[int, dict[str, Any]] = {}
     taken: set[str] = set()
     left: list[str] = []
+    pcode_col = next((c for c in (rows[0] if rows else {})
+                      if re.fullmatch(r"(?i)adm(?:in)?_?(\d)_?pcode", c)
+                      and re.fullmatch(r"(?i)adm(?:in)?_?(\d)_?pcode", c).group(1) == level[-1]),
+                     None)
+    seated = {k[1]: v for k, v in SEATS.items() if k[0] == iso3}
+    seats_at = locate(dict(seated), level, iso3) if seated and pcode_col else {}
+    units_by_id = {u["id"]: u for u in drawn(iso3, level)}
     for i, row in enumerate(rows):
-        name = str(row.get(unit_col) or "").strip()
-        parent = key(row.get(parent_col)) if (level == "admin2" and parent_col) else ""
+        name = spelled(iso3, row.get(unit_col))
+        parent = (key(spelled(iso3, row.get(parent_col)))
+                  if (level == "admin2" and parent_col) else "")
+        pcode = str(row.get(pcode_col) or "").strip() if pcode_col else ""
+        if pcode in seated:
+            sid = seats_at.get(pcode)
+            unit = units_by_id.get(sid) if sid else None
+            if (unit is None or key(unit["name"]) != key(TWIN_MARK.sub("", name))
+                    or unit["id"] in taken):
+                left.append(f"{name} ({pcode}): its seat finds no polygon of its name")
+                continue
+            log(f"    {name} ({pcode}) placed by its seat on {unit['name']} ({unit['id']})")
+            taken.add(unit["id"])
+            bound[i] = unit
+            continue
         hits = {u["id"]: u for u in by_pair.get((parent, key(name)), [])}
         if not hits and len({u["id"] for u in by_name.get(key(name), [])}) == 1:
             hits = {u["id"]: u for u in by_name[key(name)]}
