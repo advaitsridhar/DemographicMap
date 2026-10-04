@@ -4600,56 +4600,6 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
   },
   {
-    "id": "THA-CODPSAGE-admin2-bankha-728586",
-    "level": "admin2",
-    "name": "Ban Kha",
-    "parent": "THA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "value": 40.7,
-      "unit": "years",
-      "year": 2023,
-      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
-    },
-    "sex_ratio": {
-      "value": 48.2,
-      "unit": "males_per_100_females",
-      "year": 2023,
-      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "median_age/sex_ratio",
-        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023",
-        "url": "https://data.humdata.org/dataset/cod-ps-tha",
-        "year": 2023,
-        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
-      }
-    ],
-    "country": "THA",
-    "match_by": "shape_id",
-    "shape_id": "78962969B84740319728586",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2023: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
-    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
-  },
-  {
     "id": "THA-CODPSAGE-admin2-bankhai-799689",
     "level": "admin2",
     "name": "Ban Khai",
@@ -43502,56 +43452,6 @@
     "country": "THA",
     "match_by": "shape_id",
     "shape_id": "78962969B46335103611248",
-    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2023: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
-    "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
-  },
-  {
-    "id": "THA-CODPSAGE-admin2-suanphueng-766823",
-    "level": "admin2",
-    "name": "Suan Phueng",
-    "parent": "THA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available"
-    },
-    "median_age": {
-      "value": 38.8,
-      "unit": "years",
-      "year": 2023,
-      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
-    },
-    "sex_ratio": {
-      "value": 76.9,
-      "unit": "males_per_100_females",
-      "year": 2023,
-      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "median_age/sex_ratio",
-        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023",
-        "url": "https://data.humdata.org/dataset/cod-ps-tha",
-        "year": 2023,
-        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
-      }
-    ],
-    "country": "THA",
-    "match_by": "shape_id",
-    "shape_id": "78962969B47422412766823",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2023: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
   },
