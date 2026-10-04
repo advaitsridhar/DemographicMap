@@ -87,6 +87,14 @@ ROUNDING = 0.15
 # territory: each is good to 0.05.
 AGREEMENT = 0.1 + 1e-9
 PAUSE = 1.5                     # StatFin answers 429 to a brisker pace
+# Municipalities of the map's year (2020) gone by 11ra's division, and the one
+# each joined, whose figure now holds its people in every year. Each pair lay
+# in the same 2020 sub-region and region, which place() checks.
+#   Honkajoki (099) joined Kankaanpaa (214) on 1 January 2021.
+#   Pertunmaa (588) joined Mantyharju (507) by 2026: 11ra's 2024 figure for
+#   Mantyharju, in today's division, is 7,057 -- 11rf's 5,532 for Mantyharju
+#   and 1,525 for Pertunmaa in 2024's own (church_probe round c8).
+MERGED_SINCE = {"099": "214", "588": "507"}
 
 Rows = dict[str, dict[str, float]]
 
@@ -315,20 +323,24 @@ def load_keys(year: int) -> tuple[dict[str, str], dict[str, str], dict[str, str]
 def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
             ) -> list[dict[str, Any]]:
     from . import finland as fi
-    from .nordic_origin import FIN_MERGED_SINCE, FIN_REGIONS
+    from .nordic_origin import FIN_REGIONS
     meta = {v["code"]: v for v in request_json(TABLE, pause=PAUSE)["variables"]}
     area = next(c for c in meta if c.startswith("alue"))
     missing = [c for c in CONTENTS if c not in meta["contentscode"]["values"]]
     if missing:
         raise SystemExit(f"11ra: no contents {missing}")
-    year = max(meta["timeperiod_y"]["values"])
     division = division_year(area)
-    body = request_json(TABLE, {"query": [
-        {"code": area, "selection": {"filter": "all", "values": ["*"]}},
-        {"code": "contentscode", "selection": {"filter": "item", "values": CONTENTS}},
-        {"code": "timeperiod_y", "selection": {"filter": "item", "values": [year]}},
-    ], "response": {"format": "json-stat2"}}, pause=PAUSE)
-    rows = read_rows(body, area)
+    # The newest year, or the one before if the newest has its population and
+    # not yet its religious communities (an incomplete year stops the run).
+    for year in sorted(meta["timeperiod_y"]["values"])[-1:-3:-1]:
+        rows = read_rows(request_json(TABLE, {"query": [
+            {"code": area, "selection": {"filter": "all", "values": ["*"]}},
+            {"code": "contentscode", "selection": {"filter": "item", "values": CONTENTS}},
+            {"code": "timeperiod_y", "selection": {"filter": "item", "values": [year]}},
+        ], "response": {"format": "json-stat2"}}, pause=PAUSE), area)
+        if any(rows.get("SSS", {}).get(c) is not None for c in SHARES):
+            break
+        log(f"  11ra {year}: no religious community yet; the year before")
     worst = check_rows(rows)
     kinds = defaultdict(int)
     for code in rows:
@@ -355,8 +367,8 @@ def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
         if len(homes) != 1 or None in homes:
             raise SystemExit(f"finland: sub-region {sk_names[sk]} lies in regions {homes}")
     current = sorted(c[2:] for c in rows if c.startswith("KU"))
-    place_sk = place(current, sk_of, FIN_MERGED_SINCE, f"11ra -> {key_year} sub-regions")
-    place_mk = place(current, mk_of, FIN_MERGED_SINCE, f"11ra -> {key_year} regions")
+    place_sk = place(current, sk_of, MERGED_SINCE, f"11ra -> {key_year} sub-regions")
+    place_mk = place(current, mk_of, MERGED_SINCE, f"11ra -> {key_year} regions")
     people_sk, groups_sk, parts_sk = sum_units(rows, place_sk)
     people_mk, groups_mk, parts_mk = sum_units(rows, place_mk)
     whole = rows["SSS"][POPULATION]
@@ -395,12 +407,14 @@ def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
         row = rows.get(f"{prefix}{unit}")
         if row is not None and abs(row[POPULATION] - people) <= 0.5:
             return {}
+        today = (f"Today's {kind} of the same code is another territory, so its own figure "
+                 "is not this unit's." if row is not None else
+                 f"Statistics Finland has no {kind} of this code today.")
         return {"population": measure(int(round(people)), year=int(year), source=SOURCE),
                 "population_note": (
                     f"Registered residents on 31 December {year}, summed from today's "
                     f"municipalities that made the {kind} in {key_year}, the division the map "
-                    f"draws (Statistics Finland, table 11ra). Today's {kind} of the same "
-                    "code is another territory, so its own figure is not this unit's.")}
+                    f"draws (Statistics Finland, table 11ra). " + today)}
 
     for sk, (drawn, _) in sorted(shapes_rows.items()):
         fields, is_own = composition(rows, "SK", sk, people_sk[sk], groups_sk[sk],

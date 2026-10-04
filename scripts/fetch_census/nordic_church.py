@@ -82,7 +82,8 @@ SWEDEN_OUTSIDE = "Not a member of the national church"
 RATIO_SLACK = 0.06
 PCT_SLACK = 0.6
 ROW = re.compile(r"^(?P<name>.+?) (?P<kind>kommun|län)(?: \(\d+\))? (?P<rest>\d.*)$")
-RIKET = re.compile(r"^Riket (?P<rest>\d.*)$")
+# The country's row: "Riket" in the 2016-2020 editions, "Totalsumma" in 2021's.
+RIKET = re.compile(r"^(?:Riket|Totalsumma) (?P<rest>\d.*)$")
 UNPLACED = "På kommunen skrivna "
 UNKNOWN_NAME = "Okänd"
 # The table prints the people without a property twice -- as the parish "På
@@ -174,7 +175,7 @@ def svk_rows(lines: list[str]) -> tuple[dict[str, Row], dict[str, Row], Row | No
 
 
 def riket_row(lines: list[str]) -> Row:
-    """The country's row ("Riket"), which must be printed exactly once."""
+    """The country's row ("Riket", or "Totalsumma"), printed exactly once."""
     found = [RIKET.match(" ".join(line.split())) for line in lines]
     rows = [population_and_members(m.group("rest")) for m in found if m]
     if len(rows) != 1:
