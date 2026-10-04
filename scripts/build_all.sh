@@ -181,8 +181,10 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.estonia
   soft python3 -m scripts.fetch_census.latvia
   soft python3 -m scripts.fetch_census.finland
+  soft python3 -m scripts.fetch_census.finland_religion
   soft python3 -m scripts.fetch_census.lithuania
   soft python3 -m scripts.fetch_census.sweden
+  soft python3 -m scripts.fetch_census.nordic_church --country SWE
   soft python3 -m scripts.fetch_census.norway
   soft python3 -m scripts.fetch_census.denmark
   soft python3 -m scripts.fetch_census.iceland
@@ -202,6 +204,7 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.slovenia_census
   soft python3 -m scripts.fetch_census.netherlands_gemeente
   soft python3 -m scripts.fetch_census.netherlands_religion
+  soft python3 -m scripts.fetch_census.netherlands_religion_gemeente
   soft python3 -m scripts.fetch_census.luxembourg
   soft python3 -m scripts.fetch_census.austria_nationality
   soft python3 -m scripts.fetch_census.switzerland_nationality
@@ -220,6 +223,7 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.kosovo
   soft python3 -m scripts.fetch_census.albania_census
   soft python3 -m scripts.fetch_census.cyprus_census
+  soft python3 -m scripts.fetch_census.cyprus_north_census
   soft python3 -m scripts.fetch_census.moldova_age
   soft python3 -m scripts.fetch_census.greece_age
   soft python3 -m scripts.fetch_census.bucharest_sectors

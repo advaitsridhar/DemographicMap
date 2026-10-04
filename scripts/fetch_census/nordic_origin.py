@@ -722,7 +722,10 @@ FIN_REGIONS = {"01": "Uusimaa", "02": "Finland Proper", "04": "Satakunta",
 # Municipalities of the map's year that have since merged into another, and
 # the one they merged into: the merged one's people are in its successor's
 # figure today, which must then lie in the same sub-region of the map's year.
-FIN_MERGED_SINCE = {"099": "214"}          # Honkajoki into Kankaanpää, 1 January 2021
+# Honkajoki into Kankaanpää, 1 January 2021; Pertunmaa into Mäntyharju, which
+# 11ra's 2024 figure for Mäntyharju in today's division shows to the person
+# (7,057 = 11rf's 5,532 + 1,525 in 2024's own; church_probe round c8).
+FIN_MERGED_SINCE = {"099": "214", "588": "507"}
 # The most of a municipality's total its withheld small cells may make.
 WITHHELD_SHARE = 0.05
 WITHHELD_FLOOR = 200
@@ -777,16 +780,18 @@ def statfin_label(code: str, name: str) -> str | None:
 
 
 def finland_key(year: int) -> tuple[dict[str, str], dict[str, str]]:
-    """{municipality code: maakunta code} and {maakunta code: name} for one year."""
-    from .finland import PAUSE, item
-    maps = request_json(REGION_KEY.format(y=year), pause=PAUSE)
-    muni, names = {}, {}
-    for entry in maps:
-        k, _ = item(entry, "source")
-        r, name = item(entry, "target")
-        muni[k] = r
-        names[r] = name
-    return muni, names
+    """{municipality code: maakunta code} and {maakunta code: name} for one year,
+    from the maps list and the region classification's items, as
+    finland.key_for reads the sub-regions (REGION_KEY's parameters answer 500)."""
+    from .finland import PAUSE
+    from .finland_religion import CLASS_API, item_names, key_pairs
+    muni = key_pairs(request_json(
+        f"{CLASS_API}/correspondenceTables/kunta_1_{year}0101%23maakunta_1_{year}0101/maps",
+        pause=PAUSE))
+    names = item_names(request_json(
+        f"{CLASS_API}/classifications/maakunta_1_{year}0101/classificationItems"
+        "?content=data&meta=max&lang=fi", pause=PAUSE))
+    return muni, {c: n for c, n in names.items() if c in set(muni.values())}
 
 
 def drawn_subregion_key() -> tuple[int, dict[str, str], dict[str, str], dict[str, str]]:

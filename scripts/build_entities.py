@@ -105,6 +105,11 @@ ADAPTER_FILES = [
     # Religion by province from CBS's own survey workbook, 2021/2025
     # (netherlands_religion); CBS's 'ander geloof' kept as the residual it is.
     "netherlands_religion_survey.json",
+    # Religion by gemeente from CBS's Labour Force Survey, 2010-2015 pooled, on
+    # the gemeenten of 2016 (netherlands_religion_gemeente): carried to the 344
+    # drawn ones through CBS's record of mergers (70739ned), unions weighted by
+    # their adults; a gemeente holding part of a divided one gets a gap saying so.
+    "netherlands_religion_gemeente_survey.json",
     # ISTAT's 2015 survey 'I cittadini e il tempo libero' (24,000 households,
     # every region a domain): language used mostly in the family, persons aged
     # 6+, for the 20 regions and, added up, the 5 ripartizioni. Each note
@@ -482,6 +487,11 @@ ADAPTER_FILES = [
     # the classification's key -- 31 December 2025 for the 57 unchanged since,
     # 2020 for the rest -- and the register's mother tongue (11rm, 2025).
     "finland_subregion.json",
+    # Finland's religious community from the population register (finland_religion):
+    # StatFin 11ra's Lutheran / other community / none shares, 31 December 2025, for the
+    # 70 sub-regions and 19 regions as drawn (2020 key; Iitti and Vaala where the map
+    # draws them), with the same day's population for the drawn territory.
+    "finland_religion.json",
     # Lithuania's 60 municipalities and 10 counties (lithuania): the OSP's
     # single years for 1 January 2026; mother tongue from the 2021 census;
     # ethnicity 2021 for Vilnius county and 15 municipalities, 2011 elsewhere;
@@ -491,6 +501,10 @@ ADAPTER_FILES = [
     # 31 December 2025 by single year of age and sex (BefolkningCKM), with
     # median age and sex ratio.
     "sweden_kommun.json",
+    # Church of Sweden membership by kommun and län (nordic_church): each unit's parish
+    # members against its parishes' people, 31 December 2021 (Bjuv 2019); all 21 län and
+    # the 275 kommuner whose parishes are their territory. Membership, not belief.
+    "sweden_church.json",
     # Norway's 2017 kommuner and 2020-2023 fylker (norway): SSB 07459 today
     # where no merger has touched a kommune, else its last whole year (2017,
     # 2019, 2025); Church and other-faith membership (12026; 08531 by religion
@@ -604,6 +618,13 @@ ADAPTER_FILES = [
     "romania_census.json", "bulgaria_census.json", "serbia_census.json",
     "montenegro_census.json", "north_macedonia_census.json", "kosovo_census.json",
     "albania_census.json", "cyprus_census.json", "moldova_age.json", "greece_age.json",
+    # The census taken in 2011 by the Turkish Cypriot administration in the
+    # north (not recognised internationally), by village, on the polygons its
+    # quarters can be bound to; every other northern polygon, the villages in
+    # the buffer zone and Kyrenia district say why they have no figure
+    # (cyprus_north_census). After cyprus_census.json, whose 2021 counts stand
+    # wherever both reach.
+    "cyprus_north_census.json",
     "bucharest_sectors.json", "north_macedonia_2002.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "peru_department.json",

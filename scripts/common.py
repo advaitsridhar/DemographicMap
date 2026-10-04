@@ -672,7 +672,29 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity.",
             "language": "The Netherlands has had no questionnaire census since 1971 and no register records language."},
     "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity.",
-            "religion": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000.",
+            # No state register records religion, and SCB publishes none; the
+            # Church of Sweden's own membership count (nordic_church.py) gives
+            # all 21 län and every kommun but the fifteen this says why it
+            # cannot.
+            "religion": {
+                "status": NOT_AVAILABLE,
+                "note": "Sweden's census is compiled from registers, and no state register "
+                        "records religion; the state kept none after the Church of Sweden "
+                        "separated in 2000. The Church's own count of its members by kommun "
+                        "and län, made by Statistics Sweden for the Church (31 December "
+                        "2021, or 2019 where only that edition's row is the kommun's), gives "
+                        "every län and every kommun but fifteen. The table sums each "
+                        "kommun's parishes, and a parish that crosses a kommun boundary is "
+                        "counted whole under one kommun. "
+                        "Forshaga and Munkfors share one parish, Forshaga-Munkfors "
+                        "församling, in every edition since 2016; and in each of the 2019, "
+                        "2020 and 2021 editions the rows for Berg, Essunga, Gnosjö, Grästorp, "
+                        "Gullspång, Helsingborg, Härjedalen, Höör, Landskrona, Svenljunga, "
+                        "Tranemo, Töreboda and Vadstena count more or fewer people than "
+                        "Statistics Sweden finds in the kommun, beyond what the people "
+                        "registered without a property explain: each is another territory "
+                        "than its kommun.",
+            },
             "language": "Sweden's census is compiled from registers, and no register records mother tongue."},
     "NOR": {"ethnicity": "Norway records immigrant background, not ethnicity.",
             "language": "Norway's census is compiled from registers (wholly since 2011), and no "
@@ -723,18 +745,11 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "FIN": {
         "ethnicity": "Finland's census is register-based and records citizenship, country of birth and mother tongue, not ethnicity.",
-        # Recorded by the population register, published for the country.
-        "religion": {
-            "status": NOT_AVAILABLE,
-            "note": "Finland's population register records membership of a religious "
-                    "community for everyone, but Statistics Finland publishes it for the "
-                    "whole country only (table 11rx, by age and sex); no StatFin table, and "
-                    "none of the municipal key figures, gives it by region or municipality. "
-                    "The register keeper (DVV) publishes election statistics, citizens by "
-                    "municipality and lists of parishes, not membership counts. The "
-                    "Evangelical Lutheran Church publishes its own members by municipality, "
-                    "which is one church's count and not the register's.",
-        },
+        # No religion entry: Statistics Finland publishes the register's
+        # religious community by municipality, sub-region and region among its
+        # key figures on the population (StatFin 11ra: the Evangelical
+        # Lutheran Church, other religious groups, none), and
+        # finland_religion.py reads it for every unit the map draws.
     },
     "CHE": {
         "ethnicity": "Switzerland's census records nationality, not ethnicity; religion and language come from the structural survey.",

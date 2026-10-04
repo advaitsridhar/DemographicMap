@@ -314,6 +314,7 @@ class CyprusBindingTest(unittest.TestCase):
         ("5356", "Troodos", "lemesos", 10, 7),
         ("4014", "Dromolaxia - Meneou", "larnaka", 3400, 3438),
         ("6340", "Karamoullides", "pafos", 1, 3),
+        ("1110", "Louroukina", "lefkosia", 0, 0),
     ]
     DISTRICT_CODES = {"lefkosia": "1000", "larnaka": "4000", "lemesos": "5000", "pafos": "6000",
                       "ammochostos": "3000"}
@@ -378,6 +379,12 @@ class CyprusBindingTest(unittest.TestCase):
         self.assertIn("1 man and 3 women", tiny["sex_ratio"]["note"])
         # Lakatameia says it holds the undrawn Anthoupolis.
         self.assertIn("Synoikismos Anthoupolis", by_code["1024"]["population_note"])
+        # A community CYSTAT lists empty, whose village the census in the
+        # north counts, says so instead of showing its 0.
+        louroukina = by_code["1110"]
+        self.assertEqual(louroukina["population"]["status"], "not_available")
+        self.assertEqual(louroukina["population"]["displaces_before"], 1974)
+        self.assertIn("Akıncılar", louroukina["population"]["note"])
         # A polygon with no community says why, and its marker displaces a
         # pre-1974 encyclopaedic figure.
         none = [r for r in admin2 if r["id"].startswith("CYP-2021-none-")]

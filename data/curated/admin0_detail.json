@@ -4549,6 +4549,83 @@
    "url": "http://sreda.org/arena",
    "license": "Sreda, published aggregate tabulation",
    "note": "Sreda's Arena survey (fieldwork by the Public Opinion Foundation, MegaFOM omnibus, 29 May-25 June 2012, face to face at home): 56,900 adults aged 18 and over in 79 of the 83 federal subjects the map draws, 500 to 800 in each, which Sreda puts at 98.8% of the population -- Chechnya, Ingushetia, Chukotka and Nenets AO were not surveyed. Sreda's own figure for Russia as a whole, its subjects weighted by their populations; the counts are those weighted shares of the 56,900 respondents, not people. One answer from a card: 'Russian Orthodox Church' is 'I profess Orthodoxy and belong to the Russian Orthodox Church', 'Believe in God, no specific religion' is 'I believe in God (a higher power) but profess no particular religion', 'Atheist' is 'I do not believe in God'. A survey estimate, not a count: no Russian census since 1937 has asked religion. The subjects carry the same survey's own figures (russia_religion_survey.json)."
+  },
+  {
+   "country": "FIN",
+   "field": "religion",
+   "year": 2025,
+   "basis": "registered membership",
+   "groups": [
+    {
+     "group": "Evangelical Lutheran Church of Finland",
+     "pct": 61.2,
+     "count": 3457125
+    },
+    {
+     "group": "Not a member of any religious community",
+     "pct": 35.9,
+     "count": 2030491
+    },
+    {
+     "group": "Orthodox churches",
+     "pct": 1.0,
+     "count": 58073
+    },
+    {
+     "group": "Islam",
+     "pct": 0.5,
+     "count": 28512
+    },
+    {
+     "group": "Other Christian",
+     "pct": 0.4,
+     "count": 23743
+    },
+    {
+     "group": "Jehovah's Witnesses",
+     "pct": 0.3,
+     "count": 15447
+    },
+    {
+     "group": "Roman Catholic Church",
+     "pct": 0.3,
+     "count": 16783
+    },
+    {
+     "group": "Pentecostalism",
+     "pct": 0.2,
+     "count": 14129
+    },
+    {
+     "group": "Church of Jesus Christ of Latter-day Saints",
+     "pct": 0.1,
+     "count": 3034
+    },
+    {
+     "group": "Buddhism",
+     "pct": 0.0,
+     "count": 1845
+    },
+    {
+     "group": "Hinduism",
+     "pct": 0.0,
+     "count": 1072
+    },
+    {
+     "group": "Judaism",
+     "pct": 0.0,
+     "count": 1013
+    },
+    {
+     "group": "Other religions",
+     "pct": 0.0,
+     "count": 1614
+    }
+   ],
+   "source": "Statistics Finland, table 11rx (population by religious community, age and sex), 31 December 2025",
+   "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__vaerak/statfin_vaerak_pxt_11rx.px",
+   "license": "CC BY 4.0 (Statistics Finland)",
+   "note": "Membership of a religious community as Finland's population register records it for every resident on 31 December 2025: 5,652,881 people (Statistics Finland, table 11rx). A count of registered membership, not of belief. 'Not a member of any religious community' is everyone in no registered community, which Statistics Finland calls no religious affiliation; it also holds people of faith who belong to none. 'Other Christian' joins the smaller Christian bodies the table names (Adventists, the Anglican churches, Baptists, the Lutheran free congregations, Methodists, the free churches and other Christians); 'Other religions' the Bahá'í, the Christian Community, the Liberal Catholic Church, the indigenous religions and neo-paganism and the rest of the other religious groups. Statistics Finland counts the communities apart for the whole country only: the regions and sub-regions carry the same register's three groups (the Lutheran church, every other community together, and none) for the same day, so this figure is the itemised whole of theirs."
   }
  ]
 }

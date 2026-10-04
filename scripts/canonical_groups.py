@@ -1057,6 +1057,11 @@ PARENT: dict[str, dict[str, str]] = {
         # (Oslo's 156,183 are 66,832 Muslims and 58,085 Christians).
         "Christian communities outside the Church of Norway": "Christianity",
         "Member of another faith or life-stance community": "Other religions",
+        # Finland's register by municipality (StatFin 11ra) joins every
+        # community but the Lutheran church in one share: the Orthodox Church,
+        # the Catholic Church, the free churches, the registered Islamic
+        # communities and the rest -- no one tradition, filed as Norway's is.
+        "Member of another religious community": "Other religions",
         # Sreda's Arena survey (Russia, 2012): "I believe in God (a higher
         # power) but profess no particular religion" -- a quarter of
         # Russians. A belief without a body, filed where Czechia's, Nicaragua's
@@ -1238,6 +1243,9 @@ RESIDUAL: frozenset[str] = frozenset({
     "Not a member of the national church",
     "Member of another faith or life-stance community",
     "Not a member of a registered faith or life-stance community",
+    # Finland's register row for every community but the Lutheran church
+    # (finland_religion): Orthodox, Catholic, Muslim and the rest in one.
+    "Member of another religious community",
     # Mongolia's two residuals: the ethnic groups its census does not name
     # because each has fewer than a hundred people in the country, and the
     # Mongolian citizens it records under a foreign nationality.
