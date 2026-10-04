@@ -11,9 +11,12 @@ respondent's row.
 
 Subcommands:
 
-* ``url URL... [--grep a,b] [--links a,b] [--chars N]`` -- status, type and
-  size of each URL, the lines of its text carrying a term, the links whose
-  address or text carries a term, or its first characters.
+* ``url URL... [--grep a,b] [--links a,b] [--chars N] [--around REGEX]`` --
+  status, type and size of each URL, the lines of its text carrying a term,
+  the links whose address or text carries a term, its first characters, or
+  the raw page around a pattern (a script's handler, a form's fields).
+* ``pdf URL... [--grep a,b] [--context N]`` -- the text of a PDF (a ficha
+  técnica, a questionnaire), whole or the lines carrying a term.
 * ``cdx PATTERN [--grep a,b] [--limit N]`` -- the Internet Archive's index of
   captured addresses under a prefix, to learn an official host's file naming.
 * ``data URL [--vars REGEX] [--labels A,B] [--freq A,B] [--by VAR]
@@ -94,6 +97,20 @@ def cmd_url(args: argparse.Namespace) -> int:
         body = raw.decode("utf-8", errors="replace")
         if args.chars:
             log("  " + re.sub(r"\s+", " ", body[:args.chars]))
+        if args.around:
+            spans = [m.start() for m in re.finditer(args.around, body, re.I)]
+            log(f"  {len(spans)} raw matches of /{args.around}/")
+            last = -10 ** 9
+            shown = 0
+            for at in spans:
+                if at - last < args.context:
+                    continue
+                last = at
+                piece = body[max(0, at - args.context):at + args.context]
+                log("    ~ " + re.sub(r"\s+", " ", piece))
+                shown += 1
+                if shown >= args.limit:
+                    break
         lines = text_of(body) if "<" in body[:3000] else body.splitlines()
         if needles:
             hits = [line for line in lines if any(n in line.lower() for n in needles)]
@@ -131,6 +148,37 @@ def cmd_cdx(args: argparse.Namespace) -> int:
     log(f"  {len(rows)} captured addresses, {len(hits)} with {needles}")
     for r in hits[:args.limit]:
         log(f"    {r[1]} {r[4]} {r[3][:30]} {r[2][:args.width]}")
+    return 0
+
+
+def cmd_pdf(args: argparse.Namespace) -> int:
+    """The text of a PDF (a ficha técnica, a questionnaire), whole or by term."""
+    from pypdf import PdfReader                        # noqa: PLC0415 -- runner only
+    needles = terms(args.grep)
+    for url in args.url:
+        log(f"== {url}")
+        status, final, headers, raw = get(url, args.timeout)
+        log(f"  HTTP {status}; {headers.get('Content-Type')}; {len(raw):,} bytes")
+        if raw[:4] != b"%PDF":
+            log("  not a PDF: " + re.sub(r"\s+", " ", raw[:200].decode("utf-8", "replace")))
+            continue
+        pages = PdfReader(io.BytesIO(raw)).pages
+        lines = []
+        for number, page in enumerate(pages, 1):
+            for line in (page.extract_text() or "").splitlines():
+                if line.strip():
+                    lines.append((number, re.sub(r"\s+", " ", line).strip()))
+        log(f"  {len(pages)} pages, {len(lines)} lines")
+        if needles:
+            keep = set()
+            for i, (_, line) in enumerate(lines):
+                if any(n in line.lower() for n in needles):
+                    keep.update(range(max(0, i - args.context), min(len(lines), i + args.context + 1)))
+            chosen = [lines[i] for i in sorted(keep)]
+        else:
+            chosen = lines
+        for number, line in chosen[:args.limit]:
+            log(f"    p{number}| {line[:args.width]}")
     return 0
 
 
@@ -253,10 +301,20 @@ def main() -> int:
     p.add_argument("--grep")
     p.add_argument("--links")
     p.add_argument("--chars", type=int, default=0)
+    p.add_argument("--around", help="print the raw page around each match of this regex")
+    p.add_argument("--context", type=int, default=300)
     p.add_argument("--limit", type=int, default=40)
     p.add_argument("--width", type=int, default=200)
     p.add_argument("--timeout", type=int, default=90)
     p.set_defaults(func=cmd_url)
+    p = sub.add_parser("pdf")
+    p.add_argument("url", nargs="+")
+    p.add_argument("--grep")
+    p.add_argument("--context", type=int, default=0)
+    p.add_argument("--limit", type=int, default=120)
+    p.add_argument("--width", type=int, default=220)
+    p.add_argument("--timeout", type=int, default=120)
+    p.set_defaults(func=cmd_pdf)
     p = sub.add_parser("cdx")
     p.add_argument("pattern")
     p.add_argument("--grep")
