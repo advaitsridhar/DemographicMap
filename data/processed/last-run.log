@@ -1,346 +1,876 @@
-https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx: HTTP 200 523,872 B
-  sheets: ['List A', 'A1', 'A2', 'A3', 'A4', 'A5', 'A6 (a)-(d)', 'A7', 'A8', 'A9', 'A10 (a)-(d)', 'A11', 'A12 (a)-(d)', 'List B', 'B1-B6', 'List C', 'C1-C5', 'C6-C10']
-  -- 'A2': 31 rows
-      0 | Jadual A2 : Penduduk mengikut Kumpulan Umur, Daerah dan Jant |  |  |  |  |  |  | 
-      1 | Table A2 : Population by Age Group, District and Sex, 2021 |  |  |  |  |  |  | 
-      2 |  |  |  |  |  |  |  | 
-      3 |  | Jumlah |  |  | Brunei Muara |  |  | Belait
-      4 | Kumpulan Umur | Total |  |  |  |  |  | 
-      5 | Age Group | Orang | Lelaki | Perempuan | Orang | Lelaki | Perempuan | Orang
-      6 |  | Persons | Males | Females | Persons | Males | Females | Persons
-      7 | 00-04 | 27355 | 14258 | 13097 | 19858 | 10301 | 9557 | 3865
-      8 | 05-09 | 31934 | 16658 | 15276 | 23110 | 12040 | 11070 | 4629
-      9 | 10-14 | 31087 | 16051 | 15036 | 22552 | 11660 | 10892 | 4268
-     10 | 15-19 | 33790 | 17365 | 16425 | 24685 | 12650 | 12035 | 4525
-     11 | 20-24 | 37099 | 19870 | 17229 | 27084 | 14520 | 12564 | 5026
-     12 | 25-29 | 41106 | 22698 | 18408 | 30045 | 16536 | 13509 | 5817
-     13 | 30-34 | 40534 | 22630 | 17904 | 29719 | 16596 | 13123 | 5785
-     14 | 35-39 | 38425 | 21289 | 17136 | 28192 | 15534 | 12658 | 5690
-     15 | 40-44 | 35463 | 19231 | 16232 | 26375 | 14246 | 12129 | 5143
-     16 | 45-49 | 31542 | 16463 | 15079 | 23283 | 12095 | 11188 | 4733
-     17 | 50-54 | 26732 | 13722 | 13010 | 19264 | 9894 | 9370 | 4223
-     18 | 55-59 | 20937 | 10627 | 10310 | 14752 | 7547 | 7205 | 3482
-     19 | 60-64 | 16817 | 8192 | 8625 | 11327 | 5476 | 5851 | 3134
-     20 | 65-69 | 12360 | 5902 | 6458 | 8231 | 3882 | 4349 | 2269
-     21 | 70-74 | 7518 | 3527 | 3991 | 4984 | 2336 | 2648 | 1346
-     22 | 75-79 | 3906 | 1907 | 1999 | 2545 | 1241 | 1304 | 739
-     23 | 80-84 | 2525 | 1100 | 1425 | 1598 | 698 | 900 | 511
-     24 | 85+ | 1585 | 704 | 881 | 926 | 398 | 528 | 346
-     25 |  |  |  |  |  |  |  | 
-     26 | Jumlah/Total | 440715 | 232194 | 208521 | 318530 | 167650 | 150880 | 65531
-     27 |  |  |  |  |  |  |  | 
-     28 |  |  |  |  |  |  |  | 
-     29 | Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ci |  |  |  |  |  |  | 
-     30 | Source : Report of the Population and Housing Census (BPP) 2 |  |  |  |  |  |  | 
-  -- 'List C': 150 rows
-      0 | Jadual |  | Tajuk |  |  |  |  | 
-      1 | Table |  | Title |  |  |  |  | 
-      2 |  |  |  |  |  |  |  | 
-      3 | C1 |  | Penduduk mengikut Mukim, Taraf Penduduk dan Jantina, 2021 |  |  |  |  | 
-      4 |  |  | Population by Mukim, Residential Status and Sex, 2021 |  |  |  |  | 
-      5 |  |  | (a) | Daerah Brunei Muara/Brunei Muara District |  |  |  | 
-      6 |  |  | (b) | Daerah Belait/Belait District |  |  |  | 
-      7 |  |  | (c) | Daerah Tutong/Tutong District |  |  |  | 
-      8 |  |  | (d) | Daerah Temburong/Temburong District |  |  |  | 
-      9 |  |  |  |  |  |  |  | 
-     10 | C2 |  | Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk  |  |  |  |  | 
-     11 |  |  | Population by Mukim and Kampung/Areas, Residential Status an |  |  |  |  | 
-     12 |  |  | (a) | Mukim Kianggeh |  |  |  | 
-     13 |  |  | (b) | Mukim Sungai Kedayan |  |  |  | 
-     14 |  |  | (c) | Mukim Saba |  |  |  | 
-     15 |  |  | (d) | Mukim Sungai Kebun |  |  |  | 
-     16 |  |  | (e) | Mukim Burong Pingai Ayer |  |  |  | 
-     17 |  |  | (f) | Mukim Peramu |  |  |  | 
-     18 |  |  | (g) | Mukim Tamoi |  |  |  | 
-     19 |  |  | (h) | Mukim Berakas A |  |  |  | 
-     20 |  |  | (i) | Mukim Berakas B |  |  |  | 
-     21 |  |  | (j) | Mukim Gadong A |  |  |  | 
-     22 |  |  | (k) | Mukim Gadong B |  |  |  | 
-     23 |  |  | (l) | Mukim Kota Batu |  |  |  | 
-     24 |  |  | (m) | Mukim Lumapas |  |  |  | 
-     25 |  |  | (n) | Mukim Kilanas |  |  |  | 
-     26 |  |  | (o) | Mukim Sengkurong |  |  |  | 
-     27 |  |  | (p) | Mukim Pangkalan Batu |  |  |  | 
-     28 |  |  | (q) | Mukim Mentiri |  |  |  | 
-     29 |  |  | (r) | Mukim Serasa |  |  |  | 
-     30 |  |  |  |  |  |  |  | 
-     31 |  |  |  |  |  |  |  | 
-     32 |  |  |  |  |  |  |  | 
-     33 |  |  |  |  |  |  |  | 
-     34 |  |  |  |  |  |  |  | 
-     35 | Jadual |  | Tajuk |  |  |  |  | 
-     36 | Table |  | Title |  |  |  |  | 
-     37 |  |  |  |  |  |  |  | 
-     38 | C3 |  | Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk  |  |  |  |  | 
-     39 |  |  | Population by Mukim and Kampung/Areas, Residential Status an |  |  |  |  | 
-     40 |  |  | (a) | Mukim  Kuala Belait |  |  |  | 
-     41 |  |  | (b) | Mukim  Seria |  |  |  | 
-     42 |  |  | (c) | Mukim  Liang |  |  |  | 
-     43 |  |  | (d) | Mukim  Kuala Balai |  |  |  | 
-     44 |  |  | (e) | Mukim  Labi |  |  |  | 
-     45 |  |  | (f) | Mukim  Bukit Sawat |  |  |  | 
-     46 |  |  | (g) | Mukim  Sukang |  |  |  | 
-     47 |  |  | (h) | Mukim  Melilas |  |  |  | 
-     48 |  |  |  |  |  |  |  | 
-     49 | C4 |  | Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk  |  |  |  |  | 
-     50 |  |  | Population by Mukim and Kampung/Areas, Residential Status an |  |  |  |  | 
-     51 |  |  | (a) | Mukim  Pekan Tutong |  |  |  | 
-     52 |  |  | (b) | Mukim  Keriam |  |  |  | 
-     53 |  |  | (c) | Mukim  Telisai |  |  |  | 
-     54 |  |  | (d) | Mukim  Tanjong Maya |  |  |  | 
-     55 |  |  | (e) | Mukim  Kiudang |  |  |  | 
-     56 |  |  | (f) | Mukim  Lamunin |  |  |  | 
-     57 |  |  | (g) | Mukim  Ukong |  |  |  | 
-     58 |  |  | (h) | Mukim  Rambai |  |  |  | 
-     59 |  |  |  |  |  |  |  | 
-     60 | C5 |  | Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk  |  |  |  |  | 
-     61 |  |  | Population by Mukim and Kampung/Areas, Residential Status an |  |  |  |  | 
-     62 |  |  | (a) | Mukim  Bangar |  |  |  | 
-     63 |  |  | (b) | Mukim  Amo |  |  |  | 
-     64 |  |  | (c) | Mukim  Labu |  |  |  | 
-     65 |  |  | (d) | Mukim  Batu Apoi |  |  |  | 
-     66 |  |  | (e) | Mukim  Bokok |  |  |  | 
-     67 |  |  |  |  |  |  |  | 
-     68 |  |  |  |  |  |  |  | 
-     69 |  |  |  |  |  |  |  | 
-     70 | Jadual |  | Tajuk |  |  |  |  | 
-     71 | Table |  | Title |  |  |  |  | 
-     72 |  |  |  |  |  |  |  | 
-     73 | C6 |  | Penduduk mengikut Mukim, Kumpulan Umur dan Jantina, 2021 |  |  |  |  | 
-     74 |  |  | Population by Mukim, Age Group and Sex, 2021 |  |  |  |  | 
-     75 |  |  | (a) | Daerah Brunei Muara/Brunei Muara District |  |  |  | 
-     76 |  |  | (b) | Daerah Belait/Belait District |  |  |  | 
-     77 |  |  | (c) | Daerah Tutong/Tutong District |  |  |  | 
-     78 |  |  | (d) | Daerah Temburong/Temburong District |  |  |  | 
-     79 |  |  |  |  |  |  |  | 
-     80 | C7 |  | Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur d |  |  |  |  | 
-     81 |  |  | Population by Mukim and Kampung/Areas,  Age Group and Sex, 2 |  |  |  |  | 
-     82 |  |  | (a) | Mukim Kianggeh |  |  |  | 
-     83 |  |  | (b) | Mukim Sungai Kedayan |  |  |  | 
-     84 |  |  | (c) | Mukim Saba |  |  |  | 
-     85 |  |  | (d) | Mukim Sungai Kebun |  |  |  | 
-     86 |  |  | (e) | Mukim Burong Pingai Ayer |  |  |  | 
-     87 |  |  | (f) | Mukim Peramu |  |  |  | 
-     88 |  |  | (g) | Mukim Tamoi |  |  |  | 
-     89 |  |  | (h) | Mukim Berakas A |  |  |  | 
-     90 |  |  | (i) | Mukim Berakas B |  |  |  | 
-     91 |  |  | (j) | Mukim Gadong A |  |  |  | 
-     92 |  |  | (k) | Mukim Gadong B |  |  |  | 
-     93 |  |  | (l) | Mukim Kota Batu |  |  |  | 
-     94 |  |  | (m) | Mukim Lumapas |  |  |  | 
-     95 |  |  | (n) | Mukim Kilanas |  |  |  | 
-     96 |  |  | (o) | Mukim Sengkurong |  |  |  | 
-     97 |  |  | (p) | Mukim Pangkalan Batu |  |  |  | 
-     98 |  |  | (q) | Mukim Mentiri |  |  |  | 
-     99 |  |  | (r) | Mukim Serasa |  |  |  | 
-    100 |  |  |  |  |  |  |  | 
-    101 |  |  |  |  |  |  |  | 
-    102 |  |  |  |  |  |  |  | 
-    103 |  |  |  |  |  |  |  | 
-    104 |  |  |  |  |  |  |  | 
-    105 | Jadual |  | Tajuk |  |  |  |  | 
-    106 | Table |  | Title |  |  |  |  | 
-    107 |  |  |  |  |  |  |  | 
-    108 | C8 |  | Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur d |  |  |  |  | 
-    109 |  |  | Population by Mukim and Kampung/Areas,  Age Group and Sex, 2 |  |  |  |  | 
-    110 |  |  | (a) | Mukim  Kuala Belait |  |  |  | 
-    111 |  |  | (b) | Mukim  Seria |  |  |  | 
-    112 |  |  | (c) | Mukim  Liang |  |  |  | 
-    113 |  |  | (d) | Mukim  Kuala Balai |  |  |  | 
-    114 |  |  | (e) | Mukim  Labi |  |  |  | 
-    115 |  |  | (f) | Mukim  Bukit Sawat |  |  |  | 
-    116 |  |  | (g) | Mukim  Sukang |  |  |  | 
-    117 |  |  | (h) | Mukim  Melilas |  |  |  | 
-    118 |  |  |  |  |  |  |  | 
-    119 | C9 |  | Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur d |  |  |  |  | 
-    120 |  |  | Population by Mukim and Kampung/Areas,  Age Group and Sex, 2 |  |  |  |  | 
-    121 |  |  | (a) | Mukim  Pekan Tutong |  |  |  | 
-    122 |  |  | (b) | Mukim  Keriam |  |  |  | 
-    123 |  |  | (c) | Mukim  Telisai |  |  |  | 
-    124 |  |  | (d) | Mukim  Tanjong Maya |  |  |  | 
-    125 |  |  | (e) | Mukim  Kiudang |  |  |  | 
-    126 |  |  | (f) | Mukim  Lamunin |  |  |  | 
-    127 |  |  | (g) | Mukim  Ukong |  |  |  | 
-    128 |  |  | (h) | Mukim  Rambai |  |  |  | 
-    129 |  |  |  |  |  |  |  | 
-    130 | C10 |  | Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur d |  |  |  |  | 
-    131 |  |  | Population by Mukim and Kampung/Areas,  Age Group and Sex, 2 |  |  |  |  | 
-    132 |  |  | (a) | Mukim  Bangar |  |  |  | 
-    133 |  |  | (b) | Mukim  Amo |  |  |  | 
-    134 |  |  | (c) | Mukim  Labu |  |  |  | 
-    135 |  |  | (d) | Mukim  Batu Apoi |  |  |  | 
-    136 |  |  | (e) | Mukim  Bokok |  |  |  | 
-    137 |  |  |  |  |  |  |  | 
-    138 |  |  |  |  |  |  |  | 
-    139 |  |  |  |  |  |  |  | 
-    140 |  |  |  |  |  |  |  | 
-    141 |  |  |  |  |  |  |  | 
-    142 |  |  |  |  |  |  |  | 
-    143 |  |  |  |  |  |  |  | 
-    144 |  |  |  |  |  |  |  | 
-    145 |  |  |  |  |  |  |  | 
-    146 |  |  |  |  |  |  |  | 
-    147 |  |  |  |  |  |  |  | 
-    148 |  |  |  |  |  |  |  | 
-    149 |  |  |  |  |  |  |  | 
-  -- 'C6-C10': 1426 rows
-      0 | Jadual C6 : Penduduk mengikut Mukim, Kumpulan Umur dan Janti |  |  |  |  |  |  | 
-      1 | Table C6 : Population by Mukim, Age group and Sex, 2021 |  |  |  |  |  |  | 
-      2 |  |  |  |  |  |  |  | 
-      3 |  |  |  |  |  |  |  | 
-      4 |  | Jumlah |  |  | 00-14 |  |  | 15-24
-      5 | Daerah dan Mukim | Total |  |  |  |  |  | 
-      6 | District and Mukim | Orang | Lelaki | Perempuan | Orang | Lelaki | Perempuan | Orang
-      7 |  | Persons | Males | Females | Persons | Males | Females | Persons
-      8 |  |  |  |  |  |  |  | 
-      9 | Brunei Muara | 318530 | 167650 | 150880 | 65520 | 34001 | 31519 | 51769
-     10 | Kianggeh | 8102 | 4164 | 3938 | 1583 | 801 | 782 | 999
-     11 | Sungai Kedayan | 241 | 165 | 76 | 40 | 24 | 16 | 19
-     12 | Saba | 827 | 426 | 401 | 226 | 115 | 111 | 183
-     13 | Sungai Kebun | 4282 | 2304 | 1978 | 1103 | 608 | 495 | 892
-     14 | Burong Pingai Ayer | 1459 | 734 | 725 | 401 | 198 | 203 | 295
-     15 | Peramu | 1151 | 590 | 561 | 319 | 165 | 154 | 250
-     16 | Tamoi | 942 | 467 | 475 | 269 | 131 | 138 | 186
-     17 | Berakas A | 28311 | 15535 | 12776 | 5842 | 3033 | 2809 | 3899
-     18 | Berakas B | 39284 | 20336 | 18948 | 7593 | 3906 | 3687 | 5350
-     19 | Gadong A | 35424 | 17877 | 17547 | 6977 | 3598 | 3379 | 5832
-     20 | Gadong B | 38067 | 19910 | 18157 | 7654 | 3991 | 3663 | 5808
-     21 | Kota Batu | 12676 | 6610 | 6066 | 2424 | 1295 | 1129 | 1957
-     22 | Lumapas | 8058 | 4137 | 3921 | 1658 | 874 | 784 | 1530
-     23 | Kilanas | 24981 | 13558 | 11423 | 4622 | 2387 | 2235 | 3455
-     24 | Sengkurong | 40972 | 22083 | 18889 | 8597 | 4484 | 4113 | 6343
-     25 | Pangkalan Batu | 15860 | 8479 | 7381 | 3246 | 1708 | 1538 | 2781
-     26 | Mentiri | 39324 | 20024 | 19300 | 9366 | 4808 | 4558 | 8230
-     27 | Serasa | 18569 | 10251 | 8318 | 3600 | 1875 | 1725 | 3760
-     28 |  |  |  |  |  |  |  | 
-     29 |  |  |  |  |  |  |  | 
-     30 |  |  |  |  |  |  |  | 
-     31 | Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ci |  |  |  |  |  |  | 
-     32 | Source : Report of the Population and Housing Census (BPP) 2 |  |  |  |  |  |  | 
-     33 | Jadual C6 : Penduduk mengikut Mukim, Kumpulan Umur dan Janti |  |  |  |  |  |  | 
-     34 | Table C6 : Population by Mukim, Age group and Sex, 2021 |  |  |  |  |  |  | 
-     35 |  |  |  |  |  |  |  | 
-     36 |  |  |  |  |  |  |  | 
-     37 |  | Jumlah |  |  | 00-14 |  |  | 15-24
-     38 | Daerah dan Mukim | Total |  |  |  |  |  | 
-     39 | District and Mukim | Orang | Lelaki | Perempuan | Orang | Lelaki | Perempuan | Orang
-     40 |  | Persons | Males | Females | Persons | Males | Females | Persons
-     41 |  |  |  |  |  |  |  | 
-     42 | Belait | 65531 | 34914 | 30617 | 12762 | 6735 | 6027 | 9551
-     43 | Kuala Belait | 28793 | 15728 | 13065 | 4895 | 2595 | 2300 | 3557
-     44 | Seria | 18313 | 9438 | 8875 | 3941 | 2086 | 1855 | 3161
-     45 | Liang | 16813 | 8774 | 8039 | 3713 | 1942 | 1771 | 2650
-     46 | Kuala Balai | 16 | 5 | 11 | 2 | 0 | 2 | 6
-     47 | Labi | 727 | 419 | 308 | 89 | 43 | 46 | 86
-     48 | Bukit Sawat | 759 | 490 | 269 | 107 | 62 | 45 | 84
-     49 | Sukang | 81 | 45 | 36 | 7 | 3 | 4 | 3
-     50 | Melilas | 29 | 15 | 14 | 8 | 4 | 4 | 4
-     51 |  |  |  |  |  |  |  | 
-     52 |  |  |  |  |  |  |  | 
-     53 |  |  |  |  |  |  |  | 
-     54 |  |  |  |  |  |  |  | 
-     55 |  |  |  |  |  |  |  | 
-     56 |  |  |  |  |  |  |  | 
-     57 |  |  |  |  |  |  |  | 
-     58 |  |  |  |  |  |  |  | 
-     59 |  |  |  |  |  |  |  | 
-     60 |  |  |  |  |  |  |  | 
-     61 |  |  |  |  |  |  |  | 
-     62 |  |  |  |  |  |  |  | 
-     63 |  |  |  |  |  |  |  | 
-     64 | Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ci |  |  |  |  |  |  | 
-     65 | Source : Report of the Population and Housing Census (BPP) 2 |  |  |  |  |  |  | 
-     66 | Jadual C6 : Penduduk mengikut Mukim, Kumpulan Umur dan Janti |  |  |  |  |  |  | 
-     67 | Table C6 : Population by Mukim, Age group and Sex, 2021 |  |  |  |  |  |  | 
-     68 |  |  |  |  |  |  |  | 
-     69 |  |  |  |  |  |  |  | 
-     70 |  | Jumlah |  |  | 00-14 |  |  | 15-24
-     71 | Daerah dan Mukim | Total |  |  |  |  |  | 
-     72 | District and Mukim | Orang | Lelaki | Perempuan | Orang | Lelaki | Perempuan | Orang
-     73 |  | Persons | Males | Females | Persons | Males | Females | Persons
-     74 |  |  |  |  |  |  |  | 
-     75 | Tutong | 47210 | 24599 | 22611 | 10128 | 5164 | 4964 | 7964
-     76 | Pekan Tutong | 9883 | 5211 | 4672 | 2172 | 1113 | 1059 | 1608
-     77 | Keriam | 8589 | 4484 | 4105 | 1778 | 900 | 878 | 1479
-     78 | Telisai | 13253 | 6865 | 6388 | 3510 | 1796 | 1714 | 2184
-     79 | Tanjong Maya | 3772 | 1979 | 1793 | 628 | 321 | 307 | 702
-     80 | Kiudang | 5063 | 2672 | 2391 | 832 | 421 | 411 | 878
-     81 | Lamunin | 3641 | 1872 | 1769 | 684 | 367 | 317 | 603
-     82 | Ukong | 2029 | 1042 | 987 | 337 | 158 | 179 | 354
-     83 | Rambai | 980 | 474 | 506 | 187 | 88 | 99 | 156
-     84 |  |  |  |  |  |  |  | 
-     85 |  |  |  |  |  |  |  | 
-     86 |  |  |  |  |  |  |  | 
-     87 |  |  |  |  |  |  |  | 
-     88 |  |  |  |  |  |  |  | 
-     89 |  |  |  |  |  |  |  | 
-     90 |  |  |  |  |  |  |  | 
-     91 |  |  |  |  |  |  |  | 
-     92 |  |  |  |  |  |  |  | 
-     93 |  |  |  |  |  |  |  | 
-     94 |  |  |  |  |  |  |  | 
-     95 |  |  |  |  |  |  |  | 
-     96 |  |  |  |  |  |  |  | 
-     97 | Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ci |  |  |  |  |  |  | 
-     98 | Source : Report of the Population and Housing Census (BPP) 2 |  |  |  |  |  |  | 
-     99 | Jadual C6 : Penduduk mengikut Mukim, Kumpulan Umur dan Janti |  |  |  |  |  |  | 
-    100 | Table C6 : Population by Mukim, Age group and Sex, 2021 |  |  |  |  |  |  | 
-    101 |  |  |  |  |  |  |  | 
-    102 |  |  |  |  |  |  |  | 
-    103 |  | Jumlah |  |  | 00-14 |  |  | 15-24
-    104 | Daerah dan Mukim | Total |  |  |  |  |  | 
-    105 | District and Mukim | Orang | Lelaki | Perempuan | Orang | Lelaki | Perempuan | Orang
-    106 |  | Persons | Males | Females | Persons | Males | Females | Persons
-    107 |  |  |  |  |  |  |  | 
-    108 | Temburong | 9444 | 5031 | 4413 | 1966 | 1067 | 899 | 1605
-    109 | Bangar | 2112 | 1186 | 926 | 477 | 271 | 206 | 316
-    110 | Amo | 1657 | 888 | 769 | 308 | 170 | 138 | 279
-    111 | Labu | 508 | 274 | 234 | 84 | 49 | 35 | 99
-    112 | Batu Apoi | 1355 | 718 | 637 | 251 | 137 | 114 | 218
-    113 | Bokok | 3812 | 1965 | 1847 | 846 | 440 | 406 | 693
-    114 |  |  |  |  |  |  |  | 
-    115 |  |  |  |  |  |  |  | 
-    116 |  |  |  |  |  |  |  | 
-    117 |  |  |  |  |  |  |  | 
-    118 |  |  |  |  |  |  |  | 
-    119 |  |  |  |  |  |  |  | 
-    120 |  |  |  |  |  |  |  | 
-    121 |  |  |  |  |  |  |  | 
-    122 |  |  |  |  |  |  |  | 
-    123 |  |  |  |  |  |  |  | 
-    124 |  |  |  |  |  |  |  | 
-    125 |  |  |  |  |  |  |  | 
-    126 |  |  |  |  |  |  |  | 
-    127 |  |  |  |  |  |  |  | 
-    128 |  |  |  |  |  |  |  | 
-    129 |  |  |  |  |  |  |  | 
-    130 | Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ci |  |  |  |  |  |  | 
-    131 | Source : Report of the Population and Housing Census (BPP) 2 |  |  |  |  |  |  | 
-    132 | Jadual C7 : Penduduk mengikut Mukim dan Kampung/Kawasan, Kum |  |  |  |  |  |  | 
-    133 | Table C7 : Population by Mukim and Kampung/Areas, Age group  |  |  |  |  |  |  | 
-    134 |  |  |  |  |  |  |  | 
-    135 | (a) MUKIM KIANGGEH |  |  |  |  |  |  | 
-    136 |  |  |  |  |  |  |  | 
-    137 |  | Jumlah |  |  | 00-14 |  |  | 15-24
-    138 | Mukim dan Kampung/Kawasan | Total |  |  |  |  |  | 
-    139 | Mukim and Kampung/Area | Orang | Lelaki | Perempuan | Orang | Lelaki | Perempuan | Orang
-    140 |  | Persons | Males | Females | Persons | Males | Females | Persons
-    141 |  |  |  |  |  |  |  | 
-    142 | Mukim Kianggeh | 8102 | 4164 | 3938 | 1583 | 801 | 782 | 999
-    143 | Pusat Bandar | 314 | 186 | 128 | 57 | 23 | 34 | 40
-    144 | Kg Kianggeh | 1328 | 710 | 618 | 240 | 124 | 116 | 162
-    145 | Kg Berangan | 456 | 229 | 227 | 65 | 39 | 26 | 52
-    146 | Kg Tasek Lama | 702 | 346 | 356 | 133 | 63 | 70 | 120
-    147 | Kg Pusar Ulak | 1187 | 579 | 608 | 300 | 151 | 149 | 151
-    148 | Kg Tungkadeh | 924 | 452 | 472 | 168 | 91 | 77 | 107
-    149 | Kg Kumbang Pasang | 661 | 360 | 301 | 155 | 71 | 84 | 71
-    150 | Kg Parit | 1424 | 743 | 681 | 208 | 110 | 98 | 149
-    151 | Kg Tumasek | 733 | 371 | 362 | 167 | 82 | 85 | 83
-    152 | Kg Melabau | 296 | 152 | 144 | 68 | 36 | 32 | 54
-    153 | Kawasan Lingkungan Diplomatik | 77 | 36 | 41 | 22 | 11 | 11 | 10
-    154 |  |  |  |  |  |  |  | 
-    155 |  |  |  |  |  |  |  | 
-    156 |  |  |  |  |  |  |  | 
-    157 |  |  |  |  |  |  |  | 
-    158 |  |  |  |  |  |  |  | 
-    159 |  |  |  |  |  |  |  | 
+== cod-ps-lao: licence=cc-by-igo  method=Census
+  - lao_admpop_2024.xlsx (XLSX, 76124 B)
+    https://data.humdata.org/dataset/f9ec8c86-e300-443b-bd04-a6c9923c29ef/resource/aa771bca-9756-4070-8098-1792f5c80a5f/download/lao_admpop_2024.xlsx
+    sheet 'Metadata': 19 rows x 2 cols
+    | Item | Metadata
+    | Country | Lao People's Democratic Republic
+    | Source(s) | Lao Statistics Bureau, Ministry of Planning and Investment / UNFPA Lao PDR
+    | Source(s) Link(s) | https://lao.unfpa.org/en/publications/lao-population-projection-national-and-province-2015-2045
+    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Population projection
+    | Year of the Baseline Population | 2015
+    | Reference year of this COD-PS | 2024
+    | Publication year of this COD-PS | 2024
+    | ADM-1 Name | Province
+    | ADM-1 Number of Units | 18 (17 provinces and 1 capital city prefecture)
+    | ADM-1 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
+    | ADM-1 Open-ended Age Group | 80+
+    | ADM-2 Name | District
+    | ADM-2 Number of Units | 148
+    | ADM-2 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
+    | ADM-2 Open-ended Age Group | 80+
+    | General Notes | The preliminary results of a recent analysis of the Lao civil registration and vital statistics (CRVS) system by UNFPA found that the quality of the 2015 census’ enumerated deaths is questionable, and an under-reporting of births and deaths in the Lao CRVS.
+    | Data Limitations | The population projections within this COD-PS contain underyling uncertainties, because it is unclear whether the National Statistical Office (NSO) actually conducted post-enumeration survey (PES) after the 2015 census to adjust the census results accordingly. Similarly, the NSO did not conduct a PES after the 2005 census. Therefore, the NSO's method of adjusting the 2015 census
+    | COD-PS Demographic Data Quality Assessment | The COD-PS was assessed against ADM-0 estimates and projections published by the World Population Prospects (2022 Revision) from the United Nations Department of Economic and Social Affairs (UN-DESA). Projected fertility, child mortality, and interprovincial migration trends were evaluated against the Lao Social Indicator Survey 2017 (MICS/DHS), and fou
+    sheet 'Methodological Documentation': 9 rows x 2 cols
+    | Item | Methodological_Documentation
+    | Methodology Used | Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.
+    | Baseline Population | 2015 census
+    | Post-enumeration survey (PES) | Although the 2015 census report notes that a post-enumeration survey (PES) was conducted immediately after the 2015 census field operations and that the PES report would be published separately, such a PES report cannot be located in the public sphere.
+    | Assessment and Adjustment of the Baseline Population | Prior to projecting forward, the 2015 census population was found to have a wide range of age misreporting and under-enumeration of children 0-4 and 5-9 years old. The under-enumeration of children 0-9 years old in the 2015 census was adjusted by retrospectively estimating the annual numbers of women of reproductive age dating back to the 2005
+    | Fertility (births) | Baseline national-level fertility was derived from the mid-year total fertility rate (TFR) and age-specific fertility rates (ASFR) published in the 2015 census. Baseline subnational mid-year TFRs and ASFRs were first derived from the unadjusted 2015 census data and adjusted by the ratio of the adjusted national ASFR to unadjusted national ASFR, then further refined to be consi
+    | Mortality (deaths) | The baseline national mortality level was derived from the estimates of life expectancy published in the census report (63.0 years for males and 66.4 years for females in 2015). Subnational mortality assumptions were derived by determining a life table for each province from the Coale-Demeny West model life tables, with the age-sex population distribution and adjusted crude de
+    | International migration (net migration) | At the time of buidling the projections, international migration was assumed to have a negligable impact on the national total population during the entire projection period and was not factored into these projections. This was due to lack of reliable data on international migraton and evidence suggesting that the number of emigrants recorded in the census
+    | Internal migration (migration within country) | Interprovincial migration was measured using 2005-2015 census data. For subnational units, the level of net migration and migrant age structure for each province was determined using the 2015 census. Most internal migration occurred among persons aged 15-35, and migration was somewhat more common for males than females. The proportion of interprovinc
+    sheet 'lao_admpop_adm0_2024': 2 rows x 58 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | 3810923 | 3820875 | 7631798 | 359922 | 376955 | 384113 | 357008 | 343444 | 338459 | 317990 | 282125 | 239679 | 195304 | 163365 | 139030 | 111613 | 83489 | 53409 | 33186 | 31832
+    sheet 'lao_admpop_adm1_2024': 19 rows x 60 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | 84145 | 87448 | 171593 | 9640 | 9617 | 8978 | 8180 | 8096 | 7499 | 6155 | 5748 | 4702 | 3947 | 3111 | 2744 | 2021 | 1537 | 960
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | 108306 | 107725 | 216031 | 10360 | 11146 | 11844 | 11179 | 9799 | 9105 | 8859 | 7985 | 6405 | 5095 | 4267 | 3623 | 3116 | 2367 | 1485
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | 166837 | 168343 | 335180 | 17014 | 17956 | 17511 | 16057 | 15250 | 14249 | 13130 | 11764 | 10216 | 8378 | 7016 | 5867 | 4475 | 3277 | 2049
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Champasack | LA16 | 400594 | 389176 | 789770 | 33806 | 36047 | 39453 | 35608 | 37354 | 37429 | 34820 | 28462 | 25007 | 21538 | 17718 | 15828 | 12517 | 9943 | 6819
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Houaphan | LA07 | 157190 | 160783 | 317973 | 17277 | 17802 | 17836 | 16968 | 15928 | 13037 | 9297 | 9455 | 8454 | 7282 | 6519 | 5353 | 4319 | 3232 | 1938
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Khammouan | LA12 | 227465 | 228713 | 456178 | 21570 | 23106 | 22479 | 20824 | 20866 | 19603 | 18914 | 17217 | 14420 | 11866 | 10230 | 8315 | 6607 | 4808 | 3124
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Louangnamtha | LA03 | 106837 | 104770 | 211607 | 10893 | 11133 | 10986 | 11024 | 10203 | 9145 | 7845 | 7332 | 6141 | 4996 | 4292 | 3812 | 3363 | 2461 | 1547
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Louangphabang | LA06 | 238753 | 241081 | 479834 | 21995 | 23988 | 26364 | 24560 | 22757 | 19791 | 18120 | 16976 | 14571 | 11546 | 9637 | 8593 | 7106 | 5472 | 3410
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Oudomxai | LA04 | 182264 | 179798 | 362062 | 18983 | 19398 | 19701 | 19322 | 18633 | 16651 | 13618 | 12487 | 10163 | 8223 | 6712 | 5710 | 4661 | 3443 | 2215
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Phongsaly | LA02 | 98184 | 100137 | 198321 | 10301 | 10898 | 11245 | 10834 | 8823 | 7072 | 6447 | 6785 | 5390 | 4569 | 4092 | 3483 | 2822 | 2318 | 1422
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Salavan | LA14 | 232826 | 238811 | 471637 | 24306 | 24885 | 27377 | 24899 | 21653 | 20765 | 17882 | 15487 | 12359 | 10478 | 8461 | 7323 | 5812 | 4485 | 3040
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Savannakhet | LA13 | 564952 | 566723 | 1131675 | 49952 | 52806 | 56269 | 52552 | 51626 | 53747 | 49617 | 41902 | 35714 | 29606 | 24739 | 20642 | 16279 | 12078 | 7773
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Sekong | LA15 | 67975 | 70896 | 138871 | 7899 | 7789 | 8479 | 8017 | 6932 | 5679 | 4484 | 4298 | 3544 | 2776 | 2232 | 1878 | 1410 | 1039 | 722
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Vientiane | LA10 | 242074 | 242107 | 484181 | 20408 | 21617 | 24061 | 22911 | 21380 | 20180 | 19612 | 18349 | 16866 | 13438 | 11254 | 9625 | 7887 | 5843 | 3859
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Vientiane Capital | LA01 | 520643 | 507544 | 1028187 | 43615 | 43935 | 37820 | 35132 | 39508 | 51654 | 56051 | 47188 | 40361 | 31650 | 26217 | 21635 | 16767 | 12190 | 7311
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Xaignabouly | LA08 | 217495 | 225985 | 443480 | 19958 | 21496 | 20588 | 18748 | 16868 | 16803 | 18711 | 17745 | 15091 | 11844 | 10098 | 8821 | 7465 | 5390 | 3576
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Xaisomboon | LA18 | 57075 | 62250 | 119325 | 7233 | 7630 | 7657 | 6002 | 4795 | 4578 | 4443 | 3772 | 2689 | 2159 | 1784 | 1396 | 1131 | 753 | 457
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Xiengkhouang | LA09 | 137308 | 138585 | 275893 | 14712 | 15706 | 15465 | 14191 | 12973 | 11472 | 9985 | 9173 | 7586 | 5913 | 4986 | 4382 | 3855 | 2853 | 1702
+    sheet 'lao_admpop_adm2_2024': 149 rows x 62 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Phouvong | LA1705 | 8710 | 9120 | 17830 | 985 | 977 | 990 | 861 | 863 | 796 | 646 | 606 | 493 | 408 | 311 | 260 | 188
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Samakkhixay | LA1702 | 21182 | 22697 | 43879 | 2198 | 2188 | 1985 | 1929 | 2048 | 1930 | 1670 | 1610 | 1312 | 1107 | 870 | 762 | 559
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Sanamxay | LA1703 | 20703 | 21406 | 42109 | 2611 | 2582 | 2312 | 2131 | 2068 | 1817 | 1383 | 1260 | 1046 | 883 | 702 | 624 | 451
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Sanxay | LA1704 | 13952 | 13943 | 27895 | 1871 | 1953 | 1846 | 1470 | 1244 | 1101 | 881 | 791 | 637 | 542 | 421 | 371 | 290
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Xaysetha | LA1701 | 19598 | 20282 | 39880 | 1975 | 1917 | 1845 | 1789 | 1873 | 1855 | 1575 | 1481 | 1214 | 1007 | 807 | 727 | 533
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Huoixai | LA0501 | 41063 | 41538 | 82601 | 3712 | 3960 | 4274 | 4094 | 3671 | 3435 | 3434 | 3166 | 2556 | 2041 | 1732 | 1453 | 1241
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Meung | LA0503 | 9202 | 9129 | 18331 | 936 | 1025 | 1089 | 1060 | 826 | 760 | 706 | 606 | 502 | 416 | 348 | 295 | 243
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Paktha | LA0505 | 11508 | 11625 | 23133 | 1202 | 1284 | 1281 | 1246 | 1064 | 970 | 913 | 808 | 623 | 496 | 413 | 360 | 305
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Pha Oudom | LA0504 | 25564 | 24271 | 49835 | 2639 | 2846 | 3016 | 2937 | 2428 | 2153 | 1962 | 1648 | 1293 | 1041 | 895 | 788 | 714
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Tonpheung | LA0502 | 20969 | 21162 | 42131 | 1871 | 2031 | 2184 | 1842 | 1810 | 1787 | 1844 | 1757 | 1431 | 1101 | 879 | 727 | 613
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Bolikhanh | LA1104 | 30064 | 32228 | 62292 | 3263 | 3447 | 3455 | 3061 | 2883 | 2627 | 2325 | 2021 | 1710 | 1353 | 1098 | 893 | 684
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Khamkeuth | LA1105 | 37605 | 37572 | 75177 | 3894 | 4143 | 4249 | 3985 | 3656 | 3250 | 2960 | 2524 | 2044 | 1672 | 1439 | 1225 | 932
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Pakkading | LA1103 | 31536 | 30295 | 61831 | 3142 | 3223 | 2968 | 2814 | 2870 | 2762 | 2610 | 2392 | 2094 | 1673 | 1378 | 1156 | 881
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Pakxane | LA1101 | 27285 | 26989 | 54274 | 2532 | 2672 | 2246 | 2112 | 2323 | 2365 | 2221 | 2080 | 1920 | 1661 | 1418 | 1191 | 908
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Thaphabath | LA1102 | 15156 | 14969 | 30125 | 1269 | 1389 | 1440 | 1281 | 1155 | 1083 | 1160 | 1202 | 1151 | 966 | 823 | 692 | 544
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Viengthong | LA1106 | 18586 | 19161 | 37747 | 2175 | 2290 | 2282 | 1985 | 1686 | 1629 | 1458 | 1175 | 957 | 773 | 637 | 518 | 381
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Xaychamphone | LA1107 | 6605 | 7129 | 13734 | 739 | 792 | 871 | 819 | 677 | 533 | 396 | 370 | 340 | 280 | 223 | 192 | 145
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Champasack | LA16 | Bachiangchaleunsook | LA1603 | 33244 | 34383 | 67627 | 2825 | 2931 | 3267 | 3054 | 3233 | 3283 | 3014 | 2401 | 2068 | 1728 | 1398 | 1233 | 965
+    | 2024 | LAO | Lao People's Democratic Republic (the) | LA | Champasack | LA16 | Champasack | LA1607 | 36231 | 33572 | 69803 | 3018 | 3129 | 3335 | 3070 | 3290 | 3387 | 3228 | 2685 | 2345 | 2029 | 1666 | 1503 | 1180
+  - lao_admgz_2019.xlsx (XLSX, 22955 B)
+    https://data.humdata.org/dataset/f9ec8c86-e300-443b-bd04-a6c9923c29ef/resource/f3e7437f-e0fd-4c5a-8eb0-7531648bc5e3/download/lao_admgz_2019.xlsx
+    sheet 'ADM0': 2 rows x 9 cols
+    | ADM0_EN | ADM0_LO | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | ADM0ALT1_LO | ADM0ALT2_LO | AREA_SQKM
+    | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | Lao Peoples Democratic Republic (the) |  |  |  |  | 230405.109375
+    sheet 'ADM1': 19 rows x 12 cols
+    | ADM1_EN | ADM1_LO | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM1ALT1_LO | ADM1ALT2_LO | ADM0_EN | ADM0_LO | ADM0_PCODE | AREA_SQKM
+    | Attapeu | ອັດຕະປື | LA17 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 10233.5927734375
+    | Bokeo | ບໍ່ແກ້ວ | LA05 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 6782.2822265625
+    | Bolikhamxai | ບໍລິຄຳໄຊ | LA11 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 15392.736328125
+    | Champasack | ຈຳປາສັກ | LA16 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 14902.8681640625
+    | Houaphan | ຫົວພັນ | LA07 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 17201.240234375
+    | Khammouan | ຄຳມ່ວນ | LA12 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 16746.900390625
+    | Louangnamtha | ຫຼວງນ້ຳທາ | LA03 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 9467.078125
+    | Louangphabang | ຫຼວງພະບາງ | LA06 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 19931.244140625
+    | Oudomxai | ອຸດົມໄຊ | LA04 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 12053.6435546875
+    | Phongsaly | ຜົ້ງສາລີ | LA02 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 15493.626953125
+    | Salavan | ສາລະວັນ | LA14 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 10110.9462890625
+    | Savannakhet | ສະຫວັນນະເຂດ | LA13 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 21302.57421875
+    | Sekong | ເຊກອງ | LA15 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 8281.9765625
+    | Vientiane | ວຽງຈັນ | LA10 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 12494.0478515625
+    | Vientiane Capital | ນະຄອນຫຼວງວຽງຈັນ | LA01 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 3637.202392578125
+    | Xaignabouly | ໄຊຍະບູລີ | LA08 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 15493.3837890625
+    | Xaisomboon | ໄຊສົມບູນ | LA18 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 7956.09130859375
+    | Xiengkhouang | ຊຽງຂວາງ | LA09 |  |  |  |  |  | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 12923.6787109375
+    sheet 'ADM2': 149 rows x 15 cols
+    | ADM2_EN | ADM2_LO | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM2ALT1_LO | ADM2ALT2_LO | ADM1_EN | ADM1_LO | ADM1_PCODE | ADM0_EN | ADM0_LO | ADM0_PCODE | AREA_SQKM
+    | Add | ມ. ແອດ | LA0708 |  |  |  |  |  | Houaphan | ຫົວພັນ | LA07 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1026.9140625
+    | Anouvong | ມ. ອະນຸວົງ | LA1801 |  |  |  |  |  | Xaisomboon | ໄຊສົມບູນ | LA18 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 2067.296875
+    | Atsaphangthong | ມ. ອາດສະພັງທອງ | LA1303 |  |  |  |  |  | Savannakhet | ສະຫວັນນະເຂດ | LA13 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 673.5510864257812
+    | Atsaphone | ມ. ອາດສະພອນ | LA1313 |  |  |  |  |  | Savannakhet | ສະຫວັນນະເຂດ | LA13 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1482.66259765625
+    | Bachiangchaleunsook | ມ. ບາຈຽງຈະເລີນສຸກ | LA1603 |  |  |  |  |  | Champasack | ຈຳປາສັກ | LA16 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 872.9397583007812
+    | Beng | ມ. ແບງ | LA0405 |  |  |  |  |  | Oudomxai | ອຸດົມໄຊ | LA04 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1661.188354492188
+    | Bolikhanh | ມ. ບໍລິຄັນ | LA1104 |  |  |  |  |  | Bolikhamxai | ບໍລິຄຳໄຊ | LA11 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 2560.501220703125
+    | Boon Neua | ມ. ບຸນເໜືອ | LA0205 |  |  |  |  |  | Phongsaly | ຜົ້ງສາລີ | LA02 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1181.529174804688
+    | Boontay | ມ. ບຸນໃຕ້ | LA0207 |  |  |  |  |  | Phongsaly | ຜົ້ງສາລີ | LA02 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1372.210693359375
+    | Botene | ມ. ບໍ່ແຕນ | LA0809 |  |  |  |  |  | Xaignabouly | ໄຊຍະບູລີ | LA08 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1090.6572265625
+    | Bualapha | ມ. ບົວລະພາ | LA1206 |  |  |  |  |  | Khammouan | ຄຳມ່ວນ | LA12 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 3252.884033203125
+    | Champasack | ມ. ຈຳປາສັກ | LA1607 |  |  |  |  |  | Champasack | ຈຳປາສັກ | LA16 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 895.7990112304688
+    | Champhone | ມ. ຈຳພອນ | LA1309 |  |  |  |  |  | Savannakhet | ສະຫວັນນະເຂດ | LA13 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1065.723266601562
+    | Chanthabuly | ມ. ຈັນທະບູລີ | LA0101 |  |  |  |  |  | Vientiane Capital | ນະຄອນຫຼວງວຽງຈັນ | LA01 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 25.96811866760254
+    | Chomphet | ມ. ຈອມເພັດ | LA0609 |  |  |  |  |  | Louangphabang | ຫຼວງພະບາງ | LA06 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1330.74658203125
+    | Dakcheung | ມ. ດັກຈຶງ | LA1503 |  |  |  |  |  | Sekong | ເຊກອງ | LA15 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 2572.8916015625
+    | Feuang | ມ. ເຟືອງ | LA1006 |  |  |  |  |  | Vientiane | ວຽງຈັນ | LA10 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 866.2557373046875
+    | Hadxaifong | ມ. ຫາດຊາຍຟອງ | LA0107 |  |  |  |  |  | Vientiane Capital | ນະຄອນຫຼວງວຽງຈັນ | LA01 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 224.4760894775391
+    | Hiem | ມ. ຮ້ຽມ | LA0703 |  |  |  |  |  | Houaphan | ຫົວພັນ | LA07 | Lao People's Democratic Republic (the) | ສາທາລະນະລັດ ປະຊາທ | LA | 1407.567504882812
+  - lao_admpop_2023.xlsx (XLSX, 78934 B)
+    https://data.humdata.org/dataset/f9ec8c86-e300-443b-bd04-a6c9923c29ef/resource/31bbc39b-2d43-4307-880d-9f59c7faaf9a/download/lao_admpop_2023.xlsx
+    sheet 'Metadata': 19 rows x 2 cols
+    | Item | Metadata
+    | Country | Lao People's Democratic Republic
+    | Source(s) | Lao Statistics Bureau, Ministry of Planning and Investment / UNFPA Lao PDR
+    | Source(s) Link(s) | https://lao.unfpa.org/en/publications/lao-population-projection-national-and-province-2015-2045
+    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Population projection
+    | Year of the Baseline Population | 2015
+    | Reference year of this COD-PS | 2023
+    | Publication year of this COD-PS | 2023
+    | ADM-1 Name | Province
+    | ADM-1 Number of Units | 18 (17 provinces and 1 capital city prefecture)
+    | ADM-1 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
+    | ADM-1 Open-ended Age Group | 80+
+    | ADM-2 Name | District
+    | ADM-2 Number of Units | 148
+    | ADM-2 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
+    | ADM-2 Open-ended Age Group | 80+
+    | General Notes | The preliminary results of a recent analysis of the Lao civil registration and vital statistics (CRVS) system by UNFPA found that the quality of the 2015 census’ enumerated deaths is questionable and conversely an under-reporting of births and deaths in the Lao CRVS.
+    | Data Limitations | The population projections within this COD-PS contain underyling uncertainties, because it is unclear whether the NSO actually conducted PES after the 2015 census to adjust the census results accordingly. Similarly, the NSO did not conduct a PES after the 2005 census. Therefore, the NSO's method of adjusting the 2015 census population prior to building postcensal projections may
+    | COD-PS Demographic Data Quality Assessment | The COD-PS was assessed against ADM-0 estimates and projections published by the World Population Prospects (2022 Revision) from the United Nations Department of Economic and Social Affairs (UN-DESA). Projected fertility, child mortality, and interprovincial migration trends were evaluated against the Lao Social Indicator Survey 2017 (MICS/DHS), and fou
+    sheet 'Methodological Documentation': 9 rows x 2 cols
+    | Item | Methodological_Documentation
+    | Methodology Used | Cohort component method was applied to the results of the 2015 census to build projections on which this COD-PS is based.
+    | Baseline Population | 2015 census
+    | Post-enumeration survey (PES) | Although the 2015 census report notes that a PES was conducted immediately after the 2015 census field operations and that the PES report would be published separately, such a PES report cannot be located in the public sphere.
+    | Assessment and Adjustment of the Baseline Population | Prior to projecting forward, the 2015 census population was found to have a wide range of age misreporting and under-enumeration of children 0-4 and 5-9 years old. The under-enumeration of children 0-9 years old in the 2015 census was adjusted by retrospectively estimating the annual numbers of women of reproductive age dating back to the 2005
+    | Fertility (births) | The baseline national-level fetility level was derived from the mid-year total fertility rate (TFR) and age-specific fertility rates (ASFR) published in the 2015 census. Baseline subnational mid-year TFRs and ASFRs were first derived from the unadjusted 2015 census data and adjusted by the ratio of the adjusted national ASFR to unadjusted national ASFR, then further refined to
+    | Mortality (deaths) | The baseline national mortality level was derived from the estimates of life expectancy published in the census report. Subnational mortality assumptions were derived by determining a life table for each province from the Coale-Demeny West model life tables, with the age-sex population distribution and crude death rate of each province as inputs. All mortality projections were
+    | International migration (net migration) | At the time of buidling the projections, international migration was assumed to have no significant impact on the national total population during the entire projection period, partly because of the lack of reliable data.
+    | Internal migration (migration within country) | With respect to internal migration, the proportion of interprovincial migrants to national total population was assumed to remain constant and the majority of them will be young adults aged 15-30.
+    sheet 'lao_admpop_adm0_2023': 2 rows x 58 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | 3760195 | 3770540 | 7530735 | 364002 | 381195 | 379737 | 353385 | 343089 | 336223 | 312194 | 274808 | 230997 | 188702 | 159499 | 134999 | 108143 | 79067 | 50962 | 31690 | 31503
+    sheet 'lao_admpop_adm1_2023': 19 rows x 60 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | 82849 | 85776 | 168625 | 9731 | 9530 | 8829 | 8187 | 8101 | 7190 | 6098 | 5563 | 4585 | 3776 | 3082 | 2631 | 1974 | 1455 | 931
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | 106688 | 106189 | 212877 | 10485 | 11348 | 11787 | 10895 | 9591 | 9042 | 8757 | 7699 | 6125 | 4922 | 4146 | 3566 | 3045 | 2250 | 1409
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | 164461 | 165718 | 330179 | 17282 | 17957 | 17254 | 15942 | 15136 | 14072 | 12901 | 11505 | 9871 | 8103 | 6849 | 5644 | 4316 | 3087 | 1977
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Champasack | LA16 | 395446 | 384910 | 780356 | 34001 | 37177 | 38460 | 35829 | 37521 | 37350 | 33537 | 27636 | 24417 | 20672 | 17445 | 15272 | 12173 | 9522 | 6489
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Houaphan | LA07 | 156262 | 160018 | 316280 | 17566 | 18023 | 17769 | 17175 | 15984 | 12229 | 9369 | 9406 | 8270 | 7225 | 6390 | 5219 | 4243 | 3039 | 1892
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Khammouan | LA12 | 224577 | 225974 | 450551 | 21993 | 23112 | 22054 | 21084 | 20819 | 19416 | 18703 | 16715 | 13851 | 11560 | 9904 | 8058 | 6366 | 4551 | 2997
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Louangnamtha | LA03 | 105246 | 103206 | 208452 | 10986 | 11102 | 11026 | 10874 | 10059 | 8841 | 7767 | 7140 | 5903 | 4854 | 4208 | 3795 | 3273 | 2335 | 1483
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Louangphabang | LA06 | 237101 | 239608 | 476709 | 22404 | 24921 | 26182 | 24516 | 22396 | 19589 | 18067 | 16713 | 14038 | 11150 | 9531 | 8423 | 6964 | 5194 | 3259
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Oudomxai | LA04 | 179831 | 177264 | 357095 | 19219 | 19541 | 19642 | 19318 | 18509 | 15981 | 13449 | 12098 | 9795 | 7923 | 6554 | 5591 | 4529 | 3299 | 2105
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Phongsaly | LA02 | 97496 | 99525 | 197021 | 10473 | 11099 | 11345 | 10628 | 8576 | 6853 | 6665 | 6602 | 5225 | 4515 | 4050 | 3396 | 2828 | 2212 | 1385
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Salavan | LA14 | 229451 | 234727 | 464178 | 24324 | 25648 | 27178 | 24159 | 21591 | 20259 | 17516 | 14861 | 12025 | 10080 | 8299 | 7105 | 5652 | 4320 | 2903
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Savannakhet | LA13 | 557262 | 559014 | 1116276 | 50301 | 54006 | 55618 | 51842 | 52119 | 53505 | 48133 | 40683 | 34501 | 28623 | 24058 | 19945 | 15720 | 11403 | 7456
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Sekong | LA15 | 66887 | 69498 | 136385 | 7879 | 7991 | 8471 | 7861 | 6759 | 5360 | 4465 | 4197 | 3405 | 2664 | 2186 | 1814 | 1358 | 1012 | 687
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Vientiane | LA10 | 239125 | 239372 | 478497 | 20463 | 22325 | 23907 | 22613 | 21100 | 20120 | 19371 | 18226 | 16221 | 12955 | 10959 | 9383 | 7598 | 5567 | 3642
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Vientiane Capital | LA01 | 510383 | 498148 | 1008531 | 44196 | 42473 | 37144 | 34103 | 40416 | 53374 | 54327 | 45882 | 38508 | 30386 | 25346 | 20738 | 16063 | 11276 | 6905
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Xaignabouly | LA08 | 215127 | 223440 | 438567 | 20396 | 21433 | 20347 | 18406 | 16738 | 17300 | 18754 | 17378 | 14417 | 11460 | 9874 | 8697 | 7179 | 5156 | 3381
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Xaisomboon | LA18 | 55837 | 60514 | 116351 | 7258 | 7659 | 7399 | 5822 | 4717 | 4485 | 4385 | 3534 | 2574 | 2097 | 1720 | 1363 | 1091 | 708 | 436
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Xiengkhouang | LA09 | 136166 | 137639 | 273805 | 15045 | 15850 | 15325 | 14131 | 12957 | 11257 | 9930 | 8970 | 7266 | 5737 | 4898 | 4359 | 3771 | 2681 | 1625
+    sheet 'lao_admpop_adm2_2023': 149 rows x 62 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Phouvong | LA1705 | 8559 | 8928 | 17487 | 989 | 989 | 962 | 858 | 861 | 759 | 639 | 584 | 478 | 389 | 305 | 249 | 183
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Samakkhixay | LA1702 | 20885 | 22283 | 43168 | 2226 | 2151 | 1963 | 1955 | 2060 | 1858 | 1666 | 1559 | 1276 | 1060 | 860 | 729 | 548
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Sanamxay | LA1703 | 20366 | 20998 | 41364 | 2641 | 2539 | 2283 | 2120 | 2054 | 1727 | 1365 | 1226 | 1025 | 848 | 697 | 597 | 437
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Sanxay | LA1704 | 13725 | 13641 | 27366 | 1901 | 1956 | 1793 | 1441 | 1235 | 1053 | 867 | 760 | 628 | 517 | 416 | 358 | 283
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Attapeu | LA17 | Xaysetha | LA1701 | 19314 | 19926 | 39240 | 1974 | 1895 | 1828 | 1813 | 1891 | 1793 | 1561 | 1434 | 1178 | 962 | 804 | 698 | 523
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Huoixai | LA0501 | 40514 | 41003 | 81517 | 3752 | 4041 | 4258 | 4012 | 3600 | 3430 | 3413 | 3060 | 2443 | 1978 | 1681 | 1428 | 1214
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Meung | LA0503 | 9019 | 8953 | 17972 | 947 | 1037 | 1097 | 1008 | 801 | 746 | 689 | 584 | 484 | 402 | 337 | 285 | 235
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Paktha | LA0505 | 11340 | 11470 | 22810 | 1223 | 1291 | 1288 | 1213 | 1039 | 959 | 901 | 773 | 596 | 477 | 405 | 355 | 298
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Pha Oudom | LA0504 | 25184 | 23907 | 49091 | 2674 | 2902 | 3036 | 2845 | 2362 | 2121 | 1912 | 1579 | 1238 | 1012 | 874 | 787 | 698
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bokeo | LA05 | Tonpheung | LA0502 | 20631 | 20856 | 41487 | 1889 | 2077 | 2108 | 1817 | 1789 | 1786 | 1842 | 1703 | 1364 | 1053 | 849 | 711 | 600
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Bolikhanh | LA1104 | 29556 | 31668 | 61224 | 3306 | 3471 | 3384 | 3021 | 2842 | 2574 | 2271 | 1967 | 1640 | 1302 | 1064 | 861 | 658
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Khamkeuth | LA1105 | 37138 | 37060 | 74198 | 3941 | 4206 | 4217 | 3962 | 3611 | 3208 | 2903 | 2432 | 1968 | 1627 | 1416 | 1182 | 901
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Pakkading | LA1103 | 31055 | 29792 | 60847 | 3183 | 3171 | 2921 | 2823 | 2861 | 2737 | 2578 | 2349 | 2015 | 1605 | 1347 | 1109 | 849
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Pakxane | LA1101 | 26919 | 26571 | 53490 | 2600 | 2595 | 2202 | 2123 | 2323 | 2340 | 2194 | 2064 | 1879 | 1616 | 1388 | 1146 | 877
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Thaphabath | LA1102 | 14986 | 14774 | 29760 | 1292 | 1401 | 1407 | 1265 | 1153 | 1096 | 1169 | 1198 | 1118 | 936 | 800 | 666 | 524
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Viengthong | LA1106 | 18278 | 18816 | 37094 | 2206 | 2300 | 2253 | 1954 | 1683 | 1597 | 1397 | 1126 | 921 | 748 | 618 | 496 | 367
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Bolikhamxai | LA11 | Xaychamphone | LA1107 | 6529 | 7037 | 13566 | 754 | 813 | 870 | 794 | 663 | 520 | 389 | 369 | 330 | 269 | 216 | 184 | 140
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Champasack | LA16 | Bachiangchaleunsook | LA1603 | 32731 | 33869 | 66600 | 2821 | 3024 | 3206 | 3069 | 3251 | 3262 | 2878 | 2316 | 2004 | 1649 | 1372 | 1187 | 933
+    | 2023 | LAO | Lao People's Democratic Republic (the) | LA | Champasack | LA16 | Champasack | LA1607 | 35806 | 33267 | 69073 | 3038 | 3196 | 3260 | 3116 | 3329 | 3395 | 3122 | 2606 | 2292 | 1947 | 1644 | 1448 | 1147
+  - LAO-COD-PS-2024-Explanatory-Note.pdf (PDF, 1420995 B)
+    https://data.humdata.org/dataset/f9ec8c86-e300-443b-bd04-a6c9923c29ef/resource/074d9d8a-6ff3-4e60-9dbc-6dad09b17444/download/lao-cod-ps-2024-explanatory-note.pdf
+  - lao_admpop_adm0_2024.csv (CSV, 882 B)
+    https://data.humdata.org/dataset/f9ec8c86-e300-443b-bd04-a6c9923c29ef/resource/994504df-1596-4a5c-a26d-936ed00d2d03/download/lao_admpop_adm0_2024.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_69,M_70_74
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,3810923,3820875,7631798,359922,376955,384113,357008,343444,338459,317990,282125,239679,195304,163365,139030,111613,83489,53409,33186,31832,375949,391630,391900,365504,350972,340471,318817,281895,241175,195067,160929,130592,103072,74460,47373,27899,2
+    2 lines
+  - lao_admpop_adm1_2024.csv (CSV, 7112 B)
+    https://data.humdata.org/dataset/f9ec8c86-e300-443b-bd04-a6c9923c29ef/resource/55d90dae-f476-4fe1-bcc5-0745087154ee/download/lao_admpop_adm1_2024.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Attapeu,LA17,84145,87448,171593,9640,9617,8978,8180,8096,7499,6155,5748,4702,3947,3111,2744,2021,1537,960,623,587,10370,10280,9435,9023,8515,7426,6229,5962,5056,4242,3234,2670,1862,1435,847,483,379,20010,19897,18413,17203,16611,14925,12384,11710,975
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Bokeo,LA05,108306,107725,216031,10360,11146,11844,11179,9799,9105,8859,7985,6405,5095,4267,3623,3116,2367,1485,876,795,10690,11380,11615,11183,10040,9072,8509,7935,6569,5238,4374,3467,2983,2082,1326,741,521,21050,22526,23459,22362,19839,18177,17368,
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Bolikhamxai,LA11,166837,168343,335180,17014,17956,17511,16057,15250,14249,13130,11764,10216,8378,7016,5867,4475,3277,2049,1328,1300,17587,18585,18006,16335,15704,14827,13222,11392,10031,8133,7012,5761,4489,3119,1947,1135,1058,34601,36541,35517,32392
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Champasack,LA16,400594,389176,789770,33806,36047,39453,35608,37354,37429,34820,28462,25007,21538,17718,15828,12517,9943,6819,4243,4002,34719,36727,39656,36483,38052,37354,33719,27358,23708,20858,16558,14319,10695,7735,5370,3213,2652,68525,72774,7910
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Houaphan,LA07,157190,160783,317973,17277,17802,17836,16968,15928,13037,9297,9455,8454,7282,6519,5353,4319,3232,1938,1287,1206,17779,18287,18278,17589,16827,13955,9729,9733,9012,7331,6518,4810,3863,3081,1964,1117,910,35056,36089,36114,34557,32755,269
+    19 lines
+  - lao_admpop_adm2_2024.csv (CSV, 50137 B)
+    https://data.humdata.org/dataset/f9ec8c86-e300-443b-bd04-a6c9923c29ef/resource/87e60232-7af8-43c3-bc47-685f2a770ab1/download/lao_admpop_adm2_2024.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,ADM2_EN,ADM2_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Attapeu,LA17,Phouvong,LA1705,8710,9120,17830,985,977,990,861,863,796,646,606,493,408,311,260,188,135,84,54,53,1058,1023,966,932,880,812,680,653,568,459,339,275,183,136,81,42,33,2043,2000,1956,1793,1743,1608,1326,1259,1061,867,650,535,371,271,165,96,
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Attapeu,LA17,Samakkhixay,LA1702,21182,22697,43879,2198,2188,1985,1929,2048,1930,1670,1610,1312,1107,870,762,559,426,263,171,154,2363,2338,2093,2179,2335,2109,1828,1747,1432,1191,904,752,526,412,240,141,107,4561,4526,4078,4108,4383,4039,3498,3357,274
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Attapeu,LA17,Sanamxay,LA1703,20703,21406,42109,2611,2582,2312,2131,2068,1817,1383,1260,1046,883,702,624,451,339,209,137,148,2810,2756,2431,2352,2180,1820,1372,1239,1064,920,707,591,419,331,194,116,104,5421,5338,4743,4483,4248,3637,2755,2499,2110,180
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Attapeu,LA17,Sanxay,LA1704,13952,13943,27895,1871,1953,1846,1470,1244,1101,881,791,637,542,421,371,290,227,141,85,81,2006,2074,1923,1613,1240,980,808,760,639,545,413,328,228,177,108,56,45,3877,4027,3769,3083,2484,2081,1689,1551,1276,1087,834,699,518
+    | 2024,LAO,Lao People's Democratic Republic (the),LA,Attapeu,LA17,Xaysetha,LA1701,19598,20282,39880,1975,1917,1845,1789,1873,1855,1575,1481,1214,1007,807,727,533,410,263,176,151,2133,2089,2022,1947,1880,1705,1541,1563,1353,1127,871,724,506,379,224,128,90,4108,4006,3867,3736,3753,3560,3116,3044,2567,21
+    149 lines
+== cod-ps-tha: licence=cc-by-igo  method=Projections form 2017 to 2022 by the United States Bureau of the Census
+  - THA_CODPS_QA_2023.pdf (PDF, 5349878 B)
+    https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/1d2f13ad-4594-4f8d-9c18-dbc5b831b556/download/tha_codps_qa_2023.pdf
+  - tha_admpop_2023.xlsx (XLSX, 518212 B)
+    https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/4e846e04-3b31-4413-b615-eeff6b8dcd4c/download/tha_admpop_2023.xlsx
+    sheet 'Admin2': 929 rows x 22 cols
+    | OBJECTID * | Shape * | admin2Name_en | admin2Name_th | admin2Pcode | PS-MATCH | admin2RefName | admin2AltName1_en | admin2AltName2_en | admin2AltName1_th | admin2AltName2_th | admin1Name_en | admin1Name_th | admin1Pcode | admin0Name_en | admin0Name_th | admin0Pcode | date | validOn | validTo | Shape_Length | Shape_Area
+    | 1 | Polygon | Phra Nakhon | พระนคร | TH1001 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.085417 | 0.00045
+    | 2 | Polygon | Dusit | ดุสิต | TH1002 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.134132 | 0.00095
+    | 3 | Polygon | Nong Chok | หนองจอก | TH1003 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.676342 | 0.019859
+    | 4 | Polygon | Bang Rak | บางรัก | TH1004 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.085886 | 0.000337
+    | 5 | Polygon | Bang Khen | บางเขน | TH1005 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.301722 | 0.003415
+    | 6 | Polygon | Bang Kapi | บางกะปิ | TH1006 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.308691 | 0.002303
+    | 7 | Polygon | Pathum Wan | ปทุมวัน | TH1007 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.115324 | 0.000672
+    | 8 | Polygon | Pom Prap Sattru Phai | ป้อมปราบศัตรูพ่าย | TH1008 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.061669 | 0.000209
+    | 9 | Polygon | Phra Khanong | พระโขนง | TH1009 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.156672 | 0.001102
+    | 10 | Polygon | Min Buri | มีนบุรี | TH1010 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.397346 | 0.00505
+    | 11 | Polygon | Lat Krabang | ลาดกระบัง | TH1011 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.529699 | 0.01075
+    | 12 | Polygon | Yan Nawa | ยานนาวา | TH1012 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.152534 | 0.001036
+    | 13 | Polygon | Samphanthawong | สัมพันธวงศ์ | TH1013 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.051234 | 0.000118
+    | 14 | Polygon | Phaya Thai | พญาไท | TH1014 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.109781 | 0.000774
+    | 15 | Polygon | Thon Buri | ธนบุรี | TH1015 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.136819 | 0.000674
+    | 16 | Polygon | Bangkok Yai | บางกอกใหญ่ | TH1016 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.095343 | 0.000526
+    | 17 | Polygon | Huai Khwang | ห้วยขวาง | TH1017 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.17441 | 0.001363
+    | 18 | Polygon | Khlong San | คลองสาน | TH1018 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.086928 | 0.000496
+    | 19 | Polygon | Taling Chan | ตลิ่งชัน | TH1019 | 1 | <Null> | <Null> | <Null> | <Null> | <Null> | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 | <Null> | 0.237768 | 0.00298
+    sheet 'Metadata': 19 rows x 2 cols
+    | Item | Metadata
+    | Country | Thailand
+    | Source(s) | (Baseline) National Statistical Office of Thailand, (Projections) US Census Bureau
+    | Source(s) Link(s) | (Baseline)  http://popcensus.nso.go.th/report.php, (Projections) https://www.census.gov/data/tables/time-series/demo/international-programs/subnationalpopulation.html
+    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Population projection
+    | Year of the Baseline Population | 2010
+    | Reference year of this COD-PS | 2023
+    | Publication year of this COD-PS | 2023
+    | ADM-1 Name | Province (Changwat)
+    | ADM-1 Number of Units | 77
+    | ADM-1 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
+    | ADM-1 Open-ended Age Group | 80+
+    | ADM-2 Name | District (Amphoe)
+    | ADM-2 Number of Units | 928
+    | ADM-2 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
+    | ADM-2 Open-ended Age Group | 80+
+    | General Notes | This COD-PS is based on the projections prepared by the US Census Bureau (USCB) projections.
+    | Data Limitations | The USCB projections, on which this COD-PS is based, does not take into account unique national or subnational population dynamics. It is because the USCB subnational projections are built on the predication that population growth rates follow an S-curve progression of initially being slow, accelerating, peaking, and finally tapering, a path that is consistent with Malthusian th
+    | COD-PS Demographic Data Quality Assessment | The COD-PS was assessed against ADM-0 estimates and projections published in the World Population Prospects (2022 Revision) by the United Nations Department of Economic and Social Affairs (UN-DESA) and the Namibia NSO 2011-2041 projection report.
+    sheet 'Methodological Documentation': 9 rows x 2 cols
+    | Item | Methodological_Documentation
+    | Methodology Used | The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-specific 5-year age groups for the 928 ADM-2 units were calculated using Iterative Proportional Fitting, based on the age group proportions from the 2010 census. Furthermore, in general
+    | Baseline Population | 2010 census
+    | Post-enumeration survey (PES) | A formal PES report or PES results could not be found for the 2010 census.
+    | Assessment and Adjustment of the Baseline Population | There is no evidence of assessing and adjusting the baseline population prior to building the projections on which this COD-PS is based. The source file states that the U.S. Census Bureau cannot guarantee the accuracy of non-U.S. census and survey data.
+    | Fertility (births) | No fertility assumptions. It is because the projections on which this COD-PS is based were built on the predication that population growth rates follow an S-curve progression of initially being slow, accelerating, peaking, and finally tapering, a path that is consistent with Malthusian theory - rather than following the national or subnational population dynamics unique to eac
+    | Mortality (deaths) | No mortality assumptions. It is because the projections on which this COD-PS is based were built on the predication that population growth rates follow an S-curve progression of initially being slow, accelerating, peaking, and finally tapering, a path that is consistent with Malthusian theory - rather than following the national or subnational population dynamics unique to eac
+    | International migration (net migration) | No international migration (net migration) assumptions. It is because the projections on which this COD-PS is based were built on the predication that population growth rates follow an S-curve progression of initially being slow, accelerating, peaking, and finally tapering, a path that is consistent with Malthusian theory - rather than following the nation
+    | Internal migration (migration within country) | No internal migration (migration within country) assumptions. It is because the projections on which this COD-PS is based were built on the predication that population growth rates follow an S-curve progression of initially being slow, accelerating, peaking, and finally tapering, a path that is consistent with Malthusian theory - rather than followin
+    sheet 'tha_admpop_adm0_2023': 2 rows x 58 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus
+    | 2023 | THA | Thailand | TH | 35455997 | 33938765 | 69394762 | 1773335 | 1828335 | 1838898 | 1924036 | 2131537 | 2506866 | 2481079 | 2434471 | 2731092 | 2760029 | 2734093 | 2655430 | 2376889 | 1919154 | 1365210 | 893086 | 1102457
+    sheet 'tha_admpop_adm1_2023': 78 rows x 60 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74
+    | 2023 | THA | Thailand | TH | Amnat Charoen | TH37 | 91583 | 88146 | 179729 | 5736 | 6171 | 6527 | 4989 | 2724 | 3481 | 4388 | 5903 | 7140 | 6936 | 7354 | 7547 | 7045 | 5917 | 4062
+    | 2023 | THA | Thailand | TH | Ang Thong | TH15 | 106897 | 94295 | 201192 | 4955 | 5111 | 5641 | 4825 | 3872 | 4670 | 5100 | 5283 | 6698 | 8339 | 8985 | 9812 | 8817 | 7808 | 6763
+    | 2023 | THA | Thailand | TH | Bangkok | TH10 | 5883668 | 5595670 | 11479338 | 224135 | 220157 | 227055 | 309234 | 490628 | 588958 | 538011 | 473289 | 496749 | 463673 | 433726 | 391030 | 336248 | 251431 | 178449
+    | 2023 | THA | Thailand | TH | Bueng Kan | TH38 | 143647 | 140084 | 283731 | 10757 | 11128 | 10252 | 7250 | 4467 | 6267 | 8206 | 9430 | 10360 | 10701 | 11209 | 11195 | 10417 | 8704 | 5481
+    | 2023 | THA | Thailand | TH | Buri Ram | TH31 | 459143 | 429215 | 888358 | 31742 | 33336 | 32723 | 23875 | 13796 | 16872 | 21628 | 26350 | 31540 | 33494 | 34564 | 37347 | 37360 | 31043 | 21615
+    | 2023 | THA | Thailand | TH | Chachoengsao | TH24 | 371697 | 358904 | 730601 | 19470 | 19483 | 19103 | 18898 | 19175 | 24564 | 24431 | 24101 | 27563 | 27838 | 27921 | 27954 | 25618 | 22056 | 16585
+    | 2023 | THA | Thailand | TH | Chai Nat | TH18 | 111121 | 99099 | 210220 | 5259 | 5318 | 5334 | 4750 | 3331 | 3932 | 4529 | 5200 | 7147 | 9125 | 9884 | 11074 | 10062 | 8887 | 7061
+    | 2023 | THA | Thailand | TH | Chaiyaphum | TH36 | 358011 | 336096 | 694107 | 21201 | 21630 | 21856 | 16460 | 10365 | 12862 | 16033 | 20708 | 26754 | 28026 | 30674 | 31910 | 31665 | 25481 | 17935
+    | 2023 | THA | Thailand | TH | Chanthaburi | TH22 | 213217 | 206569 | 419786 | 11784 | 11628 | 11392 | 11359 | 10742 | 11811 | 12665 | 13761 | 16323 | 17245 | 17171 | 16816 | 14260 | 11977 | 9453
+    | 2023 | THA | Thailand | TH | Chiang Mai | TH50 | 913480 | 876461 | 1789941 | 39037 | 42338 | 41387 | 56407 | 63539 | 57057 | 52235 | 47931 | 61201 | 78176 | 88920 | 81887 | 62712 | 43963 | 35385
+    | 2023 | THA | Thailand | TH | Chiang Rai | TH57 | 528400 | 510159 | 1038559 | 26506 | 28143 | 28921 | 27019 | 22153 | 24589 | 25596 | 27773 | 37920 | 47607 | 53913 | 51592 | 39715 | 30712 | 22108
+    | 2023 | THA | Thailand | TH | Chon Buri | TH20 | 1154134 | 1176253 | 2330387 | 21159 | 52488 | 53487 | 67925 | 95388 | 138710 | 118266 | 99528 | 96857 | 84575 | 75194 | 65996 | 62960 | 47816 | 31221
+    | 2023 | THA | Thailand | TH | Chumphon | TH86 | 209323 | 213578 | 422901 | 12329 | 11660 | 11935 | 10905 | 10965 | 13217 | 13530 | 14124 | 15885 | 15726 | 15430 | 14417 | 13425 | 11390 | 8691
+    | 2023 | THA | Thailand | TH | Kalasin | TH46 | 311288 | 294646 | 605934 | 18266 | 19214 | 19789 | 16253 | 9941 | 11241 | 14529 | 19678 | 24904 | 24852 | 25594 | 27543 | 26953 | 22178 | 13360
+    | 2023 | THA | Thailand | TH | Kamphaeng Phet | TH62 | 427417 | 408995 | 836412 | 24893 | 25784 | 25811 | 21845 | 16295 | 18571 | 21772 | 24025 | 31076 | 34929 | 36664 | 37602 | 33874 | 26694 | 19769
+    | 2023 | THA | Thailand | TH | Kanchanaburi | TH71 | 379930 | 372300 | 752230 | 21866 | 23443 | 22825 | 20568 | 19321 | 21953 | 22854 | 24231 | 28260 | 29889 | 31614 | 29670 | 26148 | 21015 | 15141
+    | 2023 | THA | Thailand | TH | Khon Kaen | TH40 | 809391 | 760148 | 1569539 | 37723 | 41070 | 44166 | 50966 | 50621 | 40288 | 43345 | 49844 | 62313 | 62471 | 65208 | 66151 | 65491 | 52970 | 33164
+    | 2023 | THA | Thailand | TH | Krabi | TH81 | 167064 | 167901 | 334965 | 12447 | 11798 | 10746 | 9301 | 9863 | 12369 | 12416 | 12140 | 12609 | 12272 | 11315 | 10304 | 8565 | 6937 | 5437
+    | 2023 | THA | Thailand | TH | Lampang | TH52 | 298107 | 288724 | 586831 | 11388 | 12533 | 14363 | 13656 | 9521 | 9623 | 11688 | 15509 | 22185 | 28363 | 31500 | 30978 | 24568 | 20345 | 15808
+    sheet 'tha_admpop_adm2_2023': 929 rows x 62 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64
+    | 2023 | THA | Thailand | TH | Amnat Charoen | TH37 | Chanuman | TH3702 | 12501 | 12488 | 24989 | 931 | 1050 | 1043 | 699 | 408 | 544 | 693 | 832 | 948 | 855 | 942 | 988 | 838
+    | 2023 | THA | Thailand | TH | Amnat Charoen | TH37 | Hua Taphan | TH3706 | 11437 | 10683 | 22120 | 689 | 716 | 713 | 529 | 253 | 345 | 466 | 682 | 858 | 865 | 949 | 1043 | 1012
+    | 2023 | THA | Thailand | TH | Amnat Charoen | TH37 | Lue Amnat | TH3707 | 8975 | 8435 | 17410 | 555 | 562 | 606 | 436 | 231 | 289 | 375 | 548 | 704 | 697 | 715 | 739 | 693
+    | 2023 | THA | Thailand | TH | Amnat Charoen | TH37 | Mueang Amnat Charoen | TH3701 | 32969 | 31637 | 64606 | 1924 | 2047 | 2323 | 1929 | 1098 | 1321 | 1645 | 2168 | 2666 | 2654 | 2702 | 2612 | 2532
+    | 2023 | THA | Thailand | TH | Amnat Charoen | TH37 | Pathum Ratchawongsa | TH3703 | 11917 | 11873 | 23790 | 825 | 912 | 946 | 677 | 382 | 509 | 598 | 835 | 927 | 852 | 887 | 938 | 792
+    | 2023 | THA | Thailand | TH | Amnat Charoen | TH37 | Phana | TH3704 | 5239 | 4980 | 10219 | 311 | 323 | 350 | 261 | 96 | 141 | 210 | 309 | 370 | 385 | 431 | 454 | 490
+    | 2023 | THA | Thailand | TH | Amnat Charoen | TH37 | Senangkhanikhom | TH3705 | 8545 | 8050 | 16595 | 501 | 561 | 546 | 458 | 256 | 332 | 401 | 529 | 667 | 628 | 728 | 773 | 688
+    | 2023 | THA | Thailand | TH | Ang Thong | TH15 | Chaiyo | TH1502 | 10820 | 9604 | 20424 | 518 | 550 | 597 | 517 | 402 | 450 | 518 | 549 | 686 | 767 | 911 | 1009 | 871
+    | 2023 | THA | Thailand | TH | Ang Thong | TH15 | Mueang Ang Thong | TH1501 | 22127 | 19861 | 41988 | 1058 | 1030 | 1193 | 1131 | 972 | 1155 | 1250 | 1272 | 1519 | 1813 | 1849 | 1869 | 1660
+    | 2023 | THA | Thailand | TH | Ang Thong | TH15 | Pa Mok | TH1503 | 13260 | 11718 | 24978 | 559 | 720 | 940 | 621 | 456 | 587 | 649 | 700 | 797 | 967 | 1016 | 1147 | 965
+    | 2023 | THA | Thailand | TH | Ang Thong | TH15 | Pho Thong | TH1504 | 20764 | 18012 | 38776 | 826 | 899 | 942 | 857 | 695 | 884 | 940 | 944 | 1255 | 1671 | 1759 | 2022 | 1896
+    | 2023 | THA | Thailand | TH | Ang Thong | TH15 | Samko | TH1507 | 9310 | 8284 | 17594 | 544 | 490 | 476 | 422 | 322 | 416 | 434 | 480 | 579 | 757 | 813 | 868 | 787
+    | 2023 | THA | Thailand | TH | Ang Thong | TH15 | Sawaeng Ha | TH1505 | 10174 | 9136 | 19310 | 514 | 522 | 513 | 449 | 369 | 414 | 463 | 473 | 696 | 872 | 898 | 959 | 822
+    | 2023 | THA | Thailand | TH | Ang Thong | TH15 | Wiset Chai Chan | TH1506 | 20442 | 17680 | 38122 | 936 | 900 | 980 | 828 | 656 | 764 | 846 | 865 | 1166 | 1492 | 1739 | 1938 | 1816
+    | 2023 | THA | Thailand | TH | Bangkok | TH10 | Bang Bon | TH1050 | 105425 | 115185 | 220610 | 3989 | 3576 | 4050 | 6006 | 8482 | 11231 | 10979 | 10022 | 9919 | 8709 | 7652 | 6320 | 4750
+    | 2023 | THA | Thailand | TH | Bangkok | TH10 | Bang Kapi | TH1006 | 429599 | 372100 | 801699 | 10416 | 9603 | 9720 | 24870 | 74337 | 71147 | 50329 | 31825 | 29208 | 24397 | 23627 | 19852 | 17193
+    | 2023 | THA | Thailand | TH | Bangkok | TH10 | Bang Khae | TH1040 | 210860 | 195399 | 406259 | 7147 | 7845 | 8813 | 10584 | 14552 | 19112 | 18922 | 16974 | 17731 | 16481 | 16493 | 15021 | 12916
+    | 2023 | THA | Thailand | TH | Bangkok | TH10 | Bang Khen | TH1005 | 149703 | 136995 | 286698 | 5121 | 5323 | 5594 | 7468 | 11594 | 14328 | 13116 | 11702 | 13000 | 12206 | 11832 | 10667 | 9401
+    | 2023 | THA | Thailand | TH | Bangkok | TH10 | Bang Kho Laem | TH1031 | 54628 | 49542 | 104170 | 1749 | 1949 | 2036 | 2586 | 3364 | 4616 | 4339 | 3646 | 4132 | 4258 | 4698 | 4525 | 4051
+  - THA_AdminBoundaries_TabularData.xlsx (XLSX, 659104 B)
+    https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/b9cd9c84-d294-475a-a9ed-d1f4bdaf69a3/download/tha_adminboundaries_tabulardata.xlsx
+    sheet 'ADM0': 2 rows x 12 cols
+    | ADM0_EN | ADM0_TH | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | ADM0ALT1_TH | ADM0ALT2_TH | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Thailand | ประเทศไทย | TH |  |  |  |  |  | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 515415.59375
+    sheet 'ADM1': 78 rows x 15 cols
+    | ADM1_EN | ADM1_TH | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM1ALT1_TH | ADM1ALT2_TH | ADM0_EN | ADM0_TH | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Bangkok | กรุงเทพมหานคร | TH10 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 1571.37133621335
+    | Samut Prakan | สมุทรปราการ | TH11 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 949.001112774481
+    | Nonthaburi | นนทบุรี | TH12 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 636.542919939615
+    | Pathum Thani | ปทุมธานี | TH13 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 1517.38664507103
+    | Phra Nakhon Si Ayutthaya | พระนครศรีอยุธยา | TH14 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 2553.36096179027
+    | Ang Thong | อ่างทอง | TH15 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 944.2169208541351
+    | Lop Buri | ลพบุรี | TH16 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 6491.81631162158
+    | Sing Buri | สิงห์บุรี | TH17 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 818.192131103782
+    | Chai Nat | ชัยนาท | TH18 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 2486.56783795798
+    | Saraburi | สระบุรี | TH19 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 3481.75964787646
+    | Chon Buri | ชลบุรี | TH20 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 4504.76360510297
+    | Rayong | ระยอง | TH21 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 3682.13715447099
+    | Chanthaburi | จันทบุรี | TH22 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 6403.63417765616
+    | Trat | ตราด | TH23 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 2869.42464446327
+    | Chachoengsao | ฉะเชิงเทรา | TH24 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 5165.91041113166
+    | Prachin Buri | ปราจีนบุรี | TH25 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 5046.9919530645
+    | Nakhon Nayok | นครนายก | TH26 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 2136.47351355762
+    | Sa Kaeo | สระแก้ว | TH27 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 6788.90896517426
+    | Nakhon Ratchasima | นครราชสีมา | TH30 |  |  |  |  |  | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 20709.1293794657
+    sheet 'ADM2': 929 rows x 18 cols
+    | ADM2_EN | ADM2_TH | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM2ALT1_TH | ADM2ALT2_TH | ADM1_EN | ADM1_TH | ADM1_PCODE | ADM0_EN | ADM0_TH | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Phra Nakhon | พระนคร | TH1001 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 5.389901674139089
+    | Dusit | ดุสิต | TH1002 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 11.3679590012799
+    | Nong Chok | หนองจอก | TH1003 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 237.516618156047
+    | Bang Rak | บางรัก | TH1004 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 4.032189333298501
+    | Bang Khen | บางเขน | TH1005 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 40.8409322412624
+    | Bang Kapi | บางกะปิ | TH1006 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 27.5572294726428
+    | Pathum Wan | ปทุมวัน | TH1007 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 8.03679193465144
+    | Pom Prap Sattru Phai | ป้อมปราบศัตรูพ่าย | TH1008 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 2.50045465411886
+    | Phra Khanong | พระโขนง | TH1009 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 13.1938820600501
+    | Min Buri | มีนบุรี | TH1010 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 60.4052494201688
+    | Lat Krabang | ลาดกระบัง | TH1011 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 128.62633323979
+    | Yan Nawa | ยานนาวา | TH1012 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 12.3946166540907
+    | Samphanthawong | สัมพันธวงศ์ | TH1013 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 1.40879927610997
+    | Phaya Thai | พญาไท | TH1014 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 9.25492379305541
+    | Thon Buri | ธนบุรี | TH1015 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 8.05985479835946
+    | Bangkok Yai | บางกอกใหญ่ | TH1016 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 6.29267692922522
+    | Huai Khwang | ห้วยขวาง | TH1017 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 16.303274671576
+    | Khlong San | คลองสาน | TH1018 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 5.93465768176483
+    | Taling Chan | ตลิ่งชัน | TH1019 |  |  |  |  |  | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 35.6527485686329
+    sheet 'ADM3': 7426 rows x 21 cols
+    | ADM3_EN | ADM3_TH | ADM3_PCODE | ADM3_REF | ADM3ALT1_EN | ADM3ALT2_EN | ADM3ALT1_TH | ADM3ALT2_TH | ADM2_EN | ADM2_TH | ADM2_PCODE | ADM1_EN | ADM1_TH | ADM1_PCODE | ADM0_EN | ADM0_TH | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Phraborom Maharatchawang | พระบรมมหาราชวัง | TH100101 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 1.53655491916628
+    | Wang Burapha Phirom | วังบูรพาภิรมย์ | TH100102 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.72613446036087
+    | Wat Ratchabophit | วัดราชบพิธ | TH100103 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.211758524413207
+    | Samran Rat | สำราญราษฎร์ | TH100104 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.229785904618078
+    | San Chaopho Suea | ศาลเจ้าพ่อเสือ | TH100105 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.150439528775298
+    | Sao Chingcha | เสาชิงช้า | TH100106 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.154662476439104
+    | Bowon Niwet | บวรนิเวศ | TH100107 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.48809081013854
+    | Talat Yot | ตลาดยอด | TH100108 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.187371398479187
+    | Chana Songkhram | ชนะสงคราม | TH100109 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.338242188241453
+    | Ban Phan Thom | บ้านพานถม | TH100110 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.412652194866878
+    | Bang Khun Phrom | บางขุนพรหม | TH100111 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.44814632368863
+    | Wat Sam Phraya | วัดสามพระยา | TH100112 |  |  |  |  |  | Phra Nakhon | พระนคร | TH1001 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.506062944951568
+    | Dusit | ดุสิต | TH100201 |  |  |  |  |  | Dusit | ดุสิต | TH1002 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 2.36215435328283
+    | Wachira Phayaban | วชิรพยาบาล | TH100202 |  |  |  |  |  | Dusit | ดุสิต | TH1002 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 1.13511622321964
+    | Suan Chitlada | สวนจิตรลดา | TH100203 |  |  |  |  |  | Dusit | ดุสิต | TH1002 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 1.88169725236202
+    | Si Yaek Mahanak | สี่แยกมหานาค | TH100204 |  |  |  |  |  | Dusit | ดุสิต | TH1002 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 0.361060709076128
+    | Thanon Nakhon Chaisi | ถนนนครไชยศรี | TH100206 |  |  |  |  |  | Dusit | ดุสิต | TH1002 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 5.627930463339321
+    | Krathum Rai | กระทุ่มราย | TH100301 |  |  |  |  |  | Nong Chok | หนองจอก | TH1003 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 39.89212873864
+    | Nong Chok | หนองจอก | TH100302 |  |  |  |  |  | Nong Chok | หนองจอก | TH1003 | Bangkok | กรุงเทพมหานคร | TH10 | Thailand | ประเทศไทย | TH | 2019-02-18 00:00:00 | 2022-01-22 00:00:00 |  | 30.5867645821373
+  - tha_admpop_adm0_2023.csv (CSV, 913 B)
+    https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/91cfa72d-3495-4e21-b485-2683d40d08cc/download/tha_admpop_adm0_2023.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_69,M_70_74
+    | 2023,THA,Thailand,TH,35455997,33938765,69394762,1773335,1828335,1838898,1924036,2131537,2506866,2481079,2434471,2731092,2760029,2734093,2655430,2376889,1919154,1365210,893086,1102457,1864486,1921012,1930241,2013094,2214379,2585561,2528428,2429627,2709313,2698928,2551697,2386040,2053246,1606578,10957
+    2 lines
+  - tha_admpop_adm1_2023.csv (CSV, 27991 B)
+    https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/6d582086-baab-4500-85a2-354983a24bd5/download/tha_admpop_adm1_2023.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60
+    | 2023,THA,Thailand,TH,Amnat Charoen,TH37,91583,88146,179729,5736,6171,6527,4989,2724,3481,4388,5903,7140,6936,7354,7547,7045,5917,4062,2715,2948,6082,6527,6719,5543,3309,3690,4256,5503,7002,7142,7073,7278,6207,5060,2940,1924,1891,11818,12698,13246,10532,6033,7171,8644,11406,14142,14078,14427,14825,13
+    | 2023,THA,Thailand,TH,Ang Thong,TH15,106897,94295,201192,4955,5111,5641,4825,3872,4670,5100,5283,6698,8339,8985,9812,8817,7808,6763,4516,5702,5157,5623,5902,5511,4376,5290,5128,5068,6321,7461,7339,7783,6907,5603,4726,3055,3045,10112,10734,11543,10336,8248,9960,10228,10351,13019,15800,16324,17595,1572
+    | 2023,THA,Thailand,TH,Bangkok,TH10,5883668,5595670,11479338,224135,220157,227055,309234,490628,588958,538011,473289,496749,463673,433726,391030,336248,251431,178449,109142,151753,229607,240164,241414,326826,457686,566975,540221,494802,498461,463225,414051,349859,278926,193045,139171,75288,85949,45374
+    | 2023,THA,Thailand,TH,Bueng Kan,TH38,143647,140084,283731,10757,11128,10252,7250,4467,6267,8206,9430,10360,10701,11209,11195,10417,8704,5481,3740,4083,11153,11725,10749,7530,5080,6725,7963,9038,10441,10263,10579,10740,9876,7637,4695,2858,3032,21910,22853,21001,14780,9547,12992,16169,18468,20801,20964
+    | 2023,THA,Thailand,TH,Buri Ram,TH31,459143,429215,888358,31742,33336,32723,23875,13796,16872,21628,26350,31540,33494,34564,37347,37360,31043,21615,14555,17303,33014,35174,34299,25232,15506,17546,20332,24021,29117,31090,31879,33969,32985,26392,17204,10777,10678,64756,68510,67022,49107,29302,34418,4196
+    78 lines
+  - tha_admpop_adm2_2023.csv (CSV, 390162 B)
+    https://data.humdata.org/dataset/a5d0b682-1644-4a2d-a9d7-90f1a0fdc959/resource/8c882b9b-c17c-426e-a333-193a6f97f98c/download/tha_admpop_adm2_2023.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,ADM2_EN,ADM2_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M
+    | 2023,THA,Thailand,TH,Amnat Charoen,TH37,Chanuman,TH3702,"12,501","12,488","24,989",931,"1,050","1,043",699,408,544,693,832,948,855,942,988,838,654,465,280,331,992,"1,045","1,048",809,525,586,673,809,942,890,940,938,806,651,337,231,266,"1,923","2,095","2,091","1,508",933,"1,130","1,366","1,641","1,89
+    | 2023,THA,Thailand,TH,Amnat Charoen,TH37,Hua Taphan,TH3706,"11,437","10,683","22,120",689,716,713,529,253,345,466,682,858,865,949,"1,043","1,012",950,590,389,388,731,792,785,586,311,335,437,579,767,852,908,982,894,756,457,272,239,"1,420","1,508","1,498","1,115",564,680,903,"1,261","1,625","1,717","1,
+    | 2023,THA,Thailand,TH,Amnat Charoen,TH37,Lue Amnat,TH3707,"8,975","8,435","17,410",555,562,606,436,231,289,375,548,704,697,715,739,693,680,484,319,342,554,604,629,486,259,301,354,511,717,694,683,705,574,585,346,210,223,"1,109","1,166","1,235",922,490,590,729,"1,059","1,421","1,391","1,398","1,444","1
+    | 2023,THA,Thailand,TH,Amnat Charoen,TH37,Mueang Amnat Charoen,TH3701,"32,969","31,637","64,606","1,924","2,047","2,323","1,929","1,098","1,321","1,645","2,168","2,666","2,654","2,702","2,612","2,532","2,015","1,405",922,"1,006","2,000","2,194","2,348","2,118","1,342","1,408","1,588","2,039","2,634","
+    | 2023,THA,Thailand,TH,Amnat Charoen,TH37,Pathum Ratchawongsa,TH3703,"11,917","11,873","23,790",825,912,946,677,382,509,598,835,927,852,887,938,792,640,473,350,374,947,964,971,739,439,516,592,761,945,905,828,893,761,619,371,304,318,"1,772","1,876","1,917","1,416",821,"1,025","1,190","1,596","1,872","1
+    929 lines
+== cod-ps-khm: licence=cc-by-igo  method=Please see explanatory technical note
+  - khm_admpop_2024.xlsx (XLSX, 23739 B)
+    https://data.humdata.org/dataset/770386b0-d7c6-4ea7-abbc-beccac38c192/resource/d9ecc489-6ddb-48b8-afdc-a8dce3d56bd6/download/khm_admpop_2024.xlsx
+    sheet 'Metadata': 15 rows x 2 cols
+    | Item | Metadata
+    | Country | Cambodia
+    | Source(s) | Cambodia National Institute of Statistics
+    | Source(s) Link(s) | https://www.nis.gov.kh/nis/Census2019/Population%20Projection.pdf
+    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Population projection
+    | Year of the Baseline Population | 2019
+    | Reference year of this COD-PS | 2024
+    | Publication year of this COD-PS | 2024
+    | ADM-1 Name | Province, Special Administrative Unit (Phnom Penh)
+    | ADM-1 Number of Units | 25
+    | ADM-1 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
+    | ADM-1 Open-ended Age Group | 80+
+    | General Notes | Unlike the previous population projections based the 2013 intercensal survey (compared against the 2008 census), the Cambodian National Statistical Office 2019-2030 postcensal projections show almost uniform projected growth rates across all ADM-1 level. Moreover, ADM-1 level projections were built with a purely mathematical method in the absence of reliable subnational fertility, 
+    | Data Limitations | The end users should take caution that the projected postcensal growth rates across all ADM-1 units are almost uniform, which is unlikely.
+    | COD-PS Demographic Data Quality Assessment | The COD-PS was assessed against ADM-0 estimates and projections published in the World Population Prospects (2022 Revision) by the United Nations Department of Economic and Social Affairs (UN-DESA).
+    sheet 'Methodological Documentation': 9 rows x 2 cols
+    | Item | Methodological_Documentation
+    | Methodology Used | The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method to build subnational projections at the ADM-1 level from the national projection.
+    | Baseline Population | 2019 census
+    | Post-enumeration survey (PES) | The national population undercount was 2.5% (396,587). The percentage undercount in Phnom Penh was higher than in the provinces, with 6.3% (141,985) in the capital, versus 1.9% (354,602) in the provinces.
+    | Assessment and Adjustment of the Baseline Population | The baseline population was checked and corrected for under-enumeration and age misreporting for the age group 0-4 years. The assessment led to the following adjustment for 0-4 year olds: the number of males from the 2019 census was increased by a factor of 5.7% and the number of females were increased by a factor of 6.8%.
+    | Fertility (births) | The medium variant scenario assumes that the total fertility rate will decline exponentially from 2.51 (as measured in the 2019 Census) to 1.94 by 2030.
+    | Mortality (deaths) | The medium variant scenario assumes that life expectancy at birth will increase from 76.8 year for females and 74.3 years for males in 2019 to 83.2 years for females and 80.8 years for males and in 2030. Note that due to the overestimation of household mortality in the 2019 census, only infant mortality and model life tables was used to construct the life tables used for morta
+    | International migration (net migration) | Due to the lack of reliable data and the 2008 and 2019 censuses not being strictly comparable, international migration has been assumed to be negligible and was not factored into these projections.
+    | Internal migration (migration within country) | No reliable data was available for internal migration, therefore the ratio method was applied to build subnational projections at the ADM-1 level.
+    sheet 'khm_admpop_adm0_2024': 2 rows x 58 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus
+    | 2024 | KHM | Cambodia | KH | 8852561 | 8483749 | 17336307 | 778987 | 754729 | 740841 | 828511 | 718990 | 661624 | 749610 | 684085 | 676840 | 394933 | 415968 | 387937 | 345090 | 272308 | 202331 | 127320 | 112457
+    sheet 'khm_admpop_adm1_2024': 26 rows x 60 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74
+    | 2024 | KHM | Cambodia | KH | Banteay Meanchey | KH01 | 481270 | 479485 | 960752 | 41049 | 43074 | 41089 | 46256 | 39107 | 36301 | 42390 | 35955 | 36513 | 20629 | 22685 | 22547 | 18938 | 14297 | 9682
+    | 2024 | KHM | Cambodia | KH | Battambang | KH02 | 562071 | 549487 | 1111565 | 51598 | 52359 | 52203 | 53812 | 42129 | 39831 | 45205 | 37970 | 37148 | 23359 | 27520 | 27687 | 24499 | 18313 | 12839
+    | 2024 | KHM | Cambodia | KH | Kampong Cham | KH03 | 519738 | 483271 | 1003014 | 42916 | 44989 | 46349 | 45549 | 34008 | 30798 | 36633 | 36640 | 45421 | 25441 | 26325 | 25411 | 23817 | 19500 | 16020
+    | 2024 | KHM | Cambodia | KH | Kampong Chhnang | KH04 | 304929 | 282557 | 587485 | 28089 | 27504 | 27064 | 28192 | 23041 | 22653 | 25467 | 23616 | 20151 | 12221 | 14274 | 13449 | 12445 | 10066 | 7823
+    | 2024 | KHM | Cambodia | KH | Kampong Speu | KH05 | 501891 | 476299 | 978188 | 43549 | 41023 | 41591 | 50894 | 46914 | 41647 | 44931 | 40591 | 35414 | 19853 | 21403 | 19772 | 16984 | 13583 | 10679
+    | 2024 | KHM | Cambodia | KH | Kampong Thom | KH06 | 389318 | 370417 | 759731 | 38585 | 36411 | 35658 | 35371 | 26908 | 24826 | 28817 | 27850 | 32511 | 18119 | 19117 | 17258 | 15060 | 11808 | 9513
+    | 2024 | KHM | Cambodia | KH | Kampot | KH07 | 339725 | 322226 | 661951 | 29392 | 27104 | 28513 | 33042 | 25163 | 23753 | 27089 | 25452 | 24225 | 16679 | 17952 | 16061 | 14008 | 11307 | 8601
+    | 2024 | KHM | Cambodia | KH | Kandal | KH08 | 687819 | 651603 | 1339422 | 57372 | 53442 | 53126 | 61300 | 56797 | 53373 | 59466 | 56744 | 53593 | 28969 | 31130 | 30095 | 28575 | 23549 | 18668
+    | 2024 | KHM | Cambodia | KH | Kep | KH23 | 23960 | 23601 | 47558 | 2248 | 2066 | 2005 | 2384 | 2146 | 1930 | 1950 | 1765 | 1725 | 1030 | 1120 | 915 | 866 | 693 | 448
+    | 2024 | KHM | Cambodia | KH | Koh Kong | KH09 | 69261 | 71085 | 140342 | 6459 | 6279 | 6028 | 6785 | 6290 | 5767 | 6081 | 5145 | 4591 | 3161 | 3318 | 2962 | 2315 | 1640 | 1155
+    | 2024 | KHM | Cambodia | KH | Kratie | KH10 | 208607 | 209136 | 417748 | 22031 | 21252 | 19740 | 19867 | 15730 | 13807 | 14901 | 14396 | 17562 | 9751 | 9389 | 8103 | 6953 | 5531 | 4168
+    | 2024 | KHM | Cambodia | KH | Mondul Kiri | KH11 | 49861 | 52934 | 102793 | 5823 | 5703 | 4762 | 5894 | 4863 | 3795 | 3915 | 3267 | 3950 | 1981 | 1884 | 1489 | 970 | 678 | 450
+    | 2024 | KHM | Cambodia | KH | Oddar Meanchey | KH22 | 151542 | 156166 | 307703 | 16253 | 15700 | 14875 | 16053 | 12243 | 11104 | 12740 | 10824 | 10719 | 6162 | 6814 | 6754 | 4798 | 2918 | 1738
+    | 2024 | KHM | Cambodia | KH | Pailin | KH24 | 41041 | 42689 | 83727 | 4027 | 4014 | 3899 | 3940 | 3612 | 3458 | 3636 | 2955 | 2765 | 1710 | 1942 | 1885 | 1437 | 762 | 462
+    | 2024 | KHM | Cambodia | KH | Phnom Penh | KH12 | 1304895 | 1238835 | 2543729 | 90990 | 86456 | 77818 | 120425 | 139574 | 130494 | 143520 | 126157 | 100448 | 53630 | 51197 | 47631 | 46641 | 36694 | 25808
+    | 2024 | KHM | Cambodia | KH | Preah Sihanouk | KH18 | 164736 | 180908 | 345643 | 12114 | 11444 | 11613 | 15859 | 16740 | 14906 | 16498 | 13845 | 13759 | 11721 | 7847 | 6555 | 4032 | 3123 | 2037
+    | 2024 | KHM | Cambodia | KH | Preah Vihear | KH13 | 140154 | 143903 | 284059 | 16336 | 13797 | 12703 | 15278 | 12556 | 10544 | 10856 | 10006 | 11150 | 5771 | 5638 | 4879 | 3644 | 2579 | 1943
+    | 2024 | KHM | Cambodia | KH | Prey Veng | KH14 | 620284 | 558774 | 1179059 | 55854 | 55436 | 56646 | 49580 | 33551 | 31915 | 41585 | 43530 | 53553 | 33533 | 36465 | 33126 | 31192 | 25061 | 18237
+    | 2024 | KHM | Cambodia | KH | Pursat | KH15 | 239367 | 228762 | 468127 | 24163 | 22963 | 22476 | 21713 | 16915 | 17685 | 20119 | 17984 | 13607 | 9058 | 11318 | 11530 | 9785 | 7921 | 5564
+  - khm_admgz_2018.xlsx (XLSX, 132478 B)
+    https://data.humdata.org/dataset/770386b0-d7c6-4ea7-abbc-beccac38c192/resource/489cbfce-12c9-4d17-9560-7736d5a22c29/download/khm_admgz_2018.xlsx
+    sheet 'ADM0': 2 rows x 6 cols
+    | ADM0_EN | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | AREA_SQKM
+    | Cambodia | KH |  |  |  | 179127.25
+    sheet 'ADM1': 26 rows x 8 cols
+    | ADM1_EN | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM0_EN | ADM0_PCODE | AREA_SQKM
+    | Banteay Meanchey | KH01 |  |  |  | Cambodia | KH | 6145.9365234375
+    | Battambang | KH02 |  |  |  | Cambodia | KH | 11869.0322265625
+    | Kampong Cham | KH03 |  |  |  | Cambodia | KH | 4552.802734375
+    | Kampong Chhnang | KH04 |  |  |  | Cambodia | KH | 5300.3916015625
+    | Kampong Speu | KH05 |  |  |  | Cambodia | KH | 6969.48486328125
+    | Kampong Thom | KH06 |  |  |  | Cambodia | KH | 12455.2626953125
+    | Kampot | KH07 |  |  |  | Cambodia | KH | 4721.13525390625
+    | Kandal | KH08 |  |  |  | Cambodia | KH | 3255.4013671875
+    | Kep | KH23 |  |  |  | Cambodia | KH | 151.6065216064453
+    | Koh Kong | KH09 |  |  |  | Cambodia | KH | 11004.2763671875
+    | Kratie | KH10 |  |  |  | Cambodia | KH | 11984.744140625
+    | Mondul Kiri | KH11 |  |  |  | Cambodia | KH | 13663.576171875
+    | Oddar Meanchey | KH22 |  |  |  | Cambodia | KH | 6634.42919921875
+    | Pailin | KH24 |  |  |  | Cambodia | KH | 1075.861083984375
+    | Phnom Penh | KH12 |  |  |  | Cambodia | KH | 684.7808837890625
+    | Preah Sihanouk | KH18 |  |  |  | Cambodia | KH | 2620.5302734375
+    | Preah Vihear | KH13 |  |  |  | Cambodia | KH | 14042.6015625
+    | Prey Veng | KH14 |  |  |  | Cambodia | KH | 4764.685546875
+    | Pursat | KH15 |  |  |  | Cambodia | KH | 11587.568359375
+    sheet 'ADM2': 198 rows x 10 cols
+    | ADM2_EN | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | AREA_SQKM
+    | Aek Phnum | KH0205 |  |  |  | Battambang | KH02 | Cambodia | KH | 1067.866333007812
+    | Andoung Meas | KH1601 |  |  |  | Ratanak Kiri | KH16 | Cambodia | KH | 837.7064819335938
+    | Angk Snuol | KH0808 |  |  |  | Kandal | KH08 | Cambodia | KH | 183.9049682617188
+    | Angkor Borei | KH2101 |  |  |  | Takeo | KH21 | Cambodia | KH | 301.0502319335938
+    | Angkor Chey | KH0701 |  |  |  | Kampot | KH07 | Cambodia | KH | 316.7575073242188
+    | Angkor Chum | KH1701 |  |  |  | Siemreap | KH17 | Cambodia | KH | 478.6986999511719
+    | Angkor Thum | KH1702 |  |  |  | Siemreap | KH17 | Cambodia | KH | 357.8890075683594
+    | Anlong Veaeng | KH2201 |  |  |  | Oddar Meanchey | KH22 | Cambodia | KH | 1533.5712890625
+    | Aoral | KH0504 |  |  |  | Kampong Speu | KH05 | Cambodia | KH | 2381.708251953125
+    | Ba Phnum | KH1401 |  |  |  | Prey Veng | KH14 | Cambodia | KH | 342.3439025878906
+    | Bakan | KH1501 |  |  |  | Pursat | KH15 | Cambodia | KH | 1542.177734375
+    | Ban Lung | KH1602 |  |  |  | Ratanak Kiri | KH16 | Cambodia | KH | 201.9302825927734
+    | Banan | KH0201 |  |  |  | Battambang | KH02 | Cambodia | KH | 874.4754028320312
+    | Banteay Ampil | KH2202 |  |  |  | Oddar Meanchey | KH22 | Cambodia | KH | 1353.193725585938
+    | Banteay Meas | KH0702 |  |  |  | Kampot | KH07 | Cambodia | KH | 401.3257751464844
+    | Banteay Srei | KH1703 |  |  |  | Siemreap | KH17 | Cambodia | KH | 600.7930297851562
+    | Bar Kaev | KH1603 |  |  |  | Ratanak Kiri | KH16 | Cambodia | KH | 466.9388732910156
+    | Baray | KH0601 |  |  |  | Kampong Thom | KH06 | Cambodia | KH | 1310.65869140625
+    | Baribour | KH0401 |  |  |  | Kampong Chhnang | KH04 | Cambodia | KH | 435.5484619140625
+    sheet 'ADM3': 1634 rows x 12 cols
+    | ADM3_EN | ADM3_PCODE | ADM3_REF | ADM3ALT1_EN | ADM3ALT2_EN | ADM2_EN | ADM2_PCODE | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | AREA_SQKM
+    | A Buon Leu | KH110202 |  |  |  | Kaoh Nheaek | KH1102 | Mondul Kiri | KH11 | Cambodia | KH | 653.4503173828125
+    | Achar Leak | KH060309 |  |  |  | Stueng Saen | KH0603 | Kampong Thom | KH06 | Cambodia | KH | 6.268069744110107
+    | Aekakpheap | KH160603 |  |  |  | Ou Chum | KH1606 | Ratanak Kiri | KH16 | Cambodia | KH | 23.73985290527344
+    | Akphivoadth | KH040801 |  |  |  | Tuek Phos | KH0408 | Kampong Chhnang | KH04 | Cambodia | KH | 67.01502227783203
+    | Akreiy Ksatr | KH080601 |  |  |  | Lvea Aem | KH0806 | Kandal | KH08 | Cambodia | KH | 15.72678470611572
+    | Amleang | KH050801 |  |  |  | Thpong | KH0508 | Kampong Speu | KH05 | Cambodia | KH | 243.3950958251953
+    | Ampil | KH030601 |  |  |  | Kampong Siem | KH0306 | Kampong Cham | KH03 | Cambodia | KH | 27.44750213623047
+    | Ampil | KH171011 |  |  |  | Siem Reap | KH1710 | Siemreap | KH17 | Cambodia | KH | 55.60217666625977
+    | Ampil | KH200401 |  |  |  | Romeas Haek | KH2004 | Svay Rieng | KH20 | Cambodia | KH | 55.07974243164062
+    | Ampil | KH220201 |  |  |  | Banteay Ampil | KH2202 | Oddar Meanchey | KH22 | Cambodia | KH | 364.5556640625
+    | Ampil Krau | KH141201 |  |  |  | Sithor Kandal | KH1412 | Prey Veng | KH14 | Cambodia | KH | 36.74080276489258
+    | Ampil Pram Daeum | KH020405 |  |  |  | Bavel | KH0204 | Battambang | KH02 | Cambodia | KH | 162.7225189208984
+    | Ampil Ta Pok | KH250401 |  |  |  | Ou Reang Ov | KH2504 | Tboung Khmum | KH25 | Cambodia | KH | 27.15592384338379
+    | Ampil Tuek | KH040501 |  |  |  | Kampong Tralach | KH0405 | Kampong Chhnang | KH04 | Cambodia | KH | 109.4784393310547
+    | Ampov Prey | KH080101 |  |  |  | Kandal Stueng | KH0801 | Kandal | KH08 | Cambodia | KH | 13.70770835876465
+    | Andaeuk Haeb | KH020702 |  |  |  | Rotonak Mondol | KH0207 | Battambang | KH02 | Cambodia | KH | 121.3319931030273
+    | Andoung Khmer | KH070804 |  |  |  | Kampot | KH0708 | Kampot | KH07 | Cambodia | KH | 26.26494216918945
+    | Andoung Pou | KH060112 |  |  |  | Baray | KH0601 | Kampong Thom | KH06 | Cambodia | KH | 25.27022552490234
+    | Andoung Pou | KH200402 |  |  |  | Romeas Haek | KH2004 | Svay Rieng | KH20 | Cambodia | KH | 26.75672912597656
+  - KHM_AdminBoundaries_TabularData.xlsx (XLSX, 124903 B)
+    https://data.humdata.org/dataset/770386b0-d7c6-4ea7-abbc-beccac38c192/resource/2b98698e-2d94-41d4-9adc-99dd0024a8ce/download/khm_adminboundaries_tabulardata.xlsx
+    sheet 'ADM0': 2 rows x 9 cols
+    | ADM0_EN | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Cambodia | KH |  |  |  | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 179127.25
+    sheet 'ADM1': 26 rows x 11 cols
+    | ADM1_EN | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM0_EN | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Banteay Meanchey | KH01 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 6145.9365234375
+    | Battambang | KH02 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 11869.0322265625
+    | Kampong Cham | KH03 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 4552.802734375
+    | Kampong Chhnang | KH04 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 5300.3916015625
+    | Kampong Speu | KH05 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 6969.48486328125
+    | Kampong Thom | KH06 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 12455.2626953125
+    | Kampot | KH07 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 4721.13525390625
+    | Kandal | KH08 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 3255.4013671875
+    | Kep | KH23 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 151.6065216064453
+    | Koh Kong | KH09 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 11004.2763671875
+    | Kratie | KH10 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 11984.744140625
+    | Mondul Kiri | KH11 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 13663.576171875
+    | Oddar Meanchey | KH22 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 6634.42919921875
+    | Pailin | KH24 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 1075.861083984375
+    | Phnom Penh | KH12 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 684.7808837890625
+    | Preah Sihanouk | KH18 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 2620.5302734375
+    | Preah Vihear | KH13 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 14042.6015625
+    | Prey Veng | KH14 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 4764.685546875
+    | Pursat | KH15 |  |  |  | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 11587.568359375
+    sheet 'ADM2': 198 rows x 13 cols
+    | ADM2_EN | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | DATE | VALIDON | VALID_TO | AREA_SQKM
+    | Aek Phnum | KH0205 |  |  |  | Battambang | KH02 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 1067.866333007812
+    | Andoung Meas | KH1601 |  |  |  | Ratanak Kiri | KH16 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 837.7064819335938
+    | Angk Snuol | KH0808 |  |  |  | Kandal | KH08 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 183.9049682617188
+    | Angkor Borei | KH2101 |  |  |  | Takeo | KH21 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 301.0502319335938
+    | Angkor Chey | KH0701 |  |  |  | Kampot | KH07 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 316.7575073242188
+    | Angkor Chum | KH1701 |  |  |  | Siemreap | KH17 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 478.6986999511719
+    | Angkor Thum | KH1702 |  |  |  | Siemreap | KH17 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 357.8890075683594
+    | Anlong Veaeng | KH2201 |  |  |  | Oddar Meanchey | KH22 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 1533.5712890625
+    | Aoral | KH0504 |  |  |  | Kampong Speu | KH05 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 2381.708251953125
+    | Ba Phnum | KH1401 |  |  |  | Prey Veng | KH14 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 342.3439025878906
+    | Bakan | KH1501 |  |  |  | Pursat | KH15 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 1542.177734375
+    | Ban Lung | KH1602 |  |  |  | Ratanak Kiri | KH16 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 201.9302825927734
+    | Banan | KH0201 |  |  |  | Battambang | KH02 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 874.4754028320312
+    | Banteay Ampil | KH2202 |  |  |  | Oddar Meanchey | KH22 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 1353.193725585938
+    | Banteay Meas | KH0702 |  |  |  | Kampot | KH07 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 401.3257751464844
+    | Banteay Srei | KH1703 |  |  |  | Siemreap | KH17 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 600.7930297851562
+    | Bar Kaev | KH1603 |  |  |  | Ratanak Kiri | KH16 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 466.9388732910156
+    | Baray | KH0601 |  |  |  | Kampong Thom | KH06 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 1310.65869140625
+    | Baribour | KH0401 |  |  |  | Kampong Chhnang | KH04 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 435.5484619140625
+    sheet 'ADM3': 1634 rows x 15 cols
+    | ADM3_EN | ADM3_PCODE | ADM3_REF | ADM3ALT1_EN | ADM3ALT2_EN | ADM2_EN | ADM2_PCODE | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | A Buon Leu | KH110202 |  |  |  | Kaoh Nheaek | KH1102 | Mondul Kiri | KH11 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 653.4503173828125
+    | Achar Leak | KH060309 |  |  |  | Stueng Saen | KH0603 | Kampong Thom | KH06 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 6.268069744110107
+    | Aekakpheap | KH160603 |  |  |  | Ou Chum | KH1606 | Ratanak Kiri | KH16 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 23.73985290527344
+    | Akphivoadth | KH040801 |  |  |  | Tuek Phos | KH0408 | Kampong Chhnang | KH04 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 67.01502227783203
+    | Akreiy Ksatr | KH080601 |  |  |  | Lvea Aem | KH0806 | Kandal | KH08 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 15.72678470611572
+    | Amleang | KH050801 |  |  |  | Thpong | KH0508 | Kampong Speu | KH05 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 243.3950958251953
+    | Ampil | KH030601 |  |  |  | Kampong Siem | KH0306 | Kampong Cham | KH03 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 27.44750213623047
+    | Ampil | KH171011 |  |  |  | Siem Reap | KH1710 | Siemreap | KH17 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 55.60217666625977
+    | Ampil | KH200401 |  |  |  | Romeas Haek | KH2004 | Svay Rieng | KH20 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 55.07974243164062
+    | Ampil | KH220201 |  |  |  | Banteay Ampil | KH2202 | Oddar Meanchey | KH22 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 364.5556640625
+    | Ampil Krau | KH141201 |  |  |  | Sithor Kandal | KH1412 | Prey Veng | KH14 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 36.74080276489258
+    | Ampil Pram Daeum | KH020405 |  |  |  | Bavel | KH0204 | Battambang | KH02 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 162.7225189208984
+    | Ampil Ta Pok | KH250401 |  |  |  | Ou Reang Ov | KH2504 | Tboung Khmum | KH25 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 27.15592384338379
+    | Ampil Tuek | KH040501 |  |  |  | Kampong Tralach | KH0405 | Kampong Chhnang | KH04 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 109.4784393310547
+    | Ampov Prey | KH080101 |  |  |  | Kandal Stueng | KH0801 | Kandal | KH08 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 13.70770835876465
+    | Andaeuk Haeb | KH020702 |  |  |  | Rotonak Mondol | KH0207 | Battambang | KH02 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 121.3319931030273
+    | Andoung Khmer | KH070804 |  |  |  | Kampot | KH0708 | Kampot | KH07 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 26.26494216918945
+    | Andoung Pou | KH060112 |  |  |  | Baray | KH0601 | Kampong Thom | KH06 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 25.27022552490234
+    | Andoung Pou | KH200402 |  |  |  | Romeas Haek | KH2004 | Svay Rieng | KH20 | Cambodia | KH | 2014-10-14 00:00:00 | 2018-10-04 00:00:00 |  | 26.75672912597656
+  - khm_admpop_2023.xlsx (XLSX, 27874 B)
+    https://data.humdata.org/dataset/770386b0-d7c6-4ea7-abbc-beccac38c192/resource/db628c08-7e8f-4ab7-8a53-9e638f05b69e/download/khm_admpop_2023.xlsx
+    sheet 'Metadata': 15 rows x 2 cols
+    | Item | Metadata
+    | Country | Cambodia
+    | Source(s) | Cambodia National Institute of Statistics
+    | Source(s) Link(s) | https://www.nis.gov.kh/nis/Census2019/Population%20Projection.pdf
+    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Population projection
+    | Year of the Baseline Population | 2019
+    | Reference year of this COD-PS | 2023
+    | Publication year of this COD-PS | 2023
+    | ADM-1 Name | Province, Special Administrative Unit (Phnom Penh)
+    | ADM-1 Number of Units | 25
+    | ADM-1 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
+    | ADM-1 Open-ended Age Group | 80+
+    | General Notes | Unlike the previous population projections based the 2013 intercensal survey (compared against the 2008 census), the Cambodia NSO 2019-2030 postcensal projections show almost uniform projected growth rates across all ADM-1 level. Moreover, ADM-1 level projections were built with a purely mathematical method in the absence of reliable subnational fertility, mortality, and internal/i
+    | Data Limitations | The end users should take caution that the projected postcensal growth rates across all ADM-1 units are almost uniform, which is unlikely.
+    | COD-PS Demographic Data Quality Assessment | The COD-PS was assessed against ADM-0 estimates and projections published in the World Population Prospects (2022 Revision) by the United Nations Department of Economic and Social Affairs (UN-DESA).
+    sheet 'Methodological Documentation': 9 rows x 2 cols
+    | Item | Methodological_Documentation
+    | Methodology Used | The cohort component method was applied to the 2019 census. In the absence of reliable internal migration data, the NSO used the ratio method to build subnational projections at the ADM-1 level from the national projection.
+    | Baseline Population | 2019 census
+    | Post-enumeration survey (PES) | The national population undercount was 2.5% (396,587). The percentage undercount in Phnom Penh was higher than in the provinces, with 6.3% (141,985) in the capital, versus 1.9% (354,602) in the provinces.
+    | Assessment and Adjustment of the Baseline Population | The baseline population was checked and corrected for under-enumeration and age misreporting for the age group 0-4 years. The assessment led to the following adjustment for 0-4 year olds: the number of males from the 2019 census was increased by a factor of 5.7% and the number of females were increased by a factor of 6.8%.
+    | Fertility (births) | The medium variant scenario assumes that fertility will decline from 2.51 (2019) to 1.94 by 2030.
+    | Mortality (deaths) | The medium variant scenario assumes that life expectancy at birth will increase from 75.8 years in 2019 (female: 76.8, male: 74.8) to 82.0 years in 2019 (female: 83.2, male: 80.8). Note that due to the overestimation of household mortality in the 2019 census, only infant mortality and model life tables was used to construct the life tables.
+    | International migration (net migration) | Due to the lack of reliable data and the 2008 and 2019 censues not being strictly comparable, and also the intercensal estimates not being reliable enough, the component of international migration has been assumed to be negligible then assumed as zero.
+    | Internal migration (migration within country) | No reliable data was available for internal migration, therefore the ratio method was applied to build subnational projections at the ADM-1 level.
+    sheet 'khm_admpop_adm0_2023': 2 rows x 58 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus
+    | 2023 | KHM | Cambodia | KH | 8736016 | 8355434 | 17091476 | 746561 | 785052 | 754320 | 820621 | 697768 | 674297 | 746940 | 685268 | 632716 | 377067 | 418601 | 382131 | 334456 | 261041 | 191301 | 118920 | 108956
+    sheet 'khm_admpop_adm1_2023': 26 rows x 60 cols
+    | year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74
+    | 2023 | KHM | Cambodia | KH | Banteay Meanchey | KH01 | 474954 | 472234 | 947186 | 39307 | 44767 | 41800 | 45777 | 37936 | 36970 | 42203 | 35982 | 34102 | 19679 | 22811 | 22191 | 18372 | 13708 | 9144
+    | 2023 | KHM | Cambodia | KH | Battambang | KH02 | 554684 | 541178 | 1095862 | 49404 | 54411 | 53102 | 53252 | 40856 | 40559 | 45002 | 37995 | 34691 | 22276 | 27662 | 27245 | 23750 | 17561 | 12122
+    | 2023 | KHM | Cambodia | KH | Kampong Cham | KH03 | 512881 | 475966 | 988847 | 41206 | 46883 | 47279 | 45199 | 33065 | 31445 | 36572 | 36773 | 42532 | 24328 | 26530 | 25072 | 23111 | 18728 | 15167
+    | 2023 | KHM | Cambodia | KH | Kampong Chhnang | KH04 | 300904 | 278283 | 579190 | 26904 | 28593 | 27539 | 27909 | 22346 | 23071 | 25361 | 23643 | 18823 | 11658 | 14346 | 13236 | 12030 | 9627 | 7392
+    | 2023 | KHM | Cambodia | KH | Kampong Speu | KH05 | 495278 | 469094 | 964375 | 41710 | 42645 | 42320 | 50378 | 45501 | 42421 | 44744 | 40636 | 33081 | 18940 | 21515 | 19460 | 16439 | 13002 | 10088
+    | 2023 | KHM | Cambodia | KH | Kampong Thom | KH06 | 384187 | 364813 | 749003 | 37002 | 37897 | 36328 | 35059 | 26135 | 25318 | 28732 | 27914 | 30406 | 17305 | 19244 | 17007 | 14593 | 11315 | 8997
+    | 2023 | KHM | Cambodia | KH | Kampot | KH07 | 335250 | 317352 | 652603 | 28188 | 28212 | 29050 | 32751 | 24440 | 24222 | 27011 | 25512 | 22658 | 15932 | 18075 | 15829 | 13578 | 10840 | 8136
+    | 2023 | KHM | Cambodia | KH | Kandal | KH08 | 678756 | 641750 | 1320507 | 55035 | 55641 | 54141 | 60773 | 55178 | 54448 | 59308 | 56893 | 50139 | 27680 | 31345 | 29667 | 27693 | 22578 | 17661
+    | 2023 | KHM | Cambodia | KH | Koh Kong | KH09 | 68353 | 70010 | 138365 | 6178 | 6519 | 6126 | 6708 | 6096 | 5868 | 6047 | 5143 | 4283 | 3012 | 3337 | 2912 | 2245 | 1572 | 1090
+    | 2023 | KHM | Cambodia | KH | Kratie | KH10 | 205872 | 205974 | 411848 | 21108 | 22100 | 20093 | 19674 | 15266 | 14070 | 14844 | 14416 | 16411 | 9309 | 9452 | 7979 | 6744 | 5308 | 3938
+    | 2023 | KHM | Cambodia | KH | Mondul Kiri | KH11 | 49209 | 52130 | 101338 | 5565 | 5916 | 4835 | 5821 | 4708 | 3857 | 3889 | 3262 | 3682 | 1887 | 1894 | 1462 | 942 | 651 | 424
+    | 2023 | KHM | Cambodia | KH | Phnom Penh | KH12 | 1287704 | 1220100 | 2507804 | 87190 | 89917 | 79221 | 119253 | 135395 | 132977 | 142999 | 126361 | 93880 | 51200 | 51545 | 46910 | 45224 | 35199 | 24394
+    | 2023 | KHM | Cambodia | KH | Preah Vihear | KH13 | 138319 | 141727 | 280048 | 15638 | 14335 | 12919 | 15116 | 12177 | 10737 | 10805 | 10011 | 10410 | 5504 | 5669 | 4801 | 3538 | 2474 | 1835
+    | 2023 | KHM | Cambodia | KH | Prey Veng | KH14 | 612082 | 550322 | 1162406 | 53644 | 57787 | 57799 | 49217 | 32623 | 32589 | 41524 | 43700 | 50157 | 32068 | 36741 | 32689 | 30231 | 24031 | 17271
+    | 2023 | KHM | Cambodia | KH | Pursat | KH15 | 236213 | 225299 | 461516 | 23119 | 23846 | 22846 | 21473 | 16390 | 17993 | 20014 | 17984 | 12697 | 8631 | 11366 | 11336 | 9465 | 7576 | 5252
+    | 2023 | KHM | Cambodia | KH | Ratanak Kiri | KH16 | 117617 | 121360 | 238974 | 11744 | 13773 | 12904 | 14239 | 10734 | 8890 | 9303 | 8401 | 8561 | 4297 | 4303 | 3425 | 2524 | 1774 | 1267
+    | 2023 | KHM | Cambodia | KH | Siemreap | KH17 | 565685 | 548930 | 1114617 | 53717 | 55916 | 55343 | 56877 | 46761 | 42464 | 48785 | 41268 | 41506 | 22171 | 25330 | 22681 | 18838 | 14252 | 9791
+    | 2023 | KHM | Cambodia | KH | Preah Sihanouk | KH18 | 162588 | 178170 | 340762 | 11612 | 11906 | 11826 | 15711 | 16258 | 15199 | 16439 | 13862 | 12862 | 11195 | 7910 | 6458 | 3916 | 2998 | 1926
+    | 2023 | KHM | Cambodia | KH | Stung Treng | KH19 | 88987 | 93130 | 182114 | 10183 | 9864 | 8492 | 9672 | 8024 | 6977 | 6749 | 6371 | 6225 | 3540 | 3453 | 3028 | 2264 | 1712 | 1058
+  - KHM-COD-PS-2024-Explanatory-Note.pdf (PDF, 1734995 B)
+    https://data.humdata.org/dataset/770386b0-d7c6-4ea7-abbc-beccac38c192/resource/51fb1220-f42c-4901-bdf5-52f222c20947/download/khm-cod-ps-2024-explanatory-note.pdf
+  - khm_admpop_adm0_2024.csv (CSV, 870 B)
+    https://data.humdata.org/dataset/770386b0-d7c6-4ea7-abbc-beccac38c192/resource/a282139b-1957-4a1f-890f-bb610f514f71/download/khm_admpop_adm0_2024.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_69,M_70_74
+    | 2024,KHM,Cambodia,KH,8852561,8483749,17336307,778987,754729,740841,828511,718990,661624,749610,684085,676840,394933,415968,387937,345090,272308,202331,127320,112457,815979,790739,775309,866580,728890,626866,715965,655180,660646,374024,385798,328986,292844,181794,133457,82157,68535,1594963,1545469,15
+    2 lines
+  - khm_admpop_adm1_2024.csv (CSV, 9138 B)
+    https://data.humdata.org/dataset/770386b0-d7c6-4ea7-abbc-beccac38c192/resource/b7476c8d-33d7-4460-9a9a-6d63ba738056/download/khm_admpop_adm1_2024.csv
+    | year,ISO3,ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75_79,F_80Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60
+    | 2024,KHM,Cambodia,KH,Banteay Meanchey,KH01,481270,479485,960752,41049,43074,41089,46256,39107,36301,42390,35955,36513,20629,22685,22547,18938,14297,9682,6017,4741,43991,45524,43169,48364,41872,35938,42428,36064,37015,20165,21535,20724,18848,10583,6595,3744,2926,85040,88598,84257,94620,80979,72239,84
+    | 2024,KHM,Cambodia,KH,Battambang,KH02,562071,549487,1111565,51598,52359,52203,53812,42129,39831,45205,37970,37148,23359,27520,27687,24499,18313,12839,8541,7058,54391,55470,55168,57357,43687,38420,44274,38037,36237,20987,24909,24106,23183,13913,9128,5890,4330,105989,107829,107372,111170,85817,78251,89
+    | 2024,KHM,Cambodia,KH,Kampong Cham,KH03,519738,483271,1003014,42916,44989,46349,45549,34008,30798,36633,36640,45421,25441,26325,25411,23817,19500,16020,9598,10323,45494,47213,48499,47601,34212,28204,33186,33331,41577,23043,23352,20035,19408,13356,11306,6919,6535,88410,92202,94849,93150,68220,59002,69
+    | 2024,KHM,Cambodia,KH,Kampong Chhnang,KH04,304929,282557,587485,28089,27504,27064,28192,23041,22653,25467,23616,20151,12221,14274,13449,12445,10066,7823,4666,4208,29371,28610,28056,30252,22944,20651,23345,21965,19517,11335,12248,10403,8936,5780,4382,2570,2192,57460,56114,55120,58445,45985,43303,48812
+    | 2024,KHM,Cambodia,KH,Kampong Speu,KH05,501891,476299,978188,43549,41023,41591,50894,46914,41647,44931,40591,35414,19853,21403,19772,16984,13583,10679,7049,6014,45311,43049,44075,52788,47157,40179,41922,37576,34135,18401,18831,15964,13777,8573,6829,4359,3373,88859,84072,85665,103682,94071,81826,86853
+    26 lines
+== cod-ps-idn: licence=hdx-other humanitarian use only method=Projections from 2010 census performed by UNFPA according to best methodology.
+  - IDN_AdminBoundaries_TabularData.xlsx (XLSX, 497975 B)
+    https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/6bc3236b-11c8-41cf-a4aa-7c2be36cc010/download/idn_adminboundaries_tabulardata.xlsx
+    sheet 'ADM0': 2 rows x 9 cols
+    | ADM0_EN | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Indonesia | ID |  |  |  | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 1891077.03473764
+    sheet 'ADM1': 35 rows x 11 cols
+    | ADM1_EN | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM0_EN | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Aceh | ID11 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 56778.5638072957
+    | Bali | ID51 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 5587.80832314779
+    | Banten | ID36 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 9357.117739313959
+    | Bengkulu | ID17 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 20026.3662373008
+    | Daerah Istimewa Yogyakarta | ID34 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 3172.39864706432
+    | Dki Jakarta | ID31 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 653.874702535196
+    | Gorontalo | ID75 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 12032.4683900324
+    | Jambi | ID15 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 48939.4283555777
+    | Jawa Barat | ID32 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 37065.0466326748
+    | Jawa Tengah | ID33 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 34438.1068083744
+    | Jawa Timur | ID35 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 48047.6332714991
+    | Kalimantan Barat | ID61 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 147227.345762675
+    | Kalimantan Selatan | ID63 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 36751.3200262096
+    | Kalimantan Tengah | ID62 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 154165.734020315
+    | Kalimantan Timur | ID64 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 126273.003292576
+    | Kalimantan Utara | ID65 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 69977.1200546411
+    | Kepulauan Bangka Belitung | ID19 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 16706.3667174506
+    | Kepulauan Riau | ID21 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 8249.789295959019
+    | Lampung | ID18 |  |  |  | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 33602.2205372549
+    sheet 'ADM2': 523 rows x 13 cols
+    | ADM2_EN | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | Aceh Barat | ID1107 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 2810.0803505232
+    | Aceh Barat Daya | ID1112 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 1893.15339674447
+    | Aceh Besar | ID1108 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 2897.32666519775
+    | Aceh Jaya | ID1116 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 3878.16327147129
+    | Aceh Selatan | ID1103 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 4216.15161166504
+    | Aceh Singkil | ID1102 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 1887.17033221952
+    | Aceh Tamiang | ID1114 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 2143.06294964209
+    | Aceh Tengah | ID1106 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 4706.0211455362
+    | Aceh Tenggara | ID1104 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 4146.7570375567
+    | Aceh Timur | ID1105 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 5440.52259045014
+    | Aceh Utara | ID1111 |  |  |  | Aceh | ID11 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 2710.32583888105
+    | Agam | ID1307 |  |  |  | Sumatera Barat | ID13 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 2237.90982036327
+    | Alor | ID5307 |  |  |  | Nusa Tenggara Timur | ID53 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 2943.88256720628
+    | Asahan | ID1208 |  |  |  | Sumatera Utara | ID12 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 3781.14641610208
+    | Asmat | ID9415 |  |  |  | Papua | ID94 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 25024.5318766943
+    | Badung | ID5103 |  |  |  | Bali | ID51 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 394.96663281962
+    | Balangan | ID6311 |  |  |  | Kalimantan Selatan | ID63 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 1902.37385615213
+    | Bandung | ID3204 |  |  |  | Jawa Barat | ID32 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 1754.46614915673
+    | Bandung Barat | ID3217 |  |  |  | Jawa Barat | ID32 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 1276.93909618179
+    sheet 'ADM3': 7070 rows x 15 cols
+    | ADM3_EN | ADM3_PCODE | ADM3_REF | ADM3ALT1_EN | ADM3ALT2_EN | ADM2_EN | ADM2_PCODE | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | DATE | VALIDON | VALIDTO | AREA_SQKM
+    | 2 X 11 Enam Lingkung | ID1306050 |  |  |  | Padang Pariaman | ID1306 | Sumatera Barat | ID13 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 38.2500997324894
+    | 2 X 11 Kayu Tanam | ID1306052 |  |  |  | Padang Pariaman | ID1306 | Sumatera Barat | ID13 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 208.327590641693
+    | Abab | ID1612030 |  |  |  | Penukal Abab Lematang Ilir | ID1612 | Sumatera Selatan | ID16 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 302.802979000356
+    | Abang | ID5107050 |  |  |  | Karang Asem | ID5107 | Bali | ID51 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 131.088672451319
+    | Abeli | ID7471021 |  |  |  | Kota Kendari | ID7471 | Sulawesi Tenggara | ID74 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 14.2500863805975
+    | Abenaho | ID9432030 |  |  |  | Yalimo | ID9432 | Papua | ID94 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 859.1937918992029
+    | Abepura | ID9471020 |  |  |  | Kota Jayapura | ID9471 | Papua | ID94 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 149.591037451231
+    | Abiansemal | ID5103050 |  |  |  | Badung | ID5103 | Bali | ID51 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 65.31410899491091
+    | Aboy | ID9417041 |  |  |  | Pegunungan Bintang | ID9417 | Papua | ID94 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 1179.22732056078
+    | Abuki | ID7403180 |  |  |  | Konawe | ID7403 | Sulawesi Tenggara | ID74 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 204.500010486385
+    | Abun | ID9109030 |  |  |  | Tambrauw | ID9109 | Papua Barat | ID91 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 1391.33724155486
+    | Abung Barat | ID1806030 |  |  |  | Lampung Utara | ID1806 | Lampung | ID18 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 82.6555920891871
+    | Abung Kunang | ID1806032 |  |  |  | Lampung Utara | ID1806 | Lampung | ID18 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 63.4745195530299
+    | Abung Pekurun | ID1806033 |  |  |  | Lampung Utara | ID1806 | Lampung | ID18 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 181.661490471678
+    | Abung Selatan | ID1806050 |  |  |  | Lampung Utara | ID1806 | Lampung | ID18 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 117.157937632024
+    | Abung Semuli | ID1806051 |  |  |  | Lampung Utara | ID1806 | Lampung | ID18 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 103.385730516108
+    | Abung Surakarta | ID1806061 |  |  |  | Lampung Utara | ID1806 | Lampung | ID18 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 99.26486313743641
+    | Abung Tengah | ID1806031 |  |  |  | Lampung Utara | ID1806 | Lampung | ID18 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 73.55538282094321
+    | Abung Timur | ID1806060 |  |  |  | Lampung Utara | ID1806 | Lampung | ID18 | Indonesia | ID | 2019-12-20 00:00:00 | 2020-04-01 00:00:00 |  | 140.019288473042
+  - idn_admpop_2020_v2.xlsx (XLSX, 763131 B)
+    https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/83022e0f-8156-4eb4-8a02-b804f3268500/download/idn_admpop_2020_v2.xlsx
+    sheet 'idn_admpop_adm0_2020': 3 rows x 53 cols
+    | ADM0_EN | ADM0_PCODE | BTOTL_2020 | B0004_2020 | B0509_2020 | B1014_2020 | B1519_2020 | B2024_2020 | B2529_2020 | B3034_2020 | B3539_2020 | B4044_2020 | B4549_2020 | B5054_2020 | B5559_2020 | B6064_2020 | B6569_2020 | B7074_2020 | B75PL_2020 | MTOTL_2020 | M0004_2020 | M0509_2020 | M1014_2020 | M1519_2020
+    | Indonesia | ID | 269603430 | 21951993 | 21945160 | 22168842 | 22139392 | 21958329 | 21699966 | 21302010 | 20783179 | 19524038 | 18164239 | 15923028 | 13323796 | 10521814 | 7680229 | 5242370 | 5275045 | 135337011 | 11101528 | 11205657 | 11284333 | 11189861
+    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    sheet 'idn_admpop_adm1_2020': 35 rows x 55 cols
+    | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | BTOTL_2020 | B0004_2020 | B0509_2020 | B1014_2020 | B1519_2020 | B2024_2020 | B2529_2020 | B3034_2020 | B3539_2020 | B4044_2020 | B4549_2020 | B5054_2020 | B5559_2020 | B6064_2020 | B6569_2020 | B7074_2020 | B75PL_2020 | MTOTL_2020 | M0004_2020 | M0509_2020
+    | Aceh | ID11 | Indonesia | ID | 5388093 | 509320 | 506731 | 502503 | 489870 | 474318 | 461848 | 441242 | 413277 | 366305 | 317530 | 264886 | 211271 | 161302 | 114624 | 76867 | 76199 | 2691784 | 257539 | 257220
+    | Bali | ID51 | Indonesia | ID | 4414431 | 315660 | 313175 | 339350 | 340023 | 353262 | 355007 | 349973 | 351570 | 332498 | 316001 | 279111 | 235002 | 189211 | 139710 | 98014 | 106864 | 2221377 | 159695 | 160681
+    | Banten | ID36 | Indonesia | ID | 12895258 | 1095985 | 1096826 | 1090395 | 1079525 | 1090531 | 1084772 | 1068828 | 1029714 | 961127 | 880429 | 745488 | 595438 | 440523 | 297488 | 186740 | 151449 | 6557861 | 554458 | 556653
+    | Bengkulu | ID17 | Indonesia | ID | 1994349 | 168744 | 165312 | 164470 | 162932 | 162606 | 163526 | 162885 | 159209 | 147807 | 133296 | 117153 | 96905 | 73255 | 51983 | 33600 | 30666 | 1015234 | 85292 | 84136
+    | Daerah Istimewa Yogyakarta | ID34 | Indonesia | ID | 3919197 | 275983 | 261202 | 257922 | 280715 | 318922 | 317182 | 299569 | 297753 | 282245 | 269682 | 246218 | 222888 | 188700 | 147795 | 110085 | 142336 | 1935397 | 139690 | 133517
+    | Dki Jakarta | ID31 | Indonesia | ID | 10576418 | 853689 | 794140 | 742118 | 818920 | 892993 | 942325 | 913406 | 927755 | 861017 | 752806 | 633507 | 500947 | 379550 | 263742 | 171882 | 127621 | 5267822 | 432315 | 406532
+    | Gorontalo | ID75 | Indonesia | ID | 1186261 | 96817 | 98406 | 98716 | 98302 | 98228 | 97643 | 97109 | 93976 | 86932 | 80256 | 69420 | 57115 | 44143 | 31422 | 20375 | 17401 | 593508 | 48870 | 49776
+    | Jambi | ID15 | Indonesia | ID | 3604186 | 304618 | 302393 | 299689 | 297356 | 294180 | 294171 | 291280 | 281759 | 263255 | 242980 | 212835 | 174673 | 132879 | 94825 | 61799 | 55494 | 1831281 | 154040 | 153884
+    | Jawa Barat | ID32 | Indonesia | ID | 49565166 | 3939999 | 4034356 | 4168083 | 4206195 | 4195692 | 4135647 | 4006138 | 3863986 | 3568573 | 3289500 | 2842758 | 2334055 | 1836737 | 1327330 | 908416 | 907701 | 25111191 | 1992910 | 2071166
+    | Jawa Tengah | ID33 | Indonesia | ID | 34738244 | 2456026 | 2591848 | 2721508 | 2758527 | 2655531 | 2561577 | 2561234 | 2542920 | 2463867 | 2422900 | 2212118 | 1970742 | 1633789 | 1249113 | 902566 | 1033978 | 17237302 | 1242768 | 1327632
+    | Jawa Timur | ID35 | Indonesia | ID | 39955941 | 2817159 | 2708149 | 2819027 | 2910553 | 2941039 | 2963938 | 2993543 | 3027632 | 3003099 | 2950061 | 2721786 | 2413095 | 1983772 | 1508773 | 1069941 | 1124374 | 19722235 | 1425200 | 1383380
+    | Kalimantan Barat | ID61 | Indonesia | ID | 5104900 | 443182 | 438943 | 440590 | 434559 | 429831 | 429441 | 424576 | 414686 | 375729 | 326412 | 274264 | 223280 | 171148 | 123460 | 82665 | 72134 | 2591426 | 224101 | 223778
+    | Kalimantan Selatan | ID63 | Indonesia | ID | 4268610 | 373549 | 384617 | 365356 | 344072 | 332979 | 327597 | 322325 | 313925 | 301326 | 287314 | 265775 | 222751 | 167388 | 118336 | 74866 | 66434 | 2156712 | 188797 | 195835
+    | Kalimantan Tengah | ID62 | Indonesia | ID | 2686252 | 225414 | 224110 | 223245 | 220404 | 223007 | 225629 | 221388 | 218659 | 211000 | 194574 | 163173 | 125735 | 90498 | 56487 | 34976 | 27953 | 1394863 | 114016 | 114217
+    | Kalimantan Timur | ID64 | Indonesia | ID | 3664673 | 302165 | 298731 | 296030 | 297449 | 303448 | 305279 | 297675 | 294604 | 285617 | 265381 | 229154 | 183684 | 134198 | 83683 | 48799 | 38776 | 1902880 | 152835 | 152302
+    | Kalimantan Utara | ID65 | Indonesia | ID | 708352 | 62323 | 63097 | 61699 | 60715 | 61064 | 60577 | 57164 | 54308 | 51060 | 45988 | 40369 | 31875 | 22666 | 15893 | 10107 | 9447 | 374132 | 31538 | 32159
+    | Kepulauan Bangka Belitung | ID19 | Indonesia | ID | 1469809 | 124275 | 123587 | 120672 | 120720 | 121333 | 120774 | 119649 | 117764 | 109293 | 100208 | 86013 | 69547 | 52478 | 37658 | 24938 | 20900 | 756922 | 62847 | 62853
+    | Kepulauan Riau | ID21 | Indonesia | ID | 2309529 | 217876 | 199993 | 191088 | 185138 | 221769 | 235062 | 205789 | 204589 | 178729 | 146527 | 114631 | 76789 | 54188 | 35278 | 21911 | 20172 | 1179002 | 110268 | 102608
+    | Lampung | ID18 | Indonesia | ID | 8534849 | 708834 | 718479 | 720987 | 710909 | 694944 | 681559 | 675463 | 654082 | 620880 | 579297 | 501113 | 415412 | 321076 | 229172 | 149947 | 152695 | 4364289 | 358553 | 366606
+    sheet 'idn_admpop_adm2_2020': 515 rows x 58 cols
+    | ADM2_EN | ADM2_PCODE | match | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | BTOTL_2020 | B0004_2020 | B0509_2020 | B1014_2020 | B1519_2020 | B2024_2020 | B2529_2020 | B3034_2020 | B3539_2020 | B4044_2020 | B4549_2020 | B5054_2020 | B5559_2020 | B6064_2020 | B6569_2020 | B7074_2020 | B75PL_2020
+    | Aceh Barat | ID1107 | 1 | Aceh | ID11 | Indonesia | ID | 209498 | 18469 | 17274 | 17890 | 17930 | 18108 | 18884 | 18748 | 18217 | 15817 | 13380 | 10626 | 7896 | 6405 | 4365 | 2912 | 2577
+    | Aceh Barat Daya | ID1112 | 1 | Aceh | ID11 | Indonesia | ID | 151828 | 12757 | 13388 | 14291 | 13542 | 11479 | 12631 | 12732 | 12188 | 11339 | 9981 | 7949 | 5842 | 4799 | 3751 | 2706 | 2453
+    | Aceh Besar | ID1108 | 1 | Aceh | ID11 | Indonesia | ID | 424423 | 42358 | 35618 | 34747 | 38388 | 41047 | 40239 | 35631 | 33093 | 28352 | 24219 | 19395 | 16481 | 12606 | 8569 | 5944 | 7736
+    | Aceh Jaya | ID1116 | 1 | Aceh | ID11 | Indonesia | ID | 94379 | 10076 | 7378 | 7564 | 7129 | 7916 | 9456 | 8543 | 7898 | 6859 | 5743 | 4628 | 3589 | 3024 | 2012 | 1298 | 1266
+    | Aceh Selatan | ID1103 | 1 | Aceh | ID11 | Indonesia | ID | 242200 | 19368 | 22388 | 23716 | 21049 | 17140 | 18593 | 19372 | 19830 | 18493 | 15926 | 13144 | 10236 | 8051 | 6308 | 4544 | 4042
+    | Aceh Singkil | ID1102 | 1 | Aceh | ID11 | Indonesia | ID | 123842 | 14708 | 14783 | 13667 | 11222 | 9984 | 11073 | 10410 | 8945 | 7622 | 6123 | 5070 | 3791 | 2410 | 1726 | 1115 | 1193
+    | Aceh Tamiang | ID1114 | 1 | Aceh | ID11 | Indonesia | ID | 297387 | 28713 | 29638 | 29008 | 25546 | 23389 | 24523 | 24260 | 23278 | 21378 | 18853 | 16253 | 11771 | 7238 | 5537 | 3963 | 4039
+    | Aceh Tengah | ID1106 | 1 | Aceh | ID11 | Indonesia | ID | 212118 | 20924 | 21449 | 19763 | 17308 | 16748 | 18096 | 19366 | 17974 | 15235 | 12584 | 9803 | 7721 | 5856 | 4302 | 2349 | 2640
+    | Aceh Tenggara | ID1104 | 1 | Aceh | ID11 | Indonesia | ID | 216264 | 21926 | 22910 | 24301 | 21623 | 16432 | 16601 | 16600 | 15719 | 14295 | 12075 | 10982 | 8007 | 5564 | 3926 | 2562 | 2741
+    | Aceh Timur | ID1105 | 1 | Aceh | ID11 | Indonesia | ID | 436087 | 45722 | 46892 | 44062 | 40923 | 38839 | 36816 | 34004 | 31604 | 27269 | 24605 | 19109 | 16093 | 11958 | 8352 | 5012 | 4827
+    | Aceh Utara | ID1111 | 1 | Aceh | ID11 | Indonesia | ID | 622757 | 57722 | 61488 | 61598 | 62452 | 58174 | 50029 | 47412 | 44338 | 39406 | 34868 | 31046 | 23656 | 18838 | 13516 | 9550 | 8664
+    | Agam | ID1307 | 1 | Sumatera Barat | ID13 | Indonesia | ID | 497299 | 44182 | 45577 | 46889 | 43355 | 33699 | 34280 | 34391 | 34499 | 33548 | 30707 | 27049 | 24167 | 20182 | 17086 | 12562 | 15126
+    | Alor | ID5307 | 1 | Nusa Tenggara Timur | ID53 | Indonesia | ID | 206952 | 22742 | 18714 | 18690 | 18176 | 17313 | 16883 | 16095 | 14731 | 13043 | 11500 | 11189 | 8776 | 6846 | 4961 | 3385 | 3908
+    | Asahan | ID1208 | 1 | Sumatera Utara | ID12 | Indonesia | ID | 737451 | 66807 | 68406 | 70166 | 67510 | 62749 | 60151 | 56358 | 52810 | 48775 | 45447 | 39905 | 32071 | 23002 | 17624 | 12938 | 12732
+    | Asmat | ID9415 | 1 | Papua | ID94 | Indonesia | ID | 99262 | 14534 | 11155 | 8683 | 8757 | 9301 | 9725 | 7729 | 6691 | 5478 | 4936 | 4187 | 3388 | 2488 | 1424 | 523 | 263
+    | Badung | ID5103 | 1 | Bali | ID51 | Indonesia | ID | 695009 | 52023 | 50542 | 51561 | 52466 | 61319 | 62334 | 62830 | 63803 | 56720 | 46013 | 37377 | 30914 | 24545 | 18169 | 11455 | 12938
+    | Balangan | ID6311 | 1 | Kalimantan Selatan | ID63 | Indonesia | ID | 131655 | 12208 | 12331 | 12091 | 10683 | 10186 | 9768 | 9334 | 9281 | 9218 | 9141 | 8670 | 6315 | 5202 | 3346 | 2274 | 1607
+    | Bandung | ID3204 | 1 | Jawa Barat | ID32 | Indonesia | ID | 3736230 | 321154 | 334655 | 325486 | 324289 | 312220 | 321873 | 319511 | 293522 | 259351 | 233065 | 195697 | 164396 | 118835 | 90230 | 59343 | 62603
+    | Bandung Barat | ID3217 | 1 | Jawa Barat | ID32 | Indonesia | ID | 1681687 | 138417 | 148444 | 148826 | 141206 | 130666 | 136802 | 132076 | 129541 | 116905 | 108225 | 92458 | 77776 | 61189 | 48634 | 33821 | 36701
+    sheet 'Metadata': 1000 rows x 26 cols
+    | Data |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Country | Indonesia |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Basline population | 2010 Census |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Reference year of projections | 2020 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Source(s) | BPS-Statistics Indonesia |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Methods | accessible here |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Year of publication | 2016 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | ADM1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Name | Provinces (Provinsi) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | # of ADM1 units | 34 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Age- and Sex disaggregation | 5-year age groups, male, female, SAD integrated |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Open-ended group | 75+ years |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | ADM2 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Name | Regencies (Kabupaten) and Municipalities (Kota) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | # of ADM2 unites | 514 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Age- and Sex disaggregation | 5-year age groups, male, female |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Open-ended group | 75+ years |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | Limitations of use |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    sheet 'HQ': 534 rows x 58 cols
+    | Area names in column A, table headers in row 4 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    | AREA_NAME | ADM1_NAME | ADM2_NAME | ADM_LEVEL | BTOTL_2020 | B0004_2020 | B0509_2020 | B1014_2020 | B1519_2020 | B2024_2020 | B2529_2020 | B3034_2020 | B3539_2020 | B4044_2020 | B4549_2020 | B5054_2020 | B5559_2020 | B6064_2020 | B6569_2020 | B7074_2020 | B7579_2020 | B80PL_2020 | MTOTL_2020 | M0004_2020
+    | INDONESIA |  |  | 0 | 267026366 | 20478078 | 21201103 | 22058099 | 22512791 | 22234259 | 20550374 | 19563470 | 19746467 | 19650474 | 18844167 | 15304197 | 12950896 | 11050947 | 8286591 | 4935752 | 4053622 | 3605079 | 133643347 | 10446336
+    | .ACEH | ACEH |  | 1 | 4741228 | 423450 | 412807 | 439772 | 455578 | 459918 | 380118 | 340053 | 331894 | 308702 | 294272 | 232522 | 194540 | 168590 | 121409 | 72571 | 52904 | 52128 | 2355014 | 215950
+    | ..KABUPATEN SIMEULUE | ACEH | KABUPATEN SIMEULUE | 2 | 108586 | 10802 | 10818 | 10578 | 9282 | 8552 | 8890 | 8409 | 7531 | 7408 | 7060 | 5419 | 4372 | 4109 | 2882 | 1235 | 763 | 476 | 55444 | 5542
+    | ..KABUPATEN ACEH SINGKIL | ACEH | KABUPATEN ACEH SINGKIL | 2 | 137678 | 15531 | 15277 | 15202 | 13343 | 12427 | 11651 | 10269 | 9205 | 8233 | 7278 | 5713 | 4467 | 3239 | 2361 | 1364 | 1000 | 1118 | 69378 | 7891
+    | ..KABUPATEN ACEH SELATAN | ACEH | KABUPATEN ACEH SELATAN | 2 | 207677 | 15535 | 17571 | 20032 | 19010 | 16201 | 14857 | 14490 | 15489 | 15161 | 14373 | 11245 | 9232 | 8263 | 6555 | 4220 | 2846 | 2597 | 101331 | 7916
+    | ..KABUPATEN ACEH TENGGARA | ACEH | KABUPATEN ACEH TENGGARA | 2 | 211427 | 20178 | 20627 | 23550 | 22404 | 17835 | 15230 | 14261 | 14087 | 13445 | 12499 | 10777 | 8296 | 6572 | 4682 | 2730 | 1895 | 2359 | 104326 | 10346
+    | ..KABUPATEN ACEH TIMUR | ACEH | KABUPATEN ACEH TIMUR | 2 | 396175 | 39120 | 39255 | 39708 | 39422 | 39179 | 31391 | 27155 | 26337 | 23851 | 23685 | 17446 | 15415 | 13042 | 9244 | 4966 | 3661 | 3298 | 197090 | 19965
+    | ..KABUPATEN ACEH TENGAH | ACEH | KABUPATEN ACEH TENGAH | 2 | 188071 | 17517 | 17571 | 17428 | 16311 | 16541 | 15099 | 15140 | 14660 | 13047 | 11859 | 8757 | 7243 | 6254 | 4655 | 2277 | 1839 | 1873 | 94721 | 8895
+    | ..KABUPATEN ACEH BARAT | ACEH | KABUPATEN ACEH BARAT | 2 | 150756 | 12503 | 11442 | 12753 | 13664 | 14449 | 12747 | 11849 | 12014 | 10951 | 10201 | 7680 | 5960 | 5519 | 3820 | 2282 | 1524 | 1398 | 76396 | 6310
+    | ..KABUPATEN ACEH BESAR | ACEH | KABUPATEN ACEH BESAR | 2 | 409934 | 38284 | 31499 | 33072 | 39066 | 43791 | 36288 | 30101 | 29148 | 26214 | 24651 | 18709 | 16657 | 14477 | 10021 | 6222 | 5259 | 6475 | 209022 | 19704
+    | ..KABUPATEN PIDIE | ACEH | KABUPATEN PIDIE | 2 | 366662 | 30095 | 30192 | 32056 | 34452 | 32758 | 26434 | 24187 | 24139 | 22650 | 22022 | 18829 | 18389 | 17425 | 12511 | 8095 | 6195 | 6233 | 174576 | 15292
+    | ..KABUPATEN BIREUEN | ACEH | KABUPATEN BIREUEN | 2 | 410728 | 32340 | 33134 | 36513 | 41158 | 40085 | 31061 | 27884 | 27730 | 26376 | 25487 | 20806 | 19204 | 17627 | 12820 | 7492 | 5788 | 5223 | 198454 | 16569
+    | ..KABUPATEN ACEH UTARA | ACEH | KABUPATEN ACEH UTARA | 2 | 525672 | 45609 | 47544 | 51265 | 55561 | 54204 | 39378 | 34959 | 34114 | 31826 | 30996 | 26169 | 20952 | 19035 | 13823 | 8734 | 5641 | 5862 | 258276 | 23390
+    | ..KABUPATEN ACEH BARAT DAYA | ACEH | KABUPATEN ACEH BARAT DAYA | 2 | 129418 | 10187 | 10462 | 12018 | 12176 | 10798 | 10041 | 9489 | 9477 | 9257 | 8971 | 6772 | 5202 | 4894 | 3875 | 2502 | 1611 | 1686 | 63974 | 5227
+    | ..KABUPATEN GAYO LUES | ACEH | KABUPATEN GAYO LUES | 2 | 93968 | 9310 | 8881 | 9905 | 8730 | 8669 | 8769 | 7205 | 6939 | 5867 | 5558 | 3995 | 2794 | 2728 | 1857 | 1139 | 810 | 812 | 46485 | 4694
+    | ..KABUPATEN ACEH TAMIANG | ACEH | KABUPATEN ACEH TAMIANG | 2 | 276857 | 25184 | 25429 | 26793 | 25224 | 24196 | 21433 | 19869 | 19883 | 19169 | 18605 | 15213 | 11541 | 8067 | 6286 | 4023 | 3231 | 2711 | 139354 | 12701
+    | ..KABUPATEN NAGAN RAYA | ACEH | KABUPATEN NAGAN RAYA | 2 | 121318 | 9932 | 9510 | 10855 | 10283 | 10682 | 10063 | 9591 | 9220 | 8361 | 8078 | 6447 | 5028 | 4767 | 3529 | 2427 | 1419 | 1126 | 61070 | 5050
+    | ..KABUPATEN ACEH JAYA | ACEH | KABUPATEN ACEH JAYA | 2 | 66697 | 6707 | 4805 | 5301 | 5341 | 6219 | 6273 | 5315 | 5124 | 4673 | 4306 | 3288 | 2657 | 2550 | 1727 | 1000 | 726 | 685 | 34642 | 3355
+    sheet 'BPS-STATISTICS IDN': 550 rows x 61 cols
+    | AREA_NAME | AREA_NAME (ADAPTED) | ADM2_NAME (STANDARDIZED) | ADM2_PCODE | ADM2_NAME | ADM1_NAME | ADM1_NAME (adapted) | ADM1_PCODE | PARENTAGE_CHECK | ADM_LEVEL | BTOTL_2020 | B0004_2020 | B0509_2020 | B1014_2020 | B1519_2020 | B2024_2020 | B2529_2020 | B3034_2020 | B3539_2020 | B4044_2020 | B4549_2020 | B5054_2020 | B5559_2020 | B6064_2020
+    | INDONESIA | INDONESIA |  |  |  |  |  |  |  | 0 | 269603430 | 21951993 | 21945160 | 22168842 | 22139392 | 21958329 | 21699966 | 21302010 | 20783179 | 19524038 | 18164239 | 15923028 | 13323796 | 10521814
+    | ACEH | ACEH |  |  |  | ACEH | ACEH | ID11 |  | 1 | 5388093 | 509320 | 506731 | 502503 | 489870 | 474318 | 461848 | 441242 | 413277 | 366305 | 317530 | 264886 | 211271 | 161302
+    | KABUPATEN SIMEULUE | KABUPATEN SIMEULUE | SIMEULUE | ID1101 | KABUPATEN SIMEULUE | ACEH | ACEH | ID11 | True | 2 | 95303 | 10017 | 10255 | 9315 | 7646 | 6721 | 8266 | 8343 | 7167 | 6714 | 5813 | 4710 | 3621 | 2982
+    | KABUPATEN ACEH SINGKIL | KABUPATEN ACEH SINGKIL | ACEH SINGKIL | ID1102 | KABUPATEN ACEH SINGKIL | ACEH | ACEH | ID11 | True | 2 | 123842 | 14708 | 14783 | 13667 | 11222 | 9984 | 11073 | 10410 | 8945 | 7622 | 6123 | 5070 | 3791 | 2410
+    | KABUPATEN ACEH SELATAN | KABUPATEN ACEH SELATAN | ACEH SELATAN | ID1103 | KABUPATEN ACEH SELATAN | ACEH | ACEH | ID11 | True | 2 | 242200 | 19368 | 22388 | 23716 | 21049 | 17140 | 18593 | 19372 | 19830 | 18493 | 15926 | 13144 | 10236 | 8051
+    | KABUPATEN ACEH TENGGARA | KABUPATEN ACEH TENGGARA | ACEH TENGGARA | ID1104 | KABUPATEN ACEH TENGGARA | ACEH | ACEH | ID11 | True | 2 | 216264 | 21926 | 22910 | 24301 | 21623 | 16432 | 16601 | 16600 | 15719 | 14295 | 12075 | 10982 | 8007 | 5564
+    | KABUPATEN ACEH TIMUR | KABUPATEN ACEH TIMUR | ACEH TIMUR | ID1105 | KABUPATEN ACEH TIMUR | ACEH | ACEH | ID11 | True | 2 | 436087 | 45722 | 46892 | 44062 | 40923 | 38839 | 36816 | 34004 | 31604 | 27269 | 24605 | 19109 | 16093 | 11958
+    | KABUPATEN ACEH TENGAH | KABUPATEN ACEH TENGAH | ACEH TENGAH | ID1106 | KABUPATEN ACEH TENGAH | ACEH | ACEH | ID11 | True | 2 | 212118 | 20924 | 21449 | 19763 | 17308 | 16748 | 18096 | 19366 | 17974 | 15235 | 12584 | 9803 | 7721 | 5856
+    | KABUPATEN ACEH BARAT | KABUPATEN ACEH BARAT | ACEH BARAT | ID1107 | KABUPATEN ACEH BARAT | ACEH | ACEH | ID11 | True | 2 | 209498 | 18469 | 17274 | 17890 | 17930 | 18108 | 18884 | 18748 | 18217 | 15817 | 13380 | 10626 | 7896 | 6405
+    | KABUPATEN ACEH BESAR | KABUPATEN ACEH BESAR | ACEH BESAR | ID1108 | KABUPATEN ACEH BESAR | ACEH | ACEH | ID11 | True | 2 | 424423 | 42358 | 35618 | 34747 | 38388 | 41047 | 40239 | 35631 | 33093 | 28352 | 24219 | 19395 | 16481 | 12606
+    | KABUPATEN PIDIE | KABUPATEN PIDIE | PIDIE | ID1109 | KABUPATEN PIDIE | ACEH | ACEH | ID11 | True | 2 | 447888 | 39606 | 40609 | 40061 | 40271 | 36578 | 34933 | 34123 | 32630 | 29171 | 25778 | 23242 | 21453 | 17853
+    | KABUPATEN BIREUEN | KABUPATEN BIREUEN | BIREUEN | ID1110 | KABUPATEN BIREUEN | ACEH | ACEH | ID11 | True | 2 | 470564 | 39777 | 41653 | 42649 | 44964 | 41807 | 38340 | 36753 | 35033 | 31743 | 27881 | 23999 | 20937 | 16897
+    | KABUPATEN ACEH UTARA | KABUPATEN ACEH UTARA | ACEH UTARA | ID1111 | KABUPATEN ACEH UTARA | ACEH | ACEH | ID11 | True | 2 | 622757 | 57722 | 61488 | 61598 | 62452 | 58174 | 50029 | 47412 | 44338 | 39406 | 34868 | 31046 | 23656 | 18838
+    | KABUPATEN ACEH BARAT DAYA | KABUPATEN ACEH BARAT DAYA | ACEH BARAT DAYA | ID1112 | KABUPATEN ACEH BARAT DAYA | ACEH | ACEH | ID11 | True | 2 | 151828 | 12757 | 13388 | 14291 | 13542 | 11479 | 12631 | 12732 | 12188 | 11339 | 9981 | 7949 | 5842 | 4799
+    | KABUPATEN GAYO LUES | KABUPATEN GAYO LUES | GAYO LUES | ID1113 | KABUPATEN GAYO LUES | ACEH | ACEH | ID11 | True | 2 | 93946 | 9830 | 9584 | 9930 | 8188 | 7768 | 9292 | 8148 | 7521 | 6059 | 5218 | 3954 | 2635 | 2248
+    | KABUPATEN ACEH TAMIANG | KABUPATEN ACEH TAMIANG | ACEH TAMIANG | ID1114 | KABUPATEN ACEH TAMIANG | ACEH | ACEH | ID11 | True | 2 | 297387 | 28713 | 29638 | 29008 | 25546 | 23389 | 24523 | 24260 | 23278 | 21378 | 18853 | 16253 | 11771 | 7238
+    | KABUPATEN NAGAN RAYA | KABUPATEN NAGAN RAYA | NAGAN RAYA | ID1115 | KABUPATEN NAGAN RAYA | ACEH | ACEH | ID11 | True | 2 | 166794 | 14535 | 14227 | 15086 | 13367 | 13257 | 14780 | 15038 | 13849 | 11964 | 10503 | 8844 | 6602 | 5465
+    | KABUPATEN ACEH JAYA | KABUPATEN ACEH JAYA | ACEH JAYA | ID1116 | KABUPATEN ACEH JAYA | ACEH | ACEH | ID11 | True | 2 | 94379 | 10076 | 7378 | 7564 | 7129 | 7916 | 9456 | 8543 | 7898 | 6859 | 5743 | 4628 | 3589 | 3024
+    | KABUPATEN BENER MERIAH | KABUPATEN BENER MERIAH | BENER MERIAH | ID1117 | KABUPATEN BENER MERIAH | ACEH | ACEH | ID11 | True | 2 | 148156 | 14952 | 14671 | 13786 | 11066 | 10990 | 13440 | 14352 | 12650 | 10264 | 8466 | 7017 | 5693 | 4458
+  - idn_admpop_adm0_2020_v2.csv (CSV, 892 B)
+    https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/615f2158-a0fd-45f1-8c91-0f0ccb8470b5/download/idn_admpop_adm0_2020_v2.csv
+    | year,ADM0_EN,ADM0_PCODE,T_TL,T_00_04,T_05_09,T_10_14,T_15_19,T_20_24,T_25_29,T_30_34,T_35_39,T_40_44,T_45_49,T_50_54,T_55_59,T_60_64,T_65_69,T_70_74,T_75Plus,M_TL,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_69,M_70_74,M_75Plus,F_TL,F_0
+    | 2020,Indonesia,ID,269603430,21951993,21945160,22168842,22139392,21958329,21699966,21302010,20783179,19524038,18164239,15923028,13323796,10521814,7680229,5242370,5275045,135337011,11101528,11205657,11284333,11189861,11070774,10963605,10777337,10477475,9830929,9140315,7975551,6632329,5234762,3758966,2
+    2 lines
+  - idn_admpop_adm1_2020_v2.csv (CSV, 13471 B)
+    https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/a7cabb5c-7a17-44ec-ae60-1481594e5857/download/idn_admpop_adm1_2020_v2.csv
+    | year,ADM1_EN,ADM1_PCODE,ADM0_EN,ADM0_PCODE,T_TL,T_00_04,T_05_09,T_10_14,T_15_19,T_20_24,T_25_29,T_30_34,T_35_39,T_40_44,T_45_49,T_50_54,T_55_59,T_60_64,T_65_69,T_70_74,T_75Plus,M_TL,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_69,M_70_7
+    | 2020,Aceh,ID11,Indonesia,ID,5388093,509320,506731,502503,489870,474318,461848,441242,413277,366305,317530,264886,211271,161302,114624,76867,76199,2691784,257539,257220,254446,246241,236854,231079,222395,207063,182837,158211,131486,104510,79302,55054,35513,32034,2696309,251781,249511,248057,243629,23
+    | 2020,Bali,ID51,Indonesia,ID,4414431,315660,313175,339350,340023,353262,355007,349973,351570,332498,316001,279111,235002,189211,139710,98014,106864,2221377,159695,160681,173129,173362,180556,180980,178018,178538,168940,159914,139612,116043,92844,67290,46020,45755,2193054,155965,152494,166221,166661,1
+    | 2020,Banten,ID36,Indonesia,ID,12895258,1095985,1096826,1090395,1079525,1090531,1084772,1068828,1029714,961127,880429,745488,595438,440523,297488,186740,151449,6557861,554458,556653,550754,541292,545119,548471,547984,532746,498873,455737,383408,304438,229151,152659,92395,63723,6337397,541527,540173,5
+    | 2020,Bengkulu,ID17,Indonesia,ID,1994349,168744,165312,164470,162932,162606,163526,162885,159209,147807,133296,117153,96905,73255,51983,33600,30666,1015234,85292,84136,83079,81962,82095,83021,83719,82287,75935,68167,59788,49443,38261,27071,16933,14045,979115,83452,81176,81391,80970,80511,80505,79166,
+    | 2020,Daerah Istimewa Yogyakarta,ID34,Indonesia,ID,3919197,275983,261202,257922,280715,318922,317182,299569,297753,282245,269682,246218,222888,188700,147795,110085,142336,1935397,139690,133517,131655,140984,157648,158073,151792,150402,141767,134099,120237,107404,90436,69299,50419,57975,1983800,136293
+    35 lines
+  - idn_admpop_adm2_2020_v3.csv (CSV, 175539 B)
+    https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/8f6f09d2-95f7-42dc-b6f1-aead319607f3/download/idn_admpop_adm2_2020_v3.csv
+    | year,ADM2_EN,ADM2_PCODE,ADM1_EN,ADM1_PCODE,ADM0_EN,ADM0_PCODE,T_TL,T_00_04,T_05_09,T_10_14,T_15_19,T_20_24,T_25_29,T_30_34,T_35_39,T_40_44,T_45_49,T_50_54,T_55_59,T_60_64,T_65_69,T_70_74,T_75Plus,M_TL,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_6
+    | 2020,Aceh Barat,ID1107,Aceh,ID11,Indonesia,ID,209498,18469,17274,17890,17930,18108,18884,18748,18217,15817,13380,10626,7896,6405,4365,2912,2577,106007,9196,8622,9008,8975,8861,9611,9420,9326,8129,7068,5542,4098,3239,2229,1405,1278,103491,9273,8652,8882,8955,9247,9273,9328,8891,7688,6312,5084,3798,31
+    | 2020,Aceh Barat Daya,ID1112,Aceh,ID11,Indonesia,ID,151828,12757,13388,14291,13542,11479,12631,12732,12188,11339,9981,7949,5842,4799,3751,2706,2453,75292,6472,6713,7262,6940,5451,5988,6237,5991,5623,5034,4019,3043,2350,1826,1296,1047,76536,6285,6675,7029,6602,6028,6643,6495,6197,5716,4947,3930,2799,2
+    | 2020,Aceh Besar,ID1108,Aceh,ID11,Indonesia,ID,424423,42358,35618,34747,38388,41047,40239,35631,33093,28352,24219,19395,16481,12606,8569,5944,7736,217471,21564,18123,17764,19751,21174,20964,18768,17215,14655,12657,9885,8351,6536,4201,2699,3164,206952,20794,17495,16983,18637,19873,19275,16863,15878,13
+    | 2020,Aceh Jaya,ID1116,Aceh,ID11,Indonesia,ID,94379,10076,7378,7564,7129,7916,9456,8543,7898,6859,5743,4628,3589,3024,2012,1298,1266,49263,5002,3746,3817,3694,4112,4787,4562,4258,3783,3135,2454,1918,1613,1171,629,582,45116,5074,3632,3747,3435,3804,4669,3981,3640,3076,2608,2174,1671,1411,841,669,684
+    | 2020,Aceh Selatan,ID1103,Aceh,ID11,Indonesia,ID,242200,19368,22388,23716,21049,17140,18593,19372,19830,18493,15926,13144,10236,8051,6308,4544,4042,119001,9783,11335,12168,10576,8305,9104,9186,9758,9014,7811,6386,4888,3862,2932,2065,1828,123199,9585,11053,11548,10473,8835,9489,10186,10072,9479,8115,6
+    515 lines
