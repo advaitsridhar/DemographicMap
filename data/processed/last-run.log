@@ -33,6 +33,8 @@ eurostat: demo_r_pjangrp3 (nuts3)
   SWE: 21 NUTS-3 regions kept at admin1 -- 21 of 21 names match this map's admin1 (against 0 at admin2)
   TUR: 81 NUTS-3 regions kept at admin1 -- 81 of 81 names match this map's admin1 (against 41 at admin2)
   527 regions placed by outline; 84 refused or superseded by it; 1029 left to their names
+  ALB: 2 rows left to their names looked for at admin1, where the outlines placed 11
+  MKD: 1 rows left to their names looked for at admin1, where the outlines placed 8
   GBR: Hartlepool and Stockton-on-Tees (NUTS 2021) left out -- it holds Hartlepool, Stockton-on-Tees and more
   GBR: North and North East Lincolnshire (NUTS 2021) left out -- it holds North East Lincolnshire and more
   GBR: Barnsley, Doncaster and Rotherham (NUTS 2021) left out -- it holds Barnsley, Doncaster, Rotherham and more
@@ -66,5 +68,5 @@ eurostat: demo_r_pjangrp3 (nuts3)
   GBR: East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond (NUTS 2021) left out -- it holds East Dunbartonshire, West Dunbartonshire and more
   GBR: Inverclyde, East Renfrewshire and Renfrewshire (NUTS 2021) left out -- it holds East Renfrewshire, Inverclyde, Renfrewshire and more
   GBR: East Ayrshire and North Ayrshire mainland (NUTS 2021) left out -- it holds East Ayrshire and more
-  wrote data/processed/eurostat_nuts3.json (1007 kB)
-  700 nuts3 records
+  wrote data/processed/eurostat_nuts3.json (1012 kB)
+  703 nuts3 records
