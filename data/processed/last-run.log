@@ -1,17 +1,125 @@
-== https://www.cis.es/en/surveys/barometro-de-septiembre-2026
-  HTTP 200; text/html;charset=UTF-8; 558,293 bytes; final https://www.cis.es/en/surveys/barometro-de-septiembre-2026
-  256 raw matches of /Fichero.datos|descargar|download|MD3577|3577.zip|registro|modal/
-    ~ @clayui$layout.js", "@clayui/link": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$link.js", "@clayui/list": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$list.js", "@clayui/loading-indicator": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$loading-indicator.js", "@clayui/localized-input": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$localized-input.js", "@clayui/management-toolbar": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$management-toolbar.js", "@clayui/modal": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$modal.js", "@clayui/multi-select": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$multi-select.js", "@clayui/multi-step-nav": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$multi-step-nav.js", "@clayui/nav": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$nav.js", "@clayui/navigation-bar": "/o/frontend-js-clay-web/__liferay__/exports/@clayui$navigation-bar.js", "@clayui/pagination": "/o/frontend-js-clay-web/__liferay__
-    ~ s"},"@id":"https://www.cis.es#organization","url":"https://www.cis.es"},"@type":"Dataset","description":"Encuesta mensual que indaga sobre cuestiones de actualidad y realiza un seguimiento de la valoración subjetiva de la situación social, política y económica, además de los principales problemas del país","inLanguage":"es","dateModified":"2026-09-23T06:00:00Z","isAccessibleForFree":true,"distribution":[{"contentUrl":"https://www.cis.es/documents/20117/14250083/3577_Estimacion.pdf","@type":"DataDownload","name":"Estimación voto","encodingFormat":"application/pdf"},{"contentUrl":"https://www.cis.es/documents/20117/14250083/cues3577.pdf","@type":"DataDownload","name":"Cuestionario","encodingFormat":"application/pdf"},{"contentUrl":"https://www.cis.es/documents/20117/14250083/MD3577.zip","@type":"DataDownload","name":"Fichero datos","encodingFormat":"application/zip"},{"contentUrl":"https://www.cis.es/documents/20117/14250083/FT3577.pdf","@type":"DataDownload","name":"Ficha técnica","enco
-    ~ 83/cues3577.pdf","@type":"DataDownload","name":"Cuestionario","encodingFormat":"application/pdf"},{"contentUrl":"https://www.cis.es/documents/20117/14250083/MD3577.zip","@type":"DataDownload","name":"Fichero datos","encodingFormat":"application/zip"},{"contentUrl":"https://www.cis.es/documents/20117/14250083/FT3577.pdf","@type":"DataDownload","name":"Ficha técnica","encodingFormat":"application/pdf"},{"contentUrl":"https://www.cis.es/documents/20117/14250083/3577-multi_enlace.html","@type":"DataDownload","name":"Tabulaciones XLSX","encodingFormat":"text/html"},{"contentUrl":"https://www.cis.es/documents/20117/14250083/es3577mar.pdf","@type":"DataDownload","name":"Resultados PDF","encodingFormat":"application/pdf"}],"spatialCoverage":{"@type":"Place","name":"España"},"isPartOf":[{"@id":"https://www.cis.es/en/series/nacionalidad-de-la-persona-entrevistada-ii-e.6.01.01.009#catalog"},{"@id":"https://www.cis.es/en/series/lugar-de-nacimiento-pais-de-la-persona-entrevistada-e.4.02.01.033#cata
-    ~ x20\x28España\x29', 'ca_ES': 'català\x20\x28Espanya\x29', 'en_US': 'English\x20\x28United\x20States\x29', 'fr_FR': 'français\x20\x28France\x29', 'eu_ES': 'euskara\x20\x28Espainia\x29', 'gl_ES': 'galego\x20\x28España\x29', }, direction: { 'es_ES': 'ltr', 'ca_ES': 'ltr', 'en_US': 'ltr', 'fr_FR': 'ltr', 'eu_ES': 'ltr', 'gl_ES': 'ltr', }, get: (key) => { let value = Liferay.Language._cache[key]; if (value === undefined) { value = key; } return value; }, }, Portlet: { openModal: buildESMStub('frontend-js-components-web', 'openPortletModal'), openWindow: buildESMStub('frontend-js-components-web', 'openPortletWindow'), }, PortletKeys: { DOCUMENT_LIBRARY: 'com_liferay_document_library_web_portlet_DLPortlet', DYNAMIC_DATA_MAPPING: 'com_liferay_dynamic_data_mapping_web_portlet_DDMPortlet', INSTANCE_SETTINGS: 'com_liferay_configuration_admin_web_portlet_InstanceSettingsPortlet', ITEM_SELECTOR: 'com_liferay_item_selector_web_portlet_ItemSelectorPortlet', }, PropsValues:
-    ~ ) => '/en/group/control_panel?refererPlid=56607', getURLHome: () => 'https\x3a\x2f\x2fwww\x2ecis\x2ees\x2fweb\x2fguest', getUserEmailAddress: () => '', getUserId: () => '20095', getUserName: () => '', isAddSessionIdToURL: () => false, isImpersonated: () => false, isSignedIn: () => false, isStagedPortlet: () => false, isStateExclusive: () => false, isStateMaximized: () => false, isStatePopUp: () => false, }, Util: { Window: { _map: {}, getById: (id) => Liferay.Util.Window._map[id], }, openAlertModal: buildESMStub('frontend-js-components-web', 'openAlertModal'), openConfirmModal: buildESMStub('frontend-js-components-web', 'openConfirmModal'), openModal: buildESMStub('frontend-js-components-web', 'openModal'), openSelectionModal: buildESMStub('frontend-js-components-web', 'openSelectionModal'), openSimpleInputModal: buildESMStub('frontend-js-components-web', 'openSimpleInputModal'), openToast: buildESMStub('frontend-js-components-web', 'openToast'), }, authToken: 'EVZCK5Y9', currentURL:
-    ~ ], }, 'liferay-calendar-session-listener': { path: 'session_listener.js', requires: ['aui-base', 'liferay-scheduler'], }, 'liferay-calendar-simple-color-picker': { path: 'simple_color_picker.js', requires: ['aui-base', 'aui-template-deprecated'], }, 'liferay-calendar-simple-menu': { path: 'simple_menu.js', requires: [ 'aui-base', 'aui-template-deprecated', 'event-outside', 'event-touch', 'widget-modality', 'widget-position', 'widget-position-align', 'widget-position-constrain', 'widget-stack', 'widget-stdmod', ], }, 'liferay-calendar-util': { path: 'calendar_util.js', requires: [ 'aui-datatype', 'aui-io', 'aui-scheduler', 'aui-toolbar', 'autocomplete', 'autocomplete-highlighters', ], }, 'liferay-scheduler': { path: 'scheduler.js', requires: [ 'async
-    ~ ay, Inc. https://liferay.com * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06 */ (function () { AUI().applyConfig({ groups: { stagingprocessesweb: { base: MODULE_PATH + '/js/legacy/', combine: Liferay.AUI.getCombine(), filter: Liferay.AUI.getFilterConfig(), modules: { 'liferay-staging-processes-export-import': { path: 'main.js', requires: [ 'aui-datatype', 'aui-dialog-iframe-deprecated', 'aui-modal', 'aui-parse-content', 'aui-toggler', 'liferay-portlet-base', 'liferay-util-window', ], }, }, root: MODULE_PATH + '/js/legacy/', }, }, }); })(); } catch(error) {console.error(error);}try {var MODULE_MAIN='exportimport-web@5.0.120/index';var MODULE_PATH='/o/exportimport-web';/** * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06 
-    ~ 00 Liferay, Inc. https://liferay.com * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06 */ (function () { AUI().applyConfig({ groups: { exportimportweb: { base: MODULE_PATH + '/js/legacy/', combine: Liferay.AUI.getCombine(), filter: Liferay.AUI.getFilterConfig(), modules: { 'liferay-export-import-export-import': { path: 'main.js', requires: [ 'aui-datatype', 'aui-dialog-iframe-deprecated', 'aui-modal', 'aui-parse-content', 'aui-toggler', 'liferay-portlet-base', 'liferay-util-window', ], }, }, root: MODULE_PATH + '/js/legacy/', }, }, }); })(); } catch(error) {console.error(error);}try {var MODULE_MAIN='site-navigation-menu-web@6.0.83/index';var MODULE_PATH='/o/site-navigation-menu-web';/** * SPDX-FileCopyrightText: (c) 2000 Liferay, Inc. https://liferay.com * SPDX-License-Identifier: LGPL-2.1-or-later OR LicenseRef-Liferay-DXP-EULA-
-    ~ erride_web_internal_portlet_PLOPortlet","com_liferay_login_web_portlet_LoginPortlet","com_liferay_login_web_portlet_UpdatePasswordPortlet","com_liferay_login_web_portlet_FastLoginPortlet"],"excludedTargetPortlets":["com_liferay_users_admin_web_portlet_UsersAdminPortlet","com_liferay_server_admin_web_portlet_ServerAdminPortlet"],"validStatusCodes":[221,490,494,499,491,496,492,493,495,220],"debugEnabled":false,"loginRedirect":"","excludedPaths":["/c/document_library","/documents","/image","/o/cms/download-folder","/o/cms/translations"],"preloadCSS":false,"userNotification":{"message":"It looks like this is taking longer than expected.","title":"Oops","timeout":30000},"requestTimeout":0}); } </script> <script type="text/javascript"> Liferay.on( 'ddmFieldBlur', function(event) { if (window.Analytics) { Analytics.send( 'fieldBlurred', 'Form', { fieldName: event.fieldName, focusDuration: event.focusDuration, formId: event.formId, formPageTitle: eve
-    ~  ] } ] }, { "name":"es.cis.datos-de-las-preguntas", "vocabularyId":0, "vocabularies":[ { "name":"es.cis.descriptores", "vocabularyId":4700443 } ] }, { "name":"es.cis.datos-de-las-series", "vocabularyId":0, "vocabularies":[ { "name":"es.cis.tematicas", "vocabularyId":7160187 } ] } ], searchInstrucctionsArticleId: '4672231', enableViewToggle: false, registroBusquedaObjectDefinitionERC: '8d8afa73-e375-c2f1-1074-3c246e6bf0ce' }; </script> </head> <body class="other change-tracking-enabled controls-visible yui3-skin-sam guest-site signed-out public-page site" data-theme="cis"> <div class="d-flex flex-column min-vh-100"> <div class="d-flex flex-column flex-fill position-relative" id="wrapper"> <div class="container-fluid p-0 cis"> <s
-    ~ ainer .m-menuWrapper .m-menuButton i::before { color: var(--primary-light, #ffffff); } @media print { .cis .jdt-header { position: static !important; height: 121px; } } @media print and (max-width: 767px) { .cis .jdt-header { height: 81px; } } @media print { .cis .jdt-header .navbar { display: block; } .cis .jdt-header .navbar .m-first-wrapper > div { display: none !important; } } .has-control-menu .jdt-header .header-desktop { position: initial; } body.modal-open .jdt-header .header-desktop { padding-right: var(--scrollbar-width) !important; }</style><script type="module" >const configuration = {"siteNavigationMenuId":"108099","displayStyle":"ddmTemplate_108092","siteNavigationMenuIdMobile":"108099","displayStyleMobile":"ddmTemplate_111337","variant":""}; const fragmentElement = document.querySelector('#fragment-5ce076d6-2afa-a546-6eed-a0dccdf5220b'); const fragmentElementId = 'fragment-5ce076d6-2afa-a546-6eed-a0dccdf5220b'; const fragmentEn
-    ~ "> <div class="row"> <div class="col-12 d-flex justify-content-end"> <span class="virtual-href d-flex align-items-center jdt-button loading-button btn btn-link btn-sm"> <i class="icon-pdf icon-size-3 icon-button" aria-hidden="true"></i> <button type="button" class="main-href btn" onclick="openPdfWithCurrentUrl(this.closest('.virtual-href'))">Download PDF</button> </span> </div> </div> <div class="jdt-spacer-6"></div> <div class="row jdt-study-sheet-info-grid"> <div class="col-12 jdt-study-sheet-info-main-col"> <div class="jdt-study-sheet-info-main" id="infoLeftCol"> <div class="jdt-study-dat
-    ~  </p> <p class="primary-dark decorated"> <span class="d-print-none"><button type="button" class="jdt-button btn btn-link btn-md" data-toggle="modal" data-target="#subjectIndexes">View (4)</button></span> </p> <ul class="d-none d-print-block text-left"> <li>Catástrofes</li> 
-    ~  </p> </div> </div> </div> </div> </div> </div> <div class="jdt-modal normal large"> <dialog class="modal fade" id="keywordsModal" tabindex="-1" aria-labelledby="keywordsModalLabel" aria-hidden="true"> <div class="vertical-alignment-helper"> <div class="modal-dialog vertical-align-center"> <div class="modal-content"> <div class="modal-header"> 
+== https://www.cis.es/documents/20117/14250083/FT3577.pdf/d84ade8f-19a0-ffff-4ed2-c798ac6a31f0?version=1.0&t=1790163548079
+  HTTP 200; application/pdf; 31,934 bytes
+  2 pages, 59 lines
+    p1| BARÓMETRO DE SEPTIEMBRE 2026
+    p1| FICHA TÉCNICA
+    p1| Ámbito:
+    p1| Nacional.
+    p1| Universo:
+    p1| Población española de ambos sexos de 18 años y más.
+    p1| Tamaño de la muestra:
+    p1| Diseñada: 4.000 entrevistas.
+    p1| Realizada: 4.042 entrevistas.
+    p1| Afijación:
+    p1| No proporcional.
+    p1| Partiendo de una distribución proporcional por c omunidades autónomas, se ajusta de forma que todas ellas
+    p1| alcancen un mínimo de 100 entrevistas, excepto las ciudades autónomas de Ceuta y Melilla que se fija un total de
+    p1| 20 entrevistas en cada una de ellas.
+    p1| Ponderación:
+    p1| Para tratar la muestra en su conjunto es necesario aplicar coeficientes de ponderación (PESO)1. Los valores medios
+    p1| de estos coeficientes se adjuntan al final de esta ficha técnica.
+    p1| Para la estimación a nivel de cada autonomía, en el fichero de microdatos se incluye la ponderación para cada una
+    p1| de ellas (variable PESOCCAA).
+    p1| Puntos de muestreo:
+    p1| 1.211 municipios y 50 provincias.
+    p1| Procedimiento de muestreo:
+    p1| Se ha procedido a la selección aleatoria de teléfonos fijos y móviles con un porcentaje del 12,2% y del 87,8%,
+    p1| respectivamente. La selección de las personas se ha llevado a cabo mediante la aplicación de cuotas de sexo y
+    p1| edad.
+    p1| Los estratos se han formado por el cruce de las 17 comunidades autónomas y las dos ciudades autónomas con el
+    p1| tamaño de hábitat, dividido en 7 categorías: menor o igual a 2.000 habitantes; de 2.001 a 10.000; de 10.001 a
+    p1| 50.000; de 50.001 a 100.000; de 100.001 a 400.000; de 400.001 a 1.000.000; y más de 1.000.000 de habitantes.
+    p1| Los cuestionarios se han aplicado mediante entrevista telefónica asistida por ordenador (CATI).
+    p1| Error muestral:
+    p1| Para un nivel de confianza del 95,5% (dos sigmas) y P = Q, el error de muestreo es de ±1,6% para el conjunto de
+    p1| la muestra, en el supuesto de muestreo aleatorio simple.
+    p1| Fecha de realización:
+    p1| Del 1 al 4 de septiembre de 2026.
+    p1| 1 Para más información sobre la ponderación pueden consultar en: -https://www.cis.es/es/estudios/metodologia/muestra-y-ponderacion
+    p2| Muestra diseñada, realizada, coeficientes de ponderación y error (%)
+    p2| Muestra
+    p2| Código Comunidad autónoma Diseñada Realizada Ponderación Error (%)
+    p2| 01 Andalucía 683 671 1,0933 3,9
+    p2| 02 Aragón 105 105 1,0376 9,8
+    p2| 11 Extremadura 100 102 0,9911 9,9
+    p2| 12 Galicia 235 224 1,0177 6,7
+    p2| 13 Madrid (Comunidad de) 525 550 0,9348 4,3
+    p2| 14 Murcia (Región de) 114 113 1,1323 9,4
+    p2| 15 Navarra (Comunidad Foral de) 100 97 0,6058 10,2
+    p2| 16 País Vasco 182 172 1,0440 7,6
+    p2| 17 La Rioja 100 99 0,2753 10,1
+    p2| 18 Ceuta (Ciudad autónoma de) 20 21 0,3292 21,8
+    p2| 19 Melilla (Ciudad autónoma de) 20 20 0,2394 22,4
+    p2| Total 4.000 4.042 1,6
+== https://www.cis.es/documents/20117/14250083/cues3577.pdf/f361af91-73a4-aba6-0639-470218b452f5?version=1.0&t=1790163537047
+  HTTP 200; application/pdf; 149,523 bytes
+  12 pages, 1215 lines
+    p1| www.cis.es ¿Sería tan amable de contestar a unas preguntas?
+    p1| La encuesta durará unos 15 minutos. Muchas gracias.”
+    p1| PC1. Pregunta contacto 1. ¿Me puede decir a qué provincia y
+    p1| municipio estoy llamando...?
+    p1| [[TIPO_TEL]
+    p1| [CCAA]
+    p1| __________
+    p1| [PROVINCIA]
+    p1| __________
+    p1| [MUNICIPIO]
+    p3| Zimbabue ................................................................................ 252
+    p3| P.1 ¿Está Ud. informado/a sobre la situación que tuvo lugar este
+    p3| verano en Ceuta, con motivo del cruce de la frontera por varios
+    p3| miles de personas? (Entrevistador/a: LEER LAS OPCIONES).
+    p3| [P1] (CATEGORÍA NOMINAL)
+    p3| P.2 ¿Cree Ud. que España debería reforzar sus fronteras para evitar
+    p3| entradas masivas de personas procedentes de otros países en
+    p3| ciudades como Ceuta y Melilla? (Entrevistador/a: LEER LAS
+    p3| OPCIONES).
+    p3| [P2] (CATEGORÍA NOMINAL)
+    p3| (NO LEER) N.S., no tiene información suficiente ........................ 8
+    p3| N.C. ............................................................................................ 9
+    p3| P.3 En el caso de ciudades como Ceuta y Melilla, ¿qué importancia
+    p3| cree Ud. que tiene el entendimiento entre España y Marruecos
+    p3| para garantizar la seguridad de las fronteras? (Entrevistador/a:
+    p3| P.4 ¿Cree Ud. que, en estos momentos, la Unión Europea debería
+    p3| colaborar más con España en la gestión de la situación de
+    p3| Ceuta? (Entrevistador/a: LEER LAS OPCIONES).
+    p3| [P4] (CATEGORÍA NOMINAL)
+    p3| Si, debería colaborar más ................................ ........................... 1
+    p3| N.C. ............................................................................................ 9
+    p3| P.5 ¿Cuál es su opinión acerca de la situación de las ciudades
+    p3| autónomas de Ceuta y Melilla? (Entrevistador/a: LEER LAS
+    p3| OPCIONES. UNA RESPUESTA.).
+    p3| [P5] (CATEGORÍA NOMINAL)
+    p4| P.11 Tal y como están las cosas, y ante este tipo de incendios, las
+    p4| competencias principales para prevenir su aparición y luchar
+    p4| contra ellos, ¿cree que deben continuar en las comunidades
+    p4| autónomas, o pasar a ser competencia del Gobierno central?
+    p4| [P11] (CATEGORÍA NOMINAL)
+    p4| Deben continuar en las comunidades autónomas ...................... 1
+    p4| Deben pasar a ser competencia del Gobierno central ................ 2
+    p4| (NO LEER) De ambos en colaboración ...................................... 3
+    p5| El cambio climático ................................................................... 80
+    p5| Problemas de escasez de agua, sequía ................................ ... 82
+    p5| La crisis con Marruecos. Frontera de Ceuta y Melilla ................ 71
+    p5| Inseguridad ciudadana ............................................................... 3
+    p5| Desigualdades: de género, clase, pobreza ............................... 58
+    p9| Clave: ECIS3577
+    p9| 9 de 12
+    p9| P.30 Y en unas próximas elecciones a su comunidad autónoma,
+    p9| ¿a qué partido votaría Ud. ? (RESPUESTA ESPONTÁNEA,
+    p9| ¡¡NO LEER LAS OPCIONES DE RESPUESTA!!).
+    p10| N.S./No recuerda ...................................................................... 98
+    p10| N.C. .......................................................................................... 99
+    p10| P.36 ¿Cómo se define Ud. en materia religiosa: católico/a
+    p10| practicante, católico/a no practicante, creyente de otra
+    p10| religión, agnóstico/a, indiferente o no creyente, o ateo/a?
+    p10| [RELIGION] (CATEGORÍA NOMINAL)
+    p10| Católico/a practicante ................................ ................................. 1
+    p10| Católico/a no practicante ................................ ............................ 2
+    p10| Creyente de otra religión ................................ ............................ 3
+    p10| Agnóstico/a (no niegan la existencia de Dios pero tampoco
+    p10| la descartan) .............................................................................. 4
+    p10| P.36a si P.36=1,2 o 3.
+    p10| P.36a ¿Con qué frecuencia asiste Ud. a misa u otros oficios
+    p10| religiosos, sin contar las ocasiones relacionadas con
+    p10| ceremonias de tipo social, por ejemplo, bodas, comuniones
+    p10| o funerales? (ENTREVISTADOR/A: LEER OPCIONES DE
