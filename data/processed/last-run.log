@@ -1,285 +1,31 @@
-https://www.data.gov.qa: 142 datasets
-  sdg-16-1-3-number-of-population-reporting-exposure-to-violence-by-municipality-and-gender | SDG 16.1.3 Number of Population Reporting Exposure to Violence by Municipality and Gender | records=96 | modified=2026-07-21
-      fields: year, municipality, lbldy, gender, ljns, number
-  average-monthly-of-the-air-pollutants-indicator-aspire-zone | Average Monthly of the Air Pollutants Indicator - Aspire Zone | records=50 | modified=2025-05-28
-      fields: year, item, lbyn, january, february, march, april, may, june, july, august, september, october, november, december
-  municipalities-in-qatar-2025-geojoin | municipalities-in-qatar-2025-geojoin | records=23 | modified=2025-06-02
-      fields: name, municipality_name, geo_point, geo_shape
-  municipalities-in-qatar-2025 | Municipalities in Qatar 2025 | records=8 | modified=2025-06-02
-      fields: name, geo_point, geo_shape
-  sdg-11-7-2-number-of-victims-of-physical-or-sexual-harassment-by-municipality-and-gender | SDG 11.7.2 Number of Victims of Physical or Sexual Harassment by Municipality and Gender | records=96 | modified=2026-07-20
-      fields: year, municipality, lbldy, gender, ljns, number
-  percentages-of-air-quality-indicators-aspire-zone | Percentages (%) of Air Quality Indicators - Aspire Zone | records=10 | modified=2025-05-18
-      fields: year, pollutant, lmlwth, clean, normal, less_than_normal, limited_polluted, polluted, extremely_polluted, total
-  gyms-by-entity-and-municipality | Gyms by Entity and Municipality | records=32 | modified=2026-09-10
-      fields: year, type_of_gym, nw_lsl, municipality, lbldy, number
-  health-statistics-number-of-ambulance-reports-by-municipality | Number of Ambulance Reports by Municipality | records=6 | modified=2025-06-03
-      fields: year, al_daayen, al_khor_lkhwr, al_rayyan, al_shamal, al_wakrah, doha, umm_salal, unknown
-  quantities-of-pesticides-used-by-type | Quantities of pesticides used by type | records=30 | modified=2026-07-24
-      fields: year, type, lnw, unit, lwhd, quantity
-  number-of-boats-fishermen-and-quantity-of-local-catch-2001-2014 | Number of Boats, Fishermen and Quantity of Local Catch | records=14 | modified=2020-05-11
-      fields: year, mtwst_kmy_lsmk_lmsyd_lkl_syd_tn_mtry_lkl_syd_local_catch_per_fishermen_mt_per_fishermen, mtwst_kmy_lsmk_lmsyd_lkl_sfyn_tn_mtry_lkl_sfyn_local_catch_per_boats_mt_per_boats, dd_lsydyn_no_of_fishermen, dd_lsfn_no_of_boats, kmy_lmsyd_tn_mtry_local_catch_metric_tons
-  live-births-by-gender-and-municipality | Live Births by Gender and Municipality | records=20 | modified=2026-09-30
-      fields: year, gender, ljns, municipality, lbldy, number_of_live_births
-  water-supply-coverage-by-municipality | Water Supply Coverage by Municipality | records=48 | modified=2026-09-29
-      fields: year, municipality, lbldy, water_supply_coverage
-  unemployed-persons-15-years-and-above-by-gender-and-municipality | Unemployed Persons (15 Years and Above) by Gender and Municipality | records=96 | modified=2026-09-06
-      fields: year, gender, ljns, municipality, lbldy, number
-  sdg-12-5-1-quantity-of-recycled-municipal-waste-by-waste-type-in-tonnes | SDG 12.5.1 Quantity of Recycled Municipal Waste by Waste Type in Tonnes | records=30 | modified=2026-09-21
-      fields: year, waste_type, nw_lnfyt, quantity_in_tonnes
-  cooling-energy-consumption-and-savings-by-municipality-and-economic-activity-mwh | Cooling Energy Consumption and Savings by Municipality and Economic Activity (MWh) | records=112 | modified=2025-06-02
-      fields: year, item, municipality, other, industrial, real_estate_development, sport, cultural, health, transport, education, hotels, commercial, district_cooling_service_supply, lbldy, lbyn, geo_point, geo_shape
-  number-of-farms-and-total-area-by-type-of-the-farm-and-municipality | Number of Farms and Total Area by Type of the Farm and Municipality | records=248 | modified=2026-09-20
-      fields: year, municipality, lbldy, farm_type, nw_lmzr, number_of_farms, total_area
-  water-used-in-government-activity-by-water-source-million-m3-year | Water used in government activity by water source (million m3, year) | records=16 | modified=2025-05-19
-      fields: indicator_name, year, value_million_cubic_metre
-  proportion-of-important-sites-for-terrestrial-and-freshwater-biodiversity-covered-by-protected-areas0 | Proportion of Important Sites for Terrestrial and Freshwater Biodiversity Covered by Protected Areas, by Ecosystem Type | records=16 | modified=2026-08-27
-      fields: year, sub_indicator, lmw_shr_lfr_y, percentage
-  characteristics-of-operational-district-cooling-plants-by-municipality-and-economic-activity | Characteristics of Operational District Cooling Plants by Municipality and Economic Activity | records=144 | modified=2025-06-02
-      fields: year, item, municipality, other, industrial, real_estate_development, sport, cultural, health, transport, education, hotels, commercial, district_cooling_service_supply, lbldy, lbyn, geo_point, geo_shape
-  electricity-total-consumption-by-zone-number | Electricity Total Consumption by Zone Number | records=546 | modified=2026-09-29
-      fields: year, zone_number, value
-  completed-residential-buildings-by-municipality-and-their-connection-to-the-public-utilities | Completed Residential Buildings by Municipality and their Connection to the Public Utilities Networks | records=138 | modified=2026-07-24
-      fields: census_year, municipality, lbldy, service, lkhdm, status, lhl, value
-  accident | Accident | records=1000500 | modified=2025-07-29
-      fields: accident_year, accident_time, weather, road_status, road_type, accident_classification, accident_nature, accident_reason, city, zone, street, accident_severity, death_count, birth_year_of_accident_perpetr, nationality_group_of_accident, total
-  area-of-greenspaces-area-of-road-sides-and-median-strips-in-qatar-by-municipality | Area of Greenspaces, Area of Road Sides and Median Strips in Qatar, by Municipality | records=32 | modified=2025-05-28
-      fields: year, item, lbyn, doha, al_rayyan, al_shamal, al_wakra, umm_salal, al_khor, al_daayen, al_sheehaniya, total
-  distribution-of-business-establishments-and-employees-by-municipalities-according-to-census-2015 | Distribution of Business Establishments and Employees by Municipalities According to Census 2015 | records=8 | modified=2025-06-02
-      fields: year, municipality, lbldy, establishments_number_dd_lmnshat, establishments_lmnshat, employees_number_dd_lmshtglwn, employees_lmshtglwn, geo_point, geo_shape
-  number-of-public-parks-by-municipality | Number of Public Parks by Municipality | records=11 | modified=2025-05-28
-      fields: year, doha, al_rayyan, al_shamal, al_wakra, umm_salal, al_khor, al_daayen, al_sheehaniya, total
-  number-of-farms-poultry-and-beehives-by-purpose-of-breeding-and-municipality | Number of Farms, Poultry and Beehives by Purpose of Breeding and Municipality | records=368 | modified=2026-09-20
-      fields: year, municipality, lbldy, category, lfy, indicator, lmw_shr, value
-  type-classification-of-animals-at-the-zoo-in-khor-park-2024 | Type Classification of Animals at the Zoo in Khor Park | records=5 | modified=2026-08-31
-      fields: year, animal_type, animal_type_ar, species_count, animal_count
-  population-area-and-population-density-per-square-kilometers-by-zone | Population, Area and Population Density Per Square Kilometers By Zone | records=552 | modified=2026-04-27
-      fields: year, number_of_zone, lmntq, zone, population, area_in_km, population_density_km2
-  employed-persons-15-years-and-above-by-gender-and-municipality | Employed Persons (15 Years and Above) by Gender and Municipality | records=96 | modified=2026-09-10
-      fields: year, gender, ljns, municipality, lbldy, number
-  registered-live-births-by-nationality-delivery-attendants-municipality-and-place-of-birth | Registered Live Births By Nationality, Delivery Attendants, Municipality and Place of Birth | records=833 | modified=2026-09-29
-      fields: year, nationality, ljnsy, municipality, lbldy, place_of_delivery, mkn_lwld, delivery_attendent, sf_lqy_m_bltwlyd, total, geo_point, geo_shape
-  number-of-farms-by-connection-to-the-public-electricity-network-and-municipality | Number of Farms by Connection to the Public Electricity Network and Municipality | records=150 | modified=2026-09-20
-      fields: year, municipality, lbldy, connection_status, hl_ltwsyl, number_of_farms
-  number-of-public-schools-and-their-students-by-municipality-level-of-education-and-type-of-school | Number of Public Schools and their Students by Municipality, Level of Education, and Type of School | records=660 | modified=2026-09-30
-      fields: year, municipality, lbldy, level_of_education, lmrhl_lt_lymy, type_of_school, nw_lmdrs, number_of_students, number_of_schools
-  building-completion-certificates-issued-by-type-of-certificate-and-month-al-wakrah-municipality | Building Completion Certificates Issued by Type of Certificate and Month - Al Wakrah Municipality | records=120 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_certificate, nw_lshhd, number
-  fish-production-by-municipality-landing-port-and-species | Fish Production by Municipality, Landing Port and Species | records=1951 | modified=2026-09-29
-      fields: year, municipality, lbldy, port, lmyn, local_name, lsm_lmhly, scientific_name, english_name, value
-  registered-deaths-by-nationality-gender-and-municipality | Registered Deaths by Nationality, Gender, and Municipality | records=304 | modified=2026-09-30
-      fields: year, municipality, lbldy, nationality, ljnsy, gender, ljns, value
-  public-debt | Public Debt | records=15 | modified=2026-06-07
-      fields: year, item, lbnd, amount
-  population-and-labour-force-by-municipality | Population and Labour Force by Municipality | records=240 | modified=2026-09-30
-      fields: year, municipality, lbldy, indicator, lmw_shr, count
-  under-five-child-deaths-by-gender-and-municipality | Under-Five Child Deaths by Gender and Municipality | records=41 | modified=2026-09-30
-      fields: year, gender, ljns, municipality, lbldy, number_of_deaths
-  moci-canceled-certificates-by-municipality-and-business-activity | MOCI Canceled Certificates by Municipality and Business Activity | records=40472 | modified=2025-08-04
-      fields: sn_llg, shhr_llg, lbldy, rmz_lnsht_ltjry, sm_lnsht_ltjry, dd_lrkhs_lmlg
-  beneficiaries-of-security-by-location-of-branch | Beneficiaries of Security by Location of Branch | records=32 | modified=2026-05-02
-      fields: year, gender, gender_ar, municipality, municipality_ar, value, geo_point, geo_shape
-  number-of-living-rooms-and-bedrooms-in-licensed-buildings | Number of Living Rooms and Bedrooms in Licensed Buildings | records=100 | modified=2026-09-30
-      fields: year, building_sub_type_code, building_sub_type, lnw_lfr_y_llmbn, room_type, nw_lgrf, value
-  building-permits-issued-by-type-of-permit-and-month-al-shamal-municipality | Building Permits Issued by Type of Permit and Month - Al Shamal Municipality | records=288 | modified=2026-09-02
-      fields: year, month, lshhr, type_of_permit, nw_lrkhs, number
-  building-completion-certificates-issued-by-type-of-certificate-and-month-al-shamal-municipality | Building Completion Certificates Issued by Type of Certificate and Month - Al Shamal Municipality | records=120 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_certificate, nw_lshhd, number
-  females-population-by-municipality-and-age-groups-december-2020 | Females Population by Municipality and Age Groups – December 2020 | records=1440 | modified=2025-06-02
-      fields: years, fy_t_l_mr_blsnwt, age_groups_in_years, lbldy, municipality, value, geo_point, geo_shape
-  registered-live-births-by-month-gender-and-municipality-non-qataris | Registered Live Births by Month, Gender, and Municipality – Non-Qataris | records=1944 | modified=2025-05-07
-      fields: year, lshhr, month, lbldy, municipality, lnw, gender, value
-  number-of-farms-and-total-area-by-class-of-total-area-and-municipality | Number of Farms and Total Area by Class of Total Area and Municipality | records=753 | modified=2026-09-20
-      fields: year, municipality, lbldy, class_of_total_area, number_of_farms, total_area
-  number-of-beds-in-government-hospitals-by-municipality | Number of Beds in Government Hospitals by Municipality | records=30 | modified=2026-09-26
-      fields: year, municipality, lbldy, number_of_beds
-  registered-infant-deaths-by-nationality-and-sex | REGISTERED INFANT DEATHS BY NATIONALITY AND SEX | records=88 | modified=2026-04-28
-      fields: year, nationality, ljnsy, gender, ljns, total
-  percentage-distribution-of-population-by-sex-and-municipality-census-2015 | Percentage Distribution of Population by Sex and Municipality, Census 2015 | records=16 | modified=2026-09-17
-      fields: year, municipality, lbldy, gender, lnw, percentage_of_distribution, number_of_population, geo_point, geo_shape
-  number-of-farms-and-total-area-by-status-of-the-farm-and-municipality | Number of Farms and Total Area by Status of the Farm and Municipality | records=204 | modified=2026-09-20
-      fields: year, municipality, lbldy, farm_status, hl_lmzr, number_of_farms, total_area
-  registered-deaths-by-gender-and-municipality | Registered Deaths by Gender and Municipality | records=57 | modified=2026-09-30
-      fields: year, gender, ljns, municipality, lbldy, value
-  annual-certificates-of-origin-by-type-and-importing-country-open-access-data | Annual Certificates of Origin by Type and Importing Country (Open Access Data) | records=974 | modified=2025-05-29
-      fields: year, certificate_type, nw_lshhd, importing_country, ldwl_lmstwrd, number_of_issued_certificates
-  distribution-of-the-number-of-households-and-their-members-by-municipality-census-2015 | Distribution of the Number of Households and Their Members by Municipality, Census 2015 | records=8 | modified=2025-06-02
-      fields: year, municipality, municipality_ar, households_number, households_percentage_distribution, households_members_number, households_members_percentage_distribution, average_household_size, geo_point, geo_shape
-  building-permits-issued-by-type-of-permit-and-month-al-wakrah-municipality | Building Permits Issued by Type of Permit and Month - Al Wakrah Municipality | records=288 | modified=2026-09-02
-      fields: year, month, lshhr, type_of_permit, nw_lrkhs, number
-  building-completion-certificates-issued-by-type-of-certificate-and-month-al-khor-and-al-thakhira | Building Completion Certificates Issued by Type of Certificate and Month - Al Khor and Al Thakhira Municipality | records=120 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_certificate, nw_lshhd, number
-  number-of-passed-students-by-level-of-education-grade-type-of-education-gender-and-municipality | Number of Passed Students by Level of Education, Grade, Type of Education, Gender and Municipality, 2025-2026 | records=396 | modified=2026-09-28
-      fields: year, municipality, lbldy, level_of_education, lmrhl_lt_lymy, grade, lsf, type_of_education, nw_lt_lym, gender, ljns, number_of_passed_students, number_of_registered_students
-  number-of-farms-and-wells-by-type-of-the-farm-and-municipality | Number of Farms and Wells by Type of the Farm and Municipality | records=417 | modified=2026-09-20
-      fields: year, municipality, lbldy, farm_status, hl_lmzr, indicator, lmw_shr, value
-  housing-units-by-type-of-units-and-municipality-in-census-2010-2020 | Housing Units by Type of Units and Municipality in Census ( 2010 , 2020 ) | records=25 | modified=2025-06-01
-      fields: type_of_unit, census_year, value_type, al_sheehaniya, al_daayen, al_shamal, al_khor_al_thakira, umm_slal, al_wakra, al_rayyan, doha, total
-  water-total-consumption-by-zone-number | Water Total Consumption by Zone Number | records=546 | modified=2026-09-29
-      fields: year, zone_number, value
-  registered-infant-deaths-by-nationality-and-gender | REGISTERED INFANT DEATHS BY NATIONALITY AND GENDER | records=648 | modified=2026-05-20
-      fields: year, nationality, ljnsy, month, lshhr, gender, ljns, total
-  total-certificates-issued-by-year-and-certificate-type | Total Certificates Issued by Year and Certificate Type | records=35 | modified=2025-05-29
-      fields: year, certificate_type, nw_lshhd, total_number_of_certificates_issued
-  registered-foetal-deaths-by-nationality-gender-and-municipality | Registered Foetal Deaths by Nationality, Gender and Municipality | records=540 | modified=2026-07-10
-      fields: year, municipality, lbldy, nationality, ljnsy, gender, lnw, number
-  total-building-completion-certificates-issued-by-municipality-and-type-of-building-type-of | Total Building Completion Certificates Issued by Municipality and Type of Building  Type of Certificate | records=240 | modified=2026-06-05
-      fields: year, building_type, nw_lmbn, certificate_type, nw_lshhd, municipality, lbldy, count
-  male-population-and-labour-force-by-municipality | Male Population and Labour Force by Municipality | records=240 | modified=2026-09-30
-      fields: year, municipality, lbldy, indicator, lmw_shr, count
-  quarterly-registered-live-births-by-nationality-gender-and-municipality | Quarterly REGISTERED LIVE BIRTHS BY NATIONALITY, GENDER AND MUNICIPALITY | records=18 | modified=2026-05-20
-      fields: year, quarter, municipality, lbldy, gender, ljns, qataris, non_qataris, total
-  sdg-5-2-1-number-of-women-and-girls-aged-15-and-older-subjected-to-violence-by-a-current-or-former3 | SDG 5.2.1 Number of Women and Girls Aged 15 and Older Subjected to Violence by a Current or Former Intimate Partner by Municipality | records=64 | modified=2026-09-24
-      fields: year, municipality, lbldy, number
-  timber-harvests-by-municipality | Timber Harvests by Municipality | records=48 | modified=2026-09-29
-      fields: year, municipality, lbldy, value
-  water-supply-coverage | Water Supply Coverage | records=18 | modified=2026-09-29
-      fields: year, coverage_type, nw_ltgty, supply_coverage
-  number-of-schools-by-municipality-and-year | Number of Schools by Municipality and Year | records=144 | modified=2025-08-21
-      fields: year, qt_lmdrs, sector_of_school, lbldy, municipality, no_of_schools, geo_point, geo_shape
-  distribution-of-occupiedclosedvacant-units-in-2015-census | Distribution of Occupied/Closed/Vacant Units in 2015 Census | records=8 | modified=2025-06-02
-      fields: year, municipality, lbldy, lwhdt_lskny_lmshgwl_occupied_housing_units, lwhdt_lskny_lmglq_closed_housing_units, lwhdt_lskny_lkhly_vacant_housing_units, ltwzy_lnsby, geo_point, geo_shape
-  registered-live-births-by-month-municipality-and-gender-qataris | Registered Live Births By Month, Municipality and Gender - Qataris | records=1944 | modified=2025-05-07
-      fields: year, lshhr, month, lbldy, municipality, lnw, gender, value
-  design-cooling-capacity-by-status-municipality-and-sector-tr | Design Cooling Capacity by Status, Municipality, and Sector (TR) | records=69 | modified=2025-06-02
-      fields: year, project_status, municipality, other, industrial, real_estate_development, sport, culture, health, transport, education, hotels, commercial, district_cooling_service_supply, lbldy, hl_lmshry, geo_point, geo_shape
-  sdg-14-2-1-use-of-ecosystem-based-approaches-to-manage-marine-areas | SDG 14.2.1 Use of Ecosystem Based Approaches to Manage Marine Areas | records=7 | modified=2026-09-12
-      fields: year, value
-  youth-and-sports-institutions-by-municipality | Youth and Sports Institutions by Municipality | records=5 | modified=2025-05-28
-      fields: year, doha, al_rayan, al_wakra, umm_salal, al_khor_al_thakira, al_shamal, al_daayen, al_shahaniya
-  building-completion-certificates-issued-by-type-of-certificate-and-month-doha-municipality | Building Completion Certificates Issued by Type of Certificate and Month - Doha Municipality | records=120 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_certificate, nw_lshhd, number
-  hotels-and-hotel-apartments-by-municipality | Hotels and hotel apartments by municipality | records=48 | modified=2026-08-02
-      fields: year, municipality, lbldy, facility_type, nw_lmnsh, number
-  tanker-water-supply-by-station-2023 | Tanker Water Supply by Station | records=26 | modified=2026-06-26
-      fields: year, station, lmht, rented_by_kahramaa, municipality, education, defense, police, other, rural_tankers, private_transport
-  registered-live-births-by-nationality-type-of-birth-and-municipality | Registered Live Births by Nationality, Type of Birth and Municipality | records=486 | modified=2025-05-07
-      fields: year, lbldy, municipality, ljnsy, nationality, nw_lwld, type_of_birth, value
-  number-of-districts-cooling-projects-by-project-status-municipality-and-economic-activity | Number of Districts Cooling Projects by Project Status, Municipality and Economic Activity | records=72 | modified=2025-06-02
-      fields: year, project_status, municipality, other, industrial, real_estate_development, sport, culture, health, transport, education, hotels, commercial, district_cooling_service_supply, lbldy, hl_lmshry, geo_point, geo_shape
-  number-of-playground-in-schools-by-type-of-playground-municipality-and-year | Number of Playground in Schools by Type of Playground, Municipality, and Year | records=1008 | modified=2026-04-28
-      fields: year, qt_lmdrs, sector_of_school, lbldy, municipality, lnsht_lrydy, type_of_playground, no_of_playgrounds, geo_point, geo_shape
-  moci-issued-certificates-by-municipality-and-business-activity | MOCI Issued Certificates by Municipality and Business Activity | records=8259 | modified=2025-08-04
-      fields: sn_lsdr, shhr_lsdr, lbldy, rmz_lnsht_ltjry, sm_lnsht_ltjry, dd_lrkhs_lsdr
-  marriages-by-nationality-and-place-of-husband | Marriages by Nationality and Place of Husband | records=892 | modified=2025-06-04
-      fields: year, lbldy_mkn_qm_lzwj, municipality_place_of_husband, ljnsy_lzwj, nationality_husband, total, geo_point, geo_shape
-  percentage-distribution-of-population-by-municipalities-in-qatar-between-2010-and-2015-censuses | Percentage Distribution of Population by Municipalities in Qatar Between 2010 and 2015 Censuses | records=16 | modified=2026-09-22
-      fields: year, municipality, lbldy, number_of_population, percentage_distribution, geo_point, geo_shape
-  building-completion-certificates-issued-by-type-of-certificate-and-month-al-rayyan-municipality | Building Completion Certificates Issued by Type of Certificate and Month - Al Rayyan Municipality | records=120 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_certificate, nw_lshhd, number
-  special-needs-statistics-number-of-people-with-disabilities-by-nationality-gender-and-municipality | Number of People with difficulties by Nationality, Gender, and Municipality | records=60 | modified=2025-06-04
-      fields: year_lsn, nationality, gender, municipality, number_of_people_with_difficulties, lbldy, lnw, ljnsy, geo_point, geo_shape
-  imams-khateeb-and-muezzins-by-municipality | Imams, khateeb, And Muezzins By Municipality | records=176 | modified=2026-07-29
-      fields: year, municipality, lbldy, indicator, lmw_shr, number
-  marriages-by-nationality-and-place-of-wife | Marriages by Nationality and Place of Wife | records=904 | modified=2025-06-04
-      fields: year, municipality_place_of_wife, lbldy_mkn_qm_lzwj, nationality_wife, ljnsy_lzwj, value, geo_point, geo_shape
-  distribution-of-the-number-of-households-and-their-members-by-municipality | Distribution of the number of households and their members by municipality | records=228 | modified=2025-05-07
-      fields: year, lbldy, municipality, nw_bynt_l_sr, type_of_household_data, value
-  education-statistics-number-of-public-schools-and-their-students-by-municipality-level-of-education | Number of Public Schools and their Students by Municipality, Level of Education, and Type of School | records=800 | modified=2025-06-02
-      fields: year, municipality, municipality_ar, level_of_education, level_of_education_ar, type_of_school, type_of_school_ar, number_of_schools, number_of_students, geo_point, geo_shape
-  savings-in-operational-district-cooling-plants-by-municipality-economic-activity-and-saving-type | Savings in Operational District Cooling Plants by Municipality, Economic Activity and Saving Type | records=1330 | modified=2026-04-27
-      fields: year, nw_ltwfyr, type_of_saving, lbldy, municipality, lnsht_lqtsdy, economic_activity, unit, value, geo_point, geo_shape
-  daily-percentages-of-air-quality-indicators-aspire-zone | Daily Percentages of Air Quality Indicators – Aspire Zone | records=50 | modified=2025-05-14
-      fields: year, pollutant, lmlwth, clean, normal, less_than_normal, limited_polluted, polluted, extremely_polluted, total
-  total-building-permits-issued-by-municipality-and-type-of-building-type-of-permit | Total Building Permits Issued by Municipality and Type of Building  Type of Permit | records=264 | modified=2026-06-05
-      fields: year, building_type, nw_lmbn, permit_type, nw_lrkhs, municipality, lbldy, count
-  number-of-farms-and-livestock-by-type-of-animal-and-municipality-mom | Number of Farms and Livestock by Type of Animal and Municipality | records=752 | modified=2026-09-29
-      fields: year, municipality, lbldy, type_of_animal, nw_lhywn, indicator, lmw_shr, value
-  buildings-by-buildings-status-and-municipality-in-census-2010-20200 | Buildings by Buildings Status and Municipality in Census ( 2010 , 2020 ) | records=24 | modified=2026-08-02
-      fields: municipality, municipality_ar, building_status, building_status_ar, percentage_of_change_from_2010_to_2020, percentage_of_population_in_2020, population_in_2020, percentage_of_population_in_2010, population_in_2010
-  type-of-animals-at-the-zoo-in-khor-park-garden-and-number-of-visitors | Type of Animals at the Zoo in Khor Park Garden and Number of Visitors | records=5 | modified=2025-05-27
-      fields: year, types_of_animals_and_birds, no_of_animals_and_birds, visitors
-  males-population-by-municipality-and-age-groups-december-2020 | Males Population by Municipality and Age Groups – December 2020 | records=1440 | modified=2025-05-07
-      fields: years, fy_t_l_mr_blsnwt, age_groups_in_years, lbldy, municipality, value
-  neonatal-mortality-rate | Neonatal Mortality Rate | records=44 | modified=2026-04-28
-      fields: year, nationality, ljnsy, early_neonatal_mortality_rate_0_7_days, late_neonatal_mortality_rate_7_28_days, neonatal_mortality_rate_0_28_days, post_neonatal_mortality_rate_28_264_days, total
-  sdg-6-4-1-change-in-water-use-efficiency-over-time-by-sector | SDG  6.4.1 Change in Water-Use Efficiency Over Time by Sector | records=108 | modified=2026-07-16
-      fields: year, variable, lmtgyr, sector, lqt, percentage
-  infant-deaths-recorded-by-nationality-gender-and-municipality | Infant Deaths Recorded By Nationality, Gender, and Municipality | records=456 | modified=2026-08-05
-      fields: year, quarter_en, municipality, bldy, nationality, ljnsy, gender, ljns, total
-  building-completion-certificates-issued-by-type-of-certificate-and-month-umm-slal-municipality0 | Building Completion Certificates Issued by Type of Certificate and Month - Umm Slal Municipality | records=120 | modified=2026-09-08
-      fields: year, month, lshhr, type_of_certificate, nw_lshhd, number
-  number-of-farms-and-workers-in-active-farms-by-category-of-workers-and-municipality | Number of Farms and Workers in Active Farms by Category of Workers and Municipality | records=312 | modified=2026-09-20
-      fields: year, municipality, lbldy, category_of_workers, fy_dd_l_ml, number_of_farms, number_of_workers
-  area-of-greenspaces-and-road-medians-by-municipality-in-qatar | Area of Greenspaces and Road Medians by Municipality in Qatar | records=72 | modified=2025-05-28
-      fields: year, item, lbyn, doha, al_rayyan, al_shamal, al_wakra, umm_salal, al_khor, al_daayen, total
-  moci-active-certificates-by-municipality-and-business-activity | MOCI Active Certificates by Municipality and Business Activity | records=13189 | modified=2025-08-04
-      fields: lbldy, rmz_lnsht_ltjry, lnsht_ltjry, dd_lrkhs_lnsht
-  building-permits-issued-by-type-of-permit-and-month-al-shahhaniya-municipality | Building Permits Issued by Type of Permit and Month - Al Shahhaniya Municipality | records=252 | modified=2026-09-02
-      fields: year, month, lshhr, type_of_permit, nw_lrkhs, number
-  total-water-storage-2023 | Total Water Storage | records=2 | modified=2026-06-20
-      fields: year, abstraction_from_ground_water_by_types_mm3, agricultural_wells, municipal_wells_domestic_wells_and_industrial_wells, other_wells
-  building-completion-certificates-issued-by-type-of-certificate-and-month-al-shahhaniya-municipality | Building Completion Certificates Issued by Type of Certificate and Month - Al Shahhaniya Municipality | records=120 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_certificate, nw_lshhd, number
-  registered-live-births-by-nationality-gender-and-municipality | Registered Live Births by Nationality, Gender and Municipality | records=540 | modified=2026-09-30
-      fields: year, lbldy, municipality, ljnsy, nationality, lnw, gender, value
-  percentage-distribution-of-household-members-by-type-of-housing-unit-and-municipality-census-2015 | Percentage Distribution (%) of Household Members by Type of Housing Unit and Municipality, Census 2015 | records=8 | modified=2025-06-02
-      fields: year, municipality, lbldy, number_of_household_members_dd_frd_l_sr, apartment_shq, arabic_popular_elderly_house_byt_rby_byt_sh_by_byt_jz, palace_villa_qsr_fyl, part_of_unit_bldg_jz_mn_whd_mbn, others_khr, geo_point, geo_shape
-  building-permits-issued-by-type-of-permit-and-month-umm-slal-municipality | Building Permits Issued by Type of Permit and Month - Umm Slal Municipality | records=288 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_permit, nw_lrkhs, number
-  registered-infant-deaths-by-nationality-gender-and-municipality | Registered Infant Deaths by Nationality, Gender, and Municipality | records=496 | modified=2026-09-29
-      fields: year, nationality, ljnsy, gender, ljns, municipality, lbldy, number
-  registered-deaths-by-nationality-sex-and-month | REGISTERED DEATHS BY NATIONALITY, SEX AND MONTH | records=625 | modified=2026-06-04
-      fields: year, nationality, ljnsy, gender, ljns, month, lshhr, total
-  teachers-in-public-schools-by-level-of-education-nationality-gender-and-municipality-2025-2026 | Number of Teachers in Public Schools by Level of Education, Nationality, Gender and Municipality | records=696 | modified=2026-09-29
-      fields: year, municipality, lbldy, level_of_education, lmrhl_lt_lymy, nationality, ljnsy, gender, ljns, number_of_teachers
-  electricity-network-coverage-by-municipality | Electricity Network Coverage by Municipality | records=48 | modified=2026-09-29
-      fields: year, municipality, lbldy, value
-  number-of-farms-and-livestock-by-type-of-animal-and-municipality | Number of Farms and Livestock by Type of Animal and Municipality | records=379 | modified=2026-09-29
-      fields: year, municipality, lbldy, animal_type, nw_lhywn, number_of_farms, number_of_animals
-  coverage-of-protected-areas-in-relation-to-marine-areas0 | Coverage of Protected Areas in Relation to Marine Areas | records=32 | modified=2026-08-30
-      fields: year, sub_indicator, lmw_shr_lfr_y, unit, lwhd, value
-  district-cooling-plants-by-municipality-sector-quantity-used-and-disposal-method-m3 | District Cooling Plants by Municipality, Sector, Quantity Used, and Disposal Method (m³) | records=80 | modified=2025-06-02
-      fields: year, cooling_plant_discharge_method, municipality, other, industrial, real_estate_development, sport, cultural, health, transport, education, hotels, commercial, district_cooling_service_supply, lbldy, slwb_ltkhls_mn_myh_mhtt_ltbryd_lmrfwd, geo_point, geo_shape
-  total-population-and-population-density-by-municipality-in-census-2010-2020 | Total Population and Population Density by Municipality in Census (2010 , 2020 ) | records=16 | modified=2026-07-26
-      fields: census_year, lbldy, municipality, municipality_area_km_2, population, population_density, population_percentage
-  building-completion-certificates-issued-by-type-of-certificate-and-month-al-daayen-municipality | Building Completion Certificates Issued by Type of Certificate and Month - Al Daayen Municipality | records=120 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_certificate, nw_lshhd, number
-  sdg-5-2-2-number-of-women-and-girls-aged-15-and-older-subjected-to-violence-by-persons-other-than-an2 | SDG 5.2.2 Number of Women and Girls Aged 15 and Older Subjected to Violence by Persons Other than an Intimate Partner by Municipality | records=64 | modified=2026-09-24
-      fields: year, municipality, lbldy, number
-  area-of-palms-trees-shrubs-and-other-greenery-in-public-parks-by-municipality-and-type-of-vegetation | Area of Palms, Trees, Shrubs and Other Greenery in Public Parks by Municipality and Type of Vegetation | records=132 | modified=2025-05-14
-      fields: year, item, lbyn, doha, al_rayyan, al_shamal, al_wakra, umm_salal, al_khor, al_daayen, al_sheehaniya, total
-  number-of-workers-and-farms-in-active-farms-by-municipality-nationality-and-occupational-category | Number of Workers and Farms in Active Farms by Municipality, Nationality and Occupational Category | records=241 | modified=2026-09-20
-      fields: year, municipality, lbldy, category, lfy, number
-  registered-deaths-by-nationality-gender-and-municipality-expanded | Registered Deaths by Nationality, Gender, and Municipality (Expanded) | records=320 | modified=2025-05-07
-      fields: year, lbldy, municipality, ljnsy, nationality, lnw, gender, value
-  building-permits-issued-by-type-of-permit-and-month-doha-municipality | Building Permits Issued by Type of Permit and Month - Doha Municipality | records=288 | modified=2026-08-31
-      fields: year, month, lshhr, type_of_permit, nw_lrkhs, number
-  completed-buildings-residential-and-residentialcommercial-by-municipality-in-2015-census | Completed Buildings (Residential and Residential/Commercial) by Municipality in 2015 Census | records=8 | modified=2026-09-06
-      fields: year, municipality, lbldy, number_of_residential_buildings, percentage_of_residential_buildings, number_of_residential_commercial_buildings, percentage_of_residential_commercial_buildings, geo_point, geo_shape
-  building-permits-issued-by-type-of-permit-and-month-al-daayen-municipality | Building Permits Issued by Type of Permit and Month - Al Daayen Municipality | records=288 | modified=2026-09-02
-      fields: year, month, lshhr, type_of_permit, nw_lrkhs, number
-  building-permits-issued-by-type-of-permit-and-month-al-rayyan-municipality | Building Permits Issued by Type of Permit and Month - Al Rayyan Municipality | records=288 | modified=2026-09-02
-      fields: year, month, lshhr, type_of_permit, nw_lrkhs, number
-  sdg-14-2-1-proportion-of-national-exclusive-economic-zone-managed-using-ecosystem-based-approaches | SDG 14.2.1 Proportion of the National Exclusive Economic Zone Managed Using Ecosystem Based Approaches | records=7 | modified=2026-09-12
-      fields: year, value
-  under-five-years-mortality-rate-by-nationality-and-sex0 | Under Five Years Mortality Rate By Nationality & Sex | records=88 | modified=2026-04-28
-      fields: year, nationality, ljnsy, gender, ljns, rate
-  sdg-16-1-1-number-of-victims-of-intentional-homicide-by-municipality-and-gender | SDG 16.1.1 Number of Victims of Intentional Homicide by Municipality and Gender | records=128 | modified=2026-09-24
-      fields: year, municipality, lbldy, gender, ljns, number
-  female-population-and-labour-force-by-municipality | Female Population and Labour Force by Municipality | records=240 | modified=2026-09-30
-      fields: year, municipality, lbldy, indicator, lmw_shr, count
-  natural-protected-areas-declared-under-the-law-by-municipality | Natural Protected Areas Declared Under the Law on Natural Protected Areas by Municipality | records=8 | modified=2026-09-30
-      fields: date_of_declaration, protected_area, sm_lmhmy, type_of_protected_area, nw_lmhmy, legal_basis, lsnd_lqnwny, region, lmntq, municipality, lbldy, total_area
-  number-and-length-of-bulk-service-connections-2023 | Number and Length Of Bulk Service Connections (2023) | records=14 | modified=2026-06-26
-      fields: year, type_of_service, nw_lkhdm, 80_mm_length, 80_mm_nos, 100_mm_length, 100_mm_nos, 150_mm_length, 150_mm_nos, 200_mm_length, 200_mm_nos, 250_mm_length, 250_mm_nos, 300_mm_length, 300_mm_nos, 400_mm_length, 400_mm_nos, total_length, total_nos
-  visitors-to-the-park-in-qatar-by-month-and-municipality-2024 | Visitors to the Park in Qatar by Month and Municipality | records=12 | modified=2025-06-01
-      fields: months, months_ar, doha, al_rayyan, umm_salal, al_shahanniya, al_wakarah, al_khor_zakira, al_daayen, al_shamal
-  building-permits-issued-by-type-of-permit-and-month-al-khor-and-al-thakhira-municipality | Building Permits Issued by Type of Permit and Month - Al Khor and Al Thakhira Municipality | records=288 | modified=2026-09-02
-      fields: year, month, lshhr, type_of_permit, nw_lrkhs, number
-  public-schools-classes-students-and-teachers-by-level-of-education-type-of-school-and-municipality | Number of Public Schools and Their Classes, Students and Teachers by Level of Education, Type of School and Municipality, 2025-2026 | records=75 | modified=2026-09-28
-      fields: year, municipality, lbldy, level_of_education, lmrhl_lt_lymy, type_of_school, nw_lmdrs, number_of_teachers, number_of_students, number_of_classes, number_of_schools
-  number-of-farms-and-total-area-by-type-of-farm-and-municipality-mom | Number of Farms and Total Area by Type of the Farm and Municipality | records=496 | modified=2026-09-29
-      fields: year, municipality, lbldy, farm_type, nw_lmzr, indicator, lmw_shr, value
-  population-by-municipality-and-age-groups | Population By Municipality and Age Groups | records=1584 | modified=2026-08-19
-      fields: years, age_groups, lbldy, municipality, count
-  area-of-public-parks-by-municipality | Area of Public Parks by Municipality | records=11 | modified=2025-05-13
-      fields: year, doha, al_rayyan, al_shamal, al_wakra, umm_salal, al_khor, al_daayen, al_sheehaniya, total
-  number-and-types-of-mosques-according-to-municipality | Number and types of mosques according to municipality | records=440 | modified=2026-06-28
-      fields: year, municipality, lbldy, type_of_mosque, nw_lmsjd, number
-  district-cooling-plants-by-municipality-sector-water-source-and-quantity-used-m | District Cooling Plants by Municipality, Sector, Water Source, and Quantity Used (m³) | records=59 | modified=2025-06-02
-      fields: year, source_of_compensatory_cooling_water, municipality, other, industrial, real_estate_development, sport, cultural, health, transport, education, hotels, commercial, district_cooling_service_supply, lbldy, msdr_myh_ltbryd_lt_wydy, geo_point, geo_shape
-  sdg-10-2-1-proportion-of-people-living-below-50-per-cent-of-median-income-by-municipality | SDG 10.2.1 Proportion of People Living Below 50 Per Cent of Median Income by Municipality | records=16 | modified=2026-08-26
-      fields: year, municipality, lbldy, nationality, ljnsy, value
-  students-by-level-of-education-municipality-gender-type-of-education-and-nationality-2025-2026 | Number of Students by Level of Education, Municipality, Gender, Type of Education and Nationality | records=1570 | modified=2026-09-29
-      fields: year, municipality, lbldy, level_of_education, lmrhl_lt_lymy, type_of_education, nw_lt_lym, nationality, ljnsy, gender, ljns, number_of_students
+population-area-and-population-density-per-square-kilometers-by-zone: total_count=552
+  {"year": "2016", "number_of_zone": "78", "lmntq": "ابو ظلوف/الزبارة", "zone": "Abu Dhalouf/Al Zubara", "population": 1660.0, "area_in_km": 427.0, "population_density_km2": 4.0}
+  {"year": "2019", "number_of_zone": "78", "lmntq": "ابو ظلوف/الزبارة", "zone": "Abu Dhalouf/Al Zubara", "population": 1660.0, "area_in_km": 427.0, "population_density_km2": 4.0}
+  {"year": "2014", "number_of_zone": "96", "lmntq": "ابو سمرة", "zone": "Abu Samra", "population": 1065.0, "area_in_km": 825.0, "population_density_km2": 1.0}
+  {"year": "2015", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "60", "lmntq": "الدفنة", "zone": "Al Dafna", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 2782.0, "area_in_km": 4.0, "population_density_km2": 676.0}
+  {"year": "2018", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 4022.0, "area_in_km": 4.0, "population_density_km2": 1005.0}
+  {"year": "2019", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 4022.0, "area_in_km": 4.0, "population_density_km2": 1005.0}
+  {"year": "2019", "number_of_zone": "15", "lmntq": "الدوحة الجديدة", "zone": "Al Doha Al Jadeeda", "population": 15920.0, "area_in_km": 0.0, "population_density_km2": 33352.0}
+  {"year": "2016", "number_of_zone": "51", "lmntq": "الغرافة / غرافة الريان / ازغوى / بني هاجر / السيج / روضة اقديم / الثميد", "zone": "Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid", "population": 56027.0, "area_in_km": 81.0, "population_density_km2": 692.0}
+  {"year": "2018", "number_of_zone": "51", "lmntq": "الغرافة / غرافة الريان / ازغوى / بني هاجر / السيج / روضة اقديم / الثميد", "zone": "Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid", "population": 56027.0, "area_in_km": 81.0, "population_density_km2": 692.0}
+  {"year": "2014", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 4834.0, "area_in_km": 629.0, "population_density_km2": 8.0}
+  {"year": "2015", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 5744.0, "area_in_km": 629.0, "population_density_km2": 9.0}
+  {"year": "2016", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 5744.0, "area_in_km": 629.0, "population_density_km2": 9.0}
+  {"year": "2019", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 5744.0, "area_in_km": 629.0, "population_density_km2": 9.0}
+  {"year": "2017", "number_of_zone": "42", "lmntq": "الهلال", "zone": "Al Hilal", "population": 11671.0, "area_in_km": 2.0, "population_density_km2": 6629.0}
+  {"year": "2018", "number_of_zone": "42", "lmntq": "الهلال", "zone": "Al Hilal", "population": 11671.0, "area_in_km": 2.0, "population_density_km2": 6629.0}
+  {"year": "2015", "number_of_zone": "1", "lmntq": "الجسرة", "zone": "Al Jasra", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2016", "number_of_zone": "1", "lmntq": "الجسرة", "zone": "Al Jasra", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 2614.0, "area_in_km": 554.0, "population_density_km2": 5.0}
+  {"year": "2017", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 2614.0, "area_in_km": 554.0, "population_density_km2": 5.0}
+  {"year": "2018", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 2614.0, "area_in_km": 554.0, "population_density_km2": 5.0}
+  {"year": "2014", "number_of_zone": "71", "lmntq": "الخريطيات / ازغوى / ام صلال محمد / بو فسيلة / ام صلال علي / ام العمد / ام عبيرية / لخشينة / صنيع لحميدي", "zone": "Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi", "population": 60509.0, "area_in_km": 318.0, "population_density_km2": 190.0}
+  {"year": "2016", "number_of_zone": "71", "lmntq": "الخريطيات / ازغوى / ام صلال محمد / بو فسيلة / ام صلال علي / ام العمد / ام عبيرية / لخشينة / صنيع لحميدي", "zone": "Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi", "population": 90835.0, "area_in_km": 318.0, "population_density_km2": 285.0}
