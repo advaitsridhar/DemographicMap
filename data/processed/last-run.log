@@ -1,7 +1,60 @@
-== get https://www.ris.gov.tw/app/portal/3053
-  39,709 bytes, begins b'<!DOCTYPE html>\n'
-  (148 links in all)
-  text: 中華民國 內政部戶政司 全球資訊網 - 村里街路門牌查詢 您的瀏覽器不支援 JavaScript，若網頁功能無法正常使用時，請開啓瀏覽器 JavaScript 功能。 前往主內容區 切換導航選單 ::: 回首頁 網站導覽 司長信箱 雙語詞彙 常見問答 更多 本司簡介 新聞與公告 網路申辦服務 法規與申辦須知 主題資訊 公開資訊 English 兒童版 加大字體 一般字體 縮小字體 RSS 訂閱服務 內政大小事-內政部 Facebook 首頁（在新視窗開啟） 內政部 Youtube 首頁（在新視窗開啟） 內政部 Flickr 相簿（在新視窗開啟） 搜尋關鍵字 搜尋（在新視窗開啟） 進階搜尋 熱門搜尋 網路申辦服務 身分證掛失 申請歸化國籍 ::: 本司簡介 戶政沿革史 戶政組織 業務職掌 組織學習 辦公室位置 戶政機關通訊錄 戶政機關線上通訊服務 司長信箱 司長信箱處理查詢 本部徵才資訊 新聞與公告 最新消息 新聞稿 最新法規公布 影音宣導 本部重大政策 問卷調查 網路申辦服務 戶政網路申辦服務作業說明 國民身分證 戶籍謄本 國籍申辦 其他申辦 線上申辦戶籍登記 法規與申辦須知 戶政法規 戶政法規與法規解釋函令 戶政業務申辦須知 國籍申辦須知 戶政各項業務申請書下載 主題資訊 New eID資訊公開專區 人口統計資料專區 單身聯誼活動專區 國民身分證專區 出版品專區 委託研究案專區 取用中文姓名專區 新式戶口名簿資訊 縣市改制專區 歸化測試資訊 高級專業人才專區 一站式服務專區 公開資訊 應用資料 常見問答 雙語詞彙 機關連線資訊 村里街路門牌查詢 其他表單下載專區 專案計畫專區 ::: 戶政司 公開資訊 村里街路門牌查詢 ::: 點我展開 本司簡介 戶政沿革史 戶政組織 業務職掌 組織學習 辦公室位置 戶政機關通訊錄 戶政機關線上通訊服務 司長信箱 司長信箱處理查詢 本部徵才資訊 新聞與公告 最新消息 新聞稿 最新法規公布 影音宣導 本部重大政策 問卷調查 網路申辦服務 戶政網路申辦服務作業說明 國民身分證 戶籍謄本 國籍申辦 其他申辦 線上申辦戶籍登記 法規與申辦須知 戶政法規 戶政法規與法規解釋函令 戶政業務申辦須知 國籍申辦須知 戶政各項業務申請書下載 主題資訊 New eID資訊公開專區 人口統計資料專區 單身聯誼活動專區 國民身分證專區 出版品專區 委託研究案專區 取用中文姓名專區 新式戶口名簿專區 縣市改制專區 歸化測試資訊專區 高級專業人才專區 一站式服務專區 公開資訊 應用資料 常見問答 雙語詞彙 機關連線資訊 村里街路門牌查詢 其他表單下載專區 專案計畫專區 政策宣導相關廣告執行情形 回首頁 網站資訊安全政策 網站隱私權保護政策 政府網站資料開放宣告 內政部首頁 內政部戶政司全球資訊網 地址：(100218)臺北市中正區徐州路5號 總機： 
-== get https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP019/11308
-  64 bytes, begins b'{"responseCode":'
-  json: {"responseCode": "OD-0102-S", "responseMessage": "查無資料"}
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
+    super().connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 839, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/sea_probe.py", line 261, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/sea_probe.py", line 250, in main
+    cmd_spa(args.url)
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/sea_probe.py", line 132, in cmd_spa
+    status, ctype, body = fetch(url)
+                          ^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/sea_probe.py", line 49, in fetch
+    with urllib.request.urlopen(req, timeout=timeout) as fh:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
