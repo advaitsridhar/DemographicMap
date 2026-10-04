@@ -1,125 +1,69 @@
-== https://www.cis.es/documents/20117/14250083/FT3577.pdf/d84ade8f-19a0-ffff-4ed2-c798ac6a31f0?version=1.0&t=1790163548079
-  HTTP 200; application/pdf; 31,934 bytes
-  2 pages, 59 lines
-    p1| BARÓMETRO DE SEPTIEMBRE 2026
-    p1| FICHA TÉCNICA
-    p1| Ámbito:
-    p1| Nacional.
-    p1| Universo:
-    p1| Población española de ambos sexos de 18 años y más.
-    p1| Tamaño de la muestra:
-    p1| Diseñada: 4.000 entrevistas.
-    p1| Realizada: 4.042 entrevistas.
-    p1| Afijación:
-    p1| No proporcional.
-    p1| Partiendo de una distribución proporcional por c omunidades autónomas, se ajusta de forma que todas ellas
-    p1| alcancen un mínimo de 100 entrevistas, excepto las ciudades autónomas de Ceuta y Melilla que se fija un total de
-    p1| 20 entrevistas en cada una de ellas.
-    p1| Ponderación:
-    p1| Para tratar la muestra en su conjunto es necesario aplicar coeficientes de ponderación (PESO)1. Los valores medios
-    p1| de estos coeficientes se adjuntan al final de esta ficha técnica.
-    p1| Para la estimación a nivel de cada autonomía, en el fichero de microdatos se incluye la ponderación para cada una
-    p1| de ellas (variable PESOCCAA).
-    p1| Puntos de muestreo:
-    p1| 1.211 municipios y 50 provincias.
-    p1| Procedimiento de muestreo:
-    p1| Se ha procedido a la selección aleatoria de teléfonos fijos y móviles con un porcentaje del 12,2% y del 87,8%,
-    p1| respectivamente. La selección de las personas se ha llevado a cabo mediante la aplicación de cuotas de sexo y
-    p1| edad.
-    p1| Los estratos se han formado por el cruce de las 17 comunidades autónomas y las dos ciudades autónomas con el
-    p1| tamaño de hábitat, dividido en 7 categorías: menor o igual a 2.000 habitantes; de 2.001 a 10.000; de 10.001 a
-    p1| 50.000; de 50.001 a 100.000; de 100.001 a 400.000; de 400.001 a 1.000.000; y más de 1.000.000 de habitantes.
-    p1| Los cuestionarios se han aplicado mediante entrevista telefónica asistida por ordenador (CATI).
-    p1| Error muestral:
-    p1| Para un nivel de confianza del 95,5% (dos sigmas) y P = Q, el error de muestreo es de ±1,6% para el conjunto de
-    p1| la muestra, en el supuesto de muestreo aleatorio simple.
-    p1| Fecha de realización:
-    p1| Del 1 al 4 de septiembre de 2026.
-    p1| 1 Para más información sobre la ponderación pueden consultar en: -https://www.cis.es/es/estudios/metodologia/muestra-y-ponderacion
-    p2| Muestra diseñada, realizada, coeficientes de ponderación y error (%)
-    p2| Muestra
-    p2| Código Comunidad autónoma Diseñada Realizada Ponderación Error (%)
-    p2| 01 Andalucía 683 671 1,0933 3,9
-    p2| 02 Aragón 105 105 1,0376 9,8
-    p2| 11 Extremadura 100 102 0,9911 9,9
-    p2| 12 Galicia 235 224 1,0177 6,7
-    p2| 13 Madrid (Comunidad de) 525 550 0,9348 4,3
-    p2| 14 Murcia (Región de) 114 113 1,1323 9,4
-    p2| 15 Navarra (Comunidad Foral de) 100 97 0,6058 10,2
-    p2| 16 País Vasco 182 172 1,0440 7,6
-    p2| 17 La Rioja 100 99 0,2753 10,1
-    p2| 18 Ceuta (Ciudad autónoma de) 20 21 0,3292 21,8
-    p2| 19 Melilla (Ciudad autónoma de) 20 20 0,2394 22,4
-    p2| Total 4.000 4.042 1,6
-== https://www.cis.es/documents/20117/14250083/cues3577.pdf/f361af91-73a4-aba6-0639-470218b452f5?version=1.0&t=1790163537047
-  HTTP 200; application/pdf; 149,523 bytes
-  12 pages, 1215 lines
-    p1| www.cis.es ¿Sería tan amable de contestar a unas preguntas?
-    p1| La encuesta durará unos 15 minutos. Muchas gracias.”
-    p1| PC1. Pregunta contacto 1. ¿Me puede decir a qué provincia y
-    p1| municipio estoy llamando...?
-    p1| [[TIPO_TEL]
-    p1| [CCAA]
-    p1| __________
-    p1| [PROVINCIA]
-    p1| __________
-    p1| [MUNICIPIO]
-    p3| Zimbabue ................................................................................ 252
-    p3| P.1 ¿Está Ud. informado/a sobre la situación que tuvo lugar este
-    p3| verano en Ceuta, con motivo del cruce de la frontera por varios
-    p3| miles de personas? (Entrevistador/a: LEER LAS OPCIONES).
-    p3| [P1] (CATEGORÍA NOMINAL)
-    p3| P.2 ¿Cree Ud. que España debería reforzar sus fronteras para evitar
-    p3| entradas masivas de personas procedentes de otros países en
-    p3| ciudades como Ceuta y Melilla? (Entrevistador/a: LEER LAS
-    p3| OPCIONES).
-    p3| [P2] (CATEGORÍA NOMINAL)
-    p3| (NO LEER) N.S., no tiene información suficiente ........................ 8
-    p3| N.C. ............................................................................................ 9
-    p3| P.3 En el caso de ciudades como Ceuta y Melilla, ¿qué importancia
-    p3| cree Ud. que tiene el entendimiento entre España y Marruecos
-    p3| para garantizar la seguridad de las fronteras? (Entrevistador/a:
-    p3| P.4 ¿Cree Ud. que, en estos momentos, la Unión Europea debería
-    p3| colaborar más con España en la gestión de la situación de
-    p3| Ceuta? (Entrevistador/a: LEER LAS OPCIONES).
-    p3| [P4] (CATEGORÍA NOMINAL)
-    p3| Si, debería colaborar más ................................ ........................... 1
-    p3| N.C. ............................................................................................ 9
-    p3| P.5 ¿Cuál es su opinión acerca de la situación de las ciudades
-    p3| autónomas de Ceuta y Melilla? (Entrevistador/a: LEER LAS
-    p3| OPCIONES. UNA RESPUESTA.).
-    p3| [P5] (CATEGORÍA NOMINAL)
-    p4| P.11 Tal y como están las cosas, y ante este tipo de incendios, las
-    p4| competencias principales para prevenir su aparición y luchar
-    p4| contra ellos, ¿cree que deben continuar en las comunidades
-    p4| autónomas, o pasar a ser competencia del Gobierno central?
-    p4| [P11] (CATEGORÍA NOMINAL)
-    p4| Deben continuar en las comunidades autónomas ...................... 1
-    p4| Deben pasar a ser competencia del Gobierno central ................ 2
-    p4| (NO LEER) De ambos en colaboración ...................................... 3
-    p5| El cambio climático ................................................................... 80
-    p5| Problemas de escasez de agua, sequía ................................ ... 82
-    p5| La crisis con Marruecos. Frontera de Ceuta y Melilla ................ 71
-    p5| Inseguridad ciudadana ............................................................... 3
-    p5| Desigualdades: de género, clase, pobreza ............................... 58
-    p9| Clave: ECIS3577
-    p9| 9 de 12
-    p9| P.30 Y en unas próximas elecciones a su comunidad autónoma,
-    p9| ¿a qué partido votaría Ud. ? (RESPUESTA ESPONTÁNEA,
-    p9| ¡¡NO LEER LAS OPCIONES DE RESPUESTA!!).
-    p10| N.S./No recuerda ...................................................................... 98
-    p10| N.C. .......................................................................................... 99
-    p10| P.36 ¿Cómo se define Ud. en materia religiosa: católico/a
-    p10| practicante, católico/a no practicante, creyente de otra
-    p10| religión, agnóstico/a, indiferente o no creyente, o ateo/a?
-    p10| [RELIGION] (CATEGORÍA NOMINAL)
-    p10| Católico/a practicante ................................ ................................. 1
-    p10| Católico/a no practicante ................................ ............................ 2
-    p10| Creyente de otra religión ................................ ............................ 3
-    p10| Agnóstico/a (no niegan la existencia de Dios pero tampoco
-    p10| la descartan) .............................................................................. 4
-    p10| P.36a si P.36=1,2 o 3.
-    p10| P.36a ¿Con qué frecuencia asiste Ud. a misa u otros oficios
-    p10| religiosos, sin contar las ocasiones relacionadas con
-    p10| ceremonias de tipo social, por ejemplo, bodas, comuniones
-    p10| o funerales? (ENTREVISTADOR/A: LEER OPCIONES DE
+== https://www.cis.es/es/catalogo-estudios/fid/acceso-a-datos
+  HTTP 200; text/html;charset=UTF-8; 291,164 bytes; final https://www.cis.es/es/catalogo-estudios/fid/acceso-a-datos
+  306 lines, 12 with ['registr', 'usuario', 'correo', 'descarg', 'formulario', 'login', 'contrase', 'licencia', 'reutiliza', 'gratuit', 'condicion']
+    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
+    | Condiciones Reutilización datos del CIS
+    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
+    | Condiciones Reutilización datos del CIS
+    | Debido al cambio de plataforma, es necesario que los usuarios que ya estuvieran registrados en FID anteriormente, vuelvan a registrarse de nuevo. En caso de registrarse con el mismo usuario que en la plataforma antigua, se podrá acceder al historial de solicitudes
+    | Registrarse
+    | Ya estoy registrado
+    | Identifica el idioma del usuario
+    | Identifica la sesión del usuario
+    | Se utiliza para identificar y autenticar al usuario
+    | visualizacionesdepáginas de un usuario en una sola grabación de sesión
+    | Almacena el ID de usuario (distinto a LFR_SESSION_STATE_* )
+  15 links with ['fid', 'registr', 'acceso', 'login', 'descarg', 'formul']
+    -> https://www.cis.es/ca/cataleg-estudis/fid/acces-a-dades  [CA]
+    -> https://www.cis.es/gl/catalogue-etudes/fid/acces-aux-donnees  [GL]
+    -> https://www.cis.es/eu/ikerketa-katalogoa/fid/datuen-sarbidea  [EU]
+    -> https://www.cis.es/en/studies-catalog/fid/data-access  [EN]
+    -> https://www.cis.es/fr/catalogue-etudes/fid/acces-aux-donnees  [FR]
+    -> https://www.cis.es/es/catalogo-estudios/fid  [Ficheros Integrados de Datos]
+    -> /registro-fid?p_p_id=com_liferay_login_web_portlet_LoginPortlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_com_liferay_login_web_portlet_LoginPortlet_mvcRenderCommandName=%2Flogin%2Fcreate_account&saveLastPath=false  [Registrarse]
+    -> /acceso-fid  [Ya estoy registrado]
+== https://www.cis.es/es/condiciones-reutilizaci%C3%B3n-datos-del-cis
+  HTTP 200; text/html;charset=UTF-8; 294,436 bytes; final https://www.cis.es/es/condiciones-reutilizaci%C3%B3n-datos-del-cis
+  344 lines, 41 with ['registr', 'usuario', 'correo', 'descarg', 'formulario', 'login', 'contrase', 'licencia', 'reutiliza', 'gratuit', 'condicion']
+    | Condiciones Reutilización datos del CIS
+    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
+    | Condiciones Reutilización datos del CIS
+    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
+    | Condiciones Reutilización datos del CIS
+    | Condiciones Reutilización Datos del CIS
+    | Condiciones Reutilización datos del CIS
+    | Reutilización de la información
+    | En cumplimiento con lo establecido por la normativa vigente sobre reutilización de la información del sector público, el Centro de Investigaciones Sociológicas (CIS) pone a disposición de la ciudadanía, instituciones y empresas los datos, documentos y recursos publicados en esta página web para su l
+    | Reconocimiento de la fuente : Se deberá citar al CIS como fuente de la información reutilizada.
+    | No atribución de carácter oficial : La reutilización no confiere carácter oficial a los documentos ni implica que el CIS respalde o apruebe el uso realizado.
+    | La reutilización de los contenidos está sujeta a las condiciones establecidas en la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público, y demás normativa aplicable.
+    | Para cualquier duda o solicitud específica relacionada con la reutilización de contenidos, puede dirigirse al CIS a través de los medios de contacto disponibles aquí .
+    | En consecuencia, salvo los casos excepcionales en los que sea preciso formular una solicitud o exista un régimen específico con ciertas exigencias adicionales, las condiciones generales de reutilización para el ámbito del sector público estatal que aquí se describen:
+    | Aviso legal condiciones generales
+    | Este aviso legal recoge las condiciones generales que rigen el acceso y el uso del presente sitio web, del que es titular el Centro de Investigaciones Sociológicas.
+    | El uso del sitio web implica la expresa y plena aceptación de las presentes condiciones generales en la versión publicada en el momento en que el usuario acceda al mismo, sin perjuicio de las condiciones particulares que pudieran aplicarse a algunos de los contenidos o servicios concretos del sitio 
+    | A los efectos del presente documento se entiende por “agente reutilizador” toda persona, física o jurídica que reutilice información del sector público, ya sea para fines comerciales o no comerciales.
+    | Obligatoriedad de las condiciones generales
+    | Las presentes condiciones generales, disponibles con carácter permanente en esta página, vincularán a cualquier agente reutilizador por el mero hecho de hacer uso de los documentos sometidos a ellas.
+    | Autorización de reutilización y cesión no exclusiva de derechos de propiedad intelectual
+    | Las presentes condiciones generales permiten la reutilización de los documentos sometidos a ellas para fines comerciales y no comerciales. Se entiende por reutilización el uso de documentos que obran en poder del Centro de Investigaciones Sociológicas, por personas físicas o jurídicas, con fines com
+    | El concepto de documento es el establecido en el apartado 2 del artículo 3 de la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público, por lo que comprende toda información cualquiera que sea su soporte material o electrónico así como su forma de expresión gráfic
+    | Esta autorización conlleva, asimismo, la cesión gratuita y no exclusiva de los derechos de propiedad intelectual, en su caso, correspondientes a tales documentos, autorizándose la realización de actividades de reproducción, distribución, comunicación pública o transformación, necesarias para desarro
+    | Condiciones generales para la reutilización.
+    | Son de aplicación las siguientes condiciones generales para la reutilización de los documentos sometidos a ellas:
+    | Debe citarse la fuente de los documentos objeto de la reutilización. Esta cita podrá realizarse de la siguiente manera: "Origen de los datos: Centro de Investigaciones Sociológicas".
+    | Debe mencionarse la fecha de la última actualización de los documentos objeto de la reutilización, siempre cuando estuviera incluida en el documento original.
+    | No se podrá indicar, insinuar o sugerir que el Centro de Investigaciones Sociológicas titular de la información reutilizada participa, patrocina o apoya la reutilización que se lleve a cabo con ella.
+    | Deben conservarse, no alterarse ni suprimirse los metadatos sobre la fecha de actualización y las condiciones de reutilización aplicables incluidos, en su caso, en el documento puesto a disposición para su reutilización.
+    | La utilización de los conjuntos de datos se realizará por parte de los usuarios o agentes de la reutilización bajo su propia cuenta y riesgo, correspondiéndoles en exclusiva a ellos responder frente a terceros por daños que pudieran derivarse de ella.
+    | El Centro de Investigaciones Sociológicas no será responsable del uso que de su información hagan los agentes reutilizadores ni tampoco de los daños sufridos o pérdidas económicas que, de forma directa o indirecta, produzcan o puedan producir perjuicios económicos, materiales o sobre datos, provocad
+    | El Centro de Investigaciones Sociológicas no garantiza la continuidad en la puesta a disposición de los documentos reutilizables, ni en contenido ni en forma, ni asume responsabilidades por cualquier error u omisión contenido en ellos.
+    | Responsabilidad del agente reutilizador
+    | El agente reutilizador se halla sometido a la normativa aplicable en materia de reutilización de la información del sector público, incluyendo el régimen sancionador previsto en el artículo 11 de la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público.
+    | Con el fin de mejorar las prestaciones del sitio web, el Centro de Investigaciones Sociológicas se reserva el derecho, en cualquier momento y sin previa notificación al usuario, a modificar ampliar o suspender temporalmente la presentación, configuración, especificaciones técnicas y servicios del si
+    | Identifica el idioma del usuario
+    | Identifica la sesión del usuario
+    | Se utiliza para identificar y autenticar al usuario
+    | visualizacionesdepáginas de un usuario en una sola grabación de sesión
+  2 links with ['fid', 'registr', 'acceso', 'login', 'descarg', 'formul']
+    -> https://www.cis.es/es/catalogo-estudios/fid  [Ficheros Integrados de Datos]
