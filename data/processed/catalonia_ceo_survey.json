@@ -1,0 +1,582 @@
+[
+  {
+    "id": "ESP-CEO-08",
+    "level": "admin2",
+    "name": "Barcelona",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 51.1
+      },
+      {
+        "group": "Atheist",
+        "pct": 23.5
+      },
+      {
+        "group": "Agnostic",
+        "pct": 17.2
+      },
+      {
+        "group": "Evangelical or Protestant",
+        "pct": 2.8
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.3
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 58.9
+      },
+      {
+        "group": "Catalan",
+        "pct": 33.6
+      },
+      {
+        "group": "Other languages or combinations",
+        "pct": 3.2
+      },
+      {
+        "group": "Catalan and Spanish",
+        "pct": 3.1
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.8
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "religion"
+      },
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "language"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B38817874256440",
+    "codes": {
+      "ine_province": "08",
+      "ceo_n": 4494
+    },
+    "religion_year": 2026,
+    "religion_basis": "survey estimate: self-identification, Spanish citizens aged 18+",
+    "religion_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Amb independència que sigui practicant o no, quina és la seva religió?\" (whatever your practice, what is your religion?) -- Catholicism, Evangelical or Protestant Christianity, Islam, Jehovah's Witnesses, Buddhism, Orthodox Christianity, Judaism, none (agnosticism), none (atheism) or another; don't know and no answer are Not stated. A survey estimate, not a count: 4,494 respondents in the province of Barcelona (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask religion.",
+    "language_year": 2026,
+    "language_basis": "survey estimate: first language spoken at home as a child, Spanish citizens aged 18+",
+    "language_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Quina llengua va parlar primer vostè, a casa, quan era petit?\" (which language did you first speak at home as a child?), with \"another answer\" detailed by the follow-up question: Catalan, Spanish, both equally, Aranese, Arabic, Romanian, or other languages or combinations; don't know and no answer are Not stated. A survey estimate, not a count: 4,494 respondents in the province of Barcelona (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask language, and Idescat's language survey is not published by province."
+  },
+  {
+    "id": "ESP-CEO-17",
+    "level": "admin2",
+    "name": "Girona",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 56.1
+      },
+      {
+        "group": "Atheist",
+        "pct": 18.0
+      },
+      {
+        "group": "Agnostic",
+        "pct": 15.5
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.9
+      },
+      {
+        "group": "Islam",
+        "pct": 2.5
+      },
+      {
+        "group": "Evangelical or Protestant",
+        "pct": 2.1
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.9
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.4
+      }
+    ],
+    "language": [
+      {
+        "group": "Catalan",
+        "pct": 49.9
+      },
+      {
+        "group": "Spanish",
+        "pct": 41.8
+      },
+      {
+        "group": "Catalan and Spanish",
+        "pct": 3.7
+      },
+      {
+        "group": "Other languages or combinations",
+        "pct": 3.0
+      },
+      {
+        "group": "Arabic",
+        "pct": 1.2
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "religion"
+      },
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "language"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B12743856325627",
+    "codes": {
+      "ine_province": "17",
+      "ceo_n": 567
+    },
+    "religion_year": 2026,
+    "religion_basis": "survey estimate: self-identification, Spanish citizens aged 18+",
+    "religion_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Amb independència que sigui practicant o no, quina és la seva religió?\" (whatever your practice, what is your religion?) -- Catholicism, Evangelical or Protestant Christianity, Islam, Jehovah's Witnesses, Buddhism, Orthodox Christianity, Judaism, none (agnosticism), none (atheism) or another; don't know and no answer are Not stated. A survey estimate, not a count: 567 respondents in the province of Girona (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask religion.",
+    "language_year": 2026,
+    "language_basis": "survey estimate: first language spoken at home as a child, Spanish citizens aged 18+",
+    "language_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Quina llengua va parlar primer vostè, a casa, quan era petit?\" (which language did you first speak at home as a child?), with \"another answer\" detailed by the follow-up question: Catalan, Spanish, both equally, Aranese, Arabic, Romanian, or other languages or combinations; don't know and no answer are Not stated. A survey estimate, not a count: 567 respondents in the province of Girona (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask language, and Idescat's language survey is not published by province."
+  },
+  {
+    "id": "ESP-CEO-25",
+    "level": "admin2",
+    "name": "Lleida",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 66.8
+      },
+      {
+        "group": "Atheist",
+        "pct": 15.1
+      },
+      {
+        "group": "Agnostic",
+        "pct": 11.8
+      },
+      {
+        "group": "Evangelical or Protestant",
+        "pct": 3.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.6
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3
+      }
+    ],
+    "language": [
+      {
+        "group": "Catalan",
+        "pct": 58.9
+      },
+      {
+        "group": "Spanish",
+        "pct": 37.2
+      },
+      {
+        "group": "Other languages or combinations",
+        "pct": 1.8
+      },
+      {
+        "group": "Catalan and Spanish",
+        "pct": 0.9
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.3
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.3
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "religion"
+      },
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "language"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B77878961012946",
+    "codes": {
+      "ine_province": "25",
+      "ceo_n": 331
+    },
+    "religion_year": 2026,
+    "religion_basis": "survey estimate: self-identification, Spanish citizens aged 18+",
+    "religion_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Amb independència que sigui practicant o no, quina és la seva religió?\" (whatever your practice, what is your religion?) -- Catholicism, Evangelical or Protestant Christianity, Islam, Jehovah's Witnesses, Buddhism, Orthodox Christianity, Judaism, none (agnosticism), none (atheism) or another; don't know and no answer are Not stated. A survey estimate, not a count: 331 respondents in the province of Lleida (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask religion.",
+    "language_year": 2026,
+    "language_basis": "survey estimate: first language spoken at home as a child, Spanish citizens aged 18+",
+    "language_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Quina llengua va parlar primer vostè, a casa, quan era petit?\" (which language did you first speak at home as a child?), with \"another answer\" detailed by the follow-up question: Catalan, Spanish, both equally, Aranese, Arabic, Romanian, or other languages or combinations; don't know and no answer are Not stated. A survey estimate, not a count: 331 respondents in the province of Lleida (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask language, and Idescat's language survey is not published by province."
+  },
+  {
+    "id": "ESP-CEO-43",
+    "level": "admin2",
+    "name": "Tarragona",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 59.0
+      },
+      {
+        "group": "Atheist",
+        "pct": 16.6
+      },
+      {
+        "group": "Agnostic",
+        "pct": 14.3
+      },
+      {
+        "group": "Evangelical or Protestant",
+        "pct": 3.8
+      },
+      {
+        "group": "Islam",
+        "pct": 2.1
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.6
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.6
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.2
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2
+      }
+    ],
+    "language": [
+      {
+        "group": "Spanish",
+        "pct": 50.2
+      },
+      {
+        "group": "Catalan",
+        "pct": 41.4
+      },
+      {
+        "group": "Catalan and Spanish",
+        "pct": 4.3
+      },
+      {
+        "group": "Other languages or combinations",
+        "pct": 1.8
+      },
+      {
+        "group": "Arabic",
+        "pct": 1.5
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.8
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "religion"
+      },
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "language"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "93216281B93269883088590",
+    "codes": {
+      "ine_province": "43",
+      "ceo_n": 608
+    },
+    "religion_year": 2026,
+    "religion_basis": "survey estimate: self-identification, Spanish citizens aged 18+",
+    "religion_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Amb independència que sigui practicant o no, quina és la seva religió?\" (whatever your practice, what is your religion?) -- Catholicism, Evangelical or Protestant Christianity, Islam, Jehovah's Witnesses, Buddhism, Orthodox Christianity, Judaism, none (agnosticism), none (atheism) or another; don't know and no answer are Not stated. A survey estimate, not a count: 608 respondents in the province of Tarragona (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask religion.",
+    "language_year": 2026,
+    "language_basis": "survey estimate: first language spoken at home as a child, Spanish citizens aged 18+",
+    "language_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Quina llengua va parlar primer vostè, a casa, quan era petit?\" (which language did you first speak at home as a child?), with \"another answer\" detailed by the follow-up question: Catalan, Spanish, both equally, Aranese, Arabic, Romanian, or other languages or combinations; don't know and no answer are Not stated. A survey estimate, not a count: 608 respondents in the province of Tarragona (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask language, and Idescat's language survey is not published by province."
+  },
+  {
+    "id": "ESP-CEO-CA09",
+    "level": "admin1",
+    "name": "Cataluña/Catalunya",
+    "parent": "ESP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 53.2
+      },
+      {
+        "group": "Atheist",
+        "pct": 21.8
+      },
+      {
+        "group": "Agnostic",
+        "pct": 16.5
+      },
+      {
+        "group": "Evangelical or Protestant",
+        "pct": 2.9
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.5
+      },
+      {
+        "group": "Other religions",
+        "pct": 1.0
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.5
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Centre d'Estudis d'Opinió, Baròmetre d'Opinió Política, BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026) (anonymised microdata, Dades Obertes Catalunya)",
+        "url": "https://analisi.transparenciacatalunya.cat/Sector-P-blic/Microdades-acumulades-de-les-enquestes-del-Centre-/gp4k-sxxn",
+        "year": 2026,
+        "license": "Dades Obertes Catalunya open-data licence (attribution: Centre d'Estudis d'Opinió)",
+        "field": "religion"
+      }
+    ],
+    "country": "ESP",
+    "match_by": "shape_id",
+    "shape_id": "25490228B80227492032103",
+    "codes": {
+      "ine_ccaa": "09",
+      "ceo_n": 6000
+    },
+    "religion_year": 2026,
+    "religion_basis": "survey estimate: self-identification, Spanish citizens aged 18+",
+    "religion_note": "Centre d'Estudis d'Opinió (Generalitat de Catalunya), Baròmetre d'Opinió Política, face-to-face waves BOP 62 (June 2025), 63 (October 2025) and 64 (June 2026), pooled: \"Amb independència que sigui practicant o no, quina és la seva religió?\" (whatever your practice, what is your religion?) -- Catholicism, Evangelical or Protestant Christianity, Islam, Jehovah's Witnesses, Buddhism, Orthodox Christianity, Judaism, none (agnosticism), none (atheism) or another; don't know and no answer are Not stated. A survey estimate, not a count: 6,000 respondents in Catalonia (unweighted: the CEO's weight (PONDERA) is 1 for every respondent of these waves, the sample being drawn in proportion to the population by province). Universe: Spanish citizens aged 18 and over resident in Catalonia, so foreign residents are not in it. Read from the CEO's anonymised microdata on the Generalitat's open-data portal. Spain's census does not ask religion."
+  }
+]
