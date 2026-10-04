@@ -188,7 +188,7 @@ def cmd_nada(args: argparse.Namespace) -> None:
     for keyword in args.keyword.split(","):
         page = 1
         shown = 0
-        while shown < args.limit:
+        while shown < args.limit and page <= args.pages:
             url = (f"{root}/index.php/api/catalog/search?"
                    + urllib.parse.urlencode({"sk": keyword, "ps": min(100, args.limit),
                                              "page": page}))
@@ -211,12 +211,16 @@ def cmd_nada(args: argparse.Namespace) -> None:
                     print("    " + json.dumps(rows[0])[:1500])
             if not rows:
                 break
+            keep = re.compile(args.match, re.I) if args.match else None
             for row in rows:
+                title = f"{row.get('idno')} {row.get('title')}"
+                if keep and not keep.search(title):
+                    continue
                 print(f"    id={row.get('id')} idno={row.get('idno')} "
                       f"{row.get('year_start') or ''} {str(row.get('title'))[:110]}")
                 shown += 1
             page += 1
-            if len(rows) < min(100, args.limit):
+            if len(rows) < min(100, args.limit) or page > args.pages:
                 break
 
 
@@ -403,6 +407,8 @@ def main() -> int:
     n.add_argument("--keyword", required=True)
     n.add_argument("--limit", type=int, default=100)
     n.add_argument("--raw", action="store_true")
+    n.add_argument("--match", default="", help="print only rows whose idno or title match")
+    n.add_argument("--pages", type=int, default=30, help="result pages to walk")
     n.add_argument("--aia", action="store_true")
 
     f = sub.add_parser("nadafiles")
