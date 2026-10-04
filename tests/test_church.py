@@ -255,13 +255,48 @@ class SwedishChurchCountry(unittest.TestCase):
 
     def test_a_kommun_is_its_members_against_everyone_else(self):
         sv = {"1082": "Karlshamn", "10": "Blekinge län"}
-        rec = church.kommun_record("Karlshamns", "1082", (32182, 20373, 63.3), sv, "SHAPE",
-                                   {"field": "religion"})
+        row = (32182, 20373, 63.3)
+        edition = church.Edition(2021, "URL", {"1082": row}, {}, {"1082": 0.002})
+        rec = church.kommun_record("1082", row, 0.002, edition, sv, "SHAPE")
         self.assertEqual(rec["shape_id"], "SHAPE")
         self.assertEqual({g["group"]: g["count"] for g in rec["religion"]},
                          {church.SWEDEN_CHURCH: 20373, church.SWEDEN_OUTSIDE: 11809})
         self.assertIn("not belief", rec["religion_note"])
+        self.assertIn("the latest edition by kommun", rec["religion_note"])
+        self.assertNotIn("crosses its boundary", rec["religion_note"])
         self.assertEqual(rec["religion_year"], 2021)
+        self.assertEqual(rec["sources"][0]["url"], "URL")
+        older = church.Edition(2019, "OLD", {"1082": row}, {}, {"1082": -0.013})
+        rec = church.kommun_record("1082", row, -0.013, older, sv, "SHAPE")
+        self.assertEqual(rec["religion_year"], 2019)
+        self.assertIn("in the 2021 edition they do not", rec["religion_note"])
+        self.assertIn("+1.3% against SCB's count", rec["religion_note"])
+
+    def test_a_joined_kommun_s_host_is_the_row_its_parish_is_printed_under(self):
+        names = {"1762": "Munkfors", "1763": "Forshaga"}
+        lines = ["Munkfors kommun 15 234 10 860 71,3% 71,3% 0,17% 0,41% 0,55%",
+                 "Forshaga-Munkfors församling (176301) 15 234 10 860 71,3% 71,3% 0,17% "
+                 "0,41% 0,55%"]
+        # 2018-2020: the parish's code says Forshaga, the row it sits under Munkfors.
+        self.assertEqual(church.joined_kommuner(["1763"], {"1762"}, names, lines,
+                                                {"Munkfors": "1762"}),
+                         {"1763": ("1762", "Forshaga-Munkfors")})
+        with self.assertRaises(SystemExit):     # read by its code, it names itself
+            church.joined_kommuner(["1763"], {"1762"}, names, lines)
+
+    def test_each_kommun_takes_the_newest_edition_whose_row_is_its_own(self):
+        row = (100, 60, 60.0)
+        new = church.Edition(2021, "a", {"1442": row, "1447": row, "1082": row},
+                             {"1762": ("1763", "Forshaga-Munkfors")},
+                             {"1442": -0.233, "1447": 0.418, "1082": 0.003})
+        old = church.Edition(2020, "b", {"1442": row, "1447": row, "1082": row},
+                             {"1763": ("1762", "Forshaga-Munkfors")},
+                             {"1442": -0.001, "1447": 0.05, "1082": 0.004})
+        chosen, left = church.choose([new, old], ["1082", "1442", "1447", "1762", "1763"])
+        self.assertEqual({c: e.year for c, e in chosen.items()}, {"1082": 2021, "1442": 2020})
+        self.assertEqual(sorted(left), ["1447", "1762", "1763"])
+        self.assertIn("2021: its row counts -41.8%", left["1447"][0])
+        self.assertTrue(all("Forshaga-Munkfors" in why for why in left["1762"] + left["1763"]))
 
     def test_the_swedish_labels_are_placed_where_denmark_s_are(self):
         self.assertEqual(group_tree.ancestry("religion", church.SWEDEN_CHURCH)[1],
