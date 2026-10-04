@@ -1,0 +1,435 @@
+[
+  {
+    "id": "QAT-CEN2020-hurandtahira",
+    "level": "admin1",
+    "name": "Al Khor and Al Thakhira",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 140453.0,
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+      "note": "The 2020 census count: 112,943 men and 27,510 women."
+    },
+    "median_age": {
+      "value": 34.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "sex_ratio": {
+      "value": 410.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+        "url": "https://www.data.gov.qa/explore/dataset/males-population-by-municipality-and-age-groups-december-2020/",
+        "year": 2020,
+        "license": "Qatar Open Data Portal terms (open government data)"
+      }
+    ],
+    "country": "QAT",
+    "match_by": "shape_id",
+    "shape_id": "59647477B65717711403998",
+    "aliases": [
+      "AL Khor"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2020 census: 112,943 men and 27,510 women.",
+    "median_age_note": "Interpolated within the age group holding the middle person, from the 2020 census's count of the municipality by age group (single years under five, five-year groups above)."
+  },
+  {
+    "id": "QAT-CEN2020-daian",
+    "level": "admin1",
+    "name": "Al Daayen",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 100083.0,
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+      "note": "The 2020 census count: 55,466 men and 44,617 women."
+    },
+    "median_age": {
+      "value": 30.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "sex_ratio": {
+      "value": 124.3,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+        "url": "https://www.data.gov.qa/explore/dataset/males-population-by-municipality-and-age-groups-december-2020/",
+        "year": 2020,
+        "license": "Qatar Open Data Portal terms (open government data)"
+      }
+    ],
+    "country": "QAT",
+    "match_by": "shape_id",
+    "shape_id": "59647477B54758693261255",
+    "aliases": [
+      "Al Dayyan"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2020 census: 55,466 men and 44,617 women.",
+    "median_age_note": "Interpolated within the age group holding the middle person, from the 2020 census's count of the municipality by age group (single years under five, five-year groups above)."
+  },
+  {
+    "id": "QAT-CEN2020-raian",
+    "level": "admin1",
+    "name": "Al Rayyan",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 826786.0,
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+      "note": "The 2020 census count: 536,683 men and 290,103 women."
+    },
+    "median_age": {
+      "value": 31.7,
+      "unit": "years",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "sex_ratio": {
+      "value": 185.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+        "url": "https://www.data.gov.qa/explore/dataset/males-population-by-municipality-and-age-groups-december-2020/",
+        "year": 2020,
+        "license": "Qatar Open Data Portal terms (open government data)"
+      }
+    ],
+    "country": "QAT",
+    "match_by": "shape_id",
+    "shape_id": "59647477B98611324208127",
+    "sex_ratio_note": "Males per 100 females in the 2020 census: 536,683 men and 290,103 women.",
+    "median_age_note": "Interpolated within the age group holding the middle person, from the 2020 census's count of the municipality by age group (single years under five, five-year groups above)."
+  },
+  {
+    "id": "QAT-CEN2020-samal",
+    "level": "admin1",
+    "name": "Al Shamal",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16730.0,
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+      "note": "The 2020 census count: 13,457 men and 3,273 women."
+    },
+    "median_age": {
+      "value": 33.3,
+      "unit": "years",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "sex_ratio": {
+      "value": 411.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+        "url": "https://www.data.gov.qa/explore/dataset/males-population-by-municipality-and-age-groups-december-2020/",
+        "year": 2020,
+        "license": "Qatar Open Data Portal terms (open government data)"
+      }
+    ],
+    "country": "QAT",
+    "match_by": "shape_id",
+    "shape_id": "59647477B13867481202727",
+    "sex_ratio_note": "Males per 100 females in the 2020 census: 13,457 men and 3,273 women.",
+    "median_age_note": "Interpolated within the age group holding the middle person, from the 2020 census's count of the municipality by age group (single years under five, five-year groups above)."
+  },
+  {
+    "id": "QAT-CEN2020-sihania",
+    "level": "admin1",
+    "name": "Al Sheehaniya",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 161240.0,
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+      "note": "The 2020 census count: 148,384 men and 12,856 women."
+    },
+    "median_age": {
+      "value": 34.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "sex_ratio": {
+      "value": 1154.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+        "url": "https://www.data.gov.qa/explore/dataset/males-population-by-municipality-and-age-groups-december-2020/",
+        "year": 2020,
+        "license": "Qatar Open Data Portal terms (open government data)"
+      }
+    ],
+    "country": "QAT",
+    "match_by": "shape_id",
+    "shape_id": "59647477B8883927479068",
+    "sex_ratio_note": "Males per 100 females in the 2020 census: 148,384 men and 12,856 women.",
+    "median_age_note": "Interpolated within the age group holding the middle person, from the 2020 census's count of the municipality by age group (single years under five, five-year groups above)."
+  },
+  {
+    "id": "QAT-CEN2020-uakra",
+    "level": "admin1",
+    "name": "Al Wakra",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 265102.0,
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+      "note": "The 2020 census count: 184,827 men and 80,275 women."
+    },
+    "median_age": {
+      "value": 32.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "sex_ratio": {
+      "value": 230.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+        "url": "https://www.data.gov.qa/explore/dataset/males-population-by-municipality-and-age-groups-december-2020/",
+        "year": 2020,
+        "license": "Qatar Open Data Portal terms (open government data)"
+      }
+    ],
+    "country": "QAT",
+    "match_by": "shape_id",
+    "shape_id": "59647477B6455548774572",
+    "sex_ratio_note": "Males per 100 females in the 2020 census: 184,827 men and 80,275 women.",
+    "median_age_note": "Interpolated within the age group holding the middle person, from the 2020 census's count of the municipality by age group (single years under five, five-year groups above)."
+  },
+  {
+    "id": "QAT-CEN2020-duha",
+    "level": "admin1",
+    "name": "Doha",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1186023.0,
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+      "note": "The 2020 census count: 881,154 men and 304,869 women."
+    },
+    "median_age": {
+      "value": 33.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "sex_ratio": {
+      "value": 289.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+        "url": "https://www.data.gov.qa/explore/dataset/males-population-by-municipality-and-age-groups-december-2020/",
+        "year": 2020,
+        "license": "Qatar Open Data Portal terms (open government data)"
+      }
+    ],
+    "country": "QAT",
+    "match_by": "shape_id",
+    "shape_id": "59647477B74568109878344",
+    "sex_ratio_note": "Males per 100 females in the 2020 census: 881,154 men and 304,869 women.",
+    "median_age_note": "Interpolated within the age group holding the middle person, from the 2020 census's count of the municipality by age group (single years under five, five-year groups above)."
+  },
+  {
+    "id": "QAT-CEN2020-umslal",
+    "level": "admin1",
+    "name": "Umm Slal",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 149701.0,
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+      "note": "The 2020 census count: 101,604 men and 48,097 women."
+    },
+    "median_age": {
+      "value": 31.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "sex_ratio": {
+      "value": 211.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "Planning and Statistics Authority (Qatar), Census 2020: population by municipality, sex and age group",
+        "url": "https://www.data.gov.qa/explore/dataset/males-population-by-municipality-and-age-groups-december-2020/",
+        "year": 2020,
+        "license": "Qatar Open Data Portal terms (open government data)"
+      }
+    ],
+    "country": "QAT",
+    "match_by": "shape_id",
+    "shape_id": "59647477B67880775667160",
+    "aliases": [
+      "Umm Salal"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2020 census: 101,604 men and 48,097 women.",
+    "median_age_note": "Interpolated within the age group holding the middle person, from the 2020 census's count of the municipality by age group (single years under five, five-year groups above)."
+  }
+]
