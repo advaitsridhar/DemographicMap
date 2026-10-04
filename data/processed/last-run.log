@@ -1,4 +1,15 @@
-  areas bound: 105 of 137 drawn; census areas unused: 52
-  drawn areas the census does not count alone: 30: Abdali; Ardhiya_Hkomeya; El_Kehran_Loloet_Elkheran; El_Noyseep; Elkeran_Elgededa; Elwafra; Elwafra_Elgededa; Magwa; Mina_Doha; North_Shuaiba; Saba_Elahmad; Sebak_Al_Hegen; Sikrab; South Doha; South_Coast_Strip; South_East_Jahra; South_Shuaiba; South_Wista; Sulaibiya_Agricultural_1; Sulaibiya_Agriculture_2; Suwaikh_Commercial; Suwaikh_Educational; Suwaikh_Industrail-1; Suwaikh_Industrial-2; Suwaikh_Industrial-3; Suwaikh_Port; The_Green_Belt; The_Sea_Front; West_Jahra; Wista
-  wrote data/processed/kuwait_census.json (222 kB)
-  wrote kuwait_census.json (111)
+vanuatu_census: 2020 Census Basic Tables, Volume 1
+  14,955,957 bytes, 384 pages
+  Table 6.16 has no [9, 7]-figure row for Aneityum: left out
+  Table 6.17 prints Port Vila's and Luganville's rows under each other's names: exchanged
+  Vanuatu's median age 21.0; Table 6.16 counts 239,839 people aged 3+ of 293,963 in private households
+  no polygon: Emau (737 people), counted in its province
+  no polygon: Makimae (1,111 people), counted in its province
+  no polygon: Merelava (647 people), counted in its province
+  no polygon: Mota (597 people), counted in its province
+  no polygon: Nguna (1,790 people), counted in its province
+  no polygon: North Tongoa (1,606 people), counted in its province
+  no polygon: Tongariki (1,054 people), counted in its province
+  no polygon: Torres (1,190 people), counted in its province
+  64 records: admin1 ethnicity 6, admin1 language 6, admin1 median_age 6, admin1 population 6, admin1 religion 6, admin1 sex_ratio 6, admin2 ethnicity 58, admin2 language 57, admin2 median_age 58, admin2 population 58, admin2 religion 58, admin2 sex_ratio 58
+  wrote data/processed/vanuatu_census.json (304 kB)
