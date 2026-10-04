@@ -146,6 +146,28 @@ class TestTable4(unittest.TestCase):
         out = t.ages_from_pages(pages, "punjab")
         t.check_ages("ATTOCK", out["ATTOCK"])
 
+    def test_a_heading_drawn_over_the_leftover_first_heading(self):
+        # Punjab's pages all carry "ATTOCK DISTRICT" under whatever is printed
+        # at the top; a district starting there comes out interleaved with it.
+        second = block("GUJRANWALA", ages_for(50))
+        second[0] = [(268.0, 301.0, "GUAJRTATONWCKA"), (301.0, 311.0, "LDAIS"),
+                     (310.0, 336.0, "DTIRSITCRTICT")]
+        pages = [block("ATTOCK", ages_for()), second]
+        out = t.ages_from_pages(pages, "punjab", {"ATTOCK", "GUJRANWALA", "LAHORE"})
+        self.assertEqual(set(out), {"ATTOCK", "GUJRANWALA"})
+        t.check_ages("GUJRANWALA", out["GUJRANWALA"])
+        # Without Table 10's names the line is not read as anything.
+        self.assertEqual(set(t.ages_from_pages(pages, "punjab")), {"ATTOCK"})
+
+    def test_an_overdrawn_heading_must_account_for_every_letter(self):
+        self.assertIsNone(t.overdrawn_heading("GUAJRTATONWCKA LDAIS DTIRSITCRTICTX",
+                                              "ATTOCK DISTRICT", {"GUJRANWALA"}))
+        self.assertIsNone(t.overdrawn_heading("GUJRANWALA DISTRICT", "ATTOCK DISTRICT",
+                                              {"GUJRANWALA"}))
+        self.assertEqual(t.overdrawn_heading("AJHTTEOLUCMK DDIISSTTRRIICCTT",
+                                             "ATTOCK DISTRICT", {"JHELUM", "LAHORE"}),
+                         "JHELUM")
+
     def test_interrupted_block_is_refused(self):
         rows = block("ATTOCK", ages_for())
         with self.assertRaises(SystemExit):

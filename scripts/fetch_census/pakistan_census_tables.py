@@ -127,6 +127,35 @@ def heading(line: str, slug: str) -> str | None:
     return match.group(1).strip() if match else None
 
 
+def letters(text: str) -> Counter:
+    return Counter(ch for ch in text.upper() if "A" <= ch <= "Z")
+
+
+def overdrawn_heading(line: str, ghost: str | None,
+                      expected: set[str] | None) -> str | None:
+    """A district heading drawn over the page's leftover first heading.
+
+    Punjab's Table 4 carries its first district's heading, "ATTOCK DISTRICT",
+    at the top of every page, under whatever the page prints there. Where a
+    district's block starts at the top of a page its own heading is drawn on
+    top of it, and the two come out interleaved letter by letter: Gujranwala's
+    reads "GUAJRTATONWCKA LDAIS DTIRSITCRTICT". The district is the one whose
+    "<NAME> DISTRICT" supplies exactly the letters left once the leftover
+    heading's are taken away -- every letter accounted for, and only one
+    district of those Table 10 names fitting.
+    """
+    if not ghost or not expected or any(ch.isdigit() for ch in line):
+        return None
+    have, under = letters(line), letters(ghost)
+    if under - have:
+        return None                        # the leftover heading is not all there
+    left = have - under
+    if not left:
+        return None
+    found = [name for name in expected if letters(f"{name} DISTRICT") == left]
+    return found[0] if len(found) == 1 else None
+
+
 def is_subunit(line: str) -> bool:
     """A tehsil's, taluka's or sub-division's heading: a breakdown, not a unit."""
     return bool(re.search(r"\b(?:TEHSIL|TALUKA|SUB[- ]DIVISION|SUB[- ]TEHSIL|"
@@ -180,21 +209,28 @@ def sexes(figures: list[int], where: str) -> tuple[int, int, int]:
     return persons, males, females
 
 
-def read_ages(blob: bytes, slug: str) -> dict[str, dict[str, Any]]:
-    return ages_from_pages(words_by_row(blob), slug)
+def read_ages(blob: bytes, slug: str,
+              expected: set[str] | None = None) -> dict[str, dict[str, Any]]:
+    return ages_from_pages(words_by_row(blob), slug, expected)
 
 
-def ages_from_pages(pages, slug: str) -> dict[str, dict[str, Any]]:
+def ages_from_pages(pages, slug: str,
+                    expected: set[str] | None = None) -> dict[str, dict[str, Any]]:
     """Table 4 for one province: {district: {"ages": {sex: Counter}, ...}}.
 
     A district's block runs from its heading to its "75 & ABOVE" row. Rows
     outside a district's block -- the tehsils' and talukas' breakdowns that
     follow it -- are not read, and a district heading arriving before the
     block it interrupts has closed is refused rather than half-read.
+
+    ``expected`` is the districts Table 10 names, which is what lets a
+    heading drawn over the page's leftover first heading be read at all
+    (:func:`overdrawn_heading`).
     """
     out: dict[str, dict[str, Any]] = {}
     current: str | None = None
     block: dict[str, Any] | None = None
+    ghost: str | None = None               # the document's first heading
     # Where the label column ends: the left edge of the first figure in the
     # district's ALL AGES row, which is always the block's first row. A word
     # left of it is a label word; right of it, a figure.
@@ -208,6 +244,10 @@ def ages_from_pages(pages, slug: str) -> dict[str, dict[str, Any]]:
         for cells in rows:
             line = line_of(cells)
             name = heading(line, slug)
+            if name and ghost is None:
+                ghost = line
+            if not name:
+                name = overdrawn_heading(line, ghost, expected)
             if name:
                 if name == current:
                     continue                   # the heading repeated on a new page
@@ -441,12 +481,12 @@ def build(only: set[str] | None = None) -> tuple[list[dict[str, Any]],
         if only and slug not in only:
             continue
         log(f"  {province}")
-        blob4, url4 = fetch(candidates(4, slug))
-        log(f"    Table 4: {len(blob4):,} bytes from {url4}")
-        ages = read_ages(blob4, slug)
         blob10, url10 = fetch(candidates(10, slug))
         log(f"    Table 10: {len(blob10):,} bytes from {url10}")
         nationality = read_nationality(blob10, slug)
+        blob4, url4 = fetch(candidates(4, slug))
+        log(f"    Table 4: {len(blob4):,} bytes from {url4}")
+        ages = read_ages(blob4, slug, set(nationality))
         if set(ages) != set(nationality):
             raise SystemExit(
                 f"pakistan: {province}: Table 4 and Table 10 name different "
