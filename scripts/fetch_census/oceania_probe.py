@@ -38,7 +38,6 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from collections import OrderedDict
-from typing import Any
 
 from ._shared import log
 
@@ -283,6 +282,27 @@ def cmd_xlsx(url: str, sheets: list[str], first: int, last: int, width: int,
                 log(f"    {n:>4}: {line}")
 
 
+def cmd_csv(url: str, columns: list[str], rows: int, grep: str | None) -> None:
+    """Chosen columns of a CSV, one row per line (all columns' names first)."""
+    import csv
+    status, ctype, body = fetch(url)
+    log(f"== {url}\n  HTTP {status} {ctype} {len(body):,} bytes")
+    if status != 200:
+        return
+    reader = csv.DictReader(io.StringIO(body.decode("utf-8-sig", "replace")))
+    log("  columns: " + ", ".join(reader.fieldnames or []))
+    pattern = re.compile(grep, re.I) if grep else None
+    shown = 0
+    for row in reader:
+        line = " | ".join(str(row.get(c, "")) for c in columns)
+        if pattern and not pattern.search(line):
+            continue
+        log(f"    {line}")
+        shown += 1
+        if shown >= rows:
+            break
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -320,7 +340,15 @@ def main() -> int:
     x.add_argument("--width", type=int, default=40)
     x.add_argument("--cols", type=int, default=40)
     x.add_argument("--grep")
+    c = sub.add_parser("csv")
+    c.add_argument("url")
+    c.add_argument("--col", action="append", default=[])
+    c.add_argument("--rows", type=int, default=300)
+    c.add_argument("--grep")
     args = ap.parse_args()
+    if args.cmd == "csv":
+        cmd_csv(args.url, args.col, args.rows, args.grep)
+        return 0
     if args.cmd == "xlsx":
         cmd_xlsx(args.url, args.sheet, args.first, args.last, args.width, args.grep, args.cols)
         return 0
