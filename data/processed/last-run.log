@@ -1,19 +1,26 @@
-== cod-ab-yem: licence=cc-by-igo  method=Dataset: Downloaded from data source website
-  - yem_admin_boundaries.gdb.zip (Geodatabase, 2518102 B)
-    https://data.humdata.org/dataset/6b2656e2-b915-4671-bfed-468d5edcd80a/resource/0374be70-374c-4ecc-a591-b2d1f2644f06/download/yem_admin_boundaries.gdb.zip
-  - yem_admin_boundaries.shp.zip (SHP, 5286184 B)
-    https://data.humdata.org/dataset/6b2656e2-b915-4671-bfed-468d5edcd80a/resource/eb58b807-bea0-450f-a654-0fa49054b4e0/download/yem_admin_boundaries.shp.zip
-  - yem_admin_boundaries.geojson.zip (GeoJSON, 4980305 B)
-    https://data.humdata.org/dataset/6b2656e2-b915-4671-bfed-468d5edcd80a/resource/c79a3728-44cd-4d20-8ea4-ecfab88c1450/download/yem_admin_boundaries.geojson.zip
-  - yem_admin_boundaries.xlsx (XLSX, 145713 B)
-    https://data.humdata.org/dataset/6b2656e2-b915-4671-bfed-468d5edcd80a/resource/4a17b830-0902-455c-a57d-551392f5a795/download/yem_admin_boundaries.xlsx
-== cod-ab-syr: licence=cc-by-igo  method=Dataset: Other
-  - syr_admin_boundaries.gdb.zip (Geodatabase, 2428487 B)
-    https://data.humdata.org/dataset/356a63e9-90aa-4b9c-a938-58ef24469c00/resource/041bfeb9-1c03-4587-a77b-e1bef35639b3/download/syr_admin_boundaries.gdb.zip
-  - syr_admin_boundaries.shp.zip (SHP, 4988013 B)
-    https://data.humdata.org/dataset/356a63e9-90aa-4b9c-a938-58ef24469c00/resource/2e69313a-b8a8-46bf-8cc8-fbd132b279bd/download/syr_admin_boundaries.shp.zip
-  - syr_admin_boundaries.geojson.zip (GeoJSON, 5605326 B)
-    https://data.humdata.org/dataset/356a63e9-90aa-4b9c-a938-58ef24469c00/resource/ab4b6f19-3854-4b2b-8f5c-b5dc474a4c0c/download/syr_admin_boundaries.geojson.zip
-  - syr_admin_boundaries.xlsx (XLSX, 1061438 B)
-    https://data.humdata.org/dataset/356a63e9-90aa-4b9c-a938-58ef24469c00/resource/b2961725-e0e1-4977-acd5-984ea54ef522/download/syr_admin_boundaries.xlsx
-HDX package_show answered 404
+syria-subnational-boundaries-and-tabular-data: https://data.humdata.org/dataset/dde592ca-bc3b-468a-9241-780396a77e17/resource/f6817f85-8519-4933-a6ef-57d6f26da2b0/download/syria_uscb_201811.xlsx 200 366,769 bytes
+  Ethnicity: 76 rows; fields: AREA_NAME, GEO_CONCAT, GEO_MATCH, CNTRY_NAME, ADM1_NAME, ADM2_NAME, ADM_LEVEL, USCBCMNT, GENC_CODE, FIPS_CODE, NSO_CODE, NSO_NAME, ETH_TPOP_B, ETH_SYR_B, ETH_PAL_B, ETH_ARAB_B, ETH_EURO_B, ETH_AFNA_B, ETH_ASIA_B, ETH_AUS_B, ETH_USA_B, ETH_OTHR_B, ETH_TPOP_M, ETH_SYR_M, ETH_PAL_M, ETH_ARAB_M, ETH_EURO_M, ETH_AFNA_M, ETH_ASIA_M, ETH_AUS_M, ETH_USA_M, ETH_OTHR_M, ETH_TPOP_F, ETH_SYR_F, ETH_PAL_F, ETH_ARAB_F, ETH_EURO_F, ETH_AFNA_F, ETH_ASIA_F, ETH_AUS_F, ETH_USA_F, ETH_OTHR_F
+    ETH_TPOP_B = Total population, both sexes
+    ETH_SYR_B = Syrian, both sexes
+    ETH_PAL_B = Palestinian, both sexes
+    ETH_ARAB_B = Arab, other, both sexes
+    ETH_EURO_B = European, both sexes
+    ETH_AFNA_B = African, non-Arab, both sexes
+    ETH_ASIA_B = Asian, both sexes
+    ETH_AUS_B = Australian, both sexes
+    ETH_USA_B = American, both sexes
+    ETH_OTHR_B = Other, both sexes
+  | DIMASHQ | SYR_01 | DIMASHQ | None | 1 | SY01 | مدينة دمشق | 1505906 | 1343604 | 127723 | 25198 | 1515 | 333 | 5081 | 25 | 203 | 2224
+  | ḨALAB | SYR_02 | ḨALAB | None | 1 | SY02 | حلب | 4045166 | 4018008 | 18899 | 3278 | 317 | 40 | 585 | 5 | 22 | 4012
+  | RĪF DIMASHQ | SYR_03 | RĪF DIMASHQ | None | 1 | SY03 | ريف دمشق | 2273074 | 2122840 | 111947 | 30018 | 395 | 105 | 3411 | 1 | 119 | 4238
+  | ḨIMŞ | SYR_04 | ḨIMŞ | None | 1 | SY04 | حمص | 1529402 | 1500951 | 11904 | 15645 | 139 | 4 | 119 | 2 | 27 | 611
+  | ḨAMĀH | SYR_05 | ḨAMĀH | None | 1 | SY05 | حماة | 1384953 | 1379207 | 4978 | 518 | 43 | 54 | 17 | 0 | 5 | 131
+  | AL LĀDHIQĪYAH | SYR_06 | AL LĀDHIQĪYAH | None | 1 | SY06 | اللاذقية | 879551 | 871239 | 5992 | 1798 | 208 | 13 | 167 | 10 | 9 | 115
+  | IDLIB | SYR_07 | IDLIB | None | 1 | SY07 | إدلب | 1258427 | 1257852 | 205 | 267 | 29 | 0 | 15 | 0 | 3 | 56
+  | AL ḨASAKAH | SYR_08 | AL ḨASAKAH | None | 1 | SY08 | الحسكة | 1275106 | 1260876 | 256 | 1948 | 147 | 2 | 168 | 1 | 50 | 11658
+  | DAYR AZ ZAWR | SYR_09 | DAYR AZ ZAWR | None | 1 | SY09 | دير الزور | 1004747 | 1004316 | 39 | 202 | 9 | 0 | 3 | 0 | 5 | 173
+  | ŢARŢŪS | SYR_10 | ŢARŢŪS | None | 1 | SY10 | طرطوس | 701395 | 695232 | 432 | 5311 | 198 | 5 | 55 | 3 | 28 | 131
+  | AR RAQQAH | SYR_11 | AR RAQQAH | None | 1 | SY11 | الرقة | 793514 | 792629 | 335 | 142 | 42 | 1 | 8 | 0 | 2 | 355
+  | DAR‘Ā | SYR_12 | DAR‘Ā | None | 1 | SY12 | درعا | 843478 | 824805 | 16620 | 1915 | 36 | 2 | 25 | 0 | 5 | 70
+  | AS SUWAYDĀ’ | SYR_13 | AS SUWAYDĀ’ | None | 1 | SY13 | السويداء | 313231 | 310456 | 67 | 2585 | 6 | 1 | 5 | 0 | 31 | 80
+  | AL QUNAYŢIRAH | SYR_14 | AL QUNAYŢIRAH | None | 1 | SY14 | القنيطرة | 66627 | 65936 | 607 | 76 | 0 | 0 | 0 | 0 | 0 | 8
