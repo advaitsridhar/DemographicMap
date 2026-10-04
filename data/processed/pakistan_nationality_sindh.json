@@ -1,0 +1,1601 @@
+[
+  {
+    "id": "PAK-NAT-sindh",
+    "level": "admin1",
+    "name": "Sindh",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.6,
+        "count": 55426749
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.3,
+        "count": 145875
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.1,
+        "count": 40891
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 24137
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 757
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "70912109B8393927546319",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 211,660 of the 55,638,409 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-badin",
+    "level": "admin2",
+    "name": "Badin",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 1944466
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 345
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 590
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B83330290497883",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 951 of the 1,945,417 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-dadu",
+    "level": "admin2",
+    "name": "Dadu",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1741326
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 315
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 653
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B38030723714004",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 981 of the 1,742,307 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-ghotki",
+    "level": "admin2",
+    "name": "Ghotki",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 1759883
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 351
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 518
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B41234063564687",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 878 of the 1,760,761 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-hyderabad",
+    "level": "admin2",
+    "name": "Hyderabad",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 2430281
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.1,
+        "count": 1386
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 808
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 11
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B34805202457071",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 2,259 of the 2,432,540 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-jacobabad",
+    "level": "admin2",
+    "name": "Jacobabad",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1173170
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.1,
+        "count": 594
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 319
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B51859318553172",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 927 of the 1,174,097 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-jamshoro",
+    "level": "admin2",
+    "name": "Jamshoro",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1116550
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 360
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 293
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B94762561978549",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 666 of the 1,117,216 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-kambar-shahdad-kot",
+    "level": "admin2",
+    "name": "Kambar Shahdad Kot",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 3298241
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 524
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 528
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B25298003092130",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 1,081 of the 3,299,322 people counted here are not Pakistani nationals. The shape is Kambar Shahdad Kot and Larkana summed, single year by single year: the boundary file draws, under the name Qambar Shahdadkot, the undivided Larkana district of before 2004 -- Larkana city lies inside the shape."
+  },
+  {
+    "id": "PAK-NAT-sindh-karachi",
+    "level": "admin2",
+    "name": "Karachi",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.1,
+        "count": 20166709
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.7,
+        "count": 138938
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.1,
+        "count": 23850
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.1,
+        "count": 27323
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 654
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B89354468833127",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 190,765 of the 20,357,474 people counted here are not Pakistani nationals. The shape is Karachi Central and Karachi East and Karachi South and Karachi West and Korangi and Malir and Keamari summed, single year by single year: the boundary file draws Karachi as one shape; the census counts its seven districts."
+  },
+  {
+    "id": "PAK-NAT-sindh-kashmore",
+    "level": "admin2",
+    "name": "Kashmore",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1232552
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.1,
+        "count": 993
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 384
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B9433452201095",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 1,405 of the 1,233,957 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-khairpur",
+    "level": "admin2",
+    "name": "Khairpur",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 2596335
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 414
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 673
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B73341627633867",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 1,113 of the 2,597,448 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-matiari",
+    "level": "admin2",
+    "name": "Matiari",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 848949
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 187
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 211
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B2308432859426",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 402 of the 849,351 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-mirpur-khas",
+    "level": "admin2",
+    "name": "Mirpur Khas",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1679957
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 253
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 755
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B59402591516435",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 1,023 of the 1,680,980 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-naushahro-feroze",
+    "level": "admin2",
+    "name": "Naushahro Feroze",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1775372
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 319
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 753
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B29754005745018",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 1,087 of the 1,776,459 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-sanghar",
+    "level": "admin2",
+    "name": "Sanghar",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 2305419
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.1,
+        "count": 1981
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 405
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B69228625055363",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 2,412 of the 2,307,831 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-shaheed-benazirabad",
+    "level": "admin2",
+    "name": "Shaheed Benazirabad",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1843491
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 273
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 843
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B8268700226497",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 1,136 of the 1,844,627 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-shikarpur",
+    "level": "admin2",
+    "name": "Shikarpur",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 1385773
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 303
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 240
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B71710273368216",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 557 of the 1,386,330 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-sukkur",
+    "level": "admin2",
+    "name": "Sukkur",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1624635
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 357
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 460
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B6836012758055",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 832 of the 1,625,467 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-tando-allahyar",
+    "level": "admin2",
+    "name": "Tando Allahyar",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 921588
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 274
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B20597403673155",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 424 of the 922,012 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-tando-muhammad-khan",
+    "level": "admin2",
+    "name": "Tando Muhammad Khan",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 725580
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 216
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B98253139907552",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 343 of the 725,923 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-tharparkar",
+    "level": "admin2",
+    "name": "Tharparkar",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 1777292
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 268
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 552
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B67519654827672",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 831 of the 1,778,123 people counted here are not Pakistani nationals."
+  },
+  {
+    "id": "PAK-NAT-sindh-thatta",
+    "level": "admin2",
+    "name": "Thatta",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 99.9,
+        "count": 1921376
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 336
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 734
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B60768586772273",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 1,107 of the 1,922,483 people counted here are not Pakistani nationals. The shape is Thatta and Sujawal summed, single year by single year: the boundary file draws Thatta as it was before Sujawal was carved out of it in 2013."
+  },
+  {
+    "id": "PAK-NAT-sindh-umer-kot",
+    "level": "admin2",
+    "name": "Umer Kot",
+    "parent": "PAK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pakistani",
+        "pct": 100.0,
+        "count": 1157804
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 154
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 321
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 10: population by nationality, age group, sex and rural/urban",
+        "url": "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf",
+        "year": 2023,
+        "license": "Pakistan Bureau of Statistics, free reuse with attribution"
+      }
+    ],
+    "parent_name": "Sindh",
+    "country": "PAK",
+    "match_by": "shape_id",
+    "shape_id": "60131773B28622897485714",
+    "ethnicity_year": 2023,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Census 2023 Table 10 counts everyone enumerated by nationality -- Pakistani, Afghani, Bangali (shown as Bangladeshi), Chinese and others -- and the Bureau's own National Census Report says the question \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The census asks no ethnicity question. 480 of the 1,158,284 people counted here are not Pakistani nationals."
+  }
+]

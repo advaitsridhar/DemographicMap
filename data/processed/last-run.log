@@ -1,9 +1,9 @@
 pakistan_census_tables: Census 2023 Tables 4 and 10
-  Balochistan
-    Table 4: 20,942,975 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_balochistan_districts.pdf
-    Table 10: 3,274,329 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_balochistan_districts.pdf
-    34 districts; single years, five-year groups and nationalities all reconcile
-  Balochistan: 27 bound by shape id; 0 row(s) and 0 unit(s) left over
-  wrote data/processed/pakistan_age_balochistan.json (56 kB)
-  wrote data/processed/pakistan_nationality_balochistan.json (61 kB)
-  28 age records, 28 nationality records
+  Sindh
+    Table 4: 18,673,574 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_sindh_districts.pdf
+    Table 10: 2,908,157 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf
+    30 districts; single years, five-year groups and nationalities all reconcile
+  Sindh: 22 bound by shape id; 0 row(s) and 0 unit(s) left over
+  wrote data/processed/pakistan_age_sindh.json (45 kB)
+  wrote data/processed/pakistan_nationality_sindh.json (49 kB)
+  23 age records, 23 nationality records
