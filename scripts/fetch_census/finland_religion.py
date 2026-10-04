@@ -30,25 +30,38 @@ joined); then
   population. The counts are the shares times the population, so a summed share
   is good to 0.05 points.
 
-Where a unit is summed and its 2020 territory is not today's unit of the same
-code, its population is written too -- the count for the territory the map
-draws, which 11ra's own figures (and the files that read them by today's
-units) do not give.
+Every unit also carries its population on the same day, by the same rule:
+11ra's own count where today's unit of its code is the same territory, else
+the sum of its municipalities -- the count for the territory the map draws,
+which no figure for today's units gives. Where the map shows a figure for
+today's unit of the same code on a different territory (nine regions, the
+Lahti sub-region), or finland.py's 2020 count, this corrects it.
 
-**Labels.** "Evangelical Lutheran Church of Finland"; "Member of another
-religious community" (the Orthodox Church, the Catholic Church, the free
-churches, the registered Islamic communities and every other community the
-register knows -- 11rx has them apart for the country only); "Not a member of
-any religious community", the register's own words, as Norway's and Denmark's
-register rows are filed: outside every registered body, which is not a
-statement of belief.
+**Labels.** 11ra gives three groups below the country, and the units keep
+exactly those three: "Evangelical Lutheran Church of Finland"; "Member of
+another religious community" (the Orthodox Church, the Catholic Church, the
+free churches, the registered Islamic communities and every other community
+the register knows -- 11rx has them apart for the whole country only); and
+"Not a member of any religious community", the register's own words for what
+Statistics Finland calls no religious affiliation, filed with no religion.
+Each note says it is membership, not belief: a believer outside every
+registered community is in the third group.
+
+**The country.** 11rx's count by community is read in full, its two levels
+checked against each other and the whole, and printed as the country's
+itemised figure (NATIONAL_GROUPS) for data/curated/admin0_detail.json, which
+the build applies after summing the regions: the regions' three groups would
+fold the Orthodox churches, Catholics and Muslims into one "other" for the
+country, where the register itself names them. The run says whether the
+curated row agrees with the register.
 
 **Checks.** Every area's three shares make 100 to within their rounding; the
 municipalities make the country's population exactly; 11rx's national count of
 Lutherans, of the unaffiliated and of everyone else agrees with 11ra's national
-shares to within their rounding; every unit taken from 11ra's own row agrees
-with the sum of its municipalities to 0.1 points; every 2020 sub-region lies in
-one 2020 region; every drawn polygon is bound one to one.
+shares to within their rounding, and its communities make its whole on both of
+its levels; every unit taken from 11ra's own row agrees with the sum of its
+municipalities to 0.1 points; every 2020 sub-region lies in one 2020 region;
+every drawn polygon is bound one to one.
 
 Usage:
     python -m scripts.fetch_census.finland_religion
@@ -57,6 +70,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from collections import defaultdict
 from typing import Any, Callable
@@ -83,6 +97,40 @@ CONTENTS = [POPULATION, *SHARES]
 # ("F09") and those in no religious community ("H00"); the rest are the
 # other communities.
 NATIONAL_ALL, NATIONAL_LUTHERAN, NATIONAL_NONE = "SSS", "F09", "H00"
+# 11rx's two levels (uskontokunta_10_20190101): eight groups that make the
+# whole, two of which -- Christianity (F00) and the other religious groups
+# (G00) -- are made of the communities listed under them.
+NATIONAL_TOP = ("A00", "B00", "C00", "D00", "E00", "F00", "G00", "H00")
+NATIONAL_PARTS = {
+    "F00": ("F01", "F02", "F03", "F04", "F05", "F06", "F07", "F08", "F09", "F10", "F11"),
+    "G00": ("G01", "G02", "G03", "G04", "G05", "G06"),
+}
+# The country's figure, itemised from 11rx: each label and the 11rx codes it
+# joins, every community of the lower level in exactly one. The labels are the
+# office's own where the group tree places them; "Other Christian" joins the
+# smaller Christian bodies 11rx names (Adventism, the Anglican churches,
+# Baptism, the Lutheran free congregations, Methodism, the free churches and
+# other Christian), and "Other religions" the rest of the other religious
+# groups (the Bahá'í, the Christian Community, the Liberal Catholic Church and
+# others) with the indigenous religions and neo-paganism.
+NATIONAL_GROUPS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    (LUTHERAN, ("F09",)),
+    (NONE, ("H00",)),
+    ("Orthodox churches", ("F08",)),
+    ("Islam", ("D00",)),
+    ("Other Christian", ("F01", "F02", "F03", "F04", "F07", "F10", "F11")),
+    ("Roman Catholic Church", ("F06",)),
+    ("Jehovah's Witnesses", ("G02",)),
+    ("Pentecostalism", ("F05",)),
+    ("Church of Jesus Christ of Latter-day Saints", ("G03",)),
+    ("Buddhism", ("B00",)),
+    ("Hinduism", ("C00",)),
+    ("Judaism", ("E00",)),
+    ("Other religions", ("A00", "G01", "G04", "G05", "G06")),
+)
+NATIONAL_PAGE = ("https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__vaerak/"
+                 "statfin_vaerak_pxt_11rx.px")
+CURATED = PROCESSED.parent / "curated" / "admin0_detail.json"
 BASIS = "registered membership"
 # Three shares, each rounded to one decimal, make 100 to within 0.15.
 ROUNDING = 0.15
@@ -172,6 +220,83 @@ def check_national(rows: Rows, national: dict[str, float]) -> dict[str, float]:
     return counted
 
 
+def national_groups(national: dict[str, float]) -> list[dict[str, Any]]:
+    """11rx's count by community -> the country's itemised figure, as
+    NATIONAL_GROUPS joins it.
+
+    The eight groups of the upper level must make everyone, and Christianity
+    and the other religious groups their communities, to the person; every
+    community of the lower level must be in exactly one label, and 11rx must
+    have no code the reader does not know. Anything else stops the run."""
+    leaves = [c for c in NATIONAL_TOP if c not in NATIONAL_PARTS] + [
+        c for parts in NATIONAL_PARTS.values() for c in parts]
+    known = {NATIONAL_ALL, *NATIONAL_TOP, *leaves}
+    strange = sorted(set(national) - known)
+    missing = sorted(known - set(national))
+    if strange or missing:
+        raise SystemExit(f"11rx: communities the reader does not know {strange}; "
+                         f"communities it lacks {missing}")
+    for whole, parts in ((NATIONAL_ALL, NATIONAL_TOP), *NATIONAL_PARTS.items()):
+        made = sum(national[c] for c in parts)
+        if abs(made - national[whole]) > 0.5:
+            raise SystemExit(f"11rx: {whole} is {national[whole]:,.0f}, its parts make "
+                             f"{made:,.0f}")
+    used = [c for _, codes in NATIONAL_GROUPS for c in codes]
+    if sorted(used) != sorted(leaves):
+        raise SystemExit(f"NATIONAL_GROUPS: joins {sorted(used)}, 11rx's communities are "
+                         f"{sorted(leaves)}")
+    counts = {label: sum(national[c] for c in codes) for label, codes in NATIONAL_GROUPS}
+    return shares(counts, total=national[NATIONAL_ALL])
+
+
+def curated_agreement(groups: list[dict[str, Any]], year: int) -> str:
+    """Whether data/curated/admin0_detail.json's Finnish religion row is this
+    figure: said, never stopped on, since the curated file is the build's."""
+    try:
+        rows = json.loads(CURATED.read_text(encoding="utf-8")).get("rows", [])
+    except (OSError, ValueError) as exc:
+        return f"the curated file cannot be read ({exc})"
+    row = next((r for r in rows if r.get("country") == "FIN"
+                and r.get("field") == "religion"), None)
+    if row is None:
+        return "the curated file has no row for Finland's religion yet"
+    theirs = {g.get("group"): g.get("count") for g in row.get("groups") or []}
+    ours = {g["group"]: g["count"] for g in groups}
+    if theirs == ours and row.get("year") == year:
+        return f"the curated row agrees with the register's {year} count"
+    return (f"the curated row ({row.get('year')}) differs from the register's {year} count: "
+            + "; ".join(f"{k} {theirs.get(k)} against {ours.get(k)}"
+                        for k in sorted(set(theirs) | set(ours), key=str)
+                        if theirs.get(k) != ours.get(k)))
+
+
+def curated_row(groups: list[dict[str, Any]], year: int, people: float) -> dict[str, Any]:
+    """The country's row for data/curated/admin0_detail.json, which the build
+    applies after summing the regions, from 11rx's itemised count."""
+    return {
+        "country": "FIN", "field": "religion", "year": year, "basis": BASIS,
+        "groups": groups,
+        "source": f"Statistics Finland, table 11rx (population by religious community, age "
+                  f"and sex), 31 December {year}",
+        "url": NATIONAL_PAGE, "license": "CC BY 4.0 (Statistics Finland)",
+        "note": (f"Membership of a religious community as Finland's population register "
+                 f"records it for every resident on 31 December {year}: {people:,.0f} people "
+                 "(Statistics Finland, table 11rx). A count of registered membership, not of "
+                 "belief. 'Not a member of any religious community' is everyone in no "
+                 "registered community, which Statistics Finland calls no religious "
+                 "affiliation; it also holds people of faith who belong to none. 'Other "
+                 "Christian' joins the smaller Christian bodies the table names (Adventists, "
+                 "the Anglican churches, Baptists, the Lutheran free congregations, "
+                 "Methodists, the free churches and other Christians); 'Other religions' the "
+                 "Bahá'í, the Christian Community, the Liberal Catholic Church, the indigenous "
+                 "religions and neo-paganism and the rest of the other religious groups. "
+                 "Statistics Finland counts the communities apart for the whole country only: "
+                 "the regions and sub-regions carry the same register's three groups (the "
+                 "Lutheran church, every other community together, and none) for the same "
+                 "day, so this figure is the itemised whole of theirs."),
+    }
+
+
 def place(current: list[str], key: dict[str, str], merged: dict[str, str],
           what: str) -> dict[str, str]:
     """Today's municipality codes -> the units of the key's year, by code.
@@ -251,11 +376,15 @@ def composition(rows: Rows, prefix: str, unit: str, people: float,
             f"it for every resident on 31 December {year} (Statistics Finland, key figures on "
             f"population, table 11ra): {LUTHERAN} {shown[LUTHERAN]:.1f}%, other religious "
             f"communities {shown[OTHER]:.1f}%, none {shown[NONE]:.1f}% of {people:,.0f} "
-            "people. A count of registered membership, not of belief. 'Member of another "
-            "religious community' joins the Orthodox Church of Finland, the Catholic Church, "
-            "the free churches, the registered Islamic communities and every other community "
-            "the register knows, which Statistics Finland publishes apart for the whole "
-            "country only (table 11rx). " + how)
+            "people. A count of registered membership, not of belief. Below the country, "
+            "Statistics Finland publishes these three groups only, and they are shown as "
+            "published: 'Member of another religious community' joins the Orthodox Church of "
+            "Finland, the Catholic Church, the free churches, the registered Islamic "
+            "communities and every other community the register knows, which it counts apart "
+            "for the whole country only (table 11rx). 'Not a member of any religious "
+            "community' is the register's row for everyone in no registered community, which "
+            "Statistics Finland calls no religious affiliation; being membership, it also "
+            "holds people of faith who belong to no registered community. " + how)
     fields = {"religion": shares(counts, total=people), "religion_year": year,
               "religion_basis": BASIS, "religion_note": note}
     if abs(total - people) > ROUNDING / 100.0 * people + 1:
@@ -378,15 +507,18 @@ def finland(keys: Callable[[int], tuple] = load_keys, key_year: int = 2020
     community = next(c for c in nmeta if c.startswith("uskonto"))
     national = {key[community][0]: value for key, value in unstack(request_json(NATIONAL, {
         "query": [
-            {"code": community, "selection": {"filter": "item",
-                                              "values": [NATIONAL_ALL, NATIONAL_LUTHERAN,
-                                                         NATIONAL_NONE]}},
+            {"code": community, "selection": {"filter": "all", "values": ["*"]}},
             {"code": "sukupuoli_9_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
             {"code": "ikaryhma_10_20180101", "selection": {"filter": "item", "values": ["SSS"]}},
             {"code": "timeperiod_y", "selection": {"filter": "item", "values": [year]}},
         ], "response": {"format": "json-stat2"}}, pause=PAUSE))}
     counted = check_national(rows, national)
     log("  11rx agrees: " + "; ".join(f"{k} {v:,.0f}" for k, v in counted.items()))
+    detail = curated_row(national_groups(national), int(year), national[NATIONAL_ALL])
+    log(f"  11rx's {len(national) - 1} communities make its whole on both levels; the "
+        "country's figure for data/curated/admin0_detail.json -- "
+        f"{curated_agreement(detail['groups'], int(year))}:")
+    log("  " + json.dumps(detail, ensure_ascii=False))
 
     sk_of, sk_names, found, mk_of, mk_names, munis = keys(key_year)
     for sk in set(sk_of.values()):
