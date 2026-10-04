@@ -53,7 +53,9 @@ NATIONAL = 4_044_210
 NATIONAL_MEDIAN = 41.5        # Census of Population 2020, Statistical Release 1
 MEDIAN_TOLERANCE = 0.3
 MIN_RESIDENTS = 1_000
-COLUMN = re.compile(r"^(?P<age>.+?)_(?P<sex>Total|Males|Females)$")
+# The table's columns are sex first: Total_Total, Total_0_4 ... Total_90andOver,
+# then the same for Males_ and Females_.
+COLUMN = re.compile(r"^(?P<sex>Total|Males|Females)_(?P<age>.+)$")
 SMALL_NOTE = ("The census counts fewer than {n} residents here ({people:,}, rounded to "
               "the nearest ten in every cell): too few for a median or a ratio worth "
               "printing from groups rounded to tens.")
@@ -116,6 +118,12 @@ def read(path=CSV) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
         raise SystemExit(f"singapore_age: areas in no declared region: {unknown}")
     for name, u in areas.items():
         made = sum(n for _, _, n in u["groups"])
+        if not made and not u["men"] and not u["women"]:
+            # Every group "-" while the area's own total survives -- Boon
+            # Lay's 40, Tengah's 10: a breakdown withheld, as in the
+            # composition tables, not people of no age.
+            u["withheld"] = True
+            continue
         slack = 10 * len(u["groups"])
         if abs(made - u["total"]) > slack or abs(u["men"] + u["women"] - u["total"]) > 20:
             raise SystemExit(f"singapore_age: {name}: groups make {made:,}, sexes "
@@ -140,8 +148,10 @@ def build(areas: dict[str, dict[str, Any]], admin2: list[dict[str, Any]]) -> lis
         shape = by_name.get(fold(name))
         if shape is None:
             raise SystemExit(f"singapore_age: no polygon for the planning area {name!r}")
-        if u["total"] < MIN_RESIDENTS:
+        if u["total"] < MIN_RESIDENTS or u.get("withheld"):
             note = SMALL_NOTE.format(n=MIN_RESIDENTS, people=int(u["total"]))
+            if u.get("withheld"):
+                note += " The census prints its age and sex breakdown as '-', withheld."
             fields = {"median_age": gap(NOT_AVAILABLE, note), "sex_ratio": gap(NOT_AVAILABLE, note)}
         else:
             median = grouped(u["groups"])
