@@ -634,9 +634,8 @@ NOTES = {
     "46923920B14813142167534": (
         "Gönyeli municipality's quarters Gönyeli and Yenikent (99-100% of their mapped buildings in "
         "this polygon); its third, Kanlıköy, is the village of Kanli. Fringes of neighbouring quarters "
-        "(Ortaköy, Aydemet, Alayköy, Aşağı Dikmen) also reach into the polygon by OpenStreetMap's "
-        "outlines; their residents there, at most about a tenth of this figure by building counts, are "
-        "not in it."),
+        "(Ortaköy, Aşağı Dikmen, Alayköy, Aydemet) also reach into the polygon by OpenStreetMap's "
+        "outlines, and their residents there are not in this figure."),
     "46923920B79735080950655": (
         "Değirmenlik municipality's six town quarters (Bahçelievler, Başpınar, Camialtı, Mehmetçik, "
         "Saray, Tepebaşı), 94-100% inside by OpenStreetMap's outlines; its other quarters are villages "
