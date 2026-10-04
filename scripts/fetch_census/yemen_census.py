@@ -82,12 +82,14 @@ NAT_TOLERANCE = 0.005
 # Bureau files under Socotra (32), made a governorate in 2013.
 COUNTS_ALSO = {"19": ("32",)}
 # Census districts whose ground the boundary file draws as two polygons in two
-# governorates: OCHA cut the parts of Hamdan and of Sanhan wa Bani Bahlul
-# nearest the capital into "Sana'a City Outskirts" units (its YE1319 and
-# YE1324) under Amanat al-Asimah, leaving the rest of each district (YE2319,
-# YE2324) in Sana'a governorate. The census counts each district whole, so
-# neither polygon's figure is known, and neither is either governorate's.
-SPLIT = {"2319": "1319", "2324": "1324"}
+# governorates: OCHA cut the parts of Hamdan (2301) and of Sanhan wa Bani
+# Bahlul (2305) nearest the capital into "Sana'a City Outskirts - <district>"
+# units under Amanat al-Asimah (13), with codes the census does not have,
+# leaving the rest of each district in Sana'a governorate (23). The census
+# counts each district whole, so neither polygon's figure is known, and
+# neither is either governorate's. Which outskirts unit is which district is
+# read from its label, and every code the census lacks must be one of them.
+SPLIT = ("2301", "2305")
 SPLIT_GOVERNORATES = {"13", "23"}
 
 
@@ -157,7 +159,8 @@ def nests(table: dict[str, dict[str, Any]], what: str, slack: float = 0.0,
             govs += row["total"]
     for gov, extra in also.items():
         for other in extra:
-            kids[gov] += kids.pop(other, 0.0)
+            if other in kids:
+                kids[gov] += kids.pop(other)
     for gov, made in kids.items():
         check(gov in table, f"yemen_census: {what}: districts of governorate {gov}, "
                             f"which has no row of its own")
@@ -246,10 +249,30 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
     codes2 = {sid: (p[2:] if p.upper().startswith("YE") else p) for sid, p in bound2.items()}
     missing = sorted(f"{c}" for c in codes2.values() if c not in cen)
     report("bound districts the census has no row for", missing)
+    labels = {u["id"]: u["name"] for u in admin2}
+    for code in SPLIT:
+        check(code in cen, f"yemen_census: the split district {code} has no census row")
+    # An outskirts unit is the split district its label names; a bound code
+    # the census lacks that is no outskirts unit stops the run.
+    outskirts: dict[str, str] = {}
+    for sid, code in sorted(codes2.items()):
+        if code in cen:
+            continue
+        # "Sana'a City Outskirts - Hamdan": the district is named after the dash.
+        tail = key(labels[sid].rsplit("-", 1)[-1])
+        named = [d for d in SPLIT if tail.startswith(key(cen[d]["name"]))]
+        check(code[:2] in SPLIT_GOVERNORATES and len(named) == 1,
+              f"yemen_census: {labels[sid]} ({code}) has no census row and names "
+              f"{len(named)} of the split districts {SPLIT}")
+        outskirts[code] = named[0]
+        log(f"    {labels[sid]} ({code}): the outskirts part of "
+            f"{cen[named[0]]['name']} ({named[0]})")
+    check(sorted(outskirts.values()) == sorted(SPLIT),
+          f"yemen_census: outskirts units {outskirts} do not pair with the split "
+          f"districts {SPLIT}")
     # The code is the binding; the names are a check on it. A drawn label
     # and the Bureau's romanisation of the same code that share no spelling
     # are listed for a person to read.
-    labels = {u["id"]: u["name"] for u in admin2}
     differ = [f"{labels[sid]} = {cen[c]['name']} ({c})" for sid, c in sorted(codes2.items())
               if c in cen and key(labels[sid]) != key(cen[c]["name"])
               and key(labels[sid])[:4] != key(cen[c]["name"])[:4]]
@@ -270,20 +293,20 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
     rows, age_rows = [], []
     sources = [{"field": "population/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
                 "license": LICENCE}]
-    outskirts = {v: k for k, v in SPLIT.items()}
+    drawn_as = {code: labels[sid] for sid, code in codes2.items()}
     for level, drawn, codes in (("admin1", admin1, codes1), ("admin2", admin2, codes2)):
         for unit in drawn:
             code = codes.get(unit["id"])
             why = None
             if level == "admin2" and code in SPLIT:
-                why = (f"The 2004 census counts {cen[code]['name'].title()} district whole "
+                why = (f"The 2004 census counts {unit['name']} district whole "
                        f"({cen[code]['total']:,.0f} people); the boundary file draws the part "
                        f"of it nearest Sana'a apart, under Amanat al-Asimah, so the district's "
                        f"figures are not this shape's and the part's are not published.")
             elif level == "admin2" and code in outskirts:
-                why = (f"Part of {cen[outskirts[code]]['name'].title()} district, which the "
-                       f"2004 census counts whole with the rest of the district (drawn in "
-                       f"Sana'a governorate); nothing counts this part alone.")
+                why = (f"Part of {drawn_as.get(outskirts[code], outskirts[code])} district, "
+                       f"which the 2004 census counts whole with the rest of the district "
+                       f"(drawn in Sana'a governorate); nothing counts this part alone.")
             elif level == "admin1" and code in SPLIT_GOVERNORATES:
                 why = ("The boundary file draws the Sana'a City outskirts of Hamdan and of "
                        "Sanhan wa Bani Bahlul in Amanat al-Asimah, while the 2004 census and "
