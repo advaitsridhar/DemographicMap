@@ -1,6 +1,553 @@
-== https://data.gov.om/api/1.0/meta/dataset/OMPOP2016
-   403  0 bytes
-   
-== https://data.gov.om/api/1.0/meta/dataset/amxduh
-   403  0 bytes
-   
+population-area-and-population-density-per-square-kilometers-by-zone: total_count=552
+  {"year": "2016", "number_of_zone": "78", "lmntq": "ابو ظلوف/الزبارة", "zone": "Abu Dhalouf/Al Zubara", "population": 1660.0, "area_in_km": 427.0, "population_density_km2": 4.0}
+  {"year": "2019", "number_of_zone": "78", "lmntq": "ابو ظلوف/الزبارة", "zone": "Abu Dhalouf/Al Zubara", "population": 1660.0, "area_in_km": 427.0, "population_density_km2": 4.0}
+  {"year": "2014", "number_of_zone": "96", "lmntq": "ابو سمرة", "zone": "Abu Samra", "population": 1065.0, "area_in_km": 825.0, "population_density_km2": 1.0}
+  {"year": "2015", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "60", "lmntq": "الدفنة", "zone": "Al Dafna", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 2782.0, "area_in_km": 4.0, "population_density_km2": 676.0}
+  {"year": "2018", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 4022.0, "area_in_km": 4.0, "population_density_km2": 1005.0}
+  {"year": "2019", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 4022.0, "area_in_km": 4.0, "population_density_km2": 1005.0}
+  {"year": "2019", "number_of_zone": "15", "lmntq": "الدوحة الجديدة", "zone": "Al Doha Al Jadeeda", "population": 15920.0, "area_in_km": 0.0, "population_density_km2": 33352.0}
+  {"year": "2016", "number_of_zone": "51", "lmntq": "الغرافة / غرافة الريان / ازغوى / بني هاجر / السيج / روضة اقديم / الثميد", "zone": "Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid", "population": 56027.0, "area_in_km": 81.0, "population_density_km2": 692.0}
+  {"year": "2018", "number_of_zone": "51", "lmntq": "الغرافة / غرافة الريان / ازغوى / بني هاجر / السيج / روضة اقديم / الثميد", "zone": "Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid", "population": 56027.0, "area_in_km": 81.0, "population_density_km2": 692.0}
+  {"year": "2014", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 4834.0, "area_in_km": 629.0, "population_density_km2": 8.0}
+  {"year": "2015", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 5744.0, "area_in_km": 629.0, "population_density_km2": 9.0}
+  {"year": "2016", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 5744.0, "area_in_km": 629.0, "population_density_km2": 9.0}
+  {"year": "2019", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 5744.0, "area_in_km": 629.0, "population_density_km2": 9.0}
+  {"year": "2017", "number_of_zone": "42", "lmntq": "الهلال", "zone": "Al Hilal", "population": 11671.0, "area_in_km": 2.0, "population_density_km2": 6629.0}
+  {"year": "2018", "number_of_zone": "42", "lmntq": "الهلال", "zone": "Al Hilal", "population": 11671.0, "area_in_km": 2.0, "population_density_km2": 6629.0}
+  {"year": "2015", "number_of_zone": "1", "lmntq": "الجسرة", "zone": "Al Jasra", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2016", "number_of_zone": "1", "lmntq": "الجسرة", "zone": "Al Jasra", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 2614.0, "area_in_km": 554.0, "population_density_km2": 5.0}
+  {"year": "2017", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 2614.0, "area_in_km": 554.0, "population_density_km2": 5.0}
+  {"year": "2018", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 2614.0, "area_in_km": 554.0, "population_density_km2": 5.0}
+  {"year": "2014", "number_of_zone": "71", "lmntq": "الخريطيات / ازغوى / ام صلال محمد / بو فسيلة / ام صلال علي / ام العمد / ام عبيرية / لخشينة / صنيع لحميدي", "zone": "Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi", "population": 60509.0, "area_in_km": 318.0, "population_density_km2": 190.0}
+  {"year": "2016", "number_of_zone": "71", "lmntq": "الخريطيات / ازغوى / ام صلال محمد / بو فسيلة / ام صلال علي / ام العمد / ام عبيرية / لخشينة / صنيع لحميدي", "zone": "Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi", "population": 90835.0, "area_in_km": 318.0, "population_density_km2": 285.0}
+  {"year": "2017", "number_of_zone": "71", "lmntq": "الخريطيات / ازغوى / ام صلال محمد / بو فسيلة / ام صلال علي / ام العمد / ام عبيرية / لخشينة / صنيع لحميدي", "zone": "Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi", "population": 90835.0, "area_in_km": 318.0, "population_density_km2": 285.0}
+  {"year": "2015", "number_of_zone": "95", "lmntq": "الخرارة", "zone": "Al Kharrara", "population": 3478.0, "area_in_km": 902.0, "population_density_km2": 4.0}
+  {"year": "2016", "number_of_zone": "95", "lmntq": "الخرارة", "zone": "Al Kharrara", "population": 3478.0, "area_in_km": 902.0, "population_density_km2": 4.0}
+  {"year": "2018", "number_of_zone": "95", "lmntq": "الخرارة", "zone": "Al Kharrara", "population": 3478.0, "area_in_km": 902.0, "population_density_km2": 4.0}
+  {"year": "2014", "number_of_zone": "28", "lmntq": "الخليفات / راس بو عبود", "zone": "Al Khulaifat / Ras Bu Abboud", "population": 1868.0, "area_in_km": 1.0, "population_density_km2": 2023.0}
+  {"year": "2018", "number_of_zone": "28", "lmntq": "الخليفات / راس بو عبود", "zone": "Al Khulaifat / Ras Bu Abboud", "population": 1731.0, "area_in_km": 1.0, "population_density_km2": 1843.0}
+  {"year": "2019", "number_of_zone": "28", "lmntq": "الخليفات / راس بو عبود", "zone": "Al Khulaifat / Ras Bu Abboud", "population": 1731.0, "area_in_km": 1.0, "population_density_km2": 1843.0}
+  {"year": "2014", "number_of_zone": "52", "lmntq": "اللقطة / لبديع / الريان العتيق / الشقب / فريج الزعيم", "zone": "Al Luqta / Lebday / Old Al Rayyan / Al Shagub / Fereej Al Zaeem", "population": 20416.0, "area_in_km": 13.0, "population_density_km2": 1525.0}
+  {"year": "2018", "number_of_zone": "25", "lmntq": "المنصورة / فريج بن درهم", "zone": "Al Mansoura / Fereej Bin Dirham", "population": 37082.0, "area_in_km": 1.0, "population_density_km2": 24899.0}
+  {"year": "2014", "number_of_zone": "33", "lmntq": "المرخية", "zone": "Al Markhiya", "population": 5197.0, "area_in_km": 3.0, "population_density_km2": 1894.0}
+  {"year": "2015", "number_of_zone": "33", "lmntq": "المرخية", "zone": "Al Markhiya", "population": 6242.0, "area_in_km": 3.0, "population_density_km2": 2275.0}
+  {"year": "2016", "number_of_zone": "33", "lmntq": "المرخية", "zone": "Al Markhiya", "population": 6242.0, "area_in_km": 3.0, "population_density_km2": 2275.0}
+  {"year": "2017", "number_of_zone": "33", "lmntq": "المرخية", "zone": "Al Markhiya", "population": 6242.0, "area_in_km": 3.0, "population_density_km2": 2275.0}
+  {"year": "2014", "number_of_zone": "36", "lmntq": "المسيلة", "zone": "Al Messila", "population": 4716.0, "area_in_km": 2.0, "population_density_km2": 2254.0}
+  {"year": "2016", "number_of_zone": "36", "lmntq": "المسيلة", "zone": "Al Messila", "population": 6803.0, "area_in_km": 2.0, "population_density_km2": 3251.0}
+  {"year": "2014", "number_of_zone": "5", "lmntq": "النجادة / براحة الجفيري / فريج الأصمخ", "zone": "Al Najada / Brahat Al Jufairy / Fereej Al Asmakh", "population": 4138.0, "area_in_km": 0.0, "population_density_km2": 18828.0}
+  {"year": "2016", "number_of_zone": "5", "lmntq": "النجادة / براحة الجفيري / فريج الأصمخ", "zone": "Al Najada / Brahat Al Jufairy / Fereej Al Asmakh", "population": 2086.0, "area_in_km": 0.0, "population_density_km2": 9491.0}
+  {"year": "2015", "number_of_zone": "85", "lmntq": "النصرانية", "zone": "Al Nasraniya", "population": 1308.0, "area_in_km": 423.0, "population_density_km2": 3.0}
+  {"year": "2017", "number_of_zone": "85", "lmntq": "النصرانية", "zone": "Al Nasraniya", "population": 1308.0, "area_in_km": 423.0, "population_density_km2": 3.0}
+  {"year": "2019", "number_of_zone": "85", "lmntq": "النصرانية", "zone": "Al Nasraniya", "population": 1308.0, "area_in_km": 423.0, "population_density_km2": 3.0}
+  {"year": "2015", "number_of_zone": "17", "lmntq": "الرفاع / الهتمي العتيق", "zone": "Al Rufaa /  Old Al Hitmi", "population": 6026.0, "area_in_km": 0.0, "population_density_km2": 15231.0}
+  {"year": "2018", "number_of_zone": "17", "lmntq": "الرفاع / الهتمي العتيق", "zone": "Al Rufaa /  Old Al Hitmi", "population": 6026.0, "area_in_km": 0.0, "population_density_km2": 15231.0}
+  {"year": "2014", "number_of_zone": "79", "lmntq": "الرويس/مدينة الشمال", "zone": "Al Ruwais/Madinat Al Shamal", "population": 4996.0, "area_in_km": 167.0, "population_density_km2": 30.0}
+  {"year": "2018", "number_of_zone": "79", "lmntq": "الرويس/مدينة الشمال", "zone": "Al Ruwais/Madinat Al Shamal", "population": 5407.0, "area_in_km": 167.0, "population_density_km2": 32.0}
+  {"year": "2015", "number_of_zone": "38", "lmntq": "السد", "zone": "Al Sadd", "population": 17820.0, "area_in_km": 4.0, "population_density_km2": 5070.0}
+  {"year": "2018", "number_of_zone": "38", "lmntq": "السد", "zone": "Al Sadd", "population": 17820.0, "area_in_km": 4.0, "population_density_km2": 5070.0}
+  {"year": "2014", "number_of_zone": "39", "lmntq": "السد / المرقاب الجديد / فريج النصر", "zone": "Al Sadd / New Al Mirqab / Fereej Al Nasr", "population": 15184.0, "area_in_km": 3.0, "population_density_km2": 5542.0}
+  {"year": "2018", "number_of_zone": "39", "lmntq": "السد / المرقاب الجديد / فريج النصر", "zone": "Al Sadd / New Al Mirqab / Fereej Al Nasr", "population": 23853.0, "area_in_km": 3.0, "population_density_km2": 8706.0}
+  {"year": "2015", "number_of_zone": "80", "lmntq": "الشيحانية", "zone": "Al Sheehaniya", "population": 138509.0, "area_in_km": 287.0, "population_density_km2": 482.0}
+  {"year": "2016", "number_of_zone": "80", "lmntq": "الشيحانية", "zone": "Al Sheehaniya", "population": 138509.0, "area_in_km": 287.0, "population_density_km2": 482.0}
+  {"year": "2017", "number_of_zone": "80", "lmntq": "الشيحانية", "zone": "Al Sheehaniya", "population": 138509.0, "area_in_km": 287.0, "population_density_km2": 482.0}
+  {"year": "2019", "number_of_zone": "80", "lmntq": "الشيحانية", "zone": "Al Sheehaniya", "population": 138509.0, "area_in_km": 287.0, "population_density_km2": 482.0}
+  {"year": "2016", "number_of_zone": "7", "lmntq": "السوق", "zone": "Al Souq", "population": 297.0, "area_in_km": 0.0, "population_density_km2": 1059.0}
+  {"year": "2014", "number_of_zone": "75", "lmntq": "الذخيرة/راس لفان/ام بركة", "zone": "Al Thakhira/Rass Laffan/Umm Birka", "population": 128574.0, "area_in_km": 551.0, "population_density_km2": 234.0}
+  {"year": "2017", "number_of_zone": "75", "lmntq": "الذخيرة/راس لفان/ام بركة", "zone": "Al Thakhira/Rass Laffan/Umm Birka", "population": 100118.0, "area_in_km": 611.0, "population_density_km2": 164.0}
+  {"year": "2014", "number_of_zone": "46", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 16596.0, "area_in_km": 7.0, "population_density_km2": 4921.0}
+  {"year": "2018", "number_of_zone": "46", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 21367.0, "area_in_km": 7.0, "population_density_km2": 6215.0}
+  {"year": "2014", "number_of_zone": "47", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 12179.0, "area_in_km": 3.0, "population_density_km2": 3743.0}
+  {"year": "2018", "number_of_zone": "47", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 12815.0, "area_in_km": 3.0, "population_density_km2": 3933.0}
+  {"year": "2014", "number_of_zone": "91", "lmntq": "الثمامة / الوكير/المشاف", "zone": "Al Thumama / Al Wukair/Al Mashaf", "population": 22459.0, "area_in_km": 220.0, "population_density_km2": 102.0}
+  {"year": "2015", "number_of_zone": "91", "lmntq": "الثمامة / الوكير/المشاف", "zone": "Al Thumama / Al Wukair/Al Mashaf", "population": 165214.0, "area_in_km": 203.0, "population_density_km2": 812.0}
+  {"year": "2016", "number_of_zone": "72", "lmntq": "العطورية", "zone": "Al Utouriya", "population": 1232.0, "area_in_km": 662.0, "population_density_km2": 2.0}
+  {"year": "2018", "number_of_zone": "72", "lmntq": "العطورية", "zone": "Al Utouriya", "population": 1232.0, "area_in_km": 662.0, "population_density_km2": 2.0}
+  {"year": "2014", "number_of_zone": "48", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 1354.0, "area_in_km": 34.0, "population_density_km2": 120.0}
+  {"year": "2015", "number_of_zone": "48", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 2295.0, "area_in_km": 49.0, "population_density_km2": 172.0}
+  {"year": "2017", "number_of_zone": "48", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 2295.0, "area_in_km": 49.0, "population_density_km2": 172.0}
+  {"year": "2018", "number_of_zone": "48", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 2295.0, "area_in_km": 49.0, "population_density_km2": 172.0}
+  {"year": "2018", "number_of_zone": "49", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 442.0, "area_in_km": 37.0, "population_density_km2": 12.0}
+  {"year": "2019", "number_of_zone": "49", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 442.0, "area_in_km": 37.0, "population_density_km2": 12.0}
+  {"year": "2017", "number_of_zone": "19", "lmntq": "ميناء الدوحة", "zone": "Doha Port", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "30", "lmntq": "دحيل", "zone": "Duhail", "population": 7705.0, "area_in_km": 7.0, "population_density_km2": 1125.0}
+  {"year": "2017", "number_of_zone": "30", "lmntq": "دحيل", "zone": "Duhail", "population": 7705.0, "area_in_km": 7.0, "population_density_km2": 1125.0}
+  {"year": "2017", "number_of_zone": "86", "lmntq": "دخان", "zone": "Dukhan", "population": 13274.0, "area_in_km": 365.0, "population_density_km2": 36.0}
+  {"year": "2016", "number_of_zone": "14", "lmntq": "فريج عبد العزيز", "zone": "Fereej Abdel Aziz", "population": 15706.0, "area_in_km": 1.0, "population_density_km2": 29513.0}
+  {"year": "2014", "number_of_zone": "54", "lmntq": "فريج الأمير / لوعيب / مريخ / بعيا / محيرجة / فريج السودان", "zone": "Fereej Al Amir / Luaib / Muraikh / Baaya / Mehairja / Fereej Al Soudan", "population": 23591.0, "area_in_km": 18.0, "population_density_km2": 1306.0}
+  {"year": "2017", "number_of_zone": "54", "lmntq": "فريج الأمير / لوعيب / مريخ / بعيا / محيرجة / فريج السودان", "zone": "Fereej Al Amir / Luaib / Muraikh / Baaya / Mehairja / Fereej Al Soudan", "population": 24593.0, "area_in_km": 18.0, "population_density_km2": 1362.0}
+  {"year": "2014", "number_of_zone": "56", "lmntq": "فريج العسيري /  فريج الخليفات الجديد / بو سمرة / المعمورة / بوهامور / مسيمير / عين خالد.", "zone": "Fereej Al Asiri / New Fereej Al Khulaifat / Bu Samra /  Al Maamoura / Bu Hamour / Mesaimeer / Ain Khaled", "population": 85906.0, "area_in_km": 65.0, "population_density_km2": 1324.0}
+  {"year": "2016", "number_of_zone": "56", "lmntq": "فريج العسيري /  فريج الخليفات الجديد / بو سمرة / المعمورة / بوهامور / مسيمير / عين خالد.", "zone": "Fereej Al Asiri / New Fereej Al Khulaifat / Bu Samra /  Al Maamoura / Bu Hamour / Mesaimeer / Ain Khaled", "population": 128928.0, "area_in_km": 61.0, "population_density_km2": 2109.0}
+  {"year": "2018", "number_of_zone": "56", "lmntq": "فريج العسيري /  فريج الخليفات الجديد / بو سمرة / المعمورة / بوهامور / مسيمير / عين خالد.", "zone": "Fereej Al Asiri / New Fereej Al Khulaifat / Bu Samra /  Al Maamoura / Bu Hamour / Mesaimeer / Ain Khaled", "population": 128928.0, "area_in_km": 61.0, "population_density_km2": 2109.0}
+  {"year": "2016", "number_of_zone": "55", "lmntq": "فريج السودان / الوعب / العزيزية / فريج الغانم الجديد / فريج المرة / فريج المناصير / بوسدرة / معيذر / السيلية / المعراض.", "zone": "Fereej Al Soudan / Al Waab / Al Aziziya / New Fereej Al Ghanim / Fereej Al Murra / Fereej Al Manaseer / Bu Sidra / Muaither / Al Sailiya / Al Mearad.", "population": 283675.0, "area_in_km": 82.0, "population_density_km2": 3443.0}
+  {"year": "2017", "number_of_zone": "55", "lmntq": "فريج السودان / الوعب / العزيزية / فريج الغانم الجديد / فريج المرة / فريج المناصير / بوسدرة / معيذر / السيلية / المعراض.", "zone": "Fereej Al Soudan / Al Waab / Al Aziziya / New Fereej Al Ghanim / Fereej Al Murra / Fereej Al Manaseer / Bu Sidra / Muaither / Al Sailiya / Al Mearad.", "population": 283675.0, "area_in_km": 82.0, "population_density_km2": 3443.0}
+  {"year": "2014", "number_of_zone": "22", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 24172.0, "area_in_km": 2.0, "population_density_km2": 28378.0}
+  {"year": "2015", "number_of_zone": "22", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 28327.0, "area_in_km": 2.0, "population_density_km2": 32419.0}
+  {"year": "2018", "number_of_zone": "22", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 28327.0, "area_in_km": 2.0, "population_density_km2": 32419.0}
+  {"year": "2014", "number_of_zone": "23", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 13582.0, "area_in_km": 1.0, "population_density_km2": 11691.0}
+  {"year": "2015", "number_of_zone": "23", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 17086.0, "area_in_km": 1.0, "population_density_km2": 14707.0}
+  {"year": "2018", "number_of_zone": "23", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 17086.0, "area_in_km": 1.0, "population_density_km2": 14707.0}
+  {"year": "2019", "number_of_zone": "23", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 17086.0, "area_in_km": 1.0, "population_density_km2": 14707.0}
+  {"year": "2014", "number_of_zone": "37", "lmntq": "فريج بن عمران / فريج الهتمي الجديد / مدينة حمد الطبية", "zone": "Fereej Bin Omran / New Al Hitmi / Hamad Medical City", "population": 21066.0, "area_in_km": 3.0, "population_density_km2": 8374.0}
+  {"year": "2017", "number_of_zone": "35", "lmntq": "فريج كليب", "zone": "Fereej Kulaib", "population": 6507.0, "area_in_km": 1.0, "population_density_km2": 5820.0}
+  {"year": "2018", "number_of_zone": "35", "lmntq": "فريج كليب", "zone": "Fereej Kulaib", "population": 6507.0, "area_in_km": 1.0, "population_density_km2": 5820.0}
+  {"year": "2014", "number_of_zone": "3", "lmntq": "فريج محمد بن جاسم / مشيرب", "zone": "Fereej Mohammed Bin Jasim / Mushaireb", "population": 4886.0, "area_in_km": 0.0, "population_density_km2": 13149.0}
+  {"year": "2019", "number_of_zone": "3", "lmntq": "فريج محمد بن جاسم / مشيرب", "zone": "Fereej Mohammed Bin Jasim / Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "77", "lmntq": "فويرط/عين سنان/مدينة الكعبان", "zone": "Fuwairit/Ain Sinan/Madinat Al Kaaban", "population": 1970.0, "area_in_km": 307.0, "population_density_km2": 6.0}
+  {"year": "2015", "number_of_zone": "77", "lmntq": "فويرط/عين سنان/مدينة الكعبان", "zone": "Fuwairit/Ain Sinan/Madinat Al Kaaban", "population": 1727.0, "area_in_km": 266.0, "population_density_km2": 6.0}
+  {"year": "2018", "number_of_zone": "77", "lmntq": "فويرط/عين سنان/مدينة الكعبان", "zone": "Fuwairit/Ain Sinan/Madinat Al Kaaban", "population": 1727.0, "area_in_km": 266.0, "population_density_km2": 6.0}
+  {"year": "2016", "number_of_zone": "67", "lmntq": "حزم المرخية", "zone": "Hazm Al Markhiya", "population": 8967.0, "area_in_km": 4.0, "population_density_km2": 2121.0}
+  {"year": "2015", "number_of_zone": "57", "lmntq": "المنطقة الصناعية", "zone": "Industerial Area", "population": 364710.0, "area_in_km": 32.0, "population_density_km2": 11363.0}
+  {"year": "2016", "number_of_zone": "57", "lmntq": "المنطقة الصناعية", "zone": "Industerial Area", "population": 364710.0, "area_in_km": 32.0, "population_density_km2": 11363.0}
+  {"year": "2017", "number_of_zone": "57", "lmntq": "المنطقة الصناعية", "zone": "Industerial Area", "population": 364710.0, "area_in_km": 32.0, "population_density_km2": 11363.0}
+  {"year": "2014", "number_of_zone": "69", "lmntq": "جبل ثعيلب / الخرايج / لوسيل / العقلة / وادي البنات", "zone": "Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat", "population": 1213.0, "area_in_km": 36.0, "population_density_km2": 34.0}
+  {"year": "2015", "number_of_zone": "69", "lmntq": "جبل ثعيلب / الخرايج / لوسيل / العقلة / وادي البنات", "zone": "Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat", "population": 1338.0, "area_in_km": 51.0, "population_density_km2": 26.0}
+  {"year": "2016", "number_of_zone": "68", "lmntq": "جليعة / الطرفة / جريان نجيمة", "zone": "Jelaiah / Al Tarfa / Jeryan Nejaima", "population": 5521.0, "area_in_km": 10.0, "population_density_km2": 567.0}
+  {"year": "2018", "number_of_zone": "70", "lmntq": "لعبيب / العب / جريان جنيحات / الخيسة / روضة الحمامة / وادي الوسعة / الصخامة / المسروحية / وادي لوسيل / لوسيل / ام قرن / الضعاين", "zone": "Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen", "population": 53001.0, "area_in_km": 239.0, "population_density_km2": 222.0}
+  {"year": "2017", "number_of_zone": "64", "lmntq": "لجبيلات", "zone": "Lejbailat", "population": 4151.0, "area_in_km": 1.0, "population_density_km2": 2940.0}
+  {"year": "2018", "number_of_zone": "64", "lmntq": "لجبيلات", "zone": "Lejbailat", "population": 4151.0, "area_in_km": 1.0, "population_density_km2": 2940.0}
+  {"year": "2019", "number_of_zone": "64", "lmntq": "لجبيلات", "zone": "Lejbailat", "population": 4151.0, "area_in_km": 1.0, "population_density_km2": 2940.0}
+  {"year": "2014", "number_of_zone": "73", "lmntq": "لجملية", "zone": "Lijmiliya", "population": 1706.0, "area_in_km": 626.0, "population_density_km2": 3.0}
+  {"year": "2015", "number_of_zone": "34", "lmntq": "مدينة خليفة الجنوبية", "zone": "Madinat Khalifa South", "population": 38247.0, "area_in_km": 3.0, "population_density_km2": 14525.0}
+  {"year": "2016", "number_of_zone": "34", "lmntq": "مدينة خليفة الجنوبية", "zone": "Madinat Khalifa South", "population": 38247.0, "area_in_km": 3.0, "population_density_km2": 14525.0}
+  {"year": "2016", "number_of_zone": "81", "lmntq": "مبيريك", "zone": "Mebaireek", "population": 12483.0, "area_in_km": 160.0, "population_density_km2": 78.0}
+  {"year": "2017", "number_of_zone": "81", "lmntq": "مبيريك", "zone": "Mebaireek", "population": 12483.0, "area_in_km": 160.0, "population_density_km2": 78.0}
+  {"year": "2015", "number_of_zone": "93", "lmntq": "منطقة مسيعيد الصناعية", "zone": "Mesaieed Industrial Area", "population": 106.0, "area_in_km": 61.0, "population_density_km2": 2.0}
+  {"year": "2015", "number_of_zone": "4", "lmntq": "مشيرب", "zone": "Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "13", "lmntq": "مشيرب", "zone": "Mushaireb", "population": 8648.0, "area_in_km": 1.0, "population_density_km2": 12829.0}
+  {"year": "2017", "number_of_zone": "13", "lmntq": "مشيرب", "zone": "Mushaireb", "population": 18278.0, "area_in_km": 1.0, "population_density_km2": 27115.0}
+  {"year": "2019", "number_of_zone": "13", "lmntq": "مشيرب", "zone": "Mushaireb", "population": 18278.0, "area_in_km": 1.0, "population_density_km2": 27115.0}
+  {"year": "2016", "number_of_zone": "26", "lmntq": "نجمة", "zone": "Najma", "population": 28228.0, "area_in_km": 1.0, "population_density_km2": 24855.0}
+  {"year": "2017", "number_of_zone": "26", "lmntq": "نجمة", "zone": "Najma", "population": 28228.0, "area_in_km": 1.0, "population_density_km2": 24855.0}
+  {"year": "2016", "number_of_zone": "53", "lmntq": "الريان الجديد / الوجبة / معيذر", "zone": "New Al Rayyan / Al Wajba / Muaither", "population": 77875.0, "area_in_km": 111.0, "population_density_km2": 702.0}
+  {"year": "2019", "number_of_zone": "53", "lmntq": "الريان الجديد / الوجبة / معيذر", "zone": "New Al Rayyan / Al Wajba / Muaither", "population": 77875.0, "area_in_km": 111.0, "population_density_km2": 702.0}
+  {"year": "2018", "number_of_zone": "41", "lmntq": "نعيجة", "zone": "Nuaija", "population": 4743.0, "area_in_km": 1.0, "population_density_km2": 3839.0}
+  {"year": "2019", "number_of_zone": "41", "lmntq": "نعيجة", "zone": "Nuaija", "population": 4743.0, "area_in_km": 1.0, "population_density_km2": 3839.0}
+  {"year": "2017", "number_of_zone": "43", "lmntq": "نعيجة", "zone": "Nuaija", "population": 14871.0, "area_in_km": 5.0, "population_density_km2": 3075.0}
+  {"year": "2018", "number_of_zone": "43", "lmntq": "نعيجة", "zone": "Nuaija", "population": 14871.0, "area_in_km": 5.0, "population_density_km2": 3075.0}
+  {"year": "2019", "number_of_zone": "43", "lmntq": "نعيجة", "zone": "Nuaija", "population": 14871.0, "area_in_km": 5.0, "population_density_km2": 3075.0}
+  {"year": "2014", "number_of_zone": "44", "lmntq": "نعيجة", "zone": "Nuaija", "population": 13357.0, "area_in_km": 3.0, "population_density_km2": 4240.0}
+  {"year": "2017", "number_of_zone": "44", "lmntq": "نعيجة", "zone": "Nuaija", "population": 13765.0, "area_in_km": 3.0, "population_density_km2": 4367.0}
+  {"year": "2014", "number_of_zone": "45", "lmntq": "المطار العتيق", "zone": "Old Airport", "population": 44275.0, "area_in_km": 5.0, "population_density_km2": 9413.0}
+  {"year": "2015", "number_of_zone": "45", "lmntq": "المطار العتيق", "zone": "Old Airport", "population": 48525.0, "area_in_km": 5.0, "population_density_km2": 10317.0}
+  {"year": "2017", "number_of_zone": "45", "lmntq": "المطار العتيق", "zone": "Old Airport", "population": 48525.0, "area_in_km": 5.0, "population_density_km2": 10317.0}
+  {"year": "2019", "number_of_zone": "45", "lmntq": "المطار العتيق", "zone": "Old Airport", "population": 48525.0, "area_in_km": 5.0, "population_density_km2": 10317.0}
+  {"year": "2017", "number_of_zone": "6", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 1124.0, "area_in_km": 0.0, "population_density_km2": 3953.0}
+  {"year": "2014", "number_of_zone": "16", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 14230.0, "area_in_km": 0.0, "population_density_km2": 34553.0}
+  {"year": "2015", "number_of_zone": "16", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 16334.0, "area_in_km": 0.0, "population_density_km2": 39662.0}
+  {"year": "2018", "number_of_zone": "63", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7562.0, "area_in_km": 2.0, "population_density_km2": 3872.0}
+  {"year": "2019", "number_of_zone": "63", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7562.0, "area_in_km": 2.0, "population_density_km2": 3872.0}
+  {"year": "2015", "number_of_zone": "65", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7875.0, "area_in_km": 2.0, "population_density_km2": 3742.0}
+  {"year": "2016", "number_of_zone": "65", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7875.0, "area_in_km": 2.0, "population_density_km2": 3742.0}
+  {"year": "2018", "number_of_zone": "65", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7875.0, "area_in_km": 2.0, "population_density_km2": 3742.0}
+  {"year": "2018", "number_of_zone": "66", "lmntq": "عنيزة / لقطيفية / القصار", "zone": "Onaiza / Leqtaifiya / Al Qassar", "population": 22024.0, "area_in_km": 26.0, "population_density_km2": 843.0}
+  {"year": "2015", "number_of_zone": "29", "lmntq": "راس بو عبود", "zone": "Ras Bu Abboud", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2016", "number_of_zone": "29", "lmntq": "راس بو عبود", "zone": "Ras Bu Abboud", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "24", "lmntq": "روضة الخيل", "zone": "Rawdat Al Khail", "population": 18200.0, "area_in_km": 2.0, "population_density_km2": 10933.0}
+  {"year": "2018", "number_of_zone": "24", "lmntq": "روضة الخيل", "zone": "Rawdat Al Khail", "population": 18200.0, "area_in_km": 2.0, "population_density_km2": 10933.0}
+  {"year": "2018", "number_of_zone": "82", "lmntq": "روضة راشد", "zone": "Rawdat Rashed", "population": 26258.0, "area_in_km": 454.0, "population_density_km2": 58.0}
+  {"year": "2019", "number_of_zone": "82", "lmntq": "روضة راشد", "zone": "Rawdat Rashed", "population": 26258.0, "area_in_km": 454.0, "population_density_km2": 58.0}
+  {"year": "2014", "number_of_zone": "11", "lmntq": "رميلة", "zone": "Rumaila", "population": 63.0, "area_in_km": 1.0, "population_density_km2": 67.0}
+  {"year": "2017", "number_of_zone": "11", "lmntq": "رميلة", "zone": "Rumaila", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "11", "lmntq": "رميلة", "zone": "Rumaila", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "21", "lmntq": "رميلة", "zone": "Rumaila", "population": 1590.0, "area_in_km": 1.0, "population_density_km2": 2012.0}
+  {"year": "2016", "number_of_zone": "21", "lmntq": "رميلة", "zone": "Rumaila", "population": 1590.0, "area_in_km": 1.0, "population_density_km2": 2012.0}
+  {"year": "2014", "number_of_zone": "97", "lmntq": "سودا نثيل", "zone": "Sawda Natheel", "population": 15.0, "area_in_km": 570.0, "population_density_km2": 0.0}
+  {"year": "2017", "number_of_zone": "97", "lmntq": "سودا نثيل", "zone": "Sawda Natheel", "population": 100.0, "area_in_km": 567.0, "population_density_km2": 0.0}
+  {"year": "2019", "number_of_zone": "97", "lmntq": "سودا نثيل", "zone": "Sawda Natheel", "population": 100.0, "area_in_km": 567.0, "population_density_km2": 0.0}
+  {"year": "2016", "number_of_zone": "94", "lmntq": "شقرا", "zone": "Shagra", "population": 4714.0, "area_in_km": 497.0, "population_density_km2": 9.0}
+  {"year": "2017", "number_of_zone": "94", "lmntq": "شقرا", "zone": "Shagra", "population": 4714.0, "area_in_km": 497.0, "population_density_km2": 9.0}
+  {"year": "2015", "number_of_zone": "74", "lmntq": "سميسمة / الجريان / الخور", "zone": "Simaisma / Al Jeryan / Al Khor", "population": 96169.0, "area_in_km": 374.0, "population_density_km2": 257.0}
+  {"year": "2018", "number_of_zone": "74", "lmntq": "سميسمة / الجريان / الخور", "zone": "Simaisma / Al Jeryan / Al Khor", "population": 96169.0, "area_in_km": 374.0, "population_density_km2": 257.0}
+  {"year": "2015", "number_of_zone": "18", "lmntq": "اسلطة / المرقاب", "zone": "Slata / Al Mirqab", "population": 692.0, "area_in_km": 1.0, "population_density_km2": 1100.0}
+  {"year": "2016", "number_of_zone": "18", "lmntq": "اسلطة / المرقاب", "zone": "Slata / Al Mirqab", "population": 692.0, "area_in_km": 1.0, "population_density_km2": 1100.0}
+  {"year": "2017", "number_of_zone": "18", "lmntq": "اسلطة / المرقاب", "zone": "Slata / Al Mirqab", "population": 692.0, "area_in_km": 1.0, "population_density_km2": 1100.0}
+  {"year": "2015", "number_of_zone": "84", "lmntq": "ام باب", "zone": "Umm Bab", "population": 5305.0, "area_in_km": 494.0, "population_density_km2": 11.0}
+  {"year": "2017", "number_of_zone": "84", "lmntq": "ام باب", "zone": "Umm Bab", "population": 5305.0, "area_in_km": 494.0, "population_density_km2": 11.0}
+  {"year": "2018", "number_of_zone": "84", "lmntq": "ام باب", "zone": "Umm Bab", "population": 5305.0, "area_in_km": 494.0, "population_density_km2": 11.0}
+  {"year": "2015", "number_of_zone": "27", "lmntq": "ام غويلينة", "zone": "Umm Ghuwailina", "population": 33262.0, "area_in_km": 1.0, "population_density_km2": 23552.0}
+  {"year": "2016", "number_of_zone": "27", "lmntq": "ام غويلينة", "zone": "Umm Ghuwailina", "population": 33262.0, "area_in_km": 1.0, "population_density_km2": 23552.0}
+  {"year": "2018", "number_of_zone": "27", "lmntq": "ام غويلينة", "zone": "Umm Ghuwailina", "population": 33262.0, "area_in_km": 1.0, "population_density_km2": 23552.0}
+  {"year": "2019", "number_of_zone": "27", "lmntq": "ام غويلينة", "zone": "Umm Ghuwailina", "population": 33262.0, "area_in_km": 1.0, "population_density_km2": 23552.0}
+  {"year": "2016", "number_of_zone": "31", "lmntq": "ام لخبا", "zone": "Umm Lekhba", "population": 11897.0, "area_in_km": 3.0, "population_density_km2": 3791.0}
+  {"year": "2019", "number_of_zone": "31", "lmntq": "ام لخبا", "zone": "Umm Lekhba", "population": 11897.0, "area_in_km": 3.0, "population_density_km2": 3791.0}
+  {"year": "2015", "number_of_zone": "10", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "10", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "20", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": 240.0, "area_in_km": 1.0, "population_density_km2": 183.0}
+  {"year": "2016", "number_of_zone": "20", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": 240.0, "area_in_km": 1.0, "population_density_km2": 183.0}
+  {"year": "2017", "number_of_zone": "20", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": 240.0, "area_in_km": 1.0, "population_density_km2": 183.0}
+  {"year": "2014", "number_of_zone": "50", "lmntq": "منطقة 50", "zone": "Zone 50", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "58", "lmntq": "منطقة 58", "zone": "Zone 58", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "58", "lmntq": "منطقة 58", "zone": "Zone 58", "population": 4692.0, "area_in_km": 1.0, "population_density_km2": 5746.0}
+  {"year": "2014", "number_of_zone": "78", "lmntq": "ابو ظلوف/الزبارة", "zone": "Abu Dhalouf/Al Zubara", "population": 1009.0, "area_in_km": 427.0, "population_density_km2": 2.0}
+  {"year": "2015", "number_of_zone": "78", "lmntq": "ابو ظلوف/الزبارة", "zone": "Abu Dhalouf/Al Zubara", "population": 1660.0, "area_in_km": 427.0, "population_density_km2": 4.0}
+  {"year": "2017", "number_of_zone": "78", "lmntq": "ابو ظلوف/الزبارة", "zone": "Abu Dhalouf/Al Zubara", "population": 1660.0, "area_in_km": 427.0, "population_density_km2": 4.0}
+  {"year": "2018", "number_of_zone": "78", "lmntq": "ابو ظلوف/الزبارة", "zone": "Abu Dhalouf/Al Zubara", "population": 1660.0, "area_in_km": 427.0, "population_density_km2": 4.0}
+  {"year": "2014", "number_of_zone": "98", "lmntq": "العديد", "zone": "Al Adaid", "population": 42.0, "area_in_km": 686.0, "population_density_km2": 0.0}
+  {"year": "2016", "number_of_zone": "98", "lmntq": "العديد", "zone": "Al Adaid", "population": 7.0, "area_in_km": 705.0, "population_density_km2": 0.0}
+  {"year": "2017", "number_of_zone": "98", "lmntq": "العديد", "zone": "Al Adaid", "population": 7.0, "area_in_km": 705.0, "population_density_km2": 0.0}
+  {"year": "2018", "number_of_zone": "98", "lmntq": "العديد", "zone": "Al Adaid", "population": 7.0, "area_in_km": 705.0, "population_density_km2": 0.0}
+  {"year": "2019", "number_of_zone": "98", "lmntq": "العديد", "zone": "Al Adaid", "population": 7.0, "area_in_km": 705.0, "population_density_km2": 0.0}
+  {"year": "2015", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "60", "lmntq": "الدفنة", "zone": "Al Dafna", "population": 19.0, "area_in_km": 1.0, "population_density_km2": 18.0}
+  {"year": "2016", "number_of_zone": "60", "lmntq": "الدفنة", "zone": "Al Dafna", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "60", "lmntq": "الدفنة", "zone": "Al Dafna", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "60", "lmntq": "الدفنة", "zone": "Al Dafna", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 4022.0, "area_in_km": 4.0, "population_density_km2": 1005.0}
+  {"year": "2015", "number_of_zone": "15", "lmntq": "الدوحة الجديدة", "zone": "Al Doha Al Jadeeda", "population": 15920.0, "area_in_km": 0.0, "population_density_km2": 33352.0}
+  {"year": "2017", "number_of_zone": "15", "lmntq": "الدوحة الجديدة", "zone": "Al Doha Al Jadeeda", "population": 15920.0, "area_in_km": 0.0, "population_density_km2": 33352.0}
+  {"year": "2015", "number_of_zone": "51", "lmntq": "الغرافة / غرافة الريان / ازغوى / بني هاجر / السيج / روضة اقديم / الثميد", "zone": "Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid", "population": 56027.0, "area_in_km": 81.0, "population_density_km2": 692.0}
+  {"year": "2014", "number_of_zone": "42", "lmntq": "الهلال", "zone": "Al Hilal", "population": 11257.0, "area_in_km": 2.0, "population_density_km2": 6393.0}
+  {"year": "2015", "number_of_zone": "42", "lmntq": "الهلال", "zone": "Al Hilal", "population": 11671.0, "area_in_km": 2.0, "population_density_km2": 6629.0}
+  {"year": "2016", "number_of_zone": "42", "lmntq": "الهلال", "zone": "Al Hilal", "population": 11671.0, "area_in_km": 2.0, "population_density_km2": 6629.0}
+  {"year": "2019", "number_of_zone": "42", "lmntq": "الهلال", "zone": "Al Hilal", "population": 11671.0, "area_in_km": 2.0, "population_density_km2": 6629.0}
+  {"year": "2014", "number_of_zone": "1", "lmntq": "الجسرة", "zone": "Al Jasra", "population": 240.0, "area_in_km": 0.0, "population_density_km2": 673.0}
+  {"year": "2018", "number_of_zone": "1", "lmntq": "الجسرة", "zone": "Al Jasra", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "1", "lmntq": "الجسرة", "zone": "Al Jasra", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 2614.0, "area_in_km": 554.0, "population_density_km2": 5.0}
+  {"year": "2015", "number_of_zone": "71", "lmntq": "الخريطيات / ازغوى / ام صلال محمد / بو فسيلة / ام صلال علي / ام العمد / ام عبيرية / لخشينة / صنيع لحميدي", "zone": "Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi", "population": 90835.0, "area_in_km": 318.0, "population_density_km2": 285.0}
+  {"year": "2018", "number_of_zone": "71", "lmntq": "الخريطيات / ازغوى / ام صلال محمد / بو فسيلة / ام صلال علي / ام العمد / ام عبيرية / لخشينة / صنيع لحميدي", "zone": "Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi", "population": 90835.0, "area_in_km": 318.0, "population_density_km2": 285.0}
+  {"year": "2014", "number_of_zone": "95", "lmntq": "الخرارة", "zone": "Al Kharrara", "population": 117.0, "area_in_km": 832.0, "population_density_km2": 0.0}
+  {"year": "2017", "number_of_zone": "95", "lmntq": "الخرارة", "zone": "Al Kharrara", "population": 3478.0, "area_in_km": 902.0, "population_density_km2": 4.0}
+  {"year": "2019", "number_of_zone": "95", "lmntq": "الخرارة", "zone": "Al Kharrara", "population": 3478.0, "area_in_km": 902.0, "population_density_km2": 4.0}
+  {"year": "2015", "number_of_zone": "28", "lmntq": "الخليفات / راس بو عبود", "zone": "Al Khulaifat / Ras Bu Abboud", "population": 1731.0, "area_in_km": 1.0, "population_density_km2": 1843.0}
+  {"year": "2018", "number_of_zone": "52", "lmntq": "اللقطة / لبديع / الريان العتيق / الشقب / فريج الزعيم", "zone": "Al Luqta / Lebday / Old Al Rayyan / Al Shagub / Fereej Al Zaeem", "population": 18433.0, "area_in_km": 13.0, "population_density_km2": 1377.0}
+  {"year": "2014", "number_of_zone": "25", "lmntq": "المنصورة / فريج بن درهم", "zone": "Al Mansoura / Fereej Bin Dirham", "population": 31573.0, "area_in_km": 1.0, "population_density_km2": 21200.0}
+  {"year": "2015", "number_of_zone": "25", "lmntq": "المنصورة / فريج بن درهم", "zone": "Al Mansoura / Fereej Bin Dirham", "population": 37082.0, "area_in_km": 1.0, "population_density_km2": 24899.0}
+  {"year": "2019", "number_of_zone": "25", "lmntq": "المنصورة / فريج بن درهم", "zone": "Al Mansoura / Fereej Bin Dirham", "population": 37082.0, "area_in_km": 1.0, "population_density_km2": 24899.0}
+  {"year": "2018", "number_of_zone": "33", "lmntq": "المرخية", "zone": "Al Markhiya", "population": 6242.0, "area_in_km": 3.0, "population_density_km2": 2275.0}
+  {"year": "2019", "number_of_zone": "33", "lmntq": "المرخية", "zone": "Al Markhiya", "population": 6242.0, "area_in_km": 3.0, "population_density_km2": 2275.0}
+  {"year": "2015", "number_of_zone": "36", "lmntq": "المسيلة", "zone": "Al Messila", "population": 6803.0, "area_in_km": 2.0, "population_density_km2": 3251.0}
+  {"year": "2018", "number_of_zone": "36", "lmntq": "المسيلة", "zone": "Al Messila", "population": 6803.0, "area_in_km": 2.0, "population_density_km2": 3251.0}
+  {"year": "2019", "number_of_zone": "36", "lmntq": "المسيلة", "zone": "Al Messila", "population": 6803.0, "area_in_km": 2.0, "population_density_km2": 3251.0}
+  {"year": "2017", "number_of_zone": "17", "lmntq": "الرفاع / الهتمي العتيق", "zone": "Al Rufaa /  Old Al Hitmi", "population": 6026.0, "area_in_km": 0.0, "population_density_km2": 15231.0}
+  {"year": "2015", "number_of_zone": "79", "lmntq": "الرويس/مدينة الشمال", "zone": "Al Ruwais/Madinat Al Shamal", "population": 5407.0, "area_in_km": 167.0, "population_density_km2": 32.0}
+  {"year": "2016", "number_of_zone": "79", "lmntq": "الرويس/مدينة الشمال", "zone": "Al Ruwais/Madinat Al Shamal", "population": 5407.0, "area_in_km": 167.0, "population_density_km2": 32.0}
+  {"year": "2017", "number_of_zone": "79", "lmntq": "الرويس/مدينة الشمال", "zone": "Al Ruwais/Madinat Al Shamal", "population": 5407.0, "area_in_km": 167.0, "population_density_km2": 32.0}
+  {"year": "2019", "number_of_zone": "79", "lmntq": "الرويس/مدينة الشمال", "zone": "Al Ruwais/Madinat Al Shamal", "population": 5407.0, "area_in_km": 167.0, "population_density_km2": 32.0}
+  {"year": "2017", "number_of_zone": "38", "lmntq": "السد", "zone": "Al Sadd", "population": 17820.0, "area_in_km": 4.0, "population_density_km2": 5070.0}
+  {"year": "2015", "number_of_zone": "39", "lmntq": "السد / المرقاب الجديد / فريج النصر", "zone": "Al Sadd / New Al Mirqab / Fereej Al Nasr", "population": 23853.0, "area_in_km": 3.0, "population_density_km2": 8706.0}
+  {"year": "2016", "number_of_zone": "39", "lmntq": "السد / المرقاب الجديد / فريج النصر", "zone": "Al Sadd / New Al Mirqab / Fereej Al Nasr", "population": 23853.0, "area_in_km": 3.0, "population_density_km2": 8706.0}
+  {"year": "2018", "number_of_zone": "80", "lmntq": "الشيحانية", "zone": "Al Sheehaniya", "population": 138509.0, "area_in_km": 287.0, "population_density_km2": 482.0}
+  {"year": "2014", "number_of_zone": "7", "lmntq": "السوق", "zone": "Al Souq", "population": 679.0, "area_in_km": 0.0, "population_density_km2": 2422.0}
+  {"year": "2015", "number_of_zone": "7", "lmntq": "السوق", "zone": "Al Souq", "population": 297.0, "area_in_km": 0.0, "population_density_km2": 1059.0}
+  {"year": "2019", "number_of_zone": "7", "lmntq": "السوق", "zone": "Al Souq", "population": 297.0, "area_in_km": 0.0, "population_density_km2": 1059.0}
+  {"year": "2018", "number_of_zone": "75", "lmntq": "الذخيرة/راس لفان/ام بركة", "zone": "Al Thakhira/Rass Laffan/Umm Birka", "population": 100118.0, "area_in_km": 611.0, "population_density_km2": 164.0}
+  {"year": "2019", "number_of_zone": "75", "lmntq": "الذخيرة/راس لفان/ام بركة", "zone": "Al Thakhira/Rass Laffan/Umm Birka", "population": 100118.0, "area_in_km": 611.0, "population_density_km2": 164.0}
+  {"year": "2015", "number_of_zone": "46", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 21367.0, "area_in_km": 7.0, "population_density_km2": 6215.0}
+  {"year": "2017", "number_of_zone": "46", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 21367.0, "area_in_km": 7.0, "population_density_km2": 6215.0}
+  {"year": "2019", "number_of_zone": "46", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 21367.0, "area_in_km": 7.0, "population_density_km2": 6215.0}
+  {"year": "2017", "number_of_zone": "47", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 12815.0, "area_in_km": 3.0, "population_density_km2": 3933.0}
+  {"year": "2016", "number_of_zone": "91", "lmntq": "الثمامة / الوكير/المشاف", "zone": "Al Thumama / Al Wukair/Al Mashaf", "population": 165214.0, "area_in_km": 203.0, "population_density_km2": 812.0}
+  {"year": "2019", "number_of_zone": "91", "lmntq": "الثمامة / الوكير/المشاف", "zone": "Al Thumama / Al Wukair/Al Mashaf", "population": 165214.0, "area_in_km": 203.0, "population_density_km2": 812.0}
+  {"year": "2015", "number_of_zone": "72", "lmntq": "العطورية", "zone": "Al Utouriya", "population": 1232.0, "area_in_km": 662.0, "population_density_km2": 2.0}
+  {"year": "2017", "number_of_zone": "72", "lmntq": "العطورية", "zone": "Al Utouriya", "population": 1232.0, "area_in_km": 662.0, "population_density_km2": 2.0}
+  {"year": "2016", "number_of_zone": "90", "lmntq": "الوكرة", "zone": "Al Wakra", "population": 87970.0, "area_in_km": 76.0, "population_density_km2": 1161.0}
+  {"year": "2017", "number_of_zone": "90", "lmntq": "الوكرة", "zone": "Al Wakra", "population": 87970.0, "area_in_km": 76.0, "population_density_km2": 1161.0}
+  {"year": "2014", "number_of_zone": "49", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 0.0, "area_in_km": 23.0, "population_density_km2": 0.0}
+  {"year": "2015", "number_of_zone": "49", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 442.0, "area_in_km": 37.0, "population_density_km2": 12.0}
+  {"year": "2016", "number_of_zone": "49", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 442.0, "area_in_km": 37.0, "population_density_km2": 12.0}
+  {"year": "2017", "number_of_zone": "49", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 442.0, "area_in_km": 37.0, "population_density_km2": 12.0}
+  {"year": "2014", "number_of_zone": "30", "lmntq": "دحيل", "zone": "Duhail", "population": 7059.0, "area_in_km": 7.0, "population_density_km2": 1031.0}
+  {"year": "2016", "number_of_zone": "30", "lmntq": "دحيل", "zone": "Duhail", "population": 7705.0, "area_in_km": 7.0, "population_density_km2": 1125.0}
+  {"year": "2019", "number_of_zone": "30", "lmntq": "دحيل", "zone": "Duhail", "population": 7705.0, "area_in_km": 7.0, "population_density_km2": 1125.0}
+  {"year": "2014", "number_of_zone": "86", "lmntq": "دخان", "zone": "Dukhan", "population": 11520.0, "area_in_km": 365.0, "population_density_km2": 32.0}
+  {"year": "2015", "number_of_zone": "86", "lmntq": "دخان", "zone": "Dukhan", "population": 13274.0, "area_in_km": 365.0, "population_density_km2": 36.0}
+  {"year": "2016", "number_of_zone": "86", "lmntq": "دخان", "zone": "Dukhan", "population": 13274.0, "area_in_km": 365.0, "population_density_km2": 36.0}
+  {"year": "2018", "number_of_zone": "86", "lmntq": "دخان", "zone": "Dukhan", "population": 13274.0, "area_in_km": 365.0, "population_density_km2": 36.0}
+  {"year": "2015", "number_of_zone": "14", "lmntq": "فريج عبد العزيز", "zone": "Fereej Abdel Aziz", "population": 15706.0, "area_in_km": 1.0, "population_density_km2": 29513.0}
+  {"year": "2017", "number_of_zone": "14", "lmntq": "فريج عبد العزيز", "zone": "Fereej Abdel Aziz", "population": 15706.0, "area_in_km": 1.0, "population_density_km2": 29513.0}
+  {"year": "2018", "number_of_zone": "14", "lmntq": "فريج عبد العزيز", "zone": "Fereej Abdel Aziz", "population": 15706.0, "area_in_km": 1.0, "population_density_km2": 29513.0}
+  {"year": "2019", "number_of_zone": "14", "lmntq": "فريج عبد العزيز", "zone": "Fereej Abdel Aziz", "population": 15706.0, "area_in_km": 1.0, "population_density_km2": 29513.0}
+  {"year": "2016", "number_of_zone": "54", "lmntq": "فريج الأمير / لوعيب / مريخ / بعيا / محيرجة / فريج السودان", "zone": "Fereej Al Amir / Luaib / Muraikh / Baaya / Mehairja / Fereej Al Soudan", "population": 24593.0, "area_in_km": 18.0, "population_density_km2": 1362.0}
+  {"year": "2019", "number_of_zone": "54", "lmntq": "فريج الأمير / لوعيب / مريخ / بعيا / محيرجة / فريج السودان", "zone": "Fereej Al Amir / Luaib / Muraikh / Baaya / Mehairja / Fereej Al Soudan", "population": 24593.0, "area_in_km": 18.0, "population_density_km2": 1362.0}
+  {"year": "2015", "number_of_zone": "56", "lmntq": "فريج العسيري /  فريج الخليفات الجديد / بو سمرة / المعمورة / بوهامور / مسيمير / عين خالد.", "zone": "Fereej Al Asiri / New Fereej Al Khulaifat / Bu Samra /  Al Maamoura / Bu Hamour / Mesaimeer / Ain Khaled", "population": 128928.0, "area_in_km": 61.0, "population_density_km2": 2109.0}
+  {"year": "2017", "number_of_zone": "56", "lmntq": "فريج العسيري /  فريج الخليفات الجديد / بو سمرة / المعمورة / بوهامور / مسيمير / عين خالد.", "zone": "Fereej Al Asiri / New Fereej Al Khulaifat / Bu Samra /  Al Maamoura / Bu Hamour / Mesaimeer / Ain Khaled", "population": 128928.0, "area_in_km": 61.0, "population_density_km2": 2109.0}
+  {"year": "2014", "number_of_zone": "55", "lmntq": "فريج السودان / الوعب / العزيزية / فريج الغانم الجديد / فريج المرة / فريج المناصير / بوسدرة / معيذر / السيلية / المعراض.", "zone": "Fereej Al Soudan / Al Waab / Al Aziziya / New Fereej Al Ghanim / Fereej Al Murra / Fereej Al Manaseer / Bu Sidra / Muaither / Al Sailiya / Al Mearad.", "population": 138573.0, "area_in_km": 90.0, "population_density_km2": 1541.0}
+  {"year": "2015", "number_of_zone": "55", "lmntq": "فريج السودان / الوعب / العزيزية / فريج الغانم الجديد / فريج المرة / فريج المناصير / بوسدرة / معيذر / السيلية / المعراض.", "zone": "Fereej Al Soudan / Al Waab / Al Aziziya / New Fereej Al Ghanim / Fereej Al Murra / Fereej Al Manaseer / Bu Sidra / Muaither / Al Sailiya / Al Mearad.", "population": 283675.0, "area_in_km": 82.0, "population_density_km2": 3443.0}
+  {"year": "2019", "number_of_zone": "55", "lmntq": "فريج السودان / الوعب / العزيزية / فريج الغانم الجديد / فريج المرة / فريج المناصير / بوسدرة / معيذر / السيلية / المعراض.", "zone": "Fereej Al Soudan / Al Waab / Al Aziziya / New Fereej Al Ghanim / Fereej Al Murra / Fereej Al Manaseer / Bu Sidra / Muaither / Al Sailiya / Al Mearad.", "population": 283675.0, "area_in_km": 82.0, "population_density_km2": 3443.0}
+  {"year": "2017", "number_of_zone": "22", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 28327.0, "area_in_km": 2.0, "population_density_km2": 32419.0}
+  {"year": "2019", "number_of_zone": "22", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 28327.0, "area_in_km": 2.0, "population_density_km2": 32419.0}
+  {"year": "2016", "number_of_zone": "37", "lmntq": "فريج بن عمران / فريج الهتمي الجديد / مدينة حمد الطبية", "zone": "Fereej Bin Omran / New Al Hitmi / Hamad Medical City", "population": 26121.0, "area_in_km": 3.0, "population_density_km2": 10383.0}
+  {"year": "2017", "number_of_zone": "37", "lmntq": "فريج بن عمران / فريج الهتمي الجديد / مدينة حمد الطبية", "zone": "Fereej Bin Omran / New Al Hitmi / Hamad Medical City", "population": 26121.0, "area_in_km": 3.0, "population_density_km2": 10383.0}
+  {"year": "2018", "number_of_zone": "37", "lmntq": "فريج بن عمران / فريج الهتمي الجديد / مدينة حمد الطبية", "zone": "Fereej Bin Omran / New Al Hitmi / Hamad Medical City", "population": 26121.0, "area_in_km": 3.0, "population_density_km2": 10383.0}
+  {"year": "2019", "number_of_zone": "37", "lmntq": "فريج بن عمران / فريج الهتمي الجديد / مدينة حمد الطبية", "zone": "Fereej Bin Omran / New Al Hitmi / Hamad Medical City", "population": 26121.0, "area_in_km": 3.0, "population_density_km2": 10383.0}
+  {"year": "2015", "number_of_zone": "35", "lmntq": "فريج كليب", "zone": "Fereej Kulaib", "population": 6507.0, "area_in_km": 1.0, "population_density_km2": 5820.0}
+  {"year": "2017", "number_of_zone": "3", "lmntq": "فريج محمد بن جاسم / مشيرب", "zone": "Fereej Mohammed Bin Jasim / Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "67", "lmntq": "حزم المرخية", "zone": "Hazm Al Markhiya", "population": 8586.0, "area_in_km": 4.0, "population_density_km2": 2031.0}
+  {"year": "2015", "number_of_zone": "67", "lmntq": "حزم المرخية", "zone": "Hazm Al Markhiya", "population": 8967.0, "area_in_km": 4.0, "population_density_km2": 2121.0}
+  {"year": "2019", "number_of_zone": "67", "lmntq": "حزم المرخية", "zone": "Hazm Al Markhiya", "population": 8967.0, "area_in_km": 4.0, "population_density_km2": 2121.0}
+  {"year": "2014", "number_of_zone": "57", "lmntq": "المنطقة الصناعية", "zone": "Industerial Area", "population": 261401.0, "area_in_km": 32.0, "population_density_km2": 8144.0}
+  {"year": "2016", "number_of_zone": "69", "lmntq": "جبل ثعيلب / الخرايج / لوسيل / العقلة / وادي البنات", "zone": "Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat", "population": 1338.0, "area_in_km": 51.0, "population_density_km2": 26.0}
+  {"year": "2014", "number_of_zone": "68", "lmntq": "جليعة / الطرفة / جريان نجيمة", "zone": "Jelaiah / Al Tarfa / Jeryan Nejaima", "population": 5558.0, "area_in_km": 10.0, "population_density_km2": 570.0}
+  {"year": "2017", "number_of_zone": "68", "lmntq": "جليعة / الطرفة / جريان نجيمة", "zone": "Jelaiah / Al Tarfa / Jeryan Nejaima", "population": 5521.0, "area_in_km": 10.0, "population_density_km2": 567.0}
+  {"year": "2018", "number_of_zone": "68", "lmntq": "جليعة / الطرفة / جريان نجيمة", "zone": "Jelaiah / Al Tarfa / Jeryan Nejaima", "population": 5521.0, "area_in_km": 10.0, "population_density_km2": 567.0}
+  {"year": "2019", "number_of_zone": "68", "lmntq": "جليعة / الطرفة / جريان نجيمة", "zone": "Jelaiah / Al Tarfa / Jeryan Nejaima", "population": 5521.0, "area_in_km": 10.0, "population_density_km2": 567.0}
+  {"year": "2015", "number_of_zone": "70", "lmntq": "لعبيب / العب / جريان جنيحات / الخيسة / روضة الحمامة / وادي الوسعة / الصخامة / المسروحية / وادي لوسيل / لوسيل / ام قرن / الضعاين", "zone": "Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen", "population": 53001.0, "area_in_km": 239.0, "population_density_km2": 222.0}
+  {"year": "2019", "number_of_zone": "70", "lmntq": "لعبيب / العب / جريان جنيحات / الخيسة / روضة الحمامة / وادي الوسعة / الصخامة / المسروحية / وادي لوسيل / لوسيل / ام قرن / الضعاين", "zone": "Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen", "population": 53001.0, "area_in_km": 239.0, "population_density_km2": 222.0}
+  {"year": "2014", "number_of_zone": "62", "lmntq": "لخوير", "zone": "Lekhwair", "population": 3.0, "area_in_km": 1.0, "population_density_km2": 5.0}
+  {"year": "2016", "number_of_zone": "62", "lmntq": "لخوير", "zone": "Lekhwair", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "62", "lmntq": "لخوير", "zone": "Lekhwair", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "73", "lmntq": "لجملية", "zone": "Lijmiliya", "population": 1685.0, "area_in_km": 623.0, "population_density_km2": 3.0}
+  {"year": "2017", "number_of_zone": "73", "lmntq": "لجملية", "zone": "Lijmiliya", "population": 1685.0, "area_in_km": 623.0, "population_density_km2": 3.0}
+  {"year": "2019", "number_of_zone": "73", "lmntq": "لجملية", "zone": "Lijmiliya", "population": 1685.0, "area_in_km": 623.0, "population_density_km2": 3.0}
+  {"year": "2016", "number_of_zone": "32", "lmntq": "مدينة خليفة الشمالية / دحل الحمام", "zone": "Madinat Khalifa North / Dahl Al Hamam", "population": 12364.0, "area_in_km": 2.0, "population_density_km2": 5111.0}
+  {"year": "2017", "number_of_zone": "32", "lmntq": "مدينة خليفة الشمالية / دحل الحمام", "zone": "Madinat Khalifa North / Dahl Al Hamam", "population": 12364.0, "area_in_km": 2.0, "population_density_km2": 5111.0}
+  {"year": "2018", "number_of_zone": "32", "lmntq": "مدينة خليفة الشمالية / دحل الحمام", "zone": "Madinat Khalifa North / Dahl Al Hamam", "population": 12364.0, "area_in_km": 2.0, "population_density_km2": 5111.0}
+  {"year": "2014", "number_of_zone": "34", "lmntq": "مدينة خليفة الجنوبية", "zone": "Madinat Khalifa South", "population": 35125.0, "area_in_km": 3.0, "population_density_km2": 13339.0}
+  {"year": "2017", "number_of_zone": "34", "lmntq": "مدينة خليفة الجنوبية", "zone": "Madinat Khalifa South", "population": 38247.0, "area_in_km": 3.0, "population_density_km2": 14525.0}
+  {"year": "2018", "number_of_zone": "34", "lmntq": "مدينة خليفة الجنوبية", "zone": "Madinat Khalifa South", "population": 38247.0, "area_in_km": 3.0, "population_density_km2": 14525.0}
+  {"year": "2014", "number_of_zone": "81", "lmntq": "مبيريك", "zone": "Mebaireek", "population": 11333.0, "area_in_km": 199.0, "population_density_km2": 57.0}
+  {"year": "2018", "number_of_zone": "81", "lmntq": "مبيريك", "zone": "Mebaireek", "population": 12483.0, "area_in_km": 160.0, "population_density_km2": 78.0}
+  {"year": "2019", "number_of_zone": "81", "lmntq": "مبيريك", "zone": "Mebaireek", "population": 12483.0, "area_in_km": 160.0, "population_density_km2": 78.0}
+  {"year": "2018", "number_of_zone": "92", "lmntq": "مسيعيد", "zone": "Mesaieed", "population": 37548.0, "area_in_km": 133.0, "population_density_km2": 282.0}
+  {"year": "2019", "number_of_zone": "92", "lmntq": "مسيعيد", "zone": "Mesaieed", "population": 37548.0, "area_in_km": 133.0, "population_density_km2": 282.0}
+  {"year": "2017", "number_of_zone": "93", "lmntq": "منطقة مسيعيد الصناعية", "zone": "Mesaieed Industrial Area", "population": 106.0, "area_in_km": 61.0, "population_density_km2": 2.0}
+  {"year": "2014", "number_of_zone": "4", "lmntq": "مشيرب", "zone": "Mushaireb", "population": 14063.0, "area_in_km": 0.0, "population_density_km2": 43094.0}
+  {"year": "2016", "number_of_zone": "4", "lmntq": "مشيرب", "zone": "Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "4", "lmntq": "مشيرب", "zone": "Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "4", "lmntq": "مشيرب", "zone": "Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "26", "lmntq": "نجمة", "zone": "Najma", "population": 28228.0, "area_in_km": 1.0, "population_density_km2": 24855.0}
+  {"year": "2014", "number_of_zone": "53", "lmntq": "الريان الجديد / الوجبة / معيذر", "zone": "New Al Rayyan / Al Wajba / Muaither", "population": 76291.0, "area_in_km": 103.0, "population_density_km2": 738.0}
+  {"year": "2015", "number_of_zone": "53", "lmntq": "الريان الجديد / الوجبة / معيذر", "zone": "New Al Rayyan / Al Wajba / Muaither", "population": 77875.0, "area_in_km": 111.0, "population_density_km2": 702.0}
+  {"year": "2017", "number_of_zone": "53", "lmntq": "الريان الجديد / الوجبة / معيذر", "zone": "New Al Rayyan / Al Wajba / Muaither", "population": 77875.0, "area_in_km": 111.0, "population_density_km2": 702.0}
+  {"year": "2018", "number_of_zone": "53", "lmntq": "الريان الجديد / الوجبة / معيذر", "zone": "New Al Rayyan / Al Wajba / Muaither", "population": 77875.0, "area_in_km": 111.0, "population_density_km2": 702.0}
+  {"year": "2014", "number_of_zone": "40", "lmntq": "اسلطة الجديدة", "zone": "New Slata", "population": 15114.0, "area_in_km": 3.0, "population_density_km2": 4354.0}
+  {"year": "2015", "number_of_zone": "40", "lmntq": "اسلطة الجديدة", "zone": "New Slata", "population": 16086.0, "area_in_km": 3.0, "population_density_km2": 4634.0}
+  {"year": "2016", "number_of_zone": "40", "lmntq": "اسلطة الجديدة", "zone": "New Slata", "population": 16086.0, "area_in_km": 3.0, "population_density_km2": 4634.0}
+  {"year": "2017", "number_of_zone": "40", "lmntq": "اسلطة الجديدة", "zone": "New Slata", "population": 16086.0, "area_in_km": 3.0, "population_density_km2": 4634.0}
+  {"year": "2018", "number_of_zone": "40", "lmntq": "اسلطة الجديدة", "zone": "New Slata", "population": 16086.0, "area_in_km": 3.0, "population_density_km2": 4634.0}
+  {"year": "2014", "number_of_zone": "41", "lmntq": "نعيجة", "zone": "Nuaija", "population": 5604.0, "area_in_km": 1.0, "population_density_km2": 4536.0}
+  {"year": "2016", "number_of_zone": "41", "lmntq": "نعيجة", "zone": "Nuaija", "population": 4743.0, "area_in_km": 1.0, "population_density_km2": 3839.0}
+  {"year": "2015", "number_of_zone": "44", "lmntq": "نعيجة", "zone": "Nuaija", "population": 13765.0, "area_in_km": 3.0, "population_density_km2": 4367.0}
+  {"year": "2016", "number_of_zone": "44", "lmntq": "نعيجة", "zone": "Nuaija", "population": 13765.0, "area_in_km": 3.0, "population_density_km2": 4367.0}
+  {"year": "2019", "number_of_zone": "44", "lmntq": "نعيجة", "zone": "Nuaija", "population": 13765.0, "area_in_km": 3.0, "population_density_km2": 4367.0}
+  {"year": "2016", "number_of_zone": "45", "lmntq": "المطار العتيق", "zone": "Old Airport", "population": 48525.0, "area_in_km": 5.0, "population_density_km2": 10317.0}
+  {"year": "2018", "number_of_zone": "45", "lmntq": "المطار العتيق", "zone": "Old Airport", "population": 48525.0, "area_in_km": 5.0, "population_density_km2": 10317.0}
+  {"year": "2014", "number_of_zone": "6", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 3462.0, "area_in_km": 0.0, "population_density_km2": 12174.0}
+  {"year": "2018", "number_of_zone": "6", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 1124.0, "area_in_km": 0.0, "population_density_km2": 3953.0}
+  {"year": "2019", "number_of_zone": "6", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 1124.0, "area_in_km": 0.0, "population_density_km2": 3953.0}
+  {"year": "2017", "number_of_zone": "16", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 16334.0, "area_in_km": 0.0, "population_density_km2": 39662.0}
+  {"year": "2018", "number_of_zone": "16", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 16334.0, "area_in_km": 0.0, "population_density_km2": 39662.0}
+  {"year": "2015", "number_of_zone": "63", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7562.0, "area_in_km": 2.0, "population_density_km2": 3872.0}
+  {"year": "2017", "number_of_zone": "63", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7562.0, "area_in_km": 2.0, "population_density_km2": 3872.0}
+  {"year": "2017", "number_of_zone": "66", "lmntq": "عنيزة / لقطيفية / القصار", "zone": "Onaiza / Leqtaifiya / Al Qassar", "population": 22024.0, "area_in_km": 26.0, "population_density_km2": 843.0}
+  {"year": "2017", "number_of_zone": "29", "lmntq": "راس بو عبود", "zone": "Ras Bu Abboud", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "29", "lmntq": "راس بو عبود", "zone": "Ras Bu Abboud", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "29", "lmntq": "راس بو عبود", "zone": "Ras Bu Abboud", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "24", "lmntq": "روضة الخيل", "zone": "Rawdat Al Khail", "population": 18200.0, "area_in_km": 2.0, "population_density_km2": 10933.0}
+  {"year": "2015", "number_of_zone": "82", "lmntq": "روضة راشد", "zone": "Rawdat Rashed", "population": 26258.0, "area_in_km": 454.0, "population_density_km2": 58.0}
+  {"year": "2015", "number_of_zone": "11", "lmntq": "رميلة", "zone": "Rumaila", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2016", "number_of_zone": "11", "lmntq": "رميلة", "zone": "Rumaila", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "11", "lmntq": "رميلة", "zone": "Rumaila", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "21", "lmntq": "رميلة", "zone": "Rumaila", "population": 1590.0, "area_in_km": 1.0, "population_density_km2": 2012.0}
+  {"year": "2015", "number_of_zone": "97", "lmntq": "سودا نثيل", "zone": "Sawda Natheel", "population": 100.0, "area_in_km": 567.0, "population_density_km2": 0.0}
+  {"year": "2016", "number_of_zone": "97", "lmntq": "سودا نثيل", "zone": "Sawda Natheel", "population": 100.0, "area_in_km": 567.0, "population_density_km2": 0.0}
+  {"year": "2018", "number_of_zone": "97", "lmntq": "سودا نثيل", "zone": "Sawda Natheel", "population": 100.0, "area_in_km": 567.0, "population_density_km2": 0.0}
+  {"year": "2014", "number_of_zone": "94", "lmntq": "شقرا", "zone": "Shagra", "population": 3874.0, "area_in_km": 498.0, "population_density_km2": 8.0}
+  {"year": "2015", "number_of_zone": "94", "lmntq": "شقرا", "zone": "Shagra", "population": 4714.0, "area_in_km": 497.0, "population_density_km2": 9.0}
+  {"year": "2014", "number_of_zone": "74", "lmntq": "سميسمة / الجريان / الخور", "zone": "Simaisma / Al Jeryan / Al Khor", "population": 80220.0, "area_in_km": 459.0, "population_density_km2": 175.0}
+  {"year": "2017", "number_of_zone": "74", "lmntq": "سميسمة / الجريان / الخور", "zone": "Simaisma / Al Jeryan / Al Khor", "population": 96169.0, "area_in_km": 374.0, "population_density_km2": 257.0}
+  {"year": "2019", "number_of_zone": "74", "lmntq": "سميسمة / الجريان / الخور", "zone": "Simaisma / Al Jeryan / Al Khor", "population": 96169.0, "area_in_km": 374.0, "population_density_km2": 257.0}
+  {"year": "2014", "number_of_zone": "18", "lmntq": "اسلطة / المرقاب", "zone": "Slata / Al Mirqab", "population": 741.0, "area_in_km": 1.0, "population_density_km2": 1467.0}
+  {"year": "2019", "number_of_zone": "18", "lmntq": "اسلطة / المرقاب", "zone": "Slata / Al Mirqab", "population": 692.0, "area_in_km": 1.0, "population_density_km2": 1100.0}
+  {"year": "2016", "number_of_zone": "84", "lmntq": "ام باب", "zone": "Umm Bab", "population": 5305.0, "area_in_km": 494.0, "population_density_km2": 11.0}
+  {"year": "2019", "number_of_zone": "84", "lmntq": "ام باب", "zone": "Umm Bab", "population": 5305.0, "area_in_km": 494.0, "population_density_km2": 11.0}
+  {"year": "2014", "number_of_zone": "27", "lmntq": "ام غويلينة", "zone": "Umm Ghuwailina", "population": 26069.0, "area_in_km": 1.0, "population_density_km2": 18459.0}
+  {"year": "2017", "number_of_zone": "27", "lmntq": "ام غويلينة", "zone": "Umm Ghuwailina", "population": 33262.0, "area_in_km": 1.0, "population_density_km2": 23552.0}
+  {"year": "2014", "number_of_zone": "31", "lmntq": "ام لخبا", "zone": "Umm Lekhba", "population": 9871.0, "area_in_km": 3.0, "population_density_km2": 3146.0}
+  {"year": "2015", "number_of_zone": "31", "lmntq": "ام لخبا", "zone": "Umm Lekhba", "population": 11897.0, "area_in_km": 3.0, "population_density_km2": 3791.0}
+  {"year": "2017", "number_of_zone": "31", "lmntq": "ام لخبا", "zone": "Umm Lekhba", "population": 11897.0, "area_in_km": 3.0, "population_density_km2": 3791.0}
+  {"year": "2016", "number_of_zone": "10", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "20", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": 240.0, "area_in_km": 1.0, "population_density_km2": 183.0}
+  {"year": "2015", "number_of_zone": "50", "lmntq": "منطقة 50", "zone": "Zone 50", "population": 1137.0, "area_in_km": 8.0, "population_density_km2": 149.0}
+  {"year": "2016", "number_of_zone": "50", "lmntq": "منطقة 50", "zone": "Zone 50", "population": 1137.0, "area_in_km": 8.0, "population_density_km2": 149.0}
+  {"year": "2017", "number_of_zone": "50", "lmntq": "منطقة 50", "zone": "Zone 50", "population": 1137.0, "area_in_km": 8.0, "population_density_km2": 149.0}
+  {"year": "2018", "number_of_zone": "50", "lmntq": "منطقة 50", "zone": "Zone 50", "population": 1137.0, "area_in_km": 8.0, "population_density_km2": 149.0}
+  {"year": "2016", "number_of_zone": "58", "lmntq": "منطقة 58", "zone": "Zone 58", "population": 4692.0, "area_in_km": 1.0, "population_density_km2": 5746.0}
+  {"year": "2018", "number_of_zone": "58", "lmntq": "منطقة 58", "zone": "Zone 58", "population": 4692.0, "area_in_km": 1.0, "population_density_km2": 5746.0}
+  {"year": "2019", "number_of_zone": "58", "lmntq": "منطقة 58", "zone": "Zone 58", "population": 4692.0, "area_in_km": 1.0, "population_density_km2": 5746.0}
+  {"year": "2015", "number_of_zone": "96", "lmntq": "ابو سمرة", "zone": "Abu Samra", "population": 984.0, "area_in_km": 802.0, "population_density_km2": 1.0}
+  {"year": "2016", "number_of_zone": "96", "lmntq": "ابو سمرة", "zone": "Abu Samra", "population": 984.0, "area_in_km": 802.0, "population_density_km2": 1.0}
+  {"year": "2017", "number_of_zone": "96", "lmntq": "ابو سمرة", "zone": "Abu Samra", "population": 984.0, "area_in_km": 802.0, "population_density_km2": 1.0}
+  {"year": "2018", "number_of_zone": "96", "lmntq": "ابو سمرة", "zone": "Abu Samra", "population": 984.0, "area_in_km": 802.0, "population_density_km2": 1.0}
+  {"year": "2019", "number_of_zone": "96", "lmntq": "ابو سمرة", "zone": "Abu Samra", "population": 984.0, "area_in_km": 802.0, "population_density_km2": 1.0}
+  {"year": "2015", "number_of_zone": "98", "lmntq": "العديد", "zone": "Al Adaid", "population": 7.0, "area_in_km": 705.0, "population_density_km2": 0.0}
+  {"year": "2014", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": 1102.0, "area_in_km": 1.0, "population_density_km2": 1489.0}
+  {"year": "2016", "number_of_zone": "2", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": 1067.0, "area_in_km": 1.0, "population_density_km2": 1398.0}
+  {"year": "2016", "number_of_zone": "12", "lmntq": "البدع", "zone": "Al Bidda", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "60", "lmntq": "الدفنة", "zone": "Al Dafna", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 4022.0, "area_in_km": 4.0, "population_density_km2": 1005.0}
+  {"year": "2016", "number_of_zone": "61", "lmntq": "الدفنة / القصار", "zone": "Al Dafna / Al Qassar", "population": 4022.0, "area_in_km": 4.0, "population_density_km2": 1005.0}
+  {"year": "2014", "number_of_zone": "15", "lmntq": "الدوحة الجديدة", "zone": "Al Doha Al Jadeeda", "population": 13059.0, "area_in_km": 0.0, "population_density_km2": 27359.0}
+  {"year": "2016", "number_of_zone": "15", "lmntq": "الدوحة الجديدة", "zone": "Al Doha Al Jadeeda", "population": 15920.0, "area_in_km": 0.0, "population_density_km2": 33352.0}
+  {"year": "2018", "number_of_zone": "15", "lmntq": "الدوحة الجديدة", "zone": "Al Doha Al Jadeeda", "population": 15920.0, "area_in_km": 0.0, "population_density_km2": 33352.0}
+  {"year": "2014", "number_of_zone": "51", "lmntq": "الغرافة / غرافة الريان / ازغوى / بني هاجر / السيج / روضة اقديم / الثميد", "zone": "Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid", "population": 46976.0, "area_in_km": 81.0, "population_density_km2": 583.0}
+  {"year": "2017", "number_of_zone": "51", "lmntq": "الغرافة / غرافة الريان / ازغوى / بني هاجر / السيج / روضة اقديم / الثميد", "zone": "Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid", "population": 56027.0, "area_in_km": 81.0, "population_density_km2": 692.0}
+  {"year": "2019", "number_of_zone": "51", "lmntq": "الغرافة / غرافة الريان / ازغوى / بني هاجر / السيج / روضة اقديم / الثميد", "zone": "Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid", "population": 56027.0, "area_in_km": 81.0, "population_density_km2": 692.0}
+  {"year": "2017", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 5744.0, "area_in_km": 629.0, "population_density_km2": 9.0}
+  {"year": "2018", "number_of_zone": "76", "lmntq": "الغويرية", "zone": "Al Ghuwairiya", "population": 5744.0, "area_in_km": 629.0, "population_density_km2": 9.0}
+  {"year": "2017", "number_of_zone": "1", "lmntq": "الجسرة", "zone": "Al Jasra", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 1567.0, "area_in_km": 552.0, "population_density_km2": 3.0}
+  {"year": "2016", "number_of_zone": "83", "lmntq": "الكرعانة", "zone": "Al Karaana", "population": 2614.0, "area_in_km": 554.0, "population_density_km2": 5.0}
+  {"year": "2019", "number_of_zone": "71", "lmntq": "الخريطيات / ازغوى / ام صلال محمد / بو فسيلة / ام صلال علي / ام العمد / ام عبيرية / لخشينة / صنيع لحميدي", "zone": "Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi", "population": 90835.0, "area_in_km": 318.0, "population_density_km2": 285.0}
+  {"year": "2016", "number_of_zone": "28", "lmntq": "الخليفات / راس بو عبود", "zone": "Al Khulaifat / Ras Bu Abboud", "population": 1731.0, "area_in_km": 1.0, "population_density_km2": 1843.0}
+  {"year": "2017", "number_of_zone": "28", "lmntq": "الخليفات / راس بو عبود", "zone": "Al Khulaifat / Ras Bu Abboud", "population": 1731.0, "area_in_km": 1.0, "population_density_km2": 1843.0}
+  {"year": "2015", "number_of_zone": "52", "lmntq": "اللقطة / لبديع / الريان العتيق / الشقب / فريج الزعيم", "zone": "Al Luqta / Lebday / Old Al Rayyan / Al Shagub / Fereej Al Zaeem", "population": 18433.0, "area_in_km": 13.0, "population_density_km2": 1377.0}
+  {"year": "2016", "number_of_zone": "52", "lmntq": "اللقطة / لبديع / الريان العتيق / الشقب / فريج الزعيم", "zone": "Al Luqta / Lebday / Old Al Rayyan / Al Shagub / Fereej Al Zaeem", "population": 18433.0, "area_in_km": 13.0, "population_density_km2": 1377.0}
+  {"year": "2017", "number_of_zone": "52", "lmntq": "اللقطة / لبديع / الريان العتيق / الشقب / فريج الزعيم", "zone": "Al Luqta / Lebday / Old Al Rayyan / Al Shagub / Fereej Al Zaeem", "population": 18433.0, "area_in_km": 13.0, "population_density_km2": 1377.0}
+  {"year": "2019", "number_of_zone": "52", "lmntq": "اللقطة / لبديع / الريان العتيق / الشقب / فريج الزعيم", "zone": "Al Luqta / Lebday / Old Al Rayyan / Al Shagub / Fereej Al Zaeem", "population": 18433.0, "area_in_km": 13.0, "population_density_km2": 1377.0}
+  {"year": "2016", "number_of_zone": "25", "lmntq": "المنصورة / فريج بن درهم", "zone": "Al Mansoura / Fereej Bin Dirham", "population": 37082.0, "area_in_km": 1.0, "population_density_km2": 24899.0}
+  {"year": "2017", "number_of_zone": "25", "lmntq": "المنصورة / فريج بن درهم", "zone": "Al Mansoura / Fereej Bin Dirham", "population": 37082.0, "area_in_km": 1.0, "population_density_km2": 24899.0}
+  {"year": "2017", "number_of_zone": "36", "lmntq": "المسيلة", "zone": "Al Messila", "population": 6803.0, "area_in_km": 2.0, "population_density_km2": 3251.0}
+  {"year": "2015", "number_of_zone": "5", "lmntq": "النجادة / براحة الجفيري / فريج الأصمخ", "zone": "Al Najada / Brahat Al Jufairy / Fereej Al Asmakh", "population": 2086.0, "area_in_km": 0.0, "population_density_km2": 9491.0}
+  {"year": "2017", "number_of_zone": "5", "lmntq": "النجادة / براحة الجفيري / فريج الأصمخ", "zone": "Al Najada / Brahat Al Jufairy / Fereej Al Asmakh", "population": 2086.0, "area_in_km": 0.0, "population_density_km2": 9491.0}
+  {"year": "2018", "number_of_zone": "5", "lmntq": "النجادة / براحة الجفيري / فريج الأصمخ", "zone": "Al Najada / Brahat Al Jufairy / Fereej Al Asmakh", "population": 2086.0, "area_in_km": 0.0, "population_density_km2": 9491.0}
+  {"year": "2019", "number_of_zone": "5", "lmntq": "النجادة / براحة الجفيري / فريج الأصمخ", "zone": "Al Najada / Brahat Al Jufairy / Fereej Al Asmakh", "population": 2086.0, "area_in_km": 0.0, "population_density_km2": 9491.0}
+  {"year": "2014", "number_of_zone": "85", "lmntq": "النصرانية", "zone": "Al Nasraniya", "population": 1043.0, "area_in_km": 423.0, "population_density_km2": 2.0}
+  {"year": "2016", "number_of_zone": "85", "lmntq": "النصرانية", "zone": "Al Nasraniya", "population": 1308.0, "area_in_km": 423.0, "population_density_km2": 3.0}
+  {"year": "2018", "number_of_zone": "85", "lmntq": "النصرانية", "zone": "Al Nasraniya", "population": 1308.0, "area_in_km": 423.0, "population_density_km2": 3.0}
+  {"year": "2014", "number_of_zone": "17", "lmntq": "الرفاع / الهتمي العتيق", "zone": "Al Rufaa /  Old Al Hitmi", "population": 7125.0, "area_in_km": 1.0, "population_density_km2": 13707.0}
+  {"year": "2016", "number_of_zone": "17", "lmntq": "الرفاع / الهتمي العتيق", "zone": "Al Rufaa /  Old Al Hitmi", "population": 6026.0, "area_in_km": 0.0, "population_density_km2": 15231.0}
+  {"year": "2019", "number_of_zone": "17", "lmntq": "الرفاع / الهتمي العتيق", "zone": "Al Rufaa /  Old Al Hitmi", "population": 6026.0, "area_in_km": 0.0, "population_density_km2": 15231.0}
+  {"year": "2014", "number_of_zone": "38", "lmntq": "السد", "zone": "Al Sadd", "population": 14113.0, "area_in_km": 4.0, "population_density_km2": 4015.0}
+  {"year": "2016", "number_of_zone": "38", "lmntq": "السد", "zone": "Al Sadd", "population": 17820.0, "area_in_km": 4.0, "population_density_km2": 5070.0}
+  {"year": "2019", "number_of_zone": "38", "lmntq": "السد", "zone": "Al Sadd", "population": 17820.0, "area_in_km": 4.0, "population_density_km2": 5070.0}
+  {"year": "2017", "number_of_zone": "39", "lmntq": "السد / المرقاب الجديد / فريج النصر", "zone": "Al Sadd / New Al Mirqab / Fereej Al Nasr", "population": 23853.0, "area_in_km": 3.0, "population_density_km2": 8706.0}
+  {"year": "2019", "number_of_zone": "39", "lmntq": "السد / المرقاب الجديد / فريج النصر", "zone": "Al Sadd / New Al Mirqab / Fereej Al Nasr", "population": 23853.0, "area_in_km": 3.0, "population_density_km2": 8706.0}
+  {"year": "2014", "number_of_zone": "80", "lmntq": "الشيحانية", "zone": "Al Sheehaniya", "population": 35393.0, "area_in_km": 287.0, "population_density_km2": 123.0}
+  {"year": "2017", "number_of_zone": "7", "lmntq": "السوق", "zone": "Al Souq", "population": 297.0, "area_in_km": 0.0, "population_density_km2": 1059.0}
+  {"year": "2018", "number_of_zone": "7", "lmntq": "السوق", "zone": "Al Souq", "population": 297.0, "area_in_km": 0.0, "population_density_km2": 1059.0}
+  {"year": "2015", "number_of_zone": "75", "lmntq": "الذخيرة/راس لفان/ام بركة", "zone": "Al Thakhira/Rass Laffan/Umm Birka", "population": 100118.0, "area_in_km": 611.0, "population_density_km2": 164.0}
+  {"year": "2016", "number_of_zone": "75", "lmntq": "الذخيرة/راس لفان/ام بركة", "zone": "Al Thakhira/Rass Laffan/Umm Birka", "population": 100118.0, "area_in_km": 611.0, "population_density_km2": 164.0}
+  {"year": "2016", "number_of_zone": "46", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 21367.0, "area_in_km": 7.0, "population_density_km2": 6215.0}
+  {"year": "2015", "number_of_zone": "47", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 12815.0, "area_in_km": 3.0, "population_density_km2": 3933.0}
+  {"year": "2016", "number_of_zone": "47", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 12815.0, "area_in_km": 3.0, "population_density_km2": 3933.0}
+  {"year": "2019", "number_of_zone": "47", "lmntq": "الثمامة", "zone": "Al Thumama", "population": 12815.0, "area_in_km": 3.0, "population_density_km2": 3933.0}
+  {"year": "2017", "number_of_zone": "91", "lmntq": "الثمامة / الوكير/المشاف", "zone": "Al Thumama / Al Wukair/Al Mashaf", "population": 165214.0, "area_in_km": 203.0, "population_density_km2": 812.0}
+  {"year": "2018", "number_of_zone": "91", "lmntq": "الثمامة / الوكير/المشاف", "zone": "Al Thumama / Al Wukair/Al Mashaf", "population": 165214.0, "area_in_km": 203.0, "population_density_km2": 812.0}
+  {"year": "2014", "number_of_zone": "72", "lmntq": "العطورية", "zone": "Al Utouriya", "population": 1060.0, "area_in_km": 649.0, "population_density_km2": 2.0}
+  {"year": "2019", "number_of_zone": "72", "lmntq": "العطورية", "zone": "Al Utouriya", "population": 1232.0, "area_in_km": 662.0, "population_density_km2": 2.0}
+  {"year": "2014", "number_of_zone": "90", "lmntq": "الوكرة", "zone": "Al Wakra", "population": 79457.0, "area_in_km": 66.0, "population_density_km2": 1199.0}
+  {"year": "2015", "number_of_zone": "90", "lmntq": "الوكرة", "zone": "Al Wakra", "population": 87970.0, "area_in_km": 76.0, "population_density_km2": 1161.0}
+  {"year": "2018", "number_of_zone": "90", "lmntq": "الوكرة", "zone": "Al Wakra", "population": 87970.0, "area_in_km": 76.0, "population_density_km2": 1161.0}
+  {"year": "2019", "number_of_zone": "90", "lmntq": "الوكرة", "zone": "Al Wakra", "population": 87970.0, "area_in_km": 76.0, "population_density_km2": 1161.0}
+  {"year": "2016", "number_of_zone": "48", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 2295.0, "area_in_km": 49.0, "population_density_km2": 172.0}
+  {"year": "2019", "number_of_zone": "48", "lmntq": "مطار الدوحة الدولي", "zone": "Doha International Airport", "population": 2295.0, "area_in_km": 49.0, "population_density_km2": 172.0}
+  {"year": "2014", "number_of_zone": "19", "lmntq": "ميناء الدوحة", "zone": "Doha Port", "population": 6.0, "area_in_km": 1.0, "population_density_km2": 4.0}
+  {"year": "2015", "number_of_zone": "19", "lmntq": "ميناء الدوحة", "zone": "Doha Port", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2016", "number_of_zone": "19", "lmntq": "ميناء الدوحة", "zone": "Doha Port", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "19", "lmntq": "ميناء الدوحة", "zone": "Doha Port", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "19", "lmntq": "ميناء الدوحة", "zone": "Doha Port", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "30", "lmntq": "دحيل", "zone": "Duhail", "population": 7705.0, "area_in_km": 7.0, "population_density_km2": 1125.0}
+  {"year": "2019", "number_of_zone": "86", "lmntq": "دخان", "zone": "Dukhan", "population": 13274.0, "area_in_km": 365.0, "population_density_km2": 36.0}
+  {"year": "2014", "number_of_zone": "14", "lmntq": "فريج عبد العزيز", "zone": "Fereej Abdel Aziz", "population": 10808.0, "area_in_km": 1.0, "population_density_km2": 20310.0}
+  {"year": "2015", "number_of_zone": "54", "lmntq": "فريج الأمير / لوعيب / مريخ / بعيا / محيرجة / فريج السودان", "zone": "Fereej Al Amir / Luaib / Muraikh / Baaya / Mehairja / Fereej Al Soudan", "population": 24593.0, "area_in_km": 18.0, "population_density_km2": 1362.0}
+  {"year": "2018", "number_of_zone": "54", "lmntq": "فريج الأمير / لوعيب / مريخ / بعيا / محيرجة / فريج السودان", "zone": "Fereej Al Amir / Luaib / Muraikh / Baaya / Mehairja / Fereej Al Soudan", "population": 24593.0, "area_in_km": 18.0, "population_density_km2": 1362.0}
+  {"year": "2019", "number_of_zone": "56", "lmntq": "فريج العسيري /  فريج الخليفات الجديد / بو سمرة / المعمورة / بوهامور / مسيمير / عين خالد.", "zone": "Fereej Al Asiri / New Fereej Al Khulaifat / Bu Samra /  Al Maamoura / Bu Hamour / Mesaimeer / Ain Khaled", "population": 128928.0, "area_in_km": 61.0, "population_density_km2": 2109.0}
+  {"year": "2018", "number_of_zone": "55", "lmntq": "فريج السودان / الوعب / العزيزية / فريج الغانم الجديد / فريج المرة / فريج المناصير / بوسدرة / معيذر / السيلية / المعراض.", "zone": "Fereej Al Soudan / Al Waab / Al Aziziya / New Fereej Al Ghanim / Fereej Al Murra / Fereej Al Manaseer / Bu Sidra / Muaither / Al Sailiya / Al Mearad.", "population": 283675.0, "area_in_km": 82.0, "population_density_km2": 3443.0}
+  {"year": "2016", "number_of_zone": "22", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 28327.0, "area_in_km": 2.0, "population_density_km2": 32419.0}
+  {"year": "2016", "number_of_zone": "23", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 17086.0, "area_in_km": 1.0, "population_density_km2": 14707.0}
+  {"year": "2017", "number_of_zone": "23", "lmntq": "فريج بن محمود", "zone": "Fereej Bin Mahmoud", "population": 17086.0, "area_in_km": 1.0, "population_density_km2": 14707.0}
+  {"year": "2015", "number_of_zone": "37", "lmntq": "فريج بن عمران / فريج الهتمي الجديد / مدينة حمد الطبية", "zone": "Fereej Bin Omran / New Al Hitmi / Hamad Medical City", "population": 26121.0, "area_in_km": 3.0, "population_density_km2": 10383.0}
+  {"year": "2014", "number_of_zone": "35", "lmntq": "فريج كليب", "zone": "Fereej Kulaib", "population": 7702.0, "area_in_km": 1.0, "population_density_km2": 6889.0}
+  {"year": "2016", "number_of_zone": "35", "lmntq": "فريج كليب", "zone": "Fereej Kulaib", "population": 6507.0, "area_in_km": 1.0, "population_density_km2": 5820.0}
+  {"year": "2019", "number_of_zone": "35", "lmntq": "فريج كليب", "zone": "Fereej Kulaib", "population": 6507.0, "area_in_km": 1.0, "population_density_km2": 5820.0}
+  {"year": "2015", "number_of_zone": "3", "lmntq": "فريج محمد بن جاسم / مشيرب", "zone": "Fereej Mohammed Bin Jasim / Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2016", "number_of_zone": "3", "lmntq": "فريج محمد بن جاسم / مشيرب", "zone": "Fereej Mohammed Bin Jasim / Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "3", "lmntq": "فريج محمد بن جاسم / مشيرب", "zone": "Fereej Mohammed Bin Jasim / Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2016", "number_of_zone": "77", "lmntq": "فويرط/عين سنان/مدينة الكعبان", "zone": "Fuwairit/Ain Sinan/Madinat Al Kaaban", "population": 1727.0, "area_in_km": 266.0, "population_density_km2": 6.0}
+  {"year": "2017", "number_of_zone": "77", "lmntq": "فويرط/عين سنان/مدينة الكعبان", "zone": "Fuwairit/Ain Sinan/Madinat Al Kaaban", "population": 1727.0, "area_in_km": 266.0, "population_density_km2": 6.0}
+  {"year": "2019", "number_of_zone": "77", "lmntq": "فويرط/عين سنان/مدينة الكعبان", "zone": "Fuwairit/Ain Sinan/Madinat Al Kaaban", "population": 1727.0, "area_in_km": 266.0, "population_density_km2": 6.0}
+  {"year": "2017", "number_of_zone": "67", "lmntq": "حزم المرخية", "zone": "Hazm Al Markhiya", "population": 8967.0, "area_in_km": 4.0, "population_density_km2": 2121.0}
+  {"year": "2018", "number_of_zone": "67", "lmntq": "حزم المرخية", "zone": "Hazm Al Markhiya", "population": 8967.0, "area_in_km": 4.0, "population_density_km2": 2121.0}
+  {"year": "2018", "number_of_zone": "57", "lmntq": "المنطقة الصناعية", "zone": "Industerial Area", "population": 364710.0, "area_in_km": 32.0, "population_density_km2": 11363.0}
+  {"year": "2019", "number_of_zone": "57", "lmntq": "المنطقة الصناعية", "zone": "Industerial Area", "population": 364710.0, "area_in_km": 32.0, "population_density_km2": 11363.0}
+  {"year": "2017", "number_of_zone": "69", "lmntq": "جبل ثعيلب / الخرايج / لوسيل / العقلة / وادي البنات", "zone": "Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat", "population": 1338.0, "area_in_km": 51.0, "population_density_km2": 26.0}
+  {"year": "2018", "number_of_zone": "69", "lmntq": "جبل ثعيلب / الخرايج / لوسيل / العقلة / وادي البنات", "zone": "Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat", "population": 1338.0, "area_in_km": 51.0, "population_density_km2": 26.0}
+  {"year": "2019", "number_of_zone": "69", "lmntq": "جبل ثعيلب / الخرايج / لوسيل / العقلة / وادي البنات", "zone": "Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat", "population": 1338.0, "area_in_km": 51.0, "population_density_km2": 26.0}
+  {"year": "2015", "number_of_zone": "68", "lmntq": "جليعة / الطرفة / جريان نجيمة", "zone": "Jelaiah / Al Tarfa / Jeryan Nejaima", "population": 5521.0, "area_in_km": 10.0, "population_density_km2": 567.0}
+  {"year": "2014", "number_of_zone": "70", "lmntq": "لعبيب / العب / جريان جنيحات / الخيسة / روضة الحمامة / وادي الوسعة / الصخامة / المسروحية / وادي لوسيل / لوسيل / ام قرن / الضعاين", "zone": "Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen", "population": 24722.0, "area_in_km": 167.0, "population_density_km2": 148.0}
+  {"year": "2016", "number_of_zone": "70", "lmntq": "لعبيب / العب / جريان جنيحات / الخيسة / روضة الحمامة / وادي الوسعة / الصخامة / المسروحية / وادي لوسيل / لوسيل / ام قرن / الضعاين", "zone": "Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen", "population": 53001.0, "area_in_km": 239.0, "population_density_km2": 222.0}
+  {"year": "2017", "number_of_zone": "70", "lmntq": "لعبيب / العب / جريان جنيحات / الخيسة / روضة الحمامة / وادي الوسعة / الصخامة / المسروحية / وادي لوسيل / لوسيل / ام قرن / الضعاين", "zone": "Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen", "population": 53001.0, "area_in_km": 239.0, "population_density_km2": 222.0}
+  {"year": "2014", "number_of_zone": "64", "lmntq": "لجبيلات", "zone": "Lejbailat", "population": 4024.0, "area_in_km": 1.0, "population_density_km2": 2850.0}
+  {"year": "2015", "number_of_zone": "64", "lmntq": "لجبيلات", "zone": "Lejbailat", "population": 4151.0, "area_in_km": 1.0, "population_density_km2": 2940.0}
+  {"year": "2016", "number_of_zone": "64", "lmntq": "لجبيلات", "zone": "Lejbailat", "population": 4151.0, "area_in_km": 1.0, "population_density_km2": 2940.0}
+  {"year": "2015", "number_of_zone": "62", "lmntq": "لخوير", "zone": "Lekhwair", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2017", "number_of_zone": "62", "lmntq": "لخوير", "zone": "Lekhwair", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2019", "number_of_zone": "62", "lmntq": "لخوير", "zone": "Lekhwair", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2016", "number_of_zone": "73", "lmntq": "لجملية", "zone": "Lijmiliya", "population": 1685.0, "area_in_km": 623.0, "population_density_km2": 3.0}
+  {"year": "2018", "number_of_zone": "73", "lmntq": "لجملية", "zone": "Lijmiliya", "population": 1685.0, "area_in_km": 623.0, "population_density_km2": 3.0}
+  {"year": "2014", "number_of_zone": "32", "lmntq": "مدينة خليفة الشمالية / دحل الحمام", "zone": "Madinat Khalifa North / Dahl Al Hamam", "population": 14725.0, "area_in_km": 2.0, "population_density_km2": 6087.0}
+  {"year": "2015", "number_of_zone": "32", "lmntq": "مدينة خليفة الشمالية / دحل الحمام", "zone": "Madinat Khalifa North / Dahl Al Hamam", "population": 12364.0, "area_in_km": 2.0, "population_density_km2": 5111.0}
+  {"year": "2019", "number_of_zone": "32", "lmntq": "مدينة خليفة الشمالية / دحل الحمام", "zone": "Madinat Khalifa North / Dahl Al Hamam", "population": 12364.0, "area_in_km": 2.0, "population_density_km2": 5111.0}
+  {"year": "2019", "number_of_zone": "34", "lmntq": "مدينة خليفة الجنوبية", "zone": "Madinat Khalifa South", "population": 38247.0, "area_in_km": 3.0, "population_density_km2": 14525.0}
+  {"year": "2015", "number_of_zone": "81", "lmntq": "مبيريك", "zone": "Mebaireek", "population": 12483.0, "area_in_km": 160.0, "population_density_km2": 78.0}
+  {"year": "2014", "number_of_zone": "92", "lmntq": "مسيعيد", "zone": "Mesaieed", "population": 35150.0, "area_in_km": 155.0, "population_density_km2": 227.0}
+  {"year": "2015", "number_of_zone": "92", "lmntq": "مسيعيد", "zone": "Mesaieed", "population": 37548.0, "area_in_km": 133.0, "population_density_km2": 282.0}
+  {"year": "2016", "number_of_zone": "92", "lmntq": "مسيعيد", "zone": "Mesaieed", "population": 37548.0, "area_in_km": 133.0, "population_density_km2": 282.0}
+  {"year": "2017", "number_of_zone": "92", "lmntq": "مسيعيد", "zone": "Mesaieed", "population": 37548.0, "area_in_km": 133.0, "population_density_km2": 282.0}
+  {"year": "2014", "number_of_zone": "93", "lmntq": "منطقة مسيعيد الصناعية", "zone": "Mesaieed Industrial Area", "population": 123.0, "area_in_km": 61.0, "population_density_km2": 2.0}
+  {"year": "2016", "number_of_zone": "93", "lmntq": "منطقة مسيعيد الصناعية", "zone": "Mesaieed Industrial Area", "population": 106.0, "area_in_km": 61.0, "population_density_km2": 2.0}
+  {"year": "2018", "number_of_zone": "93", "lmntq": "منطقة مسيعيد الصناعية", "zone": "Mesaieed Industrial Area", "population": 106.0, "area_in_km": 61.0, "population_density_km2": 2.0}
+  {"year": "2019", "number_of_zone": "93", "lmntq": "منطقة مسيعيد الصناعية", "zone": "Mesaieed Industrial Area", "population": 106.0, "area_in_km": 61.0, "population_density_km2": 2.0}
+  {"year": "2019", "number_of_zone": "4", "lmntq": "مشيرب", "zone": "Mushaireb", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2015", "number_of_zone": "13", "lmntq": "مشيرب", "zone": "Mushaireb", "population": 18278.0, "area_in_km": 1.0, "population_density_km2": 27115.0}
+  {"year": "2016", "number_of_zone": "13", "lmntq": "مشيرب", "zone": "Mushaireb", "population": 18278.0, "area_in_km": 1.0, "population_density_km2": 27115.0}
+  {"year": "2018", "number_of_zone": "13", "lmntq": "مشيرب", "zone": "Mushaireb", "population": 18278.0, "area_in_km": 1.0, "population_density_km2": 27115.0}
+  {"year": "2014", "number_of_zone": "26", "lmntq": "نجمة", "zone": "Najma", "population": 24763.0, "area_in_km": 1.0, "population_density_km2": 21804.0}
+  {"year": "2015", "number_of_zone": "26", "lmntq": "نجمة", "zone": "Najma", "population": 28228.0, "area_in_km": 1.0, "population_density_km2": 24855.0}
+  {"year": "2019", "number_of_zone": "26", "lmntq": "نجمة", "zone": "Najma", "population": 28228.0, "area_in_km": 1.0, "population_density_km2": 24855.0}
+  {"year": "2019", "number_of_zone": "40", "lmntq": "اسلطة الجديدة", "zone": "New Slata", "population": 16086.0, "area_in_km": 3.0, "population_density_km2": 4634.0}
+  {"year": "2015", "number_of_zone": "41", "lmntq": "نعيجة", "zone": "Nuaija", "population": 4743.0, "area_in_km": 1.0, "population_density_km2": 3839.0}
+  {"year": "2017", "number_of_zone": "41", "lmntq": "نعيجة", "zone": "Nuaija", "population": 4743.0, "area_in_km": 1.0, "population_density_km2": 3839.0}
+  {"year": "2014", "number_of_zone": "43", "lmntq": "نعيجة", "zone": "Nuaija", "population": 10742.0, "area_in_km": 2.0, "population_density_km2": 5618.0}
+  {"year": "2015", "number_of_zone": "43", "lmntq": "نعيجة", "zone": "Nuaija", "population": 14871.0, "area_in_km": 5.0, "population_density_km2": 3075.0}
+  {"year": "2016", "number_of_zone": "43", "lmntq": "نعيجة", "zone": "Nuaija", "population": 14871.0, "area_in_km": 5.0, "population_density_km2": 3075.0}
+  {"year": "2018", "number_of_zone": "44", "lmntq": "نعيجة", "zone": "Nuaija", "population": 13765.0, "area_in_km": 3.0, "population_density_km2": 4367.0}
+  {"year": "2015", "number_of_zone": "6", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 1124.0, "area_in_km": 0.0, "population_density_km2": 3953.0}
+  {"year": "2016", "number_of_zone": "6", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 1124.0, "area_in_km": 0.0, "population_density_km2": 3953.0}
+  {"year": "2016", "number_of_zone": "16", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 16334.0, "area_in_km": 0.0, "population_density_km2": 39662.0}
+  {"year": "2019", "number_of_zone": "16", "lmntq": "الغانم العتيق", "zone": "Old Al Ghanim", "population": 16334.0, "area_in_km": 0.0, "population_density_km2": 39662.0}
+  {"year": "2014", "number_of_zone": "63", "lmntq": "عنيزة", "zone": "Onaiza", "population": 5170.0, "area_in_km": 2.0, "population_density_km2": 2647.0}
+  {"year": "2016", "number_of_zone": "63", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7562.0, "area_in_km": 2.0, "population_density_km2": 3872.0}
+  {"year": "2014", "number_of_zone": "65", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7710.0, "area_in_km": 2.0, "population_density_km2": 3663.0}
+  {"year": "2017", "number_of_zone": "65", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7875.0, "area_in_km": 2.0, "population_density_km2": 3742.0}
+  {"year": "2019", "number_of_zone": "65", "lmntq": "عنيزة", "zone": "Onaiza", "population": 7875.0, "area_in_km": 2.0, "population_density_km2": 3742.0}
+  {"year": "2014", "number_of_zone": "66", "lmntq": "عنيزة / لقطيفية / القصار", "zone": "Onaiza / Leqtaifiya / Al Qassar", "population": 22168.0, "area_in_km": 25.0, "population_density_km2": 872.0}
+  {"year": "2015", "number_of_zone": "66", "lmntq": "عنيزة / لقطيفية / القصار", "zone": "Onaiza / Leqtaifiya / Al Qassar", "population": 22024.0, "area_in_km": 26.0, "population_density_km2": 843.0}
+  {"year": "2016", "number_of_zone": "66", "lmntq": "عنيزة / لقطيفية / القصار", "zone": "Onaiza / Leqtaifiya / Al Qassar", "population": 22024.0, "area_in_km": 26.0, "population_density_km2": 843.0}
+  {"year": "2019", "number_of_zone": "66", "lmntq": "عنيزة / لقطيفية / القصار", "zone": "Onaiza / Leqtaifiya / Al Qassar", "population": 22024.0, "area_in_km": 26.0, "population_density_km2": 843.0}
+  {"year": "2014", "number_of_zone": "29", "lmntq": "راس بو عبود", "zone": "Ras Bu Abboud", "population": 0.0, "area_in_km": 3.0, "population_density_km2": 0.0}
+  {"year": "2014", "number_of_zone": "24", "lmntq": "روضة الخيل", "zone": "Rawdat Al Khail", "population": 17219.0, "area_in_km": 2.0, "population_density_km2": 10344.0}
+  {"year": "2016", "number_of_zone": "24", "lmntq": "روضة الخيل", "zone": "Rawdat Al Khail", "population": 18200.0, "area_in_km": 2.0, "population_density_km2": 10933.0}
+  {"year": "2017", "number_of_zone": "24", "lmntq": "روضة الخيل", "zone": "Rawdat Al Khail", "population": 18200.0, "area_in_km": 2.0, "population_density_km2": 10933.0}
+  {"year": "2014", "number_of_zone": "82", "lmntq": "روضة راشد", "zone": "Rawdat Rashed", "population": 6046.0, "area_in_km": 454.0, "population_density_km2": 13.0}
+  {"year": "2016", "number_of_zone": "82", "lmntq": "روضة راشد", "zone": "Rawdat Rashed", "population": 26258.0, "area_in_km": 454.0, "population_density_km2": 58.0}
+  {"year": "2017", "number_of_zone": "82", "lmntq": "روضة راشد", "zone": "Rawdat Rashed", "population": 26258.0, "area_in_km": 454.0, "population_density_km2": 58.0}
+  {"year": "2014", "number_of_zone": "21", "lmntq": "رميلة", "zone": "Rumaila", "population": 1532.0, "area_in_km": 1.0, "population_density_km2": 1939.0}
+  {"year": "2017", "number_of_zone": "21", "lmntq": "رميلة", "zone": "Rumaila", "population": 1590.0, "area_in_km": 1.0, "population_density_km2": 2012.0}
+  {"year": "2018", "number_of_zone": "21", "lmntq": "رميلة", "zone": "Rumaila", "population": 1590.0, "area_in_km": 1.0, "population_density_km2": 2012.0}
+  {"year": "2018", "number_of_zone": "94", "lmntq": "شقرا", "zone": "Shagra", "population": 4714.0, "area_in_km": 497.0, "population_density_km2": 9.0}
+  {"year": "2019", "number_of_zone": "94", "lmntq": "شقرا", "zone": "Shagra", "population": 4714.0, "area_in_km": 497.0, "population_density_km2": 9.0}
+  {"year": "2016", "number_of_zone": "74", "lmntq": "سميسمة / الجريان / الخور", "zone": "Simaisma / Al Jeryan / Al Khor", "population": 96169.0, "area_in_km": 374.0, "population_density_km2": 257.0}
+  {"year": "2018", "number_of_zone": "18", "lmntq": "اسلطة / المرقاب", "zone": "Slata / Al Mirqab", "population": 692.0, "area_in_km": 1.0, "population_density_km2": 1100.0}
+  {"year": "2014", "number_of_zone": "84", "lmntq": "ام باب", "zone": "Umm Bab", "population": 6194.0, "area_in_km": 495.0, "population_density_km2": 13.0}
+  {"year": "2018", "number_of_zone": "31", "lmntq": "ام لخبا", "zone": "Umm Lekhba", "population": 11897.0, "area_in_km": 3.0, "population_density_km2": 3791.0}
+  {"year": "2014", "number_of_zone": "10", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": 8.0, "area_in_km": 1.0, "population_density_km2": 9.0}
+  {"year": "2017", "number_of_zone": "10", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2018", "number_of_zone": "10", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": null, "area_in_km": null, "population_density_km2": null}
+  {"year": "2014", "number_of_zone": "20", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": 539.0, "area_in_km": 1.0, "population_density_km2": 410.0}
+  {"year": "2019", "number_of_zone": "20", "lmntq": "وادي السيل", "zone": "Wadi Al Sail", "population": 240.0, "area_in_km": 1.0, "population_density_km2": 183.0}
+  {"year": "2019", "number_of_zone": "50", "lmntq": "منطقة 50", "zone": "Zone 50", "population": 1137.0, "area_in_km": 8.0, "population_density_km2": 149.0}
+  {"year": "2015", "number_of_zone": "58", "lmntq": "منطقة 58", "zone": "Zone 58", "population": 4692.0, "area_in_km": 1.0, "population_density_km2": 5746.0}
