@@ -1,39 +1,302 @@
-== https://www.stats.gov.sa/statistics?index=119025&subindex=127380
-   200 text/html;charset=UTF-8 327,729 bytes
-   - 'إحصاءات تعداد السعودية ٢٠٢٢' -> https://www.stats.gov.sa/statistics?index=119025&subindex=127380
-   - 'english' -> https://www.stats.gov.sa/ar/c/portal/update_language?redirect=%2Far%2Fstatistics%3Findex%3D119025%26subindex%3D127380&groupId=20117&privateLayout=false&layoutId=773&languageId=en_US
-   - 'التعداد الزراعي' -> javascript:void(0);
-   3 matching links
-   0 matches for '(?:saudicensus|portal.|/api/)'
-== https://data.gov.om/
-   200 text/html; charset=utf-8 47,965 bytes
-   - 'Data Portal' -> https://data.gov.om/
-   - 'Population' -> https://data.gov.om/search?query=Population
-   - 'Population' -> https://data.gov.om/OMPOP2016/population?accesskey=lfghhhc
-   3 matching links
-   ~ Use An error occurred. Details Hide You have unsaved pages. Restore Cancel Data portal is a free and data-sharing portal where anyone can access data relating to the S
-   ~ e You have unsaved pages. Restore Cancel Data portal is a free and data-sharing portal where anyone can access data relating to the Sultanate of Oman. The Data Portal
-   ~ portal where anyone can access data relating to the Sultanate of Oman. The Data Portal provides many datasets from different entities, for everyone - citizen, investor
-   3 matches for '(?:saudicensus|portal.|/api/)'
-== https://census.scad.gov.ae/
-   200 text/html; charset=utf-8 176,679 bytes
-   - 'Future Applications of Census Data' -> https://census.scad.gov.ae/Home/About?tab=Development&lang=en
-   - 'History of Abu Dhabi Census' -> https://census.scad.gov.ae/Home/About?tab=History&lang=en
-   - 'Compare 2024 with Census 2023 R1' -> https://census.scad.gov.ae/
-   - 'Census 2023' -> javascript:void(0);
-   - 'About Abu Dhabi Census' -> https://census.scad.gov.ae/Home/About?tab=Overview&lang=en
-   5 matching links
-   0 matches for '(?:saudicensus|portal.|/api/)'
-== https://www.dsc.gov.ae/en-us/Themes/Pages/Population-and-Vital-Statistics.aspx
-   404 text/html; charset=utf-8 715 bytes
-   0 matching links
-   0 matches for '(?:saudicensus|portal.|/api/)'
-== https://cosit.gov.iq/ar/
-   200 text/html; charset=utf-8 176,654 bytes
-   - 'تأكيداً لدور البيانات في التخطيط والتنمية: إحصاء صلاح الدين تقيم ورشة عمل لتسليط الضوء على مسوح عام 2026 ونتائج التعداد ' -> https://cosit.gov.iq/ar/2020-12-28-07-22-315
-   - 'التعداد الزراعي الشامل' -> https://cosit.gov.iq/ar/agri-stat/2013-02-11-03-55-45
-   - 'تكوين رأس المال الثابت' -> https://cosit.gov.iq/ar/national-accounts/forming-capital
-   - 'السكان والمساكن والتعداد العام للسكان' -> https://cosit.gov.iq/ar/pop-main
-   - '' -> https://api.ac-knowledge.net
-   5 matching links
-   0 matches for '(?:saudicensus|portal.|/api/)'
+https://api.siat.stat.uz/sdmx/json/: HTTP 200 2,982,905 B
+  id=2540 code=1.01.00 System of National Accounts | Сиситема национальных счетов  <- Economic statistics
+  id=660 code=1.01.03.0003 Volume of gross domestic (regional) product per capita (annual) | Объем валового внутреннего (регионального) продукта на душу населения (годовые)  <- System of National Accounts / Gross regional product
+  id=661 code=1.01.03.0004 Growth rates of gross domestic (regional) product per capita (annual) | Темпы роста валового внутреннего (регионального) продукта на душу населения (годовые)  <- System of National Accounts / Gross regional product
+  id=2362 code=1.08.02.0002 Export volume per capita (annual) | Объем экспорта на душу населения (годовой)  <- Foreign economic activity / Export
+  id=2416 code=1.08.02.0007 Export volume per capita (quarterly) | Объем экспорта на душу населения (квартальный)  <- Foreign economic activity / Export
+  id=2363 code=1.08.03.0002 Volume of imports per capita (annual) | Объем импорта на душу населения (годовой)  <- Foreign economic activity / Import
+  id=2417 code=1.08.03.0008 Volume of imports per capita (quarterly) | Объем импорта на душу населения (квартальная)  <- Foreign economic activity / Import
+  id=2706 code=1.07.02.0007 Retail trade volume per capita (annual) | Объем розничной торговли на душу населения (годовой)  <- Consumer market / Retale sales
+  id=2824 code=1.07.02.0010 Growth rates Retail trade volume per capita (annual) | Темпы роста объем розничной торговли на душу населения (годовой)  <- Consumer market / Retale sales
+  id=2701 code=1.07.02.0008 Retail trade volume per capita (by month) | Объем розничной торговли на душу населения (по месяцам)  <- Consumer market / Retale sales
+  id=2823 code=1.07.02.0009 Retail trade volume per capita  (by month, 2023-2024) | Объем розничной торговли на душу населения (по месяцам, 2023-2024г.г.)  <- Consumer market / Retale sales
+  id=2825 code=1.07.02.0011 Growth rates Retail trade volume per capita (by month, 2023-2024) | Темпы роста объем розничной торговли на душу населения (по месяцам, 2023-2024г.г.)  <- Consumer market / Retale sales
+  id=1035 code=1.07.02.0036 Retail turnover per capita (annual) | Розничный товарооборот на душу населения (годовая)  <- Consumer market / Retale sales
+  id=2703 code=1.07.02.0039 Retail trade turnover per capita (quarterly) | Оборот розничной торговли на душу населения (квартальная)  <- Consumer market / Retale sales
+  id=1179 code=1.02.01.0012 Volume of industrial production per capita (monthly) | Объём производства промышленной продукции на душу населения (месячный)  <- Industry / Industry
+  id=1181 code=1.02.01.0014 Growth rate of industrial production per capita (monthly) | Темп роста производства промышленной продукции на душу населения (месячный)  <- Industry / Industry
+  id=1178 code=1.02.01.0011 Volume of industrial production per capita (annual) | Объём производства промышленной продукции на душу населения (годовой)  <- Industry / Industry
+  id=1180 code=1.02.01.0013 Growth rate of industrial production per capita (annual) | Темп роста производства промышленной продукции на душу населения (годовой)  <- Industry / Industry
+  id=1182 code=1.02.01.0015 Volume of production of consumer products per capita (annual) | Объём производства потребительских товаров на душу населения (годовой)  <- Industry / Industry
+  id=1184 code=1.02.01.0016 Volume of production of consumer products per capita (monthly) | Объём производства потребительских товаров на душу населения (месячный)  <- Industry / Industry
+  id=635 code=1.02.01.0018 Growth rate of production of consumer products per capita (monthly) | Темп роста производства потребительских товаров на душу населения (месячный)  <- Industry / Industry
+  id=630 code=1.02.01.0017 Growth rate of production of consumer products per capita (annual) | Темп роста производства потребительских товаров на душу населения (годовой)  <- Industry / Industry
+  id=611 code=1.02.01.0019 Structure of volume of production of consumer products per capita | Структура объёма производства потребительских товаров на душу населения  <- Industry / Industry
+  id=2687 code=1.02.02.0022 Volume of electricity consumption by subscribers per capita | Объём потребления электроэнергии абонентами на душу населения  <- Industry / Energy
+  id=2688 code=1.02.02.0023 Volume of primary fuel and energy products production per capita | Объём производства первичных топливно-энергетических продуктов на душу населения  <- Industry / Energy
+  id=2689 code=1.02.02.0024 Volume of oil and gas condensate production per capita | Объём производства нефти и газового конденсата на душу населения  <- Industry / Energy
+  id=2690 code=1.02.02.0025 Volume of natural gas production per capita | Объём производства природного газа на душу населения  <- Industry / Energy
+  id=2691 code=1.02.02.0026 Volume of coal production per capita | Объём производства угля на душу населения  <- Industry / Energy
+  id=2692 code=1.02.02.0027 Volume of hydropower generation per capita | Объём производства гидроэнергии на душу населения  <- Industry / Energy
+  id=3168 code=1.02.02.0029 Volume of electricity supply per capita | Объём поставки электроэнергии на душу населения  <- Industry / Energy
+  id=4711 code=1.03.01.0009 Total volume of agriculture, forestry and fisheries products (services) per capita (annual) | Общий объём продукции (услуг) сельского, лесного и рыбного хозяйства в расчёте на душу населения (годовой)  <- Agriculture, forestry and fisheries / Agriculture, forestry and fisheries
+  id=1328 code=1.04.01.0006 The volume of investments in fixed assets per capita (annual) | Объем инвестиций в основной капитал на душу населения (годовая)  <- Investments and construction / Investments in fixed capital
+  id=1332 code=1.04.01.0007 The volume of investments in fixed assets per capita (quarterly) | Объем инвестиций в основной капитал на душу населения (квартальная)  <- Investments and construction / Investments in fixed capital
+  id=1337 code=1.04.01.0012 Share of own funds of enterprises and individuals in investments in fixed assets | Доля собственных средств предприятий и населений  в инвестициях в основной капитал  <- Investments and construction / Investments in fixed capital
+  id=1959 code=1.04.01.0100 Volume of foreign direct investment in fixed assets per capita | Объем прямых иностранных инвестиций в основной капитал на душу населения  <- Investments and construction / Investments in fixed capital
+  id=2634 code=1.04.01.0119 Volume of investments in fixed assets at the expense of the population (annual) | Объем инвестиций в основной капитал за счет средств населения (годовая)  <- Investments and construction / Investments in fixed capital
+  id=2644 code=1.04.01.0129 Volume of investments in fixed assets at the expense of the population (quarterly) | Объем инвестиций в основной капитал за счет средств населения (квартальная)  <- Investments and construction / Investments in fixed capital
+  id=2655 code=1.04.01.0140 Growth rates of investments in fixed assets at the expense of the population (annual) | Темпы роста инвестиций в основной капитал за счет средств населения (годовая)  <- Investments and construction / Investments in fixed capital
+  id=2665 code=1.04.01.0150 Growth rates of investments in fixed assets at the expense of the population (growth rate, quarterly) | Темпы роста инвестиций в основной капитал за счет средств населения  (квартальная)  <- Investments and construction / Investments in fixed capital
+  id=3793 code=1.04.01.0179 Volume of investments in fixed capital at the expense of population funds (by types of economic activity) | Объем инвестиций в основной капиталза счет средств населения (по видам экономической деятельности)  <- Investments and construction / Investments in fixed capital
+  id=2411 code=1.04.02.0011 Volume of  construction works per capita (annual) | Объем строительных работ на душу населения (годовая)  <- Investments and construction / Construction
+  id=2673 code=1.04.02.0012 Volume of  construction works per capita (monthly) | Объем строительных работ на душу населения (месячная)  <- Investments and construction / Construction
+  id=1239 code=1.05.01.0047 Services per capita (annual, by region) | Объем рыночных услуг на душу населения (годовой, в разрезе регионов)  <- Services / Services rendered
+  id=1240 code=1.05.01.0048 Percent of services per capita (annual) | Темпы роста объема рыночных услуг на душу населения (годовая)  <- Services / Services rendered
+  id=3247 code=1.05.01.0113 Volume of market services per capita (monthly, by region) | Объем рыночных услуг на душу населения (ежемесячная, в разрезе регионов)  <- Services / Services rendered
+  id=3248 code=1.05.01.0114 Growth rate of market services per capita (monthly) | Темпы роста объема рыночных услуг на душу населения (ежемесячная)  <- Services / Services rendered
+  id=3413 code=1.05.01.0124 Volume of market services rendered per capita (monthly, by districts and cities) | Объем оказанных рыночных услуг на душу населения (ежемесячно, по районам и городам)  <- Services / Services rendered
+  id=3414 code=1.05.01.0125 Volume of market services rendered per capita (annually, by districts and cities) | Объем оказанных рыночных услуг на душу населения (ежегодно, по районам и городам)  <- Services / Services rendered
+  id=331 code=1.06.02.0019 The share of postal services in the total revenue from communication services rendered to the population by communication enterprises | Доля услуг почтовой связи в общей выручке от оказанных услуг связи населению предпри  <- Transport and communications / Communications
+  id=333 code=1.06.02.0020 The share of telegraph communication services in the total revenue from communication services rendered to the population by communication enterprises | Доля услуг телеграфной связи в общей выручке от оказанных услуг свя  <- Transport and communications / Communications
+  id=338 code=1.06.02.0021 The share of telephone communication services in urban and rural areas in the total revenue from communication services rendered to the population by communication enterprises | Доля услуг телефонной связи в городской и   <- Transport and communications / Communications
+  id=336 code=1.06.02.0022 The share of long-distance and international telephone services in the total revenue from communication services rendered to the population by communication enterprises | Доля услуг по междугородной и международной телеф  <- Transport and communications / Communications
+  id=340 code=1.06.02.0023 Revenues from telecommunication services rendering to population, intercity and international telephone communication | Доля услуг передачи и прием телевизионных программ в общей выручке предприятий связи от услуг связи   <- Transport and communications / Communications
+  id=342 code=1.06.02.0024 Revenues from telecommunication services rendering to population, mobile | Доля  мобильной связи в общей выручке предприятий связи от услуг связи населению  <- Transport and communications / Communications
+  id=345 code=1.06.02.0025 The share of data transmission network services (including the Internet) in the total revenue from communication services rendered to the population by communication enterprises | Доля услуг сети передачи данных (включая  <- Transport and communications / Communications
+  id=349 code=1.06.02.0026 The share of other types of communication services in the total revenue from communication services rendered to the population by communication enterprises | Доля прочих видов услуг связи в общей выручке от оказанных усл  <- Transport and communications / Communications
+  id=1269 code=1.06.02.0031 Number of subscribers with Internet access, per 100 people of the population (by region) | Количество абонентов с доступом в сеть Интернет, на 100 человек населения (в разрезе регионов)  <- Transport and communications / Communications
+  id=1275 code=1.06.02.0041 Provision of the population with telephone sets (by regions) | Обеспеченность населения телефонными аппаратами (в разрезе регионов)  <- Transport and communications / Communications
+  id=4523 code=2.01.01.0084 Distribution of infants by age of father’s (total, up to 25 years, quarterly) | Распределение младенцев по возрасту отца (всего, до 25 лет, квартальные)  <- Demography / Key demographic indicators
+  id=4524 code=2.01.01.0085 Distribution of infants by age of father’s (total, 25-39 years old, quarterly) | Распределение младенцев по возрасту отца (всего, 25-39 лет, квартальные)  <- Demography / Key demographic indicators
+  id=4525 code=2.01.01.0086 Distribution of infants by age of father’s (total, 40 years and older, quarterly) | Распределение младенцев по возрасту отца (всего, 40 лет и старше, квартальные)  <- Demography / Key demographic indicators
+  id=4526 code=2.01.01.0087 Distribution of infants by age of mother’s (total, up to 25 years, quarterly) | Распределение младенцев по возрасту матери (всего, до 25 лет, квартальные)  <- Demography / Key demographic indicators
+  id=4527 code=2.01.01.0088 Distribution of infants by age of mother’s (total, 25-39 years old, quarterly) | Распределение младенцев по возрасту матери (всего, 25-39 лет, квартальные)  <- Demography / Key demographic indicators
+  id=4528 code=2.01.01.0089 Distribution of infants by age of mother’s (total, 40 years and older, quarterly) | Распределение младенцев по возрасту матери (всего, 40 лет и старше, квартальные)  <- Demography / Key demographic indicators
+  id=237 code=2.01.01.0013 Natural population growth | Естественный прирост населения  <- Demography / Key demographic indicators
+  id=4538 code=2.01.01.0099 Number of arrivals by age group (total, younger than working age, quarterly) | Количество прибывших по возрастным группам (всего, моложе трудоспособного возраста, квартальные)  <- Demography / Key demographic indicators
+  id=4539 code=2.01.01.0100 Number of arrivals by age group (total, of working age, quarterly) | Количество прибывших по возрастным группам (всего, в трудоспособном возрасте, квартальные)  <- Demography / Key demographic indicators
+  id=4540 code=2.01.01.0101 Number of arrivals by age group (total, above working age, quarterly) | Количество прибывших по возрастным группам (всего, старше трудоспособного возраста, квартальные)  <- Demography / Key demographic indicators
+  id=4541 code=2.01.01.0102 Number of dropouts by age group (total, younger than working age, quarterly) | Количество выбывших по возрастным группам (всего, моложе трудоспособного возраста, квартальные)  <- Demography / Key demographic indicators
+  id=4542 code=2.01.01.0103 Number of dropouts by age group (total, of working age, quarterly) | Количество выбывших по возрастным группам (всего, в трудоспособном возрасте, квартальные)  <- Demography / Key demographic indicators
+  id=4543 code=2.01.01.0104 Number of dropouts by age group (total, above working age, quarterly) | Количество выбывших по возрастным группам (всего, старше трудоспособного возраста, квартальные)  <- Demography / Key demographic indicators
+  id=4531 code=2.01.01.0092 Distribution of women entering marriage by age (total, up to 20 years, quarterly) | Распределение женщин вступающих в брак по возрасту (всего, до 20 лет, квартальные)  <- Demography / Key demographic indicators
+  id=4532 code=2.01.01.0093 Distribution of women entering marriage by age (total, 20-30 years old, quarterly) | Распределение женщин вступающих в брак по возрасту (всего, 20-30 лет, квартальные)  <- Demography / Key demographic indicators
+  id=4533 code=2.01.01.0094 Distribution of women entering marriage by age (total, 31-40 years old, quarterly) | Распределение женщин вступающих в брак по возрасту (всего, 31-40 лет, квартальные)  <- Demography / Key demographic indicators
+  id=4534 code=2.01.01.0095 Distribution of women entering marriage by age (total, 41 years and older, quarterly) | Распределение женщин вступающих в брак по возрасту (всего, 41 год и старше, квартальные)  <- Demography / Key demographic indicators
+  id=2781 code=2.01.01.0037 Number of births in cities with a population of 50,000 or more | Количество родившихся в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=2780 code=2.01.01.0038 The number of deaths in cities with a population of 50 000 or more | Количество смертей в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=2778 code=2.01.01.0039 Natural population growth in cities with a population of 50,000 people or more | Естественный прирост населения в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=2786 code=2.01.01.0040 The number of girls born in cities with a population of 50,000 or more | Количество девочек родившихся в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=2789 code=2.01.01.0041 The number of women who died in cities with a population of 50 000 or more | Количество женщин, умерших в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=2783 code=2.01.01.0042 The natural growth of women in cities with a population of 50,000 people or more | Естественный прирост женщин в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=2782 code=2.01.01.0043 The number of boys born in cities with a population of 50,000 or more | Количество мальчиков родившихся в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=2787 code=2.01.01.0044 The number of men who died in cities with a population of 50 000 or more | Количество мужчин, умерших в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=2779 code=2.01.01.0045 Natural increase in men in cities with a population of 50 000 people or more | Естественный прирост мужчин в городах с населением 50 000 человек и более  <- Demography / Key demographic indicators
+  id=246 code=2.01.02.0001 Permanent population-Total | Численность постоянного населения (всего)  <- Demography / Demographic indicators
+  id=245 code=2.01.02.0002 Permanent population (men) | Численность постоянного населения (мужчины)  <- Demography / Demographic indicators
+  id=244 code=2.01.02.0003 Permanent population (female) | Численность постоянного населения (женщины)  <- Demography / Demographic indicators
+  id=248 code=2.01.02.0004 Permanent population-Urban | Численность постоянного населения (город)  <- Demography / Demographic indicators
+  id=247 code=2.01.02.0005 Permanent population(Rural) | Численность постоянного населения (село)  <- Demography / Demographic indicators
+  id=4116 code=2.01.02.0060 Resident population (women, in urban areas) | Постоянное население (женщины, в городской местности)  <- Demography / Demographic indicators
+  id=4117 code=2.01.02.0061 Resident population (women, in rural areas) | Постоянное население (женщины, в сельской местности)  <- Demography / Demographic indicators
+  id=4118 code=2.01.02.0062 Resident population (men, in urban areas) | Постоянное население (мужчины, в городской местности)  <- Demography / Demographic indicators
+  id=4119 code=2.01.02.0063 Resident population (men, in rural areas) | Постоянное население (мужчины, в сельской местности)  <- Demography / Demographic indicators
+  id=4440 code=2.01.02.0137 Share of women in the total permanent population | Доля женщин в общей численности постоянного населения  <- Demography / Demographic indicators
+  id=4442 code=2.01.02.0139 Share of women in the total permanent population (city) | Доля женщин в общей численности постоянного населения (город)  <- Demography / Demographic indicators
+  id=4444 code=2.01.02.0141 Share of women in the total permanent population (village) | Доля женщин в общей численности постоянного населения (село)  <- Demography / Demographic indicators
+  id=4441 code=2.01.02.0138 Share of men in the total permanent population | Доля мужчин в общей численности постоянного населения  <- Demography / Demographic indicators
+  id=4443 code=2.01.02.0140 Share of men in the total permanent population (city) | Доля мужчин в общей численности постоянного населения (город)  <- Demography / Demographic indicators
+  id=4445 code=2.01.02.0142 Share of men in the total permanent population (village) | Доля мужчин в общей численности постоянного населения (село)  <- Demography / Demographic indicators
+  id=3404 code=2.01.02.0053 Permanent population (total, quarterly) | Численность постоянного населения (всего, квартальная)  <- Demography / Demographic indicators
+  id=3888 code=2.01.02.0054 Permanent population (female, quarterly) | Численность постоянного населения (женщины, квартальные)  <- Demography / Demographic indicators
+  id=3889 code=2.01.02.0055 Permanent population (male, quarterly) | Численность постоянного населения (мужчины, квартальные)  <- Demography / Demographic indicators
+  id=3890 code=2.01.02.0056 Permanent population (city, quarterly) | Численность постоянного населения (город, квартальные)  <- Demography / Demographic indicators
+  id=3891 code=2.01.02.0057 Permanent population (village, quarterly) | Численность постоянного населения (село, квартальные)  <- Demography / Demographic indicators
+  id=2835 code=2.01.02.3120 Number of permanent population at working age | Численность постоянного населения в трудоспособном возрасте  <- Demography / Demographic indicators
+  id=4131 code=2.01.02.0075 Share of the able-bodied population in the total population (women) | Доля трудоспособного населения в общей численности населения (женщины)  <- Demography / Demographic indicators
+  id=4132 code=2.01.02.0076 Share of the able-bodied population in the total population (men) | Доля трудоспособного населения в общей численности населения (мужчины)  <- Demography / Demographic indicators
+  id=4129 code=2.01.02.0073 Proportion of the population (0-15) younger than working age in the total population (girls) | Доля населения (0-15) моложе трудоспособного возраста в общей численности населения (девочки)  <- Demography / Demographic indicators
+  id=4130 code=2.01.02.0074 Proportion of the population (0-15) younger than working age in the total population (boys) | Доля населения (0-15) моложе трудоспособного возраста в общей численности населения (мальчики)  <- Demography / Demographic indicators
+  id=3130 code=2.01.02.3125 Number of permanent population at working age (share in the total population, percent) | Численность постоянного населения в трудоспособном возрасте (удельный вес в общей численности населения)  <- Demography / Demographic indicators
+  id=4133 code=2.01.02.0077 Proportion of population over working age in the total population (women) | Доля населения старше трудоспособного возраста в общей численности населения (женщин)  <- Demography / Demographic indicators
+  id=4134 code=2.01.02.0078 Proportion of population over working age in the total population (men) | Доля населения старше трудоспособного возраста в общей численности населения (мужчины)  <- Demography / Demographic indicators
+  id=2837 code=2.01.02.3310 Population by age groups (7-13) | Численность постоянное население в возрасте 7-13 лет  <- Demography / Demographic indicators
+  id=2836 code=2.01.02.3210 Population by age groups (14-30) | Численность постоянное население в возрасте 14-30 лет  <- Demography / Demographic indicators
+  id=3160 code=2.01.02.0050 Population aged 20-29 (total) | Население в возрасте 20-29 лет (всего)  <- Demography / Demographic indicators
+  id=3161 code=2.01.02.0051 Population aged 20-29 (women) | Население в возрасте 20-29 лет (женщины)  <- Demography / Demographic indicators
+  id=3162 code=2.01.02.0052 Population aged 20-29 (men) | Население в возрасте 20-29 лет (мужчины)  <- Demography / Demographic indicators
+  id=561 code=2.01.02.0006 Population by age groups (0-2) | Численность постоянное население в возрасте 0-2 лет  <- Demography / Demographic indicators
+  id=2838 code=2.01.02.3410 Population by age groups (3-5) | Численность постоянное население в возрасте 3-5 лет  <- Demography / Demographic indicators
+  id=589 code=2.01.02.0008 Population by age groups (6-7) | Численность постоянного населения в возрасте 6-7 лет  <- Demography / Demographic indicators
+  id=600 code=2.01.02.0009 Population by age groups (8-15) | Численность постоянного населения в возрасте 8-15 лет  <- Demography / Demographic indicators
+  id=607 code=2.01.02.0010 Population by age groups  (16-17) | Численность постоянного населения в возрасте 16-17 лет  <- Demography / Demographic indicators
+  id=617 code=2.01.02.0011 Population by age groups (18-19) | Численность постоянного населения в возрасте 18-19 лет  <- Demography / Demographic indicators
+  id=626 code=2.01.02.0012 Population by age groups (20-24) | Численность постоянного населения в возрасте 20-24 лет  <- Demography / Demographic indicators
+  id=632 code=2.01.02.0013 Population by age groups (25-29) | Численность постоянного населения в возрасте 25-29 лет  <- Demography / Demographic indicators
+  id=638 code=2.01.02.0014 Population by age groups (30-34) | Численность постоянного населения в возрасте 30-34 лет  <- Demography / Demographic indicators
+  id=643 code=2.01.02.0015 Population by age groups (35-39) | Численность постоянного населения в возрасте 35-39 лет  <- Demography / Demographic indicators
+  id=647 code=2.01.02.0016 Population by age groups (40-49) | Численность постоянного населения в возрасте 40-49 лет  <- Demography / Demographic indicators
+  id=650 code=2.01.02.0017 Population by age groups (50-59) | Численность постоянного населения в возрасте 50-59 лет  <- Demography / Demographic indicators
+  id=1190 code=2.01.02.0018 Population by age groups (60-64 years) | Численность постоянного населения в возрасте 60-64 лет  <- Demography / Demographic indicators
+  id=1191 code=2.01.02.0019 Population by age groups (65+ years) | Численность постоянного населения в возрасте 65 лет и старше  <- Demography / Demographic indicators
+  id=3132 code=2.01.02.0022 Population by age groups (0-2) (women) | Численность постоянное население в возрасте 0-2 (женщины)  <- Demography / Demographic indicators
+  id=3133 code=2.01.02.0023 Population by age groups (3-5) (women) | Численность постоянное население в возрасте 3-5 (женщины)  <- Demography / Demographic indicators
+  id=3134 code=2.01.02.0024 Population by age groups (6-7) (women) | Численность постоянного населения в возрасте 6-7 (женщины)  <- Demography / Demographic indicators
+  id=3135 code=2.01.02.0025 Population by age groups (8-15) (women) | Численность постоянного населения в возрасте 8-15 (женщины)  <- Demography / Demographic indicators
+  id=3136 code=2.01.02.0026 Population by age groups (16-17) (women) | Численность постоянного населения в возрасте 16-17 (женщины)  <- Demography / Demographic indicators
+  id=3137 code=2.01.02.0027 Population by age groups (18-19) (women) | Численность постоянного населения в возрасте 18-19 (женщины)  <- Demography / Demographic indicators
+  id=3138 code=2.01.02.0028 Population by age groups (20-24) (women) | Численность постоянного населения в возрасте 20-24 (женщины)  <- Demography / Demographic indicators
+  id=3139 code=2.01.02.0029 Population by age groups (25-29) (women) | Численность постоянного населения в возрасте 25-29 (женщины)  <- Demography / Demographic indicators
+  id=3140 code=2.01.02.0030 Population by age groups (30-34) (women) | Численность постоянного населения в возрасте 30-34 (женщины)  <- Demography / Demographic indicators
+  id=3141 code=2.01.02.0031 Population by age groups (35-39) (women) | Численность постоянного населения в возрасте 35-39 (женщины)  <- Demography / Demographic indicators
+  id=3142 code=2.01.02.0032 Population by age groups (40-49) (women) | Численность постоянного населения в возрасте 40-49 (женщины)  <- Demography / Demographic indicators
+  id=3143 code=2.01.02.0033 Population by age groups (50-59) (women) | Численность постоянного населения в возрасте 50-59 (женщины)  <- Demography / Demographic indicators
+  id=3144 code=2.01.02.0034 Population by age groups (60-64) (women) | Численность постоянного населения в возрасте 60-64 (женщины)  <- Demography / Demographic indicators
+  id=3145 code=2.01.02.0035 Population by age groups (65 years and older) (women) | Численность постоянного населения в возрасте 65 и старше (женщины)  <- Demography / Demographic indicators
+  id=3146 code=2.01.02.0036 Population by age groups (0-2) (men) | Численность постоянное население в возрасте 0-2 (мужчины)  <- Demography / Demographic indicators
+  id=3147 code=2.01.02.0037 Population by age groups (3-5) (men) | Численность постоянное население в возрасте 3-5 (мужчины)  <- Demography / Demographic indicators
+  id=3148 code=2.01.02.0038 Population by age groups (6-7) (men) | Численность постоянного населения в возрасте 6-7 (мужчины)  <- Demography / Demographic indicators
+  id=3149 code=2.01.02.0039 Population by age groups (8-15) (men) | Численность постоянного населения в возрасте 8-15 (мужчины)  <- Demography / Demographic indicators
+  id=3150 code=2.01.02.0040 Population by age groups (16-17) (men) | Численность постоянного населения в возрасте 16-17 (мужчины)  <- Demography / Demographic indicators
+  id=3151 code=2.01.02.0041 Population by age groups (18-19) (men) | Численность постоянного населения в возрасте 18-19 (мужчины)  <- Demography / Demographic indicators
+  id=3152 code=2.01.02.0042 Population by age groups (20-24) (men) | Численность постоянного населения в возрасте 20-24 (мужчины)  <- Demography / Demographic indicators
+  id=3153 code=2.01.02.0043 Population by age groups (25-29) (men) | Численность постоянного населения в возрасте 25-29 (мужчины)  <- Demography / Demographic indicators
+  id=3154 code=2.01.02.0044 Population by age groups (30-34) (men) | Численность постоянного населения в возрасте 30-34 (мужчины)  <- Demography / Demographic indicators
+  id=3155 code=2.01.02.0045 Population by age groups (35-39) (men) | Численность постоянного населения в возрасте 35-39 (мужчины)  <- Demography / Demographic indicators
+  id=3156 code=2.01.02.0046 Population by age groups (40-49) (men) | Численность постоянного населения в возрасте 40-49 (мужчины)  <- Demography / Demographic indicators
+  id=3157 code=2.01.02.0047 Population by age groups (50-59) (men) | Численность постоянного населения в возрасте 50-59 (мужчины)  <- Demography / Demographic indicators
+  id=3158 code=2.01.02.0048 Population by age groups (60-64) (men) | Численность постоянного населения в возрасте 60-64 (мужчины)  <- Demography / Demographic indicators
+  id=3159 code=2.01.02.0049 Population by age groups (65 years and older) (men) | Численность постоянного населения в возрасте 65 и старше (мужчины)  <- Demography / Demographic indicators
+  id=4120 code=2.01.02.0064 The share of women in the resident population aged 20-29 | Доля женщин в численности постоянного населения в возрасте 20-29 лет  <- Demography / Demographic indicators
+  id=4121 code=2.01.02.0065 The share of men in the resident population aged 20-29 | Доля мужчин в численности постоянного населения в возрасте 20-29 лет  <- Demography / Demographic indicators
+  id=4122 code=2.01.02.0066 The number of women per 1,000 men in the resident population aged 20-29 | Численность женщин, приходящихся на 1 000 мужчин в численности постоянного населения в возрасте 20-29 лет  <- Demography / Demographic indicators
+  id=4697 code=2.01.02.0155 Average age of the population | Средний возраст населения  <- Demography / Demographic indicators
+  id=4698 code=2.01.02.0156 Average age of the population (in urban areas) | Средний возраст населения (в городской местности)  <- Demography / Demographic indicators
+  id=4699 code=2.01.02.0157 Average age of the population (in rural areas) | Средний возраст населения (в сельской местности)  <- Demography / Demographic indicators
+  id=4123 code=2.01.02.0067 Average age of women | Средний возраст женщин  <- Demography / Demographic indicators
+  id=4124 code=2.01.02.0068 Average age of men | Средний возраст мужчин  <- Demography / Demographic indicators
+  id=4125 code=2.01.02.0069 Average age of women (in urban areas) | Средний возраст женщин (в городской местности)  <- Demography / Demographic indicators
+  id=4126 code=2.01.02.0070 Average age of men (in urban areas) | Средний возраст мужчин (в городской местности)  <- Demography / Demographic indicators
+  id=4127 code=2.01.02.0071 Average age of women (in rural areas) | Средний возраст женщин (в сельской местности)  <- Demography / Demographic indicators
+  id=4128 code=2.01.02.0072 Average age of men (in rural areas) | Средний возраст мужчин (в сельской местности)  <- Demography / Demographic indicators
+  id=574 code=2.01.02.0007 Number of live births by mother's age | Количество живорожденных по возрасту матери  <- Demography / Demographic indicators
+  id=4383 code=2.01.02.0080 Number of live births by mother's age (city) | Количество живорожденных по возрасту матери (город)  <- Demography / Demographic indicators
+  id=4384 code=2.01.02.0081 Number of live births by mother's age (village) | Количество живорожденных по возрасту матери (село)  <- Demography / Demographic indicators
+  id=4402 code=2.01.02.0099 Deaths from major causes of death, per 100 000 population (women) | Умершие по основным причинам смерти, на 100 000 населения (женщины)  <- Demography / Demographic indicators
+  id=4403 code=2.01.02.0100 Deaths from major causes of death, per 100 000 population (men) | Умершие по основным причинам смерти, на 100 000 населения (мужчины)  <- Demography / Demographic indicators
+  id=4404 code=2.01.02.0101 Died of working age due to the main causes of death (women) | Умершие в трудоспособном возрасте по основным причинам смерти (женщины)  <- Demography / Demographic indicators
+  id=4405 code=2.01.02.0102 Died of working age due to the main causes of death (men) | Умершие в трудоспособном возрасте по основным причинам смерти (мужчины)  <- Demography / Demographic indicators
+  id=4406 code=2.01.02.0103 Deaths of working age due to the main causes of death, per 100 000 population (women) | Умершие в трудоспособном возрасте по основным причинам смерти, на 100 000 населения (женщины)  <- Demography / Demographic indicators
+  id=4407 code=2.01.02.0104 Deaths of working age due to the main causes of death, per 100 000 population (men) | Умершие в трудоспособном возрасте по основным причинам смерти, на 100 000 населения (мужчины)  <- Demography / Demographic indicators
+  id=4408 code=2.01.02.0105 Standardized mortality rate for major causes of death, per 100 000 population | Стандартизованный коэффицент смертности по основным причинам смерти, на 100 000 населения  <- Demography / Demographic indicators
+  id=4409 code=2.01.02.0106 Standardized mortality rate for major causes of death, per 100 000 population (women) | Стандартизованный коэффицент смертности по основным причинам смерти, на 100 000 населения (женщины)  <- Demography / Demographic indicators
+  id=4410 code=2.01.02.0107 Standardized mortality rate for major causes of death, per 100 000 population (men) | Стандартизованный коэффицент смертности по основным причинам смерти, на 100 000 населения (мужчины)  <- Demography / Demographic indicators
+  id=4411 code=2.01.02.0108 Female mortality rate by age group, per 1000 population | Коэффициент смертности женщин по возрастным группам, на 1000 населения  <- Demography / Demographic indicators
+  id=4412 code=2.01.02.0109 Female mortality rate by age group, per 1000 population (city) | Коэффициент смертности женщин по возрастным группам, на 1000 населения (город)  <- Demography / Demographic indicators
+  id=4413 code=2.01.02.0110 Female mortality rate by age group, per 1000 population (village) | Коэффициент смертности женщин по возрастным группам, на 1000 населения (село)  <- Demography / Demographic indicators
+  id=4414 code=2.01.02.0111 Male mortality rate by age group, per 1000 population | Коэффициент смертности мужчин по возрастным группам, на 1000 населения  <- Demography / Demographic indicators
+  id=4415 code=2.01.02.0112 Male mortality rate by age group, per 1000 population (city) | Коэффициент смертности мужчин по возрастным группам, на 1000 населения (город)  <- Demography / Demographic indicators
+  id=4416 code=2.01.02.0113 Male mortality rate by age group, per 1000 population (village) | Коэффициент смертности мужчин по возрастным группам, на 1000 населения (село)  <- Demography / Demographic indicators
+  id=4417 code=2.01.02.0114 Average age of women who entered their first marriage | Средний возраст женщин вступивших в первый брак  <- Demography / Demographic indicators
+  id=4418 code=2.01.02.0115 Average age of women who entered their first marriage (city) | Средний возраст женщин вступивших в первый брак (город)  <- Demography / Demographic indicators
+  id=4419 code=2.01.02.0116 Average age of women who entered their first marriage (village) | Средний возраст женщин вступивших в первый брак (село)  <- Demography / Demographic indicators
+  id=4420 code=2.01.02.0117 Average age of men who entered their first marriage | Средний возраст мужчин вступивших в первый брак  <- Demography / Demographic indicators
+  id=4421 code=2.01.02.0118 Average age of men who entered their first marriage (city) | Средний возраст мужчин вступивших в первый брак (город)  <- Demography / Demographic indicators
+  id=4422 code=2.01.02.0119 Average age of men who entered their first marriage (village) | Средний возраст мужчин вступивших в первый брак (село)  <- Demography / Demographic indicators
+  id=4423 code=2.01.02.0120 Number of marriages by age of brides | Количество браков по возрасту невест  <- Demography / Demographic indicators
+  id=4424 code=2.01.02.0121 Number of marriages by age of brides (grooms under 19) | Количество браков по возрасту невест (женихи до 19 лет)  <- Demography / Demographic indicators
+  id=4425 code=2.01.02.0122 Number of marriages by age of brides (grooms under 20-24) | Количество браков по возрасту невест (женихи до 20-24 лет)  <- Demography / Demographic indicators
+  id=4426 code=2.01.02.0123 Number of marriages by age of brides (grooms under 25-29) | Количество браков по возрасту невест (женихи до 25-29 лет)  <- Demography / Demographic indicators
+  id=4427 code=2.01.02.0124 Number of marriages by age of brides (grooms under 30-34) | Количество браков по возрасту невест (женихи до 30-34 лет)  <- Demography / Demographic indicators
+  id=4428 code=2.01.02.0125 Number of marriages by age of brides (grooms under 35-39) | Количество браков по возрасту невест (женихи до 35-39 лет)  <- Demography / Demographic indicators
+  id=4429 code=2.01.02.0126 Number of marriages by age of brides (grooms under 40-44) | Количество браков по возрасту невест (женихи до 40-44 лет)  <- Demography / Demographic indicators
+  id=4430 code=2.01.02.0127 Number of marriages by age of brides (grooms under 45-49) | Количество браков по возрасту невест (женихи до 45-49 лет)  <- Demography / Demographic indicators
+  id=4431 code=2.01.02.0128 Number of marriages by age of brides (grooms from 50 years and older) | Количество браков по возрасту невест (женихи от 50 лет и старше)  <- Demography / Demographic indicators
+  id=4432 code=2.01.02.0129 Number of women married by age and previous marital status (First time married) | Количество женщин, вступивших в брак по возрасту и предыдущему брачному состоянию (Впервые вступившие в брак)  <- Demography / Demographic indicators
+  id=4433 code=2.01.02.0130 Number of women married by age and previous marital status (Widows) | Количество женщин, вступивших в брак по возрасту и предыдущему брачному состоянию (Вдовы)  <- Demography / Demographic indicators
+  id=4434 code=2.01.02.0131 Number of women married by age and previous marital status (Divorced) | Количество женщин, вступивших в брак по возрасту и предыдущему брачному состоянию (Разведённые)  <- Demography / Demographic indicators
+  id=4435 code=2.01.02.0132 Number of women married by age and previous marital status (Marital status not specified) | Количество женщин, вступивших в брак по возрасту и предыдущему брачному состоянию (Брачный статус не указан)  <- Demography / Demographic indicators
+  id=4436 code=2.01.02.0133 Number of men married by age and previous marital status (First time married ) | Количество мужчин, вступивших в брак по возрасту и предыдущему брачному состоянию (Впервые вступившие в брак)  <- Demography / Demographic indicators
+  id=4437 code=2.01.02.0134 Number of men married by age and previous marital status (Widows) | Количество мужчин, вступивших в брак по возрасту и предыдущему брачному состоянию (Вдовы)  <- Demography / Demographic indicators
+  id=4438 code=2.01.02.0135 Number of men married by age and previous marital status (Divorced) | Количество мужчин, вступивших в брак по возрасту и предыдущему брачному состоянию (Разведённые)  <- Demography / Demographic indicators
+  id=4439 code=2.01.02.0136 Number of men married by age and previous marital status (Marital status not specified) | Количество мужчин, вступивших в брак по возрасту и предыдущему брачному состоянию (Брачный статус не указан)  <- Demography / Demographic indicators
+  id=4455 code=2.01.02.0152 The number of women per 1000 men of the permanent population (by age groups) | Количество женщин на 1 000 мужчин постоянного населения (по возрастным группам)  <- Demography / Demographic indicators
+  id=236 code=2.01.02.0020 Population density | Плотность населения  <- Demography / Demographic indicators
+  id=4519 code=2.01.02.0153 Population density (total, quarterly) | Плотность населения (всего, квартальные)  <- Demography / Demographic indicators
+  id=2841 code=2.01.02.6140 Percentage of women aged 20-24 who entered the registered or unregistered marriage under the age of 18 | Процент женщин в возрасте 20-24 лет, вступивших в зарегистрированный или незарегистрированный брак в возрасте до 18  <- Demography / Demographic indicators
+  id=521 code=2.02.01.1100 Number of able-bodied population at working age | Численность трудоспособного населения в трудоспособном возрасте  <- Labor market / Labor resources
+  id=551 code=2.02.01.1200 Persons of senior age and adolescents engaged in economics | Численность работающиx лиц моложе и старше трудоспособного возраста  <- Labor market / Labor resources
+  id=554 code=2.02.01.1300 Number of economically active population | Численность экономически активного населения  <- Labor market / Labor resources
+  id=3069 code=2.02.01.1301 Number of economically active population (city) | Численность экономически активного населения (город)  <- Labor market / Labor resources
+  id=3070 code=2.02.01.1302 Number of economically active population (village) | Численность экономически активного населения (село)  <- Labor market / Labor resources
+  id=4137 code=2.02.01.1303 Number of economically active population (women) | Численность экономически активного населения (женщины)  <- Labor market / Labor resources
+  id=4138 code=2.02.01.1304 Number of economically active population (men) | Численность экономически активного населения (мужчины)  <- Labor market / Labor resources
+  id=532 code=2.02.01.1400 The level of economic activity of the population | Уровень экономической активности населения  <- Labor market / Labor resources
+  id=4135 code=2.02.01.1401 The level of economic activity of the population (women) | Уровень экономической активности населения (женщины)  <- Labor market / Labor resources
+  id=4136 code=2.02.01.1402 The level of economic activity of the population (men) | Уровень экономической активности населения (мужчины)  <- Labor market / Labor resources
+  id=1315 code=2.02.01.1500 Distribution of the employed population by type of economic activity | Распределение занятого населения по видам экономической  деятельности  <- Labor market / Labor resources
+  id=2790 code=2.02.01.1501 Distribution of the number of employed population by type of economic activity of the Republic of Karakalpakstan | Распределение численности занятого населения по видам экономической деятельности Республики Каракалпакста  <- Labor market / Labor resources
+  id=2791 code=2.02.01.1502 Distribution of the number of employed population by type of economic activity of the Andijan region | Распределение численности занятого населения по видам экономической деятельности Андижанской области  <- Labor market / Labor resources
+  id=2792 code=2.02.01.1503 Distribution of the number of employed population by type of economic activity of the Bukhara region | Распределение численности занятого населения по видам экономической деятельности Бухарской области  <- Labor market / Labor resources
+  id=2793 code=2.02.01.1504 Distribution of the number of employed population by type of economic activity in the Jizzakh region | Распределение численности занятого населения по видам экономической деятельности Джизакской области  <- Labor market / Labor resources
+  id=2794 code=2.02.01.1505 Distribution of the number of employed population by type of economic activity in Kashkadarya region | Распределение численности занятого населения по видам экономической деятельности Кашкадарьинской области  <- Labor market / Labor resources
+  id=2795 code=2.02.01.1506 Distribution of the number of employed population by type of economic activity in Navoi region | Распределение численности занятого населения по видам экономической деятельности Навоийской области  <- Labor market / Labor resources
+  id=2796 code=2.02.01.1507 Distribution of the number of employed population by type of economic activity of the Namangan region | Распределение численности занятого населения по видам экономической деятельности Наманганской области  <- Labor market / Labor resources
+  id=2797 code=2.02.01.1508 Distribution of the number of employed population by type of economic activity of the Samarkand region | Распределение численности занятого населения по видам экономической деятельности Самаркандской области  <- Labor market / Labor resources
+  id=2798 code=2.02.01.1509 Distribution of the number of employed population by type of economic activity of the Surkhandarya region | Распределение численности занятого населения по видам экономической деятельности Сурхандарьинской области  <- Labor market / Labor resources
+  id=2799 code=2.02.01.1510 Distribution of the number of employed population by type of economic activity of the Syrdarya region | Распределение численности занятого населения по видам экономической деятельности Сырдарьинской области  <- Labor market / Labor resources
+  id=2800 code=2.02.01.1511 Distribution of the number of employed population by type of economic activity of the Tashkent region | Распределение численности занятого населения по видам экономической деятельности Ташкентской области  <- Labor market / Labor resources
+  id=2801 code=2.02.01.1512 Distribution of the number of employed population by type of economic activity of the Fergana region | Распределение численности занятого населения по видам экономической деятельности Ферганской области  <- Labor market / Labor resources
+  id=2802 code=2.02.01.1513 Distribution of the number of employed population by type of economic activity of the Khorezm region | Распределение численности занятого населения по видам экономической деятельности Хорезмской области  <- Labor market / Labor resources
+  id=2803 code=2.02.01.1514 Distribution of the number of employed population by type of economic activity of the Tashkent city | Распределение численности занятого населения по видам экономической деятельности города Ташкента  <- Labor market / Labor resources
+  id=4139 code=2.02.01.1515 Distribution of the employed population by type of economic activity (women) | Распределение занятого населения по видам экономической деятельности (женщины)  <- Labor market / Labor resources
+  id=4140 code=2.02.01.1516 Distribution of the employed population by type of economic activity (men) | Распределение занятого населения по видам экономической деятельности (мужчины)  <- Labor market / Labor resources
+  id=567 code=2.02.01.1600 Number of Employed Population | Численность занятых в экономике  <- Labor market / Labor resources
+  id=2804 code=2.02.01.1601 Number of Employed Population (women) | Численность занятых в экономике (женщины )  <- Labor market / Labor resources
+  id=2805 code=2.02.01.1602 Number of Employed Population (men) | Численность занятых в экономике (мужчины)  <- Labor market / Labor resources
+  id=2806 code=2.02.01.1603 Number of Employed Population (15-19 years old) | Численность занятых в экономике (15-19 лет)  <- Labor market / Labor resources
+  id=2807 code=2.02.01.1604 Number of Employed Population (20-24 years old) | Численность занятых в экономике (20-24 лет)  <- Labor market / Labor resources
+  id=2808 code=2.02.01.1605 Number of Employed Population (25-29 years old) | Численность занятых в экономике (25-29 лет)  <- Labor market / Labor resources
+  id=2809 code=2.02.01.1606 Number of Employed Population (30-34 years old) | Численность занятых в экономике (30-34 лет)  <- Labor market / Labor resources
+  id=2810 code=2.02.01.1607 Number of Employed Population (35-39 years old) | Численность занятых в экономике (35-39 лет)  <- Labor market / Labor resources
+  id=2811 code=2.02.01.1608 Number of Employed Population (40-44 years old) | Численность занятых в экономике (40-44 лет)  <- Labor market / Labor resources
+  id=2812 code=2.02.01.1609 Number of Employed Population (45-49 years old) | Численность занятых в экономике (45-49 лет)  <- Labor market / Labor resources
+  id=2813 code=2.02.01.1610 Number of Employed Population (50-54 years old) | Численность занятых в экономике (50-54 лет)  <- Labor market / Labor resources
+  id=2814 code=2.02.01.1611 Number of Employed Population (55-59 years old) | Численность занятых в экономике (55-59 лет)  <- Labor market / Labor resources
+  id=4155 code=2.02.01.1613 Number of Employed Population (60-64 years old) | Численность занятых в экономике (60-64 лет)  <- Labor market / Labor resources
+  id=2815 code=2.02.01.1612 Number of Employed Population (65 years and older) | Численность занятых в экономике (65 лет и старше)  <- Labor market / Labor resources
+  id=566 code=2.02.01.2300 Number of economically inactive population | Численность экономически неактивного населения  <- Labor market / Labor resources
+  id=3071 code=2.02.01.2301 Number of economically inactive population (city) | Численность экономически неактивного населения (город)  <- Labor market / Labor resources
+  id=3072 code=2.02.01.2302 Number of economically inactive population (village) | Численность экономически неактивного населения (село)  <- Labor market / Labor resources
+  id=4174 code=2.02.01.2417 Average age of women working for hire in enterprises and organizations | Средний возраст женщин, работающих по найму на предприятиях и организациях  <- Labor market / Labor resources
+  id=4175 code=2.02.01.2418 Average age of men working for hire in enterprises and organizations | Средний возраст мужчин, работающих по найму на предприятиях и организациях  <- Labor market / Labor resources
+  id=4176 code=2.02.01.2419 Distribution of women employed by age groups at enterprises and organizations | Распределение женщин, занятых по найму, по возрастным группам на предприятиях и в организациях  <- Labor market / Labor resources
+  id=4177 code=2.02.01.2420 Distribution of men employed by age groups at enterprises and organizations | Распределение мужчин, занятых по найму, по возрастным группам на предприятиях и в организациях  <- Labor market / Labor resources
+  id=4187 code=2.02.01.2430 Number of self-employed (total) (by age group) | Численность самозанятых лиц (всего) (по возрастным группам)  <- Labor market / Labor resources
+  id=4188 code=2.02.01.2431 Number of self-employed (women) (by age group) | Численность самозанятых лиц (женщины) (по возрастным группам)  <- Labor market / Labor resources
+  id=4189 code=2.02.01.2432 Number of self-employed (men) (by age group) | Численность самозанятых лиц (мужчины) (по возрастным группам)  <- Labor market / Labor resources
+  id=4196 code=2.02.01.2439 Number of individual entrepreneurs (total) (by age group) | Численность индивидуальных предпринимателей (всего) (по возрастным группам)  <- Labor market / Labor resources
+  id=4197 code=2.02.01.2440 Number of individual entrepreneurs (women) (by age group) | Численность индивидуальных предпринимателей (женщины) (по возрастным группам)  <- Labor market / Labor resources
+  id=4198 code=2.02.01.2441 Number of individual entrepreneurs (men) (by age group) | Численность индивидуальных предпринимателей (мужчины) (по возрастным группам)  <- Labor market / Labor resources
+  id=3800 code=2.02.01.2501 Number of employees under the age of 20 | Численность работников, в возрасте до 20 лет  <- Labor market / Labor resources
+  id=3801 code=2.02.01.2502 Number of female employees under the age of 20 | Численность работников-женщин, в возрасте до 20 лет  <- Labor market / Labor resources
+  id=3802 code=2.02.01.2503 Number of male employees under the age of 20 | Численность работников-мужчин, в возрасте до 20 лет  <- Labor market / Labor resources
+  id=3803 code=2.02.01.2504 Number of employees at the age of 20-30 | Численность работников, в возрасте 20-30 лет  <- Labor market / Labor resources
+  id=3804 code=2.02.01.2505 Number of female employees at the age of 20-30 | Численность работников-женщин, в возрасте 20-30 лет  <- Labor market / Labor resources
+  id=3805 code=2.02.01.2506 Number of male employees at the age of 20-30 | Численность работников-мужчин, в возрасте 20-30 лет  <- Labor market / Labor resources
+  id=3806 code=2.02.01.2507 Number of employees at the age of 31-39 | Численность работников, в возрасте 31-39 лет  <- Labor market / Labor resources
+  id=3807 code=2.02.01.2508 Number of female employees at the age of 31-39 | Численность работников-женщин, в возрасте 31-39 лет  <- Labor market / Labor resources
+  id=3808 code=2.02.01.2509 Number of male employees at the age of 31-39 | Численность работников-мужчин, в возрасте 31-39 лет  <- Labor market / Labor resources
+  id=3809 code=2.02.01.2511 Number of employees at the age of 40-59 | Численность работников, в возрасте 40-49 лет  <- Labor market / Labor resources
+  id=3810 code=2.02.01.2512 Number of female employees at the age of 40-59 | Численность работников-женщин, в возрасте 40-49 лет  <- Labor market / Labor resources
+  id=3798 code=2.02.01.2513 Number of male employees at the age of 40-59 | Численность работников-мужчин, в возрасте 40-49 лет  <- Labor market / Labor resources
+  id=3799 code=2.02.01.2514 Number of employees at the age of 50-54 | Численность работников, в возрасте 50-54 лет  <- Labor market / Labor resources
+  id=3811 code=2.02.01.2515 Number of female employees at the age of 50-54 | Численность работников-женщин, в возрасте 50-54 лет  <- Labor market / Labor resources
+  id=3812 code=2.02.01.2516 Number of male employees at the age of 50-54 | Численность работников-мужчин, в возрасте 50-54 лет  <- Labor market / Labor resources
+  id=3813 code=2.02.01.2517 Number of employees at the age of 55 and above | Численность работников, в возрасте 55 лет и старше  <- Labor market / Labor resources
+  id=3814 code=2.02.01.2518 Number of female employees at the age of 55 and above | Численность работников-женщин, в возрасте 55 лет и старше  <- Labor market / Labor resources
+  id=3815 code=2.02.01.2519 Number of male employees at the age of 55 and above | Численность работников-мужчин, в возрасте 55 лет и старше  <- Labor market / Labor resources
+  id=2538 code=2.03.00 Population Living standards | Уровень жизни населения  <- Social statistics
+  id=1737 code=2.03.01.0008 Share of low-income population | Доля малообеспеченного населения  <- Population Living standards / Poverty and Income Statistics
+  id=3973 code=2.03.01.0033 The volume of total income of the population (quarterly) | Объем совокупного дохода населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3974 code=2.03.01.0051 The growth rate of the total income of the population (quarterly) | Темпы роста совокупного дохода населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3975 code=2.03.01.0052 Volume of total income per capita (quarterly) | Объем совокупного дохода на душу населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3976 code=2.03.01.0053 Growth rates of total income per capita (quarterly) | Темпы роста совокупного дохода на душу населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3977 code=2.03.01.0054 The volume of real aggregate income of the population (quarterly) | Объем реального совокупного дохода населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3978 code=2.03.01.0055 Growth rates of real aggregate income of the population (quarterly) | Темпы роста реального совокупного дохода населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3979 code=2.03.01.0056 The volume of real aggregate income per capita (quarterly) | Объем реального совокупного дохода на душу населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3980 code=2.03.01.0057 Growth rates of real aggregate income per capita (quarterly) | Темпы роста реального совокупного дохода на душу населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3981 code=2.03.01.0058 The volume of disposable aggregate income of the population (quarterly) | Объем располагаемого совокупного дохода населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  id=3982 code=2.03.01.0059 Growth rates of disposable aggregate income of the population (quarterly) | Темпы роста располагаемого совокупного дохода населения (квартальный)  <- Population Living standards / Poverty and Income Statistics
+  542 nodes match '(?:population|населен|nationalit|ethnic|median|age.group|by.sex|возраст|национал)'
