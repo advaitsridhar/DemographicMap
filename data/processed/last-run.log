@@ -1,379 +1,359 @@
-probe_pdf: https://nis.gov.kh/wp-content/uploads/2025/09/Provisional-Population-Census-2019_English_FINAL.pdf
-  8,569,617 bytes
-  50 pages
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/CGSJAT+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(1316, 0, 140671333383760), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/CGSJAT+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(1316, 0, 140671333383760), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/CGSJAT+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(1316, 0, 140671333383760), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/CGSJAT+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(1316, 0, 140671333383760), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/CGSJAT+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(1316, 0, 140671333383760), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/CGSJAT+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(1316, 0, 140671333383760), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-probe_pdf: 50 pages, 9 mention ['Srok', 'Khan', 'District', 'district']
-=== front matter ===
+probe_pdf: https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/Basic_Tables/2020NPHC_Volume_1_-_Version_2.pdf
+  14,955,957 bytes
+  384 pages
+probe_pdf: 384 pages, printing [147, 148, 149, 150, 176, 177, 178, 192, 193]
 
+--- page 147 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+137
+Table 5.18: Population living in private households sleeping under a treated bed net by region
+Total Male Female Total Male Female Total Male Female
+Don`t know
+Slept under a treated bed net
+Yes No
+Region
+SHEFA 14,908   7,337    7,570    7,454    3,771    3,683    152  82    70
+Vermali 975        452       523       305       146       159       2      1      1
+Vermaul 1,490     727       762       51         33         18         5      4      1
+Varisu 1,532     758       774       164       91         73         -       -       -
+South Epi 427        210       217       695       364       331       3      1      2
+North Tongoa 533        278       255       414       197       217       2      2      -
+Tongariki 244        119       125       468       229       239       3      3      -
+Makimae 689        364       325       182       98         84         -       -       -
+Nguna 534        260       274       646       328       318       2      1      1
+Emau 342        175       167       230       117       113       29    12    17
+Malorua 915        444       471       1,273   662       611       2      -       2
+North Efate 1,326     641       685       324       165       160       8      5      3
+Mele 736        350       386       506       258       249       5      2      3
+Ifira 67          28         39         14         6           8           -       -       -
+Pango 315        148       167       271       133       138       -       -       -
+Erakor 1,803     874       929       992       487       505       67    40    27
+Eratap 1,672     830       842       552       270       282       12    3      9
+Eton 1,309     680       629       368       189       178       11    8      3
+TAFEA 10,720   5,166    5,554    4,569    2,321    2,248    24    14    10
+North Erromango 582         290       292       137       74         63         -       -       -
+South Erromango 178         81         97         120       61         59         -       -       -
+Aniwa 363        165       198       18         8           10         -       -       -
+North Tanna 763        363       399       115       52         62         1      1      -
+West Tanna 3,535     1,675    1,860    1,924    997       927       6      3      3
+Middle Bush Tanna 1,117     547       570       299       157       142       8      3      4
+South West Tanna 1,070      508       562       585       284       301       2      2      -
+Whitesands 1,615     783       832       820       416     
 
+--- page 148 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+138
+Table 5.19: Population living in private households by age group and sex who slept under a treated bed net
+Total Male Female Total Male Female Total Male Female Total Male Female
+VANUATU 172,135  86,664     85,471     140,128   70,295     69,833     31,643  16,163  15,479  364      206      158
+0-4 25,446    13,011     12,435     22,059     11,304     10,755     3,343    1,688    1,655    44        19        25
+5-9 23,384    12,157     11,227     19,232     9,976       9,256       4,110    2,159    1,951    42        23        20
+10-14 19,648    10,234     9,414       15,664     8,152       7,512       3,954    2,064    1,890    30        18        12
+15-19 13,845    7,131       6,714       10,867     5,518       5,349       2,945    1,594    1,352    33        19        14
+20-24 13,828    6,711       7,117       11,293     5,339       5,954       2,496    1,347    1,150    38        25        13
+25-29 13,184    6,181       7,003       10,826     5,030       5,797       2,326    1,133    1,193    32        18        13
+30-34 11,831    5,711       6,120       9,628       4,674       4,954       2,171    1,020    1,151    33        17        16
+35-39 9,929      4,958       4,971       7,961       3,952       4,009       1,948    993       955       21        14        7
+40-44 8,993      4,475       4,518       7,134       3,546       3,588       1,834    917       917       26        12        14
+45-49 7,744      3,990       3,754       6,179       3,168       3,011       1,543    807       736       22        14        8
+50-54 6,615      3,297       3,318       5,151       2,564       2,587       1,452    726       727       12        8          4
+55-59 5,299      2,664       2,635       4,223       2,132       2,091       1,068    528       539       8          4          4
+60-64 4,218      2,070       2,148       3,274       1,578       1,696       933       486       448       11        6          4
+65-69 3,141      1,547       1,594       2,545       1,272       1,273       592       272       320       4          3          1
+70 + 5,028      2,526       2,503       4,092       2,091       2,001       927       430       497       9          5          4
+Age group
+Sleeping under treated bed nets
+Total Population Yes No Don`t konow
+Table 5.19: Population living in private households by age group and sex who slept under a treated bed net
+Table 5.18: Population living in private households sleeping under a treated bed net by region
+Total Male Female Total Male Female To
 
+--- page 149 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+139
+Table 6.1: Total population of  3 years and over currently attending school by sex and region
+Table 6.1: Total population of  3 years and over currently attending school by sex and region
+Region Total  Male Female
+VANUATU 87,054          44,651          42,403
+URBAN 19,634          9,864            9,771
+Port Vila 14,420          7,200            7,221
+Luganville 5,214            2,664            2,550
+RURAL 67,419          34,787          32,632
+TORBA 3,063            1,551            1,512
+Torres 410               232               178
+Ureparapara 141               82                 59
+Motalava 462               213               249
+Vanua Lava 815               405               410
+Mota 179               107               72
+Gaua 763               365               398
+Merelava 293               147               146
+SANMA 12,450          6,566            5,884
+North West Santo 467               256               211
+North Santo 1,717            949               769
+West Santo 882               450               433
+South Santo 2,678            1,416            1,262
+East Santo 1,750            904               846
+South East Santo 2,158            1,117            1,040
+Canal - Fanafo 1,445            748               697
+West Malo 722               393               329
+East Malo 631               333               298
+PENAMA 9,759            5,025            4,734
+West Ambae 1,083            558               526
+North Ambae 864               446               418
+East Ambae 675               376               300
+South Ambae 446               223               222
+North Maewo 829               414               415
+South Maewo 583               300               283
+North Pentecost 2,056            1,098            959
+Central Pentecost 1 874               457               417
+Central Pentecost 2 1,193            603               590
+South Pentecost 1,155            551               604
+MALAMPA 13,033          6,650            6,383
+North West Malekula 1,955            1,024            931
+North East Malekula 2,541            1,300            1,241
+Central Malekula 2,142            1,042            1,100
+South West Malekula 932               475               457
+South East Malekula 1,612            838               774
+South Malekula 1,361            688               673
+North Ambrym 886               427               459
+West Ambrym 760               404               355
+South East Ambrym 460               243               217
+Paama 386            
 
-i
-PREFACE 
-The General Population Census of Cambodia 2019 has presented a strategic opportunity of 
-achievements in the past Royal Government's mandate and provides concrete evidence for evaluating 
-the strategic plans of development of projects in the future. C onsidering this great importance, the 
-Royal Government of Cambodia has decided to provide all kinds o f resources for the General 
-Population Census of Cambodia 2019. 
-I am delighted to see a great success in this 2019 Population Census, which provides reliable 
-data and timeliness to the Royal Government, development partners and the public used for preparing 
-policies effectively. This is a provisional report from the cen sus, and the National Institute of 
-Statistics will produce several other reports, such as the final reports and analytical reports by various 
-topics for sector statistics and research institutions. This figure provided a provisional data of the size 
-of population of country, capital, and province at the time of census. 
-I would like to express my deepest gratitude to Samdech Akka Moha Sena Padei Techo 
-HUN SEN, Prime Minister of the Kingdom of Cambodia,  who has provided great support for 
-successful completion of the census. 
-I would like to express my gratitude to Samdech Krolahom Sar Kheng, Deputy Prime 
-Minister, Minister of Interior and Chairman of the National Committee for the General Population 
-Census of the Kingdom of Cambodia and all members who provided comments and guidance during 
-the census operation. 
-I am delighted and pleasure to function as Vice Chairman of the National Committee for the 
-Census and as Chairman of the Technical Committee and the Publi city Committee for the General 
-Population Census of the Kingdom of Cambodia. Under the coopera tion of the United Nations 
-Population Fund (UNFPA), Prof. Nott Rama Rao provided technical assistance in planning the 
-census and examining all technical aspects of the census. In particular, Mr. Kjell Tambour, Advisor, 
-has provided technical assistan ce in data processing, and Dr. Arij Dekker, Advisor General of the 
-Census, has provided assistance in writing this provisional report. 
-H.E. Mrs. Hang Lina, Delegate of the Royal Government of Cambodia In-Charge of Director 
-General of the National Institute of Statistics has led the operational coordination well satisfied, with 
-the support of H.E. Mr. Sok Kosal, H.E. Mr. They Kheam, and H.E. Mr. Saint Lundy, and Mr. Try 
-Meng Seang, and Deputy Directors General, Directors of Departments, and officials at national and 
-sub-national level, who perform well, especially for the census training. I thank you for this effort. 
-Finally, I would like to express my sincere thanks and apprecia tion to the National Institute 
-of Statistics who has done this work well, with high profession alism, strong commitment and great 
-dedication to the census work, resulting in a satisfactory outcome, which is an essential development 
-tool for the next decade. 
-I am strongly hope that all ministries, national and internatio nal institutions, researchers and 
-the public will benefit from this report. 
-Kitti Settha Pandita CHHAY THAN 
-Senior Minister 
-Minister of Planning 
+--- page 150 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+140
+Table 6.1: Total population of  3 years and over currently attending school by sex and regionTable 6.1: Total population of  3 years and over currently attending school by sex and region
+Region Total  Male Female
+Private households
+SHEFA 15,566          7,943            7,624
+Vermali 739               336               403
+Vermaul 420               201               219
+Varisu 579               308               271
+South Epi 543               284               259
+North Tongoa 559               289               270
+Tongariki 310               167               143
+Makimae 349               205               144
+Nguna 620               335               285
+Emau 292               154               138
+Malorua 964               482               482
+North Efate 1,054            536               518
+Mele 1,700            857               843
+Ifira 297               153               144
+Pango 477               240               238
+Erakor 3,377            1,723            1,654
+Eratap 2,183            1,084            1,099
+Eton 1,103            590               513
+TAFEA 13,549          7,054            6,495
+North Erromango 673               383               290
+South Erromango 196               97                 99
+Aniwa 205               93                 112
+North Tanna 1,301            678               624
+West Tanna 3,784            1,959            1,825
+Middle Bush Tanna 2,412            1,233            1,179
+South West Tanna 1,331            675               656
+Whitesands 2,399            1,273            1,126
+South Tanna 590               319               272
+Futuna 250               143               106
+Aneityum 409               203               206
+Table 6.1: Total population of  3 years and over currently attending school by sex and region
+Region Total  Male Female
+VANUATU 87,054          44,651          42,403
+URBAN 19,634          9,864            9,771
+Port Vila 14,420          7,200            7,221
+Luganville 5,214            2,664            2,550
+RURAL 67,419          34,787          32,632
+TORBA 3,063            1,551            1,512
+Torres 410               232               178
+Ureparapara 141               82                 59
+Motalava 462               213               249
+Vanua Lava 815               405               410
+Mota 179               107               72
+Gaua 763               365               398
+Merelava 293               147               146
+SANMA 12,450          6,566            5,884
+North West Santo 467     
 
-iii
-ACKNOWLEDGEMENT 
-The General Population Census of Cambodia 2019 was conducted by  the National Institute 
-of Statistics, the Ministry of Planning. The General Population  Census of Cambodia 2019 is the 
-fourth census in subsequent census conducting in the Kingdom of  Cambodia since 1962, 1998 and 
-2008. The General Population Census of Cambodia 2019 was conduc ted from March 03 to March 
-13, 2019, and this report shows the provisional results prepared by the National Institute of Statistics. 
-These results include the total population, annual growth rates , population distribution, and 
-population density. Any other data tables with detailed analysis will be presented in the final report, 
-which is scheduled to be published by the end of second quarter ly 2020, and 14 topic reports are 
-expected to be published by 2020 and 2021. 
-I would like to thank the United Nations Population Fund (UNFPA), which has acted as a 
-facilitator for census with technical support and partial budgeting. I would like to express my 
-deepest gratitude to the Royal Government of Cambodia through the Ministry of Economy and 
-Finance for its financial support. Thanks to the Government of People's Republic of China for 
-providing the necessary equipment for the census process including cars, motorcycles, computers, 
-computers, photocopiers etc. 
-Finally, I would like to thank the officials of the National St atistical Institute, the Census 
-Officials of capital and provinces, the Census Officials of district, communes and villages, 
-supervisors and enumerators who have made efforts to collect da ta at the fields, which enable to 
-produce high quality data. I would like to appreciate all people who have cooperated in providing the 
-most important information without hiding. 
-HANG LINA 
-Delegate of the Royal Government of Cambodia 
-In-Charge of Director General of National Institute of Statistics 
+--- page 176 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+166
+Table 6.11: Total Population 3 years and over living in private households by sex and by language of instruction received at
+educational institution
+ Table 6.10: Population 15 years and over living in private households by age group, sex and highest level of education
+completed
+ Sex/Age
+Group
+VANUATU
+15-19
+20-24
+25-29
+30-34
+35-39
+40-44
+45-49
+50-54
+55-59
+60-64
+65-69
+70 plus
+Male
+15-19
+20-24
+25-29
+30-34
+35-39
+40-44
+45-49
+50-54
+55-59
+60-64
+65-69
+70 plus
+Female
+15-19
+20-24
+25-29
+30-34
+35-39
+40-44
+45-49
+50-54
+55-59
+60-64
+65-69
+70 plus
+ Bachelor
+Degree
+ Bachelor
+with Honour
+ Post
+Graduate
+Certificate
+ Post Graduate
+Diploma  Masters  Doctorate  Other
+1,950        88                 519             207                    585         72              65
+2               -                    8                 1                        -              -                 3
+138           5                   71               8                        3             2                 2
+431           16                 83               25                      35           4                6
+382           17                 78               35                      73           10               4
+260           6                   57               30                      81           5                4
+228           8                   40               22                      115         5                1
+160           9                   45               22                      92           7                2
+137           9                   49               22                      69           12               7
+87             6                   37               16                      57           9                4
+53             2                   24               9                        28           7                1
+38             5                   8                 7                        18           2                -
+32             5                   19              10                      15          8                30
+1,104        54                 310             130                    367         50              29
+-               -                    4                 -                        -              -                 1
+57             2                   38               2                        1             1                 1
+213           6                   42               15                      19           4                3
+211           9            
 
-v
-CONTENTS 
-Page 
-Preface........................................................................................................... i 
-Acknowledgement......................................................................................... iii 
-Compositions of the National Committee for the General Population  
-Census of Cambodia, 2019............................................................................. vii 
-Compositions of the Technical Committee for the General Population  
-Census of Cambodia, 2019.............................................................................    viii 
-Compositions of the Publicity Committee for the General Population Census 
-of Cambodia, 2019.........................................................................................  ix 
-Map of Cambodia..........................................................................................    x 
-Chapter 1. Introduction.............................................................................. 1 
-1.1. Background....................................................................................... 1 
-1.2. Or ganisation of the Census................................................................ 1 
-1.3. Desi gn of the Census Instruments..................................................... 2 
-1.4. Recruitment of Enumeration Staff.......................... .......................... 3 
-1.5. Training of Census Personnel.............................. .............................. 3 
-1.6. Enumeration Phase......................................... ................................... 4 
-1.7. Stora ge Management......................................................................... 4 
-1.8. Quality Control........................................... ....................................... 4 
-1.9. Data Processing for the Provisional Repor t...................................... 5 
-Chapter 2. Summary of Preliminary Results........................................... 6 
-2.1. Total Population................................................................................ 6 
-2.2. Annual Movement of Population Numbers..................... .................. 8 
-2.3. Cambodia in the re gion..................................................................... 9 
-2.4. Po pulation Distribution..................................................................... 11 
-2.5. Population Density............................................................................ 14 
-2.6. Sex Ratio................................................. .......................................... 17 
-Annex............................................................................................................ 21 
-vi
-TABLES 
-Table 1.1 Timetable of Major Census Field Wor k....................................  4 
-Table 2.1 Total population by region and sex, 2019................................. 7 
-Table 2.2 Total population by province and sex, 2019.............................. 7 
-Table 2.3 Annual population growth rate by region.................................. 9 
-Table 2.4 
-Cambodia in the region: population numbers, density 
-and annual growth...................................................................... 9 
-Table 2.5 Annual population growth rate by province.............................. 10 
-Table 2.6 Population by region and sex, 2008-2019 (%).......... ................ 12 
-Table 2.7 Po pulation by province and sex, 2008-2019 (%)....................... 13 
-Table 2.8 Po pulation density by region, 2008 and 2019........................... 15 
-Table 2.9 Po pulation density by province, 2008 and 2019........................ 16 
-Table 2.10 Sex ratio per province, 2008 and 2019............... ....................... 18 
-FIGURES 
-Figure 2.1 The Cambodian total population in millions, trend 19 62-2019.. 6 
-Figure 2.2 
-Annual population growth over the last 10 years  
-in countries of the region............................................................. 9 
-Figure 2.3 Percentage population by region and sex, 2008....... ................... 12 
-Figure 2.4 Percenta ge population by region and sex, 2019.......................... 12 
-Figure 2.5 Po pulation density of Cambodia in 2008 and 2019.................... 15 
-MAPS 
-Map 2.1 Po pulation by province and sex, Cambodia, 2019...................... 8 
-Map 2.2 Annual population growth, 2008-2019.................... ................... 11 
-Map 2.3 Percentual distribution of the population in 2019...... ................. 14 
-Map 2.4 Po pulation density by province, 2019......................................... 17 
-Map 2.5 Sex ratio b y province, Cambodia 2019....................................... 19 
-vii
-Compositions of the National Committee 
-for the General Population Census of the Kingdom of Cambodia 2019 
-1. H.E. Samdech Krolahom Deputy Prime Minister, Minister of Interior Chaiman 
-2. H.E. Kitti Settha Pandita Senior Minister, Minister of Planning Vice Chairman 
-3. H.E. Secretary of State, Council of Ministers Member 
-4. H.E. Secretary of State, Ministry of Economy and Finance Member 
-5. H.E. Secretary of State, Ministry of Defense Member 
-6. H.E. Secretary of State, Ministry of Planning Member 
-7. H.E. Secretary of State, Ministry of Education, Youth and Sport Member 
-8. H.E. Secretary of State, Ministry of Labour and Vocational Training Member 
-9. H.E. Secretary of State, Ministry of Land Management, Urban Planning
-and Construction Member 
-10. H.E. Secretary of State, Ministry of Rural Development Member 
-11. H.E. Secretary of State, Ministry of Health Member 
-12. H.E. Secretary of State, Ministry of Information Member 
-13. H.E. Secretary of State, Ministry of Women’s Affairs Member 
-14. H.E. Secretary of State, Ministry of Industry and Handicraft Member 
-15. H.E. Secretary of State, Ministry of Mines and Energy Member 
+--- page 177 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+167
+Table 6.11: Total Population 3 years and over living in private households by sex and by language of instruction received at
+educational institution Table 6.11: Total Population 3 years and over living in private households by sex and by language of instruction received at
+educational institution
+Region Male Female Male Female Male Female Male Female
+Language of instruction received at educational institution
+Total English French English & French
+SHEFA 7,943                 7,624                 5,844                 5,573                 1,511                1,496                118           127
+Vermali 336                    403                    259                    324                    26                     24                     -                1
+Vermaul 201                    219                    83                     88                     104                   110                   -                1
+Varisu 308                    271                    214                    185                    24                     34                     -                -
+South Epi 284                    259                    261                    240                    7                       4                       -                 -
+North Tongoa 289                    270                    162                    170                    92                     69                     -                1
+Tongariki 167                    143                    133                    126                    2                       -                        -                 2
+Makimae 205                    144                    107                    81                     20                     12                     22              9
+Nguna 335                    285                    285                    235                    2                       -                        -                 -
+Emau 154                    138                    140                    121                    -                        1                       -                 -
+Malorua 482                    482                    325                    351                    97                     69                     1               5
+North Efate 536                    518                    446                    436                    50                     32                     -                2
+Mele 857                    843                    562                    55
 
-=== pages mentioning ['Srok', 'Khan', 'District', 'district'] (first 6) ===
+--- page 178 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+168
+Table 6.11: Total Population 3 years and over living in private households by sex and by language of instruction received at
+educational institution Table 6.11: Total Population 3 years and over living in private households by sex and by language of instruction received at
+educational institution
+Region Male Female Male Female Male Female Male Female
+Language of instruction received at educational institution
+Total English French English & French
+SHEFA 7,943                 7,624                 5,844                 5,573                 1,511                1,496                118           127
+Vermali 336                    403                    259                    324                    26                     24                     -                1
+Vermaul 201                    219                    83                     88                     104                   110                   -                1
+Varisu 308                    271                    214                    185                    24                     34                     -                -
+South Epi 284                    259                    261                    240                    7                       4                       -                 -
+North Tongoa 289                    270                    162                    170                    92                     69                     -                1
+Tongariki 167                    143                    133                    126                    2                       -                        -                 2
+Makimae 205                    144                    107                    81                     20                     12                     22              9
+Nguna 335                    285                    285                    235                    2                       -                        -                 -
+Emau 154                    138                    140                    121                    -                        1                       -                 -
+Malorua 482                    482                    325                    351                    97                     69                     1               5
+North Efate 536                    518                    446                    436                    50                     32                     -                2
+Mele 857                    843                    562                    55
 
---- page 7 ----------------------------------------------------
-iii
-ACKNOWLEDGEMENT
-The General Population Census of Cambodia 2019 was conducted by  the National Institute
-of Statistics, the Ministry of Planning. The General Population  Census of Cambodia 2019 is the
-fourth census in subsequent census conducting in the Kingdom of  Cambodia since 1962, 1998 and
-2008. The General Population Census of Cambodia 2019 was conduc ted from March 03 to March
-13, 2019, and this report shows the provisional results prepared by the National Institute of Statistics.
-These results include the total population, annual growth rates , population distribution, and
-population density. Any other data tables with detailed analysis will be presented in the final report,
-which is scheduled to be published by the end of second quarter ly 2020, and 14 topic reports are
-expected to be published by 2020 and 2021.
-I would like to thank the United Nations Population Fund (UNFPA), which has acted as a
-facilitator for census with technical support and partial budgeting. I would like to express my
-deepest gratitude to the Royal Government of Cambodia through the Ministry of Economy and
-Finance for its financial support. Thanks to the Government of People's Republic of China for
-providing the necessary equipment for the census process including cars, motorcycles, computers,
-computers, photocopiers etc.
-Finally, I would like to thank the officials of the National St atistical Institute, the Census
-Officials of capital and provinces, the Census Officials of district, communes and villages,
-supervisors and enumerators who have made efforts to collect da ta at the fields, which enable to
-produce high quality data. I would like to appreciate all people who have cooperated in providing the
-most important information without hiding.
-HANG LINA
-Delegate of the Royal Government of Cambodia
-In-Charge of Director General of National Institute of Statistics
+--- page 192 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+182
+Table 6.17: Population 3 years and over living in private households with ability to numerate by sex and region
+ Table 6.17: Population 3 years and over living in private households with ability to numerate by sex and region
+Region Total Yes No
+ Not
+Stated Total Yes No
+ Not
+Stated Total Yes No
+ Not
+Stated
+VANUATU 269,287  241,250  27,895 142     135,639  121,671  13,881 86       133,648  119,578  14,014 56
+URBAN 60,834    56,721     4,051    61        30,402    28,298     2,065    39        30,432    28,423     1,986    23
+Port Vila 15,978   14,915    1,022    41        7,998     7,451      526       21        7,980     7,464      496       19
+Luganville 44,856   41,806    3,029    21        22,404   20,847    1,540    18        22,452   20,959    1,489    3
+RURAL 208,453  184,528  23,844 81       105,237  93,373    11,816 48       103,216  91,155    12,028 33
+TORBA 10,275    9,510       765       -           5,153      4,780       372       -          5,123      4,730       393       -
+Torres 1,092      1,044       48         -          551         523          28         -           541         521          20         -
+Ureparapara 431         386          45         -          224         197          27         -           207         189          18         -
+Motalava 1,557      1,536       21         -          766         755          11         -           791         781          9           -
+Vanua Lava 2,925      2,764       160       -          1,503      1,420       84         -           1,421      1,345       77         -
+Mota 557         490          67         -          287         257          29         -           271         233          38         -
+Gaua 3,102      2,848       254       -          1,531      1,408       123       -           1,571      1,440       131       -
+Merelava 612         442          170       -          290         220          70         -           322         222          100       -
+SANMA 38,623    35,270     3,325    28        19,963    18,260     1,686    17        18,660    17,010     1,639    11
+North West Santo 1,440       1,295       138       7          762         677          80         5          678         618          58         2
+North Santo 4,783      4,227       556       -           2,507      2,229       278       -           2,276      1,998       279       -
+West Santo 2,824      2,429       393       2          1,418      1,241       176       1          1,406      1,188       217       1
+South S
 
---- page 15 ----------------------------------------------------
-1
-Chapter 1
-Introduction
-1.1. Background
-The General Population Census of Cambodia 2019 (GPCC 2019) is t he fourth census in a
-series of census-taking in the Kingdom of Cambodia. It is part of the 2020 Round of Population and
-Housing Censuses, as recommended by the United Nations. The fir st census in Cambodia was
-conducted in 1962, with follow-up exercises undertaken in 1998 and 2008. Cambodia continues to
-use paper-based questionnaires and pencil recording to collect data. This required a thorough
-preparation of questionnaires, manuals, training guides, pre-test and pilot census, and so forth.
-Census preparations started in early 2016 by developing an init ial census plan, which was
-approved by the Royal Government of Cambodia. A National Census  Committee was formed in
-2017. A census strategy was formulated also in 2017, which allo wed the enumeration to commence
-on March 3, 2019. The National Institute of Statistics (NIS) produced the enumeration maps using
-hand-sketched area plans across the country. Every Enumeration Area (EA) is separately delineated.
-The previous three censuses enabled the Royal Government of Cam bodia to build up its
-capacity for conducting the Census of 2019. The inquiry covers population data as well as certain
-household characteristics. Results from the census will provide essential demographic and household
-data for all forms of evaluation and planning.
-1.2. Organisation of the Census
-As in the past, the National Committee for the Census, headed by H.E. Samdech Kralahom
-Sar Kheng, Deputy Prime Minister and Minister of Interior, is the apex bo dy. It includes members
-from all line ministries responsible for policy matters concern ing the census. The Census Technical
-Committee, head ed by H.E. Kitti Settha Pandita Chhay Than , Senior Minister, Minister of
-Planning, is in-ch arge of tech nical issu es relating to the cens us such as the design of th e
-questionnaires, training guides, and the supervisor and enumeration manuals. It is also in the lead for
-the pilot census, training  events, the field enumeration, editi ng and  coding, data entry and the
-preparation of analytical reports. The Committee of Census Publ icity and Advocacy, also led b y
-H.E. Kitti Settha Pandita Chhay Than, Senior Minister, Minister of Planning, is in charge of
-oversight and advice on informing the population through printed pu blications, telev ision spots,
-banners, flyers, t-shirts, labelled bags, and more.
-The Ministry of Planning is in day-to-day ch
-
---- page 17 ----------------------------------------------------
-3
-These instruments were presented at a stakeholders meeting to e licit the participants views
-on the questions included. They were invited to contribute inpu ts so that the census would collect
-data that are needed nationally and by development partners, while sticking to international standards.
-The draft questionnaires were tested in a pre-test and a pilot census before finally they were approved
-by the Census Technical Committee and the National Census Committee. The questionnaire was then
-completed for every household: regular households, institutional households and the homeless.
-1.4. Recruitment of Enumeration Staff
-The field enumeration was undertaken with about 38,447 enumerators. At the rate of one field
-supervisor to guide and oversee the work of four enumerators, a bout 9,200 supervisors were also
-appointed. Enumerators and supervisors were mostly drawn from t he ranks of teachers and other
-public officials. There was a suggestion to also appoint some students as enumerators. This was done
-only after testing their abilities in the field. The field work  implemented a system of strict
-administrative control.
-There were 75 Provincial Census Officers, 600 Field staff train ers, 400 District Census
-Officers, and 1,700 Commune Census Officers, all involved in providing guidance to the enumerators
-and supervisors in the enumerati on areas. For special settlemen ts such military facilities, police
-facilities, prisons, correction centers, orphanages, religious compounds and hard-to-access locations,
-the census deployed an additional 3,500 supervisors and enumera tors. Selected members of the
-Ministry of Planning and the NIS participated in training field  staff and supervising field work.
-Provincial, district, commune and village officers also assiste d in organizing the training sessions
-and carried out close supervision of the census count.
-H.E. Kitti Settha Pandita Chhay Than, Senior Minister, Ministry of Planning, Secretaries
-of State and other senior office rs of the Ministry of Planning,  as well as representatives of
-development partners and technical advisers undertook field vis its to supervise the census and
-encourage the enumerators in their demanding job.
-1.5. Training of Census Personnel
-The training covered operational and field staff at all levels, all the way down to supervisors
-and enumerators. It aimed to establish adequate and uniform census skills everywhere. In order to be
-recruited, enumerators had to meet criteria such as an educ
-
---- page 19 ----------------------------------------------------
-5
-in a separate form and deviations served to improve the skills of the enumerators. In case of serious
-discrepancies enumerators had to be given additional training.
-The pilot census, duplicating some interviews during the enumer ation, close supervision by
-supervisors and their superiors, quality control during the dat a processing stages and conducting a
-post-enumeration survey all contribute to monitoring and assuring the quality of the census.
-1.9. Data Processing for the Provisional Report
-The National Institute of Statistics is responsible for reviewi ng, editing and coding the
-questionnaires, data processing, d ata aggregation and producing  other results such as specialized
-demographic studies. This provisional report was obtained from the compilation of provincial
-population figures (Form 10, see Annex) prepared by the provinc ial planning officers. Such
-compilations were submitted to the National Institute of Statis tics in order to accumulate the
-preliminary national population numbers. The provincial population figures (Form 10) in turn were
-built up from the district population numbers (Form 9). Similar ly, Form 9 was produced from the
-commune population numbers (Form 8) which were prepared by the commune officer. The commune
-population figure was compounded from the supervisor summary reports (Form 5) with the data in
-there derived from individual summary reports of enumerators (Form 2).
-This provisional report provides  only the population at the nat ional and provincial levels,
-disaggregated by sex. As a second step after the production of the present report, the questionnaires
-(Forms B) will be edited and coded, then data captured. The dat a from the house listing (Forms A)
-will also be recorded for control purposes. The third step will see the computerized census data being
-aggregated into sets of priority tables and additional tables a s in the approved tabulation plan. It is
-expected that the priority tables will be available towards the end of second quarter 2020.
-
---- page 44 ----------------------------------------------------
-30
-GENERAL POPULATION CENSUS OF CAMBODIA, 2019
-ENUMERATOR’S SUMMARY
-To be entered from Columns of Form B Part 2 as indicated)
- Identification Particulars          Form 2:
- Khet / Municipality Krong / Srok / Khand Khum / Sangkat Phum / Mondul Enumeration Area No.
-Name
-Code
-    Type of Household/
-Population
-Line
-No.
-Building
-No.
-House-
-hold No.
-No. of
-Question-
-naires
-used
-Population 1: Normal or Regular
-    Household
-2: Institutional
-    Household
-Remarks
-    Males Females Persons 3: Homeless
-Household
-4: Boat Population
-5: Transient
-Population
-(Enter Code)
-1 2 3 4 5 6 7 8 9
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-Page Total
-@
-Grand Total for
-EA*
-Page No.: ......................
-Total number of pages
-for the EA.: ....................
-Name of Enumerator: .......................................................   Signature: ...................................... ............... Date: ................../.................../..................
-Name of Supervisor: .........................................................  Signature: ..................................................... Date: ................../.................../..................
-@ Count the number of households and give that total here.
-* Give Grand Total for EA in the last page of Form 2 after adding page total of each Column.
-
---- page 45 ----------------------------------------------------
-31
-GENERAL POPULATION CENSUS OF CAMBODIA, 2019
-SUPERVISOR’S SUMMARY SHEET
-(To be entered from Form 2 ENUMERATOR’S SUMMARY)
-ID of Supervisor: .........................
-Page No:.................
-Code of Village  Name of Village  EA  Enumerator
-Number of
-Households
-Population  Remarks
-Specify if any EA divided or new EA Male  Female  Total
- ១  ២  ៣  ៤  ៥  ៦  ៧  ៨  ៩
-Total
-Name of Enumerator: ......................................................................................................................................  Signature: ................ ..................................... Date: ................../.................../..................
-Name of Commune Official or Designated Official: .......................................................................................  Signature: ....... .............................................. Date: ................../.................../..................
-Name
-Khet / Municipality  Krong / Srok / Khand  Commune / Sangkat
-Code
-Form 5
-
-... and 3 further pages match; re-run with a narrower --terms to see them.
+--- page 193 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+183
+Table 6.17: Population 3 years and over living in private households with ability to numerate by sex and region Table 6.18.1: Total population living in private households with access to internet by 5 year age group and region
+Region Total 5-9 10-14 15-19 20-24 25-29 30-34 35-39 40-44 45-49  50-54 55-59 60-64 65-69 70 +
+VANUATU 66,214  691   2,193  9,578   12,966   11,202   8,999   6,601   5,054   3,677   2,479   1,385   786    354    249
+URBAN 27,872  470   1,223  3,755   5,024     4,559     3,707   2,699   2,101   1,678   1,196   721      408    187    145
+Luganville 6,401    59     242      1,061  1,240     1,048     802      614      435      337      250      167      83      34      29
+Port Vila 21,471  411   980      2,694  3,785     3,511     2,905   2,085   1,666   1,341   945      554      326    153    116
+RURAL 38,342  221   971      5,823  7,942     6,643     5,291   3,902   2,953   1,999   1,284   664      378    167    104
+TORBA 1,371    4       34        212      255        239        193      152      109      74        47        23        18      9        3
+Torres 146       -       2          24        26          27          22        19        14        3          2          2          1        3        -
+Ureparapara 23         -       -          7          2            5            3          2          1          1          2          -          -        -        -
+Motalava 253       -       3          38        49          42          40        25        20        14        7          6          7        1        1
+Vanua Lava 568       3       23        93        84          88          75        65        51        41        25        11        5        3        1
+Mota 22         -       -          5          3            4            3          3          -          2          -          -          1        -        -
+Gaua 309       1       4          41        78          67          43        28        20        11        9          3          2        -        -
+Merelava 49         -       1          3          12          7            6          10        2          2          1          -          2        2        1
+SANMA 6,385    19     120      1,087  1,469     1,202     832      610      439      265      180      78        47      31      7
+North West Santo 230        1       2          37        42          40          32        29        20        12        12        3          1        -        -
+North Santo 357       -       4     
