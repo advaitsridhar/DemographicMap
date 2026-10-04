@@ -1165,7 +1165,7 @@
     "ethnicity_note": "Nationality, not ethnicity: the 2004 census (Table 25) counts Yemeni nationals and others, and Yemen's census asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Shares of the 695,033 people the nationality table counts (the population table counts 695,033)."
   },
   {
-    "id": "YEM-CEN-13",
+    "id": "YEM-CEN-13-123824",
     "level": "admin1",
     "name": "Sanʿaʾ",
     "parent": "YEM",
@@ -1176,19 +1176,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1745607.0,
-      "year": 2004,
-      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-      "note": "The 2004 census count (16 December 2004)."
+      "status": "not_available",
+      "note": "The boundary file draws the Sana'a City outskirts of Hamdan and of Sanhan wa Bani Bahlul in Amanat al-Asimah, while the 2004 census and the CSO's projections count both districts whole in Sana'a governorate, so neither governorate's figures are this shape's."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The boundary file draws the Sana'a City outskirts of Hamdan and of Sanhan wa Bani Bahlul in Amanat al-Asimah, while the 2004 census and the CSO's projections count both districts whole in Sana'a governorate, so neither governorate's figures are this shape's."
     },
     "sex_ratio": {
-      "value": 122.4,
-      "unit": "males_per_100_females",
-      "year": 2004,
-      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX"
+      "status": "not_available",
+      "note": "The boundary file draws the Sana'a City outskirts of Hamdan and of Sanhan wa Bani Bahlul in Amanat al-Asimah, while the 2004 census and the CSO's projections count both districts whole in Sana'a governorate, so neither governorate's figures are this shape's."
     },
     "religion": {
       "status": "not_available"
@@ -1196,50 +1193,16 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": [
-      {
-        "group": "Yemeni",
-        "pct": 98.0,
-        "count": 1712781
-      },
-      {
-        "group": "Foreign nationals",
-        "pct": 2.0,
-        "count": 35053
-      }
-    ],
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
-        "year": 2004,
-        "license": "CC BY, published via HDX"
-      },
-      {
-        "field": "ethnicity",
-        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
-        "year": 2004,
-        "license": "CC BY, published via HDX"
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
     "country": "YEM",
     "match_by": "shape_id",
-    "shape_id": "18629408B48104637123824",
-    "codes": {
-      "cso": "13"
-    },
-    "aliases": [
-      "Amānat Al ‘Āşimah"
-    ],
-    "sex_ratio_note": "Males per 100 females in the 2004 census: 960,617 men and 784,990 women.",
-    "ethnicity_year": 2004,
-    "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census (Table 25) counts Yemeni nationals and others, and Yemen's census asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Shares of the 1,747,834 people the nationality table counts (the population table counts 1,745,607)."
+    "shape_id": "18629408B48104637123824"
   },
   {
-    "id": "YEM-CEN-23",
+    "id": "YEM-CEN-23-790923",
     "level": "admin1",
     "name": "Sanʿaʾ Governorate",
     "parent": "YEM",
@@ -1250,19 +1213,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 919199.0,
-      "year": 2004,
-      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-      "note": "The 2004 census count (16 December 2004)."
+      "status": "not_available",
+      "note": "The boundary file draws the Sana'a City outskirts of Hamdan and of Sanhan wa Bani Bahlul in Amanat al-Asimah, while the 2004 census and the CSO's projections count both districts whole in Sana'a governorate, so neither governorate's figures are this shape's."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The boundary file draws the Sana'a City outskirts of Hamdan and of Sanhan wa Bani Bahlul in Amanat al-Asimah, while the 2004 census and the CSO's projections count both districts whole in Sana'a governorate, so neither governorate's figures are this shape's."
     },
     "sex_ratio": {
-      "value": 103.7,
-      "unit": "males_per_100_females",
-      "year": 2004,
-      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX"
+      "status": "not_available",
+      "note": "The boundary file draws the Sana'a City outskirts of Hamdan and of Sanhan wa Bani Bahlul in Amanat al-Asimah, while the 2004 census and the CSO's projections count both districts whole in Sana'a governorate, so neither governorate's figures are this shape's."
     },
     "religion": {
       "status": "not_available"
@@ -1270,47 +1230,13 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": [
-      {
-        "group": "Yemeni",
-        "pct": 99.9,
-        "count": 918176
-      },
-      {
-        "group": "Foreign nationals",
-        "pct": 0.1,
-        "count": 1039
-      }
-    ],
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
-        "year": 2004,
-        "license": "CC BY, published via HDX"
-      },
-      {
-        "field": "ethnicity",
-        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
-        "year": 2004,
-        "license": "CC BY, published via HDX"
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
     "country": "YEM",
     "match_by": "shape_id",
-    "shape_id": "18629408B64822604790923",
-    "codes": {
-      "cso": "23"
-    },
-    "aliases": [
-      "Şan‘Ā’"
-    ],
-    "sex_ratio_note": "Males per 100 females in the 2004 census: 467,873 men and 451,326 women.",
-    "ethnicity_year": 2004,
-    "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census (Table 25) counts Yemeni nationals and others, and Yemen's census asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Shares of the 919,215 people the nationality table counts (the population table counts 919,199)."
+    "shape_id": "18629408B64822604790923"
   },
   {
     "id": "YEM-CEN-21",
@@ -1437,7 +1363,7 @@
       "cso": "32"
     },
     "aliases": [
-      "32"
+      "Arkhabīl Suquţrá"
     ],
     "sex_ratio_note": "Males per 100 females in the 2004 census: 23,437 men and 20,683 women."
   },
@@ -11949,7 +11875,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 14,194 men and 13,677 women."
   },
   {
-    "id": "YEM-CEN-2301",
+    "id": "YEM-CEN-2301-003716",
     "level": "admin2",
     "name": "Hamdan",
     "parent": "YEM",
@@ -11960,19 +11886,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 85370.0,
-      "year": 2004,
-      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-      "note": "The 2004 census count (16 December 2004)."
+      "status": "not_available",
+      "note": "The 2004 census counts Hamdan district whole (85,370 people); the boundary file draws the part of it nearest Sana'a apart, under Amanat al-Asimah, so the district's figures are not this shape's and the part's are not published."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2004 census counts Hamdan district whole (85,370 people); the boundary file draws the part of it nearest Sana'a apart, under Amanat al-Asimah, so the district's figures are not this shape's and the part's are not published."
     },
     "sex_ratio": {
-      "value": 104.2,
-      "unit": "males_per_100_females",
-      "year": 2004,
-      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX"
+      "status": "not_available",
+      "note": "The 2004 census counts Hamdan district whole (85,370 people); the boundary file draws the part of it nearest Sana'a apart, under Amanat al-Asimah, so the district's figures are not this shape's and the part's are not published."
     },
     "religion": {
       "status": "not_available"
@@ -11983,26 +11906,11 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
-        "year": 2004,
-        "license": "CC BY, published via HDX"
-      }
-    ],
+    "sources": [],
     "country": "YEM",
-    "parent_name": "Sanʿaʾ Governorate",
     "match_by": "shape_id",
     "shape_id": "15242507B55222910003716",
-    "codes": {
-      "cso": "2301"
-    },
-    "aliases": [
-      "Hamdān"
-    ],
-    "sex_ratio_note": "Males per 100 females in the 2004 census: 43,557 men and 41,813 women."
+    "parent_name": "Sanʿaʾ Governorate"
   },
   {
     "id": "YEM-CEN-1702",
@@ -18161,9 +18069,9 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 18,499 men and 22,965 women."
   },
   {
-    "id": "YEM-CEN-2305",
+    "id": "YEM-CEN-1319-261657",
     "level": "admin2",
-    "name": "Sanhan wa Bani Bahlul",
+    "name": "Sana'a City Outskirts - Hamdan",
     "parent": "YEM",
     "capital": {
       "status": "not_available"
@@ -18172,19 +18080,16 @@
       "status": "not_available"
     },
     "population": {
-      "value": 80399.0,
-      "year": 2004,
-      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-      "note": "The 2004 census count (16 December 2004)."
+      "status": "not_available",
+      "note": "Part of Hamdan district, which the 2004 census counts whole with the rest of the district (drawn in Sana'a governorate); nothing counts this part alone."
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Part of Hamdan district, which the 2004 census counts whole with the rest of the district (drawn in Sana'a governorate); nothing counts this part alone."
     },
     "sex_ratio": {
-      "value": 104.8,
-      "unit": "males_per_100_females",
-      "year": 2004,
-      "source": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX"
+      "status": "not_available",
+      "note": "Part of Hamdan district, which the 2004 census counts whole with the rest of the district (drawn in Sana'a governorate); nothing counts this part alone."
     },
     "religion": {
       "status": "not_available"
@@ -18195,26 +18100,87 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Central Statistical Organization (Yemen), Population, Housing and Establishment Census 2004 (published 2007), as the US Census Bureau tabulates it for HDX",
-        "url": "https://data.humdata.org/dataset/yemen-subnational-boundaries-and-tabular-data",
-        "year": 2004,
-        "license": "CC BY, published via HDX"
-      }
-    ],
+    "sources": [],
     "country": "YEM",
-    "parent_name": "Sanʿaʾ Governorate",
+    "match_by": "shape_id",
+    "shape_id": "15242507B72853055261657",
+    "parent_name": "Sanʿaʾ"
+  },
+  {
+    "id": "YEM-CEN-1324-164190",
+    "level": "admin2",
+    "name": "Sana'a City Outskirts -Sanhan wa Bani Bahlul",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "Part of Sanhan wa Bani Bahlul district, which the 2004 census counts whole with the rest of the district (drawn in Sana'a governorate); nothing counts this part alone."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Part of Sanhan wa Bani Bahlul district, which the 2004 census counts whole with the rest of the district (drawn in Sana'a governorate); nothing counts this part alone."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "Part of Sanhan wa Bani Bahlul district, which the 2004 census counts whole with the rest of the district (drawn in Sana'a governorate); nothing counts this part alone."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "YEM",
+    "match_by": "shape_id",
+    "shape_id": "15242507B78273733164190",
+    "parent_name": "Sanʿaʾ"
+  },
+  {
+    "id": "YEM-CEN-2305-884990",
+    "level": "admin2",
+    "name": "Sanhan wa Bani Bahlul",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2004 census counts Sanhan wa Bani Bahlul district whole (80,399 people); the boundary file draws the part of it nearest Sana'a apart, under Amanat al-Asimah, so the district's figures are not this shape's and the part's are not published."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2004 census counts Sanhan wa Bani Bahlul district whole (80,399 people); the boundary file draws the part of it nearest Sana'a apart, under Amanat al-Asimah, so the district's figures are not this shape's and the part's are not published."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2004 census counts Sanhan wa Bani Bahlul district whole (80,399 people); the boundary file draws the part of it nearest Sana'a apart, under Amanat al-Asimah, so the district's figures are not this shape's and the part's are not published."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "YEM",
     "match_by": "shape_id",
     "shape_id": "15242507B89205574884990",
-    "codes": {
-      "cso": "2305"
-    },
-    "aliases": [
-      "Sanḩan"
-    ],
-    "sex_ratio_note": "Males per 100 females in the 2004 census: 41,141 men and 39,258 women."
+    "parent_name": "Sanʿaʾ Governorate"
   },
   {
     "id": "YEM-CEN-2209",
