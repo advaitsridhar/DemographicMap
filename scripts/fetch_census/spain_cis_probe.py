@@ -228,7 +228,7 @@ def cells_of(row: str) -> list[str]:
 def religion_in_html(body: str, width: int) -> str | None:
     """The religion question and the first rows of its table, in one line."""
     text = html.unescape(body)
-    m = re.search(r"(?is)materia\s+religiosa", text)
+    m = re.search(r"(?is)materia\s+religiosa|sentimiento\s+religioso", text)
     if not m:
         return None
     start = max(text.rfind("¿", 0, m.start()), m.start() - 160)
@@ -245,15 +245,18 @@ def religion_in_html(body: str, width: int) -> str | None:
 
 
 def religion_in_pdf(raw: bytes, width: int) -> str | None:
+    """The PDF's first lines (what it says it is), then its religion table if it has one."""
     from pypdf import PdfReader                        # noqa: PLC0415 -- runner only
     lines = []
     for page in PdfReader(io.BytesIO(raw)).pages:
         lines += [re.sub(r"\s+", " ", ln).strip() for ln in (page.extract_text() or "").splitlines()
                   if ln.strip()]
-    at = next((i for i, ln in enumerate(lines) if re.search(r"(?i)materia\s+religiosa", ln)), None)
+    head = "HEAD " + " | ".join(lines[:5])[:240]
+    at = next((i for i, ln in enumerate(lines)
+               if re.search(r"(?i)materia\s+religiosa|sentimiento\s+religioso", ln)), None)
     if at is None:
-        return None
-    return " | ".join(lines[max(0, at - 1):at + 16])[:width]
+        return head
+    return head + " || " + " | ".join(lines[max(0, at - 1):at + 16])[:width]
 
 
 def cmd_crawl(args: argparse.Namespace) -> int:
