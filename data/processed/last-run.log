@@ -1,4 +1,302 @@
-https://data.opendevelopmentmekong.net/api/3/action/package_search?q=cambodia+census+2019+district&rows=15: HTTP 200 application/json;charset=utf-8 491798 B
-  {"help": "https://data.opendevelopmentmekong.net/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 176, "sort": "score desc, metadata_modified desc", "facets": {}, "results": [{"notes_translated": {"en": "The General Population Census of Cambodia 2019 (GPCC 2019) is the fourth census in a series of census-taking in the Kingdom of Cambodia. It is part of the 2020 Round of Population and Housing Censuses, as The General Population Census of Cambodia 2019 was conducted by the National Institute of Statistics, the Ministry of Planning. The General Population Census of Cambodia 2019 is the fourth census in subsequent census conducting in the Kingdom of Cambodia since 1962, 1998 and 2008. The General Population Census of Cambodia 2019 was conducted from March 03 to March 13, 2019, and this report shows the provisional results prepared by the National Institute of Statistics. These results include the total population, annual growth rates, population distribution, and population density. The population has grown by 1,892,807 persons, which represents 14.1%, over the period of 11 years from 2008 to 2019.", "km": "\u1787\u17c6\u179a\u17bf\u1793\u200b\u1791\u17bc\u1791\u17c5\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u1793\u17c5\u200b\u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6\u200b \u1786\u17d2\u1793\u17b6\u17c6\u200b\u17e2\u17e0\u17e1\u17e9\u200b \u178f\u17d2\u179a\u17bc\u179c\u200b\u1794\u17b6\u1793\u200b\u178a\u17b9\u1780\u1793\u17b6\u17c6\u200b\u1794\u17d2\u179a\u178f\u17b7\u1794\u178f\u17d2\u178f\u17b7\u1780\u17b6\u179a\u200b\u178a\u17c4\u1799\u200b\u179c\u17b7\u1791\u17d2\u1799\u17b6\u179f\u17d2\u1790\u17b6\u1793\u200b\u1787\u17b6\u178f\u17b7\u200b\u179f\u17d2\u1790\u17b7\u178f\u17b7\u200b \u1780\u17d2\u179a\u179f\u17bd\u1784\u1795\u17c2\u1793\u1780\u17b6\u179a\u200b\u17d4\u200b \u1787\u17c6\u179a\u17bf\u1793\u200b\u1791\u17bc\u1791\u17c5\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u1793\u17c5\u200b\u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6\u200b \u1786\u17d2\u1793\u17b6\u17c6\u200b\u17e2\u17e0\u17e1\u17e9\u200b \u1782\u17ba\u1787\u17b6\u200b\u1787\u17c6\u179a\u17bf\u1793\u200b\u179b\u17be\u1780\u200b\u1791\u17b8\u200b\u17e4\u200b \u1793\u17c5\u200b\u1780\u17d2\u1793\u17bb\u1784\u200b\u1780\u17b6\u179a\u200b\u1792\u17d2\u179c\u17be\u200b\u1787\u17c6\u179a\u17bf\u1793\u200b\u1787\u17b6\u200b\u1794\u1793\u17d2\u178f\u1794\u1793\u17d2\u1791\u17b6\u1794\u17cb\u200b\u1793\u17c5\u200b\u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6\u200b \u178f\u17b6\u17c6\u1784\u1796\u17b8\u200b\u1786\u17d2\u1793\u17b6\u17c6\u200b\u17e1\u17e9\u17e6\u17e2\u200b \u1786\u17d2\u1793\u17b6\u17c6\u200b\u17e1\u17e9\u17e9\u17e8\u200b \u1793\u17b7\u1784\u200b\u17e2\u17e0\u17e0\u17e8\u200b\u17d4\u200b \u1787\u17c6\u179a\u17bf\u1793\u200b\u1791\u17bc\u1791\u17c5\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u1793\u17c5\u200b\u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6\u200b \u1786\u17d2\u1793\u17b6\u17c6\u200b\u17e2\u17e0\u17e1\u17e9\u200b \u1794\u17b6\u1793\u200b\u1792\u17d2\u179c\u17be\u200b\u17a1\u17be\u1784\u200b\u1785\u17b6\u1794\u17cb\u1796\u17b8\u200b\u1790\u17d2\u1784\u17c3\u200b\u1791\u17b8\u200b\u17e3\u200b \u178a\u179b\u17cb\u200b\u1790\u17d2\u1784\u17c3\u200b\u1791\u17b8\u200b\u17e1\u17e3\u200b \u1781\u17c2\u1798\u17b8\u1793\u17b6\u200b \u1786\u17d2\u1793\u17b6\u17c6\u200b\u17e2\u17e0\u17e1\u17e9\u200b \u17a0\u17be\u1799\u200b\u179a\u1794\u17b6\u1799\u1780\u17b6\u179a\u178e\u17cd\u200b\u1793\u17c1\u17c7\u200b\u1794\u1784\u17d2\u17a0\u17b6\u1789\u200b\u1796\u17b8\u200b\u178f\u17bd\u179b\u17c1\u1781\u200b\u1794\u178e\u17d2\u178f\u17c4\u17c7\u17a2\u17b6\u179f\u1793\u17d2\u1793\u200b\u1793\u17c3\u200b\u1785\u17c6\u1793\u17bd\u1793\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u179f\u179a\u17bb\u1794\u200b\u178a\u17c2\u179b\u200b\u179a\u17c0\u1794\u1785\u17c6\u200b\u178a\u17c4\u1799\u200b\u179c\u17b7\u1791\u17d2\u1799\u17b6\u179f\u17d2\u1790\u17b6\u1793\u200b\u1787\u17b6\u178f\u17b7\u200b\u179f\u17d2\u1790\u17b7\u178f\u17b7\u200b\u17d4\u200b \u179b\u1791\u17d2\u1792\u1795\u179b\u200b\u1791\u17b6\u17c6\u1784\u1793\u17c1\u17c7\u200b\u179a\u17bd\u1798\u200b\u1798\u17b6\u1793\u200b \u1785\u17c6\u1793\u17bd\u1793\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u179f\u179a\u17bb\u1794\u200b \u17a2\u178f\u17d2\u179a\u17b6\u1780\u17c6\u178e\u17be\u1793\u200b\u1794\u17d2\u179a\u1785\u17b6\u17c6\u1786\u17d2\u1793\u17b6\u17c6\u200b \u179a\u1794\u17b6\u1799\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b \u1793\u17b7\u1784\u200b\u178a\u1784\u17cb\u179f\u17ca\u17b8\u178f\u17c1\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u17d4\u200b \u1785\u17c6\u1793\u17bd\u1793\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u179f\u179a\u17bb\u1794\u1780\u17be\u1793\u17a1\u17be\u1784 \u17e1.\u17e8\u17e9\u17e2.\u17e8\u17e0\u17e7\u1793\u17b6\u1780\u17cb \u178f\u17d2\u179a\u17bc\u179c\u1793\u17b9\u1784\u17e1\u17e4,\u17e1\u1797\u17b6\u1782\u179a\u1799 \u179a\u1799\u17c8\u1796\u17c1\u179b \u17e1\u17e1\u1786\u17d2\u1793\u17b6\u17c6 \u179a\u179c\u17b6\u1784\u1786\u17d2\u1793\u17b6\u17c6\u17e2\u17e0\u17e0\u17e8 \u1793\u17b7\u1784\u1786\u17d2\u1793\u17b6\u17c6\u17e2\u17e0\u17e1\u17e9\u17d4"}, "marc21_500": {"en": "", "km": ""}, "license_title": "Creative Commons Attribution", "maintainer": null, "marc21_110": {"en": "National Institute of Statistics", "km": ""}, "taxonomy": ["{Censuses,Population,\"Population and censuses\"}"], "marc21_260c": "2019.0", "private": false, "maintainer_email": null, "num_tags": 3, "id": "7378066c-786e-4c52-8c02-cecf52d09012", "metadata_created": "2019-08-12T07:38:42.150024", "title_translated": {
-https://data.opendevelopmentcambodia.net/api/3/action/package_search?q=census+2019&rows=15: HTTP 200 application/json;charset=utf-8 303426 B
-  {"help": "https://data.opendevelopmentcambodia.net/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 95, "sort": "score desc, metadata_modified desc", "facets": {}, "results": [{"notes_translated": {"en": "This dataset provides a final result census of the population in the Kingdom of Cambodia in 2019, which shows the total population, total population of males and females, total households, household size, density and areas by provinces in the Kingdom of Cambodia. This dataset is extracted from a section of original document of General population census of the Kingdom of Cambodia 2019 national report on final census results by the National Institute of Statistics of the Ministry of Planning.", "km": "\u200b\u179f\u17c6\u178e\u17bb\u17c6\u200b\u1791\u17b7\u1793\u17d2\u1793\u1793\u17d0\u1799\u200b\u1793\u17c1\u17c7\u200b\u1794\u1784\u17d2\u17a0\u17b6\u1789\u200b\u1796\u17b8\u200b\u178f\u17bd\u179b\u17c1\u1781\u200b\u1793\u17c3\u179b\u1791\u17d2\u1792\u1795\u179b\u1785\u17bb\u1784\u1780\u17d2\u179a\u17c4\u1799\u179a\u1794\u179f\u17cb\u200b\u200b\u1787\u17c6\u179a\u17bf\u1793\u200b\u1791\u17bc\u1791\u17c5\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u1793\u17c5\u200b\u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6\u200b \u1786\u17d2\u1793\u17b6\u17c6\u200b\u17e2\u17e0\u17e1\u17e9\u200b \u178a\u17c2\u179b\u200b\u1794\u17b6\u1793\u200b\u1794\u1784\u17d2\u17a0\u17b6\u1789\u200b\u1793\u17bc\u179c\u200b\u1785\u17c6\u1793\u17bd\u1793\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u179f\u179a\u17bb\u1794\u200b \u1785\u17c6\u1793\u17bd\u1793\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u1794\u17d2\u179a\u17bb\u179f\u200b\u179f\u179a\u17bb\u1794\u200b \u1785\u17c6\u1793\u17bd\u1793\u200b\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u200b\u179f\u17d2\u179a\u17b8\u200b\u179f\u179a\u17bb\u1794\u200b \u1785\u17c6\u1793\u17bd\u1793\u200b\u1782\u17d2\u179a\u17bd\u179f\u17b6\u179a\u200b\u179f\u179a\u17bb\u1794\u200b \u200b\u1791\u17c6\u17a0\u17c6\u200b\u1782\u17d2\u179a\u17bd\u179f\u17b6\u179a\u200b \u178a\u1784\u17cb\u179f\u17ca\u17b8\u178f\u17c1\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793 \u1793\u17b7\u1784\u1785\u17c6\u1793\u17bd\u1793\u1780\u17d2\u179a\u17a1\u17b6\u1795\u17d2\u1791\u17c3\u178a\u17b8 \u178f\u17b6\u1798\u200b\u1781\u17c1\u178f\u17d2\u178f\u200b\u1793\u17b8\u1798\u17bd\u1799\u17d7\u200b\u1793\u17c5\u200b\u1780\u17d2\u1793\u17bb\u1784\u200b\u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6\u200b\u17d4\u200b \u179f\u17c6\u178e\u17bb\u17c6\u200b\u1791\u17b7\u1793\u17d2\u1793\u1793\u17d0\u1799\u200b\u1793\u17c1\u17c7\u200b\u1794\u17b6\u1793\u200b\u178a\u1780\u179f\u17d2\u179a\u1784\u17cb\u200b\u1791\u17b7\u1793\u17d2\u1793\u1793\u17d0\u1799\u200b\u1785\u17c1\u1789\u1796\u17b8\u200b\u1795\u17d2\u1793\u17c2\u1780\u200b\u1798\u17bd\u1799\u200b\u1793\u17c3\u200b\u17af\u1780\u179f\u17b6\u179a\u200b\u178a\u17be\u1798\u200b \u1793\u17c3\u200b\u1787\u17c6\u179a\u17bf\u1793\u1791\u17bc\u1791\u17c5\u1794\u17d2\u179a\u1787\u17b6\u1787\u1793\u1793\u17c5\u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u178e\u17b6\u1785\u1780\u17d2\u179a\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6 \u1786\u17d2\u1793\u17b6\u17c6\u17e2\u17e0\u17e1\u17e9 \u179a\u1794\u17b6\u1799\u1780\u17b6\u179a\u178e\u17cd\u1787\u17b6\u178f\u17b7\u179f\u17d2\u178f\u17b8\u1796\u17b8\u179b\u1791\u17d2\u1792\u1795\u179b\u1785\u17bb\u1784\u1780\u17d2\u179a\u17c4\u1799 \u179a\u1794\u179f\u17cb\u200b\u179c\u17b7\u1791\u17d2\u1799\u17b6\u179f\u17d2\u1790\u17b6\u1793\u200b\u1787\u17b6\u178f\u17b7\u200b\u179f\u17d2\u1790\u17b7\u178f\u17b7\u200b\u1793\u17c3\u200b\u1780\u17d2\u179a\u179f\u17bd\u1784\u1798\u17a0\u17b6\u1795\u17d2\u1791\u17c3\u200b \u178a\u17c4\u1799\u200b\u1794\u17d2\u179a\u17be\u1794\u17d2\u179a\u17b6\u179f\u17cb\u200b\u1791\u17b7\u1793\u17d2\u1793\u1793\u17d0\u1799\u200b\u1795\u17c2\u1793\u1791\u17b8\u200b\u1793\u17c3\u200b\u1796\u17d2\u179a\u17c7\u179a\u17b6\u1787\u17b6\u178e\u17b6\u1785\u1780\u17d2\u179a\u200b\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6\u200b\u17d4\u200b "}, "MD_Format_version": {"en": "", "km": ""}, "maintainer": null, "author": null, "taxonomy": ["{Censuses,Population,\"Population and censuses\"}"], "MD_Metadata_dateStamp": "2021-09-27T14:25:10.582585", "EX_TemporalExtent_startDate": "", "maintainer_email": null, "num_tags": 3, "odm_copyright": "Yes", "EX_GeographicBoundingBox_south": "", "CI_ResponsibleParty_contact": {"en": "National Institute of Statistics of the Ministry of Planning\r\n\r\nAddress: Building C, E and F #386 Preah Monivong Blvd, Boeung Keng Kong 1, Chamkarmorn, Phnom Penh, Kingdom of Cambodia. Tel: 855-23-219922; 855-23-219921 (DG); 855-23-220077, E-mail: info@nis.gov.kh, Website: www.nis.gov.kh", "km": "\u179c\u17b7\u1791\u17d2\u1799\u17b6\u179f\u17d2\u1790\u17b6\u1793\u200b\u1787\u17b6\u178f\u17b7\u200b\u179f\u17d2\u1790\u17b7\u178f\u17b7\u200b \u1793\u17c3\u200b\u1780\u17d2\u179a\u179f\u17bd\u1784\u1795\u17c2\u1793\u1780\u17b6\u179a\u200b\r\n\r\n\u200b\u17a2\u17b6\u179f\u1799\u178a\u17d2\u178b\u17b6\u1793\u200b\u17d6\u200b \u17a2\u17b6\u1782\u17b6\u179a\u200b C,\u200b E\u200b \u1793\u17b9\u1784\u200b F\u200b #\u17e3\u17e8\u17e6\u200b \u1798\u17a0\u17b6\u179c\u17b7\u1790\u17b8\u200b \u1796\u17d2\u179a\u17c7\u200b\u1798\u17bb\u1793\u17d2\u1793\u17b8\u200b\u179c\u1784\u17d2\u179f\u200b,\u200b \u179f\u1784\u17d2\u1780\u17b6\u178f\u17cb\u200b \u1794\u17b9\u1784\u200b\u1780\u17c1\u1784\u1780\u1784\u200b\u1791\u17b8\u200b\u17e1,\u200b \u1781\u178e\u17d2\u178c\u200b \u1785\u17c6\u1780\u17b6\u179a\u1798\u1793\u200b,\u200b \u179a\u17b6\u1787\u1792\u17b6\u1793\u17b8\u200b\u1797\u17d2\u1793\u17c6\u1796\u17c1\u1789\u200b\u17d4\u200b \u1791\u17bc\u179a\u179f\u17d0\u1796\u17d2\u1791\u200b\u17d6\u200b \u17e8\u17e5\u17e5-\u17e2\u17e3-\u17e2\u17e1\u17e9\u17e9\u17e2\u17e2;\u200b \u17e8\u17e5\u17e5-\u17e2\u
+probe_pdf: https://statistics.gov.sb/download/60/solomon-islands-2019-population-and-housing-census-national-report_volume-1-and-2/1207/solomon-islands-2019-census-report-vol-2_basic-tables_operations.pdf
+  5,094,197 bytes
+  318 pages
+probe_pdf: 318 pages, printing [22, 23, 28, 29, 30, 162, 163, 170, 310, 311, 312, 313]
+
+--- page 22 ----------------------------------------------------
+9
+P2.2: Total population by sex and number of private households and non-private dwellings by ward, Solomon Islands: 2019
+Both Sexes Males Females Households Non-private
+dwellings
+Solomon Islands 720,956              369,396              351,560              131,566              926
+Choiseul 30,775                15,863                14,912                5,520                   57
+01  Wagina 1,782                    952                       830                       264                       -
+02  Katupika 2,318                    1,203                    1,115                    456                       8
+03  Vasipuki 1,952                    1,004                    948                       377                       5
+04  Viviru 1,615                    837                       778                       318                       -
+05  Babatana 2,031                    984                       1,047                    382                       5
+06  Tepazaka 2,274                    1,198                    1,076                    407                       1
+07  Batava 5,677                    2,920                    2,757                    942                       20
+08  Tavula 2,751                    1,383                    1,368                    487                       2
+09  Polo 2,003                    999                       1,004                    357                       4
+10  Bangera 1,603                    831                       772                       254                       1
+11  Susuka 1,939                    1,022                    917                       344                       2
+12  Senga 2,117                    1,106                    1,011                    369                       2
+13  Kerepangara 1,248                    629                       619                       238                       1
+14  Kirugela 1,465                    795                       670                       325                       6
+Western 94,106                48,933                45,173                17,531                235
+01  Outer Shortlands 1,444                    755                       689                       318                       3
+02  Inner Shortlands 3,023                    1,593                    1,430                    561                       14
+03  Simbo 1,782                    911                       871                       346                       -
+04  North Ranongga 552                       272                       280                       96                         1
+05  Central Ranongga 2,832                    1,446                    1,386                    512                       3
+06  South Ranongga 3,358                    1,725                    1,633                    636                       5
+07  Vonunu 3,924                    1,998                    1,926                    744                       6
+08  Mbilua 4,502                    2,275                    2,227                    899                       1
+09  Ndovele 2,057                    1,042                    1,015                    387                       2
+10  Irringgilla 3,300                    1,738                    1,562                    623                       2
+11  Gizo 9,455                    4,883                    4,572                    1,636                    43
+12  South Kolombangara 4,934                    2,693                    2,241                    981                       20
+13  Vonavona 6,398                    3,296                    3,102                    1,169                    4
+14  Kusaghe 2,508                    1,273                    1,235                    404                       1
+15  Munda 3,797                    1,914                    1,883                    757                       10
+16  Nusa Roviana 2,284                    1,141                    1,143                    434                       4
+17  Roviana Lagoon 5,206                    2,793                    2,413                    955                       9
+18  South Rendova 2,643                    1,355                    1,288                    485                       1
+19  North Rendova 1,907                    997                       910                       323                       -
+20  Kolombaghea 3,565                    1,965                    1,600                    568                       27
+21  Mbuini Tusu 3,799                    2,053                    1,746                    658                       14
+22  Nono 4,065                    2,094                    1,971                    794                       4
+23  Nggatokae 3,434                    1,810                    1,624                    696                       4
+24  North Vangunu 3,211                    1,675                    1,536                    589                       3
+25  Noro 7,204                 
+
+--- page 23 ----------------------------------------------------
+10
+P2.2: Total population by sex and number of private households and non-private dwellings by ward, Solomon Islands: 2019 (cont'd.)
+Both Sexes Males Females Households Non-private
+dwellings
+Isabel 31,420               16,627               14,793               6,250                 121
+01  Kia 1,909                  1,008                  901                     383                     6
+02  Baolo 1,808                  1,020                  788                     316                     12
+03  Kokota 1,671                  1,016                  655                     356                     16
+04  Hovikoilo 2,462                  1,347                  1,115                  505                     6
+05  Buala 3,369                  1,748                  1,621                  663                     29
+06  Tirotongana 693                     357                     336                     150                     -
+07  Koviloko 1,144                  558                     586                     252                     -
+08  Kmaga 2,218                  1,135                  1,083                  405                     4
+09  Kaloka 1,238                  612                     626                     229                     -
+10  Tatamba 1,649                  865                     784                     356                     2
+11  Sigana 2,691                  1,317                  1,374                  521                     3
+12  Japuana 2,597                  1,359                  1,238                  486                     11
+13  Kolomola 1,164                  583                     581                     267                     -
+14  Kolotubi 1,980                  1,018                  962                     421                     8
+15  Susubona 2,342                  1,235                  1,107                  528                     6
+16  Samasodu 2,485                  1,449                  1,036                  412                     18
+Central 30,318               15,562               14,756               5,872                 43
+01  Sandfly/Buenavista 3,729                  1,954                  1,775                  781                     1
+02  West Gela 2,588                  1,305                  1,283                  494                     2
+03  East Gela 2,494                  1,299                  1,195                  498                     -
+04  Tulagi 1,481                  799                     682                     261                     18
+05  South West Gela 3,154                  1,639                  1,515                  637                     12
+06  South East Gela 1,819                  899                     920                     372                     -
+07  North East Gela 2,567                  1,310                  1,257                  509                     3
+08  North West Gela 2,030                  1,031                  999                     405                     -
+09  Banika 2,115                  1,096                  1,019                  382                     1
+10  Pavuvu 2,051                  1,010                  1,041                  392                     -
+11  Lovukol 2,576                  1,310                  1,266                  457                     6
+12  North Savo 1,564                  824                     740                     301                     -
+13  South Savo 2,150                  1,086                  1,064                  383                     -
+Rennell-Bellona 4,100                 2,222                 1,878                 720                    11
+01  East Tenggano 336                     159                     177                     63                       -
+02  West Tenggano 375                     178                     197                     61                       -
+03  Lughu 429                     261                     168                     69                       1
+04  Kanava 308                     174                     134                     64                       -
+05  Te Tau Gangoto 881                     512                     369                     152                     4
+06  Mugi Henua 219                     133                     86                       37                       4
+07  Matangi 214                     122                     92                       48                       -
+08  East Gaongau 225                     114                     111                     48                       -
+09  West Gaongau 780                     394                     386                     137                     -
+10  Sa'aiho 333                     175                     158                     41                       2
+Province/Ward
+Total country
+
+--- page 28 ----------------------------------------------------
+15
+P3.1: Total population by 5-year age groups and sex, province and ward, Solomon Islands: 2019 (cont'd.)
+ All
+ Ages 0 - 4 5 - 9 10 - 14 15 - 19 20 - 24 25 - 29 30 - 34 35 - 39 40 - 44 45 - 49 50 - 54 55 - 59 60 - 64 65 - 69 70 - 74 75 - 79 80 - 84 85+
+12  South Kolombangara 4,934        614        583        535        504        431        416        383        333        297        249        188        146        91          60          38          28          12          26
+13  Vonavona 6,398        890        860        795        637        526        431        406        350        337        285        247        186        127        126        81          56          27          31
+14  Kusaghe 2,508        374        394        287        154        160        197        163        141        128        147        101        97          61          51          24          17          6            6
+15  Munda 3,797        450        407        437        453        322        276        278        216        216        207        155        127        78          69          41          24          22          19
+16  Nusa Roviana 2,284        255        292        247        217        174        165        159        134        107        114        108        108        74          49          25          21          21          14
+17  Roviana Lagoon 5,206        723        625        500        535        445        406        364        320        278        262        205        176        130        76          70          36          22          33
+18  South Rendova 2,643        369        321        287        253        201        161        184        132        146        131        115        95          73          69          42          29          14          21
+19  North Rendova 1,907        277        263        231        143        141        122        127        107        95          108        81          61          57          38          21          17          8            10
+20  Kolombaghea 3,565        315        373        366        440        426        282        266        214        198        190        158        131        79          49          31          20          17          10
+21  Mbuini Tusu 3,799        497        477        412        333        322        264        273        263        236        204        165        119        78          39          48          38          16          15
+22  Nono 4,065        554        599        489        293        285        292        312        241        265        196        157        110        80          86          49          31          17          9
+23  Nggatokae 3,434        363        410        457        352        279        236        228        198        208        194        152        104        84          56          41          30          27          15
+24  North Vangunu 3,211        389        455        405        270        264        230        205        181        190        147        136        96          68          64          43          38          21          9
+25  Noro 7,204        866        751        660        752        879        731        671        555        431        398        237        128        65          34          16          8            3            19
+26  North Kolombangara 2,922        331        336        363        398        258        221        176        206        159        137        88          91          58          40          28          16          9            7
+03 Isabel 31,420    3,802   3,903   3,669   3,122   2,328   2,108   2,203   2,046   1,956   1,735   1,198   1,028   684       623       399       302       130       184
+01  Kia 1,909        256        235        196        131        142        139        138        123        117        115        95          69          37          42          27          17          10          20
+02  Baolo 1,808        200        220        200        237        127        145        136        117        115        93          72          41          31          30          19          14          5            6
+03  Kokota 1,671        215        170        122        108        175        176        155        114        108        111        62          53          36          26          9            17          4            10
+04  Hovikoilo 2,462        263        324        282        269        275        134        162        173        164        133        80          51          27          46          34          25          12          8
+05  Buala 3,369        382        399        358        300        250        245        228        228        210        207        156        130        89          77          47          36          11          16
+06  Tirotongana 693           74          92          82          60          45          51          38        
+
+--- page 29 ----------------------------------------------------
+16
+P3.1: Total population by 5-year age groups and sex, province and ward, Solomon Islands: 2019 (cont'd.)
+ All
+ Ages 0 - 4 5 - 9 10 - 14 15 - 19 20 - 24 25 - 29 30 - 34 35 - 39 40 - 44 45 - 49 50 - 54 55 - 59 60 - 64 65 - 69 70 - 74 75 - 79 80 - 84 85+
+15  Susubona 2,342        297        288        282        156        230        158        155        167        151        131        75          73          50          46          33          21          15          14
+16  Samasodu 2,485        291        287        251        283        186        184        204        185        177        155        88          70          39          34          14          22          5            10
+04 Central 30,318    3,662   4,104   3,796   3,170   2,337   2,086   2,105   1,867   1,730   1,580   1,135   741       625       546       333       230       104       167
+01  Sandfly/Buenavista 3,729        473        475        448        362        281        276        256        252        212        188        132        99          87          77          37          36          15          23
+02  West Gela 2,588        324        349        320        243        241        202        160        156        154        137        97          64          46          30          22          25          7            11
+03  East Gela 2,494        314        342        296        265        212        181        188        138        121        149        87          50          43          40          34          12          11          11
+04  Tulagi 1,481        141        174        152        201        137        95          114        122        91          81          60          39          37          23          4            4            2            4
+05  South West Gela 3,154        344        408        406        316        272        233        237        173        197        171        101        78          62          56          41          26          15          18
+06  South East Gela 1,819        218        242        218        178        147        118        111        115        106        98          79          50          36          53          29          12          4            5
+07  North East Gela 2,567        321        370        313        272        153        141        215        155        135        123        112        58          55          49          32          26          8            29
+08  North West Gela 2,030        252        274        218        192        143        140        157        106        100        108        80          77          55          60          26          15          14          13
+09  Banika 2,115        260        303        265        262        175        133        131        112        138        114        83          47          47          19          8            5            4            9
+10  Pavuvu 2,051        259        288        245        205        129        139        143        131        114        120        82          47          35          35          29          19          11          20
+11  Lovukol 2,576        301        341        439        240        188        170        164        161        143        125        93          54          58          39          25          14          4            17
+12  North Savo 1,564        176        202        199        192        107        112        95          114        110        72          55          31          27          31          16          17          4            4
+13  South Savo 2,150        279        336        277        242        152        146        134        132        109        94          74          47          37          34          30          19          5            3
+ 05 Rennell-Bellona 4,100       461       454       440       347       328       304       276       265       250       238       175       146       113       108       53         21         27         94
+01  East Tenggano 336           28          40          46          37          28          28          14          15          15          18          9            15          18          14          4            3            4            -
+02  West Tenggano 375           45          51          62          47          29          13          21          22          28          13          13          7            4            9            5            3            3            -
+03  Lughu 429           42          38          45          41          42          44          38          33          34          22          17          14          8            7            4            -        -        -
+04  Kanava 308           43          34          32          14          34          26          18          20          17          21          15          11          10          5            3            4            1            -
+05  Te Tau Gangoto 881 
+
+--- page 30 ----------------------------------------------------
+17
+P3.1: Total population by 5-year age groups and sex, province and ward, Solomon Islands: 2019 (cont'd.)
+ All
+ Ages 0 - 4 5 - 9 10 - 14 15 - 19 20 - 24 25 - 29 30 - 34 35 - 39 40 - 44 45 - 49 50 - 54 55 - 59 60 - 64 65 - 69 70 - 74 75 - 79 80 - 84 85+
+ 06 Guadalcanal 154,022  20,191 19,490 18,053 16,481 15,211 12,438 11,770 9,527   8,279   6,767   5,208   3,467   2,383   1,858   1,195   812       413       479
+01  Tandai 33,056      4,147     3,746     3,391     3,522     3,966     3,100     2,720     2,228     1,931     1,460     1,109     610        446        278        178        110        56          58
+02  Saghalu 11,030      1,348     1,397     1,324     1,307     1,093     890        822        641        591        491        376        258        162        128        88          58          28          28
+03  Savulei 4,331        646        580        557        437        367        363        309        254        199        196        138        103        57          55          34          21          6            9
+04  Tangarare 3,852        552        550        453        389        320        299        301        236        181        161        139        93          54          57          30          21          8            8
+05  Wanderer Bay 4,016        570        556        536        410        366        261        265        209        184        187        154        83          80          64          40          27          15          9
+06  Duidui 5,300        710        748        602        539        383        371        370        323        295        216        223        144        96          113        57          45          22          43
+07  Vatukulau 2,534        340        322        343        312        169        122        152        131        143        120        90          54          53          45          52          42          27          17
+08  Talise 2,628        343        442        382        314        177        131        170        116        126        118        69          63          44          52          29          28          9            15
+09  Avuavu 2,913        451        433        426        350        197        148        183        174        121        92          97          68          48          42          29          19          12          23
+10  Moli 4,507        584        689        659        467        322        251        309        259        225        199        164        104        76          89          50          27          18          15
+11  Tetekanji 1,602        275        253        195        145        127        98          101        86          83          74          38          40          21          27          20          11          3            5
+12  Birao 4,043        469        553        608        483        295        242        252        269        218        197        116        107        67          57          34          25          19          32
+13  Valasi 2,070        278        252        261        247        181        138        138        145        112        108        81          47          33          21          14          7            4            3
+14  Kolokarako 2,647        387        353        346        306        227        155        178        160        127        121        87          62          45          42          22          15          10          4
+15  Longgu 4,597        643        607        609        500        365        314        315        263        247        214        145        125        81          61          43          36          16          13
+16  Aola 6,377        741        829        897        639        546        426        482        382        348        303        247        182        138        90          71          34          14          8
+17  Paripao 3,842        441        471        498        457        356        262        233        217        220        185        160        98          66          60          42          36          18          22
+18  East Tasimboko 10,088      1,389     1,440     1,251     1,040     963        850        724        550        471        436        334        232        145        120        74          38          21          10
+19  Vulolo 6,265        949        892        755        635        556        543        472        321        288        234        164        156        77          62          28          48          31          54
+20  Malango 24,649      3,085     2,644     2,424     2,631     2,859     2,312     2,121     1,638     1,417     1,108     839        556        385        241        162        106        47          74
+21  West Ghaobata 7,453        994        961        815        748        732        644        627        488        405        298        262        163        112        86          58          26       
+
+--- page 162 ----------------------------------------------------
+149
+P8.3: Total population by ward and religious denomination, Solomon Islands: 2019 (cont'd.)
+South Sea Seventh Christian Christian Custom No Religion
+Church of Roman E vangelical Day United Fellowship OutReach Pente- Jehovah's Bahai Assembly Baptist Other  Beliefs or or Faith/ Refuse
+Province Total  Melanesia  Catholic Church
+Adventist  Church   Church   Church costal  Witness  Faith  of God Muslim  Church
+religions  Animism   Atheism  to Answer
+14  Star Harbour North 4,106       1,588         1,503       934              26            16                15               9                5                 -            -       -          2          -        8             -           -               -
+15  Santa Ana 1,939       1,471         26            382              55            2                  -             -             -              1               1          -          -       -        1             -           -               -
+16  Santa Catalina 1,015       796            3              196              18            1                  -             1                -              -            -       -          -       -        -          -           -               -
+17  Star Harbour South 1,561       185            1,346       24                4              2                  -             -             -              -            -       -          -       -        -          -           -               -
+18  Rawo 934          18              184          726              2              3                  -             -             -              1               -       -          -       -        -          -           -               -
+19  Weather Coast 2,354       122            39            2,159           22            2                  6                 -             1                 -            -       -          3          -        -          -           -               -
+20  Haununu 3,237       2,532         142          398              8              4                  2                 -             1                 -            -       -          2          -        148         -           -               -
+09 Temotu 22,319   19,003      74            99               584         43               66              1,142        38               459          6          11           16        2           743        3              16                14
+01  Fenualoa 1,262       1,207         3              34                10            -              -             1                -              2               -       1              -       -        4             -           -               -
+02  Polynesian Outer Islands 283          277            6              -              -          -              -             -             -              -            -       -          -       -        -          -           -               -
+03  Nipua/Nopoli 912          869            1              2                  11            -              -             6                9                 1               -       -          -       -        13           -           -               -
+04  Lipe/Temua 747          674            -           -              -          -              -             56              -              7               -       -          -       -        3             -           -               7
+05  Manuopo 1,112       983            4              3                  33            1                  11               51              -              19             -       -          -       -        6             -           1                   -
+06  Nenumpo 1,079       956            8              9                  13            -              3                 30              1                 49             -       1              -       -        9             -           -               -
+07  Nevenema 1,081       751            -           7                  42            4                  -             101            -              139           -       -          -       -        22           -           14                 1
+08  Luava Station 1,953       1,434         7              27                187          13                12               63              16               75             -       1              -       -        118         -           -               -
+09  Graciosa Bay 1,451       1,196         4              1                  20            1                  28               29              -              15             3          -          3          -        151         -           -               -
+10  Nea/Noole 1,837       1,165         1              3                  9              9                  7                 416            -              20             -       -          -       -        207         -           -               -
+11  North East Santa Cruz 2,178       2,038         1              4           
+
+--- page 163 ----------------------------------------------------
+150
+P8.3: Total population by ward and religious denomination, Solomon Islands: 2019 (cont'd.)
+South Sea Seventh Christian Christian Custom No Religion
+Church of Roman Evangelical Day United Fellowship OutReach Pente- Jehovah's Bahai Assembly Baptist Other  Beliefs or or Faith/ Refuse
+Province Total  Melanesia  Catholic Church
+Adventist  Church   Church   Church costal  Witness  Faith  of God Muslim  Church  religions  Animism   Atheism  to Answer
+10 Honiara City Council 129,569 40,568      18,557    30,148       20,204   8,099         1,213        703           1,017        2,712      663     1,096     251     499      3,254     89           433             63
+01  Nggossi 26,009    9,472        4,887       4,224          3,503      1,750          243           106           176            387          201     166         54        91        677        6             61               5
+02  Mbumburu 5,806      2,083        1,182       1,101          520         487            19             24             55              91            14       53           4         13        153        -          7                 -
+03  Rove/Lengakiki 4,244      1,477        778         711            379         490            29             17             23              34            26       4            12        1          144        51           58               10
+04  Cruz 394         131           69           52              26           42              6               2               2                1              1         -         5         -       32          4             16               5
+05  Vavaea 10,813    4,025        1,705       2,533          984         676            72             56             82              152          45       69           40        11        332        3             24               4
+06  Vuhokesa 1,328      353           424         165            159         35              30             1               4                11            44       18           2         9          60          -          2                 11
+07  Mataniko 5,722      2,286        933         1,361          253         282            27             43             7                127          62       36           10        4          231        1             58               1
+08  Kola'a 20,783    6,498        1,938       7,375          1,862      1,142          273           82             234            676          94       114         6         37        393        14           31               14
+09  Kukum 2,541      905           397         376            346         256            50             20             8                23            9         13           15        10        103        -          9                 1
+10  Naha 464         188           106         66              23           11              -            -            -             11            -      -         18        7          9            10           15               -
+11  Vura 18,753    5,982        2,172       3,709          3,964      1,412          145           212           47              344          57       82           31        70        479        -          44               3
+12  Panatina 32,712    7,168        3,966       8,475          8,185      1,516          319           140           379            855          110     541         54        246      641        -          108             9
+Religion/Denomination
+P8.4: Total population by ethnic group by Sex and Province, Solomon Islands: 2019
+New Zealander/
+Province Total Melanesian Polynesian Micronesian Chinese E uropean
+Micronesian-
+Melanesian
+Micronesian-
+Polynesian Australian  Maori Malaysian Indonesian Others
+Total 720,956 688,369 20,547 8,647 1,351 325 217 190 385 201 114 189 421
+Choiseul 30,775 28,777 87 1,582 103 3 152 1 13 5 38 2 12
+Western 94,106 89,883 354 3,320 121 54 22 10 75 81 26 39 121
+Isabel 31,420 30,852 209 114 98 29 6 5 7 5 3 78 14
+Central 30,318 29,014 1,208 69 2 6 3 3 4 0 3 0 6
+Rennell-Bellona 4,100 707 3,373 11 0 0 0 6 2 1 0 0 0
+Guadalcanal 154,022 151,240 1,568 946 83 19 3 11 68 39 5 3 37
+Malaita 172,740 169,189 3,359 58 76 10 0 7 20 5 6 2 8
+Makira-Ulawa 51,587 50,419 1,072 29 30 2 0 11 9 7 0 2 6
+Temotu 22,319 18,775 3,489 14 3 1 0 0 8 2 0 24 3
+Honiara 129,569 119,513 5,828 2,504 835 201 31 136 179 56 33 39 214
+E thnicity
+
+--- page 170 ----------------------------------------------------
+157
+P9.1: Population 5 years and older by sex, and whether attending a formal educational institute by ward, Solomon Islands: 2019 (cont'd.)
+Total Male Female Total Male Female Total Male Female Total Male Female Total Male Female
+Rennell-Bellona 3,639      2,002      1,637     1,162      625         537         51         30       21        2,254      1,269      985         172      78         94
+01  East Tenggano 308          147          161          98            45            53            5           3          2           119          58            61            86         41          45
+02  West Tenggano 330          156          174          170          80            90            3           1          2           130          64            66            27         11          16
+03  Lughu 387          239          148          130          74            56            3           -      3           248          163          85            6           2            4
+04  Kanava 265          152          113          82            53            29            -        -      -       177          96            81            6           3            3
+05  Te Tau Gangoto 781          462          319          246          132          114          1           1          -       522          327          195          12         2            10
+06  Mugi Henua 191          119          72            39            16            23            1           1          -       144          95            49            7           7            -
+07  Matangi 178          101          77            51            27            24            1           1          -       124          72            52            2           1            1
+08  East Gaongau 199          105          94            53            29            24            7           5          2           134          70            64            5           1            4
+09  West Gaongau 686          358          328          229          129          100          19         10        9           418          210          208          20         9            11
+10  Sa'aiho 314          163          151          64            40            24            11         8          3           238          114          124          1           1            -
+Guadalcanal 133,831 68,412    65,419   40,086    20,604    19,482    1,264   668     596      69,359    36,432   32,927    23,122 10,708 12,414
+01  Tandai 28,909     14,869     14,040     8,471       4,357       4,114       257       135      122       16,768     8,844       7,924       3,413    1,533     1,880
+02  Saghalu 9,682       5,028       4,654       3,032       1,540       1,492       58         30        28         5,536       2,934       2,602       1,056    524        532
+03  Savulei 3,685       1,932       1,753       1,169       589          580          33         16        17         2,219       1,180       1,039       264       147        117
+04  Tangarare 3,300       1,717       1,583       1,127       591          536          29         16        13         1,617       842          775          527       268        259
+05  Wanderer Bay 3,446       1,774       1,672       1,026       549          477          24         17        7           1,706       900          806          690       308        382
+06  Duidui 4,590       2,307       2,283       1,274       637          637          42         24        18         1,971       1,081       890          1,303    565        738
+07  Vatukulau 2,194       1,056       1,138       707          352          355          4           2          2           947          483          464          536       219        317
+08  Talise 2,285       1,115       1,170       848          449          399          13         3          10         911          445          466          513       218        295
+09  Avuavu 2,462       1,186       1,276       784          403          381          8           5          3           1,022       488          534          648       290        358
+10  Moli 3,923       1,877       2,046       1,302       665          637          25         10        15         1,621       812          809          975       390        585
+11  Tetekanji 1,327       628          699          282          138          144          2           -      2           318          180          138          725       310        415
+12  Birao 3,574       1,798       1,776       1,322       673          649          58         38        20         1,637       827          810          557       260        297
+13  Valasi 1,792       907          885          460          229          231          31         17        14         818          440          378          483       221        262
+14  Kolokarako 2,260       1,134       1,126       685          364          321          14         7          7           920          461          459   
+
+--- page 310 ----------------------------------------------------
+297
+ISABEL PROVINCE
+
+--- page 311 ----------------------------------------------------
+298
+CENTRAL PROVINCE
+
+--- page 312 ----------------------------------------------------
+299
+RENNELL-BELLONA
+
+--- page 313 ----------------------------------------------------
+300
+GUADALCANAL PROVINCE
