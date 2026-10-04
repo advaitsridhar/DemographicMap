@@ -20,8 +20,11 @@ Subcommands:
     get URL [URL ...] [--grep REGEX] [--links REGEX] [--chars N]
         Status, type and length of each answer; the text around each REGEX
         match, the links whose address or label match, or the opening.
-    wayback URL [--rows N]
-        The Internet Archive's captures of a URL pattern (CDX), newest last.
+    wayback URL [--rows N] [--grep REGEX]
+        The Internet Archive's captures of a URL pattern (CDX); with REGEX,
+        only those whose address matches.
+    xlsx URL [URL ...] [--rows N] [--cols N] [--sheets N] [--width N]
+        A workbook's sheets and first rows, read as .xlsx whatever the URL.
     uscb DATASET SHEET [--grep REGEX] [--rows N] [--level L]
         One sheet of the US Census Bureau's workbook in an HDX dataset: its
         field names and aliases, and the rows (of ADM_LEVEL L, if given) with
@@ -157,7 +160,7 @@ def cmd_odsrows(base: str, dataset: str, where: str | None, select: str | None,
 
 
 def cmd_get(urls: list[str], grep: str | None, links: str | None, chars: int,
-            context: int) -> None:
+            context: int, most: int = 40, raw: bool = False) -> None:
     for url in urls:
         status, ctype, body = fetch(url)
         log(f"== {url}\n   {status} {ctype} {len(body):,} bytes")
@@ -174,13 +177,13 @@ def cmd_get(urls: list[str], grep: str | None, links: str | None, chars: int,
                     log(f"   - {label!r} -> {full}")
             log(f"   {len(seen)} matching links")
         if grep:
-            text = plain(page) if "html" in ctype.lower() else page
+            text = plain(page) if "html" in ctype.lower() and not raw else page
             hits = 0
             for m in re.finditer(grep, text, flags=re.I):
                 a, b = max(0, m.start() - context), min(len(text), m.end() + context)
                 log("   ~ " + " ".join(text[a:b].split()))
                 hits += 1
-                if hits >= 40:
+                if hits >= most:
                     break
             log(f"   {hits} matches for {grep!r}")
         if not links and not grep:
@@ -188,18 +191,56 @@ def cmd_get(urls: list[str], grep: str | None, links: str | None, chars: int,
             log("   " + text[:chars].replace("\n", "\n   "))
 
 
-def cmd_wayback(pattern: str, rows: int) -> None:
+def cmd_wayback(pattern: str, rows: int, grep: str | None = None) -> None:
+    """Captures of a URL pattern; with ``grep``, only those whose address matches.
+
+    A single-page app's captures are mostly its scripts and styles, so the
+    filter runs over a larger listing than is printed.
+    """
     url = CDX + "?" + urllib.parse.urlencode({
-        "url": pattern, "output": "json", "limit": str(rows),
+        "url": pattern, "output": "json", "limit": str(rows * 20 if grep else rows),
         "collapse": "urlkey", "filter": "statuscode:200"})
     status, ctype, body = fetch(url)
     if status != 200:
         log(f"{url}: {status} {body[:300]!r}")
         return
     rows_ = json.loads(body or b"[]")
-    log(f"{pattern}: {max(0, len(rows_) - 1)} captures")
-    for row in rows_[1:]:
+    pat = re.compile(grep, re.I) if grep else None
+    picked = [r for r in rows_[1:] if pat is None or pat.search(str(r[2]))]
+    log(f"{pattern}: {max(0, len(rows_) - 1)} captures, {len(picked)} shown")
+    for row in picked[:rows]:
         log("  " + " ".join(str(c) for c in row[1:5]))
+
+
+def cmd_xlsx(urls: list[str], rows: int, cols: int, sheets: int, width: int) -> None:
+    """A workbook's sheets and first rows, whatever its address says it is.
+
+    Some offices serve .xlsx from an address with no extension (Kuwait's
+    census tables are ``CensusData?st_id=4&handler=ExportExcel``).
+    """
+    import io
+
+    import openpyxl
+    for url in urls:
+        status, ctype, body = fetch(url)
+        log(f"== {url}\n   {status} {ctype} {len(body):,} bytes")
+        if status != 200:
+            log("   " + text_of(body, ctype)[:300])
+            continue
+        try:
+            book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+        except Exception as err:  # noqa: BLE001 -- a probe reports
+            log(f"   cannot open: {type(err).__name__}: {err}")
+            continue
+        for name in book.sheetnames[:sheets]:
+            sheet = book[name]
+            log(f"   [{name}] {sheet.max_row} x {sheet.max_column}")
+            for i, row in enumerate(sheet.iter_rows(values_only=True)):
+                if i >= rows:
+                    break
+                cells = ["" if c is None else str(c)[:width] for c in row[:cols]]
+                if any(cells):
+                    log(f"   {i + 1:>3} | " + " | ".join(cells))
 
 
 def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
@@ -241,7 +282,7 @@ def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb"])
+    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "xlsx"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--search")
     ap.add_argument("--where")
@@ -253,6 +294,10 @@ def main() -> int:
     ap.add_argument("--chars", type=int, default=1500)
     ap.add_argument("--context", type=int, default=150)
     ap.add_argument("--level", type=int)
+    ap.add_argument("--cols", type=int, default=16)
+    ap.add_argument("--sheets", type=int, default=3)
+    ap.add_argument("--width", type=int, default=24)
+    ap.add_argument("--raw", action="store_true", help="grep the page as sent, tags and all")
     args = ap.parse_args()
     if args.cmd == "uscb":
         cmd_uscb(args.target[0], args.target[1], args.grep, args.rows, args.level)
@@ -264,10 +309,13 @@ def main() -> int:
         cmd_odsrows(args.target[0], args.target[1], args.where, args.select,
                     args.group_by, args.rows)
     elif args.cmd == "get":
-        cmd_get(args.target, args.grep, args.links, args.chars, args.context)
+        cmd_get(args.target, args.grep, args.links, args.chars, args.context, max(40, args.rows),
+                args.raw)
     elif args.cmd == "wayback":
         for pattern in args.target:
-            cmd_wayback(pattern, args.rows)
+            cmd_wayback(pattern, args.rows, args.grep)
+    elif args.cmd == "xlsx":
+        cmd_xlsx(args.target, args.rows, args.cols, args.sheets, args.width)
     return 0
 
 
