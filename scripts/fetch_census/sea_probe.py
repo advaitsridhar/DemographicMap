@@ -128,6 +128,39 @@ def cmd_hdx(codes: list[str], tables: bool) -> None:
                     read_resource(r)
 
 
+def cmd_res(datasets: list[str], peek: bool) -> None:
+    """An HDX dataset's resources with their URLs; with --peek, each workbook's
+    sheets and first rows, read on the runner."""
+    for name in datasets:
+        p = hdx("package_show", id=name)
+        log(f"== {name}: licence={p.get('license_id')} "
+            f"{p.get('license_other') or ''} method={p.get('methodology_other') or p.get('methodology')}")
+        for r in p.get("resources") or ():
+            log(f"  - {r.get('name')} ({r.get('format')}, {r.get('size') or '?'} B)")
+            log(f"    {r.get('url')}")
+            if not peek or not str(r.get("name") or "").lower().endswith((".xlsx", ".csv")):
+                continue
+            status, _, body = fetch(str(r.get("url")), timeout=600)
+            if status != 200:
+                log(f"    HTTP {status}")
+                continue
+            if str(r.get("name")).lower().endswith(".csv"):
+                lines = body.decode("utf-8-sig", "replace").splitlines()
+                for line in lines[:6]:
+                    log(f"    | {line[:300]}")
+                log(f"    {len(lines)} lines")
+                continue
+            import openpyxl
+            book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+            for sheet in book.worksheets:
+                log(f"    sheet {sheet.title!r}: {sheet.max_row} rows x {sheet.max_column} cols")
+                for i, row in enumerate(sheet.iter_rows(values_only=True)):
+                    if i >= 5:
+                        break
+                    cells = ["" if c is None else str(c) for c in row]
+                    log(f"    | {' | '.join(cells[:24])[:400]}")
+
+
 def cmd_spa(url: str) -> None:
     try:
         status, ctype, body = fetch(url)
@@ -255,6 +288,9 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    r = sub.add_parser("res")
+    r.add_argument("datasets", nargs="+")
+    r.add_argument("--peek", action="store_true")
     x = sub.add_parser("cdx")
     x.add_argument("pattern")
     x.add_argument("--limit", type=int, default=2000)
@@ -280,6 +316,8 @@ def main() -> int:
                 not args.no_tables)
     elif args.cmd == "spa":
         cmd_spa(args.url)
+    elif args.cmd == "res":
+        cmd_res(args.datasets, args.peek)
     elif args.cmd == "cdx":
         cmd_cdx(args.pattern, args.limit, args.match)
     elif args.cmd == "wpmedia":
