@@ -44,7 +44,9 @@ polygons and 17 provinces gets a row, and no polygon gets two.
 **Language** is not asked by Korea's census -- its questionnaires ask
 nationality and, in years ending in 5, religion, and nothing about the
 language a person speaks -- and no survey measures it by district; every
-record says so.
+record says so. **Religion** is asked, and the 2015 round's answer by
+district is in KOSIS alone, which did not answer this map's requests; every
+district says where it is (``DISTRICT_RELIGION_NOTE``).
 
 Usage:
     python -m scripts.fetch_census.korea_ages            # reads the kept CSV, or asks for it
@@ -100,6 +102,13 @@ LANGUAGE_NOTE = (
     "Korea's census does not ask language: its questionnaires ask nationality and, in the "
     "years ending in 5, religion, and no question about the language a person speaks; no "
     "register or survey measures it by province or district.")
+# The districts' religion: asked, and published, but not read here.
+DISTRICT_RELIGION_NOTE = (
+    "Korea's census asks religion in the years ending in 5, of a sample of a fifth of "
+    "households, and Statistics Korea publishes the 2015 round's answer by city, county and "
+    "district only in KOSIS (table DT_1PM1502, 성, 연령 및 종교별 인구 - 시군구), which this map "
+    "has not been able to read: kosis.kr did not answer the requests made of it, and its open "
+    "API asks for an account's key. The province carries a survey's figures.")
 
 
 # ---------------------------------------------------------------------------
@@ -281,7 +290,8 @@ def note_for(cell: dict[str, Any], where: str) -> tuple[str, str]:
 
 
 def unit_record(rid: str, name: str, *, level: str, parent: str, shape: str,
-                cell: dict[str, Any], where: str, extra_note: str = "") -> dict[str, Any]:
+                cell: dict[str, Any], where: str, extra_note: str = "",
+                **extra: Any) -> dict[str, Any]:
     median_note, sex_note = note_for(cell, where)
     if extra_note:
         median_note, sex_note = f"{median_note} {extra_note}", f"{sex_note} {extra_note}"
@@ -296,7 +306,8 @@ def unit_record(rid: str, name: str, *, level: str, parent: str, shape: str,
         sex_ratio_note=sex_note,
         language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
         sources=[{"field": "median_age/sex_ratio", "name": SOURCE, "url": PAGE, "year": YEAR,
-                  "license": LICENCE}])
+                  "license": LICENCE}],
+        **extra)
 
 
 def build(table: list[list[str]], admin1: list[dict[str, Any]],
@@ -339,7 +350,8 @@ def build(table: list[list[str]], admin1: list[dict[str, Any]],
                      f"it is a district of {province}.")
         records.append(unit_record(f"KOR-{province}-{name}", name, level="admin2",
                                    parent=f"KOR-{province}", shape=shape, cell=cell,
-                                   where="this district", extra_note=extra))
+                                   where="this district", extra_note=extra,
+                                   religion=gap("not_available", DISTRICT_RELIGION_NOTE)))
     if unknown:
         raise SystemExit(f"korea_ages: districts the crosswalk does not know: {unknown}")
     missing = sorted(set(district_shapes.values()) - set(bound))

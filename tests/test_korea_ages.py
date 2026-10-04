@@ -118,6 +118,13 @@ class Build(unittest.TestCase):
         r = self.by_shape["P-Jeju"]
         self.assertEqual(r["level"], "admin1")
         self.assertIn("this province", r["median_age_note"])
+        # The province's religion is the survey's: a bare marker displaces nothing.
+        self.assertEqual(r["religion"], {"status": "not_available"})
+
+    def test_a_district_says_where_its_religion_is(self):
+        r = self.by_shape["S-Seoul-Jongno-gu"]
+        self.assertEqual(r["religion"]["status"], "not_available")
+        self.assertIn("DT_1PM1502", r["religion"]["note"])
 
 
 class Refusals(unittest.TestCase):
