@@ -19,6 +19,9 @@ Subcommands:
   técnica, a questionnaire), whole or the lines carrying a term.
 * ``cdx PATTERN [--grep a,b] [--limit N]`` -- the Internet Archive's index of
   captured addresses under a prefix, to learn an official host's file naming.
+* ``studies TITLE [--match REGEX] [--files REGEX]`` -- the CIS's studies
+  whose title carries a phrase, newest first, with their published files,
+  as Spain's open-data catalogue (datos.gob.es) lists them.
 * ``xlsx URL [--find REGEX] [--sheets N] [--rows N]`` -- a tabulation
   workbook ("Resultados y cruces"): its sheets, the first rows of some, and
   the header and rows of every sheet where a term appears.
@@ -233,6 +236,56 @@ def cmd_xlsx(args: argparse.Namespace) -> int:
     return 0
 
 
+DATOS = "https://datos.gob.es/apidata/catalog/dataset/title/{title}.json?_pageSize={size}&_sort=-issued&_page={page}"
+CIS_PUBLISHER = "EA0040772"
+
+
+def value_of(field: Any) -> str:
+    if isinstance(field, list):
+        field = next((f for f in field if isinstance(f, dict) and f.get("_lang") == "es"),
+                     field[0] if field else "")
+    if isinstance(field, dict):
+        return str(field.get("_value") or field.get("_about") or "")
+    return str(field or "")
+
+
+def cmd_studies(args: argparse.Namespace) -> int:
+    """The CIS's studies whose title carries a phrase, newest first, as datos.gob.es lists them."""
+    import urllib.parse
+    shown = 0
+    for page in range(args.pages):
+        url = DATOS.format(title=urllib.parse.quote(args.title), size=args.size, page=page)
+        status, _, _, raw = get(url, args.timeout)
+        if status != 200:
+            log(f"== {url}: HTTP {status}")
+            break
+        items = json.loads(raw.decode("utf-8", errors="replace"))["result"].get("items", [])
+        log(f"== page {page}: {len(items)} datasets")
+        if not items:
+            break
+        for item in items:
+            if CIS_PUBLISHER not in str(item.get("publisher")):
+                continue
+            title = value_of(item.get("title"))
+            if args.match and not re.search(args.match, title, re.I):
+                continue
+            keywords = item.get("keyword") or []
+            keywords = [value_of(k) for k in (keywords if isinstance(keywords, list) else [keywords])]
+            log(f"  {item.get('issued', '')[:16]} | {title[:150]} | {item.get('identifier', '')}")
+            if args.keywords:
+                log(f"      keywords: {', '.join(keywords)[:args.width]}")
+            dists = item.get("distribution") or []
+            for dist in dists if isinstance(dists, list) else [dists]:
+                link = dist.get("accessURL") or dist.get("downloadURL") or ""
+                if args.files and not re.search(args.files, str(link), re.I):
+                    continue
+                log(f"      -> {str(link)[:args.width]}")
+            shown += 1
+            if shown >= args.limit:
+                return 0
+    return 0
+
+
 def download(url: str, timeout: int) -> bytes:
     import hashlib
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -374,6 +427,17 @@ def main() -> int:
     p.add_argument("--width", type=int, default=160)
     p.add_argument("--timeout", type=int, default=120)
     p.set_defaults(func=cmd_cdx)
+    p = sub.add_parser("studies")
+    p.add_argument("title", help="a word or phrase of the title, e.g. Preelectoral")
+    p.add_argument("--match", help="a regex the title must also match")
+    p.add_argument("--files", help="show only distributions whose address matches this regex")
+    p.add_argument("--keywords", action="store_true")
+    p.add_argument("--pages", type=int, default=2)
+    p.add_argument("--size", type=int, default=50)
+    p.add_argument("--limit", type=int, default=40)
+    p.add_argument("--width", type=int, default=220)
+    p.add_argument("--timeout", type=int, default=120)
+    p.set_defaults(func=cmd_studies)
     p = sub.add_parser("xlsx")
     p.add_argument("url")
     p.add_argument("--find")
