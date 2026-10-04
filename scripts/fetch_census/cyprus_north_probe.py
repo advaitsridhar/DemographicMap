@@ -350,8 +350,44 @@ def p_osm_admin(a: argparse.Namespace) -> None:
                        t.get("ref", ""), t.get("is_in", "")]))
 
 
+OSM_GEOM = """[out:json][timeout:240];
+relation["boundary"="administrative"]["admin_level"~"^(8|9)$"](35.05,32.5,35.75,34.65);
+out geom;"""
+
+
+def p_osm_geom(a: argparse.Namespace) -> None:
+    """The outlines of OpenStreetMap's quarters and villages in the north
+    (admin levels 8 and 9), so the sandbox can measure which drawn polygon
+    each census quarter lies in: binding evidence only. One line each: GEOM,
+    relation id, admin level, name, WKT simplified to about 20 metres."""
+    for el in overpass(OSM_GEOM):
+        t = el.get("tags", {})
+        log("\t".join(["GEOM", str(el["id"]), t.get("admin_level", ""), t.get("name", ""),
+                       outline_wkt(el)]))
+
+
+def outline_wkt(el: dict[str, Any]) -> str:
+    """A relation's outer ways, polygonised and simplified, as WKT to five
+    decimals (about a metre), or EMPTY where they do not close."""
+    from shapely import to_wkt
+    from shapely.geometry import LineString
+    from shapely.ops import polygonize, unary_union
+    lines = [LineString([(p["lon"], p["lat"]) for p in m["geometry"]])
+             for m in el.get("members", [])
+             if m.get("type") == "way" and m.get("role") in ("outer", "")
+             and len(m.get("geometry") or []) >= 2]
+    polys = list(polygonize(unary_union(lines))) if lines else []
+    if not polys:
+        return "EMPTY"
+    shape_ = unary_union(polys).simplify(0.0002)
+    wkt = to_wkt(shape_, rounding_precision=5, trim=True)
+    if len(wkt) > 60000:
+        wkt = to_wkt(shape_.simplify(0.001), rounding_precision=5, trim=True)
+    return wkt
+
+
 PROBES: dict[str, Callable[[argparse.Namespace], None]] = {
-    "osm_places": p_osm_places, "osm_admin": p_osm_admin,
+    "osm_places": p_osm_places, "osm_admin": p_osm_admin, "osm_geom": p_osm_geom,
     "cdx_devplan": p_cdx_devplan, "cdx_istatistik": p_cdx_istatistik,
     "cdx_istatistik_files": p_cdx_istatistik_files, "home": p_home, "links": p_links,
     "head": p_head, "pdf": p_pdf, "xls": p_xls, "geonames": p_geonames, "wikidata": p_wikidata,
