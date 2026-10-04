@@ -42,9 +42,15 @@ def log(*args: Any) -> None:
     print(*args, flush=True)
 
 
+def as_uri(url: str) -> str:
+    """The institute's pages are named in Turkish ('NÜFUS-SAYIMLARI'), and
+    urllib sends a request line in ASCII: escape what is not, keep what is."""
+    return urllib.parse.quote(url, safe=":/?&=%#+,;@!$'()*[]~")
+
+
 def fetch(url: str, timeout: int = TIMEOUT) -> tuple[int, str, bytes]:
     """(status, content type, body); an HTTP error is returned, not raised."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    req = urllib.request.Request(as_uri(url), headers={"User-Agent": UA})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             return resp.status, resp.headers.get("Content-Type", ""), resp.read()
