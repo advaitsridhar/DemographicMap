@@ -129,14 +129,22 @@ def cmd_hdx(codes: list[str], tables: bool) -> None:
 
 
 def cmd_spa(url: str) -> None:
-    status, ctype, body = fetch(url)
+    try:
+        status, ctype, body = fetch(url)
+    except Exception as err:  # noqa: BLE001 -- a DNS failure is an answer too
+        log(f"{url}: {type(err).__name__}: {err}")
+        return
     text = body.decode("utf-8", "replace")
     log(f"{url}: HTTP {status} {ctype} {len(body)} B")
     scripts = re.findall(r"<script[^>]+src=[\"']([^\"']+)", text)
     paths: set[str] = set(re.findall(r"""["'`]([^"'`\s]*api/[^"'`\s]{2,160})["'`]""", text))
     for src in scripts[:25]:
         full = urllib.parse.urljoin(url, src)
-        s, _, js = fetch(full, timeout=120)
+        try:
+            s, _, js = fetch(full, timeout=120)
+        except Exception as err:  # noqa: BLE001 -- reported
+            log(f"  script {full}: {type(err).__name__}: {err}")
+            continue
         jtext = js.decode("utf-8", "replace")
         found = set(re.findall(r"""["'`]([^"'`\s]*api/[^"'`\s]{2,160})["'`]""", jtext))
         found |= set(re.findall(r"""["'`](https?://[^"'`\s]{6,160})["'`]""", jtext))
@@ -196,6 +204,26 @@ def cmd_dgs(terms: list[str], pages: int) -> None:
     log(f"  {hits} datasets name all of {terms}")
 
 
+def cmd_cdx(pattern: str, limit: int, match: str) -> None:
+    """The Wayback Machine's captures under a URL pattern: one line per URL."""
+    url = ("http://web.archive.org/cdx/search/cdx?" + urllib.parse.urlencode(
+        {"url": pattern, "output": "json", "limit": str(limit),
+         "filter": "statuscode:200", "collapse": "urlkey"}))
+    try:
+        status, _, body = fetch(url, timeout=180)
+    except Exception as err:  # noqa: BLE001 -- reported
+        log(f"cdx {pattern}: {type(err).__name__}: {err}")
+        return
+    if status != 200:
+        log(f"cdx {pattern}: HTTP {status}")
+        return
+    rows = json.loads(body or b"[]")
+    keep = [r for r in rows[1:] if not match or re.search(match, r[2])]
+    log(f"cdx {pattern}: {len(rows) - 1} captures, {len(keep)} matching {match!r}")
+    for r in keep:
+        log(f"  {r[1]} {r[4]} {r[3][:30]} {r[2]}")
+
+
 def cmd_wpmedia(base: str, searches: list[str], pages: int) -> None:
     """A WordPress site's uploads matching each search: the real file paths.
 
@@ -227,6 +255,10 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    x = sub.add_parser("cdx")
+    x.add_argument("pattern")
+    x.add_argument("--limit", type=int, default=2000)
+    x.add_argument("--match", default="")
     w = sub.add_parser("wpmedia")
     w.add_argument("base")
     w.add_argument("searches", help="comma-separated search words")
@@ -248,6 +280,8 @@ def main() -> int:
                 not args.no_tables)
     elif args.cmd == "spa":
         cmd_spa(args.url)
+    elif args.cmd == "cdx":
+        cmd_cdx(args.pattern, args.limit, args.match)
     elif args.cmd == "wpmedia":
         cmd_wpmedia(args.base, [s for s in args.searches.split(",") if s], args.pages)
     elif args.cmd == "dgs":
