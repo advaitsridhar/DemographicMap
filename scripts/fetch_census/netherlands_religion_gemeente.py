@@ -28,9 +28,14 @@ gemeenten, and
   03759ned), every part resting on CBS's 150 respondents or more;
 * a gemeente holding part of a 2014 gemeente that was divided (Maasdonk in
   2015, Littenseradiel in 2018, Winsum in 2019 and Haaren in 2021 were shared
-  out between several), or that gave or took more than a boundary correction,
+  out between several; Slochteren gave 1,033 inhabitants to Groningen in 2017
+  before it merged), or that gave or took more than a boundary correction,
   takes nothing, because a gemeente's figure is never split. Its record says
-  so, with the transfers, in place of a bare gap.
+  so, with the transfers, in place of a bare gap; so does a gemeente CBS
+  suppressed, or a union with a part it suppressed.
+
+The run of 4 October 2026 gives 324 of the 344 a figure, 23 of them unions;
+12 changed too much since 2014 and 8 rest on a suppressed gemeente.
 
 A boundary change moving at most ``TOLERANCE`` (2%) of a gemeente's people is
 a correction, not a different unit; every one is named in the log and the
@@ -449,6 +454,10 @@ class Unit:
     kind: str = ""                     # "changed" or "suppressed" when it takes none
 
 
+def share(x: float) -> str:
+    return "less than 0.1%" if x < 0.0005 else f"{100 * x:.1f}%"
+
+
 def say_day(day: str) -> str:
     months = ["January", "February", "March", "April", "May", "June", "July", "August",
               "September", "October", "November", "December"]
@@ -470,20 +479,22 @@ def classify(code: str, walk: Crosswalk, population: dict[str, float],
     # This gemeente's own line: itself, and every code whose territory is all here.
     line = {code} | {c for c, f in walk.identity[code].items() if f >= 1 - tolerance}
     events: list[str] = []
-    donors: list[str] = []
+    dissolved: set[str] = set()               # gemeenten dissolved into it, not wholly
     for t in walk.transfers:
         a, b, day = titles.get(t.donor, t.donor), titles.get(t.to, t.to), say_day(t.day)
         if t.to in line and t.donor not in line:
-            events.append(f"it received {t.people:,} of the inhabitants of {a} when {a} was dissolved "
-                          f"on {day}" if t.kind == "Opgeheven" else
-                          f"it received {t.people:,} inhabitants from {a} on {day}")
-            donors.append(t.donor)
+            if t.kind == "Opgeheven":
+                events.append(f"it received {t.people:,} of the inhabitants of {a} when {a} was "
+                              f"dissolved on {day}")
+                dissolved.add(t.donor)
+            else:
+                events.append(f"it received {t.people:,} inhabitants from {a} on {day}")
         elif t.donor in line and t.to not in line:
             who = "it" if t.donor == code else f"{a}, now part of it,"
             events.append(f"{who} gave {t.people:,} inhabitants to {b} on {day}")
-    # Where else the people of a gemeente it took part of went.
+    # Where the rest of a dissolved gemeente it took part of went, then or before.
     for t in walk.transfers:
-        if t.donor in donors and t.to not in line:
+        if t.donor in dissolved and t.to not in line:
             events.append(f"{titles.get(t.donor, t.donor)} gave {t.people:,} inhabitants to "
                           f"{titles.get(t.to, t.to)} on {say_day(t.day)}")
     events = list(dict.fromkeys(events))
@@ -492,7 +503,7 @@ def classify(code: str, walk: Crosswalk, population: dict[str, float],
         return Unit(code, whole, foreign, moved, events, (
             f"is not a 2014 gemeente or a union of whole ones: since 2014, "
             f"{'; '.join(events) or 'it holds only parts of 2014 gemeenten'} (CBS StatLine "
-            f"70739ned) -- {100 * moved:.1f}% of its people, more than the {100 * tolerance:.0f}% a "
+            f"70739ned) -- {share(moved)} of its people, more than the {100 * tolerance:.0f}% a "
             f"boundary correction may move -- and a gemeente's figure is never split"), "changed")
     dark = sorted(table[i]["name"] for i in whole if table[i]["total"] is None)
     if dark:
@@ -634,7 +645,7 @@ def unit_note(unit: Unit, name: str, table: dict[str, dict[str, Any]], responden
                 "population aged 18 and over on 1 January 2014 (StatLine 03759ned), and each rests "
                 f"on at least {MINIMUM} respondents.")
     if unit.events:
-        what += (f" Since 2014, {'; '.join(unit.events)} (70739ned): {100 * unit.moved:.1f}% of its "
+        what += (f" Since 2014, {'; '.join(unit.events)} (70739ned): {share(unit.moved)} of its "
                  f"people, within the {100 * tolerance:.0f}% a boundary correction may move.")
     if respondents < LOW_PRECISION:
         what += (" Low precision: CBS does not print the number of respondents, and at the survey's "
@@ -719,7 +730,7 @@ def build(tolerance: float = TOLERANCE) -> list[dict[str, Any]]:
         unions += len(unit.whole) > 1
         corrected += bool(unit.events)
         if unit.events:
-            log(f"  {name} ({code}): {'; '.join(unit.events)} -- {100 * unit.moved:.2f}%, a correction")
+            log(f"  {name} ({code}): {'; '.join(unit.events)} -- {share(unit.moved)}, a correction")
         records.append(record(
             f"NLD-CBS-EBB-REL-{code}", name,
             codes={"cbs_gemeente": code, "cbs_gemeenten_2014": ",".join(sorted(unit.whole))}, **base,

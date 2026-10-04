@@ -219,6 +219,55 @@ class WhichGemeentenTakeAFigure(unittest.TestCase):
         self.assertIsNone(loose.reason)
 
 
+def slochteren_history() -> dict:
+    """S gives G 100 people (2017) and then goes wholly into M with H (2018), as
+    Slochteren gave Groningen 1,033 before it went into Midden-Groningen; G
+    also gives K 3 people (2016), as Leeuwarden gave Heerenveen 2."""
+    return {
+        "GM0040": gemeente("S", "18300101", "20180101",
+                           "Opgeheven per 01-01-2018, overgegaan naar: - M (GM1952), ... 900 inwoners "
+                           "Grenswijziging per 01-01-2017, overgegaan naar: - G (GM0014), ... 100 inwoners"),
+        "GM0018": gemeente("H", "18300101", "20180101",
+                           "Opgeheven per 01-01-2018, overgegaan naar: - M (GM1952), ... 3000 inwoners"),
+        "GM1952": gemeente("M", "20180101", "",
+                           "Ontstaan per 01-01-2018, ontvangen van: - H (GM0018), ... 3000 inwoners - "
+                           "S (GM0040), ... 900 inwoners"),
+        "GM0014": gemeente("G", "18300101", "",
+                           "Grenswijziging per 01-01-2017, ontvangen van: - S (GM0040), ... 100 inwoners "
+                           "Grenswijziging per 01-01-2016, overgegaan naar: - K (GM0074), ... 3 inwoners"),
+        "GM0074": gemeente("K", "18300101", "",
+                           "Grenswijziging per 01-01-2016, ontvangen van: - G (GM0014), ... 3 inwoners"),
+    }
+
+
+class WhatTheNotesName(unittest.TestCase):
+
+    POP = {"GM0040": 1000.0, "GM0018": 3000.0, "GM0014": 20000.0, "GM0074": 50000.0}
+    TITLES = {"GM0040": "S", "GM0018": "H", "GM1952": "M", "GM0014": "G", "GM0074": "K"}
+
+    def setUp(self):
+        self.walk = m.follow(slochteren_history(), self.POP, "20140101", "20221231")
+        self.rows = {c: {"name": t, "total": 40.0, "parts": {k: 0.0 for k in m.COLUMNS}}
+                     for c, t in self.TITLES.items()}
+
+    def test_a_dissolved_gemeente_that_had_already_given_part_away_is_named_so(self):
+        unit = m.classify("GM1952", self.walk, self.POP, self.rows, self.TITLES)
+        self.assertEqual(unit.kind, "changed")
+        self.assertIn("it received 900 of the inhabitants of S when S was dissolved", unit.reason)
+        self.assertIn("S gave 100 inhabitants to G on 1 January 2017", unit.reason)
+
+    def test_a_small_part_received_is_a_correction_and_nothing_more_is_said(self):
+        unit = m.classify("GM0014", self.walk, self.POP, self.rows, self.TITLES)
+        self.assertIsNone(unit.reason)
+        self.assertEqual(unit.events, ["it gave 3 inhabitants to K on 1 January 2016",
+                                       "it received 100 inhabitants from S on 1 January 2017"])
+
+    def test_a_boundary_donor_s_other_transfers_are_not_listed(self):
+        unit = m.classify("GM0074", self.walk, self.POP, self.rows, self.TITLES)
+        self.assertEqual(unit.events, ["it received 3 inhabitants from G on 1 January 2016"])
+        self.assertIn("less than 0.1%", m.unit_note(unit, "K", self.rows, 1000.0))
+
+
 def sheet(*data: list) -> list[list]:
     """Rows laid out as CBS's workbook lays them out (probe of 4 October 2026)."""
     blank = [""] * 15
