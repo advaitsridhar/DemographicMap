@@ -76,6 +76,16 @@ class SpellingAndSeatTest(unittest.TestCase):
             bound, left, _ = s.bind_rows("LAO", "admin2", rows, "ADM2_EN", "ADM1_EN")
         self.assertEqual({i: u["id"] for i, u in bound.items()}, {0: "P1", 1: "P2"})
 
+    def test_a_district_keeps_its_own_spelling(self):
+        admin1 = [{"id": "CH", "name": "Champasak"}]
+        admin2 = [{"id": "D", "name": "Champasack", "parent": "CH", "point": [105.9, 14.9]}]
+        rows = [{"ADM1_EN": "Champasack", "ADM2_EN": "Champasack"}]
+        with mock.patch.object(s, "drawn", lambda iso3, level: admin1 if level == "admin1"
+                               else admin2), \
+                mock.patch.object(s, "locate", return_value={}):
+            bound, left, _ = s.bind_rows("LAO", "admin2", rows, "ADM2_EN", "ADM1_EN")
+        self.assertEqual(bound[0]["id"], "D")
+
     def test_twins_placed_by_their_seats(self):
         admin1 = [{"id": "AY", "name": "Phra Nakhon Si Ayutthaya Province"}]
         admin2 = [{"id": "E", "name": "Bang Sai", "parent": "AY", "point": [100.47, 14.22]},

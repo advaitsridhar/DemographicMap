@@ -66,8 +66,9 @@ KIND = re.compile(r"\b(?:province|changwat|khwaeng|khaet)\b", re.I)
 
 
 # The dataset's spelling -> the boundary file's, where the two romanise one
-# name differently (Laos's provinces, three of Cambodia's). Applied to a row's
-# own name and to the parent it names.
+# province's name differently (Laos's provinces, three of Cambodia's). Applied
+# to a first-level row's name and to the parent a district row names, never to
+# a district's own name.
 SPELLINGS = {
     ("LAO", "Bolikhamxai"): "Bolikhamsai", ("LAO", "Champasack"): "Champasak",
     ("LAO", "Khammouan"): "Khammouane", ("LAO", "Louangnamtha"): "Luang Namtha",
@@ -153,7 +154,10 @@ def bind_rows(iso3: str, level: str, rows: list[dict[str, Any]], unit_col: str,
     seats_at = locate(dict(seated), level, iso3) if seated and pcode_col else {}
     units_by_id = {u["id"]: u for u in drawn(iso3, level)}
     for i, row in enumerate(rows):
-        name = spelled(iso3, row.get(unit_col))
+        # The spellings are the provinces': a district may carry its
+        # province's name in the dataset's own spelling, as Champasack does.
+        name = (spelled(iso3, row.get(unit_col)) if level == "admin1"
+                else str(row.get(unit_col) or "").strip())
         parent = (key(spelled(iso3, row.get(parent_col)))
                   if (level == "admin2" and parent_col) else "")
         pcode = str(row.get(pcode_col) or "").strip() if pcode_col else ""
