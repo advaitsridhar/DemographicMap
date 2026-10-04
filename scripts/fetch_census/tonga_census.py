@@ -475,6 +475,10 @@ def build(population_book, ethnicity_book, religion_book, literacy_book,
                         "ethnicity_note"):
                 if fields.get(key):
                     fields[key] += why
+            fields["population_note"] = (
+                f"Niuafo'ou's own count. The Ongo Niua division had "
+                f"{people['Ongo Niua']['total']:,.0f} people in 2021 (General Table G 1);"
+                + why)
         records.append(unit_record("TON", division, unit["name"], unit, "admin1", None,
                                    SOURCES, **fields))
     for district, unit in district_units.items():
