@@ -1,60 +1,97 @@
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 839, in create_connection
-    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 974, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-socket.gaierror: [Errno -3] Temporary failure in name resolution
+probe_estat: ESTAT_API found, 40 characters
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/sea_probe.py", line 261, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/sea_probe.py", line 250, in main
-    cmd_spa(args.url)
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/sea_probe.py", line 132, in cmd_spa
-    status, ctype, body = fetch(url)
-                          ^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/sea_probe.py", line 49, in fetch
-    with urllib.request.urlopen(req, timeout=timeout) as fh:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+== metadata for 0003445244
+  getMetaInfo?statsDataId=0003445244
+    table: 0003445244 | [00200521] 国勢調査 | 総務省 | 外国人 男女，国籍別人口－全国，都道府県，市区町村 | survey 202010 | area 全国 (Japan as a whole) | 100215 cells
+      TITLE_SPEC.TABLE_CATEGORY: 外国人
+      TITLE_SPEC.TABLE_NAME: 男女，国籍別人口－全国，都道府県，市区町村
+      STATISTICS_NAME_SPEC.TABULATION_CATEGORY: 令和２年国勢調査
+      STATISTICS_NAME_SPEC.TABULATION_SUB_CATEGORY1: 人口等基本集計　（主な内容：男女・年齢・配偶関係，世帯の構成，住居の状態，母子・父子世帯，国籍など）
+    class tab = 表章事項 (1 codes)
+      2020_01  人口   (unit 人)
+    class cat01 = 男女 (3 codes)
+      0  総数   (level 1)
+      1  男   (level 1)
+      2  女   (level 1)
+    class cat02 = 国籍 (17 codes)
+      0  総数   (level 1)
+      1  外国人   (level 1)
+      101  韓国，朝鮮   (level 2)
+      102  中国   (level 2)
+      103  フィリピン   (level 2)
+      104  タイ   (level 2)
+      105  インドネシア   (level 2)
+      106  ベトナム   (level 2)
+      107  インド   (level 2)
+      108  ネパール   (level 2)
+      109  イギリス   (level 2)
+      110  アメリカ   (level 2)
+      111  ブラジル   (level 2)
+      112  ペルー   (level 2)
+      113  その他   (level 2)
+      2  日本人   (level 1)
+      3  日本人・外国人の別「不詳」   (level 1)
+    class area = 全国，都道府県，市区町村 (1965 codes)
+      00000  全国   (level 1)
+      01000  北海道   (level 2)
+      01100  札幌市   (level 4)
+      01101  札幌市中央区   (level 5)
+      01102  札幌市北区   (level 5)
+      01103  札幌市東区   (level 5)
+      01104  札幌市白石区   (level 5)
+      01105  札幌市豊平区   (level 5)
+      01106  札幌市南区   (level 5)
+      01107  札幌市西区   (level 5)
+      01108  札幌市厚別区   (level 5)
+      01109  札幌市手稲区   (level 5)
+      01110  札幌市清田区   (level 5)
+      01202  函館市   (level 4)
+      01203  小樽市   (level 4)
+      01204  旭川市   (level 4)
+      01205  室蘭市   (level 4)
+      01206  釧路市   (level 4)
+      01207  帯広市   (level 4)
+      01208  北見市   (level 4)
+      01209  夕張市   (level 4)
+      01210  岩見沢市   (level 4)
+      01211  網走市   (level 4)
+      01212  留萌市   (level 4)
+      01213  苫小牧市   (level 4)
+      01214  稚内市   (level 4)
+      01215  美唄市   (level 4)
+      01216  芦別市   (level 4)
+      01217  江別市   (level 4)
+      01218  赤平市   (level 4)
+      01219  紋別市   (level 4)
+      01220  士別市   (level 4)
+      01221  名寄市   (level 4)
+      01222  三笠市   (level 4)
+      01223  根室市   (level 4)
+      01224  千歳市   (level 4)
+      01225  滝川市   (level 4)
+      01226  砂川市   (level 4)
+      01227  歌志内市   (level 4)
+      01228  深川市   (level 4)
+      01229  富良野市   (level 4)
+      01230  登別市   (level 4)
+      01231  恵庭市   (level 4)
+      01233  伊達市   (level 4)
+      01234  北広島市   (level 4)
+      01235  石狩市   (level 4)
+      01236  北斗市   (level 4)
+      01303  当別町   (level 6)
+      01304  新篠津村   (level 6)
+      01331  松前町   (level 6)
+      01332  福島町   (level 6)
+      01333  知内町   (level 6)
+      01334  木古内町   (level 6)
+      01337  七飯町   (level 6)
+      01343  鹿部町   (level 6)
+      01345  森町   (level 6)
+      01346  八雲町   (level 6)
+      01347  長万部町   (level 6)
+      01361  江差町   (level 6)
+      01362  上ノ国町   (level 6)
+      ... and 1905 more
+    class time = 時間軸（年次） (1 codes)
+      2020000000  2020年   (level 1)
