@@ -5019,6 +5019,8 @@ def residual_child(admin0: list[dict[str, Any]],
         for field in ROLLUP_FIELDS:
             if not (isinstance(nation.get(field), list) and shares_of(nation[field])):
                 continue
+            if collection_gap(iso3, field) is not None:
+                continue
             blank = [r for r in rows if isinstance(r.get(field), dict)
                      and r[field].get("status") == NOT_AVAILABLE]
             known = [r for r in rows if isinstance(r.get(field), list)]
@@ -5084,6 +5086,12 @@ def residual_grandchild(admin1_by_country: dict[str, list[dict[str, Any]]],
             for field in ROLLUP_FIELDS:
                 if not (isinstance(parent.get(field), list)
                         and shares_of(parent[field])):
+                    continue
+                # A field with a stated policy is one whose gaps are reasons,
+                # not unread figures: Sweden's two kommuner whose church rows
+                # are another territory would get those rows back by
+                # subtraction from the län that sums them.
+                if collection_gap(iso3, field) is not None:
                     continue
                 blank = [r for r in rows if isinstance(r.get(field), dict)
                          and r[field].get("status") == NOT_AVAILABLE]
