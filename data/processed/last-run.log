@@ -1,522 +1,122 @@
-https://www.data.gov.bh: 60 datasets
-  total-households-by-governorate-and-type-of-household-census-2020 | Total Households by Governorate and Type Of Household - Census 2020 | records=8 | modified=2023-06-07
-      fields: governorate, lmhfz, type_of_household, nw_l_sr, household
-  42-natural-increase-rate | Natural Increase Rate | records=50 | modified=2026-08-30
-      fields: n, year, nationality, ljnsy, rate
-  housing-units-by-housing-type-and-occupancy-census-2020 | Housing Units by Housing Type and Occupancy - Census 2020 | records=10 | modified=2023-06-06
-      fields: housing_type, nw_lmskn, occupancy, lshgl, housing
-  21-crude-death-rate | Crude Death Rate | records=100 | modified=2026-08-27
-      fields: n, year, nationality, ljnsy, sex, jns, lm_dl
-  30-number-of-cancer-cases-among-bahrainis-by-sex-and-cancer-type | Number of Cancer Cases among Bahrainis by Sex and Cancer Type | records=139 | modified=2026-08-26
-      fields: n, year, ljns, sex, nw_lmrd, disease_type, tfsyl_lmrd, diseases_disaggregation, data
-  school-enrolled-population-3-years-and-above-by-sex-governorate-and-schooling-st | School Enrolled Population (3 Years & Above) by Sex, Governorate and Schooling Stage - Census 2020 | records=112 | modified=2023-06-07
-      fields: governorate, lmhfz, schooling_stage, lmrhl_lt_lymy, nationality, ljnsy, sex, ljns, school_enrolled_population
-  population-15-years-and-above-by-highest-level-of-education-nationality-and-sex- | Population (15 Years & Above) by Highest Level of Education, Nationality and Sex - Census 2020 | records=40 | modified=2023-06-07
-      fields: highest_level_of_education, l_mw_hl_lmy, nationality, ljnsy, sex, ljns, school_enrolled_population
-  02-crude-birth-rate-by-nationality | Crude Birth Rate by Nationality | records=50 | modified=2026-08-27
-      fields: n, year, nationality, ljnsy, rate
-  population-by-governorate-nationality-groups-and-sex-census-2020 | Population by Governorate, Nationality Groups and Sex - Census 2020 | records=64 | modified=2023-06-07
-      fields: governorate, lmhfz, nationality_groups, mjmw_t_ljnsy, sex, ljns, population
-  disabled-population-by-sex-cause-of-disability-and-type-of-disability-census-200 | Disabled Population by Sex, Cause of Disability and Type of Disability - Census 2020 | records=80 | modified=2023-06-06
-      fields: cause_of_disability, sbb_l_q, type_of_disability, nw_l_q, nationality, ljnsy, sex, ljns, population
-  buildings-by-building-type-and-governorate-census-2020 | Buildings by Building Type and Governorate - Census 2020 | records=30 | modified=2023-06-06
-      fields: building_type, nw_lmbn, governorate, lmhfz, buildings
-  working-population-15-years-and-above-by-age-groups-and-employment-status-census | Working Population (15 Years & Above) by Age Groups and Employment Status - Census 2020 | records=66 | modified=2023-06-07
-      fields: age_groups, fy_t_lsn, employment_status, lhl_l_mly, sex, ljns, population
-  disabled-population-by-sex-governorate-and-type-of-disability-census-2020 | Disabled Population by Sex, Governorate and Type of Disability - Census 2020 | records=80 | modified=2023-06-06
-      fields: governorate, lmhfz, type_of_disability, nw_l_q, nationality, ljnsy, sex, ljns, population
-  01-population-by-nationality-sex-agegroups | 1. Population by Nationality, Sex & Age Groups | records=1368 | modified=2026-08-26
-      fields: n, year, nationality, ljnsy, sex, ljns, age_group, population
-  distribution-population-by-governorate-and-nationality-of-households-census-2020 | Distribution Population by Governorate & Nationality of Households - Census 2020 | records=8 | modified=2023-06-06
-      fields: governorate, lmhfz, nationality, ljnsy, population
-  economically-active-population-15-years-and-above-by-age-groups-nationality-and- | Economically Active Population (15 Years & Above) by Age Groups, Nationality and Sex - Census 2020 | records=44 | modified=2023-06-06
-      fields: age_groups, fy_t_lsn, nationality, ljnsy, sex, ljns, population
-  buildings-by-ownership-type-and-governorate-census-2020 | Buildings by Ownership Type and Governorate - Census 2020 | records=22 | modified=2023-06-06
-      fields: ownership_type, nw_lmlky, governorate, lmhfz, buildings
-  02-population-by-governorate-nationality-sex | 2. Population by Governorate, Nationality & Sex | records=320 | modified=2026-08-26
-      fields: year, nationality, ljnsy, sex, ljns, governorate, lmhfz, population
-  school-enrolled-population-3-years-and-above-by-governorate-nationality-and-sex- | School Enrolled Population (3 Years & Above) by Governorate, Nationality and Sex - Census 2020 | records=16 | modified=2023-06-07
-      fields: governorate, lmhfz, nationality, ljnsy, sex, ljns, school_enrolled_population
-  population-15-years-and-above-by-labour-force-participation-nationality-and-sex- | Population (15 Years & Above) by Labour Force Participation, Nationality and Sex - Census 2020 | records=32 | modified=2023-06-07
-      fields: labour_force_participation, l_lq_bqw_l_ml, labour_force, qw_l_ml, nationality, ljnsy, sex, ljns, population
-  private-households-by-household-size-and-housing-type-census-2020 | Private Households by Household Size and Housing Type - Census 2020 | records=110 | modified=2023-06-07
-      fields: household_size, hjm_l_sr, housing_type, nw_lmskn, nationality, ljnsy, household
-  population-connected-to-wastewater-treatment-alskan-almwswlwn-bmaaljh-almyah-ala | Population Connected to Wastewater Treatment | records=44 | modified=2026-06-30
-      fields: year, indicator, lmw_shr, value
-  distribution-households-by-governorate-and-nationality-of-households-census-2020 | Distribution of Households by Governorate & Nationality of Households - Census 2020 | records=8 | modified=2023-06-06
-      fields: governorate, lmhfz, nationality, ljnsy, households
-  working-population-15-years-and-above-by-employment-status-nationality-and-sex-c | Working Population (15 Years & Above) by Employment Status, Nationality and Sex - Census 2020 | records=12 | modified=2023-06-07
-      fields: employment_status, lhl_l_mly, nationality, ljnsy, sex, ljns, population
-  illiterate-read-only-population-15-years-and-above-by-governorate-nationality-an | Illiterate Read Only Population (15 Years & Above) by Governorate, Nationality and Sex - Census 2020 | records=16 | modified=2023-06-06
-      fields: governorate, lmhfz, nationality, ljnsy, sex, ljns, llliterate_read_only_population
-  disabled-population-by-type-of-disability-nationality-and-sex-census-2020 | Disabled Population by Type of Disability, Nationality and Sex - Census 2020 | records=20 | modified=2023-06-06
-      fields: type_of_disability, nw_l_q, nationality, ljnsy, sex, ljns, population
-  private-households-by-household-size-and-governorate-census-2020 | Private Households by Household Size and Governorate - Census 2020 | records=96 | modified=2023-06-07
-      fields: household_size, hjm_l_sr, governorate, lmhfz, nationality, ljnsy, household
-  04-population-density-by-governorate | 4. Population Density by Governorate | records=70 | modified=2026-08-26
-      fields: year, governorate, lmhfz, value
-  35-incidence-rates-of-selected-communicable-diseases-as-reported | Incidence Rates of Selected Communicable Diseases as Reported by Public Health Directorate (Per 100,000 of Population) | records=150 | modified=2026-08-26
-      fields: n, year, selected_communicable_diseases, l_mrd_lm_dy_lmkhtr, data
-  disabled-population-15-years-and-above-by-sex-marital-status-and-type-of-disabil | Disabled Population (15 Years & Above) by Sex, Marital Status and Type of Disability - Census 2020 | records=80 | modified=2023-06-06
-      fields: marital_status, lhl_lzwjy, type_of_disability, nw_l_q, nationality, ljnsy, sex, ljns, population
-  school-enrolled-population-3-years-and-above-by-schooling-stage-nationality-and- | School Enrolled Population (3 Years & Above) by Schooling Stage, Nationality and  Sex - Census 2020 | records=28 | modified=2023-06-07
-      fields: schooling_stage, lmrhl_lt_lymy, nationality, ljnsy, sex, ljns, school_enrolled_population
-  llliterate-read-only-population-15-years-and-above-by-age-groups-nationality-and | llliterate Read Only Population (15 Years & Above) by Age Groups, Nationality and Sex - Census 2020 | records=44 | modified=2023-06-06
-      fields: age_groups, fy_t_lsn, nationality, ljnsy, sex, ljns, llliterate_read_only_population
-  economically-active-population-15-years-and-above-by-governorate-nationality-and | Economically Active Population (15 Years & Above) by Governorate, Nationality and Sex - Census 2020 | records=16 | modified=2023-06-06
-      fields: governorate, lmhfz, nationality, ljnsy, sex, ljns, population
-  population-by-religion-nationality-and-sex-census-2020 | Population by Religion, Nationality and Sex - Census 2020 | records=8 | modified=2023-06-07
-      fields: religion, ldyn, nationality, ljnsy, sex, ljns, population
-  5-sex-ratio-by-nationality | 5. Sex Ratio by Nationality | records=42 | modified=2026-08-26
-      fields: year, nationality, ljnsy, ratio
-  population-15-years-and-above-by-sex-labour-force-participation-and-marital-stat | Population (15 Years & Above) by Sex, Labour Force Participation and Marital Status - Census 2020 | records=128 | modified=2023-06-07
-      fields: labour_force_participation, l_lq_bqw_l_ml, marital_status, lhl_lzwjy, nationality, ljnsy, sex, ljns, population
-  population-15-years-and-above-by-nationality-groups-and-marital-status-census-20 | Population (15 Years & Above) by Nationality Groups and Marital Status - Census 2020 | records=32 | modified=2023-06-07
-      fields: nationality_groups, mjmw_t_ljnsy, marital_status, lhl_lzwjy, population
-  population-by-governorate-nationality-and-sex-census-2020 | Population by Governorate, Nationality and Sex - Census 2020 | records=16 | modified=2023-06-07
-      fields: governorate, lmhfz, nationality, ljnsy, sex, ljns, population
-  occupied-housing-units-by-governorate-and-number-of-cars-census-2020 | Occupied Housing Units by Governorate and Number of Cars - Census 2020 | records=28 | modified=2023-06-06
-      fields: lmhfz, governorate, number_of_cars, dd_lsyrt, housing
-  disabled-population-by-age-groups-nationality-and-sex-census-2020 | Disabled Population by Age Groups, Nationality and Sex - Census 2020 | records=72 | modified=2023-06-06
-      fields: age_groups, fy_t_lsn, nationality, ljnsy, sex, ljns, population
-  10-mean-years-of-schooling-for-the-population-25-years-and-above-by-sex | Mean years of schooling for the population (25 years and above) by Sex | records=9 | modified=2026-06-08
-      fields: n, year, sex, ljns, value
-  school-enrolled-population-3-years-and-above-by-age-groups-nationality-and-sex-c | School Enrolled Population (3 Years & Above) by Age Groups, Nationality and Sex - Census 2020 | records=24 | modified=2023-06-07
-      fields: age_groups, fy_t_lsn, nationality, ljnsy, sex, ljns, school_enrolled_population
-  private-households-by-governorate-and-household-nationality-census-2020 | Private Households by Governorate and Household Nationality - Census 2020 | records=8 | modified=2023-06-07
-      fields: governorate, lmhfz, nationality, ljnsy, household
-  11-literacy-rate-for-population-by-sex | Literacy rate for Population by Sex | records=36 | modified=2026-06-08
-      fields: n, year, indicator, lmw_shr, age, l_mr, sex, ljns, value
-  population-15-years-and-above-by-sex-age-groups-and-marital-status-census-2020 | Population (15 Years & Above) by Sex, Age Groups and Marital Status - Census 2020 | records=176 | modified=2023-06-07
-      fields: age_groups, fy_t_lsn, marital_status, lhl_lzwjy, nationality, ljnsy, sex, ljns, population
-  unemployed-bahraini-population-15-years-and-above-by-marital-status-and-sex-cens | Unemployed Bahraini Population (15 Years & Above) by Marital Status and Sex - Census 2020 | records=8 | modified=2023-06-07
-      fields: marital_status, lhl_lzwjy, sex, ljns, population
-  population-by-age-groups-nationality-and-sex-census-2020 | Population by Age Groups, Nationality and Sex - Census 2020 | records=72 | modified=2023-06-07
-      fields: age_groups, fy_t_lsn, nationality, ljnsy, sex, ljns, population
-  03-population-by-nationality-and-sex | 3. Population by Nationality & Sex | records=152 | modified=2026-08-26
-      fields: year, nationality, ljnsy, sex, ljns, population
-  distribution-of-average-households-by-governorate-and-nationality-of-households- | Distribution of Average Households by Governorate & Nationality of Households - Census 2020 | records=8 | modified=2023-06-06
-      fields: governorate, lmhfz, nationality, ljnsy, average
-  population-15-years-and-above-by-marital-status-nationality-and-sex-census-2020 | Population (15 Years & Above) by Marital Status, Nationality and Sex - Census 2020 | records=16 | modified=2023-06-07
-      fields: marital_status, lhl_lzwjy, nationality, ljnsy, sex, ljns, population
-  fauna-population-statistics | Fauna Population Statistics | records=243 | modified=2026-07-27
-      fields: year, indicator, lmw_shr, fuana_type, nw_lhywnt, extinction_status, hl_lnqrd, value
-  population-15-years-and-above-by-sex-governorate-and-marital-status-census-2020 | Population (15 Years & Above) by Sex, Governorate and Marital Status - Census 2020 | records=64 | modified=2023-06-07
-      fields: governorate, lmhfz, marital_status, lhl_lzwjy, nationality, ljnsy, sex, ljns, population
-  school-enrolled-population-3-years-and-above-by-sex-age-groups-and-schooling-sta | School Enrolled Population (3 Years & Above) by Sex, Age Groups and Schooling Stage - Census 2020 | records=168 | modified=2023-06-07
-      fields: age_groups, fy_t_lsn, schooling_stage, lmrhl_lt_lymy, nationality, ljnsy, sex, ljns, school_enrolled_population
-  housing-units-by-housing-type-and-governorate-census-2020 | Housing Units by Housing Type and Governorate - Census 2020 | records=20 | modified=2023-06-06
-      fields: housing_type, nw_lmskn, governorate, lmhfz, housing
-  population-15-years-and-above-by-age-groups-and-highest-educational-level-census | Population (15 Years & Above) by Age Groups and Highest Educational Level - Census 2020 | records=440 | modified=2023-06-07
-      fields: age_groups, fy_t_lsn, highest_educational_level, l_mw_hl_lmy, nationality, ljnsy, sex, ljns, population
-  population-by-sex-age-groups-and-religion-census-2020 | Population by Sex, Age Groups and Religion - Census 2020 | records=112 | modified=2023-06-07
-      fields: age_groups, fy_t_lsn, nationality, ljnsy, religion, ldyn, sex, ljns, population
-  flora-population-statistics | Flora Population Statistics | records=54 | modified=2025-11-13
-      fields: year, indicator, lmw_shr, flora_type, nw_lnbtt, extinction_status, hl_lnqrd, value
-  buildings-by-building-current-usage-and-governorate-census-2020 | Buildings by Building Current Usage and Governorate - Census 2020 | records=12 | modified=2023-06-06
-      fields: building_current_usage, lstkhdm_lhly_llmbn, usage, lstkhdm, governorate, lmhfz, buildings
-  population-15-years-and-above-by-governorate-and-labour-force-participation-cens | Population (15 Years & Above) by Governorate and Labour Force Participation - Census 2020 | records=128 | modified=2023-06-07
-      fields: labour_force_participation, l_lq_bqw_l_ml, governorate, lmhfz, nationality, ljnsy, sex, ljns, population
-  unemployed-bahraini-population-15-years-and-above-by-age-groups-and-sex-census-2 | Unemployed Bahraini Population (15 Years & Above) by Age Groups and Sex - Census 2020 | records=20 | modified=2023-06-07
-      fields: age_groups, fy_t_lsn, sex, ljns, population
-https://www.data.gov.qa: 352 datasets
-  sdg-16-1-3-number-of-population-reporting-exposure-to-violence-by-municipality-and-gender | SDG 16.1.3 Number of Population Reporting Exposure to Violence by Municipality and Gender | records=96 | modified=2026-07-21
-      fields: year, municipality, lbldy, gender, ljns, number
-  population-economically-active-15-years-and-above-by-nationality-and-sector-in-census-2010-2020 | Population Economically Active (15 Years and above) by Nationality and Sector in Census ( 2010 , 2020 ) | records=14 | modified=2026-04-27
-      fields: sector, sector_ar, nationaliy, nationality_ar, percentage_of_change_from_2010_to_2020, percentage_of_population_in_2020, population_in_2020, percentage_of_population_in_2010, population_in_2010
-  economically-active-population-15-years-and-above-by-age-group-and-occupation | Economically Active Population (15 Years & Above) by Age Group & Occupation | records=9 | modified=2025-05-08
-      fields: occupation, lmhn, 15_19, 20_24, 25_29, 30_34, 35_39, 40_44, 45_49, 50_54, 55_59, 60_65, 65, total
-  sdg-11-a-1-taking-population-projections-into-consideration | SDG 11.a.1 Taking Population Projections into Consideration | records=7 | modified=2026-08-30
-      fields: year, value
-  qatari-4-years-and-above-who-use-the-internet-by-age-group-and-place-of-usage-in-census-2020 | Qatari (4 Years and above) Who Use The Internet by Age Group and Place of Usage in Census (2020) | records=9 | modified=2025-06-02
-      fields: age_group, fy_t_l_mr, place_of_usage, mkn_lstkhdm, percentage_of_qatari_population, qatari_population
-  registered-deaths-by-nationality-and-gender | Registered Deaths by Nationality and Gender | records=54 | modified=2025-05-07
-      fields: year, ljnsy, nationality, lnw, gender, value
-  mean-age-of-women-at-childbearing | Mean age of Women at childbearing | records=10 | modified=2025-05-27
-      fields: year, qataris, non_qataris
-  sdg-1-a-2-per-capita-government-spending-on-essential-services-by-type-of-service | SDG 1.a.2 Per Capita Government Spending on Essential Services by Type of Service | records=12 | modified=2026-08-14
-      fields: year, type_of_service, nw_lkhdm, spending
-  number-of-tuberculosis-cases-and-rate-by-year | Number of Tuberculosis Cases and Rate by Year | records=8 | modified=2026-08-31
-      fields: year, number_of_cases, incidence_per_100_000_population
-  sdg-1-5-1-number-of-injured-persons-and-deaths-attributed-to-disasters-per-100-000-population-by | SDG 1.5.1 Number of Injured Persons and Deaths Attributed to Disasters per 100,000 Population by Gender | records=24 | modified=2026-08-14
-      fields: year, case, lhl, gender, ljns, hazard_type, nw_lkhtr, rate
-  sdg-1-3-1-proportion-of-population-with-severe-disabilities-receiving-a-disability-cash-benefit-by | SDG 1.3.1 Proportion of population with severe disabilities receiving a disability cash benefit, by gender | records=5 | modified=2026-08-13
-      fields: year, gender, ljns, proportion
-  indicator-16-1-3-number-of-people-who-reported-experiencing-violence-by-employment-status-and-gender | SDG 16.1.3 Number of Population Reporting Exposure to Violence by Labour Force Status and Gender | records=72 | modified=2026-08-02
-      fields: year, employment_status, lhl_lwzyfy, gender, ljns, number
-  illiterate-persons-and-total-population-15-years-and-above-by-gender | Illiterate Persons and Total Population (15 Years and Above) by Gender | records=24 | modified=2026-09-27
-      fields: year, gender, ljns, indicator, lmw_shr, value
-  sdg-8-10-1-number-of-commercial-bank-branches-per-100-000-adults | SDG 8.10.1 - Number of commercial bank branches per 100,000 adults | records=18 | modified=2026-08-02
-      fields: year, age, lfy_l_mry, number_per_100_000_adults
-  sdg-1-5-1-number-of-injured-persons-and-deaths-attributed-to-disasters-per-100-000-population-by-age | SDG 1.5.1 Number of Injured Persons and Deaths Attributed to Disasters per 100,000 Population by Age Group | records=36 | modified=2026-08-14
-      fields: year, case, lhl, age_group, lfy_l_mry, hazard_type, nw_lkhtr, rate
-  sdg-16-b-1-proportion-of-population-reporting-discrimination-or-harassment-in-qatar-by-gender | SDG 16.b.1 Proportion of Population Reporting Discrimination or Harassment in Qatar by Gender | records=12 | modified=2026-08-21
-      fields: year, gender, ljns, proportion
-  total-population-participation-rate-15-years-and-older-by-age-group | Total Population Participation Rate (15 years and older) by Age Group | records=132 | modified=2026-06-05
-      fields: year, age_group, rate
-  sdg-16-3-2-unsentenced-detainees-as-a-proportion-of-overall-prison-population-by-gender | SDG 16.3.2 Unsentenced Detainees as a Proportion of Overall Prison Population by Gender | records=12 | modified=2026-07-20
-      fields: year, gender, ljns, number_of_prisoners, number_of_unsentenced_detainees, percentage
-  sdg-1-4-2-share-of-adult-owners-aged-18-and-over-with-individual-ownership-by-nationality-and-gender | SDG 1.4.2 Share of Adult Owners Aged 18 and Over with Individual Ownership by Nationality and Gender | records=20 | modified=2026-08-14
-      fields: year, nationality, ljnsy, gender, ljns, share
-  sdg-16-b-1-number-of-population-reporting-discrimination-or-harassment-in-qatar-by-type-of-practice | SDG 16.b.1 Number of Population Reporting Discrimination or Harassment in Qatar by Type of Practice and Gender | records=24 | modified=2026-08-21
-      fields: year, type_of_practice, nw_lmmrs, gender, ljns, number
-  sdg-16-7-1-representation-proportion-of-females-and-youth-aged-34-and-under-in-public-positions-by | SDG 16.7.1 Representation Proportion of Females and Youth Aged 34 and Under in Public Positions by Occupation and Economic Activity | records=16 | modified=2026-08-22
-      fields: year, classification, ltsnyf, category, lfy, population_group, lfy_lskny, representation_proportion
-  registered-live-births-by-nationality-and-gender | Registered Live Births by Nationality and Gender | records=80 | modified=2026-06-24
-      fields: year, ljnsy, nationality, lnw, gender, total
-  sdg-11-7-1-average-share-of-the-built-up-area-of-cities-that-is-open-space-for-public-use-by-gender | SDG 11.7.1 Average Share of the Built-up Area of Cities That Is Open Space for Public Use by Gender and Age Group | records=7 | modified=2026-08-02
-      fields: year, characteristic, lkhsy_s, category, lfy, proportion
-  percentage-distribution-of-labor-force-15-years-and-above-by-economic-activity-nationality-and-gender | Percentage Distribution of Labor Force (15 Years and Above) by Economic Activity, Nationality and Gender | records=16 | modified=2025-05-09
-      fields: economic_activity, lnsht_lqtsdy, qatari_males, qatari_females, non_qatari_males, non_qatari_females
-  education-statistics-number-of-persons-attending-evening-schools-and-illiteracy-eradication-centers | Number of Persons Attending Evening Schools and Illiteracy Eradication Centers by Level of Education, Grade, Nationality, and Gender | records=392 | modified=2025-05-26
-      fields: year, level_of_education, level_of_education_ar, grade, grade_ar, nationality, nationality_ar, gender, gender_ar, number_of_persons_dd_l_shkhs
-  crude-birth-rate-crude-death-rates-and-rate-of-natural-increase | Crude Birth Rate, Crude Death Rate and Rate of Natural Increase | records=20 | modified=2026-05-06
-      fields: year, crude_birth_rate_per_1_000_population, crude_death_rate_per_1_000_population, rate_of_natural_increase_per_1_000_population, maternal_mortality_rate_per_100_000_live_births, rate_of_deliveries_under_medical_supervision
-  sdg-9-c-1-proportion-of-population-covered-by-a-mobile-network-by-technology | SDG  9.c.1 Proportion of Population Covered by a Mobile Network by Technology | records=24 | modified=2026-07-20
-      fields: year, technology, ltknwlwjy, percentage
-  sdg-12-c-1-fossil-fuel-subsidies-consumption-and-production-per-capita-nominal-united-states-dollars | SDG 12.c.1  Fossil-fuel subsidies consumption and production per capita nominal United States dollars | records=15 | modified=2026-08-20
-      fields: year, subsidies_per_capita
-  registered-foetal-deaths-by-age-group-of-mother-and-child-order-non-qataris | Registered Foetal Deaths by Age Group of Mother and Child Order (Non-Qataris) | records=990 | modified=2026-07-10
-      fields: year, child_order, trtyb_lmwlwd, age_group_of_mother, fy_mr_l_m, number
-  sdg-1-4-2-share-of-adult-owners-aged-18-and-over-with-collective-ownership-by-nationality | SDG 1.4.2 Share of Adult Owners Aged 18 and Over with Collective Ownership by Nationality | records=10 | modified=2026-08-14
-      fields: year, nationality, ljnsy, share
-  number-of-non-qatari-employees-in-business-establishments-by-sex-in-2010-and-2015-censuses | Number of Non-Qatari Employees in Business Establishments by Sex in 2010 and 2015 Censuses | records=2 | modified=2025-05-19
-      fields: gender, lnw, census_2015_t_dd_2015, census_2010_t_dd_2010, increase, increase_rate_during_the_period, annual_increase_rate
-  population-15-by-relation-to-labour-force-and-age-groups-quarterly | Population (15+) by Relation to Labour Force & Age Groups | records=314 | modified=2026-09-12
-      fields: year, quarter, age_group, activity_status, hl_lnsht, number
-  sdg-16-7-1-proportions-and-number-of-positions-in-national-and-local-legislatures-by-population | SDG 16.7.1 Proportions and Number of Positions in National and Local Legislatures by Population Group and Age Group | records=25 | modified=2026-09-12
-      fields: year, sub_indicator, lmw_shr_lfr_y, population_group, lfy_lskny, age_group, lfy_l_mry, value
-  number-of-insured-individuals-2024 | Number of Insured Individuals | records=1 | modified=2026-08-31
-      fields: year, number_of_insured_individuals
-  registered-foetal-deaths-by-nationality-gender-and-educational-status-of-mother | Registered Foetal Deaths by Nationality, Gender and Educational Status of Mother | records=420 | modified=2026-07-10
-      fields: year, educational_status_of_mother, lhl_lt_lymy_ll_m, nationality, ljnsy, gender, lnw, number
-  sdg-7-1-2-proportion-of-population-with-primary-reliance-on-clean-fuels-and-technology-by-urban | SDG 7.1.2 - Proportion of population with primary reliance on clean fuels and technology, by urban, rural location | records=75 | modified=2026-08-08
-      fields: year, location_code, rmz_lmwq_ljgrfy, location, lmwq_ljgrfy, proportion
-  non-qatari-economically-active-15-years-and-above-by-sex-and-economic-activity-in-census-2010-2020 | Non Qatari Economically Active (15 Years and above) by Sex and Economic Activity in Census (2010 , 2020) | records=60 | modified=2025-06-12
-      fields: economic_activity, economic_activity_ar, sex, sex_ar, population_in_2010, percentage_of_population_in_2010, population_in_2020, percentage_of_population_in_2020, percentage_of_change_from_2010_to_2020
-  athletes-registered-with-sports-federations-by-sports-activity-age-groups-and-gender-2021-2022 | Athletes Registered with Sports Federations by Sports Activity, Age Groups and Gender (2021-2022) | records=44 | modified=2025-05-28
-      fields: sports_activity, sports_activity_ar, adults_males, adults_females, youth_males, youth_females, junior_u18_males, junior_u18_females, junior_u16_males, junior_u16_females, kids_males, kids_females
-  qatari-deaths-overseas-by-age-groups-and-gender | Qatari Deaths Overseas by Age Groups and Gender | records=342 | modified=2026-09-22
-      fields: year, lfy_t_l_mry, age_group, lnw, gender, value
-  adult-illiteracy-rate-15-years-and-above-by-gender | Adult Illiteracy Rate (15 Years and Above) by Gender | records=12 | modified=2026-09-27
-      fields: year, gender, ljns, value
-  economically-inactive-population-15-years-and-above-by-nationality-and-gender | Economically Inactive Population 15 Years & Above by Nationality & Gender | records=36 | modified=2026-05-05
-      fields: year, nationality, ljnsy, gender, ljns, total
-  sdg-3-9-3-mortality-rate-attributed-to-unintentional-poisonings-by-sex-deaths-per-100-000-population | SDG 3.9.3 - Mortality rate attributed to unintentional poisonings, by sex (deaths per 100,000 population) | records=7 | modified=2026-07-17
-      fields: year, value
-  sdg-3-6-1-death-rate-due-to-road-traffic-injuries-by-sex-per-100-000-population | SDG 3.6.1 - Death rate due to road traffic injuries, by sex (per 100,000 population) | records=1 | modified=2026-07-17
-      fields: year, value
-  new-driving-licenses-issued-by-month-and-nationality | New driving licenses issued by month and nationality | records=240 | modified=2025-08-17
-      fields: year, month, lshhr, nationality, ljnsy, total
-  distribution-of-the-number-of-employees-by-categories-of-employees-number-between-2010-and-2015 | Distribution of the number of employees by categories of employees number between 2010 and 2015 Censuses | records=5 | modified=2025-09-15
-      fields: categories_of_employees_number, fy_t_dd_lmshtglyn, dd_lmshtglyn_fy_t_dd_2010_number_of_employees_in_census_2010, dd_lmshtglyn_fy_t_dd_2015_number_of_employees_in_census_2015, increase_percentage_during_the_period
-  sdg-8-10-1-number-of-automated-teller-machines-atms-per-100-000-adults | SDG 8.10.1 - Number of automated teller machines (ATMs) per 100,000 adults | records=20 | modified=2026-08-02
-      fields: year, age, lfy_l_mry, number_per_100_000_adults
-  annual-birth-and-mortality-statistics | Annual Birth And Mortality Statistics | records=10 | modified=2025-06-03
-      fields: year, number_of_live_births, number_of_deaths, neonatal_mortality_rate_per_1_000_live_births, infant_mortality_rate_per_1_000_live_births, under_5_mortality_rate_per_1_000_live_births, maternal_mortality_ratio_per_100_000_live_births
-  sdg-11-7-1-percentage-of-open-spaces-in-public-areas-of-total-urban-area-by-urban-area | SDG 11.7.1 Percentage of Open Spaces in Public Areas of Total Urban Area by Urban Area | records=40 | modified=2026-08-02
-      fields: year, urban_area, lmbny_l_mrny, indicator, lmw_shr, value
-  economically-active-qatari-males-15-years-and-above-by-occupation-and-economic-activity | Economically Active Qatari Males (15 Years & Above) by Occupation & Economic Activity | records=1440 | modified=2026-08-05
-      fields: year, economic_activity, lnsht_lqtsdy, occupation, lmhn, number
-  sdg-16-7-1-number-of-economically-active-population-aged-15-and-over-in-selected-public-occupations0 | SDG 16.7.1 Number of Economically Active Population Aged 15 and Over in Selected Public Occupations and Activities by Gender | records=32 | modified=2026-08-22
-      fields: year, economic_activity, lnsht_lqtsdy, occupation, lmhn, gender, ljns, number
-  sdg-13-1-1-number-of-injured-persons-and-deaths-attributed-to-disasters-per-100-000-population-by | SDG 13.1.1 Number of Injured Persons and Deaths Attributed to Disasters per 100,000 Population by Impact Type and Age Group | records=36 | modified=2026-09-10
-      fields: year, hazard_type, nw_lkhtr, impact_type, nw_l_thr, age_group, lfy_l_mry, value
-  age-specific-fertility-rates-general-fertility-and-total-fertility | General Fertility Rate, Total Fertility Rate, Gross Reproduction Rate, and Average Age at Childbearing by Nationality | records=38 | modified=2026-09-29
-      fields: year, nationality, ljnsy, general_fertility_rate_per_1000_women, total_fertility_rate_per_woman, gross_reproduction_rate, average_age_of_child_bearing
-  distribution-of-business-establishments-by-categories-of-employees-number-between-2010-and-2015 | Distribution of Business Establishments by Categories of Employees Number Between 2010 and 2015 Censuses | records=5 | modified=2025-05-29
-      fields: categories_of_employees_number, fy_t_dd_lmshtglyn, dd_lmshtglyn_fy_t_dd_2010_number_of_employees_in_census_2010, dd_lmshtglyn_fy_t_dd_2015_number_of_employees_in_census_2015, increase_percentage_during_the_period
-  economically-active-population-15-years-and-above-by-nationality-gender-and-employment-status | Economically Active Population (15 Years & Above) by Nationality, Gender & Employment Status | records=84 | modified=2026-05-20
-      fields: year, nationality, ljnsy, gender, ljns, employment_status, lhl_l_mly, total
-  non-qatari-females-15-years-and-above-by-educational-status-and-age-groups | Non-Qatari Females (15 Years & Above) by Educational Status and Age Groups | records=364 | modified=2026-05-20
-      fields: year, age_group, educational_status, lhl_lt_lymy, count
-  growth-of-some-population-indicators-in-qatar-during-1986-2015 | Growth of Some Population Indicators in Qatar during 1986-2015 | records=5 | modified=2025-05-29
-      fields: indicators, lmw_shrt, 1986, 1997, 2004, 2010, 2015
-  number-of-business-establishments-by-economic-activity-in-census-2010-2020 | Number of Business Establishments by Economic Activity in Census (2010, 2020) | records=17 | modified=2025-05-27
-      fields: economic_activity, economic_activity_ar, census_2020, percent_census_2020, census_2010_2010, percent_census_2010, percent_change
-  completed-residential-buildings-by-municipality-and-their-connection-to-the-public-utilities | Completed Residential Buildings by Municipality and their Connection to the Public Utilities Networks | records=138 | modified=2026-07-24
-      fields: census_year, municipality, lbldy, service, lkhdm, status, lhl, value
-  non-qatari-economically-active-15-years-and-above-by-sex-and-occupation-in-census-2010-2020 | Non Qatari Economically Active (15 Years and above) by Sex and Occupation in Census ( 2010 , 2020 ) | records=18 | modified=2026-04-27
-      fields: occupation, lmhn, sex, ljns, population_in_2010, percentage_of_population_in_2010, population_in_2020, percentage_of_population_in_2020, percentage_of_change_from_2010_to_2020
-  population-economically-active-15-years-and-above-by-nationality-and-occupation-in-census-2010-2020 | Population Economically Active (15 Years and above) by Nationality and Occupation in Census (2010 , 2020) | records=18 | modified=2026-04-27
-      fields: occupation_ar, occupation, nationality_ar, nationality, change, 2020_percentage, 20200, 2010_percentage, 20100
-  number-of-visitors-to-health-centers-by-health-center | Number of Visitors to Health Centers by Health Center | records=183 | modified=2025-05-07
-      fields: year_lsn, health_center, lmrkz_lshy, number_of_visitors_dd_lmrj_yn
-  qatari-economically-active-15-years-and-above-by-sex-and-occupation-in-census-2010-2020 | Qatari Economically Active (15 Years and above) by Sex and Occupation in Census ( 2010 , 2020 ) | records=18 | modified=2025-06-02
-      fields: occupation, lmhn, sex, ljns, population_in_2010, percentage_of_population_in_2010, population_in_2020, percentage_of_population_in_2020, percentage_of_change_from_2010_to_2020
-  business-establishments-and-employees-by-sector-according-to-census-2015 | Business Establishments and Employees by Sector According to Census 2015 | records=4 | modified=2026-09-14
-      fields: year, sector, lqt, employees_number, establishments_number, percentage_of_employees, percentage_of_establishments
-  registered-qatari-deaths-by-place-of-death-gender | Registered Qatari Deaths by Place of Death, Gender | records=124 | modified=2026-06-04
-      fields: year, gender, ljns, place_of_death, mkn_lwf, total
-  economically-active-population-15-years-and-above-by-educational-status-and-economic-activity | Economically Active Population (15 Years & Above) by Educational Status & Economic Activity | records=931 | modified=2026-05-20
-      fields: year, economic_activity, lnsht_lqtsdy, educational_status, lhl_lt_lymy, value
-  accident | Accident | records=1000500 | modified=2025-07-29
-      fields: accident_year, accident_time, weather, road_status, road_type, accident_classification, accident_nature, accident_reason, city, zone, street, accident_severity, death_count, birth_year_of_accident_perpetr, nationality_group_of_accident, total
-  sdg-10-1-1-average-monthly-per-capita-income-of-the-bottom-40-per-cent-of-the-population | SDG 10.1.1 Average Monthly Per Capita Income of the Bottom 40 Per Cent of the Population | records=1 | modified=2026-08-27
-      fields: year, indicator, lmw_shr, value
-  registered-live-births-by-duration-of-marriage-and-birth-order-total | Registered Live Births by Duration of Marriage and Birth Order – Total | records=880 | modified=2026-09-06
-      fields: year, trtyb_lmwlwd, birth_order, md_lhy_lzwjy_blsnwt, duration_of_marriage_in_years, value
-  registered-live-births-by-mother-s-age-group-and-birth-order-non-qataris | Registered Live Births by Mother's Age Group and Birth Order – Non-Qataris | records=891 | modified=2025-05-07
-      fields: year, trtyb_lmwlwd, birth_order, fy_mr_l_m_blsnwt, mother_s_age_group_in_years, value
-  evolution-of-the-number-of-employees-in-business-establishments-by-sex-in-2010-and-2015-censuses | Evolution of the Number of Employees in Business Establishments by Sex in 2010 and 2015 Censuses | records=2 | modified=2025-06-03
-      fields: gender, gender_ar, census_2010, census_2015, annual_increase_rate, increase, increase_rate_during_the_period
-  distribution-of-business-establishments-and-employees-by-municipalities-according-to-census-2015 | Distribution of Business Establishments and Employees by Municipalities According to Census 2015 | records=8 | modified=2025-06-02
-      fields: year, municipality, lbldy, establishments_number_dd_lmnshat, establishments_lmnshat, employees_number_dd_lmshtglwn, employees_lmshtglwn, geo_point, geo_shape
-  evolution-of-number-of-employees-by-nationality-between-2010-and-2015-censuses | Evolution of Number of Employees by Nationality Between 2010 and 2015 Censuses | records=2 | modified=2025-06-03
-      fields: nationality, ljnsy, census_2010_t_dd_2010, census_2015_t_dd_2015, annual_increase_rate, increase, increase_rate_during_the_period
-  crude-birth-and-death-rates-natural-increase-rate-and-maternal-mortality-rate | Crude Birth Rate, Crude Death Rate, Rate Of Natural Increase, Maternal Mortality Rate And Rate Of Deliveries Under Medical Supervisor | records=22 | modified=2026-06-21
-      fields: year, rate_of_deliveries_under_medical_supervision, maternal_mortality_rate_per_100000_live_birth, natural_increase_per_1000_population, crude_death_rate_per_1000_population, crude_birth_rate_per_1000_population
-  the-growth-of-the-number-of-buildings-by-building-condition-2010-and-2015-censuses | The Growth of the Number of Buildings by Building Condition, 2010 and 2015 Censuses | records=3 | modified=2026-04-27
-      fields: building_condition, hl_lmbn, 2015, 2010, percentage_increase
-  population-15-years-and-above-by-marital-status-nationality-and-age-groups-in-census-2020 | Population (15 Years and above) by Marital Status, Nationality and Age Groups in Census (2020) | records=28 | modified=2026-06-22
-      fields: nationality, ljnsy, age_group, never_married_population, never_married, married_population, married, divorced_population, divorced, widowed_population, widowed
-  registered-live-births-by-duration-of-marriage-and-birth-order-qataris | Registered Live Births by Duration of Marriage and Birth Order – Qataris | records=990 | modified=2026-09-23
-      fields: year, trtyb_lmwlwd, birth_order, md_lhy_lzwjy_blsnwt, duration_of_marriage_in_years, value
-  growth-of-business-establishments-and-employees-in-census-2010-compared-to-census-2015 | Growth of Business Establishments and Employees in Census 2010 Compared to Census 2015 | records=2 | modified=2025-06-03
-      fields: census_type, nw_lt_dd, census_2010_t_dd_2010, census_2015_t_dd_2015, increase, annual_increase_rate, increase_rate_during_the_period
-  percentage-distribution-of-population-by-age-group-and-sex-census-2015 | Percentage Distribution of Population by Age Group and Sex, Census 2015 | records=5 | modified=2025-05-19
-      fields: age_group, lfy_t_l_mry, males_number_dd_ldhkwr, females_number_dd_lnth, lnsb
-  registered-deaths-15-years-and-over-by-age-groups-gender-and-occupation | Registered Deaths 15 Years and Over by Age Groups, Gender and Occupation | records=1584 | modified=2026-07-10
-      fields: year, occupation, lmhn, gender, lnw, age_group, lfy_l_mry, number
-  sdg-1-3-1-proportion-of-population-covered-by-at-least-one-social-protection-benefit-by-gender | SDG 1.3.1 Proportion of population covered by at least one social protection benefit, by gender | records=5 | modified=2026-08-13
-      fields: year, gender, ljns, proportion
-  population-estimates-by-gender-and-age-groups | Population Estimates by Gender and Age Groups | records=396 | modified=2026-07-10
-      fields: year, age_groups, lnw, gender, total
-  population-area-and-population-density-per-square-kilometers-by-zone | Population, Area and Population Density Per Square Kilometers By Zone | records=552 | modified=2026-04-27
-      fields: year, number_of_zone, lmntq, zone, population, area_in_km, population_density_km2
-  registered-live-births-by-duration-of-marriage-and-mother-s-age-group-total | Registered live births by duration of marriage and mother's age group total | records=810 | modified=2025-08-17
-      fields: year, fy_mr_l_m_blsnwt, mother_s_age_group_in_years, md_lhy_lzwjy_blsnwt, duration_of_marriage_in_years, value
-  females-population-15-by-relation-to-labour-force-and-age-groups-quarterly | Females Population (15+) by Relation to Labour Force & Age Groups | records=314 | modified=2026-09-12
-      fields: year, quarter, age_group, activity_status, hl_lnsht, number
-  registered-deaths-15-years-and-over-by-age-groups-gender-and-occupation-non-qataris | Registered Deaths (15 Years and Over) by Age Groups, Gender and Occupation (Non Qataris) | records=1584 | modified=2026-07-09
-      fields: year, occupation, lmhn, gender, lnw, age_group, lfy_l_mry, number
-  total-registered-deaths-by-age-group-and-cause-of-death-icd | TOTAL REGISTERED DEATHS BY AGE GROUP AND CAUSE OF DEATH (ICD) | records=25532 | modified=2026-06-04
-      fields: year, gender, ljns, age_group, lfy_l_mry, cause_of_death, sbb_lwf, total
-  population-and-labour-force-by-municipality | Population and Labour Force by Municipality | records=240 | modified=2026-09-30
-      fields: year, municipality, lbldy, indicator, lmw_shr, count
-  labor-force-participation-rate-by-nationality-gender | Labor Force Participation Rate (LFPR) by Nationality & Gender | records=36 | modified=2026-08-02
-      fields: year, nationality, ljnsy, gender, ljns, total
-  registered-infant-deaths-by-gender-and-place-of-death | Registered Infant Deaths by Gender and Nationality | records=143 | modified=2026-05-05
-      fields: year, nationality, jnsy, gender, jns, total
-  percentage-of-active-population-15-years-and-above-by-economic-activity-and-gender | Percentage of Active Population (15 Years & Above) by Economic Activity & Gender | records=54 | modified=2026-05-05
-      fields: year, gender, ljns, economic_activity, lnsht_lqtsdy, total
-  distribution-of-completed-buildings-by-connection-to-public-utility-network-between-2010-and-2015 | Distribution of Completed Buildings by Connection to Public Utility Network Between 2010 and 2015 Censuses | records=6 | modified=2025-05-29
-      fields: year, public_utility_network, public_utility_network_ar, connected_census, connected, unconnected_census, unconnected
-  registered-live-births-by-nationality-and-age-group-of-mother | REGISTERED LIVE BIRTHS BY NATIONALITY & AGE GROUP OF MOTHER | records=153 | modified=2026-04-26
-      fields: year, quarter, lrb, age_group_of_mother_in_years, fy_mr_l_m, qataris, qtry, non_qataris, gyr_qtry, total, ljmly
-  educational-attainment-for-population-10-years-and-above-by-nationality-in-census-2010-2020 | Educational Attainment For Population ( 10 Years and above ) by Nationality in Census ( 2010 , 2020 ) | records=12 | modified=2025-06-01
-      fields: nationality, nationality_ar, educational_attainment, educational_attainment_ar, 2010_population, percentage_of_2010_population, 2020_population, precentage_of_2020_population, change_precentage
-  registered-deaths-15-years-old-and-over-by-marital-status-gender-and-age-group | Registered Deaths (15 Years Old and Over) by Marital Status, Gender and Age Group | records=1620 | modified=2025-05-07
-      fields: year, lfy_t_l_mry_blsnwt, age_groups_in_years, lnw, gender, lhl_lzwjy, marital_status, value
-  economically-active-qatari-population-15-years-and-above-by-sector-and-economic-activity | Economically Active Qatari Population (15 Years & Above) by Sector & Economic Activity | records=980 | modified=2026-05-31
-      fields: year, economic_activity, lnsht_lqtsdy, sector, lqt, number
-  qatari-males-15-years-and-above-by-educational-status-and-age-groups | Qatari Males (15 Years & Above) by Educational Status and Age Groups | records=364 | modified=2026-05-20
-      fields: year, age_group, educational_status, lhl_lt_lymy, count
-  economically-active-non-qatari-population-15-years-and-older-by-employment-status-and-economic | Economically Active Non-Qatari Population (15 Years & Above) by Employment Status & Economic Activity | records=567 | modified=2026-05-19
-      fields: year, economic_activity, lnsht_lqtsdy, employment_status, lhl_l_mly, number
-  percentage-distribution-of-households-by-type-of-housing-unit-census-years-1986-2015 | Percentage Distribution (%) of Households by Type of Housing Unit, Census Years (1986-2015) | records=6 | modified=2025-05-19
-      fields: type_of_housing_unit, nw_lwhd_lskny, 1986, 1997, 2004, 2010, 2015, growth_rate_2010_2015
-  registered-deaths-15-years-old-and-over-by-marital-status-gender-and-age-groups-qataris | Registered deaths (15 years old and over) by marital status, gender and age groups qataris | records=1440 | modified=2025-08-18
-      fields: year, lfy_t_l_mry_blsnwt, age_groups_in_years, lnw, gender, lhl_lzwjy, marital_status, value
-  economically-active-population-15-years-and-above-by-nationality-gender-and-occupation | Economically Active Population (15 Years & Above) by Nationality, Gender & Occupation | records=324 | modified=2026-09-30
-      fields: year, nationality, ljnsy, gender, ljns, occupation, lmhn, total
-  registered-deaths-15-years-and-over-by-marital-status-annual | Registered Deaths (15 Years and Over) by Marital Status – Annual | records=1620 | modified=2025-05-07
-      fields: year, lfy_t_l_mry_blsnwt, age_groups_in_years, lnw, gender, lhl_lzwjy, marital_status, value
-  registered-deaths-by-nationality-gender-and-age | Registered Deaths by Nationality, Gender, and Age | records=1350 | modified=2025-05-07
-      fields: year, l_mr_blsnwt, age_in_years, ljnsy, nationality, lnw, gender, value
-  economically-active-non-qatari-population-15-years-and-above-by-educational-status-and-occupation | Economically Active Non-Qatari Population (15 Years & Above) by Educational Status & Occupation | records=441 | modified=2026-05-19
-      fields: year, occupation, lmhn, educational_status, lhl_lt_lymy, number
-  economically-active-population-15-years-and-above-by-nationality-gender-and-educational-status | Economically Active Population (15 Years & Above) by Nationality, Gender & Educational Status | records=384 | modified=2026-07-31
-      fields: year, nationality, ljnsy, gender, ljns, educational_status, lhl_lt_lymy, total
-  crude-birth-death-natural-increase-maternal-mortality-medically-supervised-deliveries-rates | Crude Birth and Death Rate, Natural Increase Rate, Maternal Mortality Rate and Rate of Deliveries Under Medical Supervision | records=12 | modified=2026-08-18
-      fields: year, rate_of_deliveries_under_medical_supervision, maternal_mortality_rate_per_100000_live_birth, natural_increase_per_1000_population, crude_death_rate_per_1000_population, crude_birth_rate_per_1000_population
-  registered-live-births-by-nationality-delivery-attendants-municipality-and-place-of-birth | Registered Live Births By Nationality, Delivery Attendants, Municipality and Place of Birth | records=833 | modified=2026-09-29
-      fields: year, nationality, ljnsy, municipality, lbldy, place_of_delivery, mkn_lwld, delivery_attendent, sf_lqy_m_bltwlyd, total, geo_point, geo_shape
-  health-risk-prevalence-data-stepwise-survey-2023 | Health Risk Prevalence Data (STEPwise Survey 2023) | records=50 | modified=2026-09-28
-      fields: year, indicator, lmw_shr, sex, ljns, age_group, lfy_l_mry, value
-  number-of-students-by-nationality | Number of Students by Nationality | records=10 | modified=2026-04-28
-      fields: cohort, non_qatari, qatari, total
-  land-utilization | Land Utilization | records=84 | modified=2026-09-20
-      fields: year, land_type, stkhdm_l_rd, crop, lmhswl, area
-  quarterly-registered-live-births-by-gender-and-nationality | Quarterly REGISTERED LIVE BIRTHS BY GENDER AND NATIONALITY | records=84 | modified=2026-05-20
-      fields: year, quarter, nationality, ljnsy, male, female, total
-  population-estimates-by-gender-and-single-ages | Population Estimates by Gender and Single Ages | records=1782 | modified=2026-07-10
-      fields: year, single_ages, lnw, gender, number
-  healthcare-workforce-statistics-by-type-and-sector-2024 | Healthcare Workforce Statistics by Type and Sector (2024) | records=8 | modified=2025-06-03
-      fields: category, sector, number, rate_per_1_000_population, population_per_professional
-  economically-active-population-15-years-and-above-by-educational-status-and-occupation | Economically Active Population (15 Years & Above) by Educational Status & Occupation | records=441 | modified=2026-05-19
-      fields: year, occupation, lmhn, educational_status, lhl_lt_lymy, number
-  registered-deaths-by-nationality-gender-and-cause-of-death | REGISTERED DEATHS BY NATIONALITY, GENDER AND CAUSE OF DEATH | records=878 | modified=2026-04-28
-      fields: year, nationality, ljnsy, gender, ljns, cause_of_death, sbb_lwfh, total
-  sdg-1-1-1-proportion-of-population-living-below-the-international-poverty-line | SDG  1.1.1 Proportion of Population Living Below the International Poverty Line | records=20 | modified=2026-09-29
-      fields: year, indicator, lmw_shr, percentage
-  government-e-services-directory-with-usage-statistics | Government E-Services Directory with Usage Statistics | records=1692 | modified=2025-06-10
-      fields: service_provider_english, service_provider_arabic, title_english, title_arabic, users_by_year, page_views, created_date, recent_updation_date, service_mode, page_url_arabic, page_url_english, external_url_arabic, external_url_english
-  child-mortality-rate-by-nationality-and-gender | Child Mortality Rate by Nationality and Gender | records=44 | modified=2026-08-19
-      fields: year, ljnsy, nationality, ljns, gender, rate
-  non-qatari-male-participation-rate-15-years-and-above-by-age-group | Non-Qatari Male Participation Rate (15 Years & Above) by Age Group | records=99 | modified=2026-05-05
-      fields: year, age_groups, total
-  registered-foetal-deaths-by-gender-and-nationality | Registered Foetal Deaths by Gender and Nationality | records=231 | modified=2026-08-08
-      fields: year, nationality, ljnsy, gender, lnw, number
-  population-15-years-and-above-by-relation-to-labour-force-and-age-groups | Population (15 Years & Above) by Relation to Labour Force and Age Groups | records=330 | modified=2026-08-05
-      fields: year, age_group, labour_force_status, hl_lqw_l_ml, count
-  sdg-17-19-2-countries-that-have-conducted-at-least-one-population-and-housing-census-in-the-last-10 | SDG 17.19.2 Countries That Have Conducted at Least One Population and Housing Census in the Last 10 Years | records=7 | modified=2026-09-21
-      fields: year, value
-  non-qatari-economically-inactive-15-years-and-above-by-sex-and-relation-to-workforce-in-census-2010 | Non Qatari Economically Inactive (15 Years and above) by Sex and Relation to Workforce in Census (2010 , 2020) | records=12 | modified=2025-06-12
-      fields: relation_to_workforce, relation_to_workforce_ar, sex, sex_ar, percentage_of_change_from_2010_to_2020, percentage_of_population_in_2020, population_in_2020, percentage_of_population_in_2010, population_in_2010
-  registered-deaths-by-nationality-gender-and-municipality | Registered Deaths by Nationality, Gender, and Municipality | records=304 | modified=2026-09-30
-      fields: year, municipality, lbldy, nationality, ljnsy, gender, ljns, value
-  registered-foetal-deaths-by-nationality-gender-and-gestational-age-in-weeks | Registered Foetal Deaths by Nationality, Gender and Gestational Age in Weeks | records=924 | modified=2026-07-11
-      fields: year, gestational_age_weeks, l_mr_lrhmy_sby, nationality, ljnsy, gender, lnw, number
-  population-estimates-by-gender-as-of-mid-year-1986-2023 | Population Estimates By Gender As of Mid-Year (1986 - 2023) | records=39 | modified=2026-07-10
-      fields: reference_year, females, males, total
-  population-by-type-of-household-gender-and-place-of-residence-on-the-census-night-december-2020 | Population by Type of Household, Gender, and Place of Residence on the Census Night – December 2020 | records=480 | modified=2025-05-07
-      fields: year, mkn_ltwjd_lyl_lt_dd, place_of_residency_on_census_night, nw_lsr, type_of_household, lnw, gender, value
-  sdg-16-1-1-rate-of-victims-of-intentional-homicide-per-100-000-population-by-gender-and-age-group | SDG 16.1.1 Rate of Victims of Intentional Homicide per 100,000 Population by Gender and Age Group | records=42 | modified=2026-09-24
-      fields: year, gender, ljns, rate
-  economically-active-population-15-years-above-by-nationality-gender-and-sector-copy | Economically Active Population (15 Years & Above) by Nationality, Gender and Sector - copy | records=10 | modified=2026-06-30
-      fields: sector, lqt, category, category_ar, value
-  labor-force-statistics-number-of-economically-inactive-population-aged-15-years-and-above-by-quarter0 | Labor Force Statistics - Number of Economically Inactive Population Aged 15 Years and Above by Quarter, Nationality, Gender, and Educational Attainment-Quarterly | records=1344 | modified=2026-09-01
-      fields: year, quarter, lrb_lsnwy, nationality, ljnsy, gender, ljns, educational_attainment, lhl_lt_lymy, value
-  qatari-economically-inactive-15-years-and-above-by-sex-and-relation-to-workforce-in-census-2010-2020 | Qatari Economically Inactive (15 Years and above) by Sex and Relation to Workforce in Census (2010 , 2020) | records=12 | modified=2026-04-27
-      fields: relation_to_workforce, relation_to_workforce_ar, nationality, ljnsy, percentage_of_change_from_2010_to_2020, percentage_of_population_in_2020, population_in_2020, percentage_of_population_in_2010, population_in_2010
-  registered-elderly-in-the-center-for-empowerment-and-care-of-the-elderly-ihsan-by-age-group | Registered Elderly in the Center for Empowerment and Care of the Elderly (Ihsan) by Age Group, Nationality and Gender | records=312 | modified=2026-09-20
-      fields: year, age_group, lfy_l_mry, nationality, ljnsy, gender, lnw, value
-  general-visits-data | General Visits Data | records=11 | modified=2025-06-02
-      fields: year, type, venue, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec, total_visits
-  females-population-by-municipality-and-age-groups-december-2020 | Females Population by Municipality and Age Groups – December 2020 | records=1440 | modified=2025-06-02
-      fields: years, fy_t_l_mr_blsnwt, age_groups_in_years, lbldy, municipality, value, geo_point, geo_shape
-  registered-live-births-by-month-gender-and-municipality-non-qataris | Registered Live Births by Month, Gender, and Municipality – Non-Qataris | records=1944 | modified=2025-05-07
-      fields: year, lshhr, month, lbldy, municipality, lnw, gender, value
-  male-population-15-years-and-above-by-relation-to-labor-force-and-age-groups0 | Male Population (15 Years and Above) by Relation to Labor Force and Age Groups | records=495 | modified=2025-05-07
-      fields: year, age_groups, relation_to_labour_force, type_of_relation_to_labour_force, fy_t_l_mr, l_lq_bqw_l_ml, nw_l_lq_bqw_l_ml, value
-  total-non-qatari-participation-rate-15-years-and-above-by-age-group0 | Total Non-Qatari Participation Rate (15 Years & Above) by Age Group | records=132 | modified=2026-06-03
-      fields: year, age_group, rate
-  healthcare-staff | Healthcare Staff | records=360 | modified=2026-09-30
-      fields: year, institution_type, nw_lmw_ss, profession, lmhn, number_of_licensed_healthcare_staff
-  child-stunting | Child Stunting | records=18 | modified=2026-09-29
-      fields: year, gender, ljns, child_stunting
-  registered-infant-deaths-by-nationality-and-sex | REGISTERED INFANT DEATHS BY NATIONALITY AND SEX | records=88 | modified=2026-04-28
-      fields: year, nationality, ljnsy, gender, ljns, total
-  child-mortality-rate-by-nationality-and-gender0 | Child Mortality Rate By Nationality & Gender | records=88 | modified=2026-04-28
-      fields: year, nationality, ljnsy, gender, ljns, rate
-  incidence-rate-of-communicable-diseases-by-indicator-annual0 | Incidence Rate of Communicable Diseases by Indicator | records=75 | modified=2026-07-17
-      fields: year, indicator, lmw_shr, incidence_rate_per_10_000_person_of_the_population
-  non-qatari-economically-active-15-years-and-above-by-sex-and-employment-status-in-census-2010-20200 | Non Qatari Economically Active (15 Years and above) by Sex and Employment Status in Census (2010 , 2020) | records=12 | modified=2025-06-02
-      fields: employment_status, lhl_l_mly, sex, ljns, 2010, 20100, 2020, 20200, change_nsb_ltgyyr
-  registered-non-qataris-deaths-by-age-group-and-cause-of-death-icd | REGISTERED NON-QATARIS DEATHS BY AGE GROUP AND CAUSE OF DEATH (ICD) | records=25424 | modified=2026-06-04
-      fields: year, gender, ljns, age_group, lfy_l_mry, cause_of_death, sbb_lwf, total
-  economically-active-qatari-population-15-years-and-above-by-occupation-and-economic-activity | Economically Active Qatari Population (15 Years & Above) by Occupation & Economic Activity | records=1440 | modified=2026-08-05
-      fields: year, economic_activity, lnsht_lqtsdy, occupation, lmhn, number
-  special-needs-statistics-number-of-people-registered-at-disabled-centers-by-nationality-gender-and | Number of People Registered at Disabled Centers by Nationality, Gender, and Age Group | records=448 | modified=2026-09-02
-      fields: year_lsn, nationality, ljnsy, gender, ljns, age_group, lfy_l_mry, number_of_people_with_disabilities
-  registered-live-births-by-age-group-of-mother-and-educational-status | REGISTERED LIVE BIRTHS BY AGE GROUP OF MOTHER & EDUCATIONAL STATUS | records=720 | modified=2026-04-28
-      fields: year, age_group, lfy_l_mry, educational_status, lhl_lt_lymy, total
-  economically-active-population-15-years-and-above-by-occupation-and-economic-activity | Economically Active Population (15 Years & Above) by Occupation & Economic Activity | records=1323 | modified=2026-05-19
-      fields: year, economic_activity, lnsht_lqtsdy, occupation, lmhn, number
-  total-population-by-sex-in-census-1986-1997-2004-2010-2020 | Total Population by Sex in Census (1986 , 1997 , 2004 , 2010 , 2020 ) | records=5 | modified=2026-04-27
-      fields: year, male_population, male_population0, female_population, female_population0, total_population, total_population0, annual_growth_rate
-  female-population-15-years-and-above-by-educational-status-and-age-groups | Female Population (15 Years & Above) by Educational Status and Age Groups | records=364 | modified=2026-05-20
-      fields: year, age_group, educational_status, lhl_lt_lymy, count
-  economically-active-population-15-years-and-above-by-sector-and-economic-activity | Economically Active Population (15 Years and Above) by Sector and Economic Activity | records=1176 | modified=2026-07-31
-      fields: year, sector, lqt, economic_activity, lnsht_lqtsdy, number
-  general-marriage-rate-by-nationality-and-gender-per-1000-population-15-year-and-above | General Marriage Rate By Nationality and Gender per 1000 Population (15 Year and Above) | records=72 | modified=2025-06-04
-      fields: year, ljnsy, nationality, lnw, gender, lm_dlt_w_lhlt, rates_and_cases, value
-  labor-force-participation-rate-lfpr-by-nationality-gender-copy | Labor Force Participation Rate (LFPR) by Nationality & Gender - copy | records=54 | modified=2026-06-12
-      fields: year, category, value, category_ar
-  qatari-female-participation-rate-15-years-and-above-by-age-group0 | Qatari Female Participation Rate (15 Years & Above) by Age Group | records=99 | modified=2026-05-05
-      fields: year, age_groups, total
-  registered-foetal-deaths-by-nationality-gender-and-month | Registered Foetal Deaths by Nationality, Gender and Month | records=720 | modified=2026-07-10
-      fields: year, month, lshhr, nationality, ljnsy, gender, lnw, number
-  under-five-years-mortality-rate-by-nationality-and-sex | Under Five Years Mortality Rate by Nationality and Sex | records=40 | modified=2026-04-26
-      fields: year, nationality, ljnsy, gender, ljns, value
-  number-of-water-customers-by-year | Number of Water Customers by Year | records=6 | modified=2026-08-23
-      fields: year, no_of_customers, annual_growth_percentage
-  number-of-population-aged-4-to-64-years-by-internet-use | Number of Population Aged 4 to 64 Years by Internet Use | records=6 | modified=2026-09-03
-      fields: year, internet_use, stkhdm_lntrnt, number
-  population-15-years-and-above-by-relation-to-labour-force-nationality-and-gender | Population (15 Years & Above) by Relation to Labour Force, Nationality and Gender | records=160 | modified=2026-08-05
-      fields: year, nationality, ljnsy, gender, lnw, labour_force_status, hl_lqw_l_ml, count
-  population-by-age-group | Population by Age Group | records=4 | modified=2025-06-04
-      fields: age_groups, fy_t_l_mr, june_2024, july_2024, august_2024, september_2024, october_2024, november_2024
-  distribution-of-the-number-of-households-and-their-members-by-municipality-census-2015 | Distribution of the Number of Households and Their Members by Municipality, Census 2015 | records=8 | modified=2025-06-02
-      fields: year, municipality, municipality_ar, households_number, households_percentage_distribution, households_members_number, households_members_percentage_distribution, average_household_size, geo_point, geo_shape
-  percentage-of-child-marriage-contracts-of-females-under-18-years | Percentage of Child Marriage Contracts of Females | records=2 | modified=2026-09-30
-      fields: year, child_marriage_contracts
-  population-economically-inactive-15-years-and-above-by-nationality-and-relation-to-workforce-in | Population Economically Inactive (15 Years and above) by Nationality and Relation to Workforce in Census ( 2010 , 2020 ) | records=12 | modified=2026-04-27
-      fields: relation_to_workforce, relation_to_workforce_ar, nationality, nationality_ar, percentage_of_change_from_2010_to_2020, percentage_of_population_in_2020, population_in_2020, percentage_of_population_in_2010, population_in_2010
-  annual-mean-levels-of-fine-particulate-matter-pm10-in-cities-population-weighted | Annual Mean Levels of Fine Particulate Matter (PM10) in Cities (Population Weighted) | records=27 | modified=2026-09-30
-      fields: year, station_location, mwq_lmht, status, lhl
-  economically-active-population-15-years-and-above-by-status-in-employment-and-economic-activity | Economically Active Population (15 Years & Above) by Status in Employment & Economic Activity | records=567 | modified=2026-06-24
-      fields: year, economic_activity, lnsht_lqtsdy, occupation_status, lhl_l_mly, number
-  qatari-females-15-years-and-above-by-educational-status-and-age-groups | Qatari Females (15 Years & Above) by Educational Status and Age Groups | records=364 | modified=2026-05-20
-      fields: year, age_group, educational_status, lhl_lt_lymy, count
-  sdg-16-1-3-proportion-of-population-reporting-exposure-to-violence-of-total-population-by-type-of | SDG 16.1.3 Proportion of Population Reporting Exposure to Violence of Total Population by Type of Violence and Gender | records=48 | modified=2026-07-21
-      fields: year, type_of_violence, nw_l_nf, gender, ljns, percentage
-  registered-live-births-by-mother-s-age-group-and-birth-order-total | Registered Live Births by Mother's Age Group and Birth Order – Total | records=891 | modified=2025-05-07
-      fields: year, trtyb_lmwlwd, birth_order, fy_mr_l_m_blsnwt, mother_s_age_group_in_years, value
-  economically-active-non-qatari-population-15-years-and-above-by-occupation-and-economic-activity | Economically Active Non-Qatari Population (15 Years & Above) by Occupation & Economic Activity | records=1323 | modified=2026-05-19
-      fields: year, economic_activity, lnsht_lqtsdy, occupation, lmhn, number
-  registered-live-births-by-duration-of-marriage-and-age-group-of-mother-non-qataris | Registered Live Births by Duration of Marriage and Age Group of Mother - Non Qataris | records=810 | modified=2026-09-22
-      fields: year, fy_mr_l_m_blsnwt, mother_s_age_group_in_years, md_lhy_lzwjy_blsnwt, duration_of_marriage_in_years, value
-  mean-age-at-first-marriage-by-gender-and-nationality | Average age at first marriage by gender and nationality | records=56 | modified=2026-07-25
-      fields: year, nationality, ljnsy, sex, ljns, mean_age
-  number-of-operating-establishments-by-economic-sector-in-2004-2010-and-2015-censuses | Number of Operating Establishments by Economic Sector in 2004, 2010, and 2015 Censuses | records=3 | modified=2025-05-29
-      fields: sector, sector_ar, census_2004, census_2010, census_2015, annual_increase_rate, increase_rate_during_the_period
-  percentage-distribution-of-population-by-sex-and-municipality-census-2015 | Percentage Distribution of Population by Sex and Municipality, Census 2015 | records=16 | modified=2026-09-17
-      fields: year, municipality, lbldy, gender, lnw, percentage_of_distribution, number_of_population, geo_point, geo_shape
-  registered-live-births-by-nationality-gender-and-mother-s-age-group | REGISTERED LIVE BIRTHS BY NATIONALITY, GENDER AND MOTHER'S AGE GROUP | records=218 | modified=2026-06-04
-      fields: year, age_group, lfy_l_mry, nationality, ljnsy, total
-  consumption-of-ozone-depleting-substances-per-person-kg | Consumption of Ozone Depleting Substances per Person (Kg) | records=11 | modified=2026-09-15
-      fields: year, population, consumption_of_ozone_depletion_metric_tons_according_to_montreal_protocol, consumption_of_ozone_depleting_substances_per_person_kg
-  housing-units-by-type-of-units-and-municipality-in-census-2010-2020 | Housing Units by Type of Units and Municipality in Census ( 2010 , 2020 ) | records=25 | modified=2025-06-01
-      fields: type_of_unit, census_year, value_type, al_sheehaniya, al_daayen, al_shamal, al_khor_al_thakira, umm_slal, al_wakra, al_rayyan, doha, total
-  registered-live-births-by-mother-s-age-group-and-birth-order-qataris | Registered Live Births by Mother's Age Group and Birth Order – Qataris | records=891 | modified=2025-05-07
-      fields: year, trtyb_lmwlwd, birth_order, fy_mr_l_m_blsnwt, mother_s_age_group_in_years, value
-  economically-active-population-15-years-above-by-nationality-gender-copy | Economically Active Population (15 Years & Above) by Nationality & Gender - copy | records=36 | modified=2026-06-30
-      fields: year, nationality, gender, value, category, category_ar
-  registered-infant-deaths-by-nationality-and-gender | REGISTERED INFANT DEATHS BY NATIONALITY AND GENDER | records=648 | modified=2026-05-20
-      fields: year, nationality, ljnsy, month, lshhr, gender, ljns, total
-  registered-infant-deaths-by-month-and-age0 | REGISTERED INFANT DEATHS BY MONTH AND AGE | records=3325 | modified=2026-04-28
-      fields: year, age_in_months, l_mr_bl_shhr, month, lshhr, value
-  male-population-and-labour-force-by-municipality | Male Population and Labour Force by Municipality | records=240 | modified=2026-09-30
-      fields: year, municipality, lbldy, indicator, lmw_shr, count
-  registered-foetal-deaths-by-nationality-gender-and-municipality | Registered Foetal Deaths by Nationality, Gender and Municipality | records=540 | modified=2026-07-10
-      fields: year, municipality, lbldy, nationality, ljnsy, gender, lnw, number
-  sdg-11-a-1-taking-resource-needs-into-consideration | SDG 11.a.1 Taking Resource Needs into Consideration | records=7 | modified=2026-08-30
-      fields: year, value
-  growth-of-the-number-of-completed-buildings-by-building-type-in-2010-and-2015-censuses | Growth of the Number of Completed Buildings by Building Type in 2010 and 2015 Censuses | records=3 | modified=2026-09-10
-      fields: building_type, nw_lmbn, number_of_completed_building_2010, number_of_completed_building_2015, percentage_of_increase
-  increase-in-number-of-households-and-their-members-during-the-years-of-census-1986-2015 | Increase in Number of Households and Their Members During the Years of Census (1986-2015) | records=3 | modified=2025-05-29
-      fields: households_and_their_members, households_and_their_members_ar, 1986, 1997, 2004, 2010, 2015, annual_growth_rate_in_2010_and_2015
-  key-economic-activities-of-non-qatari-employees-according-to-census-2015 | Key Economic Activities of Non-Qatari Employees According to Census 2015 | records=7 | modified=2025-05-19
-      fields: economic_activity, lnsht_lqtsdy, code, females_nth, males_dhkwr, percentage_to_the_total_non_qataris_in_all_economic_activities, total
-  percentage-distribution-of-household-members-by-type-of-housing-unit-during-census-years-1986-2015 | Percentage Distribution (%) of Household Members by Type of Housing Unit during Census Years (1986-2015) | records=6 | modified=2025-05-19
-      fields: type_of_housing_unit, nw_lwhd_lskny, 1986, 1997, 2004, 2010, 2015, growth_rate_2010_2015
-  business-establishments-by-ownership-sector-in-2004-2010-and-2015-censuses | Business Establishments by Ownership Sector in 2004, 2010 and 2015 Censuses | records=4 | modified=2025-05-29
-      fields: ownership, ownership_ar, 2004, 2010, 2015, annual_increase_rate, increase_rate_during_the_period
-  female-labor-force-participation-rate-by-age-group-and-nationality | Female Labor Force Participation Rate by Age Group and Nationality | records=22 | modified=2025-06-04
-      fields: age_groups, nationality, ljnsy, 2018, 2019, 2020, 2021, 2022, 2023
-  sdg-6-2-1-proportion-of-population-using-safely-managed-sanitation-services-including-a-hand-washing | SDG  6.2.1 Proportion of Population Using Safely Managed Sanitation Services, Including a Hand-washing Facility with Soap and Water | records=42 | modified=2026-07-16
-      fields: year, sub_indicator, lmw_shr_lfr_y, area, lmntq, percentage, lnsb_lmy_wy
-  quarterly-registered-live-births-by-nationality-gender-and-municipality | Quarterly REGISTERED LIVE BIRTHS BY NATIONALITY, GENDER AND MUNICIPALITY | records=18 | modified=2026-05-20
-      fields: year, quarter, municipality, lbldy, gender, ljns, qataris, non_qataris, total
-  labor-force-statistics-number-of-economically-inactive-population-aged-15-years-and-above-by-quarter | Labor Force Statistics - Number of Economically Inactive Population Aged 15 Years and Above by Quarter, Nationality, Gender, and Age Group | records=960 | modified=2026-08-07
-      fields: year_lsn, quarter, lrb_lsnwy, nationality, ljnsy, gender, lnw, age_group, lfy_l_mry, number_of_economically_inactive_population_dd_lskn_gyr_lnshytyn_qtsdyan
-  population-economically-active-15-years-and-above-by-nationality-and-economic-activity-in-census | Population Economically Active (15 Years and above) by Nationality and Economic Activity in Census (2010 , 2020) | records=40 | modified=2026-08-02
-      fields: economic_activity, economic_activity_ar, nationality, nationality_ar, percentage_of_change_from_2010_to_2020, percentage_of_population_in_2020, population_in_2020, percentage_of_population_in_2010, population_in_2010
-  sdg-9-5-2-researchers-in-full-time-equivalent-per-million-inhabitants | SDG 9.5.2 Researchers in Full Time Equivalent per Million Inhabitants | records=4 | modified=2026-08-20
-      fields: year, number
-  total-population-participation-rate-15-years-and-above-by-age-group | Total Population Participation Rate (15 Years & Above) by Age Group | records=99 | modified=2026-05-05
-      fields: year, age_groups, total
-  sdg-1-3-1-proportion-of-vulnerable-population-receiving-a-social-assistance-cash-benefit-by-gender | SDG 1.3.1 Proportion of vulnerable population receiving a social assistance cash benefit, by gender | records=4 | modified=2026-08-13
-      fields: year, gender, ljns, proportion
-  number-of-covid-19-cases-and-rate-by-year | Number of Covid-19 Cases and Rate | records=3 | modified=2026-08-31
-      fields: year, number_of_cases, incidence_per_100_000_population
-  population-and-electricity-supply-statistics | Population and Electricity Supply Statistics | records=5 | modified=2025-06-11
-      fields: year, population, population_annual_increase, total_energy_generation_inlcuding_all_auxilliary_consumption_gwh, energy_transmitted_sent_out_gwh_generation_minus_auxilliary_consumption, electricity_net_distribution_gwh_injected_generation_minus_real_losses, electricity_consumption_gwh_excluding_bulk_industrial
-  health-statistics-number-and-rate-for-health-indicators-in-private-sector | Number and Rate for Health Indicators in Private Sector | records=78 | modified=2025-05-29
-      fields: year, indicator_ar, indicator, rate_per_1_000_person_of_the_population, number
-  sdg-16-2-2-detected-victims-of-trafficking-for-other-purposes-per-100-000-population-by-gender-and | SDG 16.2.2 Detected Victims of Trafficking for Other Purposes per 100,000 Population by Gender and Age | records=72 | modified=2026-07-20
-      fields: year, sub_indicator, lmw_shr_lfr_y, gender, ljns, age_group, lfy_l_mry, rate
-  registered-live-births-by-mother-s-age-group-and-birth-order-females | Registered Live Births by Mother's Age Group and Birth Order – Females | records=891 | modified=2025-05-07
-      fields: year, trtyb_lmwlwd, birth_order, fy_mr_l_m_blsnwt, mother_s_age_group_in_years, value
+https://nis.gov.kh/wp-content/uploads/2025/09/Final-Priority-Tables-A-H.xlsx: HTTP 200 1,646,065 B
+  sheets: ['Tables A', 'Tables B', 'Tables C', 'Tables D', 'Tables E', 'Tables F', 'Tables G', 'Tables H']
+  -- 'Tables A': 168 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table A1. Population b |  |  |  |  |  |  |  |  |  |  |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Age | Urban/Rural |  |  |  |  |  |  |  |  |  |  | 
+      4 |  |  | Total |  |  | Urban |  |  | Rural |  |  |  |  | 
+      5 |  |  | P04. Sex |  |  | P04. Sex |  |  | P04. Sex |  |  |  |  | 
+      6 |  |  | Total | Male | Female | Total | Male | Female | Total | Male | Female |  |  | 
+      7 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      8 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      9 |  | Total | 15552211 | 7571837 | 7980374 | 6135194 | 2993339 | 3141855 | 9417017 | 4578498 | 4838519 |  |  | 
+     10 |  | Under 1 | 227999 | 117090 | 110909 | 78000 | 40341 | 37659 | 149999 | 76749 | 73250 |  |  | 
+     11 |  | 1 | 263480 | 136523 | 126957 | 93942 | 48593 | 45349 | 169538 | 87930 | 81608 |  |  | 
+     12 |  | 2 | 316292 | 161464 | 154828 | 112198 | 57199 | 54999 | 204094 | 104265 | 99829 |  |  | 
+     13 |  | 3 | 326661 | 168055 | 158606 | 116545 | 59795 | 56750 | 210116 | 108260 | 101856 |  |  | 
+  -- 'Tables B': 160 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | B1 Population aged 7 a |  |  |  |  |  |  |  |  |  |  |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Age group | Literacy |  |  | Highest Grade Complete |  |  |  |  |  |  |  | 
+      4 |  |  | Total | Literate | Illiterate | Total | Preschool / Kindergart | Class 1 | Class 2 | Class 3 | Class 4 | Class 5 | Class 6 | Class 7
+      5 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      6 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      7 |  | Both sexes |  |  |  |  |  |  |  |  |  |  |  | 
+      8 |  | Total | 13487591 | 11940831 | 1546760 | 11940831 | 127641 | 481009 | 799095 | 1101015 | 1107303 | 1369033 | 1219597 | 1192122
+      9 |  | 7 - 9 | 858643 | 713202 | 145441 | 713202 | 113623 | 276670 | 212635 | 71516 | 14036 | 4111 | 566 | 0
+     10 |  | 10 - 14 | 1647877 | 1596378 | 51499 | 1596378 | 9705 | 48737 | 141245 | 281414 | 316337 | 320601 | 245195 | 143874
+     11 |  | 15 - 19 | 1409350 | 1351626 | 57724 | 1351626 | 2605 | 10086 | 20839 | 38729 | 56395 | 95089 | 140145 | 181308
+     12 |  | 20 - 24 | 1255180 | 1171978 | 83202 | 1171978 | 536 | 9398 | 26713 | 47946 | 63671 | 102685 | 122457 | 130320
+     13 |  | 25 - 29 | 1428248 | 1323046 | 105202 | 1323046 | 343 | 11581 | 34685 | 63667 | 78469 | 128757 | 144941 | 150817
+  -- 'Tables C': 2184 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table C1 Population by |  |  |  |  |  |  |  |  |  |  |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Age group | Main Activity |  |  |  |  |  |  |  |  |  |  | 
+      4 |  |  | Total | Employed | Unemployed | Never Employed | Home Maker | Student | Dependent | Income Recipient | Other | Not Stated |  | 
+      5 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      6 |  | Both sexes |  |  |  |  |  |  |  |  |  |  |  | 
+      7 |  | Total | 15552211 | 8626789 | 44661 | 78157 | 800394 | 3693135 | 720417 | 97363 | 25173 | 1466122 |  | 
+      8 |  | 0 - 4 | 1450159 | 12 | 8 | 0 | 0 | 3 | 2492 | 0 | 0 | 1447644 |  | 
+      9 |  | 5 - 9 | 1473104 | 8343 | 109 | 2010 | 4563 | 1154573 | 302437 | 121 | 594 | 354 |  | 
+     10 |  | 10 - 14 | 1647877 | 51502 | 365 | 3405 | 7819 | 1536059 | 46829 | 226 | 848 | 824 |  | 
+     11 |  | 15 - 19 | 1409350 | 532438 | 1824 | 11645 | 31355 | 789433 | 38866 | 558 | 2775 | 456 |  | 
+     12 |  | 20 - 24 | 1255180 | 995392 | 3355 | 11313 | 57370 | 160441 | 22209 | 778 | 3397 | 925 |  | 
+     13 |  | 25 - 29 | 1428248 | 1278197 | 5605 | 9726 | 80270 | 34338 | 14411 | 1010 | 4057 | 634 |  | 
+  -- 'Tables D': 168 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table D1 Migrants clas |  |  |  |  |  |  |  |  |  |  | Table D2 Migrants from | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Prior residence | Total Migrations | Duration of Residence  |  |  |  |  |  |  |  |  | Province of Previous R | 
+      4 |  |  |  | < 1 year | 1 - 4 years | 5 - 9 years | 10 - 19 years | 20+ years | Not Reported |  |  |  |  | 
+      5 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      6 |  | Both Sexes |  |  |  |  |  |  |  |  |  |  |  | 
+      7 |  | Total | 3337669 | 326279 | 935898 | 561499 | 742243 | 762857 | 8893 |  |  |  | Total | 
+      8 |  | Same District | 439847 | 26217 | 99515 | 68245 | 98586 | 146339 | 945 |  |  |  | Banteay Meanchey | 
+      9 |  | Same Province | 790489 | 59569 | 201337 | 133438 | 186988 | 207637 | 1520 |  |  |  | Battambang | 
+     10 |  | Cambodia elsewhere | 1952279 | 171893 | 591099 | 351908 | 446447 | 388141 | 2791 |  |  |  | Kampong Cham | 
+     11 |  | Abroad Asia | 129717 | 63568 | 37879 | 5085 | 6156 | 16941 | 88 |  |  |  | Kampong Chhnang | 
+     12 |  | Abroad outside Asia | 6070 | 3205 | 1767 | 493 | 411 | 190 | 4 |  |  |  | Kampong Speu | 
+     13 |  | Not classified | 19267 | 1827 | 4301 | 2330 | 3655 | 3609 | 3545 |  |  |  | Kampong Thom | 
+  -- 'Tables E': 341 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table E1.  Physically/ |  |  |  |  |  |  |  |  |  |  |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Capital/Province | Both Sexes |  |  | Male |  |  | Female |  |  |  |  | 
+      4 |  |  | Total | No disability | With disability | Total | No disability | With disability | Total | No disability | With disability |  |  | 
+      5 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      6 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      7 |  | Total | 14102052 | 13412520 | 689532 | 6825874 | 6539215 | 286659 | 7276178 | 6873305 | 402873 |  |  | 
+      8 |  | Banteay Meanchey | 784594 | 740410 | 44184 | 387690 | 367996 | 19694 | 396904 | 372414 | 24490 |  |  | 
+      9 |  | Battambang | 901043 | 839373 | 61670 | 440781 | 414380 | 26401 | 460262 | 424993 | 35269 |  |  | 
+     10 |  | Kampong Cham | 818646 | 768360 | 50286 | 389365 | 368970 | 20395 | 429281 | 399390 | 29891 |  |  | 
+     11 |  | Kampong Chhnang | 475006 | 444401 | 30605 | 225493 | 213869 | 11624 | 249513 | 230532 | 18981 |  |  | 
+     12 |  | Kampong Speu | 797088 | 761468 | 35620 | 383897 | 369253 | 14644 | 413191 | 392215 | 20976 |  |  | 
+     13 |  | Kampong Thom | 610185 | 578006 | 32179 | 294242 | 280812 | 13430 | 315943 | 297194 | 18749 |  |  | 
+  -- 'Tables F': 114 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table FF1. De facto po |  |  |  |  |  |  |  |  |  |  |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Age group | Total Women | Parity |  |  |  |  |  |  | Ever born |  |  | Surviving
+      4 |  |  |  | Total | 0 | 1 | 2 | 3 | 4 | 5+ | Total | Male | Female | Total
+      5 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      6 |  | Total |  |  |  |  |  |  |  |  |  |  |  | 
+      7 |  | Total | 5704678 | 5704678 | 1799995 | 835431 | 1100429 | 759991 | 471593 | 737239 | 11896060 | 6033106 | 5862954 | 11428759
+      8 |  | 15 - 19 | 697651 | 697651 | 654068 | 28925 | 7932 | 3355 | 1959 | 1412 | 70177 | 34981 | 35196 | 67408
+      9 |  | 20 - 24 | 637922 | 637922 | 405562 | 163349 | 55026 | 8287 | 2712 | 2986 | 327331 | 166048 | 161283 | 320105
+     10 |  | 25 - 29 | 723240 | 723240 | 262159 | 218100 | 185211 | 43721 | 9366 | 4683 | 785308 | 400456 | 384852 | 775371
+     11 |  | 30 - 34 | 659892 | 659892 | 135285 | 127546 | 241807 | 112380 | 30249 | 12625 | 1140042 | 581607 | 558435 | 1127683
+     12 |  | 35 - 39 | 654270 | 654270 | 89776 | 77106 | 215734 | 169629 | 66923 | 35102 | 1480490 | 756460 | 724030 | 1461017
+     13 |  | 40 - 44 | 382145 | 382145 | 39646 | 36733 | 97188 | 103130 | 59182 | 46266 | 1042885 | 531903 | 510982 | 1021429
+  -- 'Tables G': 84 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table G1 Number of Hou |  |  |  |  |  |  |  |  |  | Table G2 Number of Hou |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Age at Death | Total Population |  |  | Total Dealth |  |  |  |  |  | Age at death | Cause of Death | 
+      4 |  |  | Sex |  |  | Sex |  |  |  |  |  |  | Total | Fever
+      5 |  |  | Total | Male | Female | Total | Male | Female |  |  |  |  |  | 
+      6 |  |  |  |  |  |  |  |  |  |  |  | Total |  | 
+      7 |  | Total | 15552211 | 7571837 | 7980374 | 42464 | 14208 | 28256 |  |  |  | Total | 42464 | 9624
+      8 |  | 0 | 227999 | 117090 | 110909 | 6664 | 1634 | 5030 |  |  |  | 0 | 6664 | 2105
+      9 |  | 1 | 263480 | 136523 | 126957 | 1945 | 523 | 1422 |  |  |  | 1 | 1945 | 638
+     10 |  | 2 | 316292 | 161464 | 154828 | 793 | 290 | 503 |  |  |  | 2 | 793 | 193
+     11 |  | 3 | 326661 | 168055 | 158606 | 720 | 198 | 522 |  |  |  | 3 | 720 | 220
+     12 |  | 4 | 315727 | 162831 | 152896 | 669 | 185 | 484 |  |  |  | 4 | 669 | 182
+     13 |  | 5 - 9 | 1473104 | 753541 | 719563 | 3320 | 738 | 2582 |  |  |  | 5 - 9 | 3320 | 988
+  -- 'Tables H': 196 rows
+      0 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      1 |  | Table H1. Buildings/St |  |  |  |  |  |  |  |  |  | Table H2. Building str |  | 
+      2 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+      3 |  | Area Name | Total | Type of Use |  |  |  |  |  |  |  | Wall Type | Roof Type | 
+      4 |  |  |  | Residential | Residence and shop | Residence/Workshop | Residence and any othe | 5 Institutional househ |  |  |  |  | Total | Bamboo/Thatch/Grass
+      5 |  | Total | 3075828 | 2867394 | 153528 | 23711 | 4994 | 26201 |  |  |  |  |  | 
+      6 |  | 1 Urban | 1088253 | 977685 | 75943 | 11737 | 3307 | 19581 |  |  |  |  |  | 
+      7 |  | 2 Rural | 1987575 | 1889709 | 77585 | 11974 | 1687 | 6620 |  |  |  | Earth/Clay |  | 
+      8 |  | Percent |  |  |  |  |  |  |  |  |  | 1 Bamboo/Thatch/Grass/ | 47856 | 15379
+      9 |  | Total | 99.99999999999999 | 93.22348323768429 | 4.99143645223335 | 0.7708818568528539 | 0.1623627849151513 | 0.8518356683143531 |  |  |  | 2 Earth | 3631 | 306
+     10 |  | Urban | 99.99999999999999 | 89.83986260547869 | 6.9784324049646544 | 1.0785175873624975 | 0.3038815422516639 | 1.799305859942495 |  |  |  | 3 Wood/Plywood | 110515 | 2288
+     11 |  | Rural | 100 | 95.07611033545903 | 3.9035004968365974 | 0.6024426751191779 | 0.08487730022766436 | 0.3330691923575211 |  |  |  | 4 Concrete/Brick/Stone | 18933 | 378
+     12 |  |  |  |  |  |  |  |  |  |  |  | 5 Galvanised Iron/Alum | 123631 | 1949
+     13 |  |  |  |  |  |  |  |  |  |  |  | 6 Asbestos Cement Shee | 1229 | 64
