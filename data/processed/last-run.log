@@ -1,16 +1,213 @@
-== page https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EC%A2%85%EA%B5%90%EB%B3%84+%EC%9D%B8%EA%B5%AC&dType=FILE
-  420,597 bytes, charset utf-8
-  ~ , { pattern: "/tcs/dor/insertDataOfferReqstDocView.do", crumb: ["홈", "공공데이터 제공신청서 작성"] }, // 가변 URL 패턴 (정규식) { pattern: /^\/data\/\d+\/fileData\.do$/, crumb: ["홈", "공공데이터", "데이터목록"] }, // 필요한 패턴 계속 추가... ]; // ② 매핑 찾기 함수 function findBreadCrumb(url) { for (var
-  ~ label> <input type="text" id="keyword" name="keyword" class="krds-input" autocomplete="off" placeholder="데이터명을 입력해 주세요" value="종교별 인구" onkeydown="if(event.keyCode===13){eventFnObj.fn_searchBtnClick(); return false;}"> <button type="button" class="krds-btn small ico
-  ~ <input type="hidden" name="sType" id="detail-search-form-s-type" value="detail"> <input type="hidden" id="detail-search-form-keyword" value="종교별 인구" name="keyword"> <input type="hidden" id="detail-search-form-before-keyword" value="종교별 인구" name="beforeKeyword"> <input type="hidden" id
-  ~ t type="hidden" id="detail-search-form-keyword" value="종교별 인구" name="keyword"> <input type="hidden" id="detail-search-form-before-keyword" value="종교별 인구" name="beforeKeyword"> <input type="hidden" id="detail-search-form-size" name="size" value="10" class="size"> <input type="hidden" id="de
-  ~ </div> </div> <script> $('.btn-more').on('click', function(e) { e.preventDefault(); eventFnObj.fn_dTypeClick('FILE'); }) var fn_fileDataGoLink = function(publicDataPk) { $.ajax({ url : "/tcs/dss/selectLinkUrl.do", data : {"publicDataPk" : publicDataPk}, success : function
-  ~ search-form-d-type" type="hidden" name="dType" value="FILE" class="frmKeyword" > <input id="search-form-keyword" type="hidden" name="keyword" value="종교별 인구" class="frmKeyword" > <input id="search-form-before-keyword" type="hidden" name="beforeKeyword" value="종교별 인구" > <input type="hidden" name="d
-  ~ d" type="hidden" name="keyword" value="종교별 인구" class="frmKeyword" > <input id="search-form-before-keyword" type="hidden" name="beforeKeyword" value="종교별 인구" > <input type="hidden" name="detailKeyword" value="" class="detailKeyword" > <input type="hidden" name="publicDataPk" value="" class="frmPub
-  ~ // 키워드(필터) extsn : [], // 확장자(필터) org : "", // 기관명(필터, 제공기간 상세검색) coreDataNmArray : [], // 중요데이터(필터, 국가중점데이터로 판단) keyword : "종교별 인구", // 키워드(검색어) sort : "score", // 정렬대상(활용도순, 조회순, 정확도순, 등록순, 가나다순) sort_order : "desc", // 정렬기준 operator : "", // 조회조건(an
-  ~ Obj.fn_searchBtnClick(); }, // 파일데이터, api, 표준데이터 탭 클릭 메서드 fn_dTypeClick : function(dType) { $("#relDTypeDiv").hide(); $("body > #layer_filedata_preview").remove(); $("body > #layer_openapi_preview").remove(); conditionObj["dType"] = []; conditionObj["dType"].push(dType); conditio
-  ~ ).addClass("on"); // 불필요 리스트 제거 $(".dTypeList").remove(); $("#contents").append(result); }, fn_commonCb : function(result) { /*$("#fileDataList, #apiDataList, #stdDataList, #noDataDiv").remove(); $("#contents").append(result);*/ // 페이징 후 상단으로 올라가도록 작업 var dType = condit
-  ~ ts").append(result);*/ // 페이징 후 상단으로 올라가도록 작업 var dType = conditionObj["dType"]; var listId = ""; if (dType === "FILE") { listId = "fileDataList"; } else if (dType === "API") { listId = "apiDataList"; } else if (dType === "STD") { listId = "stdDataList"; } else if (dType =
-  ~ is.hasClass("on")) { tabId = $this.attr("id"); } }) /* var url = "/tcs/dss"; if (dType === "FILE") { url += "/selectFileDataDetailView.do"; } else if (dType === "API") { url += "/selectApiDataDetailView.do"; } else { url += "/selectStdDataDetailView.do"; } */
-  ~ taDetailView.do"; } else { url += "/selectStdDataDetailView.do"; } */ var url = "/data/" + pk; if (dType === "FILE") { url += "/fileData.do"; } else if (dType === "API") { url += "/openapi.do"; } else if (dType ==='LINKED') { url += "/linkedData.do"; } else { url +
-  ~ return; }, // 미리보기 팝업 호출 fn_preview : function(publicDataPk, dType) { // 내부에 있는 기존 미리보기 내용 제거 if (dType === "FILE") { $("#layer_filedata_preview").children().remove(); } else if (dType === "API") { $("#layer_openapi_preview").children().remove(); } var dataObj = { "pu
+probe_pdf: https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/2020_Vanuatu_National_Population_and_Housing_Census_-_Analytical_report_Volume_2.pdf
+  10,628,723 bytes
+  119 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/LOULFM+Bauhaus-Medium', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 86, '/FontDescriptor': IndirectObject(51, 0, 140460794049296), '/LastChar': 117, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 556, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 333, 500]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 119 pages, 7 mention ['first+language', 'First+language', 'Bislama', 'vernacular', 'Vernacular']
+=== front matter ===
+1
+Vanuatu 2020 National Population and Housing Census – Analytical Report
+Volume 2
+VANUATU VANUATU 
+20202020 NATIONAL POPULATION  NATIONAL POPULATION 
+AND HOUSING CENSUSAND HOUSING CENSUS
+ANALYTICAL REPORTANALYTICAL REPORT
+VOLUME 2VOLUME 2
+
+
+Noumea, New Caledonia
+October 2022
+VANUATU VANUATU 
+20202020 NATIONAL POPULATION  NATIONAL POPULATION 
+AND HOUSING CENSUSAND HOUSING CENSUS
+ANALYTICAL REPORTANALYTICAL REPORT
+VOLUME 2VOLUME 2
+Vanuatu Bureau of Statistics and the Pacific Community
+Ralph Hakkert and Scott Pontifex
+© Pacific Community (SPC) and the Vanuatu Bureau of Statistics (VBoS) 2022
+All rights for commercial/for profit reproduction or translation, in any form, reserved. SPC and VBoS 
+authorise the partial reproduction or translation of this material for scientific, educational or research 
+purposes, provided that SPC and VBoS, and the source document are properly acknowledged. 
+Permission to reproduce the document and/or translate in whole, in any form, whether for commercial/
+for profit or non-profit purposes, must be requested in writing. Original SPC and VBoS artwork may not 
+be altered or separately published without permission.
+Disclaimer: While efforts have been made to ensure the accuracy and reliability of the material 
+contained in this report, SPC and VBoS cannot guarantee that the information is free from errors and 
+omissions, and do not accept any liability, contractual or otherwise, for the content of this report or 
+any consequences arising from its use.
+Hakkert, Ralph
+Vanuatu 2020 national population and housing census: analytical report - volume 2 / Ralph Hakkert 
+and Scott Pontifex
+1. Census — Vanuatu.
+2. Demography — Vanuatu.
+3. Vanuatu — Population — Statistics.
+4. Population — Vanuatu.
+5. Housing — Vanuatu — Statistics.
+I. Hakkert, Ralph II. Pontifex, Scott III. Title IV. Vanuatu. Bureau of Statistics V. Pacific Community
+319.595        AACR2
+ISBN: 978-982-00-1458-9
+Design and layout by Gaëlle Le Gall-Queguineur, SPC/SDD.
+Cover photo: Graham Crumb
+Prepared for publication at SPC’s Headquarters,  
+B. P . D5, 98 848, Noumea Cedex, New Caledonia, 2022
+i
+Vanuatu 2020 National Population and Housing Census – Analytical Report
+Volume 2
+CONTENTS
+ABBREVIATIONS  .............................................................................................................................................................iii
+TABLES ...............................................................................................................................................................................iv
+FIGURES .............................................................................................................................................................................vi
+SUMMARY OF MAIN INDICATORS .............................................................................................................................x
+MAP OF VANUATU .......................................................................................................................................................xiii
+1. INTRODUCTION  .........................................................................................................................................................1
+1.1. Geographic setting ......................................................................................................................................................1
+1.2. Background   ......................................................................................................................................1
+2. POPULATION SIZE, TREND, DISTRIBUTION, STRUCTURE AND URBANISATION ....................................2
+2.1. Population size and trend .........................................................................................................................................2
+2.2. Population distribution ..............................................................................................................................................5
+
+=== pages mentioning ['first+language', 'First+language', 'Bislama', 'vernacular', 'Vernacular'] (first 8) ===
+
+--- page 12 ----------------------------------------------------
+Figure 67 . Percentage of the population 15+ years with language ability (read or write) in various languages, by
+sex, Vanuatu: 2020 .......................................................................................................................................................................................62
+Figure 68. Percentage of the population 15+ years with English language ability (read or write), by sex, Vanuatu:
+2020 ...................................................................................................................................................................................................................63
+Figure 69. Percentage of the population 15+ years with French language ability (read or write), by sex, Vanuatu:
+2020 ...................................................................................................................................................................................................................63
+Figure 70. Percentage of the population 15+ years with Bislama language ability (read or write), by sex, Vanuatu:
+2020 ...................................................................................................................................................................................................................63
+Figure 71. Percentage of the population 15+ years with Indigenous language ability (read or write), by sex,
+Vanuatu: 2020 ................................................................................................................................................................................................64
+Figure 72. Percentage of the population 15+ years with other language ability (read or write), by sex, Vanuatu:
+2020 ...................................................................................................................................................................................................................64
+Figure 73. Percentage of the population that can speak an Indigenous (vernacular) language, by age and sex,
+Vanuatu: 2020 ................................................................................................................................................................................................65
+Figure 74. Proportion of the population 15+ years by sex using the internet, Vanuatu: 2020 .......................................66
+Figure 75. Proportion of the population 15+ years by place of residence, using the internet, Vanuatu: 2020 ........66
+Figure 76. Population 15+ years by sex and labour market activity, Vanuatu: 2020 ...........................................................68
+Figure 77 . Population 15+ years by region and labour market activity, Vanuatu: 2020 ....................................................69
+Figure 78. Population 15+ years by sex and labour market activity, Torba: 2020 ................................................................69
+
+--- page 15 ----------------------------------------------------
+     Females 91.4 98.6 89.0 86.0 92.5 88.1 95.7 98.0 71.9
+Literacy rate (15–24) 95.3 99.2 94.0 90.9 96.7 92.5 98.3 98.8 85.4
+     Males 94.8 99.0 93.5 89.6 96.3 92.0 98.4 98.4 84.4
+     Females 95.7 99.4 94.4 92.1 97.1 92.9 98.3 99.1 86.4
+Literacy in English 76.9 89.5 72.8 73.9 76.1 67. 2 74.0 89.1 56.4
+Literacy in French 40.0 48.4 37. 2 27.1 39.1 33.8 38.7 46.6 32.9
+Literacy in Bislama 90.1 96.6 88.0 85.1 91.4 86.8 94.6 96.6 70.4
+Literacy in Indigenous language 70.9 78.0 68.6 58.0 69.7 73.9 60.2 82.4 53.8
+Literacy in other language 1.1 1.2 1.1 4.5 0.9 1.1 0.5 1.4 0.5
+Internet use (% of population aged 5+) 26.2 48.3 19.7 14.3 25.0 14.3 19.1 41.3 11.0
+     Males 28.3 49.4 22.1 17.1 27.4 18.4 22.2 42.2 12.7
+     Females 24.1 47. 2 17. 2 11.5 22.5 10.2 16.0 40.3 9.4
+Disability
+
+--- page 75 ----------------------------------------------------
+58
+Vanuatu 2020 National Population and Housing Census – Analytical Report
+Volume 2
+With respect to the main language spoken in educational institutions, more than half (62.3%) of all
+students attended English-speaking schools (54,244); 26.4% attended French-speaking schools
+(23,011); and 7.1% attended schools where the language of instruction was Bislama. This compares to
+enrolment data from MoET, which indicates that 1,352 children received instruction in Bislama (ECCE
+level only), whereas at the primary level 38,561 received instruction in English and 17,862 in French. At
+the secondary level, these numbers were 17,128 and 6,815, respectively. Due to differences in categori-
+sation, the 2020 census numbers are difficult to compare to those of 2009, but it would seem that the
+proportion of children attending English language schools has increased.
+54,244
+23,011
+1,062
+6,223
+2,477 36
+English French English and
+French
+Bislama Indigenous Other
+Number of pupils
+Language
+Figure 60. Population living in private HHs 5+ years by sex, and attending school, by main language of
+educational institution, Vanuatu: 2020
+For ages 5–18, female attendance rates were higher than male enrolment rates. From the age of 19,
+school attendance rates for males were slightly higher than for females (Fig. 61). Not at any age did
+
+--- page 78 ----------------------------------------------------
+Malampa 18.2 58.5 21.1 0.4 1.4
+Shefa 18.0 39.0 35.1 3.3 4.5
+Tafea 42.8 37. 8 17. 8 0.4 0.7
+Vanuatu 22.6 45.7 27.4 1.6 2.5
+4.5.3  Literacy and language ability
+Literacy was measured by a respondent’s ability to read or write a simple sentence in one or more of
+the following languages: English, French, or a vernacular language including Bislama. Overall literacy
+for the population 15+ years was 90.1% in Bislama (91.1% for men and 89.2% for women), 76.9% in
+English (77.8% for men and 76.0% for women) and 40.0% in French (39.5% for men and 40.4% for
+women). In the case of vernacular languages, 70.9% of people 15+ years knew how to read or write in
+them. Only 1.1% of the population could read or write in another language.
+Between ages 10–34 years, 94.6% of the population could read and 94.0% could write in any language.
+From the age of 35, literacy rates gradually declined with the increasing age of the population. Of the
+population aged 55–59, only 89.4% could read and 88.0% could write. These percentages fell to 72.4%
+and 68.8% in the population over 70 (Fig. 65). The literacy rate (reading or writing) of 15–24 year olds
+was 94.8% for males and 95.7% for females (Fig. 66).
+While more than 99% of 15–24 year-olds in urban areas were literate, this percentage fell to 93.5% of
+men and 94.4% of women in rural areas. The provinces of Torba and especially Tafea had significantly
+lower literacy rates than the national average.
+Literacy in terms of language abilities is shown in Table 36 and Figs 67–71. Abilities varied extensively
+by place of residence. Language abilities in any language were much higher in urban than in rural
+areas. Literacy in Bislama was highest in Shefa, Malampa and Sanma. English was also popular in Shefa,
+followed by Sanma. Indigenous languages were common in Shefa and Penama, and French literacy
+was proportionately more widespread in Shefa than in other provinces.
+All languages shared a common feature; that is, the ability to read or write in any language decreased
+sharply at older ages, and the language abilities of males —especially older males—were higher than
+those of females (Figs 67–71).
+
+--- page 79 ----------------------------------------------------
+National males
+National females
+Figure 66. Literacy rate (read or write) of the population 15–24 years, by sex and place of residence
+(percentage literate), Vanuatu: 2020
+Figure 67. Percentage of the population 15+ years with language ability (read or write) in various
+languages, by sex, Vanuatu: 2020
+Region English French Bislama Indigenous Other
+Urban 89.5 48.4 96.6 78.0 1.2
+Rural 72.8 37. 2 88.0 68.6 1.1
+Torba 73.9 27.1 85.1 58.0 4.5
+Sanma 76.1 39.1 91.4 69.7 0.9
+Penama 67. 2 33.8 86.8 73.9 1.1
+Malampa 74.0 38.7 94.6 60.2 0.5
+
+--- page 80 ----------------------------------------------------
+50
+60
+70
+80
+90
+100
+Percentage literate (Bislama)
+Age group
+Figure 70. Percentage of the population 15+ years with Bislama language ability (read or write), by sex,
+Vanuatu: 2020
+
+--- page 82 ----------------------------------------------------
+40
+60
+80
+100
+Percentage speaking (Indigenous)
+Age group, women
+Figure 73. Percentage of the population that can speak an Indigenous (vernacular) language, by age and
+sex, Vanuatu: 2020
+In total, 92.2% of the population answered that they can speak an indigenous language easily or with
+some difficulty. The 2020 census then asked these people an additional question about the language
+in which they were raised. The overwhelming majority (84.8%) answered they had been raised in
+an indigenous language. Another 12.4% were raised in Bislama and learned to speak an Indigenous
+language later in life. The percentage of people who were raised in English or French and who learned
+to speak an Indigenous language later in life was very low: 2.0% and 0.8%, respectively.
+There was very little difference between men and women in this respect. There was a difference by
+region, however. The percentage of persons who were raised in an Indigenous language was lower
+in urban areas (69.5%) and higher in rural areas (89.3%), particularly in Torba (95.0%), Penama (94.8%)
+and Tafea (94.2%). The percentage who were raised in Bislama was highest in the two urban areas, Port
+Vila (25.0%) and particularly Luganville (30.7%).
+4.6. Internet use
+The 2009 census questionnaire was the first to introduce a question on internet use during the week
+before the census by the population 5+ years. The question was considerably expanded in the 2020
+census, which investigated four different items:
+	 Did XYZ connect to the internet in the last week (9 November to 15 November 2020), Either
