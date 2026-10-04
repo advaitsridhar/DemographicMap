@@ -138,5 +138,54 @@ class Ethnicity(unittest.TestCase):
         self.assertEqual(got["Foa"], {"Tongan": 1330, "European": 15, "Other": 0})
 
 
+def g50(rows):
+    head = [["Table G 50: Population (5 years +) language use at home by age, sex and division"],
+            [""],
+            ["Age / Division", "Total", "", "", "Tongan language only", "", "",
+             "Tongan and other language(s)", "", "", "Tongan language is not used at home"],
+            ["", "Total", "Male", "Female", "Total", "Male", "Female", "Total", "Male",
+             "Female", "Total", "Male", "Female"]]
+    return head + rows
+
+
+# Volume 1's Table G 48, which is the workbook's G 50.
+LANGUAGE = [
+    ["Tonga", 89254, 42991, 46263, 75828, 37010, 38818, 12420, 5444, 6976, 1006, 537, 469],
+    ["5-9", 12644, 6564, 6080, 11152, 5858, 5294, 1406, 668, 738, 86, 38, 48],
+    ["Tongatapu", 66295, 31764, 34531, 55105, 26807, 28298, 10298, 4492, 5806, 892, 465, 427],
+    ["Vava'u", 12550, 6179, 6371, 11343, 5634, 5709, 1133, 498, 635, 74, 47, 27],
+    ["Ha'apai", 5027, 2424, 2603, 4677, 2268, 2409, 327, 142, 185, 23, 14, 9],
+    ["'Eua", 4342, 2096, 2246, 3721, 1800, 1921, 605, 286, 319, 16, 10, 6],
+    ["Ongo Niua", 1040, 528, 512, 982, 501, 481, 57, 26, 31, 1, 1, 0],
+]
+
+
+class Language(unittest.TestCase):
+    def test_the_three_answers_are_read_for_each_division(self):
+        got = tc.read_language(g50(LANGUAGE))
+        self.assertEqual(got["Tongatapu"]["total"], 66295)
+        self.assertEqual(got["'Eua"]["counts"], {"Tongan only": 3721,
+                                                 "Tongan and other languages": 605,
+                                                 "Other languages": 16})
+
+    def test_answers_that_miss_the_total_stop_the_run(self):
+        rows = [r if r[0] != "Ha'apai" else
+                ["Ha'apai", 5027, 2424, 2603, 4677, 2268, 2409, 300, 142, 158, 23, 14, 9]
+                for r in LANGUAGE]
+        with self.assertRaises(SystemExit):
+            tc.read_language(g50(rows))
+
+    def test_a_missing_division_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            tc.read_language(g50([r for r in LANGUAGE if r[0] != "Ongo Niua"]))
+
+    def test_a_district_says_why_it_has_no_language(self):
+        fields = tc.fields_for("Foa", {"total": 100, "male": 50, "female": 50}, 20.0,
+                               {"total": 100, "counts": {"Roman Catholic": 100}},
+                               {"Tongan": 100}, "five-year group", tc.DISTRICT_LANGUAGE)
+        self.assertEqual(fields["language"]["status"], "not_available")
+        self.assertIn("division only", fields["language"]["note"])
+
+
 if __name__ == "__main__":
     unittest.main()

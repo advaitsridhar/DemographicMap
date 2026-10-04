@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Tonga, 2021 Census: population, age, sex, religion and ethnic origin by division and district.
+"""Tonga, 2021 Census: population, age, sex, religion, ethnic origin and language at home.
 
-Three of the Tonga Statistics Department's General Tables workbooks for the
+Four of the Tonga Statistics Department's General Tables workbooks for the
 2021 Census of Population and Housing (``tongastats.gov.to``, "Census Tables"):
 
 * **1 - Population trends**: Table G 1 (population by sex, division and
@@ -12,7 +12,13 @@ Three of the Tonga Statistics Department's General Tables workbooks for the
   person may be counted under two origins and the shares, each of the total
   population, sum to a little over 100;
 * **4 - Religion**: Table G 19, religious affiliation by division and
-  district, which excludes visitors and non-residents.
+  district, which excludes visitors and non-residents;
+* **10 - Literacy**: Table G 50 (Table G 48 in the printed Volume 1),
+  language used at home by division -- the answers to the individual
+  questionnaire's ID7.7, "What language does this person speak at home?":
+  Tongan language only, Tongan and other language(s), Tongan language is
+  not used at home -- for the 89,254 people aged five and over in private
+  households.
 
 **Median age** is interpolated within the single year for the five divisions
 (G 6) and within the five-year group for the districts (G 5), the finest each
@@ -24,14 +30,15 @@ level is published at.
 out -- so that polygon takes Niuafo'ou's own figures, as its district polygon
 does, and says so. "'Eua Prope" is the census's 'Eua Motu'a ('Eua Proper).
 
-**Language** is not tabulated: the 2021 General Tables and Volume 1's 367
-pages publish literacy in Tongan and English (General Table 10) and no
-language spoken, so the field is left with that reason.
+**Language** is published for the five divisions only. A district's field
+says so; so does the Niuas polygon's, because the division's figure is
+mostly Niuatoputapu's people and the polygon is Niuafo'ou.
 
 **Checks**, each refusing the run: every row's males and females make its
 total; the districts make their division and the divisions make Tonga
 (100,179); each age distribution makes its row's total; each religion row's
-denominations make its total; every drawn unit is bound once.
+denominations make its total; each language row's three answers make its
+total and the divisions make Tonga's 89,254; every drawn unit is bound once.
 
 Usage:
     python -m scripts.fetch_census.tonga_census
@@ -46,7 +53,7 @@ from ._shared import PROCESSED, gap, log, measure, write_json, NOT_AVAILABLE
 from .binding import fold
 from .oceania_common import (
     bind_level, check, load_units, median_from_groups, median_from_single_years,
-    not_collected, number, population, rows_of, sex_ratio, shares_of, summarise,
+    number, population, rows_of, sex_ratio, shares_of, summarise,
     unit_record, workbook,
 )
 
@@ -59,6 +66,7 @@ URLS = {
     "population": f"{BASE}/8089/1-population-trends.xlsx",
     "ethnicity": f"{BASE}/7660/2-ethnicity.xlsx",
     "religion": f"{BASE}/7664/4-religion.xlsx",
+    "literacy": f"{BASE}/7665/10-literacy.xlsx",
 }
 PAGE = "https://tongastats.gov.to/census-2/population-census-3/census-tables/"
 NATIONAL = 100_179
@@ -85,6 +93,13 @@ RELIGIONS = {
     "BUDH": "Buddhism", "ISL": "Islam", "HND": "Hinduism", "NO REL": "No religion",
     "REF": "Not stated", "OTHER": "Other religion",
 }
+# G 50's three answers, by the start of the table's own headings. "Tongan
+# language is not used at home" is every other language, so it is written as
+# "Other languages": a label naming Tongan would be filed under Tongan.
+LANGUAGES = (("tongan language only", "Tongan only"),
+             ("tongan and other language", "Tongan and other languages"),
+             ("tongan language is not used", "Other languages"))
+AGED_FIVE_PLUS = 89_254
 ETHNIC = {"Tongan": "Tongan", "European": "European", "Fijian": "Fijian",
           "Samoan": "Samoan", "Indian": "Indian", "Chinese": "Chinese",
           "Other Pacific Islander": "Other Pacific Islander", "Other Asian": "Other Asian",
@@ -295,6 +310,67 @@ def read_ethnicity(rows: list[list[Any]], divisions: list[str], districts: list[
     return out
 
 
+def read_language(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
+    """{division or "TONGA": {total, counts}} from G 50, language used at home."""
+    head = next((i for i, row in enumerate(rows[:8])
+                 if any(text(c).lower().startswith(LANGUAGES[0][0]) for c in row)), None)
+    check(head is not None, "tonga_census: G 50 has no 'Tongan language only' heading")
+    starts = {}
+    for i, cell in enumerate(rows[head]):
+        for prefix, label in LANGUAGES:
+            if text(cell).lower().startswith(prefix):
+                starts[label] = i
+    check(len(starts) == len(LANGUAGES), f"tonga_census: G 50 headings give {sorted(starts)}")
+    wanted = {fold(d): d for d in DIVISIONS + ("TONGA",)}
+    out: dict[str, dict[str, Any]] = {}
+    for row in rows[head + 1:]:
+        key = wanted.get(fold(text(row[0])))
+        if key is None or key in out:
+            continue
+        total, male, female = (number(c) for c in row[1:4])
+        counts = {label: number(row[i]) or 0.0 for label, i in starts.items()}
+        check(total is not None and sum(counts.values()) == total,
+              f"tonga_census: G 50 {key}: the answers make {sum(counts.values())}, not {total}")
+        check(male is not None and female is not None and male + female == total,
+              f"tonga_census: G 50 {key}: males and females do not make {total}")
+        for label, i in starts.items():
+            parts = [number(c) or 0.0 for c in row[i + 1:i + 3]]
+            check(sum(parts) == counts[label],
+                  f"tonga_census: G 50 {key}: {label} by sex does not make {counts[label]}")
+        out[key] = {"total": total, "counts": counts}
+    missing = [d for d in DIVISIONS + ("TONGA",) if d not in out]
+    check(not missing, f"tonga_census: G 50 has no row for {missing}")
+    check(out["TONGA"]["total"] == AGED_FIVE_PLUS,
+          f"tonga_census: G 50 reads {out['TONGA']['total']:,.0f} people aged 5+, "
+          f"published {AGED_FIVE_PLUS:,}")
+    check(sum(out[d]["total"] for d in DIVISIONS) == AGED_FIVE_PLUS,
+          "tonga_census: G 50's divisions do not make Tonga")
+    return out
+
+
+LANGUAGE_NOTE = (
+    "Language used at home, 2021 Census (General Table G 50; Table G 48 in Volume 1), "
+    "people aged five and over in private households, answering 'What language does this "
+    "person speak at home?' (question ID7.7): Tongan language only, Tongan and other "
+    "language(s), or Tongan language is not used at home -- written here as 'Other "
+    "languages'.")
+DISTRICT_LANGUAGE = gap(NOT_AVAILABLE, (
+    "The 2021 Census asks the language used at home (question ID7.7) and tabulates it by "
+    "division only (General Table G 50; Volume 1, Table G 48, 'by age, sex and division'); "
+    "no table gives it for a district."))
+
+
+def niuas_language(language: dict[str, dict[str, Any]], people: dict[str, dict[str, float]]
+                   ) -> dict[str, Any]:
+    return gap(NOT_AVAILABLE, (
+        "The census gives language used at home for the Ongo Niua division as a whole "
+        f"({language['Ongo Niua']['total']:,.0f} people aged five and over, General Table G "
+        "50), and most of the division's people live on Niuatoputapu "
+        f"({people['Niuatoputapu']['total']:,.0f} of {people['Ongo Niua']['total']:,.0f}), "
+        "which the boundary file does not draw: this polygon is Niuafo'ou alone, and no "
+        "table gives Niuafo'ou's own figure."))
+
+
 # ---------------------------------------------------------------------------
 # Records
 # ---------------------------------------------------------------------------
@@ -314,16 +390,13 @@ def notes(people_total: float, scope: str) -> dict[str, str]:
             "Table G 12), where more than one origin could be selected: each share is the "
             f"percentage of the {people_total:,.0f} people counted here who gave that origin, "
             "so the shares can sum to a little over 100."),
-        "language": not_collected(
-            "Tonga's 2021 census publishes no language spoken: its General Tables (1-14) "
-            "and Volume 1's 367 pages tabulate literacy in Tongan and English (General Table "
-            "10), an ability, and no language composition."),
     }
 
 
 def fields_for(name: str, people: dict[str, float], median: float | None,
-               religion: dict[str, Any], ethnicity: dict[str, float], scope: str
-               ) -> dict[str, Any]:
+               religion: dict[str, Any], ethnicity: dict[str, float], scope: str,
+               language: dict[str, Any]) -> dict[str, Any]:
+    """A unit's fields; ``language`` is G 50's row for it, or the gap that says why not."""
     text_notes = notes(people["total"], scope)
     return {
         "population": population(people["total"], YEAR, f"{SOURCE} (G 1)"),
@@ -339,16 +412,18 @@ def fields_for(name: str, people: dict[str, float], median: float | None,
         "ethnicity": shares_of(ethnicity, people["total"]),
         "ethnicity_year": YEAR,
         "ethnicity_note": text_notes["ethnicity_note"],
-        "language": text_notes["language"],
+        **({"language": shares_of(language["counts"], language["total"]),
+            "language_year": YEAR, "language_note": LANGUAGE_NOTE}
+           if "counts" in language else {"language": language}),
     }
 
 
-SOURCES = [{"field": "population/median_age/sex_ratio/religion/ethnicity",
+SOURCES = [{"field": "population/median_age/sex_ratio/religion/ethnicity/language",
             "name": SOURCE, "url": PAGE, "year": YEAR,
             "license": "None stated -- Tonga Statistics Department publication, cited as such"}]
 
 
-def build(population_book, ethnicity_book, religion_book,
+def build(population_book, ethnicity_book, religion_book, literacy_book,
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
     people, tree = read_population(rows_of(population_book, "G 1"))
     districts = [d for ds in tree.values() for d in ds]
@@ -358,6 +433,7 @@ def build(population_book, ethnicity_book, religion_book,
     religion = read_religion(rows_of(religion_book, "G 19"), list(DIVISIONS) + districts)
     ethnicity = read_ethnicity(rows_of(ethnicity_book, "G 12"), list(DIVISIONS), districts,
                                people)
+    language = read_language(rows_of(literacy_book, "G 50"))
 
     parents = {u["id"]: u["name"] for u in admin1}
     division_units = bind_level({d: (DIVISION_ON_MAP[d], "") for d in DIVISIONS}, admin1, {})
@@ -371,8 +447,9 @@ def build(population_book, ethnicity_book, religion_book,
         # The map's "Niuas" polygon is Niuafo'ou alone, so it takes Niuafo'ou's.
         own = "Niuafo'ou" if division == "Ongo Niua" else division
         scope = "five-year group" if own != division else "single year"
+        spoken = language[division] if own == division else niuas_language(language, people)
         fields = fields_for(own, people[own], medians.get(own), religion[own],
-                            ethnicity[own], scope)
+                            ethnicity[own], scope, spoken)
         if own != division:
             why = (" The boundary file draws Niuafo'ou alone for the Niuas and leaves "
                    f"Niuatoputapu ({people['Niuatoputapu']['total']:,.0f} people) out, so "
@@ -386,7 +463,8 @@ def build(population_book, ethnicity_book, religion_book,
     for district, unit in district_units.items():
         division = next(k for k, v in tree.items() if district in v)
         fields = fields_for(district, people[district], medians.get(district),
-                            religion[district], ethnicity[district], "five-year group")
+                            religion[district], ethnicity[district], "five-year group",
+                            DISTRICT_LANGUAGE)
         name = "'Eua Motu'a" if district in ALIASES else unit["name"]
         records.append(unit_record("TON", district, name, unit, "admin2",
                                    DIVISION_ON_MAP[division], SOURCES, **fields))
@@ -399,10 +477,10 @@ def build(population_book, ethnicity_book, religion_book,
 def main() -> int:
     argparse.ArgumentParser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
-    log("tonga_census: 2021 Census General Tables 1, 2 and 4")
+    log("tonga_census: 2021 Census General Tables 1, 2, 4 and 10")
     books = {key: workbook(url) for key, url in URLS.items()}
     records = build(books["population"], books["ethnicity"], books["religion"],
-                    load_units("TON", "admin1"), load_units("TON", "admin2"))
+                    books["literacy"], load_units("TON", "admin1"), load_units("TON", "admin2"))
     log(f"  {len(records)} records: {summarise(records)}")
     write_json(PROCESSED / OUT, records)
     return 0

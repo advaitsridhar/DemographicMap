@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import io
 import json
+import time
 from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable
@@ -31,13 +32,26 @@ def load_units(iso3: str, level: str) -> list[dict[str, Any]]:
     return as_drawn(json.loads(path.read_text())) if path.exists() else []
 
 
-def workbook(url: str):
-    """A workbook fetched once (http_get's cache) and opened for reading."""
+def workbook(url: str, attempts: int = 4):
+    """A workbook fetched and opened for reading.
+
+    An xlsx is a zip archive. Tonga's file server once answered 200 with a
+    12 kB body that was not one, and the same URL gave the 218 kB workbook
+    the next time, so a body that is not a zip is fetched again (uncached)
+    after a pause, and the run stops only if it never comes.
+    """
     import openpyxl
-    blob = http_get(url, binary=True, timeout=300)
-    assert isinstance(blob, bytes)
-    log(f"  {url}: {len(blob):,} bytes")
-    return openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    for attempt in range(1, attempts + 1):
+        blob = http_get(url, binary=True, timeout=300, cache=False)
+        assert isinstance(blob, bytes)
+        log(f"  {url}: {len(blob):,} bytes")
+        if blob[:2] == b"PK":
+            return openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+        head = " ".join(blob[:160].decode("utf-8", "replace").split())
+        log(f"    not a workbook (attempt {attempt} of {attempts}): {head!r}")
+        if attempt < attempts:
+            time.sleep(20 * attempt)
+    raise SystemExit(f"{url}: no workbook after {attempts} attempts")
 
 
 def rows_of(book, sheet: str) -> list[list[Any]]:
