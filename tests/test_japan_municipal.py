@@ -144,6 +144,28 @@ class Build(unittest.TestCase):
         self.assertEqual(r["aliases"][0], "Nahaa")
         self.assertEqual(r["match_by"], "shape_id")
 
+    def test_an_empty_municipality_is_counted_and_nothing_else(self):
+        f = fixture()
+        pref = f["nat"]["03000"]
+        for k in pref:
+            pref[k] -= f["nat"]["03201"][k]
+        f["nat"]["03201"] = {k: 0 for k in f["nat"]["03201"]}
+        for sex in ("1", "2"):
+            f["ages"]["03201"][sex] = {k: 0 for k in f["ages"]["03201"][sex]}
+            f["ages"]["03000"][sex] = {k: 0 for k in f["ages"]["03000"][sex]}
+        f["ages"][NATIONAL] = add([f["ages"][p] for p in PREFECTURES])
+        f["nat"][NATIONAL] = add_nat([f["nat"][p] for p in PREFECTURES])
+        f["median"]["03000"] = f["median"]["03201"] = f["median"]["02000"]
+        r = {x.get("shape_id"): x for x in build(f)}["S03201"]
+        self.assertEqual(r["population"]["value"], 0)
+        self.assertEqual(r["median_age"]["status"], "not_available")
+        self.assertEqual(r["ethnicity"]["status"], "not_available")
+        self.assertIn("evacuation", r["population_note"])
+
+    def test_bureau_median_is_rounded(self):
+        self.assertEqual(jm.read_medians([{"@area": "01100", "$": "45.11411"}]),
+                         {"01100": 45.1})
+
     def test_sliver_is_a_stated_gap(self):
         r = self.by_shape["SSLIVER"]
         self.assertEqual(r["population"]["status"], "not_available")

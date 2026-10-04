@@ -318,10 +318,12 @@ def area_levels(payload: dict[str, Any]) -> dict[str, tuple[str, str]]:
 
 
 def read_medians(values: list[dict[str, Any]]) -> dict[str, float]:
+    """{area: the Bureau's median age}, to the one decimal the Bureau prints;
+    the API serves five."""
     out: dict[str, float] = {}
     for v in values:
         try:
-            out[str(v.get("@area"))] = float(v.get("$"))
+            out[str(v.get("@area"))] = round(float(v.get("$")), 1)
         except (TypeError, ValueError):
             continue
     return out
@@ -481,9 +483,11 @@ def grouped(ages: dict[str, dict[str, dict[str, int]]], codes: tuple[str, ...]) 
 
 
 def check_grouped(ages: dict[str, dict[str, dict[str, int]]], median: dict[str, float]) -> float:
-    """The grouped median against the Bureau's own, over every municipality."""
-    gaps = [abs(grouped(ages, (code,)) - median[code]) for code in median
-            if code in ages and not code.endswith("000")]
+    """The grouped median against the Bureau's own, over every municipality
+    with people in it."""
+    pairs = [(grouped(ages, (code,)), median[code]) for code in median
+             if code in ages and not code.endswith("000")]
+    gaps = [abs(ours - theirs) for ours, theirs in pairs if ours is not None]
     mean = sum(gaps) / len(gaps)
     log(f"  grouped medians against the Bureau's over {len(gaps)} areas: mean gap "
         f"{mean:.2f} years, largest {max(gaps):.2f}")
@@ -562,8 +566,8 @@ def nationality_shares(rows: list[dict[str, int]]) -> tuple[list[dict[str, Any]]
 
 
 def sources() -> list[dict[str, Any]]:
-    return [{"field": "median age", "name": SOURCE, "url": URL, "license": ESTAT_LICENCE},
-            {"field": "sex ratio", "name": SEX_SOURCE, "url": SEX_URL,
+    return [{"field": "median_age", "name": SOURCE, "url": URL, "license": ESTAT_LICENCE},
+            {"field": "sex_ratio", "name": SEX_SOURCE, "url": SEX_URL,
              "license": ESTAT_LICENCE},
             {"field": "population/ethnicity", "name": NATIONALITY_SOURCE,
              "url": NATIONALITY_URL, "year": YEAR, "license": ESTAT_LICENCE}]
@@ -588,6 +592,8 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
         med = (measure(median[codes[0]], unit="years", year=YEAR, source=SOURCE)
                if codes[0] in median else None)
     shares, known, unknown, total = nationality_shares([nat[c] for c in codes])
+    if total == 0:
+        return empty_record(shape, codes, name)
     where = "these two municipalities" if union else "this municipality"
     ethnicity_note = (
         f"2020 Population Census (e-Stat table {NATIONALITY_TABLE}): population by "
@@ -609,6 +615,27 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
         religion=gap(NOT_COLLECTED, RELIGION_NOTE),
         language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
         sources=sources())
+
+
+# Futaba, in Fukushima, was wholly under an evacuation order on census day
+# in 2020, and the census counted nobody living there. That count is
+# written; a median, a sex ratio and a composition of nobody are not.
+EMPTY_NOTE = ("The 2020 census counted nobody living here: on census day, 1 October 2020, "
+              "the whole municipality was under the evacuation order issued after the 2011 "
+              "Fukushima Daiichi nuclear accident. There is no one to have a median age, a sex "
+              "ratio or a nationality.")
+
+
+def empty_record(shape: str, codes: tuple[str, ...], name: str) -> dict[str, Any]:
+    return record(
+        f"JPN-{'+'.join(codes)}", name, level="admin2", parent="JPN", country="JPN",
+        codes={"jis": "+".join(codes)}, match_by="shape_id", shape_id=shape,
+        population=measure(0, year=YEAR, source=POPULATION_SOURCE),
+        population_note=EMPTY_NOTE,
+        median_age=gap("not_available", EMPTY_NOTE), sex_ratio=gap("not_available", EMPTY_NOTE),
+        ethnicity=gap("not_available", EMPTY_NOTE),
+        religion=gap(NOT_COLLECTED, RELIGION_NOTE), language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
+        sources=[sources()[2]])
 
 
 def build(median: dict[str, float], ages: dict[str, dict[str, dict[str, int]]],
