@@ -1,48 +1,9 @@
-  HTTP 200; application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; 866,278 bytes; final https://www.cis.es/documents/20117/13697506/3538-multi.xlsx
-== https://www.cis.es/documents/20117/13697506/3538-multi.xlsx
-  866,278 bytes, 16 sheets: Contenidos | Ficha técnica | Tabla ponderaciones | Notas | Resultados Extremadura  | Resultados Badajoz | Resultados Cáceres | Sexo | Edad | Nivel de estudios | Tamaño de municipio | RV EA23 | RV EG23 | Ocupación | Clase social | Escala de ideología
-  -- sheet 'Resultados Extremadura ': 1 rows match /materia.religiosa|lengua|idioma/; header and matches
-    r2:  | 3538/0 PREELECTORAL ELEC
-    r3:  | EXTREMADURA
-    r4:  | INFORME DE MARGINALES
-    r5: Pregunta A1
-    r6: Sexo:
-    r553: ¿Cómo se define Ud. en m
-    r554: Católico/a practicante | 27.467458740068835
-    r555: Católico/a no practicant | 39.438883578327385
-    r556: Creyente de otra religió | 1.4628662062258384
-    r557: Agnóstico/a (no niegan l | 7.038250274713749
-    r558: Indiferente, no creyente | 10.56213373229242
-    r559: Ateo/a (niegan la existe | 12.093179761547114
-    r560: N.C. | 1.9372277068249553
-    r561: (N) | 2037
-  -- sheet 'Resultados Badajoz': 1 rows match /materia.religiosa|lengua|idioma/; header and matches
-    r2:  | 3538/0 PREELECTORAL ELEC
-    r3:  | PROVINCIA DE BADAJOZ
-    r4:  | INFORME DE MARGINALES
-    r5: Pregunta A1
-    r6: Sexo:
-    r549: ¿Cómo se define Ud. en m
-    r550: Católico/a practicante | 27.721182660367106
-    r551: Católico/a no practicant | 39.1901517034816
-    r552: Creyente de otra religió | 1.6360972110938823
-    r553: Agnóstico/a (no niegan l | 6.59875725264753
-    r554: Indiferente, no creyente | 11.213662638048449
-    r555: Ateo/a (niegan la existe | 11.984830095282616
-    r556: N.C. | 1.6553184390787279
-    r557: (N) | 1215
-  -- sheet 'Resultados Cáceres': 1 rows match /materia.religiosa|lengua|idioma/; header and matches
-    r2:  | 3538/0 PREELECTORAL ELEC
-    r3:  | PROVINCIA DE CÁCERES
-    r4:  | INFORME DE MARGINALES
-    r5: Pregunta A1
-    r6: Sexo:
-    r549: ¿Cómo se define Ud. en m
-    r550: Católico/a practicante | 27.721182660367106
-    r551: Católico/a no practicant | 39.1901517034816
-    r552: Creyente de otra religió | 1.6360972110938823
-    r553: Agnóstico/a (no niegan l | 6.59875725264753
-    r554: Indiferente, no creyente | 11.213662638048449
-    r555: Ateo/a (niegan la existe | 11.984830095282616
-    r556: N.C. | 1.6553184390787279
-    r557: (N) | 1215
+cyprus_north_census: the census taken in the north of Cyprus on 4 December 2011
+  250 quarters, 32 municipalities, 12 sub-districts, 5 districts; 286,257 residents
+  medians from single years: north 31.2; Gazimağusa 30.3, Girne 32.0, Güzelyurt 32.5, İskele 33.3, Lefkoşa 30.5
+  Louroukina: cyprus_census.json still gives it 0; not written until it gives a gap (shared.patch)
+  Pano Zodeia: cyprus_census.json still gives it 0; not written until it gives a gap (shared.patch)
+  157 polygons carry 200 quarters, 202,930 residents of 286,257; 0 of 2 the Republic lists empty written; 40 northern polygons say why they have no figure; 48 quarters on no polygon (81,442 residents)
+  Kyrenia: 69,163 residents, median 32.0, 113.2 men per 100 women; citizenship TRNC citizen 39.2, Turkish citizen 34.5, TRNC and Turkish citizen 10.8, TRNC and other citizen 5.6, British citizen 4.4, Other 2.9, Bulgarian citizen 0.7, Pakistani citizen 0.7, Turkmen citizen 0.6, Nigerian citizen 0.3, Iranian citizen 0.2, Azerbaijani citizen 0.1
+  wrote data/processed/cyprus_north_census.json (838 kB)
+  wrote cyprus_north_census.json: 198 records
