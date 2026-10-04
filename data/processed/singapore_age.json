@@ -1,0 +1,2638 @@
+[
+  {
+    "id": "SGP-AGE-angmokio",
+    "level": "admin2",
+    "name": "ANG MO KIO",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 46.6,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 91.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B45863495904507",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Ang Mo Kio's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Ang Mo Kio's residents."
+  },
+  {
+    "id": "SGP-AGE-bedok",
+    "level": "admin2",
+    "name": "BEDOK",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 45.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 94.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B20451595816430",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Bedok's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Bedok's residents."
+  },
+  {
+    "id": "SGP-AGE-bishan",
+    "level": "admin2",
+    "name": "BISHAN",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 44.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 93.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B90886149673248",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Bishan's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Bishan's residents."
+  },
+  {
+    "id": "SGP-AGE-boonlay",
+    "level": "admin2",
+    "name": "BOON LAY",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (40, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (40, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B95056094425480"
+  },
+  {
+    "id": "SGP-AGE-bukitbatok",
+    "level": "admin2",
+    "name": "BUKIT BATOK",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 40.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 96.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B5947896014932",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Bukit Batok's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Bukit Batok's residents."
+  },
+  {
+    "id": "SGP-AGE-bukitmerah",
+    "level": "admin2",
+    "name": "BUKIT MERAH",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 45.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 92.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B76351548746547",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Bukit Merah's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Bukit Merah's residents."
+  },
+  {
+    "id": "SGP-AGE-bukitpanjang",
+    "level": "admin2",
+    "name": "BUKIT PANJANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 40.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 97.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B93913316180261",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Bukit Panjang's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Bukit Panjang's residents."
+  },
+  {
+    "id": "SGP-AGE-bukittimah",
+    "level": "admin2",
+    "name": "BUKIT TIMAH",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.6,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 85.9,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B39142455446777",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Bukit Timah's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Bukit Timah's residents."
+  },
+  {
+    "id": "SGP-AGE-centralwatercatchment",
+    "level": "admin2",
+    "name": "CENTRAL WATER CATCHMENT",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B42448688128011"
+  },
+  {
+    "id": "SGP-AGE-changi",
+    "level": "admin2",
+    "name": "CHANGI",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 37.3,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 107.9,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B97095495257036",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Changi's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Changi's residents."
+  },
+  {
+    "id": "SGP-AGE-changibay",
+    "level": "admin2",
+    "name": "CHANGI BAY",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B40132277078343"
+  },
+  {
+    "id": "SGP-AGE-choachukang",
+    "level": "admin2",
+    "name": "CHOA CHU KANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 38.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 99.3,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B43218816718153",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Choa Chu Kang's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Choa Chu Kang's residents."
+  },
+  {
+    "id": "SGP-AGE-clementi",
+    "level": "admin2",
+    "name": "CLEMENTI",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 44.3,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 90.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B55304091488522",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Clementi's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Clementi's residents."
+  },
+  {
+    "id": "SGP-AGE-downtowncore",
+    "level": "admin2",
+    "name": "DOWNTOWN CORE",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 99.4,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B3367010827484",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Downtown Core's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Downtown Core's residents."
+  },
+  {
+    "id": "SGP-AGE-geylang",
+    "level": "admin2",
+    "name": "GEYLANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 44.7,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 97.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B99636650083406",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Geylang's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Geylang's residents."
+  },
+  {
+    "id": "SGP-AGE-hougang",
+    "level": "admin2",
+    "name": "HOUGANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 43.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 96.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B57503645074708",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Hougang's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Hougang's residents."
+  },
+  {
+    "id": "SGP-AGE-jurongeast",
+    "level": "admin2",
+    "name": "JURONG EAST",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 45.1,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 98.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B80607451044134",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Jurong East's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Jurong East's residents."
+  },
+  {
+    "id": "SGP-AGE-jurongwest",
+    "level": "admin2",
+    "name": "JURONG WEST",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 40.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B41264252444764",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Jurong West's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Jurong West's residents."
+  },
+  {
+    "id": "SGP-AGE-kallang",
+    "level": "admin2",
+    "name": "KALLANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 45.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 97.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B58578820553466",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Kallang's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Kallang's residents."
+  },
+  {
+    "id": "SGP-AGE-limchukang",
+    "level": "admin2",
+    "name": "LIM CHU KANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (110, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (110, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B3963078358447"
+  },
+  {
+    "id": "SGP-AGE-mandai",
+    "level": "admin2",
+    "name": "MANDAI",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 41.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 90.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B55105989995830",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Mandai's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Mandai's residents."
+  },
+  {
+    "id": "SGP-AGE-marinaeast",
+    "level": "admin2",
+    "name": "MARINA EAST",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B30049846243522"
+  },
+  {
+    "id": "SGP-AGE-marinasouth",
+    "level": "admin2",
+    "name": "MARINA SOUTH",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B7512274213736"
+  },
+  {
+    "id": "SGP-AGE-marineparade",
+    "level": "admin2",
+    "name": "MARINE PARADE",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 44.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 88.5,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B26443656493732",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Marine Parade's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Marine Parade's residents."
+  },
+  {
+    "id": "SGP-AGE-museum",
+    "level": "admin2",
+    "name": "MUSEUM",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (510, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (510, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B1249664002017"
+  },
+  {
+    "id": "SGP-AGE-newton",
+    "level": "admin2",
+    "name": "NEWTON",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 91.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B17079961205151",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Newton's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Newton's residents."
+  },
+  {
+    "id": "SGP-AGE-northeasternislands",
+    "level": "admin2",
+    "name": "NORTH-EASTERN ISLANDS",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (50, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (50, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B32069224114640"
+  },
+  {
+    "id": "SGP-AGE-novena",
+    "level": "admin2",
+    "name": "NOVENA",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 43.1,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 94.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B95000098399892",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Novena's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Novena's residents."
+  },
+  {
+    "id": "SGP-AGE-orchard",
+    "level": "admin2",
+    "name": "ORCHARD",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (920, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (920, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B66952184085972"
+  },
+  {
+    "id": "SGP-AGE-outram",
+    "level": "admin2",
+    "name": "OUTRAM",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 48.6,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 100.9,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B68671251921610",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Outram's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Outram's residents."
+  },
+  {
+    "id": "SGP-AGE-pasirris",
+    "level": "admin2",
+    "name": "PASIR RIS",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 40.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 97.3,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B29273701804010",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Pasir Ris's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Pasir Ris's residents."
+  },
+  {
+    "id": "SGP-AGE-payalebar",
+    "level": "admin2",
+    "name": "PAYA LEBAR",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (40, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (40, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B94191282467265"
+  },
+  {
+    "id": "SGP-AGE-pioneer",
+    "level": "admin2",
+    "name": "PIONEER",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (80, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (80, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B85295053362711"
+  },
+  {
+    "id": "SGP-AGE-punggol",
+    "level": "admin2",
+    "name": "PUNGGOL",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 35.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 97.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B25786536082373",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Punggol's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Punggol's residents."
+  },
+  {
+    "id": "SGP-AGE-queenstown",
+    "level": "admin2",
+    "name": "QUEENSTOWN",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 44.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 88.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B84648729700061",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Queenstown's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Queenstown's residents."
+  },
+  {
+    "id": "SGP-AGE-rivervalley",
+    "level": "admin2",
+    "name": "RIVER VALLEY",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 84.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B8043435112496",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of River Valley's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of River Valley's residents."
+  },
+  {
+    "id": "SGP-AGE-rochor",
+    "level": "admin2",
+    "name": "ROCHOR",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 46.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 99.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B23122165654060",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Rochor's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Rochor's residents."
+  },
+  {
+    "id": "SGP-AGE-seletar",
+    "level": "admin2",
+    "name": "SELETAR",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (300, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (300, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B611024205301"
+  },
+  {
+    "id": "SGP-AGE-sembawang",
+    "level": "admin2",
+    "name": "SEMBAWANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 37.1,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 97.7,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B12357645351124",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Sembawang's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Sembawang's residents."
+  },
+  {
+    "id": "SGP-AGE-sengkang",
+    "level": "admin2",
+    "name": "SENGKANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 37.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 96.5,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B31374659479500",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Sengkang's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Sengkang's residents."
+  },
+  {
+    "id": "SGP-AGE-serangoon",
+    "level": "admin2",
+    "name": "SERANGOON",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 45.1,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 93.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B22202511906994",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Serangoon's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Serangoon's residents."
+  },
+  {
+    "id": "SGP-AGE-simpang",
+    "level": "admin2",
+    "name": "SIMPANG",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B78787723804595"
+  },
+  {
+    "id": "SGP-AGE-singaporeriver",
+    "level": "admin2",
+    "name": "SINGAPORE RIVER",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 40.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 89.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B81262375301476",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Singapore River's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Singapore River's residents."
+  },
+  {
+    "id": "SGP-AGE-southernislands",
+    "level": "admin2",
+    "name": "SOUTHERN ISLANDS",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 90.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B74764311235241",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Southern Islands's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Southern Islands's residents."
+  },
+  {
+    "id": "SGP-AGE-straitsview",
+    "level": "admin2",
+    "name": "STRAITS VIEW",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (0, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B45925583223677"
+  },
+  {
+    "id": "SGP-AGE-sungeikadut",
+    "level": "admin2",
+    "name": "SUNGEI KADUT",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (750, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (750, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B17557865655216"
+  },
+  {
+    "id": "SGP-AGE-tampines",
+    "level": "admin2",
+    "name": "TAMPINES",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 41.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 95.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B27976305021428",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Tampines's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Tampines's residents."
+  },
+  {
+    "id": "SGP-AGE-tanglin",
+    "level": "admin2",
+    "name": "TANGLIN",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 42.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 86.3,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B14347449606367",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Tanglin's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Tanglin's residents."
+  },
+  {
+    "id": "SGP-AGE-tengah",
+    "level": "admin2",
+    "name": "TENGAH",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (10, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (10, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B1982983494790"
+  },
+  {
+    "id": "SGP-AGE-toapayoh",
+    "level": "admin2",
+    "name": "TOA PAYOH",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 45.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 90.5,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B34318351121161",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Toa Payoh's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Toa Payoh's residents."
+  },
+  {
+    "id": "SGP-AGE-tuas",
+    "level": "admin2",
+    "name": "TUAS",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (70, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (70, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B34424424591491"
+  },
+  {
+    "id": "SGP-AGE-westernislands",
+    "level": "admin2",
+    "name": "WESTERN ISLANDS",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (10, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (10, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens. The census prints its age and sex breakdown as '-', withheld."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B57994277396791"
+  },
+  {
+    "id": "SGP-AGE-westernwatercatchment",
+    "level": "admin2",
+    "name": "WESTERN WATER CATCHMENT",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (640, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The census counts fewer than 1000 residents here (640, rounded to the nearest ten in every cell): too few for a median or a ratio worth printing from groups rounded to tens."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B32884228755734"
+  },
+  {
+    "id": "SGP-AGE-woodlands",
+    "level": "admin2",
+    "name": "WOODLANDS",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 38.3,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 100.7,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B81114540383723",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Woodlands's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Woodlands's residents."
+  },
+  {
+    "id": "SGP-AGE-yishun",
+    "level": "admin2",
+    "name": "YISHUN",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 39.7,
+      "unit": "years",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "sex_ratio": {
+      "value": 97.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Census of Population 2020, Singapore Department of Statistics: resident population by planning area/subzone of residence, age group and sex (data.gov.sg)",
+        "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+        "year": 2020,
+        "license": "Singapore Open Data Licence"
+      }
+    ],
+    "country": "SGP",
+    "match_by": "shape_id",
+    "shape_id": "91842731B29417860839565",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle resident, from the 2020 census's count of Yishun's residents by five-year age group (rounded to tens); nothing finer is published by planning area.",
+    "sex_ratio_note": "Males per 100 females among the 2020 census's count of Yishun's residents."
+  }
+]
