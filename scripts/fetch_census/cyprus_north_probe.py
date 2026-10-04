@@ -315,14 +315,26 @@ relation["boundary"="administrative"]["admin_level"~"^(6|7|8|9|10)$"](34.95,32.5
 out tags;"""
 
 
+OVERPASS_MIRRORS = (OVERPASS, "https://overpass.private.coffee/api/interpreter",
+                    "https://maps.mail.ru/osm/tools/overpass/api/interpreter")
+
+
 def overpass(query: str) -> list[dict[str, Any]]:
-    url = OVERPASS + "?" + urllib.parse.urlencode({"data": query})
-    status, ctype, body = fetch(url, timeout=300)
-    log(f"== Overpass HTTP {status} {len(body):,} bytes")
-    if status != 200:
+    """The query's elements, from the main instance or a mirror: one run had
+    the main instance answer 'Network is unreachable' where the run before
+    had read it."""
+    for host in OVERPASS_MIRRORS:
+        url = host + "?" + urllib.parse.urlencode({"data": query})
+        try:
+            status, ctype, body = fetch(url, timeout=300)
+        except Exception as exc:                          # noqa: BLE001 -- reported
+            log(f"== Overpass {host}: {type(exc).__name__}: {str(exc)[:150]}")
+            continue
+        log(f"== Overpass {host} HTTP {status} {len(body):,} bytes")
+        if status == 200:
+            return json.loads(body).get("elements", [])
         log(body[:300].decode("utf-8", "replace"))
-        return []
-    return json.loads(body).get("elements", [])
+    return []
 
 
 def p_osm_places(a: argparse.Namespace) -> None:
