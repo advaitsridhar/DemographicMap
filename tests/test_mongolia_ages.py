@@ -1,8 +1,11 @@
-"""Mongolia's soum ages: json-stat2 reading, the sums, binding, offline.
+"""Mongolia's soum ages: json-stat2 reading, the sums, the 2025 moves, binding, offline.
 
-Two aimags -- Arkhangai with two soums, and Khuvsgul (drawn "Hovsgel") with
-one -- and the capital with one district, laid out as data.1212.mn's PxWeb
-answers DT_NSO_0300_067V2 and DT_NSO_0300_068V2 in json-stat2.
+Arkhangai with two soums, Khuvsgul (drawn "Hovsgel") with one, Töv with one,
+and the capital with one district and one soum the office has filed under it
+since the 2025 reform (71126 Bayan) but the boundary file draws in Töv --
+laid out as data.1212.mn's PxWeb answers DT_NSO_0300_067V2 and
+DT_NSO_0300_068V2 in json-stat2. The office's aimag rows leave the moved soum
+out of both the capital and Töv, as its real rows do.
 """
 
 import sys
@@ -17,12 +20,12 @@ from scripts.fetch_census import mongolia_ages as ma  # noqa: E402
 
 GROUPS = [f"    {a}-{a + 4}" for a in range(0, 70, 5)] + ["    70+"]
 EN = {"0": "Total", "1": "Khangai region", "165": "Arkhangai", "16501": "Erdenebulgan",
-      "16513": "Ikhtamir", "167": "Khuvsgul", "16701": "Murun", "511": "Ulaanbaatar",
-      "51101": "Bayanzurkh"}
+      "16513": "Ikhtamir", "167": "Khuvsgul", "16701": "Murun", "041": "Tuv",
+      "04101": "Zuunmod", "711": "Ulaanbaatar", "71101": "Bayanzurkh", "71126": "Bayan"}
 MN = {"0": "Улсын дүн", "1": "Хангайн бүс", "165": "Архангай", "16501": "Эрдэнэбулган",
-      "16513": "Их тамир", "167": "Хөвсгөл", "16701": "Мөрөн", "511": "Улаанбаатар",
-      "51101": "Баянзүрх"}
-SOUMS = {"16501": 3, "16513": 1, "16701": 2, "51101": 10}
+      "16513": "Их тамир", "167": "Хөвсгөл", "16701": "Мөрөн", "041": "Төв",
+      "04101": "Зуунмод", "711": "Улаанбаатар", "71101": "Баянзүрх", "71126": "Баян"}
+SOUMS = {"16501": 3, "16513": 1, "16701": 2, "04101": 2, "71101": 10, "71126": 1}
 
 
 def counts(scale):
@@ -32,27 +35,25 @@ def counts(scale):
     return men, women
 
 
+def total_of(rows):
+    return tuple([sum(x) for x in zip(*[r[i] for r in rows])] for i in (0, 1))
+
+
 def tables():
-    by_area = {}
-    for code, scale in SOUMS.items():
-        by_area[code] = counts(scale)
-    for aimag in ("165", "167", "511"):
-        parts = [by_area[c] for c in SOUMS if c.startswith(aimag)]
-        by_area[aimag] = tuple([sum(x) for x in zip(*[p[i] for p in parts])] for i in (0, 1))
-    region = ["165", "167"]
-    by_area["1"] = tuple([sum(x) for x in zip(*[by_area[a][i] for a in region])] for i in (0, 1))
-    nation = ["165", "167", "511"]
-    by_area["0"] = tuple([sum(x) for x in zip(*[by_area[a][i] for a in nation])] for i in (0, 1))
+    by_area = {code: counts(scale) for code, scale in SOUMS.items()}
+    for aimag in ("165", "167", "041", "711"):
+        # The office's aimag row leaves the moved soum out.
+        by_area[aimag] = total_of([by_area[c] for c in SOUMS
+                                   if c.startswith(aimag) and c not in ma.MOVED])
+    by_area["1"] = total_of([by_area["165"], by_area["167"]])
+    by_area["0"] = total_of([by_area[c] for c in SOUMS])
     return by_area
 
 
 def payload(var, var_labels, by_area, cell):
     areas = list(EN)
     first = list(var_labels)
-    values = []
-    for v in first:
-        for a in areas:
-            values.append(cell(v, by_area[a]))
+    values = [cell(v, by_area[a]) for v in first for a in areas]
     return {"id": [var, ma.REGION, ma.YEAR_VAR], "size": [len(first), len(areas), 1],
             "dimension": {
                 var: {"category": {"index": {c: i for i, c in enumerate(first)},
@@ -83,11 +84,13 @@ def age_payload(by_area):
 
 def drawn():
     admin1 = [{"id": "A-ark", "name": "Arkhangai"}, {"id": "A-hov", "name": "Hovsgel"},
-              {"id": "A-ub", "name": "Ulaanbaatar"}]
+              {"id": "A-tuv", "name": "Töv"}, {"id": "A-ub", "name": "Ulaanbaatar"}]
     admin2 = [{"id": "S1", "name": "Erdenebulgan", "parent": "A-ark"},
               {"id": "S2", "name": "Ixtamir", "parent": "A-ark"},
               {"id": "S3", "name": "Mo'ron", "parent": "A-hov"},
-              {"id": "S4", "name": "Bayanzu'rx", "parent": "A-ub"}]
+              {"id": "S4", "name": "Zuunmod", "parent": "A-tuv"},
+              {"id": "S5", "name": "Bayan", "parent": "A-tuv"},
+              {"id": "S6", "name": "Bayanzu'rx", "parent": "A-ub"}]
     return admin1, admin2
 
 
@@ -102,7 +105,8 @@ class Build(unittest.TestCase):
         self.records = {r["shape_id"]: r for r in build()}
 
     def test_every_unit(self):
-        self.assertEqual(sorted(self.records), ["A-ark", "A-hov", "A-ub", "S1", "S2", "S3", "S4"])
+        self.assertEqual(sorted(self.records),
+                         ["A-ark", "A-hov", "A-tuv", "A-ub", "S1", "S2", "S3", "S4", "S5", "S6"])
 
     def test_values(self):
         r = self.records["S2"]
@@ -114,13 +118,27 @@ class Build(unittest.TestCase):
         self.assertTrue(0 < r["median_age"]["value"] < 70)
         self.assertEqual(r["match_by"], "shape_id")
 
-    def test_capital_district(self):
-        self.assertIn("this district", self.records["S4"]["median_age_note"])
+    def test_moved_soum_is_drawn_in_its_old_aimag(self):
+        bayan = self.records["S5"]
+        men, women = counts(1)
+        self.assertEqual(bayan["population"]["value"], sum(men) + sum(women))
+        self.assertIn("2025 reform", bayan["median_age_note"])
+        self.assertIn("this soum", bayan["median_age_note"])
+        tuv = self.records["A-tuv"]
+        self.assertEqual(tuv["population"]["value"],
+                         sum(sum(x) for x in counts(2)) + sum(sum(x) for x in counts(1)))
+        self.assertIn("adds Bayan", tuv["population_note"])
+        ub = self.records["A-ub"]
+        self.assertEqual(ub["population"]["value"], sum(sum(x) for x in counts(10)))
+        self.assertIn("leaves out Bayan", ub["population_note"])
+
+    def test_district(self):
+        self.assertIn("this district", self.records["S6"]["median_age_note"])
         self.assertEqual(self.records["A-hov"]["level"], "admin1")
 
 
 class Refusals(unittest.TestCase):
-    def test_soums_must_make_the_aimag(self):
+    def test_soums_must_make_an_untouched_aimag(self):
         by_area = tables()
         by_area["16513"] = counts(2)
         with self.assertRaises(SystemExit):
@@ -134,9 +152,16 @@ class Refusals(unittest.TestCase):
 
     def test_drawn_soum_the_office_does_not_list(self):
         admin1, admin2 = drawn()
-        admin2.append({"id": "S5", "name": "Tariat", "parent": "A-ark"})
+        admin2.append({"id": "S9", "name": "Tariat", "parent": "A-ark"})
         with self.assertRaises(SystemExit):
             build(admin=(admin1, admin2))
+
+    def test_a_moved_code_naming_another_soum(self):
+        en = dict(EN, **{"71126": "Somewhere else"})
+        by_area = tables()
+        admin1, admin2 = drawn()
+        with self.assertRaises(SystemExit):
+            ma.build(sex_payload(by_area), age_payload(by_area), en, MN, admin1, admin2)
 
     def test_group_bounds(self):
         self.assertEqual(ma.group_bounds("    65-69"), (65, 5))
