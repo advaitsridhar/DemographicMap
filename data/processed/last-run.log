@@ -1,50 +1,482 @@
-australia_profile: ABS 2021 Census G01, G02, G08, G13 and G14
-  C21_G01_LGA [1+2+3.P_1...]: 1,695 observations
-  C21_G02_LGA [1...]: 565 observations
-  C21_G08_LGA [._T...]: 18,645 observations
-  C21_G13_LGA [3._T+1+O_T+8+_N._T...]: 2,825 observations
-  C21_G01_SA2 [1+2+3.P_1..AUS+STE.]: 30 observations
-  C21_G02_SA2 [1..AUS+STE.]: 10 observations
-  C21_G08_SA2 [._T..AUS+STE.]: 330 observations
-  C21_G14_SA2 [.3..AUS+STE.]: 340 observations
-  C21_G13_SA2 [3.._T..AUS+STE.]: 470 observations
-  Australia English ancestry 33.0% (published 33.0%)
-  Australia Australian ancestry 29.9% (published 29.9%)
-  state 1: LGAs sum to 8,072,171, the state's own 8,072,163
-  state 2: LGAs sum to 6,503,503, the state's own 6,503,491
-  state 3: LGAs sum to 5,156,158, the state's own 5,156,138
-  state 4: LGAs sum to 1,781,501, the state's own 1,781,516
-  state 5: LGAs sum to 2,660,019, the state's own 2,660,026
-  state 6: LGAs sum to 557,570, the state's own 557,571
-  state 7: LGAs sum to 232,621, the state's own 232,605
-  state 8: LGAs sum to 454,495, the state's own 454,499
-  state 9: LGAs sum to 4,790, the state's own 4,788
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 10 regions
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree less a duplicated parent for 10 regions
-  Australia Christianity 43.9% (published 43.9%)
-  Australia English only 72.0% (published 72.0%)
-  East Arnhem (71300): language from G13's coarse partition {'English only': 504, 'Australian Indigenous Languages': 7676, 'Other languages': 127, 'Not stated': 469}
-  West Daly (74680): language from G13's coarse partition {'English only': 355, 'Australian Indigenous Languages': 2477, 'Other languages': 29, 'Not stated': 109}
-  no polygon, counted in its state only: No usual address (NSW) (19499, 11,371 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (NSW) (19799, 0 people)
-  no polygon, counted in its state only: No usual address (Vic.) (29499, 9,089 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Vic.) (29799, 38 people)
-  no polygon, counted in its state only: No usual address (Qld) (39499, 14,670 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Qld) (39799, 183 people)
-  no polygon, counted in its state only: No usual address (SA) (49499, 3,377 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (SA) (49799, 12 people)
-  no polygon, counted in its state only: No usual address (WA) (59499, 8,055 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (WA) (59799, 514 people)
-  no polygon, counted in its state only: No usual address (Tas.) (69499, 1,377 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Tas.) (69799, 19 people)
-  no polygon, counted in its state only: No usual address (NT) (79499, 3,500 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (NT) (79799, 99 people)
-  no polygon, counted in its state only: No usual address (ACT) (89499, 605 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (ACT) (89799, 0 people)
-  no polygon, counted in its state only: No usual address (OT) (99499, 11 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (OT) (99799, 0 people)
-  18 LGA codes have no polygon; 0 of them are not a no-usual-address or migratory code: []
-  {'admin1': 9, 'admin2': 547} records; median age on 556, ancestry on 556
-  wrote data/processed/australia_profile.json (2789 kB)
+probe_pdf: https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/Basic_Tables/2020NPHC_Volume_1_-_Version_2.pdf
+  14,955,957 bytes
+  384 pages
+probe_pdf: 384 pages, 53 mention ['Religion', 'religion', 'Ethnic', 'ethnic', 'Language', 'language', 'Median', 'median', 'Area+Council']
+=== front matter ===
+Version 2
+
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+i
+Foreword
+
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+ii
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+iii
+ACKNOWLEDGEMENTS 
+Many institutions and businesses supported the work of the 2020 National Population and Housing 
+Census.  These include the Ministry of Finance and Economic Management, the Department of Local 
+Authorities for their fieldwork support, the Vanuatu Christian Council, the National Youth Council, 
+the Malvatumauri National Council of Chiefs, and Vanuatu Broadcasting and Television Corporation 
+for their support with public awareness and cooperation, Air Vanuatu for their support with training 
+and fieldwork logistics, and Digicel Vanuatu.  The VNSO wishes to extend our gratitude to these 
+organizations for enabling the successful collection of census data.   
+My appreciation is extended to the Pacific Community (SPC) Statistics for Development Division, as 
+well as to Mr. Geoffrey Hayes, for the technical assistance provided.  I also acknowledge the indirect 
+support of the European Union in acquiring new tablets that were used for the census, as well as 
+financial support from the UNFPA supporting technical assistance as well as piloting of the census 
+instruments.   
+I would also like to thank the former Government Statistician, Mr Kap Andy Calo, and the 2020 
+National Population and Housing Census team, led by the Census Coordinator, Mr. Jimmy Tamkela, 
+and his assistant, Ms. Grace Tabi.  The advice and guidance given to them by members of the Census 
+Steering Committee, including the late Ps. Alan Nafuki, bolstered their success in completing a 
+national census in the midst of an uncertain global pandemic.  The encouragement and trust given 
+by the Census Steering Committee has enabled us to have this critical data available today.   
+Lastly and most importantly, to the Government and people of Vanuatu, I extend my sincerest 
+thanks and gratitude for your invaluable cooperation, support, and participation in the 2020 
+National Population and Housing Census.   
+In gratitude, 
+ 
+ 
+ 
+Mr Benuel Lenge 
+Government Statistician 
+Vanuatu National Statistics Office 
+Republic of Vanuatu 
+ 
+Acknowledgements
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+iv
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+v
+1) All numbers used in tables are calculated using a correction factor for each enumeration area. The correction factor technique is 
+used to adjust for populations and household counts for areas that may have coverage issues. The application 
+of correction factors resulted in numbers  having decimal numbers and the rounding of the numbers may result 
+in slight difference in totals. 
+2) For values that are too small or few cases, further disagregation may not be possible to avoid having to 
+reveal any identity, in line with provisions of the statisticis act. Tables that cannot fit in one page continue in 
+another
+3) This is the second version to the volume 1, released during  the official release with additional  tables. The 
+tables are downloadable from the website in pdf and excel format More information 
+For more information about the Vanuatu 2020 National Population and Housing Census, or to request additional 
+statistical information from the census not published in this summary publication, please contact the Vanuatu National 
+Statistics Office (VNSO): 
+Vanuatu National Statistics Office 
+VIT Complex, Colardeau Street   Vanuatu National Statistics Office  
+Private Mail Bag 9019 
+Port Vila                              @vnso_stats 
+Vanuatu 
+Tel: (+678) 33040 
+E-mail: stats@vanuatu.gov.vu 
+ 
+ 
+Provincial Statistics Offices 
+MFEM Building 
+P.O. Box 273 
+Luganville, Santo 
+SANMA Province 
+Tel: (+678) 33755 / VOIP: 6330/6325 
+ 
+MFEM Building 
+Sola, Vanua Lava 
+TORBA Province 
+ 
+MFEM Building 
+Isangel, Tanna 
+TAFEA Province 
+Tel: (+678) 88014 / VOIP: 8361 
+ 
+MFEM Building 
+P.O. Box 8 
+Saratamata, Ambae 
+PENAMA Province 
+ 
+MFEM Building 
+P.O. Box 22 
+Lakatoro, Malekula 
+MALAMPA Province 
+Tel: (+678) 48400 / VOIP: 7475 
+ 
+You can find this publication, along with all previous and future publications relating to the 2020 National Population and Housing 
+Census, at www.vnso.gov.vu .  
+General Information
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+vi
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+vii
+Table 1. 2020 National population Census key indicators
+INDICATOR VANUATU URBAN PORT VILA LUGANVILLE RURAL TORBA SANMA PENAMA MALAMPA SHEFA TAFEA
+Total Population 300,019     66,753   49,034         17,719              233,266   11,330   43,165   35,607     42,499        54,953   45,714   
+Males 151,597     33,606   24,641         8,965                117,991   5,711     22,316   18,033     21,495        27,574   22,862   
+Females 148,422     33,147   24,393         8,754                115,275   5,619     20,848   17,574     21,004        27,379   22,851   
+Total Population (Private HHs) 293,963     65,868   48,461         17,407              228,095   11,215   42,245   34,123     41,506        54,107   44,899   
+Males 148,354     32,998   24,259         8,739                115,356   5,645     21,834   17,283     20,969        27,157   22,468   
+Females 145,609     32,870   24,202         8,668                112,739   5,570     20,411   16,840     20,537        26,950   22,431   
+Av. Popn growth rate (% pa) 2.3             1.4         1.0               2.7                   2.5          1.7         2.3         1.3           1.3              4.0         3.1         
+Popn Density (persons/km²) 24              1,376    2,077           712                  19           13          14          30            15               69          28          
+Population Structure
+Population (<15years) 115,767      21,849   15,554         6,295                93,918    4,644     17,649   14,587     16,728        20,231   20,078   
+Males 59,947       11,299   8,040           3,036                48,649    2,362     9,282     7,545       8,575          10,446   10,438   
+Females 55,820        10,551   7,515           3,259                45,269    2,282     8,367     7,042       8,153          9,785     9,640     
+Population (15 +years) 184,252      44,904   33,480         11,424              139,348   6,686     25,516   21,020     25,771        34,722   25,636   
+Males 91,650       22,308   16,601         5,929                69,342    3,349     13,035   10,488     12,920        17,127   12,424   
+Females 92,602       22,596   16,878         5,495                70,006    3,337     12,481   10,532     12,851        17,594   13,212   
+Population (15-24 years) 54,721        12,956   9,478           3,478                41,765    1,890     7,814     6,481       7,087          9,956     8,537     
+Males 27,614       6,431     4,695           1,736                21,183    961        4,021    3,273       3,702          5,021     4,205     
+Females 27,107        6,524     4,783           1,741                20,582    929        3,793    3,208       3,385          4,935     4,332     
+Population (12-30 years) 103,007     24,529   18,001         6,527                78,478    3,747     14,853   11,856     13,438        18,834   15,751   
+Males 51,721       12,332   9,028           3,304                39,389    1,881     7,554     5,931       6,881          9,386     7,756     
+Females 51,286        12,197   8,973           3,223                39,089    1,866     7,298     5,925       6,556          9,448     7,995     
+Population (18+ years) 165,214      41,188   30,841         10,346              124,026   6,031     22,887   18,156     23,044        31,357   22,551   
+Males 81,915        20,428   15,250         5,178                61,487    2,995     11,663   9,042       11,513        15,406   10,867   
+Females 83,299        20,759   15,591         5,168                62,540    3,036     11,224   9,113       11,532        15,951   11,684   
+Median age 20              23          24                22                    19           19          19          18            20               22          17          
+Dependency ratio (15-64) 75              56          53                64                    81           84          81          84            82               70          92          
+Sex ratio 102            101        101              102                  102         102        107        103          102             101        100        
+Labour Force (15+) 83,778       23,853   18,090          5,762                59,926     2,662     15,238   8,619       12,037        15,387   5,982     
+Employed population 78,729       21,567   16,263         5,304                57,162    2,524     14,905   8,301       11,772        14,534   5,127     
+Males 43,099       12,109   8,953           3,156                30,990    1,392     8,109     4,475       6,220          7,988     2,807     
+Females 35,630       9,458     7,310           2,148                26,172    1,132     6,796     3,826       5,552          6,546     2,320     
+Unemployed 5,049         2,286     1,827           459                  2,763      138        333        318          266             853        855        
+Males 2,647         1,196     987              209                  1,451      66          175        165          158             442        445        
+Females 2,402         1,090     840              250                  1,312      72          159        152          108             412        410        
+LFPR 46.7           54.1       54.9             51.8                 44.3        40.3       61.0       43.6         48.1            45.3       24.0       
+Males 51.2           60.9       61.2             61.3                 48.0        43.4       65.0       47.0         50.8            50.2       25.8       
+Females 41.7           46.8       48.8             42.5                 40.0        35.5       56.7       39.7         45.1            40.3       20.1       
+Employment-population ratio 94.0            25.7       19.4             6.3                   68.2        3.0         17.8       9.9           14.1            17.3       6.1         
+Males 51.4            14.5       10.7             3.8                   37.0        1.7         9.7         5.3           7.4              9.5         3.4         
+Females 42.5           11.3       8.7               2.6                   31.2        1.4         8.1         4.6           6.6              7.8         2.8         
+Unemployment rate 6.0             2.7         2.2               0.5                   3.3          0.2         0.4         0.4           0.3              1.0         1.0         
+Males 2.5              1.2         1.2               0.2                   1.3          0.0         0.2         0.2           0.1              0.5         0.3         
+Females 2.2             1.1         1.0               0.3                   1.1          0.0         0.2         0.1           0.1              0.4         0.3         
+Currently in School (3+) 87,054       19,634   14,420         5,214                67,419    3,063     12,450   9,759       13,033        15,566   13,549   
+Males 51.3            50.2       49.9             51                    51.6        50.6       52.7       51.5         51.0            51.0       52.1       
+Females 48.7           49.8       50.1             49                    48.4        49.4       47.3       48.5         49.0            49.0       47.9       
+2020 POPULATION AND HOUSING CENSUS
+ KEY INDICATORS
+Labour
+Education
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+viii
+Table 1 : 2020 National population Census key indicators
+INDICATOR VANUATU URBAN PORT VILA LUGANVILLE RURAL TORBA SANMA PENAMA MALAMPA SHEFA TAFEA
+2020 POPULATION AND HOUSING CENSUS
+ KEY INDICATORS
+Proportion (%) by highest education completed (15+)
+Primary education 59.0           38.0       35.8 44.4 66.0        73.7       68.0       70.8         70.8            57.2       66.1       
+Males 59.0            37.3       34.7 44.8 66.1        74.9       68.6       70.9         70.1            57.1       66.1       
+Females 59.0           38.7       36.9 43.9 65.9        72.5       67.4       70.6         71.5            57.3       66.1       
+Secondary education 34.3           48.0       48.0 47.9 30.6        23.6       28.1       35.3         25.8            37.0       31.1       
+Males 33.3            46.6       46.8 46.1 28.9        21.7       26.8       26.3         25.6            35.2       29.9       
+Females 35.3           49.3       49.2 49.6 30.6        25.5       29.4       26.3         25.6            35.2       29.9       
+Tertiary education 2.4             6.0         7.1 2.6 1.2          0.4         1.0         0.5           0.5              2.6         1.0         
+Males 2.9              7.0         8.3 3.1 1.5          0.7         1.3         0.6           4.1              3.1         1.3         
+Females 2.0             5.0         6.0 2.1 1.0          0.2         0.6         0.4           0.4              2.2         0.7         
+Vocational/Professional 3.8             7.8         8.9 4.9 2.5          1.4         10.2       1.3           2.5              3.9         1.8         
+Males 4.4              8.9         10.0 5.7 2.9          7.8         9.8         1.6           3.1              4.4         2.3         
+Females 3.2             6.8         7.8 4.1 2.0          0.8         1.8         1.0           1.8              3.4         1.3         
+Literacy rate (15+) English 76.9           89.5       90.0 87.8 72.8        73.9       70.9       67.2         74.0            88.3       56.4       
+Males 77.8            89.6       90.2 87.7 73.9        74.7       71.2       68.8         74.8            89.0       58.9       
+Females 76.0           89.3       89.8 87.9 71.6        73.1       70.7       65.7         73.1            87.6       54.0       
+Literacy rate (15+) French 40.0           48.4       47.0             52.6                 37.2        27.1       33.2       33.8         38.7            46.3       32.9       
+Males 39.5            47.2       45.8             51.4                 37.1        27.0       32.9       33.0         39.0            45.3       34.1       
+Females 40.4           49.5       48.1             53.7                 37.4        27.2       33.5       34.6         38.5            47.2       31.8       
+Internet use (as % of ages 15+) 26.2           48.3       42.4 50.4 19.7        14.3       17.7       14.3         19.1            32.9       11.0       
+Males 28.3            49.4       44.3 51.3 22.1        17.1       20.5       18.4         22.2            34.1       12.7       
+Females 24.1           47.2       40.5 49.6 17.2        11.5       14.7       10.2         16.0            31.8       9.4         
+Blindness 3,703         783        500              282                  2,920      200        636        563          605             516        400        
+Deafness 2,358         390        246              145                  1,968      155        411        314          408             373        307        
+Lameness 3,977         665        424              241                  3,312      228        701        525          709             639        511        
+Senile and/or amnesic 2,066         296        192              103                  1,770      142        343        302          334             333        316        
+Self-care 1,424         254        155              99                    1,169      64          204        208          225             241        228        
+Communicating 1,405         216        149              67                    1,189      89          202        209          258             239        192        
+Access to treated bed nets 172,135     20,321   8,087           12,234              151,814   9,613     36,346   28,888     39,140        22,514   15,313   
+Sleep under treated bed nets 140,128     11,347   4,063           7,284                128,781   8,704     32,811   25,986     35,652        14,908   10,720   
+Number of private HH's 63,365       14,702   11,195         3,617                48,663    2,392     9,306     7,863       9,715          11,148   8,239     
+ HH size (Av. per HH) 4.7             4.5         4.4               4.9                   4.8          4.7         4.6         4.5           4.4              4.9         5.5         
+HH's engaged in livestock prod 65.4           16.7       13.1             27.9                 80.1        79.6       80.0       87.1         83.0            64.3       91.9       
+
+=== pages mentioning ['Religion', 'religion', 'Ethnic', 'ethnic', 'Language', 'language', 'Median', 'median', 'Area+Council'] (first 10) ===
+
+--- page 9 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+vii
+Table 1. 2020 National population Census key indicators
+INDICATOR VANUATU URBAN PORT VILA LUGANVILLE RURAL TORBA SANMA PENAMA MALAMPA SHEFA TAFEA
+Total Population 300,019     66,753   49,034         17,719              233,266   11,330   43,165   35,607     42,499        54,953   45,714
+Males 151,597     33,606   24,641         8,965                117,991   5,711     22,316   18,033     21,495        27,574   22,862
+Females 148,422     33,147   24,393         8,754                115,275   5,619     20,848   17,574     21,004        27,379   22,851
+Total Population (Private HHs) 293,963     65,868   48,461         17,407              228,095   11,215   42,245   34,123     41,506        54,107   44,899
+Males 148,354     32,998   24,259         8,739                115,356   5,645     21,834   17,283     20,969        27,157   22,468
+Females 145,609     32,870   24,202         8,668                112,739   5,570     20,411   16,840     20,537        26,950   22,431
+Av. Popn growth rate (% pa) 2.3             1.4         1.0               2.7                   2.5          1.7         2.3         1.3           1.3              4.0         3.1
+Popn Density (persons/km²) 24              1,376    2,077           712                  19           13          14          30            15               69          28
+Population Structure
+Population (<15years) 115,767      21,849   15,554         6,295                93,918    4,644     17,649   14,587     16,728        20,231   20,078
+Males 59,947       11,299   8,040           3,036                48,649    2,362     9,282     7,545       8,575          10,446   10,438
+Females 55,820        10,551   7,515           3,259                45,269    2,282     8,367     7,042       8,153          9,785     9,640
+Population (15 +years) 184,252      44,904   33,480         11,424              139,348   6,686     25,516   21,020     25,771        34,722   25,636
+Males 91,650       22,308   16,601         5,929                69,342    3,349     13,035   10,488     12,920        17,127   12,424
+Females 92,602       22,596   16,878         5,495                70,006    3,337     12,481   10,532     12,851        17,594   13,212
+Population (15-24 years) 54,721        12,956   9,478           3,478                41,765    1,890     7,814     6,481       7,087          9,956     8,537
+Males 27,614       6,431     4,695           1,736    
+
+--- page 10 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+viii
+Table 1 : 2020 National population Census key indicators
+INDICATOR VANUATU URBAN PORT VILA LUGANVILLE RURAL TORBA SANMA PENAMA MALAMPA SHEFA TAFEA
+2020 POPULATION AND HOUSING CENSUS
+ KEY INDICATORS
+Proportion (%) by highest education completed (15+)
+Primary education 59.0           38.0       35.8 44.4 66.0        73.7       68.0       70.8         70.8            57.2       66.1
+Males 59.0            37.3       34.7 44.8 66.1        74.9       68.6       70.9         70.1            57.1       66.1
+Females 59.0           38.7       36.9 43.9 65.9        72.5       67.4       70.6         71.5            57.3       66.1
+Secondary education 34.3           48.0       48.0 47.9 30.6        23.6       28.1       35.3         25.8            37.0       31.1
+Males 33.3            46.6       46.8 46.1 28.9        21.7       26.8       26.3         25.6            35.2       29.9
+Females 35.3           49.3       49.2 49.6 30.6        25.5       29.4       26.3         25.6            35.2       29.9
+Tertiary education 2.4             6.0         7.1 2.6 1.2          0.4         1.0         0.5           0.5              2.6         1.0
+Males 2.9              7.0         8.3 3.1 1.5          0.7         1.3         0.6           4.1              3.1         1.3
+Females 2.0             5.0         6.0 2.1 1.0          0.2         0.6         0.4           0.4              2.2         0.7
+Vocational/Professional 3.8             7.8         8.9 4.9 2.5          1.4         10.2       1.3           2.5              3.9         1.8
+Males 4.4              8.9         10.0 5.7 2.9          7.8         9.8         1.6           3.1              4.4         2.3
+Females 3.2             6.8         7.8 4.1 2.0          0.8         1.8         1.0           1.8              3.4         1.3
+Literacy rate (15+) English 76.9           89.5       90.0 87.8 72.8        73.9       70.9       67.2         74.0            88.3       56.4
+Males 77.8            89.6       90.2 87.7 73.9        74.7       71.2       68.8         74.8            89.0       58.9
+Females 76.0           89.3       89.8 87.9 71.6        73.1       70.7       65.7         73.1            87.6       54.0
+Literacy rate (15+) French 40.0           48.4       47.0             52.6                 37.2        27.1       33.2       33.8         38.7            46.3       32.9
+Males 39.5            47.2       45.8             51.4
+
+--- page 11 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+1
+Table of Contents
+Foreword. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .i
+Acknowledgements. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   iii
+General Information. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   v
+Table 1. 2020 National population Census key indicators. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .  vii
+2020 National Population and housing Censu background. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   5
+Concepts and Definitions. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 14
+Table 1.1: Total population by region, sex, and number of people living in households by household type. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 23
+Table 2.1 Total population by 5-year age groups and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 25
+Table 2.3 Total female population by 5-year age groups and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 33
+Table 2.4: Total population by place of residence, 5-year age groups and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 
+
+--- page 12 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+2
+Table 6.5: Female population 3 years and over living in private households, currently attending an educational institution by level of education and region . . .   .   .   .   147
+Table 6.6: Total Population 3 years and over living in private households, currently attending school or other educational institution by age, sex and level of education . .
+.   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   149
+Table 6.7: Total population 15 years and over living in private households with highest level of education completed by sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   152
+Table 6.8: Male population living in private households 15 years and older with highest level of education completed by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   156
+ Table 6.9: Female population 15 years and over living in private households with highest level of education completed by region . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   160
+Table 6.10: Population 15 years and over living in private households by age group, sex and highest level of education completed. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   164
+Table 6.11: Total Population 3 years and over living in private households by sex and by language of instruction received at educational institution. .  .   .   .   .   .   .   .   166
+Table 6.12: Population 15 years and over living in private households by sex in English language ability by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   170
+Table 6.13: Population 15 years and over living in private households by sex in French language ability by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   172
+Table 6.14: Population 15 years and over living in private households by sex, ability to read Vernacular language by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   174
+Table 6.15: Population 15 years and over living in private households by sex, ability to write Vernacular language by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   176
+Table 6.16: Population 3 years and
+
+--- page 15 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+5
+A) IInnttrroodduuccttiioonn
+The Census is the official count of population, dwellings and households in Vanuatu and it provides a ‘snapshot’
+of the country at one specific point in time: midnight 16th November 2020. The Census provides a unique source
+of detailed demographic, social and economic information about the whole population of Vanuatu. This
+information is used for policy making and planning, monitoring and evaluation, research and other decision
+making. There are many users of statistics from the Census including government agencies like the Ministry of
+Finance and Economic Management for resource allocation, the Ministry of Education and Youth Development
+and Training for the population in each of the school catchment areas as well as population projections for the
+school population of the future, the Ministry of Health uses the population, fertility and household amenity
+information for a number of purposes in its planning and decision making as well as monitoring and evaluation.
+Students are avid users of Census data for the many research projects they undertake. The Census provides
+information for local government (Province, Area Council) in its activities as well as numerous private
+researchers and their subjects of interest. The Census data is also available in Geographic Information System
+output format which is used for agricultural land use planning when used in conjunction with other map layers
+such as type of topsoil, and patterns of population distribution used for transport and other infrastructure
+planning.
+B) AA  bbrriieeff  hhiissttoorryy  ooff  CCeennssuuss  ttaakkiinngg  iinn  VVaannuuaattuu
+A full census has taken place in Vanuatu every 10 years since 1979. Unlike many other Pacific countries,
+Vanuatu does not have a long history of census taking. The first National Population Census took place in 1967,
+followed by another in 1979. The first official population Census in 1967 enumerated over 70,000 New
+Hebrideans (today referred to as Ni‐Vanuatu) and 5,745 other people of different ethnic groups.
+The second national population census was in 1979, a year before the condominium’s
+independence. Three other full national censuses have been conducted since the country’s independence in
+1980. The first census after independence took place on the 16th of May 1989 with the theme “The First National
+Population Census of Vanuatu conducted by Ni‐Vanuatu”. 
+
+--- page 20 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+10
+D) CCeennssuuss  pprreeppaarraattiioonnss
+Census information technology
+For the 2020 Census the VNSO took part in two regional initiatives: one involving the use of GPS (Global
+Positioning System) technology to map individual households and the second to improve the efficiency of data
+collection by using android tablets programmed with a data collection software. The use of tablets has been first
+used as trial in the 2016 mini census and proved effective. The VNSO has taken up this initiative to continue with
+the use of tablets in all its surveys and censuses. Regardless of this sudden shift in data collection method-from
+paper form to the use of tablets- there are pros and cons in both methods that the census team has to ensure is
+managed properly to safeguard the data that is collected in the field.
+Questionnaire Development
+The 2020 Census questionnaire was designed to ensure consistency with the 2009 Census statistical
+information while meeting regional standards for ‘model’ questionnaire and meeting international statistical
+requirements. The Census Pre‐test survey was conducted in 3 provinces during June 2020, precisely the same
+year of the census actual collection. For the urban areas, three areas in Port Vila and 3 areas in the Peri-urban
+on the outskirt of Port Vila and five areas in the rural of Efate Island: The area known as Blacksands on the
+outskirts of Port Vila and five areas around Luganville town and others were selected as the developing areas
+representing peri‐urban areas, and for the rural areas, Tanna island in Tafea province was selected for inclusion
+in the Pre‐test. The Pre‐test provided the opportunity to test both the questionnaires in terms of question content
+and order of questions and the Census data collection using the tablets to synchronize the data back to Port Vila
+using the Survey Solution software.
+The Pre‐test included a number of ‘new’ questions compared to that used in 2009. Based onsubmissions by
+users and follow‐up discussions about their information needs, questions ondisability, mortality, literacy, the main
+source of household income, if a person had worked overseas in the last 12 months, the use of mobile phones,
+and small businesses operated by households were tested and refined.
+Based on lessons learnt from the Pre‐test, other household surveys and the 2009 Census forms, all questions
+were programmed into the tablets includin
+
+--- page 22 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+12
+completed in most areas of the country within two weeks. In areas that were particularly difficult to reach, or
+where transport was difficult to arrange and, in some cases, not available at all, the enumeration took longer.
+A Post Enumeration Survey (PES) planned for two weeks after the completion of enumeration did not eventuate
+as some areas were still conducting interviews and the timing was inconvenient because of the festive season
+(Christmas and New Year).  Furthermore, there was a lot people moving between communities at that time so
+the objective of the PES to re‐count household members to verify Census counts would have been difficult to
+achieve. Vanuatu has never conducted a PES and one of the contributing factors is the capacity as requirements
+of PES is to have independent bodies conducting such activity, other than VNSO itself
+Census data processing
+The use of the tablets in the data collection during the 2020 census did apply same steps of data checks. This
+time, the interviewer was provided the opportunity to check his or her own work by going through what s/he has
+entered into the tablets to see if all questions have been answered correctly. The checked questions are then
+sent to the specific team Supervisors tablets using the Digicel data network. The supervisor then checked the
+incoming questionnaire for any mistakes. If a supervisor identified a mistake, he or she would make a comment
+on the specific question and send the questionnaire back to the respective enumerator to amend the error.
+If the supervisor checks the questions and no error is identified, the supervisor sends the checked question to his
+or her respective HQ supervisor to go through the questionnaire again for any errors the supervisors might have
+overlooked. If no error is identified by the HQ supervisor, this question is being approved the HQ supervisor and
+stored away in the data awaiting to be worked on after the census enumeration.
+In order to obtain accurate statistics from household-based surveys such as the Census, the data must be as
+free as possible from errors and inconsistencies. Statistics derived from 'dirty data' (that is, data which contains
+errors) may produce an inaccurate profile of the country or geographic area.
+Therefore, before any final Census databases were created and tabulation programs run, the data was checked
+for errors and edited so that important data items 
+
+--- page 30 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+20
+Concept Definition
+Canoe with motor: Traditional canoes however it is propelled using the help of a
+motor engine instead of using a paddle
+Median age  the age that divides a population into two numerically equal groups - that is, half
+the people are younger than this age and half are older. It is a single index that
+summarizes the age distribution of a population.
+Own Account work done on their own without hiring other non-member of the household,
+include the type of job defined as "a self-employment job" and have not engaged
+on a continuous basis any "employees" to work for them during the reference
+period
+Person  any individual member of the household or institution who is present on the census
+night and is therefore counted in the census. This includes everyone: young and old,
+male of female, expatriates or residents, tourist and locals alike. For census
+purposes, the term “person” denotes each individual falling within the scope of
+census. A person can be identified as belonging to the household population or to
+the institutional population where he or she slept on the night
+Usual place of residence is defined for census purposes as the place a person last lived for six months or more
+or intends to live for at least six months.
+Reason for absent at
+work
+Full time student: primary and secondary level of school requires that the student
+must be a full time to complete this level of education
+Part time student:  Vocational and Technical plus Tertiary level or University, the
+school curriculum allows them take one or two course taking up a little time of their
+day to attend school and the rest of the day is up to them
+Doing domestic work only for self and others: example could be a housewife which
+she only works from home in cleaning the house, doing laundry and taking care of
+the children. This example is one of many but goes to show that any person who is
+working at home and not economically producing any goods and services
+Retired pensioner or income recipient:  A pension is a fund into which a sum of
+money is added during an employee's employment years and from which payments
+are drawn to support the person's retirement from work in the form of periodic
+payments, bear in mind although there are some form retired pensioner in Vanuatu
+such as pastor being retired from church the church still put some  money for them
+or politicians who have retire from work but still rece
+
+--- page 55 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+45
+Table 3.1: Total population living in private households by ethnic origin and by region
+Table 3.1: Total population living in private households by ethnic origin and by region
+Region Total
+Ni-Vanuatu
+only
+Part Ni-
+Vanuatu European Asian
+Other
+Melanesian Polynesian Micronesian Others
+VANUATU 293,963  291,035            534              800              672         641                   135              55                    91
+URBAN 65,867    63,669              303              574              638          488                   111              41                    44
+Port Vila 48,461   46,553             243             507              543         440                  107             29                   39
+Luganville 17,407   17,116             59               67                95           48                    4                 12                   5
+RURAL 228,095  227,366            231              226              34           153                   24                13                    47
+TORBA 11,215    11,199              7                 5                  -           2                       -               -                   2
+Torres 1,185      1,184                1                 -                -           -                    -              -                   -
+Ureparapara 466         466                   -              -               -           -                    -              -                   -
+Motalava 1,689      1,689                -              -               -           -                    -              -                   -
+Vanua Lava 3,231      3,225                4                 -                -           1                       -               -                   1
+Mota 597         597                   -              -               -           -                    -              -                   -
+Gaua 3,400      3,391                2                 5                  -           1                       -               -                   1
+Merelava 647         647                   -              -               -           -                    -              -                   -
+SANMA 42,245    42,105              38                64                4              23                     2                 3                      5
+North West Santo 1,589       1,585                -              -               
+
+--- page 56 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+46
+Table 3.1: Total population living in private households by ethnic origin and by region
+Table 3.1: Total population living in private households by ethnic origin and by region
+Region Total
+Ni-Vanuatu
+only
+Part Ni-
+Vanuatu European Asian
+Other
+Melanesian Polynesian Micronesian Others
+VANUATU 293,963  291,035            534              800              672         641                   135              55                    91
+URBAN 65,867    63,669              303              574              638          488                   111              41                    44
+Port Vila 48,461   46,553             243             507              543         440                  107             29                   39
+Luganville 17,407   17,116             59               67                95           48                    4                 12                   5
+RURAL 228,095  227,366            231              226              34           153                   24                13                    47
+TORBA 11,215    11,199              7                 5                  -           2                       -               -                   2
+Torres 1,185      1,184                1                 -                -           -                    -              -                   -
+Ureparapara 466         466                   -              -               -           -                    -              -                   -
+Motalava 1,689      1,689                -              -               -           -                    -              -                   -
+Vanua Lava 3,231      3,225                4                 -                -           1                       -               -                   1
+Mota 597         597                   -              -               -           -                    -              -                   -
+Gaua 3,400      3,391                2                 5                  -           1                       -               -                   1
+Merelava 647         647                   -              -               -           -                    -              -                   -
+SANMA 42,245    42,105              38                64                4              23                     2                 3                      5
+North West Santo 1,589       1,585                -              -               
+
+... and 43 further pages match; re-run with a narrower --terms to see them.
