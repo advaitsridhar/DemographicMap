@@ -1016,8 +1016,10 @@ def build(tolerance: float = TOLERANCE, unions: bool = True) -> list[dict[str, A
     log(f"  {VINTAGE} gemeenten against the country (03759ned, 1 January {VINTAGE}): "
         f"{sum(population.values()):,.0f} = {whole_country:,.0f}; adults {sum(adults.values()):,.0f}")
     check_national(table, adults, national)
-    # 70739ned gives one province per gemeente; the two that changed province after 2016
-    # (Leerdam and Zederik, to Utrecht in 2019) are some 27,000 adults, within the tolerance.
+    # 70739ned gives a gemeente the province it was in: Leerdam and Zederik, Zuid-Holland's
+    # until they went into Vijfheerenlanden (Utrecht) in 2019, count to Zuid-Holland as in
+    # 83288NED (the run of 4 October 2026 counts Utrecht's 26 gemeenten of 2016 and
+    # Zuid-Holland's 60).
     provinces = {c: PROVINCE_NAMES.get(history[c]["province"], history[c]["province"]) for c in table}
     check_parents(table, adults, provinces, province_means())
     check_unions(history, table)
