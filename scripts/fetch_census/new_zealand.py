@@ -368,7 +368,8 @@ def age_sex(rows: list[dict[str, str]], tiers: dict[str, str]
         if {"male", "female", "total"} <= set(entry):
             # Random rounding to base 3 moves each of the three cells by up
             # to two people on its own.
-            if abs(entry["male"] + entry["female"] - entry["total"]) > max(6, 0.001 * entry["total"]):
+            slack = max(6, 0.001 * entry["total"])
+            if abs(entry["male"] + entry["female"] - entry["total"]) > slack:
                 raise SystemExit(
                     f"age: area {area}: males {entry['male']:,} and females "
                     f"{entry['female']:,} do not make {entry['total']:,}")

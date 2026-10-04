@@ -73,9 +73,11 @@ class Ancestry(unittest.TestCase):
             ap.ancestries(g08("10050", {"English": 20000, "Australian": 18000}, 60000))
 
 
-def unit(uid, name, code, parent, population):
+def unit(uid, name, code, parent, population, language=None):
     return {"id": uid, "name": name, "parent": parent, "codes": {"asgs": code},
-            "population": {"value": population}}
+            "population": {"value": population},
+            "language": language if language is not None
+            else [{"group": "English only", "pct": 90.0}]}
 
 
 STATE = unit("S1", "New South Wales", "1", "AUS", 8072171)
@@ -124,6 +126,74 @@ class Record(unittest.TestCase):
                            ancestry=({"English": 2500}, 2000.0), parent_name=None)
 
 
+RELIGIONS = (("Total", "_T"), ("Christianity Total", "2_T"), ("Catholic", "207"),
+             ("Secular Beliefs and Other Spiritual Beliefs and No Religious Affiliation Total",
+              "7_T"), ("No Religion, so described", "7101"),
+             ("Religious affiliation not stated", "_N"))
+
+
+def g14(region, total):
+    # Christianity 43.9% and the Secular branch 40%, with a child under each.
+    values = (total, 0.439 * total, 0.2 * total, 0.4 * total, 0.389 * total, 0.161 * total)
+    return [({"RELP": label, "RELP_CODE": code, "SEXP": "Persons", "SEXP_CODE": "3",
+              "REGION": region, "REGION_CODE": region}, value)
+            for (label, code), value in zip(RELIGIONS, values)]
+
+
+LANGUAGES = (("Total", "_T"), ("Speaks English only", "1"), ("Other Languages Total", "O_T"),
+             ("Italian", "3103"), ("Other", "_O"), ("Not stated", "_N"))
+
+
+def g13(region, total):
+    # English only 72%, other languages 23% (Italian 3%, the rest 20%), not stated 5%.
+    values = (total, 0.72 * total, 0.23 * total, 0.03 * total, 0.2 * total, 0.05 * total)
+    return [({"LANP": label, "LANP_CODE": code, "ENGLP": "Total", "ENGLP_CODE": "_T",
+              "SEXP": "Persons", "SEXP_CODE": "3", "REGION": region, "REGION_CODE": region},
+             value)
+            for (label, code), value in zip(LANGUAGES, values)]
+
+
+def g13_coarse(region, total, english, other, indigenous, not_stated):
+    return [({"LANP_CODE": code, "ENGLP_CODE": "_T", "REGION_CODE": region}, value)
+            for code, value in (("_T", total), ("1", english), ("O_T", other),
+                                ("8", indigenous), ("_N", not_stated))]
+
+
+class CoarseLanguage(unittest.TestCase):
+    def test_east_arnhem_partitions_at_the_coarse_level(self):
+        # G13's own East Arnhem figures: 8,778 people, 504 English only, 7,803
+        # another language of whom 7,676 an Indigenous one, 469 not stated.
+        got = ap.coarse_language(g13_coarse("71300", 8778, 504, 7803, 7676, 469))["71300"]
+        self.assertEqual(got, {"English only": 504, "Australian Indigenous Languages": 7676,
+                               "Other languages": 127, "Not stated": 469})
+
+    def test_a_coarse_partition_that_misses_the_total_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            ap.coarse_language(g13_coarse("71300", 8778, 504, 5000, 4000, 469))
+
+    def test_more_indigenous_than_other_languages_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            ap.coarse_language(g13_coarse("71300", 8778, 504, 7803, 8500, 469))
+
+
+class StateCompositions(unittest.TestCase):
+    def test_the_outermost_level_is_read_and_checked(self):
+        religion, language = ap.state_compositions(g14("AUS", 25_422_788) + g14("1", 1000),
+                                                   g13("AUS", 25_422_788) + g13("1", 1000))
+        groups = {r["group"]: r["pct"] for r in religion["AUS"]}
+        self.assertEqual(groups["Christianity"], 43.9)
+        self.assertNotIn("Catholic", groups)
+        self.assertEqual({r["group"]: r["pct"] for r in language["1"]}["English only"], 72.0)
+
+    def test_a_different_national_figure_stops_the_run(self):
+        rows = g14("AUS", 25_422_788)
+        rows[1] = (rows[1][0], 0.3 * 25_422_788)
+        rows[2] = (rows[2][0], 0.1 * 25_422_788)
+        rows[5] = (rows[5][0], 0.3 * 25_422_788)
+        with self.assertRaises(SystemExit):
+            ap.state_compositions(rows, g13("AUS", 25_422_788))
+
+
 class Build(unittest.TestCase):
     NSW = 25_422_788 - 8 * 1000
 
@@ -154,6 +224,11 @@ class Build(unittest.TestCase):
                                          "Other": 30000}, 56093)
             + g08("10500", {"English": 50000, "Australian": 40000, "Other": 130000}, 175184),
             ("G08", "SA2"): top_ancestry,
+            ("G14", "SA2"): g14("AUS", 25_422_788)
+            + [r for c in "123456789" for r in g14(c, self.NSW if c == "1" else 1000)],
+            ("G13", "SA2"): g13("AUS", 25_422_788)
+            + [r for c in "123456789" for r in g13(c, self.NSW if c == "1" else 1000)],
+            ("G13", "LGA"): g13_coarse("10050", 56093, 48000, 5000, 100, 3093),
         }
 
     def admin1(self):
@@ -166,6 +241,21 @@ class Build(unittest.TestCase):
         self.assertEqual(names["Albury"]["median_age"]["value"], 39)
         self.assertEqual(len([r for r in records if r["level"] == "admin1"]), 9)
         self.assertEqual(len([r for r in records if r["level"] == "admin2"]), 2)
+        nsw = next(r for r in records if r["shape_id"] == "S1")
+        self.assertEqual(nsw["population"]["value"], self.NSW)
+        self.assertEqual({r["group"]: r["pct"] for r in nsw["religion"]}["Christianity"], 43.9)
+        # Albury's language is the map's (abs.py's): it is written only where
+        # the map has none.
+        self.assertEqual(names["Albury"]["language"]["status"], "not_available")
+
+    def test_an_lga_with_no_language_takes_the_coarse_partition(self):
+        mute = dict(ALBURY, language={"status": "not_available"})
+        records = ap.build(self.tables(), self.admin1(), [mute, BAYSIDE])
+        albury = next(r for r in records if r["name"] == "Albury")
+        self.assertEqual({r["group"] for r in albury["language"]},
+                         {"English only", "Australian Indigenous Languages",
+                          "Other languages", "Not stated"})
+        self.assertIn("coarsest level", albury["language_note"])
 
     def test_lgas_that_do_not_make_their_state_stop_the_run(self):
         with self.assertRaises(SystemExit):
