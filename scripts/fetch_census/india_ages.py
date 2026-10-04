@@ -536,7 +536,15 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
             log(f"  ! no C-13 row for {shape['name']} (code {state_code})")
             continue
         counted = census_population(shape)
-        if counted is not None and counted != whole["total"][0]:
+        merged_part = state_code == "26" and counted in (
+            by_state_code["25"]["total"][0], by_state_code["26"]["total"][0])
+        if merged_part:
+            # The shape carries one territory's count until india_census's
+            # state run, which now sums the two, is built; the C-13 sum is
+            # checked against both territories' own rows above.
+            log(f"  {shape['name']}: the shape carries {counted:,}, one of the two "
+                f"territories; C-13 sums both to {whole['total'][0]:,}")
+        elif counted is not None and counted != whole["total"][0]:
             raise SystemExit(f"india_ages: {shape['name']} has {whole['total'][0]:,} in "
                              f"C-13 and {counted:,} on its shape")
         main.append(record(

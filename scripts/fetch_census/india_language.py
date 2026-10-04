@@ -53,7 +53,8 @@ from ._shared import (
 )
 from .india_census import (
     CATALOG, CREATED_AFTER_2011, DISTRICT_ALIASES, NEW_DISTRICT_ALIASES,
-    SPLIT_STATES, STATE_ALIASES, STATE_IN_2011, SUBDIVIDED_SINCE_2011,
+    MERGED_STATES, SPLIT_STATES, STATE_ALIASES, STATE_IN_2011, SUBDIVIDED_SINCE_2011,
+    fold_state, merged_state_note,
     created_reason, inherited_note, lost_territory, lost_territory_reason,
     split_note, subdivided_inherited_note, subdivided_reason, without_counts,
 )
@@ -359,6 +360,9 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
     # carved out of it after the census can inherit its shares.
     measured: dict[tuple[str, str], dict[str, float]] = {}
     out = []
+    member_of = {fold_state(part): merged for merged, (parts, _year)
+                 in MERGED_STATES.items() for part in parts}
+    merging: dict[str, dict[str, Any]] = collections.defaultdict(dict)
     if level == "state":
         out.extend(split_state_rows(units, states))
     for (state_code, district_code), unit in sorted(units.items()):
@@ -450,6 +454,11 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
                 continue
             name = raw_name.title().replace(" And ", " and ").replace(" Of ", " of ")
             name = STATE_ALIASES.get(raw_name.lower(), name)
+            if fold_state(name) in member_of:
+                # One of the territories merged since; summed below, as
+                # india_census does, so the merged shape carries both.
+                merging[member_of[fold_state(name)]][name] = unit["counts"]
+                continue
             entity_id = f"IND-S-{name.replace(' ', '-')}"
             codes = {"census2011_state": state_code}
         else:
@@ -473,6 +482,24 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
                       "year": 2011,
                       "license": "Government of India open data (GODL-India)"}],
         ))
+    for merged, members in sorted(merging.items()):
+        parts, year = MERGED_STATES[merged]
+        if sorted(fold_state(m) for m in members) != sorted(fold_state(p) for p in parts):
+            raise SystemExit(f"india_language: {merged} is {', '.join(parts)} and "
+                             f"the workbooks have {', '.join(sorted(members))}")
+        counts = collections.Counter()
+        for got in members.values():
+            counts.update(got)
+        groups = composition(counts)
+        out.append(record(
+            f"IND-S-{merged.replace(' ', '-')}", merged, level="admin1", parent="IND",
+            language=groups or gap(NOT_AVAILABLE),
+            language_note=(language_note(groups, len(counts)) + " " + merged_state_note(
+                merged, {name: sum(c.values()) for name, c in members.items()}, year)),
+            language_year=2011,
+            sources=[{"field": "language", "name": SOURCE, "url": CATALOG,
+                      "year": 2011,
+                      "license": "Government of India open data (GODL-India)"}]))
     if level == "district":
         out.extend(new_districts(measured))
     return out

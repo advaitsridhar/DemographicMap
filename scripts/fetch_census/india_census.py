@@ -110,6 +110,8 @@ import collections
 import csv
 import difflib
 import io
+import re
+import unicodedata
 import urllib.parse
 from pathlib import Path
 from typing import Any, NamedTuple
@@ -254,6 +256,27 @@ SPLIT_STATES: dict[str, StateSplit] = {
         caveat="", residual_caveat="",
     ),
 }
+
+# The other direction: union territories the census counted apart that have
+# since been merged into one, which the boundary file draws as one shape. Two
+# measurements that exhaust a territory sum to a measurement of it, the same
+# arithmetic as SPLIT_STATES run forwards. Before this, the merged shape -- the
+# boundary file labels it "Dadra and Nagar Haveli and Daman and Diu" -- matched
+# Dadra and Nagar Haveli's row by name and wore its 343,709 people as the whole
+# territory's, while Daman and Diu's 243,247 matched nothing.
+MERGED_STATES: dict[str, tuple[tuple[str, ...], int]] = {
+    "Dadra and Nagar Haveli and Daman and Diu": (
+        ("Dadra and Nagar Haveli", "Daman and Diu"), 2020),
+}
+
+
+def merged_state_note(name: str, parts: dict[str, int], year: int) -> str:
+    listed = " and ".join(f"{part} ({count:,})" for part, count in parts.items())
+    return (f"Summed from {listed}, the union territories the 2011 census "
+            f"enumerated separately and that were merged into {name} in "
+            f"{year}. Nothing is apportioned: the two rows exhaust the "
+            f"territory, so their sum is that census's figure for it.")
+
 
 # 2011 districts that have since been subdivided, so one census row covers
 # several present-day boundary units. Their figures are deliberately NOT
@@ -1861,10 +1884,16 @@ def states(rows: list[dict[str, str]],
     pieces = split_states(rows, agg, numeric)
 
     out = []
+    member_of = {fold_state(part): merged for merged, (parts, _year)
+                 in MERGED_STATES.items() for part in parts}
+    merging: dict[str, dict[str, collections.Counter]] = collections.defaultdict(dict)
     for state, whole in sorted(agg.items()):
         # The extract shouts state names; the boundary files use title case.
         plain = state.title().replace(" And ", " and ").replace(" Of ", " of ")
         plain = STATE_ALIASES.get(state.lower(), plain)
+        if fold_state(plain) in member_of:
+            merging[member_of[fold_state(plain)]][plain] = whole
+            continue
         for name, counts, split_prose in pieces.get(state, [(plain, whole, "")]):
             record_ = build_record(
                 name, counts, level="admin1", parent="IND",
@@ -1891,7 +1920,31 @@ def states(rows: list[dict[str, str]],
                     record_[f"{field}_note"] = (
                         (record_.get(f"{field}_note", "") + " " + split_prose).strip())
             out.append(record_)
+    for merged, members in sorted(merging.items()):
+        parts, year = MERGED_STATES[merged]
+        if sorted(members) != sorted(parts):
+            raise SystemExit(f"india_census: {merged} is {', '.join(parts)} and the "
+                             f"extract has {', '.join(sorted(members))}")
+        whole: collections.Counter = collections.Counter()
+        for counts in members.values():
+            whole.update(counts)
+        prose = merged_state_note(merged, {p: members[p]["Population"] for p in parts},
+                                  year)
+        record_ = build_record(merged, whole, level="admin1", parent="IND",
+                               entity_id=f"IND-S-{merged.replace(' ', '-')}",
+                               codes={"census2011_state_name": " + ".join(parts)})
+        for field in ("population", "religion", "scheduled_groups", "sex_ratio"):
+            record_[f"{field}_note"] = (
+                (record_.get(f"{field}_note", "") + " " + prose).strip())
+        log(f"  merged {merged}: {whole['Population']:,} from "
+            + ", ".join(f"{p} {members[p]['Population']:,}" for p in parts))
+        out.append(record_)
     return out
+
+
+def fold_state(name: str) -> str:
+    return re.sub(r"[^a-z]+", "", unicodedata.normalize("NFKD", name)
+                  .encode("ascii", "ignore").decode().lower().replace("&", "and"))
 
 
 def split_note(new_state: str, split: StateSplit, *, residual: bool,
