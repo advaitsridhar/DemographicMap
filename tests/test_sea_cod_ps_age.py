@@ -128,6 +128,16 @@ class RecordsTest(unittest.TestCase):
         self.assertIn("projection", r["median_age_note"])
         self.assertIn("United States Bureau of the Census", r["median_age_note"])
 
+    def test_an_implausible_ratio_leaves_the_unit_out(self):
+        cols_ = columns()
+        table = {"label": "x adm2_", "level": "2", "columns": cols_,
+                 "rows": [row("Lampang", "Ko Kha", per_band_f=20, per_band_m=9)], "method": ""}
+        with mock.patch.object(s, "drawn", fake_drawn), \
+                mock.patch.object(s, "locate", return_value={}):
+            recs = s.level_records("THA", "cod-ps-tha", "CC BY-IGO", "2", 2023, table,
+                                   age_columns(cols_))
+        self.assertEqual(recs, [])
+
 
 if __name__ == "__main__":
     unittest.main()

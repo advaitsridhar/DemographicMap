@@ -88,6 +88,12 @@ SPELLINGS = {
 # the other.
 SEATS = {("THA", "TH1404"): (100.48, 14.20), ("THA", "TH1413"): (100.32, 14.33)}
 TWIN_MARK = re.compile(r"\s*\(\d\)\s*$")
+# Below 80 or above 160 males per 100 females, a whole district's figure is
+# more likely the projection's arithmetic than a place, and the unit is left
+# out. The bounds drop Ratchaburi's Ban Kha (48) and Suan Phueng (77), the
+# district Ban Kha was cut from in 2007, and keep the island and naval
+# districts of Thailand's east coast (up to 137) and Laos's Longcheng (142).
+RATIO_BOUNDS = (80.0, 160.0)
 
 
 def key(name: Any) -> str:
@@ -222,6 +228,14 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
         women = number(row.get(cols["totals"]["F"]))
         men = number(row.get(cols["totals"]["M"]))
         name = str(row.get(unit_col)).strip()
+        if not RATIO_BOUNDS[0] <= ratio(men, women) <= RATIO_BOUNDS[1]:
+            # A projection's arithmetic, not a place: Ratchaburi's Ban Kha
+            # comes out at 48 men to 100 women. The unit is left out whole,
+            # its median being read from the same row.
+            refused += 1
+            log(f"    left out {name}: {ratio(men, women)} males per 100 females is outside "
+                f"{RATIO_BOUNDS}, implausible for a whole district or province")
+            continue
         out.append(record(
             f"{iso3}-CODPSAGE-{level}-{fold(unit['name'])}-{unit['id'][-6:]}", unit["name"],
             level=level, parent=iso3, country=iso3, match_by="shape_id", shape_id=unit["id"],
