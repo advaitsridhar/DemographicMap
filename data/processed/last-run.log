@@ -1,69 +1,7 @@
-== https://www.cis.es/es/catalogo-estudios/fid/acceso-a-datos
-  HTTP 200; text/html;charset=UTF-8; 291,164 bytes; final https://www.cis.es/es/catalogo-estudios/fid/acceso-a-datos
-  306 lines, 12 with ['registr', 'usuario', 'correo', 'descarg', 'formulario', 'login', 'contrase', 'licencia', 'reutiliza', 'gratuit', 'condicion']
-    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
-    | Condiciones Reutilización datos del CIS
-    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
-    | Condiciones Reutilización datos del CIS
-    | Debido al cambio de plataforma, es necesario que los usuarios que ya estuvieran registrados en FID anteriormente, vuelvan a registrarse de nuevo. En caso de registrarse con el mismo usuario que en la plataforma antigua, se podrá acceder al historial de solicitudes
-    | Registrarse
-    | Ya estoy registrado
-    | Identifica el idioma del usuario
-    | Identifica la sesión del usuario
-    | Se utiliza para identificar y autenticar al usuario
-    | visualizacionesdepáginas de un usuario en una sola grabación de sesión
-    | Almacena el ID de usuario (distinto a LFR_SESSION_STATE_* )
-  15 links with ['fid', 'registr', 'acceso', 'login', 'descarg', 'formul']
-    -> https://www.cis.es/ca/cataleg-estudis/fid/acces-a-dades  [CA]
-    -> https://www.cis.es/gl/catalogue-etudes/fid/acces-aux-donnees  [GL]
-    -> https://www.cis.es/eu/ikerketa-katalogoa/fid/datuen-sarbidea  [EU]
-    -> https://www.cis.es/en/studies-catalog/fid/data-access  [EN]
-    -> https://www.cis.es/fr/catalogue-etudes/fid/acces-aux-donnees  [FR]
-    -> https://www.cis.es/es/catalogo-estudios/fid  [Ficheros Integrados de Datos]
-    -> /registro-fid?p_p_id=com_liferay_login_web_portlet_LoginPortlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_com_liferay_login_web_portlet_LoginPortlet_mvcRenderCommandName=%2Flogin%2Fcreate_account&saveLastPath=false  [Registrarse]
-    -> /acceso-fid  [Ya estoy registrado]
-== https://www.cis.es/es/condiciones-reutilizaci%C3%B3n-datos-del-cis
-  HTTP 200; text/html;charset=UTF-8; 294,436 bytes; final https://www.cis.es/es/condiciones-reutilizaci%C3%B3n-datos-del-cis
-  344 lines, 41 with ['registr', 'usuario', 'correo', 'descarg', 'formulario', 'login', 'contrase', 'licencia', 'reutiliza', 'gratuit', 'condicion']
-    | Condiciones Reutilización datos del CIS
-    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
-    | Condiciones Reutilización datos del CIS
-    | Servicio automático y gratuito de la extracción integrada de microdatos de los estudios del CIS
-    | Condiciones Reutilización datos del CIS
-    | Condiciones Reutilización Datos del CIS
-    | Condiciones Reutilización datos del CIS
-    | Reutilización de la información
-    | En cumplimiento con lo establecido por la normativa vigente sobre reutilización de la información del sector público, el Centro de Investigaciones Sociológicas (CIS) pone a disposición de la ciudadanía, instituciones y empresas los datos, documentos y recursos publicados en esta página web para su l
-    | Reconocimiento de la fuente : Se deberá citar al CIS como fuente de la información reutilizada.
-    | No atribución de carácter oficial : La reutilización no confiere carácter oficial a los documentos ni implica que el CIS respalde o apruebe el uso realizado.
-    | La reutilización de los contenidos está sujeta a las condiciones establecidas en la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público, y demás normativa aplicable.
-    | Para cualquier duda o solicitud específica relacionada con la reutilización de contenidos, puede dirigirse al CIS a través de los medios de contacto disponibles aquí .
-    | En consecuencia, salvo los casos excepcionales en los que sea preciso formular una solicitud o exista un régimen específico con ciertas exigencias adicionales, las condiciones generales de reutilización para el ámbito del sector público estatal que aquí se describen:
-    | Aviso legal condiciones generales
-    | Este aviso legal recoge las condiciones generales que rigen el acceso y el uso del presente sitio web, del que es titular el Centro de Investigaciones Sociológicas.
-    | El uso del sitio web implica la expresa y plena aceptación de las presentes condiciones generales en la versión publicada en el momento en que el usuario acceda al mismo, sin perjuicio de las condiciones particulares que pudieran aplicarse a algunos de los contenidos o servicios concretos del sitio 
-    | A los efectos del presente documento se entiende por “agente reutilizador” toda persona, física o jurídica que reutilice información del sector público, ya sea para fines comerciales o no comerciales.
-    | Obligatoriedad de las condiciones generales
-    | Las presentes condiciones generales, disponibles con carácter permanente en esta página, vincularán a cualquier agente reutilizador por el mero hecho de hacer uso de los documentos sometidos a ellas.
-    | Autorización de reutilización y cesión no exclusiva de derechos de propiedad intelectual
-    | Las presentes condiciones generales permiten la reutilización de los documentos sometidos a ellas para fines comerciales y no comerciales. Se entiende por reutilización el uso de documentos que obran en poder del Centro de Investigaciones Sociológicas, por personas físicas o jurídicas, con fines com
-    | El concepto de documento es el establecido en el apartado 2 del artículo 3 de la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público, por lo que comprende toda información cualquiera que sea su soporte material o electrónico así como su forma de expresión gráfic
-    | Esta autorización conlleva, asimismo, la cesión gratuita y no exclusiva de los derechos de propiedad intelectual, en su caso, correspondientes a tales documentos, autorizándose la realización de actividades de reproducción, distribución, comunicación pública o transformación, necesarias para desarro
-    | Condiciones generales para la reutilización.
-    | Son de aplicación las siguientes condiciones generales para la reutilización de los documentos sometidos a ellas:
-    | Debe citarse la fuente de los documentos objeto de la reutilización. Esta cita podrá realizarse de la siguiente manera: "Origen de los datos: Centro de Investigaciones Sociológicas".
-    | Debe mencionarse la fecha de la última actualización de los documentos objeto de la reutilización, siempre cuando estuviera incluida en el documento original.
-    | No se podrá indicar, insinuar o sugerir que el Centro de Investigaciones Sociológicas titular de la información reutilizada participa, patrocina o apoya la reutilización que se lleve a cabo con ella.
-    | Deben conservarse, no alterarse ni suprimirse los metadatos sobre la fecha de actualización y las condiciones de reutilización aplicables incluidos, en su caso, en el documento puesto a disposición para su reutilización.
-    | La utilización de los conjuntos de datos se realizará por parte de los usuarios o agentes de la reutilización bajo su propia cuenta y riesgo, correspondiéndoles en exclusiva a ellos responder frente a terceros por daños que pudieran derivarse de ella.
-    | El Centro de Investigaciones Sociológicas no será responsable del uso que de su información hagan los agentes reutilizadores ni tampoco de los daños sufridos o pérdidas económicas que, de forma directa o indirecta, produzcan o puedan producir perjuicios económicos, materiales o sobre datos, provocad
-    | El Centro de Investigaciones Sociológicas no garantiza la continuidad en la puesta a disposición de los documentos reutilizables, ni en contenido ni en forma, ni asume responsabilidades por cualquier error u omisión contenido en ellos.
-    | Responsabilidad del agente reutilizador
-    | El agente reutilizador se halla sometido a la normativa aplicable en materia de reutilización de la información del sector público, incluyendo el régimen sancionador previsto en el artículo 11 de la Ley 37/2007, de 16 de noviembre, sobre reutilización de la información del sector público.
-    | Con el fin de mejorar las prestaciones del sitio web, el Centro de Investigaciones Sociológicas se reserva el derecho, en cualquier momento y sin previa notificación al usuario, a modificar ampliar o suspender temporalmente la presentación, configuración, especificaciones técnicas y servicios del si
-    | Identifica el idioma del usuario
-    | Identifica la sesión del usuario
-    | Se utiliza para identificar y autenticar al usuario
-    | visualizacionesdepáginas de un usuario en una sola grabación de sesión
-  2 links with ['fid', 'registr', 'acceso', 'login', 'descarg', 'formul']
-    -> https://www.cis.es/es/catalogo-estudios/fid  [Ficheros Integrados de Datos]
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+usage: spain_cis_probe.py url [-h] [--grep GREP] [--links LINKS]
+                              [--chars CHARS] [--around AROUND]
+                              [--context CONTEXT] [--limit LIMIT]
+                              [--width WIDTH] [--timeout TIMEOUT]
+                              url [url ...]
+spain_cis_probe.py url: error: argument --around: expected one argument
