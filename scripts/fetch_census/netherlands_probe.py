@@ -12,6 +12,7 @@ not against memory. Nothing is written; the output is the log.
 Usage:
     python -m scripts.fetch_census.netherlands_probe desc GM0014,GM0140 [--width 3000]
     python -m scripts.fetch_census.netherlands_probe changed 20140101 20221231 [--width 600]
+    python -m scripts.fetch_census.netherlands_probe ages GM0034 2014JJ00
 """
 
 from __future__ import annotations
@@ -101,10 +102,38 @@ def changed(start: str, stop: str, width: int) -> None:
                 log("   - " + hit[:width])
 
 
+def ages(region: str, period: str) -> None:
+    """One region's 03759ned counts on one date by every age category, both
+    sexes, to see where the single years and the total part company."""
+    from .netherlands_gemeente import odata, regions_filter, topic, total_key
+    measure = topic("03759ned")
+    sexes = odata("03759ned", "Geslacht")
+    sex_total = total_key(sexes, "Geslacht")
+    marital = total_key(odata("03759ned", "BurgerlijkeStaat"), "BurgerlijkeStaat")
+    titles = {r["Key"].strip(): str(r["Title"]).strip() for r in odata("03759ned", "Leeftijd")}
+    flt = (f"Perioden eq '{period}' and BurgerlijkeStaat eq '{marital}' and "
+           f"Geslacht eq '{sex_total}' and {regions_filter([region])}")
+    rows = odata("03759ned", "TypedDataSet", {"$filter": flt, "$select": f"Leeftijd,{measure}"})
+    values = {titles.get(r["Leeftijd"].strip(), r["Leeftijd"]): r.get(measure) for r in rows}
+    singles = {t: v for t, v in values.items() if re.fullmatch(r"\d+ jaar", t)}
+    tops = {t: v for t, v in values.items() if re.fullmatch(r"\d+ jaar of ouder", t)}
+    total = next((v for t, v in values.items() if t.startswith("Totaal")), None)
+    log(f"03759ned {region} {period}: {len(rows)} rows; total {total}; single years "
+        f"{len(singles)} summing to {sum(v or 0 for v in singles.values())}; "
+        f"{sum(1 for v in singles.values() if v is None)} single years empty")
+    log(f"   open classes: {tops}")
+    log(f"   last single years: {[(t, v) for t, v in singles.items()][-8:]}")
+    others = {t: v for t, v in values.items() if t not in singles and t not in tops}
+    log(f"   other categories: {others}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    three = sub.add_parser("ages")
+    three.add_argument("region")
+    three.add_argument("period")
     one = sub.add_parser("desc")
     one.add_argument("codes")
     one.add_argument("--width", type=int, default=3000)
@@ -115,6 +144,8 @@ def main() -> int:
     args = ap.parse_args()
     if args.cmd == "desc":
         desc([c.strip() for c in args.codes.split(",") if c.strip()], args.width)
+    elif args.cmd == "ages":
+        ages(args.region, args.period)
     else:
         changed(args.start, args.stop, args.width)
     return 0
