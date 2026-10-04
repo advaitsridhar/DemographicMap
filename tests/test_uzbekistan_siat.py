@@ -53,5 +53,68 @@ class CarvedOut(unittest.TestCase):
             self.assertIn("Kukdala", row["population"]["note"])
 
 
+def age_rows(code, women, men, year="2026"):
+    """One unit's fourteen groups for each sex, as the agency's tables hold them."""
+    tables = {}
+    for (_, _, w_id, m_id), w, m in zip(uz.AGE_GROUPS, women, men):
+        tables.setdefault(w_id, []).append({"Code": code, year: w})
+        tables.setdefault(m_id, []).append({"Code": code, year: m})
+    return tables
+
+
+def merge(*parts):
+    out = {}
+    for part in parts:
+        for ident, rows in part.items():
+            out.setdefault(ident, []).extend(rows)
+    return out
+
+
+WOMEN = [60, 60, 40, 160, 40, 40, 100, 100, 100, 80, 120, 80, 30, 50]   # 1,060
+MEN = [64, 62, 42, 168, 42, 41, 101, 98, 96, 76, 112, 72, 26, 40]        # 1,040
+
+
+class Ages(unittest.TestCase):
+    def test_profiles_take_the_newest_shared_year(self):
+        tables = age_rows("1710201", WOMEN, MEN)
+        tables[uz.AGE_GROUPS[0][2]][0]["2025"] = 1
+        year, profiles = uz.age_profiles(tables)
+        self.assertEqual(year, "2026")
+        self.assertEqual(sum(n for *_, n in profiles["1710201"]["women"]), 1060)
+
+    def test_median_and_ratio(self):
+        _, profiles = uz.age_profiles(age_rows("1710201", WOMEN, MEN))
+        fields = uz.age_fields(profiles["1710201"], "2026", 2100, "Chirakchi")
+        self.assertEqual(fields["sex_ratio"]["value"], round(100 * 1040 / 1060, 1))
+        # 2,100 people: the 1,050th lies in 25-29 (1,020 before it, 198 in it).
+        self.assertEqual(fields["median_age"]["value"], round(25 + 30 / 198 * 5, 1))
+        self.assertIn("25-29", fields["median_age_note"])
+
+    def test_a_population_far_from_the_groups_stops_the_run(self):
+        _, profiles = uz.age_profiles(age_rows("1710201", WOMEN, MEN))
+        with self.assertRaises(SystemExit):
+            uz.age_fields(profiles["1710201"], "2026", 2400, "Chirakchi")
+
+    def test_two_units_are_added_group_by_group(self):
+        _, profiles = uz.age_profiles(merge(age_rows("1", WOMEN, MEN), age_rows("2", WOMEN, MEN)))
+        both = uz.summed([profiles["1"], profiles["2"]])
+        self.assertEqual(sum(n for *_, n in both["men"]), 2080)
+        self.assertEqual(both["women"][0][2], 120)
+
+    def test_build_writes_ages_on_bound_districts_and_regions(self):
+        region = unit("1710", "Kashkadarya region", "Qashqadaryo viloyati", [2.0, 2.0, 2.1, 2.1])
+        data = [region, unit("1710201", "Chirakchi district", "Chiroqchi tumani", [2.0, 2.0, 2.1, 2.1])]
+        tables = merge(age_rows("1710", WOMEN, MEN, "2023"), age_rows("1710201", WOMEN, MEN, "2023"))
+        rows, _ = uz.build(data, SHAPES, ages=uz.age_profiles(tables),
+                           region_ids={"Qashqadaryo Region": "R1"})
+        district = next(r for r in rows if r["level"] == "admin2")
+        self.assertEqual(district["shape_id"], "a")
+        self.assertEqual(district["match_by"], "shape_id")
+        self.assertIn("value", district["median_age"])
+        region = next(r for r in rows if r["level"] == "admin1")
+        self.assertEqual(region["shape_id"], "R1")
+        self.assertIn("value", region["sex_ratio"])
+
+
 if __name__ == "__main__":
     unittest.main()
