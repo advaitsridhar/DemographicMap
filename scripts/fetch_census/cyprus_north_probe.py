@@ -413,6 +413,12 @@ BUILDING_BOXES = {
     # Geçitköy (Panagra) and Çamlıbel (Myrtou), whose shared edge runs close
     # to Geçitköy's houses.
     "panagra": (35.30, 33.04, 35.36, 33.11),
+    # The parts of Alayköy's, Gönyeli's, Yenikent's and Aşağı Dikmen's
+    # outlines beyond the north_nicosia box, so that their buildings are
+    # counted whole; and Aşağı Bostancı's beyond the morfou box.
+    "alaykoy": (35.16, 33.18, 35.26, 33.27),
+    "dikmen": (35.255, 33.26, 35.28, 33.37),
+    "bostanci": (35.13, 32.93, 35.17, 33.04),
 }
 
 
