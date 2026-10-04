@@ -168,8 +168,8 @@ def build(groups_rows: list[dict[str, Any]], totals_rows: list[dict[str, Any]],
             ethnicity=shares(dict(by_group), total=total),
             ethnicity_year=YEAR, ethnicity_basis="nationality",
             ethnicity_note=(
-                "Nationality, not ethnicity: the 2020 census counts each person's "
-                "nationality in eight groups and asks no ethnic question. Carried on this "
+                "Nationality, not ethnicity: the 2020 census tabulates each person's "
+                "nationality in eight groups, and no ethnic group. Carried on this "
                 f"field under the owner's decision of {DECISION}. GCC nationals are "
                 "citizens of the other Gulf Cooperation Council states; the Arab, Asian, "
                 "African, European and North American groups are other countries' "
