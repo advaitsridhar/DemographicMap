@@ -1,201 +1,22 @@
 
-## https://www.cbs.nl/nl-nl/zoeken?q=keyword:kerkbezoek
-   HTTP 200, 75,938 bytes, text/html; charset=utf-8 
-   link: 'Alleen in Limburg rekent de meerderheid zich nog tot een geloof' -> https://www.cbs.nl/nl-nl/nieuws/2026/11/alleen-in-limburg-rekent-de-meerderheid-zich-nog-tot-een-geloof
-   link: 'Religieuze betrokkenheid; persoonskenmerken' -> https://www.cbs.nl/nl-nl/cijfers/detail/82904NED?q=keyword:kerkbezoek
-   link: 'Daling aandeel mensen dat aangeeft bij religie te horen stagneert' -> https://www.cbs.nl/nl-nl/nieuws/2025/16/daling-aandeel-mensen-dat-aangeeft-bij-religie-te-horen-stagneert
-   link: 'Vooral oudere mensen zeggen deel uit te maken van geloofsgemeenschap' -> https://www.cbs.nl/nl-nl/nieuws/2024/20/vooral-oudere-mensen-zeggen-deel-uit-te-maken-van-geloofsgemeenschap
-   link: 'Kinderen naar aanwezigheid ouders; leeftijd, migratieachtergrond; 1996-2015' -> https://www.cbs.nl/nl-nl/cijfers/detail/81485ned?q=keyword:kerkbezoek
-   link: 'Religieuze betrokkenheid in Nederland' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2023/religieuze-betrokkenheid-in-nederland
-   link: 'Deel bevolking dat bij religieuze groep hoort in 2022 niet afgenomen' -> https://www.cbs.nl/nl-nl/nieuws/2023/14/deel-bevolking-dat-bij-religieuze-groep-hoort-in-2022-niet-afgenomen
-   link: 'Arbeidsdeelname; kerncijfers' -> https://www.cbs.nl/nl-nl/cijfers/detail/82309NED?q=keyword:kerkbezoek
-   link: 'Sociale contacten en maatschappelijke participatie' -> https://www.cbs.nl/nl-nl/cijfers/detail/82249NED?q=keyword:kerkbezoek
-   link: 'Kerkelijke gezindte, Noord-Brabant, 2016-2019' -> https://www.cbs.nl/nl-nl/maatwerk/2021/30/kerkelijke-gezindte-noord-brabant-2016-2019
-   link: 'Meerderheid Nederlandse bevolking behoort niet tot religieuze groep' -> https://www.cbs.nl/nl-nl/nieuws/2020/51/meerderheid-nederlandse-bevolking-behoort-niet-tot-religieuze-groep
-   link: 'Religie in Nederland' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2020/religie-in-nederland
-   link: 'Kerkelijke gezindte en kerkbezoek; vanaf 1849; 18 jaar of ouder' -> https://www.cbs.nl/nl-nl/cijfers/detail/37944?q=keyword:kerkbezoek
-   link: 'Wie is religieus, en wie niet?' -> https://www.cbs.nl/nl-nl/achtergrond/2018/43/wie-is-religieus-en-wie-niet-
-   link: 'Economische zelfstandigheid; personen 15 tot 65 jaar, 2000-2014' -> https://www.cbs.nl/nl-nl/cijfers/detail/81208ned?q=keyword:kerkbezoek
-   link: 'Religieuze betrokkenheid; kerkelijke gezindte; regio; 2010-2015' -> https://www.cbs.nl/nl-nl/cijfers/detail/83288NED?q=keyword:kerkbezoek
-   link: 'De religieuze kaart van Nederland, 2010&#x2013;2015' -> https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015
-   link: 'Religie en kerkbezoek naar gemeente 2010-2014' -> https://www.cbs.nl/nl-nl/maatwerk/2015/20/religie-en-kerkbezoek-naar-gemeente-2010-2014
-   link: 'Religieuze betrokkenheid van bevolkingsgroepen, 2010-2014' -> https://www.cbs.nl/nl-nl/achtergrond/2015/20/religieuze-betrokkenheid-van-bevolkingsgroepen-2010-2014
-   link: 'Kerkelijkheid en kerkbezoek, 2010/2013' -> https://www.cbs.nl/nl-nl/maatwerk/2014/40/kerkelijkheid-en-kerkbezoek-2010-2013
-   link: 'Herziene versie: Meer religieus, meer welzijn' -> https://www.cbs.nl/nl-nl/achtergrond/2014/31/herziene-versie-meer-religieus-meer-welzijn
-   link: 'Meer religieus, meer welzijn?' -> https://www.cbs.nl/nl-nl/achtergrond/2014/28/meer-religieus-meer-welzijn-
-   link: 'Kerkelijkheid en kerkbezoek, 1997-2012' -> https://www.cbs.nl/nl-nl/maatwerk/2013/51/kerkelijkheid-en-kerkbezoek-1997-2012
-   link: 'Bevolking van 18 jaar en ouder naar kerkelijkheid en kerkbezoek, 1997/1999 - 2010/2011' -> https://www.cbs.nl/nl-nl/maatwerk/2012/51/bevolking-van-18-jaar-en-ouder-naar-kerkelijkheid-en-kerkbezoek-1997-1999-2010-2011
-   link: 'Maatschappelijke participatie; contacten, kerkelijke gezindte 1997-2011' -> https://www.cbs.nl/nl-nl/cijfers/detail/60027ned?q=keyword:kerkbezoek
-   (102 links in all)
-   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine 
+## https://opendata.cbs.nl/ODataApi/odata/83288NED/RegioS?$format=json
+   HTTP 200, 4,551 bytes, application/json 
+   17 matches of '(?:GM|CR|PV|LD|NL)[0-9]{2,4}'
+   ~ ata.WebAPI.RegioS","value":[ { "Key":"NL01 ","Title":"Nederland","Description":"","Category
+   ~ :"","CategoryGroupID":null },{ "Key":"LD01 ","Title":"Noord-Nederland (LD)","Description":"
+   ~ n.","CategoryGroupID":null },{ "Key":"LD02 ","Title":"Oost-Nederland (LD)","Description":"O
+   ~ n.","CategoryGroupID":null },{ "Key":"LD03 ","Title":"West-Nederland (LD)","Description":"W
+   ~ n.","CategoryGroupID":null },{ "Key":"LD04 ","Title":"Zuid-Nederland (LD)","Description":"Z
+   ~ n.","CategoryGroupID":null },{ "Key":"PV20 ","Title":"Groningen (PV)","Description":"PV = P
+   ~ s.","CategoryGroupID":null },{ "Key":"PV21 ","Title":"Friesland (PV)","Description":"PV = P
+   ~ s.","CategoryGroupID":null },{ "Key":"PV22 ","Title":"Drenthe (PV)","Description":"PV = Pro
+   ~ s.","CategoryGroupID":null },{ "Key":"PV23 ","Title":"Overijssel (PV)","Description":"PV =
+   ~ s.","CategoryGroupID":null },{ "Key":"PV24 ","Title":"Flevoland (PV)","Description":"PV = P
+   ~ s.","CategoryGroupID":null },{ "Key":"PV25 ","Title":"Gelderland (PV)","Description":"PV =
+   ~ s.","CategoryGroupID":null },{ "Key":"PV26 ","Title":"Utrecht (PV)","Description":"PV = Pro
+   ~ s.","CategoryGroupID":null },{ "Key":"PV27 ","Title":"Noord-Holland (PV)","Description":"PV
+   ~ s.","CategoryGroupID":null },{ "Key":"PV28 ","Title":"Zuid-Holland (PV)","Description":"PV
 
-## https://www.cbs.nl/nl-nl/zoeken?q=keyword:kerkbezoek&selectedperiod=all-periods&pageindex=2
-   HTTP 200, 62,537 bytes, text/html; charset=utf-8 
-   link: 'Toenemende onkerkelijkheid' -> https://www.cbs.nl/nl-nl/achtergrond/2009/47/toenemende-onkerkelijkheid
-   link: 'Bevolkingstrends, 3e kwartaal 2009' -> https://www.cbs.nl/nl-nl/achtergrond/2009/45/bevolkingstrends-3e-kwartaal-2009
-   link: 'Herziene versie: Minder vaak naar kerk of moskee' -> https://www.cbs.nl/nl-nl/achtergrond/2009/31/herziene-versie-minder-vaak-naar-kerk-of-moskee
-   link: 'Religie aan het begin van de 21ste eeuw' -> https://www.cbs.nl/nl-nl/publicatie/2009/31/religie-aan-het-begin-van-de-21ste-eeuw
-   link: 'Aantal en percentage gelovigen en bezoekers van kerk of moskee of godsdienstige bijeenkoms' -> https://www.cbs.nl/nl-nl/maatwerk/2008/24/aantal-en-percentage-gelovigen-en-bezoekers-van-kerk-of-moskee-of-godsdienstige-bijeenkomst-2005-2006
-   link: 'Jong en gelukkig' -> https://www.cbs.nl/nl-nl/achtergrond/2001/17/jong-en-gelukkig
-   link: 'Een generatievast geloof' -> https://www.cbs.nl/nl-nl/achtergrond/2001/05/een-generatievast-geloof
-   link: 'Daders als slachtoffers' -> https://www.cbs.nl/nl-nl/achtergrond/2000/17/daders-als-slachtoffers
-   link: 'De geest uit de fles' -> https://www.cbs.nl/nl-nl/achtergrond/1999/34/de-geest-uit-de-fles
-   link: 'Een kwestie van moraal' -> https://www.cbs.nl/nl-nl/achtergrond/1999/05/een-kwestie-van-moraal
-   link: 'Het bestand der kerken' -> https://www.cbs.nl/nl-nl/achtergrond/1999/05/het-bestand-der-kerken
-   link: 'Religieuze binding en vrijwilligerswerk' -> https://www.cbs.nl/nl-nl/achtergrond/1999/05/religieuze-binding-en-vrijwilligerswerk
-   link: 'Kerkbezoek en milieubesef' -> https://www.cbs.nl/nl-nl/achtergrond/1999/05/kerkbezoek-en-milieubesef
-   (90 links in all)
-   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine 
-
-## https://www.cbs.nl/nl-nl/zoeken?q=keyword:religie
-   HTTP 200, 68,595 bytes, text/html; charset=utf-8 
-   link: 'Alleen in Limburg rekent de meerderheid zich nog tot een geloof' -> https://www.cbs.nl/nl-nl/nieuws/2026/11/alleen-in-limburg-rekent-de-meerderheid-zich-nog-tot-een-geloof
-   link: 'Religie naar regio, 2021/2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025
-   link: 'Religieuze betrokkenheid; persoonskenmerken' -> https://www.cbs.nl/nl-nl/cijfers/detail/82904NED?q=keyword:religie
-   link: 'Veiligheidsmonitor; kerncijfers, regio' -> https://www.cbs.nl/nl-nl/cijfers/detail/85146NED?q=keyword:religie
-   link: 'Daling aandeel mensen dat aangeeft bij religie te horen stagneert' -> https://www.cbs.nl/nl-nl/nieuws/2025/16/daling-aandeel-mensen-dat-aangeeft-bij-religie-te-horen-stagneert
-   link: 'Vooral oudere mensen zeggen deel uit te maken van geloofsgemeenschap' -> https://www.cbs.nl/nl-nl/nieuws/2024/20/vooral-oudere-mensen-zeggen-deel-uit-te-maken-van-geloofsgemeenschap
-   link: 'Kerkelijke gezindten langs de meetlat, 1849&#x2013;2023' -> https://www.cbs.nl/nl-nl/corporate/2024/13/kerkelijke-gezindten-langs-de-meetlat-1849-2023
-   link: 'Sociale veiligheid; persoonskenmerken; 2021' -> https://www.cbs.nl/nl-nl/cijfers/detail/85147NED?q=keyword:religie
-   link: 'Grootste deel Caribisch Nederland rekent zich tot religieuze groepering' -> https://www.cbs.nl/nl-nl/nieuws/2023/50/grootste-deel-caribisch-nederland-rekent-zich-tot-religieuze-groepering
-   link: 'Religieuze betrokkenheid in Nederland' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2023/religieuze-betrokkenheid-in-nederland
-   link: 'Deel bevolking dat bij religieuze groep hoort in 2022 niet afgenomen' -> https://www.cbs.nl/nl-nl/nieuws/2023/14/deel-bevolking-dat-bij-religieuze-groep-hoort-in-2022-niet-afgenomen
-   link: 'Bijna 6 op de 10 Nederlanders behoren niet tot religieuze groep' -> https://www.cbs.nl/nl-nl/nieuws/2022/51/bijna-6-op-de-10-nederlanders-behoren-niet-tot-religieuze-groep
-   link: 'Caribisch Nederland; kerkelijke gezindte, persoonskenmerken' -> https://www.cbs.nl/nl-nl/cijfers/detail/82868NED?q=keyword:religie
-   link: '1,6 miljoen mensen voelden zich vorig jaar gediscrimineerd' -> https://www.cbs.nl/nl-nl/nieuws/2022/27/1-6-miljoen-mensen-voelden-zich-vorig-jaar-gediscrimineerd
-   link: 'Kerkelijke gezindte, Noord-Brabant, 2016-2019' -> https://www.cbs.nl/nl-nl/maatwerk/2021/30/kerkelijke-gezindte-noord-brabant-2016-2019
-   link: 'Meerderheid Nederlandse bevolking behoort niet tot religieuze groep' -> https://www.cbs.nl/nl-nl/nieuws/2020/51/meerderheid-nederlandse-bevolking-behoort-niet-tot-religieuze-groep
-   link: 'Religie in Nederland' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2020/religie-in-nederland
-   link: 'Relevantie van sociaal kapitaal voor orgaandonatie' -> https://www.cbs.nl/nl-nl/achtergrond/2020/07/relevantie-van-sociaal-kapitaal-voor-orgaandonatie
-   link: 'Religie en sociale cohesie' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2019/religie-en-sociale-cohesie
-   (93 links in all)
-   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine 
-
-## https://www.cbs.nl/nl-nl/zoeken?q=keyword:religie&selectedperiod=all-periods&pageindex=2
-   HTTP 200, 68,689 bytes, text/html; charset=utf-8 
-   link: 'Alleen in Limburg rekent de meerderheid zich nog tot een geloof' -> https://www.cbs.nl/nl-nl/nieuws/2026/11/alleen-in-limburg-rekent-de-meerderheid-zich-nog-tot-een-geloof
-   link: 'Religie naar regio, 2021/2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/religie-naar-regio-2021-2025
-   link: 'Religieuze betrokkenheid; persoonskenmerken' -> https://www.cbs.nl/nl-nl/cijfers/detail/82904NED?q=keyword:religie
-   link: 'Veiligheidsmonitor; kerncijfers, regio' -> https://www.cbs.nl/nl-nl/cijfers/detail/85146NED?q=keyword:religie
-   link: 'Daling aandeel mensen dat aangeeft bij religie te horen stagneert' -> https://www.cbs.nl/nl-nl/nieuws/2025/16/daling-aandeel-mensen-dat-aangeeft-bij-religie-te-horen-stagneert
-   link: 'Vooral oudere mensen zeggen deel uit te maken van geloofsgemeenschap' -> https://www.cbs.nl/nl-nl/nieuws/2024/20/vooral-oudere-mensen-zeggen-deel-uit-te-maken-van-geloofsgemeenschap
-   link: 'Kerkelijke gezindten langs de meetlat, 1849&#x2013;2023' -> https://www.cbs.nl/nl-nl/corporate/2024/13/kerkelijke-gezindten-langs-de-meetlat-1849-2023
-   link: 'Sociale veiligheid; persoonskenmerken; 2021' -> https://www.cbs.nl/nl-nl/cijfers/detail/85147NED?q=keyword:religie
-   link: 'Grootste deel Caribisch Nederland rekent zich tot religieuze groepering' -> https://www.cbs.nl/nl-nl/nieuws/2023/50/grootste-deel-caribisch-nederland-rekent-zich-tot-religieuze-groepering
-   link: 'Religieuze betrokkenheid in Nederland' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2023/religieuze-betrokkenheid-in-nederland
-   link: 'Deel bevolking dat bij religieuze groep hoort in 2022 niet afgenomen' -> https://www.cbs.nl/nl-nl/nieuws/2023/14/deel-bevolking-dat-bij-religieuze-groep-hoort-in-2022-niet-afgenomen
-   link: 'Bijna 6 op de 10 Nederlanders behoren niet tot religieuze groep' -> https://www.cbs.nl/nl-nl/nieuws/2022/51/bijna-6-op-de-10-nederlanders-behoren-niet-tot-religieuze-groep
-   link: 'Caribisch Nederland; kerkelijke gezindte, persoonskenmerken' -> https://www.cbs.nl/nl-nl/cijfers/detail/82868NED?q=keyword:religie
-   link: '1,6 miljoen mensen voelden zich vorig jaar gediscrimineerd' -> https://www.cbs.nl/nl-nl/nieuws/2022/27/1-6-miljoen-mensen-voelden-zich-vorig-jaar-gediscrimineerd
-   link: 'Kerkelijke gezindte, Noord-Brabant, 2016-2019' -> https://www.cbs.nl/nl-nl/maatwerk/2021/30/kerkelijke-gezindte-noord-brabant-2016-2019
-   link: 'Meerderheid Nederlandse bevolking behoort niet tot religieuze groep' -> https://www.cbs.nl/nl-nl/nieuws/2020/51/meerderheid-nederlandse-bevolking-behoort-niet-tot-religieuze-groep
-   link: 'Religie in Nederland' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2020/religie-in-nederland
-   link: 'Relevantie van sociaal kapitaal voor orgaandonatie' -> https://www.cbs.nl/nl-nl/achtergrond/2020/07/relevantie-van-sociaal-kapitaal-voor-orgaandonatie
-   link: 'Religie en sociale cohesie' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2019/religie-en-sociale-cohesie
-   (93 links in all)
-   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine 
-
-## https://www.cbs.nl/nl-nl/zoeken?q=keyword:kerkelijke%20gezindte
-   HTTP 200, 33,638 bytes, text/html; charset=utf-8 
-   (74 links in all)
-   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine 
-
-## https://www.cbs.nl/nl-nl/zoeken?q=religieuze%20kaart
-   HTTP 200, 77,109 bytes, text/html; charset=utf-8 
-   link: 'Religieuze betrokkenheid; persoonskenmerken' -> https://www.cbs.nl/nl-nl/cijfers/detail/82904NED?q=religieuze%20kaart
-   link: 'Economie scherp in kaart met nieuwe SBI-codes' -> https://www.cbs.nl/nl-nl/corporate/2026/04/economie-scherp-in-kaart-met-nieuwe-sbi-codes
-   link: 'CBS brengt chipindustrie in kaart' -> https://www.cbs.nl/nl-nl/corporate/2026/34/cbs-brengt-chipindustrie-in-kaart
-   link: 'Promotieonderzoek VU brengt kansenongelijkheid in kaart met CBS-data' -> https://www.cbs.nl/nl-nl/corporate/2025/32/promotieonderzoek-vu-brengt-kansenongelijkheid-in-kaart-met-cbs-data
-   link: 'Kaarten regionale indelingen 2025' -> https://www.cbs.nl/nl-nl/achtergrond/2025/06/kaarten-regionale-indelingen-2025
-   link: 'Overheidsrekening Energietransitie (ORET) 2019-2024' -> https://www.cbs.nl/nl-nl/longread/discussion-papers/2026/overheidsrekening-energietransitie--oret---2019-2024
-   link: 'CBS brengt energieverbruik vanaf 1800 in kaart' -> https://www.cbs.nl/nl-nl/corporate/2024/51/cbs-brengt-energieverbruik-vanaf-1800-in-kaart
-   link: 'Daling aandeel mensen dat aangeeft bij religie te horen stagneert' -> https://www.cbs.nl/nl-nl/nieuws/2025/16/daling-aandeel-mensen-dat-aangeeft-bij-religie-te-horen-stagneert
-   link: 'Economische waarde van de infrastructuur in Nederland, 1995-2024' -> https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2026/economische-waarde-van-de-infrastructuur-in-nederland-1995-2024
-   link: 'Indicatoren jeugd naar gemeente en wijk, 2024' -> https://www.cbs.nl/nl-nl/maatwerk/2025/50/indicatoren-jeugd-naar-gemeente-en-wijk-2024
-   link: 'De huishoudens van Eindhoven, 2023' -> https://www.cbs.nl/nl-nl/maatwerk/2026/25/de-huishoudens-van-eindhoven-2023
-   link: 'Evaluatie vegetatiemeetnet Noord-Hollandse duinen' -> https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2026/evaluatie-vegetatiemeetnet-noord-hollandse-duinen
-   link: 'Nationale Enqu&#xEA;te Arbeidsomstandigheden (NEA) 2025 - Onderzoeksbeschrijving' -> https://www.cbs.nl/nl-nl/longread/rapportages/2026/nationale-enquete-arbeidsomstandigheden--nea---2025-onderzoeksbeschrijving
-   link: 'Ouderkoppels van gelijk geslacht' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2026/ouderkoppels-van-gelijk-geslacht
-   link: 'Vertrouwen in de politiek, 2016-2025' -> https://www.cbs.nl/nl-nl/longread/statistische-trends/2026/vertrouwen-in-de-politiek-2016-2025
-   link: 'Grootste deel Caribisch Nederland rekent zich tot religieuze groepering' -> https://www.cbs.nl/nl-nl/nieuws/2023/50/grootste-deel-caribisch-nederland-rekent-zich-tot-religieuze-groepering
-   link: 'Haalbaarheidsonderzoek gebruik innovatiesubsidies AI-producerende bedrijven' -> https://www.cbs.nl/nl-nl/publicatie/2026/24/haalbaarheidsonderzoek-gebruik-innovatiesubsidies-ai-producerende-bedrijven
-   link: 'Pilotonderzoek energieverbruik glastuinbouw 2022-2024' -> https://www.cbs.nl/nl-nl/publicatie/2026/27/pilotonderzoek-energieverbruik-glastuinbouw-2022-2024
-   link: 'Bodemgebruik, wijk- en buurtcijfers 2022' -> https://www.cbs.nl/nl-nl/cijfers/detail/86211NED?q=religieuze%20kaart
-   link: 'Het verhaal' -> https://www.cbs.nl/nl-nl/visualisaties/monitor-brede-welvaart-en-de-sustainable-development-goals/het-verhaal
-   link: 'Vrouwelijke ondernemers en hun zoektocht naar financiering 2022-2024' -> https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2025/vrouwelijke-ondernemers-en-hun-zoektocht-naar-financiering-2022-2024
-   (104 links in all)
-   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine 
-
-## https://www.cbs.nl/nl-nl/zoeken?q=religie%20gemeente%20maatwerk&selectedperiod=all-periods&pageindex=2
-   HTTP 200, 77,603 bytes, text/html; charset=utf-8 
-   link: 'Autobezit per gebied voor twaalf gemeenten, 2019-2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/29/autobezit-per-gebied-voor-twaalf-gemeenten-2019-2026
-   link: 'Verjaardagskalender per gemeente, editie 2026' -> https://www.cbs.nl/nl-nl/visualisaties/verjaardagskalender-per-gemeente
-   link: 'Definitieve achterstandsscores gemeenten 2024/2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/32/definitieve-achterstandsscores-gemeenten-2024-2025
-   link: 'Barometer Culturele Diversiteit Gemeente Den Haag, december 2023 en december 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/31/barometer-culturele-diversiteit-gemeente-den-haag-december-2023-en-december-2025
-   link: 'Achtergrondkenmerken in- en uitstromers bijstand gemeente Groningen, 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/40/achtergrondkenmerken-in-en-uitstromers-bijstand-gemeente-groningen-2025
-   link: 'AZW: Kinderopvanguren en aantal kinderen naar gemeente, soort opvang, leeftijd, 2015-2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/30/azw-kinderopvanguren-en-aantal-kinderen-naar-gemeente-soort-opvang-leeftijd-2015-2025
-   link: 'Aantal WOZ-objecten naar gebruikscode en gemeente, 1 januari 2025 en 2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/29/aantal-woz-objecten-naar-gebruikscode-en-gemeente-1-januari-2025-en-2026
-   link: 'Opleiding en inkomen in de gemeente Zwolle, 2021-2024' -> https://www.cbs.nl/nl-nl/maatwerk/2026/25/opleiding-en-inkomen-in-de-gemeente-zwolle-2021-2024
-   link: 'Bouwvergunningen woonruimten; type, opdrachtgever, eigendom, gemeente' -> https://www.cbs.nl/nl-nl/cijfers/detail/83671NED?q=religie%20gemeente%20maatwerk
-   link: 'Koopwoningen in gemeente Groningen naar WOZ-waarde en huishoudinkomen, 2024' -> https://www.cbs.nl/nl-nl/maatwerk/2026/21/koopwoningen-in-gemeente-groningen-naar-woz-waarde-en-huishoudinkomen-2024
-   link: 'Trajecten jeugdzorg in natura; regio (gemeente), op peildatum' -> https://www.cbs.nl/nl-nl/cijfers/detail/85094NED?q=religie%20gemeente%20maatwerk
-   link: 'Barometer Culturele Diversiteit Gemeente Rotterdam, december 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/22/barometer-culturele-diversiteit-gemeente-rotterdam-december-2025
-   link: 'Arbeidsdeelname; gemeenten (regio-indeling 2026)' -> https://www.cbs.nl/nl-nl/cijfers/detail/86339NED?q=religie%20gemeente%20maatwerk
-   link: 'Bestaanszekerheidsmonitor Gemeente Tilburg, 2024' -> https://www.cbs.nl/nl-nl/maatwerk/2026/17/bestaanszekerheidsmonitor-gemeente-tilburg-2024
-   link: 'Buurt, wijk en gemeente 2026 voor postcode huisnummer' -> https://www.cbs.nl/nl-nl/maatwerk/2026/38/buurt-wijk-en-gemeente-2026-voor-postcode-huisnummer
-   link: 'Aandeel elektrische personenauto&#x2019;s per gemeente, 1-1-2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/16/aandeel-elektrische-personenauto-s-per-gemeente-1-1-2026
-   link: 'Autobezit per gebied voor twaalf gemeenten, 2019 - 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/15/autobezit-per-gebied-voor-twaalf-gemeenten-2019-2025
-   link: 'Barometer Culturele Diversiteit Gemeente Amsterdam, november 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/14/barometer-culturele-diversiteit-gemeente-amsterdam-november-2025
-   link: 'Huishoudelijk afval per gemeente naar haal en brengsysteem, 2013 - 2023' -> https://www.cbs.nl/nl-nl/maatwerk/2026/24/huishoudelijk-afval-per-gemeente-naar-haal-en-brengsysteem-2013-2023
-   link: 'Laag inkomen naar kenmerken en wijk/buurt gemeente Utrecht, 2023' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/laag-inkomen-naar-kenmerken-en-wijk-buurt-gemeente-utrecht-2023
-   link: 'Laag inkomen naar kenmerken en wijk/buurt gemeente Utrecht, 2024' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/laag-inkomen-naar-kenmerken-en-wijk-buurt-gemeente-utrecht-2024
-   link: 'Opbrengst landbouw in de gemeente Schouwen-Duiveland, 2022-2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/13/opbrengst-landbouw-in-de-gemeente-schouwen-duiveland-2022-2025
-   link: 'Vestigingen van bedrijven; bedrijfstak, gemeente' -> https://www.cbs.nl/nl-nl/cijfers/detail/81575NED?q=religie%20gemeente%20maatwerk
-   link: 'Elektrische voertuigen per gemeente Provincie Noord-Brabant, 2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/13/elektrische-voertuigen-per-gemeente-provincie-noord-brabant-2026
-   link: 'Voorlopige bevolkingsaantallen per gemeente, 1-1-2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/voorlopige-bevolkingsaantallen-per-gemeente-1-1-2026
-   (104 links in all)
-   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine 
-
-## https://www.cbs.nl/nl-nl/zoeken?q=kerkelijke%20gezindte%20gemeente&selectedperiod=all-periods&pageindex=2
-   HTTP 200, 77,623 bytes, text/html; charset=utf-8 
-   link: 'Kinderopvang in gemeente Groningen, 2023-2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/31/kinderopvang-in-gemeente-groningen-2023-2025
-   link: 'Verjaardagskalender per gemeente, editie 2026' -> https://www.cbs.nl/nl-nl/visualisaties/verjaardagskalender-per-gemeente
-   link: 'Autobezit per gebied voor twaalf gemeenten, 2019-2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/29/autobezit-per-gebied-voor-twaalf-gemeenten-2019-2026
-   link: 'Definitieve achterstandsscores gemeenten 2024/2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/32/definitieve-achterstandsscores-gemeenten-2024-2025
-   link: 'Barometer Culturele Diversiteit Gemeente Den Haag, december 2023 en december 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/31/barometer-culturele-diversiteit-gemeente-den-haag-december-2023-en-december-2025
-   link: 'Achtergrondkenmerken in- en uitstromers bijstand gemeente Groningen, 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/40/achtergrondkenmerken-in-en-uitstromers-bijstand-gemeente-groningen-2025
-   link: 'AZW: Kinderopvanguren en aantal kinderen naar gemeente, soort opvang, leeftijd, 2015-2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/30/azw-kinderopvanguren-en-aantal-kinderen-naar-gemeente-soort-opvang-leeftijd-2015-2025
-   link: 'Aantal WOZ-objecten naar gebruikscode en gemeente, 1 januari 2025 en 2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/29/aantal-woz-objecten-naar-gebruikscode-en-gemeente-1-januari-2025-en-2026
-   link: 'Opleiding en inkomen in de gemeente Zwolle, 2021-2024' -> https://www.cbs.nl/nl-nl/maatwerk/2026/25/opleiding-en-inkomen-in-de-gemeente-zwolle-2021-2024
-   link: 'Bouwvergunningen woonruimten; type, opdrachtgever, eigendom, gemeente' -> https://www.cbs.nl/nl-nl/cijfers/detail/83671NED?q=kerkelijke%20gezindte%20gemeente
-   link: 'Koopwoningen in gemeente Groningen naar WOZ-waarde en huishoudinkomen, 2024' -> https://www.cbs.nl/nl-nl/maatwerk/2026/21/koopwoningen-in-gemeente-groningen-naar-woz-waarde-en-huishoudinkomen-2024
-   link: 'Trajecten jeugdzorg in natura; regio (gemeente), op peildatum' -> https://www.cbs.nl/nl-nl/cijfers/detail/85094NED?q=kerkelijke%20gezindte%20gemeente
-   link: 'Barometer Culturele Diversiteit Gemeente Rotterdam, december 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/22/barometer-culturele-diversiteit-gemeente-rotterdam-december-2025
-   link: 'Arbeidsdeelname; gemeenten (regio-indeling 2026)' -> https://www.cbs.nl/nl-nl/cijfers/detail/86339NED?q=kerkelijke%20gezindte%20gemeente
-   link: 'Bestaanszekerheidsmonitor Gemeente Tilburg, 2024' -> https://www.cbs.nl/nl-nl/maatwerk/2026/17/bestaanszekerheidsmonitor-gemeente-tilburg-2024
-   link: 'Buurt, wijk en gemeente 2026 voor postcode huisnummer' -> https://www.cbs.nl/nl-nl/maatwerk/2026/38/buurt-wijk-en-gemeente-2026-voor-postcode-huisnummer
-   link: 'Aandeel elektrische personenauto&#x2019;s per gemeente, 1-1-2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/16/aandeel-elektrische-personenauto-s-per-gemeente-1-1-2026
-   link: 'Autobezit per gebied voor twaalf gemeenten, 2019 - 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/15/autobezit-per-gebied-voor-twaalf-gemeenten-2019-2025
-   link: 'Barometer Culturele Diversiteit Gemeente Amsterdam, november 2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/14/barometer-culturele-diversiteit-gemeente-amsterdam-november-2025
-   link: 'Huishoudelijk afval per gemeente naar haal en brengsysteem, 2013 - 2023' -> https://www.cbs.nl/nl-nl/maatwerk/2026/24/huishoudelijk-afval-per-gemeente-naar-haal-en-brengsysteem-2013-2023
-   link: 'Laag inkomen naar kenmerken en wijk/buurt gemeente Utrecht, 2023' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/laag-inkomen-naar-kenmerken-en-wijk-buurt-gemeente-utrecht-2023
-   link: 'Laag inkomen naar kenmerken en wijk/buurt gemeente Utrecht, 2024' -> https://www.cbs.nl/nl-nl/maatwerk/2026/11/laag-inkomen-naar-kenmerken-en-wijk-buurt-gemeente-utrecht-2024
-   link: 'Opbrengst landbouw in de gemeente Schouwen-Duiveland, 2022-2025' -> https://www.cbs.nl/nl-nl/maatwerk/2026/13/opbrengst-landbouw-in-de-gemeente-schouwen-duiveland-2022-2025
-   link: 'Vestigingen van bedrijven; bedrijfstak, gemeente' -> https://www.cbs.nl/nl-nl/cijfers/detail/81575NED?q=kerkelijke%20gezindte%20gemeente
-   link: 'Elektrische voertuigen per gemeente Provincie Noord-Brabant, 2026' -> https://www.cbs.nl/nl-nl/maatwerk/2026/13/elektrische-voertuigen-per-gemeente-provincie-noord-brabant-2026
-   (104 links in all)
-   text: Zoeken | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vernieuwing StatLine Info over StatLine StatLine 
-
-## https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015
-   HTTP 200, 47,888 bytes, text/html; charset=utf-8 
-   link: 'De religieuze kaart van Nederland, 2010-2015' -> https://www.cbs.nl/-/media/_pdf/2016/51/religie-regionaal-2010-2015.pdf
-   link: 'Deel deze pagina op LinkedIn' -> https://www.linkedin.com/shareArticle?mini=true&url=https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015?pk_campaign=social_share&pk_source=linkedin&title=&summary=&source=
-   link: 'Deel deze pagina op Facebook' -> https://www.facebook.com/sharer/sharer.php?u=https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015?pk_campaign=social_share&pk_source=facebook
-   link: 'Mail deze pagina' -> mailto:?&subject=&body=https://www.cbs.nl/nl-nl/publicatie/2016/51/de-religieuze-kaart-van-nederland-2010-2015?pk_campaign=social_share&pk_source=mail
-   link: 'Hernieuwbare energie in Nederland, 2025' -> https://www.cbs.nl/nl-nl/publicatie/2026/40/hernieuwbare-energie-in-nederland-2025
-   link: 'Dierlijke mest en mineralen 2025' -> https://www.cbs.nl/nl-nl/longread/rapportages/2026/dierlijke-mest-en-mineralen-2025
-   link: 'Inflatie in september 3,4 procent bij snelle raming 2-10-2026 06:30' -> https://www.cbs.nl/nl-nl/nieuws/2026/40/inflatie-in-september-3-4-procent-bij-snelle-raming
-   link: 'Cao-lonen in derde kwartaal 4,0 procent gestegen 1-10-2026 06:30' -> https://www.cbs.nl/nl-nl/nieuws/2026/40/cao-lonen-in-derde-kwartaal-4-0-procent-gestegen
-   link: 'Omzet detailhandel groeit met 3,5 procent in augustus 1-10-2026 06:30' -> https://www.cbs.nl/nl-nl/nieuws/2026/40/omzet-detailhandel-groeit-met-3-5-procent-in-augustus
-   (92 links in all)
-   text: De religieuze kaart van Nederland, 2010&#x2013;2015 | CBS Ga naar hoofdinhoud Toon navigatie menu Sluit navigatie menu Waar ben je naar op zoek? Waar ben je naar op zoek? English Cijfers StatLine Vern
+## https://opendata.cbs.nl/ODataApi/odata/70794ned/RegioS?$format=json
+   HTTP 404, 1,949 bytes, text/html; charset=utf-8 
+   0 matches of '(?:GM|CR|PV|LD|NL)[0-9]{2,4}'
