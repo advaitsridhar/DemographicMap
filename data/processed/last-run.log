@@ -1,12 +1,8 @@
-https://stat.bora.dopa.go.th/stat/statnew/statyear/: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
-https://stat.bora.dopa.go.th/new_stat/webPage/statByAge.php: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
-https://www.dopa.go.th/: HTTP 403 text/html 864 B
-  <html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3"></script></head><body style="margin:0px;height:100%"><i
-https://www.bora.dopa.go.th/: HTTP 200 text/html; charset=UTF-8 102439 B
-  <!doctype html> <html lang="th" class="no-js" itemtype="https://schema.org/WebPage" itemscope> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"> <title>สำนักบริหารการทะเบียน &#8211; The Bureau of Registration Administration (BORA)</title> <script type="text/template" id="pvc-stats-view-template"> <i class="pvc-stats-icon small" aria
-https://data.go.th/: HTTP 403 text/html; charset=UTF-8 1370 B
-  <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Access Denied</title> <style> body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f3f4f6; color: #333; } .container { max-width: 600px; margin: 50px auto; background: white; padding: 30px; border-radius: 8px; box-shado
-https://gdcatalog.go.th/: HTTP 200 text/html; charset=utf-8 273607 B
-  <!DOCTYPE html> <!--[if IE 9]> <html lang="th" class="ie9"> <![endif]--> <!--[if gt IE 8]><!--> <html lang="th"> <!--<![endif]--> <head> <link rel="stylesheet" type="text/css" href="/fanstatic/gdc_portal/:version:2023-06-02T10:21:47.92/:bundle:gdc_portal_home_banner.css;gdc_portal_search_suggestion.css" /> <meta charset="utf-8" /> <meta name="generator" content="ckan 2.9.2" /> <meta name="viewport
-https://catalog.dopa.go.th/: URLError: <urlopen error timed out>
-https://opendata.dopa.go.th/: URLError: <urlopen error [Errno -2] Name or service not known>
+malaysia: ethnicity, median age and sex ratio by state and district, OpenDOSM
+  states: 16 at 2026-01-01
+  districts: 160 at 2025-01-01
+  16 states' districts each make the state's own figure for 2025-01-01
+  malaysia_state.json: 16 of 16 with a median age (26.6-36.5) and a sex ratio (96.9-117.2)
+  wrote data/processed/malaysia_state.json (44 kB)
+  malaysia_district.json: 160 of 160 with a median age (22.9-38.8) and a sex ratio (91.8-153.1)
+  wrote data/processed/malaysia_district.json (447 kB)
