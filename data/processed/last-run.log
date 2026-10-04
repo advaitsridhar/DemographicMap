@@ -1,7 +1,712 @@
-  cod-ps-sau: licence cc-by-igo, methodology 'Census'
-    `Asir (SA14) -> 'Asir Region: 2,024,285, median 28.0, 145.9 M/100F
-    Al Bahah (SA11) -> Al Bahah Region: 339,174, median 28.3, 134.0 M/100F
-    Al Hudud ash Shamaliyah (SA08) -> Northern Borders Region: 373,577, median 25.8, 134.9 M/100F
-    Al Jawf (SA12) -> Al Jawf Region: 595,822, median 25.0, 138.2 M/100F
-    Al Madinah (SA03) -> Al Madinah Region: 2,137,983, median 28.4, 148.6 M/100F
-saudi_census: Al Quassim (SA05) matches drawn []
+probe_pdf: https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/Basic_Tables/2020NPHC_Volume_1_-_Version_2.pdf
+  14,955,957 bytes
+  384 pages
+probe_pdf: 384 pages, printing [33, 34, 55, 56, 62, 63, 64, 65]
+
+--- page 33 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+23
+Table 1.1: Total population by region, sex, and number of people living in households by household type
+Region Total Male Female
+No. of
+HHs Total Male Female
+No. of
+HHs Total Male Female
+No. of
+HHs
+VANUATU 300,019 151,597 148,422 63,730 293,963 148,354 145,609 63,365 6,056 3,243 2,813 365
+URBAN 66,753 33,606 33,147 14,812 65,867 32,998 32,870 14,702 886 608 277 110
+Port Vila 49,034 24,641 24,393 11,195 48,461 24,259 24,202 11,118 573 382 191 77
+Luganville 17,719 8,965 8,754 3,617 17,407 8,739 8,668 3,584 312 226 86 33
+RURAL 233,266 117,991 115,275 48,918 228,095 115,356 112,739 48,663 5,171 2,635 2,536 255
+TORBA 11,330 5,711 5,619 2,411 11,215 5,645 5,570 2,392 115 66 48 19
+Torres 1,190 597 593 208 1,185 595 590 207 5 3 2 1
+Ureparapara 466 243 223 93 466 243 223 93  -    -    -   0
+Motalava 1,693 841 852 399 1,689 837 852 397 4 4  -   2
+Vanua Lava 3,270 1,691 1,579 718 3,231 1,669 1,562 706 38 22 17 12
+Mota 597 308 289 143 597 308 289 142  -    -    -   1
+Gaua 3,467 1,718 1,750 707 3,400 1,680 1,720 704 67 38 29 3
+Merelava 647 314 333 143 647 314 333 143  -    -    -   0
+SANMA 43,165 22,316 20,848 9,346 42,245 21,834 20,411 9,306 920 482 437 40
+North West Santo 1,594 847 746 339 1,589 842 746 338 5 5  -   1
+North Santo 5,204 2,724 2,481 1,084 5,194 2,719 2,475 1,080 10 5 5 4
+West Santo 3,211 1,619 1,592 692 3,089 1,561 1,528 687 122 58 64 5
+South Santo 8,892 4,597 4,295 1,907 8,702 4,500 4,202 1,905 190 97 93 2
+East Santo 6,086 3,122 2,964 1,270 5,788 2,955 2,833 1,259 299 168 131 11
+South East Santo 7,581 3,869 3,712 1,639 7,479 3,813 3,666 1,633 102 56 46 6
+Canal - Fanafo 5,792 3,044 2,747 1,273 5,731 3,006 2,724 1,267 61 38 23 6
+West Malo 2,666 1,385 1,281 664 2,657 1,383 1,274 660 10 2 7 4
+East Malo 2,138 1,108 1,030 478 2,017 1,055 962 477 121 53 68 1
+PENAMA 35,607 18,033 17,574 7,915 34,123 17,283 16,840 7,863 1,484 749 735 52
+West Ambae 3,321 1,693 1,628 762 3,197 1,628 1,569 759 124 65 59 3
+North Ambae 3,249 1,647 1,602 751 2,917 1,466 1,450 749 333 181 152 2
+East Ambae 2,075 1,113 962 526 1,880 1,003 877 504 195 110 85 22
+South Ambae 1,211 618 593 313 1,211 618 593 313  -    -    -   0
+North Maewo 2,759 1,397 1,362 632 2,725 1,383 1,342 631 34 14 20 1
+South Maewo 1,895 967 928 388 1,868 953 915 386 27 14 13 2
+North Pentecost 6,745 3,509 3,236 1,431 6,451 3,354 3,097 1,420 294 155 139 11
+Central Pentecost 1 3,521 1,771 1,750 767 3,405 1,710 1,696 765 116 61 54 2
+Central Pentecost 2 4,954 2,453 2,500 1,128 4,837 2,402 2,435 1,122 117 51 66 6
+South Pentecost 5,877 2,863 3,014 1,217 5,632 2,765 2,866 1,214 245 98 147 3
+MALAMPA 42,499 21,495 21,004 9,763 41,506 20,969 20,537 9,715 993 526 467 48
+North West Malekula 5,503 2,791 2,712 1,192 5,325 2,680 2,645 1,184 179 111 68 8
+North East Malekula 6,816 3,414 3,402 1,638 6,748 3,378 3,370 1,632 68 36 32 6
+Central Malekula 6,405 3,183 3,222 1,500 6,335 3,139 3,196 1,490 70 44 26 10
+South West Malekula 3,775 1,917 1,858 871 3,635 1,856 1,779 869 140 61 79 2
+South East Malekula 5,310 2,710 2,599 1,108 5,226 2,678 2,548 1,101 84 32 51 7
+South Malekula 4,485 2,296 2,188 1,012 4,472 2,290 2,182 1,011 13 6 6 1
+North Ambrym 3,700 1,842 1,858 826 3,590 1,772 1,818 821 110 70 41 5
+West Ambrym 2,897 1,471 1,427 653 2,722 1,385 1,337 650 175 85 90 3
+South East Ambrym 1,931 1,020 911 550 1,930 1,020 910 549 1  -   1 1
+Paama 1,677 851 826 413 1,522 770 752 408 155 81 74 5
+All Households Private Households Institutional Households
+Table 1.1: Total population by region, sex, and number of people living in households by household
+type
+
+--- page 34 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+24
+Table 1.1: Total population by region, sex, and number of people living in households by household type
+Region Total Male Female
+No. of
+HHs Total Male Female
+No. of
+HHs Total Male Female
+No. of
+HHs
+All Households Private Households Institutional Households
+SHEFA 54,953 27,574 27,379 11,204 54,108 27,157 26,950 11,148 845 416 429 56
+Vermali 2,385 1,133 1,252 523 2,279 1,082 1,197 520 106 51 55 3
+Vermaul 1,766 867 899 369 1,766 867 899 369  -    -    -   0
+Varisu 2,007 1,017 990 466 2,007 1,017 990 464  -    -    -   2
+South Epi 1,865 958 907 343 1,751 897 854 341 114 61 53 2
+North Tongoa 1,606 819 787 349 1,587 800 787 345 18 18  -   4
+Tongariki 1,054 529 525 219 1,022 518 504 216 32 11 21 3
+Makimae 1,111 598 513 258 1,091 591 500 257 20 7 12 1
+Nguna 1,790 893 897 448 1,790 893 897 448  -    -    -   0
+Emau 737 377 360 180 737 377 360 180  -    -    -   0
+Malorua 3,724 1,899 1,825 754 3,594 1,832 1,762 743 130 67 63 11
+North Efate 3,550 1,750 1,800 703 3,333 1,657 1,676 696 217 93 124 7
+Mele 6,453 3,228 3,226 1,218 6,439 3,217 3,222 1,216 15 11 4 2
+Ifira 1,281 620 661 223 1,274 618 656 222 7 2 5 1
+Pango 2,289 1,125 1,164 505 2,279 1,118 1,161 496 10 7 3 9
+Erakor 11,721 5,903 5,818 2,344 11,570 5,830 5,740 2,338 151 73 77 6
+Eratap 7,648 3,838 3,810 1,530 7,629 3,829 3,800 1,526 19 9 10 4
+Eton 3,966 2,019 1,947 772 3,960 2,014 1,947 771 5 5  -   1
+TAFEA 45,714 22,862 22,851 8,279 44,899 22,468 22,431 8,239 814 394 420 40
+North Erromango 1,789 947 842 298 1,713 894 819 293 76 52 23 5
+South Erromango 770 383 387 115 658 325 333 114 112 58 54 1
+Aniwa 469 216 253 122 465 214 251 121 4 2 2 1
+North Tanna 4,701 2,327 2,374 884 4,701 2,327 2,374 884  -    -    -   0
+West Tanna 13,221 6,643 6,578 2,094 12,790 6,425 6,366 2,073 431 219 212 21
+Middle Bush Tanna 6,893 3,426 3,467 1,332 6,882 3,421 3,461 1,330 11 4 7 2
+South West Tanna 6,523 3,241 3,281 1,175 6,487 3,214 3,273 1,173 36 28 8 2
+Whitesands 7,664 3,770 3,894 1,519 7,561 3,768 3,794 1,517 103 2 101 2
+South Tanna 1,601 803 797 321 1,601 803 797 321  -    -    -   0
+Futuna 570 304 266 105 557 294 262 103 14 10 4 2
+Aneityum 1,513 802 711 314 1,484 782 701 310 29 19 10 4
+Table 1.1: Total population by region, sex, and number of people living in households by household
+type
+Table 1.1: Total population by region, sex, and number of people living in households by household type
+Region Total Male Female
+No. of
+HHs Total Male Female
+No. of
+HHs Total Male Female
+No. of
+HHs
+VANUATU 300,019 151,597 148,422 63,730 293,963 148,354 145,609 63,365 6,056 3,243 2,813 365
+URBAN 66,753 33,606 33,147 14,812 65,867 32,998 32,870 14,702 886 608 277 110
+Port Vila 49,034 24,641 24,393 11,195 48,461 24,259 24,202 11,118 573 382 191 77
+Luganville 17,719 8,965 8,754 3,617 17,407 8,739 8,668 3,584 312 226 86 33
+RURAL 233,266 117,991 115,275 48,918 228,095 115,356 112,739 48,663 5,171 2,635 2,536 255
+TORBA 11,330 5,711 5,619 2,411 11,215 5,645 5,570 2,392 115 66 48 19
+Torres 1,190 597 593 208 1,185 595 590 207 5 3 2 1
+Ureparapara 466 243 223 93 466 243 223 93  -    -    -   0
+Motalava 1,693 841 852 399 1,689 837 852 397 4 4  -   2
+Vanua Lava 3,270 1,691 1,579 718 3,231 1,669 1,562 706 38 22 17 12
+Mota 597 308 289 143 597 308 289 142  -    -    -   1
+Gaua 3,467 1,718 1,750 707 3,400 1,680 1,720 704 67 38 29 3
+Merelava 647 314 333 143 647 314 333 143  -    -    -   0
+SANMA 43,165 22,316 20,848 9,346 42,245 21,834 20,411 9,306 920 482 437 40
+North West Santo 1,594 847 746 339 1,589 842 746 338 5 5  -   1
+North Santo 5,204 2,724 2,481 1,084 5,194 2,719 2,475 1,080 10 5 5 4
+West Santo 3,211 1,619 1,592 692 3,089 1,561 1,528 687 122 58 64 5
+South Santo 8,892 4,597 4,295 1,907 8,702 4,500 4,202 1,905 190 97 93 2
+East Santo 6,086 3,122 2,964 1,270 5,788 2,955 2,833 1,259 299 168 131 11
+South East Santo 7,581 3,869 3,712 1,639 7,479 3,813 3,666 1,633 102 56 46 6
+Canal - Fanafo 5,792 3,044 2,747 1,273 5,731 3,006 2,724 1,267 61 38 23 6
+West Malo 2,666 1,385 1,281 664 2,657 1,383 1,274 660 10 2 7 4
+East Malo 2,138 1,108 1,030 478 2,017 1,055 962 477 121 53 68 1
+PENAMA 35,607 18,033 17,574 7,915 34,123 17,283 16,840 7,863 1,484 749 735 52
+West Ambae 3,321 1,693 1,628 762 3,197 1,628 1,569 759 124 65 59 3
+North Ambae 3,249 1,647 1,602 751 2,917 1,466 1,450 749 333 181 152 2
+East Ambae 2,075 1,113 962 526 1,880 1,003 877 504 195 110 85 22
+South Ambae 1,211 618 593 313 1,211 618 593 313  -    -    -   0
+North Maewo 2,759 1,397 1,362 632 2,725 1,383 1,342 631 34 14 20 1
+South Maewo 1,895 967 928 388 1,868 953 915 386 27 14 13 2
+North Pentecost 6,745 3,509 3,236 1,431 6,451 3,354 3,097 1,420 294 155 139 11
+Central Pentecost 1 3,521 1,771 1,750 767 3,405 1,710 1,696 765 116 61 54 2
+Central Pentecost 2 4,954 2,453 2,500 1,128 4,837 2,402 2,435 1,122 117 51 66 6
+South Pentecost 5,877 2,863 3,014 1,217 5,632 2,765 2,866 1,214 245 98 147 3
+MALAMPA 42,499 21,495 21,004 9,763 41,506 20,969 20,537 9,715 993 526 467 48
+North West Malekula 5,503 2,791 2,712 1,192 5,325 2,680 2,645 1,184 179 111 68 8
+North East Malekula 6,816 3,414 3,402 1,638 6,748 3,378 3,370 1,632 68 36 32 6
+Central Malekula 6,405 3,183 3,222 1,500 6,335 3,139 3,196 1,490 70 44 26 10
+South West Malekula 3,775 1,917 1,858 871 3,635 1,856 1,779 869 140 61 79 2
+South East Malekula 5,310 2,710 2,599 1,108 5,226 2,678 2,548 1,101 84 32 51 7
+South Malekula 4,485 2,296 2,188 1,012 4,472 2,290 2,182 1,011 13 6 6 1
+North Ambrym 3,700 1,842 1,858 826 3,590 1,772 1,818 821 110 70 41 5
+West Ambrym 2,897 1,471 1,427 653 2,722 1,385 1,337 650 175 85 90 3
+South East Ambrym 1,931 1,020 911 550 1,930 1,020 910 549 1  -   1 1
+Paama 1,677 851 826 413 1,522 770 752 408 155 81 74 5
+All Households Private Households Institutional Households
+
+--- page 55 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+45
+Table 3.1: Total population living in private households by ethnic origin and by region
+Table 3.1: Total population living in private households by ethnic origin and by region
+Region Total
+Ni-Vanuatu
+only
+Part Ni-
+Vanuatu European Asian
+Other
+Melanesian Polynesian Micronesian Others
+VANUATU 293,963  291,035            534              800              672         641                   135              55                    91
+URBAN 65,867    63,669              303              574              638          488                   111              41                    44
+Port Vila 48,461   46,553             243             507              543         440                  107             29                   39
+Luganville 17,407   17,116             59               67                95           48                    4                 12                   5
+RURAL 228,095  227,366            231              226              34           153                   24                13                    47
+TORBA 11,215    11,199              7                 5                  -           2                       -               -                   2
+Torres 1,185      1,184                1                 -                -           -                    -              -                   -
+Ureparapara 466         466                   -              -               -           -                    -              -                   -
+Motalava 1,689      1,689                -              -               -           -                    -              -                   -
+Vanua Lava 3,231      3,225                4                 -                -           1                       -               -                   1
+Mota 597         597                   -              -               -           -                    -              -                   -
+Gaua 3,400      3,391                2                 5                  -           1                       -               -                   1
+Merelava 647         647                   -              -               -           -                    -              -                   -
+SANMA 42,245    42,105              38                64                4              23                     2                 3                      5
+North West Santo 1,589       1,585                -              -               -           3                       -               -                   -
+North Santo 5,194      5,192                -              -               -           2                       -               -                   -
+West Santo 3,089      3,083                -              4                  -           -                    -              1                      1
+South Santo 8,702      8,689                1                 6                  1              1                       -               1                      3
+East Santo 5,788      5,776                -              2                  -           9                       -               -                   -
+South East Santo 7,479       7,409                33                34                -           2                       -               -                   1
+Canal - Fanafo 5,731      5,698                4                 16                 3              6                       1                 1                      -
+West Malo 2,657      2,655                -              1                  -           -                    1                 -                   -
+East Malo 2,017      2,017                -              -               -           -                    -              -                   -
+PENAMA 34,123    34,091              3                 -                7              15                     1                 2                      4
+West Ambae 3,197      3,194                -              -               -           -                    -              1                      2
+North Ambae 2,917      2,914                -              -               -           3                       -               -                   -
+East Ambae 1,880      1,870                1                 -                -           10                     -               -                   -
+South Ambae 1,211      1,211                -              -               -           -                    -              -                   -
+North Maewo 2,725      2,724                -              -               -           -                    -              1                      -
+South Maewo 1,868      1,868                -              -               -           -                    -              -                   -
+North Pentecost 6,451       6,444                2                 -                -           2                       1                 -                   2
+Central Pentecost 1 3,405      3,405                -              -               -           -                    -              -                   -
+Central Pentecost 2 4,837      4,837                -              -               -           -                    -              -                   -
+South Pentecost 5,632       5,624                -              -               7              1                       -               -                   -
+MALAMPA 41,506    41,437              16                10                -           31                     2                 3                      7
+North West Malekula 5,325      5,324                -              1                  -           -                    -              -                   -
+North East Malekula 6,748      6,740                1                 -                -           5                       1                 -                   1
+Central Malekula 6,335       6,296                8                 4                  -           21                     1                 3                      2
+South West Malekula 3,635      3,632                1                 1                  -           -                    -              -                   1
+South East Malekula 5,226      5,222                3                 -                -           -                    -              -                   -
+South Malekula 4,472       4,470                -              -               -           -                    -              -                   2
+North Ambrym 3,590      3,586                2                 -                -           1                       -               -                   -
+West Ambrym 2,722      2,718                -              2                  -           1                       -               -                   1
+South East Ambrym 1,930      1,929                -              1                  -           -                    -              -                   -
+Paama 1,522      1,520                -              -               -           2                       -               -                   -
+Ethnic origin
+Table 3.1: Total population living in private households by ethnic origin and by region
+Region Total
+Ni-Vanuatu
+only
+Part Ni-
+Vanuatu European Asian
+Other
+Melanesian Polynesian Micronesian Others
+Ethnic origin
+SHEFA 54,108    53,714              137              128              21            66                     17                3                      23
+Vermali 2,279      2,278                -              -               -           -                    1                 -                   -
+Vermaul 1,766      1,763                -              -               -           3                       1                 -                   -
+Varisu 2,007      2,006                -              -               -           -                    -              -                   1
+South Epi 1,751      1,748                -              -               -           -                    -              -                   2
+North Tongoa 1,587      1,587                -              -               -           -                    -              -                   -
+Tongariki 1,022      1,022                -              -               -           -                    -              -                   -
+Makimae 1,091      1,090                -              -               -           -                    -              -                   1
+Nguna 1,790      1,781                7                 1                  -           -                    -              1                      -
+Emau 737         737                   -              -               -           -                    -              -                   -
+Malorua 3,594      3,497                44                35                1              12                     1                 -                   4
+North Efate 3,333      3,322                1                 4                  1              4                       -               -                   1
+Mele 6,439      6,380                35                9                  8              4                       2                 -                   1
+Ifira 1,274      1,238                3                 21                 -           10                     -               -                   2
+Pango 2,279      2,269                -              5                  -           4                       -               -                   1
+Erakor 11,570    11,495              18                28                9              9                       6                 -                   5
+Eratap 7,629      7,568                17                19                2              14                     5                 2                      2
+Eton 3,960      3,933                12                6                  -           5                       1                 -                   3
+TAFEA 44,899    44,820              30                19                2              16                     2                 2                      7
+North Erromango 1,713       1,712                -              -               1              -                    -              -                   -
+South Erromango 658          658                   -              -               -           -                    -              -                   -
+Aniwa 465         465                   -              -               -           -                    -              -                   -
+North Tanna 4,701      4,700                -              -               -           -                    1                 -                   -
+West Tanna 12,790    12,734              26                17                1              10                     1                 -                   1
+Middle Bush Tanna 6,882      6,876                2                 -                -           1                       -               1                      2
+South West Tanna 6,487       6,479                -              1                  -           5                       -               -                   1
+Whitesands 7,561      7,556                1                 1                  -           -                    -              1                      2
+South Tanna 1,601      1,601                -              -               -           -                    -              -                   -
+Futuna 557         557                   -              -               -           -                    -              -                   -
+Aneityum 1,484      1,483                1                 -                -           -                    -              -                   -
+
+--- page 56 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+46
+Table 3.1: Total population living in private households by ethnic origin and by region
+Table 3.1: Total population living in private households by ethnic origin and by region
+Region Total
+Ni-Vanuatu
+only
+Part Ni-
+Vanuatu European Asian
+Other
+Melanesian Polynesian Micronesian Others
+VANUATU 293,963  291,035            534              800              672         641                   135              55                    91
+URBAN 65,867    63,669              303              574              638          488                   111              41                    44
+Port Vila 48,461   46,553             243             507              543         440                  107             29                   39
+Luganville 17,407   17,116             59               67                95           48                    4                 12                   5
+RURAL 228,095  227,366            231              226              34           153                   24                13                    47
+TORBA 11,215    11,199              7                 5                  -           2                       -               -                   2
+Torres 1,185      1,184                1                 -                -           -                    -              -                   -
+Ureparapara 466         466                   -              -               -           -                    -              -                   -
+Motalava 1,689      1,689                -              -               -           -                    -              -                   -
+Vanua Lava 3,231      3,225                4                 -                -           1                       -               -                   1
+Mota 597         597                   -              -               -           -                    -              -                   -
+Gaua 3,400      3,391                2                 5                  -           1                       -               -                   1
+Merelava 647         647                   -              -               -           -                    -              -                   -
+SANMA 42,245    42,105              38                64                4              23                     2                 3                      5
+North West Santo 1,589       1,585                -              -               -           3                       -               -                   -
+North Santo 5,194      5,192                -              -               -           2                       -               -                   -
+West Santo 3,089      3,083                -              4                  -           -                    -              1                      1
+South Santo 8,702      8,689                1                 6                  1              1                       -               1                      3
+East Santo 5,788      5,776                -              2                  -           9                       -               -                   -
+South East Santo 7,479       7,409                33                34                -           2                       -               -                   1
+Canal - Fanafo 5,731      5,698                4                 16                 3              6                       1                 1                      -
+West Malo 2,657      2,655                -              1                  -           -                    1                 -                   -
+East Malo 2,017      2,017                -              -               -           -                    -              -                   -
+PENAMA 34,123    34,091              3                 -                7              15                     1                 2                      4
+West Ambae 3,197      3,194                -              -               -           -                    -              1                      2
+North Ambae 2,917      2,914                -              -               -           3                       -               -                   -
+East Ambae 1,880      1,870                1                 -                -           10                     -               -                   -
+South Ambae 1,211      1,211                -              -               -           -                    -              -                   -
+North Maewo 2,725      2,724                -              -               -           -                    -              1                      -
+South Maewo 1,868      1,868                -              -               -           -                    -              -                   -
+North Pentecost 6,451       6,444                2                 -                -           2                       1                 -                   2
+Central Pentecost 1 3,405      3,405                -              -               -           -                    -              -                   -
+Central Pentecost 2 4,837      4,837                -              -               -           -                    -              -                   -
+South Pentecost 5,632       5,624                -              -               7              1                       -               -                   -
+MALAMPA 41,506    41,437              16                10                -           31                     2                 3                      7
+North West Malekula 5,325      5,324                -              1                  -           -                    -              -                   -
+North East Malekula 6,748      6,740                1                 -                -           5                       1                 -                   1
+Central Malekula 6,335       6,296                8                 4                  -           21                     1                 3                      2
+South West Malekula 3,635      3,632                1                 1                  -           -                    -              -                   1
+South East Malekula 5,226      5,222                3                 -                -           -                    -              -                   -
+South Malekula 4,472       4,470                -              -               -           -                    -              -                   2
+North Ambrym 3,590      3,586                2                 -                -           1                       -               -                   -
+West Ambrym 2,722      2,718                -              2                  -           1                       -               -                   1
+South East Ambrym 1,930      1,929                -              1                  -           -                    -              -                   -
+Paama 1,522      1,520                -              -               -           2                       -               -                   -
+Ethnic origin
+Table 3.1: Total population living in private households by ethnic origin and by region
+Region Total
+Ni-Vanuatu
+only
+Part Ni-
+Vanuatu European Asian
+Other
+Melanesian Polynesian Micronesian Others
+Ethnic origin
+SHEFA 54,108    53,714              137              128              21            66                     17                3                      23
+Vermali 2,279      2,278                -              -               -           -                    1                 -                   -
+Vermaul 1,766      1,763                -              -               -           3                       1                 -                   -
+Varisu 2,007      2,006                -              -               -           -                    -              -                   1
+South Epi 1,751      1,748                -              -               -           -                    -              -                   2
+North Tongoa 1,587      1,587                -              -               -           -                    -              -                   -
+Tongariki 1,022      1,022                -              -               -           -                    -              -                   -
+Makimae 1,091      1,090                -              -               -           -                    -              -                   1
+Nguna 1,790      1,781                7                 1                  -           -                    -              1                      -
+Emau 737         737                   -              -               -           -                    -              -                   -
+Malorua 3,594      3,497                44                35                1              12                     1                 -                   4
+North Efate 3,333      3,322                1                 4                  1              4                       -               -                   1
+Mele 6,439      6,380                35                9                  8              4                       2                 -                   1
+Ifira 1,274      1,238                3                 21                 -           10                     -               -                   2
+Pango 2,279      2,269                -              5                  -           4                       -               -                   1
+Erakor 11,570    11,495              18                28                9              9                       6                 -                   5
+Eratap 7,629      7,568                17                19                2              14                     5                 2                      2
+Eton 3,960      3,933                12                6                  -           5                       1                 -                   3
+TAFEA 44,899    44,820              30                19                2              16                     2                 2                      7
+North Erromango 1,713       1,712                -              -               1              -                    -              -                   -
+South Erromango 658          658                   -              -               -           -                    -              -                   -
+Aniwa 465         465                   -              -               -           -                    -              -                   -
+North Tanna 4,701      4,700                -              -               -           -                    1                 -                   -
+West Tanna 12,790    12,734              26                17                1              10                     1                 -                   1
+Middle Bush Tanna 6,882      6,876                2                 -                -           1                       -               1                      2
+South West Tanna 6,487       6,479                -              1                  -           5                       -               -                   1
+Whitesands 7,561      7,556                1                 1                  -           -                    -              1                      2
+South Tanna 1,601      1,601                -              -               -           -                    -              -                   -
+Futuna 557         557                   -              -               -           -                    -              -                   -
+Aneityum 1,484      1,483                1                 -                -           -                    -              -                   -
+
+--- page 62 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+52
+Table 3.5: Total population in private households by religion and region
+Region Total Presbyterian
+Seventh Day
+Adventist (SDA) Catholic Anglican
+Churches
+of Christ
+Assemblies of
+God (AOG)
+Neil Thomas
+Ministry /
+Inner Life
+Ministry
+Customary
+beliefs
+VANUATU 293,963  80,060           43,541                 35,602    35,339    14,588        14,450              9,515             9,080
+URBAN 65,867    17,054           12,920                 8,467       6,276       3,262           3,319                2,530             45
+Port Vila 48,461   14,244           8,928                  5,980      3,813      2,092         2,616                2,040             33
+Luganville 17,407   2,810             3,993                  2,486      2,463      1,171         702                  490               12
+RURAL 228,095  63,006           30,621                 27,135    29,063    11,326        11,131              6,985             9,035
+TORBA 11,215    51                  653                      53           8,665      166             466                   359                7
+Torres 1,185      8                    29                        2             1,128      6                 2                                          -                    -
+Ureparapara 466         1                    14                        1             437                         -   3                       7                                     -
+Motalava 1,689      2                    182                      2             927         7                 148                   1                    1
+Vanua Lava 3,231      26                  188                      39           2,668      12               140                   90                  6
+Mota 597         1                    3                                     -   573                         -   18                                        -                    -
+Gaua 3,400      14                  238                      9             2,407      121             126                   225                                 -
+Merelava 647                            -                            -              -   525         20               29                     36                                   -
+SANMA 42,245    12,645           5,451                   4,987       3,434       2,956           1,395                1,296             298
+North West Santo 1,589       1,175             149                      8             11            3                 56                     11                                   -
+North Santo 5,194      1,179             964                      1,077      934          23               200                   51                  4
+West Santo 3,089      1,423             69                        7             129         12               3                       369                37
+South Santo 8,702      3,477             742                      659         54            79                78                     288                182
+East Santo 5,788      1,917             259                      1,795      423          542              125                   275                                 -
+South East Santo 7,479       1,022             1,268                   586         1,252       1,323           201                   116                11
+Canal - Fanafo 5,731      1,056             820                      751         546          472              113                   184                62
+West Malo 2,657      1,201             324                      10           71            108              592                   1                                     -
+East Malo 2,017      195                856                      94           14            393              27                                        -   1
+PENAMA 34,123    199                2,028                   7,394       15,312     5,506          298                   419                827
+West Ambae 3,197      5                    344                      36           518          864              207                   15                                   -
+North Ambae 2,917      35                  479                      575         1,269       377             18                     80                                   -
+East Ambae 1,880      17                  110                      21           1,336      354             5                       13                                   -
+South Ambae 1,211      6                    368                      2             623         115              13                                        -                    -
+North Maewo 2,725      8                    7                          7             2,375      323             2                       1                    1
+South Maewo 1,868      5                    341                      12           1,012      492             1                       3                                     -
+North Pentecost 6,451       22                  94                        354         5,446       13               16                     72                  21
+Central Pentecost 1 3,405      16                  179                      662         1,162       1,081           1                       148                                 -
+Central Pentecost 2 4,837      28                  14                        3,537      1,147       59               3                       2                    15
+South Pentecost 5,632       57                  92                        2,188      423          1,828          32                     83                  790
+MALAMPA 41,506    18,220           7,113                   7,910       172          308              1,464                1,597             8
+North West Malekula 5,325      945                1,787                   981         16            61                594                   38                  1
+North East Malekula 6,748      1,278             1,276                   3,120       18           108              230                   120                                 -
+Central Malekula 6,335       3,146             898                      634         47            73                266                   300                                 -
+South West Malekula 3,635      2,165             216                      228         10            35                9                       41                  6
+South East Malekula 5,226      3,459             611                      25           17            20                49                     408                                 -
+South Malekula 4,472       2,606             211                      1,268      30           2                 154                   56                  1
+North Ambrym 3,590      1,243             903                      808         16            2                 82                     308                                 -
+West Ambrym 2,722      916                660                      738         7             5                  16                     175                                 -
+South East Ambrym 1,930      1,610             134                      103         2                             -   3                       8                                     -
+Paama 1,522      852                417                      5             10            2                 60                     144                                 -
+Religion
+Table 3.5: Total population in private households by religion and region
+
+--- page 63 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+53
+Table 3.5: Total population in private households by religion and region
+Region Total Presbyterian
+Seventh Day
+Adventist (SDA) Catholic Anglican
+Churches
+of Christ
+Assemblies of
+God (AOG)
+Neil Thomas
+Ministry /
+Inner Life
+Ministry
+Customary
+beliefs
+Religion
+SHEFA 54,108    22,002           9,093                   2,788       1,390       1,160           4,131                2,165             138
+Vermali 2,279      1,623             226                      6             8              8                  303                   1                    1
+Vermaul 1,766      970                256                      54           3              4                  275                   35                                   -
+Varisu 2,007      1,224             579                      8             9                              -   2                                          -                    -
+South Epi 1,751      190                776                      1                         -   1                                       -                      -                    -
+North Tongoa 1,587      892                192                      50           4                              -   20                     17                                   -
+Tongariki 1,022      499                163                      3                         -                   -                         -   1                                     -
+Makimae 1,091      588                132                      8                         -   2                 112                   1                                     -
+Nguna 1,790      1,188             190                      12           8              11                17                     137                1
+Emau 737         545                20                        1             2              4                                        -                      -                    -
+Malorua 3,594      1,712             478                      81           83            47                216                   174                26
+North Efate 3,333      1,551             373                      24           30            20                302                   301                                 -
+Mele 6,439      3,001             628                      310         151          148              479                   427                27
+Ifira 1,274      635                64                        12           2              5                  268                   35                                   -
+Pango 2,279      622                337                      101         57            56                232                   146                1
+Erakor 11,570    3,525             2,202                   1,267       457          459              723                   431                42
+Eratap 7,629      2,103             1,468                   740         503          240              808                   234                39
+Eton 3,960      1,135             1,010                   110         72            155              375                   225                1
+TAFEA 44,899    9,889             6,282                   4,003       90           1,230          3,377                1,149             7,757
+North Erromango 1,713       553                763                      15           12            2                 48                     69                  1
+South Erromango 658          172                350                      1                         -                   -   52                     4                                     -
+Aniwa 465         78                  19                        1                         -                   -   2                                          -   75
+North Tanna 4,701      1,023             490                      174         1             178             281                   61                  896
+West Tanna 12,790    2,696             1,335                   831         15            530              1,958                333                2,142
+Middle Bush Tanna 6,882      1,279             800                      697         21            107              363                   36                  1,742
+South West Tanna 6,487       562                957                      621         5             49                220                   107                1,967
+Whitesands 7,561      2,332             701                      706         23            360              366                   220                877
+South Tanna 1,601      179                330                      727         2             1                                        -   246                57
+Futuna 557         374                35                        3             9              1                  56                     72                                   -
+Aneityum 1,484      641                502                      226         2             1                  32                                        -                    -
+Table 3.5: Total population in private households by religion and region
+
+--- page 64 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+54
+Table 3.5: Total population in private households by religion and region
+Region
+VANUATU
+URBAN
+Port Vila
+Luganville
+RURAL
+TORBA
+Torres
+Ureparapara
+Motalava
+Vanua Lava
+Mota
+Gaua
+Merelava
+SANMA
+North West Santo
+North Santo
+West Santo
+South Santo
+East Santo
+South East Santo
+Canal - Fanafo
+West Malo
+East Malo
+PENAMA
+West Ambae
+North Ambae
+East Ambae
+South Ambae
+North Maewo
+South Maewo
+North Pentecost
+Central Pentecost 1
+Central Pentecost 2
+South Pentecost
+MALAMPA
+North West Malekula
+North East Malekula
+Central Malekula
+South West Malekula
+South East Malekula
+South Malekula
+North Ambrym
+West Ambrym
+South East Ambrym
+Paama
+Apostolic
+Latter Day
+Saints
+(Mormon) Other churches
+No
+Religion/Faith
+Refuse to
+answer
+Not
+Stated
+6,894        5,174         35,270              4,023                 394           34
+1,443        1,301          8,353                737                    141            19
+1,073       1,017         5,876               608                   122           18
+370          284            2,476               128                   20            1
+5,451        3,873         26,917              3,286                 253           14
+39             99              649                   4                        3                           -
+              -                 -   7                       3                                      -              -
+2                             -   1                                              -                 -              -
+              -   2               413                   1                        3                           -
+10             1                52                                            -                 -              -
+1                             -                         -                          -                 -              -
+16             71              174                                          -                 -              -
+10             25              2                                              -                 -              -
+2,022        574           6,794                347                    44              3
+1                             -   167                   5                        1                           -
+94             1                623                   41                      3                1
+39                           -   963                   29                      8                           -
+598           51             2,399                90                      6                1
+90             2                355                   3                                      -              -
+405           292            965                   25                      12              1
+503           228            831                   153                    11                         -
+17                           -   332                                          -   1                          -
+276                         -   159                                          -   1                          -
+1,038        110           938                   39                      12              2
+992           47             166                                          -   2                          -
+2               3                77                                            -   1                          -
+2               5                17                                            -                 -              -
+19             50              15                                            -                 -              -
+              -                 -   1                                              -                 -              -
+1                             -                         -                          -                 -   1
+3               2                404                   3                        1                           -
+13                           -   136                   6                                      -   1
+2                             -   29                                            -   1                          -
+4               3                94                     30                      7                           -
+448           699            3,547                11                      8                2
+136           116            646                   5                                      -              -
+10             169            420                                          -                 -              -
+67             296            602                   2                        5                           -
+4                             -   920                   1                                      -              -
+12             101            519                   1                        2                           -
+28             14              99                                            -                 -   2
+108                         -   119                   2                                      -              -
+56             2                147                                          -                 -              -
+1                             -   69                                            -                 -              -
+26             1                6                                              -                 -              -
+Religion
+Table 3.5: Total population in private households by religion and regionTable 3.5: Total population in private households by religion and region
+Region Total Presbyterian
+Seventh Day
+Adventist (SDA) Catholic Anglican
+Churches
+of Christ
+Assemblies of
+God (AOG)
+Neil Thomas
+Ministry /
+Inner Life
+Ministry
+Customary
+beliefs
+Religion
+SHEFA 54,108    22,002           9,093                   2,788       1,390       1,160           4,131                2,165             138
+Vermali 2,279      1,623             226                      6             8              8                  303                   1                    1
+Vermaul 1,766      970                256                      54           3              4                  275                   35                                   -
+Varisu 2,007      1,224             579                      8             9                              -   2                                          -                    -
+South Epi 1,751      190                776                      1                         -   1                                       -                      -                    -
+North Tongoa 1,587      892                192                      50           4                              -   20                     17                                   -
+Tongariki 1,022      499                163                      3                         -                   -                         -   1                                     -
+Makimae 1,091      588                132                      8                         -   2                 112                   1                                     -
+Nguna 1,790      1,188             190                      12           8              11                17                     137                1
+Emau 737         545                20                        1             2              4                                        -                      -                    -
+Malorua 3,594      1,712             478                      81           83            47                216                   174                26
+North Efate 3,333      1,551             373                      24           30            20                302                   301                                 -
+Mele 6,439      3,001             628                      310         151          148              479                   427                27
+Ifira 1,274      635                64                        12           2              5                  268                   35                                   -
+Pango 2,279      622                337                      101         57            56                232                   146                1
+Erakor 11,570    3,525             2,202                   1,267       457          459              723                   431                42
+Eratap 7,629      2,103             1,468                   740         503          240              808                   234                39
+Eton 3,960      1,135             1,010                   110         72            155              375                   225                1
+TAFEA 44,899    9,889             6,282                   4,003       90           1,230          3,377                1,149             7,757
+North Erromango 1,713       553                763                      15           12            2                 48                     69                  1
+South Erromango 658          172                350                      1                         -                   -   52                     4                                     -
+Aniwa 465         78                  19                        1                         -                   -   2                                          -   75
+North Tanna 4,701      1,023             490                      174         1             178             281                   61                  896
+West Tanna 12,790    2,696             1,335                   831         15            530              1,958                333                2,142
+Middle Bush Tanna 6,882      1,279             800                      697         21            107              363                   36                  1,742
+South West Tanna 6,487       562                957                      621         5             49                220                   107                1,967
+Whitesands 7,561      2,332             701                      706         23            360              366                   220                877
+South Tanna 1,601      179                330                      727         2             1                                        -   246                57
+Futuna 557         374                35                        3             9              1                  56                     72                                   -
+Aneityum 1,484      641                502                      226         2             1                  32                                        -                    -
+
+--- page 65 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+55
+Table 3.5: Total population in private households by religion and region
+Region
+SHEFA
+Vermali
+Vermaul
+Varisu
+South Epi
+North Tongoa
+Tongariki
+Makimae
+Nguna
+Emau
+Malorua
+North Efate
+Mele
+Ifira
+Pango
+Erakor
+Eratap
+Eton
+TAFEA
+North Erromango
+South Erromango
+Aniwa
+North Tanna
+West Tanna
+Middle Bush Tanna
+South West Tanna
+Whitesands
+South Tanna
+Futuna
+Aneityum
+Apostolic
+Latter Day
+Saints
+(Mormon) Other churches
+No
+Religion/Faith
+Refuse to
+answer
+Not
+Stated
+Religion
+959           935            8,884                320                    136            6
+9                             -   92                                            -   1                          -
+6               3                158                                          -   2                          -
+63                           -   122                                          -                 -              -
+              -                 -   783                                          -                 -              -
+4               1                409                                          -                 -              -
+1               1                354                                          -                 -              -
+              -                 -   248                                          -                 -              -
+59             9                157                   1                                      -              -
+              -   4               161                                          -                 -              -
+88             53              537                   88                      11                         -
+12             32              619                   6                        58              4
+56             148            1,010                42                      11                         -
+7                             -   220                   25                      1                           -
+29             64              626                                          -   9                          -
+387           362            1,603                87                      25                         -
+217           204            1,024                40                      9                1
+22             54              761                   31                      9                1
+944           1,457         6,105                2,566                 50             1
+106                         -   143                                          -   1                          -
+41                           -   36                     1                        1                           -
+27                           -   263                                          -                 -              -
+2               297           983                   311                    4                          -
+173           192            1,920                657                    5               1
+99             447            1,018                263                    10                         -
+322           132            483                   1,051                 10                        -
+153           382            1,174                253                    14                         -
+13             4                12                     29                                    -              -
+3                             -                         -                          -   4                          -
+3               2                73                                            -   1                          -
+Table 3.5: Total population in private households by religion and region
