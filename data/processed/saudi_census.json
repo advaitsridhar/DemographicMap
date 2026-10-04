@@ -1,0 +1,769 @@
+[
+  {
+    "id": "SAU-CEN2022-SA14",
+    "level": "admin1",
+    "name": "'Asir Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2024285.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 145.9,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B79414847265706",
+    "codes": {
+      "pcode": "SA14"
+    },
+    "aliases": [
+      "`Asir"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 1,201,031 men and 823,254 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA11",
+    "level": "admin1",
+    "name": "Al Bahah Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 339174.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 28.3,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 134.0,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B90917209203250",
+    "codes": {
+      "pcode": "SA11"
+    },
+    "aliases": [
+      "Al Bahah"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 194,258 men and 144,916 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA08",
+    "level": "admin1",
+    "name": "Northern Borders Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 373577.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 25.8,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 134.9,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B61333239611232",
+    "codes": {
+      "pcode": "SA08"
+    },
+    "aliases": [
+      "Al Hudud ash Shamaliyah"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 214,532 men and 159,045 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA12",
+    "level": "admin1",
+    "name": "Al Jawf Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 595822.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 25.0,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 138.2,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B5742042673291",
+    "codes": {
+      "pcode": "SA12"
+    },
+    "aliases": [
+      "Al Jawf"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 345,687 men and 250,135 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA03",
+    "level": "admin1",
+    "name": "Al Madinah Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2137983.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 28.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 148.6,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B5326875801694",
+    "codes": {
+      "pcode": "SA03"
+    },
+    "aliases": [
+      "Al Madinah"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 1,278,117 men and 859,866 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA05",
+    "level": "admin1",
+    "name": "Al-Qassim Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1336179.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 28.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 145.6,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B98761102949945",
+    "codes": {
+      "pcode": "SA05"
+    },
+    "aliases": [
+      "Al Quassim"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 792,227 men and 543,952 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA01",
+    "level": "admin1",
+    "name": "Riyadh Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8591748.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 30.3,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 167.7,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B56088895138556",
+    "codes": {
+      "pcode": "SA01"
+    },
+    "aliases": [
+      "Ar Riyad"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 5,382,340 men and 3,209,408 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA04",
+    "level": "admin1",
+    "name": "Eastern Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5125254.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 30.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 176.2,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B34473806557189",
+    "codes": {
+      "pcode": "SA04"
+    },
+    "aliases": [
+      "Ash Sharqiyah"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 3,269,878 men and 1,855,376 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA06",
+    "level": "admin1",
+    "name": "Hayel Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 746406.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 146.3,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B30843703179747",
+    "codes": {
+      "pcode": "SA06"
+    },
+    "aliases": [
+      "Ha'il"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 443,406 men and 303,000 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA09",
+    "level": "admin1",
+    "name": "Jazan Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1404997.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 26.7,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 132.5,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B72054791986965",
+    "codes": {
+      "pcode": "SA09"
+    },
+    "aliases": [
+      "Jizan"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 800,579 men and 604,418 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA02",
+    "level": "admin1",
+    "name": "Makkah Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8021463.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 30.4,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 155.3,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B13159281784364",
+    "codes": {
+      "pcode": "SA02"
+    },
+    "aliases": [
+      "Makkah"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 4,878,926 men and 3,142,537 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA10",
+    "level": "admin1",
+    "name": "Najran Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 592300.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 26.2,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 144.4,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B54479367627811",
+    "codes": {
+      "pcode": "SA10"
+    },
+    "aliases": [
+      "Najran"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 349,933 men and 242,367 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  },
+  {
+    "id": "SAU-CEN2022-SA07",
+    "level": "admin1",
+    "name": "Tabuk Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 886036.0,
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+      "note": "The 2022 census count (10 May 2022)."
+    },
+    "median_age": {
+      "value": 27.1,
+      "unit": "years",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "sex_ratio": {
+      "value": 147.3,
+      "unit": "males_per_100_females",
+      "year": 2022,
+      "source": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median_age/sex_ratio",
+        "name": "General Authority for Statistics (Saudi Arabia), Census 2022, by region, sex and five-year age group, as compiled in OCHA's COD-PS (cod-ps-sau)",
+        "url": "https://data.humdata.org/dataset/cod-ps-sau",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "SAU",
+    "match_by": "shape_id",
+    "shape_id": "25081817B21311317754967",
+    "codes": {
+      "pcode": "SA07"
+    },
+    "aliases": [
+      "Tabuk"
+    ],
+    "sex_ratio_note": "Males per 100 females in the 2022 census: 527,681 men and 358,355 women.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2022 census's count of the region by five-year age group."
+  }
+]

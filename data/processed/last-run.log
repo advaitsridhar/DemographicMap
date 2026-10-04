@@ -1,36 +1,17 @@
-  512 pages
-  Indv03: 7,136,898 characters from https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv03_PopulationBySingleYear.csv
-  recovered 339 justified row(s)
-  ethnicity: 85 areas
-  ethnicity _total: 29,164,578 vs published 29,164,578 (0.0000%)
-  ethnicity Kshetri: 4,796,995 vs published 4,796,995 (0.0000%)
-  ethnicity Brahman - Hill: 3,292,373 vs published 3,292,373 (0.0000%)
-  ethnicity Magar: 2,013,498 vs published 2,013,498 (0.0000%)
-  ethnicity Tharu: 1,807,124 vs published 1,807,124 (0.0000%)
-  ethnicity Tamang: 1,639,866 vs published 1,639,866 (0.0000%)
-  language: 85 areas
-  language Nepali: 13,084,457 vs published 13,084,457 (0.0000%)
-  language Maithili: 3,222,389 vs published 3,222,389 (0.0000%)
-  language Bhojpuri: 1,820,795 vs published 1,820,795 (0.0000%)
-  language Tharu: 1,714,091 vs published 1,714,091 (0.0000%)
-  language Tamang: 1,423,075 vs published 1,423,075 (0.0000%)
-  religion: 85 areas
-  religion _total: 29,164,578 vs published 29,164,578 (0.0000%)
-  religion Hindu: 23,677,744 vs published 23,677,744 (0.0000%)
-  religion Bouddha: 2,393,549 vs published 2,393,549 (0.0000%)
-  religion Islam: 1,483,066 vs published 1,483,066 (0.0000%)
-  religion Kirat: 924,204 vs published 924,204 (0.0000%)
-  religion Christian: 512,313 vs published 512,313 (0.0000%)
-  Indv03: 85 areas; every area's single years add up, the districts make their provinces and the provinces Nepal, age by age, and every area's persons, males and females are Annex 1's
-  Bara -> shape 79688334B75970147852459 (labelled 'Bara'), 763,137 people
-  Parsa -> shape 79688334B59716070388160 (labelled 'Bara'), 654,471 people
-  Siraha -> shape 79688334B4946100078623 (labelled 'Saptari'), 739,953 people
-  Saptari -> shape 79688334B89786345808010 (labelled 'Saptari'), 706,255 people
-  Dailekh -> shape 79688334B23259783147235 (labelled 'Jajarkot'), 252,313 people
-  Jajarkot -> shape 79688334B34133508701345 (labelled 'Rukum_W'), 189,360 people
-  Rupandehi -> shape 79688334B17767934844471 (labelled 'Nawalapur'), 1,121,957 people
-  Rukum East and Rukum West -> shape 79688334B6316349348825 (labelled 'Rukum_E'), 223,526 people
-  Nawalpur and Parasi -> shape 79688334B71878033214617 (labelled 'Nawalparasi'), 764,947 people
-  wrote data/processed/nepal_province.json (68 kB)
-  wrote data/processed/nepal_district.json (579 kB)
-  7 provinces, 75 districts
+  cod-ps-sau: licence cc-by-igo, methodology 'Census'
+    `Asir (SA14) -> 'Asir Region: 2,024,285, median 28.0, 145.9 M/100F
+    Al Bahah (SA11) -> Al Bahah Region: 339,174, median 28.3, 134.0 M/100F
+    Al Hudud ash Shamaliyah (SA08) -> Northern Borders Region: 373,577, median 25.8, 134.9 M/100F
+    Al Jawf (SA12) -> Al Jawf Region: 595,822, median 25.0, 138.2 M/100F
+    Al Madinah (SA03) -> Al Madinah Region: 2,137,983, median 28.4, 148.6 M/100F
+    Al Quassim (SA05) -> Al-Qassim Region: 1,336,179, median 28.1, 145.6 M/100F
+    Ar Riyad (SA01) -> Riyadh Region: 8,591,748, median 30.3, 167.7 M/100F
+    Ash Sharqiyah (SA04) -> Eastern Region: 5,125,254, median 30.4, 176.2 M/100F
+    Ha'il (SA06) -> Hayel Region: 746,406, median 28.0, 146.3 M/100F
+    Jizan (SA09) -> Jazan Region: 1,404,997, median 26.7, 132.5 M/100F
+    Makkah (SA02) -> Makkah Region: 8,021,463, median 30.4, 155.3 M/100F
+    Najran (SA10) -> Najran Region: 592,300, median 26.2, 144.4 M/100F
+    Tabuk (SA07) -> Tabuk Region: 886,036, median 27.1, 147.3 M/100F
+  census 2022: 32,175,224 people in 13 regions
+  wrote data/processed/saudi_census.json (27 kB)
+  wrote saudi_census.json (13)
