@@ -1,45 +1,127 @@
-https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/POPES_SUB_001/1.0?references=all
-  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 124,320 bytes
-  [1] YEAR_POPES_SUB_001  codelist=CL_YEAR_POPES_SUB_001 (8 codes) 8 constrained
-                  2018  2018
-                  2019  2019
-                  2020  2020
-                  2021  2021
-                  2022  2022
-                  2023  2023
-                  2024  2024
-                  2025  2025
-  [2] AREA_POPES_SUB_001  codelist=CL_AREA_POPES_SUB_001 (108 codes) 108 constrained
-                RC9999  Total New Zealand by regional council
-                    01  Northland region
-                    02  Auckland
-                    03  Waikato region
-                    04  Bay of Plenty region
-                    05  Gisborne region
-                    06  Hawke's Bay region
-                    07  Taranaki region
-                    08  Manawatū-Whanganui region
-                    09  Wellington region
-                    16  Tasman region
-                    17  Nelson region
-                    18  Marlborough region
-                    12  West Coast region
-                    13  Canterbury region
-                    14  Otago region
-                    15  Southland region
-                    99  Area outside region
-              TALB9999  Total New Zealand by territorial authority
-                 00100  Far North district
-                 00200  Whangarei district
-                 00300  Kaipara district
-                 07600  Auckland
-                 07601  Rodney local board area
-                 07602  Hibiscus and Bays local board area
-  [3] MEASURE_POPES_SUB_001  codelist=CL_MEASURE_POPES_SUB_001 (7 codes) 7 constrained
-                NATINC  Natural increase
-                NETMIG  Net migration
-        NETINTERNATIONAL  Net international migration
-           NETINTERNAL  Net internal migration
-             INCENDISC  Intercensal discrepancy
-                   POP  Population
-                MEDAGE  Median age
+probe_pdf: https://stat.gov.tm/population-census-pdfs/results/en/1.pdf
+  2,606,602 bytes
+  84 pages
+probe_pdf: 84 pages, 0 mention ['language', 'mother tongue', 'speak']
+=== front matter ===
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1. POPULATION NUMBER AND LOCATION
+1.1. The territory, size and density of population of Turkmenistan
+  
+Territory, thousand km2  491.2
+Population number – total, persons 7 057 841
+              including: 
+       urban population 3 321 497
+       rural population 3 736 344
+       male 3 526 421
+       female 3 531 420
+Population number – total, percentage 100.00
+              including: 
+      urban population 47.06
+       rural population 52.94
+       male 49.96
+       female 50.04
+Population density, number of inhabitants on 1 km2 14.4
+1.2. Structure of the number of population of Turkmenistan by regions
+Urban population – 82.11%
+Rural population – 17.89%
+Male – 50.43%
+Female – 49.57%
+Urban population – 35.38%
+Rural population – 64.62%
+Male – 50.48%
+Female – 49.52%
+Urban population – 30.56%
+Rural population – 69.44%
+Male – 49.99%
+Female – 50.01%
+Urban population – 45.33%
+Rural population – 54.67%
+Male – 50.03%
+Female – 49.97%
+Urban population – 25.58%
+Rural population – 74.42%
+Male – 50.24%
+Female – 49.76%
+Urban population – 100%
+Male – 48.73%
+Female – 51.27%
+BALKAN  
+velayat  
+7.5% 
+DASHOGUZ  
+velayat  
+            22.0% 
+LEBAP  
+velayat  
+            20.5% 
+MARY  
+velayat  
+            22.9% 
+Ahal  
+velayat 12.5% 
+ASHGABAT  
+            city 
+                14.6% 
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1.3. Distribution of the number of population of Turkmenistan by sex and regions, persons 
+Both sexes
+including:
+male female
+Turkmenistan 7 057 841 3 526 421 3 531 420
+urban settlements 3 321 497 1 654 781 1 666 716
+rural areas 3 736 344 1 871 640 1 864 704
+Ashgabat city 1 030 063 501 910 528 153
+urban settlements 1 030 063 501 910 528 153
+rural areas – – –
+Ahal velayat 886 845 447 717 439 128
+urban settlements 313 785 159 706 154 079
+rural areas 573 060 288 011 285 049
+Balkan velayat 529 895 267 212 262 683
+urban settlements 435 090 218 842 216 248
+rural areas 94 805 48 370 46 435
+Dashoguz velayat 1 550 354 774 945 775 409
+urban settlements 473 861 236 215 237 646
+rural areas 1 076 493 538 730 537 763
+Lebap velayat 1 447 298 724 068 723 230
+urban settlements 656 021 328 344 327 677
+rural areas 791 277 395 724 395 553
+Mary velayat 1 613 386 810 569 802 817
+urban settlements 412 677 209 764 202 913
+rural areas 1 200 709 600 805 599 904
+1.4. Distribution of the number of population of Ashgabat city by sex and territory, persons
+Both sexes
+including:
+male female
+Ashgabat city 1 030 063 501 910 528 153
+including:
+Bagtyyarlyk etrap 309 619 153 311 156 308
+Buzmeyin etrap 175 179 88 562 86 617
+Kopetdag etrap 278 840 133 517 145 323
+Berkararlyk etrap 266 425 126 520 139 905
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1.5.  Distribution of the number of the urban population of Ahal velayat by sex and territory, 
+persons
+Both sexes
+including:
+male female  
+Urban population of Ahal velayat 313 785 159 706 154 079
+including:
+Arkadag city 567 267 300
+Ak bugday etrap 48 727 24 637 24 090
+Anev  city 28 653 14 263 14 390
+Yashlyk town 8 172 4 212 3 960
+Berkarar town 2 747 1 345 1 402
+Bokurdak  town 7 726 4 028 3 698
+Bereketli zaman town 1 429 789 640
+Baherden etrap 43 602 22 383 21 219
+Baherden city 37 588 19 340 18 248
+Archman  town 6 014 3 043 2 971
+Gokdepe etrap 39 928 20 135 19 793
+Gokdepe city 33 381 16 810 16 571
+Yzgant town 6 547 3 325 3 222
+Kaka etrap 41 720 21 523 20 197
+
+=== pages mentioning ['language', 'mother tongue', 'speak'] (first 6) ===
