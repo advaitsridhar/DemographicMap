@@ -163,7 +163,7 @@ def cmd_spa(url: str, rows: int) -> None:
         log(f"    {p}")
 
 
-def cmd_cdx(pattern: str, limit: int, match: str, since: str) -> None:
+def cmd_cdx(pattern: str, limit: int, match: str, since: str, depth: int = 0) -> None:
     params = {"url": pattern, "output": "json", "limit": str(limit),
               "filter": "statuscode:200", "collapse": "urlkey"}
     if since:
@@ -180,6 +180,17 @@ def cmd_cdx(pattern: str, limit: int, match: str, since: str) -> None:
     rows = json.loads(body or b"[]")
     keep = [r for r in rows[1:] if not match or re.search(match, r[2], re.I)]
     log(f"cdx {pattern}: {max(len(rows) - 1, 0)} captures, {len(keep)} matching {match!r}")
+    if depth:
+        # A folder tree of thousands of files is read by its folders: the
+        # captures counted under each path prefix of ``depth`` segments.
+        folders: dict[str, int] = {}
+        for r in keep:
+            path = urllib.parse.urlsplit(r[2]).path.lower()
+            folder = "/".join(path.split("/")[:depth])
+            folders[folder] = folders.get(folder, 0) + 1
+        for folder, n in sorted(folders.items()):
+            log(f"  {n:5d}  {folder}")
+        return
     for r in keep[:400]:
         log(f"  {r[1]} {r[4]} {r[3][:28]} {r[2]}")
 
@@ -417,6 +428,8 @@ def main() -> int:
     c.add_argument("--limit", type=int, default=5000)
     c.add_argument("--match", default="")
     c.add_argument("--since", default="")
+    c.add_argument("--depth", type=int, default=0,
+                   help="count captures by folder, this many path segments deep")
     h = sub.add_parser("hdx")
     h.add_argument("codes")
     h.add_argument("--query", default="population")
@@ -445,7 +458,7 @@ def main() -> int:
     elif args.cmd == "spa":
         cmd_spa(args.url, args.rows)
     elif args.cmd == "cdx":
-        cmd_cdx(args.pattern, args.limit, args.match, args.since)
+        cmd_cdx(args.pattern, args.limit, args.match, args.since, args.depth)
     elif args.cmd == "hdx":
         cmd_hdx([x.strip().upper() for x in args.codes.split(",") if x.strip()], args.query)
     elif args.cmd == "res":
