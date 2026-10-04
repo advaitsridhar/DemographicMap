@@ -158,10 +158,51 @@ def cmd_get(urls: list[str], chars: int) -> None:
         log("  " + " ".join(text.split())[:chars])
 
 
+def cmd_dgs(terms: list[str], pages: int) -> None:
+    """data.gov.sg datasets whose name names every term, walking the v2 list."""
+    import os
+    import time
+    base = "https://api-production.data.gov.sg/v2/public/api/datasets"
+    key = next((os.environ[k] for k in ("DEMOGRAPHICMAP", "DATA_GOV_SG_KEY")
+                if os.environ.get(k)), None)
+    hits = 0
+    for page in range(1, pages + 1):
+        body = None
+        for attempt in range(4):
+            time.sleep(0.8 * (attempt + 1))
+            req = urllib.request.Request(f"{base}?page={page}", headers={"User-Agent": UA})
+            if key:
+                req.add_header("x-api-key", key)
+            try:
+                with urllib.request.urlopen(req, timeout=60) as fh:
+                    body = json.loads(fh.read())
+                break
+            except Exception:  # noqa: BLE001 -- throttled or cut; retried
+                body = None
+        if body is None:
+            log(f"  page {page}: no JSON after 4 attempts; stopping")
+            break
+        datasets = (body.get("data") or {}).get("datasets") or []
+        if not datasets:
+            log(f"  page {page}: empty; stopping")
+            break
+        for entry in datasets:
+            name = str(entry.get("name") or "")
+            if all(t in name.lower() for t in terms):
+                hits += 1
+                log(f"  {entry.get('datasetId')}  {name}  "
+                    f"[{entry.get('managedByAgencyName') or ''}] "
+                    f"{str(entry.get('lastUpdatedAt') or '')[:10]}")
+    log(f"  {hits} datasets name all of {terms}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    d = sub.add_parser("dgs")
+    d.add_argument("terms", help="comma-separated words every name must contain")
+    d.add_argument("--pages", type=int, default=480)
     a = sub.add_parser("hdx")
     a.add_argument("codes")
     a.add_argument("--no-tables", action="store_true")
@@ -176,6 +217,8 @@ def main() -> int:
                 not args.no_tables)
     elif args.cmd == "spa":
         cmd_spa(args.url)
+    elif args.cmd == "dgs":
+        cmd_dgs([t.strip().lower() for t in args.terms.split(",") if t.strip()], args.pages)
     else:
         cmd_get(args.urls, args.chars)
     return 0
