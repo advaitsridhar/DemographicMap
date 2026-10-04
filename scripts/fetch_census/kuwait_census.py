@@ -151,9 +151,19 @@ def numbers(row: list[Any]) -> list[float]:
     return [float(c) for c in row if isinstance(c, (int, float)) and not isinstance(c, bool)]
 
 
+ARABIC = re.compile(r"[؀-ۿ]")
+
+
 def english(row: list[Any]) -> list[str]:
-    return [str(c).strip() for c in row if isinstance(c, str) and c.strip()
-            and c.strip().isascii()]
+    """A row's English labels: text cells with no Arabic letter, spaces made plain."""
+    out = []
+    for c in row:
+        if not isinstance(c, str):
+            continue
+        text = " ".join(c.replace("\xa0", " ").split())
+        if text and not ARABIC.search(text) and re.search(r"[A-Za-z0-9>]", text):
+            out.append(text)
+    return out
 
 
 def governorate_of(label: str) -> str | None:
