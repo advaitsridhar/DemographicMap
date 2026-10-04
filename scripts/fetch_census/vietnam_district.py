@@ -28,10 +28,12 @@ to the one polygon of that name whose representative point lies in the
 census's province on the map's own admin1 tiles, or failing that whose
 boundary-file parent is that province -- and only if exactly one does. A
 polygon the census divided after the boundary file was drawn takes the sum of
-its parts, declared pair by pair in ``JOINED`` and checked; a district of the
-census still unbound, and a polygon with no district, are both reported.
-Côn Đảo, which the boundary file draws as a first-level unit of its own, gets
-its district's figures there.
+its parts, declared pair by pair in ``JOINED`` and checked; twelve districts
+the boundary file spells its own way or files under a neighbour are declared
+in ``PLACED``; the two island districts it does not draw (Cồn Cỏ, Trường Sa)
+in ``UNDRAWN``. Anything else left over on either side refuses. Côn Đảo,
+which the boundary file draws at both levels, gets its district's figures at
+both.
 
 **Checks**, each a refusal: every row's nine figures satisfy the arithmetic
 (``vietnam.figures``); every province's districts make the province's own row
@@ -74,11 +76,46 @@ OPEN = re.compile(r"^\s*(?P<lo>\d{2,3})\s*\+\s+(?P<tail>(?:(?:\d{1,3}|-)\s+){8,}
 SINGLE = re.compile(r"^\s*(?P<age>\d{1,2})\s+(?P<tail>(?:(?:\d{1,3}|-)\s+){8,}(?:\d{1,3}|-))\s*$")
 # Polygons the census divided after the boundary file was drawn: the
 # polygon's (census province, folded name) -> the census districts that make
-# it, as (type, name). Long Mỹ town was cut from Long Mỹ district in 2015,
-# and the boundary file draws the district before.
+# it, as (type, name). All five divisions are of 2015, and the boundary file
+# draws each district before: Long Mỹ town was cut from Long Mỹ district, Kỳ
+# Anh town from Kỳ Anh district, Duyên Hải town from Duyên Hải district, Ia
+# H'Drai from Sa Thầy and Phú Riềng from Bù Gia Mập. In each province the map
+# draws one polygon fewer than the census counts districts, and the polygons'
+# areas on the tiles are the old districts' (Sa Thầy 2,411 km2, the 2,415 of
+# Sa Thầy and Ia H'Drai; Bù Gia Mập 1,746, the 1,739 of it and Phú Riềng).
 JOINED: dict[tuple[str, str], list[tuple[str, str]]] = {
     ("Hậu Giang", "longmy"): [("District", "Long Mỹ"), ("Town", "Long Mỹ")],
+    ("Hà Tĩnh", "kyanh"): [("District", "Kỳ Anh"), ("Town", "Kỳ Anh")],
+    ("Trà Vinh", "duyenhai"): [("District", "Duyên Hải"), ("Town", "Duyên Hải")],
+    ("Kon Tum", "sathay"): [("District", "Sa Thầy"), ("District", "Ia H' Drai")],
+    ("Bình Phước", "bugiamap"): [("District", "Bù Gia Mập"), ("District", "Phú Riềng")],
 }
+# Census districts their names alone do not find: (province, type, name) ->
+# the polygon's name and the province the boundary file files it under;
+# exactly one polygon must answer to both. The first three are filed under a
+# neighbouring province that has no district of the name -- which is checked
+# -- and each lies where its district does: An Lão at 20.80N 106.55E, Hải
+# Phòng's; Châu Thành at 9.92N 105.82E, Hậu Giang's (Cần Thơ has had none
+# since 2004); Sơn Tây at 14.97N 108.36E, Quảng Ngãi's. The rest are the
+# boundary file's spellings: its Phú Quý, unaccented; Tân Thành, the district
+# that became Phú Mỹ town in 2018; and type words it keeps in the name.
+PLACED: dict[tuple[str, str, str], tuple[str, str]] = {
+    ("Hải Phòng", "District", "An Lão"): ("An Lao", "Hải Dương"),
+    ("Hậu Giang", "District", "Châu Thành"): ("Chau Thanh", "Cần Thơ"),
+    ("Quảng Ngãi", "District", "Sơn Tây"): ("Son Tay", "Kon Tum"),
+    ("Bình Thuận", "District", "Phú Quí"): ("Phu Quy", "VNM"),
+    ("Bà Rịa–Vũng Tàu", "Town", "Phú Mỹ"): ("Tan Thanh", "Bà Rịa–Vũng Tàu"),
+    ("Đắk Lắk", "District", "M'Đrắk"): ("Mdrak District", "Đắk Lắk"),
+    ("Tiền Giang", "District", "Cai Lậy"): ("Huyen Cai Lay", "Tiền Giang"),
+    ("Tiền Giang", "Town", "Cai Lậy"): ("Thi xa Cai Lay", "Tiền Giang"),
+    ("Đồng Tháp", "District", "Cao Lãnh"): ("Huyen Cao Lanh", "Đồng Tháp"),
+    ("Đồng Tháp", "City", "Cao Lãnh"): ("Thi xa Cao Lanh", "Đồng Tháp"),
+    ("Đồng Tháp", "District", "Hồng Ngự"): ("Huyen Hong Ngu", "Đồng Tháp"),
+    ("Đồng Tháp", "Town", "Hồng Ngự"): ("Thi xa Hong Ngu", "Đồng Tháp"),
+}
+# Census districts no polygon draws: island districts the boundary file
+# leaves out. Reported, and written nowhere.
+UNDRAWN = {("Quảng Trị", "Cồn Cỏ"), ("Khánh Hòa", "Trường Sa")}
 # The polygon drawn at the first level for one census district.
 FIRST_LEVEL = {"Côn Đảo": ("Bà Rịa–Vũng Tàu", "Côn Đảo")}
 
@@ -283,6 +320,21 @@ def bind(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
                              f"{len(shapes)} polygons, {len(found)} of {len(parts)} districts")
         bound[shapes[0]["id"]] = found
         used.update(id(r) for r in found)
+    # Then the declared placements.
+    for (prov, kind, name), (polygon, filed) in PLACED.items():
+        found = [r for r in rows if r["province"] == prov and r["type"] == kind
+                 and key(r["name"]) == key(name)]
+        shapes = [s for s in shapes_by_name.get(key(polygon), [])
+                  if name1.get(s["parent"], s["parent"]) == filed and s["id"] not in bound]
+        if len(found) != 1 or len(shapes) != 1:
+            raise SystemExit(f"vietnam_district: {kind} {name} of {prov} -> {polygon!r} filed "
+                             f"under {filed}: {len(found)} districts, {len(shapes)} polygons")
+        if filed not in (prov, "VNM") and any(r["province"] == filed and key(r["name"])
+                                              == key(name) for r in rows):
+            raise SystemExit(f"vietnam_district: {filed} has a district {name} of its own; "
+                             f"{polygon!r} may be it")
+        bound[shapes[0]["id"]] = found
+        used.add(id(found[0]))
     taken = set(bound)
     for r in rows:
         if id(r) in used:
@@ -400,13 +452,20 @@ def main() -> int:
     units, singles = parse_age_tables(pages)
     check_ages(units, singles)
     admin1, admin2 = drawn("VNM", "admin1"), drawn("VNM", "admin2")
-    first = {(p, key(n)) for p, n in FIRST_LEVEL.values()}
-    rows_2 = [r for r in rows if (r["province"], key(r["name"])) not in first]
-    bound, left_census, left_shapes = bind(rows_2, admin1, admin2)
+    undrawn = {(p, key(n)) for p, n in UNDRAWN}
+    drawn_rows = [r for r in rows if (r["province"], key(r["name"])) not in undrawn]
+    if len(drawn_rows) != len(rows) - len(UNDRAWN):
+        raise SystemExit(f"vietnam_district: the undrawn island districts {sorted(UNDRAWN)} "
+                         "are not each one census row")
+    bound, left_census, left_shapes = bind(drawn_rows, admin1, admin2)
     log(f"  {len(bound)} of {len(admin2)} polygons bound, {sum(len(v) for v in bound.values())} "
-        f"of {len(rows_2)} census districts")
-    log(f"  census districts on no polygon ({len(left_census)}): " + "; ".join(left_census))
-    log(f"  polygons with no census district ({len(left_shapes)}): " + "; ".join(left_shapes))
+        f"of {len(drawn_rows)} census districts; not drawn: "
+        + ", ".join(f"{r['name']} ({r['province']}, {r['n'][0]:,})" for r in rows
+                    if (r["province"], key(r["name"])) in undrawn))
+    if left_census or left_shapes:
+        raise SystemExit(f"vietnam_district: census districts on no polygon ({len(left_census)}): "
+                         + "; ".join(left_census) + f"; polygons with no census district "
+                         f"({len(left_shapes)}): " + "; ".join(left_shapes))
     records = (district_records(bound, admin2) + province_records(units, admin1)
                + first_level_records(rows, admin1))
     meds = sorted(r["median_age"]["value"] for r in records if r["level"] == "admin1"

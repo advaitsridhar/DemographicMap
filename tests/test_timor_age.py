@@ -68,6 +68,20 @@ class AgesTest(unittest.TestCase):
         with self.assertRaises(SystemExit):
             t.read_ages(rows)
 
+    def test_a_dash_whose_row_shows_people_is_the_difference(self):
+        rows = table_405()
+        rows[8][11] = "-"                   # Atauro's men of age 1: total 10, women 5
+        units = t.read_ages(rows)
+        self.assertEqual(units["atauro"]["ages"]["M"][1], 5)
+        self.assertEqual(sum(units["atauro"]["ages"]["M"].values()), 30)
+
+    def test_two_dashes_in_a_short_row_refuse(self):
+        rows = table_405()
+        rows[8][11] = "-"
+        rows[8][12] = "-"
+        with self.assertRaises(SystemExit):
+            t.read_ages(rows)
+
     def test_dili_takes_in_atauro(self):
         units = t.read_ages(table_405())
         recs = t.municipality_records(units, [{"id": "D", "name": "Dili"},

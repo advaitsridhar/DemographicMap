@@ -30,8 +30,11 @@ and "Lospalos" therefore take the two 2022 posts each now holds, added
 together, with their population; every other post is matched by name (and by
 ``timor.POST_ALIASES``'s declared spellings) to exactly one drawn polygon.
 
-**Checks**, each a refusal: in table 4.05 every municipality's single years
-make its total for both sexes and each, and its males and females its total;
+**Checks**, each a refusal: in table 4.05 every single year's males and
+females make its total (one cell printed "-" in a row whose other two figures
+show people -- Atauro's men of 83: total 11, women 9 -- is read as the
+difference and logged), every municipality's single years make its total for
+both sexes and each, and its males and females its total;
 the fourteen make the country; in table 4.01 every post's males and females
 make its total and every municipality's posts make it; and every census post
 is used exactly once.
@@ -97,6 +100,7 @@ def read_ages(grid: list[list[Any]]) -> dict[str, dict[str, Any]]:
     units = {k: {"ages": {s: Counter() for s in "TMF"}, "total": {}} for k in cols}
     block = 0
     top = None
+    repaired: list[str] = []
     for row in grid[head + 2:]:
         label = timor.tidy(timor.at(row, 0))
         if not label:
@@ -119,10 +123,30 @@ def read_ages(grid: list[list[Any]]) -> dict[str, dict[str, Any]]:
         if opened:
             top = age
         for k, c in cols.items():
+            cells = {s: timor.number(timor.at(row, c[s])) for s in "TMF"}
+            got = {s: cells[s] or 0 for s in "TMF"}
+            if got["M"] + got["F"] != got["T"]:
+                # A cell printed "-" in a row whose other two figures show
+                # people -- Atauro's men of 83: total 11, "-", women 9 -- is
+                # the difference of the two; anything else refuses. The
+                # unit's totals, checked below, confirm the reading.
+                blank = [s for s in "TMF" if cells[s] is None]
+                if len(blank) != 1:
+                    raise SystemExit(f"timor_age: {k} age {text}: {got['M']:,.0f} males and "
+                                     f"{got['F']:,.0f} females against {got['T']:,.0f}")
+                s = blank[0]
+                got[s] = (got["M"] + got["F"] if s == "T"
+                          else got["T"] - got["F"] if s == "M" else got["T"] - got["M"])
+                if got[s] <= 0:
+                    raise SystemExit(f"timor_age: {k} age {text}: the '-' cannot be read")
+                repaired.append(f"{k} {s} at {text}: '-' read as {got[s]:,.0f}")
             for s in "TMF":
-                units[k]["ages"][s][age] += timor.number(timor.at(row, c[s])) or 0
+                units[k]["ages"][s][age] += got[s]
     if top is None:
         raise SystemExit("timor_age: table 4.05 has no open top age class")
+    if repaired:
+        log("  table 4.05 cells printed '-' where their row's other figures show people, read "
+            "as the difference: " + "; ".join(repaired))
     for k, u in units.items():
         for s in "TMF":
             made = sum(u["ages"][s].values())
