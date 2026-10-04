@@ -1,7 +1,66 @@
-https://taldau.stat.gov.kz/ru -> https://taldau.stat.gov.kz/ru/Search/SearchByKeyWord: HTTP 200 text/html; charset=utf-8 290,308 B
-  0 passages match '(?:Api/[A-Za-z]+|api/[a-z_/]+|sdmx/[a-z_/]+)'
-https://siat.stat.uz/js/app.76f27eab.js: HTTP 200 application/javascript 84,333 B
-  3 passages match '(?:Api/[A-Za-z]+|api/[a-z_/]+|sdmx/[a-z_/]+)'
-  ... {return this.get("/sdmx/",a)},getSmartSearchData(a){return this.get("/sdmx/search/",a)},getOpenInformationDataWeb(a){return this.get("/sdmx/json/",a)},g ...
-  ... et("/sdmx/search/",a)},getOpenInformationDataWeb(a){return this.get("/sdmx/json/",a)},getOpenInformationChildren(a,t){return this.get(`/sdmx/${a}/chil ...
-  ... dmx/${a}/table/download/`,t)},getThirdLevelItems(a){return this.get("/sdmx/last-layer/",a)},getRegionsList(a){return this.get(`/sdmx/${a}/regions/`)} ...
+https://www.stat.gov.tm/ru/population-census: HTTP 200 text/html; charset=UTF-8 1,396,606 B
+  Перепись населения -> https://www.stat.gov.tm/ru/population-census
+  Объявления -> https://www.stat.gov.tm/ru/news?group=notification
+   -> https://www.stat.gov.tm/tk/population-census
+   -> https://www.stat.gov.tm/en/population-census
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/introduction.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=introduction&population_census_f=Introduction.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/1.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=1&population_census_f=%D0%A7%D0%98%D0%A1%D0%9B%D0%95%D0%9D%D0%9D%D0%9E%D0%A1%D0%A2%D0%AC%20%D0%98%20%D0%A0%D0%90%D0%97%D0%9C%D0%95%D0%A9%D0%95%D0%9D%D0%98%D0%95%20%D0%9D%D0%90%D0%A1%D0%95%D0%9B%D0%95%D0%9D%D0%98%D0%AF.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/2.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=2&population_census_f=%D0%9F%D0%9E%D0%9B%D0%9E%D0%92%D0%9E%D0%97%D0%A0%D0%90%D0%A1%D0%A2%D0%9D%D0%9E%D0%99%20%D0%A1%D0%9E%D0%A1%D0%A2%D0%90%D0%92%20%D0%9D%D0%90%D0%A1%D0%95%D0%9B%D0%95%D0%9D%D0%98%D0%AF%20%D0%98%20%D0%A1%D0%9E%D0%A1%D0%A2%D0%9E%D0%AF%D0%9D%D0%98%D0%95%20%D0%92%20%D0%91%D0%A0%D0%90%D0%9A%D0%95.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/3.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=3&population_census_f=%D0%9E%D0%91%D0%A0%D0%90%D0%97%D0%9E%D0%92%D0%90%D0%9D%D0%98%D0%95.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/4.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=4&population_census_f=%D0%9D%D0%90%D0%A6%D0%98%D0%9E%D0%9D%D0%90%D0%9B%D0%AC%D0%9D%D0%AB%D0%99%20%D0%A1%D0%9E%D0%A1%D0%A2%D0%90%D0%92%20%D0%9D%D0%90%D0%A1%D0%95%D0%9B%D0%95%D0%9D%D0%98%D0%AF%20%D0%98%20%D0%92%D0%9B%D0%90%D0%94%D0%95%D0%9D%D0%98%D0%95%20%D0%AF%D0%97%D0%AB%D0%9A%D0%90%D0%9C%D0%98.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/5.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=5&population_census_f=%D0%A0%D0%9E%D0%96%D0%94%D0%90%D0%95%D0%9C%D0%9E%D0%A1%D0%A2%D0%AC.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/6.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=6&population_census_f=%D0%9C%D0%98%D0%93%D0%A0%D0%90%D0%A6%D0%98%D0%AF%20%D0%98%20%D0%93%D0%A0%D0%90%D0%96%D0%94%D0%90%D0%9D%D0%A1%D0%A2%D0%92%D0%9E.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/7.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=7&population_census_f=%D0%98%D0%A1%D0%A2%D0%9E%D0%A7%D0%9D%D0%98%D0%9A%D0%98%20%D0%A1%D0%A0%D0%95%D0%94%D0%A1%D0%A2%D0%92%20%D0%9A%20%D0%A1%D0%A3%D0%A9%D0%95%D0%A1%D0%A2%D0%92%D0%9E%D0%92%D0%90%D0%9D%D0%98%D0%AE.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/8.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=8&population_census_f=%D0%A7%D0%98%D0%A1%D0%9B%D0%9E%20%D0%98%20%D0%A1%D0%9E%D0%A1%D0%A2%D0%90%D0%92%20%D0%94%D0%9E%D0%9C%D0%9E%D0%A5%D0%9E%D0%97%D0%AF%D0%99%D0%A1%D0%A2%D0%92.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/9.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=9&population_census_f=%D0%97%D0%90%D0%9D%D0%AF%D0%A2%D0%9E%D0%A1%D0%A2%D0%AC%20%D0%9D%D0%90%D0%A1%D0%95%D0%9B%D0%95%D0%9D%D0%98%D0%AF.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/10.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=10&population_census_f=%D0%96%D0%98%D0%9B%D0%98%D0%A9%D0%9D%D0%AB%D0%99%20%D0%A4%D0%9E%D0%9D%D0%94.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/11.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=11&population_census_f=%D0%96%D0%98%D0%9B%D0%98%D0%A9%D0%9D%D0%AB%D0%95%20%D0%A3%D0%A1%D0%9B%D0%9E%D0%92%D0%98%D0%AF%20%D0%9D%D0%90%D0%A1%D0%95%D0%9B%D0%95%D0%9D%D0%98%D0%AF.pdf
+   -> https://www.stat.gov.tm/population-census-pdfs/results/ru/definition.pdf
+  Скачать -> https://www.stat.gov.tm/ru/pdf/download?population_census=definition&population_census_f=Definition.pdf
+  Просмотр -> https://www.stat.gov.tm/population-census-pdfs/results/ru/syn.pdf
+  31 links match '(?:pdf|xls|doc|zip|итог|перепис|census|ýazuw|publication|news)'
+https://stat.gov.tm/en/population-census: HTTP 200 text/html; charset=UTF-8 1,391,376 B
+  Population census -> https://stat.gov.tm/en/population-census
+  Announcements -> https://stat.gov.tm/en/news?group=notification
+   -> https://stat.gov.tm/tk/population-census
+   -> https://stat.gov.tm/ru/population-census
+   -> https://stat.gov.tm/population-census-pdfs/results/en/introduction.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=introduction&population_census_f=Introduction.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/1.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=1&population_census_f=POPULATION%20NUMBER%20AND%20LOCATION.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/2.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=2&population_census_f=AGE%20AND%20SEX%20COMPOSITION%20OF%20THE%20POPULATION%20AND%20STATUS%20IN%20MARRIAGE.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/3.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=3&population_census_f=EDUCATION.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/4.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=4&population_census_f=NATIONAL%20COMPOSITION%20OF%20THE%20POPULATION%20AND%20LANGUAGE%20PROFICIENCY.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/5.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=5&population_census_f=FERTILITY.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/6.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=6&population_census_f=MIGRATION%20AND%20CITIZENSHIP.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/7.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=7&population_census_f=SOURCES%20OF%20LIVELIHOOD.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/8.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=8&population_census_f=NUMBER%20AND%20COMPOSITION%20OF%20HOUSEHOLDS.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/9.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=9&population_census_f=EMPLOYMENT%20OF%20THE%20POPULATION.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/10.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=10&population_census_f=HOUSING%20STOCK.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/11.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=11&population_census_f=HOUSING%20CONDITIONS%20OF%20THE%20POPULATION.pdf
+   -> https://stat.gov.tm/population-census-pdfs/results/en/definition.pdf
+  Download -> https://stat.gov.tm/en/pdf/download?population_census=definition&population_census_f=Definition.pdf
+  Viewing -> https://stat.gov.tm/population-census-pdfs/results/en/syn.pdf
+  31 links match '(?:pdf|xls|doc|zip|итог|перепис|census|ýazuw|publication|news)'
