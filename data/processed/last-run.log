@@ -1,82 +1,12 @@
-probe_estat: ESTAT_API found, 40 characters
-
-== metadata for 0004019309
-  getMetaInfo?statsDataId=0004019309
-    table: 0004019309 | [00200521] 国勢調査 | 総務省 | 年齢・国籍（日本人・外国人の別）・配偶関係の不詳補完（人口等基本集計に対応） 男女，年齢（5歳階級），国籍総数か日本人別人口－全国，都道府県，市区町村 | survey 202010 | area 全国 (Japan as a whole) | 330120 cells
-      TITLE_SPEC.TABLE_CATEGORY: 年齢・国籍（日本人・外国人の別）・配偶関係の不詳補完（人口等基本集計に対応）
-      TITLE_SPEC.TABLE_NAME: 男女，年齢（5歳階級），国籍総数か日本人別人口－全国，都道府県，市区町村
-      STATISTICS_NAME_SPEC.TABULATION_CATEGORY: 令和２年国勢調査
-      STATISTICS_NAME_SPEC.TABULATION_SUB_CATEGORY1: 参考表：不詳補完結果
-      STATISTICS_NAME_SPEC.TABULATION_SUB_CATEGORY2: 令和２年国勢調査に関する不詳補完結果
-    class tab = 表章項目 (1 codes)
-      2020_01  人口   (unit 人)
-    class cat01 = 年齢 (28 codes)
-      00  総数   (level 1)
-      01  0～4歳   (level 1)
-      02  5～9歳   (level 1)
-      03  10～14歳   (level 1)
-      04  15～19歳   (level 1)
-      05  20～24歳   (level 1)
-      06  25～29歳   (level 1)
-      07  30～34歳   (level 1)
-      08  35～39歳   (level 1)
-      09  40～44歳   (level 1)
-      10  45～49歳   (level 1)
-      11  50～54歳   (level 1)
-      12  55～59歳   (level 1)
-      13  60～64歳   (level 1)
-      14  65～69歳   (level 1)
-      15  70～74歳   (level 1)
-      16  75～79歳   (level 1)
-      17  80～84歳   (level 1)
-      18  85～89歳   (level 1)
-      19  90～94歳   (level 1)
-      20  95～99歳   (level 1)
-      21  100歳以上   (level 1)
-      R1  （再掲）15歳未満   (level 1)
-      R2  （再掲）15～64歳   (level 1)
-      R3  （再掲）65歳以上   (level 1)
-      R4  （再掲）75歳以上   (level 1)
-      R5  （再掲）85歳以上   (level 1)
-      R6  （再掲）20～69歳   (level 1)
-    class cat02 = 国籍総数か日本人 (2 codes)
-      0  国籍総数   (level 1)
-      1  うち日本人   (level 1)
-    class cat03 = 男女 (3 codes)
-      0  総数   (level 1)
-      1  男   (level 1)
-      2  女   (level 1)
-    class area = 全国，都道府県，市区町村 (1965 codes)
-      00000  全国   (level 1)
-      01000  北海道   (level 2)
-      01100  札幌市   (level 4)
-      01101  札幌市中央区   (level 5)
-      01102  札幌市北区   (level 5)
-      01103  札幌市東区   (level 5)
-      01104  札幌市白石区   (level 5)
-      01105  札幌市豊平区   (level 5)
-      01106  札幌市南区   (level 5)
-      01107  札幌市西区   (level 5)
-      01108  札幌市厚別区   (level 5)
-      01109  札幌市手稲区   (level 5)
-      01110  札幌市清田区   (level 5)
-      01202  函館市   (level 4)
-      01203  小樽市   (level 4)
-      01204  旭川市   (level 4)
-      01205  室蘭市   (level 4)
-      01206  釧路市   (level 4)
-      01207  帯広市   (level 4)
-      01208  北見市   (level 4)
-      01209  夕張市   (level 4)
-      01210  岩見沢市   (level 4)
-      01211  網走市   (level 4)
-      01212  留萌市   (level 4)
-      01213  苫小牧市   (level 4)
-      01214  稚内市   (level 4)
-      01215  美唄市   (level 4)
-      01216  芦別市   (level 4)
-      01217  江別市   (level 4)
-      01218  赤平市   (level 4)
-      ... and 1935 more
-    class time = 時間軸（年次） (1 codes)
-      2020000000  2020年   (level 1)
+https://stat.bora.dopa.go.th/stat/statnew/statyear/: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+https://stat.bora.dopa.go.th/new_stat/webPage/statByAge.php: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+https://www.dopa.go.th/: HTTP 403 text/html 864 B
+  <html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3"></script></head><body style="margin:0px;height:100%"><i
+https://www.bora.dopa.go.th/: HTTP 200 text/html; charset=UTF-8 102439 B
+  <!doctype html> <html lang="th" class="no-js" itemtype="https://schema.org/WebPage" itemscope> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"> <title>สำนักบริหารการทะเบียน &#8211; The Bureau of Registration Administration (BORA)</title> <script type="text/template" id="pvc-stats-view-template"> <i class="pvc-stats-icon small" aria
+https://data.go.th/: HTTP 403 text/html; charset=UTF-8 1370 B
+  <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Access Denied</title> <style> body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f3f4f6; color: #333; } .container { max-width: 600px; margin: 50px auto; background: white; padding: 30px; border-radius: 8px; box-shado
+https://gdcatalog.go.th/: HTTP 200 text/html; charset=utf-8 273607 B
+  <!DOCTYPE html> <!--[if IE 9]> <html lang="th" class="ie9"> <![endif]--> <!--[if gt IE 8]><!--> <html lang="th"> <!--<![endif]--> <head> <link rel="stylesheet" type="text/css" href="/fanstatic/gdc_portal/:version:2023-06-02T10:21:47.92/:bundle:gdc_portal_home_banner.css;gdc_portal_search_suggestion.css" /> <meta charset="utf-8" /> <meta name="generator" content="ckan 2.9.2" /> <meta name="viewport
+https://catalog.dopa.go.th/: URLError: <urlopen error timed out>
+https://opendata.dopa.go.th/: URLError: <urlopen error [Errno -2] Name or service not known>
