@@ -1,85 +1,39 @@
 == https://documents.dadesobertes.gencat.cat/ceo/docs/microdades_anonimitzades_bop_presencial.sav
   HTTP 200; application/octet-stream; 238,862,365 bytes; final https://documents.dadesobertes.gencat.cat/ceo/docs/microdades_anonimitzades_bop_presencial.sav
   (the file): 59,838 rows, 1535 variables; file label None; encoding WINDOWS-1252
-  447 variables match /relig|llengua|idioma|provinc|pondera|pes|onada|reo|any|mes|data|nacional|ciutadania/
+  14,000 rows with ANY >= 2024
+  19 variables match /^(RELIG|LLENGUA|IDIOMA|PROVINCIA|PONDERA|CIUTADANIA|BOP_NUM)/
     PONDERA: Coeficients de ponderació
-    REO: Número de l’enquesta al Registre d’Estudis d’Opinió (REO)
-    ANY: Any de realització de l'enquesta
-    MES: Mes de realització de l'enquesta
-    DATA_INI: Data d'inici de l'enquesta
-    DATA_FIN: Data de finalització de l’enquesta
-    ENQUESTADOR_NACIONALITAT: Nacionalitat entrevistador/a
+    BOP_NUM: Número d'ordre del baròmetre
     PROVINCIA: Nom de la província
     LLENGUA_ENQUESTA: Prefereix que li faci les preguntes en català o en castellà?
     LLENGUA_SISTEMA: Idioma de realització de l'entrevista segons l'aplicació informàtica
     CIUTADANIA: Té vostè la ciutadania espanyola?
-    EDAT_CEO: Grups d'edat reagrupada (recodificació grups de 5 anys)
-    PRE_PROBLEMES: Quins creu que són els principals problemes que té actualment Catalunya: (Prèvia)
-    PROBLEMES_LITERALS: Quins creu que són els principals problemes que té actualment Catalunya: (Literals)
-    PROBLEMES_R_1: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_2: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_3: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_4: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_5: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_6: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_7: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_8: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_9: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_10: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_11: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_R_12: Quins creu que són els principals problemes que té actualment Catalunya:
-    PROBLEMES_E_1: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_2: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_3: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_4: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_5: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_6: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_7: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_8: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_9: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_10: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_11: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PROBLEMES_E_12: Quins creu que són els principals problemes que té actualment Catalunya (EXTENSA):
-    PRE_PROBLEMA: Quin d’aquests problemes que m’ha dit considera que és el més important? (Prèvia)
-    PROBLEMA_LITERALS: Quin d’aquests problemes que m’ha dit considera que és el més important?  (extensa) (Literals)
-    PROBLEMA: Quin d’aquests problemes que m’ha dit considera que és el més important?  (extensa)
-    PROBLEMA_REDUIDA: Quin d’aquests problemes que m’ha dit considera que és el més important?
-    PARTIT_RESPOSTA_CAT_ESP: A Catalunya, quin partit o coalició creu que està més capacitada per fer front a cadascuna de les següents matèries polítiques? Tractar les relacions Catalunya-
-    PARTIT_RESPOSTA_CAT_ESP_LITERALS: A Catalunya, quin partit o coalició creu que està més capacitada per fer front a cadascuna de les següents matèries polítiques? Tractar les relacions Catalunya-
-    SIT_ECO_CAT_RETROSPECTIVA: Diria que ara la situació econòmica de Catalunya és millor, igual o pitjor que la de fa un any?
-    SIT_ECO_CAT_PROSPECTIVA: D’aquí a un any, creu vostè que la situació econòmica de Catalunya millorarà, es quedarà igual o empitjorarà?
-    SIT_ECO_ESP: Com qualificaria vostè la situació econòmica actual d’Espanya, molt bona, bona, dolenta o molt dolenta?
-    SIT_ECO_ESP_PROSPECTIVA: D’aquí a sis mesos, la situació econòmica espanyola millorarà, es quedarà igual o empitjorarà?
-    SIT_ECO_PERSONAL: Pel que fa referència a vostè, la seva situació econòmica personal és ara millor, igual o pitjor que la de fa un any?
-    SIT_ECO_PERSONAL_PROSPECTIVA: Respecte a la seva situació personal, creu que d’aquí a un any la situació econòmica millorarà, es quedarà igual o empitjorarà?
-    SIT_ECO_LLAR: I, pel que fa a la situació econòmica actual de la seva llar és ara millor, igual o pitjor que fa un any?
-    SIT_ECO_LLAR_PROSPECTIVA: Respecte a  la seva llar, creu que d’aquí a un any la situació econòmica millorarà, es quedarà igual o empitjorarà?
-    SIT_CAT_CERCA_FEINA: Creu vostè que la situació a Catalunya per trobar/ millorar un lloc de treball és millor, igual o pitjor que fa un any?
-    SIT_CAT_CERCA_FEINA_PROSPECTIVA: D’aquí a un any, creu vostè que la situació a Catalunya per trobar/millorar un lloc de treball serà millor, igual o pitjor que actualment?
-    SIT_POL_CAT_RETROSPECTIVA: Diria que la situació política actual de Catalunya és millor, igual o pitjor que la de fa un any?
-    SIT_POL_CAT_PROSPECTIVA: D’aquí a un any, vostè creu que la situació política de Catalunya millorarà, es quedarà igual o empitjorarà?
-    SIT_POL_ESP: Com qualificaria vostè la situació política actual d’Espanya: molt bona, bona, dolenta o molt dolenta?
-    CAT_ESP: Amb quina frase se sent més identificat/ada, soc un/a català/ana que viu a Catalunya...Soc un/a espanyol/a que viu a Espanya?
-    POST_MAT_1: La gent de vegades parla sobre quins haurien de ser els objectius del país per als propers 10 anys; de la llista que li llegiré, quin d’ells considera vostè que
-    POST_MAT_2: La gent de vegades parla sobre quins haurien de ser els objectius del país per als propers 10 anys; de la llista que li llegiré, quin li seguiria en importància
-    VAL_GOV_CAT_0_10: Valoració de la gestió de l’actual govern de la Generalitat de Catalunya en els darrers mesos
-    INF_POL_TV: A través de quins mitjans s’acostuma a informar dels temes polítics: Televisió
-    INF_POL_RADIO: A través de quins mitjans s’acostuma a informar dels temes polítics: Ràdio
-    INF_POL_PREMSA: A través de quins mitjans s’acostuma a informar dels temes polítics: Premsa
-    INF_POL_INTERNET: A través de quins mitjans s’acostuma a informar dels temes polítics: Internet
-    INF_POL_AMICS: A través de quins mitjans s’acostuma a informar dels temes polítics: Amics, coneguts o familiars
-    INF_POL_NO: A través de quins mitjans s’acostuma a informar dels temes polítics: No s'informa perquè no li interessa la política
-    INF_POL_NS: A través de quins mitjans s’acostuma a informar dels temes polítics: No ho sap
-    INF_POL_NC: A través de quins mitjans s’acostuma a informar dels temes polítics: No contesta
-    PRE_INF_POL_INTERNET: Com s'informa del temes polítics per Internet?
-    INF_POL_INTERNET_1_LITERALS: Com s'informa del temes polítics per Internet? (Literals)
-    INF_POL_INTERNET_2_LITERALS: Com s'informa del temes polítics per Internet? (Literals)
-    INF_POL_INTERNET_3_LITERALS: Com s'informa del temes polítics per Internet? (Literals)
-    INF_POL_INTERNET_1: Quines són les tres pàgines web que consulta més freqüentment per informar-se dels temes polítics?
-    INF_POL_INTERNET_2: Quines són les tres pàgines web que consulta més freqüentment per informar-se dels temes polítics?
-    INF_POL_INTERNET_3: Quines són les tres pàgines web que consulta més freqüentment per informar-se dels temes polítics?
-    INF_POL_INTERNET_4: Quines són les tres pàgines web que consulta més freqüentment per informar-se dels temes polítics?
-    INF_POL_INTERNET_5: Quines són les tres pàgines web que consulta més freqüentment per informar-se dels temes polítics?
-    INF_POL_INTERNET_6: Quines són les tres pàgines web que consulta més freqüentment per informar-se dels temes polítics?
-    INF_POL_INTERNET_7: Quines són les tres pàgines web que consulta més freqüentment per informar-se dels temes polítics?
-  all variables: PONDERA, ORDRE, ORDRE_REVISADA, REO, METODOLOGIA, BOP_NUM, ANY, MES, DIA, HORA_INI, HORA_FIN, DATA_INI, DATA_FIN, DURADA, FASE, ENQUESTADOR_CODI, ENQUESTADOR_SEXE, ENQUESTADOR_EDAT, ENQUESTADOR_ESTUDIS, ENQUESTADOR_NACIONALITAT, NUM_QUEST_CAMP, PROVINCIA, HABITAT, MUNICIPI, COMARCA, CLUSTER_21, CLUSTER_24, ID_RUTA, SECCIO_TEORICA, CONF_SECC, SECCIO_REAL, DOMICILI_PARTICULAR, LLENGUA_ENQUESTA, PADRO, RESIDENCIA, LLENGUA_SISTEMA, CIUTADANIA, GENERE, GENERE_LITERALS, SEXE, EDAT, EDAT_GR, EDAT_CEO, LLOC_NAIX, HORA_PRIMERA_PREGUNTA, GRAVACIO, TIPUS_GRAV, PRE_PROBLEMES, PROBLEMES_LITERALS, PROBLEMES_R_1, PROBLEMES_R_2, PROBLEMES_R_3, PROBLEMES_R_4, PROBLEMES_R_5, PROBLEMES_R_6, PROBLEMES_R_7, PROBLEMES_R_8, PROBLEMES_R_9, PROBLEMES_R_10, PROBLEMES_R_11, PROBLEMES_R_12, PROBLEMES_E_1, PROBLEMES_E_2, PROBLEMES_E_3, PROBLEMES_E_4, PROBLEMES_E_5, PROBLEMES_E_6, PROBLEMES_E_7, PROBLEMES_E_8, PROBLEMES_E_9, PROBLEMES_E_10, PROBLEMES_E_11, PROBLEMES_E_12, PRE_PROBLEMA, PROBLEMA_LITERALS, PROBLEMA, PROBLEMA_REDUIDA, PARTIT_RESPOSTA, PARTIT_RESPOSTA_LITERALS, PARTIT_RESPOSTA_ECONOMIA, PARTIT_RESPOSTA_ECONOMIA_LITERALS, PARTIT_RESPOSTA_CONVIVENCIA, PARTIT_RESPOSTA_CONVIVENCIA_LITERALS, PARTIT_RESPOSTA_DESIGUALTATS, PARTIT_RESPOSTA_DESIGUALTATS_LITERALS, PARTIT_RESPOSTA_CAT_ESP, PARTIT_RESPOSTA_CAT_ESP_LITERALS, PARTIT_RESPOSTA_SEGURETAT, PARTIT_RESPOSTA_SEGURETAT_LITERALS, PARTIT_RESPOSTA_SERVEIS_PUBLICS, PARTIT_RESPOSTA_SERVEIS_PUBLICS_LITERALS, SIT_ECO_CAT, SIT_ECO_CAT_RETROSPECTIVA, SIT_ECO_CAT_PROSPECTIVA, SIT_ECO_ESP, SIT_ECO_ESP_PROSPECTIVA, SIT_ECO_PERSONAL, SIT_ECO_PERSONAL_PROSPECTIVA, SIT_ECO_LLAR, SIT_ECO_LLAR_PROSPECTIVA, SIT_CAT_CERCA_FEINA, SIT_CAT_CERCA_FEINA_PROSPECTIVA, SIT_POL_CAT, SIT_POL_CAT_RETROSPECTIVA, SIT_POL_CAT_PROSPECTIVA, SIT_POL_ESP, CAT_ESP, RISCOS_0_10, DECISIONS_POL_0_10, POST_MAT_1, POST_MAT_2, ACORD_IMPOSTOS_CAT, INTERES_POL, INTERES_POL_PUBLICS, INTERES_POL_SOCIALS, INF_POL, CONFI_POL_CAT_0_10, VAL_GOV_CAT_0_10, INF_POL_TV, INF_POL_RADIO, INF_POL_PREMSA, INF_POL_INTERNET, INF_POL_AMICS, INF_POL_NO, INF_POL_NS, INF_POL_NC, INF_POL_TV_CANAL, INF_POL_TV_CANAL_LITERALS, INF_POL_RADIO_EMISORA, INF_POL_RADIO_EMISORA_LITERALS, INF_POL_PREMSA_DIARI, INF_POL_PREMSA_DIARI_LITERALS, INF_POL_WEB_MITJANS, INF_POL_WEB_PARTITS, INF_POL_WEB_ORGANITZACIONS, INF_POL_WEB_BLOGS, INF_POL_WEB_XARXES, INF_POL_WEB_FACEBOOK, INF_POL_WEB_TWITTER, INF_POL_WEB_LINKEDIN, INF_POL_WEB_SNAPCHAT, INF_POL_WEB_INSTAGRAM, INF_POL_WEB_TELEGRAM, PRE_INF_POL_INTERNET, INF_PO
+    LLENGUA_SERIES: Si tingués aquestes quatre opcions disponibles, quina triaria per veure una pel·lícula o sèrie?
+    RELIGIO: Amb independència que sigui practicant o no, quina és la seva religió?
+    RELIGIO_LITERALS: Amb independència que sigui practicant o no, quina és la seva religió? (Literals)
+    RELIGIO_FREQ: Acudeix als actes de culte oficiós religiós d’alguna confessió, sense comptar les ocasions relacionades amb cerimònies de tipus social, com bodes, comunions o funerals?
+    LLENGUA_IDENTIFICACIO: Quina és la seva llengua, ens referim a quina és la llengua que vostè considera com a pròpia?
+    LLENGUA_IDENT_1_3: Quina és la seva llengua? Ens referim a la llengua que considera com a pròpia
+    LLENGUA_IDENT_ALTRES: Quina llengua o llengües vostè considera com a pròpia?
+    LLENGUA_IDENT_ALTRES_LITERALS: Quina llengua o llengües vostè considera com a pròpia? (Literals)
+    LLENGUA_PRIMERA: Quina llengua va parlar primer vostè, a casa, quan era petit?
+    LLENGUA_PRIMERA_1_3: Quina llengua va parlar primer vostè, a casa, quan era petit?
+    LLENGUA_PRIMERA_ALTRES: Concretament, quina llengua o llengües va parlar primer vostè a casa quan era petit/a?
+    LLENGUA_PRIMERA_ALTRES_LITERALS: Concretament, quina llengua o llengües va parlar primer vostè a casa quan era petit/a? (Literals)
+    LLENGUA_HABITUAL: Quina és la seva llengua habitual, ens referim a la llengua que parla més sovint?
+  PROVINCIA (Nom de la província) value labels: 8=Barcelona; 17=Girona; 25=Lleida; 43=Tarragona
+  CIUTADANIA (Té vostè la ciutadania espanyola?) value labels: 1=Sí, tinc la ciutadania (espanyola); 2=Sí, tinc la ciutadania i una altra; 3=No tinc la ciutadania espanyola (sóc estranger)
+  weight PONDERA: min 1.0000 max 1.0000 mean 1.0000 sum 14,000.0; distinct 1
+  ANY (Any de realització de l'enquesta):
+    2024.0: 6,000 (w 6,000.0)  
+    2025.0: 6,000 (w 6,000.0)  
+    2026.0: 2,000 (w 2,000.0)  
+  BOP_NUM (Número d'ordre del baròmetre):
+    58.0: 2,000 (w 2,000.0)  Feb. 24 - 1082
+    59.0: 2,000 (w 2,000.0)  Juliol 24 - 1101
+    60.0: 2,000 (w 2,000.0)  Oct. 24 -  1112
+    61.0: 2,000 (w 2,000.0)  Feb. 25 - 1119
+    62.0: 2,000 (w 2,000.0)  Juny 25 - 1142
+    63.0: 2,000 (w 2,000.0)  Oct. 25 - 1145
+    64.0: 2,000 (w 2,000.0)  Juny 26 - 1167
