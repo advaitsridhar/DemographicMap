@@ -1,18 +1,8 @@
-== http://www.statistics.gov.sb/
-  HTTP -1 URLError 162 bytes
-  0 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
-== https://statistics.gov.sb/
-  HTTP 200 text/html; charset=utf-8 44,473 bytes
-  0 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
-== http://www.fsmstatistics.fm/
-  HTTP -1 URLError 113 bytes
-  0 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
-== https://www.statsfiji.gov.fj/statistics/social-statistics/population-censuses-and-surveys
-  HTTP 404 text/html; charset=UTF-8 1,500 bytes
-  0 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
-== https://www.statsfiji.gov.fj/index.php/census-2017
-  HTTP 404 text/html; charset=UTF-8 1,500 bytes
-  0 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
-== https://www.palaugov.pw/executive-branch/ministries/finance/budgetandplanning/census/
-  HTTP 202 text/html 239 bytes
-  0 links matching '(?:download|xlsx?|.pdf|[Cc]ensus)'
+mongolia_ages: National Statistics Office of Mongolia, RESIDENT POPULATION IN MONGOLIA, by sex, by soum and district (data.1212.mn, DT_NSO_0300_068V2); National Statistics Office of Mongolia, RESIDENT POPULATION IN MONGOLIA, by age group, soum and district (data.1212.mn, DT_NSO_0300_067V2)
+  2025: 369 areas; the tables disagree on 2; the age groups miss the age total in 0
+    361 Orkhon: sex table 106356.0, age table 113938.0
+    363 Bulgan: sex table 59110.0, age table 51528.0
+    361 Orkhon: sex table 106356.0, its soums 113938.0
+    363 Bulgan: sex table 59110.0, its soums 51528.0
+    711 Ulaanbaatar: sex table 1673279.0, its soums 1688720.0
+    711 Ulaanbaatar: age table 1673279.0, its soums 1688720.0
