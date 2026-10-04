@@ -94,6 +94,89 @@ def check_runs(groups: list[tuple[int, int | None, float]], where: str) -> None:
     raise SystemExit(f"{where}: no open top age group")
 
 
+def polygons(level: str, iso3: str, zoom: int = 7) -> dict[str, Any]:
+    """The map's own polygons for one country and level, read from its tiles.
+
+    ``site/tiles/<level>.pmtiles`` is what the map draws, and its features
+    carry the boundary file's ``shapeID``, the same id as the units files.
+    Reading them is how a reader learns which drawn unit contains another, or
+    a place, where the boundary file's own parent is unreliable. Zoom 7 keeps
+    every polygon at a resolution of some 600 m, enough to place a district's
+    representative point or a town and nothing finer.
+    """
+    import gzip
+    import math
+
+    import mapbox_vector_tile
+    from pmtiles.reader import MmapSource, Reader
+    from shapely.geometry import shape
+    from shapely.ops import unary_union
+
+    units = {u["id"]: u for u in drawn(iso3, level)}
+    boxes = [u["bbox"] for u in units.values() if u.get("bbox")]
+    west, south = min(b[0] for b in boxes), min(b[1] for b in boxes)
+    east, north = max(b[2] for b in boxes), max(b[3] for b in boxes)
+
+    def tile(lon: float, lat: float) -> tuple[int, int]:
+        n = 2 ** zoom
+        lat = max(min(lat, 85.0), -85.0)
+        y = (1 - math.log(math.tan(math.radians(lat)) + 1 / math.cos(math.radians(lat)))
+             / math.pi) / 2 * n
+        return int((lon + 180) / 360 * n), int(y)
+
+    def lonlat(px: float, py: float, x: int, y: int, extent: int) -> tuple[float, float]:
+        n = 2 ** zoom
+        yy = (y + py / extent) / n
+        return ((x + px / extent) / n * 360 - 180,
+                math.degrees(math.atan(math.sinh(math.pi * (1 - 2 * yy)))))
+
+    path = SITE.parent / "tiles" / f"{level}.pmtiles"
+    parts: dict[str, list[Any]] = {}
+    with open(path, "rb") as fh:
+        reader = Reader(MmapSource(fh))
+        x0, y1 = tile(west, south)
+        x1, y0 = tile(east, north)
+        for x in range(x0, x1 + 1):
+            for y in range(y0, y1 + 1):
+                data = reader.get(zoom, x, y)
+                if not data:
+                    continue
+                try:
+                    data = gzip.decompress(data)
+                except OSError:
+                    pass
+                decoded = mapbox_vector_tile.decode(data, default_options={"y_coord_down": True})
+                for layer in decoded.values():
+                    extent = layer.get("extent", 4096)
+                    for feat in layer["features"]:
+                        sid = str(feat["properties"].get("shapeID"))
+                        if sid not in units:
+                            continue
+
+                        def conv(c: Any) -> Any:
+                            if isinstance(c[0], (int, float)):
+                                return lonlat(c[0], c[1], x, y, extent)
+                            return [conv(v) for v in c]
+
+                        g = feat["geometry"]
+                        geom = shape({"type": g["type"], "coordinates": conv(g["coordinates"])})
+                        parts.setdefault(sid, []).append(geom.buffer(0))
+    return {sid: unary_union(gs) for sid, gs in parts.items()}
+
+
+def locate(points: dict[Any, tuple[float, float]], level: str, iso3: str,
+           zoom: int = 7) -> dict[Any, str | None]:
+    """Each (lon, lat) -> the id of the one drawn unit at ``level`` containing it,
+    or None where none or several do."""
+    from shapely.geometry import Point
+    shapes = polygons(level, iso3, zoom)
+    out: dict[Any, str | None] = {}
+    for key, (lon, lat) in points.items():
+        hits = [sid for sid, geom in shapes.items() if geom.contains(Point(lon, lat))]
+        out[key] = hits[0] if len(hits) == 1 else None
+    return out
+
+
 AGE_LABEL = re.compile(r"^\s*(\d{1,3})\s*(?:-|–|to)\s*(\d{1,3})\s*$")
 OPEN_LABEL = re.compile(r"^\s*(\d{1,3})\s*(?:\+|and over|& over|and above|years and over"
                         r"|or more|plus|over)\s*$", re.IGNORECASE)
