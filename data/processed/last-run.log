@@ -1,72 +1,37 @@
-== pxweb https://data.1212.mn/api/v1/en/NSO
-  folder: 8 entries
-    l 'Economy, environment': Economy, environment
-    l 'Education, health': Education, health
-    l 'Historical data': Historical data
-    l 'Industry, service': Industry, service
-    l 'Labour, business': Labour, business
-    l 'Population, household': Population, household
-    l 'Regional development': Regional development
-    l 'Society, development': Society, development
-== pxweb https://data.1212.mn/api/v1/en/NSO/Population,%20household
-  folder: 6 entries
-    l '1_Population, household': 1_Population, household
-    l '2_Regular movement of population': 2_Regular movement of population
-    l '3_Herdsmen': 3_Herdsmen
-    l '3_Infrastructure, housing': 3_Infrastructure, housing
-    l '4_Population projection': 4_Population projection
-    l '5_Adminstrative units, territory': 5_Adminstrative units, territory
-== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development
-  folder: 24 entries
-    l 'Agriculture': Agriculture
-    l 'Construction': Construction
-    l 'Culture, Tourism, Exercise, and Sports': Culture, Tourism, Exercise, and Sports
-    l 'Disability': Disability
-    l 'Education, Science, and Intellectual Property': Education, Science, and Intellectual Property
-    l 'Election': Election
-    l 'Government budget': Government budget
-    l 'Health': Health
-    l 'Human development': Human development
-    l 'Infrastructure, housing': Infrastructure, housing
-    l 'Justice and crime': Justice and crime
-    l 'Labour and business': Labour and business
-    l 'Livestock': Livestock
-    l 'Monasteries, Temples and Churches': Monasteries, Temples and Churches
-    l 'Money and Finance': Money and Finance
-    l 'National accounts': National accounts
-    l 'Population and household': Population and household
-    l 'Population livelihood': Population livelihood
-    l 'Price': Price
-    l 'SMEs': SMEs
-    l 'Statistical business register': Statistical business register
-    l 'Territory, administrative units': Territory, administrative units
-    l 'Trade': Trade
-    l 'Transportation': Transportation
-== pxweb https://data.1212.mn/api/v1/en/NSO/Regional%20development/Population%20and%20household
-  folder: 26 entries
-    t 'DT_NSO_0300_002V4.px': MID-YEAR RESIDENT POPULATION, by soum and district, and by year by Region and Year (updated 2026-06-08T15:39:43)
-    t 'DT_NSO_0300_004V1.px': POPULATION OF MONGOLIA, by location, aimags and the Capital, and by year by Location, Region and Year (updated 2026-05-18T20:09:38)
-    t 'DT_NSO_0300_004V5.px': RESIDENT POPULATION IN MONGOLIA, by soum and district, and by year by Region, Location and Year (updated 2026-07-28T09:08:55)
-    t 'DT_NSO_0300_006V2.px': NUMBER OF HOUSEHOLDS, by soum and discrict, and by year by Region and Year (updated 2026-05-06T13:57:07)
-    t 'DT_NSO_0300_006V5.px': NUMBER OF HOUSEHOLDS, by location, soum and discrict, and by year by Location, Region and Year (updated 2026-05-13T15:50:41)
-    t 'DT_NSO_0300_007V1_1.px': NUMBER OF ORPHAN CHILDREN, by aimags and the Capital, and by year by Region and Year (updated 2026-05-15T16:40:42)
-    t 'DT_NSO_0300_008V1_2.px': CHILD LIVING WITH ONE OF THE PARENTS, by aimags and the Capital, and by year by Region and Year (updated 2026-05-15T16:36:20)
-    t 'DT_NSO_0300_013V4.px': NUMBER OF DEATHS, by sex, soum and district, and by year by Sex, Region and Year (updated 2026-05-13T16:22:15)
-    t 'DT_NSO_0300_013V6.px': NUMBER OF BIRTHS, by sex, soum and discrict, and by year by Sex, Region and Year (updated 2026-05-13T16:51:08)
-    t 'DT_NSO_0300_016V3.px': NUMBER OF DEATHS, by age group, soum and district, and by year by Age group, Region and Year (updated 2026-05-13T20:06:17)
-    t 'DT_NSO_0300_018V2.px': NUMBER OF MARRIAGES AND DIVORCES, by soum and district, and by year by Indicator, Region and Year (updated 2026-05-06T13:57:24)
-    t 'DT_NSO_0300_019V6.px': REGISTERED MARRIAGES, by sex, soum and district, and by year by Sex, Age group, Region and Year (updated 2026-05-15T10:24:24)
-    t 'DT_NSO_0300_020V1.px': MARRIAGES AND DIVORCES, by per 1000 population, aimags and the Capital, and by year by Marital status, Region  (updated 2026-05-18T19:45:29)
-    t 'DT_NSO_0300_023V4.px': NUMBER OF BIRTHS, by mother's age group, soum and discrict, and by year by Age group, Region and Year (updated 2026-05-14T19:18:03)
-    t 'DT_NSO_0300_024V2.px': DEATH PER 1000, by sex, soum and district, and by year by Sex, Region and Year (updated 2026-05-19T11:43:01)
-    t 'DT_NSO_0300_029V3.px': CRUDE BIRTH RATE, by soum and district, and by year by Sex, Region and Year (updated 2026-05-19T15:20:15)
-    t 'DT_NSO_0300_030V1.px': LIFE EXPECTANCY AT BIRTH, by sex, aimags and the Capital, and by year by Sex, Region and Year (updated 2026-05-29T21:25:27)
-    t 'DT_NSO_0300_032V3.px': SEX RATIO AT BIRTH, by soum and discrict, and by year by Region and Year (updated 2026-05-14T11:29:31)
-    t 'DT_NSO_0300_034V2.px': DENSITY, by soum and discrict, and by year by Region and Year (updated 2026-05-18T16:53:21)
-    t 'DT_NSO_0300_035V2.px': DEPENDENCY RATIO, by soum and district, and by year by Indicator, Region and Year (updated 2026-05-18T12:11:38)
-    t 'DT_NSO_0300_038V4.px': WOMEN WHO GAVE BIRTH, by mother's educational level, soum and district, and by year by Education level, Region (updated 2026-05-06T13:57:36)
-    t 'DT_NSO_0300_040V1.px': POPULATION MIGRATION, by aimags and the Capital, and by year by Indicator, Region and Year (updated 2026-04-15T21:16:14)
-    t 'DT_NSO_0300_051V3.px': WOMEN WHO GAVE BIRTH, by marital status, soum and district, and by year by Indicator, Region and Year (updated 2026-05-14T12:01:53)
-    t 'DT_NSO_0300_052V2.px': ADOPTION, by soum and district, and by year by Region and Year (updated 2026-05-18T10:56:21)
-    t 'DT_NSO_0300_067V2.px': RESIDENT POPULATION IN MONGOLIA, by age group, soum and district, and by year by Age group, Region and Year (updated 2026-05-25T10:08:25)
-    t 'DT_NSO_0300_068V2.px': RESIDENT POPULATION IN MONGOLIA, by sex, by soum and district, and by year by Sex, Region and Year (updated 2026-05-19T18:54:31)
+== https://tongastats.gov.to/census-2/population-census-3/census-tables/
+  HTTP 200 text/html; charset=UTF-8 190,825 bytes
+  31 links matching '(?:download|xlsx|xls)'
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/includes/divi/styles/style.min.css?ver=1.0.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/front.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/colorbox.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/viewer.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/material-design-iconic-font.min.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/jaofiletree.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/search_filter.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/themes/wpfd-table/css/style.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/assets/css/video-js.css?ver=6.3.0
+    https://tongastats.gov.to/wp-content/plugins/wp-file-download/app/site/themes/wpfd-table/css/jquery.mediaTable.css?ver=7.1.2
+    https://tongastats.gov.to/census-2/population-census-3/census-tables/{{linkdownload}}
+    https://tongastats.gov.to/download/266/general-tables/8089/1-population-trends.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7660/2-ethnicity.xlsx
+    https://tongastats.gov.to/download/266/general-tables/11475/3-marital-status.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7664/4-religion.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7666/5-childrens-biological-parents-civil-registration.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7673/6-health-ncd-health-complaint.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7661/7-covid-19.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7667/8-functionality.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7672/9-education.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7665/10-literacy.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7670/11-internet-and-communication.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7663/12-alcohol-and-tobacco.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7668/13-electoral-vote.xlsx
+    https://tongastats.gov.to/download/266/general-tables/7669/14-fertility.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7676/1-dwelling-characteristics.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7677/2-household-characteristics.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7678/3-household-income.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7674/4-labour-mobility-scheme.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7679/5-toilet-facility.xlsx
+    https://tongastats.gov.to/download/275/household-tables/7675/6-household-members-no-longer-in-the-household.xlsx
+== https://tongastats.gov.to/download/266/general-tables/
+  HTTP 404 text/html; charset=UTF-8 1,500 bytes
+  0 links matching '(?:download|xlsx|xls)'
