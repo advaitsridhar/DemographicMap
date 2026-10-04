@@ -398,7 +398,40 @@ def outline_wkt(el: dict[str, Any]) -> str:
     return wkt
 
 
+# Where a census quarter's outline crosses a drawn polygon's line, the share
+# of its buildings on each side says more about where its people live than the
+# share of its area. (south, west, north, east)
+BUILDING_BOXES = {
+    "north_nicosia": (35.165, 33.27, 35.255, 33.45),
+    "kyrenia": (35.285, 33.22, 35.36, 33.41),
+    "esentepe": (35.27, 33.40, 35.38, 33.63),
+    "famagusta": (35.09, 33.84, 35.17, 33.98),
+    "karavas": (35.31, 33.13, 35.37, 33.24),
+    "mesarya": (35.15, 33.70, 35.25, 33.82),
+    "morfou": (35.17, 32.93, 35.23, 33.08),
+    "trikomo": (35.26, 33.86, 35.31, 33.93),
+}
+
+
+def p_osm_buildings(a: argparse.Namespace) -> None:
+    """OpenStreetMap's buildings in the boxes above, counted per cell of a
+    thousandth of a degree (about 90 by 110 metres): one line per cell, BLD,
+    box, lat, lon of the cell's corner, count. Binding evidence only."""
+    from collections import Counter
+    for name, (s, w, n, e) in BUILDING_BOXES.items():
+        query = f'[out:json][timeout:240];way["building"]({s},{w},{n},{e});out center;'
+        cells: Counter = Counter()
+        for el in overpass(query):
+            c = el.get("center")
+            if c:
+                cells[(int(c["lat"] * 1000), int(c["lon"] * 1000))] += 1
+        log(f"== buildings {name}: {sum(cells.values())} in {len(cells)} cells")
+        for (la, lo), k in sorted(cells.items()):
+            log(f"BLD\t{name}\t{la / 1000:.3f}\t{lo / 1000:.3f}\t{k}")
+
+
 PROBES: dict[str, Callable[[argparse.Namespace], None]] = {
+    "osm_buildings": p_osm_buildings,
     "osm_places": p_osm_places, "osm_admin": p_osm_admin, "osm_geom": p_osm_geom,
     "cdx_devplan": p_cdx_devplan, "cdx_istatistik": p_cdx_istatistik,
     "cdx_istatistik_files": p_cdx_istatistik_files, "home": p_home, "links": p_links,
