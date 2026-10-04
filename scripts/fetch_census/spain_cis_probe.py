@@ -367,6 +367,10 @@ def cmd_data(args: argparse.Namespace) -> int:
     frame, meta, member = open_data(download(args.url, args.timeout))
     log(f"  {member}: {len(frame):,} rows, {len(frame.columns)} variables; "
         f"file label {meta.file_label!r}; encoding {getattr(meta, 'file_encoding', '')}")
+    if args.min:
+        var, _, value = args.min.partition("=")
+        frame = frame[frame[var] >= float(value)]
+        log(f"  {len(frame):,} rows with {var} >= {value}")
     names = dict(zip(meta.column_names, meta.column_labels))
     if args.vars:
         rx = re.compile(args.vars, re.I)
@@ -490,6 +494,7 @@ def main() -> int:
     p.add_argument("--freq")
     p.add_argument("--by")
     p.add_argument("--weight")
+    p.add_argument("--min", help="keep rows where VAR >= VALUE, written VAR=VALUE")
     p.add_argument("--list", type=int, default=0)
     p.add_argument("--limit", type=int, default=60)
     p.add_argument("--width", type=int, default=140)
