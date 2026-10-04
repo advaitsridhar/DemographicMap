@@ -1,30 +1,20 @@
-== c2_fin_kunta_mk_2020
-  FAILED: RuntimeError: HTTP 500: 
-== c2_fin_kunta_sk_2020
-  FAILED: RuntimeError: HTTP 500: 
-== c2_fin_kunta_mk_2026
-  FAILED: RuntimeError: HTTP 500: 
-== c2_swe_kolada3
-  kyrka: 0 KPIs
-  medlem: 0 KPIs
-  trossamfund: 0 KPIs
-== c2_swe_scb
-  -- ssd ?query=kyrkan
-    FAILED RuntimeError: HTTP 400: Bad Request
-  -- ssd ?query=trossamfund
-    FAILED RuntimeError: HTTP 400: Bad Request
-  -- ssd ?query=medlemmar
-    FAILED RuntimeError: HTTP 400: Bad Request
-== c2_swe_fakta
-  51,936 characters, 79 links
-    Bli medlem -> https://www.svenskakyrkan.se/medlem
-    Svenska kyrkan i siffror -> https://www.svenskakyrkan.se/statistik
-    Mer än många tror (pdf 2,6 MB) -> https://www.svenskakyrkan.se/default.aspx?id=2535400
-    Statistik -> https://www.svenskakyrkan.se/statistik
-    Anledningar att vara medlem -> https://www.svenskakyrkan.se/medlem/anledningar
-    Bli medlem -> https://www.svenskakyrkan.se/medlem
-== c2_swe_forskning
-  45,313 characters, 53 links
+== c3_fin_keys
+  lang=fi: HTTP 500: 
+  lang=en: HTTP 500: 
+  lang=sv: HTTP 500: 
+  lang=fi: HTTP 500: 
+  lang=en: HTTP 500: 
+  lang=sv: HTTP 500: 
+  lang=fi: HTTP 500: 
+  lang=en: HTTP 500: 
+  lang=sv: HTTP 500: 
+  lang=fi: HTTP 500: 
+  lang=en: HTTP 500: 
+  lang=sv: HTTP 500: 
+== c3_swe_research
+  35,844 characters, 41 links
+     -> https://www.svenskakyrkan.se/forskning/statistik
     Statistik och omvärldsanalys -> https://www.svenskakyrkan.se/forskning/statistik
-    Statistik och omv&#228;rldsanalys -> https://www.svenskakyrkan.se/forskning/statistik
-    Bli medlem -> https://www.svenskakyrkan.se/medlem
+    Svenska kyrkan i siffror -> https://www.svenskakyrkan.se/statistik
+    Svenska kyrkan i siffror -> https://www.svenskakyrkan.se/forskning/statistik
+    Bli medlem -> https://www.svenskakyrkan.se/forskning/medlem
