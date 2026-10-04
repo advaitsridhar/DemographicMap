@@ -258,5 +258,98 @@ class ShapeBindings(unittest.TestCase):
             self.assertRegex(shape, r"^79688334B\d+$", shape)
 
 
+def indv03(*rows: str) -> str:
+    """Indv03's layout: a header, then one row per area and age."""
+    header = ("Province,District,GaPa_NaPa,Age,Province_Name,District_Name,"
+              "Area_Name,Age_Group,Total,Male,Female")
+    return "\n".join([header, *rows]) + "\n"
+
+
+def single_years(code: str, name: str, males: int, females: int) -> list[str]:
+    """An area's All Ages row and 101 single years: everyone at ages 20 to 29."""
+    rows = [f'{code},"P","{name}","{name} (TOTAL)","All Ages",'
+            f"{males + females},{males},{females}"]
+    for age in range(0, 101):
+        m = males // 10 if 20 <= age < 30 else 0
+        f = females // 10 if 20 <= age < 30 else 0
+        rows.append(f'{code.rsplit(",", 1)[0]},{age},"P","{name}","{name}",'
+                    f'"{age} Year",{m + f},{m},{f}')
+    return rows
+
+
+class Ages(unittest.TestCase):
+    """Indv03, the census's single years of age, and the checks on it."""
+
+    def test_nation_provinces_and_districts_are_read_and_local_levels_not(self):
+        text = indv03(
+            '0,0,0,-1,"NEPAL","NEPAL","NEPAL","All Ages",29164578,14253551,14911027',
+            '1,0,0,-1,"PROVINCE - 1","PROVINCE - 1","PROVINCE - 1","All Ages",4961412,2417328,2544084',
+            '1,1,0,-1,"Province-1","TAPLEJUNG","Taplejung (TOTAL)","All Ages",120590,60773,59817',
+            '1,1,10101,-1,"Province-1","TAPLEJUNG","Phaktanglung","All Ages",15000,7000,8000')
+        got = nepal.read_ages(text)
+        self.assertEqual(set(got), {"Nepal", "Koshi", "Taplejung"})
+        self.assertEqual(got["Koshi"]["total"], (4961412, 2417328, 2544084))
+        self.assertEqual(got["Taplejung"]["total"], (120590, 60773, 59817))
+
+    def test_the_census_names_for_the_split_districts_are_read(self):
+        text = indv03(
+            '4,43,0,-1,"Gandaki","NAWALPARASI (BARDAGHAT SUSTA EAST)",'
+            '"Nawalparasi (Bardaghat Susta East) (TOTAL)","All Ages",378079,177887,200192',
+            '5,47,0,-1,"Lumbini","RUKUM (EAST)","Rukum (East) (TOTAL)","All Ages",56786,27516,29270',
+            '3,35,0,-1,"Bagmati","CHITAWAN","Chitawan (TOTAL)","All Ages",719859,351789,368070')
+        self.assertEqual(set(nepal.read_ages(text)), {"Nawalpur", "Rukum East", "Chitwan"})
+
+    def test_a_district_under_the_wrong_province_is_refused(self):
+        text = indv03('2,1,0,-1,"Madhesh","TAPLEJUNG","Taplejung (TOTAL)",'
+                      '"All Ages",120590,60773,59817')
+        with self.assertRaises(SystemExit):
+            nepal.read_ages(text)
+
+    def test_an_area_printed_twice_is_refused(self):
+        row = '1,1,0,-1,"Province-1","TAPLEJUNG","Taplejung (TOTAL)","All Ages",1,1,0'
+        with self.assertRaises(SystemExit):
+            nepal.read_ages(indv03(row, row))
+
+    def test_single_years_median_and_ratio(self):
+        got = nepal.read_ages(indv03(*single_years("1,1,0,-1", "TAPLEJUNG", 600, 400)))
+        block = got["Taplejung"]
+        nepal.check_age_block("Taplejung", block)
+        fields = nepal.age_fields(block)
+        # A thousand people spread evenly over ages 20 to 29: the middle one
+        # is half-way through, at 25.
+        self.assertEqual(fields["median_age"]["value"], 25.0)
+        self.assertEqual(fields["sex_ratio"]["value"], 150.0)
+        self.assertEqual(fields["sex_ratio"]["unit"], "males_per_100_females")
+        self.assertIn("600 males and 400 females", fields["sex_ratio_note"])
+
+    def test_a_missing_age_is_caught(self):
+        rows = single_years("1,1,0,-1", "TAPLEJUNG", 600, 400)
+        rows = [r for r in rows if ',57,"P"' not in r]
+        block = nepal.read_ages(indv03(*rows))["Taplejung"]
+        with self.assertRaises(SystemExit):
+            nepal.check_age_block("Taplejung", block)
+
+    def test_ages_that_do_not_reach_the_total_are_caught(self):
+        rows = single_years("1,1,0,-1", "TAPLEJUNG", 600, 400)
+        rows[0] = rows[0].replace("1000,600,400", "1001,601,400")
+        block = nepal.read_ages(indv03(*rows))["Taplejung"]
+        with self.assertRaises(SystemExit):
+            nepal.check_age_block("Taplejung", block)
+
+    def test_a_split_district_is_summed_year_by_year(self):
+        east = nepal.read_ages(indv03(*single_years("5,47,0,-1", "RUKUM (EAST)", 100, 100)))
+        west = nepal.read_ages(indv03(*single_years("6,66,0,-1", "RUKUM (WEST)", 300, 300)))
+        both = nepal.combine_age_blocks([east["Rukum East"], west["Rukum West"]])
+        self.assertEqual(both["total"], (800, 400, 400))
+        self.assertEqual(both["T"][25], 80)
+        nepal.check_age_block("Rukum", both)
+
+    def test_annex_1_gives_each_areas_sexes(self):
+        got = nepal.annex_sexes(ETHNICITY)
+        self.assertEqual(got["Nepal"], nepal.NATIONAL_SEXES)
+        self.assertEqual(got["Taplejung"], (120590, 60773, 59817))
+        self.assertEqual(got["Koshi"], (4961412, 2417328, 2544084))
+
+
 if __name__ == "__main__":
     unittest.main()

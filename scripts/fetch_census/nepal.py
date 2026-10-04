@@ -50,19 +50,35 @@ The summary chapter publishes national totals for all three fields in tables
 10, 11 and 14 -- separately typeset from the annexes this reads -- so they are
 real controls rather than a restatement of the same arithmetic. Every one has
 to match before a single record is emitted.
+
+Median age and sex ratio
+------------------------
+The census results portal (``censusresults.nsonepal.gov.np``, a different
+host from the one above, with a valid certificate) publishes the long-form
+dataset as one CSV per table. Indv03 is the population by single year of age
+and sex for the nation, every province, district and local level. The median
+is interpolated within the single year that holds the middle person (100 and
+over is the open top group), and the sex ratio is males per hundred females.
+Every district's persons, males and females must equal the report's own
+Annex 1 row for it -- a separately typeset table -- and the districts must
+add up to their province, and the provinces to the nation, age by age.
 """
 
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import re
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, download, gap, log, measure, record,
-    shares, write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, download, gap, http_get, log, measure,
+    record, shares, write_json,
 )
+from .south_asia_common import agree, males_per_100, median_single
 
 YEAR = 2021
 SOURCE = ("National Statistics Office, National Population and Housing Census "
@@ -595,15 +611,212 @@ FIELD_NOTES = {
 MIN_PCT = 0.1
 
 
-def build(lines: list[str], *, min_pct: float = MIN_PCT
+# ---------------------------------------------------------------------------
+# Median age and sex ratio: Indv03, the single years of age
+# ---------------------------------------------------------------------------
+
+# One row per area and age: province code, district code, local-level code,
+# age (-1 for "All Ages", 0 to 99, 100 for "100 Year and above"), the
+# province's and district's names, the area's label, the age's label, and
+# persons, males and females.
+AGES_URL = ("https://censusresults.nsonepal.gov.np/files/longform-dataset/"
+            "Indv03_PopulationBySingleYear.csv")
+AGE_SOURCE = ("National Statistics Office, National Population and Housing "
+              "Census 2021: population by single year of age and sex (Indv03)")
+AGE_OPEN_FROM = 100
+# The dataset names the first province by its old number ("PROVINCE - 1"), so
+# the province is read from its code, never its name.
+PROVINCE_CODES = {1: "Koshi", 2: "Madhesh", 3: "Bagmati", 4: "Gandaki",
+                  5: "Lumbini", 6: "Karnali", 7: "Sudurpashchim"}
+# Persons, males and females for Nepal, as the report's Annex 1 prints them.
+NATIONAL_SEXES = (29_164_578, 14_253_551, 14_911_027)
+
+_SEXES_ROW = re.compile(r"^All Castes\s+(?P<persons>\d[\d,]*)\s+(?P<males>\d[\d,]*)"
+                        r"\s+(?P<females>\d[\d,]*)$")
+
+
+def read_ages(text: str) -> dict[str, dict[str, Any]]:
+    """Indv03 as {area: {"total": (persons, males, females), "T"/"M"/"F": {age: n}}}.
+
+    Only the nation's, the provinces' and the districts' rows are kept; a
+    local level's rows carry its code in the third column and are passed
+    over. A district is read by its name, through the lookup the annexes
+    use, and must sit in the province its code says.
+    """
+    out: dict[str, dict[str, Any]] = {}
+    for row in csv.reader(io.StringIO(text)):
+        if len(row) < 11 or not re.fullmatch(r"-?\d+", row[0].strip()):
+            continue                                  # the header, a blank line
+        province_code, district_code, local_code, age = (int(c) for c in row[:4])
+        if local_code:
+            continue
+        if not province_code:
+            area = "Nepal"
+        elif not district_code:
+            if province_code not in PROVINCE_CODES:
+                raise SystemExit(f"nepal: Indv03 has a province coded {province_code}")
+            area = PROVINCE_CODES[province_code]
+        else:
+            name = row[5].strip()
+            if not known_area(name):
+                raise SystemExit(f"nepal: Indv03 names a district {name!r} that "
+                                 "the report does not")
+            area = canonical_area(name)
+            if province_of(area) != PROVINCE_CODES.get(province_code):
+                raise SystemExit(f"nepal: Indv03 puts {area} in province "
+                                 f"{province_code}; the report, in {province_of(area)}")
+        persons, males, females = (int(c.replace(",", "")) for c in row[8:11])
+        block = out.setdefault(area, {"total": None, "T": {}, "M": {}, "F": {}})
+        if age == -1:
+            if block["total"] is not None:
+                raise SystemExit(f"nepal: Indv03 prints {area}'s All Ages twice")
+            block["total"] = (persons, males, females)
+            continue
+        if age in block["T"]:
+            raise SystemExit(f"nepal: Indv03 prints {area}'s age {age} twice")
+        for sex, n in zip("TMF", (persons, males, females)):
+            block[sex][age] = n
+    return out
+
+
+def annex_sexes(lines: list[str]) -> dict[str, tuple[int, int, int]]:
+    """Annex 1's "All Castes" row for each area: persons, males, females.
+
+    The report is typeset apart from the dataset, so a district whose three
+    figures agree in both is a district both read the same way.
+    """
+    out: dict[str, tuple[int, int, int]] = {}
+    pending: str | None = None
+    for raw in lines:
+        line = clean(raw)
+        match = _SEXES_ROW.match(line)
+        if match:
+            if pending is not None and pending not in out:
+                out[pending] = tuple(int(match.group(k).replace(",", ""))
+                                     for k in ("persons", "males", "females"))
+            pending = None
+            continue
+        if known_area(line):
+            pending = canonical_area(line)
+    return out
+
+
+def check_age_block(area: str, block: dict[str, Any]) -> None:
+    """One area's own sums: every age present once, the ages to the totals."""
+    if block.get("total") is None:
+        raise SystemExit(f"nepal: Indv03 has no All Ages row for {area}")
+    expected = set(range(0, AGE_OPEN_FROM + 1))
+    if set(block["T"]) != expected:
+        raise SystemExit(
+            f"nepal: Indv03 {area} ages are not 0 to {AGE_OPEN_FROM}: missing "
+            f"{sorted(expected - set(block['T']))}, extra "
+            f"{sorted(set(block['T']) - expected)}")
+    persons, males, females = block["total"]
+    agree(f"nepal: Indv03 {area} males and females", males + females, persons)
+    for sex, total in zip("TMF", block["total"]):
+        agree(f"nepal: Indv03 {area} {sex} single years",
+              sum(block[sex].values()), total)
+    for age, n in block["T"].items():
+        agree(f"nepal: Indv03 {area} age {age} males and females",
+              block["M"][age] + block["F"][age], n)
+
+
+def combine_age_blocks(blocks: list[dict[str, Any]]) -> dict[str, Any]:
+    """Areas summed, single year by single year."""
+    out: dict[str, Any] = {
+        "total": tuple(sum(b["total"][i] for b in blocks) for i in range(3)),
+        "T": Counter(), "M": Counter(), "F": Counter()}
+    for block in blocks:
+        for sex in "TMF":
+            for age, n in block[sex].items():
+                out[sex][age] += n
+    out.update({sex: dict(out[sex]) for sex in "TMF"})
+    return out
+
+
+def check_age_table(ages: dict[str, dict[str, Any]],
+                    annex: dict[str, tuple[int, int, int]]) -> None:
+    """Indv03 against itself and against the report, before anything is used.
+
+    Every area adds up on its own; the districts make their province and the
+    provinces make the nation, age by age and sex by sex; every area's
+    persons, males and females are the report's Annex 1 row to the person;
+    and Nepal's are the national figures the report prints.
+    """
+    wanted = {"Nepal", *PROVINCES, *(d for names in DISTRICTS.values() for d in names)}
+    if set(ages) != wanted:
+        raise SystemExit(f"nepal: Indv03 areas differ from the report's: missing "
+                         f"{sorted(wanted - set(ages))}, extra {sorted(set(ages) - wanted)}")
+    for area, block in ages.items():
+        check_age_block(area, block)
+        printed = annex.get(area)
+        if printed is None:
+            raise SystemExit(f"nepal: the report's Annex 1 has no All Castes row "
+                             f"for {area} to check Indv03 against")
+        if tuple(block["total"]) != tuple(printed):
+            raise SystemExit(f"nepal: {area} is {block['total']} persons, males and "
+                             f"females in Indv03 and {printed} in Annex 1")
+    for parent, children in [*((p, DISTRICTS[p]) for p in PROVINCES),
+                             ("Nepal", tuple(PROVINCES))]:
+        summed = combine_age_blocks([ages[c] for c in children])
+        for sex in "TMF":
+            for age in range(0, AGE_OPEN_FROM + 1):
+                agree(f"nepal: Indv03 {parent} age {age} {sex} against its parts",
+                      summed[sex].get(age, 0), ages[parent][sex][age])
+    if tuple(ages["Nepal"]["total"]) != NATIONAL_SEXES:
+        raise SystemExit(f"nepal: Indv03's Nepal is {ages['Nepal']['total']}, the "
+                         f"report's {NATIONAL_SEXES}")
+
+
+def age_fields(block: dict[str, Any], extra: str = "") -> dict[str, Any]:
+    persons, males, females = block["total"]
+    out: dict[str, Any] = {}
+    median = median_single(dict(block["T"]), open_from=AGE_OPEN_FROM)
+    if median is not None:
+        out["median_age"] = measure(median, unit="years", year=YEAR, source=AGE_SOURCE)
+        out["median_age_note"] = (
+            "NPHC 2021, population by single year of age (Indv03): the median of "
+            f"the single years of age of all {persons:,} people, interpolated "
+            "within the year that holds the middle person." + extra)
+    ratio = males_per_100(males, females)
+    if ratio is not None:
+        out["sex_ratio"] = measure(ratio, unit="males_per_100_females", year=YEAR,
+                                   source=AGE_SOURCE)
+        out["sex_ratio_note"] = (f"NPHC 2021 (Indv03): {males:,} males and "
+                                 f"{females:,} females." + extra)
+    return out
+
+
+AGE_SOURCE_ENTRY = {"field": "median_age/sex_ratio", "name": AGE_SOURCE,
+                    "url": AGES_URL, "license": LICENSE}
+
+
+def build(lines: list[str], *, min_pct: float = MIN_PCT,
+          ages: dict[str, dict[str, Any]] | None = None
           ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """(province records, district records), both validated before return."""
+    """(province records, district records), both validated before return.
+
+    ``ages`` is Indv03 as :func:`read_ages` returns it; given, every record
+    also carries its median age and sex ratio, checked first.
+    """
     parsed = parse_all(lines)
     for field in FIELDS:
         areas = parsed[field]
         log(f"  {field}: {len(areas)} areas")
         check_national(field, areas)
         check_sums(field, areas)
+    if ages is not None:
+        check_age_table(ages, annex_sexes(lines))
+        log(f"  Indv03: {len(ages)} areas; every area's single years add up, the "
+            "districts make their provinces and the provinces Nepal, age by age, "
+            "and every area's persons, males and females are Annex 1's")
+
+    def with_ages(area: str) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        sources = [{"field": "caste/ethnicity, language, religion",
+                    "name": SOURCE, "license": LICENSE}]
+        if ages is None:
+            return sources, {}
+        return [*sources, AGE_SOURCE_ENTRY], age_fields(ages[area])
 
     provinces: list[dict[str, Any]] = []
     districts: list[dict[str, Any]] = []
@@ -613,13 +826,13 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT
         if not fields:
             log(f"  ! no annex data for province {province}")
             continue
+        sources, age_part = with_ages(province)
         provinces.append(record(
             f"NPL-{province}", province, level="admin1", parent="NPL",
             country="NPL", aliases=list(PROVINCES[province]),
             population=population_of(parsed, province),
-            sources=[{"field": "caste/ethnicity, language, religion",
-                      "name": SOURCE, "license": LICENSE}],
-            **fields,
+            sources=sources,
+            **fields, **age_part,
         ))
 
     bound = {name for names in SHAPE_BOUND.values() for name in names}
@@ -631,6 +844,7 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT
             if not fields:
                 log(f"  ! no annex data for district {district}")
                 continue
+            sources, age_part = with_ages(district)
             districts.append(record(
                 f"NPL-{province}-{district}", district, level="admin2",
                 parent=f"NPL-{province}", country="NPL",
@@ -638,11 +852,10 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT
                 parent_name=province,
                 parent_aliases=list(PROVINCES[province]),
                 population=population_of(parsed, district),
-                sources=[{"field": "caste/ethnicity, language, religion",
-                          "name": SOURCE, "license": LICENSE}],
-                **fields,
+                sources=sources,
+                **fields, **age_part,
             ))
-    districts.extend(bound_records(parsed, min_pct))
+    districts.extend(bound_records(parsed, min_pct, ages))
     return provinces, districts
 
 
@@ -677,7 +890,9 @@ def population_of(parsed: dict[str, dict[str, dict[str, int]]], area: str):
 
 
 def bound_records(parsed: dict[str, dict[str, dict[str, int]]],
-                  min_pct: float) -> list[dict[str, Any]]:
+                  min_pct: float,
+                  ages: dict[str, dict[str, Any]] | None = None
+                  ) -> list[dict[str, Any]]:
     """The nine districts whose shape is named wrongly, keyed by shape id.
 
     Summed where a shape is an undivided district and the census counts its
@@ -730,6 +945,18 @@ def bound_records(parsed: dict[str, dict[str, dict[str, int]]],
         total = sum(counts[field]["_total"] for field in list(counts)[:1])
         province = where[parts[0]]
         name = parts[0] if len(parts) == 1 else " and ".join(parts)
+        sources = [{"field": "caste/ethnicity, language, religion",
+                    "name": SOURCE, "license": LICENSE}]
+        if ages is not None:
+            # Summed single year by single year, never the medians.
+            block = combine_age_blocks([ages[d] for d in parts])
+            agree(f"nepal: shape {shape_id} Indv03 against the annexes",
+                  block["total"][0], total)
+            fields.update(age_fields(block, " " + BOUND_NOTE.format(
+                label=SHAPE_LABELS[shape_id],
+                what=BOUND_ONE if len(parts) == 1 else BOUND_SUM.format(
+                    parts=" and ".join(parts)))))
+            sources.append(AGE_SOURCE_ENTRY)
         out.append(record(
             f"NPL-{province}-{parts[0].lower().replace(' ', '-')}",
             name, level="admin2", parent=f"NPL-{province}", country="NPL",
@@ -738,8 +965,7 @@ def bound_records(parsed: dict[str, dict[str, dict[str, int]]],
             shape_id=shape_id, match_by="shape_id",
             population=measure(int(total), year=YEAR, source=SOURCE)
             if total else gap(NOT_AVAILABLE),
-            sources=[{"field": "caste/ethnicity, language, religion",
-                      "name": SOURCE, "license": LICENSE}],
+            sources=sources,
             **fields,
         ))
         log(f"  {name} -> shape {shape_id} "
@@ -775,7 +1001,11 @@ def main() -> int:
         log(f"  wrote {args.dump} ({len(lines):,} lines)")
         return 0
 
-    provinces, districts = build(lines, min_pct=args.min_pct)
+    text = http_get(AGES_URL)
+    log(f"  Indv03: {len(text):,} characters from {AGES_URL}")
+    ages = read_ages(text)
+
+    provinces, districts = build(lines, min_pct=args.min_pct, ages=ages)
     write_json(PROCESSED / "nepal_province.json", provinces)
     write_json(PROCESSED / "nepal_district.json", districts)
     log(f"  {len(provinces)} provinces, {len(districts)} districts")
