@@ -272,6 +272,49 @@ def build(sex_payload: dict[str, Any], age_payload: dict[str, Any],
     return records
 
 
+def diagnose(years: int, labels_en: dict[str, str]) -> None:
+    """For each of the latest years: every area whose two tables disagree,
+    and each aimag's total against its soums' in each table."""
+    base = API.format(lang="en")
+    top = {"filter": "top", "values": [str(years)]}
+    sex = http_json(f"{base}/{SEX_TABLE}", {"query": [
+        {"code": SEX_VAR, "selection": {"filter": "item", "values": [TOTAL]}},
+        {"code": REGION, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": YEAR_VAR, "selection": top}], "response": {"format": "json-stat2"}})
+    age = http_json(f"{base}/{AGE_TABLE}", {"query": [
+        {"code": AGE_VAR, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": REGION, "selection": {"filter": "all", "values": ["*"]}},
+        {"code": YEAR_VAR, "selection": top}], "response": {"format": "json-stat2"}})
+    totals: dict[tuple[str, str], dict[str, float]] = defaultdict(dict)
+    groups: dict[tuple[str, str], float] = defaultdict(float)
+    for key, value in unstack(sex):
+        totals[(key[YEAR_VAR][1], key[REGION][0])]["sex"] = value
+    for key, value in unstack(age):
+        where = (key[YEAR_VAR][1], key[REGION][0])
+        if group_bounds(key[AGE_VAR][1]) is None:
+            totals[where]["age"] = value
+        else:
+            groups[where] += value
+    for year in sorted({y for y, _ in totals}, reverse=True):
+        rows = {c: v for (y, c), v in totals.items() if y == year}
+        differ = [c for c, v in rows.items() if v.get("sex") != v.get("age")]
+        unsummed = [c for c in rows if rows[c].get("age") is not None
+                    and groups[(year, c)] != rows[c]["age"]]
+        log(f"  {year}: {len(rows)} areas; the tables disagree on {len(differ)}; the age "
+            f"groups miss the age total in {len(unsummed)}")
+        for code in sorted(differ, key=lambda c: (len(c), c))[:60]:
+            v = rows[code]
+            log(f"    {code} {labels_en.get(code, '?')}: sex table {v.get('sex')}, age table "
+                f"{v.get('age')}")
+        for aimag in sorted(c for c in rows if len(c) == 3):
+            for table in ("sex", "age"):
+                summed = sum(rows[c].get(table) or 0 for c in rows
+                             if len(c) == 5 and c.startswith(aimag))
+                if summed != rows[aimag].get(table):
+                    log(f"    {aimag} {labels_en.get(aimag)}: {table} table {rows[aimag].get(table)}"
+                        f", its soums {summed}")
+
+
 def labels(lang: str, table: str) -> dict[str, str]:
     meta = http_json(f"{API.format(lang=lang)}/{table}")
     var = next((v for v in meta.get("variables", []) if v.get("code") == REGION), None)
@@ -283,9 +326,15 @@ def labels(lang: str, table: str) -> dict[str, str]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.parse_args()
+    ap.add_argument("--diagnose", type=int, metavar="YEARS", default=0,
+                    help="print where the two tables disagree over the latest YEARS years "
+                         "and stop")
+    args = ap.parse_args()
     log(f"mongolia_ages: {SEX_SOURCE}; {AGE_SOURCE}")
     labels_en, labels_mn = labels("en", SEX_TABLE), labels("mn", SEX_TABLE)
+    if args.diagnose:
+        diagnose(args.diagnose, labels_en)
+        return 0
     if labels("mn", AGE_TABLE).keys() != labels_mn.keys():
         raise SystemExit("mongolia_ages: the two tables list different areas")
     base = API.format(lang="en")
