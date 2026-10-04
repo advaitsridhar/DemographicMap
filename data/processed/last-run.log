@@ -1,19 +1,181 @@
-== pxweb https://data.1212.mn/api/v1/en
-  folder: 1 entries
-    None None: NSO
-== pxweb https://data.1212.mn/api/v1/mn
-  folder: 1 entries
-    None None: NSO
-== pxweb https://data.1212.mn/api/v1/en/NSO/Historical%20data/Population
-  folder: 11 entries
-    t 'DT_NSO_0100_01T20.px': POPULATION OF MONGOLIA, by location and by year by Location and Year (updated 2025-10-06T10:56:50)
-    t 'DT_NSO_0100_01T21.px': BIRTHS, by sex and by year by Sex and Year (updated 2025-10-06T10:48:56)
-    t 'DT_NSO_0100_01T22.px': DEATHS, by sex and by year by Sex and Year (updated 2025-10-06T10:51:15)
-    t 'DT_NSO_0100_01T23.px': NATURAL INCREASE PER 1000 POPULATION, by year by Indicator and Year (updated 2025-09-16T19:21:06)
-    t 'DT_NSO_0100_01T24.px': PERCENTAGE DISTRIBUTION OF THE ETHNIC GROUP, share to total and by year by Ethnic group and Year (updated 2025-09-16T19:16:56)
-    t 'DT_NSO_0100_01T25.px': SOCIAL STATUS OF POPULATION, by year by Indicator and Year (updated 2025-11-19T16:43:02)
-    t 'DT_NSO_0100_01T26.px': MARRIAGES PER 1000 POPULATION, by year by Indicator and Year (updated 2025-09-16T19:11:54)
-    t 'DT_NSO_0100_01T27.px': DIVORCES PER 1000 POPULATION, by year by Indicator and Year (updated 2025-09-16T19:07:30)
-    t 'DT_NSO_0100_01T28.px': LIFE EXPECTANCY AT BIRTH, by sex and by year by Sex and Year (updated 2025-09-16T19:05:05)
-    t 'DT_NSO_0100_01T29.px': THE LITERACY RATE, by year by Sex and Year (updated 2025-09-16T19:01:33)
-    t 'DT_NSO_0100_01T30.px': POPULATION, by age group and by year by Age group and Year (updated 2025-09-16T18:40:32)
+probe_pdf: https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/Basic_Tables/2020NPHC_Volume_1_-_Version_2.pdf
+  14,955,957 bytes
+  384 pages
+probe_pdf: 384 pages, printing [11, 12, 13, 14]
+
+--- page 11 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+1
+Table of Contents
+Foreword. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .i
+Acknowledgements. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   iii
+General Information. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   v
+Table 1. 2020 National population Census key indicators. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .  vii
+2020 National Population and housing Censu background. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   5
+Concepts and Definitions. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 14
+Table 1.1: Total population by region, sex, and number of people living in households by household type. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 23
+Table 2.1 Total population by 5-year age groups and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 25
+Table 2.3 Total female population by 5-year age groups and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 33
+Table 2.4: Total population by place of residence, 5-year age groups and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 37
+Table 2.5: Usual resident population by single age, sex and region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 41
+Table 3.1: Total population living in private households by ethnic origin and by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 45
+Table 3.2: Male population living in private households by ethnic origin and by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 47
+Table 3.3: Female population living in private households by ethnic origin and by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 49
+Table 3.4: Total population living in private households by ethnic origin, sex and age group. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 51
+Table 3.5: Total population in private households by religion and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 52
+Table 3.6: Male population by religion and region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 56
+Table 3.7: Female population by religion and region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 60
+Table 3.8: Total population by religion, sex and 5 year age group. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 64
+Table 3.9: Population living in private households by citizenship, sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 66
+Table 3.10: Total population with dual citizenship by sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 68
+Table: 3:11: Non-Vanuatu citizens living in private households by sex and region of citizenship. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 69
+Table 3.12: Total population living in private households by citizenship, sex and age group. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 70
+Table 3.13: Total population living in private households with valid national ID card by sex and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 71
+Table 3.14: Total population 18 years and over living in private households with valid electoral card by sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 73
+Table 3.15: Total population 15 years and over living in private households by marital status, sex, and region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 75
+Table 3.16.1: Male population 15 years and over living in private households by marital status,  5 year age and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 79
+Table 3.16.2: Female population 15 years and over living in private households by marital status,  5 year age and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 82
+Table 3.16.3: Total population 15 years and over living in private households by marital status,  5 year age and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 85
+Table 4.1: Population living in private households by place of birth, sex, region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 88
+Table 4.1: Population living in private households by place of birth, sex, region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 89
+Table 4.2 Population living in private household by place of birth if different than current place of residence, sex and by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 90
+Table 4.3: Total Population and whether place of usual residence same as place of enumeration by sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 94
+Table 4.4: Total population enumerated elsewhere than place of usual residence by sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 96
+Table 4.5:  Total population and whether place of usual residence 5 years ago same as place of enumeration by sex and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   100
+Table 4.6: Total population and whether place of usual residence 1 year ago same as place of enumeration by sex and region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   102
+Table 5.1: Population 5 years and over living in private households reporting difficulties in seeing by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   104
+Table 5.2:  Population living in private households by 5 year age group and sex, reporting difficulties in seeing. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   106
+Table 5.3 Population 5 years and over living in private households reporting difficulties in hearing by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   107
+Table 5.4: Population 5 years and over living in private households by age group and sex, reporting difficulties in hearing . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   109
+Table 5.5: Population 5 years and over living in private households reporting difficulties in walking by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   110
+Table 5.6: Population 5 years and over living in private households by age group and sex, reporting difficulties in walking. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   112
+Table 5.7: Population 5 years and over living in private households  and sex by area council by region reporting difficulties in remembering. .  .   .   .   .   .   .   .   .   .   .   113
+Table 5.8: Population 5 years and over living in private households by age group and sex, reporting difficulties in remembering. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   115
+Table 5.9: Population 5 years and over living in private households reporting difficulties in Self-care such as washing or dressing by region. .  .   .   .   .   .   .   .   .   .   .   116
+Table 5.10: Population 5 years and over  living in private households by age group and sex reporting difficulties in  selfcare. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   118
+Table 5.11: Population 5 years and over living in private households reporting difficulties in communicating with or being understood by others by region. . .   .   .   .   .   119
+Table 5.12: Population 5 years and over living in private households by age group and sex, reporting difficulties in communication. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   121
+Table 5.13: Population 5 years and over living in private  households by causes of difficulties by region. ..   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   122
+Table 5.14: Population 15 years and over living in private households whether smoking or consuming kava, alcohol and betel nut by region last week. . .   .   .   .   .   .   128
+Table 5.15: Population 15 years and over living in private households by age group and sex, whether smoking or consuming kava, alcohol and betel nut last week. . 132
+Table 5.16: Population living in private households with access to treated bed net and by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   133
+Table 5.17: Population living in private households with access to treated bed nets by sex and age. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   135
+Table 5.18: Population living in private households sleeping under a treated bed net by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   136
+Table 5.19: Population living in private households by age group and sex who slept under a treated bed net. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   138
+Table 6.1: Total population of  3 years and over curre
+
+--- page 12 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+2
+Table 6.5: Female population 3 years and over living in private households, currently attending an educational institution by level of education and region . . .   .   .   .   147
+Table 6.6: Total Population 3 years and over living in private households, currently attending school or other educational institution by age, sex and level of education . .
+.   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   149
+Table 6.7: Total population 15 years and over living in private households with highest level of education completed by sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   152
+Table 6.8: Male population living in private households 15 years and older with highest level of education completed by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   156
+ Table 6.9: Female population 15 years and over living in private households with highest level of education completed by region . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   160
+Table 6.10: Population 15 years and over living in private households by age group, sex and highest level of education completed. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   164
+Table 6.11: Total Population 3 years and over living in private households by sex and by language of instruction received at educational institution. .  .   .   .   .   .   .   .   166
+Table 6.12: Population 15 years and over living in private households by sex in English language ability by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   170
+Table 6.13: Population 15 years and over living in private households by sex in French language ability by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   172
+Table 6.14: Population 15 years and over living in private households by sex, ability to read Vernacular language by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   174
+Table 6.15: Population 15 years and over living in private households by sex, ability to write Vernacular language by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   176
+Table 6.16: Population 3 years and over living in private households with first language learnt to speak by sex and region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   178
+Table 6.17: Population 3 years and over living in private households with ability to numerate by sex and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   182
+Table 6.18.1: Total population living in private households with access to internet by 5 year age group and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   184
+ Table 6.18.2: Male population living in private households with access to internet by 5 year age group and region . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   186
+ Table 6.18.3: Female population living in private households with access to internet by 5 year age group and region . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   188
+Table 6.19: Population 5 years and over living in private household with access to internet by sex and region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   190
+Table 6.20: Population 5 years and over living in private household with access to internet by sex and region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   191
+Table 6.20: Population 5 years and over living in private household with access to internet by choice and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   192
+Table 6.21: Population 5 years and over in private households MAIN purpose of accessing the internet by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   193
+ Table 6.22: Population 5 years and over in private households MAIN purpose of accessing the internet by region . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   195
+Table 6.23: Main source of information  and news for private households 5 years and over by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   197
+Table 7.1 Population 15 years and over in private households and labour force status and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   199
+Table 7.2 Male population 15 years and over in private households and labour force status and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   201
+Table 7.3 Female population 15 years and over in private households and labour force status, by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   203
+Table 7.4: Population 15 years and over in private households by sex, whether doing any work during the week before the Census, by region. . .   .   .   .   .   .   .   .   .   205
+Table 7.5: Population 15 years and over living in private households by 5-year age group and sex, whether doing any work during the week before the Census, by
+province and urban-rural . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   207
+Table 7.6: Population 15 years and over in private households who had a job but did not work during the week before the Census by sex and by region         . . .   .   .   .211
+Table 7.8.1: Total 15 years and over living in private households who had a job but did not work during the week before the census with reasons for absence, and region .
+.   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   217
+Table 7.8.2: Male 15 years and over living in private households who had a job but did not work during the week before the census with reasons for absence, and region .
+.   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   219
+Table 7.8.3: Female 15 years and over living in private households who had a job but did not work during the week before the census with reasons for absence, and
+region . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   221
+Table 7.9: Population 15 years and over living in private households who had a job but did not work during the week before the census with reasons for absence, 5-year
+age group, sex, province and urban-rural . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   223
+Table 7.10: Population 15 years and over living in private households who did not work during the week before the census with reasons for not having a job, by sex and
+region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   227
+Table 7.12: Working population 15 years and over living in private households by employment status and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   233
+Table 7.14: Working population 15 years and over living in private households by nature of business or organisation, sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   251
+Table 7.16: Working population 15 years and over living in private households by occupation, sex and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   255
+Table 7.17: Population 15 years and over living in private households who did not work during the week before the Census and did not have a job, and whether actively
+looking for work by sex, area council by province and urban-rural . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   256
+Table 7.18: Population 15 years and over living in private households who did not work during the week before the Census and did not have a job, and whether actively
+looking for work by 5-year age group, sex, province and urban-rural. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   258
+Table 7.19: Population 15 years and over living in private households who did not work during the week before the census with reasons for not having a job, by sex and
+region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   261
+Table 7.20: Population 15 years and over living in private households who did not work during the week before the census with reasons for not having a job, 5-year age
+group, sex, province and urban-rural. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   265
+Table 7.21: Unemployed population 15 years and over living in private households and whether available to work by sex, area council by province and urban-rural. . 271
+Table 7.22: Unemployed population 15 years and over living in private households and whether available to work by 5-year age group, sex, province and urban-rural. . 273
+Table 7.23: Population 15 years and over living in private households whether work overseas in overseas employment scheme in the last 12 months before the census by
+sex, area council by province and urban-rural . .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   276
+Table 8.1.1: Total population of private households by 5-year age group, biological mother status, by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   280
+Table 8.1.2:  Total Population private households by 5-year age group, biological father status, by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   282
+Table 8.2.1: Female population private households 15 years and over by 5-year age group, ever given birth by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   284
+Table of contents Page
+
+--- page 13 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+3
+Table 8.2.2 Female population private household 15 years and over by 5-year age group, total live births by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   286
+Table 8.2.3: Female population private households 15-years and over, total number of deceased children by age group and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   290
+Table 8.2.4 Year of birth of last child born by sex of child and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   293
+Table 9.1: Private household size by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   296
+Table 9.2: Number of Private households by type of living quarters by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   298
+Table 9.3: Number of Private households by housing tenure by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   300
+Table 9.4: Number of Private households by land tenure and region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   302
+Table 9.5: Number of privately owned houses by age of building and region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   304
+Table 9.6: Number of Private households by number of rooms by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   306
+Table 9.7.1: Number of Private households by main material used for floors by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   308
+Table 9.7.2: Number of Private households by main material used for wall by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   310
+Table 9.7.3: Number of Private households by main material used for roof and by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   312
+ Table 9.8: Number of Private households by main source of drinking water by region . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   314
+ Table 9.8: Number of Private households by main source of drinking water by region . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   315
+Table 9.9: Number of Private households by main source of washing water by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   316
+Table 9.10: Number of Private households by main toilet facility by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   318
+Table 9.11: Number of Private households by main household rubbish disposal and by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   322
+Table 9.12: Number of Private households by main source of cooking energy by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   324
+Table 9.13: Number of Private households* with type of handwashing facility by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   326
+Table 9.14: Number of Private households by main source of lighting by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   328
+Table 9.15: Number of Private households by main source of electricity by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   330
+Table 9.15: Number of Private households by main source of electricity by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   331
+Table 9.16.1: Total number of Private households growing crops and have land use for forestry by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   332
+Table 9.16.1: Total number of Private households growing crops and have land use for forestry by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   333
+Table 9.16.2: Total number of Private households growing crops with type of crops and by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   334
+Table 9.16.2: Total number of Private households growing crops with type of crops and by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   335
+Table 9.16.3: Number of Private households growing crops on own account whether for household consumption, sale or exchange by region. .  .   .   .   .   .   .   .   .   .   336
+Table 9.17.1:  Total number of livestock owned by private household by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   338
+Table 9.17.1:  Total number of livestock owned by private household by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   339
+Table 9.17.2: Number of Private households owning livestock for household consumption, sale or exchange by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   340
+Table 9.17.2: Number of Private households owning livestock for household consumption, sale or exchange by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   341
+Table 9.18.1: Number of Private households engaged in marine fishing in the last 12 months by region. ..   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   342
+Table 9.18.2: Number of Private households engaged in fresh water fishing in the last 12 months by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   344
+Table 9.19: Number of Private households owned a means of transport in working condition by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   346
+Table 9.20: Number of Private households owned an appliance in working condition by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   348
+Table 9.21: Number of Private households owned a means of communication in working condition by region. .  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   350
+Table 9.22: Number of private households with number of treated bed nets in households by region. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   352
+Table 9.23: Number of Private households by main source of household income in the last 12 months by region . . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   354
+Table 9.24: Number of Private households receiving any goods in kind from overseas or elsewhere in Vanuatu by region. .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   356
+Annex 1: 2020 Census questionnaire. . .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   358
+Table of contents Page
+
+--- page 14 ----------------------------------------------------
+2020 Census Basic tables, vol 1
+2020 National Population and Housing Census, VNSO
+4
