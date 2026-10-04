@@ -477,6 +477,19 @@ class ChecksAgainstCBSsOwnFigures(unittest.TestCase):
         with self.assertRaises(SystemExit):
             m.check_national(self.two(), self.ADULTS, national)
 
+    def test_the_gemeenten_the_release_printed_are_the_table_s_and_no_others(self):
+        rows = {"GM0545": {"name": "Leerdam", "total": 50.0, "parts": parts({"Islam": 18.61})},
+                "GM0599": {"name": "Rotterdam", "total": 50.0, "parts": parts({"Islam": 9.0})},
+                "GM0003": {"name": "C", "total": None, "parts": {}}}
+        m.check_release(rows, {"Leerdam": 18.6})
+        with self.assertRaises(SystemExit):
+            m.check_release(rows, {"Leerdam": 18.4})            # a different figure
+        with self.assertRaises(SystemExit):
+            m.check_release(rows, {"Leerdam": 18.6, "Tiel": 11.5})   # one the table lacks
+        rows["GM0599"]["parts"]["Islam"] = 13.7
+        with self.assertRaises(SystemExit):
+            m.check_release(rows, {"Leerdam": 18.6})            # one the release left out
+
     def test_low_precision_runs_as_high_as_the_rate_overestimates_a_suppressed_gemeente(self):
         # C was suppressed (fewer than 150) but this rate puts it at 180: 20% high.
         self.assertAlmostEqual(m.low_precision_cut(self.two(), self.ADULTS, 0.18), 360.0)

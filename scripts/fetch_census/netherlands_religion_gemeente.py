@@ -50,7 +50,9 @@ note. ``--tolerance`` sets another share.
 
 **Checks.** The categories make CBS's total within rounding for every
 gemeente, the Protestant churches make CBS's Protestant subtotal, and the
-religious and the rest make 100; the table's gemeenten are 70739ned's of
+religious and the rest make 100; the twelve gemeenten CBS's release of 22
+December 2016 printed at 10% Muslims or more are the table's, to the tenth,
+and there are no others; the table's gemeenten are 70739ned's of
 1 January 2016, by code and name, and their 2016 populations make the
 country's; every 2016 gemeente's inhabitants end up in the 2022 gemeenten
 exactly once; every transfer a recipient records is the one its donor
@@ -81,11 +83,17 @@ from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, http_json, log, re
 from .central_ages import SITE, fold, units
 from .netherlands_gemeente import read_ages
 
-# Published with the paper in week 51 of 2016 (www.cbs.nl/nl-nl/publicatie/2016/51/
-# de-religieuze-kaart-van-nederland-2010-2015, which now links only the paper's PDF).
+# Published with the paper in week 51 of 2016: CBS's news release of 22 December 2016
+# linked it ("Kerkelijke gezindte en kerkbezoek naar gemeenten"); the release is in the
+# Wayback Machine (20161223043731), and the paper's page now links only its PDF.
 WORKBOOK = ("https://www.cbs.nl/-/media/_excel/2016/51/"
             "kerkelijke-gezindte-en-kerkbezoek-naar-gemeenten.xlsx")
 TITLE = "Kerkelijke gezindte en kerkbezoek naar gemeenten 2010/2015"
+NEWS = "https://www.cbs.nl/nl-nl/nieuws/2016/51/helft-nederlanders-is-kerkelijk-of-religieus"
+# That release printed every gemeente with at least 10% Muslims over 2010-2015.
+MUSLIM_TENTH = {"Leerdam": 18.6, "'s-Gravenhage": 14.7, "Rotterdam": 13.7, "Bergen op Zoom": 13.0,
+                "Schiedam": 12.4, "Maassluis": 12.1, "Amsterdam": 12.1, "Tiel": 11.5,
+                "Gorinchem": 10.9, "Helmond": 10.5, "Vlaardingen": 10.4, "Gouda": 10.2}
 SOURCE = (f"CBS, {TITLE} (December 2016, the table behind De religieuze kaart van Nederland, "
           "2010-2015), from the Enquête Beroepsbevolking")
 # The table before it, read only to measure the union method (``check_unions``).
@@ -341,6 +349,25 @@ def check_table(table: dict[str, dict[str, Any]], tolerance: float = SUM_TOLERAN
                  f"the Protestant churches make {churches:.2f}, CBS's subtotal is {g['protestant']}")
     log("  " + "; ".join(f"{kind}: largest difference {worst[kind]:.2f} ({where[kind]})"
                          for kind in worst))
+
+
+def check_release(table: dict[str, dict[str, Any]], printed: dict[str, float] = MUSLIM_TENTH) -> None:
+    """The table against what CBS's release printed from it: the gemeenten
+    with at least 10% Muslims, each to the tenth, and no others."""
+    islam = {fold(g["name"]): (g["name"], g["parts"]["Islam"]) for g in table.values()
+             if g["total"] is not None}
+    wrong = [f"{name}: the table {islam[fold(name)][1] if fold(name) in islam else 'nothing'}, "
+             f"the release {value}" for name, value in printed.items()
+             if fold(name) not in islam or abs(islam[fold(name)][1] - value) > 0.051]
+    listed_ = {fold(name) for name in printed}
+    unlisted = sorted(f"{name} {share_:.2f}" for key, (name, share_) in islam.items()
+                      if share_ >= 9.95 and key not in listed_)
+    if wrong or unlisted:
+        raise SystemExit(f"netherlands_religion_gemeente: the table and CBS's release of 22 December "
+                         f"2016 differ: {wrong}; at 10% Muslims or more but not in the release: "
+                         f"{unlisted}")
+    log(f"  the {len(printed)} gemeenten CBS's release printed at 10% Muslims or more: the table "
+        f"gives each to the tenth, and no other")
 
 
 def workbook_rows(blob: bytes) -> dict[str, list[list[Any]]]:
@@ -958,6 +985,7 @@ def build(tolerance: float = TOLERANCE, unions: bool = True) -> list[dict[str, A
     if len(table) != EXPECTED:
         raise SystemExit(f"netherlands_religion_gemeente: {len(table)} gemeenten, not {EXPECTED}")
     check_table({**table, "NL01": national})
+    check_release(table)
 
     history = read_history()
     first = in_being(history, START)
