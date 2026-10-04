@@ -147,5 +147,84 @@ class Hierarchy(unittest.TestCase):
             self.assertNotIn(child, nz.ETHNICITY_LEVEL_1)
 
 
+def age_obs(area, age, sex, value, eth="999"):
+    return {"CEN23_GEO_002": area, "CEN23_ETH_002": eth, "CEN23_AGE_001": age,
+            "CEN23_SAB_002": sex, "OBS_VALUE": value, "OBS_STATUS": ""}
+
+
+# The national row and Far North District as CEN23_POP_006 returns them.
+NATIONAL_AGES = [
+    age_obs("999999", "Median", "999", "38.1"),
+    age_obs("999999", "99", "999", "4993923"),
+    age_obs("999999", "99", "11", "2470893"),
+    age_obs("999999", "99", "22", "2523030"),
+]
+FAR_NORTH = [
+    age_obs("001", "Median", "999", "44.3"),
+    age_obs("001", "99", "999", "71430"),
+    age_obs("001", "99", "11", "35619"),
+    age_obs("001", "99", "22", "35811"),
+]
+
+
+class AgeAndSex(unittest.TestCase):
+    def setUp(self):
+        self.tiers = {"01": "admin1", "001": "admin2", "067": "admin2"}
+
+    def test_the_median_and_the_sexes_are_read(self):
+        got = nz.age_sex(NATIONAL_AGES + FAR_NORTH, self.tiers)
+        self.assertEqual(got["001"], {"median": 44.3, "total": 71430,
+                                      "male": 35619, "female": 35811})
+        nz.check_ages(got)
+
+    def test_only_the_all_ethnicities_column_is_read(self):
+        rows = FAR_NORTH + [age_obs("001", "Median", "999", "30.0", eth="2")]
+        self.assertEqual(nz.age_sex(rows, self.tiers)["001"]["median"], 44.3)
+
+    def test_the_fields_are_the_census_median_and_males_per_100_females(self):
+        fields = nz.age_fields(nz.age_sex(FAR_NORTH, self.tiers)["001"])
+        self.assertEqual(fields["median_age"]["value"], 44.3)
+        self.assertEqual(fields["median_age"]["year"], 2023)
+        self.assertEqual(fields["sex_ratio"]["value"], 99.5)
+        self.assertEqual(fields["sex_ratio"]["unit"], "males_per_100_females")
+
+    def test_sexes_that_do_not_make_the_total_stop_the_run(self):
+        rows = [age_obs("001", "99", "999", "71430"), age_obs("001", "99", "11", "30000"),
+                age_obs("001", "99", "22", "35811")]
+        with self.assertRaises(SystemExit):
+            nz.age_sex(rows, self.tiers)
+
+    def test_a_different_national_median_stops_the_run(self):
+        rows = [age_obs("999999", "Median", "999", "37.4")] + NATIONAL_AGES[1:]
+        with self.assertRaises(SystemExit):
+            nz.check_ages(nz.age_sex(rows, self.tiers))
+
+    def test_an_area_with_no_counts_writes_nothing(self):
+        self.assertEqual(nz.age_fields(None), {})
+
+
+class Chatham(unittest.TestCase):
+    def test_the_territory_is_written_for_its_first_level_polygon(self):
+        territory = nz.record("NZL-067", "Chatham Islands Territory", level="admin2",
+                              parent=None, country="NZL", codes={"statsnz": "067"},
+                              population={"value": 612, "year": 2023},
+                              median_age={"value": 44.0, "year": 2023},
+                              median_age_note="Stats NZ's own median.")
+        other = nz.record("NZL-001", "Far North District", level="admin2", parent=None,
+                          country="NZL", codes={"statsnz": "001"})
+        region = nz.chatham_region([other, territory])
+        self.assertEqual(region["level"], "admin1")
+        self.assertEqual(region["parent"], "NZL")
+        self.assertEqual(region["name"], "Chatham Islands Territory")
+        self.assertEqual(region["population"]["value"], 612)
+        self.assertIn("Area Outside Region", region["median_age_note"])
+        # The territorial authority's own record is not changed.
+        self.assertEqual(territory["level"], "admin2")
+        self.assertNotIn("Area Outside Region", territory["median_age_note"])
+
+    def test_no_territory_no_region(self):
+        self.assertIsNone(nz.chatham_region([]))
+
+
 if __name__ == "__main__":
     unittest.main()

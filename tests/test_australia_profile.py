@@ -1,0 +1,181 @@
+"""Australia's 2021 Census profile: median age, sex ratio and ancestry by unit.
+
+The fixtures are rows in the shape ``abs.unpack`` gives them, cut down to two
+LGAs in one state: no network. The arithmetic and the binding are the parts
+that can be wrong, and they are what is tested.
+"""
+
+import unittest
+
+from scripts.fetch_census import australia_profile as ap
+
+
+def g01(region, persons, male, female, name=None):
+    return [({"SEXP_CODE": code, "PCHAR_CODE": "P_1", "REGION_CODE": region,
+              "REGION": name or region}, value)
+            for code, value in (("3", persons), ("1", male), ("2", female))]
+
+
+def g02(region, median):
+    return [({"MEDAVG_CODE": "1", "REGION_CODE": region}, median),
+            ({"MEDAVG_CODE": "2", "REGION_CODE": region}, 805.0)]
+
+
+def g08(region, parts):
+    rows = [({"ANCP_CODE": "_T", "ANCP": "Total", "BPPP_CODE": "_T",
+              "REGION_CODE": region}, sum(parts.values()))]
+    for i, (label, value) in enumerate(parts.items()):
+        rows.append(({"ANCP_CODE": str(i), "ANCP": label, "BPPP_CODE": "_T",
+                      "REGION_CODE": region}, value))
+        # The parents'-birthplace columns, which must never be added in.
+        rows.append(({"ANCP_CODE": str(i), "ANCP": label, "BPPP_CODE": "1",
+                      "REGION_CODE": region}, value / 2))
+    return rows
+
+
+class Persons(unittest.TestCase):
+    def test_the_three_sexes_are_read_from_total_persons(self):
+        got = ap.persons(g01("10050", 56093, 27416, 28677))
+        self.assertEqual(got["10050"], {"persons": 56093, "male": 27416, "female": 28677})
+
+    def test_sexes_that_do_not_make_the_persons_stop_the_run(self):
+        with self.assertRaises(SystemExit):
+            ap.persons(g01("10050", 56093, 20000, 28677))
+
+    def test_the_perturbation_of_small_cells_is_allowed(self):
+        got = ap.persons(g01("10050", 120, 70, 60))
+        self.assertEqual(got["10050"]["persons"], 120)
+
+
+class Ancestry(unittest.TestCase):
+    def test_only_the_total_responses_column_is_read(self):
+        parts, total = ap.ancestries(g08("10050", {"English": 20000, "Australian": 18000,
+                                                   "Not stated": 4000}))["10050"]
+        self.assertEqual(parts, {"English": 20000, "Australian": 18000, "Not stated": 4000})
+        self.assertEqual(total, 42000)
+
+    def test_shares_are_of_people_and_may_pass_100(self):
+        rows = ap.ancestry_shares({"English": 30000, "Australian": 28000, "Irish": 9000},
+                                  people=50000)
+        self.assertEqual([r["group"] for r in rows], ["English", "Australian", "Irish"])
+        self.assertEqual(rows[0]["pct"], 60.0)
+        self.assertGreater(sum(r["pct"] for r in rows), 100)
+
+    def test_parts_that_miss_the_total_stop_the_run(self):
+        rows = g08("10050", {"English": 20000, "Australian": 18000})
+        rows[0] = (rows[0][0], 60000.0)
+        with self.assertRaises(SystemExit):
+            ap.ancestries(rows)
+
+
+def unit(uid, name, code, parent, population):
+    return {"id": uid, "name": name, "parent": parent, "codes": {"asgs": code},
+            "population": {"value": population}}
+
+
+STATE = unit("S1", "New South Wales", "1", "AUS", 8072171)
+ALBURY = unit("A1", "Albury", "10050", "S1", 56093)
+BAYSIDE = unit("A2", "Bayside", "10500", "S1", 175184)
+
+
+class Binding(unittest.TestCase):
+    def test_units_are_bound_by_the_code_they_carry(self):
+        got = ap.bind([ALBURY, BAYSIDE], "admin2", {"S1": STATE})
+        self.assertEqual(got["10050"]["id"], "A1")
+        self.assertEqual(got["10500"]["id"], "A2")
+
+    def test_a_unit_in_the_wrong_state_stops_the_run(self):
+        victoria = unit("S2", "Victoria", "2", "AUS", 6503503)
+        with self.assertRaises(SystemExit):
+            ap.bind([ALBURY], "admin2", {"S1": victoria})
+
+    def test_two_units_with_one_code_stop_the_run(self):
+        twin = unit("A3", "Albury twin", "10050", "S1", 1)
+        with self.assertRaises(SystemExit):
+            ap.bind([ALBURY, twin], "admin2", {"S1": STATE})
+
+
+class Record(unittest.TestCase):
+    def test_the_record_carries_the_published_median_and_the_ratio(self):
+        people = {"persons": 56093, "male": 27416, "female": 28677}
+        rec = ap.unit_record("10050", "Albury", ALBURY, "admin2", people=people,
+                             median=39.0, ancestry=({"English": 20000, "Not stated": 4000},
+                                                    60000.0),
+                             parent_name="New South Wales")
+        self.assertEqual(rec["median_age"]["value"], 39)
+        self.assertIsInstance(rec["median_age"]["value"], int)
+        self.assertEqual(rec["sex_ratio"]["value"], 95.6)
+        self.assertEqual(rec["match_by"], "shape_id")
+        self.assertEqual(rec["shape_id"], "A1")
+        self.assertEqual(rec["ethnicity_basis"], "ancestry (multi-response)")
+        self.assertEqual(rec["ethnicity"][0], {"group": "English", "pct": 35.7, "count": 20000})
+        # Nothing the tables do not carry is claimed: population stays the map's.
+        self.assertEqual(rec["population"]["status"], "not_available")
+
+    def test_more_than_two_responses_a_person_stop_the_run(self):
+        people = {"persons": 1000, "male": 500, "female": 500}
+        with self.assertRaises(SystemExit):
+            ap.unit_record("10050", "Albury", ALBURY, "admin2", people=people, median=39,
+                           ancestry=({"English": 2500}, 2500.0), parent_name=None)
+
+
+class Build(unittest.TestCase):
+    NSW = 25_422_788 - 8 * 1000
+
+    def tables(self, rest_of_nsw=None):
+        rest = self.NSW - 56093 - 175184 if rest_of_nsw is None else rest_of_nsw
+        national = g01("AUS", 25_422_788, 12_545_154, 12_877_634)
+        states, lgas = [], []
+        for code in "123456789":
+            persons = self.NSW if code == "1" else 1000
+            states += g01(code, persons, persons // 2, persons - persons // 2)
+            if code != "1":
+                lgas += g01(f"{code}0010", 1000, 500, 500)
+        # NSW's people outside the two drawn LGAs, under a code no polygon has.
+        lgas += g01("19399", rest, rest // 2, rest - rest // 2, "Unincorporated NSW")
+        top_ancestry = g08("AUS", {"English": 8_389_400, "Australian": 7_601_400,
+                                   "Other": 16_000_000})
+        for code in "123456789":
+            scale = (self.NSW if code == "1" else 1000) / 1000
+            top_ancestry += g08(code, {"English": 330 * scale, "Australian": 300 * scale,
+                                       "Other": 700 * scale})
+        return {
+            ("G01", "LGA"): g01("10050", 56093, 27416, 28677, "Albury")
+            + g01("10500", 175184, 85000, 90184, "Bayside (NSW)") + lgas,
+            ("G01", "SA2"): national + states,
+            ("G02", "LGA"): g02("10050", 39.0) + g02("10500", 38.0),
+            ("G02", "SA2"): g02("AUS", 38.0) + [r for c in "123456789" for r in g02(c, 40.0)],
+            ("G08", "LGA"): g08("10050", {"English": 20000, "Australian": 19000,
+                                         "Other": 30000})
+            + g08("10500", {"English": 50000, "Australian": 40000, "Other": 130000}),
+            ("G08", "SA2"): top_ancestry,
+        }
+
+    def admin1(self):
+        return [STATE] + [unit(f"S{c}", f"State {c}", c, "AUS", 1000) for c in "23456789"]
+
+    def test_a_state_and_its_lgas_are_written(self):
+        records = ap.build(self.tables(), self.admin1(), [ALBURY, BAYSIDE])
+        names = {r["name"]: r for r in records}
+        self.assertEqual(names["Bayside (NSW)"]["shape_id"], "A2")
+        self.assertEqual(names["Albury"]["median_age"]["value"], 39)
+        self.assertEqual(len([r for r in records if r["level"] == "admin1"]), 9)
+        self.assertEqual(len([r for r in records if r["level"] == "admin2"]), 2)
+
+    def test_lgas_that_do_not_make_their_state_stop_the_run(self):
+        with self.assertRaises(SystemExit):
+            ap.build(self.tables(rest_of_nsw=10), self.admin1(), [ALBURY, BAYSIDE])
+
+    def test_a_drawn_lga_the_tables_lack_stops_the_run(self):
+        ghost = unit("A9", "Nowhere", "19999", "S1", 10)
+        with self.assertRaises(SystemExit):
+            ap.build(self.tables(), self.admin1(), [ALBURY, BAYSIDE, ghost])
+
+    def test_a_population_far_from_the_maps_stops_the_run(self):
+        wrong = unit("A1", "Albury", "10050", "S1", 90000)
+        with self.assertRaises(SystemExit):
+            ap.build(self.tables(), self.admin1(), [wrong, BAYSIDE])
+
+
+if __name__ == "__main__":
+    unittest.main()
