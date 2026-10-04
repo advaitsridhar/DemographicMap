@@ -1,10 +1,67 @@
-philippines_age: Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)
-  fetched 2020 Census Total Popn_Single Age_MaleFemale_Admin4.xlsx (48.7 MB)
-  42,041 barangays in 1,655 cities and municipalities of 87 provinces, every one making its own totals
-  the barangays make 109,033,245 (-2,098 on the proclaimed 109,035,343); national median 25.3 against the PSA's 25.3; top class 80+
-  CITY OF COTABATO (325,079) taken out of MAGUINDANAO for the polygon Cotabato City
-  84 polygons with a count; polygons without: ['Cotabato', 'Maguindanao']; census provinces written nowhere: COTABATO (NORTH COTABATO) (its polygon 'Cotabato' is left out: the boundary file's polygon covers some 5,900 km2 of the province's 9,008; the rest lies inside its 'Maguindanao'); INTERIM PROVINCE (the boundary file draws no polygon for it); MAGUINDANAO (its polygon 'Maguindanao' is left out: the boundary file's polygon takes in Sultan Kudarat, which it does not draw, and more (9,144 km2 against Maguindanao's ~4,900)); SULTAN KUDARAT (the boundary file draws no polygon for it)
-  admin1: 17 units; median 18.5-27.5; sex ratio 99.9-105.8
-  admin2: 84 units; median 18.4-29.9; sex ratio 97.9-109.8
-  wrote data/processed/philippines_age.json (256 kB)
-  wrote philippines_age.json: 101 records
+page: https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162
+  73,437 bytes
+  2 matching link(s)
+  - pdf(2.17 MB)
+    https://ws.dgbas.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDYzL3JlbGZpbGUvMTA5ODAvMjMwMTYyL2M5NWE5ZWU5LWI1OTEtNGNkMS04YzAwLTI3NTkyYjJhOGRlNC5wZGY%3d&n=MTA55bm05Lq65Y%2bj5Y%2bK5L2P5a6F5pmu5p%2bl57i95aCx5ZGK57Wx6KiI57WQ5p6cLeaWsOiBnueovy5wZGY%3d
+  - ContentPDF
+    https://www.dgbas.gov.tw/content.pdf
+page: https://www.dgbas.gov.tw/cp.aspx?n=3602
+  68,499 bytes
+  1 matching link(s)
+  - ContentPDF
+    https://www.dgbas.gov.tw/content.pdf
+page: https://www.stat.gov.tw/cp.aspx?n=2683
+  134,945 bytes
+  26 matching link(s)
+  - 工業及服務業普查
+    https://www.stat.gov.tw/cl.aspx?n=2737
+  - 人口及住宅普查
+    https://www.stat.gov.tw/cl.aspx?n=2748
+  - 農林漁牧業普查
+    https://www.stat.gov.tw/cl.aspx?n=2759
+  - 115-09-07 敬請支持115年工業及服務業普查抽樣調查對象判定作業
+    https://www.stat.gov.tw/News_Content.aspx?n=2642&s=236678
+  - 三大普查
+    https://www.stat.gov.tw/News.aspx?n=2642&sms=11473&_CSN=104&_CSN=150
+  - 統計表
+    https://www.stat.gov.tw/cp.aspx?n=2665
+  - 統計表
+    https://www.stat.gov.tw/cp.aspx?n=2674
+  - 統計表
+    https://www.stat.gov.tw/cl.aspx?n=3910
+  - 統計表
+    https://www.stat.gov.tw/cl.aspx?n=3818
+  - 統計表與分析
+    https://www.stat.gov.tw/cl.aspx?n=2730
+  - 統計表
+    https://www.stat.gov.tw/News.aspx?n=2740&sms=11059
+  - 三大普查統計資料平台查詢系統
+    https://census.dgbas.gov.tw/entrance
+  - 三大普查動態查詢系統(原三大普查進階查詢系統)
+    https://dtable.dgbas.gov.tw/censuall/webmain.aspx?sys=210&funid=advqry&clear=1
+  - 更多工業及服務業普查
+    https://www.stat.gov.tw/cl.aspx?n=3562
+  - 109年人口及住宅普查專區
+    https://www.stat.gov.tw/News.aspx?n=2750&sms=11062
+  - 統計表
+    https://www.stat.gov.tw/News.aspx?n=2755&sms=11065
+  - 114年農林漁牧業普查專區
+    https://www.stat.gov.tw/News.aspx?n=4689&sms=11777
+  - 109年農林漁牧業普查專區
+    https://www.stat.gov.tw/News.aspx?n=2760&sms=11718
+  - 統計表
+    https://www.stat.gov.tw/News.aspx?n=2763&sms=11069
+  - 農林漁牧業普查抽樣檔
+    https://www.stat.gov.tw/News.aspx?n=2768&sms=11070
+  - 統計表
+    https://www.stat.gov.tw/cp.aspx?n=2773
+  - 統計表
+    https://www.stat.gov.tw/News.aspx?n=2781&sms=11077
+  - 農林漁牧業普查母體判定調查
+    https://www.stat.gov.tw/cl.aspx?n=2871
+  - 工業及服務業普查
+    https://www.stat.gov.tw/cl.aspx?n=3956
+  - 人口及住宅普查
+    https://www.stat.gov.tw/cl.aspx?n=3966
+  - 農林漁牧業普查
+    https://www.stat.gov.tw/cl.aspx?n=3967
