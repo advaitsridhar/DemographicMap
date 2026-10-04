@@ -103,6 +103,7 @@ from ._shared import (
     NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record,
     shares, write_json,
 )
+from .sea_common import age_sex, grouped
 
 WORKBOOK = "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx"
 REPORT = "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf"
@@ -201,6 +202,127 @@ LANGUAGE_NOTE = (
     "race, religion, marital status, country of birth and nationality and not "
     "language. Asked and not published, which is a different thing from not "
     "asked.")
+
+
+MUKIM_AGE_NOTE = (
+    "Not published finely enough for a median. The 2021 census gives a mukim's "
+    "ages only in the broad groups {groups} (Table C6 of the census annexes, "
+    "beside the kampung tables C7 to C10), too coarse to interpolate a median "
+    "from. Five-year groups are published for the four districts only (Table A2).")
+
+
+def c6_groups(rows: list[list[Any]]) -> list[str]:
+    """The age groups Table C6 gives the mukims, read off its header row."""
+    for row in rows:
+        labels = [text(c) for c in row]
+        if "00-14" in labels:
+            groups = [x for x in labels if re.fullmatch(r"\d{2}\s*-\s*\d{2}|\d{2}\s*\+", x)]
+            if any(re.fullmatch(r"\d{2}\s*-\s*\d{2}", g) and int(g[-2:]) - int(g[:2]) < 5
+                   for g in groups):
+                raise SystemExit(f"brunei: C6 now gives five-year groups {groups}; "
+                                 "read them for the mukims' medians")
+            return groups
+    raise SystemExit("brunei: table C6 has no header naming its age groups")
+
+
+def read_ages(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
+    """Table A2 -> {district or "Jumlah": {"groups": [(low, high, n)], "men", "women"}}.
+
+    Each district's Orang / Lelaki / Perempuan columns sit under its merged
+    name, as in A3 and A4. Every unit's groups and its two sexes must make its
+    own total row, and the four districts the national column.
+    """
+    cols = district_columns(rows, "A2")
+    out: dict[str, dict[str, Any]] = {k: {"groups": [], "men": 0, "women": 0, "total": None}
+                                      for k in cols}
+    for row in rows:
+        label = text(row[0] if row else None)
+        found = re.fullmatch(r"(\d{1,2})\s*-\s*(\d{1,2})", label)
+        opened = re.fullmatch(r"(\d{1,2})\s*\+", label)
+        if label == TOTAL_ROW:
+            for k, c in cols.items():
+                out[k]["total"] = number(row[c])
+                out[k]["men"], out[k]["women"] = number(row[c + 1]), number(row[c + 2])
+            continue
+        if not (found or opened):
+            continue
+        low = int((found or opened).group(1))
+        high = int(found.group(2)) if found else None
+        for k, c in cols.items():
+            persons, men, women = (number(row[c + i]) for i in range(3))
+            if None in (persons, men, women) or men + women != persons:
+                raise SystemExit(f"brunei: A2 {k} {label}: {men} and {women} do not make "
+                                 f"{persons}")
+            out[k]["groups"].append((low, high, persons))
+    for k, u in out.items():
+        made = sum(n for _, _, n in u["groups"])
+        if u["total"] is None or made != u["total"] or u["men"] + u["women"] != made:
+            raise SystemExit(f"brunei: A2 {k}: groups make {made:,}, against its total "
+                             f"{u['total']}")
+        if [g[0] for g in u["groups"]] != list(range(0, 5 * len(u["groups"]), 5)) \
+                or u["groups"][-1][1] is not None:
+            raise SystemExit(f"brunei: A2 {k}: the groups are not 00-04 ... to an open top")
+    national = out.pop("Jumlah")
+    if (sum(u["total"] for u in out.values()) != national["total"]
+            or national["total"] != PUBLISHED_TOTAL):
+        raise SystemExit("brunei: A2's districts do not make the national column, or it "
+                         "is not the published total")
+    log(f"  A2: {len(national['groups'])} five-year groups for the four districts, each "
+        f"making its own total and the four making {national['total']:,}")
+    return out
+
+
+def read_mukim_sexes(rows: list[list[Any]]) -> dict[str, tuple[int, int, int]]:
+    """Table C1 -> {mukim: (persons, males, females)}, the row's first three figures."""
+    out: dict[str, tuple[int, int, int]] = {}
+    for district, names in MUKIMS.items():
+        start = next((i for i, row in enumerate(rows)
+                      if text(row[0] if row else None) == district), None)
+        if start is None:
+            raise SystemExit(f"brunei: table C1 has no row for {district}")
+        wanted = list(names)
+        for row in rows[start + 1:]:
+            label = text(row[0] if row else None)
+            if label not in wanted:
+                continue
+            figures = [n for n in (number(c) for c in row[1:]) if n is not None][:3]
+            if len(figures) != 3 or figures[1] + figures[2] != figures[0]:
+                raise SystemExit(f"brunei: table C1, {district}/{label}: males and females "
+                                 f"do not make the persons ({figures})")
+            out[label] = tuple(figures)
+            wanted.remove(label)
+            if not wanted:
+                break
+        if wanted:
+            raise SystemExit(f"brunei: table C1 is missing {wanted} under {district}")
+    return out
+
+
+def age_fields(name: str, unit: dict[str, Any]) -> dict[str, Any]:
+    """median_age and sex_ratio for a district, from Table A2."""
+    median = grouped(unit["groups"])
+    if median is None:
+        raise SystemExit(f"brunei: {name}: the middle person is in the open top group")
+    source = f"{CENSUS}, annex table A2: population by age group, district and sex"
+    whose = f"the 2021 census's count of {name} district by five-year age group and sex"
+    return age_sex(median=median, men=unit["men"], women=unit["women"], year=YEAR,
+                   source=source,
+                   median_note=(f"Interpolated within the five-year age group that holds "
+                                f"the middle person, from {whose} (annex table A2, to an "
+                                f"open 85+), the finest the census publishes."),
+                   ratio_note=f"Males per 100 females in {whose} (annex table A2).")
+
+
+def mukim_sex_fields(name: str, parts: tuple[str, ...], sexes: dict[str, tuple[int, int, int]]
+                     ) -> dict[str, Any]:
+    men = sum(sexes[p][1] for p in parts)
+    women = sum(sexes[p][2] for p in parts)
+    source = f"{CENSUS}, annex table C1: population by mukim, residential status and sex"
+    whose = (f"the 2021 census's count of {' and '.join(parts)} together" if len(parts) > 1
+             else f"the 2021 census's count of {name}")
+    return age_sex(median=None, men=men, women=women, year=YEAR, source=source,
+                   median_note="", ratio_note=f"Males per 100 females in {whose} "
+                                              f"(annex table C1).")
 
 
 def mukim_gap_note(people: int, merged: tuple[str, ...] | None) -> str:
@@ -420,12 +542,16 @@ def read_mukims(rows: list[list[Any]]) -> dict[str, dict[str, int]]:
 
 def district_records(race: dict[str, dict[str, int]],
                      religion: dict[str, dict[str, int]],
-                     totals: dict[str, int]) -> list[dict[str, Any]]:
+                     totals: dict[str, int],
+                     ages: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     out = []
     for name in DISTRICTS:
         people = totals[name]
         ethnicity = shares(race[name], total=people)
         faith = shares(religion[name], total=people)
+        if ages is not None and ages[name]["total"] != people:
+            raise SystemExit(f"brunei: A2 counts {ages[name]['total']:,} in {name}, A3 "
+                             f"{people:,}")
         out.append(record(
             f"BRN-{slug(name)}", name, level="admin1", parent="BRN",
             country="BRN", aliases=DISTRICT_ALIASES.get(name, []),
@@ -436,12 +562,17 @@ def district_records(race: dict[str, dict[str, int]],
             religion=faith, religion_year=dated(faith, YEAR),
             religion_note=RELIGION_NOTE,
             language=gap(NOT_AVAILABLE, LANGUAGE_NOTE),
-            sources=sources("ethnicity/religion/population"),
+            sources=sources("ethnicity/religion/population"
+                            + ("/median age/sex ratio" if ages is not None else "")),
+            **(age_fields(name, ages[name]) if ages is not None else {}),
         ))
     return out
 
 
-def mukim_records(mukims: dict[str, dict[str, int]]) -> list[dict[str, Any]]:
+def mukim_records(mukims: dict[str, dict[str, int]],
+                  sexes: dict[str, tuple[int, int, int]] | None = None,
+                  age_groups: list[str] | None = None) -> list[dict[str, Any]]:
+    age_note = MUKIM_AGE_NOTE.format(groups=", ".join(age_groups or ["00-14", "15-24", "..."]))
     out = []
     for district, counts in mukims.items():
         merged_parts = {part for parts in MERGED.values() for part in parts}
@@ -453,6 +584,8 @@ def mukim_records(mukims: dict[str, dict[str, int]]) -> list[dict[str, Any]]:
             people = (sum(counts[p] for p in parts) if parts
                       else counts[name])
             note = mukim_gap_note(people, parts)
+            if sexes is not None and sum(sexes[p][0] for p in (parts or (name,))) != people:
+                raise SystemExit(f"brunei: C1 persons for {name} read twice disagree")
             out.append(record(
                 f"BRN-{slug(district)}-{slug(name)}", name, level="admin2",
                 parent=f"BRN-{slug(district)}", parent_name=district,
@@ -463,13 +596,16 @@ def mukim_records(mukims: dict[str, dict[str, int]]) -> list[dict[str, Any]]:
                 ethnicity=gap(NOT_AVAILABLE, note),
                 religion=gap(NOT_AVAILABLE, note),
                 language=gap(NOT_AVAILABLE, LANGUAGE_NOTE),
-                sources=sources("population"),
+                sources=sources("population" + ("/sex ratio" if sexes is not None else "")),
+                **({"median_age": gap(NOT_AVAILABLE, age_note),
+                    **mukim_sex_fields(name, parts or (name,), sexes)}
+                   if sexes is not None else {}),
             ))
     return out
 
 
 def build(sheets: dict[str, list[list[Any]]]) -> list[dict[str, Any]]:
-    for name in ("A3", "A4", "C1-C5"):
+    for name in ("A2", "A3", "A4", "C1-C5"):
         if name not in sheets:
             raise SystemExit(f"brunei: the annex workbook has no sheet {name!r}; "
                              f"it holds {sorted(sheets)}")
@@ -480,8 +616,12 @@ def build(sheets: dict[str, list[list[Any]]]) -> list[dict[str, Any]]:
     if race_totals != faith_totals:
         raise SystemExit("brunei: A3 and A4 disagree about how many people "
                          "each district holds")
+    ages = read_ages(sheets["A2"])
     mukims = read_mukims(sheets["C1-C5"])
-    return district_records(race, religion, race_totals) + mukim_records(mukims)
+    sexes = read_mukim_sexes(sheets["C1-C5"])
+    groups = c6_groups(sheets["C6-C10"]) if "C6-C10" in sheets else None
+    return (district_records(race, religion, race_totals, ages)
+            + mukim_records(mukims, sexes, groups))
 
 
 def probe() -> int:

@@ -94,7 +94,25 @@ C1 = (c1_block("Brunei Muara", BRUNEI_MUARA)
       + [["Jadual C2"], figures("Kianggeh", [8_102]),
          figures("Kampung Sungai Kedayan", [99])])
 
-SHEETS = {"List A": [], "A3": A3, "A4": A4, "List C": [], "C1-C5": C1}
+def a2_sheet():
+    """Table A2: eighteen five-year groups, each district's total spread evenly."""
+    totals = [318_530, 65_531, 47_210, 9_444]
+    labels = [f"{a:02d}-{a + 4:02d}" for a in range(0, 85, 5)] + ["85+"]
+    spread = []
+    for total in totals:
+        each = total // 18
+        spread.append([each] * 17 + [total - each * 17])
+    rows = [["Jadual A2"], ["Table A2 : Population by Age Group, District and Sex, 2021"],
+            HEADER, ["Kumpulan Umur", "Total"], SUBHEAD]
+    for i, label in enumerate(labels):
+        parts = [s[i] for s in spread]
+        rows.append(figures(label, [sum(parts)] + parts))
+    rows.append(figures("Jumlah/Total", [sum(totals)] + totals))
+    return rows
+
+
+A2 = a2_sheet()
+SHEETS = {"List A": [], "A2": A2, "A3": A3, "A4": A4, "List C": [], "C1-C5": C1}
 
 
 class TheDistrictTables(unittest.TestCase):
@@ -251,6 +269,29 @@ class TheRecords(unittest.TestCase):
         with self.assertRaises(SystemExit) as caught:
             bn.build({k: v for k, v in SHEETS.items() if k != "A4"})
         self.assertIn("A4", str(caught.exception))
+
+    def test_districts_carry_a_median_and_a_ratio_from_a2(self):
+        muara = self.by_name["Brunei Muara"]
+        # Eighteen near-equal groups to 85+: the middle person ends the 40-44 group.
+        self.assertAlmostEqual(muara["median_age"]["value"], 45.0, delta=0.1)
+        self.assertEqual(muara["sex_ratio"]["unit"], "males_per_100_females")
+        self.assertIn("A2", muara["median_age_note"])
+
+    def test_mukims_carry_a_ratio_and_say_why_no_median(self):
+        gadong = self.by_name["Gadong"]
+        men = 35_424 // 2 + 38_067 // 2
+        women = 35_424 + 38_067 - men
+        self.assertEqual(gadong["sex_ratio"]["value"], round(100 * men / women, 1))
+        self.assertEqual(gadong["median_age"]["status"], "not_available")
+        self.assertIn("C6", gadong["median_age"]["note"])
+        self.assertIn("00-14", gadong["median_age"]["note"])
+
+    def test_a2_groups_that_miss_their_total_refuse(self):
+        broken = [list(r) for r in A2]
+        broken[5][4] += 1                  # Brunei Muara's 00-04 one person too many
+        broken[5][5] += 1
+        with self.assertRaises(SystemExit):
+            bn.read_ages(broken)
 
 
 if __name__ == "__main__":
