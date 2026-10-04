@@ -1,8 +1,9 @@
-"""The Dutch gemeenten's religion: CBS's 2014 table carried to the gemeenten of 2022.
+"""The Dutch gemeenten's religion: CBS's 2010-2015 table carried to the gemeenten of 2022.
 
 The descriptions below are CBS's own text from StatLine 70739ned, as the
 probe (scripts/fetch_census/netherlands_probe.py) printed it; the table rows
-copy the layout of the workbook as the probe dumped it. No network.
+copy the layout of the two workbooks (2010-2015 by the gemeenten of 2016, and
+2010-2014 by those of 2014) as the probes dumped them. No network.
 """
 
 from __future__ import annotations
@@ -170,13 +171,18 @@ class FollowingTheChanges(unittest.TestCase):
             m.follow(history, POPULATION, "20140101", "20221231")
 
 
+def parts(shares: dict | None = None) -> dict:
+    """Every label at 0 but those given."""
+    return {k: (shares or {}).get(k, 0.0) for k in m.LABELS}
+
+
 def table(**suppressed) -> dict:
-    full = {k: 0.0 for k in m.COLUMNS}
     rows = {}
     for code, name in (("GM0001", "A"), ("GM0002", "B"), ("GM0003", "C"), ("GM0004", "D"),
                        ("GM0005", "E")):
-        parts = dict(full, Katholiek=20.0, PKN=10.0, Islam=5.0, Anders=5.0)
-        rows[code] = {"name": name, "province": "P", "total": 40.0, "parts": parts}
+        shares = parts({"Roman Catholic": 20.0, "Protestant Church in the Netherlands": 10.0,
+                        "Islam": 5.0, m.OTHER: 5.0})
+        rows[code] = {"name": name, "province": "P", "total": 40.0, "parts": shares}
     for code in suppressed:
         rows[code] = {**rows[code], "total": None, "parts": {}}
     return rows
@@ -218,6 +224,22 @@ class WhichGemeentenTakeAFigure(unittest.TestCase):
         self.assertIsNotNone(strict.reason)
         self.assertIsNone(loose.reason)
 
+    def test_without_unions_a_union_takes_a_gap_that_names_its_parts(self):
+        unit = m.classify("GM0100", self.walk, POPULATION, table(), TITLES, unions=False)
+        self.assertEqual(unit.kind, "union")
+        self.assertIn(f"covers what in {m.VINTAGE} were the gemeenten A and B", unit.reason)
+        self.assertIn("none for their union", unit.reason)
+
+    def test_without_unions_one_gemeente_renamed_still_takes_its_figure(self):
+        unit = m.classify("GM0200", self.walk, POPULATION, table(), TITLES, tolerance=0.2,
+                          unions=False)
+        self.assertIsNone(unit.reason)
+        self.assertEqual(set(unit.whole), {"GM0005"})
+
+    def test_a_suppressed_part_is_said_before_the_union_is(self):
+        unit = m.classify("GM0100", self.walk, POPULATION, table(GM0001=True), TITLES, unions=False)
+        self.assertEqual(unit.kind, "suppressed")
+
 
 def slochteren_history() -> dict:
     """S gives G 100 people (2017) and then goes wholly into M with H (2018), as
@@ -247,8 +269,7 @@ class WhatTheNotesName(unittest.TestCase):
 
     def setUp(self):
         self.walk = m.follow(slochteren_history(), self.POP, "20140101", "20221231")
-        self.rows = {c: {"name": t, "total": 40.0, "parts": {k: 0.0 for k in m.COLUMNS}}
-                     for c, t in self.TITLES.items()}
+        self.rows = {c: {"name": t, "total": 40.0, "parts": parts()} for c, t in self.TITLES.items()}
 
     def test_a_dissolved_gemeente_that_had_already_given_part_away_is_named_so(self):
         unit = m.classify("GM1952", self.walk, self.POP, self.rows, self.TITLES)
@@ -269,7 +290,84 @@ class WhatTheNotesName(unittest.TestCase):
 
 
 def sheet(*data: list) -> list[list]:
-    """Rows laid out as CBS's workbook lays them out (probe of 4 October 2026)."""
+    """Rows laid out as CBS's 2016 workbook lays them out (probes of 4 October 2026):
+    headings on three rows, the national row, then a row per gemeente."""
+    return [
+        ["Kerkelijke gezindte en kerkbezoek naar gemeenten 2010/2015"] + [None] * 17,
+        [None] * 18,
+        [None, None, None, "Kerkbezoek, minimaal 1x per maand (percentage van gehele 18+ populatie)",
+         None, "Geen kerkelijke gezindte", "Wel kerkelijke gezindte", "waarvan"] + [None] * 10,
+        [None] * 7 + ["Rooms-katholiek", "Protestants", "waarvan", None, None, "Islam", "Joods",
+                      "Hindoe", "Boeddhist", "anders", None],
+        [None] * 9 + ["Nederlands hervormd", "Gereformeerde kerken",
+                      "Protestantse Kerk Nederland(PKN)"] + [None] * 6,
+        NATIONAL,
+        *data,
+    ]
+
+
+NATIONAL = [None, "Nederland totaal", None, 16.85, None, 47.93, 52.07, 25.49, 16.27, 7.04, 3.46,
+            5.77, 4.77, 0.12, 0.62, 0.37, 4.44, None]
+APPINGEDAM = ["GM0003", "Appingedam", "0003", 11.91, None, 55.17, 44.83, 3.71, 28.880000000000003,
+              10.24, 8.29, 10.35, 3.85, 0, 0, 0.28, 8.1, None]
+# Suppressed: "." everywhere but the Protestant subtotal, a formula that reads 0.
+AMELAND = ["GM0060", "Ameland", "0060", ".", None, ".", ".", ".", 0, ".", ".", ".", ".", ".", ".",
+           ".", ".", None]
+
+
+class TheWorkbook(unittest.TestCase):
+
+    def test_a_printed_and_a_suppressed_gemeente_and_the_country(self):
+        rows, national = m.parse_table(sheet(APPINGEDAM, AMELAND))
+        self.assertEqual(set(rows), {"GM0003", "GM0060"})
+        self.assertEqual(rows["GM0003"]["total"], 44.83)
+        self.assertEqual(rows["GM0003"]["none"], 55.17)
+        self.assertEqual(rows["GM0003"]["parts"]["Roman Catholic"], 3.71)
+        self.assertEqual(rows["GM0003"]["parts"]["Protestant Church in the Netherlands"], 10.35)
+        self.assertEqual(rows["GM0003"]["parts"][m.OTHER], 8.1)
+        self.assertIsNone(rows["GM0060"]["total"])
+        self.assertEqual(national["total"], 52.07)
+        m.check_table({**rows, "NL01": national})
+
+    def test_the_subtotal_is_not_taken_for_the_church_whose_name_it_begins(self):
+        rows, _ = m.parse_table(sheet(APPINGEDAM))
+        self.assertEqual(rows["GM0003"]["protestant"], 28.880000000000003)
+        self.assertEqual(rows["GM0003"]["parts"]["Protestant Church in the Netherlands"], 10.35)
+
+    def test_categories_that_do_not_make_the_total_stop_the_run(self):
+        wrong = list(APPINGEDAM)
+        wrong[7] = 5.71                                         # Roman Catholic two points too many
+        with self.assertRaises(SystemExit):
+            m.check_table(m.parse_table(sheet(wrong))[0])
+
+    def test_churches_that_do_not_make_the_protestant_subtotal_stop_the_run(self):
+        wrong = list(APPINGEDAM)
+        wrong[8] = 30.88
+        with self.assertRaises(SystemExit):
+            m.check_table(m.parse_table(sheet(wrong))[0])
+
+    def test_a_total_with_a_share_missing_stops_the_run(self):
+        wrong = list(APPINGEDAM)
+        wrong[12] = "."
+        with self.assertRaises(SystemExit):
+            m.parse_table(sheet(wrong))
+
+    def test_two_codes_that_disagree_stop_the_run(self):
+        wrong = list(APPINGEDAM)
+        wrong[2] = "0004"
+        with self.assertRaises(SystemExit):
+            m.parse_table(sheet(wrong))
+
+    def test_a_heading_found_twice_stops_the_run(self):
+        rows = sheet(APPINGEDAM)
+        rows[3] = list(rows[3])
+        rows[3][17] = "anders"
+        with self.assertRaises(SystemExit):
+            m.parse_table(rows)
+
+
+def sheet_2014(*data: list) -> list[list]:
+    """Rows laid out as CBS's 2010-2014 workbook lays them out (probe of 4 October 2026)."""
     blank = [""] * 15
     return [
         ["Kerkelijke gezindte en kerkbezoek naar gemeente, 2010-2014 1)"] + [""] * 14,
@@ -289,70 +387,127 @@ def sheet(*data: list) -> list[list]:
     ]
 
 
-APPINGEDAM = ["Groningen", "Appingedam", 3.0, 10.3, 44.7, "", 3.2, 11.4, 8.2, 10.9, 3.4, 0.0, 0.0,
-              0.3, 7.4]
-AMELAND = ["Friesland", "Ameland", 60.0, ".", ".", "", ".", ".", ".", ".", ".", ".", ".", ".", "."]
+APPINGEDAM_2014 = ["Groningen", "Appingedam", 3.0, 10.3, 44.7, "", 3.2, 11.4, 8.2, 10.9, 3.4, 0.0,
+                   0.0, 0.3, 7.4]
+AMELAND_2014 = ["Friesland", "Ameland", 60.0, ".", ".", "", ".", ".", ".", ".", ".", ".", ".", ".",
+                "."]
 
 
-class TheWorkbook(unittest.TestCase):
+class TheWorkbookOf2014(unittest.TestCase):
+    """The 2010-2014 table, read only to measure the union method."""
 
     def test_a_printed_and_a_suppressed_gemeente(self):
-        rows = m.parse_table(sheet(APPINGEDAM, AMELAND))
+        rows = m.parse_table_2014(sheet_2014(APPINGEDAM_2014, AMELAND_2014))
         self.assertEqual(set(rows), {"GM0003", "GM0060"})
         self.assertEqual(rows["GM0003"]["total"], 44.7)
-        self.assertEqual(rows["GM0003"]["parts"]["Katholiek"], 3.2)
+        self.assertEqual(rows["GM0003"]["parts"]["Roman Catholic"], 3.2)
         self.assertEqual(rows["GM0003"]["province"], "Groningen")
         self.assertIsNone(rows["GM0060"]["total"])
-        m.check_table(rows)
+        m.check_table(rows, m.OLD_SUM_TOLERANCE)
 
     def test_the_total_is_the_column_under_its_heading_not_the_title(self):
-        rows = m.parse_table(sheet(APPINGEDAM))
+        rows = m.parse_table_2014(sheet_2014(APPINGEDAM_2014))
         self.assertEqual(rows["GM0003"]["total"], 44.7)        # not the attendance, 10.3
 
     def test_categories_that_do_not_make_the_total_stop_the_run(self):
-        wrong = list(APPINGEDAM)
+        wrong = list(APPINGEDAM_2014)
         wrong[6] = 5.2                                          # Katholiek two points too many
         with self.assertRaises(SystemExit):
-            m.check_table(m.parse_table(sheet(wrong)))
+            m.check_table(m.parse_table_2014(sheet_2014(wrong)), m.OLD_SUM_TOLERANCE)
 
     def test_a_total_with_a_share_missing_stops_the_run(self):
-        wrong = list(APPINGEDAM)
+        wrong = list(APPINGEDAM_2014)
         wrong[10] = "."
         with self.assertRaises(SystemExit):
-            m.parse_table(sheet(wrong))
+            m.parse_table_2014(sheet_2014(wrong))
 
 
 class TheComposition(unittest.TestCase):
 
     def test_no_religion_is_the_rest_and_zeros_are_left_out(self):
-        rows = m.parse_table(sheet(APPINGEDAM))["GM0003"]
+        rows = m.parse_table(sheet(APPINGEDAM))[0]["GM0003"]
         out = m.composition(rows["parts"], rows["total"])
         shares = {r["group"]: r["pct"] for r in out}
-        self.assertEqual(shares["No religion"], 55.3)
-        self.assertEqual(shares["Dutch Reformed"], 11.4)
+        self.assertEqual(shares["No religion"], 55.2)
+        self.assertEqual(shares["Dutch Reformed"], 10.2)
         self.assertNotIn("Judaism", shares)
-        self.assertAlmostEqual(sum(shares.values()), 100.1, places=1)
+        self.assertLessEqual(abs(sum(shares.values()) - 100.0), 0.2)
         self.assertEqual(out[0]["group"], "No religion")
 
     def test_a_union_is_weighted_by_its_adults(self):
-        rows = {"GM0001": {"total": 40.0, "parts": dict({k: 0.0 for k in m.COLUMNS}, Katholiek=40.0)},
-                "GM0002": {"total": 80.0, "parts": dict({k: 0.0 for k in m.COLUMNS}, Katholiek=80.0)}}
-        total, parts = m.blend(rows, {"GM0001": 3000.0, "GM0002": 1000.0})
+        rows = {"GM0001": {"total": 40.0, "parts": parts({"Roman Catholic": 40.0})},
+                "GM0002": {"total": 80.0, "parts": parts({"Roman Catholic": 80.0})}}
+        total, shares = m.blend(rows, {"GM0001": 3000.0, "GM0002": 1000.0})
         self.assertAlmostEqual(total, 50.0)
-        self.assertAlmostEqual(parts["Katholiek"], 50.0)
+        self.assertAlmostEqual(shares["Roman Catholic"], 50.0)
 
     def test_every_label_has_a_place_in_the_group_tree(self):
         import group_tree
-        for label in m.COLUMNS.values():
+        for label in m.LABELS:
             self.assertIsNotNone(group_tree.parent_of("religion", label), label)
         self.assertEqual(group_tree.parent_of("religion", "Roman Catholic"), "Catholicism")
-        for label in ("Dutch Reformed", "Reformed (Gereformeerd)",
-                      "Protestant Church in the Netherlands"):
+        for label in m.PROTESTANT:
             self.assertEqual(group_tree.parent_of("religion", label), "Protestantism", label)
+
+    def test_the_residual_is_labelled_as_the_province_file_labels_it(self):
+        from fetch_census import netherlands_religion
+        self.assertEqual(m.OTHER, netherlands_religion.OTHER)
 
     def test_the_basis_says_survey_estimate(self):
         self.assertTrue(m.BASIS.startswith("survey estimate"))
         self.assertTrue(m.OUT.name.endswith("_survey.json"))
+
+
+class ChecksAgainstCBSsOwnFigures(unittest.TestCase):
+
+    @staticmethod
+    def two() -> dict:
+        return {"GM0001": {"name": "A", "total": 40.0, "parts": parts({"Roman Catholic": 40.0})},
+                "GM0002": {"name": "B", "total": 60.0, "parts": parts({"Roman Catholic": 60.0})},
+                "GM0003": {"name": "C", "total": None, "parts": {}}}
+
+    ADULTS = {"GM0001": 1000.0, "GM0002": 3000.0, "GM0003": 1000.0}
+
+    def test_the_gemeenten_weighted_by_adults_make_the_national_row(self):
+        national = {"total": 55.0, "parts": parts({"Roman Catholic": 55.0})}
+        self.assertAlmostEqual(m.check_national(self.two(), self.ADULTS, national), 0.0)
+
+    def test_a_national_row_they_miss_stops_the_run(self):
+        national = {"total": 56.0, "parts": parts({"Roman Catholic": 56.0})}
+        with self.assertRaises(SystemExit):
+            m.check_national(self.two(), self.ADULTS, national)
+
+    def test_low_precision_runs_as_high_as_the_rate_overestimates_a_suppressed_gemeente(self):
+        # C was suppressed (fewer than 150) but this rate puts it at 180: 20% high.
+        self.assertAlmostEqual(m.low_precision_cut(self.two(), self.ADULTS, 0.18), 360.0)
+        # At a rate putting it at 90 there is nothing to correct.
+        self.assertAlmostEqual(m.low_precision_cut(self.two(), self.ADULTS, 0.09), 300.0)
+
+
+class TheUnionMethodMeasured(unittest.TestCase):
+    """The 2014 table's gemeenten carried to a later division by the union
+    method, against CBS's own figures for that division."""
+
+    def test_a_union_and_a_gemeente_that_stayed_are_compared_and_the_rest_left(self):
+        history = mini_history()
+        history["GM0006"] = gemeente("G", "18300101", "", "")
+        population = dict(POPULATION, GM0006=500.0)
+        walk = m.follow(history, population, "20140101", "20221231")
+        old = table()
+        old["GM0001"] = {**old["GM0001"], "parts": parts({"Roman Catholic": 40.0})}
+        old["GM0002"] = {**old["GM0002"], "total": 60.0, "parts": parts({"Roman Catholic": 60.0})}
+        old["GM0006"] = {"name": "G", "total": 30.0, "parts": parts({"Islam": 30.0})}
+        adults = {c: 0.8 * p for c, p in population.items()}
+        new = {"GM0100": {"name": "N", "total": 56.0, "parts": parts({"Roman Catholic": 56.0})},
+               "GM0006": {"name": "G", "total": 31.0, "parts": parts({"Islam": 31.0})},
+               "GM0004": {"name": "D", "total": 40.0, "parts": parts()},
+               "GM0200": {"name": "F", "total": 40.0, "parts": parts()}}
+        titles = dict(TITLES, GM0006="G")
+        unions, same = m.compare_unions(old, walk, population, adults, new, titles)
+        # N is A (800 adults) and B (2,400): (40 x 800 + 60 x 2,400) / 3,200 = 55; CBS says 56.
+        # D and F hold parts of the divided C, so neither is compared.
+        self.assertEqual([(round(g, 2), name, n) for g, name, n in unions], [(1.0, "N", 2)])
+        self.assertEqual([(round(g, 2), name, n) for g, name, n in same], [(1.0, "G", 1)])
 
 
 class Binding(unittest.TestCase):
@@ -445,22 +600,43 @@ class AgesOnAnOlderDate(unittest.TestCase):
 
 class TheNote(unittest.TestCase):
 
+    ROWS = {"GM0001": {"name": "A"}, "GM0002": {"name": "B"}, "GM0005": {"name": "E"}}
+
     def test_a_union_names_its_parts_and_a_small_one_says_low_precision(self):
         unit = m.Unit("GM0100", {"GM0001": 1.0, "GM0002": 1.0}, {}, 0.0, [], None)
-        rows = {"GM0001": {"name": "A"}, "GM0002": {"name": "B"}}
-        note = m.unit_note(unit, "N", rows, 250.0)
-        self.assertIn("N covers what in 2014 were the gemeenten A and B", note)
+        note = m.unit_note(unit, "N", self.ROWS, 250.0)
+        self.assertIn(f"N covers what in {m.VINTAGE} were the gemeenten A and B", note)
+        self.assertIn(f"on 1 January {m.VINTAGE}", note)
         self.assertIn("Low precision", note)
         self.assertIn("would give about 250.", note)
-        larger = m.unit_note(unit, "N", rows, 1234.0)
+        larger = m.unit_note(unit, "N", self.ROWS, 1234.0)
         self.assertNotIn("Low precision", larger)
         self.assertIn("would give about 1,234.", larger)
 
+    def test_just_above_300_it_is_low_precision_while_the_estimate_can_run_high(self):
+        unit = m.Unit("GM0001", {"GM0001": 1.0}, {}, 0.0, [], None)
+        note = m.unit_note(unit, "A", self.ROWS, 320.0, cut=345.0)
+        self.assertIn("Low precision", note)
+        self.assertIn("would give about 320, and that estimate runs high", note)
+        self.assertIn("fewer than 300 is possible", note)
+        self.assertNotIn("Low precision", m.unit_note(unit, "A", self.ROWS, 320.0))
+
+    def test_a_gemeente_renamed_since_names_what_it_was(self):
+        unit = m.Unit("GM0200", {"GM0005": 1.0}, {}, 0.0, [], None)
+        note = m.unit_note(unit, "F", self.ROWS, 1000.0)
+        self.assertIn(f"F is the gemeente of {m.VINTAGE} E (renamed since).", note)
+
     def test_the_note_says_what_the_survey_was(self):
         self.assertIn("Enquête Beroepsbevolking", m.NOTE)
+        self.assertIn("2010-2015", m.NOTE)
         self.assertIn("18 and over", m.NOTE)
         self.assertIn("150 respondents", m.NOTE)
         self.assertIn("no questionnaire census since 1971", m.NOTE)
+        self.assertIn("latest table by gemeente", m.NOTE)
+
+    def test_the_respondents_are_the_adults_among_the_samples(self):
+        # 460,000 adults among 2010-2014's 508,224, carried to 2010-2015's 606,189.
+        self.assertEqual(m.RESPONDENTS, 549_000)
 
 
 if __name__ == "__main__":
