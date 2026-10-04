@@ -30,6 +30,14 @@ Subcommands:
   SPSS file itself): its members, its size, the variables whose name or label
   matches, the value labels of some, and frequencies, optionally split by
   another variable.
+* ``crawl URL... [--depth N] [--max N] [--follow REGEX] [--wayback]`` -- a
+  study's page and the results it links, followed a few levels down: the
+  files its schema.org Dataset lists, the links (and image-map areas) of each
+  results page, every page's status, and wherever a page or PDF holds the
+  religion question, that question's table in one line. A page of the CIS's
+  old site that no longer answers is looked up in the Internet Archive's
+  index under both of its addresses (``/cis/opencms/`` and
+  ``/cis/export/sites/default/``) and read from the capture when there is one.
 
 Usage:
     python -m scripts.fetch_census.spain_cis_probe url https://www.cis.es/ --links estudio
@@ -43,6 +51,7 @@ import html
 import io
 import json
 import re
+import time
 import urllib.error
 import urllib.request
 import zipfile
@@ -168,20 +177,200 @@ def cmd_url(args: argparse.Namespace) -> int:
 
 def cmd_cdx(args: argparse.Namespace) -> int:
     needles = terms(args.grep)
-    url = ("https://web.archive.org/cdx/search/cdx?output=json&collapse=urlkey"
-           f"&limit={args.scan}&url={args.pattern}")
-    status, _, _, raw = get(url, args.timeout)
-    log(f"== CDX {args.pattern}: HTTP {status}, {len(raw):,} bytes")
-    try:
-        rows = json.loads(raw.decode("utf-8", errors="replace") or "[]")
-    except ValueError:
-        log("  " + raw[:300].decode("utf-8", errors="replace"))
-        return 0
-    rows = rows[1:] if rows and rows[0] and rows[0][0] == "urlkey" else rows
-    hits = [r for r in rows if not needles or any(n in r[2].lower() for n in needles)]
-    log(f"  {len(rows)} captured addresses, {len(hits)} with {needles}")
-    for r in hits[:args.limit]:
-        log(f"    {r[1]} {r[4]} {r[3][:30]} {r[2][:args.width]}")
+    for pattern in args.pattern:
+        url = ("https://web.archive.org/cdx/search/cdx?output=json&collapse=urlkey"
+               f"&limit={args.scan}&url={pattern}")
+        try:
+            status, _, _, raw = get(url, args.timeout)
+        except Exception as err:                      # noqa: BLE001 -- reported
+            log(f"== CDX {pattern}: {type(err).__name__}: {str(err)[:200]}")
+            continue
+        log(f"== CDX {pattern}: HTTP {status}, {len(raw):,} bytes")
+        try:
+            rows = json.loads(raw.decode("utf-8", errors="replace") or "[]")
+        except ValueError:
+            log("  " + raw[:300].decode("utf-8", errors="replace"))
+            continue
+        rows = rows[1:] if rows and rows[0] and rows[0][0] == "urlkey" else rows
+        hits = [r for r in rows if not needles or any(n in r[2].lower() for n in needles)]
+        log(f"  {len(rows)} captured addresses, {len(hits)} with {needles}")
+        for r in hits[:args.limit]:
+            log(f"    {r[1]} {r[4]} {r[3][:30]} {r[2][:args.width]}")
+        time.sleep(args.pause)
+    return 0
+
+
+# --- crawl: a study's results, followed down, with the Internet Archive -------
+
+OLD_SITE = ("/cis/opencms/", "/cis/export/sites/default/")
+WAYBACK = re.compile(r"^https?://web\.archive\.org/web/(\d+)(?:id_)?/(.+)$")
+
+
+def page_links(body: str) -> list[tuple[str, str]]:
+    """The <a href> links and the image map's <area href> links, with their text."""
+    out = links_of(body)
+    for m in re.finditer(r"(?is)<area\b[^>]*>", body):
+        tag = m.group(0)
+        href = re.search(r"(?is)href\s*=\s*[\"']([^\"']+)[\"']", tag)
+        if not href:
+            continue
+        title = re.search(r"(?is)(?:title|alt)\s*=\s*[\"']([^\"']*)[\"']", tag)
+        out.append((html.unescape(href.group(1)), html.unescape(title.group(1)) if title else ""))
+    return out
+
+
+def cells_of(row: str) -> list[str]:
+    cells = [re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", c)).replace("​", "").strip()
+             for c in re.findall(r"(?is)<t[dh]\b.*?</t[dh]>", row)]
+    return [c for c in cells if c]
+
+
+def religion_in_html(body: str, width: int) -> str | None:
+    """The religion question and the first rows of its table, in one line."""
+    text = html.unescape(body)
+    m = re.search(r"(?is)materia\s+religiosa", text)
+    if not m:
+        return None
+    start = max(text.rfind("¿", 0, m.start()), m.start() - 160)
+    question = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text[start:m.end() + 220])).strip()
+    question = question.split("?")[0] + "?" if "?" in question else question[:220]
+    table = re.search(r"(?is)<table.*?</table>", text[m.end():])
+    rows = []
+    if table:
+        for row in re.findall(r"(?is)<tr\b.*?</tr>", table.group(0))[:16]:
+            cells = cells_of(row)
+            if cells:
+                rows.append(" / ".join(cells[:6]))
+    return (f"Q: {question[:260]} || " + " | ".join(rows))[:width]
+
+
+def religion_in_pdf(raw: bytes, width: int) -> str | None:
+    from pypdf import PdfReader                        # noqa: PLC0415 -- runner only
+    lines = []
+    for page in PdfReader(io.BytesIO(raw)).pages:
+        lines += [re.sub(r"\s+", " ", ln).strip() for ln in (page.extract_text() or "").splitlines()
+                  if ln.strip()]
+    at = next((i for i, ln in enumerate(lines) if re.search(r"(?i)materia\s+religiosa", ln)), None)
+    if at is None:
+        return None
+    return " | ".join(lines[max(0, at - 1):at + 16])[:width]
+
+
+def cmd_crawl(args: argparse.Namespace) -> int:
+    """A study's page and its results, followed down; old-site pages via the Archive."""
+    import time as _time
+    import urllib.parse
+    follow = re.compile(args.follow, re.I) if args.follow else None
+    skip = re.compile(args.skip, re.I) if args.skip else None
+    files = re.compile(args.files, re.I)
+    seen: set[str] = set()
+    budget = [args.max]
+
+    def wayback(url: str, depth: int) -> None:
+        path = urllib.parse.urlparse(url).path
+        variants = [path]
+        for a, b in (OLD_SITE, OLD_SITE[::-1]):
+            if a in path:
+                variants.append(path.replace(a, b))
+        for variant in variants:
+            query = ("https://web.archive.org/cdx/search/cdx?output=json&fl=timestamp,original,"
+                     "statuscode&filter=statuscode:200&limit=-1&url="
+                     + urllib.parse.quote(f"www.cis.es{variant}", safe="/:"))
+            _time.sleep(args.pause)
+            try:
+                status, _, _, raw = get(query, args.timeout)
+                rows = json.loads(raw.decode("utf-8", errors="replace") or "[]")
+            except Exception as err:                  # noqa: BLE001 -- reported
+                log(f"{'  ' * depth}  archive index: {type(err).__name__}: {str(err)[:120]}")
+                continue
+            rows = [r for r in rows if r and r[0] != "timestamp"]
+            if rows:
+                stamp, original = rows[-1][0], rows[-1][1]
+                log(f"{'  ' * depth}  archived {stamp} as {original}")
+                visit(f"https://web.archive.org/web/{stamp}id_/{original}", depth + 1)
+                return
+        log(f"{'  ' * depth}  not in the Internet Archive under {len(variants)} address(es)")
+
+    def resolve(base: str, href: str) -> str:
+        m = WAYBACK.match(base)
+        if m and not WAYBACK.match(href):
+            stamp, original = m.groups()
+            return f"https://web.archive.org/web/{stamp}id_/{urllib.parse.urljoin(original, href)}"
+        return urllib.parse.urljoin(base, href)
+
+    def visit(url: str, depth: int) -> None:
+        if url in seen or budget[0] <= 0:
+            return
+        seen.add(url)
+        budget[0] -= 1
+        pad = "  " * depth
+        if WAYBACK.match(url):
+            _time.sleep(args.pause)
+        try:
+            status, final, _, raw = get(url, args.timeout)
+        except Exception as err:                      # noqa: BLE001 -- reported
+            log(f"{pad}[{type(err).__name__}] {url[:args.width]}")
+            return
+        line = f"{pad}[{status}] {url[:args.width]} ({len(raw):,} B)"
+        if status != 200:
+            log(line)
+            if args.wayback and any(p in url for p in OLD_SITE) and not WAYBACK.match(url):
+                wayback(url, depth)
+            return
+        if raw[:4] == b"%PDF":
+            try:
+                block = religion_in_pdf(raw, args.block)
+            except Exception as err:                  # noqa: BLE001 -- reported
+                block = f"(unreadable: {type(err).__name__})"
+            log(line + " PDF" + (f"\n{pad}    RELIGION {block}" if block else ""))
+            return
+        if raw[:2] == b"PK":
+            log(line + " zip/xlsx")
+            return
+        body = raw.decode("utf-8", errors="replace")
+        if "�" in body[:20000]:
+            body = raw.decode("latin-1")
+        found = re.search(r"(?is)<title>(.*?)</title>", body)
+        title = re.sub(r"\s+", " ", found.group(1)).strip()[:90] if found else ""
+        block = religion_in_html(body, args.block)
+        log(line + (f" <{title}>" if title else "")
+            + (f"\n{pad}    RELIGION {block}" if block else ""))
+        if args.grep:
+            for hit in [ln for ln in text_of(body) if re.search(args.grep, ln, re.I)][:args.lines]:
+                log(f"{pad}    | {hit[:args.width]}")
+        if depth >= args.depth:
+            return
+        targets: list[tuple[str, str]] = []
+        if "/estudios/" in url or "/surveys/" in url:
+            pairs = sorted(set(re.findall(
+                r'"contentUrl"\s*:\s*"([^"]+)"\s*,\s*"@type"\s*:\s*"DataDownload"\s*,\s*"name"'
+                r'\s*:\s*"([^"]+)"', body)))
+            log(f"{pad}    files: " + "; ".join(f"{n}: {u.rsplit('/', 1)[-1]}" for u, n in pairs))
+            targets = [(u, n) for u, n in pairs if files.search(n)]
+        else:
+            for href, text in page_links(body):
+                if href.startswith(("mailto:", "javascript:", "#")):
+                    continue
+                target = resolve(final if not WAYBACK.match(url) else url, href)
+                if follow and not follow.search(target):
+                    continue
+                if skip and skip.search(target):
+                    continue
+                targets.append((target, text))
+        shown = set()
+        for target, text in targets:
+            if target in shown:
+                continue
+            shown.add(target)
+            if len(shown) > args.links:
+                log(f"{pad}    ... {len(targets) - args.links} more links not followed")
+                break
+            visit(target, depth + 1)
+
+    for url in args.url:
+        log(f"== {url}")
+        visit(url, 0)
+    log(f"== {len(seen)} addresses read")
     return 0
 
 
@@ -460,13 +649,32 @@ def main() -> int:
     p.add_argument("--timeout", type=int, default=120)
     p.set_defaults(func=cmd_pdf)
     p = sub.add_parser("cdx")
-    p.add_argument("pattern")
+    p.add_argument("pattern", nargs="+")
     p.add_argument("--grep")
     p.add_argument("--limit", type=int, default=60)
     p.add_argument("--scan", type=int, default=5000)
     p.add_argument("--width", type=int, default=160)
     p.add_argument("--timeout", type=int, default=120)
+    p.add_argument("--pause", type=float, default=1.0)
     p.set_defaults(func=cmd_cdx)
+    p = sub.add_parser("crawl")
+    p.add_argument("url", nargs="+")
+    p.add_argument("--depth", type=int, default=3)
+    p.add_argument("--max", type=int, default=120, help="addresses read at most")
+    p.add_argument("--links", type=int, default=40, help="links followed per page at most")
+    p.add_argument("--files", default="Resultados|Cruces|Marginales|Tabulaci|Distribuci",
+                   help="which of a study page's listed files to follow, by name")
+    p.add_argument("--follow", help="follow only links whose address matches")
+    p.add_argument("--skip", help="never follow links whose address matches")
+    p.add_argument("--grep", help="print a page's lines matching this regex")
+    p.add_argument("--lines", type=int, default=6)
+    p.add_argument("--wayback", action="store_true",
+                   help="look an old-site page that no longer answers up in the Archive")
+    p.add_argument("--block", type=int, default=900, help="characters of a religion table")
+    p.add_argument("--width", type=int, default=200)
+    p.add_argument("--timeout", type=int, default=60)
+    p.add_argument("--pause", type=float, default=1.0)
+    p.set_defaults(func=cmd_crawl)
     p = sub.add_parser("studies")
     p.add_argument("title", help="a word or phrase of the title, e.g. Preelectoral")
     p.add_argument("--match", help="a regex the title must also match")
