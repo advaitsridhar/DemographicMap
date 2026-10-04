@@ -1,3 +1,10 @@
-  districts make 9,410,100; the country 9,914,700; outside the six districts 504,600
-  wrote data/processed/israel_cbs.json (44 kB)
-  wrote israel_cbs.json (21)
+tonga_census: 2021 Census General Tables 1, 2, 4 and 10
+  https://tongastats.gov.to/download/266/general-tables/8089/1-population-trends.xlsx: 218,239 bytes
+  https://tongastats.gov.to/download/266/general-tables/7660/2-ethnicity.xlsx: 123,497 bytes
+  https://tongastats.gov.to/download/266/general-tables/7664/4-religion.xlsx: 96,551 bytes
+  https://tongastats.gov.to/download/266/general-tables/7665/10-literacy.xlsx: 89,481 bytes
+  Tonga's median age 22.2
+  no polygon: Lulunga (723 people), counted in its division
+  no polygon: Niuatoputapu (718 people), counted in its division
+  26 records: admin1 ethnicity 5, admin1 language 4, admin1 median_age 5, admin1 population 5, admin1 religion 5, admin1 sex_ratio 5, admin2 ethnicity 21, admin2 median_age 21, admin2 population 21, admin2 religion 21, admin2 sex_ratio 21
+  wrote data/processed/tonga_census.json (124 kB)
