@@ -326,13 +326,29 @@ def read_medians(values: list[dict[str, Any]]) -> dict[str, float]:
     return out
 
 
+# e-Stat prints a count of nobody as "-" rather than 0. Any other symbol --
+# "x" for a suppressed cell, "…" for one not tabulated -- is not a number,
+# is left out, and so fails the sum checks below rather than being read as 0.
+ZERO = "-"
+
+
+def count(cell: Any) -> int | None:
+    """A cell of an e-Stat table as people: "-" is 0, a symbol is None."""
+    text = str(cell).strip()
+    if text == ZERO:
+        return 0
+    try:
+        return int(text)
+    except ValueError:
+        return None
+
+
 def read_ages(values: list[dict[str, Any]]) -> dict[str, dict[str, dict[str, int]]]:
     """{area: {sex "1"/"2": {age class: people}}}."""
     out: dict[str, dict[str, dict[str, int]]] = {}
     for v in values:
-        try:
-            n = int(str(v.get("$")))
-        except ValueError:
+        n = count(v.get("$"))
+        if n is None:
             continue
         out.setdefault(str(v.get("@area")), {}).setdefault(
             str(v.get("@cat03")), {})[str(v.get("@cat01"))] = n
@@ -343,10 +359,10 @@ def read_nationality(values: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
     """{area: {国籍 code: people}}, both sexes."""
     out: dict[str, dict[str, int]] = {}
     for v in values:
-        try:
-            out.setdefault(str(v.get("@area")), {})[str(v.get("@cat02"))] = int(str(v.get("$")))
-        except ValueError:
+        n = count(v.get("$"))
+        if n is None:
             continue
+        out.setdefault(str(v.get("@area")), {})[str(v.get("@cat02"))] = n
     return out
 
 

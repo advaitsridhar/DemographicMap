@@ -234,6 +234,21 @@ class Helpers(unittest.TestCase):
         self.assertEqual(jm.area_levels(payload),
                          {"01100": ("4", "札幌市"), "01101": ("5", "札幌市中央区")})
 
+    def test_estat_cells(self):
+        self.assertEqual(jm.count("-"), 0)
+        self.assertEqual(jm.count("1234"), 1234)
+        self.assertIsNone(jm.count("x"))
+        self.assertIsNone(jm.count("…"))
+        rows = jm.read_nationality([{"@area": "01107", "@cat02": "112", "$": "-"},
+                                    {"@area": "01107", "@cat02": "113", "$": "x"}])
+        self.assertEqual(rows, {"01107": {"112": 0}})
+
+    def test_a_suppressed_cell_is_a_refusal(self):
+        f = fixture()
+        del f["nat"]["06201"]["101"]          # read as "x": left out, not zero
+        with self.assertRaises(SystemExit):
+            build(f)
+
     def test_extra_table_is_one_to_one(self):
         codes = [c for c, _ in jm.EXTRA_SHAPES.values()]
         self.assertEqual(len(codes), len(set(codes)))
