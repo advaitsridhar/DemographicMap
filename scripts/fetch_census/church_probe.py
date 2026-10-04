@@ -127,6 +127,34 @@ def kolada(queries: list[str], version: str = "v2") -> None:
                   f"{kpi.get('publ_period')} | {str(kpi.get('description'))[:160]}")
 
 
+def municipal_changes(then: int, now: int) -> None:
+    """The municipalities of ``then`` gone by ``now`` and the new ones, with
+    the sub-region and region the ``then`` keys give each gone one."""
+    from .finland_religion import CLASS_API, item_names, key_pairs
+
+    def names(cls: str, year: int) -> dict[str, str]:
+        return item_names(get_json(f"{CLASS_API}/classifications/{cls}_1_{year}0101/"
+                                   "classificationItems?content=data&meta=max&lang=fi"))
+
+    def maps(target: str, year: int) -> dict[str, str]:
+        return key_pairs(get_json(f"{CLASS_API}/correspondenceTables/kunta_1_{year}0101%23"
+                                  f"{target}_1_{year}0101/maps"))
+
+    old, new = names("kunta", then), names("kunta", now)
+    print(f"  {then}: {len(old)} municipalities; {now}: {len(new)}")
+    gone = sorted(set(old) - set(new))
+    print(f"  gone: {[f'{c} {old[c]}' for c in gone]}; new: "
+          f"{[f'{c} {new[c]}' for c in sorted(set(new) - set(old))]}; renamed: "
+          f"{[f'{c} {old[c]} -> {new[c]}' for c in sorted(set(old) & set(new)) if old[c] != new[c]]}")
+    for target in ("seutukunta", "maakunta"):
+        key = maps(target, then)
+        print(f"  {then} {target}: {len(key)} municipalities in {len(set(key.values()))}; "
+              + "; ".join(f"{c} {old[c]} -> {key.get(c)}" for c in gone))
+        for c in gone:
+            print(f"    also in {key.get(c)}: "
+                  + ", ".join(f"{m} {old[m]}" for m, t in sorted(key.items()) if t == key.get(c)))
+
+
 RELIGION_CONTENTS = ["vaerak-vaesto", "vaesto_usk_evlut_p", "vaesto_usk_muu_p",
                      "vaesto_usk_ei_p"]
 
@@ -317,6 +345,9 @@ PROBES: dict[str, Any] = {
     "c6_class_item": lambda: print("  " + json.dumps(get_json(
         "https://data.stat.fi/api/classifications/v2/classifications/kunta_1_20200101/"
         "classificationItems?content=data&meta=max&lang=fi")[0], ensure_ascii=False)[:2500]),
+    # Round c7: which municipalities of 2020 are gone today, and where the
+    # 2020 keys (read from the maps lists) put them and their neighbours.
+    "c7_fin_merges": lambda: municipal_changes(2020, 2026),
     # Round c4: Forshaga and Munkfors share one parish in the 2020 and 2021
     # editions. Do the older editions still count them apart?
     "c4_swe_2019": lambda: pdf(SVK + "NyckeltalLKF.pdf",
