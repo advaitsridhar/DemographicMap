@@ -211,6 +211,120 @@ class Bind(unittest.TestCase):
             tt.bind(register(), admin2)
 
 
+def table6(county, rows, sign=False):
+    """Table 6 of a county report as openpyxl reads it: the title, the heads in
+    two languages, the 按鄉鎮市區別分 block (county row first) and a note."""
+    heads = ["國語", "閩南語", "客語", "原住民族語"] + (["臺灣手語"] if sign else []) + ["其他"]
+    width = 2 + len(heads)
+    blank = [None] * (width + 8)
+    out = [list(blank) for _ in range(16)]
+    out[0][1], out[0][2] = "單位：人", "民國109年"
+    out[1][1] = f"表６ {county}６歲以上本國籍常住人口使用語言情形"
+    out[6][2] = "６歲以上 本國籍常住 人口（人）"
+    out[6][3] = "每百位常住人口目前主要使用語言"
+    for j, h in enumerate(heads):
+        out[9][3 + j] = h
+    for j, h in enumerate(["國語", "閩南語", "客語", "原住民族語", "其他語言", "不知或無"]):
+        out[9][width + 2 + j] = h
+    out[15][1] = "按鄉鎮市區別分"
+    for name, base, shares in rows:
+        row = list(blank)
+        row[1], row[2] = name, base
+        for j, v in enumerate(shares):
+            row[3 + j] = v
+        out.append(row)
+    note = list(blank)
+    note[1] = "註：其他包括其他語言、不知或無；"
+    out.append(note)
+    return out
+
+
+BANQIAO = ("板橋區", 300, [76.3, 23.3, 0.3, 0, 0.1])
+WULAI = ("烏來區", 100, [83.1, 11.9, 0.1, 4.9, 0])
+COUNTY = ("新北市", 400, [78.0, 20.5, 0.3, 1.2, 0.1])
+
+
+class Language(unittest.TestCase):
+    def test_townships_read_and_the_county_row_left_out(self):
+        table = tt.read_language_table(table6("新北市", [COUNTY, BANQIAO, WULAI]), "新北市")
+        self.assertEqual(sorted(table), ["新北市板橋區", "新北市烏來區"])
+        self.assertEqual(table["新北市烏來區"]["base"], 100)
+        self.assertEqual(table["新北市烏來區"]["main"]["Taiwanese indigenous languages"], 4.9)
+        self.assertEqual(table["新北市板橋區"]["main"]["Mandarin"], 76.3)
+
+    def test_a_sign_language_column_goes_to_other(self):
+        rows = [("新北市", 400, [78.0, 20.5, 0.3, 1.2, 0.05, 0.05]),
+                ("板橋區", 300, [76.3, 23.3, 0.3, 0, 0.0, 0.1]),
+                ("烏來區", 100, [83.1, 11.9, 0.1, 4.9, 0.0, 0])]
+        table = tt.read_language_table(table6("新北市", rows, sign=True), "新北市")
+        self.assertAlmostEqual(table["新北市板橋區"]["main"]["Other languages"], 0.1)
+
+    def test_a_row_far_from_a_hundred_is_refused(self):
+        rows = [COUNTY, ("板橋區", 300, [76.3, 20.3, 0.3, 0, 0.1]), WULAI]
+        with self.assertRaises(SystemExit):
+            tt.read_language_table(table6("新北市", rows), "新北市")
+
+    def test_townships_that_miss_the_county_are_refused(self):
+        rows = [("新北市", 401, COUNTY[2]), BANQIAO, WULAI]
+        with self.assertRaises(SystemExit):
+            tt.read_language_table(table6("新北市", rows), "新北市")
+
+    def test_a_county_row_its_townships_do_not_make_is_refused(self):
+        rows = [("新北市", 400, [70.0, 28.5, 0.3, 1.1, 0.1]), BANQIAO, WULAI]
+        with self.assertRaises(SystemExit):
+            tt.read_language_table(table6("新北市", rows), "新北市")
+
+    def test_another_county_s_table_is_refused(self):
+        with self.assertRaises(SystemExit):
+            tt.read_language_table(table6("臺北市", [COUNTY, BANQIAO, WULAI]), "新北市")
+
+    def test_the_rows(self):
+        rows = tt.language_rows({"Mandarin": 83.1, "Taiwanese Hokkien": 11.9, "Hakka": 0.1,
+                                 "Taiwanese indigenous languages": 4.9, "Other languages": 0})
+        self.assertEqual([r["group"] for r in rows],
+                         ["Mandarin", "Taiwanese Hokkien", "Taiwanese indigenous languages",
+                          "Hakka"])
+
+
+def spoken(towns):
+    """A Table 6 row for every township the register has."""
+    return {t["name"].replace("台", "臺"): {"base": 100, "main": {
+        "Mandarin": 60.0, "Taiwanese Hokkien": 39.0, "Hakka": 0.5,
+        "Taiwanese indigenous languages": 0.5, "Other languages": 0.0}}
+        for t in towns.values()}
+
+
+class LanguageBound(unittest.TestCase):
+    def test_every_township_gets_its_row(self):
+        admin1, admin2 = maps()
+        towns = register()
+        records = tt.build(towns, admin1, admin2, spoken(towns))
+        r = next(r for r in records if r.get("shape_id") == "52511910B38062779232785")
+        self.assertEqual(r["language"][0], {"group": "Mandarin", "pct": 60.0})
+        self.assertEqual(r["language_year"], 2020)
+        self.assertIn("連江縣's report", r["language_note"])
+        self.assertTrue(any(src["field"] == "language" and src["url"].endswith("230907/t006.xlsx")
+                            for src in r["sources"]))
+        counties = [r for r in records if r["level"] == "admin1"]
+        self.assertTrue(all(c["language"] == {"status": "not_available"} for c in counties))
+
+    def test_a_township_with_no_row_is_refused(self):
+        admin1, admin2 = maps()
+        towns = register()
+        language = spoken(towns)
+        language.pop("連江縣北竿鄉")
+        with self.assertRaises(SystemExit):
+            tt.build(towns, admin1, admin2, language)
+
+    def test_a_row_with_no_township_is_refused(self):
+        admin1, admin2 = maps()
+        towns = register()
+        language = spoken(towns)
+        language["新北市不存在區"] = language["連江縣北竿鄉"]
+        with self.assertRaises(SystemExit):
+            tt.build(towns, admin1, admin2, language)
+
+
 class Records(unittest.TestCase):
     def setUp(self):
         admin1, admin2 = maps()

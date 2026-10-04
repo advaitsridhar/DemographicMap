@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Taiwan: every township's population, median age, sex ratio and indigenous peoples, from the register.
+"""Taiwan: every township's population, median age, sex ratio and indigenous peoples, from the register, and its language from the 2020 census.
 
 The Ministry of the Interior's Department of Household Registration serves
 the household register through an open-data API
@@ -33,11 +33,24 @@ Hakka, mainlander or naturalised -- and the note says so; the counties keep
 ``taiwan.py``'s modelled composition. For the 22 counties: the median age
 and sex ratio from the same townships' counts added up.
 
-**Religion and language** are not in the register. Taiwan's census does not
-ask religion, and nothing counts it by township (``not_collected``); the 2020
-census asked the language used at home and published it by county and city
-(``taiwan.py`` reads it), so a township's language stays a stated gap. Every
-township's record says so.
+**Language** is the 2020 census's. Its results tables (109年普查統計結果表 on
+www.stat.gov.tw) carry a report for each county and city (縣市別報告統計表),
+and Table 6 of each, 6歲以上本國籍常住人口使用語言情形, prints for every
+township (按鄉鎮市區別分) the residents of ROC nationality aged 6 and over and
+the main language they currently use, per hundred: Mandarin, Taiwanese
+Hokkien, Hakka, indigenous languages and other. That is the question and the
+population ``taiwan.py`` writes for the counties from the national release,
+so the two levels say the same thing. The 22 workbooks are read from
+ws.dgbas.gov.tw, whose certificate chain is completed from its own Authority
+Information Access extension (``aia``), never skipped. Checks, each a
+refusal: every row's shares make 100 within ``LANGUAGE_ROW_TOLERANCE``; the
+townships' bases add up to the county's; the county's shares are the
+townships' weighted by their bases, within ``LANGUAGE_REBUILD_TOLERANCE``;
+every township the register has is in a table, and every table row is a
+township the register has.
+
+**Religion** is not counted: Taiwan's census does not ask it and the register
+does not record it (``not_collected``). Every township's record says so.
 
 **Binding.** Each township is bound to its polygon by shape id through
 ``TOWNSHIPS``: the National Land Surveying and Mapping Center's point query
@@ -69,6 +82,9 @@ from typing import Any
 
 from ._shared import NOT_COLLECTED, PROCESSED, RAW, gap, http_get, log, measure, record, write_json
 from .east_asia_common import drawn, hundred, sex_ratio, single_year_median
+from .taiwan import (
+    LANGUAGE_BASIS, LANGUAGE_COLUMNS, LANGUAGE_LICENCE, LANGUAGE_ROW_TOLERANCE, LANGUAGE_YEAR,
+)
 from common import slugify  # noqa: E402 - on the path _shared sets
 
 OUT = "taiwan_township.json"
@@ -112,6 +128,26 @@ LANGUAGE_NOTE = (
     "The 2020 census asked the language used at home and published it by county and city, "
     "which the county carries. The household register does not record language, so it has "
     "no township figure to give.")
+
+# The 2020 census's county reports: each county's page among the results
+# tables (109年普查統計結果表 > 縣市別報告統計表), whose Table 6 is the main
+# language by township.
+CENSUS_PAGE = "https://www.stat.gov.tw/News_Content.aspx?n=2755&s={page}"
+CENSUS_TABLE = "https://ws.dgbas.gov.tw/001/Upload/463/relfile/11065/{page}/t006.xlsx"
+CENSUS_REPORTS: dict[str, int] = {
+    "新北市": 230886, "臺北市": 230887, "桃園市": 230883, "基隆市": 230888,
+    "新竹市": 230889, "宜蘭縣": 230890, "新竹縣": 230892, "臺中市": 230893,
+    "苗栗縣": 230894, "彰化縣": 230895, "南投縣": 230896, "雲林縣": 230897,
+    "臺南市": 230898, "高雄市": 230899, "嘉義市": 230900, "嘉義縣": 230901,
+    "屏東縣": 230902, "澎湖縣": 230903, "臺東縣": 230904, "花蓮縣": 230905,
+    "金門縣": 230906, "連江縣": 230907,
+}
+LANGUAGE_KEPT = RAW / "taiwan" / "census2020_township_language.json"
+# The main-language columns as Table 6 heads them, in LANGUAGE_COLUMNS' order.
+LANGUAGE_HEADS = ("國語", "閩南語", "客語", "原住民族語", "其他")
+SIGN = "臺灣手語"            # a column only some tables have; folded into "other"
+BLOCK = "按鄉鎮市區別分"
+LANGUAGE_REBUILD_TOLERANCE = 0.2   # points, the county row against its townships
 
 
 # ---------------------------------------------------------------------------
@@ -249,6 +285,99 @@ def load_kept() -> dict[str, dict[str, Any]]:
 
 
 # ---------------------------------------------------------------------------
+# Language: Table 6 of the 2020 census's county reports
+# ---------------------------------------------------------------------------
+
+def compact(cell: Any) -> str:
+    return "".join(str(cell).split()) if cell is not None else ""
+
+
+def share(cell: Any) -> float:
+    text = compact(cell)
+    if text in ("", "-", "－", "—"):
+        return 0.0
+    return float(text.replace(",", ""))
+
+
+def read_language_table(rows: list[list[Any]], county: str) -> dict[str, dict[str, Any]]:
+    """{county + township: {"base": residents of ROC nationality aged 6+, "main":
+    {language: per hundred}}} from one county report's Table 6, the county's own
+    row checked against its townships and left out."""
+    title = "".join(compact(c) for row in rows[:5] for c in row)
+    if county not in title or "使用語言" not in title:
+        raise SystemExit(f"taiwan_townships: {county}'s Table 6 is headed {title[:50]!r}")
+    head = next((i for i, row in enumerate(rows) if "國語" in [compact(c) for c in row]), None)
+    block = next((i for i, row in enumerate(rows) if BLOCK in [compact(c) for c in row]), None)
+    if head is None or block is None:
+        raise SystemExit(f"taiwan_townships: {county}'s Table 6 has no language heads or no "
+                         f"{BLOCK} block")
+    heads = [compact(c) for c in rows[head]]
+    cols = [heads.index(h) for h in LANGUAGE_HEADS]
+    sign = heads.index(SIGN) if SIGN in heads[:cols[-1]] else None
+    label_col = [compact(c) for c in rows[block]].index(BLOCK)
+    # The column of residents is headed 6歲以上本國籍常住人口; the title above
+    # says the same words and ends in 使用語言情形.
+    base_col = next((j for i in range(head) for j, c in enumerate(rows[i])
+                     if "本國籍常住" in compact(c) and "使用語言" not in compact(c)), None)
+    if base_col is None:
+        raise SystemExit(f"taiwan_townships: {county}'s Table 6 has no column of residents")
+    table: dict[str, dict[str, Any]] = {}
+    for row in rows[block + 1:]:
+        name = compact(row[label_col]) if label_col < len(row) else ""
+        if not name or name.startswith("註"):
+            break
+        main = {label: share(row[c]) for label, c in zip(LANGUAGE_COLUMNS, cols)}
+        if sign is not None:
+            main[LANGUAGE_COLUMNS[-1]] += share(row[sign])
+        total = sum(main.values())
+        if abs(total - 100) > LANGUAGE_ROW_TOLERANCE:
+            raise SystemExit(f"taiwan_townships: {county} {name}: the main languages make "
+                             f"{total:.1f} per hundred")
+        table[name.replace("台", "臺")] = {"base": int(share(row[base_col])), "main": main}
+    if county not in table or len(table) < 2:
+        raise SystemExit(f"taiwan_townships: {county}'s Table 6 has no county row or no "
+                         "townships")
+    whole = table.pop(county)
+    base = sum(t["base"] for t in table.values())
+    if base != whole["base"]:
+        raise SystemExit(f"taiwan_townships: {county}'s townships hold {base:,} residents 6+, "
+                         f"its row {whole['base']:,}")
+    for label in LANGUAGE_COLUMNS:
+        rebuilt = sum(t["main"][label] * t["base"] for t in table.values()) / base
+        if abs(rebuilt - whole["main"][label]) > LANGUAGE_REBUILD_TOLERANCE:
+            raise SystemExit(f"taiwan_townships: {county}'s {label} is {whole['main'][label]} "
+                             f"per hundred and its townships make {rebuilt:.2f}")
+    return {county + name: row for name, row in table.items()}
+
+
+def fetch_language() -> dict[str, dict[str, Any]]:
+    import io
+
+    import openpyxl
+    out: dict[str, dict[str, Any]] = {}
+    for county, page in CENSUS_REPORTS.items():
+        url = CENSUS_TABLE.format(page=page)
+        blob = http_get(url, binary=True, cache=False, retries=2, timeout=120, aia=True)
+        assert isinstance(blob, bytes)
+        book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+        sheets = [[list(r) for r in ws.iter_rows(values_only=True)] for ws in book.worksheets]
+        rows = next((rows for rows in sheets
+                     if any(BLOCK in [compact(c) for c in row] for row in rows)), None)
+        if rows is None:
+            raise SystemExit(f"taiwan_townships: {county}'s Table 6 has no sheet by township")
+        table = read_language_table(rows, county)
+        out.update(table)
+        log(f"  {county}: {len(table)} townships, {sum(t['base'] for t in table.values()):,} "
+            "residents 6+")
+    return out
+
+
+def language_rows(main: dict[str, float]) -> list[dict[str, Any]]:
+    rows = [{"group": label, "pct": round(pct, 1)} for label, pct in main.items() if pct > 0]
+    return sorted(rows, key=lambda r: (-r["pct"], r["group"]))
+
+
+# ---------------------------------------------------------------------------
 # Records
 # ---------------------------------------------------------------------------
 
@@ -308,7 +437,7 @@ def figures(rid: str, name: str, level: str, parent: str, shape: str, men: int, 
 
 
 def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str,
-                    parent: str) -> dict[str, Any]:
+                    parent: str, language: dict[str, Any] | None = None) -> dict[str, Any]:
     counts = Counter({k: v for k, v in town["peoples"].items() if v})
     indigenous = sum(counts.values())
     counts[NON_INDIGENOUS] = town["men"] + town["women"] - indigenous
@@ -325,6 +454,24 @@ def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str
                 "year": YEAR, "license": LICENCE},
                {"field": "ethnicity", "name": SOURCES["ODRP013"], "url": PAGE_URL,
                 "year": YEAR, "license": LICENCE}]
+    spoken: dict[str, Any] = {"language": gap("not_available", LANGUAGE_NOTE)}
+    if language is not None:
+        county = next(zh for zh in CENSUS_REPORTS if language["key"].startswith(zh))
+        spoken = {
+            "language": language_rows(language["main"]), "language_year": LANGUAGE_YEAR,
+            "language_basis": LANGUAGE_BASIS,
+            "language_note": (
+                f"2020 census, Table 6 of {county}'s report: the main language currently used, "
+                f"one answer per person, by the {language['base']:,} residents of ROC "
+                "nationality aged 6 and over in this township, per hundred as printed. 'Other "
+                "languages' takes in other tongues, Taiwan Sign Language and none or not "
+                "known. The census also recorded a secondary language, which is not read.")}
+        sources.append({"field": "language",
+                        "name": (f"DGBAS, 2020 Population and Housing Census, {county} report, "
+                                 "Table 6: main language currently used by residents of ROC "
+                                 "nationality aged 6 and over, by township"),
+                        "url": CENSUS_TABLE.format(page=CENSUS_REPORTS[county]),
+                        "year": LANGUAGE_YEAR, "license": LANGUAGE_LICENCE})
     return figures(
         f"TWN-{code}", drawn_name, "admin2", parent, shape, town["men"], town["women"],
         town["ages"], "this township",
@@ -332,20 +479,31 @@ def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str
         ethnicity=hundred(dict(counts)), ethnicity_year=YEAR,
         ethnicity_basis=ETHNICITY_BASIS, ethnicity_note=note,
         religion=gap(NOT_COLLECTED, RELIGION_NOTE),
-        language=gap("not_available", LANGUAGE_NOTE),
+        **spoken,
         sources=sources)
 
 
 def build(townships: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+          admin2: list[dict[str, Any]],
+          language: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     bound = bind(townships, admin2)
+    spoken: dict[str, dict[str, Any] | None] = {code: None for code in bound.values()}
+    if language is not None:
+        keys = {code: townships[code]["name"].replace("台", "臺") for code in bound.values()}
+        lacking = sorted(name for name in keys.values() if name not in language)
+        extra = sorted(set(language) - set(keys.values()))
+        if lacking or extra:
+            raise SystemExit(f"taiwan_townships: townships with no language row: {lacking[:5]}; "
+                             f"language rows with no township: {extra[:5]}")
+        spoken = {code: dict(language[key], key=key) for code, key in keys.items()}
     names = {u["id"]: u["name"] for u in admin2}
     county_of = {u["id"]: u["name"] for u in admin1}
     # The parent is the county the boundary file draws the polygon under; it
     # draws Wuqiu under the country itself.
     parents = {u["id"]: (f"TWN-{slugify(county_of[u['parent']])}" if u.get("parent") in county_of
                          else "TWN") for u in admin2}
-    records = [township_record(shape, code, townships[code], names[shape], parents[shape])
+    records = [township_record(shape, code, townships[code], names[shape], parents[shape],
+                               spoken[code])
                for shape, code in sorted(bound.items(), key=lambda kv: kv[1])]
     # The counties: the townships the register files under each (the first
     # five digits of the code), added up, bound to the county the boundary
@@ -383,7 +541,8 @@ def build(townships: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--refetch", action="store_true", help="ask the register even if kept")
+    ap.add_argument("--refetch", action="store_true",
+                    help="ask the register and the census even if kept")
     args = ap.parse_args()
     log(f"taiwan_townships: {MOI}, {AS_OF}")
     if KEPT.exists() and not args.refetch:
@@ -393,7 +552,16 @@ def main() -> int:
         townships = aggregate(fetch_dataset("ODRP014"), fetch_dataset("ODRP013"),
                               fetch_dataset("ODRP018"))
         keep(townships)
-    records = build(townships, drawn("TWN", "admin1"), drawn("TWN", "admin2"))
+    if LANGUAGE_KEPT.exists() and not args.refetch:
+        log(f"  reading the kept {LANGUAGE_KEPT.name}")
+        language = json.loads(LANGUAGE_KEPT.read_text(encoding="utf-8"))
+    else:
+        log("  the 2020 census's county reports, Table 6")
+        language = fetch_language()
+        LANGUAGE_KEPT.parent.mkdir(parents=True, exist_ok=True)
+        LANGUAGE_KEPT.write_text(json.dumps(language, ensure_ascii=False, sort_keys=True),
+                                 encoding="utf-8")
+    records = build(townships, drawn("TWN", "admin1"), drawn("TWN", "admin2"), language)
     write_json(PROCESSED / OUT, records)
     return 0
 
