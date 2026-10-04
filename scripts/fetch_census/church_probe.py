@@ -269,6 +269,21 @@ PROBES: dict[str, Any] = {
     "c3_swe_research": lambda: links("https://www.svenskakyrkan.se/forskning/statistik",
                                      r"statistik|pdf|xlsx|medlem|kommun|siffror|folkm",
                                      limit=120),
+    # Round c4: Forshaga and Munkfors share one parish in the 2020 and 2021
+    # editions. Do the older editions still count them apart?
+    "c4_swe_2019": lambda: pdf(SVK + "NyckeltalLKF.pdf",
+                               grep=r"Forshaga|Munkfors|Värmlands län|^Riket|Okänd"),
+    "c4_swe_2018": lambda: pdf(
+        "https://web.archive.org/web/20241220034531id_/https://www.svenskakyrkan.se/filer/"
+        "Medlemmar%20i%20svk%20i%20f%C3%B6rh%C3%A5llande%20till%20folkm%C3%A4ngd%2031.12.2018%20"
+        "per%20f%C3%B6rsamling,%20kommun,%20l%C3%A4n%20och%20riket(1).PDF",
+        grep=r"Forshaga|Munkfors|Värmlands län|^Riket|Okänd|31\.12"),
+    "c4_swe_2016": lambda: pdf(
+        "https://web.archive.org/web/20220710011218id_/https://www.svenskakyrkan.se/filer/"
+        "Medlemmar%20i%20Svenska%20kyrkan%20i%20f%C3%B6rh%C3%A5llande%20till%20folkm%C3%A4ngd%20"
+        "den%2031.12.2016%20per%20f%C3%B6rsamling,%20kommun%20och%20l%C3%A4n%20samt%20riket%20"
+        "(pdf,%2059%20sidor).pdf",
+        grep=r"Forshaga|Munkfors|Värmlands län|^Riket|Okänd|31\.12"),
 }
 
 
