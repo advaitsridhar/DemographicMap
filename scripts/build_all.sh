@@ -235,6 +235,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.microstates
   soft python3 -m scripts.fetch_census.italy_language_survey
   soft python3 -m scripts.fetch_census.spain_language_survey
+  soft python3 -m scripts.fetch_census.spain_cis
+  soft python3 -m scripts.fetch_census.catalonia_ceo
   # The ABS publishes 2021-census religion/ancestry by LGA, SA2, postal area
   # and similar -- there is no state-level dataflow (see the G14 catalogue
   # listing in run 32566750604). LGAs join the admin-2 layer.

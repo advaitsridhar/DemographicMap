@@ -66,8 +66,13 @@ COLLECTION_POLICY: dict[str, dict[str, str]] = {
     "FR": {"ethnicity": "France does not collect ethnicity or religion in its census (statistiques ethniques are barred by law).",
            "religion": "France does not collect religion in its census."},
     "DE": {"ethnicity": "Germany's census records citizenship and migration background, not ethnicity."},
-    "ES": {"ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
-           "religion": "Spain's census does not ask religion."},
+    # Spain's religion is left to common.NOT_COLLECTED_POLICY, which says what
+    # the CIS publishes and where: a noted not_collected here would stand in
+    # front of it on every province the CIS does not reach, because the build
+    # replaces only a bare not_available with the policy. The note is stored in
+    # eurostat_nuts2.json and eurostat_nuts3.json, so it goes only when both
+    # levels are re-run (--level nuts2, --level nuts3).
+    "ES": {"ethnicity": "Spain's census records nationality and birthplace, not ethnicity."},
     "IT": {"ethnicity": "Italy's census records citizenship, not ethnicity."},
     "NL": {"ethnicity": "The Netherlands records migration background, not ethnicity."},
     "SE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity."},

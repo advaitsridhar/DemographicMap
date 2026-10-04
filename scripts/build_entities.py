@@ -121,6 +121,15 @@ ADAPTER_FILES = [
     # 1,620 to 3,240 dwellings a province), and Idescat's EULP 2023 habitual
     # language for Catalonia, 15+ (effective sample 8,682; not by province).
     "spain_language_survey.json",
+    # Spain's religion from the CIS's pre-electoral surveys (spain_cis): 27
+    # provinces and 8 comunidades, 2019-2026, each from the newest study that
+    # publishes it -- workbooks, HTML and PDF marginals, and La Rioja's 2019
+    # PDF as the Internet Archive kept it. Spanish citizens 18+.
+    "spain_cis_survey.json",
+    # Catalonia's religion (four provinces and Catalonia) and first language
+    # (provinces only; Catalonia keeps Idescat's EULP) from the CEO's political
+    # barometer, waves 62-64 (2025-2026), open microdata tallied on the runner.
+    "catalonia_ceo_survey.json",
     # Russia's religion by federal subject from Sreda's Arena survey (FOM,
     # 2012: 56,900 adults, 500 to 800 in each of 79 subjects). No census has
     # asked religion since 1937 (russia_religion).

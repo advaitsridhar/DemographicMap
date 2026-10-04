@@ -762,6 +762,10 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # Romance language, and Catalonia's EULP pools every other pair of
         # languages as "other language combinations".
         "Basque and Spanish", "Other language combinations",
+        # And the CEO barometer's "altres llengües o combinacions" (catalonia_ceo),
+        # every first language but Catalan, Spanish, both, Aranese, Arabic and
+        # Romanian, alone or paired: no one language either.
+        "Other languages or combinations",
         "French and non-official language(s)",
         "English, French and non-official language(s)",
         "Multiple non-official languages", "None (eg too young to talk)",

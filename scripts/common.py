@@ -432,14 +432,35 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "ESP": {
         "ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
-        "religion": "Spain's census does not ask religion (CIS survey data exists instead).",
+        "religion": "Spain's census (INE) has not asked religion since the Constitution "
+                    "of 1978, which provides that no one may be obliged to declare it "
+                    "(art. 16.2). Surveys measure it, and the units they reach carry it: "
+                    "the CIS's regional pre-electoral surveys -- by province for "
+                    "Andalucía, Aragón, Castilla y León and Extremadura (2025-2026) and "
+                    "the Basque Country (2020), and for the comunidad as a whole for "
+                    "Galicia and the Basque Country (2024), the Community of Madrid "
+                    "(2021) and La Rioja (2019); the Catalan government's CEO barometer, "
+                    "for Catalonia and its provinces; and the European Social Survey, for "
+                    "the communities where it has 100 respondents. None reaches the rest: "
+                    "the CIS's regional surveys of Castilla-La Mancha and the Canaries "
+                    "(2015) and the Comunitat Valenciana (2015, 2019) did not ask it, and "
+                    "the tables of their 2023 successors went with its former website; it "
+                    "publishes its Galician surveys for the comunidad only; its 2019 "
+                    "macro-survey, published by comunidad, reached Ceuta and Melilla with "
+                    "60 respondents each, too few to use; and its monthly barometers are "
+                    "published by no region, their microdata only through a request form.",
         "language": "Spain's census (INE) does not ask language. Some regional "
                     "governments survey it in their own communities -- Eustat's census "
                     "for the Basque Country and its provinces, the IGE's survey for "
                     "Galicia and its provinces, Idescat's EULP survey for Catalonia (not "
-                    "published by province) -- and the units those reach carry it, as do "
+                    "published by province), the CEO barometer's first language for "
+                    "Catalonia's provinces -- and the units those reach carry it, as do "
                     "the communities where the European Social Survey has 100 "
-                    "respondents.",
+                    "respondents. The CIS's monthly barometer and its regional "
+                    "pre-electoral surveys of 2025-2026 ask no language question; of the "
+                    "2024 ones, the Basque Country's asks mother tongue and is published "
+                    "for the comunidad only, and Catalonia's tables are no longer on the "
+                    "CIS's site.",
     },
     "CHN": {
         "religion": "China's census does not ask religion; it records the 56 official "

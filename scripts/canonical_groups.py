@@ -1072,6 +1072,17 @@ PARENT: dict[str, dict[str, str]] = {
         # neither Orthodox nor Protestant, whom the "Christian" pattern would
         # otherwise file under Protestantism.
         "Molokan": "Christianity",
+        # Spain's CIS surveys (spain_cis): "creyente de otra religión", anyone
+        # who believes in a religion other than Catholicism -- Muslims,
+        # Evangelicals, the Orthodox and the rest in one answer, the residual
+        # the question leaves. Named here because the "Believer" pattern
+        # would file it under Protestantism.
+        "Believer in another religion": "Other religions",
+        # And its "indiferente o no creyente", the third irreligious answer
+        # beside its agnostics and atheists (Agnosticism, Atheism above): the
+        # respondent saying they are not religious, which the lower-case
+        # "believer" pattern would file with the unaffiliated.
+        "Indifferent / non-believer": "No religion",
     },
     # Genealogical classification, as the standard references give it. A
     # family is one hue on the map and closely related languages are shades of
