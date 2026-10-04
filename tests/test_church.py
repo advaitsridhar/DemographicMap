@@ -227,10 +227,13 @@ class SwedishChurchCountry(unittest.TestCase):
         self.assertEqual(riket, (176701, 109311, 61.9))
         with self.assertRaises(SystemExit):
             church.riket_row(lines + lines[-1:])
-        # The 2021 edition calls the same row "Totalsumma".
+        # The 2021 edition calls the same row "Totalsumma"; 2020's prints none.
         self.assertEqual(church.riket_row(
             ["Totalsumma 10 452 326 5 633 867 53,9% 53,9% 0,22% 0,25% 1,27%"]),
             (10452326, 5633867, 53.9))
+        self.assertIsNone(church.riket_row(lines[:1], optional=True))
+        with self.assertRaises(SystemExit):
+            church.riket_row(lines[:1])
         lan = {"Blekinge": (158854, 103376, 65.1)}
         church.check_country(lan, (17847, 5933, 33.2), riket)       # 2 members apart: allowed
         with self.assertRaises(SystemExit):

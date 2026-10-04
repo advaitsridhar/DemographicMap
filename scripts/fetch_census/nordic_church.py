@@ -193,13 +193,14 @@ def svk_rows(lines: list[str]) -> tuple[dict[str, Row], dict[str, Row], Row | No
     return kommuner, lan, unplaced_row
 
 
-def riket_row(lines: list[str]) -> Row:
-    """The country's row ("Riket", or "Totalsumma"), printed exactly once."""
+def riket_row(lines: list[str], optional: bool = False) -> Row | None:
+    """The country's row ("Riket", or "Totalsumma"), printed exactly once; the
+    2020 edition prints none, and with ``optional`` that is None."""
     found = [RIKET.match(" ".join(line.split())) for line in lines]
     rows = [population_and_members(m.group("rest")) for m in found if m]
-    if len(rows) != 1:
+    if len(rows) > 1 or (not rows and not optional):
         raise SystemExit(f"svenska kyrkan: {len(rows)} rows for the whole country")
-    return rows[0]
+    return rows[0] if rows else None
 
 
 def check_country(lan: dict[str, Row], unknown: Row, riket: Row) -> None:
@@ -339,14 +340,19 @@ def read_edition(year: int, urls: tuple[str, ...], sv: dict[str, str]) -> Editio
     if lines is None:
         return None
     kommuner, lan, nowhere = svk_rows(lines)
-    riket = riket_row(lines)
+    riket = riket_row(lines, optional=True)
     # The people SCB cannot place in a parish are printed as a parish of their
-    # own ("På kommunen skrivna") of a kommun called "Okänd" (unknown): one
-    # count, set aside from the kommuner and the län.
+    # own ("På kommunen skrivna"), under a kommun called "Okänd" (unknown) in
+    # the 2019 and 2021 editions and on its own in 2020's: one count, set
+    # aside from the kommuner and the län.
     unknown = [rows.pop(UNKNOWN_NAME) for rows in (lan, kommuner) if UNKNOWN_NAME in rows]
-    if len(unknown) != 1:
-        raise SystemExit(f"svenska kyrkan {year}: {len(unknown)} rows for '{UNKNOWN_NAME}'")
-    check_country(lan, unknown[0], riket)
+    if len(unknown) > 1 or not (unknown or nowhere):
+        raise SystemExit(f"svenska kyrkan {year}: {len(unknown)} rows for '{UNKNOWN_NAME}' and "
+                         f"{'one' if nowhere else 'no'} row of people without a property")
+    unplaced = unknown[0] if unknown else nowhere
+    if riket is not None:
+        check_country(lan, unplaced, riket)
+    people = sum(r[0] for r in lan.values()) + unplaced[0]
     scb_kommuner = {c: n for c, n in sv.items() if len(c) == 4}
     code_of = match_names(list(kommuner), scb_kommuner)
     read = set(code_of.values())
@@ -357,16 +363,18 @@ def read_edition(year: int, urls: tuple[str, ...], sv: dict[str, str]) -> Editio
     # people SCB cannot place on a property, and count a parish that crosses
     # a kommun boundary whole under one kommun.
     scb = scb_population(year)
-    if abs(riket[0] - scb["00"]) > 0.0005 * scb["00"]:
-        raise SystemExit(f"svenska kyrkan {year}: the country's row counts {riket[0]:,} people, "
-                         f"SCB {scb['00']:,.0f}")
+    if abs(people - scb["00"]) > 0.0005 * scb["00"]:
+        raise SystemExit(f"svenska kyrkan {year}: the län and the people without a property "
+                         f"make {people:,}, SCB counts {scb['00']:,.0f}")
     hosts = {host for host, _ in joined.values()}
     rows = {c: kommuner[k] for k, c in code_of.items() if c not in hosts}
     off = {c: (scb[c] - row[0]) / scb[c] for c, row in rows.items()}
     beyond = sorted((d, c) for c, d in off.items() if abs(d) > 0.005)
+    country = (f"the country's row ({riket[0]:,} people, {riket[1]:,} members)"
+               if riket is not None else "no country row printed")
     log(f"  {year} ({used}): {len(lines):,} lines; {len(kommuner)} kommun rows make their 21 "
-        f"län, and the län with {unknown[0][0]:,} people without a property the country's "
-        f"{riket[0]:,} people and {riket[1]:,} members, SCB's {scb['00']:,.0f}; "
+        f"län, and the län with {unplaced[0]:,} people without a property make {people:,}; "
+        f"{country}; SCB's count {scb['00']:,.0f}; "
         f"joined: {sorted((sv[c], sv[h], p) for c, (h, p) in joined.items())}; kommun rows "
         f"more than 0.5% off SCB's count: "
         + ", ".join(f"{sv[c]} {100 * d:+.2f}%" for d, c in beyond))
