@@ -1,6 +1,130 @@
-  e-Stat 0004019308: 1965 values
-  e-Stat 0004019309: 86460 values
-  e-Stat 0003445244: 33405 values
-  national median 48.5, prefectures 44.1-56.4
-  ages: 1964 areas; every area's groups add to its total; Japan 61,349,581 men, 64,796,518 women
-japan_municipal: nationality row 01107 lacks ['112']
+https://stats-sdmx-disseminate.pacificdata.org/rest/dataflow/all/all/latest
+  HTTP 200 application/vnd.sdmx.structure+xml; version=2.1; charset=utf-8 358,703 bytes
+  127 dataflows
+  SPC,DF_ADBKI,1.2  Selection of Asian Development Bank Key Indicators (ADB KI) for Pacific Island Countries and Territories
+  SPC,DF_AGRICULTURAL_PRODUCTION,1.0  Agricultural production
+  SPC,DF_AGRICULTURE_HIES,1.0  Food security: Number and proportion of households by geography, sex, age and urbanization in the Pacific which were involved in agriculture farming
+  SPC,DF_BOP,2.0  Balance of payments
+  SPC,DF_BP50,1.0  Blue Pacific 2050 (all)
+  SPC,DF_BP50_1,1.0  Blue Pacific 2050: Political Leadership And Regionalism (Thematic Area 1)
+  SPC,DF_BP50_2,1.0  Blue Pacific 2050: People-Centered Development (Thematic Area 2)
+  SPC,DF_BP50_3,1.0  Blue Pacific 2050: Peace And Security (Thematic Area 3)
+  SPC,DF_BP50_4,1.0  Blue Pacific 2050: Resources And Economic Development (Thematic Area 4)
+  SPC,DF_BP50_5,1.0  Blue Pacific 2050: Climate Change And Disasters (Thematic Area 5)
+  SPC,DF_BP50_6,1.0  Blue Pacific 2050: Ocean And Environment (Thematic Area 6)
+  SPC,DF_BP50_7,1.0  Blue Pacific 2050: Technology And Connectivity (Thematic Area 7)
+  SPC,DF_CIVIL_REGISTRATION,1.1  Civil Registration Completeness within 12 months of Birth or Death
+  SPC,DF_CLIMATE_CHANGE,1.0  Climate Change indicators
+  SPC,DF_COMMODITY_PRICES,1.0  Selected International Commodity Prices
+  SPC,DF_COVID,1.0  [Archived] COVID-19 cases in Pacific Island Countries and Territories
+  SPC,DF_COVID_VACCINATION,1.0  [Archived] COVID-19 vaccination
+  SPC,DF_CPI,3.2  Consumer Price Index (Inflation rate and Index)
+  SPC,DF_CROPS,1.1  Crops and livestock products
+  SPC,DF_CURRENCIES,2.0  Currency exchange rates
+  SPC,DF_CYBERLAW,1.0  Summary of adoption of e-commerce legislation (UNCTAD)
+  SPC,DF_DIGITAL_DEVELOPMENT,1.0  Digital development
+  SPC,DF_DISABILITY,1.0  Disability statistics
+  SPC,DF_ECOLEAD,1.0  COVID-19 economic lead indicators
+  SPC,DF_EDUCATION,1.0  Education Attainment by country age, sex, urbanisation, and disability status
+  SPC,DF_EGOV,1.0  E-Government development index
+  SPC,DF_EMPLOYED,1.0  Employed population by education, occupation and economic sector
+  SPC,DF_EMPLOYED_FTPT,1.0  Employed population by full-time/part-time employment
+  SPC,DF_EMPLOYED_HHCOMP,1.0  Employed population by household composition
+  SPC,DF_EMPLOYED_OCCUPATION,1.0  Employed population by occupation
+  SPC,DF_EMPLOYED_SECTOR,1.0  Employed population by economic sector
+  SPC,DF_EMPRATES,1.0  Labour force participation rates and unemployment rates
+  SPC,DF_ENERGY,1.0  Energy indicators
+  SPC,DF_ENV_TAXES,1.0  Environmental Taxes
+  SPC,DF_FISHING_LOCATION_HIES,1.0  Food security: Number and proportion of households by geography, sex, age and urbanization in the Pacific which were involved fishing in various fishi
+  SPC,DF_FISHING_METHOD_HIES,1.0  Food security: Number and proportion of households by geography, sex, age and urbanization in the Pacific which were involved fishing using various me
+  SPC,DF_FOOD_NUTRIENTS,1.0  Food nutrients
+  SPC,DF_FOOD_SECURITY_HIES_1,1.0  Food security: Income and expenditure indicators by poverty and food security status, by geography, sex, age and urbanization (Kiribati, Solomon Islan
+  SPC,DF_FOOD_SECURITY_HIES_2,1.0  Food security: Number and proportion of households by poverty, food security status and food activity, by geography, sex, age and urbanization from th
+  SPC,DF_FOOD_SECURITY_HIES_3,1.0  Food security: Nutritional facts by type of food, by geography, sex, age and urbanization (Kiribati, Solomon Islands and Vanuatu)
+  SPC,DF_FOOD_SECURITY_PHC_1,1.0  Food security: Number of households engaged in crops, livestock, fishing and handicraft, by geography, sex, age, urbanization and wealth (Kiribati, Tu
+  SPC,DF_FOOD_SECURITY_PHC_2,1.0  Food security: Number of households engaged in crops by type of crop, by geography, sex, age, urbanization and wealth (Kiribati, Tuvalu and Vanuatu)
+  SPC,DF_FOOD_SECURITY_PHC_3,1.0  Food security: Number of households engaged in livestock by type of animal, by geography, sex, age, urbanisation and wealth (Kiribati, Tuvalu and Vanu
+  SPC,DF_GFS,1.0  Government Finance Statistics
+  SPC,DF_GWG,1.0  Gender Pay Gap in Wages by country, urbanisation, and disability status
+  SPC,DF_HEALTH,1.0  Health indicators
+  SPC,DF_HEALTH_FACILITIES,1.0  Health facilities
+  SPC,DF_HHCOUNTS,1.0  Household counts, population and average household size
+  SPC,DF_HHEXP,1.0  Household expenditure
+  SPC,DF_HHHEAD,1.0  Household Head by sex, country, urbanisation, occupation, economic sector, household composition and disability status
+  SPC,DF_HRMI,1.0  Selection of indicators from the Human Rights Measurement Initiative (HRMI)
+  SPC,DF_IMFFAS,2.0  Financial Access Survey
+  SPC,DF_IMTS,4.1  International Merchandise Trade Statistics (IMTS)
+  SPC,DF_KAVA,1.0  Kava
+  SPC,DF_KEYFACTS,1.0  About PICTs
+  SPC,DF_LABEMP,1.0  Population by labour force and employment status
+  SPC,DF_LAND_USE,1.0  Land areas of Pacific Island Countries and Territories
+  SPC,DF_LIVESTOCK,1.0  Food security: Number and proportion of households by geography, sex, age and urbanization in the Pacific who were involved in raising livestock
+  SPC,DF_MARITAL_STATUS,1.0  Married women aged 15-17 by country, urbanisation, and disability status
+  SPC,DF_METEO_MONITOR_NET,1.0  Meteorological monitoring network
+  SPC,DF_MICS,1.0  Selection of indicators from the Multiple Indicator Cluster Surveys programme (MICS) for PICTs
+  SPC,DF_NATIONAL_ACCOUNTS,1.0  Gross Domestic Product for Pacific Island Countries and Territories
+  SPC,DF_NCSI,1.0  Selection of National Cyber Security Index (NCSI) indicators for Pacific Island Countries and Territories
+  SPC,DF_NEET,1.0  NEET - Youth not in education, employment or training (15-24 years)
+  SPC,DF_NMDI,1.0  National Minimum Development Indicators (NMDI) - All topics
+  SPC,DF_NMDI_DEV,1.0  National Minimum Development Indicators (NMDI) for Human Development
+  SPC,DF_NMDI_EDU,1.0  National Minimum Development Indicators (NMDI) for Education
+  SPC,DF_NMDI_FIS,1.0  National Minimum Development Indicators (NMDI) for Fisheries, Aquaculture, Agriculture and Forestry
+  SPC,DF_NMDI_HEA,1.0  National Minimum Development Indicators (NMDI) for Public Health
+  SPC,DF_NMDI_INF,1.0  National Minimum Development Indicators (NMDI) for Communication and Infrastructure
+  SPC,DF_NMDI_OTH,1.0  National Minimum Development Indicators (NMDI) for other topics not elsewhere classified
+  SPC,DF_NMDI_POP,1.0  National Minimum Development Indicators (NMDI) for Population
+  SPC,DF_OLYMPICS,1.0  Olympic games
+  SPC,DF_OVERSEAS_VISITORS,2.0  Overseas visitor arrivals
+  SPC,DF_PACCOMTRADE_KI_HS2022,1.0  Pacific Commodity Trade Dataset for Kiribati (PACComtrade, HS2022 Classification)
+  SPC,DF_PACCOMTRADE_TO_HS2017,1.0  Pacific Commodity Trade Dataset for Tonga (PACComtrade, HS2017 Classification)
+  SPC,DF_PACCOMTRADE_TV_HS2022,1.0  Pacific Commodity Trade Dataset for Tuvalu (PACComtrade, HS2022 Classification)
+  SPC,DF_PAM,1.0  Pacific aid and development finance data from the Lowy Institute
+  SPC,DF_POCKET,3.1  Pocket summary (latest available value per year)
+  SPC,DF_POP_AGE,1.0  Population structure by age
+  SPC,DF_POP_COAST,2.0  Coastal population (1, 5 and 10km from coast)
+  SPC,DF_POP_DENSITY,1.0  Population densities
+  SPC,DF_POP_LECZ,1.0  Population living in low elevation coastal zones (0-10m and 0-20m above sea level)
+  SPC,DF_POP_PROJ,3.0  Population projections
+  SPC,DF_POP_SEX,1.0  Population structure by sex
+  SPC,DF_POP_URBAN,1.0  Degree of urbanization
+  SPC,DF_POWER_GEN,1.0  Power generation
+  SPC,DF_PRISON,1.0  Persons held in prisons
+  SPC,DF_PUBLIC_DEBT,1.0  Public debt
+  SPC,DF_RESERVES,1.0  Reserves
+  SPC,DF_REVENUE,1.0  Government Revenue Statistics
+  SPC,DF_SAM_CATCH,2.0  Fish stock assessment of Tuna, Billfish and Sharks in the Pacific Ocean
+  SPC,DF_SDG,4.4  Sustainable Development Goals (all)
+  SPC,DF_SDG_01,4.4  Sustainable Development Goal 01 - No Poverty
+  SPC,DF_SDG_02,4.4  Sustainable Development Goal 02 - Zero Hunger
+  SPC,DF_SDG_03,4.4  Sustainable Development Goal 03 - Good Health and Well-Being
+  SPC,DF_SDG_04,4.4  Sustainable Development Goal 04 - Quality Education
+  SPC,DF_SDG_05,4.4  Sustainable Development Goal 05 - Gender Equality
+  SPC,DF_SDG_06,4.4  Sustainable Development Goal 06 - Clean Water and Sanitation
+  SPC,DF_SDG_07,4.4  Sustainable Development Goal 07 - Affordable and Clean Energy
+  SPC,DF_SDG_08,4.4  Sustainable Development Goal 08 - Decent Work and Economic Growth
+  SPC,DF_SDG_09,4.4  Sustainable Development Goal 09 - Industry, Innovation and Infrastructure
+  SPC,DF_SDG_10,4.4  Sustainable Development Goal 10 - Reduced Inequalities
+  SPC,DF_SDG_11,4.4  Sustainable Development Goal 11 - Sustainable Cities and Communities
+  SPC,DF_SDG_12,4.4  Sustainable Development Goal 12 - Responsible Consumption and Production
+  SPC,DF_SDG_13,4.4  Sustainable Development Goal 13 - Climate Action
+  SPC,DF_SDG_14,4.4  Sustainable Development Goal 14 - Life Below Water
+  SPC,DF_SDG_15,4.4  Sustainable Development Goal 15 - Life on Land
+  SPC,DF_SDG_16,4.4  Sustainable Development Goal 16 - Peace, Justice and Strong Institutions
+  SPC,DF_SDG_17,4.4  Sustainable Development Goal 17 - Partnerships for the Goals
+  SPC,DF_SOCECO,1.0  COVID-19 socio-economic impact indicators
+  SPC,DF_STRI,1.0  Services Trade Restrictions Index
+  SPC,DF_TOURISM_ARRIVALS,1.0  Tourism Arrivals
+  SPC,DF_TOURISM_EARNINGS,1.0  International tourism earnings
+  SPC,DF_TRADE_FOOD,2.0  Pacific food and beverage trade: The Pacific Food Trade Database
+  SPC,DF_TRADE_ICT,1.0  Digital economy: Trade in ICT products and services
+  SPC,DF_TRADE_SERVICES,1.0  International trade in services
+  SPC,DF_UIS,1.0  Thematic indicators on Education (UIS/UNESCO data)
+  SPC,DF_UPU,1.0  Selection of indicators from the Universal Postal Union (UPU)
+  SPC,DF_VAW,1.0  Violence against women
+  SPC,DF_VITAL,1.0  Vital statistics
+  SPC,DF_WASH,1.0  Selection of Water, Sanitation and Hygiene (WASH) indicators for Pacific Island Countries and Territories
+  SPC,DF_WASTE,1.0  Municipal solid waste
+  SPC,DF_WBDAI,1.0  Selection of indicators from World Bank Digital Adoption Index (WB DAI) for Pacific Island Countries and Territories
+  SPC,DF_WBWDI,1.0  Selection of World Bank World Development Indicators (WB WDI) for Pacific Island Countries and Territories
+  SPC,DF_WBWGI,1.0  Selection of World Bank Worldwide Governance Indicators (WB WGI) for Pacific Island Countries and Territories
+  SPC,DF_YOUTH_PARL,1.1  Youth Representation in Parliament
