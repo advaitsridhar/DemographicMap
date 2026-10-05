@@ -117,6 +117,10 @@ def nationalities_text(broken=False):
                   f"Other {AR}",
                   line("Others", [0, 0, 0] + triple(1, 1) + triple(1, 1)),
                   line("Total", [0, 0, 0] + triple(f, m) + triple(f, m + (1 if broken else 0)))]
+    # The real table closes on the kingdom's total again, after the last block.
+    kf = sum(census_cells(j)[3] for j in range(12))
+    km = sum(census_cells(j)[4] for j in range(12))
+    lines.append(line("Total", [0, 0, 0] + triple(kf, km) + triple(kf, km)))
     return "\n".join(lines)
 
 
@@ -189,6 +193,12 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(made, inside(census_cells(0)))
         self.assertIn("abroad left out", amman["ethnicity_note"])
         self.assertEqual(amman["ethnicity"][0]["group"], "Jordanian")
+
+    def test_religion_and_language_say_why_they_are_empty(self):
+        row = self.rows["g1"]
+        self.assertEqual(row["religion"]["status"], "not_available")
+        self.assertIn("publishes no religion table", row["religion"]["note"])
+        self.assertIn("does not ask language", row["language"]["note"])
 
     def test_median_from_the_census_groups(self):
         self.assertEqual(self.rows["g4"]["median_age"]["year"], 2015)

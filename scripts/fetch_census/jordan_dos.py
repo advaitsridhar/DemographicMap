@@ -73,6 +73,15 @@ SOURCE_CENSUS = ("Department of Statistics (Jordan), Population and Housing Cens
                  "Tables 3.1, 3.4 and 8.1")
 LICENCE = "Department of Statistics (Jordan), published statistics"
 DECISION = "19 September 2026"
+NO_RELIGION = (
+    "Jordan's 2015 census asked each person's religion (its household form puts it beside "
+    "sex and nationality: " + QUESTIONNAIRE + "), but the Department of Statistics publishes "
+    "no religion table from it: the census's person tables (3.1 to 3.19, by population "
+    "category, age, households, residence, health insurance and marriage) and its other "
+    "series carry none, so no governorate's religion is published.")
+NO_LANGUAGE = (
+    "Jordan's 2015 census does not ask language: its questionnaire (" + QUESTIONNAIRE + ") "
+    "has no language or mother-tongue question, and no census table carries one.")
 # The DoS's governorate names, as its tables spell them, -> the map's labels.
 GOVERNORATES = {
     "Amman": "Amman", "Capital": "Amman", "Balqa": "Balqa", "Al-Balqa": "Balqa",
@@ -277,7 +286,8 @@ def read_nationalities(text: str) -> dict[str, dict[str, Any]]:
 
     Every Total row must be either its section's countries (a subtotal) or
     all the governorate's countries so far (its grand total, which the table
-    does not print for every governorate); the governorate's countries are
+    does not print for every governorate) -- or the kingdom's, which the
+    table prints again at its very end; the governorate's countries are
     checked against Table 3.1's non-Jordanians afterwards.
     """
     out: dict[str, dict[str, Any]] = {}
@@ -313,7 +323,10 @@ def read_nationalities(text: str) -> dict[str, dict[str, Any]]:
         check(cells[2] + cells[5] == cells[8],
               f"jordan_dos: Table 8.1 {current} {country}: rural and urban are not the total")
         if country == "Total":
-            check(cells[8] in (section_sum, out[current]["countries"]),
+            # The table closes on the kingdom's total again, after Aqaba's block.
+            kingdom = out["kingdom"]["countries"] if "kingdom" in out and current != "kingdom" \
+                else None
+            check(cells[8] in (section_sum, out[current]["countries"], kingdom),
                   f"jordan_dos: Table 8.1 {current}: a Total of {cells[8]:,} is neither its "
                   f"section's {section_sum:,} nor the governorate's {out[current]['countries']:,}")
             out[current]["subtotals"] += 1
@@ -420,6 +433,8 @@ def build(year: int, estimates: dict[str, dict[str, int]], totals: dict[str, lis
                 "name and the rest by region. 'Palestinian' is Palestinian nationality "
                 "(chiefly people from Gaza), not Jordanians of Palestinian origin, who are "
                 "Jordanian."),
+            religion=gap(NOT_AVAILABLE, NO_RELIGION),
+            language=gap(NOT_AVAILABLE, NO_LANGUAGE),
             sources=sources))
     return rows
 
