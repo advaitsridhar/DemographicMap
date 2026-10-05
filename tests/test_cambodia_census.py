@@ -63,6 +63,12 @@ class AnnexTest(unittest.TestCase):
         self.assertEqual(annex[1]["districts"][102]["communes"][10202]["name"],
                          "Bat Trang Cheung")
 
+    def test_a_name_and_its_figures_on_two_more_lines(self):
+        page = PAGE.replace("10202 Bat Trang 3 12 6 6 100.0 4.0",
+                            "10202 Bat Trang\nCheung\n3 12 6 6 100.0 4.0")
+        annex = kh.parse_annex([page])
+        self.assertEqual(annex[1]["districts"][102]["communes"][10202]["n"], (3, 12, 6, 6))
+
     def test_a_misspelt_total_row(self):
         annex = kh.parse_annex([PAGE.replace("Total 10 40", "Toatl 10 40")])
         self.assertEqual(annex[1]["n"], (10, 40, 20, 20))
