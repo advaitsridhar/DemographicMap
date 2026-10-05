@@ -1,25 +1,138 @@
-== kosis 101,DT_1PM1502
-  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do']
-    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd']
-    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'ext/js/jqgrid/grid.locale-en.js']
-    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
-  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['right_layout.do', 'statHtmlContent.do']
-    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js', 'ext/js/jqgrid/grid.locale-en.js']
-  POST https://kosis.kr/statHtml/statHtmlContent.do -> 200, 287,424 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['InterList.do', 'LoginView.do', 'SvcMetaDcDtaPopup.do']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd']
-    form 'ParamInfo' action='/statHtml/statHtmlContent.do' inputs=['jsonStr', 'orgId', 'tblId']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'fusioncharts/themes/fusioncharts.theme.fusion.js?v=20241024']
-    objVarId A: 22 items, e.g. ['전국', '동부', '읍부']
-    objVarId SBB: 4 items, e.g. ['계', '남자', '여자']
-    objVarId B: 20 items, e.g. ['합계', '0~4세', '5~9세']
-    objVarId 13999001: 13 items, e.g. ['계', '종교있음-계', '불교']
-    objVarId period: 1 items, e.g. ['기간']
-    ~ g_defaultClassArr = new Array; var g_defaultItmArr = new Array; var g_maxLvl=0; var g_htmlGrid=""; var g_ThtmlGrid=""; var g_cmmt=""; var g_chart; var popupCmmtY; var popupX; var g_colDimRowCnt; var g_cellIdx; var g_timePopType=false; var g_timePopCnt=0; var g_timeCnt=0; var g_itmCnt=0; var g_classCnt=0; var g_itemMultiply = 0; var g_multiplication = 0; var g_classEachCnt = new Array(); var g_classVie
-    ~ downGridSubmit(){ var view = $(":radio[name='downGridFileType']:checked").val(); var viewSubKind; //2020.09.21 xls 파일은 데이터가 256열 이상이면 에러남 if(view == "xls"){ if($("#mainTable thead").children("tr:last-child").children("th").length > 256){ alert( "256열 이상의 XLS 파일은 생성할 수 없습니다." ); return; } } fn_searchCond(); $(".confirmBtn").hide(); $(".loadingBtn").show(); var sort = $(":radio[name='prdSort']:checked").val(); if( document.getElementById("downAsc").checked == true){ document.getElementById("prdSortAsc").checked = true; }else{ document.getElementById("prdSortDesc").checked = true } var dataOpt2 = $("#dataOpt2 option:selected").val(); if( document.getElementById("codeYn").checked == true){ if( dataOpt2 == "ko"){ $("#dataOpt").val("cdko"); }else if( dataOpt2 == "en"){ $("#dataOpt").val("cden"); } } var enableCellUnit = $("#enableCellUnit").val(); if( document.getElementById("CellUnit_remote").checked == true){ document.getElementById("enableCellUnit").checked = true; }else{ document.getElementById("enableCellUnit").checked = false; } var periodCo = $("#periodCo option:selected").val(); if( document.getElementById("PtypeOri").checked == true){ $("#periodCo").append("<option value='99'>99</option>"); $("#periodCo").val("99"); } if( $(":checkbox[name='expDash']").is(":checked") == true ){ form.expDash.value = "Y"; }else{ form.expDash.value = "N"; } if( $(":checkbox[name='smblYn']").is(":checked") == true ){ g_param_smblYnChk = "Y"; }else{ g_param_smblYnChk = "N"; } if(view == "xls" || view == "xlsx"){ if(view == "xls"){ if( $(":checkbox[name='downGridCellMerge']").is(":checked") == true ){ viewSubKind = "2_1_1"; }else{ viewSubKind = "2_2_1"; } }else{ if( $(":checkbox[name='downGridCellMerge']").is(":checked") == true ){ viewSubKind = "2_1"; }else{ viewSubKind = "2_2"; } } }else if(view == "csv"){ viewSubKind = "2_3"; }else if(view == "txt"){ viewSubKind = "2_4"; }else if(view == "sdmx"){ var sdmxType = $(":radio[name='downGridSdmxType']:checked").val(); if(sdmxType == "dsd"){ viewSubKind = "2_6_D"; }else{ var sdmxDataType = $("#sdmxDataType").val(); if(sdmxDataType == "generic"){ viewSubKind = "2_6_G"; }else{ viewSubKind = "2_6_C"; } } } form.smblYn.value = g_param_smblYnChk; form.view.value = view; form.viewSubKind.value = viewSubKind; form.viewKind.value = "2"; $.ajax({ dataType : 'json', type : 'POST', url : '/statHtml/downGrid.do', data : $("#ParamInfo").serialize(), success : function(response,status){ var file = response.file; form.action = "/statHtml/downNormal.do"; form.file.value = file; form.submit(); form.file.value = ""; $(".confirmBtn").show(); $(".loadingBtn").hide(); }, error : function(error){ alert( "에러가 발생했습니다!" ); $(".confirmBtn").show(); $(".loadingBtn").hide(); } }); form.viewSubKind.value = ""; form.smblYn.value = ""; if( sort == "asc"){ document.getElementById("prdSortAsc").checked = true; }else{ document.getElementById("prdSortDesc").checked = true } $("#dataOpt").val(dataOpt2); if( enableCellUnit == "Y"){ document.getElementById("enableCellUnit").checked = true; }else{ document.getElementById("enableCellUnit").checked = false; } if( document.getElementById("PtypeOri").checked == true){ $("#periodCo option:last").remove(); $("#periodCo")
-    ~ downGridSubmit();">다운로드</a></span> <span class="loadingBtn" style="display:none;">다운로드 파일을 생성하고 있습니다. 잠시만 기다려주십시오.</span> </div> <div class="shortLay"> <h2 class="arr_blue">통계표 파일서비스</h2> <p class="text">- 자료량이 많은 통계표로 미리 생성한 파일을 제공합니다. </p> <p class="goBtn"><a href="javascript:openMass('K');"><img src="images/shortcutBtn.gif" alt="바로가기" /></a></p> </div> </div> </div> </div> <!-- 10,000 셀 초과 200,000셀 이하 파일다운로드 --> <script type="text/javascript"> //<![CDATA[ window.onload = function(){ $("#downLarge_lay").show(); $("#loading_lay").hide(); } function fn_close_timePop(){ g_timePopType = true; popupControl('pop_downlarge', 'hide', 'modal'); }; function fn_downLargeSubmit(){ fn_searchCond(); var view = $(":radio[name='downLargeFileType']:checked").val(); var viewSubKind; if(view == "excel"){ viewSubKind = "2_7_1"; }else if(view == "csv"){ viewSubKind = "2_7_2"; } form.view.value = view; form.viewSubKind.value = viewSubKind; form.itemMultiply.value = g_itemMultiply; form.dimCo.value = g_dimCo; //2013.12.26 viewKind 수정 form.viewKind.value = "2"; $("#downLargeMetaHref").attr("href", "#"); $("#downLarge_lay").hide(); $("#loading_lay").show(); $.ajax({ dataType : 'json', type : 'POST', url : "/statHtml/makeLarge.do", data : $("#ParamInfo").serialize(), success : function(response,status){ $("#loading_lay").hide(); $("#downLarge_lay").show(); $("#downLargeMetaHref").attr("href", "javascript:fn_metaDown('large');"); var file = response.file; form.action = "/statHtml/downLarge.do?file=" + file; form.submit(); form.viewSubKind.value = ""; }, error : function(error){ $("#loading_lay").hide(); $("#downLarge_lay").show(); $("#downLargeMetaHref").attr("href", "javascript:fn_metaDown('large');"); form.viewSubKind.value= ""; alert( "에러가 발생했습니다!" ); } }); form.viewSubKind.value = ""; // 2014.04.25 대용량다운로드가 오래걸려 취소하고 조회를 하면 조회에 다운로드 코드가 찍힘으로 수정 - 김경호 } //]]> </script> </head> <body> <div id="pop_downlarge" class="modalPopup" style="height:490px;"> <div id="pop_downglarge2"> <div class="pop_top"> 다운로드<span class="closeBtn"><a href="javascript:popupControl('pop_downlarge', 'hide', 'modal')">X 닫기</a></span> </div> <div class="pop_content2"> <div class="downLargeList"> <h1 class="bu_circle">파일형태</h1> <div class="fileList" style="height:22px;"> <p> <div style="float: right; margin-bottom: 5px;"> <span class="btn_r grayBtn"><a id="downLargeMetaHref" href="javascript:fn_metaDown('large');">메타자료받기 (TXT)</a></span> </div> <input type="radio" name="downLargeFileType" id="downLargeExcel" value="excel" checked="checked"/> <img src="images/ico_excel.png" alt="EXCEL" title="EXCEL"/><label for="downLargeExcel"> EXCEL</label> <input type="radio" name="downLargeFileType" id="downLargeCSV" value="csv" style="margin-left:10px;" /> <img src="images/ico_csv.png" alt="CSV" title="CSV"/><label for="downLargeCSV"> CSV</label> </p> </div> <div style="margin-top:10px; position:relative;"> <div style="width:250px;"><h1 class="bu_circle" style="width:250px;">통계표구성</h1></div> <div style="padding-right:5px; position:absolute; top:1px; right:0px;"><input type="checkbox" id="exprYn" name="exprYn" value="Y" /><label for="exprYn">&nbsp;코드포함</label></div> </div> <div class="fileList">
+https://www.stat.gov.kg/media/publicationarchive/8b892242-eaa9-446d-94b2-7ba7aadcb340.pdf: 161 pages
+--- page 4 ---
+СОДЕРЖАНИЕ
+I. Предисловие…………………………………………………………………….. 6
+II. Методологические принципы………………………………………………... 7
+III. Общий обзор по Кыргызской Республике ………... ...................................... 11
+IV. Иссык-Кульская область……………………………… ……………………… 12
+1. Территория и население Иссык-Кульской области………………… ……. 12
+1.1.        Административно-территориальное устройство…………………………… 12
+1.2 Численность наличного городского  сельского населения……………………. 14
+1.3. Изменение численности наличного городского и сельского населения
+в межпереписные периоды……………………………………………………… 15
+1.4. Численность постоянного городского и сельского населения……………….. 16
+1.5. Изменение численности постоянного городского и сельского населения
+в межпереписные периоды……………………………………………………… 17
+1.6. Удельный вес постоянного городского и сельского населения……………… 18
+17
+2. Население по полу и возрасту ………………………………………………… 19
+2.1. Численность постоянного населения по полу и территории………………….. 20
+2.2. Изменение численности постоянного населения по полу и территории
+в межпереписные периоды………………………………………………………. 21
+2.3. Удельный вес мужчин и женщин в общей численности постоянного
+населения по территории……………………………………………………….... 22
+2.4. Соотношение мужчин и женщин по территории………………………………. 23
+2.5. Численность постоянного городского и сельского населения районов,
+городов, поселков городского типа и крупных айылов по полу……………… 24
+2.6. Численность отдельных возрастных групп городского и сельского
+постоянного населения…………………………………………………………... 25
+2.7. Численность постоянного городского и сельского населения
+по полу и возрасту………………………………………………………………... 26
+2.8. Численность постоянного городского и сельского населения
+по полу,  возрастным группам и территории ………………………………….. 27
+2.9. Численность наличного и постоянного населения ( временно проживающего
+и временно отсутствующего  населения) по полу и
+территории……………………………………………………………………... 40
+3. Население по этническому составу и языку…………………………………. 41
+3.1. Численность постоянного населения по этническому
+составу…………………………………………………………………………….  42
+3.2. Распределение населения по наиболее многочисленным этническим
+группам и территории………………………………………………… 43
+3.3. Распределение постоянного городского и сельского населения отдельных
+этнических групп по возрастным группам……………………………………… 46
+3.4. Распределение населения отдельных этнических групп по родному языку…..  68
+3.5. Распределение населения отдельных этнических групп в возрасте 15 лет       и
+старше по владению вторым  языком………………………………………… 70
+49
+4. Население по образованию……………………………………………………... 72
+4.1. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу и территории………………………………… 74
+4
+--- page 5 ---
+4.2. Уровень образования населения  в возрасте 10 лет и старше по полу              и
+территории……………………………………………………………………… 75
+4.3. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу, возрастным группам и территории………………………. 76
+4.4. Уровень образования населения в возрасте 10 лет и старше по полу и
+возрастным группам……………………………………………………… 94
+4.5. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, этническому составу, полу и территории……………………….  98
+4.6. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных учреждений, полу, возрасту  и территории………………… 103
+4.7. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных учреждений, полу, возрасту и территории (на 1000
+населения)………………………………………………………………………… 113
+4.8. Численность детей в возрасте 7 -15 лет, обучающихся и не обучающихся
+в образовательных учреждениях, по полу, возрасту и территории…………... 115
+4.9. Численность детей, посещающих дошкольные организации по территории… 121
+96
+5. Население по состоянию в браке………………………………………………. 122
+5.1. Численность мужчин и женщин в возрасте 15 лет и старше по состоянию
+в браке, возрастным группам и территории……………………………………. 123
+5.2 Численность мужчин и женщин, состоящих и ранее состоявших в браке, по
+отдельным возрастным группам  и территории………………………………...  135
+5.3. Численность мужчин и женщин отдельных этнических групп в возрасте 15
+лет и старше по состоянию в браке……………………………………………... 137
+109
+6. Фертильность женщин…………………………………………………………... 140
+6.1. Численность городских и сельских женщин в возрасте 15 лет и старше по
+возрастным группам и числу рожденных детей……………………………….. 141
+6.2. Численность городских и сельских женщин в возрасте 15 лет и старше по
+состоянию в браке и числу рожденных детей………………………………….. 147
+6.3. Распределение городских и сельских  женщин в возрасте 15 лет и старше по
+числу рожденных и живых детей……………………………………………….. 148
+6.4. Численность женщин отдельных этнических групп в возрасте 15 лет
+и старше по числу рожденных детей……………………………………………. 149
+Приложение………………………………………………………………………
+№1.Перечень административно -территориальных изменений между
+переписями за 1970-2022гг……………………………………………………… 150
+№1.Формы переписных листов 1, 2, 3,4,5…………… …………………………
+5
+--- page 28 ---
+мужч
+ины женщины мужч ины женщины
+ Иссык-Кульская область
+ Все население 534 472 266 583 267 889 100 100
+    в том числе в возрасте, лет:
+        0-4 59 638 30 356 29 282 11,4 10,9
+        5-9 59 654 30 346 29 308 11,4 10,9
+        10-14 58 758 30 007 28 751 11,3 10,7
+        15 10 019 5 129 4 890 1,9 1,8
+        16-19 35 577 18 001 17 576 6,7 6,6
+        20-24 37 034 18 343 18 691 6,9 7,0
+        25-29 38 522 19 518 19 004 7,3 7,1
+        30-34 40 951 21 202 19 749 7,9 7,4
+        35-39 35 289 18 112 17 177 6,8 6,4
+        40-44 29 604 14 990 14 614 5,6 0,5
+        45-49 26 633 13 407 13 226 5,0 4,9
+        50-54 24 939 12 573 12 366 4,7 4,6
+        55-59 23 341 11 144 12 197 4,2 4,6
+        60-64 22 015 10 139 11 876 3,8 4,4
+        65-69 14 684 6 538 8 146 2,5 3,0
+        70-74 9 156 3 871 5 285 1,5 2,0
+        75-79 3 442 1 307 2 135 0,5 0,8
+        80-84 3 251 1 058 2 193 0,4 0,8
+        85-89 1 432 436 996 0,2 0,4
+        90-99 507 104 403 0,0 0,2
+       100 лет и старше 26 2 24 0,0 0,0
+       Из
+ обще
+й численности-
+      население в возрасте, лет:
+      моложе трудоспособного 188 069 95 838 92 231 35,9 34,4
+      трудоспособном 293 294 153 706 139 588 57,7 52,1
+      старше трудоспособного 53 109 17 039 36 070 6,4 13,5
+      0-6 84 109 42 853 41 256 16,1 15,4
+      0-14 178 050 90 709 87 341 34,0 32,6
+      7-17 123 192 62 774 60 418 23,5 22,6
+      14-28 124 080 62 535 61 545 23,5 23,0
+      14-35 180 857 91 840 89 017 33,8 33,2
+      18 лет и старше 327 171 160 956 166 215 60,4 62,0
+      Средний возраст населения, лет 28,6 27,8 29,4 - -
+            по полу, возрастным группам и территории
+В процентах к итогуОба пола,
+человек
+   2.8. Численность постоянного городского и сельского населения
+в том числе
+28
+  ... more pages match; stopped at 3
