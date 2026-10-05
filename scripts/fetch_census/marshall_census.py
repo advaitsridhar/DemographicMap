@@ -313,11 +313,23 @@ def build(tables: dict[str, Any], report: dict[str, Any], admin1: list[dict[str,
     return records
 
 
+# The Internet Archive's copies of the same two files, for when the office's
+# download plugin refuses this client: it has answered 406 Not Acceptable to
+# the build's requests while serving the probe's, and a refusal is not worked
+# around here -- the archived copy is the same publication, fetched openly.
+ARCHIVED = {
+    TABLES_URL: "http://web.archive.org/web/20250708141021id_/" + TABLES_URL,
+    REPORT_URL: "http://web.archive.org/web/20250126234711id_/" + REPORT_URL,
+}
+
+
 def pages_of(url: str) -> list[str]:
     from pypdf import PdfReader  # noqa: PLC0415
-    # The office's download plugin answers 406 to a client that does not say
-    # it accepts a PDF; asking for the type it publishes is all this does.
-    blob = http_get(url, binary=True, timeout=600, headers={"Accept": "application/pdf,*/*"})
+    try:
+        blob = http_get(url, binary=True, timeout=600, headers={"Accept": "application/pdf,*/*"})
+    except Exception as err:            # noqa: BLE001 -- reported, then the archive
+        log(f"  {url}: {type(err).__name__}: {err}; reading the Internet Archive's copy")
+        blob = http_get(ARCHIVED[url], binary=True, timeout=600)
     check(isinstance(blob, bytes) and blob[:5] == b"%PDF-", f"marshall_census: {url} is no PDF")
     return [(page.extract_text() or "") for page in PdfReader(io.BytesIO(blob)).pages]
 
