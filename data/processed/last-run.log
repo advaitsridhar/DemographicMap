@@ -1,14 +1,4 @@
-sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
-  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
-    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
-    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-  THA admin2: 926 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
-  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
-  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  wrote data/processed/sea_cod_ps_age.json (2689 kB)
-  wrote sea_cod_ps_age.json: 1194 records
+
+== GET https://data.humdata.org/api/3/action/package_show?id=cod-ps-afg
+  200 application/json;charset=utf-8 27160 https://data.humdata.org/api/3/action/package_show?id=cod-ps-afg
+    > {"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "batch": "49d866fb-8faf-4218-8f10-9ddf7a689bb0", "caveats": "Population figures from the original data have been rounded off to the nearest integer.", "cod_level": "cod-standa
