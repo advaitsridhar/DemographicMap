@@ -347,6 +347,24 @@ class OnItsSide(unittest.TestCase):
         _block, why, _note = bt.choose_gewog("Barshong", annex, read, True)
         self.assertIsNotNone(why)
 
+    def test_a_nameless_block_goes_to_the_gewog_whose_row_it_is(self):
+        # A heading spelt otherwise ("GASE TSHOGOM" for Gase Tshogongm): the
+        # block is kept without a name, and Table 2.1's exact row places it.
+        first, second = self.pages()
+        first = [[(x0, x1, "GNOHSRABX" if t == "GNOHSRAB" else t) for x0, x1, t in r]
+                 for r in first]
+        singles, totals = single_years()
+        annex = bt.annex_ages([singles, first, second], ["Barshong", "Kilkhorthang"])
+        self.assertEqual(len(annex["nameless"]), 1)
+        read = table21(totals)
+        block, why, _note = bt.choose_gewog("Barshong", annex, read, False)
+        self.assertIsNone(why)
+        self.assertEqual(block["male"], series(MALES))
+        # Kilkhorthang's row is not that block's, so it keeps its own.
+        block, why, _note = bt.choose_gewog("Kilkhorthang", annex, read, False)
+        self.assertIsNone(why)
+        self.assertEqual(block["male"], series(FEMALES))
+
     def test_a_figure_under_no_column_spoils_the_page(self):
         first, second = self.pages()
         first[5].append((300.0, 304.0, "9"))

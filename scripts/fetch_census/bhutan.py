@@ -1139,12 +1139,14 @@ def rotated_page(rows, names: dict[str, str], carried: Any
         downward = " ".join(w for _at, w in sorted(parts))
         name = names.get(fold(upward)) or names.get(fold(downward))
         headings.append((x0, name, upward))
+    # A column labelled "All" is a gewog's All Chiwogs, or a town's All
+    # Local Areas; the word "Chiwogs" beside it is sometimes lost.
     alls = sorted({column_at(x0) for x0, word, _at in labels
                    if word == "All" and column_at(x0) is not None})
     found: dict[str, list[dict[str, list[int]]]] = {}
     for col in alls:
-        if not any(word == "Chiwogs" and column_at(x0) == col
-                   for x0, word, _at in labels):
+        if any(word in ("Local", "Areas") and column_at(x0) == col
+               for x0, word, _at in labels):
             continue
         left = [h for h in headings if h[0] < columns[col]]
         owner = left[-1][1] if left else carried
@@ -1156,13 +1158,15 @@ def rotated_page(rows, names: dict[str, str], carried: Any
         if sexes and not {"Male", "Female"} <= sexes:
             problems.append(f"the columns after All Chiwogs are labelled {sorted(sexes)}")
             continue
+        block = {"persons": filled.get(col), "male": filled.get(col + 1),
+                 "female": filled.get(col + 2)}
         if not owner:
-            problems.append("an All Chiwogs column under "
-                            + (repr(left[-1][2]) if left else "no heading"))
+            # Kept, nameless: Table 2.1's own totals may still say whose it is.
+            heading = left[-1][2] if left else "no heading"
+            problems.append(f"an All Chiwogs column under {heading!r}")
+            found.setdefault("", []).append(block)
             continue
-        found.setdefault(owner, []).append(
-            {"persons": filled.get(col), "male": filled.get(col + 1),
-             "female": filled.get(col + 2)})
+        found.setdefault(owner, []).append(block)
     # A heading Table 2.1 does not name -- a town's -- is only a problem where
     # it owns an All Chiwogs column, and that is reported above.
     ending = headings[-1][1] if headings else carried
@@ -1186,6 +1190,7 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
     placed: list[int] = []
     problems: list[str] = []
     alternates: dict[str, list[dict[str, list[int]]]] = {}
+    nameless: list[dict[str, list[int]]] = []
     rotated = 0
     mode: str | None = None
     current: str | None = None
@@ -1202,7 +1207,9 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
             problems += [f"Table A2.7 on its side: {p}" for p in trouble]
             for name, blocks in found.items():
                 for block in blocks:
-                    if name in gewogs:
+                    if not name:
+                        nameless.append(block)
+                    elif name in gewogs:
                         problems.append(f"Table A2.7 on its side: more than one All "
                                         f"Chiwogs block under {name}; Table 2.1 "
                                         "decides which")
@@ -1301,8 +1308,8 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
                 if words[0] == "Female":
                     pending = None
     return {"single": single, "all_ages": all_ages, "gewogs": gewogs,
-            "alternates": alternates, "placed": placed, "rotated": rotated,
-            "problems": problems}
+            "alternates": alternates, "nameless": nameless, "placed": placed,
+            "rotated": rotated, "problems": problems}
 
 
 def single_outcome(dzongkhag: str, annex: dict[str, Any], read: "Read",
@@ -1406,7 +1413,17 @@ def choose_gewog(name: str, annex: dict[str, Any], read: "Read", excess_ok: bool
     """
     blocks = [annex["gewogs"].get(name), *annex.get("alternates", {}).get(name, [])]
     reason = None
-    for block in blocks:
+    # A block found under no name Table 2.1 knows -- its heading spelt
+    # otherwise ("GASE TSHOGOM" for Gase Tshogongm), or lost -- is this
+    # gewog's only where its persons, males and females are exactly this
+    # gewog's Table 2.1 row, and no other unclaimed block's are.
+    pool = [*annex.get("nameless", []),
+            *(b for other, bs in annex.get("alternates", {}).items()
+              if other != name for b in bs)]
+    want = (read.gewogs[name], *read.sexes[name])
+    exact = [b for b in pool if b.get("persons") and b.get("male") and b.get("female")
+             and (b["persons"][-1], b["male"][-1], b["female"][-1]) == want]
+    for block in [*blocks, *(exact if len(exact) == 1 else [])]:
         why = gewog_outcome(name, block, read, excess_ok)
         if why is None:
             people = block["persons"][-1]
