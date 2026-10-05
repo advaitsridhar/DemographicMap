@@ -176,6 +176,10 @@ EARLIER_NAMES: dict[str, list[str]] = {
     "созакский": ["Suzakskiy"],            # the census's spelling of Suzak
     "алматы": ["Almaty (Alma-Ata)"],       # the city of republican significance
     "аягоз": ["Ayagozskiy"],               # 2009: Ayagoz city akimat, the district since
+    "джангельдинский": ["Dzhangildinskiy"],  # the 2009 census's spelling
+    "имени габита мусрепова": ["Tselinniy"],   # keys are names without 'район'
+    "габита мусрепова": ["Tselinniy"],
+    "т.рыскулова": ["Lugovskoy"],
 }
 
 # Units the boundary file does not draw, by the drawn polygon each lies in

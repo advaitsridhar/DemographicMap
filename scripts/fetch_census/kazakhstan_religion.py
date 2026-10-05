@@ -148,8 +148,10 @@ def blocks(body: str) -> dict[tuple[str, str], dict[str, str]]:
             sex = "women"
         m = LINE.match(line)
         if not m:
-            # A label wrapped onto the next line ('Енбекшильдерский' / 'район ...').
-            if re.search(r"(район|г\.а|акимат|[а-я]ский)$", low) or pending:
+            # A label wrapped onto the next line ('Енбекшильдерский' / 'район ...',
+            # 'Район Магжана' / 'Жумабаева ...').
+            if (re.search(r"(район|г\.а|акимат|[а-я]ский)$", low) or low.startswith("район ")
+                    or pending):
                 pending = f"{pending} {line}".strip()
             continue
         label = f"{pending} {m.group('label')}".strip() if pending else m.group("label")
