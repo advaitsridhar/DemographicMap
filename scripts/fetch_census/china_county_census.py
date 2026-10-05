@@ -162,7 +162,7 @@ def fetch_table(base: str, table: str) -> tuple[list[list[Any]], str]:
 NAME_QUERY = """
 SELECT ?code ?zh WHERE {
   ?item wdt:P442 ?code ; wdt:P17 wd:Q148 .
-  FILTER(REGEX(STR(?code), "^[0-9]{2} ?[0-9]{2} ?[0-9]{2}$"))
+  FILTER(REGEX(STR(?code), "^[0-9]{2}( ?[0-9]{2}){0,2}$"))
   FILTER NOT EXISTS { ?item wdt:P576 ?gone . }
   ?item rdfs:label ?zh . FILTER(LANG(?zh) IN ("zh", "zh-hans", "zh-cn"))
 }
@@ -170,11 +170,14 @@ SELECT ?code ?zh WHERE {
 
 
 def fetch_names() -> int:
-    """{six-figure GB/T 2260 code: [its current Chinese names]}, from Wikidata."""
+    """{six-figure GB/T 2260 code: [its current Chinese names]}, from Wikidata.
+    Wikidata writes a province's code in two figures ("63") and a prefecture's
+    in four ("63 01"); both are padded to the six the yearbooks' codes use."""
     from fetch_wikidata import sparql, value  # noqa: PLC0415 (scripts/ is on the path)
     names: dict[str, set[str]] = {}
     for row in sparql(NAME_QUERY, cache=False, retries=2):
         code = re.sub(r"\s", "", value(row, "code") or "")
+        code = code + "0" * (6 - len(code)) if len(code) in (2, 4) else code
         if re.fullmatch(r"\d{6}", code) and value(row, "zh"):
             names.setdefault(code, set()).add(compact(value(row, "zh")))
     NAMES.parent.mkdir(parents=True, exist_ok=True)
