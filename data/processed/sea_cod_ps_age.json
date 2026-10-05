@@ -7561,7 +7561,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 42665,
+      "year": 2023,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
     },
     "median_age": {
       "value": 43.0,
@@ -7586,7 +7588,7 @@
     },
     "sources": [
       {
-        "field": "median_age/sex_ratio",
+        "field": "population/median_age/sex_ratio",
         "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023",
         "url": "https://data.humdata.org/dataset/cod-ps-tha",
         "year": 2023,
@@ -7599,6 +7601,7 @@
     "aliases": [
       "Bang Sai (1)"
     ],
+    "population_note": "OCHA's COD-PS for the country, reference year 2023: a projection, as every other district's head count here is; this one shares its romanised name with another district of its province and was placed by its district office. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2023: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
   },
@@ -7614,7 +7617,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 12067,
+      "year": 2023,
+      "source": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023"
     },
     "median_age": {
       "value": 45.1,
@@ -7639,7 +7644,7 @@
     },
     "sources": [
       {
-        "field": "median_age/sex_ratio",
+        "field": "population/median_age/sex_ratio",
         "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-tha), reference year 2023",
         "url": "https://data.humdata.org/dataset/cod-ps-tha",
         "year": 2023,
@@ -7652,6 +7657,7 @@
     "aliases": [
       "Bang Sai (2)"
     ],
+    "population_note": "OCHA's COD-PS for the country, reference year 2023: a projection, as every other district's head count here is; this one shares its romanised name with another district of its province and was placed by its district office. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2023: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
   },
