@@ -1,20 +1,15 @@
-https://data.bantenprov.go.id/dataset/02718813-6df5-4caf-a681-e38ef420b055/resource/ca4503c1-5765-4e7d-bd56-97f95b9162b9/download/3.1.2-a.xlsx: HTTP 200 5,136 B
-  sheets: ['Sheet1']
-  -- 'Sheet1': 17 rows
-      0 | Kelompok umur 20 | value
-      1 | 0 - 4 | 503.55
-      2 | 5 - 9 | 532.33
-      3 | 10 - 14 | 529.24
-      4 | 15 - 19 | 512.04
-      5 | 20 - 24 | 517.35
-      6 | 25 - 29 | 532.87
-      7 | 30 - 34 | 526.06
-      8 | 35 - 39 | 515.12
-      9 | 40 - 44 | 479.98
-     10 | 45 - 49 | 437.69
-     11 | 50 - 54 | 375.51
-     12 | 55 - 59 | 304.89
-     13 | 60 - 64 | 233.86
-     14 | 65 - 69 | 161.13
-     15 | 70 - 74 | 97.45
-     16 | 75+ | 61.78
+turkmenistan_census: 2022 census, volumes 2 and 4
+  Ashgabat city: 1,030,063 people
+  Ahal velayat: 886,845 people
+  Balkan velayat: 529,895 people
+  Dashoguz velayat 20–24 years: '168 04' read as one figure, the only reading that adds up
+  Dashoguz velayat: 1,550,354 people
+  Lebap velayat: 1,447,298 people
+  Mary velayat: 1,613,386 people
+    Ahal: 1,916,908, median 28.0, ratio 98.2, Turkmen 93.9%, Turkmen 94.2%
+    Balkan: 529,895, median 27.7, ratio 101.7, Turkmen 93.7%, Turkmen 93.9%
+    Dasoguz: 1,550,354, median 26.9, ratio 99.9, Turkmen 67.5%, Turkmen 71.6%
+    Lebap: 1,447,298, median 27.7, ratio 100.1, Turkmen 89.3%, Turkmen 96.1%
+    Mary: 1,613,386, median 27.2, ratio 101.0, Turkmen 92.1%, Turkmen 92.6%
+  admin2: 59 districts given the reason
+  wrote data/processed/turkmenistan_census.json (233 kB)
