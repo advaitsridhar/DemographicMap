@@ -105,6 +105,20 @@ class Annex(unittest.TestCase):
         with self.assertRaises(SystemExit):
             bt.check_annex("Tsirang", annex, read)
 
+    def test_a_gewog_running_onto_the_next_page(self):
+        # Bumthang's Ura: the heading and a chiwog on one page, then the
+        # table's title printed again and the All Chiwogs rows under it.
+        pages, totals = report()
+        a27 = pages[1]
+        at = next(i for i, r in enumerate(a27) if r[0][2] == "KILKHORTHANG") + 2
+        title = row("Table", "A2.7", "Population", "by", "Age,", "Sex,", "Chiwog",
+                    "and", "Gewog/Town,", "Tsirang", "Dzongkhag", "2017")
+        pages[1:2] = [a27[:at], [row("ANNEX", "2:", "Statistical", "Tables"), title,
+                                 row("Gewog/Town/"), *a27[at:]]]
+        annex = bt.annex_ages(pages, ["Barshong", "Kilkhorthang"])
+        self.assertEqual(set(annex["gewogs"]), {"Barshong", "Kilkhorthang"})
+        bt.check_annex("Tsirang", annex, table21(totals))
+
     def test_the_median_of_the_single_years(self):
         pages, _totals = report()
         annex = bt.annex_ages(pages, ["Barshong", "Kilkhorthang"])

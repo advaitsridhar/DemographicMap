@@ -950,7 +950,13 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
                 mode = "single"
                 continue
             if AGE_GEWOG in line:
-                mode, current, pending = "gewog", None, None
+                # The title is printed again at the top of every page the
+                # table runs onto, and a gewog's chiwogs run across pages:
+                # Bumthang's Ura starts on one page and has its All Chiwogs
+                # rows on the next. Only the first title opens the table;
+                # a repeat keeps the gewog it interrupts.
+                if mode != "gewog":
+                    mode, current, pending = "gewog", None, None
                 continue
             if LATER_TABLE.search(line):
                 mode = None
@@ -1115,6 +1121,7 @@ def main() -> int:
     records: list[dict[str, Any]] = []
     absent: list[str] = []
     refused: list[str] = []
+    unread_ages: list[str] = []
     national = 0
     males = females = 0
     urban_total = 0
@@ -1134,11 +1141,19 @@ def main() -> int:
         urban_total += sum(towns.values())
         log(f"  {dzongkhag}: {len(gewogs)} gewogs, {len(towns)} town(s), "
             f"{printed:,} people")
-        annex = annex_ages(words_by_row(blob), gewogs)
-        check_annex(dzongkhag, annex, read)
-        log(f"    Tables A2.6 and A2.7: {len(annex['single'])} single years to "
-            f"Table 2.1's {printed:,}, and {len(gewogs)} gewogs' age groups to "
-            "their Table 2.1 rows, persons, males and females")
+        # Every report's annex is read before any refusal, so that one run
+        # names every layout this reader does not yet follow rather than
+        # the first of them.
+        try:
+            annex = annex_ages(words_by_row(blob), gewogs)
+            check_annex(dzongkhag, annex, read)
+        except SystemExit as err:
+            unread_ages.append(str(err))
+            annex = None
+        else:
+            log(f"    Tables A2.6 and A2.7: {len(annex['single'])} single years to "
+                f"Table 2.1's {printed:,}, and {len(gewogs)} gewogs' age groups to "
+                "their Table 2.1 rows, persons, males and females")
         age_cite = [{"field": "median_age", "name": AGE_SOURCE, "url": url,
                      "license": LICENCE}]
 
@@ -1190,7 +1205,7 @@ def main() -> int:
             sex_ratio=ratio,
             sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
             sources=cite(ratio) + age_cite,
-            **dzongkhag_median(annex)))
+            **(dzongkhag_median(annex) if annex else {})))
         for name, people in sorted(gewogs.items()):
             male, female = read.sexes[name]
             ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
@@ -1226,8 +1241,15 @@ def main() -> int:
                 sex_ratio=ratio,
                 sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
                 sources=cite(ratio) + age_cite,
-                **gewog_median(annex["gewogs"][name])))
+                **(gewog_median(annex["gewogs"][name]) if annex else {})))
 
+    for line in unread_ages:
+        log(f"  AGES NOT READ -- {line}")
+    if unread_ages:
+        raise SystemExit(
+            f"bhutan: the annex age tables of {len(unread_ages)} of "
+            f"{len(wanted)} dzongkhag reports were refused (above); refusing "
+            "to write a Bhutan with medians for only some of them")
     for line in absent:
         log(f"  NOT READ -- {line}")
     if absent:
