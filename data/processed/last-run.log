@@ -1,72 +1,2642 @@
-bhutan: National Statistics Bureau, PHCB 2017 Table 2.1
-  Bumthang: 4 gewogs, 2 town(s), 17,820 people
-    Tables A2.6 and A2.7: 113 single years to Table 2.1's 17,820, and 4 gewogs' age groups to their Table 2.1 rows, persons, males and females
-  Chhukha: 11 gewogs, 5 town(s), 68,966 people
-    Chhukha/Maedtabkha -> labelled 'Metap'
-  Dagana: 14 gewogs, 5 town(s), 24,965 people
-    Dagana/Karmaling -> labelled 'Deorali'
-    Dagana/Karna -> labelled 'Kalidzingkha'
-    Dagana/Khebisa -> labelled 'Khipisa'
-  Gasa: 4 gewogs, 2 town(s), 3,952 people
-  Haa: 6 gewogs, 2 town(s), 13,655 people
-    Haa/Gakiling -> shape 84629894B40252407393905 (labelled 'Gakiling')
-    Haa/Sangbay -> labelled 'Sombey'
-  Lhuentse: 8 gewogs, 2 town(s), 14,240 people
-  Monggar: 17 gewogs, 6 town(s), 37,150 people
-  Paro: 10 gewogs, 2 town(s), 43,362 people
-    Paro/Dokar -> labelled 'Doga'
-    Paro/Nagya -> labelled 'Naja'  (by the two lists closing, not by a point)
-  Pema Gatshel: 11 gewogs, 8 town(s), 23,632 people
-    Pema Gatshel/Dungmaed -> labelled 'Dungmin'
-    Pema Gatshel/Norboogang -> shape 84629894B84199937092772 (labelled 'Norbugang')
-  Punakha: 11 gewogs, 2 town(s), 27,360 people
-    Punakha/Barp -> labelled 'Bapisa'
-  Samdrup Jongkhar: 11 gewogs, 3 town(s), 35,079 people
-    Samdrup Jongkhar/Orong -> labelled 'Jangchhubling'
-  Samtse: 15 gewogs, 3 town(s), 62,590 people
-    Samtse/Doomtoed -> labelled 'Dungtoe'  (by the two lists closing, not by a point)
-    Samtse/Dophuchen -> labelled 'Dorokha'
-    Samtse/Norboogang -> shape 84629894B7629980605125 (labelled 'Chengmari')
-    Samtse/Norgaygang -> labelled 'Bara'
-    Samtse/Pemaling -> labelled 'Biru'
-    Samtse/Phuentshogpelri -> labelled 'Pagli'
-    Samtse/Sang-Ngag- -> labelled 'Chargharay'
-    Samtse/Tashichhoeling -> labelled 'Sipsu'
-  Sarpang: 12 gewogs, 2 town(s), 46,004 people
-    Sarpang/Chhudzom -> labelled 'Doban'
-    Sarpang/Gakiling -> shape 84629894B8166759987677 (labelled 'Hiley')
-    Sarpang/Samtenling -> labelled 'Bhur'
-    Sarpang/Tareythang -> labelled 'Taklai'
-  Thimphu: 8 gewogs, 2 town(s), 138,736 people
-    Thimphu/Darkarla -> labelled 'Dagala'  (by the two lists closing, not by a point)
-  Trashi Yangtse: 8 gewogs, 2 town(s), 17,300 people
-    Trashi Yangtse/Tongmajangsa -> labelled 'Tomzhangtshen'  (by the two lists closing, not by a point)
-    Trashi Yangtse/Yangtse -> labelled 'Trashiyangtse'  (by the two lists closing, not by a point)
-  Trashigang: 15 gewogs, 6 town(s), 43,741 people
-  Trongsa: 5 gewogs, 2 town(s), 19,960 people
-  Tsirang: 12 gewogs, 2 town(s), 22,376 people
-    Tsirang/Patshaling -> labelled 'Beteni'
-    Tsirang/Sergithang -> labelled 'Patakla'
-  Wangdue Phodrang: 15 gewogs, 3 town(s), 42,186 people
-    Wangdue Phodrang/Darkar -> labelled 'Daga'  (by the two lists closing, not by a point)
-  Zhemgang: 8 gewogs, 3 town(s), 17,763 people
-    Tables A2.6 and A2.7: 113 single years to Table 2.1's 17,763, and 8 gewogs' age groups to their Table 2.1 rows, persons, males and females
-  AGES NOT READ -- bhutan: Chhukha: Table A2.6 age 84: (6, 0, 13) do not add up
-  AGES NOT READ -- bhutan: Dagana: Table A2.7 has no All Chiwogs row for ['Dorona', 'Drukjeygang', 'Gesarling', 'Gozhi', 'Karmaling', 'Karna', 'Khebisa', 'Largyab', 'Lhamoi Dzingkha', 'Nichula', 'Tashiding', 'Tsangkha', 'Tsenda-Gang', 'Tseza']
-  AGES NOT READ -- bhutan: Gasa: Table A2.6 is missing ages [51]
-  AGES NOT READ -- bhutan: Haa: Table A2.7 has no All Chiwogs row for ['Bji', 'Gakiling', 'Kar-tshog', 'Samar', 'Sangbay', 'Uesu']
-  AGES NOT READ -- bhutan: Lhuentse: Table A2.6 counts 14,437 and Table 2.1 14,240
-  AGES NOT READ -- bhutan: Monggar: Table A2.6 has no All Ages row or no single years
-  AGES NOT READ -- bhutan: Paro: Table A2.6 counts 46,316 and Table 2.1 43,362
-  AGES NOT READ -- bhutan: Pema Gatshel: Table A2.7 has no All Chiwogs row for ['Chhimoong', 'Chhoekhorling', 'Chongshing', 'Dechhenling', 'Dungmaed', 'Khar', 'Nanong', 'Norboogang', 'Shumar', 'Yurung', 'Zobel']
-  AGES NOT READ -- bhutan: Punakha: Table A2.6 counts 28,740 and Table 2.1 27,360
-  AGES NOT READ -- bhutan: Samdrup Jongkhar: Table A2.7 has no All Chiwogs row for ['Dewathang', 'Gomdar', 'Langchenphu', 'Lauri', 'Martshala', 'Orong', 'Pemathang', 'Phuentshogthang', 'Samrang', 'Serthig', 'Wangphu']
-  AGES NOT READ -- bhutan: Samtse: Table A2.7 has no All Chiwogs row for ['Doomtoed', 'Dophuchen', 'Duenchhukha', 'Namgyalchhoeling', 'Norboogang', 'Norgaygang', 'Pemaling', 'Phuentshogpelri', 'Samtse', 'Sang-Ngag-', 'Tading', 'Tashichhoeling', 'Tendruk', 'Ugyentse', 'Yoeseltse']
-  AGES NOT READ -- bhutan: Sarpang: Table A2.6 is missing ages [92]
-  AGES NOT READ -- bhutan: Thimphu: Table A2.7 has no All Chiwogs row for ['Chang', 'Darkarla', 'Ge-nyen', 'Kawang', 'Lingzhi', 'Maedwang', 'Naro', 'Soe']
-  AGES NOT READ -- bhutan: Trashi Yangtse: Table A2.7 has no All Chiwogs row for ['Boomdeling', 'Jamkhar', 'Khamdang', 'Ramjar', 'Toedtsho', 'Tongmajangsa', 'Yalang', 'Yangtse']
-  AGES NOT READ -- bhutan: Trashigang: Table A2.6 counts 45,518 and Table 2.1 43,741
-  AGES NOT READ -- bhutan: Trongsa: Table A2.6 is missing ages [92]
-  AGES NOT READ -- bhutan: Tsirang/Patshaling: Table A2.7 persons groups add up to 1,147, not 1,159
-  AGES NOT READ -- bhutan: Wangdue Phodrang: Table A2.7 has no All Chiwogs row for ['Athang', 'Bjenag', 'Dangchhu', 'Darkar', 'Gangteng', 'Gase Tshogongm', 'Gase Tshowogm', 'Kazhi', 'Nahi', 'Nyishog', 'Phangyuel', 'Phobji', 'Ruebisa', 'Saephu', 'Thedtsho']
-bhutan: the annex age tables of 18 of 20 dzongkhag reports were refused (above); refusing to write a Bhutan with medians for only some of them
+probe_pdf: https://stats.gov.tv/download/85/population-and-housing-census/1836/tuvalu_2022_census_report.pdf
+  10,674,813 bytes
+  65 pages
+probe_pdf: 65 pages, 21 mention ['eligio', 'thnic', 'anguage', 'Median', 'median', 'Nui', 'Vaitupu']
+=== front matter ===
+TUVALU
+2022 CENSUS ON  
+POPULATION AND 
+HOUSING 
+ANALYTICAL REPORT 
+
+
+ 
+Noumea, New Caledonia
+March 2025
+TUVALU
+2022 CENSUS ON  
+POPULATION AND 
+HOUSING
+ANALYTICAL REPORT 
+© Copyright Pacific Community (SPC) and Central Statistics Division (CSD) 2025
+All rights for commercial/for profit reproduction or translation, in any form, is reserved. SPC 
+and Tuvalu CSD authorises the partial reproduction or translation of this material for scientific, 
+educational or research purposes, provided that SPC and Tuvalu CSD and the source document 
+are properly acknowledged. Permission to reproduce the document and/or translate in whole, 
+in any form, whether for commercial/for profit or non-profit purposes, must be requested in 
+writing. Original work may not be altered or separately published without permission.
+Disclaimer: While efforts have been made to ensure the accuracy and reliability of the material 
+contained in this report, SPC and Tuvalu CSD cannot guarantee that the information is free from 
+errors and omissions, and does not accept any liability, contractual or otherwise, for the content 
+of this report or any consequences arising from its use.
+Original text: English
+Pacific Community Cataloguing-in-publication data
+Tuvalu 2022 census on population and housing: analytical report
+1. Census – Tuvalu – Statistics. 
+2. Population – Tuvalu – Statistics. 
+3. Housing – Tuvalu – Statistics. 
+4. Households – Tuvalu – Statistics. 
+5. Data collection – Tuvalu.
+I.  Title II. Pacific Community 
+319.099682                                                                                              AACR2
+ISBN:  978-982-00-1617-0
+Cover photo: UNDP Climate
+Layout: Gaëlle Le Gall-Queguineur
+Prepared for publication at SPC’s headquarters,  
+B.P . D5, 98848 Noumea Cedex, New Caledonia, 2025 
+www.spc.int | spc@spc.int
+i
+TV 2022 Census report
+Contents
+LIST OF TABLES  ....................................................................................................................................................... IV
+LIST OF FIGURES  ..................................................................................................................................................... VI
+ACKNOWLEDGEMENTS  .........................................................................................................................................VIII
+ FOREWORD  ............................................................................................................................................................IX
+1.  COUNTRY CONTEXT  ............................................................................................................................................. 1
+1.1.   Geography ........................................................................................................................................................................... 1
+1.2.   Brief history ..........................................................................................................................................................................1
+1.3.   Key indicators ...................................................................................................................................................................... 2
+1.4.   Sustainable Development Goal indicators ...............................................................................................................3
+2.  DEMOGRAPHIC CHARACTERISTICS  ..................................................................................................................... 5
+2.1.   Population count ...............................................................................................................................................................5
+2.2.   Population distribution ...................................................................................................................................................5
+2.3.   Population density ............................................................................................................................................................7
+2.4.   Age and sex composition ...............................................................................................................................................8
+3.  SOCIO-CULTURAL CHARACTERISTICS  ................................................................................................................ 10
+3.1.   Household occupants ....................................................................................................................................................10
+3.2.   Religion and ethnicity ....................................................................................................................................................11
+3.3.   Place and country of birth and nationality ............................................................................................................12
+3.4.   Marital status composition ..........................................................................................................................................13
+4.  LITERACY , EDUCATION AND TECHNOLOGY  ........................................................................................................ 14
+4.1.   Literacy ................................................................................................................................................................................14
+4.2.   School attendance and enrolment ...........................................................................................................................14
+4.3.   Highest qualification ......................................................................................................................................................15
+4.4.   Access to information and communications technologies ..............................................................................15
+5.  EMPLOYMENT AND ECONOMIC WELL-BEING    ................................................................................................. 18
+5.1.   Economic activity ............................................................................................................................................................18
+5.2.   Industry of employment  ..............................................................................................................................................19
+5.3.   Occupational distribution  ...........................................................................................................................................21
+5.4.   Youth unemployment ....................................................................................................................................................21
+ii
+TV 2022 Census report
+6.  FISHERIES, AGRICULTURE, LIVESTOCK AND HANDICRAFTS  ............................................................................... 22
+6.1.   Fishing .................................................................................................................................................................................22
+6.2.   Agriculture .........................................................................................................................................................................22
+6.3.   Livestock .............................................................................................................................................................................24
+6.4.   Handicrafts .........................................................................................................................................................................26
+7.  PEOPLE WITH DISABILITY  ................................................................................................................................. 28
+7.1.   Method used to collect data on disability ..............................................................................................................28
+7.2.   Disability prevalence by severity and location .....................................................................................................28
+7.3.   Disability type and location .........................................................................................................................................29
+7.4.   Disability status and care ..............................................................................................................................................30
+8.  HEALTH STATUS AND RISK FACTORS  .................................................................................................................. 31
+8.1.   Reported health conditions .........................................................................................................................................31
+8.2.   Non-communicable diseases ......................................................................................................................................32
+8.3.   Alcohol, kava and tobacco consumption ...............................................................................................................33
+9.  COMPONENTS OF POPULATION CHANGE  .......................................................................................................... 34
+9.1.   Fertility and entry into motherhood ........................................................................................................................34
+9.1.1.  Age at first birth: Marker of entry into motherhood ..............................................................................34
+9.1.2.  Lifetime fertility and completed family size ..............................................................................................35
+9.1.3.  Current or period fertility .................................................................................................................................37
+9.2.   Mortality and life expectancy .....................................................................................................................................38
+9.2.1.  Infant and under-five mortality rates ...........................................................................................................38
+9.2.2.  Age patterns of mortality and trends in life expectancy at birth ......................................................39
+9.3.   Population movement ...................................................................................................................................................41
+9.3.1.  International migration .....................................................................................................................................41
+9.3.2.  Internal migration ...............................................................................................................................................41
+10.  HOUSING CHARACTERISTICS  ...........................................................................................................................43
+10.1.   Tenure ................................................................................................................................................................................43
+10.2.   Type of living quarters .................................................................................................................................................44
+10.3.   Housing structure .........................................................................................................................................................44
+10.4.   Energy for cooking and lighting ..............................................................................................................................47
+10.5.   Water and sanitation ....................................................................................................................................................48
+10.6.   Solid waste services .....................................................................................................................................................49
+11.  REFERENCES  ....................................................................................................................................................51
+iii
+TV 2022 Census report
+ABBREVIATIONS AND ACRONYMS
+CSD Central Statistics Division
+HH household
+NCD Non-communicable disease
+PHC Population and Housing Census
+iv
+TV 2022 Census report
+1.  List of Tables
+Table 1.  Key indicators, 2022 ................................................................................................................................................... 2
+Table 2.  Sustainable Development Goal indicators, 2022 ............................................................................................ 3
+Table 3.  Distribution and growth rate of resident population by island of enumeration, 2002–2022 .........6
+Table 4.  Size and growth rate of resident population by home island, 2002–2022 ............................................7
+Table 5.  Population density by island, 2022 .......................................................................................................................7
+Table 6.  Resident population by broad age group, dependency ratio, sex ratio and median age, 2022 ....9
+Table 7.  Households and occupants enumerated in private households, 2022 .................................................10
+Table 8.  People in private households and their relationships to the household head, 2022.......................10
+Table 9.  Birthplace of the resident population, 2022 ...................................................................................................12
+Table 10.  Percentage of the resident population aged 5 years and over and 15 years and over by literacy 
+status and language of literacy, 2022 ...................................................................................................................................14
+Table 11.  Resident population aged 3–19 years attending school in 2022 .........................................................14
+Table 12.  Internet access by island and sex, 2022 .........................................................................................................16
+Table 13.  Labour force indicators ........................................................................................................................................18
+Table 14.  Percentage of residents aged 15 years and over by type of industry, according to the 
+International Standard Industry Classification (ISIC), 2022 ...........................................................................................20
+Table 15.  Fishing methods used in the last 30 days and location, 2022................................................................22
+Table 16.  Vegetables harvested in the last 30 days, 2022 ...........................................................................................22
+Table 17.  Fruits harvested in the last 30 days, 2022 ......................................................................................................23
+Table 18.  Crops harvested in the last 30 days, 2022 .....................................................................................................24
+Table 19.  Households raising livestock, 2017–2022 .....................................................................................................24
+Table 20.  Population of livestock, 2017–2022 .................................................................................................................24
+Table 21.  Disability classification based on the Washington Group on Disability Statistics  .........................28
+Table 22.  Population aged five years and over by disability classification and location, 2022 .....................29
+Table 23.  Population aged five years and over experiencing lots of difficulties (Grade 2) or “cannot do” a 
+task (Grade 3) by type of disability and location, 2022 ...................................................................................................29
+Table 24.  Population aged five years and over experiencing lots of difficulties (Grade 2) or “cannot do” a 
+task (Grade 3) by a care provider, 2022 ................................................................................................................................30
+Table 25.  Distribution of resident population by illness status 30 days before the census, 2022 ................31
+Table 26.  Age at first birth and proportion of childless women by age group, 2017–2022 ...........................34
+List of tables
+v
+TV 2022 Census report
+Table 27.  Distribution of women by age and total number of children born, 2022 .........................................35
+Table 28.  Mean number of children ever born by age group, 1968–2022 ...........................................................36
+Table 29.  Average completed family size per woman aged 45–49 years by island, 1968–2022 ..................36
+Table 30.  Age-specific death rates by data collection method, 2020–2022 ........................................................40
+Table 31.  Lifetime migration, Tuvalu 2022 .......................................................................................................................41
+Table 32.  Recent migration stream, 2022 .........................................................................................................................42
+Table 33.  Ownership of dwelling, by major region, 2022 ...........................................................................................43
+Table 34.  Ownership of rental dwelling, by major region, 2022 ..............................................................................43
+Table 35.  Percentage distribution of material for main house construction, 2022 ...........................................44
+Table 36.  Main cooking fuels used by households, 2022............................................................................................47
+Table 37.  Sources of lighting, 2022 .....................................................................................................................................47
+Table 38.  Number of private households by toilet type and region, 2022 ...........................................................49
+vi
+TV 2022 Census report
+Map of the Pacific region and Tuvalu (inset) ........................................................................................................................1
+Figure 1.  Total population and annual intercensal growth rate (% per annum), 1921–2022 ..........................5
+Figure 2.  Population distribution by region (Funafuti vs Outer Islands), 1991–2022  ........................................6
+Figure 3.  Resident population distribution by age group and sex, 2022 ................................................................ 8
+Figure 4.  Population pyramids, 2012–2022  ......................................................................................................................8
+Figure 5.  Distribution of resident population by religious affiliation, 2022 .........................................................11
+Figure 6.  Distribution of resident population by ethnicity, 2022 .............................................................................11
+Figure 7.  Resident population by nationality, 2022 ......................................................................................................12
+Figure 8.  Distribution of resident population aged 15 years and over by marital status, 2022 ....................13
+Figure 9.  Percentage of children aged 3–19 years attending school, 2022 and 2017  .....................................15
+Figure 10.  Distribution of resident population by highest achieved qualification, 2022 ...............................15
+Figure 11.  Percentage of resident population aged 10 years and over with internet access by age group, 
+2022  ..................................................................................................................................................................................................16
+Figure 12.  Percentage of resident population aged 10 years and over with a mobile telephone by age 
+and sex, 2022 .................................................................................................................................................................................17
+Figure 13.  Labour force status of resident population, 2022 ....................................................................................18
+Figure 14.  Disparity in labour force indicators by sex, 2022 ......................................................................................19
+Figure 15.  Disparity in labour force indicators by region, 2022 ...............................................................................19
+Figure 16.  Proportion of population by occupation, sex and region, 2022 .........................................................21
+Figure 17.  Unemployment rate of population in age groups 15–19, 20–24, and 25–29 years, by sex and 
+region, 2022....................................................................................................................................................................................21
+Figure 18.  Average number of livestock per household, 2017–2022 ....................................................................25
+Figure 19.  Housing for livestock, 2022 ..............................................................................................................................25
+Figure 20.  Proportion of households producing handicrafts a year before the census, 2022  .....................26
+Figure 21.  Prevalence of disability by age and severity status, 2022 .....................................................................30
+Figure 22.  Reported health conditions in the last 30 days, 2022 .............................................................................31
+Figure 23.  Percentage of reported non-communicable diseases, 2022 ...............................................................32
+Figure 24.  Alcohol, kava and tobacco consumption among the population aged 15 years and over, 2022  
+.............................................................................................................................................................................................................33
+Figure 25.  Distribution of first-time mothers and proportion of women without a live birth, 2022 ..........34
+Figure 26.  Age-specific fertility rates, 2022......................................................................................................................37
+List of figures
+vii
+TV 2022 Census report
+Figure 27.  Indirect estimates of infant mortality rate obtained from various censuses, 1955–2021 .........38
+Figure 28.  Indirect estimates of under-five mortality rate obtained from various censuses, 1955–2021 39
+Figure 29.  Indirect estimates of life expectancy at birth obtained from various censuses, 1955–2021 ...40
+Figure 30.  Percentage of households, by type of living quarter, 2022 ..................................................................44
+Figure 31.  Percentage distribution of roofing materials of dwellings, 2022 .......................................................45
+Figure 32.  Percentage distribution of materials for outer walls of dwellings, 2022 ..........................................45
+Figure 33.  Percentage distribution of materials for floors of dwellings, 2022 ....................................................46
+Figure 34.  Main source of drinking water for households, 2022 .............................................................................48
+Figure 35.  Percentage of households by month of water shortage, 2022 ...........................................................48
+Figure 36.  Water safety, acceptability and sufficiency, 2022 .....................................................................................49
+Figure 37.  Rating of satisfaction with solid waste services, as a percentage by household, 2022 ..............50
+viii
+TV 2022 Census report
+Acknowledgements
+The Central Statistics Division wishes to acknowledge the technical support SPC, ADB, FAO, and 
+ILO provided in designing the tools required for the fieldwork and assisting the coordinator 
+during the interviewer training. CSD also wishes to acknowledge the financial assistance from 
+the World Bank, ADB, UNFPA, and the Government of Tuvalu. Furthermore, acknowledgement 
+is due to the staff of the collection team at the Statistics for Development Division for their help 
+throughout the different phases of the census. CSD also would like to acknowledge Mr Ralph 
+Hakkert and Mr Scott Pontifex for contributing to an earlier draft of the report. 
+It is also important to acknowledge the people of Tuvalu for their willingness to participate 
+in the census and for availing themselves and sacrificing their time to help the interviewers 
+complete the interviews. CSD further wishes to acknowledge the effort the fieldworkers put into 
+completing interviews and other tasks. CSD would also like to commend the work of the Long 
+Form Census (LFC) Management team, particularly in coordinating the activities for the LFC.
+Angus Amasone
+Acting Head, Central Statistics Department
+Ministry of Finance
+Government of Tuvalu
+ix
+TV 2022 Census report
+ Foreword
+The Central Statistics Division (CSD), with the assistance of regional organisations including the 
+Pacific Community (SPC), United Nations Population Fund, Asian Development Bank, World 
+Bank, International Labour Organization, and Food and Agriculture Organization of the United 
+Nations, conducted Tuvalu’s 12th national census in December 2022. 
+Unlike censuses in the past, the 2022 Population and Housing Census (2022 PHC) was combined 
+with the Household Income and Expenditure Survey (HIES), through a Long Form Census. 
+The Long Form Census enabled CSD to collect a range of census and other detailed economic 
+information on the country. The resulting data was used to generate three statistical products: 
+Tuvalu 2022–23 HIES Report; Tuvalu 2023 Monetary Poverty Report; and the current report 
+– the Tuvalu 2022 PHC Analytical Report. This approach – combining a standard census with 
+HIES – was adopted by CSD to address the increasing need for detailed statistical information 
+on a range of areas and to lower the overall cost of data collection. This census analytical report 
+provides information linked to the PHC, such as agriculture, education, environment, fertility, 
+fisheries, health, migration, and other areas of interest to the country. 
+Like other publications by CSD, the statistics published in this report provide decision-makers 
+and planners with a basis for making policies and budgetary decisions. In most instances, 
+the statistics are disaggregated by age, sex, island of enumeration, home island, and other 
+characteristics.
+1
+TV 2022 Census report
+1.  Country context
+1.1.   Geography
+Tuvalu, located north of the Republic of Fiji and south of Kiribati, is a coral atoll nation comprised 
+of nine small islands: Nanumea; Nanumaga; Niutao; Nui; Vaitupu; Nukufetau; Funafuti; 
+Nukulaelae; and Niulakita. Although it has a land area of about 25 square-kilometres, its precise 
+size may differ slightly due to ongoing land reclamation projects since 2015. The land area for 
+Tuvalu sits at an average elevation of less than three metres above sea level, making it vulnerable 
+to adverse climate conditions such as rising sea levels and cyclones (World Bank Group and 
+Asian Development Bank).
+Map of the Pacific region and Tuvalu (inset)
+Source: SPC
+1.2.   Brief history
+Tuvalu was settled by Polynesians, mainly from Tonga or Samoa (Bellwood 1987). Following 
+European contact, Tuvalu and Kiribati were integrated into a single British colony known as the 
+Gilbert and Ellice Islands. Tuvalu, formerly known as the Ellice Islands, gained recognition as a 
+sovereign state on 01 October 1978, with Funafuti as its capital (McIntyre 2012).
+2
+TV 2022 Census report
+1.3.   Key indicators
+1 Population density is calculated using the updated land mass from the LiDAR Survey (Government of Tuvalu 
+2019).
+Table 1.  Key indicators, 2022
+Indicators National Funafuti Outer 
+Islands
+Total population by region of enumeration 10,643 6,613 4,030
+Males 5,507 3,447 2,060
+Females 5,136 3,166 1,970
+Resident population by region of enumeration 10,632 6,602 4,030
+Males 5,498 3,438 2,060
+Females 5,134 3,164 1,970
+Population density1 (person per km2) 423 2,590 178
+Resident population by home island 10,632 6,602 4,030
+Nanumea 1,488 911 577
+Nanumaga 1,167 734 433
+Niutao 1,500 916 584
+Nui 1,016 512 504
+Vaitupu 1,844 930 914
+Nukufetau 1,348 763 585
+Funafuti 1,456 1,413 43
+Nukulaelae 578 272 306
+Niulakita 6 4 2
+Outside Tuvalu 94 58 36
+Not stated 135 89 46
+Median age of resident population by region of residence 24 24 25
+Males 23 23 24
+Females 26 25 26
+Percentage of resident population by age group and region of residence
+Population aged 0–14 years old 34 33.8 34.2
+Population aged 15–59 years old 56 57.7 53.6
+Population aged 60 years and over 10 8.5 12.2
+Demographic indicators
+Sex ratio by region of residence (per 100 females) 107 109 103
+Total fertility rate (per woman) 3.2 3.3 3
+Adolescent fertility rate (per 1,000 women) 24.1 28.2 18
+Life expectancy at birth (years) – Both sexes 76.3
+Infant mortality (per 1,000 live births) – Males 19.1
+Infant mortality (per 1,000 live births) – Females 16.1
+Under-five mortality (per 1,000 live births) – Males 24.3
+Under-five mortality (per 1,000 live births) – Females 23.2
+3
+TV 2022 Census report
+Indicators National Funafuti Outer 
+Islands
+Average intercensal growth rate by region of residence (% per annum) 0.2 0.2 1.3
+Dependency ratio (per 100 Working age persons) 78.8 73.6 88
+Number of households by Island and region of enumeration 1,799 980 819
+Nanumea 126
+Nanumaga 86
+Niutao 122
+Nui 106
+Vaitupu 203
+Nukufetau 107
+Funafuti 980
+Nukulaelae 61
+Niulakita 8
+Average household size (resident population) 6 6.8 5.1
+Number of households on Funafuti by region of home island of head of household
+Nanumea 132
+Nanumaga 102
+Niutao 130
+Nui 68
+Vaitupu 134
+Nukufetau 112
+Funafuti 229
+Nukulaelae 39
+Niulakita 2
+Outside Tuvalu 10
+Not stated 21
+1.4.   Sustainable Development Goal indicators
+Table 2.  Sustainable Development Goal indicators, 2022
+Indicators National Urban Rural Male Female With 
+disability
+Without 
+disability
+1.4.1 Percentage of the population living in households with access to basic services
+ Improved drinking water >99 >98 >99 >99 >98 >98 >99
+ Improved sanitation 96.8 96.8 96.7 97. 0 96.5 94.7 97. 0
+ Individual ownership of a mobile 
+phone 47.7 51.3 41.9 50.0 45.3 48.5 18.7
+ Covered by a mobile network, by 
+technology 47. 6 48.3 46.6  47.4 48.0 47.7 45.3
+3.7 .2 Adolescent birth rate (per 1,000 
+females) 24.1 28.2 18.0
+4
+TV 2022 Census report
+Indicators National Urban Rural Male Female With 
+disability
+Without 
+disability
+5.b.1 Percentage of individuals over 
+age 10 years who own a mobile 
+telephone by sex 
+47.7 - - 50.0 45.3 - -
+6.1.1 Percentage of the population 
+using safely managed drinking water 
+services
+>99 >98 >99 >99 >98 - -
+6.2.1 Percentage of the population 
+using safely managed sanitation 
+services, including a handwashing 
+facility with soap and water
+96.8 96.8 96.7 97. 0 96.5 - -
+7 .1.1 Percentage of population with 
+electricity 87. 8 89.1 85.8 - - - -
+8.5.2 Unemployment rate by sex, age 
+and persons with disabilities 12.6 8.2 20.4 10.9 15.3 16.7 12.6
+9.2.2 Manufacturing employment as 
+a percentage of total employment 0.9 - - - - - -
+17 .8.1 Percentage of individuals over 
+age 10 years using the internet 59.2 60.8 56.6 60.5 57.9 19.1 60.4
+5
+TV 2022 Census report
+2.  Demographic characteristics
+2.1.   Population count
+The total population for Tuvalu, as observed on 12 December 2022, was 10,643. This included 
+10,632 residents and 11 non-residents. However, the count excludes people living outside 
+Tuvalu at the time in which the census was conducted. A total of 54 residents were residing in 
+institutions during the census. Institutions included quarantine centres, workers’ barracks, guest 
+houses, correctional centres and other facilities.
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+4.0
+ -
+ 2,000
+ 4,000
+ 6,000
+ 8,000
+ 10,000
+ 12,000
+1931 1947 1963 1968 1973 1979 1991 2002 2012 2017 2022
+Intercensal growth rate (%)
+Population
+Year
+Population Intercensal Growth Rate
+Figure 1.  Total population and annual intercensal growth rate (% per annum), 1921–2022
+Figure 1 shows that the country’s population decreased from 10,645 in 2017 to 10,643 in 2022, 
+resulting in an intercensal population growth of -0.004%. The highest population growth rate 
+since the first count was conducted in 1931 was witnessed in 1979.
+2.2.   Population distribution
+In 2022, about 62% of the population was counted in Funafuti with the remaining 38% in the 
+Outer Islands. The percentage of the population living in Funafuti has been increasing, as shown 
+in Figure 2. In 1991, about 6 out of 10 people were living in the Outer Islands whereas, in 2022, 
+6 out of 10 people were living in Funafuti, pointing to a significant population re-distribution in 
+the country. 
+6
+TV 2022 Census report
+0%
+20%
+40%
+60%
+80%
+100%
+1991 2002 2012 2017 2022
+Share of country total
+Year
+Outer Islands
+Funafuti
+Figure 2.  Population distribution by region (Funafuti vs Outer Islands), 1991–2022 
+Table 3.  Distribution and growth rate of resident population by island of enumeration, 2002–2022
+Island of 
+enumeration
+Population Intercensal growth rate (% per annum)
+2002 2012 2017 2022 2002–2012 2012–2017 2017–2022
+Funafuti 3,962  5,436  6 , 611   6,602 3.2 3.9 0.0
+Outer Islands 5,397  5,204  3,896  4,030 -0.4 -5.8 0.7
+Nanumea  855  612  495  610 -3.3 -4.2 4.2
+Nanumaga  710  551  384  391 -2.5 -7. 2 0.4
+Niutao  817  694  499  550 -1.6 -6.6 1.9
+Nui  610  729  494  514 1.8 -7. 8 0.8
+Vaitupu 1,310  1,542  1,190  1,007 1.6 -5.2 -3.3
+Nukufetau  701  666  531  581 -0.5 -4.5 1.8
+Nukulaelae  392  364  260  341 -0.7 -6.7 5.4
+Niulakita  2  46  43  36 31.4 -1.3 -3.6
+Tuvalu 9,359 10,640 10,507 10,632 1.3 1.3 0.2
+Overall, Tuval’s resident population increased slightly in 2022 compared to 2017, with a small 
+decrease in Funafuti and a slight increase in the Outer Islands.
+The Vaitupu community had the largest number of people who considered Vaitupu their 
+home island in 2022, a trend that has continued since 2002. Comparing the proportion of the 
+enumerated population to the home islands of people, Nukulaelae had the highest at 59%. This 
+means that nearly 6 out of every 10 persons who declared Nukulaelae their home island were 
+enumerated on Nukulaelae. Second to Nukulaelae was Vaitupu, followed by Nui. The rest of the 
+Outer Islands had a proportion that was less than half.
+7
+TV 2022 Census report
+Table 4.  Size and growth rate of resident population by home island, 2002–2022
+2 The “Other” category includes countries outside Tuvalu and non-responses.
+Home island Population Intercensal growth rate (%)
+2002 2012 2017 2022 2002–2012 2012–2017 2017–2022
+Funafuti  1,004  1,166  1,340  1,456 1.5 2.8 1.7
+Outer Islands  8,217  9,348  9,049  8,947 1.3 -0.7 -0.2
+Nanumea  1,560  1,656  1,603  1,488 0.6 -0.7 -1.5
+Nanumaga  1,063  1,222  1,229  1,167 1.4 0.1 -1.0
+Niutao  1,453  1,424  1,402  1,500 -0.2 -0.3 1.4
+Nui  835  1,034  1,034  1,016 2.1 0.0 -0.4
+Vaitupu  1,694  2,068  1,860  1,844 2.0 -2.1 -0.2
+Nukufetau  1,149  1,381  1,322  1,348 1.8 -0.9 0.4
+Nukulaelae  461  543  568  578 1.6 0.9 0.3
+Niulakita  2  20  31  6 23.0 8.8 -32.8
+Other2  138  126  118   229 -0.9 -0.7 13.3
+Tuvalu  9,359 10,640 10,507 10,632 1.3 1.3 0.2
+2.3.   Population density
+Funafuti is the most densely populated island in Tuvalu, hosting over 60% of the country’s 
+population. In comparison to 2017, the population density in Funafuti increased by about 8% 
+from 2,399 to 2,590 persons per square-kilometre (Central Statistics Division 2017).
+Table 5.  Population density by island, 2022
+Islands Land area (km2), 
+2019
+Total enumerated 
+population, 2022
+Population density 
+(persons/km2)
+Funafuti 2.553  6,613  2,590 
+Nanumea 3.316  610  184 
+Nanumaga 2.909  391  134 
+Niutao 2.309  550  238 
+Nui 3.32  514  155 
+Vaitupu 5.049  1,007  199 
+Nukufetau 3.25  581  179 
+Nukulaelae 2.021  341  169 
+Niulakita 0.413  36  87 
+Tuvalu 25.14  10,643  423 
+It should be noted that the land area for Funafuti and the other Islands has decreased over time 
+primarily due to soil erosion on the small islets, exacerbated by a cyclone submerging one islet. 
+The LiDAR survey compared historical island sizes to their measurements at the time of the 
+study in 2019 but did not include the reclaimed lands in Funafuti, as these were added later 
+(Government of Tuvalu 2019). 
+8
+TV 2022 Census report
+2.4.   Age and sex composition
+800 600 400 200 0 200 400 600 800
+0–4
+5–9
+10–14
+15–19
+20–24
+25–29
+30–34
+35–39
+40–44
+45–49
+50–54
+55–59
+60–64
+65–69
+70–74
+75+
+Count of resident population
+Age group
+FemaleMale
+Figure 3.  Resident population distribution by age group and sex, 2022
+About 6 in 10 persons (60%) in Tuvalu are under 30 years of age, as shown in Figure 3. A dent can 
+be seen in the population pyramid between the ages 35–54 years, an indication, in part, of the 
+out-migration of the working-age population. It is also significant to note that about 13% of the 
+population is under 5 years of age. 
+Funafuti:   Male     Female              Outer Islands 
+500 300 100 100 300 500
+0–4
+5–9
+10–14
+15–19
+20–24
+25–29
+30–34
+35–39
+40–44
+45–49
+50–54
+55–59
+60–64
+65–69
+70–74
+75+
+Count of resident population
+Age group
+2012
+500 300 100 100 300 500
+0–4
+5–9
+10–14
+15–19
+20–24
+25–29
+30–34
+35–39
+40–44
+45–49
+50–54
+55–59
+60–64
+65–69
+70–74
+75+
+Count of resident population
+Age group
+2017
+500 300 100 100 300 500
+0–4
+5–9
+10–14
+15–19
+20–24
+25–29
+30–34
+35–39
+40–44
+45–49
+50–54
+55–59
+60–64
+65–69
+70–74
+75+
+Count of resident population
+Age group
+201720172012 2022
+Figure 4.  Population pyramids, 2012–2022 
+The age structure of the Outer Islands differed from that of Funafuti (Figure 4). The proportion of 
+the working-age population (15–59 years) was higher for Funafuti than that of the Outer Islands. 
+9
+TV 2022 Census report
+In contrast, the proportion of children in the Outer Islands is relatively high, which reflects the 
+relatively high fertility in these areas compared to Funafuti. As a result, the dependency ratios of 
+the Outer Islands were considerably higher (86.2 on average) than those of Funafuti (72.9).
+Table 6.  Resident population by broad age group, dependency ratio, sex ratio and median age, 2022
+Island
+Broad age group  
+(in years) Dependency 
+ratio
+Sex 
+ratio
+Median age 
+(in years)
+0–14 15–59 60+ Total Male Female
+Funafuti 2,233 3,802 567 74 109 24 23 26
+Outer Islands 1,383 2,144 503 88 105 25 24 26
+Nanumea 211 323 76 89 108 26 24 28
+Nanumaga 132 214 45 83 122 24 22 28
+Niutao 184 302 64 82 98 26 23 28
+Nui 165 269 80 91 100 26 27 26
+Vaitupu 340 538 129 87 108 26 24 28
+Nukufetau 210 302 69 92 106 23 22 25
+Nukulaelae 126 179 36 91 84 22 28 19
+Niulakita 15 17 4 112 125 26 20 31
+Total 3,616 5,946 1,070 79 107 24 23 26
+For the country as a whole, the dependency ratio shows about 79 dependents for every 100 
+people of working age (15–59 years of age), representing an increase since the 2012 Census, 
+when the same indicator was 70.6 dependents for every 100 people of working age. The sex 
+ratio has also continued to increase since 1991, suggesting a relatively high female migration out 
+of the country in recent decades. There is also considerable variation in the sex ratio between 
+islands, likely due to differences in migration rates between males and females. It was as low as 
+84 on Nukulaelae but was about 125 on Niulakita and 122 on Nanumaga (Table 6). For the most 
+recent period, the sex ratio shows that, for every 107 males in the country, there are 100 females. 
+© Tuvalu CSD
+10
+TV 2022 Census report
+3.  Socio-cultural characteristics
+3.1.   Household occupants
+A household refers to a family or a group of people who usually eat together and share 
+resources. There were 1,799 households in 2022, representing an 11% increase from the 2017 
+Tuvalu Census. About 55% of the households were enumerated in Funafuti, which is consistent 
+with the proportion of the population living on the island. The average household had about 
+6 members, similar to the figure published in 2017. However, the average household size in 
+Funafuti decreased from 7.4 members in 2017 to 6.7 members in 2022 while it increased in the 
+Outer Islands from 4.5 members in 2017 to 5.1 members in 2022.
+Table 7.  Households and occupants enumerated in private households, 2022
+Island Population Households (HHs)
+Count Distribution Average HH size
+Funafuti 6,602 980 54.5% 6.8
+Outer Islands 4,030 819 45.5% 5.1
+Nanumea 610 126 7. 0 % 4.8
+Nanumaga 391 86 4.8% 4.5
+Niutao 550 122 6.8% 4.6
+Nui 514 106 5.9% 4.9
+Vaitupu 1,007 203 11. 3% 5.4
+Nukufetau 581 107 5.9% 5.7
+Nukulaelae 341 61 3.4% 6.0
+Niulakita 36 8 0.4% 4.5
+Tuvalu 10,632 1,799 100.0% 6.0
+Table 8.  People in private households and their relationships to the household head, 2022
+Members Population Percentage
+2012 2017 2022 2012 2017 2022
+Immediate family  5,747  5,565  6,565  56  58  62 
+Head  1,761  1,626  1,766  17  17  17 
+Spouse  1,072  1,002  1,229  11   11   12 
+Children  2,748  2,744  3,386  27  29  32 
+Parents  166  193  184  2  2  2 
+Other  4,471  3,977  4,067  44  42  38 
+Grandchildren  1,229  1,123  1,444  12  12  14 
+Siblings  235  329  336  2  3  3 
+Aunt/Uncle  177  336  302  2  4  3 
+Cousins  314  254  199  3  3  2 
+Grandparents  10  26  22  0  0  0 
+Nephews/Nieces  671  484  500  7  5  5 
+Not related  648  702  565  6  7  5 
+Other  1,187  723  699  12  8  7 
+Total 10,218  9,542 10,632  100  100  100 
+11
+TV 2022 Census report
+Table 8 shows that about 3 of every 5 household members are immediate family members. The 
+proportion of immediate relatives versus other relatives has risen over the past decade from 
+about 56% in 2012 to 62% in 2022.
+3.2.   Religion and ethnicity
+About 4 in 5 people in Tuvalu are affiliated with the Ekalesia Kelisiano Tuvalu (EKT) 
+religious denomination, making it the largest religious group in the country. The remaining 
+denominations account for about 14%, with the Brethren accounting for the next largest 
+religious group – at 3%.
+EKT, 86%
+SDA, 2%
+Jehovah's 
+Witness, 1%
+Bahaii, 1%
+Brethren, 3%
+AOG, 2%
+Catholic, 1%
+LDS, 1%
+Other, 2%
+None, 0%
+Refused, 0%
+Not stated, 1%
+Other, 14%
+Figure 5.  Distribution of resident population by religious affiliation, 2022
+Tuvaluan, 
+94% Tuvaluan/
+I-Kiribati, 4%
+Tuvaluan/Other, 1%
+Other, 1%
+Not stated, 1%Other, 6%
+Figure 6.  Distribution of resident population by ethnicity, 2022
+About 9 out of every 10 people (90%) are of Tuvaluan ethnicity. Notably, the proportion of 
+people of only Tuvaluan descent increased from 87% in 2012 to 97% in 2017 before slightly 
+decreasing to 94% in 2022. The slight decrease in Tuvaluan ethnicity during the 2022 Census 
+may be partly attributable to the COVID-19 lockdown, which prevented many Tuvaluans in Fiji 
+from returning home during the count. Additionally, 4% of respondents identified as Tuvaluan/ 
+12
+TV 2022 Census report
+I-Kiribati, suggesting a possible increase in intermarriages, which could also contribute to the 
+decrease in the percentage of people identifying as having Tuvaluan nationality. 
+3.3.   Place and country of birth and nationality
+Most residents were born in Funafuti, where the main hospital is located. More than 1 out of 
+every 3 persons enumerated in the Outer Islands were born in Funafuti. Moreover, more than 
+17% of the residents were born outside Tuvalu. Of these, 36% were born in Fiji, 34% in Kiribati, 
+21% in Nauru, and 4% in New Zealand, with the remaining 5% from other countries.
+Table 9.  Birthplace of the resident population, 2022
+Island of 
+enumeration
+Birthplace
+Total
+Nanumea
+Nanumaga
+Niutao
+Nui
+Vaitupu
+Nukufetau
+Funafuti
+Nukulaelae
+Niulakita
+Outside 
+Tuvalu
+Not stated
+Nanumea  610  216  6  11   4  6 6 238 3 0 100 20
+Nanumaga  391  6  132  4  5  5 2 206 2 0 29 0
+Niutao  550  7  10  220  3  6 0 226 6 15 49 8
+Nui  514  1 -  8  184  3 2 205 0 0 111 0
+Vaitupu  1,007  19  19  6  14  382 17 396 5 2 147 0
+Nukufetau  581  6 -  4  2  4 217 284 0 0 64 0
+Funafuti  6,602  252  221  240  135  251 250 3,909 66 15 1,235 28
+Nukulaelae  341  4  4  5  2  5 6 163 104 0 48 0
+Niulakita  36 - -  8 -  1 0 23 0 0 4 0
+Total 10,632  511  392  506  349  663 500 5,650 186 32 1,787 56
+Tuvaluan, 
+98.4% Fiji, 
+0.3%
+Samoa, 0.1%
+Kiribati, 
+0.5%
+Tonga, 0.1%
+Other Pacific 
+Islands, 0.0%
+Other countries, 
+0.1%
+Not stated, 
+0.5%
+Other, 
+1.6%
+Figure 7.  Resident population by nationality, 2022
+Most of the resident population were Tuvaluan nationals; fewer than 2% were foreign nationals. 
+The proportion of foreign nationals decreased from 1.8% in 2017 to 1.6% in 2022.
+13
+TV 2022 Census report
+3.4.   Marital status composition
+About 3 in 5 (62%) residents aged 15 years and over were married in 2022, compared to slightly 
+more than half in 2017 (57%). Also, about 3 of every 10 (30%) were single or never married, 
+compared to about 33% in 2017.
+The Singulate Mean Age at Marriage is an indirect measure of the average age at first marriage 
+or consensual union based on data on the proportion of persons who remain single at the age of 
+15–49 years. It discounts the proportion of persons who are still single at the age of 50 years.
+Single/
+Never 
+married
+30%
+Married
+62%
+Divorced/
+Separated
+2%
+Widowed
+5%
+Common-law/ 
+Live-in
+0%
+Unknown
+0%
+Not stated
+1%
+Figure 8.  Distribution of resident population aged 15 years and over by marital status, 2022
+The 2022 Tuvalu Census computed this as 24.6 years: 26.0 years for men and 23.2 years for 
+women. This indicates a difference of almost three years between the typical ages at which men 
+and women marry or start living in a consensual union in Tuvalu.
+© Tuvalu CSD
+14
+TV 2022 Census report
+4.  Literacy, education and technology
+4.1.   Literacy
+Almost all residents aged 5 years and over are literate in the Tuvaluan language. About 9 of 
+every 10 residents aged 15 years and over are literate in English. Only 1 of every 5 residents aged 
+15 years and over is literate in the Nuian language, similar to the Kiribati language. Compared 
+to 2012, literacy in the Tuvaluan and English languages had increased, with literacy in English 
+increasing from 81% in 2012 to 98% in 2022. However, literacy in the Nuian language decreased 
+from 44% in 2012 to 22% in 2022.
+Table 10.  Percentage of the resident population aged 5 years and over and 15 years and over by 
+literacy status and language of literacy, 2022
+Language
+Population aged 5 years 
+and over
+Population aged 15 years 
+and over
+Total Male Female Total Male Female
+Tuvaluan 97.1 97.1 97. 2 97.9 98.1 97.7
+English 89.2 89.3 89.1 91.2 91.8 90.6
+Nuian 19.0 17.4 20.6 21.7 20.2 23.3
+4.2.   School attendance and enrolment
+As shown in Table 11, the school attendance of children aged 3–19 years improved from 88% in 
+2017 to 91% in 2022.
+Table 11.  Resident population aged 3–19 years attending school in 2022
+Age 
+group 
+(years)
+Current attendance
+2022 2017
+Total Ye s No % 
+Attending Total Ye s No % 
+Attending
+3–4 443 437 6 99 461 428 33 93
+5–9 1,134 1,062 72 94 1,200 1,174 26 98
+10–14 1,050 1,013 37 96 1,009 979 30 97
+15–19 865 674 190 78 952 595 357 63
+Total 3,492 3,186 305 91 3,622 3,176 446 88
+However, the proportion of children aged 5–9 years and 10–14 years attending school 
+decreased. Figure 9 shows that the proportion of boys aged 15–19 years attending school was 
+lower than that of girls in 2017. An improvement is seen for 2022.
+15
+TV 2022 Census report
+81
+90 92
+70
+93 98 96
+55
+82 90 94
+78
+93 98 99
+70
+3–4 5–9 10–14 15–19 3–4 5–9 10–14 15–19
+2022 2017
+Percentage
+Year and age group
+Male
+Female
+Figure 9.  Percentage of children aged 3–19 years attending school, 2022 and 2017 
+4.3.   Highest qualification
+Figure 10 compares the highest qualifications achieved by sex. The trend for the highest 
+educational attainment is similar to the trends in school attendance observed. As shown in the 
+figure, the proportion of girls who achieved Form 5, 6, and 7 certificates is higher than boys.
+7
+2
+5
+3
+6 5
+2
+4
+000
+6
+2 3
+1
+13
+5
+2
+44
+77
+1 00
+2 1
+7
+33
+1
+14
+Percentage
+Qualification
+Male
+Female
+Figure 10.  Distribution of resident population by highest achieved qualification, 2022
+4.4.   Access to information and communications technologies
+As expected, 6 out of every 10 residents who have internet access live in Funafuti. This is likely 
+because the 4G mobile network is only available in Funafuti, and coverage was only extended 
+to Vaitupu in 2022. Further, the observed difference in internet access could reflect the country’s 
+population distribution: About 64% of the enumerated population also live in Funafuti, with the 
+remaining total distributed across the Outer Islands.
+16
+TV 2022 Census report
+Table 12.  Internet access by island and sex, 2022
+Island Population Access to the internet Access to the internet (%)
+Male Female Total Male Female Total Male Female Total
+Funafuti  3,438  3,164  6,602  1,555  1,465  3,020  63  64  64 
+Outer Islands  2,060  1,970  4,030  902  828  1,730  37  36  36 
+Nanumea  317  293  610  144  135  279  6  6  6 
+Nanumaga  215  176  391  114   68  182  5  3  4 
+Niutao  272  278  550  111   124  235  5  5  5 
+Nui  257  257  514  100  98  198  4  4  4 
+Vaitupu  524  483  1,007  241  211   452  10  9  10 
+Nukufetau  299  282  581  104  96  200  4  4  4 
+Nukulaelae  156  185  341  81  87  168  3  4  4 
+Niulakita  20  16  36  7  9  16  0  0  0 
+Tuvalu  5,498  5,134 10,632  2,457  2,293  4,750  100  100  100 
+The proportion of females with internet access in the age groups 10–14 years through 40–44 
+years is generally higher than that of males, except for the age group 30–34 years. However, the 
+reverse is observed in the age groups 45–49 years and 75 years and above. The highest-ranked 
+purpose for using the internet is to access social media, such as Facebook, Instagram, TikTok, 
+etc. The second highest purpose is sending and receiving emails, and the third is downloading 
+media and games. People are more likely to own a mobile telephone compared to tablets or 
+laptops. 
+20
+64
+78 77 79 74 72 73
+60
+54
+40 35
+26
+9 11
+0
+29
+73
+83 80 78 78 78
+61
+46
+39
+28
+13 10 8 7 9
+10–14
+15–19
+20–24
+25–29
+30–34
+35–39
+40–44
+45–49
+50–54
+55–59
+60–64
+65–69
+70–74
+75–79
+80–84
+85–89
+Percentage
+Age group
+Male
+Female
+Figure 11.  Percentage of resident population aged 10 years and over with internet access by age 
+group, 2022 
+17
+TV 2022 Census report
+11
+46
+67 68 64 64 62 62
+47 50
+39
+31 29
+13
+6
+16
+50
+69
+63 65 62 60
+48
+39
+30 28
+13 9 11
+4
+10–14
+15–19
+20–24
+25–29
+30–34
+35–39
+40–44
+45–49
+50–54
+55–59
+60–64
+65–69
+70–74
+75–79
+80–84
+Percentage
+Age group
+Male
+Female
+Figure 12.  Percentage of resident population aged 10 years and over with a mobile telephone by age 
+and sex, 2022
+© Tuvalu CSD
+18
+TV 2022 Census report
+5.  Employment and economic well-being   
+5.1.   Economic activity
+The Tuvalu 2022 Census utilised the labour force module designed by the International Labour 
+Organization (ILO). The key indicators produced from the module include the following:
+1. Labour force participation rate – percentage of the working population who are 
+economically active
+2. Employment-population ratio – ratio of the working population who are formally 
+employed
+3. Unemployment rate – percentage of the working population who are classified as 
+unemployed
+Unemployed people are defined as those who are actively searching for work and are available 
+to work but have not been employed in the last seven days. Figure 13 shows the number of 
+residents classified by economic activity status.
+Labour force status of the resident population, 2022
+Frequency 7,016 Population age 15+
+Frequency
+Labour Force Status            
+1 - Employed 2,832
+2 - Unemployed 190
+3 - Outside Labour Force 3,994
+Total 7,016
+Working age group (15+) [7,288]
+Total labour force (economically 
+active) [3,136]
+Employed population 
+[2,937]
+Paid workers 
+[2,847]
+Formal 
+employment 
+[2,362]
+Informal 
+employment 
+[485]
+Unpaid workers 
+[90]
+Formal 
+employment 
+[66]
+Informal 
+employment 
+[24]
+Unemployed 
+population [199]
+Total not in labour force (outside labour 
+force - economically inactive) [4,152]
+Seeking, not available 
+to work [44]
+Not seeking, available 
+to work [224]
+Not seeking, not 
+available, but willing 
+to work [75]
+Not seeking, not 
+available, and not 
+willing to work [3,808]
+Figure 13.  Labour force status of resident population, 2022
+In 2022, about 6% of the resident population was unemployed. In comparison, the 
+unemployment rate reported for 2017 was significantly higher, likely due to changes in the 
+definition of unemployment. 
+Table 13.  Labour force indicators
+Indicators 2017 2022
+Labour force participation rate 49.3 43.0
+Employment-population ratio 35.2 40.3
+Unemployment rate 28.5 6.3
+19
+TV 2022 Census report
+Male, 51.4 Male, 48.2
+Male, 6.2
+Female, 34.5 Female, 32.3
+Female, 6.4
+National, 43.0 National, 40.3
+National, 6.3
+0
+10
+20
+30
+40
+50
+60
+Labour force participation
+rate
+Employment-population ratio Unemployment rate
+Percentage
+Labour force indicators
+Figure 14.  Disparity in labour force indicators by sex, 2022
+National, 43.0 National, 40.3
+National, 6.3
+Funafuti, 45.3
+Funafuti, 43.9
+Funafuti, 3.2
+Outer Islands, 39.3 Outer Islands, 34.5
+Outer Islands, 12.2
+0
+10
+20
+30
+40
+50
+60
+Labour force participation
+rate
+Employment-population ratio Unemployment rate
+Percentage
+Labour force indicators
+Figure 15.  Disparity in labour force indicators by region, 2022
+Figure 14 shows that the economic activity rates are higher for males than females. However, 
+there is no significant gender disparity in unemployment rates in the country. Figure 15 shows 
+that disparities exist between the regions when looking at labour force participation and 
+employment-population ratio indicators. The unemployment rate in rural areas appears to be 
+higher in the Outer Islands. This suggests that more people in the Outer Islands are actively 
+searching for work, and available to work, but are not employed.
+5.2.   Industry of employment 
+Table 14 shows that a significant proportion of the working population is employed in public 
+service. There is not a significant difference between men and women in the industries of 
+employment across the regions. There is also little disparity in the proportion of the population 
+working in the industries between urban and rural areas.
+20
+TV 2022 Census report
+Table 14.  Percentage of residents aged 15 years and over by type of industry, according to the 
+International Standard Industry Classification (ISIC3), 2022
+3 The ISIC refers to the International Standard Industrial Classification of All Economic Activities, which is 
+the internationally recognised means by which productive activities are categorised for related statistical 
+collection and reporting (UNSD 2008).
+Type of industry
+Region
+Urban Rural Tuvalu
+Male Female Total Male Female Total Male Female Total
+A - Agriculture, forestry and fishing 3.3 0.5 1.9 5.1 0.6 2.9 4.0 0.5 2.3
+B - Mining and quarrying 0.1 0.0 0.1 0.2 0.0 0.1 0.1 0 0.1
+C - Manufacturing 5 2.1 3.6 7 3.5 5.3 5.7 2.7 4.2
+D - Electricity, gas, steam, and air 
+conditioning supply 0.6 0.0 0.3 1.3 0.0 0.6 0.9 0.0 0.5
+E - Water supply, sewerage, waste 
+management and remediation 
+activities
+0.6 0.1 0.4 2.1 0.1 1.1 1.2 0.1 0.7
+F - Construction 5.2 0.5 2.9 5.6 0.2 2.9 5.4 0.4 2.9
+G - Wholesale and retail trade, 
+repair of motor vehicles and 
+motorcycles
+3.2 3.9 3.5 3.5 1.9 2.7 3.3 3.1 3.2
+H - Transportation and storage 3.9 0.6 2.3 0.8 0.2 0.5 2.7 0.4 1.6
+I - Accommodation and food 
+service activities 0.5 1.0 0.7 0.3 0.5 0.4 0.4 0.8 0.6
+J - Information and 
+communications 1.5 1.0 1.3 1.0 0.2 0.6 1.3 0.7 1.0
+K - Financial and insurance activities 3 3.4 3.2 0.6 1.1 0.9 2.1 2.6 2.3
+M - Professional, scientific, and 
+technical activities 2.1 1.6 1.9 1.0 0.4 0.7 1.7 1.1 1.4
+N - Administrative and support 
+service activities 2.9 2.1 2.5 2.3 2.2 2.2 2.6 2.1 2.4
+O - Public administration and 
+defence, compulsory social security 15.3 11.1 13.2 8.2 4.4 6.3 12.6 8.6 10.6
+P - Education 1.1 3.6 2.3 2.6 8.1 5.3 1.6 5.3 3.4
+Q - Human health and social work 
+activities 1.2 3.3 2.2 0.7 1.7 1.2 1.0 2.7 1.8
+R - Arts, entertainment, and 
+recreation 0.3 0.1 0.2 0.1 0.1 0.1 0.2 0.1 0.1
+S - Other service activities 1.4 0.9 1.2 0.8 0.6 0.7 1.2 0.8 1.0
+T - Activities of households as 
+employers, undifferentiated goods- 
+and service-producing activities of 
+households for own use
+0.0 0.2 0.1 0.1 0.1 0.1 0.0 0.1 0.1
+U - Activities of extraterritorial 
+organisations and bodies 0.2 0.2 0.2 0.2 0.0 0.1 0.2 0.1 0.1
+21
+TV 2022 Census report
+5.3.   Occupational distribution 
+Figure 16 shows the occupational distribution of the workforce based on the International 
+Standard Classification of Occupation (ISCO-08) (ILO 2023). The data based on the first-level 
+classification under this classification system shows that managers, professionals and technicians 
+are the most common occupations. It is also very likely that most of the population in this 
+category work in public administration.
+21 20 21
+17 16 16
+20 18 19
+10
+13
+11
+6 6 6
+8
+10 99
+2
+5
+9
+3
+6
+9
+2
+6
+3
+0 2 1 0 1 3
+0 1
+8
+2
+5
+10
+1
+5
+9
+2
+5
+      Male       Female       Total       Male       Female       Total       Male       Female       Total
+Funafuti Outer Islands National
+Percentage
+1 - Managers, professionals, and technicians
+ 2 - Clerical, service and sales workers
+3 - Skilled agricultural and trades workers
+ 4 - Plant and machine operators, and assemblers
+5 - Elementary occupations
+Figure 16.  Proportion of population by occupation, sex and region, 2022
+5.4.   Youth unemployment
+Figure 17 shows that the unemployment rates for the target age groups are higher in rural areas. 
+There is not a significant difference in the unemployment rates for males and females.
+26.2 25 25.8
+42.5 42.9 42.6
+34.1 31.6 33.3
+9.5 8.7 9.2
+18.2
+23.1
+20.2
+12.4 13.9 13
+1.6 2.6 2
+16.7
+21.1 18.6
+6.7 8.4 7.4
+      Male       Female       Total       Male       Female       Total       Male       Female       Total
+Funafuti Outer Islands National
+Percentage
+15–19 20–24 25–29Age groups:
+Figure 17.  Unemployment rate of population in age groups 15–19, 20–24, and 25–29 years, by sex 
+and region, 2022
+22
+TV 2022 Census report
+6.  Fisheries, agriculture, livestock and handicrafts
+6.1.   Fishing
+The most commonly used method of fishing is handline, which is mostly done in the lagoon 
+where 1 out of every 2 respondents engaged in fishing indicated using this method all year 
+round and the remaining only used it during certain periods of the year. The most common 
+location for fishing is the lagoon (34%), second is the outer reef (23%) where trawling is mostly 
+used, third is the reef (20%) where fishing rods are mostly used, and fourth is the open water 
+(20%) where trawling is again the primary method used.
+Table 15.  Fishing methods used in the last 30 days and location, 2022
+Fishing method Count % of all HHs
+Tuvalu Funafuti Outer Is. Tuvalu Funafuti Outer Is.
+Handline 101 34 67 5.6 3.5 8.2
+Fishing rod 91 24 67 5.1 2.4 8.2
+Gillnet 63 15 48 3.5 1.5 5.9
+Cast net 47 7 40 2.6 0.7 4.9
+Scoop netting 24 5 19 1.3 0.5 2.3
+Spearfishing (night) 38 23 15 2.1 2.3 1.8
+Spearfishing (day) 11 6 5 0.6 0.6 0.6
+Gleaning 2 0 2 0.1 0.0 0.2
+Trawling 98 22 76 5.4 2.2 9.3
+Fish fence 7 1 6 0.4 0.1 0.7
+Other method 3 1 2 0.2 0.1 0.2
+6.2.   Agriculture
+Table 16.  Vegetables harvested in the last 30 days, 2022
+Vegetable Count % of all HHs
+Tuvalu Funafuti Outer Is. Tuvalu Funafuti Outer Is.
+Cucumber 42 22 20 2.3 2.2 2.4
+Chinese cabbage 30 18 12 1.7 1.8 1.5
+Bell pepper/Capsicum 12 4 8 0.7 0.4 1.0
+Tree spinach/Bele/Pele 5 4 1 0.3 0.4 0.1
+Chili pepper 4 1 3 0.2 0.1 0.4
+Corn 2 1 1 0.1 0.1 0.1
+Eggplant 7 6 1 0.4 0.6 0.1
+Lettuce 5 4 1 0.3 0.4 0.1
+Spring/Green onion 4 4 0 0.2 0.4 0.0
+Tomato 11 6 5 0.6 0.6 0.6
+Pumpkin/Squash 11 3 8 0.6 0.3 1.0
+Bele 8 7 1 0.4 0.7 0.1
+23
+TV 2022 Census report
+© UNDP Climate
+Around 19% of households in Tuvalu harvested crops, vegetables or fruits from one or more 
+plots of land used for agricultural purposes. Agricultural activities are mostly for subsistence 
+purposes. Table 16 shows that cucumber was the most common vegetable harvested in the 30 
+days prior to the interview.
+Table 17.  Fruits harvested in the last 30 days, 2022
+Crops Count % of all HHs
+Tuvalu Funafuti Outer Is. Tuvalu Funafuti Outer Is.
+Young coconuts 19 0 19 1.1 0.0 2.3
+Mature coconuts 37 0 37 2.1 0.0 4.5
+Banana/Pata/Fuamaulalo 59 7 52 3.3 0.8 6.3
+Breadfruit/Mei 41 1 40 2.3 0.1 4.9
+Pandanus/Fala 6 1 5 0.3 0.1 0.6
+Lime/Lemon 0 0 0 0.0 0.0 0.0
+Pawpaw/Papaya/Olesi 49 11 38 2.7 1.2 4.6
+Melon (water, rock)/ Meleni 1 0 1 0.1 0.0 0.1
+Fresh toddy 8 1 7 0.4 0.1 0.9
+Other fruits 2 1 1 0.1 0.1 0.1
+Table 17 shows that banana was the most common fruit harvested in the 30 days before the 
+interview. Table 18 shows that the most common crop harvested 30 days before the interview 
+was the swamp taro, which is more likely to be harvested in the Outer Islands. Table 16 also 
+shows that there is no major difference in vegetable harvesting between Funafuti and the Outer 
+Islands. However, significant differences are observed in the harvesting of fruits and crops.
+24
+TV 2022 Census report
+Table 18.  Crops harvested in the last 30 days, 2022
+Crops Count % of all HHs
+Tuvalu Funafuti Outer Is. Tuvalu Funafuti Outer Is.
+Swamp taro/Pulaka 292 15 277 16.2 1.5 33.8
+Taro/Pulaka 207 11 196 11. 5 1.1 23.9
+Cassava/Tapioka 16 5 11 0.9 0.5 1.3
+Felo 3 0 3 0.2 0.0 0.4
+Laukatafa 28 0 28 1.6 0.0 3.4
+Sweet potato/Kumala 59 22 37 3.3 2.2 4.5
+Other crops 57 36 21 3.2 3.7 2.6
+It is important to note that special consideration should be taken when comparing results on 
+agriculture from the 2017 Mini-census and the 2022 Census since the recall period has changed. 
+The recall period used in 2017 was one year, whereas the recall period used in 2022 was 30 days.
+6.3.   Livestock
+Overall, there is an increase in the number of households raising pigs in both Funafuti and 
+the Outer Islands, while a decrease is seen with respect to chickens. There is an increase in the 
+number of households raising ducks in Funafuti and a decrease in the Outer Islands. The main 
+reason for raising livestock was for subsistence use.
+Table 19.  Households raising livestock, 2017–2022
+Region 2017 Tuvalu Census 2022 Tuvalu Census % Change
+Pigs Chicken Ducks Pigs Chicken Ducks Pigs Chicken Ducks
+Count
+Tuvalu 1,242 682 150 1,292 604 147 4.0 -11. 4 -2.0
+Funafuti 557 93 10 587 54 25 5.4 -41.9 150.0
+Outer Islands 685 589 140 705 550 122 2.9 -6.6 -12.9
+% of HHs
+Tuvalu 73.6 40.4 8.9 71.8 33.6 8.2
+Not applicableFunafuti 33.0 5.5 0.6 59.9 5.5 2.6
+Outer Islands 40.6 34.9 8.3 86.1 67. 2 14.9
+Table 20.  Population of livestock, 2017–2022
+Region 2017 Tuvalu Census 2022 Tuvalu Census
+Pigs Chicken Ducks Pigs Chicken Ducks
+Count
+Tuvalu 10,894 15,443 1,209 11, 3 41 13,986 1,931
+Funafuti 3,772 1,735 56 4,451 1,230 264
+Outer Islands 7,122 13,708 1,153 6,980 12,756 1,667
+% by livestock
+Tuvalu 39.5 56.1 4.4 41.6 51.3 7.1
+Funafuti 67. 8 31.2 1.0 74.9 20.7 4.4
+Outer Islands 32.4 62.4 5.2 32.6 59.6 7. 8
+25
+TV 2022 Census report
+4.4
+2.0
+0.1
+4.5
+1.3 0.3
+9.2
+17.6
+1.5
+8.5
+15.6
+2.0
+6.7
+9.5
+0.7
+6.4 7.8
+1.1
+Pigs Chicken Ducks Pigs Chicken Ducks
+2017 Census 2022 Census
+Average per HH
+Funafuti Other Is. Tuvalu
+Figure 18.  Average number of livestock per household, 2017–2022
+Regarding the number of livestock, chickens have the highest overall proportion and are most 
+likely to be farmed in the Outer Islands. However, the proportion of pigs is highest in Funafuti 
+but, in terms of absolute numbers, there are more in the Outer Islands. Overall, the population 
+of pigs increased by about 4% due to the increase in the number of pigs in Funafuti. Chickens 
+decreased by 9%, influenced by a decrease in chickens in both Funafuti and the Outer Islands. 
+The duck population increased by almost 60%, driven by a rise in both Funafuti and the Outer 
+Islands. 
+449
+341
+269 233244
+119 133 108
+45 32 42 28
+Modern Local Both None
+Count of HHs
+Pigs Chicken Ducks
+Figure 19.  Housing for livestock, 2022
+The average number of livestock per household appears to be decreasing compared to 2017. 
+However, a detailed look at the graph shows that the average number of ducks and pigs is 
+slightly increasing in Funafuti. This may be due to the increased number of households residing 
+in islets in Funafuti. Although most livestock housing is modern, open flush is still generally used 
+to dispose of livestock waste. 
+26
+TV 2022 Census report
+6.4.   Handicrafts
+The graphs in Figure 20A show a significant decrease in the proportion of households producing 
+handicrafts: from about 24% in 2017 to less than 10% in 2022. It should be noted that the 
+same was also observed when comparing the results from the 2017 Mini-PHC to the 2012 
+PHC. This results in an even greater decrease when comparing the 2022 PHC to the 2012 PHC. 
+The proportion of households producing string, brooms, fans and baskets declined from over 
+45% in 2017 to about 12% in 2022 (Figure 20B).  However, there is a significant increase in the 
+proportion of households engaged in producing other handicrafts. The same is observed in 
+Funafuti (urban) and the Outer Islands (rural).
+ 2017     2022
+A
+31.6
+13.4
+24.1
+11.5
+5.4
+8.2
+Rural
+Urban
+Total
+% of households
+2022
+2017
+B
+5.3
+25.2
+46.5
+17.2
+5.8
+6.1
+23.1
+11.6
+12.2
+46.9
+Necklace
+Mat
+String, broom, fan and
+basket
+Laukie
+Other
+% of households producing handicrafts
+2022
+2017
+Figure 20.  Proportion of households producing handicrafts a year before the census, 2022 
+27
+TV 2022 Census report
+© Tuvalu CSD
+28
+TV 2022 Census report
+7.  People with disability
+7.1.   Method used to collect data on disability
+The questionnaire for the Tuvalu 2022 PHC utilised the set of questions from the Washington 
+Group on Disability Statistics to gather data on disability. The questions are designed to capture 
+various disability domains, such as vision, hearing, self-care, cognition and walking, as well as the 
+severity of the disability. The questions, addressed to the population aged 5 years and over, are 
+listed below:
+1. Does (name) have difficulty in seeing, even if wearing glasses?
+2. Does (name) have difficulty in hearing, even if wearing a hearing aid?
+3. Does (name) have difficulty in walking or climbing steps?
+4. Does (name) have difficulty in remembering or concentrating?
+5. Does (name) have difficulty with self-care, such as washing all over and dressing?
+6. Does (name) have difficulty communicating using customary language, such as 
+understanding or being understood?
+The corresponding responses are then recorded in one of the following forms: 
+1. No, no difficulty
+2. Yes, some difficulty
+3. Yes, a lot of difficulty
+4. Cannot do at all
+The three disability categories that are possible when applying the Washington Group tools are 
+outlined below.
+Table 21.  Disability classification based on the Washington Group on Disability Statistics 
+Category Definition
+Grade 1: At least some 
+difficulty
+Those who stated that they have "some difficulty" or "a lot of difficulty" or 
+"cannot do at all" in at least one of the domains
+Grade 2: At least lots of 
+difficulties
+Those who stated that they have "a lot of difficulty" or "cannot do at all" in at 
+least one of the domains
+Grade 3: Cannot do at all Those who stated that they "cannot do at all" in any domains
+7.2.   Disability prevalence by severity and location
+Table 22 presents the number (and percentage) of people aged 5 years and over experiencing 
+any of the six disability domains by level of disability and location. The disability domains used in 
+this analysis include seeing, hearing, walking, remembering, communicating and self-care. 
+29
+TV 2022 Census report
+Table 22.  Population aged five years and over by disability classification and location, 2022
+ 
+Island
+Reported number of persons 
+experiencing
+Total 
+population 
+aged five  
+years and 
+over
+ Prevalence rates
+Difficulty Cannot 
+do at all: 
+Grade 3
+Grade 
+1
+Grade 
+2
+Grade 
+3Grade 1 Grade 2
+Nanumea 111 16 7 534 20.8 3.0 1.3
+Nanumaga 51 15 4 341 15.0 4.4 1.2
+Niutao 103 27 9 486 21.2 5.6 1.9
+Nui 151 28 14 458 33.0 6.1 3.1
+Vaitupu 187 32 13 900 20.8 3.6 1.4
+Nukufetau 77 24 7 506 15.2 4.7 1.4
+Funafuti 535 89 23 5,733 9.3 1.6 0.4
+Nukulaelae 58 8 3 300 19.3 2.7 1.0
+Niulakita 5 0 0 30 16.7 0.0 0.0
+Total 1,278 239 80 9,288 13.8 2.6 0.9
+As the table shows, 1,278 individuals experience at least one form of disability, ranging from the 
+inability to do anything to experiencing lots of difficulties and some difficulties performing in at 
+least one of the six functional areas. Nui has the highest disability rate for Grade 1 and it is also 
+home to the largest proportion of persons with the most severe form of disability (cannot do at 
+all [Grade 3]): about 3.0% of Nui’s population has a disability that restricts them from performing 
+any function in at least one of the functional areas. About 0.9% of the total population cannot 
+perform any function in at least one of the six domains. 
+7.3.   Disability type and location
+Table 23 presents the number of people aged 5 years and over who experience “lots of 
+difficulties” or “cannot function” because of their disability, by disability domain and location. 
+Table 23.  Population aged five years and over experiencing lots of difficulties (Grade 2) or “cannot do” 
+a task (Grade 3) by type of disability and location, 2022
+ Island Cannot do at all or experience lots of difficulties TotalSeeing Hearing Walking Remembering Self-care Communicating
+Funafuti 21 18 50 18 27 22 156
+Other Islands 26 33 108 26 34 17 244
+Total 47 51 158 44 61 39 400
+Note: Some individuals may report multiple disabilities.
+Table 23 shows that the domain with the highest occurrence of disability among those who 
+reported having “lots of difficulties” (Grade 2) or who “cannot perform a function” (Grade 3) 
+is walking, followed by inability or difficulty performing self-care. Nui reported the highest 
+percentage of people with disabilities in the walking domain. About 10% of those with Grade 2 
+or Grade 3 disabilities cannot remember or have “lots of difficulties” in remembering, while the 
+lowest prevalence is communication-related challenges. 
+30
+TV 2022 Census report
+7.4.   Disability status and care
+Figure 21 shows that the prevalence of disability increases as people grow older. This is 
+understandable, considering the health complications people encounter as they age.
+0.00
+0.10
+0.20
+0.30
+0.40
+0.50
+0.60
+0.70
+0.80
+0.90
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+Prevalence rate (Grade 1)
+Prevalence rate 
+(Grade 2/Grade 3)
+Age
+Grade 2 Grade 3 Grade 1
+0.00
+0.10
+0.20
+0.30
+0.40
+0.50
+0.60
+0.70
+0.80
+0.90
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+Prevalence rate (Grade 1)
+Prevalence rate 
+(Grade 2/Grade 3)
+Age
+Grade 2 Grade 3 Grade 1
+0.00
+0.10
+0.20
+0.30
+0.40
+0.50
+0.60
+0.70
+0.80
+0.90
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+Prevalence rate (Grade 1)
+Prevalence rate 
+(Grade 2/Grade 3)
+Age
+Grade 2 Grade 3 Grade 1
+Figure 21.  Prevalence of disability by age and severity status, 2022
+Over 75% of individuals aged 80 years and above reported experiencing some difficulty with 
+daily activities in at least one domain. In the same age group, about a third stated they faced “a 
+lot” of difficulties, while just over 20% indicated they could not perform at least one function in 
+any of the six domains assessed.
+Table 24.  Population aged five years and over experiencing lots of difficulties (Grade 2) or “cannot do” 
+a task (Grade 3) by a care provider, 2022
+Caregiver
+Grade 2 or 
+Grade 3
+Number %
+Relatives/Friends 169 90.3
+Nobody 15 8.1
+Other 2 1.1
+Total 186 100.0
+Almost all persons with severe disabilities are cared for by relatives. About 8% of those with 
+a Grade 2 or Grade 3 disability care for themselves. However, over half of those experiencing 
+a Grade 2 or Grade 3 disability (52.7%) reported receiving assistance from relatives. Similarly, 
+about 1 of every 10 persons with disabilities in these categories received assistance from the 
+government, 5.0% reported receiving help from the community, and about 9.0% from other 
+organisations.
+31
+TV 2022 Census report
+8.  Health status and risk factors
+8.1.   Reported health conditions
+About 7% of the resident population reported suffering from one or more types of illness in 
+the month prior to the census. Of those who reported being ill, about 46 suffered from one 
+condition, 15% suffered from two conditions, and the remaining 7% suffered from three or more 
+conditions. 
+Table 25.  Distribution of resident population by illness status 30 days before the census, 2022
+Number 
+of cases
+Persons 
+with cases %
+0 9,901 93.1
+1 495 4.7
+2 159 1.5
+3 58 0.5
+4 12 0.1
+5 7 0.1
+Total 10,632 100.0
+Cold/Flu
+48%
+Conjuctivitis
+4%
+Diarrhea
+9%
+Headache
+26%
+Sick sores
+2%
+Stomach pain
+11%
+Figure 22.  Reported health conditions in the last 30 days, 2022
+Figure 22 shows that, of those who reported illness, cold/flu was the most commonly reported 
+health condition 30 days before the interview, with a frequency of 511. About 1 of every 
+5 persons who reported health problems stated that the condition prevented them from 
+undertaking their usual activities, and more than 1 of every 10 persons stated that it resulted in 
+loss of income. Moreover, about 9 of every 10 reported cases sought medical care and, in most 
+cases, at a hospital. The main reason for not seeking health care was that the health condition 
+posed no severe risk (49.6%). It is also important to note that about 3.0% of the cases in which 
+patients sought care reported having visited a traditional healer. 
+32
+TV 2022 Census report
+8.2.   Non-communicable diseases
+Cancer, 0%
+Diabetes, 29%
+Heart disease, 
+11%
+Asthma, 9%Liver disease, 
+1%
+Kidney/Renal 
+disease, 1%
+Hypertension/
+High blood 
+pressure, 33%
+Gout, 8%
+Obesity, 2%
+Mental disorder, 2%
+Stroke, 2% Other chronic health 
+problem, 2%
+Figure 23.  Percentage of reported non-communicable diseases, 2022
+About 4% of the population reported suffering from non-communicable diseases (NCDs). Of 
+these, 73% had one NCD, 21% had two NCDs and about 5% had three or more NCDs. As shown 
+in Figure 23, about 3 out of 10 reported NCDs were hypertension or high blood pressure. About 
+78% of those living with NCDs reported taking medication, and about 2 out of 10 cases did not 
+visit a health facility in the three months before the interview. About 3 of every 5 cases reported 
+that the NCD did not prevent them from performing their usual activities.
+© Tuvalu CSD
+33
+TV 2022 Census report
+8.3.   Alcohol, kava and tobacco consumption
+0.0
+5.0
+10.0
+15.0
+20.0
+25.0
+30.0
+15–19
+20–24
+25–29
+30–34
+35–39
+40–44
+45–49
+50–54
+55–59
+60–64
+65–69
+70+
+Alcohol
+Kava
+Tobacco
+Figure 24.  Alcohol, kava and tobacco consumption among the population aged 15 years and over, 
+2022 
+Figure 24 shows that residents aged 20–34 years and those aged 45 years and over are more 
+likely to consume alcohol and tobacco compared to other age groups. The age group 20–34 
+years has the highest occurrence of residents consuming kava. Overall, about 24.0% of residents 
+consume alcohol, 24.4% consume tobacco, and 3.3% consume kava.
+
+34
+TV 2022 Census report
+9.  Components of population change
+Fertility, mortality and migration, collectively known as the components of population change, 
+determine the size, composition and structure of any population at any given time. Drawing on 
+data primarily obtained through the 2022 PHC, this chapter reports on all three components that 
+contributed to the changes in population size during the intercensal years.
+9.1.   Fertility and entry into motherhood
+9.1.1.  Age at first birth: Marker of entry into motherhood
+Like other 2020 round censuses conducted globally, the 2022 Tuvalu Census collected information 
+on age at first birth, offering an opportunity to examine patterns of entry into motherhood in the 
+country. Figure 25 presents the age patterns of first-time mothers and the age at first birth for 
+Tuvalu in 2022. This showed that about three quarters of mothers had their first birth before the 
+age of 25 years, while the average mother had her first child when she was 22.8 years. 
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0
+2
+4
+6
+8
+10
+12
+14
+1 51 61 71 81 92 02 12 22 32 42 52 62 72 82 93 03 13 23 33 43 53 63 73 83 94 04 14 24 34 54 9
+Childless women (%)
+First-time mothers (%)
+Age
+First-time mothers (%) Childless (%)
+Figure 25.  Distribution of first-time mothers and proportion of women without a live birth, 2022
+Table 26.  Age at first birth and proportion of childless women by age group, 2017–2022
+Age group 
+(years)
+2017 2022
+Number 
+of 
+women
+Number 
+of 
+childless 
+women
+Percentage 
+of childless 
+women
+Number  
+of 
+women
+Number 
+of 
+childless 
+women
+Percentage 
+of childless 
+women
+15–19 454 438 96.5 414 398 96.1
+20–24 458 302 65.9 395 254 64.3
+25–29 421 131 31.1 424 163 38.4
+30–34 362 74 20.4 391 109 27.9
+35–39 280 47 16.8 309 63 20.4
+40–44 212 38 17.9 255 56 22.0
+45–49 227 32 14.1 198 35 17.7
+Mean age at first birth 24.6 27. 6
+35
+TV 2022 Census report
+The average age at first birth can also be inferred indirectly from the distribution of childless 
+women by age, shown in Table 26. Accordingly, the indirectly estimated age at first birth for 
+2022 was 27.6 years, significantly higher than the direct estimate presented above for the 
+same year and the comparable indirectly estimated value of 24.6 years for 2017. The difference 
+between the direct and indirect estimates for 2022 is not surprising, given that the indirectly 
+estimated mean age at first birth represents neither the experience of an actual cohort nor 
+adjusted for changing childbearing patterns over time.
+9.1.2.  Lifetime fertility and completed family size
+Like all previous censuses, the 2022 Tuvalu Census also collected data on children born to 
+women of reproductive age. Table 27 shows the distribution of women by number of children 
+ever born from the 2022 Tuvalu Census. It also shows the average number of children born per 
+woman, also known as the mean parity or achieved fertility rate. It is also known as the lifetime 
+fertility rate because it captures all live births that women have had from when they turned 15 
+years old until the census date. 
+Table 27.  Distribution of women by age and total number of children born, 2022
+Age 0 1 2 3 4 5 6+ Not 
+stated
+Total 
+mothers
+Total 
+women
+Total 
+children 
+ever born
+Average 
+number of 
+children 
+per 
+woman
+15–19 398 12 4 0 0 0 0 1 16 415 20 0.05
+20–24 254 71 51 15 3 1 0 2 141 397 235 0.59
+25–29 163 96 68 72 19 2 4 2 261 426 559 1.31
+30–34 109 51 48 81 58 30 14 2 282 393 860 2.19
+35–39 63 33 40 55 50 36 32 2 246 311 876 2.82
+40–44 56 18 31 36 43 40 31 0 199 255 774 3.04
+45–49 35 22 19 24 24 25 49 1 163 199 695 3.49
+50–54 40 14 20 30 32 30 40 1 166 207 713 3.44
+55–59 38 17 41 46 34 34 43 1 215 254 835 3.29
+60–64 58 23 27 48 42 21 30 0 191 249 691 2.78
+65–69 35 20 17 33 24 18 19 0 131 166 467 2.81
+70 –74 22 9 18 19 19 8 10 0 83 105 287 2.73
+75–79 8 7 4 2 4 6 6 0 29 37 110 2.97
+80–84 3 2 4 4 3 2 10 0 25 28 113 4.04
+85+ 2 5 4 0 3 0 5 0 17 19 60 3.16
+Total 1,284 400 396 465 358 253 293 12 2,165 3,461 7,295 2.11
+About 37% of all women aged 15 years and over had no live births, about 20% had one child, 
+50% had between three and five children, and about 10% had six or more children. The average 
+number of children per woman for all women aged 15 years and above was 2.11. 
+36
+TV 2022 Census report
+Table 28 summarises the average number of children per woman from the 1968–2022 Tuvalu 
+censuses. When the censuses of the past 50 years are combined, the average number of children 
+born to women aged 15–49 years has decreased, from 2.81 in 1968 to less than two children 
+per woman in 2012 and about 1.7 in 2022. Generally, the decline appears pervasive, with all age 
+groups experiencing a decrease in the average number of children per woman. The highest drop 
+was recorded for women in older age groups, with a 40–46% decline between 1968 and 2022. 
+Table 28.  Mean number of children ever born by age group, 1968–2022
+Age 
+group 1968 1973 1991 2012 2022
+15–19 0.07 0.04 0.08 0.03 0.05
+20–24 0.83 0.7 0.64 0.66 0.59
+25–29 2.27 1.82 1.45 1.77 1.31
+30–34 3.62 2.87 1.95 2.66 2.19
+35–39 5.11 4.15 2.69 3.55 2.82
+40–44 5.66 5.43 3.41 3.79 3.04
+45–49 5.9 6.09 3.56 3.65 3.49
+All ages 2.81 2.51 1.85 1.96 1.68
+One way to capture the fertility experience of an actual cohort is to examine the mean number 
+of children for those aged 45–49 years. This measure is also known as completed family size, as 
+the women in this age group are nearing or have already completed their reproductive period 
+and are no longer expected to have additional children. These values for all of Tuvalu and by 
+island are shown in Table 29. 
+Table 29.  Average completed family size per woman aged 45–49 years by island, 1968–2022
+Island 1968 1973 1991 2012 2022
+Absolute 
+change 
+(1968–2022)
+Nanumea 5.07 6.86 4.62 5.24 2.62 -2.45
+Nanumaga 6.4 5.41 4 .11 3.62 2.87 -3.53
+Niutao 6.4 7. 33 3.21 3.10 2.42 -3.98
+Nui 6.17 6.94 4.28 4.27 3.56 -2.61
+Vaitupu 5.82 5.15 3.29 3.20 3.37 -2.45
+Nukufetau 7. 87 6.79 2.60 4.30 4.53 -3.34
+Funafuti 5.06 5.19 3.6 3.55 3.67 -1.39
+Nukulaelae 4.22 4.14 2.08 3.14 5.33 1.11
+Niulakita NA 5 NA 5 NA NA
+Tuvalu 5.9 6.09 3.56 3.65 3.49 -2.41
+Nationally, women who completed their reproductive career in the late 1960s to early 1970s had, 
+on average, about 6 children. However, as shown in Table 29, during the same period, in a few 
+islands, the completed family size (i.e. the average number of children per woman among those 
+37
+TV 2022 Census report
+aged 45–49 years) exceeded more than 6 children. However, almost all islands experienced a 
+substantial fertility decline starting in the early 1990s, which had continued unabated through 
+2022. The highest drop in completed family size, nearly 4 children per woman, was observed in 
+Niutao, followed by Nanumaga and Nukufetau, which experienced a decline of over 3 children 
+per woman. 
+9.1.3.  Current or period fertility
+Mean children ever born and completed family size are important fertility indicators; however, 
+they have limitations: mean parity data lacks specificity concerning the event’s timing, while 
+completed family size reflects not current but historical fertility levels. For these reasons, 
+alternative indicators, such as period or current fertility, are needed to capture recent fertility 
+levels and patterns. These are the kind of data needed to plan maternal and child health services 
+and prepare long-term population projections.
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+15–19 20–24 25–29 30–34 35–39 40–44 45–49
+Number of births per 1,000 
+women
+Age
+Census 2022 Vital stats 2022
+Figure 26.  Age-specific fertility rates, 2022
+One of the main questions on period fertility in the 2022 Tuvalu Census is the date of birth of 
+the last-born child, from which the age-specific and total fertility rates can be calculated for 
+any year before the census. Figure 26 shows the age-specific fertility rate from the 2022 Tuvalu 
+Census and the same indicator obtained from the civil registry data. Both the census and vital 
+registration data show comparable age patterns of fertility. However, the implied total fertility 
+rate from the registration data, 3.4 children per woman, was slightly higher than 3.2 reported in 
+the 2022 Tuvalu Census.
+In some instances, period rates generated from censuses and household surveys are known to 
+underestimate the actual fertility level because of what is known as reference-period error. This 
+issue arises because of the omission of some births, particularly when some women only report 
+children born in the census year rather than the full 12-month period. However, this problem is 
+not expected to be an issue in the Tuvalu 2022 Tuvalu Census for two reasons.
+First, in the case of Tuvalu, the 12-month reference period was almost the same as the census 
+year, as the census was conducted in December 2022. Second, the period rates presented in 
+Figure 26 are based on data on the exact birthdate of the child rather than on a 12-month 
+38
+TV 2022 Census report
+reference period, which further minimises any potential misrepresentation of the reference 
+period. For these reasons, no corrections/adjustments for reference period errors were made to 
+the census data. This also means that the most plausible explanation for the slight discrepancy 
+in total and age-specific fertility rates from the census and the registration data is the late 
+registration of births from previous years, particularly among older adults, which led to inflated 
+age-specific and total fertility rates for the year. 
+9.2.   Mortality and life expectancy
+Mortality can be estimated directly from vital registration data, when available, or indirectly 
+based on information on surviving household members, often collected in national censuses 
+and surveys. The following subsection discusses results on infant, childhood, overall mortality 
+rates and life expectancy at birth obtained through indirect methods. As the vital registration 
+system in the country also captures deaths through the routine system, some of these data have 
+also been explored to ascertain the consistency of the underlying patterns of mortality in the 
+country. 
+9.2.1.  Infant and under-five mortality rates
+Figures 27 and 28 present indirectly estimated infant and under-five mortality rates from data 
+on children ever born and still alive, obtained from women aged 20–49 years in Tuvalu’s past 
+six censuses. The estimates corresponding to women aged 15–19 years were excluded as these 
+are often considered less reliable, partly due to the small number of births in this age group and 
+due to typically higher than usual mortality risks among first births and births occurring to very 
+young women. 
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+0.12
+0.14
+0.16
+0.18
+1950 1960 1970 1980 1990 2000 2010 2020 2030
+Probability of death before age 1
+Year
+Census_1968 Census_1973 Census_1991
+Census_2012 Census_2022 Poly. (Fitted )
+Figure 27.  Indirect estimates of infant mortality rate obtained from various censuses, 1955–2021
+The combined estimates from the five censuses (shown in the predicted lines from polynominal 
+function) suggest a consistent decline in infant and under-five mortality rates over the past five 
+39
+TV 2022 Census report
+decades. The infant mortality rate in the country declined from around 142 per 1,000 live births 
+in 1955 to around 100 in the mid-1960s, fewer than 70 per 1,000 in the mid-1970s, and just under 
+20 per 1,000 in 2015. For the most recent year, 2021, the rate was about 18 per 1,000 live births. 
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+1950 1960 1970 1980 1990 2000 2010 2020 2030
+Probability of death before age 5
+Year
+Census_1968 Census_1973 Census_1991
+Census_2012 Census_2022 Poly. (Fitted)
+Figure 28.  Indirect estimates of under-five mortality rate obtained from various censuses, 1955–2021
+Similarly, the under-five mortality rate in the country declined from around 223 per 1,000 live 
+births in 1955 to around 150 in the mid-1960s, to about 75 per 1,000 in the early 1980s, and just 
+under 50 per 1,000 in 2015. For the most recent year, 2021, the rate was about 24 per 1,000 live 
+births. 
+9.2.2.  Age patterns of mortality and trends in life expectancy at birth
+Table 30 presents the age-specific death rates derived from three alternative sources. These 
+show a typical pattern: relatively high levels at age 0 for infant deaths and very low levels for the 
+population aged 1–4 years through about the age of 19 years when levels slowly increase. From 
+age 55 years, mortality levels rapidly increase as the probability of dying rises with age. 
+However, the age-specific death rate values derived from vital registration and household 
+deaths show zero values for some age groups, which is due to no deaths being reported in 
+those respective ages, a pattern that is not unexpected in countries and territories with small 
+populations like Tuvalu, but creates an issue for generating mortality indicators from such data. 
+On the other hand, although the age pattern derived from the Orphanhood data shows the 
+expected pattern and has no anomalies observed in the vital statistics and census household 
+deaths data sets, it cannot be used to generate life-table and life expectancy directly as it does 
+not refer to any particular year. Hence, the life expectancy estimates implied by the childhood 
+survivorship data have been used instead.
+40
+TV 2022 Census report
+Table 30.  Age-specific death rates by data collection method, 2020–2022
+Age 
+group 
+(years)
+Male Female
+HH deaths 
+– Census
+Vital 
+statistics
+Orphanhood 
+method – 
+Census
+HH deaths 
+–  Census
+Vital 
+statistics
+Orphanhood 
+method – 
+Census
+0 5.0 12.5 40.9 3.9 15.0 30.0
+1–4 0.8 0.9 2.3 2.6 1.1 1.8
+5–9 0.4 0.8 0.9 0.5 1.0 0.6
+10–14 0.0 1.1 0.7 0.0 1.9 0.5
+15–19 0.5 0.0 1.3 0.6 0.3 0.8
+20–24 0.6 0.1 1.9 0.0 3.5 1.2
+25–29 1.1 1.3 1.9 0.6 5.8 1.4
+30–34 3.3 6.1 2.1 1.2 2.8 1.7
+35–39 0.7 1.7 2.7 3.1 9.8 2.2
+40–44 4.5 4.7 3.9 1.0 14.9 3.0
+45–49 8.9 8.7 6.0 1.2 30.9 4.4
+50–54 12.7 13.8 9.5 9.1 19.6 6.6
+55–59 11. 2 26.8 15.0 14.3 33.5 10.0
+60–64 14.3 25.1 23.4 14.9 22.7 15.8
+65–69 34.9 66.1 36.6 17. 5 65.4 26.3
+70 –74 45.8 93.9 58.0 23.8 84.7 44.9
+75+ 84.8 175.1 133.9 61.8 85.2 121.3
+40
+45
+50
+55
+60
+65
+70
+75
+80
+1950 1960 1970 1980 1990 2000 2010 2020 2030
+Life expectancy at birth
+Year
+Census_1968 Census_1973 Census_1991
+Census_2012 Census_2022 Poly. (Fitted)
+Figure 29.  Indirect estimates of life expectancy at birth obtained from various censuses, 1955–2021
+ The results presented in Figure 29 show a gradual but steady improvement in life expectancy at 
+birth from around 50 years during the mid-1950s to the early 1960s to 65 years in the 1980s and 
+around 70 years in 2010. For the most recent year, 2019–2021, life expectancy for both sexes was 
+around 76 years. 
+41
+TV 2022 Census report
+9.3.   Population movement
+9.3.1.  International migration
+The 2022 Tuvalu Census enumerated 1,787 people born overseas, making up 16.8% of the Tuvalu 
+residents in households. Most of these were Tuvaluans, as about 95.0% declared that their “home 
+island” was in Tuvalu. Among those not born in Tuvalu, the most common birthplaces were 
+Kiribati, Fiji and Nauru. The data on residence status three years ago showed that 491 people 
+of Tuvaluan nationality aged 3 years and over lived overseas, of whom about 50.0% declared 
+residing in Fiji. The age-sex structure of those living in Fiji three years before the census suggests 
+that about two thirds were 30 years or younger. This may indicate that many were in school, 
+including tertiary education at the University of the South Pacific and other institutions. 
+9.3.2.  Internal migration
+Lifetime migration, migration across generations and recent migration 
+Overall, about half of the population lived on the same island where they were born, 32.5% 
+were lifetime migrants (i.e. they were enumerated outside the island where they were born), and 
+17.0% were born abroad. The northern islands of Nanumea, Nanumaga and Niutao had relatively 
+high net migration losses, with most out-migrants residing in Funafuti. Nukufetau was the other 
+island with a significant loss, again mostly to Funafuti. Vaitupu had the largest net migration 
+gain, mainly due to the location of the national high school there and the movement of students 
+from all islands. 
+Table 31.  Lifetime migration, Tuvalu 2022
+Place of 
+enumeration
+Place of birth
+TotalSame as 
+the place of 
+enumeration
+Elsewhere 
+in Tuvalu Overseas
+Nanumea 216 294 100 610
+Nanumaga 132 230 29 391
+Niutao 220 281 49 550
+Nui 184 219 111 514
+Vaitupu 382 478 147 1,007
+Nukufetau 217 300 64 581
+Funafuti 3,909 1,458 1,235 6,602
+Nukulaelae 104 189 48 341
+Niulakita 0 32 4 36
+Total 5,364 3,481 1,787 10,632
+Table 32 illustrates the analysis based on people’s responses to where they mainly lived three 
+years before the census, which reflects more recent migration patterns. The question was only 
+asked to residents aged 3 years and over in the 2012 and the 2022 Tuvalu censuses, and the 2017 
+Mini-Census, but not in earlier censuses. As expected, most people (84.0%) reported having 
+42
+TV 2022 Census report
+resided on the same island three years before the census, which is an increase compared to 2012, 
+when this was 76.0%. Overall, almost 24.0% (2,373 people) of the national population changed 
+their island of residence during the reference period – which is still a high rate of population 
+movement, with over half of this flow departing or going to Funafuti.
+Table 32.  Recent migration stream, 2022
+Place of 
+current 
+residence
+Place of residence 3 years ago
+TotalSame as 
+current 
+residence
+Elsewhere in Tuvalu
+OverseasFunafuti Other 
+Islands
+Nanumea 379 119 87 25 610
+Nanumaga 319 30 36 6 391
+Niutao 446 22 73 9 550
+Nui 417 35 54 8 514
+Vaitupu 715 161 70 61 1,007
+Nukufetau 430 71 71 9 581
+Funafuti 5,302 0 948 352 6,602
+Nukulaelae 237 42 41 21 341
+Niulakita 14 5 17 0 36
+Total 8,259 485 1,397 491 10,632
+Looking at movements between Funafuti and the Outer Islands, 14.4% (948 persons) had come 
+from the Outer Islands in the past three years to make a living in Funafuti. This percentage was 
+considerably higher (19.2% or 1,066 people) in the 2012 Census. Both of these indicators suggest 
+diminishing mobility between islands. Notably, the 2022 Tuvalu Census showed more people 
+(485) moving from Funafuti to the Outer Islands than in the opposite direction, a slight decline 
+compared to the 508 noted in the 2012 Census. 
+© Tuvalu CSD
+43
+TV 2022 Census report
+10.  Housing characteristics
+10.1.   Tenure
+The majority of households own their dwellings and about 1 in 5 rents. Homeownership rates 
+are higher in the Outer Islands (91%) than in Funafuti (59%). The percentage of home ownership 
+slightly improved when comparing the 2017 results to the Tuvalu 2022 PHC. 
+4 The “Other” category includes households that did not state their rental arrangements.
+Table 33.  Ownership of dwelling, by major region, 2022
+Region 2017 Tuvalu Census 2022 Tuvalu Census
+Own Rented Arranged Other Total Own Rented Arranged Other Total
+ Count
+Tuvalu 1,141 407 63 15 1,626 1,323 368 108 0 1,799
+Funafuti 458 348 34 9 849 582 326 72 0 980
+Outer Islands 683 59 29 6 777 741 42 36 0 819
+ Percentages
+Tuvalu 70.2 25.0 3.9 0.9 100.0 73.5 20.5 6.0 0.0 100.0
+Funafuti 53.9 41.0 4.0 1.1 100.0 59.4 33.3 7. 3 0.0 100.0
+Outer Islands 87.9 7. 6 3.7 0.8 100.0 90.5 5.1 4.4 0.0 100.0
+Renting is significantly more common in Funafuti than in the Outer Islands. About 6 of every 
+10 renting households in Funafuti are renting in government houses. A similar observation 
+can be made for the Outer Islands, but those renting are in Kaupule houses. The proportion of 
+households renting in government houses increased significantly from 32% in 2017 to 56% in 
+2022. This may be due to the increased number of government houses after the Pacific Islands 
+Forum meeting in 2019.
+Table 34.  Ownership of rental dwelling, by major region, 2022
+Region
+2017 Tuvalu Census 2022 Tuvalu Census
+Government
+Kaupule
+Cooperation
+Private
+Other
+Total
+Government
+Kaupule
+Cooperation
+Private
+Other 4 
+Total
+ Count
+Tuvalu 130 61 4 191 21 407 206 37 22 95 8 368
+Funafuti 113 27 4 186 18 348 200 10 22 87 7 326
+Outer Islands 17 34 0 5 3 59 6 27 0 8 1 42
+ Percentages
+Tuvalu 31.9 15.0 1.0 46.9 5.2 100.0 56.0 10.1 6.0 25.8 2.2 100.0
+Funafuti 32.5 7. 8 1.1 53.4 5.2 100.0 61.3 3.1 6.7 26.7 2.1 100.0
+Outer Islands 28.8 57. 6 0.0 8.5 5.1 100.0 14.3 64.3 0.0 19.0 2.4 100.0
+44
+TV 2022 Census report
+10.2.   Type of living quarters
+The most common type of living quarter is the one-family detached house. Compared to the 
+Outer Islands, households living in a one-family house attached to one or more houses are 
+much more common in Funafuti. Very few households live in apartments, which is expected 
+considering there are very few apartment-type dwellings in Tuvalu. Similarly, very few 
+households live in shared homes and dwellings attached to non-resident buildings.
+73.3
+23.6
+2.3 0.4 0.4
+97.3
+1.2 1 0.2 0.2
+84.2
+13.4
+1.7 0.3 0.3
+A one-family
+house detached
+from any other
+house
+A one-family
+house attached
+to one or more
+houses
+A building with
+two or more
+apartments
+Building with
+two or more
+HHs which
+share a
+kitchen/toilet
+Dwelling
+attached to a
+shop or other
+non-resident
+building
+Percentage
+Type of living quarters
+Funafuti
+Outer Is.
+National
+Figure 30.  Percentage of households, by type of living quarter, 2022
+10.3.   Housing structure
+Information about the main house construction material was not collected in the Tuvalu 2017 
+Mini-PHC; thus, comparing the Tuvalu 2022 PHC to 2017 results is impossible. However, a 
+comparison can be made to the Tuvalu 2012 PHC. Concrete is the most common material used 
+in main house construction. About half of the houses are made of concrete in Funafuti, and the 
+proportion is higher in the Outer Islands (70.2%). On the other hand, timber houses are more 
+common in Funafuti (27.7%) compared to the Outer Islands (13.1%).
+Table 35.  Percentage distribution of material for main house construction, 2022
+Region
+Main house construction
+Permanent 
+– concrete
+Permanent 
+– timber
+Local 
+materials Combination Other 
+construction Total
+2012 Census
+Tuvalu 49.3 29.8 2.7 17.1 1.1 100.0
+Funafuti 38.7 47. 0 1.1 11.1 2.1 100.0
+Outer Islands 59.2 14.0 4.1 22.6 0.1 100.0
+2022 Tuvalu Census
+Tuvalu 57.9 21.0 2.7 18.3 0.1 100.0
+Funafuti 47. 6 27.7 2.2 22.3 0.2 100.0
+Outer Islands 70.2 13.1 3.3 13.4 0.0 100.0
+45
+TV 2022 Census report
+The most common roofing material is metal, which is mainly corrugated roofing sheets. Almost 
+all roofs are made of this material. The main wall material varies by region, although cement 
+blocks and plywood are most common in the Outer Islands. The most common floor material 
+is cement, but it is more common in the Outer Islands. Ceramic tiles and wood planks are more 
+common in Funafuti.
+0.1 0.2 2.6
+96.9
+0.20.5 1.3 0.6
+97.4
+0.10.3 0.7 1.7
+97.2
+0.2
+Coconut thatch Pandanus
+thatch
+Wood planks Metal Other
+Percentage
+Roofing materials
+Funafuti
+Outer Is.
+National
+Figure 31.  Percentage distribution of roofing materials of dwellings, 2022
+0 2 3.2
+33
+16.6
+0.2
+26.7
+10.1
+1.1
+5.9
+1.1
+1.1 0.1
+6
+12.1
+11
+1
+29.4 32
+2.9 1.3
+3.1
+0.5 1.2
+4.4
+23.5
+14.1
+0.6
+28
+20.1
+1.9 3.8 2
+Percentage
+Outer wall materials
+Funafuti Outer Is. National
+Figure 32.  Percentage distribution of materials for outer walls of dwellings, 2022
+46
+TV 2022 Census report
+0.8 0.1
+17.8
+0.2 4.7
+19.9
+55.6
+0.4 0.50.9 0.9 5.5 0.4 0.5
+8.5
+82.5
+0.1 0.70.8 0.4
+12.2
+0.3 2.8
+14.7
+67.9
+0.3 0.6
+Sand Gravel Wood
+planks
+Coconut
+midribs
+Paraquet or
+polished
+wood
+Ceramic tiles Cement Carpet Other
+Percentage
+Floor materials
+Funafuti Outer Is. National
+Figure 33.  Percentage distribution of materials for floors of dwellings, 2022
+The median floor area for dwellings is 56 square-metres in Tuvalu, 48 square-metres in Funafuti, 
+and 65 square-metres in the Outer Islands. The average floor area is significantly affected 
+by outliers. The average floor area in the Outer Islands is 74 square-metres compared to 56 
+square-metres for Funafuti, resulting in an average of 63 square-metres for Tuvalu. The average 
+number of sleeping rooms was: 2 in Tuvalu; 2 in Funafuti; and 2 in the Outer Islands.
+© UNDP Climate
+47
+TV 2022 Census report
+10.4.   Energy for cooking and lighting
+About 8 out of every 10 households use gas as a source of cooking energy, which is more 
+common in Funafuti. There was a significant increase in the proportion of households relying 
+on gas as a cooking energy source in the Outer Islands. An increase is observed in the use 
+of electricity as a cooking source compared to a decrease in the use of kerosene, wood, and 
+coconut parts in the Outer Islands. Except for coconut parts, the same is observed for Funafuti.
+5 Lamps include solar, kerosene and LPG/butane lamps.
+Table 36.  Main cooking fuels used by households, 2022
+Region
+2017 Tuvalu Census 2022 Tuvalu Census
+Electricity
+Gas (LPG/ 
+Butane)
+Kerosene
+Wood
+Coconut 
+parts
+Other
+Total
+Electricity
+Gas (LPG/ 
+Butane)
+Kerosene
+Wood
+Coconut 
+parts
+Other
+Total
+Count
+Tuvalu 39 1,143 151 184 105 4 1,626 148 1,404 87 128 28 4 1,799
+Funafuti 19 766 53 6 2 3 849 76 880 12 10 2 0 980
+Outer Islands 20 377 98 178 103 1 777 72 524 75 118 26 4 819
+Percentages
+Tuvalu 2.4 70.3 9.3 11. 3 6.5 0.2 100.0 8.2 78.0 4.8 7.1 1.6 0.2 100.0
+Funafuti 2.2 90.2 6.2 0.7 0.2 0.4 100.0 7. 8 89.8 1.2 1.0 0.2 0.0 100.0
+Outer Islands 2.6 48.5 12.6 22.9 13.3 0.1 100.0 8.8 64.0 9.2 14.4 3.2 0.5 100.0
+Similar to the results in 2017, electricity from the grid remains the predominant energy source 
+for lighting. However, it should be noted that there was a slight increase in the use of solar 
+panels as a lighting source in both Funafuti and the Outer Islands. The increase is much more 
+significant in the Outer Islands. It is also interesting to note the decrease in the proportion of 
+households using electricity from the grid as an energy source for lighting. 
+Table 37.  Sources of lighting, 2022
+Region
+2017 Tuvalu Census 2022 Tuvalu Census
+Electricity 
+from grid
+Solar 
+rooftop 
+panel
+Lamp5 
+Private 
+generator
+Other
+Total
+Electricity 
+from grid
+Solar 
+rooftop 
+panel
+Lamp5
+Private 
+generator
+Other
+Total
+Count
+Tuvalu 1,580 14 22 4 6 1,626 1,660 68 60 4 7 1,799
+Funafuti 835 6 5 1 2 849 930 28 15 4 3 980
+Outer Islands 745 8 17 3 4 777 730 40 45 0 4 819
+Percentages
+Tuvalu 97. 2 0.9 1.4 0.3 0.4 100.0 92.3 3.8 3.3 0.2 0.4 100.0
+Funafuti 98.4 0.7 0.6 0.1 0.2 100.0 94.9 2.9 1.5 0.4 0.3 100.0
+Outer Islands 95.9 1.0 2.2 0.4 0.5 100.0 89.1 4.9 5.5 0.0 0.5 100.0
+
+48
+TV 2022 Census report
+10.5.   Water and sanitation
+The main source of drinking water is piped into the dwelling. It is piped from a water storage 
+tank/concrete cistern that collects rainwater. Compared to 2017, a higher proportion of 
+households now have piped water in their dwellings. Apart from the source “piped into the yard” , 
+the same is observed for other sources. There is a significant decrease in water sources piped to 
+the yard. A similar result is observed for the main water source for cooking and handwashing.
+66
+32
+0 2
+81
+11
+2 6
+59
+40
+1 1
+77
+21
+1 1
+62
+36
+0 2
+79
+16
+2 4
+Piped to
+dwelling
+Piped to
+yard
+Community/
+Neighbour
+Other Piped to
+dwelling
+Piped to
+yard
+Community/
+Neighbour
+Other
+2017 2022
+Percentage
+Year and main source of drinking water
+Funafuti Outer Is. National
+6 “Other” categories in the 2022 questionnaire include tanker trucks, bottled water, water kiosks and other 
+sources.
+Figure 34.  Main source of drinking water for households, 20226
+Households were asked to indicate the months when they did not have sufficient water, 
+presented in Figure 35. The trend appears to be the same for the Outer Islands and Funafuti. As 
+the year progresses, the number of households with insufficient water increases but, towards the 
+end of the year, this number decreases.
+0
+10
+20
+30
+40
+50
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+Percentage
+Month
+Funafuti Outer Is. National
+Figure 35.  Percentage of households by month of water shortage, 2022
+49
+TV 2022 Census report
+50.6
+85.7
+38.9
+62.3
+89.3
+47.355.9
+87.3
+42.7
+Safe water Acceptable water Sufficient water
+Percentage
+Funafuti Outer Is. National
+Figure 36.  Water safety, acceptability and sufficiency, 2022
+At a national level, about 56% of households indicated that they do something to the water to 
+make it safe for consumption, about 87% indicated that their drinking water was acceptable, and 
+about 43% indicated that they had sufficient water during the last month.
+In 2022, the total volume of water storage tanks/cisterns in households was 33,430,162 litres, 
+which is 6% higher than the results of the 2017 Mini-PHC. The volume increased by about 5% in 
+Funafuti and by 8% in the Outer Islands. However, it is worth noting that there were 138 cases 
+where the volume of the water tank was not available.
+Table 38.  Number of private households by toilet type and region, 2022
+Toilet type Count Percentage
+Tuvalu Funafuti Outer Is. Tuvalu Funafuti Outer Is.
+Flush to septic tank 1,681 784 897 93.4 95.7 91.5
+Flush to pit latrine or dug pit 39 2 37 2.2 0.2 3.8
+Flush to somewhere else, e.g. sea 13 5 8 0.7 0.6 0.8
+Flush, do not know where 6 1 5 0.3 0.1 0.5
+Ventilated improved pit latrine 1 0 1 0.1 0.0 0.1
+Pit latrine with slab 1 1 0 0.1 0.1 0.0
+Pit latrine without slab, open pit 2 0 2 0.1 0.0 0.2
+Pit latrine to ocean 1 0 1 0.1 0.0 0.1
+Composting toilet 10 0 10 0.6 0.0 1.0
+No facility, bush, beach, ocean 38 20 18 2.1 2.4 1.8
+Other 7 6 1 0.4 0.7 0.1
+The most common toilet type is a flush-to-septic tank. The use of flush-to-pit latrines or dug 
+pits is much more common in Funafuti than in the Outer Islands. Surprisingly, the proportion of 
+flush-to-septic tank-type toilets in Funafuti decreased in 2017.
+10.6.   Solid waste services
+Almost all (95%) of household waste is collected and disposed of by the Island Council or 
+the Department of Waste Management. A handful of households dispose of their waste at 
+authorised collection sites without using the services offered by the Island Councils or the 
+50
+TV 2022 Census report
+Department of Waste Management. Households in the Outer Islands (97%) are slightly more 
+likely to depend on the collection services provided by the authorities compared to households 
+in Funafuti (93%). Households in the Outer Islands are also more likely to be fully satisfied with 
+the waste disposal services provided by the authorities. Overall, about 1 in 2 households is fully 
+satisfied with the services. For the households that reported the need to improve the solid waste 
+services, most suggested that the collection times need to be improved. This suggestion was 
+most likely to be made by households in Funafuti. Moreover, about 8 of every 10 households 
+received a rubbish bin from the authorities. Households in the Outer Islands (93%) are more 
+likely to have received a rubbish bin compared to households in Funafuti (76%).
+51.9
+25.7
+17.9 3.6
+0.9
+46.5
+28.1
+19.8
+5
+0.6
+56.4
+23.7
+16.3
+2.4 1.1
+Fully satisfied
+Satisfied
+Neutral
+Disappointed
+Completely
+disappointed
+Inner circle – Tuvalu
+Middle circle – Outer Is.
+Outer circle – Funafuti
+Figure 37.  Rating of satisfaction with solid waste services, as a percentage by household, 2022
+51
+TV 2022 Census report
+11.  References
+Bellwood 1987. The Polynesians – Prehistory of an Island People. New York: Thames and Hudson.
+Central Statistics Division 2017. Tuvalu Population and Housing Mini-Census 2017 Report. 
+Funafuti: Government of Tuvalu.
+Government of Tuvalu 2019. Light Detection and Ranging (LiDAR) Survey. Funafuti: Tuvalu: 
+Costal Adaptation Project.
+International Labour Organization (ILO) 2023. The International Standard Classification of 
+Occupations (ISCO-08) companion guide. Geneva: ILO.
+McIntyre, W 2012. The Partition of the Gilbert and Ellice Islands. Island Studies Journal, 7(1): 
+135–146.
+The World Bank Group and the Asian Development Bank n.d. Climate Risk Profile: Tuvalu 2021.
+United Nations Statistics Division, International Standard Classification of All Economic Activities 
+(ISIC): Revision 4, 2008, Statistical Paper, ST/ESA/STAT/SER.M/4/Rev.4. New York: United Nations.
+Produced by the Pacific Community (SPC)
+Pacific Community 
+B. P . D5 - 98 848 Noumea Cedex, New Caledonia
+Telephone: + 687 26 20 00
+Email: spc@spc.int
+Website: https://www.spc.int
+© SPC and Tuvalu CSD, 2025
+
+=== pages mentioning ['eligio', 'thnic', 'anguage', 'Median', 'median', 'Nui', 'Vaitupu'] (first 4) ===
+
+--- page 5 ----------------------------------------------------
+i
+TV 2022 Census report
+Contents
+LIST OF TABLES  ....................................................................................................................................................... IV
+LIST OF FIGURES  ..................................................................................................................................................... VI
+ACKNOWLEDGEMENTS  .........................................................................................................................................VIII
+ FOREWORD  ............................................................................................................................................................IX
+1.  COUNTRY CONTEXT  ............................................................................................................................................. 1
+1.1.   Geography ........................................................................................................................................................................... 1
+1.2.   Brief history .......................................................................................................................
+
+--- page 8 ----------------------------------------------------
+iv
+TV 2022 Census report
+1.  List of Tables
+Table 1.  Key indicators, 2022 ................................................................................................................................................... 2
+Table 2.  Sustainable Development Goal indicators, 2022 ............................................................................................ 3
+Table 3.  Distribution and growth rate of resident population by island of enumeration, 2002–2022 .........6
+Table 4.  Size and growth rate of resident population by home island, 2002–2022 ............................................7
+Table 5.  Population density by island, 2022 .......................................................................................................................7
+Table 6.  Resident population by broad age group, dependency ratio, sex ratio and median age, 2022 ....9
+Table 7.  Households and occupants enumerated in private households, 2022 .................................................10
+Table 8.  People in private households and their relationships to the household head, 2022.......................10
+Table 9.  Birthplace of the resident population, 2022 ......................
+
+--- page 10 ----------------------------------------------------
+vi
+TV 2022 Census report
+Map of the Pacific region and Tuvalu (inset) ........................................................................................................................1
+Figure 1.  Total population and annual intercensal growth rate (% per annum), 1921–2022 ..........................5
+Figure 2.  Population distribution by region (Funafuti vs Outer Islands), 1991–2022  ........................................6
+Figure 3.  Resident population distribution by age group and sex, 2022 ................................................................ 8
+Figure 4.  Population pyramids, 2012–2022  ......................................................................................................................8
+Figure 5.  Distribution of resident population by religious affiliation, 2022 .........................................................11
+Figure 6.  Distribution of resident population by ethnicity, 2022 .............................................................................11
+Figure 7.  Resident population by nationality, 2022 ......................................................................................................12
+Figure 8.  Distribution
+
+--- page 14 ----------------------------------------------------
+1
+TV 2022 Census report
+1.  Country context
+1.1.   Geography
+Tuvalu, located north of the Republic of Fiji and south of Kiribati, is a coral atoll nation comprised
+of nine small islands: Nanumea; Nanumaga; Niutao; Nui; Vaitupu; Nukufetau; Funafuti;
+Nukulaelae; and Niulakita. Although it has a land area of about 25 square-kilometres, its precise
+size may differ slightly due to ongoing land reclamation projects since 2015. The land area for
+Tuvalu sits at an average elevation of less than three metres above sea level, making it vulnerable
+to adverse climate conditions such as rising sea levels and cyclones (World Bank Group and
+Asian Development Bank).
+Map of the Pacific region and Tuvalu (inset)
+Source: SPC
+1.2.   Brief history
+Tuvalu was settled by Polynesians, mainly from Tonga or Samoa (Bellwood 1987). Following
+European contact, Tuvalu and Kiribati were integrated into a single British colony known as the
+Gilbert and Ellice Islands. Tuvalu, formerly known as the Ellice Islands, gained recognition as a
+sovereign state on 01 October 1978, with Funafuti as its capital (McIntyre 2012).
+
+... and 17 further pages match; re-run with a narrower --terms to see them.
