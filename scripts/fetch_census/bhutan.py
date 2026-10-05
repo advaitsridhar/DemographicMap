@@ -905,6 +905,37 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False) -> Read:
 # Both are held to Table 2.1, typeset apart from them: A2.6's All Ages to the
 # dzongkhag's printed total, and each gewog's All Chiwogs to its Table 2.1
 # row, persons, males and females.
+#
+# **The reports do not typeset these tables alike**, and the reader follows
+# what each one prints rather than one house style:
+#
+# * Most print A2.7 on its side. The PDF's text then comes out a column at a
+#   time, each word's letters reversed -- "latoT" over the figures, "47-07"
+#   for 70-74, "sgowihC llA" for All Chiwogs -- so a page whose title reads
+#   "7.2A" is read as the table it is: the age groups run down the page, each
+#   persons, Male and Female series is a column, and a gewog's name stands in
+#   capitals in a column of its own before its chiwogs. A gewog's All Chiwogs
+#   column belongs to the nearest name to its left, or, where the page opens
+#   in the middle of a gewog, to the last name of the page before. A name
+#   printed in capitals that Table 2.1 does not know -- a town's -- closes the
+#   gewog before it, so a block is never handed to the wrong gewog.
+# * A2.6 leaves a cell blank here and there where it means 0 (Gasa's age 51
+#   has no urban males), and Monggar sets two of its All Ages figures a
+#   little below the rest of the row. Figures are placed under the header's
+#   nine columns by their right edges, and a blank is counted 0 only where
+#   the urban, rural and both-areas columns then still add up.
+# * Chhukha's A2.6 prints a handful of rows, all of them past 80, whose male
+#   and female figures do not make the total beside them, while every column
+#   still adds up across the areas and down to All Ages. The median reads the
+#   totals; the note says how many rows those are.
+# * Four reports' Table 2.1 counts fewer people than their own A2.6 --
+#   Lhuentse, Paro, Punakha and Trashigang, 6,308 between them, which is
+#   exactly the national report's 727,145 less the twenty Table 2.1 totals.
+#   Their A2.6 is taken where the twenty A2.6 totals together are the national
+#   report's figure, and the note gives both counts.
+#
+# A check that fails costs that unit its median, never the run: the record
+# says why in place of a figure, and the log lists every one.
 AGE_SINGLE = "Table A2.6"
 AGE_GEWOG = "Table A2.7"
 AGE_SOURCE = ("National Statistics Bureau of Bhutan, Population & Housing Census "
@@ -914,6 +945,15 @@ GEWOG_GROUPS: list[tuple[int, int | None]] = [
     *((low, low + 4) for low in range(0, 75, 5)), (75, None)]
 LATER_TABLE = re.compile(r"Table A(?:2\.(?:[89]|1\d)|[3-9]\.)")
 DIGIT = re.compile(r"\d")
+AGE_HEADER = ["Age", "Male", "Female", "Total", "Male", "Female", "Total",
+              "Male", "Female", "Total"]
+# Words of the running header and footer, printed upright on a page whose
+# table is on its side: never a gewog's name, however they read backwards.
+PAGE_FURNITURE = {"ANNEX", "2:", "Statistical", "Tables", "STATISTICAL", "TABLES",
+                  "2017", "POPULATION", "AND", "HOUSING", "CENSUS", "OF", "BHUTAN",
+                  "(PHCB)"}
+SLOT_TOLERANCE = 14.0      # points between a figure's right edge and its column's
+COLUMN_TOLERANCE = 3.0     # points between two figures of one column on its side
 
 
 def fold(name: str) -> str:
@@ -927,22 +967,176 @@ def figures_of(words: list[str]) -> list[int] | None:
     return [int(w.replace(",", "")) for w in words]
 
 
+def place(cells, slots: list[float]) -> list[int] | None:
+    """Figures put under the header's columns by their right edges; a blank is 0.
+
+    None where a figure falls under no column, or two under one -- a row this
+    cannot place is not guessed at.
+    """
+    out: list[int | None] = [None] * len(slots)
+    for _x0, x1, word in cells:
+        if not NUMBER.match(word):
+            return None
+        at = min(range(len(slots)), key=lambda k: abs(slots[k] - x1))
+        if abs(slots[at] - x1) > SLOT_TOLERANCE or out[at] is not None:
+            return None
+        out[at] = int(word.replace(",", ""))
+    return [0 if v is None else v for v in out]
+
+
+def group_index(label: str) -> int | None:
+    """0..15 for "0-4" .. "75+", 16 for "Total"; None for anything else."""
+    if label == "Total":
+        return len(GEWOG_GROUPS)
+    if label == "75+":
+        return len(GEWOG_GROUPS) - 1
+    match = re.fullmatch(r"(\d{1,2})-(\d{1,2})", label)
+    if match and int(match[2]) == int(match[1]) + 4 and int(match[1]) % 5 == 0:
+        index = int(match[1]) // 5
+        return index if index < len(GEWOG_GROUPS) - 1 else None
+    return None
+
+
+def is_rotated_a27(rows) -> bool:
+    """A page of Table A2.7 printed on its side: its title reads backwards."""
+    return any(text[::-1].rstrip(":") == "A2.7" for cells in rows
+               for _a, _b, text in cells)
+
+
+def rotated_page(rows, names: dict[str, str], carried: Any
+                 ) -> tuple[dict[str, dict[str, list[int]]], Any, list[str]]:
+    """The gewogs whose All Chiwogs columns stand on one page printed on its side.
+
+    ``carried`` is the gewog the page before ended under (a name, None for a
+    heading Table 2.1 does not know, or the empty string for none yet).
+    Returns the gewogs read here, the gewog the page ends under, and what was
+    not understood.
+    """
+    problems: list[str] = []
+    series: dict[int, list[tuple[float, int]]] = {}
+    labels: list[tuple[float, str, int]] = []
+    for at, cells in enumerate(rows):
+        words = [t for _a, _b, t in cells]
+        if any(w in PAGE_FURNITURE for w in words):
+            continue
+        group = None
+        for k, (_x0, _x1, word) in enumerate(cells):
+            index = group_index(word[::-1])
+            rest = cells[k + 1:]
+            if index is not None and rest and all(
+                    NUMBER.match(t[::-1]) or t in ("-", "–") for _a, _b, t in rest):
+                group = (index, rest)
+                break
+        if group:
+            index, rest = group
+            if index in series:
+                problems.append(f"age group {index} printed twice")
+            series[index] = [(x0, 0 if t in ("-", "–") else
+                              int(t[::-1].replace(",", ""))) for x0, _x1, t in rest]
+            continue
+        for x0, _x1, word in cells:
+            labels.append((x0, word[::-1], at))
+    if set(series) != set(range(len(GEWOG_GROUPS) + 1)):
+        if series:
+            problems.append(f"age groups {sorted(series)} on a page of the table")
+        return {}, carried, problems
+    columns = sorted(x0 for x0, _v in series[len(GEWOG_GROUPS)])
+    table: dict[int, list[int]] = {}           # column -> its 17 figures
+    for index, cells in series.items():
+        for x0, value in cells:
+            near = min(range(len(columns)), key=lambda c: abs(columns[c] - x0))
+            if abs(columns[near] - x0) > COLUMN_TOLERANCE:
+                problems.append(f"a figure at x={x0:.0f} under no column")
+                return {}, carried, problems
+            table.setdefault(near, [0] * (len(GEWOG_GROUPS) + 1))
+            table[near][index] = value
+
+    def column_at(x0: float) -> int | None:
+        near = min(range(len(columns)), key=lambda c: abs(columns[c] - x0))
+        return near if abs(columns[near] - x0) <= COLUMN_TOLERANCE else None
+
+    # Names in capitals in a column with no figures: the gewogs' and towns'.
+    heads: dict[float, list[tuple[int, str]]] = {}
+    for x0, word, at in labels:
+        if column_at(x0) is None and re.fullmatch(r"[A-Z][A-Z'\-]+", word):
+            key = next((k for k in heads if abs(k - x0) <= 1.5), x0)
+            heads.setdefault(key, []).append((at, word))
+    headings: list[tuple[float, Any, str]] = []
+    for x0, parts in sorted(heads.items()):
+        upward = " ".join(w for _at, w in sorted(parts, reverse=True))
+        downward = " ".join(w for _at, w in sorted(parts))
+        name = names.get(fold(upward)) or names.get(fold(downward))
+        headings.append((x0, name, upward))
+    alls = sorted({column_at(x0) for x0, word, _at in labels
+                   if word == "All" and column_at(x0) is not None})
+    found: dict[str, dict[str, list[int]]] = {}
+    for col in alls:
+        if not any(word == "Chiwogs" and column_at(x0) == col
+                   for x0, word, _at in labels):
+            continue
+        left = [h for h in headings if h[0] < columns[col]]
+        owner = left[-1][1] if left else carried
+        if col + 2 >= len(columns):
+            problems.append("an All Chiwogs column with no Male and Female beside it")
+            continue
+        sexes = {word for x0, word, _at in labels
+                 if column_at(x0) in (col + 1, col + 2)}
+        if sexes and not {"Male", "Female"} <= sexes:
+            problems.append(f"the columns after All Chiwogs are labelled {sorted(sexes)}")
+            continue
+        if not owner:
+            problems.append("an All Chiwogs column under "
+                            + (repr(left[-1][2]) if left else "no heading"))
+            continue
+        if owner in found:
+            problems.append(f"two All Chiwogs columns for {owner}")
+            continue
+        found[owner] = {"persons": table.get(col), "male": table.get(col + 1),
+                        "female": table.get(col + 2)}
+    # A heading Table 2.1 does not name -- a town's -- is only a problem where
+    # it owns an All Chiwogs column, and that is reported above.
+    ending = headings[-1][1] if headings else carried
+    return found, ending, problems
+
+
 def annex_ages(pages, gewog_names) -> dict[str, Any]:
     """Tables A2.6 and A2.7 of one dzongkhag report.
 
     Returns {"single": {age: (urban m, f, t, rural m, f, t, both m, f, t)},
     "all_ages": (...) or None, "gewogs": {name: {"persons": [...],
-    "male": [...], "female": [...]}}} -- each gewog's list the sixteen groups
-    and then the total, under Table 2.1's spelling of the gewog's name.
+    "male": [...], "female": [...]}}, "placed": [ages read by placement],
+    "rotated": pages read on their side, "problems": [...]} -- each gewog's
+    lists the sixteen groups and then the total, under Table 2.1's spelling of
+    the gewog's name.
     """
     names = {fold(n): n for n in gewog_names}
     single: dict[int, tuple[int, ...]] = {}
     all_ages: tuple[int, ...] | None = None
     gewogs: dict[str, dict[str, list[int]]] = {}
+    placed: list[int] = []
+    problems: list[str] = []
+    rotated = 0
     mode: str | None = None
     current: str | None = None
     pending: str | None = None              # the gewog whose Male/Female rows follow
+    slots: list[float] | None = None
+    carried: Any = ""
+    partial_all = None                      # an All Ages row missing figures
+    orphan = None                           # the row before: figures and nothing else
     for rows in pages:
+        if is_rotated_a27(rows):
+            rotated += 1
+            mode = "rotated"
+            found, carried, trouble = rotated_page(rows, names, carried)
+            problems += [f"Table A2.7 on its side: {p}" for p in trouble]
+            for name, block in found.items():
+                if name in gewogs:
+                    problems.append(f"Table A2.7 prints {name} twice")
+                    continue
+                gewogs[name] = block
+            continue
+        if mode == "rotated":
+            mode = None
         for cells in rows:
             words = [t for _a, _b, t in cells]
             line = " ".join(words)
@@ -962,17 +1156,42 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
                 mode = None
                 continue
             if mode == "single":
+                if words == AGE_HEADER:
+                    slots = [x1 for _x0, x1, _t in cells[1:]]
+                    continue
+                # Figures and nothing else, the first of them under a figure
+                # column: an age row's label is a figure too, under Age.
+                is_orphan = bool(figures_of(words)) and bool(slots) and min(
+                    abs(s - cells[0][1]) for s in slots) <= SLOT_TOLERANCE
                 if words[:2] == ["All", "Ages"]:
                     found = figures_of(words[2:])
                     if found and len(found) == 9:
                         all_ages = tuple(found)
+                    elif orphan is not None and slots:
+                        merged = place(sorted([*cells[2:], *orphan], key=lambda c: c[1]),
+                                       slots)
+                        all_ages = tuple(merged) if merged else all_ages
+                    else:
+                        partial_all = cells[2:]
+                    orphan = None
                     continue
-                if re.fullmatch(r"\d{1,3}", words[0]):
+                if partial_all is not None and is_orphan and slots:
+                    merged = place(sorted([*partial_all, *cells], key=lambda c: c[1]),
+                                   slots)
+                    all_ages = tuple(merged) if merged else all_ages
+                    partial_all = None
+                    continue
+                orphan = cells if is_orphan else None
+                if re.fullmatch(r"\d{1,3}", words[0]) and len(words) > 1:
                     found = figures_of(words[1:])
+                    if found and len(found) != 9 and slots:
+                        found = place(cells[1:], slots)
+                        if found:
+                            placed.append(int(words[0]))
                     if found and len(found) == 9:
                         age = int(words[0])
                         if age in single:
-                            raise SystemExit(f"bhutan: Table A2.6 prints age {age} twice")
+                            problems.append(f"Table A2.6 prints age {age} twice")
                         single[age] = tuple(found)
                 continue
             if mode != "gewog":
@@ -988,76 +1207,102 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
             if words[:2] == ["All", "Chiwogs"] and current:
                 found = figures_of(words[2:])
                 if not found or len(found) != len(GEWOG_GROUPS) + 1:
-                    raise SystemExit(f"bhutan: Table A2.7 {current}'s All Chiwogs "
-                                     f"row has {found}")
+                    problems.append(f"Table A2.7 {current}'s All Chiwogs row has {found}")
+                    current = None
+                    continue
                 if current in gewogs:
-                    raise SystemExit(f"bhutan: Table A2.7 prints {current} twice")
+                    problems.append(f"Table A2.7 prints {current} twice")
+                    continue
                 gewogs[current] = {"persons": found}
                 pending = current
                 continue
             if pending and words[0] in ("Male", "Female"):
                 found = figures_of(words[1:])
                 if not found or len(found) != len(GEWOG_GROUPS) + 1:
-                    raise SystemExit(f"bhutan: Table A2.7 {pending}'s {words[0]} "
-                                     f"row has {found}")
+                    problems.append(f"Table A2.7 {pending}'s {words[0]} row has {found}")
+                    pending = None
+                    continue
                 gewogs[pending][words[0].lower()] = found
                 if words[0] == "Female":
                     pending = None
-    return {"single": single, "all_ages": all_ages, "gewogs": gewogs}
+    return {"single": single, "all_ages": all_ages, "gewogs": gewogs,
+            "placed": placed, "rotated": rotated, "problems": problems}
 
 
-def check_annex(dzongkhag: str, annex: dict[str, Any], read: "Read") -> None:
-    """The annex against itself and against Table 2.1."""
+def single_outcome(dzongkhag: str, annex: dict[str, Any], read: "Read",
+                   national_a26: int | None) -> tuple[str | None, str]:
+    """Table A2.6 against itself and Table 2.1: (reason it fails, note to add).
+
+    ``national_a26`` is the twenty reports' A2.6 totals together, where all
+    twenty were read; it is what lets a report whose Table 2.1 is short of
+    its own A2.6 keep its median (see the section comment).
+    """
     single, all_ages = annex["single"], annex["all_ages"]
     if all_ages is None or not single:
-        raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 has no All Ages row "
-                         "or no single years")
-    if set(single) != set(range(0, max(single) + 1)):
-        raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 is missing ages "
-                         f"{sorted(set(range(0, max(single) + 1)) - set(single))}")
-    for age, row in single.items():
-        for start in (0, 3, 6):
-            if row[start] + row[start + 1] != row[start + 2]:
-                raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 age {age}: "
-                                 f"{row[start:start + 3]} do not add up")
+        return ("this reader found no All Ages row or no single years in the "
+                "report's Table A2.6", "")
+    missing = sorted(set(range(0, max(single) + 1)) - set(single))
+    if missing:
+        return (f"Table A2.6 as read has no row for age(s) "
+                f"{', '.join(map(str, missing))}", "")
+    short: list[int] = []
+    for age, row in sorted(single.items()):
         for i in range(3):
             if row[i] + row[3 + i] != row[6 + i]:
-                raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 age {age}: "
-                                 "urban and rural do not make both areas")
+                return (f"Table A2.6's urban and rural figures for age {age} do not "
+                        "make its both-areas figure", "")
+        if any(row[s] + row[s + 1] != row[s + 2] for s in (0, 3, 6)):
+            short.append(age)
     for i in range(9):
         summed = sum(row[i] for row in single.values())
         if summed != all_ages[i]:
-            raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 column {i + 1}: "
-                             f"the years add up to {summed:,}, All Ages says "
-                             f"{all_ages[i]:,}")
+            return (f"Table A2.6's single years add up to {summed:,} in its column "
+                    f"{i + 1}, against the {all_ages[i]:,} its All Ages row prints", "")
+    note = ""
+    if short:
+        note += (f" In {len(short)} of the table's rows (ages "
+                 f"{', '.join(map(str, short))}) the male and female figures do "
+                 "not make the total printed beside them, while every column adds "
+                 "up across the areas and down to All Ages; the median reads the "
+                 "totals.")
     if all_ages[8] != read.printed:
-        raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 counts {all_ages[8]:,} "
-                         f"and Table 2.1 {read.printed:,}")
-    missing = sorted(set(read.gewogs) - set(annex["gewogs"]))
-    if missing:
-        raise SystemExit(f"bhutan: {dzongkhag}: Table A2.7 has no All Chiwogs row "
-                         f"for {missing}")
-    for name, rows in annex["gewogs"].items():
-        if set(rows) != {"persons", "male", "female"}:
-            raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7 has "
-                             f"{sorted(rows)} rows, not persons, male and female")
-        for label, values in rows.items():
-            if sum(values[:-1]) != values[-1]:
-                raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7 {label} "
-                                 f"groups add up to {sum(values[:-1]):,}, not "
-                                 f"{values[-1]:,}")
-        for i, n in enumerate(rows["persons"]):
-            if rows["male"][i] + rows["female"][i] != n:
-                raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7 column "
-                                 f"{i + 1}: males and females do not make persons")
-        if rows["persons"][-1] != read.gewogs[name]:
-            raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7 counts "
-                             f"{rows['persons'][-1]:,} and Table 2.1 "
-                             f"{read.gewogs[name]:,}")
-        if (rows["male"][-1], rows["female"][-1]) != tuple(read.sexes[name]):
-            raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7's sexes are "
-                             f"{rows['male'][-1]:,} and {rows['female'][-1]:,}, "
-                             f"Table 2.1's {read.sexes[name]}")
+        if national_a26 != NATIONAL_ANALYSED:
+            return (f"Table A2.6 counts {all_ages[8]:,} people and the report's "
+                    f"Table 2.1 {read.printed:,}, and the twenty reports' A2.6 "
+                    "totals could not be held to the national report's", "")
+        note += (f" Table A2.6 counts {all_ages[8]:,} people, {all_ages[8] - read.printed:,} "
+                 f"more than the {read.printed:,} of the report's Table 2.1 shown as "
+                 "the population; the twenty reports' A2.6 totals come to the "
+                 f"national report's {NATIONAL_ANALYSED:,}, and their Table 2.1 "
+                 "totals to less.")
+    return None, note
+
+
+def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read"
+                  ) -> str | None:
+    """A gewog's All Chiwogs block against itself and its Table 2.1 row."""
+    if rows is None:
+        return ("this reader found no All Chiwogs block under the gewog's name in "
+                "the report's Table A2.7")
+    if any(rows.get(k) is None for k in ("persons", "male", "female")):
+        return "Table A2.7 as read lacks the gewog's persons, male or female figures"
+    for label, values in rows.items():
+        if sum(values[:-1]) != values[-1]:
+            return (f"Table A2.7's {label} age groups for the gewog add up to "
+                    f"{sum(values[:-1]):,}, against the {values[-1]:,} it prints as "
+                    "their total")
+    for i, n in enumerate(rows["persons"]):
+        if rows["male"][i] + rows["female"][i] != n:
+            return ("Table A2.7's male and female figures for the gewog do not "
+                    "make its persons in every age group")
+    if rows["persons"][-1] != read.gewogs[name]:
+        return (f"Table A2.7 counts {rows['persons'][-1]:,} people in the gewog and "
+                f"Table 2.1 {read.gewogs[name]:,}")
+    if (rows["male"][-1], rows["female"][-1]) != tuple(read.sexes[name]):
+        return (f"Table A2.7 counts {rows['male'][-1]:,} males and "
+                f"{rows['female'][-1]:,} females in the gewog, Table 2.1 "
+                f"{read.sexes[name][0]:,} and {read.sexes[name][1]:,}")
+    return None
 
 
 def annex_debug(pages, gewog_names, *, limit: int = 90) -> list[str]:
@@ -1066,14 +1311,26 @@ def annex_debug(pages, gewog_names, *, limit: int = 90) -> list[str]:
     Every annex title line and the rows just after it; in Table A2.6 every
     row that is not an age row of nine figures adding up; in Table A2.7
     every row with no figure in it (the headings, marked where Table 2.1
-    knows the name) and every row opening "All" or "Total". Words carry
+    knows the name) and every row opening "All" or "Total". A page printed
+    on its side shows its labels, read the right way round. Words carry
     their left edge, so a figure printed apart from its row shows.
     """
-    names = {fold(n) for n in gewog_names}
+    names = {fold(n): n for n in gewog_names}
     out: list[str] = []
     mode: str | None = None
     after_title = 0
+    carried: Any = ""
     for number, rows in enumerate(pages, 1):
+        if is_rotated_a27(rows):
+            found, carried, trouble = rotated_page(rows, names, carried)
+            out.append(f"p{number} ON ITS SIDE: {sorted(found)}; ends under "
+                       f"{carried!r}; {trouble}")
+            for cells in rows:
+                words = [t for _a, _b, t in cells]
+                if not any(group_index(w[::-1]) is not None for w in words):
+                    out.append(f"p{number}   label " + " ".join(
+                        f"{t[::-1]}@{a:.0f}" for a, _b, t in cells)[:200])
+            continue
         for cells in rows:
             if len(out) >= limit:
                 return out
@@ -1094,11 +1351,10 @@ def annex_debug(pages, gewog_names, *, limit: int = 90) -> list[str]:
                 continue
             if mode == "single":
                 found = figures_of(words[1:])
-                good = (words[:2] == ["All", "Ages"]
-                        or (re.fullmatch(r"\d{1,3}", words[0]) and found
-                            and len(found) == 9
-                            and all(found[s] + found[s + 1] == found[s + 2]
-                                    for s in (0, 3, 6))))
+                good = (re.fullmatch(r"\d{1,3}", words[0]) and found
+                        and len(found) == 9
+                        and all(found[s] + found[s + 1] == found[s + 2]
+                                for s in (0, 3, 6)))
                 if not good:
                     out.append(f"p{number}   A2.6? {placed[:260]}")
                 continue
@@ -1110,7 +1366,7 @@ def annex_debug(pages, gewog_names, *, limit: int = 90) -> list[str]:
     return out
 
 
-def dzongkhag_median(annex: dict[str, Any]) -> dict[str, Any]:
+def dzongkhag_median(annex: dict[str, Any], note: str = "") -> dict[str, Any]:
     from .south_asia_common import median_single
 
     people = annex["all_ages"][8]
@@ -1122,7 +1378,7 @@ def dzongkhag_median(annex: dict[str, Any]) -> dict[str, Any]:
         "median_age_note": (
             f"2017 census, Table A2.6: the median of the single years of age of "
             f"all {people:,} people in the dzongkhag, towns included, "
-            "interpolated within the year that holds the middle person."),
+            "interpolated within the year that holds the middle person." + note),
     }
 
 
@@ -1142,6 +1398,14 @@ def gewog_median(rows: dict[str, list[int]]) -> dict[str, Any]:
             "finer for a gewog. As with the head count, the gewog's own people, "
             "towns apart."),
     }
+
+
+def age_gap(reason: str) -> dict[str, Any]:
+    """A median this run declined, with the reason in place of the figure."""
+    return {"median_age": gap(NOT_AVAILABLE, (
+        "2017 census: the report's annex has the age table, but " + reason
+        + "; a median from figures that do not reconcile would be this map's "
+          "arithmetic rather than the census's."))}
 
 
 def fetch(url: str) -> bytes:
@@ -1184,13 +1448,15 @@ def main() -> int:
     records: list[dict[str, Any]] = []
     absent: list[str] = []
     refused: list[str] = []
-    unread_ages: list[str] = []
     national = 0
     males = females = 0
     urban_total = 0
     wanted = {k: v for k, v in DZONGKHAGS.items()
               if not args.only or k == args.only}
 
+    # Two passes: every report is read first, because one check on a report's
+    # A2.6 needs all twenty of them (see "Median age" above).
+    reports = []
     for dzongkhag, filename in wanted.items():
         url = f"{BASE}/{filename}"
         try:
@@ -1199,25 +1465,55 @@ def main() -> int:
             absent.append(f"{dzongkhag}: {type(err).__name__} {str(err)[:60]}")
             continue
         read = table(blob, dzongkhag, args.debug)
+        annex = annex_ages(words_by_row(blob), read.gewogs)
+        reports.append((dzongkhag, url, read, annex))
+    totals_a26 = [annex["all_ages"][8] if annex["all_ages"] else None
+                  for _d, _u, _r, annex in reports]
+    national_a26 = (sum(totals_a26) if len(reports) == len(DZONGKHAGS)
+                    and None not in totals_a26 else None)
+    log("  the twenty reports' Table A2.6 totals come to "
+        + (f"{national_a26:,}" if national_a26 is not None else "no whole figure")
+        + f", against the national report's {NATIONAL_ANALYSED:,}")
+    declined: list[str] = []
+    medians = {"dzongkhag": 0, "gewog": 0, "gewogs": 0}
+
+    for dzongkhag, url, read, annex in reports:
         gewogs, towns, printed = read.gewogs, read.towns, read.printed
         national += printed
         urban_total += sum(towns.values())
         log(f"  {dzongkhag}: {len(gewogs)} gewogs, {len(towns)} town(s), "
             f"{printed:,} people")
-        # Every report's annex is read before any refusal, so that one run
-        # names every layout this reader does not yet follow rather than
-        # the first of them.
-        try:
-            annex = annex_ages(words_by_row(blob), gewogs)
-            check_annex(dzongkhag, annex, read)
-        except SystemExit as err:
-            unread_ages.append(str(err))
-            annex = None
+        reason, extra = single_outcome(dzongkhag, annex, read, national_a26)
+        if reason:
+            declined.append(f"{dzongkhag}: {reason}")
+            dzongkhag_age = age_gap(reason)
         else:
-            log(f"    Tables A2.6 and A2.7: {len(annex['single'])} single years to "
-                f"Table 2.1's {printed:,}, and {len(gewogs)} gewogs' age groups to "
-                "their Table 2.1 rows, persons, males and females")
-        age_cite = [{"field": "median_age", "name": AGE_SOURCE, "url": url,
+            dzongkhag_age = dzongkhag_median(annex, extra)
+            medians["dzongkhag"] += 1
+        outcomes = {name: gewog_outcome(name, annex["gewogs"].get(name), read)
+                    for name in gewogs}
+        for name, why in sorted(outcomes.items()):
+            if why:
+                declined.append(f"{dzongkhag}/{name}: {why}")
+        read_ok = sum(1 for why in outcomes.values() if not why)
+        medians["gewog"] += read_ok
+        medians["gewogs"] += len(gewogs)
+        log("    Tables A2.6 and A2.7"
+            + (f" ({annex['rotated']} page(s) of A2.7 on their side)"
+               if annex["rotated"] else "")
+            + f": the dzongkhag's median {'declined' if reason else 'read'}; "
+            f"{read_ok} of {len(gewogs)} gewogs' medians read"
+            + (f"; ages placed under their columns: {annex['placed']}"
+               if annex["placed"] else ""))
+        for problem in annex["problems"]:
+            log(f"      {problem}")
+
+        # A citation only beside a median: one beside its gap would say a
+        # source stands behind a figure nobody published.
+        def age_cite(fields: dict[str, Any]) -> list[dict[str, Any]]:
+            if "value" not in (fields.get("median_age") or {}):
+                return []
+            return [{"field": "median_age", "name": AGE_SOURCE, "url": url,
                      "license": LICENCE}]
 
         # The sex ratio is read from the same table and the same row as the
@@ -1267,13 +1563,15 @@ def main() -> int:
             population_note=note,
             sex_ratio=ratio,
             sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
-            sources=cite(ratio) + age_cite,
-            **(dzongkhag_median(annex) if annex else {})))
+            sources=cite(ratio) + age_cite(dzongkhag_age),
+            **dzongkhag_age))
         for name, people in sorted(gewogs.items()):
             male, female = read.sexes[name]
             ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
             if "value" not in ratio:
                 refused.append(f"{dzongkhag}/{name}")
+            gewog_age = (age_gap(outcomes[name]) if outcomes[name]
+                         else gewog_median(annex["gewogs"][name]))
             where = (name, dzongkhag)
             bound = SHAPE_BOUND.get(where)
             note = POPULATION_NOTE + GEWOG_NOTE
@@ -1303,16 +1601,17 @@ def main() -> int:
                 population_note=note,
                 sex_ratio=ratio,
                 sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
-                sources=cite(ratio) + age_cite,
-                **(gewog_median(annex["gewogs"][name]) if annex else {})))
+                sources=cite(ratio) + age_cite(gewog_age),
+                **gewog_age))
 
-    for line in unread_ages:
-        log(f"  AGES NOT READ -- {line}")
-    if unread_ages:
-        raise SystemExit(
-            f"bhutan: the annex age tables of {len(unread_ages)} of "
-            f"{len(wanted)} dzongkhag reports were refused (above); refusing "
-            "to write a Bhutan with medians for only some of them")
+    for line in declined:
+        log(f"  MEDIAN DECLINED -- {line}")
+    log(f"  medians read: {medians['dzongkhag']} of {len(reports)} dzongkhags and "
+        f"{medians['gewog']} of {medians['gewogs']} gewogs; each one declined "
+        "says why in its record")
+    if reports and not medians["gewog"]:
+        raise SystemExit("bhutan: not one gewog's median was read; the annex "
+                         "reader has lost the tables, not the census its figures")
     for line in absent:
         log(f"  NOT READ -- {line}")
     if absent:
