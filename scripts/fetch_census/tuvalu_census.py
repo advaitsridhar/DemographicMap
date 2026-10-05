@@ -271,7 +271,8 @@ def build(report: dict[str, dict[str, int]], villages: dict[tuple[str, str], tup
 
 def report_pages() -> list[str]:
     from pypdf import PdfReader  # noqa: PLC0415
-    blob = http_get(REPORT_URL, binary=True, timeout=600)
+    blob = http_get(REPORT_URL, binary=True, timeout=600,
+                    headers={"Accept": "application/pdf,*/*"})
     check(isinstance(blob, bytes) and blob[:5] == b"%PDF-", "tuvalu_census: the report is no PDF")
     return [(page.extract_text() or "") for page in PdfReader(io.BytesIO(blob)).pages]
 

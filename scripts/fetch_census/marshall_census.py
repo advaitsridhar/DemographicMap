@@ -315,7 +315,9 @@ def build(tables: dict[str, Any], report: dict[str, Any], admin1: list[dict[str,
 
 def pages_of(url: str) -> list[str]:
     from pypdf import PdfReader  # noqa: PLC0415
-    blob = http_get(url, binary=True, timeout=600)
+    # The office's download plugin answers 406 to a client that does not say
+    # it accepts a PDF; asking for the type it publishes is all this does.
+    blob = http_get(url, binary=True, timeout=600, headers={"Accept": "application/pdf,*/*"})
     check(isinstance(blob, bytes) and blob[:5] == b"%PDF-", f"marshall_census: {url} is no PDF")
     return [(page.extract_text() or "") for page in PdfReader(io.BytesIO(blob)).pages]
 
