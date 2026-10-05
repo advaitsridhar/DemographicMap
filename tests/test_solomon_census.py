@@ -61,6 +61,13 @@ class Rows(unittest.TestCase):
         self.assertEqual(got["provinces"]["10"][0], 129569)
         self.assertEqual(got["wards"][("10", "01")][0], "Nggossi")
 
+    def test_a_table_printed_again_by_sex_keeps_its_first_panel(self):
+        page = ("P8.4: Total population by ethnic group by Sex and Province, 2019\n"
+                "Choiseul 30,775 28,777 87 1,582 103 3 152 1 13 5 38 2 12\n"
+                "Male\nChoiseul 15,863 14,800 40 820 50 2 80 1 7 3 20 1 39\n")
+        got = sc.read_table([page], "P8.4")
+        self.assertEqual(got["provinces"]["01"][0], 30775)
+
     def test_a_ward_printed_twice_differently_stops_the_run(self):
         page = P22 + "P2.2: (cont'd.)\nChoiseul 30,775 15,863 14,912 5,520 57\n" \
                      "02 Katupika 2,318 1,200 1,118 456 8\n"

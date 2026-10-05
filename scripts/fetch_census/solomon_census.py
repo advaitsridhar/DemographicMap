@@ -114,6 +114,11 @@ def figures(tokens: list[str]) -> list[float]:
 # Reading the PDF's text
 # ---------------------------------------------------------------------------
 
+# Tables printed again for males and females under the same title: the first
+# panel, all persons, is the one read, and its totals are checked against P2.2.
+PANELLED = {"P8.4"}
+
+
 def read_table(pages: list[str], table: str) -> dict[str, Any]:
     """{"national": figures, "provinces": {code: figures}, "wards": {(code, nn): (name, figures)}}.
 
@@ -127,6 +132,8 @@ def read_table(pages: list[str], table: str) -> dict[str, Any]:
     out: dict[str, Any] = {"national": None, "provinces": {}, "wards": {}}
 
     def put(bucket: dict, key: Any, value: Any, what: str) -> None:
+        if key in bucket and table in PANELLED:
+            return
         if key in bucket:
             check(bucket[key] == value,
                   f"solomon_census: {table} prints {what} twice with different figures")
