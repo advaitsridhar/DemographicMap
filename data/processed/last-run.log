@@ -1,25 +1,6 @@
-cdx stat.tj/ru/*: 2399 captures, 24 matching '(?i)(?:perepis|census|nacional|2010)'
-  20190512170021 200 text/html https://stat.tj/ru/agricultural-census
-  20250207050924 200 text/html https://www.stat.tj/ru/itogovoe-zasedanie-v-ramkah-proekta-ukreplenie-demograficheskoj-statistiki-v-respublike-tadzhikistan-i-oficzialnaya-czeremoniya-podvedeniya-itogov-perepisi-naseleniya-i-zhilishnogo-fonda-r/
-  20250718202319 200 text/html https://www.stat.tj/ru/itogovoe-zasedanie-v-ramkah-proekta-ukreplenie-demograficheskoj-statistiki-v-respublike-tadzhikistan-i-oficzialnaya-czeremoniya-podvedeniya-itogov-perepisi-naseleniya-i-zhilishnogo-fonda-r/?lang=tj
-  20190825032530 200 text/html https://www.stat.tj/ru/news/news-of-agency/from-october-10-24-2018-a-pilot-population-and-housing-census-is-being-conducted
-  20211114125948 200 text/html https://www.stat.tj/ru/news/news-of-agency/round-table-preliminary-results-of-the-population-and-housing-census-of-the-republic-of-tajikistan-jn-2020-
-  20201114111134 200 text/html https://www.stat.tj/ru/news/news-of-agency/segodnya-vsemirnyj-den-statistiki-kiyomiddin-davlatzoda-rasskazal-kak-v-tadzhikistane-prohodilo-odno-iz-masshtabnyh-meropriyatij-desyatiletiya-perepis-naseleniya-i-zhilishnogo-fonda
-  20201001041409 200 text/html https://stat.tj/ru/news/news-of-agency/the-official-handing-over-ceremony-of-equipment-for-conducting-of-the-population-and-housing-census-2020-took-place-in-dushanbe
-  20201022063229 200 text/html https://www.stat.tj/ru/news/news-of-agency/v-dushanbe-sostoyalos-ocherednoe-zasedanie-gosudarstvennoj-komissii-po-sodejstviyu-perepisi-naseleniya
-  20191113204050 200 text/html https://www.stat.tj/ru/news/news-of-agency/v-ramkah-proekta-realizaciya-nacional-no
-  20200928130117 200 text/html https://stat.tj/ru/news/publications/utverzhdena-nacional-naya-strategiya-razvitiya-statistiki-respubliki-tadzhikistan-na-period-do-2030-goda
-  20190512170102 200 text/html https://stat.tj/ru/perepis-naseleniya-2020
-  20240330004630 200 text/html https://www.stat.tj/ru/perepis-naseleniya-i-zhilishhnogo-fonda-2020/
-  20240528040000 200 text/html https://www.stat.tj/ru/perepis-naseleniya-i-zhilishhnogo-fonda-2020/?lang=tj
-  20101031221020 200 text/html http://stat.tj:80/ru/population-census/
-  20250207053544 200 text/html https://www.stat.tj/ru/uchastie-delegaczii-agentstva-po-statistike-pri-prezidente-respubliki-tadzhikistan-na-zasedanii-po-perepisi-naseleniya-i-zhilishhnomu-fondu/
-  20211117020420 200 text/html https://www.stat.tj/ru/vacancies/otbor-mestnogo-konsul-tanta-po-razrabotke-operacionnogo-rukovodstva-po-proektu-modernizaciya-nacional-noj-sistemy-statistiki-v-respublike-tadzhikistan-
-  20211117020531 200 text/html https://www.stat.tj/ru/vacancies/otbor-mestnoj-kompanii-dlya-provedeniya-tematicheskoj-bazisnoj-ocenki-i-obsledovaniya-pol-zovatelej-dannyh-po-proektu-modernizaciya-nacional-noj-sistemy-statistiki-v-respublike-tadzhikistan-
-  20211117010610 200 text/html https://www.stat.tj/ru/vacancies/otbor-mestnoj-kompanii-organizacii-dlya-provedeniya-ocenki-kadrovoj-sistemy-agentstva-po-statistike-po-proektu-modernizaciya-nacional-noj-sistemy-statistiki-v-respublike-tadzhikistan-
-  20211117010901 200 text/html https://www.stat.tj/ru/vacancies/otbor-mestnoj-kompanii-organizacii-dlya-zaversheniya-matricy-rezul-tatov-po-proektu-modernizaciya-nacional-noj-sistemy-statistiki-v-respublike-tadzhikistan-
-  20211117020702 200 text/html https://www.stat.tj/ru/vacancies/otbor-mestnyh-konsul-tantov-dlya-razrabotki-paketa-dokumentov-po-dvuhstoronnemu-partnerstvu-po-proektu-modernizaciya-nacional-noj-sistemy-statistiki-v-respublike-tadzhikistan-
-  20231116042335 200 text/html https://www.stat.tj/ru/vacancies/proekt-modernizaciya-nacional-noj-statisticheskoj-sistemy-v-respublike-tadzhikistan-
-  20211117025724 200 text/html https://www.stat.tj/ru/vacancies/specialist-dlya-obrabotki-materialov-perepisi-naseleniya-i-zhilishnogo-fonda-respubliki-tadzhikistan-v-2020-godu
-  20100728020949 200 text/html http://stat.tj:80/russian/foodsecurity12010.htm
-  20090303084545 200 text/html http://www.stat.tj:80/russian/perepis.htm
+china_census: National Bureau of Statistics of China, China Population Census Yearbook 2020 (中国人口普查年鉴-2020)
+  31 provinces: the three tables agree on every count, every composition adds up, the provinces make the nation's 1,409,778,724; national median 39.4 from single years, 39.4 from the groups
+  33 first-level records; medians (31.3, 'Tibet Autonomous Region') .. (46.8, 'Liaoning Province')
+  wrote data/processed/china_census_province.json (147 kB)
+  2370 second-level polygons: 2368 mainland ones with their reasons; inside the SARs, ['Xianggang'] with the SAR's own median age and sex ratio and 1 fragment(s) with theirs
+  wrote data/processed/china_census_county.json (8618 kB)
