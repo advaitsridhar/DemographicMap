@@ -25,6 +25,10 @@ Subcommands:
         only those whose address matches.
     xlsx URL [URL ...] [--rows N] [--cols N] [--sheets N] [--width N]
         A workbook's sheets and first rows, read as .xlsx whatever the URL.
+    pdf URL [URL ...] [--pages P] [--chars N] [--grep REGEX]
+        A PDF's page count and, laid out row by row, the opening of each page
+        in P (comma-separated, 1-based; default the first two), or of each
+        page matching REGEX.
     uscb DATASET SHEET [--grep REGEX] [--rows N] [--level L]
         One sheet of the US Census Bureau's workbook in an HDX dataset: its
         field names and aliases, and the rows (of ADM_LEVEL L, if given) with
@@ -243,6 +247,33 @@ def cmd_xlsx(urls: list[str], rows: int, cols: int, sheets: int, width: int) -> 
                     log(f"   {i + 1:>3} | " + " | ".join(cells))
 
 
+def cmd_pdf(urls: list[str], pages: str | None, chars: int, grep: str | None,
+            rows: int) -> None:
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from probe_pdf import PAGE_BREAK, laid_out  # noqa: E402
+    wanted = [int(p) for p in (pages or "1,2").split(",") if p.strip()]
+    pat = re.compile(grep) if grep else None
+    for url in urls:
+        status, ctype, body = fetch(url)
+        log(f"== {url}\n   {status} {ctype} {len(body):,} bytes")
+        if status != 200 or not body.startswith(b"%PDF"):
+            log("   " + text_of(body, ctype)[:300])
+            continue
+        try:
+            text = laid_out(body)
+        except Exception as err:  # noqa: BLE001 -- a probe reports
+            log(f"   cannot read: {type(err).__name__}: {err}")
+            continue
+        sheets = text.split(PAGE_BREAK)
+        log(f"   {len(sheets)} pages")
+        picked = ([i for i, t in enumerate(sheets) if pat.search(t)][:rows] if pat
+                  else [n - 1 for n in wanted if 0 < n <= len(sheets)])
+        for i in picked:
+            log(f"   -- page {i + 1}\n" + sheets[i][:chars])
+
+
 def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
              level: int | None) -> None:
     import io
@@ -282,7 +313,7 @@ def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "xlsx"])
+    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "xlsx", "pdf"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--search")
     ap.add_argument("--where")
@@ -298,6 +329,7 @@ def main() -> int:
     ap.add_argument("--sheets", type=int, default=3)
     ap.add_argument("--width", type=int, default=24)
     ap.add_argument("--raw", action="store_true", help="grep the page as sent, tags and all")
+    ap.add_argument("--pages")
     args = ap.parse_args()
     if args.cmd == "uscb":
         cmd_uscb(args.target[0], args.target[1], args.grep, args.rows, args.level)
@@ -316,6 +348,8 @@ def main() -> int:
             cmd_wayback(pattern, args.rows, args.grep)
     elif args.cmd == "xlsx":
         cmd_xlsx(args.target, args.rows, args.cols, args.sheets, args.width)
+    elif args.cmd == "pdf":
+        cmd_pdf(args.target, args.pages, args.chars, args.grep, args.rows)
     return 0
 
 

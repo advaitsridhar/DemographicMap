@@ -181,6 +181,8 @@ class TheAgesAndReligions(unittest.TestCase):
         self.assertEqual(north["religion"]["status"], "not_available")
         self.assertEqual(out["s-ta"]["religion_year"], 2023)
         self.assertNotIn("religion_year", out["s-Haifa"])
+        self.assertEqual(out["s-Haifa"]["religion"]["status"], "not_available")
+        self.assertIn("Haifa sub-district", out["s-Haifa"]["religion"]["note"])
 
 
 if __name__ == "__main__":

@@ -131,6 +131,12 @@ HEBREW_DISTRICTS = {
 HEBREW = re.compile(r"[\u0590-\u05FF]")
 # "Thereof:" in Hebrew, which opens a row the English column leaves blank.
 THEREOF_HE = "\u05de\u05d6\u05d4:"
+SUB_RELIGION_WHY = (
+    "The CBS publishes religion by sub-district only in part: Table 2.15 of the "
+    "Statistical Abstract of Israel 2024 lists every sub-district's Jews, but its "
+    "Muslims, Christians, Druze and people of no classified religion only for the "
+    "sub-districts where each is numerous, so no full religious breakdown of the "
+    "{name} sub-district is published.")
 
 
 def figure(cell: Any) -> float | None:
@@ -447,6 +453,8 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
         # Tel Aviv's one sub-district is the district, whose religions the
         # table gives in full; no other sub-district's are.
         rel = religion.get("TEL AVIV DISTRICT") if name == "Tel Aviv" else None
+        if rel is None and religion:
+            rec["religion"] = gap(NOT_AVAILABLE, SUB_RELIGION_WHY.format(name=name))
         out.append(more(rec, age_fields(age, f"the {name} sub-district") if age else None,
                         religion_fields(rel, "the Tel Aviv sub-district") if rel else None))
     left = sorted(set(by_label) - set(SUBDISTRICTS.values()) - {JERUSALEM_LABEL})
