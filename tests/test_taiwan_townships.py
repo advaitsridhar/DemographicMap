@@ -367,6 +367,23 @@ class Records(unittest.TestCase):
         self.assertEqual(r["language"]["status"], "not_available")
         self.assertIn("by county", r["language"]["note"])
 
+    def test_a_polygon_labelled_with_another_township_s_name_carries_its_own(self):
+        drawn = {u["id"]: u["name"] for u in maps()[1]}
+        xinying = self.by_shape["52511910B15727969780764"]
+        self.assertEqual(xinying["codes"], {"ris": "67000010"})
+        self.assertEqual(xinying["name"], "Xinying")
+        self.assertEqual(xinying["aliases"], [drawn["52511910B15727969780764"],
+                                              self.towns["67000010"]["name"]])
+        self.assertIn("labels this polygon 'Xiaying'", xinying["population_note"])
+        # 下營 keeps its own drawn label, and no other polygon is renamed.
+        xiaying = self.by_shape["52511910B67622492960002"]
+        self.assertEqual(xiaying["codes"], {"ris": "67000080"})
+        self.assertNotIn("labels this polygon", xiaying["population_note"])
+        renamed = [r for r in self.records if r["level"] == "admin2"
+                   and r.get("shape_id") not in tt.RELABELLED
+                   and r["aliases"][0] != self.towns[r["codes"]["ris"]]["name"]]
+        self.assertEqual(renamed, [])
+
     def test_wuqiu_hangs_from_the_country(self):
         self.assertEqual(self.by_shape[WUQIU]["parent"], "TWN")
         other = self.by_shape["52511910B21260910933226"]

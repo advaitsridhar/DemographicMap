@@ -11,6 +11,7 @@ draws.
 from __future__ import annotations
 
 import json
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -410,7 +411,17 @@ class TheRecords(unittest.TestCase):
             self.assertIn("Table 2", row["population_note"])
             self.assertIn("military camps", row["population_note"])
             self.assertEqual(row["sex_ratio"]["unit"],
-                             "females_per_1000_males")
+                             "males_per_100_females")
+            self.assertIn("military camps", row["sex_ratio_note"])
+
+    def test_the_sex_ratio_is_males_per_hundred_females_of_the_row(self):
+        for row in self.rows:
+            men, women = (int(n.replace(",", "")) for n in re.match(
+                r"([\d,]+) males and ([\d,]+) females\.", row["sex_ratio_note"]).groups())
+            self.assertEqual(men + women, row["population"]["value"], row["name"])
+            self.assertEqual(row["sex_ratio"]["value"], round(100 * men / women, 1))
+            self.assertLess(row["sex_ratio"]["value"], 150, row["name"])
+            self.assertGreater(row["sex_ratio"]["value"], 60, row["name"])
 
     def test_a_province_says_how_its_boundary_differs_from_the_reports(self):
         self.assertIn("Nampo was not a first-level area in 2008",

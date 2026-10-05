@@ -57,7 +57,8 @@ does not record it (``not_collected``). Every township's record says so.
 (api.nlsc.gov.tw/other/TownVillagePointQuery1) placed each drawn polygon's
 label point in an official township -- 364 of them, one to one, every one in
 the county the polygon is drawn under, which is how the boundary file's
-"Xiaying" turned out to be 新營區 and its "Siaying" 下營區. The NLSC answered
+"Xiaying" turned out to be 新營區 and its "Siaying" 下營區; that polygon's record
+is named Xinying, with the drawn label kept as an alias (``RELABELLED``). The NLSC answered
 nothing for four label points standing in the sea off narrow islands, and
 those four are bound by name, each the only township of that name in its
 county (``BY_NAME``). At run time the register's own code and name for each
@@ -484,15 +485,23 @@ def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str
                                  "nationality aged 6 and over, by township"),
                         "url": CENSUS_TABLE.format(page=CENSUS_REPORTS[county]),
                         "year": LANGUAGE_YEAR, "license": LANGUAGE_LICENCE})
-    return figures(
-        f"TWN-{code}", drawn_name, "admin2", parent, shape, town["men"], town["women"],
+    name, aliases, why = drawn_name, [town["name"]], ""
+    if shape in RELABELLED:
+        name, why = RELABELLED[shape]
+        aliases = [drawn_name, town["name"]]
+    out = figures(
+        f"TWN-{code}", name, "admin2", parent, shape, town["men"], town["women"],
         town["ages"], "this township",
-        codes={"ris": code}, aliases=[town["name"]],
+        codes={"ris": code}, aliases=aliases,
         ethnicity=hundred(dict(counts)), ethnicity_year=YEAR,
         ethnicity_basis=ETHNICITY_BASIS, ethnicity_note=note,
         religion=gap(NOT_COLLECTED, RELIGION_NOTE),
         **spoken,
         sources=sources)
+    if why:
+        # Said where the reader looks first, beside the head count.
+        out["population_note"] = f"{why} {out['population_note']}"
+    return out
 
 
 def build(townships: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
@@ -583,6 +592,20 @@ def main() -> int:
 # NLSC's point query placed each drawn polygon's label point; the comment is
 # the boundary file's label.
 # ---------------------------------------------------------------------------
+
+# Polygons the boundary file labels with another township's name. Each record
+# carries the township's own name and keeps the drawn label as an alias, the
+# way japan_municipal writes Kurume for the polygon labelled "Kume". Found by
+# comparing every drawn label with the romanisations (Hanyu, Tongyong, Wade-
+# Giles) of every township in its county: this is the one label that names a
+# different township better than its own. {shape id: (name, why)}.
+RELABELLED: dict[str, tuple[str, str]] = {
+    "52511910B15727969780764": ("Xinying", (
+        "The boundary file labels this polygon 'Xiaying', the Hanyu Pinyin of 下營 -- whose "
+        "own polygon it labels 'Siaying' -- but it is 新營區, Xinying: the National Land "
+        "Surveying and Mapping Center places its label point there, and the 新營 district "
+        "office (120.316E, 23.310N) stands inside it.")),
+}
 
 # Four label points the NLSC placed in no township -- the sea beside narrow
 # islands. Each is bound by the one township of that name in its county.

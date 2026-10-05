@@ -310,11 +310,11 @@ POPULATION_NOTE = (
     "places in a province.")
 
 SEX_RATIO_NOTE = (
-    "Females per 1,000 males, from the Male and Female columns of the same "
+    "Males per 100 females, from the Male and Female columns of the same "
     "Table 2 row, which add to the total printed beside them. Like the head "
     "count beside it, it leaves out the people in military camps, who are 94% "
     "men by the difference between the report's first two tables, so a "
-    "ratio here runs above the census's own.")
+    "ratio here runs below the census's own.")
 
 MERGED_NOTE = (
     " This shape is {parts} rows of the table added together -- {names} -- "
@@ -793,17 +793,23 @@ def province_note(shape: str) -> str:
 
 
 def sex_ratio(figures: list[int], where: str) -> dict[str, Any]:
-    """Females per 1,000 males, the row's own two columns."""
+    """Males per 100 females, the row's own two columns, as every other
+    country of the region writes it."""
     total, male, female = figures[0], figures[1], figures[2]
     if male + female != total:            # split_row cannot let this through
         raise SystemExit(f"northkorea: {where}: {male:,} + {female:,} is not "
                          f"the {total:,} printed on the row")
-    if not male:
+    if not female:
         return gap(NOT_AVAILABLE,
-                   "Table 2 counts no males in this row, so there is nothing "
-                   "to express the females per thousand of.")
-    return measure(round(1000.0 * female / male),
-                   unit="females_per_1000_males", year=YEAR, source=SOURCE)
+                   "Table 2 counts no females in this row, so there is nothing "
+                   "to express the males per hundred of.")
+    return measure(round(100.0 * male / female, 1),
+                   unit="males_per_100_females", year=YEAR, source=SOURCE)
+
+
+def sex_note(figures: list[int]) -> str:
+    """The row's two counts, then what the ratio leaves out."""
+    return f"{figures[1]:,} males and {figures[2]:,} females. {SEX_RATIO_NOTE}"
 
 
 def slug(name: str) -> str:
@@ -850,7 +856,7 @@ def build(shaped: dict[str, dict[str, County]],
             population=measure(figures[0], year=YEAR, source=SOURCE,
                                unit="persons"),
             population_note=province_note(shape),
-            sex_ratio=ratio, sex_ratio_note=SEX_RATIO_NOTE,
+            sex_ratio=ratio, sex_ratio_note=sex_note(figures),
             sources=cite() + (cite_ages() if "median_age_note" in aged else []),
             **aged, **declared))
         for name in sorted(rows_):
@@ -867,7 +873,7 @@ def build(shaped: dict[str, dict[str, County]],
                                    source=SOURCE, unit="persons"),
                 population_note=note,
                 sex_ratio=sex_ratio(county.figures, f"{shape}/{name}"),
-                sex_ratio_note=SEX_RATIO_NOTE,
+                sex_ratio_note=sex_note(county.figures),
                 median_age=gap(NOT_AVAILABLE, COUNTY_AGE_NOTE) if medians else None,
                 sources=cite(), **declared))
     return out

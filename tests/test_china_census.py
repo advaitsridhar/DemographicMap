@@ -117,7 +117,15 @@ def tables():
 
 def admin1():
     units = [{"id": f"S-{n}", "name": n} for _, n in cc.province_names().items()]
-    return units + [{"id": "S-HK", "name": cc.HK_NAME}, {"id": "S-MO", "name": cc.MO_NAME}]
+    return units + [{"id": "S-HK", "name": cc.HK_NAME, "bbox": HK_BOX},
+                    {"id": "S-MO", "name": cc.MO_NAME, "bbox": MO_BOX}]
+
+
+# The boxes site/data carries for the two SARs and their second-level polygons.
+HK_BOX = [114.0396, 22.3338, 114.4003, 22.604]
+MO_BOX = [113.4971, 22.11, 113.5877, 22.1968]
+XIANGGANG = "17275852B66204891178522"
+COLOANE = "17275852B34966799109471"
 
 
 HK_ROWS = [["主要統計數字"], ["Key Statistics"],
@@ -161,12 +169,16 @@ class Build(unittest.TestCase):
 
 
 def admin2():
-    """Three county polygons, an island drawn under the country, and the SARs."""
+    """Three county polygons, an island drawn under the country, and the SARs'
+    two polygons as the boundary file draws them: Hong Kong again, and an
+    unnamed sliver of Coloane."""
     return [{"id": "C-1", "name": "Panyushi", "parent": "S-Guangdong"},
             {"id": "C-2", "name": "Akesaihashakezuzizhixian", "parent": "S-Gansu Province"},
             {"id": "C-3", "name": "Changhaixian", "parent": "CHN"},
-            {"id": "C-HK", "name": "Xianggang", "parent": "S-HK"},
-            {"id": "C-MO", "name": "C-MO", "parent": "S-MO"}]
+            {"id": XIANGGANG, "name": "Xianggang", "parent": "S-HK",
+             "bbox": [114.0283, 22.2844, 114.372, 22.5561]},
+            {"id": COLOANE, "name": COLOANE, "parent": "S-MO",
+             "bbox": [113.5577, 22.1114, 113.582, 22.1246]}]
 
 
 class Counties(unittest.TestCase):
@@ -175,7 +187,7 @@ class Counties(unittest.TestCase):
         self.records = {r["shape_id"]: r for r in cc.county_records(admin1(), admin2(), provinces)}
 
     def test_every_polygon(self):
-        self.assertEqual(sorted(self.records), ["C-1", "C-2", "C-3", "C-HK", "C-MO"])
+        self.assertEqual(sorted(self.records), sorted(["C-1", "C-2", "C-3", XIANGGANG, COLOANE]))
         self.assertTrue(all(r["level"] == "admin2" and r["match_by"] == "shape_id"
                             for r in self.records.values()))
 
@@ -187,18 +199,59 @@ class Counties(unittest.TestCase):
         self.assertEqual(r["parent"], "CHN-Guangdong")
         self.assertEqual(self.records["C-3"]["parent"], "CHN")
 
-    def test_the_sars_take_their_own_figures(self):
-        hk = self.records["C-HK"]
+    def test_hong_kong_drawn_again_takes_its_own_figures(self):
+        hk = self.records[XIANGGANG]
         self.assertEqual(hk["median_age"]["value"], 46.3)
         self.assertEqual(hk["sex_ratio"]["value"], 83.9)
+        self.assertIn("441 of the 561 km²", hk["median_age_note"])
         self.assertEqual(hk["language"], {"status": "not_available"})
-        self.assertEqual(self.records["C-MO"]["median_age"]["value"], 38.4)
+        self.assertEqual(hk["parent"], f"CHN-{cc.HK_NAME}")
 
-    def test_a_sar_drawn_in_two_is_refused(self):
+    def test_the_coloane_fragment_is_not_macau(self):
+        sliver = self.records[COLOANE]
+        for field in ("population", "median_age", "sex_ratio", "ethnicity", "language"):
+            self.assertEqual(sliver[field]["status"], "not_available", field)
+            self.assertIn("not Macau", sliver[field]["note"])
+        self.assertNotIn("value", sliver["median_age"])
+
+    def test_an_unmeasured_sar_polygon_is_refused(self):
         provinces = cc.build(tables(), admin1(), HK_ROWS, MO_TEXT)
         units = admin2() + [{"id": "C-HK2", "name": "Lantau", "parent": "S-HK"}]
         with self.assertRaises(SystemExit):
             cc.county_records(admin1(), units, provinces)
+
+    def test_a_whole_sar_polygon_whose_box_is_a_speck_is_refused(self):
+        provinces = cc.build(tables(), admin1(), HK_ROWS, MO_TEXT)
+        units = admin2()
+        units[3] = dict(units[3], bbox=[114.0283, 22.2844, 114.05, 22.30])
+        with self.assertRaises(SystemExit):
+            cc.county_records(admin1(), units, provinces)
+
+    def test_the_measured_coverage_decides(self):
+        self.assertGreaterEqual(cc.SAR_COVERAGE[XIANGGANG][0], cc.WHOLE)
+        self.assertLess(cc.SAR_COVERAGE[COLOANE][0], cc.WHOLE)
+        boxed = cc.bbox_share(admin2()[4], admin1()[-1])
+        self.assertLess(boxed, 0.1)
+        self.assertGreater(cc.bbox_share(admin2()[3], admin1()[-2]), 0.5)
+
+
+class Pooling(unittest.TestCase):
+    def test_small_nationalities_join_the_residual_instead_of_vanishing(self):
+        small = {f"Nationality {i}": 1_000 for i in range(10)}
+        groups = {"Han Chinese": 9_000_000, "Hui": 900_000, **small, cc.RESIDUAL: 100}
+        self.assertLess(sum(r["count"] for r in cc.hundred(groups)), sum(groups.values()))
+        counts, moved, people = cc.pooled(groups)
+        self.assertEqual(moved, 10)
+        self.assertEqual(people, 10_000)
+        self.assertEqual(counts[cc.RESIDUAL], 10_100)
+        shown = cc.hundred(counts)
+        self.assertEqual(sum(r["count"] for r in shown), sum(groups.values()))
+        self.assertAlmostEqual(sum(r["pct"] for r in shown), 100.0, places=6)
+
+    def test_nothing_moves_when_everything_shows(self):
+        counts, moved, people = cc.pooled({"Han Chinese": 900, "Hui": 100})
+        self.assertEqual((moved, people), (0, 0))
+        self.assertEqual(counts, {"Han Chinese": 900, "Hui": 100})
 
 
 class Refusals(unittest.TestCase):

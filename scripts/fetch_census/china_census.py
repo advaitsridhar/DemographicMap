@@ -48,8 +48,17 @@ language is not collected (as above), and the population, median age, sex
 ratio and nationality, which the census did count by county, are a stated
 gap saying where the figures are and why they are not drawn. A population
 another file gives a polygon is not touched: a gap never displaces a
-figure. The two polygons that are the SARs themselves take their SAR's
-median age and sex ratio, the same figures as the first level.
+figure.
+
+**The SARs' second-level polygons.** The boundary file draws one second-level
+polygon inside each SAR, and only one of them is the SAR. Measured against
+the SAR's own first-level polygon in the CGAZ files the map is built from
+(``SAR_COVERAGE``): "Xianggang" covers 441 of Hong Kong's 561 km², 79%, and is
+Hong Kong drawn again; Macau's is an unnamed 1.4 km² fragment of southern
+Coloane, 4% of Macau's 35.8 km². A polygon that covers at least ``WHOLE`` of
+its SAR takes the SAR's median age and sex ratio; any other is a fragment and
+says so, because a whole SAR's figure on a part of it is a region's figure on
+its child. A SAR polygon this table has not measured stops the run.
 
 Usage:
     python -m scripts.fetch_census.china_census
@@ -89,7 +98,10 @@ UNIDENTIFIED = ("未定族称人口", "入籍")
 LANGUAGE_NOTE = (
     "China's census asks no question about language: the 2020 census forms record "
     "nationality (民族) and nothing about the language a person speaks, and no volume of the "
-    "census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it.")
+    "census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one "
+    "national survey of the languages people use, the State Language Commission's survey of "
+    "language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before "
+    "these figures and before the spread of Putonghua since, and it is not drawn on them.")
 
 COUNTY_NOTE = (
     "The 2020 census counted every county's people by age, sex and nationality (民族). The "
@@ -99,6 +111,27 @@ COUNTY_NOTE = (
     "older than 2000 -- Guangdong's Panyu, Huadu, Nanhai and Shunde are drawn as the "
     "county-level cities they were before becoming districts in 2000 and 2002 -- and a 2020 "
     "county table cannot be laid on them without a crosswalk.")
+
+# The second-level polygons drawn inside the SARs, measured once against the
+# SAR's first-level polygon in the CGAZ files the map is built from
+# (geoBoundariesCGAZ_ADM1/ADM2.gpkg): the area of the polygon that lies inside
+# its SAR, over the SAR's own area (km² on a cosine-of-latitude projection,
+# which at 22°N is within a fraction of a per cent of the ellipsoid's). Shape
+# ids are the boundary file's, so a new boundary release brings new ids and the
+# run stops until they are measured again. {shape id: (coverage, what it is)}.
+SAR_COVERAGE: dict[str, tuple[float, str]] = {
+    "17275852B66204891178522": (0.786, (
+        "This polygon is Hong Kong as the boundary file's second level draws it "
+        "('Xianggang', 441 of the 561 km² of the SAR's first-level polygon), and these are "
+        "the SAR's own 2021 census figures, the same as on the first level.")),
+    "17275852B34966799109471": (0.039, (
+        "This polygon is not Macau: it is an unnamed fragment of southern Coloane in the "
+        "boundary file, about 1.4 km² of the SAR's 35.8 km² (4%), and the only second-level "
+        "polygon the file draws inside Macau. No census counts it as an area of its own, and "
+        "a whole SAR's figure is not put on a part of it; Macau's 2021 census figures are on "
+        "the first level.")),
+}
+WHOLE = 0.75            # a polygon covering this much of its SAR is the SAR drawn again
 
 # Hong Kong and Macau: their own 2021 censuses.
 HK_URL = "https://www.census2021.gov.hk/doc/pub/21c-main-results.xlsx"
@@ -333,10 +366,36 @@ def sources() -> list[dict[str, Any]]:
     ]
 
 
+def pooled(groups: dict[str, float]) -> tuple[dict[str, float], int, int]:
+    """The nationalities as ``hundred`` shows them, every one too small to show
+    (under 0.05% of the province, which rounds to 0.0) added to 'Other ethnic
+    groups' rather than dropped, so the counts shown are all the people:
+    (counts, how many nationalities were pooled, how many people they are)."""
+    counts = {g: v for g, v in groups.items() if v}
+    moved, people = 0, 0.0
+    while True:
+        shown = {row["group"] for row in hundred(counts)}
+        small = [g for g in counts if g != RESIDUAL and g not in shown]
+        if not small:
+            return counts, moved, int(round(people))
+        for group in small:
+            value = counts.pop(group)
+            counts[RESIDUAL] = counts.get(RESIDUAL, 0) + value
+            people += value
+            moved += 1
+
+
 def province_record(label: str, shape: str, name: str, a0101: dict[str, float],
                     a0104: dict[str, Any], a0105: dict[str, Any]) -> dict[str, Any]:
-    composition = hundred(a0104["groups"])
+    counts, small, small_people = pooled(a0104["groups"])
+    composition = hundred(counts)
     residual = a0104["groups"].get(RESIDUAL, 0)
+    shown = sum(row["count"] for row in composition)
+    if shown < a0104["total"] * 0.9995:
+        raise SystemExit(f"china_census: {label}'s nationalities shown count {shown:,} of "
+                         f"{a0104['total']:,.0f}")
+    tail = (f", and the {small_people:,} people of the {small} nationalities that are each "
+            "under 0.05% of the province" if small else "")
     return record(
         f"CHN-{name}", name, level="admin1", parent="CHN", country="CHN",
         match_by="shape_id", shape_id=shape,
@@ -354,7 +413,7 @@ def province_record(label: str, shape: str, name: str, a0101: dict[str, float],
             "2020 census, Table 1-4 of the census yearbook: the 56 nationalities (民族) the "
             f"census records, of all {int(a0104['total']):,} residents. 'Other ethnic groups' "
             f"is the {int(residual):,} people whose nationality is not identified (未定族称) "
-            "and naturalised citizens (入籍). A nationality under 0.05% is not shown."),
+            f"and naturalised citizens (入籍){tail}."),
         language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
         sources=sources())
 
@@ -438,27 +497,63 @@ def build(tables: dict[str, list[list[Any]]], admin1: list[dict[str, Any]],
     return records
 
 
+def bbox_share(unit: dict[str, Any], parent: dict[str, Any]) -> float | None:
+    """The part of the parent's bounding box the unit's own box covers: a check
+    on ``SAR_COVERAGE`` that the units files carry with them, so a polygon the
+    table calls whole cannot be a speck in the box of the SAR it is under."""
+    a, b = unit.get("bbox"), parent.get("bbox")
+    if not a or not b:
+        return None
+    width = min(a[2], b[2]) - max(a[0], b[0])
+    height = min(a[3], b[3]) - max(a[1], b[1])
+    area = (b[2] - b[0]) * (b[3] - b[1])
+    return max(width, 0) * max(height, 0) / area if area > 0 else None
+
+
+def sar_polygon(unit: dict[str, Any], parent: dict[str, Any], sar: dict[str, Any],
+                name: str) -> dict[str, Any]:
+    """A second-level polygon inside a SAR: the SAR's median age and sex ratio
+    if it is the SAR drawn again, its reason if it is a fragment."""
+    if unit["id"] not in SAR_COVERAGE:
+        raise SystemExit(f"china_census: {unit['id']} ({unit['name']!r}) is drawn inside "
+                         f"{name} and SAR_COVERAGE has not measured how much of it it covers")
+    coverage, what = SAR_COVERAGE[unit["id"]]
+    boxed = bbox_share(unit, parent)
+    if coverage >= WHOLE and boxed is not None and boxed < 0.5:
+        raise SystemExit(f"china_census: {unit['id']} is measured to cover {coverage:.0%} of "
+                         f"{name} but its box covers {boxed:.0%} of the SAR's")
+    common = dict(level="admin2", parent=f"CHN-{name}", country="CHN",
+                  match_by="shape_id", shape_id=unit["id"])
+    if coverage < WHOLE:
+        return record(f"CHN-{unit['id']}", unit["name"], **common,
+                      **{field: gap("not_available", what) for field in
+                         ("population", "median_age", "sex_ratio", "ethnicity", "language")})
+    return record(f"CHN-{unit['id']}", unit["name"], **common,
+                  median_age=sar["median_age"],
+                  median_age_note=f"{what} {sar['median_age_note']}",
+                  sex_ratio=sar["sex_ratio"],
+                  sex_ratio_note=f"{what} {sar['sex_ratio_note']}",
+                  sources=sar["sources"])
+
+
 def county_records(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
                    provinces: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """A record for every second-level polygon: the reasons for the mainland's,
-    and for the two polygons that are the SARs themselves, their SAR's median
-    age and sex ratio."""
+    """A record for every second-level polygon: the reasons for the mainland's;
+    inside a SAR, the SAR's median age and sex ratio for the polygon that is
+    the SAR drawn again, and its reason for a fragment of one."""
     names = {u["id"]: u["name"] for u in admin1}
+    first = {u["id"]: u for u in admin1}
     sars = {r["shape_id"]: r for r in provinces if r["name"] in (HK_NAME, MO_NAME)}
+    if len(sars) != 2:
+        raise SystemExit(f"china_census: {len(sars)} SAR records to draw on, not 2")
     out: list[dict[str, Any]] = []
-    seen: Counter = Counter()
+    inside: list[dict[str, Any]] = []
     for unit in admin2:
         parent_shape = unit.get("parent")
         if parent_shape in sars:
-            seen[parent_shape] += 1
-            sar = sars[parent_shape]
-            out.append(record(
-                f"CHN-{unit['id']}", unit["name"], level="admin2",
-                parent=f"CHN-{names[parent_shape]}", country="CHN",
-                match_by="shape_id", shape_id=unit["id"],
-                median_age=sar["median_age"], median_age_note=sar["median_age_note"],
-                sex_ratio=sar["sex_ratio"], sex_ratio_note=sar["sex_ratio_note"],
-                sources=sar["sources"]))
+            inside.append(sar_polygon(unit, first[parent_shape], sars[parent_shape],
+                                      names[parent_shape]))
+            out.append(inside[-1])
             continue
         parent = f"CHN-{names[parent_shape]}" if parent_shape in names else "CHN"
         out.append(record(
@@ -469,12 +564,10 @@ def county_records(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
             sex_ratio=gap("not_available", COUNTY_NOTE),
             ethnicity=gap("not_available", COUNTY_NOTE),
             language=gap(NOT_COLLECTED, LANGUAGE_NOTE)))
-    if len(sars) != 2 or any(seen[s] != 1 for s in sars):
-        raise SystemExit(f"china_census: the SARs are drawn as {dict(seen)} second-level "
-                         "polygons, not one each; a SAR's figures cannot be given to a part "
-                         "of it")
-    log(f"  {len(out)} second-level polygons: {len(out) - 2} with their reasons, the two "
-        "SARs with their own median age and sex ratio")
+    whole = [r["name"] for r in inside if "value" in (r.get("median_age") or {})]
+    log(f"  {len(out)} second-level polygons: {len(out) - len(inside)} mainland ones with "
+        f"their reasons; inside the SARs, {whole} with the SAR's own median age and sex ratio "
+        f"and {len(inside) - len(whole)} fragment(s) with theirs")
     return out
 
 

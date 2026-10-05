@@ -32,6 +32,10 @@ Subcommands:
         Taiwan's household-register open data API
         (www.ris.gov.tw/rs-opendata/api/v1/datastore/DATASET/PERIOD): each
         dataset's answer for each period, its first record's keys and values.
+    kosis ORG,TABLE [--encoding ko|en] [--field NAME=VALUE ...] [--grep REGEX]
+        KOSIS's table viewer walked with one cookie jar, as a browser walks
+        it: statHtml.do, the right-hand frame its script submits, and every
+        form or frame that one names; each step's endpoints, forms and status.
     nlsc LEVEL
         Every drawn Taiwanese unit's label point (site/data/LEVEL/TWN.units.json)
         put to the National Land Surveying and Mapping Center's point query
@@ -252,6 +256,102 @@ def cmd_ris(args: argparse.Namespace) -> None:
                 print("    " + json.dumps(rec, ensure_ascii=False)[:args.bytes])
 
 
+KOSIS = "https://kosis.kr/statHtml/"
+DO = re.compile(r"[\w/.-]*?\b(\w+\.do)\b")
+
+
+def form_fields(text: str, name: str) -> dict[str, str]:
+    """The hidden inputs of the form called ``name`` (or with that id)."""
+    for form in re.finditer(r"(?is)<form\b([^>]*)>(.*?)</form>", text):
+        a = attrs(form.group(1))
+        if name in (a.get("name"), a.get("id")):
+            return {t.get("name"): t.get("value", "")
+                    for t in (attrs(i.group(1))
+                              for i in re.finditer(r"(?is)<input\b([^>]*)>", form.group(2)))
+                    if t.get("name")}
+    return {}
+
+
+def cmd_kosis(args: argparse.Namespace) -> None:
+    """KOSIS's table viewer walked the way the browser walks it, with one
+    cookie jar: statHtml.do, then the right-hand frame its script submits
+    (right_layout.do, from the page's own iframeform plus the fields its
+    script sets), then each form or frame that one names. Every step prints
+    its status and size, the .do endpoints its markup and script name, its
+    forms, and the text around ``--grep``. Nothing is guessed past what the
+    previous page names."""
+    import http.cookiejar
+    org, tbl = args.target.split(",")
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+    lang = args.encoding or "ko"
+
+    def step(url: str, fields: dict[str, str] | None, referer: str | None) -> str:
+        data = urllib.parse.urlencode(fields).encode() if fields is not None else None
+        headers = {"User-Agent": UA}
+        if referer:
+            headers["Referer"] = referer
+        req = urllib.request.Request(url, data=data, headers=headers,
+                                     method="POST" if data is not None else "GET")
+        try:
+            with opener.open(req, timeout=120) as resp:
+                blob = resp.read()
+                status = resp.status
+        except urllib.error.HTTPError as exc:
+            print(f"  {url}: HTTP {exc.code} {exc.reason}")
+            return ""
+        except Exception as exc:  # noqa: BLE001
+            print(f"  {url}: failed {exc!r}")
+            return ""
+        text = decode(blob, "utf-8")
+        print(f"  {'POST' if data is not None else 'GET'} {url} -> {status}, {len(blob):,} bytes,"
+              f" cookies {sorted(c.name for c in jar)}")
+        print(f"    endpoints: {sorted(set(DO.findall(text)))[:args.rows]}")
+        for form in re.finditer(r"(?is)<form\b([^>]*)>(.*?)</form>", text):
+            a = attrs(form.group(1))
+            names = [attrs(i.group(1)).get("name")
+                     for i in re.finditer(r"(?is)<input\b([^>]*)>", form.group(2))]
+            print(f"    form {a.get('name') or a.get('id')!r} action={a.get('action')!r} "
+                  f"inputs={[n for n in names if n][:args.cols]}")
+        for src in re.findall(r"""(?is)<iframe\b[^>]*src\s*=\s*["']([^"']*)["']""", text):
+            print(f"    iframe {src!r}")
+        if args.grep:
+            for m in list(re.finditer(args.grep, text, re.I))[:args.options]:
+                s = max(0, m.start() - args.context)
+                print("    ~ " + " ".join(text[s:m.end() + args.context].split()))
+        return text
+
+    first_url = f"{KOSIS}statHtml.do?orgId={org}&tblId={tbl}&language={lang}&conn_path=I2"
+    first = step(first_url, None, None)
+    if not first:
+        return
+    frame = form_fields(first, "iframeform") or form_fields(first, "ParamInfo")
+    frame.update({"orgId": org, "tblId": tbl, "tblSe": "", "tblNm": "", "query": "",
+                  "tabYn": "", "language": lang})
+    for f in args.field:
+        name, _, value = f.partition("=")
+        frame[name] = urllib.parse.unquote_plus(value)
+    print(f"    right frame fields: {sorted(frame)[:40]}")
+    second = step(f"{KOSIS}right_layout.do", frame, first_url)
+    if not second:
+        return
+    # Whatever the right frame submits or frames next, with its own fields.
+    for form in re.finditer(r"(?is)<form\b([^>]*)>(.*?)</form>", second):
+        a = attrs(form.group(1))
+        action = a.get("action") or ""
+        if not action or "login" in action.lower() or "oneid" in action.lower():
+            continue
+        fields = form_fields(second, a.get("name") or a.get("id") or "")
+        fields.update({"orgId": org, "tblId": tbl, "language": lang})
+        step(urllib.parse.urljoin(f"{KOSIS}right_layout.do", action), fields,
+             f"{KOSIS}right_layout.do")
+    for src in re.findall(r"""(?is)<iframe\b[^>]*src\s*=\s*["']([^"']+)["']""", second):
+        if src.startswith(("javascript", "about")):
+            continue
+        step(urllib.parse.urljoin(f"{KOSIS}right_layout.do", html.unescape(src)), None,
+             f"{KOSIS}right_layout.do")
+
+
 NLSC = "https://api.nlsc.gov.tw/other/TownVillagePointQuery1/{lon}/{lat}"
 
 
@@ -276,7 +376,8 @@ def cmd_nlsc(args: argparse.Namespace) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["page", "form", "post", "get", "pxweb", "ris", "nlsc"])
+    ap.add_argument("cmd", choices=["page", "form", "post", "get", "pxweb", "ris", "nlsc",
+                                    "kosis"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--encoding")
     ap.add_argument("--wayback")
@@ -300,7 +401,7 @@ def main() -> int:
         try:
             {"page": cmd_page, "form": cmd_form, "post": cmd_post, "get": cmd_get,
              "pxweb": cmd_pxweb,
-             "ris": cmd_ris, "nlsc": cmd_nlsc}[args.cmd](args)
+             "ris": cmd_ris, "nlsc": cmd_nlsc, "kosis": cmd_kosis}[args.cmd](args)
         except urllib.error.HTTPError as exc:
             print(f"  HTTP {exc.code} {exc.reason}: "
                   + " ".join(exc.read()[:300].decode("utf-8", "replace").split()))
