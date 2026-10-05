@@ -236,10 +236,24 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
             log(f"    left out {name}: {ratio(men, women)} males per 100 females is outside "
                 f"{RATIO_BOUNDS}, implausible for a whole district or province")
             continue
+        # The twins placed by their seats are the two polygons the dataset's
+        # population reached nowhere else (its own reader matches by name), so
+        # their head count is written with them, from the same row.
+        pcode_col = next((c for c in row if re.fullmatch(r"(?i)adm(?:in)?_?2_?pcode", c)), None)
+        twin = level == "admin2" and (iso3, str(row.get(pcode_col) or "").strip()) in SEATS
+        total = (number(row.get(cols["totals"]["T"])) if "T" in cols["totals"]
+                 else (women or 0) + (men or 0))
         out.append(record(
             f"{iso3}-CODPSAGE-{level}-{fold(unit['name'])}-{unit['id'][-6:]}", unit["name"],
             level=level, parent=iso3, country=iso3, match_by="shape_id", shape_id=unit["id"],
             aliases=[name] if key(name) != key(unit["name"]) else None,
+            population=({"value": int(round(total)), "year": year, "source": source}
+                        if twin and total else None),
+            population_note=(f"OCHA's COD-PS for the country, reference year {year}: a "
+                             f"projection, as every other district's head count here is; this "
+                             f"one shares its romanised name with another district of its "
+                             f"province and was placed by its district office.{basis}"
+                             if twin and total else None),
             median_age={"value": figures["median"], "unit": "years", "year": year,
                         "source": source},
             median_age_note=(
@@ -251,7 +265,8 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
                        "year": year, "source": source},
             sex_ratio_note=(f"Males per 100 females in OCHA's COD-PS for the country, "
                             f"reference year {year}: a projection, not a count.{basis}"),
-            sources=[{"field": "median_age/sex_ratio", "name": source,
+            sources=[{"field": ("population/median_age/sex_ratio" if twin
+                                else "median_age/sex_ratio"), "name": source,
                       "url": cod_ps.DATASET_PAGE.format(stub=stub), "year": year,
                       "license": licence}]))
     log(f"  {iso3} {level}: {len(out)} units from {table['label']} ({year}); {refused} "
