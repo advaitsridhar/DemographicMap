@@ -229,9 +229,38 @@ DASHES = ("-", "–", "−")
 # Reading figures.
 
 def key(name: str) -> str:
-    """'г. Токмок' -> 'г.токмок'; '  Аламудунский  район' -> 'аламудунский район'."""
+    """'г. Токмок' -> 'г.токмок'; '  Аламудунский  район' -> 'аламудунский район'.
+
+    The books spell Jalal-Abad both 'Жалал-Абад' and 'Джалал-Абад', and a
+    hyphen sometimes with spaces around it; one key serves both.
+    """
     low = " ".join(name.lower().replace("ё", "е").split())
-    return re.sub(r"^г\.?\s*", "г.", low) if re.match(r"^г[.\s]", low) else low
+    low = re.sub(r"\s*-\s*", "-", low)
+    low = re.sub(r"(^|[\s.])джалал-абад", r"\1жалал-абад", low)
+    low = re.sub(r"^г\.?\s*", "г.", low) if re.match(r"^г[.\s]", low) else low
+    return SPELLINGS.get(low, low)
+
+
+# One district under two spellings in the same book (Osh Region's age table
+# prints "Кара-Сууйский", its table 3.2 "Кара-Сууский").
+SPELLINGS = {"кара-сууйский район": "кара-сууский район",
+             "джети-огузский район": "жети-огузский район",
+             "ысык-кульский район": "иссык-кульский район"}
+
+
+def tidy(tokens: list[str]) -> list[str]:
+    """A percentage split at its comma ('0 ,0' or '0, 0') put back together.
+
+    Counts are set with spaces between thousands and never carry a comma, so
+    joining at a comma touches only the share columns.
+    """
+    out: list[str] = []
+    for token in tokens:
+        if out and (re.fullmatch(r",\d+", token) or re.fullmatch(r"\d+,", out[-1])):
+            out[-1] += token
+        else:
+            out.append(token)
+    return out
 
 
 def figures(tokens: list[str], n: int, ok: Callable[[list[int]], bool],
@@ -315,17 +344,22 @@ TITLES = {
     "language": r"по\s+родному\s+языку|по\s+владению\s+родным\s+языком",
 }
 NUMBERED = re.compile(r"(\d)\.(\d+)\.?\s*(?:Численность|Распределение)\s+([^.]{0,200})")
-CONTINUED = re.compile(r"Продолжение\s+табл\.?\s*(\d)\.(\d+)\b", re.I)
+CONTINUED = re.compile(r"Продолжение\s+табл\w*\.?\s*(\d)\.(\d+)\b", re.I)
 
 
 def signature(text: str) -> str | None:
-    """A page's table told by its own headings and rows, where they say it."""
+    """A page's table told by its own headings and rows, where they say it.
+
+    ``text`` may be a page with its lines run together: the "0-4" row is
+    found after any space, not only at a line's start.
+    """
     if "язык своей" in text and "кыргызский" in text:
         return "language"
     if "Численность лиц" in text and "в процентах" in text:
         return "ethnic"
     if ("в том числе в возрасте" in text and "Средний возраст" in text
-            and re.search(r"(?m)^\s*0\s*[-–]\s*4\s+\d", text)):
+            and re.search(r"(?:^|\s)0\s*[-–]\s*4\s+\d", text)
+            and "кыргызы" not in text.lower()):     # 3.3: ethnic groups by age
         return "groups"
     return None
 
@@ -338,24 +372,35 @@ def page_kinds(pages: list[str]) -> list[str | None]:
     once N is known from a title or from a page whose headings say it.
     """
     number_kind: dict[str, str] = {}
+    other: set[str] = set()               # tables like these four that are none of them
     flat = [" ".join(p.split()) for p in pages]
+    for text in flat:
+        for m in NUMBERED.finditer(text):
+            if re.search(r"этническ\w*\s+групп\s+по\s+возрастн|образован|брак", m.group(3)):
+                other.add(f"{m.group(1)}.{m.group(2)}")
     for text in flat:
         if "СОДЕРЖАНИЕ" in text:
             continue
+        own = signature(text)
         for m in NUMBERED.finditer(text):
             title = m.group(3)
-            if re.search(r"этническ\w*\s+групп\s+по\s+возрастн|образован|брак", title):
+            if f"{m.group(1)}.{m.group(2)}" in other:
                 continue
             for kind, pattern in TITLES.items():
                 if re.search(pattern, title):
                     number_kind.setdefault(f"{m.group(1)}.{m.group(2)}", kind)
-        own = signature(text)
+            # Issyk-Kul's book prints a title in two pieces, its number and
+            # first words after the rows and "по полу, возрастным группам"
+            # before them: a page whose own rows say which table it is names
+            # the number too.
+            if own and len(NUMBERED.findall(text)) == 1:
+                number_kind.setdefault(f"{m.group(1)}.{m.group(2)}", own)
         for a, b in CONTINUED.findall(text):
             if own:
                 number_kind.setdefault(f"{a}.{b}", own)
     kinds: list[str | None] = []
     for text in flat:
-        if "СОДЕРЖАНИЕ" in text:
+        if "СОДЕРЖАНИЕ" in text or {f"{a}.{b}" for a, b in CONTINUED.findall(text)} & other:
             kinds.append(None)
             continue
         own = signature(text)
@@ -404,6 +449,7 @@ def parse_groups(text: str, where: str) -> dict[str, dict[str, Any]]:
         if not line:
             continue
         label, tokens = split_label(line)
+        tokens = tidy(tokens)
         low = label.lower()
         if not has_figures(tokens) and is_territory(label or line):
             pending, waiting = key(label or line), False
@@ -428,7 +474,9 @@ def parse_groups(text: str, where: str) -> dict[str, dict[str, Any]]:
         if block is None:
             continue
         name, rest = age_label(line)
-        if name not in GROUP_LABELS or not numeric(rest):
+        rest = tidy(rest)
+        if not numeric(rest) or not (
+                name in GROUP_LABELS or (name == "15-19" and block["labels"][-1:] == ["15"])):
             continue
         if name in block["labels"]:
             raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: {name} twice")
@@ -465,6 +513,8 @@ def age_label(line: str) -> tuple[str, list[str]]:
 
 
 def finish_groups(block: dict[str, Any], out: dict[str, dict[str, Any]], where: str) -> None:
+    if "15-19" in block["labels"]:
+        settle_fifteen(block, where)
     if block["labels"] != GROUP_LABELS:
         raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: age groups "
                          f"{block['labels']}")
@@ -477,6 +527,36 @@ def finish_groups(block: dict[str, Any], out: dict[str, dict[str, Any]], where: 
         raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: two different "
                          f"age blocks")
     out[block["name"]] = {"total": block["total"], "groups": block["groups"]}
+
+
+def settle_fifteen(block: dict[str, Any], where: str) -> None:
+    """A '15-19' row after the '15' row: which of two things it is.
+
+    Naryn's book prints "15" and then "15-19" where the other books print
+    "16-19". Either the label is misprinted and the row is 16-19, or the row
+    is 15-19 and holds the 15-year-olds again; only one reading lets the
+    groups make the total, and that one is kept (as 16-19, by subtraction
+    in the second case).
+    """
+    i = block["labels"].index("15-19")
+    fifteen, row = block["groups"][i - 1], block["groups"][i]
+    others = tuple(sum(g[k] for j, g in enumerate(block["groups"]) if j != i)
+                   for k in range(3))
+    as_printed = tuple(o + r for o, r in zip(others, row))
+    if as_printed == block["total"]:
+        log(f"  {where} {block['name']}: the row labelled 15-19 is 16-19 (the groups make "
+            f"the total only so)")
+    elif tuple(p - f for p, f in zip(as_printed, fifteen)) == block["total"]:
+        block["groups"][i] = tuple(r - f for r, f in zip(row, fifteen))
+        if min(block["groups"][i]) < 0:
+            raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: 15-19 is "
+                             f"smaller than 15")
+        log(f"  {where} {block['name']}: 15-19 holds the 15-year-olds again; 16-19 is "
+            f"{block['groups'][i][0]:,}")
+    else:
+        raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: neither reading of "
+                         f"its 15-19 row makes {block['total']}")
+    block["labels"][i] = "16-19"
 
 
 def parse_years(text: str, where: str) -> dict[str, Any] | None:
@@ -746,7 +826,8 @@ def read_book(name: str, pages: list[str]) -> dict[str, Any]:
                              f"{sorted(set(ethnic) - set(units) - {region})}")
     for unit in units + [region]:
         if unit not in groups:
-            raise SystemExit(f"kyrgyzstan_census: {name}: no age block for {unit}")
+            raise SystemExit(f"kyrgyzstan_census: {name}: no age block for {unit}; the age "
+                             f"table has {sorted(groups)}")
         if groups[unit]["total"] != ethnic[unit]["total"]:
             raise SystemExit(f"kyrgyzstan_census: {name} {unit}: the age table has "
                              f"{groups[unit]['total']}, table 3.2 {ethnic[unit]['total']}")

@@ -110,6 +110,15 @@ class Reading(unittest.TestCase):
         self.assertEqual(kg.key("  Аламудунский  район"), "аламудунский район")
         self.assertTrue(kg.is_territory("Кара-Сууский район"))
         self.assertFalse(kg.is_territory("кыргызы"))
+        # One place under the spellings the books use for it.
+        self.assertEqual(kg.key("Кара-Сууйский район"), "кара-сууский район")
+        self.assertEqual(kg.key("Джалал-Абадская область"), "жалал-абадская область")
+        self.assertEqual(kg.key("г.Джалал - Абад"), "г.жалал-абад")
+
+    def test_a_share_split_at_its_comma_is_put_together(self):
+        self.assertEqual(kg.tidy("55 18 37 0 ,0 0,0".split()), ["55", "18", "37", "0,0", "0,0"])
+        self.assertEqual(kg.tidy("55 18 37 0, 0 0,0".split()), ["55", "18", "37", "0,0", "0,0"])
+        self.assertEqual(kg.tidy("1 056 758".split()), ["1", "056", "758"])
 
 
 class Tables(unittest.TestCase):
@@ -126,6 +135,27 @@ class Tables(unittest.TestCase):
     def test_an_age_block_that_does_not_add_up_stops(self):
         with self.assertRaises(SystemExit):
             kg.parse_groups(AGES.replace("0-4 200 100 100", "0-4 202 101 101"), "Chuy")
+
+    def test_the_oldest_row_with_a_split_share(self):
+        text = age_block("Таласская область", rows_for(1)[:20] + [(9, 3, 6)])
+        text = text.replace("100 лет и старше 9 3 6 1,0 1,1", "100 лет и старше 9 3 6 0 ,0 0,0")
+        self.assertIn("0 ,0", text)
+        block = kg.parse_groups(text, "Talas")["таласская область"]
+        self.assertEqual(block["groups"][-1], (9, 3, 6))
+
+    def test_a_15_19_row_after_the_15_row(self):
+        rows = rows_for(1)
+        # Naryn prints "15-19" holding the 15-year-olds again ...
+        again = age_block("Нарынская область", rows).replace(
+            f"16-19 {' '.join(map(thousands, rows[4]))}",
+            f"15-19 {' '.join(thousands(a + b) for a, b in zip(rows[3], rows[4]))}")
+        self.assertIn("15-19", again)
+        block = kg.parse_groups(again, "Naryn")["нарынская область"]
+        self.assertEqual(block["groups"][4], rows[4])
+        # ... and a "15-19" that is 16-19 misprinted is read as printed.
+        misprint = age_block("Нарынская область", rows).replace("16-19 ", "15-19 ")
+        block = kg.parse_groups(misprint, "Naryn")["нарынская область"]
+        self.assertEqual(block["groups"][4], rows[4])
 
     def test_ethnic_groups_and_a_wrapped_name(self):
         ethnic = kg.parse_ethnic(ETHNIC_TEXT, "Chuy")
@@ -164,6 +194,19 @@ class Tables(unittest.TestCase):
                  "Продолжение табл. 4.1"]
         self.assertEqual(kg.page_kinds(pages), [None, "years", "years", "groups", "groups",
                                                 "ethnic", "language", None])
+
+    def test_page_kinds_from_the_rows_when_the_title_is_split(self):
+        # Issyk-Kul: "по полу, возрастным группам" printed before the rows,
+        # "2.8. Численность ..." after them; then a continuation page, and
+        # table 3.3 (ethnic groups by age), whose rows look alike.
+        rows = " в том числе в возрасте, лет: 0-4 59 638 30 356 29 282 Средний возраст 28,6"
+        pages = ["3.3. Распределение постоянного городского и сельского населения отдельных "
+                 "этнических групп по возрастным группам",
+                 "по полу, возрастным группам и территории Иссык-Кульская область" + rows
+                 + " 2.8. Численность постоянного городского и сельского населения в том числе",
+                 "Продолжение таблицы 2.8 Тонский район 90-99 10 5 5",
+                 "Продолжение табл. 3.3 кыргызы узбеки Кара-Сууский район" + rows]
+        self.assertEqual(kg.page_kinds(pages), [None, "groups", "groups", None])
 
 
 def unit(total, groups, ethnic, languages):
