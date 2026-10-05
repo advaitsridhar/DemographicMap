@@ -46,7 +46,7 @@ import io
 import re
 from typing import Any, NamedTuple
 
-from ._shared import PROCESSED, http_get, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
 from .sea_common import age_sex, check_runs, drawn, fold, grouped
 
 OUT = "indonesia_registry_age.json"
@@ -54,8 +54,19 @@ LICENCE = "Open government data of the province, published on its Satu Data port
 HEADER = re.compile(r"^\s*(?P<band>>?\s*\d{1,2}(?:\s*-\s*\d{1,2})?)\s*\(\s*(?P<sex>LK|L|PR|P|JML|JM)"
                     r"\w*\s*\)?\s*$", re.IGNORECASE)
 SEX = {"l": "M", "lk": "M", "p": "F", "pr": "F", "jml": "T", "jm": "T"}
-# Drawn second-level shapes that are water, not regencies.
-NOT_REGENCIES = frozenset({"danau"})
+# Drawn second-level shapes that are lakes, reservoirs and a forest, not
+# regencies; indonesia.py's records say what each is.
+NOT_REGENCIES = frozenset({"danau", "danautoba", "hutan", "wadukcirata", "wadungkedungombo"})
+# Said on every other province and regency, whose ages no table reaches.
+UNREAD = ("Indonesia's census counts every regency's people by age and sex, and no table of "
+          "them reaches this map: Statistics Indonesia (BPS) answers this project's reader "
+          "HTTP 403 on every bps.go.id host, its own API (webapi.bps.go.id) wants a registered "
+          "key this project does not have, the 2010 census service (sp2010.bps.go.id) serves "
+          "one identical page at every address, OCHA's population file for Indonesia "
+          "(cod-ps-idn) is licensed for humanitarian use only, and the civil register's "
+          "dashboards (dukcapil.kemendagri.go.id) time out. Of the provinces' own open-data "
+          "portals, only West Sumatra's and Bengkulu's publish the register's age structure by "
+          "regency (docs/SOURCES.md lists the portals tried).")
 
 
 class Source(NamedTuple):
@@ -224,6 +235,21 @@ def build(source: Source, grid: list[list[Any]], admin1: list[dict[str, Any]],
     return out
 
 
+def unread(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
+           covered: set[str]) -> list[dict[str, Any]]:
+    """Every other province and regency: its median age and sex ratio say why they are empty."""
+    out = []
+    for level, units in (("admin1", admin1), ("admin2", admin2)):
+        for u in units:
+            if u["id"] in covered or fold(u["name"]) in NOT_REGENCIES:
+                continue
+            out.append(record(f"IDN-REG-unread-{level}-{u['id']}", u["name"], level=level,
+                              parent="IDN", country="IDN", match_by="shape_id",
+                              shape_id=u["id"], median_age=gap(NOT_AVAILABLE, UNREAD),
+                              sex_ratio=gap(NOT_AVAILABLE, UNREAD)))
+    return out
+
+
 def main() -> int:
     argparse.ArgumentParser(description=__doc__,
                             formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
@@ -237,6 +263,9 @@ def main() -> int:
         grid = [list(r) for r in book.worksheets[0].iter_rows(values_only=True)]
         book.close()
         records += build(source, grid, admin1, admin2)
+    gaps = unread(admin1, admin2, {r["shape_id"] for r in records})
+    log(f"  {len(gaps)} other provinces and regencies carry the reason their ages are empty")
+    records += gaps
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {OUT}: {len(records)} records")
     return 0

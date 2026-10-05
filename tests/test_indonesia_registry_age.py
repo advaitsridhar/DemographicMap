@@ -70,5 +70,16 @@ class BuildTest(unittest.TestCase):
             r.build(SOURCE, grid(rows()), ADMIN1, admin2)
 
 
+class UnreadTest(unittest.TestCase):
+    def test_every_other_unit_but_water_says_why(self):
+        admin1 = ADMIN1 + [{"id": "P11", "name": "Aceh"}]
+        admin2 = ADMIN2 + [{"id": "Z", "name": "Danau Toba", "parent": "P12"},
+                           {"id": "Y", "name": "Aceh Besar", "parent": "P11"}]
+        recs = {x["shape_id"]: x for x in r.unread(admin1, admin2, {"P13", "A", "B"})}
+        self.assertEqual(set(recs), {"P11", "Y"})
+        self.assertIn("HTTP 403", recs["Y"]["median_age"]["note"])
+        self.assertNotIn("value", recs["P11"]["sex_ratio"])
+
+
 if __name__ == "__main__":
     unittest.main()
