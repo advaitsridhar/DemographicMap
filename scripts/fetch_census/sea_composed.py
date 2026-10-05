@@ -58,9 +58,12 @@ from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, share
 from .sea_common import drawn, fold
 
 OUT = "sea_composed.json"
-# A group's count in a whole against its parts' sum: the workbooks print
-# whole people, so anything past rounding is a different count.
+# A whole's total against its parts' sum: the workbooks print whole people,
+# so anything past rounding is a different count.
 SLACK = 0.5
+# The groups of a whole against its parts', all together, as a share of the
+# total (see differs()).
+GROUP_SLACK = 0.001
 
 # Polygons the census's districts reach only by a name ``uscb.py`` does not
 # know: the census calls West Yangon district "YANGON" (myanmar_age.ALIASES),
@@ -169,14 +172,30 @@ def unit_name(unit: dict[str, Any]) -> str:
 
 
 def differs(whole: dict[str, Any], made: dict[str, Any]) -> list[str]:
-    """Where a whole's own row and the sum of its parts disagree."""
+    """Where a whole's own row and the sum of its parts disagree, if they do.
+
+    The totals must agree to the person. The groups may disagree by a few
+    people in all -- the Philippine region's row prints 19 Buhid Mangyan
+    where its seventeen places print 49 -- but not by more than
+    ``GROUP_SLACK`` of the total between them: a place missing or counted
+    twice moves far more than that. Small disagreements are logged.
+    """
     out = []
-    if abs((whole["published"] or 0) - made["published"]) > SLACK:
-        out.append(f"total {whole['published']:,.0f} against {made['published']:,.0f}")
+    total = whole["published"] or 0
+    if abs(total - made["published"]) > SLACK:
+        out.append(f"total {total:,.0f} against {made['published']:,.0f}")
+    small = []
+    off = 0.0
     for label in sorted(set(whole["counts"]) | set(made["counts"])):
         a, b = whole["counts"].get(label, 0.0), made["counts"].get(label, 0.0)
         if abs(a - b) > SLACK:
-            out.append(f"{label} {a:,.0f} against {b:,.0f}")
+            off += abs(a - b)
+            small.append(f"{label} {a:,.0f} against {b:,.0f}")
+    if off > max(SLACK, GROUP_SLACK * total):
+        out += small
+    elif small:
+        log(f"    groups a whole and its parts print differently, {off:,.0f} people in all: "
+            + "; ".join(small[:6]))
     return out
 
 

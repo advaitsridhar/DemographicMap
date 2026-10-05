@@ -151,10 +151,10 @@ def philippine_sheets(places=NCR_PLACES, region_extra=0):
         rows.append(["NATIONAL CAPITAL REGION", "NATIONAL CAPITAL REGION", "", "", 1, *total])
         return rows
     religion = sheet([("RLG_HPOP", "Household population"), ("RLG_RCAT", "Roman Catholic"),
-                      ("RLG_INC", "Iglesia ni Cristo")], lambda p: [10, 9, 1])
+                      ("RLG_INC", "Iglesia ni Cristo")], lambda p: [10000, 9000, 1000])
     ethnicity = sheet([("ETH_HPOP", "Household population"), ("ETH_TAG", "Tagalog"),
                        ("ETH_BIS", "Bisaya/Binisaya")],
-                      lambda p: [10, 10, 0] if p != "Pateros" else [10, 5, 5])
+                      lambda p: [10000, 10000, 0] if p != "Pateros" else [10000, 5000, 5000])
     return {"Religion": religion, "Ethnicity": ethnicity}
 
 
@@ -172,7 +172,7 @@ class PhilippinesTest(unittest.TestCase):
     def test_three_districts_summed(self):
         recs = self.build()
         self.assertEqual(set(recs), {"N2", "N3", "N4"})
-        self.assertEqual(recs["N2"]["religion"][0]["count"], 45)
+        self.assertEqual(recs["N2"]["religion"][0]["count"], 45000)
         self.assertEqual(pct(recs["N4"], "ethnicity"), {"Tagalog": 92.9, "Bisaya/Binisaya": 7.1})
         self.assertIn("Quezon City", recs["N2"]["religion_note"])
 
@@ -183,6 +183,17 @@ class PhilippinesTest(unittest.TestCase):
     def test_a_region_row_its_places_do_not_make_refuses(self):
         with self.assertRaises(SystemExit):
             self.build(philippine_sheets(region_extra=3))
+
+    def test_a_small_group_printed_differently_is_noted_not_refused(self):
+        sheets = philippine_sheets()
+        region = sheets["Ethnicity"][-1]
+        region[-1], region[-2] = region[-1] + 1, region[-2] - 1   # the total stands
+        self.assertEqual(set(self.build(sheets)), {"N2", "N3", "N4"})
+        many = philippine_sheets()
+        region = many["Ethnicity"][-1]
+        region[-1], region[-2] = region[-1] + 100, region[-2] - 100
+        with self.assertRaises(SystemExit):
+            self.build(many)
 
 
 if __name__ == "__main__":
