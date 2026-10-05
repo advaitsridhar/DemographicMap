@@ -1,7 +1,29 @@
-indonesia_registry_age: two provinces' civil-register age structure
-  sumbar: 19 kabupaten and kota make the province's 5,750,326 in every group and sex
-  sumbar: 20 records; median 27.2-32.3
-  bengkulu: 10 kabupaten and kota make the province's 2,169,170 in every group and sex
-  bengkulu: 11 records; median 29.0-32.4
-  wrote data/processed/indonesia_registry_age.json (63 kB)
-  wrote indonesia_registry_age.json: 31 records
+sea_composed: religion and ethnicity on the polygons no one census area is
+  Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
+    SHAN STATE / WA SELF-ADMINISTERED DIVISION: 4 of 6 townships carry no ethnicity figures (Mongmao, Pangwaun, Pangsang, Narphan)
+    SHAN STATE / WA SELF-ADMINISTERED DIVISION: 4 of 6 townships carry no religion figures (Mongmao, Pangwaun, Pangsang, Narphan)
+    SHAN STATE / KENGTUNG: 1 of 5 townships carry no ethnicity figures (Mongla)
+    SHAN STATE / KENGTUNG: 1 of 5 townships carry no religion figures (Mongla)
+  districts and zones whose townships make them: 78 for ethnicity, 78 for religion
+  ethnicity: the 74 polygons make the Union's 47,809,979; units with no figures: Mongmao, Pangwaun, Narphan, Pangsang
+  religion: the 74 polygons make the Union's 49,011,760; units with no figures: Mongmao, Pangwaun, Narphan, Pangsang
+    Hkamti: Hkamti district; Lay Shi, Lahe, Nanyun of the Naga self-administered zone -- ethnicity 373,352, religion 370,874
+    Hopang: Hopan, Mongmao, Pangwaun of the Wa self-administered division -- ethnicity none (2 parts without figures), religion none (2 parts without figures)
+    Katha: Katha district; Kawlin district -- ethnicity 860,522, religion 861,061
+    Kyaukme: Kyaukme district; Namhsan, Manton of the Palaung self-administered zone -- ethnicity 629,121, religion 635,279
+    Laukkaing: Laukine, Konkyan of the Kokang self-administered zone -- ethnicity 97,395, religion 97,395
+    Matman: Makman, Narphan, Pangsang of the Wa self-administered division -- ethnicity none (2 parts without figures), religion none (2 parts without figures)
+    Mindat: Mindat district; Matupi district -- ethnicity 227,897, religion 228,045
+    Tachileik: Tachileik district; Mong Hpayak district -- ethnicity 235,018, religion 235,018
+    Taunggyi: Taunggyi district; Pindaya, Ywangan of the Danu self-administered zone; Hopong, Hsihseng, Pinlaung of the Pa-O self-administered zone -- ethnicity 1,559,537, religion 1,569,134
+    Yangon (West): Yangon -- ethnicity 808,369, religion 867,881
+    Mandalay (first level): MANDALAY and NAY PYI TAW -- ethnicity 6,778,236, religion 6,841,080
+  Philippines: https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15/resource/5acff37e-0c02-4d89-bbd2-1825ee98916c/download/philippines_uscb_202402.xlsx
+    groups a whole and its parts print differently, 30 people in all: Buhid Mangyan 19 against 49
+  the National Capital Region's 17 places make its row, and each is in one district
+  Cotabato City: no row; the Bangsamoro region's religion 4,723,191 against its provinces' 4,723,191; ethnicity 4,723,191 against its provinces' 4,723,191 (Basilan, Lanao Del Sur, Maguindanao, Sulu, Tawi-Tawi)
+    NCR, Second District: Mandaluyong, Marikina, Pasig, Quezon City, San Juan -- religion 4,748,925, ethnicity 4,748,925
+    NCR, Third District: Caloocan, Malabon, Navotas, Valenzuela -- religion 2,998,412, ethnicity 2,998,412
+    NCR, Fourth District: Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig -- religion 3,818,429, ethnicity 3,818,429
+  wrote data/processed/sea_composed.json (163 kB)
+  wrote sea_composed.json: 15 records

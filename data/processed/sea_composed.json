@@ -1386,6 +1386,42 @@
     "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The map draws one polygon here where the census counted Mandalay and Nay Pyi Taw, so this is their sum."
   },
   {
+    "id": "PHL-COMP-cotabatocity",
+    "level": "admin2",
+    "name": "Cotabato City",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The US Census Bureau's tables of the 2020 census, which carry the Philippines' religion and ethnicity on this map, have no row for Cotabato City: the Bangsamoro region's row is exactly its provinces' (Basilan, Lanao Del Sur, Maguindanao, Sulu, Tawi-Tawi), and the census's own barangay table files the city under Maguindanao, so its people are inside Maguindanao's figures and cannot be taken out of them."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The US Census Bureau's tables of the 2020 census, which carry the Philippines' religion and ethnicity on this map, have no row for Cotabato City: the Bangsamoro region's row is exactly its provinces' (Basilan, Lanao Del Sur, Maguindanao, Sulu, Tawi-Tawi), and the census's own barangay table files the city under Maguindanao, so its people are inside Maguindanao's figures and cannot be taken out of them."
+    },
+    "sources": [],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B312406433782"
+  },
+  {
     "id": "PHL-COMP-ncrseconddistrict",
     "level": "admin2",
     "name": "NCR, Second District",
