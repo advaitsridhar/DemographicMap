@@ -90,15 +90,20 @@ def parse_annex(pages: list[str]) -> dict[int, dict[str, Any]]:
     each n being (households, total, male, female)."""
     provinces: dict[int, dict[str, Any]] = {}
     current = None
+    province = 0
+    pending = None              # a district row whose printed code is not its province's
     for page in pages:
         if not re.search(r"Table\s*P-\d{2}", page):
             continue
         for raw in page.splitlines():
             line = " ".join(raw.split())
             if h := HEADER.match(line):
-                code = int(h.group("code"))
-                current = provinces.setdefault(code, {"name": h.group("name"), "n": None,
-                                                      "districts": {}})
+                if pending:
+                    raise SystemExit(f"cambodia_census: the district row {pending['line']!r} "
+                                     "is followed by no commune of its province")
+                province = int(h.group("code"))
+                current = provinces.setdefault(province, {"name": h.group("name"), "n": None,
+                                                          "districts": {}})
                 continue
             if current is None:
                 continue
@@ -111,15 +116,36 @@ def parse_annex(pages: list[str]) -> dict[int, dict[str, Any]]:
                 continue
             code = int(m.group("code"))
             n = tuple(number(x) for x in m.groups()[2:6])
-            province = next(p for p, v in provinces.items() if v is current)
-            if code // 100 == province:
-                current["districts"][code] = {"name": m.group("name"), "n": n, "communes": {}}
-            elif code // 10000 == province and code // 100 in current["districts"]:
-                current["districts"][code // 100]["communes"][code] = {"name": m.group("name"),
-                                                                     "n": n}
-            else:
+            if len(m.group("code")) <= 4:
+                if pending:
+                    raise SystemExit(f"cambodia_census: the district row {pending['line']!r} "
+                                     "is followed by no commune of its province")
+                if code // 100 == province:
+                    current["districts"][code] = {"name": m.group("name"), "n": n,
+                                                  "communes": {}}
+                else:
+                    # A misprinted district code -- Kampong Cham's Srei Santhor
+                    # is printed "211" -- is read from its communes' codes.
+                    pending = {"name": m.group("name"), "n": n, "line": line}
+                continue
+            district = code // 100
+            if code // 10000 != province:
                 raise SystemExit(f"cambodia_census: row {line!r} belongs to no district of "
                                  f"province {province:02d}")
+            if pending and district not in current["districts"]:
+                log(f"  the district row {pending['line']!r} is read as district {district}, "
+                    f"its communes' code")
+                current["districts"][district] = {"name": pending["name"], "n": pending["n"],
+                                                  "communes": {}}
+                pending = None
+            if district not in current["districts"]:
+                raise SystemExit(f"cambodia_census: row {line!r} belongs to no district of "
+                                 f"province {province:02d}")
+            current["districts"][district]["communes"][code] = {"name": m.group("name"),
+                                                                "n": n}
+    if pending:
+        raise SystemExit(f"cambodia_census: the district row {pending['line']!r} is followed "
+                         "by no commune of its province")
     return provinces
 
 

@@ -34,6 +34,12 @@ class AnnexTest(unittest.TestCase):
         self.assertEqual(sorted(prov["districts"][102]["communes"]), [10201, 10202])
         self.assertEqual(prov["districts"][103]["n"], (4, 16, 8, 8))
 
+    def test_a_misprinted_district_code_is_read_from_its_communes(self):
+        page = PAGE.replace("103 Phnum Srok", "211 Phnum Srok")
+        annex = kh.parse_annex([page])
+        self.assertEqual(annex[1]["districts"][103]["name"], "Phnum Srok")
+        self.assertEqual(sorted(annex[1]["districts"][103]["communes"]), [10301])
+
     def full(self):
         """25 provinces of one district and one commune each."""
         out = {}
