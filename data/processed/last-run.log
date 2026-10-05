@@ -1,118 +1,504 @@
-pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
-    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
-    and its 31 districts are Table 9's districts
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
-    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
-    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 36 districts add up to the province
-    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
-    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
-    and its 34 districts are Table 9's districts
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
-    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
-    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
-    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
-    and its 22 districts are Table 9's districts
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
-    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
-    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
-    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
-    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
-    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
-    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
-    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 34 districts add up to the province
-    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
-    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
-    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
-    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
-    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
-    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
-    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
-    and its 27 districts are Table 9's districts
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's mother tongues sum to its own printed total
-    and the 1 districts add up to the province
-    and its 1 districts are Table 9's districts
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  6 districts say what their Other language holds, and 1 what their Other religion does
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  Azad Jammu and Kashmir, from the territory's own yearbook
-    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-    Table 15.24 named on page 15 with no rows under it: the contents, not the table
-    Table 15.24 on page 209: 10 districts
-    all 7 columns sum to the printed AJ&K row
-    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
-    Table 15.33 named on page 16 with no heading row under it: the contents, not the table
-    Table 15.33 on page 213: 10 districts, 8 languages
-    Mirpur: Table 15.33 sums to 97%, rescaled to 100 across its own languages
-    AJ&K languages: Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%
-    AJ&K Table 15.8: the row labelled 61 under 60-64 is age 62 by its place
-    AJ&K Table 15.8 misprint corrected -- age 26 territory males: +1,000 by its row and by its 25-29 group
-    AJ&K Table 15.8 misprint corrected -- age 26 territory persons: +1,000 by its row and by its 25-29 group
-    AJ&K Table 15.8 misprint corrected -- age 49 rural males: +4 by its row and by its 45-49 group
-    AJ&K Table 15.8 misprint corrected -- age 49 rural persons: +4 by its row and by its 45-49 group
-    AJ&K Table 15.8 misprint corrected -- age 60 rural males: -36 by its row and by its 60-64 group
-    AJ&K Table 15.8 misprint corrected -- age 60 rural persons: -36 by its row and by its 60-64 group
-    Table 15.8: 76 single years add up to their 15 groups and to the territory's 4,032,363, Table 15.24's population, in the rural, urban and territory columns alike
-  Gilgit-Baltistan, from the territory's own At a Glance
-    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
-    10 districts on page 3, summing to the territory's own printed 1,709,049
-  Gilgit-Baltistan's language, from the territory's own MICS
-    22,827,802 bytes from https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf
-    Table SR.3.1 named on page 6 with no language block under it: the contents, not the table
-    Table SR.3.1 on page 57: 6 languages over 6,929 households, 2025
-  11 records declaring what is not published, rather than leaving the field empty
-  133 units say why their ethnicity field is empty, which is that the census does not ask it
-  22 territory fields say why no age or sex ratio is published for them
-  wrote data/processed/pakistan_district.json (801 kB)
-  126 districts and 7 provinces
+probe_pdf: https://www.statsfiji.gov.fj/download/121/phc-2017/729/2017-population-and-housing-census-release-3.pdf
+  19,198,458 bytes
+  484 pages
+probe_pdf: 484 pages, printing [50, 51, 52, 53, 54, 55, 56, 105, 106]
+
+--- page 50 ----------------------------------------------------
+2017 Population and Housing Census, Administrative Report, 2018
+Page 37
+QUESTIONNAIRE DESIGN
+Indicator:  3 draft designs of Questionnaire, 1 stakeholder/user conference, final
+draft of questionnaire and hard-copy print-outs
+Baseline:  SPC Census Template
+Target:  A relevant Population and Housing Census Questionnaire capturing the
+data needs of stakeholders and users, which can be implemented using
+tablets
+Objectives
+The key objectives of the Census Questionnaire Design Team were to;
+1. ensure a formal standardised questionnaire is well designed, in advance, through
+consultations
+2. ensure that the design of the questionnaire meets the Census objectives in
+obtaining the most complete and accurate information possible
+3. formulate prescribed definitions or explanations for each question for clarity during
+interviews
+4. ensure that the questions are piloted by working together with the IT team
+Chronology of Events
+Table 6: Questionnaire design
+Activities Start date End date
+1st Draft - Questionnaire 17/08/2016 17/08/2017
+Presentation to Census committee 18/08/2017 18/08/2018
+2nd Draft - Questionnaire 18/08/2016 5/9/2016
+Presentation to Census committee 6/9/2016 6/9/2016
+3rd Draft -Questionnaire 06/092016 15/09/2016
+Presentation to Census committee 15/09/2016 15/09/2017
+Presentation to External Sector/User conference 21/03/17 21/03/17
+Final Draft - Questionnaire for pre-test via divisions 5/08/2017 05/08/17
+Final Copy ready for pre-test 5/08/2017 29/05/2017
+Printing of questionnaire for reserve 28/08/2017 09/01/17
+WB Questionnaire Designer
+SPC assisted during the initial stages of designing the questionnaire with the Tonga
+template used during the training they conducted.  The design for the Fiji Census
+questionnaire was a lot less challenging as the questionnaire designer for survey
+solutions was user friendly and other questionnaires available on-line for reference. The
+designer used a structural design that allows for easy flow and capture of information
+and with the use of rosters (even rosters within rosters), sections and subsections.
+During the enumeration week Administrators and IT officers had to assign users for the
+Enumerators, Supervisors and Headquarters staff.
+
+--- page 51 ----------------------------------------------------
+2017 Population and Housing Census, Administrative Report, 2018
+Page 38
+The 2017 Census questionnaire adopted the SPC Model which had eight modules with
+Non Private Dwellings as the ninth. With a standard approach in mind via Census
+questions across the region, the questions were modified to suit the Fiji context. The
+Australian Bureau of Statistics also provided technical assistance in the whole
+questionnaire design process.
+SDG’s
+FBoS officers attended both international and local workshops, consultations and
+trainings and this proved to be useful guidance the collection of information that could
+be used to provide benchmark information on a number of Sustainable Development
+Goals indicators with the sustainable.
+Figure 15: Sustainable Development Goals (SDG)
+FBoS officers through invites attended both international and local workshops,
+consultations and trainings so as to equip as much as providing resources on how
+Census can be used to provide benchmark information on various indicators   to in line
+with the sustainable goals.  This immensely helped in guiding the design of the Census
+questionnaire.
+
+--- page 52 ----------------------------------------------------
+2017 Population and Housing Census, Administrative Report, 2018
+Page 39
+The 2017 Census provided data for the following SDG goals;
+Table 7: SDG and the Census 2017 questionnaire
+Census Module SDG's Goals Targets Indicators
+Module A:
+Population
+Characteristics &
+Migration
+"Sustainable Development Goal indicators should be disaggregated, where relevant, by income, sex, age, race, ethnicity,
+migratory status, disability and geographic location, or other characteristics, in accordance with the Fundamental
+Principles of Official Statistics".
+Module B:
+Functioning
+Challenges
+SDG 4
+Ensure inclusive and
+equitable quality
+education and promote
+lifelong learning
+opportunities for all
+4.1
+By 2030, ensure that all
+girls and boys complete
+free, equitable and quality
+primary and secondary
+education leading to
+relevant and effective
+learning outcomes
+4.1.1
+Proportion of children and young
+people: (a) in grades 2/3; (b) at the
+end of primary; and (c) at the end
+of lower secondary achieving at
+least a minimum proficiency level
+in (i) reading and (ii) mathematics,
+by sex
+SDG 8
+Promote sustained,
+inclusive and
+sustainable economic
+growth, full and
+productive employment
+and decent work for all
+8.5
+By 2030, achieve full and
+productive employment and
+decent work for all women
+and men, including for
+young people and persons
+with disabilities, and equal
+pay for work of equal value
+8.5.2 Unemployment rate, by sex, age
+and persons with disabilities
+
+--- page 53 ----------------------------------------------------
+2017 Population and Housing Census, Administrative Report, 2018
+Page 40
+Census Module SDG's Goals Targets Indicators
+Module C:
+Education  SDG 4
+Ensure inclusive and
+equitable quality
+education and promote
+lifelong learning
+opportunities for all
+4.1
+By 2030, ensure that all girls
+and boys complete free,
+equitable and quality primary
+and secondary education
+leading to relevant and effective
+learning outcomes
+4.1.1
+Proportion of children and young
+people: (a) in grades 2/3; (b) at the
+end of primary; and (c) at the end of
+lower secondary achieving at least a
+minimum proficiency level in (i)
+reading and (ii) mathematics, by sex
+4.2
+By 2030, ensure that all girls
+and boys have access to quality
+early childhood development,
+care and pre-primary education
+so that they are ready for
+primary education
+4.2.2
+Participation rate in organized
+learning (one year before the official
+primary entry age), by sex
+4.6
+By 2030, ensure that all youth
+and a substantial proportion of
+adults, both men and women,
+achieve literacy and numeracy
+4.6.1
+Percentage of population in a given
+age group achieving at least a fixed
+level of proficiency in functional (a)
+literacy and (b) numeracy skills, by
+sex
+
+--- page 54 ----------------------------------------------------
+2017 Population and Housing Census, Administrative Report, 2018
+Page 41
+Census Module SDG's Goals Targets Indicators
+Module D:
+Economic
+Activities Last
+Week
+SDG 5
+Achieve gender
+equality and
+empower all
+women and girls
+5.5
+Ensure women’s full and effective
+participation and equal opportunities for
+leadership at all levels of decision-
+making in political, economic and public
+life
+5.5.2 Proportion of women in
+managerial positions
+SDG 8
+Promote
+sustained,
+inclusive and
+sustainable
+economic growth,
+full and
+productive
+employment and
+decent work for
+all
+8.5
+By 2030, achieve full and productive
+employment and decent work for all
+women and men, including for young
+people and persons with disabilities, and
+equal pay for work of equal value
+8.5.2 Unemployment rate, by sex, age
+and persons with disabilities
+8.6
+By 2020, substantially reduce the
+proportion of youth not in employment,
+education or training
+8.6.1
+Proportion of youth (aged 15-24
+years) not in education,
+employment or training
+8.7
+Take immediate and effective measures
+to eradicate forced labour, end modern
+slavery and human trafficking and
+secure the prohibition and elimination of
+the worst forms of child labour, including
+recruitment and use of child soldiers,
+and by 2025 end child labour in all its
+forms
+8.7.1
+Proportion and number of
+children aged 5?17 years
+engaged in child labour, by sex
+and age
+
+--- page 55 ----------------------------------------------------
+2017 Population and Housing Census, Administrative Report, 2018
+Page 42
+Census Module SDG's Goals Targets Indicators
+Module E:
+Fertility &
+Mortality
+SDG 3
+Ensure healthy
+lives and promote
+well-being for all at
+all ages
+3.2
+By 2030, end preventable deaths of newborns
+and children under 5 years of age, with all
+countries aiming to reduce neonatal mortality
+to at least as low as 12 per 1,000 live births
+and under-5 mortality to at least as low as 25
+per 1,000 live births
+3.2.1 Under-five mortality
+rate
+3.7
+By 2030, ensure universal access to sexual
+and reproductive health-care services,
+including for family planning, information and
+education, and the integration of reproductive
+health into national strategies and programmes
+3.7.2
+Adolescent birth rate
+(aged 10-14 years; aged
+15-19 years) per 1,000
+women in that age
+group
+Module F:
+Communication,
+Internet &
+Financial
+Inclusions
+SDG 5
+Achieve gender
+equality and
+empower all women
+and girls
+5.B
+Enhance the use of enabling technology, in
+particular information and communications
+technology, to promote the empowerment of
+women
+5.B.1
+Proportion of
+individuals who own a
+mobile telephone, by
+sex
+SDG 8
+Promote sustained,
+inclusive and
+sustainable
+economic growth,
+full and productive
+employment and
+decent work for all
+8.10
+Strengthen the capacity of domestic financial
+institutions to encourage and expand access to
+banking, insurance and financial services for
+all
+8.10.2
+Proportion of adults (15
+years and older) with
+an account at a bank or
+other financial
+institution or with a
+mobile-money-service
+provider
+SDG 9
+Build resilient
+infrastructure,
+promote inclusive
+and sustainable
+industrialization
+and foster
+innovation
+9.C
+Significantly increase access to information
+and communications technology and strive to
+provide universal and affordable access to the
+Internet in least developed countries by 2020
+9.C.1
+Proportion of
+population covered by a
+mobile network, by
+technology
+
+--- page 56 ----------------------------------------------------
+2017 Population and Housing Census, Administrative Report, 2018
+Page 43
+Census Module SDG's Goals Targets Indicators
+Module G:
+Housing &
+Income
+SDG1 End poverty in all its
+forms everywhere 1.4
+By 2030, ensure that all men and
+women, in particular the poor and
+the vulnerable, have equal rights to
+economic resources, as well as
+access to basic services, ownership
+and control over land and other
+forms of property, inheritance,
+natural resources, appropriate new
+technology and financial services,
+including microfinance
+1.4.2
+Proportion of total adult
+population with secure
+tenure rights to land, with
+legally recognized
+documentation and who
+perceive their rights to land
+as secure, by sex and by type
+of tenure
+SDG 6
+Ensure availability and
+sustainable
+management of water
+and sanitation for all
+6.1
+By 2030, achieve universal and
+equitable access to safe and
+affordable drinking water for al
+6.1.1
+Proportion of population
+using safely managed
+drinking water services
+6.2
+By 2030, achieve access to
+adequate and equitable sanitation
+and hygiene for all and end open
+defecation, paying special attention
+to the needs of women and girls
+and those in vulnerable situations
+6.2.1
+Proportion of population
+using safely managed
+sanitation services, including
+a hand-washing facility with
+soap and water
+SDG 7
+Ensure access to
+affordable, reliable,
+sustainable and
+modern energy for all
+7.1
+By 2030, ensure universal access to
+affordable, reliable and modern
+energy services
+7.1.1 Proportion of population with
+access to electricity
+7.1.2
+Proportion of population with
+primary reliance on clean
+fuels and technology
+SDG 11
+Make cities and
+human settlements
+inclusive, safe,
+resilient and
+sustainable
+11.1
+By 2030, ensure access for all to
+adequate, safe and affordable
+housing and basic services and
+upgrade slums
+11.1.1
+Proportion of urban
+population living in slums,
+informal settlements or
+inadequate housing
+
+--- page 105 ----------------------------------------------------
+__________________________________________________________________________________
+2017 Population and Housing Census, Administrative Report, 2018
+Page 92
+Table 3. Population by Province 2007 and 2017
+Province
+Census Year
+Absolute
+Change
+Percentage
+Change 2007 2017
+Ba 231,760 247,708 15,948 6.9%
+Bua 14,176 15,466 1,290 9.1%
+Cakaudrove 49,344 50,469 1,125 2.3%
+Kadavu 10,167 10,897 730 7.1%
+Lau 10,683 9,602 -1,081 -10.1%
+Lomaiviti 16,253 15,657 -596 -3.7%
+Macuata 72,441 65,983 -6,458 -8.9%
+Nadroga/Navosa 58,387 58,931 544 0.9%
+Naitasiri 160,760 177,678 16,918 10.5%
+Namosi 6,898 7,871 973 14.1%
+Ra 29,464 30,432 968 3.3%
+Rewa 100,995 108,016 7,021 7.0%
+Serua 18,249 20,031 1,782 9.8%
+Tailevu 55,692 64,552 8,860 15.9%
+Rotuma 2,002 1,594 -408 -20.4%
+Total 837,271 884,887 43,279 5.7%
+Urban Population
+Fiji’s urban population reached 494,252 in 2017, an increase of 69,406 (16.3%)
+compared to 2007. The count shows that 55.9% of Fiji’s population live in the Urban
+Areas, an increase of 5.1 percentage points compared to 2007. Much of the growth was
+due to the extension of the urban boundaries to cover growth in Nadi, Lautoka and parts
+of Taveuni in Cakaudrove.
+There were significant increases in the urban population of the following provinces;
+1) Ba by 44,413 or 36.7% with the Urban proportion of Ba’s population increasing
+from 52.2% in 2007 to 66.8% in 2017.
+2) Naitasiri by 13,664 or 10.1% with the Urban proportion of Naitasiri’s population
+sitting at a very high 83.7%.
+3) Cakaudrove by 3,965 or 56.4% with the Urban proportion o f Cakaudrove’s
+population increasing from 14.3% in in 2007 to 21.8% in 2017.
+4) Rewa by 4,720 or 5.3% with the Urban proportion of Rewa’s population now at
+86.5%.
+5) Tailevu by 2,497 or 14.0% with the Urban proportion of Tailevu’s population now
+at 31.5%.
+Further details are provided in Table 4 that follows;
+
+--- page 106 ----------------------------------------------------
+__________________________________________________________________________________
+2017 Population and Housing Census, Administrative Report, 2018
+Page 93
+Table 4. Urban Population by Province 2007 and 2017
+Province
+Urban
+Census Year Absolute
+Change % Change
+2007 %
+Urban 2017 %
+Urban
+Ba 120,998 52.2 165,411 66.8 44,413 36.7%
+Bua 592 4.2 625 4.0 33 5.6%
+Cakaudrove 7,034 14.3 10,999 21.8 3,965 56.4%
+Kadavu - - - - - -
+Lau - - - - - -
+Lomaiviti 4,397 26.7 4,250 27.1 -147 -3.3%
+Macuata 28,765 39.7 27,182 41.2 -1,583 -5.5%
+Nadroga/Navosa 9,622 16.5 10,293 17.5 671 7.0%
+Naitasiri 135,033 84.0 148,697 83.7 13,664 10.1%
+Namosi - - - - - -
+Ra 4,952 16.8 5,987 19.7 1,035 20.9%
+Rewa 88,763 88.1 93,483 86.5 4,720 5.3%
+Serua 6,867 37.6 7,005 35.0 138 2.0%
+Tailevu 17,823 32.0 20,320 31.5 2,497 14.0%
+Rotuma - - - - - -
+Total 424,846
+494,252
+69,406 16.3%
+Rural Population
+Fiji’s rural population was 390,635 at the time of the 2017 Population Census, a
+decrease of 21,790 (5.3%) compared to 2007. The count shows that 44.1% of Fiji’s
+population live in the Rural Areas which is a decrease of 5.1 percentage points compared
+to 2007.
+A combination of Out-Migration and the extension of the Urban Boundaries were the
+main causes of decline in the number of rural dwellers in the following provinces;
+ Ba by 28,465 with the Rural proportion of Ba’s population decreasing from 47.8%
+in 2007 to 31.2% in 2017.
+ Cakaudrove by 2,840 with the Rural proportion of Cakaudrove’s population
+decreasing from 85.7% in 2007 to 78.2% in 2017
+The population of Rural Macuata decreased by 4,875 and this was due mainly to the
+movement of people out of the rural areas. The Rural proportion of Macuata’s population
+decreased from 60.3% in 2007 to 58.8% in 2017.
+Further details are provided in Table 5 that follows;
