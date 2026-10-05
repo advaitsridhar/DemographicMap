@@ -1,3 +1,9 @@
-  districts make 9,410,100; the country 9,914,700; outside the six districts 504,600
-  wrote data/processed/israel_cbs.json (80 kB)
-  wrote israel_cbs.json (21)
+probe_ckan: 1 host(s), timeout 20s
+  https://data.opendevelopmentmekong.net/ -> 200 text/html "Dataset OD Mekong Datahub"
+    /api/3/action/status_show -> 200 application/json CKAN 2.9.9
+    package_search q='union report census 2014' -> 200, 412 matches, 100 shown, printing those matching '(?i)(union.report|census.report.volume.2|questionnaire|highlights)'
+      - the-2014-myanmar-population-and-housing-census-census-report-volume-2-b-the-union-report-occupation: The 2014 Myanmar Population and Housing Census Census Report Volume 2-B The Union Report: Occupation and Indus  [2 res: pdf]
+          PDF datastore=False e163b99a-f7df-4225-8d63-53f62254cfc6 https://data.opendevelopmentmekong.net/dataset/2937ed98-7852-4244-bb7d-de28de67fca7/resource/e163b99a-f7df-4225-8d63-53f62254cfc6/download/2boccupationandindustryen.pdf
+          PDF datastore=False ff8c2093-142f-440d-a683-873962c16662 https://data.opendevelopmentmekong.net/dataset/2937ed98-7852-4244-bb7d-de28de67fca7/resource/ff8c2093-142f-440d-a683-873962c16662/download/2boccupationandindustrymm.pdf
+      (99 others not matching)
+probe_ckan: 1 of 1 answered; 1 speak CKAN: data.opendevelopmentmekong.net
