@@ -1,18 +1,12 @@
-iran_census: 2016 census tables from the Internet Archive's captures of amar.org.ir
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/3-jamiat-k.xls :: <urlopen error [Errno 110] Connection timed out>
-  the Archive refused 3-jamiat-k.xls (<urlopen error [Errno 104] Connection reset by peer>); waiting 120s
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat00.xls :: <urlopen error [Errno 110] Connection timed out>
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/3/3-jamiat-00-k.xls :: <urlopen error [Errno 110] Connection timed out>
-  the Archive refused 3-jamiat-00-k.xls (<urlopen error [Errno 104] Connection reset by peer>); waiting 120s
-  province 00 Markazi: 12 shahrestans
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/3/3-jamiat-01-k.xls :: <urlopen error [Errno 110] Connection timed out>
-  the Archive refused 3-jamiat-01-k.xls (<urlopen error [Errno 104] Connection reset by peer>); waiting 120s
-  province 01 Gilan: 16 shahrestans
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat02.xls :: <urlopen error [Errno 110] Connection timed out>
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/3/3-jamiat-02-k.xls :: <urlopen error [Errno 110] Connection timed out>
-  the Archive refused 3-jamiat-02-k.xls (<urlopen error [Errno 104] Connection reset by peer>); waiting 120s
-  province 02 Mazandaran: 22 shahrestans
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/3/3-jamiat-03-k.xls :: <urlopen error [Errno 110] Connection timed out>
-  province 03 East Azerbaijan: 20 shahrestans
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat04.xls :: <urlopen error [Errno 110] Connection timed out>
-  the Archive refused jamiat04.xls (<urlopen error [Errno 104] Connection reset by peer>); waiting 120s
+cambodia_census: National Institute of Statistics, General Population Census of the Kingdom of Cambodia 2019, final results, Tables P-01 to P-25: population in normal or regular households by province, district and commune, and sex
+  fetched Final-General-Population-Census-2019-English.pdf (26.6 MB)
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  304 pages
+  the district row '211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0' is read as district 314, its communes' code
+  district 302 Chamkar Leu: its row (5160, 5160, 5160, 5160) contradicts itself; read as its communes' sum (24280, 101675, 48956, 52719)
+cambodia_census: district 702 Banteay Meas: its 14 communes make (19308, 73600, 34982, 38618), against (20683, 78828, 37543, 41285); its communes read: [70201, 70202, 70203, 70204, 70205, 70207, 70208, 70209, 70210, 70211, 70212, 70213, 70214, 70215]; rows not read: ['70206 Sdach Kong Khang']
