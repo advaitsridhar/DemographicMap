@@ -1,19 +1,92 @@
-cambodia_census: National Institute of Statistics, General Population Census of the Kingdom of Cambodia 2019, final results, Tables P-01 to P-25: population in normal or regular households by province, district and commune, and sex
-  fetched Final-General-Population-Census-2019-English.pdf (26.6 MB)
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140388185778000), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140388185778000), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140388185778000), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140388185778000), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140388185778000), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140388185778000), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-  304 pages
-  the district row '211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0' is read as district 314, its communes' code
-  Table 2.1.1 'Tbong Khmum' read as province 25 (Tboung Khmum)
-  Table 2.1.1: 25 provinces making 15,552,211
-  district 302 Chamkar Leu: its row (5160, 5160, 5160, 5160) is not its communes' sum (24280, 101675, 48956, 52719); the communes' sum makes the province's total, and stands
-  district 801 Kandal Stueng: its row (74303, 332843, 160647, 172196) is not its communes' sum (22649, 100565, 48071, 52494); the communes' sum makes the province's total, and stands
-  province 14 Prey Veng: its total row (266934, 1049361, 492221, 557140) is not its districts' sum (266934, 1056866, 495906, 560960); the households agree and the districts' people fit in its 1,057,720 (Table 2.1.1), so the districts stand
-  province 17 Siemreap: its total row (224672, 994540, 484524, 510016) is not its districts' sum (224672, 989303, 481931, 507372); the households agree and the districts' people fit in its 1,014,234 (Table 2.1.1), so the districts stand
-  district 2202 Banteay Ampil: its row (12534, 54716, 27775, 26941) is not its communes' sum (12534, 51605, 25448, 26157); the communes' sum makes the province's total, and stands
-  Tables P-01..P-25: 202 districts and 1646 communes in 25 provinces, each district's communes and each province's districts making its row; 15,186,779 people in regular households
-cambodia_census: province 18's regular households hold 219,865 of its 310,072
+probe_pdf: https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures.pdf
+  7,861,439 bytes
+  35 pages
+probe_pdf: 35 pages, 7 mention ['Median', 'median', 'Age', 'age']
+=== front matter ===
+
+
+=== pages mentioning ['Median', 'median', 'Age', 'age'] (first 10) ===
+
+--- page 4 ----------------------------------------------------
+Momase Regional Population    2,753,211
+Islands Regional Population    1,477 ,833
+PNG average annual Growth Rate (2011 - 2024)     2.6%
+Southern Regional average Annual Growth Rate (2011 - 2024)    3.6%
+Highlands Regional Average Annual Growth Rate (2011 - 2024)     1.9%
+Momase Regional Average Annual Growth Rate (2011 – 2024)         3.0%
+Islands Regional Average Annual Growth Rate (2011 - 2024)    2.3%
+PNG Crude Population Density per square kilometre       22 persons
+The 2024 Census information is a direct response to rapid growth in the demand for population
+
+--- page 6 ----------------------------------------------------
+This represents an increase of 40% (2,910,039 people) in PNG’s population count since 2011
+(7 ,275,324)
+The average annual growth rate over the past 13 years, since the 2011 Census, was 2.6%.
+Annual growth rate since the 2011 Census is higher (3.1%) but is likely to be artificially inflated
+because of non-demographic factors such as higher undercounting in 2000 and improvements to
+the 2011 and 2024 Census coverage methods.
+More males than females were counted in PNG on Census night (52.4% and 47 .6% of the total
+population, respectively). This represents approximately 110 males to every 100 females.
+The average number of people per household was 5 for PNG.
+Since the first official census in 1980, five years after independence, there have been an additional
+7 .2 million people added from 3.0 million in the last 44 years
+
+--- page 7 ----------------------------------------------------
+22.  Autonomous Region of Bougainville 3 6 7,0 9 3 189,477 1 7 7, 6 1 6 107
+Population Distribution by Region
+PNG is divided into 4 Regions. The Highlands Region (35.7%) has the highest percentage of PNG’s
+population, followed by Momase (27%), then the Southern and Islands Regions.
+Population Distribution by Province
+At the provincial level, Morobe has the highest percentage (9.8%), followed by Eastern Highlands
+Province (7 .9%), Madang (7 .5%) and National Capital District (7 .4%).
+
+--- page 8 ----------------------------------------------------
+Provincial Growth Rates
+The fastest growing provinces (between 2011 and 2024) were Western, National Capital District,
+Milne Bay, and Madang, each recording more than 3% average annual growth rate since 2011.
+T able 2: Provincial population growth rates (2011-2024)
+Province 2011 2024 Growth rate (%)
+
+--- page 18 ----------------------------------------------------
+Districts Total Male Female
+Dei 91,051 46,490 44,561
+Hagen Central 160,914 84,205 76,709
+Mul/Baiyer 110,252 55,920 54,332
+Tambul/Nebilyer 100,349 50,967 49,382
+      ...
+Sex Ratio (males per 100 females)  106
+Population density (persons per km2 ) 109
+District with highest population count Hagen Central
+Population Distribution by District
+19%
+      ...
+T ambul/Nebilyer
+35%
+Hagen Central
+24%
+Mul/Baiyer
+
+--- page 32 ----------------------------------------------------
+distribution of the population at a fixed point in time, important parameters for development planning.
+This information was captured using a census questionnaire comprising of six questions; name, relationship
+to head of household, sex, age, marital status and citizenship. The 2024 Census questionnaire was endorsed
+by the National Census Steering Committee (NCSC) with the focus on ensuring the collection of high quality
+census, instilling confidence in the accuracy and currency of the population count- a key government
+      ...
+census publicity drive.
+Census Geography
+The census geography is basically a register of all villages, communities, government or mission stations in
+both urban and rural areas placed under their correct wards, LLGs, districts, and provinces. It is established
+almost two years before the main census enumeration as a control to ensure everyone living in the country
+
+--- page 33 ----------------------------------------------------
+30
+helps identify areas not covered. It is also useful for the dissemination of the final census results.
+The census covered over 30,000 census units (including villages and communities in urban and rural areas),
+spanning 22 provinces, 98 districts, 369 LLGs, and more than 6,400 wards.
+Data Limitatiion
+      ...
+counted.
+Comparison with other previous censuses should be made with caution because of the differences in the
+operational strategies and coverage, and definition changes which have been progressively implemented at
+censuses since 1966.
