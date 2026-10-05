@@ -114,6 +114,10 @@ class Ages(unittest.TestCase):
         region = next(r for r in rows if r["level"] == "admin1")
         self.assertEqual(region["shape_id"], "R1")
         self.assertIn("value", region["sex_ratio"])
+        # Compositions are gaps that say what was searched.
+        for row in (district, region):
+            self.assertIn("SIAT", row["ethnicity"]["note"])
+            self.assertIn("religion", row["religion"]["note"])
 
 
 if __name__ == "__main__":

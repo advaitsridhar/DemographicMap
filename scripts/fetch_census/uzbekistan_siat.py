@@ -134,6 +134,21 @@ UNDRAWN = {"Shirin city": ("Khavas", "Bekabad")}
 # its only source, and how much any other may have lost for that to hold.
 SOLE_SOURCE = 0.6
 ALSO_SOURCE = 0.05
+# Why no unit carries a composition: what was searched, and where.
+COMPOSITION_NOTE = (
+    "The Statistics Agency publishes no table of {what} for any region or district. SIAT, "
+    "its open-data catalogue (api.siat.stat.uz/sdmx/json/, about 4,700 indicators), was "
+    "searched in October 2026 for nationality, ethnic group, language and religion in "
+    "English and Russian and has none, and the agency's demography page "
+    "(stat.uz/ru/ofitsialnaya-statistika/demography) links none; the government open-data "
+    "portal data.egov.uz refused the connection.")
+
+
+def composition_gaps() -> dict[str, Any]:
+    return {"religion": gap(NOT_AVAILABLE, COMPOSITION_NOTE.format(what="religion")),
+            "language": gap(NOT_AVAILABLE, COMPOSITION_NOTE.format(what="language")),
+            "ethnicity": gap(NOT_AVAILABLE,
+                             COMPOSITION_NOTE.format(what="nationality or ethnic group"))}
 
 HOMOGLYPHS = str.maketrans("аеорсухкмтвАЕОРСУХКМТВ", "aeopcyxkmtbAEOPCYXKMTB")
 FOLDS = (("dzh", "j"), ("dj", "j"), ("zh", "j"), ("kh", "h"), ("x", "h"), ("q", "k"),
@@ -445,7 +460,7 @@ def build(data: list[dict[str, Any]], by_region: dict[str, list[dict[str, Any]]]
                            match_by="shape_id" if shape_id else None, shape_id=shape_id,
                            population=measure(round(unit[latest] * 1000), year=int(latest),
                                               source=source),
-                           **fields))
+                           **composition_gaps(), **fields))
     parents = {e["id"]: r for r, es in by_region.items() for e in es}
     for unit in units:
         shape = placed.get(unit["Code"])
@@ -473,7 +488,7 @@ def build(data: list[dict[str, Any]], by_region: dict[str, list[dict[str, Any]]]
                            parent="UZB", country="UZB", parent_name=parents[shape["id"]],
                            aliases=[unit["Klassifikator_en"], unit["Klassifikator"]],
                            match_by="shape_id", shape_id=shape["id"],
-                           population=population, **fields))
+                           population=population, **composition_gaps(), **fields))
     if profiles:
         check_sums(rows, region_of, data, profiles, age_year)
     return rows, notes
