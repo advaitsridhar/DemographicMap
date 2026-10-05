@@ -718,6 +718,22 @@ def table_slices(lines: list[str], table: str, until: tuple[str, ...]):
         yield [" ".join(line.split()) for line in lines[start:end]]
 
 
+def area_heading(line: str, previous: str) -> str | None:
+    """The block a heading line opens: "National" or a division's name.
+
+    Usually one line, "Barishal Division"; Table P10 sets Mymensingh's on two,
+    the name and then "Division" alone, which is read as the same heading
+    only when the line before is one of the eight divisions' names.
+    """
+    if line == "National":
+        return line
+    if line.endswith(" Division") and len(line.split()) <= 3:
+        return line.removesuffix(" Division")
+    if line == "Division" and previous in MOTHER_TONGUE:
+        return previous
+    return None
+
+
 def age_label(label: str) -> tuple[int, int | None]:
     if label.endswith("& above"):
         return int(label.split()[0]), None
@@ -736,10 +752,11 @@ def read_ages(lines: list[str]) -> dict[str, dict[str, Any]]:
         out: dict[str, dict[str, Any]] = {}
         area: str | None = None
         locality = None
+        previous = ""
         for line in rows:
-            if line == "National" or (line.endswith(" Division")
-                                       and len(line.split()) <= 3):
-                area = line.removesuffix(" Division")
+            heading, previous = area_heading(line, previous), line
+            if heading:
+                area = heading
                 if area in out:
                     raise SystemExit(f"bangladesh: Table P03 prints {area} twice")
                 out[area] = {"total": None, "groups": []}
@@ -810,10 +827,11 @@ def read_single_years(lines: list[str]) -> dict[str, dict[str, Any]]:
         out: dict[str, dict[str, Any]] = {}
         area: str | None = None
         locality = None
+        previous = ""
         for line in rows:
-            if line == "National" or (line.endswith(" Division")
-                                       and len(line.split()) <= 3):
-                area = line.removesuffix(" Division")
+            heading, previous = area_heading(line, previous), line
+            if heading:
+                area = heading
                 if area in out:
                     raise SystemExit(f"bangladesh: Table P10 prints {area} twice")
                 out[area] = {"total": None, "ages": {}}

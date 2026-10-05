@@ -127,6 +127,17 @@ class TableP10(unittest.TestCase):
         fields = bd.division_age_fields(ages["Dhaka"], singles["Dhaka"])
         self.assertIn("Table P10", fields["median_age_note"])
 
+    def test_a_heading_set_on_two_lines(self):
+        # Table P10 prints Mymensingh's name and the word Division apart.
+        lines = p10(EIGHT)
+        at = lines.index("Mymensingh Division")
+        lines[at:at + 1] = ["Mymensingh", "Division"]
+        singles = bd.read_single_years(lines)
+        self.assertIn("Mymensingh", singles)
+        bd.check_single_years(singles, bd.read_ages(p03(EIGHT)))
+        # And a name that is not a division's does not open a block.
+        self.assertIsNone(bd.area_heading("Division", "Somewhere"))
+
     def test_a_year_moved_between_groups_is_caught(self):
         lines = p10(EIGHT)
         at = lines.index("Khulna Division")
