@@ -54,7 +54,7 @@ from collections import defaultdict
 from typing import Any
 
 from . import myanmar_age, uscb
-from ._shared import PROCESSED, http_get, log, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json
 from .sea_common import drawn, fold
 
 OUT = "sea_composed.json"
@@ -139,19 +139,33 @@ def read_units(sheets: dict[str, list[list[Any]]], topics: tuple[uscb.Topic, ...
     return list(units.values())
 
 
-def add(parts: list[dict[str, Any]], field: str, where: str) -> dict[str, Any]:
-    """Several units' counts and totals for one field, added group by group."""
+def has(unit: dict[str, Any], field: str) -> bool:
+    f = unit["fields"].get(field)
+    return bool(f and f["counts"] and f["published"])
+
+
+def add(parts: list[dict[str, Any]], field: str) -> dict[str, Any]:
+    """Several units' counts and totals for one field, added group by group.
+
+    ``missing`` lists the parts with no figures for the field: where there are
+    any, the sum describes only part of the whole and is not published.
+    """
     counts: dict[str, float] = defaultdict(float)
     published = 0.0
+    missing = []
     for p in parts:
-        f = p["fields"].get(field)
-        if not f or not f["counts"] or not f["published"]:
-            raise SystemExit(f"sea_composed: {where}: {p['where']} has no {field} figures, "
-                             f"so the sum would be part of the polygon")
+        if not has(p, field):
+            missing.append(p)
+            continue
+        f = p["fields"][field]
         for label, v in f["counts"].items():
             counts[label] += v
         published += f["published"]
-    return {"counts": dict(counts), "published": published}
+    return {"counts": dict(counts), "published": published, "missing": missing}
+
+
+def unit_name(unit: dict[str, Any]) -> str:
+    return (unit["adm3"] or unit["adm2"] or unit["adm1"] or unit["area"]).title()
 
 
 def differs(whole: dict[str, Any], made: dict[str, Any]) -> list[str]:
@@ -167,26 +181,36 @@ def differs(whole: dict[str, Any], made: dict[str, Any]) -> list[str]:
 
 
 def check_children(units: list[dict[str, Any]], fields: tuple[str, ...]) -> None:
-    """Every Myanmar district's and zone's townships make it, group by group."""
+    """Every Myanmar district's and zone's townships make it, group by group.
+
+    Where some of a district's townships carry no figures for a field, the
+    district is named and not checked for it: nothing is summed from them.
+    """
     kids: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for u in units:
         if u["level"] == 3:
             kids[(fold(u["adm1"]), fold(u["adm2"]))].append(u)
-    checked = 0
+    checked = defaultdict(int)
     for u in units:
-        if u["level"] != 2 or not kids.get((fold(u["adm1"]), fold(u["adm2"]))):
+        towns = kids.get((fold(u["adm1"]), fold(u["adm2"])))
+        if u["level"] != 2 or not towns:
             continue
         for field in fields:
-            if field not in u["fields"]:
+            made = add(towns, field)
+            if made["missing"]:
+                log(f"    {u['where']}: {len(made['missing'])} of {len(towns)} townships carry "
+                    f"no {field} figures ({', '.join(unit_name(t) for t in made['missing'])})")
                 continue
-            made = add(kids[(fold(u["adm1"]), fold(u["adm2"]))], field, u["where"])
+            if not has(u, field):
+                raise SystemExit(f"sea_composed: {u['where']} carries no {field} figures and "
+                                 f"its townships do")
             off = differs(u["fields"][field], made)
             if off:
                 raise SystemExit(f"sea_composed: {u['where']}'s townships do not make its "
                                  f"{field}: {'; '.join(off[:6])}")
-        checked += 1
-    log(f"  every one of {checked} districts' and zones' townships make it, for "
-        f"{' and '.join(fields)}")
+            checked[field] += 1
+    log("  districts and zones whose townships make them: "
+        + ", ".join(f"{n} for {f}" for f, n in checked.items()))
 
 
 # uscb.py's Philippine note is about religion and it writes it on both fields;
@@ -203,20 +227,38 @@ def composition(made: dict[str, Any]) -> list[dict[str, Any]]:
     return shares(made["counts"], total=made["published"] or sum(made["counts"].values()))
 
 
-def cites(country: uscb.Country) -> list[dict[str, Any]]:
-    return [{"field": t.field, "name": t.source or country.source,
-             "url": uscb.dataset_url(country.dataset), "year": t.year or country.year,
-             "license": country.licence} for t in country.topics]
+def fields_of(country: uscb.Country, parts: list[dict[str, Any]], said: str
+              ) -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, dict[str, Any]]]:
+    """A record's fields from the sum of its parts, its citations, and the sums.
 
-
-def fields_of(country: uscb.Country, figs: dict[str, dict[str, Any]], said: str
-              ) -> dict[str, Any]:
+    A field some part has no figures for is a gap that names those parts.
+    """
     out: dict[str, Any] = {}
+    cites: list[dict[str, Any]] = []
+    sums: dict[str, dict[str, Any]] = {}
     for t in country.topics:
-        out[t.field] = composition(figs[t.field])
+        made = sums[t.field] = add(parts, t.field)
+        source = t.source or country.source
+        if made["missing"]:
+            out[t.field] = gap(NOT_AVAILABLE, (
+                f"{source} carries no {t.field} figures for "
+                f"{', '.join(unit_name(p) for p in made['missing'])}, which "
+                f"{'lies' if len(made['missing']) == 1 else 'lie'} in this polygon, so a sum "
+                f"here would describe only part of it."))
+            continue
+        out[t.field] = composition(made)
         out[f"{t.field}_year"] = t.year or country.year
         out[f"{t.field}_note"] = f"{topic_note(country, t)} {said}"
-    return out
+        cites.append({"field": t.field, "name": source,
+                      "url": uscb.dataset_url(country.dataset), "year": t.year or country.year,
+                      "license": country.licence})
+    return out, cites, sums
+
+
+def described(sums: dict[str, dict[str, Any]]) -> str:
+    return ", ".join(f"{f} " + (f"{s['published']:,.0f}" if not s["missing"] else
+                                f"none ({len(s['missing'])} parts without figures)")
+                     for f, s in sums.items())
 
 
 # --------------------------------------------------------------------------
@@ -232,60 +274,62 @@ def myanmar(units: list[dict[str, Any]], admin1: list[dict[str, Any]],
     union = [u for u in units if u["level"] == 0]
     if len(union) != 1:
         raise SystemExit(f"sea_composed: {len(union)} Union rows in Myanmar's sheet")
+    every = [u for cw in walk.values() for u in cw["units"]]
     for field in fields:
-        made = add([u for cw in walk.values() for u in cw["units"]], field, "the Union")
+        # The Union's row is checked against every unit that carries figures;
+        # those that carry none are named, and no sum is taken through them.
+        made = add(every, field)
         off = differs(union[0]["fields"][field], made)
         if off:
             raise SystemExit(f"sea_composed: Myanmar's {len(walk)} polygons do not make the "
                              f"Union's {field}: {'; '.join(off[:6])}")
-        log(f"  {field}: the {len(walk)} polygons make the Union's {made['published']:,.0f}")
+        log(f"  {field}: the {len(walk)} polygons make the Union's {made['published']:,.0f}"
+            + (f"; units with no figures: {', '.join(unit_name(u) for u in made['missing'])}"
+               if made["missing"] else ""))
     names2 = {s["id"]: s["name"] for s in admin2}
+    parent_of = {s["id"]: s["parent"] for s in admin2}
     out = []
     for sid, cw in sorted(walk.items(), key=lambda kv: names2[kv[0]]):
         name = names2[sid]
         if cw["kind"] != "composed" and name not in MMR_BY_ALIAS:
             continue
-        figs = {f: add(cw["units"], f, name) for f in fields}
         said = (f"The boundary file draws one polygon here where the census counted "
                 f"{'; '.join(cw['parts'])}, so this is their sum."
                 if cw["kind"] == "composed" else
                 f"The census calls this district {cw['units'][0]['adm2']!r}.")
+        values, cites, sums = fields_of(country, cw["units"], said)
         out.append(record(f"MMR-COMP-{fold(name)}", name, level="admin2", parent="MMR",
                           country="MMR", match_by="shape_id", shape_id=sid,
-                          sources=cites(country), **fields_of(country, figs, said)))
-        log(f"    {name}: {'; '.join(cw['parts'])} -- "
-            + ", ".join(f"{f} {figs[f]['published']:,.0f}" for f in fields))
+                          sources=cites, **values))
+        log(f"    {name}: {'; '.join(cw['parts'])} -- {described(sums)}")
     states = {fold(u["adm1"]): u for u in units if u["level"] == 1}
     for region in admin1:
-        kids = [cw for sid, cw in walk.items()
-                if next(s for s in admin2 if s["id"] == sid)["parent"] == region["id"]]
-        if not kids:
+        parts = [u for sid, cw in walk.items() if parent_of[sid] == region["id"]
+                 for u in cw["units"]]
+        if not parts:
             continue
-        parts = [u for cw in kids for u in cw["units"]]
         held = sorted({u["adm1"] for u in parts})
-        figs = {f: add(parts, f, region["name"]) for f in fields}
-        if len(held) == 1:
-            # The polygon is one census state or region: the sum of its
-            # polygons must be that row, which is what uscb.py binds to it.
-            for f in fields:
-                off = differs(states[fold(held[0])]["fields"][f], figs[f])
-                if off:
-                    raise SystemExit(f"sea_composed: {region['name']}'s polygons do not make "
-                                     f"{held[0]}'s {f}: {'; '.join(off[:6])}")
-            continue
         for f in fields:
-            whole = add([states[fold(h)] for h in held], f, region["name"])
-            off = differs(whole, figs[f])
+            made = add(parts, f)
+            if made["missing"]:
+                continue
+            # The polygon is one census state or region, whose row uscb.py
+            # binds to it, or several, whose rows are summed here: either
+            # way the polygons inside it must make the row or rows.
+            whole = add([states[fold(h)] for h in held], f)
+            off = differs(whole, made) if not whole["missing"] else ["no row of its own"]
             if off:
                 raise SystemExit(f"sea_composed: {region['name']}'s polygons do not make "
                                  f"{' and '.join(held)}'s {f}: {'; '.join(off[:6])}")
+        if len(held) == 1:
+            continue
         said = (f"The map draws one polygon here where the census counted "
                 f"{' and '.join(h.title() for h in held)}, so this is their sum.")
+        values, cites, sums = fields_of(country, parts, said)
         out.append(record(f"MMR-COMP-R-{fold(region['name'])}", region["name"],
                           level="admin1", parent="MMR", country="MMR", match_by="shape_id",
-                          shape_id=region["id"], sources=cites(country),
-                          **fields_of(country, figs, said)))
-        log(f"    {region['name']} (first level): {' and '.join(held)}")
+                          shape_id=region["id"], sources=cites, **values))
+        log(f"    {region['name']} (first level): {' and '.join(held)} -- {described(sums)}")
     return out
 
 
@@ -302,7 +346,9 @@ def philippines(units: list[dict[str, Any]], admin2: list[dict[str, Any]]
     if len(region) != 1:
         raise SystemExit(f"sea_composed: {len(region)} rows for the {NCR}")
     for field in fields:
-        off = differs(region[0]["fields"][field], add(places, field, NCR))
+        made = add(places, field)
+        off = (differs(region[0]["fields"][field], made) if not made["missing"] else
+               [f"{', '.join(unit_name(p) for p in made['missing'])} without figures"])
         if off:
             raise SystemExit(f"sea_composed: the {NCR}'s places do not make it: "
                              f"{'; '.join(off[:6])}")
@@ -331,16 +377,14 @@ def philippines(units: list[dict[str, Any]], admin2: list[dict[str, Any]]
         if len(shapes) != 1:
             raise SystemExit(f"sea_composed: {len(shapes)} polygons named {district!r}")
         parts = [next(u for u in places if fold(u["area"]) == fold(n)) for n in names]
-        figs = {f: add(parts, f, district) for f in fields}
         listed = ", ".join("Quezon City" if n == "Quezon" else n for n in names)
         said = (f"The boundary file draws Metro Manila as four districts, and this one is "
                 f"{listed}, which the census counts apart: this is their sum.")
+        values, cites, sums = fields_of(country, parts, said)
         out.append(record(f"PHL-COMP-{fold(district)}", district, level="admin2",
                           parent="PHL", country="PHL", match_by="shape_id",
-                          shape_id=shapes[0]["id"], sources=cites(country),
-                          **fields_of(country, figs, said)))
-        log(f"    {district}: {listed} -- "
-            + ", ".join(f"{f} {figs[f]['published']:,.0f}" for f in fields))
+                          shape_id=shapes[0]["id"], sources=cites, **values))
+        log(f"    {district}: {listed} -- {described(sums)}")
     return out
 
 

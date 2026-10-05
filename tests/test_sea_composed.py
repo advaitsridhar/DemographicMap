@@ -20,8 +20,8 @@ def burma_sheet(rows):
     out = [names, aliases]
     for level, adm1, adm2, adm3, bamar, shan, budd, chri in rows:
         area = adm3 or adm2 or adm1 or "MYANMAR"
-        out.append([area, adm1, adm2, adm3, level, bamar + shan, bamar, shan, budd + chri,
-                    budd, chri])
+        eth = [None, None, None] if bamar is None else [bamar + shan, bamar, shan]
+        out.append([area, adm1, adm2, adm3, level, *eth, budd + chri, budd, chri])
     return {"Ethnicity": out}
 
 
@@ -97,6 +97,28 @@ class MyanmarTest(unittest.TestCase):
         self.assertEqual(pct(rec, "ethnicity"), {"Bamar": 100.0})
         self.assertEqual(rec["religion"][0]["count"], 69)
         self.assertIn("Nay Pyi Taw", rec["religion_note"])
+
+    def test_townships_without_ethnicity_leave_a_reason_not_a_part(self):
+        # The Wa division's townships have religion and no ethnicity: its two
+        # polygons say so, and the Union's ethnicity is everyone else's.
+        rows = [(*r[:4], None, None, *r[6:]) if r[2] == "WA SELF-ADMINISTERED DIVISION" else r
+                for r in burma_rows()]
+        districts = [r for r in rows if r[0] == 2 and r[4] is not None]
+        fixed = []
+        for r in rows:
+            if r[0] == 1 and r[1] == "SHAN STATE":
+                r = (*r[:4], 10, 30, *r[6:])                    # Kengtung's alone
+            if r[0] == 0:
+                r = (*r[:4], sum(d[4] for d in districts), sum(d[5] for d in districts),
+                     *r[6:])
+            fixed.append(r)
+        recs = self.build(fixed)
+        for sid in ("D3", "D4"):
+            self.assertNotIn("ethnicity_year", recs[sid])
+            self.assertIn("carries no ethnicity figures for", recs[sid]["ethnicity"]["note"])
+            self.assertIn("Hopan" if sid == "D3" else "Makman", recs[sid]["ethnicity"]["note"])
+            self.assertEqual(recs[sid]["religion"][0]["count"], 27)
+            self.assertEqual([s["field"] for s in recs[sid]["sources"]], ["religion"])
 
     def test_townships_that_do_not_make_their_division_refuse(self):
         rows = [r if not (r[0] == 3 and r[3] == "HOPAN") else (*r[:4], 3, 8, 9, 1)

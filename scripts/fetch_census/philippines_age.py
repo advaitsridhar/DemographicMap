@@ -433,10 +433,10 @@ def main() -> int:
     records = build(units, cols["top"], drawn("PHL", "admin1"), drawn("PHL", "admin2"))
     for level in ("admin1", "admin2"):
         rs = [r for r in records if r["level"] == level]
-        meds = sorted(r["median_age"]["value"] for r in rs)
-        rats = sorted(r["sex_ratio"]["value"] for r in rs)
-        log(f"  {level}: {len(rs)} units; median {meds[0]}-{meds[-1]}; "
-            f"sex ratio {rats[0]}-{rats[-1]}")
+        meds = sorted(r["median_age"]["value"] for r in rs if "value" in r["median_age"])
+        rats = sorted(r["sex_ratio"]["value"] for r in rs if "value" in r["sex_ratio"])
+        log(f"  {level}: {len(rs)} units, {len(meds)} with figures; median "
+            f"{meds[0]}-{meds[-1]}; sex ratio {rats[0]}-{rats[-1]}")
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {OUT}: {len(records)} records")
     return 0
