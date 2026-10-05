@@ -1,32 +1,26 @@
-== kosis 101,DT_1PM1502
-  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do', 'index.do', 'right_layout.do', 'statHtml.do']
-    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd', 'dbUser', 'language', 'mode', 'pub', 'conn_path', 'list_id', 'itm_id', 'orderBy', 'serverType', 'dataOpt', 'serverTypeOrigin']
-    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL', 'SID_IP_ADDR', 'SSN_INFO']
-    ~ " type="hidden" value=""/> <input type="hidden" name="tblNm" id="tblNm" value="성별/연령별/종교별 인구-시군구" /> <input type="hidden" name="tblEngNm" id="tblEngNm" value="" /> <input
-    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
-  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['right_layout.do', 'statHtmlContent.do']
-    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx', 'ordType']
-    ~ ""; if(paramInfoForm.tblSe.value != 'F'){ paramInfoForm.action = "statHtmlContent.do"; paramInfoForm.orgId = "101"; paramInfoForm.tblId = "DT_1PM1502";
-    ~ irst").attr("tabIndex")); }else{ return; } } var uri = "statHtmlContent.do"; try{ if(scrId != "" && scrId != undefined){ uri = uri + "?orgId
-    ~ index='"+index+"'] > iframe").attr("src"); try { data = data.replace("statHtmlContent.do?",""); } catch (e){ data = "orgId=" + "101" + "&tblId=" + "DT_1PM1502" +
-    ~ r getIframeSrcData = function(){ var data = ""; var dataValue = ""; var getData = []; var param = { tblId : "", orgId : "", vwCd : "", itmId : "", index : ""};
-    ~ + (index_number)).contents()[0].body.id; try{ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); } catch (e) { if(iframeCent
-    ~ }; } else { param = fn_paramReset(param); } getData[i] = param; param = fn_paramReset(param); continue; } else {
-    ~ eplace("list_id=",""); } } param.index = index_number; getData[i] = param; param = fn_paramReset(param); } return getData;
-    ~ getData[i] = param; param = fn_paramReset(param); } return getData; } function fn_paramReset(param){ param = { tblId : "", o
-    ~ + index).attr("src"); if(data != null && data != ""){ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); for(var f = 0; f < dataValue.lengt
-  POST https://kosis.kr/statHtml/right_layout.do -> 200, 26,376 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['right_layout.do', 'statHtmlContent.do']
-    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx', 'ordType']
-    ~ ""; if(paramInfoForm.tblSe.value != 'F'){ paramInfoForm.action = "statHtmlContent.do"; paramInfoForm.orgId = "101"; paramInfoForm.tblId = "DT_1PM1502";
-    ~ irst").attr("tabIndex")); }else{ return; } } var uri = "statHtmlContent.do"; try{ if(scrId != "" && scrId != undefined){ uri = uri + "?orgId
-    ~ index='"+index+"'] > iframe").attr("src"); try { data = data.replace("statHtmlContent.do?",""); } catch (e){ data = "orgId=" + "101" + "&tblId=" + "DT_1PM1502" +
-    ~ r getIframeSrcData = function(){ var data = ""; var dataValue = ""; var getData = []; var param = { tblId : "", orgId : "", vwCd : "", itmId : "", index : ""};
-    ~ + (index_number)).contents()[0].body.id; try{ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); } catch (e) { if(iframeCent
-    ~ }; } else { param = fn_paramReset(param); } getData[i] = param; param = fn_paramReset(param); continue; } else {
-    ~ eplace("list_id=",""); } } param.index = index_number; getData[i] = param; param = fn_paramReset(param); } return getData;
-    ~ getData[i] = param; param = fn_paramReset(param); } return getData; } function fn_paramReset(param){ param = { tblId : "", o
-    ~ + index).attr("src"); if(data != null && data != ""){ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); for(var f = 0; f < dataValue.lengt
+probe_pdf: https://www.statsfiji.gov.fj/download/121/phc-2017/729/2017-population-and-housing-census-release-3.pdf
+  19,198,458 bytes
+  484 pages
+probe_pdf: 484 pages, 2 mention ['eligio', 'thnic', 'Religio', 'Ethnic']
+=== front matter ===
+
+
+=== pages mentioning ['eligio', 'thnic', 'Religio', 'Ethnic'] (first 8) ===
+
+--- page 52 ----------------------------------------------------
+Population
+Characteristics &
+Migration
+"Sustainable Development Goal indicators should be disaggregated, where relevant, by income, sex, age, race, ethnicity,
+migratory status, disability and geographic location, or other characteristics, in accordance with the Fundamental
+Principles of Official Statistics".
+Module B:
+
+--- page 69 ----------------------------------------------------
+the training logistics for the Enumerators and Supervisors. Other field logistics was
+planned and executed by the HSU management staff.
+Other aspects of operations that required particular focus was;
+1. Creating an enumeration strategy for Non Private Dwellings (NPDs), ethnic
+group such as Chinese, high-class dwellings and the homeless.
+− A separate questionnaire was created for NPD’s.  This was given in
+advance with specific instructions to institutional coordinators
