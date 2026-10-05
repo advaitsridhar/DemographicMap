@@ -1,17 +1,1 @@
-marshall_census: 2021 Census basic tables and analytical report
-  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf: RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf; reading the Internet Archive's copy
-  Basic Tables: 25 atolls adding to 42,418; religion and ethnicity of the 41,575 in private households
-  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
-  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
-  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
-  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
-  https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf: RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf; reading the Internet Archive's copy
-  Analytical Report: medians for 23 atolls; languages for Kwajalein, Majuro
-  no polygon: Lib (156 people); Bikini and Rongelap counted nobody
-  admin1 ethnicity 22, admin1 language 2, admin1 median_age 22, admin1 population 22, admin1 religion 22, admin1 sex_ratio 22, admin2 ethnicity 22, admin2 language 2, admin2 median_age 22, admin2 population 22, admin2 religion 22, admin2 sex_ratio 22
-  wrote data/processed/marshall_census.json (180 kB)
-  wrote 44 records
+https://opendata.sumselprov.go.id/dataset/9c072a28-c397-4750-b0d7-d2a093dd54cc/resource/ebdb9cd3-0d18-4e7a-8f07-06e4624e988c/download/simdasi_3.1.2-jumlah-penduduk-menurut-kelompok-umur-dan-jenis-kelamin-ribu-jiwa-di-provinsi-sum.xlsx: HTTP 500 2,000 B
