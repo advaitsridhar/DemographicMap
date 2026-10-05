@@ -175,6 +175,7 @@ EARLIER_NAMES: dict[str, list[str]] = {
     "зыряновский": ["Zyryanovsk"],         # renamed Altai District 2019
     "созакский": ["Suzakskiy"],            # the census's spelling of Suzak
     "алматы": ["Almaty (Alma-Ata)"],       # the city of republican significance
+    "аягоз": ["Ayagozskiy"],               # 2009: Ayagoz city akimat, the district since
 }
 
 # Units the boundary file does not draw, by the drawn polygon each lies in

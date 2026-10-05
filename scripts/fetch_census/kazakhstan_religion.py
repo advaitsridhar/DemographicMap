@@ -176,13 +176,19 @@ def percentages(figures: str) -> list[float] | None:
 
 
 def counts(figures: str, pct: list[float] | None) -> list[int] | None:
-    """The total and seven religions from a row's run of digits.
+    """The one reading of a row (see ``readings``), or None if there is not one."""
+    found = readings(figures, pct)
+    return found[0] if len(found) == 1 else None
 
-    Every split of the digits into eight numbers is tried; the one kept has
-    the seven make the first and each within the printed share's rounding of
-    it. More than one such split, or none, is no reading at all.
+
+def readings(figures: str, pct: list[float] | None) -> list[list[int]]:
+    """Every way a row's run of digits can be its total and seven religions.
+
+    Every split of the digits into eight numbers is tried; one is kept when
+    the seven make the first and each is within the printed share's rounding
+    of it.
     """
-    digits = re.sub(r"\D", "", figures)
+    digits = re.sub(r"\D", "", figures or "")
     found: list[list[int]] = []
 
     def ok(text: str) -> bool:
@@ -213,23 +219,39 @@ def counts(figures: str, pct: list[float] | None) -> list[int] | None:
                 walk(j, acc + [value])
 
         walk(k, [])
-    unique = {tuple(f) for f in found}
-    return list(next(iter(unique))) if len(unique) == 1 else None
+    return [list(f) for f in sorted({tuple(f) for f in found})]
 
 
 def unit_counts(body: str, region: str) -> dict[str, list[int]]:
-    """{label: [total, seven religions]} for both sexes, every row read whole."""
+    """{label: [total, seven religions]} for both sexes, every row read whole.
+
+    A row's digits sometimes allow two readings that both agree with its
+    shares -- '2 28' read as 2 and 28 or as 22 and 8, when both round to the
+    same tenth of a per cent. The table prints men and women too, and the
+    reading kept is then the one that is the sum of a reading of the men's row
+    and one of the women's.
+    """
     table = blocks(body)
+
+    def options(sex: str, label: str) -> list[list[int]]:
+        figures = table.get((sex, "count"), {}).get(label)
+        printed = table.get((sex, "pct"), {}).get(label)
+        return readings(figures, percentages(printed) if printed else None) if figures else []
+
     both, pct = table.get(("both", "count"), {}), table.get(("both", "pct"), {})
     out: dict[str, list[int]] = {}
     unread = []
     for label, figures in both.items():
-        share = percentages(pct[label]) if label in pct else None
-        row = counts(figures, share)
-        if row is None:
-            unread.append(f"{label}: {figures!r} / {pct.get(label)!r}")
+        found = options("both", label)
+        if len(found) > 1:
+            men, women = options("men", label), options("women", label)
+            found = [b for b in found
+                     if any(all(b[i] == m[i] + w[i] for i in range(8))
+                            for m in men for w in women)]
+        if len(found) != 1:
+            unread.append(f"{label}: {figures!r} / {pct.get(label)!r} ({len(found)} readings)")
             continue
-        out[label] = row
+        out[label] = found[0]
     if unread:
         raise SystemExit(f"kazakhstan_religion: {region}: rows not read whole: {unread}")
     return out
