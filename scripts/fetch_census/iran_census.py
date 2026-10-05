@@ -638,39 +638,118 @@ def build(province_ages: dict[int, dict[str, Any]],
     return rows, notes
 
 
-def read_all() -> tuple[dict[int, Any], dict[str, Any], list[dict[str, Any]], dict[str, Any]]:
-    province_ages: dict[int, dict[str, Any]] = {}
-    for name, rows in sheets(fetch(PROVINCE_AGES)):
-        persian, code = split_sheet_name(name)
-        nn = int(code)
-        if fa(persian) != fa(PROVINCES[nn][0]):
-            raise SystemExit(f"iran_census: province sheet {name!r} is not {PROVINCES[nn][0]}")
-        province_ages[nn] = parse_ages(rows, name)
-    if sorted(province_ages) != sorted(PROVINCES):
-        raise SystemExit(f"iran_census: province sheets {sorted(province_ages)}")
-    (_, rows), = sheets(fetch(PROVINCE_CITIZENSHIP))
-    province_citizenship = parse_citizenship_block(rows, "3-jamiat-k")
+# What has been read is kept, as the tables' counts, under data/raw/iran (which
+# the repository tracks): the Archive refuses a run that asks for all 64
+# workbooks at once often enough that a run reads what it can within BUDGET,
+# keeps it, and stops; the next run starts where it stopped. The kept files
+# are the parsed tables -- counts by single year of age and sex, and by
+# citizenship -- not the workbooks.
+CACHE = PROCESSED.parent / "raw" / "iran"
+BUDGET = 30 * 60
+
+
+def table_json(table: dict[str, Any]) -> dict[str, Any]:
+    return {"men": {str(a): n for a, n in sorted(table["men"].items())},
+            "women": {str(a): n for a, n in sorted(table["women"].items())},
+            "groups": [[lo, hi, *v] for (lo, hi), v in sorted(table["groups"].items())],
+            "unstated": list(table["unstated"]), "total": list(table["total"]),
+            **({"open": table["open"]} if "open" in table else {})}
+
+
+def table_from(data: dict[str, Any]) -> dict[str, Any]:
+    out = {"men": Counter({int(a): n for a, n in data["men"].items()}),
+           "women": Counter({int(a): n for a, n in data["women"].items()}),
+           "groups": {(g[0], g[1]): tuple(g[2:]) for g in data["groups"]},
+           "unstated": list(data["unstated"]), "total": tuple(data["total"])}
+    if "open" in data:
+        out["open"] = data["open"]
+    return out
+
+
+def cached(name: str) -> Any:
+    path = CACHE / f"census2016_{name}.json"
+    return read_json(path, None) if path.exists() else None
+
+
+def keep(name: str, payload: Any) -> None:
+    write_json(CACHE / f"census2016_{name}.json", payload)
+
+
+def read_provinces() -> tuple[dict[int, Any], dict[str, Any]]:
+    kept = cached("provinces")
+    if kept is None:
+        province_ages: dict[int, dict[str, Any]] = {}
+        for name, rows in sheets(fetch(PROVINCE_AGES)):
+            persian, code = split_sheet_name(name)
+            nn = int(code)
+            if fa(persian) != fa(PROVINCES[nn][0]):
+                raise SystemExit(f"iran_census: province sheet {name!r} is not "
+                                 f"{PROVINCES[nn][0]}")
+            province_ages[nn] = parse_ages(rows, name)
+        if sorted(province_ages) != sorted(PROVINCES):
+            raise SystemExit(f"iran_census: province sheets {sorted(province_ages)}")
+        (_, rows), = sheets(fetch(PROVINCE_CITIZENSHIP))
+        block = parse_citizenship_block(rows, "3-jamiat-k")
+        kept = {"ages": {str(nn): table_json(t) for nn, t in province_ages.items()},
+                "citizenship": {k: [v[0], v[1]] for k, v in block.items()}}
+        keep("provinces", kept)
+    ages = {int(nn): table_from(t) for nn, t in kept["ages"].items()}
+    citizenship = {k: (v[0], v[1]) for k, v in kept["citizenship"].items()}
+    for nn, table in ages.items():
+        check_ages(table, f"province {nn:02d}")
+    return ages, citizenship
+
+
+def read_province(nn: int) -> list[dict[str, Any]]:
+    """One province's shahrestans: [{province, code, name, ages, citizenship}]."""
+    # Keyed by the sheet's code: the two workbooks may cut a long name at
+    # different lengths, never the code.
+    ages = {split_sheet_name(n)[1]: (split_sheet_name(n)[0], r)
+            for n, r in sheets(fetch(COUNTY_AGES.format(nn=nn)))}
+    cit = {split_sheet_name(n)[1]: r
+           for n, r in sheets(fetch(COUNTY_CITIZENSHIP.format(nn=nn)))}
+    if set(ages) != set(cit):
+        raise SystemExit(f"iran_census: province {nn:02d}'s two tables carry different "
+                         f"codes: {sorted(set(ages) ^ set(cit))}")
+    counties = []
+    for code, (persian, rows) in sorted(ages.items()):
+        full = f"{nn:02d}{code[-2:]}"
+        if len(code) == 4 and int(code[:2]) != nn:
+            raise SystemExit(f"iran_census: sheet {persian}{code} is filed under "
+                             f"province {nn:02d}")
+        block = parse_citizenship_block(cit[code], f"3-jamiat-{nn:02d} {persian}")
+        counties.append({"province": nn, "code": full, "name": persian,
+                         "ages": parse_ages(rows, f"jamiat{nn:02d} {persian}"),
+                         "citizenship": block["*"]})
+    return counties
+
+
+def read_all(budget: float = BUDGET
+             ) -> tuple[dict[int, Any], dict[str, Any], list[dict[str, Any]], dict[str, Any]]:
+    started = time.monotonic()
+    province_ages, province_citizenship = read_provinces()
     counties: list[dict[str, Any]] = []
+    waiting = []
     for nn in sorted(PROVINCES):
-        # Keyed by the sheet's code: the two workbooks may cut a long name at
-        # different lengths, never the code.
-        ages = {split_sheet_name(n)[1]: (split_sheet_name(n)[0], r)
-                for n, r in sheets(fetch(COUNTY_AGES.format(nn=nn)))}
-        cit = {split_sheet_name(n)[1]: r
-               for n, r in sheets(fetch(COUNTY_CITIZENSHIP.format(nn=nn)))}
-        if set(ages) != set(cit):
-            raise SystemExit(f"iran_census: province {nn:02d}'s two tables carry different "
-                             f"codes: {sorted(set(ages) ^ set(cit))}")
-        for code, (persian, rows) in sorted(ages.items()):
-            full = f"{nn:02d}{code[-2:]}"
-            if len(code) == 4 and int(code[:2]) != nn:
-                raise SystemExit(f"iran_census: sheet {persian}{code} is filed under "
-                                 f"province {nn:02d}")
-            block = parse_citizenship_block(cit[code], f"3-jamiat-{nn:02d} {persian}")
-            counties.append({"province": nn, "code": full, "name": persian,
-                             "ages": parse_ages(rows, f"jamiat{nn:02d} {persian}"),
-                             "citizenship": block["*"]})
-        log(f"  province {nn:02d} {PROVINCES[nn][1]}: {len(ages)} shahrestans")
+        kept = cached(f"{nn:02d}")
+        if kept is None:
+            if time.monotonic() - started > budget:
+                waiting.append(nn)
+                continue
+            fresh = read_province(nn)
+            kept = [{**c, "ages": table_json(c["ages"]),
+                     "citizenship": [c["citizenship"][0], c["citizenship"][1]]} for c in fresh]
+            keep(f"{nn:02d}", kept)
+        mine = [{**c, "ages": table_from(c["ages"]),
+                 "citizenship": (c["citizenship"][0], c["citizenship"][1])} for c in kept]
+        for c in mine:
+            check_ages(c["ages"], f"{c['code']} {c['name']}")
+        counties += mine
+        log(f"  province {nn:02d} {PROVINCES[nn][1]}: {len(mine)} shahrestans")
+    if waiting:
+        raise SystemExit(f"iran_census: {len(waiting)} provinces not yet read ({waiting}); "
+                         f"the {len(PROVINCES) - len(waiting)} read are kept in data/raw/iran "
+                         f"and a re-run carries on from them")
     codab = load_codab(http_get(CODAB, binary=True))  # type: ignore[arg-type]
     return province_ages, province_citizenship, counties, codab
 

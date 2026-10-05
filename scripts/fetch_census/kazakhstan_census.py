@@ -292,7 +292,9 @@ ROW = re.compile(r"^\s*(?P<label>[^\d]*?)\s*(?P<figures>[\d][\d\s\-–]*)$")
 
 def table_rows(text: str) -> list[tuple[str, list[int | None]]]:
     """(label, figures) for every line of table 2.2's whole-population part."""
-    start = text.find("2.2 Population by city and district")
+    # The contents page names the table first; the table's own heading is
+    # the last mention.
+    start = text.rfind("2.2 Population by city and district")
     if start < 0:
         raise SystemExit("kazakhstan_census: table 2.2 not found in the volume")
     body = text[start:]

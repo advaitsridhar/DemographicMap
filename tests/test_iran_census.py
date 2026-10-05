@@ -166,6 +166,15 @@ class Binding(unittest.TestCase):
         self.assertIn("neither", notes[0])
 
 
+class Kept(unittest.TestCase):
+    def test_a_kept_table_reads_back_the_same(self):
+        table = ir.parse_ages(age_sheet(MEN, WOMEN), "t")
+        back = ir.table_from(ir.table_json(table))
+        for key in ("men", "women", "groups", "unstated", "total", "open"):
+            self.assertEqual(back[key], table[key], key)
+        ir.check_ages(back, "t")
+
+
 class Median(unittest.TestCase):
     def test_median_is_interpolated_in_the_single_year(self):
         table = ir.parse_ages(age_sheet(MEN, WOMEN), "t")

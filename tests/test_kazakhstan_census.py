@@ -74,7 +74,9 @@ class TableTwoTwo(unittest.TestCase):
         self.assertIsNone(kc.split_row("27 120 13 280 13 840 960 24 808 12 479 12 328 1012"))
 
     def test_rows_go_to_their_region_by_totals(self):
-        text = ("2.2 Population by city and district\n"
+        text = ("Content\n2.2 Population by city and district ....... 30\n"
+                "1.2 Population change\nUrban population 1 1 0 0 1 1 0 0\n"
+                "2.2 Population by city and district\n"
                 "Akmola region 1 000 500 500 1000 3 000 1 400 1 600 875\n"
                 "   Kokshetau c.d. 400 200 200 1000 2 000 900 1 100 818\n"
                 "         Inner district 100 50 50 1000 700 300 400 750\n"
