@@ -98,11 +98,21 @@ def parse_annex(pages: list[str]) -> dict[int, dict[str, Any]]:
     current = None
     province = 0
     pending = None              # a district row whose printed code is not its province's
+    carried = ""                # a row's code and name, its figures on the next line
     for page in pages:
         if not re.search(r"Table\s*P-\d{2}", page):
             continue
         for raw in page.splitlines():
             line = " ".join(raw.split())
+            if carried:
+                if re.fullmatch(rf"(?:{NUM}\s+){{4}}(?:-|[\d.]+)\s+(?:-|[\d.]+)", line):
+                    line = f"{carried} {line}"
+                elif current is not None:
+                    current.setdefault("unread", []).append(carried)
+                carried = ""
+            if re.fullmatch(r"\d{3,6}\s+[^\d]+", line):
+                carried = line
+                continue
             if h := HEADER.match(line):
                 if pending:
                     raise SystemExit(f"cambodia_census: the district row {pending['line']!r} "
@@ -119,6 +129,8 @@ def parse_annex(pages: list[str]) -> dict[int, dict[str, Any]]:
                 continue
             m = ROW.match(line)
             if not m:
+                if re.match(r"^\d{3,6}\s", line):
+                    current.setdefault("unread", []).append(line)
                 continue
             code = int(m.group("code"))
             n = tuple(number(x) for x in m.groups()[2:6])
@@ -177,9 +189,11 @@ def check_annex(provinces: dict[int, dict[str, Any]]) -> None:
                     f"read as its communes' sum {made}")
                 dist["n"] = made
             if not dist["communes"] or made != dist["n"]:
+                unread = [x for x in prov.get("unread", []) if x.startswith(str(d))]
                 raise SystemExit(f"cambodia_census: district {d} {dist['name']}: its "
                                  f"{len(dist['communes'])} communes make {made}, against "
-                                 f"{dist['n']}")
+                                 f"{dist['n']}; its communes read: "
+                                 f"{sorted(dist['communes'])}; rows not read: {unread}")
         made = tuple(sum(x["n"][i] for x in prov["districts"].values()) for i in range(4))
         if made != prov["n"]:
             raise SystemExit(f"cambodia_census: province {p:02d}: its districts make {made}, "
