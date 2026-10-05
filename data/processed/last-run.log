@@ -1,12 +1,333 @@
-cambodia_census: National Institute of Statistics, General Population Census of the Kingdom of Cambodia 2019, final results, Tables P-01 to P-25: population in normal or regular households by province, district and commune, and sex
-  fetched Final-General-Population-Census-2019-English.pdf (26.6 MB)
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140266445109968), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-  304 pages
-  the district row '211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0' is read as district 314, its communes' code
-  district 302 Chamkar Leu: its row (5160, 5160, 5160, 5160) contradicts itself; read as its communes' sum (24280, 101675, 48956, 52719)
-cambodia_census: district 702 Banteay Meas: its 14 communes make (19308, 73600, 34982, 38618), against (20683, 78828, 37543, 41285); its communes read: [70201, 70202, 70203, 70204, 70205, 70207, 70208, 70209, 70210, 70211, 70212, 70213, 70214, 70215]; rows not read: ['70206 Sdach Kong Khang']
+probe_pdf: https://www.statsfiji.gov.fj/download/121/phc-2017/727/2017-population-and-housing-census-release-1.pdf
+  483,235 bytes
+  13 pages
+probe_pdf: 13 pages, printing [6, 7, 8, 9, 10, 11, 12, 13]
+
+--- page 6 ----------------------------------------------------
+__________________________________________________________________________________
+FBoS Release No: 1, 2018
+2017 Population and Housing Census, Release 1
+Page 6
+Table 3. Population by Province 2007 and 2017
+Province Census Year Absolute
+Change
+Percentage
+Change 2007 2017
+Ba 231,760 247,708 15,948 6.9%
+Bua 14,176 15,466 1,290 9.1%
+Cakaudrove 49,344 50,469 1,125 2.3%
+Kadavu 10,167 10,897 730 7.1%
+Lau 10,683 9,602 -1,081 -10.1%
+Lomaiviti 16,253 15,657 -596 -3.7%
+Macuata 72,441 65,983 -6,458 -8.9%
+Nadroga/Navosa 58,387 58,931 544 0.9%
+Naitasiri 160,760 177,678 16,918 10.5%
+Namosi 6,898 7,871 973 14.1%
+Ra 29,464 30,432 968 3.3%
+Rewa 100,995 108,016 7,021 7.0%
+Serua 18,249 20,031 1,782 9.8%
+Tailevu 55,692 64,552 8,860 15.9%
+Rotuma 2,002 1,594 -408 -20.4%
+Total 837,271 884,887 43,279 5.7%
+Urban Population
+Fiji’s urban population reached 49 4,252 in 2017, an increase of 6 9,406 (16.3%) compared to
+2007. The count shows that 55.9% of Fiji’s population live in the Urban Areas, an increase of
+5.1 percentage points compared to 2007. Much of the growth was due to the extension of the
+urban boundaries to cover growth in Nadi, Lautoka and parts of Taveuni in Cakaudrove.
+There were significant increases in the urban population of the following provinces;
+1) Ba by 44,413 or 36.7% with the Urban proportion of Ba’s population increasing from
+52.2% in 2007 to 66.8% in 2017.
+2) Naitasiri by 13,664 or 10.1% with the Urban proportion of Naitasiri’s population sitting
+at a very high 83.7%.
+3) Cakaudrove by 3,965 or 56.4% with the Urban proportion of Cakaudrove’s population
+increasing from 14.3% in in 2007 to 21.8% in 2017.
+4) Rewa by 4,720 or 5.3% with the Urban proportion of Rewa’s population now at 86.5%.
+5) Tailevu by 2,497 or 14.0% with the Urban proportion of Tailevu’s population now at
+31.5%.
+Further details are provided in Table 4 that follows;
+
+--- page 7 ----------------------------------------------------
+__________________________________________________________________________________
+FBoS Release No: 1, 2018
+2017 Population and Housing Census, Release 1
+Page 7
+Table 4. Urban Population by Province 2007 and 2017
+Province
+Urban
+Census Year Absolute
+Change % Change
+2007 %
+Urban 2017 %
+Urban
+Ba 120,998 52.2 165,411 66.8 44,413 36.7%
+Bua 592 4.2 625 4.0 33 5.6%
+Cakaudrove 7,034 14.3 10,999 21.8 3,965 56.4%
+Kadavu - - - - - -
+Lau - - - - - -
+Lomaiviti 4,397 26.7 4,250 27.1 -147 -3.3%
+Macuata 28,765 39.7 27,182 41.2 -1,583 -5.5%
+Nadroga/Navosa 9,622 16.5 10,293 17.5 671 7.0%
+Naitasiri 135,033 84.0 148,697 83.7 13,664 10.1%
+Namosi - - - - - -
+Ra 4,952 16.8 5,987 19.7 1,035 20.9%
+Rewa 88,763 88.1 93,483 86.5 4,720 5.3%
+Serua 6,867 37.6 7,005 35.0 138 2.0%
+Tailevu 17,823 32.0 20,320 31.5 2,497 14.0%
+Rotuma - - - - - -
+Total 424,846  494,252  69,406 16.3%
+Rural Population
+Fiji’s rural population was 390, 635 at the time of the 2017 Population Census, a decrease of
+21,790 (5.3%) compared to 2007. The count shows that 44.1% of Fiji’s population live in the
+Rural Areas which is a decrease of 5.1 percentage points compared to 2007.
+A combination of Out -Migration and the extension of the Urban Boundaries were the main
+causes of decline in the number of rural dwellers in the following provinces;
+• Ba by 28,465 with the Rural proportion of Ba’s population decreasing from 47.8% in
+2007 to 31.2% in 2017.
+• Cakaudrove by 2,840 with the Rural proportion of Cakaudrove’s population decreasing
+from 85.7% in 2007 to 78.2% in 2017
+The population of Rural Macuata decreased by 4,875 and this was due mainly to the movement
+of people out of the rural areas. The Rural proportion of Macuata’s population decreased from
+60.3% in 2007 to 58.8% in 2017.
+Further details are provided in Table 5 that follows;
+
+--- page 8 ----------------------------------------------------
+__________________________________________________________________________________
+FBoS Release No: 1, 2018
+2017 Population and Housing Census, Release 1
+Page 8
+Table 5. Rural Population by Province 2007 and 2017
+  Rural
+Province  Census Year  Absolute
+Change
+%
+Change
+  2007
+%
+Rural 2017
+%
+Rural
+Ba 110,762 47.8 82,297 31.2 -28,465 -25.7%
+Bua 13,584 95.8 14,841 96.0 1,257 9.3%
+Cakaudrove 42,310 85.7 39,470 78.2 -2,840 -6.7%
+Kadavu 10,167 100.0 10,897 100.0 730 7.2%
+Lau 10,683 100.0 9,602 100.0 -1,081 -10.1%
+Lomaiviti 12,064 73.3 11,407 72.9 -657 -5.4%
+Macuata 43,676 60.3 38,801 58.8 -4,875 -11.2%
+Nadroga/Navosa 48,765 83.5 48,638 82.5 -127 -0.3%
+Naitasiri 25,727 16.0 28,981 16.3 3,254 12.6%
+Namosi 6,898 100.0 7,871 100.0 973 14.1%
+Ra 24,512 83.2 24,445 80.3 -67 -0.3%
+Rewa 12,024 11.9 14,533 13.5 2,509 20.9%
+Serua 11,382 62.4 13,026 65.0 1,644 14.4%
+Tailevu 37,869 68.0 44,232 68.5 6,363 16.8%
+Rotuma 2,002 100.0 1,594 100.0 -408 -20.4%
+Total 412,425  390,635  -21,790 -5.3%
+Gender Perspective of Urban Population
+Female numbers showed a higher level of increase in the urban areas of the following provinces
+over the decade up to September 2017;
+1) Naitasiri with 7,750 (11.47%) compared to 5,914 (8.77%) for Males.
+2) Tailevu with 1,425 (16.32%) compared to 1,072 (11.79%) for Males.
+3) Rewa with 2,522 (5.67%) compared to 2,198 (4.96%) for Males.
+Comparisons for other provinces for the urban population by gender is illustrated in Table 6.
+
+--- page 9 ----------------------------------------------------
+__________________________________________________________________________________
+FBoS Release No: 1, 2018
+2017 Population and Housing Census, Release 1
+Page 9
+Table 6. Urban Population by Province and Sex 2007 and 2017
+Province
+Urban Absolute Change % Change
+2007 2017
+Males Females Males Females Males Females Males Females
+Ba 60,744 60,256 82,841 82,570 22,097 22,314 36.38% 37.03%
+Bua 311 281 305 320 -6 39 -1.93% 13.88%
+Cakaudrove 3,585 3,449 5,612 5,387 2,027 1,938 56.54% 56.19%
+Kadavu - - - - - - - -
+Lau - - - - - - - -
+Lomaiviti 2,217 2,180 2,119 2,131 -98 -49 -4.42% -2.25%
+Macuata 14,086 14,679 13,376 13,806 -710 -873 -5.04% -5.95%
+Nadroga/Navosa 4,730 4,892 5,097 5,196 367 304 7.76% 6.21%
+Naitasiri 67,463 67,570 73,377 75,320 5,914 7,750 8.77% 11.47%
+Namosi - - - - - - - -
+Ra 2,510 2,455 3,030 2,957 520 502 20.72% 20.45%
+Rewa 44,301 44,462 46,499 46,984 2,198 2,522 4.96% 5.67%
+Serua 3,417 3,450 3,509 3,496 92 46 2.69% 1.33%
+Tailevu 9,091 8,732 10,163 10,157 1,072 1,425 11.79% 16.32%
+Rotuma - - - - - - - -
+Total 212,455 212,406 245,928 248,324 33,473 35,918 15.76% 16.91%
+Gender Perspective of Rural Population
+Male numbers showed a higher level of increase in the Rural areas of the following provinces
+over the decade up to September 2017;
+1) Kadavu with 606 (11.28%) compared to 124 (2.59%) for Females.
+2) Rewa with 1,342 (21.09%) compared to 959 (16.34%) for Females.
+3) Tailevu with 3,275 (16.30%) compared to 3,088 (17.38%) for Females.
+Comparisons for other provinces for the rural population by gender is illustrated in Table 7.
+
+--- page 10 ----------------------------------------------------
+__________________________________________________________________________________
+FBoS Release No: 1, 2018
+2017 Population and Housing Census, Release 1
+Page 10
+Table 7. Rural Population by Province and Sex 2007 and 2017
+Province
+Rural Absolute Change % Change 2007 2017
+Males Females Males Females Males Females Males Females
+Ba 57,332 53,428 42,413 39,884 -14,919 -13,544 -26.02% -25.35%
+Bua 7,098 6,486 7,710 7,131 612 645 8.62% 9.94%
+Cakaudrove 22,286 20,024 20,702 18,768 -1,584 -1,256 -7.11% -6.27%
+Kadavu 5,374 4,793 5,980 4,917 606 124 11.28% 2.59%
+Lau 5,763 4,920 5,173 4,429 -590 -491 -10.24% -9.98%
+Lomaiviti 6,328 5,528 5,983 5,424 -345 -104 -5.45% -1.88%
+Macuata 22,472 21,204 19,808 18,993 -2,664 -2,211 -11.85% -10.43%
+Nadroga/Navosa 25,464 23,301 25,191 23,447 -273 146 -1.07% 0.63%
+Naitasiri 13,100 12,627 14,681 14,300 1,581 1,673 12.07% 13.25%
+Namosi 3,557 3,341 4,063 3,808 506 467 14.23% 13.98%
+Ra 12,566 11,933 12,494 11,951 -72 18 -0.57% 0.15%
+Rewa 6,363 5,869 7,705 6,828 1342 959 21.09% 16.34%
+Serua 5,858 5,524 6,574 6,452 716 928 12.22% 16.80%
+Tailevu 20,098 17,771 23,373 20,859 3,275 3,088 16.30% 17.38%
+Rotuma 1,046 956 817 777 -229 -179 -21.89% -18.72%
+Total 214,705 197,705 202,667 187,968 -12,038 -9,737 -5.61% -4.93%
+Working Age Population and Economic Activity
+All persons aged 15 and over who furnish or are available to furnish the supply of labour for
+the production of economic goods and services are Economically Active or are in the Labour
+Force. So basically the Labour Force is made up of those engaged in Paid or Unpaid Work or
+are Unemployed. The Unemployed are those who are available or looking for work.
+Some features of Fiji’s Population Aged 15 and above;
+• There are more Females in the Central Division.
+• There are more Females in the Urban Areas and this is consistent throughout the four
+administrative divisions.
+• The Labour Force Participation rate is highest in the Eastern Division.
+• There is a s ignificant Gender differential in the Labour Force Participation Rates i.e.
+76.4% for Males and 37.4% for Females.
+• There is a s ignificant Gender differential in  the Unemployment Rates  i.e. 2.9% for
+Males and 7.8% for Females.
+• There is a significant Gender Differential in the number of persons engaged in Paid and
+Unpaid Work i.e. 234,059 for Males and 106,680 for Females.
+Further details are presented in Table 8 that follows;
+
+--- page 11 ----------------------------------------------------
+__________________________________________________________________________________
+FBoS Release No: 1, 2018
+2017 Population and Housing Census, Release 1
+Page 11
+Table 8. Population Aged 15 and Over by Labour Force Status by Division and Sex.
+ Total Urban Rural
+ Total Male Female Total Male Female Total Male Female
+ Population Aged 15 and Over
+Total 625,099 315,442 309,657 360,128 177,407 182,721 264,971 138,035 126,936
+Central 268,772 133,686 135,086 197,082 96,555 100,527 71,690 37,131 34,559
+Eastern 24,237 13,112 11,125 2,883 1,428 1,455 21,354 11,684 9,670
+Western 242,146 122,501 119,645 132,477 65,763 66,714 109,669 56,738 52,931
+Northern 89,944 46,143 43,801 27,686 13,661 14,025 62,258 32,482 29,776
+ Labour Force
+Total 356,789 241,091 115,698 198,903 128,326 70,577 157,886 112,765 45,121
+LFPR 57.1% 76.4% 37.4% 55.2% 72.3% 38.6% 59.6% 81.7% 35.5%
+Central 151,987 97,920 54,067 107,536 67,618 39,918 44,451 30,302 14,149
+LFPR 56.5% 73.2% 40.0% 54.6% 70.0% 39.7% 62.0% 81.6% 40.9%
+Eastern 15,836 10,923 4,913 1,730 1,075 655 14,106 9,848 4,258
+LFPR 65.3% 83.3% 44.2% 60.0% 75.3% 45.0% 66.1% 84.3% 44.0%
+Western 136,449 94,892 41,557 73,956 49,213 24,743 62,493 45,679 16,814
+LFPR 56.3% 77.5% 34.7% 55.8% 74.8% 37.1% 57.0% 80.5% 31.8%
+Northern 52,517 37,356 15,161 15,681 10,420 5,261 36,836 26,936 9,900
+LFPR 58.4% 81.0% 34.6% 56.6% 76.3% 37.5% 59.2% 82.9% 33.2%
+ Paid and Unpaid Work
+Total 340,739 234,059 106,680 187,498 122,780 64,718 153,241 111,279 41,962
+Central 144,118 94,289 49,829 100,876 64,329 36,547 43,242 29,960 13,282
+Eastern 15,595 10,863 4,732 1,682 1,056 626 13,913 9,807 4,106
+Western 129,548 91,919 37,629 69,517 47,081 22,436 60,031 44,838 15,193
+Northern 51,478 36,988 14,490 15,423 10,314 5,109 36,055 26,674 9,381
+ Unemployed
+Total 16,050 7,032 9,018 11,405 5,545 5,859 4,645 1,486 3,159
+Unemployment
+Rate 4.5% 2.9% 7.8% 5.7% 4.3% 8.3% 2.9% 1.3% 7.0%
+Central 7,869 3,631 4,238 6,660 3,289 3,371 1,209 342 867
+Unemployment
+Rate 5.2% 3.7% 7.8% 6.2% 4.9% 8.4% 2.7% 1.1% 6.1%
+Eastern 241 60 181 48 19 29 193 41 152
+Unemployment
+Rate 1.5% 0.5% 3.7% 2.8% 1.8% 4.4% 1.4% 0.4% 3.5%
+Western 6,901 2,973 3,928 4,439 2,132 2,307 2,462 841 1,621
+Unemployment
+Rate 5.1% 3.1% 9.5% 6.0% 4.3% 9.3% 3.9% 1.8% 9.6%
+Northern 1,039 368 671 258 106 152 781 262 519
+Unemployment
+Rate 2.0% 1.0% 4.4% 1.6% 1.0% 2.9% 2.1% 1.0% 5.2%
+ Outside of the Labour Force
+Total 268,310 74,351 193,959 161,225 49,081 112,144 107,085 25,270 81,815
+Central 116,785 35,766 81,019 89,546 28,937 60,609 27,239 6,829 20,410
+Eastern 8,401 2,189 6,212 1,153 353 800 7,248 1,836 5,412
+Western 105,697 27,609 78,088 58,521 16,550 41,971 47,176 11,059 36,117
+Northern 37,427 8,787 28,640 12,005 3,241 8,764 25,422 5,546 19,876
+Note: LFPR – Labour Force Participation Rate
+
+--- page 12 ----------------------------------------------------
+__________________________________________________________________________________
+FBoS Release No: 1, 2018
+2017 Population and Housing Census, Release 1
+Page 12
+Population Aged 15 and Above With Bank Account
+A total of 392,148 persons aged 15 and above were reported to have a Bank Account. The
+number equates to a rate of 62.7% with Males at 68.5% while Females had a rate of 56.8%.
+The Urban rate was 71.1% with Males at 76.9% and Females at 65.5%. On the other hand the
+Rural rate was 51.3% with Males at 57.8% and Females at 44.3%.
+Further details are presented in Table 9 that follows;
+Table 9. Population Aged 15 and above With a Bank Account By Division, Urban and Rural, 2017
+ Total Urban Rural
+Total Male Female Total Male Female Total Male Female
+Total 625,099 315,442 309,657 360,128 177,407 182,721 264,971 138,035 126,936
+Central 268,772 133,686 135,086 197,082 96,555 100,527 71,690 37,131 34,559
+Eastern 24,237 13,112 11,125 2,883 1,428 1,455 21,354 11,684 9,670
+Western 242,146 122,501 119,645 132,477 65,763 66,714 109,669 56,738 52,931
+Northern 89,944 46,143 43,801 27,686 13,661 14,025 62,258 32,482 29,776
+  With Bank Account
+Total 392,148 216,207 175,941 256,094 136,444 119,650 136,054 79,763 56,291
+Central 173,733 93,225 80,508 138,920 73,317 65,603 34,813 19,908 14,905
+Eastern 7,914 4,697 3,217 1,508 812 696 6,406 3,885 2,521
+Western 161,155 89,769 71,386 96,980 52,147 44,833 64,175 37,622 26,553
+Northern 49,346 28,516 20,830 18,686 10,168 8,518 30,660 18,348 12,312
+  % With Bank Account
+Total 62.7% 68.5% 56.8% 71.1% 76.9% 65.5% 51.3% 57.8% 44.3%
+Central 64.6% 69.7% 59.6% 70.5% 75.9% 65.3% 48.6% 53.6% 43.1%
+Eastern 32.7% 35.8% 28.9% 52.3% 56.9% 47.8% 30.0% 33.3% 26.1%
+Western 66.6% 73.3% 59.7% 73.2% 79.3% 67.2% 58.5% 66.3% 50.2%
+Northern 54.9% 61.8% 47.6% 67.5% 74.4% 60.7% 49.2% 56.5% 41.3%
+
+--- page 13 ----------------------------------------------------
+__________________________________________________________________________________
+FBoS Release No: 1, 2018
+2017 Population and Housing Census, Release 1
+Page 13
+Functioning Challenge (Disability)
+A total of 113,595 persons aged 3 and above were reported to have at least one functioning
+challenge. The number equates to a rate of 13.7% which is close to the International benchmark
+of 15%. The percentage was highest in Rotuma with 21.7% followed by Lau at 18.2% with the
+province of Nadroga/Navosa recording the lowest rate of 10.4%. Further details are presented
+in Table 10 that follows;
+Table 10. Population Aged 3 and Above with at Least One Disability
+Province
+Age 3 and
+above
+At Least One
+Disability %
+Total 829907 113595 13.7
+Ba 233284 30242 13.0
+Bua 14301 2411 16.9
+Cakaudrove 46633 5099 10.9
+Kadavu 10058 1532 15.2
+Lau 9002 1635 18.2
+Lomaiviti 14670 2352 16.0
+Macuata 62289 9187 14.7
+Nadroga/Navosa 55267 5771 10.4
+Naitasiri 166545 23768 14.3
+Namosi 7306 943 12.9
+Ra 28393 4360 15.4
+Rewa 101773 13925 13.7
+Serua 18678 3375 18.1
+Tailevu 60190 8665 14.4
+Rotuma 1518 330 21.7
+Other information from the 2017 Population and Housing Census will be released progressively in the
+coming months.
+Mr. Epeli Waqavonovono
+Census Commissioner
