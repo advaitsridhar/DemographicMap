@@ -1,29 +1,175 @@
-https://web.archive.org/web/2015/http://stat.tj/ru/population-census/ -> https://web.archive.org/web/20160126041401/http://www.stat.tj/ru/population-census/: HTTP 200 text/html; charset=windows-1251 30,131 B
-  216 captures -> https://web.archive.org/web/20160126041401*/http://www.stat.tj/ru/population-census/
-   -> https://web.archive.org/web/20160126041401/http://www.stat.tj/ru/population-census/
-   -> https://web.archive.org/web/20160126041401/http://www.stat.tj/ru/population-census/#close
-   -> https://web.archive.org/web/20160126041401/http://web.archive.org/screenshot/http://www.stat.tj/ru/population-census/
-  About this capture -> https://web.archive.org/web/20160126041401/http://www.stat.tj/ru/population-census/#expand
-  тоҷикӣ -> https://web.archive.org/web/20160126041401/http://www.stat.tj/population-census/
-  english -> https://web.archive.org/web/20160126041401/http://www.stat.tj/en/population-census/
-  СРЕДНИЕ ЦЕНЫ ПРОДОВОЛЬСТВЕННОЙ ПРОДУКЦИИ -> https://web.archive.org/web/20160126041401/http://www.stat.tj/price/18.01.2015.xls
-   -> https://web.archive.org/web/20160126041401/http://www.censusinfo.tj/libraries/aspx/Home.aspx
-   -> https://web.archive.org/web/20160126041401/http://www.stat.tj/images/DevInfo_7_End_User_Guide_RUS_March2014.pdf
-  Очередной этап периода подготовки к переписи населения и жилого фонда в 2010 году -> https://web.archive.org/web/20160126041401/http://www.stat.tj/img/peregisspisok.pdf
-  Проведение заседаний Государственной комиссии содействия переписи населения и жилого фонда в 2010 году -> https://web.archive.org/web/20160126041401/http://www.stat.tj/img/perepissovesanie.pdf
-  О проведении пробной переписи населения и жилого фонда 2008 года в городе Рогун -> https://web.archive.org/web/20160126041401/http://www.stat.tj/img/probnay perepis.pdf
-  13 links match '(?i)(?:pdf|rar|zip|xls|том|volume|национ|язык|census)'
-https://web.archive.org/web/2013/http://www.stat.tj/ru/population-census/ -> https://web.archive.org/web/20140122122634/http://www.stat.tj/ru/population-census/: HTTP 200 text/html; charset=windows-1251 30,301 B
-  216 captures -> https://web.archive.org/web/20140122122634*/http://www.stat.tj/ru/population-census/
-   -> https://web.archive.org/web/20140122122634/http://www.stat.tj/ru/population-census/
-   -> https://web.archive.org/web/20140122122634/http://www.stat.tj/ru/population-census/#close
-   -> https://web.archive.org/web/20140122122634/http://web.archive.org/screenshot/http://www.stat.tj/ru/population-census/
-  About this capture -> https://web.archive.org/web/20140122122634/http://www.stat.tj/ru/population-census/#expand
-  тоҷикӣ -> https://web.archive.org/web/20140122122634/http://www.stat.tj/population-census/
-  english -> https://web.archive.org/web/20140122122634/http://www.stat.tj/en/population-census/
-  СРЕДНИЕ ЦЕНЫ ПРОДОВОЛЬСТВЕННОЙ ПРОДУКЦИИ -> https://web.archive.org/web/20140122122634/http://www.stat.tj/price/rus20.01.2014.xls
-   -> https://web.archive.org/web/20140122122634/http://www.censusinfo.tj/libraries/aspx/Home.aspx
-  Очередной этап периода подготовки к переписи населения и жилого фонда в 2010 году -> https://web.archive.org/web/20140122122634/http://www.stat.tj/img/peregisspisok.pdf
-  Проведение заседаний Государственной комиссии содействия переписи населения и жилого фонда в 2010 году -> https://web.archive.org/web/20140122122634/http://www.stat.tj/img/perepissovesanie.pdf
-  О проведении пробной переписи населения и жилого фонда 2008 года в городе Рогун -> https://web.archive.org/web/20140122122634/http://www.stat.tj/img/probnay perepis.pdf
-  12 links match '(?i)(?:pdf|rar|zip|xls|том|volume|национ|язык|census)'
+probe_pdf: https://www.statsfiji.gov.fj/download/119/report/709/2007-census-of-population-and-housing-analytical-report.pdf
+  2,733,849 bytes
+  423 pages
+probe_pdf: 423 pages, 53 mention ['anguage', 'tongue', 'Census.forms', 'questions']
+=== front matter ===
+
+
+=== pages mentioning ['anguage', 'tongue', 'Census.forms', 'questions'] (first 10) ===
+
+--- page 6 ----------------------------------------------------
+IV. LABOUR FORCE, EMPLOYMENT AND UNEMPLOYMENT 83
+1. D a t a  s o u r c e s  8 3
+2. Collection of labour force data in a census 84
+2.1. Household versus individual schedule  84
+2.2. System of labour force statistics 84
+2.3. Time reference of labour force data  85
+2.4. Age cut-off point for labour force questions  85
+2.5. Some shortcomings and strengths of labour force data collected in a census 86
+3. Classification of the labour force 86
+4. 2007 Census questions 89
+
+--- page 18 ----------------------------------------------------
+xvii
+VII-B1 Lifetime fertility questions included on  the interview schedule of censuses in Fiji
+since 1946
+VII-B2 P i, Si and D i values by sex at and geographic sector derived from 2007 Census
+lifetime fertility data
+a. Total population
+b. Fijians
+c. Indians
+
+--- page 36 ----------------------------------------------------
+sample basis. It will be noted that census information provides the denominators of virtually all
+rates that are being.
+In countries where complete and accurate flow statistics regarding birth and death are produced
+by the CRS and/or NHIS, a census only collects  stock statistics. Unfortunately, since these
+primary sources in Fiji cannot yet provide complete  and reliable birth and death statistics on a
+continuous basis, information related to fertility and mortality has, since 1946, been collected by
+means of retrospective questions on the census interview schedule. A brief history of census
+taking in Fiji is included in Section 3.
+Finally, it will be realized that , even if in the coming years other data collection systems achieve
+a statistically acceptable level of completeness and accuracy, planners at the sub-national level,
+i.e. the provinces will largely re main dependent on census data . The most important reason for
+this is that (sample) surveys in Fiji do not prov ide information that is valid at the sub-national
+(i.e. provincial and lower) level. It is likely that this will remain so in the foreseeable future.
+
+--- page 38 ----------------------------------------------------
+Printed reports of the 1911, 1921 and 1936 Censuses are still in existence. It appears that, after
+1901, the population started to increase steadily at a rate between one and two percent per year.
+Although these censuses provided somewhat more information than the early ones, they are, as
+far as the indigenous people is concerned, still not much more than simple headcounts.
+Formal census taking only started in 1946. This census, conducted soon after the end of World
+War II, provides more detailed information than the previous ones. The Interview Schedule of
+the 1946 Census included the usual basic questions such as age, sex, ethnicity, place of birth,
+usual place of residence, marital status, religion, language and school attendance as well as
+9 In this respect, it is important to note that Fiji has never conducted a Demographic and Health Survey (DHS). It
+will be clear that in order to be able to derive statistically valid basic demographic indices from a SRRS, i.e. age and
+sex specific death rates required for the production of lifetables, the size of the sample should be at least 100,000.
+Otherwise, the sampling errors, especially for ASDRs for the age range where mortality is low, will become
+unacceptably high.  Ideally, the future DHS should therefore be a MRRS, in which case a smaller sample size will
+suffice.
+
+--- page 39 ----------------------------------------------------
+15
+highest level of education completed. It is particularly important to note that this census included
+questions from which fertility and infant and child mortality can be estimated indirectly. The
+1946 Census in Fiji was one of the first in the entire world to do so. As a result, it has been
+possible to derive basic parameters of fertility and mortality of the population of Fiji for the
+entire post World War II period. The 1946 Census also included some basic housing questions
+and questions concerning “infirmities” and poultry.
+Unfortunately, most of this information has only been compiled and published at the national
+level. It will be realized that, at the time of the 1946 Census, all information was processed,
+edited, compiled and tabulated by hand. The production of very detailed cross tabulations was
+not feasible. This also applies to more detailed tabulations at the sub-national level i.e. the
+provinces. However, for the provincial authorities, it is important to note that the 1946 Census
+was the first one that provided a picture of the most basic characteristics of the population of
+
+--- page 41 ----------------------------------------------------
+Housing.
+ Demographic processes
+Last but not least, since complete and reliable information concerning fertility and
+mortality from the primary source of this data, the CRS remains very incomplete and
+deficient and NHIS data with regard to fert ility and mortality remains very limited and
+unavailable at the provincial level and for the geographic sectors, the 2007 Census also
+included once again a series of retrospective questions from which this information can be
+estimated indirectly. Moreover, in the absence of a Continuous Population register, the
+census also collected basic information on internal migration.
+In addition, as a result of special requests made by members of the Census Users Advisory
+Committee, the 2007 Census also included some basic questions concerning koro dina, disability,
+remittances and mode of transport.
+In conclusion, the 2007 census was first of all concerned with the core variables of the population
+of Fiji on Census Night, viz. its characteristics (size, structure and distribution). Furthermore, in the
+absence of complete and accurate service statisti cs concerning demographic processes (fertility,
+mortality and migration), it also collected this information by means of retrospective questions.
+Finally, it collected some basic household and housing information.
+4.3. Census principle of periodicity
+Between 1936 and 1996, the timing of all censuses has been in agreement with the Census Act.
+They have been conducted at a decennial interval. According to the Census Act, the most recent
+census should have been conducted in 2006. Unfortunately, because of the national elections in
+2006, this census was postponed to 2007. This postponement is not only in disagreement with
+
+--- page 42 ----------------------------------------------------
+4.6. Census forms
+During the 2007 Census, information was collected on three different forms viz.:
+ Interview Schedule (IS)
+This schedule was used for the vast majority  of households residing in private dwellings
+(PD). Enumerators collected the information about household members in face-to-face
+interviews. Readers are again reminded that during a census, one senior member of the
+household often answers the census questions for all household members.13
+ Self-Filling Questionnaire (SQ).
+This questionnaire includes the same questions  as the Interview Sche dule. In 2007, this
+questionnaire has been used for self-enumeration by a relatively small number of
+the estimation of adult mortality from maternal and paternal orphanhood data from two censuses, i.e. the 1996 and
+2007 Censuses of Fiji. This is explained in Chapter VI.
+13 This is not the case during a much more manageable specialized survey based on a sample of the population,
+where everybody included in the sample is subjected to a personal interview by an experienced interviewer.
+
+--- page 43 ----------------------------------------------------
+ Special questionnaire for institutionalized persons residing in Non-Private Dwellings
+(NPD)
+Some people do not live in a private household but in an institution (hospital, corrective
+institution, barracks, boarding school etc.) or on board of a ship. For census purposes,
+these persons are members of a collective household. A special questionnaire has been
+used for the enumeration of the members of these collective households. It contains a
+subset of the questions included on th e Interview Schedule and the Self-Filling
+Questionnaire and is therefore referred to as the “Short Form”. The basic information that
+is required for the “institutionalized” persons is available from the official records of
+these institutions. Prior to the census, the FBoS appointed a Census Coordinator for each
+of these institutions. These Census Coordinators are persons employed by these
+institutions who have access to the personal records of the institutionalized persons in
+their institution. These Census Coordinators have completed the special questionnaire for
+
+--- page 99 ----------------------------------------------------
+only be collected in a census. However, the census interview situation is not very suitable
+for the collection of data on marital status, pa rticularly in the case of these respondents
+living in consensual (de-facto) unions. Discussing the precise nature of their marital
+relationship with a census enumerator may be  a sensitive issue for them, particularly if
+the enumerator is a young person of a different sex. Consequently, during recent
+censuses, all enumerators have been instructed to accept and record the answers to
+marital status questions that are given to them by respondents, even in those cases where
+they suspect that these answers may not be correct. This diplomatic approach invariably
+leads to some bias in the data.
+ Legal age at marriage
+The reports from early censuses in Fiji show  that a significant number of males and
+females (particularly Indian females) under the age of 15 were married. The more recent
+census reports do not show any cases of pe rsons below the age of 15, who are married.
+
+--- page 107 ----------------------------------------------------
+83
+IV. LABOUR FORCE, EMPL OYMENT AND UNEMPLOYMENT
+Labour force information, cross-classified with other key census variables like age, sex,
+education, ethnicity, and geographic sector for the main geographic subdivisions of the country
+are essential for effective policy making and planning. Most censuses include a few questions
+concerning the labour force. This is also the case in Fiji. However, the 1996 and especially the
+2007 Census collected somewhat more information on the characteristics of Fiji’s labour force.
+In this chapter, the results of the analysis of the labour force data from these two censuses are
+presented.1 This analysis provides users with a basic picture of the labour force, employment and
+unemployment situation and trend in the country.
+More detailed information concerning the labour force situation in Fiji should be provided by the
+      ...
+statistics from this department, the main source  for more detailed labour force information are
+the surveys conducted by the FBoS.
+ Section 1 discusses the various sources of nation-wide labour force data in Fiji.
+ Section 2 considers some of the issues with  regard to the collection of labour force
+information in a census and particularly the problems connected with this approach.
+ Section 3 introduces the classification of the labour force used in Fiji.
+ Section 4 discusses the labour force questions included on the 2007 Census Interview
+Schedule.
+ Sections 5 to 7 present an analysis of the labour force, employment and unemployment
+data from the 1996 and 2007 Censuses and the changes that have taken place.
+ The final Sections 8 and 9 analyze the present employment and unemployment situation in
+somewhat more detail.
+1. Data sources
+
+... and 43 further pages match; re-run with a narrower --terms to see them.
