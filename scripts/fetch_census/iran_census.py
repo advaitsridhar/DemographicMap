@@ -724,8 +724,14 @@ def read_province(nn: int) -> list[dict[str, Any]]:
     return counties
 
 
-def read_all(budget: float = BUDGET
+def read_all(budget: float = BUDGET, only: set[int] | None = None
              ) -> tuple[dict[int, Any], dict[str, Any], list[dict[str, Any]], dict[str, Any]]:
+    """Every province's shahrestans, from data/raw/iran or the Archive.
+
+    ``only`` limits the fetching to those provinces (the rest are read from
+    data/raw/iran or left for another run), so that several runs on several
+    machines can share the work the Archive rations.
+    """
     started = time.monotonic()
     province_ages, province_citizenship = read_provinces()
     counties: list[dict[str, Any]] = []
@@ -733,7 +739,7 @@ def read_all(budget: float = BUDGET
     for nn in sorted(PROVINCES):
         kept = cached(f"{nn:02d}")
         if kept is None:
-            if time.monotonic() - started > budget:
+            if time.monotonic() - started > budget or (only is not None and nn not in only):
                 waiting.append(nn)
                 continue
             fresh = read_province(nn)
@@ -757,9 +763,17 @@ def read_all(budget: float = BUDGET
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.parse_args()
+    ap.add_argument("--provinces", default="",
+                    help="fetch only these provinces' tables, e.g. 5-9,12 (SCI codes)")
+    args = ap.parse_args()
+    only = None
+    if args.provinces:
+        only = set()
+        for part in args.provinces.split(","):
+            low, _, high = part.partition("-")
+            only.update(range(int(low), int(high or low) + 1))
     log("iran_census: 2016 census tables from the Internet Archive's captures of amar.org.ir")
-    province_ages, province_citizenship, counties, codab = read_all()
+    province_ages, province_citizenship, counties, codab = read_all(only=only)
     a1, a2 = drawn_units()
     rows, notes = build(province_ages, province_citizenship, counties, codab, a1, a2)
     for line in notes:
