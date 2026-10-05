@@ -232,6 +232,17 @@ instead. Nothing here takes the division names from the merged sheet either:
 they may well be sound, but a sheet with three known transpositions in it is
 not something to take an unverifiable field from.
 
+**Sex ratio and median age.** Each zila's sex ratio is its males per hundred
+females from the population sheet -- the hijra counted in neither -- and must
+be the ratio the National Report's Table P11 prints for it, to the
+hundredth. The report's Table P03 gives population by five-year age group
+and sex for the nation and each division; the divisions' medians are
+interpolated within the group that holds the middle person, and every block
+must add up to its Total row, every printed ratio to its counts, the
+divisions to the nation group by group, and each division's males and
+females to its zilas' in the workbook. No table read here gives a zila's
+ages, so the zilas carry no median.
+
 Usage:
     python -m scripts.fetch_census.bangladesh
 """
@@ -250,6 +261,8 @@ from ._shared import (
     NOT_AVAILABLE, PROCESSED, collection_gap, gap, http_get, log, measure,
     record, shares, write_json,
 )
+
+from .south_asia_common import check_contiguous, males_per_100, median_grouped
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import laid_out  # noqa: E402
@@ -640,6 +653,8 @@ def read(blob: bytes) -> list[dict[str, Any]]:
             "name": name,
             "population": number(pick(whole[name], "Population_Total")),
             "hijra": number(pick(whole[name], "Population_Hijra")),
+            "males": number(pick(whole[name], "Population_Male")),
+            "females": number(pick(whole[name], "Population_Female")),
             "ethnic": number(peoples[name].get(ETHNIC_TOTAL)),
             "ethnic_sexed": tuple(number(peoples[name].get(column))
                                   for column in ETHNIC_SEXED),
@@ -648,6 +663,214 @@ def read(blob: bytes) -> list[dict[str, Any]]:
                                            for column in pair)
                       for religion_name, pair in SEXED.items()},
         })
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Age and sex: Tables P03 and P11 of the National Report
+# ---------------------------------------------------------------------------
+
+# Table P03, population by five-year age group, sex, division and location:
+# for the nation and each division a block of all localities, then rural,
+# then urban. Each row is persons, 100.00, males and their share, females and
+# theirs, and the sex ratio -- the same six-figure shape as P28's rows, with
+# the ratio after them.
+AGE_ROW = re.compile(
+    r"^(?P<label>Total|\d{1,3}-\d{1,3}|\d{1,3} & above)\s+(?P<persons>[\d,]+)\s+"
+    r"100\.00\s+(?P<males>[\d,]+)\s+\d+\.\d+\s+(?P<females>[\d,]+)\s+\d+\.\d+\s+"
+    r"(?P<ratio>\d+\.\d+)$")
+# Table P11, sex ratio (with growth, dependency and child-woman ratios) by
+# district and location: a name and twelve figures, total then rural then
+# urban; the sex ratio is the second.
+P11_ROW = re.compile(r"^(?P<name>[A-Za-z][A-Za-z'’ .-]*?)\s+"
+                     r"(?P<figures>(?:-?\d+\.\d+\s+){11}-?\d+\.\d+)$")
+AGE_SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census 2022, "
+              "National Report (Volume I), Table P03: population by age, sex, "
+              "division and location")
+P11_SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census 2022, "
+              "National Report (Volume I), Table P11: sex ratio by district")
+
+
+def table_slices(lines: list[str], table: str, until: tuple[str, ...]):
+    """Every stretch of the report from a heading to the next table's.
+
+    The contents list each heading too, so every occurrence is offered and the
+    caller keeps the first that yields rows -- as :func:`report_blocks` does.
+    """
+    starts = [i for i, line in enumerate(lines) if line.strip().startswith(table)]
+    if not starts:
+        raise SystemExit(f"{table} is not in the National Report")
+    for start in starts:
+        end = next((i for i in range(start + 1, len(lines))
+                    if lines[i].strip().startswith(until)), len(lines))
+        yield [" ".join(line.split()) for line in lines[start:end]]
+
+
+def age_label(label: str) -> tuple[int, int | None]:
+    if label.endswith("& above"):
+        return int(label.split()[0]), None
+    low, high = label.split("-")
+    return int(low), int(high)
+
+
+def read_ages(lines: list[str]) -> dict[str, dict[str, Any]]:
+    """Table P03's all-localities blocks: {"National" or division: block}.
+
+    A block is {"total": (persons, males, females, printed ratio),
+    "groups": [(low, high, persons, males, females)]}. The rural and urban
+    blocks that follow each one are passed over.
+    """
+    for rows in table_slices(lines, "Table P03", ("Table P04", "Table P05")):
+        out: dict[str, dict[str, Any]] = {}
+        area: str | None = None
+        locality = None
+        for line in rows:
+            if line == "National" or (line.endswith(" Division")
+                                       and len(line.split()) <= 3):
+                area = line.removesuffix(" Division")
+                if area in out:
+                    raise SystemExit(f"bangladesh: Table P03 prints {area} twice")
+                out[area] = {"total": None, "groups": []}
+                locality = "all"
+                continue
+            if line in ("Rural", "Urban"):
+                locality = line
+                continue
+            found = AGE_ROW.match(line)
+            if not found or area is None or locality != "all":
+                continue
+            persons, males, females = (int(found.group(k).replace(",", ""))
+                                       for k in ("persons", "males", "females"))
+            if found.group("label") == "Total":
+                out[area]["total"] = (persons, males, females,
+                                      float(found.group("ratio")))
+            else:
+                low, high = age_label(found.group("label"))
+                out[area]["groups"].append((low, high, persons, males, females))
+        if out:
+            return out
+    raise SystemExit("bangladesh: Table P03 was found and no occurrence had rows")
+
+
+def check_ages(ages: dict[str, dict[str, Any]]) -> None:
+    """P03 against itself: groups to totals, sexes to persons, divisions to Bangladesh."""
+    divisions = [w for w in ages if w != "National"]
+    if len(divisions) != 8 or "National" not in ages:
+        raise SystemExit(f"bangladesh: Table P03 has {sorted(ages)}; expected the "
+                         "nation and 8 divisions")
+    for where, block in ages.items():
+        if block["total"] is None:
+            raise SystemExit(f"bangladesh: Table P03 {where} has no Total row")
+        check_contiguous([(low, high, n) for low, high, n, _m, _f in block["groups"]],
+                         f"bangladesh: Table P03 {where}")
+        persons, males, females, printed = block["total"]
+        for i, (label, value) in enumerate((("persons", persons), ("males", males),
+                                            ("females", females))):
+            summed = sum(g[2 + i] for g in block["groups"])
+            if summed != value:
+                raise SystemExit(f"bangladesh: Table P03 {where} {label}: the age "
+                                 f"groups add up to {summed:,}, the Total row "
+                                 f"says {value:,}")
+        if males + females != persons:
+            raise SystemExit(f"bangladesh: Table P03 {where}: {males:,} males and "
+                             f"{females:,} females against {persons:,} persons")
+        if abs(round(100 * males / females, 2) - printed) > 0.011:
+            raise SystemExit(f"bangladesh: Table P03 {where} prints a sex ratio of "
+                             f"{printed}, the counts give {100 * males / females:.2f}")
+    national = ages["National"]["groups"]
+    for i, (low, high, n, _m, _f) in enumerate(national):
+        summed = sum(ages[w]["groups"][i][2] for w in divisions)
+        if summed != n:
+            raise SystemExit(f"bangladesh: Table P03 ages {low}-{high}: the divisions "
+                             f"add up to {summed:,}, the nation prints {n:,}")
+    log("    Table P03: the nation and 8 divisions; every block's age groups add up "
+        "to its Total row, the sexes to the persons, the printed sex ratios to the "
+        "counts, and the divisions to the nation group by group")
+
+
+def read_p11(lines: list[str]) -> dict[str, float]:
+    """Table P11's total sex ratio for every district, by the report's spelling."""
+    for rows in table_slices(lines, "Table P11", ("Table P12",)):
+        out: dict[str, float] = {}
+        for line in rows:
+            found = P11_ROW.match(line)
+            if not found:
+                continue
+            name = found.group("name").strip()
+            if name in ("Total", "National"):
+                continue
+            ratio = float(found.group("figures").split()[1])
+            if name in out:
+                raise SystemExit(f"bangladesh: Table P11 prints {name} twice")
+            out[name] = ratio
+        if out:
+            return out
+    raise SystemExit("bangladesh: Table P11 was found and no occurrence had rows")
+
+
+def check_sexes(districts: list[dict[str, Any]], printed: dict[str, float]) -> None:
+    """Every zila's males and females against its population and Table P11.
+
+    The workbook's males, females and hijra must make its population, and the
+    ratio of its males to its females must be the sex ratio the National
+    Report prints for that zila -- two publications agreeing to the hundredth.
+    """
+    bad: list[str] = []
+    seen = set()
+    for spelled, ratio in printed.items():
+        seen.add(REPORT_SPELLING.get(spelled, spelled))
+    for row in districts:
+        name, males, females = row["name"], row["males"], row["females"]
+        if males is None or females is None:
+            bad.append(f"{name}: no male or female count")
+            continue
+        if males + females + (row["hijra"] or 0) != row["population"]:
+            bad.append(f"{name}: {males:,} + {females:,} + {row['hijra']:,} hijra "
+                       f"against a population of {row['population']:,}")
+        spelled = next((s for s in printed if REPORT_SPELLING.get(s, s) == name), None)
+        if spelled is None:
+            bad.append(f"{name}: no Table P11 row")
+        elif abs(round(100 * males / females, 2) - printed[spelled]) > 0.011:
+            bad.append(f"{name}: Table P11 prints {printed[spelled]}, the workbook "
+                       f"gives {100 * males / females:.2f}")
+    extra = sorted(seen - {row["name"] for row in districts})
+    if extra:
+        bad.append(f"Table P11 names {extra}, which the workbook does not")
+    if bad:
+        raise SystemExit(f"bangladesh: {len(bad)} sex checks failed -- "
+                         + "; ".join(bad[:4]))
+    log("    every zila's males, females and hijra make its population, and its "
+        "sex ratio is the one Table P11 prints, to the hundredth")
+
+
+def zila_sex_ratio(row: dict[str, Any]) -> dict[str, Any]:
+    males, females, hijra = row["males"], row["females"], row["hijra"] or 0
+    return {
+        "sex_ratio": measure(males_per_100(males, females), unit="males_per_100_females",
+                             year=YEAR, source=SOURCE),
+        "sex_ratio_note": (
+            f"Census 2022: {males:,} males and {females:,} females"
+            + (f"; the {hijra:,} hijra (third gender) counted are in the population "
+               "and in neither figure" if hijra else "")
+            + ". The National Report's Table P11 prints the same ratio."),
+    }
+
+
+def division_age_fields(block: dict[str, Any]) -> dict[str, Any]:
+    persons, males, females, _printed = block["total"]
+    out: dict[str, Any] = {
+        "sex_ratio": measure(males_per_100(males, females), unit="males_per_100_females",
+                             year=YEAR, source=AGE_SOURCE),
+        "sex_ratio_note": f"Census 2022, Table P03: {males:,} males and {females:,} females.",
+    }
+    median = median_grouped([(low, high, n) for low, high, n, _m, _f in block["groups"]])
+    if median is not None:
+        out["median_age"] = measure(median, unit="years", year=YEAR, source=AGE_SOURCE)
+        out["median_age_note"] = (
+            f"Census 2022, Table P03: the median of {persons:,} people, interpolated "
+            "within the five-year age group that holds the middle person. The "
+            "National Report publishes age by five-year group for the divisions "
+            "and nothing finer.")
     return out
 
 
@@ -755,7 +978,8 @@ def report_blocks(lines: list[str], table: str, until: str | None) -> dict[str, 
         "or the text extraction has.")
 
 
-def read_report(blob: bytes) -> tuple[dict[str, Any], dict[str, Any]]:
+def read_report(blob: bytes, lines: list[str] | None = None
+                ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Tables P28 and P29, checked against each other and against themselves.
 
     P28 is the ethnic population by district and P29 the same total broken
@@ -765,7 +989,8 @@ def read_report(blob: bytes) -> tuple[dict[str, Any], dict[str, Any]]:
     workbook states independently, and P29's division headers must equal
     P28's. Three tables, two publications, one set of figures.
     """
-    lines = laid_out(blob).splitlines()
+    if lines is None:
+        lines = laid_out(blob).splitlines()
     districts = report_blocks(lines, "Table P28", "Table P29")
     categories = report_blocks(lines, "Table P29", "Table P30")
     log(f"    National Report: {len(districts) - 1} divisions in Table P28, "
@@ -871,6 +1096,13 @@ def main() -> int:
     districts = read(blob)
     check(districts)
 
+    report = http_get(REPORT, binary=True)
+    log(f"    {len(report):,} bytes of National Report from the Bureau's own storage")
+    lines = laid_out(report).splitlines()
+    check_sexes(districts, read_p11(lines))
+    ages = read_ages(lines)
+    check_ages(ages)
+
     records: list[dict[str, Any]] = []
     for row in districts:
         classified = sum(row["counts"].values())
@@ -889,12 +1121,11 @@ def main() -> int:
             ethnicity_year=YEAR,
             ethnicity_note=zila_note(row["name"], row["ethnic"],
                                      row["population"]),
-            sources=[{"field": "population/religion", "name": SOURCE,
+            **zila_sex_ratio(row),
+            sources=[{"field": "population/religion/sex_ratio", "name": SOURCE,
                       "url": URL, "license": LICENCE}]))
 
-    report = http_get(REPORT, binary=True)
-    log(f"    {len(report):,} bytes of National Report from the Bureau's own storage")
-    by_district, by_category = read_report(report)
+    by_district, by_category = read_report(report, lines)
     check_report(by_district, by_category,
                  {row["name"]: row["ethnic"] for row in districts})
 
@@ -925,6 +1156,18 @@ def main() -> int:
                 f"against a division population of {whole:,}")
         counts[RESIDUAL_GROUP] = whole - block["total"]
         tongue = MOTHER_TONGUE[where]
+        # Table P03 counts males and females; the workbook's zilas add the
+        # hijra on top. The division's P03 persons must be its zilas' males
+        # and females exactly, which ties the age table to the same districts
+        # the rest of this record is built from.
+        if where not in ages:
+            raise SystemExit(f"bangladesh: Table P03 has no block for {where}")
+        sexed = sum(row["males"] + row["females"] for row in districts
+                    if row["name"] in {REPORT_SPELLING.get(n, n) for n in block["rows"]})
+        if ages[where]["total"][0] != sexed:
+            raise SystemExit(f"bangladesh: {where} is {ages[where]['total'][0]:,} "
+                             f"males and females in Table P03 and {sexed:,} in "
+                             "its zilas in the workbook")
         records.append(record(
             f"BGD-{where.lower()}", where, level="admin1", parent="BGD",
             aliases=list(DIVISION_ALIASES.get(where, ())),
@@ -936,9 +1179,12 @@ def main() -> int:
                       {"group": "Other languages", "pct": tongue[1]}],
             language_year=TONGUE_YEAR,
             language_note=TONGUE_NOTE,
+            **division_age_fields(ages[where]),
             sources=[{"field": "ethnicity", "name": REPORT_SOURCE,
                       "url": REPORT_PAGE, "license": LICENCE},
                      {"field": "language", "name": TONGUE_SOURCE,
+                      "url": REPORT_PAGE, "license": LICENCE},
+                     {"field": "median_age/sex_ratio", "name": AGE_SOURCE,
                       "url": REPORT_PAGE, "license": LICENCE}]))
     log(f"    {len(by_category) - 1} divisions carry a named ethnic composition, "
         f"{sum(by_category[w]['total'] for w in by_category if w != 'National'):,} "
