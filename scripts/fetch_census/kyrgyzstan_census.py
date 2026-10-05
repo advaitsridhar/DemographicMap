@@ -177,6 +177,7 @@ ETHNIC = {
     "пакистанцы и индийцы": "People of India and Pakistan",
     "пакистанцы и индусы": "People of India and Pakistan",
     "другие": "Other", "другие этнические группы": "Other",
+    "другие национальности": "Other",
 }
 # A group's own language; None where the group has no single language.
 OWN_LANGUAGE = {
