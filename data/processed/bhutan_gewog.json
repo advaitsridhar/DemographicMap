@@ -1019,8 +1019,10 @@
       "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "2017 census: the report's annex has the age table, but this reader found no All Chiwogs block under the gewog's name in the report's Table A2.7; a median from figures that do not reconcile would be this map's arithmetic rather than the census's."
+      "value": 28.1,
+      "unit": "years",
+      "year": 2017,
+      "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)"
     },
     "sex_ratio": {
       "value": 934,
@@ -1049,6 +1051,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Chhukha.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "median_age",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Chhukha.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -1060,7 +1068,8 @@
       "Chukha"
     ],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity, so those three are declared rather than left empty. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
-    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are."
+    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are.",
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 5,786 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
   },
   {
     "id": "BTN-chhukha-samphelling",
@@ -1730,8 +1739,10 @@
       "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "2017 census: the report's annex has the age table, but this reader found no All Chiwogs block under the gewog's name in the report's Table A2.7; a median from figures that do not reconcile would be this map's arithmetic rather than the census's."
+      "value": 31.4,
+      "unit": "years",
+      "year": 2017,
+      "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)"
     },
     "sex_ratio": {
       "value": 843,
@@ -1760,6 +1771,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Dagana.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "median_age",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Dagana.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -1769,7 +1786,8 @@
     "parent_name": "Dagana",
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity, so those three are declared rather than left empty. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
-    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are."
+    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are.",
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 796 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
   },
   {
     "id": "BTN-dagana-nichula",
@@ -8183,8 +8201,10 @@
       "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "2017 census: the report's annex has the age table, but this reader found no All Chiwogs block under the gewog's name in the report's Table A2.7; a median from figures that do not reconcile would be this map's arithmetic rather than the census's."
+      "value": 33.2,
+      "unit": "years",
+      "year": 2017,
+      "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)"
     },
     "sex_ratio": {
       "value": 939,
@@ -8213,6 +8233,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "median_age",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -8222,7 +8248,8 @@
     "parent_name": "Samtse",
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity, so those three are declared rather than left empty. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record. The boundary file draws this gewog as Chargharay. The polygon was identified by this gewog's own reference point falling inside it and by Wikidata placing that gewog in this dzongkhag, not by either spelling.",
-    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are."
+    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are.",
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,061 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
   },
   {
     "id": "BTN-samtse-tading",
@@ -13047,8 +13074,10 @@
       "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "2017 census: the report's annex has the age table, but this reader found no All Chiwogs block under the gewog's name in the report's Table A2.7; a median from figures that do not reconcile would be this map's arithmetic rather than the census's."
+      "value": 24.8,
+      "unit": "years",
+      "year": 2017,
+      "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)"
     },
     "sex_ratio": {
       "value": 912,
@@ -13077,6 +13106,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Wangdue-Phodrang.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "median_age",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Wangdue-Phodrang.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -13086,7 +13121,8 @@
     "parent_name": "Wangdue Phodrang",
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity, so those three are declared rather than left empty. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
-    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are."
+    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are.",
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 3,960 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
   },
   {
     "id": "BTN-wangdue-phodrang-gase-tshowogm",
@@ -13105,8 +13141,10 @@
       "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "2017 census: the report's annex has the age table, but this reader found no All Chiwogs block under the gewog's name in the report's Table A2.7; a median from figures that do not reconcile would be this map's arithmetic rather than the census's."
+      "value": 31.5,
+      "unit": "years",
+      "year": 2017,
+      "source": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)"
     },
     "sex_ratio": {
       "value": 539,
@@ -13135,6 +13173,12 @@
         "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Table 2.1: population distribution by gewog and town",
         "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Wangdue-Phodrang.pdf",
         "license": "National Statistics Bureau of Bhutan. Official publication."
+      },
+      {
+        "field": "median_age",
+        "name": "National Statistics Bureau of Bhutan, Population & Housing Census of Bhutan 2017, Tables A2.6 (population by age, sex and area) and A2.7 (population by age, sex, chiwog and gewog/town)",
+        "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Wangdue-Phodrang.pdf",
+        "license": "National Statistics Bureau of Bhutan. Official publication."
       }
     ],
     "country": "BTN",
@@ -13144,7 +13188,8 @@
     "parent_name": "Wangdue Phodrang",
     "parent_aliases": [],
     "population_note": "2017 Population and Housing Census, from the dzongkhag's own report, counting everyone found there 'irrespective of their nationality' as the report puts it. Bhutan's census does not ask religion, language or ethnicity, so those three are declared rather than left empty. Note that the dzongkhag reports and the national report do not agree everywhere: the twenty come to 720,837 against the 727,145 the national report analyses, itself 8,408 short of the 735,553 found in the country once non-Bhutanese in hotels are counted. The figure here is the dzongkhag's own, which its gewogs add up to exactly. This is the gewog's own count. Towns and thromdes are enumerated beside the gewogs rather than inside them and the boundary file draws none of them, so a dzongkhag's gewogs come to less than the dzongkhag itself by its urban population -- 37.8% of Bhutan nationally, and named on the dzongkhag's record.",
-    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are."
+    "sex_ratio_note": "Females per 1,000 males, derived from the Male and Female columns of the same Table 2.1 row as the population beside it. The census counts sex and nothing else about identity, so this is the whole of what it says about who these people are.",
+    "median_age_note": "2017 census, Table A2.7: the median of the gewog's 959 people, interpolated within the five-year group that holds the middle person; the census publishes nothing finer for a gewog. As with the head count, the gewog's own people, towns apart."
   },
   {
     "id": "BTN-wangdue-phodrang-kazhi",

@@ -1,194 +1,166 @@
-kazakhstan_census: 2021 census ages (workbook) and sexes (volume 1, table 2.2)
-  table 2.2: 240 rows read whole
-  admin1: 16 records
-  admin2: 174 records
-    admin1 Akmola Region: median 34.8, ratio 95.3
-    admin1 Aktobe Region: median 30.0, ratio 96.1
-    admin1 Almaty: median 30.9, ratio 85.3
-    admin1 Almaty Region: median 30.4, ratio 99.0
-    admin1 Astana: median 29.7, ratio 88.7
-    admin1 Atyrau Region: median 27.4, ratio 97.3
-    admin1 East Kazakhstan Region: median 36.8, ratio 93.5
-    admin1 Jambyl Region: median 28.0, ratio 98.1
-    admin1 Karaganda Region: median 34.3, ratio 92.2
-    admin1 Kostanay Region: median 36.7, ratio 93.3
-    admin1 Kyzylorda Region: median 26.8, ratio 100.6
-    admin1 Mangystau Region: median 25.1, ratio 98.8
-    admin1 North Kazakhstan Region: median 38.4, ratio 93.2
-    admin1 Pavlodar Region: median 36.1, ratio 92.1
-    admin1 South Kazakhstan Region: median 24.3, ratio 97.6
-    admin1 West Kazakhstan Region: median 33.0, ratio 96.2
-    admin2 Tselinogradskiy: median 32.1, ratio 93.5
-    admin2 Atbasarskiy: median 35.9, ratio 100.6
-    admin2 Shortandinskiy: median 35.2, ratio 99.9
-    admin2 Korgalzhynskiy: median 31.7, ratio 107.4
-    admin2 Ereymengauskiy: median 34.7, ratio 101.3
-    admin2 Astrakhansiy: median 37.2, ratio 98.1
-    admin2 Esil`skiy: median 37.2, ratio 95.6
-    admin2 Egindykol`skiy: median 34.8, ratio 103.6
-    admin2 Sandyktauskiy: median 38.4, ratio 96.4
-    admin2 Shuchinskiy: median 36.7, ratio 93.1
-    admin2 Enbekshil`derskiy: median 36.1, ratio 100.0
-    admin2 Zerendinskiy: median 34.0, ratio 91.9
-    admin2 Zhaksynskiy: median 34.0, ratio 101.4
-    admin2 Zharkainskiy: median 36.4, ratio 100.2
-    admin2 Bulandynskiy: median 35.8, ratio 96.2
-    admin2 Arshalynskiy: median 36.3, ratio 103.8
-    admin2 Akkol`skiy: median 36.7, ratio 95.1
-    admin2 Bayganinskiy: median 27.4, ratio 106.5
-    admin2 Shalkarskiy: median 28.6, ratio 103.1
-    admin2 Uilskiy: median 26.3, ratio 107.8
-    admin2 Irgizskiy: median 25.6, ratio 106.3
-    admin2 Aqtobe: median 30.3, ratio 92.3
-    admin2 Temirskiy: median 27.5, ratio 104.0
-    admin2 Aytekebiyskiy: median 29.1, ratio 106.7
-    admin2 Martukskiy: median 32.5, ratio 99.7
-    admin2 Kargalinskiy: median 34.0, ratio 100.2
-    admin2 Alginskiy: median 30.1, ratio 99.1
-    admin2 Khromtauskiy: median 30.8, ratio 99.0
-    admin2 Mugalzharskiy: median 29.9, ratio 99.5
-    admin2 Khobdinskiy: median 32.4, ratio 105.0
-    admin2 Almaty (Alma-Ata): median 30.9, ratio 85.3
-    admin2 Panfilovskiy: median 28.5, ratio 102.3
-    admin2 Uygurskiy: median 30.5, ratio 104.6
-    admin2 Karatal`skiy: median 33.7, ratio 104.2
-    admin2 Aksuskiy: median 31.3, ratio 103.9
-    admin2 Sarkandskiy: median 32.9, ratio 101.4
-    admin2 Alakolskiy: median 31.3, ratio 102.9
-    admin2 Zhambylskiy: median 29.4, ratio 101.4
-    admin2 Koksuskiy: median 31.5, ratio 99.6
-    admin2 Iliyskiy: median 30.3, ratio 98.4
-    admin2 Enbekshikazakhskiy: median 30.3, ratio 100.1
-    admin2 Raiymbekskiy: median 29.3, ratio 108.8
-    admin2 Karasayskiy: median 28.7, ratio 98.0
-    admin2 Balkhashskiy: median 30.0, ratio 104.5
-    admin2 Taldyqorghan: median 32.2, ratio 91.0
-    admin2 Kerbulakskiy: median 30.5, ratio 105.8
-    admin2 Talgarskiy: median 31.2, ratio 97.1
-    admin2 Zhylyoyskiy: median 25.0, ratio 99.9
-    admin2 Kzylkoginskiy: median 26.2, ratio 105.4
-    admin2 Kurmangazinskiy: median 28.9, ratio 103.6
-    admin2 Makatskiy: median 25.6, ratio 98.9
-    admin2 Makhambetskiy: median 27.2, ratio 100.4
-    admin2 Atyrau: median 27.9, ratio 93.9
-    admin2 Isatayskiy: median 26.3, ratio 105.1
-    admin2 Inderskiy: median 28.5, ratio 103.7
-    admin2 Ayagozskiy: median 31.0, ratio 101.2
-    admin2 Beskaragayskiy: median 36.6, ratio 97.1
-    admin2 Semipalatinskiy: median 35.1, ratio 91.4
-    admin2 Shemonaikhinskiy: median 41.6, ratio 95.3
-    admin2 Zharminskiy: median 35.2, ratio 102.4
-    admin2 Zyryanovsk: median 41.8, ratio 88.4
-    admin2 Tarbagatayskiy: median 32.5, ratio 106.5
-    admin2 Katon-Karagayskiy: median 39.9, ratio 104.6
-    admin2 Kurchumskiy: median 37.8, ratio 104.0
-    admin2 Borodulikhinskiy: median 38.1, ratio 96.2
-    admin2 Abayskiy: median 33.2, ratio 100.6
-    admin2 Glubokovskiy: median 40.2, ratio 95.6
-    admin2 Leninogorsk: median 39.6, ratio 86.3
-    admin2 Kokpektinskiy: median 37.7, ratio 101.6
-    admin2 Zaysanskiy: median 33.5, ratio 101.4
-    admin2 Urdzharskiy: median 36.1, ratio 101.5
-    admin2 Ulanskiy: median 37.3, ratio 88.8
-    admin2 Zhualynskiy: median 26.4, ratio 105.3
-    admin2 Merkenskiy: median 28.7, ratio 100.5
-    admin2 Talasskiy: median 28.8, ratio 101.8
-    admin2 Lugovskoy: median 26.9, ratio 102.8
-    admin2 Zhamb.: median 29.4, ratio 92.2
-    admin2 Shuskiy: median 29.0, ratio 98.9
-    admin2 Bayzakskiy: median 26.5, ratio 102.7
-    admin2 Zhambylskiy: median 27.4, ratio 103.7
-    admin2 Moyynkumskiy: median 29.2, ratio 104.8
-    admin2 Sarysuskiy: median 27.6, ratio 101.4
-    admin2 Kordayskiy: median 24.7, ratio 98.9
-    admin2 Karkaralinskiy: median 32.9, ratio 105.4
-    admin2 Aktogayskiy: median 33.2, ratio 95.1
-    admin2 Abayskiy: median 36.5, ratio 96.4
-    admin2 Nurinskiy: median 34.7, ratio 106.1
-    admin2 Bukhar-Zhyrauskiy: median 34.9, ratio 88.6
-    admin2 Ulytauskiy: median 32.0, ratio 93.6
-    admin2 Zhanaarkinskiy: median 29.7, ratio 102.5
-    admin2 Osakarovskiy: median 35.1, ratio 98.5
-    admin2 Shetskiy: median 31.7, ratio 104.4
-    admin2 Kamystinskiy: median 36.6, ratio 107.2
-    admin2 Denisovskiy: median 37.8, ratio 99.6
-    admin2 Qostanay: median 36.4, ratio 88.9
-    admin2 Karasuskiy: median 36.3, ratio 100.4
-    admin2 Arkalyk: median 31.1, ratio 97.7
-    admin2 Karabalykskiy: median 39.1, ratio 97.7
-    admin2 Zhitikarinskiy: median 41.1, ratio 93.5
-    admin2 Naurzumskiy: median 31.9, ratio 113.4
-    admin2 Sarykol`skiy: median 38.3, ratio 102.6
-    admin2 Mendykarinskiy: median 39.8, ratio 99.1
-    admin2 Dzhangil`dinskiy: median 27.0, ratio 105.7
-    admin2 Fyodorovskiy: median 39.0, ratio 98.8
-    admin2 Amangel`dinskiy: median 27.8, ratio 110.8
-    admin2 Altynsarinskiy: median 37.1, ratio 106.7
-    admin2 Auliekol`skiy: median 37.5, ratio 97.5
-    admin2 Taranovskiy: median 39.0, ratio 92.4
-    admin2 Uzunkol`skiy: median 38.5, ratio 103.2
-    admin2 Kazalinskiy: median 26.6, ratio 103.6
-    admin2 Aral`skiy: median 25.8, ratio 104.2
-    admin2 Karmakchinskiy: median 28.9, ratio 100.4
-    admin2 Zhalagashskiy: median 27.4, ratio 106.8
-    admin2 Shieliyskiy: median 26.3, ratio 104.3
-    admin2 Qyzylorda: median 27.1, ratio 96.0
-    admin2 Terenozekskiy: median 27.2, ratio 106.5
-    admin2 Zhanakorganskiy: median 23.6, ratio 105.5
-    admin2 Beyneuskiy: median 22.5, ratio 102.4
-    admin2 Manghystauskiy: median 21.5, ratio 102.8
-    admin2 Karakiyanskiy: median 22.5, ratio 100.2
-    admin2 Aqtau: median 27.1, ratio 97.0
-    admin2 Tupkaraganskiy: median 23.7, ratio 101.7
-    admin2 Bulaevskiy: median 40.7, ratio 97.5
-    admin2 Mamlyutskiy: median 40.3, ratio 99.3
-    admin2 Kyzylzharskiy: median 37.9, ratio 87.5
-    admin2 Tselinniy: median 37.6, ratio 98.1
-    admin2 Ayyrtauskiy: median 40.1, ratio 98.8
-    admin2 Akzharskiy: median 36.1, ratio 104.6
-    admin2 Timiryazevskiy: median 38.0, ratio 102.9
-    admin2 Zhambylskiy: median 40.2, ratio 100.0
-    admin2 Ualikhanovskiy: median 33.9, ratio 102.5
-    admin2 Esil`skiy: median 40.8, ratio 100.6
-    admin2 Shal Akyna: median 40.4, ratio 98.9
-    admin2 Taiynshinskiy: median 38.4, ratio 97.8
-    admin2 Sovetskiy: median 40.4, ratio 99.0
-    admin2 Lebyazhinskiy: median 34.1, ratio 105.3
-    admin2 Sherbaktinskiy: median 36.4, ratio 101.4
-    admin2 Uspenskiy: median 36.1, ratio 99.6
-    admin2 Ekibastuz: median 35.3, ratio 92.8
-    admin2 Aktogayskiy: median 33.6, ratio 105.1
-    admin2 Pavlodarskiy: median 36.6, ratio 88.0
-    admin2 Aksuskiy: median 36.0, ratio 93.2
-    admin2 Irtyshskiy: median 36.7, ratio 101.2
-    admin2 Bayanaul`skiy: median 33.1, ratio 103.6
-    admin2 Mayskiy: median 34.6, ratio 107.5
-    admin2 Kachirskiy: median 36.0, ratio 100.2
-    admin2 Zhelezinskiy: median 37.9, ratio 102.4
-    admin2 Otrarskiy: median 24.3, ratio 106.0
-    admin2 Ordabasynskiy: median 23.4, ratio 105.4
-    admin2 Tyul`kubaskiy: median 26.2, ratio 102.4
-    admin2 Baydibekskiy: median 25.1, ratio 106.7
-    admin2 Maktaaral`skiy: median 22.9, ratio 103.0
-    admin2 Tolebiyskiy: median 25.6, ratio 102.1
-    admin2 Chardarinskiy: median 22.3, ratio 107.3
-    admin2 Shymkent: median 25.7, ratio 89.0
-    admin2 Turkestan: median 23.4, ratio 99.6
-    admin2 Sayramskiy: median 23.2, ratio 101.2
-    admin2 Suzakskiy: median 23.9, ratio 104.6
-    admin2 Saryagashskiy: median 22.1, ratio 102.8
-    admin2 Kazygurtskiy: median 22.8, ratio 104.9
-    admin2 Arysskiy: median 23.8, ratio 104.1
-    admin2 Urdinskiy: median 30.9, ratio 106.1
-    admin2 Karatobinskiy: median 29.7, ratio 107.3
-    admin2 Taskalinskiy: median 34.6, ratio 99.7
-    admin2 Akzhaikskiy: median 31.5, ratio 103.5
-    admin2 Dzhanybekskiy: median 32.4, ratio 99.9
-    admin2 Dzhangalinskiy: median 28.6, ratio 104.3
-    admin2 Burlinskiy: median 33.7, ratio 95.7
-    admin2 Syrymskiy: median 32.0, ratio 107.1
-    admin2 Kaztalovskiy: median 30.1, ratio 105.6
-    admin2 Chingirlauskiy: median 33.5, ratio 101.0
-    admin2 Terektinskiy: median 33.8, ratio 100.5
-    admin2 Zelenovskiy: median 33.3, ratio 92.7
-  wrote data/processed/kazakhstan_census.json (608 kB)
+bhutan: National Statistics Bureau, PHCB 2017 Table 2.1
+  the twenty reports' Table A2.6 totals come to 727,145, against the national report's 727,145
+  Bumthang: 4 gewogs, 2 town(s), 17,820 people
+    Tables A2.6 and A2.7: the dzongkhag's median read; 4 of 4 gewogs' medians read
+  Chhukha: 11 gewogs, 5 town(s), 68,966 people
+    Tables A2.6 and A2.7 (11 page(s) of A2.7 on their side): the dzongkhag's median read; 11 of 11 gewogs' medians read
+      Table A2.7 on its side: an All Chiwogs column under 'PHUENTSHOLING'
+    Chhukha/Maedtabkha -> labelled 'Metap'
+  Dagana: 14 gewogs, 5 town(s), 24,965 people
+    Tables A2.6 and A2.7 (10 page(s) of A2.7 on their side): the dzongkhag's median read; 13 of 14 gewogs' medians read
+      Table A2.7 on its side: an All Chiwogs column under 'LHAMIO DZINGKHA'
+    Dagana/Karmaling -> labelled 'Deorali'
+    Dagana/Karna -> labelled 'Kalidzingkha'
+    Dagana/Khebisa -> labelled 'Khipisa'
+  Gasa: 4 gewogs, 2 town(s), 3,952 people
+    Tables A2.6 and A2.7 (3 page(s) of A2.7 on their side): the dzongkhag's median read; 4 of 4 gewogs' medians read; ages placed under their columns: [51]
+  Haa: 6 gewogs, 2 town(s), 13,655 people
+    Tables A2.6 and A2.7 (5 page(s) of A2.7 on their side): the dzongkhag's median read; 6 of 6 gewogs' medians read
+      Table A2.7 on its side: age groups [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+    Haa/Gakiling -> shape 84629894B40252407393905 (labelled 'Gakiling')
+    Haa/Sangbay -> labelled 'Sombey'
+  Lhuentse: 8 gewogs, 2 town(s), 14,240 people
+    Tables A2.6 and A2.7 (6 page(s) of A2.7 on their side): the dzongkhag's median read; 8 of 8 gewogs' medians read
+      Table A2.7 on its side: age groups [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+  Monggar: 17 gewogs, 6 town(s), 37,150 people
+    Tables A2.6 and A2.7 (13 page(s) of A2.7 on their side): the dzongkhag's median read; 1 of 17 gewogs' medians read
+      Table A2.7 on its side: more than one All Chiwogs block under Dramedtse; Table 2.1 decides which
+      Table A2.7 on its side: age groups [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+  Paro: 10 gewogs, 2 town(s), 43,362 people
+    Tables A2.6 and A2.7 (8 page(s) of A2.7 on their side): the dzongkhag's median read; 0 of 10 gewogs' medians read
+      Table A2.7 on its side: age groups [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+    Paro/Dokar -> labelled 'Doga'
+    Paro/Nagya -> labelled 'Naja'  (by the two lists closing, not by a point)
+  Pema Gatshel: 11 gewogs, 8 town(s), 23,632 people
+    Tables A2.6 and A2.7 (10 page(s) of A2.7 on their side): the dzongkhag's median read; 11 of 11 gewogs' medians read
+      Table A2.7 on its side: age groups [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+    Pema Gatshel/Dungmaed -> labelled 'Dungmin'
+    Pema Gatshel/Norboogang -> shape 84629894B84199937092772 (labelled 'Norbugang')
+  Punakha: 11 gewogs, 2 town(s), 27,360 people
+    Tables A2.6 and A2.7 (8 page(s) of A2.7 on their side): the dzongkhag's median read; 0 of 11 gewogs' medians read
+      Table A2.7 on its side: age groups [0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+    Punakha/Barp -> labelled 'Bapisa'
+  Samdrup Jongkhar: 11 gewogs, 3 town(s), 35,079 people
+    Tables A2.6 and A2.7 (8 page(s) of A2.7 on their side): the dzongkhag's median read; 10 of 11 gewogs' medians read
+      Table A2.7 on its side: age groups [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+    Samdrup Jongkhar/Orong -> labelled 'Jangchhubling'
+  Samtse: 15 gewogs, 3 town(s), 62,590 people
+    Tables A2.6 and A2.7 (11 page(s) of A2.7 on their side): the dzongkhag's median read; 15 of 15 gewogs' medians read
+      Table A2.7 on its side: an All Chiwogs column under 'SANGNGAG CHHOELING'
+      Table A2.7 on its side: age groups [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+    Samtse/Doomtoed -> labelled 'Dungtoe'  (by the two lists closing, not by a point)
+    Samtse/Dophuchen -> labelled 'Dorokha'
+    Samtse/Norboogang -> shape 84629894B7629980605125 (labelled 'Chengmari')
+    Samtse/Norgaygang -> labelled 'Bara'
+    Samtse/Pemaling -> labelled 'Biru'
+    Samtse/Phuentshogpelri -> labelled 'Pagli'
+    Samtse/Sang-Ngag- -> labelled 'Chargharay'
+    Samtse/Tashichhoeling -> labelled 'Sipsu'
+  Sarpang: 12 gewogs, 2 town(s), 46,004 people
+    Tables A2.6 and A2.7 (9 page(s) of A2.7 on their side): the dzongkhag's median read; 12 of 12 gewogs' medians read; ages placed under their columns: [92]
+      Table A2.7 on its side: age group 15 printed twice
+    Sarpang/Chhudzom -> labelled 'Doban'
+    Sarpang/Gakiling -> shape 84629894B8166759987677 (labelled 'Hiley')
+    Sarpang/Samtenling -> labelled 'Bhur'
+    Sarpang/Tareythang -> labelled 'Taklai'
+  Thimphu: 8 gewogs, 2 town(s), 138,736 people
+    Tables A2.6 and A2.7 (5 page(s) of A2.7 on their side): the dzongkhag's median read; 4 of 8 gewogs' medians read
+    Thimphu/Darkarla -> labelled 'Dagala'  (by the two lists closing, not by a point)
+  Trashi Yangtse: 8 gewogs, 2 town(s), 17,300 people
+    Tables A2.6 and A2.7 (6 page(s) of A2.7 on their side): the dzongkhag's median read; 7 of 8 gewogs' medians read
+    Trashi Yangtse/Tongmajangsa -> labelled 'Tomzhangtshen'  (by the two lists closing, not by a point)
+    Trashi Yangtse/Yangtse -> labelled 'Trashiyangtse'  (by the two lists closing, not by a point)
+  Trashigang: 15 gewogs, 6 town(s), 43,741 people
+    Tables A2.6 and A2.7 (13 page(s) of A2.7 on their side): the dzongkhag's median read; 1 of 15 gewogs' medians read
+      Table A2.7 on its side: age groups [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] on a page of the table
+  Trongsa: 5 gewogs, 2 town(s), 19,960 people
+    Tables A2.6 and A2.7: the dzongkhag's median read; 2 of 5 gewogs' medians read; ages placed under their columns: [92]
+  Tsirang: 12 gewogs, 2 town(s), 22,376 people
+    Tables A2.6 and A2.7: the dzongkhag's median read; 1 of 12 gewogs' medians read
+    Tsirang/Patshaling -> labelled 'Beteni'
+    Tsirang/Sergithang -> labelled 'Patakla'
+  Wangdue Phodrang: 15 gewogs, 3 town(s), 42,186 people
+    Tables A2.6 and A2.7 (11 page(s) of A2.7 on their side): the dzongkhag's median read; 14 of 15 gewogs' medians read
+      Table A2.7 on its side: an All Chiwogs column under 'no heading'
+      Table A2.7 on its side: an All Chiwogs column under 'no heading'
+    Wangdue Phodrang/Darkar -> labelled 'Daga'  (by the two lists closing, not by a point)
+  Zhemgang: 8 gewogs, 3 town(s), 17,763 people
+    Tables A2.6 and A2.7: the dzongkhag's median read; 8 of 8 gewogs' medians read
+  MEDIAN DECLINED -- Dagana/Drukjeygang: Table A2.7's persons age groups for the gewog add up to 1,830, against the 1,942 it prints as their total
+  MEDIAN DECLINED -- Monggar/Chagsakhar: Table A2.7's persons age groups for the gewog add up to 2,317, against the 2,494 it prints as their total
+  MEDIAN DECLINED -- Monggar/Chhaling: Table A2.7's persons age groups for the gewog add up to 1,261, against the 1,441 it prints as their total
+  MEDIAN DECLINED -- Monggar/Dramedtse: Table A2.7's persons age groups for the gewog add up to 1,679, against the 1,848 it prints as their total
+  MEDIAN DECLINED -- Monggar/Drepoong: Table A2.7's persons age groups for the gewog add up to 862, against the 904 it prints as their total
+  MEDIAN DECLINED -- Monggar/Gongdue: Table A2.7's persons age groups for the gewog add up to 1,147, against the 1,234 it prints as their total
+  MEDIAN DECLINED -- Monggar/Jurmed: Table A2.7's persons age groups for the gewog add up to 1,186, against the 1,247 it prints as their total
+  MEDIAN DECLINED -- Monggar/Kengkhar: Table A2.7's persons age groups for the gewog add up to 1,540, against the 1,844 it prints as their total
+  MEDIAN DECLINED -- Monggar/Monggar: Table A2.7's persons age groups for the gewog add up to 3,384, against the 3,484 it prints as their total
+  MEDIAN DECLINED -- Monggar/Na-Rang: this reader found no All Chiwogs block under the gewog's name in the report's Table A2.7
+  MEDIAN DECLINED -- Monggar/Ngatshang: Table A2.7's persons age groups for the gewog add up to 1,511, against the 1,645 it prints as their total
+  MEDIAN DECLINED -- Monggar/Saling: Table A2.7's persons age groups for the gewog add up to 1,864, against the 1,929 it prints as their total
+  MEDIAN DECLINED -- Monggar/Shermuhoong: Table A2.7's persons age groups for the gewog add up to 1,310, against the 1,627 it prints as their total
+  MEDIAN DECLINED -- Monggar/Silambi: Table A2.7's persons age groups for the gewog add up to 1,299, against the 1,357 it prints as their total
+  MEDIAN DECLINED -- Monggar/Thang-Rong: Table A2.7's persons age groups for the gewog add up to 1,404, against the 1,606 it prints as their total
+  MEDIAN DECLINED -- Monggar/Tsakaling: Table A2.7's persons age groups for the gewog add up to 1,025, against the 1,086 it prints as their total
+  MEDIAN DECLINED -- Monggar/Tsamang: Table A2.7's persons age groups for the gewog add up to 897, against the 932 it prints as their total
+  MEDIAN DECLINED -- Paro/Dokar: Table A2.7 counts 2,327 people in the gewog and Table 2.1 2,272
+  MEDIAN DECLINED -- Paro/Dopshar-ri: Table A2.7's persons age groups for the gewog add up to 3,261, against the 3,333 it prints as their total
+  MEDIAN DECLINED -- Paro/Doteng: Table A2.7's persons age groups for the gewog add up to 1,247, against the 1,303 it prints as their total
+  MEDIAN DECLINED -- Paro/Hoongrel: Table A2.7's persons age groups for the gewog add up to 315, against the 336 it prints as their total
+  MEDIAN DECLINED -- Paro/Lamgong: Table A2.7's persons age groups for the gewog add up to 5,705, against the 5,846 it prints as their total
+  MEDIAN DECLINED -- Paro/Loong-nyi: Table A2.7's persons age groups for the gewog add up to 4,482, against the 4,727 it prints as their total
+  MEDIAN DECLINED -- Paro/Nagya: Table A2.7's persons age groups for the gewog add up to 3,187, against the 3,287 it prints as their total
+  MEDIAN DECLINED -- Paro/Sharpa: Table A2.7's persons age groups for the gewog add up to 5,695, against the 5,941 it prints as their total
+  MEDIAN DECLINED -- Paro/Tsento: Table A2.7's persons age groups for the gewog add up to 5,905, against the 5,946 it prints as their total
+  MEDIAN DECLINED -- Paro/Wangchang: Table A2.7's persons age groups for the gewog add up to 1,327, against the 1,357 it prints as their total
+  MEDIAN DECLINED -- Punakha/Barp: Table A2.7's persons age groups for the gewog add up to 4,212, against the 4,942 it prints as their total
+  MEDIAN DECLINED -- Punakha/Chhubu: Table A2.7's persons age groups for the gewog add up to 1,635, against the 1,651 it prints as their total
+  MEDIAN DECLINED -- Punakha/Dzomi: Table A2.7's persons age groups for the gewog add up to 2,105, against the 2,147 it prints as their total
+  MEDIAN DECLINED -- Punakha/Goenshari: Table A2.7's persons age groups for the gewog add up to 685, against the 694 it prints as their total
+  MEDIAN DECLINED -- Punakha/Guma: Table A2.7's persons age groups for the gewog add up to 2,707, against the 2,752 it prints as their total
+  MEDIAN DECLINED -- Punakha/Kabisa: Table A2.7's persons age groups for the gewog add up to 2,415, against the 2,542 it prints as their total
+  MEDIAN DECLINED -- Punakha/Lingmukha: Table A2.7's persons age groups for the gewog add up to 1,002, against the 1,018 it prints as their total
+  MEDIAN DECLINED -- Punakha/Shelnga-Bjemi: Table A2.7's persons age groups for the gewog add up to 977, against the 1,003 it prints as their total
+  MEDIAN DECLINED -- Punakha/Talog: Table A2.7's persons age groups for the gewog add up to 1,182, against the 1,205 it prints as their total
+  MEDIAN DECLINED -- Punakha/Toedpaisa: Table A2.7's persons age groups for the gewog add up to 2,393, against the 2,427 it prints as their total
+  MEDIAN DECLINED -- Punakha/Toedwang: Table A2.7's persons age groups for the gewog add up to 1,274, against the 1,313 it prints as their total
+  MEDIAN DECLINED -- Samdrup Jongkhar/Dewathang: Table A2.7's persons age groups for the gewog add up to 3,105, against the 2,914 it prints as their total
+  MEDIAN DECLINED -- Thimphu/Chang: Table A2.7's persons age groups for the gewog add up to 4,858, against the 6,752 it prints as their total
+  MEDIAN DECLINED -- Thimphu/Darkarla: Table A2.7's persons age groups for the gewog add up to 1,546, against the 2,094 it prints as their total
+  MEDIAN DECLINED -- Thimphu/Ge-nyen: Table A2.7's persons age groups for the gewog add up to 691, against the 1,141 it prints as their total
+  MEDIAN DECLINED -- Thimphu/Maedwang: this reader found no All Chiwogs block under the gewog's name in the report's Table A2.7
+  MEDIAN DECLINED -- Trashi Yangtse/Yalang: this reader found no All Chiwogs block under the gewog's name in the report's Table A2.7
+  MEDIAN DECLINED -- Trashigang/Bartsham: Table A2.7 counts 1,788 people in the gewog and Table 2.1 1,742
+  MEDIAN DECLINED -- Trashigang/Bidoong: Table A2.7's persons age groups for the gewog add up to 1,289, against the 1,421 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Kanglung: Table A2.7's persons age groups for the gewog add up to 3,975, against the 4,093 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Kangpar: Table A2.7's persons age groups for the gewog add up to 1,582, against the 1,591 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Khaling: Table A2.7's persons age groups for the gewog add up to 2,418, against the 2,456 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Lumang: Table A2.7's persons age groups for the gewog add up to 3,530, against the 3,598 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Merag: Table A2.7's persons age groups for the gewog add up to 1,558, against the 1,562 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Phongmed: Table A2.7's persons age groups for the gewog add up to 2,597, against the 2,617 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Sagteng: Table A2.7's persons age groups for the gewog add up to 1,978, against the 2,061 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Samkhar: Table A2.7's persons age groups for the gewog add up to 2,107, against the 2,109 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Shongphu: Table A2.7's persons age groups for the gewog add up to 1,896, against the 1,925 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Thrimshing: Table A2.7's persons age groups for the gewog add up to 2,525, against the 2,548 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Udzorong: Table A2.7's persons age groups for the gewog add up to 2,754, against the 2,760 it prints as their total
+  MEDIAN DECLINED -- Trashigang/Yangnyer: Table A2.7's persons age groups for the gewog add up to 2,334, against the 2,535 it prints as their total
+  MEDIAN DECLINED -- Trongsa/Langthil: Table A2.7's persons age groups for the gewog add up to 3,646, against the 3,750 it prints as their total
+  MEDIAN DECLINED -- Trongsa/Nubi: Table A2.7's persons age groups for the gewog add up to 3,098, against the 3,171 it prints as their total
+  MEDIAN DECLINED -- Trongsa/Tangsibji: Table A2.7's persons age groups for the gewog add up to 2,351, against the 2,544 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Doonglagang: Table A2.7's persons age groups for the gewog add up to 1,521, against the 1,546 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Gosarling: Table A2.7's persons age groups for the gewog add up to 1,804, against the 1,864 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Kilkhorthang: Table A2.7's persons age groups for the gewog add up to 2,079, against the 2,145 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Mendrelgang: Table A2.7's persons age groups for the gewog add up to 2,454, against the 2,507 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Patshaling: Table A2.7's persons age groups for the gewog add up to 1,147, against the 1,159 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Pungtenchhu: Table A2.7's persons age groups for the gewog add up to 1,319, against the 1,331 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Rangthangling: Table A2.7's persons age groups for the gewog add up to 1,520, against the 1,585 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Semjong: Table A2.7's persons age groups for the gewog add up to 1,298, against the 1,312 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Sergithang: Table A2.7's persons age groups for the gewog add up to 1,355, against the 1,379 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Tsholingkhar: Table A2.7's persons age groups for the gewog add up to 1,718, against the 1,745 it prints as their total
+  MEDIAN DECLINED -- Tsirang/Tsirang Toed: Table A2.7's persons age groups for the gewog add up to 1,407, against the 1,451 it prints as their total
+  MEDIAN DECLINED -- Wangdue Phodrang/Athang: Table A2.7's male age groups for the gewog add up to 396, against the 409 it prints as their total
+  medians read: 20 of 20 dzongkhags and 132 of 205 gewogs; each one declined says why in its record
+  the twenty dzongkhags come to 720,837, against the 727,145 the national report analyses and the 735,553 it says were found -- -6,308 on the first. The two publications disagree for some dzongkhags; each report here reconciles to its own printed total.
+  their sexes come to 375,046 male and 345,791 female, against the 380,453 and 346,692 the national report prints for the country -- -5,407 and -901.
+  wrote data/processed/bhutan_gewog.json (845 kB)
+  20 dzongkhags and 205 gewogs, 273,174 people in towns with no shape
