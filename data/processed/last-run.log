@@ -1,9 +1,37 @@
-probe_ckan: 1 host(s), timeout 20s
-  https://data.opendevelopmentmekong.net/ -> 200 text/html "Dataset OD Mekong Datahub"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.9
-    package_search q='myanmar census 2014 union report' -> 200, 376 matches, 40 shown, printing those matching '(?i)(union|questionnaire|census.report|volume)'
-      - the-2014-myanmar-population-and-housing-census-census-report-volume-2-b-the-union-report-occupation: The 2014 Myanmar Population and Housing Census Census Report Volume 2-B The Union Report: Occupation and Indus  [2 res: pdf]
-          PDF datastore=False e163b99a-f7df-4225-8d63-53f62254cfc6 https://data.opendevelopmentmekong.net/dataset/2937ed98-7852-4244-bb7d-de28de67fca7/resource/e163b99a-f7df-4225-8d63-53f62254cfc6/download/2boccupationandindustryen.pdf
-          PDF datastore=False ff8c2093-142f-440d-a683-873962c16662 https://data.opendevelopmentmekong.net/dataset/2937ed98-7852-4244-bb7d-de28de67fca7/resource/ff8c2093-142f-440d-a683-873962c16662/download/2boccupationandindustrymm.pdf
-      (39 others not matching)
-probe_ckan: 1 of 1 answered; 1 speak CKAN: data.opendevelopmentmekong.net
+pakistan_census_tables: Census 2023 Tables 4 and 10
+  Punjab
+    Table 10: 3,494,163 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_punjab_districts.pdf
+    Table 4: 4,168,650 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_punjab_districts.pdf
+    36 districts; single years, five-year groups and nationalities all reconcile
+  Punjab: 34 bound by shape id; 0 row(s) and 0 unit(s) left over
+  Khyber Pakhtunkhwa
+    Table 10: 3,369,335 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_kp_districts.pdf
+    Table 4: 19,810,553 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_kp_districts.pdf
+    35 districts; single years, five-year groups and nationalities all reconcile
+  Khyber Pakhtunkhwa: 31 bound by shape id; 0 row(s) and 0 unit(s) left over
+  Sindh
+    Table 10: 2,908,157 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf
+    Table 4: 18,673,574 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_sindh_districts.pdf
+    30 districts; single years, five-year groups and nationalities all reconcile
+  Sindh: 22 bound by shape id; 0 row(s) and 0 unit(s) left over
+  Balochistan
+    Table 10: 3,274,329 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_balochistan_districts.pdf
+    Table 4: 20,942,975 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_balochistan_districts.pdf
+    34 districts; single years, five-year groups and nationalities all reconcile
+  Balochistan: 27 bound by shape id; 0 row(s) and 0 unit(s) left over
+  Islamabad Capital Territory
+    Table 10: 114,082 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_islamabad.pdf
+    Table 4: 124,934 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_islamabad.pdf
+    1 districts; single years, five-year groups and nationalities all reconcile
+  Islamabad Capital Territory: 1 bound by shape id; 0 row(s) and 0 unit(s) left over
+  wrote data/processed/pakistan_age.json (235 kB)
+  wrote data/processed/pakistan_nationality.json (258 kB)
+  removed the trial file pakistan_age_sindh.json
+  removed the trial file pakistan_age_ict.json
+  removed the trial file pakistan_age_balochistan.json
+  removed the trial file pakistan_age_kp.json
+  removed the trial file pakistan_nationality_balochistan.json
+  removed the trial file pakistan_nationality_sindh.json
+  removed the trial file pakistan_nationality_kp.json
+  removed the trial file pakistan_nationality_ict.json
+  120 age records, 120 nationality records
