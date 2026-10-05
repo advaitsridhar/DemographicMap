@@ -1,74 +1,17 @@
-probe_pdf: https://nis.gov.kh/wp-content/uploads/2025/09/Final-General-Population-Census-2019-English.pdf
-  26,586,966 bytes
-  304 pages
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140126225221776), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140126225221776), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140126225221776), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140126225221776), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140126225221776), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140126225221776), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-probe_pdf: 348 pages, 4 mention ['median']
-=== front matter ===
-
-
-=== pages mentioning ['median'] (first 30) ===
-
---- page 20 ----------------------------------------------------
-Total 94.9
-Urban 95.3
-Rural 94.6
-19. Median age by urban, rural
-Total 27
-Urban 28
-Rural 26
-
---- page 58 ----------------------------------------------------
-When compared with the age distribution in 2008, it is clear th at Cambodia’s population is
-slowly ageing. In 2019, 29.4 perc ent of Cambodia’s population w as aged 15 years or younger; and
-8.9 percent was aged 60 years and over. The corresponding percen tages in 2008 were 33.7 percent
-and 6.3 percent respectively. As a consequence of these changes, the median age has increased from
-22 years in 2008 to 27 years in 2019 (table 3.3.2).
-When broken down by urban/rural area, the working age group is lar ger in urban areas than
-in rural areas, whereas the percentage of children and older people is lower than in rural areas. This
-pattern appears to be a combination of a differential decline in fertility rates in rural and urban areas
-as well as rural-urban population movement.
-Table 3.3.2. Distribution of population by broad age group, dependency ratio, median age and
-sex ratio, Cambodia, 2008-2019*
-Age Structure and Sex Ratio 2008 2019
-Total Urban Rural Total Urban Rural
-      ...
-15-59 60.0 69.1 57.8 61.7 66.2 58.9
-60 + 6.3 5.5 6.5 8.9 8.2 9.3
-Overall Age Dependency Ratio 15-59 66.8 44.8 73.1 62.0 51.2 69.9
-Median Age          22 24 21 27 28 26
-Sex Ratio 94.7 92.4 95.3 94.9 95.3 94.6
-*Note: These figures exclude migrants working abroad.
-3.3.1. Age Dependency Ratio
-
---- page 157 ----------------------------------------------------
-in 1998 to 33.7 percent in 2008 an d then 29.4 percent in 2019. T his is due to a decline in the
-number of births in the last decade. The age groups 55 and over have grown proportionately larger,
-reflecting a pattern of steady declines in adult mortality. The  median age of the Cambodian
-population was 27 years in 2019, which is about six years highe r than the same figure for 2008 (22
-years). By comparison, the median age increased by roughly four  years between 1998 and 2008
-(from 17 years to 22 years). The Cambodian population is shifting away from a young age structure
-towards a more intermediate age structure, where the population  is predominantly concentrated in
-the prime working age groups.
-
---- page 167 ----------------------------------------------------
-Population pyramids display graphically the population by group age and sex. The
-horizontal bar shows the number or ratio of men and women for e ach age group. The sum of all age
-groups and genders from the population pyramid is 100%.
-Median Age
-Before calculating the median a ge, we need to divide the popula tion into two equal size
-groups (50% vs. 50%), one of which is younger and other of which older than median.
-(N/2-C)
-Median =   L + --------------- x I
-  Fm
-x N   = Total of Population
-x L    = Lower limit Median class
-x Fm =Number of Median class (frequency of median class)
-x C = Consecutive frequencies of pre-median classes
-x I  = Interval class
-Sex Ratio
-Is the division of the number of men and the number of women mu ltiplied by 100. It
+marshall_census: 2021 Census basic tables and analytical report
+  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf: RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf; reading the Internet Archive's copy
+  Basic Tables: 25 atolls adding to 42,418; religion and ethnicity of the 41,575 in private households
+  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
+  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
+  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
+  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
+  https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf: RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf; reading the Internet Archive's copy
+  Analytical Report: medians for 23 atolls; languages for Kwajalein, Majuro
+  no polygon: Lib (156 people); Bikini and Rongelap counted nobody
+  admin1 ethnicity 22, admin1 language 2, admin1 median_age 22, admin1 population 22, admin1 religion 22, admin1 sex_ratio 22, admin2 ethnicity 22, admin2 language 2, admin2 median_age 22, admin2 population 22, admin2 religion 22, admin2 sex_ratio 22
+  wrote data/processed/marshall_census.json (180 kB)
+  wrote 44 records
