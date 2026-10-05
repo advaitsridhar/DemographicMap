@@ -416,21 +416,27 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
 
 
 def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, Any],
-                  parents: dict[str, str], a0101: dict, a0104: dict, a0105: dict
-                  ) -> dict[str, Any]:
+                  parents: dict[str, str], a0101: dict, a0104: dict, a0105: dict,
+                  urls: dict[str, str]) -> dict[str, Any]:
     province = PROVINCES[code]
     book = f"{province['bureau']}, {province['book']}"
     i = area["index"]
     counts, small, small_people = pooled(a0104[i]["groups"])
-    residual = a0104[i]["groups"].get(RESIDUAL, 0)
-    tail = (f", and the {small_people:,} people of the {small} nationalities too few to show "
-            "at one decimal" if small else "")
+    residual = int(a0104[i]["groups"].get(RESIDUAL, 0))
+    parts = []
+    if residual:
+        parts.append(f"the {residual:,} people whose nationality is not identified (未定族称) "
+                     "and naturalised citizens (入籍)")
+    if small:
+        parts.append(f"the {small_people:,} people of the {small} nationalities too few to "
+                     "show at one decimal")
+    other = (" 'Other ethnic groups' is " + " and ".join(parts) + ".") if parts else ""
     sources = [{"field": "population/sex_ratio", "name": f"{book}, {TABLES['A0101']}",
-                "url": province["urls"]["A0101"], "year": YEAR, "license": LICENCE},
+                "url": urls["A0101"], "year": YEAR, "license": LICENCE},
                {"field": "ethnicity", "name": f"{book}, {TABLES['A0104']}",
-                "url": province["urls"]["A0104"], "year": YEAR, "license": LICENCE},
+                "url": urls["A0104"], "year": YEAR, "license": LICENCE},
                {"field": "median_age", "name": f"{book}, {TABLES['A0105']}",
-                "url": province["urls"]["A0105"], "year": YEAR, "license": LICENCE}]
+                "url": urls["A0105"], "year": YEAR, "license": LICENCE}]
     return record(
         f"CHN-{shape}", unit["name"], level="admin2",
         parent=parents.get(unit.get("parent"), "CHN"), country="CHN",
@@ -447,9 +453,7 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
         ethnicity=hundred(counts), ethnicity_year=YEAR,
         ethnicity_note=(
             f"2020 census, Table 1-4 of {book}: the 56 nationalities (民族) of all "
-            f"{int(a0104[i]['total']):,} residents. 'Other ethnic groups' is the "
-            f"{int(residual):,} people whose nationality is not identified (未定族称) and "
-            f"naturalised citizens (入籍){tail}."),
+            f"{int(a0104[i]['total']):,} residents.{other}"),
         language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
         sources=sources)
 
@@ -457,9 +461,11 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
 def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[str]],
           code_shapes: dict[str, Any], seats: dict[str, list[str]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
-          national: float | None = None) -> list[dict[str, Any]]:
+          national: float | None = None, urls: dict[str, str] | None = None
+          ) -> list[dict[str, Any]]:
     areas, a0101, a0104, a0105 = read_province(code, tables, names)
     where = PROVINCES[code]["name"]
+    urls = urls or {t: f"{PROVINCES[code]['base']}{t}.xls" for t in TABLES}
     if national is not None and a0101[0]["total"] != national:
         raise SystemExit(f"china_county_census: {where}'s yearbook counts {a0101[0]['total']:,.0f}"
                          f" and the National Bureau's {national:,.0f}")
@@ -467,7 +473,7 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
     parents = {u["id"]: f"CHN-{u['name']}" for u in admin1}
     bound, why = bind(code, areas, a0101, code_shapes, seats, units)
     out = [county_record(code, area, bound[area["index"]], units[bound[area["index"]]], parents,
-                         a0101, a0104, a0105)
+                         a0101, a0104, a0105, urls)
            for area in areas if area["index"] in bound]
     kinds = Counter(a["kind"] for a in areas)
     log(f"  {where}: {kinds['prefecture']} prefectures, {kinds['county'] + kinds['direct']} "
@@ -502,9 +508,8 @@ def main() -> int:
         tables, urls = {}, {}
         for table in TABLES:
             tables[table], urls[table] = fetch_table(province["base"], table)
-        province["urls"] = urls
         records += build(code, tables, names, code_shapes, seats, admin1, admin2,
-                         nbs.get(province["name"]))
+                         nbs.get(province["name"]), urls)
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {len(records)} county records to {OUT}")
     return 0
