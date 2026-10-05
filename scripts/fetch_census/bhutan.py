@@ -1060,6 +1060,56 @@ def check_annex(dzongkhag: str, annex: dict[str, Any], read: "Read") -> None:
                              f"Table 2.1's {read.sexes[name]}")
 
 
+def annex_debug(pages, gewog_names, *, limit: int = 90) -> list[str]:
+    """What the annex reader sees, for working out a report's layout.
+
+    Every annex title line and the rows just after it; in Table A2.6 every
+    row that is not an age row of nine figures adding up; in Table A2.7
+    every row with no figure in it (the headings, marked where Table 2.1
+    knows the name) and every row opening "All" or "Total". Words carry
+    their left edge, so a figure printed apart from its row shows.
+    """
+    names = {fold(n) for n in gewog_names}
+    out: list[str] = []
+    mode: str | None = None
+    after_title = 0
+    for number, rows in enumerate(pages, 1):
+        for cells in rows:
+            if len(out) >= limit:
+                return out
+            words = [t for _a, _b, t in cells]
+            line = " ".join(words)
+            placed = " ".join(f"{t}@{a:.0f}" for a, _b, t in cells)
+            if re.search(r"Table A\s?\d", line):
+                mode = ("single" if AGE_SINGLE in line
+                        else "gewog" if AGE_GEWOG in line else None)
+                out.append(f"p{number} TITLE {line[:160]}")
+                after_title = 5 if mode else 0
+                continue
+            if mode is None:
+                continue
+            if after_title:
+                out.append(f"p{number}   + {placed[:260]}")
+                after_title -= 1
+                continue
+            if mode == "single":
+                found = figures_of(words[1:])
+                good = (words[:2] == ["All", "Ages"]
+                        or (re.fullmatch(r"\d{1,3}", words[0]) and found
+                            and len(found) == 9
+                            and all(found[s] + found[s + 1] == found[s + 2]
+                                    for s in (0, 3, 6))))
+                if not good:
+                    out.append(f"p{number}   A2.6? {placed[:260]}")
+                continue
+            if not DIGIT.search(line):
+                known = "  [Table 2.1 name]" if fold(line) in names else ""
+                out.append(f"p{number}   HEAD {line[:80]}{known}")
+            elif words[0] in ("All", "Total", "TOTAL", "ALL"):
+                out.append(f"p{number}   ROW {placed[:200]}")
+    return out
+
+
 def dzongkhag_median(annex: dict[str, Any]) -> dict[str, Any]:
     from .south_asia_common import median_single
 
@@ -1115,7 +1165,20 @@ def main() -> int:
                     help="print what the reader sees, for one dzongkhag")
     ap.add_argument("--only", default="",
                     help="one dzongkhag, for working out a layout")
+    ap.add_argument("--annex-debug", default="",
+                    help="comma-separated dzongkhags (dots for spaces): print "
+                         "what the annex age reader sees, and write nothing")
     args = ap.parse_args()
+
+    if args.annex_debug:
+        for dzongkhag in args.annex_debug.replace(".", " ").split(","):
+            blob = fetch(f"{BASE}/{DZONGKHAGS[dzongkhag]}")
+            read = table(blob, dzongkhag, False)
+            log(f"== {dzongkhag}: Table 2.1 has {len(read.gewogs)} gewogs, "
+                f"printed total {read.printed:,}")
+            for line in annex_debug(words_by_row(blob), read.gewogs):
+                log("  " + line)
+        return 0
 
     log("bhutan: National Statistics Bureau, PHCB 2017 Table 2.1")
     records: list[dict[str, Any]] = []
