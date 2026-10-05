@@ -368,9 +368,12 @@ def sources() -> list[dict[str, Any]]:
 
 def pooled(groups: dict[str, float]) -> tuple[dict[str, float], int, int]:
     """The nationalities as ``hundred`` shows them, every one too small to show
-    (under 0.05% of the province, which rounds to 0.0) added to 'Other ethnic
-    groups' rather than dropped, so the counts shown are all the people:
-    (counts, how many nationalities were pooled, how many people they are)."""
+    at one decimal added to 'Other ethnic groups' rather than dropped, so the
+    counts shown are all the people: (counts, how many nationalities were
+    pooled, how many people they are). Only a group under 0.1% can fail to
+    show -- one of 0.1% or more keeps at least that after rounding -- and
+    pooling one can move the rounding of another, so it repeats until every
+    group left shows."""
     counts = {g: v for g, v in groups.items() if v}
     moved, people = 0, 0.0
     while True:
@@ -394,8 +397,8 @@ def province_record(label: str, shape: str, name: str, a0101: dict[str, float],
     if shown < a0104["total"] * 0.9995:
         raise SystemExit(f"china_census: {label}'s nationalities shown count {shown:,} of "
                          f"{a0104['total']:,.0f}")
-    tail = (f", and the {small_people:,} people of the {small} nationalities that are each "
-            "under 0.05% of the province" if small else "")
+    tail = (f", and the {small_people:,} people of the {small} nationalities too few to show "
+            "at one decimal (each under 0.1% of the province)" if small else "")
     return record(
         f"CHN-{name}", name, level="admin1", parent="CHN", country="CHN",
         match_by="shape_id", shape_id=shape,

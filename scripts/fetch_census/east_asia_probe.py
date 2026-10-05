@@ -335,21 +335,18 @@ def cmd_kosis(args: argparse.Namespace) -> None:
     second = step(f"{KOSIS}right_layout.do", frame, first_url)
     if not second:
         return
-    # Whatever the right frame submits or frames next, with its own fields.
-    for form in re.finditer(r"(?is)<form\b([^>]*)>(.*?)</form>", second):
-        a = attrs(form.group(1))
-        action = a.get("action") or ""
-        if not action or "login" in action.lower() or "oneid" in action.lower():
-            continue
-        fields = form_fields(second, a.get("name") or a.get("id") or "")
-        fields.update({"orgId": org, "tblId": tbl, "language": lang})
-        step(urllib.parse.urljoin(f"{KOSIS}right_layout.do", action), fields,
-             f"{KOSIS}right_layout.do")
-    for src in re.findall(r"""(?is)<iframe\b[^>]*src\s*=\s*["']([^"']+)["']""", second):
-        if src.startswith(("javascript", "about")):
-            continue
-        step(urllib.parse.urljoin(f"{KOSIS}right_layout.do", html.unescape(src)), None,
-             f"{KOSIS}right_layout.do")
+    # The right frame's script points its ParamInfo form at statHtmlContent.do
+    # (paramInfoForm.action = "statHtmlContent.do") and submits it with the
+    # frame's own fields; then each .do the content page names, the same way.
+    content = dict(frame)
+    content.update({k: v for k, v in form_fields(second, "ParamInfo").items() if v})
+    content.update({"orgId": org, "tblId": tbl, "language": lang})
+    third = step(f"{KOSIS}statHtmlContent.do", content, f"{KOSIS}right_layout.do")
+    for name in args.links.split(",") if args.links else []:
+        step(f"{KOSIS}{name}", content, f"{KOSIS}statHtmlContent.do")
+    if third and args.bytes:
+        body = re.sub(r"(?is)<(script|style).*?</\1>", " ", third)
+        print("    text: " + plain(body)[:args.bytes])
 
 
 NLSC = "https://api.nlsc.gov.tw/other/TownVillagePointQuery1/{lon}/{lat}"
