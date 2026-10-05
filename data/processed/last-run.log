@@ -1,34 +1,194 @@
-iran_census: 2016 census tables from the Internet Archive's captures of amar.org.ir
-  province 00 Markazi: 12 shahrestans
-  province 01 Gilan: 16 shahrestans
-  province 02 Mazandaran: 22 shahrestans
-  province 03 East Azerbaijan: 20 shahrestans
-  province 04 West Azerbaijan: 17 shahrestans
-  province 05 Kermanshah: 14 shahrestans
-  province 06 Khuzestan: 27 shahrestans
-  province 07 Fars: 29 shahrestans
-  province 08 Kerman: 23 shahrestans
-  province 09 Razavi Khorasan: 28 shahrestans
-  province 10 Isfahan: 24 shahrestans
-  province 11 Sistan and Baluchestan: 19 shahrestans
-  province 12 Kurdistan: 10 shahrestans
-  province 13 Hamadan: 9 shahrestans
-  province 14 Chaharmahal and Bakhtiari: 9 shahrestans
-  province 15 Lorestan: 11 shahrestans
-  province 16 Ilam: 10 shahrestans
-  province 17 Kohgiluyeh and Boyer-Ahmad: 8 shahrestans
-  province 18 Bushehr: 10 shahrestans
-  province 19 Zanjan: 8 shahrestans
-  province 20 Semnan: 8 shahrestans
-  province 21 Yazd: 10 shahrestans
-  province 22 Hormozgan: 13 shahrestans
-  province 23 Tehran: 16 shahrestans
-  province 24 Ardabil: 10 shahrestans
-  province 25 Qom: 1 shahrestans
-  province 26 Qazvin: 6 shahrestans
-  province 27 Golestan: 14 shahrestans
-  province 28 North Khorasan: 8 shahrestans
-  province 29 South Khorasan: 11 shahrestans
-  province 30 Alborz: 6 shahrestans
-  unbound: Khuzestan هفتگل (0622) matches 0 of OCHA's shahrestans; OCHA's unmatched there: Haftgol=شهرستان هفتکل
-iran_census: 1 shahrestans not bound (listed above)
+kazakhstan_census: 2021 census ages (workbook) and sexes (volume 1, table 2.2)
+  table 2.2: 240 rows read whole
+  admin1: 16 records
+  admin2: 174 records
+    admin1 Akmola Region: median 34.8, ratio 95.3
+    admin1 Aktobe Region: median 30.0, ratio 96.1
+    admin1 Almaty: median 30.9, ratio 85.3
+    admin1 Almaty Region: median 30.4, ratio 99.0
+    admin1 Astana: median 29.7, ratio 88.7
+    admin1 Atyrau Region: median 27.4, ratio 97.3
+    admin1 East Kazakhstan Region: median 36.8, ratio 93.5
+    admin1 Jambyl Region: median 28.0, ratio 98.1
+    admin1 Karaganda Region: median 34.3, ratio 92.2
+    admin1 Kostanay Region: median 36.7, ratio 93.3
+    admin1 Kyzylorda Region: median 26.8, ratio 100.6
+    admin1 Mangystau Region: median 25.1, ratio 98.8
+    admin1 North Kazakhstan Region: median 38.4, ratio 93.2
+    admin1 Pavlodar Region: median 36.1, ratio 92.1
+    admin1 South Kazakhstan Region: median 24.3, ratio 97.6
+    admin1 West Kazakhstan Region: median 33.0, ratio 96.2
+    admin2 Tselinogradskiy: median 32.1, ratio 93.5
+    admin2 Atbasarskiy: median 35.9, ratio 100.6
+    admin2 Shortandinskiy: median 35.2, ratio 99.9
+    admin2 Korgalzhynskiy: median 31.7, ratio 107.4
+    admin2 Ereymengauskiy: median 34.7, ratio 101.3
+    admin2 Astrakhansiy: median 37.2, ratio 98.1
+    admin2 Esil`skiy: median 37.2, ratio 95.6
+    admin2 Egindykol`skiy: median 34.8, ratio 103.6
+    admin2 Sandyktauskiy: median 38.4, ratio 96.4
+    admin2 Shuchinskiy: median 36.7, ratio 93.1
+    admin2 Enbekshil`derskiy: median 36.1, ratio 100.0
+    admin2 Zerendinskiy: median 34.0, ratio 91.9
+    admin2 Zhaksynskiy: median 34.0, ratio 101.4
+    admin2 Zharkainskiy: median 36.4, ratio 100.2
+    admin2 Bulandynskiy: median 35.8, ratio 96.2
+    admin2 Arshalynskiy: median 36.3, ratio 103.8
+    admin2 Akkol`skiy: median 36.7, ratio 95.1
+    admin2 Bayganinskiy: median 27.4, ratio 106.5
+    admin2 Shalkarskiy: median 28.6, ratio 103.1
+    admin2 Uilskiy: median 26.3, ratio 107.8
+    admin2 Irgizskiy: median 25.6, ratio 106.3
+    admin2 Aqtobe: median 30.3, ratio 92.3
+    admin2 Temirskiy: median 27.5, ratio 104.0
+    admin2 Aytekebiyskiy: median 29.1, ratio 106.7
+    admin2 Martukskiy: median 32.5, ratio 99.7
+    admin2 Kargalinskiy: median 34.0, ratio 100.2
+    admin2 Alginskiy: median 30.1, ratio 99.1
+    admin2 Khromtauskiy: median 30.8, ratio 99.0
+    admin2 Mugalzharskiy: median 29.9, ratio 99.5
+    admin2 Khobdinskiy: median 32.4, ratio 105.0
+    admin2 Almaty (Alma-Ata): median 30.9, ratio 85.3
+    admin2 Panfilovskiy: median 28.5, ratio 102.3
+    admin2 Uygurskiy: median 30.5, ratio 104.6
+    admin2 Karatal`skiy: median 33.7, ratio 104.2
+    admin2 Aksuskiy: median 31.3, ratio 103.9
+    admin2 Sarkandskiy: median 32.9, ratio 101.4
+    admin2 Alakolskiy: median 31.3, ratio 102.9
+    admin2 Zhambylskiy: median 29.4, ratio 101.4
+    admin2 Koksuskiy: median 31.5, ratio 99.6
+    admin2 Iliyskiy: median 30.3, ratio 98.4
+    admin2 Enbekshikazakhskiy: median 30.3, ratio 100.1
+    admin2 Raiymbekskiy: median 29.3, ratio 108.8
+    admin2 Karasayskiy: median 28.7, ratio 98.0
+    admin2 Balkhashskiy: median 30.0, ratio 104.5
+    admin2 Taldyqorghan: median 32.2, ratio 91.0
+    admin2 Kerbulakskiy: median 30.5, ratio 105.8
+    admin2 Talgarskiy: median 31.2, ratio 97.1
+    admin2 Zhylyoyskiy: median 25.0, ratio 99.9
+    admin2 Kzylkoginskiy: median 26.2, ratio 105.4
+    admin2 Kurmangazinskiy: median 28.9, ratio 103.6
+    admin2 Makatskiy: median 25.6, ratio 98.9
+    admin2 Makhambetskiy: median 27.2, ratio 100.4
+    admin2 Atyrau: median 27.9, ratio 93.9
+    admin2 Isatayskiy: median 26.3, ratio 105.1
+    admin2 Inderskiy: median 28.5, ratio 103.7
+    admin2 Ayagozskiy: median 31.0, ratio 101.2
+    admin2 Beskaragayskiy: median 36.6, ratio 97.1
+    admin2 Semipalatinskiy: median 35.1, ratio 91.4
+    admin2 Shemonaikhinskiy: median 41.6, ratio 95.3
+    admin2 Zharminskiy: median 35.2, ratio 102.4
+    admin2 Zyryanovsk: median 41.8, ratio 88.4
+    admin2 Tarbagatayskiy: median 32.5, ratio 106.5
+    admin2 Katon-Karagayskiy: median 39.9, ratio 104.6
+    admin2 Kurchumskiy: median 37.8, ratio 104.0
+    admin2 Borodulikhinskiy: median 38.1, ratio 96.2
+    admin2 Abayskiy: median 33.2, ratio 100.6
+    admin2 Glubokovskiy: median 40.2, ratio 95.6
+    admin2 Leninogorsk: median 39.6, ratio 86.3
+    admin2 Kokpektinskiy: median 37.7, ratio 101.6
+    admin2 Zaysanskiy: median 33.5, ratio 101.4
+    admin2 Urdzharskiy: median 36.1, ratio 101.5
+    admin2 Ulanskiy: median 37.3, ratio 88.8
+    admin2 Zhualynskiy: median 26.4, ratio 105.3
+    admin2 Merkenskiy: median 28.7, ratio 100.5
+    admin2 Talasskiy: median 28.8, ratio 101.8
+    admin2 Lugovskoy: median 26.9, ratio 102.8
+    admin2 Zhamb.: median 29.4, ratio 92.2
+    admin2 Shuskiy: median 29.0, ratio 98.9
+    admin2 Bayzakskiy: median 26.5, ratio 102.7
+    admin2 Zhambylskiy: median 27.4, ratio 103.7
+    admin2 Moyynkumskiy: median 29.2, ratio 104.8
+    admin2 Sarysuskiy: median 27.6, ratio 101.4
+    admin2 Kordayskiy: median 24.7, ratio 98.9
+    admin2 Karkaralinskiy: median 32.9, ratio 105.4
+    admin2 Aktogayskiy: median 33.2, ratio 95.1
+    admin2 Abayskiy: median 36.5, ratio 96.4
+    admin2 Nurinskiy: median 34.7, ratio 106.1
+    admin2 Bukhar-Zhyrauskiy: median 34.9, ratio 88.6
+    admin2 Ulytauskiy: median 32.0, ratio 93.6
+    admin2 Zhanaarkinskiy: median 29.7, ratio 102.5
+    admin2 Osakarovskiy: median 35.1, ratio 98.5
+    admin2 Shetskiy: median 31.7, ratio 104.4
+    admin2 Kamystinskiy: median 36.6, ratio 107.2
+    admin2 Denisovskiy: median 37.8, ratio 99.6
+    admin2 Qostanay: median 36.4, ratio 88.9
+    admin2 Karasuskiy: median 36.3, ratio 100.4
+    admin2 Arkalyk: median 31.1, ratio 97.7
+    admin2 Karabalykskiy: median 39.1, ratio 97.7
+    admin2 Zhitikarinskiy: median 41.1, ratio 93.5
+    admin2 Naurzumskiy: median 31.9, ratio 113.4
+    admin2 Sarykol`skiy: median 38.3, ratio 102.6
+    admin2 Mendykarinskiy: median 39.8, ratio 99.1
+    admin2 Dzhangil`dinskiy: median 27.0, ratio 105.7
+    admin2 Fyodorovskiy: median 39.0, ratio 98.8
+    admin2 Amangel`dinskiy: median 27.8, ratio 110.8
+    admin2 Altynsarinskiy: median 37.1, ratio 106.7
+    admin2 Auliekol`skiy: median 37.5, ratio 97.5
+    admin2 Taranovskiy: median 39.0, ratio 92.4
+    admin2 Uzunkol`skiy: median 38.5, ratio 103.2
+    admin2 Kazalinskiy: median 26.6, ratio 103.6
+    admin2 Aral`skiy: median 25.8, ratio 104.2
+    admin2 Karmakchinskiy: median 28.9, ratio 100.4
+    admin2 Zhalagashskiy: median 27.4, ratio 106.8
+    admin2 Shieliyskiy: median 26.3, ratio 104.3
+    admin2 Qyzylorda: median 27.1, ratio 96.0
+    admin2 Terenozekskiy: median 27.2, ratio 106.5
+    admin2 Zhanakorganskiy: median 23.6, ratio 105.5
+    admin2 Beyneuskiy: median 22.5, ratio 102.4
+    admin2 Manghystauskiy: median 21.5, ratio 102.8
+    admin2 Karakiyanskiy: median 22.5, ratio 100.2
+    admin2 Aqtau: median 27.1, ratio 97.0
+    admin2 Tupkaraganskiy: median 23.7, ratio 101.7
+    admin2 Bulaevskiy: median 40.7, ratio 97.5
+    admin2 Mamlyutskiy: median 40.3, ratio 99.3
+    admin2 Kyzylzharskiy: median 37.9, ratio 87.5
+    admin2 Tselinniy: median 37.6, ratio 98.1
+    admin2 Ayyrtauskiy: median 40.1, ratio 98.8
+    admin2 Akzharskiy: median 36.1, ratio 104.6
+    admin2 Timiryazevskiy: median 38.0, ratio 102.9
+    admin2 Zhambylskiy: median 40.2, ratio 100.0
+    admin2 Ualikhanovskiy: median 33.9, ratio 102.5
+    admin2 Esil`skiy: median 40.8, ratio 100.6
+    admin2 Shal Akyna: median 40.4, ratio 98.9
+    admin2 Taiynshinskiy: median 38.4, ratio 97.8
+    admin2 Sovetskiy: median 40.4, ratio 99.0
+    admin2 Lebyazhinskiy: median 34.1, ratio 105.3
+    admin2 Sherbaktinskiy: median 36.4, ratio 101.4
+    admin2 Uspenskiy: median 36.1, ratio 99.6
+    admin2 Ekibastuz: median 35.3, ratio 92.8
+    admin2 Aktogayskiy: median 33.6, ratio 105.1
+    admin2 Pavlodarskiy: median 36.6, ratio 88.0
+    admin2 Aksuskiy: median 36.0, ratio 93.2
+    admin2 Irtyshskiy: median 36.7, ratio 101.2
+    admin2 Bayanaul`skiy: median 33.1, ratio 103.6
+    admin2 Mayskiy: median 34.6, ratio 107.5
+    admin2 Kachirskiy: median 36.0, ratio 100.2
+    admin2 Zhelezinskiy: median 37.9, ratio 102.4
+    admin2 Otrarskiy: median 24.3, ratio 106.0
+    admin2 Ordabasynskiy: median 23.4, ratio 105.4
+    admin2 Tyul`kubaskiy: median 26.2, ratio 102.4
+    admin2 Baydibekskiy: median 25.1, ratio 106.7
+    admin2 Maktaaral`skiy: median 22.9, ratio 103.0
+    admin2 Tolebiyskiy: median 25.6, ratio 102.1
+    admin2 Chardarinskiy: median 22.3, ratio 107.3
+    admin2 Shymkent: median 25.7, ratio 89.0
+    admin2 Turkestan: median 23.4, ratio 99.6
+    admin2 Sayramskiy: median 23.2, ratio 101.2
+    admin2 Suzakskiy: median 23.9, ratio 104.6
+    admin2 Saryagashskiy: median 22.1, ratio 102.8
+    admin2 Kazygurtskiy: median 22.8, ratio 104.9
+    admin2 Arysskiy: median 23.8, ratio 104.1
+    admin2 Urdinskiy: median 30.9, ratio 106.1
+    admin2 Karatobinskiy: median 29.7, ratio 107.3
+    admin2 Taskalinskiy: median 34.6, ratio 99.7
+    admin2 Akzhaikskiy: median 31.5, ratio 103.5
+    admin2 Dzhanybekskiy: median 32.4, ratio 99.9
+    admin2 Dzhangalinskiy: median 28.6, ratio 104.3
+    admin2 Burlinskiy: median 33.7, ratio 95.7
+    admin2 Syrymskiy: median 32.0, ratio 107.1
+    admin2 Kaztalovskiy: median 30.1, ratio 105.6
+    admin2 Chingirlauskiy: median 33.5, ratio 101.0
+    admin2 Terektinskiy: median 33.8, ratio 100.5
+    admin2 Zelenovskiy: median 33.3, ratio 92.7
+  wrote data/processed/kazakhstan_census.json (608 kB)
