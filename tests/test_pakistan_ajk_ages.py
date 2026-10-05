@@ -19,11 +19,15 @@ def row(*words: str):
 
 
 def figures(m: int, f: int, t: int = 0) -> list[str]:
-    """Twelve cells: rural and urban halves, then the territory."""
+    """Twelve cells: rural, urban, then the territory.
+
+    The men and women are all rural and the transgender persons all urban, so
+    each column adds up down the table exactly as the territory's does.
+    """
     def cells(a, b, c):
-        return [f"{a:,}", f"{b:,}", f"{c:,}" if c else "-", f"{a + b + c:,}"]
-    return (cells(m - m // 2, f - f // 2, 0) + cells(m // 2, f // 2, t)
-            + cells(m, f, t))
+        return [f"{a:,}" if a else "-", f"{b:,}" if b else "-",
+                f"{c:,}" if c else "-", f"{a + b + c:,}" if a + b + c else "-"]
+    return cells(m, f, 0) + cells(0, 0, t) + cells(m, f, t)
 
 
 def table(misprint_62: bool = True):
@@ -56,9 +60,9 @@ class Table158(unittest.TestCase):
         pages, people = table()
         got = pk.ajk_ages_from_pages(pages)
         self.assertEqual(set(got["ages"]), set(range(0, 76)))
+        pk.ajk_ages_check(got, people)
         self.assertEqual(got["ages"][62][:2], (38, 48))
         self.assertEqual(got["ages"][75], (30, 40, 2, 72))
-        pk.ajk_ages_check(got, people)
 
     def test_a_population_other_than_table_15_24s_is_refused(self):
         pages, people = table()
@@ -73,9 +77,37 @@ class Table158(unittest.TestCase):
         with self.assertRaises(SystemExit):
             pk.ajk_ages_check(got, people)
 
+    def test_a_misprinted_territory_figure_is_its_rural_plus_urban(self):
+        # Age 26's males printed short in the territory column only, as the
+        # yearbook prints them a thousand short.
+        pages, people = table()
+        for rows in pages:
+            for i, cells in enumerate(rows):
+                if cells[0][2] == "26":
+                    words = [w for _a, _b, w in cells]
+                    words[9] = f"{int(words[9].replace(',', '')) - 10:,}"
+                    rows[i] = row(*words)
+        got = pk.ajk_ages_from_pages(pages)
+        pk.ajk_ages_check(got, people)
+        self.assertEqual(got["ages"][26][:2], (74, 84))
+
+    def test_a_misprinted_half_is_refused(self):
+        pages, people = table()
+        for rows in pages:
+            for i, cells in enumerate(rows):
+                if cells[0][2] == "26":
+                    words = [w for _a, _b, w in cells]
+                    words[1] = str(int(words[1]) + 1)       # rural males
+                    words[4] = str(int(words[4].replace(",", "")) + 1)
+                    rows[i] = row(*words)
+        got = pk.ajk_ages_from_pages(pages)
+        with self.assertRaises(SystemExit):
+            pk.ajk_ages_check(got, people)
+
     def test_fields(self):
         pages, people = table()
         got = pk.ajk_ages_from_pages(pages)
+        pk.ajk_ages_check(got, people)
         fields = pk.ajk_age_fields(got, " shape")
         self.assertEqual(fields["sex_ratio"]["unit"], "males_per_100_females")
         self.assertEqual(fields["median_age"]["year"], 2017)

@@ -983,6 +983,15 @@ def ajk_check(found: dict[str, dict[str, int]], whole: dict[str, int]) -> None:
 # place under its group, and the printed label is only checked to lie inside
 # the group. A row lost or duplicated would still be caught, because every
 # group's single years must add up to the group's own row, sex by sex.
+#
+# Some territory figures are misprinted too: age 26's males read 28,258 where
+# its rural 23,357 and urban 5,901 make 29,258, and 29,258 is what the 25-29
+# group's 141,285 needs. Every row prints its rural and urban halves beside
+# the territory, so the territory is taken as their sum wherever the two
+# disagree -- and only if the rural and urban columns themselves add up, year
+# by year, to their own group rows and Total row. A misprint in a half fails
+# that and refuses the run; a misprint in the territory column is named in
+# the log and corrected from the row's own halves.
 AJK_AGE_TABLE = re.compile(r"Age\s*Group\s*and\s*Gender[\s-]*wise\s*Rural\s*&\s*"
                            r"Urban\s*Population\s*of\s*AJ&K", re.I)
 AJK_AGE_SOURCE = ("Pakistan Bureau of Statistics, Population and Housing Census "
@@ -1014,14 +1023,15 @@ def ajk_age_label(words: list[str]) -> tuple[str, Any, int] | None:
 
 
 def ajk_ages_from_pages(pages) -> dict[str, Any]:
-    """Table 15.8's territory columns: single years, groups and the total.
+    """Table 15.8: single years, groups and the total, for each area column.
 
-    Returns {"ages": {age: (male, female, trans, total)}, "groups":
-    {(low, high): (...)}, "total": (...)}, the open 75 and over under 75.
+    Returns {"ages": {age: row}, "groups": {(low, high): row}, "total": row},
+    the open 75 and over under 75, where a row is {"rural": (male, female,
+    trans, total), "urban": (...), "territory": (...)} as printed.
     """
-    ages: dict[int, tuple[int, ...]] = {}
-    groups: dict[tuple[int, int], tuple[int, ...]] = {}
-    total: tuple[int, ...] | None = None
+    ages: dict[int, dict[str, tuple[int, ...]]] = {}
+    groups: dict[tuple[int, int], dict[str, tuple[int, ...]]] = {}
+    total: dict[str, tuple[int, ...]] | None = None
     group: tuple[int, int] | None = None
     place = 0
     found = False
@@ -1041,10 +1051,8 @@ def ajk_ages_from_pages(pages) -> dict[str, Any]:
             if len(figures) != 12:
                 continue                     # a caption or a stray line
             found = True
-            territory = tuple(figures[8:12])
-            if sum(territory[:3]) != territory[3]:
-                raise SystemExit(f"AJ&K Table 15.8 '{line[:30]}': {territory[:3]} "
-                                 f"do not make {territory[3]:,}")
+            territory = {"rural": tuple(figures[0:4]), "urban": tuple(figures[4:8]),
+                         "territory": tuple(figures[8:12])}
             if kind == "group":
                 if value in groups:
                     raise SystemExit(f"AJ&K Table 15.8 prints ages {value} twice")
@@ -1081,30 +1089,59 @@ def ajk_ages(blob: bytes) -> dict[str, Any]:
 
 
 def ajk_ages_check(table: dict[str, Any], population: int) -> None:
-    """Every year present once; the years to their groups and the total."""
+    """Every year present once; each column's years to its groups and total.
+
+    Then the territory column: wherever it is not its row's rural plus urban,
+    it is replaced by that sum (see the note above Table 15.8), which must
+    itself add up to the groups and the total, and to Table 15.24's
+    population. Leaves ``table["ages"]`` etc. holding the territory tuples.
+    """
     ages, groups, total = table["ages"], table["groups"], table["total"]
     if total is None:
         raise SystemExit("AJ&K Table 15.8 has no Total row")
     if set(ages) != set(range(0, AJK_AGE_OPEN + 1)):
         raise SystemExit(f"AJ&K Table 15.8 is missing ages "
                          f"{sorted(set(range(0, AJK_AGE_OPEN + 1)) - set(ages))}")
-    for (low, high), row in groups.items():
+    rows = [*ages.values(), *groups.values(), total]
+    for area in ("rural", "urban"):
+        for row in rows:
+            if sum(row[area][:3]) != row[area][3]:
+                raise SystemExit(f"AJ&K Table 15.8 {area}: {row[area][:3]} do not "
+                                 f"make {row[area][3]:,}")
+    corrected = []
+    for where, row in [*((f"age {a}", r) for a, r in ages.items()),
+                       *((f"ages {g[0]}-{g[1]}", r) for g, r in groups.items()),
+                       ("Total", total)]:
+        halves = tuple(r + u for r, u in zip(row["rural"], row["urban"]))
+        if halves != row["territory"]:
+            corrected.append(f"{where}: printed {row['territory']}, rural plus "
+                             f"urban {halves}")
+        row["territory"] = halves
+    for area in ("rural", "urban", "territory"):
+        for (low, high), row in groups.items():
+            for i in range(4):
+                summed = sum(ages[a][area][i] for a in range(low, high + 1))
+                if summed != row[area][i]:
+                    raise SystemExit(f"AJ&K Table 15.8 {area} ages {low}-{high}: "
+                                     f"the single years add up to {summed:,}, "
+                                     f"the group row says {row[area][i]:,}")
         for i in range(4):
-            summed = sum(ages[a][i] for a in range(low, high + 1))
-            if summed != row[i]:
-                raise SystemExit(f"AJ&K Table 15.8 ages {low}-{high}: the single "
-                                 f"years add up to {summed:,}, the group row "
-                                 f"says {row[i]:,}")
-    for i in range(4):
-        summed = sum(row[i] for row in ages.values())
-        if summed != total[i]:
-            raise SystemExit(f"AJ&K Table 15.8: the single years add up to "
-                             f"{summed:,}, the Total row says {total[i]:,}")
-    if total[3] != population:
-        raise SystemExit(f"AJ&K Table 15.8 counts {total[3]:,} people and Table "
-                         f"15.24 {population:,}")
+            summed = sum(row[area][i] for row in ages.values())
+            if summed != total[area][i]:
+                raise SystemExit(f"AJ&K Table 15.8 {area}: the single years add up "
+                                 f"to {summed:,}, the Total row says "
+                                 f"{total[area][i]:,}")
+    for line in corrected:
+        log(f"    AJ&K Table 15.8 misprint corrected from its own row -- {line}")
+    table["ages"] = {a: r["territory"] for a, r in ages.items()}
+    table["groups"] = {g: r["territory"] for g, r in groups.items()}
+    table["total"] = total["territory"]
+    if table["total"][3] != population:
+        raise SystemExit(f"AJ&K Table 15.8 counts {table['total'][3]:,} people and "
+                         f"Table 15.24 {population:,}")
     log(f"    Table 15.8: {len(ages)} single years add up to their {len(groups)} "
-        f"groups and to the territory's {total[3]:,}, Table 15.24's population")
+        f"groups and to the territory's {table['total'][3]:,}, Table 15.24's "
+        "population, in the rural, urban and territory columns alike")
 
 
 def ajk_age_fields(table: dict[str, Any], extra: str = "") -> dict[str, Any]:
