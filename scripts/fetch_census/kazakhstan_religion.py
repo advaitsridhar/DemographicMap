@@ -98,12 +98,18 @@ def decode(text: str) -> str:
 
 
 def volume_text(blob: bytes) -> str:
+    import logging
+
     from pypdf import PdfReader
+    # pypdf warns once per font that it wants fontTools for the CFF encoding;
+    # the glyph names it falls back to are what ``decode`` reads.
+    logging.getLogger("pypdf").setLevel(logging.ERROR)
     reader = PdfReader(io.BytesIO(blob))
     return decode("\n".join((page.extract_text() or "") for page in reader.pages))
 
 
-START = re.compile(r"1\.6\s*Население\s+районов\s+по\s+вероисповеданию")
+START = re.compile(r"(?:\d\.\d+\s*)?Население\s+(?:городов\s+и\s+)?районов\s+по\s+"
+                   r"вероисповеданию", re.IGNORECASE)
 END = re.compile(r"(?m)^\s*2\.\s*(?:1\s+)?(?:ОБРАЗОВАТЕЛЬНЫЙ|Население\s+по\s+уровню)")
 LINE = re.compile(r"^(?P<label>[^\d]*?)\s*(?P<figures>\d[\d\s,]*)$")
 
@@ -111,7 +117,10 @@ LINE = re.compile(r"^(?P<label>[^\d]*?)\s*(?P<figures>\d[\d\s,]*)$")
 def section(text: str) -> str:
     starts = [m.end() for m in START.finditer(text)]
     if not starts:
-        raise SystemExit("kazakhstan_religion: table 1.6 not found")
+        near = [line for line in text.splitlines() if "вероисп" in line.lower()][:6]
+        raise SystemExit(f"kazakhstan_religion: the district religion table was not found; "
+                         f"lines naming religion: {near}; text opens "
+                         f"{' '.join(text[:400].split())!r}")
     # The contents page names the table too; the table is the last mention.
     body = text[starts[-1]:]
     end = END.search(body)
@@ -289,12 +298,21 @@ def main() -> int:
     from urllib.parse import quote
     a1, a2 = kz.drawn_units()
     out: list[dict[str, Any]] = []
+    failed: list[str] = []
     for region, path in VOLUMES.items():
         if args.only and region != args.only:
             continue
         blob = http_get(BASE + quote(path), binary=True, timeout=300)
         assert isinstance(blob, bytes)
-        out += read_region(region, volume_text(blob), a1, a2)
+        # Every volume is read before stopping, so one run names every
+        # region's trouble; nothing is written unless all of them read whole.
+        try:
+            out += read_region(region, volume_text(blob), a1, a2)
+        except SystemExit as err:
+            log(f"  {region}: {err}")
+            failed.append(region)
+    if failed:
+        raise SystemExit(f"kazakhstan_religion: {len(failed)} volumes not read: {failed}")
     log(f"kazakhstan_religion: {len(out)} records")
     for r in out:
         bars = r["religion"]
