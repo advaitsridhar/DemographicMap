@@ -48,6 +48,19 @@ class Rows(unittest.TestCase):
         got = sc.read_table([P22.split("P3.1")[0], page2], "P2.2")
         self.assertEqual(got["wards"][("10", "02")][0], "Mbumburu")
 
+    def test_a_province_name_over_two_lines_is_read(self):
+        page = ("P3.1: Total population by 5-year age groups (cont'd.)\n"
+                "09 Temotu 22,319 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 22,183\n"
+                "01 Graciosa 100 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 -36\n"
+                "10 Honiara City\n"
+                "Council 129,569 12,994 12,361 11,223 13,824 17,087 13,151 12,100 9,579 7,969 "
+                "6,231 4,564 3,082 2,137 1,454 770 376 186 481\n"
+                "01 Nggossi 26,009 2,662 2,482 2,286 2,817 3,342 2,500 2,421 1,901 1,585 "
+                "1,324 856 618 414 311 168 74 52 196\n")
+        got = sc.read_table([page], "P3.1")
+        self.assertEqual(got["provinces"]["10"][0], 129569)
+        self.assertEqual(got["wards"][("10", "01")][0], "Nggossi")
+
     def test_a_ward_printed_twice_differently_stops_the_run(self):
         page = P22 + "P2.2: (cont'd.)\nChoiseul 30,775 15,863 14,912 5,520 57\n" \
                      "02 Katupika 2,318 1,200 1,118 456 8\n"

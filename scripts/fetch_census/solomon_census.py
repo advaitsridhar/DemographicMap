@@ -23,10 +23,11 @@ The ward's name in the census and in that table must agree, or the run stops.
 Temotu Pele, the Reef Islands constituency, has no polygon on the map.
 
 **What is not tabulated below the province**: ethnic group (P8.4 is by
-province only). The census asked each person's first language (question
-P.29's last part, "What is the first language this person learned"), and the
-Basic Tables publish only literacy by language (P9.7, P9.8), so language is
-left with that reason at both levels.
+province only). The census asked the first language learnt as a child of
+everyone aged five and over, but the National Report (Volume 1, Table 9.6.1)
+counts each language's speakers for the country, listed under the province
+the language belongs to, and the Basic Tables publish only literacy by
+language (P9.7, P9.8); so language is left with that reason at both levels.
 
 **Checks**, each refusing the run: the country is 720,956 people; every row's
 males and females make its total; a province's wards make the province;
@@ -133,6 +134,7 @@ def read_table(pages: list[str], table: str) -> dict[str, Any]:
             bucket[key] = value
 
     current = province = None
+    wrapped: list[str] = []
     for page in pages:
         for raw in page.splitlines():
             line = " ".join(raw.split())
@@ -148,8 +150,17 @@ def read_table(pages: list[str], table: str) -> dict[str, Any]:
                 continue
             tokens = line.split()
             if len(tokens) <= width or not all(NUMBER.match(t) for t in tokens[-width:]):
+                # A province's name too long for its cell is printed over two
+                # lines, "10 Honiara City" above "Council 129,569 ...".
+                wrapped = tokens
                 continue
             head, values = tokens[:-width], figures(tokens[-width:])
+            joined = wrapped + head
+            if (not CODE.match(head[0]) and wrapped
+                    and fold(" ".join(joined[1:] if CODE.match(joined[0]) else joined))
+                    in PROVINCE_NAMES):
+                head = joined
+            wrapped = []
             code = head[0] if CODE.match(head[0]) else None
             name = " ".join(head[1:] if code else head)
             if not name:
@@ -161,7 +172,13 @@ def read_table(pages: list[str], table: str) -> dict[str, Any]:
                 if out["national"] is None:
                     out["national"] = values
             elif code and province:
-                put(out["wards"], (province, code), (name, values), f"ward {name}")
+                key = (province, code)
+                if key in out["wards"]:
+                    check(fold(out["wards"][key][0]) == fold(name),
+                          f"solomon_census: {table} files {name} as {PROVINCES[province]}'s "
+                          f"ward {code}, which is {out['wards'][key][0]}: a province row was "
+                          "not read")
+                put(out["wards"], key, (name, values), f"ward {name}")
     return out
 
 
@@ -286,9 +303,12 @@ NOTES = {
         "'Islam' is its 'Muslim' and 'No religion' its 'No Religion or Faith/Atheism'."),
 }
 LANGUAGE = gap(NOT_AVAILABLE, (
-    "The 2019 Census asked each person's first language (English, Pijin, a local language "
-    "or another), and its Basic Tables publish literacy by language (P9.7, P9.8) but no "
-    "table of first language for a province, a ward or a constituency."))
+    "The 2019 Census asked the first language learnt as a child of everyone aged five and "
+    "over, and publishes it for the country only: the National Report's Table 9.6.1 counts "
+    "the speakers of Pidgin and of the larger local languages nationally, listing each "
+    "language under the province it belongs to rather than where its speakers live, and "
+    "the Basic Tables give literacy by language (P9.7, P9.8). No table gives first language "
+    "for a province, a ward or a constituency."))
 WARD_ETHNICITY = gap(NOT_AVAILABLE, (
     "The 2019 Census tabulates ethnic group by province only (Basic Tables, P8.4); no "
     "table gives it for a ward or a constituency."))
