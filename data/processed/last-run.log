@@ -1,15 +1,9 @@
-  2020-11-26 https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf
-== 'Tong-dieu-tra-dan-so': 1 uploads
-== 'nha-o-nam-2009': 0 uploads
-  2025-04-22 https://www.nso.gov.vn/wp-content/uploads/2025/04/Doan-CT-lam-viec-voi-co-so-ton-giao-tin-nguong2.jpg
-  2025-04-22 https://www.nso.gov.vn/wp-content/uploads/2025/04/Doan-CT-lam-viec-voi-co-so-ton-giao-tin-nguong.jpg
-  2021-01-13 https://www.nso.gov.vn/wp-content/uploads/2021/01/2.4.1.-Phieu-so-4-Ton-giao-7.01.2021-1.xlsx
-  2021-01-13 https://www.nso.gov.vn/wp-content/uploads/2021/01/2.4.1.-Phieu-so-4-Ton-giao-7.01.2021.xlsx
-  2020-02-19 https://www.nso.gov.vn/wp-content/uploads/2020/02/Phiếu-thu-thập-thông-tin-về-cơ-sở-tôn-giáo-tín-ngưỡng.pdf
-== 'ton-giao': 5 uploads
-  2025-04-22 https://www.nso.gov.vn/wp-content/uploads/2025/04/Doan-CT-lam-viec-voi-co-so-ton-giao-tin-nguong2.jpg
-  2025-04-22 https://www.nso.gov.vn/wp-content/uploads/2025/04/Doan-CT-lam-viec-voi-co-so-ton-giao-tin-nguong.jpg
-  2021-01-13 https://www.nso.gov.vn/wp-content/uploads/2021/01/2.4.1.-Phieu-so-4-Ton-giao-7.01.2021-1.xlsx
-  2021-01-13 https://www.nso.gov.vn/wp-content/uploads/2021/01/2.4.1.-Phieu-so-4-Ton-giao-7.01.2021.xlsx
-  2020-02-19 https://www.nso.gov.vn/wp-content/uploads/2020/02/Phiếu-thu-thập-thông-tin-về-cơ-sở-tôn-giáo-tín-ngưỡng.pdf
-== 'Ton-giao': 5 uploads
+probe_ckan: 1 host(s), timeout 20s
+  https://data.opendevelopmentmekong.net/ -> 200 text/html "Dataset OD Mekong Datahub"
+    /api/3/action/status_show -> 200 application/json CKAN 2.9.9
+    package_search q='myanmar census 2014 union report' -> 200, 376 matches, 40 shown, printing those matching '(?i)(union|questionnaire|census.report|volume)'
+      - the-2014-myanmar-population-and-housing-census-census-report-volume-2-b-the-union-report-occupation: The 2014 Myanmar Population and Housing Census Census Report Volume 2-B The Union Report: Occupation and Indus  [2 res: pdf]
+          PDF datastore=False e163b99a-f7df-4225-8d63-53f62254cfc6 https://data.opendevelopmentmekong.net/dataset/2937ed98-7852-4244-bb7d-de28de67fca7/resource/e163b99a-f7df-4225-8d63-53f62254cfc6/download/2boccupationandindustryen.pdf
+          PDF datastore=False ff8c2093-142f-440d-a683-873962c16662 https://data.opendevelopmentmekong.net/dataset/2937ed98-7852-4244-bb7d-de28de67fca7/resource/ff8c2093-142f-440d-a683-873962c16662/download/2boccupationandindustrymm.pdf
+      (39 others not matching)
+probe_ckan: 1 of 1 answered; 1 speak CKAN: data.opendevelopmentmekong.net
