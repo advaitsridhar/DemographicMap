@@ -314,16 +314,19 @@ TITLES = {
     "ethnic": r"наиболее\s+многочисленн\w*\s+этническ",
     "language": r"по\s+родному\s+языку|по\s+владению\s+родным\s+языком",
 }
-NUMBERED = re.compile(r"(\d)\.(\d+)\.?\s+(?:Численность|Распределение)\s+([^.]{0,200})")
+NUMBERED = re.compile(r"(\d)\.(\d+)\.?\s*(?:Численность|Распределение)\s+([^.]{0,200})")
 CONTINUED = re.compile(r"Продолжение\s+табл\.?\s*(\d)\.(\d+)\b", re.I)
 
 
 def signature(text: str) -> str | None:
-    """A page's table told by its own column headings, where they say it."""
+    """A page's table told by its own headings and rows, where they say it."""
     if "язык своей" in text and "кыргызский" in text:
         return "language"
     if "Численность лиц" in text and "в процентах" in text:
         return "ethnic"
+    if ("в том числе в возрасте" in text and "Средний возраст" in text
+            and re.search(r"(?m)^\s*0\s*[-–]\s*4\s+\d", text)):
+        return "groups"
     return None
 
 
@@ -418,16 +421,13 @@ def parse_groups(text: str, where: str) -> dict[str, dict[str, Any]]:
             if waiting and pending:
                 block = start(tokens)
                 pending, waiting = None, False
+            elif block is not None:
+                raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: age block ends "
+                                 f"after {block['labels'][-1:]}")
             continue
         if block is None:
             continue
-        # An age row's label is its first token ("0-4", "15"), or "100 лет и старше".
-        if re.match(r"^100 лет и старше", line):
-            name, rest = "100 лет и старше", line.split()[4:]
-        elif not label and tokens:
-            name, rest = tokens[0], tokens[1:]
-        else:
-            continue
+        name, rest = age_label(line)
         if name not in GROUP_LABELS or not numeric(rest):
             continue
         if name in block["labels"]:
@@ -441,6 +441,27 @@ def parse_groups(text: str, where: str) -> dict[str, dict[str, Any]]:
         raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: the age table ends "
                          f"inside its block")
     return out
+
+
+def age_label(line: str) -> tuple[str, list[str]]:
+    """('0-4', figures) for an age-group row, however its dash and spaces are set.
+
+    '0-4 109 711 ...', '0 – 4 109 711 ...', '0–4 ...' are the same group;
+    the open group is '100 лет и старше' or any row starting '100' and words.
+    """
+    parts = line.replace("–", "-").replace("—", "-").split()
+    if not parts:
+        return "", []
+    if parts[0] == "100" and len(parts) > 1 and not parts[1][0].isdigit():
+        rest = parts[1:]
+        while rest and not (rest[0][0].isdigit() or rest[0] in DASHES):
+            rest = rest[1:]
+        return "100 лет и старше", rest
+    if len(parts) > 2 and parts[1] == "-" and parts[0].isdigit() and parts[2].isdigit():
+        return f"{parts[0]}-{parts[2]}", parts[3:]
+    if re.fullmatch(r"\d+-\d+|\d+", parts[0]):
+        return parts[0], parts[1:]
+    return "", []
 
 
 def finish_groups(block: dict[str, Any], out: dict[str, dict[str, Any]], where: str) -> None:

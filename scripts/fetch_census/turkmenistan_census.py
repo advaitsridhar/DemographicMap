@@ -99,11 +99,12 @@ RELIGION_GAP = gap(NOT_AVAILABLE, (
     f"conditions -- {PAGE}) tabulates religion, for the country or any velayat."))
 DISTRICT_GAP = (
     "Turkmenistan's 2022 census publishes population by etrap and city alone (volume 2, "
-    "tables 2.2-2.7), for the etraps as they stood in December 2022, after the mergers and "
-    "renamings of 2017-2022; the boundary file draws an older division, with twelve polygons "
-    "unnamed and three names used twice, so no etrap's figure can be put on a drawn polygon "
-    "with certainty. Age, nationality and mother tongue are published by velayat only "
-    "(volumes 2 and 4).")
+    "tables 2.2-2.7), for the etraps of December 2022, and the boundary file draws another "
+    "division: in Dashoguz velayat, for one, the census counts Shabat and Ruhubelent etraps "
+    "and Dashoguz city where the file draws Gubadag, Gurbansoltan Eje and S.A. Nyyazow; twelve "
+    "of its 59 polygons have no name and three names are used twice. No etrap's figure can be "
+    "put on a drawn polygon with certainty. Age, nationality and mother tongue are published "
+    "by velayat only (volumes 2 and 4).")
 
 
 def tokens_of(line: str) -> tuple[str, list[str]]:
