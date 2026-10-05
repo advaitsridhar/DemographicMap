@@ -73,6 +73,16 @@ class AnnexTest(unittest.TestCase):
         annex = kh.parse_annex([PAGE.replace("Total 10 40", "Toatl 10 40")])
         self.assertEqual(annex[1]["n"], (10, 40, 20, 20))
 
+    def test_a_province_total_row_the_households_and_whole_population_overrule(self):
+        annex = self.full()
+        annex[5]["n"] = (1, 3, 1, 2)          # people misprinted, households right
+        kh.check_annex(annex, {p: (2, 2, 5) for p in range(1, 26)})
+        self.assertEqual(annex[5]["n"], (1, 4, 2, 2))
+        annex = self.full()
+        annex[5]["n"] = (1, 3, 1, 2)
+        with self.assertRaises(SystemExit):   # without the whole population, no ruling
+            kh.check_annex(annex)
+
     def test_a_district_its_communes_do_not_make_refuses(self):
         annex = self.full()
         kh.check_annex(annex)

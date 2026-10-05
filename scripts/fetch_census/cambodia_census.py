@@ -190,7 +190,8 @@ def parse_annex(pages: list[str]) -> dict[int, dict[str, Any]]:
     return provinces
 
 
-def check_annex(provinces: dict[int, dict[str, Any]]) -> None:
+def check_annex(provinces: dict[int, dict[str, Any]],
+                table: dict[int, tuple[int, int, int]] | None = None) -> None:
     if sorted(provinces) != list(range(1, 26)):
         raise SystemExit(f"cambodia_census: the annex names provinces {sorted(provinces)}")
     for p, prov in provinces.items():
@@ -230,8 +231,20 @@ def check_annex(provinces: dict[int, dict[str, Any]]) -> None:
                 f"{[x for x in prov.get('unread', []) if x.startswith(str(d))]}"
                 for d, (row, sums) in disputed.items()))
         if made != prov["n"]:
-            raise SystemExit(f"cambodia_census: province {p:02d}: its districts make {made}, "
-                             f"against {prov['n']}")
+            # Prey Veng's total row prints 1,049,361 people where its
+            # districts -- each its own communes' sum -- make 1,056,866, with
+            # the households agreeing to the one. Where the households agree
+            # and the districts' people fit inside the province's whole
+            # population (Table 2.1.1), the total row is the misprint.
+            whole = (table or {}).get(p, (0, 0, 0))[2]
+            if made[0] == prov["n"][0] and whole and made[1] <= whole:
+                log(f"  province {p:02d} {prov['name']}: its total row {prov['n']} is not its "
+                    f"districts' sum {made}; the households agree and the districts' people "
+                    f"fit in its {whole:,} (Table 2.1.1), so the districts stand")
+                prov["n"] = made
+            else:
+                raise SystemExit(f"cambodia_census: province {p:02d}: its districts make "
+                                 f"{made}, against {prov['n']}")
     districts = sum(len(v["districts"]) for v in provinces.values())
     communes = sum(len(d["communes"]) for v in provinces.values()
                    for d in v["districts"].values())
@@ -413,8 +426,8 @@ def main() -> int:
     pages = [(p.extract_text() or "") for p in PdfReader(str(pdf)).pages]
     log(f"  {len(pages)} pages")
     annex = parse_annex(pages)
-    check_annex(annex)
     table = parse_provinces(pages, annex)
+    check_annex(annex, table)
     for p, prov in annex.items():
         if not 0.9 * table[p][2] <= prov["n"][1] <= table[p][2]:
             raise SystemExit(f"cambodia_census: province {p:02d}'s regular households hold "
