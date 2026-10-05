@@ -105,7 +105,12 @@ def parse_annex(pages: list[str]) -> dict[int, dict[str, Any]]:
         for raw in page.splitlines():
             line = " ".join(raw.split())
             if carried:
-                if re.fullmatch(rf"(?:{NUM}\s+){{4}}(?:-|[\d.]+)\s+(?:-|[\d.]+)", line):
+                # The figures on the next line, and perhaps the name's last
+                # word with them: "70206 Sdach Kong Khang" / "Cheung 1,375 ...".
+                tail = re.fullmatch(rf"(?P<rest>[A-Za-z'.() -]*?)\s*(?:{NUM}\s+){{4}}"
+                                    r"(?:-|[\d.]+)\s+(?:-|[\d.]+)", line)
+                if tail and tail.group("rest").strip() not in ("Total", "Toatl", "Urban",
+                                                               "Rural"):
                     line = f"{carried} {line}"
                 elif current is not None:
                     current.setdefault("unread", []).append(carried)
