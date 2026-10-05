@@ -143,6 +143,32 @@ class Tables(unittest.TestCase):
         block = kg.parse_groups(text, "Talas")["таласская область"]
         self.assertEqual(block["groups"][-1], (9, 3, 6))
 
+    def test_the_oldest_label_broken_after_its_first_digit(self):
+        text = age_block("Баткенская область", rows_for(1)[:20] + [(27, 9, 18)])
+        text = text.replace("        100 лет и старше", "       1\n00 лет и старше")
+        self.assertIn("\n00 лет", text)
+        block = kg.parse_groups(text, "Batken")["баткенская область"]
+        self.assertEqual(block["groups"][-1], (27, 9, 18))
+
+    def test_an_all_urban_town_restating_its_whole(self):
+        rows = rows_for(1)
+        total = " ".join(thousands(sum(r[i] for r in rows)) for i in range(3))
+        text = age_block("г.Нарын", rows).replace(
+            "    в том числе в возрасте, лет:",
+            f"    Городское население {total} 100 100\n    в том числе в возрасте, лет:", 1)
+        self.assertIn("Городское население", text)
+        self.assertIn("г.нарын", kg.parse_groups(text, "Naryn"))
+
+    def test_a_city_part_is_not_read_as_a_group(self):
+        text = ETHNIC_TEXT.replace(
+            "Аламудунский район\n",
+            "Городское население\nг. Токмок (без сел) 300 150 150 100\nкыргызы 260 130 130 86,7\n"
+            "Аламудунский район\n")
+        ethnic = kg.parse_ethnic(text, "Chuy")
+        self.assertEqual(ethnic["г.токмок"]["total"], (400, 200, 200))
+        self.assertEqual(sorted(ethnic), ["аламудунский район", "г.токмок", "чуйская область"])
+        self.assertEqual(kg.PLACE[kg.key("Айтматовский район")], "Kara-Buura")
+
     def test_a_15_19_row_after_the_15_row(self):
         rows = rows_for(1)
         # Naryn prints "15-19" holding the 15-year-olds again ...

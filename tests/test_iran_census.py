@@ -70,6 +70,8 @@ class Ages(unittest.TestCase):
         self.assertEqual(ir.age_of("۱۲ ساله"), ("single", 12))
         self.assertEqual(ir.fa("شهرستان آران وبیدگل"), ir.fa("آران و بيدگل"))
         self.assertEqual(ir.split_sheet_name("اراک0001"), ("اراک", "0001"))
+        # The census sheet spells Sari with a hamza seat; OCHA with a plain yeh.
+        self.assertEqual(ir.fa("سارئ"), ir.fa("ساری"))
 
 
 class Citizenship(unittest.TestCase):

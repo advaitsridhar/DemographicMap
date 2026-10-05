@@ -169,6 +169,26 @@ class Records(unittest.TestCase):
             self.assertEqual(row["language"]["status"], "not_available")
             self.assertIn("native language", row["language"]["note"])
 
+    def test_the_stray_polygon_says_why_on_every_field_it_answers(self):
+        a1 = [{"id": "R2", "name": "Jambyl Region"}]
+        a2 = [{"id": "q", "name": "Zhualynskiy", "parent": "R2"},
+              {"id": "q2", "name": "Zhualy", "parent": "R2"}]
+        old_regions = kc.KATO_REGION
+        kc.KATO_REGION = {"31": "Jambyl Region"}
+        try:
+            regions = {"31": {"name": "Жамбылская область", "total": 6,
+                              "ages": Counter({40: 6}), "units": [
+                                  {"kato": "314000000", "name": "Жуалынский район",
+                                   "total": 6, "ages": Counter({40: 6})}]}}
+            sexes = {"31": {"both": Counter({40: 6}), "men": Counter({40: 3}),
+                            "women": Counter({40: 3})}}
+            out = kc.build(regions, sexes, {"314000000": (3, 3)}, a1, a2)
+        finally:
+            kc.KATO_REGION = old_regions
+        stray = next(r for r in out if r["shape_id"] == "q2")
+        for field in ("median_age", "sex_ratio", "language"):
+            self.assertIn("second, small polygon", stray[field]["note"])
+
 
 if __name__ == "__main__":
     unittest.main()

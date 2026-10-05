@@ -145,10 +145,10 @@ PLACE = {
     "г.нарын": "Naryn", "ак-талинский район": "Ak-Talaa", "ат-башинский район": "At-Bashy",
     "жумгальский район": "Jumgal", "кочкорский район": "Kochkor",
     "нарынский район": "Naryn",
-    # Talas Region
+    # Talas Region (Kara-Buura district has been Aitmatov district since 2021)
     "г.талас": "Talas", "бакай-атинский район": "Bakay-Ata",
-    "кара-бууринский район": "Kara-Buura", "манасский район": "Manas",
-    "таласский район": "Talas",
+    "кара-бууринский район": "Kara-Buura", "айтматовский район": "Kara-Buura",
+    "манасский район": "Manas", "таласский район": "Talas",
 }
 
 # Table 3.2's and 3.4's ethnic groups -> the label used on the map.
@@ -325,6 +325,15 @@ def is_territory(line: str) -> bool:
             or low in {b[1] for b in BOOKS.values()}) and not re.search(r"\d", low)
 
 
+def is_part(label: str) -> bool:
+    """A part of a city printed under it: 'г. Джалал-Абад (без сел)', 'г.Каракол ( без пгт)'.
+
+    Its block repeats people its city's block already counts, so it is read
+    as the end of the block before it and skipped.
+    """
+    return bool(re.match(r"^г\.?\s*\S[^()]*\(\s*без\b", label.strip().lower()))
+
+
 def urban_or_rural(label: str) -> str | None:
     low = label.lower().replace("c", "с")       # a Latin c in "cельское"
     if low.startswith("городское"):
@@ -444,7 +453,7 @@ def parse_groups(text: str, where: str) -> dict[str, dict[str, Any]]:
         return {"name": pending, "total": sexes(tokens[:-2], f"{where} {pending}"),
                 "groups": [], "labels": []}
 
-    for raw in text.splitlines():
+    for raw in rejoined(text.splitlines()):
         line = " ".join(raw.split())
         if not line:
             continue
@@ -467,6 +476,9 @@ def parse_groups(text: str, where: str) -> dict[str, dict[str, Any]]:
             if waiting and pending:
                 block = start(tokens)
                 pending, waiting = None, False
+            elif (block is not None and not block["labels"]
+                  and figures(tokens[:-2], 3, lambda v: tuple(v) == block["total"])):
+                pass        # an all-urban town's "Городское население" restating its whole
             elif block is not None:
                 raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: age block ends "
                                  f"after {block['labels'][-1:]}")
@@ -488,6 +500,21 @@ def parse_groups(text: str, where: str) -> dict[str, dict[str, Any]]:
     if block is not None:
         raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: the age table ends "
                          f"inside its block")
+    return out
+
+
+def rejoined(lines: list[str]) -> list[str]:
+    """Lines with an age label broken after its first digit put back together.
+
+    Batken's book sets its oldest group as "1" on one line and "00 лет и
+    старше 27 9 18 ..." on the next.
+    """
+    out: list[str] = []
+    for line in lines:
+        if out and re.fullmatch(r"\s*\d\s*", out[-1]) and re.match(r"\s*\d+\s*лет\b", line):
+            out[-1] = out[-1].strip() + line.strip()
+        else:
+            out.append(line)
     return out
 
 
@@ -649,6 +676,9 @@ def parse_ethnic(text: str, where: str) -> dict[str, dict[str, Any]]:
             continue
         label, tokens = split_label(line)
         figured = has_figures(tokens)
+        if is_part(label or line) or (urban_or_rural(label or line) and not figured):
+            pending, block = None, None
+            continue
         if is_territory(label or line):
             pending, block = key(label or line), None
             if figured:                             # the name and its figures on one line
@@ -734,6 +764,9 @@ def parse_language(text: str, where: str,
             continue
         label, tokens = split_label(line)
         figured = has_figures(tokens)
+        if is_part(label or line) or (urban_or_rural(label or line) and not figured):
+            pending, block = None, None
+            continue
         if is_territory(label or line):
             pending, block = key(label or line), None
             if not figured:

@@ -460,7 +460,8 @@ def build(regions: dict[str, dict[str, Any]], sexes: dict[str, dict[str, Counter
                         parent=kz.region_id(region), parent_name=region, country=ISO3,
                         match_by="shape_id", shape_id=shape["id"],
                         median_age=gap(NOT_AVAILABLE, reason),
-                        sex_ratio=gap(NOT_AVAILABLE, reason)))
+                        sex_ratio=gap(NOT_AVAILABLE, reason),
+                        language=gap(NOT_AVAILABLE, reason)))
     return out
 
 

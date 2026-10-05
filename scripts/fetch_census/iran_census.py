@@ -193,7 +193,8 @@ PERSIAN_DIGITS = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "0123
 def fa(text: Any) -> str:
     """Persian text with the Arabic letter forms, digits and spacing folded."""
     s = str(text or "").translate(PERSIAN_DIGITS)
-    s = (s.replace("ي", "ی").replace("ى", "ی").replace("ك", "ک").replace("ة", "ه")
+    s = (s.replace("ي", "ی").replace("ى", "ی").replace("ئ", "ی").replace("ك", "ک")
+         .replace("ة", "ه").replace("ؤ", "و")
          .replace("‌", "").replace("‏", "").replace("‎", "")
          .replace("أ", "ا").replace("إ", "ا").replace("آ", "ا"))
     return re.sub(r"\s+", "", s.replace("شهرستان", ""))
@@ -487,6 +488,7 @@ def bind_counties(counties: list[dict[str, Any]], codab: dict[str, list[dict[str
     bound: dict[str, dict[str, Any]] = {}
     notes: list[str] = []
     used: set[str] = set()
+    problems: list[str] = []
     for county in counties:
         province = PROVINCES[county["province"]][1]
         rows = [r for r in codab.get(province, []) if fa(r["fa"]) == fa(county["name"])]
@@ -495,8 +497,13 @@ def bind_counties(counties: list[dict[str, Any]], codab: dict[str, list[dict[str
             rows = [r for r in codab.get(province, [])
                     if fa(r["fa"]).startswith(fa(county["name"])) and len(fa(county["name"])) >= 4]
         if len(rows) != 1:
-            raise SystemExit(f"iran_census: {province} {county['name']} ({county['code']}) "
-                             f"matches {len(rows)} of OCHA's shahrestans")
+            unclaimed = [f"{r['en']}={r['fa']}" for r in codab.get(province, [])
+                         if not any(fa(r["fa"]) == fa(c["name"]) for c in counties
+                                    if c["province"] == county["province"])]
+            problems.append(f"{province} {county['name']} ({county['code']}) matches "
+                            f"{len(rows)} of OCHA's shahrestans; OCHA's unmatched there: "
+                            f"{', '.join(unclaimed)}")
+            continue
         en = rows[0]["en"]
         county["en"] = en
         if en in NOT_DRAWN:
@@ -514,10 +521,15 @@ def bind_counties(counties: list[dict[str, Any]], codab: dict[str, list[dict[str
             hits = [u for u in hits
                     if sum(1 for v in a2 if v.get("parent") == u.get("parent")) == 1]
         if len(hits) != 1 or hits[0]["id"] in used:
-            raise SystemExit(f"iran_census: {province} {en} ({county['code']}) finds "
-                             f"{len(hits)} drawn polygons labelled {label!r}")
+            problems.append(f"{province} {en} ({county['code']}) finds {len(hits)} drawn "
+                            f"polygons labelled {label!r}")
+            continue
         used.add(hits[0]["id"])
         bound[county["code"]] = hits[0]
+    if problems:
+        for line in problems:
+            log(f"  unbound: {line}")
+        raise SystemExit(f"iran_census: {len(problems)} shahrestans not bound (listed above)")
     return bound, notes
 
 
