@@ -1,566 +1,124 @@
-== cod-ps-mhl: licence=cc-by-igo  method=downloaded from [Republic of the Marshall Islands - Economic Policy and Planning Statistics Office (EPPSO) , 2011 Census of Population and Housing](http://rmi.prism.spc.int)
-  - mhl_admpop_2021.xlsx (XLSX, 12023 B)
-    https://data.humdata.org/dataset/855354a5-f090-4bb2-8e65-e25d156d9693/resource/c5accc3e-03b1-4fcf-8e5b-bfd5c1bc8eb2/download/mhl_admpop_2021.xlsx
-    sheet 'Metadata': 15 rows x 2 cols
-    | Item | Metadata
-    | Country | Marshall Islands
-    | Source(s) | Pacific Community (SPC) and  Marshall Islands Economic Policy, Planning and Statistics Office
-    | Source(s) Link(s) | https://sdd.spc.int/news/2023/05/30/marshall-islands-2021-census-report-basic-tables
-    | Population Data Type (Census enumeration, Direct estimate, or Population projection) | Census enumeration
-    | Baseline Population Year | 2021
-    | COD-PS Reference Year | 2021
-    | COD-PS Publication Year | 2023
-    | ADM-0 Name | N/A
-    | ADM-0 Number of Units | 1
-    | ADM-0 Sex and Age Disaggregation | Sex and age disaggregated by 5-year age groups
-    | ADM-0 Open-ended Age Group | 75+
-    | General Notes | 
-    | Data Limitations | The 2021 census enumerated population was significantly lower than the 2011 population count (53,000) as well as the SPC projection for 2021 (55,000). This is likely shaped by international out-migration and limited in-migration, especially given the timing of the census during the COVID-19 pandemic.
-    | COD-PS Demographic Data Quality Assessment | The COD-PS was assessed against ADM-0 estimates and projections published by the World Population Prospects (2022 Revision), and found to be generally consistent at the ADM-0 level.
-    sheet 'Methodological Documentation': 9 rows x 2 cols
-    | Item | Methodological_Documentation
-    | Methodology Used | This COD-PS is based on the enumerated results of the 2021 census of the Marshall Islands.
-    | Baseline Population | 2021 census
-    | Post-enumeration survey (PES) | No records of PES can be found online.
-    | Assessment and Adjustment of the Baseline Population | No records on assessment or adjustment of the baseline population can be found online.
-    | Fertility (births) | 
-    | Mortality (deaths) | 
-    | International migration (net migration) | 
-    | Internal migration (migration within country) | 
-    sheet 'mhl_admpop_adm0_2021': 2 rows x 55 cols
-    | year | ISO3 | ADM0_NAME | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75Plus | M_00_04
-    | 2021 | MHL | Marshall Islands | MH | 20690 | 21728 | 42418 | 2291 | 2268 | 2410 | 2324 | 1767 | 1317 | 1478 | 1510 | 1341 | 1088 | 871 | 717 | 519 | 386 | 225 | 178 | 2449
-  - mhl_admpop_adm0_2021.csv (CSV, 710 B)
-    https://data.humdata.org/dataset/855354a5-f090-4bb2-8e65-e25d156d9693/resource/3988aacc-1173-4183-a6ef-24947ae27e41/download/mhl_admpop_adm0_2021.csv
-    | year,ISO3,ADM0_NAME,ADM0_PCODE,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65_69,F_70_74,F_75Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_69,M_70_74,M_75P
-    | 2021,MHL,Marshall Islands,MH,20690,21728,42418,2291,2268,2410,2324,1767,1317,1478,1510,1341,1088,871,717,519,386,225,178,2449,2305,2730,2541,1874,1244,1484,1493,1342,1192,978,744,572,428,207,145,4740,4573,5140,4865,3641,2561,2962,3003,2683,2280,1849,1461,1091,814,432,323
-    2 lines
-  - mhl_Admin_Boundary_taxonomy_Metadata.xlsx (XLSX, 24802 B)
-    https://data.humdata.org/dataset/855354a5-f090-4bb2-8e65-e25d156d9693/resource/4551e99a-2585-48fa-b1cb-205607f1fefb/download/mhl_admin_boundary_taxonomy_metadata.xlsx
-    sheet 'Notes': 21 rows x 3 cols
-    | Notes |  | 
-    | 1) | Source: | 
-    |  | Republic of the Marshall Islands - Economic Policy and Planning Statistics Office (EPPSO) ,Administrative Boundaries | 
-    |  | http://rmi.prism.spc.int/   | 
-    |  |  | 
-    |  | PopGIS 2: Secretariat of the Pacific Community, Statistics for Development Division | 
-    |  | http://rmi.popgis.spc.int    | 
-    |  |  | 
-    | 2) | Admin Boundary 1 is Atolls.   There are 25 inhabitated atolls in the Marshall Islands | Adm1_Atoll_Details
-    |  | Admin 1 - Atoll field info: | 
-    |  | - EPPSO_AID: Admin 1 Atoll ID from EPPSO data | 
-    |  | - adm1_pcode - is alpha numeric code created by combining the 2 digit ISO country code and 2 digit EPPSO_AID for linking and reference (created by UNOCHA) | 
-    |  | adm1_name: Atoll name | 
-    |  |  | 
-    | 3) | Admin Boundary 2 is Emumeration Areas (EA).  There are 153 inhabited EAs in Marshall Islands | Adm2_EA_Details
-    |  | Admin 2 - EA  field Info: | 
-    |  | - EPPSO_EAID: Admin 2 EA ID from EPPSO data | 
-    |  | - adm2_pcode- is alpha numeric code created by combining  2 digit ISO country code, 2 digit EPPS0_AID and 2 digit EPPSO_EAID for linking and reference (created by UNOCHA) | 
-    |  | - adm2_name: EA name (this is combination of islets and significant plabce boundaries) | 
-    |  |  | 
-    |  | **  The admin 2 EA MH0609 spatial boundary is missing | 
-    sheet 'Adm0': 2 rows x 2 cols
-    | ADM0_EN | ADM0_PCODE
-    | Republic of the Marshall Islands | MH
-    sheet 'Adm1_Atolls': 26 rows x 5 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | EPPSO_EAID
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | 1
-    | Republic of the Marshall Islands | MH | Ailuk | MH02 | 2
-    | Republic of the Marshall Islands | MH | Arno | MH03 | 3
-    | Republic of the Marshall Islands | MH | Aur | MH04 | 4
-    | Republic of the Marshall Islands | MH | Ebon | MH06 | 6
-    | Republic of the Marshall Islands | MH | Eneu | MH05 | 5
-    | Republic of the Marshall Islands | MH | Enewetak | MH07 | 7
-    | Republic of the Marshall Islands | MH | Jabat | MH08 | 8
-    | Republic of the Marshall Islands | MH | Jaluit | MH09 | 9
-    | Republic of the Marshall Islands | MH | Kili | MH10 | 10
-    | Republic of the Marshall Islands | MH | Kwajalein | MH11 | 11
-    | Republic of the Marshall Islands | MH | Lae | MH12 | 12
-    | Republic of the Marshall Islands | MH | Lib | MH13 | 13
-    | Republic of the Marshall Islands | MH | Likiep | MH14 | 14
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15
-    | Republic of the Marshall Islands | MH | Maloelap | MH16 | 16
-    | Republic of the Marshall Islands | MH | Mejit | MH17 | 17
-    | Republic of the Marshall Islands | MH | Mili | MH18 | 18
-    | Republic of the Marshall Islands | MH | Namdrik | MH19 | 19
-    | Republic of the Marshall Islands | MH | Namu | MH20 | 20
-    | Republic of the Marshall Islands | MH | Rongelap | MH21 | 21
-    | Republic of the Marshall Islands | MH | Ujae | MH22 | 22
-    | Republic of the Marshall Islands | MH | Utirik | MH24 | 24
-    | Republic of the Marshall Islands | MH | Wotho | MH25 | 25
-    | Republic of the Marshall Islands | MH | Wotje | MH26 | 26
-    sheet 'Adm2_EAs': 154 rows x 8 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | EPPSO_AID | ADM2_EN | ADM2_PCODE | EPPSO_EAID
-    | Republic of the Marshall Islands | MH | Ebon | MH06 | 6 | ? | MH0609 | 609
-    | Republic of the Marshall Islands | MH | Jaluit | MH09 | 9 | Ae | MH0917 | 917
-    | Republic of the Marshall Islands | MH | Mili | MH18 | 18 | Aeloneo | MH1814 | 1814
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Aenkan | MH1523 | 1523
-    | Republic of the Marshall Islands | MH | Ailuk | MH02 | 2 | Ailuk | MH0211 | 211
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | 1 | Airok | MH0114 | 114
-    | Republic of the Marshall Islands | MH | Maloelap | MH16 | 16 | Airok | MH1605 | 1605
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Ajeltake | MH1517 | 1517
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Ajeltake - Woja | MH1518 | 1518
-    | Republic of the Marshall Islands | MH | Mili | MH18 | 18 | Anel | MH1809 | 1809
-    | Republic of the Marshall Islands | MH | Mili | MH18 | 18 | Arbar | MH1804 | 1804
-    | Republic of the Marshall Islands | MH | Arno | MH03 | 3 | Arno | MH0305 | 305
-    | Republic of the Marshall Islands | MH | Jaluit | MH09 | 9 | Arreen | MH0924 | 924
-    | Republic of the Marshall Islands | MH | Aur | MH04 | 4 | Aur | MH0402 | 402
-    | Republic of the Marshall Islands | MH | Mili | MH18 | 18 | Bar | MH1811 | 1811
-    | Republic of the Marshall Islands | MH | Arno | MH03 | 3 | Bekarej | MH0313 | 313
-    | Republic of the Marshall Islands | MH | Kwajalein | MH11 | 11 | Bikkej | MH1121 | 1121
-    | Republic of the Marshall Islands | MH | Jaluit | MH09 | 9 | Bokanake | MH0901 | 901
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | 1 | Bouj | MH0112 | 112
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Bridge - Batkan | MH1512 | 1512
-    | Republic of the Marshall Islands | MH | Jaluit | MH09 | 9 | Bukantorak | MH0906 | 906
-    | Republic of the Marshall Islands | MH | Kwajalein | MH11 | 11 | Carlos | MH1120 | 1120
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Delap 1 | MH1508 | 1508
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Delap 2 | MH1509 | 1509
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Delap 3 | MH1510 | 1510
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Delap 4 | MH1511 | 1511
-    | Republic of the Marshall Islands | MH | Majuro | MH15 | 15 | Downtown | MH1505 | 1505
-    | Republic of the Marshall Islands | MH | Kwajalein | MH11 | 11 | Ebadon | MH1104 | 1104
-    | Republic of the Marshall Islands | MH | Kwajalein | MH11 | 11 | Ebeye Zone 1 | MH1111 | 1111
-  - MHL_pplp.xlsx (XLSX, 45460 B)
-    https://data.humdata.org/dataset/855354a5-f090-4bb2-8e65-e25d156d9693/resource/2fe3d799-a238-4afc-8ee0-bc5c35ca69ed/download/mhl_pplp.xlsx
-    sheet 'adm2_EA': 154 rows x 32 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | EPPSO_EAID | EPPSO_AID | Tot_Pop | T_00_04 | T_05_14 | T_15_19 | T_15_24 | T_15_49 | T_15_64 | T_65plus | M_total | M_00_04 | M_05_14 | M_15_19 | M_15_24 | M_15_49 | M_15_64 | M_65plus
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Tobomaro | MH0101 | 101 | 1 | 4 | 0 | 0 | 2 | 2 | 3 | 4 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Jah | MH0102 | 102 | 1 | 99 | 17 | 35 | 4 | 12 | 36 | 46 | 1 | 46 | 5 | 17 | 4 | 10 | 19 | 24 | 0
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Mejil | MH0103 | 103 | 1 | 92 | 20 | 30 | 2 | 11 | 35 | 39 | 3 | 44 | 10 | 15 | 0 | 3 | 15 | 17 | 2
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Jeh | MH0104 | 104 | 1 | 282 | 46 | 93 | 17 | 40 | 113 | 134 | 9 | 135 | 22 | 38 | 12 | 25 | 62 | 72 | 3
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Ennak | MH0105 | 105 | 1 | 5 | 0 | 1 | 0 | 0 | 4 | 4 | 0 | 4 | 0 | 1 | 0 | 0 | 3 | 3 | 0
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Kattiej | MH0108 | 108 | 1 | 64 | 9 | 21 | 1 | 7 | 28 | 33 | 1 | 37 | 8 | 8 | 1 | 5 | 16 | 20 | 1
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Woja | MH0110 | 110 | 1 | 484 | 81 | 157 | 20 | 60 | 200 | 232 | 14 | 240 | 41 | 74 | 10 | 28 | 103 | 120 | 5
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Enewe | MH0111 | 111 | 1 | 77 | 14 | 39 | 2 | 4 | 22 | 22 | 2 | 36 | 8 | 17 | 1 | 1 | 10 | 10 | 1
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Bouj | MH0112 | 112 | 1 | 220 | 38 | 72 | 3 | 18 | 83 | 102 | 8 | 110 | 22 | 41 | 1 | 8 | 35 | 44 | 3
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Jebwan | MH0113 | 113 | 1 | 106 | 16 | 37 | 4 | 13 | 38 | 49 | 4 | 59 | 10 | 20 | 2 | 8 | 21 | 26 | 3
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Airok | MH0114 | 114 | 1 | 264 | 41 | 89 | 12 | 34 | 104 | 128 | 6 | 148 | 21 | 59 | 7 | 20 | 55 | 66 | 2
-    | Republic of the Marshall Islands | MH | Ailinglaplap | MH01 | Olar | MH0116 | 116 | 1 | 32 | 7 | 7 | 1 | 4 | 16 | 17 | 1 | 15 | 3 | 4 | 1 | 3 | 8 | 8 | 0
-    | Republic of the Marshall Islands | MH | Ailuk | MH02 | Enejelar | MH0203 | 203 | 2 | 40 | 8 | 15 | 2 | 5 | 12 | 17 | 0 | 15 | 4 | 5 | 0 | 1 | 4 | 6 | 0
-    | Republic of the Marshall Islands | MH | Ailuk | MH02 | Ailuk | MH0211 | 211 | 2 | 298 | 38 | 92 | 24 | 49 | 138 | 162 | 6 | 150 | 12 | 50 | 13 | 27 | 72 | 84 | 4
-    | Republic of the Marshall Islands | MH | Ailuk | MH02 | Enelik | MH0221 | 221 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Ine | MH0301 | 301 | 3 | 156 | 21 | 56 | 9 | 20 | 61 | 77 | 2 | 83 | 13 | 35 | 2 | 7 | 28 | 35 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Japo | MH0302 | 302 | 3 | 146 | 24 | 48 | 9 | 16 | 61 | 71 | 3 | 74 | 13 | 24 | 5 | 7 | 29 | 35 | 2
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Kinajon | MH0303 | 303 | 3 | 13 | 2 | 2 | 1 | 2 | 8 | 9 | 0 | 9 | 2 | 1 | 1 | 1 | 5 | 6 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Likwoj _ Lukoj | MH0304 | 304 | 3 | 122 | 20 | 45 | 5 | 13 | 49 | 55 | 2 | 65 | 13 | 22 | 4 | 7 | 25 | 28 | 2
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Arno | MH0305 | 305 | 3 | 281 | 42 | 100 | 16 | 41 | 107 | 136 | 3 | 138 | 24 | 49 | 8 | 20 | 49 | 63 | 2
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Ulien | MH0307 | 307 | 3 | 193 | 27 | 76 | 6 | 19 | 79 | 90 | 0 | 90 | 16 | 27 | 6 | 13 | 40 | 47 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Eneaidrik | MH0308 | 308 | 3 | 6 | 1 | 1 | 1 | 1 | 3 | 3 | 1 | 3 | 0 | 1 | 1 | 1 | 2 | 2 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Kilemman | MH0309 | 309 | 3 | 8 | 1 | 1 | 2 | 3 | 4 | 6 | 0 | 4 | 0 | 1 | 1 | 2 | 2 | 3 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Namwi | MH0311 | 311 | 3 | 9 | 3 | 0 | 0 | 3 | 5 | 6 | 0 | 3 | 1 | 0 | 0 | 0 | 2 | 2 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Meetdik | MH0312 | 312 | 3 | 10 | 1 | 3 | 0 | 1 | 5 | 6 | 0 | 7 | 1 | 3 | 0 | 0 | 2 | 3 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Bekarej | MH0313 | 313 | 3 | 161 | 30 | 63 | 6 | 15 | 57 | 67 | 1 | 83 | 19 | 32 | 3 | 6 | 25 | 31 | 1
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Kidenen | MH0316 | 316 | 3 | 4 | 2 | 0 | 0 | 0 | 2 | 2 | 0 | 3 | 2 | 0 | 0 | 0 | 1 | 1 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Mwean | MH0317 | 317 | 3 | 9 | 5 | 0 | 0 | 1 | 4 | 4 | 0 | 7 | 4 | 0 | 0 | 1 | 3 | 3 | 0
-    | Republic of the Marshall Islands | MH | Arno | MH03 | Todo _ Tutu | MH0318 | 318 | 3 | 53 | 10 | 16 | 3 | 9 | 22 | 26 | 1 | 28 | 5 | 7 | 2 | 6 | 12 | 15 | 1
-    sheet 'adm1_Atolls': 26 rows x 29 cols
-    | ADM0_EN | ADM0_PCODE | EPPSO_AID | ADM1_EN | ADM1_PCODE | Tot_Pop | T_00_04 | T_05_14 | T_15_19 | T_15_24 | T_15_49 | T_15_64 | T_65plus | M_total | M_00_04 | M_05_14 | M_15_19 | M_15_24 | M_15_49 | M_15_64 | M_65plus | F_total | F_00_04 | F_05_14
-    | Republic of the Marshall Islands | MH | 1 | Ailinglaplap | MH01 | 1729 | 289 | 581 | 68 | 205 | 682 | 810 | 49 | 875 | 150 | 294 | 40 | 112 | 348 | 411 | 20 | 854 | 139 | 287
-    | Republic of the Marshall Islands | MH | 2 | Ailuk | MH02 | 339 | 46 | 107 | 26 | 54 | 150 | 180 | 6 | 166 | 16 | 55 | 13 | 28 | 76 | 91 | 4 | 173 | 30 | 52
-    | Republic of the Marshall Islands | MH | 3 | Arno | MH03 | 1794 | 280 | 649 | 97 | 232 | 729 | 849 | 16 | 927 | 159 | 336 | 57 | 114 | 356 | 423 | 9 | 867 | 121 | 313
-    | Republic of the Marshall Islands | MH | 4 | Aur | MH04 | 499 | 70 | 141 | 28 | 68 | 247 | 275 | 13 | 276 | 33 | 84 | 17 | 37 | 136 | 153 | 6 | 223 | 37 | 57
-    | Republic of the Marshall Islands | MH | 5 | Eneu | MH05 | 9 | 0 | 0 | 0 | 0 | 6 | 9 | 0 | 9 | 0 | 0 | 0 | 0 | 6 | 9 | 0 | 0 | 0 | 0
-    | Republic of the Marshall Islands | MH | 6 | Ebon | MH06 | 706 | 124 | 191 | 26 | 84 | 301 | 372 | 19 | 380 | 71 | 96 | 14 | 49 | 164 | 204 | 9 | 326 | 53 | 95
-    | Republic of the Marshall Islands | MH | 7 | Enewetak | MH07 | 664 | 130 | 196 | 26 | 74 | 283 | 329 | 9 | 347 | 69 | 103 | 15 | 38 | 148 | 172 | 3 | 317 | 61 | 93
-    | Republic of the Marshall Islands | MH | 8 | Jabat | MH08 | 84 | 11 | 26 | 3 | 10 | 42 | 46 | 1 | 43 | 4 | 13 | 1 | 6 | 22 | 25 | 1 | 41 | 7 | 13
-    | Republic of the Marshall Islands | MH | 9 | Jaluit | MH09 | 1788 | 234 | 519 | 318 | 446 | 830 | 989 | 46 | 933 | 121 | 282 | 157 | 235 | 416 | 505 | 25 | 855 | 113 | 237
-    | Republic of the Marshall Islands | MH | 10 | Kili | MH10 | 548 | 91 | 142 | 26 | 74 | 265 | 303 | 12 | 293 | 52 | 73 | 14 | 36 | 143 | 164 | 4 | 255 | 39 | 69
-    | Republic of the Marshall Islands | MH | 11 | Kwajalein | MH11 | 11408 | 1750 | 2945 | 1063 | 2050 | 5565 | 6543 | 170 | 5847 | 906 | 1558 | 543 | 1053 | 2789 | 3298 | 85 | 5561 | 844 | 1387
-    | Republic of the Marshall Islands | MH | 12 | Lae | MH12 | 347 | 49 | 123 | 15 | 47 | 158 | 172 | 3 | 178 | 26 | 62 | 9 | 24 | 80 | 88 | 2 | 169 | 23 | 61
-    | Republic of the Marshall Islands | MH | 13 | Lib | MH13 | 155 | 38 | 48 | 13 | 23 | 64 | 68 | 1 | 84 | 20 | 26 | 5 | 12 | 35 | 37 | 1 | 71 | 18 | 22
-    | Republic of the Marshall Islands | MH | 14 | Likiep | MH14 | 401 | 49 | 142 | 11 | 41 | 150 | 192 | 18 | 208 | 27 | 75 | 6 | 21 | 72 | 96 | 10 | 193 | 22 | 67
-    | Republic of the Marshall Islands | MH | 15 | Majuro | MH15 | 27797 | 3867 | 6249 | 2730 | 5698 | 14576 | 17071 | 610 | 14080 | 1995 | 3194 | 1374 | 2879 | 7271 | 8583 | 308 | 13717 | 1872 | 3055
-    | Republic of the Marshall Islands | MH | 16 | Maloelap | MH16 | 682 | 99 | 217 | 31 | 89 | 284 | 352 | 14 | 367 | 58 | 108 | 21 | 53 | 157 | 194 | 7 | 315 | 41 | 109
-    | Republic of the Marshall Islands | MH | 17 | Mejit | MH17 | 348 | 48 | 105 | 22 | 50 | 154 | 190 | 5 | 172 | 19 | 58 | 6 | 24 | 75 | 93 | 2 | 176 | 29 | 47
-    | Republic of the Marshall Islands | MH | 18 | Mili | MH18 | 738 | 113 | 256 | 27 | 89 | 316 | 361 | 8 | 380 | 54 | 133 | 17 | 44 | 167 | 189 | 4 | 358 | 59 | 123
-    | Republic of the Marshall Islands | MH | 19 | Namdrik | MH19 | 508 | 79 | 181 | 15 | 43 | 188 | 234 | 14 | 263 | 48 | 88 | 11 | 23 | 96 | 120 | 7 | 245 | 31 | 93
-    | Republic of the Marshall Islands | MH | 20 | Namu | MH20 | 780 | 109 | 210 | 47 | 124 | 378 | 443 | 18 | 423 | 63 | 112 | 25 | 75 | 204 | 241 | 7 | 357 | 46 | 98
-    | Republic of the Marshall Islands | MH | 21 | Rongelap | MH21 | 79 | 0 | 1 | 3 | 20 | 64 | 77 | 1 | 78 | 0 | 1 | 2 | 19 | 63 | 76 | 1 | 1 | 0 | 0
-    | Republic of the Marshall Islands | MH | 22 | Ujae | MH22 | 364 | 67 | 105 | 11 | 51 | 160 | 182 | 10 | 186 | 34 | 62 | 8 | 22 | 78 | 86 | 4 | 178 | 33 | 43
-    | Republic of the Marshall Islands | MH | 24 | Utirik | MH24 | 435 | 74 | 124 | 22 | 72 | 206 | 233 | 4 | 219 | 41 | 59 | 8 | 33 | 103 | 117 | 2 | 216 | 33 | 65
-    | Republic of the Marshall Islands | MH | 25 | Wotho | MH25 | 97 | 12 | 32 | 3 | 7 | 43 | 52 | 1 | 56 | 8 | 16 | 3 | 6 | 26 | 31 | 1 | 41 | 4 | 16
-    | Republic of the Marshall Islands | MH | 26 | Wotje | MH26 | 859 | 114 | 220 | 100 | 174 | 442 | 509 | 16 | 453 | 57 | 119 | 51 | 88 | 230 | 269 | 8 | 406 | 57 | 101
-    sheet 'adm0_country': 2 rows x 26 cols
-    | ADM0_EN | ADM0_PCODE | Tot_Pop | T_00_04 | T_05_14 | T_15_19 | T_15_24 | T_15_49 | T_15_64 | T_65plus | M_total | M_00_04 | M_05_14 | M_15_19 | M_15_24 | M_15_49 | M_15_64 | M_65plus | F_total | F_00_04 | F_05_14 | F_15_19 | F_15_24 | F_15_49
-    | Republic of the Marshall Islands | MH | 53158 | 7743 | 13510 | 4731 | 9825 | 26283 | 30841 | 1064 | 27243 | 4031 | 7007 | 2417 | 5031 | 13261 | 15675 | 530 | 25915 | 3712 | 6503 | 2314 | 4794 | 13022
-    sheet 'Metadata': 44 rows x 3 cols
-    |  | Source: | 
-    |  | Republic of the Marshall Islands - Economic Policy and Planning Statistics Office (EPPSO) , 2011 Census of Population and Housing | 
-    |  | http://rmi.prism.spc.int/  | 
-    |  |  | 
-    |  |  | 
-    |  | PopGIS 2: Secretariat of the Pacific Community, Statistics for Development Division | 
-    |  | http://rmi.popgis.spc.int   | 
-    |  |  | 
-    |  | Field Name | Description
-    |  | adm2_pcode | Admin 2 Enumeration Area (EA) place code
-    |  | EPPSO_AID | EPPSO admin 2 Atoll ID
-    |  | adm2_name | EA Name (mix of islet names annd major places)
-    |  | adm1_pcode | Admin 1 Atoll pllace code
-    |  | EPPSO_AID | EPPSO admin1 EA ID
-    |  | adm1_name | Admin 1 Atoll name
-    |  | adm0_code | Admin 0 country ISO 2 digit code
-    |  | adm0_name | Admin 0 country name
-    |  | Tot_Pop | Functional age groups - Total population - 2011 Census
-    |  | T_00-04 | Functional age groups - Total 0 - 4 years of age - 2011 Census
-    |  | T_05-14 | Functional age groups - Total 5 - 14 years of age - 2011 Census
-    |  | T_15_19 | Functional age groups - Total 15 - 19 years of age - 2011 Census
-    |  | T_15-24 | Functional age groups - Total 15 - 24 years of age - 2011 Census
-    |  | T_15-49 | Functional age groups - Total 15 - 49 years of age - 2011 Census
-    |  | T_15-64 | Functional age groups - Total 15 - 64 years of age - 2011 Census
-    |  | T_65plus | Functional age groups - Total 65 years of age and over - 2011 Census
-    |  | M_total | Functional age groups - Male population - 2011 Census
-    |  | M_00-04 | Functional age groups - Male 0 - 4 years of age - 2011 Census
-    |  | M_05-14 | Functional age groups - Male 5 - 14 years of age - 2011 Census
-    |  | M_15_19 | Functional age groups - Male 15 - 19 years of age - 2011 Census
-    |  | M_15-24 | Functional age groups - Male 15 - 24 years of age - 2011 Census
-== cod-ps-kir: licence=cc-by-igo  method=Prepared by UNFPA
-
-P-coding by OCHA.  Administrative level 3 P-codes formulated from official island codes.
-  - kir_admgz_2020.xlsx (XLSX, 17791 B)
-    https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/e09a4573-bbd3-4322-9cc4-3604ecd857e3/download/kir_admgz_2020.xlsx
-    sheet 'kir_admgz_adm0': 2 rows x 2 cols
-    | ADM0_EN | ADM0_PCODE
-    | Kiribati | KI
-    sheet 'kir_admgz_adm1': 5 rows x 4 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE
-    | Kiribati | KI | Gilbert Islands | KI1
-    | Kiribati | KI | Phoenix Islands | KI2
-    | Kiribati | KI | Line Islands | KI3
-    |  |  |  | 
-    sheet 'kir_admgz_adm2': 37 rows x 6 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE
-    | Kiribati | KI | Gilbert Islands | KI1 | Banaba | KI101
-    | Kiribati | KI | Gilbert Islands | KI1 | Makin | KI102
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104
-    | Kiribati | KI | Gilbert Islands | KI1 | Abaiang | KI105
-    | Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106
-    | Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107
-    | Kiribati | KI | Gilbert Islands | KI1 | Maiana | KI108
-    | Kiribati | KI | Gilbert Islands | KI1 | Abemama | KI109
-    | Kiribati | KI | Gilbert Islands | KI1 | Kuria | KI110
-    | Kiribati | KI | Gilbert Islands | KI1 | Aranuka | KI111
-    | Kiribati | KI | Gilbert Islands | KI1 | Nonouti | KI112
-    | Kiribati | KI | Gilbert Islands | KI1 | North Tabiteuea | KI113
-    | Kiribati | KI | Gilbert Islands | KI1 | South Tabiteuea | KI114
-    | Kiribati | KI | Gilbert Islands | KI1 | Beru | KI115
-    | Kiribati | KI | Gilbert Islands | KI1 | Nikunau | KI116
-    | Kiribati | KI | Gilbert Islands | KI1 | Onotoa | KI117
-    | Kiribati | KI | Gilbert Islands | KI1 | Tamana | KI118
-    | Kiribati | KI | Gilbert Islands | KI1 | Arorae | KI119
-    | Kiribati | KI | Gilbert Islands | KI1 | Betio | KI124
-    | Kiribati | KI | Phoenix Islands | KI2 | Kanton | KI223
-    | Kiribati | KI | Phoenix Islands | KI2 | Rawaki | KI230
-    | Kiribati | KI | Phoenix Islands | KI2 | Birnie | KI231
-    | Kiribati | KI | Phoenix Islands | KI2 | Mackean | KI232
-    | Kiribati | KI | Phoenix Islands | KI2 | Enderbury | KI233
-    | Kiribati | KI | Phoenix Islands | KI2 | Nikumaroro | KI234
-    | Kiribati | KI | Phoenix Islands | KI2 | Manra | KI235
-    | Kiribati | KI | Phoenix Islands | KI2 | Orona | KI236
-    | Kiribati | KI | Line Islands | KI3 | Teraina | KI320
-    sheet 'Metadata': 20 rows x 3 cols
-    |  | Source: | 
-    |  | 2015 Kiribati National Statistics Office, 2015 Census of Population and Housing | 
-    |  | 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables | 
-    |  | Source: Weblink | 
-    |  |  | 
-    |  | PopGIS 2: Secretariat of the Pacific Community, Statistics for Development Division | 
-    |  | http://kiribati.popgis.spc.int/ | 
-    |  |  | 
-    |  | Field Name | Description
-    |  | KNSO_VID | Admin 3 (Village) ID as per National Statistics Office
-    |  | ADM3_PCODE | Admin 3 (Village) place code 
-    |  | ADM3_EN | Admin 3 (Village) name 
-    |  | ADM2_EN | Admin 2 (Island) name
-    |  | ADM2_PCODE | Admin 2 (Island) place code
-    |  | ADM1_PCODE | Admin 1 (Group) place code
-    |  | ADM1_EN | Admin 1 (Group) name
-    |  | ADM0_PCODE | ISO Country alpha 2 code
-    |  | ADM0_EN | Country name
-    |  |  | 
-    |  |  | 
-  - kir_admpop_2020.xlsx (XLSX, 112348 B)
-    https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/cb0fd355-5326-4574-a76a-81bae7894991/download/kir_admpop_2020.xlsx
-    sheet 'kir_admgz_adm1': 5 rows x 4 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE
-    | Kiribati | KI | Gilbert Islands | KI1
-    | Kiribati | KI | Phoenix Islands | KI2
-    | Kiribati | KI | Line Islands | KI3
-    |  |  |  | 
-    sheet 'Metadata': 17 rows x 2 cols
-    | Item | Metadata
-    | Country | Kiribati
-    | Baseline population | 2020 
-    | Reference year of projections | 2020
-    | Source(s) | Pacific Community (SPC)
-    | Source(s) Link(s) | Not available
-    | Methods | Not available
-    | Year of publication | 2021
-    | ADM1 Name | Island
-    | ADM1 Number of units | 22
-    | ADM1 Age-and-Sex disaggregation | SAD 5 year age groups
-    | ADM1 Open-ended group | 65+
-    | ADM2 Name | Village
-    | ADM2 Number of units | 182
-    | ADM2 Age-and-Sex disaggregation | SAD 5 year age groups
-    | ADM2 Open-ended group | 65+
-    | Limitations of use and general Notes | Baseline used: Kiribati NSO
-    sheet 'kir_admpop_adm0_2020': 2 rows x 48 cols
-    | ADM0_EN | ADM0_PCODE | Year | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19
-    | Kiribati | KI | 2020 | 60786 | 59154 | 119940 | 7422 | 6895 | 6598 | 5022 | 5520 | 5113 | 4776 | 4086 | 3145 | 2555 | 2802 | 2289 | 1679 | 2884 | 7965 | 7517 | 6701 | 5368
-    sheet 'kir_admpop_adm1_2020': 183 rows x 50 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | Year | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65Plus | M_00_04 | M_05_09
-    | Kiribati | KI | Gilbert Islands | KI1 | 2020 | 55401 | 53260 | 108661 | 6722 | 6162 | 5931 | 4762 | 5087 | 4661 | 4306 | 3701 | 2850 | 2307 | 2585 | 2098 | 1546 | 2683 | 7175 | 6708
-    | Kiribati | KI | Line Islands | KI3 | 2020 | 5385 | 5894 | 11279 | 700 | 733 | 667 | 260 | 433 | 452 | 470 | 385 | 295 | 248 | 217 | 191 | 133 | 201 | 790 | 809
-    | Kiribati | KI | Phoenix Islands | KI2 | 2020 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    sheet 'kir_admpop_adm2_2020': 183 rows x 52 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | Year | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65Plus
-    | Kiribati | KI | Gilbert Islands | KI1 | Banaba | KI101 | 2020 | 149 | 181 | 330 | 23 | 17 | 19 | 6 | 7 | 12 | 12 | 16 | 7 | 3 | 8 | 10 | 6 | 3
-    | Kiribati | KI | Gilbert Islands | KI1 | Makin | KI102 | 2020 | 946 | 968 | 1914 | 110 | 134 | 155 | 33 | 66 | 83 | 72 | 66 | 49 | 34 | 37 | 28 | 27 | 52
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | 2020 | 1619 | 1622 | 3241 | 226 | 222 | 191 | 83 | 115 | 114 | 135 | 106 | 82 | 65 | 62 | 70 | 55 | 93
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | 2020 | 1388 | 1350 | 2738 | 171 | 181 | 212 | 61 | 114 | 93 | 106 | 91 | 75 | 67 | 60 | 45 | 38 | 74
-    | Kiribati | KI | Gilbert Islands | KI1 | Abaiang | KI105 | 2020 | 2870 | 3002 | 5872 | 333 | 356 | 350 | 395 | 196 | 201 | 203 | 182 | 131 | 106 | 129 | 81 | 85 | 122
-    | Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | 2020 | 3583 | 3458 | 7041 | 430 | 437 | 360 | 379 | 320 | 273 | 283 | 256 | 191 | 137 | 161 | 119 | 82 | 155
-    | Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | 2020 | 32981 | 30458 | 63439 | 4100 | 3370 | 3261 | 2919 | 3409 | 3054 | 2605 | 2211 | 1632 | 1338 | 1467 | 1208 | 922 | 1485
-    | Kiribati | KI | Gilbert Islands | KI1 | Maiana | KI108 | 2020 | 1178 | 1227 | 2405 | 121 | 157 | 142 | 46 | 105 | 86 | 81 | 86 | 80 | 53 | 67 | 54 | 34 | 66
-    | Kiribati | KI | Gilbert Islands | KI1 | Abemama | KI109 | 2020 | 1643 | 1614 | 3257 | 189 | 180 | 161 | 259 | 81 | 125 | 131 | 108 | 94 | 57 | 69 | 64 | 45 | 80
-    | Kiribati | KI | Gilbert Islands | KI1 | Kuria | KI110 | 2020 | 585 | 606 | 1191 | 82 | 82 | 64 | 21 | 43 | 45 | 49 | 36 | 36 | 22 | 32 | 23 | 18 | 32
-    | Kiribati | KI | Gilbert Islands | KI1 | Aranuka | KI111 | 2020 | 598 | 625 | 1223 | 67 | 88 | 74 | 18 | 42 | 43 | 56 | 42 | 30 | 32 | 35 | 23 | 15 | 33
-    | Kiribati | KI | Gilbert Islands | KI1 | Nonouti | KI112 | 2020 | 1352 | 1440 | 2792 | 145 | 168 | 169 | 70 | 102 | 95 | 90 | 84 | 103 | 72 | 78 | 64 | 31 | 81
-    | Kiribati | KI | Gilbert Islands | KI1 | North Tabiteuea | KI113 | 2020 | 2060 | 2060 | 4120 | 247 | 262 | 246 | 240 | 143 | 143 | 154 | 128 | 90 | 78 | 96 | 88 | 53 | 92
-    | Kiribati | KI | Gilbert Islands | KI1 | South Tabiteuea | KI114 | 2020 | 683 | 674 | 1357 | 92 | 87 | 91 | 35 | 46 | 53 | 33 | 57 | 30 | 33 | 37 | 28 | 18 | 43
-    | Kiribati | KI | Gilbert Islands | KI1 | Beru | KI115 | 2020 | 1101 | 1119 | 2220 | 118 | 111 | 129 | 85 | 78 | 72 | 87 | 77 | 56 | 54 | 78 | 53 | 30 | 73
-    | Kiribati | KI | Gilbert Islands | KI1 | Nikunau | KI116 | 2020 | 969 | 1092 | 2061 | 120 | 119 | 130 | 50 | 77 | 61 | 74 | 63 | 60 | 42 | 47 | 47 | 29 | 50
-    | Kiribati | KI | Gilbert Islands | KI1 | Onotoa | KI117 | 2020 | 688 | 735 | 1423 | 69 | 79 | 68 | 29 | 67 | 37 | 56 | 38 | 35 | 52 | 49 | 30 | 23 | 56
-    | Kiribati | KI | Gilbert Islands | KI1 | Tamana | KI118 | 2020 | 530 | 524 | 1054 | 36 | 55 | 59 | 18 | 41 | 35 | 42 | 31 | 43 | 31 | 40 | 29 | 22 | 48
-    | Kiribati | KI | Gilbert Islands | KI1 | Arorae | KI119 | 2020 | 478 | 505 | 983 | 43 | 57 | 50 | 15 | 35 | 36 | 37 | 23 | 26 | 31 | 33 | 34 | 13 | 45
-    | Kiribati | KI | Line Islands | KI3 | Teeraina | KI320 | 2020 | 904 | 1003 | 1907 | 128 | 119 | 126 | 41 | 76 | 65 | 70 | 63 | 50 | 43 | 41 | 31 | 26 | 25
-    | Kiribati | KI | Line Islands | KI3 | Tabuaeran | KI321 | 2020 | 931 | 1061 | 1992 | 108 | 139 | 126 | 49 | 58 | 89 | 68 | 61 | 58 | 43 | 33 | 35 | 26 | 38
-    | Kiribati | KI | Line Islands | KI3 | Kiritimati | KI322 | 2020 | 3550 | 3830 | 7380 | 464 | 475 | 415 | 170 | 299 | 298 | 332 | 261 | 187 | 162 | 143 | 125 | 81 | 138
-    | Kiribati | KI | Gilbert Islands | KI1 | Betio | KI124 | 2020 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    | Kiribati | KI | Phoenix Islands | KI2 | Kanton | KI223 | 2020 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    | Kiribati | KI | Phoenix Islands | KI2 | Rawaki | KI230 | 2020 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    | Kiribati | KI | Phoenix Islands | KI2 | Birnie | KI231 | 2020 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    | Kiribati | KI | Phoenix Islands | KI2 | Mackean | KI232 | 2020 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    | Kiribati | KI | Phoenix Islands | KI2 | Enderbury | KI233 | 2020 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    | Kiribati | KI | Phoenix Islands | KI2 | Nikumaroro | KI234 | 2020 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-    sheet 'kir_admpop_adm3_2020': 183 rows x 54 cols
-    | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | ADM3_EN | ADM3_PCODE | Year | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59
-    | Kiribati | KI | Gilbert Islands | KI1 | Banaba | KI101 | Antereen | KI10102 | 2020 | 47 | 68 | 115 | 4 | 8 | 6 | 3 | 2 | 2 | 5 | 7 | 2 | 1 | 3 | 2
-    | Kiribati | KI | Gilbert Islands | KI1 | Banaba | KI101 | Tabewa | KI10101 | 2020 | 25 | 32 | 57 | 2 | 2 | 6 | 1 | 1 | 2 | 0 | 5 | 2 | 0 |  | 3
-    | Kiribati | KI | Gilbert Islands | KI1 | Banaba | KI101 | Uma | KI10103 | 2020 | 77 | 81 | 158 | 17 | 7 | 7 | 2 | 4 | 8 | 7 | 4 | 3 | 2 | 5 | 5
-    | Kiribati | KI | Gilbert Islands | KI1 | Makin | KI102 | Kiebu | KI10202 | 2020 | 184 | 200 | 384 | 20 | 33 | 23 | 6 | 16 | 18 | 10 | 14 | 9 | 5 | 6 | 7
-    | Kiribati | KI | Gilbert Islands | KI1 | Makin | KI102 | Makin | KI10201 | 2020 | 762 | 768 | 1530 | 90 | 101 | 132 | 27 | 50 | 65 | 62 | 52 | 40 | 29 | 31 | 21
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Antekana | KI10306 | 2020 | 93 | 93 | 186 | 13 | 15 | 13 | 2 | 4 | 7 | 10 | 5 | 3 | 5 | 6 | 5
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Bikaati | KI10311 | 2020 | 109 | 119 | 228 | 15 | 21 | 12 | 4 | 7 | 10 | 9 | 12 | 3 | 6 | 3 | 1
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Keuea | KI10302 | 2020 | 88 | 76 | 164 | 14 | 7 | 11 | 5 | 7 | 7 | 13 | 6 | 4 | 2 | 3 | 1
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Kuma | KI10301 | 2020 | 150 | 160 | 310 | 20 | 19 | 18 | 4 | 6 | 17 | 6 | 13 | 8 | 8 | 2 | 7
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Onomaru | KI10309 | 2020 | 124 | 120 | 244 | 22 | 14 | 15 | 5 | 9 | 7 | 8 | 7 | 8 | 5 | 5 | 6
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Tabonuea | KI10305 | 2020 | 125 | 110 | 235 | 14 | 20 | 17 | 3 | 6 | 16 | 11 | 3 | 5 | 5 | 7 | 6
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Tanimaiaki | KI10304 | 2020 | 171 | 193 | 364 | 25 | 19 | 20 | 14 | 16 | 11 | 12 | 15 | 10 | 6 | 4 | 7
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Tanimainiku | KI10303 | 2020 | 95 | 124 | 219 | 12 | 8 | 10 | 3 | 12 | 8 | 9 | 5 | 4 | 3 | 7 | 4
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Taubukinmeang | KI10307 | 2020 | 100 | 99 | 199 | 17 | 13 | 10 | 6 | 7 | 3 | 10 | 4 | 8 | 4 | 3 | 5
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Temanokunuea | KI10308 | 2020 | 222 | 215 | 437 | 22 | 32 | 27 | 19 | 12 | 12 | 24 | 14 | 13 | 10 | 6 | 13
-    | Kiribati | KI | Gilbert Islands | KI1 | Butaritari | KI103 | Ukiangang | KI10310 | 2020 | 342 | 313 | 655 | 52 | 54 | 38 | 18 | 29 | 16 | 23 | 22 | 16 | 11 | 16 | 15
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | Antai | KI10408 | 2020 | 61 | 61 | 122 | 3 | 10 | 10 | 1 | 7 | 4 | 2 | 3 | 8 | 5 | 1 | 0
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | Bainuna | KI10405 | 2020 | 157 | 161 | 318 | 19 | 31 | 25 | 4 | 11 | 10 | 15 | 9 | 10 | 6 | 4 | 2
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | Buota | KI10403 | 2020 | 147 | 155 | 302 | 24 | 18 | 16 | 7 | 12 | 10 | 12 | 9 | 4 | 6 | 7 | 3
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | Norauea | KI10406 | 2020 | 210 | 193 | 403 | 33 | 31 | 39 | 6 | 18 | 15 | 15 | 17 | 7 | 9 | 4 | 3
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | Rawannawi | KI10401 | 2020 | 457 | 421 | 878 | 52 | 58 | 67 | 24 | 32 | 29 | 36 | 33 | 25 | 21 | 26 | 19
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | Tekarakan | KI10404 | 2020 | 178 | 188 | 366 | 19 | 15 | 25 | 13 | 17 | 17 | 13 | 14 | 8 | 7 | 11 | 7
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | Tekuanga | KI10407 | 2020 | 112 | 103 | 215 | 13 | 8 | 20 | 6 | 10 | 7 | 5 | 5 | 10 | 9 | 4 | 4
-    | Kiribati | KI | Gilbert Islands | KI1 | Marakei | KI104 | Temotu | KI10402 | 2020 | 66 | 68 | 134 | 8 | 10 | 10 | 0 | 7 | 1 | 8 | 1 | 3 | 4 | 3 | 7
-    | Kiribati | KI | Gilbert Islands | KI1 | Abaiang | KI105 | Aoneaba | KI10517 | 2020 | 35 | 36 | 71 | 6 | 2 | 6 | 1 | 3 | 2 | 4 | 1 | 1 | 0 | 3 | 1
-    | Kiribati | KI | Gilbert Islands | KI1 | Abaiang | KI105 | Aonobuaka | KI10507 | 2020 | 251 | 286 | 537 | 33 | 35 | 30 | 14 | 12 | 20 | 17 | 26 | 17 | 10 | 8 | 11
-    | Kiribati | KI | Gilbert Islands | KI1 | Abaiang | KI105 | Borotiam | KI10506 | 2020 | 157 | 180 | 337 | 15 | 23 | 20 | 14 | 10 | 17 | 8 | 12 | 5 | 5 | 11 | 6
-    | Kiribati | KI | Gilbert Islands | KI1 | Abaiang | KI105 | Ewena | KI10510 | 2020 | 97 | 112 | 209 | 12 | 14 | 9 | 5 | 8 | 10 | 5 | 10 | 7 | 4 | 6 | 3
-    | Kiribati | KI | Gilbert Islands | KI1 | Abaiang | KI105 | Koinawa | KI10508 | 2020 | 156 | 166 | 322 | 15 | 23 | 16 | 4 | 7 | 15 | 16 | 13 | 10 | 8 | 10 | 7
-  - kir_admpop_adm0_2020.csv (CSV, 635 B)
-    https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/9e8d8edd-9180-4bd2-8cb7-5a70fca5bfa0/download/kir_admpop_adm0_2020.csv
-    | ADM0_EN,ADM0_PCODE,Year,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65Plus,T_00_04,T_05_09,T_10_14,T_15_19,T_2
-    | Kiribati,KI,2020,60786,59154,119940,7422,6895,6598,5022,5520,5113,4776,4086,3145,2555,2802,2289,1679,2884,7965,7517,6701,5368,5629,4993,4511,3791,2997,2311,2413,1861,1386,1711,15387,14412,13299,10390,11149,10106,9287,7877,6142,4866,5215,4150,3065,4595
-    2 lines
-  - kir_admpop_adm1_2020.csv (CSV, 1022 B)
-    https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/8ad2d41b-4b40-495d-a1d3-c1ad6b36a64c/download/kir_admpop_adm1_2020.csv
-    | ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,Year,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65Plus,T_00_04,T_05_09,
-    | Kiribati,KI,Gilbert Islands,KI1,2020,55401,53260,108661,6722,6162,5931,4762,5087,4661,4306,3701,2850,2307,2585,2098,1546,2683,7175,6708,5975,4986,5115,4498,4067,3342,2689,2059,2144,1663,1261,1578,13897,12870,11906,9748,10202,9159,8373,7043,5539,4366,4729,3761,2807,4261
-    | Kiribati,KI,Line Islands,KI3,2020,5385,5894,11279,700,733,667,260,433,452,470,385,295,248,217,191,133,201,790,809,726,382,514,495,444,449,308,252,269,198,125,133,1490,1542,1393,642,947,947,914,834,603,500,486,389,258,334
-    | Kiribati,KI,Phoenix Islands,KI2,2020,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-    4 lines
-  - kir_admpop_adm2_2020.csv (CSV, 13530 B)
-    https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/39f3de96-0176-4397-aa9f-b3c44d3e0515/download/kir_admpop_adm2_2020.csv
-    | ADM0_EN,ADM0_PCODE,ADM1_EN,ADM1_PCODE,ADM2_EN,ADM2_PCODE,Year,F_TL,M_TL,T_TL,F_00_04,F_05_09,F_10_14,F_15_19,F_20_24,F_25_29,F_30_34,F_35_39,F_40_44,F_45_49,F_50_54,F_55_59,F_60_64,F_65Plus,M_00_04,M_05_09,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65Pl
-    | Kiribati,KI,Gilbert Islands,KI1,Banaba,KI101,2020,149,181,330,23,17,19,6,7,12,12,16,7,3,8,10,6,3,33,27,30,6,9,14,9,14,13,3,4,5,7,7,56,44,49,12,16,26,21,30,20,6,12,15,13,10
-    | Kiribati,KI,Gilbert Islands,KI1,Makin,KI102,2020,946,968,1914,110,134,155,33,66,83,72,66,49,34,37,28,27,52,129,174,125,79,69,63,61,58,54,38,36,23,21,38,239,308,280,112,135,146,133,124,103,72,73,51,48,90
-    | Kiribati,KI,Gilbert Islands,KI1,Butaritari,KI103,2020,1619,1622,3241,226,222,191,83,115,114,135,106,82,65,62,70,55,93,221,240,226,134,117,114,144,90,68,51,64,58,45,50,447,462,417,217,232,228,279,196,150,116,126,128,100,143
-    | Kiribati,KI,Gilbert Islands,KI1,Marakei,KI104,2020,1388,1350,2738,171,181,212,61,114,93,106,91,75,67,60,45,38,74,176,217,168,97,107,104,93,66,71,67,59,45,32,48,347,398,380,158,221,197,199,157,146,134,119,90,70,122
-    | Kiribati,KI,Gilbert Islands,KI1,Abaiang,KI105,2020,2870,3002,5872,333,356,350,395,196,201,203,182,131,106,129,81,85,122,395,410,354,466,208,196,205,166,128,99,104,91,82,98,728,766,704,861,404,397,408,348,259,205,233,172,167,220
-    159 lines
-== cod-ps-fsm: licence=cc-by-igo  method=downloaded from [Federated States of Micronesia Division of Statistics,  2010 Census of Population and Housing](http://www.fsmstatistics.fm/?page_id=254) and [Secretariat of the Pacific Community, Statistics for Development Division](http://fsm.popgis.spc.int )
-  - fsm_pplp.xlsx (XLSX, 38417 B)
-    https://data.humdata.org/dataset/a1a30440-d7ab-4e22-8636-ef717a20be5d/resource/9eab4b38-d225-425a-ac45-e2fbcc2ce0f8/download/fsm_pplp.xlsx
-    sheet 'adm2_Municpality': 76 rows x 58 cols
-    | adm2_Pcode | adm2_Name | adm1_Pcode | adm1Name | Main_Outer | Region | Sub_Region | Stats_Mcode | adm0_Pcode | adm0Name | T_Pop | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64
-    | FM101 | Rumung | FM1 | Yap | Main |  |  | 101 | FM | Federated States of Miconesia | 58 | 9 | 4 | 3 | 4 | 2 | 3 | 6 | 4 | 4 | 3 | 8 | 1 | 1
-    | FM102 | Maap | FM1 | Yap | Main |  |  | 102 | FM | Federated States of Miconesia | 621 | 55 | 78 | 71 | 76 | 43 | 31 | 38 | 28 | 51 | 38 | 40 | 28 | 17
-    | FM103 | Gagil | FM1 | Yap | Main |  |  | 103 | FM | Federated States of Miconesia | 863 | 66 | 80 | 101 | 78 | 91 | 55 | 61 | 55 | 55 | 59 | 46 | 40 | 29
-    | FM104 | Tomil | FM1 | Yap | Main |  |  | 104 | FM | Federated States of Miconesia | 1231 | 126 | 121 | 128 | 120 | 88 | 106 | 88 | 62 | 83 | 73 | 93 | 61 | 36
-    | FM105 | Fanif | FM1 | Yap | Main |  |  | 105 | FM | Federated States of Miconesia | 509 | 55 | 49 | 62 | 51 | 29 | 28 | 30 | 25 | 31 | 39 | 27 | 30 | 24
-    | FM106 | Weloy | FM1 | Yap | Main |  |  | 106 | FM | Federated States of Miconesia | 1030 | 99 | 96 | 99 | 120 | 71 | 75 | 57 | 71 | 80 | 65 | 63 | 58 | 38
-    | FM107 | Dalipebinaw | FM1 | Yap | Main |  |  | 107 | FM | Federated States of Miconesia | 345 | 41 | 38 | 37 | 37 | 23 | 23 | 27 | 23 | 19 | 19 | 16 | 10 | 12
-    | FM108 | Rull | FM1 | Yap | Main |  |  | 108 | FM | Federated States of Miconesia | 2135 | 225 | 205 | 215 | 196 | 151 | 153 | 166 | 134 | 140 | 140 | 163 | 110 | 60
-    | FM109 | Kanifay | FM1 | Yap | Main |  |  | 109 | FM | Federated States of Miconesia | 327 | 32 | 26 | 42 | 34 | 27 | 29 | 22 | 21 | 21 | 22 | 15 | 15 | 4
-    | FM110 | Gilman | FM1 | Yap | Main |  |  | 110 | FM | Federated States of Miconesia | 252 | 22 | 27 | 36 | 25 | 14 | 22 | 14 | 16 | 18 | 14 | 17 | 13 | 4
-    | FM111 | Ulithi | FM1 | Yap | Outer |  |  | 111 | FM | Federated States of Miconesia | 847 | 77 | 86 | 116 | 129 | 70 | 57 | 60 | 43 | 45 | 45 | 43 | 32 | 13
-    | FM112 | Fais | FM1 | Yap | Outer |  |  | 112 | FM | Federated States of Miconesia | 294 | 38 | 44 | 45 | 15 | 17 | 22 | 29 | 15 | 20 | 18 | 9 | 8 | 7
-    | FM113 | Ngulu | FM1 | Yap | Outer |  |  | 113 | FM | Federated States of Miconesia | 6 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 1
-    | FM114 | Woleai | FM1 | Yap | Outer |  |  | 114 | FM | Federated States of Miconesia | 1039 | 111 | 107 | 117 | 151 | 76 | 67 | 68 | 57 | 43 | 57 | 54 | 46 | 35
-    | FM115 | Eauripik | FM1 | Yap | Outer |  |  | 115 | FM | Federated States of Miconesia | 114 | 10 | 11 | 14 | 4 | 6 | 4 | 9 | 12 | 6 | 7 | 8 | 6 | 3
-    | FM116 | Ifalik | FM1 | Yap | Outer |  |  | 116 | FM | Federated States of Miconesia | 578 | 65 | 72 | 83 | 49 | 37 | 46 | 35 | 37 | 32 | 35 | 26 | 23 | 17
-    | FM117 | Faraulep | FM1 | Yap | Outer |  |  | 117 | FM | Federated States of Miconesia | 193 | 21 | 24 | 33 | 13 | 13 | 13 | 16 | 11 | 4 | 9 | 9 | 9 | 8
-    | FM118 | Elato | FM1 | Yap | Outer |  |  | 118 | FM | Federated States of Miconesia | 105 | 13 | 13 | 18 | 8 | 2 | 6 | 6 | 8 | 5 | 7 | 7 | 7 | 3
-    | FM119 | Lamotrek | FM1 | Yap | Outer |  |  | 119 | FM | Federated States of Miconesia | 329 | 32 | 39 | 49 | 35 | 26 | 26 | 16 | 20 | 17 | 21 | 19 | 8 | 4
-    | FM120 | Satawal | FM1 | Yap | Outer |  |  | 120 | FM | Federated States of Miconesia | 501 | 61 | 76 | 60 | 33 | 37 | 39 | 38 | 26 | 27 | 26 | 25 | 19 | 10
-    | FM201 | Weno | FM2 | Chuuk | Main | Namoneas | Northern Namoneas | 201 | FM | Federated States of Miconesia | 13850 | 1574 | 1470 | 1556 | 1941 | 1314 | 1075 | 910 | 812 | 758 | 692 | 609 | 490 | 297
-    | FM202 | PiisPenau | FM2 | Chuuk | Main | Namoneas | Northern Namoneas | 202 | FM | Federated States of Miconesia | 376 | 58 | 60 | 42 | 50 | 31 | 34 | 21 | 19 | 13 | 17 | 10 | 9 | 6
-    | FM203 | Fono | FM2 | Chuuk | Main | Namoneas | Northern Namoneas | 203 | FM | Federated States of Miconesia | 388 | 44 | 46 | 53 | 45 | 40 | 33 | 17 | 20 | 24 | 21 | 13 | 14 | 5
-    | FM204 | Tonoas | FM2 | Chuuk | Main | Namoneas | Southern Namoneas | 204 | FM | Federated States of Miconesia | 3517 | 465 | 457 | 440 | 385 | 286 | 233 | 228 | 195 | 189 | 151 | 140 | 130 | 96
-    | FM205 | Fefen | FM2 | Chuuk | Main | Namoneas | Southern Namoneas | 205 | FM | Federated States of Miconesia | 3471 | 440 | 439 | 452 | 438 | 326 | 202 | 181 | 185 | 191 | 172 | 133 | 121 | 79
-    | FM206 | Siis | FM2 | Chuuk | Main | Namoneas | Southern Namoneas | 206 | FM | Federated States of Miconesia | 349 | 43 | 39 | 54 | 46 | 30 | 20 | 14 | 23 | 10 | 18 | 8 | 12 | 9
-    | FM207 | Uman | FM2 | Chuuk | Main | Namoneas | Southern Namoneas | 207 | FM | Federated States of Miconesia | 2554 | 356 | 314 | 318 | 296 | 249 | 174 | 144 | 119 | 114 | 133 | 104 | 100 | 59
-    | FM208 | Parem | FM2 | Chuuk | Main | Namoneas | Southern Namoneas | 208 | FM | Federated States of Miconesia | 342 | 44 | 37 | 48 | 41 | 40 | 30 | 16 | 15 | 13 | 21 | 15 | 7 | 3
-    | FM209 | Eot | FM2 | Chuuk | Main | Faichuk | Nomwisofo | 209 | FM | Federated States of Miconesia | 266 | 29 | 38 | 37 | 23 | 19 | 20 | 20 | 15 | 12 | 12 | 16 | 10 | 3
-    sheet 'adm1_State': 5 rows x 52 cols
-    | adm1_Pcode | adm1Name | adm0_Pcode | adm0Name | T_Pop | T_00_04 | T_5_9 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_65_74 | T_75plus | M_Pop | M_0_4 | M_5_9 | M_10_14
-    | FM1 | Yap | FM | Federated States of Miconesia | 11377 | 1159 | 1196 | 1329 | 1178 | 823 | 805 | 786 | 669 | 701 | 697 | 689 | 524 | 326 | 294 | 201 | 5635 | 588 | 615 | 695
-    | FM2 | Chuuk | FM | Federated States of Miconesia | 48654 | 5986 | 5745 | 6065 | 5914 | 4599 | 3711 | 3130 | 2723 | 2470 | 2305 | 1950 | 1593 | 1017 | 917 | 529 | 24835 | 3029 | 2961 | 3112
-    | FM3 | Pohnpei | FM | Federated States of Miconesia | 36192 | 4098 | 4202 | 4487 | 4174 | 3368 | 2704 | 2317 | 2213 | 2074 | 1835 | 1628 | 1223 | 769 | 715 | 385 | 18367 | 2102 | 2149 | 2308
-    | FM4 | Kosrae | FM | Federated States of Miconesia | 6616 | 799 | 789 | 825 | 724 | 556 | 432 | 368 | 334 | 338 | 361 | 356 | 272 | 186 | 192 | 84 | 3352 | 406 | 408 | 419
-    sheet 'adm0_Country': 2 rows x 50 cols
-    | adm0_Pcode | adm0Name | T_Pop | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_65_74 | T_75plus | M_Pop | M_0_4 | M_5_9 | M_10_14 | M_15_19 | M_20_24
-    | FM | Federated States of Miconesia | 102839 | 12042 | 11932 | 12706 | 11990 | 9346 | 7652 | 6601 | 5939 | 5583 | 5198 | 4623 | 3612 | 2298 | 2118 | 1199 | 52189 | 6125 | 6133 | 6534 | 6238 | 4893
-    sheet 'Metadata': 66 rows x 2 cols
-    | Source: | 
-    | Federated States of Micronesia Division of Statistics,  2010 Census of Population and Housing | 
-    | http://www.fsmstatistics.fm/?page_id=254 | 
-    |  | 
-    | PopGIS 2: Secretariat of the Pacific Community, Statistics for Development Division | 
-    | http://fsm.popgis.spc.int  | 
-    |  | 
-    | Field Name | Description
-    | adm2_Pcode | Admin 2 (Municipality) place code
-    | adm2_Name | Admin 2 (Municipality) name
-    | adm1_Pcode | Admin  (State) place code
-    | adm1Name | Admin  (State) name
-    | Main_Outer | Reference field - stating whether it is part of main of outer islands/Atolls
-    | Group | Reference field - group of islands/atolls
-    | Sub_Group | Reference field - sub-group of islands/Atolls
-    | Stats_Mcode | FSM Statistics ID for Municipalities
-    | adm0_pcode | ISO Country alpha 2 code
-    | adm0_name | Country name
-    | T_Pop |  Five year age group - Total population - 2010 Census
-    | T_00_04 |  Five year age group - Total less than 5 years  - 2010 Census
-    | T_05_09 |  Five year age group - Total 5-9 years  - 2010 Census
-    | T_10_14 |  Five year age group - Total 10-14 years  - 2010 Census
-    | T_15_19 |  Five year age group - Total 15-19 years  - 2010 Census
-    | T_20_24 |  Five year age group - Total 20-24 years  - 2010 Census
-    | T_25_29 |  Five year age group - Total 25-29 years  - 2010 Census
-    | T_30_34 |  Five year age group - Total 30-34 years  - 2010 Census
-    | T_35_39 |  Five year age group - Total 35-39 years  - 2010 Census
-    | T_40_44 |  Five year age group - Total 40-44 years  - 2010 Census
-    | T_45_49 |  Five year age group - Total 45-49 years  - 2010 Census
-    | T_50_54 |  Five year age group - Total 50-54 years  - 2010 Census
-  - fsm_pplp_adm0_country_v2.csv (CSV, 668 B)
-    https://data.humdata.org/dataset/a1a30440-d7ab-4e22-8636-ef717a20be5d/resource/22dce756-90e8-4882-9285-eee9ec520139/download/fsm_pplp_adm0_country_v2.csv
-    | adm0_Pcode,adm0Name,T_TL,T_00_04,T_5_9,T_10_14,T_15_19,T_20_24,T_25_29,T_30_34,T_35_39,T_40_44,T_45_49,T_50_54,T_55_59,T_60_64,T_65_74,T_75Plus,M_TL,M_0_4,M_5_9,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_74,M_75Plus,F_TL,F_0_4,F_5_9,F_10_14,F_15_19,F
-    | FM,Federated States of Miconesia,102839,12042,11932,12706,11990,9346,7652,6601,5939,5583,5198,4623,3612,2298,2118,1199,52189,6125,6133,6534,6238,4893,3845,3405,2921,2721,2646,2301,1876,1171,926,454,50650,5917,5799,6172,5752,4453,3807,3196,3018,2862,2552,2322,1736,1127,1192,745
-    2 lines
-  - fsm_pplp_adm1_state_v2.csv (CSV, 1284 B)
-    https://data.humdata.org/dataset/a1a30440-d7ab-4e22-8636-ef717a20be5d/resource/f356155d-184d-40f1-96c1-541ce31814d4/download/fsm_pplp_adm1_state_v2.csv
-    | adm1_Pcode,adm1Name,T_TL,T_00_04,T_05_09,T_10_14,T_15_19,T_20_24,T_25_29,T_30_34,T_35_39,T_40_44,T_45_49,T_50_54,T_55_59,T_60_64,T_65_74,T_75Plus,M_TL,M_0_4,M_5_9,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_55_59,M_60_64,M_65_74,M_75Plus,F_TL,F_0_4,F_5_9,F_10_14,F_15_19
-    | FM1,Yap,11377,1159,1196,1329,1178,823,805,786,669,701,697,689,524,326,294,201,5635,588,615,695,616,408,387,375,307,326,350,323,272,180,118,75,5742,571,581,634,562,415,418,411,362,375,347,366,252,146,176,126
-    | FM2,Chuuk,48654,5986,5745,6065,5914,4599,3711,3130,2723,2470,2305,1950,1593,1017,917,529,24835,3029,2961,3112,3083,2468,1909,1687,1362,1206,1161,944,811,507,405,190,23819,2957,2784,2953,2831,2131,1802,1443,1361,1264,1144,1006,782,510,512,339
-    | FM3,Pohnpei,36192,4098,4202,4487,4174,3368,2704,2317,2213,2074,1835,1628,1223,769,715,385,18367,2102,2149,2308,2175,1716,1327,1164,1097,1033,934,858,645,386,319,154,17825,1996,2053,2179,1999,1652,1377,1153,1116,1041,901,770,578,383,396,231
-    | FM4,Kosrae,6616,799,789,825,724,556,432,368,334,338,361,356,272,186,192,84,3352,406,408,419,364,301,222,179,155,156,201,176,148,98,84,35,3264,393,381,406,360,255,210,189,179,182,160,180,124,88,108,49
-    5 lines
-  - fsm_pplp_adm2_municipality_v2.csv (CSV, 14495 B)
-    https://data.humdata.org/dataset/a1a30440-d7ab-4e22-8636-ef717a20be5d/resource/da2d7b74-14c7-4937-bdb2-a0997e6b6f11/download/fsm_pplp_adm2_municipality_v2.csv
-    | adm2_Pcode,adm2_Name,adm1_Pcode,adm1Name,Main_Outer,Region,Sub_Region,Stats_Mcode,T_TL,T_00_04,T_05_09,T_10_14,T_15_19,T_20_24,T_25_29,T_30_34,T_35_39,T_40_44,T_45_49,T_50_54,T_55_59,T_60_64,T_65_74,T_75Plus,M_TL,M_0_4,M_5_9,M_10_14,M_15_19,M_20_24,M_25_29,M_30_34,M_35_39,M_40_44,M_45_49,M_50_54,M_5
-    | FM101,Rumung,FM1,Yap,Main,,,101,58,9,4,3,4,2,3,6,4,4,3,8,1,1,3,3,32,5,3,3,2,2,2,3,1,2,2,4,0,0,1,2,26,4,1,0,2,0,1,3,3,2,1,4,1,1,2,1
-    | FM102,Maap,FM1,Yap,Main,,,102,621,55,78,71,76,43,31,38,28,51,38,40,28,17,14,13,337,33,46,36,42,26,19,21,13,26,14,26,19,8,6,2,284,22,32,35,34,17,12,17,15,25,24,14,9,9,8,11
-    | FM103,Gagil,FM1,Yap,Main,,,103,863,66,80,101,78,91,55,61,55,55,59,46,40,29,34,13,456,32,37,53,38,63,32,30,30,21,29,23,23,19,19,7,407,34,43,48,40,28,23,31,25,34,30,23,17,10,15,6
-    | FM104,Tomil,FM1,Yap,Main,,,104,1231,126,121,128,120,88,106,88,62,83,73,93,61,36,30,16,639,68,61,75,64,46,49,47,35,35,34,50,35,19,13,8,592,58,60,53,56,42,57,41,27,48,39,43,26,17,17,8
-    | FM105,Fanif,FM1,Yap,Main,,,105,509,55,49,62,51,29,28,30,25,31,39,27,30,24,19,10,257,27,26,34,32,12,11,12,10,19,20,13,15,14,7,5,252,28,23,28,19,17,17,18,15,12,19,14,15,10,12,5
-    76 lines
-  - Source_FSM_Projected_Population-Estimate-Details.xlsx (XLSX, 277843 B)
-    https://data.humdata.org/dataset/a1a30440-d7ab-4e22-8636-ef717a20be5d/resource/17e1fd46-b59e-458d-a097-f1ba232015c1/download/source_fsm_projected_population-estimate-details.xlsx
-    sheet 'adm2_State_2019_Proj': 5 rows x 44 cols
-    | adm2_pcode | adm2_name | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_65plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M_35_39
-    | FM1 | Yap | 1178 | 1211 | 1350 | 1200 | 836 | 818 | 798 | 680 | 712 | 710 | 699 | 533 | 330 | 502 | 597 | 624 | 706 | 627 | 414 | 393 | 381 | 312
-    | FM2 | Chuuk | 6093 | 5848 | 6135 | 6003 | 4678 | 3777 | 3176 | 2773 | 2510 | 2338 | 1980 | 1618 | 1028 | 1465 | 3081 | 3016 | 3142 | 3132 | 2515 | 1940 | 1712 | 1390
-    | FM3 | Pohnpei | 4180 | 4268 | 4561 | 4239 | 3430 | 2735 | 2346 | 2248 | 2107 | 1859 | 1657 | 1241 | 781 | 1115 | 2147 | 2182 | 2346 | 2208 | 1748 | 1345 | 1176 | 1114
-    | FM4 | Kosrae | 813 | 800 | 839 | 735 | 565 | 440 | 374 | 340 | 342 | 366 | 362 | 276 | 189 | 279 | 413 | 413 | 426 | 370 | 306 | 226 | 182 | 158
-    sheet 'Original': 411 rows x 49 cols
-    | POPULATION ESTIMATES1 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-    |  |  | 2010 |  |  | 2011 |  |  | 2012 |  |  | 2013 |  |  | 2014 |  |  | 2015 |  |  | 2016 |  |  | 2017
-    | Sex/Age | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male
-    |      Total | 102843 | 52193 | 50650 | 103022.1974889017 | 52283.94303490024 | 50738.25445400145 | 103201.70721820893 | 52375.04453234521 | 50826.66268586372 | 103382 | 52466.54343027721 | 50915.45656972278 | 103562.136662657 | 52557.96309747922 | 51004.17356517776 | 103742.58720217102 | 52649.542057727915 | 51093.045144443095 | 103923.35216545286 | 52741.28058858144 | 51182.07157687142 | 104104.43
-    | 0 to 4 | 12073 | 6142 | 5931 | 12094.036446656652 | 6152.702050473383 | 5941.334396183269 | 12115.109548004593 | 6163.422748599703 | 5951.686799404891 | 12136.274573865016 | 6174.190212265296 | 5962.084361599719 | 12157.421272505253 | 6184.948352168249 | 5972.472920337004 | 12178.60481794396 | 6195.725237456457 | 5982.879580487503 | 12199.825274384373 | 6206.5209007925805 | 5993.304373591793 | 122
-    | 0 | 2511 | 1299 | 1212 | 2515.375260296103 | 1301.2634261746866 | 1214.1118341214167 | 2519.758144209354 | 1303.5307962277782 | 1216.2273479815763 | 2524.160147020215 | 1305.8080569411625 | 1218.3520900790525 | 2528.5583380485955 | 1308.0833457288431 | 1220.4749923197523 | 2532.9641926494896 | 1310.3625990647895 | 1222.6015935847 | 2537.377724176192 | 1312.6458238569785 | 1224.7319003192135 | 2541
-    | 1 | 2417 | 1239 | 1178 | 2421.211471181076 | 1241.158879931052 | 1180.0525912500239 | 2425.430280587021 | 1243.321521575225 | 1182.108759011796 | 2429.6674931691996 | 1245.493597036259 | 1184.1738961329406 | 2433.9010366640605 | 1247.6637916536079 | 1186.2372450104524 | 2438.1419568434153 | 1249.8377676992102 | 1188.304189144205 | 2442.3902665606756 | 1252.0155317619678 | 1190.3747347987075 | 2446
-    | 2 | 2371 | 1230 | 1141 | 2375.131319060956 | 1232.1431979945069 | 1142.9881210664491 | 2379.26983668673 | 1234.290130377342 | 1144.9797063093881 | 2383.4264072421065 | 1236.4464280505233 | 1146.9799791915832 | 2387.579378539713 | 1238.6008585423226 | 1148.9785199973905 | 2391.7395861298046 | 1240.7590429943734 | 1150.9805431354312 | 2395.9070426211674 | 1242.9209879477164 | 1152.986054673451 | 240
-    | 3 | 2297 | 1139 | 1158 | 2301.002378693807 | 1140.9846361916611 | 1160.0177425021457 | 2305.0117312819143 | 1142.972730487636 | 1162.0390007942783 | 2309.038573359392 | 1144.9694971947529 | 1164.0690761646392 | 2313.06192851359 | 1146.964534861549 | 1166.0973936520406 | 2317.092294112257 | 1148.9630487565782 | 1168.1292453556787 | 2321.1296823706543 | 1150.9650449369503 | 1170.164637433704 | 2325.
-    | 4 | 2477 | 1235 | 1242 | 2481.3160174247105 | 1237.1519101814765 | 1244.164107243234 | 2485.6395552395743 | 1239.3075699317214 | 1246.3319853078528 | 2489.9819530741033 | 1241.4726330425988 | 1248.5093200315043 | 2494.3205907392958 | 1243.6358213819256 | 1250.68476935737 | 2498.6667882089946 | 1245.802778941505 | 1252.8640092674896 | 2503.020558655686 | 1247.9735122889672 | 1255.0470463667189 | 25
-    | 5 to 9 | 11939 | 6138 | 5801 | 11959.802960045869 | 6148.695080723808 | 5811.107879322061 | 11980.642167947224 | 6159.4087969562 | 5821.233370991026 | 12001.572280077398 | 6170.169248271637 | 5831.403031805762 | 12022.484268403896 | 6180.920381896567 | 5841.56388650733 | 12043.432694560835 | 6191.690248698752 | 5851.7424458620835 | 12064.417622038854 | 6202.478881319581 | 5861.938740719273 | 12085
-    | 5 | 2385 | 1228 | 1157 | 2389.1557131844706 | 1230.139713119719 | 1159.0160000647518 | 2393.3186674389926 | 1232.2831545555903 | 1161.0355128834026 | 2397.4997812199176 | 1234.4359460536932 | 1163.0638351662244 | 2401.6772744906016 | 1236.5868734064813 | 1165.0904010841202 | 2405.862046781773 | 1238.7415486155205 | 1167.1204981662527 | 2410.0541107766703 | 1240.8999782112157 | 1169.1541325654543 |
-    | 6 | 2401 | 1210 | 1191 | 2405.1835921827733 | 1212.108349246629 | 1193.0752429361446 | 2409.374474013007 | 1214.2203721598244 | 1195.1541018531825 | 2413.583637194559 | 1216.3416080822224 | 1197.2420291123362 | 2417.7891555773313 | 1218.461007183911 | 1199.32814839342 | 2422.0020018125942 | 1220.5840992058472 | 1201.4179026067472 | 2426.222188668673 | 1222.710890582713 | 1203.5112980859599 | 2430.
-    | 7 | 2375 | 1208 | 1167 | 2379.138288810532 | 1210.104864371841 | 1169.0334244386906 | 2383.2837883302336 | 1212.2133963380725 | 1171.0703919921611 | 2387.447371235767 | 1214.3311260853923 | 1173.1162451503749 | 2391.607348811396 | 1216.44702204807 | 1175.1603267633259 | 2395.7745748875104 | 1218.5666048269948 | 1177.2079700605157 | 2399.9490620941688 | 1220.6898808462129 | 1179.2591812479557 | 240
-    | 8 | 2250 | 1168 | 1082 | 2253.920484136293 | 1170.0351668760845 | 1083.8853172602085 | 2257.8477994707473 | 1172.0738799030369 | 1085.7739195677107 | 2261.7922464338844 | 1174.1214861487897 | 1087.6707602850947 | 2265.733277821322 | 1176.1673193312463 | 1089.565958490076 | 2269.68117620922 | 1178.2167172499417 | 1091.4644589592783 | 2273.6359535628962 | 1180.2696861162055 | 1093.3662674466907 | 22
-    | 9 | 2528 | 1324 | 1204 | 2532.4048817318 | 1326.3069871095342 | 1206.0978946222654 | 2536.8174386942446 | 1328.6179939996755 | 1208.199444694569 | 2541.249243993271 | 1330.939081901539 | 1210.310162091732 | 2545.677211703246 | 1333.258159926858 | 1212.4190517763877 | 2550.112894869737 | 1335.5812788004475 | 1214.5316160692896 | 2554.5563069364453 | 1337.908445563233 | 1216.6478613732124 | 2559.007
-    | 10 to 14 | 12685 | 6517 | 6168 | 12707.102818341724 | 6528.355464496099 | 6178.747353845625 | 12729.244149460637 | 6539.730715178161 | 6189.513434282477 | 12751.482064895034 | 6551.155586670944 | 6200.326478224089 | 12773.700724072654 | 6562.570565138469 | 6211.130158934186 | 12795.958097872868 | 6574.005433491326 | 6221.9526643815425 | 12818.254253753483 | 6585.460226386395 | 6232.794027367087 | 
-    | 10 | 2514 | 1321 | 1193 | 2518.380487608285 | 1323.3017597973526 | 1195.0787278109324 | 2522.768607941982 | 1325.6075302670479 | 1197.1610776749342 | 2527.17587001546 | 1327.9233589062937 | 1199.2525111091663 | 2531.579315752357 | 1330.237182223096 | 1201.3421335292612 | 2535.9904342177683 | 1332.5550372321684 | 1203.4353969856 | 2540.4092387809424 | 1334.8769309584823 | 1205.5323078224603 | 2544.
-    | 11 | 2582 | 1302 | 1280 | 2586.4989733510706 | 1304.2686534868683 | 1282.2303198642023 | 2591.005785881542 | 1306.5412599604058 | 1284.4645259211366 | 2595.532257907684 | 1308.8237799364076 | 1286.7084779712766 | 2600.054810370957 | 1311.1043234326048 | 1288.9504869383522 | 2604.585243098758 | 1313.3888406330682 | 1291.1964024656897 | 2609.1235698219543 | 1315.6773384617288 | 1293.4462313602255 | 
-    | 12 | 2615 | 1306 | 1309 | 2619.5564737850696 | 1308.2756232364438 | 1311.2808505486257 | 2624.120886940447 | 1310.5552116039094 | 1313.5656753365372 | 2628.7052108553817 | 1312.844743930068 | 1315.8604669253134 | 2633.285565112337 | 1315.1322937042873 | 1318.1532714080495 | 2637.8739003498267 | 1317.4238293907738 | 1320.4500709590532 | 2642.4702304742104 | 1319.7193579347297 | 1322.7508725394807 |
-    | 13 | 2420 | 1250 | 1170 | 2424.216698493258 | 1252.178046742385 | 1172.0386517508725 | 2428.4407443196487 | 1254.3598885948597 | 1174.080855724789 | 2432.6832161644447 | 1256.5512480188247 | 1176.13196814562 | 2436.922014367822 | 1258.7407099007346 | 1178.1813044670878 | 2441.168198411695 | 1260.9339867829 | 1180.2342116287946 | 2445.421781165426 | 1263.1310853127202 | 1182.2906958527062 | 2449.68
-    | 14 | 2554 | 1338 | 1216 | 2558.450185104041 | 1340.3313812330491 | 1218.1188038709922 | 2562.908124377017 | 1342.666824751938 | 1220.2412996250796 | 2567.3855099520624 | 1345.01245587935 | 1222.3730540727126 | 2571.8590184691807 | 1347.3560558777463 | 1224.5029625914344 | 2576.3403217948207 | 1349.7037394524161 | 1226.6365823424048 | 2580.8294335109495 | 1352.0555137187357 | 1228.7739197922137 | 2
-    | 15 to 19 | 11988 | 6238 | 5750 | 12008.88833947817 | 6248.869324463199 | 5760.019015014972 | 12029.813075580143 | 6259.757588043788 | 5770.055487536356 | 12050.829088999737 | 6270.693348113143 | 5780.135740886594 | 12071.826904232004 | 6281.619638688625 | 5790.207265543379 | 12092.861306842724 | 6292.564967641383 | 5800.296339201341 | 12113.93236058311 | 6303.529368144597 | 5810.402992438513 | 121
-    | 15 | 2509 | 1309 | 1200 | 2513.3717754213153 | 1311.2808505486255 | 1202.0909248726898 | 2517.7511683876023 | 1313.565675336537 | 1204.1854930510656 | 2522.149665023385 | 1315.8604669253132 | 1206.289198098072 | 2526.544352912754 | 1318.153271408049 | 1208.3910815047054 | 2530.946698270637 | 1320.4500709590527 | 1210.4966273115842 | 2535.356714439692 | 1322.7508725394803 | 1212.6058419002115 | 253
-    | 16 | 2451 | 1270 | 1181 | 2455.2707140524685 | 1272.2128954902632 | 1183.0578185622053 | 2459.5488695568006 | 1274.4296468123775 | 1185.1192227444233 | 2463.845687115311 | 1276.6560679871257 | 1187.1896191281855 | 2468.1387839733598 | 1278.880561259146 | 1189.2582227142138 | 2472.4393612839094 | 1281.1089305714258 | 1191.3304307124836 | 2476.7474320811807 | 1283.341182677723 | 1193.4062494034577 |
-    | 17 | 2487 | 1274 | 1213 | 2491.3334417986493 | 1276.2198652398388 | 1215.1135765588106 | 2495.674434348333 | 1278.4435984558809 | 1217.230835892452 | 2500.034363058254 | 1280.677031980786 | 1219.3573310774677 | 2504.3905164185016 | 1282.9085315308284 | 1221.481984887673 | 2508.754260103258 | 1285.1439193291314 | 1223.6103407741264 | 2513.125607338188 | 1287.383202150724 | 1225.7424051874639 | 2517
-    | 18 | 2354 | 1227 | 1127 | 2358.1016976252595 | 1229.1379706823252 | 1128.9637269429345 | 2362.21054220184 | 1231.2796666447143 | 1130.9308755571258 | 2366.3373102690507 | 1233.4307050552782 | 1132.9066052137725 | 2370.4605048850635 | 1235.5798808385607 | 1134.8806240465026 | 2374.5908839095573 | 1237.7328014260943 | 1136.858082483463 | 2378.7284598609144 | 1239.8894733429656 | 1138.8389865179488 |
-    | 19 | 2187 | 1158 | 1029 | 2190.810710580477 | 1160.0177425021454 | 1030.7929680783313 | 2194.6280610855665 | 1162.0390007942779 | 1032.5890602912884 | 2198.4620635337355 | 1164.069076164639 | 1034.3929873690965 | 2202.2927460423252 | 1166.0973936520402 | 1036.1953523902848 | 2206.1301032753618 | 1168.1292453556782 | 1038.0008579196835 | 2209.974146863135 | 1170.1646374337035 | 1039.8095094294315 |
-    | 20 to 24 | 9361 | 4906 | 4455 | 9377.310956444373 | 4914.548397854513 | 4462.76255858986 | 9393.650333709185 | 4923.111690757105 | 4470.53864295208 | 9410.060986163375 | 4931.712338224283 | 4478.348647939091 | 9426.45742830462 | 4940.305538218402 | 4486.151890086218 | 9442.88244021978 | 4948.913711325525 | 4493.968728894256 | 9459.336071689897 | 4957.536883635363 | 4501.799188054535 | 9475.8183725
-    | 20 | 2170 | 1145 | 1025 | 2173.7810891447807 | 1146.9950908160247 | 1026.7859983287558 | 2177.568766600677 | 1148.9936579528915 | 1028.575108647785 | 2181.3729665606797 | 1151.0009431852434 | 1030.3720233754364 | 2185.173872387675 | 1153.0064902690729 | 1032.1673821186025 | 2188.9814010551145 | 1155.0155318931363 | 1033.9658691619782 | 2192.795564102882 | 1157.0280741464514 | 1035.7674899564306 | 
-    sheet 'Source': 3 rows x 11 cols
-    |  | FSM Statistics |  |  |  |  |  |  |  |  | 
-    |  | http://www.fsmstatistics.fm/?page_id=254 |  |  |  |  |  |  |  |  | 
-    |  | http://www.fsmstatistics.fm/wp-content/uploads/2019/02/Population-Estimate-Details.xlsx  |  |  |  |  |  |  |  |  | 
-  - fsm_adm_gazeteer.xls (XLSX, 44544 B)
-    https://data.humdata.org/dataset/a1a30440-d7ab-4e22-8636-ef717a20be5d/resource/e8573590-7e94-40f0-b985-2f3a2baa6608/download/fsm_adm_gazeteer.xls
+== https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2.xlsx
+  HTTP 200 application/octet-stream 1,310,798 bytes
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: NOTES!$A:$AB.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  -- 'CONTENT'
+       2: 1 |  | Table 1: Total population by place of usual residence and se
+       3: 1a |  | Table 1a. Total population by place of enumeration by island
+       4: 2 |  | Table 2: Total population by village of usual residence and 
+       5: 2a |  | Table 2a: Total population by village of island of usual res
+       6: 3 |  | Table 3: Total population by single years of age and sex
+       7: 4 |  | Table 4: Resident population by single years of age and sex
+       8: 5 |  | Table 5: Total population by place of enumeration, five-year
+       9: 6 |  | Table 6: Resident population by place of residence, five-yea
+      10: 7,8 |  | Table 7: Non-resident population by country of usual residen
+      11: 7,8 |  | Table 8: Non-resident population by nationality and five-yea
+      12: 9 |  | Table 9: Resident population by island of birth, five-year a
+      13: 10 |  | Table 10: Resident population 3 years and older by place of 
+      14: 11 |  | Table 11: Resident population by home island, five-year age 
+      15: 12 |  | Table 12: Resident population by place of birth, five-year a
+      16: 13 |  | Table 13: Resident population by ethnicity, place of residen
+      17: 14 |  | Table 14: Resident population by religious denomination, pla
+      18: 15 |  | Table 15: Marital status for resident population aged 15 yea
+      19: 16 |  | Table 16:  Biological mother whether still alive for residen
+      20: 17 |  | Table 17: Mother living in the household among resident popu
+      21: 18 |  | Table 18: Biological father whether still alive for resident
+      22: 19 |  | Table 19: Biological father still alive of resident populati
+      23: 20 |  | Table 20: Current school attendance for resident population 
+      24: 21 |  | Table 21: Current level of school attendance for resident po
+      25: 22 |  | Table 22: Highest educational level completed among resident
+      26: 23 |  | Table 23: School attendance for resident population aged 3-2
+      27: 24 |  | Table 24:  Highest education qualification completed since l
+      28: 25 |  | Table 25: Smoking habits for resident population 15 years an
+      29: 26 |  | Table 26:  Alcohol habits for resident population 15 years a
+      30: 27 |  | Table 27: Kava habits for resident population 15 years and o
+      31: 28 |  | Table 28: Disability domain status of resident population 5 
+      32: 29 |  | Table 29: Disability cut-off status of resident population 5
+      33: 30 |  | Table 30: Main caretaker for the disabled among the resident
+      34: 31 |  | Table 31: Source of assistance received among the disabled r
+      35: 32 |  | Table 32: Resident population aged 6 years and older who hav
+      36: 33 |  | Table 33: Resident population aged 6 years and older who hav
+      37: 34 |  | Table 34: Resident population aged 6 years and older who hav
+      38: 35 |  | Table 35: Main occupational activity the week before the cen
+      39: 36 |  | Table 36: Occupations of resident population 15 years and ol
+      40: 37 |  | Table 37: Occupations by highest education qualification of 
+      41: 38 |  | Table 38: Resident population 15 years and over by 5-year ag
+      42: 39 |  | Table 39: Resident population 15 years and over by highest e
+      43: 40 |  | Table 40: Persons actively looking for work the week before 
+      44: 41 |  | Table 41: Reason for not looking for work for resident popul
+      45: 42 |  | Table 42: Willingness and availability to start work the wee
+      46: 43 |  | Table 43: Persons actively looking for work the week before 
+      47: 44 |  | Table 44: Reason for not looking for work for the resident p
+      48: 45 |  | Table 45: Willingness and availability to start work the wee
+      49: 46 |  | Table 46: Total number of children born by age of resident c
+      50: 47a |  | Table 47a: Total number of resident child-bearing women by a
+      51: 47b |  | Table 47b: Total number of male children ever born by age of
+      52: 48a |  | Table 48a: Total number of resident child-bearing women by a
+      53: 48b |  | Table 48b: Total number of female children ever born by age 
+      54: 49a |  | Table 49a: Total number of resident child-bearing women by a
+      55: 49b |  | Table 49b: Total number of children ever born by age of resi
+      56: 50 |  | Table 50: Total number of children surviving by age of resid
+      57: 51 |  | Table 51: Total number of male children surviving by age of 
+      58: 52 |  | Table 52: Total number of female children surviving by age o
+      59: 53 |  | Table 53: Total number of children not alive by age of resid
+      60: 54 |  | Table 54: Total number of male children not alive by age of 
+      61: 55 |  | Table 55: Total number of female children not alive by age o
+      62: 56 |  | Table 56: Total population by relationship, place of enumera
+      63: H1 |  | Table H1: Number of Private Households by Island by Type of 
+      64: H2 |  | Table H2: Number of Private Households by Island and Source 
+      65: H3 |  | Table H3: Number of Private Households by Island and Type of
+      66: H4 |  | Table H4: Number of Private Households by Island and Source 
+      67: H5 |  | Table H5: Number of Private Households by Island and Solid W
+      68: H6 |  | Table H6: Number of Private Households by Damaged Electrical
+      69: H7 |  | Table H7: Number of Private Households who grows or Harvest 
+      70: H8 |  | Table H8: Number of Private Households who grows or Harvest 
+      71: H9 |  | Table H9: Number of Private Households who collects Toddy an
+      72: H10 |  | Table H10: Number of Private Households with livestocks by I
+      73: H11 |  | Table H11: Number of Animals Owned by Private Households and
+      74: H12 |  | Table H12: Number of Private Households Buying and Selling F
+      75: H13 |  | Table H13: Number of Private Households Buying and Selling F
+      76: H14 |  | Table H14: Number of Private Households Involved in Handicra
+      77: H15 |  | Table H15: Number of Private Households Involved in Handicra
+      78: H16 |  | Table H16: Number of Private Households that have Access to 
+      79: H17 |  | Table H17: Number of Private Households by Frequency of Inco
+      80: H18 |  | Table H18: Number of Private Households Affected by Natural 
+      81: H19 |  | Table H19: Number of Private Households Members Who Have Pas
+      82: H20 |  | Table H20: Number of Private Households Members Who Were Liv
+  -- '13'
+       1: Table 13: Resident population by ethnicity, place of residen
+       3:  | Total |  |  | Tuvaluan |  |  | Tuvaluan / I-Kiribati |  |  | Tuvaluan / Other |  |  | Other
+       5:     Tuvalu
+       6: Total | 10507 | 5403 | 5104 | 10193 | 5254 | 4939 | 166 | 69 | 97 | 83 | 45 | 38 | 65 | 35 | 30
+      24:     Nanumea
+      25: Total | 512 | 263 | 249 | 504 | 260 | 244 | 4 | 1 | 3 | 4 | 2 | 2 | - | - | -
+      44: Total | 491 | 263 | 228 | 484 | 260 | 224 | 3 | 1 | 2 | 2 | - | 2 | 2 | 2 | -
+      63: Total | 582 | 282 | 300 | 570 | 275 | 295 | 6 | 2 | 4 | 5 | 4 | 1 | 1 | 1 | -
+      81:     Nui
+      82: Total | 610 | 302 | 308 | 552 | 270 | 282 | 46 | 26 | 20 | 7 | 5 | 2 | 5 | 1 | 4
+     100:     Vaitupu
+     101: Total | 1061 | 525 | 536 | 1044 | 516 | 528 | 9 | 3 | 6 | 5 | 3 | 2 | 3 | 3 | -
+     119:     Nukufetau
+     120: Total | 597 | 296 | 301 | 576 | 285 | 291 | 9 | 3 | 6 | 5 | 3 | 2 | 7 | 5 | 2
+     138:     Funafuti
+     139: Total | 6320 | 3307 | 3013 | 6146 | 3232 | 2914 | 80 | 30 | 50 | 53 | 26 | 27 | 41 | 19 | 22
+     158: Total | 300 | 142 | 158 | 286 | 136 | 150 | 9 | 3 | 6 | - | - | - | 5 | 3 | 2
+     177: Total | 34 | 23 | 11 | 31 | 20 | 11 | - | - | - | 2 | 2 | - | 1 | 1 | -
+  -- '14'
+       1: Table 14: Resident population by religious denomination, pla
+       3:  | Total |  |  | EKT |  |  | SDA |  |  | Jehovah's Witness |  |  | Bahaii |  |  | Brethren |  |  | AOG |  |  | Catholic |  |  | LDS |  |  | Other |  |  | None |  |  | Refused
+       5:     Tuvalu
+       6: Total | 10507 | 5403 | 5104 | 9023 | 4660 | 4363 | 266 | 126 | 140 | 155 | 79 | 76 | 157 | 86 | 71 | 296 | 146 | 150 | 155 | 79 | 76 | 53 | 28 | 25 | 92 | 44 | 48 | 270 | 132 | 138 | 26 | 15 | 11 | 14 | 8 | 6
+      24:     Nanumea
+      25: Total | 512 | 263 | 249 | 455 | 233 | 222 | 2 | - | 2 | - | - | - | 20 | 14 | 6 | 8 | 4 | 4 | 1 | - | 1 | - | - | - | 1 | - | 1 | 25 | 12 | 13 | - | - | - | - | - | -
+      44: Total | 491 | 263 | 228 | 454 | 249 | 205 | 6 | 2 | 4 | 10 | 2 | 8 | 2 | 2 | - | 12 | 4 | 8 | 1 | - | 1 | 1 | - | 1 | 2 | 1 | 1 | 3 | 3 | - | - | - | - | - | - | -
+      63: Total | 582 | 282 | 300 | 492 | 241 | 251 | 33 | 12 | 21 | - | - | - | 13 | 6 | 7 | 35 | 16 | 19 | 6 | 6 | - | - | - | - | 2 | 1 | 1 | 1 | - | 1 | - | - | - | - | - | -
+      81:     Nui
+      82: Total | 610 | 302 | 308 | 603 | 297 | 306 | 3 | 2 | 1 | - | - | - | 2 | 1 | 1 | 1 | 1 | - | 1 | 1 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | -
+     100:     Vaitupu
+     101: Total | 1061 | 525 | 536 | 1019 | 500 | 519 | 1 | 1 | - | 12 | 7 | 5 | 2 | 2 | - | 1 | - | 1 | 4 | 2 | 2 | 13 | 8 | 5 | 2 | - | 2 | 7 | 5 | 2 | - | - | - | - | - | -
+     119:     Nukufetau
+     120: Total | 597 | 296 | 301 | 559 | 277 | 282 | 1 | - | 1 | 5 | 4 | 1 | 19 | 8 | 11 | 1 | 1 | - | 4 | 2 | 2 | - | - | - | 1 | 1 | - | 5 | 3 | 2 | 1 | - | 1 | 1 | - | 1
+     138:     Funafuti
+     139: Total | 6320 | 3307 | 3013 | 5108 | 2698 | 2410 | 219 | 109 | 110 | 128 | 66 | 62 | 99 | 53 | 46 | 238 | 120 | 118 | 138 | 68 | 70 | 39 | 20 | 19 | 84 | 41 | 43 | 229 | 109 | 120 | 25 | 15 | 10 | 13 | 8 | 5
+     158: Total | 300 | 142 | 158 | 299 | 142 | 157 | 1 | - | 1 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | -
+     177: Total | 34 | 23 | 11 | 34 | 23 | 11 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | -
