@@ -1,36 +1,4 @@
-kyrgyzstan_census: Chuy: https://www.stat.gov.kg/media/publicationarchive/390cc065-9ead-4ac7-9f6f-2ddfa38a8cbe.pdf
-  Chuy азербайджанцы: men and women 140 + 128 do not make 288 as printed
-  Chuy другие: men and women 82 + 115 do not make 177 as printed
-  Chuy г.токмок Пакистанцы и Индийцы: table 3.4 has 198, table 3.2 197
-  9 units: г.токмок, аламудунский район, жайылский район, кеминский район, московский район, панфиловский район, сокулукский район, чуйский район, ысык-атинский район; single years read
-kyrgyzstan_census: Bishkek: https://www.stat.gov.kg/media/publicationarchive/2a645aed-5154-4518-b114-dc97239a3a83.pdf
-  Bishkek г.бишкек дунгане: table 3.4 has 2,779, table 3.2 1,784
-  1 units: г.бишкек; single years read
-kyrgyzstan_census: Osh: https://www.stat.gov.kg/media/publicationarchive/f76c9a54-0edf-4cfd-91df-8d01379a128b.pdf
-  Osh ноокатский район: the printed groups make 314,877 of 315,011; the 134 left are counted as other
-  Osh узгенский район: the printed groups make 286,853 of 287,109; the 256 left are counted as other
-  7 units: алайский район, араванский район, кара-кулжинский район, кара-сууский район, ноокатский район, узгенский район, чон-алайский район; single years read
-kyrgyzstan_census: Osh city: https://www.stat.gov.kg/media/publicationarchive/6d075a2f-51ec-4cec-bf59-455c631ce39b.pdf
-  1 units: г.ош; single years read
-kyrgyzstan_census: Batken: https://www.stat.gov.kg/media/publicationarchive/dfe4b339-3f9c-4bb7-887e-96e55e15dde0.pdf
-  kyrgyzstan_census: Batken all ages: 0 readings of '382 426 191 430 190 996 428 636 218 086 210 550 561 443 283 322 278 121 131 627 64 751 66 876 429 816 218 571 211 245'
-kyrgyzstan_census: Jalal-Abad: https://www.stat.gov.kg/media/publicationarchive/ad52f290-cb14-4ff1-9179-d0ad0f38b09d.pdf
-  12 units: г.жалал-абад, г.кара-куль, г.майлуу-суу, г.таш-кумыр, аксыйский район, ала-букинский район, базар-коргонский район, ноокенский район, сузакский район, тогуз-тороуский район, токтогульский район, чаткальский район; single years read
-kyrgyzstan_census: Issyk-Kul: https://www.stat.gov.kg/media/publicationarchive/8b892242-eaa9-446d-94b2-7ba7aadcb340.pdf
-  Issyk-Kul узбеки: men and women 110 + 125 do not make 317 as printed
-  Issyk-Kul другие: men and women 376 + 291 do not make 585 as printed
-  Issyk-Kul узбеки: men and women 7 + 29 do not make 59 as printed
-  Issyk-Kul другие: men and women 196 + 204 do not make 377 as printed
-  kyrgyzstan_census: Issyk-Kul г.балыкчы: age groups make (53412, 26145, 27267) against (51487, 25167, 26320)
-kyrgyzstan_census: Naryn: https://www.stat.gov.kg/media/publicationarchive/e790d125-ecd1-471e-b31b-0eb9dc7c4894.pdf
-  Naryn нарынская область: 15-19 holds the 15-year-olds again; 16-19 is 21,915
-  Naryn г.нарын: 15-19 holds the 15-year-olds again; 16-19 is 2,808
-  Naryn ак-талинский район: 15-19 holds the 15-year-olds again; 16-19 is 2,480
-  Naryn ат-башынский район: 15-19 holds the 15-year-olds again; 16-19 is 4,348
-  Naryn жумгальский район: 15-19 holds the 15-year-olds again; 16-19 is 3,625
-  Naryn кочкорский район: 15-19 holds the 15-year-olds again; 16-19 is 4,798
-  Naryn нарынский район: 15-19 holds the 15-year-olds again; 16-19 is 3,856
-  kyrgyzstan_census: Naryn нарынская область: 0 readings of '306 573 305 677 700 41 11 2 144' in table 3.4
-kyrgyzstan_census: Talas: https://www.stat.gov.kg/media/publicationarchive/d79c0e75-073d-4a50-92fe-3c735b1a2dfc.pdf
-  5 units: г.талас, бакай-атинский район, айтматовский район, манасский район, таласский район; single years read
-kyrgyzstan_census: kyrgyzstan_census: Batken all ages: 0 readings of '382 426 191 430 190 996 428 636 218 086 210 550 561 443 283 322 278 121 131 627 64 751 66 876 429 816 218 571 211 245' | kyrgyzstan_census: Issyk-Kul г.балыкчы: age groups make (53412, 26145, 27267) against (51487, 25167, 26320) | kyrgyzstan_census: Naryn нарынская область: 0 readings of '306 573 305 677 700 41 11 2 144' in table 3.4
+  retry 1/2 after 2s :: https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml :: <urlopen error [Errno 110] Connection timed out>
+  retry 2/2 after 4s :: https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml :: <urlopen error [Errno 110] Connection timed out>
+== page https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml
+  failed: RuntimeError('GET failed after 2 retries: https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml')
