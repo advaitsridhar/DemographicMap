@@ -42,6 +42,12 @@ class Rows(unittest.TestCase):
         self.assertEqual(ages["provinces"]["01"][0], 30775)
         self.assertEqual(ages["wards"], {})
 
+    def test_wards_on_the_next_page_stay_in_the_last_province(self):
+        page2 = ("10\nP2.2: Total population by sex ... by ward, Solomon Islands: 2019 (cont'd.)\n"
+                 "02 Mbumburu 5,806 2,936 2,870 870 3\n")
+        got = sc.read_table([P22.split("P3.1")[0], page2], "P2.2")
+        self.assertEqual(got["wards"][("10", "02")][0], "Mbumburu")
+
     def test_a_ward_printed_twice_differently_stops_the_run(self):
         page = P22 + "P2.2: (cont'd.)\nChoiseul 30,775 15,863 14,912 5,520 57\n" \
                      "02 Katupika 2,318 1,200 1,118 456 8\n"

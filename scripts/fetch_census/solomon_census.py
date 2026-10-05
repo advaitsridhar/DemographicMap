@@ -118,9 +118,9 @@ def read_table(pages: list[str], table: str) -> dict[str, Any]:
 
     A row is a ward's two-digit number and name, or a province's name (with
     its code or without), then the table's figures. Rows are filed under the
-    province row that last preceded them, and under the table title that
-    last preceded them, so a page's leftover text from a neighbouring table
-    is not read as this one's.
+    province row that last preceded them -- on an earlier page if the table
+    runs on -- and under the table title that last preceded them, so a page's
+    leftover text from a neighbouring table is not read as this one's.
     """
     width = WIDTHS[table]
     out: dict[str, Any] = {"national": None, "provinces": {}, "wards": {}}
@@ -132,13 +132,16 @@ def read_table(pages: list[str], table: str) -> dict[str, Any]:
         else:
             bucket[key] = value
 
+    current = province = None
     for page in pages:
-        current = None
-        province = None
         for raw in page.splitlines():
             line = " ".join(raw.split())
             titles = TITLE.findall(line)
             if titles:
+                # A table's pages each repeat its title, and its wards run on
+                # from the last page's province; a new table starts afresh.
+                if titles[-1] != current:
+                    province = None
                 current = titles[-1]
                 continue
             if current != table:
@@ -168,8 +171,9 @@ def read_population(pages: list[str]) -> dict[str, Any]:
           f"solomon_census: P2.2 reads the country as {table['national']}")
     check(sorted(table["provinces"]) == sorted(PROVINCES),
           f"solomon_census: P2.2 has provinces {sorted(table['provinces'])}")
+    counts = {PROVINCES[c]: sum(1 for p, _ in table["wards"] if p == c) for c in PROVINCES}
     check(len(table["wards"]) == WARD_COUNT,
-          f"solomon_census: P2.2 has {len(table['wards'])} wards, not {WARD_COUNT}")
+          f"solomon_census: P2.2 has {len(table['wards'])} wards, not {WARD_COUNT}: {counts}")
     for rows in (table["provinces"].values(),
                  (v for _, v in table["wards"].values())):
         for values in rows:
