@@ -1,53 +1,36 @@
-== https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2.xlsx
-  HTTP 200 application/octet-stream 1,310,798 bytes
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: NOTES!$A:$AB.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  -- '2'
-       1: Table 2: Total populatio
-       2: Island by Village | Usual place of residence
-       3:  | Total |  |  | Tuvalu |  |  | Other country
-       4:  | T | M | F | T | M | F | T | M | F
-       5: Total | 10645 | 5486 | 5159 | 10507 | 5403 | 5104 | 138 | 83 | 55
-       6: Nanumea | 507 | 263 | 244 | 495 | 259 | 236 | 12 | 4 | 8
-       7:        Hauma | 66 | 32 | 34 | 66 | 32 | 34 | - | - | -
-       8:        Lolua | 178 | 91 | 87 | 169 | 88 | 81 | 9 | 3 | 6
-       9:        Haumaefa | 176 | 92 | 84 | 174 | 91 | 83 | 2 | 1 | 1
-      10:        Vao | 24 | 14 | 10 | 24 | 14 | 10 | - | - | -
-      11:        Matagi | 11 | 6 | 5 | 11 | 6 | 5 | - | - | -
-      12:        Mataluafata | 51 | 27 | 24 | 50 | 27 | 23 | 1 | - | 1
-      13:        Lakena | 1 | 1 | - | 1 | 1 | - | - | - | -
-      14: Nanumaga | 385 | 216 | 169 | 384 | 216 | 168 | 1 | - | 1
-      15:        Tonga | 198 | 117 | 81 | 198 | 117 | 81 | - | - | -
-      16:        Tokelau | 187 | 99 | 88 | 186 | 99 | 87 | 1 | - | 1
-      17: Niutao | 501 | 239 | 262 | 499 | 238 | 261 | 2 | 1 | 1
-      18:        Kulia | 306 | 147 | 159 | 304 | 146 | 158 | 2 | 1 | 1
-      19:        Teava | 195 | 92 | 103 | 195 | 92 | 103 | - | - | -
-      20: Nui | 501 | 250 | 251 | 494 | 246 | 248 | 7 | 4 | 3
-      21:        Manutalake | 209 | 109 | 100 | 204 | 106 | 98 | 5 | 3 | 2
-      22:        Alamoni | 292 | 141 | 151 | 290 | 140 | 150 | 2 | 1 | 1
-      23: Vaitupu | 1195 | 572 | 623 | 1190 | 568 | 622 | 5 | 4 | 1
-      24:        Asau | 173 | 85 | 88 | 173 | 85 | 88 | - | - | -
-      25:        Tumaseu | 261 | 133 | 128 | 261 | 133 | 128 | - | - | -
-      26:        Potufale | 181 | 87 | 94 | 178 | 85 | 93 | 3 | 2 | 1
-      27:        Temotu | 11 | 9 | 2 | 11 | 9 | 2 | - | - | -
-      28:        Saniuta | 205 | 110 | 95 | 205 | 110 | 95 | - | - | -
-      29:        Matagi | 37 | 20 | 17 | 36 | 19 | 17 | 1 | 1 | -
-      30:        Motufoua | 327 | 128 | 199 | 326 | 127 | 199 | 1 | 1 | -
-      31: Nukufetau | 537 | 268 | 269 | 531 | 264 | 267 | 6 | 4 | 2
-      32:        Aulotu | 335 | 170 | 165 | 329 | 166 | 163 | 6 | 4 | 2
-      33:        Maneapa | 202 | 98 | 104 | 202 | 98 | 104 | - | - | -
-      34: Funafuti | 6716 | 3517 | 3199 | 6611 | 3451 | 3160 | 105 | 66 | 39
-      35:        Lofeagai | 898 | 470 | 428 | 894 | 468 | 426 | 4 | 2 | 2
-      36:        Teone | 721 | 369 | 352 | 718 | 368 | 350 | 3 | 1 | 2
-      37:        Fakaifou | 1345 | 671 | 674 | 1327 | 658 | 669 | 18 | 13 | 5
-      38:        Senala | 1144 | 593 | 551 | 1122 | 583 | 539 | 22 | 10 | 12
-      39:        Alapi | 1326 | 692 | 634 | 1309 | 685 | 624 | 17 | 7 | 10
-      40:        Vaiaku | 500 | 277 | 223 | 462 | 244 | 218 | 38 | 33 | 5
-      41:        Tekavatoetoe | 668 | 358 | 310 | 665 | 358 | 307 | 3 | - | 3
-      42:        Amatuku | 109 | 85 | 24 | 109 | 85 | 24 | - | - | -
-      43:        Funafala | 5 | 2 | 3 | 5 | 2 | 3 | - | - | -
-      44: Nukulaelae | 260 | 129 | 131 | 260 | 129 | 131 | - | - | -
-      45:        Pepesala | 173 | 91 | 82 | 173 | 91 | 82 | - | - | -
-      46:        Nukualofa | 87 | 38 | 49 | 87 | 38 | 49 | - | - | -
-      47: Niulakita | 43 | 32 | 11 | 43 | 32 | 11 | - | - | -
-      48:        Niulakita | 43 | 32 | 11 | 43 | 32 | 11 | - | - | -
+cdx nso.gov.ki/download/*: 197 captures, 35 matching '(?:ensus|2020|opulation)'
+  20221116100933 200 application/octet-stream https://nso.gov.ki/download/112/balance-of-payments/2035/balance-of-payments-bpm6-methodology-2020-2021
+  20221116093427 200 application/octet-stream https://nso.gov.ki/download/114/international-investment-position/2036/international-investment-position-bpm6-methodology-2020-2021
+  20221109093403 200 application/force-download https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022
+  20221109093250 200 application/force-download https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf
+  20221116093346 200 application/pdf https://nso.gov.ki/download/117/other-reports/2043/kiribati-2019-2020-household-income-and-expenditure-survey-report-copra-brief.pdf
+  20211130182518 200 application/octet-stream https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final
+  20250815183856 200 application/octet-stream https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx
+  20211130191218 200 application/pdf https://nso.gov.ki/download/146/2020-census/1932/kircensus_2020-questionnaire
+  20211228222214 200 application/pdf https://nso.gov.ki/download/146/2020-census/1952/census-report-2020-book
+  20240717165628 200 application/pdf https://nso.gov.ki/download/146/2020-census/1952/census-report-2020-book.pdf
+  20240716134214 200 application/force-download https://nso.gov.ki/download/146/2020-census/1952/census-report-2020-book.pdf27
+  20220622095432 200 application/force-download https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020
+  20240703075253 200 application/pdf https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf
+  20250624205542 200 text/html https://nso.gov.ki/download/151/2023-24-hies-reports/2143/kiribati_2020_disability_monograph
+  20201026002607 200 application/pdf https://nso.gov.ki/download/25/population/1215/census-report-2005-volume-1-final-report
+  20201026005249 200 application/pdf https://nso.gov.ki/download/25/population/1217/2015-population-census-report-volume-1final-211016
+  20201026004530 200 application/pdf https://nso.gov.ki/download/25/population/1218/census-2005-analytical-report
+  20201026013959 200 application/pdf https://nso.gov.ki/download/25/population/1219/census-report-2010-volume-1-final
+  20210814141623 200 application/octet-stream https://nso.gov.ki/download/30/consumer-price-index/1914/rpi-1st-qtr-2020
+  20260207083233 200 application/octet-stream https://nso.gov.ki/download/30/consumer-price-index/1914/rpi-1st-qtr-2020.xlsx
+  20210814141631 200 application/octet-stream https://nso.gov.ki/download/31/trade/1911/imts-release-tables-2020-provisional
+  20210814141628 200 application/octet-stream https://nso.gov.ki/download/31/trade/1912/international-trade-tables-2020-prelim
+  20260206194230 200 application/octet-stream https://nso.gov.ki/download/31/trade/1912/international-trade-tables-2020-prelim.xls
+  20211228222137 200 application/octet-stream https://nso.gov.ki/download/52/gross-domestic-product/1949/gdp-master-table-2020
+  20260208030927 200 application/octet-stream https://nso.gov.ki/download/52/gross-domestic-product/1949/gdp-master-table-2020.xlsx
+  20230520063100 200 application/force-download https://nso.gov.ki/download/53/2010-census/889/kiribati-2010-census-questionnaire.pdf
+  20210814141626 200 application/octet-stream https://nso.gov.ki/download/60/production/1913/copra-production-2020-update
+  20221102093249 200 application/force-download https://nso.gov.ki/download/78/agriculture/1992/kiribati-agriculture-and-fisheries-report-2020-census
+  20221129021130 200 application/pdf https://nso.gov.ki/download/78/agriculture/1992/kiribati-agriculture-and-fisheries-report-2020-census.pdf
+  20250624095811 200 application/pdf https://nso.gov.ki/download/82/health/2143/kiribati-disability-monograph-from-the-2020-population-and-housing-census
+  20240701154955 200 application/pdf https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf
+  20210815215136 200 application/octet-stream https://nso.gov.ki/download/wpfdcat/25/population
+  20210817055258 200 application/octet-stream https://nso.gov.ki/download/wpfdcat/51/2005-census
+  20210814142646 200 application/octet-stream https://nso.gov.ki/download/wpfdcat/53/2010-census
+  20210814142632 200 application/octet-stream https://nso.gov.ki/download/wpfdcat/91/2015-census
