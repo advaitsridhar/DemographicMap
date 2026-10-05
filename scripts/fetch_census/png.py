@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Papua New Guinea: the 2024 census head count, and the 2011 census's religion.
+"""Papua New Guinea: the 2024 census head count, and the 2011 census's religion and ages.
 
 Two publications of one office, the National Statistical Office
 (``www.nso.gov.pg``), which answers an automated reader without complaint:
@@ -16,6 +16,10 @@ Two publications of one office, the National Statistical Office
   country and, for each province, **one figure**: the Summary Indicators row
   "Main religion (% of population)" -- the largest denomination and its share
   of the citizen population. That row is what the 22 provinces carry here.
+  Its Table 1.7 gives each province's **median age** (of the citizen
+  population, 2011), which the provinces carry too; the Summary Indicators
+  print the same 22 medians again, and the run refuses unless both printings
+  agree. No age is published below the province, so the districts say so.
 
 **What the census asks.** Appendix 1 of the 2011 report lists the
 questionnaire's subjects: "age; sex, marital status, religion, migration,
@@ -273,6 +277,25 @@ PROSE_CONTROLS: dict[str, tuple[str, int]] = {
     "Northern": ("Anglican", 61),
 }
 
+# Table 1.7 of the 2011 report, "Median age, sex ratio and child-woman ratio of
+# citizen population, PNG, 2011 Census", names its rows its own way: Milne Bay
+# in full where the Summary Indicators say MBP, the Highlands and Islands by
+# their abbreviations.
+TABLE_17_ROWS: dict[str, str] = {
+    "Western": "Western", "Gulf": "Gulf", "Central": "Central",
+    "NCD": "National Capital District", "Milne Bay": "Milne Bay",
+    "Northern": "Northern", "SHP": "Southern Highlands", "Enga": "Enga",
+    "WHP": "Western Highlands", "Chimbu": "Chimbu", "EHP": "Eastern Highlands",
+    "Morobe": "Morobe", "Madang": "Madang", "ESP": "East Sepik",
+    "WSP": "West Sepik", "Manus": "Manus", "NIP": "New Ireland",
+    "ENBP": "East New Britain", "WNBP": "West New Britain",
+    "AROB": "Autonomous Region of Bougainville", "Hela": "Hela", "Jiwaka": "Jiwaka",
+}
+# The country's row of the same table, and of Table 1.6 beside it, which the
+# report's prose rounds to "21 years". A table that does not reproduce it is
+# not the one this reads.
+NATIONAL_MEDIAN_2011 = 21.4
+
 DISTRICT_NOTE = ("Counted by the 2024 National Population Census, which the "
                  "National Statistical Office published as district totals in "
                  "each province's snapshot.")
@@ -307,6 +330,22 @@ PROVINCE_RELIGION_GAP = (
     "The 2011 census asked religion, but the Summary Indicators of the "
     "National Statistical Office's 2011 National Report, the only provincial "
     "religion figure it publishes, could not be read for this province.")
+MEDIAN_NOTE = (
+    "The median age of the province's citizen population at the 2011 census, "
+    "from Table 1.7 of the National Statistical Office's 2011 National Report "
+    "(its provincial Summary Indicators print the same figure). Non-citizens -- "
+    "20,882 people in the whole country, 0.3% of it -- are not in it. It is the "
+    "latest age the office publishes for a province: the 2024 census asked age, "
+    "one of its six questions, but its Final Figures, the one release of that "
+    "census so far, counts people by sex only.")
+DISTRICT_AGE_GAP = (
+    "The 2011 census recorded every person's age, and the National Statistical "
+    "Office publishes it for the country and the 22 provinces only: the 2011 "
+    "National Report's age tables stop at the province, and the 2024 census, "
+    "which asked age again, has so far published only its Final Figures, "
+    "district counts by sex with no ages. The 2011 district tables exist in the "
+    "office's priced Table Retrieval System CD-ROM, which is not published "
+    "online.")
 
 
 # ---------------------------------------------------------------------------
@@ -627,6 +666,91 @@ def read_main_religion(pages: list[str]) -> dict[str, tuple[str, float]]:
     return out
 
 
+def tenths(text: str, width: int) -> list[float] | None:
+    """``width`` figures of one decimal each, however the PDF spaced them.
+
+    Every figure in these tables carries exactly one digit after its point, so
+    with the spaces taken out the figures still part unambiguously -- "18.6
+    106.0 66.6" and "1 8.6 10 6.0 66.6" both read as 18.6, 106.0 and 66.6. A
+    row that does not come apart into exactly ``width`` of them is not read.
+    """
+    compact = re.sub(r"\s+", "", text)
+    figures = re.findall(r"\d+\.\d", compact)
+    if len(figures) != width or "".join(figures) != compact:
+        return None
+    return [float(f) for f in figures]
+
+
+def read_median_ages(pages: list[str]) -> dict[str, float]:
+    """Table 1.7: each province's median age, checked against a second printing.
+
+    The table gives the median age of the citizen population for the country,
+    its urban and rural sectors and the 22 provinces. The provincial Summary
+    Indicators print the same medians again, block by block, on the row
+    "Median age (years) Total"; every province must read the same from both,
+    and the country's row must be the 21.4 of Table 1.6.
+    """
+    page = next((p for p in pages if "Table 1.7" in unkern(p)
+                 and "child-woman ratio" in unkern(p).replace("Child", "child")), None)
+    if page is None:
+        raise SystemExit("png: the 2011 report has no Table 1.7")
+    table: dict[str, float] = {}
+    national: float | None = None
+    for line in rows_of(page):
+        head = re.match(r"^([A-Za-z][A-Za-z ]*?)\s+(\d[\d.\s]*)$", line)
+        if not head:
+            continue
+        label, figures = head.group(1), tenths(head.group(2), 3)
+        if figures is None:
+            continue
+        if label == "PNG":
+            national = figures[0]
+        elif label in TABLE_17_ROWS:
+            province = TABLE_17_ROWS[label]
+            if province in table:
+                raise SystemExit(f"png: Table 1.7 has two rows for {label}")
+            table[province] = figures[0]
+    if national != NATIONAL_MEDIAN_2011:
+        raise SystemExit(f"png: Table 1.7's PNG row reads a median of {national}, "
+                         f"not the {NATIONAL_MEDIAN_2011} of Table 1.6")
+    missing = sorted(set(PROVINCES) - set(table))
+    if missing:
+        raise SystemExit(f"png: Table 1.7 gives no median age for {missing}")
+
+    lines = [line for p in pages for line in rows_of(p)]
+    starts = sorted({i for _, columns in BLOCKS for i, ln in enumerate(lines)
+                     if ln.endswith(" ".join(a for a, _ in columns))})
+    for block, columns in BLOCKS:
+        wanted = " ".join(abbr for abbr, _ in columns)
+        readings: list[list[float]] = []
+        for header in (i for i in starts if lines[i].endswith(wanted)):
+            stop = next((s for s in starts if s > header), len(lines))
+            for row in range(header + 1, stop):
+                # "Median age ( years )" and nothing else: a median age at
+                # marriage or at first birth is another row.
+                if not re.sub(r"\s+", "", lines[row]).startswith("Medianage(years)"):
+                    continue
+                rest = lines[row].split("Total", 1)
+                figures = tenths(rest[1], len(columns)) if len(rest) == 2 else None
+                if figures is None and row + 1 < stop and lines[row + 1].startswith("Total"):
+                    figures = tenths(lines[row + 1][len("Total"):], len(columns))
+                if figures is not None:
+                    readings.append(figures)
+        if not readings:
+            raise SystemExit(f"png: the {block} Summary Indicators have no median "
+                             f"age row to check Table 1.7 against")
+        for figures in readings:
+            for (abbr, province), median in zip(columns, figures):
+                if median != table[province]:
+                    raise SystemExit(
+                        f"png: {province} ({abbr}) has a median age of {median} in "
+                        f"the Summary Indicators and {table[province]} in Table 1.7")
+    log(f"  2011 Table 1.7: median ages for all 22 provinces, from "
+        f"{min(table.values())} to {max(table.values())} (PNG {national}); the "
+        f"Summary Indicators print the same 22")
+    return table
+
+
 # ---------------------------------------------------------------------------
 # Records
 # ---------------------------------------------------------------------------
@@ -665,8 +789,12 @@ def place_districts(province: str, districts: list[Unit]) -> dict[str, Unit]:
 
 
 def province_record(name: str, unit: Unit, religion: tuple[str, float] | None,
-                    ) -> dict[str, Any]:
+                    median: float | None = None) -> dict[str, Any]:
     fields: dict[str, Any] = {}
+    if median is not None:
+        fields["median_age"] = measure(median, year=CENSUS_2011,
+                                       source=NATIONAL_REPORT, unit="years")
+        fields["median_age_note"] = MEDIAN_NOTE
     if religion is not None:
         group, pct = religion
         rows = [{"group": group, "pct": pct}]
@@ -687,7 +815,7 @@ def province_record(name: str, unit: Unit, religion: tuple[str, float] | None,
         ethnicity=collection_gap("PNG", "ethnicity"),
         sources=[{"field": "population/sex_ratio", "name": FINAL_FIGURES,
                   "url": FINAL_FIGURES_URL, "year": CENSUS_2024, "license": LICENCE},
-                 {"field": "religion", "name": NATIONAL_REPORT,
+                 {"field": "religion/median_age", "name": NATIONAL_REPORT,
                   "url": NATIONAL_REPORT_URL, "year": CENSUS_2011, "license": LICENCE}],
         **fields)
 
@@ -718,6 +846,7 @@ def district_record(province: str, shape: str, unit: Unit | None,
         f"PNG-{slug(province)}-{slug(shape)}", shape, level="admin2",
         parent=f"PNG-{slug(province)}", country="PNG",
         parent_name=province, parent_aliases=[PROVINCES[province]],
+        median_age=gap(NOT_AVAILABLE, DISTRICT_AGE_GAP),
         religion=gap(NOT_AVAILABLE, DISTRICT_RELIGION_GAP),
         language=collection_gap("PNG", "language"),
         ethnicity=collection_gap("PNG", "ethnicity"),
@@ -1028,8 +1157,10 @@ def build() -> list[dict[str, Any]]:
     provinces = read_province_table(booklet)
     snapshots = read_snapshots(booklet)
     religion = read_main_religion(report)
+    medians = read_median_ages(report)
 
-    records = [province_record(name, provinces[name], religion.get(name))
+    records = [province_record(name, provinces[name], religion.get(name),
+                               medians.get(name))
                for name in PROVINCES]
     report_coverage(religion)
 

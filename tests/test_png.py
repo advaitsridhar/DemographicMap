@@ -272,6 +272,128 @@ Male 26.1 27.8 28.5 na
             self.assertTrue(cg.ancestry("religion", label), label)
 
 
+# Table 1.7 of the 2011 report as pypdf reads it -- the table's column heads
+# land after its rows -- and the Summary Indicators' median rows that print
+# the same figures again, one regional block at a time.
+TABLE_17 = """Papua New Guinea 2011 National Report
+22
+CHAPTER 1 | Population Growth, Distribution and Composition
+Median Age
+The median age for the citizen population in 2011 was 21 years, an increase of 3 years from 2000 census as
+shown in Table 1.6. Median age for urban and rural sector was similar at about 21 years (Table 1.7).
+Table 1.6  Median age, child-woman ratio and sex ratio of
+citizen population,  PNG, 1990, 2000 and 2011 Censuses
+2011 21.4 48.6 107.4
+2000 18.7 60.4 107.5
+1990 18.4 68.5 109.6
+of males and females.Table 1.7  Median age, sex ratio and child-woman ratio
+of citizen population, PNG, 2011 Census
+Child woman
+ratio
+PNG 21.4 107.4 48.6
+Urban 21.9 110.7 44.0
+Rural 21.3 107.0 49.3
+Western 18.6 106.0 66.6
+Gulf 18.1 106.8 64.6
+Central 19.6 111.3 64.8
+NCD 23.8 114.3 41.8
+Milne Bay 22.7 108.1 64.4
+Northern 19.5 108.8 68.8
+SHP 22.4 106.6 29.2
+Enga 23.6 108.2 29.1
+WHP 24.3 102.4 34.4
+Chimbu 24.0 109.9 31.0
+EHP 22.7 107.7 42.6
+Morobe 21.0 108.1 54.6
+Madang 19.0 108.7 64.6
+ESP 19.2 100.4 62.8
+WSP 19.1 105.5 66.2
+Manus 19.0 106.0 64.4
+NIP 18.5 111.6 65.8
+ENBP 18.9 105.3 62.6
+WNBP 19.9 110.5 64.8
+AROB 19.9 105.2 62.0
+Hela 26.6 106.6 28.8
+Jiwaka 23.5 107.5 29.0
+Area Median age Sex ratio
+"""
+MEDIANS_14 = """Summary Indicators Provinces, 2011 Census
+Southern Region
+Citizen population Western Gulf Central NCD MBP Northern
+Population Total  200,200  157,525  269,135  361,222  275,932  185,737
+Median age ( years ) Total 18.6 18.1 19.6 23.8 22.7 19.5
+Male 18.4 17.9 19.4 23.0 19.7 19.6
+Citizen Population Highlands Region
+SHP Enga WHP Chimbu EHP Hela Jiwaka
+Median age ( years ) Total 22.4 23.6 24.3 24.0 22.7 26.6 23.5
+Male 21.7 23.0 23.7 23.8 22.2 26.4 23.3
+"""
+MEDIANS_15 = """Citizen population Momase Region
+Morobe Madang ESP WSP
+Median age ( years ) Total 21.0 19.0 19.2 19.1
+Male 20.8 18.9 18.7 18.7
+Citizen Population New Guinea Islands Region
+Manus NIP ENBP WNBP AROB
+Median age ( years )
+Total 1 9.0 18.5 18.9 19.9 19.9
+Male 18.5 18.6 18.4 20.0 19.5
+"""
+
+
+class TheProvincialMedianAge(unittest.TestCase):
+    def setUp(self):
+        self.read, self.log = quiet(png.read_median_ages, [MEDIANS_14, TABLE_17, MEDIANS_15])
+
+    def test_every_province_is_read_from_table_1_7(self):
+        self.assertEqual(set(self.read), set(png.PROVINCES))
+        self.assertEqual(self.read["Hela"], 26.6)
+        self.assertEqual(self.read["Gulf"], 18.1)
+        self.assertEqual(self.read["Milne Bay"], 22.7)
+        self.assertEqual(self.read["Autonomous Region of Bougainville"], 19.9)
+
+    def test_the_sector_rows_are_not_provinces(self):
+        self.assertNotIn("Urban", self.read)
+        self.assertNotIn("Rural", self.read)
+
+    def test_figures_split_by_kerning_still_part_at_their_points(self):
+        self.assertEqual(png.tenths("1 8.6 10 6.0 66.6", 3), [18.6, 106.0, 66.6])
+        self.assertIsNone(png.tenths("18.6 106 66.6", 3))
+        self.assertIsNone(png.tenths("18.6 106.0", 3))
+
+    def test_a_province_the_two_printings_disagree_on_is_refused(self):
+        moved = MEDIANS_15.replace("21.0 19.0 19.2 19.1", "21.0 19.2 19.0 19.1")
+        with self.assertRaises(SystemExit) as caught:
+            png.read_median_ages([MEDIANS_14, TABLE_17, moved])
+        self.assertIn("Madang", str(caught.exception))
+
+    def test_a_block_with_nothing_to_check_against_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            png.read_median_ages([MEDIANS_14, TABLE_17])
+        self.assertIn("Momase", str(caught.exception))
+
+    def test_a_table_whose_country_row_is_not_table_1_6s_is_refused(self):
+        with self.assertRaises(SystemExit):
+            png.read_median_ages([MEDIANS_14, TABLE_17.replace("PNG 21.4", "PNG 21.6"),
+                                  MEDIANS_15])
+
+    def test_a_missing_province_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            png.read_median_ages([MEDIANS_14, TABLE_17.replace("Jiwaka 23.5 107.5 29.0\n", ""),
+                                  MEDIANS_15])
+        self.assertIn("Jiwaka", str(caught.exception))
+
+    def test_the_province_record_carries_it_dated_2011_and_the_district_says_why_not(self):
+        unit = png.Unit("Hela", 365_806, 194_762, 171_044)
+        rec = png.province_record("Hela", unit, ("Evangelical Alliance", 19.7), 26.6)
+        self.assertEqual(rec["median_age"]["value"], 26.6)
+        self.assertEqual(rec["median_age"]["year"], 2011)
+        self.assertEqual(rec["population"]["year"], 2024)
+        self.assertIn("citizen", rec["median_age_note"])
+        district = png.district_record("Hela", "Tari District", unit, "")
+        self.assertEqual(district["median_age"]["status"], "not_available")
+        self.assertIn("province", district["median_age"]["note"])
+
+
 class TheProvincialSnapshot(unittest.TestCase):
     def test_a_snapshots_districts_are_read_with_their_names(self):
         province, districts = png.read_snapshot(SNAPSHOT)
