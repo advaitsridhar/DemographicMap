@@ -1443,11 +1443,10 @@ def annex_debug(pages, gewog_names, *, limit: int = 90) -> list[str]:
             out.append(f"p{number} ON ITS SIDE: "
                        f"{sorted((n, len(b)) for n, b in found.items())}; ends under "
                        f"{carried!r}; {trouble}")
-            for cells in rows:
-                words = [t for _a, _b, t in cells]
-                if not any(group_index(w[::-1]) is not None for w in words):
-                    out.append(f"p{number}   label " + " ".join(
-                        f"{t[::-1]}@{a:.0f}" for a, _b, t in cells)[:200])
+            # The names in capitals, and where All Chiwogs stands.
+            marks = [f"{t[::-1]}@{a:.0f}" for cells in rows for a, _b, t in cells
+                     if is_heading(t[::-1]) or t[::-1] in ("All", "Chiwogs")]
+            out.append(f"p{number}   names " + " ".join(marks)[:400])
             continue
         for cells in rows:
             if len(out) >= limit:
