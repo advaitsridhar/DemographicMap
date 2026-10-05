@@ -95,8 +95,13 @@ class BuildTest(unittest.TestCase):
     def test_brackets_cities_exclusions_and_regions(self):
         recs = p.build(self.units(), 80, ADMIN1, ADMIN2)
         by = {r["shape_id"]: r for r in recs}
-        # Maguindanao's polygon is excluded; Soccsksargen therefore unwritten.
-        self.assertEqual(set(by), {"S1", "S2", "S3", "S4", "S5", "R1", "R2"})
+        # Maguindanao's polygon is excluded, and says why; Soccsksargen therefore
+        # unwritten.
+        self.assertEqual(set(by), {"S1", "S2", "S3", "S4", "S5", "S6", "R1", "R2"})
+        for field in ("median_age", "sex_ratio"):
+            self.assertNotIn("value", by["S6"][field])
+            self.assertIn("Sultan Kudarat", by["S6"][field]["note"])
+        self.assertNotIn("value", by["S6"]["population"])
         self.assertEqual(by["S2"]["aliases"], ["DAVAO DE ORO (COMPOSTELA VALLEY)"])
         # 81 equal single years from 0 to 80+: the middle person is in the year 40.
         self.assertEqual(by["S1"]["median_age"]["value"], 40.5)

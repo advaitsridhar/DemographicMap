@@ -75,7 +75,8 @@ import re
 from collections import Counter, defaultdict
 from typing import Any, Iterable
 
-from ._shared import PROCESSED, RAW, download, http_json, log, record, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, RAW, download, gap, http_json, log, record,
+                      write_json)
 from .sea_common import age_sex, band, drawn, fold, single_median
 
 OUT = "philippines_age.json"
@@ -354,6 +355,16 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
                       ratio_note=f"Males per 100 females in {whose}.",
                       population_note=f"The census count of {YEAR}: {whose}."),
         ))
+    # The polygons left out say why, rather than carrying a bare gap.
+    for shape in sorted(admin2, key=lambda s: s["name"]):
+        if shape["name"] in EXCLUDE and shape["id"] not in figs:
+            why = (f"No census figure fits this polygon: {EXCLUDE[shape['name']]}, measured "
+                   f"on the map's own tiles, so the 2020 census's count of the province "
+                   f"of this name would put the wrong people on it.")
+            records.append(record(
+                f"PHL-CPH2020-{fold(shape['name'])}", shape["name"], level="admin2",
+                parent="PHL", country="PHL", match_by="shape_id", shape_id=shape["id"],
+                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why)))
     for region in admin1:
         if region["name"] in REGIONS:
             wanted = REGIONS[region["name"]]

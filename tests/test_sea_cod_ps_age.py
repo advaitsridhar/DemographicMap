@@ -128,7 +128,7 @@ class RecordsTest(unittest.TestCase):
         self.assertIn("projection", r["median_age_note"])
         self.assertIn("United States Bureau of the Census", r["median_age_note"])
 
-    def test_an_implausible_ratio_leaves_the_unit_out(self):
+    def test_an_implausible_ratio_leaves_the_unit_out_and_says_why(self):
         cols_ = columns()
         table = {"label": "x adm2_", "level": "2", "columns": cols_,
                  "rows": [row("Lampang", "Ko Kha", per_band_f=20, per_band_m=9)], "method": ""}
@@ -136,7 +136,12 @@ class RecordsTest(unittest.TestCase):
                 mock.patch.object(s, "locate", return_value={}):
             recs = s.level_records("THA", "cod-ps-tha", "CC BY-IGO", "2", 2023, table,
                                    age_columns(cols_))
-        self.assertEqual(recs, [])
+        self.assertEqual(len(recs), 1)
+        for field in ("median_age", "sex_ratio"):
+            self.assertNotIn("value", recs[0][field])
+            self.assertIn("45.0 males per 100 females", recs[0][field]["note"])
+            self.assertIn("stat.bora.dopa.go.th", recs[0][field]["note"])
+        self.assertEqual(recs[0]["sources"], [])
 
 
 if __name__ == "__main__":

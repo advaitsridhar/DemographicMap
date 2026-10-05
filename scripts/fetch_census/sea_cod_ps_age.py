@@ -53,7 +53,7 @@ from collections import defaultdict
 from typing import Any
 
 from . import cod_ps
-from ._shared import PROCESSED, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, write_json
 from .cod_ps_age import age_columns, number, tables, unit_figures
 from .sea_common import drawn, fold, locate, ratio
 
@@ -94,6 +94,17 @@ TWIN_MARK = re.compile(r"\s*\(\d\)\s*$")
 # district Ban Kha was cut from in 2007, and keep the island and naval
 # districts of Thailand's east coast (up to 137) and Laos's Longcheng (142).
 RATIO_BOUNDS = (80.0, 160.0)
+# Why the office's own figures are not read instead, said on a unit the
+# bounds leave out (docs/SOURCES.md and this reader's report have the runs).
+UNREAD = {
+    "THA": ("Thailand's own figures were not reachable: the Department of Provincial "
+            "Administration's register statistics (stat.bora.dopa.go.th) do not resolve "
+            "from the runner, and the National Statistical Office's hosts answer HTTP 418 "
+            "or 403 to this project's reader."),
+    "LAO": ("The Lao Statistics Bureau's 2015 census volume tabulates no district's ages."),
+    "KHM": ("The National Institute of Statistics publishes no district's ages from the "
+            "2019 census."),
+}
 
 
 def key(name: Any) -> str:
@@ -231,10 +242,21 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
         if not RATIO_BOUNDS[0] <= ratio(men, women) <= RATIO_BOUNDS[1]:
             # A projection's arithmetic, not a place: Ratchaburi's Ban Kha
             # comes out at 48 men to 100 women. The unit is left out whole,
-            # its median being read from the same row.
+            # its median being read from the same row, and says why.
             refused += 1
             log(f"    left out {name}: {ratio(men, women)} males per 100 females is outside "
                 f"{RATIO_BOUNDS}, implausible for a whole district or province")
+            why = (f"OCHA's COD-PS for the country (reference year {year}) is the only "
+                   f"age-and-sex table this map could read here, and its row for {name} "
+                   f"gives {ratio(men, women)} males per 100 females -- implausible for a "
+                   f"whole {'district' if level == 'admin2' else 'province'}, so the "
+                   f"projection's age breakdown is not used either. "
+                   + UNREAD.get(iso3, ""))
+            out.append(record(
+                f"{iso3}-CODPSAGE-{level}-{fold(unit['name'])}-{unit['id'][-6:]}",
+                unit["name"], level=level, parent=iso3, country=iso3, match_by="shape_id",
+                shape_id=unit["id"], aliases=[name] if key(name) != key(unit["name"]) else None,
+                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why)))
             continue
         # The twins placed by their seats are the two polygons the dataset's
         # population reached nowhere else (its own reader matches by name), so

@@ -270,10 +270,16 @@ def post_records(posts: dict[str, dict[str, float]], admin2: list[dict[str, Any]
                                                     f"(basic table 4.01).",
                          population=int(total) if joined else None,
                          population_note=(JOINED_NOTE[name] if joined else None))
+        # Religion and mother tongue say why they are empty on every post,
+        # in timor.py's words: its own reader reaches 64 of the 65 polygons
+        # by name and leaves Hatolia, two posts since 2022, with a note about
+        # joining instead.
         out.append(record(
             f"TLS-AGE-P-{fold(name)}", name, level="admin2", parent="TLS", country="TLS",
             match_by="shape_id", shape_id=shape["id"],
             median_age=gap(NOT_AVAILABLE, POST_AGE_GAP),
+            religion=gap(NOT_AVAILABLE, timor.POST_RELIGION_GAP),
+            language=gap(NOT_AVAILABLE, timor.POST_LANGUAGE_GAP),
             sources=[{"field": "sex_ratio" + ("/population" if joined else ""),
                       "name": SOURCE_POST, "url": timor.POPULATION_PAGE, "year": YEAR,
                       "license": timor.LICENCE}],
