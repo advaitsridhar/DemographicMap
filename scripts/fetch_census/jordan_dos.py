@@ -273,17 +273,24 @@ def read_ages(text: str) -> dict[str, dict[str, Any]]:
 
 
 def read_nationalities(text: str) -> dict[str, dict[str, Any]]:
-    """Governorate (and 'kingdom') -> non-Jordanians by the map's label (Table 8.1)."""
+    """Governorate (and 'kingdom') -> non-Jordanians by the map's label (Table 8.1).
+
+    Every Total row must be either its section's countries (a subtotal) or
+    all the governorate's countries so far (its grand total, which the table
+    does not print for every governorate); the governorate's countries are
+    checked against Table 3.1's non-Jordanians afterwards.
+    """
     out: dict[str, dict[str, Any]] = {}
     current, label = None, None
+    section_sum = 0
     unread: list[str] = []
     for line in text.splitlines():
         line = line.strip()
         gov = heading(line)
         if gov:
             check(gov not in out, f"jordan_dos: Table 8.1 {gov} twice")
-            current, label = gov, None
-            out[current] = {"counts": defaultdict(int), "grand": 0, "countries": 0}
+            current, label, section_sum = gov, None, 0
+            out[current] = {"counts": defaultdict(int), "countries": 0, "subtotals": 0}
             continue
         if current is None:
             continue
@@ -292,7 +299,7 @@ def read_nationalities(text: str) -> dict[str, dict[str, Any]]:
             if ARABIC.search(line):
                 hit = next((lab for pat, lab in SECTIONS if pat.search(name)), None)
                 if hit:
-                    label = hit
+                    label, section_sum = hit, 0
                     continue
                 check("Countr" not in name,
                       f"jordan_dos: Table 8.1 {current}: unknown section {name!r}")
@@ -306,16 +313,18 @@ def read_nationalities(text: str) -> dict[str, dict[str, Any]]:
         check(cells[2] + cells[5] == cells[8],
               f"jordan_dos: Table 8.1 {current} {country}: rural and urban are not the total")
         if country == "Total":
-            out[current]["grand"] = max(out[current]["grand"], cells[8])
+            check(cells[8] in (section_sum, out[current]["countries"]),
+                  f"jordan_dos: Table 8.1 {current}: a Total of {cells[8]:,} is neither its "
+                  f"section's {section_sum:,} nor the governorate's {out[current]['countries']:,}")
+            out[current]["subtotals"] += 1
             continue
         check(label is not None, f"jordan_dos: Table 8.1 {current}: {country} before any "
                                  f"section")
         out[current]["counts"][NAMED.get(country, label)] += cells[8]
         out[current]["countries"] += cells[8]
+        section_sum += cells[8]
     for gov, entry in out.items():
-        check(entry["countries"] == entry["grand"],
-              f"jordan_dos: Table 8.1 {gov}: countries make {entry['countries']:,}, its "
-              f"total is {entry['grand']:,}")
+        check(entry["subtotals"] >= 1, f"jordan_dos: Table 8.1 {gov}: no Total row at all")
     if unread:
         log(f"  Table 8.1 lines read as no row: {sorted(set(unread))[:20]}")
     return out
@@ -345,9 +354,9 @@ def check_kingdom(totals: dict[str, list[int]], ages: dict[str, dict[str, Any]],
                   f"jordan_dos: {g}: Table 3.4's total row {ages[g]['row']} is not Table "
                   f"3.1's {totals[g]}")
         if g in nats:
-            check(nats[g]["grand"] == totals[g][5],
-                  f"jordan_dos: {g}: Table 8.1 counts {nats[g]['grand']:,} non-Jordanians, "
-                  f"Table 3.1 {totals[g][5]:,}")
+            check(nats[g]["countries"] == totals[g][5],
+                  f"jordan_dos: {g}: Table 8.1's countries make {nats[g]['countries']:,} "
+                  f"non-Jordanians, Table 3.1 {totals[g][5]:,}")
     return govs
 
 

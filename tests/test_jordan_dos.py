@@ -158,6 +158,13 @@ class TheReaders(unittest.TestCase):
         with self.assertRaises(SystemExit):
             jd.read_nationalities(nationalities_text(broken=True))
 
+    def test_a_block_without_its_grand_total_is_still_read(self):
+        # Amman's block in the real table ends on its last section's subtotal.
+        lines = nationalities_text().splitlines()
+        grand = [i for i, ln in enumerate(lines) if ln.startswith("Total ")][-1]
+        nats = jd.read_nationalities("\n".join(lines[:grand] + lines[grand + 1:]))
+        self.assertEqual(nats["Aqaba"]["countries"], census_cells(11)[5])
+
 
 class TheRecords(unittest.TestCase):
     def setUp(self):
