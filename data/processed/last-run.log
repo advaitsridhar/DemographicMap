@@ -1,26 +1,63 @@
-cambodia_census: National Institute of Statistics, General Population Census of the Kingdom of Cambodia 2019, final results, Tables P-01 to P-25: population in normal or regular households by province, district and commune, and sex
-  fetched Final-General-Population-Census-2019-English.pdf (26.6 MB)
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139892078838096), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139892078838096), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139892078838096), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139892078838096), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139892078838096), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139892078838096), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-  304 pages
-  the district row '211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0' is read as district 314, its communes' code
-  Table 2.1.1 'Tbong Khmum' read as province 25 (Tboung Khmum)
-  Table 2.1.1: 25 provinces making 15,552,211
-  district 302 Chamkar Leu: its row (5160, 5160, 5160, 5160) is not its communes' sum (24280, 101675, 48956, 52719); the communes' sum makes the province's total, and stands
-  district 801 Kandal Stueng: its row (74303, 332843, 160647, 172196) is not its communes' sum (22649, 100565, 48071, 52494); the communes' sum makes the province's total, and stands
-  province 14 Prey Veng: its total row (266934, 1049361, 492221, 557140) is not its districts' sum (266934, 1056866, 495906, 560960); the households agree and the districts' people fit in its 1,057,720 (Table 2.1.1), so the districts stand
-  province 17 Siemreap: its total row (224672, 994540, 484524, 510016) is not its districts' sum (224672, 989303, 481931, 507372); the households agree and the districts' people fit in its 1,014,234 (Table 2.1.1), so the districts stand
-  district 2202 Banteay Ampil: its row (12534, 54716, 27775, 26941) is not its communes' sum (12534, 51605, 25448, 26157); the communes' sum makes the province's total, and stands
-  Tables P-01..P-25: 202 districts and 1646 communes in 25 provinces, each district's communes and each province's districts making its row; 15,186,779 people in regular households
-  regular households' share of each province's people: lowest Preah Sihanouk 70.9%, Stung Treng 95.6%, Phnom Penh 95.9%, Pailin 96.1%, Otdar Meanchey 97.3%; provinces below 95%, whose district tables are not used: Preah Sihanouk (70.9%)
-  fetched KHM_AdminBoundaries_TabularData.xlsx (0.1 MB)
-  2018 gazetteer: ADM1 25, ADM2 197, ADM3 1633
-  communes placed in 2018 districts: 1640; not placed (6): 121301 Boeng Keng Kang Muoy (district 1213); 121302 Boeng Keng Kang Pir (district 1213); 121303 Boeng Keng Kang Bei (district 1213); 121304 Oulampik (district 1213); 250221 Thma Pechr (district 2502); 250409 Roka Khnaor (district 2504); 2018 districts left incomplete (4): KH1201, KH2502, KH2504, KH2507
-  2018 districts on no polygon (0): ; polygons with no district (4): Chamkar Mon, Krouch Chhmar, Ou Reang Ov, Tboung Khmum
-  193 district polygons written, 4 of them with stated gaps (Kampong Seila, Preah Sihanouk, Prey Nob, Stueng Hav); drawn before a division and summed from their communes (9): Bakan <- Bakan, Ta Lou; Baray <- Baray, Taing Kouk; Dangkao <- Dangkao, Kambol; Memot <- Ou Reang Ov, Memot; Phnum Kravanh <- Phnum Kravanh, Ta Lou; Ponhea Kraek <- Dambae, Ponhea Kraek; Pur SenChey <- Pou Saenchey, Kambol; Suong <- Ponhea Kraek; Thala Barivat <- Thala Barivat, Borei O'Svay Sen Chey
-  wrote data/processed/cambodia_census.json (680 kB)
-  wrote cambodia_census.json: 218 records
+png: the 2024 census head count and the 2011 census's provincial religion
+  cached 2024-final-figures.pdf (7.9 MB)
+  cached 2011-national-report.pdf (11.5 MB)
+  2024 Table 1: 22 provinces adding to 10,185,363, the printed national total
+  2024 Provincial Snapshots: 96 districts across 22 provinces
+  2011 Summary Indicators: 22 provinces, and the three the report names in prose (Bougainville, Morobe, Northern) agree with it
+  2011 Table 1.7: median ages for all 22 provinces, from 18.1 to 26.6 (PNG 21.4); the Summary Indicators print the same 22
+  religion coverage: one denomination per province, describing 19.7% of Hela at the least and 68.4% of Autonomous Region of Bougainville at the most; all 22 below 95.0%, so every panel says what share it describes
+    Hela                               Evangelical Alliance    19.7%
+    Southern Highlands                 Roman Catholic          19.7%
+    National Capital District          United Church           23.0%
+    Western Highlands                  Evangelical Lutheran    26.0%
+    Enga                               Evangelical Lutheran    26.4%
+    Jiwaka                             Roman Catholic          29.6%
+    Gulf                               United Church           30.1%
+    New Ireland                        Roman Catholic          31.3%
+    Chimbu                             Roman Catholic          34.4%
+    Western                            Evangelical Alliance    37.1%
+    Madang                             Evangelical Lutheran    38.4%
+    Manus                              Roman Catholic          38.5%
+    Eastern Highlands                  Seventh Day Adventist   39.6%
+    Central                            United Church           40.0%
+    West Sepik                         Roman Catholic          40.4%
+    East New Britain                   Roman Catholic          42.8%
+    East Sepik                         Roman Catholic          43.0%
+    Milne Bay                          United Church           54.9%
+    West New Britain                   Roman Catholic          55.3%
+    Northern                           Anglican                60.6%
+    Morobe                             Evangelical Lutheran    67.0%
+    Autonomous Region of Bougainville  Roman Catholic          68.4%
+  COD 2011: 87 districts add to 7,275,324, the census's own figure; each province's add to its own row; and the caveat's two combined provinces are separate in these tables
+    Wau/Waria -> Bulolo District: 46 points of deviation from Morobe's +48%, against 56 for the next best (Lae District)
+    Popondetta -> Ijivitari District: 11 points of deviation from Northern's +47%, against 106 for the next best (Sohe District)
+    Delta Fly -> Middle Fly District: 14 points of deviation from Western's +49%, against 118 for the next best (South Fly District)
+    Nakanai -> Talasea District: 7 points of deviation from West New Britain's +39%, against 222 for the next best (Kandrian/Gloucester District)
+  districts: all 87 shapes carry the 2024 count, 4 of them summed with the district carved out of them since 2011 (Delta Fly, Popondetta, Wau/Waria, Nakanai)
+  the rest of each province was looked for here, and is not published:
+    2011 National Report, all 100 pp
+      -> religion on pp. 26-30 (the one provincial row), 32-34 (Table 2.4 and Figures 2.1-2.2, country only) and 85; no provincial table
+    2011 National Report, Appendix 4 (p. 95)
+      -> the provincial tables are priced products -- Provincial Report K40 a province, 31 Basic Tables K40 a set, Table Retrieval System CD-ROM K2,000 -- and none of them is a download
+    nso.gov.pg sitemap, all 289 published files
+      -> no provincial census report; nothing below the province carries religion
+    2024 Final Figures (35 pp), 2011 Final Figures booklet (40 pp), ward tables (35 pp), 2021 provincial estimates (2 pp)
+      -> religion on zero pages of any of them
+    2000 National Report, three copies
+      -> one 22,359,391-byte scan, 109 pp, zero extractable characters
+    DHS StatCompiler API (api.dhsprogram.com)
+      -> 2.2 MB of indicators and no religion composition among them; religion is a DHS background characteristic, never an indicator
+    DHS 2016-18 final report FR364 (519 pp)
+      -> religion on 6 pages, crossed with province on none
+    DHS microdata
+      -> 30 files named by the API, served only to a registered account; not attempted
+    2022 SDES thematic workbooks
+      -> sheet T2.4 is religion by Total/Urban/Rural and sex -- a 321-cluster national survey with no provincial estimates
+    spc.int PRISM, via the Internet Archive
+      -> the 2000 census page links no tables; popdemog.htm has three national rates (christian / non-christian / none)
+    Wikipedia (Religion in PNG, province articles)
+      -> national denominations only; no province article has a religion table
+    pngnri.org via the Internet Archive (1,108 PDFs)
+      -> atlas sheets of education and development indicators, not census tables
+  wrote data/processed/png.json (425 kB)
+  wrote 109 records (22 provinces, 87 districts)
