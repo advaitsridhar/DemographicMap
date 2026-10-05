@@ -24,6 +24,8 @@ answers one question and prints only what decides it.
   code length (region or district) and the years covered.
 * ``xlsx URL`` -- a big workbook's structure: every row whose first cell is a
   label rather than a number, with that row's non-empty cells.
+* ``pages URL [URL...] --match RE`` -- the whole text of every PDF page that
+  matches, up to ``--most`` pages per file.
 
 Usage:
     python -m scripts.fetch_census.central_asia_probe get https://stat.gov.kg/ru/ --links census
@@ -390,10 +392,47 @@ def cmd_xlsx(url: str, sheets: list[str], rows: int, width: int, skip: str) -> N
             log(f"  r{i}: {' | '.join(cells)[:900]}")
 
 
+def cmd_pages(urls: list[str], match: str, most: int) -> None:
+    """The text of every page of each PDF whose text matches ``match``.
+
+    A census book's tables run over pages whose numbers differ from book to
+    book; their titles and "Продолжение табл. N" lines do not. Printing those
+    pages whole gives a parser its real layout, wrapped labels and all.
+    """
+    import logging
+
+    from pypdf import PdfReader
+    logging.getLogger("pypdf").setLevel(logging.ERROR)
+    pattern = re.compile(match)
+    for url in urls:
+        status, _, body, _ = fetch(url, timeout=300)
+        if status != 200:
+            log(f"{url}: HTTP {status}")
+            continue
+        pages = PdfReader(io.BytesIO(body)).pages
+        hits = 0
+        log(f"{url}: {len(pages)} pages")
+        for number, page in enumerate(pages, start=1):
+            text = page.extract_text() or ""
+            if not pattern.search(text):
+                continue
+            hits += 1
+            if hits > most:
+                log(f"  ... more pages match; stopped at {most}")
+                break
+            log(f"--- page {number} ---")
+            for line in text.splitlines():
+                log(line.rstrip())
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    pg = sub.add_parser("pages")
+    pg.add_argument("urls", nargs="+")
+    pg.add_argument("--match", required=True)
+    pg.add_argument("--most", type=int, default=60)
     x2 = sub.add_parser("xlsx")
     x2.add_argument("url")
     x2.add_argument("--sheets", default="")
@@ -444,7 +483,9 @@ def main() -> int:
     j.add_argument("--chars", type=int, default=400)
     j.add_argument("--data", default=None)
     args = ap.parse_args()
-    if args.cmd == "xlsx":
+    if args.cmd == "pages":
+        cmd_pages(args.urls, args.match, args.most)
+    elif args.cmd == "xlsx":
         cmd_xlsx(args.url, [s for s in args.sheets.split(",") if s], args.rows,
                  args.width, args.skip)
     elif args.cmd == "siat":
