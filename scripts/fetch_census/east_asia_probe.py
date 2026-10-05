@@ -315,6 +315,15 @@ def cmd_kosis(args: argparse.Namespace) -> None:
                   f"inputs={[n for n in names if n][:args.cols]}")
         for src in re.findall(r"""(?is)<iframe\b[^>]*src\s*=\s*["']([^"']*)["']""", text):
             print(f"    iframe {src!r}")
+        scripts = re.findall(r"""(?is)<script\b[^>]*src\s*=\s*["']([^"']+)["']""", text)
+        if scripts:
+            print(f"    scripts: {[s for s in scripts if 'jquery' not in s.lower()][:args.rows]}")
+        # A table page's classifications, as the JSON its script carries.
+        dims: dict[str, list[str]] = {}
+        for var, name in re.findall(r'"objVarId":"([^"]+)"[^{}]*?"scrKor":"([^"]*)"', text):
+            dims.setdefault(var, []).append(name)
+        for var, names in dims.items():
+            print(f"    objVarId {var}: {len(names)} items, e.g. {names[:args.cols]}")
         if args.grep:
             for m in list(re.finditer(args.grep, text, re.I))[:args.options]:
                 s = max(0, m.start() - args.context)
