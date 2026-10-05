@@ -1,8 +1,6 @@
-tuvalu_census: 2022 report (islands) and 2017 tables (villages, faiths)
-  2022 report: nine islands making 10,632; Table 3 agrees for Nui, Nukufetau, Vaitupu
-  https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2.xlsx: 1,310,798 bytes
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: NOTES!$A:$AB.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  admin1 ethnicity 3, admin1 median_age 3, admin1 population 3, admin1 religion 3, admin1 sex_ratio 3, admin2 population 6, admin2 sex_ratio 6
-  wrote data/processed/tuvalu_census.json (29 kB)
-  wrote 9 records
+page: https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/index.html
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63.html
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://www.stats.gov.cn/sj/tjbz/qhdm/
+  unreachable: HTTPError: HTTP Error 404: Not Found
