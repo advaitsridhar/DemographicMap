@@ -1,92 +1,24 @@
-probe_pdf: https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures.pdf
-  7,861,439 bytes
-  35 pages
-probe_pdf: 35 pages, 7 mention ['Median', 'median', 'Age', 'age']
-=== front matter ===
 
+== GET https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/043ba4c6-1a52-4649-800c-710a3024daa2/download/afg_admpop_adm1_2021_v2.csv
+   (redirected to https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/043ba4c6-1a52-4649-800c-710a3024daa2/afg_admpop_adm1_2021_v2.csv?AWSAccessKeyId=ASIAXYC32WNA5XAYPQB7&Signature=K250FzKyCppoTI1O6f%2BKjyyb%2B08%3D&x-amz-security-token=FwoGZXIvYXdzEBoaDL8LP35owYDFixYw2yLBAY1Zsk4aRj9XqEgB8c5u2BvvDPJMbTyXxAd%2BrNOsz1DWgBtLIcU17eK3kC6jp0LxGKVKb8XfOCVB9nLdAh7yf3%2F0HaxQWKlLnLOEBlwy1Pbw6lkFj8KIw3H4Q6okn%2BYqEejg%2BXs%2BrwsXtFjLEnyZ8Ag3JNjyCtpOdv6xGT8E3%2FNdgiT%2F7ItxXt2%2FLcUNKSatGC4P4pxEJac48UMSI6qpd4laReMtR0uvo3qwdRz93U4kwRigtLATmOk5tO8bY7nAYjwo2tuL1gYyLeIYNUxf0aN9F1XapGurXsyvwadUKvL7Mc1gCUrfRCeTdzC6dAwD1i0Ik7WSqA%3D%3D&Expires=1791160231)
+  200 text/csv 13828 https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/043ba4c6-1a52-4649-800c-710a3024daa2/download/afg_admpop_adm1_2021_v2.csv
+    Admin0_Name,Admin0_Code,Admin1_Name,Admin1_Code,F_TL,M_TL,T_TL,F_00_04,M_00_04,T_00_04,F_05_09,M_05_09,T_05_09,F_10_14,M_10_14,T_10_14,F_15_19,M_15_19,T_15_19,F_20_24,M_20_24,T_20_24,F_25_29,M_25_29,T_25_29,F_30_34,M_30_34,T_30_34,F_35_39,M_35_39,T_35_39,F_40_44,M_40_44,T_40_44,F_45_49,M_45_49,T_45_49,F_50_54,M_50_54,T_50_54,F_55_59,M_55_59,T_55_59,F_60_64,M_60_64,T_60_64,F_65_69,M_65_69,T_65_69,F_70_74,M_70_74,T_70_74,F_75_79,M_75_79,T_75_79,F_80plus,M_80plus,T_80plus
+    #adm0+name,#adm0+code,#adm1+name,#adm1+code,#population+f,#population+m,#population,#population+infants+age0_4+f,#population+infants+age0_4+m,#population+infants+age0_4,#population+children+age5_9+f,#population+children+age5_9+m,#population+children+age5_9,#population+children+age10_14+f,#population+children+age10_14+m,#population+children+age10_14,#population+adolescents+age15_19+f,#population+adolescents+age15_19+m,#population+adolescents+age15_19,#population+adults+age20_24+f,#population+adults+age20_24+m,#population+adults+age20_24,#population+adults+age25_29+f,#population+adults+age25_29+m,#population+adults+age25_29,#population+adults+age30_34+f,#population+adults+age30_34+m,#population+adults+age30_34,#population+adults+age35_39+f,#population+adults+age35_39+m,#population+adults+age35_39,#population+adults+age40_44+f,#population+adults+age40_44+m,#population+adults+age40_44,#population+adults+age45_49+f,#population+adults+age45_49+m,#population+adults+age45_49,#population+adults+age50_54+f,#population+adults+age50_54+m,#population+adults+age50_54,#population+adults+age55_59+f,#population+adults+age55_59+m,#population+adults+age55_59,#population+adults+age60_64+f,#population+adults+age60_64+m,#population+adults+age60_64,#population+elderly+age65_69+f,#population+elderly+age65_69+m,#population+elderly+age65_69,#population+elderly+age70_74+f,#population+elderly+age70_74+m,#population+elderly+age70_74,#population+elderly+age75_79+f,#population+elderly+age75_79+m,#population+elderly+age75_79,#population+elderly+age80plus+f,#population+elderly+age80plus+m,#population+elderly+age80plus
+    Afghanistan,AF,Badakhshan,AF17,666004,691032,1357036,119853,124553,244406,103188,110447,213635,87127,95911,183038,74089,79233,153322,63046,58740,121786,50854,46265,97119,35591,35897,71488,28811,29330,58141,26430,24950,51380,22044,20768,42812,16946,16556,33502,13174,13830,27004,9779,12236,22015,6887,9461,16348,4231,6384,10615,1810,3006,4816,2144,3465,5609
+    Afghanistan,AF,Badghis,AF31,346001,361534,707535,62266,65164,127430,53608,57783,111391,45264,50179,95443,38491,41453,79944,32754,30731,63485,26419,24205,50624,18490,18780,37270,14968,15345,30313,13731,13053,26784,11452,10866,22318,8804,8662,17466,6844,7236,14080,5080,6402,11482,3578,4950,8528,2198,3340,5538,940,1572,2512,1114,1813,2927
+    Afghanistan,AF,Baghlan,AF09,639251,666993,1306244,115039,120220,235259,99043,106604,205647,83627,92575,176202,71113,76477,147590,60514,56696,117210,48811,44656,93467,34161,34648,68809,27654,28310,55964,25368,24082,49450,21158,20046,41204,16265,15980,32245,12645,13349,25994,9386,11811,21197,6610,9132,15742,4061,6162,10223,1738,2901,4639,2058,3344,5402
+    Afghanistan,AF,Balkh,AF21,956005,986924,1942929,172041,177886,349927,148119,157739,305858,125065,136980,262045,106350,113160,219510,90499,83891,174390,72997,66075,139072,51088,51267,102355,41357,41889,83246,37938,35633,73571,31642,29661,61303,24325,23645,47970,18911,19752,38663,14037,17476,31513,9886,13512,23398,6073,9118,15191,2599,4292,6891,3078,4948,8026
+    Afghanistan,AF,Bamyan,AF10,314736,323245,637981,56640,58262,114902,48764,51664,100428,41174,44865,86039,35013,37063,72076,29794,27477,57271,24032,21641,45673,16819,16791,33610,13616,13720,27336,12490,11671,24161,10417,9715,20132,8008,7744,15752,6226,6469,12695,4621,5724,10345,3255,4426,7681,1999,2986,4985,855,1406,2261,1013,1621,2634
+    Afghanistan,AF,Daykundi,AF24,323781,341169,664950,58267,61493,119760,50165,54529,104694,42357,47352,89709,36019,39118,75137,30650,29000,59650,24723,22841,47564,17303,17723,35026,14007,14481,28488,12849,12318,25167,10717,10254,20971,8238,8174,16412,6405,6828,13233,4754,6041,10795,3348,4671,8019,2057,3152,5209,880,1484,2364,1042,1710,2752
+    Afghanistan,AF,Farah,AF33,353543,371301,724844,63623,66924,130547,54776,59344,114120,46251,51534,97785,39330,42573,81903,33468,31561,65029,26995,24859,51854,18893,19288,38181,15294,15760,31054,14030,13406,27436,11702,11159,22861,8996,8896,17892,6993,7431,14424,5191,6575,11766,3656,5084,8740,2246,3430,5676,961,1615,2576,1138,1862,3000
+    Afghanistan,AF,Faryab,AF29,700794,727225,1428019,126114,131077,257191,108578,116231,224809,91679,100935,192614,77959,83383,161342,66340,61816,128156,53510,48688,102198,37450,37777,75227,30316,30867,61183,27810,26256,54066,23195,21856,45051,17831,17423,35254,13862,14554,28416,10290,12877,23167,7247,9957,17204,4452,6719,11171,1905,3163,5068,2256,3646,5902
+    Afghanistan,AF,Ghazni,AF11,858450,895641,1754091,154485,161433,315918,133005,143149,276154,112303,124310,236613,95498,102694,198192,81264,76132,157396,65548,59964,125512,45875,46525,92400,37136,38015,75151,34067,32337,66404,28413,26918,55331,21843,21458,43301,16981,17925,34906,12605,15860,28465,8877,12262,21139,5453,8274,13727,2333,3895,6228,2764,4490,7254
+    Afghanistan,AF,Ghor,AF23,481466,502714,984180,86644,90611,177255,74596,80349,154945,62986,69774,132760,53560,57641,111201,45577,42732,88309,36763,33657,70420,25729,26114,51843,20828,21337,42165,19107,18150,37257,15936,15109,31045,12251,12044,24295,9524,10061,19585,7069,8902,15971,4979,6883,11862,3058,4644,7702,1309,2186,3495,1550,2520,4070
+    Afghanistan,AF,Hilmand,AF30,917077,944810,1861887,165036,170295,335331,142088,151008,293096,119973,131134,251107,102019,108331,210350,86814,80311,167125,70025,63256,133281,49008,49080,98088,39672,40102,79774,36393,34112,70505,30354,28395,58749,23334,22636,45970,18141,18909,37050,13465,16730,30195,9483,12936,22419,5826,8729,14555,2493,4109,6602,2953,4737,7690
+    Afghanistan,AF,Hirat,AF32,1367414,1388496,2755910,246078,250266,496344,211861,221921,433782,178886,192716,371602,152117,159204,311321,129444,118026,247470,104411,92961,197372,73073,72128,145201,59154,58934,118088,54265,50131,104396,45259,41730,86989,34793,33265,68058,27049,27789,54838,20078,24587,44665,14140,19010,33150,8686,12828,21514,3717,6039,9756,4403,6961,11364
+    Afghanistan,AF,Jawzjan,AF28,382210,392915,775125,68782,70820,139602,59218,62799,122017,50001,54534,104535,42519,45051,87570,36181,33399,69580,29184,26306,55490,20425,20411,40836,16534,16677,33211,15168,14186,29354,12651,11809,24460,9725,9413,19138,7560,7864,15424,5612,6958,12570,3952,5379,9331,2428,3630,6058,1039,1709,2748,1231,1970,3201
+    Afghanistan,AF,Kabul,AF01,3293371,3407142,6700513,592670,614112,1206782,510262,544559,1054821,430842,472893,903735,366369,390661,757030,311763,289616,601379,251470,228110,479580,175995,176989,352984,142470,144614,287084,130695,123014,253709,109005,102399,211404,83798,81628,165426,65146,68189,133335,48356,60332,108688,34055,46648,80703,20920,31477,52
 
-=== pages mentioning ['Median', 'median', 'Age', 'age'] (first 10) ===
-
---- page 4 ----------------------------------------------------
-Momase Regional Population    2,753,211
-Islands Regional Population    1,477 ,833
-PNG average annual Growth Rate (2011 - 2024)     2.6%
-Southern Regional average Annual Growth Rate (2011 - 2024)    3.6%
-Highlands Regional Average Annual Growth Rate (2011 - 2024)     1.9%
-Momase Regional Average Annual Growth Rate (2011 – 2024)         3.0%
-Islands Regional Average Annual Growth Rate (2011 - 2024)    2.3%
-PNG Crude Population Density per square kilometre       22 persons
-The 2024 Census information is a direct response to rapid growth in the demand for population
-
---- page 6 ----------------------------------------------------
-This represents an increase of 40% (2,910,039 people) in PNG’s population count since 2011
-(7 ,275,324)
-The average annual growth rate over the past 13 years, since the 2011 Census, was 2.6%.
-Annual growth rate since the 2011 Census is higher (3.1%) but is likely to be artificially inflated
-because of non-demographic factors such as higher undercounting in 2000 and improvements to
-the 2011 and 2024 Census coverage methods.
-More males than females were counted in PNG on Census night (52.4% and 47 .6% of the total
-population, respectively). This represents approximately 110 males to every 100 females.
-The average number of people per household was 5 for PNG.
-Since the first official census in 1980, five years after independence, there have been an additional
-7 .2 million people added from 3.0 million in the last 44 years
-
---- page 7 ----------------------------------------------------
-22.  Autonomous Region of Bougainville 3 6 7,0 9 3 189,477 1 7 7, 6 1 6 107
-Population Distribution by Region
-PNG is divided into 4 Regions. The Highlands Region (35.7%) has the highest percentage of PNG’s
-population, followed by Momase (27%), then the Southern and Islands Regions.
-Population Distribution by Province
-At the provincial level, Morobe has the highest percentage (9.8%), followed by Eastern Highlands
-Province (7 .9%), Madang (7 .5%) and National Capital District (7 .4%).
-
---- page 8 ----------------------------------------------------
-Provincial Growth Rates
-The fastest growing provinces (between 2011 and 2024) were Western, National Capital District,
-Milne Bay, and Madang, each recording more than 3% average annual growth rate since 2011.
-T able 2: Provincial population growth rates (2011-2024)
-Province 2011 2024 Growth rate (%)
-
---- page 18 ----------------------------------------------------
-Districts Total Male Female
-Dei 91,051 46,490 44,561
-Hagen Central 160,914 84,205 76,709
-Mul/Baiyer 110,252 55,920 54,332
-Tambul/Nebilyer 100,349 50,967 49,382
-      ...
-Sex Ratio (males per 100 females)  106
-Population density (persons per km2 ) 109
-District with highest population count Hagen Central
-Population Distribution by District
-19%
-      ...
-T ambul/Nebilyer
-35%
-Hagen Central
-24%
-Mul/Baiyer
-
---- page 32 ----------------------------------------------------
-distribution of the population at a fixed point in time, important parameters for development planning.
-This information was captured using a census questionnaire comprising of six questions; name, relationship
-to head of household, sex, age, marital status and citizenship. The 2024 Census questionnaire was endorsed
-by the National Census Steering Committee (NCSC) with the focus on ensuring the collection of high quality
-census, instilling confidence in the accuracy and currency of the population count- a key government
-      ...
-census publicity drive.
-Census Geography
-The census geography is basically a register of all villages, communities, government or mission stations in
-both urban and rural areas placed under their correct wards, LLGs, districts, and provinces. It is established
-almost two years before the main census enumeration as a control to ensure everyone living in the country
-
---- page 33 ----------------------------------------------------
-30
-helps identify areas not covered. It is also useful for the dissemination of the final census results.
-The census covered over 30,000 census units (including villages and communities in urban and rural areas),
-spanning 22 provinces, 98 districts, 369 LLGs, and more than 6,400 wards.
-Data Limitatiion
-      ...
-counted.
-Comparison with other previous censuses should be made with caution because of the differences in the
-operational strategies and coverage, and definition changes which have been progressively implemented at
-censuses since 1966.
+== GET https://data.humdata.org/api/3/action/package_show?id=17acb541-9431-409a-80a8-50eda7e8ebab
+  200 application/json;charset=utf-8 24689 https://data.humdata.org/api/3/action/package_show?id=17acb541-9431-409a-80a8-50eda7e8ebab
+    {"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "batch": "5cf195e0-aa6e-439a-baf2-d8a8f26c7f5f", "caveats": "Population figures from the original data have been rounded off to the nearest integer.", "creator_user_id": "416d4d0c-0b8a-4f30-9360-04076e1d84a6", "data_update_frequency": "365", "dataset_date": "[2021-01-01T00:00:00 TO 2021-12-31T23:59:59]", "dataset_preview": "no_preview", "dataset_source": "National Statistic and Information Authority (NSIA) Afghanistan", "due_date": "2022-12-31T23:59:59", "has_geodata": false, "has_showcases": false, "id": "17acb541-9431-409a-80a8-50eda7e8ebab", "is_requestdata_type": false, "isopen": true, "last_modified": "2024-08-27T13:06:55.238685", "license_id": "cc-by", "license_title": "Creative Commons Attribution International (CC BY)", "license_url": "http://www.opendefinition.org/licenses/cc-by", "maintainer": "416d4d0c-0b8a-4f30-9360-04076e1d84a6", "metadata_created": "2021-04-20T10:33:22.263936", "metadata_modified": "2025-07-22T20:40:32.438602", "methodology": "Other", "methodology_other": "Based on micro-census and remote sensing data.", "name": "legacy-cod-ps-afg", "notes": "Afghanistan administrative levels 0 (country), and 1 (province) population statistics.\r\n\r\nREFERENCE YEAR: 2021 estimates based on 2017 study conducted by Flowminder/UNFPA.\r\n\r\nDataset updated by OCHA in 2021.\r\n\r\nThe gazetteer is compatible with the [Afghanistan - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-afg) gazetteer.  (COD-AB boundaries are unavailable.)", "num_resources": 4, "num_tags": 4, "organization": {"id": "10e168ce-5b51-49ac-8616-a142d48618e5", "name": "ocha-afghanistan", "title": "OCHA Afghanistan", "type": "organization", "description": "OCHA resumed its operation in Afghanistan in 2009, providing humanitarian assistance in a complex environment where separate \u2013 and not always complementary \u2013 military, political and security objectives pose challenges to the implementation of humanitarian principles, the ability of responders to reach people in need and the safety and security of aid workers", "image_url": "", "created": "2014-08-06T14:26:07.642577", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "10e168ce-5b51-49ac-8616-a142d48618e5", "package_creator": "sandeep", "pageviews_last_14_days": 10, "private": false, "qa_completed": false, "solr_additions": "{\"countries\": [\"Afghanistan\"]}", "state": "active", "subnational": "1", "title": "Afghanistan - Subnational Population Statistics", "total_res_downloads": 3726, "type": "dataset", "updated_by_script": "HDXINTERNAL:HDXPythonLibrary/6.2.0-CODs (2025-02-24T18:49:17.910494)", "url": null, "version": null, "groups": [{"description": "", "display_name": "Afghanistan", "id": "afg", "image_display_url": "", "name": "afg", "title": "Afghanistan"}], "resources": [{"alt_url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/2617fc21-4d6f-484a-96ed-fa9ef5b88abc/download/", "cache_last_updated": null, "cache_url": null, "created": "2021-04-20T10:33:23.652383", "datastore_active": false, "description": "2021 population estimates for Afghanistan administrative level 0 (country) and 1 (province).", "download_url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/2617fc21-4d6f-484a-96ed-fa9ef5b88abc/download/afg_admpop_adm0_1_2021_v2.xlsx", "format": "XLSX", "hash": "", "hdx_rel_url": "/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/2617fc21-4d6f-484a-96ed-fa9ef5b88abc/download/afg_admpop_adm0_1_2021_v2.xlsx", "id": "2617fc21-4d6f-484a-96ed-fa9ef5b88abc", "last_modified": "2022-06-24T09:25:20.283835", "metadata_modified": "2025-04-10T14:44:23.274955", "microdata": false, "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "mimetype_inner": null, "name": "afg_admpop_adm0_1_2021_v2.xlsx", "originalHash": "32118354", "p_coded": true, "package_id": "17acb541-9431-409a-80a8-50eda7e8ebab", "pii": "false", "pii_predict_score": 0.2927994306017117, "pii_report_flag": "FINDINGS", "pii_report_id": "/resources/2617fc21-4d6f-484a-96ed-fa9ef5b88abc/pii.2022-06-24T09-25-21.main.json", "pii_timestamp": "2022-06-24T09:25:35.989000", "position": 0, "resource_type": "file.upload", "size": 35056, "state": "active", "url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/2617fc21-4d6f-484a-96ed-fa9ef5b88abc/download/afg_admpop_adm0_1_2021_v2.xlsx", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/dc7a5656-d557-404f-8b1d-494c7bbd0112/download/", "cache_last_updated": null, "cache_url": null, "created": "2021-04-20T10:33:28.178244", "datastore_active": false, "description": "Afghanistan administrative level 0 (country), 1 (province) and 2 (district) gazetteer.", "download_url": "https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/dc7a5656-d557-404f-8b1d-494c7bbd0112/download/afg_admgz.xlsx", "format": "XLSX", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2024-07-10T17:48:47.088769\"}, {\"state\": \"success\", \"message\": \"File structure check completed\", \"timestamp\": \"2024-07-10T17:48:49.920835\", \"sheet_changes\": [], \"hxl_proxy_response\": {\"url_or_filename\": \"https://data.humdata.org/dataset/17acb541-9431-409a-80a8-50eda7e8ebab/resource/dc7a5656-d557-404f-8b1d-494c7bbd0112/download/afg_admpopgz_2024.xlsx\", \"format\": \"XLSX\", \"sheets\": [{\"name\": \"ADM0\", \"is_hidden\": false, \"nrows\": 2, \"ncols\": 12, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"918a685f93d9578d246f71a8587487e9\", \"hxl_header_hash\": null, \"headers\": [\"ADM0_EN\", \"ADM0_DA\", \"ADM0_PCODE\", \"ADM0_REF\", \"ADM0ALT1_EN\", \"ADM0ALT2_EN\", \"ADM0ALT1_DA\", \"ADM0ALT2_DA\", \"DATE\", \"VALIDON\", \"VALIDTO\", \"AREA_SQKM\"], \"hxl_headers\": null}, {\"name\": \"ADM1\", \"is_hidden\": false, \"nrows\": 35, \"ncols\": 18, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"75e906c7f77db6fa462d1bd8c6fc57c2\", \"hxl_header_hash\": null, \"headers\": [\"ADM1_EN\", \"ADM1_DA\", \"ADM1_PCODE\", \"ADM1_REF\", \"ADM1ALT1_EN\", \"ADM1ALT2_EN\", \"ADM1ALT1_DA\", \"ADM1ALT2_DA\", \"ADM0_EN\", \"ADM0_DA\", \"ADM0_PCODE\", \"DATE\", \"VALIDON\", \"VALIDTO\", \"REGION_EN\", \"REGION_DA\", \"REGIONCODE\", \"AREA_SQKM\"], \"hxl_headers\": null}, {\"name\": \"ADM2\", \"is_hidden\": false, \"nrows\": 402, \"ncols\": 22, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"9776e5bd1b9fe5e6dddfadf2c9954f0a\", \"hxl_header_hash\": null, \"headers\": [\"ADM2_EN\", \"ADM2_DA\", \"ADM2_PCODE\", \"ADM2_REF\", \"ADM2ALT1_EN\", \"ADM2ALT2_EN\", \"ADM2ALT1_DA\", \"ADM2ALT2_DA\", \"ADM1_EN\", \"ADM1_DA\", \"ADM1_PCODE\"
