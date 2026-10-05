@@ -1,9 +1,419 @@
-vietnam_district: General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019
-  fetched Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf (9.5 MB)
-  842 pages
-  Table 1: 712 districts in 63 provinces, each province's districts making its own row; the provinces make 96,208,984
-  Table 5: 63 provinces, each one's 18 groups making its total; national median 31.8 from the groups, 31.8 from Table 4's single years
-  705 of 705 polygons bound, 710 of 710 census districts; not drawn: Cồn Cỏ (Quảng Trị, 346), Trường Sa (Khánh Hòa, 93)
-  provinces' medians 23.4-38.0; districts' sex ratios 84.7-112.1
-  wrote data/processed/vietnam_district.json (2088 kB)
-  wrote vietnam_district.json: 769 records
+probe_pdf: https://web.archive.org/web/20211122214957id_/https://www.1212.mn/BookLibraryDownload.ashx?url=Census2020_Main_report_Eng.pdf&ln=En
+  10,505,496 bytes
+  298 pages
+probe_pdf: 298 pages, 20 mention ['Khalkh']
+=== front matter ===
+NATIONAL REPORT
+2020 POPULATION AND HOUSING  
+CENSUS OF MONGOLIA  
+NATIONAL STATISTICS OFFICE 
+OF MONGOLIA
+EDITORIAL TEAM
+ONE. REVIEWED BY
+Ariunzaya Ayush
+Master of Sociology, History and Political Science, Master of Business Administration
+Chairperson of the NSO, Deputy Chairman of the State Commission on Population and Housing  
+Census
+Bayanchimeg Chilkhaasuren
+Statistician-Economist, Master of Economics
+Vice Chairperson of the NSO
+Amarbal Avirmed
+Economist-Demographer, PhD in Demographics
+Director of the Population and social statistics department, Secretary of the State Commission 
+on Population and Housing Census
+TWO. PREPARED BY
+Bolor-Erdene Tumurbaatar
+Economist-Demographer
+Director, Population and Housing Census Bureau, NSO 
+Uyanga Turbat 
+Economist-Demographer
+Senior Statistician, Population and Housing Census Bureau, NSO
+Tserendulam Ichinnorov
+Economist-Statistician
+Statistician, Population and Housing Census Bureau, NSO
+Uujinge Ochirbal
+Economist-Demographer
+Statistician, Population and Housing Census Bureau, NSO
+Ariunsaikhan Tugsbat 
+Economist
+Statistician, Population and Housing Census Bureau, NSO
+Batkhishig Ryenchindorj
+Economist
+Statistician, Population and Housing Census Bureau, NSO
+Munkhjargal Burenjargal
+Programmer
+Officer, Population and Housing Census Bureau, NSO
+Ariunzaya Batchuluun
+Business and economic management
+Officer, Population and Housing Census Bureau, NSO
+Misheel Mashbat
+Accountant
+Officer, Population and Housing Census Bureau, NSO
+Erdenemunkh Tsenkherbor
+Program engineer
+Senior referent, Information technology department, NSO
+Lkhagvatseren Dulmaa
+Computer software and Hardware engineer
+Referent, Information technology department, NSO
+Jargal Ganbaatar
+Computer and Program engineer
+Referent, Information technology department, NSO
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA 
+NATIONAL REPORT
+3
+CONTENTS
+EDITORIAL TEAM .............................................................................................2
+LIST OF TABLES .............................................................................................. 4
+LIST OF FIGURES .............................................................................................8
+FOREWORD ................................................................................................... 11
+MESSAGE FROM THE PRESIDENT OF MONGOLIA ........................................ 13
+MESSAGE FROM THE SPEAKER OF THE PARLIAMENT OF MONGOLIA ........ 15
+FOREWORD BY THE PRIME MINISTER OF MONGOLIA AND ..........................17
+CHAIR OF STATE COMMISSION ON POPULATION AND HOUSING CENSUS ..17
+OVERALL RESULT SUMMARY ........................................................................19
+CHAPTER ONE
+COMPOSITION AND HIGHLIGHTS ................................................................29
+CHAPTER TWO
+NUMBER OF POPULATIONS, GROWTH, AGE AND SEX STRUCTURE ........39
+CHAPTER THREE
+CITIZENSHIP, ETHNICITY AND RELIGION ...................................................49
+CHAPTER FOUR
+POPULATION DISTRIBUTION AND SETTLEMENT AND URBANIZATION ...65
+CHAPTER FIVE
+INTERNAL MIGRATION .................................................................................75
+CHAPTER SIX
+EDUCATION AND LITERACY .........................................................................91
+CHAPTER SEVEN
+HOUSEHOLD AND MARITAL STATUS .........................................................103
+CHAPTER EIGHT
+PERSONS WITH DISABILITY AND TYPES OF DISABILTY ........................1115
+CHAPTER NINE
+MOBILE PHONE AND INTERNET USERS ..................................................127
+CHAPTER TEN
+EMPLOYMENT .............................................................................................133
+CHAPTER ELEVEN
+MONGOLIAN CITIZENS RESIDING ABROAD ..............................................151
+CHAPTER TWELVE
+HOUSEHOLD HOUSING CONDITION AND TYPES .....................................163
+APPENDIX ................................................................................................... 181
+
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA 
+NATIONAL REPORT
+4
+LIST OF TABLES
+TABLE 2.1  POPULATION OF MONGOLIA, BY CENSUS YEARS ..........................................................41
+TABLE 2.2.  POPULATION VITAL STATISTICS INDICATOR, 2010-2020 ................................................42
+TABLE 2.3.  POPULATION GROWTH IN AIMAGS AND THE CAPITAL, BY PERCENTAGE, 1989-2000, 
+2000-2010, 2010-2020  ....................................................................................................... 43
+TABLE 2.4.  POPULATION BY AGE GROUPS, BY SEX, AND SEX RATIO, 2010, 2020 ...........................44
+TABLE 2.5.  POPULATION IN AIMAGS AND THE CAPITAL, BY SEX, AND SEX RATIO, 2010, 2020  ....46
+TABLE 2.6.  URBAN AND RURAL POPULATION, BY SEX, AND SEX RATIO, 2010, 2020 .....................46
+TABLE 2.7. SOME KEY INDICATORS OF POPULATION AGE STRUCTURE, 1989, 2000, 2010, 2020 ..47
+TABLE 3.1.  RESIDENT POPULATION IN MONGOLIA BY AIMAGS AND THE CAPITAL, BY SEX, AND 
+SEX RATIO, 2010, 2020 ....................................................................................................... 51
+TABLE 3.2.  POPULATION AND ETHNIC GROUPS, BY PERCENTAGE, 2010, 2020  ............................52
+TABLE 3.3.  ETHNICITY BY AGE GROUPS AND PERCENTAGE, 2020 ..................................................53
+TABLE 3.4.  PERCENTAGE DISTRIBUTION OF POPULATION AGED 10 AND ABOVE, BY ETHNICITY 
+AND EDUCATION LEVEL, 2020 ..........................................................................................56
+TABLE 3.5.  PERCENTAGE DITRIBUTION POPULATION AGED 15 AND ABOVE, BY ETHNICITY AND 
+EMPLOYMENT STATUS, 2020 ............................................................................................57
+TABLE 3.5.1  PERCENTAGE DISTRIBUTION OF POPULATION AGED 15 AND ABOVE, BY ETHNICITY 
+AND EMPLOYMENT STATUS, 2020 /CONTINUED/ ...........................................................58
+TABLE 3.6.  PERCENTAGE DISTRIBUTION OF FOREIGN CITIZENSS RESIDING IN MONGOLIA, BY 
+COUNTRY, 2010, 2020 ........................................................................................................59
+TABLE 3.7.  PERCENTAGE DISTRIBUTION OF FOREIGN CITIZENS RESIDING IN MONGOLIA, BY 
+AIMAGS AND THE CAPITAL CITY, 2010, 2020 ...................................................................59
+TABLE 3.8.  PERCENTAGE DISTRIBUTION OF MONGOLIAN RESIDING POPULATION AND FOREIGN 
+CITIZENS, BY AGE AND GENDER STRUCTURE, 2010, 2020 ............................................60
+TABLE 3.9.  PERCENTAGE DISTRIBUTION OF POPULATION AGED 15 AND ABOVE, BY RELIGIOUS 
+STATUS AND SEX, 2010, 2020  ...........................................................................................61
+TABLE 3.10.  PERCENTAGE DISTRIBUTION OF RELIGIOUS POPULATION AGED 15 AND ABOVE, BY 
+RELIGIONS AND SEX, 2010, 2020 ..................................................................................... 62
+TABLE 3.11.  PERCENTAGE DISTRIBUTION OF RELIGIOUS POPULATION AGED 15 AND ABOVE, BY 
+AGE GROUPS AND RELIGIONS, 2020 ...............................................................................62
+TABLE 3.12.  PERCENTAGE DISTRIBUTION OF RELIGIOUS POPULATION AGED 15 AND ABOVE, BY 
+RELIGIONS AND AGE GROUPS, 2020 ...............................................................................62
+TABLE 3.13.  PERCENTAGE DISTRIBUTION OF POPULATION AGED 15 AND ABOVE, BY RELIGIOUS 
+STATUS, ETHNICITY AND RELIGIONS, 2020  ....................................................................63
+TABLE 4.1.  POPULATION DISTRIBUTION AND GROWTH BY REGIONS, 2000, 2010, 2020  ...............68
+TABLE 4.2.  POPULATION DISTRIBUTION AND GROWTH BY AIMAGS AND THE CAPITAL, 2000, 2010, 
+2020 .................................................................................................................................... 68
+TABLE 4.3.  POPULATION DISTRIBUTION, BY REGIONS, URBAN AND RURAL AREAS, 2010, 2020 .69
+TABLE 4.4.  PERCENTAGE DISTRIBUTION OF POPULATION BY AIMAG, THE CAPITAL, URBAN AND 
+RURAL AREAS, 2010, 2020 ................................................................................................70
+TABLE 4.5.  PERCENTAGE DISTRIBUTION OF POPULATION DENSITY BY REGION, 2010, 2020 .......71
+TABLE 4.6.  PERCENTAGE DISTRIBUTION OF POPULATION NUMBER AND DENSITY BY AIMAG 
+AND CAPITAL, 2010, 2020 ..................................................................................................72
+TABLE 4.7.  PERCENTAGE DISTRIBUTION POPULATION NUMBER, GROWTH BY AIMAG, THE 
+CAPITAL, 2010, 2020 .......................................................................................................... 73
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA 
+NATIONAL REPORT
+5
+TABLE 5.1.  PERCENTAGE OF MIGRATION SINCE BIRTH, BY REGION OF BIRTH, 2010, 2020 ..........80
+TABLE 5.2.  PERCENTAGE OF MIGRANTS SINCE BIRTH BY THE PLACE OF BIRTH AND THE 
+RESIDENCE AT THE TIME OF THE CENSUS, 2020 ..........................................................81
+TABLE 5.3.  NUMBER OF MIGRANTS FIVE-YEARS AGO BY PERMANENTLY RESIDING REGIONS, 
+2010, 2020 .......................................................................................................................... 81
+TABLE 5.4.  POPULATION AGED 5 AND ABOVE, BY PERMANENTLY RESIDING REGION AT THE TIME 
+OF CENSUS, 2010, 2020 .................................................................................................... 82
+TABLE 5.5. PERCENTAGE OF POPULATION AGED 5 AND ABOVE, BY REGION AT THE TIME OF 
+CENSUS, 2010, 2020   ........................................................................................................ 83
+TABLE 5.6.  NUMBER OF MIGRANTS IN THE PAST YEAR, BY REGION OF PERMANENT RESIDENCE, 
+2010, 2020 .......................................................................................................................... 84
+TABLE 5.7.  NUMBER OF POPULATION, BY REGION OF PERMANENT RESIDENCE AT THE TIME OF 
+CENSUS AND A YEAR AGO, 2010, 2020  ...........................................................................84
+TABLE 5.8.  PERCENTAGE DISTRIBUTION OF POPULATION, BY REGION OF PERMANENT 
+RESIDENCE AT THE TIME OF THE CENSUS AND A YEAR AGO, 2010, 2020 ...................85
+TABLE 5.9.  PERCENTAGE DISTRIBUTION OF MIGRANTS IN THE PAST YEAR, BY AGE GROUPS  
+AND SEX, 2010, 2020 ......................................................................................................... 87
+TABLE 5.10.  PERCENTAGE DISTRIBUTION OF REGIONS AT THE TIME OF BIRTH AND THE CENSUS, 
+2020 .................................................................................................................................... 88
+TABLE 5.11.  PERCENTAGE DISTRIBUTION OF POPULATION AGED 1 AND ABOVE, BY REGION OF 
+PERMANENT RESIDENCE A YEAR AGO AND AT THE TIME OF CENSUS, 2010, 2020 ...89
+TABLE 5.12.  PERCENTAGE DISTRIBUTION OF POPULATION AGED 5 AND ABOVE, BY REGION OF 
+PERMANENT RESIDENCE AT THE TIME OF CENSUS, 2010, 2020  ................................89
+TABLE 6.1.  EDUCATION LEVEL PERCENTAGE OF POPULATION AGED 10 AND ABOVE, BY SEX 
+2010, 2020 .......................................................................................................................... 94
+TABLE 6.2.  PERCENTAGE DISTRIBUTION OF EDUCATION LEVEL OF POPULATION AGED 10 AND 
+ABOVE, BY URBAN AND RURAL AREAS, 2010, 2020 .......................................................94
+TABLE 6.3.  PERCENTAGE DISTRIBUTION OF EDUCATION LEVEL OF POPULATION AGED 10 AND 
+ABOVE, BY AGE GROUPS, 2010, 2020 ...............................................................................95
+TABLE 6.4.  PERCENTAGE DISTRIBUTION OF POPULATION AGED 15 AND ABOVE, BY LITERACY IN 
+URBAN AND RURAL AREAS, 2010, 2020 ..........................................................................97
+TABLE 6.5.  PERCENTAGE DISTRIBUTION OF SCHOOL ATTENDACE FOR POPULATION AGED 6-29, 
+BY AGE AND SEX, 2010, 2020  ...........................................................................................99
+TABLE 6.6.  PERCENTAGE DISTRIBUTION OF SCHOOL ATTENDANCE FOR POPULATION AGED 
+6-29, BY URBAN AND RURAL AREAS AND SEX, 2010, 2020  ........................................100
+TABLE 6.7.  PERCENTAGE DISTRIBUTION OF PRE-SCHOOL ATTENDANCE, BY AGE AND AREAS, 
+2020 .................................................................................................................................. 101
+TABLE 7.1.  PERCENTAGE DISTRIBUTION OF POPULATION ENUMERATED IN HOUSEHOLDS AND 
+NON-HOUSEHOLD HOUSELHOLD UNITS, 2010, 2020  .................................................105
+TABLE 7.2.  PERCENTAGE DISTRIBUTION OF POPULATION IN HOUSEHOLDS AND NON-
+HOUSEHOLD UNITS, BY AIMAGS AND CAPITAL CITY, 2020  .........................................106
+TABLE 7.3.  PERCENTAGE DISTRIBUTION OF HOUSEHOLD NUMBERS, BY URBAN AND RURAL 
+AREAS, 2010, 2020 ........................................................................................................... 106
+TABLE 7.4.  HOUSEHOLD NUMBERS AND TYPES BY AREAS AND PERCENTAGE, 2010, 2020  .....107
+TABLE 7.5.  PERCENTAGE DISTRIBUTION OF HOUSEHOLD NUMBER AND HOUSEHOLD SIZE, BY 
+AREAS, 2010, 2020 ........................................................................................................... 108
+TABLE 7.6.  PERCENTAGE DISTRIBUTION OF HOUSEHOLD SIZE, BY AIMAGS AND THE CAPITAL, 
+2020  ................................................................................................................................. 109
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA 
+NATIONAL REPORT
+6
+TABLE 7.7.  PERCENTAGE DISTRIBUTION OF HOUSEHOLD NUMBERS, BY SEX OF THE HEADS, BY 
+AREAS, 2010, 2020  .......................................................................................................... 110
+TABLE 7.8.  NUMBER OF POPULATION AGED 15 AND ABOVE, BY MARITAL STATUS AND 
+PERCENTAGE, 2000, 2010, 2020  ....................................................................................110
+TABLE 7.9.  MARITAL STATUS OF POPULATION AGED 15 AND ABOVE, BY SEX AND PERCENTAGE, 
+2010, 2020 ........................................................................................................................ 111
+TABLE 7.10.  MARITAL STATUS OF POPULATION AGED 15 AND ABOVE, BY AGE GROUP, SEX, AND 
+PERCENTAGE, 2010, 2020 ...............................................................................................112
+TABLE 7.11.  MARITAL STATUS OF POPULATION AGED 15 AND ABOVE, BY AGE GROUP, SEX, AND 
+PERCENTAGE, 2010, 2020 ...............................................................................................113
+TABLE 8.1.  NUMBER OF PERSONS WITH DISABILITY, BY AGE GROUPS AND PERCENTAGE, 2010, 
+2020  ................................................................................................................................. 117
+TABLE 8.2.  NUMBER OF PERSONS WITH DISABILITY, BY AIMAGS AND CAPITAL, PERCENTAGE, 
+2010, 2020 ........................................................................................................................ 118
+TABLE 8.3.  NUMBER AND PERCENTAGE DISTRIBUTION OF PERSONS WITH DISABILITIES, BY 
+URBAN AND RURAL AREAS, AIMAGS AND CAPITAL, 2010, 2020 ................................ 120
+TABLE 8.4.  TYPES OF FUNCTIONAL DIFFICULTIES AND PERCENTAGE DISTRIBUTION OF 
+POPULATION AGED 15 AND ABOVE, BY AGE GROUP, 2020   ........................................122
+TABLE 8.5.  FUNCTIONAL DIFFICULTIES TYPES AND PERCENTAGE DISTRIBUTION OF 
+POPULATION AGED 18 AND ABOVE, BY AGE GROUP, 2020  .........................................122
+TABLE 8.6.  FUNCTIONAL DIFFICULTY TYPES AND PERCENTAGE DISTRIBUTION OF PEOPLE AGED 
+18 AND ABOVE, BY AIMAGS AND CAPITAL, 2020  ..........................................................124
+TABLE 8.7.  EDUCATION LEVEL AND PERCENTAGE DISTRIBUTION OF PEOPLE AGED 18 AND 
+
+=== pages mentioning ['Khalkh'] (first 20) ===
+
+--- page 20 ----------------------------------------------------
+897 427
+other dwelling
+Khalkh Kazakh Durvud
+Bayd Buriad other
+ETHNICITY
+
+--- page 21 ----------------------------------------------------
+more employment opportunities.
+CITIZENSHIP, ETHNICITY AND RELIGION
+Khalkh ethnic group accounts for 83.8 percent of the population, which is an increase of 1.4 percentage
+points from the previous census. The percentage of Kazakh ethnic group in the total population is 3.8
+percent, second only to the Khalkhs. The proportion of Durvud, Bayad, and Buriad ethnic groups have
+been declining since 2010. In terms of the location, the Khalkh ethnic group is prevalent in all aimags
+and the capital city. Bayan-Ulgii (0.9 percent), Uvs (13.6 percent) and Khovd (28.1 percent) have the
+lowest percentage of Khalkh ethnic group in the total population of the aimags respectively. In contrast,
+in Bayankhongor, Gobi-Altai, Dundgovi, Zavkhan and Uvurkhangai aimags, more than 99 percent of the
+aimag population are Khalkhs.
+The number of foreign nationals residing in Mongolia for 6 months or more increased by 37.4
+percent or 6 098 people from 2010 to 22 418. The number of stateless persons has decreased from 71
+
+--- page 52 ----------------------------------------------------
+ETHNICITY
+The last census enables a widespread and extensively study of population ethnicity. In the census
+results, ethnic groups which has population less than 100 persons was categorized as “other”. Khalkh
+ethnic group makes 83.8 percent of Mongolian population, increased by 1.4 percentage points from the
+previous census, and followed by Kazakhs, 3.8 percent. The percentage of Durvuds, Bayads, and Buriads
+      ...
+Number of person Percentage Number of person Percentage
+MONGOLIAN CITIZEN TOTAL 2 631 117 100.0 3 174 565 100.0
+Khalkh 2 168 141 82.4 2 659 985 83.8
+Kazakh 101 526 3.9 120 999 3.8
+Durvud 72 403 2.8  83 719 2.6
+
+--- page 53 ----------------------------------------------------
+0-14 15-24 25-34 35-44 45-54 55+
+MONGOLIAN CITIZENS 100.0 32.2 13.8 17.1 14.2 11.0 11.7
+Khalkh 100.0 32.4 13.6 17.1 14.3 11.0 11.6
+Kazak 100.0 35.9 17.1 16.7 12.2 9.1 9.0
+Durvud 100.0 29.8 14.5 17.8 14.1 11.9 11.9
+      ...
+Other nationals (Mongolian citizen
+who are foreign) 100.0 20.2 16.1 21.7 15.2 12.4 14.4
+Khalkhs are living in every aimags and the city. In Bayankhongor, Govi-Altai, Dundgovi, Zavkhan, and
+Uvurkhangai aimags, more than 99 percent of the populations is Khalkhs, but takes up only 0.9 percent
+in Bayan-Ulgii, 13.6 percent in Uvs, and 28.1 percent in Khovd. Khovd is a home to many ethnicities
+which consists of Khalkh (28.1 percent), Zakhchin (25.3 percent), Kazakh (11.2 percent), Uriankhai (8.3
+percent), Torguud (7.4 percent), Durvud (6.5 percent), Uuld (6.1 percent), and Myangad (5.3 percent). In
+terms of regions, percentages of population living in the western part of Mongolia are Khalkh (41.0),
+Kazakh (25.8), Durvud (10.4), Bayad (7.1), and Zakhchin (5.6). While 77.7 percent of the total Kazakhs
+is living in Bayal-Ulgii, 41.8 percent of the Durvuds, 44.3 percent of the Bayads, 47.9 percent of the
+Khotons, and 86.7 percent of the Eljigens are residing Uvs aimag.
+In Khangai region, the Khalkhs constitute 91.8 percent of the population, the Darkhads 3.5
+percent, and the Khotgoids 1.3 percent. 91.6 percent of the population in the Central region is the
+Khalkhs,Darkhads 81.2 percents residing in Khuvsgul, 1.9 percent is the Bayads, and 1.8 percent is the
+Durvuds. The Khalkhs take up 73.8 percent of the people in the eastern region, the Darigangas take 12.1
+percent, and the Buriads constitutes 10.2 percent.  67.2 percent of the Darigangas, and 7.0 percent of
+the Uzemchins are living in Sukhbaatar aimag. The Bargas and the Uzemchins in Dornod aimag where
+
+--- page 54 ----------------------------------------------------
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA
+NATIONAL REPORT
+The Khalkhs, the Kazakhs, the Durvuds, the Bayads, and the Buriads are the ethnic groups that
+make up higher percentages in the total population.
+FIGURE 3.2. POPULATION BY ETHNICITIES, BY PERCENTAGE, 2020
+KHALKH
+83.8%
+KAZAKH
+
+--- page 55 ----------------------------------------------------
+Durvud
+Uuld
+Khalkh
+Sartuul
+Kharchin
+
+--- page 56 ----------------------------------------------------
+MONGOLIAN
+CITIZENS-TOTAL 100.0 26.5 4.7 3.9 29.2 17.1 13.7 4.9
+Khalkh 100.0 27.1 4.7 3.8 29.8 16.6 13.2 4.8
+Kazakh 100.0 21.2 3.2 4.2 22.3 21.7 20.4 7.0
+Durvud 100.0 24.7 4.7 4.6 28.6 18.3 13.9 5.2
+      ...
+citizens)
+100.0 17.8 3.3 4.2 27.0 20.6 20.1 7.0
+According to the table, education level of the Bayads, the Khalkhs, the Kharchins, the Buriads, the
+Torguuds, and the Uulds is 0.4-5.5 percentage points higher than the nation’s average, but the other
+ethnics are 1.8-22.6 percentage points lower than it.
+
+--- page 57 ----------------------------------------------------
+MONGOLIAN CITIZENS-
+TOTAL 100.0 60.3 5.3 1.0 0.0 0.5
+Khalkh 100.0 61.5 5.5 1.0 0.0 0.5
+Kazakh 100.0 49.3 2.7 0.9 0.0 0.2
+Durvud 100.0 57.9 5.4 0.8 0.0 0.5
+
+--- page 58 ----------------------------------------------------
+MONGOLIAN CITIZENS-
+TOTAL 0.4 0.2 0.3 26.1 5.9
+Khalkh 0.5 0.2 0.3 25.2 5.3
+Kazakh 0.2 0.1 0.2 33.6 12.8
+Durvud 0.3 0.2 0.2 27.9 6.8
+
+--- page 63 ----------------------------------------------------
+MONGOLIAN
+CITIZENS-TOTAL 100.0 40.5 59.5 100.0 87.1 2.2 5.4 4.2 1.1
+Khalkh 100.0 41.3 58.7 100.0 92.7 2.3 0.1 4.0 0.9
+Kazakh 100.0 15.3 84.7 100.0 1.3 0.3 96.7 0.1 1.6
+Durvud 100.0 42.3 57.7 100.0 92.8 2.0 0.2 2.9 2.1
+
+--- page 202 ----------------------------------------------------
+Non-citizenship .......................................................99
+6.WHAT IS YOUR ETHNICITY?
+Khalkh ............................................................................1
+Other (specify) _______________
+7.WHAT IS YOUR RESIDENCY STATUS?
+      ...
+Non-citizenship .......................................................99
+6.WHAT IS YOUR ETHNICITY?
+Khalkh ............................................................................1
+Other (specify) _______________
+7.WHAT IS YOUR RESIDENCY STATUS?
+
+--- page 203 ----------------------------------------------------
+Non-citizenship .......................................................99
+6.WHAT IS YOUR ETHNICITY?
+Khalkh ............................................................................1
+Other (specify) _______________
+7.WHAT IS YOUR RESIDENCY STATUS?
+      ...
+Non-citizenship .......................................................99
+6.WHAT IS YOUR ETHNICITY?
+Khalkh ............................................................................1
+Other (specify) _______________
+7.WHAT IS YOUR RESIDENCY STATUS?
+
+--- page 222 ----------------------------------------------------
+Capital, Region
+ Mongolian
+citizens-Total Khalkh Kazak Durvud Buriad Bayad Dariganga Uriankhai Zakhchin
+TOTAL 100.0 83.8 3.8 2.6 1.4 2.0 1.1 0.9 1.2
+Arkhangai 100.0 97.1 0.1 0.2 0.1 0.1 0.0 0.0 0.0
+
+--- page 223 ----------------------------------------------------
+Capital
+ Mongolian
+citizens-Total Khalkh Kazak Durvud Buriad Bayad Dariganga Uriankhai Zakhchin
+TOTAL 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0
+Arkhangai 3.0 3.4 0.0 0.2 0.1 0.1 0.0 0.1 0.1
+
+--- page 227 ----------------------------------------------------
+MONGOLIAN
+CITIZENS-TOTAL 100.0 24.8 4.3 7.8 1.4 0.7 5.9 12.1
+Khalkh 100.0 23.0 4.5 8.1 1.4 0.7 6.1 12.6
+Kazak 100.0 41.9 2.3 4.4 1.3 0.4 2.6 7.0
+Durvud 100.0 27.9 3.0 8.0 1.7 0.6 6.1 11.2
+
+--- page 228 ----------------------------------------------------
+MONGOLIAN
+CITIZENS-TOTAL 5.0 2.3 1.5 2.7 0.4 2.0 2.1
+Khalkh 5.3 2.5 1.6 2.8 0.4 2.0 2.3
+Kazak 2.0 0.8 0.9 1.8 0.1 1.4 1.2
+Durvud 4.0 1.7 1.1 2.5 0.3 1.7 1.7
+
+--- page 229 ----------------------------------------------------
+MONGOLIAN
+CITIZENS-TOTAL 8.2 9.9 4.4 0.9 3.2 0.2 0.1
+Khalkh 8.0 9.6 4.3 0.9 3.3 0.2 0.1
+Kazak 8.1 15.6 5.3 0.7 1.9 0.0 0.1
+Durvud 8.6 11.1 4.6 0.8 3.0 0.1 0.1
+
+--- page 230 ----------------------------------------------------
+TOTAL 3 197 020 1 576 930 1 620 090
+Total Mongolian citizens-Total 3 174 565 1 562 918 1 611 647
+   Khalkh 2 659 985 1 308 163 1 351 822
+   Kazakh  120 999  60 462  60 537
+   Durvud  83 719  41 435  42 284
+
+--- page 231 ----------------------------------------------------
+TOTAL 2 168 253 1 052 223 1 116 030
+Total Mongolian citizens-Total 2 148 980 1 041 012 1 107 968
+   Khalkh 1 882 620  912 106  970 514
+   Kazakh  50 819  25 041  25 778
+   Durvud  53 155  26 006  27 149
+
+--- page 232 ----------------------------------------------------
+TOTAL 1 028 767  524 707  504 060
+Total Mongolian citizens-Total 1 025 585  521 906  503 679
+   Khalkh  777 365  396 057  381 308
+   Kazakh  70 180  35 421  34 759
+   Durvud  30 564  15 429  15 135
