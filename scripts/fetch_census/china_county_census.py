@@ -226,9 +226,10 @@ def stem(name: str) -> str:
 
 def code_of(name: str, prefix: str, names: dict[str, list[str]],
             level: str) -> str | None:
-    """The one current code under ``prefix`` whose Chinese name is ``name``
-    (exactly, or failing that by stem, so a county made a district since the
-    census still meets its own row), at the prefecture level or below it."""
+    """The one current code under ``prefix`` whose Chinese name is ``name``,
+    at the prefecture level or below it: exactly, or for a county failing that
+    by its stem, so a county made a district since the census still meets its
+    own row."""
     def candidates(match) -> list[str]:
         out = []
         for code, zh in names.items():
@@ -244,7 +245,9 @@ def code_of(name: str, prefix: str, names: dict[str, list[str]],
     exact = candidates(lambda z: z == name)
     if len(exact) == 1:
         return exact[0]
-    if exact:
+    if exact or level == "prefecture":
+        # A prefecture is named in full: by its stem alone, 通化县 would be
+        # taken for 通化市.
         return None
     by_stem = candidates(lambda z: stem(z) == stem(name) and stem(name))
     return by_stem[0] if len(by_stem) == 1 else None
@@ -369,7 +372,8 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
          seats: dict[str, list[str]], units: dict[str, dict[str, Any]]
          ) -> tuple[dict[int, str], Counter]:
     """{row position: shape id} for the county rows that pass all five tests,
-    and why the others did not."""
+    and why the others did not; each county-level area also carries its own
+    outcome as ``why``, for the log."""
     zoned = {a["prefecture"] for a in areas if a["kind"] == "special" and a["prefecture"]}
     cut: set[str] = set()
     for area in areas:
@@ -381,40 +385,47 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
     bound: dict[int, str] = {}
     why: Counter = Counter()
     used: set[str] = set()
+
+    def refuse(area: dict[str, Any], reason: str, detail: str = "") -> None:
+        why[reason] += 1
+        area["why"] = f"{reason}{': ' + detail if detail else ''}"
+
     for area in areas:
         if area["kind"] not in ("county", "direct"):
             continue
         unit_code = area["code"]
         if int(unit_code[4:]) < 21:
-            why["a district"] += 1
+            refuse(area, "a district")
             continue
         pref = area["prefecture"] or unit_code[:4] + "00"
         if pref in zoned:
-            why["a zone in its prefecture"] += 1
+            refuse(area, "a zone in its prefecture")
             continue
         if pref in cut:
-            why["a zone outside it cut from its prefecture"] += 1
+            refuse(area, "a zone outside it cut from its prefecture")
             continue
         entry = code_shapes.get(unit_code)
         if not entry:
-            why["no polygon bound to its code"] += 1
+            refuse(area, "no polygon bound to its code")
             continue
         shape = entry["shape_id"]
         if seats.get(shape) != [unit_code]:
-            why["its polygon holds other seats"] += 1
+            refuse(area, "its polygon holds other seats",
+                   f"{entry.get('name')} holds {seats.get(shape)}")
             continue
         older = (units.get(shape) or {}).get("population") or {}
         if isinstance(older.get("value"), (int, float)) and (older.get("year") or 0) < YEAR:
             ratio = a0101[area["index"]]["total"] / older["value"]
             if not DRIFT[0] <= ratio <= DRIFT[1]:
-                why["a jump from the polygon's older figure"] += 1
-                log(f"    {area['label']} ({unit_code}): {a0101[area['index']]['total']:,.0f} "
-                    f"against {older['value']:,} ({older.get('year')}), not bound")
+                refuse(area, "a jump from the polygon's older figure",
+                       f"{a0101[area['index']]['total']:,.0f} against {older['value']:,} "
+                       f"({older.get('year')}) on {entry.get('name')}")
                 continue
         if shape in used:
             raise SystemExit(f"china_county_census: {shape} would be bound twice")
         used.add(shape)
         bound[area["index"]] = shape
+        area["why"] = f"bound to {entry.get('name')} ({shape})"
     return bound, why
 
 
@@ -464,8 +475,8 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
 def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[str]],
           code_shapes: dict[str, Any], seats: dict[str, list[str]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
-          national: float | None = None, urls: dict[str, str] | None = None
-          ) -> list[dict[str, Any]]:
+          national: float | None = None, urls: dict[str, str] | None = None,
+          explain: bool = False) -> list[dict[str, Any]]:
     areas, a0101, a0104, a0105 = read_province(code, tables, names)
     where = PROVINCES[code]["name"]
     urls = urls or {t: f"{PROVINCES[code]['base']}{t}.xls" for t in TABLES}
@@ -478,6 +489,10 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
     out = [county_record(code, area, bound[area["index"]], units[bound[area["index"]]], parents,
                          a0101, a0104, a0105, urls)
            for area in areas if area["index"] in bound]
+    if explain:
+        for area in areas:
+            log(f"    {area['kind']:10} {area['label']:24} {area['code'] or '-':6} "
+                f"{area.get('why', '')}")
     kinds = Counter(a["kind"] for a in areas)
     log(f"  {where}: {kinds['prefecture']} prefectures, {kinds['county'] + kinds['direct']} "
         f"county-level areas, {kinds['special']} special; {len(out)} bound; not bound: "
@@ -490,6 +505,8 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--fetch-names", action="store_true",
                     help="write the GB/T 2260 codes' Chinese names from Wikidata, and stop")
+    ap.add_argument("--explain", action="store_true",
+                    help="log every area of every province and what became of it")
     args = ap.parse_args()
     if args.fetch_names:
         return fetch_names()
@@ -512,7 +529,7 @@ def main() -> int:
         for table in TABLES:
             tables[table], urls[table] = fetch_table(province["base"], table)
         records += build(code, tables, names, code_shapes, seats, admin1, admin2,
-                         nbs.get(province["name"]), urls)
+                         nbs.get(province["name"]), urls, args.explain)
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {len(records)} county records to {OUT}")
     return 0
