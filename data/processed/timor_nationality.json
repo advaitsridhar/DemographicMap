@@ -1,0 +1,704 @@
+[
+  {
+    "id": "TLS-NAT-aileu",
+    "level": "admin1",
+    "name": "Aileu",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.6,
+        "count": 48644
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 193
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B52176164477569",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-ainaro",
+    "level": "admin1",
+    "name": "Ainaro",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.7,
+        "count": 62950
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 186
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B96669271034989",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-baucau",
+    "level": "admin1",
+    "name": "Baucau",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.5,
+        "count": 122555
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 648
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B57750794760959",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-bobonaro",
+    "level": "admin1",
+    "name": "Bobonaro",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.3,
+        "count": 97067
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.7,
+        "count": 695
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B64128847782213",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-covalima",
+    "level": "admin1",
+    "name": "Cova Lima",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.2,
+        "count": 64760
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.8,
+        "count": 541
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B58123781478976",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-dili",
+    "level": "admin1",
+    "name": "Dili",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 98.4,
+        "count": 272937
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.6,
+        "count": 4342
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B43373882655947",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-ermera",
+    "level": "admin1",
+    "name": "Ermera",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.7,
+        "count": 125308
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 394
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B37683587147705",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-lautem",
+    "level": "admin1",
+    "name": "Lautém",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.7,
+        "count": 65039
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 201
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B74673759114814",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-liquica",
+    "level": "admin1",
+    "name": "Liquiçá",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.5,
+        "count": 71562
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 365
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B91889916528445",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-manatuto",
+    "level": "admin1",
+    "name": "Manatuto",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.4,
+        "count": 46358
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.6,
+        "count": 261
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B79491931293061",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-manufahi",
+    "level": "admin1",
+    "name": "Manufahi",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.6,
+        "count": 53481
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 210
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B42816757733835",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-oecusse",
+    "level": "admin1",
+    "name": "Oecusse",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.6,
+        "count": 68606
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 307
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B69518090574338",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  },
+  {
+    "id": "TLS-NAT-viqueque",
+    "level": "admin1",
+    "name": "Viqueque",
+    "parent": "TLS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "East Timorese",
+        "pct": 99.8,
+        "count": 75856
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 177
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality",
+        "url": "https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/",
+        "year": 2015,
+        "license": "Official statistics of INETL, I.P., cited as published"
+      }
+    ],
+    "country": "TLS",
+    "match_by": "shape_id",
+    "shape_id": "58719522B88874257219633",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's count of the municipality's people by nationality -- Timorese against every other -- which stands in for ethnicity under the owner's rule for states that count nationality instead. \"East Timorese\" is a nationality, not one people."
+  }
+]

@@ -1,49 +1,18 @@
-== kosis 101,DT_1PM1502
-  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do', 'index.do', 'right_layout.do', 'statHtml.do']
-    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd', 'dbUser', 'language', 'mode', 'pub', 'conn_path']
-    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL', 'SID_IP_ADDR', 'SSN_INFO']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'ext/js/jqgrid/grid.locale-en.js']
-    ~ en" value=""/> <input id="fieldList" name="fieldList" type="hidden" value=""/> <input id="colAxis" name="
-    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
-  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['right_layout.do', 'statHtmlContent.do']
-    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js', 'ext/js/jqgrid/grid.locale-en.js']
-    ~ en" value=""/> <input id="fieldList" name="fieldList" type="hidden" value=""/> <input id="colAxis" name="
-  POST https://kosis.kr/statHtml/statHtmlContent.do -> 200, 287,422 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['InterList.do', 'LoginView.do', 'SvcMetaDcDtaPopup.do', 'assayInfo.do', 'cmmtInfo.do', 'directDownDiv.do', 'downGrid.do', 'downHelp.do', 'downLarge.do', 'downMeta.do', 'downNormal.do', 'html.do', 'index.do', 'linkStatsList.do', 'login.do', 'makeLarge.do', 'myscrapView.do', 'periodDivSelect.do', 'print.do', 'qnaList.do', 'relationInfo.do', 'searchRangeDetail.do', 'selectAll.do', 'sessionCheck.do', 'setOlapLogForNsoService.do', 'setOlapLogForNsoServiceRelUrl.do', 'statHtml.do', 'statHtmlContent.do', 'statisticsListIndex.do', 'tmprScrapSave.do', 'treeInfo.do']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd', 'listId', 'pub', 'dbUser', 'st', 'process']
-    form 'ParamInfo' action='/statHtml/statHtmlContent.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'fusioncharts/themes/fusioncharts.theme.fusion.js?v=20241024', 'ext/js/jqgrid/grid.locale-en.js', '/statHtml/ext/js/echart/echarts.min.js', 'ext/js/common/include_centerGrid.js?v=20241024', 'ext/js/common/include_Echart.js?v=20251223', 'fusioncharts/themes/fusioncharts.theme.ocean.js?v=20241024', 'fusioncharts/themes/fusioncharts.theme.carbon.js?v=20241024', 'fusioncharts/themes/fusioncharts.theme.fint.js?v=20241024', 'fusioncharts/themes/fusioncharts.theme.zune.js?v=20241024', 'ext/js/common/include_centerGrid.js?v=20251218', 'ext/js/common/kakao.link.js', 'ext/js/common/kakao.min.js', '//developers.kakao.com/sdk/js/kakao.min.js']
-    objVarId A: 22 items, e.g. ['전국', '동부', '읍부', '면부', '서울특별시', '부산광역시', '대구광역시', '인천광역시']
-    objVarId SBB: 4 items, e.g. ['계', '남자', '여자', '성별']
-    objVarId B: 20 items, e.g. ['합계', '0~4세', '5~9세', '10~14세', '15~19세', '20~24세', '25~29세', '30~34세']
-    objVarId 13999001: 13 items, e.g. ['계', '종교있음-계', '불교', '기독교(개신교)', '기독교(천주교)', '원불교', '유교', '천도교']
-    objVarId period: 1 items, e.g. ['기간']
-    ~ ":"","doAnal":"N","docId":"","downGridCellMerge":"","downGridCsvType":"","downGridMeta":"","downGridSdmxDataType":"","downGridSdmxType":"","downGridTxtType":"","downLargeExprType":"","downLargeFileType":"","downLargeSort":"","empId":"","empNm":"","enableCellUnit":"N","enableLevelExpr":"N","enableParentLevel":"","enableWeight":"N","endNum":"","etldbLink":"@ETLDB","ex
-    ~ "N","expDash":"","exprYn":"","fieldList":"","first_open":"","fnExcptCd":"","folderId":"","funcPrdSe":"","highLightStr":"","inheritYn":"N","ipAddr":"13.86.110.34","isChangedDataOpt":"","isFirst":"Y","isType":"","itemMultiply":"","itmNm":"","itm_id":"","key":"","keyChk":
-    ~ ass","f_gray"); } function fn_downLarge(obj){ if($(obj).hasClass("off"))
-    ~ tion *= g_classCnt; form.fieldList.value= JSON.stringify(makeJson); // requestHtmlData(sort);
-    ~ } } form.fieldList.value= JSON.stringify(makeJson); } function fn_disPla
-    ~ }else if(divName == "pop_downgrid"){ if($("#ico_download").ha
-    ~ }else if(divName == "pop_downgrid"){ $("#ico_download").focus
-    ~ ar fileType = $(":radio[name='downGridFileType']:checked").val(); if(fileType == "sdmx"){
-    ~ sdmx"){ $(":radio[name='downGridFileType']:radio[value='excel']").attr("checked", true); fn_clickFileType();
-    ~ 비활성화 */ $(":radio[name='downGridFileType']:radio[value='sdmx']").attr("disabled", true); $(".downList ul li:last s
-    ~ }else{ $(":radio[name='downGridFileType']:radio[value='sdmx']").removeAttr("disabled"); $(".downList ul li:last s
-    ~ den" value=""/> <input id="fieldList" name="fieldList" type="hidden" value=""/> <input id="colAxis" name="c
-    ~ ar fileType = $(":radio[name='downGridFileType']:checked").val(); if(fileType == "sdmx"){
-    ~ lass("notFunctext"); $("#downGridSdmxTypeDsd").removeAttr("disabled"); $("#downGridSdmxTypeData").
-    ~ emoveAttr("disabled"); $("#downGridSdmxTypeData").removeAttr("disabled"); $("#sdmxDataType").removeAt
-    ~ document.getElementById("downGridSdmxTypeData").checked = true; }else{ $(":radio[name='do
-    ~ ; }else{ $(":radio[name='downGridSdmxType']").each(function(){ this.checked = false; }
-    ~ cked = false; }); $("#downGridSdmxTypeDsd").attr("disabled", true); $("#downGridSdmxTypeData").
-    ~ ttr("disabled", true); $("#downGridSdmxTypeData").attr("disabled", true); $("#sdmxDataType").attr("di
-    ~ eClass("notFunctext"); $("#downGridCsvType").removeAttr("disabled"); $("#downGridCsv").removeAtt
-    ~ emoveAttr("disabled"); $("#downGridCsv").removeAttr("disabled"); */ $("#spanCsv1").removeClas
-    ~ led"); }else{ /* $("#downGridCsvType").attr("disabled", true); $("#downGridCsv").attr("dis
-    ~ ttr("disabled", true); $("#downGridCsv").attr("disabled", true); $("#spanCsv").addClass("not
-    ~ Class("notFunctext"); $("#downGridCsvTypeAnsi").attr("disabled", true); $("#downGridCsvTypeUtf").at
-    ~ ttr("disabled", true); $("#downGridCsvTypeUtf").attr("disabled", true); $("#spanCsvAnsi").addClass(
+timor_nationality: Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 9: Timorese and foreign population by age and sex, by municipality
+  fetched 3_2015-V2-Nationality-Citizenship-Religion.xls (0.6 MB)
+  table 9: 13 municipalities making the country's 1,183,643 -- 1,175,123 Timorese, 8,520 of other nationality
+    Aileu        East Timorese 99.6, Foreign nationals 0.4
+    Ainaro       East Timorese 99.7, Foreign nationals 0.3
+    Baucau       East Timorese 99.5, Foreign nationals 0.5
+    Bobonaro     East Timorese 99.3, Foreign nationals 0.7
+    Cova Lima    East Timorese 99.2, Foreign nationals 0.8
+    Dili         East Timorese 98.4, Foreign nationals 1.6
+    Ermera       East Timorese 99.7, Foreign nationals 0.3
+    Lautém       East Timorese 99.7, Foreign nationals 0.3
+    Liquiçá      East Timorese 99.5, Foreign nationals 0.5
+    Manatuto     East Timorese 99.4, Foreign nationals 0.6
+    Manufahi     East Timorese 99.6, Foreign nationals 0.4
+    Oecusse      East Timorese 99.6, Foreign nationals 0.4
+    Viqueque     East Timorese 99.8, Foreign nationals 0.2
+  wrote data/processed/timor_nationality.json (23 kB)
+  wrote timor_nationality.json: 13 records
