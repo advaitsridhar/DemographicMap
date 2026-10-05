@@ -1,168 +1,93 @@
-== cod-ps-fji: licence=cc-by-igo  method=Extracted from Fiji Bureau of Statistics (FBoS), 2017 Census of Population and Housing 2017 Population and Housing Census, Administrative Report	
-http://www.statsfiji.gov.fj	
-
-  - fji_pplp_2017_census.xlsx (XLSX, 57236 B)
-    https://data.humdata.org/dataset/4d9c1179-ddda-4b66-8989-7574a5c008a5/resource/256d50d2-9401-4cae-8877-ccc7b0a43052/download/fji_pplp_2017_census.xlsx
-    sheet 'adm3_Tikina': 87 rows x 72 cols
-    | FBoS_TID | adm3_pcode | adm3_name | adm2_pcode | adm2_name | adm1_pcode | adm1_name | adm0_pcode | adm0_name | M_00_04 | F_00_04 | T_00_04 | M_05_09 | F_05_09 | T_05_09 | M_10_14 | F_10_14 | T_10_14 | M_15_19 | F_15_19 | T_15_19 | M_20_24 | F_20_24 | T_20_24
-    | 101 | FJ20101 | Ba | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands | 1731 | 1612 | 3343 | 1790 | 1655 | 3445 | 1690 | 1615 | 3305 | 1624 | 1413 | 3037 | 1526 | 1402 | 2928
-    | 102 | FJ20102 | Magodro | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands | 299 | 262 | 561 | 252 | 246 | 498 | 236 | 228 | 464 | 169 | 152 | 321 | 161 | 139 | 300
-    | 103 | FJ20103 | Nadi | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands | 2954 | 2740 | 5694 | 2744 | 2637 | 5381 | 2325 | 2367 | 4692 | 2259 | 2206 | 4465 | 2630 | 2692 | 5322
-    | 104 | FJ20104 | Naviti | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands | 154 | 184 | 338 | 181 | 169 | 350 | 157 | 142 | 299 | 101 | 84 | 185 | 87 | 89 | 176
-    | 105 | FJ20105 | Nawaka | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands | 852 | 879 | 1731 | 825 | 746 | 1571 | 698 | 660 | 1358 | 636 | 611 | 1247 | 682 | 741 | 1423
-    | 106 | FJ20106 | Tavua | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands | 1242 | 1170 | 2412 | 1271 | 1162 | 2433 | 1177 | 1096 | 2273 | 921 | 896 | 1817 | 792 | 783 | 1575
-    | 107 | FJ20107 | Vuda | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands | 4771 | 4633 | 9404 | 4633 | 4352 | 8985 | 4218 | 4004 | 8222 | 4019 | 4048 | 8067 | 4534 | 4773 | 9307
-    | 108 | FJ20108 | Yasawa | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands | 143 | 155 | 298 | 130 | 139 | 269 | 104 | 85 | 189 | 49 | 37 | 86 | 78 | 55 | 133
-    | 201 | FJ10201 | Bua | FJ102 | Bua  | FJ1 | Northern | FJ | Fiji Islands | 363 | 361 | 724 | 353 | 360 | 713 | 350 | 347 | 697 | 245 | 221 | 466 | 148 | 148 | 296
-    | 202 | FJ10202 | Vuya | FJ102 | Bua  | FJ1 | Northern | FJ | Fiji Islands | 363 | 301 | 664 | 311 | 301 | 612 | 311 | 257 | 568 | 214 | 163 | 377 | 133 | 116 | 249
-    | 203 | FJ10203 | Wainunu | FJ102 | Bua  | FJ1 | Northern | FJ | Fiji Islands | 331 | 279 | 610 | 279 | 304 | 583 | 282 | 270 | 552 | 183 | 160 | 343 | 150 | 126 | 276
-    | 301 | FJ10301 | Cakaudrove | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 967 | 896 | 1863 | 954 | 924 | 1878 | 838 | 735 | 1573 | 748 | 719 | 1467 | 482 | 379 | 861
-    | 302 | FJ10302 | Nasavusavu | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 750 | 734 | 1484 | 668 | 647 | 1315 | 596 | 599 | 1195 | 502 | 524 | 1026 | 447 | 402 | 849
-    | 303 | FJ10303 | Rabi | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 140 | 159 | 299 | 150 | 162 | 312 | 153 | 118 | 271 | 93 | 79 | 172 | 69 | 54 | 123
-    | 304 | FJ10304 | Saqani | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 131 | 154 | 285 | 124 | 107 | 231 | 106 | 110 | 216 | 65 | 59 | 124 | 57 | 66 | 123
-    | 305 | FJ10305 | Tunuloa | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 287 | 248 | 535 | 235 | 235 | 470 | 218 | 219 | 437 | 155 | 139 | 294 | 137 | 111 | 248
-    | 306 | FJ10306 | Vaturova | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 254 | 246 | 500 | 244 | 216 | 460 | 237 | 210 | 447 | 166 | 159 | 325 | 144 | 137 | 281
-    | 307 | FJ10307 | Wailevu | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 396 | 389 | 785 | 384 | 358 | 742 | 382 | 326 | 708 | 348 | 340 | 688 | 206 | 153 | 359
-    | 308 | FJ10308 | Wainikeli | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 343 | 285 | 628 | 289 | 301 | 590 | 254 | 244 | 498 | 141 | 94 | 235 | 170 | 125 | 295
-    sheet 'adm2_Province': 16 rows x 70 cols
-    | FBoS_PID | adm2_pcode | adm2_name | adm1_pcode | adm1_name | adm0_pcode | adm0_name | M_00_04 | F_00_04 | T_00_04 | M_05_09 | F_05_09 | T_05_09 | M_10_14 | F_10_14 | T_10_14 | M_15_19 | F_15_19 | T_15_19 | M_20_24 | F_20_24 | T_20_24 | M_25_29 | F_25_29
-    | 1 | FJ201 | Ba | FJ2 | Western | FJ | Fiji Islands | 12146 | 11635 | 23781 | 11826 | 11106 | 22932 | 10605 | 10197 | 20802 | 9778 | 9447 | 19225 | 10490 | 10674 | 21164 | 10249 | 9736
-    | 2 | FJ102 | Bua  | FJ1 | Northern | FJ | Fiji Islands | 1057 | 941 | 1998 | 943 | 965 | 1908 | 943 | 874 | 1817 | 642 | 544 | 1186 | 431 | 390 | 821 | 523 | 515
-    | 3 | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands | 3268 | 3111 | 6379 | 3048 | 2950 | 5998 | 2784 | 2561 | 5345 | 2218 | 2113 | 4331 | 1712 | 1427 | 3139 | 1786 | 1695
-    | 4 | FJ304 | Kadavu | FJ3 | Eastern | FJ | Fiji Islands | 772 | 680 | 1452 | 683 | 671 | 1354 | 603 | 545 | 1148 | 411 | 294 | 705 | 400 | 252 | 652 | 475 | 390
-    | 5 | FJ305 | Lau | FJ3 | Eastern | FJ | Fiji Islands | 567 | 527 | 1094 | 658 | 616 | 1274 | 570 | 501 | 1071 | 351 | 254 | 605 | 276 | 224 | 500 | 332 | 287
-    | 6 | FJ306 | Lomaiviti | FJ3 | Eastern | FJ | Fiji Islands | 921 | 840 | 1761 | 1028 | 1014 | 2042 | 927 | 894 | 1821 | 780 | 821 | 1601 | 427 | 359 | 786 | 516 | 502
-    | 7 | FJ107 | Macuata | FJ1 | Northern | FJ | Fiji Islands | 3149 | 3024 | 6173 | 3105 | 3173 | 6278 | 3072 | 3005 | 6077 | 2935 | 2902 | 5837 | 2448 | 2172 | 4620 | 2404 | 2261
-    | 8 | FJ208 | Nadroga/Navosa | FJ2 | Western | FJ | Fiji Islands | 3133 | 3043 | 6176 | 3044 | 2854 | 5898 | 2669 | 2600 | 5269 | 2193 | 2054 | 4247 | 2240 | 2162 | 4402 | 2314 | 2205
-    | 9 | FJ409 | Naitasiri | FJ4 | Central | FJ | Fiji Islands | 9535 | 8976 | 18511 | 8738 | 8246 | 16984 | 7530 | 7497 | 15027 | 7380 | 7741 | 15121 | 8464 | 8510 | 16974 | 7661 | 7625
-    | 10 | FJ410 | Namosi | FJ4 | Central | FJ | Fiji Islands | 477 | 461 | 938 | 494 | 423 | 917 | 468 | 439 | 907 | 487 | 406 | 893 | 300 | 279 | 579 | 250 | 251
-    | 11 | FJ211 | Ra | FJ2 | Western | FJ | Fiji Islands | 1785 | 1705 | 3490 | 1798 | 1677 | 3475 | 1556 | 1532 | 3088 | 1321 | 1201 | 2522 | 925 | 889 | 1814 | 983 | 1058
-    | 12 | FJ412 | Rewa | FJ4 | Central | FJ | Fiji Islands | 5426 | 4939 | 10365 | 5168 | 4840 | 10008 | 4446 | 4322 | 8768 | 4527 | 4922 | 9449 | 6109 | 5769 | 11878 | 4694 | 4543
-    | 15 | FJ315 | Rotuma | FJ3 | Eastern | FJ | Fiji Islands | 56 | 83 | 139 | 86 | 75 | 161 | 87 | 104 | 191 | 61 | 68 | 129 | 34 | 29 | 63 | 46 | 33
-    | 13 | FJ413 | Serua | FJ4 | Central | FJ | Fiji Islands | 1150 | 1142 | 2292 | 1061 | 1070 | 2131 | 1008 | 902 | 1910 | 828 | 746 | 1574 | 768 | 773 | 1541 | 762 | 745
-    | 14 | FJ414 | Tailevu | FJ4 | Central | FJ | Fiji Islands | 3753 | 3595 | 7348 | 3563 | 3372 | 6935 | 3447 | 2908 | 6355 | 4120 | 2543 | 6663 | 2440 | 2243 | 4683 | 2258 | 2209
-    sheet 'adm1_Division': 5 rows x 67 cols
-    | adm0_pcode | adm0_name | adm1_pcode | adm1_name | M_00_04 | F_00_04 | T_00_04 | M_05_09 | F_05_09 | T_05_09 | M_10_14 | F_10_14 | T_10_14 | M_15_19 | F_15_19 | T_15_19 | M_20_24 | F_20_24 | T_20_24 | M_25_29 | F_25_29 | T_25_29 | M_30_34 | F_30_34
-    | FJ | Fiji Islands | FJ4 | Central | 20341 | 19113 | 39454 | 19024 | 17951 | 36975 | 16899 | 16068 | 32967 | 17342 | 16358 | 33700 | 18081 | 17574 | 35655 | 15625 | 15373 | 30998 | 15173 | 14907
-    | FJ | Fiji Islands | FJ3 | Eastern | 2316 | 2130 | 4446 | 2455 | 2376 | 4831 | 2187 | 2044 | 4231 | 1603 | 1437 | 3040 | 1137 | 864 | 2001 | 1369 | 1212 | 2581 | 1380 | 1239
-    | FJ | Fiji Islands | FJ1 | Northern | 7474 | 7076 | 14550 | 7096 | 7088 | 14184 | 6799 | 6440 | 13239 | 5795 | 5559 | 11354 | 4591 | 3989 | 8580 | 4713 | 4471 | 9184 | 4732 | 4298
-    | FJ | Fiji Islands | FJ2 | Western | 17064 | 16383 | 33447 | 16668 | 15637 | 32305 | 14830 | 14329 | 29159 | 13292 | 12702 | 25994 | 13655 | 13725 | 27380 | 13546 | 12999 | 26545 | 13981 | 13108
-    sheet 'adm0_Country': 2 rows x 65 cols
-    | adm0_pcode | adm0_name | M_00_04 | F_00_04 | T_00_04 | M_05_09 | F_05_09 | T_05_09 | M_10_14 | F_10_14 | T_10_14 | M_15_19 | F_15_19 | T_15_19 | M_20_24 | F_20_24 | T_20_24 | M_25_29 | F_25_29 | T_25_29 | M_30_34 | F_30_34 | T_30_34 | M_35_39
-    | FJ | Fiji Islands | 47195 | 44702 | 91897 | 45243 | 43052 | 88295 | 40715 | 38881 | 79596 | 38032 | 36056 | 74088 | 37464 | 36152 | 73616 | 35253 | 34055 | 69308 | 35266 | 33552 | 68818 | 33382
-    sheet 'Metadata': 85 rows x 3 cols
-    |  | Source: | 
-    |  | Fiji Bureau of Statistics (FBoS), 2017 Census of Population and Housing | 
-    |  | 2017 Population and Housing Census, Administrative Report | 
-    |  | http://www.statsfiji.gov.fj | 
-    |  |  | 
-    |  | PopGIS 2: Secretariat of the Pacific Community, Statistics for Development Division | 
-    |  | http://fiji.popgis.spc.int | 
-    |  | Field Name | Description
-    |  | FBoS_TID | Admin 3 (Tikina) ID as per Fiji Bureau of Statistics (FBoS)
-    |  | adm3_pcode | Admin 3 (Tikina) place code 
-    |  | adm3_name.  This new tikina as defined bu FBoS | Admin 3 (Tikina) name - new tikina as defined by FBoS
-    |  | FBoS_PID | Admin 2 (Province) ID as per Fiji Bureau of Statistics (FBoS)
-    |  | adm2_pcode | Admin (Province) name
-    |  | adm2_name | Admin 2 (Province) place code
-    |  | FBoS_DID | Admin 2 (Division) ID as per Fiji Bureau of Statistics (FBoS)
-    |  | adm1_pcode | Admin 1 (Divison) place code
-    |  | adm1_name | Admin 1 (Division) name
-    |  | adm0_pcode | ISO Country alpha 2 code
-    |  | adm0_name | Country name
-    |  |  | 
-  - fji_adm_gz.xlsx (XLSX, 20586 B)
-    https://data.humdata.org/dataset/4d9c1179-ddda-4b66-8989-7574a5c008a5/resource/2def9380-0430-4ffa-b1e7-4dd5a296af00/download/fji_adm_gz.xlsx
-    sheet 'adm3_Tikina': 87 rows x 9 cols
-    | FBoS_TID | adm3_pcode | adm3_name | adm2_pcode | adm2_name | adm1_pcode | adm1_name | adm0_pcode | adm0_name
-    | 101 | FJ20101 | Ba | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands
-    | 102 | FJ20102 | Magodro | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands
-    | 103 | FJ20103 | Nadi | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands
-    | 104 | FJ20104 | Naviti | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands
-    | 105 | FJ20105 | Nawaka | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands
-    | 106 | FJ20106 | Tavua | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands
-    | 107 | FJ20107 | Vuda | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands
-    | 108 | FJ20108 | Yasawa | FJ201 | Ba  | FJ2 | Western | FJ | Fiji Islands
-    | 201 | FJ10201 | Bua | FJ102 | Bua  | FJ1 | Northern | FJ | Fiji Islands
-    | 202 | FJ10202 | Vuya | FJ102 | Bua  | FJ1 | Northern | FJ | Fiji Islands
-    | 203 | FJ10203 | Wainunu | FJ102 | Bua  | FJ1 | Northern | FJ | Fiji Islands
-    | 301 | FJ10301 | Cakaudrove | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    | 302 | FJ10302 | Nasavusavu | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    | 303 | FJ10303 | Rabi | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    | 304 | FJ10304 | Saqani | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    | 305 | FJ10305 | Tunuloa | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    | 306 | FJ10306 | Vaturova | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    | 307 | FJ10307 | Wailevu | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    | 308 | FJ10308 | Wainikeli | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    sheet 'adm2_Province': 16 rows x 7 cols
-    | FBoS_PID | adm2_pcode | adm2_name | adm1_pcode | adm1_name | adm0_pcode | adm0_name
-    | 1 | FJ201 | Ba | FJ2 | Western | FJ | Fiji Islands
-    | 2 | FJ102 | Bua  | FJ1 | Northern | FJ | Fiji Islands
-    | 3 | FJ103 | Cakaudrove | FJ1 | Northern | FJ | Fiji Islands
-    | 4 | FJ304 | Kadavu | FJ3 | Eastern | FJ | Fiji Islands
-    | 5 | FJ305 | Lau | FJ3 | Eastern | FJ | Fiji Islands
-    | 6 | FJ306 | Lomaiviti | FJ3 | Eastern | FJ | Fiji Islands
-    | 7 | FJ107 | Macuata | FJ1 | Northern | FJ | Fiji Islands
-    | 8 | FJ208 | Nadroga/Navosa | FJ2 | Western | FJ | Fiji Islands
-    | 9 | FJ409 | Naitasiri | FJ4 | Central | FJ | Fiji Islands
-    | 10 | FJ410 | Namosi | FJ4 | Central | FJ | Fiji Islands
-    | 11 | FJ211 | Ra | FJ2 | Western | FJ | Fiji Islands
-    | 12 | FJ412 | Rewa | FJ4 | Central | FJ | Fiji Islands
-    | 15 | FJ315 | Rotuma | FJ3 | Eastern | FJ | Fiji Islands
-    | 13 | FJ413 | Serua | FJ4 | Central | FJ | Fiji Islands
-    | 14 | FJ414 | Tailevu | FJ4 | Central | FJ | Fiji Islands
-    sheet 'adm1_Division': 5 rows x 4 cols
-    | adm0_pcode | adm0_name | adm1_pcode | adm1_name
-    | FJ | Fiji Islands | FJ4 | Central
-    | FJ | Fiji Islands | FJ3 | Eastern
-    | FJ | Fiji Islands | FJ1 | Northern
-    | FJ | Fiji Islands | FJ2 | Western
-    sheet 'adm0_Country': 2 rows x 2 cols
-    | adm0_pcode | adm0_name
-    | FJ | Fiji Islands
-    sheet 'Metadata': 14 rows x 3 cols
-    |  | PopGIS 2: Secretariat of the Pacific Community, Statistics for Development Division | 
-    |  | http://fiji.popgis.spc.int | 
-    |  | Field Name | Description
-    |  | FBoS_TID | Admin 3 (Tikina) ID as per Fiji Bureau of Statistics (FBoS)
-    |  | adm3_pcode | Admin 3 (Tikina) place code 
-    |  | adm3_name.  This new tikina as defined bu FBoS | Admin 3 (Tikina) name - new tikina as defined by FBoS
-    |  | FBoS_PID | Admin 2 (Province) ID as per Fiji Bureau of Statistics (FBoS)
-    |  | adm2_pcode | Admin (Province) name
-    |  | adm2_name | Admin 2 (Province) place code
-    |  | FBoS_DID | Admin 2 (Division) ID as per Fiji Bureau of Statistics (FBoS)
-    |  | adm1_pcode | Admin 1 (Divison) place code
-    |  | adm1_name | Admin 1 (Division) name
-    |  | adm0_pcode | ISO Country alpha 2 code
-    |  | adm0_name | Country name
-  - fji_pplp_adm0_country_2017_v2.csv (CSV, 893 B)
-    https://data.humdata.org/dataset/4d9c1179-ddda-4b66-8989-7574a5c008a5/resource/0875ee1e-73e8-4159-aee6-51fae58b09b6/download/fji_pplp_adm0_country_2017_v2.csv
-    | ADM0_PCODE,ADM0_EN,M_00_04,F_00_04,T_00_04,M_05_09,F_05_09,T_05_09,M_10_14,F_10_14,T_10_14,M_15_19,F_15_19,T_15_19,M_20_24,F_20_24,T_20_24,M_25_29,F_25_29,T_25_29,M_30_34,F_30_34,T_30_34,M_35_39,F_35_39,T_35_39,M_40_44,F_40_44,T_40_44,M_45_49,F_45_49,T_45_49,M_50_54,F_50_54,T_50_54,M_55_59,F_55_59,T
-    | FJ,Fiji Islands,47195,44702,91897,45243,43052,88295,40715,38881,79596,38032,36056,74088,37464,36152,73616,35253,34055,69308,35266,33552,68818,33382,31768,65150,27697,25817,53514,25314,24190,49504,24649,23961,48610,21263,20745,42008,14891,15724,30615,10076,11252,21328,6367,7781,14148,3490,4756,8246,1
-    2 lines
-  - fji_pplp_adm1_division_2017_v3.csv (CSV, 1912 B)
-    https://data.humdata.org/dataset/4d9c1179-ddda-4b66-8989-7574a5c008a5/resource/717951ba-b8d7-4abc-ba48-d43d89d42d2f/download/fji_pplp_adm1_division_2017_v3.csv
-    | ADM0_PCODE,ADM0_EN,ADM1_PCODE,ADM1_EN,M_00_04,F_00_04,T_00_04,M_05_09,F_05_09,T_05_09,M_10_14,F_10_14,T_10_14,M_15_19,F_15_19,T_15_19,M_20_24,F_20_24,T_20_24,M_25_29,F_25_29,T_25_29,M_30_34,F_30_34,T_30_34,M_35_39,F_35_39,T_35_39,M_40_44,F_40_44,T_40_44,M_45_49,F_45_49,T_45_49,M_50_54,F_50_54,T_50_5
-    | FJ,Fiji Islands,FJ4,Central,20341,19113,39454,19024,17951,36975,16899,16068,32967,17342,16358,33700,18081,17574,35655,15625,15373,30998,15173,14907,30080,13645,13548,27193,11200,11073,22273,10218,10118,20336,9470,9946,19416,8344,8663,17007,5947,6456,12403,3998,4610,8608,2534,3075,5609,1294,1839,3133
-    | FJ,Fiji Islands,FJ3,Eastern,2316,2130,4446,2455,2376,4831,2187,2044,4231,1603,1437,3040,1137,864,2001,1369,1212,2581,1380,1239,2619,1346,1154,2500,1050,898,1948,1079,873,1952,1069,911,1980,963,744,1707,740,568,1308,531,419,950,374,321,695,233,238,471,110,146,256,50,60,110,5,14,19,2,1,3,19999,17649,3
-    | FJ,Fiji Islands,FJ1,Northern,7474,7076,14550,7096,7088,14184,6799,6440,13239,5795,5559,11354,4591,3989,8580,4713,4471,9184,4732,4298,9030,4748,4453,9201,4379,3755,8134,3931,3748,7679,4069,3658,7727,3332,3054,6386,2361,2329,4690,1518,1719,3237,990,1295,2285,578,787,1365,281,410,691,94,190,284,26,57,8
-    | FJ,Fiji Islands,FJ2,Western,17064,16383,33447,16668,15637,32305,14830,14329,29159,13292,12702,25994,13655,13725,27380,13546,12999,26545,13981,13108,27089,13643,12613,26256,11068,10091,21159,10086,9451,19537,10041,9446,19487,8624,8284,16908,5843,6371,12214,4029,4504,8533,2469,3090,5559,1385,1892,3277
-    5 lines
-  - fji_pplp_adm2_province_2017_v2.csv (CSV, 5180 B)
-    https://data.humdata.org/dataset/4d9c1179-ddda-4b66-8989-7574a5c008a5/resource/b1ae165c-133c-4f5e-b74a-12804c50d044/download/fji_pplp_adm2_province_2017_v2.csv
-    | ADM2_PCODE,ADM2_EN,ADM1_PCODE,ADM1_EN,ADM0_PCODE,ADM0_EN,M_00_04,F_00_04,T_00_04,M_05_09,F_05_09,T_05_09,M_10_14,F_10_14,T_10_14,M_15_19,F_15_19,T_15_19,M_20_24,F_20_24,T_20_24,M_25_29,F_25_29,T_25_29,M_30_34,F_30_34,T_30_34,M_35_39,F_35_39,T_35_39,M_40_44,F_40_44,T_40_44,M_45_49,F_45_49,T_45_49,M_5
-    | FJ201,Ba,FJ2,Western,FJ,Fiji Islands,12146,11635,23781,11826,11106,22932,10605,10197,20802,9778,9447,19225,10490,10674,21164,10249,9736,19985,10314,9778,20092,10141,9457,19598,8207,7563,15770,7318,6989,14307,7334,6967,14301,6368,6213,12581,4300,4740,9040,2889,3320,6209,1738,2262,4000,950,1375,2325,4
-    | FJ102,Bua ,FJ1,Northern,FJ,Fiji Islands,1057,941,1998,943,965,1908,943,874,1817,642,544,1186,431,390,821,523,515,1038,534,533,1067,559,506,1065,485,383,868,407,392,799,426,354,780,356,334,690,294,233,527,175,185,360,131,139,270,72,85,157,36,58,94,12,21,33,2,9,11,0,0,0,8028,7461,15489
-    | FJ103,Cakaudrove,FJ1,Northern,FJ,Fiji Islands,3268,3111,6379,3048,2950,5998,2784,2561,5345,2218,2113,4331,1712,1427,3139,1786,1695,3481,1938,1677,3615,1764,1605,3369,1670,1306,2976,1364,1279,2643,1411,1178,2589,1171,974,2145,830,745,1575,559,564,1123,396,441,837,231,266,497,105,132,237,37,83,120,7,2
-    | FJ304,Kadavu,FJ3,Eastern,FJ,Fiji Islands,772,680,1452,683,671,1354,603,545,1148,411,294,705,400,252,652,475,390,865,452,393,845,429,332,761,329,247,576,285,193,478,277,241,518,265,183,448,213,164,377,151,121,272,119,87,206,59,52,111,32,35,67,13,18,31,0,3,3,0,0,0,5968,4901,10869
-    | FJ305,Lau,FJ3,Eastern,FJ,Fiji Islands,567,527,1094,658,616,1274,570,501,1071,351,254,605,276,224,500,332,287,619,336,284,620,325,297,622,255,194,449,278,268,546,319,253,572,271,216,487,197,142,339,146,128,274,92,86,178,73,74,147,37,43,80,27,23,50,5,5,10,2,0,2,5117,4422,9539
-    16 lines
-  - fji_pplp_adm3_tikina_2017_v2.csv (CSV, 23437 B)
-    https://data.humdata.org/dataset/4d9c1179-ddda-4b66-8989-7574a5c008a5/resource/838ce25a-8c5e-4f30-8727-ebacaa286f12/download/fji_pplp_adm3_tikina_2017_v2.csv
-    | ADM3_PCODE,ADM3_EN,ADM2_PCODE,ADM2_EN,ADM1_PCODE,ADM1_EN,ADM0_PCODE,ADM0_EN,M_00_04,F_00_04,T_00_04,M_05_09,F_05_09,T_05_09,M_10_14,F_10_14,T_10_14,M_15_19,F_15_19,T_15_19,M_20_24,F_20_24,T_20_24,M_25_29,F_25_29,T_25_29,M_30_34,F_30_34,T_30_34,M_35_39,F_35_39,T_35_39,M_40_44,F_40_44,T_40_44,M_45_49,
-    | FJ20101,Ba,FJ201,Ba ,FJ2,Western,FJ,Fiji Islands,1731,1612,3343,1790,1655,3445,1690,1615,3305,1624,1413,3037,1526,1402,2928,1538,1353,2891,1623,1339,2962,1679,1479,3158,1286,1181,2467,1284,1236,2520,1339,1229,2568,1186,1160,2346,798,876,1674,529,622,1151,336,440,776,192,284,476,88,120,208,23,63,86,1
-    | FJ20102,Magodro,FJ201,Ba ,FJ2,Western,FJ,Fiji Islands,299,262,561,252,246,498,236,228,464,169,152,321,161,139,300,179,151,330,191,154,345,204,174,378,157,119,276,135,123,258,161,165,326,151,123,274,94,81,175,62,59,121,52,38,90,24,30,54,7,13,20,4,7,11,1,1,2,0,2,2,2539,2267,4806
-    | FJ20103,Nadi,FJ201,Ba ,FJ2,Western,FJ,Fiji Islands,2954,2740,5694,2744,2637,5381,2325,2367,4692,2259,2206,4465,2630,2692,5322,2796,2620,5416,2651,2638,5289,2503,2409,4912,2011,1910,3921,1739,1683,3422,1735,1551,3286,1348,1404,2752,958,1105,2063,641,768,1409,378,537,915,188,281,469,92,117,209,23,48,7
-    | FJ20104,Naviti,FJ201,Ba ,FJ2,Western,FJ,Fiji Islands,154,184,338,181,169,350,157,142,299,101,84,185,87,89,176,146,123,269,120,106,226,100,85,185,60,64,124,72,71,143,81,95,176,81,63,144,58,49,107,35,35,70,28,27,55,21,19,40,8,8,16,2,3,5,0,1,1,1,0,1,1493,1417,2910
-    | FJ20105,Nawaka,FJ201,Ba ,FJ2,Western,FJ,Fiji Islands,852,879,1731,825,746,1571,698,660,1358,636,611,1247,682,741,1423,710,677,1387,747,667,1414,738,649,1387,507,449,956,416,396,812,419,426,845,384,390,774,242,291,533,143,173,316,66,109,175,44,74,118,12,34,46,6,12,18,1,7,8,0,2,2,8128,7993,16121
-    87 lines
+== kosis 101,DT_1PM1502
+  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do', 'index.do', 'right_layout.do', 'statHtml.do']
+    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx']
+    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd', 'dbUser', 'language', 'mode', 'pub', 'conn_path', 'list_id', 'itm_id', 'orderBy', 'serverType', 'dataOpt', 'serverTypeOrigin']
+    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL', 'SID_IP_ADDR', 'SSN_INFO']
+    ~ ART 개발pc에서 사용시 해당 부분 제외--> <!-- SSO 적용 END --> <!DOCTYPE html> <html xmlns="http://www.w3.org/1999
+    ~ meOfCookie = name + "="; var x = 0; while ( x <= document.cookie.length ) { var y = (x+nameOfCookie.length); if (
+    ~ { var y = (x+nameOfCookie.length); if ( document.cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y ))
+    ~ cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length; retur
+    ~ Cookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOf
+    ~ dOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf( " ", x ) + 1;
+    ~ nt.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf( " ", x ) + 1; if ( x == 0 ) break; } return "";
+    ~ function fn_openHelp(){ if(fn_getCookie("popHelp") != "done"){ var popWidth=646; var popHeight=730;
+    ~ 646; var popHeight=730; var popX = (window.screen.width/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2);
+    ~ (window.screen.width/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.jsp",
+    ~ r popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.jsp", "popHelp", "width="+popWidth+", height="+popHeight+", top="+popY+", left="
+    ~ r rightWidth = 0; //시간체크용 var dateChk; $(document).ready(function(){ // 대상 Element 선택 const resizer = document.getElement
+    ~ ).ready(function(){ // 대상 Element 선택 const resizer = document.getElementById('division'); const leftSide = resizer.previousElementSibling; con
+    ~ ing; const rightSide = resizer.nextElementSibling; document.ParamInfo.url = "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&pub=&conn_path=I2&l
+    ~ // resizer에 마우스 이벤트가 발생하면 실행하는 Handler const mouseDownHandler = function (e) { // 마우스 위치값을 가져와 x, y에 할당 x = e.clientX;
+    ~ gClientRect().width; // 마우스 이동과 해제 이벤트를 등록 document.addEventListener('mousemove', mouseMoveHandler); document.addEventListener('mouseup', mouseUpHandler)
+    ~ ent.addEventListener('mousemove', mouseMoveHandler); document.addEventListener('mouseup', mouseUpHandler); }; const mouseMoveHandler = function (e) {
+    ~ lass="resizer"에 적용하면 위치가 변경되면서 커서가 해제되기 때문에 body에 적용 document.body.style.cursor = 'col-resize'; // 이동 중 양쪽 영역(왼쪽, 오른쪽)에서 마우스 이벤트와 텍스트 선택을 방
+    ~ 제거됨 resizer.style.removeProperty('cursor'); document.body.style.removeProperty('cursor'); leftSide.style.removeProperty('user-select');
+    ~ erty('pointer-events'); // 등록한 마우스 이벤트를 제거 document.removeEventListener('mousemove', mouseMoveHandler); document.removeEventListener('mouseup', mouseUpHandl
+    ~ .removeEventListener('mousemove', mouseMoveHandler); document.removeEventListener('mouseup', mouseUpHandler); resizer.style.cursor = 'ew-resize'; }; //
+    ~ resizer.style.cursor = 'ew-resize'; }; // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler);
+    ~ // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler); dateChk = new Date(); fn_loading("loading");
+    ~ ding("loading"); $leftMenu = $("#leftMenu"); // $(window).resize(function(){ // var leftWidth = $leftMenu.width(); // if($leftM
+    ~ leftWidth = 0; // } // var rightWidth = $(window).width() - (leftWidth+10); // //var rightWidth = $(window).width(); // $("#ce
+    ~ w).width() - (leftWidth+10); // //var rightWidth = $(window).width(); // $("#centerMenu").css("width", rightWidth+"px"); //
+    ~ //윈도우 창 사이즈 변경시 height 자동조절 // var conHeight = $(window).height() - 50; // $("#leftMenu").height(conHeight + 10); // $("#
+    ~ m); //iframe_leftMenu 호출 //var rightForm = document.ParamInfo; var leftForm = document.iframeform; leftForm.orgId
+    ~ //var rightForm = document.ParamInfo; var leftForm = document.iframeform; leftForm.orgId = "101"; leftForm.tblId = "DT_1PM
+    ~ verType = "service"; leftForm.action = "includeLeftTree.do"; leftForm.target = "iframe_leftMenu"; leftForm.submit
+    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
+  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['right_layout.do', 'statHtmlContent.do']
+    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx', 'ordType']
+    ~ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    ~ b_index_check = 0; var set_first_cookie = false; $(document).ready(function(){ $(":input", top.ParamInfo).each(function(index, obj){
+    ~ var connPath = parent.g_connPath var paramInfoForm = document.ParamInfo; paramInfoForm.tblSe = ""; if(paramInfo
+    ~ lue != 'F'){ paramInfoForm.action = "statHtmlContent.do"; paramInfoForm.orgId = "101"; paramInfoForm.t
+    ~ verlay"); } }); $("#div_grid_left_btn").on('keydown', function(e){ switch (e.keyCode) { case 13: fn_tblVi
+    ~ ").children()[0]); } $left = $(".left_layout", parent.document); if($left.css("display") == "none"){ $arrow.removeCl
+    ~ return; } } var uri = "statHtmlContent.do"; try{ if(scrId != "" && scrId != undefined){
+    ~ parent.fn_loading("loading"); var paramInfoForm = document.ParamInfo; var param = { tblId : "", orgId : "", vwCd : "", list
+    ~ try { data = data.replace("statHtmlContent.do?",""); } catch (e){ data = "orgId=" + "101" + "&tblId=
+    ~ = "orgId=" + "101" + "&tblId=" + "DT_1PM1502" + "&vw_cd=" + document.ParamInfo.vwCd.value + "&itm_id=" + document.ParamInfo.itm_id.value+ "&list_id=" + document.ParamInfo.listId.valu
+    ~ "&itm_id=" + document.ParamInfo.itm_id.value+ "&list_id=" + document.ParamInfo.listId.value; } dataValue = data.split("&"); param = { tblI
+    ~ div").text((idx+1) + ". "+titleStr); } top.document.title = (idx+1) + ". "+titleStr; }); //fn_resizeTabWidth();//탭사이즈 자동조절
+    ~ try{ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); } catch (e) {
+    ~ r title = $li.find("div.tab_title").text(); top.document.title = title; } //include_centerGrid.js에서 사용할 tab_t
+    ~ && data != ""){ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); for(var f = 0;
+    ~ ="ParamInfo" name="ParamInfo" action="/statHtml/right_layout.do" method="post"> <input type="hidden" id="jsonStr" name="jsonStr" value="
+    ~ " name="viewSubKind" type="hidden" value=""/> <input id="doAnal" name="doAnal" type="hidden" value="N"/> <input id="analType" name="analType" type="hidden" value
+    ~ ype" name="markType" type="hidden" value=""/> <input id="docId" name="docId" type="hidden" value=""/> <input id="itmNm" name="itmNm" type="hidden" value=""/>
+  POST https://kosis.kr/statHtml/statHtmlContent.do -> 200, 287,421 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['InterList.do', 'LoginView.do', 'SvcMetaDcDtaPopup.do', 'assayInfo.do', 'cmmtInfo.do', 'directDownDiv.do', 'downGrid.do', 'downHelp.do', 'downLarge.do', 'downMeta.do', 'downNormal.do', 'html.do', 'index.do', 'linkStatsList.do', 'login.do', 'makeLarge.do', 'myscrapView.do', 'periodDivSelect.do', 'print.do', 'qnaList.do', 'relationInfo.do', 'searchRangeDetail.do', 'selectAll.do', 'sessionCheck.do', 'setOlapLogForNsoService.do', 'setOlapLogForNsoServiceRelUrl.do', 'statHtml.do', 'statHtmlContent.do', 'statisticsListIndex.do', 'tmprScrapSave.do', 'treeInfo.do']
+    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd', 'listId', 'pub', 'dbUser', 'st', 'process']
+    form 'ParamInfo' action='/statHtml/statHtmlContent.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx', 'ordType']
+    ~ <!DOCTYPE html> <html xmlns="http://www.w3.org/1999
+    ~ var g_maxCellDefault = 10000; var g_maxCellDownload = 200000; var e_vwCd_title = "MT_ZTITLE"; var g_mixCnt =
+    ~ ar g_dataOpt = "ko"; var g_mode = ""; var g_windowHeight; var g_windowWidth; var g_pivotColChk = new Array();
+    ~ var g_mode = ""; var g_windowHeight; var g_windowWidth; var g_pivotColChk = new Array(); var g_tblId =
+    ~ var g_gubun = ""; if(g_dataOpt =='ko'){ document.title="성별/연령별/종교별 인구-시군구"; }else if(g_dataOpt =='en'){ document.title=""; }el
+    ~ itle="성별/연령별/종교별 인구-시군구"; }else if(g_dataOpt =='en'){ document.title=""; }else{} // 시점 팝업을 위해 추가 var g_defaultTabSn = 0;
+    ~ 체해제"; var g_prdSe = ""; var g_popFunc = ""; var downloadable = true; var downloadSizeCheck = "Y"; var xAxisFix = "열고정
+    ~ var g_popFunc = ""; var downloadable = true; var downloadSizeCheck = "Y"; var xAxisFix = "열고정"; /* 열고정 */ var xAxisRelea
+    ~ vl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Total for dongs","itmId":"03","upItmId":null,"rownum":2,"objVarId":"A","charItmSn":2,"leaf":1,"scrKor":"동부"},{"lvl":1,"orgId":"101",
+    ~ ,"rownum":5,"objVarId":"A","charItmSn":5,"leaf":0,"scrKor":"서울특별시"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"
+    ~ lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Gyeonggi-do","itmId":"31","upItmId":null,"rownum":13,"objVarId":"A","charItmSn":103,"leaf":0,"scrKor":"경기도"},{"lvl":1,"orgId":"101"
+    ~ "lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Gangwon-do","itmId":"32","upItmId":null,"rownum":14,"objVarId":"A","charItmSn":158,"leaf":0,"scrKor":"강원도"},{"lvl":1,"orgId":"101"
+    ~ ,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Chungcheongbuk-do","itmId":"33","upItmId":null,"rownum":15,"objVarId":"A","charItmSn":180,"leaf":0,"scrKor":"충청북도"},{"lvl":1,"orgId":"101
+    ~ ,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Chungcheongnam-do","itmId":"34","upItmId":null,"rownum":16,"objVarId":"A","charItmSn":199,"leaf":0,"scrKor":"충청남도"},{"lvl":1,"orgId":"101
+    ~ vl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Jeollabuk-do","itmId":"35","upItmId":null,"rownum":17,"objVarId":"A","charItmSn":220,"leaf":0,"scrKor":"전라북도"},{"lvl":1,"orgId":"101
+    ~ vl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Jeollanam-do","itmId":"36","upItmId":null,"rownum":18,"objVarId":"A","charItmSn":240,"leaf":0,"scrKor":"전라남도"},{"lvl":1,"orgId":"101
+    ~ 1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Gyeongsangbuk-do","itmId":"37","upItmId":null,"rownum":19,"objVarId":"A","charItmSn":266,"leaf":0,"scrKor":"경상북도"},{"lvl":1,"orgId":"101
+    ~ 1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Gyeongsangnam-do","itmId":"38","upItmId":null,"rownum":20,"objVarId":"A","charItmSn":295,"leaf":0,"scrKor":"경상남도"},{"lvl":1,"orgId":"101
+    ~ "containPeriod":" 5년 2015 ~ 2015","defaultAction":"/statHtml.do","defaultItem":"null","defaultPeriodCnt":1,"defaultPeriodStr":"F#","dimCo":1224288,"dimUnitYn":"N","directYn":"N","down
+    ~ iodStr":"F#","dimCo":1224288,"dimUnitYn":"N","directYn":"N","downloadable":true,"existCmmtEng":"N","existCmmtKor":"Y","existStblCmmtEng":"N","existStblCmmtKor":"Y","highLightInfo":nul
+    ~ "defaultItmArr":"","dimCo":"","direct":"","diviSearchYn":"","doAnal":"N","docId":"","downGridCellMerge":"","downGridCsvType":"","downGridMeta":"","downGridSdmxDataType":"","downGridSd
+    ~ :"N","docId":"","downGridCellMerge":"","downGridCsvType":"","downGridMeta":"","downGridSdmxDataType":"","downGridSdmxType":"","downGridTxtType":"","downLargeExprType":"","downLargeFil
+    ~ ridMeta":"","downGridSdmxDataType":"","downGridSdmxType":"","downGridTxtType":"","downLargeExprType":"","downLargeFileType":"","downLargeSort":"","empId":"","empNm":"","enableCellUnit
+    ~ idTxtType":"","downLargeExprType":"","downLargeFileType":"","downLargeSort":"","empId":"","empNm":"","enableCellUnit":"N","enableLevelExpr":"N","enableParentLevel":"","enableWeight":"
+    ~ tmprScrId":"","treeSearchKeyword":"","treeSearchOption":"","url":"","useAddFuncLog":"","usePivot":"N","view":"table","viewKind":"","viewSubKind":"","viewType":"","vwCd":"MT_ZTITLE"},"periodCnt":1,"periodIn
+    ~ 성별","연령별"]},"popupFileHeight":"","popupFileNm":"","popupHtmlUrl":"https://kosis.kr/tbl_popup/","pubLog":"3","renewalDate":"2017-01-05","serverType":"service","serverUrl":"https://kosis.kr","smblYn":"","sta
+    ~ 3","renewalDate":"2017-01-05","serverType":"service","serverUrl":"https://kosis.kr","smblYn":"","statId":"1962001","statLinkInfo":{"appAt":"Y","confmNo":"101001","existInquire":true,"existInquireLink":true
+    ~ Sno":"https://meta.narastat.kr/metasvc/svc/SvcMetaDcDtaPopup.do","newsLink":"https://mods.go.kr/board.es?mid=a10301020200&bid=203","orgEngNm":"Ministry of Data and Statistics","pubLin
+    ~ gEngNm":"Ministry of Data and Statistics","pubLink":"","sigaUrl":"https://kosis.kr/gen_etl/start.jsp","snameeng":"Population Census","statId":"1962001","urlCn":"https://mods.go.kr","urlStatNm":"국가데이터처,「인구총
+    ~ art.jsp","snameeng":"Population Census","statId":"1962001","urlCn":"https://mods.go.kr","urlStatNm":"국가데이터처,「인구총조사」"},"statOrgId":"101","tabMenuList":[{"objVarId":"13999001","scrKor":"항목","scrEng":"ITEM","lv
+    text: KOSIS 차트 바로가기 행렬전환 X 닫기 표두 표측 시점 항목 행정구역별(시군구) 성별 연령별 확인 --> 적용 초기화 취소 --> 주석정보 X 닫기 성별/연령별/종교별 인구-시군구 주석정보 X 닫기 다운로드 X 닫기 메타자료받기 (TXT) 파일형태 빈셀 부호(-) 통계부호 셀단위 코드포함 EXCEL(xlsx) EXCEL(xls) null --> ( 셀 병합 ) CSV ( 인코딩 : ANSI UTF-8 ) ( UTF-8 ) [ ANSI UTF-8 ] --> TXT ( 인코딩 : ANSI UTF-8 ) [ ANSI UTF-8 ] --> SDMX(2.0) [ DSD (데이터구조) DATA Generic Compact ] 시점정렬 오름차순 내림차순 소수점 수록자료형식과 동일 조회화면과 동일 다운로드 다운로드 파일을 생성하고 있습니다. 잠시만 기다려주십시오. 통계표 파일서비스 - 자료량이 많은 통계표로 미리 생성한 파일을 제공합니다. 다운로드 X 닫기 파일형태 메타자료받기 (TXT) EXCEL CSV 통계표구성 코드포함 시점표두, 항목표측 항목표두, 시점표측 시점정렬 오름차순 내림차순 다운로드 시점 재선택 다운로드 파일을 생성하고 있습니다. 잠시만 기다려주십시오. 통계표 파일서비스 - 자료량이 많은 통계표로 미리 생성한 파일을 제공합니다. 마이스크랩 X 닫기 주소 및 출처정보 X 닫기 URL 출처 (작성기관명, 조사명, 작성시점, 참조일자, 통계표명) 관련통계표 X 닫기 계층컬럼구분이란? X 닫기 상위레벨표시란? X 닫기 레벨별 전체선택 X 닫기 기능설명 - 상위레벨 선택(일부)값에 상관없이 해당레벨 전체가 선택됩니다. - 왼쪽 위 일괄설정은 분류, 항목 및 시점을 보다 편리하게 설정할 수 있는 기능입니다. 선택옵션이란? X 닫기 선택정보 전체보기 X 닫기 X 닫기 확인 취소 행렬전환 조회설정 추천통계표 X 닫기 현재 통계표 열람 후 가장 많이 조회된 통계표입니다. (최근 30일) 통계표 복사/공유 X 닫기 자료 복사 통계표 내의 자료가 클립보드에 복사되었습니다! 엑셀 등에 붙여넣기 하여 사용 가능합니다. URL 공유 *최대 10일 사용 가능 카카오톡 페이스북 X URL ✽ SNS 공유 또는 URL을 복사하여 현재 통계표 조회 설정 그대로 조회가 가능합니다. 생활물가지수(2015=100) 소비자물가지수(2015=100) --> 1) 「인구총조사」 국가데이터처 (자료문의처: 042-481-3730) 통계설명자료 보도자료 수록기간 : 5년 2015 ~ 2015 / 자료갱신일: 2017-01-05 / 주석정보 시점 증감/증감률 분석해제 행렬전환 열고정 (TEST) 분할조회건수 ( ) 새 탭 열기 주소/출처 추천통계표 스크랩 통계표 복사/공유 OPENAPI 인쇄 다운로드 다운로드 구분선 조회설정 (단위: 명 ) * 차트의 범례는 최대 20개까지 제공되며, 항목과 분류값을 재설정하여 조회할 수 있습니다. * 차트 기능은 구글 크롬 및 마이크로소프트 익스플로러11에 최적화 되어 있습니다. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
