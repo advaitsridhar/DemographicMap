@@ -984,14 +984,14 @@ def ajk_check(found: dict[str, dict[str, int]], whole: dict[str, int]) -> None:
 # the group. A row lost or duplicated would still be caught, because every
 # group's single years must add up to the group's own row, sex by sex.
 #
-# Some territory figures are misprinted too: age 26's males read 28,258 where
-# its rural 23,357 and urban 5,901 make 29,258, and 29,258 is what the 25-29
-# group's 141,285 needs. Every row prints its rural and urban halves beside
-# the territory, so the territory is taken as their sum wherever the two
-# disagree -- and only if the rural and urban columns themselves add up, year
-# by year, to their own group rows and Total row. A misprint in a half fails
-# that and refuses the run; a misprint in the territory column is named in
-# the log and corrected from the row's own halves.
+# Some figures are misprinted too: age 26's males read 28,258 in the
+# territory column where its rural 23,357 and urban 5,901 make 29,258, which
+# is what the 25-29 group's 141,285 needs; age 49's rural males read 10,484
+# where the 45-49 group and the territory's 12,883 both need 10,480. Every row
+# prints its rural and urban halves beside the territory and every group its
+# own row, so a single misprinted cell shows in two sums at once, by the same
+# amount: ``ajk_misprints`` corrects exactly that pattern and refuses any
+# other, and the log names each correction.
 AJK_AGE_TABLE = re.compile(r"Age\s*Group\s*and\s*Gender[\s-]*wise\s*Rural\s*&\s*"
                            r"Urban\s*Population\s*of\s*AJ&K", re.I)
 AJK_AGE_SOURCE = ("Pakistan Bureau of Statistics, Population and Housing Census "
@@ -1088,13 +1088,62 @@ def ajk_ages(blob: bytes) -> dict[str, Any]:
     return ajk_ages_from_pages(words_by_row(blob))
 
 
-def ajk_ages_check(table: dict[str, Any], population: int) -> None:
-    """Every year present once; each column's years to its groups and total.
+AREAS = ("rural", "urban", "territory")
 
-    Then the territory column: wherever it is not its row's rural plus urban,
-    it is replaced by that sum (see the note above Table 15.8), which must
-    itself add up to the groups and the total, and to Table 15.24's
-    population. Leaves ``table["ages"]`` etc. holding the territory tuples.
+
+def ajk_misprints(ages: dict[int, dict[str, list[int]]],
+                  groups: dict[tuple[int, int], dict[str, tuple[int, ...]]]
+                  ) -> list[str]:
+    """Correct the cells two of the table's own sums agree are misprinted.
+
+    Within a five-year group and one column of figures (males, females,
+    transgender or persons), a single misprinted cell shows twice: its row's
+    rural plus urban stops making the territory, by some amount d, and its
+    area's single years stop making that area's group row -- by -d if the
+    cell is the territory's, by +d if it is the rural or urban one. Only that
+    pattern is corrected, and only by that amount; anything else is a
+    disagreement this cannot place, and refuses. Returns what it corrected.
+    """
+    fixed: list[str] = []
+    for (low, high), group in groups.items():
+        years = range(low, high + 1)
+        for i, column in enumerate(("males", "females", "transgender", "persons")):
+            by_row = {a: ages[a]["rural"][i] + ages[a]["urban"][i]
+                      - ages[a]["territory"][i] for a in years}
+            by_area = {area: sum(ages[a][area][i] for a in years) - group[area][i]
+                       for area in AREAS}
+            rows = {a: d for a, d in by_row.items() if d}
+            areas = {area: d for area, d in by_area.items() if d}
+            if not rows and not areas:
+                continue
+            placed = None
+            if len(rows) == 1 and len(areas) == 1:
+                (age, d), = rows.items()
+                (area, off), = areas.items()
+                if area == "territory" and off == -d:
+                    ages[age]["territory"][i] += d
+                    placed = area
+                elif area != "territory" and off == d:
+                    ages[age][area][i] -= d
+                    placed = area
+            if placed is None:
+                raise SystemExit(f"AJ&K Table 15.8 ages {low}-{high} {column}: rows "
+                                 f"off by {rows} and areas by {areas}; no single "
+                                 "misprint explains both")
+            fixed.append(f"age {age} {placed} {column}: {d:+,} by its row and by "
+                         f"its {low}-{high} group")
+    return fixed
+
+
+def ajk_ages_check(table: dict[str, Any], population: int) -> None:
+    """Every year present once; every column to its groups, total and halves.
+
+    A cell the table's own sums show to be misprinted is corrected first
+    (:func:`ajk_misprints`, named in the log); after that every check must
+    hold exactly: each row's sexes make its total, rural plus urban make the
+    territory, each area's single years make its group rows and its Total
+    row, and the territory's Total is Table 15.24's population. Leaves
+    ``table["ages"]`` etc. holding the territory's tuples.
     """
     ages, groups, total = table["ages"], table["groups"], table["total"]
     if total is None:
@@ -1102,22 +1151,17 @@ def ajk_ages_check(table: dict[str, Any], population: int) -> None:
     if set(ages) != set(range(0, AJK_AGE_OPEN + 1)):
         raise SystemExit(f"AJ&K Table 15.8 is missing ages "
                          f"{sorted(set(range(0, AJK_AGE_OPEN + 1)) - set(ages))}")
-    rows = [*ages.values(), *groups.values(), total]
-    for area in ("rural", "urban"):
-        for row in rows:
+    ages = {a: {area: list(row[area]) for area in AREAS} for a, row in ages.items()}
+    fixed = ajk_misprints(ages, groups)
+    for row in [*ages.values(), *groups.values(), total]:
+        for area in AREAS:
             if sum(row[area][:3]) != row[area][3]:
                 raise SystemExit(f"AJ&K Table 15.8 {area}: {row[area][:3]} do not "
                                  f"make {row[area][3]:,}")
-    corrected = []
-    for where, row in [*((f"age {a}", r) for a, r in ages.items()),
-                       *((f"ages {g[0]}-{g[1]}", r) for g, r in groups.items()),
-                       ("Total", total)]:
-        halves = tuple(r + u for r, u in zip(row["rural"], row["urban"]))
-        if halves != row["territory"]:
-            corrected.append(f"{where}: printed {row['territory']}, rural plus "
-                             f"urban {halves}")
-        row["territory"] = halves
-    for area in ("rural", "urban", "territory"):
+        if [r + u for r, u in zip(row["rural"], row["urban"])] != list(row["territory"]):
+            raise SystemExit(f"AJ&K Table 15.8: rural {row['rural']} and urban "
+                             f"{row['urban']} do not make {row['territory']}")
+    for area in AREAS:
         for (low, high), row in groups.items():
             for i in range(4):
                 summed = sum(ages[a][area][i] for a in range(low, high + 1))
@@ -1131,11 +1175,12 @@ def ajk_ages_check(table: dict[str, Any], population: int) -> None:
                 raise SystemExit(f"AJ&K Table 15.8 {area}: the single years add up "
                                  f"to {summed:,}, the Total row says "
                                  f"{total[area][i]:,}")
-    for line in corrected:
-        log(f"    AJ&K Table 15.8 misprint corrected from its own row -- {line}")
-    table["ages"] = {a: r["territory"] for a, r in ages.items()}
-    table["groups"] = {g: r["territory"] for g, r in groups.items()}
-    table["total"] = total["territory"]
+    for line in fixed:
+        log(f"    AJ&K Table 15.8 misprint corrected -- {line}")
+    table["ages"] = {a: tuple(r["territory"]) for a, r in ages.items()}
+    table["groups"] = {g: tuple(r["territory"]) for g, r in groups.items()}
+    table["total"] = tuple(total["territory"])
+    table["misprints"] = fixed
     if table["total"][3] != population:
         raise SystemExit(f"AJ&K Table 15.8 counts {table['total'][3]:,} people and "
                          f"Table 15.24 {population:,}")
@@ -1157,7 +1202,12 @@ def ajk_age_fields(table: dict[str, Any], extra: str = "") -> dict[str, Any]:
             f"Statistical Year Book 2023 (Table 15.8): the median of {persons:,} "
             "people's single years of age, interpolated within the year that "
             "holds the middle person. The 2023 census published no age table "
-            "for the territory." + extra)
+            "for the territory."
+            + (f" {len(table['misprints'])} misprinted cells of the yearbook's "
+               "table are corrected from the two sums each one breaks -- its "
+               "row's rural plus urban and its five-year group."
+               if table.get("misprints") else "")
+            + extra)
     out["sex_ratio"] = measure(round(100.0 * male / female, 1),
                                unit="males_per_100_females", year=AJK_YEAR,
                                source=AJK_AGE_SOURCE)

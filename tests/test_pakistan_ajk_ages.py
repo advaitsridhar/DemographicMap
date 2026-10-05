@@ -91,15 +91,28 @@ class Table158(unittest.TestCase):
         pk.ajk_ages_check(got, people)
         self.assertEqual(got["ages"][26][:2], (74, 84))
 
-    def test_a_misprinted_half_is_refused(self):
-        pages, people = table()
+    def bump_rural(self, pages, ages: set[str]) -> None:
+        """Four more rural males, persons with them, in each named year's row."""
         for rows in pages:
             for i, cells in enumerate(rows):
-                if cells[0][2] == "26":
+                if cells[0][2] in ages:
                     words = [w for _a, _b, w in cells]
-                    words[1] = str(int(words[1]) + 1)       # rural males
-                    words[4] = str(int(words[4].replace(",", "")) + 1)
+                    words[1] = str(int(words[1]) + 4)       # rural males
+                    words[4] = str(int(words[4].replace(",", "")) + 4)
                     rows[i] = row(*words)
+
+    def test_a_misprinted_rural_figure_is_placed_by_two_sums(self):
+        # Age 49's rural males, as the yearbook prints them four too many.
+        pages, people = table()
+        self.bump_rural(pages, {"49"})
+        got = pk.ajk_ages_from_pages(pages)
+        pk.ajk_ages_check(got, people)
+        self.assertEqual(got["ages"][49][0], 100 - 49)
+        self.assertEqual(len(got["misprints"]), 2)          # males and persons
+
+    def test_two_misprints_in_one_group_are_refused(self):
+        pages, people = table()
+        self.bump_rural(pages, {"46", "47"})
         got = pk.ajk_ages_from_pages(pages)
         with self.assertRaises(SystemExit):
             pk.ajk_ages_check(got, people)
