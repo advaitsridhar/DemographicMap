@@ -1442,6 +1442,16 @@ def main() -> int:
                 f"printed total {read.printed:,}")
             for line in annex_debug(words_by_row(blob), read.gewogs):
                 log("  " + line)
+            annex = annex_ages(words_by_row(blob), read.gewogs)
+            for name, rows in sorted(annex["gewogs"].items()):
+                why = gewog_outcome(name, rows, read)
+                log(f"  -- {name}: {why or 'reads'}")
+                for label, values in rows.items():
+                    log(f"     {label:8} {values}  groups sum {sum(values[:-1]):,}")
+                if all(rows.get(k) for k in ("persons", "male", "female")):
+                    off = [i for i in range(len(GEWOG_GROUPS) + 1)
+                           if rows["male"][i] + rows["female"][i] != rows["persons"][i]]
+                    log(f"     male + female != persons at {off}")
         return 0
 
     log("bhutan: National Statistics Bureau, PHCB 2017 Table 2.1")
