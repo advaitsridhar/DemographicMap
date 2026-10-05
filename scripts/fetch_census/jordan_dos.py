@@ -9,7 +9,8 @@ Two publications of the Department of Statistics (DoS) are read:
   year, which the governorates must make;
 * three tables of the Population and Housing Census 2015, PDFs of the DoS
   data bank: Table 3.1 (the population inside Jordan by nationality --
-  Jordanian or not -- sex and administrative division), Table 3.4 (the same
+  Jordanian or not -- sex and administrative division, beside the Jordanians
+  abroad, whom its total also counts and who are left out here), Table 3.4 (the same
   people by age group, sex and governorate) and Table 8.1 (the non-Jordanians
   by country of nationality, sex and governorate).
 
@@ -197,9 +198,10 @@ def read_estimates(sheets: dict[str, list[list[Any]]]) -> tuple[int, dict[str, d
 def read_totals(text: str) -> dict[str, list[int]]:
     """Governorate (and 'kingdom') -> Table 3.1's twelve totals.
 
-    Abroad, non-Jordanian, Jordanian and everyone inside Jordan, each as
-    women, men, total. Only the first Total after a governorate's heading is
-    the governorate's; its districts' blocks follow under their own headings.
+    Jordanians abroad, non-Jordanians and Jordanians inside Jordan, and all
+    three together, each as women, men, total. Only the first Total after a
+    governorate's heading is the governorate's; its districts' blocks follow
+    under their own headings.
     """
     out: dict[str, list[int]] = {}
     current = None
@@ -216,9 +218,9 @@ def read_totals(text: str) -> dict[str, list[int]]:
         if m and current:
             cells = numbers(m.group(1))
             triples_add_up(cells, f"Table 3.1 {current}")
-            check(cells[5] + cells[8] == cells[11],
-                  f"jordan_dos: Table 3.1 {current}: non-Jordanians and Jordanians are not "
-                  f"everyone")
+            check(cells[2] + cells[5] + cells[8] == cells[11],
+                  f"jordan_dos: Table 3.1 {current}: Jordanians abroad, non-Jordanians and "
+                  f"Jordanians are not the total")
             check(current not in out, f"jordan_dos: Table 3.1 {current} twice")
             out[current] = cells
             current = None
@@ -226,7 +228,11 @@ def read_totals(text: str) -> dict[str, list[int]]:
 
 
 def read_ages(text: str) -> dict[str, dict[str, Any]]:
-    """Governorate (and 'kingdom') -> everyone inside Jordan by age group (Table 3.4)."""
+    """Governorate (and 'kingdom') -> everyone inside Jordan by age group (Table 3.4).
+
+    Inside Jordan is the non-Jordanians and Jordanians columns together; the
+    table's total column also counts Jordanians abroad, who are left out.
+    """
     out: dict[str, dict[str, Any]] = {}
     current = None
     groups: list[tuple[int, int | None, float]] = []
@@ -248,16 +254,17 @@ def read_ages(text: str) -> dict[str, dict[str, Any]]:
                 lo, hi = int(label[:-1]), None
             else:
                 lo, hi = (int(v) for v in label.split("-"))
-            groups.append((lo, hi, cells[11]))
+            groups.append((lo, hi, cells[5] + cells[8]))
             continue
         m = TOTAL_ROW.match(line)
         if m:
             cells = numbers(m.group(1))
             made = sum(n for _a, _b, n in groups)
-            check(made == cells[11], f"jordan_dos: Table 3.4 {current}: age groups make "
-                                     f"{made:,}, not {cells[11]:,}")
+            inside = cells[5] + cells[8]
+            check(made == inside, f"jordan_dos: Table 3.4 {current}: age groups make "
+                                  f"{made:,}, not {inside:,}")
             check(current not in out, f"jordan_dos: Table 3.4 {current} twice")
-            out[current] = {"groups": sorted(groups), "total": cells[11]}
+            out[current] = {"groups": sorted(groups), "total": inside, "row": cells}
             current = None
             continue
         if english(line) and not re.search(r"\d", line) and re.search(r"Urban|Rural", line):
@@ -334,9 +341,9 @@ def check_kingdom(totals: dict[str, list[int]], ages: dict[str, dict[str, Any]],
           f"jordan_dos: Table 8.1 governorates {sorted(nats)}")
     for g in govs + ["kingdom"]:
         if g in ages:
-            check(ages[g]["total"] == totals[g][11],
-                  f"jordan_dos: {g}: Table 3.4 counts {ages[g]['total']:,}, Table 3.1 "
-                  f"{totals[g][11]:,}")
+            check(ages[g]["row"] == totals[g],
+                  f"jordan_dos: {g}: Table 3.4's total row {ages[g]['row']} is not Table "
+                  f"3.1's {totals[g]}")
         if g in nats:
             check(nats[g]["grand"] == totals[g][5],
                   f"jordan_dos: {g}: Table 8.1 counts {nats[g]['grand']:,} non-Jordanians, "
@@ -372,7 +379,7 @@ def build(year: int, estimates: dict[str, dict[str, int]], totals: dict[str, lis
         population["note"] = (f"The DoS's estimate for the end of {year}: {est['men']:,} men "
                               f"and {est['women']:,} women.")
         cells = totals[gov]
-        everyone, jordanians = cells[11], cells[8]
+        everyone, jordanians = cells[5] + cells[8], cells[8]
         counts = {"Jordanian": jordanians}
         for lab, n in nats[gov]["counts"].items():
             if n:
@@ -389,18 +396,21 @@ def build(year: int, estimates: dict[str, dict[str, int]], totals: dict[str, lis
                             f"{year}: {est['men']:,} men and {est['women']:,} women."),
             median_age=median_age(ages[gov]["groups"], year=CENSUS_YEAR, source=SOURCE_CENSUS),
             median_age_note=(
-                f"Median age of everyone the 2015 census counted in the governorate, "
-                f"Jordanians and others ({everyone:,} people), interpolated within the "
+                f"Median age of everyone the 2015 census counted inside Jordan in the "
+                f"governorate, Jordanians and others ({everyone:,} people; Jordanians "
+                f"abroad left out), interpolated within the "
                 f"census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4)."),
             ethnicity=shares(counts, total=everyone),
             ethnicity_year=CENSUS_YEAR, ethnicity_basis="nationality",
             ethnicity_note=(
                 "Nationality, not ethnicity: the 2015 census records each person's "
                 "nationality and asks no ethnic question. Carried on this field under the "
-                f"owner's decision of {DECISION}. Jordanians from Table 3.1; everyone else "
-                "by country of nationality from Table 8.1, the largest by name and the rest "
-                "by region. 'Palestinian' is Palestinian nationality (chiefly people from "
-                "Gaza), not Jordanians of Palestinian origin, who are Jordanian."),
+                f"owner's decision of {DECISION}. Everyone counted inside Jordan "
+                f"({everyone:,} people; Jordanians abroad left out): Jordanians from Table "
+                "3.1, everyone else by country of nationality from Table 8.1, the largest by "
+                "name and the rest by region. 'Palestinian' is Palestinian nationality "
+                "(chiefly people from Gaza), not Jordanians of Palestinian origin, who are "
+                "Jordanian."),
             sources=sources))
     return rows
 
@@ -419,7 +429,8 @@ def main() -> int:
     nats = read_nationalities(pdf_text(NATIONALITIES))
     rows = build(year, estimates, totals, ages, nats, units(ISO3, "admin1"))
     log(f"  estimates end of {year}: {sum(e['total'] for e in estimates.values()):,}; "
-        f"census 2015: {totals['kingdom'][11]:,} inside Jordan")
+        f"census 2015: {totals['kingdom'][5] + totals['kingdom'][8]:,} inside Jordan, "
+        f"{totals['kingdom'][2]:,} Jordanians abroad")
     write_json(PROCESSED / OUT, rows)
     log(f"  wrote {OUT} ({len(rows)})")
     return 0

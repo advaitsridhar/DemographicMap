@@ -38,11 +38,19 @@ def estimates_sheets(broken=False):
 
 
 def census_cells(i):
-    """Abroad, non-Jordanian, Jordanian and everyone of governorate i, as F, M, T each."""
+    """Jordanians abroad, non-Jordanians, Jordanians and all three of governorate i.
+
+    Each as women, men, total, as Table 3.1 prints them: its total column
+    counts the Jordanians abroad too.
+    """
     abroad = triple(1, 2)
     non = triple(100 * (i + 1), 120 * (i + 1))
     jor = triple(1000 * (i + 1), 1010 * (i + 1))
-    return abroad + non + jor + triple(non[0] + jor[0], non[1] + jor[1])
+    return abroad + non + jor + triple(1 + non[0] + jor[0], 2 + non[1] + jor[1])
+
+
+def inside(cells):
+    return cells[5] + cells[8]
 
 
 def line(label, cells):
@@ -70,14 +78,15 @@ def ages_text():
     blocks = [("Jordan", [sum(census_cells(i)[k] for i in range(12)) for k in range(12)])]
     blocks += [(name, census_cells(i)) for i, name in enumerate(TABLE_NAMES)]
     for name, cells in blocks:
-        f_all, m_all = cells[9], cells[10]
+        # Everyone inside Jordan, by sex; the abroad column stays empty by age.
+        f_all, m_all = cells[3] + cells[6], cells[4] + cells[7]
         # Everyone in the 20-24 group but what the other groups hold.
         f_rows, m_rows = [1] * len(AGE_LABELS), [1] * len(AGE_LABELS)
         f_rows[5] = f_all - (len(AGE_LABELS) - 1)
         m_rows[5] = m_all - (len(AGE_LABELS) - 1)
         lines.append(f"{name} {AR}")
         for k, label in enumerate(AGE_LABELS):
-            lines.append(line(label, [0, 0, 0] * 3 + triple(f_rows[k], m_rows[k])))
+            lines.append(line(label, [0, 0, 0] * 2 + triple(f_rows[k], m_rows[k]) * 2))
         lines.append(line("Total", cells))
         lines.append(f"{name} - Urban {AR}")
         lines.append(line("<1", [0] * 12))
@@ -133,7 +142,7 @@ class TheReaders(unittest.TestCase):
 
     def test_ages_stop_at_the_urban_block(self):
         ages = jd.read_ages(ages_text())
-        self.assertEqual(ages["Irbid"]["total"], census_cells(4)[11])
+        self.assertEqual(ages["Irbid"]["total"], inside(census_cells(4)))
         self.assertEqual(ages["Irbid"]["groups"][0], (0, 0, 2))
         self.assertEqual(ages["Irbid"]["groups"][-1], (80, None, 2))
 
@@ -170,7 +179,8 @@ class TheRecords(unittest.TestCase):
         amman = self.rows["g0"]
         self.assertEqual(amman["ethnicity_basis"], "nationality")
         made = sum(s["count"] for s in amman["ethnicity"])
-        self.assertEqual(made, census_cells(0)[11])
+        self.assertEqual(made, inside(census_cells(0)))
+        self.assertIn("abroad left out", amman["ethnicity_note"])
         self.assertEqual(amman["ethnicity"][0]["group"], "Jordanian")
 
     def test_median_from_the_census_groups(self):
