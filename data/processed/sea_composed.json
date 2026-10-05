@@ -1,0 +1,7471 @@
+[
+  {
+    "id": "MMR-COMP-hkamti",
+    "level": "admin2",
+    "name": "Hkamti",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 66.3,
+        "count": 246028
+      },
+      {
+        "group": "Christian",
+        "pct": 33.0,
+        "count": 122385
+      },
+      {
+        "group": "Other",
+        "pct": 0.6,
+        "count": 2110
+      },
+      {
+        "group": "Islamic",
+        "pct": 0.1,
+        "count": 316
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 35
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Shan",
+        "pct": 47.3,
+        "count": 176775
+      },
+      {
+        "group": "Naga",
+        "pct": 37.8,
+        "count": 141291
+      },
+      {
+        "group": "Burmese",
+        "pct": 11.5,
+        "count": 42876
+      },
+      {
+        "group": "Chin",
+        "pct": 2.5,
+        "count": 9307
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 996
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.2,
+        "count": 694
+      },
+      {
+        "group": "Lisu",
+        "pct": 0.2,
+        "count": 878
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 406
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 27
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B91156237471736",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The boundary file draws one polygon here where the census counted Hkamti district; Lay Shi, Lahe, Nanyun of the Naga self-administered zone, so this is their sum.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The boundary file draws one polygon here where the census counted Hkamti district; Lay Shi, Lahe, Nanyun of the Naga self-administered zone, so this is their sum."
+  },
+  {
+    "id": "MMR-COMP-hopang",
+    "level": "admin2",
+    "name": "Hopang",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau carries no religion figures for Mongmao, Pangwaun, which lie in this polygon, so a sum here would describe only part of it."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau carries no ethnicity figures for Mongmao, Pangwaun, which lie in this polygon, so a sum here would describe only part of it."
+    },
+    "sources": [],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B42594704122339"
+  },
+  {
+    "id": "MMR-COMP-katha",
+    "level": "admin2",
+    "name": "Katha",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 98.8,
+        "count": 850673
+      },
+      {
+        "group": "Christian",
+        "pct": 0.7,
+        "count": 6321
+      },
+      {
+        "group": "Islamic",
+        "pct": 0.4,
+        "count": 3192
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 656
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 219
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Burmese",
+        "pct": 86.6,
+        "count": 745414
+      },
+      {
+        "group": "Shan",
+        "pct": 8.8,
+        "count": 75627
+      },
+      {
+        "group": "Kadu",
+        "pct": 1.8,
+        "count": 15393
+      },
+      {
+        "group": "Kanan",
+        "pct": 1.5,
+        "count": 13151
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.6,
+        "count": 5243
+      },
+      {
+        "group": "Other",
+        "pct": 0.6,
+        "count": 5484
+      },
+      {
+        "group": "Chin",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Intha",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 354
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Naga",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 143
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B54197947879165",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The boundary file draws one polygon here where the census counted Katha district; Kawlin district, so this is their sum.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The boundary file draws one polygon here where the census counted Katha district; Kawlin district, so this is their sum."
+  },
+  {
+    "id": "MMR-COMP-kyaukme",
+    "level": "admin2",
+    "name": "Kyaukme",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 93.2,
+        "count": 592281
+      },
+      {
+        "group": "Christian",
+        "pct": 4.4,
+        "count": 27640
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.2,
+        "count": 7715
+      },
+      {
+        "group": "Islamic",
+        "pct": 1.0,
+        "count": 6040
+      },
+      {
+        "group": "Other",
+        "pct": 0.3,
+        "count": 1603
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Shan",
+        "pct": 48.5,
+        "count": 304893
+      },
+      {
+        "group": "Palaung",
+        "pct": 24.0,
+        "count": 151019
+      },
+      {
+        "group": "Burmese",
+        "pct": 11.9,
+        "count": 74722
+      },
+      {
+        "group": "Danu",
+        "pct": 7.5,
+        "count": 47252
+      },
+      {
+        "group": "Other",
+        "pct": 3.2,
+        "count": 20174
+      },
+      {
+        "group": "Kachin",
+        "pct": 2.4,
+        "count": 15101
+      },
+      {
+        "group": "Lisu",
+        "pct": 1.3,
+        "count": 7889
+      },
+      {
+        "group": "Kokang",
+        "pct": 0.5,
+        "count": 3011
+      },
+      {
+        "group": "Mong Wong",
+        "pct": 0.3,
+        "count": 1957
+      },
+      {
+        "group": "Chin",
+        "pct": 0.1,
+        "count": 766
+      },
+      {
+        "group": "Karen",
+        "pct": 0.1,
+        "count": 820
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 360
+      },
+      {
+        "group": "Wa",
+        "pct": 0.1,
+        "count": 739
+      },
+      {
+        "group": "Intha",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Lahu",
+        "pct": 0.0,
+        "count": 261
+      },
+      {
+        "group": "Liz",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B11251200769941",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The boundary file draws one polygon here where the census counted Kyaukme district; Namhsan, Manton of the Palaung self-administered zone, so this is their sum.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The boundary file draws one polygon here where the census counted Kyaukme district; Namhsan, Manton of the Palaung self-administered zone, so this is their sum."
+  },
+  {
+    "id": "MMR-COMP-laukkaing",
+    "level": "admin2",
+    "name": "Laukkaing",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 54.1,
+        "count": 52677
+      },
+      {
+        "group": "Other",
+        "pct": 45.0,
+        "count": 43813
+      },
+      {
+        "group": "Christian",
+        "pct": 0.9,
+        "count": 905
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other",
+        "pct": 88.2,
+        "count": 85880
+      },
+      {
+        "group": "Burmese",
+        "pct": 5.8,
+        "count": 5602
+      },
+      {
+        "group": "Shan",
+        "pct": 5.5,
+        "count": 5394
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.5,
+        "count": 441
+      },
+      {
+        "group": "Chin",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 20
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B25476839208576",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The boundary file draws one polygon here where the census counted Laukine, Konkyan of the Kokang self-administered zone, so this is their sum.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The boundary file draws one polygon here where the census counted Laukine, Konkyan of the Kokang self-administered zone, so this is their sum."
+  },
+  {
+    "id": "MMR-COMP-matman",
+    "level": "admin2",
+    "name": "Matman",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau carries no religion figures for Narphan, Pangsang, which lie in this polygon, so a sum here would describe only part of it."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau carries no ethnicity figures for Narphan, Pangsang, which lie in this polygon, so a sum here would describe only part of it."
+    },
+    "sources": [],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B76959974834297"
+  },
+  {
+    "id": "MMR-COMP-mindat",
+    "level": "admin2",
+    "name": "Mindat",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Christian",
+        "pct": 74.5,
+        "count": 169930
+      },
+      {
+        "group": "Buddhist",
+        "pct": 25.0,
+        "count": 56999
+      },
+      {
+        "group": "Other",
+        "pct": 0.4,
+        "count": 968
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Islamic",
+        "pct": 0.0,
+        "count": 103
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Chin",
+        "pct": 91.3,
+        "count": 208002
+      },
+      {
+        "group": "Rakhine",
+        "pct": 8.1,
+        "count": 18374
+      },
+      {
+        "group": "Burmese",
+        "pct": 0.7,
+        "count": 1489
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B42580025975984",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The boundary file draws one polygon here where the census counted Mindat district; Matupi district, so this is their sum.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The boundary file draws one polygon here where the census counted Mindat district; Matupi district, so this is their sum."
+  },
+  {
+    "id": "MMR-COMP-tachileik",
+    "level": "admin2",
+    "name": "Tachileik",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 61.8,
+        "count": 145192
+      },
+      {
+        "group": "Christian",
+        "pct": 33.4,
+        "count": 78493
+      },
+      {
+        "group": "Other",
+        "pct": 3.6,
+        "count": 8375
+      },
+      {
+        "group": "Nat",
+        "pct": 1.0,
+        "count": 2408
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.1,
+        "count": 191
+      },
+      {
+        "group": "Islamic",
+        "pct": 0.1,
+        "count": 341
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Shan",
+        "pct": 48.5,
+        "count": 113930
+      },
+      {
+        "group": "Akha",
+        "pct": 21.3,
+        "count": 49979
+      },
+      {
+        "group": "Lahu",
+        "pct": 14.2,
+        "count": 33367
+      },
+      {
+        "group": "Burmese",
+        "pct": 8.6,
+        "count": 20152
+      },
+      {
+        "group": "Other",
+        "pct": 4.4,
+        "count": 10325
+      },
+      {
+        "group": "Palaung",
+        "pct": 0.9,
+        "count": 2024
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.5,
+        "count": 1194
+      },
+      {
+        "group": "Mong Wong",
+        "pct": 0.3,
+        "count": 779
+      },
+      {
+        "group": "Wa",
+        "pct": 0.3,
+        "count": 588
+      },
+      {
+        "group": "Chin",
+        "pct": 0.2,
+        "count": 453
+      },
+      {
+        "group": "Intha",
+        "pct": 0.2,
+        "count": 431
+      },
+      {
+        "group": "Karen",
+        "pct": 0.2,
+        "count": 488
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.2,
+        "count": 468
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.1,
+        "count": 160
+      },
+      {
+        "group": "Kokang",
+        "pct": 0.1,
+        "count": 178
+      },
+      {
+        "group": "Liz",
+        "pct": 0.1,
+        "count": 152
+      },
+      {
+        "group": "Danu",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Kayan",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Lisu",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 69
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B30441775870549",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The boundary file draws one polygon here where the census counted Tachileik district; Mong Hpayak district, so this is their sum.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The boundary file draws one polygon here where the census counted Tachileik district; Mong Hpayak district, so this is their sum."
+  },
+  {
+    "id": "MMR-COMP-taunggyi",
+    "level": "admin2",
+    "name": "Taunggyi",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 94.2,
+        "count": 1478575
+      },
+      {
+        "group": "Christian",
+        "pct": 4.1,
+        "count": 64036
+      },
+      {
+        "group": "Islamic",
+        "pct": 1.0,
+        "count": 16427
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.6,
+        "count": 8753
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 1343
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pa'o",
+        "pct": 35.4,
+        "count": 551830
+      },
+      {
+        "group": "Burmese",
+        "pct": 18.0,
+        "count": 280726
+      },
+      {
+        "group": "Danu",
+        "pct": 15.4,
+        "count": 240454
+      },
+      {
+        "group": "Intha",
+        "pct": 8.9,
+        "count": 138841
+      },
+      {
+        "group": "Shan",
+        "pct": 8.8,
+        "count": 137876
+      },
+      {
+        "group": "Kayan",
+        "pct": 5.5,
+        "count": 85557
+      },
+      {
+        "group": "Taungyo",
+        "pct": 3.1,
+        "count": 47677
+      },
+      {
+        "group": "Other",
+        "pct": 2.0,
+        "count": 31342
+      },
+      {
+        "group": "Palaung",
+        "pct": 1.3,
+        "count": 19954
+      },
+      {
+        "group": "Karen",
+        "pct": 0.4,
+        "count": 6587
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.4,
+        "count": 6597
+      },
+      {
+        "group": "Lisu",
+        "pct": 0.2,
+        "count": 2380
+      },
+      {
+        "group": "Chin",
+        "pct": 0.1,
+        "count": 1398
+      },
+      {
+        "group": "Htanot",
+        "pct": 0.1,
+        "count": 1261
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.1,
+        "count": 1524
+      },
+      {
+        "group": "Kokang",
+        "pct": 0.1,
+        "count": 1736
+      },
+      {
+        "group": "Liz",
+        "pct": 0.1,
+        "count": 835
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 1576
+      },
+      {
+        "group": "Akha",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Lahu",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 590
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B67272669909031",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The boundary file draws one polygon here where the census counted Taunggyi district; Pindaya, Ywangan of the Danu self-administered zone; Hopong, Hsihseng, Pinlaung of the Pa-O self-administered zone, so this is their sum.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The boundary file draws one polygon here where the census counted Taunggyi district; Pindaya, Ywangan of the Danu self-administered zone; Hopong, Hsihseng, Pinlaung of the Pa-O self-administered zone, so this is their sum."
+  },
+  {
+    "id": "MMR-COMP-yangonwest",
+    "level": "admin2",
+    "name": "Yangon (West)",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 89.7,
+        "count": 778396
+      },
+      {
+        "group": "Christian",
+        "pct": 5.2,
+        "count": 45484
+      },
+      {
+        "group": "Islamic",
+        "pct": 3.7,
+        "count": 32474
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.3,
+        "count": 10984
+      },
+      {
+        "group": "Other",
+        "pct": 0.1,
+        "count": 543
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Burmese",
+        "pct": 92.5,
+        "count": 747405
+      },
+      {
+        "group": "Karen",
+        "pct": 2.7,
+        "count": 21690
+      },
+      {
+        "group": "Rakhine",
+        "pct": 1.5,
+        "count": 11727
+      },
+      {
+        "group": "Other",
+        "pct": 0.8,
+        "count": 6795
+      },
+      {
+        "group": "Shan",
+        "pct": 0.8,
+        "count": 6104
+      },
+      {
+        "group": "Mon",
+        "pct": 0.7,
+        "count": 5815
+      },
+      {
+        "group": "Chin",
+        "pct": 0.5,
+        "count": 4358
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.4,
+        "count": 3091
+      },
+      {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 368
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "60261553B21361013305345",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The census calls this district 'YANGON'.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The census calls this district 'YANGON'."
+  },
+  {
+    "id": "MMR-COMP-R-mandalay",
+    "level": "admin1",
+    "name": "Mandalay",
+    "parent": "MMR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 96.3,
+        "count": 6589963
+      },
+      {
+        "group": "Islamic",
+        "pct": 2.5,
+        "count": 170376
+      },
+      {
+        "group": "Christian",
+        "pct": 0.8,
+        "count": 52514
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.3,
+        "count": 17946
+      },
+      {
+        "group": "Other",
+        "pct": 0.2,
+        "count": 12271
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Burmese",
+        "pct": 96.5,
+        "count": 6539456
+      },
+      {
+        "group": "Other",
+        "pct": 1.5,
+        "count": 99104
+      },
+      {
+        "group": "Shan",
+        "pct": 0.8,
+        "count": 51839
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.7,
+        "count": 44715
+      },
+      {
+        "group": "Karen",
+        "pct": 0.2,
+        "count": 13768
+      },
+      {
+        "group": "Chin",
+        "pct": 0.1,
+        "count": 6726
+      },
+      {
+        "group": "Palaung",
+        "pct": 0.1,
+        "count": 3960
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 518
+      },
+      {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Indian",
+        "pct": 0.0,
+        "count": 1147
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 3122
+      },
+      {
+        "group": "Lisu",
+        "pct": 0.0,
+        "count": 3270
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 567
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 2150
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Department of Population, 2018 Township Profiles, Table 14: Ethnic Nationalities Living, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2017,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "religion",
+        "name": "Department of Population, Ministry of Labour, Immigration and Population, 2014 Myanmar Population and Housing Census, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/burma-subnational-boundaries-and-tabular-data",
+        "year": 2014,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "MMR",
+    "match_by": "shape_id",
+    "shape_id": "20573499B45980987355836",
+    "ethnicity_year": 2017,
+    "ethnicity_note": "2018 Township Profiles, with a reference date of 1 April 2017. The 2014 census collected ethnicity and its results were never released, so these are the Department of Population's own later figures rather than census counts. Myanmar recognises 135 official ethnic groups and this table names 40; the Rohingya are not among either, having been excluded from enumeration as an ethnicity in 2014. The map draws one polygon here where the census counted Mandalay and Nay Pyi Taw, so this is their sum.",
+    "religion_year": 2014,
+    "religion_note": "2014 Myanmar Population and Housing Census unless a field says otherwise. The map draws one polygon here where the census counted Mandalay and Nay Pyi Taw, so this is their sum."
+  },
+  {
+    "id": "PHL-COMP-ncrseconddistrict",
+    "level": "admin2",
+    "name": "NCR, Second District",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic, excluding Catholic Charismatics",
+        "pct": 87.2,
+        "count": 4142114
+      },
+      {
+        "group": "Iglesia ni Cristo",
+        "pct": 3.9,
+        "count": 183577
+      },
+      {
+        "group": "Other religious affiliations",
+        "pct": 1.9,
+        "count": 89259
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1,
+        "count": 52583
+      },
+      {
+        "group": "Christian Missions in the Philippines",
+        "pct": 0.5,
+        "count": 22029
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.4,
+        "count": 16841
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.4,
+        "count": 17834
+      },
+      {
+        "group": "Jesus is Lord Church",
+        "pct": 0.4,
+        "count": 19732
+      },
+      {
+        "group": "Bible Baptist Church",
+        "pct": 0.3,
+        "count": 11958
+      },
+      {
+        "group": "Christ's Commission Fellowship",
+        "pct": 0.3,
+        "count": 14794
+      },
+      {
+        "group": "Christian and Missionary Alliance Church of the Philippines",
+        "pct": 0.3,
+        "count": 12082
+      },
+      {
+        "group": "Other Baptists",
+        "pct": 0.3,
+        "count": 13764
+      },
+      {
+        "group": "Aglipay",
+        "pct": 0.2,
+        "count": 8100
+      },
+      {
+        "group": "Baptist Conference of the Philippines",
+        "pct": 0.2,
+        "count": 9832
+      },
+      {
+        "group": "Other Evangelical Churches",
+        "pct": 0.2,
+        "count": 11486
+      },
+      {
+        "group": "Other Protestants",
+        "pct": 0.2,
+        "count": 11617
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 0.2,
+        "count": 10283
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 4122
+      },
+      {
+        "group": "Catholic Charismatic",
+        "pct": 0.1,
+        "count": 4016
+      },
+      {
+        "group": "Christian Reformed Church in the Philippines, Incorporated",
+        "pct": 0.1,
+        "count": 5127
+      },
+      {
+        "group": "Church of God World Missions in the Philippines",
+        "pct": 0.1,
+        "count": 5125
+      },
+      {
+        "group": "Church of Jesus Christ of the Latter Day Saints",
+        "pct": 0.1,
+        "count": 3318
+      },
+      {
+        "group": "Evangelical Christian Outreach Foundation",
+        "pct": 0.1,
+        "count": 3409
+      },
+      {
+        "group": "Non-religious",
+        "pct": 0.1,
+        "count": 3362
+      },
+      {
+        "group": "Other Methodists",
+        "pct": 0.1,
+        "count": 2746
+      },
+      {
+        "group": "Pentecostal Church of God Asia Mission",
+        "pct": 0.1,
+        "count": 3936
+      },
+      {
+        "group": "Religion not reported",
+        "pct": 0.1,
+        "count": 2925
+      },
+      {
+        "group": "United Evangelical Church of the Philippines (Chinese)",
+        "pct": 0.1,
+        "count": 3134
+      },
+      {
+        "group": "United Methodists Church",
+        "pct": 0.1,
+        "count": 2390
+      },
+      {
+        "group": "Victory Chapel Christian Fellowship",
+        "pct": 0.1,
+        "count": 4496
+      },
+      {
+        "group": "Victory Christian Fellowship of the Philippines, Inc.",
+        "pct": 0.1,
+        "count": 6745
+      },
+      {
+        "group": "Alliance of Bible Christian Communities of the Philippines",
+        "pct": 0.0,
+        "count": 1532
+      },
+      {
+        "group": "Ambassadors for Christ Philippine Evangelism, Inc.",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Ang Iglesia Metodista sa Pilipinas, Inc.",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "Apostolic Catholic Church, Inc.",
+        "pct": 0.0,
+        "count": 866
+      },
+      {
+        "group": "Asia Evangelistic Fellowship Philippines, Inc.",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.0,
+        "count": 1678
+      },
+      {
+        "group": "Association of Baptist Churches in Luzon, Visayas, and Mindanao",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Association of Fundamental Baptist Churches in the Philippines",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Bethany Church of Philippines",
+        "pct": 0.0,
+        "count": 450
+      },
+      {
+        "group": "Bible Centered Fellowship",
+        "pct": 0.0,
+        "count": 434
+      },
+      {
+        "group": "Bread of Life Ministries",
+        "pct": 0.0,
+        "count": 1626
+      },
+      {
+        "group": "Cathedral of Praise, Incorporated",
+        "pct": 0.0,
+        "count": 705
+      },
+      {
+        "group": "Charismatic Full Gospel Ministries",
+        "pct": 0.0,
+        "count": 817
+      },
+      {
+        "group": "Christ Faith Fellowship Philippines, Inc.",
+        "pct": 0.0,
+        "count": 926
+      },
+      {
+        "group": "Christ the Living Stone Fellowship",
+        "pct": 0.0,
+        "count": 1343
+      },
+      {
+        "group": "Christ to the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 387
+      },
+      {
+        "group": "Christian Brethren International Pilipinas, Inc.",
+        "pct": 0.0,
+        "count": 1917
+      },
+      {
+        "group": "Church Body of Christ Filipinista",
+        "pct": 0.0,
+        "count": 445
+      },
+      {
+        "group": "Church of the Foursquare Gospel in the Philippines, Incorporated",
+        "pct": 0.0,
+        "count": 736
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 0.0,
+        "count": 208
+      },
+      {
+        "group": "Conservative Baptist Association in the Philippines",
+        "pct": 0.0,
+        "count": 112
+      },
+      {
+        "group": "Convention of the Philippine Baptist Church",
+        "pct": 0.0,
+        "count": 177
+      },
+      {
+        "group": "Crusaders of the Divine Church of Christ, Incorporated",
+        "pct": 0.0,
+        "count": 277
+      },
+      {
+        "group": "Don Stewart Ministries Miracle Revivals, Inc.",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Door of Faith",
+        "pct": 0.0,
+        "count": 1524
+      },
+      {
+        "group": "Episcopal Church in the Philippines",
+        "pct": 0.0,
+        "count": 424
+      },
+      {
+        "group": "Evangelical Free Church of the Philippines",
+        "pct": 0.0,
+        "count": 740
+      },
+      {
+        "group": "Evangelical Presbyterian Church",
+        "pct": 0.0,
+        "count": 608
+      },
+      {
+        "group": "F.R.E.E. Mission Philippines, Inc.",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "FIFCOP Mission, Inc.",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Faith Baptist Church",
+        "pct": 0.0,
+        "count": 894
+      },
+      {
+        "group": "Faith Tabernacle Church (Living Rock Ministries)",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Filipino Assemblies of the First Born, Incorporated",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Free Believers in Christ Fellowship",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
+        "group": "Free Methodist Church",
+        "pct": 0.0,
+        "count": 540
+      },
+      {
+        "group": "Fundamental Grace Gospel Church of the Christ in the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 589
+      },
+      {
+        "group": "General Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
+        "group": "Good News Christian Churches",
+        "pct": 0.0,
+        "count": 459
+      },
+      {
+        "group": "Good News Worldwide Mission, Inc.",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Harvesters Christian Fellowship",
+        "pct": 0.0,
+        "count": 376
+      },
+      {
+        "group": "Higher Ground Baptist Mission of the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "I Am Redeemer and Master Evangelical Church, Inc.",
+        "pct": 0.0,
+        "count": 445
+      },
+      {
+        "group": "Iglesia Evangelica Unida de Cristo",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Iglesia Evangelista Methodista en Las Islas Filipinas (IEMELIF)",
+        "pct": 0.0,
+        "count": 367
+      },
+      {
+        "group": "Iglesia Filipina Independiente",
+        "pct": 0.0,
+        "count": 641
+      },
+      {
+        "group": "Iglesia sa Dios Espiritu Santo, Incorporated",
+        "pct": 0.0,
+        "count": 1096
+      },
+      {
+        "group": "Independent Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 841
+      },
+      {
+        "group": "International Baptist Missionary Fellowship",
+        "pct": 0.0,
+        "count": 347
+      },
+      {
+        "group": "International One Way Outreach",
+        "pct": 0.0,
+        "count": 234
+      },
+      {
+        "group": "Jesus Christ Saves Global Outreach",
+        "pct": 0.0,
+        "count": 1383
+      },
+      {
+        "group": "Jesus First Christian Ministries, Incorporated",
+        "pct": 0.0,
+        "count": 487
+      },
+      {
+        "group": "Jesus Loves You Ministries, Inc.",
+        "pct": 0.0,
+        "count": 279
+      },
+      {
+        "group": "Jesus Reigns Ministries",
+        "pct": 0.0,
+        "count": 362
+      },
+      {
+        "group": "Jesus is Alive Community, Inc.",
+        "pct": 0.0,
+        "count": 823
+      },
+      {
+        "group": "Jesus the Anointed One Church",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Jireh-Evangel Church Planting Philippines, Inc.",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Kingsway Fellowship International (Philippines), Inc.",
+        "pct": 0.0,
+        "count": 102
+      },
+      {
+        "group": "Light of the World Christian Center, Inc.",
+        "pct": 0.0,
+        "count": 475
+      },
+      {
+        "group": "Lord Jesus Our Redeemer Church Foundation International, Inc.",
+        "pct": 0.0,
+        "count": 321
+      },
+      {
+        "group": "Lord of the Nations, Inc.",
+        "pct": 0.0,
+        "count": 278
+      },
+      {
+        "group": "Love of Christ International Ministries",
+        "pct": 0.0,
+        "count": 252
+      },
+      {
+        "group": "Lutheran Church of the Philippines",
+        "pct": 0.0,
+        "count": 710
+      },
+      {
+        "group": "March of Faith Church Sole, Inc.",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Miracle Life Fellowship International",
+        "pct": 0.0,
+        "count": 535
+      },
+      {
+        "group": "Miracle Revival Church of the Philippines",
+        "pct": 0.0,
+        "count": 266
+      },
+      {
+        "group": "Missionary Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 394
+      },
+      {
+        "group": "Most Holy Church of God in Christ Jesus",
+        "pct": 0.0,
+        "count": 792
+      },
+      {
+        "group": "National Council of Christian Community Churches (NCCCC), Inc.",
+        "pct": 0.0,
+        "count": 178
+      },
+      {
+        "group": "Oblates of Mary Immaculate, Incorporated",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Philippine Benevolent Missionaries Association",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Philippine Ecumenical Christian Church",
+        "pct": 0.0,
+        "count": 155
+      },
+      {
+        "group": "Philippine Evangelical Holiness Church",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Philippine Evangelical Mission",
+        "pct": 0.0,
+        "count": 409
+      },
+      {
+        "group": "Philippine Good News Ministries",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Philippine Independent Catholic Church",
+        "pct": 0.0,
+        "count": 269
+      },
+      {
+        "group": "Philippine Missionary Fellowship",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Philippine Pentecostal Holiness Church",
+        "pct": 0.0,
+        "count": 682
+      },
+      {
+        "group": "Philippines General Council of the Assemblies of God",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Potter's House Christian Center",
+        "pct": 0.0,
+        "count": 239
+      },
+      {
+        "group": "Presbyterian Church in the Philippines",
+        "pct": 0.0,
+        "count": 327
+      },
+      {
+        "group": "River of God Church, Inc.",
+        "pct": 0.0,
+        "count": 180
+      },
+      {
+        "group": "Salvation Army Philippines",
+        "pct": 0.0,
+        "count": 1605
+      },
+      {
+        "group": "Southern Baptist Church",
+        "pct": 0.0,
+        "count": 319
+      },
+      {
+        "group": "Take the Nation for Jesus Global Ministires (Corpus Christi)",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Things to Come",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Tribal religion",
+        "pct": 0.0,
+        "count": 212
+      },
+      {
+        "group": "Unida Evangelical Church",
+        "pct": 0.0,
+        "count": 140
+      },
+      {
+        "group": "Union Espiritista Cristiana de Filipinas, Incorporated",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "United Church of Christ in the Philippines",
+        "pct": 0.0,
+        "count": 1719
+      },
+      {
+        "group": "United Pentecostal Church (Philippines), Inc.",
+        "pct": 0.0,
+        "count": 2183
+      },
+      {
+        "group": "Universal Pentecostal Church",
+        "pct": 0.0,
+        "count": 700
+      },
+      {
+        "group": "Way of Salvation",
+        "pct": 0.0,
+        "count": 203
+      },
+      {
+        "group": "Wesleyan Church",
+        "pct": 0.0,
+        "count": 168
+      },
+      {
+        "group": "Word International Ministries, Inc.",
+        "pct": 0.0,
+        "count": 347
+      },
+      {
+        "group": "Word for the World",
+        "pct": 0.0,
+        "count": 664
+      },
+      {
+        "group": "World Missionary Evangelism",
+        "pct": 0.0,
+        "count": 202
+      },
+      {
+        "group": "Worldwide Church of God",
+        "pct": 0.0,
+        "count": 361
+      },
+      {
+        "group": "Zion Christian Community Church",
+        "pct": 0.0,
+        "count": 609
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Tagalog",
+        "pct": 55.5,
+        "count": 2637177
+      },
+      {
+        "group": "Bisaya/Binisaya",
+        "pct": 13.3,
+        "count": 632603
+      },
+      {
+        "group": "Bikol/Bicol",
+        "pct": 8.1,
+        "count": 382424
+      },
+      {
+        "group": "Ilocano",
+        "pct": 6.4,
+        "count": 304951
+      },
+      {
+        "group": "Ilonggo",
+        "pct": 4.0,
+        "count": 188045
+      },
+      {
+        "group": "Waray",
+        "pct": 4.0,
+        "count": 192160
+      },
+      {
+        "group": "Pangasinan",
+        "pct": 1.8,
+        "count": 87556
+      },
+      {
+        "group": "Kapampangan",
+        "pct": 1.3,
+        "count": 62161
+      },
+      {
+        "group": "Cebuano",
+        "pct": 1.1,
+        "count": 51568
+      },
+      {
+        "group": "Maranao",
+        "pct": 0.6,
+        "count": 30441
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.4,
+        "count": 20559
+      },
+      {
+        "group": "Ibanag",
+        "pct": 0.4,
+        "count": 18350
+      },
+      {
+        "group": "Batangan",
+        "pct": 0.2,
+        "count": 11236
+      },
+      {
+        "group": "Boholano",
+        "pct": 0.2,
+        "count": 10265
+      },
+      {
+        "group": "Karay-a",
+        "pct": 0.2,
+        "count": 11192
+      },
+      {
+        "group": "Masbateño/Masbatenon",
+        "pct": 0.2,
+        "count": 11495
+      },
+      {
+        "group": "Caviteño",
+        "pct": 0.1,
+        "count": 3560
+      },
+      {
+        "group": "Davaweño",
+        "pct": 0.1,
+        "count": 3359
+      },
+      {
+        "group": "Ethnicity not reported",
+        "pct": 0.1,
+        "count": 4055
+      },
+      {
+        "group": "Ifugao",
+        "pct": 0.1,
+        "count": 2446
+      },
+      {
+        "group": "Indian",
+        "pct": 0.1,
+        "count": 2408
+      },
+      {
+        "group": "Itawes",
+        "pct": 0.1,
+        "count": 6757
+      },
+      {
+        "group": "Maguindanao",
+        "pct": 0.1,
+        "count": 6307
+      },
+      {
+        "group": "Other foreign ethnicity",
+        "pct": 0.1,
+        "count": 2459
+      },
+      {
+        "group": "Other local ethnicity",
+        "pct": 0.1,
+        "count": 4529
+      },
+      {
+        "group": "Romblomanon",
+        "pct": 0.1,
+        "count": 3650
+      },
+      {
+        "group": "Surigaonon",
+        "pct": 0.1,
+        "count": 3601
+      },
+      {
+        "group": "Tausog/Tausug",
+        "pct": 0.1,
+        "count": 6528
+      },
+      {
+        "group": "Zamboangeño",
+        "pct": 0.1,
+        "count": 4602
+      },
+      {
+        "group": "Abelling/Aberling",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Aeta",
+        "pct": 0.0,
+        "count": 408
+      },
+      {
+        "group": "Aeta/Ayta",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Aeta/Ayta-Abelling/Abellen",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Aeta/Ayta-Ambala",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Aeta/Ayta-Magbukun",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Aeta/Ayta-Mang-Antsi",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Aeta/Ayta-Sambal",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 135
+      },
+      {
+        "group": "Agta",
+        "pct": 0.0,
+        "count": 229
+      },
+      {
+        "group": "Agta-Cimaron",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Agta-Dumagat",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Agta-Dupanigan",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Agta-Isigiran",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Agta-Tabangnon/Tabangnon",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Agta-Taboy",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Agutaynen",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Alangan Mangyan",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Alta",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 588
+      },
+      {
+        "group": "Applai",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Applai-Kachakran/Kadaclan",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Dibabeen",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Direrayaan",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Ilianen",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Isoroken",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Kulmanen",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Lahitanen",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Livunganen",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Mulitaan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ata",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Ata/Negrito",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Ati",
+        "pct": 0.0,
+        "count": 229
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 114
+      },
+      {
+        "group": "Ayangan",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Ayangan-Henanga",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Ayta",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Badjao",
+        "pct": 0.0,
+        "count": 128
+      },
+      {
+        "group": "Bago",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Bagobo",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Bagobo Klata",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Bagobo Tagabawa",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Bajau",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Balangao",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Balangao-Lias",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Baliwon",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Baliwon-Fiallig/Fialika",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Baliwon-Gaddang",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Baliwon-I-Sadanga",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Baliwon-Miligan",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bangon Mangyan",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Bantoanon",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Banwaon",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Batak",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Blaan",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
+        "group": "Bontok",
+        "pct": 0.0,
+        "count": 1033
+      },
+      {
+        "group": "Bontok-Majukayong",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "British",
+        "pct": 0.0,
+        "count": 419
+      },
+      {
+        "group": "Bugkalot/Ilongot/Egongot",
+        "pct": 0.0,
+        "count": 162
+      },
+      {
+        "group": "Buhid Mangyan",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bukidnon",
+        "pct": 0.0,
+        "count": 438
+      },
+      {
+        "group": "Bukidnon-Akeanon",
+        "pct": 0.0,
+        "count": 367
+      },
+      {
+        "group": "Bukidnon-Halowodnon",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Bukidnon-Iraynon",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Bukidnon-Ituman",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Bukidnon-Magahat",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Bukidnon-Pan-Anayon",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Bukidnon-Tagoloanon",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Cagayanen",
+        "pct": 0.0,
+        "count": 1383
+      },
+      {
+        "group": "Calinga",
+        "pct": 0.0,
+        "count": 112
+      },
+      {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Capizeño",
+        "pct": 0.0,
+        "count": 2269
+      },
+      {
+        "group": "Caviteño-Chavacano",
+        "pct": 0.0,
+        "count": 1949
+      },
+      {
+        "group": "Cotabateño",
+        "pct": 0.0,
+        "count": 413
+      },
+      {
+        "group": "Cotabateño-Chavacano",
+        "pct": 0.0,
+        "count": 1283
+      },
+      {
+        "group": "Cuyonen/Cuyunon",
+        "pct": 0.0,
+        "count": 491
+      },
+      {
+        "group": "Davao-Chavacano",
+        "pct": 0.0,
+        "count": 1185
+      },
+      {
+        "group": "Diangan",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Dibabawon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Dumagat",
+        "pct": 0.0,
+        "count": 156
+      },
+      {
+        "group": "Dumagat-Edimala",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Dumagat-Kabolowen",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Dumagat-Tagebolus",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Dumagat/Remontado",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Eskaya",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 160
+      },
+      {
+        "group": "Gaddang",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 143
+      },
+      {
+        "group": "Gubatnon Mangyan",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Guiangan",
+        "pct": 0.0,
+        "count": 1691
+      },
+      {
+        "group": "Hanunuo Mangyan",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Higaonon-Tagoloanon",
+        "pct": 0.0,
+        "count": 555
+      },
+      {
+        "group": "Higaonon/Higa-onon",
+        "pct": 0.0,
+        "count": 1385
+      },
+      {
+        "group": "Ibaloy",
+        "pct": 0.0,
+        "count": 279
+      },
+      {
+        "group": "Ibatan",
+        "pct": 0.0,
+        "count": 1355
+      },
+      {
+        "group": "Ibukid",
+        "pct": 0.0,
+        "count": 250
+      },
+      {
+        "group": "Imalawa",
+        "pct": 0.0,
+        "count": 116
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Iranun/Iraynun",
+        "pct": 0.0,
+        "count": 1164
+      },
+      {
+        "group": "Iraya Mangyan",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Isinai",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Isnag",
+        "pct": 0.0,
+        "count": 169
+      },
+      {
+        "group": "Isneg",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Isneg/Isnag",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Itneg",
+        "pct": 0.0,
+        "count": 231
+      },
+      {
+        "group": "Itneg/Tinguian",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Itneg/Tinguian-Adasen",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Itneg/Tinguian-Balatok",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Itneg/Tinguian-Banao",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Itneg/Tinguian-Belwang",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Itneg/Tinguian-Binongan",
+        "pct": 0.0,
+        "count": 122
+      },
+      {
+        "group": "Itneg/Tinguian-Gubang",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Itneg/Tinguian-Illaud",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Itneg/Tinguian-Inlaud",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Itneg/Tinguian-Mabaka",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Itneg/Tinguian-Maeng",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Itneg/Tinguian-Masadiit",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Itneg/Tinguian-Muyadan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ivatan",
+        "pct": 0.0,
+        "count": 473
+      },
+      {
+        "group": "Iwak",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Jama Mapun",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 791
+      },
+      {
+        "group": "Kabayukan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kabihug",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kabihug/Manide",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Kagan/Kalagan",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Kailawan/Kaylawan",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalanguya",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Kalanguya-Ikalahan",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Kalanguya-Yattuka",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kalinga",
+        "pct": 0.0,
+        "count": 383
+      },
+      {
+        "group": "Kalinga-Ab-abaan",
+        "pct": 0.0,
+        "count": 586
+      },
+      {
+        "group": "Kalinga-Aciga",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "Kalinga-Balatoc",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kalinga-Balinciagao",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kalinga-Banao",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kalinga-Bangad",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalinga-Basao",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kalinga-Biga",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kalinga-Buaya",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kalinga-Butbut",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalinga-Cagaluan",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kalinga-Culminga",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Kalinga-Dacalan",
+        "pct": 0.0,
+        "count": 272
+      },
+      {
+        "group": "Kalinga-Dallac",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kalinga-Dananao",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Kalinga-Dangtalan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Dao-Angan",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Kalinga-Dugpa",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Kalinga-Gaang",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Gaddang",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Kalinga-Gubang",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Guilayon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Guina-ang",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalinga-Limos",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Lubo",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kalinga-Lubuagan",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Kalinga-Malbong",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Kalinga-Mangali",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalinga-Minanga",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalinga-Nanong",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Kalinga-Pangol",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Kalinga-Pinukpuk",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Kalinga-Salegseg",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Sumadel",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Kalinga-Taloctoc",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Kalinga-Tanglag",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Kalinga-Tobog",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Kalinga-Tongrayan",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Kalinga-Tulgao",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kalinga-Uma",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kamiguin",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
+        "group": "Kankanaey",
+        "pct": 0.0,
+        "count": 739
+      },
+      {
+        "group": "Kankanaey-Hak'ki",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Karao",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Karulano",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Kaunana",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Kolibugan",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Langilan",
+        "pct": 0.0,
+        "count": 168
+      },
+      {
+        "group": "Magahats",
+        "pct": 0.0,
+        "count": 374
+      },
+      {
+        "group": "Magkunana",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Malaueg",
+        "pct": 0.0,
+        "count": 121
+      },
+      {
+        "group": "Mamanwa",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Mandaya",
+        "pct": 0.0,
+        "count": 219
+      },
+      {
+        "group": "Mangguangan",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Mangyan",
+        "pct": 0.0,
+        "count": 1147
+      },
+      {
+        "group": "Manobo",
+        "pct": 0.0,
+        "count": 717
+      },
+      {
+        "group": "Manobo-Aromanon",
+        "pct": 0.0,
+        "count": 1796
+      },
+      {
+        "group": "Manobo-Ata",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Manobo-Blit",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Manobo-Blit-Tasaday",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Manobo-Dulangan",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Manobo-Dulungan-Lambangian",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Manobo-Dunggoanon",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Manobo-Kirenteken",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Manobo-Pulanguihon",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Mansaka",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Matigsalog",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Molbog",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "North Korean",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Obu-Manuvu",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Palawan-o",
+        "pct": 0.0,
+        "count": 538
+      },
+      {
+        "group": "Palawan-o-Ken-ey",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Palawan-o-Tao't-Bato",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Palawani",
+        "pct": 0.0,
+        "count": 1389
+      },
+      {
+        "group": "Pan-Ayanon",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Panay Bukidnon",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Parananum",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Ratagnon Mangyan",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Sama Badjao",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Sama Bangingi",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Sama Dilaut/Sama Laut",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Sama/Samal",
+        "pct": 0.0,
+        "count": 515
+      },
+      {
+        "group": "Sangir/Sangil",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Sibuyan Mangyan-Tagabukid",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Singaporean",
+        "pct": 0.0,
+        "count": 245
+      },
+      {
+        "group": "South African",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "South Korean",
+        "pct": 0.0,
+        "count": 565
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 325
+      },
+      {
+        "group": "Subanen/Subanon",
+        "pct": 0.0,
+        "count": 487
+      },
+      {
+        "group": "Swiss",
+        "pct": 0.0,
+        "count": 1423
+      },
+      {
+        "group": "T'boli/Tboli",
+        "pct": 0.0,
+        "count": 265
+      },
+      {
+        "group": "T'duray/Teduray",
+        "pct": 0.0,
+        "count": 172
+      },
+      {
+        "group": "Tadyawan Mangyan",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Tagabawa",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Tagakaulo",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Tagbanua",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Tagbanua-Calamian",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Tagbanua-Kalamianen",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Tagbanua-Tandulanen",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Taiwanese",
+        "pct": 0.0,
+        "count": 229
+      },
+      {
+        "group": "Talaandig",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Talaingod",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Tau-buid Mangyan",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Tigwahanon",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Tinananen",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Tingguian",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Tuwali",
+        "pct": 0.0,
+        "count": 116
+      },
+      {
+        "group": "Tuwali-Kele-i",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Ubo Monuvu/Manobo-Ubo/Ubo Manobo/Ubo Manuvu/Ubo/Menuvu",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Umayamnon",
+        "pct": 0.0,
+        "count": 97
+      },
+      {
+        "group": "Yakan",
+        "pct": 0.0,
+        "count": 969
+      },
+      {
+        "group": "Yapayao",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Yogad",
+        "pct": 0.0,
+        "count": 206
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Philippine Statistics Authority, 2020 Census of Population and Housing, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+        "year": 2020,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Philippine Statistics Authority, 2020 Census of Population and Housing, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+        "year": 2020,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B12869096786612",
+    "religion_year": 2020,
+    "religion_note": "2020 Census of Population and Housing. The census records religious affiliation as the individual church or denomination a person names, so the groups here are as published rather than collapsed into traditions -- the alternative would decide, on this map's authority rather than the census's, which churches count as one religion. The boundary file draws Metro Manila as four districts, and this one is Mandaluyong, Marikina, Pasig, Quezon City, San Juan, which the census counts apart: this is their sum.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Mandaluyong, Marikina, Pasig, Quezon City, San Juan, which the census counts apart: this is their sum."
+  },
+  {
+    "id": "PHL-COMP-ncrthirddistrict",
+    "level": "admin2",
+    "name": "NCR, Third District",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic, excluding Catholic Charismatics",
+        "pct": 89.4,
+        "count": 2679727
+      },
+      {
+        "group": "Iglesia ni Cristo",
+        "pct": 3.6,
+        "count": 108881
+      },
+      {
+        "group": "Other religious affiliations",
+        "pct": 1.5,
+        "count": 46358
+      },
+      {
+        "group": "Jesus is Lord Church",
+        "pct": 0.7,
+        "count": 20231
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.4,
+        "count": 10753
+      },
+      {
+        "group": "Islam",
+        "pct": 0.4,
+        "count": 12859
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.3,
+        "count": 9884
+      },
+      {
+        "group": "Other Baptists",
+        "pct": 0.3,
+        "count": 9866
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 0.3,
+        "count": 7618
+      },
+      {
+        "group": "Baptist Conference of the Philippines",
+        "pct": 0.2,
+        "count": 4751
+      },
+      {
+        "group": "Bible Baptist Church",
+        "pct": 0.2,
+        "count": 7314
+      },
+      {
+        "group": "Christian Missions in the Philippines",
+        "pct": 0.2,
+        "count": 7357
+      },
+      {
+        "group": "Other Evangelical Churches",
+        "pct": 0.2,
+        "count": 5454
+      },
+      {
+        "group": "Other Protestants",
+        "pct": 0.2,
+        "count": 4998
+      },
+      {
+        "group": "Aglipay",
+        "pct": 0.1,
+        "count": 4193
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.1,
+        "count": 2000
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 2421
+      },
+      {
+        "group": "Christ's Commission Fellowship",
+        "pct": 0.1,
+        "count": 2279
+      },
+      {
+        "group": "Christian Reformed Church in the Philippines, Incorporated",
+        "pct": 0.1,
+        "count": 2954
+      },
+      {
+        "group": "Christian and Missionary Alliance Church of the Philippines",
+        "pct": 0.1,
+        "count": 3732
+      },
+      {
+        "group": "Church of God World Missions in the Philippines",
+        "pct": 0.1,
+        "count": 2541
+      },
+      {
+        "group": "Church of Jesus Christ of the Latter Day Saints",
+        "pct": 0.1,
+        "count": 1878
+      },
+      {
+        "group": "Evangelical Christian Outreach Foundation",
+        "pct": 0.1,
+        "count": 1695
+      },
+      {
+        "group": "Other Methodists",
+        "pct": 0.1,
+        "count": 2286
+      },
+      {
+        "group": "Pentecostal Church of God Asia Mission",
+        "pct": 0.1,
+        "count": 2077
+      },
+      {
+        "group": "United Methodists Church",
+        "pct": 0.1,
+        "count": 2490
+      },
+      {
+        "group": "United Pentecostal Church (Philippines), Inc.",
+        "pct": 0.1,
+        "count": 1710
+      },
+      {
+        "group": "Victory Chapel Christian Fellowship",
+        "pct": 0.1,
+        "count": 1519
+      },
+      {
+        "group": "Victory Christian Fellowship of the Philippines, Inc.",
+        "pct": 0.1,
+        "count": 1694
+      },
+      {
+        "group": "Alliance of Bible Christian Communities of the Philippines",
+        "pct": 0.0,
+        "count": 578
+      },
+      {
+        "group": "Ambassadors for Christ Philippine Evangelism, Inc.",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Ang Iglesia Metodista sa Pilipinas, Inc.",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Apostolic Catholic Church, Inc.",
+        "pct": 0.0,
+        "count": 501
+      },
+      {
+        "group": "Asia Evangelistic Fellowship Philippines, Inc.",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Association of Baptist Churches in Luzon, Visayas, and Mindanao",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Association of Fundamental Baptist Churches in the Philippines",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Bethany Church of Philippines",
+        "pct": 0.0,
+        "count": 276
+      },
+      {
+        "group": "Bible Centered Fellowship",
+        "pct": 0.0,
+        "count": 269
+      },
+      {
+        "group": "Bread of Life Ministries",
+        "pct": 0.0,
+        "count": 906
+      },
+      {
+        "group": "Cathedral of Praise, Incorporated",
+        "pct": 0.0,
+        "count": 344
+      },
+      {
+        "group": "Catholic Charismatic",
+        "pct": 0.0,
+        "count": 880
+      },
+      {
+        "group": "Charismatic Full Gospel Ministries",
+        "pct": 0.0,
+        "count": 777
+      },
+      {
+        "group": "Christ Faith Fellowship Philippines, Inc.",
+        "pct": 0.0,
+        "count": 366
+      },
+      {
+        "group": "Christ the Living Stone Fellowship",
+        "pct": 0.0,
+        "count": 737
+      },
+      {
+        "group": "Christ to the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 102
+      },
+      {
+        "group": "Christian Brethren International Pilipinas, Inc.",
+        "pct": 0.0,
+        "count": 817
+      },
+      {
+        "group": "Church Body of Christ Filipinista",
+        "pct": 0.0,
+        "count": 134
+      },
+      {
+        "group": "Church of the Foursquare Gospel in the Philippines, Incorporated",
+        "pct": 0.0,
+        "count": 215
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 0.0,
+        "count": 162
+      },
+      {
+        "group": "Conservative Baptist Association in the Philippines",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Convention of the Philippine Baptist Church",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Crusaders of the Divine Church of Christ, Incorporated",
+        "pct": 0.0,
+        "count": 104
+      },
+      {
+        "group": "Don Stewart Ministries Miracle Revivals, Inc.",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Door of Faith",
+        "pct": 0.0,
+        "count": 1416
+      },
+      {
+        "group": "Episcopal Church in the Philippines",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Evangelical Free Church of the Philippines",
+        "pct": 0.0,
+        "count": 531
+      },
+      {
+        "group": "Evangelical Presbyterian Church",
+        "pct": 0.0,
+        "count": 284
+      },
+      {
+        "group": "F.R.E.E. Mission Philippines, Inc.",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "FIFCOP Mission, Inc.",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Faith Baptist Church",
+        "pct": 0.0,
+        "count": 392
+      },
+      {
+        "group": "Faith Tabernacle Church (Living Rock Ministries)",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Filipino Assemblies of the First Born, Incorporated",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Free Believers in Christ Fellowship",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Free Methodist Church",
+        "pct": 0.0,
+        "count": 420
+      },
+      {
+        "group": "Fundamental Grace Gospel Church of the Christ in the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 272
+      },
+      {
+        "group": "General Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Good News Christian Churches",
+        "pct": 0.0,
+        "count": 149
+      },
+      {
+        "group": "Good News Worldwide Mission, Inc.",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Harvesters Christian Fellowship",
+        "pct": 0.0,
+        "count": 111
+      },
+      {
+        "group": "Higher Ground Baptist Mission of the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "I Am Redeemer and Master Evangelical Church, Inc.",
+        "pct": 0.0,
+        "count": 191
+      },
+      {
+        "group": "Iglesia Evangelica Unida de Cristo",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Iglesia Evangelista Methodista en Las Islas Filipinas (IEMELIF)",
+        "pct": 0.0,
+        "count": 216
+      },
+      {
+        "group": "Iglesia Filipina Independiente",
+        "pct": 0.0,
+        "count": 223
+      },
+      {
+        "group": "Iglesia sa Dios Espiritu Santo, Incorporated",
+        "pct": 0.0,
+        "count": 878
+      },
+      {
+        "group": "Independent Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 337
+      },
+      {
+        "group": "International Baptist Missionary Fellowship",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "International One Way Outreach",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Jesus Christ Saves Global Outreach",
+        "pct": 0.0,
+        "count": 495
+      },
+      {
+        "group": "Jesus First Christian Ministries, Incorporated",
+        "pct": 0.0,
+        "count": 283
+      },
+      {
+        "group": "Jesus Loves You Ministries, Inc.",
+        "pct": 0.0,
+        "count": 153
+      },
+      {
+        "group": "Jesus Reigns Ministries",
+        "pct": 0.0,
+        "count": 480
+      },
+      {
+        "group": "Jesus is Alive Community, Inc.",
+        "pct": 0.0,
+        "count": 653
+      },
+      {
+        "group": "Jesus the Anointed One Church",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Jireh-Evangel Church Planting Philippines, Inc.",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kingsway Fellowship International (Philippines), Inc.",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Light of the World Christian Center, Inc.",
+        "pct": 0.0,
+        "count": 328
+      },
+      {
+        "group": "Lord Jesus Our Redeemer Church Foundation International, Inc.",
+        "pct": 0.0,
+        "count": 221
+      },
+      {
+        "group": "Lord of the Nations, Inc.",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "Love of Christ International Ministries",
+        "pct": 0.0,
+        "count": 280
+      },
+      {
+        "group": "Lutheran Church of the Philippines",
+        "pct": 0.0,
+        "count": 319
+      },
+      {
+        "group": "March of Faith Church Sole, Inc.",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Miracle Life Fellowship International",
+        "pct": 0.0,
+        "count": 193
+      },
+      {
+        "group": "Miracle Revival Church of the Philippines",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Missionary Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 350
+      },
+      {
+        "group": "Most Holy Church of God in Christ Jesus",
+        "pct": 0.0,
+        "count": 342
+      },
+      {
+        "group": "National Council of Christian Community Churches (NCCCC), Inc.",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Non-religious",
+        "pct": 0.0,
+        "count": 536
+      },
+      {
+        "group": "Oblates of Mary Immaculate, Incorporated",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Philippine Benevolent Missionaries Association",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Philippine Ecumenical Christian Church",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Philippine Evangelical Holiness Church",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Philippine Evangelical Mission",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Philippine Good News Ministries",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Philippine Independent Catholic Church",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "Philippine Missionary Fellowship",
+        "pct": 0.0,
+        "count": 53
+      },
+      {
+        "group": "Philippine Pentecostal Holiness Church",
+        "pct": 0.0,
+        "count": 235
+      },
+      {
+        "group": "Philippines General Council of the Assemblies of God",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Potter's House Christian Center",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Presbyterian Church in the Philippines",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Religion not reported",
+        "pct": 0.0,
+        "count": 337
+      },
+      {
+        "group": "River of God Church, Inc.",
+        "pct": 0.0,
+        "count": 244
+      },
+      {
+        "group": "Salvation Army Philippines",
+        "pct": 0.0,
+        "count": 1277
+      },
+      {
+        "group": "Southern Baptist Church",
+        "pct": 0.0,
+        "count": 195
+      },
+      {
+        "group": "Take the Nation for Jesus Global Ministires (Corpus Christi)",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Things to Come",
+        "pct": 0.0,
+        "count": 123
+      },
+      {
+        "group": "Tribal religion",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Unida Evangelical Church",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Union Espiritista Cristiana de Filipinas, Incorporated",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "United Church of Christ in the Philippines",
+        "pct": 0.0,
+        "count": 1204
+      },
+      {
+        "group": "United Evangelical Church of the Philippines (Chinese)",
+        "pct": 0.0,
+        "count": 1355
+      },
+      {
+        "group": "Universal Pentecostal Church",
+        "pct": 0.0,
+        "count": 525
+      },
+      {
+        "group": "Way of Salvation",
+        "pct": 0.0,
+        "count": 241
+      },
+      {
+        "group": "Wesleyan Church",
+        "pct": 0.0,
+        "count": 237
+      },
+      {
+        "group": "Word International Ministries, Inc.",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Word for the World",
+        "pct": 0.0,
+        "count": 585
+      },
+      {
+        "group": "World Missionary Evangelism",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Worldwide Church of God",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Zion Christian Community Church",
+        "pct": 0.0,
+        "count": 383
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Tagalog",
+        "pct": 58.5,
+        "count": 1752887
+      },
+      {
+        "group": "Bisaya/Binisaya",
+        "pct": 13.8,
+        "count": 414023
+      },
+      {
+        "group": "Bikol/Bicol",
+        "pct": 7.3,
+        "count": 218032
+      },
+      {
+        "group": "Ilocano",
+        "pct": 4.9,
+        "count": 147906
+      },
+      {
+        "group": "Waray",
+        "pct": 4.4,
+        "count": 133117
+      },
+      {
+        "group": "Ilonggo",
+        "pct": 3.1,
+        "count": 93345
+      },
+      {
+        "group": "Pangasinan",
+        "pct": 1.7,
+        "count": 50991
+      },
+      {
+        "group": "Kapampangan",
+        "pct": 1.4,
+        "count": 40895
+      },
+      {
+        "group": "Cebuano",
+        "pct": 1.2,
+        "count": 36536
+      },
+      {
+        "group": "Masbateño/Masbatenon",
+        "pct": 0.5,
+        "count": 14030
+      },
+      {
+        "group": "Boholano",
+        "pct": 0.3,
+        "count": 9844
+      },
+      {
+        "group": "Ibanag",
+        "pct": 0.3,
+        "count": 8173
+      },
+      {
+        "group": "Maranao",
+        "pct": 0.3,
+        "count": 8405
+      },
+      {
+        "group": "Batangan",
+        "pct": 0.2,
+        "count": 5335
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.2,
+        "count": 5671
+      },
+      {
+        "group": "Karay-a",
+        "pct": 0.2,
+        "count": 6090
+      },
+      {
+        "group": "Capizeño",
+        "pct": 0.1,
+        "count": 2839
+      },
+      {
+        "group": "Caviteño",
+        "pct": 0.1,
+        "count": 2578
+      },
+      {
+        "group": "Davaweño",
+        "pct": 0.1,
+        "count": 3132
+      },
+      {
+        "group": "Manobo-Aromanon",
+        "pct": 0.1,
+        "count": 1617
+      },
+      {
+        "group": "Other local ethnicity",
+        "pct": 0.1,
+        "count": 1907
+      },
+      {
+        "group": "Palawani",
+        "pct": 0.1,
+        "count": 2455
+      },
+      {
+        "group": "Romblomanon",
+        "pct": 0.1,
+        "count": 3112
+      },
+      {
+        "group": "Surigaonon",
+        "pct": 0.1,
+        "count": 2847
+      },
+      {
+        "group": "Zamboangeño",
+        "pct": 0.1,
+        "count": 4035
+      },
+      {
+        "group": "Abelling/Aberling",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Aeta",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Aeta/Ayta",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Aeta/Ayta-Abelling/Abellen",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Aeta/Ayta-Mag-Indi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Aeta/Ayta-Magbukun",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Aeta/Ayta-Mang-Antsi",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Aeta/Ayta-Sambal",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Agta",
+        "pct": 0.0,
+        "count": 172
+      },
+      {
+        "group": "Agta-Agay",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Agta-Cimaron",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Agta-Dumagat",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Agta-Dupanigan",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Agta-Isigiran",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Agta-Labin",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Agta-Tabangnon/Tabangnon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Agta-Taboy",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Agutaynen",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Alangan Mangyan",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Alta",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Applai",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Applai-Kachakran/Kadaclan",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Dibabeen",
+        "pct": 0.0,
+        "count": 118
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Direrayaan",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Ilianen",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Isoroken",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Kirenteken",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Kulmanen",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Lahitanen",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Mulitaan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Ata",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Ata/Negrito",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Ati",
+        "pct": 0.0,
+        "count": 494
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Ayangan",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Ayangan-Henanga",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ayta",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Badjao",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Bago",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Bagobo",
+        "pct": 0.0,
+        "count": 135
+      },
+      {
+        "group": "Bagobo Klata",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Bagobo Tagabawa",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Bajau",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Balangao",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Balangao-Lias",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Baliwon",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Baliwon-Gaddang",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Baliwon-I-Sadanga",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Baliwon-Miligan",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Bangon Mangyan",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Bantoanon",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Banwaon",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Batak",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Blaan",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Bontok",
+        "pct": 0.0,
+        "count": 938
+      },
+      {
+        "group": "Bontok-Majukayong",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "British",
+        "pct": 0.0,
+        "count": 185
+      },
+      {
+        "group": "Bugkalot/Ilongot/Egongot",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Buhid Mangyan",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Bukidnon",
+        "pct": 0.0,
+        "count": 470
+      },
+      {
+        "group": "Bukidnon-Akeanon",
+        "pct": 0.0,
+        "count": 149
+      },
+      {
+        "group": "Bukidnon-Halowodnon",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Bukidnon-Iraynon",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Bukidnon-Ituman",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Bukidnon-Magahat",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Bukidnon-Pan-Anayon",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Bukidnon-Tagoloanon",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Cagayanen",
+        "pct": 0.0,
+        "count": 1431
+      },
+      {
+        "group": "Calinga",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Caviteño-Chavacano",
+        "pct": 0.0,
+        "count": 858
+      },
+      {
+        "group": "Cotabateño",
+        "pct": 0.0,
+        "count": 432
+      },
+      {
+        "group": "Cotabateño-Chavacano",
+        "pct": 0.0,
+        "count": 457
+      },
+      {
+        "group": "Cuyonen/Cuyunon",
+        "pct": 0.0,
+        "count": 814
+      },
+      {
+        "group": "Davao-Chavacano",
+        "pct": 0.0,
+        "count": 538
+      },
+      {
+        "group": "Diangan",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Dibabawon",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Dumagat",
+        "pct": 0.0,
+        "count": 109
+      },
+      {
+        "group": "Dumagat-Edimala",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Eskaya",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ethnicity not reported",
+        "pct": 0.0,
+        "count": 328
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Gaddang",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Gubatnon Mangyan",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Guiangan",
+        "pct": 0.0,
+        "count": 971
+      },
+      {
+        "group": "Hanunuo Mangyan",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Higaonon-Tagoloanon",
+        "pct": 0.0,
+        "count": 280
+      },
+      {
+        "group": "Higaonon/Higa-onon",
+        "pct": 0.0,
+        "count": 1281
+      },
+      {
+        "group": "Ibaloy",
+        "pct": 0.0,
+        "count": 124
+      },
+      {
+        "group": "Ibatan",
+        "pct": 0.0,
+        "count": 608
+      },
+      {
+        "group": "Ibukid",
+        "pct": 0.0,
+        "count": 127
+      },
+      {
+        "group": "Ifugao",
+        "pct": 0.0,
+        "count": 696
+      },
+      {
+        "group": "Imalawa",
+        "pct": 0.0,
+        "count": 112
+      },
+      {
+        "group": "Indian",
+        "pct": 0.0,
+        "count": 949
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Iranun/Iraynun",
+        "pct": 0.0,
+        "count": 204
+      },
+      {
+        "group": "Iraya Mangyan",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Isinai",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Isnag",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Isneg",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Isneg/Isnag",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Itawes",
+        "pct": 0.0,
+        "count": 1472
+      },
+      {
+        "group": "Itneg",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Itneg/Tinguian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Itneg/Tinguian-Adasen",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Itneg/Tinguian-Balatok",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Itneg/Tinguian-Belwang",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Itneg/Tinguian-Binongan",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Itneg/Tinguian-Gubang",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Itneg/Tinguian-Illaud",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Itneg/Tinguian-Inlaud",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Itneg/Tinguian-Maeng",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Ivatan",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 300
+      },
+      {
+        "group": "Kabayukan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kabihug",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kabihug/Manide",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Kagan/Kalagan",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Kailawan/Kaylawan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kalanguya",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Kalanguya-Ikalahan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kalanguya-Yattuka",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Kalinga-Ab-abaan",
+        "pct": 0.0,
+        "count": 454
+      },
+      {
+        "group": "Kalinga-Ableg/Dalupa",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kalinga-Aciga",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Kalinga-Ballayangan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kalinga-Bangad",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalinga-Buaya",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kalinga-Cagaluan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kalinga-Culminga",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Kalinga-Dacalan",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Kalinga-Dallac",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kalinga-Dananao",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Kalinga-Dangtalan",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalinga-Dao-Angan",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Kalinga-Dugpa",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Kalinga-Gaddang",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Kalinga-Guilayon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Guina-ang",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalinga-Limos",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Kalinga-Lubuagan",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalinga-Mabongtot",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Malbong",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Kalinga-Mangali",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kalinga-Nanong",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kalinga-Pangol",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kalinga-Pinukpuk",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Sumadel",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalinga-Tanglag",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Tobog",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Kalinga-Tongrayan",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Kalinga-Tulgao",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kamiguin",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Kankanaey",
+        "pct": 0.0,
+        "count": 260
+      },
+      {
+        "group": "Kankanaey-Hak'ki",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Karao",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Karulano",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Kaunana",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kolibugan",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Lambanguian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Langilan",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Magahats",
+        "pct": 0.0,
+        "count": 265
+      },
+      {
+        "group": "Magkunana",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Maguindanao",
+        "pct": 0.0,
+        "count": 1124
+      },
+      {
+        "group": "Malaueg",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Mamanwa",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Mandaya",
+        "pct": 0.0,
+        "count": 118
+      },
+      {
+        "group": "Mangguangan",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mangyan",
+        "pct": 0.0,
+        "count": 1496
+      },
+      {
+        "group": "Manobo",
+        "pct": 0.0,
+        "count": 536
+      },
+      {
+        "group": "Manobo-Ata",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Manobo-Blit",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Manobo-Blit-Tasaday",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Manobo-Dulungan-Lambangian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Manobo-Kirenteken",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Manobo-Pulanguihon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mansaka",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Matigsalog",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Molbog",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "North Korean",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Obu-Manuvu",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other foreign ethnicity",
+        "pct": 0.0,
+        "count": 580
+      },
+      {
+        "group": "Palawan-o",
+        "pct": 0.0,
+        "count": 1109
+      },
+      {
+        "group": "Palawan-o-Ken-ey",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Palawan-o-Tao't-Bato",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Pan-Ayanon",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Panay Bukidnon",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Parananum",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Ratagnon Mangyan",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Sama Badjao",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Sama Bangingi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Sama Dilaut/Sama Laut",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Sama/Samal",
+        "pct": 0.0,
+        "count": 304
+      },
+      {
+        "group": "Sibuyan Mangyan-Tagabukid",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Singaporean",
+        "pct": 0.0,
+        "count": 194
+      },
+      {
+        "group": "South African",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "South Korean",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 81
+      },
+      {
+        "group": "Subanen/Subanon",
+        "pct": 0.0,
+        "count": 320
+      },
+      {
+        "group": "Swiss",
+        "pct": 0.0,
+        "count": 726
+      },
+      {
+        "group": "T'boli/Tboli",
+        "pct": 0.0,
+        "count": 249
+      },
+      {
+        "group": "T'duray/Teduray",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Tadyawan Mangyan",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Tagabawa",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Tagakaulo",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Tagbanua",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Tagbanua-Calamian",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Tagbanua-Tandulanen",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Taiwanese",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Talaandig",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Talaingod",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Tau-buid Mangyan",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Tausog/Tausug",
+        "pct": 0.0,
+        "count": 1054
+      },
+      {
+        "group": "Tigwahanon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tinananen",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Tingguian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Tuwali",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Tuwali-Kele-i",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ubo Monuvu/Manobo-Ubo/Ubo Manobo/Ubo Manuvu/Ubo/Menuvu",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Umayamnon",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Yakan",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Yapayao",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Yogad",
+        "pct": 0.0,
+        "count": 91
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Philippine Statistics Authority, 2020 Census of Population and Housing, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+        "year": 2020,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Philippine Statistics Authority, 2020 Census of Population and Housing, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+        "year": 2020,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B11276327116073",
+    "religion_year": 2020,
+    "religion_note": "2020 Census of Population and Housing. The census records religious affiliation as the individual church or denomination a person names, so the groups here are as published rather than collapsed into traditions -- the alternative would decide, on this map's authority rather than the census's, which churches count as one religion. The boundary file draws Metro Manila as four districts, and this one is Caloocan, Malabon, Navotas, Valenzuela, which the census counts apart: this is their sum.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Caloocan, Malabon, Navotas, Valenzuela, which the census counts apart: this is their sum."
+  },
+  {
+    "id": "PHL-COMP-ncrfourthdistrict",
+    "level": "admin2",
+    "name": "NCR, Fourth District",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic, excluding Catholic Charismatics",
+        "pct": 89.0,
+        "count": 3399628
+      },
+      {
+        "group": "Iglesia ni Cristo",
+        "pct": 2.5,
+        "count": 96383
+      },
+      {
+        "group": "Islam",
+        "pct": 1.7,
+        "count": 66728
+      },
+      {
+        "group": "Other religious affiliations",
+        "pct": 1.1,
+        "count": 43069
+      },
+      {
+        "group": "Christian Missions in the Philippines",
+        "pct": 0.5,
+        "count": 17287
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 0.4,
+        "count": 14071
+      },
+      {
+        "group": "Jesus is Lord Church",
+        "pct": 0.4,
+        "count": 13663
+      },
+      {
+        "group": "Bible Baptist Church",
+        "pct": 0.3,
+        "count": 12364
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.3,
+        "count": 11119
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 0.3,
+        "count": 11976
+      },
+      {
+        "group": "Aglipay",
+        "pct": 0.2,
+        "count": 9335
+      },
+      {
+        "group": "Baptist Conference of the Philippines",
+        "pct": 0.2,
+        "count": 7993
+      },
+      {
+        "group": "Christ's Commission Fellowship",
+        "pct": 0.2,
+        "count": 5862
+      },
+      {
+        "group": "Christian and Missionary Alliance Church of the Philippines",
+        "pct": 0.2,
+        "count": 6667
+      },
+      {
+        "group": "Other Baptists",
+        "pct": 0.2,
+        "count": 8556
+      },
+      {
+        "group": "Other Protestants",
+        "pct": 0.2,
+        "count": 8754
+      },
+      {
+        "group": "Victory Christian Fellowship of the Philippines, Inc.",
+        "pct": 0.2,
+        "count": 7837
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 4779
+      },
+      {
+        "group": "Catholic Charismatic",
+        "pct": 0.1,
+        "count": 3567
+      },
+      {
+        "group": "Christian Reformed Church in the Philippines, Incorporated",
+        "pct": 0.1,
+        "count": 5120
+      },
+      {
+        "group": "Church of God World Missions in the Philippines",
+        "pct": 0.1,
+        "count": 5036
+      },
+      {
+        "group": "Church of Jesus Christ of the Latter Day Saints",
+        "pct": 0.1,
+        "count": 3194
+      },
+      {
+        "group": "Evangelical Christian Outreach Foundation",
+        "pct": 0.1,
+        "count": 1913
+      },
+      {
+        "group": "Non-religious",
+        "pct": 0.1,
+        "count": 1989
+      },
+      {
+        "group": "Other Evangelical Churches",
+        "pct": 0.1,
+        "count": 4743
+      },
+      {
+        "group": "Pentecostal Church of God Asia Mission",
+        "pct": 0.1,
+        "count": 2721
+      },
+      {
+        "group": "United Evangelical Church of the Philippines (Chinese)",
+        "pct": 0.1,
+        "count": 2291
+      },
+      {
+        "group": "Victory Chapel Christian Fellowship",
+        "pct": 0.1,
+        "count": 4990
+      },
+      {
+        "group": "Alliance of Bible Christian Communities of the Philippines",
+        "pct": 0.0,
+        "count": 1175
+      },
+      {
+        "group": "Ambassadors for Christ Philippine Evangelism, Inc.",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Ang Iglesia Metodista sa Pilipinas, Inc.",
+        "pct": 0.0,
+        "count": 109
+      },
+      {
+        "group": "Apostolic Catholic Church, Inc.",
+        "pct": 0.0,
+        "count": 740
+      },
+      {
+        "group": "Asia Evangelistic Fellowship Philippines, Inc.",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.0,
+        "count": 1035
+      },
+      {
+        "group": "Association of Baptist Churches in Luzon, Visayas, and Mindanao",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Association of Fundamental Baptist Churches in the Philippines",
+        "pct": 0.0,
+        "count": 83
+      },
+      {
+        "group": "Bethany Church of Philippines",
+        "pct": 0.0,
+        "count": 286
+      },
+      {
+        "group": "Bible Centered Fellowship",
+        "pct": 0.0,
+        "count": 755
+      },
+      {
+        "group": "Bread of Life Ministries",
+        "pct": 0.0,
+        "count": 605
+      },
+      {
+        "group": "Cathedral of Praise, Incorporated",
+        "pct": 0.0,
+        "count": 870
+      },
+      {
+        "group": "Charismatic Full Gospel Ministries",
+        "pct": 0.0,
+        "count": 702
+      },
+      {
+        "group": "Christ Faith Fellowship Philippines, Inc.",
+        "pct": 0.0,
+        "count": 584
+      },
+      {
+        "group": "Christ the Living Stone Fellowship",
+        "pct": 0.0,
+        "count": 750
+      },
+      {
+        "group": "Christ to the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 493
+      },
+      {
+        "group": "Christian Brethren International Pilipinas, Inc.",
+        "pct": 0.0,
+        "count": 1667
+      },
+      {
+        "group": "Church Body of Christ Filipinista",
+        "pct": 0.0,
+        "count": 301
+      },
+      {
+        "group": "Church of the Foursquare Gospel in the Philippines, Incorporated",
+        "pct": 0.0,
+        "count": 265
+      },
+      {
+        "group": "Church of the Nazarene",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
+        "group": "Conservative Baptist Association in the Philippines",
+        "pct": 0.0,
+        "count": 105
+      },
+      {
+        "group": "Convention of the Philippine Baptist Church",
+        "pct": 0.0,
+        "count": 132
+      },
+      {
+        "group": "Crusaders of the Divine Church of Christ, Incorporated",
+        "pct": 0.0,
+        "count": 164
+      },
+      {
+        "group": "Don Stewart Ministries Miracle Revivals, Inc.",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Door of Faith",
+        "pct": 0.0,
+        "count": 702
+      },
+      {
+        "group": "Episcopal Church in the Philippines",
+        "pct": 0.0,
+        "count": 163
+      },
+      {
+        "group": "Evangelical Free Church of the Philippines",
+        "pct": 0.0,
+        "count": 769
+      },
+      {
+        "group": "Evangelical Presbyterian Church",
+        "pct": 0.0,
+        "count": 525
+      },
+      {
+        "group": "F.R.E.E. Mission Philippines, Inc.",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "FIFCOP Mission, Inc.",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Faith Baptist Church",
+        "pct": 0.0,
+        "count": 588
+      },
+      {
+        "group": "Faith Tabernacle Church (Living Rock Ministries)",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Filipino Assemblies of the First Born, Incorporated",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Free Believers in Christ Fellowship",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Free Methodist Church",
+        "pct": 0.0,
+        "count": 299
+      },
+      {
+        "group": "Fundamental Grace Gospel Church of the Christ in the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 419
+      },
+      {
+        "group": "General Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Good News Christian Churches",
+        "pct": 0.0,
+        "count": 214
+      },
+      {
+        "group": "Good News Worldwide Mission, Inc.",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Harvesters Christian Fellowship",
+        "pct": 0.0,
+        "count": 127
+      },
+      {
+        "group": "Higher Ground Baptist Mission of the Philippines, Inc.",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "I Am Redeemer and Master Evangelical Church, Inc.",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Iglesia Evangelica Unida de Cristo",
+        "pct": 0.0,
+        "count": 188
+      },
+      {
+        "group": "Iglesia Evangelista Methodista en Las Islas Filipinas (IEMELIF)",
+        "pct": 0.0,
+        "count": 582
+      },
+      {
+        "group": "Iglesia Filipina Independiente",
+        "pct": 0.0,
+        "count": 633
+      },
+      {
+        "group": "Iglesia sa Dios Espiritu Santo, Incorporated",
+        "pct": 0.0,
+        "count": 705
+      },
+      {
+        "group": "Independent Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 351
+      },
+      {
+        "group": "International Baptist Missionary Fellowship",
+        "pct": 0.0,
+        "count": 123
+      },
+      {
+        "group": "International One Way Outreach",
+        "pct": 0.0,
+        "count": 101
+      },
+      {
+        "group": "Jesus Christ Saves Global Outreach",
+        "pct": 0.0,
+        "count": 344
+      },
+      {
+        "group": "Jesus First Christian Ministries, Incorporated",
+        "pct": 0.0,
+        "count": 371
+      },
+      {
+        "group": "Jesus Loves You Ministries, Inc.",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Jesus Reigns Ministries",
+        "pct": 0.0,
+        "count": 896
+      },
+      {
+        "group": "Jesus is Alive Community, Inc.",
+        "pct": 0.0,
+        "count": 360
+      },
+      {
+        "group": "Jesus the Anointed One Church",
+        "pct": 0.0,
+        "count": 227
+      },
+      {
+        "group": "Jireh-Evangel Church Planting Philippines, Inc.",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Kingsway Fellowship International (Philippines), Inc.",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Light of the World Christian Center, Inc.",
+        "pct": 0.0,
+        "count": 456
+      },
+      {
+        "group": "Lord Jesus Our Redeemer Church Foundation International, Inc.",
+        "pct": 0.0,
+        "count": 159
+      },
+      {
+        "group": "Lord of the Nations, Inc.",
+        "pct": 0.0,
+        "count": 126
+      },
+      {
+        "group": "Love of Christ International Ministries",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Lutheran Church of the Philippines",
+        "pct": 0.0,
+        "count": 340
+      },
+      {
+        "group": "March of Faith Church Sole, Inc.",
+        "pct": 0.0,
+        "count": 96
+      },
+      {
+        "group": "Miracle Life Fellowship International",
+        "pct": 0.0,
+        "count": 389
+      },
+      {
+        "group": "Miracle Revival Church of the Philippines",
+        "pct": 0.0,
+        "count": 149
+      },
+      {
+        "group": "Missionary Baptist Churches of the Philippines",
+        "pct": 0.0,
+        "count": 298
+      },
+      {
+        "group": "Most Holy Church of God in Christ Jesus",
+        "pct": 0.0,
+        "count": 588
+      },
+      {
+        "group": "National Council of Christian Community Churches (NCCCC), Inc.",
+        "pct": 0.0,
+        "count": 183
+      },
+      {
+        "group": "Oblates of Mary Immaculate, Incorporated",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Other Methodists",
+        "pct": 0.0,
+        "count": 1007
+      },
+      {
+        "group": "Philippine Benevolent Missionaries Association",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Philippine Ecumenical Christian Church",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "Philippine Evangelical Holiness Church",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Philippine Evangelical Mission",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Philippine Good News Ministries",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Philippine Independent Catholic Church",
+        "pct": 0.0,
+        "count": 230
+      },
+      {
+        "group": "Philippine Missionary Fellowship",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
+        "group": "Philippine Pentecostal Holiness Church",
+        "pct": 0.0,
+        "count": 406
+      },
+      {
+        "group": "Philippines General Council of the Assemblies of God",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Potter's House Christian Center",
+        "pct": 0.0,
+        "count": 149
+      },
+      {
+        "group": "Presbyterian Church in the Philippines",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Religion not reported",
+        "pct": 0.0,
+        "count": 1038
+      },
+      {
+        "group": "River of God Church, Inc.",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Salvation Army Philippines",
+        "pct": 0.0,
+        "count": 1508
+      },
+      {
+        "group": "Southern Baptist Church",
+        "pct": 0.0,
+        "count": 361
+      },
+      {
+        "group": "Take the Nation for Jesus Global Ministires (Corpus Christi)",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Things to Come",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Tribal religion",
+        "pct": 0.0,
+        "count": 100
+      },
+      {
+        "group": "Unida Evangelical Church",
+        "pct": 0.0,
+        "count": 210
+      },
+      {
+        "group": "Union Espiritista Cristiana de Filipinas, Incorporated",
+        "pct": 0.0,
+        "count": 147
+      },
+      {
+        "group": "United Church of Christ in the Philippines",
+        "pct": 0.0,
+        "count": 1838
+      },
+      {
+        "group": "United Methodists Church",
+        "pct": 0.0,
+        "count": 910
+      },
+      {
+        "group": "United Pentecostal Church (Philippines), Inc.",
+        "pct": 0.0,
+        "count": 1637
+      },
+      {
+        "group": "Universal Pentecostal Church",
+        "pct": 0.0,
+        "count": 597
+      },
+      {
+        "group": "Way of Salvation",
+        "pct": 0.0,
+        "count": 183
+      },
+      {
+        "group": "Wesleyan Church",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Word International Ministries, Inc.",
+        "pct": 0.0,
+        "count": 382
+      },
+      {
+        "group": "Word for the World",
+        "pct": 0.0,
+        "count": 994
+      },
+      {
+        "group": "World Missionary Evangelism",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Worldwide Church of God",
+        "pct": 0.0,
+        "count": 349
+      },
+      {
+        "group": "Zion Christian Community Church",
+        "pct": 0.0,
+        "count": 411
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Tagalog",
+        "pct": 56.5,
+        "count": 2159066
+      },
+      {
+        "group": "Bisaya/Binisaya",
+        "pct": 13.1,
+        "count": 498843
+      },
+      {
+        "group": "Bikol/Bicol",
+        "pct": 8.0,
+        "count": 305866
+      },
+      {
+        "group": "Ilocano",
+        "pct": 5.2,
+        "count": 197756
+      },
+      {
+        "group": "Ilonggo",
+        "pct": 5.2,
+        "count": 197188
+      },
+      {
+        "group": "Waray",
+        "pct": 3.8,
+        "count": 144790
+      },
+      {
+        "group": "Cebuano",
+        "pct": 1.3,
+        "count": 48213
+      },
+      {
+        "group": "Pangasinan",
+        "pct": 1.2,
+        "count": 46964
+      },
+      {
+        "group": "Kapampangan",
+        "pct": 0.8,
+        "count": 31655
+      },
+      {
+        "group": "Maranao",
+        "pct": 0.6,
+        "count": 23066
+      },
+      {
+        "group": "Maguindanao",
+        "pct": 0.5,
+        "count": 20908
+      },
+      {
+        "group": "Ibanag",
+        "pct": 0.3,
+        "count": 9767
+      },
+      {
+        "group": "Karay-a",
+        "pct": 0.3,
+        "count": 9865
+      },
+      {
+        "group": "Tausog/Tausug",
+        "pct": 0.3,
+        "count": 10051
+      },
+      {
+        "group": "Boholano",
+        "pct": 0.2,
+        "count": 7843
+      },
+      {
+        "group": "Caviteño",
+        "pct": 0.2,
+        "count": 8256
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.2,
+        "count": 9018
+      },
+      {
+        "group": "Masbateño/Masbatenon",
+        "pct": 0.2,
+        "count": 9293
+      },
+      {
+        "group": "Batangan",
+        "pct": 0.1,
+        "count": 5483
+      },
+      {
+        "group": "Capizeño",
+        "pct": 0.1,
+        "count": 2638
+      },
+      {
+        "group": "Caviteño-Chavacano",
+        "pct": 0.1,
+        "count": 1972
+      },
+      {
+        "group": "Davaweño",
+        "pct": 0.1,
+        "count": 3836
+      },
+      {
+        "group": "Indian",
+        "pct": 0.1,
+        "count": 4009
+      },
+      {
+        "group": "Itawes",
+        "pct": 0.1,
+        "count": 4376
+      },
+      {
+        "group": "Other foreign ethnicity",
+        "pct": 0.1,
+        "count": 3238
+      },
+      {
+        "group": "Other local ethnicity",
+        "pct": 0.1,
+        "count": 3164
+      },
+      {
+        "group": "Romblomanon",
+        "pct": 0.1,
+        "count": 2455
+      },
+      {
+        "group": "Surigaonon",
+        "pct": 0.1,
+        "count": 3352
+      },
+      {
+        "group": "Zamboangeño",
+        "pct": 0.1,
+        "count": 5290
+      },
+      {
+        "group": "Abelling/Aberling",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Aeta",
+        "pct": 0.0,
+        "count": 272
+      },
+      {
+        "group": "Aeta/Ayta",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Aeta/Ayta-Abelling/Abellen",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Aeta/Ayta-Magbukun",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Aeta/Ayta-Mang-Antsi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Aeta/Ayta-Sambal",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Afghan",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Agta",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Agta-Cimaron",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Agta-Dumagat",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Agta-Dupanigan",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Agta-Isigiran",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Agta-Labin",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Agta-Tabangnon/Tabangnon",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Agta-Taboy",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Agutaynen",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Alangan Mangyan",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Alta",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 711
+      },
+      {
+        "group": "Applai",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Applai-Kachakran/Kadaclan",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Dibabeen",
+        "pct": 0.0,
+        "count": 126
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Direrayaan",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Ilianen",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Isoroken",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Kirenteken",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Kulmanen",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Lahitanen",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Aromanen-Manobo/Eromanen-Manobo Mulitaan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Ata",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Ata/Negrito",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Ati",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 185
+      },
+      {
+        "group": "Ayangan",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Ayangan-Henanga",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Ayta",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Badjao",
+        "pct": 0.0,
+        "count": 301
+      },
+      {
+        "group": "Bago",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Bagobo",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Bagobo Klata",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Bagobo Tagabawa",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bajau",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Balangao",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Balangao-Lias",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Baliwon",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Baliwon-Gaddang",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Baliwon-I-Sadanga",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Bangon Mangyan",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Bantoanon",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Banwaon",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Batak",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Blaan",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Bontok",
+        "pct": 0.0,
+        "count": 976
+      },
+      {
+        "group": "Bontok-Majukayong",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "British",
+        "pct": 0.0,
+        "count": 436
+      },
+      {
+        "group": "Bugkalot/Ilongot/Egongot",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Buhid Mangyan",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Bukidnon",
+        "pct": 0.0,
+        "count": 418
+      },
+      {
+        "group": "Bukidnon-Akeanon",
+        "pct": 0.0,
+        "count": 292
+      },
+      {
+        "group": "Bukidnon-Halowodnon",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Bukidnon-Iraynon",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Bukidnon-Ituman",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Bukidnon-Magahat",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Bukidnon-Pan-Anayon",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Bukidnon-Tagoloanon",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Cagayanen",
+        "pct": 0.0,
+        "count": 1487
+      },
+      {
+        "group": "Calinga",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "Canadian",
+        "pct": 0.0,
+        "count": 109
+      },
+      {
+        "group": "Cotabateño",
+        "pct": 0.0,
+        "count": 544
+      },
+      {
+        "group": "Cotabateño-Chavacano",
+        "pct": 0.0,
+        "count": 1208
+      },
+      {
+        "group": "Cuyonen/Cuyunon",
+        "pct": 0.0,
+        "count": 412
+      },
+      {
+        "group": "Davao-Chavacano",
+        "pct": 0.0,
+        "count": 1201
+      },
+      {
+        "group": "Diangan",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Dibabawon",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Dumagat",
+        "pct": 0.0,
+        "count": 230
+      },
+      {
+        "group": "Dumagat-Edimala",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Dumagat-Kabolowen",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Dumagat-Tagebolus",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Dumagat/Remontado",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Eskaya",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Ethnicity not reported",
+        "pct": 0.0,
+        "count": 1725
+      },
+      {
+        "group": "French",
+        "pct": 0.0,
+        "count": 292
+      },
+      {
+        "group": "Gaddang",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "German",
+        "pct": 0.0,
+        "count": 192
+      },
+      {
+        "group": "Gubatnon Mangyan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Guiangan",
+        "pct": 0.0,
+        "count": 885
+      },
+      {
+        "group": "Hanunuo Mangyan",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Higaonon-Tagoloanon",
+        "pct": 0.0,
+        "count": 599
+      },
+      {
+        "group": "Higaonon/Higa-onon",
+        "pct": 0.0,
+        "count": 1721
+      },
+      {
+        "group": "Ibaloy",
+        "pct": 0.0,
+        "count": 225
+      },
+      {
+        "group": "Ibatan",
+        "pct": 0.0,
+        "count": 900
+      },
+      {
+        "group": "Ibukid",
+        "pct": 0.0,
+        "count": 146
+      },
+      {
+        "group": "Ifugao",
+        "pct": 0.0,
+        "count": 1899
+      },
+      {
+        "group": "Imalawa",
+        "pct": 0.0,
+        "count": 106
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 194
+      },
+      {
+        "group": "Iranun/Iraynun",
+        "pct": 0.0,
+        "count": 1684
+      },
+      {
+        "group": "Iraya Mangyan",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Isinai",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Isnag",
+        "pct": 0.0,
+        "count": 192
+      },
+      {
+        "group": "Isneg",
+        "pct": 0.0,
+        "count": 173
+      },
+      {
+        "group": "Isneg/Isnag",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Italian",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
+        "group": "Itneg",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Itneg/Tinguian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Itneg/Tinguian-Adasen",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Itneg/Tinguian-Balatok",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Itneg/Tinguian-Belwang",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Itneg/Tinguian-Binongan",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Itneg/Tinguian-Gubang",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Itneg/Tinguian-Illaud",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Itneg/Tinguian-Inlaud",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Itneg/Tinguian-Masadiit",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ivatan",
+        "pct": 0.0,
+        "count": 306
+      },
+      {
+        "group": "Iwak",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Jama Mapun",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 1140
+      },
+      {
+        "group": "Kabayukan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kabihug",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kabihug/Manide",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Kagan/Kalagan",
+        "pct": 0.0,
+        "count": 287
+      },
+      {
+        "group": "Kailawan/Kaylawan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kalanguya",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Kalanguya-Ikalahan",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kalanguya-Yattuka",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kalinga",
+        "pct": 0.0,
+        "count": 318
+      },
+      {
+        "group": "Kalinga-Ab-abaan",
+        "pct": 0.0,
+        "count": 341
+      },
+      {
+        "group": "Kalinga-Aciga",
+        "pct": 0.0,
+        "count": 82
+      },
+      {
+        "group": "Kalinga-Balatoc",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Banao",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kalinga-Bangad",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Kalinga-Basao",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kalinga-Biga",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Kalinga-Buaya",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Kalinga-Cagaluan",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalinga-Culminga",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Kalinga-Dacalan",
+        "pct": 0.0,
+        "count": 157
+      },
+      {
+        "group": "Kalinga-Dallac",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Dananao",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Kalinga-Dangtalan",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kalinga-Dao-Angan",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Kalinga-Dugpa",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kalinga-Gaang",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Gaddang",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kalinga-Guilayon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Limos",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Kalinga-Lubo",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Kalinga-Lubuagan",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kalinga-Mabaca",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Kalinga-Mabongtot",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Magaogao",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Malbong",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kalinga-Mangali",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalinga-Minanga",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Nanong",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kalinga-Pangol",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Kalinga-Pinukpuk",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kalinga-Poswoy",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kalinga-Sumadel",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kalinga-Taloctoc",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalinga-Tanglag",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kalinga-Tobog",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Kalinga-Tongrayan",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Kalinga-Tulgao",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Kamiguin",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Kankanaey",
+        "pct": 0.0,
+        "count": 711
+      },
+      {
+        "group": "Kankanaey-Hak'ki",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Karao",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Karulano",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Kaunana",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Kolibugan",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Lambanguian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Langilan",
+        "pct": 0.0,
+        "count": 120
+      },
+      {
+        "group": "Magahats",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Magkunana",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Malaueg",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Mamanwa",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Mandaya",
+        "pct": 0.0,
+        "count": 195
+      },
+      {
+        "group": "Mangguangan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Mangyan",
+        "pct": 0.0,
+        "count": 1520
+      },
+      {
+        "group": "Manobo",
+        "pct": 0.0,
+        "count": 585
+      },
+      {
+        "group": "Manobo-Aromanon",
+        "pct": 0.0,
+        "count": 1790
+      },
+      {
+        "group": "Manobo-Ata",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Manobo-Blit",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Manobo-Blit-Tasaday",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Manobo-Dulangan",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Manobo-Dulungan-Lambangian",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Manobo-Dunggoanon",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Manobo-Kirenteken",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Manobo-Pulanguihon",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Mansaka",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Matigsalog",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
+        "group": "Molbog",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "North Korean",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Obu-Manuvu",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Palawan-o",
+        "pct": 0.0,
+        "count": 416
+      },
+      {
+        "group": "Palawan-o-Ken-ey",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Palawan-o-Tao't-Bato",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Palawani",
+        "pct": 0.0,
+        "count": 1336
+      },
+      {
+        "group": "Pan-Ayanon",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Panay Bukidnon",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Parananum",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Ratagnon Mangyan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Sama Badjao",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Sama Bangingi",
+        "pct": 0.0,
+        "count": 71
+      },
+      {
+        "group": "Sama Dilaut/Sama Laut",
+        "pct": 0.0,
+        "count": 30
+      },
+      {
+        "group": "Sama/Samal",
+        "pct": 0.0,
+        "count": 758
+      },
+      {
+        "group": "Sangir/Sangil",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Sibuyan Mangyan-Tagabukid",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Singaporean",
+        "pct": 0.0,
+        "count": 210
+      },
+      {
+        "group": "South African",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "South Korean",
+        "pct": 0.0,
+        "count": 996
+      },
+      {
+        "group": "Spanish",
+        "pct": 0.0,
+        "count": 307
+      },
+      {
+        "group": "Subanen/Subanon",
+        "pct": 0.0,
+        "count": 542
+      },
+      {
+        "group": "Swiss",
+        "pct": 0.0,
+        "count": 823
+      },
+      {
+        "group": "T'boli/Tboli",
+        "pct": 0.0,
+        "count": 294
+      },
+      {
+        "group": "T'duray/Teduray",
+        "pct": 0.0,
+        "count": 165
+      },
+      {
+        "group": "Tadyawan Mangyan",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Tagabawa",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Tagakaulo",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Tagbanua",
+        "pct": 0.0,
+        "count": 93
+      },
+      {
+        "group": "Tagbanua-Calamian",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Tagbanua-Kalamianen",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Tagbanua-Tandulanen",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Taiwanese",
+        "pct": 0.0,
+        "count": 236
+      },
+      {
+        "group": "Talaandig",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Talaingod",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Tau-buid Mangyan",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Tigwahanon",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Tinananen",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Tingguian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Tuwali",
+        "pct": 0.0,
+        "count": 163
+      },
+      {
+        "group": "Tuwali-Kele-i",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Ubo Monuvu/Manobo-Ubo/Ubo Manobo/Ubo Manuvu/Ubo/Menuvu",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Umayamnon",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Yakan",
+        "pct": 0.0,
+        "count": 790
+      },
+      {
+        "group": "Yapayao",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Yogad",
+        "pct": 0.0,
+        "count": 146
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Philippine Statistics Authority, 2020 Census of Population and Housing, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+        "year": 2020,
+        "license": "CC BY-IGO, published via HDX"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Philippine Statistics Authority, 2020 Census of Population and Housing, prepared as subnational tables by the U.S. Census Bureau",
+        "url": "https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15",
+        "year": 2020,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B20861121251971",
+    "religion_year": 2020,
+    "religion_note": "2020 Census of Population and Housing. The census records religious affiliation as the individual church or denomination a person names, so the groups here are as published rather than collapsed into traditions -- the alternative would decide, on this map's authority rather than the census's, which churches count as one religion. The boundary file draws Metro Manila as four districts, and this one is Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig, which the census counts apart: this is their sum.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 Census of Population and Housing, the census's question on each person's ethnicity, as published. The boundary file draws Metro Manila as four districts, and this one is Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig, which the census counts apart: this is their sum."
+  }
+]
