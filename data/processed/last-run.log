@@ -1,13 +1,26 @@
-  303,737 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf: 303,737 bytes
-  29 pages
-  368,634 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.4.pdf: 368,634 bytes
-  39 pages
-  394,452 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Non-Jordanians/Non-jordanian_8.1.pdf: 394,452 bytes
-  48 pages
-  Table 8.1 lines read as no row: ['Countries', 'Department of Statistics', 'Female Male Total Female Male Total Female Male Total', 'Nationality & Governorate', 'Rural', 'Sex & Urban/ Rural', 'Zaire']
-  estimates end of 2025: 11,937,000; census 2015: 9,496,761 inside Jordan, 34,951 Jordanians abroad
-  wrote data/processed/jordan_dos.json (67 kB)
-  wrote jordan_dos.json (12)
+== kosis 101,DT_1PM1502
+  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do']
+    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId']
+    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd']
+    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL']
+    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'ext/js/jqgrid/grid.locale-en.js']
+    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
+  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['right_layout.do', 'statHtmlContent.do']
+    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId']
+    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js', 'ext/js/jqgrid/grid.locale-en.js']
+  POST https://kosis.kr/statHtml/statHtmlContent.do -> 200, 287,422 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['InterList.do', 'LoginView.do', 'SvcMetaDcDtaPopup.do']
+    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd']
+    form 'ParamInfo' action='/statHtml/statHtmlContent.do' inputs=['jsonStr', 'orgId', 'tblId']
+    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'fusioncharts/themes/fusioncharts.theme.fusion.js?v=20241024']
+    objVarId A: 22 items, e.g. ['전국', '동부', '읍부']
+    objVarId SBB: 4 items, e.g. ['계', '남자', '여자']
+    objVarId B: 20 items, e.g. ['합계', '0~4세', '5~9세']
+    objVarId 13999001: 13 items, e.g. ['계', '종교있음-계', '불교']
+    objVarId period: 1 items, e.g. ['기간']
+    ~ var makeJson
+    ~ function fn_searchCond
+    ~ var makeJson
+    ~ function fn_downGridSubmit
