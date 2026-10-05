@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Bhutan -- Population & Housing Census 2017, population by gewog.
 
-**This adapter publishes a head count and a sex ratio and nothing else, and
-the reason is worth stating rather than leaving as an empty field.** Bhutan's
+**This adapter publishes a head count, a sex ratio and a median age and
+nothing else, and the reason is worth stating rather than leaving as an
+empty field.** The median comes from the same reports' annex: Table A2.6's
+single years for the dzongkhag, Table A2.7's five-year groups for each gewog,
+both held to Table 2.1 (see "Median age" below). Bhutan's
 census does not ask religion, language or ethnicity. That is not "does not
 publish": the 2017 national report runs 288 pages over education, fertility,
 mortality, disability, labour, migration and housing, and the words religion,
@@ -883,6 +886,208 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False) -> Read:
     return read
 
 
+# ---------------------------------------------------------------------------
+# Median age: the annex's Tables A2.6 and A2.7
+# ---------------------------------------------------------------------------
+#
+# Every dzongkhag report's annex prints two age tables from the same census:
+#
+# * **Table A2.6, population by age, sex and area** -- each single year from
+#   0 to the oldest person, urban, rural and both areas, then "All Ages". The
+#   dzongkhag's median is interpolated within the year holding the middle
+#   person of both areas together.
+# * **Table A2.7, population by age, sex, chiwog and gewog/town** -- under each
+#   gewog's name its chiwogs, each a persons row and Male and Female rows,
+#   in five-year groups to "75+", then the gewog's "All Chiwogs" rows. The
+#   gewog's median is interpolated within the five-year group holding the
+#   middle person: the census publishes nothing finer for a gewog.
+#
+# Both are held to Table 2.1, typeset apart from them: A2.6's All Ages to the
+# dzongkhag's printed total, and each gewog's All Chiwogs to its Table 2.1
+# row, persons, males and females.
+AGE_SINGLE = "Table A2.6"
+AGE_GEWOG = "Table A2.7"
+AGE_SOURCE = ("National Statistics Bureau of Bhutan, Population & Housing Census "
+              "of Bhutan 2017, Tables A2.6 (population by age, sex and area) and "
+              "A2.7 (population by age, sex, chiwog and gewog/town)")
+GEWOG_GROUPS: list[tuple[int, int | None]] = [
+    *((low, low + 4) for low in range(0, 75, 5)), (75, None)]
+LATER_TABLE = re.compile(r"Table A(?:2\.(?:[89]|1\d)|[3-9]\.)")
+DIGIT = re.compile(r"\d")
+
+
+def fold(name: str) -> str:
+    return re.sub(r"[^a-z]", "", name.lower())
+
+
+def figures_of(words: list[str]) -> list[int] | None:
+    """Every word a figure, or None: a data row has nothing else after its label."""
+    if not words or not all(NUMBER.match(w) for w in words):
+        return None
+    return [int(w.replace(",", "")) for w in words]
+
+
+def annex_ages(pages, gewog_names) -> dict[str, Any]:
+    """Tables A2.6 and A2.7 of one dzongkhag report.
+
+    Returns {"single": {age: (urban m, f, t, rural m, f, t, both m, f, t)},
+    "all_ages": (...) or None, "gewogs": {name: {"persons": [...],
+    "male": [...], "female": [...]}}} -- each gewog's list the sixteen groups
+    and then the total, under Table 2.1's spelling of the gewog's name.
+    """
+    names = {fold(n): n for n in gewog_names}
+    single: dict[int, tuple[int, ...]] = {}
+    all_ages: tuple[int, ...] | None = None
+    gewogs: dict[str, dict[str, list[int]]] = {}
+    mode: str | None = None
+    current: str | None = None
+    pending: str | None = None              # the gewog whose Male/Female rows follow
+    for rows in pages:
+        for cells in rows:
+            words = [t for _a, _b, t in cells]
+            line = " ".join(words)
+            if AGE_SINGLE in line:
+                mode = "single"
+                continue
+            if AGE_GEWOG in line:
+                mode, current, pending = "gewog", None, None
+                continue
+            if LATER_TABLE.search(line):
+                mode = None
+                continue
+            if mode == "single":
+                if words[:2] == ["All", "Ages"]:
+                    found = figures_of(words[2:])
+                    if found and len(found) == 9:
+                        all_ages = tuple(found)
+                    continue
+                if re.fullmatch(r"\d{1,3}", words[0]):
+                    found = figures_of(words[1:])
+                    if found and len(found) == 9:
+                        age = int(words[0])
+                        if age in single:
+                            raise SystemExit(f"bhutan: Table A2.6 prints age {age} twice")
+                        single[age] = tuple(found)
+                continue
+            if mode != "gewog":
+                continue
+            if not DIGIT.search(line) and fold(line) in names:
+                current, pending = names[fold(line)], None
+                continue
+            if not DIGIT.search(line) and line.isupper():
+                # A town's heading, or any other the census prints in
+                # capitals: whatever follows is not the last gewog's.
+                current, pending = None, None
+                continue
+            if words[:2] == ["All", "Chiwogs"] and current:
+                found = figures_of(words[2:])
+                if not found or len(found) != len(GEWOG_GROUPS) + 1:
+                    raise SystemExit(f"bhutan: Table A2.7 {current}'s All Chiwogs "
+                                     f"row has {found}")
+                if current in gewogs:
+                    raise SystemExit(f"bhutan: Table A2.7 prints {current} twice")
+                gewogs[current] = {"persons": found}
+                pending = current
+                continue
+            if pending and words[0] in ("Male", "Female"):
+                found = figures_of(words[1:])
+                if not found or len(found) != len(GEWOG_GROUPS) + 1:
+                    raise SystemExit(f"bhutan: Table A2.7 {pending}'s {words[0]} "
+                                     f"row has {found}")
+                gewogs[pending][words[0].lower()] = found
+                if words[0] == "Female":
+                    pending = None
+    return {"single": single, "all_ages": all_ages, "gewogs": gewogs}
+
+
+def check_annex(dzongkhag: str, annex: dict[str, Any], read: "Read") -> None:
+    """The annex against itself and against Table 2.1."""
+    single, all_ages = annex["single"], annex["all_ages"]
+    if all_ages is None or not single:
+        raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 has no All Ages row "
+                         "or no single years")
+    if set(single) != set(range(0, max(single) + 1)):
+        raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 is missing ages "
+                         f"{sorted(set(range(0, max(single) + 1)) - set(single))}")
+    for age, row in single.items():
+        for start in (0, 3, 6):
+            if row[start] + row[start + 1] != row[start + 2]:
+                raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 age {age}: "
+                                 f"{row[start:start + 3]} do not add up")
+        for i in range(3):
+            if row[i] + row[3 + i] != row[6 + i]:
+                raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 age {age}: "
+                                 "urban and rural do not make both areas")
+    for i in range(9):
+        summed = sum(row[i] for row in single.values())
+        if summed != all_ages[i]:
+            raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 column {i + 1}: "
+                             f"the years add up to {summed:,}, All Ages says "
+                             f"{all_ages[i]:,}")
+    if all_ages[8] != read.printed:
+        raise SystemExit(f"bhutan: {dzongkhag}: Table A2.6 counts {all_ages[8]:,} "
+                         f"and Table 2.1 {read.printed:,}")
+    missing = sorted(set(read.gewogs) - set(annex["gewogs"]))
+    if missing:
+        raise SystemExit(f"bhutan: {dzongkhag}: Table A2.7 has no All Chiwogs row "
+                         f"for {missing}")
+    for name, rows in annex["gewogs"].items():
+        if set(rows) != {"persons", "male", "female"}:
+            raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7 has "
+                             f"{sorted(rows)} rows, not persons, male and female")
+        for label, values in rows.items():
+            if sum(values[:-1]) != values[-1]:
+                raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7 {label} "
+                                 f"groups add up to {sum(values[:-1]):,}, not "
+                                 f"{values[-1]:,}")
+        for i, n in enumerate(rows["persons"]):
+            if rows["male"][i] + rows["female"][i] != n:
+                raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7 column "
+                                 f"{i + 1}: males and females do not make persons")
+        if rows["persons"][-1] != read.gewogs[name]:
+            raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7 counts "
+                             f"{rows['persons'][-1]:,} and Table 2.1 "
+                             f"{read.gewogs[name]:,}")
+        if (rows["male"][-1], rows["female"][-1]) != tuple(read.sexes[name]):
+            raise SystemExit(f"bhutan: {dzongkhag}/{name}: Table A2.7's sexes are "
+                             f"{rows['male'][-1]:,} and {rows['female'][-1]:,}, "
+                             f"Table 2.1's {read.sexes[name]}")
+
+
+def dzongkhag_median(annex: dict[str, Any]) -> dict[str, Any]:
+    from .south_asia_common import median_single
+
+    people = annex["all_ages"][8]
+    median = median_single({age: row[8] for age, row in annex["single"].items()})
+    if median is None:
+        return {}
+    return {
+        "median_age": measure(median, unit="years", year=YEAR, source=AGE_SOURCE),
+        "median_age_note": (
+            f"2017 census, Table A2.6: the median of the single years of age of "
+            f"all {people:,} people in the dzongkhag, towns included, "
+            "interpolated within the year that holds the middle person."),
+    }
+
+
+def gewog_median(rows: dict[str, list[int]]) -> dict[str, Any]:
+    from .south_asia_common import median_grouped
+
+    groups = [(low, high, n) for (low, high), n in zip(GEWOG_GROUPS, rows["persons"])]
+    median = median_grouped(groups)
+    if median is None:
+        return {}
+    return {
+        "median_age": measure(median, unit="years", year=YEAR, source=AGE_SOURCE),
+        "median_age_note": (
+            f"2017 census, Table A2.7: the median of the gewog's "
+            f"{rows['persons'][-1]:,} people, interpolated within the five-year "
+            "group that holds the middle person; the census publishes nothing "
+            "finer for a gewog. As with the head count, the gewog's own people, "
+            "towns apart."),
+    }
+
+
 def fetch(url: str) -> bytes:
     import urllib.request
 
@@ -929,6 +1134,13 @@ def main() -> int:
         urban_total += sum(towns.values())
         log(f"  {dzongkhag}: {len(gewogs)} gewogs, {len(towns)} town(s), "
             f"{printed:,} people")
+        annex = annex_ages(words_by_row(blob), gewogs)
+        check_annex(dzongkhag, annex, read)
+        log(f"    Tables A2.6 and A2.7: {len(annex['single'])} single years to "
+            f"Table 2.1's {printed:,}, and {len(gewogs)} gewogs' age groups to "
+            "their Table 2.1 rows, persons, males and females")
+        age_cite = [{"field": "median_age", "name": AGE_SOURCE, "url": url,
+                     "license": LICENCE}]
 
         # The sex ratio is read from the same table and the same row as the
         # population, so it is cited the same way and separately: a reader
@@ -977,7 +1189,8 @@ def main() -> int:
             population_note=note,
             sex_ratio=ratio,
             sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
-            sources=cite(ratio)))
+            sources=cite(ratio) + age_cite,
+            **dzongkhag_median(annex)))
         for name, people in sorted(gewogs.items()):
             male, female = read.sexes[name]
             ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
@@ -1012,7 +1225,8 @@ def main() -> int:
                 population_note=note,
                 sex_ratio=ratio,
                 sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
-                sources=cite(ratio)))
+                sources=cite(ratio) + age_cite,
+                **gewog_median(annex["gewogs"][name])))
 
     for line in absent:
         log(f"  NOT READ -- {line}")
