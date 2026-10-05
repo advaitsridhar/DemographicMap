@@ -1,10 +1,21 @@
-philippines_age: Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)
-  fetched 2020 Census Total Popn_Single Age_MaleFemale_Admin4.xlsx (48.7 MB)
-  42,041 barangays in 1,655 cities and municipalities of 87 provinces, every one making its own totals
-  the barangays make 109,033,245 (-2,098 on the proclaimed 109,035,343); national median 25.3 against the PSA's 25.3; top class 80+
-  CITY OF COTABATO (325,079) taken out of MAGUINDANAO for the polygon Cotabato City
-  84 polygons with a count; polygons without: ['Cotabato', 'Maguindanao']; census provinces written nowhere: COTABATO (NORTH COTABATO) (its polygon 'Cotabato' is left out: the boundary file's polygon covers some 5,900 km2 of the province's 9,008; the rest lies inside its 'Maguindanao'); INTERIM PROVINCE (the boundary file draws no polygon for it); MAGUINDANAO (its polygon 'Maguindanao' is left out: the boundary file's polygon takes in Sultan Kudarat, which it does not draw, and more (9,144 km2 against Maguindanao's ~4,900)); SULTAN KUDARAT (the boundary file draws no polygon for it)
-  admin1: 17 units, 17 with figures; median 18.5-27.5; sex ratio 99.9-105.8
-  admin2: 86 units, 84 with figures; median 18.4-29.9; sex ratio 97.9-109.8
-  wrote data/processed/philippines_age.json (260 kB)
-  wrote philippines_age.json: 103 records
+== http://web.archive.org/web/20201115081345id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2010-Basic-Tables.xlsx
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 2,324,556 bytes
+  -- 'Cover'
+       4: Basic Tables
+       5: 2010 Census of Population and Housing
+       6: Federated States of Micronesia
+  -- 'ToC'
+       1: Table of Content
+       2: Table | Page
+       3: POPULATION TABLES | 1
+       4: Table B01.  Age and Sex by State of Usual Residence, FSM: 20 | 1
+       5: Table B02. Household type and relationship by State of Usual | 2
+       6: Table B03. Household Size and Fertility by State of Usual Re | 3
+       7: Table B03A. Fertility by Age of Mother and Sex of Child Stil | 4
+  -- 'Basic Tables'
+       1: POPULATION TABLES (B01 to B25B)
+       3: Table B01.  Age and Sex by State of Usual Residence, FSM: 20
+       4: Age | Total | Yap | Chuuk | Pohnpei | Kosrae
+       5: Total | 102843 | 11377 | 48654 | 36196 | 6616
+       6: Less than 5 years | 12073 | 1160 | 5998 | 4115 | 800
+       7: 5 to 9 | 11939 | 1192 | 5757 | 4202 | 788
