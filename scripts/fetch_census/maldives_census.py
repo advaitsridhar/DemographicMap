@@ -212,12 +212,14 @@ def read(rows: list[list[Any]]) -> dict[str, Any]:
             if has_figures and label not in totals:
                 totals[label] = figures(row, cols, label)
             continue
-        if label == "Republic" or label == "Atolls" or label.startswith("Male'"):
+        # An atoll's row first: Kaafu's is "Male' Atoll (K)", which is not the
+        # city's "Male' (including Villimale and Hulhumale)".
+        match = ATOLL_ROW.match(label)
+        if not match and (label in ("Republic", "Atolls") or label.startswith("Male'")):
             if has_figures:
                 totals["Male'" if label.startswith("Male'") else label] = (
                     figures(row, cols, label))
             continue
-        match = ATOLL_ROW.match(label)
         if match and block and has_figures:
             code = match["code"]
             if code not in ATOLLS:

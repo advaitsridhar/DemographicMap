@@ -35,8 +35,21 @@ def atoll(i, inhabited=False):
     return males, females, f_males, f_females
 
 
+# The sheet's own labels: Kaafu's opens with "Male'", as the city's does.
+LABELS = {
+    "HA": "North Thiladhunmathi (HA)", "HDh": "South Thiladhunmathi (HDh)",
+    "Sh": "North Miladhunmadulu (Sh)", "N": "South Miladhunmadulu (N)",
+    "R": "North Maalhosmadulu (R)", "B": "South Maalhosmadulu (B)",
+    "Lh": "Faadhippolhu (Lh)", "K": "Male' Atoll (K)", "AA": "North Ari Atoll (AA)",
+    "ADh": "South Ari Atoll (ADh)", "V": "Felidhu Atoll (V)", "M": "Mulakatholhu (M)",
+    "F": "North Nilandhe Atoll (F)", "Dh": "South Nilandhe Atoll (Dh)",
+    "Th": "Kolhumadulu (Th)", "L": "Hadhdhunmathi (L)", "GA": "North Huvadhu Atoll (GA)",
+    "GDh": "South Huvadhu Atoll (GDh)", "Gn": "Gnaviyani (Gn)", "S": "Addu (S)",
+}
+
+
 def sheet():
-    label = {code: f"Atoll {code} ({code})" for code in CODES}
+    label = LABELS
     every = [atoll(i) for i in range(20)]
     lived = [atoll(i, True) for i in range(20)]
     total = lambda rows: [sum(r[k] for r in rows) for k in range(4)]  # noqa: E731
@@ -85,21 +98,21 @@ class Sheet(unittest.TestCase):
 
     def test_a_row_whose_sexes_do_not_make_its_total_is_refused(self):
         rows = sheet()
-        at = next(i for i, r in enumerate(rows) if len(r) > 1 and r[1] == "    Atoll N (N)")
+        at = next(i for i, r in enumerate(rows) if len(r) > 1 and r[1] == "    South Miladhunmadulu (N)")
         rows[at][3] += 1
         with self.assertRaises(SystemExit):
             mv.check(mv.read(rows))
 
     def test_an_atoll_moved_between_blocks_breaks_the_totals(self):
         rows = sheet()
-        at = next(i for i, r in enumerate(rows) if len(r) > 1 and r[1] == "    Atoll N (N)")
+        at = next(i for i, r in enumerate(rows) if len(r) > 1 and r[1] == "    South Miladhunmadulu (N)")
         rows[at] = mv_line_plus(rows[at], 7)
         with self.assertRaises(SystemExit):
             mv.check(mv.read(rows))
 
     def test_a_median_no_census_would_print_is_refused(self):
         rows = sheet()
-        at = next(i for i, r in enumerate(rows) if len(r) > 1 and r[1] == "    Atoll V (V)")
+        at = next(i for i, r in enumerate(rows) if len(r) > 1 and r[1] == "    Felidhu Atoll (V)")
         rows[at][11] = 30.3
         with self.assertRaises(SystemExit):
             mv.check(mv.read(rows))
