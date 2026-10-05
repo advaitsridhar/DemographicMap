@@ -344,7 +344,15 @@ def parse_ages(text: str) -> dict[str, dict[str, Any]]:
         entry["ages"][age] = both
         entry["men"][age] = men
         entry["women"][age] = women
-    for (region, part), entry in blocks.items():
+    out: dict[str, dict[str, Any]] = {}
+    for region in {name for name, _ in blocks}:
+        if (region, "all") in blocks:
+            part = "all"
+        elif (region, "urban") in blocks and (region, "rural") not in blocks:
+            part = "urban"
+        else:
+            raise SystemExit(f"tajikistan_census: {region}: no urban-and-rural block")
+        entry = out[region] = blocks[(region, part)]
         if entry["total"] is None:
             raise SystemExit(f"tajikistan_census: {region} ({part}): no total row")
         top = max(entry["ages"], default=-1)
@@ -361,14 +369,6 @@ def parse_ages(text: str) -> dict[str, dict[str, Any]]:
         if sorted(entry["ages"]) != list(range(len(entry["ages"]))):
             raise SystemExit(f"tajikistan_census: {region} ({part}): single years are not 0 "
                              f"to {len(entry['ages']) - 1} without a break")
-    out: dict[str, dict[str, Any]] = {}
-    for region in {name for name, _ in blocks}:
-        if (region, "all") in blocks:
-            out[region] = blocks[(region, "all")]
-        elif (region, "urban") in blocks and (region, "rural") not in blocks:
-            out[region] = blocks[(region, "urban")]
-        else:
-            raise SystemExit(f"tajikistan_census: {region}: no urban-and-rural block")
     if "national" in out:
         for k in ("ages", "men", "women"):
             parts: Counter = Counter()
