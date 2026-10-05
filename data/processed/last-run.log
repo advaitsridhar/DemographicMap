@@ -1,1 +1,29 @@
-china_county_census: 3309 codes with Chinese names -> /home/runner/work/DemographicMap/DemographicMap/data/raw/wikidata_points/CHN_P442_zh.json
+== kosis 101,DT_1PM1502
+  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do']
+    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId']
+    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd']
+    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL']
+    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'ext/js/jqgrid/grid.locale-en.js']
+    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
+  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['right_layout.do', 'statHtmlContent.do']
+    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId']
+    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js', 'ext/js/jqgrid/grid.locale-en.js']
+  POST https://kosis.kr/statHtml/statHtmlContent.do -> 200, 287,421 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['InterList.do', 'LoginView.do', 'SvcMetaDcDtaPopup.do']
+    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd']
+    form 'ParamInfo' action='/statHtml/statHtmlContent.do' inputs=['jsonStr', 'orgId', 'tblId']
+    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'fusioncharts/themes/fusioncharts.theme.fusion.js?v=20241024']
+    objVarId A: 22 items, e.g. ['전국', '동부', '읍부']
+    objVarId SBB: 4 items, e.g. ['계', '남자', '여자']
+    objVarId B: 20 items, e.g. ['합계', '0~4세', '5~9세']
+    objVarId 13999001: 13 items, e.g. ['계', '종교있음-계', '불교']
+    objVarId period: 1 items, e.g. ['기간']
+    ~ "objVarId":"A","charItmSn":5,"leaf":0,"scrKor":"서울특별시"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Busan","itmId":"21","upItmId":null,"rownum":6,"objVarId":"A","charItmSn":31,"leaf":0,"scrKor":"부산광역시"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Daegu","itmId":"22","upItmId":null,"rownum":7,"objVarId":"A",
+    ~ "objVarId":"13999001","charItmSn":1,"leaf":1,"scrKor":"계"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":" ","itmId":"T20","upItmId":null,"rownum":2,"objVarId":"13999001","charItmSn":2,"leaf":1,"scrKor":"종교있음-계"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":" ","itmId":"T21","upItmId":null,"rownum":3,"objVarId":"13999001","charItmSn":3,"leaf":1,"scrKor":"불교"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502"
+    ~ "objVarId":"13999001","charItmSn":4,"leaf":1,"scrKor":"기독교(개신교)"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":" ","itmId":"T23","upItmId":null,"rownum":5,"objVarId":"13999001","charItmSn":5,"leaf":1,"scrKor":"기독교(천주교)"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":" ","itmId":"T24","upItmId":null,"rownum":6,"objVarId":"13999001","charItmSn":6,"leaf":1,"scrKor":"원불교"},{"lvl":1,"orgId":"101","tblId":"D
+    ~ "objVarId":"13999001","charItmSn":7,"leaf":1,"scrKor":"유교"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":" ","itmId":"T26","upItmId":null,"rownum":8,"objVarId":"13999001","charItmSn":8,"leaf":1,"scrKor":"천도교"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":" ","itmId":"T27","upItmId":null,"rownum":9,"objVarId":"13999001","charItmSn":9,"leaf":1,"scrKor":"대순진리회"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502
+    ~ "objVarId":"13999001","charItmSn":10,"leaf":1,"scrKor":"대종교"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":" ","itmId":"T30","upItmId":null,"rownum":11,"objVarId":"13999001","charItmSn":11,"leaf":1,"scrKor":"기타"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":" ","itmId":"T40","upItmId":null,"rownum":12,"objVarId":"13999001","charItmSn":12,"leaf":1,"scrKor":"종교없음-계"}],"itmNm":"항목"},"levelExpr":"F","mass
+    ~ "objVarId":"13999001","scrKor":"항목","scrEng":"ITEM","lvlCo":1,"scrLvlCo":null,"pubSe":"1210110","varOrdSn":0,"varOrdCur":0,"visibleYn":null,"totIgnrAt":null,"orgId":"101","tblId":"DT_1PM1502","dbUser":"NSI.","serverType":"service","searchItem":"Y"},{"objVarId":"A","scrKor":"행정구역별(시군구)","scrEng":"By administrative divisions","lvlCo":2,"scrLvlCo":2,"pubSe":"1210110","varOrdSn":1,"varOrdCur":1,"visibleYn":"Y","totIgnrAt
+    ~ function openMass(val) { var url = "http://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml"; if(val == 'E'){ url = "http://kosis.kr/statisticsList/mass/mass_list_e.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml"; } var s_status ; s_status=s_status + "location=no,"; s_status=s_status + "toolbar=no,"; s_status=s_status + "directories=no,"; s_status=s_status + "status=no,"; s_status=s_status + "menubar=no,"; s_status=s_status + "scrollbars=no,"; s_status=s_status + "resizable=no,"; s_status=s_status + "width=646,"; s_status=s_status + "height=570"; window.open( url,"mass",s_status); } function openNewWin(url, type){ if(type != '0'){ form.viewKind.value="6"; form.viewSubKind.value=type; $.ajax({
