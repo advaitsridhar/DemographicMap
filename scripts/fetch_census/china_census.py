@@ -70,7 +70,7 @@ import argparse
 import io
 import re
 from collections import Counter
-from typing import Any
+from typing import Any, Callable
 
 from ._shared import NOT_COLLECTED, PROCESSED, gap, http_get, log, measure, record, write_json
 from .china_wiki import DIVISIONS, NATIONALITIES, RESIDUAL
@@ -209,11 +209,17 @@ def header_row(rows: list[list[Any]], first: str) -> list[Any]:
     raise SystemExit(f"china_census: no header row whose first block is {first!r}")
 
 
-def read_a0101(rows: list[list[Any]]) -> dict[str, dict[str, float]]:
+# What picks a table's rows: the national yearbook's 全国 and 31 provinces by
+# name, or (china_county_census) a provincial yearbook's every area in order.
+Regions = Callable[[list[list[Any]]], dict[Any, list[Any]]]
+
+
+def read_a0101(rows: list[list[Any]], regions: Regions | None = None
+               ) -> dict[Any, dict[str, float]]:
     """{region: {"total", "men", "women", "printed_ratio"}}: the population
     block of 1-1 is columns 4-7 (合计, 男, 女, 性别比)."""
     out = {}
-    for label, row in region_rows(rows).items():
+    for label, row in (regions or region_rows)(rows).items():
         total, men, women, ratio = (number(row[i]) for i in (4, 5, 6, 7))
         if None in (total, men, women, ratio):
             raise SystemExit(f"china_census: 1-1's {label} row is not four figures at 4-7")
@@ -224,7 +230,8 @@ def read_a0101(rows: list[list[Any]]) -> dict[str, dict[str, float]]:
 AGE_LABEL = re.compile(r"^(\d+)(?:-(\d+))?岁(及以上)?$")
 
 
-def read_a0105(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
+def read_a0105(rows: list[list[Any]], regions: Regions | None = None
+               ) -> dict[Any, dict[str, Any]]:
     """{region: {"total", "men", "women", "groups": {(lower, width): both sexes}}}."""
     blocks = headed_blocks(header_row(rows, "合计"))
     if blocks[0][1] != "合计":
@@ -243,7 +250,7 @@ def read_a0105(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
             width = 1
         groups.append((column, (low, width)))
     out = {}
-    for label, row in region_rows(rows).items():
+    for label, row in (regions or region_rows)(rows).items():
         total, men, women = (number(row[i]) for i in (1, 2, 3))
         by_group = {bounds: number(row[c]) for c, bounds in groups}
         if None in (total, men, women) or None in by_group.values():
@@ -252,7 +259,8 @@ def read_a0105(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
     return out
 
 
-def read_a0104(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
+def read_a0104(rows: list[list[Any]], regions: Regions | None = None
+               ) -> dict[Any, dict[str, Any]]:
     """{region: {"total", "men", "women", "groups": {label: people}}}."""
     blocks = headed_blocks(header_row(rows, "合计"))
     if blocks[0][1] != "合计":
@@ -270,7 +278,7 @@ def read_a0104(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
     if len(named) != 56:
         raise SystemExit(f"china_census: 1-4 names {len(named)} nationalities, not 56")
     out = {}
-    for label, row in region_rows(rows).items():
+    for label, row in (regions or region_rows)(rows).items():
         total, men, women = (number(row[i]) for i in (1, 2, 3))
         counts: Counter = Counter()
         for column, name in columns:
