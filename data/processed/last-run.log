@@ -1,10 +1,25 @@
-maldives_census: Maldives Bureau of Statistics, Population and Housing Census 2022, Atoll Level Indicator Sheet - Population
-  81,486 bytes from https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Atoll-Level-Indicator-Sheet-Population.xlsx
-  Republic 515,132 = Malé 211,908 + Atolls 303,224; the twenty atolls of both blocks, resorts and industrial islands all reconcile
-  first level: 13 atolls bound -- AA Alif Alif, B Baa, Dh Dhaalu, F Faafu, HA Haa Alif, HDh Haa Dhaalu, K Kaafu, Lh Lhaviyani, R Raa, S Addu, Sh Shaviyani, Th Thaa, V Vaavu
-    not drawn at the first level: N Noonu, ADh Alif Dhaal, M Meemu, L Laamu, GA Gaafu Alif, GDh Gaafu Dhaalu, Gn Gnaviyani; and Malé
-  second level: 19 polygons bound, and Malé's fragment given its reason
-    not drawn at the second level: Gn Gnaviyani
-  wrote data/processed/maldives_census.json (96 kB)
-  wrote data/processed/maldives_nationality.json (52 kB)
-  wrote 33 records to maldives_census.json and 32 to maldives_nationality.json
+kyrgyzstan_census: Chuy: https://www.stat.gov.kg/media/publicationarchive/390cc065-9ead-4ac7-9f6f-2ddfa38a8cbe.pdf
+  Chuy азербайджанцы: men and women 140 + 128 do not make 288 as printed
+  Chuy другие: men and women 82 + 115 do not make 177 as printed
+  Chuy г.токмок Пакистанцы и Индийцы: table 3.4 has 198, table 3.2 197
+  9 units: г.токмок, аламудунский район, жайылский район, кеминский район, московский район, панфиловский район, сокулукский район, чуйский район, ысык-атинский район; single years read
+kyrgyzstan_census: Bishkek: https://www.stat.gov.kg/media/publicationarchive/2a645aed-5154-4518-b114-dc97239a3a83.pdf
+  Bishkek г.бишкек дунгане: table 3.4 has 2,779, table 3.2 1,784
+  1 units: г.бишкек; single years read
+kyrgyzstan_census: Osh: https://www.stat.gov.kg/media/publicationarchive/f76c9a54-0edf-4cfd-91df-8d01379a128b.pdf
+  Osh ноокатский район: the printed groups make 314,877 of 315,011; the 134 left are counted as other
+  Osh узгенский район: the printed groups make 286,853 of 287,109; the 256 left are counted as other
+  kyrgyzstan_census: Osh ошская область: age groups ['15', '100 лет и старше']
+kyrgyzstan_census: Osh city: https://www.stat.gov.kg/media/publicationarchive/6d075a2f-51ec-4cec-bf59-455c631ce39b.pdf
+  1 units: г.ош; single years read
+kyrgyzstan_census: Batken: https://www.stat.gov.kg/media/publicationarchive/dfe4b339-3f9c-4bb7-887e-96e55e15dde0.pdf
+  kyrgyzstan_census: Batken баткенская область: 0-4 twice
+kyrgyzstan_census: Jalal-Abad: https://www.stat.gov.kg/media/publicationarchive/ad52f290-cb14-4ff1-9179-d0ad0f38b09d.pdf
+  kyrgyzstan_census: Jalal-Abad: ethnic group 'другие национальности' is not known (line above: 'курды')
+kyrgyzstan_census: Issyk-Kul: https://www.stat.gov.kg/media/publicationarchive/8b892242-eaa9-446d-94b2-7ba7aadcb340.pdf
+  kyrgyzstan_census: Issyk-Kul: no groups table found
+kyrgyzstan_census: Naryn: https://www.stat.gov.kg/media/publicationarchive/e790d125-ecd1-471e-b31b-0eb9dc7c4894.pdf
+  kyrgyzstan_census: Naryn нарынская область: age groups ['0-4', '5-9', '10-14', '15', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-99', '100 лет и старше']
+kyrgyzstan_census: Talas: https://www.stat.gov.kg/media/publicationarchive/d79c0e75-073d-4a50-92fe-3c735b1a2dfc.pdf
+  kyrgyzstan_census: Talas таласская область: 0-4 twice
+kyrgyzstan_census: kyrgyzstan_census: Osh ошская область: age groups ['15', '100 лет и старше'] | kyrgyzstan_census: Batken баткенская область: 0-4 twice | kyrgyzstan_census: Jalal-Abad: ethnic group 'другие национальности' is not known (line above: 'курды') | kyrgyzstan_census: Issyk-Kul: no groups table found | kyrgyzstan_census: Naryn нарынская область: age groups ['0-4', '5-9', '10-14', '15', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-99', '100 лет и старше'] | kyrgyzstan_census: Talas таласская область: 0-4 twice
