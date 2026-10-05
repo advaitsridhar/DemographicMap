@@ -49,6 +49,8 @@ SOURCE = (f"{timor.CENSUS_2015}, Volume 2 priority table 9: Timorese and foreign
           "by age and sex, by municipality")
 SHEET = re.compile(r"^2\.9\s*(?:\.\s*(?P<letter>[a-m]))?\s*$")
 LABELS = ("East Timorese", "Foreign nationals")
+# The workbook's own spellings in its sheet titles: table 9.i is "Liquicia".
+TITLE_SPELLINGS = {"Liquicia": "Liquiçá"}
 NOTE = ("Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's "
         "count of the municipality's people by nationality -- Timorese against every other -- "
         "which stands in for ethnicity under the owner's rule for states that count "
@@ -76,8 +78,9 @@ def municipality_of(grid: list[list[Any]], where: str) -> str:
     """The one municipality a sheet's title names."""
     head = " ".join(timor.tidy(c) for row in grid[:3] for c in row if c)
     words = timor.fold(head)
-    found = {name for key, name in timor.MUNICIPALITY_KEYS.items()
-             if len(key) > 3 and key in words}
+    keys = {**timor.MUNICIPALITY_KEYS, **{timor.fold(k): timor.MUNICIPALITY_KEYS[timor.fold(v)]
+                                         for k, v in TITLE_SPELLINGS.items()}}
+    found = {name for key, name in keys.items() if len(key) > 3 and key in words}
     if len(found) != 1:
         raise SystemExit(f"timor_nationality: {where}'s title names {sorted(found) or 'none'}: "
                          f"{head[:160]!r}")

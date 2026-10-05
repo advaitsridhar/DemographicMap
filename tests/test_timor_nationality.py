@@ -37,6 +37,12 @@ class NationalityTest(unittest.TestCase):
         self.assertEqual(len(municipalities), 13)
         self.assertEqual(country[0], 200 * 13)
 
+    def test_the_workbooks_own_spelling_of_liquica(self):
+        sheets = book()
+        sheets["2.9.i"][0][0] = "Table 9.i Timorese and foreign-born populations, Liquicia"
+        municipalities, _ = t.read(sheets)
+        self.assertIn("Liquiçá", municipalities)
+
     def test_a_sheet_naming_no_municipality_refuses(self):
         sheets = book()
         sheets["2.9.a"][0][0] = "Table 9.a Timorese and foreign population"
