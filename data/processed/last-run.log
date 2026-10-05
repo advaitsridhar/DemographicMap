@@ -1,3 +1,45 @@
-maldives_census: Maldives Bureau of Statistics, Population and Housing Census 2022, Atoll Level Indicator Sheet - Population
-  81,486 bytes from https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Atoll-Level-Indicator-Sheet-Population.xlsx
-maldives: the all localities block has ['AA', 'ADh', 'B', 'Dh', 'F', 'GA', 'GDh', 'Gn', 'HA', 'HDh', 'L', 'Lh', 'M', 'N', 'R', 'S', 'Sh', 'Th', 'V'], not the twenty atolls
+marshall_census: 2021 Census basic tables and analytical report
+  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+Traceback (most recent call last):
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1004, in http_get
+    with opener(req, timeout=timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 406: Not Acceptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/marshall_census.py", line 337, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/marshall_census.py", line 327, in main
+    tables = read_tables(pages_of(TABLES_URL))
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/marshall_census.py", line 318, in pages_of
+    blob = http_get(url, binary=True, timeout=600)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1025, in http_get
+    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
+RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf
