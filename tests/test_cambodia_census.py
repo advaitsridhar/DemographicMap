@@ -116,6 +116,21 @@ class CrosswalkTest(unittest.TestCase):
         self.assertEqual([c for _, c, _ in placed["KH0103"]], [10301])
         self.assertEqual((left, broken), ([], set()))
 
+    def test_a_new_khan_goes_to_the_district_it_was_cut_from(self):
+        adm3 = [{"ADM3_PCODE": "KH120101", "ADM3_EN": "Boeng Keng Kang Ti Muoy",
+                 "ADM2_PCODE": "KH1201"},
+                {"ADM3_PCODE": "KH120102", "ADM3_EN": "Tonle Basak", "ADM2_PCODE": "KH1201"}]
+        n = (1, 4, 2, 2)
+        annex = {12: {"name": "Phnom Penh", "n": None, "districts": {
+            1201: {"name": "Chamkar Mon", "n": n, "communes": {
+                120102: {"name": "Tonle Basak", "n": n}}},
+            1213: {"name": "Boeng Keng Kang", "n": n, "communes": {
+                121301: {"name": "Boeng Keng Kang Muoy", "n": n},
+                121304: {"name": "Oulampik", "n": n}}}}}}
+        placed, left, broken = kh.crosswalk(annex, adm3, {"KH1201"})
+        self.assertEqual(sorted(c for _, c, _ in placed["KH1201"]), [120102, 121301, 121304])
+        self.assertEqual((left, broken), ([], set()))
+
     def test_records_sum_the_parts_and_check_a_whole_district(self):
         placed, _, broken = kh.crosswalk(annex_2019(), ADM3, {"KH0102", "KH0103"})
         adm2 = [{"ADM2_PCODE": "KH0102", "ADM2_EN": "Mongkol Borei",

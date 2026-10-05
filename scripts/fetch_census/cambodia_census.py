@@ -94,6 +94,10 @@ DISTRICT_RELIGION_GAP = BELOW_PROVINCE.format(what="religion by province and abo
                                                    "(Table 2.5.1)")
 DISTRICT_LANGUAGE_GAP = BELOW_PROVINCE.format(what="mother tongue for the country only "
                                                    "(Table 2.7.1)")
+# Districts the census counts that were cut from a single 2018 district:
+# Phnom Penh's Khan Boeng Keng Kang, made in 2019 of four sangkats of Khan
+# Chamkar Mon, whose other sangkats the census still counts under Chamkar Mon.
+DIVIDED_FROM = {1213: "KH1201"}
 # Below this share of a province's people in regular households, its district
 # tables would understate its districts by the rest, and are not used.
 HOUSEHOLD_FLOOR = 0.95
@@ -346,18 +350,36 @@ def crosswalk(annex: dict[int, dict[str, Any]], adm3: list[dict[str, Any]],
                     waiting.append((d, c, com))
                     continue
                 placed[str(hit["ADM2_PCODE"]).strip()].append((d, c, com))
-    # A commune neither its code nor its name finds goes with its district,
-    # where every other commune of that district stayed in it.
+    # A commune neither its code nor its name finds is placed, in turn: by a
+    # close spelling of a 2018 commune of its province, if that commune lies
+    # in a 2018 district its own district's other communes went to (or the
+    # one its district was cut from); else with its district, where every
+    # other commune of that district stayed in one 2018 district.
+    from difflib import SequenceMatcher
     left: list[str] = []
     broken: set[str] = set()
     for d, c, com in waiting:
         home = f"KH{d:04d}"
         others = {pc for pc, items in placed.items() for (dd, _, _) in items if dd == d}
-        if home in adm2_codes and others <= {home}:
-            placed[home].append((d, c, com))
+        target = DIVIDED_FROM.get(d) or (home if home in adm2_codes else None)
+        allowed = others | ({target} if target else set())
+        scored = sorted(((SequenceMatcher(None, fold(com["name"]), fold(r["ADM3_EN"])).ratio(), r)
+                         for r in adm3 if str(r["ADM2_PCODE"])[:4] == f"KH{d // 100:02d}"),
+                        key=lambda x: -x[0])
+        if (scored and scored[0][0] >= 0.8
+                and (len(scored) == 1 or scored[1][0] <= scored[0][0] - 0.1)
+                and str(scored[0][1]["ADM2_PCODE"]).strip() in allowed):
+            best = scored[0][1]
+            log(f"  commune {c} {com['name']} read as the 2018 {best['ADM3_EN']} "
+                f"({best['ADM3_PCODE']}, {scored[0][0]:.2f})")
+            placed[str(best["ADM2_PCODE"]).strip()].append((d, c, com))
             continue
-        left.append(f"{c} {com['name']} (district {d})")
-        broken |= others | ({home} if home in adm2_codes else set())
+        if target and others <= {target}:
+            placed[target].append((d, c, com))
+            continue
+        near = ", ".join(f"{r['ADM3_EN']} {r['ADM3_PCODE']} {s:.2f}" for s, r in scored[:2])
+        left.append(f"{c} {com['name']} (district {d}; nearest {near})")
+        broken |= others | ({target} if target else set())
     return placed, left, broken
 
 
