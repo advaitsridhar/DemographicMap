@@ -219,6 +219,9 @@ class Records(unittest.TestCase):
         self.assertEqual(gbao["sex_ratio"]["value"], 104.1)
         self.assertEqual(by_shape["k3"]["name"], "Rumi District")
         self.assertEqual(by_shape["k3"]["population"]["value"], 20)
+        for row in (gbao, shughnon):
+            self.assertIn("nationality or language", row["ethnicity"]["note"])
+            self.assertIn("religion", row["religion"]["note"])
 
     def test_a_drawn_polygon_left_without_a_unit_stops(self):
         extra = A2 + [{"id": "x", "name": "Vanj District",

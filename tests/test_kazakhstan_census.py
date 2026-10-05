@@ -164,6 +164,10 @@ class Records(unittest.TestCase):
         self.assertEqual(polygon["median_age"]["value"], median_age(Counter({10: 4, 40: 6})))
         self.assertEqual(polygon["sex_ratio"]["value"], 100.0)
         self.assertIn("Кокшетау Г.А.", polygon["median_age_note"])
+        # Language is a gap that says why, at both levels.
+        for row in out:
+            self.assertEqual(row["language"]["status"], "not_available")
+            self.assertIn("native language", row["language"]["note"])
 
 
 if __name__ == "__main__":

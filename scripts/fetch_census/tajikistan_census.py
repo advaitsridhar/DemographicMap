@@ -135,6 +135,16 @@ TAJIK = str.maketrans({"ҳ": "х", "ҷ": "ч", "қ": "к", "ғ": "г", "ӯ": "у
 MEDIAN_GAP = ("The 2020 census publishes single years of age for the republic and its regions "
               "only (volume 2, table 1); for cities and districts it gives men and women "
               "alone (table 5).")
+VOLUMES = ("The Agency on Statistics has published the 2020 census in nine volumes -- "
+           "population size and distribution; age, sex and marital status; education; "
+           "households; sources of livelihood; employment; housing; migration; fertility -- "
+           f"listed at {PAGE}")
+COMPOSITION_GAP = (
+    f"{VOLUMES}. None tabulates nationality or language, for the republic or any area. The "
+    "2010 census's nationality and language tables were disseminated through the CensusInfo "
+    "database at censusinfo.tj, whose host no longer resolves (checked October 2026); the "
+    "Agency's archived 2010 census page links no results volume.")
+RELIGION_GAP = f"{VOLUMES}. None tabulates religion, for the republic or any area."
 
 
 def tj_key(text: str) -> str:
@@ -416,7 +426,7 @@ def build(ages: dict[str, dict[str, Any]], totals: dict[str, tuple[int, int]],
                              "within the year holding the middle person."),
             sex_ratio=measure(round(100 * men / women, 1), year=YEAR, source=SEXES_SOURCE,
                               unit="males_per_100_females"),
-            sources=src))
+            sources=src, **composition_gaps()))
     parent_of = {u["id"]: u["parent"] for u in a2}
     name_of = {u["id"]: u["name"] for u in a1}
     polygons: dict[str, list[tuple[str, int, int]]] = defaultdict(list)
@@ -449,8 +459,14 @@ def build(ages: dict[str, dict[str, Any]], totals: dict[str, tuple[int, int]],
                               unit="males_per_100_females"),
             sex_ratio_note=note,
             median_age=gap(NOT_AVAILABLE, MEDIAN_GAP),
-            sources=src[1:]))
+            sources=src[1:], **composition_gaps()))
     return out
+
+
+def composition_gaps() -> dict[str, Any]:
+    return {"religion": gap(NOT_AVAILABLE, RELIGION_GAP),
+            "language": gap(NOT_AVAILABLE, COMPOSITION_GAP),
+            "ethnicity": gap(NOT_AVAILABLE, COMPOSITION_GAP)}
 
 
 def pdf_text(blob: bytes) -> str:

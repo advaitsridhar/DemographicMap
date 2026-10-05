@@ -100,6 +100,21 @@ SHEET_REGIONS = {
 MEDIAN_NOTE = ("Median of the 2021 census's single years of age (0 to 99 and 100 and "
                "over), interpolated within the year holding the middle person.")
 RATIO_NOTE = "Men per 100 women, from the census's counts of men and women."
+NATIONAL_VOLUME = ("https://stat.gov.kz/upload/medialibrary/cee/3rsfg8ps3xo19orb284esg4rx27ihqf7/"
+                   "%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9"
+                   "%20%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2.pdf")
+# Why no region or district carries a language composition. The census asked
+# native language; what the Bureau publishes of it cannot be made into one.
+LANGUAGE_GAP = (
+    "The 2021 census asked each person's native language, but the Bureau of National "
+    "Statistics publishes it for the republic only, and only as whether the members of each "
+    "nationality named their own nationality's language or another one (National "
+    "composition, religion and language proficiency in the Republic of Kazakhstan, section 6, "
+    f"printed pages 243-246, {NATIONAL_VOLUME}). Which other language is not given, so no "
+    "language composition can be formed from it for any region or district. Section 7 counts "
+    "who can speak, read or write Kazakh, Russian and English, which is a measure of "
+    "proficiency, not a composition; the 2009 census's regional volumes publish the same "
+    "two-way native-language split.")
 
 
 # --------------------------------------------------------------------------
@@ -398,6 +413,7 @@ def build(regions: dict[str, dict[str, Any]], sexes: dict[str, dict[str, Counter
         out.append(record(
             f"KAZ-CENSUS-{'-'.join(prefixes)}", name, level="admin1", parent=ISO3,
             country=ISO3, match_by="shape_id", shape_id=region_ids[name],
+            language=gap(NOT_AVAILABLE, LANGUAGE_GAP),
             sources=src, **fields(ages, men, women, note)))
     # Second level: the units of each drawn region, placed on its polygons.
     units_by_region: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
@@ -432,6 +448,7 @@ def build(regions: dict[str, dict[str, Any]], sexes: dict[str, dict[str, Counter
                 f"KAZ-CENSUS-{shape_id}", label, level="admin2",
                 parent=kz.region_id(name), parent_name=name, country=ISO3,
                 match_by="shape_id", shape_id=shape_id, aliases=sorted(set(names) - {label}),
+                language=gap(NOT_AVAILABLE, LANGUAGE_GAP),
                 sources=src, **fields(ages, men, women, kz.polygon_note(label, names))))
         for (region, label), reason in kz.EMPTY.items():
             if region != name:
