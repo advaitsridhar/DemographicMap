@@ -1,4 +1,143 @@
+probe_pdf: https://statistics.gov.sb/download/60/solomon-islands-2019-population-and-housing-census-national-report_volume-1-and-2/1208/solomon-islands-2019-population-and-housing-census_national-report-vol-1-2.pdf
+  8,046,759 bytes
+  305 pages
+probe_pdf: 305 pages, 3 mention ['Table+9.6', 'first-learnt', 'first+language', 'Figure+9.6']
+=== front matter ===
 
-== GET https://data.humdata.org/api/3/action/package_show?id=cod-ps-bgd
-  200 application/json;charset=utf-8 14481 https://data.humdata.org/api/3/action/package_show?id=cod-ps-bgd
-    {"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "batch": "ceca109b-c90a-4ad9-8c57-1c28145f89ed", "caveats": "Although the administrative boundaries COD (COD-AB) extends to administrative level 4 (unions), these population statistics extend only to level 3 (upazila).", "cod_level": "cod-enhanced", "creator_user_id": "84e567b6-1d09-4f7e-96f5-b69c09028cbc", "data_update_frequency": "365", "dataset_date": "[2022-01-01T00:00:00 TO 2022-12-31T23:59:59]", "dataset_preview": "first_resource", "dataset_source": "UNFPA and US Census Bureau (USCB)", "due_date": "2023-12-31T23:59:59", "has_geodata": false, "has_showcases": false, "id": "fdf0606c-8a3b-421a-b3e8-903301e5b2ff", "is_requestdata_type": false, "isopen": false, "last_modified": "2023-04-04T19:22:32.656852", "license_id": "cc-by-igo", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "198f456b-7afb-40c8-b368-62c5a34822e0", "metadata_created": "2019-02-15T14:58:56.369928", "metadata_modified": "2026-05-07T14:34:25.857553", "methodology": "Other", "methodology_other": "Downloaded from Bangladesh Bureau of Statistics, Statistics Division, Ministry of Planning, Government of the People\u2019s Republic of Bangladesh", "name": "cod-ps-bgd", "notes": "Bangladesh administrative level 0-3 sex and age disaggregated 2022 population statistics\r\n\r\nREFERENCE YEAR:  2022\r\n\r\nThese population statistics tables are suitable for database or GIS linkage with the administrative level 0-3 [Bangladesh - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-bgd) shapefiles using the ADM0, ADM1, ADM2, and ADM3_PCODE fields.", "num_resources": 6, "num_tags": 3, "organization": {"id": "95aa8d05-b110-4607-9330-f2a779885493", "name": "unfpa", "title": "UNFPA", "type": "organization", "description": "UNFPA, the United Nations Population Fund, works globally to ensure universal access to sexual and reproductive health, prevent and respond to gender-based violence, collect and use population data, and promote gender equality and the empowerment of women and youth across the humanitarian/development continuum.", "image_url": "", "created": "2016-03-28T16:36:48.790190", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "95aa8d05-b110-4607-9330-f2a779885493", "package_creator": "ocha-fis-data", "pageviews_last_14_days": 87, "private": false, "qa_completed": false, "solr_additions": "{\"countries\": [\"Bangladesh\"]}", "state": "active", "subnational": "1", "title": "Bangladesh - Subnational Population Statistics", "total_res_downloads": 7551, "type": "dataset", "url": null, "version": null, "groups": [{"description": "test", "display_name": "Bangladesh", "id": "bgd", "image_display_url": "", "name": "bgd", "title": "Bangladesh"}], "resources": [{"alt_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/a211d3bc-9273-4b22-89c5-e55eaf91a62b/download/", "cache_last_updated": null, "cache_url": null, "created": "2019-02-15T14:59:00.938138", "datastore_active": false, "description": "Bangladesh administrative level 0-4 gazetteer", "download_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/a211d3bc-9273-4b22-89c5-e55eaf91a62b/download/bgd_adminboundaries_tabulardata.xlsx", "format": "XLSX", "fs_check_info": "[{\"state\": \"processing\", \"message\": \"The processing of the file structure check has started\", \"timestamp\": \"2023-04-04T19:22:32.529653\"}, {\"state\": \"success\", \"message\": \"Hxl Proxy data received successfully\", \"timestamp\": \"2023-04-04T19:22:36.082237\", \"hxl_proxy_response\": {\"url_or_filename\": \"https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/a211d3bc-9273-4b22-89c5-e55eaf91a62b/download/bgd_adminboundaries_tabulardata.xlsx\", \"format\": \"XLSX\", \"sheets\": [{\"name\": \"ADM0\", \"is_hidden\": false, \"nrows\": 2, \"ncols\": 9, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"3f769cb696c5bd062f135e5758b8daf7\", \"hashtag_hash\": null}, {\"name\": \"ADM1\", \"is_hidden\": false, \"nrows\": 9, \"ncols\": 11, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"794fa1be5ecd87292e51ed3fbeb860f6\", \"hashtag_hash\": null}, {\"name\": \"ADM2\", \"is_hidden\": false, \"nrows\": 65, \"ncols\": 13, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"0acc73d751893367f7b3fd0782141d4b\", \"hashtag_hash\": null}, {\"name\": \"ADM3\", \"is_hidden\": false, \"nrows\": 545, \"ncols\": 15, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"f60070011d3df6c0f25d9f71fd57faba\", \"hashtag_hash\": null}, {\"name\": \"ADM4\", \"is_hidden\": false, \"nrows\": 5161, \"ncols\": 17, \"has_merged_cells\": false, \"is_hxlated\": false, \"header_hash\": \"17ad471d7edd89a04dbea7b06adda21b\", \"hashtag_hash\": null}]}}]", "hash": "", "hdx_rel_url": "/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/a211d3bc-9273-4b22-89c5-e55eaf91a62b/download/bgd_adminboundaries_tabulardata.xlsx", "id": "a211d3bc-9273-4b22-89c5-e55eaf91a62b", "last_modified": "2023-04-04T19:22:32.656852", "metadata_modified": "2025-04-08T17:30:35.037132", "microdata": false, "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "mimetype_inner": null, "name": "BGD_AdminBoundaries_TabularData.xlsx", "originalHash": "-48665102", "p_coded": true, "package_id": "fdf0606c-8a3b-421a-b3e8-903301e5b2ff", "position": 0, "resource_type": "file.upload", "size": 428935, "state": "active", "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/a211d3bc-9273-4b22-89c5-e55eaf91a62b/download/bgd_adminboundaries_tabulardata.xlsx", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/d3ee1ccb-9efb-412f-9323-cd4dc9606f7d/download/", "cache_last_updated": null, "cache_url": null, "created": "2019-02-15T14:59:06.398033", "datastore_active": false, "description": "Bangladesh administrative level 0-3 sex and age disaggregated 2022 population statistics", "download_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/d3ee1ccb-9efb-412f-9323-cd4dc9606f7d/download/bgd_admpop_2022.xlsx", "format": "XLSX", "hash": "", "hdx_rel_url": "/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/d3ee1ccb-9efb-412f-9323-cd4dc9606f7d/download/bgd_admpop_2022.xlsx", "id": "d3ee1ccb-9efb-412f-9323-cd4dc9606f7d", "last_modified": "2023-01-11T17:52:46.474277", "metadata_modified": "2025-04-08T17:30:35.570037", "microdata": false, "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "mimetype_inner": null, "name": "bgd_admpop_2022.xlsx", "originalHash": "-754915482", "p_coded": true, "package_id": "fdf0606c-8a3b-421a-b3e8-903301e5b2ff", "pii_predict_score": 0.7640865897963441, "pii_report_flag": "FINDINGS", "pii_report_id": "/resources/d3ee1ccb-9efb-412f-9323-cd4dc9606f7d/pii.2023-01-11T17-52-53.main.json", "pii_timestamp": "2023-01-11T17:53:30.348000", "position": 1, "resource_type": "file.upload", "size": 848109, "state": "active", "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/d3ee1ccb-9efb-412f-9323-cd4dc9606f7d/download/bgd_admpop_2022.xlsx", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/1c543545-dae9-48ee-8b3c-33a15e9e3df6/download/", "cache_last_updated": null, "cache_url": null, "created": "2019-02-15T14:59:09.457068", "datastore_active": false, "description": "Bangladesh administrative level 0 sex and age disaggregated 2022 population statistics", "download_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/1c543545-dae9-48ee-8b3c-33a15e9e3df6/download/bgd_admpop_adm0_2022.csv", "format": "CSV", "hash": "", "hdx_rel_url": "/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/1c543545-dae9-48ee-8b3c-33a15e9e3df6/download/bgd_admpop_adm0_2022.csv", "id": "1c543545-dae9-48ee-8b3c-33a15e9e3df6", "in_hapi": "yes", "last_modified": "2023-01-11T17:52:50.247576", "metadata_modified": "2025-04-08T17:30:39.844117", "microdata": false, "mimetype": "text/csv", "mimetype_inner": null, "name": "bgd_admpop_adm0_2022.csv", "originalHash": "992178956", "p_coded": false, "package_id": "fdf0606c-8a3b-421a-b3e8-903301e5b2ff", "pii_predict_score": 0.033558649132587534, "pii_report_flag": "FINDINGS", "pii_report_id": "/resources/1c543545-dae9-48ee-8b3c-33a15e9e3df6/pii.2023-01-11T17-52-55.main.json", "pii_timestamp": "2023-01-11T17:53:07.268000", "position": 2, "resource_type": "file.upload", "size": 929, "state": "active", "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/1c543545-dae9-48ee-8b3c-33a15e9e3df6/download/bgd_admpop_adm0_2022.csv", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/333171ff-5d91-4074-a7be-ca43e1dfb8a1/download/", "cache_last_updated": null, "cache_url": null, "created": "2019-02-15T14:59:12.437277", "datastore_active": false, "description": "Bangladesh administrative level 1 sex and age disaggregated 2022 population statistics", "download_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/333171ff-5d91-4074-a7be-ca43e1dfb8a1/download/bgd_admpop_adm1_2022.csv", "format": "CSV", "hash": "", "hdx_rel_url": "/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/333171ff-5d91-4074-a7be-ca43e1dfb8a1/download/bgd_admpop_adm1_2022.csv", "id": "333171ff-5d91-4074-a7be-ca43e1dfb8a1", "in_hapi": "yes", "last_modified": "2023-01-11T17:52:52.629007", "metadata_modified": "2025-04-08T17:30:40.418907", "microdata": false, "mimetype": "text/csv", "mimetype_inner": null, "name": "bgd_admpop_adm1_2022.csv", "originalHash": "517540875", "p_coded": true, "package_id": "fdf0606c-8a3b-421a-b3e8-903301e5b2ff", "pii_predict_score": 0.07049772160829966, "pii_report_flag": "FINDINGS", "pii_report_id": "/resources/333171ff-5d91-4074-a7be-ca43e1dfb8a1/pii.2023-01-11T17-52-56.main.json", "pii_timestamp": "2023-01-11T17:53:09.161000", "position": 3, "resource_type": "file.upload", "size": 3930, "state": "active", "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/333171ff-5d91-4074-a7be-ca43e1dfb8a1/download/bgd_admpop_adm1_2022.csv", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/43bfa9fd-f571-4973-9f31-91093e1e6142/download/", "cache_last_updated": null, "cache_url": null, "created": "2019-02-15T14:59:15.559736", "datastore_active": false, "description": "Bangladesh administrative level 2 sex and age disaggregated 2022 population statistics", "download_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/43bfa9fd-f571-4973-9f31-91093e1e6142/download/bgd_admpop_adm2_2022.csv", "format": "CSV", "hash": "", "hdx_rel_url": "/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/43bfa9fd-f571-4973-9f31-91093e1e6142/download/bgd_admpop_adm2_2022.csv", "id": "43bfa9fd-f571-4973-9f31-91093e1e6142", "in_hapi": "yes", "last_modified": "2023-01-11T17:52:54.656989", "metadata_modified": "2025-04-08T17:30:44.823833", "microdata": false, "mimetype": "text/csv", "mimetype_inner": null, "name": "bgd_admpop_adm2_2022.csv", "originalHash": "42902794", "p_coded": true, "package_id": "fdf0606c-8a3b-421a-b3e8-903301e5b2ff", "pii_predict_score": 0.07116438827496634, "pii_report_flag": "FINDINGS", "pii_report_id": "/resources/43bfa9fd-f571-4973-9f31-91093e1e6142/pii.2023-01-11T17-52-57.main.json", "pii_timestamp": "2023-01-11T17:53:11.246000", "position": 4, "resource_type": "file.upload", "size": 25948, "state": "active", "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/43bfa9fd-f571-4973-9f31-91093e1e6142/download/bgd_admpop_adm2_2022.csv", "url_type": "upload"}, {"alt_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/f23d4da2-e473-4960-9d94-37df92c8d044/download/", "cache_last_updated": null, "cache_url": null, "created": "2019-02-15T14:59:22.703414", "datastore_active": false, "description": "Bangladesh administrative level 3 sex and age disaggregated 2022 population statistics", "download_url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/f23d4da2-e473-4960-9d94-37df92c8d044/download/bgd_admpop_adm3_2022.csv", "format": "CSV", "hash": "", "hdx_rel_url": "/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/f23d4da2-e473-4960-9d94-37df92c8d044/download/bgd_admpop_adm3_2022.csv", "id": "f23d4da2-e473-4960-9d94-37df92c8d044", "last_modified": "2023-01-11T17:52:56.618145", "metadata_modified": "2025-04-08T17:30:45.270890", "microdata": false, "mimetype": "text/csv", "mimetype_inner": null, "name": "bgd_admpop_adm3_2022.csv", "originalHash": "-431735287", "p_coded": true, "package_id": "fdf0606c-8a3b-421a-b3e8-903301e5b2ff", "pii_predict_score": 0.6129756632033933, "pii_report_flag": "FINDINGS", "pii_report_id": "/resources/f23d4da2-e473-4960-9d94-37df92c8d044/pii.2023-01-11T17-52-59.main.json", "pii_timestamp": "2023-01-11T17:53:21.367000", "position": 5, "resource_type": "file.upload", "size": 200685, "state": "active", "url": "https://data.humdata.org/dataset/fdf0606c-8a3b-421a-b3e8-903301e5b2ff/resource/f23d4da2-e473-4960-9d94-37df92c8d044/download/bgd_admpop_adm3_2022.csv", "url_type": "upload"}], "tags": [{"display_name": "baseline population", "id": "db8205e9-b61c-4df7-a987-1a2658ed8666", "name": "baseline population", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "gazetteer", "id": "853d6f46-3b86-4f54-897f-65ed42a30675", "name": "gazetteer", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "gender and age disaggregated data-gadd", "id": "89602a11-d872-46fc-a343-34213756030b", "name": "gender and age disaggregated data-gadd", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}], "relationships_as_subject": [], "relationships_as_object": [], "is_fresh": false, "update_status": "needs_update", "x_resource_grouping": []}}
+
+=== pages mentioning ['Table+9.6', 'first-learnt', 'first+language', 'Figure+9.6'] (first 8) ===
+
+--- page 19 ----------------------------------------------------
+xviii
+Figure 7.5.5: Percent of persons who attained BA/BS or higher by moves, Solomon
+                      Islands: 2019
+82
+Figure 7.5.6: Percent persons in agriculture, forestry or fishing occupations by moves,
+                      Solomon Islands: 2019
+82
+Figure 7.5.7: Percent of persons in agriculture, forestry or fishing occupations by sex and
+                      moves, Solomon Islands: 2019
+83
+Figure 8.2.1: Percentage of population aged 15 and older by marital status, Solomon
+                      Islands: 2019
+85
+Figure 8.2.2: Average Age at First Marriage by Province, Solomon Islands: 2019 87
+Figure 8.2.3: Average age at first marriage by urban-rural and province,
+                      Solomon Islands: 2019
+87
+Figure 8.2.4: Average age at first marriage by sex and province, Solomon
+                      Islands: 2019
+88
+Figure 8.2.5: Average age difference between husband and wife at first marriage,
+                      Solomon Islands: 2019
+88
+Figure 8.2.6: Average age at first marriage by education and sex, Solomon Islands:
+                      2019
+89
+Figure 8.3.1: Percent of religious denomination, Solomon Islands: 2019 90
+Figure 8.4.1: Percentage of Melanesian by census years, Solomon Islands: 1959 to
+                     2019
+93
+Figure 8.4.2: Median age by ethnicity, Solomon Islands: 2019 95
+Figure 8.4.3: Median age by sex and ethnicity, Solomon Islands: 2019 95
+Figure 8.4.4: Average household size by ethnicity of head, Solomon Islands: 2019 96
+Figure 9.2.1: Percentage of the population 5 years+ and school attendance status by
+                      province, Solomon Islands: 2019
+99
+Figure 9.3.1: School enrolment by level and sex, Solomon Islands: 2009 and 2019 102
+Figure 9.4.1: Percentage of population 12 years+ in urban areas by highest level of
+                     education completed and sex, Solomon Islands: 2019
+104
+Figure 9.4.2: Percentage of population 12 years+ in rural areas by highest level of
+                      education completed and sex, Solomon Islands: 2019
+104
+Figure 9.4.5: Percentage of population 12 years+ with secondary level education
+                      completed by province, Solomon Islands: 2019
+105
+Figure 9.5.1: Percentage of population 5 years and over and literate by language and
+                      sex, Solomon Islands: 2019
+109
+Figure 9.5.2: Literacy pyramid (percent of total population), Solomon Islands: 2019 109
+Figure 9.5.3: Population 15 years+ and literacy rates by sex and province, Solomon
+                      Islands: 2019
+110
+Figure 9.5.4: Percent of persons in English literacy by province, Solomon Islands: 2019 111
+Figure 9.6.1: Pidgin as first-learnt language by province, Solomon Islands: 2019 113
+
+--- page 149 ----------------------------------------------------
+112
+9.6 First language
+Solomon Island has numerous diverse languages and many local dialects. The official language is
+English, and the lingua franca for majority of people is Pidgin. The 2019 Census obtained data on
+first language by asking the question “What is the first language  this person learnt as a child? This
+question was asked to persons who were 5 years and over41.
+Data about first -learned languages can provide reliable information on how many people speak a
+particular language. First learnt language is different from language of ha bitual use. For example,
+many people residing in Honiara would have Pidgin language as their language of habitual use, while
+their first language would refer to at least one of the many local language in the Solomon Islands.
+According to Table 9.6.1, the  first-leant language spoken by the majority (101,588 or 16.1%) of the
+population 5 years and older in the Solomon Islands was Pidgin. The table revealed a large increase
+in the number of people who spoke Pidgin as their first-learnt language with 1,527 people in 1976 to
+101,588 people in 2019 Census 42. Since 1999, this represented a massive increase of 407%. Pidgin
+could effectively be considered a lingua franca in urban areas, especially in Honiara, where the
+majority (47.2%) of people spoke Pidgin as their first-learnt language (Figure 9.6.1).
+Table 9.6.1: Larger local languages by province, Solomon Islands: 1976, 1999, 2019
+Language
+1976 1999 2019 Percent (%)
+increase,1999-2019 5 years + 5 years + 5 years +
+Pidgin 1,527 20,038 101,588 407.0
+Local Language
+Choiseul
+Babatana 2,355 5,255 12,700 141.7
+Varisi 1,702 4,681 8,254 76.3
+Western
+Bilua 3,543 8,062 12,421 54.1
+Marovo 3,680 7,566 11,266 48.9
+Roviana 4,284 9,079 15,135 66.7
+Isabel
+Cheke Holo 5,049 10,120 15,131 49.5
+Central
+Gela 5,323 10,981 17,637 60.6
+Rennell-Bellona 1,950 2,998 4,438 48.0
+Guadalcanal
+Birao 3,486 5,390 11,134 106.6
+Ghari 2,714 6,499 16,295 150.7
+Lengo 4,942 12,443 21,509 72.9
+Tolo/Talise 2,080 5,473 19,254 251.8
+41 Note that this question was not captured in the previous 2009 Census but related questions were included in other past
+censuses (e.g., 1999 census). Note also that the census is not a focused study or survey of languages nor endangered
+languages and thus is limited in scope.
+42 Caution should be considered as figures in past censuses are unadjusted for any undercount in enumeration.
+
+--- page 150 ----------------------------------------------------
+113
+Table 9.6.1 (Cont...): Larger local language by province, Solomon Islands:
+                                  1976, 1999, 2019
+Language
+1976 1999 2019 Percent (%)
+increase,
+1999-2019 5 years + 5 years + 5 years +
+Malaita
+Kwara'ae 13,216 29,733 50,506 69.9
+Are'are 7,227 16,453 26,175 59.1
+Lau 7,393 15,747 22,806 44.8
+Kwaio 6,776 12,171 22,448 84.4
+To'abaita 5,228 11,668 19,518 67.3
+Baenggu 2,277 5,476 11,546 110.8
+Baelelea 4,252 8,095 13,241 63.6
+Sa'a 4,446 6,876 11,669 69.7
+Makira-Ulawa
+Arosi 2,727 6,224 11,577 86.0
+Tairaha   8,795
+Kahua 1,570 4,745 8,123 71.2
+Temotu
+Aiwoo 2,355 5,255 9,632 83.3
+Figure 9.6.1: Pidgin as first-learnt language by province, Solomon Islands: 2019
+Concerning the first-learnt local language spoken, the majority of people spoke the Kwara’ae language
+(50,506) of Malaita province. This remained the most popular spoken language since the 1976 and
+1999 censuses. Speakers of Kwara’ae increased by 69.9% since 1999. The Areáre language was the
+second most spoken  language recording an increase of 59.1% or an additional 9,700 people since
+1999. Interestingly, people who spoke the Tolo/Talise language of Guadalcanal more than doubled in
+2019, with an increase of 251.8% since 1999.
+The likelihood of a first -learnt local language becoming endangered can be associated with a
+decline in a particular language speaking population over a period of time. This often happens
