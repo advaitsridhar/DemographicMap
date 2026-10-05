@@ -1,26 +1,31 @@
-probe_pdf: https://www.statsfiji.gov.fj/download/121/phc-2017/729/2017-population-and-housing-census-release-3.pdf
-  19,198,458 bytes
-  484 pages
-probe_pdf: 484 pages, 2 mention ['eligio', 'thnic', 'Religio', 'Ethnic']
-=== front matter ===
-
-
-=== pages mentioning ['eligio', 'thnic', 'Religio', 'Ethnic'] (first 8) ===
-
---- page 52 ----------------------------------------------------
-Population
-Characteristics &
-Migration
-"Sustainable Development Goal indicators should be disaggregated, where relevant, by income, sex, age, race, ethnicity,
-migratory status, disability and geographic location, or other characteristics, in accordance with the Fundamental
-Principles of Official Statistics".
-Module B:
-
---- page 69 ----------------------------------------------------
-the training logistics for the Enumerators and Supervisors. Other field logistics was
-planned and executed by the HSU management staff.
-Other aspects of operations that required particular focus was;
-1. Creating an enumeration strategy for Non Private Dwellings (NPDs), ethnic
-group such as Chinese, high-class dwellings and the homeless.
-− A separate questionnaire was created for NPD’s.  This was given in
-advance with specific instructions to institutional coordinators
+taiwan_townships: Ministry of the Interior, Department of Household Registration, the end of August 2026
+  ODRP014: 7,781 villages in 4 pages
+  ODRP013: 7,781 villages in 4 pages
+  ODRP018: 7,781 villages in 4 pages
+  7,781 villages, every one adding up in all three datasets, in 368 townships; 23,224,721 registered people
+  kept ris_townships_11508.json (495 kB)
+  the 2020 census's county reports, Table 6
+  新北市: 29 townships, 4,055,599 residents 6+
+  臺北市: 12 townships, 2,388,957 residents 6+
+  桃園市: 13 townships, 2,176,570 residents 6+
+  基隆市: 7 townships, 345,649 residents 6+
+  新竹市: 3 townships, 446,737 residents 6+
+  宜蘭縣: 12 townships, 394,287 residents 6+
+  新竹縣: 13 townships, 558,797 residents 6+
+  臺中市: 29 townships, 2,748,097 residents 6+
+  苗栗縣: 18 townships, 468,167 residents 6+
+  彰化縣: 26 townships, 1,061,247 residents 6+
+  南投縣: 13 townships, 393,818 residents 6+
+  雲林縣: 20 townships, 537,327 residents 6+
+  臺南市: 37 townships, 1,715,534 residents 6+
+  高雄市: 38 townships, 2,527,744 residents 6+
+  嘉義市: 2 townships, 234,885 residents 6+
+  嘉義縣: 18 townships, 427,516 residents 6+
+  屏東縣: 33 townships, 702,009 residents 6+
+  澎湖縣: 6 townships, 74,333 residents 6+
+  臺東縣: 16 townships, 176,353 residents 6+
+  花蓮縣: 13 townships, 278,530 residents 6+
+  金門縣: 6 townships, 61,014 residents 6+
+  連江縣: 4 townships, 11,199 residents 6+
+  368 townships and 22 counties written, 23,224,721 people; township medians 37.0-60.0
+  wrote data/processed/taiwan_township.json (2185 kB)
