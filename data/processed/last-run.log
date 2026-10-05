@@ -1,7 +1,331 @@
-xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
-usage: south_asia_probe.py get [-h] [--links [LINKS]] [--grep GREP]
-                               [--context CONTEXT] [--rows ROWS]
-                               [--width WIDTH] [--chars CHARS]
-                               [--charset CHARSET] [--accept ACCEPT] [--aia]
-                               urls [urls ...]
-south_asia_probe.py get: error: argument --grep: expected one argument
+== https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
+  200 application/pdf 9083563 https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
+    282 pages
+
+  -- page 15
+    15.5 District and Gender-wise Rural & Urban Population of AJ&K (Projected 2022) 161
+    15.6 Population, Household Size and Growth Rate of AJ&K by Division/Districts (Census 2017) 163
+    15.7 Population Distribution of AJ&K by Sex and Age Groups (Census 2017) 163
+    15.8 Age Group and Gender Wise Rural & Urban Population of AJ&K (Census 2017) 164
+    15.9 District Wise Population of AJ&K by Age Groups (Census 2017) 166
+    15.10 Age Group wise Rural and Urban Population of AJ&K (Census 2017) 168
+    15.11 Number of Rural Localities of AJ&K by Population size (Census 2017) 169
+    15.12 District-wise Population Ranking/Proportion (Census 1998, 2017 and Projected Population 2022) 170
+    15.15 Tehsil-wise Area, Population and Nos. of Households of AJ&K (Census 2017 ) 172
+    15.16 Division-wise Population of AJ&K in Census 1972, 1981, 1998, 2017, Projected 2018 to 2022 172
+    15.17 Division-wise Sex Ratio of AJ&K in (Census 1972, 1981, 1998 and 2017) 173
+    15.18 District-wise Average Household Size and Sex Ratio of AJ&K (Census 1998 and 2017) 173
+    Rural/Urban Percentage Population of AJ&K (Census 1981, 1998, 2017, Projected
+    15.19 174
+    15.20 Census Population of Pakistan (Provinces) and AJ&K 174
+    15.21 Census Population Annual Growth Rate of Pakistan (Provinces) and AJ&K 174
+    15.22 Population of AJ&K (15 Years and above) by Age Group and Marital Status (Census 2017) 175
+    15.23 Rural and Urban Population of AJ&K by Religion (Census 2017) 175
+    15.24 District wise Population of AJ&K by Religion (Census 2017) 175
+    Percentage Distribution of Population of AJ&K by Marital Status & Age Group (15 Year &
+    15.25 176
+    above) Census 2017
+    15.26 Percentage of Educational Attainment Levels in AJ&K by Sex & Rural/Urban (Census 2017) 176
+    15.27 Percentage of Population of AJ&K by Economic Activity, Sex and Rural/Urban (Census 2017) 176
+    15.28 Rural and Urban Disabled Population of AJ&K by Sex and Age Group (Census 2017) 177
+    15.29 District wise Disabled Population of AJ&K by Age Group and Gender (Census 2017) 177
+    Bureau of Statistics, P&DD, Azad Govt. of The State of Jammu & Kashmir, Muzaffarabad
+    ix
+
+  -- page 18
+    15.3 District-wise Rural and Urban Population of AJ&K (Projected 2022) 162
+    15.4 District and Gender-wise Rural & Urban Population of AJ&K (Projected 2022) 162
+    15.5 Population Distribution of AJ&K by Sex and Age Groups Censes 2017 163
+    15.6 Division-wise Sex Ratio of AJ&K in (Census 1972, 1981, 1998 and 2017) 173
+    15.7 District-wise Average Household Size of AJ&K (Census 1998 & 2017) 173
+    15.8 Number of Marriages in AJ&K (2017 to 2022) 179
+
+  -- page 22
+    Chapter 01 Azad Jammu & Kashmir Statistical Year Book 2023 Introduction
+    The projected population of AJ&K in 2022 was 4.389 million while male and female
+    proportions were found 2.142 & 2.247 million, respectively. In segregated term, the
+    population of AJ&K comprises of 49% male and 51% female i.e. 95 males per 100 females
+    whereas almost 100% population is Muslim. The population density of AJ&K presently
+    stands at 330 persons per sq.km.
+
+  -- page 43
+    Number of Family Workers
+    Male 541,900
+    Female Nos. 328,026
+    Total 869,926
+    Number of Permanent Workers
+    Male 5,157
+    Female Nos. 338
+    Total 5,495
+    Number of Casual Workers
+    Male 425,421
+    Female Nos. 35,023
+    Total 460,444
+    Number of Farm Using
+
+  -- page 64
+    Source: Directorate of EMIS, E&S Education Department, Muzaffarabad
+    Graph: 5.3 Student Teacher Ratio in Private Schools in AJ&K (2022)
+    D 4 is 5 t . r 0 i 0 ct Male Female Total 4 1 .9 7 6 .0 4
+    3
+    M 4u0z.0a0ffarabad 1 3.61 1 1.09 12.11
+    5.00
+    -
+    Male Female Total
+    Source: AJ&KBoS Planning and Development Department, Muzaffarabad
+    Bureau of Statistics, P&DD, Azad Govt. of The State of Jammu & Kashmir, Muzaffarabad 40 .
+
+  -- page 72
+    Total 17.35 22.08 17.53 19.98 20.86 20.39 19.96 21.85 20.75
+    Graph: 5.4 Gender-wise & Total Student Teacher Ratio in Collleges of AJ&K (2020 to 2022)
+    M8 0ale Female Total 5
+    2
+    2
+    15.00
+    2022 19.96 21.85 20.75
+    Female
+    10.00
+    Total
+    Enrollment
+    District Inter Colleges
+    Male Female Total
+    2021 2022 2021 2022 2021 2022 2021 2022
+    1 2 3 4 5 6 7 4+6=8 5+7=9
+
+  -- page 73
+    Total 9 21 30
+    Source: Cadet College Palandri
+    *No female faculty is working in Cadet College Palandri and number faculty menbers are the same for year 2020-22
+    Graph: 5.5 Students Enrollment in Cadet College Palandri (2020 to 2022)
+    Year 2020 2021 2022
+
+  -- page 74
+    Total 9 19 17
+    Source: Cadet College Muzaffarabad
+    *No female faculty is working in Cadet College Muzaffarabad, and currently all the faculty is lecturer
+    Table: 5.22 Student Teacher Ratio of Cadet Colleges (2020 to 2022)
+    College 2020 2021 2022
+
+  -- page 77
+    10.00
+    -
+    Male Female Total
+    Government Institutions Private Institutions Overall
+    Source: AJ&KBoS Planning & Development Department, Muzaffarabad
+
+  -- page 98
+    Total 21.70 23.20 26.20 28.33 43.90 55.47 58.91 74.79
+    Male 30.20 38.50 35.10 42.85 54.80 70.52 67.79 84.54
+    Female 11.60 6.00 16.00 12.55 32.00 40.46 49.69 65.83
+    Source: Census Organization, Islamabad,
+    Table: 5.57 Division-wise Population 10 Years and Above, Literate Population & Literacy Ratio of AJ&K
+
+  -- page 100
+    Table: 5.59 Gender, Area & Level-wise Educated Population in AJ&K (Census 1998 & 2017)
+    (%)
+    Age Groups All Areas Rural Urban
+    M F T M F T M F T
+    1 2 3 4 5 6 7 8 9 10
+
+  -- page 101
+    Rate (%)
+    Level of Education 2018-19 2020-21
+    Male Female Total Male Female Total
+    1 2 3 4 5 6 7
+    A. Literate 87.80 67.70 77.50 88.90 68.20 77.80
+    2018-19 2020-21
+    Locality
+    Male Female Total Male Female Total
+    1 2 3 4 5 6 7
+    Pakistan 73.04 51.53 62.38 73.40 51.90 62.80
+
+  -- page 103
+    Nos.
+    District
+    Male Female Total
+    1 2 3 4
+    Nazra/Hifz/Qaida
+
+  -- page 104
+    Nos.
+    District
+    Male Female Total
+    1 2 3 4
+    Shadiat-ul-Aalia
+
+  -- page 113
+    Nos.
+    Particulars
+    Male Female Total
+    1 2 3 4
+    Direct Seats 45 - 45
+    Mashaiks 1 - 1
+    Overseas Kashmiris 1 - 1
+    Female Members - 5 5
+    Total 48 5 53
+    Source: AJ&K Legislative Assembly, Muzaffarabad
+    Graph: 7.1 AJ&K Legislative Assembly
+    50
+    45 Male Female
+    45
+    Direct Seats 45 -
+    0
+    0
+    Male Female
+    Direct Seats Indirect Seats
+    Source: AJ&K Legislative Assembly, Muzaffarabad
+
+  -- page 129
+    Others 3,888 4,821 18,304 13,969 40,982
+    Total 253,113 212,601 474,672 430,148 1,370,534
+    Female
+    General OPD 104,338 104,338 90,072 246,921 545,669
+    Medicine 1,179 1,179 5,104 45,234 52,696
+
+  -- page 132
+    Gynecological
+    Fibroid Uterus 152 - 177 - 365 -
+    Inflame diseases of female pelvic organs 122 - 287 - 528 -
+    Uterine Prolaspe 70 - 66 - 426 -
+    Vesico-Vaginal Fistula 88 - 83 - 131 -
+
+  -- page 147
+    Contraceptive Surgery
+    Cases/Nos. 161 370 1,610 3,700 3.50 7.05
+    Female
+    Implant Jadelle
+    Implants 17 1,956 65 7,433 0.20 14.16
+
+  -- page 154
+    1 2 3 4 5 6 7 8 9 10
+    Male - - 755 35.615 77 3.525 8 32 3 9.140
+    Muzaffarabad Female - - 1,568 69.990 509 22.795 2 ,077 9 2.785
+    Total - - 2,323 105.605 586 26.320 2,909 131.925
+    Male - - 297 12.730 58 2.295 3 55 1 5.025
+    Neelum Female - - 380 14.860 212 7.875 5 92 2 2.735
+    Total - - 677 27.590 270 10.170 947 37.760
+    Male - - 235 11.780 45 2.090 2 80 1 3.870
+    Jhelum
+    Female - - 469 22.115 661 31.130 1 ,130 5 3.245
+    Valley
+    Total - - 704 33.895 706 33.220 1,410 67.115
+    Male - - 187 9.785 75 3.725 2 62 1 3.510
+    Bagh Female - - 661 32.195 669 31.905 1 ,330 6 4.100
+    Total - - 848 41.980 744 35.630 1,592 77.610
+    Male 38 1.740 6 0.245 4 4 1 .985
+    Haveli Female 702 31.740 318 13.235 1 ,020 4 4.975
+    Total - - 740 33.480 324 13.480 1,064 46.960
+    Male - - 309 15.890 65 3.020 3 74 1 8.910
+    Poonch Female - - 1,616 75.365 1,012 46.095 2 ,628 1 21.460
+    Total - - 1,925 91.255 1,077 49.115 3,002 140.370
+    Male 728 38.935 183 9.345 9 11 4 8.280
+    Sudhnoti Female 761 35.840 446 21.210 1 ,207 5 7.050
+    Total - - 1,489 74.775 629 30.555 2,118 105.330
+    Male 1,952 101.905 867 41.830 2 ,819 1 43.735
+    Kotli Female 269 13.235 310 14.740 5 79 2 7.975
+    Total - - 2,221 115.140 1,177 56.570 3,398 171.710
+    Male 1,043 52.095 352 18.130 1 ,395 7 0.225
+    Mirpur Female 348 16.825 112 5.205 4 60 2 2.030
+    Total - - 1,391 68.920 464 23.335 1,855 92.255
+
+  -- page 155
+    1 2 3 4 5 6 7 8 9 10
+    Male - - 5,416 199.420 762 26.470 6 ,178 225.890
+    Muzaffarabad Female - - 8,407 305.630 2,739 99.495 1 1,146 405.125
+    Total - - 13,823 505.050 3,501 125.965 17,324 631.015
+    Male - - 1,738 63.740 471 15.205 2 ,209 78.945
+    Neelum Female - - 1,141 41.825 746 24.810 1 ,887 66.635
+    Total - - 2,879 105.565 1,217 40.015 4,096 145.580
+    Male - - 843 33.090 238 9.025 1 ,081 42.115
+    Jhelum Valley Female - - 1,268 51.930 2,294 91.720 3 ,562 143.650
+    Total - - 2,111 85.020 2,532 100.745 4,643 185.765
+    Male - - 2,133 83.580 730 28.180 2 ,863 111.760
+    Bagh Female - - 2,593 104.921 2,734 109.010 5 ,327 213.931
+    Total - - 4,726 188.501 3,464 137.190 8,190 325.691
+    Male - - 318 10.996 163 5.010 4 81 16.006
+    Haveli Female - - 2,641 102.140 2,174 75.765 4 ,815 177.905
+    Total - - 2,959 113.136 2,337 80.775 5,296 193.911
+    Male - - 90.030 759 28.350 3 ,037 118.380
+    2,278
+    Poonch Female - - 6,361 252.694 5,562 211.480 1 1,923 464.174
+    Total - - 8,639 342.724 6,321 239.830 14,960 582.554
+    Male - - 4,939 198.802 1,521 57.815 6 ,460 256.617
+    Sudhnoti Female - - 2,487 98.968 2,569 97.005 5 ,056 195.973
+    Total - - 7,426 297.770 4,090 154.820 11,516 452.590
+    Male - - 10,455 437.770 4,048 163.455 1 4,503 601.225
+    Kotli Female - - 1,104 45.395 1,365 54.360 2 ,469 99.755
+    Total - - 11,559 483.165 5,413 217.815 16,972 700.980
+    Male - - 4,204 172.285 1,499 62.760 5 ,703 235.045
+    Mirpur Female - - 1,288 49.800 392 15.375 1 ,680 65.175
+    Total - - 5,492 222.085 1,891 78.135 7,383 300.220
+    Male - - 3,709 146.320 1,589 60.860 5 ,298 207.180
+
+  -- page 158
+    Vocational Training Inst. VTI’s (Male) 1,131 1481 1190
+    Vocational Training Centre VTC’s (Male) 39 165 51
+    Vocational Training Centre VTC’s (Female) 2,406 3455 2319
+    Industrial Training Centre ITC’s (Male) 41 85 2
+    Total 3,945 5,766 3,815
+
+  -- page 175
+    Rate (%)
+    Employment Status 2018-19 2020-21
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    Employees 52.40 53.70 42.30 52.10 56.40 30.20
+    (%)
+    Major Industry Division 2018-19 2020-21
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    Agriculture/Forestry 19.80 16.20 46.70 20.80 12.20 64.10
+    (%)
+    Major Occupational Group 2018-19 2020-21
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    Managers 2.80 2.80 2.30 2.70 2.70 2.70
+
+  -- page 176
+    (%)
+    Employment Status 2018-19 2020-21
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    Employers 0.70 0.80 - 0.70 0.50 4.00
+    (%)
+    Major Industry Division 2018-19 2020-21
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    Manufacturing 12.30 12.60 5.30 13.90 12.50 51.30
+    (%)
+    Major Occupational Group 2018-19 2020-21
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    Managers 2.60 2.60 3.00 1.70 1.60 4.00
+
+  -- page 177
+    Rate (%)
+    Area 2018-19 2020-21
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    Rural 76.30 87.40 65.90 76.30 88.30 65.80
+    10.00
+    0.00
+    Total Male Female Total Male Female
+    2018-19 2020-21
+    Rural Urban AJ&K
+    2018-19 2020-21
+    Level of Education
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    A. Literate 77.50 87.80 67.70 77.80 88.90 68.20
+
+  -- page 178
+    Rate (%)
+    Area/Sex 2018-19 2020-21
+    Total Male Female Total Male Female
+    1 2 3 4 5 6 7
+    Rural 10.90 8.90 24.00 9.80 7.50 19.30
+    5.00
+    0.00
+    Total Male Female Total Male Female
+    2018-19 2020-21
+    Rural Urban AJ&K
