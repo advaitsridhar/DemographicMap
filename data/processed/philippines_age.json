@@ -4542,6 +4542,78 @@
     "population_note": "The census count of 2020: the 2020 Census of Population and Housing's count of everyone in the 779 barangays the PSA tabulates under ZAMBOANGA DEL SUR."
   },
   {
+    "id": "PHL-CPH2020-cotabato",
+    "level": "admin2",
+    "name": "Cotabato",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "No census figure fits this polygon: the boundary file's polygon covers some 5,900 km2 of the province's 9,008; the rest lies inside its 'Maguindanao', measured on the map's own tiles, so the 2020 census's count of the province of this name would put the wrong people on it."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "No census figure fits this polygon: the boundary file's polygon covers some 5,900 km2 of the province's 9,008; the rest lies inside its 'Maguindanao', measured on the map's own tiles, so the 2020 census's count of the province of this name would put the wrong people on it."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B30235147478886"
+  },
+  {
+    "id": "PHL-CPH2020-maguindanao",
+    "level": "admin2",
+    "name": "Maguindanao",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "No census figure fits this polygon: the boundary file's polygon takes in Sultan Kudarat, which it does not draw, and more (9,144 km2 against Maguindanao's ~4,900), measured on the map's own tiles, so the 2020 census's count of the province of this name would put the wrong people on it."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "No census figure fits this polygon: the boundary file's polygon takes in Sultan Kudarat, which it does not draw, and more (9,144 km2 against Maguindanao's ~4,900), measured on the map's own tiles, so the 2020 census's count of the province of this name would put the wrong people on it."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "PHL",
+    "match_by": "shape_id",
+    "shape_id": "2640588B76798451045250"
+  },
+  {
     "id": "PHL-CPH2020-R-armm",
     "level": "admin1",
     "name": "ARMM",
