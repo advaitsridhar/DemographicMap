@@ -1,124 +1,17 @@
-== https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2.xlsx
-  HTTP 200 application/octet-stream 1,310,798 bytes
-/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: NOTES!$A:$AB.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  -- 'CONTENT'
-       2: 1 |  | Table 1: Total population by place of usual residence and se
-       3: 1a |  | Table 1a. Total population by place of enumeration by island
-       4: 2 |  | Table 2: Total population by village of usual residence and 
-       5: 2a |  | Table 2a: Total population by village of island of usual res
-       6: 3 |  | Table 3: Total population by single years of age and sex
-       7: 4 |  | Table 4: Resident population by single years of age and sex
-       8: 5 |  | Table 5: Total population by place of enumeration, five-year
-       9: 6 |  | Table 6: Resident population by place of residence, five-yea
-      10: 7,8 |  | Table 7: Non-resident population by country of usual residen
-      11: 7,8 |  | Table 8: Non-resident population by nationality and five-yea
-      12: 9 |  | Table 9: Resident population by island of birth, five-year a
-      13: 10 |  | Table 10: Resident population 3 years and older by place of 
-      14: 11 |  | Table 11: Resident population by home island, five-year age 
-      15: 12 |  | Table 12: Resident population by place of birth, five-year a
-      16: 13 |  | Table 13: Resident population by ethnicity, place of residen
-      17: 14 |  | Table 14: Resident population by religious denomination, pla
-      18: 15 |  | Table 15: Marital status for resident population aged 15 yea
-      19: 16 |  | Table 16:  Biological mother whether still alive for residen
-      20: 17 |  | Table 17: Mother living in the household among resident popu
-      21: 18 |  | Table 18: Biological father whether still alive for resident
-      22: 19 |  | Table 19: Biological father still alive of resident populati
-      23: 20 |  | Table 20: Current school attendance for resident population 
-      24: 21 |  | Table 21: Current level of school attendance for resident po
-      25: 22 |  | Table 22: Highest educational level completed among resident
-      26: 23 |  | Table 23: School attendance for resident population aged 3-2
-      27: 24 |  | Table 24:  Highest education qualification completed since l
-      28: 25 |  | Table 25: Smoking habits for resident population 15 years an
-      29: 26 |  | Table 26:  Alcohol habits for resident population 15 years a
-      30: 27 |  | Table 27: Kava habits for resident population 15 years and o
-      31: 28 |  | Table 28: Disability domain status of resident population 5 
-      32: 29 |  | Table 29: Disability cut-off status of resident population 5
-      33: 30 |  | Table 30: Main caretaker for the disabled among the resident
-      34: 31 |  | Table 31: Source of assistance received among the disabled r
-      35: 32 |  | Table 32: Resident population aged 6 years and older who hav
-      36: 33 |  | Table 33: Resident population aged 6 years and older who hav
-      37: 34 |  | Table 34: Resident population aged 6 years and older who hav
-      38: 35 |  | Table 35: Main occupational activity the week before the cen
-      39: 36 |  | Table 36: Occupations of resident population 15 years and ol
-      40: 37 |  | Table 37: Occupations by highest education qualification of 
-      41: 38 |  | Table 38: Resident population 15 years and over by 5-year ag
-      42: 39 |  | Table 39: Resident population 15 years and over by highest e
-      43: 40 |  | Table 40: Persons actively looking for work the week before 
-      44: 41 |  | Table 41: Reason for not looking for work for resident popul
-      45: 42 |  | Table 42: Willingness and availability to start work the wee
-      46: 43 |  | Table 43: Persons actively looking for work the week before 
-      47: 44 |  | Table 44: Reason for not looking for work for the resident p
-      48: 45 |  | Table 45: Willingness and availability to start work the wee
-      49: 46 |  | Table 46: Total number of children born by age of resident c
-      50: 47a |  | Table 47a: Total number of resident child-bearing women by a
-      51: 47b |  | Table 47b: Total number of male children ever born by age of
-      52: 48a |  | Table 48a: Total number of resident child-bearing women by a
-      53: 48b |  | Table 48b: Total number of female children ever born by age 
-      54: 49a |  | Table 49a: Total number of resident child-bearing women by a
-      55: 49b |  | Table 49b: Total number of children ever born by age of resi
-      56: 50 |  | Table 50: Total number of children surviving by age of resid
-      57: 51 |  | Table 51: Total number of male children surviving by age of 
-      58: 52 |  | Table 52: Total number of female children surviving by age o
-      59: 53 |  | Table 53: Total number of children not alive by age of resid
-      60: 54 |  | Table 54: Total number of male children not alive by age of 
-      61: 55 |  | Table 55: Total number of female children not alive by age o
-      62: 56 |  | Table 56: Total population by relationship, place of enumera
-      63: H1 |  | Table H1: Number of Private Households by Island by Type of 
-      64: H2 |  | Table H2: Number of Private Households by Island and Source 
-      65: H3 |  | Table H3: Number of Private Households by Island and Type of
-      66: H4 |  | Table H4: Number of Private Households by Island and Source 
-      67: H5 |  | Table H5: Number of Private Households by Island and Solid W
-      68: H6 |  | Table H6: Number of Private Households by Damaged Electrical
-      69: H7 |  | Table H7: Number of Private Households who grows or Harvest 
-      70: H8 |  | Table H8: Number of Private Households who grows or Harvest 
-      71: H9 |  | Table H9: Number of Private Households who collects Toddy an
-      72: H10 |  | Table H10: Number of Private Households with livestocks by I
-      73: H11 |  | Table H11: Number of Animals Owned by Private Households and
-      74: H12 |  | Table H12: Number of Private Households Buying and Selling F
-      75: H13 |  | Table H13: Number of Private Households Buying and Selling F
-      76: H14 |  | Table H14: Number of Private Households Involved in Handicra
-      77: H15 |  | Table H15: Number of Private Households Involved in Handicra
-      78: H16 |  | Table H16: Number of Private Households that have Access to 
-      79: H17 |  | Table H17: Number of Private Households by Frequency of Inco
-      80: H18 |  | Table H18: Number of Private Households Affected by Natural 
-      81: H19 |  | Table H19: Number of Private Households Members Who Have Pas
-      82: H20 |  | Table H20: Number of Private Households Members Who Were Liv
-  -- '13'
-       1: Table 13: Resident population by ethnicity, place of residen
-       3:  | Total |  |  | Tuvaluan |  |  | Tuvaluan / I-Kiribati |  |  | Tuvaluan / Other |  |  | Other
-       5:     Tuvalu
-       6: Total | 10507 | 5403 | 5104 | 10193 | 5254 | 4939 | 166 | 69 | 97 | 83 | 45 | 38 | 65 | 35 | 30
-      24:     Nanumea
-      25: Total | 512 | 263 | 249 | 504 | 260 | 244 | 4 | 1 | 3 | 4 | 2 | 2 | - | - | -
-      44: Total | 491 | 263 | 228 | 484 | 260 | 224 | 3 | 1 | 2 | 2 | - | 2 | 2 | 2 | -
-      63: Total | 582 | 282 | 300 | 570 | 275 | 295 | 6 | 2 | 4 | 5 | 4 | 1 | 1 | 1 | -
-      81:     Nui
-      82: Total | 610 | 302 | 308 | 552 | 270 | 282 | 46 | 26 | 20 | 7 | 5 | 2 | 5 | 1 | 4
-     100:     Vaitupu
-     101: Total | 1061 | 525 | 536 | 1044 | 516 | 528 | 9 | 3 | 6 | 5 | 3 | 2 | 3 | 3 | -
-     119:     Nukufetau
-     120: Total | 597 | 296 | 301 | 576 | 285 | 291 | 9 | 3 | 6 | 5 | 3 | 2 | 7 | 5 | 2
-     138:     Funafuti
-     139: Total | 6320 | 3307 | 3013 | 6146 | 3232 | 2914 | 80 | 30 | 50 | 53 | 26 | 27 | 41 | 19 | 22
-     158: Total | 300 | 142 | 158 | 286 | 136 | 150 | 9 | 3 | 6 | - | - | - | 5 | 3 | 2
-     177: Total | 34 | 23 | 11 | 31 | 20 | 11 | - | - | - | 2 | 2 | - | 1 | 1 | -
-  -- '14'
-       1: Table 14: Resident population by religious denomination, pla
-       3:  | Total |  |  | EKT |  |  | SDA |  |  | Jehovah's Witness |  |  | Bahaii |  |  | Brethren |  |  | AOG |  |  | Catholic |  |  | LDS |  |  | Other |  |  | None |  |  | Refused
-       5:     Tuvalu
-       6: Total | 10507 | 5403 | 5104 | 9023 | 4660 | 4363 | 266 | 126 | 140 | 155 | 79 | 76 | 157 | 86 | 71 | 296 | 146 | 150 | 155 | 79 | 76 | 53 | 28 | 25 | 92 | 44 | 48 | 270 | 132 | 138 | 26 | 15 | 11 | 14 | 8 | 6
-      24:     Nanumea
-      25: Total | 512 | 263 | 249 | 455 | 233 | 222 | 2 | - | 2 | - | - | - | 20 | 14 | 6 | 8 | 4 | 4 | 1 | - | 1 | - | - | - | 1 | - | 1 | 25 | 12 | 13 | - | - | - | - | - | -
-      44: Total | 491 | 263 | 228 | 454 | 249 | 205 | 6 | 2 | 4 | 10 | 2 | 8 | 2 | 2 | - | 12 | 4 | 8 | 1 | - | 1 | 1 | - | 1 | 2 | 1 | 1 | 3 | 3 | - | - | - | - | - | - | -
-      63: Total | 582 | 282 | 300 | 492 | 241 | 251 | 33 | 12 | 21 | - | - | - | 13 | 6 | 7 | 35 | 16 | 19 | 6 | 6 | - | - | - | - | 2 | 1 | 1 | 1 | - | 1 | - | - | - | - | - | -
-      81:     Nui
-      82: Total | 610 | 302 | 308 | 603 | 297 | 306 | 3 | 2 | 1 | - | - | - | 2 | 1 | 1 | 1 | 1 | - | 1 | 1 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | -
-     100:     Vaitupu
-     101: Total | 1061 | 525 | 536 | 1019 | 500 | 519 | 1 | 1 | - | 12 | 7 | 5 | 2 | 2 | - | 1 | - | 1 | 4 | 2 | 2 | 13 | 8 | 5 | 2 | - | 2 | 7 | 5 | 2 | - | - | - | - | - | -
-     119:     Nukufetau
-     120: Total | 597 | 296 | 301 | 559 | 277 | 282 | 1 | - | 1 | 5 | 4 | 1 | 19 | 8 | 11 | 1 | 1 | - | 4 | 2 | 2 | - | - | - | 1 | 1 | - | 5 | 3 | 2 | 1 | - | 1 | 1 | - | 1
-     138:     Funafuti
-     139: Total | 6320 | 3307 | 3013 | 5108 | 2698 | 2410 | 219 | 109 | 110 | 128 | 66 | 62 | 99 | 53 | 46 | 238 | 120 | 118 | 138 | 68 | 70 | 39 | 20 | 19 | 84 | 41 | 43 | 229 | 109 | 120 | 25 | 15 | 10 | 13 | 8 | 5
-     158: Total | 300 | 142 | 158 | 299 | 142 | 157 | 1 | - | 1 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | -
-     177: Total | 34 | 23 | 11 | 34 | 23 | 11 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | -
+cdx stats.gov.tv/download/85/*: 16 captures, 16 matching ''
+  20250404054943 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/1836/tuvalu_2022_census_report
+  20250422062447 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/1836/tuvalu_2022_census_report.pdf
+  20260314172145 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/2147/tuvalu-2022-disability-monograph-report
+  20260325082735 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/2162/understanding-disability-in-tuvalu-easy-read-summary-from-the-2022-population-and-housing-census
+  20250403100416 200 application/octet-stream https://stats.gov.tv/download/85/population-and-housing-census/902/20
+  20220108155419 200 application/octet-stream https://stats.gov.tv/download/85/population-and-housing-census/902/2012-census-tables_final
+  20250403174744 200 application/octet-stream https://stats.gov.tv/download/85/population-and-housing-census/902/2012-census-tables_final.xlsx
+  20220108152949 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/903/tuvalu-census-monograph
+  20220108155711 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/904/2012-census-volume-1-2
+  20240304174217 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/904/2012-census-volume-1-2.pdf
+  20220108155703 200 application/octet-stream https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2
+  20250402134745 200 application/octet-stream https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2.xlsx
+  20220108152952 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/906/2017-census-report_final
+  20230625073200 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/906/2017-census-report_final.pdf
+  20220525013721 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/912/tuvalu-agriculture-and-fisheries-report
+  20220525013225 200 application/pdf https://stats.gov.tv/download/85/population-and-housing-census/912/tuvalu-agriculture-and-fisheries-report.pdf
