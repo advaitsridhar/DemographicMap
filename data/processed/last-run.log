@@ -1,9 +1,3 @@
-timor_age: Population and Housing Census 2022, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Main Report basic table 4.05: population by urban/rural location, age, municipality and sex
-  fetched Chapter-4-TLPHC-Census-report-Basic-tables.xlsx (0.5 MB)
-  table 4.05 cells printed '-' where their row's other figures show people, read as the difference: atauro M at 83: '-' read as 2
-  table 4.05: 14 municipalities, single years to 85+, making the country's 1,341,737; national median 21.7
-  table 4.01: 67 posts in 14 municipalities, each municipality's posts making it
-  admin1: 13 units; median [19.6]..[22.5]; sex ratio 99.1-108.7
-  admin2: 65 units; median []..[]; sex ratio 95.1-110.8
-  wrote data/processed/timor_age.json (208 kB)
-  wrote timor_age.json: 78 records
+sea_composed: religion and ethnicity on the polygons no one census area is
+  Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
+sea_composed: SHAN STATE / WA SELF-ADMINISTERED DIVISION: SHAN STATE / WA SELF-ADMINISTERED DIVISION / MONGMAO has no ethnicity figures, so the sum would be part of the polygon
