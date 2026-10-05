@@ -40,6 +40,10 @@ Subcommands:
         classes, with its Arabic names, its point, and the drawn unit of
         ``ISO3`` at level ``L`` (default admin2) whose polygon, read from the
         map's own tiles, holds the point. REGEX filters on the feature's names.
+    wdpoints QID [--iso ISO3] [--unit-level L] [--grep REGEX] [--rows N]
+        Wikidata's settlements, neighbourhoods and districts in the country
+        whose item is QID, with their Arabic and English labels, their points
+        and the drawn unit holding each.
 
 Usage:
     python -m scripts.fetch_census.west_asia_probe ods https://www.data.gov.bh --search population
@@ -378,11 +382,59 @@ def cmd_geonames(cc: str, iso3: str | None, level: str, classes: str, grep: str 
             f"pop {pop} | in {holder.get(gid, '?')}")
 
 
+WDQS = "https://query.wikidata.org/sparql"
+# Places a person lives in: settlements, neighbourhoods, suburbs, districts.
+SETTLEMENT_CLASSES = ("wd:Q486972", "wd:Q123705", "wd:Q188509", "wd:Q2983893",
+                      "wd:Q1549591", "wd:Q15284")
+
+
+def cmd_wdpoints(country: str, iso3: str | None, level: str, grep: str | None, rows: int,
+                 zoom: int) -> None:
+    """Wikidata's settlements and neighbourhoods in one country, with the drawn unit
+    holding each point. ``country`` is the country's item (Q817 for Kuwait)."""
+    query = f"""
+SELECT ?item ?ar ?en ?coord WHERE {{
+  ?item wdt:P17 wd:{country} ; wdt:P625 ?coord ; wdt:P31/wdt:P279* ?cls .
+  VALUES ?cls {{ {' '.join(SETTLEMENT_CLASSES)} }}
+  OPTIONAL {{ ?item rdfs:label ?ar FILTER(LANG(?ar) = "ar") }}
+  OPTIONAL {{ ?item rdfs:label ?en FILTER(LANG(?en) = "en") }}
+}}"""
+    url = WDQS + "?" + urllib.parse.urlencode({"format": "json", "query": query})
+    status, ctype, body = fetch(url, accept="application/sparql-results+json")
+    log(f"WDQS {country}: {status} {len(body):,} bytes")
+    if status != 200:
+        log("  " + text_of(body, ctype)[:400])
+        return
+    seen: dict[str, tuple[str, str, float, float]] = {}
+    for b in json.loads(body)["results"]["bindings"]:
+        m = re.match(r"Point\(([-\d.]+) ([-\d.]+)\)", b["coord"]["value"])
+        if not m:
+            continue
+        qid = b["item"]["value"].rsplit("/", 1)[-1]
+        seen.setdefault(qid, (b.get("ar", {}).get("value", ""), b.get("en", {}).get("value", ""),
+                              float(m.group(2)), float(m.group(1))))
+    pat = re.compile(grep, re.I) if grep else None
+    items = {q: v for q, v in seen.items() if not pat or pat.search(v[0]) or pat.search(v[1])}
+    holder: dict[str, str] = {}
+    if iso3:
+        from shapely.geometry import Point
+
+        from .sea_common import drawn, polygons
+        shapes = polygons(level, iso3, zoom)
+        label = {u["id"]: u["name"] for u in drawn(iso3, level)}
+        for qid, (_ar, _en, lat, lon) in items.items():
+            hits = [label.get(sid, sid) for sid, g in shapes.items() if g.contains(Point(lon, lat))]
+            holder[qid] = " + ".join(hits) or "-"
+    log(f"{len(items)} items")
+    for qid, (ar, en, lat, lon) in sorted(items.items(), key=lambda kv: kv[1][1] or kv[1][0])[:rows]:
+        log(f"  {qid} | {en} | {ar} | {lat:.5f},{lon:.5f} | in {holder.get(qid, '?')}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "xlsx", "pdf",
-                                    "geonames"])
+                                    "geonames", "wdpoints"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--search")
     ap.add_argument("--where")
@@ -412,6 +464,9 @@ def main() -> int:
     if args.cmd == "geonames":
         cmd_geonames(args.target[0], args.iso, args.unit_level, args.classes, args.grep,
                      args.rows, args.zoom)
+        return 0
+    if args.cmd == "wdpoints":
+        cmd_wdpoints(args.target[0], args.iso, args.unit_level, args.grep, args.rows, args.zoom)
         return 0
     if args.cmd == "ods":
         for base in args.target:
