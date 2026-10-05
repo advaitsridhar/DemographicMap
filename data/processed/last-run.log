@@ -1,3 +1,28 @@
-== page https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml
-  10,464 bytes, charset utf-8
-  ~ function setDownNo(no){ use_no = no; var n = eval(row_i); first_down = true; fileDown("", n); } var row_i = "0"; var down_cnt="0"; var use_no="0"; var first_down = false; var s_gubun = ""; function fileDown(gubun, n){ var fname,no,file; var frm = document.myfrm; var act_flg = false; if( gubun == ""){ gubun = s_gubun; }else{ s_gubun = gubun; } row_i = n; if(n >= 0){ file = eval("frm.file_data_"+n).value; no = file.substring(0,file.indexOf("/")); fname= file.substring(file.indexOf("/")+1); if( gubun == "B"){ fname +=
+== form https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml
+  10,464 bytes, 2 forms
+  form 0: name='myfrm' id=None action='mass_list.jsp' method='post'
+    input 'tbl_id' type='hidden' value='DT_1PM1502' id=None
+    input 'org_id' type='hidden' value='101' id=None
+    input 'currpage' type='hidden' value='' id=None
+    input 'vw_cd' type='hidden' value='MT_ZTITLE' id=None
+    input 'list_id' type='hidden' value='' id=None
+    input 'usrId' type='hidden' value='null' id=None
+    input 'usrName' type='hidden' value='null' id=None
+    input 'down_cnt' type='hidden' value='0' id=None
+    input 'use_no' type='hidden' value='0' id=None
+    input 'srh_txt1' type='text' value='' id=None
+    input 'srh_txt2' type='text' value='' id=None
+    input 'file_data_0' type='hidden' value='5581/101_DT_1PM1502_F_2015' id=None
+  form 1: name='upfrm' id=None action=None method='post'
+    input 'tbl_id' type='hidden' value='DT_1PM1502' id=None
+    input 'org_id' type='hidden' value='101' id=None
+    input 'filename' type='hidden' value='' id=None
+    input 'file_no' type='hidden' value='' id=None
+    input 'file_type' type='hidden' value='' id=None
+    input 'vw_cd' type='hidden' value='MT_ZTITLE' id=None
+    input 'list_id' type='hidden' value='' id=None
+    input 'usrId' type='hidden' value='null' id=None
+    input 'usrName' type='hidden' value='null' id=None
+    input 'down_cnt' type='hidden' value='0' id=None
+    input 'use_no' type='hidden' value='0' id=None
+    input 'page' type='hidden' value='kosis' id=None
