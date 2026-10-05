@@ -1,37 +1,150 @@
-pakistan_census_tables: Census 2023 Tables 4 and 10
-  Punjab
-    Table 10: 3,494,163 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_punjab_districts.pdf
-    Table 4: 4,168,650 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_punjab_districts.pdf
-    36 districts; single years, five-year groups and nationalities all reconcile
-  Punjab: 34 bound by shape id; 0 row(s) and 0 unit(s) left over
-  Khyber Pakhtunkhwa
-    Table 10: 3,369,335 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_kp_districts.pdf
-    Table 4: 19,810,553 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_kp_districts.pdf
-    35 districts; single years, five-year groups and nationalities all reconcile
-  Khyber Pakhtunkhwa: 31 bound by shape id; 0 row(s) and 0 unit(s) left over
-  Sindh
-    Table 10: 2,908,157 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf
-    Table 4: 18,673,574 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_sindh_districts.pdf
-    30 districts; single years, five-year groups and nationalities all reconcile
-  Sindh: 22 bound by shape id; 0 row(s) and 0 unit(s) left over
-  Balochistan
-    Table 10: 3,274,329 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_balochistan_districts.pdf
-    Table 4: 20,942,975 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_balochistan_districts.pdf
-    34 districts; single years, five-year groups and nationalities all reconcile
-  Balochistan: 27 bound by shape id; 0 row(s) and 0 unit(s) left over
-  Islamabad Capital Territory
-    Table 10: 114,082 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_islamabad.pdf
-    Table 4: 124,934 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_islamabad.pdf
-    1 districts; single years, five-year groups and nationalities all reconcile
-  Islamabad Capital Territory: 1 bound by shape id; 0 row(s) and 0 unit(s) left over
-  wrote data/processed/pakistan_age.json (235 kB)
-  wrote data/processed/pakistan_nationality.json (258 kB)
-  removed the trial file pakistan_age_sindh.json
-  removed the trial file pakistan_age_ict.json
-  removed the trial file pakistan_age_balochistan.json
-  removed the trial file pakistan_age_kp.json
-  removed the trial file pakistan_nationality_balochistan.json
-  removed the trial file pakistan_nationality_sindh.json
-  removed the trial file pakistan_nationality_kp.json
-  removed the trial file pakistan_nationality_ict.json
-  120 age records, 120 nationality records
+probe_pdf: https://statistics.gov.sb/download/60/solomon-islands-2019-population-and-housing-census-national-report_volume-1-and-2/1208/solomon-islands-2019-population-and-housing-census_national-report-vol-1-2.pdf
+  8,046,759 bytes
+  305 pages
+probe_pdf: 305 pages, 59 mention ['first', 'Pijin', 'Pidgin', 'ocal']
+=== front matter ===
+
+
+=== pages mentioning ['first', 'Pijin', 'Pidgin', 'ocal'] (first 10) ===
+
+--- page 2 ----------------------------------------------------
+Office, MOFT and the Technical Adviser, Dr, Willie Lahari, for his overall technical support to the
+2019 Census project.
+Lastly but not the least, let me take this opportunity to call upon all stakeholders, development partners
+and the people of Solomon Islands to not only draw from the findings of this report, but also support
+the government’s efforts towards achieving our development goals with our people (population) first
+in our minds, now and into the future.
+Honorable Harry D Kuma, MP
+Minister for Finance and Treasury
+
+--- page 4 ----------------------------------------------------
+Manongsong in data processing of the 2019 Census data and the production of selected tabulations.
+Dr Levin is also acknowledged for selected write -ups on fertility and migration. The New Zealand
+Volunteer Agency is also acknowledge d through support provided by Mr Josh Neale, Data Analyst,
+for assistance in data processing and commentary on the fertility chapter. Moreover, the Solomon
+Islands Translation Advisory Group is acknowledged for advice and information about first languages
+and endangered languages in the Solomon Islands.
+The Management of SINSO  takes this time to also convey  its appreciation to all the 2019 Census
+enumerators and supervisors, provincial coordinators and trainers throughout Solomon Island and
+the rest of the staff of the SINSO for  their valuable contributions and commitment offered to the
+
+--- page 6 ----------------------------------------------------
+4.2.1 Urban-Rural Distinction ................................................................................................... 27
+4.3 Urban and Rural Population structure ..................................................................................... 32
+5. FERTILITY ............................................................................................................................... 37
+5.1 Introduction ............................................................................................................................. 37
+5.2 Age at First Birth ..................................................................................................................... 38
+5.3 Children Ever Born and Children Surviving ........................................................................... 39
+
+--- page 7 ----------------------------------------------------
+7.5 International Migration ............................................................................................................ 83
+8. SOCIAL CHARACTERISTICS ............................................................................................... 85
+8.1 Introduction ............................................................................................................................. 85
+8.2 Marital status............................................................................................................................ 85
+8.2.1 Average Age at First Marriage (SMAM) ......................................................................... 86
+8.3 Religion ................................................................................................................................... 90
+8.4 Ethnic origin ............................................................................................................................ 92
+9. EDUCATION, LANGUAGE AND LITERACY ..................................................................... 97
+9.1 Introduction ............................................................................................................................. 97
+      ...
+9.4 Educational attainment .......................................................................................................... 102
+9.5 Literacy and language ability ................................................................................................ 107
+9.5.1 Literacy ........................................................................................................................... 107
+9.5.2 Language ability ............................................................................................................. 110
+9.6 First language ........................................................................................................................ 112
+10. DISABILITY ......................................................................................................................... 118
+10 .1 Introduction ...................................................................................................................... 118
+
+--- page 10 ----------------------------------------------------
+Table 3.3.1: Age and sex distributions, Solomon Islands: 1976 to 2019 22
+Table 4.2.1: Total population in 5-year age groups by urban and rural area and Sex,
+                    Solomon Islands: 2019
+27
+Table 4.2.2: Population size by urban localities and province, Solomon Islands:
+                    1986-2019
+31
+Table 4.2.3: Selected demographic and socio-economic indicators by urban-rural area,
+                    Solomon: 2019
+35
+Table 5.2.1: Average age at first birth by province and urban-rural residence,
+                    Solomon Islands: 2019
+38
+Table 5.2.2: Average age at first birth based on whether she had a birth by that age by
+                    province and education attainment, Solomon Islands: 2019
+39
+Table 5.3.1: Children ever born and surviving, Solomon Islands: 2019 39
+Table 5.3.2: Average children ever born and surviving, Solomon Islands: 2019 40
+
+--- page 11 ----------------------------------------------------
+86
+Table 8.2.2: Singulate mean age by province and urban-rural residence, Solomon
+                    Islands: 2019
+86
+Table 8.2.3: Average age at first marriage by educational attainment, sex and
+                    province, Solomon Islands: 2019
+89
+Table 8.3.1: Population by religious denomination, Solomon Islands: 1999, 2009, 2019 90
+Table 8.3.2: Population by larger religious denomination and sex, Solomon Islands:
+
+--- page 12 ----------------------------------------------------
+Table 9.5.1: Population 5 years and older by literacy rate, Solomon Islands: 2019 108
+Table 9.5.2: Percentage of population 5 years and over and language ability by sex and
+                    province, Solomon Islands: 2019
+111
+Table 9.6.1: Larger local languages by province, Solomon Islands: 1976, 1999, 2019 112
+Table 9.6.2: Larger local languages, Solomon Islands: 1976, 1999, 2019  114
+Table 9.6.3: Endangered and new listed languages, Solomon Islands:1976, 1999, 2019                   115
+Table 10.2.1: Percentage distribution of the population aged 5 years and older with
+                      disabilities by functional domain and degree of difficulty, Solomon
+                      Islands: 2019
+
+--- page 17 ----------------------------------------------------
+30
+Figure 4.3.1: Urban population distribution, Solomon Islands: 1999, 2009, and 2019 33
+Figure 4.3.2: Population pyramid by group years, urban population: 2009 and 2019  34
+Figure 4.3.3: Population pyramid by group years, rural population: 2009 and 2019 34
+Figure 5.2.1: Average age at first birth by province, Solomon Islands: 2019 38
+Figure 5.3.1: Average number of children ever born to females 45-49 years by province,
+                      Solomon Islands: 2019
+41
+Figure 5.3.2: Children ever born by age of mother and education level, Solomon
+
+--- page 19 ----------------------------------------------------
+83
+Figure 8.2.1: Percentage of population aged 15 and older by marital status, Solomon
+                      Islands: 2019
+85
+Figure 8.2.2: Average Age at First Marriage by Province, Solomon Islands: 2019 87
+Figure 8.2.3: Average age at first marriage by urban-rural and province,
+                      Solomon Islands: 2019
+87
+Figure 8.2.4: Average age at first marriage by sex and province, Solomon
+                      Islands: 2019
+88
+Figure 8.2.5: Average age difference between husband and wife at first marriage,
+                      Solomon Islands: 2019
+88
+Figure 8.2.6: Average age at first marriage by education and sex, Solomon Islands:
+                      2019
+89
+Figure 8.3.1: Percent of religious denomination, Solomon Islands: 2019 90
+Figure 8.4.1: Percentage of Melanesian by census years, Solomon Islands: 1959 to
+      ...
+Figure 9.5.3: Population 15 years+ and literacy rates by sex and province, Solomon
+                      Islands: 2019
+110
+Figure 9.5.4: Percent of persons in English literacy by province, Solomon Islands: 2019 111
+Figure 9.6.1: Pidgin as first-learnt language by province, Solomon Islands: 2019 113
+
+--- page 24 ----------------------------------------------------
+Median age 21.4 23.9 20 20.4 21.7 22.6 20.9 25.3 20.9 19.5 18.6 22.2 24.2
+Dependency ratio (0-14 and 60+) 74 51 85 86 77 77 81 76 73 87 92 89 48
+Sex ratio 105 106 105 106 108 112 105 118 105 101 107 98 106
+Marriage
+Mean age at first marriage (SMAM) 24.7 25.6 24.2 23.9 24.8 24.3 24.3 26.7 23.9 24.4 24 23.5 26.1
+  Males 26.5 27.2 26.2 26 26.9 26.5 26.3 28.2 25.7 26.3 26.1 25.6 27.6
+  Females 22.8 24 22.1 21.7 22.7 21.9 22.2 24.6 22.1 22.5 21.9 21.6 24.5
+Labour and Economic Activity
+Working Age (12+) population 506,009 150,765 355,244 20,680 65,723 22,254 20,971 3,013 106,917 117,410 33,744 15,661 99,636
+
+... and 49 further pages match; re-run with a narrower --terms to see them.
