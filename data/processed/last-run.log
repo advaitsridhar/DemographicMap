@@ -1,26 +1,59 @@
-kyrgyzstan_census: Chuy: https://www.stat.gov.kg/media/publicationarchive/390cc065-9ead-4ac7-9f6f-2ddfa38a8cbe.pdf
-  Chuy азербайджанцы: men and women 140 + 128 do not make 288 as printed
-  Chuy другие: men and women 82 + 115 do not make 177 as printed
-  Chuy г.токмок Пакистанцы и Индийцы: table 3.4 has 198, table 3.2 197
-  9 units: г.токмок, аламудунский район, жайылский район, кеминский район, московский район, панфиловский район, сокулукский район, чуйский район, ысык-атинский район; single years read
-kyrgyzstan_census: Bishkek: https://www.stat.gov.kg/media/publicationarchive/2a645aed-5154-4518-b114-dc97239a3a83.pdf
-  Bishkek г.бишкек дунгане: table 3.4 has 2,779, table 3.2 1,784
-  1 units: г.бишкек; single years read
-kyrgyzstan_census: Osh: https://www.stat.gov.kg/media/publicationarchive/f76c9a54-0edf-4cfd-91df-8d01379a128b.pdf
-  Osh ноокатский район: the printed groups make 314,877 of 315,011; the 134 left are counted as other
-  Osh узгенский район: the printed groups make 286,853 of 287,109; the 256 left are counted as other
-  7 units: алайский район, араванский район, кара-кулжинский район, кара-сууский район, ноокатский район, узгенский район, чон-алайский район; single years read
-kyrgyzstan_census: Osh city: https://www.stat.gov.kg/media/publicationarchive/6d075a2f-51ec-4cec-bf59-455c631ce39b.pdf
-  1 units: г.ош; single years read
-kyrgyzstan_census: Batken: https://www.stat.gov.kg/media/publicationarchive/dfe4b339-3f9c-4bb7-887e-96e55e15dde0.pdf
-  kyrgyzstan_census: Batken баткенская область: age block ends after ['90-99']
-kyrgyzstan_census: Jalal-Abad: https://www.stat.gov.kg/media/publicationarchive/ad52f290-cb14-4ff1-9179-d0ad0f38b09d.pdf
-  kyrgyzstan_census: Jalal-Abad: ethnic group 'г. Джалал-Абад (без сел)' is not known (line above: 'Городское население')
-kyrgyzstan_census: Issyk-Kul: https://www.stat.gov.kg/media/publicationarchive/8b892242-eaa9-446d-94b2-7ba7aadcb340.pdf
-  kyrgyzstan_census: Issyk-Kul: ethnic group 'г.Каракол ( без пгт)' is not known (line above: 'оба пола мужчины женщины')
-kyrgyzstan_census: Naryn: https://www.stat.gov.kg/media/publicationarchive/e790d125-ecd1-471e-b31b-0eb9dc7c4894.pdf
-  Naryn нарынская область: 15-19 holds the 15-year-olds again; 16-19 is 21,915
-  kyrgyzstan_census: Naryn г.нарын: age block ends after []
-kyrgyzstan_census: Talas: https://www.stat.gov.kg/media/publicationarchive/d79c0e75-073d-4a50-92fe-3c735b1a2dfc.pdf
-  kyrgyzstan_census: Talas: units ['г.талас', 'бакай-атинский район', 'манасский район', 'таласский район'] make (200327, 101057, 99270) against (270950, 136662, 134288); unplaced: ['айтматовский район']
-kyrgyzstan_census: kyrgyzstan_census: Batken баткенская область: age block ends after ['90-99'] | kyrgyzstan_census: Jalal-Abad: ethnic group 'г. Джалал-Абад (без сел)' is not known (line above: 'Городское население') | kyrgyzstan_census: Issyk-Kul: ethnic group 'г.Каракол ( без пгт)' is not known (line above: 'оба пола мужчины женщины') | kyrgyzstan_census: Naryn г.нарын: age block ends after [] | kyrgyzstan_census: Talas: units ['г.талас', 'бакай-атинский район', 'манасский район', 'таласский район'] make (200327, 101057, 99270) against (270950, 136662, 134288); unplaced: ['айтматовский район']
+cdx sdd.spc.int/*: 100000 captures, 58 matching '(?:auru)'
+  20211207222834 200 text/html https://sdd.spc.int/collection/2006-household-income-and-expenditure-survey-nauru
+  20230928201722 200 text/html https://sdd.spc.int/collection/2006-labour-force-surfey-nauru
+  20230330114034 200 text/html https://sdd.spc.int/collection/2006-population-and-housing-census-nauru
+  20211206025646 200 text/html https://sdd.spc.int/collection/2012-household-income-and-expenditure-survey-nauru
+  20220629140828 200 text/html https://sdd.spc.int/collection/2019-household-listing-nauru
+  20220120093453 200 text/html https://sdd.spc.int/collection/2020-multiple-indicator-cluster-and-demographic-and-health-survey-nauru
+  20200927171331 200 text/html https://sdd.spc.int/collection/2021-household-income-and-expenditure-survey-nauru
+  20200921103017 200 text/html https://sdd.spc.int/collection/2021-population-and-housing-census-collection-nauru
+  20200927180233 200 text/html https://sdd.spc.int/collection/2022-household-income-and-expenditure-survey-collection-nauru
+  20210918115758 200 text/html https://sdd.spc.int/collection/2022-household-income-and-expenditure-survey-nauru
+  20220629125833 200 text/html https://sdd.spc.int/collection/2022-multiple-indicator-cluster-and-demographic-and-health-survey-nauru
+  20220629120204 200 text/html https://sdd.spc.int/collection/2023-household-income-and-expenditure-survey-nauru
+  20230928223201 200 text/html https://sdd.spc.int/collection/2023-multiple-indicator-cluster-and-demographic-and-health-survey-nauru
+  20220629140932 200 text/html https://sdd.spc.int/collection/2026-household-listing-nauru
+  20201024025826 200 text/html https://sdd.spc.int/digital_library/2002-nauru-census-main-report-demographic-profile-republic-nauru-1992-2002
+  20231003121030 200 text/html https://sdd.spc.int/digital_library/2021-nauru-population-and-household-census-households-tabulations
+  20231003095752 200 text/html https://sdd.spc.int/digital_library/2021-nauru-population-and-household-census-persons-tabulations
+  20230129130320 200 text/html https://sdd.spc.int/digital_library/civil-registration-and-vital-statistics-nauru
+  20201021195916 200 text/html https://sdd.spc.int/digital_library/crvs-nauru-2014
+  20230928222025 200 text/html https://sdd.spc.int/digital_library/demographic-profile-republic-nauru-1992-2002
+  20221018115102 200 text/html https://sdd.spc.int/digital_library/disability-nauru
+  20230330153935 200 text/html https://sdd.spc.int/digital_library/education-and-economic-activity-nauru
+  20220703211115 200 text/html https://sdd.spc.int/digital_library/livestock-aquaculture-nauru
+  20201028034303 200 text/html https://sdd.spc.int/digital_library/nauru-2006-hies-report
+  20220703212644 200 text/html https://sdd.spc.int/digital_library/nauru-2010-2011-education-annual-report
+  20251031040337 200 text/html https://sdd.spc.int/digital_library/nauru-2012-13-hies-health-factsheet
+  20210724124022 200 text/html https://sdd.spc.int/digital_library/nauru-2012-2013-hies-report
+  20210929001830 200 text/html https://sdd.spc.int/digital_library/nauru-2015-disability-report
+  20230802224500 200 text/html https://sdd.spc.int/digital_library/nauru-2021-population-and-housing-census-analytical-report
+  20251220053016 200 text/html https://sdd.spc.int/digital_library/nauru-2024-2025-household-income-and-expenditure-survey-report
+  20230928222127 200 text/html https://sdd.spc.int/digital_library/nauru-national-population-census-april-1992-census-tabulations
+  20250607211913 200 text/html https://sdd.spc.int/digital_library/nauru-population-profile-guide-planners-and-policy-makers
+  20210724103944 200 text/html https://sdd.spc.int/digital_library/nauru-vital-statistics-report-2008-2013
+  20220525004533 200 text/html https://sdd.spc.int/digital_library/nauru-vital-statistics-report-2015-2017
+  20211017182224 200 text/html https://sdd.spc.int/digital_library/nauru-voluntary-national-review-implementation-2030-agenda
+  20201024043241 200 text/html https://sdd.spc.int/digital_library/nauruan-mortality-1976-1981
+  20230130035759 200 text/html https://sdd.spc.int/digital_library/population-nauru
+  20230928223804 200 text/html https://sdd.spc.int/digital_library/republic-nauru-data-sheet-nauru-census-2002-figures
+  20240627144121 200 text/html http://sdd.spc.int/digital_library/republic-nauru-demographic-and-health-survey-2007
+  20201024040647 200 text/html https://sdd.spc.int/digital_library/republic-nauru-national-report-population-and-housing-census-2011
+  20251107083143 200 text/html https://sdd.spc.int/digital_library/youth-monograph-analysis-2011-nauru-population-and-housing-census
+  20250713131623 200 text/html https://sdd.spc.int/disasters-data/covid-19/population-grids-solomons-islands-and-nauru-now-available
+  20191119195958 200 text/html https://sdd.spc.int/events/2019/10/nauru-civil-registration-and-vital-statistics-crvs-technical-assistence
+  20191119200517 200 text/html https://sdd.spc.int/events/2019/10/nauru-mini-census-training-and-data-collection
+  20191119204025 200 text/html https://sdd.spc.int/events/2019/11/nauru-international-merchandise-trade-statistics-imts-attachment-noumea
+  20231003120645 200 text/html https://sdd.spc.int/events/2023/08/nauru-government-stakeholder-meetings-data-use-national-priorities
+  20231003121154 200 text/html https://sdd.spc.int/events/2023/08/nauru-training-workshop-use-census-data-national-planning-policy-and-research
+  20260311015633 200 text/html https://sdd.spc.int/events/2026/05/crvs-strengthening-activities-nauru
+  20180525114507 200 application/vnd.openxmlformats http://sdd.spc.int:80/images/economic_Statistics/IMTS_tables/Nauru_IMTS_Tables.xlsx
+  20180921230437 200 image/png http://sdd.spc.int/images/infographic/data_infographics_Nauru-2018.png
+  20231003102504 200 text/html https://sdd.spc.int/innovation-sdd/pdhstat/imts-updated-nauru
+  20200919104926 200 text/html https://sdd.spc.int/innovation-sdd/popgis-v3/popgis3-nauru-now-complete
+  20200801213032 200 text/html http://sdd.spc.int/innovation-sdd/population-grids/grids-kiribati-nauru-palau-solomon-islands-tonga-tuvalu-vanuatu-and
+  20210724114416 200 text/html https://sdd.spc.int/news/2021/07/09/2019-nauru-mini-census-fact-sheets
+  20230811025216 200 text/html https://sdd.spc.int/news/2023/08/09/nauru-2021-population-and-housing-census-analytical-report
+  20230928222340 200 text/html https://sdd.spc.int/news/2023/08/23/nauru-2021-population-and-housing-census-analytical-report
+  20260204015212 200 text/html https://sdd.spc.int/news/2023/08/23/nauru-2021-population-and-housing-census-analytical-report&quot;%7D
+  20250710212324 200 text/html https://sdd.spc.int/news/2024/07/03/merchandise-metrics-spc-supports-nauru-develop-its-international-merchandise-trade
