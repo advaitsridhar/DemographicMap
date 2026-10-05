@@ -1,0 +1,832 @@
+[
+  {
+    "id": "CHN-17275852B99117401306703",
+    "level": "admin2",
+    "name": "Lishuxian",
+    "parent": "CHN-Jilin Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 537145,
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "median_age": {
+      "value": 48.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 103.4,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one national survey of the languages people use, the State Language Commission's survey of language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before these figures and before the spread of Putonghua since, and it is not drawn on them."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 98.4,
+        "count": 528331
+      },
+      {
+        "group": "Manchu",
+        "pct": 0.9,
+        "count": 4928
+      },
+      {
+        "group": "Korean",
+        "pct": 0.4,
+        "count": 2444
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.2,
+        "count": 961
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 481
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1: households, population and sex ratio by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5: population by age and sex, by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B99117401306703",
+    "aliases": [
+      "梨树县"
+    ],
+    "codes": {
+      "gb2260": "220322"
+    },
+    "population_note": "The 2020 census count of this county, Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today, and its name is the county's.",
+    "sex_ratio_note": "273,030 men and 264,115 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census): the 56 nationalities (民族) of all 537,145 residents. 'Other ethnic groups' is the 11 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 470 people of the 26 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B6831419927027",
+    "level": "admin2",
+    "name": "Dongfengxian",
+    "parent": "CHN-Jilin Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 307302,
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "median_age": {
+      "value": 48.6,
+      "unit": "years",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 102.4,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one national survey of the languages people use, the State Language Commission's survey of language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before these figures and before the spread of Putonghua since, and it is not drawn on them."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 89.6,
+        "count": 275362
+      },
+      {
+        "group": "Manchu",
+        "pct": 9.1,
+        "count": 27970
+      },
+      {
+        "group": "Korean",
+        "pct": 0.8,
+        "count": 2469
+      },
+      {
+        "group": "Hui",
+        "pct": 0.2,
+        "count": 528
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.2,
+        "count": 684
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 289
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1: households, population and sex ratio by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5: population by age and sex, by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B6831419927027",
+    "aliases": [
+      "东丰县"
+    ],
+    "codes": {
+      "gb2260": "220421"
+    },
+    "population_note": "The 2020 census count of this county, Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today, and its name is the county's.",
+    "sex_ratio_note": "155,448 men and 151,854 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census): the 56 nationalities (民族) of all 307,302 residents. 'Other ethnic groups' is the 8 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 281 people of the 24 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B93882795004592",
+    "level": "admin2",
+    "name": "Dongliaoxian",
+    "parent": "CHN-Jilin Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 226185,
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "median_age": {
+      "value": 50.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 103.9,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one national survey of the languages people use, the State Language Commission's survey of language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before these figures and before the spread of Putonghua since, and it is not drawn on them."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 90.7,
+        "count": 205218
+      },
+      {
+        "group": "Manchu",
+        "pct": 8.3,
+        "count": 18660
+      },
+      {
+        "group": "Korean",
+        "pct": 0.7,
+        "count": 1571
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.2,
+        "count": 425
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 311
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1: households, population and sex ratio by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5: population by age and sex, by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B93882795004592",
+    "aliases": [
+      "东辽县"
+    ],
+    "codes": {
+      "gb2260": "220422"
+    },
+    "population_note": "The 2020 census count of this county, Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today, and its name is the county's.",
+    "sex_ratio_note": "115,248 men and 110,937 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census): the 56 nationalities (民族) of all 226,185 residents. 'Other ethnic groups' is the 9 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 302 people of the 21 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B35796401654187",
+    "level": "admin2",
+    "name": "Tonghuaxian",
+    "parent": "CHN-Jilin Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 175114,
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "median_age": {
+      "value": 49.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 101.9,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one national survey of the languages people use, the State Language Commission's survey of language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before these figures and before the spread of Putonghua since, and it is not drawn on them."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 83.5,
+        "count": 146171
+      },
+      {
+        "group": "Manchu",
+        "pct": 11.3,
+        "count": 19718
+      },
+      {
+        "group": "Korean",
+        "pct": 4.9,
+        "count": 8634
+      },
+      {
+        "group": "Hui",
+        "pct": 0.1,
+        "count": 103
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.1,
+        "count": 272
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 216
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1: households, population and sex ratio by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5: population by age and sex, by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B35796401654187",
+    "aliases": [
+      "通化县"
+    ],
+    "codes": {
+      "gb2260": "220521"
+    },
+    "population_note": "The 2020 census count of this county, Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today, and its name is the county's.",
+    "sex_ratio_note": "88,391 men and 86,723 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census): the 56 nationalities (民族) of all 175,114 residents. 'Other ethnic groups' is the 216 people of the 25 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B29335919456575",
+    "level": "admin2",
+    "name": "Huinanxian",
+    "parent": "CHN-Jilin Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 237113,
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "median_age": {
+      "value": 48.6,
+      "unit": "years",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 100.3,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one national survey of the languages people use, the State Language Commission's survey of language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before these figures and before the spread of Putonghua since, and it is not drawn on them."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 91.9,
+        "count": 217974
+      },
+      {
+        "group": "Korean",
+        "pct": 4.4,
+        "count": 10366
+      },
+      {
+        "group": "Manchu",
+        "pct": 3.2,
+        "count": 7520
+      },
+      {
+        "group": "Hui",
+        "pct": 0.3,
+        "count": 714
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.1,
+        "count": 361
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 178
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1: households, population and sex ratio by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5: population by age and sex, by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B29335919456575",
+    "aliases": [
+      "辉南县"
+    ],
+    "codes": {
+      "gb2260": "220523"
+    },
+    "population_note": "The 2020 census count of this county, Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today, and its name is the county's.",
+    "sex_ratio_note": "118,757 men and 118,356 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census): the 56 nationalities (民族) of all 237,113 residents. 'Other ethnic groups' is the 4 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 174 people of the 21 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B88902321202889",
+    "level": "admin2",
+    "name": "Liuhexian",
+    "parent": "CHN-Jilin Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 274414,
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "median_age": {
+      "value": 47.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 104.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one national survey of the languages people use, the State Language Commission's survey of language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before these figures and before the spread of Putonghua since, and it is not drawn on them."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 89.9,
+        "count": 246565
+      },
+      {
+        "group": "Korean",
+        "pct": 4.9,
+        "count": 13568
+      },
+      {
+        "group": "Manchu",
+        "pct": 4.8,
+        "count": 13061
+      },
+      {
+        "group": "Hui",
+        "pct": 0.2,
+        "count": 568
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.1,
+        "count": 320
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 332
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1: households, population and sex ratio by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5: population by age and sex, by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B88902321202889",
+    "aliases": [
+      "柳河县"
+    ],
+    "codes": {
+      "gb2260": "220524"
+    },
+    "population_note": "The 2020 census count of this county, Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today, and its name is the county's.",
+    "sex_ratio_note": "140,021 men and 134,393 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census): the 56 nationalities (民族) of all 274,414 residents. 'Other ethnic groups' is the 11 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 321 people of the 29 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B46908131998569",
+    "level": "admin2",
+    "name": "Jianshi",
+    "parent": "CHN-Jilin Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 169220,
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "median_age": {
+      "value": 50.3,
+      "unit": "years",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 100.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one national survey of the languages people use, the State Language Commission's survey of language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before these figures and before the spread of Putonghua since, and it is not drawn on them."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 87.9,
+        "count": 148812
+      },
+      {
+        "group": "Korean",
+        "pct": 5.9,
+        "count": 10015
+      },
+      {
+        "group": "Manchu",
+        "pct": 5.5,
+        "count": 9242
+      },
+      {
+        "group": "Hui",
+        "pct": 0.4,
+        "count": 706
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.2,
+        "count": 267
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 178
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1: households, population and sex ratio by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5: population by age and sex, by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B46908131998569",
+    "aliases": [
+      "集安市"
+    ],
+    "codes": {
+      "gb2260": "220582"
+    },
+    "population_note": "The 2020 census count of this county, Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today, and its name is the county's.",
+    "sex_ratio_note": "84,956 men and 84,264 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census): the 56 nationalities (民族) of all 169,220 residents. 'Other ethnic groups' is the 5 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 173 people of the 20 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B46409190043815",
+    "level": "admin2",
+    "name": "Meihekoushi",
+    "parent": "CHN-Jilin Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 509336,
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "median_age": {
+      "value": 46.6,
+      "unit": "years",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 101.4,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one national survey of the languages people use, the State Language Commission's survey of language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before these figures and before the spread of Putonghua since, and it is not drawn on them."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 88.9,
+        "count": 452612
+      },
+      {
+        "group": "Manchu",
+        "pct": 6.4,
+        "count": 32819
+      },
+      {
+        "group": "Korean",
+        "pct": 4.2,
+        "count": 21567
+      },
+      {
+        "group": "Hui",
+        "pct": 0.2,
+        "count": 1191
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.2,
+        "count": 749
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 398
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1: households, population and sex ratio by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-5: population by age and sex, by area",
+        "url": "http://tjj.jl.gov.cn/tjsj/qwfb/jlsdqcqgrkpcnj/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B46409190043815",
+    "aliases": [
+      "梅河口市"
+    ],
+    "codes": {
+      "gb2260": "220581"
+    },
+    "population_note": "The 2020 census count of this county, Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today, and its name is the county's.",
+    "sex_ratio_note": "256,387 men and 252,949 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census): the 56 nationalities (民族) of all 509,336 residents. 'Other ethnic groups' is the 12 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 386 people of the 29 nationalities too few to show at one decimal."
+  }
+]

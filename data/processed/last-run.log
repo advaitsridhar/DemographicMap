@@ -1,4 +1,248 @@
-  retry 1/2 after 2s :: https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml :: <urlopen error [Errno 110] Connection timed out>
-  retry 2/2 after 4s :: https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml :: <urlopen error [Errno 110] Connection timed out>
-== page https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml
-  failed: RuntimeError('GET failed after 2 retries: https://kosis.kr/statisticsList/mass/mass_list.jsp?org_id=101&tbl_id=DT_1PM1502&vw_cd=MT_ZTITLE&list_id=&process=statHtml')
+china_county_census: Jilin Provincial Bureau of Statistics, 吉林省第七次全国人口普查年鉴 (census yearbook of Jilin's seventh national census)
+    province   全省                       220000 
+    prefecture 长春市                      220100 
+    county     南关区                      220102 a district
+    county     宽城区                      220103 a district
+    county     朝阳区                      220104 a district
+    county     二道区                      220105 a district
+    county     绿园区                      220106 a district
+    county     双阳区                      220112 a district
+    county     九台区                      220113 a district
+    county     农安县                      220122 a zone in its prefecture
+    special    长春经济技术开发区                220171 
+    special    长春净月高新技术产业开发区            220172 
+    special    长春高新技术产业开发区              220173 
+    special    长春汽车经济技术开发区              220174 
+    special    长春莲花山生态旅游度假区             -      
+    county     榆树市                      220182 a zone in its prefecture
+    county     德惠市                      220183 a zone in its prefecture
+    county     公主岭市                     220184 a zone in its prefecture
+    prefecture 吉林市                      220200 
+    county     昌邑区                      220202 a district
+    county     龙潭区                      220203 a district
+    county     船营区                      220204 a district
+    county     丰满区                      220211 a district
+    county     永吉县                      220221 a zone in its prefecture
+    special    吉林经济开发区                  -      
+    special    吉林高新技术产业开发区              -      
+    special    吉林中国新加坡食品区               -      
+    county     蛟河市                      220281 a zone in its prefecture
+    county     桦甸市                      220282 a zone in its prefecture
+    county     舒兰市                      220283 a zone in its prefecture
+    county     磐石市                      220284 a zone in its prefecture
+    prefecture 四平市                      220300 
+    county     铁西区                      220302 a district
+    county     铁东区                      220303 a district
+    county     梨树县                      220322 bound to Lishuxian (17275852B99117401306703)
+    county     伊通满族自治县                  220323 no polygon bound to its code
+    county     双辽市                      220382 no polygon bound to its code
+    prefecture 辽源市                      220400 
+    county     龙山区                      220402 a district
+    county     西安区                      220403 a district
+    county     东丰县                      220421 bound to Dongfengxian (17275852B6831419927027)
+    county     东辽县                      220422 bound to Dongliaoxian (17275852B93882795004592)
+    prefecture 通化市                      220500 
+    county     东昌区                      220502 a district
+    county     二道江区                     220503 a district
+    county     通化县                      220521 bound to Tonghuaxian (17275852B35796401654187)
+    county     辉南县                      220523 bound to Huinanxian (17275852B29335919456575)
+    county     柳河县                      220524 bound to Liuhexian (17275852B88902321202889)
+    county     集安市                      220582 bound to Jianshi (17275852B46908131998569)
+    prefecture 白山市                      220600 
+    county     浑江区                      220602 a district
+    county     江源区                      220605 a district
+    county     抚松县                      220621 a zone outside it cut from its prefecture
+    county     靖宇县                      220622 a zone outside it cut from its prefecture
+    county     长白朝鲜族自治县                 220623 a zone outside it cut from its prefecture
+    county     临江市                      220681 a zone outside it cut from its prefecture
+    prefecture 松原市                      220700 
+    county     宁江区                      220702 a district
+    county     前郭尔罗斯蒙古族自治县              220721 a zone in its prefecture
+    county     长岭县                      220722 a zone in its prefecture
+    county     乾安县                      220723 a zone in its prefecture
+    special    吉林松原经济开发区                -      
+    county     扶余市                      220781 a zone in its prefecture
+    prefecture 白城市                      220800 
+    county     洮北区                      220802 a district
+    county     镇赉县                      220821 a zone in its prefecture
+    county     通榆县                      220822 a zone in its prefecture
+    special    吉林白城经济开发区                -      
+    county     洮南市                      220881 a zone in its prefecture
+    county     大安市                      220882 a zone in its prefecture
+    prefecture 延边朝鲜族自治州                 222400 
+    county     延吉市                      222401 a zone outside it cut from its prefecture
+    county     图们市                      222402 a zone outside it cut from its prefecture
+    county     敦化市                      222403 a zone outside it cut from its prefecture
+    county     珲春市                      222404 a zone outside it cut from its prefecture
+    county     龙井市                      222405 a zone outside it cut from its prefecture
+    county     和龙市                      222406 a zone outside it cut from its prefecture
+    county     汪清县                      222424 a zone outside it cut from its prefecture
+    county     安图县                      222426 a zone outside it cut from its prefecture
+    special    长白山管委会                   -      
+    special    长白山保护开发区池北区              -      
+    special    长白山保护开发区池西区              -      
+    special    长白山保护开发区池南区              -      
+    direct     梅河口市                     220581 bound to Meihekoushi (17275852B46409190043815)
+  Jilin Province: 9 prefectures, 60 county-level areas, 14 special; 8 bound; not bound: {'a district': 21, 'a zone in its prefecture': 17, 'no polygon bound to its code': 2, 'a zone outside it cut from its prefecture': 12}
+china_county_census: Jiangsu Provincial Bureau of Statistics, 江苏省2020年人口普查年鉴 (Jiangsu population census yearbook 2020)
+  retry 1/6 after 2s :: https://web.archive.org/web/20260118061629id_/https://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0104.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 2/6 after 4s :: https://web.archive.org/web/20260118061629id_/https://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0104.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 3/6 after 8s :: https://web.archive.org/web/20260118061629id_/https://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0104.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 4/6 after 16s :: https://web.archive.org/web/20260118061629id_/https://tj.jiangsu.gov.cn/2020pcnj/zk/html/A0104.xls :: <urlopen error [Errno 111] Connection refused>
+    province   江苏                       320000 
+    prefecture 南京市                      320100 
+    county     玄武区                      320102 a district
+    county     秦淮区                      320104 a district
+    county     建邺区                      320105 a district
+    county     鼓楼区                      320106 a district
+    county     浦口区                      320111 a district
+    county     栖霞区                      320113 a district
+    county     雨花台区                     320114 a district
+    county     江宁区                      320115 a district
+    county     六合区                      320116 a district
+    county     溧水区                      320117 a district
+    county     高淳区                      320118 a district
+    special    南京江北新区                   -      
+    prefecture 无锡市                      320200 
+    county     锡山区                      320205 a district
+    county     惠山区                      320206 a district
+    county     滨湖区                      320211 a district
+    county     梁溪区                      320213 a district
+    county     新吴区                      320214 a district
+    special    江苏无锡经济开发区                -      
+    county     江阴市                      320281 a zone in its prefecture
+    county     宜兴市                      320282 a zone in its prefecture
+    prefecture 徐州市                      320300 
+    county     鼓楼区                      320302 a district
+    county     云龙区                      320303 a district
+    county     贾汪区                      320305 a district
+    county     泉山区                      320311 a district
+    county     铜山区                      320312 a district
+    county     丰县                       320321 a zone in its prefecture
+    county     沛县                       320322 a zone in its prefecture
+    county     睢宁县                      320324 a zone in its prefecture
+    special    徐州经济技术开发区                -      
+    county     新沂市                      320381 a zone in its prefecture
+    county     邳州市                      320382 a zone in its prefecture
+    prefecture 常州市                      320400 
+    county     天宁区                      320402 a district
+    county     钟楼区                      320404 a district
+    county     新北区                      320411 a district
+    county     武进区                      320412 a district
+    county     金坛区                      320413 a district
+    special    江苏省常州市经济开发区              -      
+    county     溧阳市                      320481 a zone in its prefecture
+    prefecture 苏州市                      320500 
+    county     虎丘区                      320505 a district
+    county     吴中区                      320506 a district
+    county     相城区                      320507 a district
+    county     姑苏区                      320508 a district
+    county     吴江区                      320509 a district
+    special    苏州工业园区                   320576 
+    county     常熟市                      320581 a zone in its prefecture
+    county     张家港市                     320582 a zone in its prefecture
+    county     昆山市                      320583 a zone in its prefecture
+    county     太仓市                      320585 a zone in its prefecture
+    prefecture 南通市                      320600 
+    county     崇川区                      320613 a district
+    county     港闸区                      320611 a district
+    county     通州区                      320612 a district
+    county     如东县                      320623 a zone in its prefecture
+    special    南通经济技术开发区                -      
+    special    通州湾示范区                   -      
+    special    苏锡通科技产业园区                -      
+    county     启东市                      320681 a zone in its prefecture
+    county     如皋市                      320682 a zone in its prefecture
+    county     海门市                      320614 a zone in its prefecture
+    county     海安市                      320685 a zone in its prefecture
+    prefecture 连云港市                     320700 
+    county     连云区                      320703 a district
+    county     海州区                      320706 a district
+    county     赣榆区                      320707 a district
+    county     东海县                      320722 a zone in its prefecture
+    county     灌云县                      320723 a zone in its prefecture
+    county     灌南县                      320724 a zone in its prefecture
+    special    连云港经济技术开发区               -      
+    special    连云港高新技术产业开发区             -      
+    special    江苏连云港徐圩新区                -      
+    special    江苏省连云港市云台山风景名胜区          -      
+    prefecture 淮安市                      320800 
+    county     淮安区                      320803 a district
+    county     淮阴区                      320804 a district
+    county     清江浦区                     320812 a district
+    county     洪泽区                      320813 a district
+    county     涟水县                      320826 a zone in its prefecture
+    county     盱眙县                      320830 a zone in its prefecture
+    county     金湖县                      320831 a zone in its prefecture
+    special    淮安经济技术开发区                -      
+    special    工业园区                     -      
+    special    生态文旅区                    -      
+    special    苏淮高新区                    -      
+    prefecture 盐城市                      320900 
+    county     亭湖区                      320902 a district
+    county     盐都区                      320903 a district
+    county     大丰区                      320904 a district
+    county     响水县                      320921 a zone in its prefecture
+    county     滨海县                      320922 a zone in its prefecture
+    county     阜宁县                      320923 a zone in its prefecture
+    county     射阳县                      320924 a zone in its prefecture
+    county     建湖县                      320925 a zone in its prefecture
+    special    盐城经济技术开发区                -      
+    special    江苏省盐南高新区                 -      
+    county     东台市                      320981 a zone in its prefecture
+    prefecture 扬州市                      321000 
+    county     广陵区                      321002 a district
+    county     邗江区                      321003 a district
+    county     江都区                      321012 a district
+    county     宝应县                      321023 a zone in its prefecture
+    special    扬州经济技术开发区                -      
+    special    蜀冈瘦西湖景区                  -      
+    special    生态新城                     -      
+    county     仪征市                      321081 a zone in its prefecture
+    county     高邮市                      321084 a zone in its prefecture
+    prefecture 镇江市                      321100 
+    county     京口区                      321102 a district
+    county     润州区                      321111 a district
+    county     丹徒区                      321112 a district
+    special    镇江新区                     -      
+    special    江苏镇江高新区                  -      
+    county     丹阳市                      321181 a zone in its prefecture
+    county     扬中市                      321182 a zone in its prefecture
+    county     句容市                      321183 a zone in its prefecture
+    prefecture 泰州市                      321200 
+    county     海陵区                      321202 a district
+    county     高港区                      321203 a district
+    county     姜堰区                      321204 a district
+    special    泰州医药高新技术产业开发区            -      
+    county     兴化市                      321281 a zone in its prefecture
+    county     靖江市                      321282 a zone in its prefecture
+    county     泰兴市                      321283 a zone in its prefecture
+    prefecture 宿迁市                      321300 
+    county     宿城区                      321302 a district
+    county     宿豫区                      321311 a district
+    county     沭阳县                      321322 a zone in its prefecture
+    county     泗阳县                      321323 a zone in its prefecture
+    county     泗洪县                      321324 a zone in its prefecture
+    special    宿迁经济技术开发区                -      
+    special    宿迁市湖滨新区                  -      
+    special    苏州宿迁工业园区                 -      
+    special    宿迁市洋河新区                  -      
+  Jiangsu Province: 13 prefectures, 96 county-level areas, 28 special; 0 bound; not bound: {'a district': 55, 'a zone in its prefecture': 41}
+china_county_census: Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020)
+  retry 1/1 after 2s :: http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls :: HTTP Error 502: Bad Gateway
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0101.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0101.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/6 after 2s :: https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 2/6 after 4s :: https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 3/6 after 8s :: https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 4/6 after 16s :: https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 5/6 after 32s :: https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls :: <urlopen error [Errno 111] Connection refused>
+  retry 1/1 after 2s :: http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0104.xls :: HTTP Error 502: Bad Gateway
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
+  retry 1/1 after 2s :: http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls :: HTTP Error 502: Bad Gateway
+  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0105.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0105.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
+  Qinghai Province skipped: china_county_census: http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls could not be read (live: RuntimeError: GET failed after 1 retries: http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls; archive: RuntimeError: GET failed after 2 retries: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%)
+  wrote data/processed/china_county_census.json (40 kB)
+  wrote 8 county records to china_county_census.json
