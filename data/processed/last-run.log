@@ -1,7 +1,58 @@
-https://data.bengkuluprov.go.id/dataset/90762429-4dea-4c0d-9edf-7e51256ddfdd/resource/09b5f2b5-c81a-41b4-951f-9756399ef8e3/download/struktur-umur-semester-i-2026.xlsx: HTTP 200 10,679 B
-  sheets: ['Sheet1']
-  -- 'Sheet1': 13 rows
-      0 | STRUKTUR  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      1 | NO | WILAYAH | KODE | 00-04 (L) | 00-04 (P) | 00-04 (JM | 05-09 (L) | 05-09 (P) | 05-09 (JM | 10-14 (L) | 10-14 (P) | 10-14 (JM | 15-19 (L) | 15-19 (P) | 15-19 (JM | 20-24 (L) | 20-24 (P) | 20-24 (JM | 25-29 (L) | 25-29 (P) | 25-29 (JM | 30-34 (L) | 30-34 (P) | 30-34 (JM | 35-39 (L) | 35-39 (P) | 35-39 (JM | 40-44 (L) | 40-44 (P) | 40-44 (JM | 45-49 (L) | 45-49 (P) | 45-49 (JM | 50-54 (L) | 50-54 (P) | 50-54 (JM | 55-59 (L) | 55-59 (P) | 55-59 (JM | 60-64 (L) | 60-64 (P) | 60-64 (JM | 65-69 (L) | 65-69 (P) | 65-69 (JM | 70-74 (L) | 70-74 (P) | 70-74 (JM | >75 (L) | >75 (P) | >75 (JML)
-      2 |  | BENGKULU | 17 | 73823 | 68012 | 141835 | 94637 | 87779 | 182416 | 97728 | 91039 | 188767 | 96228 | 89936 | 186164 | 91883 | 88073 | 179956 | 89934 | 84989 | 174923 | 82190 | 79955 | 162145 | 83763 | 81716 | 165479 | 83811 | 81947 | 165758 | 79866 | 75389 | 155255 | 64436 | 63652 | 128088 | 53553 | 52486 | 106039 | 42955 | 42187 | 85142 | 32734 | 31594 | 64328 | 19189 | 18404 | 37593 | 20404 | 24878 | 45282
-      3 | 1 | BENGKULU  | 17.01 | 5616 | 5256 | 10872 | 7491 | 6847 | 14338 | 7836 | 7402 | 15238 | 8150 | 7613 | 15763 | 7616 | 7386 | 15002 | 6993 | 6537 | 13530 | 6226 | 5864 | 12090 | 6492 | 6291 | 12783 | 6682 | 6496 | 13178 | 6598 | 6269 | 12867 | 5865 | 5759 | 11624 | 4986 | 4849 | 9835 | 3850 | 3847 | 7697 | 2986 | 2981 | 5967 | 1743 | 1867 | 3610 | 2089 | 2957 | 5046
+probe_ckan: 1 host(s), timeout 20s
+  https://data.sumbarprov.go.id/ -> 200 text/html "Portal Data Sumbar"
+    /api/3/action/status_show -> 200 application/json CKAN 2.9.11
+    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 200: BUKU DATA KEPENDUDUKAN SEMESTER II TAHUN 2023 PROV. SUMATERA BARAT
+      metadata_modified: 2024-05-30T02:52:05.236001
+      author: Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat
+      organization: Dinas Kependudukan dan Pencatatan Sipil
+      resource 0e3e4a5c-956e-4770-b0b3-825f7a130666 [XLSX] datastore=True DISABILITAS - USIA SEKOLAH.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/0e3e4a5c-956e-4770-b0b3-825f7a130666/download/disabilitas-usia-sekolah.xlsx
+      resource c387481d-e66d-416e-8264-0ec97a499b23 [XLSX] datastore=True DISABILITAS - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/c387481d-e66d-416e-8264-0ec97a499b23/download/disabilitas-jenis-kelamin.xlsx
+      resource 71525c21-b607-4ea4-9bcb-ed3685dfd664 [XLSX] datastore=True GOLONGAN DARAH - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/71525c21-b607-4ea4-9bcb-ed3685dfd664/download/golongan-darah-jenis-kelamin.xlsx
+      resource 42ab0a95-1b27-4598-a6d9-adb4593702b1 [XLSX] datastore=True PEKERJAAN - USIA PRODUKTIF.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/42ab0a95-1b27-4598-a6d9-adb4593702b1/download/pekerjaan-usia-produktif.xlsx
+      resource 7a1a0815-abda-402f-ae6f-497a954f703a [XLSX] datastore=True PEKERJAAN - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/7a1a0815-abda-402f-ae6f-497a954f703a/download/pekerjaan-jenis-kelamin.xlsx
+      resource f85bef24-ed88-4251-b7c0-cb6806d69fab [XLSX] datastore=True PENDIDIKAN - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/f85bef24-ed88-4251-b7c0-cb6806d69fab/download/pendidikan-jenis-kelamin.xlsx
+      resource 418513f6-c45b-40fb-9151-61df45d5ee81 [XLSX] datastore=True AGAMA - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/418513f6-c45b-40fb-9151-61df45d5ee81/download/agama-jenis-kelamin.xlsx
+      resource 9f0d3481-1a91-4c2a-a6f2-498b9a44ef59 [XLSX] datastore=True STATUS KAWIN - PEKERJAAN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/9f0d3481-1a91-4c2a-a6f2-498b9a44ef59/download/status-kawin-pekerjaan.xlsx
+      resource a3129814-f6aa-45b8-ae15-b05b0a51ec06 [XLSX] datastore=True STATUS KAWIN - KELOMPOK UMUR.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/a3129814-f6aa-45b8-ae15-b05b0a51ec06/download/status-kawin-kelompok-umur.xlsx
+      resource 152d78fb-dd2b-479a-a0dc-9a5e97354d39 [XLSX] datastore=True STATUS KAWIN - AGAMA.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/152d78fb-dd2b-479a-a0dc-9a5e97354d39/download/status-kawin-agama.xlsx
+      resource 819e29d4-41d9-429a-a066-be2f4f42b312 [XLSX] datastore=True STATUS KAWIN - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/819e29d4-41d9-429a-a066-be2f4f42b312/download/status-kawin-jenis-kelamin.xlsx
+      resource 10173ef3-2f5c-4c87-b965-7ab20b007291 [XLSX] datastore=True USIA SEKOLAH.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/10173ef3-2f5c-4c87-b965-7ab20b007291/download/usia-sekolah.xlsx
+      resource be80ecec-d954-4fb5-9f60-cb556d1a6f06 [XLSX] datastore=True USIA MUDA, USIA PRODUKTIF DAN USIA TUA.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/be80ecec-d954-4fb5-9f60-cb556d1a6f06/download/usia-muda-usia-produktif-dan-usia-tua.xlsx
+      resource 1836ecaf-d521-43e0-b7bc-22f9dbc62978 [XLSX] datastore=True UMUR TUNGGAL.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/1836ecaf-d521-43e0-b7bc-22f9dbc62978/download/umur-tunggal.xlsx
+      resource e73c6550-30a1-45e3-abf3-0fcc7c285289 [XLSX] datastore=True STRUKTUR UMUR.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e73c6550-30a1-45e3-abf3-0fcc7c285289/download/struktur-umur.xlsx
+      resource f4c8a6e3-50bb-4661-9d06-0b8567b577d3 [XLSX] datastore=True STATUS HUBUNGAN KELUARGA.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/f4c8a6e3-50bb-4661-9d06-0b8567b577d3/download/status-hubungan-keluarga.xlsx
+      resource e487a844-aef3-44f2-b775-e89d07b9176b [XLSX] datastore=True KEPALA KELUARGA - STATUS KAWIN KEL. UMUR.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e487a844-aef3-44f2-b775-e89d07b9176b/download/kepala-keluarga-status-kawin-kel.-umur.xlsx
+      resource cf77cfbc-3878-4826-942a-4109e2aaa35d [XLSX] datastore=True KEPALA KELUARGA - UMUR TUNGGAL.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/cf77cfbc-3878-4826-942a-4109e2aaa35d/download/kepala-keluarga-umur-tunggal.xlsx
+      resource e871c367-a105-4994-9199-111a1dc7a841 [XLSX] datastore=True KEPALA KELUARGA - STATUS KAWIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e871c367-a105-4994-9199-111a1dc7a841/download/kepala-keluarga-status-kawin.xlsx
+      resource c3c6a63a-d848-408a-ab5f-a411ff4239d1 [XLSX] datastore=True KEPALA KELUARGA - PENDIDIKAN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/c3c6a63a-d848-408a-ab5f-a411ff4239d1/download/kepala-keluarga-pendidikan.xlsx
+      resource 04a70a85-2cad-4338-abb4-0eb047322db4 [XLSX] datastore=True KEPALA KELUARGA - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/04a70a85-2cad-4338-abb4-0eb047322db4/download/kepala-keluarga-jenis-kelamin.xlsx
+      resource 975a34ee-4c82-44c4-a660-2b23f415de50 [XLSX] datastore=True KEPADATAN PENDUDUK.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/975a34ee-4c82-44c4-a660-2b23f415de50/download/kepadatan-penduduk.xlsx
+      resource 6f91f52b-1907-41cb-986b-cfb2153bd1f9 [XLSX] datastore=True JUMLAH PENDUDUK - TINGKAT RW DAN RT.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/6f91f52b-1907-41cb-986b-cfb2153bd1f9/download/jumlah-penduduk-tingkat-rw-dan-rt.xlsx
+      resource 8ce4ce89-00ec-4718-9d77-98fd52204ec6 [XLSX] datastore=True KEPEMILIKAN KK.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/8ce4ce89-00ec-4718-9d77-98fd52204ec6/download/kepemilikan-kk.xlsx
+      resource 947a3808-5336-4235-a901-11720511f079 [XLSX] datastore=True JUMLAH PENDUDUK - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/947a3808-5336-4235-a901-11720511f079/download/jumlah-penduduk-jenis-kelamin.xlsx
+probe_ckan: 1 of 1 answered; 1 speak CKAN: data.sumbarprov.go.id
