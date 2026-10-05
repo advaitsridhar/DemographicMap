@@ -54,7 +54,7 @@ from collections import Counter, defaultdict
 from typing import Any
 
 from . import vietnam as vn
-from ._shared import PROCESSED, RAW, download, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, RAW, download, gap, log, record, write_json
 from .sea_common import age_sex, drawn, grouped, locate, single_median
 
 OUT = "vietnam_district.json"
@@ -116,6 +116,14 @@ PLACED: dict[tuple[str, str, str], tuple[str, str]] = {
 # Census districts no polygon draws: island districts the boundary file
 # leaves out. Reported, and written nowhere.
 UNDRAWN = {("Quảng Trị", "Cồn Cỏ"), ("Khánh Hòa", "Trường Sa")}
+# What the volume does not publish, said on the records it leaves without.
+DISTRICT_AGE_GAP = ("The 2019 census publishes ages by province and above only: the Completed "
+                    "Results volume gives five-year groups by province (Table 5) and single "
+                    "years by region (Table 4), and no table of ages for a district.")
+RELIGION_GAP = ("The 2019 census publishes religion for the whole country only: Table 3 of "
+                "the Completed Results volume (page 210) has no province or district rows.")
+DISTRICT_ETHNICITY_GAP = ("The 2019 census publishes ethnicity by province and above only "
+                          "(Completed Results, Table 2); no table gives a district's.")
 # The polygon drawn at the first level for one census district.
 FIRST_LEVEL = {"Côn Đảo": ("Bà Rịa–Vũng Tàu", "Côn Đảo")}
 
@@ -382,7 +390,9 @@ def district_records(bound: dict[str, list[dict[str, Any]]], admin2: list[dict[s
             f"VNM-D-{key(parts[0]['province'])}-{key(parts[0]['name'])}", names[sid],
             level="admin2", parent="VNM", country="VNM", match_by="shape_id", shape_id=sid,
             aliases=sorted({p["name"] for p in parts if key(p["name"]) != key(names[sid])}),
-            sources=src,
+            sources=src, median_age=gap(NOT_AVAILABLE, DISTRICT_AGE_GAP),
+            religion=gap(NOT_AVAILABLE, RELIGION_GAP),
+            ethnicity=gap(NOT_AVAILABLE, DISTRICT_ETHNICITY_GAP),
             **age_sex(median=None, men=men, women=women, year=YEAR, source=SOURCE_T1,
                       median_note="", ratio_note=f"Males per 100 females in {whose} "
                                                  "(Table 1).",
@@ -409,6 +419,7 @@ def province_records(units: dict[str, dict[str, Any]], admin1: list[dict[str, An
         out.append(record(
             f"VNM-AGE-{key(prov)}", shape["name"], level="admin1", parent="VNM", country="VNM",
             match_by="shape_id", shape_id=shape["id"], sources=src,
+            religion=gap(NOT_AVAILABLE, RELIGION_GAP),
             median_age={"value": median, "unit": "years", "year": YEAR, "source": SOURCE_T5},
             median_age_note=("Interpolated within the five-year age group that holds the "
                              "middle person, from the 2019 census's count of the province by "
@@ -433,6 +444,11 @@ def first_level_records(rows: list[dict[str, Any]], admin1: list[dict[str, Any]]
             country="VNM", match_by="shape_id", shape_id=shape[0]["id"],
             sources=[{"field": "population/sex_ratio", "name": SOURCE_T1, "url": vn.MAIN_PDF,
                       "year": YEAR, "license": vn.LICENCE}],
+            median_age=gap(NOT_AVAILABLE, f"{name} is a district of {prov}, drawn at the first "
+                                          f"level; {DISTRICT_AGE_GAP}"),
+            religion=gap(NOT_AVAILABLE, RELIGION_GAP),
+            ethnicity=gap(NOT_AVAILABLE, f"{name} is a district of {prov}, drawn at the first "
+                                         f"level; {DISTRICT_ETHNICITY_GAP}"),
             **age_sex(median=None, men=r["n"][1], women=r["n"][2], year=YEAR, source=SOURCE_T1,
                       median_note="", ratio_note=f"Males per 100 females in {whose} (Table 1).",
                       population=r["n"][0],

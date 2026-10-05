@@ -56,7 +56,7 @@ from collections import defaultdict
 from typing import Any
 
 from . import cod_ps
-from ._shared import PROCESSED, RAW, download, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, RAW, download, gap, log, record, write_json
 from .sea_cod_ps_age import bind_rows, spelled
 from .sea_common import age_sex, fold
 
@@ -82,6 +82,16 @@ TOTAL = re.compile(rf"^(?:Total|Toatl)\s+{NUM}\s+{NUM}\s+{NUM}\s+{NUM}\s+(?:-|[\
                    r"(?:-|[\d.]+)\s*$")
 HEADER = re.compile(r"^(?P<code>\d{2})\s+(?P<name>[A-Z][A-Za-z' .-]+?)\s*$")
 PROVINCE_ROW = re.compile(rf"^(?P<name>[A-Z][A-Za-z' .-]+?)\s+{NUM}\s+{NUM}\s+{NUM}\s*$")
+BELOW_PROVINCE = ("The 2019 census's final report tabulates each district by population and "
+                  "sex only (Tables P-01 to P-25), and {what}. Its 25 provincial reports, "
+                  "which tabulate below the province, set their text in a form that does not "
+                  "extract: Kep's 143 pages yield none of the words District, Religion or "
+                  "Mother.")
+DISTRICT_AGE_GAP = BELOW_PROVINCE.format(what="ages by province and above")
+DISTRICT_RELIGION_GAP = BELOW_PROVINCE.format(what="religion by province and above "
+                                                   "(Table 2.5.1)")
+DISTRICT_LANGUAGE_GAP = BELOW_PROVINCE.format(what="mother tongue for the country only "
+                                                   "(Table 2.7.1)")
 HOUSEHOLD_NOTE = ("the census's district tables count the population of normal or regular "
                   "households, leaving out the 1.6% of the country in institutions, homeless, on "
                   "boats or in transit, which it counts by province only")
@@ -336,6 +346,9 @@ def district_records(annex, placed, broken, adm2_rows) -> list[dict[str, Any]]:
         out.append(record(
             f"KHM-D-{pcode}", unit["name"], level="admin2", parent="KHM", country="KHM",
             match_by="shape_id", shape_id=unit["id"], codes={"pcode": pcode}, sources=src,
+            median_age=gap(NOT_AVAILABLE, DISTRICT_AGE_GAP),
+            religion=gap(NOT_AVAILABLE, DISTRICT_RELIGION_GAP),
+            language=gap(NOT_AVAILABLE, DISTRICT_LANGUAGE_GAP),
             **age_sex(median=None, men=m, women=f, year=YEAR, source=SOURCE_DISTRICT,
                       median_note="", ratio_note=f"Males per 100 females in {whose} (Tables "
                                                  "P-01 to P-25).",
