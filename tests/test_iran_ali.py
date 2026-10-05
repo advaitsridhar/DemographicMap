@@ -530,10 +530,10 @@ class ItIsRegistered(unittest.TestCase):
         table is silent, and every record still says it.
         """
         import common
-        self.assertNotIn("language", common.NOT_COLLECTED_POLICY["IRN"])
-        # Ethnicity is untouched: nobody has measured it independently, so
-        # the stronger declaration is still the right one there.
-        self.assertIn("ethnicity", common.NOT_COLLECTED_POLICY["IRN"])
+        self.assertNotIn("language", common.NOT_COLLECTED_POLICY.get("IRN", {}))
+        # Ethnicity is not this test's business: the 2016 census's citizenship
+        # stands for it under the owner's rule of 19 September 2026 (see
+        # iran_census.py), and its policy entry goes or stays with that file.
         self.assertIn("no Iranian census has ever asked it",
                       be.ADAPTER_GAPS["IRN"])
         records = json.loads(PROCESSED.read_text())
