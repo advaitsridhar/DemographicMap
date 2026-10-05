@@ -1,100 +1,114 @@
-pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
-    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
-    and its 31 districts are Table 9's districts
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
-    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
-    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 36 districts add up to the province
-    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
-    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
-    and its 34 districts are Table 9's districts
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
-    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
-    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
-    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
-    and its 22 districts are Table 9's districts
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
-    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
-    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
-    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
-    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
-    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
-    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
-    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 34 districts add up to the province
-    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
-    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
-    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
-    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
-    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
-    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
-    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
-    and its 27 districts are Table 9's districts
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's mother tongues sum to its own printed total
-    and the 1 districts add up to the province
-    and its 1 districts are Table 9's districts
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  6 districts say what their Other language holds, and 1 what their Other religion does
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  Azad Jammu and Kashmir, from the territory's own yearbook
-    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-    Table 15.24 named on page 15 with no rows under it: the contents, not the table
-    Table 15.24 on page 209: 10 districts
-    all 7 columns sum to the printed AJ&K row
-    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
-    Table 15.33 named on page 16 with no heading row under it: the contents, not the table
-    Table 15.33 on page 213: 10 districts, 8 languages
-    Mirpur: Table 15.33 sums to 97%, rescaled to 100 across its own languages
-    AJ&K languages: Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%
-    AJ&K Table 15.8: the row labelled 61 under 60-64 is age 62 by its place
-AJ&K Table 15.8 ages 25-29: the single years add up to 140,285, the group row says 141,285
+probe_pdf: https://nis.gov.kh/wp-content/uploads/2025/09/Final-General-Population-Census-2019-English.pdf
+  26,586,966 bytes
+  304 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139882911842128), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139882911842128), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139882911842128), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139882911842128), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139882911842128), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139882911842128), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 348 pages, 9 mention ['Sdach', 'Khang']
+=== front matter ===
+
+
+=== pages mentioning ['Sdach', 'Khang'] (first 6) ===
+
+--- page 180 ----------------------------------------------------
+20209 Bansay Traeng 2,077 8,438 4,122 4,316 95.5 4.1
+20210 Rung Chrey 1,936 8,718 4,205 4,513 93.2 4.5
+203 Krong Bat Dambang 26,890 119,251 56,723 62,528 90.7 4.4
+20301 Tuol Ta Aek 3,133 14,138 6,649 7,489 88.8 4.5
+20302 Preaek Preah Sdach 2,509 11,040 5,310 5,730 92.7 4.4
+20303 Rotanak 3,343 14,777 6,994 7,783 89.9 4.4
+20304 Chamkar Samraong 3,105 14,242 6,741 7,501 89.9 4.6
+20305 Sla Kaet 1,717 7,502 3,483 4,019 86.7 4.4
+20306 Kdol Daun Teav 1,954 8,487 4,073 4,414 92.3 4.3
+
+--- page 193 ----------------------------------------------------
+70109 Praphnum 1,304 5,283 2,539 2,744 92.5 4.1
+70110 Samlanh 1,646 6,132 2,853 3,279 87.0 3.7
+70111 Tani 1,989 7,786 3,705 4,081 90.8 3.9
+702 Banteay Meas 20,683 78,828 37,543 41,285 90.9 3.8
+70201 Banteay Meas Khang Kaeut 1,888 6,792 3,185 3,607 88.3 3.6
+70202 Banteay Meas Khang lech 1,567 5,841 2,822 3,019 93.5 3.7
+70203 Prey Tonle 655 2,546 1,259 1,287 97.8 3.9
+70204 Samraong Kraom 1,481 5,716 2,637 3,079 85.6 3.9
+70205 Samraong Leu 1,349 5,260 2,430 2,830 85.9 3.9
+70206 Sdach Kong Khang
+Cheung
+1,375 5,228 2,561 2,667 96.0 3.8
+70207 Sdach Kong Khang lech 1,145 4,634 2,218 2,416 91.8 4.0
+70208 Sdach Kong Khang Tboung 730 2,925 1,466 1,459 100.5 4.0
+70209 Tnoat Chong Srang 1,606 6,465 3,094 3,371 91.8 4.0
+70210 Trapeang Sala Khang Kaeut 1,062 4,087 1,997 2,090 95.6 3.8
+70211 Trapeang Sala Khang Lech 1,151 4,294 2,011 2,283 88.1 3.7
+70212 Tuk Meas Khang Kaeut 1,120 4,285 2,039 2,246 90.8 3.8
+70213 Tuk Meas Khang Lech 2,581 10,056 4,812 5,244 91.8 3.9
+70214 Voat Angk Khang Cheung 1,565 5,306 2,433 2,873 84.7 3.4
+70215 Voat Angk Khang Tboung 1,408 5,393 2,579 2,814 91.6 3.8
+Based on normal or regular households.
+163
+
+--- page 194 ----------------------------------------------------
+70407 Trapeang Reang 1,839 7,494 3,554 3,940 90.2 4.1
+705 Dang Tong 14,205 56,025 26,810 29,215 91.8 3.9
+70501 Damnak Sokram 1,052 3,847 1,784 2,063 86.5 3.7
+70502 Dang Tong 2,627 10,233 4,803 5,430 88.5 3.9
+70503 Khcheay Khang Cheung 1,117 4,497 2,136 2,361 90.5 4.0
+70504 Khcheay Khang Tboung 1,187 4,632 2,153 2,479 86.8 3.9
+70505 Mean Ritth 1,281 5,017 2,406 2,611 92.1 3.9
+70506 Srae Chea Khang Cheung 1,147 4,391 2,135 2,256 94.6 3.8
+70507 Srae Chea Khang Tboung 714 3,091 1,516 1,575 96.3 4.3
+70508 Totung 1,716 6,437 3,061 3,376 90.7 3.8
+70509 Angkor Meas 1,750 7,108 3,483 3,625 96.1 4.1
+70510 L'ang 1,614 6,772 3,333 3,439 96.9 4.2
+Based on normal or regular households.
+
+--- page 195 ----------------------------------------------------
+Ratio
+Household
+SizeTotal Male Female
+706 Kampong Trach 20,478 86,444 42,024 44,420 94.6 4.2
+70601 Boeng Sala Khang Cheung 1,649 7,181 3,471 3,710 93.6 4.4
+70602 Boeng Sala Khang Tboung 1,623 7,108 3,543 3,565 99.4 4.4
+70603 Damnak Kantuot Khang Cheung 1,533 6,111 2,952 3,159 93.4 4.0
+70604 Damnak Kantuot Khang Tboung 1,862 8,051 3,915 4,136 94.7 4.3
+70605 Kampong Trach Khang Kaeut 1,954 8,550 4,173 4,377 95.3 4.4
+70606 Kampong Trach Khang Lech 1,563 6,999 3,393 3,606 94.1 4.5
+70607 Prasat Phnum Khyang 632 2,587 1,244 1,343 92.6 4.1
+70608 Phnum Prasat 1,160 4,614 2,293 2,321 98.8 4.0
+70609 Angk Sophy 1,090 4,319 2,093 2,226 94.0 4.0
+70612 Preaek Kroes 1,741 7,233 3,497 3,736 93.6 4.2
+70613 Ruessei Srok Khang Kaeut 1,098 4,395 2,130 2,265 94.0 4.0
+70614 Ruessei Srok Khang Lech 2,433 10,627 5,206 5,421 96.0 4.4
+70615 Svay Tong Khang Cheung 920 3,664 1,782 1,882 94.7 4.0
+70616 Svay Tong Khang Tboung 1,220 5,005 2,332 2,673 87.2 4.1
+707 Tuek Chhou 24,631 110,104 54,070 56,034 96.5 4.5
+70701 Boeng Tuk 1,307 5,674 2,761 2,913 94.8 4.3
+70702 Chum Kriel 1,305 5,706 2,745 2,961 92.7 4.4
+70703 Kampong Kraeng 1,668 7,519 3,670 3,849 95.3 4.5
+
+--- page 201 ----------------------------------------------------
+90102 Kandaol 861 3,623 1,799 1,824 98.6 4.2
+90103 Ta Noun 432 1,652 829 823 100.7 3.8
+90104 Thma Sa 1,915 8,396 4,272 4,124 103.6 4.4
+902 Kiri Sakor 1,524 6,179 3,187 2,992 106.5 4.1
+90201 Kaoh Sdach 835 3,438 1,739 1,699 102.4 4.1
+90202 Phnhi Meas 387 1,567 833 734 113.5 4.0
+90203 Preaek Khsach 302 1,174 615 559 110.0 3.9
+903 Kaoh Kong 1,806 7,379 3,912 3,467 112.8 4.1
+90301 Chrouy Pras 370 1,484 806 678 118.9 4.0
+
+--- page 210 ----------------------------------------------------
+140202 Doun Koeng 2,002 8,292 3,925 4,367 89.9 4.1
+140203 Kranhung 3,202 12,241 5,811 6,430 90.4 3.8
+140204 Krabau 2,649 10,379 4,921 5,458 90.2 3.9
+140205 Seang Khveang 2,665 9,636 4,429 5,207 85.1 3.6
+140206 Smaong Khang Cheung 4,009 14,944 7,017 7,927 88.5 3.7
+140207 Smaong Khang Tboung 3,167 11,334 5,262 6,072 86.7 3.6
+140208 Trabaek 1,455 5,518 2,520 2,998 84.1 3.8
+1403 Kampong Trabaek 29,178 115,119 53,949 61,170 88.2 3.9
+140301 Ansaong 1,787 7,641 3,613 4,028 89.7 4.3
+140302 Cham 2,900 11,613 5,464 6,149 88.9 4.0
+
+... and 3 further pages match; re-run with a narrower --terms to see them.
