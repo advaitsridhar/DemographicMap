@@ -294,6 +294,59 @@ class OnItsSide(unittest.TestCase):
         self.assertNotIn("Barshong", annex["gewogs"])
         self.assertTrue(any("XBARSHONG" in p for p in annex["problems"]))
 
+    def test_a_label_a_line_away_from_its_figures(self):
+        first, second = self.pages()
+        at_ = next(i for i, r in enumerate(first) if r[0][2] == "4-0")
+        label, figures = first[at_][:1], first[at_][1:]
+        first[at_:at_ + 1] = [label, figures]
+        singles, totals = single_years()
+        annex = bt.annex_ages([singles, first, second], ["Barshong", "Kilkhorthang"])
+        self.assertEqual(annex["gewogs"]["Barshong"]["persons"][0], MALES[0] + FEMALES[0])
+        _reason, _note, gewogs = checked(annex, table21(totals))
+        self.assertEqual(gewogs, {"Barshong": None, "Kilkhorthang": None})
+
+    def test_a_heading_with_a_dash_is_still_a_heading(self):
+        # An unrecognised name in capitals must close the gewog before it,
+        # whatever punctuation it carries: "NA–RANG" with an en dash.
+        first, second = self.pages()
+        first = [[(x0, x1, "GNAR–AN" if t == "KILKHORTHANG"[::-1] else t) for x0, x1, t in r]
+                 for r in first]
+        singles, _totals = single_years()
+        annex = bt.annex_ages([singles, first, second], ["Barshong", "Kilkhorthang"])
+        self.assertNotIn("Kilkhorthang", annex["gewogs"])
+        self.assertEqual(set(annex["gewogs"]), {"Barshong"})
+
+    def test_table_21_chooses_between_two_blocks_under_one_name(self):
+        first, second = self.pages()
+        # Kilkhorthang's heading unread: its block falls to Barshong as well.
+        first = [[(x0, x1, "kilkhorthang"[::-1] if t == "KILKHORTHANG"[::-1] else t)
+                  for x0, x1, t in r] for r in first]
+        singles, totals = single_years()
+        annex = bt.annex_ages([singles, first, second], ["Barshong", "Kilkhorthang"])
+        self.assertTrue(annex["alternates"].get("Barshong"))
+        read = table21(totals)
+        block, why, _note = bt.choose_gewog("Barshong", annex, read, False)
+        self.assertIsNone(why)
+        self.assertEqual(block["male"], series(MALES))
+
+    def test_a_short_table_21_admits_a_little_more_and_says_so(self):
+        first, second = self.pages()
+        singles, totals = single_years()
+        annex = bt.annex_ages([singles, first, second], ["Barshong", "Kilkhorthang"])
+        read = table21(totals)
+        m, f = read.sexes["Barshong"]
+        read.gewogs["Barshong"] -= 2
+        read.sexes["Barshong"] = (m - 1, f - 1)
+        _block, why, _note = bt.choose_gewog("Barshong", annex, read, False)
+        self.assertIn("Table 2.1", why)
+        block, why, note = bt.choose_gewog("Barshong", annex, read, True)
+        self.assertIsNone(why)
+        self.assertIn("2 more than", note)
+        # Never fewer than Table 2.1, and never by more than the limit.
+        read.gewogs["Barshong"] += 50
+        _block, why, _note = bt.choose_gewog("Barshong", annex, read, True)
+        self.assertIsNotNone(why)
+
     def test_a_figure_under_no_column_spoils_the_page(self):
         first, second = self.pages()
         first[5].append((300.0, 304.0, "9"))

@@ -1003,62 +1003,134 @@ def is_rotated_a27(rows) -> bool:
                for _a, _b, text in cells)
 
 
+def is_numberish(word: str) -> bool:
+    """A figure as the PDF gives it on a page on its side: reversed, or a dash."""
+    return bool(NUMBER.match(word[::-1])) or word in ("-", "–")
+
+
+def value_of(word: str) -> int:
+    return 0 if word in ("-", "–") else int(word[::-1].replace(",", ""))
+
+
+def is_heading(word: str) -> bool:
+    """A gewog's or town's name: capitals only, whatever punctuation is in it."""
+    letters = [c for c in word if c.isalpha()]
+    return len(letters) >= 2 and all(c.isupper() for c in letters)
+
+
 def rotated_page(rows, names: dict[str, str], carried: Any
-                 ) -> tuple[dict[str, dict[str, list[int]]], Any, list[str]]:
+                 ) -> tuple[dict[str, list[dict[str, list[int]]]], Any, list[str]]:
     """The gewogs whose All Chiwogs columns stand on one page printed on its side.
 
     ``carried`` is the gewog the page before ended under (a name, None for a
     heading Table 2.1 does not know, or the empty string for none yet).
-    Returns the gewogs read here, the gewog the page ends under, and what was
+    Returns, for each gewog read here, every All Chiwogs block found under its
+    name (more than one only where a heading went unrecognised; the checks
+    against Table 2.1 choose), the gewog the page ends under, and what was
     not understood.
+
+    An age group's label and its figures can come out a line apart, and a
+    row's figures in two lines. A line of figures and nothing else is joined
+    to the age row beside it, but only where every figure stands under one of
+    the Total row's columns and none collides with a figure the row has.
     """
     problems: list[str] = []
-    series: dict[int, list[tuple[float, int]]] = {}
-    labels: list[tuple[float, str, int]] = []
-    for at, cells in enumerate(rows):
+    kinds: list[list[Any]] = []          # per row: [kind, payload]
+    for cells in rows:
         words = [t for _a, _b, t in cells]
         if any(w in PAGE_FURNITURE for w in words):
+            kinds.append(["skip", None])
             continue
-        group = None
-        for k, (_x0, _x1, word) in enumerate(cells):
+        found = None
+        for k, (x0, _x1, word) in enumerate(cells):
             index = group_index(word[::-1])
+            if index is None:
+                continue
             rest = cells[k + 1:]
-            if index is not None and rest and all(
-                    NUMBER.match(t[::-1]) or t in ("-", "–") for _a, _b, t in rest):
-                group = (index, rest)
+            if all(is_numberish(t) for _a, _b, t in rest):
+                found = (index, x0, list(rest))
                 break
-        if group:
-            index, rest = group
-            if index in series:
-                problems.append(f"age group {index} printed twice")
-            series[index] = [(x0, 0 if t in ("-", "–") else
-                              int(t[::-1].replace(",", ""))) for x0, _x1, t in rest]
-            continue
-        for x0, _x1, word in cells:
-            labels.append((x0, word[::-1], at))
-    if set(series) != set(range(len(GEWOG_GROUPS) + 1)):
-        if series:
-            problems.append(f"age groups {sorted(series)} on a page of the table")
+        if found:
+            kinds.append(["age", found])
+        elif cells and all(is_numberish(t) for _a, _b, t in cells):
+            kinds.append(["figures", list(cells)])
+        else:
+            kinds.append(["labels", cells])
+
+    def neighbours(at: int):
+        for near in (at - 1, at + 1, at - 2, at + 2):
+            if 0 <= near < len(kinds):
+                yield near
+
+    total = len(GEWOG_GROUPS)
+    total_rows = [k for k, (kind, p) in enumerate(kinds) if kind == "age" and p[0] == total]
+    if len(total_rows) != 1:
+        if any(kind == "age" for kind, _p in kinds):
+            problems.append(f"{len(total_rows)} Total rows on a page of the table")
         return {}, carried, problems
-    columns = sorted(x0 for x0, _v in series[len(GEWOG_GROUPS)])
-    table: dict[int, list[int]] = {}           # column -> its 17 figures
-    for index, cells in series.items():
-        for x0, value in cells:
-            near = min(range(len(columns)), key=lambda c: abs(columns[c] - x0))
-            if abs(columns[near] - x0) > COLUMN_TOLERANCE:
-                problems.append(f"a figure at x={x0:.0f} under no column")
-                return {}, carried, problems
-            table.setdefault(near, [0] * (len(GEWOG_GROUPS) + 1))
-            table[near][index] = value
+    at_total = total_rows[0]
+    if not kinds[at_total][1][2]:
+        # The Total row's figures a line away from its label.
+        for near in neighbours(at_total):
+            kind, payload = kinds[near]
+            if kind == "figures" and min(c[0] for c in payload) > kinds[at_total][1][1]:
+                kinds[at_total][1][2].extend(payload)
+                kinds[near] = ["joined", None]
+                break
+    columns = sorted(c[0] for c in kinds[at_total][1][2])
+    if not columns:
+        problems.append("a Total row with no figures")
+        return {}, carried, problems
 
     def column_at(x0: float) -> int | None:
         near = min(range(len(columns)), key=lambda c: abs(columns[c] - x0))
         return near if abs(columns[near] - x0) <= COLUMN_TOLERANCE else None
 
+    for at, (kind, payload) in enumerate(kinds):
+        if kind != "figures" or any(column_at(c[0]) is None for c in payload):
+            continue
+        for near in neighbours(at):
+            if kinds[near][0] != "age":
+                continue
+            _index, label_x, cells = kinds[near][1]
+            mine = {column_at(c[0]) for c in cells}
+            if min(c[0] for c in payload) > label_x and not (
+                    {column_at(c[0]) for c in payload} & mine):
+                cells.extend(payload)
+                kinds[at] = ["joined", None]
+                break
+    series: dict[int, list[tuple[float, int]]] = {}
+    labels: list[tuple[float, str, int]] = []
+    for at, (kind, payload) in enumerate(kinds):
+        if kind == "age":
+            index, _label_x, cells = payload
+            if index in series:
+                problems.append(f"age group {index} printed twice")
+                return {}, carried, problems
+            series[index] = [(x0, value_of(t)) for x0, _x1, t in cells]
+        elif kind in ("labels", "figures"):
+            labels += [(x0, word[::-1], at) for x0, _x1, word in payload]
+    if set(series) != set(range(total + 1)):
+        problems.append(f"age groups {sorted(series)} on a page of the table")
+        return {}, carried, problems
+    table: dict[int, list[int | None]] = {}    # column -> its 17 figures
+    for index, cells in series.items():
+        for x0, value in cells:
+            near = column_at(x0)
+            if near is None:
+                problems.append(f"a figure at x={x0:.0f} under no column")
+                return {}, carried, problems
+            column = table.setdefault(near, [None] * (total + 1))
+            if column[index] is not None:
+                problems.append(f"two figures for age group {index} at x={x0:.0f}")
+                return {}, carried, problems
+            column[index] = value
+    filled = {c: [0 if v is None else v for v in values] for c, values in table.items()}
+
     # Names in capitals in a column with no figures: the gewogs' and towns'.
     heads: dict[float, list[tuple[int, str]]] = {}
     for x0, word, at in labels:
-        if column_at(x0) is None and re.fullmatch(r"[A-Z][A-Z'\-]+", word):
+        if column_at(x0) is None and is_heading(word):
             key = next((k for k in heads if abs(k - x0) <= 1.5), x0)
             heads.setdefault(key, []).append((at, word))
     headings: list[tuple[float, Any, str]] = []
@@ -1069,7 +1141,7 @@ def rotated_page(rows, names: dict[str, str], carried: Any
         headings.append((x0, name, upward))
     alls = sorted({column_at(x0) for x0, word, _at in labels
                    if word == "All" and column_at(x0) is not None})
-    found: dict[str, dict[str, list[int]]] = {}
+    found: dict[str, list[dict[str, list[int]]]] = {}
     for col in alls:
         if not any(word == "Chiwogs" and column_at(x0) == col
                    for x0, word, _at in labels):
@@ -1088,11 +1160,9 @@ def rotated_page(rows, names: dict[str, str], carried: Any
             problems.append("an All Chiwogs column under "
                             + (repr(left[-1][2]) if left else "no heading"))
             continue
-        if owner in found:
-            problems.append(f"two All Chiwogs columns for {owner}")
-            continue
-        found[owner] = {"persons": table.get(col), "male": table.get(col + 1),
-                        "female": table.get(col + 2)}
+        found.setdefault(owner, []).append(
+            {"persons": filled.get(col), "male": filled.get(col + 1),
+             "female": filled.get(col + 2)})
     # A heading Table 2.1 does not name -- a town's -- is only a problem where
     # it owns an All Chiwogs column, and that is reported above.
     ending = headings[-1][1] if headings else carried
@@ -1115,6 +1185,7 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
     gewogs: dict[str, dict[str, list[int]]] = {}
     placed: list[int] = []
     problems: list[str] = []
+    alternates: dict[str, list[dict[str, list[int]]]] = {}
     rotated = 0
     mode: str | None = None
     current: str | None = None
@@ -1129,11 +1200,15 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
             mode = "rotated"
             found, carried, trouble = rotated_page(rows, names, carried)
             problems += [f"Table A2.7 on its side: {p}" for p in trouble]
-            for name, block in found.items():
-                if name in gewogs:
-                    problems.append(f"Table A2.7 prints {name} twice")
-                    continue
-                gewogs[name] = block
+            for name, blocks in found.items():
+                for block in blocks:
+                    if name in gewogs:
+                        problems.append(f"Table A2.7 on its side: more than one All "
+                                        f"Chiwogs block under {name}; Table 2.1 "
+                                        "decides which")
+                        alternates.setdefault(name, []).append(block)
+                    else:
+                        gewogs[name] = block
             continue
         if mode == "rotated":
             mode = None
@@ -1226,7 +1301,8 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
                 if words[0] == "Female":
                     pending = None
     return {"single": single, "all_ages": all_ages, "gewogs": gewogs,
-            "placed": placed, "rotated": rotated, "problems": problems}
+            "alternates": alternates, "placed": placed, "rotated": rotated,
+            "problems": problems}
 
 
 def single_outcome(dzongkhag: str, annex: dict[str, Any], read: "Read",
@@ -1278,9 +1354,21 @@ def single_outcome(dzongkhag: str, annex: dict[str, Any], read: "Read",
     return None, note
 
 
-def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read"
-                  ) -> str | None:
-    """A gewog's All Chiwogs block against itself and its Table 2.1 row."""
+# How far a gewog's Table A2.7 may exceed its Table 2.1 row, in a report whose
+# Table 2.1 is known to be short of its own A2.6 (see the section comment):
+# enough for the people that table leaves out, never enough for another
+# gewog's block to pass for this one's.
+EXCESS_LIMIT = 0.03
+
+
+def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read",
+                  excess_ok: bool = False) -> str | None:
+    """A gewog's All Chiwogs block against itself and its Table 2.1 row.
+
+    ``excess_ok`` admits a block counting up to EXCESS_LIMIT more people, and
+    of each sex, than Table 2.1 -- never fewer -- in a report whose Table 2.1
+    is short of its A2.6.
+    """
     if rows is None:
         return ("this reader found no All Chiwogs block under the gewog's name in "
                 "the report's Table A2.7")
@@ -1295,14 +1383,43 @@ def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read"
         if rows["male"][i] + rows["female"][i] != n:
             return ("Table A2.7's male and female figures for the gewog do not "
                     "make its persons in every age group")
-    if rows["persons"][-1] != read.gewogs[name]:
-        return (f"Table A2.7 counts {rows['persons'][-1]:,} people in the gewog and "
-                f"Table 2.1 {read.gewogs[name]:,}")
-    if (rows["male"][-1], rows["female"][-1]) != tuple(read.sexes[name]):
-        return (f"Table A2.7 counts {rows['male'][-1]:,} males and "
-                f"{rows['female'][-1]:,} females in the gewog, Table 2.1 "
-                f"{read.sexes[name][0]:,} and {read.sexes[name][1]:,}")
-    return None
+    got = (rows["persons"][-1], rows["male"][-1], rows["female"][-1])
+    want = (read.gewogs[name], *read.sexes[name])
+    if got == want:
+        return None
+    if excess_ok and all(w <= g <= w * (1 + EXCESS_LIMIT) for g, w in zip(got, want)):
+        return None
+    if got[0] != want[0]:
+        return (f"Table A2.7 counts {got[0]:,} people in the gewog and Table 2.1 "
+                f"{want[0]:,}")
+    return (f"Table A2.7 counts {got[1]:,} males and {got[2]:,} females in the gewog, "
+            f"Table 2.1 {want[1]:,} and {want[2]:,}")
+
+
+def choose_gewog(name: str, annex: dict[str, Any], read: "Read", excess_ok: bool
+                 ) -> tuple[dict[str, list[int]] | None, str | None, str]:
+    """The gewog's block that passes every check: (block, reason, note).
+
+    More than one block stands under a name only where a heading on a page
+    printed on its side went unrecognised; the one whose totals and sexes are
+    the gewog's Table 2.1 row is the gewog's, and if none is, none is used.
+    """
+    blocks = [annex["gewogs"].get(name), *annex.get("alternates", {}).get(name, [])]
+    reason = None
+    for block in blocks:
+        why = gewog_outcome(name, block, read, excess_ok)
+        if why is None:
+            people = block["persons"][-1]
+            note = ""
+            if people != read.gewogs[name]:
+                note = (f" Table A2.7 counts {people:,} people here, "
+                        f"{people - read.gewogs[name]:,} more than the "
+                        f"{read.gewogs[name]:,} of Table 2.1 shown as the population: "
+                        "this report's Table 2.1 is short of its own age tables "
+                        "(see the dzongkhag).")
+            return block, None, note
+        reason = reason or why
+    return None, reason, ""
 
 
 def annex_debug(pages, gewog_names, *, limit: int = 90) -> list[str]:
@@ -1323,7 +1440,8 @@ def annex_debug(pages, gewog_names, *, limit: int = 90) -> list[str]:
     for number, rows in enumerate(pages, 1):
         if is_rotated_a27(rows):
             found, carried, trouble = rotated_page(rows, names, carried)
-            out.append(f"p{number} ON ITS SIDE: {sorted(found)}; ends under "
+            out.append(f"p{number} ON ITS SIDE: "
+                       f"{sorted((n, len(b)) for n, b in found.items())}; ends under "
                        f"{carried!r}; {trouble}")
             for cells in rows:
                 words = [t for _a, _b, t in cells]
@@ -1382,7 +1500,7 @@ def dzongkhag_median(annex: dict[str, Any], note: str = "") -> dict[str, Any]:
     }
 
 
-def gewog_median(rows: dict[str, list[int]]) -> dict[str, Any]:
+def gewog_median(rows: dict[str, list[int]], note: str = "") -> dict[str, Any]:
     from .south_asia_common import median_grouped
 
     groups = [(low, high, n) for (low, high), n in zip(GEWOG_GROUPS, rows["persons"])]
@@ -1396,7 +1514,7 @@ def gewog_median(rows: dict[str, list[int]]) -> dict[str, Any]:
             f"{rows['persons'][-1]:,} people, interpolated within the five-year "
             "group that holds the middle person; the census publishes nothing "
             "finer for a gewog. As with the head count, the gewog's own people, "
-            "towns apart."),
+            "towns apart." + note),
     }
 
 
@@ -1500,8 +1618,10 @@ def main() -> int:
         else:
             dzongkhag_age = dzongkhag_median(annex, extra)
             medians["dzongkhag"] += 1
-        outcomes = {name: gewog_outcome(name, annex["gewogs"].get(name), read)
-                    for name in gewogs}
+        excess_ok = (not reason and annex["all_ages"] is not None
+                     and annex["all_ages"][8] > read.printed)
+        chosen = {name: choose_gewog(name, annex, read, excess_ok) for name in gewogs}
+        outcomes = {name: why for name, (_block, why, _note) in chosen.items()}
         for name, why in sorted(outcomes.items()):
             if why:
                 declined.append(f"{dzongkhag}/{name}: {why}")
@@ -1580,8 +1700,8 @@ def main() -> int:
             ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
             if "value" not in ratio:
                 refused.append(f"{dzongkhag}/{name}")
-            gewog_age = (age_gap(outcomes[name]) if outcomes[name]
-                         else gewog_median(annex["gewogs"][name]))
+            block, why, gewog_note = chosen[name]
+            gewog_age = age_gap(why) if why else gewog_median(block, gewog_note)
             where = (name, dzongkhag)
             bound = SHAPE_BOUND.get(where)
             note = POPULATION_NOTE + GEWOG_NOTE
