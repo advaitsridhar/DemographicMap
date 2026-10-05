@@ -1,25 +1,32 @@
-northkorea: Central Bureau of Statistics, DPR Korea, 2008 Population Census -- National Report (Pyongyang, 2009), Table 2
-  fetched dprk-2008-census-report.pdf (1.4 MB)
-  278 pages
-  Table 2 on pages [24, 25, 26, 27, 28]
-  Table 1: the whole population is 24,052,231, 702,372 above Table 2's 23,349,859
-  Table 2: 10 first-level areas, 208 city/district/county rows; every area equals its own rows and the ten equal the 23,349,859 printed for DPR Korea
-  the 702,372 Table 2 does not place are 662,349 men and 40,023 women, which is why a sex ratio here runs above the census's own
-  Table 4: 10 provinces and the country, every block's age groups adding up to its Total, the provinces to 23,349,859
-  regrouped to 11 shapes and 179 counties: Nampo taken out of South Phyongan, Kangnam/Junghwa/Sangwon moved to North Hwanghae, Chongjin and Hamhung added up, Pyongyang left as the city
-  medians: the country 33.4; Jagang 34.2, Kangwon 32.6, North Hamgyong 33.4, North Pyongan 34.0, Ryanggang 33.0, South Hamgyong 33.9, South Hwanghae 33.2
-  religion, ethnicity and language: left to NOT_COLLECTED_POLICY['PRK'], which the build writes onto every row
-  check: 11 shapes and 179 counties, each shape the sum of its own, all of them 23,349,859 -- Table 2's own DPR Korea row, and 702,372 short of the 24,052,231 Table 1 counts
-    Jagang            1,299,830  18 counties
-    Kangwon           1,477,582  17 counties
-    Nampo               983,660  6 counties
-    North Hamgyong    2,327,362  16 counties
-    North Hwanghae    2,353,149  21 counties
-    North Pyongan     2,728,662  25 counties
-    Pyongyang         3,015,811  3 counties
-    Ryanggang           719,269  12 counties
-    South Hamgyong    3,066,013  20 counties
-    South Hwanghae    2,310,485  20 counties
-    South Pyongan     3,068,036  21 counties
-  wrote data/processed/northkorea_county.json (715 kB)
-  wrote 190 records to northkorea_county.json
+== kosis 101,DT_1PM1502
+  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do', 'index.do', 'right_layout.do', 'statHtml.do']
+    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx']
+    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd', 'dbUser', 'language', 'mode', 'pub', 'conn_path', 'list_id', 'itm_id', 'orderBy', 'serverType', 'dataOpt', 'serverTypeOrigin']
+    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL', 'SID_IP_ADDR', 'SSN_INFO']
+    ~ " type="hidden" value=""/> <input type="hidden" name="tblNm" id="tblNm" value="성별/연령별/종교별 인구-시군구" /> <input type="hidden" name="tblEngNm" id="tblEngNm" value="" /> <input
+    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
+  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['right_layout.do', 'statHtmlContent.do']
+    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx', 'ordType']
+    ~ ""; if(paramInfoForm.tblSe.value != 'F'){ paramInfoForm.action = "statHtmlContent.do"; paramInfoForm.orgId = "101"; paramInfoForm.tblId = "DT_1PM1502";
+    ~ irst").attr("tabIndex")); }else{ return; } } var uri = "statHtmlContent.do"; try{ if(scrId != "" && scrId != undefined){ uri = uri + "?orgId
+    ~ index='"+index+"'] > iframe").attr("src"); try { data = data.replace("statHtmlContent.do?",""); } catch (e){ data = "orgId=" + "101" + "&tblId=" + "DT_1PM1502" +
+    ~ r getIframeSrcData = function(){ var data = ""; var dataValue = ""; var getData = []; var param = { tblId : "", orgId : "", vwCd : "", itmId : "", index : ""};
+    ~ + (index_number)).contents()[0].body.id; try{ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); } catch (e) { if(iframeCent
+    ~ }; } else { param = fn_paramReset(param); } getData[i] = param; param = fn_paramReset(param); continue; } else {
+    ~ eplace("list_id=",""); } } param.index = index_number; getData[i] = param; param = fn_paramReset(param); } return getData;
+    ~ getData[i] = param; param = fn_paramReset(param); } return getData; } function fn_paramReset(param){ param = { tblId : "", o
+    ~ + index).attr("src"); if(data != null && data != ""){ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); for(var f = 0; f < dataValue.lengt
+  POST https://kosis.kr/statHtml/right_layout.do -> 200, 26,376 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
+    endpoints: ['right_layout.do', 'statHtmlContent.do']
+    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx', 'ordType']
+    ~ ""; if(paramInfoForm.tblSe.value != 'F'){ paramInfoForm.action = "statHtmlContent.do"; paramInfoForm.orgId = "101"; paramInfoForm.tblId = "DT_1PM1502";
+    ~ irst").attr("tabIndex")); }else{ return; } } var uri = "statHtmlContent.do"; try{ if(scrId != "" && scrId != undefined){ uri = uri + "?orgId
+    ~ index='"+index+"'] > iframe").attr("src"); try { data = data.replace("statHtmlContent.do?",""); } catch (e){ data = "orgId=" + "101" + "&tblId=" + "DT_1PM1502" +
+    ~ r getIframeSrcData = function(){ var data = ""; var dataValue = ""; var getData = []; var param = { tblId : "", orgId : "", vwCd : "", itmId : "", index : ""};
+    ~ + (index_number)).contents()[0].body.id; try{ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); } catch (e) { if(iframeCent
+    ~ }; } else { param = fn_paramReset(param); } getData[i] = param; param = fn_paramReset(param); continue; } else {
+    ~ eplace("list_id=",""); } } param.index = index_number; getData[i] = param; param = fn_paramReset(param); } return getData;
+    ~ getData[i] = param; param = fn_paramReset(param); } return getData; } function fn_paramReset(param){ param = { tblId : "", o
+    ~ + index).attr("src"); if(data != null && data != ""){ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); for(var f = 0; f < dataValue.lengt
