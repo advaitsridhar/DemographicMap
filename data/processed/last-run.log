@@ -1,123 +1,207 @@
-probe_pdf: https://nis.gov.kh/wp-content/uploads/2025/09/Final-General-Population-Census-2019-English.pdf
-  26,586,966 bytes
-  304 pages
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140713831088080), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140713831088080), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140713831088080), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140713831088080), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140713831088080), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140713831088080), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-probe_pdf: 348 pages, printing [183, 184, 185]
+== https://dosweb.dos.gov.jo/DataBank/Census2015/Non-Jordanians/Non-jordanian_8.1.pdf
+   200 application/pdf 394,452 bytes
+  48 pages
+   49 pages
+   -- page 4
 
---- page 183 ----------------------------------------------------
-Table P-03. Total Population Kampong Cham 2019
-Province/District/ Commune No.
-Household
-Population Sex
-Ratio
-Household
-SizeTotal Male Female
-03 Kampong Cham
-Toatl 217,197 887,121 422,873 464,248 91.1 4.1
-Urban 30,386 127,453 60,591 66,862 90.6 4.2
-Rural 186,811 759,668 362,282 397,386 91.2 4.1
-301 Batheay 26,084 106,997 51,162 55,835 91.6 4.1
-30101 Batheay 3,437 13,573 6,532 7,041 92.8 3.9
-30102 Chbar Ampov 1,263 5,280 2,538 2,742 92.6 4.2
-30103 Chealea 1,614 6,981 3,362 3,619 92.9 4.3
-30104 Cheung Prey 1,828 7,556 3,578 3,978 89.9 4.1
-30105 Me Pring 1,507 6,196 2,916 3,280 88.9 4.1
-30106 Ph'av 1,662 6,967 3,288 3,679 89.4 4.2
-30107 Sambour 3,149 12,497 6,108 6,389 95.6 4.0
-30108 Sandaek 2,978 11,422 5,318 6,104 87.1 3.8
-30109 Tang Krang 2,387 9,993 4,844 5,149 94.1 4.2
-30110 Tang Krasang 1,984 8,480 3,980 4,500 88.4 4.3
-30111 Trab 2,273 9,977 4,849 5,128 94.6 4.4
-30112 Tumnob 2,002 8,075 3,849 4,226 91.1 4.0
-302 Chamkar Leu 5,160 5,160 5,160 5,160 100.0 1.0
-30201 Bos Khnaor 5,160 21,135 10,228 10,907 93.8 4.1
-30202 Chamkar Andoung 2,640 10,725 5,220 5,505 94.8 4.1
-30203 Cheyyou 2,906 12,389 5,901 6,488 91.0 4.3
-30204 Lvea Leu 1,674 6,688 3,223 3,465 93.0 4.0
-30205 Spueu 2,865 11,779 5,567 6,212 89.6 4.1
-30206 Svay Teab 4,695 20,138 9,788 10,350 94.6 4.3
-30207 Ta Ong 2,538 10,946 5,270 5,676 92.8 4.3
-30208 Ta Prok 1,802 7,875 3,759 4,116 91.3 4.4
-303 Cheung Prey 23,201 92,898 44,165 48,733 90.6 4.0
-30301 Khnor Dambang 1,849 7,563 3,547 4,016 88.3 4.1
-30302 Kouk Rovieng 1,124 
+ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﻒﻳﺮﻟﺍﻭ ﺮﻀﺤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍﻭ ﺲﻨﺠﻟﺍ ﺐﺴﺣ ﻥﺩﺭﻷﺍ ﻲﻓ ﻦﻳﺩﻮﺟﻮﻤﻟﺍ ﻦﻴﻴﻧﺩﺭﻷﺍ ﺮﻴﻏ ﻥﺎﻜﺴﻟﺍ ﻊﻳﺯﻮﺗ :1.8 ﻝﻭﺪﺟ
+Table 8.1: Distribution of Non-Jordanian Population Living in Jordan by Sex, Nationality, Urban/ Rural and Governorate
+Sex & Urban/ Rural ﻒﻳﺮﻟﺍ /ﺮﻀﺤﻟﺍﻭ ﺲﻨﺠﻟﺍ
+Rural ﻒﻳﺭ Urban ﺮﻀﺣ Total ﻉﻮﻤﺠﻤﻟﺍ
+Nationality & Governorate ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍ
+ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ
+Female Male Total Female Male Total Female Male Total
+Cote d'Ivoire 0 0 0 2 14 16 2 14 16 ﺝﺎﻌﻟﺍ ﻞﺣﺎﺳ
+Senegal 0 2 2 41 91 132 41 93 134 ﻝﺎﻐﻨﺴﻟﺍ
+Zambia 0 0 0 0 15 15 0 15 15 ﺎﻴﺒﻣﺎﻏ
+Ghana 0 0 0 42 188 230 42 188 230 ﺎﻧﺎﻏ
+Guinea 0 0 0 9 5 14 9 5 14 ﺎﻴﻨﻴﻏ
+Cameroon 0 0 0 0 10 10 0 10 10 ﻥﻭﺮﻴﻣﺎﻜﻟﺍ
+Democratic Republic of Congo - 0 0 0 0 1 1 0 1 1 ﺮﻴﺋﺍﺯ ­ ﺔﻴﻁﺍﺮﻘﻤﻳﺪﻟﺍ ﻮﻐﻨﻜﻟﺍ -
+Zaire
+Congo 0 0 0 10 17 27 10 17 27 ﻮﻐﻧﻮﻜﻟﺍ
+Kenya 167 0 167 5920 69 5989 6087 69 6156 ﺎﻴﻨﻴﻛ
+Liberia 0 0 0 2 10 12 2 10 12 ﺎﻳﺮﻴﺒﻴﻟ
+Malawi 0 0 0 4 0 4 4 0 4 ﻱﻭﻻﺎﻣ
+Mozambique 0 0 0 5 15 20 5 15 20 ﻖﻴﺒﻣﺯﻮﻣ
+Chad 0 0 0 29 31 60 29 31 60 ﺩﺎﺸﺗ
+Nigeria 1 0 1 284 653 937 285 653 938 ﺎﻳﺮﻴﺠﻴﻧ
+Other African Countries 0 0 0 9 4 13 9 4 13 ﻯﺮﺧﺃ ﺔﻴﻘﻳﺮﻓﺇ ﻝﻭﺩ
+Total 230 16 246 9718 1665 11383 9948 1681 11629 ﻉﻮﻤﺠﻤﻟﺍ
+Western Europe Countries ﺔﻴﺑﺮﻐﻟﺍ ﺎﺑﻭﺭﻭﺃ ﻝﻭﺩ
+Spain 10 10 20 689 565 1254 699 575 1274 ﺎﻴﻧﺎﺒﺳﺇ
+Germany 16 8 24 1113 1076 2189 1129 1084 2213 ﺎﻴﻧﺎﻤﻟﺃ
+Ireland 0 0 0 79 63 142 79 63 142 ﺍﺪﻨﻟﺮﻳﺇ
+Iceland 0 0 0 2 13 15 2 13 15 ﺍﺪﻨﻠﺴﻳﺁ
+Italy 0 2 2 652 590 1242 652 592 1244 ﺎﻴﻟﺎﻄﻳﺇ
+Portugal 0 0 0 17 34 51 17 34 51 ﻝﺎﻐﺗﺮﺒﻟﺍ
+Department of Statistics ﺔﻣﺎﻌﻟﺍ ﺕﺍﮧﺎﺼﺣﻹﺍ ﺓﺮﺋﺍﺩ
+Population and Housing Census 2015 2015 ﻦﻛﺎﺴﻤﻟﺍﻭ ﻥﺎﻜﺴﻠﻟ ﻡﺎﻌﻟﺍ ﺩﺍﺪﻌﺘﻟﺍ
+[346 words in 33 rows]
 
---- page 184 ----------------------------------------------------
-Table P-03. Total Population Kampong Cham 2019
-Province/District/ Commune No.
-Household
-Population Sex
-Ratio
-Household
-SizeTotal Male Female
-306 Kampong Siem 22,457 94,729 45,261 49,468 91.5 4.2
-30601 Ampil 3,762 16,110 7,669 8,441 90.9 4.3
-30602 Hanchey 1,136 4,891 2,342 2,549 91.9 4.3
-30603 Kien Chrey 705 3,030 1,504 1,526 98.6 4.3
-30604 Kokor 1,023 4,156 1,945 2,211 88.0 4.1
-30605 Kaoh Mitt 1,014 4,143 1,944 2,199 88.4 4.1
-30606 Kaoh Roka 1,851 7,772 3,643 4,129 88.2 4.2
-30607 Kaoh Samraong 796 2,793 1,289 1,504 85.7 3.5
-30608 Kaoh Tontuem 663 2,561 1,172 1,389 84.4 3.9
-30609 Krala 2,357 10,390 5,035 5,355 94.0 4.4
-30610 Ou Svay 1,676 7,033 3,404 3,629 93.8 4.2
-30611 Ro'ang 1,419 6,247 3,012 3,235 93.1 4.4
-30612 Rumchek 724 3,235 1,565 1,670 93.7 4.5
-30613 Srak 1,679 7,388 3,628 3,760 96.5 4.4
-30614 Trean 2,115 8,588 4,132 4,456 92.7 4.1
-30615 Vihear Thum 1,537 6,392 2,977 3,415 87.2 4.2
-307 Kang Meas 20,793 85,488 40,527 44,961 90.1 4.1
-30701 Angkor Ban 1,923 7,651 3,563 4,088 87.2 4.0
-30702 Kang Ta Noeng 2,061 9,915 4,714 5,201 90.6 4.8
-30703 Khchau 2,025 8,711 4,151 4,560 91.0 4.3
-30704 Peam Chi Kang 1,600 6,210 2,893 3,317 87.2 3.9
-30705 Preaek Koy 2,225 8,614 4,189 4,425 94.7 3.9
-30706 Preaek Krabau 2,033 7,860 3,633 4,227 85.9 3.9
-30707 Reay Pay 2,331 8,937 4,272 4,665 91.6 3.8
-30708 Roka Ar 1,565 6,924 3,369 3,555 94.8 4.4
-30709 Roka Koy 1,760 7,116 3,344 3,772 88.7 4.0
-30710 Sdau 1,188 4,906 2,307 2,599 88.8 4.1
-30711 Sour Kong 2,082 8,644 4,092 4,552 89.9 4.2
-308 
+   -- page 5
 
---- page 185 ----------------------------------------------------
-Table P-03. Total Population Kampong Cham 2019
-Province/District/ Commune No.
-Household
-Population Sex
-Ratio
-Household
-SizeTotal Male Female
-313 Prey Chhor 33,572 133,712 63,228 70,484 89.7 4.0
-31301 Baray 2,549 9,996 4,778 5,218 91.6 3.9
-31302 Boeng Nay 3,178 12,922 6,229 6,693 93.1 4.1
-31303 Chrey Vien 3,913 15,363 7,356 8,007 91.9 3.9
-31304 Khvet Thum 1,517 5,508 2,464 3,044 80.9 3.6
-31305 Kor 2,755 10,739 5,075 5,664 89.6 3.9
-31306 Krouch 1,498 6,061 2,886 3,175 90.9 4.0
-31307 Lvea 1,968 7,669 3,696 3,973 93.0 3.9
-31308 Mien 3,327 13,901 6,662 7,239 92.0 4.2
-31309 Prey Chhor 748 2,769 1,312 1,457 90.0 3.7
-31310 Sour Saen 1,325 5,701 2,651 3,050 86.9 4.3
-31311 Samraong 1,910 7,334 3,396 3,938 86.2 3.8
-31312 Sragnae 1,582 6,854 3,157 3,697 85.4 4.3
-31313 Thma Pun 2,109 8,520 4,016 4,504 89.2 4.0
-31314 Tong Rong 1,672 6,541 3,069 3,472 88.4 3.9
-31315 Trapeang Preah 3,521 13,834 6,481 7,353 88.1 3.9
-211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0
-31401 Baray 1,572 6,545 3,159 3,386 93.3 4.2
-31402 Chi Bal 873 3,645 1,808 1,837 98.4 4.2
-31403 Khnar Sa 819 3,410 1,619 1,791 90.4 4.2
-31404 Kaoh Andaet 1,026 3,844 1,778 2,066 86.1 3.7
-31405 Mean Chey 1,869 8,159 3,868 4,291 90.1 4.4
-31406 Phteas Kandal 1,084 4,212 1,946 2,266 85.9 3.9
-31407 Pram Yam 1,198 5,035 2,353 2,682 87.7 4.2
-31408 Preaek Dambouk 2,261 8,739 4,112 4,627 88.9 3.9
-31409 Preaek Pou 2,780 11,433 5,328 6,105 87.3 4.1
-31410 Preaek Rumdeng 2,243 8,822 4,184 4,638 90.2 3.9
-31411 Ruessei Srok 1,248 4,356 2,043 
+ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﻒﻳﺮﻟﺍﻭ ﺮﻀﺤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍﻭ ﺲﻨﺠﻟﺍ ﺐﺴﺣ ﻥﺩﺭﻷﺍ ﻲﻓ ﻦﻳﺩﻮﺟﻮﻤﻟﺍ ﻦﻴﻴﻧﺩﺭﻷﺍ ﺮﻴﻏ ﻥﺎﻜﺴﻟﺍ ﻊﻳﺯﻮﺗ :1.8 ﻝﻭﺪﺟ
+Table 8.1: Distribution of Non-Jordanian Population Living in Jordan by Sex, Nationality, Urban/ Rural and Governorate
+Sex & Urban/ Rural ﻒﻳﺮﻟﺍ /ﺮﻀﺤﻟﺍﻭ ﺲﻨﺠﻟﺍ
+Rural ﻒﻳﺭ Urban ﺮﻀﺣ Total ﻉﻮﻤﺠﻤﻟﺍ
+Nationality & Governorate ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍ
+ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ
+Female Male Total Female Male Total Female Male Total
+Britain 17 10 27 2290 2815 5105 2307 2825 5132 ﺎﻴﻧﺎﻄﻳﺮﺑ
+Belgium 0 0 0 221 248 469 221 248 469 ﺎﻜﻴﺠﻠﺑ
+Denmark 0 0 0 215 237 452 215 237 452 ﻙﺭﺎﻤﻧﺪﻟﺍ
+Sweden 0 6 6 623 609 1232 623 615 1238 ﺪﻳﻮﺴﻟﺍ
+Switzerland 5 0 5 204 186 390 209 186 395 ﺍﺮﺴﻳﻮﺳ
+France 5 14 19 1257 1270 2527 1262 1284 2546 ﺎﺴﻧﺮﻓ
+Finland 0 0 0 23 30 53 23 30 53 ﺍﺪﻨﻠﻨﻓ
+Cyprus 0 0 0 22 13 35 22 13 35 ﺹﺮﺒﻗ
+Malta 0 0 0 10 0 10 10 0 10 ﺎﻄﻟﺎﻣ
+Norway 2 0 2 282 242 524 284 242 526 ﺞﻳﻭﺮﻨﻟﺍ
+Austria 2 0 2 136 185 321 138 185 323 ﺎﺴﻤﻨﻟﺍ
+Holland 0 0 0 409 483 892 409 483 892 ﺍﺪﻨﻟﻮﻫ
+Greece 0 0 0 236 226 462 236 226 462 ﻥﺎﻧﻮﻴﻟﺍ
+Total 57 50 107 8480 8885 17365 8537 8935 17472 ﻉﻮﻤﺠﻤﻟﺍ
+Eastern Europe Countries ﺔﻴﻗﺮﺸﻟﺍ ﺎﺑﻭﺭﻭﺃ ﻝﻭﺩ
+Estonia 4 0 4 2 10 12 6 10 16 ﺎﻴﻧﻮﺘﺳﺃ
+Albania 0 0 0 52 73 125 52 73 125 ﺎﻴﻧﺎﺒﻟﺃ
+Ukraine 120 0 120 3781 390 4171 3901 390 4291 ﺎﻴﻧﺍﺮﻛﻭﺃ
+Bulgaria 6 0 6 172 96 268 178 96 274 ﺎﻳﺭﺎﻐﻠﺑ
+Bosnia and Herzegovina 0 0 0 237 210 447 237 210 447 ﻚﺳﺮﻬﻟﺍﻭ ﺔﻨﺳﻮﺒﻟﺍ
+Poland 2 0 2 60 18 78 62 18 80 ﺍﺪﻨﻟﻮﺑ
+Czech Republic 0 0 0 21 15 36 21 15 36 ﻚﻴﺸﺗ
+Russia 53 4 57 2829 979 3808 2882 983 3865 ﺎﻴﺳﻭﺭ
+Belarus 0 0 0 70 17 87 70 17 87 ﮧﺎﻀﻴﺒﻟﺍ ﺎﻴﺳﻭﺭ
+Department of Statistics ﺔﻣﺎﻌﻟﺍ ﺕﺍﮧﺎﺼﺣﻹﺍ ﺓﺮﺋﺍﺩ
+Population and Housing Census 2015 2015 ﻦﻛﺎﺴﻤﻟﺍﻭ ﻥﺎﻜﺴﻠﻟ ﻡﺎﻌﻟﺍ ﺩﺍﺪﻌﺘﻟﺍ
+[347 words in 33 rows]
+
+   -- page 6
+
+ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﻒﻳﺮﻟﺍﻭ ﺮﻀﺤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍﻭ ﺲﻨﺠﻟﺍ ﺐﺴﺣ ﻥﺩﺭﻷﺍ ﻲﻓ ﻦﻳﺩﻮﺟﻮﻤﻟﺍ ﻦﻴﻴﻧﺩﺭﻷﺍ ﺮﻴﻏ ﻥﺎﻜﺴﻟﺍ ﻊﻳﺯﻮﺗ :1.8 ﻝﻭﺪﺟ
+Table 8.1: Distribution of Non-Jordanian Population Living in Jordan by Sex, Nationality, Urban/ Rural and Governorate
+Sex & Urban/ Rural ﻒﻳﺮﻟﺍ /ﺮﻀﺤﻟﺍﻭ ﺲﻨﺠﻟﺍ
+Rural ﻒﻳﺭ Urban ﺮﻀﺣ Total ﻉﻮﻤﺠﻤﻟﺍ
+Nationality & Governorate ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍ
+ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ
+Female Male Total Female Male Total Female Male Total
+Romania 20 4 24 732 115 847 752 119 871 ﺎﻴﻧﺎﻣﻭﺭ
+Slovakia 0 0 0 23 0 23 23 0 23 ﺎﻴﻛﺎﻓﻮﻠﺳ
+Slovenia 0 0 0 7 10 17 7 10 17 ﺎﻴﻧﺎﻓﻮﻠﺳ
+Croatia 0 0 0 26 6 32 26 6 32 ﺎﻴﺗﺍﻭﺮﻛ
+Latvia 0 0 0 15 2 17 15 2 17 ﺎﻴﻔﺗﻻ
+Lithuania 0 0 0 26 12 38 26 12 38 ﺎﻴﻧﺍﻮﺘﻟ
+Macedonia 0 0 0 31 57 88 31 57 88 ﺎﻴﻧﻭﺪﻜﻣ
+Moldova 0 0 0 108 17 125 108 17 125 ﺎﻴﻓﺍﺪﻟﻮﻣ
+Hungary 2 0 2 33 15 48 35 15 50 ﺎﻳﺭﺎﻐﻨﻫ
+Yugoslavia 0 0 0 237 56 293 237 56 293 ﺎﻴﻓﻼﺴﻏﻮﻳ
+Other Eastern European Countries 0 0 0 100 203 303 100 203 303 ﻯﺮﺧﺃ ﺔﻴﻗﺮﺷ ﺔﻴﺑﻭﺭﻭﺃ ﻝﻭﺩ
+Total 207 8 215 8562 2301 10863 8769 2309 11078 ﻉﻮﻤﺠﻤﻟﺍ
+North American Countries ﺔﻴﻟﺎﻤﺸﻟﺍ ﺎﻜﻳﺮﻣﺃ ﻝﻭﺩ
+United States of America 88 95 183 4454 4627 9081 4542 4722 9264 ﺔﻴﻜﻳﺮﻣﻷﺍ ﺓﺪﺤﺘﻤﻟﺍ ﺕﺎﻳﻻﻮﻟﺍ
+Canada 8 0 8 2271 2585 4856 2279 2585 4864 ﺍﺪﻨﻛ
+Total 96 95 191 6725 7212 13937 6821 7307 14128 ﻉﻮﻤﺠﻤﻟﺍ
+Middle American Countries ﻰﻄﺳﻮﻟﺍ ﺎﻜﻳﺮﻣﺃ ﻝﻭﺩ
+Trinidad and Tobago 0 0 0 10 0 10 10 0 10 ﻮﻏﺎﺑﻮﺗﻭ ﺩﺍﺪﻨﻳﺮﺗ
+Jamaica 0 0 0 6 4 10 6 4 10 ﺎﻜﻳﺎﻣﺎﺟ
+Dominica 0 0 0 5 12 17 5 12 17 ﺎﻜﻴﻨﻴﻣﻭﺩ
+Dominican Republic 0 0 0 3 2 5 3 2 5 ﻥﺎﻜﻴﻨﻴﻣﻭﺪﻟﺍ
+El Salvador 0 0 0 10 0 10 10 0 10 ﺭﻭﺩﺎﻔﻠﺴﻟﺍ
+Suriname 0 6 6 0 0 0 0 6 6 ﻡﺎﻨﻳﺭﻮﺳ
+Guatemala 0 0 0 14 3 17 14 3 17 ﻻﺎﻤﻴﺗﺍﻮﻏ
+Department of Statistics ﺔﻣﺎﻌﻟﺍ ﺕﺍﮧﺎﺼﺣﻹﺍ ﺓﺮﺋﺍﺩ
+Population and Housing Census 2015 2015 ﻦﻛﺎﺴﻤﻟﺍﻭ ﻥﺎﻜﺴﻠﻟ ﻡﺎﻌﻟﺍ ﺩﺍﺪﻌﺘﻟﺍ
+[353 words in 33 rows]
+
+   -- page 8
+
+ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﻒﻳﺮﻟﺍﻭ ﺮﻀﺤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍﻭ ﺲﻨﺠﻟﺍ ﺐﺴﺣ ﻥﺩﺭﻷﺍ ﻲﻓ ﻦﻳﺩﻮﺟﻮﻤﻟﺍ ﻦﻴﻴﻧﺩﺭﻷﺍ ﺮﻴﻏ ﻥﺎﻜﺴﻟﺍ ﻊﻳﺯﻮﺗ :1.8 ﻝﻭﺪﺟ
+Table 8.1: Distribution of Non-Jordanian Population Living in Jordan by Sex, Nationality, Urban/ Rural and Governorate
+Sex & Urban/ Rural ﻒﻳﺮﻟﺍ /ﺮﻀﺤﻟﺍﻭ ﺲﻨﺠﻟﺍ
+Rural ﻒﻳﺭ Urban ﺮﻀﺣ Total ﻉﻮﻤﺠﻤﻟﺍ
+Nationality & Governorate ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍ
+ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ
+Female Male Total Female Male Total Female Male Total
+Others 42 54 96 301 343 644 343 397 740 ﻯﺮﺧﺃ
+Total 42 54 96 301 343 644 343 397 740 ﻉﻮﻤﺠﻤﻟﺍ
+Total 40525 74934 115459 1198818 1603848 2802666 1239343 1678782 2918125 ﻉﻮﻤﺠﻤﻟﺍ
+Amman ﺔﻤﺻﺎﻌﻟﺍ
+Arab Asian Countries ﺔﻴﺑﺮﻋ ﺔﻳﻮﻴﺳﺁ ﻝﻭﺩ
+United Arab Emirates 0 0 0 221 400 621 221 400 621 ﺓﺪﺤﺘﻤﻟﺍ ﺔﻴﺑﺮﻌﻟﺍ ﺕﺍﺭﺎﻣﻹﺍ
+Bahrain 4 4 8 261 249 510 265 253 518 ﻦﻳﺮﺤﺒﻟﺍ
+Saudi Arabia 40 50 90 3945 7146 11091 3985 7196 11181 ﺔﻳﺩﻮﻌﺴﻟﺍ
+Syria 2326 2507 4833 212774 217971 430745 215100 220478 435578 ﺎﻳﺭﻮﺳ
+Iraq 105 102 207 60509 61177 121686 60614 61279 121893 ﻕﺍﺮﻌﻟﺍ
+Oman 0 0 0 270 660 930 270 660 930 ﻥﺎﻤُﻋ
+Palestine 679 721 1400 135980 170711 306691 136659 171432 308091 ﻦﻴﻄﺴﻠﻓ
+Qatar 0 3 3 69 448 517 69 451 520 ﺮﻄﻗ
+Kuwait 0 2 2 669 2195 2864 669 2197 2866 ﺖﻳﻮﻜﻟﺍ
+Lebanon 10 0 10 3355 3671 7026 3365 3671 7036 ﻥﺎﻨﺒﻟ
+Yemen 51 270 321 11116 15582 26698 11167 15852 27019 ﻦﻤﻴﻟﺍ
+Total 3215 3659 6874 429169 480210 909379 432384 483869 916253 ﻉﻮﻤﺠﻤﻟﺍ
+Non-Arab Asian Countries ﺔﻴﺑﺮﻋ ﺮﻴﻏ ﺔﻳﻮﻴﺳﺁ ﻝﻭﺩ
+Afghanistan 0 0 0 87 173 260 87 173 260 ﻥﺎﺘﺴﻧﺎﻐﻓﺃ
+Israel 0 0 0 123 92 215 123 92 215 ﻞﻴﺋﺍﺮﺳﺇ
+Azerbaijan 0 0 0 34 16 50 34 16 50 ﻥﺎﺠﻴﺑﺭﺫﺃ
+Department of Statistics ﺔﻣﺎﻌﻟﺍ ﺕﺍﮧﺎﺼﺣﻹﺍ ﺓﺮﺋﺍﺩ
+Population and Housing Census 2015 2015 ﻦﻛﺎﺴﻤﻟﺍﻭ ﻥﺎﻜﺴﻠﻟ ﻡﺎﻌﻟﺍ ﺩﺍﺪﻌﺘﻟﺍ
+[301 words in 30 rows]
+
+   -- page 9
+
+ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﻒﻳﺮﻟﺍﻭ ﺮﻀﺤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍﻭ ﺲﻨﺠﻟﺍ ﺐﺴﺣ ﻥﺩﺭﻷﺍ ﻲﻓ ﻦﻳﺩﻮﺟﻮﻤﻟﺍ ﻦﻴﻴﻧﺩﺭﻷﺍ ﺮﻴﻏ ﻥﺎﻜﺴﻟﺍ ﻊﻳﺯﻮﺗ :1.8 ﻝﻭﺪﺟ
+Table 8.1: Distribution of Non-Jordanian Population Living in Jordan by Sex, Nationality, Urban/ Rural and Governorate
+Sex & Urban/ Rural ﻒﻳﺮﻟﺍ /ﺮﻀﺤﻟﺍﻭ ﺲﻨﺠﻟﺍ
+Rural ﻒﻳﺭ Urban ﺮﻀﺣ Total ﻉﻮﻤﺠﻤﻟﺍ
+Nationality & Governorate ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍ
+ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ
+Female Male Total Female Male Total Female Male Total
+Armenia 0 0 0 42 38 80 42 38 80 ﺎﻴﻨﻴﻣﺭﺃ
+Indonesia 18 0 18 6253 573 6826 6271 573 6844 ﺎﻴﺴﻴﻧﻭﺪﻧﺇ
+Uzbekistan 0 0 0 30 20 50 30 20 50 ﻥﺎﺘﺴﻛﺎﺑﺯﻭﺃ
+Iran 0 0 0 240 301 541 240 301 541 ﻥﺍﺮﻳﺇ
+Pakistan 103 169 272 718 1241 1959 821 1410 2231 ﻥﺎﺘﺴﻛﺎﺒﻟﺍ
+Brunei 0 0 0 19 43 62 19 43 62 ﻡﻼﺴﻟﺍ ﺭﺍﺩ­ ﻱﺎﻧﻭﺮﺑ-
+Bangladesh 115 24 139 11984 1270 13254 12099 1294 13393 ﺶﻳﺩﻼﻐﻨﺑ
+Burma - Myanmar 0 0 0 0 10 10 0 10 10 ﺭﺎﻤﻧﺎﻴﻣ ­ ﺎﻣﺭﻮﺑ -
+Thailand 0 0 0 216 210 426 216 210 426 ﺪﻧﻼﻳﺎﺗ
+Taiwan 0 0 0 19 18 37 19 18 37 ﻥﺍﻮﻳﺎﺗ
+Turkmenistan 0 0 0 0 10 10 0 10 10 ﻥﺎﺘﺴﻨﻤﻛﺮﺗ
+Turkey 20 28 48 1406 1612 3018 1426 1640 3066 ﺎﻴﻛﺮﺗ
+Georgia 0 0 0 10 0 10 10 0 10 ﺎﻴﺟﺭﻮﺟ
+Singapore 0 0 0 36 64 100 36 64 100 ﻩﺭﻮﻓﺎﻐﻨﺳ
+Sri Lanka 55 0 55 6546 801 7347 6601 801 7402 ﺎﻜﻧﻼﻳﺮﻴﺳ
+China 0 0 0 772 968 1740 772 968 1740 ﺔﻴﺒﻌﺸﻟﺍ ﻦﻴﺼﻟﺍ
+Tajikistan 0 0 0 20 5 25 20 5 25 ﻥﺎﺘﺴﻛﺎﺟﺎﻁ
+Philippines 95 2 97 15576 620 16196 15671 622 16293 ﻦﻴﺒﻠﻔﻟﺍ
+Vietnam 0 0 0 5 15 20 5 15 20 ﻡﺎﻨﺘﻴﻓ
+Kyrgyzstan 0 0 0 59 66 125 59 66 125 ﻥﺎﺘﺴﻏﺮﻴﻗ
+Kazakhstan 0 0 0 168 185 353 168 185 353 ﻥﺎﺘﺴﺧﺍﺯﺎﻛ
+South Korea 0 0 0 380 477 857 380 477 857 ﺔﻴﺑﻮﻨﺠﻟﺍ ﺎﻳﺭﻮﻛ
+North Korea 0 0 0 6 15 21 6 15 21 ﺔﻴﻟﺎﻤﺸﻟﺍ ﺎﻳﺭﻮﻛ
+Maldives 0 0 0 13 7 20 13 7 20 ﻒﻳﺪﻟﺎﻤﻟﺍ
+Department of Statistics ﺔﻣﺎﻌﻟﺍ ﺕﺍﮧﺎﺼﺣﻹﺍ ﺓﺮﺋﺍﺩ
+Population and Housing Census 2015 2015 ﻦﻛﺎﺴﻤﻟﺍﻭ ﻥﺎﻜﺴﻠﻟ ﻡﺎﻌﻟﺍ ﺩﺍﺪﻌﺘﻟﺍ
+[360 words in 33 rows]
+
+   -- page 48
+
+ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﻒﻳﺮﻟﺍﻭ ﺮﻀﺤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍﻭ ﺲﻨﺠﻟﺍ ﺐﺴﺣ ﻥﺩﺭﻷﺍ ﻲﻓ ﻦﻳﺩﻮﺟﻮﻤﻟﺍ ﻦﻴﻴﻧﺩﺭﻷﺍ ﺮﻴﻏ ﻥﺎﻜﺴﻟﺍ ﻊﻳﺯﻮﺗ :1.8 ﻝﻭﺪﺟ
+Table 8.1: Distribution of Non-Jordanian Population Living in Jordan by Sex, Nationality, Urban/ Rural and Governorate
+Sex & Urban/ Rural ﻒﻳﺮﻟﺍ /ﺮﻀﺤﻟﺍﻭ ﺲﻨﺠﻟﺍ
+Rural ﻒﻳﺭ Urban ﺮﻀﺣ Total ﻉﻮﻤﺠﻤﻟﺍ
+Nationality & Governorate ﺔﻈﻓﺎﺤﻤﻟﺍﻭ ﺔﻴﺴﻨﺠﻟﺍ
+ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ ﻰﺜﻧﺃ ﺮﻛﺫ ﻉﻮﻤﺠﻤﻟﺍ
+Female Male Total Female Male Total Female Male Total
+Oceania Countries ﺎﻴﺳﻮﻧﺎﻴﻗﻭﺃ ﻝﻭﺩ
+Australia 0 0 0 37 51 88 37 51 88 ﺎﻴﻟﺍﺮﺘﺳﺃ
+New Zealand 0 0 0 0 5 5 0 5 5 ﺍﺪﻨﻟﺯﻮﻴﻧ
+Total 0 0 0 37 56 93 37 56 93 ﻉﻮﻤﺠﻤﻟﺍ
+Other ﻯﺮﺧﺃ
+Others 1 0 1 1 1 2 2 1 3 ﻯﺮﺧﺃ
+Total 1 0 1 1 1 2 2 1 3 ﻉﻮﻤﺠﻤﻟﺍ
+Total 40525 74934 115459 1198818 1603848 2802666 1239343 1678782 2918125 ﻉﻮﻤﺠﻤﻟﺍ
+Department of Statistics ﺔﻣﺎﻌﻟﺍ ﺕﺍﮧﺎﺼﺣﻹﺍ ﺓﺮﺋﺍﺩ
+Population and Housing Census 2015 2015 ﻦﻛﺎﺴﻤﻟﺍﻭ ﻥﺎﻜﺴﻠﻟ ﻡﺎﻌﻟﺍ ﺩﺍﺪﻌﺘﻟﺍ
+[156 words in 17 rows]
+
