@@ -1,93 +1,128 @@
-== kosis 101,DT_1PM1502
-  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do', 'index.do', 'right_layout.do', 'statHtml.do']
-    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd', 'dbUser', 'language', 'mode', 'pub', 'conn_path', 'list_id', 'itm_id', 'orderBy', 'serverType', 'dataOpt', 'serverTypeOrigin']
-    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL', 'SID_IP_ADDR', 'SSN_INFO']
-    ~ ART 개발pc에서 사용시 해당 부분 제외--> <!-- SSO 적용 END --> <!DOCTYPE html> <html xmlns="http://www.w3.org/1999
-    ~ meOfCookie = name + "="; var x = 0; while ( x <= document.cookie.length ) { var y = (x+nameOfCookie.length); if (
-    ~ { var y = (x+nameOfCookie.length); if ( document.cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y ))
-    ~ cookie.substring( x, y ) == nameOfCookie ) { if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length; retur
-    ~ Cookie=document.cookie.indexOf( ";", y )) == -1 ) endOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOf
-    ~ dOfCookie = document.cookie.length; return unescape( document.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf( " ", x ) + 1;
-    ~ nt.cookie.substring( y, endOfCookie ) ); } x = document.cookie.indexOf( " ", x ) + 1; if ( x == 0 ) break; } return "";
-    ~ function fn_openHelp(){ if(fn_getCookie("popHelp") != "done"){ var popWidth=646; var popHeight=730;
-    ~ 646; var popHeight=730; var popX = (window.screen.width/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2);
-    ~ (window.screen.width/2)-(popWidth/2); var popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.jsp",
-    ~ r popY = (window.screen.height/2)-(popHeight/2); myWindow = window.open("/statHtml/help/popHelp.jsp", "popHelp", "width="+popWidth+", height="+popHeight+", top="+popY+", left="
-    ~ r rightWidth = 0; //시간체크용 var dateChk; $(document).ready(function(){ // 대상 Element 선택 const resizer = document.getElement
-    ~ ).ready(function(){ // 대상 Element 선택 const resizer = document.getElementById('division'); const leftSide = resizer.previousElementSibling; con
-    ~ ing; const rightSide = resizer.nextElementSibling; document.ParamInfo.url = "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&pub=&conn_path=I2&l
-    ~ // resizer에 마우스 이벤트가 발생하면 실행하는 Handler const mouseDownHandler = function (e) { // 마우스 위치값을 가져와 x, y에 할당 x = e.clientX;
-    ~ gClientRect().width; // 마우스 이동과 해제 이벤트를 등록 document.addEventListener('mousemove', mouseMoveHandler); document.addEventListener('mouseup', mouseUpHandler)
-    ~ ent.addEventListener('mousemove', mouseMoveHandler); document.addEventListener('mouseup', mouseUpHandler); }; const mouseMoveHandler = function (e) {
-    ~ lass="resizer"에 적용하면 위치가 변경되면서 커서가 해제되기 때문에 body에 적용 document.body.style.cursor = 'col-resize'; // 이동 중 양쪽 영역(왼쪽, 오른쪽)에서 마우스 이벤트와 텍스트 선택을 방
-    ~ 제거됨 resizer.style.removeProperty('cursor'); document.body.style.removeProperty('cursor'); leftSide.style.removeProperty('user-select');
-    ~ erty('pointer-events'); // 등록한 마우스 이벤트를 제거 document.removeEventListener('mousemove', mouseMoveHandler); document.removeEventListener('mouseup', mouseUpHandl
-    ~ .removeEventListener('mousemove', mouseMoveHandler); document.removeEventListener('mouseup', mouseUpHandler); resizer.style.cursor = 'ew-resize'; }; //
-    ~ resizer.style.cursor = 'ew-resize'; }; // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler);
-    ~ // 마우스 down 이벤트를 등록 resizer.addEventListener('mousedown', mouseDownHandler); dateChk = new Date(); fn_loading("loading");
-    ~ ding("loading"); $leftMenu = $("#leftMenu"); // $(window).resize(function(){ // var leftWidth = $leftMenu.width(); // if($leftM
-    ~ leftWidth = 0; // } // var rightWidth = $(window).width() - (leftWidth+10); // //var rightWidth = $(window).width(); // $("#ce
-    ~ w).width() - (leftWidth+10); // //var rightWidth = $(window).width(); // $("#centerMenu").css("width", rightWidth+"px"); //
-    ~ //윈도우 창 사이즈 변경시 height 자동조절 // var conHeight = $(window).height() - 50; // $("#leftMenu").height(conHeight + 10); // $("#
-    ~ m); //iframe_leftMenu 호출 //var rightForm = document.ParamInfo; var leftForm = document.iframeform; leftForm.orgId
-    ~ //var rightForm = document.ParamInfo; var leftForm = document.iframeform; leftForm.orgId = "101"; leftForm.tblId = "DT_1PM
-    ~ verType = "service"; leftForm.action = "includeLeftTree.do"; leftForm.target = "iframe_leftMenu"; leftForm.submit
-    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
-  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['right_layout.do', 'statHtmlContent.do']
-    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx', 'ordType']
-    ~ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    ~ b_index_check = 0; var set_first_cookie = false; $(document).ready(function(){ $(":input", top.ParamInfo).each(function(index, obj){
-    ~ var connPath = parent.g_connPath var paramInfoForm = document.ParamInfo; paramInfoForm.tblSe = ""; if(paramInfo
-    ~ lue != 'F'){ paramInfoForm.action = "statHtmlContent.do"; paramInfoForm.orgId = "101"; paramInfoForm.t
-    ~ verlay"); } }); $("#div_grid_left_btn").on('keydown', function(e){ switch (e.keyCode) { case 13: fn_tblVi
-    ~ ").children()[0]); } $left = $(".left_layout", parent.document); if($left.css("display") == "none"){ $arrow.removeCl
-    ~ return; } } var uri = "statHtmlContent.do"; try{ if(scrId != "" && scrId != undefined){
-    ~ parent.fn_loading("loading"); var paramInfoForm = document.ParamInfo; var param = { tblId : "", orgId : "", vwCd : "", list
-    ~ try { data = data.replace("statHtmlContent.do?",""); } catch (e){ data = "orgId=" + "101" + "&tblId=
-    ~ = "orgId=" + "101" + "&tblId=" + "DT_1PM1502" + "&vw_cd=" + document.ParamInfo.vwCd.value + "&itm_id=" + document.ParamInfo.itm_id.value+ "&list_id=" + document.ParamInfo.listId.valu
-    ~ "&itm_id=" + document.ParamInfo.itm_id.value+ "&list_id=" + document.ParamInfo.listId.value; } dataValue = data.split("&"); param = { tblI
-    ~ div").text((idx+1) + ". "+titleStr); } top.document.title = (idx+1) + ". "+titleStr; }); //fn_resizeTabWidth();//탭사이즈 자동조절
-    ~ try{ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); } catch (e) {
-    ~ r title = $li.find("div.tab_title").text(); top.document.title = title; } //include_centerGrid.js에서 사용할 tab_t
-    ~ && data != ""){ data = data.replace("statHtmlContent.do?",""); dataValue = data.split("&"); for(var f = 0;
-    ~ ="ParamInfo" name="ParamInfo" action="/statHtml/right_layout.do" method="post"> <input type="hidden" id="jsonStr" name="jsonStr" value="
-    ~ " name="viewSubKind" type="hidden" value=""/> <input id="doAnal" name="doAnal" type="hidden" value="N"/> <input id="analType" name="analType" type="hidden" value
-    ~ ype" name="markType" type="hidden" value=""/> <input id="docId" name="docId" type="hidden" value=""/> <input id="itmNm" name="itmNm" type="hidden" value=""/>
-  POST https://kosis.kr/statHtml/statHtmlContent.do -> 200, 287,421 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['InterList.do', 'LoginView.do', 'SvcMetaDcDtaPopup.do', 'assayInfo.do', 'cmmtInfo.do', 'directDownDiv.do', 'downGrid.do', 'downHelp.do', 'downLarge.do', 'downMeta.do', 'downNormal.do', 'html.do', 'index.do', 'linkStatsList.do', 'login.do', 'makeLarge.do', 'myscrapView.do', 'periodDivSelect.do', 'print.do', 'qnaList.do', 'relationInfo.do', 'searchRangeDetail.do', 'selectAll.do', 'sessionCheck.do', 'setOlapLogForNsoService.do', 'setOlapLogForNsoServiceRelUrl.do', 'statHtml.do', 'statHtmlContent.do', 'statisticsListIndex.do', 'tmprScrapSave.do', 'treeInfo.do']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd', 'listId', 'pub', 'dbUser', 'st', 'process']
-    form 'ParamInfo' action='/statHtml/statHtmlContent.do' inputs=['jsonStr', 'orgId', 'tblId', 'language', 'file', 'analText', 'scrId', 'fieldList', 'colAxis', 'rowAxis', 'isFirst', 'contextPath', 'ordColIdx', 'ordType']
-    ~ <!DOCTYPE html> <html xmlns="http://www.w3.org/1999
-    ~ var g_maxCellDefault = 10000; var g_maxCellDownload = 200000; var e_vwCd_title = "MT_ZTITLE"; var g_mixCnt =
-    ~ ar g_dataOpt = "ko"; var g_mode = ""; var g_windowHeight; var g_windowWidth; var g_pivotColChk = new Array();
-    ~ var g_mode = ""; var g_windowHeight; var g_windowWidth; var g_pivotColChk = new Array(); var g_tblId =
-    ~ var g_gubun = ""; if(g_dataOpt =='ko'){ document.title="성별/연령별/종교별 인구-시군구"; }else if(g_dataOpt =='en'){ document.title=""; }el
-    ~ itle="성별/연령별/종교별 인구-시군구"; }else if(g_dataOpt =='en'){ document.title=""; }else{} // 시점 팝업을 위해 추가 var g_defaultTabSn = 0;
-    ~ 체해제"; var g_prdSe = ""; var g_popFunc = ""; var downloadable = true; var downloadSizeCheck = "Y"; var xAxisFix = "열고정
-    ~ var g_popFunc = ""; var downloadable = true; var downloadSizeCheck = "Y"; var xAxisFix = "열고정"; /* 열고정 */ var xAxisRelea
-    ~ vl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Total for dongs","itmId":"03","upItmId":null,"rownum":2,"objVarId":"A","charItmSn":2,"leaf":1,"scrKor":"동부"},{"lvl":1,"orgId":"101",
-    ~ ,"rownum":5,"objVarId":"A","charItmSn":5,"leaf":0,"scrKor":"서울특별시"},{"lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"
-    ~ lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Gyeonggi-do","itmId":"31","upItmId":null,"rownum":13,"objVarId":"A","charItmSn":103,"leaf":0,"scrKor":"경기도"},{"lvl":1,"orgId":"101"
-    ~ "lvl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Gangwon-do","itmId":"32","upItmId":null,"rownum":14,"objVarId":"A","charItmSn":158,"leaf":0,"scrKor":"강원도"},{"lvl":1,"orgId":"101"
-    ~ ,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Chungcheongbuk-do","itmId":"33","upItmId":null,"rownum":15,"objVarId":"A","charItmSn":180,"leaf":0,"scrKor":"충청북도"},{"lvl":1,"orgId":"101
-    ~ ,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Chungcheongnam-do","itmId":"34","upItmId":null,"rownum":16,"objVarId":"A","charItmSn":199,"leaf":0,"scrKor":"충청남도"},{"lvl":1,"orgId":"101
-    ~ vl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Jeollabuk-do","itmId":"35","upItmId":null,"rownum":17,"objVarId":"A","charItmSn":220,"leaf":0,"scrKor":"전라북도"},{"lvl":1,"orgId":"101
-    ~ vl":1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Jeollanam-do","itmId":"36","upItmId":null,"rownum":18,"objVarId":"A","charItmSn":240,"leaf":0,"scrKor":"전라남도"},{"lvl":1,"orgId":"101
-    ~ 1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Gyeongsangbuk-do","itmId":"37","upItmId":null,"rownum":19,"objVarId":"A","charItmSn":266,"leaf":0,"scrKor":"경상북도"},{"lvl":1,"orgId":"101
-    ~ 1,"orgId":"101","tblId":"DT_1PM1502","scrEng":"Gyeongsangnam-do","itmId":"38","upItmId":null,"rownum":20,"objVarId":"A","charItmSn":295,"leaf":0,"scrKor":"경상남도"},{"lvl":1,"orgId":"101
-    ~ "containPeriod":" 5년 2015 ~ 2015","defaultAction":"/statHtml.do","defaultItem":"null","defaultPeriodCnt":1,"defaultPeriodStr":"F#","dimCo":1224288,"dimUnitYn":"N","directYn":"N","down
-    ~ iodStr":"F#","dimCo":1224288,"dimUnitYn":"N","directYn":"N","downloadable":true,"existCmmtEng":"N","existCmmtKor":"Y","existStblCmmtEng":"N","existStblCmmtKor":"Y","highLightInfo":nul
-    ~ "defaultItmArr":"","dimCo":"","direct":"","diviSearchYn":"","doAnal":"N","docId":"","downGridCellMerge":"","downGridCsvType":"","downGridMeta":"","downGridSdmxDataType":"","downGridSd
-    ~ :"N","docId":"","downGridCellMerge":"","downGridCsvType":"","downGridMeta":"","downGridSdmxDataType":"","downGridSdmxType":"","downGridTxtType":"","downLargeExprType":"","downLargeFil
-    ~ ridMeta":"","downGridSdmxDataType":"","downGridSdmxType":"","downGridTxtType":"","downLargeExprType":"","downLargeFileType":"","downLargeSort":"","empId":"","empNm":"","enableCellUnit
-    ~ idTxtType":"","downLargeExprType":"","downLargeFileType":"","downLargeSort":"","empId":"","empNm":"","enableCellUnit":"N","enableLevelExpr":"N","enableParentLevel":"","enableWeight":"
-    ~ tmprScrId":"","treeSearchKeyword":"","treeSearchOption":"","url":"","useAddFuncLog":"","usePivot":"N","view":"table","viewKind":"","viewSubKind":"","viewType":"","vwCd":"MT_ZTITLE"},"periodCnt":1,"periodIn
-    ~ 성별","연령별"]},"popupFileHeight":"","popupFileNm":"","popupHtmlUrl":"https://kosis.kr/tbl_popup/","pubLog":"3","renewalDate":"2017-01-05","serverType":"service","serverUrl":"https://kosis.kr","smblYn":"","sta
-    ~ 3","renewalDate":"2017-01-05","serverType":"service","serverUrl":"https://kosis.kr","smblYn":"","statId":"1962001","statLinkInfo":{"appAt":"Y","confmNo":"101001","existInquire":true,"existInquireLink":true
-    ~ Sno":"https://meta.narastat.kr/metasvc/svc/SvcMetaDcDtaPopup.do","newsLink":"https://mods.go.kr/board.es?mid=a10301020200&bid=203","orgEngNm":"Ministry of Data and Statistics","pubLin
-    ~ gEngNm":"Ministry of Data and Statistics","pubLink":"","sigaUrl":"https://kosis.kr/gen_etl/start.jsp","snameeng":"Population Census","statId":"1962001","urlCn":"https://mods.go.kr","urlStatNm":"국가데이터처,「인구총
-    ~ art.jsp","snameeng":"Population Census","statId":"1962001","urlCn":"https://mods.go.kr","urlStatNm":"국가데이터처,「인구총조사」"},"statOrgId":"101","tabMenuList":[{"objVarId":"13999001","scrKor":"항목","scrEng":"ITEM","lv
-    text: KOSIS 차트 바로가기 행렬전환 X 닫기 표두 표측 시점 항목 행정구역별(시군구) 성별 연령별 확인 --> 적용 초기화 취소 --> 주석정보 X 닫기 성별/연령별/종교별 인구-시군구 주석정보 X 닫기 다운로드 X 닫기 메타자료받기 (TXT) 파일형태 빈셀 부호(-) 통계부호 셀단위 코드포함 EXCEL(xlsx) EXCEL(xls) null --> ( 셀 병합 ) CSV ( 인코딩 : ANSI UTF-8 ) ( UTF-8 ) [ ANSI UTF-8 ] --> TXT ( 인코딩 : ANSI UTF-8 ) [ ANSI UTF-8 ] --> SDMX(2.0) [ DSD (데이터구조) DATA Generic Compact ] 시점정렬 오름차순 내림차순 소수점 수록자료형식과 동일 조회화면과 동일 다운로드 다운로드 파일을 생성하고 있습니다. 잠시만 기다려주십시오. 통계표 파일서비스 - 자료량이 많은 통계표로 미리 생성한 파일을 제공합니다. 다운로드 X 닫기 파일형태 메타자료받기 (TXT) EXCEL CSV 통계표구성 코드포함 시점표두, 항목표측 항목표두, 시점표측 시점정렬 오름차순 내림차순 다운로드 시점 재선택 다운로드 파일을 생성하고 있습니다. 잠시만 기다려주십시오. 통계표 파일서비스 - 자료량이 많은 통계표로 미리 생성한 파일을 제공합니다. 마이스크랩 X 닫기 주소 및 출처정보 X 닫기 URL 출처 (작성기관명, 조사명, 작성시점, 참조일자, 통계표명) 관련통계표 X 닫기 계층컬럼구분이란? X 닫기 상위레벨표시란? X 닫기 레벨별 전체선택 X 닫기 기능설명 - 상위레벨 선택(일부)값에 상관없이 해당레벨 전체가 선택됩니다. - 왼쪽 위 일괄설정은 분류, 항목 및 시점을 보다 편리하게 설정할 수 있는 기능입니다. 선택옵션이란? X 닫기 선택정보 전체보기 X 닫기 X 닫기 확인 취소 행렬전환 조회설정 추천통계표 X 닫기 현재 통계표 열람 후 가장 많이 조회된 통계표입니다. (최근 30일) 통계표 복사/공유 X 닫기 자료 복사 통계표 내의 자료가 클립보드에 복사되었습니다! 엑셀 등에 붙여넣기 하여 사용 가능합니다. URL 공유 *최대 10일 사용 가능 카카오톡 페이스북 X URL ✽ SNS 공유 또는 URL을 복사하여 현재 통계표 조회 설정 그대로 조회가 가능합니다. 생활물가지수(2015=100) 소비자물가지수(2015=100) --> 1) 「인구총조사」 국가데이터처 (자료문의처: 042-481-3730) 통계설명자료 보도자료 수록기간 : 5년 2015 ~ 2015 / 자료갱신일: 2017-01-05 / 주석정보 시점 증감/증감률 분석해제 행렬전환 열고정 (TEST) 분할조회건수 ( ) 새 탭 열기 주소/출처 추천통계표 스크랩 통계표 복사/공유 OPENAPI 인쇄 다운로드 다운로드 구분선 조회설정 (단위: 명 ) * 차트의 범례는 최대 20개까지 제공되며, 항목과 분류값을 재설정하여 조회할 수 있습니다. * 차트 기능은 구글 크롬 및 마이크로소프트 익스플로러11에 최적화 되어 있습니다. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+page: https://tjj.beijing.gov.cn/
+  110,140 bytes
+  6 matching link(s)
+  - 北京统计年鉴
+    https://tjj.beijing.gov.cn/so/s?siteCode=1100000012&tab=all&qt=%E5%8C%97%E4%BA%AC%E7%BB%9F%E8%AE%A1%E5%B9%B4%E9%89%B4
+  - 北京统计年鉴
+    https://tjj.beijing.gov.cn/tjsj_31433/tjnj_31441/bjtjnj_31442/
+  - 统计公报
+    https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/
+  - 北京区域统计年鉴
+    https://tjj.beijing.gov.cn/tjsj_31433/tjnj_31441/bjqytjnj_31443/
+  - 普查数据
+    https://tjj.beijing.gov.cn/tjsj_31433/pcsj_31452/rkpc/
+  - 北京市农普办全域开展普查区划分及建筑物...
+    https://tjj.beijing.gov.cn/zwgkai/gzdt/202608/t20260817_4826204.html
+page: https://stats.tj.gov.cn/
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: https://tjj.sh.gov.cn/
+  44,509 bytes
+  9 matching link(s)
+  - 致第四次全国农业普查清查对象的一封信 尊敬的农业普查清查对象： 您好！感谢您抽出宝贵时间参与第四次全国农业普查工作！ 农业普查每十年开展一次
+    http://tjj.sh.gov.cn/tzgs/20260922/4b1ea1d7d5ba4bcebbe8c9f6d7ee7e2d.html
+  - 致第四次全国农业普查普查指导员和普查员的一封信 尊敬的普查指导员和普查员： 农业农村现代化关系中国式现代化全局和成色。要把农业建成现代化大产
+    http://tjj.sh.gov.cn/tzgs/20260916/b922570e34d040788abe3fcdc2da67ff.html
+  - 致第四次全国农业普查清查对象的一封信
+    https://tjj.sh.gov.cn/tzgs/20260922/4b1ea1d7d5ba4bcebbe8c9f6d7ee7e2d.html
+  - 致第四次全国农业普查普查指导员和普查员的一封信
+    https://tjj.sh.gov.cn/tzgs/20260916/b922570e34d040788abe3fcdc2da67ff.html
+  - 上海市2025年全国1%人口抽样调查主要数据公报
+    https://tjj.sh.gov.cn/tjgb/20260630/b74619258aee4912a55a1da928b5be30.html
+  - 2025年上海市国民经济和社会发展统计公报
+    https://tjj.sh.gov.cn/tjgb/20260330/e0772941e8e041eaaad2df850b44ef98.html
+  - 上海市第五次全国经济普查主要数据公报（第一号）
+    https://tjj.sh.gov.cn/tjgb/20250424/fe6e54b06d3f4059a44c406b09c996fa.html
+  - 上海市第五次全国经济普查主要数据公报（第二号）
+    https://tjj.sh.gov.cn/tjgb/20250424/3e21538a6e0a407395ac288fc8e929b3.html
+  - 网站普查报告
+    https://tjj.sh.gov.cn/wzpc/index.html
+page: https://tjj.cq.gov.cn/
+  unreachable: URLError: <urlopen error [Errno 101] Network is unreachable>
+page: https://stats.hainan.gov.cn/
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: http://stats.gd.gov.cn/
+  59,427 bytes
+  16 matching link(s)
+  - 统计公报
+    http://stats.gd.gov.cn/tjgb/index.html
+  - 广东省第五次全国经济普查投入产出调查研究课题立项公告
+    http://stats.gd.gov.cn/ggl217/content/post_4793885.html
+  - 广东省第五次全国经济普查投入产出调查研究课题立项公示
+    http://stats.gd.gov.cn/ggl217/content/post_4790178.html
+  - 广东省第五次全国经济普查投入产出调查研究课题招标公告
+    http://stats.gd.gov.cn/ggl217/content/post_4776307.html
+  - 省农普办分片举办四农普方案培训班 夯实普查业务基础（图）
+    http://stats.gd.gov.cn/gzys/content/post_4957162.html
+  - 省局赴广州开展普查职责分工课题研讨及科技创新专业统计调研（图...
+    http://stats.gd.gov.cn/gzys/content/post_4954455.html
+  - 省农普办赴七市调研指导普查区划分和建筑物标绘工作（图）
+    http://stats.gd.gov.cn/gzys/content/post_4947572.html
+  - 广东省2025年全国1％人口抽样调查主要数据公报
+    http://stats.gd.gov.cn/tjgb/content/post_4919997.html
+  - 2025年广东省国民经济和社会发展统计公报
+    http://stats.gd.gov.cn/tjgb/content/post_4876564.html
+  - 2024年广东省科技经费投入统计公报
+    http://stats.gd.gov.cn/tjgb/content/post_4804428.html
+  - 2024年广东省国民经济和社会发展统计公报
+    http://stats.gd.gov.cn/tjgb/content/post_4686764.html
+  - 广东省第五次全国经济普查公报（第七号）
+    http://stats.gd.gov.cn/tjgb/content/post_4680368.html
+page: https://tjj.zj.gov.cn/
+  unreachable: URLError: <urlopen error _ssl.c:999: The handshake operation timed out>
+page: https://tj.jiangsu.gov.cn/
+  49,854 bytes
+  3 matching link(s)
+  - 统计年鉴
+    https://tj.jiangsu.gov.cn/col/col85821/index.html
+  - 统计公报
+    https://tj.jiangsu.gov.cn/col/col85666/index.html
+  - 普查数据
+    https://tj.jiangsu.gov.cn/col/col85279/index.html
+page: https://tjj.sc.gov.cn/
+  unreachable: URLError: <urlopen error [Errno 101] Network is unreachable>
+page: https://tjj.hubei.gov.cn/
+  53,314 bytes
+  7 matching link(s)
+  - 湖北省第四次全国农业普查方案培训会在武汉举办
+    http://tjj.hubei.gov.cn/bmdt/sjdt/202609/t20260910_6011315.shtml
+  - 谢高波到省农普办检查指导湖北省“四农普”普查区划分与建筑物标绘工作
+    http://tjj.hubei.gov.cn/bmdt/sjdt/202608/t20260828_6003177.shtml
+  - 谢高波赴武汉市督办农业普查工作
+    http://tjj.hubei.gov.cn/bmdt/sjdt/202607/t20260728_5984729.shtml
+  - 湖北省第四次全国农业普查人员管理与普查区划分业务培训会在汉召开
+    http://tjj.hubei.gov.cn/bmdt/sjdt/202607/t20260714_5976133.shtml
+  - 统计年鉴
+    https://tjj.hubei.gov.cn/tjsj/sjkscx/tjnj/
+  - 统计公报
+    https://tjj.hubei.gov.cn/tjsj/tjgb/
+  - 普查公报
+    https://tjj.hubei.gov.cn/tjsj/tjgb/pcgb/
+page: https://tjj.henan.gov.cn/
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: http://tjj.shandong.gov.cn/
+  84,214 bytes
+  13 matching link(s)
+  - 全国经济普查条例
+    http://tjj.shandong.gov.cn/art/2018/8/24/art_6120_956586.html
+  - 2025年山东省国民经济和社会发展统计公报
+    http://tjj.shandong.gov.cn/art/2026/3/3/art_6196_10322526.html
+  - 2024年山东省科技经费投入统计公报
+    http://tjj.shandong.gov.cn/art/2025/11/10/art_6196_10320849.html
+  - 2024年山东省国民经济和社会发展统计公报
+    http://tjj.shandong.gov.cn/art/2025/3/5/art_6196_10316729.html
+  - 2023年山东省科技经费投入统计公报
+    http://tjj.shandong.gov.cn/art/2024/10/28/art_6196_10314828.html
+  - 2023年山东省国民经济和社会发展统计公报
+    http://tjj.shandong.gov.cn/art/2024/3/3/art_6196_10311526.html
+  - 2022年山东省科技经费投入统计公报
+    http://tjj.shandong.gov.cn/art/2023/11/3/art_6196_10309585.html
+  - 山东省第五次全国经济普查公报（第七号）
+    http://tjj.shandong.gov.cn/art/2025/4/10/art_6293_10317366.html
+  - 山东省第五次全国经济普查公报（第六号）
+    http://tjj.shandong.gov.cn/art/2025/4/10/art_6293_10317365.html
+  - 山东省第五次全国经济普查公报（第五号）
+    http://tjj.shandong.gov.cn/art/2025/4/10/art_6293_10317364.html
+  - 山东省第五次全国经济普查公报（第四号）
+    http://tjj.shandong.gov.cn/art/2025/4/10/art_6293_10317363.html
+  - 山东省第五次全国经济普查公报（第三号）
+    http://tjj.shandong.gov.cn/art/2025/4/10/art_6293_10317362.html
