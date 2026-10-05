@@ -1,14 +1,20 @@
-sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
-  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
-    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
-    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
-  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
-  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  wrote data/processed/sea_cod_ps_age.json (2693 kB)
-  wrote sea_cod_ps_age.json: 1196 records
+philippines_age: Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)
+  fetched 2020 Census Total Popn_Single Age_MaleFemale_Admin4.xlsx (48.7 MB)
+  42,041 barangays in 1,655 cities and municipalities of 87 provinces, every one making its own totals
+  the barangays make 109,033,245 (-2,098 on the proclaimed 109,035,343); national median 25.3 against the PSA's 25.3; top class 80+
+  CITY OF COTABATO (325,079) taken out of MAGUINDANAO for the polygon Cotabato City
+  84 polygons with a count; polygons without: ['Cotabato', 'Maguindanao']; census provinces written nowhere: COTABATO (NORTH COTABATO) (its polygon 'Cotabato' is left out: the boundary file's polygon covers some 5,900 km2 of the province's 9,008; the rest lies inside its 'Maguindanao'); INTERIM PROVINCE (the boundary file draws no polygon for it); MAGUINDANAO (its polygon 'Maguindanao' is left out: the boundary file's polygon takes in Sultan Kudarat, which it does not draw, and more (9,144 km2 against Maguindanao's ~4,900)); SULTAN KUDARAT (the boundary file draws no polygon for it)
+  admin1: 17 units; median 18.5-27.5; sex ratio 99.9-105.8
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/philippines_age.py", line 446, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/philippines_age.py", line 436, in main
+    meds = sorted(r["median_age"]["value"] for r in rs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/philippines_age.py", line 436, in <genexpr>
+    meds = sorted(r["median_age"]["value"] for r in rs)
+                  ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'value'
