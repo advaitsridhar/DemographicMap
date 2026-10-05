@@ -1,45 +1,34 @@
-marshall_census: 2021 Census basic tables and analytical report
-  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1004, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 406: Not Acceptable
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/marshall_census.py", line 339, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/marshall_census.py", line 329, in main
-    tables = read_tables(pages_of(TABLES_URL))
-                         ^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/marshall_census.py", line 320, in pages_of
-    blob = http_get(url, binary=True, timeout=600, headers={"Accept": "application/pdf,*/*"})
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1025, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf
+== https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/cb0fd355-5326-4574-a76a-81bae7894991/download/kir_admpop_2020.xlsx
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 112,348 bytes
+  -- 'kir_admpop_adm3_2020'
+       1: ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | ADM3_EN | ADM3_PCODE | Year | F_TL | M_TL | T_TL
+      44: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Abaokoro | KI10607 | 2020 | 186 | 189 | 375
+      45: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Abatao | KI10613 | 2020 | 242 | 238 | 480
+      46: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Buariki | KI10601 | 2020 | 363 | 370 | 733
+      47: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Buota | KI10614 | 2020 | 836 | 811 | 1647
+      48: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Kainaba | KI10610 | 2020 | 155 | 164 | 319
+      49: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Marenanuka | KI10608 | 2020 | 99 | 97 | 196
+      50: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Nabeina | KI10611 | 2020 | 244 | 240 | 484
+      51: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Nooto | KI10606 | 2020 | 442 | 374 | 816
+      52: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Nuatabu | KI10603 | 2020 | 127 | 120 | 247
+      53: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Tabiteuea | KI10612 | 2020 | 263 | 261 | 524
+      54: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Tabonibara | KI10609 | 2020 | 227 | 230 | 457
+      55: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Taratai | KI10605 | 2020 | 144 | 132 | 276
+      56: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Tearinibai | KI10602 | 2020 | 235 | 206 | 441
+      57: Kiribati | KI | Gilbert Islands | KI1 | North Tarawa | KI106 | Tebwangaroi | KI10604 | 2020 | 20 | 26 | 46
+      58: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Abarao | KI10706 | 2020 | 1067 | 950 | 2017
+      59: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Ambo | KI10710 | 2020 | 1772 | 1601 | 3373
+      60: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Ananau Causeway | KI10704 | 2020 | 1374 | 1195 | 2569
+      61: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Antebuka | KI10712 | 2020 | 604 | 600 | 1204
+      62: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Bairiki | KI10715 | 2020 | 1821 | 1679 | 3500
+      63: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Banraeaba | KI10711 | 2020 | 1506 | 1391 | 2897
+      64: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | BetioEast | KI10716 | 2020 | 9516 | 9049 | 18565
+      65: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Bikenibeu | KI10705 | 2020 | 3970 | 3577 | 7547
+      66: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Bonriki | KI10702 | 2020 | 1589 | 1486 | 3075
+      67: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Eita | KI10707 | 2020 | 2022 | 1899 | 3921
+      68: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Nanikai | KI10714 | 2020 | 656 | 601 | 1257
+      69: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Taborio | KI10709 | 2020 | 723 | 687 | 1410
+      70: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Tanaea | KI10701 | 2020 | 162 | 155 | 317
+      71: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Tangintebu | KI10708 | 2020 | 122 | 88 | 210
+      72: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Teaoraereke | KI10713 | 2020 | 3180 | 2893 | 6073
+      73: Kiribati | KI | Gilbert Islands | KI1 | South Tarawa | KI107 | Temaiku | KI10703 | 2020 | 2897 | 2607 | 5504
