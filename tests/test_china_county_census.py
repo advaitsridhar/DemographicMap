@@ -240,6 +240,17 @@ class Binding(unittest.TestCase):
             cc.build("63", tables(), NAMES, CODE_SHAPES, SEATS, admin1, admin2, national=1.0)
 
 
+class Kinds(unittest.TestCase):
+    def test_what_a_row_below_a_prefecture_is(self):
+        self.assertEqual(cc.kind_of("南关区", "220102"), "district")
+        # An autonomous prefecture numbers its county-level cities from 01.
+        self.assertEqual(cc.kind_of("延吉市", "222401"), "county")
+        self.assertEqual(cc.kind_of("长春经济技术开发区", "220171"), "zone")
+        self.assertEqual(cc.kind_of("长春莲花山生态旅游度假区", None), "zone")
+        self.assertEqual(cc.kind_of("神农架林区", "429021"), "county")
+        self.assertEqual(cc.kind_of("大通回族土族自治县", "630121"), "county")
+
+
 class Names(unittest.TestCase):
     def test_a_county_made_a_district_since_meets_its_row_by_stem(self):
         names = {"630100": ["西宁市"], "630122": ["湟中区"]}

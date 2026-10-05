@@ -15,9 +15,9 @@ not.
 division of the mid-1990s, so a 2020 county row belongs on a polygon only where
 the polygon is still that one county. Five tests, all of which must pass:
 
-1. the row is a county, autonomous county, banner or county-level city -- its
-   GB/T 2260 code ends 21 or higher -- never a district (区), whose ground the
-   cities have redrawn, and never a development zone;
+1. the row is a county, autonomous county, banner or county-level city, never
+   a district (a name ending 区), whose ground the cities have redrawn, and
+   never a development zone (a GB/T 2260 code ending 71 to 80, or no code);
 2. its prefecture lists no development zone, scenic area or other special
    unit: the yearbooks count those apart from the counties whose ground they
    were cut from (Jilin's Changbai Mountain zones hold 61,146 people taken from
@@ -61,6 +61,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import time
 import urllib.parse
 from collections import Counter
 from typing import Any
@@ -83,6 +84,7 @@ TABLES = {"A0101": "Table 1-1: households, population and sex ratio by area",
           "A0104": "Table 1-4: population by sex and nationality (民族), by area",
           "A0105": "Table 1-5: population by age and sex, by area"}
 DRIFT = (0.6, 1.6)            # 2020 count against an older figure for the same polygon
+PAUSE = 3                     # seconds between two requests to the Internet Archive
 LICENCE = "Official statistics of the provincial bureau of statistics, cited as published"
 
 # The provinces whose 2020 census yearbook prints the three tables by county,
@@ -150,7 +152,8 @@ def fetch_table(base: str, table: str) -> tuple[list[list[Any]], str]:
                     tried.append("no capture in the Internet Archive")
                     continue
                 where = REPLAY.format(stamp=stamp, url=url)
-                blob = http_get(where, binary=True, cache=True, retries=3, timeout=180)
+                time.sleep(PAUSE)
+                blob = http_get(where, binary=True, cache=True, retries=6, timeout=180)
             assert isinstance(blob, bytes)
             sheet = xlrd.open_workbook(file_contents=blob).sheet_by_index(0)
             return [sheet.row_values(i) for i in range(sheet.nrows)], where
@@ -253,6 +256,20 @@ def code_of(name: str, prefix: str, names: dict[str, list[str]],
     return by_stem[0] if len(by_stem) == 1 else None
 
 
+def kind_of(label: str, code: str | None) -> str:
+    """'zone', 'district' or 'county' for a row below a prefecture. A
+    development zone carries a code ending 71 to 80 where it carries one at
+    all; a district's name ends 区 (a forest district 林区 and a special
+    district 特区 are county-level, as counties are). An autonomous
+    prefecture's county-level cities are numbered from 01 like a city's
+    districts (Yanbian's Yanji is 222401), so the number alone cannot say."""
+    if code is None or 71 <= int(code[4:]) <= 80:
+        return "zone"
+    if label.endswith("区") and not label.endswith(("林区", "特区")):
+        return "district"
+    return "county"
+
+
 def closes(totals: list[float], start: int, whole: float, stop: set[int]) -> int | None:
     """The last row of the run starting at ``start`` that adds up to exactly
     ``whole``, stopping at a row in ``stop``; None if no run does."""
@@ -296,8 +313,8 @@ def hierarchy(labels: list[str], totals: list[float], code: str,
             prefix = prefs[i][:4]
             for j in range(i + 1, end + 1):
                 county = code_of(labels[j], prefix, names, "county")
-                out.append({"index": j, "label": labels[j],
-                            "kind": "county" if county else "special", "code": county,
+                kind = "special" if kind_of(labels[j], county) == "zone" else "county"
+                out.append({"index": j, "label": labels[j], "kind": kind, "code": county,
                             "prefecture": prefs[i], "head": None})
             i = end + 1
             continue
@@ -394,7 +411,7 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
         if area["kind"] not in ("county", "direct"):
             continue
         unit_code = area["code"]
-        if int(unit_code[4:]) < 21:
+        if kind_of(area["label"], unit_code) == "district":
             refuse(area, "a district")
             continue
         pref = area["prefecture"] or unit_code[:4] + "00"
@@ -526,8 +543,15 @@ def main() -> int:
     for code, province in PROVINCES.items():
         log(f"china_county_census: {province['bureau']}, {province['book']}")
         tables, urls = {}, {}
-        for table in TABLES:
-            tables[table], urls[table] = fetch_table(province["base"], table)
+        try:
+            for table in TABLES:
+                tables[table], urls[table] = fetch_table(province["base"], table)
+        except SystemExit as exc:
+            # The bureau refusing and the Archive busy is a gap for this run,
+            # not a fault in the figures: its counties keep china_census's
+            # reasons, and the log says why.
+            log(f"  {province['name']} skipped: {exc}")
+            continue
         records += build(code, tables, names, code_shapes, seats, admin1, admin2,
                          nbs.get(province["name"]), urls, args.explain)
     write_json(PROCESSED / OUT, records)
