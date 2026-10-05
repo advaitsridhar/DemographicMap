@@ -1,0 +1,2025 @@
+[
+  {
+    "id": "JOR-DOS-Ajloun",
+    "level": "admin1",
+    "name": "Ajloun",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 219900,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 113,300 men and 106,600 women."
+    },
+    "median_age": {
+      "value": 21.3,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 106.3,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 89.2,
+        "count": 156776
+      },
+      {
+        "group": "Syrian",
+        "pct": 8.3,
+        "count": 14496
+      },
+      {
+        "group": "Egyptian",
+        "pct": 2.1,
+        "count": 3695
+      },
+      {
+        "group": "Palestinian",
+        "pct": 0.2,
+        "count": 332
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.0,
+        "count": 50
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B18053261503870",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 113,300 men and 106,600 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (175,694 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (175,694 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Amman",
+    "level": "admin1",
+    "name": "Amman",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5004600,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 2,689,000 men and 2,315,600 women."
+    },
+    "median_age": {
+      "value": 24.5,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 116.1,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 63.6,
+        "count": 2535812
+      },
+      {
+        "group": "Syrian",
+        "pct": 10.9,
+        "count": 435578
+      },
+      {
+        "group": "Egyptian",
+        "pct": 9.8,
+        "count": 390631
+      },
+      {
+        "group": "Palestinian",
+        "pct": 7.7,
+        "count": 308091
+      },
+      {
+        "group": "Iraqi",
+        "pct": 3.1,
+        "count": 121893
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.7,
+        "count": 27019
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.6,
+        "count": 23390
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.5,
+        "count": 21649
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.4,
+        "count": 16293
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.3,
+        "count": 13393
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.3,
+        "count": 12773
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.3,
+        "count": 10154
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.3,
+        "count": 11181
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.2,
+        "count": 9636
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.2,
+        "count": 8559
+      },
+      {
+        "group": "Indian",
+        "pct": 0.2,
+        "count": 6488
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.2,
+        "count": 6844
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.2,
+        "count": 7036
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.2,
+        "count": 7402
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.2,
+        "count": 8572
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.1,
+        "count": 3790
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.1,
+        "count": 2231
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B53844896346683",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 2,689,000 men and 2,315,600 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (3,988,415 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (3,988,415 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Aqaba",
+    "level": "admin1",
+    "name": "Aqaba",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 250900,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 136,600 men and 114,300 women."
+    },
+    "median_age": {
+      "value": 23.1,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 119.5,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 71.8,
+        "count": 134911
+      },
+      {
+        "group": "Egyptian",
+        "pct": 12.9,
+        "count": 24347
+      },
+      {
+        "group": "Palestinian",
+        "pct": 8.6,
+        "count": 16196
+      },
+      {
+        "group": "Syrian",
+        "pct": 4.1,
+        "count": 7799
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.4,
+        "count": 824
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.3,
+        "count": 591
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.2,
+        "count": 345
+      },
+      {
+        "group": "Indian",
+        "pct": 0.2,
+        "count": 429
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.2,
+        "count": 388
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.2,
+        "count": 297
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.2,
+        "count": 322
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.1,
+        "count": 139
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.1,
+        "count": 163
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.1,
+        "count": 282
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 162
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.1,
+        "count": 101
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.1,
+        "count": 185
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.1,
+        "count": 179
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.1,
+        "count": 137
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.1,
+        "count": 112
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 39
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B99764555865464",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 136,600 men and 114,300 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (188,026 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (188,026 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Balqa",
+    "level": "admin1",
+    "name": "Balqa",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 614000,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 329,900 men and 284,100 women."
+    },
+    "median_age": {
+      "value": 23.2,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 116.1,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 80.7,
+        "count": 395540
+      },
+      {
+        "group": "Egyptian",
+        "pct": 8.6,
+        "count": 42393
+      },
+      {
+        "group": "Syrian",
+        "pct": 5.7,
+        "count": 27982
+      },
+      {
+        "group": "Palestinian",
+        "pct": 3.5,
+        "count": 17060
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.6,
+        "count": 2950
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.3,
+        "count": 1238
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.1,
+        "count": 409
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.1,
+        "count": 613
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.1,
+        "count": 341
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.1,
+        "count": 393
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "Indian",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 181
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.0,
+        "count": 108
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 191
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.0,
+        "count": 213
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B62478729305943",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 329,900 men and 284,100 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (490,310 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (490,310 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Irbid",
+    "level": "admin1",
+    "name": "Irbid",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2210500,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 1,143,000 men and 1,067,500 women."
+    },
+    "median_age": {
+      "value": 21.5,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 107.1,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 74.3,
+        "count": 1308516
+      },
+      {
+        "group": "Syrian",
+        "pct": 19.5,
+        "count": 343479
+      },
+      {
+        "group": "Egyptian",
+        "pct": 3.1,
+        "count": 55004
+      },
+      {
+        "group": "Palestinian",
+        "pct": 1.9,
+        "count": 33396
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.3,
+        "count": 5144
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.2,
+        "count": 2904
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.1,
+        "count": 2325
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.1,
+        "count": 1422
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.1,
+        "count": 1578
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 1960
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.1,
+        "count": 1822
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 846
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.0,
+        "count": 379
+      },
+      {
+        "group": "Indian",
+        "pct": 0.0,
+        "count": 298
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 588
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.0,
+        "count": 442
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.0,
+        "count": 592
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 502
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.0,
+        "count": 286
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 272
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.0,
+        "count": 182
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B72492647240238",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 1,143,000 men and 1,067,500 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (1,762,056 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (1,762,056 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Jerash",
+    "level": "admin1",
+    "name": "Jerash",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 296000,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 154,000 men and 142,000 women."
+    },
+    "median_age": {
+      "value": 20.7,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 108.5,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 70.7,
+        "count": 167260
+      },
+      {
+        "group": "Palestinian",
+        "pct": 22.7,
+        "count": 53628
+      },
+      {
+        "group": "Syrian",
+        "pct": 4.6,
+        "count": 10868
+      },
+      {
+        "group": "Egyptian",
+        "pct": 1.9,
+        "count": 4473
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Indian",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B9527447842434",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 154,000 men and 142,000 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (236,568 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (236,568 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Karak",
+    "level": "admin1",
+    "name": "Karak",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 395400,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 206,700 men and 188,700 women."
+    },
+    "median_age": {
+      "value": 22.7,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 109.5,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 86.0,
+        "count": 271818
+      },
+      {
+        "group": "Egyptian",
+        "pct": 6.1,
+        "count": 19278
+      },
+      {
+        "group": "Syrian",
+        "pct": 5.4,
+        "count": 17077
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.9,
+        "count": 2772
+      },
+      {
+        "group": "Palestinian",
+        "pct": 0.5,
+        "count": 1442
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.3,
+        "count": 874
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.1,
+        "count": 289
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.1,
+        "count": 280
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.1,
+        "count": 182
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 233
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.1,
+        "count": 256
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.1,
+        "count": 332
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.1,
+        "count": 378
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.1,
+        "count": 179
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.1,
+        "count": 223
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 139
+      },
+      {
+        "group": "Indian",
+        "pct": 0.0,
+        "count": 77
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 112
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 15
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B94904250637342",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 206,700 men and 188,700 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (315,998 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (315,998 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Ma'an",
+    "level": "admin1",
+    "name": "Ma'an",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 197900,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 103,300 men and 94,600 women."
+    },
+    "median_age": {
+      "value": 21.7,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 109.2,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 88.8,
+        "count": 127869
+      },
+      {
+        "group": "Syrian",
+        "pct": 5.9,
+        "count": 8450
+      },
+      {
+        "group": "Egyptian",
+        "pct": 3.7,
+        "count": 5322
+      },
+      {
+        "group": "Palestinian",
+        "pct": 0.5,
+        "count": 668
+      },
+      {
+        "group": "Indian",
+        "pct": 0.4,
+        "count": 513
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.2,
+        "count": 344
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.1,
+        "count": 177
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.1,
+        "count": 200
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.1,
+        "count": 118
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B90517147106903",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 103,300 men and 94,600 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (143,962 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (143,962 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Madaba",
+    "level": "admin1",
+    "name": "Madaba",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 236200,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 125,000 men and 111,200 women."
+    },
+    "median_age": {
+      "value": 23.0,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 112.4,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 82.8,
+        "count": 156342
+      },
+      {
+        "group": "Syrian",
+        "pct": 7.8,
+        "count": 14669
+      },
+      {
+        "group": "Egyptian",
+        "pct": 5.7,
+        "count": 10788
+      },
+      {
+        "group": "Palestinian",
+        "pct": 2.7,
+        "count": 5071
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.3,
+        "count": 584
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.1,
+        "count": 135
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.1,
+        "count": 262
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.1,
+        "count": 107
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.1,
+        "count": 142
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Indian",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 70
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.0,
+        "count": 42
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.0,
+        "count": 15
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B40052368003294",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 125,000 men and 111,200 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (188,747 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (188,747 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Mafraq",
+    "level": "admin1",
+    "name": "Mafraq",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 686800,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 354,300 men and 332,500 women."
+    },
+    "median_age": {
+      "value": 19.1,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 106.6,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 57.1,
+        "count": 313605
+      },
+      {
+        "group": "Syrian",
+        "pct": 37.8,
+        "count": 207903
+      },
+      {
+        "group": "Egyptian",
+        "pct": 3.0,
+        "count": 16257
+      },
+      {
+        "group": "Palestinian",
+        "pct": 1.5,
+        "count": 8405
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.2,
+        "count": 828
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.1,
+        "count": 715
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.1,
+        "count": 460
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 175
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.0,
+        "count": 64
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Indian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.0,
+        "count": 57
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 230
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.0,
+        "count": 212
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B24919758862355",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 354,300 men and 332,500 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (549,389 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (549,389 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Tafilah",
+    "level": "admin1",
+    "name": "Tafilah",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 120300,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 63,000 men and 57,300 women."
+    },
+    "median_age": {
+      "value": 21.6,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 109.9,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 93.6,
+        "count": 89997
+      },
+      {
+        "group": "Egyptian",
+        "pct": 4.0,
+        "count": 3857
+      },
+      {
+        "group": "Syrian",
+        "pct": 2.0,
+        "count": 1933
+      },
+      {
+        "group": "Palestinian",
+        "pct": 0.1,
+        "count": 105
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.1,
+        "count": 141
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B42397385377058",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 63,000 men and 57,300 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (96,180 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (96,180 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  },
+  {
+    "id": "JOR-DOS-Zarqa",
+    "level": "admin1",
+    "name": "Zarqa",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1704500,
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+      "note": "The DoS's estimate for the end of 2025: 901,800 men and 802,700 women."
+    },
+    "median_age": {
+      "value": 21.6,
+      "unit": "years",
+      "year": 2015,
+      "source": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1"
+    },
+    "sex_ratio": {
+      "value": 112.3,
+      "unit": "males_per_100_females",
+      "year": 2025,
+      "source": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census asked each person's religion (its household form puts it beside sex and nationality: https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf), but the Department of Statistics publishes no religion table from it: the census's person tables (3.1 to 3.19, by population category, age, households, residence, health insurance and marriage) and its other series carry none, so no governorate's religion is published."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one."
+    },
+    "ethnicity": [
+      {
+        "group": "Jordanian",
+        "pct": 67.6,
+        "count": 920190
+      },
+      {
+        "group": "Palestinian",
+        "pct": 13.9,
+        "count": 189788
+      },
+      {
+        "group": "Syrian",
+        "pct": 12.9,
+        "count": 175280
+      },
+      {
+        "group": "Egyptian",
+        "pct": 4.4,
+        "count": 60225
+      },
+      {
+        "group": "Iraqi",
+        "pct": 0.3,
+        "count": 3939
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 0.2,
+        "count": 2852
+      },
+      {
+        "group": "European nationalities",
+        "pct": 0.1,
+        "count": 1495
+      },
+      {
+        "group": "Indian",
+        "pct": 0.1,
+        "count": 1014
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.1,
+        "count": 794
+      },
+      {
+        "group": "Saudi",
+        "pct": 0.1,
+        "count": 1371
+      },
+      {
+        "group": "African nationalities",
+        "pct": 0.0,
+        "count": 295
+      },
+      {
+        "group": "Asian nationalities",
+        "pct": 0.0,
+        "count": 412
+      },
+      {
+        "group": "Filipino national",
+        "pct": 0.0,
+        "count": 168
+      },
+      {
+        "group": "Indonesian",
+        "pct": 0.0,
+        "count": 278
+      },
+      {
+        "group": "Lebanese",
+        "pct": 0.0,
+        "count": 461
+      },
+      {
+        "group": "Libyan",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
+        "group": "North American nationalities",
+        "pct": 0.0,
+        "count": 254
+      },
+      {
+        "group": "Other Arab nationalities",
+        "pct": 0.0,
+        "count": 656
+      },
+      {
+        "group": "Other nationalities",
+        "pct": 0.0,
+        "count": 196
+      },
+      {
+        "group": "Sri Lankan",
+        "pct": 0.0,
+        "count": 405
+      },
+      {
+        "group": "Sudanese",
+        "pct": 0.0,
+        "count": 591
+      },
+      {
+        "group": "Yemeni",
+        "pct": 0.0,
+        "count": 665
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Department of Statistics (Jordan), Estimated Population of the Kingdom by Governorate and Sex, at end of 2025 (Table 2.2)",
+        "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+        "year": 2025,
+        "license": "Department of Statistics (Jordan), published statistics"
+      },
+      {
+        "field": "median_age/ethnicity",
+        "name": "Department of Statistics (Jordan), Population and Housing Census 2015, Tables 3.1, 3.4 and 8.1",
+        "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf",
+        "year": 2015,
+        "license": "Department of Statistics (Jordan), published statistics"
+      }
+    ],
+    "country": "JOR",
+    "match_by": "shape_id",
+    "shape_id": "50493656B99152079712432",
+    "sex_ratio_note": "Males per 100 females in the DoS's estimate for the end of 2025: 901,800 men and 802,700 women.",
+    "median_age_note": "Median age of everyone the 2015 census counted inside Jordan in the governorate, Jordanians and others (1,361,416 people; Jordanians abroad left out), interpolated within the census's age groups (under 1, 1-4, 5-9 and so on to 80 and over; Table 3.4).",
+    "ethnicity_year": 2015,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2015 census records each person's nationality and asks no ethnic question. Carried on this field under the owner's decision of 19 September 2026. Everyone counted inside Jordan (1,361,416 people; Jordanians abroad left out): Jordanians from Table 3.1, everyone else by country of nationality from Table 8.1, the largest by name and the rest by region. 'Palestinian' is Palestinian nationality (chiefly people from Gaza), not Jordanians of Palestinian origin, who are Jordanian."
+  }
+]
