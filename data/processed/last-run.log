@@ -1,25 +1,156 @@
-kyrgyzstan_census: Chuy: https://www.stat.gov.kg/media/publicationarchive/390cc065-9ead-4ac7-9f6f-2ddfa38a8cbe.pdf
-  Chuy азербайджанцы: men and women 140 + 128 do not make 288 as printed
-  Chuy другие: men and women 82 + 115 do not make 177 as printed
-  Chuy г.токмок Пакистанцы и Индийцы: table 3.4 has 198, table 3.2 197
-  9 units: г.токмок, аламудунский район, жайылский район, кеминский район, московский район, панфиловский район, сокулукский район, чуйский район, ысык-атинский район; single years read
-kyrgyzstan_census: Bishkek: https://www.stat.gov.kg/media/publicationarchive/2a645aed-5154-4518-b114-dc97239a3a83.pdf
-  Bishkek г.бишкек дунгане: table 3.4 has 2,779, table 3.2 1,784
-  1 units: г.бишкек; single years read
-kyrgyzstan_census: Osh: https://www.stat.gov.kg/media/publicationarchive/f76c9a54-0edf-4cfd-91df-8d01379a128b.pdf
-  Osh ноокатский район: the printed groups make 314,877 of 315,011; the 134 left are counted as other
-  Osh узгенский район: the printed groups make 286,853 of 287,109; the 256 left are counted as other
-  kyrgyzstan_census: Osh: no age block for кара-сууский район
-kyrgyzstan_census: Osh city: https://www.stat.gov.kg/media/publicationarchive/6d075a2f-51ec-4cec-bf59-455c631ce39b.pdf
-  1 units: г.ош; single years read
-kyrgyzstan_census: Batken: https://www.stat.gov.kg/media/publicationarchive/dfe4b339-3f9c-4bb7-887e-96e55e15dde0.pdf
-  kyrgyzstan_census: Batken баткенская область: age block ends after ['90-99']
-kyrgyzstan_census: Jalal-Abad: https://www.stat.gov.kg/media/publicationarchive/ad52f290-cb14-4ff1-9179-d0ad0f38b09d.pdf
-  kyrgyzstan_census: Jalal-Abad джалал-абадская область: age block ends after ['90-99']
-kyrgyzstan_census: Issyk-Kul: https://www.stat.gov.kg/media/publicationarchive/8b892242-eaa9-446d-94b2-7ba7aadcb340.pdf
-  kyrgyzstan_census: Issyk-Kul: no groups table found
-kyrgyzstan_census: Naryn: https://www.stat.gov.kg/media/publicationarchive/e790d125-ecd1-471e-b31b-0eb9dc7c4894.pdf
-  kyrgyzstan_census: Naryn нарынская область: age groups ['0-4', '5-9', '10-14', '15', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-99', '100 лет и старше']
-kyrgyzstan_census: Talas: https://www.stat.gov.kg/media/publicationarchive/d79c0e75-073d-4a50-92fe-3c735b1a2dfc.pdf
-  kyrgyzstan_census: Talas таласская область: age block ends after ['90-99']
-kyrgyzstan_census: kyrgyzstan_census: Osh: no age block for кара-сууский район | kyrgyzstan_census: Batken баткенская область: age block ends after ['90-99'] | kyrgyzstan_census: Jalal-Abad джалал-абадская область: age block ends after ['90-99'] | kyrgyzstan_census: Issyk-Kul: no groups table found | kyrgyzstan_census: Naryn нарынская область: age groups ['0-4', '5-9', '10-14', '15', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90-99', '100 лет и старше'] | kyrgyzstan_census: Talas таласская область: age block ends after ['90-99']
+cdx fsmstatistics.fm/*: 10918 captures, 155 matching '(?:pdf|xls|ensus)'
+  20191113163856 200 text/html https://www.fsmstatistics.fm/2020-population-and-housing-census-project-received-1-5m-from-congress/
+  20191114215137 200 text/html https://www.fsmstatistics.fm/2020-population-and-housing-census-project-received-1-5m-from-congress/embed/
+  20191113175543 200 application/rss+xml https://www.fsmstatistics.fm/2020-population-and-housing-census-project-received-1-5m-from-congress/feed/
+  20230914020759 200 text/html https://fsmstatistics.fm/365-inspirational-quotes-in-a-jar-pdf/
+  20191114233748 200 text/html https://www.fsmstatistics.fm/populationbysexstateandsensusyear/
+  20191115095446 200 text/html https://www.fsmstatistics.fm/populationbysexstateandsensusyear/embed/
+  20230806070316 200 text/html https://fsmstatistics.fm/rumi-quotes-pdf/
+  20230920132923 200 text/html https://fsmstatistics.fm/shakespeare-quotes-on-life-lessons-pdf/
+  20230802112025 200 text/html https://fsmstatistics.fm/stephen-covey-quotes-pdf/
+  20191113163706 200 text/html https://www.fsmstatistics.fm/training-of-trainers-for-the-2010-census/
+  20191114215052 200 text/html https://www.fsmstatistics.fm/training-of-trainers-for-the-2010-census/embed/
+  20191113175521 200 application/rss+xml https://www.fsmstatistics.fm/training-of-trainers-for-the-2010-census/feed/
+  20220308000217 200 text/css https://www.fsmstatistics.fm/wp-content/plugins/pdf-embedder/css/pdfemb-embed-pdf-4.6.css
+  20220302154250 200 text/css https://www.fsmstatistics.fm/wp-content/plugins/pdf-embedder/css/pdfemb-embed-pdf-4.6.css?ver=4.6
+  20220302153932 200 application/javascript https://www.fsmstatistics.fm/wp-content/plugins/pdf-embedder/js/all-pdfemb-basic-4.6.min.js
+  20220308000512 200 application/javascript https://www.fsmstatistics.fm/wp-content/plugins/pdf-embedder/js/all-pdfemb-basic-4.6.min.js?ver=4.9.12
+  20220308000644 200 application/javascript https://www.fsmstatistics.fm/wp-content/plugins/pdf-embedder/js/pdfjs/pdf-4.6.min.js
+  20220308000229 200 application/javascript https://www.fsmstatistics.fm/wp-content/plugins/pdf-embedder/js/pdfjs/pdf-4.6.min.js?ver=4.6
+  20221114130849 200 application/javascript https://www.fsmstatistics.fm/wp-content/plugins/pdf-embedder/js/pdfjs/pdf-4.6.worker.min.js
+  20201115082717 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-Agriculture-1590-kb.pdf
+  20201115082752 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-Education-1338-kb.pdf
+  20201115082855 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-Household-Fishing-3834-kb.pdf
+  20201115082948 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-ICT-and-Transport-2295-kb.pdf
+  20201115082818 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-Introduction-Reference-824-kb.pdf
+  20201115082925 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-National-Expentiture-1198-kb.pdf
+  20201115091329 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-National-Income-1040-kb.pdf
+  20201115082604 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-State-Expenditure-1164-kb.pdf
+  20201115082645 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/2014-FSM-Fact-Sheet-State-Income-1747-kb.pdf
+  20200612083129 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2018/12/Book1.xlsx
+  20191113175813 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2018/12/Consumer-Price-Index-Statistics-Read-or-download-the-full-report.xlsx
+  20191115022424 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2018/12/external.xlsx
+  20191113180059 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/FSM-Economic-and-Fiscal-Update-2018.pdf
+  20191113180006 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/FSM_FY2017EconBrief.pdf
+  20191113175721 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2018/12/International-Merchandise-Trades-Statistics-Read-or-download-the-full-report.pdf
+  20191113175630 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2018/12/International-Visitor-Arrivals-Statistics-Read-or-download-the-full-report.xlsx
+  20201115045632 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/01/2005_FSM_Poverty_Report.pdf
+  20201115045657 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/01/2013_FSM_Poverty_Profile.pdf
+  20201115054243 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/01/Climate-Characteristics.xlsx
+  20201114180219 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/01/Employment-Application-Form.pdf
+  20201115080119 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/01/FSM-ASSESSMENT-TABLE.xlsx
+  20220522031001 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/01/IVA-Classification-of-Purpose.pdf
+  20201115081057 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/1994-FSM-Basic-Tables-1.pdf
+  20201115081129 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/1994-FSM-Census-Report.pdf
+  20201115081534 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/1998_HIES_Main_Analysis_Report.pdf
+  20201115081557 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/1998_Poverty_Profile_of_FSM-2.pdf
+  20201115045557 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/1998_Poverty_Profile_of_FSM.pdf
+  20201115081201 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Basic-Tables.pdf
+  20201115081232 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Census-Report.pdf
+  20201115081315 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf
+  20210427194658 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2005_FSM_Poverty_Report.pdf
+  20201115081650 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2005_HIES_Main_Analysis_Report.pdf
+  20201115081345 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2010-Basic-Tables.xlsx
+  20211229042423 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2010-Summary_Analysis_Key_Indicators.pdf
+  20201115081508 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2012-Fertility_Monograph.pdf
+  20250601234459 200 text/html http://www.fsmstatistics.fm/wp-content/uploads/2019/02/2012-Fertility_Monograph.pdfVallely
+  20201115081717 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2013_FSM_HIES_Methodological_Report.pdf
+  20210427194800 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2013_FSM_Poverty_Profile.pdf
+  20201115081842 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2013_HIES_Main_Analysis_Report.pdf
+  20201115081931 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2013_HIES_Main_Analysis_Tables.xlsx
+  20201115091429 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2014-Common-Agriculture-Products-Sold.pdf
+  20201115091401 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2014-FSM-Communications-Transportation.pdf
+  20201115082533 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2014-FSM-Education.pdf
+  20201115082505 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2014-FSM-Primary-Industry.pdf
+  20201115082423 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2014-FSM-Subsistence-Income.pdf
+  20201115082354 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2015-FSM-Merchandise-Trade.pdf
+  20201115082323 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2015-International-Visitor-Arrivals.pdf
+  20201115082255 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/FSM-CPI-CY-2015.pdf
+  20211229042332 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/FSM-Economic-and-Fiscal-Update-2018.pdf
+  20201115054544 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/FSM-Energy-Accounts-Infographic.pdf
+  20191113175912 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/FSM-Experimental-Energy-Accounts.pdf
+  20201115082210 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/FSM-FY16-Statistical-Appendices.xlsx
+  20211229042404 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/FSM_MDG-2010.pdf
+  20201115082013 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/IntlArrivals_details-1.xlsx
+  20201115023726 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/PopHseC_details.xlsx
+  20201115023753 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/PopHseF_details.xlsx
+  20201115023929 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/PopHseK_details.xlsx
+  20201115023902 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/PopHseP_details.xlsx
+  20201115023645 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/02/PopHseY_details.xlsx
+  20250629052142 200 text/html https://www.fsmstatistics.fm/wp-content/uploads/2019/02/PopHseY_details.xlsx:
+  20201115062906 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/02/SEEA-National-Assessment-Report.pdf
+  20191114234729 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/10/1-PovertyProfileoftheFSM_HIES13.pdf
+  20191114234555 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/10/2-2nd-National-Communiation-to-the-UNFCCC.pdf
+  20230723122128 200 text/html https://fsmstatistics.fm/wp-content/uploads/2019/10/2-2nd-National-Communiation-to-the-UNFCCC.pdf16
+  20191114233915 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/10/3-2013-Nation-Wide-Integrated-DRM-CC-Policy_FINAL.pdf
+  20191114234044 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/10/4-FSM-National-Tourism-Policy-Vol-1a_W-Foreword_8July.pdf
+  20191114234420 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2019/10/5-Prop-final-2-volumes.pdf
+  20191114233726 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2019/10/Populationbysexstateandsensusyear.xlsx
+  20201115022432 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/01/Banking-Statistics-detailed.xlsx
+  20201115015214 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/01/External-Sector-Statistics-detailed.xlsx
+  20201115014501 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/01/Government-Finance-Statistics-detailed.xlsx
+  20201115014846 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/01/Labor-Market-Statistics-detailed.xlsx
+  20201114211243 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/02/FSM-National-Accounts-detailed.xlsx
+  20201114180116 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/02/SS-IV-PNI.pdf
+  20201114180141 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/02/SS-IV-YAP.pdf
+  20201115010935 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/03/CPI-2018-Annual-Inflation-Rate-Detailed.xlsx
+  20201115014114 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/03/CPI-2018-Chuuk-Contribution.xlsx
+  20201115014202 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/03/CPI-2018-Kosrae-Annual-contribution.xlsx
+  20201115014138 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/03/CPI-2018-Pohnpei-Annual-contribution.xlsx
+  20201115011052 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/03/CPI-2018-Yap-Annual-Contribution.xlsx
+  20200928230321 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/2010-Summary-Analysis-Key-Indicators.pdf
+  20200928213124 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/CHUUK-SDP-November-edit-for-printing.pdf
+  20200928230855 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/Chuuk-SSWMS_Final.pdf
+  20200928220749 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/FSM_MDG-2010.pdf
+  20200928205627 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/Kosrae-State-SWM-New-Strategy.pdf
+  20200928230728 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/PopHandbook_Eng.pdf
+  20200928204709 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/Public-Law-5-77.pdf
+  20200928232329 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/SAMOA-Pathway.pdf
+  20200928223417 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/04/To-the-People-of-Chuuk-State.pdf
+  20201115002555 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/05/Principal-Import-d.xlsx
+  20201115002457 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/05/Principal-X_Detailed.xlsx
+  20201115072130 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/08/Communication-Statistics-detailed-1.xlsx
+  20201115070609 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/08/Kosrae-State-Registered-Vehicle.xlsx
+  20201115070634 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/08/Pohnpei-State-Registered-Vechicle.xlsx
+  20200928222833 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2020/08/PR_IMTS2018-20.01.01.pdf
+  20201115070700 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/08/Yap-State-Registered-Vechicle.xlsx
+  20201115023444 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/10/Population-Projections-2020-2025-1.xlsx
+  20220302035518 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/10/Population-Projections-2020-2025.xlsx
+  20201115070542 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2020/11/Chuuk-State-Registered-Vehicle.xlsx
+  20210424161956 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2021/02/JobOpening_Census-Admin-Assistant.docx
+  20210913151034 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2021/06/Chuuk-State-Registered-Vehicle.xlsx
+  20210913151054 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2021/06/Kosrae-State-Registered-Vehicle.xlsx
+  20210913151115 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2021/06/Pohnpei-State-Registered-Vehicle.xlsx
+  20210913151135 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2021/06/Yap-State-Registered-Vehicle-1.xlsx
+  20211112100047 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2021/10/FSM-CPI-_2020Q4_PR_final-1.pdf
+  20211112100108 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2021/10/FSMCPI_2020Q4_PR_Appendix1-1.xlsx
+  20220308000115 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2021/10/FSMCPI_2020Q4_PR_Appendix1.xlsx
+  20220302153706 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2022/01/FSMs-Voluntary-National-Review-2020.pdf
+  20221115035923 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2022/11/CPI-2021-Press-Release.pdf
+  20221101125219 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2022/11/CPI-4th-Quarter-2021-Detailed.xlsx
+  20221116150615 200 application/vnd.openxmlformats https://www.fsmstatistics.fm/wp-content/uploads/2022/11/CPI_2021_PR_Appendix.xlsx
+  20221116150724 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2022/11/CPI_2021Q4_InfoGraphics_final-1.pdf
+  20221116150458 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2022/11/CPI_2021Q4_PR_final-1.pdf
+  20221101115244 200 application/pdf https://www.fsmstatistics.fm/wp-content/uploads/2022/11/Press-Release-_2021-2.pdf
+  20191114192256 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Balance_of_Payments_APD.xlsx
+  20191114144100 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Central_Government_Operations.xlsx
+  20191114083632 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Consumer_Price_Index.xlsx
+  20191114181805 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Depository_Corporations_Survey.xlsx
+  20191114213845 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_External_Debt.xlsx
+  20191114214649 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Financial_Access_Survey.xlsx
+  20191114214139 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Financial_Soundness_Indicator.xlsx
+  20191114083715 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_General_Government_Operations.xlsx
+  20191114192048 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Interest_Rates.xlsx
+  20191114214011 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_International_Investment_Position_APD.xlsx
+  20191114214054 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Labor_Market.xlsx
+  20191114213929 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Merchandise_Trade.xlsx
+  20191114013123 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_National_Accounts.xlsx
+  20191114214608 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Population.xlsx
+  20191114214816 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Real_Effective_Exchange_Rate.xlsx
+  20191114214733 200 application/vnd.openxmlformats http://www.fsmstatistics.fm/wp-content/uploads/egdds/FSM_NSDP_Tourism.xlsx
+  20191113164000 200 text/xml https://www.fsmstatistics.fm/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fsmstatistics.fm%2F2020-population-and-housing-census-project-received-1-5m-from-congress%2F&format=xml
+  20191115045249 200 text/xml https://www.fsmstatistics.fm/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fsmstatistics.fm%2Fpopulationbysexstateandsensusyear%2F&format=xml
+  20191113163812 200 text/xml https://www.fsmstatistics.fm/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fsmstatistics.fm%2Ftraining-of-trainers-for-the-2010-census%2F&format=xml
+  20191113163939 200 application/json https://www.fsmstatistics.fm/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fsmstatistics.fm%2F2020-population-and-housing-census-project-received-1-5m-from-congress%2F
+  20191115045228 200 application/json https://www.fsmstatistics.fm/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fsmstatistics.fm%2Fpopulationbysexstateandsensusyear%2F
+  20191113163748 200 application/json https://www.fsmstatistics.fm/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fsmstatistics.fm%2Ftraining-of-trainers-for-the-2010-census%2F
