@@ -1,6 +1,118 @@
-china_census: National Bureau of Statistics of China, China Population Census Yearbook 2020 (中国人口普查年鉴-2020)
-  31 provinces: the three tables agree on every count, every composition adds up, the provinces make the nation's 1,409,778,724; national median 39.4 from single years, 39.4 from the groups
-  33 first-level records; medians (31.3, 'Tibet Autonomous Region') .. (46.8, 'Liaoning Province')
-  wrote data/processed/china_census_province.json (147 kB)
-  2370 second-level polygons: 2368 mainland ones with their reasons; inside the SARs, ['Xianggang'] with the SAR's own median age and sex ratio and 1 fragment(s) with theirs
-  wrote data/processed/china_census_county.json (8618 kB)
+pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
+  Khyber Pakhtunkhwa
+    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
+    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
+    and its 31 districts are Table 9's districts
+  Punjab
+    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 36 districts add up to the province
+    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
+    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
+    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 36 districts add up to the province
+    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
+    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
+    and its 34 districts are Table 9's districts
+  Sindh
+    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
+    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
+    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
+    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
+    and its 22 districts are Table 9's districts
+  Balochistan
+    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 34 districts add up to the province
+    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
+    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
+    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
+    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
+    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
+    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
+    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
+    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 34 districts add up to the province
+    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
+    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
+    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
+    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
+    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
+    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
+    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
+    and its 27 districts are Table 9's districts
+  Islamabad Capital Territory
+    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's religions sum to its own printed total
+    and the 1 districts add up to the province
+    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's mother tongues sum to its own printed total
+    and the 1 districts add up to the province
+    and its 1 districts are Table 9's districts
+  Azad Jammu and Kashmir
+  Gilgit-Baltistan
+  6 districts say what their Other language holds, and 1 what their Other religion does
+  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  Azad Jammu and Kashmir, from the territory's own yearbook
+    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
+    Table 15.24 named on page 15 with no rows under it: the contents, not the table
+    Table 15.24 on page 209: 10 districts
+    all 7 columns sum to the printed AJ&K row
+    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
+    Table 15.33 named on page 16 with no heading row under it: the contents, not the table
+    Table 15.33 on page 213: 10 districts, 8 languages
+    Mirpur: Table 15.33 sums to 97%, rescaled to 100 across its own languages
+    AJ&K languages: Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%
+    AJ&K Table 15.8: the row labelled 61 under 60-64 is age 62 by its place
+    AJ&K Table 15.8 misprint corrected -- age 26 territory males: +1,000 by its row and by its 25-29 group
+    AJ&K Table 15.8 misprint corrected -- age 26 territory persons: +1,000 by its row and by its 25-29 group
+    AJ&K Table 15.8 misprint corrected -- age 49 rural males: +4 by its row and by its 45-49 group
+    AJ&K Table 15.8 misprint corrected -- age 49 rural persons: +4 by its row and by its 45-49 group
+    AJ&K Table 15.8 misprint corrected -- age 60 rural males: -36 by its row and by its 60-64 group
+    AJ&K Table 15.8 misprint corrected -- age 60 rural persons: -36 by its row and by its 60-64 group
+    Table 15.8: 76 single years add up to their 15 groups and to the territory's 4,032,363, Table 15.24's population, in the rural, urban and territory columns alike
+  Gilgit-Baltistan, from the territory's own At a Glance
+    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
+    10 districts on page 3, summing to the territory's own printed 1,709,049
+  Gilgit-Baltistan's language, from the territory's own MICS
+    22,827,802 bytes from https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf
+    Table SR.3.1 named on page 6 with no language block under it: the contents, not the table
+    Table SR.3.1 on page 57: 6 languages over 6,929 households, 2025
+  11 records declaring what is not published, rather than leaving the field empty
+  133 units say why their ethnicity field is empty, which is that the census does not ask it
+  22 territory fields say why no age or sex ratio is published for them
+  wrote data/processed/pakistan_district.json (801 kB)
+  126 districts and 7 provinces

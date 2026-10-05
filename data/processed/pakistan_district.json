@@ -19978,12 +19978,16 @@
       "source": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: District wise Population of AJ&K by Religion, as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper, and the Bureau of Statistics publishes no Table 4 (population by single year age and sex) for either -- the four provinces and Islamabad have it, at every path the office files it under, and these two do not. Gilgit-Baltistan at a Glance, the territory's own booklet of the 2023 count, prints each district's 2017 and 2023 population with no split by sex or age. So no census median age or sex ratio is published for this unit."
+      "value": 20.9,
+      "unit": "years",
+      "year": 2017,
+      "source": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: Age Group and Gender-wise Rural & Urban Population of AJ&K, as printed in the AJ&K Statistical Year Book 2023 (Table 15.8)"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper, and the Bureau of Statistics publishes no Table 4 (population by single year age and sex) for either -- the four provinces and Islamabad have it, at every path the office files it under, and these two do not. Gilgit-Baltistan at a Glance, the territory's own booklet of the 2023 count, prints each district's 2017 and 2023 population with no split by sex or age. So no census median age or sex ratio is published for this unit."
+      "value": 95.2,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: Age Group and Gender-wise Rural & Urban Population of AJ&K, as printed in the AJ&K Statistical Year Book 2023 (Table 15.8)"
     },
     "religion": [
       {
@@ -20067,6 +20071,12 @@
         "name": "Kashmir Liberation Cell, Muzaffarabad, Table 15.33 'Languages Spoken in AJ&K', as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)",
         "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
         "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: Age Group and Gender-wise Rural & Urban Population of AJ&K, as printed in the AJ&K Statistical Year Book 2023 (Table 15.8)",
+        "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
+        "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
       }
     ],
     "aliases": [
@@ -20075,7 +20085,9 @@
     "religion_year": 2017,
     "religion_note": "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 for it, so this comes from the territory's own government rather than from the same file as the four provinces. The categories are the census's own: Ahmadis are counted separately from Muslims and Scheduled Castes separately from Hindus.",
     "language_note": "Not a census. Azad Jammu and Kashmir is enumerated apart from the census proper and the Bureau of Statistics publishes no mother-tongue table for it, so this is Table 15.33 of the AJ&K Statistical Year Book 2023, whose source line names not the territory's Bureau of Statistics but its Kashmir Liberation Cell. The table gives a percentage for each of the ten districts and prints no year; these are those ten rows weighted by their 2017 census populations, which is why the territory's figure agrees with the districts underneath it. The figures are round -- 50, 95, 63 -- and the question they answer is which languages are spoken here rather than the census's mother tongue, which is why they are not added into Pakistan's national language figure. Pahari-Pothwari is the table's 'Pahari' column together with the local names it prints inside it (Dhundi-Khairali in Bagh, Chibali in Haveli, Punchi in Poonch and Sudhnoti, Mirpuri in Mirpur and Bhimber); Dogri and Punjabi are named in Bhimber's row and Kundal Shahi in Neelum's, each printed under a column headed for a different language. One row does not add up and is not quietly squared: Mirpur's row sums to 97% rather than 100, so the three points the source leaves unaccounted for are spread across that district's own languages in proportion rather than across the territory's, which is where the people they describe live.",
-    "language_basis": "languages spoken"
+    "language_basis": "languages spoken",
+    "median_age_note": "Population and Housing Census 2017, as reprinted in the AJ&K Statistical Year Book 2023 (Table 15.8): the median of 4,032,363 people's single years of age, interpolated within the year that holds the middle person. The 2023 census published no age table for the territory. 6 misprinted cells of the yearbook's table are corrected from the two sums each one breaks -- its row's rural plus urban and its five-year group.",
+    "sex_ratio_note": "Census 2017 (yearbook Table 15.8): 1,966,629 males and 2,065,348 females; the 386 transgender persons counted are in the population and in neither figure."
   },
   {
     "id": "PAK-ajk-azad-kashmir",
@@ -20094,12 +20106,16 @@
       "source": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: District wise Population of AJ&K by Religion, as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper, and the Bureau of Statistics publishes no Table 4 (population by single year age and sex) for either -- the four provinces and Islamabad have it, at every path the office files it under, and these two do not. Gilgit-Baltistan at a Glance, the territory's own booklet of the 2023 count, prints each district's 2017 and 2023 population with no split by sex or age. So no census median age or sex ratio is published for this unit."
+      "value": 20.9,
+      "unit": "years",
+      "year": 2017,
+      "source": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: Age Group and Gender-wise Rural & Urban Population of AJ&K, as printed in the AJ&K Statistical Year Book 2023 (Table 15.8)"
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper, and the Bureau of Statistics publishes no Table 4 (population by single year age and sex) for either -- the four provinces and Islamabad have it, at every path the office files it under, and these two do not. Gilgit-Baltistan at a Glance, the territory's own booklet of the 2023 count, prints each district's 2017 and 2023 population with no split by sex or age. So no census median age or sex ratio is published for this unit."
+      "value": 95.2,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: Age Group and Gender-wise Rural & Urban Population of AJ&K, as printed in the AJ&K Statistical Year Book 2023 (Table 15.8)"
     },
     "religion": [
       {
@@ -20183,6 +20199,12 @@
         "name": "Kashmir Liberation Cell, Muzaffarabad, Table 15.33 'Languages Spoken in AJ&K', as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)",
         "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
         "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
+      },
+      {
+        "field": "median_age/sex_ratio",
+        "name": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: Age Group and Gender-wise Rural & Urban Population of AJ&K, as printed in the AJ&K Statistical Year Book 2023 (Table 15.8)",
+        "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
+        "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
       }
     ],
     "parent_name": "Azad Jammu and Kashmir",
@@ -20192,7 +20214,9 @@
     "religion_year": 2017,
     "religion_note": "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 for it, so this comes from the territory's own government rather than from the same file as the four provinces. The categories are the census's own: Ahmadis are counted separately from Muslims and Scheduled Castes separately from Hindus. geoBoundaries draws one second-level unit for the whole territory where the yearbook counts ten districts, so this is the territory's figure on the territory's shape rather than any one district's.",
     "language_note": "Not a census. Azad Jammu and Kashmir is enumerated apart from the census proper and the Bureau of Statistics publishes no mother-tongue table for it, so this is Table 15.33 of the AJ&K Statistical Year Book 2023, whose source line names not the territory's Bureau of Statistics but its Kashmir Liberation Cell. The table gives a percentage for each of the ten districts and prints no year; these are those ten rows weighted by their 2017 census populations, which is why the territory's figure agrees with the districts underneath it. The figures are round -- 50, 95, 63 -- and the question they answer is which languages are spoken here rather than the census's mother tongue, which is why they are not added into Pakistan's national language figure. Pahari-Pothwari is the table's 'Pahari' column together with the local names it prints inside it (Dhundi-Khairali in Bagh, Chibali in Haveli, Punchi in Poonch and Sudhnoti, Mirpuri in Mirpur and Bhimber); Dogri and Punjabi are named in Bhimber's row and Kundal Shahi in Neelum's, each printed under a column headed for a different language. One row does not add up and is not quietly squared: Mirpur's row sums to 97% rather than 100, so the three points the source leaves unaccounted for are spread across that district's own languages in proportion rather than across the territory's, which is where the people they describe live.",
-    "language_basis": "languages spoken"
+    "language_basis": "languages spoken",
+    "median_age_note": "Population and Housing Census 2017, as reprinted in the AJ&K Statistical Year Book 2023 (Table 15.8): the median of 4,032,363 people's single years of age, interpolated within the year that holds the middle person. The 2023 census published no age table for the territory. 6 misprinted cells of the yearbook's table are corrected from the two sums each one breaks -- its row's rural plus urban and its five-year group. geoBoundaries draws one second-level unit for the whole territory where the yearbook counts ten districts, so this is the territory's figure on the territory's shape rather than any one district's.",
+    "sex_ratio_note": "Census 2017 (yearbook Table 15.8): 1,966,629 males and 2,065,348 females; the 386 transgender persons counted are in the population and in neither figure. geoBoundaries draws one second-level unit for the whole territory where the yearbook counts ten districts, so this is the territory's figure on the territory's shape rather than any one district's."
   },
   {
     "id": "PAK-gb",
