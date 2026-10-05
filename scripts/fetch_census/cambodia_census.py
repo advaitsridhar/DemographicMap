@@ -268,7 +268,17 @@ def parse_provinces(pages: list[str], annex: dict[int, dict[str, Any]]
             continue
         code = codes.get(fold(m.group("name")))
         if code is None:
-            continue                               # a region, or the urban/rural rows
+            # The two tables romanise a few names differently ("Tbong" and
+            # "Tboung"); one close match among the 25, and only one, is the
+            # province. Regions and the urban/rural rows match none.
+            import difflib
+            close = difflib.get_close_matches(fold(m.group("name")), list(codes), n=2,
+                                              cutoff=0.8)
+            if len(close) != 1 or codes[close[0]] in out:
+                continue
+            code = codes[close[0]]
+            log(f"  Table 2.1.1 {m.group('name')!r} read as province {code:02d} "
+                f"({annex[code]['name']})")
         male, female, total = (number(x) for x in m.groups()[1:])
         if male + female != total:
             raise SystemExit(f"cambodia_census: Table 2.1.1 {m.group('name')}: sexes make "
