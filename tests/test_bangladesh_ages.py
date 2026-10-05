@@ -1,4 +1,4 @@
-"""Bangladesh 2022: Table P03's age groups and Table P11's sex ratios.
+"""Bangladesh 2022: Tables P03 and P10 (age) and Table P11 (sex ratio).
 
 The fixtures are the National Report's rows as its text comes out: an area's
 name alone on a line, a Total row, five-year rows, then the rural and urban
@@ -10,12 +10,18 @@ import unittest
 from scripts.fetch_census import bangladesh as bd
 
 LABELS = [f"{a}-{a + 4}" for a in range(0, 100, 5)] + ["100 & above"]
+GROUPS = [range(a, a + 5) for a in range(0, 100, 5)] + [range(100, 101)]
+
+
+def year(scale: int, age: int) -> tuple[int, int]:
+    """Males and females of one year of age: fewer at each older age."""
+    return scale * (101 - age), scale * (102 - age)
 
 
 def block(name: str, scale: int) -> list[str]:
     """An area's all-localities block, then a rural one that must be ignored."""
-    males = [scale * (21 - i) for i in range(21)]
-    females = [scale * (21 - i) + scale for i in range(21)]
+    males = [sum(year(scale, a)[0] for a in g) for g in GROUPS]
+    females = [sum(year(scale, a)[1] for a in g) for g in GROUPS]
     rows = [name]
     tm, tf = sum(males), sum(females)
     rows.append(f"Total {tm + tf} 100.00 {tm} 50.00 {tf} 50.00 {100 * tm / tf:.2f}")
@@ -87,6 +93,51 @@ class TableP03(unittest.TestCase):
         self.assertEqual(fields["sex_ratio"]["unit"], "males_per_100_females")
         self.assertGreater(fields["median_age"]["value"], 0)
         self.assertIn("five-year age group", fields["median_age_note"])
+
+
+def p10(divisions: dict[str, int]) -> list[str]:
+    """Table P10 with the same people as p03(), one row per year."""
+    def block(name: str, scale: int) -> list[str]:
+        rows = [name]
+        years = [year(scale, a) for a in range(0, 101)]
+        tm, tf = sum(m for m, _ in years), sum(f for _, f in years)
+        rows.append(f"Total {tm + tf} 100.00 {tm} 50.00 {tf} 50.00")
+        for age, (m, f) in enumerate(years):
+            label = "100 & above" if age == 100 else str(age)
+            rows.append(f"{label} {m + f} 1.00 {m} 50.00 {f} 50.00")
+        rows += ["Rural", "Total 7 100.00 3 42.86 4 57.14", "0 7 1.00 3 42.86 4 57.14"]
+        return rows
+
+    lines = ["Table P10 Single Year Population by Sex, Division ...... 212",
+             "Table P11 Average ...... 259",
+             "Table P10 Single Year Population by Sex, Division and Location, 2022"]
+    lines += block("National", sum(divisions.values()))
+    for name, scale in divisions.items():
+        lines += block(f"{name} Division", scale)
+    lines.append("Table P11 Average Annual Population Growth Rate")
+    return lines
+
+
+class TableP10(unittest.TestCase):
+    def test_single_years_agree_with_the_five_year_groups(self):
+        ages = bd.read_ages(p03(EIGHT))
+        singles = bd.read_single_years(p10(EIGHT))
+        self.assertEqual(set(singles["Dhaka"]["ages"]), set(range(0, 101)))
+        bd.check_single_years(singles, ages)
+        fields = bd.division_age_fields(ages["Dhaka"], singles["Dhaka"])
+        self.assertIn("Table P10", fields["median_age_note"])
+
+    def test_a_year_moved_between_groups_is_caught(self):
+        lines = p10(EIGHT)
+        at = lines.index("Khulna Division")
+        four = next(i for i in range(at, len(lines)) if lines[i].startswith("4 "))
+        five = next(i for i in range(at, len(lines)) if lines[i].startswith("5 "))
+        a, b = lines[four].split(), lines[five].split()
+        a[1], a[3] = str(int(a[1]) - 1), str(int(a[3]) - 1)
+        b[1], b[3] = str(int(b[1]) + 1), str(int(b[3]) + 1)
+        lines[four], lines[five] = " ".join(a), " ".join(b)
+        with self.assertRaises(SystemExit):
+            bd.check_single_years(bd.read_single_years(lines), bd.read_ages(p03(EIGHT)))
 
 
 class TableP11(unittest.TestCase):

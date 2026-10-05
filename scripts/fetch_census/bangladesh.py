@@ -262,7 +262,9 @@ from ._shared import (
     record, shares, write_json,
 )
 
-from .south_asia_common import check_contiguous, males_per_100, median_grouped
+from .south_asia_common import (
+    check_contiguous, males_per_100, median_grouped, median_single,
+)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import laid_out  # noqa: E402
@@ -679,6 +681,13 @@ AGE_ROW = re.compile(
     r"^(?P<label>Total|\d{1,3}-\d{1,3}|\d{1,3} & above)\s+(?P<persons>[\d,]+)\s+"
     r"100\.00\s+(?P<males>[\d,]+)\s+\d+\.\d+\s+(?P<females>[\d,]+)\s+\d+\.\d+\s+"
     r"(?P<ratio>\d+\.\d+)$")
+# Table P10, population by single year of age, sex, division and location:
+# the same blocks as P03, a row per year from 0 to 99 and "100 & above", each
+# persons, its share of the block, males, their share, females, theirs.
+SINGLE_ROW = re.compile(
+    r"^(?P<label>Total|\d{1,3}|\d{1,3} & above)\s+(?P<persons>[\d,]+)\s+\d+\.\d+\s+"
+    r"(?P<males>[\d,]+)\s+\d+\.\d+\s+(?P<females>[\d,]+)\s+\d+\.\d+$")
+SINGLE_OPEN = 100
 # Table P11, sex ratio (with growth, dependency and child-woman ratios) by
 # district and location: a name and twelve figures, total then rural then
 # urban; the sex ratio is the second.
@@ -689,6 +698,9 @@ AGE_SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census 20
               "division and location")
 P11_SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census 2022, "
               "National Report (Volume I), Table P11: sex ratio by district")
+SINGLE_SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census "
+                 "2022, National Report (Volume I), Table P10: single year "
+                 "population by sex, division and location")
 
 
 def table_slices(lines: list[str], table: str, until: tuple[str, ...]):
@@ -788,6 +800,93 @@ def check_ages(ages: dict[str, dict[str, Any]]) -> None:
         "counts, and the divisions to the nation group by group")
 
 
+def read_single_years(lines: list[str]) -> dict[str, dict[str, Any]]:
+    """Table P10's all-localities blocks: {"National" or division: block}.
+
+    A block is {"total": (persons, males, females), "ages": {age: (persons,
+    males, females)}}, "100 & above" under 100.
+    """
+    for rows in table_slices(lines, "Table P10", ("Table P11",)):
+        out: dict[str, dict[str, Any]] = {}
+        area: str | None = None
+        locality = None
+        for line in rows:
+            if line == "National" or (line.endswith(" Division")
+                                       and len(line.split()) <= 3):
+                area = line.removesuffix(" Division")
+                if area in out:
+                    raise SystemExit(f"bangladesh: Table P10 prints {area} twice")
+                out[area] = {"total": None, "ages": {}}
+                locality = "all"
+                continue
+            if line in ("Rural", "Urban"):
+                locality = line
+                continue
+            found = SINGLE_ROW.match(line)
+            if not found or area is None or locality != "all":
+                continue
+            counts = tuple(int(found.group(k).replace(",", ""))
+                           for k in ("persons", "males", "females"))
+            label = found.group("label")
+            if label == "Total":
+                out[area]["total"] = counts
+                continue
+            age = int(label.split()[0])
+            if age in out[area]["ages"]:
+                raise SystemExit(f"bangladesh: Table P10 {area} prints age {age} twice")
+            out[area]["ages"][age] = counts
+        if out:
+            return out
+    raise SystemExit("bangladesh: Table P10 was found and no occurrence had rows")
+
+
+def check_single_years(singles: dict[str, dict[str, Any]],
+                       ages: dict[str, dict[str, Any]]) -> None:
+    """P10 against itself and against P03, which is typeset apart from it.
+
+    Every block's years add up to its Total row, sex by sex; its Total is
+    P03's; its years, summed into five-year groups, are P03's groups; and the
+    divisions make the nation year by year.
+    """
+    if set(singles) != set(ages):
+        raise SystemExit(f"bangladesh: Table P10 has {sorted(singles)}, Table P03 "
+                         f"{sorted(ages)}")
+    expected = set(range(0, SINGLE_OPEN + 1))
+    for where, block in singles.items():
+        if block["total"] is None:
+            raise SystemExit(f"bangladesh: Table P10 {where} has no Total row")
+        if set(block["ages"]) != expected:
+            raise SystemExit(f"bangladesh: Table P10 {where} is missing ages "
+                             f"{sorted(expected - set(block['ages']))}")
+        for i, label in enumerate(("persons", "males", "females")):
+            summed = sum(row[i] for row in block["ages"].values())
+            if summed != block["total"][i]:
+                raise SystemExit(f"bangladesh: Table P10 {where} {label}: the "
+                                 f"years add up to {summed:,}, the Total row "
+                                 f"says {block['total'][i]:,}")
+        if tuple(block["total"]) != tuple(ages[where]["total"][:3]):
+            raise SystemExit(f"bangladesh: {where} is {block['total']} in Table "
+                             f"P10 and {ages[where]['total'][:3]} in Table P03")
+        for low, high, *group in ages[where]["groups"]:
+            top = SINGLE_OPEN if high is None else high
+            for i in range(3):
+                summed = sum(block["ages"][a][i] for a in range(low, top + 1))
+                if summed != group[i]:
+                    raise SystemExit(f"bangladesh: {where} ages {low}-{top}: Table "
+                                     f"P10's years add up to {summed:,}, Table "
+                                     f"P03 prints {group[i]:,}")
+    divisions = [w for w in singles if w != "National"]
+    for age in expected:
+        summed = sum(singles[w]["ages"][age][0] for w in divisions)
+        if summed != singles["National"]["ages"][age][0]:
+            raise SystemExit(f"bangladesh: Table P10 age {age}: the divisions add "
+                             f"up to {summed:,}, the nation prints "
+                             f"{singles['National']['ages'][age][0]:,}")
+    log("    Table P10: every block's single years add up to its Total row, which "
+        "is Table P03's, and to each of P03's five-year groups; the divisions "
+        "make the nation year by year")
+
+
 def read_p11(lines: list[str]) -> dict[str, float]:
     """Table P11's total sex ratio for every district, by the report's spelling."""
     for rows in table_slices(lines, "Table P11", ("Table P12",)):
@@ -849,12 +948,12 @@ def check_sexes(districts: list[dict[str, Any]], printed: dict[str, float]) -> N
 # 2026), and the COD-PS table's own national row.
 ZILA_AGE_GAP = (
     "The 2022 census publishes age for the nation and its eight divisions "
-    "(National Report, Table P03, five-year groups) and for no smaller unit: "
-    "none of the district workbook's 42 sheets is an age table, and the "
-    "National Report's district tables (P06, P11, P13-P16, P18, P20, P26, P27, "
-    "HH15) are about marital status, sex ratio, literacy, schooling, education, "
-    "work, banking and households, not age. District volumes (Zila Reports) "
-    "were published for the 2011 census and not for 2022. The 2022 age table "
+    "and for no smaller unit. The National Report's age tables -- P03 "
+    "(five-year groups), P10 (single years), P05, P07 and P17 -- are all by "
+    "division, none of its tables by district or upazila gives age, and none "
+    "of the district workbook's 42 sheets is an age table. The Bureau's census "
+    "page lists district volumes (Zila Reports) for the 2011 census and none "
+    "for 2022. The 2022 age table "
     "by zila on HDX's COD-PS (UNFPA and the US Census Bureau) is not the census "
     "count -- it totals 165,650,475 people against the census's 165,150,492 "
     "males and females, and 14.19 million aged 0-4 against Table P03's 15.58 "
@@ -874,21 +973,37 @@ def zila_sex_ratio(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def division_age_fields(block: dict[str, Any]) -> dict[str, Any]:
+def division_age_fields(block: dict[str, Any],
+                        single: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Sex ratio from P03's Total row; the median from P10's single years.
+
+    Without P10 the median falls back to P03's five-year groups, and the note
+    says which.
+    """
     persons, males, females, _printed = block["total"]
     out: dict[str, Any] = {
         "sex_ratio": measure(males_per_100(males, females), unit="males_per_100_females",
                              year=YEAR, source=AGE_SOURCE),
         "sex_ratio_note": f"Census 2022, Table P03: {males:,} males and {females:,} females.",
     }
-    median = median_grouped([(low, high, n) for low, high, n, _m, _f in block["groups"]])
+    if single is not None:
+        median = median_single({a: row[0] for a, row in single["ages"].items()},
+                               open_from=SINGLE_OPEN)
+        note = (f"Census 2022, Table P10: the median of {persons:,} people's "
+                "single years of age, interpolated within the year that holds "
+                "the middle person. The years add up to Table P03's five-year "
+                "groups, which are typeset apart from them.")
+        source = SINGLE_SOURCE
+    else:
+        median = median_grouped([(low, high, n)
+                                 for low, high, n, _m, _f in block["groups"]])
+        note = (f"Census 2022, Table P03: the median of {persons:,} people, "
+                "interpolated within the five-year age group that holds the "
+                "middle person.")
+        source = AGE_SOURCE
     if median is not None:
-        out["median_age"] = measure(median, unit="years", year=YEAR, source=AGE_SOURCE)
-        out["median_age_note"] = (
-            f"Census 2022, Table P03: the median of {persons:,} people, interpolated "
-            "within the five-year age group that holds the middle person. The "
-            "National Report publishes age by five-year group for the divisions "
-            "and nothing finer.")
+        out["median_age"] = measure(median, unit="years", year=YEAR, source=source)
+        out["median_age_note"] = note
     return out
 
 
@@ -1120,6 +1235,8 @@ def main() -> int:
     check_sexes(districts, read_p11(lines))
     ages = read_ages(lines)
     check_ages(ages)
+    singles = read_single_years(lines)
+    check_single_years(singles, ages)
 
     records: list[dict[str, Any]] = []
     for row in districts:
@@ -1198,12 +1315,14 @@ def main() -> int:
                       {"group": "Other languages", "pct": tongue[1]}],
             language_year=TONGUE_YEAR,
             language_note=TONGUE_NOTE,
-            **division_age_fields(ages[where]),
+            **division_age_fields(ages[where], singles[where]),
             sources=[{"field": "ethnicity", "name": REPORT_SOURCE,
                       "url": REPORT_PAGE, "license": LICENCE},
                      {"field": "language", "name": TONGUE_SOURCE,
                       "url": REPORT_PAGE, "license": LICENCE},
-                     {"field": "median_age/sex_ratio", "name": AGE_SOURCE,
+                     {"field": "median_age", "name": SINGLE_SOURCE,
+                      "url": REPORT_PAGE, "license": LICENCE},
+                     {"field": "sex_ratio", "name": AGE_SOURCE,
                       "url": REPORT_PAGE, "license": LICENCE}]))
     log(f"    {len(by_category) - 1} divisions carry a named ethnic composition, "
         f"{sum(by_category[w]['total'] for w in by_category if w != 'National'):,} "
