@@ -87,6 +87,9 @@ def ages_text():
         lines.append(f"{name} {AR}")
         for k, label in enumerate(AGE_LABELS):
             lines.append(line(label, [0, 0, 0] * 2 + triple(f_rows[k], m_rows[k]) * 2))
+            if k == 8:
+                # A page break inside the block repeats the column headings.
+                lines += [f"Total {AR}", "Urban/ Rural & Jordanians Abroad"]
         lines.append(line("Total", cells))
         lines.append(f"{name} - Urban {AR}")
         lines.append(line("<1", [0] * 12))
@@ -149,6 +152,12 @@ class TheReaders(unittest.TestCase):
         self.assertEqual(ages["Irbid"]["total"], inside(census_cells(4)))
         self.assertEqual(ages["Irbid"]["groups"][0], (0, 0, 2))
         self.assertEqual(ages["Irbid"]["groups"][-1], (80, None, 2))
+
+    def test_the_census_spellings_of_governorates(self):
+        self.assertEqual(jd.heading(f"Tafielah {AR}"), "Tafilah")
+        self.assertEqual(jd.heading(f"Jarash {AR}"), "Jerash")
+        self.assertIsNone(jd.heading(f"Amman - Urban {AR}"))
+        self.assertIsNone(jd.heading(f"Amman Qasabah District {AR}"))
 
     def test_nationalities_by_section_and_name(self):
         nats = jd.read_nationalities(nationalities_text())

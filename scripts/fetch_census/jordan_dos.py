@@ -88,7 +88,8 @@ GOVERNORATES = {
     "Zarqa": "Zarqa", "Madaba": "Madaba", "Irbid": "Irbid", "Mafraq": "Mafraq",
     "Jarash": "Jerash", "Jerash": "Jerash", "Ajlun": "Ajloun", "Ajloun": "Ajloun",
     "Karak": "Karak", "Tafiela": "Tafilah", "Tafileh": "Tafilah", "Tafila": "Tafilah",
-    "Tafilah": "Tafilah", "Ma'an": "Ma'an", "Maan": "Ma'an", "Aqaba": "Aqaba",
+    "Tafilah": "Tafilah", "Tafielah": "Tafilah", "Ma'an": "Ma'an", "Maan": "Ma'an",
+    "Aqaba": "Aqaba",
 }
 BY_KEY = {key(k): v for k, v in GOVERNORATES.items()}
 KINGDOM = key("Jordan")
@@ -276,7 +277,9 @@ def read_ages(text: str) -> dict[str, dict[str, Any]]:
             out[current] = {"groups": sorted(groups), "total": inside, "row": cells}
             current = None
             continue
-        if english(line) and not re.search(r"\d", line) and re.search(r"Urban|Rural", line):
+        # A governorate's urban and rural blocks ("Amman - Urban") end its own;
+        # the column heading every page repeats ("Urban/ Rural & ...") does not.
+        if not re.search(r"\d", line) and re.search(r"\s-\s*(Urban|Rural)\b", english(line)):
             current = None
     return out
 
