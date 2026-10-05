@@ -92,6 +92,7 @@ from ._shared import (
     NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, log, measure, record,
     shares, write_json,
 )
+from .south_asia_common import median_single
 
 SOURCE = "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9"
 LICENCE = "Pakistan Bureau of Statistics, free reuse with attribution"
@@ -965,6 +966,169 @@ def ajk_check(found: dict[str, dict[str, int]], whole: dict[str, int]) -> None:
                 f"{total:,}")
         log(f"    {name}: religions sum to {parts - total:+,} against its own "
             f"printed total, which the yearbook's own 15.23 also shows")
+
+
+# ---------------------------------------------------------------------------
+# Azad Jammu and Kashmir's ages and sexes: the same yearbook, Table 15.8.
+# ---------------------------------------------------------------------------
+#
+# Table 15.8, *Age Group and Gender-wise Rural & Urban Population of AJ&K*,
+# reprints the 2017 census's single years of age for the territory -- "Below
+# 1", 1 to 74 and "75 +" under each five-year group -- by sex (male, female,
+# transgender) for rural, urban and all of AJ&K, across two pages. The
+# territory's own columns are the last four of each row.
+#
+# One label is misprinted: under 60-64 the rows read 60, 61, 61, 63, 64. The
+# rows are in order and the third is 62, so a single year is assigned by its
+# place under its group, and the printed label is only checked to lie inside
+# the group. A row lost or duplicated would still be caught, because every
+# group's single years must add up to the group's own row, sex by sex.
+AJK_AGE_TABLE = re.compile(r"Age\s*Group\s*and\s*Gender[\s-]*wise\s*Rural\s*&\s*"
+                           r"Urban\s*Population\s*of\s*AJ&K", re.I)
+AJK_AGE_SOURCE = ("Pakistan Bureau of Statistics, Population and Housing Census "
+                  "2017, Table: Age Group and Gender-wise Rural & Urban Population "
+                  "of AJ&K, as printed in the AJ&K Statistical Year Book 2023 "
+                  "(Table 15.8)")
+AJK_AGE_OPEN = 75
+COLUMN_NUMBERS = [str(i) for i in range(1, 14)]
+
+
+def ajk_age_label(words: list[str]) -> tuple[str, Any, int] | None:
+    """(kind, value, words used) for a Table 15.8 row label, or None."""
+    if not words or words == COLUMN_NUMBERS[:len(words)] and len(words) > 3:
+        return None
+    if words[0] == "Below" and len(words) > 1 and words[1] == "1":
+        return "single", 0, 2
+    if re.fullmatch(r"\d{1,2}-\d{1,2}", words[0]):
+        low, high = (int(x) for x in words[0].split("-"))
+        return "group", (low, high), 1
+    if words[0] == f"{AJK_AGE_OPEN}+":
+        return "open", AJK_AGE_OPEN, 1
+    if words[0] == str(AJK_AGE_OPEN) and len(words) > 1 and words[1] == "+":
+        return "open", AJK_AGE_OPEN, 2
+    if words[0] == "Total":
+        return "total", None, 1
+    if re.fullmatch(r"\d{1,2}", words[0]):
+        return "single", int(words[0]), 1
+    return None
+
+
+def ajk_ages_from_pages(pages) -> dict[str, Any]:
+    """Table 15.8's territory columns: single years, groups and the total.
+
+    Returns {"ages": {age: (male, female, trans, total)}, "groups":
+    {(low, high): (...)}, "total": (...)}, the open 75 and over under 75.
+    """
+    ages: dict[int, tuple[int, ...]] = {}
+    groups: dict[tuple[int, int], tuple[int, ...]] = {}
+    total: tuple[int, ...] | None = None
+    group: tuple[int, int] | None = None
+    place = 0
+    found = False
+    for number, rows in enumerate(pages, start=1):
+        lines = [(" ".join(t for _a, _b, t in cells), cells) for cells in rows]
+        if not any(AJK_AGE_TABLE.search(line) for line, _cells in lines):
+            continue
+        for line, cells in lines:
+            words = [t for _a, _b, t in cells]
+            if words[:13] == COLUMN_NUMBERS:
+                continue
+            label = ajk_age_label(words)
+            if label is None:
+                continue
+            kind, value, used = label
+            figures = printed(cells[used:])
+            if len(figures) != 12:
+                continue                     # a caption or a stray line
+            found = True
+            territory = tuple(figures[8:12])
+            if sum(territory[:3]) != territory[3]:
+                raise SystemExit(f"AJ&K Table 15.8 '{line[:30]}': {territory[:3]} "
+                                 f"do not make {territory[3]:,}")
+            if kind == "group":
+                if value in groups:
+                    raise SystemExit(f"AJ&K Table 15.8 prints ages {value} twice")
+                groups[value] = territory
+                group, place = value, 0
+            elif kind == "single":
+                if group is None:
+                    raise SystemExit(f"AJ&K Table 15.8: age {value} before any group")
+                age = group[0] + place
+                if not group[0] <= value <= group[1] or age > group[1]:
+                    raise SystemExit(f"AJ&K Table 15.8: the row labelled {value} "
+                                     f"is the {place + 1}th under {group}")
+                if value != age:
+                    log(f"    AJ&K Table 15.8: the row labelled {value} under "
+                        f"{group[0]}-{group[1]} is age {age} by its place")
+                if age in ages:
+                    raise SystemExit(f"AJ&K Table 15.8 prints age {age} twice")
+                ages[age] = territory
+                place += 1
+            elif kind == "open":
+                ages[AJK_AGE_OPEN] = territory
+                group = None
+            else:
+                total = territory
+        if total is not None:
+            break
+    if not found:
+        raise LookupError("no page carries Table 15.8's caption with rows under it")
+    return {"ages": ages, "groups": groups, "total": total}
+
+
+def ajk_ages(blob: bytes) -> dict[str, Any]:
+    return ajk_ages_from_pages(words_by_row(blob))
+
+
+def ajk_ages_check(table: dict[str, Any], population: int) -> None:
+    """Every year present once; the years to their groups and the total."""
+    ages, groups, total = table["ages"], table["groups"], table["total"]
+    if total is None:
+        raise SystemExit("AJ&K Table 15.8 has no Total row")
+    if set(ages) != set(range(0, AJK_AGE_OPEN + 1)):
+        raise SystemExit(f"AJ&K Table 15.8 is missing ages "
+                         f"{sorted(set(range(0, AJK_AGE_OPEN + 1)) - set(ages))}")
+    for (low, high), row in groups.items():
+        for i in range(4):
+            summed = sum(ages[a][i] for a in range(low, high + 1))
+            if summed != row[i]:
+                raise SystemExit(f"AJ&K Table 15.8 ages {low}-{high}: the single "
+                                 f"years add up to {summed:,}, the group row "
+                                 f"says {row[i]:,}")
+    for i in range(4):
+        summed = sum(row[i] for row in ages.values())
+        if summed != total[i]:
+            raise SystemExit(f"AJ&K Table 15.8: the single years add up to "
+                             f"{summed:,}, the Total row says {total[i]:,}")
+    if total[3] != population:
+        raise SystemExit(f"AJ&K Table 15.8 counts {total[3]:,} people and Table "
+                         f"15.24 {population:,}")
+    log(f"    Table 15.8: {len(ages)} single years add up to their {len(groups)} "
+        f"groups and to the territory's {total[3]:,}, Table 15.24's population")
+
+
+def ajk_age_fields(table: dict[str, Any], extra: str = "") -> dict[str, Any]:
+    male, female, trans, persons = table["total"]
+    out: dict[str, Any] = {}
+    median = median_single({a: row[3] for a, row in table["ages"].items()},
+                           open_from=AJK_AGE_OPEN)
+    if median is not None:
+        out["median_age"] = measure(median, unit="years", year=AJK_YEAR,
+                                    source=AJK_AGE_SOURCE)
+        out["median_age_note"] = (
+            "Population and Housing Census 2017, as reprinted in the AJ&K "
+            f"Statistical Year Book 2023 (Table 15.8): the median of {persons:,} "
+            "people's single years of age, interpolated within the year that "
+            "holds the middle person. The 2023 census published no age table "
+            "for the territory." + extra)
+    out["sex_ratio"] = measure(round(100.0 * male / female, 1),
+                               unit="males_per_100_females", year=AJK_YEAR,
+                               source=AJK_AGE_SOURCE)
+    out["sex_ratio_note"] = (
+        f"Census 2017 (yearbook Table 15.8): {male:,} males and {female:,} "
+        f"females; the {trans:,} transgender persons counted are in the "
+        "population and in neither figure." + extra)
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -2121,7 +2285,8 @@ def gb_population_fields(name: str, counts: dict[str, int],
 
 def ajk_records(found: dict[str, dict[str, int]], whole: dict[str, int],
                 tongues: dict[str, float] | None = None,
-                short: str = "") -> list[dict[str, Any]]:
+                short: str = "",
+                ages: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     """Azad Jammu and Kashmir, and the one second-level shape drawn for it.
 
     Religion and population from the printed territory row, which the check
@@ -2154,13 +2319,20 @@ def ajk_records(found: dict[str, dict[str, int]], whole: dict[str, int],
         }
         cite.append({"field": "language", "name": AJK_TONGUE_SOURCE,
                      "url": AJK_BOOK, "license": AJK_TONGUE_LICENCE})
+    whole_ages: dict[str, Any] = {}
+    shape_ages: dict[str, Any] = {}
+    if ages:
+        whole_ages = ajk_age_fields(ages)
+        shape_ages = ajk_age_fields(ages, " " + AJK_ONE_SHAPE)
+        cite.append({"field": "median_age/sex_ratio", "name": AJK_AGE_SOURCE,
+                     "url": AJK_BOOK, "license": AJK_LICENCE})
     return [
         record("PAK-ajk", "Azad Jammu and Kashmir", level="admin1",
                parent="PAK", aliases=["Azad Kashmir"],
                population=measure(total, year=AJK_YEAR, source=AJK_SOURCE),
                religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
                religion_year=AJK_YEAR, religion_note=AJK_NOTE,
-               sources=list(cite), **said),
+               sources=list(cite), **said, **whole_ages),
         record("PAK-ajk-azad-kashmir", "Azad Kashmir", level="admin2",
                parent="PAK", parent_name="Azad Jammu and Kashmir",
                parent_aliases=["Azad Kashmir"],
@@ -2168,7 +2340,7 @@ def ajk_records(found: dict[str, dict[str, int]], whole: dict[str, int],
                religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
                religion_year=AJK_YEAR,
                religion_note=AJK_NOTE + " " + AJK_ONE_SHAPE,
-               sources=list(cite), **said),
+               sources=list(cite), **said, **shape_ages),
     ]
 
 
@@ -2727,7 +2899,17 @@ def main() -> int:
                         + ", ".join(f"{g} {p}%" for g, p in
                                     sorted(tongues.items(),
                                            key=lambda kv: -kv[1])))
-                records.extend(ajk_records(found, whole, tongues, short))
+                # Table 15.8, the census's single years for the territory: a
+                # missing caption leaves the ages' declared gap, a caption
+                # that does not read refuses.
+                ages: dict[str, Any] | None = None
+                try:
+                    ages = ajk_ages(blob)
+                except LookupError as err:
+                    log(f"    NO AGE TABLE -- {err}")
+                else:
+                    ajk_ages_check(ages, whole["TOTAL"])
+                records.extend(ajk_records(found, whole, tongues, short, ages))
                 absent[APART] = [(slug, line) for slug, line in absent[APART]
                                  if slug != "ajk"]
 

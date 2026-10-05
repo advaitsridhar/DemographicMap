@@ -843,6 +843,24 @@ def check_sexes(districts: list[dict[str, Any]], printed: dict[str, float]) -> N
         "sex ratio is the one Table P11 prints, to the hundredth")
 
 
+# Why a zila has no median age: measured by the census, published no lower
+# than the division. Each claim here was read, not recalled -- the sheet
+# list in the module docstring, the report's table list (probe of 4 October
+# 2026), and the COD-PS table's own national row.
+ZILA_AGE_GAP = (
+    "The 2022 census publishes age for the nation and its eight divisions "
+    "(National Report, Table P03, five-year groups) and for no smaller unit: "
+    "none of the district workbook's 42 sheets is an age table, and the "
+    "National Report's district tables (P06, P11, P13-P16, P18, P20, P26, P27, "
+    "HH15) are about marital status, sex ratio, literacy, schooling, education, "
+    "work, banking and households, not age. District volumes (Zila Reports) "
+    "were published for the 2011 census and not for 2022. The 2022 age table "
+    "by zila on HDX's COD-PS (UNFPA and the US Census Bureau) is not the census "
+    "count -- it totals 165,650,475 people against the census's 165,150,492 "
+    "males and females, and 14.19 million aged 0-4 against Table P03's 15.58 "
+    "million -- so it is not used.")
+
+
 def zila_sex_ratio(row: dict[str, Any]) -> dict[str, Any]:
     males, females, hijra = row["males"], row["females"], row["hijra"] or 0
     return {
@@ -1122,6 +1140,7 @@ def main() -> int:
             ethnicity_note=zila_note(row["name"], row["ethnic"],
                                      row["population"]),
             **zila_sex_ratio(row),
+            median_age=gap(NOT_AVAILABLE, ZILA_AGE_GAP),
             sources=[{"field": "population/religion/sex_ratio", "name": SOURCE,
                       "url": URL, "license": LICENCE}]))
 
