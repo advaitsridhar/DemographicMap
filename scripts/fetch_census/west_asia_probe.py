@@ -29,10 +29,17 @@ Subcommands:
         A PDF's page count and, laid out row by row, the opening of each page
         in P (comma-separated, 1-based; default the first two), or of each
         page matching REGEX; with --chars 0, only the lines matching REGEX.
-    uscb DATASET SHEET [--grep REGEX] [--rows N] [--level L]
+    uscb DATASET SHEET [--grep REGEX] [--rows N] [--level L] [--dictionary REGEX]
         One sheet of the US Census Bureau's workbook in an HDX dataset: its
         field names and aliases, and the rows (of ADM_LEVEL L, if given) with
-        the geography columns and the fields whose name matches REGEX.
+        the geography columns and the fields whose name matches REGEX; with
+        --dictionary, the workbook's data-dictionary rows (definition, the
+        office's original field name, its table) of the fields matching it.
+    geonames CC [--iso ISO3] [--unit-level L] [--classes P,L] [--grep REGEX] [--rows N]
+        GeoNames' dump of one country (``CC.zip``): every feature of the given
+        classes, with its Arabic names, its point, and the drawn unit of
+        ``ISO3`` at level ``L`` (default admin2) whose polygon, read from the
+        map's own tiles, holds the point. REGEX filters on the feature's names.
 
 Usage:
     python -m scripts.fetch_census.west_asia_probe ods https://www.data.gov.bh --search population
@@ -282,7 +289,7 @@ def cmd_pdf(urls: list[str], pages: str | None, chars: int, grep: str | None,
 
 
 def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
-             level: int | None) -> None:
+             level: int | None, dictionary: str | None = None) -> None:
     import io
 
     import openpyxl
@@ -292,6 +299,17 @@ def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
     status, ctype, body = fetch(url)
     log(f"{dataset}: {url} {status} {len(body):,} bytes")
     book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+    if dictionary:
+        # The data dictionary says what each field is: its definition, the
+        # office's own field name and the table it was read from.
+        pat = re.compile(dictionary)
+        for name in book.sheetnames:
+            if name.strip().lower() != "data dictionary":
+                continue
+            for row in book[name].iter_rows(values_only=True):
+                cells = ["" if v is None else " ".join(str(v).split()) for v in row]
+                if cells and cells[0] and pat.search(cells[0]):
+                    log(f"  {cells[0]}: " + " | ".join(c[:300] for c in cells[1:] if c))
     # A sheet name with a space cannot be one argument; '-' or '_' stands for it.
     wanted = re.sub(r"[-_]", " ", sheet).strip().lower()
     actual = next((s for s in book.sheetnames
@@ -317,10 +335,54 @@ def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
             break
 
 
+ARABIC_LETTERS = re.compile(r"[؀-ۿ]")
+
+
+def cmd_geonames(cc: str, iso3: str | None, level: str, classes: str, grep: str | None,
+                 rows: int, zoom: int) -> None:
+    """A country's GeoNames features, each with the drawn unit holding its point."""
+    import io
+    import zipfile
+
+    status, ctype, body = fetch(f"https://download.geonames.org/export/dump/{cc}.zip")
+    log(f"{cc}.zip: {status} {len(body):,} bytes")
+    if status != 200:
+        return
+    with zipfile.ZipFile(io.BytesIO(body)) as zf:
+        text = zf.read(f"{cc}.txt").decode("utf-8")
+    wanted = set(classes.split(","))
+    pat = re.compile(grep, re.I) if grep else None
+    feats = []
+    for line in text.splitlines():
+        f = line.split("\t")
+        if len(f) < 15 or f[6] not in wanted:
+            continue
+        names = [f[1], f[2]] + [n for n in f[3].split(",") if n]
+        if pat and not any(pat.search(n) for n in names):
+            continue
+        arabic = [n for n in f[3].split(",") if ARABIC_LETTERS.search(n)]
+        feats.append((f[0], f[1], arabic, float(f[4]), float(f[5]), f"{f[6]}.{f[7]}", f[14]))
+    holder: dict[str, str] = {}
+    if iso3:
+        from shapely.geometry import Point
+
+        from .sea_common import drawn, polygons
+        shapes = polygons(level, iso3, zoom)
+        label = {u["id"]: u["name"] for u in drawn(iso3, level)}
+        for gid, _n, _a, lat, lon, _c, _p in feats:
+            hits = [label.get(sid, sid) for sid, g in shapes.items() if g.contains(Point(lon, lat))]
+            holder[gid] = " + ".join(hits) or "-"
+    log(f"{len(feats)} features of classes {classes}" + (f" matching {grep!r}" if grep else ""))
+    for gid, name, arabic, lat, lon, code, pop in sorted(feats, key=lambda r: r[1])[:rows]:
+        log(f"  {gid} | {name} | {' / '.join(arabic[:3])} | {lat:.5f},{lon:.5f} | {code} | "
+            f"pop {pop} | in {holder.get(gid, '?')}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "xlsx", "pdf"])
+    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "xlsx", "pdf",
+                                    "geonames"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--search")
     ap.add_argument("--where")
@@ -337,9 +399,19 @@ def main() -> int:
     ap.add_argument("--width", type=int, default=24)
     ap.add_argument("--raw", action="store_true", help="grep the page as sent, tags and all")
     ap.add_argument("--pages")
+    ap.add_argument("--dictionary")
+    ap.add_argument("--iso")
+    ap.add_argument("--unit-level", default="admin2")
+    ap.add_argument("--classes", default="P")
+    ap.add_argument("--zoom", type=int, default=8)
     args = ap.parse_args()
     if args.cmd == "uscb":
-        cmd_uscb(args.target[0], args.target[1], args.grep, args.rows, args.level)
+        cmd_uscb(args.target[0], args.target[1], args.grep, args.rows, args.level,
+                 args.dictionary)
+        return 0
+    if args.cmd == "geonames":
+        cmd_geonames(args.target[0], args.iso, args.unit_level, args.classes, args.grep,
+                     args.rows, args.zoom)
         return 0
     if args.cmd == "ods":
         for base in args.target:
