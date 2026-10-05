@@ -28,7 +28,7 @@ Subcommands:
     pdf URL [URL ...] [--pages P] [--chars N] [--grep REGEX]
         A PDF's page count and, laid out row by row, the opening of each page
         in P (comma-separated, 1-based; default the first two), or of each
-        page matching REGEX.
+        page matching REGEX; with --chars 0, only the lines matching REGEX.
     uscb DATASET SHEET [--grep REGEX] [--rows N] [--level L]
         One sheet of the US Census Bureau's workbook in an HDX dataset: its
         field names and aliases, and the rows (of ADM_LEVEL L, if given) with
@@ -268,6 +268,13 @@ def cmd_pdf(urls: list[str], pages: str | None, chars: int, grep: str | None,
             continue
         sheets = text.split(PAGE_BREAK)
         log(f"   {len(sheets)} pages")
+        if pat and chars == 0:
+            hits = [(i, line) for i, t in enumerate(sheets) for line in t.splitlines()
+                    if pat.search(line)]
+            for i, line in hits[:rows]:
+                log(f"   p{i + 1}: {line[:200]}")
+            log(f"   {len(hits)} matching lines")
+            continue
         picked = ([i for i, t in enumerate(sheets) if pat.search(t)][:rows] if pat
                   else [n - 1 for n in wanted if 0 < n <= len(sheets)])
         for i in picked:
