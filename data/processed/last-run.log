@@ -1,3 +1,14 @@
-sea_composed: religion and ethnicity on the polygons no one census area is
-  Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
-sea_composed: SHAN STATE / WA SELF-ADMINISTERED DIVISION: SHAN STATE / WA SELF-ADMINISTERED DIVISION / MONGMAO has no ethnicity figures, so the sum would be part of the polygon
+sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
+  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
+    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
+    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
+  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
+  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  wrote data/processed/sea_cod_ps_age.json (2693 kB)
+  wrote sea_cod_ps_age.json: 1196 records

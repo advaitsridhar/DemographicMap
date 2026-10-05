@@ -4600,6 +4600,42 @@
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
   },
   {
+    "id": "THA-CODPSAGE-admin2-bankha-728586",
+    "level": "admin2",
+    "name": "Ban Kha",
+    "parent": "THA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "OCHA's COD-PS for the country (reference year 2023) is the only age-and-sex table this map could read here, and its row for Ban Kha gives 48.2 males per 100 females -- implausible for a whole district, so the projection's age breakdown is not used either. Thailand's own figures were not reachable: the Department of Provincial Administration's register statistics (stat.bora.dopa.go.th) do not resolve from the runner, and the National Statistical Office's hosts answer HTTP 418 or 403 to this project's reader."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "OCHA's COD-PS for the country (reference year 2023) is the only age-and-sex table this map could read here, and its row for Ban Kha gives 48.2 males per 100 females -- implausible for a whole district, so the projection's age breakdown is not used either. Thailand's own figures were not reachable: the Department of Provincial Administration's register statistics (stat.bora.dopa.go.th) do not resolve from the runner, and the National Statistical Office's hosts answer HTTP 418 or 403 to this project's reader."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "THA",
+    "match_by": "shape_id",
+    "shape_id": "78962969B84740319728586"
+  },
+  {
     "id": "THA-CODPSAGE-admin2-bankhai-799689",
     "level": "admin2",
     "name": "Ban Khai",
@@ -43460,6 +43496,42 @@
     "shape_id": "78962969B46335103611248",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the age breakdown of OCHA's COD-PS for the country, reference year 2023: a projection, not a count, used because the office's own tables could not be read. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\".",
     "sex_ratio_note": "Males per 100 females in OCHA's COD-PS for the country, reference year 2023: a projection, not a count. The dataset gives its method as \"The estimates for the population totals of 77 ADM-1 units were calculated using the Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. The estimates for sex-spec\"."
+  },
+  {
+    "id": "THA-CODPSAGE-admin2-suanphueng-766823",
+    "level": "admin2",
+    "name": "Suan Phueng",
+    "parent": "THA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "OCHA's COD-PS for the country (reference year 2023) is the only age-and-sex table this map could read here, and its row for Suan Phueng gives 76.9 males per 100 females -- implausible for a whole district, so the projection's age breakdown is not used either. Thailand's own figures were not reachable: the Department of Provincial Administration's register statistics (stat.bora.dopa.go.th) do not resolve from the runner, and the National Statistical Office's hosts answer HTTP 418 or 403 to this project's reader."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "OCHA's COD-PS for the country (reference year 2023) is the only age-and-sex table this map could read here, and its row for Suan Phueng gives 76.9 males per 100 females -- implausible for a whole district, so the projection's age breakdown is not used either. Thailand's own figures were not reachable: the Department of Provincial Administration's register statistics (stat.bora.dopa.go.th) do not resolve from the runner, and the National Statistical Office's hosts answer HTTP 418 or 403 to this project's reader."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [],
+    "country": "THA",
+    "match_by": "shape_id",
+    "shape_id": "78962969B47422412766823"
   },
   {
     "id": "THA-CODPSAGE-admin2-suksamran-504757",
