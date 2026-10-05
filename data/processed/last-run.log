@@ -1,39 +1,9 @@
-== page https://www.stats.gov.cn/sj/pcsj/rkpc/7rp/
-  HTTP 403 Forbidden: <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>nginx/1.24.0</center> </body> </html>
-== page https://www.stats.gov.cn/sj/pcsj/rkpc/
-  417 bytes, charset utf-8
-  (0 links shown)
-== page https://www.stats.gov.cn/sj/pcsj/
-  72,091 bytes, charset utf-8
-  link: '第七次人口普查数据' -> https://www.stats.gov.cn/sj/pcsj/rkpc/7rp/indexch.htm
-  link: '第七次人口普查主要数据' -> https://www.stats.gov.cn/sj/pcsj/rkpc/d7c/202111/P020211126523667366751.pdf
-  link: '第六次人口普查数据' -> https://www.stats.gov.cn/sj/pcsj/rkpc/6rp/indexch.htm
-  link: '第五次人口普查数据' -> https://www.stats.gov.cn/sj/pcsj/rkpc/5rp/index.htm
-  link: '第五次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/5jp/indexch.htm
-  link: '第四次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/4jp/indexch.htm
-  link: '第三次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/3jp/indexch.htm
-  link: '第二次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/2jp/indexch.htm
-  link: '第一次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/1jp/indexch.htm
-  link: '第一次农业普查' -> https://www.stats.gov.cn/sj/pcsj/nypc/dycnypc/
-  link: '第二次R&D资源清查' -> https://www.stats.gov.cn/sj/pcsj/rdzyqc/decrdzyqc/
-  link: '第三次工业普查' -> https://www.stats.gov.cn/sj/pcsj/gypc/dscgypc/
-  link: '第一次三产普查' -> https://www.stats.gov.cn/sj/pcsj/scpc/dycscpc/
-  link: '第二次基本单位普查' -> https://www.stats.gov.cn/sj/pcsj/jbdwpc/decjbdwpcsj/
-  link: '第一次基本单位普查' -> https://www.stats.gov.cn/sj/pcsj/jbdwpc/dycjbdwpc/
-  link: '第七次人口普查数据' -> https://www.stats.gov.cn/sj/pcsj/rkpc/7rp/indexch.htm
-  link: '第七次人口普查主要数据' -> https://www.stats.gov.cn/sj/pcsj/rkpc/d7c/202111/P020211126523667366751.pdf
-  link: '第六次人口普查数据' -> https://www.stats.gov.cn/sj/pcsj/rkpc/6rp/indexch.htm
-  link: '第五次人口普查数据' -> https://www.stats.gov.cn/sj/pcsj/rkpc/5rp/index.htm
-  link: '第五次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/5jp/indexch.htm
-  link: '第四次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/4jp/indexch.htm
-  link: '第三次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/3jp/indexch.htm
-  link: '第二次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/2jp/indexch.htm
-  link: '第一次经济普查' -> https://www.stats.gov.cn/sj/pcsj/jjpc/1jp/indexch.htm
-  link: '第一次农业普查' -> https://www.stats.gov.cn/sj/pcsj/nypc/dycnypc/
-  link: '第三次工业普查' -> https://www.stats.gov.cn/sj/pcsj/gypc/dscgypc/
-  link: '第一次三产普查' -> https://www.stats.gov.cn/sj/pcsj/scpc/dycscpc/
-  link: '第二次基本单位普查' -> https://www.stats.gov.cn/sj/pcsj/jbdwpc/decjbdwpcsj/
-  link: '第一次基本单位普查' -> https://www.stats.gov.cn/sj/pcsj/jbdwpc/dycjbdwpc/
-  link: '' -> https://www.stats.gov.cn/zt_18555/ztfx/sswjjshfzcjbg/index.html
-  link: '' -> https://www.stats.gov.cn/zt_18555/ztfx/xzg75njjshfzcj/
-  (31 links shown)
+vietnam_district: General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 1: population by urban/rural, sex, province and district, 1 April 2019
+  fetched Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf (9.5 MB)
+  842 pages
+  Table 1: 712 districts in 63 provinces, each province's districts making its own row; the provinces make 96,208,984
+  Table 5: 63 provinces, each one's 18 groups making its total; national median 31.8 from the groups, 31.8 from Table 4's single years
+  705 of 705 polygons bound, 710 of 710 census districts; not drawn: Cồn Cỏ (Quảng Trị, 346), Trường Sa (Khánh Hòa, 93)
+  provinces' medians 23.4-38.0; districts' sex ratios 84.7-112.1
+  wrote data/processed/vietnam_district.json (2088 kB)
+  wrote vietnam_district.json: 769 records
