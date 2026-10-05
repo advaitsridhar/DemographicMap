@@ -4,18 +4,18 @@ iran_census: 2016 census tables from the Internet Archive's captures of amar.org
   province 02 Mazandaran: 22 shahrestans
   province 03 East Azerbaijan: 20 shahrestans
   province 04 West Azerbaijan: 17 shahrestans
-  wrote data/raw/iran/census2016_13.json (57 kB)
-  province 13 Hamadan: 9 shahrestans
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat14.xls :: <urlopen error [Errno 111] Connection refused>
-  the Archive refused jamiat14.xls (<urlopen error [Errno 111] Connection refused>); waiting 120s
-  wrote data/raw/iran/census2016_14.json (56 kB)
-  province 14 Chaharmahal and Bakhtiari: 9 shahrestans
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat15.xls :: <urlopen error [Errno 111] Connection refused>
-  the Archive refused jamiat15.xls (<urlopen error [Errno 111] Connection refused>); waiting 120s
-  wrote data/raw/iran/census2016_15.json (69 kB)
-  province 15 Lorestan: 11 shahrestans
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat16.xls :: <urlopen error [Errno 111] Connection refused>
-  the Archive refused jamiat16.xls (<urlopen error [Errno 111] Connection refused>); waiting 120s
-  wrote data/raw/iran/census2016_16.json (62 kB)
-  province 16 Ilam: 10 shahrestans
-iran_census: 22 provinces not yet read ([5, 6, 7, 8, 9, 10, 11, 12, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]); the 9 read are kept in data/raw/iran and a re-run carries on from them
+  wrote data/raw/iran/census2016_17.json (50 kB)
+  province 17 Kohgiluyeh and Boyer-Ahmad: 8 shahrestans
+  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat18.xls :: <urlopen error [Errno 111] Connection refused>
+  the Archive refused jamiat18.xls (<urlopen error [Errno 111] Connection refused>); waiting 120s
+  wrote data/raw/iran/census2016_18.json (62 kB)
+  province 18 Bushehr: 10 shahrestans
+  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat19.xls :: <urlopen error [Errno 111] Connection refused>
+  the Archive refused jamiat19.xls (<urlopen error [Errno 111] Connection refused>); waiting 120s
+  wrote data/raw/iran/census2016_19.json (50 kB)
+  province 19 Zanjan: 8 shahrestans
+  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat20.xls :: <urlopen error [Errno 111] Connection refused>
+  the Archive refused jamiat20.xls (<urlopen error [Errno 111] Connection refused>); waiting 120s
+  wrote data/raw/iran/census2016_20.json (50 kB)
+  province 20 Semnan: 8 shahrestans
+iran_census: 22 provinces not yet read ([5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]); the 9 read are kept in data/raw/iran and a re-run carries on from them
