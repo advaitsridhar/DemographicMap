@@ -1,26 +1,140 @@
-== kosis 101,DT_1PM1502
-  GET https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1PM1502&language=ko&conn_path=I2 -> 200, 21,737 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['2FstatHtml.do', 'LoginView.do', 'includeLeftTree.do']
-    form 'ParamInfo' action='/statHtml/statHtml.do?sso=ok&returnurl=https%3A%2F%2Fkosis.kr%3A443%2FstatHtml%2FstatHtml.do%3Fconn_path%3DI2%26tblId%3DDT_1PM1502%26language%3Dko%26orgId%3D101%26' inputs=['jsonStr', 'url', 'orgId']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd']
-    form 'form_join' action='https://kosis.kr/oneid/cmmn/login/LoginView.do' inputs=['SYS_CD', 'CUR_URL', 'SYS_URL']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'ext/js/jqgrid/grid.locale-en.js']
-    right frame fields: ['conn_path', 'dataOpt', 'dbUser', 'itm_id', 'language', 'list_id', 'mode', 'orderBy', 'orgId', 'pub', 'query', 'serverLocation', 'serverType', 'serverTypeOrigin', 'tabYn', 'tblId', 'tblNm', 'tblSe', 'vwCd']
-  POST https://kosis.kr/statHtml/right_layout.do -> 200, 27,418 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['right_layout.do', 'statHtmlContent.do']
-    form 'ParamInfo' action='/statHtml/right_layout.do' inputs=['jsonStr', 'orgId', 'tblId']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js', 'ext/js/jqgrid/grid.locale-en.js']
-  POST https://kosis.kr/statHtml/statHtmlContent.do -> 200, 287,422 bytes, cookies ['JSESSIONID', 'SSOJSESSIONID1', 'WMONID']
-    endpoints: ['InterList.do', 'LoginView.do', 'SvcMetaDcDtaPopup.do']
-    form 'iframeform' action='#' inputs=['orgId', 'tblId', 'vwCd']
-    form 'ParamInfo' action='/statHtml/statHtmlContent.do' inputs=['jsonStr', 'orgId', 'tblId']
-    scripts: ['ext/js/common/json2.js', 'fusioncharts/fusioncharts.js?v=20241024', 'fusioncharts/themes/fusioncharts.theme.fusion.js?v=20241024']
-    objVarId A: 22 items, e.g. ['전국', '동부', '읍부']
-    objVarId SBB: 4 items, e.g. ['계', '남자', '여자']
-    objVarId B: 20 items, e.g. ['합계', '0~4세', '5~9세']
-    objVarId 13999001: 13 items, e.g. ['계', '종교있음-계', '불교']
-    objVarId period: 1 items, e.g. ['기간']
-    ~ var makeJson
-    ~ function fn_searchCond
-    ~ var makeJson
-    ~ function fn_downGridSubmit
+  https://nso.gov.ki/census/kiribati-2020-2021-population-and-housing-census-data/
+    64,036 chars
+    58 distinct match(es) for '(?:https?://nso[.]gov[.]ki)?/(?:download|wp-content|category|census)/[-a-zA-Z0-9_./%]+'
+      /census/kiribati-2020-2021-population-and-housing-census-data/
+      /wp-content/plugins/
+      /wp-content/themes/Divi-NSO/
+      /wp-content/themes/Divi/
+      /wp-content/uploads/sites/10/
+      https://nso.gov.ki/census/kiribati-2020-2021-population-and-housing-census-data/
+      https://nso.gov.ki/wp-content/et-cache/1/10/1935/et-core-unified-1935.min.css
+      https://nso.gov.ki/wp-content/et-cache/1/10/1935/et-core-unified-deferred-1935.min.css
+      https://nso.gov.ki/wp-content/et-cache/1/10/global/et-divi-customizer-global.min.css
+      https://nso.gov.ki/wp-content/plugins
+      https://nso.gov.ki/wp-content/plugins/data-tables-generator-by-supsystic/app/assets/js/dtgsnonce.js
+      https://nso.gov.ki/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/font-awesome.min.css
+      https://nso.gov.ki/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/pricing.fonts.css
+      https://nso.gov.ki/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/pricing.frontend.css
+      https://nso.gov.ki/wp-content/plugins/hurrytimer/assets/js/cookie.min.js
+      https://nso.gov.ki/wp-content/plugins/hurrytimer/assets/js/hurrytimer.js
+      https://nso.gov.ki/wp-content/plugins/hurrytimer/assets/js/jquery.countdown.min.js
+      https://nso.gov.ki/wp-content/plugins/simple-mail-address-encoder/smae.js
+      https://nso.gov.ki/wp-content/plugins/smart-recent-posts-widget/assets/css/srpw-frontend.css
+      https://nso.gov.ki/wp-content/plugins/vertical-sidebar-menu-widget/assets/css/vertical-sidebar-menu-widget.css
+      https://nso.gov.ki/wp-content/plugins/vertical-sidebar-menu-widget/assets/js/jquery.vertical-sidebar-menu-widget.min.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/admin/assets/js/resumable.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/includes/divi/scripts/frontend-bundle.min.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/includes/divi/styles/style.min.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/front.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/jaofiletree.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/material-design-iconic-font.min.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/search_filter.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/frontend.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/handlebars-v4.7.7.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/helper.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/jaofiletree.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/themes/wpfd-tree/css/style.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/themes/wpfd-tree/js/script.js
+      https://nso.gov.ki/wp-content/plugins/wp-media-folder/assets/css/display-gallery/magnific-popup.css
+      https://nso.gov.ki/wp-content/plugins/wp-media-folder/assets/css/divi-widgets.css
+      https://nso.gov.ki/wp-content/plugins/wp-media-folder/class/divi-widgets/scripts/frontend-bundle.min.js
+      https://nso.gov.ki/wp-content/plugins/wp-media-folder/class/divi-widgets/styles/style.min.css
+      https://nso.gov.ki/wp-content/themes/Divi-NSO/style.css
+      https://nso.gov.ki/wp-content/themes/Divi/core/admin/js/common.js
+      https://nso.gov.ki/wp-content/themes/Divi/images
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/images
+      https://nso.gov.ki/wp-content/themes/Divi/js/scripts.min.js
+      https://nso.gov.ki/wp-content/themes/Divi/style-static.min.css
+      https://nso.gov.ki/wp-content/uploads/sites/10/2019/10/kiribati-logo-5.png
+      https://nso.gov.ki/wp-content/uploads/sites/10/2020/01/kiribati-beach-3.jpg
+      https://nso.gov.ki/wp-content/uploads/sites/10/hurrytimer/css/a7fb1703ec188206.css
+      https://nso.gov.ki/wp-content/wp-file-download/icons/svg/styles-1791161055.css
+  https://nso.gov.ki/census/
+    74,742 chars
+    76 distinct match(es) for '(?:https?://nso[.]gov[.]ki)?/(?:download|wp-content|category|census)/[-a-zA-Z0-9_./%]+'
+      /census/feed/
+      /wp-content/plugins/
+      /wp-content/themes/Divi-NSO/
+      /wp-content/themes/Divi/
+      /wp-content/uploads/sites/10/
+      https://nso.gov.ki/census/kiribati-2020-2021-population-and-housing-census-data/
+      https://nso.gov.ki/census/kiribati-agriculture-and-fisheries-report-based-on-2020-census/
+      https://nso.gov.ki/census/page/2/
+      https://nso.gov.ki/download/151/2023-24-hies-reports/2136/kiribati-food-consumption-pattern-based-on-the-analysis-of-the-food-data-collected-in-the-kiribati-2023-24-hies.pdf
+      https://nso.gov.ki/download/151/2023-24-hies-reports/2138/kiribati-2023-health-report
+      https://nso.gov.ki/download/151/2023-24-hies-reports/2139/kiribati-2023-2024-household-income-and-expenditure-survey-report
+      https://nso.gov.ki/download/151/2023-24-hies-reports/2140/kiribati-2023-2024-household-income-and-expenditure-survey-report-copra-brief.pdf
+      https://nso.gov.ki/download/151/2023-24-hies-reports/2167/kiribati-natural-disasters-and-climate-change-report-2023-2024
+      https://nso.gov.ki/download/151/2023-24-hies-reports/2168/kiribati-labour-market-monograph-2023-24-report
+      https://nso.gov.ki/download/151/2023-24-hies-reports/2169/poverty-and-inequality-in-kiribati-2023-2024-analysis-based-on-the-2023-2024-household-income-and-expenditure-survey
+      https://nso.gov.ki/download/82/health/2143/kiribati-disability-monograph-from-the-2020-population-and-housing-census
+      https://nso.gov.ki/wp-content/et-cache/1/10/global/et-divi-customizer-global.min.css
+      https://nso.gov.ki/wp-content/plugins
+      https://nso.gov.ki/wp-content/plugins/data-tables-generator-by-supsystic/app/assets/js/dtgsnonce.js
+      https://nso.gov.ki/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/font-awesome.min.css
+      https://nso.gov.ki/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/pricing.fonts.css
+      https://nso.gov.ki/wp-content/plugins/data-tables-generator-by-supsystic/src/SupsysticTables/Pricing/assets/css/pricing.frontend.css
+      https://nso.gov.ki/wp-content/plugins/hurrytimer/assets/js/cookie.min.js
+      https://nso.gov.ki/wp-content/plugins/hurrytimer/assets/js/hurrytimer.js
+      https://nso.gov.ki/wp-content/plugins/hurrytimer/assets/js/jquery.countdown.min.js
+      https://nso.gov.ki/wp-content/plugins/simple-mail-address-encoder/smae.js
+      https://nso.gov.ki/wp-content/plugins/smart-recent-posts-widget/assets/css/srpw-frontend.css
+      https://nso.gov.ki/wp-content/plugins/vertical-sidebar-menu-widget/assets/css/vertical-sidebar-menu-widget.css
+      https://nso.gov.ki/wp-content/plugins/vertical-sidebar-menu-widget/assets/js/jquery.vertical-sidebar-menu-widget.min.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/admin/assets/js/resumable.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/admin/assets/ui/css/singlefile.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/admin/assets/ui/fonts/material-icons.min.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/includes/divi/scripts/frontend-bundle.min.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/includes/divi/styles/style.min.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/colorbox.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/front.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/jaofiletree.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/material-design-iconic-font.min.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/search_filter.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/video-js.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/css/viewer.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/colorbox.init.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/frontend.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/handlebars-v4.7.7.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/helper.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/jaofiletree.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/jquery.colorbox-min.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/assets/js/video.js
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/themes/wpfd-default/css/style.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/themes/wpfd-tree/css/style.css
+      https://nso.gov.ki/wp-content/plugins/wp-file-download/app/site/themes/wpfd-tree/js/script.js
+      https://nso.gov.ki/wp-content/plugins/wp-media-folder/assets/css/display-gallery/magnific-popup.css
+      https://nso.gov.ki/wp-content/plugins/wp-media-folder/assets/css/divi-widgets.css
+      https://nso.gov.ki/wp-content/plugins/wp-media-folder/class/divi-widgets/scripts/frontend-bundle.min.js
+      https://nso.gov.ki/wp-content/plugins/wp-media-folder/class/divi-widgets/styles/style.min.css
+      https://nso.gov.ki/wp-content/themes/Divi-NSO/style.css
+      https://nso.gov.ki/wp-content/themes/Divi/core/admin/js/common.js
+      https://nso.gov.ki/wp-content/themes/Divi/images
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/frontend-builder/assets/vendors
+      https://nso.gov.ki/wp-content/themes/Divi/includes/builder/images
+      https://nso.gov.ki/wp-content/themes/Divi/js/scripts.min.js
+      https://nso.gov.ki/wp-content/themes/Divi/style-static.min.css
+      https://nso.gov.ki/wp-content/uploads/sites/10/2019/10/kiribati-logo-5.png
+      https://nso.gov.ki/wp-content/uploads/sites/10/2020/01/kiribati-beach-3.jpg
+      https://nso.gov.ki/wp-content/uploads/sites/10/hurrytimer/css/a7fb1703ec188206.css
+      https://nso.gov.ki/wp-content/wp-file-download/icons/svg/styles-1791161055.css
+      https://nso.gov.ki/wp-content/wp-file-download/wpfd-single-file-button.css
