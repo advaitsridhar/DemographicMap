@@ -1,125 +1,886 @@
-probe_ckan: 6 host(s), timeout 20s
-  https://data.sumbarprov.go.id/ -> 200 text/html "Portal Data Sumbar"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.11
-    package_search q='ribu jiwa umur' -> 200, 0 matches, 0 shown, printing those matching '(?i)(?:kelompok.umur)'
-  https://data.kaltimprov.go.id/ -> 200 text/html "SATU DATA KALTIM"
-    /api/3/action/status_show -> 200 application/json CKAN ?
-    package_search q='ribu jiwa umur' -> 200, 5 matches, 5 shown, printing those matching '(?i)(?:kelompok.umur)'
-      - jumlah-penduduk-kabupaten-berau-berdasarkan-kelompok-usia: Jumlah Penduduk Kabupaten Berau berdasarkan Kelompok Umur  [3 res: xls,xlsx]
-          XLSX datastore=False d83c980a-b0f3-4162-acc5-55b679db3a90 https://data.beraukab.go.id/dataset/d1c111ad-ef0e-41a0-96a9-37ea95a143d6/resource/d83c980a-b0f3-4162-acc5-55b679db3a90/download/agr_kel_umur_6403_2024.xlsx
-          XLSX datastore=False 0adc6145-1439-4fad-8014-451e154db0b7 https://data.beraukab.go.id/dataset/d1c111ad-ef0e-41a0-96a9-37ea95a143d6/resource/0adc6145-1439-4fad-8014-451e154db0b7/download/agr_kel_umur_6403_2023.xlsx
-          XLS datastore=True 0488409c-b8a3-4465-9e5e-ed61dc5fde09 https://data.beraukab.go.id/dataset/d1c111ad-ef0e-41a0-96a9-37ea95a143d6/resource/0488409c-b8a3-4465-9e5e-ed61dc5fde09/download/jumlah-penduduk-kabupaten-berau-berdasarkan-kelompok-usia-2019-2022.xls
-      (4 others not matching)
-  https://data.bengkuluprov.go.id/ -> 200 text/html "Selamat datang - Bengkulu Portal Data"
-    /api/3/action/status_show -> 403 application/json {"help": "API Security Endpoint", "success": false, "error": {"__type": "Authorization Error", "message": "RBAC Policy:
-    /api/action/status_show -> 200 application/json CKAN 2.9.11
-    package_search q='ribu jiwa umur' -> 200, 1 matches, 1 shown, printing those matching '(?i)(?:kelompok.umur)'
-      - jumlah-pegawai-berdasarkan-kelompok-umur-dan-golongan-pemerintah-provinsi-bengkulu-2025: JUMLAH PEGAWAI BERDASARKAN KELOMPOK UMUR DAN GOLONGAN PEMERINTAH PROVINSI BENGKULU 2025  [1 res: xlsx]
-          XLSX datastore=True d5d3cd37-22e9-4f00-a220-f92e574cb6f7 https://data.bengkuluprov.go.id/dataset/f7485162-c44e-489c-a7de-1a00b28e0fe8/resource/d5d3cd37-22e9-4f00-a220-f92e574cb6f7/download/statistik-pegawai-berdasarkan-kelompok-umur-dan-golongan.xlsx
-  https://opendata.sumselprov.go.id/ -> 200 text/html "Welcome - Open Data Provinsi Sumatera Selatan"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.5
-    package_search q='ribu jiwa umur' -> 200, 1 matches, 1 shown, printing those matching '(?i)(?:kelompok.umur)'
-      - jumlah-penduduk-menurut-kelompok-umur-dan-jenis-kelamin-ribu-jiwa-di-provinsi-sumatera-selatan: Jumlah Penduduk Menurut Kelompok Umur dan Jenis Kelamin (ribu jiwa) di Provinsi Sumatera Selatan  [2 res: xlsx]
-          XLSX datastore=True ebdb9cd3-0d18-4e7a-8f07-06e4624e988c https://opendata.sumselprov.go.id/dataset/9c072a28-c397-4750-b0d7-d2a093dd54cc/resource/ebdb9cd3-0d18-4e7a-8f07-06e4624e988c/download/simdasi_3.1.2-jumlah-penduduk-menurut-kelompok-umur-dan-jenis-kelamin-ribu-jiwa-di-provinsi-sum.xlsx
-          XLSX datastore=True 4d1b024a-75fa-4a98-b9c4-35bbf992d6e2 https://opendata.sumselprov.go.id/dataset/9c072a28-c397-4750-b0d7-d2a093dd54cc/resource/4d1b024a-75fa-4a98-b9c4-35bbf992d6e2/download/simdasi_3.1.2-jumlah-penduduk-menurut-kelompok-umur-dan-jenis-kelamin-ribu-jiwa-di-provinsi-sum.xlsx
-  https://data.jatengprov.go.id/ -> 200 text/html "Open Data Jawa Tengah"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.5
-    package_search q='ribu jiwa umur' -> 200, 48 matches, 40 shown, printing those matching '(?i)(?:kelompok.umur)'
-      - proyeksi-penduduk-kabupaten-rembang-menurut-kelompok-umur-perempuan-ribu-jiwa-2033-2035: Proyeksi Penduduk Kabupaten Rembang Menurut Kelompok Umur (Perempuan) (Ribu Jiwa), 2033-2035  [1 res: xlsx]
-          XLSX datastore=False 08d0b213-d72a-4213-9e22-47439e33b7c5 https://data.rembangkab.go.id/dataset/86948fac-d658-4ae7-920b-334c1ea3eea8/resource/08d0b213-d72a-4213-9e22-47439e33b7c5/download/proyeksi-penduduk-kabupaten-rembang-menurut-kelompok-umur-laki-laki-ribu-jiwa-2033-2035.xlsx
-      - proyeksi-penduduk-kabupaten-rembang-menurut-kelompok-umur-laki-laki-ribu-jiwa-2033-2035: Proyeksi Penduduk Kabupaten Rembang Menurut Kelompok Umur (Laki-Laki) (Ribu Jiwa), 2033-2035  [1 res: xlsx]
-          XLSX datastore=False f9468ea0-b927-47ff-b3cf-6249fe674470 https://data.rembangkab.go.id/dataset/32836f07-5791-42c7-ab13-e0a83d9299ea/resource/f9468ea0-b927-47ff-b3cf-6249fe674470/download/proyeksi-penduduk-kabupaten-rembang-menurut-kelompok-umur-laki-laki-ribu-jiwa-2033-2035.xlsx
-      - proyeksi-penduduk-kabupaten-rembang-menurut-kelompok-umur-laki-laki-perempuan-ribu-ji-2033-2035: Proyeksi Penduduk Kabupaten Rembang Menurut Kelompok Umur (Laki-Laki + Perempuan) (Ribu Jiwa), 2033-2035  [1 res: xlsx]
-          XLSX datastore=False 611cf74b-cce4-409f-b09b-66617ef068c1 https://data.rembangkab.go.id/dataset/31076677-53c4-403a-9aaf-da810dea2b48/resource/611cf74b-cce4-409f-b09b-66617ef068c1/download/proyeksi-penduduk-kabupaten-rembang-menurut-kelompok-umur-laki-laki-perempuan-ribu-jiwa-2033-20.xlsx
-      - penduduk-kelompok-umur-jiwa-tahun-2015: Penduduk Kelompok Umur (Jiwa) Tahun 2015  [1 res: xlsx]
-          XLSX datastore=False d6129552-f6bd-47c3-8e07-849aea7902ff https://drive.google.com/file/d/15VmqFPKWi9aocmKiK9tbpFhacTS8Eope/view
-      - penduduk-kelompok-umur-jiwa-tahun-2021: Penduduk Kelompok Umur (Jiwa) Tahun 2021  [1 res: xlsx]
-          XLSX datastore=False e492f536-f6ae-4a16-ba99-4d25bb9b4e73 https://drive.google.com/file/d/1DYgHfYDzy5vFaHlkjWQ36was-m1VVZoL/view
-      - penduduk-kelompok-umur-jiwa-tahun-2018: Penduduk Kelompok Umur (Jiwa) Tahun 2018  [1 res: xlsx]
-          XLSX datastore=False 89811bd4-2d5f-48cb-b491-a7468cc24876 https://drive.google.com/file/d/14qplWyRGjyQe9O_eVfg2PR-YGRWfQ6QP/view
-      - penduduk-kelompok-umur-jiwa-tahun-2019: Penduduk Kelompok Umur (Jiwa) Tahun 2019  [1 res: xlsx]
-          XLSX datastore=False 0e307706-5f1d-4645-a1bf-04501255a72c https://drive.google.com/file/d/129vJHvx41tCA6v5ZdKYEn7ckWfMADT_J/view
-      - penduduk-kelompok-umur-jiwa-tahun-2020: Penduduk Kelompok Umur (Jiwa) Tahun 2020  [1 res: xlsx]
-          XLSX datastore=False cec0f616-f73f-45b2-b118-c01d5e0e4e69 https://drive.google.com/file/d/19ipqfiHhezoC7d6T_eVWokWlmEIHiJQ1/view
-      - penduduk-kelompok-umur-jiwa-tahun-2014: Penduduk Kelompok Umur (Jiwa) Tahun 2014  [1 res: xlsx]
-          XLSX datastore=False 0d5648e8-4a7a-487d-9aab-8a5536a7e2ec https://drive.google.com/file/d/1TacrPIhzo8tPxCE80bltWsKLh6csSDrP/view
-      - penduduk-kelompok-umur-jiwa-tahun-2012: Penduduk Kelompok Umur (Jiwa) Tahun 2012  [1 res: xlsx]
-          XLSX datastore=False df1f8467-4da8-467c-a762-a24ad0a00254 https://drive.google.com/file/d/1tdh-Lx0yHTareFLLRyOQbOIUwLpvIvHU/view
-      - penduduk-kelompok-umur-jiwa-tahun-2017: Penduduk Kelompok Umur (Jiwa) Tahun 2017  [1 res: xlsx]
-          XLSX datastore=False 7fd8d191-f154-4fe8-b5e9-fb1d23ff6b30 https://drive.google.com/file/d/17TFf9_323-UPiR8KCO1PrFHeDJlvkbLx/view
-      - penduduk-kelompok-umur-jiwa-tahun-2016: Penduduk Kelompok Umur (Jiwa) Tahun 2016  [1 res: xlsx]
-          XLSX datastore=False c269cc37-ffc2-4039-8444-b4c966b36204 https://drive.google.com/file/d/1PnmEZ9s0jI22xvi8_CdGLWfDxJsifBkf/view
-      - penduduk-kelompok-umur-jiwa-tahun-2013: Penduduk Kelompok Umur (Jiwa) Tahun 2013  [1 res: xlsx]
-          XLSX datastore=False edb5eb52-a52e-4fe5-926a-9dd57876a0f8 https://drive.google.com/file/d/1NVGeXgLY4rBsgYP_nH9yjSq8LoNQn_Fh/view
-      - jumlah-jiwa-menurut-kelompok-umur-dan-pekerjaan: JUMLAH JIWA MENURUT KELOMPOK UMUR DAN PEKERJAAN  [1 res: xlsx]
-          XLSX datastore=False fbf6d56d-5cd0-4619-ad5b-2959d585fea9 http://satudata.semarangkota.go.id/adm/file/20170807094234JUMLAHJIWAMENURUTKELOMPOKUMURDANPEKERJAAN.xlsx
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2016: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2016  [1 res: xlsx]
-          XLSX datastore=False 24ad1c04-c4bb-4746-9f14-6888dda532c3 https://drive.google.com/file/d/12AZmFhPW2QBV1IcHE_U5wKyk1ZaX6B3t/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2018: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2018  [1 res: xlsx]
-          XLSX datastore=False 2a285ebb-f79a-4de5-a87e-e221e044502f https://drive.google.com/file/d/10otV788n4A70hc7BQMZIMPMzwNai4XMk/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2016: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2016  [1 res: xlsx]
-          XLSX datastore=False 8b974044-c578-4936-b334-68967502a900 https://drive.google.com/file/d/1llLlQW3YP4EyjPi3wFoLAfUQh53o0Za0/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2017: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2017  [1 res: xlsx]
-          XLSX datastore=False d9c2037f-45b9-447a-9a22-f29cb462f4b5 https://drive.google.com/file/d/1dH3OvdEwrWTUXgYlOEXfSRx9KXYOHo4h/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2015: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2015  [1 res: xlsx]
-          XLSX datastore=False 22339716-cf07-480e-a153-9fc4e51c3f2a https://drive.google.com/file/d/1dZCT18egM6LAkQ5hne75mBnCo12_vPVF/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2020: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2020  [1 res: xlsx]
-          XLSX datastore=False c34786c3-99eb-4c21-8d76-9fdf706cb2c0 https://drive.google.com/file/d/1zzqG4j8Y2r3bwaAtyeeBSt7heP0UHD5d/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2012: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2012  [1 res: xlsx]
-          XLSX datastore=False 34605705-b9ea-4916-a243-4c0e14592795 https://drive.google.com/file/d/1SWnYnwyZJ7-WqItQhX2bXXTuRQAJxZ4V/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2013: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2013  [1 res: xlsx]
-          XLSX datastore=False de376728-c8b8-4d12-93dd-d2f8e150d1b6 https://drive.google.com/file/d/1xnjUjBMzfnHBmLa1d38BrWSs4QXuvDd-/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2012: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2012  [1 res: xlsx]
-          XLSX datastore=False 260d7da4-d87b-4f6c-a953-be19c500e404 https://docs.google.com/spreadsheets/d/12Kco6ki90yWKhsWJeUVEhGC3y2FF7hBT/edit?usp=sharing&ouid=103962648511633023142&rtpof=true&sd=true
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2013: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2013  [1 res: xlsx]
-          XLSX datastore=False cd93850f-2157-48af-80e5-1ef6065894e3 https://drive.google.com/file/d/1RFH7FFbypTnRxJgwl9Y4Xki3yuAFPOGI/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2019: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2019  [1 res: xlsx]
-          XLSX datastore=False f36b18e5-9b55-4136-89df-8ed463418f8f https://drive.google.com/file/d/1-ia3DR8dpId2dmtwup4M8q9DPZFZkVvy/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2019: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2019  [1 res: xlsx]
-          XLSX datastore=False 6b39e7df-2d66-4d6a-b000-8ae5319a4578 https://drive.google.com/file/d/1z4O54WZuiJbHn1CcR76Yq06NPp39euSX/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2015: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2015  [1 res: xlsx]
-          XLSX datastore=False afe90e45-f856-4626-b83a-2fec3e32b076 https://drive.google.com/file/d/1wlmpvsgFpjbDH6h8MrXRFDRWCZ0xnIt7/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2020: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2020  [1 res: xlsx]
-          XLSX datastore=False 30466f47-6031-425b-b0d6-8d81bcdab260 https://drive.google.com/file/d/1DyOI4R4f65WCqwnshXz4f65d1nBXOckE/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2021: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2021  [1 res: xlsx]
-          XLSX datastore=False c19088ed-e25f-4911-96c0-44150168dcc0 https://drive.google.com/file/d/1z1OmeLnfOGxbr9HB6SpVII8SObte1w2_/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2017: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2017  [1 res: xlsx]
-          XLSX datastore=False e7cc4a7a-9094-42c1-984f-9a7b9a38baf7 https://drive.google.com/file/d/1P9ZOTncXet6sKtyvMI8ofoirNDllQrdd/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2021: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2021  [1 res: xlsx]
-          XLSX datastore=False 3b2bd222-4166-4cd5-a8fa-a5e2e3734cde https://drive.google.com/file/d/13FpOgitI-ZpJJSNvG-IpUAi1QFme1v47/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-perempuan-tahun-2014: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Perempuan Tahun 2014  [1 res: xlsx]
-          XLSX datastore=False 199cbc29-360e-4708-b933-db8bb897f996 https://drive.google.com/file/d/1yzKQAfoR2GTrzgCXnULxj2yI9Cp212d0/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2014: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2014  [1 res: xlsx]
-          XLSX datastore=False 768aedf8-5ba3-40e4-848f-7a1389b93ffc https://drive.google.com/file/d/1INAaGYXV1tWSthmswnPaSgf127cENpIz/view
-      - penduduk-kelompok-umur-jiwa-jenis-kelamin-laki-laki-tahun-2018: Penduduk Kelompok Umur (Jiwa) Jenis Kelamin Laki-laki Tahun 2018  [1 res: xlsx]
-          XLSX datastore=False 6792395e-d8d2-4e89-926e-ec6e96eab364 https://drive.google.com/file/d/15M43VyA2Sx2eJ53c74d58Lg5TSKUYSqa/view
-      - angkatan-kerja-menurut-kelompok-umur-jiwa-2020-2023: Angkatan Kerja Menurut Kelompok Umur (Jiwa), 2020-2023  [1 res: xlsx]
-          XLSX datastore=False 8c51cb40-7813-45b7-b720-0197fead48b0 https://data.rembangkab.go.id/dataset/806c6a93-2f23-49c7-a363-bb89b777f04d/resource/8c51cb40-7813-45b7-b720-0197fead48b0/download/angkatan-kerja-menurut-kelompok-umur-2020-2023.xlsx
-      - jumlah-jiwa-menurut-kelompok-umur-dan-jenis-kelamin: JUMLAH JIWA MENURUT KELOMPOK UMUR DAN JENIS KELAMIN  [1 res: xlsx]
-          XLSX datastore=False 92a73a9e-b5e2-49c4-90b0-b11f51de5e4a http://satudata.semarangkota.go.id/adm/file/20170807094147JUMLAHJIWAMENURUTKELOMPOKUMURDANJENISKELAMIN.xlsx
-      - banyaknya-penduduk-menurut-kelompok-umur-dan-jenis-kelamin-di-kecamatan-penawangan-2019-2020-ji: Banyaknya Penduduk menurut Kelompok Umur dan Jenis Kelamin di Kecamatan Penawangan, 2019-2020 (jiwa)  [1 res: pdf]
-          PDF datastore=False faeb3173-4d13-432c-8d16-65f002953276 http://data.grobogan.go.id/dataset/59f88b51-2385-4eb7-8ed0-987eb29c9641/resource/faeb3173-4d13-432c-8d16-65f002953276/download/banyaknya-penduduk-menurut-kelompok-umur-dan-jenis-kelamin-di-kecamatan-penawangan-2019-2020-jiw.pdf
-      - penduduk-menurut-kelompok-umur-tahun-2016: Penduduk Menurut Kelompok Umur  [1 res: xlsx]
-          XLSX datastore=False a15c022a-c4d2-42b4-9a68-d51517446f9b http://103.47.60.179/dataset/71ce6d15-cd17-4011-b396-03eb3730fe7d/resource/a15c022a-c4d2-42b4-9a68-d51517446f9b/download/penduduk-menurut-kelompok-umur-dan-jenis-kelamin-tahun-2016.xlsx
-      (2 others not matching)
-  https://data.bantenprov.go.id/ -> 200 text/html "Selamat datang - Satu Data Provinsi Banten"
-    /api/3/action/status_show -> 200 application/json CKAN 2.11.4
-    package_search q='ribu jiwa umur' -> 200, 6 matches, 6 shown, printing those matching '(?i)(?:kelompok.umur)'
-      - jumlah-penduduk-jenis-kelamin-perempuan-menurut-kelompok-umur-di-provinsi-banten-ribu-jiwa-2024: Jumlah Penduduk Jenis Kelamin Perempuan Menurut Kelompok Umur di Provinsi Banten (ribu jiwa), 2024  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False cf3da75c-651f-4f1b-8236-c8d90a7b54aa https://data.bantenprov.go.id/dataset/c70911da-266e-44a5-a675-085e4a75da05/resource/cf3da75c-651f-4f1b-8236-c8d90a7b54aa/download/3.1.2-c.xlsx
-          CSV datastore=True a467179d-3ea3-4112-ba81-a118d47c0918 https://data.bantenprov.go.id/dataset/c70911da-266e-44a5-a675-085e4a75da05/resource/a467179d-3ea3-4112-ba81-a118d47c0918/download/3.1.2-c-sheet1.csv
-          PDF datastore=False 8484c691-9b7b-4ac2-b107-88726ad04efa https://data.bantenprov.go.id/dataset/c70911da-266e-44a5-a675-085e4a75da05/resource/8484c691-9b7b-4ac2-b107-88726ad04efa/download/3.1.2-c-sheet1.pdf
-      - jumlah-penduduk-jenis-kelamin-perempuan-menurut-kelompok-umur-di-provinsi-banten-ribu-jiwa-2025: Jumlah Penduduk Jenis Kelamin Perempuan Menurut Kelompok Umur di Provinsi Banten (ribu jiwa), 2025  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False 40c426f0-de7e-4271-b451-7883e748c146 https://data.bantenprov.go.id/dataset/cfa0b421-b897-4e4c-bac2-ad7ad31d2cfb/resource/40c426f0-de7e-4271-b451-7883e748c146/download/3.1.2-d.xlsx
-          CSV datastore=True de78d9a2-17fa-4ca3-9194-6ff04150452e https://data.bantenprov.go.id/dataset/cfa0b421-b897-4e4c-bac2-ad7ad31d2cfb/resource/de78d9a2-17fa-4ca3-9194-6ff04150452e/download/3.1.2-d-sheet1.csv
-          PDF datastore=False 402734af-07fa-422c-9bff-98bdf916fd24 https://data.bantenprov.go.id/dataset/cfa0b421-b897-4e4c-bac2-ad7ad31d2cfb/resource/402734af-07fa-422c-9bff-98bdf916fd24/download/3.1.2-d-sheet1.pdf
-      - jumlah-penduduk-jenis-kelamin-laki-laki-menurut-kelompok-umur-di-provinsi-banten-ribu-jiwa-2025: Jumlah Penduduk Jenis Kelamin Laki-laki Menurut Kelompok Umur di Provinsi Banten (ribu jiwa), 2025  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False 6a887db3-ec57-4874-bf60-e74ea8020b11 https://data.bantenprov.go.id/dataset/dcf911f0-f98b-4100-8be1-853bf8e5d0dd/resource/6a887db3-ec57-4874-bf60-e74ea8020b11/download/3.1.2-b.xlsx
-          CSV datastore=True 6469316b-0d75-49b9-a6f5-ce123b544908 https://data.bantenprov.go.id/dataset/dcf911f0-f98b-4100-8be1-853bf8e5d0dd/resource/6469316b-0d75-49b9-a6f5-ce123b544908/download/3.1.2-b-sheet1.csv
-          PDF datastore=False 00417dab-0e7a-43de-ae2b-949a92106f9a https://data.bantenprov.go.id/dataset/dcf911f0-f98b-4100-8be1-853bf8e5d0dd/resource/00417dab-0e7a-43de-ae2b-949a92106f9a/download/3.1.2-b-sheet1.pdf
-      - jumlah-penduduk-menurut-kelompok-umur-dan-jenis-kelamin-di-provinsi-banten-ribu-jiwa-2024-dan-2025: Jumlah Penduduk Menurut Kelompok Umur dan Jenis Kelamin di Provinsi Banten (ribu jiwa), 2024 dan 2025  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False ca4503c1-5765-4e7d-bd56-97f95b9162b9 https://data.bantenprov.go.id/dataset/02718813-6df5-4caf-a681-e38ef420b055/resource/ca4503c1-5765-4e7d-bd56-97f95b9162b9/download/3.1.2-a.xlsx
-          CSV datastore=True 09c535ec-b8fe-43b5-aa80-549b22516008 https://data.bantenprov.go.id/dataset/02718813-6df5-4caf-a681-e38ef420b055/resource/09c535ec-b8fe-43b5-aa80-549b22516008/download/3.1.2-a-sheet1.csv
-          PDF datastore=False 8bc85ade-c188-4cd7-81ed-b5a6628a639a https://data.bantenprov.go.id/dataset/02718813-6df5-4caf-a681-e38ef420b055/resource/8bc85ade-c188-4cd7-81ed-b5a6628a639a/download/3.1.2-a-sheet1.pdf
-      (2 others not matching)
-probe_ckan: 6 of 6 answered; 6 speak CKAN: data.sumbarprov.go.id, data.kaltimprov.go.id, data.bengkuluprov.go.id, opendata.sumselprov.go.id, data.jatengprov.go.id, data.bantenprov.go.id
+https://www.stat.gov.kg/media/publicationarchive/f76c9a54-0edf-4cfd-91df-8d01379a128b.pdf: 163 pages
+--- page 4 ---
+4
+
+
+СОДЕРЖАНИЕ
+
+I. Предисловие…………………………………………………………………….. 6
+II. Методологические принципы………………………………………………... 7
+III. Общий обзор по Кыргызской Республике………………………………….. 10
+IV. Ошская область  ……………………………………………………………….
+1. Территория и население Ошской области ……... .......................................... 12
+
+1.1. Административно-территориальное
+устройство………………………………………………………………………..
+
+
+12
+1.2. Численность наличного городского и сельского населения…………………...  14
+1.3. Изменение численности наличного городского и сельского населения
+в межпереписные периоды……………………………………………………… 15
+1.4. Численность постоянного городского и сельского населения………………... 16
+1.5. Изменение численности постоянного городского и сельского населения
+в межпереписные периоды……………………………………………………… 17
+1.6. Удельный вес постоянного городского и сельского населения………………. 18
+
+2.  Население по полу и возрасту ………………………………………………….. 19
+2.1. Численность постоянного населения по полу и территории…………………. . 20
+2.2. Изменение численности постоянного населения по полу и территории
+в межпереписные периоды………………………………………………………. 21
+2.3. Удельный вес мужчин и женщин в общей численности постоянного
+населения по территории……………………………………………………….... 22
+2.4. Соотношение мужчин и женщин по территории………………………………. 23
+2.5. Численность постоянного населения районов, городов, поселков городского
+типа и отдельных айылов (сел) по полу………………….................................... 24
+2.6. Численность отдельных возрастных групп городского и сельского
+постоянного населения…………………………………………………………...  28
+2.7. Численность постоянного городского и сельского населения
+по полу и возрасту………………………………………………………………... 29
+2.8. Численность постоянного городского и сельского населения
+по полу, возрастным группам и территории …………………………………….  31
+2.9. Численность наличного и постоянного населения (временно проживающего
+и временно отсутствующего населения) по полу и территории………………. 44
+
+3.  Население по национальности и языку……………………………………….. 45
+3.1. Численность постоянного населения по этническому составу………………..  46
+3.2. Распределение населения по наиболее многочисленным этническим группам
+и территории………………………………………………………………………  47
+3.3. Распределение постоянного населения отдельных этнических групп по
+возрастным группам и территории …………………………………… …………  49
+3.4. Распределение населения отдельных этнических групп по родному языку …. 64
+3.5. Распределение населения отдельных этнически х гру пп в возрасте 15 лет и
+старше по владению вторым языком…………………………………………….  66
+
+4.  Население по образованию……………………………………………………... 68
+4.1. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу и территории……………………………………………….... 70
+--- page 5 ---
+5
+4.2. Уровень образования населения в возрасте 10 ле т и старше по полу и
+территории………………………………………………………………………... 71
+4.3. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу, возрастным группам и территории………………………. 72
+
+4.4. Уровень образования населения в возрасте 10 лет и старше по полу                   и
+возрастным группам………………………………………………………………  92
+4.5. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, этническому составу, полу и территории………………………..  96
+4.6. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных организаций, полу, возрасту и территории…………………. 101
+4.7. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных организаций, полу, возрасту и территории (на 1000
+населения) …………………………………………………………… …………...  111
+4.8. Численность детей в возрасте 7 -15 лет, обучающихся и не обучающихся
+в образовательных организациях, по полу, возрасту и территории…………... 113
+4.9. Численность детей в возрасте 1-7 лет, посещающих дошкольные организации
+по территории ……………………………………………………………………..  119
+
+5.  Население по состоянию в браке………………………………………………. 120
+5.1. Численность мужчин и женщин в возрасте 15 лет и старше по состоянию
+в браке, возрастным группам и территории…………………………………….. 121
+5.2 Численность мужчин и женщин, состоящих и ранее состоявших в браке, по
+отдельным возрастным группам и территории………………………………... 131
+5.3. Численность мужчин и женщин отдельных этнических групп в возрасте 15
+лет и старше по состоянию в браке……………………………………………... 133
+
+6. Фертильность женщин…………………………………………………………... 135
+6.1. Численность городских и сельских женщин в возрасте 15 лет и старше по
+возрастным группам и числу рожденных детей…………………………………  136
+6.2. Численность городских и сельских женщин в возрасте 15 лет и старше по
+состоянию в браке и числу рожденных детей…………………………………... 140
+6.3. Распределение городских и сельских женщин в возрасте 15 лет и старше по
+числу рожденных и живых детей………………………………………………...  141
+6.4. Численность женщин в возрасте 15 лет и старше по отдельным этническим
+группам и числу рожденных детей……………………………………………….  142
+
+
+ Приложение……………………………………………………………………….
+№ 1. Перечень административно-территориальных изменений между переписями
+населения за 1970-2022гг ……………… .……………… …………………………  143
+№ 2. Формы переписных листов 1, 2, 3, 4, 5 …………………………………………..
+
+
+
+
+
+
+
+
+
+
+--- page 19 ---
+19
+
+2. Население по полу и возрасту
+
+Раздел содержит данные, характеризующие численность населения по полу и возрасту
+к а к  в  ц е л о м  п о Ошской области, так по ее районам и  городам.  На формирование
+половозрастной структуры влияют три фактора: уровень рождаемости, смертности и
+миграции населения. Приведены сведения о числе временно проживающего и временно
+отсутствующего населения.
+Данные последней переписи о составе населения по полу опубликованы по области и в
+сравнении с предыдущими национальными переписями - 1999, 2009 гг. (а также в сравнении
+с итогами последней советской переписи 1989г.) с распределением на городское и сельское
+население. Приведен показатель соотношения численности мужчин на 1000 женщин, а также
+подробные данные о половозрастном составе всего городского и сельского населения.
+На основании этих данных можно получить сведения по различным возрастным
+группам: например, дети дошкольного и школьного возрастов , подростки, молодежь,
+население, имеющее право участвовать в выборных кампаниях, лица трудоспособного и
+старше трудоспособного возрастов, и другие. При этом, возраст определялся как число
+исполнившихся полных лет на дату переписи.
+В этой и последующих ра зделах в 2009г. к численности населения в трудоспособном
+возрасте отнесены мужчины в возрасте 16-59 лет и женщины в возрасте 16-54 года, в 2022г. -
+мужчины в возрасте 16-62 года и женщины в возрасте 16-57 лет.
+Публикация содержит данные о среднем возрасте населения, который исчисляется
+как средняя арифметическая из значений возрастов всех людей в данном населении и
+определяется путем деления общего числа человеко -лет на дату переписи и на
+соответствующую численность населения.
+В соответствии с Законом Кыргы зской Республики «О молодежи» (от 04.08.2023г. №
+157) молодежью являются молодые люди от 14 до 35 лет включительно.
+Ранее в соответствии с Законом Кыргызской Республики «Об основах государственной
+молодежной политики» (от 31.07.2009г. № 256) молодыми гражданами (молодежью) являлись
+граждане Кыргызской Республики и лица без гражданства от 14 до 28 лет.  В связи с этим, в
+таблицах всех разделов публикации приведены данные о численности молодых людей как в
+возрасте 14-35 лет, так и в возрасте 14-28 лет.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ... more pages match; stopped at 3
+https://www.stat.gov.kg/media/publicationarchive/dfe4b339-3f9c-4bb7-887e-96e55e15dde0.pdf: 142 pages
+--- page 4 ---
+4
+СОДЕРЖАНИЕ
+
+I. Предисловие 6
+II. Методологические принципы 7
+III. Условные обозначения и принятые сокращения 10
+IV Общий обзор по Кыргызской Республике 11
+V Таблицы по Баткенской области 12
+1 Территория и численность населения в межпереписные периоды 12
+1.1 Административно-территориальное устройство Баткенской области 12
+1.2 Численность наличного городского и сельского населения 14
+1.3 Изменение численности наличного городского и сельского населения в
+межпереписные периоды
+14
+1.4 Численность постоянного городского и сельского населения 15
+1.5 Изменение численности постоянного городского и сельского населения в
+межпереписные периоды
+15
+1.6 Удельный вес постоянного городского и сельского населения 16
+2 Население по полу и возрасту  17
+2.1 Численность постоянного населения по полу и территории 18
+2.2 Изменение численности постоянного населения по полу и территории в
+межпереписные периоды
+18
+2.3 Удельный вес мужчин и женщин в общей численности постоянного
+населения по территории
+19
+2.4 Соотношение мужчин и женщин по территории 19
+2.5 Численность постоянного городского и сельского населения районов, городов,
+поселков городского типа и крупных сел по полу
+20
+2.6 Численность отдельных возрастных групп городского и сельского постоянного
+населения
+21
+2.7 Численность постоянного городского и сельского населения по полу и возрасту 25
+2.8 Численность постоянного городского и сельского населения по полу,
+возрастным группам и территории
+26
+2.9 Численность наличного и постоянного населения (временно проживающего и
+временно отсутствующего населения) по полу и территории
+45
+3 Население по этническому составу и языку 46
+3.1 Численность постоянного населения по этническому составу 47
+3.2 Распределение населения наиболее многочисленных этническим группам по
+территории
+48
+3.3 Численность постоянного городского и сельского населения отдельных
+этнических групп по возрастным группам
+50
+3.4 Распределение населения отдельных этнических групп по родному языку 59
+3.5 Распределение населения отдельных этнических групп в возрасте 15 лет и
+старше по владению вторым языком
+60
+4. Население по образованию 62
+4.1 Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу и территории
+64
+4.2 Уровень образования населения в возрасте 10 лет и старше по полу и
+территории
+65
+--- page 5 ---
+5
+4.3 Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу, возрастным группам и территории
+66
+4.4 Уровень образования населения в возрасте 10 лет и старше по полу и
+возрастным группам
+81
+4.5 Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, этническому составу, полу и территории
+85
+4.6 Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных учреждений, полу, возрасту  и территории
+89
+4.7 Численность обучающихся в возрасте 6 лет и старше по типам образовательных
+учреждений, полу, возрасту и территории
+97
+4.8 Численность детей в возрасте 7-15 лет, обучающихся и не обучающихся в
+образовательных учреждениях, по полу, возрасту и территории
+99
+4.9 Численность детей, посещающих дошкольные учреждения, по территории 105
+5    Население по состоянию в браке
+
+106
+5.1 Численность мужчин и женщин в возрасте 15 лет и старше по состоянию в
+браке, возрастным группам и территории
+107
+5.2 Численность мужчин и женщин, состоящих и ранее состоявших в браке, по
+отдельным возрастным группам и территории
+116
+5.3 Численность мужчин и женщин отдельных этнических групп в возрасте 15 лет
+и старше по состоянию в браке
+118
+6    Фертильность женщин и регистрация рождаемости
+
+121
+6.1 Численность городских и сельских женщин в возрасте 15 лет и старше
+по возрастным группам и числу рожденных детей
+122
+6.2 Численность городских и сельских женщин в возрасте 15 лет и старше
+ по состоянию в браке и числу рожденных детей     127
+6.3 Распределение городских и сельских  женщин в возрасте 15 лет и старше
+ по числу рожденных и живых детей 128
+6.4 Численность женщин отдельных этнических групп в возрасте 15 лет и старше
+ по числу рожденных детей 129
+№1. Формы переписных листов 1, 2, 3, 4, 5 130
+VI. Приложение 136
+№1. Перечень административно-территориальных изменений между переписями
+
+140
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- page 17 ---
+2. Население по полу и возрасту
+
+Раздел содержит данные, характеризующие численность населения по полу и возрасту
+к а к  в  ц е л о м  п о  о б л а с т и ,  т а к  и  е е районам, городам.  На формирование половозрастной
+структуры влияют три фактора: уровень рождаемости, смертности и миграции населения.
+Приведены сведения о числе временно проживающего и временно отсутствующего населения.
+Данные последней переписи о составе населения по полу опубликованы по области и в
+сравнении с предыдущими национальными переписями - 1999, 2009гг. (а также в сравнении с
+итогами последне й советской переписи 1989г.) с распределением на городское и сельское
+население. Приведен показатель соотношения численности мужчин на 1000 женщин.
+Как в целом по области, так и по ее районам и городам, приведены подробные данные
+о половозрастном составе всего, а также городского и сельского населения. На основании этих
+данных можно получить сведения по различным возрастным группам: например, дети
+дошкольного и школьного возрастов, подростки, молодежь, население, имеющее право
+участвовать в выборных кампаниях, лица трудоспособного и старше трудоспособного
+возрастов, и другие. При этом, возраст определялся как число исполнившихся полных лет на
+дату переписи.
+В этой и последующих разделах в 2009г. к численности населения в трудоспособном
+возрасте отнесены мужчины в возрасте 16-59 лет и женщины в возрасте 16-54 года, в 2022г. -
+мужчины в возрасте 16-62 года и женщины в возрасте 16-57 лет.
+Публикация содержит данные о среднем возрасте населения , который исчисляется,
+как средняя арифметическая из значений возрастов всех людей в данном населении и
+определяется путем деления общего числа человеко -лет на дату переписи и на
+соответствующую численность населения.
+В соответствии с Законом Кыргызской Республики «О молодежи» (от 04.08.2023г. №
+157) молодежью являются молодые люди от 14 до 35 лет включительно.
+Ранее в соответствии с Законом Кыргызской Республики «Об основах государственной
+молодежной политики» (от 31.07.2009г. № 256) молодыми гражданами (молодежью) являлись
+граждане Кыргызской Республики и лица без гражданства от 14 до 28 лет.  В связи с этим, в
+таблицах всех разделов публикации приведены данные о численности молодых лю дей как в
+возрасте 14-35 лет, так и в возрасте 14-28 лет.
+  ... more pages match; stopped at 3
+https://www.stat.gov.kg/media/publicationarchive/8b892242-eaa9-446d-94b2-7ba7aadcb340.pdf: 161 pages
+--- page 4 ---
+СОДЕРЖАНИЕ
+I. Предисловие…………………………………………………………………….. 6
+II. Методологические принципы………………………………………………... 7
+III. Общий обзор по Кыргызской Республике ………... ...................................... 11
+IV. Иссык-Кульская область……………………………… ……………………… 12
+1. Территория и население Иссык-Кульской области………………… ……. 12
+1.1.        Административно-территориальное устройство…………………………… 12
+1.2 Численность наличного городского  сельского населения……………………. 14
+1.3. Изменение численности наличного городского и сельского населения
+в межпереписные периоды……………………………………………………… 15
+1.4. Численность постоянного городского и сельского населения……………….. 16
+1.5. Изменение численности постоянного городского и сельского населения
+в межпереписные периоды……………………………………………………… 17
+1.6. Удельный вес постоянного городского и сельского населения……………… 18
+17
+2. Население по полу и возрасту ………………………………………………… 19
+2.1. Численность постоянного населения по полу и территории………………….. 20
+2.2. Изменение численности постоянного населения по полу и территории
+в межпереписные периоды………………………………………………………. 21
+2.3. Удельный вес мужчин и женщин в общей численности постоянного
+населения по территории……………………………………………………….... 22
+2.4. Соотношение мужчин и женщин по территории………………………………. 23
+2.5. Численность постоянного городского и сельского населения районов,
+городов, поселков городского типа и крупных айылов по полу……………… 24
+2.6. Численность отдельных возрастных групп городского и сельского
+постоянного населения…………………………………………………………... 25
+2.7. Численность постоянного городского и сельского населения
+по полу и возрасту………………………………………………………………... 26
+2.8. Численность постоянного городского и сельского населения
+по полу,  возрастным группам и территории ………………………………….. 27
+2.9. Численность наличного и постоянного населения ( временно проживающего
+и временно отсутствующего  населения) по полу и
+территории……………………………………………………………………... 40
+3. Население по этническому составу и языку…………………………………. 41
+3.1. Численность постоянного населения по этническому
+составу…………………………………………………………………………….  42
+3.2. Распределение населения по наиболее многочисленным этническим
+группам и территории………………………………………………… 43
+3.3. Распределение постоянного городского и сельского населения отдельных
+этнических групп по возрастным группам……………………………………… 46
+3.4. Распределение населения отдельных этнических групп по родному языку…..  68
+3.5. Распределение населения отдельных этнических групп в возрасте 15 лет       и
+старше по владению вторым  языком………………………………………… 70
+49
+4. Население по образованию……………………………………………………... 72
+4.1. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу и территории………………………………… 74
+4
+--- page 5 ---
+4.2. Уровень образования населения  в возрасте 10 лет и старше по полу              и
+территории……………………………………………………………………… 75
+4.3. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу, возрастным группам и территории………………………. 76
+4.4. Уровень образования населения в возрасте 10 лет и старше по полу и
+возрастным группам……………………………………………………… 94
+4.5. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, этническому составу, полу и территории……………………….  98
+4.6. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных учреждений, полу, возрасту  и территории………………… 103
+4.7. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных учреждений, полу, возрасту и территории (на 1000
+населения)………………………………………………………………………… 113
+4.8. Численность детей в возрасте 7 -15 лет, обучающихся и не обучающихся
+в образовательных учреждениях, по полу, возрасту и территории…………... 115
+4.9. Численность детей, посещающих дошкольные организации по территории… 121
+96
+5. Население по состоянию в браке………………………………………………. 122
+5.1. Численность мужчин и женщин в возрасте 15 лет и старше по состоянию
+в браке, возрастным группам и территории……………………………………. 123
+5.2 Численность мужчин и женщин, состоящих и ранее состоявших в браке, по
+отдельным возрастным группам  и территории………………………………...  135
+5.3. Численность мужчин и женщин отдельных этнических групп в возрасте 15
+лет и старше по состоянию в браке……………………………………………... 137
+109
+6. Фертильность женщин…………………………………………………………... 140
+6.1. Численность городских и сельских женщин в возрасте 15 лет и старше по
+возрастным группам и числу рожденных детей……………………………….. 141
+6.2. Численность городских и сельских женщин в возрасте 15 лет и старше по
+состоянию в браке и числу рожденных детей………………………………….. 147
+6.3. Распределение городских и сельских  женщин в возрасте 15 лет и старше по
+числу рожденных и живых детей……………………………………………….. 148
+6.4. Численность женщин отдельных этнических групп в возрасте 15 лет
+и старше по числу рожденных детей……………………………………………. 149
+Приложение………………………………………………………………………
+№1.Перечень административно -территориальных изменений между
+переписями за 1970-2022гг……………………………………………………… 150
+№1.Формы переписных листов 1, 2, 3,4,5…………… …………………………
+5
+--- page 19 ---
+2. Население по полу и возрасту
+Р
+аздел содержит данные, характеризующие численность населения Иссык-Кульской
+области п о  п о л у  и  в о з р а с т у  к а к  в  ц е л о м  п о  о б л а с т и ,  т а к  и по районам и городам. На
+формирование половозрастной структуры влияют три фактора: уровень рождаемости,
+смертности и миграции населения. Приведены сведения о числе временно проживающего и
+временно отсутствующего населения.
+Данные последней переписи о составе населения по полу опубликованы по области и в
+сравнении с предыдущими национальными переписями - 1999, 2009гг. (а также в сравнении с
+итогами последней советской переписи  1989г.) с распределением на городское и сельское
+население. Приведен показатель соотношения численности мужчин на 1000 женщин.
+Как в целом по области, так и по ее районам и городам, приведены подробные данные
+о половозрастном составе всего, а также городского и сельского населения. На основании этих
+данных можно получить сведения по различным возрастным группам: например, дети
+дошкольного и школьного возрастов, подрос тки, молодежь, население, имеющее право
+участвовать в выборных кампаниях, лица трудоспособного и старше трудоспособного
+возрастов, и другие. При этом, возраст определялся как число исполнившихся полных лет на
+дату переписи.
+Публикация содержит данные о  среднем возрасте населения , который исчисляе тся
+как средняя арифметическая из значений возрастов всех людей в данном населении и
+определяется путем деления общего числа человеко -лет на дату переписи и на
+соответствующую численность населения.
+В соответствии с Законом Кыргызской Республики «О  молодежи» (от 04.08.2023г. №
+157) молодежью являются молодые люди от 14 до 35 лет включительно.
+Ранее в соответствии с Законом Кыргызской Республики «Об основах государственной
+молодежной политики» (от 31.07.2009г. № 256) молодыми гражданами (молодежью) являлись
+граждане Кыргызской Республики и лица без гражданства от 14 до 28 лет.  В связи с этим, в
+таблицах всех разделов публикации приведены данные о численности молодых людей как в
+возрасте 14-35 лет, так и в возрасте 14-28 лет.
+19
+  ... more pages match; stopped at 3
+https://www.stat.gov.kg/media/publicationarchive/e790d125-ecd1-471e-b31b-0eb9dc7c4894.pdf: 142 pages
+--- page 4 ---
+4
+Содержание
+I. Предисловие…………………………………………………………………….. 6
+II. Методологические принципы………………………………………………... 7
+III. Общий обзор по Кыргызской Республике………………………………….. 11
+IV. Нарынская область …………………………………………………………… 12
+1. Территория и население Нарынской области …….......................... ............ 12
+1.1  Административно-территориальное устройство…………………………… …  12
+1.2. Численность наличного городского и сельского населения………………….  14
+1.3. Изменение численности наличного городского и сельского населения
+в межпереписные периоды……………………………………………………… 14
+1.4. Численность постоянного городского и сельского населения……………….. 15
+1.5. Изменение численности постоянного городского и сельского населения
+в межпереписные периоды………………………………………………………  15
+1.6. Удельный вес постоянного городского и сельского населения……………… 16
+2. Население по полу и возрасту ………………………………………………… 17
+2.1. Численность постоянного населения по полу и территории…………………. 18
+2.2. Изменение численности постоянного населения по полу и территории
+в межпереписные периоды………………………………………………………. 18
+2.3. Удельный вес мужчин и женщин в общей численности постоянного
+населения по территории……………………………………………………….... 19
+2.4. Соотношение мужчин и женщин по территории………………………………. 19
+2.5. Численность постоянного населения районов, городов, поселков городского
+типа и отдельных айылов (сел) по полу………………….................................... 20
+2.6. Численность отдельных возрастных групп городского и сельского
+постоянного населения…………………………………………………………... 21
+2.7. Численность постоянного городского и сельского населения
+по полу и возрасту………………………………………………………………... 22
+2.8. Численность постоянного городского и сельского населения
+по полу, возрастным группам и территории …………………………………... 24
+2.9. Численность наличного и постоянного населения (временно проживающего
+и временно отсутствующего населения) по полу и территории………………. 33
+3. Население по этническому составу и языку…...…………………………… . 34
+3.1. Численность постоянного населения по этническому составу……………….. 35
+3.2. Распределение населения по наиболее многочисленным этническим группам
+и территории……………………………………………………………………... 36
+3.3. Распределение постоянного населения отдельных этнических групп по
+возрастным группам и территории ………………………………………………  38
+3.4. Распределение населения отдельных этнических групп по родному языку … 47
+3.5. Распределение населения отдельных этнических групп в возрасте 15 лет       и
+старше по владению вторым языком…………………………………………… 49
+4. Население по образованию……………………………………………………... 51
+4.1. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу и территории………………………………………………... 53
+4.2. Уровень образования населения в возрасте 10 лет и старше по полу и
+территории………………………………………………………………………... 55
+4.3. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу, возрастным группам и территории………………………. 56
+--- page 5 ---
+5
+4.4. Уровень образования населения в возрасте 10 лет и старше по полу и
+возрастным группам……………………………………………………………... 74
+4.5. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, этническому составу, полу и территории………………………. 78
+4.6. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных организаций, полу, возрасту и территории………………… 82
+4.7. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных организаций, полу, возрасту и территории (на 1000
+населения) ………………………………………………………………………... 93
+4.8. Численность детей в возрасте 7 -15 лет, обучающихся и не обучающихся
+в образовательных организациях, по полу, возрасту и территории…………... 95
+4.9. Численность детей в возрасте 1-7 лет, посещающих дошкольные организации
+по территории …………………………………………………………………….      100
+5. Население по состоянию в браке……………………………………………….      101
+5.1. Численность мужчин и женщин в возрасте 15 лет и старше по состоянию
+в браке, возрастным группам и территории…………………………………….      102
+5.2 Численность мужчин и женщин, состоящих и ранее состоявших в браке, по
+отдельным возрастным группам и территории………………………………...       113
+5.3. Численность мужчин и женщин отдельных этнических  групп в возрасте 15
+лет и старше по состоянию в браке……………………………………………...      115
+6. Фертильность женщин…………………………………………………………...     118
+6.1. Численность городских и сельских женщин в возрасте 15 лет и старше по
+возрастным группам и числу рожденных детей………………………………..      119
+6.2. Численность городских и сельских женщин в возрасте 15 лет и старше по
+состоянию в браке и числу рожденных детей…………………………………..      129
+6.3. Распределение городских и сельских женщин в возрасте 15 лет и старше по
+числу рожденных и живых детей………………………………………………..
+6.4. Численность женщин в возрасте 15 лет и старше по отдельным этническим
+группам и числу рожденных детей……………………………………………....     130
+Приложение
+№ 1. Перечень административно-территориальных изменений между переписями
+населения за 1970-2022гг.………………………………………………………...     131
+ № 2.  Формы переписных листов 1, 2, 3, 4, 5 ......................................................     135
+--- page 17 ---
+17
+2. Население по полу и возрасту
+Раздел содержит данные, характеризующие численность населения по полу и возрасту
+как в целом по области, так и по районам и городам. На формирование половозрастной
+структуры влияют три фактора: уровень рождаемости, смертности и миграции населения.
+Приведены сведения о числе временно проживающего и временно отсутствующего
+населения.
+Данные последней переписи о составе населения по полу опубликованы по области и
+в сравнении с предыдущими переписями национальными переписями - 1999, 2009гг. (а
+также в сравнении с итогами последней советской переписи 1989г.) с распределением на
+городское и сельское население. Приведен показатель соотношения численности мужчин на
+1000 женщин.
+Как в целом по области, так и по ее районам и го родам, приведены подробные данные
+о половозрастном составе всего, а также городского и сельского населения. На основании
+этих данных можно получить сведения по различным возрастным группам: например, дети
+дошкольного и школьного возрастов, подростки, молод ежь, население, имеющее право
+участвовать в выборных кампаниях, лица трудоспособного и старше трудоспособного
+возрастов, и другие. При этом, возраст определялся как число исполнившихся полных лет на
+дату переписи.
+Публикация содержит данные о  среднем возра сте населения , который
+исчисляется как средняя арифметическая из значений возрастов всех людей в данном
+населении и определяется путем деления общего числа человеко -лет на дату переписи и на
+соответствующую численность населения.
+В соответствии с Зако ном Кыргызской Республики «О молодежи» (от 04.08.2023г.
+№ 157) молодежью являются молодые люди от 14 до 35 лет включительно.
+Ранее в соответствии с Законом Кыргызской Республики «Об основах
+государственной молодежной политики» (от 31.07.2009г. № 256) мол одыми гражданами
+(молодежью) являлись граждане Кыргызской Республики и лица без гражданства от 14 до 28
+лет.  В связи с этим, в таблицах всех разделов публикации приведены данные о численности
+молодых людей как в возрасте 14-35 лет, так и в возрасте 14-28 лет.
+
+  ... more pages match; stopped at 3
+https://www.stat.gov.kg/media/publicationarchive/d79c0e75-073d-4a50-92fe-3c735b1a2dfc.pdf: 133 pages
+--- page 4 ---
+4
+
+                                                                       СОДЕРЖАНИЕ
+
+
+I. Предисловие…………………………………………………………………… ... 6
+II. Методологические принципы………………………………………………... .. 7
+III. Общий обзор по Кыргызской Республике ………......................................... .. 11
+IV. Таласская область………………………………………………………… …… . 12
+
+1. Территория и население Таласской области………………………… ………   12
+1.1.         Административно-территориальное устройство…………………… ………  12
+1.2 Численность наличного городского и сельского населения………………… …  14
+1.3. Изменение численности наличного городского и сельского населения
+в межпереписные периоды………………………………………………………. 14
+1.4. Численность постоянного городского и сельского населения……………… …  15
+1.5. Изменение численности постоянного городского и сельско го населения
+в межпереписные периоды………………………………………………………. 15
+1.6. Удельный вес постоянного городского и сельского населения……………….. 16
+
+2.  Население по полу и возрасту ………………………………………………… 17
+2.1.   Численность постоянного населения по полу и территории…………………. .. 18
+2.2. Изменение численности постоянного населения по полу и территории
+в межпереписные периоды………………………………………………………. 18
+2.3. Удельный вес мужчин и женщин в общей численности постоянного
+населения по территории……………………………………………………….... 19
+2.4. Соотношение мужчин и женщин по территории………………………………. 19
+2.5. Численность постоянного городског о и сельского населения районов,
+городов и крупных айылов (сел) по полу……………………………………… .. 20
+2.6. Численность отдельных возрастных групп городского и сельского
+постоянного населения…………………………………………………………... 21
+2.7. Численность постоянного городского и сельского населения  по полу и
+возрасту…………………………………………………………………………… 22
+2.8. Численность постоянного городского и сельского населения  по полу,
+возрастным группам и территории ……………………………………… …… …  24
+2.9. Численность наличного и постоянного населения ( временно проживающего
+и временно отсутствующего населения) по полу и территории……………… .. 32
+
+3.  Население по этническому составу и языку………………………………….. 33
+3.1. Численность постоянного населения по этническому составу………… ……. . 34
+3.2. Распределение постоянного населения по наиболее мног очисленным
+этническим группам и территории………………………………………………. 35
+3.3. Распределение постоянного городского и сельского  населения отдельных
+этнических групп по возрастным группам и территории……………………… . 37
+3.4. Распределение населения отдельных этнических групп по родному языку….. 49
+3.5. Распределение населения отдельных этниче ских гру пп в возрасте 15 лет и
+старше по владению вторым языком………………………………………… ….  50
+
+4.  Население по образованию……………………………………………………... 51
+4.1.  Численность постоянного населения в возрасте 10 лет и старше по уровню
+ образования, полу и территории………………………………………………….
+
+53
+4.2.
+
+Уровень образования населения в  возрасте 10 ле т и старше по полу и
+территории………………………………………………………………………...
+
+54
+--- page 5 ---
+5
+
+4.3. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу, возрастным группам и территории……………………….. 55
+4.4. Уровень образования населения в возрасте 10 лет и старше по полу и
+возрастным группам………………………………………………………………  74
+4.5. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, этническому составу, полу и территории………………………. . 78
+4.6. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных учреждений, полу, возрасту и территории………………….. 82
+4.7. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных организацих , полу, возрасту и территории (на 1000
+населения) ………………………………………………………………………... 91
+4.8. Численность детей в возрасте 7 -15 лет, обучающихся и не обучающихся
+в образовательных организациях, по полу, возрасту и территории…………... 93
+4.9. Численность детей в возрасте 1-7 лет, посещающих дошкольные организации
+по территории……………………………………………………………………..  98
+
+
+5.  Население по состоянию в браке………………………………………………. 99
+5.1. Численность мужчин и женщин в возрасте 15 лет и старше по состоянию
+в браке, возрастным группам и территории………………………………….….  100
+5.2 Численность мужчин и женщин, состоящих и ранее состоявших в браке, по
+отдельным возрастным группам и территории………………………………..... 108
+5.3. Численность мужчин и женщин отдельных этнических групп в возрасте 15
+лет и старше по состоянию в браке…………………………………………….... 109
+
+
+6. Фертильность женщин…………………………………………………………... 112
+6.1. Численность городских и сельских женщин в возрасте 15 лет и старше по
+возрастным группам и числу рожденных детей……………………………… ... 113
+6.2. Численность городских и сельских женщин в возрасте 15 лет и старше по
+состоянию в браке и числу рожденных детей………………………………… ... 117
+6.3. Распределение городских и сельских женщин в возрасте 15 лет и старше по
+числу рожденных и живых детей……………………………………………… ... 118
+6.4. Численность женщин в возрасте 15 лет и старше по отдельным этническим
+группам и числу рожденных детей………………………………………………  119
+
+
+ Приложение…
+№1. Перечень административно -территориальных изменений между переписями
+населения за 1970-2023гг.………………………………………………………..    120
+№2. Формы переписных листов 1, 2, 3, 4, 5………………………………………….
+
+
+
+
+
+
+
+
+
+
+--- page 17 ---
+17
+
+
+2. Население по полу и возрасту
+Раздел содержит данные, характеризующие численность населения по полу и возрасту
+к а к  в  ц е л о м  п о Таласской области, так и по ее районам и  городам.  На формирование
+половозрастной структуры влияют три фактора: уровень рождаемости, смертнос ти и
+миграции населения. Приведены сведения о числе временно проживающего и временно
+отсутствующего населения.
+Данные последней переписи о составе населения п о полу опубликованы по области  в
+сравнении с предыдущими национальными переписями - 1999, 2009 гг. (а также в сравнении
+с итогами последней советской переписи 1989г.) с распределением на городское и сельское
+население. Приведен показатель соотношения численности мужчин на 1000 женщин, а также
+подробные данные о половозрастном составе всего городского и сельского населения.
+На основании этих данных можно получить сведения по различным возрастным
+группам: например, дети дошкольного и школьного возрастов, подростки, молодежь,
+население, имеющее право участвовать в выборных кампаниях, лица трудоспособного и
+старше трудоспособного возрастов, и другие. При этом, возраст определялся как число
+исполнившихся полных лет на дату переписи.
+В этом и последующих разделах в  2009г. к численности населения в трудоспособном
+возрасте отнесены мужчины в возрасте 16-59 лет и женщины в возрасте 16-54 года, в 2022г. -
+мужчины в возрасте 16-62 года и женщины в возрасте 16-57 лет.
+Публикация содержит данные о среднем возрасте населения , который исчисляется
+как средняя арифметическая из значений возрастов всех людей в данном населении и
+определяется путем деления общего числа человеко -лет на дату переписи и на
+соответствующую численность населения.
+В соответствии с Законом Кыргызской Республики «О молодежи» (от 04.08.2023г. №
+157) молодежью являются молодые люди от 14 до 35 лет включительно.
+Ранее в соответствии с Законом Кыргызской Республики «Об основах государственной
+молодежной политики» (от 31.07.2009г. № 256) молодыми гражданами (молодежью) являлись
+граждане Кыргызской Республики и лица без гражданства от 14 до 28 лет.  В связи с этим, в
+таблицах всех разделов публикации приведены данные о численности молодых людей как в
+возрасте 14-35 лет, так и в возрасте 14-28 лет.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ... more pages match; stopped at 3
+https://www.stat.gov.kg/media/publicationarchive/ad52f290-cb14-4ff1-9179-d0ad0f38b09d.pdf: 219 pages
+--- page 4 ---
+4
+
+
+
+ Содержание
+
+I. Предисловие…………………………………………………………………….. 6
+II. Методологические принципы………………………………………………... 7
+III.  Общий обзор по Кыргызской Республике………………………………….. 11
+IV.  Джалал-Абадская область …………………………………………………… 12
+1.  Территория и население Джалал-Абадской области ……..........................  12
+1.1  Административно-территориальное устройство………………………….  12
+1.2. Численность наличного городского и сельского населения………………….  14
+1.3. Изменение численности наличного городского и сельского населения
+в межпереписные периоды……………………………………………………… 15
+1.4. Численность постоянного городского и сельского населения……………….. 16
+1.5. Изменение численности постоянного городского и сельского населения
+в межпереписные периоды……………………………………………………… 17
+1.6. Удельный вес постоянного городского и сельского населения……………… 18
+
+2.  Население по полу и возрасту ………………………………………………… 19
+2.1. Численность постоянного населения по полу и территории…………………. 20
+2.2. Изменение численности постоянного населения по полу и территории
+в межпереписные периоды………………………………………………………. 21
+2.3. Удельный вес мужчин и женщин в общей численности постоянного
+населения по территории………………………………………………………....  22
+2.4. Соотношение мужчин и женщин по территории………………………………. 23
+2.5. Численность постоянного населения районов, городов, поселков городского
+типа и отдельных айылов (сел) по полу………………….................................... 24
+2.6. Численность отдельных возрастных групп городского и сельского
+постоянного населения…………………………………………………………... 28
+2.7. Численность постоянного городского и сельского населения
+по полу и возрасту………………………………………………………………... 29
+2.8. Численность постоянного городского и сельского населения
+по полу, возрастным группам и территории …………………………………... 31
+2.9. Численность наличного и постоянного населения (временно проживающего
+и временно отсутствующего населения) по полу и территории………………. 62
+
+3.  Население по этническому составу и языку…... …………………………… . 64
+3.1. Численность постоянного населения по этническому составу……………….. 65
+3.2. Распределение населения по наиболее многочисленным этническим группам
+и территории……………………………………………………………………... 66
+3.3. Распределение постоянного населения отдельных этнических групп по
+возрастным группам и территории …………………………………… 72
+3.4. Распределение населения отдельных этнических групп по родному языку … 88
+3.5. Распределение населения отдельных этнических групп в возрасте 15 лет       и
+старше по владению вторым языком…………………………………………… 91
+
+4.  Население по образованию……………………………………………………... 95
+4.1. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу и территории………………………………………………... 97
+4.2. Уровень образования населения в возрасте 10 лет и старше по полу              и
+территории………………………………………………………………………... 99
+--- page 5 ---
+5
+
+4.3. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, полу, возрастным группам и территории………………………. 101
+4.4. Уровень образования населения в возрасте 10 лет и старше по полу и
+возрастным группам…………………………………………………………… 127
+4.5. Численность постоянного населения в возрасте 10 лет и старше по уровню
+образования, этническому составу, полу и территории………………………. 131
+4.6. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных организаций, полу, возрасту и территории………………… 139
+4.7. Численность обучающихся в возрасте 6 лет и старше по типам
+образовательных организаций, полу, возрасту и территории (на 1000
+населения) ………………………………………………………………………... 155
+4.8. Численность детей в возрасте 7 -15 лет, обучающихся и не обучающихся
+в образовательных организациях, по полу, возрасту и территории…………... 157
+4.9. Численность детей в возрасте 1-7 лет, посещающих дошкольные организации
+по территории ……………………………………………………………………. 167
+
+5.  Население по состоянию в браке………………………………………………. 168
+5.1. Численность мужчин и женщин в возрасте 15 лет и старше по состоянию
+в браке, возрастным группам и территории……………………………………. 169
+5.2 Численность мужчин и женщин, состоящих и ранее состоявших в браке, по
+отдельным возрастным группам и территории………………………………...  185
+5.3. Численность мужчин и женщин отдельных этнических групп в возрасте 15
+лет и старше по состоянию в браке……………………………………………... 188
+
+6. Фертильность женщин…………………………………………………………... 191
+6.1. Численность городских и сельских женщин в возрасте 15 лет и старше по
+возрастным группам и числу рожденных детей……………………………….. 192
+6.2. Численность городских и сельских женщин в возрасте 15 лет и старше по
+состоянию в браке и числу рожденных детей………………………………….. 200
+6.3. Распределение городских и сельских женщин в возрасте 15 лет и старше по
+числу рожденных и живых детей……………………………………………….. 201
+6.4. Численность женщин в возрасте 15 лет и старше по отдельным этническим
+группам и числу рожденных детей…………………………………………….... 202
+
+ Приложение
+№ 1. Перечень административно-территориальных изменений между переписями
+населения за 1970-2022гг.………………………………………………………... 203
+№ 2.  Формы переписных листов 1, 2, 3, 4, 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- page 19 ---
+19
+
+2. Население по полу и возрасту
+Раздел содержит данные, характеризующие численность населения по полу и
+возрасту как в целом по области, так и ее районам и городам.  На формирование
+половозрастной структуры влияют три фактора: уровень рождаемости, смертности и
+миграции населения. Приведены сведения о числе временно проживающего и временно
+отсутствующего населения.
+Данные последней переписи о составе населения по полу опубликованы по области
+и в сравнении с предыдущими национальными переписями - 1999, 2009гг. (а также в
+сравнении с итогами последней советской переписи 1989г.) с распределением на городское
+и сельское население. Приведен показатель соотношения численности мужчин на 1000
+женщин.
+Как в целом по области, так и по ее районам и городам, прив едены подробные
+данные о половозрастном составе всего, а также городского и сельского населения. На
+основании этих данных можно получить сведения по различным возрастным группам:
+например, дети дошкольного и школьного возрастов, подростки, молодежь, населе ние,
+имеющее право участвовать в выборных кампаниях, лица трудоспособного и старше
+трудоспособного возрастов, и другие. При этом, возраст определялся как число
+исполнившихся полных лет на дату переписи.
+В этой и последующих разделах в 2009г. к численности  населения в
+трудоспособном возрасте отнесены мужчины в возрасте 16-59 лет и женщины в возрасте
+16-54 года, в 2022г. - мужчины в возрасте 16-62 года и женщины в возрасте 16-57 лет.
+Публикация содержит данные о среднем возрасте населения, который исчисляется,
+как средняя арифметическая из значений возрастов всех людей в данном населении и
+определяется путем деления общего числа человеко -лет на дату переписи и на
+соответствующую численность населения.
+В соответствии с Законом Кыргызской Республики «О молодежи » (от 04.08.2023г.
+№ 157) молодежью являются молодые люди от 14 до 35 лет включительно.
+Ранее в соответствии с Законом Кыргызской Республики «Об основах
+государственной молодежной политики» (от 31.07.2009г. № 256) молодыми гражданами
+(молодежью) являлись граждане Кыргызской Республики и лица без гражданства от 14 до
+2 8  л е т .   В  с в я з и  с  э т и м ,  в  т а б л и ц а х  в с е х  р а з д е л о в  п у б л и к а ц и и  п р и в е д е н ы  д а н н ы е  о
+численности молодых людей как в возрасте 14-35 лет, так и в возрасте 14-28 лет.
+
+
+
+
+
+
+
+
+
+
+  ... more pages match; stopped at 3
