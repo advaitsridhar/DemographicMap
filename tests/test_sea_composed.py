@@ -196,5 +196,29 @@ class PhilippinesTest(unittest.TestCase):
             self.build(many)
 
 
+class CotabatoCityTest(unittest.TestCase):
+    def units(self, region_total):
+        def unit(level, adm1, area, total):
+            return {"level": level, "adm1": adm1, "adm2": area if level == 2 else "",
+                    "adm3": "", "area": area, "where": area,
+                    "fields": {f: {"counts": {"X": total}, "published": total}
+                               for f in ("religion", "ethnicity")}}
+        barmm = "BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO"
+        return [unit(1, barmm, barmm, region_total), unit(2, barmm, "MAGUINDANAO", 7),
+                unit(2, barmm, "SULU", 3)]
+
+    def test_no_row_says_why(self):
+        shapes = {"cotabatocity": [{"id": "C1", "name": "Cotabato City"}]}
+        recs = s.cotabato_city(self.units(10), ("religion", "ethnicity"), shapes)
+        self.assertEqual(recs[0]["shape_id"], "C1")
+        self.assertIn("Maguindanao, Sulu", recs[0]["religion"]["note"])
+        self.assertNotIn("value", recs[0]["ethnicity"])
+
+    def test_a_region_its_provinces_do_not_make_refuses(self):
+        shapes = {"cotabatocity": [{"id": "C1", "name": "Cotabato City"}]}
+        with self.assertRaises(SystemExit):
+            s.cotabato_city(self.units(12), ("religion", "ethnicity"), shapes)
+
+
 if __name__ == "__main__":
     unittest.main()

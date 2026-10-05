@@ -361,10 +361,14 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
             why = (f"No census figure fits this polygon: {EXCLUDE[shape['name']]}, measured "
                    f"on the map's own tiles, so the 2020 census's count of the province "
                    f"of this name would put the wrong people on it.")
+            # Religion and ethnicity too: the province's composition would
+            # be the wrong people's as well (uscb.py binds it by name; the
+            # report proposes declaring these two shapeless there).
             records.append(record(
                 f"PHL-CPH2020-{fold(shape['name'])}", shape["name"], level="admin2",
                 parent="PHL", country="PHL", match_by="shape_id", shape_id=shape["id"],
-                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why)))
+                median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+                religion=gap(NOT_AVAILABLE, why), ethnicity=gap(NOT_AVAILABLE, why)))
     for region in admin1:
         if region["name"] in REGIONS:
             wanted = REGIONS[region["name"]]

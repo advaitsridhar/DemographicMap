@@ -32,7 +32,13 @@ counts its seventeen cities and municipality. ``uscb.py`` puts the City of
 Manila on the First District and declares the other sixteen shapeless, so the
 Second, Third and Fourth districts carry nothing. Here each takes the sum of
 the places that make it, as the Philippine Statistics Authority defines the
-districts (``NCR_DISTRICTS``).
+districts (``NCR_DISTRICTS``). Cotabato City, which the boundary file also
+draws on its own, has no row at all -- its people are inside Maguindanao's --
+and its record says so (``cotabato_city``).
+
+A polygon some of whose parts carry no figures for a question -- the Wa
+division's Mongmao, Pangwaun, Narphan and Pangsang carry none for either --
+gets a gap naming them, never the sum of the rest.
 
 **Checks**, each a refusal: in Myanmar every district's and zone's townships
 make it, group by group, for both questions; every census district and zone
@@ -377,20 +383,10 @@ def philippines(units: list[dict[str, Any]], admin2: list[dict[str, Any]]
                          f"{sorted(u['area'] for u in places)}, against the districts' "
                          f"{sorted(wanted)}")
     log(f"  the {NCR}'s {len(places)} places make its row, and each is in one district")
-    # Cotabato City has a polygon and no figures; say what the tables hold
-    # around it, for the record of why.
-    for u in units:
-        if u["level"] == 1 and "muslim" in fold(u["area"]):
-            kids = [k for k in units if k["level"] == 2 and fold(k["adm1"]) == fold(u["adm1"])]
-            for field in fields:
-                made = sum(k["fields"][field]["published"] or 0 for k in kids
-                           if field in k["fields"])
-                log(f"  {u['area']} {field}: {u['fields'][field]['published']:,.0f} against "
-                    f"its places' {made:,.0f} ({', '.join(k['area'] for k in kids)})")
     by_name = defaultdict(list)
     for s in admin2:
         by_name[fold(s["name"])].append(s)
-    out = []
+    out = [*cotabato_city(units, fields, by_name)]
     for district, names in NCR_DISTRICTS.items():
         shapes = by_name.get(fold(district), [])
         if len(shapes) != 1:
@@ -405,6 +401,44 @@ def philippines(units: list[dict[str, Any]], admin2: list[dict[str, Any]]
                           shape_id=shapes[0]["id"], sources=cites, **values))
         log(f"    {district}: {listed} -- {described(sums)}")
     return out
+
+
+COTABATO_CITY = "Cotabato City"
+
+
+def cotabato_city(units: list[dict[str, Any]], fields: tuple[str, ...],
+                  by_name: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
+    """Cotabato City is drawn on its own and has no row: say why, measured.
+
+    The Bangsamoro region's row is compared with its provinces' rows; where
+    they agree, the city's people are inside a province's figures (the PSA's
+    barangay table files it under Maguindanao) and cannot be taken out.
+    """
+    shapes = by_name.get(fold(COTABATO_CITY), [])
+    if len(shapes) != 1 or any(fold(COTABATO_CITY) in fold(u["area"]) for u in units):
+        return []
+    region = [u for u in units if u["level"] == 1 and "muslim" in fold(u["area"])]
+    if len(region) != 1:
+        raise SystemExit(f"sea_composed: {len(region)} Bangsamoro rows")
+    kids = [k for k in units if k["level"] == 2 and fold(k["adm1"]) == fold(region[0]["adm1"])]
+    whole = {f: region[0]["fields"][f]["published"] for f in fields}
+    made = {f: sum(k["fields"][f]["published"] or 0 for k in kids if f in k["fields"])
+            for f in fields}
+    names = ", ".join(k["area"].title() for k in kids)
+    log(f"  {COTABATO_CITY}: no row; the Bangsamoro region's "
+        + "; ".join(f"{f} {whole[f]:,.0f} against its provinces' {made[f]:,.0f}" for f in fields)
+        + f" ({names})")
+    if any(abs(whole[f] - made[f]) > SLACK for f in fields):
+        raise SystemExit(f"sea_composed: the Bangsamoro region's row is not its provinces': "
+                         f"{whole} against {made}")
+    why = (f"The US Census Bureau's tables of the 2020 census, which carry the Philippines' "
+           f"religion and ethnicity on this map, have no row for {COTABATO_CITY}: the "
+           f"Bangsamoro region's row is exactly its provinces' ({names}), and the census's "
+           f"own barangay table files the city under Maguindanao, so its people are inside "
+           f"Maguindanao's figures and cannot be taken out of them.")
+    return [record("PHL-COMP-cotabatocity", COTABATO_CITY, level="admin2", parent="PHL",
+                   country="PHL", match_by="shape_id", shape_id=shapes[0]["id"],
+                   **{f: gap(NOT_AVAILABLE, why) for f in fields})]
 
 
 def workbook(country: uscb.Country) -> dict[str, list[list[Any]]]:
