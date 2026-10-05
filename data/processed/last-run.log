@@ -1,102 +1,14 @@
-== https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx
-  HTTP 200 application/octet-stream 190,822 bytes
-  -- 'Check'
-       1:  | 0-5 | 6-14 | 15-17 | 18-49 | 50+
-       2: Banaba | 64 | 86 | 7 | 126 | 50
-       3:  | 19.22 | 25.83 | 2.1 | 37.84 | 15.02
-  -- 'Banaba'
-       1:  | Banaba
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 268 | 333
-  -- 'Makin'
-       1:  | Makin
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1990 | 1914
-  -- 'Butaritari'
-       1:  | Butaritari
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 3224 | 3250
-  -- 'Marakei'
-       1:  | Marakei 
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 2799 | 2738
-  -- 'Abaiang'
-       1:  | Abaiang
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 5568 | 5815
-  -- 'North Tarawa'
-       1:  | North Tarawa
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 6629 | 7018
-  -- 'Betio'
-       1:  | Betio
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 17330 | 18429
-  -- 'South Tarawa'
-       1:  | South Tarawa
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 39058 | 44643
-  -- 'Maiana'
-       1:  | Maiana
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1982 | 2345
-  -- 'Kuria'
-       1:  | Kuria
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1046 | 1190
-  -- 'Aranuka'
-       1:  | Aranuka
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1125 | 1221
-  -- 'Abemama'
-       1:  | Abemama
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 3262 | 3255
-  -- 'Nonouti'
-       1:  | Nonouti
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 2743 | 2749
-  -- 'NTabiteuea'
-       1:  | Ntabiteuea 
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 3955 | 4181
-  -- 'STabiteuea'
-       1:  | Stabiteuea
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1306 | 1356
-  -- 'Beru '
-       1:  | Beru 
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 2051 | 2214
-  -- 'Nikunau'
-       1:  | Nikunau
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1789 | 2055
-  -- 'Onotoa'
-       1:  | Onotoa
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1393 | 1417
-  -- 'Tamana'
-       1:  | Tamana
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1104 | 1028
-  -- 'Arorae'
-       1:  | Arorae
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1011 | 994
-  -- 'Kiritimati'
-       1:  | Kiritimati
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 6456 | 7369
-  -- 'Teraina'
-       1:  | Teraina
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 1712 | 1893
-  -- 'Tabuaeran '
-       1:  | Tabuaeran
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 2315 | 1990
-  -- 'Kanton'
-       1:  | Kanton
-       2:  |  |  | 2015 | 2020
-       3: Population (Ce |  |  | 20 | 41
+probe_pdf: https://nis.gov.kh/wp-content/uploads/2025/09/Final-General-Population-Census-2019-English.pdf
+  26,586,966 bytes
+  304 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139751950379856), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139751950379856), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139751950379856), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139751950379856), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139751950379856), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139751950379856), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 348 pages, 0 mention ['age.group', 'Age.group', 'age.structure', 'Table.3']
+=== front matter ===
+
+
+=== pages mentioning ['age.group', 'Age.group', 'age.structure', 'Table.3'] (first 40) ===
