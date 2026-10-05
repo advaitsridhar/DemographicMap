@@ -94,6 +94,14 @@ DISTRICT_RELIGION_GAP = BELOW_PROVINCE.format(what="religion by province and abo
                                                    "(Table 2.5.1)")
 DISTRICT_LANGUAGE_GAP = BELOW_PROVINCE.format(what="mother tongue for the country only "
                                                    "(Table 2.7.1)")
+# Below this share of a province's people in regular households, its district
+# tables would understate its districts by the rest, and are not used.
+HOUSEHOLD_FLOOR = 0.95
+LOW_HOUSEHOLDS = ("The 2019 census's district tables count only the people of normal or regular "
+                  "households, and in {province} {share:.0%} of the people the census counted "
+                  "lived outside them -- in work camps, institutions, on boats or in transit "
+                  "(Table 2.1.1 against Tables P-01 to P-25) -- so a district's figure from "
+                  "those tables would understate it by as much, and is not written.")
 HOUSEHOLD_NOTE = ("the census's district tables count the population of normal or regular "
                   "households, leaving out the 1.6% of the country in institutions, homeless, on "
                   "boats or in transit, which it counts by province only")
@@ -353,7 +361,8 @@ def crosswalk(annex: dict[int, dict[str, Any]], adm3: list[dict[str, Any]],
     return placed, left, broken
 
 
-def district_records(annex, placed, broken, adm2_rows) -> list[dict[str, Any]]:
+def district_records(annex, placed, broken, adm2_rows,
+                     low: dict[int, float] | None = None) -> list[dict[str, Any]]:
     districts = {d: dist for prov in annex.values() for d, dist in prov["districts"].items()}
     rows = [r for r in adm2_rows if str(r["ADM2_PCODE"]).strip() in placed
             and str(r["ADM2_PCODE"]).strip() not in broken]
@@ -364,9 +373,23 @@ def district_records(annex, placed, broken, adm2_rows) -> list[dict[str, Any]]:
             "year": YEAR, "license": LICENCE}]
     out = []
     changed = []
+    skipped = []
     for i, unit in sorted(bound.items(), key=lambda kv: kv[1]["name"]):
         pcode = str(rows[i]["ADM2_PCODE"]).strip()
         items = placed[pcode]
+        province = int(pcode[2:4])
+        if low and province in low:
+            note = LOW_HOUSEHOLDS.format(province=annex[province]["name"],
+                                         share=1 - low[province])
+            skipped.append(unit["name"])
+            out.append(record(
+                f"KHM-D-{pcode}", unit["name"], level="admin2", parent="KHM", country="KHM",
+                match_by="shape_id", shape_id=unit["id"], codes={"pcode": pcode},
+                population=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note),
+                median_age=gap(NOT_AVAILABLE, DISTRICT_AGE_GAP),
+                religion=gap(NOT_AVAILABLE, DISTRICT_RELIGION_GAP),
+                language=gap(NOT_AVAILABLE, DISTRICT_LANGUAGE_GAP)))
+            continue
         t = sum(com["n"][1] for _, _, com in items)
         m = sum(com["n"][2] for _, _, com in items)
         f = sum(com["n"][3] for _, _, com in items)
@@ -397,8 +420,9 @@ def district_records(annex, placed, broken, adm2_rows) -> list[dict[str, Any]]:
                       population=t,
                       population_note=(f"The 2019 census: {whose}, people in normal or "
                                        f"regular households ({HOUSEHOLD_NOTE})."))))
-    log(f"  {len(out)} district polygons written; drawn before a division and summed from "
-        f"their communes ({len(changed)}): {'; '.join(changed)}")
+    log(f"  {len(out)} district polygons written, {len(skipped)} of them with stated gaps "
+        f"({', '.join(skipped)}); drawn before a division and summed from their communes "
+        f"({len(changed)}): {'; '.join(changed)}")
     return out
 
 
@@ -438,17 +462,27 @@ def main() -> int:
     annex = parse_annex(pages)
     table = parse_provinces(pages, annex)
     check_annex(annex, table)
+    low: dict[int, float] = {}
     for p, prov in annex.items():
-        if not 0.9 * table[p][2] <= prov["n"][1] <= table[p][2]:
+        if prov["n"][1] > table[p][2]:
             raise SystemExit(f"cambodia_census: province {p:02d}'s regular households hold "
-                             f"{prov['n'][1]:,} of its {table[p][2]:,}")
+                             f"{prov['n'][1]:,}, more than its {table[p][2]:,}")
+        share = prov["n"][1] / table[p][2]
+        if share < HOUSEHOLD_FLOOR:
+            low[p] = share
+    log("  regular households' share of each province's people: lowest "
+        + ", ".join(f"{annex[p]['name']} {prov['n'][1] / table[p][2]:.1%}"
+                    for p, prov in sorted(annex.items(),
+                                          key=lambda kv: kv[1]["n"][1] / table[kv[0]][2])[:5])
+        + f"; provinces below {HOUSEHOLD_FLOOR:.0%}, whose district tables are not used: "
+        + (", ".join(f"{annex[p]['name']} ({s:.1%})" for p, s in sorted(low.items())) or "none"))
     gaz = gazetteer()
     adm2_codes = {str(r["ADM2_PCODE"]).strip() for r in gaz["ADM2"]}
     placed, left, broken = crosswalk(annex, gaz["ADM3"], adm2_codes)
     log(f"  communes placed in 2018 districts: {sum(len(v) for v in placed.values())}; not "
         f"placed ({len(left)}): {'; '.join(left[:60])}; 2018 districts left incomplete "
         f"({len(broken)}): {', '.join(sorted(broken))}")
-    records = district_records(annex, placed, broken, gaz["ADM2"]) + province_records(
+    records = district_records(annex, placed, broken, gaz["ADM2"], low) + province_records(
         table, gaz["ADM1"])
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {OUT}: {len(records)} records")
