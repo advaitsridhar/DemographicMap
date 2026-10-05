@@ -1,15 +1,511 @@
-  https://stats.gov.tv/download-category/population-and-housing-census/
-    unreachable: HTTPError: HTTP Error 404: Not Found
-  https://stats.gov.tv/
-    94,204 chars
-    10 distinct match(es) for 'https?://stats[.]gov[.]tv/download/[-a-zA-Z0-9_./%]+'
-      https://stats.gov.tv/download/27/crvs/2165/tuvalu_crvs_making_death_count_2026
-      https://stats.gov.tv/download/30/consumer-price-index/2158/cpi-report-q4-2025-f
-      https://stats.gov.tv/download/30/consumer-price-index/2168/cpi-release-tables
-      https://stats.gov.tv/download/30/consumer-price-index/2169/cpi-report-q1-2026
-      https://stats.gov.tv/download/30/consumer-price-index/2194/cpi-release-tables-2
-      https://stats.gov.tv/download/30/consumer-price-index/2195/consumer-price-index-q2_final
-      https://stats.gov.tv/download/33/migration/2270/migration_annual-report-2025
-      https://stats.gov.tv/download/70/national-accounts/2257/gdp-tables-2025
-      https://stats.gov.tv/download/70/national-accounts/2258/tuvalu-gdp-report-2025
-      https://stats.gov.tv/download/85/population-and-housing-census/2162/understanding-disability-in-tuvalu-easy-read-summary-from-the-2022-population-and-housing-census
+== https://stats.gov.tv/download/85/population-and-housing-census/905/2017-census-tables-2.xlsx
+  HTTP 200 application/octet-stream 1,310,798 bytes
+/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: NOTES!$A:$AB.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  -- 'NOTES'
+       1: NOTES
+       3: All the tables in this publica
+       4: misinterpretation of a table, 
+       6: Reason for not looking for wor
+  -- 'CONTENT'
+       1: CONTENT
+       2: 1 |  | Table 1: Total population by p
+       3: 1a |  | Table 1a. Total population by 
+       4: 2 |  | Table 2: Total population by v
+       5: 2a |  | Table 2a: Total population by 
+       6: 3 |  | Table 3: Total population by s
+  -- '1'
+       1: Table 1: Total population by p
+       2: Island | Usual place of residence
+       3:  | Tuvalu |  |  | Other country |  |  | Total
+       4:  | T | M | F | T | M | F | T | M | F
+       5: Total | 10507 | 5403 | 5104 | 138 | 83 | 55 | 10645 | 5486 | 5159
+       6: Nanumea | 495 | 259 | 236 | 12 | 4 | 8 | 507 | 263 | 244
+  -- '2'
+       1: Table 2: Total population by v
+       2: Island by Village | Usual place of residence
+       3:  | Total |  |  | Tuvalu |  |  | Other country
+       4:  | T | M | F | T | M | F | T | M | F
+       5: Total | 10645 | 5486 | 5159 | 10507 | 5403 | 5104 | 138 | 83 | 55
+       6: Nanumea | 507 | 263 | 244 | 495 | 259 | 236 | 12 | 4 | 8
+  -- '2a'
+       1: Table 2a: Resident population 
+       2: Island by Village | Island residence
+       3:  | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Total | 10507 | 5403 | 5104 | 512 | 263 | 249 | 491 | 263 | 228 | 582 | 282 | 300 | 610
+       6: Nanumea | 495 | 259 | 236 | 379 | 193 | 186 | 2 | 1 | 1 | 1 | - | 1 | -
+  -- '3'
+       1: Table 3: Total population by s
+       2: AGE | M | F | T | AGE | M | F | T
+       3: Total | 5488 | 5157 | 10645
+       4: 0-4 | 625 | 535 | 1160 | 45-49 | 251 | 227 | 478
+       5: 0 | 128 | 105 | 233 | 45 | 48 | 45 | 93
+       6: 1 | 138 | 99 | 237 | 46 | 36 | 28 | 64
+  -- '4'
+       1: Table 4: Resident population b
+       2: Single Age | Island residence
+       3:  | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Total | 10507 | 5403 | 5104 | 512 | 263 | 249 | 491 | 263 | 228 | 582 | 282 | 300 | 610
+       6: 0 | 233 | 128 | 105 | 7 | 6 | 1 | 10 | 7 | 3 | 10 | 3 | 7 | 14
+  -- '5'
+       1: Table 5: Total population by p
+       2: Age Group | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
+       3:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       4: Total | 10645 | 5486 | 5159 | 507 | 263 | 244 | 385 | 216 | 169 | 501 | 239 | 262 | 501
+       5: 0-4 | 1160 | 625 | 535 | 56 | 28 | 28 | 47 | 33 | 14 | 45 | 22 | 23 | 64
+       6: 5-9 | 1205 | 628 | 577 | 63 | 35 | 28 | 42 | 22 | 20 | 56 | 32 | 24 | 54
+  -- '6'
+       1: Table 6: Resident population b
+       2: Age Group | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
+       3:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       4: Total | 10507 | 5403 | 5104 | 512 | 263 | 249 | 491 | 263 | 228 | 582 | 282 | 300 | 610
+       5: 0-4 | 1155 | 621 | 534 | 49 | 24 | 25 | 54 | 34 | 20 | 56 | 31 | 25 | 71
+       6: 5-9 | 1200 | 624 | 576 | 56 | 33 | 23 | 49 | 24 | 25 | 68 | 41 | 27 | 58
+  -- '7,8'
+       1: Table 7: Non-resident populati
+       2: Age Groups | Total | Fiji | New Zealand | Australia | Kiribati | Other Pacific Islands | Asia | Other countries
+       3: Total | 138 | 49 | 12 | 9 | 24 | 14 | 18 | 12
+       4: 0-4 | 5 | 2 | 1 | - | - | 2 | - | -
+       5: 5-9 | 5 | 1 | 2 | - | 2 | - | - | -
+       6: 10-14 | 3 | 1 | - | - | 2 | - | - | -
+  -- '9'
+       1: Table 9: Resident population b
+       2: Age Group | Place of birth
+       3:  | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Total | 10507 | 5403 | 5104 | 925 | 487 | 438 | 730 | 388 | 342 | 834 | 437 | 397 | 695
+       6: 0-4 | 1155 | 621 | 534 | 68 | 35 | 33 | 40 | 26 | 14 | 31 | 16 | 15 | 60
+  -- '10'
+       1: Table 10: Resident population 
+       2:  Age group | Residence 3 years ago
+       3:  | Total |  |  | Same household |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Tuvalu
+       6: Total | 9813 | 5016 | 4797 | 2255 | 1132 | 1123 | 313 | 160 | 153 | 390 | 203 | 187 | 565
+  -- '11'
+       1: Table 11: Resident population 
+       2:  Age Group | Home island
+       3:  | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 10507 | 5403 | 5104 | 1603 | 830 | 773 | 1229 | 648 | 581 | 1402 | 722 | 680 | 1034
+  -- '12'
+       1: Table 12: Resident population 
+       2: Age Group | Place of birth
+       3:  | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 10507 | 5403 | 5104 | 925 | 487 | 438 | 730 | 388 | 342 | 834 | 437 | 397 | 695
+  -- '13'
+       1: Table 13: Resident population 
+       2: Age Group | Ethnicity
+       3:  | Total |  |  | Tuvaluan |  |  | Tuvaluan / I-Kiribati |  |  | Tuvaluan / Other |  |  | Other
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 10507 | 5403 | 5104 | 10193 | 5254 | 4939 | 166 | 69 | 97 | 83 | 45 | 38 | 65
+  -- '14'
+       1: Table 14: Resident population 
+       2:  Age Group | Religion
+       3:  | Total |  |  | EKT |  |  | SDA |  |  | Jehovah's Witness |  |  | Bahaii
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 10507 | 5403 | 5104 | 9023 | 4660 | 4363 | 266 | 126 | 140 | 155 | 79 | 76 | 157
+  -- '15'
+       1: Table 15: Marital status for r
+       2: Age group | Marital status
+       3:  | Total |  |  | Single / never married |  |  | Married |  |  | Divorced/ separated |  |  | Widowed
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 7143 | 3618 | 3525 | 2351 | 1409 | 942 | 4084 | 1993 | 2091 | 172 | 88 | 84 | 524
+  -- '16'
+       1: Table 16:  Biological mother w
+       2: Age Group | Biological mother still alive
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  |     Tuvalu |  |  |  |  |  |  |  |  |     Nanumea
+       6: Total | 9452 | 4842 | 4610 | 6501 | 3430 | 3071 | 2951 | 1412 | 1539 | 481 | 245 | 236 | 296
+  -- '17'
+       1: Table 17: Mother living in the
+       2: Age Group | Mother in house on census nigh
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  |     Total |  |  |  |  |  |  |  |  | Nanumea
+       6: Total | 4102 | 2171 | 1931 | 3936 | 2082 | 1854 | 166 | 89 | 77 | 169 | 91 | 78 | 164
+  -- '18'
+       1: Table 18: Biological father wh
+       2: Age Group | Biological father still alive
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  |     Tuvalu |  |  |  |  |  |  |  |  |     Nanumea
+       6: Total | 9452 | 4842 | 4610 | 5663 | 2969 | 2694 | 3789 | 1873 | 1916 | 481 | 245 | 236 | 262
+  -- '19'
+       1: Table 19: Biological father st
+       2: Age Group | Father in house on census nigh
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  |     Tuvalu |  |  |  |  |  |  |  |  |     Nanumea
+       6: Total | 3358 | 1785 | 1573 | 3077 | 1637 | 1440 | 281 | 148 | 133 | 142 | 81 | 61 | 136
+  -- '20'
+       1: Table 20: Current school atten
+       2: AGE GROUP | Yes, Full Time |  |  | Yes, Part-time |  |  | No, left school |  |  | No, Never attend |  |  | TOTAL
+       3:  | M | F | T | M | F | T | M | F | T | M | F | T | M
+       4: TOTAL
+       5: TOTAL | 1573 | 1474 | 3047 | 123 | 158 | 281 | 3095 | 2945 | 6040 | 227 | 218 | 445 | 5018
+       6: 3-4 | 196 | 190 | 386 | 22 | 20 | 42 | 1 | 2 | 3 | 15 | 15 | 30 | 234
+  -- '21'
+       1: Table 21: Current level of sch
+       2: AGE GROUP | 1. Pre school |  |  | 2. Primary |  |  | 3. Secondary |  |  | 4. Form 7 / AFP |  |  | 5. Vocational
+       3:  | M | F | T | M | F | T | M | F | T | M | F | T | M
+       4: TOTAL
+       5: Total | 348 | 325 | 673 | 940 | 833 | 1773 | 268 | 333 | 601 | 33 | 43 | 76 | 56
+       6: 3-4 | 221 | 210 | 431 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+  -- '22'
+       1: Table 22: Highest educational 
+       2: AGE GROUP | Old Mission |  |  | No grade / Preschool |  |  | Primary school |  |  | Secondary school |  |  | Form 7 / AFP
+       3:  | M | F | T | M | F | T | M | F | T | M | F | T | M
+       4: TUVALU
+       5: TOTAL | 214 | 375 | 589 | 791 | 748 | 1539 | 1623 | 1400 | 3023 | 1558 | 1441 | 2999 | 146
+       6: 3-4 | 0 | 0 | 0 | 234 | 227 | 461 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+  -- '23'
+       1: Table 23: School attendance fo
+       2: AGE GROUP | Yes, fulltime |  |  | Yes, part time |  |  | No, left school |  |  | No, never attended |  |  | TOTAL
+       3:  | M | F | T | M | F | T | M | F | T | M | F | T | M
+       4: TOTAL
+       5: TOTAL | 1564 | 1467 | 3031 | 116 | 144 | 260 | 1116 | 929 | 2045 | 65 | 48 | 113 | 2861
+       6: 3 | 86 | 88 | 174 | 14 | 12 | 26 | 1 | 1 | 2 | 13 | 9 | 22 | 114
+  -- '24'
+       1: Table 24:  Highest education q
+       2: AGE GROUP | No qualifications |  |  | Primary school / CTC |  |  | Form 4, 5, 6, 7 |  |  | Vocational / Maritime / Trade |  |  | Teacher / Nurse / Medical
+       3:  | M | F | T | M | F | T | M | F | T | M | F | T | M
+       4: TOTAL
+       5: TOTAL | 497 | 679 | 1176 | 1010 | 772 | 1782 | 1409 | 1473 | 2882 | 297 | 66 | 363 | 12
+       6: 15-19 | 12 | 7 | 19 | 162 | 100 | 262 | 309 | 333 | 642 | 6 | 3 | 9 | 0
+  -- '25'
+       1: Table 25: Smoking habits for r
+       2: Age group | Smoke
+       3:  | Total |  |  | Never |  |  | Regular |  |  | Sometimes |  |  | No longer
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 7143 | 3618 | 3525 | 4207 | 1478 | 2729 | 2231 | 1683 | 548 | 329 | 224 | 105 | 376
+  -- '26'
+       1: Table 26:  Alcohol habits for 
+       2: Age group | Alcohol
+       3:  | Total |  |  | Never |  |  | Regular |  |  | Sometimes |  |  | No longer
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 7143 | 3618 | 3525 | 4095 | 1032 | 3063 | 1262 | 1185 | 77 | 1196 | 986 | 210 | 590
+  -- '27'
+       1: Table 27: Kava habits for resi
+       2: Age group | Kava
+       3:  | Total |  |  | Never |  |  | Regular |  |  | Sometimes |  |  | No longer
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 7143 | 3618 | 3525 | 6192 | 2740 | 3452 | 353 | 338 | 15 | 436 | 408 | 28 | 162
+  -- '28'
+       1: Table 28: Disability domain st
+       2: Disabiliy Domain | Island residence
+       3:  | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Difficulty seeing
+       6: Total | 9352 | 4782 | 4570 | 463 | 239 | 224 | 437 | 229 | 208 | 526 | 251 | 275 | 539
+  -- '29'
+       1: Table 29: Disability cut-off s
+       2: Age Group | Some disability (codes 2,3,4) |  |  |  |  |  |  |  |  | A lot of disability (code 3,4)
+       3:  | Total |  |  | With disability |  |  | Without disability |  |  | Total |  |  | With disability
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 9352 | 4782 | 4570 | 1233 | 567 | 666 | 8119 | 4215 | 3904 | 9352 | 4782 | 4570 | 282
+  -- '30'
+       1: Table 30: Main caretaker for t
+       2: Age group | Disability helper
+       3:  | Total |  |  | Relatives |  |  | Friends |  |  | Worker / volunteer |  |  | Nobody
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  |     Tuvalu
+       6: Total | 282 | 117 | 165 | 264 | 105 | 159 | - | - | - | 3 | 2 | 1 | 14
+  -- '31'
+       1: Table 31: Source of assistance
+       2: Age group | Relatives |  |  | Friends |  |  | Community |  |  | Organization |  |  | Government
+       3:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       4:  |     Tuvalu
+       5: Total | 176 | 70 | 106 | 19 | 7 | 12 | 24 | 11 | 13 | 21 | 11 | 10 | 97
+       6: 0-4 | - | - | - | - | - | - | - | - | - | - | - | - | -
+  -- '32'
+       1: Table 32: Resident population 
+       2: Age group | Use of mobile phone |  |  |  |  |  |  |  |  | Use of mobile phone
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  |     Tuvalu |  |  |  |  |  |  |  |  |     Nanumea
+       6: Total | 9105 | 4651 | 4454 | 6152 | 3219 | 2933 | 2953 | 1432 | 1521 | 449 | 231 | 218 | 322
+  -- '33'
+       1: Table 33: Resident population 
+       2: Age group | Use of a computer |  |  |  |  |  |  |  |  | Use of a computer
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  |     Tuvalu |  |  |  |  |  |  |  |  |     Nanumea
+       6: Total | 9105 | 4651 | 4454 | 5235 | 2766 | 2469 | 3870 | 1885 | 1985 | 449 | 231 | 218 | 246
+  -- '34'
+       1: Table 34: Resident population 
+       2:  Age group | Use of internet |  |  |  |  |  |  |  |  | Use of internet
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  |     Tuvalu |  |  |  |  |  |  |  |  |     Nanumea
+       6: Total | 9105 | 4651 | 4454 | 4435 | 2341 | 2094 | 4670 | 2310 | 2360 | 449 | 231 | 218 | 180
+  -- '35'
+       1: Table 35: Main occupational ac
+       2: Age group | Main activity last week
+       3:  | Total |  |  | Employer |  |  | Employee (Gov) |  |  | Employee (SOE - State Owned En |  |  | Employee (Private)
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Tuvalu
+       6: Total | 7143 | 3618 | 3525 | 61 | 43 | 18 | 1468 | 866 | 602 | 295 | 182 | 113 | 498
+  -- '36'
+       1: Table 36: Occupations of resid
+       2: Age group | Occupation (1-digit)
+       3:  | Total |  |  | Managers |  |  | Professionals |  |  | Technicians and Associates Pro |  |  | Clerical Support Workers
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 2609 | 1613 | 996 | 342 | 216 | 126 | 525 | 187 | 338 | 299 | 193 | 106 | 224
+  -- '37'
+       1: Table 37: Occupations by highe
+       2: Highest Qualification Complete | Occupation (1-digit)
+       3:  | Total |  |  | Managers |  |  | Professionals |  |  | Technicians and Associates Pro |  |  | Clerical Support Workers
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 2540 | 1564 | 976 | 332 | 206 | 126 | 511 | 180 | 331 | 291 | 187 | 104 | 218
+  -- '38'
+       1: Table 38: Resident population 
+       2: Age group | Industry (1-digit)
+       3:  | Total |  |  | Agriculture Forestry and fishi |  |  | Mining and quarrying |  |  | Manufacturing |  |  | Electricity gas steam and air 
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Tuvalu
+       6: Total | 2609 | 1613 | 996 | 278 | 243 | 35 | 4 | 2 | 2 | 243 | 180 | 63 | 28
+  -- '39'
+       1: Table 39: Resident population 
+       2: Highest Qualification Complete | Industry (1-digit)
+       3:  | Total |  |  | Agriculture Forestry and fishi |  |  | Mining and quarrying |  |  | Manufacturing |  |  | Electricity gas steam and air 
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 2540 | 1564 | 976 | 263 | 231 | 32 | 3 | 2 | 1 | 235 | 175 | 60 | 27
+  -- '40'
+       1: Table 40: Persons actively loo
+       2: Age group | Actively looking for work
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  | Tuvalu |  |  |  |  |  |  |  |  | Nanumea
+       6: Total | 6801 | 3448 | 3353 | 1318 | 814 | 504 | 5483 | 2634 | 2849 | 342 | 169 | 173 | 56
+  -- '41'
+       1: Table 41: Reason for not looki
+       2: Age group | Reason for not looking for wor
+       3:  | Total |  |  | Student |  |  | Already have a full-time job |  |  | Don’t want to work more |  |  | Physically/ psychologically di
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Tuvalu
+       6: Total | 5483 | 2634 | 2849 | 281 | 130 | 151 | 2020 | 1224 | 796 | 367 | 195 | 172 | 82
+  -- '42'
+       1: Table 42: Willingness and avai
+       2: Age group | Willing and available to work
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  | Tuvalu |  |  |  |  |  |  |  |  | Nanumea
+       6: Total | 6801 | 3448 | 3353 | 1583 | 953 | 630 | 5218 | 2495 | 2723 | 342 | 169 | 173 | 68
+  -- '43'
+       1: Table 43: Status of actively l
+       2: Highest Qualification Complete | Actively looking for work
+       3:  | Total |  |  | Yes |  |  | No |  |  | Total |  |  | Yes
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:  | Tuvalu |  |  |  |  |  |  |  |  | Nanumea
+       6: Total | 6403 | 3245 | 3158 | 1286 | 792 | 494 | 5117 | 2453 | 2664 | 326 | 161 | 165 | 56
+  -- '44'
+       1: Table 44: Reason for not looki
+       2: Highest Qualification Complete | Reason for not looking for wor
+       3:  | Total |  |  | Student |  |  | Already have a full-time job |  |  | Don’t want to work more |  |  | Physically/ psychologically di
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 5117 | 2453 | 2664 | 281 | 130 | 151 | 1973 | 1191 | 782 | 339 | 178 | 161 | 55
+  -- '45'
+       1: Table 45: Willingness and avai
+       2: Highest Qualification Complete | Reason for not looking for wor
+       3:  | Total |  |  | Student |  |  | Already have a full-time job |  |  | Don’t want to work more |  |  | Physically/psychologically dis
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5:     Tuvalu
+       6: Total | 5117 | 2453 | 2664 | 281 | 130 | 151 | 1973 | 1191 | 782 | 339 | 178 | 161 | 55
+  -- '46'
+       1: Table 46: Total number of chil
+       2: Age group | Boys ever born | Girls ever born | Children ever born | Boys living at home | Girls living at home | Total children living at home | Boys living elsewhere in Tuval | Girls living elsewhere in Tuva | Total children living elsewher | Boys living outside Tuvalu | Girls living outside Tuvalu | Total children living outside  | Boys that have died
+       3: Tuvalu
+       4: Total | 4066 | 3546 | 7612 | 2269 | 1989 | 4258 | 1073 | 961 | 2034 | 494 | 416 | 910 | 187
+       5: 15-19 | 12 | 6 | 18 | 8 | 6 | 14 | 2 | - | 2 | 1 | - | 1 | -
+       6: 20-24 | 119 | 101 | 220 | 101 | 89 | 190 | 13 | 7 | 20 | 3 | 3 | 6 | 2
+  -- '47a'
+       1: Table 47a: Total number of res
+       2: Age group | Number of Boys ever born
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10+ | Total
+       4:  | Tuvalu |  |  |  |  |  |  |  |  |  |  |  | Nanumea
+       5: Total | 2282 | 366 | 740 | 588 | 351 | 142 | 60 | 24 | 6 | 4 | - | 1 | 135
+       6: 15-19 | 15 | 4 | 10 | 1 | - | - | - | - | - | - | - | - | 1
+  -- '47b'
+       1: Table 47b: Total number of mal
+       2: Age group | Number of Boys ever born
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10+ | Total
+       4:  | Tuvalu |  |  |  |  |  |  |  |  |  |  |  | Nanumea
+       5: Total | 4066 | - | 740 | 1176 | 1053 | 568 | 300 | 144 | 42 | 32 | - | 11 | 259
+       6: 15-19 | 12 | - | 10 | 2 | - | - | - | - | - | - | - | - | -
+  -- '48a '
+       1: Table 48a: Total number of res
+       2: Age group | Number of Girls ever born
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10+ | Total
+       4:  | Tuvalu |  |  |  |  |  |  |  |  |  |  |  | Nanumea
+       5: Total | 2282 | 442 | 842 | 544 | 284 | 108 | 45 | 13 | 3 | 1 | - | 0 | 135
+       6: 15-19 | 15 | 9 | 6 | - | - | - | - | - | - | - | - | - | 1
+  -- '48b '
+       1: Table 48b: Total number of fem
+       2: Age group | Number of Girls ever born
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10+ | Total
+       4:  | Tuvalu |  |  |  |  |  |  |  |  |  |  |  | Nanumea
+       5: Total | 3546 | - | 842 | 1088 | 852 | 432 | 225 | 78 | 21 | 8 | - | 0 | 231
+       6: 15-19 | 6 | - | 6 | - | - | - | - | - | - | - | - | - | 1
+  -- '49a'
+       1: Table 49a: Total number of res
+       2: Age group | Total children ever born
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+       4: Tuvalu
+       5: Total | 2282 | - | 429 | 475 | 444 | 366 | 249 | 169 | 82 | 36 | 19 | 6 | 4
+       6: 15-19 | 15 | - | 12 | 3 | - | - | - | - | - | - | - | - | -
+  -- '49b'
+       1: Table 49b: Total number of chi
+       2: Age group | Total children ever born
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+       4: Tuvalu
+       5: Total | 7612 | - | 429 | 950 | 1332 | 1464 | 1245 | 1014 | 574 | 288 | 171 | 60 | 44
+       6: 15-19 | 18 | - | 12 | 6 | - | - | - | - | - | - | - | - | -
+  -- '50'
+       1: Table 50: Total number of chil
+       2: Age group | Children surviving
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+       4: Tuvalu
+       5: Total | 7202 | - | 448 | 986 | 1377 | 1488 | 1175 | 864 | 483 | 240 | 72 | 20 | 33
+       6: 15-19 | 17 | - | 11 | 6 | - | - | - | - | - | - | - | - | -
+  -- '51'
+       1: Table 51: Total number of male
+       2: Age group | Male children surviving
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+       4: Tuvalu
+       5: Total | 3836 | - | 765 | 1190 | 981 | 508 | 255 | 90 | 21 | 16 | - | 10 | -
+       6: 15-19 | 11 | - | 9 | 2 | - | - | - | - | - | - | - | - | -
+  -- '52'
+       1: Table 52: Total number of fema
+       2: Age group | Female children surviving
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+       4: Tuvalu
+       5: Total | 3366 | - | 855 | 1070 | 819 | 384 | 155 | 54 | 21 | 8 | - | - | -
+       6: 15-19 | 6 | - | 6 | - | - | - | - | - | - | - | - | - | -
+  -- '53'
+       1: Table 53: Total number of chil
+       2: Age group | Children died
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total | 0
+       4:  | Tuvalu |  |  |  |  |  |  |  |  |  |  | Nanumea
+       5: Total | 336 | - | 200 | 72 | 27 | 24 | - | 6 | 7 | - | - | 45 | -
+       6: 15-19 | - | - | - | - | - | - | - | - | - | - | - | - | -
+  -- '54'
+       1: Table 54: Total number of male
+       2: Age group | Male children died
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total | 0
+       4:  | Tuvalu |  |  |  |  |  |  |  |  |  |  | Nanumea
+       5: Total | 187 | - | 126 | 32 | 15 | 4 | 10 | - | - | - | - | 20 | -
+       6: 15-19 | - | - | - | - | - | - | - | - | - | - | - | - | -
+  -- '55'
+       1: Table 55: Total number of fema
+       2: Age group | Female children died
+       3:  | Total | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total | 0
+       4:  | Tuvalu |  |  |  |  |  |  |  |  |  |  | Nanumea
+       5: Total | 149 | - | 118 | 22 | 9 | - | - | - | - | - | - | 25 | -
+       6: 15-19 | - | - | - | - | - | - | - | - | - | - | - | - | -
+  -- '56'
+       1: Table 56: Total population by 
+       2: Age Group | Relationship
+       3:  | Total |  |  | Household head |  |  | Spouse |  |  | Son / daughter |  |  | Adopted son / daughter
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Tuvalu
+       6: Total | 10645 | 5486 | 5159 | 1626 | 1168 | 458 | 1002 | 133 | 869 | 2585 | 1382 | 1203 | 159
+  -- 'H1-2'
+       1: Table H1: Number of private ho
+       2:  | Island
+       3:  | Total | Nanumea | Nanumaga | Niutao | Nui | Vaitupu | Nukufetau | Funafuti | Nukulaelae | Niulakita
+       4: Living tenure
+       5: Total | 1626 | 105 | 93 | 116 | 97 | 187 | 112 | 849 | 57 | 10
+       6: Own | 1141 | 94 | 86 | 104 | 90 | 163 | 93 | 458 | 48 | 5
+  -- 'H3-4'
+       1: Table H3: Number of private ho
+       2:  | Island
+       3:  | Total | Nanumea | Nanumaga | Niutao | Nui | Vaitupu | Nukufetau | Funafuti | Nukulaelae | Niulakita
+       4: Toilet type
+       5: Total | 1626 | 105 | 93 | 116 | 97 | 187 | 112 | 849 | 57 | 10
+       6: Flush / pour flush toilet | 1438 | 94 | 89 | 101 | 87 | 155 | 106 | 753 | 46 | 7
+  -- 'H5-6'
+       1: Table H5: Number of private ho
+       2:  | Island
+       3:  | Total | Nanumea | Nanumaga | Niutao | Nui | Vaitupu | Nukufetau | Funafuti | Nukulaelae | Niulakita
+       4: Rate of solid waste services
+       5: Total | 1626 | 105 | 93 | 116 | 97 | 187 | 112 | 849 | 57 | 10
+       6: Fully satisfied | 508 | 73 | 74 | 43 | 19 | 36 | 8 | 213 | 40 | 2
+  -- 'H7'
+       1: Table H7: Number of private ho
+       2: Varieties of crops | Island
+       3:  | Total | Nanumea | Nanumaga | Niutao | Nui | Vaitupu | Nukufetau | Funafuti | Nukulaelae | Niulakita
+       5: Beans (string, long, green, st | 11 | - | - | 2 | 1 | - | 5 | 3 | - | -
+       6: Tree spinach / Bele | 134 | 9 | 2 | 9 | 14 | 7 | 29 | 62 | 1 | 1
+  -- 'H8'
+       1: Table H8: Number of private ho
+       2: Crops | Main purpose of growing |  |  |  |  |  | Frequency of harvesting
+       3:  | Total | Home consumption | For sale | Mainly home consumption but so | Mainly for sale but some for h | Other (e.g customary) | Total | At least every week | Every fortnight | Every month | Every 2 months | Every 3 months | Every 4 months
+       5: Beans (string, long, green, st | 11 | 10 | - | - | 1 | - | 11 | 3 | 3 | 3 | 1 | 1 | -
+       6: Tree Spinach / Bele / Pele | 134 | 129 | - | 3 | 2 | - | 134 | 78 | 28 | 21 | 5 | - | -
+  -- 'H9-10'
+       1: Table H9: Number of private ho
+       2: Island | Households | Litres of toddy
+       3: Total | 437 | 2474
+       4: Nanumea | 50 | 387
+       5: Nanumaga | 50 | 344
+       6: Niutao | 27 | 123
+  -- 'H11-12'
+       1: Table H11: Number of animals o
+       2:  | Livestock
+       3:  | Total | Pigs | Chickens | Ducks | Goats | Dogs | Cats
+       4: Number of animals owned
+       5: Number owned | 29143 | 10894 | 15443 | 1209 | - | 391 | 1206
+       6: Main purpose of raising animal
+  -- 'H13-14'
+       1: Table H13: Number of private h
+       2: Frequency past 30 days | Island
+       3:  | Total | Nanumea | Nanumaga | Niutao | Nui | Vaitupu | Nukufetau | Funafuti | Nukulaelae | Niulakita
+       4:   Frequency of buying reef fis
+       5: Total | 246 | 1 | - | - | 2 | - | 65 | 170 | 8 | -
+       6: 1 - 4 times | 224 | 1 | - | - | 2 | - | 58 | 156 | 7 | -
+  -- 'H15-17'
+       1: Table H16: Number of private h
+       2:  | Island
+       3:  | Total | Nanumea | Nanumaga | Niutao | Nui | Vaitupu | Nukufetau | Funafuti | Nukulaelae | Niulakita
+       4:   Access to ICT items
+       5: Access to radio | 1441 | 105 | 83 | 115 | 96 | 179 | 106 | 692 | 55 | 10
+       6: Access to mobile phone | 1134 | 60 | 24 | 34 | 43 | 94 | 74 | 765 | 34 | 6
+  -- 'H18'
+       1: Table H18: Number of private h
+       2:  | Island
+       3:  | Total | Nanumea | Nanumaga | Niutao | Nui | Vaitupu | Nukufetau | Funafuti | Nukulaelae | Niulakita
+       4:     Affected by king tide
+       5: Total | 1626 | 105 | 93 | 116 | 97 | 187 | 112 | 849 | 57 | 10
+       6: Yes | 259 | 14 | 22 | 18 | 48 | 29 | 15 | 81 | 32 | -
+  -- 'H19'
+       1: Table H19: Number of private h
+       2: Age group | Year of death |  |  |  |  | Died in Tuvalu |  |  | Died in health facility |  |  |  | Death registered with civil re
+       3:  | Total | 2014 | 2015 | 2016 | 2017 | Total | Yes | No | Total | Yes | No | Don't know | Total
+       4:     Total
+       5: Total | 216 | 30 | 53 | 63 | 70 | 216 | 193 | 23 | 193 | 105 | 83 | 5 | 193
+       6: 0-4 | 7 | 1 | 1 | 5 | - | 7 | 6 | 1 | 6 | 5 | - | 1 | 6
+  -- 'H20'
+       1: Table H20: Number of private h
+       2: Age group | Reason for living out
+       3:  | Total |  |  | Stayed at another Tuvaluan hou |  |  | Temporarily travelling abroad  |  |  | Temporarily travelling abroad  |  |  | Studying abroad (civil servant
+       4:  | T | M | F | T | M | F | T | M | F | T | M | F | T
+       5: Total
+       6: Total | 934 | 519 | 415 | - | - | - | 78 | 51 | 27 | 250 | 131 | 119 | 74
