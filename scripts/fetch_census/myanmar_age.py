@@ -177,12 +177,16 @@ def check_townships(rows: list[dict[str, Any]]) -> None:
     log(f"  every district's and zone's townships make it")
 
 
-def compose(rows: list[dict[str, Any]], admin2: list[dict[str, Any]]
-            ) -> dict[str, dict[str, Any]]:
-    """Each drawn district -> its census figures and the parts they came from.
+def crosswalk(rows: list[dict[str, Any]], admin2: list[dict[str, Any]]
+              ) -> dict[str, dict[str, Any]]:
+    """Each drawn district -> the census units it holds and how a note names them.
 
-    Every census district and every township of a zone must be used exactly
-    once across the polygons, and the polygons must make the Union.
+    ``units`` are the census rows (whole districts, and a zone's listed
+    townships), ``parts`` the words a note uses for them, and ``kind`` is
+    "district" for a polygon that is one census district and "composed" for
+    the rest. Every census district and every township of a zone must be used
+    exactly once across the polygons. ``sea_composed.py`` places Myanmar's
+    religion and ethnicity on the same parts.
     """
     districts = [r for r in rows if r["level"] == 2 and zone_of(r["adm2"]) is None]
     zone_towns = [r for r in rows if r["level"] == 3 and zone_of(r["adm2"]) is not None]
@@ -209,7 +213,7 @@ def compose(rows: list[dict[str, Any]], admin2: list[dict[str, Any]]
         spec = COMPOSED.get(name)
         if spec is None:
             d = district(ALIASES.get(name, name), name)
-            out[shape["id"]] = {**add([d]), "parts": [d["adm2"].title()], "kind": "district"}
+            out[shape["id"]] = {"units": [d], "parts": [d["adm2"].title()], "kind": "district"}
             continue
         parts = [district(dn, name) for dn in spec["districts"]]
         labels = [f"{p['adm2'].title()} district" for p in parts]
@@ -224,10 +228,23 @@ def compose(rows: list[dict[str, Any]], admin2: list[dict[str, Any]]
             labels.append(f"{', '.join(t.title() for t in townships)} of the "
                           f"{zone.title() if zone != 'PAO' else 'Pa-O'} "
                           f"self-administered {'division' if zone == 'WA' else 'zone'}")
-        out[shape["id"]] = {**add(parts), "parts": labels, "kind": "composed"}
+        out[shape["id"]] = {"units": parts, "parts": labels, "kind": "composed"}
     left = [u["where"] for u in districts + zone_towns if id(u) not in used]
     if left:
         raise SystemExit(f"myanmar_age: census units on no polygon: {left}")
+    return out
+
+
+def compose(rows: list[dict[str, Any]], admin2: list[dict[str, Any]]
+            ) -> dict[str, dict[str, Any]]:
+    """Each drawn district -> its census figures and the parts they came from.
+
+    Every census district and every township of a zone must be used exactly
+    once across the polygons (``crosswalk``), and the polygons must make the
+    Union.
+    """
+    out = {sid: {**add(cw["units"]), "parts": cw["parts"], "kind": cw["kind"]}
+           for sid, cw in crosswalk(rows, admin2).items()}
     total = sum(v["total"] for v in out.values())
     if total != NATIONAL:
         raise SystemExit(f"myanmar_age: the {len(out)} polygons make {total:,}, against the "
