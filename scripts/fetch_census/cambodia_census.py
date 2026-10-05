@@ -33,9 +33,13 @@ division takes the parts it was divided into. A district the census left
 whole must come back to its own row exactly; a commune that cannot be placed
 leaves its polygon out, logged.
 
-**Checks**, each a refusal: in every row males and females make the total;
-every district's communes make the district, and every province's districts
-the province, for households, males and females; in Table 2.1.1 every
+**Checks**, each a refusal: in every commune row males and females make the
+total; every district's communes make the district, and every province's
+districts the province, for households, males and females (a district row
+that contradicts itself -- Kampong Cham's Chamkar Leu prints 5,160 in all four
+columns -- is read as its communes' sum, logged, and the province's total
+then checks it; a district code printed under the wrong province, Srei
+Santhor's "211", is read from its communes' codes); in Table 2.1.1 every
 province's sexes make its total and the 25 provinces make the census's
 15,552,211.
 
@@ -73,7 +77,9 @@ LICENCE = "Official statistics of the National Institute of Statistics, Ministry
 NUM = r"(-|\d{1,3}(?:,\d{3})*|\d+)"
 ROW = re.compile(rf"^(?P<code>\d{{3,6}})\s+(?P<name>.*?\S)\s+{NUM}\s+{NUM}\s+{NUM}\s+{NUM}"
                  r"\s+(?:-|[\d.]+)\s+(?:-|[\d.]+)\s*$")
-TOTAL = re.compile(rf"^Total\s+{NUM}\s+{NUM}\s+{NUM}\s+{NUM}\s+(?:-|[\d.]+)\s+(?:-|[\d.]+)\s*$")
+# Kampong Cham's table spells its total row "Toatl".
+TOTAL = re.compile(rf"^(?:Total|Toatl)\s+{NUM}\s+{NUM}\s+{NUM}\s+{NUM}\s+(?:-|[\d.]+)\s+"
+                   r"(?:-|[\d.]+)\s*$")
 HEADER = re.compile(r"^(?P<code>\d{2})\s+(?P<name>[A-Z][A-Za-z' .-]+?)\s*$")
 PROVINCE_ROW = re.compile(rf"^(?P<name>[A-Z][A-Za-z' .-]+?)\s+{NUM}\s+{NUM}\s+{NUM}\s*$")
 HOUSEHOLD_NOTE = ("the census's district tables count the population of normal or regular "
@@ -156,12 +162,20 @@ def check_annex(provinces: dict[int, dict[str, Any]]) -> None:
         if prov["n"] is None or not prov["districts"]:
             raise SystemExit(f"cambodia_census: province {p:02d} has no total or no districts")
         for d, dist in prov["districts"].items():
-            for unit in [dist, *dist["communes"].values()]:
+            for unit in dist["communes"].values():
                 _, t, m, f = unit["n"]
                 if m + f != t:
                     raise SystemExit(f"cambodia_census: {unit['name']}: {m:,} males and {f:,} "
                                      f"females against {t:,}")
             made = tuple(sum(c["n"][i] for c in dist["communes"].values()) for i in range(4))
+            _, t, m, f = dist["n"]
+            if m + f != t and dist["communes"]:
+                # A district row at odds with itself -- Kampong Cham's Chamkar
+                # Leu prints 5,160 in all four columns -- is replaced by its
+                # communes' sum; the province's own total checks the result.
+                log(f"  district {d} {dist['name']}: its row {dist['n']} contradicts itself; "
+                    f"read as its communes' sum {made}")
+                dist["n"] = made
             if not dist["communes"] or made != dist["n"]:
                 raise SystemExit(f"cambodia_census: district {d} {dist['name']}: its "
                                  f"{len(dist['communes'])} communes make {made}, against "

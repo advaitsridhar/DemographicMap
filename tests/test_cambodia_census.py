@@ -50,6 +50,16 @@ class AnnexTest(unittest.TestCase):
                               "communes": {p * 10000 + 101: {"name": f"C{p}", "n": n}}}}}
         return out
 
+    def test_a_district_row_at_odds_with_itself_is_its_communes_sum(self):
+        annex = self.full()
+        annex[3]["districts"][301]["n"] = (5, 5, 5, 5)
+        kh.check_annex(annex)
+        self.assertEqual(annex[3]["districts"][301]["n"], (1, 4, 2, 2))
+
+    def test_a_misspelt_total_row(self):
+        annex = kh.parse_annex([PAGE.replace("Total 10 40", "Toatl 10 40")])
+        self.assertEqual(annex[1]["n"], (10, 40, 20, 20))
+
     def test_a_district_its_communes_do_not_make_refuses(self):
         annex = self.full()
         kh.check_annex(annex)
