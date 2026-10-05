@@ -35,11 +35,13 @@ leaves its polygon out, logged.
 
 **Checks**, each a refusal: in every commune row males and females make the
 total; every district's communes make the district, and every province's
-districts the province, for households, males and females (a district row
-that contradicts itself -- Kampong Cham's Chamkar Leu prints 5,160 in all four
-columns -- is read as its communes' sum, logged, and the province's total
-then checks it; a district code printed under the wrong province, Srei
-Santhor's "211", is read from its communes' codes); in Table 2.1.1 every
+districts the province, for households, males and females (where a district
+row and its communes disagree -- Kampong Cham's Chamkar Leu prints 5,160 in
+all four columns, Kandal's Kandal Stueng another district's 332,843 -- the
+province's own total decides: the communes' sum stands only if with it the
+districts make the province, and is logged; a district code printed under
+the wrong province, Srei Santhor's "211", is read from its communes'
+codes); in Table 2.1.1 every
 province's sexes make its total and the 25 provinces make the census's
 15,552,211.
 
@@ -194,28 +196,39 @@ def check_annex(provinces: dict[int, dict[str, Any]]) -> None:
     for p, prov in provinces.items():
         if prov["n"] is None or not prov["districts"]:
             raise SystemExit(f"cambodia_census: province {p:02d} has no total or no districts")
+        disputed: dict[int, tuple[tuple[int, ...], tuple[int, ...]]] = {}
         for d, dist in prov["districts"].items():
             for unit in dist["communes"].values():
                 _, t, m, f = unit["n"]
                 if m + f != t:
                     raise SystemExit(f"cambodia_census: {unit['name']}: {m:,} males and {f:,} "
                                      f"females against {t:,}")
+            if not dist["communes"]:
+                raise SystemExit(f"cambodia_census: district {d} {dist['name']} has no commune")
             made = tuple(sum(c["n"][i] for c in dist["communes"].values()) for i in range(4))
-            _, t, m, f = dist["n"]
-            if m + f != t and dist["communes"]:
-                # A district row at odds with itself -- Kampong Cham's Chamkar
-                # Leu prints 5,160 in all four columns -- is replaced by its
-                # communes' sum; the province's own total checks the result.
-                log(f"  district {d} {dist['name']}: its row {dist['n']} contradicts itself; "
-                    f"read as its communes' sum {made}")
-                dist["n"] = made
-            if not dist["communes"] or made != dist["n"]:
-                unread = [x for x in prov.get("unread", []) if x.startswith(str(d))]
-                raise SystemExit(f"cambodia_census: district {d} {dist['name']}: its "
-                                 f"{len(dist['communes'])} communes make {made}, against "
-                                 f"{dist['n']}; its communes read: "
-                                 f"{sorted(dist['communes'])}; rows not read: {unread}")
+            if made != dist["n"]:
+                disputed[d] = (dist["n"], made)
+        # A district row its communes do not make is a misprint of one or the
+        # other -- Kampong Cham's Chamkar Leu prints 5,160 in all four
+        # columns, Kandal Stueng another district's 332,843 -- and the
+        # province's own total decides between them: the communes' sum stands
+        # if, with it, the districts make the province, and anything else
+        # refuses.
+        for d, (row, made) in disputed.items():
+            prov["districts"][d]["n"] = made
         made = tuple(sum(x["n"][i] for x in prov["districts"].values()) for i in range(4))
+        if disputed and made == prov["n"]:
+            for d, (row, sums) in disputed.items():
+                log(f"  district {d} {prov['districts'][d]['name']}: its row {row} is not its "
+                    f"communes' sum {sums}; the communes' sum makes the province's total, and "
+                    "stands")
+        elif disputed:
+            raise SystemExit("cambodia_census: " + "; ".join(
+                f"district {d} {prov['districts'][d]['name']}: its "
+                f"{len(prov['districts'][d]['communes'])} communes make {sums}, against "
+                f"{row}; rows not read: "
+                f"{[x for x in prov.get('unread', []) if x.startswith(str(d))]}"
+                for d, (row, sums) in disputed.items()))
         if made != prov["n"]:
             raise SystemExit(f"cambodia_census: province {p:02d}: its districts make {made}, "
                              f"against {prov['n']}")
