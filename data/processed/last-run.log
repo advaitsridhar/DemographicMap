@@ -1,25 +1,274 @@
+== https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Tsirang.pdf
+  200 application/pdf 1161606 https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Tsirang.pdf
+    69 pages
 
-== GET https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/90ba48e4-648f-4efc-97df-54fe05132e5e/download/afg_admpop_adm1_2026.csv
-   (redirected to https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/90ba48e4-648f-4efc-97df-54fe05132e5e/afg_admpop_adm1_2026.csv?AWSAccessKeyId=ASIAXYC32WNA7CI6EMMF&Signature=rfFrXeAa8wx6Gof3AJ4PAJEk3II%3D&x-amz-security-token=FwoGZXIvYXdzEBkaDCZCfIUhEwaqK5aALiLBAcDkcHICdl5%2B4Q%2FvGnT%2BEYVKy7CX4CgewcpmZzRSJ83hAGx%2B7N87MXkWhKPWChsd6b9rLjEA%2FFdB6Ivkbtq%2FJeUxO2YERqRges6723%2FRsD8G6as%2BjaHG8CbQadHkRRZIIbDZ0oMexUjOrBn2u1ksoM%2BDFsYVzvESK1WDwi%2FL3lvS4C%2BXMjAbjJrd1bs4XmZznjou9oIyE%2FOjp2cyo3FByurLnhJsZTqVLlRFXonNBfEMK05gtaiYAaVwB5f6RBAnHkoo9cGL1gYyLXG6UHqfwFJoXFQcMIAbTy57qfnPz399lek2g1A6gtDbRGwypriAmUSBDy4zVg%3D%3D&Expires=1791159605)
-  200 text/csv 10660 https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/90ba48e4-648f-4efc-97df-54fe05132e5e/download/afg_admpop_adm1_2026.csv
-    ﻿admin0_name,admin0_code,province_code,province_name,population_total,population_boys_u18,population_girls_u18,population_men_18plus,population_women_18plus,population_children_total,population_adults_total,population_elderly_total,population_with_disabilities,households_total,households_female_headed,total_children_0_59_months,total_boys_0_59_months,total_girls_0_59_months,school_age_children (6–17),primary_age_boys (6–12),primary_age girls (6–12),secondary_age boys (13–17),secondary_age girls (13–17),total_elderly_population_65plus,elderly_men_65plus,elderly_women_65plus
-    #adm0+name,#adm0+code,#adm1+code,#adm1+name,#population,#population +m +children,#population +f +children,#population +m +adult,#population +f +adult,#population +children,#population +adult,#population +elderly,#population +disability,#population +hh,#population +hh +f,#population +age0-59 ,#population +ag0-59m +m,#population +ag0-59m +f,#population +age6-17 +children,#population +age6-12 +m,#population +age6-12 +f,#population +age13-17 +m,#population +age13-17 +f,#population +age65plus +elderly,#population +age65plus +elderly +m,#population +age65plus +elderly +f
-    Afghanistan,AF,AF17,Badakhshan,1679524.099,469133.1139,444745.1928,393125.8532,372519.9392,913878.3067,696415.6338,69230.15863,146832.6096,239931,23996,294273.6387,151163.3245,143110.3142,619604.668,205476.4963,194851.9675,112493.293,106782.9111,69230.15863,35530.11217,33700.04646
-    Afghanistan,AF,AF31,Badghis,834593.7943,222943.2594,224601.2502,192847.6366,194201.6481,447544.5096,351024.6059,36024.67877,73721.45054,119228,11924,153212.1881,76359.4482,76852.73994,294332.3214,94834.54644,95581.94859,51749.26475,52166.56165,36024.67877,17966.87743,18057.80134
-    Afghanistan,AF,AF09,Baghlan,1963081.357,549506.5022,520944.1097,458315.0383,434315.7068,1070450.612,812481.9911,80148.75397,171360.3832,280439,28048,344540.7933,176969.5778,167571.2155,725909.8186,241108.1862,228618.6327,131428.7382,124754.2615,80148.75397,41129.64354,39019.11043
-    Afghanistan,AF,AF21,Balkh,2437336.592,639345.9571,650985.9284,568354.3244,578650.3824,1290331.885,1041127.29,105877.4169,217212.322,348190,34820,354606.1478,175819.7978,178786.35,935725.7377,276849.2169,282110.3648,186676.9424,190089.2136,105877.4169,52451.24114,53426.17578
-    Afghanistan,AF,AF10,Bamyan,515908.7672,118210.1824,118981.4649,138918.7472,139798.3728,237191.6473,252163.2369,26553.88309,50109.27565,73703,7371,69941.8758,34867.75615,35074.11965,167249.7715,50662.17556,50971.72082,32680.25067,32935.62442,26553.88309,13225.35067,13328.53242
-    Afghanistan,AF,AF24,Daykundi,820910.5584,188076.1765,189306.6144,221065.6458,222462.1217,377382.7909,401447.0389,42080.7286,79737.5628,117272,11728,110928.709,55300.17237,55628.53659,266454.0819,80804.01443,81296.56077,51971.98968,52381.51703,42080.7286,20958.27324,21122.45536
-    Afghanistan,AF,AF33,Farah,878882.4187,230927.2202,232647.0256,206919.3477,208388.8253,463574.2457,375295.7737,40012.39929,78521.32455,125553,12555,155445.9306,77471.95
+  -- page 45
+    2017 POPULATION AND HOUSING CENSUS OF BHUTAN (PHCB)
+    Table A2.6 Population by Age, Sex and Area, Tsirang Dzongkhag 2017
+    Urban Rural Both Areas
+    Age Male Female Total Male Female Total Male Female Total
+    0 25 29 54 118 120 238 143 149 292
+    1 20 19 39 129 130 259 149 149 298
+    2 25 19 44 138 142 280 163 161 324
+    3 30 21 51 146 140 286 176 161 337
+    4 33 26 59 159 181 340 192 207 399
+    5 17 24 41 170 179 349 187 203 390
+    6 24 29 53 175 148 323 199 177 376
+    7 23 30 53 155 136 291 178 166 344
+    8 25 28 53 172 167 339 197 195 392
+    9 32 28 60 198 178 376 230 206 436
+    10 30 35 65 177 170 347 207 205 412
+    11 38 23 61 202 176 378 240 199 439
+    12 38 28 66 235 235 470 273 263 536
+    13 37 27 64 193 193 386 230 220 450
+    14 38 30 68 192 189 381 230 219 449
+    15 49 47 96 196 153 349 245 200 445
+    16 78 78 156 162 174 336 240 252 492
+    17 73 99 172 128 131 259 201 230 431
+    18 80 91 171 130 115 245 210 206 416
+    19 69 50 119 114 114 228 183 164 347
+    20 55 34 89 118 104 222 173 138 311
+    21 41 21 62 122 114 236 163 135 298
+    22 35 26 61 166 122 288 201 148 349
+    23 34 26 60 154 146 300 188 172 360
+    24 41 27 68 154 153 307 195 180 375
+    25 51 25 76 161 164 325 212 189 401
+    26 41 28 69 139 153 292 180 181 361
+    27 33 42 75 154 139 293 187 181 368
+    28 51 31 82 165 156 321 216 187 403
+    29 24 31 55 142 149 291 166 180 346
+    30 62 28 90 146 157 303 208 185 393
+    31 34 23 57 145 125 270 179 148 327
+    32 37 34 71 167 147 314 204 181 385
+    33 20 31 51 147 157 304 167 188 355
+    34 32 26 58 134 137 271 166 163 329
+    35 32 27 59 137 158 295 169 185 354
+    36 36 27 63 158 144 302 194 171 365
+    37 37 32 69 139 152 291 176 184 360
+    38 20 24 44 160 136 296 180 160 340
+    39 26 17 43 133 114 247 159 131 290
+    40 31 27 58 136 119 255 167 146 313
+    41 17 15 32 106 125 231 123 140 263
+    42 27 19 46 119 140 259 146 159 305
+    43 17 17 34 128 108 236 145 125 270
+    44 21 17 38 94 94 188 115 111 226
+    45 22 14 36 131 116 247 153 130 283
+    36
 
-== GET https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/004ec841-8fb7-489b-bd02-41a2d1267f95/download/afg_admpop_adm2_2026.csv
-   (redirected to https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/004ec841-8fb7-489b-bd02-41a2d1267f95/afg_admpop_adm2_2026.csv?AWSAccessKeyId=ASIAXYC32WNA7CI6EMMF&Signature=xZWe1He3N9tWONdQT8%2FX51Vyj5Y%3D&x-amz-security-token=FwoGZXIvYXdzEBkaDCZCfIUhEwaqK5aALiLBAcDkcHICdl5%2B4Q%2FvGnT%2BEYVKy7CX4CgewcpmZzRSJ83hAGx%2B7N87MXkWhKPWChsd6b9rLjEA%2FFdB6Ivkbtq%2FJeUxO2YERqRges6723%2FRsD8G6as%2BjaHG8CbQadHkRRZIIbDZ0oMexUjOrBn2u1ksoM%2BDFsYVzvESK1WDwi%2FL3lvS4C%2BXMjAbjJrd1bs4XmZznjou9oIyE%2FOjp2cyo3FByurLnhJsZTqVLlRFXonNBfEMK05gtaiYAaVwB5f6RBAnHkoo9cGL1gYyLXG6UHqfwFJoXFQcMIAbTy57qfnPz399lek2g1A6gtDbRGwypriAmUSBDy4zVg%3D%3D&Expires=1791159607)
-  200 text/csv 119774 https://data.humdata.org/dataset/79484094-6e4a-4fbd-9152-66b42a9b32e0/resource/004ec841-8fb7-489b-bd02-41a2d1267f95/download/afg_admpop_adm2_2026.csv
-    ﻿admin0_name,admin0_code,region,province_code,province_name,district_code,district_name,population_total,population_boys_u18,population_girls_u18,population_men_18plus,population_women_18plus,population_children_total,population_adults_total,population_elderly_total,population_with_disabilities,households_total,households_female_headed,total_children_0_59_months,total_boys_0_59_months,total_girls_0_59_months,school_age_children (6–17),primary_age_boys (6–12),primary_age girls (6–12),secondary_age boys (13–17),secondary_age girls (13–17),total_elderly_population_65plus,elderly_men_65plus,elderly_women_65plus
-    #adm0+name,#adm0+code,#region,#adm1+code,#adm1+name,#adm2+code,#adm2+name,#population,#population +m +children,#population +f +children,#population +m +adult,#population +f +adult,#population +children,#population +adult,#population +elderly,#population +disability,#population +hh,#population +hh +f,#population +age0-59 ,#population +ag0-59m +m,#population +ag0-59m +f,#population +age6-17 +children,#population +age6-12 +m,#population +age6-12 +f,#population +age13-17 +m,#population +age13-17 +f,#population +age65plus +elderly,#population +age65plus +elderly +m,#population +age65plus +elderly +f
-    Afghanistan,AF,NE,AF17,Badakhshan,AF1703,Arghanj Khwah,31736.63828,8851.348417,8391.167162,7442.241677,7051.881026,17242.51558,13177.05221,1317.070489,2777.606451,4534,453,5553.911699,2853.123782,2700.787918,11688.60388,3871.86987,3671.929049,2126.354765,2018.450195,1317.070489,675.9903954,641.0800933
-    Afghanistan,AF,NE,AF17,Badakhshan,AF1702,Argo,171479.4889,47920.7961,45429.70124,40115.61292,38013.37862,93350.49734,71075.26347,7053.728064,14986.61614,24497,2450,30056.49388,15439.21743,14617.27645,63294.00346,20997.09519,19910.97157,11484.48348,10901.45322,7053.728064,3620.017182,3433.710882
-    Afghanistan,AF,NE,AF17,Badakhshan,AF1706,Baharak,89337.81655,24916.31703,23620.91869,20949.71798,19850.86284,48537.23573,37093.06143,3707.519387,7818.890373,12763,1276,15634.1179,8031.469707,7602.648188,32903.11783,10899.21362,10336.38537,5985.633709,5681.885132,3707.519387,1902.895492,1804.623894
-    Afghanistan,AF,NE,AF17,Badakhshan,AF1707,Darayem,82651.6894,23051.55617,21853.10668,19381.82117,18365.20539,44904.66285,34316.98144,3430.04511,7233.717182,11807,1181,14464.04565,7430.386877,7033.658768,30440.61721,10083.50611,9562.800464,5537.66319,5256.647446,3430.04511,1760.480984,1669.564126
-    Afghanistan,AF,NE,AF17,Badakhshan,AF1727,Darwaz-e-Balla,41475.25764,11567.44936,10966.05812,9725.947918,9215.802249,22533.50748,17220.52697,1721.223192,3629.935287,5925,593,7258.170088,3728.625662,3529.544426,15275.33739,5059.981433,4798.687309,2778.842262,2637.826386,1721.223192,883.4229878,837.8002044
-    Afghanistan,AF,NE,AF17,Badakhshan,AF1722,Darwaz-e-Payin,41518.39751,11579.48107,10977.4643,9736.064217,9225.387928,22556.94537,17238.43865,1723.013497,3633.71091,5931,593,7265.719565,3732.503937,3533.215629,15291.2258,5065.244497,4803.678592,2781.732633,2640.570082,1723.013497
+  -- page 46
+    ANNEX 2: Statistical Tables
+    Table A2.6 Population by Age, Sex and Area, Tsirang Dzongkhag 2017
+    Urban Rural Both Areas
+    Age Male Female Total Male Female Total Male Female Total
+    46 13 8 21 77 117 194 90 125 215
+    47 19 12 31 92 88 180 111 100 211
+    48 16 7 23 129 110 239 145 117 262
+    49 19 14 33 102 103 205 121 117 238
+    50 18 11 29 108 133 241 126 144 270
+    51 12 8 20 89 98 187 101 106 207
+    52 14 6 20 110 101 211 124 107 231
+    53 8 8 16 98 103 201 106 111 217
+    54 7 6 13 87 101 188 94 107 201
+    55 10 5 15 89 111 200 99 116 215
+    56 4 3 7 89 96 185 93 99 192
+    57 7 4 11 100 86 186 107 90 197
+    58 6 5 11 88 94 182 94 99 193
+    59 6 8 14 73 80 153 79 88 167
+    60 6 5 11 109 102 211 115 107 222
+    61 6 6 12 96 76 172 102 82 184
+    62 2 6 8 89 73 162 91 79 170
+    63 2 6 8 85 69 154 87 75 162
+    64 2 2 4 55 59 114 57 61 118
+    65 7 5 12 77 65 142 84 70 154
+    66 2 2 4 72 50 122 74 52 126
+    67 0 4 4 74 39 113 74 43 117
+    68 5 2 7 58 44 102 63 46 109
+    69 1 7 8 51 47 98 52 54 106
+    70 1 4 5 63 40 103 64 44 108
+    71 1 3 4 48 29 77 49 32 81
+    72 3 5 8 49 30 79 52 35 87
+    73 4 6 10 50 48 98 54 54 108
+    74 4 1 5 58 38 96 62 39 101
+    75 0 4 4 38 41 79 38 45 83
+    76 0 5 5 26 26 52 26 31 57
+    77 2 1 3 27 20 47 29 21 50
+    78 3 3 6 31 24 55 34 27 61
+    79 3 2 5 28 21 49 31 23 54
+    80 1 3 4 32 27 59 33 30 63
+    81 1 2 3 24 10 34 25 12 37
+    82 1 2 3 31 20 51 32 22 54
+    83 2 1 3 16 15 31 18 16 34
+    84 2 0 2 11 19 30 13 19 32
+    85 2 1 3 15 8 23 17 9 26
+    86 0 1 1 11 16 27 11 17 28
+    87 0 0 0 4 5 9 4 5 9
+    88 0 0 0 9 8 17 9 8 17
+    89 1 0 1 5 3 8 6 3 9
+    90 1 0 1 8 8 16 9 8 17
+    91 0 0 0 6 6 12 6 6 12
+    37
+
+  -- page 47
+    2017 POPULATION AND HOUSING CENSUS OF BHUTAN (PHCB)
+    Table A2.6 Population by Age, Sex and Area, Tsirang Dzongkhag 2017
+    Urban Rural Both Areas
+    Age Male Female Total Male Female Total Male Female Total
+    92 0 0 0 3 4 7 3 4 7
+    93 0 1 1 1 4 5 1 5 6
+    94 0 0 0 3 3 6 3 3 6
+    95 0 0 0 1 0 1 1 0 1
+    96 0 0 0 1 1 2 1 1 2
+    97 0 0 0 0 4 4 0 4 4
+    98 0 0 0 0 0 0 0 0 0
+    99 0 0 0 0 0 0 0 0 0
+    100 0 0 0 1 0 1 1 0 1
+    101 0 0 0 0 0 0 0 0 0
+    102 0 0 0 0 1 1 0 1 1
+    103 0 0 0 0 0 0 0 0 0
+    104 0 0 0 0 0 0 0 0 0
+    105 0 0 0 0 1 1 0 1 1
+    106 0 0 0 0 0 0 0 0 0
+    107 0 0 0 0 0 0 0 0 0
+    108 0 0 0 0 0 0 0 0 0
+    109 0 0 0 0 0 0 0 0 0
+    110 0 0 0 0 0 0 0 0 0
+    111 0 0 0 0 0 0 0 0 0
+    112 0 0 0 0 0 0 0 0 0
+    All Ages 1,885 1,625 3,510 9,641 9,225 18,866 11,526 10,850 22,376
+    Table A2.7 Population by Age, Sex, Chiwog and Gewog/Town, Tsirang Dzongkhag 2017
+    Gewog/Town/ Age
+    Chiwog/Sex 0-4 5-9 10-14 15-19 20-24 25-29 30-34 35-39 40-44 45-49 50-54 55-59 60-64 65-69 70-74 75+ Total
+    BARSHONG
+    Barshong Maed 21 20 27 13 15 13 11 25 19 12 10 13 16 9 5 9 238
+    Male 11 7 14 9 5 7 4 12 10 5 6 7 8 5 2 5 117
+    Female 10 13 13 4 10 6 7 13 9 7 4 6 8 4 3 4 121
+    Barshong Toed 11 19 14 9 11 13 14 11 18 16 15 6 9 6 9 6 187
+    Male 7 8 8 8 7 7 6 6 7 8 9 2 3 3 4 5 98
+    Female 4 11 6 1 4 6 8 5 11 8 6 4 6 3 5 1 89
+    Choonyikhang 11 12 15 5 6 10 7 8 11 9 9 15 4 4 3 6 135
+    Male 6 6 7 3 2 4 5 3 3 6 7 6 3 2 1 2 66
+    Female 5 6 8 2 4 6 2 5 8 3 2 9 1 2 2 4 69
+    Gangtogkha 6 8 12 2 8 8 14 6 15 10 17 8 15 5 6 11 151
+    Male 2 2 7 2 4 5 5 4 2 9 8 2 8 1 3 8 72
+    Female 4 6 5 0 4 3 9 2 13 1 9 6 7 4 3 3 79
+    Toedsang 7 11 1 1 7 10 11 12 11 12 8 12 10 4 8 6 131
+    Male 2 7 1 1 3 3 6 5 7 7 5 6 4 3 4 6 70
+    Female 5 4 0 0 4 7 5 7 4 5 3 6 6 1 4 0 61
+    All Chiwogs 56 70 69 30 47 54 57 62 74 59 59 54 54 28 31 38 842
+    Male 28 30 37 23 21 26 26 30 29 35 35 23 26 14 14 26 423
+    Female 28 40 32 7 26 28 31 32 45 24 24 31 28 14 17 12 419
+    38
+
+  -- page 48
+    ANNEX 2: Statistical Tables
+    Table A2.7 Population by Age, Sex, Chiwog and Gewog/Town, Tsirang Dzongkhag 2017
+    Gewog/Town/ Age
+    Chiwog/Sex 0-4 5-9 10-14 15-19 20-24 25-29 30-34 35-39 40-44 45-49 50-54 55-59 60-64 65-69 70-74 75+ Total
+    PATSHALING
+    Thakorling 29 35 33 15 26 24 23 31 22 18 24 16 11 10 8 5 330
+    Male 15 19 15 7 11 9 9 15 10 11 11 6 7 5 5 3 158
+    Female 14 16 18 8 15 15 14 16 12 7 13 10 4 5 3 2 172
+    Chhudzomsa 30 27 22 19 26 24 25 25 21 20 15 12 11 14 6 7 304
+    Male 16 15 7 13 10 10 15 12 7 11 5 6 5 7 4 2 145
+    Female 14 12 15 6 16 14 10 13 14 9 10 6 6 7 2 5 159
+    Patshaling Toed 21 16 14 12 13 11 13 16 13 12 10 9 8 5 7 4 184
+    Male 12 9 9 4 5 4 6 7 9 7 4 3 4 4 2 2 91
+    Female 9 7 5 8 8 7 7 9 4 5 6 6 4 1 5 2 93
+    Patshaling Maed_
+    18 11 13 5 21 18 21 18 10 3 10 8 7 6 5 3 179
+    Tsakaling
+    Male 7 5 5 5 11 9 14 9 4 2 6 2 3 4 4 1 91
+    Female 11 6 8 0 10 9 7 9 6 1 4 6 4 2 1 2 88
+    Pangthang 13 8 3 1 11 10 12 11 16 19 12 13 10 7 3 3 162
+    Male 9 2 3 1 8 3 6 3 7 10 5 7 7 6 2 3 82
+    Female 4 6 0 0 3 7 6 8 9 9 7 6 3 1 1 0 80
+    All Chiwogs 111 97 85 52 97 87 94 101 82 72 71 58 47 42 29 22 1,159
+    Male 59 50 39 30 45 35 50 46 37 41 31 24 26 26 17 11 567
+    Female 52 47 46 22 52 52 44 55 45 31 40 34 21 16 12 11 592
+    KILKHORTHANG
+    Dekiling 67 69 98 77 75 76 65 60 33 64 60 42 36 19 17 34 892
+    Male 36 41 65 40 38 37 31 23 14 27 22 21 25 11 12 15 458
+    Female 31 28 33 37 37 39 34 37 19 37 38 21 11 8 5 19 434
+    Tashiyangjong 18 14 24 7 11 22 12 17 17 12 20 16 14 4 4 8 220
+    Male 9 6 12 4 7 12 5 8 10 5 11 8 6 2 3 3 111
+    Female 9 8 12 3 4 10 7 9 7 7 9 8 8 2 1 5 109
+    Nyizergang 27 22 31 8 27 31 31 19 22 20 20 17 17 14 13 11 330
+    Male 16 10 14 5 16 16 14 9 13 9 9 7 11 8 8 8 173
+    Female 11 12 17 3 11 15 17 10 9 11 11 10 6 6 5 3 157
+    Sa-Tsangma 11 15 17 3 12 15 12 15 6 14 6 14 7 6 5 8 169
+    Male 2 8 11 3 9 7 6 8 2 9 3 4 3 4 3 5 87
+    Female 9 7 6 0 3 8 6 7 4 5 3 10 4 2 2 3 82
+    Maenchhana 45 40 21 27 43 50 45 50 29 28 30 13 22 14 5 9 534
+    Male 23 24 21 27 24 20 24 23 16 15 14 6 14 7 3 9 270
+    Female 22 16 0 0 19 30 21 27 13 13 16 7 8 7 2 0 264
+    All Chiwogs 168 160 191 122 168 194 165 161 107 138 136 102 96 57 44 70 2,145
+    Male 86 89 123 79 94 92 80 71 55 65 59 46 59 32 29 40 1,099
+    Female 82 71 68 43 74 102 85 90 52 73 77 56 37 25 15 30 1,046
+    MENDRELGANG
+    Dzamling Zor 9 4 2 2 15 16 9 14 13 8 13 11 9 4 6 1 136
+    Male 3 3 2 2 9 8 4 8 7 3 7 7 3 2 4 1 73
+    Female 6 1 6 8 5 6 6 5 6 4 6 2 2 63
+    Pemashong_
+    27 52 180 254 38 35 45 32 35 20 28 17 20 8 10 15 816
+    Samshing Gaden
+    Male 13 29 158 239 23 20 25 15 19 13 15 8 14 4 5 7 607
+    Female 14 23 22 15 15 15 20 17 16 7 13 9 6 4 5 8 209
+    39
+
+  -- page 52
+    ANNEX 2: Statistical Tables
+    Table A2.7 Population by Age, Sex, Chiwog and Gewog/Town, Tsirang Dzongkhag 2017
+    Gewog/Town/ Age
+    Chiwog/Sex 0-4 5-9 10-14 15-19 20-24 25-29 30-34 35-39 40-44 45-49 50-54 55-59 60-64 65-69 70-74 75+ Total
+    Tashiling Maed 16 16 17 3 13 20 18 18 17 18 11 9 8 10 8 9 214
+    Male 6 6 11 3 7 9 8 13 10 9 5 2 5 6 2 6 108
+    Female 10 10 6 0 6 11 10 5 7 9 6 7 3 4 6 3 106
+    Tashiling Toed 11 14 13 4 17 13 17 13 13 23 7 12 11 5 4 5 193
+    Male 5 7 13 4 11 5 7 7 6 11 3 6 5 4 2 5 101
+    Female 6 7 0 0 6 8 10 6 7 12 4 6 6 1 2 0 92
+    All Chiwogs 81 111 111 28 114 104 103 109 87 99 73 62 60 50 50 56 1,312
+    Male 40 61 61 18 79 59 53 59 45 49 36 27 31 32 29 33 712
+    Female 41 50 50 10 35 45 50 50 42 50 37 35 29 18 21 23 600
+    TSIRANG TOED
+    Tagthang_
+    27 23 47 26 29 19 23 22 24 21 30 33 13 10 6 13 366
+    Wangphu
+    Male 17 12 23 11 12 9 7 10 10 11 14 18 7 9 3 6 179
+    Female 10 11 24 15 17 10 16 12 14 10 16 15 6 1 3 7 187
+    Kabelzhing 21 16 27 10 15 12 14 10 14 20 14 11 7 10 6 7 214
+    Male 14 10 12 6 7 7 7 6 6 8 7 6 4 5 4 5 114
+    Female 7 6 15 4 8 5 7 4 8 12 7 5 3 5 2 2 100
+    Tsirang Toed 23 27 26 23 37 33 30 30 26 15 10 10 16 7 2 5 320
+    Male 15 13 13 13 31 24 19 17 20 7 7 4 9 4 2 198
+    Female 8 14 13 10 6 9 11 13 6 8 3 6 7 3 2 3 122
+    Tongshingnang 7 8 10 3 9 6 3 9 5 3 6 7 9 3 3 4 98
+    Male 2 6 8 3 6 2 1 5 1 1 1 3 6 2 1 1 49
+    Female 5 2 2 0 3 4 2 4 4 2 5 4 3 1 2 3 49
+    Soentabsa 42 48 32 5 37 32 39 48 18 20 16 26 20 12 9 8 453
+    Male 25 25 32 5 15 16 16 28 10 5 7 15 11 6 5 8 229
+    Female 17 23 0 0 22 16 23 20 8 15 9 11 9 6 4 0 224
+    All Chiwogs 120 122 142 67 127 102 109 119 87 79 76 87 65 42 26 37 1,451
+    Male 73 66 88 38 71 58 50 66 47 32 36 46 37 26 13 22 769
+    Female 47 56 54 29 56 44 59 53 40 47 40 41 28 16 13 15 682
+    TSIRANG TOWN
+    Local Area 1 74 104 123 538 129 113 116 107 65 49 30 13 13 10 8 14 1,506
+    Male 39 45 59 259 73 69 70 52 35 30 17 9 4 7 4 7 779
+    Female 35 59 64 279 56 44 46 55 30 19 13 4 9 3 4 7 727
+    Local Area 2 90 88 112 96 104 114 125 98 88 55 42 25 10 15 11 13 1,086
+    Male 45 39 61 42 60 55 63 63 50 34 26 14 5 4 4 5 570
+    Female 45 49 51 54 44 59 62 35 38 21 16 11 5 11 7 8 516
+    Local Area 3 75 62 86 75 104 124 82 68 49 37 25 19 17 7 11 15 856
+    Male 44 35 60 44 72 72 51 35 25 24 15 9 8 2 4 5 505
+    Female 31 27 26 31 32 52 31 33 24 13 10 10 9 5 7 10 351
+    All Local Areas 239 254 321 709 337 351 323 273 202 141 97 57 40 32 30 42 3,448
+    Male 128 119 180 345 205 196 184 150 110 88 58 32 17 13 12 17 1,854
+    Female 111 135 141 364 132 155 139 123 92 53 39 25 23 19 18 25 1,594
+    MENDRELGANG
+    TOWN
+    Local Area 1 8 6 3 5 3 6 4 5 6 3 1 1 3 3 2 3 62
+    Male 5 2 1 4 1 4 1 1 3 1 1 1 1 2 1 2 31
+    Female 3 4 2 1 2 2 3 4 3 2 0 0 2 1 1 1 31
+    All Local Areas 8 6 3 5 3 6 4 5 6 3 1 1 3 3 2 3 62
+    Male 5 2 1 4 1 4 1 1 3 1 1 1 1 2 1 2 31
+    Female 3 4 2 1 2 2 3 4 3 2 0 0 2 1 1 1 31
+    43
