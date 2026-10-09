@@ -1,28 +1,363 @@
-timor_age: Population and Housing Census 2022, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Main Report basic table 4.05: population by urban/rural location, age, municipality and sex
-  fetched Chapter-4-TLPHC-Census-report-Basic-tables.xlsx (0.5 MB)
-  table 4.05 cells printed '-' where their row's other figures show people, read as the difference: atauro M at 83: '-' read as 2
-  table 4.05: 14 municipalities, single years to 85+, making the country's 1,341,737; national median 21.7
-  table 4.01: 67 posts in 14 municipalities, each municipality's posts making it
-  Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 tables 6 and 7: population by municipality, administrative post, sex and age group (under 15, 15-64, 65 and over; and the school ages 3-5 to 25-29)
-  fetched 2_2015-V2-Population-by-Age-Sex.xls (0.9 MB)
-  2015 tables 6 and 7: 65 posts in 13 municipalities, posts making their municipality and municipalities the country in every group and sex
-  2015 table 5: single years make 1,183,645, +2 on its total 1,183,643
-  2015 sheet 2.5.1a: single years make 48,839, +2 on its total 48,837
-  2015 sheet 2.5.1b: single years make 63,138, +2 on its total 63,136
-  2015 sheet 2.5.1c: single years make 123,205, +2 on its total 123,203
-  2015 sheet 2.5.1d: single years make 97,764, +2 on its total 97,762
-  2015 sheet 2.5.1e: single years make 65,303, +2 on its total 65,301
-  2015 sheet 2.5.1f: single years make 277,281, +2 on its total 277,279
-  2015 sheet 2.5.1g: single years make 125,704, +2 on its total 125,702
-  2015 sheet 2.5.1h: single years make 65,242, +2 on its total 65,240
-  2015 sheet 2,.5.1i: single years make 71,929, +2 on its total 71,927
-  2015 sheet 2.5.1j: single years make 46,621, +2 on its total 46,619
-  2015 sheet 2.5.1k: single years make 53,693, +2 on its total 53,691
-  2015 sheet 2.5.1l: single years make 68,915, +2 on its total 68,913
-  2015 sheet 2.5.1m: single years make 76,035, +2 on its total 76,033
-  2015 groups' medians against single years', country and 13 municipalities: widest gap 0.2 years (Viqueque 19.2 against 19.0)
-  2015 posts: 65 of 65 with a median below 30 to interpolate (16.3-23.0)
-  admin1: 13 units; median [19.6]..[22.5]; sex ratio 99.1-108.7
-  admin2: 65 units; median [16.3]..[23.0]; sex ratio 95.1-110.8
-  wrote data/processed/timor_age.json (284 kB)
-  wrote timor_age.json: 78 records
+probe_pdf: https://inetl-ip.gov.tl/wp-content/uploads/2025/06/Aileu-em-Numeros-2022.pdf
+  5,022,070 bytes
+  99 pages
+probe_pdf: 99 pages, 56 mention ['2.1.2', '2.1.3', '2.1.4', '2.1.5', '2.1.6', '2.1.7', '2.1.8', '2.2.1', 'Posto']
+=== front matter ===
+ 
+ 
+
+=== pages mentioning ['2.1.2', '2.1.3', '2.1.4', '2.1.5', '2.1.6', '2.1.7', '2.1.8', '2.2.1', 'Posto'] (first 30) ===
+
+--- page 8 ----------------------------------------------------
+1.2.1.  Estrutura Administrativa de Município de Aileu
+Diploma Ministerial No:199/GM/MAEOT/IX/09 de 15 de Setembro de 2009 e
+Diploma Minesterial no: 16/2017 Criasaun Suco foun
+Posto Administrativos Sucos Aldeias
+Aileu Vila  12 65
+Liquidoe 7 22
+Remexio 8 27
+Laulara 6 25
+Total 33 139
+        1.2.2. Area Administrativa por Posto Administrativos  em
+Município de Aileu
+Fonte:  Ministério da Administração Estatal
+Aileu em Números, 2022 3
+Posto
+Administrativos       Square Km² Perҫentagem (%)
+Aileu Vila  325.4 44.3
+Liquidoe 138.4 18.8
+
+--- page 9 ----------------------------------------------------
+1.2.3.  Município de Aileu Fahe tuir Posto Administrativos, Sucos e
+Aldeias
+AILEU  VILA
+Continua...
+Posto Administrativo  Sucos Aldeias
+1. Aissirimou 1. Aitohu-Laran
+  2. Bere-Cate
+  3. Bessilau
+
+--- page 10 ----------------------------------------------------
+Continua...
+Continuaҫão 1.2.3.
+Posto Administrativo  Sucos Aldeias
+6. Lahae 1. Denhuni
+  2. Eralolo
+  3. Lacasori
+
+--- page 11 ----------------------------------------------------
+Continua...
+Continuaҫão 1.2.3.
+Posto Administrativo  Sucos Aldeias
+11. Seloi Malere 1. Cabas Fatin
+ 2. Hula Rema
+ 3. Malere
+
+--- page 12 ----------------------------------------------------
+Continua...
+Continuaҫão 1.2.3.
+Posto Administrativo  Sucos Aldeias
+1. Namoleso 1. Aitoin
+ 2. Lacabou
+ 3. Mau Curnamo
+
+--- page 13 ----------------------------------------------------
+Continua...
+Continuaҫão 1.2.3.
+Posto Administrativo  Sucos Aldeias
+1. Asu-Mau 1. Lerolisa
+  2. Aimera-Hun
+  3. Fatu Manaru
+
+--- page 14 ----------------------------------------------------
+Continuaҫão 1.2.3.
+Posto Administrativo  Sucos Aldeias
+1. Bocolelo 1. Donfonamo
+ 2. Mauberhatan
+ 3. Ermequi
+
+--- page 15 ----------------------------------------------------
+         1.3.1.   Distância entre a cidade   Posto Administrativos
+Fonte :  Serviҫo Administrasaun Município  de Aileu
+1.3.  DISTÂNCIA
+Aileu Vila
+
+--- page 21 ----------------------------------------------------
+75 - 79 118 88 206 221 173 394 360  334  694
+80+ 104 86 190 164 139 303 270  240  510
+Total 22,902 21,423 44,325 25,183 23,654 48,837 28,093  26,231  54,324
+2.1.2.  População Município  de Aileu, tuir Grupo de Idade e Sexo,
+Censo 2010, Censo 2015  e Censo 2022
+Fonte: Instituto Nacional de Estatística, I.P.
+              -  Censo Populaҫão no Uma kain 2010, 2015 e 2022
+
+--- page 22 ----------------------------------------------------
+Fonte: Instituto Nacional de Estatística, I.P.
+              - Censo Populaҫão no Uma kain 2004, 2010, 2015  e 2022
+2.1.3.  Trend  Pirâmide População Censo 2004, Censo 2010, Censo
+2015 e Censo 2022 em Município  de Aileu,  por Grupo de
+Idade  e Sexo
+Aileu em Números, 2022 17
+
+--- page 23 ----------------------------------------------------
+Fonte: Instituto Nacional de Estatística, I.P.
+              - Censo Populaҫão no Uma kain 2010 e 2022
+2.1.4.  Trend Pirâmide População tinan 10 iha Município  de Aileu,
+por Grupo de Idade  e Sexo
+Aileu em Números, 2022 18
+
+--- page 24 ----------------------------------------------------
+2.1.5.  População Município  de Aileu, tuir Grupo  de Idade e Sexo,
+2022
+Aileu em Números, 2022 19
+Grupu de Idade         Total Sexo
+
+--- page 25 ----------------------------------------------------
+2.1.6.  Pírâmide População Município de Aileu, por Grupo de Idade
+e Sexo, 2022
+Fonte:  Censo População no Umakain 2022
+Aileu em Números, 2022 20
+
+--- page 26 ----------------------------------------------------
+  2.1.7.  Gráfico: População Município  de Aileu por Referência
+Temporal Vários
+Aileu em Números, 2022 21
+Fontes:  Instituto Nacional de Estatística, I.P.
+
+--- page 27 ----------------------------------------------------
+  2.1.8.   Gráfico: População Município  de Aileu, tuir Lingua
+Materna Censo Populasaun 2022
+Fonte:  Instituto Nacional de Estatística, I.P.
+              - Censo População no Uma Kain 2015 e 2022
+
+--- page 29 ----------------------------------------------------
+2.2.  EDUCAÇÃO
+Aileu em Números, 2022 24
+         2.2.1.  Ensino Pre-Escolar                                             i
+   2.2.1.1.  Número Alunos Escola Publico + Privado, por Posto
+Administrativos em Município de Aileu, 2022
+ 2.2.1.2.  Número Alunos Escola Publico + Privado, por Ano em
+Município de Aileu, 2017 até  2022
+Fonte:  EMIS Ministério da Educação
+Ano
+      ...
+*2017 393 348 741 132 150 282 525 498 1,023
+Fonte: - EMIS Ministério da Educação
+- *http://www.moe.gov.tl/ 2017 e 2018
+Posto
+Adminis-
+trativo
+Alunos Ensino Pre-Escolar
+
+--- page 30 ----------------------------------------------------
+Aileu em Números, 2022 25
+   2.2.1.3.  Número Professores Escola Publico + Privado, por
+Posto Administrativos em Município de Aileu, 2022
+ 2.2.1.4.  Número Professores Escola Publico + Privado, por
+Ano em Município de Aileu, 2017 até 2022
+Fonte:  EMIS Ministério da Educação
+Ano
+      ...
+*2017 1 20 21 0 8 8 1 28 29
+Fonte: - EMIS Ministério da Educação
+- *http://www.moe.gov.tl/ 2017 e 2018
+Posto
+Adminis-
+trativo
+Professores Ensino Pre-Escolar
+
+--- page 31 ----------------------------------------------------
+Aileu em Números, 2022 26
+2.2.1.5.  Número Escola Público + Privado Por Posto
+Administrativos em Município de Aileu, 2022
+         2.2.1.6.  Número  Escola Público + Privado por Ano, em
+Município de Aileu 2017 até 2022
+Ano
+Escolas Ensino Pre-Escolar
+      ...
+*2018 19 7 26
+*2017 17 6 23
+Fonte:  EMIS Ministério da Educação
+Posto
+Adminstrativos
+Escolas Ensino Pre-Escolar
+Público  Privado Público + Privado
+
+--- page 32 ----------------------------------------------------
+Aileu em Números, 2022 27
+         2.2.1.7.  Número  Salas Ensino Pre-Escolar  Público +
+Privado por Ano, em Município de Aileu, 2022
+Posto
+Adminis-
+trativo
+Escolas Ensino Pre-Escolar
+      ...
+Remexio 4 0 3 0 0 0 2 0 3
+Sub Total  20 0 8 3 0 4 18 0 14
+Total 28 7 32
+         2.2.1.8.  Médio Alunos por Professores Escola Público +
+Privado, em Município de Aileu, 2017 até 2022
+Ano
+Médio Alunos por Professores
+
+--- page 33 ----------------------------------------------------
+         2.2.2.  Ensino Básico
+Aileu em Números, 2022 28
+   2.2.2.1.  Número Alunos Escola Publico + Privado, por Posto
+Administrativos em Município de Aileu, 2022
+ 2.2.2.2.  Número Alunos Escola Publico + Privado, por Ano em
+Município de Aileu, 2017 até  2022
+      ...
+*2017 5,971 5,634 11,605 371 377 748 6,342 6,011 12,353
+Fonte: - EMIS Ministério da Educação
+- *http://www.moe.gov.tl/ 2017 e 2018
+Posto
+Adminis-
+trativo
+Alunos Ensino Básico
+
+--- page 34 ----------------------------------------------------
+Aileu em Números, 2022 29
+   2.2.2.3.  Número Professores Escola Publico + Privado, por
+Posto Administrativos em Município de Aileu, 2022
+ 2.2.2.4.  Número Professores Escola Publico + Privado, por
+Ano em Município de Aileu, 2017 até  2022
+Fonte:  EMIS Ministério da Educação
+      ...
+*2017 284 154 438 22 17 39 306 171 477
+Fonte: - EMIS Ministério da Educação
+- *http://www.moe.gov.tl/ 2017 e 2018
+Posto
+Adminis-
+trativo
+Professores Ensino Básico
+
+--- page 35 ----------------------------------------------------
+Aileu em Números, 2022 30
+2.2.2.5.  Número  Escola Público + Privado Por Posto
+Administrativos em Município de Aileu, 2022
+Posto
+Adminstrativos
+Escolas Ensino Básico
+Público  Privado Público + Privado
+
+--- page 36 ----------------------------------------------------
+         2.2.3. Ensino Secundário Geral
+Aileu em Números, 2022 31
+   2.2.3.1.  Número Alunos Escola Publico + Privado, por Posto
+Administrativos em Município de Aileu, 2022
+ 2.2.3.2.  Número Alunos Escola Publico + Privado, por Ano em
+Município de Aileu, 2017 até  2022
+      ...
+2019 852 952 1,804 333 440 773 1,185 1,392 2,577
+*2018 815 851 1,666 294 380 674 1,109 1,231 2,340
+*2017 735 784 1,519 255 245 600 990 1,129 2,119
+Posto
+Adminis-
+trativo
+Alunos Ensino Secundário Geral
+
+--- page 37 ----------------------------------------------------
+Aileu em Números, 2022 32
+   2.2.3.3.  Número Professores Escola Publico + Privado, por
+Posto Administrativos em Município de Aileu, 2022
+ 2.2.3.4.  Número Professores Escola Publico + Privado, por
+Ano em Município de Aileu, 2017 até  2022
+Fonte:  EMIS Ministério da Educação
+      ...
+*2017 x x 52 x x 32 x x 84
+Fonte:  EMIS Ministério da Educação
+- *http://www.moe.gov.tl/ 2017 e 2018
+Posto
+Adminis-
+trativo
+Professores Ensino Secundário Geral
+
+--- page 38 ----------------------------------------------------
+Aileu em Números, 2022 33
+2.2.3.5.  Número  Escola Público + Privado Por Posto
+Administrativos em Município de Aileu, 2022
+         2.2.3.6.  Número  Escola Público + Privado por Ano, em
+Município de Aileu 2017 até 2022
+      ...
+*2018 33 22 29
+*2017 29 19 25
+Fonte:  EMIS Ministério da Educação
+Posto
+Adminstrativos
+Escolas Ensino Secundário Geral
+Público  Privado Público + Privado
+
+--- page 39 ----------------------------------------------------
+         2.2.4. Ensino Secundário Tecnico Vocasional
+Aileu em Números, 2022 34
+   2.2.4.1.  Número Alunos Escola Publico + Privado, por Posto
+Administrativos em Município de Aileu, 2022
+ 2.2.4.2.  Número Alunos Escola Publico + Privado, por Ano em
+Município de Aileu, 2017 até  2022
+      ...
+*2017 200 174 374 0 0 0 200 174 374
+Fonte:  EMIS Ministério da Educação
+- *http://www.moe.gov.tl/ 2017 e 2018
+Posto
+Adminis-
+trativo
+Alunos Ensino Secundário Tecnico Vocasional
+
+--- page 40 ----------------------------------------------------
+Aileu em Números, 2022 35
+   2.2.4.3.  Número Professores Escola Publico + Privado, por
+Posto Administrativos em Município de Aileu, 2022
+ 2.2.4.4.  Número Professores Escola Publico + Privado, por
+Ano em Município de Aileu, 2017 até  2022
+Fonte:  EMIS Ministério da Educação
+      ...
+*2017 x x 18 0 0 0 x x 18
+Fonte:  EMIS Ministério da Educação
+- *http://www.moe.gov.tl/ 2017 e 2018
+Posto
+Adminis-
+trativo
+Professores Ensino Secundário Tecnico Vocasional
+
+--- page 41 ----------------------------------------------------
+Aileu em Números, 2022 36
+2.2.4.5.  Número  Escola Público + Privado Por Posto
+Administrativos em Município de Aileu, 2022
+Posto
+Adminstrativos
+Escolas Ensino Secundário Tecnico Vocasional
+Público  Privado Público + Privado
+
+--- page 44 ----------------------------------------------------
+2.3. SAÚDE
+         2.3.1.  Estabelesemento Facelidade da Saúde no SISCA Tuir Posto
+Administrativo iha Município de Aileu, 2022
+          2.3.2.  Estabelesemento Pesoal da Saúde Municipio de Aileu, 2022
+Fonte:  Centro Saúde Município de Aileu
+Aileu em Números, 2022 39
+Fonte:  Centro Saúde Município de Aileu
+Posto
+Administrativo
+Doutor
+Especialista
+      ...
+trativo
+Hospital Centro
+da Saúde
+Posto da
+Saúde
+Posto
+SISCA
+Materni-
+dade
+
+--- page 45 ----------------------------------------------------
+Aileu em Números, 2022 40
+        2.3.3.  Transporte no Comunicaҫão Saúde por Posto Administrativo em Município de Aileu, 2022
+Posto
+Administra-
+tivos
+Kareta Operasional Motorizadas Radio SSB Telefone Fixo
+
+... and 26 further pages match; re-run with a narrower --terms to see them.
