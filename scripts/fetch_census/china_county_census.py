@@ -13,7 +13,7 @@ not.
 
 **What the map draws.** China's 2,370 second-level polygons are a county
 division of the mid-1990s, so a 2020 county row belongs on a polygon only where
-the polygon is still that one county. Five tests, all of which must pass:
+the polygon is still that one county. Six tests, all of which must pass:
 
 1. the row is a county, autonomous county, banner or county-level city, never
    a district (a name ending 区), whose ground the cities have redrawn, and
@@ -37,7 +37,14 @@ the polygon is still that one county. Five tests, all of which must pass:
    holding two is a county a later district was cut from, or a city;
 5. where the map already carries an older population for the polygon, the 2020
    count is within ``DRIFT`` of it: a county that lost or gained ground since
-   would show as a jump no ten years of migration explain.
+   would show as a jump no ten years of migration explain;
+6. the polygon holds the county's own townships of 2020 and no other unit's
+   (``china_zones``' placement of every township in the statistical division
+   codes at its Wikidata point): a township the codes list under another unit
+   that stands deep inside the polygon -- no other polygon within about 3 km
+   -- is ground the county lost since the polygon was drawn, which no seat
+   shows, and one of its own standing more than 3 km outside it is ground it
+   gained. Townships without a point are not seen by this test.
 
 Wikidata names no figure here. It is only the bridge from a yearbook's Chinese
 county name to its GB/T 2260 code (``--fetch-names`` writes
@@ -95,6 +102,7 @@ NAMES = RAW / "wikidata_points" / "CHN_P442_zh.json"
 SEATS = RAW / "wikidata_points" / "CHN_P442_seats.json"
 SEAT_NAMES = RAW / "wikidata_points" / "CHN_P442_seat_names.json"
 ZONE_GROUND = RAW / "wikidata_points" / "CHN_zone_ground.json"
+TOWN_GROUND = RAW / "wikidata_points" / "CHN_township_ground.json"
 CODE_SHAPES = PROCESSED / "code_shapes.json"
 PROVINCE_FILE = PROCESSED / "china_census_province.json"
 CDX = "https://web.archive.org/cdx/search/cdx"
@@ -192,7 +200,13 @@ CUT_FROM: dict[str, tuple[tuple[str, ...], str]] = {
 POPULATION_NOTE = (
     "The 2020 census count of this county, {book}, Table 1-1, read for the polygon because the "
     "polygon is still this one county: it holds the county's seat and no other county-level "
-    "seat of today ({how}), {zones}, and {drift}")
+    "seat of today ({how}), {zones}, {towns}, and {drift}")
+TOWNS_CLEAR = (
+    "its townships of 2020 stand in it and no other unit's does ({placed} of its {total} "
+    "townships in the statistical division codes have a Wikidata point, and each stands in the "
+    "polygon or within 3 km of it; no township the codes list under another unit stands inside "
+    "it)")
+TOWNS_UNREAD = "no township listing reaches it, so its townships were not placed"
 NO_ZONE = "its prefecture lists no development zone counted apart"
 ZONES_CLEAR = (
     "no special unit the yearbook counts apart stands on it: the {towns} townships of {names} "
@@ -216,6 +230,10 @@ REFUSED_NOTE = {
     "held": ("{book} counts {label} ({code}) in 2020, but its figures are not put on this "
              "polygon: {what}, and the yearbook counts that unit apart from the counties whose "
              "ground it holds, so this county's row may be short of the ground drawn here."),
+    "towns": ("{book} counts {label} ({code}) in 2020, but its figures are not put on this "
+              "polygon: {what} (the statistical division codes of 2020, each township at its "
+              "Wikidata point), so the ground the county had in 2020 is not the ground drawn "
+              "here."),
     "cut": ("{book} counts {label} ({code}) in 2020, but its figures are not put on this "
             "polygon: {what}, and the yearbook counts that zone apart, so the county's row is "
             "short of the ground drawn here."),
@@ -653,8 +671,9 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
          seats: dict[str, list[str]], units: dict[str, dict[str, Any]],
          lone: dict[str, tuple[str, dict[str, Any]]] | None = None,
          ground: dict[str, dict[str, Any]] | None = None,
+         towns: dict[str, list[list[Any]]] | None = None,
          ) -> tuple[dict[int, str], Counter]:
-    """{row position: shape id} for the county rows that pass all five tests,
+    """{row position: shape id} for the county rows that pass all six tests,
     and why the others did not. Each county-level area carries its own
     outcome as ``why`` for the log; one refused although its polygon is known
     (tests 2 and 5) also carries ``refused`` (the shape and the reason), so
@@ -666,6 +685,14 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
         if a["kind"] == "special" and a["prefecture"]:
             zoned.setdefault(a["prefecture"], []).append(a["label"])
     unplaced, held, placed = zone_places(code, areas, ground or {})
+    # Every placed township standing deep inside a polygon: no other polygon
+    # within china_zones.NEAR of its point, so no generalised line can have
+    # put it there. {shape id: [(its unit's code, its name)]}.
+    inside: dict[str, list[tuple[str, str]]] = {}
+    for unit_code_, rows in (towns or {}).items():
+        for row in rows:
+            if len(row) >= 4 and row[2] and (row[3] or []) == [row[2]]:
+                inside.setdefault(row[2], []).append((unit_code_, row[1]))
     cut: dict[str, str] = {}
     for area in areas:
         if area["kind"] == "special" and area["prefecture"] is None and area["head"] is None:
@@ -755,6 +782,23 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
                                                f"{median:.2f}" if drift["relative"] else ""))
                 area["refused"] = (shape, "drift", drift)
                 continue
+        # Test 6: the polygon holds the county's own 2020 townships and no
+        # other unit's. A township the codes list under another unit that
+        # stands deep inside the polygon (no other polygon within NEAR of it)
+        # is ground the county has lost since the polygon was drawn; one of
+        # its own standing more than NEAR outside it is ground it has gained.
+        own = (towns or {}).get(unit_code)
+        if own is not None:
+            foreign = [(u, t) for u, t in inside.get(shape, []) if u != unit_code]
+            outside = [row[1] for row in own if len(row) >= 4 and shape not in (row[3] or [])]
+            if foreign or outside:
+                detail = {"foreign": foreign, "outside": outside}
+                refuse(area, "its 2020 townships are not its polygon's",
+                       "; ".join([f"{t} ({u}) inside" for u, t in foreign[:3]]
+                                 + [f"{t} outside" for t in outside[:3]]))
+                area["refused"] = (shape, "towns", detail)
+                continue
+            area["towns"] = (sum(1 for row in own if len(row) >= 4), len(own))
         if shape in used:
             raise SystemExit(f"china_county_census: {shape} would be bound twice")
         used.add(shape)
@@ -832,6 +876,9 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
     zones = area.get("zones")
     zones_text = NO_ZONE if not zones else ZONES_CLEAR.format(
         towns=zones["towns"], names=", ".join(zones["units"]), listing=zones["listing"])
+    towns = area.get("towns")
+    towns_text = TOWNS_UNREAD if not towns else TOWNS_CLEAR.format(placed=towns[0],
+                                                                  total=towns[1])
     return record(
         f"CHN-{shape}", unit["name"], level="admin2",
         parent=parents.get(unit.get("parent"), "CHN"), country="CHN",
@@ -839,7 +886,8 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
         codes={"gb2260": area["code"]},
         population=measure(int(a0101[i]["total"]), year=YEAR, source=f"{book}, Table 1-1"),
         population_note=POPULATION_NOTE.format(book=book, how=area.get("how", ""),
-                                               zones=zones_text, drift=drift_text),
+                                               zones=zones_text, towns=towns_text,
+                                               drift=drift_text),
         sex_ratio=sex_ratio(a0101[i]["men"], a0101[i]["women"], year=YEAR,
                             source=f"{book}, Table 1-1"),
         sex_ratio_note=f"{int(a0101[i]['men']):,} men and {int(a0101[i]['women']):,} women.",
@@ -849,7 +897,8 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
 
 
 def refused_record(code: str, area: dict[str, Any], unit: dict[str, Any],
-                   parents: dict[str, str], a0101: dict) -> dict[str, Any]:
+                   parents: dict[str, str], a0101: dict,
+                   names: dict[str, list[str]] | None = None) -> dict[str, Any]:
     """The reason a county the yearbook counts is not drawn on the polygon
     that is its own, on that polygon: a gap with a note, which displaces
     china_census_county's general one and no figure."""
@@ -869,6 +918,22 @@ def refused_record(code: str, area: dict[str, Any], unit: dict[str, Any],
             f"{' and others' if len(towns) > 4 else ''} "
             f"{'stands' if len(towns) == 1 else 'stand'} on it or within about 3 km of it"
             for zone, towns in by_zone.items())
+    elif kind == "towns":
+        parts = []
+        by_unit: dict[str, list[str]] = {}
+        for other, town in detail["foreign"]:
+            by_unit.setdefault(other, []).append(town)
+        for other, towns_ in by_unit.items():
+            called = ((names or {}).get(other) or [other])[0]
+            parts.append(f"{'、'.join(towns_[:4])}{' and others' if len(towns_) > 4 else ''}, "
+                         f"which the codes list under {called} ({other}), "
+                         f"{'stands' if len(towns_) == 1 else 'stand'} inside it")
+        if detail["outside"]:
+            out = detail["outside"]
+            parts.append(f"its own {'township' if len(out) == 1 else 'townships'} "
+                         f"{'、'.join(out[:4])}{' and others' if len(out) > 4 else ''} "
+                         f"{'stands' if len(out) == 1 else 'stand'} more than 3 km outside it")
+        what = "; ".join(parts)
     elif kind == "cut":
         what = detail
     else:
@@ -895,7 +960,8 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
           explain: bool = False,
           seat_names: dict[str, dict[str, Any]] | None = None,
           missing: dict[str, str] | None = None,
-          ground: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+          ground: dict[str, dict[str, Any]] | None = None,
+          towns: dict[str, list[list[Any]]] | None = None) -> list[dict[str, Any]]:
     """The province's county records. ``missing`` is {table: why it could
     not be read} for an OPTIONAL table that was not; ``ground`` is where
     ``china_zones`` placed the special units' townships."""
@@ -910,11 +976,11 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
     units = {u["id"]: u for u in admin2}
     parents = {u["id"]: f"CHN-{u['name']}" for u in admin1}
     bound, why = bind(code, areas, a0101, code_shapes, seats, units,
-                      lone_seats(seat_names or {}), ground)
+                      lone_seats(seat_names or {}), ground, towns)
     out = [county_record(code, area, bound[area["index"]], units[bound[area["index"]]], parents,
                          a0101, a0104, a0105, urls, missing.get("A0105", ""))
            for area in areas if area["index"] in bound]
-    out += [refused_record(code, area, units[area["refused"][0]], parents, a0101)
+    out += [refused_record(code, area, units[area["refused"][0]], parents, a0101, names)
             for area in areas if area.get("refused")]
     if explain:
         for area in areas:
@@ -964,6 +1030,10 @@ def main() -> int:
     # county in a prefecture listing one is refused, as before.
     ground = (json.loads(ZONE_GROUND.read_text(encoding="utf-8"))
               if ZONE_GROUND.exists() else {})
+    # And every county-level unit's townships (test 6); without it the test
+    # is not made and each county's note says so.
+    towns = (json.loads(TOWN_GROUND.read_text(encoding="utf-8"))
+             if TOWN_GROUND.exists() else {})
     nbs = {}
     if PROVINCE_FILE.exists():
         nbs = {r["name"]: r["population"]["value"]
@@ -1006,7 +1076,7 @@ def main() -> int:
         try:
             records += build(code, tables, names, code_shapes, seats, admin1, admin2,
                              nbs.get(province["name"]), urls, args.explain, seat_names,
-                             missing, ground)
+                             missing, ground, towns)
         except SystemExit as exc:
             # A yearbook whose tables fail a check is refused whole: none of
             # its counties is written, the province keeps whatever the last

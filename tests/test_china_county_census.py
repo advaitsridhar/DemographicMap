@@ -186,7 +186,7 @@ def without_zone(table):
 
 class Binding(unittest.TestCase):
     def build(self, code_shapes=None, seat_names=None, cut=None, tables_=None, ground=None,
-              **changes):
+              towns=None, **changes):
         admin1, admin2 = units()
         for unit in admin2:
             unit.update(changes.get(unit["id"], {}))
@@ -198,10 +198,45 @@ class Binding(unittest.TestCase):
             return {r["shape_id"]: r for r in cc.build(
                 "63", tables_ or tables(), NAMES,
                 CODE_SHAPES if code_shapes is None else code_shapes, SEATS, admin1, admin2,
-                seat_names=seat_names, ground=ground)}
+                seat_names=seat_names, ground=ground, towns=towns)}
         finally:
             cc.CUT_FROM.clear()
             cc.CUT_FROM.update(saved)
+
+    # Test 6: Datong's own townships and Chengdong's, placed.
+    TOWNS = {"630121": [["630121100", "桥头镇", "S-DATONG", ["S-DATONG"]],
+                        ["630121101", "城关镇", "S-DATONG", ["S-DATONG"]],
+                        ["630121200", "新庄镇"]],
+             "630123": [["630123100", "城关镇", "S-HUANGYUAN", ["S-HUANGYUAN"]]],
+             "630102": [["630102001", "东关大街街道", "S-CHENGDONG", ["S-CHENGDONG"]]]}
+
+    def test_a_polygon_holding_its_own_townships_only_is_bound(self):
+        records = self.build(towns=self.TOWNS)
+        self.assertEqual(figures(records), ["S-DATONG", "S-HUANGYUAN"])
+        self.assertIn("its townships of 2020 stand in it and no other unit's does (2 of its 3 "
+                      "townships", records["S-DATONG"]["population_note"])
+
+    def test_another_unit_s_township_deep_inside_refuses_the_polygon(self):
+        towns = {k: [list(r) for r in v] for k, v in self.TOWNS.items()}
+        towns["630102"].append(["630102101", "韵家口镇", "S-DATONG", ["S-DATONG"]])
+        records = self.build(towns=towns)
+        self.assertEqual(figures(records), ["S-HUANGYUAN"])
+        note = records["S-DATONG"]["population"]["note"]
+        self.assertIn("韵家口镇, which the codes list under 城东区 (630102), stands inside it", note)
+        # Near the line, where the boundary file's generalisation could have
+        # put it on either side, it proves nothing.
+        towns["630102"][-1][3] = ["S-CHENGDONG", "S-DATONG"]
+        self.assertEqual(figures(self.build(towns=towns)), ["S-DATONG", "S-HUANGYUAN"])
+
+    def test_its_own_township_far_outside_refuses_the_polygon(self):
+        towns = {k: [list(r) for r in v] for k, v in self.TOWNS.items()}
+        towns["630123"].append(["630123101", "大华镇", "S-DATONG", ["S-DATONG"]])
+        records = self.build(towns=towns)
+        self.assertNotIn("S-HUANGYUAN", figures(records))
+        self.assertIn("its own township 大华镇 stands more than 3 km outside it",
+                      records["S-HUANGYUAN"]["population"]["note"])
+        # Huangyuan's township deep inside Datong refuses Datong too.
+        self.assertNotIn("S-DATONG", figures(records))
 
     def test_only_counties_that_are_still_their_polygon(self):
         records = self.build()
