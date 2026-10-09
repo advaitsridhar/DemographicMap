@@ -89,6 +89,15 @@ class BuildTest(unittest.TestCase):
         self.assertIn("suku bangsa", recs["M"]["ethnicity"]["note"])
         self.assertEqual(recs["M"]["religion"]["status"], "not_available")
 
+    def test_the_forest_says_why_it_has_no_ages(self):
+        forest = {"id": "H", "name": "Hutan", "parent": OTHERS[0]}
+        recs = self.build(rows(), ADMIN2 + [forest])
+        for field in ("median_age", "sex_ratio"):
+            self.assertEqual(recs["H"][field]["status"], "not_collected")
+            self.assertIn("forest", recs["H"][field]["note"])
+        self.assertNotIn("value", recs["H"]["population"])
+        self.assertNotIn("L", recs)                                  # the lake: no record
+
     def test_a_province_its_regencies_do_not_make_refuses(self):
         with self.assertRaises(SystemExit):
             self.build(rows(extra=1))

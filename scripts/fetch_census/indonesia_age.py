@@ -59,7 +59,8 @@ from collections import defaultdict
 from typing import Any
 
 from . import indonesia, uscb
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, write_json
+from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_get, log, record,
+                      write_json)
 from .sea_common import age_sex, check_runs, drawn, fold, grouped
 
 OUT = "indonesia_age.json"
@@ -94,6 +95,16 @@ NO_POLYGON = frozenset({("JAKARTA", "kepulauanseribu")})
 # Drawn second-level shapes that are lakes, reservoirs and a forest; indonesia.py
 # and the build's water declaration say what each is.
 NOT_REGENCIES = frozenset({"danau", "danautoba", "hutan", "wadukcirata", "wadungkedungombo"})
+# The forest is land, so the build's water declaration does not reach it, and
+# indonesia.py says why it has no people or composition but not why it has no
+# ages: said here.
+FOREST = "hutan"
+FOREST_GAP = (
+    "This shape is a forest, not a regency, and nobody lives in it: the boundary file draws "
+    "it at the same level as Indonesia's regencies and cities, and UN OCHA's population "
+    "dataset for the same boundaries names it among the seventeen uninhabited features it "
+    "gives no population. With nobody in it there are no ages or sexes to count, and the "
+    "2020 census Long Form's table of ages by regency (Table 3.1) has no row for it.")
 # Why a regency has no ethnicity, and why one of the few without a religion
 # has none: said on every regency this reader binds, and shown only where no
 # figure stands (a gap never displaces a value).
@@ -328,6 +339,11 @@ def build(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
             religion=gap(NOT_AVAILABLE, RELIGION_GAP),
             ethnicity=gap(NOT_AVAILABLE, ETHNICITY_GAP),
             sources=[cite], **fields(r["groups"], whose)))
+    for shape in (s for s in admin2 if fold(s["name"]) == FOREST):
+        out.append(record(f"IDN-LF-{FOREST}", shape["name"], level="admin2", parent="IDN",
+                          country="IDN", match_by="shape_id", shape_id=shape["id"],
+                          median_age=gap(NOT_COLLECTED, FOREST_GAP),
+                          sex_ratio=gap(NOT_COLLECTED, FOREST_GAP)))
     for pid, prov in sorted(regions.items(), key=lambda kv: kv[1]["adm1"]):
         region = next(u for u in admin1 if u["id"] == pid)
         whose = f"the province of {prov['adm1'].title()}"
@@ -342,8 +358,10 @@ def build(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
     log(f"  the country: median {national}, sex ratio "
         f"{round(100 * sum(country['groups']['M'].values()) / sum(country['groups']['F'].values()), 1)}")
     for level in ("admin1", "admin2"):
-        meds = sorted(r["median_age"]["value"] for r in out if r["level"] == level)
-        rats = sorted(r["sex_ratio"]["value"] for r in out if r["level"] == level)
+        meds = sorted(r["median_age"]["value"] for r in out
+                      if r["level"] == level and "value" in r["median_age"])
+        rats = sorted(r["sex_ratio"]["value"] for r in out
+                      if r["level"] == level and "value" in r["sex_ratio"])
         log(f"  {level}: {len(meds)} units; median {meds[0]}-{meds[-1]}; "
             f"sex ratio {rats[0]}-{rats[-1]}")
     return out
