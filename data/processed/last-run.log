@@ -1,15 +1,15 @@
-turkmenistan_census: 2022 census, volumes 2 and 4
-  Ashgabat city: 1,030,063 people
-  Ahal velayat: 886,845 people
-  Balkan velayat: 529,895 people
-  Dashoguz velayat 20–24 years: '168 04' read as one figure, the only reading that adds up
-  Dashoguz velayat: 1,550,354 people
-  Lebap velayat: 1,447,298 people
-  Mary velayat: 1,613,386 people
-    Ahal: 1,916,908, median 28.0, ratio 98.2, Turkmen 93.9%, Turkmen 94.2%
-    Balkan: 529,895, median 27.7, ratio 101.7, Turkmen 93.7%, Turkmen 93.9%
-    Dasoguz: 1,550,354, median 26.9, ratio 99.9, Turkmen 67.5%, Turkmen 71.6%
-    Lebap: 1,447,298, median 27.7, ratio 100.1, Turkmen 89.3%, Turkmen 96.1%
-    Mary: 1,613,386, median 27.2, ratio 101.0, Turkmen 92.1%, Turkmen 92.6%
-  admin2: 59 districts given the reason
-  wrote data/processed/turkmenistan_census.json (392 kB)
+bangladesh: BBS Population and Housing Census 2022, by zila
+    1,213,869 bytes from HDX
+    64 districts in Population by Sex, Dist & Loca, 64 in Population by Religion, Sex, 64 in Ethnic Population by Sex
+    every religion's total matches its own male plus female, and in every district the religions plus the hijra come to the published population exactly (8,124 hijra nationally, whom the religion table does not classify)
+    ethnic population 1,650,478 of 165,158,616 nationally (1.00%), highest in Rangamati at 57.6% -- a counted total per district, published there against the Bengali remainder; the fifty-one categories behind it are named by division only
+    10,307,919 bytes of National Report from the Bureau's own storage
+  520 pages
+    every zila's males, females and hijra make its population, and its sex ratio is the one Table P11 prints, to the hundredth
+    Table P03: the nation and 8 divisions; every block's age groups add up to its Total row, the sexes to the persons, the printed sex ratios to the counts, and the divisions to the nation group by group
+    Table P10: every block's single years add up to its Total row, which is Table P03's, and to each of P03's five-year groups; the divisions make the nation year by year
+    National Report: 8 divisions in Table P28, 64 districts; Table P29 names 51 categories
+    the report's district totals match the workbook's to the person, its division headers match between Tables P28 and P29, and every category's national figure is the sum of its eight divisional ones
+    8 divisions carry a named ethnic composition, 1,650,478 people across 51 categories
+  wrote data/processed/bangladesh_district.json (445 kB)
+  72 districts
