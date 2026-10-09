@@ -121,6 +121,16 @@ RELIGION_GAP = (
     "figure; and neither its own nor its province's open-data portal publishes one "
     "(docs/SOURCES.md, \"Indonesia: what BPS's refusal left reachable\", lists the 110 portals "
     "tried). The 2020 census's Long Form tables that reach the regencies have no religion.")
+# Why a regency or province has no language, said wherever no composition
+# stands: the Long Form's first-language table (indonesia_language) is kinds
+# of language, and a survey that fills only if the build reads it.
+LANGUAGE_GAP = (
+    "No count of this {unit}'s languages could be read. The 2010 census's household language "
+    "reaches the map through CLEAR Global's tabulation of its IPUMS sample, for some units "
+    "only; BPS answers this project's reader HTTP 403 on every bps.go.id host; and the 2020 "
+    "census asked language only in its Long Form, a 2022 sample, which counts the language a "
+    "person first learned in four kinds -- Indonesian, a regional language, a foreign language "
+    "and sign language (Table 6.3 of its 2023 results) -- and not language by language.")
 KIND = re.compile(r"^(?:KABUPATEN|KAB\.?)\s+(?:ADMINISTRASI\s+|ADM\.?\s+)?", re.IGNORECASE)
 CITY = re.compile(r"^KOTA\s+(?:ADMINISTRASI\s+|ADM\.?\s+)?", re.IGNORECASE)
 
@@ -338,6 +348,7 @@ def build(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
             parent="IDN", country="IDN", match_by="shape_id", shape_id=sid,
             religion=gap(NOT_AVAILABLE, RELIGION_GAP),
             ethnicity=gap(NOT_AVAILABLE, ETHNICITY_GAP),
+            language=gap(NOT_AVAILABLE, LANGUAGE_GAP.format(unit="regency")),
             sources=[cite], **fields(r["groups"], whose)))
     for shape in (s for s in admin2 if fold(s["name"]) == FOREST):
         out.append(record(f"IDN-LF-{FOREST}", shape["name"], level="admin2", parent="IDN",
@@ -352,7 +363,9 @@ def build(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
                       "the map does not draw)")
         out.append(record(f"IDN-LF-{prov['code'] or fold(prov['adm1'])}", region["name"],
                           level="admin1", parent="IDN", country="IDN", match_by="shape_id",
-                          shape_id=pid, sources=[cite], **fields(prov["groups"], whose)))
+                          shape_id=pid, sources=[cite],
+                          language=gap(NOT_AVAILABLE, LANGUAGE_GAP.format(unit="province")),
+                          **fields(prov["groups"], whose)))
     country = next(r for r in rows if r["level"] == 0)
     national = grouped([(lo, hi, n) for (lo, hi), n in country["groups"]["B"].items()])
     log(f"  the country: median {national}, sex ratio "

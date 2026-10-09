@@ -88,6 +88,9 @@ class BuildTest(unittest.TestCase):
         # Every regency says why it has no ethnicity (a gap never displaces a value).
         self.assertIn("suku bangsa", recs["M"]["ethnicity"]["note"])
         self.assertEqual(recs["M"]["religion"]["status"], "not_available")
+        # And why it has no language, regency and province alike.
+        self.assertIn("this regency's languages", recs["M"]["language"]["note"])
+        self.assertIn("this province's languages", recs["Bengkulu"]["language"]["note"])
 
     def test_the_forest_says_why_it_has_no_ages(self):
         forest = {"id": "H", "name": "Hutan", "parent": OTHERS[0]}
