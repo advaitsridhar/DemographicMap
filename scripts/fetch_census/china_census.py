@@ -72,9 +72,10 @@ import re
 from collections import Counter
 from typing import Any, Callable
 
-from ._shared import NOT_COLLECTED, PROCESSED, gap, http_get, log, measure, record, write_json
+from ._shared import PROCESSED, gap, http_get, log, measure, record, write_json
 from .china_wiki import DIVISIONS, NATIONALITIES, RESIDUAL
-from .east_asia_common import drawn, grouped_median, hundred, sex_ratio, single_year_median
+from .east_asia_common import (drawn, grouped_median, hundred, pool_small, sex_ratio,
+                               single_year_median)
 
 OUT = "china_census_province.json"
 OUT_COUNTY = "china_census_county.json"
@@ -98,19 +99,26 @@ UNIDENTIFIED = ("未定族称人口", "入籍")
 LANGUAGE_NOTE = (
     "China's census asks no question about language: the 2020 census forms record "
     "nationality (民族) and nothing about the language a person speaks, and no volume of the "
-    "census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. The one "
-    "national survey of the languages people use, the State Language Commission's survey of "
-    "language use (中国语言文字使用情况调查), was fielded in 1998-2000, a generation before "
-    "these figures and before the spread of Putonghua since, and it is not drawn on them.")
+    "census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language "
+    "use has been measured once nationally, by the State Language Commission's survey "
+    "(中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a "
+    "book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not "
+    "read them, so the field is not available rather than never collected.")
+# Not "not_collected": a survey did measure it (BRIEF: that status is only for
+# a field nothing measures).
+LANGUAGE_STATUS = "not_available"
 
 COUNTY_NOTE = (
     "The 2020 census counted every county's people by age, sex and nationality (民族). The "
     "National Bureau of Statistics' census yearbook (中国人口普查年鉴-2020) publishes its "
-    "tables by province, and the province carries them; the county figures, in provincial "
-    "census volumes, are not drawn here, because these county polygons follow a division "
-    "older than 2000 -- Guangdong's Panyu, Huadu, Nanhai and Shunde are drawn as the "
-    "county-level cities they were before becoming districts in 2000 and 2002 -- and a 2020 "
-    "county table cannot be laid on them without a crosswalk.")
+    "tables by province, and the province carries them. Some provinces' own census yearbooks "
+    "print every county, and china_county_census writes those counts on a polygon only where "
+    "it is still the one county counted: the boundary file's county polygons are a division "
+    "of the mid-1990s (Guangdong's Panyu, Huadu, Nanhai and Shunde are drawn as the "
+    "county-level cities they were before becoming districts in 2000 and 2002), and a 2020 "
+    "county's figure on a polygon whose ground has changed would be another place's. No 2020 "
+    "county count has been placed on this polygon: its province's yearbook has not been read, "
+    "or the polygon is not one county of today.")
 
 # The second-level polygons drawn inside the SARs, measured once against the
 # SAR's first-level polygon in the CGAZ files the map is built from
@@ -122,8 +130,11 @@ COUNTY_NOTE = (
 SAR_COVERAGE: dict[str, tuple[float, str]] = {
     "17275852B66204891178522": (0.786, (
         "This polygon is Hong Kong as the boundary file's second level draws it "
-        "('Xianggang', 441 of the 561 km² of the SAR's first-level polygon), and these are "
-        "the SAR's own 2021 census figures, the same as on the first level.")),
+        "('Xianggang'), and these are the whole SAR's 2021 census figures, the same as on the "
+        "first level. The boundary file draws Hong Kong without Hong Kong Island and Lantau at "
+        "both levels: the first-level polygon is 561 km² of the SAR's 1,110 or so km² of land, "
+        "and this one 441 km² of it, about two-fifths of the SAR's land, though Kowloon and "
+        "the New Territories it covers hold most of its people.")),
     "17275852B34966799109471": (0.039, (
         "This polygon is not Macau: it is an unnamed fragment of southern Coloane in the "
         "boundary file, about 1.4 km² of the SAR's 35.8 km² (4%), and the only second-level "
@@ -382,18 +393,8 @@ def pooled(groups: dict[str, float]) -> tuple[dict[str, float], int, int]:
     show -- one of 0.1% or more keeps at least that after rounding -- and
     pooling one can move the rounding of another, so it repeats until every
     group left shows."""
-    counts = {g: v for g, v in groups.items() if v}
-    moved, people = 0, 0.0
-    while True:
-        shown = {row["group"] for row in hundred(counts)}
-        small = [g for g in counts if g != RESIDUAL and g not in shown]
-        if not small:
-            return counts, moved, int(round(people))
-        for group in small:
-            value = counts.pop(group)
-            counts[RESIDUAL] = counts.get(RESIDUAL, 0) + value
-            people += value
-            moved += 1
+    counts, moved, people = pool_small(groups, RESIDUAL)
+    return counts, len(moved), people
 
 
 def province_record(label: str, shape: str, name: str, a0101: dict[str, float],
@@ -425,7 +426,7 @@ def province_record(label: str, shape: str, name: str, a0101: dict[str, float],
             f"census records, of all {int(a0104['total']):,} residents. 'Other ethnic groups' "
             f"is the {int(residual):,} people whose nationality is not identified (未定族称) "
             f"and naturalised citizens (入籍){tail}."),
-        language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
+        language=gap(LANGUAGE_STATUS, LANGUAGE_NOTE),
         sources=sources())
 
 
@@ -574,7 +575,7 @@ def county_records(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
             median_age=gap("not_available", COUNTY_NOTE),
             sex_ratio=gap("not_available", COUNTY_NOTE),
             ethnicity=gap("not_available", COUNTY_NOTE),
-            language=gap(NOT_COLLECTED, LANGUAGE_NOTE)))
+            language=gap(LANGUAGE_STATUS, LANGUAGE_NOTE)))
     whole = [r["name"] for r in inside if "value" in (r.get("median_age") or {})]
     log(f"  {len(out)} second-level polygons: {len(out) - len(inside)} mainland ones with "
         f"their reasons; inside the SARs, {whole} with the SAR's own median age and sex ratio "

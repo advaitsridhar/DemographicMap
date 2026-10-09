@@ -163,18 +163,41 @@ class Hierarchy(unittest.TestCase):
             cc.read_province("63", t, NAMES)
 
 
+def figures(records):
+    """The shapes given a count, apart from those only told why not."""
+    return sorted(s for s, r in records.items() if "value" in r["population"])
+
+
+def without_zone(table):
+    """A table with Haixi's development zone taken out of it and out of the
+    prefecture's and the province's totals, so Haixi's counties are
+    candidates."""
+    zone = next(r for r in table if r and r[0] == "海西经济开发区")
+    out = []
+    for row in table:
+        if row and row[0] == "海西经济开发区":
+            continue
+        if row and row[0] in ("海西蒙古族藏族自治州", "全省"):
+            row = [row[0]] + [a - b if isinstance(a, float) else a
+                              for a, b in zip(row[1:], zone[1:])]
+        out.append(row)
+    return out
+
+
 class Binding(unittest.TestCase):
-    def build(self, **changes):
+    def build(self, code_shapes=None, seat_names=None, cut=None, tables_=None, **changes):
         admin1, admin2 = units()
         for unit in admin2:
             unit.update(changes.get(unit["id"], {}))
-        cut = {"长白山管委会": (("6326",), "the test's zone, cut from Golog")}
+        cut = cut or {"长白山管委会": (("6326",), "the test's zone, cut from Golog")}
         saved = dict(cc.CUT_FROM)
         cc.CUT_FROM.clear()
         cc.CUT_FROM.update(cut)
         try:
-            return {r["shape_id"]: r for r in cc.build("63", tables(), NAMES, CODE_SHAPES, SEATS,
-                                                      admin1, admin2)}
+            return {r["shape_id"]: r for r in cc.build(
+                "63", tables_ or tables(), NAMES,
+                CODE_SHAPES if code_shapes is None else code_shapes, SEATS, admin1, admin2,
+                seat_names=seat_names)}
         finally:
             cc.CUT_FROM.clear()
             cc.CUT_FROM.update(saved)
@@ -184,7 +207,62 @@ class Binding(unittest.TestCase):
         # Datong and Huangyuan pass; Chengdong is a district; Golmud and
         # Delingha share Haixi with a development zone; Golog's counties are
         # in the prefecture the province-level zone was cut from.
-        self.assertEqual(sorted(records), ["S-DATONG", "S-HUANGYUAN"])
+        self.assertEqual(figures(records), ["S-DATONG", "S-HUANGYUAN"])
+
+    def test_a_polygon_refused_for_a_zone_says_why(self):
+        records = self.build()
+        golmud = records["S-GOLMUD"]
+        self.assertEqual(golmud["population"]["status"], "not_available")
+        self.assertIn("海西经济开发区", golmud["population"]["note"])
+        self.assertIn("格尔木市 (632801)", golmud["population"]["note"])
+        self.assertEqual(golmud["ethnicity"], golmud["population"])
+        self.assertIn("cut from Golog", records["S-BAIMA"]["median_age"]["note"])
+        # A district's polygon and one holding two seats are told nothing:
+        # whose reason would it be?
+        self.assertNotIn("S-CHENGDONG", records)
+        self.assertNotIn("S-MAQEN", records)
+
+    def test_the_drift_is_measured_against_the_province_s_counties(self):
+        # Five comparable counties: four lost the province's usual 30 per
+        # cent since their polygon's figure, Huangyuan lost three-fifths --
+        # far outside its province, though inside an absolute band wide
+        # enough for the north-east's decline.
+        totals = {name: sum(m) + sum(w) for name, (m, w) in areas()}
+        labels = {"S-DATONG": "大通回族土族自治县", "S-HUANGYUAN": "湟源县",
+                  "S-GOLMUD": "格尔木市", "S-DELINGHA": "德令哈市", "S-BAIMA": "班玛县"}
+        older = {sid: {"population": {"value": round(totals[label] / (0.4 if sid == "S-HUANGYUAN"
+                                                                       else 0.7)),
+                                      "year": 2010, "source": "Wikidata (CC0)"}}
+                 for sid, label in labels.items()}
+        records = self.build(cut={"长白山管委会": (("6399",), "elsewhere")},
+                             tables_={k: without_zone(v) for k, v in tables().items()}, **older)
+        self.assertEqual(figures(records), ["S-BAIMA", "S-DATONG", "S-DELINGHA", "S-GOLMUD"])
+        self.assertIn("0.57 of the median ratio", records["S-HUANGYUAN"]["population"]["note"])
+        self.assertIn("1.00 of the median ratio of the province's 5 comparable counties",
+                      records["S-DATONG"]["population_note"])
+
+    def test_a_lone_seat_named_in_pinyin_is_bound_without_code_shapes(self):
+        shapes = {k: v for k, v in CODE_SHAPES.items() if k != "630121"}
+        named = {"S-DATONG": {"code": "630121", "label": "Datonghuizutuzuzizhixian",
+                              "zh": "大通回族土族自治县", "agreement": 0.98}}
+        records = self.build(code_shapes=shapes, seat_names=named)
+        self.assertIn("S-DATONG", figures(records))
+        self.assertIn("Datonghuizutuzuzizhixian is 大通回族土族自治县 in pinyin",
+                      records["S-DATONG"]["population_note"])
+        weak = {"S-DATONG": {**named["S-DATONG"], "agreement": 0.85}}
+        self.assertNotIn("S-DATONG", figures(self.build(code_shapes=shapes, seat_names=weak)))
+        self.assertNotIn("S-DATONG", figures(self.build(code_shapes=shapes)))
+
+    def test_a_misspelling_checked_by_hand_is_bound(self):
+        self.assertEqual(cc.MISSPELT["220382"][0], "Suanliaoxian")
+        lone = {"220382": ("S-X", {"code": "220382", "label": "Suanliaoxian", "zh": "双辽市",
+                                   "agreement": 0.889})}
+        shape, how = cc.polygon_for("220382", {}, lone)
+        self.assertEqual(shape, "S-X")
+        self.assertIn("Shuangliao", how)
+        lone = {"653229": ("S-Y", {"code": "653229", "label": "Hetianxian", "zh": "和安县",
+                                   "agreement": 0.889})}
+        self.assertIsNone(cc.polygon_for("653229", {}, lone)[0])
 
     def test_a_record(self):
         r = self.build()["S-DATONG"]
@@ -201,13 +279,17 @@ class Binding(unittest.TestCase):
         self.assertEqual(groups["Han Chinese"], 90.0)
         self.assertAlmostEqual(sum(groups.values()), 100.0, places=6)
         self.assertEqual(sum(g["count"] for g in r["ethnicity"]), r["population"]["value"])
-        self.assertEqual(r["language"]["status"], "not_collected")
+        self.assertEqual(r["language"]["status"], "not_available")
 
     def test_a_jump_from_an_older_figure_is_not_bound(self):
+        # One comparable county: the absolute band.
         records = self.build(**{"S-DATONG": {"population": {"value": 20_000, "year": 2010}}})
-        self.assertNotIn("S-DATONG", records)
+        self.assertNotIn("S-DATONG", figures(records))
+        self.assertIn("0.51 times", records["S-DATONG"]["population"]["note"])
         records = self.build(**{"S-DATONG": {"population": {"value": 9_000, "year": 2010}}})
-        self.assertIn("S-DATONG", records)
+        self.assertIn("S-DATONG", figures(records))
+        self.assertIn("1.12 times the polygon's 2010 figure",
+                      records["S-DATONG"]["population_note"])
 
     def test_a_polygon_holding_two_seats_is_not_bound(self):
         cut = {"长白山管委会": (("6399",), "elsewhere")}
@@ -216,8 +298,8 @@ class Binding(unittest.TestCase):
         cc.CUT_FROM.clear()
         cc.CUT_FROM.update(cut)
         try:
-            records = {r["shape_id"] for r in cc.build("63", tables(), NAMES, CODE_SHAPES, SEATS,
-                                                      admin1, admin2)}
+            records = figures({r["shape_id"]: r for r in cc.build(
+                "63", tables(), NAMES, CODE_SHAPES, SEATS, admin1, admin2)})
         finally:
             cc.CUT_FROM.clear()
             cc.CUT_FROM.update(saved)

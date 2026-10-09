@@ -66,9 +66,9 @@ import urllib.parse
 from collections import Counter
 from typing import Any
 
-from ._shared import NOT_COLLECTED, PROCESSED, RAW, gap, http_get, log, measure, record, write_json
-from .china_census import (LANGUAGE_NOTE, compact, grouped, number, pooled, read_a0101, read_a0104,
-                           read_a0105)
+from ._shared import PROCESSED, RAW, gap, http_get, log, measure, record, write_json
+from .china_census import (LANGUAGE_NOTE, LANGUAGE_STATUS, compact, grouped, number, pooled,
+                           read_a0101, read_a0104, read_a0105)
 from .china_wiki import RESIDUAL
 from .east_asia_common import drawn, hundred, sex_ratio
 
@@ -76,6 +76,7 @@ OUT = "china_county_census.json"
 YEAR = 2020
 NAMES = RAW / "wikidata_points" / "CHN_P442_zh.json"
 SEATS = RAW / "wikidata_points" / "CHN_P442_seats.json"
+SEAT_NAMES = RAW / "wikidata_points" / "CHN_P442_seat_names.json"
 CODE_SHAPES = PROCESSED / "code_shapes.json"
 PROVINCE_FILE = PROCESSED / "china_census_province.json"
 CDX = "https://web.archive.org/cdx/search/cdx"
@@ -83,9 +84,30 @@ REPLAY = "https://web.archive.org/web/{stamp}id_/{url}"
 TABLES = {"A0101": "Table 1-1: households, population and sex ratio by area",
           "A0104": "Table 1-4: population by sex and nationality (民族), by area",
           "A0105": "Table 1-5: population by age and sex, by area"}
-DRIFT = (0.6, 1.6)            # 2020 count against an older figure for the same polygon
+# Test 5. A county's 2020 count over the older figure its polygon carries,
+# against the median of that ratio over the province's other comparable
+# counties (the same year's figures): a universe the older figures share (a
+# register's count rather than a census's) and the province's own growth or
+# decline divide out, and what is left is the county's own departure. A
+# province with fewer than PEERS comparable counties is held to the absolute
+# band instead.
+DRIFT = (0.8, 1.25)
+DRIFT_FEW = (0.75, 1.33)
+PEERS = 5
+AGREE = 0.9                   # a lone seat's Chinese name against the polygon's label
 PAUSE = 3                     # seconds between two requests to the Internet Archive
 LICENCE = "Official statistics of the provincial bureau of statistics, cited as published"
+
+# Polygons whose label misspells the one county whose seat they hold, beyond
+# what AGREE accepts, each checked by hand: the label is that county's name
+# with a letter or two wrong, and no other county's. {code: (the label, why)}.
+# A label below AGREE that is another place's name is not here: 和安县's seat
+# stands alone in "Hetianxian", but 和安 was cut from 和田县 in 2020, so the
+# polygon is 和田县's old ground and not 和安's.
+MISSPELT: dict[str, tuple[str, str]] = {
+    "220382": ("Suanliaoxian", "双辽, Shuangliao, spelt 'Suanliao' by the boundary file"),
+    "220621": ("Wushongxian", "抚松, Fusong, spelt 'Wushong' by the boundary file"),
+}
 
 # The provinces whose 2020 census yearbook prints the three tables by county,
 # in the National Bureau's own format (zk/html/A0101.xls ...).
@@ -118,7 +140,31 @@ CUT_FROM: dict[str, tuple[tuple[str, ...], str]] = {
 POPULATION_NOTE = (
     "The 2020 census count of this county, {book}, Table 1-1, read for the polygon because the "
     "polygon is still this one county: it holds the county's seat and no other county-level "
-    "seat of today, and its name is the county's.")
+    "seat of today ({how}), its prefecture lists no development zone counted apart, and "
+    "{drift}")
+NO_OLDER = ("the polygon carries no older figure to compare the count with, so a change of "
+            "ground too small to move a seat would not show.")
+DRIFT_NOTE = (
+    "the count is {ratio:.2f} times the polygon's {year} figure ({source}), {relative:.2f} of "
+    "the median ratio of the province's {peers} comparable counties ({median:.2f}), within the "
+    "{low}-{high} this map accepts; a transfer of a township or two since the polygon was "
+    "drawn would not show in such a test.")
+DRIFT_FEW_NOTE = (
+    "the count is {ratio:.2f} times the polygon's {year} figure ({source}), within the "
+    "{low}-{high} this map accepts where too few counties can be compared; a transfer of a "
+    "township or two since the polygon was drawn would not show in such a test.")
+REFUSED_NOTE = {
+    "zone": ("{book} counts {label} ({code}) in 2020, but its figures are not put on this "
+             "polygon: its prefecture also lists {what}, which the yearbook counts apart from "
+             "the counties whose ground they hold, and nothing in it says whose ground that is, "
+             "so this county's row may be short of the ground drawn here."),
+    "cut": ("{book} counts {label} ({code}) in 2020, but its figures are not put on this "
+            "polygon: {what}, and the yearbook counts that zone apart, so the county's row is "
+            "short of the ground drawn here."),
+    "drift": ("{book} counts {label} ({code}) at {total:,} in 2020, but its figures are not put "
+              "on this polygon: that is {what}, a departure no decade of migration explains, so "
+              "the county's ground has likely changed since the polygon was drawn."),
+}
 AGE_NOTE = ("Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 "
             "and over) that holds the middle person, from Table 1-5 of the same yearbook, which "
             "prints no single years below the nation.")
@@ -385,20 +431,59 @@ def check(code: str, areas: list[dict[str, Any]], a0101: dict, a0104: dict, a010
 # Binding and records
 # ---------------------------------------------------------------------------
 
+def lone_seats(seat_names: dict[str, dict[str, Any]]) -> dict[str, tuple[str, dict[str, Any]]]:
+    """{code: (shape id, what china_seats --names measured)} for every polygon
+    holding exactly one current county-level seat."""
+    return {info["code"]: (shape, info) for shape, info in seat_names.items()}
+
+
+def polygon_for(code: str, code_shapes: dict[str, Any],
+                lone: dict[str, tuple[str, dict[str, Any]]]) -> tuple[str | None, str]:
+    """(shape id, how it was found) for a county code, or (None, why not).
+
+    First code_shapes: the code's Wikidata item stands inside the polygon and
+    its English name agrees with the label. Failing that, a polygon in which
+    the county's seat stands alone, when the label is the county's Chinese
+    name in pinyin (agreement AGREE or better, every reading tried) or a
+    misspelling of it checked by hand (MISSPELT). Test 4 still requires the
+    polygon to hold that seat and no other."""
+    entry = code_shapes.get(code)
+    if entry:
+        return entry["shape_id"], f"its Wikidata item stands in it and names it ({entry.get('name')})"
+    if code not in lone:
+        return None, "no polygon holds its seat alone or names it"
+    shape, info = lone[code]
+    if info["agreement"] >= AGREE:
+        return shape, (f"its seat stands alone in it and the label {info['label']} is "
+                       f"{info['zh']} in pinyin (agreement {info['agreement']:.2f})")
+    if code in MISSPELT and MISSPELT[code][0] == info["label"]:
+        return shape, f"its seat stands alone in it, and the label is {MISSPELT[code][1]}"
+    return None, (f"its seat stands alone in {info['label']}, whose label is not {info['zh']} "
+                  f"(agreement {info['agreement']:.2f})")
+
+
 def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[str, Any],
-         seats: dict[str, list[str]], units: dict[str, dict[str, Any]]
+         seats: dict[str, list[str]], units: dict[str, dict[str, Any]],
+         lone: dict[str, tuple[str, dict[str, Any]]] | None = None,
          ) -> tuple[dict[int, str], Counter]:
     """{row position: shape id} for the county rows that pass all five tests,
-    and why the others did not; each county-level area also carries its own
-    outcome as ``why``, for the log."""
-    zoned = {a["prefecture"] for a in areas if a["kind"] == "special" and a["prefecture"]}
-    cut: set[str] = set()
+    and why the others did not. Each county-level area carries its own
+    outcome as ``why`` for the log; one refused although its polygon is known
+    (tests 2 and 5) also carries ``refused`` (the shape and the reason), so
+    the polygon can say why; one bound carries ``drift`` for its note."""
+    lone = lone or {}
+    zoned: dict[str, list[str]] = {}
+    for a in areas:
+        if a["kind"] == "special" and a["prefecture"]:
+            zoned.setdefault(a["prefecture"], []).append(a["label"])
+    cut: dict[str, str] = {}
     for area in areas:
         if area["kind"] == "special" and area["prefecture"] is None and area["head"] is None:
             if area["label"] not in CUT_FROM:
                 raise SystemExit(f"china_county_census: {area['label']} is listed outside every "
                                  "prefecture and CUT_FROM does not say whose ground it holds")
-            cut.update(f"{p}00" for p in CUT_FROM[area["label"]][0])
+            for p in CUT_FROM[area["label"]][0]:
+                cut[f"{p}00"] = CUT_FROM[area["label"]][1]
     bound: dict[int, str] = {}
     why: Counter = Counter()
     used: set[str] = set()
@@ -407,6 +492,8 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
         why[reason] += 1
         area["why"] = f"{reason}{': ' + detail if detail else ''}"
 
+    # Tests 1, 3 and 4: the row is a county, and a polygon is that county.
+    candidates: list[tuple[dict[str, Any], str, str]] = []
     for area in areas:
         if area["kind"] not in ("county", "direct"):
             continue
@@ -414,35 +501,72 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
         if kind_of(area["label"], unit_code) == "district":
             refuse(area, "a district")
             continue
+        shape, how = polygon_for(unit_code, code_shapes, lone)
+        if shape is None:
+            refuse(area, "no polygon is this county", how)
+            continue
+        if seats.get(shape) != [unit_code]:
+            refuse(area, "its polygon holds other seats",
+                   f"{(units.get(shape) or {}).get('name')} holds {seats.get(shape)}")
+            continue
+        candidates.append((area, shape, how))
+
+    # Test 5's yardstick: the median ratio of the comparable counties.
+    def older_of(shape: str) -> dict[str, Any] | None:
+        older = (units.get(shape) or {}).get("population") or {}
+        if isinstance(older.get("value"), (int, float)) and older["value"] > 0 \
+                and (older.get("year") or YEAR) < YEAR:
+            return older
+        return None
+    years = Counter(o["year"] for _, s, _ in candidates if (o := older_of(s)))
+    modal = years.most_common(1)[0][0] if years else None
+    ratios = sorted(a0101[a["index"]]["total"] / o["value"] for a, s, _ in candidates
+                    if (o := older_of(s)) and o["year"] == modal)
+    median = ratios[len(ratios) // 2] if len(ratios) % 2 else (
+        (ratios[len(ratios) // 2 - 1] + ratios[len(ratios) // 2]) / 2 if ratios else None)
+    few = len(ratios) < PEERS
+
+    for area, shape, how in candidates:
+        unit_code = area["code"]
         pref = area["prefecture"] or unit_code[:4] + "00"
         if pref in zoned:
             refuse(area, "a zone in its prefecture")
+            area["refused"] = (shape, "zone", zoned[pref])
             continue
         if pref in cut:
             refuse(area, "a zone outside it cut from its prefecture")
+            area["refused"] = (shape, "cut", cut[pref])
             continue
-        entry = code_shapes.get(unit_code)
-        if not entry:
-            refuse(area, "no polygon bound to its code")
-            continue
-        shape = entry["shape_id"]
-        if seats.get(shape) != [unit_code]:
-            refuse(area, "its polygon holds other seats",
-                   f"{entry.get('name')} holds {seats.get(shape)}")
-            continue
-        older = (units.get(shape) or {}).get("population") or {}
-        if isinstance(older.get("value"), (int, float)) and (older.get("year") or 0) < YEAR:
-            ratio = a0101[area["index"]]["total"] / older["value"]
-            if not DRIFT[0] <= ratio <= DRIFT[1]:
+        total = a0101[area["index"]]["total"]
+        older = older_of(shape)
+        drift = None
+        if older:
+            ratio = total / older["value"]
+            if few or older["year"] != modal or not median:
+                low, high = DRIFT_FEW
+                drift = {"ratio": ratio, "older": older, "relative": None, "band": DRIFT_FEW}
+                ok = low <= ratio <= high
+            else:
+                relative = ratio / median
+                drift = {"ratio": ratio, "older": older, "relative": relative,
+                         "median": median, "peers": len(ratios), "band": DRIFT}
+                ok = DRIFT[0] <= relative <= DRIFT[1]
+            if not ok:
                 refuse(area, "a jump from the polygon's older figure",
-                       f"{a0101[area['index']]['total']:,.0f} against {older['value']:,} "
-                       f"({older.get('year')}) on {entry.get('name')}")
+                       f"{total:,.0f} against {older['value']:,} ({older.get('year')}), "
+                       f"ratio {ratio:.2f}" + (f", {drift['relative']:.2f} of the median "
+                                               f"{median:.2f}" if drift["relative"] else ""))
+                area["refused"] = (shape, "drift", drift)
                 continue
         if shape in used:
             raise SystemExit(f"china_county_census: {shape} would be bound twice")
         used.add(shape)
         bound[area["index"]] = shape
-        area["why"] = f"bound to {entry.get('name')} ({shape})"
+        area["drift"] = drift
+        area["how"] = how
+        area["why"] = f"bound to {(units.get(shape) or {}).get('name')} ({shape})" + (
+            f", ratio {drift['ratio']:.2f}" + (f" ({drift['relative']:.2f} of the median)"
+                                               if drift["relative"] else "") if drift else "")
     return bound, why
 
 
@@ -468,13 +592,25 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
                 "url": urls["A0104"], "year": YEAR, "license": LICENCE},
                {"field": "median_age", "name": f"{book}, {TABLES['A0105']}",
                 "url": urls["A0105"], "year": YEAR, "license": LICENCE}]
+    drift = area.get("drift")
+    if not drift:
+        drift_text = NO_OLDER
+    else:
+        older = drift["older"]
+        fields = {"ratio": drift["ratio"], "year": older.get("year"),
+                  "source": older.get("source") or "of unstated source",
+                  "low": drift["band"][0], "high": drift["band"][1]}
+        drift_text = (DRIFT_NOTE.format(relative=drift["relative"], median=drift["median"],
+                                        peers=drift["peers"], **fields)
+                      if drift["relative"] else DRIFT_FEW_NOTE.format(**fields))
     return record(
         f"CHN-{shape}", unit["name"], level="admin2",
         parent=parents.get(unit.get("parent"), "CHN"), country="CHN",
         match_by="shape_id", shape_id=shape, aliases=[area["label"]],
         codes={"gb2260": area["code"]},
         population=measure(int(a0101[i]["total"]), year=YEAR, source=f"{book}, Table 1-1"),
-        population_note=POPULATION_NOTE.format(book=book),
+        population_note=POPULATION_NOTE.format(book=book, how=area.get("how", ""),
+                                               drift=drift_text),
         sex_ratio=sex_ratio(a0101[i]["men"], a0101[i]["women"], year=YEAR,
                             source=f"{book}, Table 1-1"),
         sex_ratio_note=f"{int(a0101[i]['men']):,} men and {int(a0101[i]['women']):,} women.",
@@ -485,15 +621,44 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
         ethnicity_note=(
             f"2020 census, Table 1-4 of {book}: the 56 nationalities (民族) of all "
             f"{int(a0104[i]['total']):,} residents.{other}"),
-        language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
+        language=gap(LANGUAGE_STATUS, LANGUAGE_NOTE),
         sources=sources)
+
+
+def refused_record(code: str, area: dict[str, Any], unit: dict[str, Any],
+                   parents: dict[str, str], a0101: dict) -> dict[str, Any]:
+    """The reason a county the yearbook counts is not drawn on the polygon
+    that is its own, on that polygon: a gap with a note, which displaces
+    china_census_county's general one and no figure."""
+    shape, kind, detail = area["refused"]
+    province = PROVINCES[code]
+    book = f"{province['bureau']}, {province['book']}"
+    if kind == "zone":
+        what = "the special units " + ", ".join(detail)
+    elif kind == "cut":
+        what = detail
+    else:
+        what = (f"{detail['ratio']:.2f} times the polygon's {detail['older'].get('year')} "
+                f"figure of {detail['older']['value']:,}"
+                + (f", {detail['relative']:.2f} of the median ratio of the province's "
+                   f"comparable counties" if detail["relative"] else ""))
+    note = REFUSED_NOTE[kind].format(book=book, label=area["label"], code=area["code"],
+                                     what=what, total=int(a0101[area["index"]]["total"]))
+    reason = gap("not_available", note)
+    return record(
+        f"CHN-{shape}", unit["name"], level="admin2",
+        parent=parents.get(unit.get("parent"), "CHN"), country="CHN",
+        match_by="shape_id", shape_id=shape, aliases=[area["label"]],
+        codes={"gb2260": area["code"]},
+        population=reason, median_age=reason, sex_ratio=reason, ethnicity=reason)
 
 
 def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[str]],
           code_shapes: dict[str, Any], seats: dict[str, list[str]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
           national: float | None = None, urls: dict[str, str] | None = None,
-          explain: bool = False) -> list[dict[str, Any]]:
+          explain: bool = False,
+          seat_names: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     areas, a0101, a0104, a0105 = read_province(code, tables, names)
     where = PROVINCES[code]["name"]
     urls = urls or {t: f"{PROVINCES[code]['base']}{t}.xls" for t in TABLES}
@@ -502,18 +667,22 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
                          f" and the National Bureau's {national:,.0f}")
     units = {u["id"]: u for u in admin2}
     parents = {u["id"]: f"CHN-{u['name']}" for u in admin1}
-    bound, why = bind(code, areas, a0101, code_shapes, seats, units)
+    bound, why = bind(code, areas, a0101, code_shapes, seats, units,
+                      lone_seats(seat_names or {}))
     out = [county_record(code, area, bound[area["index"]], units[bound[area["index"]]], parents,
                          a0101, a0104, a0105, urls)
            for area in areas if area["index"] in bound]
+    out += [refused_record(code, area, units[area["refused"][0]], parents, a0101)
+            for area in areas if area.get("refused")]
     if explain:
         for area in areas:
             log(f"    {area['kind']:10} {area['label']:24} {area['code'] or '-':6} "
                 f"{area.get('why', '')}")
     kinds = Counter(a["kind"] for a in areas)
+    refused = sum(1 for a in areas if a.get("refused"))
     log(f"  {where}: {kinds['prefecture']} prefectures, {kinds['county'] + kinds['direct']} "
-        f"county-level areas, {kinds['special']} special; {len(out)} bound; not bound: "
-        f"{dict(why)}")
+        f"county-level areas, {kinds['special']} special; {len(bound)} bound; not bound: "
+        f"{dict(why)}; {refused} polygons told why")
     return out
 
 
@@ -527,11 +696,12 @@ def main() -> int:
     args = ap.parse_args()
     if args.fetch_names:
         return fetch_names()
-    for path in (NAMES, SEATS, CODE_SHAPES):
+    for path in (NAMES, SEATS, SEAT_NAMES, CODE_SHAPES):
         if not path.exists():
             raise SystemExit(f"china_county_census: {path} is missing")
     names = json.loads(NAMES.read_text(encoding="utf-8"))
     seats = json.loads(SEATS.read_text(encoding="utf-8"))
+    seat_names = json.loads(SEAT_NAMES.read_text(encoding="utf-8"))
     code_shapes = json.loads(CODE_SHAPES.read_text(encoding="utf-8"))["CHN"]
     nbs = {}
     if PROVINCE_FILE.exists():
@@ -553,7 +723,7 @@ def main() -> int:
             log(f"  {province['name']} skipped: {exc}")
             continue
         records += build(code, tables, names, code_shapes, seats, admin1, admin2,
-                         nbs.get(province["name"]), urls, args.explain)
+                         nbs.get(province["name"]), urls, args.explain, seat_names)
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {len(records)} county records to {OUT}")
     return 0

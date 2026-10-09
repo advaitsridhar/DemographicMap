@@ -158,7 +158,10 @@ class Build(unittest.TestCase):
         self.assertEqual(groups["Mongol"], 5.0)
         self.assertIn(cc.RESIDUAL, groups)
         self.assertAlmostEqual(sum(groups.values()), 100.0, places=6)
-        self.assertEqual(r["language"]["status"], "not_collected")
+        # A survey measured language use in 1998-2000, so it is not available
+        # rather than never collected.
+        self.assertEqual(r["language"]["status"], "not_available")
+        self.assertIn("中国语言文字使用情况调查", r["language"]["note"])
 
     def test_the_sars(self):
         hk, mo = self.records["S-HK"], self.records["S-MO"]
@@ -193,7 +196,7 @@ class Counties(unittest.TestCase):
 
     def test_a_mainland_county_carries_its_reasons(self):
         r = self.records["C-1"]
-        self.assertEqual(r["language"]["status"], "not_collected")
+        self.assertEqual(r["language"]["status"], "not_available")
         for field in ("population", "median_age", "sex_ratio", "ethnicity"):
             self.assertEqual(r[field], {"status": "not_available", "note": cc.COUNTY_NOTE})
         self.assertEqual(r["parent"], "CHN-Guangdong")
@@ -203,7 +206,10 @@ class Counties(unittest.TestCase):
         hk = self.records[XIANGGANG]
         self.assertEqual(hk["median_age"]["value"], 46.3)
         self.assertEqual(hk["sex_ratio"]["value"], 83.9)
-        self.assertIn("441 of the 561 km²", hk["median_age_note"])
+        # Coverage is said against the SAR's own land, not the clipped
+        # first-level polygon alone.
+        self.assertIn("1,110", hk["median_age_note"])
+        self.assertIn("without Hong Kong Island and Lantau", hk["median_age_note"])
         self.assertEqual(hk["language"], {"status": "not_available"})
         self.assertEqual(hk["parent"], f"CHN-{cc.HK_NAME}")
 
