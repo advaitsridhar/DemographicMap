@@ -231,6 +231,27 @@ class KeyIndicators(unittest.TestCase):
             lines = sm.key_indicators(sub, rows, ages_at, unknown_at)
         self.assertIn("Rural everyone 21.5 (20), males 20.0 (20), females 23.0 (21)", lines[1])
 
+    def test_the_rows_as_read_from_the_sheet_reach_the_age_not_known_by_sex(self):
+        # The run reads Table 1 to table1_width; the age not known comes last,
+        # and its MALE and FEMALE columns must be inside what is read.
+        sub, rows, ages_at, unknown_at = layout(self.MALES, self.FEMALES)
+        header = ["Place of residence", "Total", "", ""] + [
+            label for age, _ in ages_at for label in (f"age {age}", "", "")] + ["DK", "", ""]
+        sheet = [["Table 1:Total population by single age"], header, sub,
+                 ["Samoa"] + rows["Samoa"]]
+        for k, region in enumerate(sm.REGIONS):
+            sheet += [["    " + region] + rows[region],
+                      [f"        Constituency {k}"] + rows[region],
+                      [f"            Village {k}"] + rows[region]]
+        width = sm.table1_width(ages_at, unknown_at)
+        with mock.patch.object(sm, "NATIONAL", rows["Samoa"][0]):
+            people = sm.read_2021(sheet, width)
+        self.assertEqual(width, len(rows["Samoa"]))
+        with mock.patch.object(sm, "KEY_INDICATORS", printed_counts()):
+            lines = sm.key_indicators(sub, {"Samoa": people["total"], **people["regions"]},
+                                      ages_at, unknown_at)
+        self.assertIn("exactly", lines[0])
+
     def test_columns_that_are_not_total_male_female_stop_the_run(self):
         sub, rows, ages_at, unknown_at = layout(self.MALES, self.FEMALES)
         sub[5], sub[6] = "FEMALE", "MALE"

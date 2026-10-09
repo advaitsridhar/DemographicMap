@@ -301,6 +301,14 @@ def age_columns(header: list[Any]) -> tuple[list[tuple[int, int]], int | None]:
     return ages, unknown
 
 
+def table1_width(ages_at: list[tuple[int, int]], unknown_at: int | None) -> int:
+    """How many figures follow a Table 1 row's name: through the last column's FEMALE.
+
+    The age-not-known column comes last, as Total, MALE and FEMALE like every age.
+    """
+    return max(i for _, i in ages_at + [(0, unknown_at or 0)]) + 2
+
+
 def religion_columns(header: list[Any]) -> list[tuple[str, int]]:
     """[(denomination, column of its Total)] from Table 2's heading row."""
     out = []
@@ -532,7 +540,7 @@ def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, 
     religion_rows = rows_of(book, "Table 2")
     ages_at, unknown_at = age_columns(age_rows[1])
     faiths = religion_columns(religion_rows[1])
-    age_width = max(i for _, i in ages_at + [(0, unknown_at or 0)]) + 1 - 1
+    age_width = table1_width(ages_at, unknown_at)
     people = read_2021(age_rows, age_width)
     religion = read_2021(religion_rows, max(i for _, i in faiths))
     check([(c, v) for c, v, _ in people["villages"]] == [(c, v) for c, v, _ in religion["villages"]],
