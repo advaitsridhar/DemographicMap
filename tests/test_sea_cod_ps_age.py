@@ -180,6 +180,59 @@ class RecordsTest(unittest.TestCase):
         self.assertEqual(recs[0]["sources"], [])
 
 
+THA_METHOD = (
+    "The estimates for the population totals of 77 ADM-1 units were calculated using the "
+    "Logistic Growth Rate method, based on the historical trend between 2000 and 2010 censues. "
+    "The estimates for sex-specific 5-year age groups for the 928 ADM-2 units were calculated "
+    "using Iterative Proportional Fitting, based on the age group proportions from the 2010 "
+    "census. Furthermore, in general, the projections are subject to the uncertainty of the "
+    "base population and of the assumptions they rest on.")
+KHM_METHOD = (
+    "The cohort component method was applied to the 2019 census to project the national "
+    "population. In the absence of reliable internal migration data, the National Statistical "
+    "Office used the ratio method to build subnational projections at the ADM-1 level from the "
+    "national projection.")
+LAO_METHOD = ("Cohort component method was applied to the results of the 2015 census to build "
+              "projections on which this COD-PS is based.")
+
+
+class MethodQuoteTest(unittest.TestCase):
+    """The methodology line is quoted whole, or cut at a sentence with an ellipsis,
+    never mid-word (Thailand's was cut at 200 characters, at "sex-spec")."""
+
+    def test_a_line_that_fits_is_quoted_whole_with_one_full_stop(self):
+        self.assertEqual(s.quoted_method(KHM_METHOD), KHM_METHOD)
+        basis = s.method_basis(LAO_METHOD)
+        self.assertEqual(basis, f' The dataset gives its method as "{LAO_METHOD}"')
+        self.assertFalse(basis.endswith('.".'))
+        self.assertEqual(s.method_basis("Census"), ' The dataset gives its method as "Census".')
+        self.assertEqual(s.method_basis(""), "")
+
+    def test_a_long_line_is_cut_at_a_sentence_and_says_so(self):
+        quote = s.quoted_method(THA_METHOD)
+        self.assertTrue(quote.endswith("from the 2010 census. ..."), quote)
+        self.assertIn("Iterative Proportional Fitting", quote)
+        self.assertNotIn("Furthermore", quote)
+        self.assertLessEqual(len(quote), s.METHOD_LIMIT + 4)
+
+    def test_a_long_line_with_no_sentence_end_is_cut_at_a_word(self):
+        quote = s.quoted_method("word " * 200, limit=23)
+        self.assertEqual(quote, "word word word word ...")
+
+    def test_the_notes_quote_thailand_s_age_and_sex_sentence(self):
+        cols_ = columns()
+        table = {"label": "x adm2_", "level": "2", "columns": cols_,
+                 "rows": [row("Lampang", "Ko Kha")], "method": THA_METHOD}
+        with mock.patch.object(s, "drawn", fake_drawn), \
+                mock.patch.object(s, "locate", return_value={}):
+            recs = s.level_records("THA", "cod-ps-tha", "CC BY-IGO", "2", 2023, table,
+                                   age_columns(cols_))
+        for field in ("median_age_note", "sex_ratio_note"):
+            self.assertIn("sex-specific 5-year age groups", recs[0][field])
+            self.assertTrue(recs[0][field].endswith('2010 census. ..."'), recs[0][field])
+            self.assertNotIn("sex-spec\"", recs[0][field])
+
+
 class CompositionGapsTest(unittest.TestCase):
     def test_thailand_says_why_its_districts_have_no_composition(self):
         gaps = s.composition_gaps("THA", "admin2")

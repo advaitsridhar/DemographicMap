@@ -176,6 +176,33 @@ COMPOSITION_GAPS: dict[tuple[str, str], dict[str, str]] = {
 }
 
 
+# How much of a dataset's methodology line a note quotes. Thailand's runs past
+# this: its first two sentences say how the totals and then how the
+# sex-specific five-year groups were made (357 characters), and both are
+# kept; Cambodia's (282) and Laos's (121) are quoted whole.
+METHOD_LIMIT = 400
+
+
+def quoted_method(method: str, limit: int = METHOD_LIMIT) -> str:
+    """The dataset's methodology line as a note quotes it: whole where it fits,
+    otherwise cut at the last sentence that ends within ``limit`` (at the last
+    word if none does), with " ..." to say text was left out."""
+    method = " ".join(str(method or "").split())
+    if len(method) <= limit:
+        return method
+    end = method.rfind(". ", 0, limit)
+    kept = method[:end + 1] if end > 0 else method[:limit].rsplit(" ", 1)[0]
+    return f"{kept} ..."
+
+
+def method_basis(method: str) -> str:
+    """' The dataset gives its method as "..."' with one closing full stop."""
+    quote = quoted_method(method)
+    if not quote:
+        return ""
+    return f" The dataset gives its method as \"{quote}\"" + ("" if quote.endswith(".") else ".")
+
+
 def why_projection(iso3: str, level: str) -> str:
     return WHY_PROJECTION.get((iso3, level)) or WHY_PROJECTION.get(iso3) or WHY_DEFAULT
 
@@ -312,7 +339,7 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
     method = table.get("method") or ""
     source = (f"OCHA, Common Operational Dataset -- population statistics ({stub}), "
               f"reference year {year}")
-    basis = f" The dataset gives its method as \"{method[:200].rstrip()}\"." if method else ""
+    basis = method_basis(method)
     rows = table["rows"]
     bound, left, unbound = bind_rows(iso3, level, rows, unit_col, parent_col)
     out: list[dict[str, Any]] = []
