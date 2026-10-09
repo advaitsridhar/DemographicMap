@@ -21,10 +21,7 @@ Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 582, in nextobject
     (pos, token) = self.nexttoken()
                    ^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 488, in nexttoken
-    changed_stream = self.fillbuf()
-                     ^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 199, in fillbuf
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 485, in nexttoken
     raise PSEOF("Unexpected EOF")
 pdfminer.psexceptions.PSEOF: Unexpected EOF
 
@@ -47,5 +44,5 @@ Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfplumber/pdf.py", line 52, in __init__
     raise PdfminerException(e)
 pdfplumber.utils.exceptions.PdfminerException: Unexpected EOF
-== https://web.archive.org/web/20191121194335id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Kabul_Socio-demographic-Economic-Survey_English.pdf
-  200 application/pdf 1048576 https://web.archive.org/web/20191121194335id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Kabul_Socio-demographic-Economic-Survey_English.pdf
+== https://web.archive.org/web/20191121184857id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Takhar%20Socio-Demographic%20and%20Economic%20Survey.pdf
+  200 application/pdf 1048576 https://web.archive.org/web/20191121184857id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Takhar%20Socio-Demographic%20and%20Economic%20Survey.pdf
