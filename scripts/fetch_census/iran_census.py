@@ -284,6 +284,17 @@ SHOWN = {"Iranian": "Iranian national", "Afghan": "Afghan national",
 
 PERSIAN_DIGITS = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "01234567890123456789")
 
+# Men per hundred women from which a sex ratio's note says at what ages the
+# extra men are (surplus_note). Measured on Table 1: 1810 Asaluyeh 231.4,
+# 1806 Kangan 180.5, 2910 Khusf 130.9, 2101 Ardakan 120.4, 0325 Ajabshir
+# 116.9, 1109 Konarak 116.1, 2303 Rey 115.2; no other shahrestan reaches 115.
+SURPLUS_RATIO = 115
+# What the two highest hold, by SCI code: South Pars's onshore plants.
+SURPLUS_CONTEXT = {
+    "1810": " The county holds onshore gas and petrochemical plants of the South Pars field.",
+    "1806": " The county holds onshore gas and petrochemical plants of the South Pars field.",
+}
+
 # Religion by province: the Statistical Centre's English Statistical Yearbook
 # 1395 (2016-17), chapter 3, table 3.18 "Population by religion and ostan,
 # 1395 census". No table of religion below the province is among the
@@ -709,8 +720,31 @@ def bind_counties(counties: list[dict[str, Any]], codab: dict[str, list[dict[str
 # --------------------------------------------------------------------------
 # Records.
 
+def surplus_note(table: dict[str, Any], label: str = "") -> str:
+    """Where a unit counts many more men than women, at what ages they are.
+
+    Asaluyeh counts 231 men for every 100 women, Kangan 180 and Khusf 131,
+    and a ratio alone says nothing of why. Table 1's single years do: 89% of
+    Asaluyeh's and Kangan's extra men are 20 to 49, and almost all of Khusf's
+    are 18 to 24. Written from ``SURPLUS_RATIO`` men per hundred women.
+    """
+    _both, men, women = table["total"]
+    if not women or 100 * men / women < SURPLUS_RATIO or men <= women:
+        return ""
+
+    def extra(low: int, high: int) -> int:
+        return sum(table["men"].get(a, 0) - table["women"].get(a, 0)
+                   for a in set(table["men"]) | set(table["women"])
+                   if isinstance(a, int) and low <= a <= high)
+
+    young, working = extra(18, 24), extra(25, 49)
+    text = (f" Of the {men - women:,} more men than women, {young:,} are aged 18 to 24 and "
+            f"{working:,} aged 25 to 49.")
+    return text + SURPLUS_CONTEXT.get(label, "")
+
+
 def fields(table: dict[str, Any], citizenship: tuple[int, dict[str, int]] | None,
-           note_extra: str = "") -> dict[str, Any]:
+           note_extra: str = "", population_note: str = "", label: str = "") -> dict[str, Any]:
     both, men, women = table["total"]
     ages = Counter({a: table["men"][a] + table["women"][a]
                     for a in set(table["men"]) | set(table["women"])})
@@ -725,10 +759,13 @@ def fields(table: dict[str, Any], citizenship: tuple[int, dict[str, int]] | None
                                f"out." if table["unstated"][0] else "") + note_extra),
         "sex_ratio": measure(round(100 * men / women, 1), unit="males_per_100_females",
                              year=YEAR, source=SOURCE),
-        "sex_ratio_note": f"{men:,} men and {women:,} women, 2016 census." + note_extra,
+        "sex_ratio_note": (f"{men:,} men and {women:,} women, 2016 census."
+                           + surplus_note(table, label) + note_extra),
         "sources": [{"field": "population/median_age/sex_ratio", "name": SOURCE,
                      "url": PAGE, "year": YEAR, "license": LICENCE}],
     }
+    if population_note or note_extra:
+        out["population_note"] = (population_note or note_extra).strip()
     if citizenship is not None:
         total, counts = citizenship
         if total != both:
@@ -743,10 +780,10 @@ def fields(table: dict[str, Any], citizenship: tuple[int, dict[str, int]] | None
         out["ethnicity_note"] = (
             "Country of citizenship, from Table 3 of the 2016 census (population by sex and "
             "citizenship): Iranian nationals and the nationals of each other country the "
-            "Centre tabulates. Iran's census does not ask ethnicity; by the owner's decision of "
-            "19 September 2026 the citizenship it counts is shown in its place, as Japan's and "
-            "Korea's nationality is. It is citizenship, not ethnic group: every Iranian "
-            "citizen, whatever their ethnicity, is an 'Iranian national' here."
+            "Centre tabulates. Iran's census does not ask ethnicity, so the citizenship it "
+            "counts is shown in its place, as Japan's and Korea's nationality is. It is "
+            "citizenship, not ethnic group: every Iranian citizen, whatever their ethnicity, "
+            "is an 'Iranian national' here."
             + note_extra)
         out["sources"].append({"field": "ethnicity", "name": SOURCE, "url": PAGE,
                                "year": YEAR, "license": LICENCE})
@@ -784,7 +821,7 @@ def build(province_ages: dict[int, dict[str, Any]],
             match_by="shape_id", shape_id=shape["id"],
             aliases=[county["name"], en] + ([shape["name"]] if en in MISLABELLED else []),
             codes={"sci": county["code"]},
-            **fields(county["ages"], county["citizenship"], extra)))
+            **fields(county["ages"], county["citizenship"], extra, label=county["code"])))
     # The first level: every province whole, except where the map draws
     # Bandar-e Gaz under a first-level polygon of its own.
     gaz = next((c for c in counties if c.get("en") == "Bandar-e-Gaz"), None)
@@ -800,30 +837,43 @@ def build(province_ages: dict[int, dict[str, Any]],
         citizen = province_citizenship.get(fa(persian))
         if citizen is None:
             raise SystemExit(f"iran_census: Table 3 has no row for {persian}")
-        extra = ""
+        extra = population_note = ""
         if english == "Golestan" and gaz is not None:
+            whole, county_people = table["total"][0], gaz["ages"]["total"][0]
             table = less(table, gaz["ages"])
             total, counts = citizen
             g_total, g_counts = gaz["citizenship"]
             citizen = (total - g_total, {k: counts[k] - g_counts[k] for k in counts})
             extra = (" The map draws Bandar-e Gaz county under a first-level polygon of its "
                      "own, so this is Golestan less Bandar-e Gaz, from the same tables.")
+            population_note = (
+                f"Golestan province less Bandar-e Gaz county: the 2016 census counts "
+                f"{whole:,} people in the province and {county_people:,} in the county, which "
+                f"the map draws as a first-level polygon of its own.")
         rows.append(record(
             f"IRN-CENSUS-P{nn:02d}", english, level="admin1", parent=ISO3, country=ISO3,
             match_by="shape_id", shape_id=polygons[0]["id"], aliases=[persian],
-            codes={"sci": f"{nn:02d}"}, **fields(table, citizen, extra)))
+            codes={"sci": f"{nn:02d}"},
+            **fields(table, citizen, extra, population_note=population_note)))
         if english == "Mazandaran" and len(polygons) > 1 and gaz is not None:
             small = polygons[-1]
             if children[small["id"]] != 1:
                 raise SystemExit("iran_census: the second Mazandaran polygon does not hold "
                                  "exactly one shahrestan")
+            # Named for what it holds: the boundary file labels it
+            # "Mazandaran", which is kept as an alias (and as its drawn label).
             rows.append(record(
-                f"IRN-CENSUS-P{nn:02d}-GAZ", "Mazandaran", level="admin1", parent=ISO3,
+                f"IRN-CENSUS-P{nn:02d}-GAZ", "Bandar-e Gaz", level="admin1", parent=ISO3,
                 country=ISO3, match_by="shape_id", shape_id=small["id"],
-                aliases=["Bandar-e Gaz"], codes={"sci": gaz["code"]},
+                aliases=["Mazandaran"], codes={"sci": gaz["code"]},
                 **fields(gaz["ages"], gaz["citizenship"],
                          " This first-level polygon holds Bandar-e Gaz county alone (a county "
-                         "of Golestan province), so it carries Bandar-e Gaz's figures.")))
+                         "of Golestan province), so it carries Bandar-e Gaz's figures.",
+                         population_note=(
+                             f"Bandar-e Gaz county alone ({gaz['ages']['total'][0]:,} people "
+                             f"in the 2016 census), a county of Golestan province: the boundary "
+                             f"file draws it as a first-level polygon of its own and labels it "
+                             f"Mazandaran. Golestan's figure leaves it out."))))
     return rows, notes
 
 
@@ -907,7 +957,8 @@ def add_religion(rows: list[dict[str, Any]], religion: dict[str, dict[str, int]]
             "table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's "
             "capture of amar.org.ir. The English yearbook prints the Christian and "
             "Zoroastrian headings swapped; they are restored from the Centre's Persian "
-            "results (see the adapter).")
+            "results of the 2011 census, which count 117,704 Christians and 25,271 "
+            "Zoroastrians where the English table 3.17 prints them the other way round.")
     for r in rows:
         if r["level"] == "admin2":
             if isinstance(r.get("religion"), list):
@@ -1104,10 +1155,11 @@ def split_records(a1: list[dict[str, Any]], a2: list[dict[str, Any]],
                 }
                 sources = [{"field": "population/sex_ratio", "name": SETTLEMENT_SOURCE,
                             "url": PAGE, "year": YEAR, "license": LICENCE}]
+            body["population_note"] = note
             rows.append(record(
                 f"IRN-CENSUS-SPLIT-{fold(label)}", label, level="admin2", parent=ISO3,
                 country=ISO3, match_by="shape_id", shape_id=hits[0]["id"],
-                codes={"sci": spec["code"]}, population_note=note,
+                codes={"sci": spec["code"]},
                 ethnicity=gap(NOT_AVAILABLE, CITIZENSHIP_SPLIT_GAP.format(county=en)),
                 sources=sources, **body))
     return rows

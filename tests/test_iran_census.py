@@ -155,6 +155,34 @@ class Binding(unittest.TestCase):
         # Citizenship is written as a nationality, never as a people's name.
         groups = {s["group"] for r in rows for s in r["ethnicity"]}
         self.assertEqual(groups, {"Iranian national", "Afghan national"})
+        # Both first-level polygons say what their population is: Golestan the
+        # province less the county, with both figures; the small polygon is
+        # named for the county it holds, its drawn label kept as an alias.
+        self.assertIn(f"{3 * one:,} people in the province", by_shape["G"]["population_note"])
+        self.assertIn(f"{one:,} in the county", by_shape["G"]["population_note"])
+        self.assertEqual(by_shape["M2"]["name"], "Bandar-e Gaz")
+        self.assertIn("Mazandaran", by_shape["M2"]["aliases"])
+        self.assertIn("Bandar-e Gaz county alone", by_shape["M2"]["population_note"])
+        self.assertNotIn("population_note", by_shape["M1"])
+        for r in rows:
+            self.assertNotIn("owner", r["ethnicity_note"])
+            self.assertNotIn("decision", r["ethnicity_note"])
+
+    def test_a_male_surplus_says_at_what_ages(self):
+        # Asaluyeh's pattern: many extra men aged 25-49, a few 18-24.
+        table = ir.add_ages([county(18, "1810", "عسلويه")["ages"]])
+        table = {**table, "men": dict(table["men"]), "women": dict(table["women"])}
+        for age in range(25, 50):
+            table["men"][age] = table["men"].get(age, 0) + 100
+        table["men"][20] = table["men"].get(20, 0) + 30
+        both, men, women = table["total"]
+        table["total"] = (both + 2530, men + 2530, women)
+        note = ir.surplus_note(table, "1810")
+        self.assertIn(f"Of the {men + 2530 - women:,} more men than women, 30 are aged 18 to 24 "
+                      f"and 2,500 aged 25 to 49.", note)
+        self.assertIn("South Pars", note)
+        # Below the threshold, nothing is added.
+        self.assertEqual(ir.surplus_note(ir.add_ages([county(2, "0201", "ساري")["ages"]])), "")
 
     def test_an_unmatched_shahrestan_stops(self):
         counties = self.counties() + [county(27, "2709", "ناشناخته")]
