@@ -37,7 +37,10 @@ file (``data/raw/boundaries``, not in git and not on the runner):
            in it, and no other unit's township inside it
 
 A township no point can be found for is written without one, and the reader
-treats its zone, and so its prefecture, as one it cannot place.
+treats its zone, and so its prefecture, as one it cannot place. So is a
+township whose item carries the very point of another unit's township in the
+same listing (``copied_points``): one of the two items has the other's
+coordinates, and the point cannot say which, so it places neither.
 """
 
 from __future__ import annotations
@@ -279,6 +282,40 @@ def point_for(code: str, name: str, by_code: dict[str, dict[str, Any]],
                   f"{len(hits)} items in the prefecture carry its name")
 
 
+def spot(item: dict[str, Any]) -> tuple[float, float]:
+    return round(float(item["lon"]), 5), round(float(item["lat"]), 5)
+
+
+def copied_points(points: list[dict[str, Any]],
+                  listed: set[str]) -> dict[tuple[float, float], list[str]]:
+    """The points Wikidata gives two townships of the listing that belong to
+    different county-level units, {point: their codes}. Two townships of one
+    edition cannot share a seat to the fifth decimal across a county line, so
+    one item carries the other's coordinates -- Leling's 市中街道 stands at
+    Yucheng's, Horqin Right Middle's 杜尔基镇 at Tuquan's 东杜尔基镇 -- and the
+    point cannot say which of them it is. An older code of the same township
+    (平江区's 娄葑, now Suzhou Industrial Park's) is not in the listing and so
+    shares nothing."""
+    at: dict[tuple[float, float], set[str]] = {}
+    for p in points:
+        code = re.sub(r"\s", "", p.get("code") or "")[:9]
+        if code in listed and p.get("lon") is not None and p.get("lat") is not None:
+            at.setdefault(spot(p), set()).add(code)
+    return {xy: sorted(codes) for xy, codes in at.items()
+            if len({c[:6] for c in codes}) > 1}
+
+
+def unplaced_if_copied(item: dict[str, Any] | None, how: str, code: str,
+                       copied: dict[tuple[float, float], list[str]]
+                       ) -> tuple[dict[str, Any] | None, str]:
+    """``point_for``'s answer, or none where its point is a copied one."""
+    if item is None or spot(item) not in copied:
+        return item, how
+    others = [c for c in copied[spot(item)] if c != code[:9]]
+    return None, (f"its item's point is also the point of {', '.join(others)}, a township of "
+                  f"another unit: a copied coordinate, which places neither")
+
+
 def place() -> int:
     import fiona
     from shapely.geometry import Point, shape
@@ -306,6 +343,9 @@ def place() -> int:
     names_by_unit: dict[str, set[str]] = {}
     for ucode, unit in {**(listing.get("units") or {}), **listing["zones"]}.items():
         names_by_unit.setdefault(ucode, set()).update(n for _, n in unit["townships"])
+    listed = {code[:9] for unit in {**(listing.get("units") or {}), **listing["zones"]}.values()
+              for code, _ in unit["townships"]}
+    copied = copied_points(points, listed)
 
     def located(item: dict[str, Any]) -> dict[str, Any]:
         pt = Point(float(item["lon"]), float(item["lat"]))
@@ -320,7 +360,8 @@ def place() -> int:
         out = {"name": zone["name"], "listing": listing["source"], "townships": []}
         seen = set()
         for code, name in zone["townships"]:
-            item, how = point_for(code, name, by_code, by_prefecture, names_by_unit)
+            item, how = unplaced_if_copied(
+                *point_for(code, name, by_code, by_prefecture, names_by_unit), code, copied)
             entry: dict[str, Any] = {"code": code, "name": name, "how": how}
             if item:
                 entry.update(located(item))
@@ -332,7 +373,8 @@ def place() -> int:
         # Wikidata's items carrying the zone's code that the listing does not
         # name: townships the zone held under another edition.
         for code, item in sorted(by_code.items()):
-            if code.startswith(zcode) and item.get("qid") not in seen:
+            if (code.startswith(zcode) and item.get("qid") not in seen
+                    and spot(item) not in copied):
                 out["townships"].append({"code": code, "name": item.get("label"),
                                          "how": "a Wikidata item carrying the zone's code",
                                          **located(item)})
@@ -350,10 +392,11 @@ def place() -> int:
     for ucode, unit in sorted((listing.get("units") or {}).items()):
         rows = []
         for code, name in unit["townships"]:
-            item, _ = point_for(code, name, by_code, by_prefecture, names_by_unit)
+            item, _ = unplaced_if_copied(
+                *point_for(code, name, by_code, by_prefecture, names_by_unit), code, copied)
             if item:
-                spot = located(item)
-                rows.append([code, name, spot["shape"], spot["near"]])
+                where = located(item)
+                rows.append([code, name, where["shape"], where["near"]])
                 placed += 1
             else:
                 rows.append([code, name])
@@ -362,7 +405,7 @@ def place() -> int:
     TOWNS.write_text(json.dumps(towns, ensure_ascii=False, separators=(",", ":"),
                                 sort_keys=True) + "\n", encoding="utf-8")
     log(f"china_zones: {len(towns)} county-level units; {placed} townships placed, {unplaced} "
-        f"not -> {TOWNS}")
+        f"not -> {TOWNS}; {len(copied)} points shared across a county line left out")
     return 0
 
 

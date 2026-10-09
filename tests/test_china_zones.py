@@ -102,6 +102,26 @@ class Placing(unittest.TestCase):
         self.assertIsNone(item)
         self.assertIn("3 items", how)
 
+    def test_a_point_two_units_townships_share_is_copied(self):
+        points = [{"qid": "Q11059419", "code": "371481001", "lon": 116.65641, "lat": 36.95},
+                  {"qid": "Q11059421", "code": "371482001", "lon": 116.65641, "lat": 36.95},
+                  # The same township under its older code, out of the listing.
+                  {"qid": "Q8", "code": "320503004", "lon": 120.64337, "lat": 31.3238},
+                  {"qid": "Q9", "code": "320571050", "lon": 120.64337, "lat": 31.3238},
+                  # Two townships of one county at one spot: not across a line.
+                  {"qid": "Q10", "code": "152224102", "lon": 121.7, "lat": 45.6},
+                  {"qid": "Q11", "code": "152224400", "lon": 121.7, "lat": 45.6}]
+        listed = {"371481001", "371482001", "320571050", "152224102", "152224400"}
+        copied = cz.copied_points(points, listed)
+        self.assertEqual(copied, {(116.65641, 36.95): ["371481001", "371482001"]})
+        item, how = cz.unplaced_if_copied(points[0], "its code", "371481001", copied)
+        self.assertIsNone(item)
+        self.assertIn("371482001", how)
+        self.assertIn("copied coordinate", how)
+        item, how = cz.unplaced_if_copied(points[3], "its code", "320571050", copied)
+        self.assertEqual((item["qid"], how), ("Q9", "its code"))
+        self.assertEqual(cz.unplaced_if_copied(None, "no item", "1", copied), (None, "no item"))
+
     def test_the_zone_s_name_in_front_of_a_township_s_is_left_out(self):
         by_code, by_pref = self.index()
         by_pref["2201"].append({"qid": "Q7", "label": "Haibei Town", "code": "220112105",

@@ -44,7 +44,10 @@ the polygon is still that one county. Six tests, all of which must pass:
    that stands deep inside the polygon -- no other polygon within about 3 km
    -- is ground the county lost since the polygon was drawn, which no seat
    shows, and one of its own standing more than 3 km outside it is ground it
-   gained. Townships without a point are not seen by this test.
+   gained. Townships without a point are not seen by this test, nor is one
+   whose Wikidata point is also another unit's township's (a copied
+   coordinate, ``china_zones.copied_points``: Leling's 市中街道 carries
+   Yucheng's, and would refuse both counties for a point that is neither's).
 
 Wikidata names no figure here. It is only the bridge from a yearbook's Chinese
 county name to its GB/T 2260 code (``--fetch-names`` writes
