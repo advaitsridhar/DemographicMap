@@ -49,11 +49,22 @@ Fields: population, sex ratio (males per 100 females), the median age
 interpolated within the five-year group that holds the middle person (Table
 1-5 prints no single years below the nation), and the 56 nationalities, a
 nationality too small to show at one decimal joining 'Other ethnic groups'.
-Language is not asked by the census (``china_census.LANGUAGE_NOTE``).
+Language is not asked by the census (``china_census.LANGUAGE_NOTE``). Where
+a province's Table 1-5 cannot be read (Inner Mongolia's: the bureau refuses
+the runner and the Internet Archive holds no capture of it), its counties
+carry the other fields and a stated gap for the median age.
 
 Usage:
     python -m scripts.fetch_census.china_county_census --fetch-names   # runner, once
     python -m scripts.fetch_census.china_county_census
+    python -m scripts.fetch_census.china_county_census --only 15,37    # read, write nothing
+    python -m scripts.fetch_census.china_county_census --add 15,37     # read these, keep the rest
+
+``--add`` is for a runner whose time runs out before every province's
+workbooks are read: the provinces named are read and written in place of
+what the current output holds for them, and every other province's records
+stay as the last run wrote them (a province that could not be read keeps
+its old records too).
 """
 
 from __future__ import annotations
@@ -180,6 +191,12 @@ REFUSED_NOTE = {
 AGE_NOTE = ("Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 "
             "and over) that holds the middle person, from Table 1-5 of the same yearbook, which "
             "prints no single years below the nation.")
+AGE_UNREAD = ("{book} prints ages by county in Table 1-5, but that workbook could not be read: "
+              "{why}. No median age is given for the county here.")
+# A province whose Table 1-5 cannot be read is still read for its
+# population, sex ratio and nationalities, which Tables 1-1 and 1-4 carry;
+# its counties' median age is a stated gap. Tables 1-1 and 1-4 are required.
+OPTIONAL = {"A0105"}
 
 
 # ---------------------------------------------------------------------------
@@ -191,6 +208,20 @@ def archived(url: str) -> str | None:
                                     "fl": "timestamp", "limit": "-1"})
     rows = json.loads(http_get(f"{CDX}?{query}", cache=False, retries=3, timeout=120) or "[]")
     return rows[-1][0] if len(rows) > 1 else None
+
+
+def unread(reason: str) -> str:
+    """fetch_table's refusal as a clause for a note: who refused, in words."""
+    parts = []
+    if "HTTP Error 403" in reason:
+        parts.append("the bureau's server refused it (HTTP 403)")
+    elif "live:" in reason:
+        parts.append("the bureau's server did not answer")
+    if "no capture" in reason:
+        parts.append("the Internet Archive holds no capture of it")
+    elif "archive:" in reason or "nearest:" in reason:
+        parts.append("the Internet Archive did not serve its capture")
+    return " and ".join(parts) or "it could not be reached"
 
 
 def fetch_table(base: str, table: str) -> tuple[list[list[Any]], str]:
@@ -205,7 +236,11 @@ def fetch_table(base: str, table: str) -> tuple[list[list[Any]], str]:
         try:
             if source == "live":
                 where = url
-                blob = http_get(url, binary=True, cache=True, retries=1, timeout=60)
+                # One try: a bureau that does not answer the runner in 45
+                # seconds does not answer it at all (Inner Mongolia's server
+                # let the handshake time out), and the runner has 45 minutes
+                # for every province's workbooks.
+                blob = http_get(url, binary=True, cache=True, retries=0, timeout=45)
             elif source == "archive":
                 stamp = archived(url)
                 if not stamp:
@@ -213,13 +248,13 @@ def fetch_table(base: str, table: str) -> tuple[list[list[Any]], str]:
                     continue
                 where = REPLAY.format(stamp=stamp, url=url)
                 time.sleep(PAUSE)
-                blob = http_get(where, binary=True, cache=True, retries=6, timeout=180)
+                blob = http_get(where, binary=True, cache=True, retries=3, timeout=90)
             else:
                 if any(t.startswith("no capture") for t in tried):
                     continue
                 where = REPLAY.format(stamp=str(YEAR + 6), url=url)
                 time.sleep(PAUSE)
-                blob = http_get(where, binary=True, cache=True, retries=6, timeout=180)
+                blob = http_get(where, binary=True, cache=True, retries=3, timeout=90)
             assert isinstance(blob, bytes)
             sheet = xlrd.open_workbook(file_contents=blob).sheet_by_index(0)
             return [sheet.row_values(i) for i in range(sheet.nrows)], where
@@ -401,31 +436,34 @@ def hierarchy(labels: list[str], totals: list[float], code: str,
 
 
 def read_province(code: str, tables: dict[str, list[list[Any]]],
-                  names: dict[str, list[str]]) -> tuple[list[dict[str, Any]], dict, dict, dict]:
-    """The areas, and the three tables' figures keyed by row position."""
+                  names: dict[str, list[str]]
+                  ) -> tuple[list[dict[str, Any]], dict, dict, dict | None]:
+    """The areas, and the tables' figures keyed by row position. Table 1-5
+    is None where it could not be read (``OPTIONAL``)."""
     labels = labels_of(tables["A0101"])
     for table in ("A0104", "A0105"):
-        if labels_of(tables[table]) != labels:
+        if table in tables and labels_of(tables[table]) != labels:
             raise SystemExit(f"china_county_census: {code}: {table} lists other areas than 1-1")
     a0101 = read_a0101(tables["A0101"], area_rows)
     a0104 = read_a0104(tables["A0104"], area_rows)
-    a0105 = read_a0105(tables["A0105"], area_rows)
+    a0105 = read_a0105(tables["A0105"], area_rows) if "A0105" in tables else None
     totals = [a0101[i]["total"] for i in range(len(labels))]
     areas = hierarchy(labels, totals, code, names)
     check(code, areas, a0101, a0104, a0105)
     return areas, a0101, a0104, a0105
 
 
-def check(code: str, areas: list[dict[str, Any]], a0101: dict, a0104: dict, a0105: dict) -> None:
+def check(code: str, areas: list[dict[str, Any]], a0101: dict, a0104: dict,
+          a0105: dict | None) -> None:
     where = PROVINCES.get(code, {}).get("name", code)
     for i, row in a0101.items():
         for what in ("total", "men", "women"):
-            if not (row[what] == a0104[i][what] == a0105[i][what]):
+            if not (row[what] == a0104[i][what] == (a0105 or a0104)[i][what]):
                 raise SystemExit(f"china_county_census: {where} row {i} {what}: the tables differ")
         if row["men"] + row["women"] != row["total"]:
             raise SystemExit(f"china_county_census: {where} row {i}: men and women miss the total")
         for name, table in (("1-4", a0104), ("1-5", a0105)):
-            if sum(table[i]["groups"].values()) != table[i]["total"]:
+            if table is not None and sum(table[i]["groups"].values()) != table[i]["total"]:
                 raise SystemExit(f"china_county_census: {where} row {i}: {name}'s groups miss "
                                  "the total")
     prefectures = [a for a in areas if a["kind"] == "prefecture"]
@@ -591,8 +629,8 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
 
 
 def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, Any],
-                  parents: dict[str, str], a0101: dict, a0104: dict, a0105: dict,
-                  urls: dict[str, str]) -> dict[str, Any]:
+                  parents: dict[str, str], a0101: dict, a0104: dict, a0105: dict | None,
+                  urls: dict[str, str], ages_unread: str = "") -> dict[str, Any]:
     province = PROVINCES[code]
     book = f"{province['bureau']}, {province['book']}"
     i = area["index"]
@@ -609,9 +647,17 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
     sources = [{"field": "population/sex_ratio", "name": f"{book}, {TABLES['A0101']}",
                 "url": urls["A0101"], "year": YEAR, "license": LICENCE},
                {"field": "ethnicity", "name": f"{book}, {TABLES['A0104']}",
-                "url": urls["A0104"], "year": YEAR, "license": LICENCE},
-               {"field": "median_age", "name": f"{book}, {TABLES['A0105']}",
-                "url": urls["A0105"], "year": YEAR, "license": LICENCE}]
+                "url": urls["A0104"], "year": YEAR, "license": LICENCE}]
+    if a0105 is not None:
+        sources.append({"field": "median_age", "name": f"{book}, {TABLES['A0105']}",
+                        "url": urls["A0105"], "year": YEAR, "license": LICENCE})
+        ages: dict[str, Any] = {
+            "median_age": measure(grouped(a0105[i]["groups"]), unit="years", year=YEAR,
+                                  source=f"{book}, Table 1-5"),
+            "median_age_note": AGE_NOTE}
+    else:
+        ages = {"median_age": gap("not_available", AGE_UNREAD.format(
+            book=book, why=unread(ages_unread)))}
     drift = area.get("drift")
     if not drift:
         drift_text = NO_OLDER
@@ -634,9 +680,7 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
         sex_ratio=sex_ratio(a0101[i]["men"], a0101[i]["women"], year=YEAR,
                             source=f"{book}, Table 1-1"),
         sex_ratio_note=f"{int(a0101[i]['men']):,} men and {int(a0101[i]['women']):,} women.",
-        median_age=measure(grouped(a0105[i]["groups"]), unit="years", year=YEAR,
-                           source=f"{book}, Table 1-5"),
-        median_age_note=AGE_NOTE,
+        **ages,
         ethnicity=hundred(counts), ethnicity_year=YEAR,
         ethnicity_note=(
             f"2020 census, Table 1-4 of {book}: the 56 nationalities (民族) of all "
@@ -678,7 +722,11 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
           national: float | None = None, urls: dict[str, str] | None = None,
           explain: bool = False,
-          seat_names: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+          seat_names: dict[str, dict[str, Any]] | None = None,
+          missing: dict[str, str] | None = None) -> list[dict[str, Any]]:
+    """The province's county records. ``missing`` is {table: why it could
+    not be read} for an OPTIONAL table that was not."""
+    missing = missing or {}
     areas, a0101, a0104, a0105 = read_province(code, tables, names)
     where = PROVINCES[code]["name"]
     urls = urls or {t: f"{PROVINCES[code].get('tables', {}).get(t, PROVINCES[code]['base'])}{t}.xls"
@@ -691,7 +739,7 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
     bound, why = bind(code, areas, a0101, code_shapes, seats, units,
                       lone_seats(seat_names or {}))
     out = [county_record(code, area, bound[area["index"]], units[bound[area["index"]]], parents,
-                         a0101, a0104, a0105, urls)
+                         a0101, a0104, a0105, urls, missing.get("A0105", ""))
            for area in areas if area["index"] in bound]
     out += [refused_record(code, area, units[area["refused"][0]], parents, a0101)
             for area in areas if area.get("refused")]
@@ -707,6 +755,18 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
     return out
 
 
+def merged(current: list[dict[str, Any]], records: list[dict[str, Any]],
+           read: set[str]) -> list[dict[str, Any]]:
+    """``records`` for the provinces read in this run, and the current
+    output's records for every other province, in the order of PROVINCES."""
+    def province(r: dict[str, Any]) -> str:
+        return r["codes"]["gb2260"][:2]
+    out = [r for r in current if province(r) not in read] + records
+    order = list(PROVINCES)
+    return sorted(out, key=lambda r: order.index(province(r)) if province(r) in order
+                  else len(order))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -715,6 +775,8 @@ def main() -> int:
     ap.add_argument("--explain", action="store_true",
                     help="log every area of every province and what became of it")
     ap.add_argument("--only", help="province codes (15,37): read and log these, write nothing")
+    ap.add_argument("--add", help="province codes (15,37): read these and keep the current "
+                                  "output's records for the others")
     args = ap.parse_args()
     if args.fetch_names:
         return fetch_names()
@@ -733,15 +795,28 @@ def main() -> int:
     admin1, admin2 = drawn("CHN", "admin1"), drawn("CHN", "admin2")
     records: list[dict[str, Any]] = []
     only = set(args.only.split(",")) if args.only else None
+    add = set(args.add.split(",")) if args.add else None
+    for chosen in (only, add):
+        if chosen and chosen - set(PROVINCES):
+            raise SystemExit("china_county_census: no yearbook is known for "
+                             f"{sorted(chosen - set(PROVINCES))}")
+    read: set[str] = set()
     for code, province in PROVINCES.items():
-        if only and code not in only:
+        if (only and code not in only) or (add and code not in add):
             continue
         log(f"china_county_census: {province['bureau']}, {province['book']}")
-        tables, urls = {}, {}
+        tables, urls, missing = {}, {}, {}
         try:
             for table in TABLES:
                 base = province.get("tables", {}).get(table, province["base"])
-                tables[table], urls[table] = fetch_table(base, table)
+                try:
+                    tables[table], urls[table] = fetch_table(base, table)
+                except SystemExit as exc:
+                    if table not in OPTIONAL:
+                        raise
+                    missing[table] = str(exc)
+                    log(f"  {province['name']}: {TABLES[table]} not read, its counties' median "
+                        f"age is left out: {exc}")
         except SystemExit as exc:
             # The bureau refusing and the Archive busy is a gap for this run,
             # not a fault in the figures: its counties keep china_census's
@@ -749,10 +824,18 @@ def main() -> int:
             log(f"  {province['name']} skipped: {exc}")
             continue
         records += build(code, tables, names, code_shapes, seats, admin1, admin2,
-                         nbs.get(province["name"]), urls, args.explain, seat_names)
+                         nbs.get(province["name"]), urls, args.explain, seat_names, missing)
+        read.add(code)
     if only:
         log(f"  --only: {len(records)} records read, nothing written")
         return 0
+    if add:
+        current = (json.loads((PROCESSED / OUT).read_text(encoding="utf-8"))
+                   if (PROCESSED / OUT).exists() else [])
+        kept = len(merged(current, [], read))
+        records = merged(current, records, read)
+        log(f"  --add: {len(records) - kept} records read for {sorted(read)}; {kept} kept from "
+            f"the current {OUT}")
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {len(records)} county records to {OUT}")
     return 0

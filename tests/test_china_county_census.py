@@ -281,6 +281,32 @@ class Binding(unittest.TestCase):
         self.assertEqual(sum(g["count"] for g in r["ethnicity"]), r["population"]["value"])
         self.assertEqual(r["language"]["status"], "not_available")
 
+    def test_a_province_without_its_age_table_keeps_the_rest(self):
+        # Inner Mongolia's Table 1-5: the bureau answers 403 and the Archive
+        # never captured it. Tables 1-1 and 1-4 still bind; the median age
+        # is a stated gap naming who refused.
+        admin1, admin2 = units()
+        cut = {"长白山管委会": (("6326",), "the test's zone, cut from Golog")}
+        saved = dict(cc.CUT_FROM)
+        cc.CUT_FROM.clear()
+        cc.CUT_FROM.update(cut)
+        why = ("china_county_census: http://x/A0105.xls could not be read (live: HTTPError: "
+               "HTTP Error 403: Forbidden; no capture in the Internet Archive)")
+        try:
+            records = {r["shape_id"]: r for r in cc.build(
+                "63", {k: v for k, v in tables().items() if k != "A0105"}, NAMES, CODE_SHAPES,
+                SEATS, admin1, admin2, missing={"A0105": why})}
+        finally:
+            cc.CUT_FROM.clear()
+            cc.CUT_FROM.update(saved)
+        self.assertEqual(figures(records), ["S-DATONG", "S-HUANGYUAN"])
+        r = records["S-DATONG"]
+        self.assertIsNotNone(r["population"]["value"])
+        self.assertEqual(r["median_age"]["status"], "not_available")
+        self.assertIn("the bureau's server refused it (HTTP 403) and the Internet Archive holds "
+                      "no capture of it", r["median_age"]["note"])
+        self.assertEqual([s["field"] for s in r["sources"]], ["population/sex_ratio", "ethnicity"])
+
     def test_a_jump_from_an_older_figure_is_not_bound(self):
         # One comparable county: the absolute band.
         records = self.build(**{"S-DATONG": {"population": {"value": 20_000, "year": 2010}}})
@@ -331,6 +357,23 @@ class Kinds(unittest.TestCase):
         self.assertEqual(cc.kind_of("长春莲花山生态旅游度假区", None), "zone")
         self.assertEqual(cc.kind_of("神农架林区", "429021"), "county")
         self.assertEqual(cc.kind_of("大通回族土族自治县", "630121"), "county")
+
+
+class Adding(unittest.TestCase):
+    def test_a_province_read_replaces_its_records_and_the_others_stay(self):
+        def rec(code, tag):
+            return {"id": f"CHN-{code}", "codes": {"gb2260": code}, "tag": tag}
+        current = [rec("220322", "old"), rec("320123", "old"), rec("150121", "old")]
+        out = cc.merged(current, [rec("150122", "new"), rec("370123", "new")], {"15", "37"})
+        # Jilin and Jiangsu kept as they were, Inner Mongolia's old record
+        # gone, the new ones in, in the order of PROVINCES.
+        self.assertEqual([(r["codes"]["gb2260"], r["tag"]) for r in out],
+                         [("220322", "old"), ("320123", "old"), ("150122", "new"),
+                          ("370123", "new")])
+
+    def test_a_province_not_read_keeps_its_old_records(self):
+        current = [{"id": "CHN-a", "codes": {"gb2260": "630121"}}]
+        self.assertEqual(cc.merged(current, [], {"15"}), current)
 
 
 class Names(unittest.TestCase):
