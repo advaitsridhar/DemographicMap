@@ -1,5 +1,10 @@
-afghanistan_estimates: CSO estimated settled population 1396 (2017-18)
-    34 provinces placed by their Total rows; every row's sexes and areas add up, every province's districts make its Total row, and the provinces make 28,224,323 settled people
-    22 provinces written as the office counts them, 5 drawn otherwise written as the sum of the districts drawn in them (03, 11, 20, 26, 27), 7 not; 396 districts written, 2 refused with their reason
-  wrote data/processed/afghanistan_estimates.json (1486 kB)
-  432 records
+afghanistan_sdes: SDES median age by district, twelve provincial reports
+  Bamiyan: Table 3 read, 7 district(s); the province 16.6 (Text Box 1: 16.6)
+  Ghor: Table 5 read, 10 district(s); the province 16 (Text Box 1: 16.3)
+  Daykundi: Table 5 read, 8 district(s); the province 15 (Text Box 1: 15.2)
+  Kabul: Table 3 read, 15 district(s); the province 17.7 (Text Box 1: 17.7)
+  Kapisa: Table 3 read, 5 district(s); the province 17.1 (Text Box 1: 17.1)
+  Parwan: Table 3 read, 10 district(s); the province 17.1 (Text Box 1: 17.1)
+  retry 1/4 after 2s :: https://web.archive.org/web/20210816023651id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Samangan%20Report%20English%20V1_Reza_13Dec2015_webquality.pdf :: <urlopen error timed out>
+  retry 2/4 after 4s :: https://web.archive.org/web/20210816023651id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Samangan%20Report%20English%20V1_Reza_13Dec2015_webquality.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+afghanistan_sdes: Samangan: the table as read has ['20', '2002', '2003', '2004', '2005', '2006', '2007'], not ['20', '2001', '2002', '2003', '2004', '2005', '2006', '2007']
