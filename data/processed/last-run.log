@@ -1,37 +1,4 @@
-bhutan: National Statistics Bureau, PHCB 2017 Table 2.1
-    [debug] saw Gewog/Town but not all four: ['Table', '2.1', 'Distribution', 'of', 'the', 'Population', 'by', 'Gewog/Town', 'and', 'Sex,', 'Bumthang', '2017.........................................................................4']
-    [debug] strict header at x=61..272: ['Gewog/Town', 'Male', 'Female', 'Total']
-    [debug] row ['Urban', '50'] -> in span ['Urban', '50']
-    [debug] row ['Rural'] -> in span ['Rural']
-    [debug] row ['Bumthang', 'Town', '3,381', '2,862', '6,243'] -> in span ['Bumthang', 'Town', '3,381', '2,862', '6,243']
-    [debug] row ['40'] -> in span ['40']
-    [debug] row ['Chhumig', 'Town', '189', '204', '393'] -> in span ['Chhumig', 'Town', '189', '204', '393']
-    [debug] row ['Urban'] -> in span ['Urban']
-    [debug] row ['30'] -> in span ['30']
-    [debug] row ['Rural'] -> in span ['Rural']
-    [debug] row ['Chhoekhor', '2,042', '1,905', '3,947', '20', '37.2'] -> in span ['Chhoekhor', '2,042', '1,905', '3,947', '20', '37.2']
-    [debug] row ['Tang', '1,165', '1,153', '2,318', '26.1'] -> in span ['Tang', '1,165', '1,153', '2,318', '26.1']
-    [debug] row ['10'] -> in span ['10']
-    [debug] row ['Chhumig', '1,748', '1,447', '3,195'] -> in span ['Chhumig', '1,748', '1,447', '3,195']
-    [debug] row ['0'] -> in span ['0']
-    [debug] row ['Ura', '871', '853', '1,724'] -> in span ['Ura', '871', '853', '1,724']
-    [debug] row ['2005', '2017'] -> in span ['2005', '2017']
-    [debug] row ['Both', 'Areas', '9,396', '8,424', '17,820'] -> in span ['Both', 'Areas', '9,396', '8,424', '17,820']
-  the twenty reports' Table A2.6 totals come to no whole figure, against the national report's 727,145
-  Bumthang: 4 gewogs, 2 town(s), 17,820 people
-    Tables A2.6 and A2.7: the dzongkhag's median read; 4 of 4 gewogs' medians read
-  CITIZENSHIP NOT READ -- Bumthang: Table 2.2 was not found under its title
-  Table 2.2 read for 0 of 1 dzongkhags: 0 Bhutanese
-  medians read: 1 of 1 dzongkhags and 4 of 4 gewogs; each one declined says why in its record
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bhutan.py", line 1992, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/bhutan.py", line 1984, in main
-    write_json(out, records)
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1592, in write_json
-    path.parent.mkdir(parents=True, exist_ok=True)
-    ^^^^^^^^^^^
-AttributeError: 'str' object has no attribute 'parent'
+== page https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2201.html
+  HTTP 404 Not Found: <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not Found</h1></center> <hr><center>nginx/1.24.0</center> </body> </html>
+== page https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220172.html
+  HTTP 404 Not Found: <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not Found</h1></center> <hr><center>nginx/1.24.0</center> </body> </html>
