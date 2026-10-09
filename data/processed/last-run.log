@@ -1,7 +1,12 @@
-india_census: Census 2011, level=district
+india_census: Census 2011, level=state
   validated against published national totals: 640 districts, 1,210,854,977 people
   national sex ratio 943 females per 1,000 males (623,270,258 males, 587,584,719 females)
+  C-01 Appendix: https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx
   C-01 Appendix: /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW00C-01 Appendix MDDS.xlsx
-  wrote data/processed/india_district.json (2824 kB)
-  735 records, 734 with religion shares, 1 explicit gaps carrying their reason
-  groups beyond C-01's eight columns (31): ADI DHARM, Addi Bassi, Adi, Adim dhamm, Animist, Atheist, Bahai / Bahais, Bidin, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Idu / Idu Mishmi, Intaya, Jews / Judaism, Khasi, Nani Intiya, Niamtre, Nocte, Non Christians, Nyarino, Other religions (not separately named), Pagan, Parsi/Zorastrian, Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Traditional Religion, Tribal Religion, Yumasam
+  C-01 Appendix: 35 states, 83 named religions, 7,788,066 of the 7,937,734 people in 'Other religions and persuasions'
+  split Jammu And Kashmir: Ladakh 274,289, Jammu and Kashmir 12,267,013
+  split Andhra Pradesh: Telangana 35,193,978, Andhra Pradesh 49,386,799
+  merged Dadra and Nagar Haveli and Daman and Diu: 586,956 from Dadra and Nagar Haveli 343,709, Daman and Diu 243,247
+  wrote data/processed/india_state.json (180 kB)
+  36 records, 36 with religion shares, 0 explicit gaps carrying their reason
+  groups beyond C-01's eight columns (20): ADI DHARM, Addi Bassi, Adim dhamm, Animist, Atheist, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Khasi, Nani Intiya, Niamtre, Nocte, Other religions (not separately named), Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Tribal Religion, Yumasam
