@@ -65,7 +65,7 @@ YEARS = "2008-2014"
 # Province names as the plans' covers may spell them, against the office's
 # province codes; the drawn and the articles' spellings are added at run time.
 PROVINCE_SPELLINGS = {
-    "bamiyan": "10", "bamian": "10", "daikundi": "24", "daykundy": "24",
+    "bamiyan": "10", "bamian": "10", "daikundi": "24", "daykundy": "24", "daikudi": "24",
     "jawzjan": "28", "jowzjan": "28", "juzjan": "28", "sarepul": "22", "saripul": "22",
     "sarepol": "22", "saripol": "22", "sarialpul": "22", "nimroz": "34", "nimruz": "34",
     "uruzgan": "25", "oruzgan": "25", "urozgan": "25", "paktya": "13", "paktia": "13",
@@ -96,6 +96,13 @@ NEXT_FIELD = re.compile(r"(?i)^(?:sectoral|number|no\.|average|population|area|l
                         r"percentage|access|education|health|infrastructure|main|total|"
                         r"language|religion|agricultur|economic|general|livelihood|\d+\.)")
 YEAR = re.compile(r"\b(20(?:0[5-9]|1[0-6]))\b")
+# The plans' file names as the archive holds them: "Chemtal DDP English
+# Summary.pdf", "Summary of the DDP in English-Bakwa.pdf", "Dawlat Abad Full
+# DDP.pdf", but also "Khost_Tani_Summary_Finalized.pdf", "Kabul_Guldara English
+# summary finalized.pdf", "Gizab District Summary.pdf" and "Chardara
+# Summery.pdf", which do not say "DDP" at all.
+PLAN_FILE = re.compile(r"(?i)ddp|summ[ae]ry")
+FULL_PLAN = re.compile(r"(?i)\bfull\b")
 
 
 # ---------------------------------------------------------------------------
@@ -124,19 +131,44 @@ def captures(attempts: int = 6, wait: float = 30.0) -> list[tuple[str, str]]:
             except Exception as err:                # noqa: BLE001 -- retried below
                 last = err
                 continue
-            return sorted((r[0], r[1]) for r in rows[1:] if re.search(r"(?i)ddp", r[1]))
+            return prefer_summaries(sorted(
+                (r[0], r[1]) for r in rows[1:]
+                if PLAN_FILE.search(urllib.parse.unquote(r[1].rsplit("/", 1)[-1]))))
         log(f"  the archive's index did not answer ({last}); asking again in {wait:.0f}s")
         time.sleep(wait)
     raise SystemExit(f"afghanistan_ddp: the archive's index never answered: {last}")
 
 
+def prefer_summaries(found: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    """Drop a full plan where its folder also holds that district's summary.
+
+    The summary is what is read, and the full plan (a document several times
+    its size) repeats the same profile; it is kept only for a district whose
+    summary the archive does not hold.
+    """
+    by_key: dict[tuple[str, str], list[tuple[str, str]]] = {}
+    for item in found:
+        by_key.setdefault((article_of(item[1]), fold(file_label(item[1]))), []).append(item)
+    out = []
+    for items in by_key.values():
+        summaries = [i for i in items
+                     if not FULL_PLAN.search(urllib.parse.unquote(i[1].rsplit("/", 1)[-1]))]
+        out.extend(summaries or items)
+    return sorted(out)
+
+
 def file_label(url: str) -> str:
-    """The plan's district as its file name gives it, a fallback for the cover."""
+    """The plan's district as its file name gives it, a fallback for the cover.
+
+    "Chemtal DDP English Summary" -> "Chemtal"; "Summary of the DDP in
+    English-Bakwa" -> "Bakwa"; "Khost_Tani_Summary_Finalized" -> "Khost Tani"
+    (a province in front is left for the binding to recognise).
+    """
     name = urllib.parse.unquote(url.rsplit("/", 1)[-1])
-    name = re.sub(r"(?i)\.pdf$", "", name)
+    name = re.sub(r"(?i)\.pdf$", "", name).replace("_", " ").replace("+", " ")
     name = re.sub(r"(?i)summary of the ddp in english[- ]*", "", name)
-    name = re.sub(r"(?i)\b(?:full\s+)?ddp\b.*$", "", name)
-    return " ".join(name.replace("_", " ").replace("+", " ").split())
+    name = re.sub(r"(?i)\b(?:(?:full|district)\s+)?(?:ddp|summ[ae]ry|english)\b.*$", "", name)
+    return " ".join(name.split()).strip(" -")
 
 
 def article_of(url: str) -> str:
@@ -148,6 +180,53 @@ def page_texts(blob: bytes, pages: int = 4) -> list[str]:
     import pdfplumber                               # noqa: PLC0415
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
         return [(page.extract_text() or "") for page in pdf.pages[:pages]]
+
+
+def read_one(stamp: str, original: str, started: float, budget: float
+             ) -> tuple[str, list[str] | None, str]:
+    """One archived plan's first pages, or None and why."""
+    import time                                     # noqa: PLC0415
+    url = f"https://web.archive.org/web/{stamp}id_/{original}"
+    if time.monotonic() - started > budget:
+        return url, None, "not read: the run's time ran out"
+    try:
+        blob = http_get(url, binary=True, retries=2, timeout=90)
+    except Exception as err:                        # noqa: BLE001 -- reported
+        return url, None, f"{type(err).__name__} {str(err)[:80]}"
+    if blob[:4] != b"%PDF":
+        return url, None, "not a PDF"
+    try:
+        return url, page_texts(blob), ""
+    except Exception as err:                        # noqa: BLE001 -- reported
+        return url, None, f"unreadable PDF ({type(err).__name__})"
+
+
+def read_plans(found: list[tuple[str, str]], workers: int = 3,
+               minutes: float = 33.0) -> tuple[list[dict[str, Any]], int]:
+    """Every plan read, a few at a time, within the runner's time.
+
+    One plan after another took longer than the runner's 45 minutes: the
+    archive answers each in seconds to tens of seconds. Three at once is still
+    a light load on it, and a plan not reached by ``minutes`` is counted and
+    named rather than left to kill the run with everything it had read.
+    Returns the plans and how many were not reached.
+    """
+    import time                                     # noqa: PLC0415
+    from concurrent.futures import ThreadPoolExecutor  # noqa: PLC0415
+    started = time.monotonic()
+    plans: list[dict[str, Any]] = []
+    unread = 0
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        jobs = pool.map(lambda item: read_one(*item, started, minutes * 60), found)
+        for n, (url, texts, why) in enumerate(jobs, 1):
+            if texts is None:
+                unread += why.startswith("not read")
+                log(f"  !! {url}: {why}")
+            else:
+                plans.append(read_plan(texts, url))
+            if n % 25 == 0:
+                log(f"  {n}/{len(found)} plans fetched, {(time.monotonic() - started) / 60:.1f} min")
+    return plans, unread
 
 
 def read_plan(texts: list[str], url: str) -> dict[str, Any]:
@@ -222,15 +301,27 @@ def bind_plan(plan: dict[str, Any], codes: dict[str, str],
               article_province: dict[str, str]) -> tuple[dict[str, Any] | None, str]:
     """The one drawn district a plan is for, or None and why."""
     code = codes.get(fold(plan["province"])) if plan["province"] else None
+    label = plan["district"]
+    if plan["district_from"] == "file name":
+        # "Khost Tani", "Samangan Aibak": a file name that leads with its province.
+        words = label.split()
+        for cut in (1, 2):
+            head = fold(" ".join(words[:cut]))
+            if len(words) > cut and head in codes:
+                code = code or codes[head]
+                label = " ".join(words[cut:])
+                break
     if code is None:
         code = article_province.get(article_of(plan["url"]))
         if code is None:
             return None, f"no province read from its cover ({plan['province']!r})"
-    wanted = {fold(plan["district"])}
-    declared = SPELLINGS.get((code, plan["district"]))
+    wanted = {fold(label)}
+    # "Farah Center", "Bamyan Centre": the district that holds the provincial centre.
+    wanted.add(fold(re.sub(r"(?i)\b(?:center|centre|markaz)\b", " ", label)))
+    declared = SPELLINGS.get((code, label))
     if declared:
         wanted.add(fold(declared))
-    # "Provincial Center", "Markaz" and the like name the centre district.
+    wanted.discard("")
     hits = [unit for unit, names in districts.get(code, []) if names & wanted]
     if len(hits) == 1:
         return hits[0], ""
@@ -379,23 +470,12 @@ def main() -> int:
     log(f"  {len(found)} archived plan PDFs")
     if args.limit:
         found = found[:args.limit]
-    plans = []
-    for stamp, original in found:
-        url = f"https://web.archive.org/web/{stamp}id_/{original}"
-        try:
-            blob = http_get(url, binary=True)
-        except Exception as err:                    # noqa: BLE001 -- reported
-            log(f"  !! {url}: {type(err).__name__} {str(err)[:80]}")
-            continue
-        if blob[:4] != b"%PDF":
-            log(f"  !! {url}: not a PDF")
-            continue
-        try:
-            texts = page_texts(blob)
-        except Exception as err:                    # noqa: BLE001 -- reported
-            log(f"  !! {url}: unreadable PDF ({type(err).__name__})")
-            continue
-        plans.append(read_plan(texts, url))
+    plans, unread = read_plans(found)
+    log(f"  {len(plans)} plans read, {unread} not reached in the run's time")
+    if unread and not args.probe:
+        # A plan not read may be the later of two for a district this run
+        # would write from the earlier: write nothing rather than that.
+        raise SystemExit(f"afghanistan_ddp: {unread} plans not reached; nothing written")
     units1, units2 = load_units("AFG", "admin1"), load_units("AFG", "admin2")
     records = build(plans, units1, units2, office_names(), probe=args.probe)
     compare(records, units1, units2)

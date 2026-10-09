@@ -30,6 +30,7 @@ Sectoral Information
 Number of Primary Schools 9 Primary Schools"""
 
 URL = "https://web.archive.org/web/2016id_/http://www.mrrd-nabdp.org/attachments/article/{a}/{f}"
+ORIGINAL = "http://www.mrrd-nabdp.org/attachments/article/{a}/{f}"
 
 
 def plan(district, province, ethnic, *, year=2009, label="Ethnic diversity", article="123",
@@ -81,6 +82,47 @@ class Reading(unittest.TestCase):
         self.assertEqual((p["district"], p["district_from"], p["province"]),
                          ("Bakwa", "file name", None))
 
+    def test_file_names_with_and_without_ddp_give_the_district(self):
+        for name, label in (("Chemtal%20DDP%20English%20Summary.pdf", "Chemtal"),
+                            ("Khost_Tani_Summary_Finalized.pdf", "Khost Tani"),
+                            ("Kabul_Guldara%20English%20summary%20finalized.pdf", "Kabul Guldara"),
+                            ("Gizab%20District%20Summary.pdf", "Gizab"),
+                            ("Chardara%20Summery.pdf", "Chardara"),
+                            ("Dawlat%20Abad%20Full%20DDP.pdf", "Dawlat Abad"),
+                            ("Samangan_Aibak_DDP%20Summary-translated-finalized.pdf", "Samangan Aibak")):
+            self.assertEqual(dd.file_label(URL.format(a="139", f=name)), label)
+            self.assertTrue(dd.PLAN_FILE.search(name), name)
+
+    def test_a_full_plan_gives_way_to_its_summary(self):
+        found = [("2016", URL.format(a="123", f="Dawlat%20Abad%20Full%20DDP.pdf")),
+                 ("2016", URL.format(a="123", f="Dawlat%20Abad%20DDP%20English%20Summary.pdf")),
+                 ("2016", URL.format(a="133", f="Khuram%20Sarbagh%20full%20DDP.pdf"))]
+        kept = [url.rsplit("/", 1)[-1] for _, url in dd.prefer_summaries(found)]
+        self.assertEqual(sorted(kept), ["Dawlat%20Abad%20DDP%20English%20Summary.pdf",
+                                        "Khuram%20Sarbagh%20full%20DDP.pdf"])
+
+
+class Fetching(unittest.TestCase):
+    def test_plans_are_read_in_order_and_failures_named(self):
+        pages = [COVER.format(district="CHEMTAL", province="BALKH", month="May", year=2010),
+                 PROFILE.format(label="Ethnic diversity", ethnic="Tajik 60%, Pashtun 40%")]
+
+        def get(url, **_):
+            return b"<html>" if "Bad" in url else b"%PDF-1.4"
+        found = [("2016", ORIGINAL.format(a="123", f="Chemtal%20DDP%20English%20Summary.pdf")),
+                 ("2016", ORIGINAL.format(a="123", f="Bad%20DDP%20English%20Summary.pdf"))]
+        with mock.patch.object(dd, "http_get", get), \
+                mock.patch.object(dd, "page_texts", lambda blob: pages):
+            plans, unread = dd.read_plans(found, workers=2)
+        self.assertEqual([p["district"] for p in plans], ["CHEMTAL"])
+        self.assertEqual(unread, 0)
+
+    def test_plans_past_the_runs_time_are_counted_not_read(self):
+        found = [("2016", ORIGINAL.format(a="123", f="Chemtal%20DDP%20English%20Summary.pdf"))]
+        with mock.patch.object(dd, "http_get", side_effect=AssertionError("fetched")):
+            plans, unread = dd.read_plans(found, minutes=-1)
+        self.assertEqual((plans, unread), ([], 1))
+
 
 class Building(unittest.TestCase):
     def build(self, plans, office=None):
@@ -117,6 +159,17 @@ class Building(unittest.TestCase):
 
     def test_an_unknown_name_binds_nothing(self):
         self.assertEqual(self.build([plan("Nowhere", "Balkh", "Uzbek 60%, Pashtun 40%")]), {})
+
+    def test_a_file_name_that_leads_with_its_province_binds(self):
+        texts = ["SUMMARY OF DISTRICT DEVELOPMENT PLAN",
+                 PROFILE.format(label="Ethnic diversity", ethnic="Uzbek 60%, Pashtun 40%")]
+        p = dd.read_plan(texts, URL.format(a="139", f="Balkh_Dawlat%20Abad_Summary_Finalized.pdf"))
+        self.assertEqual((p["district"], p["province"]), ("Balkh Dawlat Abad", None))
+        self.assertIn("D2109", self.build([p]))
+
+    def test_the_provincial_centre_is_its_district(self):
+        records = self.build([plan("Charikar Center", "Parwan", "Tajik 70%, Pashtun 30%")])
+        self.assertIn("D0301", records)
 
     def test_the_later_of_two_plans_stands(self):
         early = plan("Balkh", "Balkh", "Tajik 70%, Pashtun 30%", year=2008)
