@@ -16,7 +16,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 22.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 96.1,
@@ -166,11 +169,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -191,6 +201,7 @@
     "match_by": "shape_id",
     "shape_id": "97431129B55805139245338",
     "population_note": "The census counts of its islands added up: Banaba, Butaritari, Marakei, Abaiang, Tarawa Ieta, Tarawa Teinainano, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, Tabiteuea North, Tabiteuea South, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin.",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 108,661 people here against the census's final 108,145. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints medians by island and division, not by island group, and its island figures (Table A-10a) are not used, for the reason each island's record gives.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 52,993 males, 55,152 females). The islands added up: Banaba, Butaritari, Marakei, Abaiang, North Tarawa, South Tarawa, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, North Tabiteuea, South Tabiteuea, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin.",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'. The islands added up: Banaba, Butaritari, Marakei, Abaiang, North Tarawa, South Tarawa, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, North Tabiteuea, South Tabiteuea, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin.",
@@ -214,7 +225,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 23.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 109.9,
@@ -359,11 +373,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -384,6 +405,7 @@
     "match_by": "shape_id",
     "shape_id": "97431129B35506555718846",
     "population_note": "The census counts of its islands added up: Teraina, Tabuaeran, Kiritimati.",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 11,279 people here against the census's final 11,252. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints medians by island and division, not by island group, and its island figures (Table A-10a) are not used, for the reason each island's record gives.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 5,891 males, 5,361 females). The islands added up: Teeraina, Tabuaeran, Kiritimati.",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'. The islands added up: Teeraina, Tabuaeran, Kiritimati.",
@@ -407,10 +429,8 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 17.9,
-      "unit": "years",
-      "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "status": "not_available",
+      "note": "Kanton's 41 people are not in the Pacific Community's tabulation of the 2020 census by age, the source of every other island's median here. The General Report prints 17.9 for Kanton (Table A-10a), a column not used for any island: it puts the country at 20.4 against the 22.9 of the Office's own Census Atlas, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years."
     },
     "sex_ratio": {
       "value": 95.2,
@@ -455,7 +475,7 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
@@ -483,7 +503,6 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 20 males, 21 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Phoenix Islands as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 20 people of Phoenix Islands at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -504,8 +523,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available",
-      "note": "The General Report prints Banaba's median age as 13.8 (Table A-10a), and the same table counts 150 of its 333 people under 15 -- fewer than half -- which puts the median at or over 15; the printed figure is not used."
+      "value": 21.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 122.0,
@@ -570,11 +591,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -595,6 +623,7 @@
     "match_by": "shape_id",
     "shape_id": "32618148B87111691848014",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 330 people here against the census's final 333. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 13.8 for Banaba (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years. Its own age groups contradict it besides: 150 of the island's 333 people are under 15, fewer than half, which puts the median at or over 15.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 183 males, 150 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
@@ -618,10 +647,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 16.8,
+      "value": 21.7,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 100.1,
@@ -711,11 +740,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -736,10 +772,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B6165010807042",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 3,241 people here against the census's final 3,250. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 16.8 for Butaritari (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,626 males, 1,624 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Butaritari as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 3,224 people of Butaritari at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -760,10 +796,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 17.0,
+      "value": 21.9,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 97.3,
@@ -848,11 +884,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -873,10 +916,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B21694904403100",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 2,738 people here against the census's final 2,738. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 17.0 for Marakei (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,350 males, 1,388 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Marakei as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 2,799 people of Marakei at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -897,10 +940,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 19.6,
+      "value": 19.3,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 104.5,
@@ -1020,11 +1063,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -1045,10 +1095,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B42331431520024",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 5,872 people here against the census's final 5,815. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 19.6 for Abaiang (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 2,972 males, 2,843 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Abaiang as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 5,568 people of Abaiang at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 4 answering 'Te Ran' and 34 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -1069,10 +1119,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 19.8,
+      "value": 21.8,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 96.3,
@@ -1187,11 +1237,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -1212,10 +1269,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B16368966755916",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 7,041 people here against the census's final 7,018. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 19.8 for Tarawa Ieta (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 3,443 males, 3,575 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tarawa Ieta as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 6,629 people of Tarawa Ieta at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -1236,10 +1293,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 21.2,
+      "value": 23.0,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 91.3,
@@ -1389,11 +1446,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -1414,10 +1478,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B40735312671902",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 44,874 people here against the census's final 44,643 -- South Tarawa without Betio. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 21.2 for Tarawa Teinainano (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 21,302 males, 23,341 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tarawa Teinainano as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 39,058 people of Tarawa Teinainano at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 42 answering 'Te Ran' and 90 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -1438,10 +1502,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 20.8,
+      "value": 23.5,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 95.0,
@@ -1586,11 +1650,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -1611,10 +1682,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B78495147867108",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 18,565 people here against the census's final 18,429 -- its village 'BetioEast'. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 20.8 for Betio (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 8,979 males, 9,450 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Betio as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 17,330 people of Betio at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 22 answering 'Te Ran' and 9 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -1635,10 +1706,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 20.8,
+      "value": 24.6,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 103.6,
@@ -1718,11 +1789,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -1743,10 +1821,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B78617285071843",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 2,405 people here against the census's final 2,345. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 20.8 for Maiana (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,193 males, 1,152 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Maiana as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,982 people of Maiana at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 7 answering 'Te Ran' and 7 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -1767,10 +1845,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 22.2,
+      "value": 21.5,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 98.4,
@@ -1885,11 +1963,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -1910,10 +1995,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B16013882827848",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 3,257 people here against the census's final 3,255. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 22.2 for Abemama (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,614 males, 1,641 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Abemama as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 3,262 people of Abemama at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -1934,10 +2019,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 17.1,
+      "value": 22.9,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 103.4,
@@ -2017,11 +2102,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -2042,10 +2134,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B42959533583830",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 1,191 people here against the census's final 1,190. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 17.1 for Kuria (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 605 males, 585 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Kuria as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,046 people of Kuria at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -2066,10 +2158,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 19.0,
+      "value": 25.1,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 104.5,
@@ -2149,11 +2241,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -2174,10 +2273,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B26151812099760",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 1,223 people here against the census's final 1,221. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 19.0 for Aranuka (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 624 males, 597 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Aranuka as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,125 people of Aranuka at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 5 answering 'Te Ran', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -2198,10 +2297,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 20.5,
+      "value": 23.9,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 106.1,
@@ -2291,11 +2390,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -2316,10 +2422,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B22079414883536",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 2,792 people here against the census's final 2,749. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 20.5 for Nonouti (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,415 males, 1,334 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Nonouti as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 2,743 people of Nonouti at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 1 answering 'All Nation', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -2340,10 +2446,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 18.6,
+      "value": 20.3,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 99.1,
@@ -2448,11 +2554,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -2473,10 +2586,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B33947365829415",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 4,120 people here against the census's final 4,181. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 18.6 for Tabiteuea North (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 2,081 males, 2,100 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tabiteuea North as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 3,955 people of Tabiteuea North at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 4 answering 'Te Ran', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -2497,10 +2610,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 18.9,
+      "value": 23.8,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 98.8,
@@ -2570,11 +2683,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -2595,10 +2715,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B54053699932419",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 1,357 people here against the census's final 1,356. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 18.9 for Tabiteuea South (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 674 males, 682 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tabiteuea South as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,306 people of Tabiteuea South at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -2619,10 +2739,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 24.8,
+      "value": 26.1,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 101.8,
@@ -2682,11 +2802,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -2707,10 +2834,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B12909082170422",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 2,220 people here against the census's final 2,214. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 24.8 for Beru (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,117 males, 1,097 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Beru as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 2,051 people of Beru at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -2731,10 +2858,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 18.7,
+      "value": 22.6,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 112.7,
@@ -2814,11 +2941,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -2839,10 +2973,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B56585078959297",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 2,061 people here against the census's final 2,055. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 18.7 for Nikunau (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,089 males, 966 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Nikunau as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,789 people of Nikunau at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -2863,10 +2997,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 23.0,
+      "value": 26.0,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 106.9,
@@ -2946,11 +3080,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -2971,10 +3112,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B56222397665525",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 1,423 people here against the census's final 1,417. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 23.0 for Onotoa (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 732 males, 685 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Onotoa as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,393 people of Onotoa at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -2995,10 +3136,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 26.0,
+      "value": 29.8,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 100.0,
@@ -3063,11 +3204,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -3088,10 +3236,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B45307539397185",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 1,054 people here against the census's final 1,028. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 26.0 for Tamana (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 514 males, 514 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tamana as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,104 people of Tamana at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -3112,10 +3260,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 25.2,
+      "value": 27.4,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 106.2,
@@ -3165,11 +3313,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -3190,10 +3345,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B36396887967874",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 983 people here against the census's final 994. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 25.2 for Arorae (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 512 males, 482 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Arorae as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,011 people of Arorae at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -3214,10 +3369,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 16.2,
+      "value": 21.7,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 110.6,
@@ -3287,11 +3442,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -3312,10 +3474,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B26248094198225",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 1,907 people here against the census's final 1,893. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 16.2 for Teraina (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 994 males, 899 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Teraina as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 1,712 people of Teraina at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -3336,10 +3498,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 16.9,
+      "value": 22.0,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 114.0,
@@ -3434,11 +3596,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -3459,10 +3628,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B24149842741451",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 1,992 people here against the census's final 1,990. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 16.9 for Tabuaeran (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,060 males, 930 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tabuaeran as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 2,315 people of Tabuaeran at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -3483,10 +3652,10 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 18.9,
+      "value": 23.6,
       "unit": "years",
       "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "source": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati), 2020"
     },
     "sex_ratio": {
       "value": 108.6,
@@ -3626,11 +3795,18 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "median_age",
+        "name": "Pacific Community (SPC) tabulation of the 2020 census by island, five-year age group and sex (UNFPA / OCHA COD-PS for Kiribati)",
+        "url": "https://data.humdata.org/dataset/cod-ps-kir",
+        "year": 2020,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations"
       },
       {
         "field": "religion",
@@ -3651,10 +3827,10 @@
     "match_by": "shape_id",
     "shape_id": "32618148B33309898613409",
     "population_note": "The 2020 census count (Island Profile tables).",
+    "median_age_note": "Median age interpolated within the five-year age group that holds the middle person, from the Pacific Community's tabulation of the 2020 census by island, five-year age group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), which counts 7,380 people here against the census's final 7,369. The same tabulation gives the country a median of 22.9, and the Statistics Office's own Census Atlas prints 22.9. The General Report prints 18.9 for Kiritimati (Table A-10a), a column not used here: it puts the country at 20.4 against the Atlas's 22.9, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 3,837 males, 3,532 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Kiritimati as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 6,456 people of Kiritimati at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 2 answering 'Te Ran', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
@@ -3675,10 +3851,8 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "value": 17.9,
-      "unit": "years",
-      "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
+      "status": "not_available",
+      "note": "Kanton's 41 people are not in the Pacific Community's tabulation of the 2020 census by age, the source of every other island's median here. The General Report prints 17.9 for Kanton (Table A-10a), a column not used for any island: it puts the country at 20.4 against the 22.9 of the Office's own Census Atlas, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years."
     },
     "sex_ratio": {
       "value": 95.2,
@@ -3723,7 +3897,7 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "median_age/sex_ratio/ethnicity",
+        "field": "sex_ratio/ethnicity",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
         "year": 2020,
@@ -3751,7 +3925,6 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 20 males, 21 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Kanton as the 2020 census's General Report prints it (Table A-10a).",
     "religion_year": 2015,
     "religion_note": "Religion of the 20 people of Kanton at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   }
