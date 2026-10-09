@@ -35,6 +35,10 @@ Subcommands:
         the geography columns and the fields whose name matches REGEX; with
         --dictionary, the workbook's data-dictionary rows (definition, the
         office's original field name, its table) of the fields matching it.
+    uscbages DATASET SHEET [--grep CODE_REGEX] [--rows N]
+        The same workbook's five-year age groups for the rows whose office
+        code matches CODE_REGEX: per year's columns, the total, men, women,
+        the interpolated median and each group's share.
     geonames CC [--iso ISO3] [--unit-level L] [--classes P,L] [--grep REGEX] [--rows N]
         GeoNames' dump of one country (``CC.zip``): every feature of the given
         classes, with its Arabic names, its point, and the drawn unit of
@@ -352,6 +356,64 @@ def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
             break
 
 
+def cmd_uscbages(dataset: str, sheet: str, codes: str | None, rows: int) -> None:
+    """Five-year age groups of the Census Bureau rows whose code matches CODES.
+
+    For every year's columns the sheet carries (the suffix after the group,
+    "_6", "_7", or none), each matching row's total, men and women, the
+    median interpolated in the group holding the middle person, and every
+    group's share of the total -- enough to tell a real age structure from a
+    misread or copied one. The column aliases say which year each suffix is.
+    """
+    from . import uscb
+    from .cod_ps_age import grouped_median
+    from .west_asia_common import AGE_CLOSED, AGE_OPEN, age_groups, count, workbook
+
+    book = workbook(uscb.workbook_url(dataset))
+    wanted = re.sub(r"[-_]", " ", sheet).strip().lower()
+    actual = next((s for s in book if re.sub(r"[-_]", " ", s).strip().lower() == wanted), None)
+    if actual is None:
+        log(f"  no sheet {sheet!r}: {sorted(book)}")
+        return
+    table = book[actual]
+    names, aliases = uscb.columns(table)
+    suffixes = sorted({(m.group(4) or "") for n in names if n and (m := AGE_CLOSED.match(n))}
+                      | {(m.group(3) or "") for n in names if n and (m := AGE_OPEN.match(n))})
+    log(f"  {actual}: {len(table) - 2} rows; age-column suffixes {suffixes}")
+    for suffix in suffixes:
+        first = next((i for i, n in enumerate(names)
+                      if n and AGE_CLOSED.match(n) and (AGE_CLOSED.match(n).group(4) or "") == suffix
+                      and AGE_CLOSED.match(n).group(1) == "B"), None)
+        if first is not None:
+            log(f"    suffix {suffix or '(none)'}: {names[first]} = {aliases[first]}")
+    pat = re.compile(codes or ".")
+    shown = 0
+    for raw in table[2:]:
+        rec = {n: v for n, v in zip(names, raw) if n}
+        level = uscb.number(rec.get("ADM_LEVEL"))
+        code = str(rec.get("NSO_CODE") or "").strip() if level else "national"
+        if not pat.search(code):
+            continue
+        log(f"  {code} {rec.get('AREA_NAME')} (level {level})")
+        for suffix in suffixes:
+            try:
+                groups = age_groups(rec, "B", suffix)
+            except SystemExit as err:
+                log(f"    {suffix or '-'}: {err}")
+                continue
+            total = sum(g[2] for g in groups)
+            men = count(rec.get("MTOTL" + suffix))
+            women = count(rec.get("FTOTL" + suffix))
+            printed = count(rec.get("BTOTL" + suffix))
+            median = grouped_median(groups)
+            shares = " ".join(f"{lo}:{100 * n / total:.1f}" for lo, _hi, n in groups) if total else ""
+            log(f"    {suffix or '-'}: total {total:,.0f} (printed {printed}), men {men}, "
+                f"women {women}, median {median}; shares {shares}")
+        shown += 1
+        if shown >= rows:
+            break
+
+
 ARABIC_LETTERS = re.compile(r"[؀-ۿ]")
 
 
@@ -558,8 +620,8 @@ def cmd_osm(cc: str, iso3: str | None, level: str, grep: str | None, rows: int,
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "xlsx", "pdf",
-                                    "geonames", "wdpoints", "osm"])
+    ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "uscbages",
+                                    "xlsx", "pdf", "geonames", "wdpoints", "osm"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--search")
     ap.add_argument("--where")
@@ -591,6 +653,9 @@ def main() -> int:
     if args.cmd == "uscb":
         cmd_uscb(args.target[0], args.target[1], args.grep, args.rows, args.level,
                  args.dictionary)
+        return 0
+    if args.cmd == "uscbages":
+        cmd_uscbages(args.target[0], args.target[1], args.grep, args.rows)
         return 0
     if args.cmd == "geonames":
         cmd_geonames(args.target[0], args.iso, args.unit_level, args.classes, args.grep,
