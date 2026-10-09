@@ -18,6 +18,21 @@ sex ratio from its men and women; table 5's region totals must agree.
 ratio from table 5. Age is published for regions only, so their median age
 is left as a stated gap.
 
+**Nationality** is not tabulated by the 2020 census at all. The 2010 census
+counted it, and its volume III (*National composition, language proficiency
+and citizenship of the population of the Republic of Tajikistan*, 2012)
+gives, in the table "Population of individual nationalities by sex and age
+groups", the seven largest nationalities -- Tajiks, Uzbeks, Russians, Kyrgyz,
+Turkmen, Tatars, Kazakhs -- for the republic and each region. The volume is
+read from the Internet Archive's capture of the Agency's old site. A
+region's composition is those seven and, as "other", the rest of its 2010
+population, which table 1 of the 2020 volume 2 prints beside 2020's (the
+2010 column); its year is 2010. Checks: men and women make both sexes in
+every row, the regions make the republic nationality by nationality, the
+regions' 2010 totals make the republic's, and no region's seven exceed its
+total. Volume III gives nationality for no city or district, and native
+language for the republic and its urban and rural population only.
+
 **Binding.** Table 5 names each unit in Tajik ("ноҳияи Ванҷ", "шаҳри Исфара
 - ҳамагӣ") above its Russian name; units are keyed by the Tajik name and
 placed on the drawn polygon ``UNITS`` names. The boundary file is older than
@@ -46,7 +61,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares,
+                      write_json)
 from .redatam import median_age
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -70,6 +86,24 @@ SEXES_SOURCE = ("Agency on Statistics under the President of the Republic of Taj
                 "Population and Housing Census, volume 2, table 5: men and women in regions, "
                 "cities and districts")
 LICENCE = "Official statistics of the Agency on Statistics; free to use with attribution"
+YEAR_2010 = 2010
+# The 2010 census's volume III as the Agency's old site served it, linked from
+# its "Archive of publications" page (stat.tj/ru/electronic-versions-of-
+# publications, Internet Archive capture of 18 November 2019).
+VOLUME3 = "http://oldstat.ww.tj/ru/img/526b8592e834fcaaccec26a22965ea2b_1355501132.pdf"
+VOLUME3_ARCHIVED = "https://web.archive.org/web/2019id_/" + VOLUME3
+VOLUME3_PAGE = "https://stat.tj/ru/electronic-versions-of-publications"
+VOLUME3_SOURCE = ("Agency on Statistics under the President of the Republic of Tajikistan, "
+                  "2010 Population and Housing Census, volume III: National composition, "
+                  "language proficiency and citizenship (2012), table 'Population of individual "
+                  "nationalities by sex and age groups'")
+TOTALS_2010_SOURCE = ("Agency on Statistics under the President of the Republic of Tajikistan, "
+                      "2020 Population and Housing Census, volume 2, table 1 (its 2010 column)")
+NATIONALITY_TITLE = "Население отдельных национальностей по полу и возрастным группам"
+# The table's seven nationalities (Russian names) -> the map's labels.
+NATIONALITIES = {"таджики": "Tajik", "узбеки": "Uzbek", "русские": "Russian",
+                 "кыргызы": "Kyrgyz", "туркмены": "Turkmen", "татары": "Tatar",
+                 "казахи": "Kazakh"}
 
 # A region heading's keywords (Russian or Tajik, Tajik letters folded) -> the
 # drawn first-level label.
@@ -141,9 +175,15 @@ VOLUMES = ("The Agency on Statistics has published the 2020 census in nine volum
            f"listed at {PAGE}")
 COMPOSITION_GAP = (
     f"{VOLUMES}. None tabulates nationality or language, for the republic or any area. The "
-    "2010 census's nationality and language tables were disseminated through the CensusInfo "
-    "database at censusinfo.tj, whose host no longer resolves (checked October 2026); the "
-    "Agency's archived 2010 census page links no results volume.")
+    "2010 census's volume III (National composition, language proficiency and citizenship, "
+    "2012) gives nationality for the republic and its five regions only, and native language "
+    "for the republic and its urban and rural population only; it has no city or district "
+    "table of either.")
+LANGUAGE_GAP = (
+    f"{VOLUMES}. None tabulates language. The 2010 census's volume III gives native language "
+    "for the republic and its urban and rural population only (table 'Distribution of the "
+    "population of the republic by sex, nationality and native language'), not by region, "
+    "city or district.")
 RELIGION_GAP = f"{VOLUMES}. None tabulates religion, for the republic or any area."
 
 
@@ -337,6 +377,10 @@ def parse_ages(text: str) -> dict[str, dict[str, Any]]:
             if entry["total"] is not None:
                 raise SystemExit(f"tajikistan_census: {region}: a second total {line!r}")
             entry["total"] = (both, men, women)
+            entry["total2010"] = tuple(values[:3])
+            if values[1] + values[2] != values[0]:
+                raise SystemExit(f"tajikistan_census: {line!r}: 2010's men and women do not "
+                                 f"make both")
             continue
         if "указ" in tag:
             entry["unstated"] = (both, men, women)
@@ -393,6 +437,110 @@ def parse_ages(text: str) -> dict[str, dict[str, Any]]:
 
 
 # --------------------------------------------------------------------------
+# Volume III of the 2010 census: the seven largest nationalities by region.
+
+SEX_LINE = re.compile(r"^(оба пола|мужчины|женщины)\s+(\d+|-)")
+
+
+def nationality_text(pages: list[str]) -> str:
+    """The pages of the table by nationality, sex and age group, and no others.
+
+    It starts on the page that carries its title and figures (the contents
+    page names it too, without figures) and runs until the next table's
+    title, marital status, appears.
+    """
+    start = next((i for i, page in enumerate(pages)
+                  if NATIONALITY_TITLE in " ".join(page.split()) and "Оба пола" in page), None)
+    if start is None:
+        raise SystemExit("tajikistan_census: volume III has no table of nationalities by sex "
+                         "and age")
+    kept = []
+    for page in pages[start:]:
+        if kept and "состоянию в браке" in " ".join(page.split()):
+            break
+        kept.append(page)
+    return "\n".join(kept)
+
+
+def parse_nationalities(text: str) -> dict[str, dict[str, tuple[int, int, int]]]:
+    """{region or 'national': {label: (both, men, women)}} for the seven nationalities."""
+    out: dict[str, dict[str, list[int | None]]] = defaultdict(dict)
+    region: str | None = None
+    nationality: str | None = None
+    for raw in text.splitlines():
+        line = " ".join(raw.split())
+        if not line:
+            continue
+        low = line.lower()
+        if not re.search(r"\d", line) and not SEX_LINE.match(low):
+            heading = region_of(line)
+            if heading:
+                region, nationality = heading, None
+            elif low in NATIONALITIES and region:
+                nationality = NATIONALITIES[low]
+                if nationality in out[region]:
+                    raise SystemExit(f"tajikistan_census: volume III: {line} twice in {region}")
+                out[region][nationality] = [None, None, None]
+            continue
+        m = SEX_LINE.match(low)
+        if not m or not region or not nationality:
+            continue
+        slot = ("оба пола", "мужчины", "женщины").index(m.group(1))
+        if out[region][nationality][slot] is not None:
+            raise SystemExit(f"tajikistan_census: volume III: {region} {nationality}: "
+                             f"{m.group(1)} twice")
+        out[region][nationality][slot] = 0 if m.group(2) == "-" else int(m.group(2))
+    table: dict[str, dict[str, tuple[int, int, int]]] = {}
+    for name, rows in out.items():
+        if sorted(rows) != sorted(NATIONALITIES.values()):
+            raise SystemExit(f"tajikistan_census: volume III: {name} lists {sorted(rows)}")
+        for label, (both, men, women) in rows.items():
+            if None in (both, men, women) or men + women != both:
+                raise SystemExit(f"tajikistan_census: volume III: {name} {label}: "
+                                 f"{men} men and {women} women against {both}")
+        table[name] = {label: tuple(v) for label, v in rows.items()}  # type: ignore[misc]
+    if sorted(table) != sorted(["national", *REGIONS]):
+        raise SystemExit(f"tajikistan_census: volume III covers {sorted(table)}")
+    for label in NATIONALITIES.values():
+        made = tuple(sum(table[r][label][i] for r in REGIONS) for i in range(3))
+        if made != table["national"][label]:
+            raise SystemExit(f"tajikistan_census: volume III: the regions' {label} make {made} "
+                             f"against the republic's {table['national'][label]}")
+    return table
+
+
+def ethnicity_2010(table: dict[str, dict[str, tuple[int, int, int]]],
+                   totals2010: dict[str, tuple[int, int, int]]) -> dict[str, dict[str, Any]]:
+    """Each region's 2010 nationalities, the rest of its 2010 population as other."""
+    if tuple(sum(totals2010[r][i] for r in REGIONS) for i in range(3)) != totals2010["national"]:
+        raise SystemExit("tajikistan_census: the regions' 2010 totals do not make the "
+                         "republic's")
+    out: dict[str, dict[str, Any]] = {}
+    for region in REGIONS:
+        listed = {label: v[0] for label, v in table[region].items()}
+        total = totals2010[region][0]
+        other = total - sum(listed.values())
+        if other < 0:
+            raise SystemExit(f"tajikistan_census: {region}: its seven nationalities make "
+                             f"{sum(listed.values()):,} of {total:,} in 2010")
+        counts = {k: v for k, v in listed.items() if v}
+        if other:
+            counts["Other"] = other
+        out[region] = {
+            "ethnicity": shares(counts, total=total),
+            "ethnicity_year": YEAR_2010,
+            "ethnicity_note": (
+                "Nationality (национальность) as each person declared it in the 2010 census, "
+                "the latest to tabulate it: volume III's table of individual nationalities by "
+                "sex and age groups names the seven largest -- Tajiks, Uzbeks, Russians, "
+                "Kyrgyz, Turkmen, Tatars and Kazakhs -- by region; the rest of the region's "
+                f"{total:,} people in 2010 ({other:,}) are 'Other', among them the groups "
+                "the census coded apart, such as Lakai and Kungrat. The 2020 census does not "
+                "tabulate nationality.")}
+    return out
+
+
+# --------------------------------------------------------------------------
 # Records.
 
 def drawn_units() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -402,10 +550,12 @@ def drawn_units() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
 
 def build(ages: dict[str, dict[str, Any]], totals: dict[str, tuple[int, int]],
           units: dict[str, list[tuple[str, int, int]]], a1: list[dict[str, Any]],
-          a2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+          a2: list[dict[str, Any]],
+          nationalities: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     src = [{"field": "median_age", "name": AGES_SOURCE, "url": PAGE, "license": LICENCE},
            {"field": "population/sex_ratio", "name": SEXES_SOURCE, "url": PAGE,
             "license": LICENCE}]
+    nationalities = nationalities or {}
     region_ids = {u["name"]: u["id"] for u in a1}
     if sorted(region_ids) != sorted(REGIONS):
         raise SystemExit(f"tajikistan_census: the map draws {sorted(region_ids)}")
@@ -426,7 +576,10 @@ def build(ages: dict[str, dict[str, Any]], totals: dict[str, tuple[int, int]],
                              "within the year holding the middle person."),
             sex_ratio=measure(round(100 * men / women, 1), year=YEAR, source=SEXES_SOURCE,
                               unit="males_per_100_females"),
-            sources=src, **composition_gaps()))
+            sources=src + ([{"field": "ethnicity", "name": VOLUME3_SOURCE + "; " +
+                             TOTALS_2010_SOURCE, "url": VOLUME3_PAGE, "year": YEAR_2010,
+                             "license": LICENCE}] if region in nationalities else []),
+            **{**composition_gaps(), **nationalities.get(region, {})}))
     parent_of = {u["id"]: u["parent"] for u in a2}
     name_of = {u["id"]: u["name"] for u in a1}
     polygons: dict[str, list[tuple[str, int, int]]] = defaultdict(list)
@@ -465,33 +618,48 @@ def build(ages: dict[str, dict[str, Any]], totals: dict[str, tuple[int, int]],
 
 def composition_gaps() -> dict[str, Any]:
     return {"religion": gap(NOT_AVAILABLE, RELIGION_GAP),
-            "language": gap(NOT_AVAILABLE, COMPOSITION_GAP),
+            "language": gap(NOT_AVAILABLE, LANGUAGE_GAP),
             "ethnicity": gap(NOT_AVAILABLE, COMPOSITION_GAP)}
 
 
-def pdf_text(blob: bytes) -> str:
+def pdf_pages(blob: bytes) -> list[str]:
     import logging
 
     from pypdf import PdfReader
     logging.getLogger("pypdf").setLevel(logging.ERROR)
-    return "\n".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(blob)).pages)
+    return [(p.extract_text() or "") for p in PdfReader(io.BytesIO(blob)).pages]
+
+
+def pdf_text(blob: bytes) -> str:
+    return "\n".join(pdf_pages(blob))
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.parse_args()
-    log("tajikistan_census: 2020 census volume 2, tables 1 and 5")
+    log("tajikistan_census: 2020 census volume 2, tables 1 and 5; 2010 census volume III")
     ages = parse_ages(pdf_text(http_get(AGES_URL, binary=True, timeout=300)))  # type: ignore[arg-type]
     log(f"  table 1: {sorted(ages)}")
     totals, units = parse_sexes(pdf_text(http_get(SEXES_URL, binary=True, timeout=300)))  # type: ignore[arg-type]
     log(f"  table 5: {sum(len(v) for v in units.values())} cities and districts")
+    blob = http_get(VOLUME3_ARCHIVED, binary=True, timeout=600)
+    assert isinstance(blob, bytes)
+    if blob[:5] != b"%PDF-":
+        raise SystemExit(f"tajikistan_census: {VOLUME3} came back as something other than a "
+                         f"PDF: {blob[:80]!r}")
+    table = parse_nationalities(nationality_text(pdf_pages(blob)))
+    totals2010 = {region: ages[region]["total2010"] for region in ["national", *REGIONS]}
+    nationalities = ethnicity_2010(table, totals2010)
+    log(f"  volume III (2010): {', '.join(f'{r} {sum(v[0] for v in table[r].values()):,}' for r in REGIONS)}")
     a1, a2 = drawn_units()
-    out = build(ages, totals, units, a1, a2)
+    out = build(ages, totals, units, a1, a2, nationalities)
     for r in out:
         med = r["median_age"].get("value") if isinstance(r["median_age"], dict) else None
+        eth = (", ".join(f"{x['group']} {x['pct']}" for x in r["ethnicity"][:3])
+               if isinstance(r["ethnicity"], list) else "")
         log(f"    {r['level']} {r['name']}: {r['population']['value']:,}, median {med}, "
-            f"ratio {r['sex_ratio']['value']}")
+            f"ratio {r['sex_ratio']['value']} {eth}")
     write_json(PROCESSED / OUT, out)
     return 0
 

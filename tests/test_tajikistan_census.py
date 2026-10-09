@@ -235,6 +235,69 @@ class Records(unittest.TestCase):
         with self.assertRaises(SystemExit):
             tj.build(ages, self.totals, self.units, A1, A2)
 
+    def test_regions_carry_their_2010_nationalities(self):
+        table = tj.parse_nationalities(tj.nationality_text(volume_three_pages()))
+        totals2010 = {"national": (1000, 500, 500)}
+        for region in tj.REGIONS:
+            totals2010[region] = (200, 100, 100)
+        nationalities = tj.ethnicity_2010(table, totals2010)
+        out = tj.build(fake_ages(self.totals), self.totals, self.units, A1, A2, nationalities)
+        gbao = next(r for r in out if r["shape_id"] == IDS["Gorno-Badakhshan Autonomous Region"])
+        self.assertEqual(gbao["ethnicity_year"], 2010)
+        groups = {s["group"]: s["count"] for s in gbao["ethnicity"]}
+        self.assertEqual(groups["Tajik"], 150)
+        self.assertEqual(groups["Other"], 200 - 150 - 7 - 4 - 3)
+        self.assertNotIn("Turkmen", groups)          # a dash in every column
+        district = next(r for r in out if r["level"] == "admin2")
+        self.assertEqual(district["ethnicity"]["status"], "not_available")
+        self.assertIn("urban and rural", district["language"]["note"])
+
+    def test_nationalities_that_do_not_make_the_republic_stop(self):
+        pages = volume_three_pages()
+        pages[1] = pages[1].replace("Оба пола 150 ", "Оба пола 151 ", 1).replace(
+            "мужчины 75 ", "мужчины 76 ", 1)
+        with self.assertRaises(SystemExit):
+            tj.parse_nationalities(tj.nationality_text(pages))
+
+    def test_seven_nationalities_beyond_the_total_stop(self):
+        table = tj.parse_nationalities(tj.nationality_text(volume_three_pages()))
+        totals2010 = {"national": (500, 250, 250)}
+        for region in tj.REGIONS:
+            totals2010[region] = (100, 50, 50)
+        with self.assertRaises(SystemExit):
+            tj.ethnicity_2010(table, totals2010)
+
+
+def nationality_block(name, both, men, women):
+    if both is None:
+        return f"{name}\n  Ҳар ду ҷинс\n  Оба пола - - - -\nмужчины - - - -\nженщины - - - -"
+    return (f"{name}\n  Ҳар ду ҷинс\n  Оба пола {both} 1 1 1\nмардҳо\nмужчины {men} 1 1 1\n"
+            f"занҳо\nженщины {women} 1 1\n1")
+
+
+def volume_three_pages():
+    """The table by nationality, sex and age group as pypdf reads it: the
+    contents page naming it, the republic, then the five regions; each region
+    has the same seven nationalities, Turkmen printed as dashes."""
+    seven = [("Таджики", 150, 75, 75), ("Узбеки", 7, 3, 4), ("Русские", 4, 2, 2),
+             ("Кыргызы", 3, 1, 2), ("Туркмены", None, 0, 0), ("Татары", 0, 0, 0),
+             ("Казахи", 0, 0, 0)]
+
+    def region(heading, scale=1):
+        rows = [nationality_block(n, b if b is None else b * scale, m * scale, w * scale)
+                for n, b, m, w in seven]
+        return heading + "\n" + "\n".join(rows)
+
+    contents = "СОДЕРЖАНИЕ\n" + tj.NATIONALITY_TITLE + "........ 108"
+    first = "\n".join([tj.NATIONALITY_TITLE, "Миллатҳо", "Ҳамагӣ,",
+                       region("Ҷумҳурии Тоҷикистон - Республика Таджикистан", 5),
+                       region("Горно - Бадахшанская Автономная область")])
+    second = "\n".join([region("Согдийская область"), region("Хатлонская область"),
+                        region("г. Душанбе"),
+                        region("Города и районы республиканского подчинения")])
+    following = "Население отдельных национальностей ... по состоянию в браке\nОба пола 9 9"
+    return [contents, first, second, following]
+
 
 if __name__ == "__main__":
     unittest.main()
