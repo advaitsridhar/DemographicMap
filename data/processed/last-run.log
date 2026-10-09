@@ -1,4 +1,125 @@
-nauru_census: 2021 census tables and persons tabulations
-  https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx: 75,196 bytes
-  Tables: 15 districts adding to 11,680; 16 ethnic groups
-nauru_census: Table 19 counts district 1's citizens at 392.0, Table H-1 at 787.0
+
+== https://censusindia.gov.in/nada/index.php/catalog/10671/download/13783
+  200 application/octet-stream 295176 https://censusindia.gov.in/nada/index.php/catalog/10671/download/13783
+    1 sheet(s): ['D-01']
+  -- sheet 'D-01' 3173x14
+    | D-1:  POPULATION CLASSIFIED BY PLACE OF BIRTH AND SEX - 2011 |  |  |  |  |  |  | 
+    | Table name | State | District | Area Name | Birth place | Place of enumeration |  | 
+    |  |  |  |  |  | Total |  | 
+    |  |  |  |  |  | Persons | Males | Females
+    |  |  |  |  | 1 | 2 | 3 | 4
+    | D0101 | 00 | 000 | INDIA | Total Population | 1210854977 | 623270258 | 587584719
+    | D0101 | 00 | 000 | INDIA | Born within India | 1205201066 | 620582802 | 584618264
+    | D0101 | 00 | 000 | INDIA | Within the state of enumeration | 1148903503 | 595735238 | 553168265
+    | D0101 | 00 | 000 | INDIA | Born in the place of enumeration | 763567558 | 480479075 | 283088483
+    | D0101 | 00 | 000 | INDIA | Born elsewhere in the district of enumeration | 264108665 | 77306410 | 186802255
+    | D0101 | 00 | 000 | INDIA | Born in other districts of the state | 121227280 | 37949753 | 83277527
+    | D0101 | 00 | 000 | INDIA | States in India beyond the state of enumeration | 56297563 | 24847564 | 31449999
+    | D0101 | 00 | 000 | INDIA | Jammu & Kashmir | 258193 | 122374 | 135819
+    | D0101 | 00 | 000 | INDIA | Himachal Pradesh | 549703 | 237656 | 312047
+    | D0101 | 00 | 000 | INDIA | Punjab | 1781585 | 686012 | 1095573
+    | D0101 | 00 | 000 | INDIA | Chandigarh | 205658 | 96584 | 109074
+    | D0101 | 00 | 000 | INDIA | Uttarakhand | 1068790 | 440303 | 628487
+    | D0101 | 00 | 000 | INDIA | Haryana | 2333247 | 725263 | 1607984
+    | D0101 | 00 | 000 | INDIA | NCT of Delhi | 1226763 | 429365 | 797398
+    | D0101 | 00 | 000 | INDIA | Rajasthan | 3949277 | 1619163 | 2330114
+    | D0101 | 00 | 000 | INDIA | Uttar Pradesh | 12994674 | 6658335 | 6336339
+    | D0101 | 00 | 000 | INDIA | Bihar | 7949853 | 4154666 | 3795187
+    | D0101 | 00 | 000 | INDIA | Sikkim | 19677 | 6955 | 12722
+    | D0101 | 00 | 000 | INDIA | Arunachal Pradesh | 33586 | 14554 | 19032
+    | D0101 | 00 | 000 | INDIA | Nagaland | 42695 | 18980 | 23715
+    | D0101 | 00 | 000 | INDIA | Manipur | 83153 | 40988 | 42165
+    | D0101 | 00 | 000 | INDIA | Mizoram | 28820 | 13903 | 14917
+    | D0101 | 00 | 000 | INDIA | Tripura | 91173 | 42119 | 49054
+    | D0101 | 00 | 000 | INDIA | Meghalaya | 68613 | 28131 | 40482
+    | D0101 | 00 | 000 | INDIA | Assam | 685226 | 333015 | 352211
+    | D0101 | 00 | 000 | INDIA | West Bengal | 2533583 | 1008142 | 1525441
+    | D0101 | 00 | 000 | INDIA | Jharkhand | 1761400 | 599526 | 1161874
+    | D0101 | 00 | 000 | INDIA | Odisha | 1347354 | 642538 | 704816
+    | D0101 | 00 | 000 | INDIA | Chhattisgarh | 687731 | 244837 | 442894
+    | D0101 | 00 | 000 | INDIA | Madhya Pradesh | 3068982 | 1035999 | 2032983
+    | D0101 | 00 | 000 | INDIA | Gujarat | 1560325 | 659539 | 900786
+    | D0101 | 00 | 000 | INDIA | Daman & Diu | 17274 | 5443 | 11831
+    | D0101 | 00 | 000 | INDIA | Dadra & Nagar Haveli | 13741 | 2600 | 11141
+    | D0101 | 00 | 000 | INDIA | Maharashtra | 2996543 | 1138753 | 1857790
+    | D0101 | 00 | 000 | INDIA | Andhra Pradesh | 2147300 | 886295 | 1261005
+    | D0101 | 00 | 000 | INDIA | Karnataka | 2645403 | 1044363 | 1601040
+    | D0101 | 00 | 000 | INDIA | Goa | 97408 | 38222 | 59186
+    | D0101 | 00 | 000 | INDIA | Lakshadweep | 8270 | 4648 | 3622
+    | D0101 | 00 | 000 | INDIA | Kerala | 1577738 | 731932 | 845806
+    | D0101 | 00 | 000 | INDIA | Tamil Nadu | 2116607 | 989681 | 1126926
+    | D0101 | 00 | 000 | INDIA | Puducherry | 332333 | 140152 | 192181
+    | D0101 | 00 | 000 | INDIA | Andaman & Nicobar Islands | 14885 | 6528 | 8357
+    | D0101 | 00 | 000 | INDIA | Born Outside India | 5363099 | 2550633 | 2812466
+    | D0101 | 00 | 000 | INDIA | Countries in Asia beyond India | 4981807 | 2388120 | 2593687
+    | D0101 | 00 | 000 | INDIA | Afganistan | 6476 | 3544 | 2932
+    | D0101 | 00 | 000 | INDIA | Bangladesh | 2747062 | 1396173 | 1350889
+    | D0101 | 00 | 000 | INDIA | Bhutan | 7964 | 3965 | 3999
+    | D0101 | 00 | 000 | INDIA | China | 18114 | 12389 | 5725
+    | D0101 | 00 | 000 | INDIA | Indonesia | 947 | 376 | 571
+    | D0101 | 00 | 000 | INDIA | Iran | 1958 | 956 | 1002
+    | D0101 | 00 | 000 | INDIA | Iraq | 613 | 337 | 276
+    | D0101 | 00 | 000 | INDIA | Japan | 978 | 427 | 551
+    | D0101 | 00 | 000 | INDIA | Kuwait | 8618 | 4317 | 4301
+    | D0101 | 00 | 000 | INDIA | Malaysia | 13646 | 5451 | 8195
+    | D0101 | 00 | 000 | INDIA | Maldives | 722 | 335 | 387
+    | D0101 | 00 | 000 | INDIA | Mayanmar | 59282 | 28471 | 30811
+    | D0101 | 00 | 000 | INDIA | Nepal | 810158 | 276789 | 533369
+    | D0101 | 00 | 000 | INDIA | Pakistan | 918982 | 471354 | 447628
+    | D0101 | 00 | 000 | INDIA | Saudi Arabia | 12961 | 6771 | 6190
+    | D0101 | 00 | 000 | INDIA | Singapore | 6854 | 2737 | 4117
+    | D0101 | 00 | 000 | INDIA | Sri Lanka | 198193 | 97315 | 100878
+    | D0101 | 00 | 000 | INDIA | Turkey | 61 | 26 | 35
+    | D0101 | 00 | 000 | INDIA | United Arab Emirates | 24634 | 12441 | 12193
+    | D0101 | 00 | 000 | INDIA | Kazakstan | 51 | 23 | 28
+    | D0101 | 00 | 000 | INDIA | Vietnam | 624 | 195 | 429
+    | D0101 | 00 | 000 | INDIA | Elsewhere | 142909 | 63728 | 79181
+    | D0101 | 00 | 000 | INDIA | Countries in Europe | 46131 | 18836 | 27295
+    | D0101 | 00 | 000 | INDIA | France | 1068 | 496 | 572
+    | D0101 | 00 | 000 | INDIA | Germany | 1628 | 750 | 878
+    | D0101 | 00 | 000 | INDIA | Portugal | 108 | 48 | 60
+    | D0101 | 00 | 000 | INDIA | UK | 6941 | 3280 | 3661
+    | D0101 | 00 | 000 | INDIA | Elsewhere | 36386 | 14262 | 22124
+    | D0101 | 00 | 000 | INDIA | Countries in Africa | 133622 | 51215 | 82407
+    | D0101 | 00 | 000 | INDIA | Kenya | 2480 | 1167 | 1313
+    | D0101 | 00 | 000 | INDIA | Mauritius | 205 | 79 | 126
+    | D0101 | 00 | 000 | INDIA | Nigeria | 645 | 381 | 264
+    | D0101 | 00 | 000 | INDIA | Uganda | 813 | 359 | 454
+    | D0101 | 00 | 000 | INDIA | Zambia | 252 | 96 | 156
+    | D0101 | 00 | 000 | INDIA | Elsewhere | 129227 | 49133 | 80094
+    | D0101 | 00 | 000 | INDIA | Countries in the Americas | 170481 | 79087 | 91394
+    | D0101 | 00 | 000 | INDIA | Canada | 3212 | 1560 | 1652
+    | D0101 | 00 | 000 | INDIA | U.S.A. | 21506 | 10826 | 10680
+    | D0101 | 00 | 000 | INDIA | Elsewhere | 145763 | 66701 | 79062
+    | D0101 | 00 | 000 | INDIA | Countries in Oceania | 31058 | 13375 | 17683
+    | D0101 | 00 | 000 | INDIA | Australia | 2233 | 1138 | 1095
+    | D0101 | 00 | 000 | INDIA | Fiji | 129 | 38 | 91
+    | D0101 | 00 | 000 | INDIA | Elsewhere | 28696 | 12199 | 16497
+    | D0101 | 00 | 000 | INDIA | Unclassifiable | 290812 | 136823 | 153989
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Total Population | 12541302 | 6640662 | 5900640
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Born within India | 12506463 | 6623509 | 5882954
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Within the state of enumeration | 12342003 | 6551757 | 5790246
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Born in the place of enumeration | 9814003 | 5842153 | 3971850
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Born elsewhere in the district of enumeration | 1918640 | 519126 | 1399514
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Born in other districts of the state | 609360 | 190478 | 418882
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | States in India beyond the state of enumeration | 164460 | 71752 | 92708
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Jammu & Kashmir | 0 | 0 | 0
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Himachal Pradesh | 9187 | 2753 | 6434
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Punjab | 45780 | 12287 | 33493
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Chandigarh | 553 | 218 | 335
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Uttarakhand | 3442 | 1718 | 1724
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Haryana | 6676 | 3419 | 3257
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | NCT of Delhi | 4700 | 1717 | 2983
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Rajasthan | 6267 | 3747 | 2520
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Uttar Pradesh | 22304 | 12660 | 9644
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Bihar | 14995 | 8071 | 6924
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Sikkim | 59 | 23 | 36
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Arunachal Pradesh | 66 | 36 | 30
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Nagaland | 88 | 35 | 53
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Manipur | 215 | 104 | 111
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Mizoram | 46 | 21 | 25
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Tripura | 98 | 54 | 44
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Meghalaya | 99 | 47 | 52
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Assam | 1452 | 743 | 709
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | West Bengal | 10142 | 2645 | 7497
+    | D0101 | 01 | 000 | State - JAMMU & KASHMIR (01) | Jharkhand | 2170 | 1084 | 1086
