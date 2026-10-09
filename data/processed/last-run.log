@@ -1,14 +1,36 @@
-japan: nationality from e-Stat 0003445244, believers from 0003282963, prior from NHK/ISSP 2018
-  e-Stat 0003445244: 816 values
-  e-Stat 0003282963: 240 values
-  nationality: the 47 prefectures reproduce the table's national row; total 126,146,099 is the published one; the imputed foreign share is +0.24 points from the recorded one (stated on every prefecture)
-  believers: 175,054,047 against 126,146,099 people, 1.39 per person; used as a relative signal only
-  prior (no answer left out): no religion 63.3, Buddhism 31.6, Shinto 3.1, Christianity 1.0, Other religions 1.0
-  religion: the five prefectures the tilt moves furthest from the national prior:
-      Okinawa Prefecture       9.9 points  Buddhism 22.0, Shinto 9.0, Christianity 5.0, Other religions 0.8  (held at the bound: Shinto, Christianity)
-      Kyoto Prefecture         6.9 points  Buddhism 25.1, Shinto 9.0, Christianity 0.7, Other religions 1.9  (held at the bound: Shinto)
-      Nagano                   5.9 points  Buddhism 26.1, Shinto 9.0, Christianity 0.8, Other religions 0.8  (held at the bound: Shinto)
-      Miyagi                   5.4 points  Buddhism 26.9, Shinto 8.4, Christianity 0.8, Other religions 0.6
-      Yamanashi                5.2 points  Buddhism 27.3, Shinto 8.2, Christianity 0.6, Other religions 0.6
-  religion: 3 prefectures hit a bound: Okinawa Prefecture, Kyoto Prefecture, Nagano
-  wrote data/processed/japan_prefecture.json (389 kB)
+korea_nationality: Ministry of Justice (Korea Immigration Service), registered foreign residents by city/county/district and nationality at 31 December 2023 (시군구별 국적(지역)별 등록외국인 체류현황, data.go.kr dataset 15108413)
+  cached moj_registered_foreigners_by_district_2022_2023.zip (0.1 MB)
+  2023 시군구별 국적(지역)별 등록외국인 체류 현황.csv: 322,310 bytes
+  229 units in 17 provinces
+  register: 17 provinces listed
+    서울특별시: 26 rows
+    부산광역시: 17 rows
+    대구광역시: 10 rows
+    인천광역시: 11 rows
+    광주광역시: 6 rows
+    대전광역시: 6 rows
+    울산광역시: 6 rows
+    세종특별자치시: 2 rows
+    경기도: 49 rows
+    강원특별자치도: 19 rows
+    충청북도: 16 rows
+    충청남도: 18 rows
+    전라북도: 17 rows
+    전라남도: 23 rows
+    경상북도: 25 rows
+    경상남도: 24 rows
+    제주특별자치도: 3 rows
+  register: 247 rows, 51,325,329 nationally
+  cached moj_registered_foreigners_by_nationality_by_year.csv (53 kB)
+  published: 195 nationalities for 2023
+  national: 1,348,626 registered foreigners against 51,325,329 Koreans (2.56%)
+  published: the Ministry's national table gives 1,348,626 registered foreigners (2.56%) against the district file's 1,348,626 (2.56%)
+      Vietnamese         districts   227,930  national   227,930  (0.0% apart)
+      Uzbek              districts    55,239  national    55,239  (0.0% apart)
+      Thai               districts    40,062  national    40,062  (0.0% apart)
+      Taiwanese          districts    17,704  national    17,704  (0.0% apart)
+      Sri Lankan         districts    28,258  national    28,258  (0.0% apart)
+  named: Korean-Chinese, Vietnamese, Chinese, Nepalese, Uzbek, Cambodian, Indonesian, Filipino, Thai, Burmese, American, Mongolian, Sri Lankan, Japanese, Bangladeshi, Kazakh, Russian, Taiwanese, Pakistani, Indian
+  South Jeolla 영광군 (Yeonggwang-gun): no shape; counted in the province only
+  17 provinces, 228 districts
+  wrote data/processed/korea_nationality.json (1226 kB)
