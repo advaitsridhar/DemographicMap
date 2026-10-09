@@ -1,28 +1,8 @@
 samoa_census: 2021 Census Tables 1 and 2, by the 2016 Census's villages
   https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx: 2,681,931 bytes
   https://www.sbs.gov.ws/digi/2-2016%20Census%20Brief%20No.1%20Tables.xlsx: 106,868 bytes
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/samoa_census.py", line 636, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/samoa_census.py", line 628, in main
-    records = build(workbook(URL), workbook(URL_2016), load_units("WSM", "admin1"),
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/samoa_census.py", line 559, in build
-    for line in key_indicators(age_rows[2], {"Samoa": people["total"], **people["regions"]},
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/samoa_census.py", line 510, in key_indicators
-    wrong = [f"{place} {group} {counted(columns[place], group)} (printed {printed})"
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/samoa_census.py", line 512, in <listcomp>
-    if counted(columns[place], group) != printed]
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/samoa_census.py", line 505, in counted
-    return tuple(values[unknown_at - 1 + shift] for _, shift in WHO)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/samoa_census.py", line 505, in <genexpr>
-    return tuple(values[unknown_at - 1 + shift] for _, shift in WHO)
-                 ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-IndexError: list index out of range
+  Table 1's single years make the Final Report's key indicators for all 6 columns: people aged 0-14, 15-64 and 65+ and of age not known, by sex, exactly
+  median ages from Table 1's single years, the Final Report's whole years in brackets (not checked; see PRINTED_MEDIANS): Samoa everyone 21.4 (22), males 20.6 (20), females 22.4 (21); Apia Urban Area everyone 23.1 (21), males 22.0 (21), females 24.1 (21); North West Upolu everyone 21.4 (21), males 20.5 (20), females 22.3 (21); Rest of Upolu everyone 20.8 (20), males 20.4 (20), females 21.3 (21); Savaii everyone 20.7 (20), males 19.7 (20), females 21.9 (21); Rural everyone 21.0 (20), males 20.3 (20), females 21.9 (21); the Fact Sheet prints Samoa's as 22.0
+  not in the 2016 list, placed with its constituency's villages: Tunaimato West (Faleata 1) -> Faleata East
+  54 records: admin1 ethnicity 11, admin1 median_age 11, admin1 population 11, admin1 religion 11, admin1 sex_ratio 11, admin2 ethnicity 43, admin2 median_age 43, admin2 population 43, admin2 religion 43, admin2 sex_ratio 43
+  wrote data/processed/samoa_census.json (302 kB)
