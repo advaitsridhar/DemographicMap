@@ -80,6 +80,7 @@ class Records(unittest.TestCase):
         hatohobei = by_name[("admin1", "Hatohobei")]
         self.assertEqual(hatohobei["population"]["value"], 39)
         self.assertIn("value", hatohobei["median_age"])
+        self.assertIn("the median of the 39 people", hatohobei["median_age_note"])
         for field in ("sex_ratio", "religion", "language", "ethnicity"):
             self.assertEqual(hatohobei[field]["status"], "not_available", field)
             self.assertIn("39 people", hatohobei[field]["note"])

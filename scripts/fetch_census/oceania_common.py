@@ -197,6 +197,7 @@ def withhold_small(fields: dict[str, Any], people: float, male: float | None = N
 
     A sex ratio needs ``MIN_SEX`` of each sex and ``MIN_PEOPLE`` people; a
     composition ``MIN_PEOPLE``. What is withheld becomes a gap naming the count.
+    A median under ``MIN_PEOPLE`` people is kept, and its note names the count.
     """
     out = dict(fields)
     counted = f"{people:,.0f} people"
@@ -209,6 +210,13 @@ def withhold_small(fields: dict[str, Any], people: float, male: float | None = N
             f"The census counts {counted} here; with fewer than {MIN_SEX} of either sex, or "
             f"{MIN_PEOPLE} people in all, a ratio says nothing about the place."))
         out.pop("sex_ratio_note", None)
+    median = out.get("median_age")
+    if people < MIN_PEOPLE and isinstance(median, dict) and median.get("value") is not None:
+        # A median is the office's own figure and stays, saying how few stand behind it.
+        said = (out.get("median_age_note") or "").rstrip()
+        out["median_age_note"] = ((said + " ") if said else "") + (
+            f"It is the median of the {counted} the census counts here, too few for it to "
+            f"say much about the place.")
     if people < MIN_PEOPLE:
         for field in COMPOSITIONS:
             if isinstance(out.get(field), list):
