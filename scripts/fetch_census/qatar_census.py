@@ -86,8 +86,9 @@ NATIONALITY_WHY = (f"{CATALOGUE}; it publishes no municipality's people by natio
                    "(Qatari or not), whose tables there are of births, deaths and marriages.")
 RELIGION_WHY = f"{CATALOGUE}; it publishes no table of religion by municipality."
 LANGUAGE_WHY = f"{CATALOGUE}; it publishes no table of language by municipality."
-# The portal's only table of people by zone (probe ecba12f lists it; its 552
-# rows were read on 9 October 2026): 92 zones a year, 2014-2019.
+# The portal's only table of people by zone (probe ecba12f lists it in the
+# catalogue; probe b3766c2 read its 552 rows on 9 October 2026): 92 zones a
+# year, 2014-2019, the 2015-2019 rows one repeated set.
 ZONES = "population-area-and-population-density-per-square-kilometers-by-zone"
 ZONES_TITLE = "Population, Area and Population Density Per Square Kilometers By Zone"
 # Each census's count of the whole country (Planning and Statistics Authority):
