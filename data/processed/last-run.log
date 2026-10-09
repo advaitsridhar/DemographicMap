@@ -1,3 +1,6 @@
-https://web.archive.org/cdx/search/cdx?url=dsc.gov.ae%2FReport%2FDSC_SYB%2A&output=json&limit=150&collapse=urlkey&filter=statuscode%3A200: 503 b'<html><head><meta charset="UTF-8"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head>\n<body style="padding:30px 0;">\n<div style="float:left;width:260px;text-align:center;">\n<img xsrc="logo_ia.jpg" src="data:image/jpeg;base64,iVBORw0KGg'
-dsc.gov.ae/Report/DSC_%20SYB_2019*: 0 captures, 0 shown
-dsc.gov.ae/Report/DSC_%20SYB_202*: 0 captures, 0 shown
+china_census: National Bureau of Statistics of China, China Population Census Yearbook 2020 (中国人口普查年鉴-2020)
+  31 provinces: the three tables agree on every count, every composition adds up, the provinces make the nation's 1,409,778,724; national median 39.4 from single years, 39.4 from the groups
+  33 first-level records; medians (31.3, 'Tibet Autonomous Region') .. (46.8, 'Liaoning Province')
+  wrote data/processed/china_census_province.json (163 kB)
+  2370 second-level polygons: 2368 mainland ones with their reasons; inside the SARs, ['Xianggang'] with the SAR's own median age and sex ratio and 1 fragment(s) with theirs
+  wrote data/processed/china_census_county.json (11982 kB)
