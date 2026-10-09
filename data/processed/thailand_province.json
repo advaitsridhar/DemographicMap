@@ -3533,14 +3533,14 @@
     "religion": [
       {
         "group": "Buddhism",
-        "pct": 99.8
-      },
-      {
-        "group": "Islam",
-        "pct": 0.1
+        "pct": 99.6
       },
       {
         "group": "Other or not stated",
+        "pct": 0.3
+      },
+      {
+        "group": "Islam",
         "pct": 0.1
       }
     ],
@@ -3563,7 +3563,7 @@
       "Sukhothai"
     ],
     "religion_year": 2000,
-    "religion_note": "NSO, 2000 Population and Housing Census, provincial final reports, compiled in the Wikipedia article 'Nationality, religion, and language data for the provinces of Thailand' (CC BY-SA 4.0). Shares as printed in the provincial report; 'Other or not stated' is what the three named faiths leave of 100%. A faith the report did not give is absent, not zero."
+    "religion_note": "NSO, 2000 Population and Housing Census, provincial final reports, compiled in the Wikipedia article 'Nationality, religion, and language data for the provinces of Thailand' (CC BY-SA 4.0). Shares as printed in the provincial report; 'Other or not stated' is what the three named faiths leave of 100%. A faith the report did not give is absent, not zero. Buddhism is the report's 99.6%, not the article's 99.8%: the article has the report's 'Thai nationality' and 'Buddhism' rows the wrong way round."
   },
   {
     "id": "THA-Suphan_Buri",
