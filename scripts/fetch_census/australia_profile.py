@@ -14,10 +14,13 @@ level and the nine states and territories at its first:
   females: the sex ratio (males per 100 females), and the persons every
   ancestry share is taken of. For an LGA it is also read by age group and by
   kind of dwelling, so that a ratio outside 80 to 130 says where it lies: at
-  working ages (20 to 64) or the others, and, where one person in twenty or
-  more was counted in a non-private dwelling (hotels, staff quarters, hostels,
-  hospitals, prisons), how many were and what the ratio is in private homes.
-  The notes give the counts and do not guess the cause.
+  working ages (20 to 64) or the others; and, where the LGA's non-private
+  dwellings (hotels and motels, staff quarters, hostels, hospitals, prisons)
+  held people on census night to one in twenty of its residents or more, how
+  many men and women they held. That count is of where people were that night,
+  not of where they live -- Menzies' held 1,225 against its 524 residents --
+  so it is given beside the ratio and never taken from it. The notes give the
+  counts and do not guess the cause.
 * **G08 Ancestry by country of birth of parents** -- read in its "Total
   responses" column (``BPPP=_T``), which is each ancestry's count of the people
   who named it; the table's own total row (``ANCP=_T``) counts persons. Up to
@@ -107,17 +110,19 @@ LICENCE = "CC BY 4.0"
 # MEDAVG.REGION.REGION_TYPE.STATE, G08 ANCP.BPPP.REGION.REGION_TYPE.STATE. The
 # SA2+ flows are asked for their national and state rows only.
 # G01's person characteristics an LGA's unusual sex ratio is read against:
-# its age groups, split at the working ages, and its people by kind of
-# dwelling ("D_O", other dwellings, are the non-private ones).
+# its usual residents' age groups, split at the working ages, and the people
+# its non-private dwellings held on census night ("D_O", other dwellings).
+# The second is not a part of the first: Menzies' D_O is 1,225 people, its
+# usual residents 524.
 WORKING_AGES = ("20_24", "25_34", "35_44", "45_54", "55_64")
 OTHER_AGES = ("0_4", "5_14", "15_19", "65_74", "75_84", "GE85")
-PRIVATE, NON_PRIVATE = "D_1_3", "D_O"
-CHARACTERISTICS = WORKING_AGES + OTHER_AGES + (PRIVATE, NON_PRIVATE)
+NON_PRIVATE = "D_O"
+CHARACTERISTICS = WORKING_AGES + OTHER_AGES + (NON_PRIVATE,)
 # The band of sex ratios a place usually has; outside it the note says where
 # in the population the ratio lies.
 USUAL_RATIO = (80.0, 130.0)
-# The share of a unit's people in non-private dwellings, in per cent, from
-# which the note gives their count and the ratio in private dwellings.
+# The people in an LGA's non-private dwellings on census night, as a
+# percentage of its usual residents, from which the note gives them.
 NON_PRIVATE_NOTED = 5.0
 
 KEYS = {
@@ -219,11 +224,13 @@ def ratio_context(name: str, people: dict[str, float],
                   chars: dict[str, dict[str, float]]) -> str:
     """Where an LGA's sex ratio outside ``USUAL_RATIO`` lies, in G01's own counts; else "".
 
-    The ratio at working ages (20 to 64) and at the others, and, where at
-    least ``NON_PRIVATE_NOTED`` per cent of the people were counted in
-    non-private dwellings, their males and females and the ratio in private
-    dwellings. The age groups must make the unit's males and females, within
-    the ABS's perturbation of small cells, or the run stops.
+    The ratio at working ages (20 to 64) and at the others; and, where the
+    LGA's non-private dwellings held people on census night to at least
+    ``NON_PRIVATE_NOTED`` per cent of its usual residents, how many men and
+    women they held -- a count of where people were, said as such, and not
+    a part of the residents the ratio is of. The age groups must make the
+    unit's males and females, within the ABS's perturbation of small cells,
+    or the run stops.
     """
     ratio = 100.0 * people["male"] / people["female"]
     if USUAL_RATIO[0] <= ratio <= USUAL_RATIO[1] or not chars:
@@ -243,12 +250,12 @@ def ratio_context(name: str, people: dict[str, float],
         out.append(f"Among those aged 20 to 64, {100.0 * wm / wf:.1f} males per 100 females "
                    f"({wm:,.0f} males, {wf:,.0f} females); at other ages, "
                    f"{100.0 * om / of:.1f}.")
-    (nm, nf), (pm, pf) = both((NON_PRIVATE,)), both((PRIVATE,))
-    if pf and 100.0 * (nm + nf) / people["persons"] >= NON_PRIVATE_NOTED:
-        out.append(f"{nm + nf:,.0f} of the people ({nm:,.0f} males, {nf:,.0f} females) were "
-                   "counted in non-private dwellings, such as hotels, staff quarters, hostels, "
-                   f"hospitals and prisons; in private dwellings the ratio is "
-                   f"{100.0 * pm / pf:.1f}.")
+    nm, nf = both((NON_PRIVATE,))
+    if 100.0 * (nm + nf) / people["persons"] >= NON_PRIVATE_NOTED:
+        out.append(f"On census night its non-private dwellings -- hotels and motels, staff "
+                   f"quarters, hostels, hospitals, prisons and the like -- held {nm + nf:,.0f} "
+                   f"people ({nm:,.0f} males, {nf:,.0f} females), a count of where people "
+                   "were that night, whether or not they live here.")
     return " ".join(out)
 
 
