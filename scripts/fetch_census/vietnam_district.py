@@ -418,10 +418,11 @@ def province_records(units: dict[str, dict[str, Any]], admin1: list[dict[str, An
         median = grouped([(lo, hi, n[0]) for lo, hi, n in u["groups"]])
         if median is None:
             raise SystemExit(f"vietnam_district: {prov}: the middle person is in 85+")
+        # No religion gap is said for a province: the 2009 census publishes
+        # its religion, which vietnam_religion reads.
         out.append(record(
             f"VNM-AGE-{key(prov)}", shape["name"], level="admin1", parent="VNM", country="VNM",
             match_by="shape_id", shape_id=shape["id"], sources=src,
-            religion=gap(NOT_AVAILABLE, RELIGION_GAP),
             median_age={"value": median, "unit": "years", "year": YEAR, "source": SOURCE_T5},
             median_age_note=("Interpolated within the five-year age group that holds the "
                              "middle person, from the 2019 census's count of the province by "
