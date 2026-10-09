@@ -19,12 +19,30 @@ The FSM Statistics Division publishes each census as workbooks on
   (Table 26A) for Kosrae, which has no ethnicity table; nothing but B01 and
   housing for Chuuk.
 
+* **2000 Census, National Detailed Tables** (May 2002), from the Internet
+  Archive's copy of the office's former site: Table P1-4A/B, "Population in
+  Municipalities by First Ethnicity", every one of the 75 municipalities by
+  the first ethnicity each person gave. It is the latest ethnicity by
+  municipality for Chuuk and Kosrae, whose 2010 tabulations have none. Its
+  religion (P2-10) and language (P2-11) go no lower than Chuuk's five
+  regions, so they do not reach a Chuuk municipality.
+
 **What each unit takes.** A state takes its 2023 people, median age, sex
 ratio and religion, and its 2010 ethnicity and language. A Yap or Pohnpei
 municipality takes the same; a Kosrae municipality its 2023 people, age and
-sex and its 2010 religion and language; a Chuuk municipality its 2010 people,
-median age and sex ratio, which is everything published for it. Every figure
-is the office's own: the medians are the tables' "Median" rows.
+sex, its 2010 religion and language and its 2000 ethnicity; a Chuuk
+municipality its 2010 people, median age and sex ratio and its 2000
+ethnicity, which is everything published for it. Every figure is the
+office's own: the medians are the tables' "Median" rows.
+
+**Table P1-4's heading** is set in a font the text layer cannot name: each
+glyph comes out as ``/Gxx``, the character being the one whose code is
+``xx`` + 29. Decoded, its two lines must read as ``P1_4_HEADING`` has them --
+Total, then Yapese, Yap Outer Islanders, Chuukese, Mortlockese, Pohnpeian,
+(Pohnpei) Outer Islanders, Kosraean, Other Pacific Islanders, Filipino,
+Other Asian, USA and Other -- and the order is checked against the figures
+too: each region's own people are its largest column (Yapese in Yap Proper,
+Mortlockese in the Mortlocks, Kosraean in Kosrae, and so on).
 
 **Suppression.** The 2023 tables print ``*`` for a count small enough to
 identify someone. A unit's religion shares are of its whole population, so
@@ -43,7 +61,10 @@ country; every
 unit's men and women add up to its total; a published median lies within two
 years of the one its five-year groups give; ethnicity's single groups and its
 mixed answers add up to the unit's people, and religion's and language's
-categories to their tables' totals.
+categories to their tables' totals. In Table P1-4 every line's groups make
+its total, each region's municipalities make the region, the regions their
+state and the states the country's 107,008 of 2000, and every municipality
+of the 2010 lists is there.
 
 Usage:
     python -m scripts.fetch_census.micronesia_census
@@ -52,10 +73,11 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import io
 import re
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .binding import fold
 from .oceania_common import (
     bind_level, check, load_units, median_from_groups, number, population, sex_ratio,
@@ -97,6 +119,34 @@ ARCHIVED = {
 }
 T2023 = f"{OFFICE}, 2023 FSM Population and Housing Census"
 T2010 = f"{OFFICE}, 2010 FSM Census of Population and Housing"
+T2000 = ("FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of "
+         "Population and Housing, National Detailed Tables (May 2002)")
+DETAILED_2000 = _WAYBACK.format(20201115081315, "2000-FSM-Detailed-Tables.pdf")
+FSM_2000 = 107_008
+P1_4_TITLE = re.compile(r"^Table P1-4[AB]\. Population in Municipalities by First Ethnicity, "
+                        r"Federated States of Micronesia: 2000")
+P1_4_HEADING = ("dd Yap-d YapdChuuk-dMort-dPohn-dOuterdKos-dOtherdFili-dOtherdd",
+                "Municipality dTotald esedO.Is.d esedlockdpeiandIslanddraeandPacIsdpinodAsiandUSA"
+                "dOther")
+P1_4_GROUPS = ("Yapese", "Yap Outer Islander", "Chuukese", "Mortlockese", "Pohnpeian",
+               "Pohnpei Outer Islander", "Kosraean", "Other Pacific Islander", "Filipino",
+               "Other Asian", "U.S. American", "Other ethnicity")
+P1_4_ROW = re.compile(r"^\s*([A-Za-z][A-Za-z .'-]*?)\s+((?:[\d,]+|-)(?:\s+(?:[\d,]+|-)){12})\s*$")
+# The regions Table P1-4 prints between a state and its municipalities.
+REGIONS_2000 = {"Yap": ("Yap Proper", "Outer Islands"),
+                "Chuuk": ("Northern Namoneas", "Southern Namoneas", "Faichuk", "Mortlocks",
+                          "Oksoritod"),
+                "Pohnpei": ("Pohnpei Island", "Outer Islands"), "Kosrae": ()}
+# Each region's own people, which must be its largest column.
+OWN_PEOPLE_2000 = {
+    ("Yap", "Yap Proper"): "Yapese", ("Yap", "Outer Islands"): "Yap Outer Islander",
+    ("Chuuk", "Northern Namoneas"): "Chuukese", ("Chuuk", "Southern Namoneas"): "Chuukese",
+    ("Chuuk", "Faichuk"): "Chuukese", ("Chuuk", "Mortlocks"): "Mortlockese",
+    ("Chuuk", "Oksoritod"): "Chuukese", ("Pohnpei", "Pohnpei Island"): "Pohnpeian",
+    ("Pohnpei", "Outer Islands"): "Pohnpei Outer Islander", ("Kosrae", "Kosrae"): "Kosraean",
+}
+# The 2000 tables' spelling of a 2010 municipality, where they differ.
+SPELLED_2000 = {"Piis-Penau": "Piis-Paneu", "Nema": "Nama", "Faraulep": "Faraulap"}
 
 STATES = ("Yap", "Chuuk", "Pohnpei", "Kosrae")
 FSM_2023 = 75_817
@@ -379,6 +429,117 @@ def ethnicity_2010(rows: list[list[Any]], units: tuple[str, ...]) -> dict[str, d
 
 # -- building ----------------------------------------------------------------
 
+def decoded(line: str) -> str:
+    """A line of the 2000 tables' headings, its /Gxx glyphs read as character xx + 29."""
+    return " ".join(re.sub(r"/G([0-9A-F]{2})", lambda m: chr(int(m.group(1), 16) + 29),
+                           line).split())
+
+
+def as_count(cell: str) -> int:
+    return 0 if cell == "-" else int(cell.replace(",", ""))
+
+
+def ethnicity_2000(pages: list[str]) -> dict[tuple[str, str], dict[str, Any]]:
+    """{(state, municipality as the 2000 table spells it): {"total", "counts"}}, Table P1-4A/B.
+
+    Every line is read in order: a state's name opens the state, one of its
+    regions (``REGIONS_2000``) a region, and any other name is a municipality of
+    the region open -- Kosrae's sit under the state itself. Every sum the table
+    implies is checked before anything is kept.
+    """
+    lines: list[tuple[str, list[int]]] = []
+    titled = 0
+    for page in pages:
+        text = page.splitlines()
+        if not any(P1_4_TITLE.match(line.strip()) for line in text):
+            continue
+        titled += 1
+        heading = {decoded(line) for line in text}
+        check(all(h in heading for h in P1_4_HEADING),
+              "micronesia_census: a page of Table P1-4 is headed otherwise than "
+              f"{P1_4_HEADING}")
+        for line in text:
+            if (m := P1_4_ROW.match(line)):
+                lines.append((m.group(1).strip(), [as_count(c) for c in m.group(2).split()]))
+    check(titled == 2, f"micronesia_census: the 2000 volume has {titled} pages of Table P1-4, "
+                       f"not 2")
+    total: list[int] | None = None
+    states: dict[str, list[int]] = {}
+    regions: dict[tuple[str, str], list[int]] = {}
+    members: dict[tuple[str, str], list[list[int]]] = {}
+    out: dict[tuple[str, str], dict[str, Any]] = {}
+    state = region = None
+    for name, cells in lines:
+        check(sum(cells[1:]) == cells[0],
+              f"micronesia_census: Table P1-4's groups for {name} make {sum(cells[1:]):,}, not "
+              f"{cells[0]:,}")
+        if name == "Total":
+            check(total is None, "micronesia_census: Table P1-4 has two Total lines")
+            total = cells
+        elif name in STATES:
+            check(name not in states, f"micronesia_census: Table P1-4 lists {name} twice")
+            state, region = name, (None if REGIONS_2000[name] else name)
+            states[name] = cells
+            if region:
+                regions[(state, region)] = cells
+        elif state and name in REGIONS_2000[state]:
+            region = name
+            regions[(state, region)] = cells
+        else:
+            check(state is not None and region is not None,
+                  f"micronesia_census: Table P1-4 lists {name} before its state or region")
+            check((state, name) not in out, f"micronesia_census: Table P1-4 lists {name} twice")
+            members.setdefault((state, region), []).append(cells)
+            out[(state, name)] = {"total": cells[0], "counts": dict(zip(P1_4_GROUPS, cells[1:]))}
+    check(total is not None and total[0] == FSM_2000,
+          f"micronesia_census: Table P1-4 counts {total and total[0]} people, not {FSM_2000:,}")
+    check(set(states) == set(STATES), f"micronesia_census: Table P1-4 lists states "
+                                      f"{sorted(states)}")
+    for key, cells in regions.items():
+        made = [sum(col) for col in zip(*members.get(key, [[0] * 13]))]
+        check(made == cells, f"micronesia_census: Table P1-4's municipalities of {key[1]} "
+                             f"({key[0]}) do not make it")
+        own = OWN_PEOPLE_2000.get(key)
+        check(own is not None and max(P1_4_GROUPS, key=lambda g: cells[1 + P1_4_GROUPS.index(g)])
+              == own, f"micronesia_census: Table P1-4's largest column in {key[1]} is not {own}: "
+                      f"its columns are not where the heading puts them")
+    for name, cells in states.items():
+        parts = [regions[(name, r)] for r in REGIONS_2000[name]] or [regions[(name, name)]]
+        check([sum(col) for col in zip(*parts)] == cells,
+              f"micronesia_census: Table P1-4's regions of {name} do not make it")
+    check([sum(col) for col in zip(*states.values())] == total,
+          "micronesia_census: Table P1-4's states do not make the country")
+    for state_name, names in MUNICIPALITIES.items():
+        missing = [n for n in names if (state_name, SPELLED_2000.get(n, n)) not in out]
+        check(not missing, f"micronesia_census: Table P1-4 has no {missing} in {state_name}")
+    log(f"  2000 Table P1-4: {len(out)} municipalities, "
+        f"{sum(1 for s, r in regions if s != r)} regions and 4 states, every sum holding, the "
+        f"country {FSM_2000:,}")
+    return out
+
+
+ETHNIC_2000_NOTE = (
+    "Ethnicity of the {total:,} people counted here at the 2000 census (National Detailed "
+    "Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave "
+    "more than one is counted under the first. It is the latest count of {where}'s ethnicity by "
+    "municipality: {why} 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's "
+    "columns for the outer islands' peoples of those two states.")
+ETHNIC_2000_WHY = {
+    "Chuuk": "the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and "
+             "housing by municipality and nothing else, and the 2023 census has published no "
+             "Chuuk State tables.",
+    "Kosrae": "the 2010 census's Kosrae State tabulation has no ethnicity table by municipality, "
+              "and the 2023 census's published tables carry no ethnicity.",
+}
+
+
+def ethnicity_2000_fields(state: str, name: str, eth2000: dict) -> dict[str, Any]:
+    got = eth2000[(state, SPELLED_2000.get(name, name))]
+    return {"ethnicity": shares_of(got["counts"], got["total"]), "ethnicity_year": 2000,
+            "ethnicity_note": ETHNIC_2000_NOTE.format(total=got["total"], where=state,
+                                                      why=ETHNIC_2000_WHY[state])}
+
+
 def check_age(unit: str, got: dict[str, Any], year: int) -> None:
     total, male, female = got.get("total"), got.get("male"), got.get("female")
     check(total is not None and total > 0, f"micronesia_census: {unit} has no {year} total")
@@ -509,11 +670,13 @@ def fields_municipality(state: str, name: str, ages: dict, year: int, source: st
 CHUUK_GAP = ("The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and "
              "housing by municipality and nothing else; the 2023 census has published no Chuuk "
              "State tables (the office's Chuuk page offers only the 2010 tabulation), and its "
-             "national tables stop at the state. Chuuk's {what} is counted by state only.")
-KOSRAE_ETHNIC_GAP = ("The 2010 census's Kosrae State tabulation has no ethnicity table by "
-                     "municipality (its tables go from citizenship to marital status and "
-                     "religion), and the 2023 census's published tables carry no ethnicity. "
-                     "Kosrae's ethnicity is counted by state only (2010 national Table B08).")
+             "national tables stop at the state. The 2000 census's National Detailed Tables "
+             "give {what} for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the "
+             "Mortlocks, Oksoritod; Table {table}), not its municipalities, and the 2000 state "
+             "reports they say break the tables down by municipality are not among the files "
+             "the office's site or the Internet Archive's copies of its former one serve. "
+             "Chuuk's {what} is counted by state and region only.")
+CHUUK_GAP_TABLES = {"religion": "P2-10", "language": "P2-11"}
 
 
 def read_workbook(url: str):
@@ -580,7 +743,12 @@ def build(n23: dict, r23: dict, eth10: dict, lang10: dict, people10: dict,
     return records
 
 
-def municipal_fields(state: str, n23: dict, books23: dict, books10: dict
+SOURCE_2000 = {"field": "ethnicity", "name": f"{T2000}, Table P1-4A/B: Population in "
+                                             "Municipalities by First Ethnicity",
+               "url": DETAILED_2000, "year": 2000, "license": LICENCE}
+
+
+def municipal_fields(state: str, n23: dict, books23: dict, books10: dict, eth2000: dict
                      ) -> dict[str, Any]:
     """Every drawn-or-not municipality's fields, and the state's sources."""
     names = MUNICIPALITIES[state]
@@ -595,12 +763,15 @@ def municipal_fields(state: str, n23: dict, books23: dict, books10: dict
             check_age(name, ages10[name], 2010)
             fields = fields_municipality(state, name, ages10, 2010, f"{T2010}, Chuuk State "
                                          "basic tabulation", None, None, None, None)
-            for field in ("religion", "language", "ethnicity"):
-                fields[field] = gap(NOT_AVAILABLE, CHUUK_GAP.format(what=field))
+            for field in ("religion", "language"):
+                fields[field] = gap(NOT_AVAILABLE, CHUUK_GAP.format(
+                    what=field, table=CHUUK_GAP_TABLES[field]))
+            fields.update(ethnicity_2000_fields(state, name, eth2000))
             out["fields"][name] = fields
         out["sources"] = [{"field": "population/median_age/sex_ratio",
                            "name": f"{T2010}, Chuuk State basic tabulation (Table B01)",
-                           "url": STATE_2010[state], "year": 2010, "license": LICENCE}]
+                           "url": STATE_2010[state], "year": 2010, "license": LICENCE},
+                          SOURCE_2000]
         return out
     ages23 = age_sex(books23[state], names)
     add_up(state, ages23, n23[state]["total"], 2023)
@@ -637,7 +808,7 @@ def municipal_fields(state: str, n23: dict, books23: dict, books10: dict
                                      "tables", religion, ethnic[name] if ethnic else None,
                                      language[name], people10[name])
         if ethnic is None:
-            fields["ethnicity"] = gap(NOT_AVAILABLE, KOSRAE_ETHNIC_GAP)
+            fields.update(ethnicity_2000_fields(state, name, eth2000))
         out["fields"][name] = fields
     out["sources"] = [
         {"field": "population/median_age/sex_ratio" + ("/religion" if relig23 else ""),
@@ -646,8 +817,16 @@ def municipal_fields(state: str, n23: dict, books23: dict, books10: dict
         {"field": "language" + ("/ethnicity" if ethnic else "/religion"),
          "name": f"{T2010}, {state} State basic tabulation", "url": STATE_2010[state],
          "year": 2010, "license": LICENCE},
-    ]
+    ] + ([] if ethnic else [SOURCE_2000])
     return out
+
+
+def pdf_pages(url: str) -> list[str]:
+    from pypdf import PdfReader  # noqa: PLC0415
+    blob = http_get(url, binary=True, timeout=600, headers={"Accept": "application/pdf,*/*"})
+    check(isinstance(blob, bytes) and blob[:5] == b"%PDF-",
+          f"micronesia_census: {url} is no PDF")
+    return [(page.extract_text() or "") for page in PdfReader(io.BytesIO(blob)).pages]
 
 
 def main() -> int:
@@ -670,7 +849,8 @@ def main() -> int:
                      "2010 language by state")
     books23 = {s: sheet_rows(read_workbook(u)) for s, u in STATE_2023.items()}
     books10 = {s: sheet_rows(read_workbook(u)) for s, u in STATE_2010.items()}
-    municipal = {s: municipal_fields(s, n23, books23, books10) for s in STATES}
+    eth2000 = ethnicity_2000(pdf_pages(DETAILED_2000))
+    municipal = {s: municipal_fields(s, n23, books23, books10, eth2000) for s in STATES}
     records = build(n23, r23, eth10, lang10, people10, municipal,
                     load_units("FSM", "admin1"), load_units("FSM", "admin2"))
     log("  " + summarise(records))
