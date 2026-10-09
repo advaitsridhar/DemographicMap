@@ -1,34 +1,16 @@
-korea_survey: Hankook Research, 2025 Religion Perception Survey: religious population and religious activity (Weekly Report No. 358-3, 3 December 2025), religion by residence region
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/korea_survey.py", line 198, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/korea_survey.py", line 188, in main
-    text = Path(args.text).read_text(encoding="utf-8") if args.text else fetch_text(URL)
-                                                                         ^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 403: Forbidden
+micronesia_census: 2023 and 2010 census workbooks
+  https://stats.gov.fm/download/18/population-statistics/2210/fsm-basic-tables-2023-population-housing-census.xlsx: 424,592 bytes
+  https://stats.gov.fm/download/18/population-statistics/600/fsm-basic-tables-2010-population-housing-census.xlsx: 2,324,606 bytes
+  https://stats.gov.fm/download/56/yap/2212/yap-basic-tables-2023-population-housing-census.xlsx: 433,736 bytes
+  https://stats.gov.fm/download/54/pohnpei/2216/pni-basic-tables-2023-population-housing-census.xlsx: 423,189 bytes
+  https://stats.gov.fm/download/55/kosrae/2217/ksa-basic-tables-2023-population-housing-census.xlsx: 416,098 bytes
+  https://stats.gov.fm/download/64/states/596/pohnpei-basic-tabulation-2010-census-of-population-and-housing.xlsx: 245,828 bytes
+  https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx: 67,733 bytes
+  https://stats.gov.fm/download/64/states/598/yap-basic-tabulation-2010-census-of-population-and-housing.xlsx: 432,551 bytes
+  https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx: 85,594 bytes
+  Yap 2023: municipalities add up to 10,741.0, the state's row 10,739.0
+  Pohnpei 2023: municipalities add up to 26,104.0, the state's row 26,102.0
+  Kosrae 2023: municipalities add up to 5,090.0, the state's row 5,092.0
+  admin1 ethnicity 4, admin1 language 4, admin1 median_age 4, admin1 population 4, admin1 religion 4, admin1 sex_ratio 4, admin2 ethnicity 17, admin2 language 21, admin2 median_age 31, admin2 population 31, admin2 religion 21, admin2 sex_ratio 31
+  wrote data/processed/micronesia_census.json (184 kB)
+  wrote 35 records
