@@ -1,12 +1,74 @@
-xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
-usage: west_asia_probe.py [-h] [--search SEARCH] [--where WHERE]
-                          [--select SELECT] [--group-by GROUP_BY]
-                          [--rows ROWS] [--grep GREP] [--links LINKS]
-                          [--chars CHARS] [--context CONTEXT] [--level LEVEL]
-                          [--cols COLS] [--sheets SHEETS] [--width WIDTH]
-                          [--raw] [--pages PAGES] [--dictionary DICTIONARY]
-                          [--iso ISO] [--unit-level UNIT_LEVEL]
-                          [--classes CLASSES] [--zoom ZOOM]
-                          {ods,odsrows,get,wayback,uscb,xlsx,pdf,geonames,wdpoints,osm}
-                          target [target ...]
-west_asia_probe.py: error: argument --grep: expected one argument
+
+== 'Bad Pakh District': 200
+    no item
+
+== 'Abshar District': 200
+    Q131787538 'Abshar district' -- 'district of panjshir' point=35.2512,69.7767 P131=- P31=Q82794
+    Q118496258 'Abshar District' -- '' point=- P131=Q181235 P31=Q496825
+
+== 'Yakawlang 2 District': 200
+    no item
+
+== 'Lija Mangal District': 200
+    no item
+
+== 'Mirzaka District': 200
+    Q6874946 'Mirzaka District' -- '' point=- P131=Q182493 P31=Q496825
+
+== 'Shaltan District': 200
+    no item
+
+== 'Kalbad District': 200
+    no item
+
+== 'Gul Tepa District': 200
+    no item
+
+== 'Aqtash District': 200
+    Q98769402 'Aqtash District' -- 'District in Kunduz Province, Afghanistan' point=36.7900,69.1000 P131=Q186418 P31=Q496825
+
+== 'Chinarto District': 200
+    no item
+
+== 'Dand District': 200
+    Q2673970 'Kandahar District' -- 'district in Kandahar Province, Afghanistan' point=31.6119,65.6811 P131=Q173808 P31=Q496825
+
+== 'Takhta Pul District': 200
+    no item
+
+== 'Marjah District': 200
+    Q14624447 'Marjah District' -- 'districts in Helmand, Afghanistan' point=31.8667,64.2000 P131=Q173821 P31=Q496825
+
+== 'Nawamish District': 200
+    no item
+
+== 'Zirkoh District': 200
+    no item
+
+== 'Poshtkoh District': 200
+    no item
+
+== 'Kohzor District': 200
+    no item
+
+== 'Zawol District': 200
+    no item
+
+== 'Delaram District': 200
+    Q28169736 'Delaram District' -- 'temporary District of Nimroz, Afghanistan' point=- P131=Q183021 P31=Q496825
+
+== 'Hairatan': 200
+    Q3364500 'Hairatan' -- 'human settlement in Afghanistan' point=37.2169,67.4169 P131=Q3694285 P31=Q486972,Q902814
+    Q25379379 'Hairatan–Mazari Sharif-vasútvonal' -- 'railway line in Afghanistan' point=- P131=- P31=Q728937
+
+== 'Patoo District': 200
+    no item
+
+== 'Sharak-e-Hayratan': 200
+    no item
+
+== 'Gizab District': 200
+    Q2673481 'Gizab District' -- 'district in Urozgan Province, Afghanistan' point=33.4019,66.2656 P131=Q183028,Q181220 P31=Q496825
+
+== 'Khulm District': 200
+    Q3696017 'Khulm' -- 'district of Balkh, Afghanistan' point=36.8144,67.7433 P131=Q121104 P31=Q496825
