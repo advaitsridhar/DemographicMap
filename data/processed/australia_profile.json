@@ -106469,9 +106469,28 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Australian Indigenous Languages",
+        "pct": 87.5,
+        "count": 7676
+      },
+      {
+        "group": "English only",
+        "pct": 5.7,
+        "count": 504
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.3,
+        "count": 469
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.4,
+        "count": 127
+      }
+    ],
     "ethnicity": [
       {
         "group": "Australian Aboriginal",
@@ -106576,8 +106595,8 @@
     ],
     "sources": [
       {
-        "field": "median_age/sex_ratio/ethnicity",
-        "name": "Australian Bureau of Statistics, Census of Population and Housing 2021: General Community Profile G01, Selected person characteristics by sex; General Community Profile G02, Selected medians and averages; General Community Profile G08, Ancestry by country of birth of parents",
+        "field": "median_age/sex_ratio/language/ethnicity",
+        "name": "Australian Bureau of Statistics, Census of Population and Housing 2021: General Community Profile G01, Selected person characteristics by sex; General Community Profile G02, Selected medians and averages; General Community Profile G08, Ancestry by country of birth of parents; General Community Profile G13, Language used at home by proficiency in spoken English by sex",
         "url": "https://data.api.abs.gov.au/",
         "year": 2021,
         "license": "CC BY 4.0"
@@ -106592,6 +106611,8 @@
       "asgs_level": "LGA"
     },
     "sex_ratio_note": "Males per 100 females among the 8,778 people counted in the 2021 Census at their usual address here (4,359 males, 4,421 females; ABS G01).",
+    "language_year": 2021,
+    "language_note": "ABS 2021 language used at home (G13), one answer per person, at the coarsest level the table adds up at here: English only, the Australian Indigenous languages, every other language, and not stated. The finer listing does not partition this area -- its 'Other' count is smaller than the Indigenous languages it holds elsewhere -- so the languages besides English and the Indigenous ones are given as the remainder of 'uses another language'.",
     "median_age_note": "The ABS's own median age of persons for this area (2021 Census, G02), published in whole years; the census counts people at their usual address.",
     "ethnicity_year": 2021,
     "ethnicity_basis": "ancestry (multi-response)",
