@@ -20,18 +20,31 @@ the counties' registered populations for:
 The villages are added up to their township (鄉鎮市區, the first eight digits
 of the village code) and the townships to their county.
 
-**What is written.** For all 368 townships: the registered population, the
-median age (interpolated within the single year of age that holds the
-middle person; the open 100+ class never holds it), the sex ratio (men per
-hundred women), and **ethnicity as indigenous status** -- the register's own
-classification, a count of everyone: each of the sixteen recognised peoples
-by its name, the ten Pingpu peoples together, the people of indigenous status
-who declared no people, and everyone else as "Taiwanese (non-indigenous)",
-under ``ethnicity_basis: "indigenous status (household register)"``. The
-register records nothing finer about the non-indigenous majority -- Hoklo,
-Hakka, mainlander or naturalised -- and the note says so; the counties keep
-``taiwan.py``'s modelled composition. For the 22 counties: the median age
-and sex ratio from the same townships' counts added up.
+**What is written.** For all 368 townships and the 22 counties: the
+registered population, the median age (interpolated within the single year
+of age that holds the middle person; the open 100+ class never holds it),
+the sex ratio (men per hundred women), and **ethnicity as indigenous status**
+-- the register's own classification, a count of everyone: each of the
+sixteen recognised peoples by its name, the ten Pingpu peoples together, the
+people of indigenous status who declared no people, and everyone else as
+"Taiwanese (non-indigenous)", under ``ethnicity_basis: "indigenous status
+(household register)"``. The register records nothing finer about the
+non-indigenous majority -- Hoklo, Hakka, mainlander or naturalised -- and the
+note says so. A county's count is its townships' added up (Kinmen's with
+Wuqiu, which the boundary file draws under the country), and it stands in
+place of ``taiwan.py``'s modelled split of the county into Hoklo, Hakka,
+mainlander and indigenous shares, because it is a count; the county's note
+says so and quotes the Hakka Affairs Council's 2021 survey estimate of the
+county's Hakka share (read from ``taiwan_county.json``), which no count
+replaces and which is not one of the shares shown.
+
+**Notes.** A people too few to show at one decimal joins "Indigenous
+Taiwanese (other peoples)"; where that group is itself too few to show, the
+note says how many people are counted but not drawn, and does not describe a
+group that is not there. A sex ratio outside ``USUAL_RATIO`` also gets the
+working ages (``WORKING_AGES``) apart from the rest, from the same single
+years: what the register shows about the imbalance, not a cause it does not
+record.
 
 **Language** is the 2020 census's. Its results tables (109年普查統計結果表 on
 www.stat.gov.tw) carry a report for each county and city (縣市別報告統計表),
@@ -77,6 +90,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import time
 from collections import Counter, defaultdict
 from typing import Any
@@ -84,7 +98,8 @@ from typing import Any
 from ._shared import NOT_COLLECTED, PROCESSED, RAW, gap, http_get, log, measure, record, write_json
 from .east_asia_common import drawn, hundred, pool_small, sex_ratio, single_year_median, unshown
 from .taiwan import (
-    LANGUAGE_BASIS, LANGUAGE_COLUMNS, LANGUAGE_LICENCE, LANGUAGE_ROW_TOLERANCE, LANGUAGE_YEAR,
+    HAKKA_LICENCE, HAKKA_SOURCE, HAKKA_URL, HAKKA_YEAR, LANGUAGE_BASIS, LANGUAGE_COLUMNS,
+    LANGUAGE_LICENCE, LANGUAGE_ROW_TOLERANCE, LANGUAGE_YEAR,
 )
 from common import slugify  # noqa: E402 - on the path _shared sets
 
@@ -121,6 +136,16 @@ PEOPLES: dict[str, str] = {
 NON_INDIGENOUS = "Taiwanese (non-indigenous)"
 OTHER_PEOPLES = "Indigenous Taiwanese (other peoples)"
 ETHNICITY_BASIS = "indigenous status (household register)"
+
+# A sex ratio outside this band gets the working ages apart in its note.
+USUAL_RATIO = (80.0, 130.0)
+WORKING_AGES = (20, 64)
+
+# taiwan.py's county file, whose modelled ethnicity quotes the Hakka Affairs
+# Council's survey share for each county; the county's note quotes it again.
+COUNTY_FILE = PROCESSED / "taiwan_county.json"
+HAKKA_IN_MODEL = re.compile(r"survey estimate that (\d+(?:\.\d+)?)% of the county meets the "
+                            r"Hakka Basic Act definition")
 
 RELIGION_NOTE = (
     "Taiwan's census does not ask religion, and the household register does not record it, "
@@ -429,6 +454,74 @@ def bind(townships: dict[str, dict[str, Any]], admin2: list[dict[str, Any]]
     return out
 
 
+def people_count(n: int) -> str:
+    return "1 person" if n == 1 else f"{n:,} people"
+
+
+def per_hundred(men: int, women: int) -> str:
+    return f"{100 * men / women:.1f}" if women else "no women among"
+
+
+def sex_note(men: int, women: int, ages: dict[str, Counter]) -> str:
+    """The counts, and for a ratio outside ``USUAL_RATIO`` the working ages apart:
+    where in the age pyramid the imbalance lies, which the register shows, and
+    not why, which it does not record."""
+    note = f"{men:,} men and {women:,} women."
+    if not women or USUAL_RATIO[0] <= 100 * men / women <= USUAL_RATIO[1]:
+        return note
+    low, high = WORKING_AGES
+    work_m = sum(n for age, n in ages["m"].items() if low <= age <= high)
+    work_f = sum(n for age, n in ages["f"].items() if low <= age <= high)
+    return (f"{note} Among those aged {low} to {high}, {per_hundred(work_m, work_f)} men per "
+            f"100 women ({work_m:,} men, {work_f:,} women); at other ages, "
+            f"{per_hundred(men - work_m, women - work_f)}.")
+
+
+def pool_sentence(pooled: dict[str, float], moved: list[str], people: int) -> str:
+    """What the note says of the peoples too few to show at one decimal: the
+    group that holds them where it shows, and where it is itself too few to
+    show, how many people are counted but not drawn -- never a group that is
+    not there."""
+    if not moved:
+        return ""
+    names = ", ".join(sorted(moved))
+    groups = "one group" if len(moved) == 1 else f"{len(moved)} groups"
+    if any(row["group"] == OTHER_PEOPLES for row in hundred(pooled)):
+        return (f" '{OTHER_PEOPLES}' is the {people_count(people)} of {groups} too few here to "
+                f"show at one decimal ({names}).")
+    left = unshown(pooled)
+    verb = "is" if left == 1 else "are"
+    return (f" {people_count(left)[0].upper()}{people_count(left)[1:]} of {groups} too few to show "
+            f"at one decimal ({names}) {verb} counted in the total but not drawn.")
+
+
+def status_fields(peoples: Counter, total: int, where: str, extra: str = ""
+                  ) -> dict[str, Any]:
+    """Ethnicity as the register's indigenous status, for a township or a county."""
+    counts = Counter({k: v for k, v in peoples.items() if v})
+    indigenous = sum(counts.values())
+    counts[NON_INDIGENOUS] = total - indigenous
+    # A people too few here to show at one decimal joins the other peoples
+    # rather than being dropped, so the counts are everyone registered.
+    pooled, moved, people = pool_small(dict(counts), OTHER_PEOPLES)
+    note = (
+        f"The household register's indigenous status at {AS_OF}: {indigenous:,} of the "
+        f"{total:,} registered people of {where} hold indigenous status, by the people they "
+        "declared; everyone else is 'Taiwanese (non-indigenous)', a category the register does "
+        "not divide -- Hoklo, Hakka, mainlander and naturalised citizens are all in it. The ten "
+        "Pingpu peoples are written together." + pool_sentence(pooled, moved, people)
+        + " Not an ethnicity question: the register records a legal status." + extra)
+    return {"ethnicity": hundred(pooled), "ethnicity_year": YEAR,
+            "ethnicity_basis": ETHNICITY_BASIS, "ethnicity_note": note}
+
+
+def status_sources() -> list[dict[str, Any]]:
+    return [{"field": "ethnicity", "name": SOURCES["ODRP018"], "url": PAGE_URL,
+             "year": YEAR, "license": LICENCE},
+            {"field": "ethnicity", "name": SOURCES["ODRP013"], "url": PAGE_URL,
+             "year": YEAR, "license": LICENCE}]
+
+
 def figures(rid: str, name: str, level: str, parent: str, shape: str, men: int, women: int,
             ages: dict[str, Counter], where: str, **extra: Any) -> dict[str, Any]:
     both = Counter(ages["m"])
@@ -446,39 +539,15 @@ def figures(rid: str, name: str, level: str, parent: str, shape: str, men: int, 
         median_age_note=f"{base} Interpolated within the single year of age that holds the "
                         "middle person.",
         sex_ratio=sex_ratio(men, women, year=YEAR, source=SOURCES["ODRP014"]),
-        sex_ratio_note=f"{men:,} men and {women:,} women.",
+        sex_ratio_note=sex_note(men, women, ages),
         **extra)
 
 
 def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str,
                     parent: str, language: dict[str, Any] | None = None) -> dict[str, Any]:
-    counts = Counter({k: v for k, v in town["peoples"].items() if v})
-    indigenous = sum(counts.values())
-    counts[NON_INDIGENOUS] = town["men"] + town["women"] - indigenous
-    # A people too few here to show at one decimal joins the other peoples
-    # rather than being dropped, so the counts are everyone registered.
-    pooled, moved, people = pool_small(dict(counts), OTHER_PEOPLES)
-    held = ""
-    if moved:
-        held = (f" '{OTHER_PEOPLES}' is the {people:,} people of {len(moved)} peoples too few "
-                f"here to show at one decimal ({', '.join(sorted(moved))}).")
-    left = unshown(pooled)
-    if left:
-        held += (f" {left:,} people of other indigenous peoples, too few to show at one decimal, "
-                 "are counted in the total but not drawn.")
-    note = (
-        f"The household register's indigenous status at {AS_OF}: {indigenous:,} of the "
-        f"{town['men'] + town['women']:,} registered people of this township hold indigenous "
-        "status, by the people they declared; everyone else is 'Taiwanese (non-indigenous)', "
-        "a category the register does not divide -- Hoklo, Hakka, mainlander and naturalised "
-        "citizens are all in it. The ten Pingpu peoples are written together." + held
-        + " Not an ethnicity question: the register records a legal status.")
+    status = status_fields(town["peoples"], town["men"] + town["women"], "this township")
     sources = [{"field": "population/median_age/sex_ratio", "name": SOURCES["ODRP014"],
-                "url": PAGE_URL, "year": YEAR, "license": LICENCE},
-               {"field": "ethnicity", "name": SOURCES["ODRP018"], "url": PAGE_URL,
-                "year": YEAR, "license": LICENCE},
-               {"field": "ethnicity", "name": SOURCES["ODRP013"], "url": PAGE_URL,
-                "year": YEAR, "license": LICENCE}]
+                "url": PAGE_URL, "year": YEAR, "license": LICENCE}] + status_sources()
     spoken: dict[str, Any] = {"language": gap("not_available", LANGUAGE_NOTE)}
     if language is not None:
         county = next(zh for zh in CENSUS_REPORTS if language["key"].startswith(zh))
@@ -505,8 +574,7 @@ def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str
         f"TWN-{code}", name, "admin2", parent, shape, town["men"], town["women"],
         town["ages"], "this township",
         codes={"ris": code}, aliases=aliases,
-        ethnicity=hundred(pooled), ethnicity_year=YEAR,
-        ethnicity_basis=ETHNICITY_BASIS, ethnicity_note=note,
+        **status,
         religion=gap(NOT_COLLECTED, RELIGION_NOTE),
         **spoken,
         sources=sources)
@@ -516,9 +584,44 @@ def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str
     return out
 
 
+def hakka_shares(county_records: list[dict[str, Any]] | None = None) -> dict[str, float]:
+    """{drawn county name: the Hakka Affairs Council's 2021 survey share}, as
+    ``taiwan.py``'s modelled estimate quotes it. Empty if that file is not
+    there; a county's note then says nothing about the survey."""
+    if county_records is None:
+        try:
+            county_records = json.loads(COUNTY_FILE.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return {}
+    out: dict[str, float] = {}
+    for r in county_records:
+        model = r.get("ethnicity")
+        found = HAKKA_IN_MODEL.search(model.get("note") or "") if isinstance(model, dict) else None
+        if found:
+            out[r["name"]] = float(found.group(1))
+    return out
+
+
+def county_extra(hakka: float | None) -> str:
+    """The county note's last sentences: what no count divides, and the
+    survey's estimate of it."""
+    said = (" No count divides the non-indigenous majority: the register records no Hoklo, "
+            "Hakka or mainlander origin, and Taiwan's census asks no ethnicity question.")
+    if hakka is None:
+        return said
+    return said + (
+        f" The Hakka Affairs Council's 2021 telephone survey estimated that {hakka}% of the "
+        "county's registered residents meet the Hakka Basic Act's definition of Hakka, a "
+        "definition that overlaps the other groups; that is a survey's estimate and is not one "
+        "of the shares shown. Being a count of everyone, this composition stands in place of a "
+        "modelled split of the county into Hoklo, Hakka, mainlander and indigenous shares, which "
+        "rested on that estimate and on a national ratio.")
+
+
 def build(townships: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
           admin2: list[dict[str, Any]],
-          language: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+          language: dict[str, dict[str, Any]] | None = None,
+          hakka: dict[str, float] | None = None) -> list[dict[str, Any]]:
     bound = bind(townships, admin2)
     spoken: dict[str, dict[str, Any] | None] = {code: None for code in bound.values()}
     if language is not None:
@@ -538,32 +641,47 @@ def build(townships: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
     records = [township_record(shape, code, townships[code], names[shape], parents[shape],
                                spoken[code])
                for shape, code in sorted(bound.items(), key=lambda kv: kv[1])]
-    # The counties: the townships the register files under each (the first
-    # five digits of the code), added up, bound to the county the boundary
-    # file draws by its name.
+    # The counties: the townships the register files under each (by the
+    # county the township's name begins with), added up, bound to the county
+    # the boundary file draws by its name. Kinmen's include Wuqiu, which the
+    # boundary file draws under the country: the county's figures are the
+    # county's.
     from .taiwan import COUNTIES
+    hakka = hakka_shares() if hakka is None else hakka
     counties: dict[str, dict[str, Any]] = {}
     for code, town in townships.items():
         county = next((zh for zh in COUNTIES if town["name"].replace("台", "臺").startswith(zh)),
                       None)
         if county is None:
             raise SystemExit(f"taiwan_townships: {town['name']} names no county")
-        row = counties.setdefault(county, {"men": 0, "women": 0,
+        row = counties.setdefault(county, {"men": 0, "women": 0, "peoples": Counter(),
                                            "ages": {"m": Counter(), "f": Counter()}})
         row["men"] += town["men"]
         row["women"] += town["women"]
+        row["peoples"].update(town["peoples"])
         for sex in ("m", "f"):
             row["ages"][sex].update(town["ages"][sex])
     shapes = {u["name"]: u["id"] for u in admin1}
+    quoted = []
     for zh, (drawn_name, _) in COUNTIES.items():
         if drawn_name not in shapes:
             raise SystemExit(f"taiwan_townships: no drawn county called {drawn_name!r}")
         row = counties[zh]
+        share = hakka.get(drawn_name)
+        sources = [{"field": "population/median_age/sex_ratio", "name": SOURCES["ODRP014"],
+                    "url": PAGE_URL, "year": YEAR, "license": LICENCE}] + status_sources()
+        if share is not None:
+            quoted.append(drawn_name)
+            sources.append({"field": "ethnicity (the Hakka estimate the note quotes)",
+                            "name": HAKKA_SOURCE, "url": HAKKA_URL, "year": HAKKA_YEAR,
+                            "license": HAKKA_LICENCE})
         records.append(figures(
             f"TWN-{slugify(drawn_name)}", drawn_name, "admin1", "TWN", shapes[drawn_name], row["men"],
             row["women"], row["ages"], "this county",
-            sources=[{"field": "population/median_age/sex_ratio", "name": SOURCES["ODRP014"],
-                      "url": PAGE_URL, "year": YEAR, "license": LICENCE}]))
+            **status_fields(row["peoples"], row["men"] + row["women"], "this county",
+                            county_extra(share)),
+            sources=sources))
+    log(f"  the Hakka survey's share quoted for {len(quoted)} of {len(COUNTIES)} counties")
     national = sum(r["population"]["value"] for r in records if r["level"] == "admin1")
     medians = [r["median_age"]["value"] for r in records if r["level"] == "admin2"]
     log(f"  {len(bound)} townships and {len(counties)} counties written, {national:,} people; "

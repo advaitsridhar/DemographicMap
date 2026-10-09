@@ -312,7 +312,7 @@ class LanguageBound(unittest.TestCase):
     def test_every_township_gets_its_row(self):
         admin1, admin2 = maps()
         towns = register()
-        records = tt.build(towns, admin1, admin2, spoken(towns))
+        records = tt.build(towns, admin1, admin2, spoken(towns), hakka={})
         r = next(r for r in records if r.get("shape_id") == "52511910B38062779232785")
         self.assertEqual(r["language"][0], {"group": "Mandarin", "pct": 60.0})
         self.assertEqual(r["language_year"], 2020)
@@ -328,7 +328,7 @@ class LanguageBound(unittest.TestCase):
         language = spoken(towns)
         language.pop("連江縣北竿鄉")
         with self.assertRaises(SystemExit):
-            tt.build(towns, admin1, admin2, language)
+            tt.build(towns, admin1, admin2, language, hakka={})
 
     def test_a_row_with_no_township_is_refused(self):
         admin1, admin2 = maps()
@@ -336,14 +336,14 @@ class LanguageBound(unittest.TestCase):
         language = spoken(towns)
         language["新北市不存在區"] = language["連江縣北竿鄉"]
         with self.assertRaises(SystemExit):
-            tt.build(towns, admin1, admin2, language)
+            tt.build(towns, admin1, admin2, language, hakka={})
 
 
 class Records(unittest.TestCase):
     def setUp(self):
         admin1, admin2 = maps()
         self.towns = register()
-        self.records = tt.build(self.towns, admin1, admin2)
+        self.records = tt.build(self.towns, admin1, admin2, hakka={})
         self.by_shape = {r["shape_id"]: r for r in self.records}
 
     def test_counts(self):
@@ -397,10 +397,58 @@ class Records(unittest.TestCase):
         matsu = next(r for r in counties if r["name"] == "Matsu Islands")
         self.assertEqual(matsu["id"], "TWN-matsu-islands")
         # A bare marker: the build lets it displace neither the county's
-        # modelled composition nor its census language.
-        self.assertEqual(matsu["ethnicity"], {"status": "not_available"})
+        # census language nor its modelled religion.
         self.assertEqual(matsu["language"], {"status": "not_available"})
+        self.assertEqual(matsu["religion"], {"status": "not_available"})
         self.assertIsNotNone(matsu["median_age"]["value"])
+
+    def test_a_county_counts_its_townships_indigenous_status(self):
+        counties = {r["name"]: r for r in self.records if r["level"] == "admin1"}
+        matsu = counties["Matsu Islands"]
+        towns = [t for t in self.towns.values() if t["name"].replace("台", "臺").startswith("連江縣")]
+        people = sum(t["men"] + t["women"] for t in towns)
+        amis = sum(t["peoples"]["Amis"] for t in towns)
+        self.assertEqual(matsu["ethnicity_basis"], tt.ETHNICITY_BASIS)
+        self.assertEqual(matsu["ethnicity_year"], 2026)
+        self.assertEqual(sum(row["count"] for row in matsu["ethnicity"]), people)
+        self.assertEqual(sum(row["pct"] for row in matsu["ethnicity"]), 100.0)
+        self.assertIn(f"of the {people:,} registered people of this county", matsu["ethnicity_note"])
+        self.assertEqual(next(row["count"] for row in matsu["ethnicity"] if row["group"] == "Amis"),
+                         amis)
+        self.assertIn("No count divides the non-indigenous majority", matsu["ethnicity_note"])
+        self.assertEqual({src["field"] for src in matsu["sources"]},
+                         {"population/median_age/sex_ratio", "ethnicity"})
+
+    def test_kinmen_counts_wuqiu(self):
+        counties = {r["name"]: r for r in self.records if r["level"] == "admin1"}
+        kinmen = [t for t in self.towns.values() if t["name"].replace("台", "臺").startswith("金門縣")]
+        self.assertTrue(any("烏坵" in t["name"] for t in kinmen))
+        self.assertEqual(counties["Kinmen"]["population"]["value"],
+                         sum(t["men"] + t["women"] for t in kinmen))
+        self.assertEqual(sum(row["count"] for row in counties["Kinmen"]["ethnicity"]),
+                         counties["Kinmen"]["population"]["value"])
+
+    def test_the_county_note_quotes_the_hakka_survey(self):
+        admin1, admin2 = maps()
+        records = tt.build(self.towns, admin1, admin2, hakka={"Hsinchu": 30.3})
+        hsinchu = next(r for r in records if r["level"] == "admin1" and r["name"] == "Hsinchu")
+        self.assertIn("estimated that 30.3% of the county's registered residents meet the Hakka "
+                      "Basic Act's definition", hsinchu["ethnicity_note"])
+        self.assertIn("stands in place of a modelled split", hsinchu["ethnicity_note"])
+        self.assertTrue(any(src["name"] == tt.HAKKA_SOURCE and src["field"].startswith("ethnicity (")
+                            for src in hsinchu["sources"]))
+        taipei = next(r for r in records if r["level"] == "admin1" and r["name"] == "Taipei")
+        self.assertNotIn("Hakka Affairs Council", taipei["ethnicity_note"])
+        self.assertFalse(any(src["name"] == tt.HAKKA_SOURCE for src in taipei["sources"]))
+
+    def test_hakka_shares_read_from_the_model_s_note(self):
+        model = [{"name": "Hsinchu", "ethnicity": {"status": "modelled", "note": (
+                     "Modelled from three official figures: ..., the Hakka Affairs Council's 2021 "
+                     "survey estimate that 30.3% of the county meets the Hakka Basic Act "
+                     "definition, and ...")}},
+                 {"name": "Taipei", "ethnicity": {"status": "not_available"}},
+                 {"name": "Kinmen", "ethnicity": [{"group": "Hoklo Taiwanese", "pct": 90.0}]}]
+        self.assertEqual(tt.hakka_shares(model), {"Hsinchu": 30.3})
 
     def test_median_from_single_years(self):
         town = {"name": "x", "men": 0, "women": 0, "peoples": Counter(),
@@ -410,6 +458,53 @@ class Records(unittest.TestCase):
         self.assertEqual(r["median_age"]["value"], 22.0)
         self.assertEqual(r["sex_ratio"]["value"], 100.0)
         self.assertEqual(r["ethnicity"], [{"group": tt.NON_INDIGENOUS, "pct": 100.0, "count": 40}])
+        self.assertEqual(r["sex_ratio_note"], "20 men and 20 women.")
+
+
+class Notes(unittest.TestCase):
+    def town(self, peoples, total):
+        return {"name": "x", "men": total // 2, "women": total - total // 2,
+                "peoples": Counter(peoples),
+                "ages": {"m": Counter({30: total // 2}), "f": Counter({30: total - total // 2})}}
+
+    def test_a_pool_that_shows_is_described(self):
+        # Five peoples of 2 or 3 each in 20,000 people: none shows alone, 12
+        # together do (0.06% rounds to 0.1).
+        peoples = {"Amis": 3000, "Bunun": 3, "Seediq": 2, "Truku": 3, "Tsou": 2, "Thao": 2}
+        r = tt.township_record("s", "00000000", self.town(peoples, 20_000), "X", "TWN")
+        groups = {row["group"] for row in r["ethnicity"]}
+        self.assertIn(tt.OTHER_PEOPLES, groups)
+        self.assertIn(f"'{tt.OTHER_PEOPLES}' is the 12 people of 5 groups too few here to show at "
+                      "one decimal (Bunun, Seediq, Thao, Truku, Tsou).", r["ethnicity_note"])
+        self.assertNotIn("not drawn", r["ethnicity_note"])
+
+    def test_a_pool_too_small_to_show_is_not_described_as_a_group(self):
+        # Budai: 12 people of 5 peoples in 23,199 is 0.05%, which rounds to 0.0.
+        peoples = {"Amis": 95, "Atayal": 12, "Paiwan": 19, "Bunun": 3, "Seediq": 2,
+                   "Truku": 3, "Tsou": 2, "Yami (Tao)": 2}
+        r = tt.township_record("s", "00000000", self.town(peoples, 23_199), "X", "TWN")
+        self.assertNotIn(tt.OTHER_PEOPLES, {row["group"] for row in r["ethnicity"]})
+        self.assertNotIn(f"'{tt.OTHER_PEOPLES}' is", r["ethnicity_note"])
+        self.assertIn(" 12 people of 5 groups too few to show at one decimal (Bunun, Seediq, "
+                      "Truku, Tsou, Yami (Tao)) are counted in the total but not drawn.",
+                      r["ethnicity_note"])
+
+    def test_one_person_is_one_person(self):
+        r = tt.township_record("s", "00000000", self.town({"Thao": 1}, 23_199), "X", "TWN")
+        self.assertIn(" 1 person of one group too few to show at one decimal (Thao) is counted in "
+                      "the total but not drawn.", r["ethnicity_note"])
+
+    def test_a_usual_sex_ratio_gives_the_counts_only(self):
+        ages = {"m": Counter({30: 100, 70: 10}), "f": Counter({30: 100, 70: 15})}
+        self.assertEqual(tt.sex_note(110, 115, ages), "110 men and 115 women.")
+
+    def test_a_far_out_sex_ratio_gives_the_working_ages_apart(self):
+        # Juguang-like: a surplus of men of working age.
+        ages = {"m": Counter({10: 50, 30: 900, 64: 100, 65: 50}),
+                "f": Counter({10: 50, 30: 400, 64: 100, 70: 50})}
+        note = tt.sex_note(1100, 600, ages)
+        self.assertEqual(note, "1,100 men and 600 women. Among those aged 20 to 64, 200.0 men per "
+                               "100 women (1,000 men, 500 women); at other ages, 100.0.")
 
 
 if __name__ == "__main__":
