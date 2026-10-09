@@ -206,14 +206,27 @@ class TestTable10(unittest.TestCase):
                                        "CHINESE": 0, "OTHERS": 0}, 100, "u")
         self.assertEqual(fields["ethnicity_basis"], "nationality")
         self.assertEqual([g["group"] for g in fields["ethnicity"]],
-                         ["Pakistani", "Afghan"])
+                         ["Pakistani", "Afghan national"])
         self.assertIn("not as ethnicity", fields["ethnicity_note"])
+
+    def test_a_foreign_nationality_is_not_filed_as_a_people(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+        import group_tree
+        self.assertEqual(group_tree.parent_of("ethnicity", t.NATIONALITY_LABELS["AFGHANI"]),
+                         "Other national identities")
+        self.assertEqual(group_tree.parent_of("ethnicity", t.NATIONALITY_LABELS["PAKISTANI"]),
+                         "Other national identities")
+        for key in ("AFGHANI", "BANGALI", "CHINESE"):
+            self.assertTrue(t.NATIONALITY_LABELS[key].endswith(" national"), key)
 
     def test_the_census_bangali_is_kept_as_printed(self):
         # The census's word names a people; whose citizens they are it does not say.
         fields = t.nationality_fields({"PAKISTANI": 90, "AFGHANI": 0, "BANGALI": 10,
                                        "CHINESE": 0, "OTHERS": 0}, 100, "u")
-        self.assertEqual([g["group"] for g in fields["ethnicity"]], ["Pakistani", "Bangali"])
+        self.assertEqual([g["group"] for g in fields["ethnicity"]],
+                         ["Pakistani", "Bangali national"])
         self.assertNotIn("Bangladeshi", fields["ethnicity_note"])
 
 

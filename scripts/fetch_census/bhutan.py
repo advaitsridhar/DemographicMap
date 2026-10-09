@@ -1066,8 +1066,8 @@ CITIZEN_NOTE = (
     "here, {bhutanese:,} are Bhutanese (its Table 2.2) and {others:,} are not "
     "-- Table 2.1 counts everyone found on census day whatever their "
     "nationality, so the difference between the two tables is everyone else. "
-    "Written by the map owner's decision of 19 September 2026 that a census's "
-    "count of citizenship may stand on this field under its basis.")
+    "It is shown on this field because the census counts citizenship and asks "
+    "no ethnicity.")
 
 
 def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
@@ -1146,6 +1146,41 @@ def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
                       f"{found.printed:,} people, so the report gives no count of "
                       f"the non-Bhutanese here")
     return found, ""
+
+
+# Outside this band of females per 1,000 males a gewog's ratio is far from an
+# even split -- Daga's 209, Hungrel's 263 -- and its note gives the counts it
+# rests on and how many of the people are not Bhutanese citizens, from the
+# same report's Table 2.2: Daga's 3,853 non-Bhutanese were 63.6% of it.
+EVEN_ENOUGH = (800, 1250)
+
+
+def ratio_context(male: int, female: int, people: int,
+                  bhutanese: int | None = None,
+                  citizen_sexes: tuple[int, int] | None = None) -> str:
+    """A sentence for a ratio far from even, with its counts; else nothing.
+
+    Table 2.2's own males and females are used only where they make its row
+    and neither exceeds Table 2.1's; otherwise only the number of
+    non-citizens is said.
+    """
+    if not male or EVEN_ENOUGH[0] <= round(1000.0 * female / male) <= EVEN_ENOUGH[1]:
+        return ""
+    text = (f" Far from an even split: the census counts {male:,} males and "
+            f"{female:,} females here")
+    if bhutanese is not None:
+        others = people - bhutanese
+        if others <= 0:
+            text += ", all of them Bhutanese citizens (Table 2.2)"
+        else:
+            text += (f"; {others:,} of the {people:,} {'is' if others == 1 else 'are'} "
+                     f"not Bhutanese citizens (Table 2.2)")
+            if citizen_sexes is not None:
+                bm, bf = citizen_sexes
+                if bm + bf == bhutanese and 0 <= male - bm and 0 <= female - bf:
+                    text += (f", {male - bm:,} of them male and {female - bf:,} "
+                             f"female")
+    return text + "."
 
 
 def citizenship(bhutanese: int, everyone: int) -> dict[str, Any]:
@@ -1596,7 +1631,7 @@ def single_outcome(dzongkhag: str, annex: dict[str, Any], read: "Read"
     """Table A2.6 against itself and Table 2.1: (reason it fails, note to add)."""
     single, all_ages = annex["single"], annex["all_ages"]
     if all_ages is None or not single:
-        return ("this reader found no All Ages row or no single years in the "
+        return ("no All Ages row or no single years could be read in the "
                 "report's Table A2.6", "")
     missing = sorted(set(range(0, max(single) + 1)) - set(single))
     if missing:
@@ -1632,7 +1667,7 @@ def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read"
                   ) -> str | None:
     """A gewog's All Chiwogs block against itself and its Table 2.1 row."""
     if rows is None:
-        return ("this reader found no All Chiwogs block under the gewog's name in "
+        return ("no All Chiwogs block under the gewog's name could be read in "
                 "the report's Table A2.7")
     if any(rows.get(k) is None for k in ("persons", "male", "female")):
         return "Table A2.7 as read lacks the gewog's persons, male or female figures"
@@ -1987,6 +2022,10 @@ def main() -> int:
         for name, people in sorted(gewogs.items()):
             male, female = read.sexes[name]
             ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
+            ratio_note = SEX_RATIO_NOTE + ratio_context(
+                male, female, people,
+                citizen.gewogs.get(name) if citizen is not None else None,
+                citizen.sexes.get(name) if citizen is not None else None)
             if "value" not in ratio:
                 refused.append(f"{dzongkhag}/{name}")
             block, why, gewog_note = chosen[name]
@@ -2019,7 +2058,7 @@ def main() -> int:
                 population=measure(people, year=YEAR, source=SOURCE),
                 population_note=note,
                 sex_ratio=ratio,
-                sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
+                sex_ratio_note=ratio_note if "value" in ratio else None,
                 sources=cite(ratio) + age_cite(gewog_age)
                 + (citizen_cite(url) if citizen is not None else []),
                 **gewog_age,

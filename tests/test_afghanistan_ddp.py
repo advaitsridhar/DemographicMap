@@ -243,6 +243,16 @@ class Building(unittest.TestCase):
         self.assertIn("Pashtun 40%, Tajik 35%, Uzbek 25%", chimtal["ethnicity_note"])
         self.assertTrue(chimtal["sources"][0]["url"].startswith("https://web.archive.org/"))
 
+    def test_a_share_given_to_several_groups_is_the_remainder(self):
+        # Chahar Dara: "Pashtun 75% and the remaining 25% are Uzbak and Arab".
+        records = self.build([plan("Chemtal", "Balkh",
+                                   "Pashtun 75% and the remaining 25% are Uzbak and Arab")])
+        rows = records["D2108"]["ethnicity"]
+        self.assertEqual(rows, [{"group": "Pashtun", "pct": 75.0},
+                                {"group": "Other or not stated", "pct": 25.0}])
+        self.assertIn("The 25% the plan's shares leave is shown as 'Other or not stated'",
+                      records["D2108"]["ethnicity_note"])
+
     def test_names_without_shares_are_not_written(self):
         self.assertEqual(self.build([plan("Balkh", "Balkh", "Pashtun, Arab, Tajik")]), {})
 

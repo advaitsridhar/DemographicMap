@@ -97,6 +97,27 @@ class Citizenship(unittest.TestCase):
         everyone = bt.citizenship(842, 842)
         self.assertEqual([r["group"] for r in everyone["ethnicity"]], ["Bhutanese"])
 
+    def test_the_note_says_what_it_is_and_nothing_of_how_it_was_decided(self):
+        note = bt.citizenship(838, 842)["ethnicity_note"]
+        self.assertNotIn("owner", note)
+        self.assertIn("asks no ethnicity", note)
+
+    def test_a_far_from_even_ratio_names_its_counts_and_the_non_citizens(self):
+        # Daga: 6,057 people, 209 females per 1,000 males, 3,853 not Bhutanese.
+        text = bt.ratio_context(5010, 1047, 6057, 2204, (1100, 1104))
+        self.assertIn("5,010 males and 1,047 females", text)
+        self.assertIn("3,853 of the 6,057 are not Bhutanese citizens", text)
+        # Table 2.2's sexes are used only where they make its row and fit 2.1's.
+        self.assertIn("3,910 of them male and 0 female",
+                      bt.ratio_context(5010, 1047, 6057, 2147, (1100, 1047)))
+        self.assertNotIn("of them male", bt.ratio_context(5010, 1047, 6057, 2204, (1, 1)))
+        # Naro: almost everyone a citizen; the counts are still given.
+        naro = bt.ratio_context(163, 87, 250, 249)
+        self.assertIn("1 of the 250 is not", naro)
+        # An even enough ratio adds nothing.
+        self.assertEqual(bt.ratio_context(500, 480, 980, 970), "")
+        self.assertEqual(bt.ratio_context(0, 5, 5), "")
+
     def test_more_bhutanese_than_people_is_refused(self):
         _, (found, why) = self.read(pages(table22(barshong=("430", "419", "849"))))
         self.assertIsNone(found)

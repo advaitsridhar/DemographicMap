@@ -100,17 +100,22 @@ AGE_LABEL = re.compile(r"^(?:ALL AGES|BELOW 1|(\d{1,3}) -- (\d{1,3})|"
 OPEN_FROM = 75
 
 NATIONALITIES = ("PAKISTANI", "AFGHANI", "BANGALI", "CHINESE", "OTHERS")
-# Nationality adjectives, as the owner's rule asks, where the census's word is
-# one ("Afghani" is the currency's name, Afghan the people's). "Bangali" is
-# kept as the census prints it: it is the Urdu name of the Bengali people, not
-# of a state, and nothing the Bureau publishes says that the people it counts
-# under it -- 23,850 of them in Karachi, where Bengalis long settled in
-# Pakistan live -- hold Bangladesh's citizenship rather than none.
+# Each answer is written as the nationality it is, in the form the group tree
+# keeps for passports ("Afghan national", as iran_census writes Iran's
+# citizenship counts): the bare words "Afghan", "Chinese" and "Bangali" are
+# peoples in the tree -- Iranian, Han, Indo-Aryan -- and Table 10 answers a
+# question about citizenship, not descent. "Afghani" is the currency's name,
+# Afghan the people's. "Bangali" keeps the census's own word: it is the Urdu
+# name of the Bengali people, not of a state, and nothing the Bureau publishes
+# says that the people it counts under it -- 23,850 of them in Karachi, where
+# Bengalis long settled in Pakistan live -- hold Bangladesh's citizenship
+# rather than none. "Pakistani" is the home row, a nationality in the tree
+# already.
 NATIONALITY_LABELS = {
     "PAKISTANI": "Pakistani",
-    "AFGHANI": "Afghan",
-    "BANGALI": "Bangali",
-    "CHINESE": "Chinese",
+    "AFGHANI": "Afghan national",
+    "BANGALI": "Bangali national",
+    "CHINESE": "Chinese national",
     "OTHERS": "Other nationalities",
 }
 

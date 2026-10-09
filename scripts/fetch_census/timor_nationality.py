@@ -57,9 +57,9 @@ LABELS = ("East Timorese", "Foreign nationals")
 TITLE_SPELLINGS = {"Liquicia": "Liquiçá"}
 NOTE = ("Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's "
         "count of the municipality's people by nationality -- Timorese against every other -- "
-        "which stands in for ethnicity under the owner's rule for states that count "
-        "nationality instead. \"East Timorese\" is a nationality, not one people. The 2022 "
-        "census's basic tables count citizenship for the whole country only (Table 4.10).")
+        "shown on this field because the census counts nationality and asks no ethnicity. "
+        "\"East Timorese\" is a nationality, not one people. The 2022 census's basic tables "
+        "count citizenship for the whole country only (Table 4.10).")
 
 
 def total_row(grid: list[list[Any]], where: str) -> list[float]:

@@ -198,6 +198,33 @@ def shares(text: str) -> list[dict[str, Any]]:
     return [{"group": g, "pct": p} for g, p in found.items()]
 
 
+# What a plan leaves without a share of its own -- groups it gives together
+# ("the remaining 25% are Uzbak and Arab"), names this map does not know, or
+# nothing at all -- shown as one remainder, so that a district's bars cover
+# all of its people and the groups named are not read as everyone: Chahar
+# Dara's plan names Pashtun 75%, and without it the map showed Pashtun alone.
+REMAINDER = "Other or not stated"
+# Below this the shortfall is the shares' own rounding, and nothing is added.
+MIN_REMAINDER = 0.5
+
+
+def with_remainder(parts: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """The shares, and what they leave of 100% as one remainder where it is real."""
+    rest = round(100.0 - sum(p["pct"] for p in parts), 1)
+    if rest < MIN_REMAINDER:
+        return [dict(p) for p in parts]
+    return [*(dict(p) for p in parts), {"group": REMAINDER, "pct": rest}]
+
+
+def remainder_note(rows: list[dict[str, Any]], what: str) -> str:
+    """A sentence on the remainder, where one was added; else nothing."""
+    rest = next((r["pct"] for r in rows if r["group"] == REMAINDER), None)
+    if rest is None:
+        return ""
+    return (f" The {rest:g}% {what} is shown as '{REMAINDER}': groups given together, "
+            f"names this map does not know, or a share left unstated.")
+
+
 def usable(parts: list[dict[str, Any]], where: str) -> bool:
     if not parts:
         return False
@@ -545,13 +572,15 @@ def main(argv: list[str] | None = None) -> int:
             slug = re.sub(r"[^a-z0-9]+", "-",
                           f"{row['province']} {row['district']}".lower()).strip("-")
             article = f"{province} Province"
+            shown = with_remainder(row["ethnicity"])
             records.append(record(
                 f"AFG-admin2-{slug}", row["district"], level="admin2",
                 parent="AFG", parent_name=row["province"],
-                ethnicity=row["ethnicity"],
+                ethnicity=shown,
                 ethnicity_year=YEARS,
                 ethnicity_basis="district development plan",
-                ethnicity_note=transcription_note(article),
+                ethnicity_note=transcription_note(article)
+                + remainder_note(shown, "the article's shares leave"),
                 sources=[{"field": "ethnicity",
                           "name": f"{SOURCE}, as the English Wikipedia article "
                                   f"'{article}' transcribes them",

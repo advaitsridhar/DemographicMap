@@ -85,7 +85,6 @@ LICENCE = "Government of India open data (GODL-India)"
 STUDIES = range(10671, 10707)
 INDIA_STUDY = 10671
 BASIS = "country of birth"
-DECISION = "19 September 2026"
 INDIA_POPULATION = NATIONAL_CONTROLS["population"][0]
 DISTRICTS_2011 = NATIONAL_CONTROLS["districts"][0]
 
@@ -320,8 +319,9 @@ def ethnicity_fields(unit: dict[str, Any], named: dict[str, str], url: str,
             f"birthplace could not be classified. India's census does not ask "
             f"ethnicity. Each label names a country of birth under its present name, "
             f"not a citizenship or an ethnic group; 'Other' is every country fewer "
-            f"than {NAMED_FLOOR:,} people across India were born in. Written by the "
-            f"map owner's decision of {DECISION}.{extra}")
+            f"than {NAMED_FLOOR:,} people across India were born in. It is shown on "
+            f"this field because the census counts place of birth and asks no "
+            f"ethnicity.{extra}")
     return {"ethnicity": shares(counts, total=unit["total"]), "ethnicity_year": YEAR,
             "ethnicity_basis": BASIS, "ethnicity_note": note,
             "sources": [{"field": "ethnicity", "name": SOURCE, "url": url,

@@ -63,7 +63,8 @@ import urllib.parse
 from typing import Any
 
 from ._shared import PROCESSED, http_get, http_json, log, read_json, record, write_json
-from .afghanistan import AFTER, BEFORE, DISTRICT_ON_MAP, GROUPS, PROVINCE_ON_MAP, usable
+from .afghanistan import (AFTER, BEFORE, DISTRICT_ON_MAP, GROUPS, PROVINCE_ON_MAP,
+                          remainder_note, usable, with_remainder)
 from .south_asia_common import fold, load_units
 
 OUT = "afghanistan_ddp.json"
@@ -506,7 +507,7 @@ def note(plan: dict[str, Any], province: str) -> str:
             f"and Development's National Area-Based Development Programme -- whose "
             f"district profile gives the ethnic diversity as \"{plan['ethnic']}\". "
             f"Shares the plan gives several groups together, and names this map "
-            f"does not know, are left out rather than divided. The profile is the "
+            f"does not know, are not divided among the groups shown. The profile is the "
             f"provincial authorities' secondary information, reviewed by the "
             f"district's development assembly: a planning estimate, not a count. "
             f"Afghanistan has had no census since 1979, and no office tabulates "
@@ -572,13 +573,14 @@ def build(plans: list[dict[str, Any]], units1: list[dict[str, Any]],
     out = []
     for unit_id, (plan, unit, parts) in sorted(chosen.items(), key=lambda kv: kv[1][1]["name"]):
         province = province_of.get(unit.get("parent"), {}).get("name", "")
-        rows = [{"group": p["group"], "pct": p["pct"]} for p in parts]
+        rows = with_remainder([{"group": p["group"], "pct": p["pct"]} for p in parts])
         out.append(record(
             f"AFG-DDP-{unit_id}", unit["name"], level="admin2", parent="AFG",
             country="AFG", match_by="shape_id", shape_id=unit_id, parent_name=province,
             ethnicity=rows, ethnicity_year=plan["year"] or YEARS,
             ethnicity_basis="district development plan",
-            ethnicity_note=note(plan, (plan["province"] or province).title()),
+            ethnicity_note=note(plan, (plan["province"] or province).title())
+            + remainder_note(rows, "the plan's shares leave"),
             sources=[{"field": "ethnicity",
                       "name": f"{SOURCE}, {plan['district'].title()} district",
                       "url": plan["url"], "year": plan["year"] or YEARS,
