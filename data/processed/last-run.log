@@ -1,72 +1,69 @@
-probe_xlsx: https://inetl-ip.gov.tl/wp-content/uploads/2023/05/Chapter-4-TLPHC-Census-report-Basic-tables.xlsx
-  468,067 bytes
-  25 sheet(s): Index, 4.01, 4.02, 4.03, 4.04, 4.05, 4.06, 4.07, 4.08, 4.09, 4.10, 4.11, 4.12, 4.13, 4.14, 4.15, 4.16, 4.17, 4.18, 4.19, 4.20, 4.21, 4.22, 4.23, 4.24
-
---- sheet 'Index' (41 rows x 17 cols) --------------------
-  
-  
-  
-  
-  
-  
-  
-  TIMOR-LESTE POPULATION AND HOUSING CENSUS 2022
-  Table Main Report
-  
-  Index
-  Table 4.01: Population, by municipality, administrative post, suco, and by urban/rural location, sex
-  Table 4.02: Private households, by municipality, administrative post, suco, and by urban/rural location; population in private households, by municipality, administrative post, suco, and by urban/rural location, sex
-  Table 4.03: Population, by municipality, and by sex; sex ratio and area size and population density, by municipality
-  Table 4.04: Population in private households, by municipality of usual residence, and by sex, municipality of birth
-  Table 4.05: Population, by urban/rural location, age, and by municipality, sex
-  Table 4.06: Population 14 years and over in private households, by urban/rural location, age, and by sex, marital status
-  Table 4.07: Population in private households 3 years of age and older, by sex, five-year age group, and by religion
-  Table 4.08: Population in private households aged 5 years and over, by urban/rural location, five-year age group, and by sex, disability status
-  Table 4.09: Population in private households aged 5 years and over, by sex, five-year age group, and by disability status, type of disability
-  Table 4.10: Population in private households,  by five-year age group, and by sex, Timor-Leste or foreign country of citizenship
-  Table 4.11: Population in private households aged 5 years and over, by municipality, five-year age group, and by sex, general literacy status
-  Table 4.12: Population in private households aged 3-29 years, by municipality, age, and by sex, school attendance status
-  Table 4.13: Population  in private households aged 10 years and over, by five-year age group, and by sex, labour force status
-  Table 4.14: Population in private households outside the labour force aged 10 years and over, by sex, five-year age group, and by reason for not working
-  Table 4.15: Female population in private households aged 15 years and over who had a live birth in the last five years, by municipality, urban/rural location, and by type of assistance during last delivery
-  Table 4.16: Female population in private households aged 15 years and over, by sex of children born alive, five-year age group, and by number of children ever born alive
-  Table 4.17: Population in private households, by sex, age, and by relation to head of household
-  Table 4.18: Population, by municipality, urban/rural location, and by broad type of living quarters
-  Table 4.19: Population, by municipality, urban/rural location, and by broad type of living quarters
-  Table 4.20: Population in private households, by municipality, urban/rural location, and by broad type of housing unit, presence of basic facilities or type of housing unit
-  Table 4.21: Occupied housing units, by urban/rural location, construction material of outer walls, and by broad type of housing unit, presence of basic facilities
-
---- sheet '4.07' (63 rows x 13 cols) --------------------
-  Table 4.07: Population in private households 3 years of age and older, by sex, five-year age group, and by religion
-  Sex, five-year age group | Religion |  | 
-   | Total | Catholicism | Protestan-tism/ Evan-gelicalism
-  
-  
-  -1 | -2 | -3 | -4
-  Total | 1248705 | 1217157 | 25511
-  3-4 | 67642 | 65944 | 1225
-  5-9 | 159582 | 155787 | 3103
-  10-14 | 147511 | 144195 | 2853
-  15-19 | 157451 | 154034 | 2970
-  20-24 | 132541 | 129579 | 2561
-  25-29 | 109553 | 106964 | 2106
-  30-34 | 93692 | 91167 | 2043
-  35-39 | 81581 | 79224 | 1806
-  40-44 | 52980 | 51310 | 1241
-  45-49 | 55226 | 53546 | 1261
-  50-54 | 50106 | 48663 | 1078
-  55-59 | 36283 | 35358 | 703
-  60-64 | 29484 | 28663 | 658
-  65-69 | 21152 | 20566 | 475
-  70-74 | 24281 | 23583 | 566
-  75+ | 29640 | 28574 | 862
-  Male | 633483 | 617096 | 12971
-  3-4 | 34557 | 33653 | 650
-  5-9 | 81773 | 79826 | 1584
-  10-14 | 75563 | 73891 | 1444
-  15-19 | 80268 | 78516 | 1517
-  20-24 | 67096 | 65590 | 1288
-  25-29 | 54699 | 53402 | 1023
-  30-34 | 46741 | 45389 | 1060
-  35-39 | 41416 | 40137 | 938
-
+australia_profile: ABS 2021 Census G01, G02, G08, G13 and G14
+  C21_G01_LGA [1+2+3.P_1+20_24+25_34+35_44+45_54+55_64+0_4+5_14+15_19+65_74+75_84+GE85+D_O...]: 22,008 observations
+  C21_G02_LGA [1...]: 565 observations
+  C21_G08_LGA [._T...]: 18,645 observations
+  C21_G13_LGA [3._T+1+O_T+8+_N._T...]: 2,825 observations
+  C21_G01_SA2 [1+2+3.P_1..AUS+STE.]: 30 observations
+  C21_G02_SA2 [1..AUS+STE.]: 10 observations
+  C21_G08_SA2 [._T..AUS+STE.]: 330 observations
+  C21_G14_SA2 [.3..AUS+STE.]: 340 observations
+  C21_G13_SA2 [3.._T..AUS+STE.]: 470 observations
+  Australia English ancestry 33.0% (published 33.0%)
+  Australia Australian ancestry 29.9% (published 29.9%)
+  state 1: LGAs sum to 8,072,171, the state's own 8,072,163
+  state 2: LGAs sum to 6,503,503, the state's own 6,503,491
+  state 3: LGAs sum to 5,156,158, the state's own 5,156,138
+  state 4: LGAs sum to 1,781,501, the state's own 1,781,516
+  state 5: LGAs sum to 2,660,019, the state's own 2,660,026
+  state 6: LGAs sum to 557,570, the state's own 557,571
+  state 7: LGAs sum to 232,621, the state's own 232,605
+  state 8: LGAs sum to 454,495, the state's own 454,499
+  state 9: LGAs sum to 4,790, the state's own 4,788
+  restricted SEXP='Persons' so the sexes are not counted twice
+  outermost level chosen by code tree for 10 regions
+  restricted SEXP='Persons' so the sexes are not counted twice
+  outermost level chosen by code tree less a duplicated parent for 10 regions
+  Australian Indigenous languages taken out of G13's 'Other': 1 5,494, 2 1,143, 3 19,498, 4 4,450, 5 11,493, 6 194, 7 36,077, 8 294, 9 12, AUS 78,656
+  Australia Christianity 43.9% (published 43.9%)
+  Australia English only 72.0% (published 72.0%)
+  Junee (14300): Among those aged 20 to 64, 157.1 males per 100 females (2,323 males, 1,479 females); at other ages, 105.3. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,332 people (1,127 males, 205 females), a count of where people were that night, whether or not they live here.
+  Burke (31950): Among those aged 20 to 64, 153.8 males per 100 females (160 males, 104 females); at other ages, 110.8. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 874 people (506 males, 368 females), a count of where people were that night, whether or not they live here.
+  Cloncurry (32450): Among those aged 20 to 64, 137.0 males per 100 females (1,369 males, 999 females); at other ages, 116.2. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 2,966 people (1,994 males, 972 females), a count of where people were that night, whether or not they live here.
+  Coober Pedy (41330): Among those aged 20 to 64, 122.3 males per 100 females (471 males, 385 females); at other ages, 144.4. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 900 people (515 males, 385 females), a count of where people were that night, whether or not they live here.
+  Unincorporated SA (49399): Among those aged 20 to 64, 143.7 males per 100 females (1,177 males, 819 females); at other ages, 120.8. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 4,063 people (2,932 males, 1,131 females), a count of where people were that night, whether or not they live here.
+  Ashburton (50250): Among those aged 20 to 64, 152.1 males per 100 females (3,111 males, 2,046 females); at other ages, 111.6. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 11,159 people (8,247 males, 2,912 females), a count of where people were that night, whether or not they live here.
+  Christmas Island (51710): Among those aged 20 to 64, 154.3 males per 100 females (682 males, 442 females); at other ages, 137.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 931 people (617 males, 314 females), a count of where people were that night, whether or not they live here.
+  Cue (52380): Among those aged 20 to 64, 223.8 males per 100 females (94 males, 42 females); at other ages, 144.4. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 448 people (343 males, 105 females), a count of where people were that night, whether or not they live here.
+  East Pilbara (53220): Among those aged 20 to 64, 205.4 males per 100 females (5,049 males, 2,458 females); at other ages, 116.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 15,846 people (12,650 males, 3,196 females), a count of where people were that night, whether or not they live here.
+  Laverton (54970): Among those aged 20 to 64, 246.6 males per 100 females (772 males, 313 females); at other ages, 136.6. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 3,422 people (2,821 males, 601 females), a count of where people were that night, whether or not they live here.
+  Leonora (55040): Among those aged 20 to 64, 184.8 males per 100 females (754 males, 408 females); at other ages, 119.3. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 2,936 people (2,351 males, 585 females), a count of where people were that night, whether or not they live here.
+  Meekatharra (55250): Among those aged 20 to 64, 161.5 males per 100 females (525 males, 325 females); at other ages, 127.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,676 people (1,283 males, 393 females), a count of where people were that night, whether or not they live here.
+  Menzies (55390): Among those aged 20 to 64, 313.0 males per 100 females (338 males, 108 females); at other ages, 162.5. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,225 people (1,021 males, 204 females), a count of where people were that night, whether or not they live here.
+  Peppermint Grove (56930): Among those aged 20 to 64, 87.1 males per 100 females (357 males, 410 females); at other ages, 63.4. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 182 people (16 males, 166 females), a count of where people were that night, whether or not they live here.
+  Perenjori (57000): Among those aged 20 to 64, 185.5 males per 100 females (282 males, 152 females); at other ages, 120.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 771 people (616 males, 155 females), a count of where people were that night, whether or not they live here.
+  Sandstone (57630): Among those aged 20 to 64, 204.0 males per 100 females (51 males, 25 females); at other ages, 272.7. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 223 people (167 males, 56 females), a count of where people were that night, whether or not they live here.
+  Wiluna (59250): Among those aged 20 to 64, 213.4 males per 100 females (254 males, 119 females); at other ages, 118.3. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,071 people (854 males, 217 females), a count of where people were that night, whether or not they live here.
+  Yalgoo (59350): Among those aged 20 to 64, 312.5 males per 100 females (200 males, 64 females); at other ages, 125.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 947 people (742 males, 205 females), a count of where people were that night, whether or not they live here.
+  Yilgarn (59360): Among those aged 20 to 64, 177.4 males per 100 females (541 males, 305 females); at other ages, 130.7. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,154 people (948 males, 206 females), a count of where people were that night, whether or not they live here.
+  Darwin Waterfront Precinct (71150): Among those aged 20 to 64, 149.0 males per 100 females (149 males, 100 females); at other ages, 166.7. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 386 people (197 males, 189 females), a count of where people were that night, whether or not they live here.
+  no polygon, counted in its state only: No usual address (NSW) (19499, 11,371 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (NSW) (19799, 0 people)
+  no polygon, counted in its state only: No usual address (Vic.) (29499, 9,089 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (Vic.) (29799, 38 people)
+  no polygon, counted in its state only: No usual address (Qld) (39499, 14,670 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (Qld) (39799, 183 people)
+  no polygon, counted in its state only: No usual address (SA) (49499, 3,377 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (SA) (49799, 12 people)
+  no polygon, counted in its state only: No usual address (WA) (59499, 8,055 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (WA) (59799, 514 people)
+  no polygon, counted in its state only: No usual address (Tas.) (69499, 1,377 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (Tas.) (69799, 19 people)
+  no polygon, counted in its state only: No usual address (NT) (79499, 3,500 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (NT) (79799, 99 people)
+  no polygon, counted in its state only: No usual address (ACT) (89499, 605 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (ACT) (89799, 0 people)
+  no polygon, counted in its state only: No usual address (OT) (99499, 11 people)
+  no polygon, counted in its state only: Migratory - Offshore - Shipping (OT) (99799, 0 people)
+  18 LGA codes have no polygon; 0 of them are not a no-usual-address or migratory code: []
+  {'admin1': 9, 'admin2': 547} records; median age on 556, ancestry on 556
+  wrote data/processed/australia_profile.json (2753 kB)
