@@ -1,29 +1,32 @@
-probe_estat: ESTAT_API found, 40 characters
-
-== 施設等の世帯の種類 -- tables
-  getStatsList?searchWord=%E6%96%BD%E8%A8%AD%E7%AD%89%E3%81%AE%E4%B8%96%E5%B8%AF%E3%81%AE%E7%A8%AE%E9%A1%9E&limit=100&lang=J&collectArea=3
-    -> 24 match(es), 24 listed
-    0003445258 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類，世帯人員の人数別世帯数－全国，都道府県，市区町村 | survey 202010 | area 市区町村 (municipality) | 88425 cells
-    0003445259 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類，世帯人員の人数別世帯人員－全国，都道府県，市区町村 | survey 202010 | area 市区町村 (municipality) | 88425 cells
-    0003445279 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類，世帯人員の人数別世帯数－全国，都道府県，市区町村（人口集中地区） | survey 202010 | area 市区町村 (municipality) | 46710 cells
-    0003445261 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類，世帯人員の人数別世帯人員－全国，都道府県，市区町村（人口集中地区） | survey 202010 | area 市区町村 (municipality) | 46710 cells
-    0004031942 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類，世帯人員の人数別世帯数－全国，都道府県，市区町村 | survey 202010 | area 市区町村 (municipality) | 88425 cells
-    0004031964 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類，世帯人員の人数別世帯人員－全国，都道府県，市区町村 | survey 202010 | area 市区町村 (municipality) | 88425 cells
-    0004031953 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類，世帯人員の人数別世帯数－全国，都道府県，市区町村（人口集中地区） | survey 202010 | area 市区町村 (municipality) | 46710 cells
-    0004031966 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類，世帯人員の人数別世帯人員－全国，都道府県，市区町村（人口集中地区） | survey 202010 | area 市区町村 (municipality) | 46710 cells
-    0004066087 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類、世帯人員の人数別世帯数－全国、都道府県、市区町村 | survey 202510 | area 市区町村 (municipality) | 88245 cells
-    0004066071 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類、世帯人員の人数別世帯人員－全国、都道府県、市区町村 | survey 202510 | area 市区町村 (municipality) | 88245 cells
-    0004066072 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類、世帯人員の人数別世帯数－全国、都道府県、市区町村（人口集中地区） | survey 202510 | area 市区町村 (municipality) | 45720 cells
-    0004066056 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類、世帯人員の人数別世帯人員－全国、都道府県、市区町村（人口集中地区） | survey 202510 | area 市区町村 (municipality) | 45720 cells
-    0004066328 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類、世帯人員の人数別世帯数－全国、都道府県、市区町村 | survey 202510 | area 市区町村 (municipality) | 88245 cells
-    0004066310 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類、世帯人員の人数別世帯人員－全国、都道府県、市区町村 | survey 202510 | area 市区町村 (municipality) | 88245 cells
-    0004066345 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類、世帯人員の人数別世帯数－全国、都道府県、市区町村（人口集中地区） | survey 202510 | area 市区町村 (municipality) | 45720 cells
-    0004066329 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 世帯の種類・施設等の世帯の種類、世帯人員の人数別世帯人員－全国、都道府県、市区町村（人口集中地区） | survey 202510 | area 市区町村 (municipality) | 45720 cells
-    0003445216 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 男女，年齢（5歳階級），配偶関係，世帯の種類・世帯の家族類型・施設等の世帯の種類別世帯人員－全国，都道府県，21大都市，特別区，人口50万以上の市 | survey 202010 | area 市区町村 (municipality) | 1696464 cells
-    0003445256 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 男女，配偶関係，世帯の種類・世帯の家族類型・施設等の世帯の種類別平均年齢－全国，都道府県，21大都市，特別区，人口50万以上の市 | survey 202010 | area 市区町村 (municipality) | 60588 cells
-    0004031941 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 男女，年齢（5歳階級），配偶関係，世帯の種類・世帯の家族類型・施設等の世帯の種類別世帯人員－全国，都道府県，21大都市，特別区，人口50万以上の市 | survey 202010 | area 市区町村 (municipality) | 1696464 cells
-    0004031963 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 男女，配偶関係，世帯の種類・世帯の家族類型・施設等の世帯の種類別平均年齢－全国，都道府県，21大都市，特別区，人口50万以上の市 | survey 202010 | area 市区町村 (municipality) | 60588 cells
-    0004066064 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 男女、年齢（5歳階級）、配偶関係、世帯の種類・世帯の家族類型・施設等の世帯の種類別世帯人員－全国、都道府県、21大都市、特別区、人口50万以上の市 | survey 202510 | area 市区町村 (municipality) | 1679328 cells
-    0004066082 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 男女、配偶関係、世帯の種類・世帯の家族類型・施設等の世帯の種類別平均年齢－全国、都道府県、21大都市、特別区、人口50万以上の市 | survey 202510 | area 市区町村 (municipality) | 59976 cells
-    0004066299 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 男女、年齢（5歳階級）、配偶関係、世帯の種類・世帯の家族類型・施設等の世帯の種類別世帯人員－全国、都道府県、21大都市、特別区、人口50万以上の市 | survey 202510 | area 市区町村 (municipality) | 1679328 cells
-    0004066322 | [00200521] 国勢調査 | 総務省 | 世帯の種類・世帯人員・世帯の家族類型 男女、配偶関係、世帯の種類・世帯の家族類型・施設等の世帯の種類別平均年齢－全国、都道府県、21大都市、特別区、人口50万以上の市 | survey 202510 | area 市区町村 (municipality) | 59976 cells
+taiwan_townships: Ministry of the Interior, Department of Household Registration, the end of August 2026
+  ODRP014: 7,781 villages in 4 pages
+  ODRP013: 7,781 villages in 4 pages
+  ODRP018: 7,781 villages in 4 pages
+  7,781 villages, every one adding up in all three datasets, in 368 townships; 23,224,721 registered people
+  kept ris_townships_11508.json (495 kB)
+  the 2020 census's county reports, Table 6
+  新北市: 29 townships, 4,055,599 residents 6+
+  臺北市: 12 townships, 2,388,957 residents 6+
+  桃園市: 13 townships, 2,176,570 residents 6+
+  基隆市: 7 townships, 345,649 residents 6+
+  新竹市: 3 townships, 446,737 residents 6+
+  宜蘭縣: 12 townships, 394,287 residents 6+
+  新竹縣: 13 townships, 558,797 residents 6+
+  臺中市: 29 townships, 2,748,097 residents 6+
+  苗栗縣: 18 townships, 468,167 residents 6+
+  彰化縣: 26 townships, 1,061,247 residents 6+
+  南投縣: 13 townships, 393,818 residents 6+
+  雲林縣: 20 townships, 537,327 residents 6+
+  臺南市: 37 townships, 1,715,534 residents 6+
+  高雄市: 38 townships, 2,527,744 residents 6+
+  嘉義市: 2 townships, 234,885 residents 6+
+  嘉義縣: 18 townships, 427,516 residents 6+
+  屏東縣: 33 townships, 702,009 residents 6+
+  澎湖縣: 6 townships, 74,333 residents 6+
+  臺東縣: 16 townships, 176,353 residents 6+
+  花蓮縣: 13 townships, 278,530 residents 6+
+  金門縣: 6 townships, 61,014 residents 6+
+  連江縣: 4 townships, 11,199 residents 6+
+  the Hakka survey's share quoted for 22 of 22 counties
+  368 townships and 22 counties written, 23,224,721 people; township medians 37.0-60.0
+  wrote data/processed/taiwan_township.json (2352 kB)
