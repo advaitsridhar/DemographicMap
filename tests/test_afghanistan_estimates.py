@@ -116,6 +116,28 @@ class Estimates(unittest.TestCase):
         self.assertEqual(records["AFG-EST-0101"]["population"]["value"], 12300)
         self.assertIn("1979", records["AFG-EST-0101"]["median_age"]["note"])
 
+    def test_median_age_is_left_to_the_survey_file_where_its_report_is_read(self):
+        # Kapisa (02) and Parwan (03) have their survey reports read, so this
+        # file leaves the field bare there, Mahmudi Raqi (Kapisa's, drawn in
+        # Parwan) included; Kabul's report is archived cut off, and says so.
+        rows, settled = sheet()
+        records = self.build(rows, settled)
+        for key in ("AFG-EST-02", "AFG-EST-03", "AFG-EST-0201", "AFG-EST-0302"):
+            self.assertEqual(records[key]["median_age"], {"status": "not_available"}, key)
+        for key in ("AFG-EST-01", "AFG-EST-0101", "AFG-EST-0102"):
+            note = records[key]["median_age"]["note"]
+            self.assertIn("Socio-Demographic and Economic Survey of Kabul (2013)", note)
+            self.assertIn("1 MiB", note)
+
+    def test_a_province_the_survey_never_reached_says_so(self):
+        from scripts.fetch_census.afghanistan_sdes import age_gap
+        note = age_gap("3005")
+        self.assertIn("twelve provinces between 2011 and 2016", note)
+        self.assertIn("the province the office counts it in was not one of them", note)
+        self.assertIn("this province was not one of them", age_gap("30"))
+        with self.assertRaises(ValueError):
+            age_gap("1001")
+
     def test_a_province_drawn_as_the_office_counts_it_takes_its_total(self):
         rows, settled = sheet()
         kabul = self.build(rows, settled)["AFG-EST-01"]

@@ -33,8 +33,12 @@ What this writes, and only this:
   (``drawn_sums``); the seven a point falls across are not written.
 
 Ages are published for the nation alone (the same release's "گروپ سنین"
-workbook has no province or district rows), so the median age is a stated
-gap.
+workbook has no province or district rows). The office measured age below
+the nation only in its Socio-Demographic and Economic Survey of twelve
+provinces (2011-2016): where that survey's report is read,
+``afghanistan_sdes`` writes the median age or the reason there is none, and
+this file leaves the field to it; everywhere else the median age is a stated
+gap that says which of the two is the case (``afghanistan_sdes.age_gap``).
 
 **The drawn districts are the office's 398 "original" units** -- 364
 districts and the 34 provincial centres -- and the 19 *temporary* districts
@@ -955,20 +959,19 @@ def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, A
         out.append(record(
             f"AFG-EST-{code}", unit["name"], level="admin1", parent="AFG", country="AFG",
             match_by="shape_id", shape_id=unit["id"],
-            median_age=gap(NOT_AVAILABLE, AGE_GAP),
+            median_age=age_field(code),
             sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
                       "year": YEAR, "license": LICENCE}],
             **fields))
     return out
 
 
-AGE_GAP = (
-    "The statistics office publishes age only for the whole country -- its 1396 "
-    "release's age workbook (\"گروپ سنین\") gives five-year groups by sex for the "
-    "rural, urban and nomadic population of Afghanistan and for no province or "
-    "district -- and Afghanistan has had no census since 1979. OCHA's 2021 "
-    "provincial age table (cod-ps-afg) applies one national age structure to every "
-    "province, so it measures nothing about any one of them.")
+def age_field(code: str) -> dict[str, Any] | None:
+    """A unit's median age as this file writes it: the gap and its reason, or
+    nothing where ``afghanistan_sdes`` writes the field (a province whose
+    survey report is read, and the districts the office counts in it)."""
+    from .afghanistan_sdes import READ, age_gap      # noqa: PLC0415
+    return None if code[:2] in READ else gap(NOT_AVAILABLE, age_gap(code))
 
 
 def temporary_note(names: list[str]) -> str:
@@ -1031,7 +1034,7 @@ def district_records(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any
         out.append(record(
             f"AFG-EST-{key}", unit["name"], level="admin2", parent="AFG", country="AFG",
             match_by="shape_id", shape_id=unit["id"], parent_name=province,
-            median_age=gap(NOT_AVAILABLE, AGE_GAP),
+            median_age=age_field(key),
             sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
                       "year": YEAR, "license": LICENCE}],
             **fields))
