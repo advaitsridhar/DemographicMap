@@ -256,6 +256,71 @@ def cmd_spa(url: str) -> None:
         log(f"    {p}")
 
 
+def html_rows(body: bytes) -> list[list[list[str]]]:
+    """Every <table> of a page as rows of cell texts, nested tables kept apart."""
+    from html.parser import HTMLParser
+
+    class Rows(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=True)
+            self.stack: list[list[list[str]]] = []
+            self.done: list[list[list[str]]] = []
+            self.cell: list[str] | None = None
+
+        def handle_starttag(self, tag: str, attrs: Any) -> None:
+            if tag == "table":
+                self.stack.append([])
+            elif tag == "tr" and self.stack:
+                self.stack[-1].append([])
+            elif tag in ("td", "th") and self.stack:
+                if not self.stack[-1]:
+                    self.stack[-1].append([])
+                self.cell = []
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag in ("td", "th") and self.cell is not None and self.stack:
+                self.stack[-1][-1].append(" ".join("".join(self.cell).split()))
+                self.cell = None
+            elif tag == "table" and self.stack:
+                self.done.append(self.stack.pop())
+
+        def handle_data(self, data: str) -> None:
+            if self.cell is not None:
+                self.cell.append(data)
+
+    for encoding in ("utf-8", "tis-620", "cp874", "latin-1"):
+        try:
+            text = body.decode(encoding)
+            break
+        except UnicodeDecodeError:
+            continue
+    parser = Rows()
+    parser.feed(text)
+    return parser.done
+
+
+def cmd_table(urls: list[str], grep: str, head: int, cols: int, width: int) -> None:
+    """Each page's tables: the first ``head`` rows of every table with at least
+    four columns, and every row whose cells match ``grep``."""
+    for url in urls:
+        try:
+            status, _, body = fetch(url, timeout=180)
+        except Exception as err:  # noqa: BLE001 -- reported
+            log(f"{url}: {type(err).__name__}: {err}")
+            continue
+        log(f"{url}: HTTP {status} {len(body):,} B")
+        if status != 200:
+            continue
+        for t, rows in enumerate(html_rows(body)):
+            wide = max((len(r) for r in rows), default=0)
+            if wide < 4:
+                continue
+            log(f"  table {t}: {len(rows)} rows, up to {wide} cells")
+            for i, row in enumerate(rows):
+                if i < head or (grep and any(re.search(grep, c) for c in row)):
+                    log(f"    r{i}: " + " | ".join(c[:width] for c in row[:cols]))
+
+
 def cmd_get(urls: list[str], chars: int) -> None:
     for url in urls:
         try:
@@ -392,6 +457,12 @@ def main() -> int:
     a.add_argument("--no-tables", action="store_true")
     b = sub.add_parser("spa")
     b.add_argument("url")
+    t = sub.add_parser("table")
+    t.add_argument("urls", nargs="+")
+    t.add_argument("--grep", default="")
+    t.add_argument("--head", type=int, default=4)
+    t.add_argument("--cols", type=int, default=24)
+    t.add_argument("--width", type=int, default=18)
     c = sub.add_parser("get")
     c.add_argument("urls", nargs="+")
     c.add_argument("--chars", type=int, default=400)
@@ -411,6 +482,8 @@ def main() -> int:
         cmd_cdx(args.pattern, args.limit, args.match)
     elif args.cmd == "wpmedia":
         cmd_wpmedia(args.base, [s for s in args.searches.split(",") if s], args.pages)
+    elif args.cmd == "table":
+        cmd_table(args.urls, args.grep, args.head, args.cols, args.width)
     elif args.cmd == "dgs":
         cmd_dgs([t.strip().lower() for t in args.terms.split(",") if t.strip()], args.pages)
     else:
