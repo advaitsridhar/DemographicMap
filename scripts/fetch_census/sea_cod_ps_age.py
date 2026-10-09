@@ -121,8 +121,13 @@ WHY_PROJECTION = {
             "retrieved: its statistics host does not resolve, and the government's "
             "open-data portal and the National Statistical Office's census hosts answer "
             "HTTP 403 or 418 to automated requests"),
-    "LAO": ("used because the Lao Statistics Bureau publishes no district's ages from the "
-            "2015 census: its results volume crosses age with the province at most"),
+    # Measured on the volume's text: Appendix 1 crosses age with sex and
+    # urban-rural residence for the country (P2.2-P2.6), and the province
+    # with migration, literacy, schooling and activity, never with age.
+    "LAO": ("used because the Lao Statistics Bureau's results volume for the 2015 census "
+            "gives ages for the whole country only -- its appendix tables cross five-year "
+            "age groups with sex and urban or rural residence (Tables P2.2 to P2.6), "
+            "never with a province or district"),
 }
 WHY_DEFAULT = "used because no table of the office's own gives these ages"
 # A ratio this far from even, for a whole district or province, is said to be

@@ -145,8 +145,11 @@ class RecordsTest(unittest.TestCase):
         self.assertIn("unusual ratio for a whole district", recs[0]["sex_ratio_note"])
         self.assertIn("221 males against 170 females", recs[0]["sex_ratio_note"])
 
-    def test_laos_says_its_census_gives_no_district_ages(self):
-        self.assertIn("no district's ages", s.why_projection("LAO", "admin2"))
+    def test_laos_says_its_census_gives_ages_for_the_country_only(self):
+        for level in ("admin1", "admin2"):
+            why = s.why_projection("LAO", level)
+            self.assertIn("whole country only", why)
+            self.assertIn("never with a province or district", why)
         self.assertEqual(s.why_projection("XXX", "admin2"), s.WHY_DEFAULT)
 
     def test_cambodia_says_its_census_gives_provinces_only_broad_ages(self):
