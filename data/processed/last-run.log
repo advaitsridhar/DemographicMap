@@ -1,35 +1,56 @@
-sea_composed: religion and ethnicity on the polygons no one census area is
-  Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
-    SHAN STATE / WA SELF-ADMINISTERED DIVISION: 4 of 6 townships carry no ethnicity figures (Mongmao, Pangwaun, Pangsang, Narphan)
-    SHAN STATE / WA SELF-ADMINISTERED DIVISION: 4 of 6 townships carry no religion figures (Mongmao, Pangwaun, Pangsang, Narphan)
-    SHAN STATE / KENGTUNG: 1 of 5 townships carry no ethnicity figures (Mongla)
-    SHAN STATE / KENGTUNG: 1 of 5 townships carry no religion figures (Mongla)
-  districts and zones whose townships make them: 78 for ethnicity, 78 for religion
-  ethnicity: the 74 polygons make the Union's 47,809,979; units with no figures: Mongmao, Pangwaun, Narphan, Pangsang
-  religion: the 74 polygons make the Union's 49,011,760; units with no figures: Mongmao, Pangwaun, Narphan, Pangsang
-    Hkamti: Hkamti district; Lay Shi, Lahe, Nanyun of the Naga self-administered zone -- ethnicity 373,352, religion 370,874
-    Hopang: Hopan, Mongmao, Pangwaun of the Wa self-administered division -- ethnicity none (2 parts without figures), religion none (2 parts without figures)
-    Katha: Katha district; Kawlin district -- ethnicity 860,522, religion 861,061
-    Kyaukme: Kyaukme district; Namhsan, Manton of the Palaung self-administered zone -- ethnicity 629,121, religion 635,279
-    Laukkaing: Laukine, Konkyan of the Kokang self-administered zone -- ethnicity 97,395, religion 97,395
-    Matman: Makman, Narphan, Pangsang of the Wa self-administered division -- ethnicity none (2 parts without figures), religion none (2 parts without figures)
-    Mindat: Mindat district; Matupi district -- ethnicity 227,897, religion 228,045
-    Tachileik: Tachileik district; Mong Hpayak district -- ethnicity 235,018, religion 235,018
-    Taunggyi: Taunggyi district; Pindaya, Ywangan of the Danu self-administered zone; Hopong, Hsihseng, Pinlaung of the Pa-O self-administered zone -- ethnicity 1,559,537, religion 1,569,134
-    Yangon (West): Yangon -- ethnicity 808,369, religion 867,881
-    Mandalay (first level): MANDALAY and NAY PYI TAW -- ethnicity 6,778,236, religion 6,841,080
-  Philippines: https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15/resource/5acff37e-0c02-4d89-bbd2-1825ee98916c/download/philippines_uscb_202402.xlsx
-    groups a whole and its parts print differently, 30 people in all: Buhid Mangyan 19 against 49
-  the National Capital Region's 17 places make its row, and each is in one district
-  Cotabato City: no row; the Bangsamoro region's religion 4,723,191 against its provinces' 4,723,191; ethnicity 4,723,191 against its provinces' 4,723,191 (Basilan, Lanao Del Sur, Maguindanao, Sulu, Tawi-Tawi)
-    NCR, Second District: Mandaluyong, Marikina, Pasig, Quezon City, San Juan -- religion 4,748,925, ethnicity 4,748,925
-    NCR, Third District: Caloocan, Malabon, Navotas, Valenzuela -- religion 2,998,412, ethnicity 2,998,412
-    NCR, Fourth District: Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig -- religion 3,818,429, ethnicity 3,818,429
-  household language for the polygons clear_global_language.json's rows miss:
-    NCR, City of Manila, First District: CLEAR Global's Metropolitan Manila First District (PH13039), Tagalog 91.6, Cebuano 1.8, Maranao 1.8
-    NCR, Second District: CLEAR Global's Metropolitan Manila Second District (PH13074), Tagalog 94.9, Cebuano 1.5, Iloko 0.8
-    NCR, Third District: CLEAR Global's Metropolitan Manila Third District (PH13075), Tagalog 97.6, Cebuano 1.0, Bikol 0.3
-    NCR, Fourth District: CLEAR Global's Metropolitan Manila Fourth District (PH13076), Tagalog 94.7, Cebuano 1.5, Bikol 0.7
-    Isabela: CLEAR Global's PHL-CG-PH02031 not used -- CLEAR Global's tabulation of the 2010 census has a row for Isabela (PSGC 02031), and it is not used: beside the province...
-  wrote data/processed/sea_composed.json (173 kB)
-  wrote sea_composed.json: 18 records
+== https://www.sbs.gov.ws/digi/3-2016-Census-Brief-No.2Tables.xlsx
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 109,568 bytes
+  (a legacy .xls workbook, read with xlrd)
+  -- 'List of tables'
+       1: LIST OF TABLES:
+       2: Table 1 | Population of women 15-49 whether  given birth by age and urban-rural residence,2016
+       3: Table 2 | Total children ever born to women 15-19 years by urban-rural residence,2016
+       4: Table 3 | Number of children ever born to women 15-49 by sex and urban rural residence,2016
+  -- 'Table 1'
+       1: Table 1:Population of women 15-49 whether  given birth by age and urban-rural residence,2016
+       3: Residence/women 15-49 | Total | Yes
+       4: Samoa | 43904.0 | 26053.0
+  -- 'Table 2'
+       1: Table 2:Total children ever born to women 15-19 years by urban-rural residence,2016
+       3: Residence | Total teenage mothers | Total children ever born
+       4: Samoa | 467.0 | 578.0
+  -- 'Table 3'
+       1: Table 3: Number of children ever born to women 15-49 by sex and urban rural residence,2016
+       3: Residence | Total women | Children ever born
+       4:  |  | Total
+  -- 'Table 4'
+       1: Table 4:Number of surviving children ever born by sex and rural-urban residence,2016
+       3: Residence |  | Children still surviving
+       4:  | Total women | Total
+  -- 'Table 5'
+       1: Table 5:Number of surviving children ever born who later died  by sex and rural-urban residence,2016
+       3: Residence | Total  women | Children died
+       4:  |  | Total
+  -- 'Table 6'
+       1: Table 6. Survival status of total children born in the last 12months by sex, age of women and urban-rural resi
+       3: Residence | Total
+       4:  | Total | Male
+  -- 'Table 7'
+       1: Table 7:Total children born in the last 12months by age of women, place of delivery and urban-rural residence,
+       3: Residence | Total | Hospital
+       4: Samoa | 4835.0 | 4222.0
+  -- 'Table 8'
+       1: Table 8:Total deceased by sex and 5-year age group,2016
+       3: Age group | Total | Male
+       4:  | 853.0 | 446.0
+  -- 'Table 9(a)(b)(c)'
+       1: Table 9a :Life table for total population,2016
+       3: Age | n | nMx
+       4: 0.0 | 1.0 | 12.42347857400072
+  -- 'Table 10(a)'
+       1:  | Table10a: Life-time migrants by place of birth and place of enumeration by regions and district, 2016
+       2:  | Residence | Total Population
+       3:  | Samoa | 195979.0
+  -- 'Table 10(b)'
+       1: Table 10b: Population 5 years and over by place of enumeration and place of residence 1-year before census by 
+       3: Residence | Total Population | Place of enumeration at time of census
+       4: Samoa | 167676.0 | 167676.0
+  -- 'Table 10(c)'
+       1: Table 10c.: Population 5 years and over by place of enumeration and place of residence 5 years before census b
+       3: Residence | Total Population | Place of enumeration at time census
+       4: Samoa | 167676.0 | 167676.0
