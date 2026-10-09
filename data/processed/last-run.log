@@ -1,9 +1,231 @@
-== https://stats.gov.nr/wp-sitemap.xml
-  HTTP 200 application/xml; charset=UTF-8 784 bytes
-  <?xml version="1.0" encoding="UTF-8"?> <?xml-stylesheet type="text/xsl" href="https://stats.gov.nr/wp-sitemap-index.xsl" ?> <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://stats.gov.nr/wp-sitemap-posts-post-1.xml</loc></sitemap><sitemap><loc>https://stats.gov.nr/wp-sitemap-posts-page-1.xml</loc></sitemap><sitemap><loc>https://stats.gov.nr/wp-sitemap-posts-wpfd_file-1.xml</loc></sitemap><sitemap><loc>https://stats.gov.nr/wp-sitemap-taxonomies-category-1.xml</loc></sitemap><sitemap><loc>https://stats.gov.nr/wp-sitemap-taxonomies-post_tag-1.xml</loc></sitemap><sitemap><loc>https://stats.gov.nr/wp-sitemap-taxonomies-wpfd-category-1.xml</loc></sitemap><sitemap><loc>https://stats.gov.nr/wp-sitemap-users-1.xml</loc></sitemap></sitemapindex>
-== https://stats.gov.nr/wp-sitemap-posts-page-1.xml
-  HTTP 200 application/xml; charset=UTF-8 1,338 bytes
-  <?xml version="1.0" encoding="UTF-8"?> <?xml-stylesheet type="text/xsl" href="https://stats.gov.nr/wp-sitemap.xsl" ?> <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://stats.gov.nr/</loc><lastmod>2026-06-08T04:42:57+00:00</lastmod></url><url><loc>https://stats.gov.nr/about-us/</loc><lastmod>2023-07-04T04:11:25+00:00</lastmod></url><url><loc>https://stats.gov.nr/documents/</loc><lastmod>2023-06-20T01:23:19+00:00</lastmod></url><url><loc>https://stats.gov.nr/about-us/our-staff/</loc><lastmod>2026-06-03T21:58:51+00:00</lastmod></url><url><loc>https://stats.gov.nr/statistics/</loc><lastmod>2025-07-20T23:19:41+00:00</lastmod></url><url><loc>https://stats.gov.nr/statistics/economic-statistics/</loc><lastmod>2025-07-21T02:22:17+00:00</lastmod></url><url><loc>https://stats.gov.nr/statistics/social-statistics/</loc><lastmod>2023-11-02T05:21:31+00:00</lastmod></url><url><loc>https://stats.gov.nr/statistics/tourism/</loc><lastmod>2023-06-20T22:18:31+00:00</lastmod></url><url><loc>https://stats.gov.nr/statistics/other-statistics/</loc><lastmod>2023-06-20T22:20:13+00:00</lastmod></url><url><loc>https://stats.gov.nr/news/</loc><lastmod>2023-09-06T10:23:56+00:00</lastmod></url><url><loc>https://stats.gov.nr/statistics/financial-statistics/</loc><lastmod>2023-06-30T03:26:29+00:00</lastmod></url></urlset>
-== https://stats.gov.nr/wp-json/wp/v2/pages?search=census&per_page=50&_fields=link,title
-  HTTP 200 application/json; charset=UTF-8 91 bytes
-  [{"link":"https:\/\/stats.gov.nr\/about-us\/our-staff\/","title":{"rendered":"Our staff"}}]
+== https://stats.gov.fm/download/18/population-statistics/2210/fsm-basic-tables-2023-population-housing-census.xlsx
+  HTTP 200 application/octet-stream 424,592 bytes
+  -- 'Basic_Tables'
+       1: POPULATION TABLES
+       2: Table B1. Age and Sex by State, FSM: 202
+       3: Age group | Total | Yap | Chuuk | Pohnpei | Kosrae
+       4: BOTH GENDER
+       5: Total | 75817 | 10739 | 33885 | 26102 | 5092
+       6: 0-4 | 7607 | 1070 | 3537 | 2495 | 505
+       7: 5-9 | 8089 | 1093 | 3847 | 2599 | 550
+       8: 10-14 | 8776 | 1117 | 4055 | 2949 | 655
+       9: 15-19 | 7684 | 885 | 3379 | 2868 | 553
+      10: 20-24 | 5407 | 605 | 2525 | 1931 | 346
+      11: 25-29 | 4422 | 662 | 2108 | 1423 | 229
+      12: 30-34 | 4794 | 630 | 2319 | 1580 | 265
+      13: 35-39 | 4841 | 707 | 2151 | 1623 | 360
+      14: 40-44 | 4778 | 720 | 2020 | 1737 | 300
+      15: 45-49 | 4420 | 634 | 1929 | 1596 | 260
+      16: 50-54 | 3944 | 634 | 1612 | 1448 | 250
+      17: 55-59 | 3485 | 587 | 1393 | 1266 | 239
+      18: 60-64 | 2896 | 512 | 1135 | 1040 | 209
+      19: 65-69 | 2229 | 431 | 884 | 741 | 173
+      20: 70-74 | 1401 | 253 | 544 | 490 | 114
+      21: 75+ | 1044 | 198 | 446 | 317 | 84
+      22: Median | 25.4 | 29.5 | 24.2 | 25.7 | 24.1
+      23: MALE
+      24: Total | 37978 | 5178 | 17448 | 12779 | 2572
+      25: 0-4 | 3904 | 523 | 1827 | 1282 | 272
+      26: 5-9 | 4210 | 564 | 1991 | 1373 | 283
+      27: 10-14 | 4528 | 596 | 2102 | 1509 | 320
+      28: 15-19 | 3847 | 460 | 1705 | 1396 | 286
+      29: 20-24 | 2705 | 288 | 1294 | 952 | 170
+      30: 25-29 | 2179 | 298 | 1131 | 644 | 106
+      31: 30-34 | 2321 | 278 | 1202 | 712 | 129
+      32: 35-39 | 2393 | 315 | 1121 | 772 | 185
+      33: 40-44 | 2398 | 364 | 1060 | 815 | 158
+      34: 45-49 | 2181 | 278 | 1001 | 775 | 127
+      35: 50-54 | 1934 | 298 | 826 | 690 | 120
+      36: 55-59 | 1723 | 266 | 699 | 624 | 134
+      37: 60-64 | 1469 | 255 | 570 | 530 | 115
+      38: 65-69 | 1107 | 206 | 447 | 361 | 93
+      39: 70-74 | 666 | 119 | 273 | 227 | 46
+      40: 75+ | 414 | 70 | 200 | 116 | 28
+      41: Median | 24.6 | 27.6 | 24.2 | 24.4 | 23.7
+      42: FEMALE
+      43: Total | 37839 | 5561 | 16436 | 13322 | 2520
+      44: 0-4 | 3703 | 547 | 1710 | 1213 | 233
+      45: 5-9 | 3879 | 530 | 1857 | 1226 | 267
+      46: 10-14 | 4248 | 521 | 1953 | 1439 | 335
+      47: 15-19 | 3837 | 425 | 1673 | 1471 | 267
+      48: 20-24 | 2702 | 317 | 1230 | 979 | 176
+      49: 25-29 | 2243 | 364 | 977 | 779 | 123
+      50: 30-34 | 2472 | 351 | 1117 | 868 | 136
+      51: 35-39 | 2448 | 392 | 1030 | 851 | 175
+      52: 40-44 | 2381 | 356 | 960 | 922 | 142
+      53: 45-49 | 2239 | 357 | 928 | 821 | 133
+      54: 50-54 | 2010 | 336 | 786 | 758 | 130
+      55: 55-59 | 1763 | 322 | 694 | 642 | 105
+      56: 60-64 | 1427 | 257 | 566 | 510 | 94
+      57: 65-69 | 1122 | 225 | 438 | 380 | 80
+      58: 70-74 | 735 | 134 | 271 | 263 | 68
+      59: 75+ | 630 | 128 | 246 | 200 | 56
+      60: Median | 26.2 | 31.1 | 24.2 | 27.1 | 24.5
+      61: Source: 2023 FSM Population and Housing 
+      62: Notes: * Value is suppressed for confide
+      63: Table B2. Relationship by State, FSM: 20
+      64: Relationship | Total | Yap | Chuuk | Pohnpei | Kosrae
+      65: BOTH GENDER
+      66: Total | 75817 | 10739 | 33885 | 26102 | 5092
+      67: Head | 15142 | 2404 | 6314 | 5427 | 996
+      68:   Persons per household | 5.00706643772289 | 4.467138103161398 | 5.366645549572379 | 4.809655426570849 | 5.112449799196787
+      69: Spouse | 9216 | 1429 | 3647 | 3521 | 618
+      70: Unmarried partner | 410 | 23 | 294 | 68 | 24
+      71: Natural or adopted child | 20581 | 3105 | 7778 | 8135 | 1563
+      72: Stepson/Stepdaughter | 747 | 93 | 370 | 245 | 39
+      73: Brother/Sister | 3390 | 199 | 2483 | 515 | 192
+      74: Nephew/Niece | 4751 | 594 | 2955 | 953 | 249
+      75: Son/Daughter-in-Law | 2710 | 223 | 1206 | 1021 | 260
+      76: Father/Mother (-in law) | 385 | 116 | 169 | 64 | 36
+      77: Grandfather/mother | 334 | 27 | 219 | 76 | *
+      78: Grandchild or great-grandchild | 9076 | 1213 | 3332 | 3844 | 687
+      79: Other relative | 8990 | 1306 | 5092 | 2193 | 399
+      80: Non-relative (roomer/boarder) | 63 | * | * | 29 | *
+      81: Non-relative (domestic worker/helper) | 24 | * | * | * | *
+      82: MALE
+      83: Total | 37978 | 5178 | 17448 | 12779 | 2572
+      84: Head | 11693 | 1757 | 5012 | 4111 | 812
+      85: Spouse | 350 | 84 | 135 | 122 | *
+      86: Unmarried partner | 124 | * | 97 | * | *
+      87: Natural or adopted child | 10395 | 1553 | 3948 | 4095 | 799
+      88: Stepson/Stepdaughter | 351 | 51 | 166 | 113 | 21
+      89: Brother/Sister | 1654 | 70 | 1236 | 255 | 94
+      90: Nephew/Niece | 2435 | 275 | 1533 | 493 | 134
+      91: Son/Daughter-in-Law | 1344 | 103 | 717 | 421 | 103
+      92: Father/Mother (-in law) | 80 | 21 | 34 | * | *
+      93: Grandfather/mother | 87 | * | 63 | * | *
+      94: Grandchild or great-grandchild | 4695 | 623 | 1730 | 1980 | 362
+      95: Other relative | 4714 | 633 | 2760 | 1113 | 208
+      96: Non-relative (roomer/boarder) | 36 | * | * | * | *
+      97: Non-relative (domestic worker/helper) | * | * | * | * | *
+      98: FEMALE
+      99: Total | 37839 | 5561 | 16436 | 13322 | 2520
+     100: Head | 3449 | 647 | 1302 | 1316 | 184
+     101: Spouse | 8866 | 1345 | 3512 | 3399 | 609
+     102: Unmarried partner | 286 | 21 | 197 | 49 | *
+     103: Natural or adopted child | 10186 | 1552 | 3830 | 4040 | 764
+     104: Stepson/Stepdaughter | 396 | 42 | 204 | 132 | *
+     105: Brother/Sister | 1735 | 130 | 1248 | 260 | 98
+     106: Nephew/Niece | 2316 | 319 | 1421 | 460 | 116
+     107: Son/Daughter-in-Law | 1366 | 120 | 489 | 600 | 157
+     108: Father/Mother (-in law) | 306 | 95 | 136 | 48 | 27
+     109: Grandfather/mother | 247 | 23 | 156 | 57 | *
+     110: Grandchild or great-grandchild | 4380 | 590 | 1601 | 1864 | 325
+     111: Other relative | 4276 | 673 | 2332 | 1080 | 191
+     112: Non-relative (roomer/boarder) | 27 | * | * | * | *
+     113: Non-relative (domestic worker/helper) | * | * | * | * | *
+     114: Source: 2023 FSM Population and Housing 
+     115: Notes: * Value is suppressed for confide
+     116: Table B3.  Birthplace by State, FSM: 202
+     117: Birthplace | Total | Yap | Chuuk | Pohnpei | Kosrae
+     118: BOTH GENDER
+     119: Total | 75817 | 10739 | 33885 | 26102 | 5092
+     120: Yap | 10267 | 10088 | 33 | 143 | *
+     121: Chuuk | 33757 | 51 | 33446 | 242 | *
+     122: Pohnpei | 25022 | 74 | 57 | 24757 | 134
+     123: Kosrae | 4810 | * | * | 131 | 4668
+     124: Elsewhere | 1962 | 522 | 343 | 829 | 268
+     125: MALE
+     126: Total | 37978 | 5178 | 17448 | 12779 | 2572
+     127: Yap | 4939 | 4832 | 24 | 81 | *
+     128: Chuuk | 17339 | * | 17200 | 112 | *
+     129: Pohnpei | 12239 | 32 | 31 | 12100 | *
+     130: Kosrae | 2414 | * | * | 57 | 2354
+     131: Elsewhere | 1047 | 295 | 193 | 429 | 130
+     132: FEMALE
+     133: Total | 37839 | 5561 | 16436 | 13322 | 2520
+     134: Yap | 5328 | 5256 | * | 62 | *
+     135: Chuuk | 16418 | 34 | 16246 | 130 | *
+     136: Pohnpei | 12783 | 42 | 26 | 12657 | 58
+     137: Kosrae | 2396 | * | * | 74 | 2314
+     138: Elsewhere | 915 | 227 | 149 | 400 | 138
+     139: Source: 2023 FSM Population and Housing 
+     140: Notes: * Value is suppressed for confide
+     141: Table B4. Citizenship by State, FSM: 202
+     142: Citizenship | Total | Yap | Chuuk | Pohnpei | Kosrae
+     143:    BOTH GENDER, 18+ years
+     144: Total | 46443 | 6896 | 20219 | 16315 | 3012
+     145: FSM | 45626 | 6603 | 20133 | 15926 | 2965
+     146: Other country | 817 | 294 | 86 | 389 | 48
+     147: MALE
+     148: Total | 22845 | 3213 | 10377 | 7746 | 1509
+     149: FSM | 22339 | 3044 | 10317 | 7501 | 1477
+     150: Other country | 506 | 168 | 60 | 245 | 32
+     151: FEMALE
+     152: Total | 23598 | 3683 | 9842 | 8569 | 1503
+     153: FSM | 23286 | 3558 | 9816 | 8426 | 1487
+     154: Other country | 311 | 126 | 25 | 144 | 16
+     155: Source: 2023 FSM Population and Housing 
+     156: Notes: * Value is suppressed for confide
+     157: Table B5. Marital Status by Municipality
+     158: Marital status | Total | Yap | Chuuk | Pohnpei | Kosrae
+     159: BOTH GENDER
+     160: Total | 75817 | 10739 | 33885 | 26102 | 5092
+     161: Never married | 41842 | 5791 | 19236 | 13873 | 2943
+     162: Legally married | 21586 | 1943 | 10584 | 7224 | 1835
+     163: Traditional/consensual marriage | 7189 | 2154 | 1769 | 3239 | 27
+     164: Widowed | 3283 | 486 | 1384 | 1192 | 220
+     165: Separated | 1435 | 217 | 705 | 475 | 39
+     166: Divorced | 482 | 147 | 207 | 99 | 29
+     167: MALE
+     168: Total | 37978 | 5178 | 17448 | 12779 | 2572
+     169: Never married | 21876 | 2898 | 10347 | 7084 | 1546
+     170: Legally married | 10676 | 921 | 5338 | 3508 | 909
+     171: Traditional/consensual marriage | 3642 | 1112 | 880 | 1636 | *
+     172: Widowed | 891 | 80 | 469 | 278 | 64
+     173: Separated | 660 | 95 | 306 | 233 | 26
+     174: Divorced | 233 | 71 | 108 | 40 | *
+     175: FEMALE
+     176: Total | 37839 | 5561 | 16436 | 13322 | 2520
+     177: Never married | 19966 | 2893 | 8889 | 6788 | 1396
+     178: Legally married | 10910 | 1022 | 5246 | 3716 | 926
+     179: Traditional/consensual marriage | 3547 | 1041 | 889 | 1603 | *
+     180: Widowed | 2392 | 407 | 915 | 914 | 156
+     181: Separated | 775 | 122 | 399 | 242 | *
+     182: Divorced | 249 | 76 | 99 | 59 | *
+     183: Source: 2023 FSM Population and Housing 
+     184: Notes: * Value is suppressed for confide
+     185: Table B6. Religion by State, FSM: 2023
+     186: Religion | Total | Yap | Chuuk | Pohnpei | Kosrae
+     187: BOTH GENDER
+     188: Total | 75817 | 10739 | 33885 | 26102 | 5092
+     189: Roman Catholic | 41944 | 8449 | 18559 | 14850 | 86
+     190: Congregation/Protestant | 28073 | 496 | 14168 | 8894 | 4515
+     191: Assembly of God | 594 | 185 | * | 337 | 61
+     192: Pentecostal | 322 | 33 | 78 | 152 | 59
+     193: Apostolic | 473 | * | 177 | 293 | *
+     194: Baptist | 913 | 376 | 21 | 400 | 115
+     195: SDA | 511 | 73 | 100 | 261 | 76
+     196: Mormon | 990 | 147 | 218 | 506 | 119
+     197: Jehovah's Witness | 264 | 112 | 71 | 67 | *
+     198: Other religion | 1195 | 480 | 444 | 238 | 32
+     199: No religion/Refused | 538 | 388 | 36 | 103 | *
+     200: MALE
+     201: Total | 37978 | 5178 | 17448 | 12779 | 2572
+     202: Roman Catholic | 20945 | 4056 | 9520 | 7321 | 48
+     203: Congregation/Protestant | 14189 | 232 | 7347 | 4345 | 2265
+     204: Assembly of God | 282 | 81 | * | 162 | 32
+     205: Pentecostal | 148 | 20 | 33 | 67 | 28
+     206: Apostolic | 213 | * | 82 | 129 | *
+     207: Baptist | 453 | 180 | * | 202 | 60
+     208: SDA | 250 | 40 | 61 | 113 | 37
+     209: Mormon | 483 | 70 | 109 | 243 | 61
+     210: Jehovah's Witness | 115 | 44 | 34 | 27 | *
+     211: Other religion | 582 | 222 | 223 | 117 | 20
+     212: No religion/Refused | 319 | 231 | 23 | 53 | *
+     213: FEMALE
+     214: Total | 37839 | 5561 | 16436 | 13322 | 2520
+     215: Roman Catholic | 21000 | 4393 | 9039 | 7529 | 38
+     216: Congregation/Protestant | 13884 | 264 | 6821 | 4549 | 2250
+     217: Assembly of God | 312 | 103 | * | 175 | 29
+     218: Pentecostal | 175 | * | 46 | 86 | 31
+     219: Apostolic | 260 | * | 95 | 164 | *
+     220: Baptist | 459 | 196 | * | 198 | 55
+     221: SDA | 261 | 33 | 40 | 149 | 40
+     222: Mormon | 507 | 77 | 110 | 263 | 57
+     223: Jehovah's Witness | 149 | 67 | 37 | 39 | *
+     224: Other religion | 613 | 258 | 221 | 121 | *
+     225: No religion/Refused | 219 | 157 | * | 50 | *
+     226: Source: 2023 FSM Population and Housing 
+     227: Notes: * Value is suppressed for confide
+     228: HOUSEHOLD and HOUSING TABLES
