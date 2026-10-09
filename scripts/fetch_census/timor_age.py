@@ -373,6 +373,8 @@ def read_2015_single(grid: list[list[Any]], where: str) -> tuple[Counter, float]
         text = label[:-2] if re.fullmatch(r"\d+\.0", label) else label
         if fold(text) in ("total", "timorleste") and total is None:
             total = value
+        elif total is None:
+            continue                     # the column-number row above the total: 1 | 2 | 3
         elif fold(text) == "under1":
             ages[0] += value
         elif re.fullmatch(r"\d{1,3}", text):
@@ -380,8 +382,8 @@ def read_2015_single(grid: list[list[Any]], where: str) -> tuple[Counter, float]
         elif m := re.fullmatch(r"(\d{1,3})\s*\+", text):
             ages[int(m.group(1))] += value
     # These single years only check the groups' median (they are not
-    # published), so a sheet a person or two off its own total is noted and
-    # kept: the country's sheet makes 1,183,645 against its 1,183,643.
+    # published), so a sheet a person or two off its own total would be
+    # noted and kept rather than refused.
     made = sum(ages.values())
     if total is None or abs(made - total) > max(2, SINGLE_SLACK * total):
         raise SystemExit(f"timor_age: {where}: single years make {made:,.0f}, against its "

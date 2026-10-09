@@ -181,6 +181,16 @@ class Posts2015Test(unittest.TestCase):
                                         {"id": "2", "name": "Ermera"},
                                         {"id": "3", "name": "Railaco"}])
 
+    def test_table_5_single_years_skip_the_column_numbers(self):
+        grid = [["Table 5.1a Population by age and sex, Aileu"], [""],
+                ["Age", "Total", "Sex"], ["", "", "Male", "Female"],
+                [1.0, 2.0, 3.0, 4.0], [""], ["Total", 10.0, 5.0, 5.0],
+                ["Under 1", 3.0, 1.0, 2.0], [1.0, 3.0, 2.0, 1.0], ["0 - 4", 6.0, 3.0, 3.0],
+                ["85+", 4.0, 2.0, 2.0]]
+        ages, total = t.read_2015_single(grid, "test")
+        self.assertEqual(total, 10.0)
+        self.assertEqual(dict(ages), {0: 3.0, 1: 3.0, 85: 4.0})
+
     def test_single_years_check_the_groups(self):
         units = t.read_2015_groups(*tables_2015())
         country = next(u for u in units.values() if u["kind"] == "country")
