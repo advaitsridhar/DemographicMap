@@ -1,41 +1,16 @@
-https://stats-sdmx-disseminate.pacificdata.org/rest/data/SPC,DF_HHCOUNTS,1.0/.NR+NR-1+NR-2+NR-3+NR-4+NR-5+NR-6+NR-7+NR-8+NR-9+NR-10+NR-11+NR-12+NR-13+NR-14+NR-15+FM+FM-1+FM-2+FM-3+FM-4+PW+PW-1+PW-2+PW-3+PW-4+PW-5.POP
-  HTTP 200 application/vnd.sdmx.data+csv; charset=utf-8 1,431 bytes
-  27 rows; columns ['DATAFLOW', 'FREQ', 'TIME_PERIOD', 'GEO_PICT', 'INDICATOR', 'OBS_VALUE', 'UNIT_MEASURE', 'UNIT_MULT', 'OBS_STATUS', 'DATA_SOURCE', 'OBS_COMMENT']
-  DATAFLOW: 1 distinct: SPC:DF_HHCOUNTS(1.0)
-  FREQ: 1 distinct: A
-  TIME_PERIOD: 3 distinct: 2010, 2011, 2015
-  GEO_PICT: 27 distinct: FM-3, NR-5, NR-1, NR-9, PW-3, PW-4, NR-13, NR-14, FM, NR, NR-11, NR-12, FM-1, NR-3, NR-7, PW-1, NR-10, PW-5, NR-15, NR-2, FM-2, FM-4, NR-6, NR-8, NR-4, PW-2, PW
-  INDICATOR: 1 distinct: POP
-  OBS_VALUE: 27 distinct: 36192, 382, 747, 446, 704, 1625, 587, 1380, 102839, 9945, 178, 226, 48654, 1220, 318, 11723, 452, 1145, 1497, 851, 6616, 11377, 409, 513, 739, 2464, 17661
-  UNIT_MEASURE: 1 distinct: N
-  UNIT_MULT: 1 distinct: 
-  OBS_STATUS: 1 distinct: 
-  DATA_SOURCE: 1 distinct: 
-  OBS_COMMENT: 1 distinct: 
-    SPC:DF_HHCOUNTS(1.0) | A | 2010 | FM-3 | POP | 36192 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-5 | POP | 382 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-1 | POP | 747 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-9 | POP | 446 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2015 | PW-3 | POP | 704 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2015 | PW-4 | POP | 1625 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-13 | POP | 587 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-14 | POP | 1380 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2010 | FM | POP | 102839 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR | POP | 9945 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-11 | POP | 178 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-12 | POP | 226 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2010 | FM-1 | POP | 48654 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-3 | POP | 1220 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-7 | POP | 318 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2015 | PW-1 | POP | 11723 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-10 | POP | 452 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2015 | PW-5 | POP | 1145 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-15 | POP | 1497 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-2 | POP | 851 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2010 | FM-2 | POP | 6616 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2010 | FM-4 | POP | 11377 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-6 | POP | 409 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-8 | POP | 513 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2011 | NR-4 | POP | 739 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2015 | PW-2 | POP | 2464 | N |  |  |  | 
-    SPC:DF_HHCOUNTS(1.0) | A | 2015 | PW | POP | 17661 | N |  |  |  | 
+== https://nauru.popgis.spc.int/
+  HTTP 200 text/html; charset=utf-8 17,607 bytes
+  1 links matching '(?:api|json|geojson|data|census|indicator|[.]js)'
+    https://fonts.googleapis.com/
+== https://palau.popgis.spc.int/
+  HTTP 200 text/html; charset=utf-8 17,738 bytes
+  1 links matching '(?:api|json|geojson|data|census|indicator|[.]js)'
+    https://fonts.googleapis.com/
+== https://fsm.popgis.spc.int/
+  HTTP 200 text/html; charset=utf-8 17,616 bytes
+  1 links matching '(?:api|json|geojson|data|census|indicator|[.]js)'
+    https://fonts.googleapis.com/
+== https://tuvalu.popgis.spc.int/
+  HTTP 200 text/html; charset=utf-8 17,613 bytes
+  1 links matching '(?:api|json|geojson|data|census|indicator|[.]js)'
+    https://fonts.googleapis.com/
