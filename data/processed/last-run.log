@@ -1,8 +1,90 @@
-bangladesh_zila_ages: Census 2011 five-year age groups by zila (USCB extraction)
-    64 zilas, 8 divisions: every row's groups make its total by sex, the zilas make their divisions group by group, and the divisions make the census's 144,043,697
-    the national median from the same groups: 23.5
-  divisions: 8 bound by shape id; 0 row(s) and 0 unit(s) left over
-  zilas: 58 bound by shape id; 6 row(s) and 6 unit(s) left over
-    rows with no single unit: BARISHAL|JHĀLAKĀTI, CHATTOGRAM|KHAGRĀCHARI, DHAKA|KISHORGANJ, DHAKA|SHARIYATPUR, RĀJSHĀHI|JAIPURHĀT, RĀJSHĀHI|NATOR
-    units no row reached: Jhalokati, Joypurhat, Khagrachhari, Kishoreganj, Natore, Shariatpur
-bangladesh_zila_ages: every zila must bind to one drawn polygon and every polygon to one zila
+cdx palaugov.pw/wp-content/uploads/*: 4895 captures, 89 matching '(?:xlsx|xls|csv|[Cc]ensus|CENSUS|[Hh]amlet|[Pp]opulation)'
+  20161215195851 200 application/pdf http://palaugov.pw/wp-content/uploads/2013/10/1997-Bridge-Census.pdf
+  20160616060610 200 application/pdf http://palaugov.pw:80/wp-content/uploads/2013/10/2005-Census-of-Population-Housing.pdf
+  20161225185032 200 application/pdf http://palaugov.pw/wp-content/uploads/2013/11/12.-SOCIO-DEMOGRAPHIC-DATA-Population.pdf
+  20161225184606 200 application/pdf http://palaugov.pw/wp-content/uploads/2016/03/1995-Census-of-Population-Housing-Tables.pdf
+  20161225184538 200 application/pdf http://palaugov.pw/wp-content/uploads/2016/03/2000-Census-of-Population-Housing-Tables.pdf
+  20161225185209 200 application/pdf http://palaugov.pw/wp-content/uploads/2016/03/2003-Population-and-Environment-Survey.pdf
+  20161225184514 200 application/pdf http://palaugov.pw/wp-content/uploads/2016/03/2005-Census-Monograph-Report.pdf
+  20161221014511 200 application/pdf http://palaugov.pw/wp-content/uploads/2016/11/2015-Census-of-Population-Housing-and-Agriculture-Tables.pdf
+  20170415200803 200 application/pdf http://palaugov.pw/wp-content/uploads/2017/02/2015-Census-of-Population-Housing-Agriculture-.pdf
+  20181124193915 200 application/vnd.openxmlformats http://www.palaugov.pw:80/wp-content/uploads/2018/03/Labor-Market-Statistics_20180316.xlsx
+  20210422182257 200 application/vnd.openxmlformats https://palaugov.pw/wp-content/uploads/2018/03/Utility_20180320.xlsx
+  20210422182138 200 application/vnd.ms-excel.sheet https://palaugov.pw/wp-content/uploads/2018/04/Balance-of-payments-statistics.xlsm
+  20210422182235 200 application/vnd.ms-excel.sheet https://palaugov.pw/wp-content/uploads/2018/04/Government-finance-statistics.xlsm
+  20210422182206 200 application/vnd.ms-excel.sheet https://palaugov.pw/wp-content/uploads/2018/04/Gross-domestic-product-P.xlsm
+  20180724130516 200 application/vnd.openxmlformats http://palaugov.pw:80/wp-content/uploads/2018/04/Visitor-Arrivals_ALL.xlsx
+  20210422182148 200 application/vnd.ms-excel.sheet https://palaugov.pw/wp-content/uploads/2018/07/Balance-of-Payments-Statistics.xlsm
+  20181007125712 200 application/vnd.openxmlformats http://www.palaugov.pw:80/wp-content/uploads/2018/07/CPI-June-2018.xlsx
+  20180821090336 200 application/vnd.openxmlformats http://palaugov.pw:80/wp-content/uploads/2018/07/Evaluation-Scoring-Sheet.xlsx
+  20210422182243 200 application/vnd.ms-excel.sheet https://palaugov.pw/wp-content/uploads/2018/07/Government-Finance-Statistics.xlsm
+  20210422182213 200 application/vnd.ms-excel.sheet https://palaugov.pw/wp-content/uploads/2018/07/Gross-Domestic-Product-P.xlsm
+  20180821090341 200 application/vnd.openxmlformats http://palaugov.pw:80/wp-content/uploads/2018/07/RFQ-PROCUREMENT-1.xlsx
+  20180724132141 200 application/vnd.openxmlformats http://palaugov.pw:80/wp-content/uploads/2018/07/Visitor-Arrivals_Monthly.xlsx
+  20210427200907 200 application/vnd.ms-excel.sheet https://www.palaugov.pw/wp-content/uploads/2018/10/Balance-of-Payments-Statistics-Final.xlsm
+  20210427201111 200 application/vnd.ms-excel.sheet https://www.palaugov.pw/wp-content/uploads/2018/10/Government-Finance-Statistics-Final.xlsm
+  20210427200951 200 application/vnd.ms-excel.sheet https://www.palaugov.pw/wp-content/uploads/2018/10/Gross-Domestic-Product-Final.xlsm
+  20191212201755 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2018/10/Visitor-Arrivals_ALL.xlsx
+  20210513012053 200 application/vnd.ms-excel https://www.palaugov.pw/wp-content/uploads/2019/05/TA-Computation-Form.xls
+  20210513012103 200 application/vnd.ms-excel https://www.palaugov.pw/wp-content/uploads/2019/05/TA-Voucher-Form.xls
+  20210428100517 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2019/07/Climate_20190716.xlsx
+  20210428100345 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2019/07/Crime_20190716.xlsx
+  20210428030606 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2019/07/Education_20190716.xlsx
+  20210428030638 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2019/07/Health_20190716.xlsx
+  20191212202104 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2019/07/Monthly-Visitor-Arrivals-as-of-June-2019.xlsx
+  20210427200846 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/01/Balance-of-payments-statistics.xlsx
+  20210427201128 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/01/Government-finance-statistics.xlsx
+  20210427201010 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/01/Gross-domestic-product-P.xlsx
+  20201004022733 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/02/Visitor-Arrivals_ALL.xlsx
+  20201004022742 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/04/Monthly-Visitor-Arrivals-as-of-March-2020.xlsx
+  20210427200854 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/07/Balance-of-payments-statistics.xlsx
+  20210427201146 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/07/Government-finance-statistics-1.xlsx
+  20210427201136 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/07/Government-finance-statistics.xlsx
+  20210427201032 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/07/Gross-domestic-product-P-1.xlsx
+  20210427201019 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2020/07/Gross-domestic-product-P.xlsx
+  20210427200825 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/03/Balance-of-payments-statistics-2019.xlsx
+  20210427200553 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/04/CPI-MARCH-2021.xlsx
+  20210501191840 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/04/FIT-Certified-Accomodation.xlsx
+  20211026115928 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/06/Climate_20210623.xlsx
+  20211026115809 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/06/Crime_20210623.xlsx
+  20211026115742 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/06/Health_20210624.xlsx
+  20210728162654 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/06/Monthly-Visitor-Arrivals-as-of-December-2020.xlsx
+  20210728181240 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/06/Visitor-Arrivals_ALL.xlsx
+  20211026114916 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/07/CPI-JUNE-2021.xlsx
+  20211026115221 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/09/Balance-of-Payments-Statistics.xlsx
+  20211026115423 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/09/Government-Finance-Statistics.xlsx
+  20211026065942 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/10/IMTS-202-Release-Tables.xlsx
+  20220122113921 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/11/Gross-Domestic-Product-P.xlsx
+  20220107184337 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2021/11/Visitor-Arrivals_ALL_20211118.xlsx
+  20220812035536 200 application/xml https://www.palaugov.pw/wp-content/uploads/2022/01/Population.xml
+  20230325143107 200 text/html https://www.palaugov.pw/wp-content/uploads/2022/02/External-Debt-Statistics_Provisional.xlsx
+  20220707094116 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2022/03/IMTS-Release-Table-2021.xlsx
+  20220707213726 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2022/04/IMTS-Release-2022-Q1.xlsx
+  20221204170309 200 application/pdf https://www.palaugov.pw/wp-content/uploads/2022/07/2020_Census-of-Population-Housing-and-Agriculture-Basic-Tables.pdf
+  20230914214123 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2022/07/Balance-of-Payments-Statistics_Preliminary.xlsx
+  20230325143120 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/2022/07/Government-Finance-Statistics_Preliminary.xlsx
+  20230102070720 200 application/pdf https://www.palaugov.pw/wp-content/uploads/2022/09/2020-Census-of-Population-and-Housing.pdf
+  20241127112352 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Balance-of-Payments-Statistics-Preliminary-FY-2023.xlsx
+  20241127112401 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Balance-of-Payments-Statistics.xlsx
+  20241127053341 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/BRT-Business-License-Registry-as-of-7.17.24.xlsx
+  20250326022335 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Business-License-Registry-as-of-01-21-25.xlsx
+  20250830004249 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Business-License-Registry-as-of-8.13.2025.xlsx
+  20260914214548 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/BusinessLicenseRegistryAsOf09-04-2026.xlsx
+  20230915180807 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Climate_20221020.xlsx
+  20250830010529 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/CPI-DEC-2024.xlsx
+  20230914014339 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/CPI-DECEMBER-2022.xlsx
+  20231204122347 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/CPI-JUNE-2023.xlsx
+  20221205050536 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Education_20221020.xlsx
+  20230325153047 200 text/html https://www.palaugov.pw/wp-content/uploads/External-Debt-Statistics_Preliminary.xlsx
+  20241127110828 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Government-Finance-Statistics.xlsx
+  20241127095746 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Gross-Domestic-Product-P.xlsx
+  20241127095739 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Gross-Domestic-Product-P_Preliminary-FY-2023.xlsx
+  20221116101422 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Health_20221020.xlsx
+  20230325143332 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Monthly-Visitor-Arrivals-as-of-December-2022.xlsx
+  20230325163450 200 application/xml https://www.palaugov.pw/wp-content/uploads/Palau-Population.xml
+  20250830011043 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/REQ-FORM-04.2025_Independent-Boards-Comms.xlsx
+  20250830011048 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/REQ-FORM-04.2025_Ministries.xlsx
+  20250830010350 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Visitor-arrivals-by-Country-Group-FY2008-to-FY2023.xlsx
+  20250830010349 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Visitor-arrivals-by-Country-Group-Monthly-2024.xlsx
+  20230316200237 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Visitor-Arrivals_ALL_20221020.xlsx
+  20241127120639 200 application/vnd.openxmlformats https://www.palaugov.pw/wp-content/uploads/Visitor-Arrivals_as-of-May_2024.xlsx
