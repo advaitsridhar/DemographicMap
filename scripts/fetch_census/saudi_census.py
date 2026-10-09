@@ -71,10 +71,12 @@ NATIONAL = 32_175_224
 # drops the SAU ethnicity policy that said so).
 NATIONALITY_WHY = (
     "Saudi Arabia's 2022 census asks citizenship (Saudi or not, and which country), not "
-    "ethnicity; citizenship may stand on this field, but GASTAT publishes it by region only in "
-    "its census portal's interactive views (portal.saudicensus.sa), which the build could not "
-    "reach: on 9 October 2026 the portal's host did not resolve from the runner and "
-    "stats.gov.sa timed out, and OCHA's tables of the census carry region, sex and age only.")
+    "ethnicity; citizenship may stand on this field, but no table of it by region could be "
+    "read: on 9 October 2026 the census portal's host (portal.saudicensus.sa) did not resolve "
+    "from the runner, GASTAT's census page on stats.gov.sa (statistics?index=119025) links no "
+    "table file, its content being drawn by script, the Saudi open-data portal "
+    "(open.data.gov.sa) did not answer, and OCHA's tables of the census carry region, sex and "
+    "age only.")
 AGE = re.compile(r"^([TFM])_(\d{1,3})_(\d{1,3})$", re.I)
 OPEN = re.compile(r"^([TFM])_(\d{1,3})_?plus$", re.I)
 SLACK = 0.001
