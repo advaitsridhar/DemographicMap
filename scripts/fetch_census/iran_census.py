@@ -391,17 +391,29 @@ def parse_ages(rows: list[list[Any]], label: str, block: int = 0) -> dict[str, A
             break
     if head is None:
         raise SystemExit(f"iran_census: {label}: no both/men/women header row")
-    both_col = head[1] + 3 * block
+    both_col, men_col, women_col = head[1], head[1] + 1, head[1] + 2
     if block:
-        # The heading spans its block's three columns, and a workbook may
-        # write it in any one of them.
+        # Each block is found by its own both-sexes, men, women headings, not
+        # by counting columns: Tehran's sheet carries an empty column inside
+        # its urban block (both sexes in E, men in F, women in H). The
+        # block's name heads it in the row above, over one of its columns.
         sub = [fa(c) for c in rows[head[0]]]
         above = [fa(c) for c in rows[head[0] - 1]] if head[0] else []
-        if (sub[both_col:both_col + 3] != ["مردوزن", "مرد", "زن"]
-                or BLOCKS[block] not in above[both_col:both_col + 3]):
+        starts = [j for j, c in enumerate(sub) if c == "مردوزن"]
+        if len(starts) <= block:
+            raise SystemExit(f"iran_census: {label}: no block {block} in {sub}")
+        both_col = starts[block]
+        end = starts[block + 1] if block + 1 < len(starts) else len(sub)
+        span = range(both_col, end)
+        men = [j for j in span if sub[j] == "مرد"]
+        women = [j for j in span if sub[j] == "زن"]
+        if (len(men) != 1 or len(women) != 1 or not both_col < men[0] < women[0]
+                or BLOCKS[block] not in [above[j] for j in span if j < len(above)]):
             raise SystemExit(f"iran_census: {label}: block {block} is not headed "
                              f"{BLOCKS[block]!r} over both sexes, men and women "
-                             f"(the row above reads {above[both_col:both_col + 3]})")
+                             f"(the rows above read {[above[j] for j in span if j < len(above)]} "
+                             f"and {[sub[j] for j in span]})")
+        men_col, women_col = men[0], women[0]
     label_col = None
     out = {"men": Counter(), "women": Counter(), "groups": {}, "unstated": [0, 0, 0]}
     total = None
@@ -416,8 +428,8 @@ def parse_ages(rows: list[list[Any]], label: str, block: int = 0) -> dict[str, A
         kind, age = age_of(row[label_col])
         if not kind:
             continue
-        both, men, women = (number(row[both_col + k]) if both_col + k < len(row) else 0
-                            for k in range(3))
+        both, men, women = (number(row[col]) if col < len(row) else 0
+                            for col in (both_col, men_col, women_col))
         if men + women != both:
             raise SystemExit(f"iran_census: {label}, {row[label_col]!r}: men {men:,} and "
                              f"women {women:,} do not make {both:,}")

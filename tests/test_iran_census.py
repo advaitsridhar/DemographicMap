@@ -257,6 +257,18 @@ class Split(unittest.TestCase):
         with self.assertRaises(SystemExit):
             ir.parse_ages(sheet, "t", block=1)
 
+    def test_an_empty_column_inside_a_block(self):
+        # Tehran's sheet: both sexes, men, an empty column, then women.
+        sheet = four_block_sheet([(U_MEN, U_WOMEN), (R_MEN, R_WOMEN), (S_MEN, S_WOMEN)])
+        for row in sheet:
+            row.insert(7, "")
+        urban = ir.parse_ages(sheet, "t", block=1)
+        self.assertEqual(urban["total"], (sum(U_MEN) + sum(U_WOMEN), sum(U_MEN), sum(U_WOMEN)))
+        rural = ir.parse_ages(sheet, "t", block=2)
+        self.assertEqual(rural["men"][0], R_MEN[0])
+        self.assertEqual(ir.parse_ages(sheet, "t")["total"][0],
+                         sum(U_MEN + U_WOMEN + R_MEN + R_WOMEN + S_MEN + S_WOMEN))
+
     def test_settlement_rows_of_one_county(self):
         got = ir.read_settlements(tehran_settlements(), "01", "t")
         self.assertEqual(got["county"][0], sum(U_MEN + U_WOMEN + R_MEN + R_WOMEN + S_MEN + S_WOMEN))
