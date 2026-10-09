@@ -1,5 +1,6 @@
-afghanistan_estimates: CSO estimated settled population 1396 (2017-18)
-    34 provinces placed by their Total rows; every row's sexes and areas add up, every province's districts make its Total row, and the provinces make 28,224,323 settled people
-    22 provinces written as the office counts them, 5 drawn otherwise written as the sum of the districts drawn in them (03, 11, 20, 26, 27), 7 not; 396 districts written, 2 refused with their reason
-  wrote data/processed/afghanistan_estimates.json (1647 kB)
-  432 records
+fiji_census: 2017 ages by province and division; 2007 religion and ethnicity
+  2007 Table P01-3: 15 provinces adding to 837,271; religion unprinted for 895 people
+  2017 ages: 15 provinces adding to 884,887 and to their divisions; fiji_census: Fiji 27.5 (printed 27.5)
+  admin1 ethnicity 4, admin1 median_age 4, admin1 population 1, admin1 religion 4, admin1 sex_ratio 4, admin2 ethnicity 15, admin2 median_age 15, admin2 religion 15, admin2 sex_ratio 15
+  wrote data/processed/fiji_census.json (136 kB)
+  wrote 19 records
