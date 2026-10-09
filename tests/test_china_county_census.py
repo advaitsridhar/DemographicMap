@@ -403,6 +403,34 @@ class Binding(unittest.TestCase):
             cc.build("63", tables(), NAMES, CODE_SHAPES, SEATS, admin1, admin2, national=1.0)
 
 
+class BlankNationalities(unittest.TestCase):
+    """Inner Mongolia's Table 1-4 leaves a nationality nobody in an area
+    belongs to blank."""
+
+    @staticmethod
+    def blanked(drop_people=False):
+        t = tables()
+        for row in t["A0104"]:
+            if row and row[0] == "西宁市":
+                # Every zero cell left empty; with drop_people, a cell of
+                # people too, which the groups' sum must then refuse.
+                for k in range(4, len(row)):
+                    if row[k] == 0.0:
+                        row[k] = ""
+                if drop_people:
+                    row[13] = ""
+        return t
+
+    def test_an_empty_cell_is_nobody(self):
+        areas, _, a0104, _ = cc.read_province("63", self.blanked(), NAMES)
+        xining = next(a for a in areas if a["label"] == "西宁市")["index"]
+        self.assertEqual(sum(a0104[xining]["groups"].values()), a0104[xining]["total"])
+
+    def test_an_empty_cell_of_people_is_refused(self):
+        with self.assertRaises(SystemExit):
+            cc.read_province("63", self.blanked(drop_people=True), NAMES)
+
+
 class OnlyTableOneByCounty(unittest.TestCase):
     """Hebei's yearbook: Table 1-1 by county, Tables 1-4 and 1-5 by
     prefecture only, and a subtotal row for a prefecture without the city the

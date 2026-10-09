@@ -496,7 +496,7 @@ def read_province(code: str, tables: dict[str, list[list[Any]]],
         if table in tables and labels_of(tables[table]) != labels:
             raise SystemExit(f"china_county_census: {code}: {table} lists other areas than 1-1")
     a0101 = read_a0101(tables["A0101"], area_rows)
-    a0104 = read_a0104(tables["A0104"], area_rows) if "A0104" in tables else None
+    a0104 = read_a0104(tables["A0104"], area_rows, blanks=True) if "A0104" in tables else None
     a0105 = read_a0105(tables["A0105"], area_rows) if "A0105" in tables else None
     totals = [a0101[i]["total"] for i in range(len(labels))]
     areas = hierarchy(labels, totals, code, names)
@@ -1003,9 +1003,17 @@ def main() -> int:
             # reasons, and the log says why.
             log(f"  {province['name']} skipped: {exc}")
             continue
-        records += build(code, tables, names, code_shapes, seats, admin1, admin2,
-                         nbs.get(province["name"]), urls, args.explain, seat_names, missing,
-                         ground)
+        try:
+            records += build(code, tables, names, code_shapes, seats, admin1, admin2,
+                             nbs.get(province["name"]), urls, args.explain, seat_names,
+                             missing, ground)
+        except SystemExit as exc:
+            # A yearbook whose tables fail a check is refused whole: none of
+            # its counties is written, the province keeps whatever the last
+            # run wrote for it (nothing, for one never read), and the other
+            # provinces' yearbooks are still read.
+            log(f"  {province['name']} REFUSED, nothing written for it: {exc}")
+            continue
         read.add(code)
     if only:
         log(f"  --only: {len(records)} records read, nothing written")

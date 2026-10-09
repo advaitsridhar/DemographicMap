@@ -270,9 +270,18 @@ def read_a0105(rows: list[list[Any]], regions: Regions | None = None
     return out
 
 
-def read_a0104(rows: list[list[Any]], regions: Regions | None = None
+BLANK = {"", "-", "—", "–"}
+
+
+def read_a0104(rows: list[list[Any]], regions: Regions | None = None, blanks: bool = False
                ) -> dict[Any, dict[str, Any]]:
-    """{region: {"total", "men", "women", "groups": {label: people}}}."""
+    """{region: {"total", "men", "women", "groups": {label: people}}}.
+
+    ``blanks``: a nationality's cell left empty or dashed is nobody, as a
+    provincial yearbook prints a nationality none of an area's people
+    belong to (Inner Mongolia's does); the area's groups must still add up
+    to its total, which the caller checks. The National Bureau's own table
+    prints every zero, so for it a blank is a fault."""
     blocks = headed_blocks(header_row(rows, "合计"))
     if blocks[0][1] != "合计":
         raise SystemExit("china_census: 1-4's first block is not 合计")
@@ -293,7 +302,10 @@ def read_a0104(rows: list[list[Any]], regions: Regions | None = None
         total, men, women = (number(row[i]) for i in (1, 2, 3))
         counts: Counter = Counter()
         for column, name in columns:
-            value = number(row[column])
+            value = number(row[column]) if column < len(row) else None
+            if value is None and blanks and compact(row[column] if column < len(row) else "") \
+                    in BLANK:
+                value = 0.0
             if value is None:
                 raise SystemExit(f"china_census: 1-4's {label} row has a blank figure")
             counts[name] += value
