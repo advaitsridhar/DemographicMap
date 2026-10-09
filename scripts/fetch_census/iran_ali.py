@@ -797,12 +797,16 @@ def method_note(unit: Unit, label: str, entry: dict[str, Any], total: int,
         f"{unit.population:,} people, {coverage * 100:.1f}% of {of_total}.",
     ]
     if coverage > 1.0 + SUM_TOLERANCE / 100.0:
+        # The total is the atlas's own only on the "own" basis; on "shape" it
+        # is this map's population, which the atlas never printed.
+        against = {"own": "the total it prints for the unit",
+                   "places": "the total of the places it lists",
+                   "shape": "the population this map gives the unit"}[basis]
         text.append(
             f"The weighted settlements hold {unit.population - total:,} people "
             f"more than that total, {coverage * 100 - 100:.1f}% of it: the "
-            f"atlas's settlement populations and the total it prints for the "
-            f"unit do not quite agree, and neither has been adjusted to the "
-            f"other.")
+            f"atlas's settlement populations and {against} do not quite agree, "
+            f"and neither has been adjusted to the other.")
     if unit.unweighted:
         text.append(
             f"{unit.unweighted:,} further "

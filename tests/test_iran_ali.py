@@ -608,6 +608,19 @@ class TheCoverageSentence(unittest.TestCase):
                       "the unit.", note)
         self.assertNotIn("accounts for", note)
 
+    def test_more_than_the_map_s_population_is_not_blamed_on_the_atlas(self):
+        # Kabutarahang: 131,526 weighted against the map's 126,062.
+        unit = m.Unit("Kabutarahang")
+        unit.population, unit.rows, unit.years = 131_526, 12, {2016}
+        entry = {"authors": "Anonby et al.", "year": "2019"}
+        note = m.method_note(unit, "Kabutarahang", entry, 126_062, "shape",
+                             131_526 / 126_062)
+        self.assertIn("the atlas's settlement populations and the population this map "
+                      "gives the unit do not quite agree", note)
+        self.assertNotIn("the total it prints", note)
+        own = m.method_note(unit, "Kabutarahang", entry, 126_062, "own", 131_526 / 126_062)
+        self.assertIn("the total it prints for the unit do not quite agree", own)
+
     def test_the_atlas_s_own_totals_read_as_before(self):
         self.assertIn("89.5% of the 1,961,260 that the atlas's own total for Isfahan "
                       "accounts for.", self.note("own"))
