@@ -315,6 +315,32 @@ def state_name_2011(name: str) -> str:
     return folded
 
 
+# Dadra and Nagar Haveli and Daman and Diu, one union territory since 2020,
+# was counted in 2011 as two: Dadra and Nagar Haveli (state code 26) and Daman
+# and Diu (25). The readers sum both under 26.
+MERGED_TERRITORY = "26"
+MERGED_TERRITORY_NAMES = frozenset({
+    fold("Dadra and Nagar Haveli and Daman and Diu"),
+    fold("Dadra and Nagar Haveli + Daman and Diu"),
+})
+
+
+def state_code_2011(shape: dict[str, Any]) -> str | None:
+    """The 2011 census's code for a drawn state or union territory, or None.
+
+    The build keeps one file's codes on each unit, and the merged union
+    territory can carry only india_census's ``census2011_state_name`` -- "Dadra
+    and Nagar Haveli + Daman and Diu", the two territories it was counted as --
+    and no code; it is then known by that name or its own.
+    """
+    codes = shape.get("codes") or {}
+    if codes.get("census2011_state"):
+        return str(codes["census2011_state"]).zfill(2)
+    names = {fold(codes.get("census2011_state_name")), fold(shape.get("name")),
+             fold(shape.get("site_name"))}
+    return MERGED_TERRITORY if names & MERGED_TERRITORY_NAMES else None
+
+
 def build() -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, int]]:
     units, urls, india = fetch_all()
     check_all(units, india)
@@ -489,7 +515,7 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
     by_state_code = {s: u for (s, d), u in units.items() if d == "000"}
     for shape in shapes1:
         folded = fold(shape.get("site_name") or shape["name"])
-        state_code = (shape.get("codes") or {}).get("census2011_state")
+        state_code = state_code_2011(shape)
         extra = ""
         if folded in (fold("Telangana"), fold("Andhra Pradesh")):
             split = SPLIT_STATES["Telangana"]
@@ -524,7 +550,7 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
                      else " Summed from the 2011 districts that remained in Jammu "
                      "and Kashmir when Ladakh was separated in 2019.")
             url = urls[split.state_code]
-        elif state_code == "26":
+        elif state_code == MERGED_TERRITORY:
             whole = combine([by_state_code["25"], by_state_code["26"]], shape["name"])
             extra = (" Summed from the two union territories the census counted, "
                      "Dadra and Nagar Haveli and Daman and Diu, merged in 2020.")
@@ -536,7 +562,7 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
             log(f"  ! no C-13 row for {shape['name']} (code {state_code})")
             continue
         counted = census_population(shape)
-        merged_part = state_code == "26" and counted in (
+        merged_part = state_code == MERGED_TERRITORY and counted in (
             by_state_code["25"]["total"][0], by_state_code["26"]["total"][0])
         if merged_part:
             # The shape carries one territory's count until india_census's

@@ -67,7 +67,9 @@ import re
 from typing import Any, Iterable
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json
-from .india_ages import census_population, code, number, state_name_2011
+from .india_ages import (
+    MERGED_TERRITORY, census_population, code, number, state_code_2011, state_name_2011,
+)
 from .india_census import (
     BOUNDARY_ARTEFACTS, CREATED_AFTER_2011, NATIONAL_CONTROLS, NEW_DISTRICT_ALIASES,
     SPLIT_STATES, STATE_IN_2011, SUBDIVIDED_SINCE_2011, lost_territory,
@@ -503,7 +505,7 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
     by_state_code = {s: u for (s, d), u in units.items() if d == "000"}
     for shape in shapes1:
         folded = fold(shape.get("site_name") or shape["name"])
-        state_code = (shape.get("codes") or {}).get("census2011_state")
+        state_code = state_code_2011(shape)
         extra = ""
         if folded in (fold("Telangana"), fold("Andhra Pradesh")):
             split, new = SPLIT_STATES["Telangana"], folded == fold("Telangana")
@@ -533,7 +535,7 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
                 raise SystemExit(f"india_birthplace: {shape['name']} sums to "
                                  f"{whole['total']:,} from its 2011 districts, not {expect:,}")
             url = urls[split.state_code]
-        elif state_code == "26":
+        elif state_code == MERGED_TERRITORY:
             whole = combine([by_state_code["25"], by_state_code["26"]], shape["name"])
             extra = (" Summed from the two union territories the census counted, "
                      "Dadra and Nagar Haveli and Daman and Diu, merged in 2020.")
@@ -544,7 +546,7 @@ def records(units: dict[tuple[str, str], dict[str, Any]], urls: dict[str, str],
             raise SystemExit(f"india_birthplace: no D-01 row for {shape['name']} "
                              f"(code {state_code})")
         counted = census_population(shape)
-        merged_part = state_code == "26" and counted in (
+        merged_part = state_code == MERGED_TERRITORY and counted in (
             by_state_code["25"]["total"], by_state_code["26"]["total"])
         if counted is not None and counted != whole["total"] and not merged_part:
             raise SystemExit(f"india_birthplace: {shape['name']} has {whole['total']:,} in "

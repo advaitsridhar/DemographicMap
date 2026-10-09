@@ -241,5 +241,46 @@ class Binding(unittest.TestCase):
             ib.records(units, {"05": "u"}, {}, shapes1, shapes2)
 
 
+def territory(code: str, area: str, scale: int) -> dict:
+    rows = unit_rows(code, "000", area, place=600 * scale, district_rest=200 * scale,
+                     others=100 * scale, states={"Testland": scale},
+                     asia={"Bangladesh": scale}, asia_rest=0, europe={},
+                     europe_rest=0, unclassifiable=scale)
+    return ib.interpret(ib.read_rows(rows)[(code, "000")])
+
+
+class MergedTerritory(unittest.TestCase):
+    """Dadra and Nagar Haveli and Daman and Diu: two territories in 2011, one drawn."""
+
+    def merged_shape(self, codes: dict) -> dict:
+        return {"id": "S26", "name": "Dādra and Nagar Haveli and Damān and Diu",
+                "site_name": "Dādra and Nagar Haveli and Damān and Diu", "codes": codes}
+
+    def test_the_merged_territory_is_known_without_a_state_code(self):
+        for codes in ({"census2011_state": "26"},
+                      {"census2011_state_name": "Dadra and Nagar Haveli + Daman and Diu"},
+                      {}):
+            self.assertEqual(ib.state_code_2011(self.merged_shape(codes)), "26", codes)
+        self.assertEqual(ib.state_code_2011({"name": "Goa", "codes": {"census2011_state": "30"}}),
+                         "30")
+        self.assertIsNone(ib.state_code_2011({"name": "Goa", "codes": {}}))
+
+    def test_it_sums_both_territories_when_the_build_kept_only_their_names(self):
+        units = read()
+        units[("25", "000")] = territory("25", "State - DAMAN & DIU (25)", 1)
+        units[("26", "000")] = territory("26", "State - DADRA & NAGAR HAVELI (26)", 2)
+        shapes1, shapes2 = shapes(units)
+        shapes1.append(self.merged_shape(
+            {"census2011_state_name": "Dadra and Nagar Haveli + Daman and Diu"}))
+        with tables():
+            main, _, tally = ib.records(units, {"05": "u", "26": "https://example.org/26"},
+                                        {"Bangladesh": "Bangladeshi"}, shapes1, shapes2)
+        merged = next(r for r in main if r["shape_id"] == "S26")
+        total = sum(row["count"] for row in merged["ethnicity"])
+        self.assertEqual(total, units[("25", "000")]["total"] + units[("26", "000")]["total"])
+        self.assertIn("merged in 2020", merged["ethnicity_note"])
+        self.assertEqual(tally["state"], 2)
+
+
 if __name__ == "__main__":
     unittest.main()
