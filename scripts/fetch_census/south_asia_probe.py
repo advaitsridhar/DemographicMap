@@ -18,7 +18,9 @@ switched off.
   (id, idno, year, title).
 * ``nadafiles BASE ID...`` -- a study's downloadable files, read from its
   related-materials page.
-* ``xls URL`` -- a workbook's sheets and their first rows.
+* ``xls URL`` -- a workbook's sheets and their first rows; ``--only`` picks
+  sheets by name and ``--match`` keeps, after the ``--head`` rows, only the
+  rows with a cell matching it.
 * ``pdf URL`` -- page count, and the text of chosen pages or of the pages
   matching ``--grep``.
 * ``pdfgrep URL...`` -- the lines matching ``--grep`` (with ``--before`` and
@@ -262,10 +264,17 @@ def cmd_xls(args: argparse.Namespace) -> None:
         if body[:2] == b"PK":
             import openpyxl                         # noqa: PLC0415
             book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
-            for sheet in book.worksheets[:args.sheets]:
+            chosen = [s for s in book.worksheets
+                      if not args.only or any(s.title.strip().startswith(o)
+                                              for o in args.only.split(","))]
+            pattern = re.compile(args.match) if args.match else None
+            for sheet in chosen[:args.sheets]:
                 grid = []
                 for i, row in enumerate(sheet.iter_rows(values_only=True), 1):
                     if i < args.start:
+                        continue
+                    if pattern and i > args.start + args.head and not any(
+                            pattern.search(str(c)) for c in row if c is not None):
                         continue
                     grid.append(list(row))
                     if len(grid) >= args.rows:
@@ -567,6 +576,9 @@ def main() -> int:
     x.add_argument("--cols", type=int, default=16)
     x.add_argument("--width", type=int, default=16)
     x.add_argument("--aia", action="store_true")
+    x.add_argument("--only", default="", help="sheets whose names start with these, comma-separated")
+    x.add_argument("--match", default="", help="after --head rows, print only rows with a cell matching")
+    x.add_argument("--head", type=int, default=8, help="rows printed before --match applies")
 
     p = sub.add_parser("pdf")
     p.add_argument("url")
