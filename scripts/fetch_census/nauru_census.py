@@ -125,7 +125,25 @@ def header(rows: list[list[Any]], first: str) -> tuple[int, list[str]]:
     raise SystemExit(f"nauru_census: no header starting {first!r}")
 
 
-SHEETS = ("G-1", "I-1", "H-1", "M-1")
+SHEETS = ("G-1", "I-1", "H-1", "M-1", "G-7")
+# Table G-7's religions (everyone, whole country) that Table 19 has a column for.
+IN_TABLE_19 = {"No Religion", "Nauruan Congregational", "Catholic", "Assemblies of God (AOG)",
+               "Nauru Independent", "Pacific Light House", "Seven Day Adventist", "Baptist",
+               "Protestant", "Brethren Church", "Jehovah's Witness", "Hinduism",
+               "Methodist Church", "Other religion", "Do not wish to answer"}
+
+
+def folded_churches(rows: list[list[Any]]) -> dict[str, float]:
+    """Table G-7's churches that Table 19 has no column for, so counts as 'Other religion'."""
+    counts: dict[str, float] = {}
+    for row in rows:
+        label = str(row[0] or "").strip() if row else ""
+        value = number(row[1]) if len(row) > 1 else None
+        if label and label != "TOTAL" and value is not None:
+            counts[label] = value
+    check(sum(counts.values()) == NATIONAL,
+          f"nauru_census: Table G-7's religions add up to {sum(counts.values()):,}")
+    return {k: v for k, v in counts.items() if k not in IN_TABLE_19 and v}
 
 
 def read_tables(sheets: dict[str, list[list[Any]]]) -> dict[str, Any]:
@@ -170,9 +188,11 @@ def read_tables(sheets: dict[str, list[list[Any]]]) -> dict[str, Any]:
               f"{groups15[:1]}..{groups15[-1:]}")
         check(sum(n for *_, n in groups15) <= g1[code][0],
               f"nauru_census: district {code} has more people aged 15+ than people")
-    log(f"  Tables: {len(g1)} districts adding to {NATIONAL:,}; {len(groups)} ethnic groups")
+    folded = folded_churches(sheets["G-7"])
+    log(f"  Tables: {len(g1)} districts adding to {NATIONAL:,}; {len(groups)} ethnic groups; "
+        f"Table G-7 churches without a Table 19 column: {folded}")
     return {"people": g1, "ethnic_groups": groups, "ethnicity": eth, "citizens": citizens,
-            "ages15": ages}
+            "ages15": ages, "folded": folded}
 
 
 def median_of(people: float, groups15: list[tuple[int, int | None, float]]) -> float | None:
@@ -186,18 +206,37 @@ def median_of(people: float, groups15: list[tuple[int, int | None, float]]) -> f
 NUMBER = re.compile(r"^(?:\d{1,3}(?:,\d{3})*|-)$")
 
 
+def religion_panel(lines: list[str]) -> list[str]:
+    """Table 19's first panel: the fifteen district rows under the 11,215 citizens' row.
+
+    pypdf gives a page's figures before its title, so the panel is the run of
+    district rows that follows a "Total 11,215" row and is itself followed,
+    before any other table's title, by Table 19's.
+    """
+    found = []
+    for i, line in enumerate(lines):
+        if line.split()[:2] != ["Total", f"{CITIZENS:,}"]:
+            continue
+        rows = []
+        for row in lines[i + 1:]:
+            if district_of(row) is None:
+                break
+            rows.append(row)
+        rest = lines[i + 1 + len(rows):]
+        title = next((ln for ln in rest if re.match(r"Table \d+\.", ln)), "")
+        if [district_of(r) for r in rows] == sorted(DISTRICTS) and title.startswith("Table 19."):
+            found.append(rows)
+    check(len(found) == 1, f"nauru_census: {len(found)} panels of the citizens' fifteen "
+                           f"districts under their {CITIZENS:,} total precede Table 19's title")
+    return found[0]
+
+
 def read_religion(pages: list[str], citizens: dict[int, float]) -> dict[int, dict[str, float]]:
     """{district: {religion: citizens}} from Persons Tabulations Table 19's first panel."""
     lines = [ln.strip() for page in pages for ln in page.splitlines() if ln.strip()]
-    starts = [i for i, ln in enumerate(lines) if ln.startswith("Table 19.")]
-    check(bool(starts), "nauru_census: the Persons Tabulations have no Table 19")
     out: dict[int, dict[str, float]] = {}
-    for line in lines[starts[0]:]:
-        if line.startswith("Table 20."):
-            break
+    for line in religion_panel(lines):
         code = district_of(line)
-        if code is None or code in out:
-            continue
         tokens = line.split()[1:]
         check(len(tokens) == 1 + len(RELIGIONS) and all(NUMBER.match(t) for t in tokens),
               f"nauru_census: Table 19 row {line!r}")
@@ -240,6 +279,11 @@ def fields_for(code: int, tables: dict[str, Any], religion: dict[int, dict[str, 
     ethnic = dict(zip(tables["ethnic_groups"], merged(code, tables["ethnicity"])[1:]))
     faith = merged(code, religion)
     citizens = sum(faith.values())
+    folded = tables["folded"]
+    other = (f" Table 19 has no column for the churches Table G-7 names for the whole "
+             f"country's {NATIONAL:,} people as {', '.join(folded)} ({int(sum(folded.values())):,} "
+             f"people in all), so their members are in its 'Other religion'."
+             if folded else "")
     location = ""
     if code == HOME:
         loc = tables["people"][LOCATION][0]
@@ -261,7 +305,7 @@ def fields_for(code: int, tables: dict[str, Any], religion: dict[int, dict[str, 
                           f"{int(citizens):,} of the {int(total):,} people here -- 2021 census "
                           f"(Persons Tabulations, Table 19); the census publishes religion for "
                           f"everyone only for the whole country (Table G-7). 'Not stated' is "
-                          f"its 'Do not wish to answer'.{location}"),
+                          f"its 'Do not wish to answer'.{other}{location}"),
         "language": gap(NOT_AVAILABLE, LANGUAGE_GAP),
     }
     if location:

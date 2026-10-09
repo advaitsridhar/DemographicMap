@@ -47,21 +47,41 @@ def sheets():
               0.0205, 0.0220]
     for band, share in zip(bands, shares):
         m1.append(["     " + band, None] + [round(PEOPLE[c][0] * share) for c in PEOPLE])
-    return {"G-1": g1, "I-1": i1, "H-1": h1, "M-1": m1}
+    g7 = [[None], ["Table G-7: Total population by religious affiliation and sex"],
+          [None, "Sex"], [None, "Total", "Male", "Female"], ["TOTAL", 11680, 5893, 5787],
+          ["Religion"]]
+    for name, n in (("No Religion", 157), ("Nauruan Congregational", 4001), ("Catholic", 3959),
+                    ("Assemblies of God (AOG)", 1365), ("Nauru Independent", 410),
+                    ("Pacific Light House", 706), ("Seven Day Adventist", 168),
+                    ("Baptist", 175), ("Do not wish to answer", 57), ("Protestant", 126),
+                    ("Shalosh Pentecostal Church", 186), (" Fishers of Men Church", 57),
+                    ("Brethren Church", 47), ("FOM Pentecostal Church", 81),
+                    ("Christ Embassy", 48), ("Hinduism", 6),
+                    ("Fundamental Christian Church", 15), ("Methodist Church", 18),
+                    ("Other religion", 98)):
+        g7.append(["     " + name, n, None, None])
+    return {"G-1": g1, "I-1": i1, "H-1": h1, "M-1": m1, "G-7": g7}
 
 
 def table19():
-    lines = ["Table 19.  Nauruan Population (citizen/dual) by Sex by District by Religion",
-             "   Total", "         Total 11,215 142 3,889 3,797 1,301 403 704 146 168 126 34 "
-             "- - - 468 37"]
+    """As pypdf reads the pages: each page's figures first, its title after them."""
+    total = "Total 11,215 142 3,889 3,797 1,301 403 704 146 168 126 34 - - - 468 37"
+    age = ["   Total", "         " + total, "         0 - 4 1,436 15 498 486 167 52 90 19 "
+           "22 16 4 - - - 60 7", "Table 18.  Nauruan Population (citizen/dual) by Sex by Five "
+           "Year Age Groups by Religion"]
+    lines = ["Total No ", "Religion", "Do not ", "wish to ", "answer", "   Total",
+             "         " + total]
     for c, n in CITIZENS.items():
         rest = n - 100
         lines.append(f"         {c}-{nr.DISTRICTS[c]} {n:,} 1 {rest:,} 90 - - - - - - - "
                      f"- - - 9 -")
-    lines.append("   Male 0")
-    lines.append("         1-Yaren 392 3 49 224 36 18 36 - - - - - - - 25 1")
-    lines.append("Table 20.  Population by Citizenship")
-    return ["\n".join(lines)]
+    lines += ["District by Sex", "Religion",
+              "Table 19.  Nauruan Population (citizen/dual) by Sex by District by Religion"]
+    male = ["   Male 0", "         Total 5,644 76 1,960 1,918 638 206 362 68 87 66 12 - - - "
+            "227 24", "         1-Yaren 392 3 49 224 36 18 36 - - - - - - - 25 1",
+            "Table 19.  Nauruan Population (citizen/dual) by Sex by District by Religion",
+            "Table 20.  Population by Citizenship"]
+    return ["\n".join(age), "\n".join(lines), "\n".join(male)]
 
 
 class Reading(unittest.TestCase):
@@ -79,6 +99,8 @@ class Reading(unittest.TestCase):
         self.assertIn("1,526 of Location", fields["population_note"])
         self.assertNotIn("population_note", nr.fields_for(4, tables, religion))
         self.assertEqual(fields["religion"][0]["group"], "Nauru Congregational Church")
+        self.assertIn("Shalosh Pentecostal Church, Fishers of Men Church", fields["religion_note"])
+        self.assertIn("(387 people in all)", fields["religion_note"])
         self.assertEqual(fields["language"]["status"], "not_available")
         self.assertTrue(18 <= fields["median_age"]["value"] <= 25)
 
