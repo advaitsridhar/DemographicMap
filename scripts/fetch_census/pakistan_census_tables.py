@@ -482,6 +482,7 @@ def build(only: set[str] | None = None) -> tuple[list[dict[str, Any]],
         PROCESSED / "pakistan_district.json", []) or []}
     ages_out: list[dict[str, Any]] = []
     nat_out: list[dict[str, Any]] = []
+    nation: list[dict[str, Any]] = []
     for slug, (province, _path) in PROVINCES.items():
         if only and slug not in only:
             continue
@@ -506,6 +507,7 @@ def build(only: set[str] | None = None) -> tuple[list[dict[str, Any]],
         # The province from its districts, before they are merged into shapes:
         # checked against the total pakistan.py printed from Table 9.
         whole = combine_ages(list(ages.values()))
+        nation.append(whole)
         whole_nat = combine_counts(list(nationality.values()))
         printed9 = table9.get(("admin1", province))
         if printed9 and isinstance(printed9.get("population"), dict):
@@ -561,6 +563,20 @@ def build(only: set[str] | None = None) -> tuple[list[dict[str, Any]],
             raise SystemExit(f"pakistan: {province}: no single drawn shape for "
                              f"{', '.join(sorted(left))}; refusing to leave "
                              "them off the map silently")
+    # The nation's median from the same single years, for the record: the
+    # Bureau's Table 4 prints counts and no median, and no national median of
+    # its own was found to hold this to (the National Census Report at
+    # /sites/default/files/population/2023/national_report.pdf answered 404 on
+    # 9 October 2026). Logged with the districts' range, so an outlier --
+    # Kohistan's 11.9, Zhob's 12.2 -- is read against the whole.
+    if nation and not only:
+        whole = combine_ages(nation)
+        medians = sorted((r["median_age"]["value"], r["name"]) for r in ages_out
+                         if r["level"] == "admin2" and "value" in (r.get("median_age") or {}))
+        log(f"  the four provinces and Islamabad: {whole['total'][0]:,} people, median age "
+            f"{median_single(dict(whole['ages']['T']), open_from=OPEN_FROM)}; districts from "
+            + ", ".join(f"{n} {v}" for v, n in medians[:3]) + " to "
+            + ", ".join(f"{n} {v}" for v, n in medians[-3:]))
     return ages_out, nat_out
 
 

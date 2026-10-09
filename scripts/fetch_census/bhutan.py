@@ -1864,6 +1864,20 @@ def main() -> int:
     log("  the twenty reports' Table A2.6 totals come to "
         + (f"{national_a26:,}" if national_a26 is not None else "no whole figure")
         + f", against the national report's {NATIONAL_ANALYSED:,}")
+    # The nation's median from the same single years, for the record. It is
+    # logged, not checked: no published national median was found to hold it
+    # to -- NSB's index links the national report under a name its server
+    # does not give (PHCB2017_National.pdf and four other spellings answered
+    # 403 on 9 October 2026).
+    summed_a26: dict[int, int] = {}
+    for _d, _u, _r, annex, _c, _w in reports:
+        for age, row in (annex.get("single") or {}).items():
+            summed_a26[age] = summed_a26.get(age, 0) + row[8]
+    if summed_a26:
+        from .south_asia_common import median_single
+        log(f"  the nation's median age from the {len(reports)} reports' Table A2.6 "
+            f"single years: {median_single(summed_a26)} "
+            f"({sum(summed_a26.values()):,} people)")
     declined: list[str] = []
     medians = {"dzongkhag": 0, "gewog": 0, "gewogs": 0}
     bhutanese_total = 0
@@ -2077,6 +2091,19 @@ def main() -> int:
             log(f"  {len(refused)} row(s) publish no sex ratio because the "
                 f"published halves do not reach the published total: "
                 + ", ".join(refused))
+
+    # The gewog medians' range, so an outlier is seen rather than assumed: a
+    # remote gewog emptied of its young people -- Pema Gatshel's
+    # Chhoekhorling, 703 people of whom 54 are 75 or older and 34 aged 10-19,
+    # median 46.7 -- passes every check its A2.7 block is held to (groups to
+    # total, sexes to persons in every group, totals to Table 2.1).
+    ranked = sorted((r["median_age"]["value"], r["name"], r.get("parent_name"))
+                    for r in records if r["level"] == "admin2"
+                    and "value" in (r.get("median_age") or {}))
+    if ranked:
+        log("  gewog medians run from "
+            + ", ".join(f"{n} ({d}) {v}" for v, n, d in ranked[:3]) + " to "
+            + ", ".join(f"{n} ({d}) {v}" for v, n, d in ranked[-3:]))
 
     out = args.out or PROCESSED / "bhutan_gewog.json"
     write_json(out, records)
