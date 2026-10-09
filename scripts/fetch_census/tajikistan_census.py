@@ -168,7 +168,11 @@ TAJIK = str.maketrans({"ҳ": "х", "ҷ": "ч", "қ": "к", "ғ": "г", "ӯ": "у
                        "ё": "е", "ъ": ""})
 MEDIAN_GAP = ("The 2020 census publishes single years of age for the republic and its regions "
               "only (volume 2, table 1); for cities and districts it gives men and women "
-              "alone (table 5).")
+              "alone (table 5). The 2010 census's volume 2 (Population of the Republic of "
+              "Tajikistan by sex, age and marital status, 2012) is laid out the same way -- "
+              "age by sex for the republic and its regions, men and women alone for cities "
+              "and districts -- so no census of either round gives a city's or a district's "
+              "ages.")
 VOLUMES = ("The Agency on Statistics has published the 2020 census in nine volumes -- "
            "population size and distribution; age, sex and marital status; education; "
            "households; sources of livelihood; employment; housing; migration; fertility -- "
