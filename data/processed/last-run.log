@@ -1,13 +1,156 @@
-usage: west_asia_probe.py [-h] [--search SEARCH] [--where WHERE]
-                          [--select SELECT] [--group-by GROUP_BY]
-                          [--rows ROWS] [--grep GREP] [--links LINKS]
-                          [--chars CHARS] [--context CONTEXT] [--level LEVEL]
-                          [--cols COLS] [--sheets SHEETS] [--width WIDTH]
-                          [--raw] [--pages PAGES] [--dictionary DICTIONARY]
-                          [--iso ISO] [--unit-level UNIT_LEVEL]
-                          [--classes CLASSES] [--zoom ZOOM]
-                          [--what {places,areas,both}] [--endpoint ENDPOINT]
-                          [--bbox BBOX]
-                          {ods,odsrows,get,wayback,uscb,xlsx,pdf,geonames,wdpoints,osm}
-                          target [target ...]
-west_asia_probe.py: error: unrecognized arguments: ]+governorate|wilayat.{0,40}(?:age|gender))
+== https://web.archive.org/web/20240801130251id_/https://www.ncsi.gov.om/Elibrary/LibraryContentDoc/bar_Statistical%20Year%20Book%202024%20Issue%2052_469215ea-35ad-4c19-baeb-be858bd6c934.pdf
+   200 application/pdf 15,455,635 bytes
+  280 pages
+   281 pages
+   p25: Sex ratio (male per 100 (cid:886)(cid:481)(cid:883)(cid:887)(cid:891)
+   p25: Sex ratio (male per 100 (cid:884)(cid:481)(cid:885)(cid:886)(cid:887)
+   p25: Sex ratio (male per 100
+   p25: Omanis Males (year) 75 75.0 75.0 75.0 )ةنس( نيينامعلا روكذلا
+   p25: Omanis Females (year) 79 79.0 79.0 79.0 )ةنس( تاينامعلا ثانلإا
+   p26: Sex ratio (male per 100
+   p26: Sex ratio (male per 100
+   p26: Sex ratio (male per 100
+   p26: Omanis Males (year) 75.5 75.4 72.2 74 75 )ةنس( نيينامعلا روكذلا
+   p26: Omanis Females (year) 78.8 78.9 76.5 79 79 )ةنس( تاينامعلا ثانلإا
+   p27: Live Births,Deaths & Infant Deaths Registered, by Sex & Nationality
+   p28: live Births by Nationality, Sex & Age Group of Mother
+   p28: Age Specific Fertility Rates (Per 1000 Females) and total fertility rates by Nationality
+   p29: Registered Deaths by Nationality, Sex & Age Group
+   p30: Population , Area (person/Km ²) & Population Density by Governorates
+   p31: Population Density by Governorates (Persons / km ²)
+   p34: Population Registered by Nationality , Age Group and sex
+   p36: Population by Governorate & Nationality
+   p39: No. of Planned Land Plots by Governorates & Type of Use
+   p40: No. of Planned Land Plots by Governorates & Month
+   p41: No. of Land Plots Granted by Governorates & Type of Use
+   p42: No. of Land Plots Granted by Governorates & Month
+   p43: No. of New Plots registered for the first time by Governorates & Type of Use
+   p44: No. of New Plots registered for the first time by Governorates & Month
+   p45: No. of Beneficiaries cases of Program Housing Support adaptive Low -Income by Governorates
+   p47: No. of Building Permits Classified by Governorates in Sultanate of Oman Include New and ReNewed
+   p51: - Males 1,854,493 1,916,406 1,911,254 1,757,703 1,635,785 روكذ -
+   p51: - Females 358,251 350,034 333,369 317,422 297,951 ثانإ -
+   p51: - Males 300,177 291,663 283,561 273,508 265,806 روكذ -
+   p51: - Females 147,436 142,705 135,459 130,077 123,926 ثانإ -
+   p51: - Males 1,554,316 1,624,743 1,627,693 1,484,195 1,369,979 روكذ -
+   p51: - Females 210,815 207,329 197,910 187,345 174,025 ثانإ -
+   p51: - Males 135,694 136,690 138,480 135,487 133,383 روكذ -
+   p51: - Females 95,205 95,373 95,081 93,980 92,450 ثانإ -
+   p51: - Males 113,087 113,642 114,566 114,133 112,847 روكذ -
+   p51: - Females 82,394 82,038 81,371 79,832 79,375 ثانإ -
+   p51: - Males 22,607 23,048 23,914 21,354 20,536 روكذ -
+   p51: - Females 12,811 13,335 13,710 14,148 13,075 ثانإ -
+   p51: - Males 1,582,368 1,642,361 1,638,478 1,501,783 1,393,385 روكذ -
+   p51: - Females 104,917 99,135 89,541 81,679 74,338 ثانإ -
+   p51: - Males 187,090 178,021 168,995 159,375 152,959 روكذ -
+   p51: - Females 65,042 60,667 54,088 50,245 44,551 ثانإ -
+   p51: - Males 1,395,278 1,464,340 1,469,483 1,342,408 1,240,426 روكذ -
+   p51: - Females 39,875 38,468 35,453 31,434 29,787 ثانإ -
+   p51: - Males 136,431 137,355 134,296 120,433 109,017 روكذ -
+   p51: - Females 158,129 155,526 148,747 141,763 131,163 ثانإ -
+   p51: - Males ــ ــ _ ــ ــ روكذ -
+   p51: - Females ــ ــ _ ــ ــ ثانإ -
+   p51: - Males 136,431 137,355 134,296 120,433 109,017 روكذ -
+   p51: - Females 158,129 155,526 148,747 141,763 131,163 ثانإ -
+   p52: - Males 2,187,484 2,059,872 1,773,074 1,781,873 1,789,442 روكذ -
+   p52: - Females 492,968 449,251 385,545 382,127 368,365 ثانإ -
+   p52: - Males 602,555 570,070 557,885 549,252 310,025 روكذ -
+   p52: - Females 250,649 231,745 215,901 203,472 155,201 ثانإ -
+   p52: - Males 1,584,929 1,489,802 1,215,189 1,232,621 1,479,417 روكذ -
+   p52: - Females 242,319 217,506 169,644 178,655 213,164 ثانإ -
+   p52: - Males 300,489 295,944 289,931 291,476 140,178 روكذ -
+   p52: - Females 120,545 111,550 102,941 101,708 97,185 ثانإ -
+   p52: - Males 271,687 267,786 262,067 261,015 118,257 روكذ -
+   p52: - Females 105,169 95,652 89,164 88,257 84,636 ثانإ -
+   p52: - Males 28,802 28,158 27,864 30,461 21,921 روكذ -
+   p52: - Females 15,376 15,898 13,777 13,451 12,549 ثانإ -
+   p52: - Males 1,676,943 1,581,704 1,334,099 1,335,192 1,514,008 روكذ -
+   p52: - Females 177,030 161,251 148,081 132,865 112,280 ثانإ -
+   p52: - Males 275,334 267,580 266,125 256,210 191,768 روكذ -
+   p52: - Females 124,469 115,599 108,481 96,525 70,565 ثانإ -
+   p52: - Males 1,401,609 1,314,124 1,067,974 1,078,982 1,322,240 روكذ -
+   p52: - Females 52,561 45,652 39,600 36,340 41,715 ثانإ -
+   p52: - Males 210,052 182,224 149,044 155,205 135,256 روكذ -
+   p52: - Females 195,393 176,450 134,523 147,554 158,900 ثانإ -
+   p52: - Males 55,534 34,704 29,693 32,027 ــ روكذ -
+   p52: - Females 21,011 20,494 18,256 18,690 ــ ثانإ -
+   p52: - Males 154,518 147,520 119,351 123,178 135,256 روكذ -
+   p52: - Females 174,382 155,956 116,267 128,864 158,900 ثانإ -
+   p53: Workers by Nationalitiy, Age Group and Sex
+   p53: Total Females Males Total Females Males Total Females Males
+   p54: Government Sector Workers by Nationalitiy, Age Group and Sex
+   p54: Total Females Males Total Females Males Total Females Males
+   p54: Private, Family, Communal and Other Sectors Workers by Nationalitiy, Age Group and Sex
+   p54: Total Females Males Total Females Males Total Females Males
+   p55: Workers by Educational Levels,Nationality and Sex
+   p55: Total Females Males Total Females Males Total Females Males
+   p56: Government Sector Workers by Educational Levels,Nationality and Sex
+   p56: Total Females Males Total Females Males Total Females Males
+   p57: Private, Family, Communal and Other Sectors Workers by Educational Levels,Nationality and Sex
+   p57: Total Females Males Total Females Males Total Females Males
+   p58: Workers by Nationality,Sex and Governorate
+   p58: Total Females Males Total Females Males Total Females Males
+   p59: Government Sector Workers by Nationality,Governorate and Sex
+   p59: Total Females Males Total Females Males Total Females Males
+   p60: Private, Family, Communal and Other Sectors Workers by Nationality,Governorate and Sex
+   p60: Total Females Males Total Females Males Total Females Males
+   p61: Omanis Insured in Government and Private sectors Pension Funds By Sex and Basic Wages (R.O)
+   p61: Total Females Males Total Females Males Total Females Males
+   p61: Omani Workers in Government and Private Sectors By Sex and Disability type
+   p61: Total Females Males Total Females Males Total Females Males
+   p62: Private, Family, Communal and Other Sectors Workers by Economic Activity,Nationality and Sex
+   p64: Private, Family, Communal and Other Sectors Workers by Occupational ,Nationality & Sex
+   p65: Private, Family, Communal and Other Sectors Workers by Skill Level, Nationality & Sex
+   p67: Workers in The Government Sector by Nationalities & Sex
+   p67: Private, Family, Communal and Other Sectors Workers by Nationalities and Sex
+   p68: New Recruited by Educational Level , Nationality & Sex
+   p68: Total Females Males Total Females Males Total Females Males
+   p69: New Recruited in Government Sector by Educational Level , Nationality & Sex
+   p69: Total Females Males Total Females Males Total Females Males
+   p70: New Recruited in Private, Family, Communal and Other Sector by Educational Level , Nationality & Sex
+   p70: Total Females Males Total Females Males Total Females Males
+   p71: Number of pensioners registered in the pension fund employees in Government and private sectors by retirement reasons and sex
+   p71: Total Females Males Total Females Males Total Females Males
+   p71: Unemployments rats by Age Group and Sex
+   p71: Total Females Males
+   p71: Unemloyments rats by Educational Levels and Sex
+   p71: Total Females Males
+   p72: Unemployments rate by Governorates and Sex
+   p72: Total Females Males
+   p78: Domestic production quantities of dates and hives by governorate
+   p93: Retail Sales of Petroleum Products in Petrol Stations by Governorate
+   p95: No. of Filling Stations Distributed by Governorate
+   p101: Installed Capacity by Governorate
+   p103: Production , Distribution & Connections of Electric Power by Governorate
+   p104: Production &Net of Electric Power Generated by Governorate
+   p106: Production and Distribution of Water and No.of Connections by Governorate
+   p114: Number of Enterprises and Workers by Governorate
+   p119: Number of Establishments and Workers by Governorate
+   p151: Roads Executed Lengths by Governorates
+   p152: Driving Licences by Governorates
+   p158: Post Services by Governorates
+   p160: Fixed Telephones Lines and fixed Broodband by Governorates
+   p188: Loans Approved by Oman Housing Bank Distributed by Governorate
+   p189: Loans Approved by Oman Development Bank Distrbuted by Governorate
+   p208: No. Of Government & Private Sectors Hospitals & Health Units Distributed by Governorates and Number of Bed
+   p209: Geographical distribution of the Hospitals by governorates and sector
+   p218: No. of pregnants who received first and second Dose by Governorates
+   p219: No.of Outpatient Visits in the government and private sectors by Governorates, Nationality & Sex
+   p225: Schools, Classrooms, Students and Teachers by Governorate
+   p226: 2- The data is not available by Governorate . تاظفاحملا بسح تانايبلا رفوتت لا-2
+   p231: Total Females Males Total Females Males Total Females Males
+   p246: Total Marriage & Divorce Certificate Documents Issued by Notary Public departments by Governorates
+   p246: No. of Beneficiary Cases from Relifaid by Governorates
+   p247: Number of Omani Women 's Associations , Members and Beneficiaries by Governorate
+   p248: The number of persons with disabilities by sex & governorates
+   p249: No. of Omani Passports New and Renewal Issued by Governorate
+   p250: No. of Omani Passports New and Renewal Issued by Governorate, & Month
+   p251: Issued by Governorate & Gender
+   p252: Fire accident statistics by governorate and type
+   p253: Ambulance service statistics by governorate and type of case
+   p254: No. of Traffic Accidents , Injuries and Deaths by Governorates & Type
+   p255: No. of Traffic Accidents, Injuries and Deaths by Governorates and Nationality
+   p263: No. of Castles & Forts Visitors by Governorate
+   p270: Number Of Hotels, by Governorate & Class of Hotel
+   p279: Occupancy Rates, by Governorate
+   151 matching lines
