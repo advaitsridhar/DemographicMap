@@ -24,13 +24,71 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 58.1,
+        "count": 57932
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 30.6,
+        "count": 30501
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 5.2,
+        "count": 5218
+      },
+      {
+        "group": "Baha'i",
+        "pct": 2.0,
+        "count": 1999
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.8,
+        "count": 1827
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 970
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.4,
+        "count": 355
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.3,
+        "count": 250
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 329
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.1,
+        "count": 77
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 130
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 45
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -115,7 +173,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -128,7 +193,9 @@
     "population_note": "The census counts of its islands added up: Banaba, Butaritari, Marakei, Abaiang, Tarawa Ieta, Tarawa Teinainano, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, Tabiteuea North, Tabiteuea South, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 52,993 males, 55,152 females). The islands added up: Banaba, Butaritari, Marakei, Abaiang, North Tarawa, South Tarawa, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, North Tabiteuea, South Tabiteuea, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin.",
     "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'. The islands added up: Banaba, Butaritari, Marakei, Abaiang, North Tarawa, South Tarawa, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, North Tabiteuea, South Tabiteuea, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin."
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'. The islands added up: Banaba, Butaritari, Marakei, Abaiang, North Tarawa, South Tarawa, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, North Tabiteuea, South Tabiteuea, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin.",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 99,633 people of Gilbert Islands at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The islands added up: Banaba, Butaritari, Marakei, Abaiang, NTarawa, STarawa, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, NTabiteuea, STabiteuea, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin. Counted with the table's 'Other': 84 answering 'Te Ran' and 141 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-lineislands",
@@ -155,13 +222,66 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 49.4,
+        "count": 5177
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 37.7,
+        "count": 3953
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 6.1,
+        "count": 636
+      },
+      {
+        "group": "Baha'i",
+        "pct": 3.0,
+        "count": 315
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.3,
+        "count": 237
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 89
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.3,
+        "count": 29
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 23
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 6
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -246,7 +366,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -259,7 +386,9 @@
     "population_note": "The census counts of its islands added up: Teraina, Tabuaeran, Kiritimati.",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 5,891 males, 5,361 females). The islands added up: Teeraina, Tabuaeran, Kiritimati.",
     "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'. The islands added up: Teeraina, Tabuaeran, Kiritimati."
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'. The islands added up: Teeraina, Tabuaeran, Kiritimati.",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 10,483 people of Line Islands at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The islands added up: Teeraina, Tabuaeran, Kiritimati. Counted with the table's 'Other': 2 answering 'Te Ran', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-phoenixislands",
@@ -289,13 +418,26 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 50.0,
+        "count": 10
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 35.0,
+        "count": 7
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 15.0,
+        "count": 3
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -320,7 +462,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -334,7 +483,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 20 males, 21 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Phoenix Islands as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Phoenix Islands as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 20 people of Phoenix Islands at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-banaba",
@@ -362,13 +513,36 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 65.7,
+        "count": 176
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 24.3,
+        "count": 65
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 5.6,
+        "count": 15
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 4.1,
+        "count": 11
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.4,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -403,7 +577,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -416,7 +597,9 @@
     "population_note": "The 2020 census count (Island Profile tables).",
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 183 males, 150 females).",
     "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'."
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 268 people of Banaba at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-butaritari",
@@ -446,13 +629,51 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 82.5,
+        "count": 2660
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 13.2,
+        "count": 426
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.7,
+        "count": 56
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 1.5,
+        "count": 49
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.7,
+        "count": 21
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 7
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -497,7 +718,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -511,7 +739,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,626 males, 1,624 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Butaritari as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Butaritari as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 3,224 people of Butaritari at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-marakei",
@@ -541,13 +771,61 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 76.8,
+        "count": 2151
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 15.6,
+        "count": 436
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 4.3,
+        "count": 119
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.6,
+        "count": 45
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.9,
+        "count": 25
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 9
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -577,7 +855,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -591,7 +876,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,350 males, 1,388 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Marakei as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Marakei as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 2,799 people of Marakei at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-abaiang",
@@ -621,13 +908,66 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 75.3,
+        "count": 4195
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 16.8,
+        "count": 937
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 3.6,
+        "count": 198
+      },
+      {
+        "group": "Baha'i",
+        "pct": 1.9,
+        "count": 105
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.1,
+        "count": 61
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.5,
+        "count": 26
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.4,
+        "count": 20
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.3,
+        "count": 19
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -687,7 +1027,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -701,7 +1048,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 2,972 males, 2,843 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Abaiang as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Abaiang as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 5,568 people of Abaiang at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 4 answering 'Te Ran' and 34 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-tarawaieta",
@@ -731,13 +1080,56 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 71.3,
+        "count": 4729
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 19.8,
+        "count": 1311
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 4.9,
+        "count": 327
+      },
+      {
+        "group": "Baha'i",
+        "pct": 2.2,
+        "count": 149
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.0,
+        "count": 66
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.5,
+        "count": 33
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 10
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -802,7 +1194,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -816,7 +1215,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 3,443 males, 3,575 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tarawa Ieta as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Tarawa Ieta as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 6,629 people of Tarawa Ieta at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-tarawateinainano",
@@ -846,13 +1247,71 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 53.7,
+        "count": 20984
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 30.6,
+        "count": 11944
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 7.7,
+        "count": 2999
+      },
+      {
+        "group": "Baha'i",
+        "pct": 2.2,
+        "count": 878
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.2,
+        "count": 840
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.5,
+        "count": 583
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.6,
+        "count": 244
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 233
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.5,
+        "count": 186
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.2,
+        "count": 65
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 81
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 21
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -937,7 +1396,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -951,7 +1417,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 21,302 males, 23,341 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tarawa Teinainano as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Tarawa Teinainano as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 39,058 people of Tarawa Teinainano at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 42 answering 'Te Ran' and 90 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-betio",
@@ -981,13 +1449,71 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 60.0,
+        "count": 10403
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 30.3,
+        "count": 5258
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 4.2,
+        "count": 728
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.7,
+        "count": 293
+      },
+      {
+        "group": "Baha'i",
+        "pct": 1.5,
+        "count": 266
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 221
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 68
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.2,
+        "count": 34
+      },
+      {
+        "group": "Islam",
+        "pct": 0.2,
+        "count": 31
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.1,
+        "count": 21
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "No religion",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1067,7 +1593,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1081,7 +1614,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 8,979 males, 9,450 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Betio as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Betio as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 17,330 people of Betio at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 22 answering 'Te Ran' and 9 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-maiana",
@@ -1111,13 +1646,46 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 54.0,
+        "count": 1071
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 38.7,
+        "count": 768
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 3.8,
+        "count": 76
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.4,
+        "count": 28
+      },
+      {
+        "group": "Baha'i",
+        "pct": 1.1,
+        "count": 22
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 16
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1157,7 +1725,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1171,7 +1746,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,193 males, 1,152 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Maiana as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Maiana as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,982 people of Maiana at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 7 answering 'Te Ran' and 7 answering 'All Nation', bodies whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-abemama",
@@ -1201,13 +1778,66 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 65.7,
+        "count": 2142
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 19.7,
+        "count": 644
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 7.5,
+        "count": 244
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 3.1,
+        "count": 100
+      },
+      {
+        "group": "Baha'i",
+        "pct": 2.4,
+        "count": 79
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.0,
+        "count": 32
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 9
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.2,
+        "count": 7
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1262,7 +1892,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1276,7 +1913,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,614 males, 1,641 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Abemama as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Abemama as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 3,262 people of Abemama at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-kuria",
@@ -1306,13 +1945,46 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 45.3,
+        "count": 474
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 40.4,
+        "count": 423
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 8.3,
+        "count": 87
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 3.3,
+        "count": 34
+      },
+      {
+        "group": "Baha'i",
+        "pct": 1.8,
+        "count": 19
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.8,
+        "count": 8
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1352,7 +2024,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1366,7 +2045,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 605 males, 585 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Kuria as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Kuria as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,046 people of Kuria at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-aranuka",
@@ -1396,13 +2077,41 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 53.5,
+        "count": 602
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 40.0,
+        "count": 450
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 4.5,
+        "count": 51
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.4,
+        "count": 16
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 5
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1447,7 +2156,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1461,7 +2177,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 624 males, 597 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Aranuka as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Aranuka as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,125 people of Aranuka at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 5 answering 'Te Ran', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-nonouti",
@@ -1491,13 +2209,51 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 55.4,
+        "count": 1520
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 36.9,
+        "count": 1012
+      },
+      {
+        "group": "Baha'i",
+        "pct": 3.1,
+        "count": 84
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 2.4,
+        "count": 65
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.6,
+        "count": 44
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.4,
+        "count": 10
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1542,7 +2298,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1556,7 +2319,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,415 males, 1,334 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Nonouti as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Nonouti as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 2,743 people of Nonouti at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 1 answering 'All Nation', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-tabiteueanorth",
@@ -1586,13 +2351,56 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 65.6,
+        "count": 2596
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 24.9,
+        "count": 985
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 6.0,
+        "count": 239
+      },
+      {
+        "group": "Baha'i",
+        "pct": 2.0,
+        "count": 80
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.9,
+        "count": 36
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 12
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1647,7 +2455,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1661,7 +2476,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 2,081 males, 2,100 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tabiteuea North as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Tabiteuea North as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 3,955 people of Tabiteuea North at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 4 answering 'Te Ran', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-tabiteueasouth",
@@ -1691,13 +2508,41 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 55.6,
+        "count": 726
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 29.2,
+        "count": 381
+      },
+      {
+        "group": "Baha'i",
+        "pct": 12.0,
+        "count": 157
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 3.0,
+        "count": 39
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Foursquare Church",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1732,7 +2577,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1746,7 +2598,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 674 males, 682 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tabiteuea South as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Tabiteuea South as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,306 people of Tabiteuea South at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-beru",
@@ -1776,13 +2630,36 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 65.3,
+        "count": 1339
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 29.4,
+        "count": 602
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 3.3,
+        "count": 67
+      },
+      {
+        "group": "Baha'i",
+        "pct": 1.5,
+        "count": 31
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.6,
+        "count": 12
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1812,7 +2689,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1826,7 +2710,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,117 males, 1,097 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Beru as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Beru as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 2,051 people of Beru at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-nikunau",
@@ -1856,13 +2742,46 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 50.3,
+        "count": 899
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 45.9,
+        "count": 821
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 1.7,
+        "count": 30
+      },
+      {
+        "group": "Baha'i",
+        "pct": 1.6,
+        "count": 28
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3,
+        "count": 5
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.3,
+        "count": 5
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1902,7 +2821,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -1916,7 +2842,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,089 males, 966 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Nikunau as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Nikunau as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,789 people of Nikunau at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-onotoa",
@@ -1946,13 +2874,51 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 67.1,
+        "count": 935
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 27.1,
+        "count": 378
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 2.5,
+        "count": 35
+      },
+      {
+        "group": "Baha'i",
+        "pct": 2.4,
+        "count": 33
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.6,
+        "count": 8
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -1987,7 +2953,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -2001,7 +2974,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 732 males, 685 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Onotoa as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Onotoa as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,393 people of Onotoa at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-tamana",
@@ -2031,13 +3006,36 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 95.8,
+        "count": 1058
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 2.0,
+        "count": 22
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.3,
+        "count": 14
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.5,
+        "count": 6
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.4,
+        "count": 4
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -2072,7 +3070,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -2086,7 +3091,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 514 males, 514 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tamana as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Tamana as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,104 people of Tamana at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-arorae",
@@ -2116,13 +3123,26 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 98.0,
+        "count": 991
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.4,
+        "count": 14
+      },
+      {
+        "group": "Baha'i",
+        "pct": 0.6,
+        "count": 6
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -2152,7 +3172,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -2166,7 +3193,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 512 males, 482 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Arorae as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Arorae as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,011 people of Arorae at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-teraina",
@@ -2196,13 +3225,36 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 51.9,
+        "count": 888
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 41.5,
+        "count": 710
+      },
+      {
+        "group": "Baha'i",
+        "pct": 3.1,
+        "count": 53
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 3.1,
+        "count": 53
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 0.5,
+        "count": 8
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -2242,7 +3294,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -2256,7 +3315,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 994 males, 899 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Teraina as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Teraina as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 1,712 people of Teraina at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-tabuaeran",
@@ -2286,13 +3347,56 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 49.8,
+        "count": 1153
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 39.7,
+        "count": 920
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 4.0,
+        "count": 92
+      },
+      {
+        "group": "Baha'i",
+        "pct": 3.5,
+        "count": 81
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.0,
+        "count": 46
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 6
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.2,
+        "count": 5
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -2337,7 +3441,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -2351,7 +3462,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,060 males, 930 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Tabuaeran as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Tabuaeran as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 2,315 people of Tabuaeran at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-kiritimati",
@@ -2381,13 +3494,61 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 48.6,
+        "count": 3136
+      },
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 36.0,
+        "count": 2323
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 8.3,
+        "count": 536
+      },
+      {
+        "group": "Baha'i",
+        "pct": 2.8,
+        "count": 181
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 2.1,
+        "count": 138
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.3,
+        "count": 81
+      },
+      {
+        "group": "Church of God",
+        "pct": 0.4,
+        "count": 25
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.3,
+        "count": 18
+      },
+      {
+        "group": "Assemblies of God",
+        "pct": 0.1,
+        "count": 9
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1,
+        "count": 9
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -2472,7 +3633,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -2486,7 +3654,9 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 3,837 males, 3,532 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Kiritimati as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Kiritimati as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 6,456 people of Kiritimati at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). Counted with the table's 'Other': 2 answering 'Te Ran', a body whose tradition the volume does not state. The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   },
   {
     "id": "KIR-CENSUS-kanton",
@@ -2516,13 +3686,26 @@
       "year": 2020,
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2020 census asked religion, and the Statistics Office publishes it for the country (General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), which prints no figures."
-    },
+    "religion": [
+      {
+        "group": "Kiribati Protestant Church",
+        "pct": 50.0,
+        "count": 10
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 35.0,
+        "count": 7
+      },
+      {
+        "group": "Church of Jesus Christ of Latter-day Saints",
+        "pct": 15.0,
+        "count": 3
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
+      "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
     "ethnicity": [
       {
@@ -2547,7 +3730,14 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/language (why empty)",
+        "field": "religion",
+        "name": "Kiribati National Statistics Office, 2015 Population and Housing Census, Volume 1: Management Report and Basic Tables (September 2016), Table 6: Population by island, sex and religion",
+        "url": "https://nso.gov.ki/download/91/2015-census/1054/population-census-2015-report-volume-1-final.pdf",
+        "year": 2015,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "language (why empty)",
         "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
         "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
@@ -2561,6 +3751,8 @@
     "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 20 males, 21 females).",
     "ethnicity_year": 2020,
     "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "median_age_note": "Median age of the people of Kanton as the 2020 census's General Report prints it (Table A-10a)."
+    "median_age_note": "Median age of the people of Kanton as the 2020 census's General Report prints it (Table A-10a).",
+    "religion_year": 2015,
+    "religion_note": "Religion of the 20 people of Kanton at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
   }
 ]
