@@ -242,8 +242,10 @@ def key(name: str) -> str:
 
 
 # One district under two spellings in the same book (Osh Region's age table
-# prints "Кара-Сууйский", its table 3.2 "Кара-Сууский").
+# prints "Кара-Сууйский", its table 3.2 "Кара-Сууский"), or under the
+# Kyrgyz form of its name (Naryn's book prints "Ат-Башынский" throughout).
 SPELLINGS = {"кара-сууйский район": "кара-сууский район",
+             "ат-башынский район": "ат-башинский район",
              "джети-огузский район": "жети-огузский район",
              "ысык-кульский район": "иссык-кульский район"}
 
@@ -552,8 +554,15 @@ def age_label(line: str) -> tuple[str, list[str]]:
 # as 3,090, 1.015 times 3,045 and 0.62 times 4,970. The block's own "0-14"
 # and "18 and over" rows then give 16-17 as 1,827 and 18-19 as 1,218, where
 # 4,970 would need 3,143 people aged 18-19 beside 962 aged 15.
+#
+# Issyk-Kul's Jeti-Oguz: 16-19 printed as 10,888 (5,606 and 5,282), the rows
+# then making 102,953 against 99,055. The residual is 6,990 (3,599 and
+# 3,391), and table 3.3 (page 60), whose Jeti-Oguz column has the same
+# 99,055 and the same figure as table 2.8 in every other group, prints 16-19
+# as exactly 6,990.
 MISPRINTED_GROUPS: dict[tuple[str, str], tuple[int, int, int]] = {
     ("г.балыкчы", "16-19"): (4970, 2523, 2447),
+    ("жети-огузский район", "16-19"): (10888, 5606, 5282),
 }
 
 
