@@ -1,30 +1,5 @@
-pakistan_census_tables: Census 2023 Tables 4 and 10
-  Punjab
-    Table 10: 3,494,163 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_punjab_districts.pdf
-    Table 4: 4,168,650 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_punjab_districts.pdf
-    36 districts; single years, five-year groups and nationalities all reconcile
-  Punjab: 34 bound by shape id; 0 row(s) and 0 unit(s) left over
-  Khyber Pakhtunkhwa
-    Table 10: 3,369,335 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_kp_districts.pdf
-    Table 4: 19,810,553 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_kp_districts.pdf
-    35 districts; single years, five-year groups and nationalities all reconcile
-  Khyber Pakhtunkhwa: 31 bound by shape id; 0 row(s) and 0 unit(s) left over
-  Sindh
-    Table 10: 2,908,157 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_sindh_districts.pdf
-    Table 4: 18,673,574 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_sindh_districts.pdf
-    30 districts; single years, five-year groups and nationalities all reconcile
-  Sindh: 22 bound by shape id; 0 row(s) and 0 unit(s) left over
-  Balochistan
-    Table 10: 3,274,329 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_balochistan_districts.pdf
-    Table 4: 20,942,975 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_balochistan_districts.pdf
-    34 districts; single years, five-year groups and nationalities all reconcile
-  Balochistan: 27 bound by shape id; 0 row(s) and 0 unit(s) left over
-  Islamabad Capital Territory
-    Table 10: 114,082 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_10_islamabad.pdf
-    Table 4: 124,934 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_4_islamabad.pdf
-    1 districts; single years, five-year groups and nationalities all reconcile
-  Islamabad Capital Territory: 1 bound by shape id; 0 row(s) and 0 unit(s) left over
-  the four provinces and Islamabad: 240,458,089 people, median age 19.7; districts from Kohistan 11.9, Zhob 12.2, Dera Bugti 12.4 to Attock 24.6, Chakwal 25.3, Jhelum 25.7
-  wrote data/processed/pakistan_age.json (235 kB)
-  wrote data/processed/pakistan_nationality.json (267 kB)
-  120 age records, 120 nationality records
+hongkong_census: Census and Statistics Department, Hong Kong SAR, 2021 Population Census: Main Results (December 2022)
+  1,005,709 bytes
+  ethnicity: 13 groups over 7,413,070 people; language: 11 over 7,179,127 aged 5 and over
+  wrote data/processed/hongkong_census.json (11 kB)
+  wrote 2 record to hongkong_census.json
