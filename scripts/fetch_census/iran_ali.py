@@ -772,9 +772,15 @@ def fieldwork_clause(unit: Unit, module_year: int) -> str:
 def method_note(unit: Unit, label: str, entry: dict[str, Any], total: int,
                 basis: str, coverage: float) -> str:
     """What the panel prints. It has to say that nothing was counted here."""
-    where = {"own": f"the atlas's own total for {label}",
-             "places": f"the settlements and towns the atlas lists in {label}",
-             "shape": "the population this map holds for the shape"}[basis]
+    # The map's own population is a number of people, not something that
+    # "accounts for" one: Isfahan city read "89.5% of the 1,961,260 that the
+    # population this map holds for the shape accounts for".
+    of_total = {
+        "own": f"the {total:,} that the atlas's own total for {label} accounts for",
+        "places": f"the {total:,} that the settlements and towns the atlas lists in "
+                  f"{label} account for",
+        "shape": f"the {total:,} people this map gives the unit",
+    }[basis]
     weights = ("the 2016 census population where the atlas prints one and the "
                "2011 census population otherwise"
                if unit.years == {2011, 2016} else
@@ -788,8 +794,7 @@ def method_note(unit: Unit, label: str, entry: dict[str, Any], total: int,
         f"{'settlement or town' if places == 1 else 'settlements and towns'} "
         f"inside it, {'weighted' if places == 1 else 'each weighted'} by {weights}. "
         f"{'It holds' if places == 1 else 'Those weighted places hold'} "
-        f"{unit.population:,} people, {coverage * 100:.1f}% of the "
-        f"{total:,} that {where} accounts for.",
+        f"{unit.population:,} people, {coverage * 100:.1f}% of {of_total}.",
     ]
     if coverage > 1.0 + SUM_TOLERANCE / 100.0:
         text.append(

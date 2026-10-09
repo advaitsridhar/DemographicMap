@@ -593,6 +593,28 @@ class TheCarvedParts(unittest.TestCase):
             self.assertTrue(shares(name), name)
 
 
+class TheCoverageSentence(unittest.TestCase):
+    """What the weighted places hold, against which total, in plain words."""
+
+    def note(self, basis):
+        unit = m.Unit("Isfahan")
+        unit.population, unit.rows, unit.years = 1_755_000, 12, {2016}
+        entry = {"authors": "Anonby et al.", "year": "2019"}
+        return m.method_note(unit, "Isfahan", entry, 1_961_260, basis, 1_755_000 / 1_961_260)
+
+    def test_the_map_s_own_population_is_a_number_of_people(self):
+        note = self.note("shape")
+        self.assertIn("1,755,000 people, 89.5% of the 1,961,260 people this map gives "
+                      "the unit.", note)
+        self.assertNotIn("accounts for", note)
+
+    def test_the_atlas_s_own_totals_read_as_before(self):
+        self.assertIn("89.5% of the 1,961,260 that the atlas's own total for Isfahan "
+                      "accounts for.", self.note("own"))
+        self.assertIn("89.5% of the 1,961,260 that the settlements and towns the atlas "
+                      "lists in Isfahan account for.", self.note("places"))
+
+
 class StatedReasons(unittest.TestCase):
     """The committed gaps say what is true of each shape."""
 
