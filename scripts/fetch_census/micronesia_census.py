@@ -247,6 +247,9 @@ def age_sex(rows: list[list[Any]], units: tuple[str, ...]) -> dict[str, dict[str
     out: dict[str, dict[str, Any]] = {}
     for first, last in ranges(rows, r"Table B0?1\."):
         sex = "both"
+        # Chuuk's 2010 table adds a "75+" row under each median, the sum of
+        # the three groups above it: groups are read only before the median.
+        closed = False
         for n, label, values in flat:
             if not first <= n <= last:
                 continue
@@ -266,7 +269,8 @@ def age_sex(rows: list[list[Any]], units: tuple[str, ...]) -> dict[str, dict[str
             elif key.startswith("median"):
                 for unit, v in values.items():
                     out.setdefault(unit, {}).setdefault(f"median_{sex}", v)
-            elif sex == "both" and (group := age_group(label)):
+                closed = closed or sex == "both"
+            elif sex == "both" and not closed and (group := age_group(label)):
                 for unit, v in values.items():
                     out.setdefault(unit, {}).setdefault("groups", []).append(
                         (group[0], group[1], v))

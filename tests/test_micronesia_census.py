@@ -63,6 +63,7 @@ class Layouts(unittest.TestCase):
                 ["Total", 3000, 2000, 900, 1100, "Total", 1000, 600, 400],
                 ["Less than 5 years", 300, 200, 90, 110, "Less than 5 years", 100, 60, 40],
                 ["Median", 25, 26.5, 26.3, 27.6, "Median", 22.3, 22.1, 21.1],
+                ["75+", 30, 20, 9, 11, "75+", 10, 6, 4],
                 ["   Male", 1500, 1000, 450, 550, "   Male", 500, 300, 200],
                 ["Median", 24, 25, 25.6, 28.3, "Median", 19.2, 18.8, 19.6],
                 ["   Female", 1500, 1000, 450, 550, "   Female", 500, 300, 200],
@@ -71,6 +72,8 @@ class Layouts(unittest.TestCase):
         self.assertEqual((got["Woleai"]["total"], got["Woleai"]["male"]), (600, 300))
         self.assertEqual(got["Ulithi"]["median_both"], 21.1)
         self.assertEqual(got["Rull"]["median_male"], 28.3)
+        # Chuuk's "75+" row under the median repeats groups already read.
+        self.assertEqual(got["Gagil"]["groups"], [(0, 4, 90)])
 
     def test_a_municipality_nobody_listed_breaks_the_state_sum(self):
         got = {name: {"total": 10} for name in fm.MUNICIPALITIES["Kosrae"]}
