@@ -1,285 +1,300 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
 
-== GET https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220
-  200 text/html; charset=utf-8 157103 https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220
-    'বাংলাদেশ জাতীয় তথ্য বাতায়ন' -> http://bangladesh.gov.bd
-    '' -> https://bbs.gov.bd/
-    'বিবিএস সম্পর্কে' -> https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220
-    'সাবেক মহাপরিচালকগণ' -> https://bbs.gov.bd/pages/static-pages/6922dc61933eb65569e10062
-    'ভিশন ও মিশন' -> https://bbs.gov.bd/pages/static-pages/6922e13c933eb65569e2b089
-    'সিটিজেন চার্টার' -> https://bbs.gov.bd/pages/static-pages/6922db5c933eb65569e09a5b
-    'প্রশিক্ষণ ল্যাব' -> https://bbs.gov.bd/pages/static-pages/6922dcc3933eb65569e11e91
-    'উপাত্ত প্রকাশ নীতিমালা, ২০২৬' -> https://bbs.gov.bd/pages/static-pages/6922e124933eb65569e2a7b3
-    'প্রকাশনা বিক্রয়' -> https://bbs.gov.bd/pages/static-pages/6922dc34933eb65569e0ef9f
-    'সাংগঠনিক কাঠামো' -> https://bbs.gov.bd/pages/static-pages/6922dc0a933eb65569e0e191
-    'এগ্রিকালচার উইং' -> https://bbs.gov.bd/pages/static-pages/6922dd5f933eb65569e14c92
-    'সেন্সাস উইং' -> https://bbs.gov.bd/pages/static-pages/6922dffb933eb65569e24ec5
-    'কম্পিউটার উইং' -> https://bbs.gov.bd/pages/static-pages/6922dfdf933eb65569e246bb
-    'ডেমোগ্রাফী এন্ড হেলথ উইং' -> https://bbs.gov.bd/pages/static-pages/6922de2d933eb65569e18c93
-    'ন্যাশনাল একাউন্টিং উইং' -> https://bbs.gov.bd/pages/static-pages/6922e040933eb65569e2632f
-    'ইন্ডাস্ট্রি এন্ড লেবার উইং' -> https://bbs.gov.bd/pages/static-pages/6922ddeb933eb65569e17160
-    'ফিন্যান্স, এ্যাডমিনিস্ট্রেশন এন্ড এমআইএস' -> https://bbs.gov.bd/pages/static-pages/6922dfc3933eb65569e23dbc
-    'স্ট্যাটিসটিক্যাল স্টাফ ট্রেনিং ইনস্টিটিউট' -> https://bbs.gov.bd/pages/static-pages/6922e0be933eb65569e286b2
-    'সর্বশেষ প্রকাশনা' -> https://bbs.gov.bd/pages/static-pages/6922e07a933eb65569e27407
-    'কি ফাইন্ডিং' -> https://bbs.gov.bd/pages/static-pages/6922dd56933eb65569e1491b
-    'জনশুমারি ও গৃহগণনা (২০২২ ও ২০১১)' -> https://bbs.gov.bd/pages/static-pages/6922dc2a933eb65569e0ebd5
-    'অর্থনৈতিক শুমারি (২০২৪ ও ২০১৩)' -> https://bbs.gov.bd/pages/static-pages/695b97c8c4774958d7b702b7
-    'কৃষি' -> https://bbs.gov.bd/pages/static-pages/6922e0f6933eb65569e29564
-    'কৃষি শুমারি ২০১৯' -> https://bbs.gov.bd/pages/static-pages/6922dc81933eb65569e10b9e
-    'ডেমোগ্রাফী এন্ড হেলথ' -> https://bbs.gov.bd/pages/static-pages/6922e096933eb65569e27b7b
-    'পরিবেশ, প্রাকৃতিক সম্পদ, জলবায়ু ও দুর্যোগ পরিসংখ্যান (ইসিডিএস)' -> https://bbs.gov.bd/pages/static-pages/6922dcc8933eb65569e12081
-    'বৈদেশিক বাণিজ্য পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922e14e933eb65569e2b6c9
-    'ন্যাশনাল একাউন্টস পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922deda933eb65569e1dd83
-    'জিডিপি' -> https://bbs.gov.bd/pages/static-pages/6922df6e933eb65569e21f3f
-    'আইসিটি পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922e012933eb65569e25543
-    'জিও-কোড' -> https://bbs.gov.bd/pages/static-pages/6922ded1933eb65569e1d95d
-    'আয়, ব্যয় ও দারিদ্র্য' -> https://bbs.gov.bd/pages/static-pages/6922dc57933eb65569e0fd4c
-    'ইন্ডাস্ট্রিয়াল স্ট্যাটিসটিকস' -> https://bbs.gov.bd/pages/static-pages/6922de09933eb65569e17bb3
-    'লেবার এন্ড ইমপ্লয়মেন্ট' -> https://bbs.gov.bd/pages/static-pages/6922ddd1933eb65569e166e7
-    'মূল্য এবং মজুরী (সিপিআই, কিউআইআইপি)' -> https://bbs.gov.bd/pages/static-pages/6922de7a933eb65569e1ae8f
-    'শিক্ষা ও স্বাক্ষরতা' -> https://bbs.gov.bd/pages/static-pages/6922ddc4933eb65569e16288
-    'বস্তি শুমারি ২০১৪' -> https://bbs.gov.bd/pages/static-pages/6922df13933eb65569e1faf0
-    'ভাইটাল স্ট্যাটিসটিকস' -> https://bbs.gov.bd/pages/static-pages/6922db9a933eb65569e0b356
-    'মহিলা এবং শিশু' -> https://bbs.gov.bd/pages/static-pages/6922e143933eb65569e2b2ee
-    'অন্যান্য প্রকাশনা' -> https://bbs.gov.bd/pages/static-pages/6922e064933eb65569e26d37
-    'জেলা পরিসংখ্যান ২০১১' -> https://bbs.gov.bd/pages/static-pages/6922de73933eb65569e1ab86
-    'স্মল এরিয়া এটলাস বাংলাদেশ' -> https://bbs.gov.bd/pages/static-pages/6922e05a933eb65569e26a69
-    'ডিজাস্টার প্রন এরিয়া এটলাস বাংলাদেশ' -> https://bbs.gov.bd/pages/static-pages/6922e02b933eb65569e25d04
-    'পরিসংখ্যান বুলেটিন' -> https://bbs.gov.bd/pages/static-pages/6922dc4b933eb65569e0f8eb
-    'পরিসংখ্যান পকেটবুক' -> https://bbs.gov.bd/pages/static-pages/6922de53933eb65569e19e10
-    'পরিসংখ্যান বর্ষগ্রন্হ' -> https://bbs.gov.bd/pages/static-pages/6922de79933eb65569e1ae07
-    'বাংলাদেশ পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922dd65933eb65569e14e10
-    'কৃষি পরিসংখ্যান বর্ষগ্রন্থ' -> https://bbs.gov.bd/pages/static-pages/6922e0d6933eb65569e28cbf
-    'বার্ষিক প্রতিবেদন' -> https://bbs.gov.bd/pages/static-pages/6922dbeb933eb65569e0d6a0
-    'বাংলাদেশ কিছু মৌলিক পরিসংখ্যান' -> https://bbs.gov.bd/pages/static-pages/6922dea7933eb65569e1c5d6
-    'বিডি ওয়েব জিআইএস ইন ইসিডিএস প্লাটফর্ম' -> https://ecds.bbs.gov.bd/
-    'বিজিআইএসপি প্লাটফর্ম' -> http://gis.gov.bd/bn/
-    '৯ম ও তদুর্ধ্ব গ্রেডের কর্মকর্তাগণ (উইং ভিত্তিক)' -> https://bbs.gov.bd/pages/officers?filters=%7B%22officer_category%22%3A%226922d2ad81fc96cef9e99d57%22%7D
-    '১০ম গ্রেড থেকে ২০তম গ্রেডের কর্মকর্তা ও কর্মচারীবৃন্দ (উইং ভিত্তিক)' -> https://bbs.gov.bd/pages/static-pages/6922e11b933eb65569e2a3c7
-    'তথ্য প্রদানকারী কর্মকর্তা' -> https://bbs.gov.bd/pages/info-officers
-    'সেবা প্রদান প্রতিশ্রুতি ফোকাল পয়েন্ট কর্মকর্তা' -> https://bbs.gov.bd/pages/static-pages/citizen-charter-comittees-802f9d-6922dd26933eb65569e13b22
-    'ফোকাল পয়েন্ট কর্মকর্তা' -> https://bbs.gov.bd/pages/static-pages/focal-point-officer-vkkol3-6abcb1a184370efb87a94cc0
-    'অধীনস্ত অফিস' -> https://bbs.gov.bd/pages/static-pages/6922dc7d933eb65569e10a48
-    'বরিশাল বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922dcd8933eb65569e125cd
-    'চট্টগ্রাম বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922dd8e933eb65569e15717
-    'ঢাকা বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922e01d933eb65569e258b2
-    'ময়মনসিংহ বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922e09c933eb65569e27d00
-    'খুলনা বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922e096933eb65569e27b72
-    'রাজশাহী বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922ddc3933eb65569e16269
-    'রংপুর বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922e0d9933eb65569e28db2
-    'সিলেট বিভাগ' -> https://bbs.gov.bd/pages/static-pages/6922ddd4933eb65569e16864
-    'সেবা প্রদান প্রতিশ্রুতি' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2026/8/fd328362-043f-46b3-bad1-6d93add13af4.pdf
-    'সাম্প্রতিক ফটো গ্যালারি' -> https://bbs.gov.bd/pages/photo-galleries
-    'জুলাই পুনর্জাগরণ অনুষ্ঠানমালা' -> https://julyforever.gov.bd/
-    'টিভিসি/ভিডিও/ডকুমেন্টরি' -> https://bbs.gov.bd/pages/static-pages/6922dec3933eb65569e1d311
-    'ছবি' -> https://bbs.gov.bd/pages/static-pages/6922dc6d933eb65569e1051b
-    'এসডিজি ট্র্যাকার' -> http://www.sdg.gov.bd
-    'Population and Housing Census 2022 (Metadata Documentation)' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/d7eb3666cd3647709353b86b9367d31a.pdf
-    'Integrated Multi-purpose Sample (IMPS)' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/e6059c6c07954f4582cc0306a9008e07.pdf
-    'Population and Housing Census 2022 : Administrative Report' -> https://bbs.gov.bd/pages/files/6a7806608d331346e9c8aaf6
-    'Population and Housing Census 2022 : Union Statistics' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/f376ca7e7ee5405f8311de650415b9d8.pdf
-    'Population and Housing Census 2022 : Urban Area Report' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fe6eeb0c1f364676877a4a7ef77989cc.pdf
-    'জনশুমারি ও গৃহগণনা ২০২২ : ইনফোগ্রাফ' -> https://bbs.gov.bd/pages/static-pages/6922df4a933eb65569e2112c
-    'আর্থসামাজিক ও জনমিতিক জরিপ ২০২৩ রিপোর্ট' -> https://bbs.gov.bd/pages/files/6a780965569bb2eb61760799
-    'জনশুমারি ও গৃহগণনা ২০২২: ন্যাশনাল রিপোর্ট (ভলিউম ১)' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/ad6c94d02722448f92690a27c4313ec9.pdf
-    'Preliminary Report on Population and Housing Census 2022' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b6b5775aea184ef2b5c388717faeb012.pdf
-    'Report on Post Enumeration Check of the Population and Housing Census,' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/e7fe490a5b0e45638e4d3695f6cbd3ed.pdf
-    'Preliminary Report on Population and Housing Census 2022' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/97149c7ae55a4cd9a6c4f7bb995a737e.pdf
-    'BARISHAL' -> https://bbs.gov.bd/pages/files/6a05587baf5b16b9ec3f9b5a
-    'BHOLA' -> https://bbs.gov.bd/pages/files/6a0559c7298ade29f2257d06
-    'PIROJPUR' -> https://bbs.gov.bd/pages/files/6a055ae64cb0a0494f038909
-    'PATUAKHALI' -> https://bbs.gov.bd/pages/files/6a055cec146993cdf84ea85f
-    'BARGUNA' -> https://bbs.gov.bd/pages/files/6a0941ce4cb0a0494f040643
-    'JHALOKATHI' -> https://bbs.gov.bd/pages/files/6a0942355d40ccedfd8db049
-    'CHATTOGRAM' -> https://bbs.gov.bd/pages/files/6a0943d3af5b16b9ec401c3f
-    'COX’S BAZAR' -> https://bbs.gov.bd/pages/files/6a09443eaf5b16b9ec401cb0
-    'BANDARBAN' -> https://bbs.gov.bd/pages/files/6a09449887a6fde6b39ef2fd
-    'RANGAMATI' -> https://bbs.gov.bd/pages/files/6a0944fff570c41f02eb325b
-    'NOAKHALI' -> https://bbs.gov.bd/pages/files/6a094570c8bc218c41d12a2f
-    'FENI' -> https://bbs.gov.bd/pages/files/6a0945b8522ce4e07c174594
-    'CUMILLA' -> https://bbs.gov.bd/pages/files/6a0946179f0c5ba58e700fb6
-    'CHANDPUR' -> https://bbs.gov.bd/pages/files/6a0946672a941ac3be71ef31
-    'BRAHMMANBARIA' -> https://bbs.gov.bd/pages/files/6a0947601f32bf22d5f1d45a
-    'KHAGRACHHARI' -> https://bbs.gov.bd/pages/files/6a0947daf570c41f02eb3569
-    'LAKSHMIPUR' -> https://bbs.gov.bd/pages/files/6a0948425d40ccedfd8db671
-    'DHAKA' -> https://bbs.gov.bd/pages/files/6a094a2c163c98157b027920
-    'NARAYANGANJ' -> https://bbs.gov.bd/pages/files/6a095985af5b16b9ec403554
-    'GAZIPUR' -> https://bbs.gov.bd/pages/files/6a095acf298ade29f226171e
-    'MANIKGANJ' -> https://bbs.gov.bd/pages/files/6a095b48af5b16b9ec40387e
-    'NARSINGDI' -> https://bbs.gov.bd/pages/files/6a095e79fa5a21e711e518f6
-    'FARIDPUR' -> https://bbs.gov.bd/pages/files/6a095eff87a6fde6b39f13bc
-    'GOPALGANJ' -> https://bbs.gov.bd/pages/files/6a095f5c2a941ac3be720dac
-    'RAJBARI' -> https://bbs.gov.bd/pages/files/6a095fb42a941ac3be720e27
-    'SHARIATPUR' -> https://bbs.gov.bd/pages/files/6a0960098bde06af570c4d63
-    'KISHOREGANJ' -> https://bbs.gov.bd/pages/files/6a096091f570c41f02eb5460
-    'MUNSHIGANJ' -> https://bbs.gov.bd/pages/files/6a0961255d40ccedfd8dd6d8
-    'MADARIPUR' -> https://bbs.gov.bd/pages/files/6a09617d2a941ac3be721047
-    'TANGAIL' -> https://bbs.gov.bd/pages/files/6a0961eb4cb0a0494f042ca0
-    'MYMENSINGH' -> https://bbs.gov.bd/pages/files/6a09630afa5a21e711e51e96
-    'JAMALPUR' -> https://bbs.gov.bd/pages/files/6a09637cad0e9a31cc257d15
-    'SHERPUR' -> https://bbs.gov.bd/pages/files/6a0963df7aa29b4dab9729b3
-    'NETRAKONA' -> https://bbs.gov.bd/pages/files/6a0965477aa29b4dab972b72
-    'KHULNA' -> https://bbs.gov.bd/pages/files/6a09669d1f32bf22d5f1fb51
-    'BAGERHAT' -> https://bbs.gov.bd/pages/files/6a09676b163c98157b029e06
-    'SATKHIRA' -> https://bbs.gov.bd/pages/files/6a097a98f284771b36b111ce
-    'JHENAIDAH' -> https://bbs.gov.bd/pages/files/6a097c2c5d40ccedfd8df281
-    'CHUADANGA' -> https://bbs.gov.bd/pages/files/6a097cf687a6fde6b39f3169
-    'MAGURA' -> https://bbs.gov.bd/pages/files/6a097d4ec8bc218c41d16a73
-    'KUSHTIA' -> https://bbs.gov.bd/pages/files/6a097da99da92ab7e499655a
-    'MEHERPUR' -> https://bbs.gov.bd/pages/files/6a097e02298ade29f2264757
-    'JASHORE' -> https://bbs.gov.bd/pages/files/6a097e485d40ccedfd8df436
-    'NARAIL' -> https://bbs.gov.bd/pages/files/6a097e927aa29b4dab974286
-    'RAJSHAHI' -> https://bbs.gov.bd/pages/files/6a097f27af5b16b9ec4060f9
-    'NATORE' -> https://bbs.gov.bd/pages/files/6a097f68f570c41f02eb7470
-    'NAOGAON' -> https://bbs.gov.bd/pages/files/6a7050df33abb83ff10d065a
-    'PABNA' -> https://bbs.gov.bd/pages/files/6a097fb604d89a37d7fa434f
-    'SIRAJGANJ' -> https://bbs.gov.bd/pages/files/6a097ffbfa5a21e711e53b6b
-    'BOGURA' -> https://bbs.gov.bd/pages/files/6a0980679da92ab7e499678b
-    'CHAPAI NAWABGANJ' -> https://bbs.gov.bd/pages/files/6a0980c1ad0e9a31cc2598ae
-    'JOYPURHAT' -> https://bbs.gov.bd/pages/files/6a098145af5b16b9ec40632d
-    'RANGPUR' -> https://bbs.gov.bd/pages/files/6a09836d2a941ac3be723352
-    'GAIBANDHA' -> https://bbs.gov.bd/pages/files/6a0983bef284771b36b11a7a
-    'NILPHAMARI' -> https://bbs.gov.bd/pages/files/6a098438298ade29f2264e0e
-    'KURIGRAM' -> https://bbs.gov.bd/pages/files/6a098490f284771b36b11b1f
-    'DINAJPUR' -> https://bbs.gov.bd/pages/files/6a0984e7146993cdf84f6b4b
-    'THAKURGAON' -> https://bbs.gov.bd/pages/files/6a09858b146993cdf84f6bf7
-    'LALMONIRHAT' -> https://bbs.gov.bd/pages/files/6a0985de163c98157b02bc73
-    'PANCHAGARH' -> https://bbs.gov.bd/pages/files/6a09864504d89a37d7fa4a4a
-    'SYLHET' -> https://bbs.gov.bd/pages/files/6a0986a0fa5a21e711e542dd
-    'HABIGANJ' -> https://bbs.gov.bd/pages/files/6a09870caf5b16b9ec406952
-    'MAULVIBAZAR' -> https://bbs.gov.bd/pages/files/6a09878faf5b16b9ec4069db
-    'SUNAMGANJ' -> https://bbs.gov.bd/pages/files/6a09880e146993cdf84f6ea7
-    'PDF' -> https://bbs.gov.bd/pages/files/6a043b71298ade29f2253e13
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/c56515ca45314f6586d9d7ffae0e89a7.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0430ca9f0c5ba58e6f45da
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/45edbfa4a084468ca52ebc3895b77e8f.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0432fdf570c41f02ea6c43
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/e157dd0ff3ae4cfcb0f8804fec4c3011.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a04380b1f32bf22d5f10d88
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/9b566687c68045ba9dc4a5baf078494b.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a04397b9f0c5ba58e6f4d1d
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/373ae6014cce4bab852b96c2cddaa21e.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a043a684cb0a0494f034a1c
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/187d1669b3fe47ca8e0a07e9bada1252.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a043c3c163c98157b01b442
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/80e929a76aa14282826502ff159a8aa5.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a043d4e5d40ccedfd8cf045
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/30dc3493153848f2b825adaeec3fe941.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a043e25ad0e9a31cc2488da
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/7851f407961e43399592b1b6df4534f7.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a043f4b7aa29b4dab964057
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0aff8184552d4476b07064b259684f67.xlsx
-    'NOAKHALI' -> http://203.112.218.101/storage/files/1/Publications/PHC_2021%20Community%20Report/CHATTOGRAM%20DIVISION/Community%20Report%20Noakhali.pdf
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0440154cb0a0494f034ff2
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/f2357c3b52ee4ba284f7750301b6ecef.xlsx
-    'FENI' -> http://203.112.218.101/storage/files/1/Publications/PHC_2021%20Community%20Report/CHATTOGRAM%20DIVISION/Community%20Report%20Feni.pdf
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0440ab5d40ccedfd8cf3c1
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/2b9c505de31e463582957bc16a96ed2f.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a04412f1f32bf22d5f115d2
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/4c96db4232fe4ea9b2065c48c992a84d.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0441b0ad0e9a31cc248cb1
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/18332832c988417c97370153dc7c5714.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a04438ead0e9a31cc248ede
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/a5a9606aa66a48acb6a4eb93d51fab3c.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a04445aad0e9a31cc248fdb
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/c76f262b21804911867771950482c1a8.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a044509af5b16b9ec3f5fd0
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/7557ac06285f4bf28273e40f491200cc.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0445c49f0c5ba58e6f5a8f
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b15f7a7f63ff451e86ce7fd7cca9493d.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0446a2163c98157b01c065
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/ecfcd0ae1c0e4702af5d693c64d515d3.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0447309f0c5ba58e6f5bdc
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fa819560a3a243e08b6e715f2572141f.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0566ae522ce4e07c16d0d9
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/70930e5767e9432b9076e49c4673d10c.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a05684187a6fde6b39e7cbc
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/154c006ad6394203a8f07452f3da6b48.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0568fc522ce4e07c16d3f3
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b5f5926fea1c462eb5618fdefc2e8142.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0569f3f284771b36b063af
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/3ae267c260a447ebb1e7ff20b248b9f4.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a056b2dfa5a21e711e48b6b
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/2dd354800b8642bd9d2318d6a39095fc.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a056c334cb0a0494f039dec
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/27c3b4972ef746e5a20200951efca45d.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a056d44146993cdf84ebadd
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/7366f40e63e74ced8e4b231df246e068.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a056fd99f0c5ba58e6fa4d0
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/91d725ef924d4b4f9da8bbef02c3edc7.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a6f0d5033abb83ff10c9961
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/f412eb1018b8493a99dec89cdd9e4df7.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0572795d40ccedfd8d5007
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/257941ad3e0449a29c02925138ffcef7.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a057320522ce4e07c16dfad
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/154cbde8cea641cdb85ab83f610b840c.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0573fc4cb0a0494f03a615
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/89e86f23804e4e119149f252b777c2d6.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0574d4ad0e9a31cc24e8e4
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/54153bc4a5094bc495c732fb9d62369e.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0575e2146993cdf84ec306
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/6e5bb9426ce24d8e99867fe62881edc8.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0576b3298ade29f2259c15
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/63c65a7594254c5fb5dbede282f0e67b.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a057865f570c41f02ead27f
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/9d14b0b0151e46b5b1c5c8e8cd3fce77.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0578f64cb0a0494f03ab1f
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/4c8712e0f2d145dbabdbfbe95f28088e.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0579bff284771b36b074c5
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/3f288c3f560f49e5afac32bc0bf5b3df.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a057a6a1f32bf22d5f1747b
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/08bcfffe4e294e1d87066183002df3b2.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a057aeefa5a21e711e49b88
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fde4acaa8d0149c68cb30511f461962f.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a057dcb2a941ac3be7185e0
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2026/3/bd633dab-40c1-4371-87ea-c43c657040d0.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0589735d40ccedfd8d5fc0
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/ff9cd564464a4df69854146475141764.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a058e2387a6fde6b39e9cbb
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fdc7f79d9d064cf6896ad921503496b0.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a058eae1f32bf22d5f1805c
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fd9eddc198e34c10a62fddd1cb9d6be8.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a058f32c8bc218c41d0cd1e
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/3c3b94e632604786bfc0b4a3a4872208.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0590267aa29b4dab96b06f
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/e0349f833a4a45baafa46d1bb562b908.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0590c7163c98157b02246b
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/34e059e2210243cbbbbdd3142b882ba1.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a05927ffa5a21e711e4aaa7
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0b82f91e54084e6ab16100f6bf808c19.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0592ff87a6fde6b39ea125
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b351a354bf3949dab5b3d936c55c60ce.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0593e6146993cdf84ed85f
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b63c65a7d6c24ee3b854881f0a8d506d.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0594fcad0e9a31cc25005c
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/9fd9b896e2da4e1b9fc7d163490ba81d.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0596732a941ac3be7198bd
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/98d23819d1764f3da7dc257e1f498a34.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0599209f0c5ba58e6fc525
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0b4cdcd23f0c4291808e8724b113ac67.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0599a8522ce4e07c16fe7b
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/8515389ccebf4b1ea5c91659426447ad.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a059a1bad0e9a31cc25050d
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/7fbb45d9940d4cfa9b4a4d9b8bfd34ab.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a059a99163c98157b022db4
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/ec98c2ca2a5a4af28d3e2e2236880a44.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a059af8298ade29f225b683
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/795760b6093542289f70a1d9ccc9cbca.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a059b5c9da92ab7e498e26d
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/4de9d3f0253a4529b29f64485b2aa132.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a059be2fa5a21e711e4b343
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fe276d9063bd494f8d635cf8aa39e825.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a059c515d40ccedfd8d70b0
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/e3544f24c67145aeaea80921aaef5f1c.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a059713af5b16b9ec3fd4f5
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/3abf605f9ab84a6686ad29688f206160.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0597ba87a6fde6b39ea5a0
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/5f57f437a3a343d789a71c659732ceb9.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a05984604d89a37d7f9b49f
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/15c2523d9c494f65bd1ec18fa602acf4.xlsx
-    'PDF' -> https://bbs.gov.bd/pages/files/6a0598c5146993cdf84edd35
-    'Excel' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/952593ea389a4e3ba299fcfa3887c6c2.xlsx
-    'স্ক্রিন রিডার ডাউনলোড করুন' -> https://www.nvaccess.org/files/nvda/releases/2020.4/nvda_2020.4.exe
-    'কন্টেন্টে চলে যান' -> https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220#main-content
-    'এক্সেসিবিলিটি মেনুতে যান' -> https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220#accessibility-card-title
+== https://web.archive.org/web/20210816023651id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Samangan%20Report%20English%20V1_Reza_13Dec2015_webquality.pdf
+    44 pages
+  -- page 5
+    Table 1 Percent Distribution of the Population by District: Samangan, April 2015 Table 24 Estimates of Infant Mortality and Under-Five Mortality Rates by Sex: Samangan, April 2015
+    Table 2 Sex Ratio of the Population by Age Group and District: Samangan, April 2015 Table 25 Percentage Distribution of Households by Size, Average Household Size and District:
+    Samangan, April 2015
+    Table 3 Median Age in Years of the Population by District: Samangan, April 2015
+    Table 8 Percent Distribution of Total Population (Both Sexes) 25 Years and Above, by Highest Class
+    Samangan, April 2015
+    Completed and District: Samangan, April 2015
+    Table 30 Percentage Distribution of Households by Main Construction Material of the Roof of the
+  -- page 10
+    the total population in the province. Dara-e-Soof-e-Payin had the second-largest population with
+    5. MONITORING AND SUPERVISION
+    18.9 percent, followed by Dara-e-Soof-e-Bala with 15.8 percent. Feroz Nakhcheer was the smallest
+    district with only 3.4 percent.
+    cartographers, along with 16 District Statistics Officers (DSOs) and assistants. The field enumeration was Table 1. Percent Distribution of the Population by District:
+    conducted by 423 surveyors, 143 controllers, 57 district team editors, and 40 district coders under the Samangan, April 2015
+    supervision of the DSOs and their assistants, and CSO staff supervisors.
+    Monitoring was conducted by CSO and UNFPA technical staff who visited the district centres during the
+    number of people who occupy the same size of land (87 persons per km2 of land area), while Feroz
+    Nakhcheer had the fewest (13 persons per km2).
+    Verification of editing, coding and data entry were done in Aybak, Samangan. A Data Processing Centre
+    (DPC) was established in Aybak and 80 data processors were recruited and given strict screening and
+    extensive technical training. Computers, generator, furniture, heaters, an internet connection and other
+  -- page 12
+    year age group comprised the third largest segment of the population at 13.2 percent. On average, the male population of Samangan Province Daykundi (2012)* 15.2
+    had a median age of 17.7 years while the female Bamiyan (2011)* 16.6
+    Age data for household members are normally reported by the respondent, either by the mother or the population had a slightly lower median age of 17.3 years. Afghanistan** 17.0
+    Sources: *SDES
+  -- page 13
+    Table 4 also shows the proportions of persons aged 15–64 years and 65 years and over, by district. The Province and by district level. The total dependency Dependency Ratio
+    15–64 year age group is commonly considered as the working age group especially in more developed ratio was 89.1, broken down into the child dependency
+    countries. For the whole Samangan Province, the working age group accounted for 52.9 percent of ratio of 83.5 and the old-age dependency ratio of 5.6.
+    Samangan (2015)* 89.1
+    the total population. At the district level, this proportion ranged from 51.3 percent in Roi-Do-Ab to 54.4 This means that for every 100 persons in working ages Parwan (2014)* 90.8
+    percent in Dara-e-Soof-e-Bala. (15 to 64 years) there were 89 dependents, involving 83 Kapisa (2014)* 91.1
+    children and six older persons. The total dependency Kabul (2013)* 83.5
+    Ghor (2012)* 96.0
+    When older persons (65 years old and over) comprise less than10 percent of the total population, ratio in the province is lower than the national estimate
+    Daykundi (2012)* 108.9
+    they are also considered young populations. The proportion of older or aged persons for Samangan of 104 (Text Box 2).
+    Bamiyan (2011)* 96.3
+    Province in 2015 was 2.9 percent, with district-level proportions ranging from 2.6 percent (Roi-Do-Ab) Afghanistan** 104.0
+    to 3.7 percent (Khuram Wa Sarbagh). Among the districts, Roi-Do-Ab had both the highest
+    The aged-child ratio or the ratio of persons aged 65 years and over to the number of children under 15 ratio at 89.8. Dara-e-Soof-e-Bala had both the lowest
+    years is also shown in Table 4. For Samangan Province, the aged-child ratio was 6.7, which means that total dependency ratio at 84.0 and child dependency
+    in 2015, there were about seven persons aged 65 years and over for every 100 children under 15 years ratio at 78.5. Khuram Wa Sarbagh had the highest old-
+    of age. At the district level, the ratio ranged from 5.6 percent in Roi-Do-Ab to 8.5 percent in Khuram age dependency ratio at 6.9.
+    Wa Sarbagh.
+    Another indicator of population composition is the age dependency ratio. This ratio shows changes 7.4 Marital Status Composition
+    commonly calculated as the sum of the number of children and the number of aged or older persons total number of married women. These numbers typically vary by age group as women customarily
+    populations divided by the number of working-age population. Very young populations typically have a marry men older than they are. This custom of women marrying older men would result in the differences
+    total dependency ratio exceeding 100. between the marital status distributions of men and women at young ages. This appeared to be the
+    case in Samangan Province as shown in Figures 4 and 5. Among males aged 20–24 years, those who
+  -- page 14
+    71.79 68.63 persons aged 10 years and older because the ability to read and write requires some years of schooling
+    %30
+    or time to develop. In censuses, the answers to the cited question on literacy are accepted at face value.
+    %20 41.70
+  -- page 16
+    Figure 6. Literacy Rate by Age Group and Sex: Samangan, April 2015 Table 8. Percent Distribution of Total Population (Both Sexes) 25 Years
+    and Above, by Highest Class Completed and District: Samangan, April
+    2015
+    90
+
+== https://web.archive.org/web/20170511124330id_/http://cso.gov.af/Content/files/SDES/Balkh%20FR%20Final2.pdf
+    109 pages
+  -- page 2
+    households were asked about the socio-demographic and economic characteristics
+    of all household members such as their ages, sex, education, literacy, employment,
+    migration, as well as information about the households and some housing
+    characteristics.
+  -- page 6
+    Table 1 Percent Distribution of the Population by District: Balkh, December 2015
+    Table 2 Sex Ratio of the Population by Age Group and District: Balkh, December
+    2015
+    Table 3 Median Age in Years of the Population by District: Balkh, December
+    Table 8 Percent Distribution of Total Population (Both Sexes) 25 Years and
+    Above, by Highest Class Completed and District: Balkh, December 2015
+    Table 9 Percent Distribution of Male Population 25 Years and Above, by Highest
+    Class Completed and District: Balkh, December 2015
+  -- page 18
+    in Balkh, comprising 31.7 percent of the total population in the province followed
+    by Nahr-E-Shahi at 12.7 percent. Marmul had the lowest proportion of the total
+    population with 0.7 percent followed by Char Kent with 1.7 percent (Table 1).
+    5
+  -- page 19
+    Table 1. Percent Distribution of the Population by District: Balkh,
+    December 2015
+    Province/District Percent
+    Balkh 100.0
+    land (7,906 persons per km of land area), while Shortepa and Khulm had the fewest
+    2
+    (16 persons per km each).
+    Figure 2. Population Density by District: Balkh, December 2015
+    6
+  -- page 23
+    On average, the male population of Balkh Province had Daykundi (2012) 15.2
+    a median age of 17.0 years while the female population Bamiyan (2011) 16.6
+    had a slightly higher median age of 17.1 years. Females
+    Source: SDES
+  -- page 24
+    Table 4 also shows the proportions of persons aged 15-64 years and 65 years and
+    over, by district. The 15-64 year age group is commonly considered as the working
+    age group especially in more developed countries. For the whole Balkh Province,
+    the working age group accounted for 53.3 percent of the total population. At the
+    district level, this proportion ranged from 48.1 percent in Marmul to 60.9 percent in
+    Shortepa.
+    11
+
+== https://web.archive.org/web/20200701051731id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Takhar%20Socio-Demographic%20and%20Economic%20Survey.pdf
+    119 pages
+  -- page 5
+    especially the people on the ground who collected the data from sample households;
+    the supervisors and monitors who made sure that accurate information were gathered
+    and field operations procedures were correctly followed; the donors who continue
+    to recognize the importance of statistics in monitoring improvements in the lives
+  -- page 8
+    Table 1 Percent Distribution of the Population by District: Takhar, September
+    2015
+    Table 2 Sex Ratio of the Population by Age Group and District: Takhar,
+    September 2015
+    Table 8 Percent Distribution of Total Population (Both Sexes) 25 Years and
+    Above, by Highest Class Completed and District: Takhar, September
+    2015
+    Table 9 Percent Distribution of Male Population 25 Years and Above, by
+  -- page 19
+    listed households (i.e., every other household) were taken as sample households
+    and respondents from each sample households were asked detailed questions.
+    16
+  -- page 21
+    percent of the total population in the province followed by Rustaq at 15.2 percent.
+    Hazar Samoch had the lowest proportion of the total population with 1.0 percent
+    followed by Namak Ab with 1.3 percent.
+    Table 1. Percent Distribution of the Population by District: Takhar,
+    September 2015
+    Province/District Percent
+    Takhar 100.0
+  -- page 22
+    (548 persons per km2 of land area), while Warsaj had the fewest (13 persons per
+    km2) the same size of land.
+    Figure 2. Population Density by District: Takhar, September 2015
+    19
+  -- page 26
+    On average, the male population of Takhar
+    Ghor (2012) 16.3
+    Province had a median age of 16.2 years
+    while the female population had a slightly Daykundi (2012) 15.2
+
+== https://web.archive.org/web/20170511124125id_/http://cso.gov.af/Content/files/SDES/Highlight%20Herat%20Fr%204%20March.pdf
+    118 pages
+  -- page 4
+    households were asked to provide details on socio-demographic and economic
+    characteristics of all members including information on age, sex, education,
+    employment and migration.
+    Herat is the 10th province in which SDES project has been rolled out after Bamiyan,
+  -- page 8
+    Table 1 Percent Distribution of the Population by District: Herat, March 7
+    2016
+    Table 2 Sex Ratio of the Population by Age Group and District: Herat, 10
+    March 2016
+    Table 8 Percent Distribution of Total Population (Both Sexes) 25 Years 23
+    and Above, by Highest Class Completed and District: Herat,
+    March 2016
+    Table 9 Percent Distribution of Male Population 25 Years and Above, by 24
+  -- page 18
+    most densely populated with 2,383 persons per km2 while Adraskan was the least
+    populous with only 10 persons per km2.
+    Adult literacy rate (15 years and older) in the 13 districts/city in Herat Province was
+    42.4 percent (51.1 percent among males and 33.9 percent among females). This
+    is lower compared to the literacy rate for 10 years and older at 47.9 percent (55.4
+  -- page 19
+    On the average, the size of the households in Herat was 5.7 persons. Chisht-E-
+    Sharif had the highest average household size of 6.4 persons while Adraskan had
+    the smallest with 4.8 persons. Three of five households in the province had access
+    2
+    to improved sources of drinking water . While also three in five households in the
+    province reported using improved sanitation facility.
+  -- page 23
+    households and respondents from these households were asked detailed questions.
+    1.4 Monitoring and Supervision
+    The listing and mapping activity was carried out by 318 hired cartographers, 318
+    hired assistant cartographers, along with 47 CSO supervisors. The field work was
+  -- page 24
+    total population, followed by Enjil making up 11.1 percent. Chisht-E-Sharif had the
+    lowest proportion of the total population with 1.5 percent followed by Zendajan with
+    2.4 percent (Table 1).
+    Table 1. Percent Distribution of the Population by District: Herat, March
+    2016
+    Province/District Percent
+    Herat 100.0
+
+== https://web.archive.org/web/20170511124002id_/http://cso.gov.af/Content/files/SDES/NImroz%20FR%203%20copy%20April%2012%20%20Final.pdf
+    105 pages
+  -- page 8
+    Table 1 Percent Distribution of the Population by District: Nimroz, May 2016
+    Table 2 Sex Ratio of the Population by Age Group and District: Nimroz, May
+    2016
+    Table 3 Median Age in Years of the Population by District: Nimroz, May
+    Table 8 Percent Distribution of Total Population (Both Sexes) 25 Years and
+    Above, by Highest Class Completed and District: Nimroz, May 2016
+    Table 9 Percent Distribution of Male Population 25 Years and Above, by
+    Highest Class Completed and District: Nimroz, May 2016
+  -- page 18
+    youth population (15-24 years old) comprised 21.6 percent of the total population in
+    the four districts of the province covered by SDES.
+    In terms of percentage distribution of population in the four districts in Nimroz
+    Province, Zaranj had the largest share of the population (85.9 percent) followed by
+    Zaranj was the most densely populated district with 286 persons per km2.
+    Adult literacy rate (15 years and older) in the four districts in Nimroz Province was
+    38.5 percent (49.8 percent among males and 26.8 percent among females). This
+    is lower compared to the literacy rate for 10 years and older at 46.2 percent (56.1
+  -- page 19
+    On the average, the size of the households in Nimroz was 7.3 persons per household.
+    Zaranj had the highest average household size of 7.7 persons while Char Burjak had
+    the smallest with 4.8 persons. A very low percentage (12.7 percent) of households
+    2
+    in the province had access to improved sources of drinking water . At least three in
+    3
+  -- page 23
+    households and respondents from these households were asked detailed questions.
+    1.4 Monitoring and Supervision
+    The listing and mapping activity was carried out by 50 cartographers along with seven
+    CSO supervisors. The field work was conducted by 158 surveyors, 39 controllers
+  -- page 24
+    of the total population, followed by Asl-E-Chakhansur making up 5.9 percent. Kang
+    had the lowest proportion of the total population with 4.0 percent followed by Char
+    Burjak with 4.1 percent (Table 1).
+    Table 1. Percent Distribution of the Population by District: Nimroz, May
+    2016
+    Province/District Percent
+    Nimroz 100.0
+    total land area. Zaranj had the most number of persons who occupy the same size
+    of land (286 persons per km2 of land), while other districts had the fewest (1 person
+    per km2).
+    7
+  -- page 27
+    On average, the male population of the four districts of
+    Kabul (2013) 17.7
+    Nimroz Province had a median age of 14.3 years while Ghor (2012) 16.3
+    the female population had a slightly higher median age of Daykundi (2012) 15.2
+
+== https://web.archive.org/web/20181113161729id_/http://cso.gov.af/Content/files/Surveys/SDES/Baghlan%20SDES%20Report%20English_AM_21082017_Print%20Quality(1).pdf
+    86 pages
+  -- page 2
+    households in each enumeration area/village. The households were asked to provide details on
+    socio-demographic and economic characteristics of all members including information on age, sex,
+    education, employment and migration.
+    Baghlan is the 12th province in which SDES project has been rolled out after Bamiyan, Ghor,
+  -- page 6
+    Table 1 Percent Distribution of the Population by District: Baghlan, Decemer 2016
+    Table 2 Sex Ratio of the Population by Age Group and District: Baghlan, December 2016
+    Table 3 Median Age in Years of the Population by District and Sex: Baghlan, December 2016
+    Table 4 Percent Distribution of Population by Age Group, Aged-Child Ratio and District: Baghlan,
+    Table 8 Percent Distribution of Total Population (Both Sexes) 25 Years and Above, by Highest Class
+    Completed and District: Baghlan, Decemer 2016
+    Table 9 Percent Distribution of Male Population 25 Years and Above, by Highest Class Completed and
+    District: Baghlan, December 2016
+  -- page 14
+    Half of the listed households (i.e., every other household) were taken as sample households and
+    respondents from these households were asked detailed questions.
+    14
+  -- page 16
+    population in Baghlan, comprising 26.1 percent of the total population, followed by Baghlan-E-Jadeed
+    making up 23.0 percent. Gozargah-E-Noor had the lowest proportion of the total population with 1.2
+    percent followed by Firing Wa Gharu with 1.3 percent (Table 1).
+    Table 1. Percent Distribution of the Population by District: Baghlan,
+    December 2016
+    Province/District Percent
+    Baghlan 100.0
+    E-Khumri had the most number of persons who occupy the same size of land (355 persons per km2 of
+    land area), while Tala Wa Barfak had the fewest (less than 10 persons per km2).
+    16
+  -- page 19
+    On average, the male population of Baghlan Province
+    Kabul (2013) 17.7
+    had a Omne adviaenra gaeg, et heo fm 1a6le. 1p oypeualarsti own hoifl eB atghhel anfe Pmraolvei nce G h h o a r d ( 2 a 0 1 m 2 e ) dian age G 1 h 6 o .3 r (2012) 16.3
+    population had a slightly lower median age of 15.8 Daykundi (2012) D1a5y.k2u ndi (2012) 15.2
+  -- page 21
+    Table 4 also shows the proportions of persons aged 15-64 years and 65 years and over, by district.
+    The 15-64 year age group is commonly considered as the working age group especially in more
+    developed countries. In Baghlan Province, the working age group accounted for 51.1 percent of the
+    total population. At the district level, this proportion ranged from 47.9 percent in Firing Wa Gharu to
+    60.3 percent in Dahana-E-Ghuri.
+    When older persons (65 years old and over) comprise less than 10 percent of the total population, it is
+    also considered a young population. The proportion of older or aged persons for Baghlan Province in
+    2016 was 2.1 percent, with district level proportions varying from 1.3 percent in Baghlan-E-Jadeed to
+    3.3 percent in Firing Wa Gharu.
+    The aged-child ratio or the ratio of persons aged 65 years and over to the number of children less
+    than 15 years is also shown in Table 4. In Baghaln Province, the aged-child ratio was 4.4, which
+    means that in 2016, there were more than four persons aged 65 years and over for every 100 children
+    under 15 years of age. At the district level, the ratio ranged from 2.5 percent in Baghlan-E-Jadeed to
+    7.3 percent in Dushi.
+    Another indicator of population composition is the age dependency ratio. This ratio shows changes
+    commonly calculated as the sum of the number of children and the number of aged or older persons
+    divided by the number of working-age population. It is observed that young populations typically have
+    a total dependency ratio exceeding 100.
+    Table 5. Age Dependency Ratios by District: Baghlan, December 2016
