@@ -403,6 +403,39 @@ class Binding(unittest.TestCase):
             cc.build("63", tables(), NAMES, CODE_SHAPES, SEATS, admin1, admin2, national=1.0)
 
 
+class OnlyTableOneByCounty(unittest.TestCase):
+    """Hebei's yearbook: Table 1-1 by county, Tables 1-4 and 1-5 by
+    prefecture only, and a subtotal row for a prefecture without the city the
+    province administers itself."""
+
+    def test_population_and_sex_ratio_with_the_other_fields_said_why(self):
+        rows = a0101()
+        at = next(k for k, r in enumerate(rows) if r and r[0] == "西宁市")
+        subtotal = list(rows[at])
+        subtotal[0] = "西宁市①"
+        subtotal[4] -= 5.0
+        rows.insert(at + 1, subtotal)
+        admin1, admin2 = units()
+        saved = dict(cc.CUT_FROM)
+        cc.CUT_FROM.clear()
+        cc.CUT_FROM.update({"长白山管委会": (("6326",), "the test's zone, cut from Golog")})
+        try:
+            records = {r["shape_id"]: r for r in cc.build(
+                "63", {"A0101": rows}, NAMES, CODE_SHAPES, SEATS, admin1, admin2,
+                missing={"A0104": cc.PREFECTURE_ONLY, "A0105": cc.PREFECTURE_ONLY})}
+        finally:
+            cc.CUT_FROM.clear()
+            cc.CUT_FROM.update(saved)
+        datong = records["S-DATONG"]
+        totals = {name: sum(m) + sum(w) for name, (m, w) in areas()}
+        self.assertEqual(datong["population"]["value"], totals["大通回族土族自治县"])
+        self.assertIn("value", datong["sex_ratio"])
+        for field, table in (("ethnicity", "1-4"), ("median_age", "1-5")):
+            self.assertEqual(datong[field]["status"], "not_available")
+            self.assertIn(f"(Table {table}) by prefecture only", datong[field]["note"])
+        self.assertEqual([s["field"] for s in datong["sources"]], ["population/sex_ratio"])
+
+
 class ZoneNames(unittest.TestCase):
     def test_the_province_and_the_word_city_are_left_out(self):
         self.assertEqual(cc.zone_norm("江苏无锡经济开发区", "江苏"), "无锡经济开发区")

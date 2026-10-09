@@ -161,6 +161,14 @@ PROVINCES: dict[str, dict[str, str]] = {
            "bureau": "Inner Mongolia Autonomous Region Bureau of Statistics",
            "book": "内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook "
                    "2020)"},
+    # Hebei's yearbook prints Table 1-1 by county and Tables 1-4 and 1-5 by
+    # prefecture only, and under Shijiazhuang and Baoding a subtotal for the
+    # city without Xinji and Dingzhou, which the province administers itself.
+    "13": {"name": "Hebei Province", "zh": "河北",
+           "base": "http://tjj.hebei.gov.cn/extra/col20/rkpc2020/zk/html/",
+           "by_county": ("A0101",),
+           "bureau": "Hebei Provincial Bureau of Statistics",
+           "book": "河北省2020年人口普查年鉴 (Hebei population census yearbook 2020)"},
     # Shandong's workbooks sit under two paths: the Internet Archive holds
     # Tables 1-1 and 1-4 under pcmj/ and Table 1-5 under pcsj/.
     "37": {"name": "Shandong Province", "zh": "山东",
@@ -222,8 +230,21 @@ AGE_UNREAD = ("{book} prints ages by county in Table 1-5, but that workbook coul
               "{why}. No median age is given for the county here.")
 # A province whose Table 1-5 cannot be read is still read for its
 # population, sex ratio and nationalities, which Tables 1-1 and 1-4 carry;
-# its counties' median age is a stated gap. Tables 1-1 and 1-4 are required.
+# its counties' median age is a stated gap. Table 1-1 is always required,
+# and Table 1-4 wherever the yearbook prints it by county.
 OPTIONAL = {"A0105"}
+# A yearbook that prints only Table 1-1 by county (Hebei's: its Tables 1-4
+# and 1-5 stop at the prefecture) gives its counties population and sex
+# ratio, and says of the other two fields that the yearbook has no county
+# figure. PREFECTURE_ONLY is that table's ``missing`` reason.
+PREFECTURE_ONLY = "printed by prefecture only"
+BY_PREFECTURE = ("{book} prints {what} (Table {table}) by prefecture only, not by county, and "
+                 "no other table of its census yearbook gives the county's figure.")
+# A subtotal a yearbook prints under a prefecture for the city without the
+# county-level city the province administers directly (Hebei's "石家庄市①",
+# Shijiazhuang without Xinji): the rows after it add up to the prefecture
+# with that city, so the subtotal is left out of the area rows.
+SUBTOTAL = re.compile(r"[①②③④⑤⑥⑦⑧⑨⑩]$")
 
 
 # ---------------------------------------------------------------------------
@@ -336,6 +357,8 @@ def area_rows(rows: list[list[Any]]) -> dict[int, list[Any]]:
         label = compact(row[0])
         if not started:
             started = label == "地区"
+            continue
+        if SUBTOTAL.search(label):
             continue
         if label and len(row) > 1 and number(row[1]) is not None:
             out[len(out)] = row
@@ -464,15 +487,16 @@ def hierarchy(labels: list[str], totals: list[float], code: str,
 
 def read_province(code: str, tables: dict[str, list[list[Any]]],
                   names: dict[str, list[str]]
-                  ) -> tuple[list[dict[str, Any]], dict, dict, dict | None]:
+                  ) -> tuple[list[dict[str, Any]], dict, dict | None, dict | None]:
     """The areas, and the tables' figures keyed by row position. Table 1-5
-    is None where it could not be read (``OPTIONAL``)."""
+    is None where it could not be read (``OPTIONAL``), and Tables 1-4 and
+    1-5 where the yearbook prints them by prefecture only."""
     labels = labels_of(tables["A0101"])
     for table in ("A0104", "A0105"):
         if table in tables and labels_of(tables[table]) != labels:
             raise SystemExit(f"china_county_census: {code}: {table} lists other areas than 1-1")
     a0101 = read_a0101(tables["A0101"], area_rows)
-    a0104 = read_a0104(tables["A0104"], area_rows)
+    a0104 = read_a0104(tables["A0104"], area_rows) if "A0104" in tables else None
     a0105 = read_a0105(tables["A0105"], area_rows) if "A0105" in tables else None
     totals = [a0101[i]["total"] for i in range(len(labels))]
     areas = hierarchy(labels, totals, code, names)
@@ -480,12 +504,12 @@ def read_province(code: str, tables: dict[str, list[list[Any]]],
     return areas, a0101, a0104, a0105
 
 
-def check(code: str, areas: list[dict[str, Any]], a0101: dict, a0104: dict,
+def check(code: str, areas: list[dict[str, Any]], a0101: dict, a0104: dict | None,
           a0105: dict | None) -> None:
     where = PROVINCES.get(code, {}).get("name", code)
     for i, row in a0101.items():
         for what in ("total", "men", "women"):
-            if not (row[what] == a0104[i][what] == (a0105 or a0104)[i][what]):
+            if any(table is not None and table[i][what] != row[what] for table in (a0104, a0105)):
                 raise SystemExit(f"china_county_census: {where} row {i} {what}: the tables differ")
         if row["men"] + row["women"] != row["total"]:
             raise SystemExit(f"china_county_census: {where} row {i}: men and women miss the total")
@@ -743,14 +767,10 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
     return bound, why
 
 
-def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, Any],
-                  parents: dict[str, str], a0101: dict, a0104: dict, a0105: dict | None,
-                  urls: dict[str, str], ages_unread: str = "") -> dict[str, Any]:
-    province = PROVINCES[code]
-    book = f"{province['bureau']}, {province['book']}"
-    i = area["index"]
-    counts, small, small_people = pooled(a0104[i]["groups"])
-    residual = int(a0104[i]["groups"].get(RESIDUAL, 0))
+def nationalities(a0104: dict[str, Any], book: str) -> dict[str, Any]:
+    """The ethnicity fields from one area's Table 1-4 row."""
+    counts, small, small_people = pooled(a0104["groups"])
+    residual = int(a0104["groups"].get(RESIDUAL, 0))
     parts = []
     if residual:
         parts.append(f"the {residual:,} people whose nationality is not identified (未定族称) "
@@ -765,10 +785,26 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
         # Only the residual can be too small to show once pool_small is done.
         other += (f" Together they are {left:,} people, too few to show at one decimal "
                   "themselves: they are counted in the base but not drawn.")
+    return {"ethnicity": hundred(counts), "ethnicity_year": YEAR,
+            "ethnicity_note": (f"2020 census, Table 1-4 of {book}: the 56 nationalities (民族) "
+                               f"of all {int(a0104['total']):,} residents.{other}")}
+
+
+def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, Any],
+                  parents: dict[str, str], a0101: dict, a0104: dict | None, a0105: dict | None,
+                  urls: dict[str, str], ages_unread: str = "") -> dict[str, Any]:
+    province = PROVINCES[code]
+    book = f"{province['bureau']}, {province['book']}"
+    i = area["index"]
     sources = [{"field": "population/sex_ratio", "name": f"{book}, {TABLES['A0101']}",
-                "url": urls["A0101"], "year": YEAR, "license": LICENCE},
-               {"field": "ethnicity", "name": f"{book}, {TABLES['A0104']}",
-                "url": urls["A0104"], "year": YEAR, "license": LICENCE}]
+                "url": urls["A0101"], "year": YEAR, "license": LICENCE}]
+    if a0104 is not None:
+        sources.append({"field": "ethnicity", "name": f"{book}, {TABLES['A0104']}",
+                        "url": urls["A0104"], "year": YEAR, "license": LICENCE})
+        ethnicity = nationalities(a0104[i], book)
+    else:
+        ethnicity = {"ethnicity": gap("not_available", BY_PREFECTURE.format(
+            book=book, what="nationality", table="1-4"))}
     if a0105 is not None:
         sources.append({"field": "median_age", "name": f"{book}, {TABLES['A0105']}",
                         "url": urls["A0105"], "year": YEAR, "license": LICENCE})
@@ -776,6 +812,9 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
             "median_age": measure(grouped(a0105[i]["groups"]), unit="years", year=YEAR,
                                   source=f"{book}, Table 1-5"),
             "median_age_note": AGE_NOTE}
+    elif ages_unread == PREFECTURE_ONLY:
+        ages = {"median_age": gap("not_available", BY_PREFECTURE.format(
+            book=book, what="age", table="1-5"))}
     else:
         ages = {"median_age": gap("not_available", AGE_UNREAD.format(
             book=book, why=unread(ages_unread)))}
@@ -804,11 +843,7 @@ def county_record(code: str, area: dict[str, Any], shape: str, unit: dict[str, A
         sex_ratio=sex_ratio(a0101[i]["men"], a0101[i]["women"], year=YEAR,
                             source=f"{book}, Table 1-1"),
         sex_ratio_note=f"{int(a0101[i]['men']):,} men and {int(a0101[i]['women']):,} women.",
-        **ages,
-        ethnicity=hundred(counts), ethnicity_year=YEAR,
-        ethnicity_note=(
-            f"2020 census, Table 1-4 of {book}: the 56 nationalities (民族) of all "
-            f"{int(a0104[i]['total']):,} residents.{other}"),
+        **ages, **ethnicity,
         language=gap(LANGUAGE_STATUS, LANGUAGE_NOTE),
         sources=sources)
 
@@ -950,6 +985,9 @@ def main() -> int:
         tables, urls, missing = {}, {}, {}
         try:
             for table in TABLES:
+                if table not in province.get("by_county", TABLES):
+                    missing[table] = PREFECTURE_ONLY
+                    continue
                 base = province.get("tables", {}).get(table, province["base"])
                 try:
                     tables[table], urls[table] = fetch_table(base, table)
