@@ -161,17 +161,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.1,
+        "count": 100046
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.9,
+        "count": 944
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -186,6 +201,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B29543190564601",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (97,454 and 2,039 here), or naturalised (553) -- and 'Foreign nationals' the 944 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 97 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -344,17 +362,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 24493
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 70
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -369,6 +402,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B36446689180219",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (24,228 and 217 here), or naturalised (48) -- and 'Foreign nationals' the 70 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 25 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -487,17 +523,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 4985
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 15
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -512,6 +563,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B9385579031596",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (4,954 and 27 here), or naturalised (4) -- and 'Foreign nationals' the 15 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -660,17 +714,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 23851
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 75
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -685,6 +754,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B40781349975951",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (23,578 and 232 here), or naturalised (41) -- and 'Foreign nationals' the 75 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 19 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -768,17 +840,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 1678
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -793,6 +880,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B90373058224054",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,655 and 21 here), or naturalised (2) -- and 'Foreign nationals' the 2 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -946,17 +1036,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.6,
+        "count": 14775
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 56
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -971,6 +1076,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B94827234951055",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (14,528 and 235 here), or naturalised (12) -- and 'Foreign nationals' the 56 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 8 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -1109,17 +1217,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 8345
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 14
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -1134,6 +1257,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B45584224409911",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (8,244 and 71 here), or naturalised (30) -- and 'Foreign nationals' the 14 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 4 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -1232,17 +1358,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.6,
+        "count": 4780
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 17
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -1257,6 +1398,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B1701315009328",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (4,726 and 54 here), or naturalised (0) -- and 'Foreign nationals' the 17 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 4 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -1375,17 +1519,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 6737
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 20
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -1400,6 +1559,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B98223692696505",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (6,665 and 61 here), or naturalised (11) -- and 'Foreign nationals' the 20 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 4 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -1523,17 +1685,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 5400
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 3
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -1548,6 +1725,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B5747120083880",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (5,331 and 67 here), or naturalised (2) -- and 'Foreign nationals' the 3 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 7 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -1656,17 +1836,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 100.0,
+        "count": 9249
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -1681,6 +1876,9 @@
     "country": "WSM",
     "match_by": "shape_id",
     "shape_id": "40696546B72194673836531",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (9,145 and 103 here), or naturalised (1) -- and 'Foreign nationals' the 2 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 8 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -1849,17 +2047,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 98.7,
+        "count": 22500
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.3,
+        "count": 295
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -1875,6 +2088,9 @@
     "parent_name": "Tuamasaga",
     "match_by": "shape_id",
     "shape_id": "51752279B3503869783068",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (21,714 and 579 here), or naturalised (207) -- and 'Foreign nationals' the 295 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 21 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -2043,17 +2259,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 98.3,
+        "count": 13669
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.7,
+        "count": 240
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -2069,6 +2300,9 @@
     "parent_name": "Tuamasaga",
     "match_by": "shape_id",
     "shape_id": "51752279B36648203224348",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (13,227 and 342 here), or naturalised (100) -- and 'Foreign nationals' the 240 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 19 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -2222,17 +2456,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.5,
+        "count": 8693
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 43
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -2248,6 +2497,9 @@
     "parent_name": "Tuamasaga",
     "match_by": "shape_id",
     "shape_id": "51752279B14672164082364",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (8,466 and 174 here), or naturalised (53) -- and 'Foreign nationals' the 43 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 8 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -2416,17 +2668,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 98.9,
+        "count": 24379
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.1,
+        "count": 282
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -2442,6 +2709,9 @@
     "parent_name": "Tuamasaga",
     "match_by": "shape_id",
     "shape_id": "51752279B13435949980895",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (23,705 and 536 here), or naturalised (138) -- and 'Foreign nationals' the 282 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 9 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -2605,17 +2875,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 14860
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 43
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -2631,6 +2916,9 @@
     "parent_name": "Tuamasaga",
     "match_by": "shape_id",
     "shape_id": "51752279B28486051518842",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (14,602 and 237 here), or naturalised (21) -- and 'Foreign nationals' the 43 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 18 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -2784,17 +3072,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 6521
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 7
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -2810,6 +3113,9 @@
     "parent_name": "Tuamasaga",
     "match_by": "shape_id",
     "shape_id": "51752279B79086909930710",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (6,411 and 91 here), or naturalised (19) -- and 'Foreign nationals' the 7 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 7 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -2943,17 +3249,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 6800
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 16
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -2969,6 +3290,9 @@
     "parent_name": "A'ana",
     "match_by": "shape_id",
     "shape_id": "51752279B72018613405145",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (6,730 and 53 here), or naturalised (17) -- and 'Foreign nationals' the 16 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 10 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -3107,17 +3431,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 3500
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 8
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -3133,6 +3472,9 @@
     "parent_name": "A'ana",
     "match_by": "shape_id",
     "shape_id": "51752279B45326310615016",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (3,463 and 34 here), or naturalised (3) -- and 'Foreign nationals' the 8 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 8 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -3266,17 +3608,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 6479
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 16
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -3292,6 +3649,9 @@
     "parent_name": "A'ana",
     "match_by": "shape_id",
     "shape_id": "51752279B58790364836633",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (6,421 and 44 here), or naturalised (14) -- and 'Foreign nationals' the 16 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 2 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -3415,17 +3775,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 3808
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -3441,6 +3816,9 @@
     "parent_name": "Gaga'emauga",
     "match_by": "shape_id",
     "shape_id": "51752279B57155828943955",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (3,764 and 28 here), or naturalised (16) -- and 'Foreign nationals' the 2 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 4 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -3554,17 +3932,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.6,
+        "count": 6878
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 29
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -3580,6 +3973,9 @@
     "parent_name": "Tuamasaga",
     "match_by": "shape_id",
     "shape_id": "51752279B64132032078454",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (6,822 and 53 here), or naturalised (3) -- and 'Foreign nationals' the 29 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 11 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -3698,17 +4094,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 2546
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 5
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -3724,6 +4135,9 @@
     "parent_name": "Tuamasaga",
     "match_by": "shape_id",
     "shape_id": "51752279B63683485486505",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (2,507 and 27 here), or naturalised (12) -- and 'Foreign nationals' the 5 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 4 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -3832,17 +4246,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 3248
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 8
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -3858,6 +4287,9 @@
     "parent_name": "A'ana",
     "match_by": "shape_id",
     "shape_id": "51752279B46644357234336",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (3,203 and 37 here), or naturalised (8) -- and 'Foreign nationals' the 8 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 4 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -4006,17 +4438,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.5,
+        "count": 4466
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 22
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -4032,6 +4479,9 @@
     "parent_name": "A'ana",
     "match_by": "shape_id",
     "shape_id": "51752279B19419633234513",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (4,411 and 49 here), or naturalised (6) -- and 'Foreign nationals' the 22 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 1 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -4150,17 +4600,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 4985
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 15
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -4176,6 +4641,9 @@
     "parent_name": "Aiga-i-le-Tai",
     "match_by": "shape_id",
     "shape_id": "51752279B14471721978056",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (4,954 and 27 here), or naturalised (4) -- and 'Foreign nationals' the 15 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -4289,17 +4757,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.6,
+        "count": 4938
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 20
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -4315,6 +4798,9 @@
     "parent_name": "Atua",
     "match_by": "shape_id",
     "shape_id": "51752279B80749092531281",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (4,876 and 49 here), or naturalised (13) -- and 'Foreign nationals' the 20 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 5 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -4408,17 +4894,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.5,
+        "count": 1925
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 10
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -4434,6 +4935,9 @@
     "parent_name": "Atua",
     "match_by": "shape_id",
     "shape_id": "51752279B98921383399794",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,907 and 14 here), or naturalised (4) -- and 'Foreign nationals' the 10 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -4527,17 +5031,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 1457
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 3
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -4553,6 +5072,9 @@
     "parent_name": "Atua",
     "match_by": "shape_id",
     "shape_id": "51752279B92301495225818",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,432 and 16 here), or naturalised (9) -- and 'Foreign nationals' the 3 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 2 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -4646,17 +5168,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.0,
+        "count": 1324
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.0,
+        "count": 14
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -4672,6 +5209,9 @@
     "parent_name": "Atua",
     "match_by": "shape_id",
     "shape_id": "51752279B90154925912772",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,295 and 23 here), or naturalised (6) -- and 'Foreign nationals' the 14 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 1 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -4770,17 +5310,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 4420
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 6
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -4796,6 +5351,9 @@
     "parent_name": "Atua",
     "match_by": "shape_id",
     "shape_id": "51752279B27347750106203",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (4,387 and 32 here), or naturalised (1) -- and 'Foreign nationals' the 6 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 3 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -4914,17 +5472,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 4556
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 13
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -4940,6 +5513,9 @@
     "parent_name": "Atua",
     "match_by": "shape_id",
     "shape_id": "51752279B88745027289496",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (4,500 and 52 here), or naturalised (4) -- and 'Foreign nationals' the 13 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 3 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -5058,17 +5634,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 5231
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 9
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -5084,6 +5675,9 @@
     "parent_name": "Atua",
     "match_by": "shape_id",
     "shape_id": "51752279B70862426040933",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (5,181 and 46 here), or naturalised (4) -- and 'Foreign nationals' the 9 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 5 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -5167,17 +5761,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 1678
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -5193,6 +5802,9 @@
     "parent_name": "Va'a-o-Fonoti",
     "match_by": "shape_id",
     "shape_id": "51752279B96425006117138",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,655 and 21 here), or naturalised (2) -- and 'Foreign nationals' the 2 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -5256,17 +5868,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 98.3,
+        "count": 406
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.7,
+        "count": 7
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -5282,6 +5909,9 @@
     "parent_name": "Gaga'emauga",
     "match_by": "shape_id",
     "shape_id": "51752279B50099334737913",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (400 and 6 here), or naturalised (0) -- and 'Foreign nationals' the 7 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -5415,17 +6045,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.6,
+        "count": 6982
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 29
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -5441,6 +6086,9 @@
     "parent_name": "Fa'asaleleaga",
     "match_by": "shape_id",
     "shape_id": "51752279B50496628115687",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (6,860 and 120 here), or naturalised (2) -- and 'Foreign nationals' the 29 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 5 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -5559,17 +6207,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.4,
+        "count": 3079
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.6,
+        "count": 18
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -5585,6 +6248,9 @@
     "parent_name": "Fa'asaleleaga",
     "match_by": "shape_id",
     "shape_id": "51752279B1871778610146",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (3,027 and 50 here), or naturalised (2) -- and 'Foreign nationals' the 18 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 2 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -5693,17 +6359,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 3087
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 9
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -5719,6 +6400,9 @@
     "parent_name": "Fa'asaleleaga",
     "match_by": "shape_id",
     "shape_id": "51752279B99423568536476",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (3,041 and 40 here), or naturalised (6) -- and 'Foreign nationals' the 9 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -5812,17 +6496,27 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 100.0,
+        "count": 1627
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -5838,6 +6532,9 @@
     "parent_name": "Fa'asaleleaga",
     "match_by": "shape_id",
     "shape_id": "51752279B66331234776882",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,600 and 25 here), or naturalised (2) -- and 'Foreign nationals' the 0 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 1 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -5926,17 +6623,27 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 100.0,
+        "count": 1848
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -5952,6 +6659,9 @@
     "parent_name": "Gaga'emauga",
     "match_by": "shape_id",
     "shape_id": "51752279B7788622716825",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,838 and 10 here), or naturalised (0) -- and 'Foreign nationals' the 0 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -6020,17 +6730,27 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 100.0,
+        "count": 571
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6046,6 +6766,9 @@
     "parent_name": "Gaga'emauga",
     "match_by": "shape_id",
     "shape_id": "51752279B87562101149725",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (563 and 8 here), or naturalised (0) -- and 'Foreign nationals' the 0 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -6144,17 +6867,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 1712
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 5
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6170,6 +6908,9 @@
     "parent_name": "Gaga'emauga",
     "match_by": "shape_id",
     "shape_id": "51752279B17248022529671",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,679 and 19 here), or naturalised (14) -- and 'Foreign nationals' the 5 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -6238,17 +6979,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.1,
+        "count": 1386
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.9,
+        "count": 12
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6264,6 +7020,9 @@
     "parent_name": "Gaga'ifomauga",
     "match_by": "shape_id",
     "shape_id": "51752279B44838444436585",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,376 and 10 here), or naturalised (0) -- and 'Foreign nationals' the 12 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 2 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -6352,17 +7111,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.8,
+        "count": 1931
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 4
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6378,6 +7152,9 @@
     "parent_name": "Gaga'ifomauga",
     "match_by": "shape_id",
     "shape_id": "51752279B64028854979825",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,909 and 22 here), or naturalised (0) -- and 'Foreign nationals' the 4 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 2 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -6461,17 +7238,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 1463
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6487,6 +7279,9 @@
     "parent_name": "Gaga'ifomauga",
     "match_by": "shape_id",
     "shape_id": "51752279B50751398676550",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,441 and 22 here), or naturalised (0) -- and 'Foreign nationals' the 1 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -6585,17 +7380,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 1659
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6611,6 +7421,9 @@
     "parent_name": "Vaisigano",
     "match_by": "shape_id",
     "shape_id": "51752279B69229599413395",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,635 and 21 here), or naturalised (3) -- and 'Foreign nationals' the 2 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
@@ -6709,17 +7522,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 1105
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6735,6 +7563,9 @@
     "parent_name": "Vaisigano",
     "match_by": "shape_id",
     "shape_id": "51752279B71733643384678",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,098 and 6 here), or naturalised (1) -- and 'Foreign nationals' the 1 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 1 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -6823,17 +7654,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.5,
+        "count": 1881
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 10
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6849,6 +7695,9 @@
     "parent_name": "Vaisigano",
     "match_by": "shape_id",
     "shape_id": "51752279B19829880804306",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,862 and 16 here), or naturalised (3) -- and 'Foreign nationals' the 10 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 3 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -6942,17 +7791,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.9,
+        "count": 3581
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 3
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -6968,6 +7832,9 @@
     "parent_name": "Satupa'itea",
     "match_by": "shape_id",
     "shape_id": "51752279B21947974506929",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (3,533 and 47 here), or naturalised (1) -- and 'Foreign nationals' the 3 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 6 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -7071,17 +7938,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 100.0,
+        "count": 3450
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -7097,6 +7979,9 @@
     "parent_name": "Palauli",
     "match_by": "shape_id",
     "shape_id": "51752279B95977436708349",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (3,411 and 38 here), or naturalised (1) -- and 'Foreign nationals' the 1 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 3 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -7185,17 +8070,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 100.0,
+        "count": 3526
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -7211,6 +8111,9 @@
     "parent_name": "Palauli",
     "match_by": "shape_id",
     "shape_id": "51752279B25088829088610",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (3,477 and 49 here), or naturalised (0) -- and 'Foreign nationals' the 1 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 2 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -7324,17 +8227,27 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 100.0,
+        "count": 1819
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -7350,6 +8263,9 @@
     "parent_name": "Satupa'itea",
     "match_by": "shape_id",
     "shape_id": "51752279B84788888144500",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (1,798 and 20 here), or naturalised (1) -- and 'Foreign nationals' the 0 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 1 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -7438,17 +8354,27 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 100.0,
+        "count": 2273
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -7464,6 +8390,9 @@
     "parent_name": "Palauli",
     "match_by": "shape_id",
     "shape_id": "51752279B92784884007303",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (2,257 and 16 here), or naturalised (0) -- and 'Foreign nationals' the 0 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1). 3 people whose age was not known are left out of it.",
     "religion_year": 2021,
@@ -7557,17 +8486,32 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include no language."
+      "note": "No language spoken is published: the 2021 workbook's 58 tables have no language table and its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural residence."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2021 Census workbook's 58 tables by place of residence include citizenship (Table 8a) and no ethnicity."
-    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 99.7,
+        "count": 2092
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 7
+      }
+    ],
     "sources": [
       {
-        "field": "population/median_age/sex_ratio/religion",
-        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables",
+        "field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+        "name": "Samoa Bureau of Statistics, 2021 Census of Population and Housing, Census Tables (Tables 1, 2 and 8a)",
         "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx",
+        "year": 2021,
+        "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
+      },
+      {
+        "field": "language (why empty); ethnicity (none published)",
+        "name": "Samoa Bureau of Statistics, 2021 Census Fact Sheet; 2011 Census Excel tables",
+        "url": "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf",
         "year": 2021,
         "license": "None stated -- Samoa Bureau of Statistics publication, cited as such"
       },
@@ -7583,6 +8527,9 @@
     "parent_name": "Vaisigano",
     "match_by": "shape_id",
     "shape_id": "51752279B16736708134398",
+    "ethnicity_year": 2021,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's 58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). Under the owner's rule for states that count citizenship rather than ethnicity, this is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in Samoa or abroad to a citizen parent (2,070 and 18 here), or naturalised (4) -- and 'Foreign nationals' the 7 who are not. A Samoan citizen may be of any ancestry.",
     "sex_ratio_note": "Males per 100 females, 2021 Census (Table 1).",
     "median_age_note": "Interpolated within the single year of age that holds the middle person, 2021 Census (Table 1).",
     "religion_year": 2021,
