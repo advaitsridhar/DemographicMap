@@ -1,7 +1,5 @@
-  Overpass 28.5,46.5,28.95,48.6: 111 named areas
-  Overpass 28.95,46.5,29.5,47.85: 259 named areas
-    Overpass 28.95,47.85,29.5,48.6: 429, asking again in 60 s
-  Overpass 28.95,47.85,29.5,48.6: 764 named areas
-  Overpass 29.5,46.5,30.15,48.6: 69 named areas
-  census areas placed by their OSM outline: 144 of 157; not named in OSM: 13: AL-MUBARAKIYA CAMPS (معسكرات المباركية, 2,452); AL-AHMADI CITY (مدينة الأحمدي, 28,612); AL-KHAIRAN CHALETS (شاليهات الخيران, 1,336); AL-WAFRA (الوفرة, 198); AL-AHMADI GOVERNORATE DESERT (بر محافظة الأحمدي, 1,475); RAJM KHASHMAN (رجم خشمان, 114); KABAD AGRICULTURAL (كبد الزراعية, 13); AL-JAHRA GOVERNORATE DESERT (بر محافظة الجهراء, 2,669); AL-NAAYIM INDUSTRIAL (النعايم الصناعية, 94); SOUTH AL-MITLAE (جنوب المطلاع, 83); AL-ARDIYA GOVERNORATE USE (العارضية استعمال الحكومة, 176); AL-ARDIYA STORES (العارضية مخازن, 445); AL-MISILA (المسيلة, 1,056)
-  wrote data/raw/kuwait/osm_areas.json
+afghanistan_estimates: CSO estimated settled population 1396 (2017-18)
+    34 provinces placed by their Total rows; every row's sexes and areas add up, every province's districts make its Total row, and the provinces make 28,224,323 settled people
+    22 provinces written and 12 not, drawn otherwise than the office counts them; 396 districts written, 2 refused with their reason
+  wrote data/processed/afghanistan_estimates.json (1149 kB)
+  432 records
