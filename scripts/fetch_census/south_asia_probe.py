@@ -22,6 +22,8 @@ switched off.
 * ``pdf URL`` -- page count, and the text of chosen pages or of the pages
   matching ``--grep``.
 * ``cdx PATTERN`` -- the Internet Archive's captures of a URL pattern.
+* ``wd NAME...`` -- Wikidata items by name with their point and parent: a
+  locator for binding, never a figure.
 
 Usage:
     python -m scripts.fetch_census.south_asia_probe get https://example.org --links xls,pdf
@@ -431,6 +433,50 @@ def cmd_cdx(args: argparse.Namespace) -> None:
     print(f"    {len(rows) - 1} capture(s), {shown} shown")
 
 
+WIKIDATA = "https://www.wikidata.org/w/api.php"
+
+
+def cmd_wd(args: argparse.Namespace) -> None:
+    """Wikidata items by name: id, label, description, point and admin parent.
+
+    A locator only -- where a place is, so that a polygon it falls in can be
+    named -- never a figure. ``_`` in a name stands for a space, the command
+    line being split on whitespace.
+    """
+    for name in args.names:
+        text = name.replace("_", " ")
+        url = WIKIDATA + "?" + urllib.parse.urlencode({
+            "action": "wbsearchentities", "search": text, "language": args.lang,
+            "format": "json", "limit": args.limit, "type": "item"})
+        status, headers, body, _ = fetch(url, accept="application/json")
+        print(f"\n== {text!r}: {status}")
+        if status != 200:
+            continue
+        hits = json.loads(text_of(body)).get("search") or []
+        if not hits:
+            print("    no item")
+            continue
+        ids = [h["id"] for h in hits]
+        status, _h, body, _ = fetch(WIKIDATA + "?" + urllib.parse.urlencode({
+            "action": "wbgetentities", "ids": "|".join(ids), "props": "claims|labels",
+            "languages": "en", "format": "json"}), accept="application/json")
+        entities = json.loads(text_of(body)).get("entities", {}) if status == 200 else {}
+        parents: dict[str, str] = {}
+        for hit in hits:
+            claims = entities.get(hit["id"], {}).get("claims", {})
+            point = ""
+            for claim in claims.get("P625", [])[:1]:
+                value = claim.get("mainsnak", {}).get("datavalue", {}).get("value", {})
+                point = f"{value.get('latitude', 0):.4f},{value.get('longitude', 0):.4f}"
+            within = [c.get("mainsnak", {}).get("datavalue", {}).get("value", {}).get("id")
+                      for c in claims.get("P131", [])]
+            kinds = [c.get("mainsnak", {}).get("datavalue", {}).get("value", {}).get("id")
+                     for c in claims.get("P31", [])]
+            parents[hit["id"]] = ",".join(w for w in within if w)
+            print(f"    {hit['id']} {hit.get('label')!r} -- {str(hit.get('description', ''))[:70]!r} "
+                  f"point={point or '-'} P131={parents[hit['id']] or '-'} P31={','.join(k for k in kinds if k)[:60]}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -516,10 +562,15 @@ def main() -> int:
     c.add_argument("--limit", type=int, default=5000)
     c.add_argument("--rows", type=int, default=80)
 
+    d = sub.add_parser("wd")
+    d.add_argument("names", nargs="+")
+    d.add_argument("--lang", default="en")
+    d.add_argument("--limit", type=int, default=4)
+
     args = ap.parse_args()
     {"get": cmd_get, "heads": cmd_heads, "nada": cmd_nada, "nadafiles": cmd_nadafiles,
      "xls": cmd_xls, "pdf": cmd_pdf, "pdftitles": cmd_pdftitles,
-     "rows": cmd_rows, "cdx": cmd_cdx}[args.cmd](args)
+     "rows": cmd_rows, "cdx": cmd_cdx, "wd": cmd_wd}[args.cmd](args)
     return 0
 
 
