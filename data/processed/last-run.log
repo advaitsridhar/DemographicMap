@@ -1,75 +1,8 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
 
-== GET https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census
-   (redirected to https://bbs.gov.bd/pages/static-pages/6922e0ff933eb65569e297dc)
-  200 text/html; charset=utf-8 151880 https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census
-    'জেলা পরিসংখ্যান ২০১১' -> https://bbs.gov.bd/pages/static-pages/6922de73933eb65569e1ab86
-    'Preliminary Report on Population and Housing Census 2022' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/6be42f15c1d342029649fa3baca69ab7.pdf
-    'Preliminary Report on Population and Housing Census 2022' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/64cfb2e2a63042c9b96acfc276275836.pdf
-    'National Report Volume-05 : Administrative Report' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/NRV-5Report2011.pdf
-    'National Report Volume-04: Socio economic and Demograpuic Report, 2011' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/SED_REPORT_Vol-4.pdf
-    'National Report Volume-03: Urban Area Rport, 2011' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/Population Housing Census 2011.pdf
-    'National Report Volume-02 : Union Statistics, 2011' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/Union%20Statistics.pdf
-    'National Report Volume-01 : Analytical Report, 2011' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/NRV-1Report2011.pdf
-    'Post Enumaration Check (PEC) Report (Population and Housing Census 201' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/LatestReports/PEC%20Report%202011.pdf
-    'Preliminary Report (Population and Housing Census 2011)' -> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0ea528bd7abd4f0b84dd5102112c32e0.pdf
-    'BARISHAL' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Barisal.pdf
-    'BHOLA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_BHOLA.pdf
-    'PIROJPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Pirojpur.pdf
-    'PATUAKHALI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Patuakhali.pdf
-    'JHALAKHATI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Jhalokathi.pdf
-    'CHATTOGRAM' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Chittagong.pdf
-    'COX’S BAZAR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_CoxsBazar.pdf
-    'BANDARBAN' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Bandarban.pdf
-    'RANGAMATI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Rangamati.pdf
-    'NOAKHALI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Noakhali.pdf
-    'FENI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Feni.pdf
-    'CUMILLA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Comilla.pdf
-    'BRAHMMANBARIA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Brahmanbaria.pdf
-    'KHAGRACHHARI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Khagrachhari.pdf
-    'LAKSHMIPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Lakshmipur.pdf
-    'DHAKA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Dhaka.pdf
-    'NARAYANGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Narayanganj.pdf
-    'GAZIPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Gazipur.pdf
-    'MANIKGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Manikganj.pdf
-    'NARSINGDI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Narsingdi.pdf
-    'FARIDPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Faridpur.pdf
-    'GOPALGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Gopalganj.pdf
-    'RAJBARI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Rajbari.pdf
-    'SHARIATPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Shariatpur.pdf
-    'KISHOREGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Kishoreganj.pdf
-    'MUNSHIGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Munshiganj.pdf
-    'TANGAIL' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Tangail.pdf
-    'MYMENSINGH' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Mymensingh.pdf
-    'JAMALPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_JAMALPUR.pdf
-    'SHERPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_%20Sherpur.pdf
-    'KHULNA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Khulna.pdf
-    'BAGERHAT' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Bagerhat.pdf
-    'SATKHIRA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Satkhira.pdf
-    'JHENAIDAH' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_JENAIDAH.pdf
-    'CHUADANGA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Chuadanga.pdf
-    'MAGURA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Magura.pdf
-    'KUSHTIA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Kushtia.pdf
-    'MEHERPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Meherpur.pdf
-    'JASHORE' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Jessore.pdf
-    'NARAIL' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Narail.pdf
-    'RAJSHAHI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Rajshahi.pdf
-    'NATORE' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Natore.pdf
-    'NAOGAON' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Naogaon.pdf
-    'PABNA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Pabna.pdf
-    'SIRAJGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Sirajganj.pdf
-    'BOGURA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Bogra.pdf
-    'CHAPAI NAWABGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_ChapaiNawabganj.pdf
-    'JOYPURHAT' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Joypurhat.pdf
-    'RANGPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Rangpur.pdf
-    'GAIBANDHA' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Gaibandha.pdf
-    'NILPHAMARI' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Nilphamari.pdf
-    'KURIGRAM' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Kurigram.pdf
-    'DINAJPUR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Dinajpur.pdf
-    'THAKURGAON' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Thakurgaon.pdf
-    'LALMONIRHAT' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Lalmonirhat.pdf
-    'PANCHAGARH' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Panchagarh.pdf
-    'HABIGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Habiganj.pdf
-    'MAULVIBAZAR' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Maulivibazar.pdf
-    'SUNAMGANJ' -> http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Sunamganj.pdf
+== GET http://archive.org/wayback/available?url=pcs.icms.gov.bd/Data/PHC2022/DistrictSeries/Report/Feni.pdf
+  200 application/json 96 http://archive.org/wayback/available?url=pcs.icms.gov.bd/Data/PHC2022/DistrictSeries/Report/Feni.pdf
+    {"url": "pcs.icms.gov.bd/Data/PHC2022/DistrictSeries/Report/Feni.pdf", "archived_snapshots": {}}
+
+== GET http://archive.org/wayback/available?url=pcs.icms.gov.bd
+  200 application/json 52 http://archive.org/wayback/available?url=pcs.icms.gov.bd
+    {"url": "pcs.icms.gov.bd", "archived_snapshots": {}}
