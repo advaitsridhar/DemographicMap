@@ -1,10 +1,8 @@
-  ethnicity: 42 planning areas reconcile, national total 4,044,210; breakdown suppressed for Boon Lay, North-Eastern Islands, Paya Lebar, Pioneer, Tengah, Tuas, Western Islands
-  ethnicity: 49 areas account for the national row to within -40
-  religion: 30 planning areas reconcile, national total 3,459,093
-  religion: 30 areas and an Others row of 25,756 account for the national row to within -1
-  language: 30 planning areas reconcile, national total 3,596,284
-  language: 30 areas and an Others row of 25,353 account for the national row to within -2
-  religion_2010: 35 planning areas reconcile, national total 3,105,748
-  language_2010: 35 planning areas reconcile, national total 3,399,054
-  55 planning areas, 42 with ethnicity, 35 with religion and language (5 of them from the 2010 census); 5 regions summed from them
-  wrote data/processed/singapore_planning_area.json (189 kB)
+malaysia: ethnicity, median age and sex ratio by state and district, OpenDOSM
+  states: 16 at 2026-01-01
+  districts: 166 at 2026-01-01
+  16 states' districts each make the state's own figure for 2026-01-01
+  malaysia_state.json: 16 of 16 with a median age (26.6-36.5) and a sex ratio (96.9-117.2)
+  wrote data/processed/malaysia_state.json (46 kB)
+  malaysia_district.json: 166 of 166 with a median age (23.3-38.9) and a sex ratio (91.8-152.4)
+  wrote data/processed/malaysia_district.json (482 kB)
