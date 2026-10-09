@@ -1,50 +1,8 @@
-== https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx
-  HTTP 200 application/octet-stream 67,733 bytes
-  -- 'Sheet1'
-       2: Table B01.  Ag
-      68: Table B02. Hou
-     124: Table B03. Per
-     183: Table B03A. Fe
-     246: Table B03B. Ch
-     277: Table B04. Sin
-     347: Table B04A. Ma
-     417: Table B04B. Fe
-     487: Table B05. Pla
-     534: Table B05A. Ma
-     581: Table B05B. Fe
-     629: Table B06. Cit
-     679: Table 16. Resi
-     725: Table 17. Male
-     772: Table 18. Fema
-     820: Table 13. Citi
-     870: Table 14. Male
-     921: Table 15. Fema
-     972: Table 16. Resi
-    1019: Table 17. Male
-    1066: Table 18. Fema
-    1114: Table 22. Mari
-    1138: Table 23. Male
-    1163: Table 24. Fema
-    1188: Table 25. Mari
-    1249: Table 26. Lite
-    1259: Yapese | 0 | 0 | 0 | 0 | 0
-    1260: Yapese - Outer | 0 | 0 | 0 | 0 | 0
-    1267: Kosraean | 120 | 43 | 29 | 27 | 21
-    1275: Yapese | 0 | 0 | 0 | 0 | 0
-    1276: Yapese - Outer | 0 | 0 | 0 | 0 | 0
-    1283: Kosraean | 1391 | 448 | 421 | 161 | 361
-    1290: Table 26A. Eng
-    1295: Yapese and oth | 2 | 1 | 0 | 1 | 0
-    1296: Yapese - outer | 2 | 1 | 1 | 0 | 0
-    1301: Kosraean and o | 3516 | 1122 | 503 | 584 | 1307
-    1308: Yapese and oth | 0 | 0 | 0 | 0 | 0
-    1309: Yapese - outer | 0 | 0 | 0 | 0 | 0
-    1314: Kosraean and o | 248 | 100 | 34 | 60 | 54
-    1322: Yapese | 0 | 0 | 0 | 0 | 0
-    1323: Yapese - Outer | 0 | 0 | 0 | 0 | 0
-    1330: Kosraean | 5918 | 1887 | 1193 | 900 | 1938
-    1337: Table 27. Scho
-    1380: Table 28. Male
-    1423: Table 29. Fema
-    1467: Table 31. Age 
-    1512: Table H01. Str
+indonesia_language: BPS-Statistics Indonesia, The Result of Long Form Population Census 2020 (2023), Table 6.3: Population 5 Years of Age and Over by Age Group, First Language Spoken, and Sex, as the U.S. Census Bureau tabulates it for HDX
+  https://data.humdata.org/dataset/6daa36c4-9ea3-4844-958b-042d2cc3d8b7/resource/2c8fce76-8ad7-4bce-ab02-374318302383/download/indonesia_uscb_202405.xlsx
+  514 regencies make their 34 provinces and the provinces the country's 253,679,348 aged five and over, class by class (the widest rounding miss 3 people, Sign language in PAPUA BARAT)
+  513 regencies bound one to one inside their provinces; no polygon for KABUPATEN KEPULAUAN SERIBU
+  admin1: 34 units; Indonesian first 6.3%-89.0%, median 33.3%
+  admin2: 513 units; Indonesian first 1.0%-96.5%, median 19.1%
+  wrote data/processed/indonesia_language_survey.json (1342 kB)
+  wrote indonesia_language_survey.json: 547 records
