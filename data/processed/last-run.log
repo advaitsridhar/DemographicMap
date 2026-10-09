@@ -1,16 +1,260 @@
-micronesia_census: 2023 and 2010 census workbooks
-  https://stats.gov.fm/download/18/population-statistics/2210/fsm-basic-tables-2023-population-housing-census.xlsx: 424,592 bytes
-  https://stats.gov.fm/download/18/population-statistics/600/fsm-basic-tables-2010-population-housing-census.xlsx: 2,324,606 bytes
-  https://stats.gov.fm/download/56/yap/2212/yap-basic-tables-2023-population-housing-census.xlsx: 433,736 bytes
-  https://stats.gov.fm/download/54/pohnpei/2216/pni-basic-tables-2023-population-housing-census.xlsx: 423,189 bytes
-  https://stats.gov.fm/download/55/kosrae/2217/ksa-basic-tables-2023-population-housing-census.xlsx: 416,098 bytes
-  https://stats.gov.fm/download/64/states/596/pohnpei-basic-tabulation-2010-census-of-population-and-housing.xlsx: 245,828 bytes
-  https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx: 67,733 bytes
-  https://stats.gov.fm/download/64/states/598/yap-basic-tabulation-2010-census-of-population-and-housing.xlsx: 432,551 bytes
-  https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx: 85,594 bytes
-  Yap 2023: municipalities add up to 10,741.0, the state's row 10,739.0
-  Pohnpei 2023: municipalities add up to 26,104.0, the state's row 26,102.0
-  Kosrae 2023: municipalities add up to 5,090.0, the state's row 5,092.0
-  admin1 ethnicity 4, admin1 language 4, admin1 median_age 4, admin1 population 4, admin1 religion 4, admin1 sex_ratio 4, admin2 ethnicity 17, admin2 language 21, admin2 median_age 31, admin2 population 31, admin2 religion 21, admin2 sex_ratio 31
-  wrote data/processed/micronesia_census.json (184 kB)
-  wrote 35 records
+https://web.archive.org/web/2019/https://stat.tj/ru/electronic-versions-of-publications -> https://web.archive.org/web/20191118200251/https://stat.tj/ru/electronic-versions-of-publications: HTTP 200 text/html; charset=UTF-8 109,088 B
+  Сотрудничество -> https://web.archive.org/web/20191118200251/https://stat.tj/ru/international-cooperation
+  Перепись населения - 2020 -> https://web.archive.org/web/20191118200251/https://stat.tj/ru/perepis-naseleniya-2020
+  Перепись сельского хозяйства -> https://web.archive.org/web/20191118200251/https://stat.tj/ru/agricultural-census
+  Медико-Демографическое исследование 2017 -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/storage/TjDHS%202017%20KIR%2004Apr2018%20(RUS).pdf
+  Здравоохранение в Республике Таджикистан, 2016 (Скачать PDF, 1,9 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/958885d5dec55ce6eba4ebdeac71c911_1470381040.pdf
+  Численность населения Республики Таджикистан на 1 января 2016 года (Скачать PDF, 1,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/7a20337ca019c92e18235196b4e62aaa_1470198679.pdf
+  Образование в Республике Таджикистан за 1991-2015 годы (Скачать PDF, 3,7 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/c1464007cb84f4e545746a409ba5794c_1467094723.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, 1. 2016 (Скачать PDF, 1,9 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/b532c7646fd1fcf4c5b8633ee0ddb1af_1466844556.pdf
+  Социально-экономическое положение РТ за 2015 год (Скачать PDF, 5,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/3c8b737e693be8769270f0f588a0a0e5_1455852583.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, 2015 (Скачать PDF, 1,9 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/c5f6ba54defcfc7da86a8b9343132223_1459405562.pdf
+  Охрана окружающей среды в Республике Таджикистан (Скачать PDF, 1,9 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/8ed248531eee94f12f817137ff2afedf_1451993762.pdf
+  Здравоохранение в Республике Таджикистан (Скачать PDF, 1,9 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/1e6afc5c2ee5d3568b30768e853eda15_1441784324.pdf
+  Гендерные показатели в дехканских хозяйствах (Скачать PDF, 3.3 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/f27aba39f843eed59af0be07d8b2ac1e_1439879370.pdf
+  Таджикистан в цифрах - 2015 (Скачать PDF, 3.3 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/695c206e2b1ce86f333f33fdc268a469_1439617140.pdf
+  Оценка бедности в Таджикистане: методологическая записка (Скачать PDF, 2,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/07f755a0540d47f1ba5c1ab373be64ff_1436004752.pdf
+  Продовольственная безопасность и бедность №3 2015 -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/35d26ed22c8b197ce1df2848f121e04f_1453453898.pdf
+  Продовольственная безопасность и бедность №2 2015 -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/9ebc521cb615be2812a13bca74a6a46c_1444195767.pdf
+  Рынок труда в Республике Таджикистан (Скачать PDF, 5,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/7b6f49435ed5ae6ec685562d6e28583a_1426678999.pdf
+  Демографический ежегодник Республики Таджикистан (скачать PDF, 11 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/7b6f49435ed5ae6ec685562d6e28583a_1426678896.pdf
+  Стратегия распространения статистических данных Агентства по статистике (Скачать 0,2 MB) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/a30fe5c7ec7b33a6af6778b8e7cbca62_1307782978.pdf
+  Население Республики Таджикистан на 1 января 2014 года (Скачать PDF, 0,4Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/b417f44e3113e555ffff3cd143d5b3fe_1404816557.pdf
+  Здравоохранение в Республике Таджикистан (Скачать PDF, 2,5 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/c267c3cd63a6d53e635e79e878d6b162_1408945776.pdf
+  Таджикистан в цифрах - 2014 (Скачать PDF, 3.3 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/7c100ecd268263d4697d456fc10eaa54_1409549229.pdf
+  Регионы Республики Таджикистан - 2014 (Скачать PDF, 2,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/c476d0ddf3ea68cc502ba419312173a6_1418985745.pdf
+  Женщины и мужчины Республики Таджикистан (Скачать PDF, 2,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/d976061967cd7672af7e083fead26bda_1420539196.pdf
+  Социально-экономическое положение РТ за 2014 год (Скачать PDF, 5,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/9cb56a51fd83038a939b665b5bfb2333_1421132712.pdf
+  Продовольственная безопасность и бедность №4 2014 -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/0e56231087235f3701c3647393086608_1426587088.pdf
+  Образование в Республике Таджикистан (Скачать PDF, 2,6 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/695c206e2b1ce86f333f33fdc268a469_1433502622.pdf
+  Продовольственная безопасность и бедность №1 2015 -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/f847a858478260b1abcc6681d6a07473_1419327489.pdf
+  Население Республики Таджикистан на 1 января 2015 года (Скачать PDF, 0,4Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/65a709121baf8a64bf15d33f398aafde_1435736807.pdf
+  Охрана окружающей среды в Республике Таджикистан (Скачать PDF, 1,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/f0c2ee52c71ec4fe9e9e97ec83e578b4_1415163946.pdf
+  Регионы Республики Таджикистан - 2013 (Скачать PDF, 2,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/e7604507b29876e47b1dd85df4640df4_1386922155.pdf
+  Атлас Ключевых Индикаторов, МДИТ 2012 (Скачать PDF, 12,5 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/e7604507b29876e47b1dd85df4640df4_1385546921.pdf
+  Медико-Демографическое Исследование Таджикистана 2012 (финальный отчет) (Скачать PDF, 4,3Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/e7604507b29876e47b1dd85df4640df4_1385546913.pdf
+  Рекомендательные записки по результатам Медико-демографическое исследование 2012 (Скачать PDF, 10,5Мб) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/ca00860a7a6d5cf74150366d07a93e7c_1421159928.pdf
+  Продовольственная безопасность и бедность №2 2014 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/59ddb631a8f482f44249be56ea996842_1412326775.pdf
+  Продовольственная безопасность и бедность №1 2014 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/ac259d49c99620735dcb02b5b3dd57ff_1403332762.pdf
+  Женщины и мужчины Республики Таджикистан (Скачать PDF, 1,6Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/302f722abc59d6035cf09c07caf0f703_1354182679.pdf
+  Таджикистан в цифрах - 2013 (Скачать PDF, 2,5 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/ad0df465351c083293dff8839095681b_1378536558.pdf
+  Население Республики Таджикистан на 1 января 2013 года (Скачать PDF, 0,4Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/36a268df28cfe07c2098351a71bb2773_1372996589.pdf
+  Социально-экономическое положение РТ за январь-декабрь 2013 года (Скачать PDF, 3,51Мб) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/b432af73128930ca6c84c6310b2b4b73_1390202990.pdf
+  Продовольственная безопасность и бедность №4 2013 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/eb9259b7531a2fd97c5dfcae4f7be72a_1396764100.pdf
+  Продовольственная безопасность и бедность №3 2013 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/7f167a7a1cf4aa6b5ac94e889afe5b76_1388488589.pdf
+  Рождаемость и смертность населения Республики Таджикистан, том Х (Скачать PDF, 3,8 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/
+  Продолжительность проживания в месте постоянного жительства и миграция населения Республики Таджикистан, том IХ (Скачать -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/e7604507b29876e47b1dd85df4640df4_1385546909.pdf
+  Жилищный фонд и жилищные условия населения Республики Таджикистан, том VIII (Скачать PDF, 4,9 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/e7604507b29876e47b1dd85df4640df4_1385546859.pdf
+  Продовольственная безопасность и бедность №2 2013 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/611c49077a94400f0229297ffb5ec812_1380628788.pdf
+  Социально-экономическое положение РТ за январь-декабрь 2012 года (Скачать PDF, 3,51Мб) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/a6069090cb7edbe5efb67aec241e9816_1359030405.pdf
+  Медико-Демографическое Исследование Таджикистана 2012 (предварительный отчет) (Скачать PDF, 1,07Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/b81233378f8d2e84e8f2621fa46e6b03_1360663956.pdf
+  Продовольственная безопасность и бедность №1 2013 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/18ff07ced6f6e6ceb9e79b1a9909e50f_1374572285.pdf
+  Демографический ежегодник Республики Таджикистан -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/01c0a666738323bc1c3512243cfbf74e_1367165061.pdf
+  Положение на рынке труда в Республике Таджикистан (Скачать PDF, 2,99Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/a6069090cb7edbe5efb67aec241e9816_1358702884.pdf
+  Регионы Республики Таджикистан - 2012 (Скачать PDF, 2,1 Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a_1356711239.pdf
+  Население Республики Таджикистан на 1 января 2012 года (Скачать PDF, 0,4Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/c3a02601197201dd0fba00b6b6a0ec4c_1345704421.pdf
+  Занятия и виды экономической деятельности занятого населения Республики Таджикистан (Том 7) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/f690229642a2b8bc66e9fbb05793266b_1365610360.pdf
+  Продовольственная безопасность и бедность №4 2012 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/885caef80dd3f05346d1a570322c152b_1367322898.pdf
+  Источники средств к существованию, экономическая активность населения Республики Таджикистан (Том 6, Часть 2) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/883c7046854e04138c55680ffde90a61_1363595428.pdf
+  Источники средств к существованию, экономическая активность населения Республики Таджикистан (Том 6, Часть 1) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/883c7046854e04138c55680ffde90a61_1363595412.pdf
+  Том 2. Численность населения Республики Таджикистан по полу, возрасту и состоянию в браке (Скачать PDF, 9,8Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a_1356711816.pdf
+  Том 1. Численность и размещение населения Республики Таджикистан (Скачать PDF, 4Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a_1356711769.pdf
+  Продовольственная безопасность и бедность №3 2012 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/7746a85bad2ff3a146936c1c168af636_1357558895.pdf
+  Продовольственная безопасность и бедность №2 2012 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/f7efb0c4e7be562306296a4d52f080e9_1348054440.pdf
+  Том 3. Национальный состав и владение языками, гражданство населения Республики Таджикистан (Скачать PDF, 13Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/526b8592e834fcaaccec26a22965ea2b_1355501132.pdf
+  Том 4. Образовательный уровень населения Республики Таджикистан (Скачать PDF, 10,5Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/526b8592e834fcaaccec26a22965ea2b_1355501211.pdf
+  Том 5. Число и состав домохозяйств Республики Таджикистан (Скачать PDF, 8,42Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/526b8592e834fcaaccec26a22965ea2b_1355501252.pdf
+  Об изменении численности и размещения населения Республики Таджикистан между переписями населения 2000 и 2010 годов(Скач -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/24b39691c4f4d5abeec3d3ee9fafbc12_1333617451.pdf
+  О предварительных итогах переписи населения и жилищного фонда 2010 года (Скачать PDF, 0,2Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/689970f6c49dc744ad4bb1001f96a5b0_1306734923.pdf
+  Регионы Республики Таджикистан - 2011 (Скачать PDF, 1,7Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/fafa4ed764f8e9b9cad5fd57b6c819fa_1322470362.pdf
+  Таджикистан в цифрах 2011 (Скачать PDF, 2,35Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/2342f4d3bcc13e5b6247c13f8e1fe06c_1311128829.pdf
+  Продовольственная безопасность и бедность №4 2011 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/f86680bae6f4d5e4d650d985b7b8cc34_1335518451.pdf
+  Продовольственная безопасность и бедность №1 2012 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/a13ec668b4648cccf48e3ad1ef9221ab_1340346899.pdf
+  Укрепление Национальной cистемы cтатистики Таджикистана "Двухстороннее сотрудничество Агентства по статистике/ Таджикист -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/519bd64ce1c2e7998a06113d23cd9bfb_1305792143.pdf
+  Продовольственная безопасность и бедность №3 2011 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/47a59275519273b17834815c7e8d0585_1323860788.pdf
+  Продовольственная безопасность и бедность №2 2011 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/7fcdf5c459d624c2353ed352dc0ec245_1317026457.pdf
+  Регионы Республики Таджикистан 2010 (Скачать ZIP, 1,5Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/c6617c2a140f969428b790ea690b13d9_1293210144.zip
+  Таджикистан в цифрах 2010 (Скачать PDF, 2,35Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/9f5268b192177e16d1066c1e16aea04a_1287832044.pdf
+  Продовольственная безопасность и бедность №3 2010 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/690bd0016423b57c94fae43e7090beeb_1293203977.pdf
+  Продовольственная безопасность и бедность №2 2010 (Скачать PDF, 1,2Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/aadab1961eca795e10c2b9a331068495_1287832764.pdf
+  Обследование уровня жизни 2007 (Скачать PDF, 2,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/ca9ee146deb058e271dc01c7a9a923cc_1280232055.pdf
+  Кластерное обследование по многим показателям (МИКС) 2005 (Скачать PDF, 8,5Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/img/0da2769178de70d92797d15af261bee0_1280233999.pdf
+  Продовольственная безопасность и бедность №1 2011 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/ru/img/da4cd1e58a5549805f2454a1c1ee2a9e_1308225428.pdf
+  Продовольственная безопасность и бедность №4 2010 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/ru/img/f11663cdaa7e72d9a1c6d206f9211006_1301299146.pdf
+  Таджикистан в цифрах 2010 (Скачать PDF, 2,35Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/ru/img/9f5268b192177e16d1066c1e16aea04a_1287832044.pdf
+  Продовольственная безопасность и бедность №3 2010 (Скачать PDF, 0,9Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/ru/img/690bd0016423b57c94fae43e7090beeb_1293203977.pdf
+  Регионы Республики Таджикистан 2010 (Скачать ZIP, 1,5Mb) -> https://web.archive.org/web/20191118200251/http://oldstat.ww.tj/ru/ru/img/c6617c2a140f969428b790ea690b13d9_1293210144.zip
+  Встреча с бывшим Президентом Исламской Республики Афганистан Хамидом Карзаем -> https://web.archive.org/web/20191118200251/http://president.tj/ru/node/21820
+   -> https://web.archive.org/web/20191118200251/http://ecensus.stat.tj/
+   -> https://web.archive.org/web/20191118200251/http://www.censusinfo.tj/libraries/aspx/Home.aspx
+  Национальное информационное агентство Таджикистана «Ховар» -> https://web.archive.org/web/20191118200251/http://khovar.tj/rus/
+  Выпущен сборник Продовольственная безопасность и бедность в Республике Таджикистан №2, 2019 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/September2019/2-2019__russ..pdf
+  Здравоохранение в Республике Таджикистан (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/%D0%A1%D0%B1%20-%D0%B7%D0%B4%D1%80%D0%B0%D0%B2%20-%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%202018-2019.pdf
+  Численность населения Республики Таджикистан на 1 января 2019 года (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/July2019/macmuai_sumorai_aholi_to_1_anvari_soli_2019.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан №1, 2019 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/June2019/food-security-rus.pdf
+  Здравоохранение в Республике Таджикистан 2018 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/June2019/health-care-2018.pdf
+  Основные показатели обследований бюджетов домашних хозяйств 2018 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/June2019/key-indicators-2018.pdf
+  Рынок труда в Республике Таджикистан 2018 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/June2019/labor-market-2018.pdf
+  Демографический ежегодник Республики Таджикистан 2018 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/June2019/demographic-yearbook-2018.pdf
+  Таджикистан в цифрах 2018 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/June2019/tajikistan-in-figures-2018.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, №4, 2018 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/april2019/4-2018-rus.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, №3. 2018 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/December2018/3-2018__rus.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан №2, 2018 г. (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/September2018/2-2018-rus.pdf
+  "Гендерные показатели в дехканских хозяйствах" за 2012-2017 гг. (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/September2018/Pressemitteilung_Gender_2018.pdf
+  Отчет о результатах единовременного выборочного обследования малых предприятий (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/August2018/otcet_o_rezultatah_omp.pdf
+  Охрана окружающей среды в Республике Таджикистан (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/July2018/hifzi_muhiti_zist_-_2017_ohiron.pdf
+  Отчет о результатах единовременного выборочного обследования «О состоянии энергетического хозяйства и эффективности его  -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/publications/July2018/Rusi.pdf
+  Численность населения Республики Таджикистан на 1 января 2018 года (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/files/cislennost_naselenia_na_1.01.2018.pdf
+  Заключительный отчет: Национальная стратегия развития статистики. Двустороннее партнерство (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/WBK1601_Final publication_RU.pdf
+  Социально-экономическое положение РТ за 2017 год (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/51fb883f423d5b8917905c45f3ebb697_1518696622.pdf
+  Отчет «Положение на рынке труда в Республике Таджикистан», подготовленный по результатам обследования рабочей силы, в ра -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/a5adbabc421a020f46bc7f5d29b1cc98_1518005187.pdf
+  Отчет о результатах выборочного обследования по водопользователям в сельском хозяйстве, промышленности в Таджикистане в  -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/4b41344a386e7999608e75e7a5710373_1515477607.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, 3 2017 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/6801f6a770f7119b986f23cc4bf404fe_1514189115.pdf
+  Регионы Республики Таджикистан 2017 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/13b992a6b19499d948c865b3572cb4a1_1510580431.pdf
+  Таджикистан в цифрах - 2017 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/e37b548394b7b88961c832850b383539_1508737633.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, 2 2017 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/ed6443ece0ac0332e9a7d02e8078f549_1508578838.pdf
+  Образование в Республике Таджикистан за 1991-2016 годы (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/86dc35089aded95b2ccb619bc0057ec1_1497334929.pdf
+  Демографический ежегодник Республики Таджикистан 2016 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/08a738143cc0b0152aa19a4d4a44aee1_1510575404.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, 4 2016 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/a9fd1c2e3e44b2b5c96368404aa1cb82_1492852230.pdf
+  Социально-экономическое положение РТ за 2016 год (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/357eafa385e4580eb1ea219927718db1_1484381355.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, 3 2016 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/7216b152ab1054fb8a1ccda2579052fd_1487071462.pdf
+  Основные показатели обследований бюджетов домашних хозяйств (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/08a738143cc0b0152aa19a4d4a44aee1.pdf
+  Продовольственная безопасность и бедность в Республике Таджикистан, 2 2016 (Скачать PDF) -> https://web.archive.org/web/20191118200251/http://stat.ww.tj/2d8ddd5a8e60845099172f9e5df6bf63_1477735629.pdf
+  121 links match '(?i)(?:перепис|census|том|volume|национ|nation|2010|pdf)'
+https://web.archive.org/web/2019/http://ecensus.stat.tj/ -> https://web.archive.org/web/20191224041018/http://ecensus.stat.tj/: HTTP 200 text/html 141,509 B
+  Impatient? -> https://web.archive.org/web/20191224041018/http://ecensus.stat.tj/Account/Login?ReturnUrl=%2F
+  1 links match '(?i)(?:перепис|census|том|volume|национ|nation|2010|pdf)'
+https://stat.tj/ru/electronic-versions-of-publications -> https://www.stat.tj/en/electronic-versions-of-publications-archive/: HTTP 200 text/html; charset=UTF-8 97,279 B
+  Population and Housing Census 2020 -> https://www.stat.tj/en/population-and-housing-census/
+  THE PROJECT OF «MODERNIZING THE NATIONAL STATISTICAL SYSTEM IN TAJIKISTAN» -> https://www.stat.tj/en/electronic-versions-of-publications-archive/
+  Information about project -> https://www.stat.tj/en/the-project-of-modernizing-the-national-statistical-system-in-tajikistan/
+  Сooperation -> https://www.stat.tj/en/international-cooperation/
+  Socio-Economic Situation of the Republic of Tajikistan in January 2026 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/russkij-doklad-yanvar-2026.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–February 2026 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/fevral_-2026-doklad-russkij.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–March 2026 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/mart_-2026-doklad-russkij-3.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–April 2026 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/aprel-doklad-2026-russkij-1.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–May 2026 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/doklad-russkij-maj-2026.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–June 2026 (ru) -> https://www.stat.tj/wp-content/uploads/2026/07/6-2026-rusi.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–July 2026 (ru) -> https://www.stat.tj/wp-content/uploads/2026/09/ohir-7-2026-doklad-russkij-okonchat.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–August 2026 (ru) -> https://www.stat.tj/wp-content/uploads/2026/09/8-2026-russkij-variant.pdf
+  Statistical Yearbook 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/03/okonchat-ezhegodnik-2025.pdf
+  Regions 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/02/regiony-solona-2025.pdf
+  Tajikistan in figures 2025 -> https://www.stat.tj/wp-content/uploads/2026/02/ohiron-variant-tadzhikistan-v-czifrah-asosi-rab.pdf
+  Construction 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/02/sohtmon-2024-nav1.pdf
+  System of National Accounts 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/02/sns-sbor-2025g.pdf
+  International Economic Relations of the Republic of Tajikistan – 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/02/sbornik-ves-za-2025-g.pdf
+  Trade and services – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/02/sbornik-torgovlya-i-uslug-24-25.pdf
+  Transport and communication – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/02/sborn.-trans.-i-svyaz-2025.pdf
+  Finance – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/02/moliya-sbor-2025.pdf
+  Industry – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/02/machmuai-sanoat-2024.pdf
+  Education – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/maҷmӯai-maorif-dar-ҷumҳurii-toҷikiston-2024-2025-ohiron-2.pdf
+  Prices 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/sbornik-2025-narh-1-1.pdf
+  Regions 2q-2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/regiony-№2-2025-asosi-1.pdf
+  Agriculture – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/machmuai-kishovarzi-dar-soli-02.07.2025.-baroi-chop.pdf
+  Cotton growing – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/pahtakori-23.07.-2025-baroi-chop-ohiron.pdf
+  Environment protection – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/machmuai-hifzi-muhiti-zist-2025-baroi-chop.pdf
+  Gender indicators in dehkan farms – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/gender-2025-30.07.-25-baroi-chop.pdf
+  Food security and poverty 1q-2025 -> https://www.stat.tj/wp-content/uploads/2025/12/1-2025-english-translated.pdf
+  Population – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/machmuai-shumorai-aholi-to-1.01.2025.pdf
+  Heath statistics – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/tandurustӣ-dar-ҷumҳurii-toҷikiston-2025varianti-ohir.pdf
+  Main indicators of HBS – 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/tpobdh-2025-baroi-chop.pdf
+  Labor market 2025 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/12/bozori_mehnat_2024.-rab-varyant-—31.12.2024.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/russkij-doklad-yanvar-2025.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–February 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/fevral-2025-doklad-russkijk-1.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–March 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/mart_-2025-doklad-russkij-3.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–April 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/aprel-doklad-2025-russkij.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–May 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/maj-2025-doklad-russkij.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–June 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/iyun-2025-rusi.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–Jule 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/iyul-2025-doklad-russkij-okonchat.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–August 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/avgust-2025-russ.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–September 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/sentyabr-2025-doklad-russkij.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–October 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/oktyabr-2025-doklad-russkij-.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–November 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/noyabr-2025-doklad-russkij-1.pdf
+  Socio-Economic Situation of the Republic of Tajikistan in January–December 2025 (ru) -> https://www.stat.tj/wp-content/uploads/2026/06/dekabr-2025-doklad-rusi.pdf
+  Education – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/majmuai-maorif-dar-jumhurii-tojikiston-2023-2024.pdf
+  Industry – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/machmuai-sanoat-2024-1.pdf
+  Finance – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/sbornik-soli-2023-1-1.pdf
+  Agriculture – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/09/ohiron-machmuai-kishovarzi-dar-soli-2024.pdf
+  Cotton growing – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/09/pahtakori-2024.pdf
+  Environment protection – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/09/machmuai-hifzi-muhiti-zist-2024.pdf
+  Gender indicators in dehkan farms – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/09/omori-genderi-2024-ohiron.pdf
+  Population – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/09/machmuai-shumorai-aholi-to-1.01.2024.pdf
+  Heath statistics – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/09/tandurusti-dar-jumhurii-tojikiston-2024varianti-ohir.pdf
+  Main indicators of HBS – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/09/tpobdh-2024-baroi-chop.pdf
+  Transport and communication – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/11/sborn.-trans.-i-svyaz-2024.pdf
+  Trade and services – 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/11/sbornik-torgovlya-i-uslug-2023.pdf
+  Food security and poverty 1-2024 -> https://www.stat.tj/wp-content/uploads/2024/11/1-2024-angl.pdf
+  Food security and poverty 2-2024 -> https://www.stat.tj/wp-content/uploads/2024/11/2-2024-angl.pdf
+  Food security and poverty 4-2024 -> https://www.stat.tj/wp-content/uploads/2025/12/4-2024-english.pdf
+  Regions 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/11/osnovnoj-regiony-2024-1.pdf
+  Tajikistan in figures 2024 -> https://www.stat.tj/wp-content/uploads/2024/11/tadzhikistan-v-czifrah-2024-1.pdf
+  System of National Accounts 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/02/sbornik-sns-2024g.pdf
+  Children of Tajikistan (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/09/kudakon-dar-chumhurii-tochikiston-1-copy.pdf
+  Statistical Yearbook 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/02/ohiron-okonchatelnyj-ezhegodnik-2024-.pdf
+  Labor market 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/02/bozori_mehnat_2024.-rab-varyant-—-12.pdf
+  Demography 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/02/demog-01.01.2024.pdf
+  Socio-economic situation of the Republic of Tajikistan January – December 2024 – (russian) -> https://www.stat.tj/wp-content/uploads/2025/07/12-2024-doklad-rusi.pdf
+  Prices 2024 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2025/10/sbornik-2024-narh.pdf
+  Statistical yearbook – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/ezhegodnik-2023.pdf
+  Regions – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/regiony-2023-g.pdf
+  Tajikistan in figures – 2023 -> https://www.stat.tj/wp-content/uploads/2024/08/tadzhikistan-v-czifrah-2023.pdf
+  Tajikistan and CIS countries – 2023 -> https://www.stat.tj/wp-content/uploads/2024/08/2023-nihoi-1-tadzhikistan-i-strany-sng-2023.pdf
+  Labor market – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/bozori_mehnat_2023.pdf
+  Gender indicators in dehkan farms – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/gender-2023-ohiron.pdf
+  Demography – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/dem-ezh-2022-poslednyj-23.01.2023-isp-avtosohranennyj.pdf
+  Agriculture – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/machmuai-kishovarzi-dar-soli-2023-ohiron-07.08.2023-.pdf
+  Education – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/majmuai-maorif-dar-jumhurii-tojikiston-2021-2022-1.pdf
+  Cotton growing – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/pahtakori-2023.pdf
+  Transport and communocation – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/sborn.-trans.-i-svyaz-2023.pdf
+  Trade and services – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/sbornik-torgovlya-i-uslug-2023.pdf
+  International Economic Relations of the Republic of Tajikistan – 2023 (ru) -> https://www.stat.tj/wp-content/uploads/2024/08/sbornik-ves-za-2022g.-1.pdf
+  Health statistics – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/tandurusti-dar-jumhurii-tojikiston-2023varianti-ohir.pdf
+  Main indicators of HBS – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/tpobdh-2023-baroi-chop.pdf
+  Environment protection – 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/hifzi-muhiti-zist-2023-pasledni.pdf
+  Food security and poverty 2-2023 -> https://www.stat.tj/wp-content/uploads/2024/09/2-2023-angl.pdf
+  Food security and poverty 3-2023 -> https://www.stat.tj/wp-content/uploads/2024/09/3-2023-angl.pdf
+  Food security and poverty 4-2023 -> https://www.stat.tj/wp-content/uploads/2024/09/4-2023-angl.pdf
+  System of National Accounts 2023 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/11/sbornik-2023g.pdf
+  Statistical yearbook – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/omori-solona-2022.pdf
+  Tajikistan in figures – 2022 -> https://www.stat.tj/wp-content/uploads/2024/08/tadzhikistan-v-czifrah-2022.pdf
+  Regions – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/regiony-2022-g.pdf
+  Tajikistan and CIS countries – 2022 -> https://www.stat.tj/wp-content/uploads/2024/08/tadzhikistan-i-strany-sng-2022.pdf
+  Labor market – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/bozori_mehnat_2022.pdf
+  Education – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/majmuai-maorif-dar-jumhurii-tojikiston-2021-2022.pdf
+  Trade and service – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/savdo-va-hizmatrasoni-2022.pdf
+  Transport and communication – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/nakliyot-va-aloka.pdf
+  International Economic Relations of the Republic of Tajikistan – 2022 (ru) -> https://www.stat.tj/wp-content/uploads/2024/08/sbornik-ves-za-2021-god.pdf
+  Main indicators of HBS – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/tpobdh-2022-baroi-chop.pdf
+  Population – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/machmuai-shumorai-aholi-to-1.01.2022-ispravlenij.pdf
+  Cotton growing – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/pahtakori-dar-cht-2022.pdf
+  Health statistics – 2022 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/majmuai-omori-tandurusti-2022-varianti-ohir.pdf
+  Food security and poverty 4-2022 -> https://www.stat.tj/wp-content/uploads/2024/09/4-2022-ang.pdf
+  System of National Accounts 2022 -> https://www.stat.tj/wp-content/uploads/2024/11/sbornik-sns-2022g.pdf
+  Statistical Yearbook – 2021 (30 years of Independence) (tj-ru) -> https://www.stat.tj/wp-content/uploads/2026/06/ezhegod.-30-let-2021.pdf
+  Tajikistan and CIS countries – 2021 -> https://www.stat.tj/wp-content/uploads/2024/08/tadzhikistan-i-strany-sng-2021.pdf
+  Regions – 2021 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/sbornik-regiony-rt-2021.pdf
+  International Economic Relations of the Republic of Tajikistan (ru) – 2021 -> https://www.stat.tj/wp-content/uploads/2024/05/sbornik-ves-za-2021-god.pdf
+  System of National Accounts in the Republic of Tajikistan (tj-ru)- 2021 -> https://www.stat.tj/wp-content/uploads/2024/05/sbor-21g.new-sns.pdf
+  Population (30 years) – 2021 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/07/shumorai-aholi.pdf
+  Trade and service – 2021 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/07/30-solagi-savdo.pdf
+  Labor market (30 years) – 2021 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/07/bozori-mehnat-30-solagi-baroi-chop.pdf
+  Demography (30 years) – 2021 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/07/demografiya-21-1.pdf
+  Agriculture – 2021 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/07/machmuai-kishovarzi-dar-soli-2021-11.08.2021.pdf
+  Transport and communication – 2021 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/07/sbor.-transport-2021.pdf
+  Statistical Yearbook – 2020 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/ezhegodnik-2020-az-13.10.2020.pdf
+  Regions – 2020 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/regiony-2020.pdf
+  Tajikistan in figures – 2020 -> https://www.stat.tj/wp-content/uploads/2024/08/tadzhikistan-v-czifrah-2020.pdf
+  Prices – 2020 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/02/sbornik-2020-narh.pdf
+  Transport and communication 2020 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/02/sbornik_trasport_30_let_posl20.pdf
+  Trade and service – 2020 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/sbornik-torgovlya-i-uslug2020.pdf
+  International Economic Relations of the Republic of Tajikistan (ru) – 2020 -> https://www.stat.tj/wp-content/uploads/2024/05/sbornik-ves-za-2020g.pdf
+  System of National Accounts in the Republic of Tajikistan (tj-ru)- 2020 -> https://www.stat.tj/wp-content/uploads/2024/05/sbor-20g.sns.pdf
+  Tajikistan and CIS countries – 2020 -> https://www.stat.tj/wp-content/uploads/2024/08/tadzhikistan-i-strany-sng-2020-pechat.pdf
+  Demography yearbook 25 years – 2016 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/02/demogr-ezhegodnik-25-let.pdf
+  Health statistics – 2018 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/07/sb-zdrav-vypusk-2017-2018.pdf
+  Statistical yearbook – 2018 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/08/ezhegodnik-2018.pdf
+  Prices – 2018 (tj-ru) -> https://www.stat.tj/wp-content/uploads/2024/02/sbornik-2019-narh.pdf
+  International Economic Relations of the Republic of Tajikistan (ru)- 2019 -> https://www.stat.tj/wp-content/uploads/2024/05/sbornik-ves-za-2019g.pdf
+  System of National Accounts in the Republic of Tajikistan (tj-ru)- 2019 -> https://www.stat.tj/wp-content/uploads/2024/05/sbor-19g.cns.pdf
+  Creative Commons Attribution 4.0 International -> http://creativecommons.org/licenses/by/4.0/
+  132 links match '(?i)(?:перепис|census|том|volume|национ|nation|2010|pdf)'
