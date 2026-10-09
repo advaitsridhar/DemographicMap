@@ -185,7 +185,8 @@ def without_zone(table):
 
 
 class Binding(unittest.TestCase):
-    def build(self, code_shapes=None, seat_names=None, cut=None, tables_=None, **changes):
+    def build(self, code_shapes=None, seat_names=None, cut=None, tables_=None, ground=None,
+              **changes):
         admin1, admin2 = units()
         for unit in admin2:
             unit.update(changes.get(unit["id"], {}))
@@ -197,7 +198,7 @@ class Binding(unittest.TestCase):
             return {r["shape_id"]: r for r in cc.build(
                 "63", tables_ or tables(), NAMES,
                 CODE_SHAPES if code_shapes is None else code_shapes, SEATS, admin1, admin2,
-                seat_names=seat_names)}
+                seat_names=seat_names, ground=ground)}
         finally:
             cc.CUT_FROM.clear()
             cc.CUT_FROM.update(saved)
@@ -341,6 +342,51 @@ class Binding(unittest.TestCase):
         self.assertIn("S-BAIMA", records)
         self.assertNotIn("S-MAQEN", records)
 
+    @staticmethod
+    def ground(*townships):
+        """china_zones' placement of Haixi's development zone: one entry per
+        township, (name, the polygon it stands in, the polygons near it), a
+        township without a polygon having no point."""
+        out = []
+        for name, shape, near in townships:
+            entry = {"code": "632871100", "name": name, "how": "its code"}
+            if shape is not None:
+                entry.update(lon=95.0, lat=36.0, shape=shape, near=near)
+            out.append(entry)
+        return {"632871": {"name": "海西经济开发区", "listing": "the codes, 2020 edition",
+                           "townships": out}}
+
+    def test_a_placed_zone_refuses_only_the_polygon_it_stands_on(self):
+        ground = self.ground(("察尔汗镇", "S-GOLMUD", ["S-GOLMUD"]),
+                             ("工业园街道", "S-GOLMUD", ["S-GOLMUD"]))
+        records = self.build(ground=ground)
+        self.assertEqual(figures(records), ["S-DATONG", "S-DELINGHA", "S-HUANGYUAN"])
+        golmud = records["S-GOLMUD"]["population"]["note"]
+        self.assertIn("海西经济开发区's townships 察尔汗镇、工业园街道 stand on it", golmud)
+        note = records["S-DELINGHA"]["population_note"]
+        self.assertIn("no special unit the yearbook counts apart stands on it: the 2 townships "
+                      "of 海西经济开发区 (the codes, 2020 edition), each placed", note)
+
+    def test_a_township_near_a_polygon_refuses_it_too(self):
+        ground = self.ground(("察尔汗镇", "S-GOLMUD", ["S-DELINGHA", "S-GOLMUD"]))
+        self.assertEqual(figures(self.build(ground=ground)), ["S-DATONG", "S-HUANGYUAN"])
+
+    def test_a_zone_with_a_township_that_has_no_point_refuses_the_prefecture(self):
+        ground = self.ground(("察尔汗镇", "S-GOLMUD", ["S-GOLMUD"]), ("新区街道", None, None))
+        records = self.build(ground=ground)
+        self.assertEqual(figures(records), ["S-DATONG", "S-HUANGYUAN"])
+        note = records["S-DELINGHA"]["population"]["note"]
+        self.assertIn("1 of 海西经济开发区's 2 townships has no point to place it by (新区街道)",
+                      note)
+
+    def test_a_zone_the_codes_do_not_list_refuses_the_prefecture(self):
+        ground = self.ground(("察尔汗镇", "S-GOLMUD", ["S-GOLMUD"]))
+        ground["632871"]["name"] = "柴达木循环经济试验区"
+        records = self.build(ground=ground)
+        self.assertEqual(figures(records), ["S-DATONG", "S-HUANGYUAN"])
+        self.assertIn("is not among the units the statistical division codes list",
+                      records["S-DELINGHA"]["population"]["note"])
+
     def test_an_unexplained_zone_outside_every_prefecture_is_refused(self):
         admin1, admin2 = units()
         saved = dict(cc.CUT_FROM)
@@ -355,6 +401,19 @@ class Binding(unittest.TestCase):
         admin1, admin2 = units()
         with self.assertRaises(SystemExit):
             cc.build("63", tables(), NAMES, CODE_SHAPES, SEATS, admin1, admin2, national=1.0)
+
+
+class ZoneNames(unittest.TestCase):
+    def test_the_province_and_the_word_city_are_left_out(self):
+        self.assertEqual(cc.zone_norm("江苏无锡经济开发区", "江苏"), "无锡经济开发区")
+        self.assertEqual(cc.zone_norm("江苏省常州市经济开发区", "江苏"), "常州经济开发区")
+
+    def test_a_yearbook_name_meets_the_codes_name(self):
+        ground = {"320471": {"name": "常州经济开发区"}, "320571": {"name": "苏州工业园区"},
+                  "320671": {"name": "南通经济技术开发区"}}
+        self.assertEqual(cc.zone_for("江苏省常州市经济开发区", "320400", "江苏", ground), "320471")
+        self.assertIsNone(cc.zone_for("苏州工业园区", "320400", "江苏", ground))
+        self.assertEqual(cc.zone_for("苏州工业园区", "320500", "江苏", ground), "320571")
 
 
 class Kinds(unittest.TestCase):
