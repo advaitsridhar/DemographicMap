@@ -189,6 +189,26 @@ class RenumberedTest(unittest.TestCase):
         self.assertEqual(kh.homes(annex, adm2), {203: "KH0203", 211: "KH0211",
                                                  1207: "KH1207"})
 
+    def test_a_namesake_in_another_district_does_not_take_a_commune(self):
+        # Siem Reap's "Sambuor" is the city's own sangkat, spelt "Sambour" there
+        # in 2018, though Kralanh has a commune spelt exactly "Sambuor"; and a
+        # sangkat divided since 2018 ("Ti 2") stays with its district.
+        adm2 = {"KH1706": "Kralanh", "KH1710": "Siem Reap"}
+        adm3 = [{"ADM3_PCODE": "KH170601", "ADM3_EN": "Sambuor", "ADM2_PCODE": "KH1706"},
+                {"ADM3_PCODE": "KH171001", "ADM3_EN": "Sambour", "ADM2_PCODE": "KH1710"},
+                {"ADM3_PCODE": "KH171002", "ADM3_EN": "Sla Kram", "ADM2_PCODE": "KH1710"}]
+        n = (1, 4, 2, 2)
+        annex = {17: {"name": "Siemreap", "n": None, "districts": {
+            1706: {"name": "Kralanh", "n": n, "communes": {170601: {"name": "Sambuor", "n": n}}},
+            1710: {"name": "Krong Siem Reab", "n": n, "communes": {
+                171008: {"name": "Sambuor", "n": n},
+                171002: {"name": "Sla Kram", "n": n},
+                171013: {"name": "Sla Kram Ti 2", "n": n}}}}}}
+        placed, left, broken = kh.crosswalk(annex, adm3, adm2)
+        self.assertEqual(sorted(c for _, c, _ in placed["KH1710"]), [171002, 171008, 171013])
+        self.assertEqual([c for _, c, _ in placed["KH1706"]], [170601])
+        self.assertEqual((left, broken), ([], set()))
+
     def test_a_commune_away_from_its_own_district_refuses(self):
         annex, adm3, adm2 = renumbered()
         # The census puts Suong's commune under Dambae, where the gazetteer has

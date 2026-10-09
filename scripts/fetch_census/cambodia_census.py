@@ -106,6 +106,11 @@ DISTRICT_LANGUAGE_GAP = BELOW_PROVINCE.format(what="mother tongue for the countr
 # Phnom Penh's Khan Boeng Keng Kang, made in 2019 of four sangkats of Khan
 # Chamkar Mon, whose other sangkats the census still counts under Chamkar Mon.
 DIVIDED_FROM = {1213: "KH1201"}
+# Communes the census counts in a district the 2018 gazetteer also has, but
+# which the gazetteer has in another district: census commune -> the 2018
+# district whose polygon holds it. None is known; a commune that needs one
+# refuses the run until it is declared here with its evidence.
+TRANSFERRED: dict[int, str] = {}
 # Below this share of a province's people in regular households, its district
 # tables would understate its districts by the rest, and are not used.
 HOUSEHOLD_FLOOR = 0.95
@@ -380,67 +385,113 @@ def crosswalk(annex: dict[int, dict[str, Any]], adm3: list[dict[str, Any]],
     """2018 district pcode -> [(2019 district, 2019 commune, its row)]; the communes
     that could not be placed; and the 2018 districts those make incomplete.
 
-    ``adm2`` is the gazetteer's 2018 districts, pcode -> name."""
+    ``adm2`` is the gazetteer's 2018 districts, pcode -> name.
+
+    A census district the gazetteer also has (``homes``) is looked for in that
+    2018 district first: each of its communes is one of that district's by
+    name, by a code the district holds, or by a close spelling; failing all
+    three, a commune found by its exact name in another district of the
+    province was moved there and must be declared (``TRANSFERRED``), and one
+    found nowhere is new since 2018 (a commune divided, as Phnom Penh's
+    Stueng Mean Chey into three) and goes with its district. A census district
+    the gazetteer does not have is found commune by commune in the province:
+    by a code whose name agrees, by its exact name, or by a close spelling in
+    a 2018 district its other communes went to or it was cut from."""
+    from difflib import SequenceMatcher
     home = homes(annex, adm2)
     by_code = {str(r["ADM3_PCODE"]).strip(): r for r in adm3}
     by_name: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    by_district: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for r in adm3:
         by_name[(str(r["ADM2_PCODE"])[:4], fold(r["ADM3_EN"]))].append(r)
+        by_district[str(r["ADM2_PCODE"]).strip()].append(r)
+
+    def closest(name: str, rows: list[dict[str, Any]]) -> tuple[float, dict[str, Any]] | None:
+        scored = sorted(((SequenceMatcher(None, fold(name), fold(r["ADM3_EN"])).ratio(), r)
+                         for r in rows), key=lambda x: -x[0])
+        if scored and scored[0][0] >= 0.8 and (
+                len(scored) == 1 or scored[1][0] <= scored[0][0] - 0.1):
+            return scored[0]
+        return None
+
     placed: dict[str, list[tuple[int, int, dict[str, Any]]]] = defaultdict(list)
     waiting: list[tuple[int, int, dict[str, Any]]] = []
+    moved: list[str] = []
+    new: list[str] = []
     for p, prov in annex.items():
         for d, dist in prov["districts"].items():
+            h = home.get(d)
             for c, com in dist["communes"].items():
-                hit = by_code.get(f"KH{c:06d}")
-                if hit is not None and fold(hit["ADM3_EN"]) != fold(com["name"]):
-                    hit = None                     # the code is another commune's
+                code_hit = by_code.get(f"KH{c:06d}")
+                named = by_name.get((f"KH{p:02d}", fold(com["name"])), [])
+                if h:
+                    own = by_district[h]
+                    if (any(fold(r["ADM3_EN"]) == fold(com["name"]) for r in own)
+                            or (code_hit is not None
+                                and str(code_hit["ADM2_PCODE"]).strip() == h)):
+                        placed[h].append((d, c, com))
+                        continue
+                    near = closest(com["name"], own)
+                    if near:
+                        log(f"  commune {c} {com['name']} read as the 2018 {near[1]['ADM3_EN']} "
+                            f"({near[1]['ADM3_PCODE']}, {near[0]:.2f})")
+                        placed[h].append((d, c, com))
+                        continue
+                    if c in TRANSFERRED:
+                        log(f"  commune {c} {com['name']} counted in {TRANSFERRED[c]}, the 2018 "
+                            "district it was moved from")
+                        placed[TRANSFERRED[c]].append((d, c, com))
+                        continue
+                    if named:
+                        moved.append(f"{c} {com['name']} of {d} {dist['name']} (2018 {h}) is "
+                                     "named only in " + ", ".join(
+                                         f"{r['ADM2_PCODE']} ({r['ADM3_PCODE']})" for r in named))
+                        continue
+                    new.append(f"{c} {com['name']}")
+                    placed[h].append((d, c, com))
+                    continue
+                hit = (code_hit if code_hit is not None
+                       and fold(code_hit["ADM3_EN"]) == fold(com["name"]) else None)
                 if hit is None:
-                    named = by_name.get((f"KH{p:02d}", fold(com["name"])), [])
-                    if len(named) > 1:
-                        # Two communes of the name in the province: the one in
-                        # the census district's own 2018 district, if it has one.
-                        named = [r for r in named
-                                 if str(r["ADM2_PCODE"]).strip() == home.get(d)]
                     hit = named[0] if len(named) == 1 else None
                 if hit is None:
                     waiting.append((d, c, com))
                     continue
                 placed[str(hit["ADM2_PCODE"]).strip()].append((d, c, com))
-    # A commune neither its code nor its name finds is placed, in turn: by a
-    # close spelling of a 2018 commune of its province, if that commune lies
-    # in a 2018 district its own district's other communes went to (or the
-    # one its district was cut from, or its own); else with its district,
-    # where every other commune of that district stayed in one 2018 district.
-    from difflib import SequenceMatcher
+    if moved:
+        raise SystemExit("cambodia_census: communes of a district both lists have, named only "
+                         "in another district (a transfer, to be declared in TRANSFERRED, or a "
+                         "misreading): " + "; ".join(moved))
+    if new:
+        log(f"  communes with no 2018 counterpart, counted with their own district ({len(new)}): "
+            + ", ".join(new))
+    # A commune of a district the gazetteer does not have, which neither its
+    # code nor its name finds, is placed in turn: by a close spelling of a
+    # 2018 commune of its province in a 2018 district its district's other
+    # communes went to (or the one its district was cut from); else with
+    # them, where they all went to one 2018 district.
     left: list[str] = []
     broken: set[str] = set()
     for d, c, com in waiting:
         others = {pc for pc, items in placed.items() for (dd, _, _) in items if dd == d}
-        target = DIVIDED_FROM.get(d) or home.get(d)
+        target = DIVIDED_FROM.get(d)
         allowed = others | ({target} if target else set())
-        scored = sorted(((SequenceMatcher(None, fold(com["name"]), fold(r["ADM3_EN"])).ratio(), r)
-                         for r in adm3 if str(r["ADM2_PCODE"])[:4] == f"KH{d // 100:02d}"),
-                        key=lambda x: -x[0])
-        if (scored and scored[0][0] >= 0.8
-                and (len(scored) == 1 or scored[1][0] <= scored[0][0] - 0.1)
-                and str(scored[0][1]["ADM2_PCODE"]).strip() in allowed):
-            best = scored[0][1]
-            log(f"  commune {c} {com['name']} read as the 2018 {best['ADM3_EN']} "
-                f"({best['ADM3_PCODE']}, {scored[0][0]:.2f})")
-            placed[str(best["ADM2_PCODE"]).strip()].append((d, c, com))
+        near = closest(com["name"], [r for r in adm3
+                                     if str(r["ADM2_PCODE"])[:4] == f"KH{d // 100:02d}"])
+        if near and str(near[1]["ADM2_PCODE"]).strip() in allowed:
+            log(f"  commune {c} {com['name']} read as the 2018 {near[1]['ADM3_EN']} "
+                f"({near[1]['ADM3_PCODE']}, {near[0]:.2f})")
+            placed[str(near[1]["ADM2_PCODE"]).strip()].append((d, c, com))
             continue
-        if target and others <= {target}:
-            placed[target].append((d, c, com))
+        if len(allowed) == 1:
+            placed[next(iter(allowed))].append((d, c, com))
             continue
-        near = ", ".join(f"{r['ADM3_EN']} {r['ADM3_PCODE']} {s:.2f}" for s, r in scored[:2])
-        left.append(f"{c} {com['name']} (district {d}; nearest {near})")
-        broken |= others | ({target} if target else set())
-    # A district both lists have must be whole in its 2018 self: a commune of
-    # it found anywhere else is a misreading (or a transfer, to be declared).
-    strays = [f"{c} {com['name']} of {d} {annex[d // 100]['districts'][d]['name']} "
-              f"(2018 {home[d]}) found in {pc}"
+        left.append(f"{c} {com['name']} (district {d}; nearest "
+                    + (f"{near[1]['ADM3_EN']} {near[1]['ADM3_PCODE']}" if near else "-") + ")")
+        broken |= allowed
+    strays = [f"{c} {com['name']} of {d} (2018 {home[d]}) in {pc}"
               for pc, items in placed.items() for d, c, com in items
-              if d in home and pc != home[d]]
+              if d in home and pc != home[d] and TRANSFERRED.get(c) != pc]
     if strays:
         raise SystemExit("cambodia_census: communes away from their own district: "
                          + "; ".join(sorted(strays)))
