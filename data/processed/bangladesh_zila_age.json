@@ -1,6 +1,6 @@
 [
   {
-    "id": "BGD-AGE2011-bagerhat",
+    "id": "BGD-AGE2022-bagerhat",
     "level": "admin2",
     "name": "Bagerhat",
     "parent": "BGD",
@@ -14,10 +14,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 26.0,
+      "value": 28.9,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -34,20 +34,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/9d14b0b0151e46b5b1c5c8e8cd3fce77.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B77600989823530",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,476,090 people (740,138 males, 735,952 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Bagerhat, Table C-02: the median of 1,613,076 people (802,314 males, 810,691 females and 71 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-bandarban",
+    "id": "BGD-AGE2022-bandarban",
     "level": "admin2",
     "name": "Bandarban",
     "parent": "BGD",
@@ -61,10 +61,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 20.9,
+      "value": 22.8,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -81,20 +81,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/7851f407961e43399592b1b6df4534f7.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B23463827258150",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 388,335 people (203,350 males, 184,985 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Bandarban, Table C-02: the median of 481,106 people (246,947 males, 234,146 females and 13 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-barguna",
+    "id": "BGD-AGE2022-barguna",
     "level": "admin2",
     "name": "Barguna",
     "parent": "BGD",
@@ -108,10 +108,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.7,
+      "value": 28.8,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -128,20 +128,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/373ae6014cce4bab852b96c2cddaa21e.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B13795829103768",
     "parent_name": "Barisal",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 892,781 people (437,413 males, 455,368 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Barguna, Table C-02: the median of 1,010,531 people (494,738 males, 515,723 females and 70 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-barisal",
+    "id": "BGD-AGE2022-barisal",
     "level": "admin2",
     "name": "Barisal",
     "parent": "BGD",
@@ -155,10 +155,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.3,
+      "value": 26.9,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -175,20 +175,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/c56515ca45314f6586d9d7ffae0e89a7.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B66943755852345",
     "parent_name": "Barisal",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,324,310 people (1,137,211 males, 1,187,099 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Barishal, Table C-02: the median of 2,570,446 people (1,255,436 males, 1,314,935 females and 75 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-bhola",
+    "id": "BGD-AGE2022-bhola",
     "level": "admin2",
     "name": "Bhola",
     "parent": "BGD",
@@ -202,10 +202,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 20.5,
+      "value": 24.3,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -222,20 +222,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/45edbfa4a084468ca52ebc3895b77e8f.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B37732832620169",
     "parent_name": "Barisal",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,776,795 people (884,069 males, 892,726 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Bhola, Table C-02: the median of 1,932,518 people (946,629 males, 985,815 females and 74 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-bogra",
+    "id": "BGD-AGE2022-bogra",
     "level": "admin2",
     "name": "Bogra",
     "parent": "BGD",
@@ -249,10 +249,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.9,
+      "value": 29.5,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -269,20 +269,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b63c65a7d6c24ee3b854881f0a8d506d.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B87441692505107",
     "parent_name": "Rajshani",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 3,400,874 people (1,708,806 males, 1,692,068 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Bogura, Table C-02: the median of 3,734,297 people (1,853,102 males, 1,880,861 females and 334 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-brahamanbaria",
+    "id": "BGD-AGE2022-brahamanbaria",
     "level": "admin2",
     "name": "Brahamanbaria",
     "parent": "BGD",
@@ -296,10 +296,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 19.2,
+      "value": 21.7,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -316,20 +316,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/a5a9606aa66a48acb6a4eb93d51fab3c.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B2831557138260",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,840,498 people (1,366,711 males, 1,473,787 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Brahmanbaria, Table C-02: the median of 3,306,563 people (1,538,262 males, 1,768,145 females and 156 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-chandpur",
+    "id": "BGD-AGE2022-chandpur",
     "level": "admin2",
     "name": "Chandpur",
     "parent": "BGD",
@@ -343,10 +343,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 21.8,
+      "value": 25.0,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -363,20 +363,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/18332832c988417c97370153dc7c5714.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B70711841490613",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,416,018 people (1,145,831 males, 1,270,187 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Chandpur, Table C-02: the median of 2,635,748 people (1,229,413 males, 1,406,255 females and 80 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-chittagong",
+    "id": "BGD-AGE2022-chittagong",
     "level": "admin2",
     "name": "Chittagong",
     "parent": "BGD",
@@ -390,10 +390,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 22.4,
+      "value": 25.0,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -410,20 +410,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/80e929a76aa14282826502ff159a8aa5.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B94200136889214",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 7,616,352 people (3,838,854 males, 3,777,498 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Chattogram, Table C-02: the median of 9,169,465 people (4,570,113 males, 4,598,926 females and 426 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-chuadanga",
+    "id": "BGD-AGE2022-chuadanga",
     "level": "admin2",
     "name": "Chuadanga",
     "parent": "BGD",
@@ -437,10 +437,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 26.1,
+      "value": 29.8,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -457,20 +457,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/08bcfffe4e294e1d87066183002df3b2.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B19758630986204",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,129,015 people (564,819 males, 564,196 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Chuadanga, Table C-02: the median of 1,234,054 people (607,636 males, 626,355 females and 63 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-comilla",
+    "id": "BGD-AGE2022-comilla",
     "level": "admin2",
     "name": "Comilla",
     "parent": "BGD",
@@ -484,10 +484,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 20.8,
+      "value": 23.6,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -504,20 +504,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/4c96db4232fe4ea9b2065c48c992a84d.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B59490572634285",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 5,387,288 people (2,575,018 males, 2,812,270 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Cumilla, Table C-02: the median of 6,212,216 people (2,900,371 males, 3,311,580 females and 265 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-coxsbazar",
+    "id": "BGD-AGE2022-coxsbazar",
     "level": "admin2",
     "name": "Cox's Bazar",
     "parent": "BGD",
@@ -531,10 +531,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 18.4,
+      "value": 21.2,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -551,20 +551,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/30dc3493153848f2b825adaeec3fe941.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B34517682786426",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,289,990 people (1,169,604 males, 1,120,386 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Cox'S Bazar, Table C-02: the median of 2,823,268 people (1,434,622 males, 1,388,563 females and 83 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-dhaka",
+    "id": "BGD-AGE2022-dhaka",
     "level": "admin2",
     "name": "Dhaka",
     "parent": "BGD",
@@ -578,10 +578,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.9,
+      "value": 27.1,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -598,20 +598,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b15f7a7f63ff451e86ce7fd7cca9493d.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B90744549146712",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 12,043,977 people (6,555,792 males, 5,488,185 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Dhaka, Table C-02: the median of 14,734,701 people (7,900,035 males, 6,833,989 females and 677 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-dinajpur",
+    "id": "BGD-AGE2022-dinajpur",
     "level": "admin2",
     "name": "Dinajpur",
     "parent": "BGD",
@@ -625,10 +625,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.2,
+      "value": 28.5,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -645,20 +645,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/795760b6093542289f70a1d9ccc9cbca.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B66423446659680",
     "parent_name": "Rangpur",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,990,128 people (1,508,670 males, 1,481,458 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Dinajpur, Table C-02: the median of 3,315,236 people (1,661,406 males, 1,653,724 females and 106 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-faridpur",
+    "id": "BGD-AGE2022-faridpur",
     "level": "admin2",
     "name": "Faridpur",
     "parent": "BGD",
@@ -672,10 +672,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.4,
+      "value": 26.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -692,20 +692,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b5f5926fea1c462eb5618fdefc2e8142.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B67131385183639",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,912,969 people (942,245 males, 970,724 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Faridpur, Table C-02: the median of 2,162,879 people (1,050,377 males, 1,112,377 females and 125 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-feni",
+    "id": "BGD-AGE2022-feni",
     "level": "admin2",
     "name": "Feni",
     "parent": "BGD",
@@ -719,10 +719,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 21.7,
+      "value": 24.5,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -739,20 +739,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/2b9c505de31e463582957bc16a96ed2f.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B83268326466345",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,437,371 people (694,128 males, 743,243 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Feni, Table C-02: the median of 1,648,896 people (780,436 males, 868,416 females and 44 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-gaibandha",
+    "id": "BGD-AGE2022-gaibandha",
     "level": "admin2",
     "name": "Gaibandha",
     "parent": "BGD",
@@ -766,10 +766,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.5,
+      "value": 27.7,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -786,20 +786,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/8515389ccebf4b1ea5c91659426447ad.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B74857221285320",
     "parent_name": "Rangpur",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,379,255 people (1,169,127 males, 1,210,128 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Gaibandha, Table C-02: the median of 2,562,233 people (1,241,113 males, 1,320,967 females and 153 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-gazipur",
+    "id": "BGD-AGE2022-gazipur",
     "level": "admin2",
     "name": "Gazipur",
     "parent": "BGD",
@@ -813,10 +813,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.6,
+      "value": 26.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -833,20 +833,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fa819560a3a243e08b6e715f2572141f.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B50862305652789",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 3,403,912 people (1,775,310 males, 1,628,602 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Gazipur, Table C-02: the median of 5,263,450 people (2,736,940 males, 2,526,038 females and 472 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-gopalganj",
+    "id": "BGD-AGE2022-gopalganj",
     "level": "admin2",
     "name": "Gopalganj",
     "parent": "BGD",
@@ -860,10 +860,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 22.5,
+      "value": 25.8,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -880,20 +880,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/3ae267c260a447ebb1e7ff20b248b9f4.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B87804307332289",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,172,415 people (577,868 males, 594,547 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Gopalganj, Table C-02: the median of 1,295,057 people (634,169 males, 660,836 females and 52 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-habiganj",
+    "id": "BGD-AGE2022-habiganj",
     "level": "admin2",
     "name": "Habiganj",
     "parent": "BGD",
@@ -907,10 +907,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 20.2,
+      "value": 23.1,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -927,20 +927,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/5f57f437a3a343d789a71c659732ceb9.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B7772300815487",
     "parent_name": "Sylhet",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,089,001 people (1,025,591 males, 1,063,410 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Habiganj, Table C-02: the median of 2,358,886 people (1,143,901 males, 1,214,846 females and 139 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-jamalpur",
+    "id": "BGD-AGE2022-jamalpur",
     "level": "admin2",
     "name": "Jamalpur",
     "parent": "BGD",
@@ -954,10 +954,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.3,
+      "value": 27.3,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -974,20 +974,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/89e86f23804e4e119149f252b777c2d6.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B65705561019803",
     "parent_name": "Mymensingh",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,292,674 people (1,128,724 males, 1,163,950 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Jamalpur, Table C-02: the median of 2,499,738 people (1,216,204 males, 1,283,423 females and 111 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-jessore",
+    "id": "BGD-AGE2022-jessore",
     "level": "admin2",
     "name": "Jessore",
     "parent": "BGD",
@@ -1001,10 +1001,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.8,
+      "value": 29.2,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1021,20 +1021,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fdc7f79d9d064cf6896ad921503496b0.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B28022870637862",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,764,547 people (1,386,293 males, 1,378,254 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Jashore, Table C-02: the median of 3,076,144 people (1,524,349 males, 1,551,667 females and 128 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-jhalokati",
+    "id": "BGD-AGE2022-jhalokati",
     "level": "admin2",
     "name": "Jhalokati",
     "parent": "BGD",
@@ -1048,10 +1048,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.3,
+      "value": 27.7,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1068,20 +1068,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/187d1669b3fe47ca8e0a07e9bada1252.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B14602656752780",
     "parent_name": "Barisal",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 682,669 people (329,147 males, 353,522 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Jhalokathi, Table C-02: the median of 661,160 people (316,628 males, 344,503 females and 29 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-jhenaidah",
+    "id": "BGD-AGE2022-jhenaidah",
     "level": "admin2",
     "name": "Jhenaidah",
     "parent": "BGD",
@@ -1095,10 +1095,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.9,
+      "value": 29.2,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1115,20 +1115,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/3f288c3f560f49e5afac32bc0bf5b3df.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B77509092527129",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,771,304 people (886,402 males, 884,902 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Jhenaidah, Table C-02: the median of 2,005,849 people (995,812 males, 1,009,922 females and 115 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-joypurhat",
+    "id": "BGD-AGE2022-joypurhat",
     "level": "admin2",
     "name": "Joypurhat",
     "parent": "BGD",
@@ -1142,10 +1142,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 27.4,
+      "value": 31.9,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1162,20 +1162,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/98d23819d1764f3da7dc257e1f498a34.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B2288856744536",
     "parent_name": "Rajshani",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 913,768 people (459,284 males, 454,484 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Joypurhat, Table C-02: the median of 956,431 people (472,657 males, 483,685 females and 89 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-khagrachhari",
+    "id": "BGD-AGE2022-khagrachhari",
     "level": "admin2",
     "name": "Khagrachhari",
     "parent": "BGD",
@@ -1189,10 +1189,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 22.0,
+      "value": 25.1,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1209,20 +1209,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/c76f262b21804911867771950482c1a8.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B35326431749719",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 613,917 people (313,793 males, 300,124 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Khagrachhari, Table C-02: the median of 714,119 people (357,521 males, 356,564 females and 34 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-khulna",
+    "id": "BGD-AGE2022-khulna",
     "level": "admin2",
     "name": "Khulna",
     "parent": "BGD",
@@ -1236,10 +1236,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.9,
+      "value": 29.1,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1256,20 +1256,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/63c65a7594254c5fb5dbede282f0e67b.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B21968895988188",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,318,527 people (1,175,686 males, 1,142,841 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Khulna, Table C-02: the median of 2,613,385 people (1,312,166 males, 1,301,032 females and 187 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-kishoreganj",
+    "id": "BGD-AGE2022-kishoreganj",
     "level": "admin2",
     "name": "Kishoreganj",
     "parent": "BGD",
@@ -1283,10 +1283,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 21.0,
+      "value": 23.7,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1303,20 +1303,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/7366f40e63e74ced8e4b231df246e068.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B82604838368079",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,911,907 people (1,432,242 males, 1,479,665 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Kishoreganj, Table C-02: the median of 3,267,626 people (1,572,924 males, 1,694,546 females and 156 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-kurigram",
+    "id": "BGD-AGE2022-kurigram",
     "level": "admin2",
     "name": "Kurigram",
     "parent": "BGD",
@@ -1330,10 +1330,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.0,
+      "value": 27.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1350,20 +1350,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/ec98c2ca2a5a4af28d3e2e2236880a44.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B97164497642406",
     "parent_name": "Rangpur",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,069,273 people (1,010,442 males, 1,058,831 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Kurigram, Table C-02: the median of 2,329,160 people (1,145,851 males, 1,183,249 females and 60 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-kushtia",
+    "id": "BGD-AGE2022-kushtia",
     "level": "admin2",
     "name": "Kushtia",
     "parent": "BGD",
@@ -1377,10 +1377,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 26.0,
+      "value": 29.2,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1397,20 +1397,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2026/3/bd633dab-40c1-4371-87ea-c43c657040d0.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B21124734124900",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,946,838 people (973,518 males, 973,320 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Kushtia, Table C-02: the median of 2,149,692 people (1,055,875 males, 1,093,724 females and 93 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-lakshmipur",
+    "id": "BGD-AGE2022-lakshmipur",
     "level": "admin2",
     "name": "Lakshmipur",
     "parent": "BGD",
@@ -1424,10 +1424,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 20.5,
+      "value": 23.7,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1444,20 +1444,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/7557ac06285f4bf28273e40f491200cc.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B31973889793084",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,729,188 people (827,780 males, 901,408 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Lakshmipur, Table C-02: the median of 1,937,948 people (913,099 males, 1,024,763 females and 86 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-lalmonirhat",
+    "id": "BGD-AGE2022-lalmonirhat",
     "level": "admin2",
     "name": "Lalmonirhat",
     "parent": "BGD",
@@ -1471,10 +1471,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.4,
+      "value": 26.9,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1491,20 +1491,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fe276d9063bd494f8d635cf8aa39e825.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B84214314165922",
     "parent_name": "Rangpur",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,256,099 people (628,799 males, 627,300 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Lalmonirhat, Table C-02: the median of 1,428,406 people (714,500 males, 713,864 females and 42 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-madaripur",
+    "id": "BGD-AGE2022-madaripur",
     "level": "admin2",
     "name": "Madaripur",
     "parent": "BGD",
@@ -1518,10 +1518,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 22.6,
+      "value": 25.8,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1538,20 +1538,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/f412eb1018b8493a99dec89cdd9e4df7.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B87985099055959",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,165,952 people (574,582 males, 591,370 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Madaripur, Table C-02: the median of 1,293,027 people (615,762 males, 677,201 females and 64 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-magura",
+    "id": "BGD-AGE2022-magura",
     "level": "admin2",
     "name": "Magura",
     "parent": "BGD",
@@ -1565,10 +1565,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.8,
+      "value": 28.0,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1585,20 +1585,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fde4acaa8d0149c68cb30511f461962f.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B78415132034426",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 918,419 people (454,739 males, 463,680 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Magura, Table C-02: the median of 1,033,115 people (509,013 males, 524,062 females and 40 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-manikganj",
+    "id": "BGD-AGE2022-manikganj",
     "level": "admin2",
     "name": "Manikganj",
     "parent": "BGD",
@@ -1612,10 +1612,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 26.2,
+      "value": 29.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1632,20 +1632,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/70930e5767e9432b9076e49c4673d10c.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B79131283702140",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,392,867 people (676,359 males, 716,508 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Manikganj, Table C-02: the median of 1,558,025 people (751,912 males, 806,015 females and 98 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-maulvibazar",
+    "id": "BGD-AGE2022-maulvibazar",
     "level": "admin2",
     "name": "Maulvibazar",
     "parent": "BGD",
@@ -1659,10 +1659,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 21.4,
+      "value": 24.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1679,20 +1679,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/15c2523d9c494f65bd1ec18fa602acf4.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B62450131352427",
     "parent_name": "Sylhet",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,919,062 people (944,728 males, 974,334 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Moulvibazar, Table C-02: the median of 2,123,447 people (1,020,732 males, 1,102,617 females and 98 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-meherpur",
+    "id": "BGD-AGE2022-meherpur",
     "level": "admin2",
     "name": "Meherpur",
     "parent": "BGD",
@@ -1706,10 +1706,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 27.0,
+      "value": 31.3,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1726,20 +1726,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/ff9cd564464a4df69854146475141764.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B11914188004823",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 655,392 people (324,634 males, 330,758 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Meherpur, Table C-02: the median of 705,356 people (340,093 males, 365,237 females and 26 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-munshiganj",
+    "id": "BGD-AGE2022-munshiganj",
     "level": "admin2",
     "name": "Munshiganj",
     "parent": "BGD",
@@ -1753,10 +1753,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.1,
+      "value": 26.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1773,20 +1773,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/91d725ef924d4b4f9da8bbef02c3edc7.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B99884694518333",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,445,660 people (721,552 males, 724,108 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Munshiganj, Table C-02: the median of 1,625,416 people (788,506 males, 836,848 females and 62 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-mymensingh",
+    "id": "BGD-AGE2022-mymensingh",
     "level": "admin2",
     "name": "Mymensingh",
     "parent": "BGD",
@@ -1800,10 +1800,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 22.4,
+      "value": 25.3,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1820,20 +1820,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/154cbde8cea641cdb85ab83f610b840c.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B54511139091050",
     "parent_name": "Mymensingh",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 5,110,272 people (2,539,124 males, 2,571,148 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Mymensingh, Table C-02: the median of 5,899,005 people (2,899,718 males, 2,999,029 females and 258 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-naogaon",
+    "id": "BGD-AGE2022-naogaon",
     "level": "admin2",
     "name": "Naogaon",
     "parent": "BGD",
@@ -1847,10 +1847,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 26.7,
+      "value": 31.0,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1867,20 +1867,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/34e059e2210243cbbbbdd3142b882ba1.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B34203284467157",
     "parent_name": "Rajshani",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,600,157 people (1,300,227 males, 1,299,930 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Naogaon, Table C-02: the median of 2,784,599 people (1,375,156 males, 1,409,305 females and 138 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-narail",
+    "id": "BGD-AGE2022-narail",
     "level": "admin2",
     "name": "Narail",
     "parent": "BGD",
@@ -1894,10 +1894,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.2,
+      "value": 27.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1914,20 +1914,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/fd9eddc198e34c10a62fddd1cb9d6be8.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B56503274196630",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 721,668 people (353,527 males, 368,141 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Narail, Table C-02: the median of 788,671 people (383,592 males, 405,053 females and 26 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-narayanganj",
+    "id": "BGD-AGE2022-narayanganj",
     "level": "admin2",
     "name": "Narayanganj",
     "parent": "BGD",
@@ -1941,10 +1941,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.7,
+      "value": 25.8,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -1961,20 +1961,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/ecfcd0ae1c0e4702af5d693c64d515d3.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B28796010313895",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,948,217 people (1,521,438 males, 1,426,779 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Narayanganj, Table C-02: the median of 3,909,138 people (2,016,364 males, 1,892,534 females and 240 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-narsingdi",
+    "id": "BGD-AGE2022-narsingdi",
     "level": "admin2",
     "name": "Narsingdi",
     "parent": "BGD",
@@ -1988,10 +1988,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 22.0,
+      "value": 24.6,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2008,20 +2008,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/154c006ad6394203a8f07452f3da6b48.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B95243043657125",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,224,944 people (1,102,943 males, 1,122,001 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Narsingdi, Table C-02: the median of 2,584,452 people (1,266,059 males, 1,318,276 females and 117 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-natore",
+    "id": "BGD-AGE2022-natore",
     "level": "admin2",
     "name": "Natore",
     "parent": "BGD",
@@ -2035,10 +2035,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 26.1,
+      "value": 30.0,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2055,20 +2055,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/e0349f833a4a45baafa46d1bb562b908.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B43065208682222",
     "parent_name": "Rajshani",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,706,673 people (854,183 males, 852,490 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Natore, Table C-02: the median of 1,859,922 people (919,977 males, 939,878 females and 67 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-nawabganj",
+    "id": "BGD-AGE2022-nawabganj",
     "level": "admin2",
     "name": "Nawabganj",
     "parent": "BGD",
@@ -2082,10 +2082,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.0,
+      "value": 26.5,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2102,20 +2102,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/9fd9b896e2da4e1b9fc7d163490ba81d.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B76725860359822",
     "parent_name": "Rajshani",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,647,521 people (810,218 males, 837,303 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Chapainawabganj, Table C-02: the median of 1,835,528 people (887,170 males, 948,282 females and 76 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-netrakona",
+    "id": "BGD-AGE2022-netrakona",
     "level": "admin2",
     "name": "Netrakona",
     "parent": "BGD",
@@ -2129,10 +2129,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 21.5,
+      "value": 24.8,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2149,20 +2149,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/6e5bb9426ce24d8e99867fe62881edc8.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B47191620994273",
     "parent_name": "Mymensingh",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,229,642 people (1,111,306 males, 1,118,336 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Netrakona, Table C-02: the median of 2,324,853 people (1,139,638 males, 1,185,027 females and 188 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-nilphamari",
+    "id": "BGD-AGE2022-nilphamari",
     "level": "admin2",
     "name": "Nilphamari",
     "parent": "BGD",
@@ -2176,10 +2176,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 22.8,
+      "value": 26.0,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2196,20 +2196,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/7fbb45d9940d4cfa9b4a4d9b8bfd34ab.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B74406959438199",
     "parent_name": "Rangpur",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,834,231 people (922,964 males, 911,267 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Nilphamari, Table C-02: the median of 2,092,568 people (1,041,802 males, 1,050,712 females and 54 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-noakhali",
+    "id": "BGD-AGE2022-noakhali",
     "level": "admin2",
     "name": "Noakhali",
     "parent": "BGD",
@@ -2223,10 +2223,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 19.6,
+      "value": 22.9,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2243,20 +2243,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/f2357c3b52ee4ba284f7750301b6ecef.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B96773862439533",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 3,108,083 people (1,485,169 males, 1,622,914 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Noakhali, Table C-02: the median of 3,625,442 people (1,731,152 males, 1,894,170 females and 120 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-pabna",
+    "id": "BGD-AGE2022-pabna",
     "level": "admin2",
     "name": "Pabna",
     "parent": "BGD",
@@ -2270,10 +2270,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.4,
+      "value": 27.6,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2290,20 +2290,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0b82f91e54084e6ab16100f6bf808c19.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B46384724638491",
     "parent_name": "Rajshani",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,523,179 people (1,262,934 males, 1,260,245 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Pabna, Table C-02: the median of 2,909,624 people (1,450,225 males, 1,459,284 females and 115 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-panchagarh",
+    "id": "BGD-AGE2022-panchagarh",
     "level": "admin2",
     "name": "Panchagarh",
     "parent": "BGD",
@@ -2317,10 +2317,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.3,
+      "value": 26.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2337,20 +2337,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/e3544f24c67145aeaea80921aaef5f1c.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B66536058617583",
     "parent_name": "Rangpur",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 987,644 people (496,725 males, 490,919 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Panchagarh, Table C-02: the median of 1,179,843 people (588,968 males, 590,839 females and 36 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-patuakhali",
+    "id": "BGD-AGE2022-patuakhali",
     "level": "admin2",
     "name": "Patuakhali",
     "parent": "BGD",
@@ -2364,10 +2364,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.0,
+      "value": 27.2,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2384,20 +2384,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/9b566687c68045ba9dc4a5baf078494b.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B49808088196813",
     "parent_name": "Barisal",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,535,854 people (753,441 males, 782,413 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Patuakhali, Table C-02: the median of 1,727,254 people (843,375 males, 883,843 females and 36 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-pirojpur",
+    "id": "BGD-AGE2022-pirojpur",
     "level": "admin2",
     "name": "Pirojpur",
     "parent": "BGD",
@@ -2411,10 +2411,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.8,
+      "value": 27.9,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2431,20 +2431,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/e157dd0ff3ae4cfcb0f8804fec4c3011.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B46028667424095",
     "parent_name": "Barisal",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,113,257 people (548,228 males, 565,029 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Pirojpur, Table C-02: the median of 1,198,195 people (582,810 males, 615,344 females and 41 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-rajbari",
+    "id": "BGD-AGE2022-rajbari",
     "level": "admin2",
     "name": "Rajbari",
     "parent": "BGD",
@@ -2458,10 +2458,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.6,
+      "value": 28.1,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2478,20 +2478,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/2dd354800b8642bd9d2318d6a39095fc.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B48875454234518",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,049,778 people (519,999 males, 529,779 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Rajbari, Table C-02: the median of 1,189,818 people (582,123 males, 607,620 females and 75 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-rajshahi",
+    "id": "BGD-AGE2022-rajshahi",
     "level": "admin2",
     "name": "Rajshahi",
     "parent": "BGD",
@@ -2505,10 +2505,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.8,
+      "value": 29.3,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2525,20 +2525,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/3c3b94e632604786bfc0b4a3a4872208.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B51815672792645",
     "parent_name": "Rajshani",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,595,197 people (1,309,890 males, 1,285,307 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Rajshahi, Table C-02: the median of 2,915,009 people (1,459,225 males, 1,455,588 females and 196 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-rangamati",
+    "id": "BGD-AGE2022-rangamati",
     "level": "admin2",
     "name": "Rangamati",
     "parent": "BGD",
@@ -2552,10 +2552,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.1,
+      "value": 26.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2572,20 +2572,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0aff8184552d4476b07064b259684f67.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B35610473312733",
     "parent_name": "Chittagong",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 595,979 people (313,076 males, 282,903 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Rangamati, Table C-02: the median of 647,586 people (333,204 males, 314,356 females and 26 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-rangpur",
+    "id": "BGD-AGE2022-rangpur",
     "level": "admin2",
     "name": "Rangpur",
     "parent": "BGD",
@@ -2599,10 +2599,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 24.9,
+      "value": 28.2,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2619,20 +2619,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0b4cdcd23f0c4291808e8724b113ac67.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B34260815515495",
     "parent_name": "Rangpur",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,881,086 people (1,443,816 males, 1,437,270 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Rangpur, Table C-02: the median of 3,169,614 people (1,569,026 males, 1,600,438 females and 150 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-satkhira",
+    "id": "BGD-AGE2022-satkhira",
     "level": "admin2",
     "name": "Satkhira",
     "parent": "BGD",
@@ -2646,10 +2646,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.7,
+      "value": 29.7,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2666,20 +2666,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/4c8712e0f2d145dbabdbfbe95f28088e.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B60176987344662",
     "parent_name": "Khulna",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,985,959 people (982,777 males, 1,003,182 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Satkhira, Table C-02: the median of 2,196,582 people (1,093,554 males, 1,102,936 females and 92 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-shariatpur",
+    "id": "BGD-AGE2022-shariatpur",
     "level": "admin2",
     "name": "Shariatpur",
     "parent": "BGD",
@@ -2693,10 +2693,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 21.5,
+      "value": 25.3,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2713,20 +2713,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/27c3b4972ef746e5a20200951efca45d.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B92388810566131",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,155,824 people (559,075 males, 596,749 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Shariatpur, Table C-02: the median of 1,294,562 people (621,506 males, 673,005 females and 51 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-sherpur",
+    "id": "BGD-AGE2022-sherpur",
     "level": "admin2",
     "name": "Sherpur",
     "parent": "BGD",
@@ -2740,10 +2740,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.5,
+      "value": 26.4,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2760,20 +2760,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/54153bc4a5094bc495c732fb9d62369e.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B90842308963557",
     "parent_name": "Mymensingh",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,358,325 people (676,388 males, 681,937 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Sherpur, Table C-02: the median of 1,501,853 people (732,673 males, 769,078 females and 102 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-sirajganj",
+    "id": "BGD-AGE2022-sirajganj",
     "level": "admin2",
     "name": "Sirajganj",
     "parent": "BGD",
@@ -2787,10 +2787,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.4,
+      "value": 26.6,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2807,20 +2807,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/b351a354bf3949dab5b3d936c55c60ce.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B55394931042500",
     "parent_name": "Rajshani",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 3,097,489 people (1,551,368 males, 1,546,121 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Sirajganj, Table C-02: the median of 3,357,706 people (1,666,165 males, 1,691,304 females and 237 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-sunamganj",
+    "id": "BGD-AGE2022-sunamganj",
     "level": "admin2",
     "name": "Sunamganj",
     "parent": "BGD",
@@ -2834,10 +2834,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 19.3,
+      "value": 22.1,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2854,20 +2854,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/952593ea389a4e3ba299fcfa3887c6c2.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B61059366245275",
     "parent_name": "Sylhet",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 2,467,968 people (1,236,106 males, 1,231,862 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Sunamganj, Table C-02: the median of 2,695,496 people (1,323,155 males, 1,372,139 females and 202 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-sylhet",
+    "id": "BGD-AGE2022-sylhet",
     "level": "admin2",
     "name": "Sylhet",
     "parent": "BGD",
@@ -2881,10 +2881,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 20.1,
+      "value": 23.1,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2901,20 +2901,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/3abf605f9ab84a6686ad29688f206160.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B47932115867008",
     "parent_name": "Sylhet",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 3,434,188 people (1,726,965 males, 1,707,223 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Sylhet, Table C-02: the median of 3,857,123 people (1,896,490 males, 1,960,484 females and 149 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-tangail",
+    "id": "BGD-AGE2022-tangail",
     "level": "admin2",
     "name": "Tangail",
     "parent": "BGD",
@@ -2928,10 +2928,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 25.7,
+      "value": 28.9,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2948,20 +2948,20 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/257941ad3e0449a29c02925138ffcef7.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B55867939933107",
     "parent_name": "Dhaka",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 3,605,083 people (1,757,370 males, 1,847,713 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Tangail, Table C-02: the median of 4,037,608 people (1,945,826 males, 2,091,490 females and 292 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   },
   {
-    "id": "BGD-AGE2011-thakurgaon",
+    "id": "BGD-AGE2022-thakurgaon",
     "level": "admin2",
     "name": "Thakurgaon",
     "parent": "BGD",
@@ -2975,10 +2975,10 @@
       "status": "not_available"
     },
     "median_age": {
-      "value": 23.8,
+      "value": 27.7,
       "unit": "years",
-      "year": 2011,
-      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)"
+      "year": 2022,
+      "source": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group"
     },
     "sex_ratio": {
       "status": "not_available"
@@ -2995,16 +2995,16 @@
     "sources": [
       {
         "field": "median_age",
-        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2011, population by five-year age group and sex, as extracted by the U.S. Census Bureau (subnational tabular data for Bangladesh, July 2021)",
-        "url": "https://data.humdata.org/dataset/bangladesh-subnational-boundaries-and-tabular-data",
-        "year": 2011,
-        "license": "CC BY 4.0 (U.S. Census Bureau, via HDX)"
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, Community Series (zila workbook), Table C-02: population by five-year age group",
+        "url": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/4de9d3f0253a4529b29f64485b2aa132.xlsx",
+        "year": 2022,
+        "license": "Bangladesh Bureau of Statistics publication"
       }
     ],
     "country": "BGD",
     "match_by": "shape_id",
     "shape_id": "16705992B44482388014877",
     "parent_name": "Rangpur",
-    "median_age_note": "Census 2011, the last Bangladeshi census to publish age by zila: the median of 1,390,042 people (701,281 males, 688,761 females) interpolated within the five-year age group that holds the middle person, single years not being published by zila. The 2022 census publishes age for the eight divisions only, so a division's 2022 median sits above its zilas' 2011 ones."
+    "median_age_note": "Census 2022, the Bureau's Community Series workbook for Thakurgaon, Table C-02: the median of 1,533,895 people (768,749 males, 765,102 females and 44 hijra), interpolated within the five-year age group that holds the middle person -- single years of age are published by division only. The zila's groups, with the rest of its division's, make the National Report's Table P03 plus the hijra P03 leaves out."
   }
 ]
