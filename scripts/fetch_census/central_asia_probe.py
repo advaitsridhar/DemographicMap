@@ -366,7 +366,13 @@ def workbook_rows(body: bytes) -> list[tuple[str, Any]]:
     if body[:8] == b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1":
         import xlrd
         book = xlrd.open_workbook(file_contents=body)
-        return [(s.name, (s.row_values(i) for i in range(s.nrows))) for s in book.sheets()]
+
+        def rows_of(sheet: Any) -> Any:
+            # A function, not a generator expression in the comprehension:
+            # that one would close over the loop variable and read every
+            # sheet's rows from the last sheet.
+            return (sheet.row_values(i) for i in range(sheet.nrows))
+        return [(s.name, rows_of(s)) for s in book.sheets()]
     import openpyxl
     book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
     return [(name, book[name].iter_rows(values_only=True)) for name in book.sheetnames]
@@ -415,6 +421,53 @@ def cmd_xlsx(url: str, sheets: list[str], rows: int, width: int, skip: str,
                 log(f"  ... more rows; stopped at {rows}")
                 break
             log(f"  r{i}: {' | '.join(cells)[:900]}")
+
+
+def cmd_abadi(url: str, kinds: set[str], counties: set[str], width: int, notes: bool) -> None:
+    """Iran's 2016 settlement table (CN95_HouseholdPopulationVillage_NN.xlsx).
+
+    One sheet lists the province, every county (record code 2), district
+    (3), rural district (4), city (5) and village (6, 8) with households,
+    persons, men and women. This prints the rows of the record codes asked
+    for (``kinds``), in the counties asked for (their two-digit codes, or
+    all), and the workbook's notes sheet whole.
+    """
+    status, _, body, _ = fetch(url, timeout=600)
+    log(f"{url}: HTTP {status} {len(body):,} B")
+    if status != 200:
+        return
+    book = workbook_rows(body)
+    for name, it in book:
+        rows = [list(r or []) for r in it]
+        if name != book[0][0]:
+            if notes:
+                log(f"  -- notes sheet {name!r}")
+                for row in rows:
+                    cells = [str(c).strip() for c in row if c not in (None, "")]
+                    if cells:
+                        log("  " + " | ".join(cells))
+            continue
+        head = [str(c or "").strip() for c in rows[1]] if len(rows) > 1 else []
+        try:
+            kind_col = next(i for i, h in enumerate(head) if "ركورد" in h or "رکورد" in h)
+        except StopIteration:
+            log(f"  no record-code column in {head}")
+            return
+        log(f"  {name!r}: {len(rows)} rows; record code in column {kind_col}")
+        counts: dict[str, int] = {}
+        for i, row in enumerate(rows[2:], start=3):
+            kind = str(row[kind_col] if kind_col < len(row) else "").strip().split(".")[0]
+            counts[kind] = counts.get(kind, 0) + 1
+            county = str(row[2] if len(row) > 2 and row[2] is not None else "").strip()
+            if re.fullmatch(r"\d+(?:\.0)?", county):
+                county = f"{int(float(county)):02d}"
+            if kinds and kind not in kinds:
+                continue
+            if counties and county not in counties:
+                continue
+            cells = [str(c).strip()[:width] for c in row if c not in (None, "")]
+            log(f"  r{i}: {' | '.join(cells)}")
+        log(f"  rows by record code: {counts}")
 
 
 def cmd_pages(urls: list[str], match: str, most: int, nfkc: bool = False,
@@ -484,6 +537,12 @@ def main() -> int:
     x2.add_argument("--skip", default=r"\d+|\d+\D{0,3}", help="first-cell pattern to leave out")
     x2.add_argument("--grep", default="", help="print only rows with a cell matching this")
     x2.add_argument("--sheet-match", default="", help="read only sheets whose name matches")
+    ab = sub.add_parser("abadi")
+    ab.add_argument("url")
+    ab.add_argument("--kinds", default="2,3,5", help="record codes to print")
+    ab.add_argument("--counties", default="", help="two-digit county codes (all if empty)")
+    ab.add_argument("--width", type=int, default=30)
+    ab.add_argument("--notes", action="store_true")
     s2 = sub.add_parser("siat")
     s2.add_argument("ids", nargs="+")
     s2.add_argument("--rows", type=int, default=3)
@@ -535,6 +594,9 @@ def main() -> int:
     elif args.cmd == "xlsx":
         cmd_xlsx(args.url, [s for s in args.sheets.split(",") if s], args.rows,
                  args.width, args.skip, args.grep, args.sheet_match)
+    elif args.cmd == "abadi":
+        cmd_abadi(args.url, {k for k in args.kinds.split(",") if k},
+                  {c for c in args.counties.split(",") if c}, args.width, args.notes)
     elif args.cmd == "siat":
         cmd_siat(args.ids, args.rows)
     elif args.cmd == "tree":
