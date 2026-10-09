@@ -1,1 +1,51 @@
-https://web.archive.org/cdx/search/cdx?url=cbs.gov.il%2Fcensus%2F%2A&output=json&limit=800&collapse=urlkey&filter=statuscode%3A200: 503 b'<html><head><meta charset="UTF-8"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head>\n<body style="padding:30px 0;">\n<div style="float:left;width:260px;text-align:center;">\n<img xsrc="logo_ia.jpg" src="data:image/jpeg;base64,iVBORw0KGg'
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 717, in __init__
+    self.read_xref_from(parser, pos, self.xrefs)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 1003, in read_xref_from
+    xref.load(parser)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 275, in load
+    raise PDFNoValidXRef("Invalid PDF stream spec.")
+pdfminer.pdfdocument.PDFNoValidXRef: Invalid PDF stream spec.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfplumber/pdf.py", line 50, in __init__
+    self.doc = PDFDocument(PDFParser(stream), password=password or "")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 722, in __init__
+    newxref.load(parser)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 234, in load
+    (_, obj) = parser.nextobject()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 582, in nextobject
+    (pos, token) = self.nexttoken()
+                   ^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 488, in nexttoken
+    changed_stream = self.fillbuf()
+                     ^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 199, in fillbuf
+    raise PSEOF("Unexpected EOF")
+pdfminer.psexceptions.PSEOF: Unexpected EOF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/south_asia_probe.py", line 578, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/south_asia_probe.py", line 571, in main
+    {"get": cmd_get, "heads": cmd_heads, "nada": cmd_nada, "nadafiles": cmd_nadafiles,
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/south_asia_probe.py", line 375, in cmd_rows
+    with pdfplumber.open(io.BytesIO(body)) as pdf:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfplumber/pdf.py", line 107, in open
+    return cls(
+           ^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/pdfplumber/pdf.py", line 52, in __init__
+    raise PdfminerException(e)
+pdfplumber.utils.exceptions.PdfminerException: Unexpected EOF
+== https://web.archive.org/web/20191121194105id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/English%20report_afghanistan%20Kapisa%20V8%2006%20Oct%20%202015%20%28Final%29%20web%20Quality.pdf
+  200 application/pdf 1048576 https://web.archive.org/web/20191121194105id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/English%20report_afghanistan%20Kapisa%20V8%2006%20Oct%20%202015%20%28Final%29%20web%20Quality.pdf
