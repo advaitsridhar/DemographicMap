@@ -1,2 +1,13 @@
-== CDX pcs.icms.gov.bd*: 200
-    -1 capture(s), 0 shown
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+
+== GET https://bbs.gov.bd/
+  200 text/html; charset=utf-8 150744 https://bbs.gov.bd/
+    'প্রকাশনা বিক্রয়' -> https://bbs.gov.bd/pages/static-pages/6922dc34933eb65569e0ef9f
+    'প্রকাশনা' -> https://bbs.gov.bd/
+    'সর্বশেষ প্রকাশনা' -> https://bbs.gov.bd/pages/static-pages/6922e07a933eb65569e27407
+    'জনশুমারি ও গৃহগণনা (২০২২ ও ২০১১)' -> https://bbs.gov.bd/pages/static-pages/6922dc2a933eb65569e0ebd5
+    'অন্যান্য প্রকাশনা' -> https://bbs.gov.bd/pages/static-pages/6922e064933eb65569e26d37
+    'জেলা পরিসংখ্যান ২০১১' -> https://bbs.gov.bd/pages/static-pages/6922de73933eb65569e1ab86
+    'বাংলাদেশের প্রকাশনা' -> https://bbs.gov.bd/pages/static-pages/6922e0bf933eb65569e286fd
+    'আন্তর্জাতিক প্রকাশনা' -> https://bbs.gov.bd/pages/static-pages/6922e063933eb65569e26d04
