@@ -1,18 +1,9 @@
-== https://stats.gov.nr/wpfd_file/person-tables-1-36/
-  HTTP 200 text/html; charset=UTF-8 214,888 bytes
-  1 links matching '(?:stats[.]gov[.]nr/download/[-a-zA-Z0-9_./%]+|wpfd_file_id|file[.]download)'
-    https://stats.gov.nr/download/49/2021/358/person-tables-1-36.pdf
-== https://stats.gov.nr/wpfd_file/population-housing-census-2021-tables-vol1/
-  HTTP 200 text/html; charset=UTF-8 215,446 bytes
-  2 links matching '(?:stats[.]gov[.]nr/download/[-a-zA-Z0-9_./%]+|wpfd_file_id|file[.]download)'
-    https://docs.google.com/viewer?url&#x3D;https%3A%2F%2Fstats.gov.nr%2Fwp-admin%2Fadmin-ajax.php%3Fjuwpfisadmin%3Dfalse%26action%3Dwpfd%26task%3Dfile.download%26wpfd_category_id%3D49%26wpfd_file_id%3D182%26token%3D%26preview%3D1&amp;embedded&#x3D;true
-    https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx
-== https://stats.gov.nr/wpfd_file/nauru-2021-population-and-housing-census-analytical-report/
-  HTTP 200 text/html; charset=UTF-8 216,015 bytes
-  2 links matching '(?:stats[.]gov[.]nr/download/[-a-zA-Z0-9_./%]+|wpfd_file_id|file[.]download)'
-    https://docs.google.com/viewer?url&#x3D;https%3A%2F%2Fstats.gov.nr%2Fwp-admin%2Fadmin-ajax.php%3Fjuwpfisadmin%3Dfalse%26action%3Dwpfd%26task%3Dfile.download%26wpfd_category_id%3D49%26wpfd_file_id%3D359%26token%3D%26preview%3D1&amp;embedded&#x3D;true
-    https://stats.gov.nr/download/49/2021/359/nauru-2021-population-and-housing-census-analytical-report.pdf
-== https://stats.gov.nr/wpfd_file/census2011_summary/
-  HTTP 200 text/html; charset=UTF-8 215,248 bytes
-  1 links matching '(?:stats[.]gov[.]nr/download/[-a-zA-Z0-9_./%]+|wpfd_file_id|file[.]download)'
-    https://stats.gov.nr/download/43/2011/157/census2011_summary.xlsx
+timor_age: Population and Housing Census 2022, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Main Report basic table 4.05: population by urban/rural location, age, municipality and sex
+  fetched Chapter-4-TLPHC-Census-report-Basic-tables.xlsx (0.5 MB)
+  table 4.05 cells printed '-' where their row's other figures show people, read as the difference: atauro M at 83: '-' read as 2
+  table 4.05: 14 municipalities, single years to 85+, making the country's 1,341,737; national median 21.7
+  table 4.01: 67 posts in 14 municipalities, each municipality's posts making it
+  Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 tables 6 and 7: population by municipality, administrative post, sex and age group (under 15, 15-64, 65 and over; and the school ages 3-5 to 25-29)
+  fetched 2_2015-V2-Population-by-Age-Sex.xls (0.9 MB)
+  2015 tables 6 and 7: 65 posts in 13 municipalities, posts making their municipality and municipalities the country in every group and sex
+timor_age: 2015 table 5: single years make 1,183,645, against its total 1183643.0
