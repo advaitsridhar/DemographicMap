@@ -624,7 +624,8 @@ def bind(areas: dict[str, dict[str, Any]], placed: dict[str, dict[str, Any]],
                 + ", ".join(f"{n.title()} ({areas[n]['total']:,.0f} people, "
                             f"{shares[n][sid]:.0%} of its ground)" for n in names)
                 + f" -- are not all it may hold: other census areas inside it would add some "
-                  f"{stray:,.0f} people ({stray / own:.0%} of these), chiefly "
+                  f"{stray:,.0f} people ({stray / own:.1%} of these, more than the "
+                  f"{STRAY:.0%} a binding allows), chiefly "
                 + "; ".join(f"{m.title()} {n:,.0f} ({how})" for n, m, how in inside[:3])
                 + ". The boundary file's line here is not the census's, so no count is this "
                   "polygon's.") if own > 0 else "The census counts no one here."
