@@ -154,7 +154,7 @@ class TheNestingRule(unittest.TestCase):
         records, _, _ = build(province_rows())
         province = only(records, "Kurdistan")
         self.assertEqual(province["language"]["coverage_pct"], 100.0)
-        self.assertIn("1,000 that the atlas's own total",
+        self.assertIn("the atlas's own total for Kurdistan, 1,000 people",
                       province["language"]["note"])
 
     def test_the_province_total_is_the_row_with_the_atlas_id_not_the_biggest(self):
@@ -171,7 +171,7 @@ class TheNestingRule(unittest.TestCase):
         rows[1] = line(ALI_unique_ID_place="1120001", province_roman="Kordestān",
                        shahrestan_roman="Marivān", population_2011_census="9999")
         records, _, _ = build(rows)
-        self.assertIn("1,000 that the atlas's own total",
+        self.assertIn("the atlas's own total for Kurdistan, 1,000 people",
                       only(records, "Kurdistan")["language"]["note"])
 
 
@@ -381,8 +381,11 @@ class TheCoverageThreshold(unittest.TestCase):
         self.assertIn("1.0% of the province's 100,000 people", log)
         kurdistan = [r for r in records if r["level"] == "admin1"][0]
         self.assertEqual(kurdistan["language"]["status"], "not_available")
-        self.assertIn("1.0% of the province's 100,000: too few",
-                      kurdistan["language"]["note"])
+        # The atlas's own total, said to be the atlas's and dated, not "the
+        # province's": the panel beside it shows the map's population.
+        self.assertIn("1.0% of the atlas's own total for Kurdistan, 100,000 people in "
+                      "the 2011 census: too few", kurdistan["language"]["note"])
+        self.assertNotIn("the province's 100,000", kurdistan["language"]["note"])
 
     def test_kermanshah_is_that_case_in_the_committed_file(self):
         """Its module covers five of fourteen counties and 18.6% of the people.
@@ -407,7 +410,8 @@ class TheCoverageThreshold(unittest.TestCase):
         rows = json.loads(PROCESSED.read_text("utf-8"))
         self.assertNotIn("Rasht", {r["name"] for r in figures(rows)})
         rasht = [r for r in stated(rows) if r["name"] == "Rasht"][0]
-        self.assertIn("28.5% of the county's 956,971", rasht["language"]["note"])
+        self.assertIn("28.5% of the atlas's own total for Rasht, 956,971 people in the "
+                      "2016 census", rasht["language"]["note"])
         self.assertIn("Rasht (679,995 people)", rasht["language"]["note"])
         gilan = [r for r in rows if r["name"] == "Gilan"][0]
         self.assertIn("Rasht (679,995 people)", gilan["language"]["note"])
@@ -555,9 +559,13 @@ class TheCarvedParts(unittest.TestCase):
                                     "Southern Kurdish": 4.0})
         self.assertEqual(marivan, {"Hōrāmi": 100.0})
         # Measured against what is left of the county's own total, 1,500 less
-        # the carved district's 1,000.
-        self.assertIn("100.0% of the 500 that the atlas's own total for Marivan",
+        # the carved district's 1,000 -- and said to be that, not the atlas's
+        # own total, which the atlas never prints.
+        self.assertIn("100.0% of the 500 left of the atlas's total for Marivan (1,500 "
+                      "people in the 2011 census) once the 1,000 it counts in Sarvabad, "
+                      "which the map draws apart, is taken out.",
                       counties["Marivan"]["language"]["note"])
+        self.assertNotIn("own total for Marivan", counties["Marivan"]["language"]["note"])
         self.assertIn("carved out of its atlas county", log)
         # The province is all of it.
         province = [r for r in figures(records) if r["level"] == "admin1"][0]
@@ -621,9 +629,53 @@ class TheCoverageSentence(unittest.TestCase):
         own = m.method_note(unit, "Kabutarahang", entry, 126_062, "own", 131_526 / 126_062)
         self.assertIn("the total it prints for the unit do not quite agree", own)
 
-    def test_the_atlas_s_own_totals_read_as_before(self):
-        self.assertIn("89.5% of the 1,961,260 that the atlas's own total for Isfahan "
-                      "accounts for.", self.note("own"))
+    def test_a_carved_county_shows_its_subtraction_and_the_map_s_population(self):
+        # Isfahan County: the atlas's 2,174,172 less the city's 1,756,126 is a
+        # total the atlas never prints, and the places it holds are 148% of
+        # the 281,989 people the map gives the polygon.
+        unit = m.Unit("Esfahān")
+        unit.population, unit.rows, unit.years = 417_414, 396, {2011}
+        unit.own_year, unit.atlas_total = 2011, 2_174_172
+        unit.carved = [("the city of Isfahan", 1_756_126)]
+        entry = {"authors": "Anonby et al.", "year": "2022"}
+        note = m.method_note(unit, "Isfahan County", entry, 418_046, "own",
+                             417_414 / 418_046,
+                             held={"value": 281_989, "year": 2016})
+        self.assertIn("99.8% of the 418,046 left of the atlas's total for Isfahan County "
+                      "(2,174,172 people in the 2011 census) once the 1,756,126 it counts "
+                      "in the city of Isfahan, which the map draws apart, is taken out.",
+                      note)
+        self.assertIn("This map gives the polygon 281,989 people (2016); the weighted "
+                      "places are 148.0% of that.", note)
+        self.assertNotIn("own total for Isfahan County", note)
+        # Two parts are both named; a county nothing was carved from says nothing
+        # of the map's population on this basis.
+        unit.carved = [("Ben", 29_481), ("Saman", 35_895)]
+        two = m.of_total(unit, "Sharekurd", 275_006, "own")
+        self.assertIn("once the 29,481 it counts in Ben and the 35,895 in Saman, which "
+                      "the map draws apart, are taken out", two)
+        unit.carved = []
+        plain = m.method_note(unit, "Isfahan County", entry, 418_046, "own",
+                              417_414 / 418_046, held={"value": 281_989, "year": 2016})
+        self.assertNotIn("This map gives the polygon", plain)
+
+    def test_the_committed_carved_counties_say_how_their_total_was_reached(self):
+        rows = {r["name"]: r for r in figures(json.loads(PROCESSED.read_text("utf-8")))
+                if r["level"] == "admin2"}
+        note = rows["Isfahan County"]["language"]["note"]
+        self.assertIn("left of the atlas's total for Isfahan County (2,174,172 people in "
+                      "the 2011 census) once the 1,756,126 it counts in the city of "
+                      "Isfahan", note)
+        self.assertIn("This map gives the polygon 281,989 people (2016); the weighted "
+                      "places are 148.0% of that.", note)
+        for name in ("Darreh Shahr County", "Kangan", "Sharekurd", "Fereydan"):
+            self.assertIn("left of the atlas's total for", rows[name]["language"]["note"],
+                          name)
+            self.assertNotIn("the atlas's own total", rows[name]["language"]["note"], name)
+
+    def test_the_atlas_s_own_totals_are_named_as_the_atlas_s(self):
+        self.assertIn("89.5% of the atlas's own total for Isfahan, 1,961,260 people.",
+                      self.note("own"))
         self.assertIn("89.5% of the 1,961,260 that the settlements and towns the atlas "
                       "lists in Isfahan account for.", self.note("places"))
 
@@ -644,7 +696,11 @@ class StatedReasons(unittest.TestCase):
 
     def test_too_thinly_covered(self):
         note = self.rows[("Isfahan", "Aran and Bidgol")]["language"]["note"]
-        self.assertIn("37.8% of the county's 97,409", note)
+        # The atlas's 2011 total, said to be that: the panel shows the 2016
+        # census's 103,517 as the county's population.
+        self.assertIn("37.8% of the atlas's own total for Ārān o Bidgol, 97,409 people "
+                      "in the 2011 census", note)
+        self.assertNotIn("the county's 97,409", note)
 
     def test_no_note_names_a_rule_of_this_pipeline(self):
         for row in self.rows.values():

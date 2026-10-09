@@ -494,7 +494,18 @@ class Unit:
         self.field_years: dict[int, int] = defaultdict(int)
         self.years: set[int] = set()   # which census column supplied a weight
         self.own_total: int = 0        # the file's own aggregate row
+        self.own_year: int | None = None   # ... and the census year it is for
+        # Parts of the unit the map draws apart, and the people each took out
+        # of ``own_total``: the atlas never prints what is left, so a note
+        # says how it was reached rather than calling it the atlas's total.
+        self.atlas_total: int = 0      # the aggregate row before the parts left
+        self.carved: list[tuple[str, int]] = []
         self.place_total: int = 0      # the sum of its settlement and city rows
+
+    def own(self, weight: int, year: int | None) -> None:
+        """An aggregate row for this unit; the largest stands, with its year."""
+        if weight > self.own_total:
+            self.own_total, self.own_year = weight, year
 
     def add(self, row: dict[str, str], place: str) -> None:
         self.rows += 1
@@ -588,6 +599,7 @@ def collect(rows: list[dict[str, str]],
     counties: dict[str, Unit] = {}
     parts: dict[str, Unit] = {}
     carved_from: dict[str, str] = {}
+    carved_column: dict[str, str] = {}
     variants: list[str] = []
 
     def part_of(row: dict[str, str], key: str) -> tuple[Unit | None, str]:
@@ -598,6 +610,7 @@ def collect(rows: list[dict[str, str]],
                     unit = parts[shape_name] = Unit(value)
                     unit.spellings.add(value)
                     carved_from[shape_name] = key
+                    carved_column[shape_name] = column
                 return unit, column
         return None, ""
 
@@ -626,22 +639,22 @@ def collect(rows: list[dict[str, str]],
 
         # An aggregate row. Which unit's total it is depends on how deep its
         # name columns go, and it is taken as a total for that unit only.
-        weight, _ = weight_of(row)
+        weight, year = weight_of(row)
         if weight is None:
             continue
         if not county_name:
             if is_province_total(row):
-                province.own_total = max(province.own_total, weight)
+                province.own(weight, year)
             continue
         if part is not None:
             # A carved district's own row: its bakhsh, and nothing below it.
             if column == "bakhsh_roman" and not any(
                     (row.get(f"{level}_roman") or "").strip()
                     for level in ("city", "dehestan", "settlement")):
-                part.own_total = max(part.own_total, weight)
+                part.own(weight, year)
             continue
         if not (row.get("bakhsh_roman") or "").strip():
-            county.own_total = max(county.own_total, weight)
+            county.own(weight, year)
 
     def unit_for(row: dict[str, str]) -> Unit | None:
         key = fold((row.get("shahrestan_roman") or "").strip())
@@ -675,11 +688,16 @@ def collect(rows: list[dict[str, str]],
 
     # The county's own row counts its carved parts; what it is measured
     # against is the ground left to its polygon.
-    for shape_name, part in parts.items():
+    for shape_name, part in sorted(parts.items()):
         county = counties[carved_from[shape_name]]
         if county.own_total:
-            county.own_total = max(0, county.own_total
-                                   - (part.own_total or part.place_total))
+            if not county.atlas_total:
+                county.atlas_total = county.own_total
+            taken = min(county.own_total, part.own_total or part.place_total)
+            county.own_total -= taken
+            what = (f"the city of {shape_name}" if carved_column[shape_name] == "city_roman"
+                    else shape_name)
+            county.carved.append((what, taken))
 
     for county in counties.values():
         if len(county.spellings) > 1:
@@ -769,18 +787,46 @@ def fieldwork_clause(unit: Unit, module_year: int) -> str:
             f"was published.")
 
 
+def of_total(unit: Unit, label: str, total: int, basis: str) -> str:
+    """What a unit's coverage is a share of, in words a reader can check.
+
+    The atlas's own total is a census count of a given year, and the panel
+    beside it shows the map's population, often of another: Kermānshāh's
+    1,945,227 is the 2011 census's, the map's 1,952,434 the 2016 one's, so the
+    note says whose and when rather than calling it "the province's". And a
+    county a part was carved out of is measured against a total the atlas
+    never prints -- its own row less the part -- so the note shows the
+    subtraction rather than calling the remainder the atlas's.
+    """
+    if basis == "places":
+        return (f"the {total:,} that the settlements and towns the atlas lists in "
+                f"{label} account for")
+    if basis == "shape":
+        # The map's own population is a number of people, not something
+        # that "accounts for" one.
+        return f"the {total:,} people this map gives the unit"
+    when = f" in the {unit.own_year} census" if unit.own_year else ""
+    if not unit.carved:
+        return f"the atlas's own total for {label}, {total:,} people{when}"
+    taken = [f"the {n:,} it counts in {what}" for what, n in unit.carved]
+    listed = (taken[0] if len(taken) == 1
+              else ", ".join(taken[:-1]) + " and " + taken[-1].replace(" it counts", ""))
+    return (f"the {total:,} left of the atlas's total for {label} "
+            f"({unit.atlas_total:,} people{when}) once {listed}, which the map draws "
+            f"apart, {'is' if len(taken) == 1 else 'are'} taken out")
+
+
 def method_note(unit: Unit, label: str, entry: dict[str, Any], total: int,
-                basis: str, coverage: float) -> str:
-    """What the panel prints. It has to say that nothing was counted here."""
-    # The map's own population is a number of people, not something that
-    # "accounts for" one: Isfahan city read "89.5% of the 1,961,260 that the
-    # population this map holds for the shape accounts for".
-    of_total = {
-        "own": f"the {total:,} that the atlas's own total for {label} accounts for",
-        "places": f"the {total:,} that the settlements and towns the atlas lists in "
-                  f"{label} account for",
-        "shape": f"the {total:,} people this map gives the unit",
-    }[basis]
+                basis: str, coverage: float,
+                held: dict[str, Any] | None = None) -> str:
+    """What the panel prints. It has to say that nothing was counted here.
+
+    ``held`` is the map's own population for the polygon. A county a part was
+    carved out of is set beside it too: its total is a subtraction, and
+    Isfahan County's weighted places, 99.8% of the atlas's total less the
+    city, are 148% of the 281,989 people the map gives the polygon.
+    """
+    total_words = of_total(unit, label, total, basis)
     weights = ("the 2016 census population where the atlas prints one and the "
                "2011 census population otherwise"
                if unit.years == {2011, 2016} else
@@ -794,12 +840,14 @@ def method_note(unit: Unit, label: str, entry: dict[str, Any], total: int,
         f"{'settlement or town' if places == 1 else 'settlements and towns'} "
         f"inside it, {'weighted' if places == 1 else 'each weighted'} by {weights}. "
         f"{'It holds' if places == 1 else 'Those weighted places hold'} "
-        f"{unit.population:,} people, {coverage * 100:.1f}% of {of_total}.",
+        f"{unit.population:,} people, {coverage * 100:.1f}% of {total_words}.",
     ]
     if coverage > 1.0 + SUM_TOLERANCE / 100.0:
         # The total is the atlas's own only on the "own" basis; on "shape" it
         # is this map's population, which the atlas never printed.
-        against = {"own": "the total it prints for the unit",
+        against = {"own": ("the total it prints for the county less the parts the map "
+                           "draws apart" if unit.carved else
+                           "the total it prints for the unit"),
                    "places": "the total of the places it lists",
                    "shape": "the population this map gives the unit"}[basis]
         text.append(
@@ -807,6 +855,13 @@ def method_note(unit: Unit, label: str, entry: dict[str, Any], total: int,
             f"more than that total, {coverage * 100 - 100:.1f}% of it: the "
             f"atlas's settlement populations and {against} do not quite agree, "
             f"and neither has been adjusted to the other.")
+    mapped = held.get("value") if isinstance(held, dict) else None
+    if unit.carved and basis == "own" and isinstance(mapped, (int, float)) and mapped > 0:
+        year = held.get("year")
+        text.append(
+            f"This map gives the polygon {int(mapped):,} people"
+            f"{f' ({year})' if isinstance(year, int) else ''}; the weighted places "
+            f"are {unit.population / mapped * 100:.1f}% of that.")
     if unit.unweighted:
         text.append(
             f"{unit.unweighted:,} further "
@@ -888,7 +943,8 @@ def unit_record(unit: Unit, shape: dict[str, Any], entry: dict[str, Any],
     value = estimate(
         status, rows, method=method,
         inputs=[f"ali-{slugify(entry['title'])}-{entry['year']}"],
-        note=method_note(unit, label, entry, total, basis, coverage))
+        note=method_note(unit, label, entry, total, basis, coverage,
+                         held=shape.get("population")))
     # The year the panel prints for this figure: the module's, not the
     # export's and not the other eleven provinces'.
     value["year"] = entry["year"]
@@ -1029,9 +1085,10 @@ def build(directory: Path = SOURCE_DIR
             records.append(gap_record(
                 shape, "admin1", ISO3, None,
                 f"The atlas's module for {shape['name']} is read, but its settlements "
-                f"hold {province.population:,} people, {coverage * 100:.1f}% of the "
-                f"province's {total:,}: too few for their languages to stand for the "
-                f"province's, so no figure is written for it."))
+                f"hold {province.population:,} people, {coverage * 100:.1f}% of "
+                f"{of_total(province, shape['name'], total, basis)}: too few for their "
+                f"languages to stand for the province's, so no figure is written for "
+                f"it."))
             tally["stated"] += 1
         else:
             built = unit_record(province, shape, entry, "admin1", ISO3, None,
@@ -1078,8 +1135,9 @@ def build(directory: Path = SOURCE_DIR
                 why[county_of["id"]] = (
                     f"The atlas's settlements in {roman} that carry a population and a "
                     f"reading hold {unit.population:,} people, {coverage * 100:.1f}% of "
-                    f"the county's {total:,}: too few for their languages to stand for "
-                    f"the county's, so no figure is written for it."
+                    f"{of_total(unit, roman, total, basis)}: too few for their "
+                    f"languages to stand for the county's, so no figure is written for "
+                    f"it."
                     + (f" The largest left out is {worst[0][0]} ({worst[0][1]:,} people), "
                        f"whose estimate could not be read as shares: {worst[0][2]}."
                        if worst else ""))
