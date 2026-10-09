@@ -1,5 +1,1729 @@
-== CDX www.nsia.gov.af/*: 503
-    <html><head><meta charset="UTF-8"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head>
-<body style="padding:30px 0;">
-<div style="float:left;width:260px;text-align:center;">
-<img xsrc="logo_ia.jpg" src="data:image/jpeg;base64,iVBORw0KGg
+
+======================================================================
+bangladesh-subnational-boundaries-and-tabular-data: 4,805,229 bytes, 11 sheets
+
+--- Metadata: 192 rows ---
+  Metadata: Bangladesh
+  Contents
+  One metadata tab describing 8 geospatial boundary files and 9 tables, 
+  Geospatial Boundary Metadata
+  National Boundary (BD_GEOG_ADM0_2011_uscb_202107)
+  Title | Bangladesh: National Boundary
+  Tags | Geospatial Boundaries, Bangladesh, National Boundary, Country
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | National boundary feature class of Bangladesh for joining (linking) to
+  Credits | Geospatial Boundaries: International boundaries coincide with the Larg
+  Use Limitations | The international boundaries are derived from the Large Scale Internat
+  Place Keywords | Bangladesh, Country
+  Temporal Keywords | 2021
+  Theme Keywords | National Boundaries
+  Supplemental Information | The geodatabase feature class contains 1 polygon representing Banglade
+  First-Order Administrative Divisions (BD_GEOG_ADM1_2011_uscb_202107)
+  Title | Bangladesh: First-Order Administrative Divisions
+  Tags | Geospatial Boundaries, Bangladesh, First-Order Administrative Division
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | First-order administrative divisions feature class of Bangladesh for j
+
+--- Data Dictionary: 345 rows ---
+  Data Dictionary: Bangladesh
+  Standard Geographic Fields
+  Field Name | Field Alias | Field Description | Field Data Source
+  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics 
+  GEO_CONCAT | Administrative name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
+  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
+  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
+  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., divisions. | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics 
+  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., zilas. | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics 
+  ADM3_NAME | Third-order administrative division name | Third-order administrative division name (ADM3), i.e., upazilas, thana | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics 
+  ADM4_NAME | Fourth-order administrative division name | Fourth-order administrative division name (ADM4), i.e., unions, pauras | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics 
+  ADM5_NAME | Fifth-order administrative division name | Fifth-order administrative division name (ADM5), i.e., refugee settlem | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics 
+  ADM6_NAME | Sixth-order administrative division name | Sixth-order administrative division name (ADM6), i.e., refugee settlem | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics 
+  ADM7_NAME | Seventh-order administrative division name | Seventh-order administrative division name (ADM7), i.e., refugee settl | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics 
+  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
+  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
+  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2021
+  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2021
+  NSO_CODE | National statistical office code | Code used by the Bangladesh Bureau of Statistics (BBS) for a subnation | Bangladesh Bureau of Statistics (BBS), 2011
+  NSO_NAME | National statistical office name | Name used by the Bangladesh Bureau of Statistics (BBS) for a subnation | Bangladesh Bureau of Statistics (BBS), 2011
+
+--- Age-Sex: 5778 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 8 areas  BARISHAL, CHATTOGRAM, DHAKA, KHULNA, MYMENSINGH, RĀJSHĀHI, RANGPUR, SYLHET
+  ADM_LEVEL 2: 64 areas  BARGUNA, BARISĀL, BHOLA, JHĀLAKĀTI, PATUĀKHĀLI, PIROJPUR, BĀNDARBAN, BRĀHMANBĀRIA, ...
+  ADM_LEVEL 3: 544 areas  AMTALI, BAMNA, BARGUNA SADAR, BETAGI, PATHARGHATA, AGAILJHARA, BABUGANJ, BAKERGANJ, ...
+  ADM_LEVEL 4: 5161 areas  AMTALI PAURASHAVA, AMTALI, ARPANGASHIA, ATHARAGASHIA, BARABAGI, CHHOTA BAGI, CHOWRA, GULISAKHALI, ...
+  denominator: none found
+  54 group columns:
+    BTOTL  ->  'Both sexes total'
+    B0004  ->  'Both sexes 0 to 4'
+    B0509  ->  'Both sexes 5 to 9'
+    B1014  ->  'Both sexes 10 to 14'
+    B1519  ->  'Both sexes 15 to 19'
+    B2024  ->  'Both sexes 20 to 24'
+    B2529  ->  'Both sexes 25 to 29'
+    B3034  ->  'Both sexes 30 to 34'
+    B3539  ->  'Both sexes 35 to 39'
+    B4044  ->  'Both sexes 40 to 44'
+    B4549  ->  'Both sexes 45 to 49'
+    B5054  ->  'Both sexes 50 to 54'
+    B5559  ->  'Both sexes 55 to 59'
+    B6064  ->  'Both sexes 60 to 64'
+    B6569  ->  'Both sexes 65 to 69'
+    B7074  ->  'Both sexes 70 to 74'
+    B7579  ->  'Both sexes 75 to 79'
+    B80PL  ->  'Both sexes 80 and older'
+    MTOTL  ->  'Males total'
+    M0004  ->  'Males 0 to 4'
+    M0509  ->  'Males 5 to 9'
+    M1014  ->  'Males 10 to 14'
+    M1519  ->  'Males 15 to 19'
+    M2024  ->  'Males 20 to 24'
+    ...and 30 more
+    BTOTL says: Both sexes total | Total population (both sexes). (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Population by 5-Year Age Groups and Sex
+    B0004 says: Both sexes 0 to 4 | Total population age 0 - 4 (both sexes). (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Population by 5-Year Age Groups and Sex
+    B0509 says: Both sexes 5 to 9 | Total population age 5 - 9 (both sexes). (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Population by 5-Year Age Groups and Sex
+
+  whole country: BANGLADESH (level 0) no published total
+    BTOTL          Both sexes total                     144,043,697    0.00%
+    B0004          Both sexes 0 to 4                     15,061,968    0.00%
+    B0509          Both sexes 5 to 9                     18,173,231    0.00%
+    B1014          Both sexes 10 to 14                   16,646,620    0.00%
+    B1519          Both sexes 15 to 19                   12,861,904    0.00%
+    B2024          Both sexes 20 to 24                   13,299,797    0.00%
+    B2529          Both sexes 25 to 29                   13,479,506    0.00%
+    B3034          Both sexes 30 to 34                   10,499,759    0.00%
+    B3539          Both sexes 35 to 39                    9,556,425    0.00%
+    B4044          Both sexes 40 to 44                    8,261,657    0.00%
+    B4549          Both sexes 45 to 49                    6,380,073    0.00%
+    B5054          Both sexes 50 to 54                    5,552,265    0.00%
+    B5559          Both sexes 55 to 59                    3,500,997    0.00%
+    B6064          Both sexes 60 to 64                    3,934,011    0.00%
+    B6569          Both sexes 65 to 69                    2,113,488    0.00%
+    B7074          Both sexes 70 to 74                    2,231,712    0.00%
+    B7579          Both sexes 75 to 79                      874,727    0.00%
+    B80PL          Both sexes 80 and older                1,615,557    0.00%
+    MTOTL          Males total                           72,109,797    0.00%
+    M0004          Males 0 to 4                           7,638,524    0.00%
+    M0509          Males 5 to 9                           9,322,516    0.00%
+    M1014          Males 10 to 14                         8,614,901    0.00%
+    M1519          Males 15 to 19                         6,509,501    0.00%
+    M2024          Males 20 to 24                         5,777,372    0.00%
+    M2529          Males 25 to 29                         6,225,249    0.00%
+    M3034          Males 30 to 34                         5,079,100    0.00%
+    M3539          Males 35 to 39                         4,697,348    0.00%
+    M4044          Males 40 to 44                         4,280,921    0.00%
+    M4549          Males 45 to 49                         3,363,269    0.00%
+    M5054          Males 50 to 54                         2,952,593    0.00%
+    M5559          Males 55 to 59                         1,923,534    0.00%
+    M6064          Males 60 to 64                         2,081,304    0.00%
+    M6569          Males 65 to 69                         1,149,566    0.00%
+    M7074          Males 70 to 74                         1,206,398    0.00%
+    M7579          Males 75 to 79                           488,338    0.00%
+    M80PL          Males 80 and older                       799,363    0.00%
+    FTOTL          Females total                         71,933,900    0.00%
+    F0004          Females 0 to 4                         7,423,444    0.00%
+    F0509          Females 5 to 9                         8,850,715    0.00%
+    F1014          Females 10 to 14                       8,031,719    0.00%
+    F1519          Females 15 to 19                       6,352,403    0.00%
+    F2024          Females 20 to 24                       7,522,425    0.00%
+    F2529          Females 25 to 29                       7,254,257    0.00%
+    F3034          Females 30 to 34                       5,420,659    0.00%
+    F3539          Females 35 to 39                       4,859,077    0.00%
+    F4044          Females 40 to 44                       3,980,736    0.00%
+    F4549          Females 45 to 49                       3,016,804    0.00%
+    F5054          Females 50 to 54                       2,599,672    0.00%
+    F5559          Females 55 to 59                       1,577,463    0.00%
+    F6064          Females 60 to 64                       1,852,707    0.00%
+    F6569          Females 65 to 69                         963,922    0.00%
+    F7074          Females 70 to 74                       1,025,314    0.00%
+    F7579          Females 75 to 79                         386,389    0.00%
+    F80PL          Females 80 and older                     816,194    0.00%
+
+--- Households: 5778 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 8 areas  BARISHAL, CHATTOGRAM, DHAKA, KHULNA, MYMENSINGH, RĀJSHĀHI, RANGPUR, SYLHET
+  ADM_LEVEL 2: 64 areas  BARGUNA, BARISĀL, BHOLA, JHĀLAKĀTI, PATUĀKHĀLI, PIROJPUR, BĀNDARBAN, BRĀHMANBĀRIA, ...
+  ADM_LEVEL 3: 544 areas  AMTALI, BAMNA, BARGUNA SADAR, BETAGI, PATHARGHATA, AGAILJHARA, BABUGANJ, BAKERGANJ, ...
+  ADM_LEVEL 4: 5161 areas  AMTALI PAURASHAVA, AMTALI, ARPANGASHIA, ATHARAGASHIA, BARABAGI, CHHOTA BAGI, CHOWRA, GULISAKHALI, ...
+  denominator: none found
+  28 group columns:
+    HHD_TOT  ->  'Total households'
+    HHD_PCH  ->  'Pucca housing'
+    HHD_SPH  ->  'Semi-pucca housing'
+    HHD_KCH  ->  'Kutcha housing'
+    HHD_JPH  ->  'Jhupri housing'
+    HHD_GNH  ->  'General households'
+    HHD_GHP  ->  'General, pucca housing'
+    HHD_GHS  ->  'General, semi-pucca housing'
+    HHD_GHK  ->  'General, kutcha housing'
+    HHD_GHJ  ->  'General, jhupri housing'
+    HHD_INH  ->  'Institutional households'
+    HHD_IHP  ->  'Institutional, pucca housing'
+    HHD_IHS  ->  'Institutional, semi-pucca housing'
+    HHD_IHK  ->  'Institutional, kutcha housing'
+    HHD_IHJ  ->  'Institutional, jhupri housing'
+    HHD_ORH  ->  'Other households'
+    HHD_OTP  ->  'Other, pucca housing'
+    HHD_OTS  ->  'Other, semi-pucca housing'
+    HHD_OTK  ->  'Other, kutcha housing'
+    HHD_OTJ  ->  'Other, jhupri housing'
+    HO_TOT_T  ->  'Total households, tenancy'
+    HO_OWN_T  ->  'Owned, tenancy'
+    HO_RNT_T  ->  'Rented, tenancy'
+    HO_FRE_T  ->  'Rent-free, tenancy'
+    ...and 4 more
+    HHD_TOT says: Total households | Total number of households. Original field name: "Total, Total." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Households by Type of Household by Type of House
+    HHD_PCH says: Pucca housing | Housing structures with wall, roof, and floor made of brick cement, households. Original field name: "Total, Pucca." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Households by Type of Household by Type of House
+    HHD_SPH says: Semi-pucca housing | Housing structures with wall and floor made of brick cement, households. Original field name: "Total, Semi-pucca." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Households by Type of Household by Type of House
+
+  whole country: BANGLADESH (level 0) no published total
+    HHD_TOT        Total households                      32,173,619    0.00%
+    HHD_PCH        Pucca housing                          3,749,551    0.00%
+    HHD_SPH        Semi-pucca housing                     6,354,072    0.00%
+    HHD_KCH        Kutcha housing                        21,140,017    0.00%
+    HHD_JPH        Jhupri housing                           929,979    0.00%
+    HHD_GNH        General households                    31,863,376    0.00%
+    HHD_GHP        General, pucca housing                 3,606,340    0.00%
+    HHD_GHS        General, semi-pucca housing            6,249,776    0.00%
+    HHD_GHK        General, kutcha housing               21,089,115    0.00%
+    HHD_GHJ        General, jhupri housing                  918,145    0.00%
+    HHD_INH        Institutional households                  26,686    0.00%
+    HHD_IHP        Institutional, pucca housing              16,261    0.00%
+    HHD_IHS        Institutional, semi-pucca housing          7,077    0.00%
+    HHD_IHK        Institutional, kutcha housing              3,348    0.00%
+    HHD_IHJ        Institutional, jhupri housing                  0    0.00%
+    HHD_ORH        Other households                         283,557    0.00%
+    HHD_OTP        Other, pucca housing                     126,950    0.00%
+    HHD_OTS        Other, semi-pucca housing                 97,219    0.00%
+    HHD_OTK        Other, kutcha housing                     47,554    0.00%
+    HHD_OTJ        Other, jhupri housing                     11,834    0.00%
+    HO_TOT_T       Total households, tenancy             32,173,632    0.00%
+    HO_OWN_T       Owned, tenancy                        26,491,088    0.00%
+    HO_RNT_T       Rented, tenancy                        4,599,176    0.00%
+    HO_FRE_T       Rent-free, tenancy                     1,083,368    0.00%
+    HO_OWN_19      Owned, tenancy 2019 (PCT)                     84    0.00%
+    HO_NOT_19      Not owned, tenancy 2019 (PCT)                 16    0.00%
+    HO_RNT_19      Rented, tenancy 2019 (PCT)                    13    0.00%
+    HO_OTH_19      Other, tenancy 2019 (PCT)                      3    0.00%
+
+--- Housing: 617 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 8 areas  BARISHAL, CHATTOGRAM, DHAKA, KHULNA, MYMENSINGH, RĀJSHĀHI, RANGPUR, SYLHET
+  ADM_LEVEL 2: 64 areas  BARGUNA, BARISĀL, BHOLA, JHĀLAKĀTI, PATUĀKHĀLI, PIROJPUR, BĀNDARBAN, BRĀHMANBĀRIA, ...
+  ADM_LEVEL 3: 544 areas  AMTALI, BAMNA, BARGUNA SADAR, BETAGI, PATHARGHATA, AGAILJHARA, BABUGANJ, BAKERGANJ, ...
+  denominator: 'Electricity access, household population (PCT)'
+  75 group columns:
+    UTL_WTTL  ->  'Water source, total'
+    UTL_WTAP  ->  'Water source, tap'
+    UTL_WTUB  ->  'Water source, tube-well'
+    UTL_WOTR  ->  'Water Source, other'
+    UTL_ETTL  ->  'Electricity, total'
+    UTL_EYES  ->  'Electricity, available'
+    UTL_ENO  ->  'Electricity, not available'
+    UTL_TTTL  ->  'Toilet facility, total'
+    UTL_TSAN  ->  'Toilet facility, sanitary w/ water seal'
+    UTL_TSNS  ->  'Toilet facility, sanitary w/o water seal'
+    UTL_TNSN  ->  'Toilet facility, non-sanitary'
+    UTL_TNON  ->  'Toilet facility, none'
+    UTL_EING  ->  'Electricity, interconnected grid (PCT)'
+    UTL_EOFG  ->  'Electricity, off-grid (PCT)'
+    UTL_EUNA  ->  'Electricity, unavailable (PCT)'
+    UTL_COCT  ->  'Cooking fuel, clean fuel (PCT)'
+    UTL_CONC  ->  'Cooking fuel, non-clean fuel (PCT)'
+    UTL_CONO  ->  'Cooking fuel, no cooking (PCT)'
+    UTL_IYES  ->  'Internet, available (PCT)'
+    UTL_INOT  ->  'Internet, not available (PCT)'
+    UTL_IMDK  ->  'Internet, unknown (PCT)'
+    HU_FTNAT  ->  'Floor type, natural (PCT)'
+    HU_FTRUD  ->  'Floor type, rudimentary (PCT)'
+    HU_FTFIN  ->  'Floor type, finished (PCT)'
+    ...and 51 more
+    UTL_WTTL says: Water source, total | Total number of households in terms of drinking water source, households. Original field name: "Water Source, Total." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Source of Drinking Water
+    UTL_WTAP says: Water source, tap | Tap is a source of drinking water, households. Original field name: "Water Source, Tap." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Source of Drinking Water
+    UTL_WTUB says: Water source, tube-well | Tube-well is a source of drinking water, households. Original field name: "Water Source, Tube-well." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Source of Drinking Water
+
+  whole country: BANGLADESH (level 0) published=92 summed=193,043,402 ratio=2093746.224
+    UTL_WTTL       Water source, total                   32,173,631  34895478.31%
+    UTL_WTAP       Water source, tap                      3,436,788  3727535.79%
+    UTL_WTUB       Water source, tube-well               26,865,648  29138446.85%
+    UTL_WOTR       Water Source, other                    1,871,195  2029495.66%
+    UTL_ETTL       Electricity, total                    32,173,632  34895479.39%
+    UTL_EYES       Electricity, available                18,172,291  19709643.17%
+    UTL_ENO        Electricity, not available            14,001,341  15185836.23%
+    UTL_TTTL       Toilet facility, total                32,173,632  34895479.39%
+    UTL_TSAN       Toilet facility, sanitary w/ water     8,061,915  8743942.52%
+    UTL_TSNS       Toilet facility, sanitary w/o wate    12,458,344  13512303.69%
+    UTL_TNSN       Toilet facility, non-sanitary          9,182,296  9959106.29%
+    UTL_TNON       Toilet facility, none                  2,471,077  2680126.90%
+    UTL_EING       Electricity, interconnected grid (            90   97.07%
+    UTL_EOFG       Electricity, off-grid (PCT)                    2    2.60%
+    UTL_EUNA       Electricity, unavailable (PCT)                 8    8.79%
+    UTL_COCT       Cooking fuel, clean fuel (PCT)                20   21.58%
+    UTL_CONC       Cooking fuel, non-clean fuel (PCT)            80   86.77%
+    UTL_CONO       Cooking fuel, no cooking (PCT)                 0    0.00%
+    UTL_IYES       Internet, available (PCT)                     38   40.78%
+    UTL_INOT       Internet, not available (PCT)                 62   67.68%
+    UTL_IMDK       Internet, unknown (PCT)                        0    0.00%
+    HU_FTNAT       Floor type, natural (PCT)                     61   65.94%
+    HU_FTRUD       Floor type, rudimentary (PCT)                  0    0.54%
+    HU_FTFIN       Floor type, finished (PCT)                    39   41.87%
+    HU_FTOTH       Floor type, other (PCT)                        0    0.00%
+    HU_RTNAT       Roof type, natural (PCT)                       1    0.76%
+    HU_RTRUD       Roof type, rudimentary (PCT)                   0    0.11%
+    HU_RTFIN       Roof type, finished (PCT)                     99  107.48%
+    HU_RTOTH       Roof type, other (PCT)                         0    0.00%
+    HU_WTNAT       Exterior wall type, natural (PCT)             12   13.34%
+    HU_WTRUD       Exterior wall type, rudimentary (P            50   54.01%
+    HU_WTFIN       Exterior wall type, finished (PCT)            38   41.00%
+    HU_WTOTH       Exterior wall type, other (PCT)                0    0.11%
+    HU_BED1        Number of bedrooms, one (PCT)                 32   34.82%
+    HU_BED2        Number of bedrooms, two (PCT)                 40   43.38%
+    HU_BD3P        Number of bedrooms, three or more             28   30.26%
+    HU_BDPM        Mean, persons per bedroom                      2    2.54%
+    HHA_LPH        Landline phone (PCT)                           0    0.54%
+    HHA_RAD        Radio (PCT)                                    1    0.65%
+    HHA_COT        Cot/bed (PCT)                                 98  106.29%
+    HHA_TBLE       Table/chair (PCT)                             88   95.77%
+    HHA_ALM        Almirah/wardrobe (PCT)                        47   51.19%
+    HHA_SOF        Sofa set (PCT)                                14   15.51%
+    HHA_WDI        Water dispenser (PCT)                          9    9.54%
+    HHA_TEL        Television (PCT)                              51   54.88%
+    HHA_REF        Refrigerator (PCT)                            35   37.64%
+    HHA_AIC        Air conditioner (PCT)                          1    1.41%
+    HHA_WAM        Washing machine (PCT)                          1    0.65%
+    HHA_EWP        Electric water pump (PCT)                     15   16.70%
+    HHA_FAN        Electric fan (PCT)                            86   93.71%
+    HHA_AL         Agricultural land (PCT)                       38   40.89%
+    HHA_ANI        Farm animals/livestock (PCT)                  55   59.98%
+    HHA_COW        Milk cows or bull (PCT)                       30   33.08%
+    HHA_BUF        Water buffalo or goail (PCT)                   0    0.33%
+    HHA_HRS        Horses (PCT)                                   0    0.22%
+    HHA_GOA        Goats (PCT)                                   18   19.63%
+    HHA_SHP        Sheep (PCT)                                    1    1.08%
+    HHA_CHK        Chickens (PCT)                                40   43.49%
+    HHA_DCK        Ducks (PCT)                                    1    0.98%
+    HHA_PIG        Pigs (PCT)                                    21   22.67%
+    HHA_PGN        Pigeons (PCT)                                  7    7.27%
+    HHA_WRI        Wristwatch (PCT)                              30   32.21%
+    HHA_BIK        Bicycle (PCT)                                 29   31.78%
+    HHA_MBK        Motorcycle or scooter (PCT)                    9    9.76%
+    HHA_CRT        Animal-drawn cart (PCT)                        0    0.54%
+    HHA_CAR        Car, truck, or van (PCT)                       1    1.52%
+    HHA_BAT        Boat with a motor (PCT)                        1    0.76%
+    HHA_RIK        Rickshaw or rickshaw van (PCT)                 4    4.66%
+    HHA_NAS        Nasimon/karimon/bhatbhoti (PCT)                1    0.76%
+    HHA_EBK        Easy bike/auto bike (PCT)                      1    1.41%
+    HHA_CBT        Country boat without motor (PCT)               2    1.84%
+    HHA_COM        Computer or tablet (PCT)                       6    6.07%
+    HHA_MBL        Mobile telephone (PCT)                        95  102.82%
+    HHA_INT        Internet access at home (PCT)                 38   40.78%
+    HHA_BNK        Bank account (PCT)                            35   37.74%
+
+  furthest from its own total: DHAKA (level 1) published=98 summed=49,861,149 ratio=508787.237
+    UTL_WTTL       Water source, total                    8,309,923  8479513.27%
+    UTL_WTAP       Water source, tap                      2,397,539  2446468.37%
+    UTL_WTUB       Water source, tube-well                5,687,568  5803640.82%
+    UTL_WOTR       Water Source, other                      224,816  229404.08%
+    UTL_ETTL       Electricity, total                     8,309,923  8479513.27%
+    UTL_EYES       Electricity, available                 6,343,274  6472728.57%
+    UTL_ENO        Electricity, not available             1,966,649  2006784.69%
+    UTL_TTTL       Toilet facility, total                 8,309,923  8479513.27%
+    UTL_TSAN       Toilet facility, sanitary w/ water     2,788,624  2845534.69%
+    UTL_TSNS       Toilet facility, sanitary w/o wate     3,753,686  3830291.84%
+    UTL_TNSN       Toilet facility, non-sanitary          1,521,747  1552803.06%
+    UTL_TNON       Toilet facility, none                    245,866  250883.67%
+    UTL_EING       Electricity, interconnected grid (            97   98.88%
+    UTL_EOFG       Electricity, off-grid (PCT)                    1    1.02%
+    UTL_EUNA       Electricity, unavailable (PCT)                 2    2.14%
+    UTL_COCT       Cooking fuel, clean fuel (PCT)                44   45.31%
+    UTL_CONC       Cooking fuel, non-clean fuel (PCT)            56   56.73%
+    UTL_CONO       Cooking fuel, no cooking (PCT)                 0    0.00%
+    UTL_IYES       Internet, available (PCT)                     47   47.96%
+    UTL_INOT       Internet, not available (PCT)                 53   53.98%
+    UTL_IMDK       Internet, unknown (PCT)                        0    0.00%
+    HU_FTNAT       Floor type, natural (PCT)                     38   38.98%
+    HU_FTRUD       Floor type, rudimentary (PCT)                  1    1.02%
+    HU_FTFIN       Floor type, finished (PCT)                    61   62.04%
+    HU_FTOTH       Floor type, other (PCT)                        0    0.00%
+    HU_RTNAT       Roof type, natural (PCT)                       0    0.10%
+    HU_RTRUD       Roof type, rudimentary (PCT)                   0    0.10%
+    HU_RTFIN       Roof type, finished (PCT)                    100  101.73%
+    HU_RTOTH       Roof type, other (PCT)                         0    0.00%
+    HU_WTNAT       Exterior wall type, natural (PCT)              2    2.55%
+    HU_WTRUD       Exterior wall type, rudimentary (P            53   54.39%
+    HU_WTFIN       Exterior wall type, finished (PCT)            44   45.10%
+    HU_WTOTH       Exterior wall type, other (PCT)                0    0.00%
+    HU_BED1        Number of bedrooms, one (PCT)                 42   42.55%
+    HU_BED2        Number of bedrooms, two (PCT)                 38   38.67%
+    HU_BD3P        Number of bedrooms, three or more             20   20.92%
+    HU_BDPM        Mean, persons per bedroom                      3    2.56%
+    HHA_LPH        Landline phone (PCT)                           1    1.12%
+    HHA_RAD        Radio (PCT)                                    0    0.51%
+    HHA_COT        Cot/bed (PCT)                                 98   99.80%
+    HHA_TBLE       Table/chair (PCT)                             83   84.29%
+    HHA_ALM        Almirah/wardrobe (PCT)                        62   62.86%
+    HHA_SOF        Sofa set (PCT)                                17   17.35%
+    HHA_WDI        Water dispenser (PCT)                         13   12.96%
+    HHA_TEL        Television (PCT)                              66   67.45%
+    HHA_REF        Refrigerator (PCT)                            53   53.98%
+    HHA_AIC        Air conditioner (PCT)                          3    2.86%
+    HHA_WAM        Washing machine (PCT)                          1    1.12%
+    HHA_EWP        Electric water pump (PCT)                     16   15.82%
+    HHA_FAN        Electric fan (PCT)                            95   96.53%
+    HHA_AL         Agricultural land (PCT)                       34   34.18%
+    HHA_ANI        Farm animals/livestock (PCT)                  37   37.45%
+    HHA_COW        Milk cows or bull (PCT)                       19   19.29%
+    HHA_BUF        Water buffalo or goail (PCT)                   0    0.10%
+    HHA_HRS        Horses (PCT)                                   0    0.10%
+    HHA_GOA        Goats (PCT)                                   10    9.69%
+    HHA_SHP        Sheep (PCT)                                    1    0.61%
+    HHA_CHK        Chickens (PCT)                                27   27.55%
+    HHA_DCK        Ducks (PCT)                                    0    0.51%
+    HHA_PIG        Pigs (PCT)                                    11   11.53%
+    HHA_PGN        Pigeons (PCT)                                  5    4.90%
+    HHA_WRI        Wristwatch (PCT)                              31   31.63%
+    HHA_BIK        Bicycle (PCT)                                 19   19.69%
+    HHA_MBK        Motorcycle or scooter (PCT)                    6    6.63%
+    HHA_CRT        Animal-drawn cart (PCT)                        0    0.31%
+    HHA_CAR        Car, truck, or van (PCT)                       2    2.35%
+    HHA_BAT        Boat with a motor (PCT)                        0    0.51%
+    HHA_RIK        Rickshaw or rickshaw van (PCT)                 4    3.57%
+    HHA_NAS        Nasimon/karimon/bhatbhoti (PCT)                0    0.41%
+    HHA_EBK        Easy bike/auto bike (PCT)                      1    1.33%
+    HHA_CBT        Country boat without motor (PCT)               2    1.53%
+    HHA_COM        Computer or tablet (PCT)                       9    9.18%
+    HHA_MBL        Mobile telephone (PCT)                        96   97.96%
+    HHA_INT        Internet access at home (PCT)                 47   47.96%
+    HHA_BNK        Bank account (PCT)                            41   41.73%
+
+  furthest from its own total: CHATTOGRAM (level 1) published=88 summed=33,759,469 ratio=381462.922
+    UTL_WTTL       Water source, total                    5,626,309  6357411.30%
+    UTL_WTAP       Water source, tap                        534,526  603984.18%
+    UTL_WTUB       Water source, tube-well                4,625,951  5227063.28%
+    UTL_WOTR       Water Source, other                      465,832  526363.84%
+    UTL_ETTL       Electricity, total                     5,626,310  6357412.43%
+    UTL_EYES       Electricity, available                 3,595,923  4063189.83%
+    UTL_ENO        Electricity, not available             2,030,387  2294222.60%
+    UTL_TTTL       Toilet facility, total                 5,626,310  6357412.43%
+    UTL_TSAN       Toilet facility, sanitary w/ water     1,198,284  1353993.22%
+    UTL_TSNS       Toilet facility, sanitary w/o wate     2,760,692  3119425.99%
+    UTL_TNSN       Toilet facility, non-sanitary          1,412,801  1596385.31%
+    UTL_TNON       Toilet facility, none                    254,533  287607.91%
+    UTL_EING       Electricity, interconnected grid (            87   97.85%
+    UTL_EOFG       Electricity, off-grid (PCT)                    2    2.37%
+    UTL_EUNA       Electricity, unavailable (PCT)                11   12.77%
+    UTL_COCT       Cooking fuel, clean fuel (PCT)                24   26.89%
+    UTL_CONC       Cooking fuel, non-clean fuel (PCT)            76   85.99%
+    UTL_CONO       Cooking fuel, no cooking (PCT)                 0    0.11%
+    UTL_IYES       Internet, available (PCT)                     49   55.59%
+    UTL_INOT       Internet, not available (PCT)                 51   57.29%
+    UTL_IMDK       Internet, unknown (PCT)                        0    0.11%
+    HU_FTNAT       Floor type, natural (PCT)                     56   63.62%
+    HU_FTRUD       Floor type, rudimentary (PCT)                  1    1.58%
+    HU_FTFIN       Floor type, finished (PCT)                    42   47.91%
+    HU_FTOTH       Floor type, other (PCT)                        0    0.00%
+    HU_RTNAT       Roof type, natural (PCT)                       2    1.69%
+    HU_RTRUD       Roof type, rudimentary (PCT)                   0    0.34%
+    HU_RTFIN       Roof type, finished (PCT)                     98  110.85%
+    HU_RTOTH       Roof type, other (PCT)                         0    0.00%
+    HU_WTNAT       Exterior wall type, natural (PCT)             18   20.56%
+    HU_WTRUD       Exterior wall type, rudimentary (P            47   53.56%
+    HU_WTFIN       Exterior wall type, finished (PCT)            34   38.87%
+    HU_WTOTH       Exterior wall type, other (PCT)                0    0.00%
+    HU_BED1        Number of bedrooms, one (PCT)                 17   18.76%
+    HU_BED2        Number of bedrooms, two (PCT)                 37   42.03%
+    HU_BD3P        Number of bedrooms, three or more             46   52.20%
+    HU_BDPM        Mean, persons per bedroom                      2    2.40%
+    HHA_LPH        Landline phone (PCT)                           0    0.56%
+    HHA_RAD        Radio (PCT)                                    0    0.56%
+    HHA_COT        Cot/bed (PCT)                                 95  107.23%
+    HHA_TBLE       Table/chair (PCT)                             86   96.84%
+    HHA_ALM        Almirah/wardrobe (PCT)                        71   80.68%
+    HHA_SOF        Sofa set (PCT)                                23   26.10%
+    HHA_WDI        Water dispenser (PCT)                         12   13.79%
+    HHA_TEL        Television (PCT)                              50   56.05%
+    HHA_REF        Refrigerator (PCT)                            44   49.60%
+    HHA_AIC        Air conditioner (PCT)                          1    1.24%
+    HHA_WAM        Washing machine (PCT)                          1    0.90%
+    HHA_EWP        Electric water pump (PCT)                     20   22.82%
+    HHA_FAN        Electric fan (PCT)                            84   94.35%
+    HHA_AL         Agricultural land (PCT)                       30   33.67%
+    HHA_ANI        Farm animals/livestock (PCT)                  45   50.40%
+    HHA_COW        Milk cows or bull (PCT)                       18   20.23%
+    HHA_BUF        Water buffalo or goail (PCT)                   0    0.23%
+    HHA_HRS        Horses (PCT)                                   0    0.11%
+    HHA_GOA        Goats (PCT)                                    6    6.67%
+    HHA_SHP        Sheep (PCT)                                    1    0.90%
+    HHA_CHK        Chickens (PCT)                                36   40.45%
+    HHA_DCK        Ducks (PCT)                                    2    2.03%
+    HHA_PIG        Pigs (PCT)                                    20   22.94%
+    HHA_PGN        Pigeons (PCT)                                  7    7.57%
+    HHA_WRI        Wristwatch (PCT)                              36   41.02%
+    HHA_BIK        Bicycle (PCT)                                 15   16.72%
+    HHA_MBK        Motorcycle or scooter (PCT)                    7    7.68%
+    HHA_CRT        Animal-drawn cart (PCT)                        0    0.45%
+    HHA_CAR        Car, truck, or van (PCT)                       1    1.24%
+    HHA_BAT        Boat with a motor (PCT)                        1    0.68%
+    HHA_RIK        Rickshaw or rickshaw van (PCT)                 2    2.26%
+    HHA_NAS        Nasimon/karimon/bhatbhoti (PCT)                0    0.23%
+    HHA_EBK        Easy bike/auto bike (PCT)                      1    1.13%
+    HHA_CBT        Country boat without motor (PCT)               1    1.58%
+    HHA_COM        Computer or tablet (PCT)                       5    5.42%
+    HHA_MBL        Mobile telephone (PCT)                        96  108.81%
+    HHA_INT        Internet access at home (PCT)                 49   55.59%
+    HHA_BNK        Bank account (PCT)                            42   47.80%
+
+--- Floating Population: 617 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 8 areas  BARISHAL, CHATTOGRAM, DHAKA, KHULNA, MYMENSINGH, RĀJSHĀHI, RANGPUR, SYLHET
+  ADM_LEVEL 2: 64 areas  BARGUNA, BARISĀL, BHOLA, JHĀLAKĀTI, PATUĀKHĀLI, PIROJPUR, BĀNDARBAN, BRĀHMANBĀRIA, ...
+  ADM_LEVEL 3: 544 areas  AMTALI, BAMNA, BARGUNA SADAR, BETAGI, PATHARGHATA, AGAILJHARA, BABUGANJ, BAKERGANJ, ...
+  denominator: 'All sexes population'
+  4 group columns:
+    FLO_HTOTL  ->  'Households total'
+    FLO_MTOTL  ->  'Male population'
+    FLO_FTOTL  ->  'Female population'
+    FLO_TTOTL  ->  'Transgender population'
+    FLO_HTOTL says: Households total | Total number of floating households. Original field name: "Household." (April 25, 2014) | Census of Slum Areas and Floating Population 2014, 2015, List of Slums
+    FLO_MTOTL says: Male population | Total floating male population. Original field name: "Population, Male." (April 25, 2014) | Census of Slum Areas and Floating Population 2014, 2015, List of Slums
+    FLO_FTOTL says: Female population | Total floating female population. Original field name: "Population, Female." (April 25, 2014) | Census of Slum Areas and Floating Population 2014, 2015, List of Slums
+
+  whole country: BANGLADESH (level 0) published=2,310,540 summed=2,927,817 ratio=1.267
+    FLO_HTOTL      Households total                         617,287   26.72%
+    FLO_MTOTL      Male population                        1,184,988   51.29%
+    FLO_FTOTL      Female population                      1,123,620   48.63%
+    FLO_TTOTL      Transgender population                     1,922    0.08%
+
+  furthest from its own total: ALFADANGA (level 3) published=21 summed=37 ratio=1.762
+    FLO_HTOTL      Households total                              16   76.19%
+    FLO_MTOTL      Male population                               14   66.67%
+    FLO_FTOTL      Female population                              7   33.33%
+    FLO_TTOTL      Transgender population                         0    0.00%
+
+  furthest from its own total: BERA (level 3) published=172 summed=257 ratio=1.494
+    FLO_HTOTL      Households total                              85   49.42%
+    FLO_MTOTL      Male population                               80   46.51%
+    FLO_FTOTL      Female population                             91   52.91%
+    FLO_TTOTL      Transgender population                         1    0.58%
+
+--- Refugees: 1185 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 1 areas  CHATTOGRAM
+  ADM_LEVEL 2: 1 areas  COX’S BĀZĀR
+  ADM_LEVEL 3: 2 areas  TEKNAF, UKHIA
+  ADM_LEVEL 4: 5 areas  BAHARCHHARA, NHILLA, WHYKONG, RAJA PALONG, PALONG KHALI
+  ADM_LEVEL 5: 35 areas  CAMP 23, CAMP 25, CAMP 26, CAMP 27, CAMP 24, NAYAPARA RC, CAMP 22, CAMP 21, CHOUKHALI, KUTUPALONG RC, CAMP 1E, CAMP 1W, CAMP 2E, CAMP 2W, CAMP 3, CAMP 4, CAMP 7, CAMP 6, CAMP 05, CAMP 8E, CAMP 8W, CAMP 17, CAMP 9, CAMP 10, CAMP 18, CAMP 20, CAMP 11, CAMP 12, CAMP 19, CAMP 13, CAMP 14, CAMP 15, CAMP 16, CAMP 4 EXTENSION, CAMP 20 EXTENSION
+  ADM_LEVEL 6: 173 areas  C23_A, C23_B, C25_A, C25_B, C26_A, C26_B, C26_C, C26_D, ...
+  ADM_LEVEL 7: 967 areas  C23_A01, C23_A02, C23_A03, C23_A04, C23_A05, C23_A06, C23_B01, C23_B02, ...
+  denominator: 'Total refugee population'
+  6 group columns:
+    ADM5_NAME  ->  'Fifth-order administrative division name'
+    ADM6_NAME  ->  'Sixth-order administrative division name'
+    ADM7_NAME  ->  'Seventh-order administrative division name'
+    RFG_RHTOT  ->  'Total refugee households'
+    RFG_ALPHN  ->  'Alphanumeric name'
+    RFG_STLMT  ->  'Settlement type'
+    ADM5_NAME says: Fifth-order administrative division name | Fifth-order administrative division name (ADM5), i.e., refugee settlement camps. | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics (BBS), 2011
+    ADM6_NAME says: Sixth-order administrative division name | Sixth-order administrative division name (ADM6), i.e., refugee settlement blocks. | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics (BBS), 2011
+    ADM7_NAME says: Seventh-order administrative division name | Seventh-order administrative division name (ADM7), i.e., refugee settlement sub-blocks. | U.S. Board on Geographic Names, 2021; Bangladesh Bureau of Statistics (BBS), 2011
+
+  whole country: BANGLADESH (level 0) published=866,457 summed=188,540 ratio=0.218
+    RFG_RHTOT      Total refugee households                 188,540   21.76%
+
+  furthest from its own total: RAJA PALONG (level 4) published=16,855 summed=3,140 ratio=0.186
+    RFG_RHTOT      Total refugee households                   3,140   18.63%
+
+  furthest from its own total: KUTUPALONG RC (level 5) published=16,855 summed=3,140 ratio=0.186
+    RFG_RHTOT      Total refugee households                   3,140   18.63%
+
+--- Religion and Ethnicity: 617 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 8 areas  BARISHAL, CHATTOGRAM, DHAKA, KHULNA, MYMENSINGH, RĀJSHĀHI, RANGPUR, SYLHET
+  ADM_LEVEL 2: 64 areas  BARGUNA, BARISĀL, BHOLA, JHĀLAKĀTI, PATUĀKHĀLI, PIROJPUR, BĀNDARBAN, BRĀHMANBĀRIA, ...
+  ADM_LEVEL 3: 544 areas  AMTALI, BAMNA, BARGUNA SADAR, BETAGI, PATHARGHATA, AGAILJHARA, BABUGANJ, BAKERGANJ, ...
+  denominator: 'Total population'
+  34 group columns:
+    RLG_MSL  ->  'Muslim'
+    RLG_HIN  ->  'Hindu'
+    RLG_CHR  ->  'Christian'
+    RLG_BUD  ->  'Buddhist'
+    RLG_OTH  ->  'Other religion'
+    ETH_ETOTL  ->  'Total ethnic population'
+    ETH_BMN  ->  'Barmon'
+    ETH_BWM  ->  'Bawm'
+    ETH_CHK  ->  'Chak'
+    ETH_CKM  ->  'Chakma'
+    ETH_COH  ->  'Coach'
+    ETH_COL  ->  'Cool'
+    ETH_ALU  ->  'Dalu'
+    ETH_GRO  ->  'Garo'
+    ETH_HJN  ->  'Hajong'
+    ETH_KSA  ->  'Khasia'
+    ETH_KYG  ->  'Khiyang'
+    ETH_KMI  ->  'Khumi'
+    ETH_LSI  ->  'Lusai'
+    ETH_MPR  ->  'Malpahari'
+    ETH_MRM  ->  'Marma'
+    ETH_MND  ->  'Monda'
+    ETH_MNG  ->  'Mong'
+    ETH_MNR  ->  'Monipuri'
+    ...and 10 more
+    RLG_MSL says: Muslim | Population that follow Muslim religion. Original field name: "Muslim." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Religion
+    RLG_HIN says: Hindu | Population that follow Hindu religion. Original field name: "Hindu." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Religion
+    RLG_CHR says: Christian | Population that follow Christian religion. Original field name: "Christian." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Religion
+
+  whole country: BANGLADESH (level 0) published=144,043,696 summed=147,216,062 ratio=1.022
+    RLG_MSL        Muslim                               130,204,817   90.39%
+    RLG_HIN        Hindu                                 12,299,981    8.54%
+    RLG_CHR        Christian                                447,010    0.31%
+    RLG_BUD        Buddhist                                 889,721    0.62%
+    RLG_OTH        Other religion                           202,167    0.14%
+    ETH_ETOTL      Total ethnic population                1,586,183    1.10%
+    ETH_BMN        Barmon                                    53,792    0.04%
+    ETH_BWM        Bawm                                      12,424    0.01%
+    ETH_CHK        Chak                                       2,835    0.00%
+    ETH_CKM        Chakma                                   444,755    0.31%
+    ETH_COH        Coach                                     16,903    0.01%
+    ETH_COL        Cool                                       2,843    0.00%
+    ETH_ALU        Dalu                                         806    0.00%
+    ETH_GRO        Garo                                      84,565    0.06%
+    ETH_HJN        Hajong                                     9,162    0.01%
+    ETH_KSA        Khasia                                    11,697    0.01%
+    ETH_KYG        Khiyang                                    3,899    0.00%
+    ETH_KMI        Khumi                                      3,369    0.00%
+    ETH_LSI        Lusai                                        959    0.00%
+    ETH_MPR        Malpahari                                  2,840    0.00%
+    ETH_MRM        Marma                                    203,009    0.14%
+    ETH_MND        Monda                                     38,212    0.03%
+    ETH_MNG        Mong                                         263    0.00%
+    ETH_MNR        Monipuri                                  24,695    0.02%
+    ETH_MRO        Mro                                       39,004    0.03%
+    ETH_ORO        Orao                                      80,386    0.06%
+    ETH_PRI        Pahari                                     5,908    0.00%
+    ETH_PKA        Pangkhua                                   2,274    0.00%
+    ETH_RKN        Rakhain                                   13,254    0.01%
+    ETH_SNL        Sawntal                                  147,112    0.10%
+    ETH_TCY        Tanchaynga                                44,254    0.03%
+    ETH_TPR        Tripura                                  133,798    0.09%
+    ETH_UCI        Uchai                                        347    0.00%
+    ETH_OTHR       Other ethnicity                          202,818    0.14%
+
+  furthest from its own total: JURAI CHHARI (level 3) published=27,786 summed=80,448 ratio=2.895
+    RLG_MSL        Muslim                                     1,265    4.55%
+    RLG_HIN        Hindu                                        132    0.48%
+    RLG_CHR        Christian                                     90    0.32%
+    RLG_BUD        Buddhist                                  26,279   94.58%
+    RLG_OTH        Other religion                                20    0.07%
+    ETH_ETOTL      Total ethnic population                   26,331   94.76%
+    ETH_BMN        Barmon                                         0    0.00%
+    ETH_BWM        Bawm                                           0    0.00%
+    ETH_CHK        Chak                                           0    0.00%
+    ETH_CKM        Chakma                                    25,199   90.69%
+    ETH_COH        Coach                                          0    0.00%
+    ETH_COL        Cool                                           0    0.00%
+    ETH_ALU        Dalu                                           0    0.00%
+    ETH_GRO        Garo                                           0    0.00%
+    ETH_HJN        Hajong                                         0    0.00%
+    ETH_KSA        Khasia                                         0    0.00%
+    ETH_KYG        Khiyang                                        0    0.00%
+    ETH_KMI        Khumi                                         18    0.06%
+    ETH_LSI        Lusai                                          0    0.00%
+    ETH_MPR        Malpahari                                      0    0.00%
+    ETH_MRM        Marma                                         68    0.24%
+    ETH_MND        Monda                                          0    0.00%
+    ETH_MNG        Mong                                           0    0.00%
+    ETH_MNR        Monipuri                                       0    0.00%
+    ETH_MRO        Mro                                            0    0.00%
+    ETH_ORO        Orao                                           0    0.00%
+    ETH_PRI        Pahari                                         0    0.00%
+    ETH_PKA        Pangkhua                                      82    0.30%
+    ETH_RKN        Rakhain                                       19    0.07%
+    ETH_SNL        Sawntal                                        0    0.00%
+    ETH_TCY        Tanchaynga                                   928    3.34%
+    ETH_TPR        Tripura                                       11    0.04%
+    ETH_UCI        Uchai                                          0    0.00%
+    ETH_OTHR       Other ethnicity                                6    0.02%
+
+  furthest from its own total: RUMA (level 3) published=29,098 summed=82,104 ratio=2.822
+    RLG_MSL        Muslim                                     1,694    5.82%
+    RLG_HIN        Hindu                                        495    1.70%
+    RLG_CHR        Christian                                 11,124   38.23%
+    RLG_BUD        Buddhist                                  11,326   38.92%
+    RLG_OTH        Other religion                             4,459   15.32%
+    ETH_ETOTL      Total ethnic population                   26,503   91.08%
+    ETH_BMN        Barmon                                         0    0.00%
+    ETH_BWM        Bawm                                       6,289   21.61%
+    ETH_CHK        Chak                                           0    0.00%
+    ETH_CKM        Chakma                                       306    1.05%
+    ETH_COH        Coach                                          0    0.00%
+    ETH_COL        Cool                                           0    0.00%
+    ETH_ALU        Dalu                                           0    0.00%
+    ETH_GRO        Garo                                           0    0.00%
+    ETH_HJN        Hajong                                        23    0.08%
+    ETH_KSA        Khasia                                        11    0.04%
+    ETH_KYG        Khiyang                                      148    0.51%
+    ETH_KMI        Khumi                                        616    2.12%
+    ETH_LSI        Lusai                                          9    0.03%
+    ETH_MPR        Malpahari                                     50    0.17%
+    ETH_MRM        Marma                                      9,598   32.99%
+    ETH_MND        Monda                                          0    0.00%
+    ETH_MNG        Mong                                           0    0.00%
+    ETH_MNR        Monipuri                                       0    0.00%
+    ETH_MRO        Mro                                        5,364   18.43%
+    ETH_ORO        Orao                                           0    0.00%
+    ETH_PRI        Pahari                                         0    0.00%
+    ETH_PKA        Pangkhua                                       0    0.00%
+    ETH_RKN        Rakhain                                       20    0.07%
+    ETH_SNL        Sawntal                                        0    0.00%
+    ETH_TCY        Tanchaynga                                   346    1.19%
+    ETH_TPR        Tripura                                    3,002   10.32%
+    ETH_UCI        Uchai                                          0    0.00%
+    ETH_OTHR       Other ethnicity                              721    2.48%
+
+--- Economy: 617 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 8 areas  BARISHAL, CHATTOGRAM, DHAKA, KHULNA, MYMENSINGH, RĀJSHĀHI, RANGPUR, SYLHET
+  ADM_LEVEL 2: 64 areas  BARGUNA, BARISĀL, BHOLA, JHĀLAKĀTI, PATUĀKHĀLI, PIROJPUR, BĀNDARBAN, BRĀHMANBĀRIA, ...
+  ADM_LEVEL 3: 544 areas  AMTALI, BAMNA, BARGUNA SADAR, BETAGI, PATHARGHATA, AGAILJHARA, BABUGANJ, BAKERGANJ, ...
+  denominator: 'Total population'
+  37 group columns:
+    EMP_ETOTL  ->  'Employment status, total'
+    EMP_EMTO  ->  'Employment status, males'
+    EMP_EFTO  ->  'Employment status, females'
+    EMP_EMPP  ->  'Employed, total'
+    EMP_EMPM  ->  'Employed, males'
+    EMP_EMPF  ->  'Employed, females'
+    EMP_HHWT  ->  'Household work, total'
+    EMP_HHWM  ->  'Household work, males'
+    EMP_HHWF  ->  'Household work, females'
+    EMP_LOKT  ->  'Looking for job, total'
+    EMP_LOKM  ->  'Looking for job, males'
+    EMP_LOKF  ->  'Looking for job, females'
+    EMP_UNET  ->  'Unemployed, total'
+    EMP_UNEM  ->  'Unemployed, males'
+    EMP_UNEF  ->  'Unemployed, females'
+    OCP_TOT  ->  'Occupation sector, total'
+    OCP_TOM  ->  'Occupation sector, males'
+    OCP_TOF  ->  'Occupation sector, females'
+    OCP_AGT  ->  'Agriculture, total'
+    OCP_AGM  ->  'Agriculture, males'
+    OCP_AGF  ->  'Agriculture, females'
+    OCP_INT  ->  'Industry, total'
+    OCP_INM  ->  'Industry, males'
+    OCP_INF  ->  'Industry, females'
+    ...and 13 more
+    EMP_ETOTL says: Employment status, total | Total population in terms of employment, 15 and older. Original field name: "Total, Total." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Activity Status by Sex
+    EMP_EMTO says: Employment status, males | Total male population in terms of employment, 15 and older. Original field name: "Total, Male." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Activity Status by Sex
+    EMP_EFTO says: Employment status, females | Total female population in terms of employment, 15 and older. Original field name: "Total, Female." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Activity Status by Sex
+
+  whole country: BANGLADESH (level 0) published=144,043,697 summed=656,387,332 ratio=4.557
+    EMP_ETOTL      Employment status, total             121,686,097   84.48%
+    EMP_EMTO       Employment status, males              60,711,815   42.15%
+    EMP_EFTO       Employment status, females            60,974,282   42.33%
+    EMP_EMPP       Employed, total                       42,410,701   29.44%
+    EMP_EMPM       Employed, males                       38,286,906   26.58%
+    EMP_EMPF       Employed, females                      4,123,795    2.86%
+    EMP_HHWT       Household work, total                 37,026,336   25.70%
+    EMP_HHWM       Household work, males                    794,352    0.55%
+    EMP_HHWF       Household work, females               36,231,984   25.15%
+    EMP_LOKT       Looking for job, total                 1,130,319    0.78%
+    EMP_LOKM       Looking for job, males                   872,471    0.61%
+    EMP_LOKF       Looking for job, females                 257,848    0.18%
+    EMP_UNET       Unemployed, total                     41,118,741   28.55%
+    EMP_UNEM       Unemployed, males                     20,758,086   14.41%
+    EMP_UNEF       Unemployed, females                   20,360,655   14.14%
+    OCP_TOT        Occupation sector, total              42,410,697   29.44%
+    OCP_TOM        Occupation sector, males              38,286,913   26.58%
+    OCP_TOF        Occupation sector, females             4,123,784    2.86%
+    OCP_AGT        Agriculture, total                    19,942,604   13.84%
+    OCP_AGM        Agriculture, males                    19,286,690   13.39%
+    OCP_AGF        Agriculture, females                     655,914    0.46%
+    OCP_INT        Industry, total                        6,332,491    4.40%
+    OCP_INM        Industry, males                        5,111,419    3.55%
+    OCP_INF        Industry, females                      1,221,072    0.85%
+    OCP_SET        Service, total                        16,135,602   11.20%
+    OCP_SEM        Service, males                        13,888,804    9.64%
+    OCP_SEF        Service, females                       2,246,798    1.56%
+    ECA_ECO1       Economic activity, at least one ho             5    0.00%
+    ECA_ECO2       Economic activity, less than 14 ho            14    0.00%
+    ECA_ECO3       Economic activity, 14 hours or mor             6    0.00%
+    ECA_ECO4       Economic activity, less than 43 ho            24    0.00%
+    ECA_ECO5       Economic activity, 43 hours or mor             7    0.00%
+    POV_WQ1        Wealth quintile, poorest (PCT)                20    0.00%
+    POV_WQ2        Wealth quintile, second (PCT)                 20    0.00%
+    POV_WQ3        Wealth quintile, middle (PCT)                 20    0.00%
+    POV_WQ4        Wealth quintile, fourth (PCT)                 20    0.00%
+    POV_WQ5        Wealth quintile, richest (PCT)                20    0.00%
+
+  furthest from its own total: TEJGAON IND. AREA (level 3) published=146,732 summed=877,364 ratio=5.979
+    EMP_ETOTL      Employment status, total                 133,189   90.77%
+    EMP_EMTO       Employment status, males                  84,068   57.29%
+    EMP_EFTO       Employment status, females                49,121   33.48%
+    EMP_EMPP       Employed, total                           86,152   58.71%
+    EMP_EMPM       Employed, males                           67,200   45.80%
+    EMP_EMPF       Employed, females                         18,952   12.92%
+    EMP_HHWT       Household work, total                     18,572   12.66%
+    EMP_HHWM       Household work, males                        287    0.20%
+    EMP_HHWF       Household work, females                   18,285   12.46%
+    EMP_LOKT       Looking for job, total                       888    0.61%
+    EMP_LOKM       Looking for job, males                       636    0.43%
+    EMP_LOKF       Looking for job, females                     252    0.17%
+    EMP_UNET       Unemployed, total                         27,577   18.79%
+    EMP_UNEM       Unemployed, males                         15,945   10.87%
+    EMP_UNEF       Unemployed, females                       11,632    7.93%
+    OCP_TOT        Occupation sector, total                  86,152   58.71%
+    OCP_TOM        Occupation sector, males                  67,200   45.80%
+    OCP_TOF        Occupation sector, females                18,952   12.92%
+    OCP_AGT        Agriculture, total                           287    0.20%
+    OCP_AGM        Agriculture, males                           262    0.18%
+    OCP_AGF        Agriculture, females                          25    0.02%
+    OCP_INT        Industry, total                           38,174   26.02%
+    OCP_INM        Industry, males                           25,536   17.40%
+    OCP_INF        Industry, females                         12,638    8.61%
+    OCP_SET        Service, total                            47,691   32.50%
+    OCP_SEM        Service, males                            41,402   28.22%
+    OCP_SEF        Service, females                           6,289    4.29%
+
+  furthest from its own total: NEW MARKETTHANA (level 3) published=49,523 summed=296,068 ratio=5.978
+    EMP_ETOTL      Employment status, total                  46,617   94.13%
+    EMP_EMTO       Employment status, males                  31,217   63.04%
+    EMP_EFTO       Employment status, females                15,400   31.10%
+    EMP_EMPP       Employed, total                           27,400   55.33%
+    EMP_EMPM       Employed, males                           23,649   47.75%
+    EMP_EMPF       Employed, females                          3,751    7.57%
+    EMP_HHWT       Household work, total                      5,674   11.46%
+    EMP_HHWM       Household work, males                        166    0.34%
+    EMP_HHWF       Household work, females                    5,508   11.12%
+    EMP_LOKT       Looking for job, total                       265    0.54%
+    EMP_LOKM       Looking for job, males                       165    0.33%
+    EMP_LOKF       Looking for job, females                     100    0.20%
+    EMP_UNET       Unemployed, total                         13,278   26.81%
+    EMP_UNEM       Unemployed, males                          7,237   14.61%
+    EMP_UNEF       Unemployed, females                        6,041   12.20%
+    OCP_TOT        Occupation sector, total                  27,400   55.33%
+    OCP_TOM        Occupation sector, males                  23,649   47.75%
+    OCP_TOF        Occupation sector, females                 3,751    7.57%
+    OCP_AGT        Agriculture, total                            73    0.15%
+    OCP_AGM        Agriculture, males                            58    0.12%
+    OCP_AGF        Agriculture, females                          15    0.03%
+    OCP_INT        Industry, total                            4,556    9.20%
+    OCP_INM        Industry, males                            4,426    8.94%
+    OCP_INF        Industry, females                            130    0.26%
+    OCP_SET        Service, total                            22,771   45.98%
+    OCP_SEM        Service, males                            19,165   38.70%
+    OCP_SEF        Service, females                           3,606    7.28%
+
+--- Info and Com Technology: 73 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 8 areas  BARISHAL, CHATTOGRAM, DHAKA, KHULNA, MYMENSINGH, RĀJSHĀHI, RANGPUR, SYLHET
+  ADM_LEVEL 2: 64 areas  BARGUNA, BARISĀL, BHOLA, JHĀLAKĀTI, PATUĀKHĀLI, PIROJPUR, BĀNDARBAN, BRĀHMANBĀRIA, ...
+  denominator: 'Total population, media use'
+  33 group columns:
+    MDA_RDT  ->  'Read newspaper, total'
+    MDA_RDM  ->  'Read newspaper, males (PCT)'
+    MDA_RDF  ->  'Read newspaper, females (PCT)'
+    MDA_LNT  ->  'Listen to radio, total'
+    MDA_LNM  ->  'Listen to radio, males (PCT)'
+    MDA_LNF  ->  'Listen to radio, females (PCT)'
+    MDA_WCT  ->  'Watch television, total'
+    MDA_WCM  ->  'Watch television, males (PCT)'
+    MDA_WCF  ->  'Watch television, females (PCT)'
+    MDA_INT  ->  'Use Internet, total'
+    MDA_INM  ->  'Use Internet, males (PCT)'
+    MDA_INF  ->  'Use Internet, females (PCT)'
+    ICT_RDO  ->  'Own radio (PCT)'
+    ICT_TEL  ->  'Own television (PCT)'
+    ICT_LPH  ->  'Own landline telephone (PCT)'
+    ICT_MPH  ->  'Own mobile telephone (PCT)'
+    ICT_TLA  ->  'Own any telephone (PCT)'
+    ICT_COM  ->  'Own computer (PCT)'
+    ICT_INH  ->  'Have access to Internet at home (PCT)'
+    MDA_N1W_F  ->  'Read newspaper at least once a week (PCT)'
+    MDA_R1W_F  ->  'Listen to radio at least once a week, females (PCT)'
+    MDA_T1W_F  ->  'Watch television at least once a week, females (PCT)'
+    MDA_31W_F  ->  'Used three media at least once a week, females (PCT)'
+    MDA_A1W_F  ->  'Used any media at least once a week, females (PCT)'
+    ...and 9 more
+    MDA_RDT says: Read newspaper, total | Total population reading the newspaper, age 15 and older. Original field name: "Reading Newspaper, Total." (October 15, 2011) | Population and Housing Census 2011, Socio-Economic and Demographic Report, National Series, Volume-4, 2012, Table H03: Population Reading Newspapers, Listening to Radio, Watching Television and Using Internet by Sex, Division, Zila and Residence, 2011
+    MDA_RDM says: Read newspaper, males (PCT) | Male population reading the newspaper, age 15 and older (Percentage). Original field name: "Reading Newspaper, Male." (October 15, 2011) | Population and Housing Census 2011, Socio-Economic and Demographic Report, National Series, Volume-4, 2012, Table H03: Population Reading Newspapers, Listening to Radio, Watching Television and Using Internet by Sex, Division, Zila and Residence, 2011
+    MDA_RDF says: Read newspaper, females (PCT) | Female population reading the newspaper, age 15 and older (Percentage). Original field name: "Reading Newspaper, Female." (October 15, 2011) | Population and Housing Census 2011, Socio-Economic and Demographic Report, National Series, Volume-4, 2012, Table H03: Population Reading Newspapers, Listening to Radio, Watching Television and Using Internet by Sex, Division, Zila and Residence, 2011
+
+  whole country: BANGLADESH (level 0) published=90,628,502 summed=90,629,632 ratio=1.000
+    MDA_RDT        Read newspaper, total                 21,229,494   23.42%
+    MDA_RDM        Read newspaper, males (PCT)                   85    0.00%
+    MDA_RDF        Read newspaper, females (PCT)                 15    0.00%
+    MDA_LNT        Listen to radio, total                 5,465,575    6.03%
+    MDA_LNM        Listen to radio, males (PCT)                  49    0.00%
+    MDA_LNF        Listen to radio, females (PCT)                51    0.00%
+    MDA_WCT        Watch television, total               62,389,779   68.84%
+    MDA_WCM        Watch television, males (PCT)                 52    0.00%
+    MDA_WCF        Watch television, females (PCT)               48    0.00%
+    MDA_INT        Use Internet, total                    1,543,654    1.70%
+    MDA_INM        Use Internet, males (PCT)                     72    0.00%
+    MDA_INF        Use Internet, females (PCT)                   28    0.00%
+    ICT_RDO        Own radio (PCT)                                1    0.00%
+    ICT_TEL        Own television (PCT)                          51    0.00%
+    ICT_LPH        Own landline telephone (PCT)                   0    0.00%
+    ICT_MPH        Own mobile telephone (PCT)                    96    0.00%
+    ICT_TLA        Own any telephone (PCT)                       96    0.00%
+    ICT_COM        Own computer (PCT)                             6    0.00%
+    ICT_INH        Have access to Internet at home (P            38    0.00%
+    MDA_N1W_F      Read newspaper at least once a wee             5    0.00%
+    MDA_R1W_F      Listen to radio at least once a we             2    0.00%
+    MDA_T1W_F      Watch television at least once a w            64    0.00%
+    MDA_31W_F      Used three media at least once a w             0    0.00%
+    MDA_A1W_F      Used any media at least once a wee            65    0.00%
+    MDA_ECM_F      Ever used a computer, females (PCT             5    0.00%
+    MDA_C3M_F      Used computer during last 3 months             2    0.00%
+    MDA_C13_F      Used computer at least once a week             1    0.00%
+    MDA_MOU_F      Owned and used mobile phone, femal            71    0.00%
+    MDA_M3M_F      Used mobile phone during last 3 mo            98    0.00%
+    MDA_M13_F      Used mobile phone at least once a             91    0.00%
+    MDA_EIN_F      Ever used Internet, females (PCT)             14    0.00%
+    MDA_I3M_F      Used Internet during last 3 months            13    0.00%
+    MDA_I13_F      Used Internet at least once a week            12    0.00%
+
+  furthest from its own total: BĀNDARBAN (level 2) published=113,054 summed=113,454 ratio=1.004
+    MDA_RDT        Read newspaper, total                     21,122   18.68%
+    MDA_RDM        Read newspaper, males (PCT)                   80    0.07%
+    MDA_RDF        Read newspaper, females (PCT)                 20    0.02%
+    MDA_LNT        Listen to radio, total                    16,202   14.33%
+    MDA_LNM        Listen to radio, males (PCT)                  68    0.06%
+    MDA_LNF        Listen to radio, females (PCT)                32    0.03%
+    MDA_WCT        Watch television, total                   74,090   65.54%
+    MDA_WCM        Watch television, males (PCT)                 58    0.05%
+    MDA_WCF        Watch television, females (PCT)               42    0.04%
+    MDA_INT        Use Internet, total                        1,640    1.45%
+    MDA_INM        Use Internet, males (PCT)                     76    0.07%
+    MDA_INF        Use Internet, females (PCT)                   24    0.02%
+
+  furthest from its own total: KHAGRĀCHARI (level 2) published=326,344 summed=326,744 ratio=1.001
+    MDA_RDT        Read newspaper, total                     55,817   17.10%
+    MDA_RDM        Read newspaper, males (PCT)                   71    0.02%
+    MDA_RDF        Read newspaper, females (PCT)                 29    0.01%
+    MDA_LNT        Listen to radio, total                    38,757   11.88%
+    MDA_LNM        Listen to radio, males (PCT)                  47    0.01%
+    MDA_LNF        Listen to radio, females (PCT)                53    0.02%
+    MDA_WCT        Watch television, total                  228,623   70.06%
+    MDA_WCM        Watch television, males (PCT)                 55    0.02%
+    MDA_WCF        Watch television, females (PCT)               45    0.01%
+    MDA_INT        Use Internet, total                        3,147    0.96%
+    MDA_INM        Use Internet, males (PCT)                     74    0.02%
+    MDA_INF        Use Internet, females (PCT)                   26    0.01%
+
+--- Health: 617 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  BANGLADESH
+  ADM_LEVEL 1: 8 areas  BARISHAL, CHATTOGRAM, DHAKA, KHULNA, MYMENSINGH, RĀJSHĀHI, RANGPUR, SYLHET
+  ADM_LEVEL 2: 64 areas  BARGUNA, BARISĀL, BHOLA, JHĀLAKĀTI, PATUĀKHĀLI, PIROJPUR, BĀNDARBAN, BRĀHMANBĀRIA, ...
+  ADM_LEVEL 3: 544 areas  AMTALI, BAMNA, BARGUNA SADAR, BETAGI, PATHARGHATA, AGAILJHARA, BABUGANJ, BAKERGANJ, ...
+  denominator: 'Total population'
+  41 group columns:
+    DIS_NDS  ->  'No disability'
+    DIS_SPH  ->  'Speech disability'
+    DIS_VIZ  ->  'Visual disability'
+    DIS_HER  ->  'Hearing disability'
+    DIS_PHY  ->  'Physical disability'
+    DIS_MEN  ->  'Mental disability'
+    DIS_AU  ->  'Autistic condition'
+    VAX_BCG  ->  'Bacillus Calmette Guérin (BCG) vaccine (PCT)'
+    VAX_DHH1  ->  'DPT + Hepatitis B + Hib vaccines, dosage 1 (PCT)'
+    VAX_DHH2  ->  'DPT + Hepatitis B + Hib vaccines, dosage 2 (PCT)'
+    VAX_DHH3  ->  'DPT + Hepatitis B + Hib vaccines, dosage 3 (PCT)'
+    VAX_POL1  ->  'Polio vaccine, dosage 1 (PCT)'
+    VAX_POL2  ->  'Polio vaccine, dosage 2 (PCT)'
+    VAX_POL3  ->  'Polio vaccine, dosage 3 (PCT)'
+    VAX_IPVX  ->  'Inactivated Polio Vaccine (IPV) (PCT)'
+    VAX_NMN1  ->  'Pneumonia vaccine, dosage 1 (PCT)'
+    VAX_NMN2  ->  'Pneumonia vaccine, dosage 2 (PCT)'
+    VAX_NMN3  ->  'Pneumonia vaccine, dosage 3 (PCT)'
+    VAX_MR1  ->  'Measles and Rubella vaccines, dosage 1 (PCT)'
+    VAX_BVAX  ->  'All basic vaccines (PCT)'
+    VAX_ABVX  ->  'All age-appropriate basic vaccines (PCT)'
+    VAX_AVAX  ->  'All age-appropriate vaccines (PCT)'
+    VAX_NOVX  ->  'No vaccines (PCT)'
+    VAX_MR2  ->  'Measles and Rubella vaccines, dosage 2 (PCT)'
+    ...and 17 more
+    DIS_NDS says: No disability | Population without a disability. Original field name: "None." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Disability
+    DIS_SPH says: Speech disability | Population with a speech disability. Original field name: "Speech." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Disability
+    DIS_VIZ says: Visual disability | Population with a visual disability. Original field name: "Vision." (March 15, 2011) | Bangladesh Population and Housing Census 2011, 2014, Disability
+
+  whole country: BANGLADESH (level 0) published=144,043,697 summed=144,045,328 ratio=1.000
+    DIS_NDS        No disability                        142,014,431   98.59%
+    DIS_SPH        Speech disability                        276,138    0.19%
+    DIS_VIZ        Visual disability                        394,552    0.27%
+    DIS_HER        Hearing disability                       183,279    0.13%
+    DIS_PHY        Physical disability                      797,419    0.55%
+    DIS_MEN        Mental disability                        255,103    0.18%
+    DIS_AU         Autistic condition                       122,775    0.09%
+    VAX_BCG        Bacillus Calmette Guérin (BCG) vac            98    0.00%
+    VAX_DHH1       DPT + Hepatitis B + Hib vaccines,             98    0.00%
+    VAX_DHH2       DPT + Hepatitis B + Hib vaccines,             98    0.00%
+    VAX_DHH3       DPT + Hepatitis B + Hib vaccines,             96    0.00%
+    VAX_POL1       Polio vaccine, dosage 1 (PCT)                 98    0.00%
+    VAX_POL2       Polio vaccine, dosage 2 (PCT)                 97    0.00%
+    VAX_POL3       Polio vaccine, dosage 3 (PCT)                 94    0.00%
+    VAX_IPVX       Inactivated Polio Vaccine (IPV) (P            37    0.00%
+    VAX_NMN1       Pneumonia vaccine, dosage 1 (PCT)             98    0.00%
+    VAX_NMN2       Pneumonia vaccine, dosage 2 (PCT)             96    0.00%
+    VAX_NMN3       Pneumonia vaccine, dosage 3 (PCT)             92    0.00%
+    VAX_MR1        Measles and Rubella vaccines, dosa            91    0.00%
+    VAX_BVAX       All basic vaccines (PCT)                      89    0.00%
+    VAX_ABVX       All age-appropriate basic vaccines            86    0.00%
+    VAX_AVAX       All age-appropriate vaccines (PCT)            33    0.00%
+    VAX_NOVX       No vaccines (PCT)                              1    0.00%
+    VAX_MR2        Measles and Rubella vaccines, dosa            83    0.00%
+    VAX_AVAC       All age-appropriate vaccines (PCT)            53    0.00%
+    NTR_HAB3       Height-for-age, below -3 SD (PCT)              9    0.00%
+    NTR_HAB2       Height-for-age, below -2 SD (PCT)             31    0.00%
+    NTR_WHB3       Weight-for-height, below -3 SD (PC             2    0.00%
+    NTR_WHB2       Weight-for-height, below -2 SD (PC             8    0.00%
+    NTR_WHA2       Weight-for-height, above +2 SD (PC             2    0.00%
+    NTR_WAB3       Weight-for-age, below -3 SD (PCT)              4    0.00%
+    NTR_WAB2       Weight-for-age, below -2 SD (PCT)             22    0.00%
+    NTR_WAA2       Weight-for-age, above +2 SD (PCT)              1    0.00%
+    MOR_NMR        Neonatal mortality rate                       26    0.00%
+    MOR_PMR        Post-neonatal mortality rate                   8    0.00%
+    MOR_IMR        Infant mortality rate                         34    0.00%
+    MOR_CHMR       Child mortality rate                           6    0.00%
+    MOR_U5MR       Under-five mortality rate                     40    0.00%
+
+======================================================================
+pakistan-subnational-population-and-housing-data-tables: 1,147,052 bytes, 12 sheets
+
+--- Metadata: 205 rows ---
+  Metadata: Pakistan
+  Contents
+  One metadata tab describing 8 geospatial boundary files and 10 tables,
+  Geospatial Boundary Metadata 1 (Population Census Geography) ("Age-Sex
+  National Boundary (PK_GEOG1_ADM0_2017_uscb_202401)
+  Title | Pakistan: National Boundary
+  Tags | Geospatial Boundaries, Pakistan, National Boundary, Country, GEOG1
+  Summary | The U.S. Census Bureau is providing national and subnational feature c
+  Description | National boundary feature class of Pakistan for joining (linking) to a
+  Credits | Geospatial Boundaries: 
+International boundaries coincide with the Lar
+  Use Limitations | The international boundaries are derived from the Large Scale Internat
+  Place Keywords | Pakistan, Country
+  Temporal Keywords | 2017
+  Theme Keywords | National Boundaries
+  Supplemental Information | The geodatabase feature class contains 1 polygon representing Pakistan
+  First-Order Administrative Divisions (PK_GEOG1_ADM1_2017_uscb_202401)
+  Title | Pakistan: First-Order Administrative Divisions
+  Tags | Geospatial Boundaries, Pakistan, First-Order Administrative Divisions,
+  Summary | The U.S. Census Bureau is providing subnational feature class boundari
+  Description | First-order administrative divisions feature class of Pakistan for joi
+
+--- Data Dictionary: 381 rows ---
+  Data Dictionary: Pakistan
+  Standard Geographic Fields 1 (Population Census Geography)
+  Field Name | Field Alias | Field Description | Field Data Source
+  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2023; Pakistan Bureau of Statistics, 2
+  GEO_CONCAT | Administrative division name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
+  GEO_MATCH | Geographic match | Identical subnational area identifiers in the Excel table and geospati | Population Division, U.S. Census Bureau
+  CNTRY_NAME | Country name | Country name. | U.S. Board on Geographic Names
+  ADM1_NAME | First-order administrative division name | First-order administrative division name (ADM1), i.e., provinces, fede | U.S. Board on Geographic Names, 2023; Pakistan Bureau of Statistics, 2
+  ADM2_NAME | Second-order administrative division name | Second-order administrative division name (ADM2), i.e., divisions. | U.S. Board on Geographic Names, 2023; Pakistan Bureau of Statistics, 2
+  ADM3_NAME | Third-order administrative division name | Third-order administrative division name (ADM3), i.e., districts, agen | U.S. Board on Geographic Names, 2023; Pakistan Bureau of Statistics, 2
+  ADM4_NAME | Fourth-order administrative division name | Fourth-order administrative division name (ADM4), i.e., thanas, taluka | U.S. Board on Geographic Names, 2023; Pakistan Bureau of Statistics, 2
+  ADM_LEVEL | Administrative level | Administrative level "0" (ADM0/country); administrative level "1" (ADM | Population Division, U.S. Census Bureau
+  USCBCMNT | Notes | Any notes about a country or subnational division, which may include f | Population Division, U.S. Census Bureau
+  GENC_CODE | GENC code | U.S. Government Geopolitical Entities, Names, and Codes (GENC) Standar | U.S. Government Geopolitical Entities, Names, and Codes (GENC), 2023
+  FIPS_CODE | FIPS code | U.S. Government Federal Information Processing System (FIPS) code (for | U.S. Government Federal Information Processing System (FIPS), 2023
+  NSO_CODE | National statistical office code | Code used by the Pakistan Bureau of Statistics for a subnational admin | Pakistan Bureau of Statistics, 2017
+  NSO_NAME | National statistical office name | Name used by the Pakistan Bureau of Statistics for a subnational admin | Pakistan Bureau of Statistics, 2017
+  Standard Geographic Fields 2 (Agricultural Census Geography)
+  AREA_NAME | Country or subnational area name | Name of the country or subnational area (administrative division). | U.S. Board on Geographic Names, 2023; Pakistan Bureau of Statistics, 2
+  GEO_CONCAT | Administrative division name concatenation | Concatenation of all administrative division names separated by unders | Population Division, U.S. Census Bureau
+
+--- Age-Sex: 785 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 8 areas  BALOCHISTAN, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 36 areas  KALAT DIVISION, MEKRAN DIVISION, NASIRABAD DIVISION, QUETTA DIVISION, SIBI DIVISION, ZHOB DIVISION, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, BANNU DIVISION, DERA ISMAIL KHAN DIVISION, HAZARA DIVISION, KOHAT DIVISION, MALAKAND DIVISION, MARDAN DIVISION, PESHAWAR DIVISION, BAHAWALPUR DIVISION, DERA GHAZI KHAN DVISION, FAISALABAD DIVISION, GUJRANWALA DIVISION, LAHORE DIVISION, MULTAN DIVISION, RAWALPINDI DIVISION, SAHIWAL DIVISION, SARGODHA DIVISION, HYDERABAD DIVISION, KARACHI DIVISION, LARKANA DIVISION, MIRPUR KHAS DIVISION, SHAHEED BENAZIRABAD DIVISION, SUKKUR DIVISION, MUZAFFARABAD DIVISION, POONCH DIVISION, MIRPUR DIVISION, GILGIT DIVISION, ASTORE DIVISION, BALTISTAN DIVISION
+  ADM_LEVEL 3: 155 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  ADM_LEVEL 4: 585 areas  AWARAN TEHSIL, GISHKORE SUB-TEHSIL, JHAL JAO SUB-TEHSIL, MASHKAI TEHSIL, GAZG SUB-TEHSIL, JOHAN SUB-TEHSIL, KALAT TEHSIL, MANGOCHAR TEHSIL, ...
+  denominator: none found
+  68 group columns:
+    BTOTL  ->  'All sexes total'
+    B0004  ->  'All sexes 0 to 4'
+    B0509  ->  'All sexes 5 to 9'
+    B1014  ->  'All sexes 10 to 14'
+    B1519  ->  'All sexes 15 to 19'
+    B2024  ->  'All sexes 20 to 24'
+    B2529  ->  'All sexes 25 to 29'
+    B3034  ->  'All sexes 30 to 34'
+    B3539  ->  'All sexes 35 to 39'
+    B4044  ->  'All sexes 40 to 44'
+    B4549  ->  'All sexes 45 to 49'
+    B5054  ->  'All sexes 50 to 54'
+    B5559  ->  'All sexes 55 to 59'
+    B6064  ->  'All sexes 60 to 64'
+    B6569  ->  'All sexes 65 to 69'
+    B7074  ->  'All sexes 70 to 74'
+    B75PL  ->  'All sexes 75 and older'
+    MTOTL  ->  'Males total'
+    M0004  ->  'Males 0 to 4'
+    M0509  ->  'Males 5 to 9'
+    M1014  ->  'Males 10 to 14'
+    M1519  ->  'Males 15 to 19'
+    M2024  ->  'Males 20 to 24'
+    M2529  ->  'Males 25 to 29'
+    ...and 44 more
+    BTOTL says: All sexes total | Total population (all sexes) (unit of enumeration: population). (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 4 Population by single year age, sex, and rural/urban (also contains 5-year age and sex data)
+    B0004 says: All sexes 0 to 4 | Total population age 0 to 4 (all sexes) (unit of enumeration: population). (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 4 Population by single year age, sex, and rural/urban (also contains 5-year age and sex data)
+    B0509 says: All sexes 5 to 9 | Total population age 5 to 9 (all sexes) (unit of enumeration: population). (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 4 Population by single year age, sex, and rural/urban (also contains 5-year age and sex data)
+
+  whole country: PAKISTAN (level 0) no published total
+    BTOTL          All sexes total                      213,222,917    0.00%
+    B0004          All sexes 0 to 4                      29,984,208    0.00%
+    B0509          All sexes 5 to 9                      30,862,913    0.00%
+    B1014          All sexes 10 to 14                    25,281,596    0.00%
+    B1519          All sexes 15 to 19                    21,980,049    0.00%
+    B2024          All sexes 20 to 24                    18,957,573    0.00%
+    B2529          All sexes 25 to 29                    16,791,104    0.00%
+    B3034          All sexes 30 to 34                    14,469,297    0.00%
+    B3539          All sexes 35 to 39                    12,298,984    0.00%
+    B4044          All sexes 40 to 44                     9,862,988    0.00%
+    B4549          All sexes 45 to 49                     8,127,742    0.00%
+    B5054          All sexes 50 to 54                     7,122,691    0.00%
+    B5559          All sexes 55 to 59                     5,111,843    0.00%
+    B6064          All sexes 60 to 64                     4,433,145    0.00%
+    B6569          All sexes 65 to 69                     3,030,702    0.00%
+    B7074          All sexes 70 to 74                     2,199,288    0.00%
+    B75PL          All sexes 75 and older                 2,708,794    0.00%
+    MTOTL          Males total                          109,072,147    0.00%
+    M0004          Males 0 to 4                          15,366,467    0.00%
+    M0509          Males 5 to 9                          16,071,273    0.00%
+    M1014          Males 10 to 14                        13,330,845    0.00%
+    M1519          Males 15 to 19                        11,391,115    0.00%
+    M2024          Males 20 to 24                         9,457,395    0.00%
+    M2529          Males 25 to 29                         8,120,766    0.00%
+    M3034          Males 30 to 34                         7,097,785    0.00%
+    M3539          Males 35 to 39                         6,208,308    0.00%
+    M4044          Males 40 to 44                         4,957,248    0.00%
+    M4549          Males 45 to 49                         4,153,101    0.00%
+    M5054          Males 50 to 54                         3,733,960    0.00%
+    M5559          Males 55 to 59                         2,717,494    0.00%
+    M6064          Males 60 to 64                         2,311,370    0.00%
+    M6569          Males 65 to 69                         1,602,264    0.00%
+    M7074          Males 70 to 74                         1,167,706    0.00%
+    M75PL          Males 75 and older                     1,385,050    0.00%
+    FTOTL          Females total                        104,128,996    0.00%
+    F0004          Females 0 to 4                        14,617,741    0.00%
+    F0509          Females 5 to 9                        14,791,640    0.00%
+    F1014          Females 10 to 14                      11,950,751    0.00%
+    F1519          Females 15 to 19                      10,586,667    0.00%
+    F2024          Females 20 to 24                       9,497,229    0.00%
+    F2529          Females 25 to 29                       8,667,216    0.00%
+    F3034          Females 30 to 34                       7,368,792    0.00%
+    F3539          Females 35 to 39                       6,088,173    0.00%
+    F4044          Females 40 to 44                       4,903,862    0.00%
+    F4549          Females 45 to 49                       3,973,000    0.00%
+    F5054          Females 50 to 54                       3,387,502    0.00%
+    F5559          Females 55 to 59                       2,393,481    0.00%
+    F6064          Females 60 to 64                       2,120,950    0.00%
+    F6569          Females 65 to 69                       1,427,876    0.00%
+    F7074          Females 70 to 74                       1,031,083    0.00%
+    F75PL          Females 75 and older                   1,323,033    0.00%
+    TTOTL          Transgender total                         21,774    0.00%
+    TG0004         Transgenders 0 to 4                            0    0.00%
+    TG0509         Transgenders 5 to 9                            0    0.00%
+    TG1014         Transgenders 10 to 14                          0    0.00%
+    TG1519         Transgenders 15 to 19                      2,267    0.00%
+    TG2024         Transgenders 20 to 24                      2,949    0.00%
+    TG2529         Transgenders 25 to 29                      3,122    0.00%
+    TG3034         Transgenders 30 to 34                      2,720    0.00%
+    TG3539         Transgenders 35 to 39                      2,503    0.00%
+    TG4044         Transgenders 40 to 44                      1,878    0.00%
+    TG4549         Transgenders 45 to 49                      1,641    0.00%
+    TG5054         Transgenders 50 to 54                      1,229    0.00%
+    TG5559         Transgenders 55 to 59                        868    0.00%
+    TG6064         Transgenders 60 to 64                        825    0.00%
+    TG6569         Transgenders 65 to 69                        562    0.00%
+    TG7074         Transgenders 70 to 74                        499    0.00%
+    TG75PL         Transgenders 75 and older                    711    0.00%
+
+--- Households: 785 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 8 areas  BALOCHISTAN, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 36 areas  KALAT DIVISION, MEKRAN DIVISION, NASIRABAD DIVISION, QUETTA DIVISION, SIBI DIVISION, ZHOB DIVISION, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, BANNU DIVISION, DERA ISMAIL KHAN DIVISION, HAZARA DIVISION, KOHAT DIVISION, MALAKAND DIVISION, MARDAN DIVISION, PESHAWAR DIVISION, BAHAWALPUR DIVISION, DERA GHAZI KHAN DVISION, FAISALABAD DIVISION, GUJRANWALA DIVISION, LAHORE DIVISION, MULTAN DIVISION, RAWALPINDI DIVISION, SAHIWAL DIVISION, SARGODHA DIVISION, HYDERABAD DIVISION, KARACHI DIVISION, LARKANA DIVISION, MIRPUR KHAS DIVISION, SHAHEED BENAZIRABAD DIVISION, SUKKUR DIVISION, MUZAFFARABAD DIVISION, POONCH DIVISION, MIRPUR DIVISION, GILGIT DIVISION, ASTORE DIVISION, BALTISTAN DIVISION
+  ADM_LEVEL 3: 155 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  ADM_LEVEL 4: 585 areas  AWARAN TEHSIL, GISHKORE SUB-TEHSIL, JHAL JAO SUB-TEHSIL, MASHKAI TEHSIL, GAZG SUB-TEHSIL, JOHAN SUB-TEHSIL, KALAT TEHSIL, MANGOCHAR TEHSIL, ...
+  denominator: 'Total population'
+  11 group columns:
+    HHD_TOT  ->  'Total households'
+    HHD_SIZE1  ->  'One person'
+    HHD_SIZE2  ->  'Two persons'
+    HHD_SIZE3  ->  'Three persons'
+    HHD_SIZE4  ->  'Four persons'
+    HHD_SIZE5  ->  'Five persons'
+    HHD_SIZE6  ->  'Six persons'
+    HHD_SIZE7  ->  'Seven persons'
+    HHD_SIZE8  ->  'Eight persons'
+    HHD_SIZE9  ->  'Nine persons'
+    HHD_SZE10P  ->  'Ten or more persons'
+    HHD_TOT says: Total households | Total number of households. A household means a group of persons living together who have collective arrangements for cooking/eating. A person living alone also considered to constitute a household (unit of enumeration: household). Original field name: "Household by number of persons, Total." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 28 Household by number of persons and rural/urban
+    HHD_SIZE1 says: One person | Households with six persons (unit of enumeration: household). Original field name: "Household by number of persons, 1 Person." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 28 Household by number of persons and rural/urban
+    HHD_SIZE2 says: Two persons | Households with two persons (unit of enumeration: household). Original field name: "Household by number of persons, 2 Persons." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 28 Household by number of persons and rural/urban
+
+  whole country: PAKISTAN (level 0) published=203,933,043 summed=63,831,768 ratio=0.313
+    HHD_TOT        Total households                      31,915,884   15.65%
+    HHD_SIZE1      One person                               702,414    0.34%
+    HHD_SIZE2      Two persons                            2,334,918    1.14%
+    HHD_SIZE3      Three persons                          2,883,533    1.41%
+    HHD_SIZE4      Four persons                           3,891,091    1.91%
+    HHD_SIZE5      Five persons                           4,647,944    2.28%
+    HHD_SIZE6      Six persons                            4,591,806    2.25%
+    HHD_SIZE7      Seven persons                          3,682,677    1.81%
+    HHD_SIZE8      Eight persons                          2,711,772    1.33%
+    HHD_SIZE9      Nine persons                           1,881,154    0.92%
+    HHD_SZE10P     Ten or more persons                    4,588,575    2.25%
+
+  furthest from its own total: SPINWAM TEHSIL (level 4) published=36,556 summed=5,882 ratio=0.161
+    HHD_TOT        Total households                           2,941    8.05%
+    HHD_SIZE1      One person                                     9    0.02%
+    HHD_SIZE2      Two persons                                   60    0.16%
+    HHD_SIZE3      Three persons                                 67    0.18%
+    HHD_SIZE4      Four persons                                 103    0.28%
+    HHD_SIZE5      Five persons                                 121    0.33%
+    HHD_SIZE6      Six persons                                  172    0.47%
+    HHD_SIZE7      Seven persons                                188    0.51%
+    HHD_SIZE8      Eight persons                                204    0.56%
+    HHD_SIZE9      Nine persons                                 230    0.63%
+    HHD_SZE10P     Ten or more persons                        1,787    4.89%
+
+  furthest from its own total: KAHAN TEHSIL (level 4) published=69,925 summed=12,648 ratio=0.181
+    HHD_TOT        Total households                           6,324    9.04%
+    HHD_SIZE1      One person                                    19    0.03%
+    HHD_SIZE2      Two persons                                   55    0.08%
+    HHD_SIZE3      Three persons                                108    0.15%
+    HHD_SIZE4      Four persons                                 189    0.27%
+    HHD_SIZE5      Five persons                                 291    0.42%
+    HHD_SIZE6      Six persons                                  399    0.57%
+    HHD_SIZE7      Seven persons                                516    0.74%
+    HHD_SIZE8      Eight persons                                508    0.73%
+    HHD_SIZE9      Nine persons                                 556    0.80%
+    HHD_SZE10P     Ten or more persons                        3,683    5.27%
+
+--- Housing Units: 200 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 8 areas  BALOCHISTAN, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 36 areas  KALAT DIVISION, MEKRAN DIVISION, NASIRABAD DIVISION, QUETTA DIVISION, SIBI DIVISION, ZHOB DIVISION, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, BANNU DIVISION, DERA ISMAIL KHAN DIVISION, HAZARA DIVISION, KOHAT DIVISION, MALAKAND DIVISION, MARDAN DIVISION, PESHAWAR DIVISION, BAHAWALPUR DIVISION, DERA GHAZI KHAN DVISION, FAISALABAD DIVISION, GUJRANWALA DIVISION, LAHORE DIVISION, MULTAN DIVISION, RAWALPINDI DIVISION, SAHIWAL DIVISION, SARGODHA DIVISION, HYDERABAD DIVISION, KARACHI DIVISION, LARKANA DIVISION, MIRPUR KHAS DIVISION, SHAHEED BENAZIRABAD DIVISION, SUKKUR DIVISION, MUZAFFARABAD DIVISION, POONCH DIVISION, MIRPUR DIVISION, GILGIT DIVISION, ASTORE DIVISION, BALTISTAN DIVISION
+  ADM_LEVEL 3: 155 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  denominator: none found
+  19 group columns:
+    HOU_TOT  ->  'Total housing units'
+    HOU_BRK_W  ->  'Exterior walls, bricks/blocks/stones'
+    HOU_BRM_W  ->  'Exterior walls, bricks/mud'
+    HOU_WOB_W  ->  'Exterior walls, bamboo/wood'
+    HOU_OTH_W  ->  'Exterior walls, other materials'
+    HOU_RCC_R  ->  'Roof, cement concrete/brick concrete'
+    HOU_RCI_R  ->  'Roof, cement/iron sheets'
+    HOU_GTI_R  ->  'Roof, garder/T iron'
+    HOU_WOB_R  ->  'Roof, wood/bamboo'
+    HOU_OTH_R  ->  'Roof, other materials'
+    HOU_ROOM1  ->  'One room'
+    HOU_ROOM2  ->  'Two rooms'
+    HOU_ROOM3  ->  'Three rooms'
+    HOU_ROOM4  ->  'Four rooms'
+    HOU_ROOM5  ->  'Five rooms'
+    HOU_ROOM6  ->  'Six rooms'
+    HOU_ROOM7  ->  'Seven rooms'
+    HOU_ROOM8  ->  'Eight rooms'
+    HOU_ROOM9  ->  'Nine or more rooms'
+    HOU_TOT says: Total housing units | Total number of housing units. A housing unit means a separate and independent place of abode inhabited by one household, and if vacant, a housing unit is meant for habitation by one household. Furthermore, any place not intended for habitation but occupied by a household was also treated as a housing unit (unit of enumeration: housing unit). Original field name: "Housing units, Total." (March 15, | Pakistan Population and Housing Census 2017, 2023, Table 33 Housing units by tenure, material used in outer walls, roofs, and rural/urban
+    HOU_BRK_W says: Exterior walls, bricks/blocks/stones | Housing units with exterior walls built using bricks, blocks, or stones (unit of enumeration: housing unit). Original field name: "Housing units, Total, Wall - Baked Bricks/Blocks/Stones." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 33 Housing units by tenure, material used in outer walls, roofs, and rural/urban
+    HOU_BRM_W says: Exterior walls, bricks/mud | Housing units with exterior walls built using bricks or mud (unit of enumeration: housing unit). Original field name: "Housing units, Total, Wall - Unbaked Bricks/Mud." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 33 Housing units by tenure, material used in outer walls, roofs, and rural/urban
+
+  whole country: PAKISTAN (level 0) no published total
+    HOU_TOT        Total housing units                   31,915,884    0.00%
+    HOU_BRK_W      Exterior walls, bricks/blocks/ston    23,697,939    0.00%
+    HOU_BRM_W      Exterior walls, bricks/mud             5,866,688    0.00%
+    HOU_WOB_W      Exterior walls, bamboo/wood            1,714,628    0.00%
+    HOU_OTH_W      Exterior walls, other materials          636,629    0.00%
+    HOU_RCC_R      Roof, cement concrete/brick concre     8,978,024    0.00%
+    HOU_RCI_R      Roof, cement/iron sheets               1,979,953    0.00%
+    HOU_GTI_R      Roof, garder/T iron                   12,195,735    0.00%
+    HOU_WOB_R      Roof, wood/bamboo                      8,051,943    0.00%
+    HOU_OTH_R      Roof, other materials                    710,229    0.00%
+    HOU_ROOM1      One room                              10,012,365    0.00%
+    HOU_ROOM2      Two rooms                              9,647,174    0.00%
+    HOU_ROOM3      Three rooms                            5,825,151    0.00%
+    HOU_ROOM4      Four rooms                             3,245,169    0.00%
+    HOU_ROOM5      Five rooms                             1,395,990    0.00%
+    HOU_ROOM6      Six rooms                                827,929    0.00%
+    HOU_ROOM7      Seven rooms                              398,349    0.00%
+    HOU_ROOM8      Eight rooms                              241,542    0.00%
+    HOU_ROOM9      Nine or more rooms                       322,215    0.00%
+
+--- Amenities: 200 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 8 areas  BALOCHISTAN, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 36 areas  KALAT DIVISION, MEKRAN DIVISION, NASIRABAD DIVISION, QUETTA DIVISION, SIBI DIVISION, ZHOB DIVISION, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, BANNU DIVISION, DERA ISMAIL KHAN DIVISION, HAZARA DIVISION, KOHAT DIVISION, MALAKAND DIVISION, MARDAN DIVISION, PESHAWAR DIVISION, BAHAWALPUR DIVISION, DERA GHAZI KHAN DVISION, FAISALABAD DIVISION, GUJRANWALA DIVISION, LAHORE DIVISION, MULTAN DIVISION, RAWALPINDI DIVISION, SAHIWAL DIVISION, SARGODHA DIVISION, HYDERABAD DIVISION, KARACHI DIVISION, LARKANA DIVISION, MIRPUR KHAS DIVISION, SHAHEED BENAZIRABAD DIVISION, SUKKUR DIVISION, MUZAFFARABAD DIVISION, POONCH DIVISION, MIRPUR DIVISION, GILGIT DIVISION, ASTORE DIVISION, BALTISTAN DIVISION
+  ADM_LEVEL 3: 155 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  denominator: none found
+  35 group columns:
+    LQA_TOT  ->  'Total housing units'
+    LQA_SEP_K  ->  'Kitchen, separate'
+    LQA_SHA_K  ->  'Kitchen, shared'
+    LQA_NON_K  ->  'Kitchen, none'
+    LQA_SEP_B  ->  'Bathroom, separate'
+    LQA_SHA_B  ->  'Bathroom, shared'
+    LQA_NON_B  ->  'Bathroom, none'
+    LQA_SEW_L  ->  'Latrine, connected with sewer'
+    LQA_SES_L  ->  'Latrine, connected with septic tank'
+    LQA_SPT_L  ->  'Latrine, connected with open drain'
+    LQA_OPN_L  ->  'Latrine, pit with slab'
+    LQA_OTH_L  ->  'Latrine, other type'
+    LQA_NON_L  ->  'Latrine, none'
+    LQA_WA1_I  ->  'Drinking water, total, access inside the building'
+    LQA_WA1T_I  ->  'Drinking water, tap, access inside building'
+    LQA_WA1E_I  ->  'Drinking water, electic/hand pump, access inside building'
+    LQA_WSPS_I  ->  'Drinking water, protected well, access inside building'
+    LQA_WUPS_I  ->  'Drinking water, unprotected well, access inside building'
+    LQA_WSO_I  ->  'Drinking water, another source, access inside building'
+    LQA_WAG3_O  ->  'Drinking water, total, access outside building'
+    LQA_WAGT_O  ->  'Drinking water, tap, access outside building'
+    LQA_WAGE_O  ->  'Drinking water, electric/hand pump, access outside building'
+    LQA_WAPW_O  ->  'Drinking water, protected well, access outside building'
+    LQA_WAUP_O  ->  'Drinking water, unprotected well, access outside building'
+    ...and 11 more
+    LQA_TOT says: Total housing units | Total number of living quarters (unit of enumeration: housing unit). Original field name: "Housing units, Total, Total." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 37 Housing units by tenure, kitchen, bathroom, latrine facilities, and rural/urban
+    LQA_SEP_K says: Kitchen, separate | Living quarters with a separate kitchen (unit of enumeration: housing unit). Original field name: "Housing units, Total, Kitchen - Separate." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 37 Housing units by tenure, kitchen, bathroom, latrine facilities, and rural/urban
+    LQA_SHA_K says: Kitchen, shared | Living quarters with a shared kitchen (unit of enumeration: housing unit). Original field name: "Housing units, Total, Kitchen - Shared." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 37 Housing units by tenure, kitchen, bathroom, latrine facilities, and rural/urban
+
+  whole country: PAKISTAN (level 0) no published total
+    LQA_TOT        Total housing units                   31,915,884    0.00%
+    LQA_SEP_K      Kitchen, separate                     17,499,879    0.00%
+    LQA_SHA_K      Kitchen, shared                        6,168,059    0.00%
+    LQA_NON_K      Kitchen, none                          8,247,946    0.00%
+    LQA_SEP_B      Bathroom, separate                    19,617,368    0.00%
+    LQA_SHA_B      Bathroom, shared                       6,955,622    0.00%
+    LQA_NON_B      Bathroom, none                         5,342,894    0.00%
+    LQA_SEW_L      Latrine, connected with sewer         10,042,641    0.00%
+    LQA_SES_L      Latrine, connected with septic tan     4,165,906    0.00%
+    LQA_SPT_L      Latrine, connected with open drain     4,761,304    0.00%
+    LQA_OPN_L      Latrine, pit with slab                 6,939,868    0.00%
+    LQA_OTH_L      Latrine, other type                    1,210,996    0.00%
+    LQA_NON_L      Latrine, none                          4,795,169    0.00%
+    LQA_WA1_I      Drinking water, total, access insi    27,475,469    0.00%
+    LQA_WA1T_I     Drinking water, tap, access inside    10,442,352    0.00%
+    LQA_WA1E_I     Drinking water, electic/hand pump,    14,131,829    0.00%
+    LQA_WSPS_I     Drinking water, protected well, ac       731,898    0.00%
+    LQA_WUPS_I     Drinking water, unprotected well,        345,735    0.00%
+    LQA_WSO_I      Drinking water, another source, ac     1,823,655    0.00%
+    LQA_WAG3_O     Drinking water, total, access outs     4,440,415    0.00%
+    LQA_WAGT_O     Drinking water, tap, access outsid       971,514    0.00%
+    LQA_WAGE_O     Drinking water, electric/hand pump     1,045,419    0.00%
+    LQA_WAPW_O     Drinking water, protected well, ac       233,522    0.00%
+    LQA_WAUP_O     Drinking water, unprotected well,        217,803    0.00%
+    LQA_WASP_O     Drinking water, spring, access out       342,001    0.00%
+    LQA_WACR_O     Drinking water, canal/river/pond,        494,113    0.00%
+    LQA_WAO_O      Drinking water, another source, ac     1,136,043    0.00%
+    LQA_WOOD_C     Cooking fuel, wood                    18,652,619    0.00%
+    LQA_GASN_C     Cooking fuel, natural gas             12,082,366    0.00%
+    LQA_KERO_C     Cooking fuel, kerosene                    60,942    0.00%
+    LQA_OFUL_C     Cooking fuel, another type             1,119,957    0.00%
+    LQA_ELEC_L     Lighting source, electricity          28,043,661    0.00%
+    LQA_OIL_L      Lighting source, kerosene              1,170,740    0.00%
+    LQA_GASL_L     Lighting source, gas lamp                 57,484    0.00%
+    LQA_OTLS_L     Lighting source, another type          2,643,999    0.00%
+
+--- Nationality: 200 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 8 areas  BALOCHISTAN, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 36 areas  KALAT DIVISION, MEKRAN DIVISION, NASIRABAD DIVISION, QUETTA DIVISION, SIBI DIVISION, ZHOB DIVISION, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, BANNU DIVISION, DERA ISMAIL KHAN DIVISION, HAZARA DIVISION, KOHAT DIVISION, MALAKAND DIVISION, MARDAN DIVISION, PESHAWAR DIVISION, BAHAWALPUR DIVISION, DERA GHAZI KHAN DVISION, FAISALABAD DIVISION, GUJRANWALA DIVISION, LAHORE DIVISION, MULTAN DIVISION, RAWALPINDI DIVISION, SAHIWAL DIVISION, SARGODHA DIVISION, HYDERABAD DIVISION, KARACHI DIVISION, LARKANA DIVISION, MIRPUR KHAS DIVISION, SHAHEED BENAZIRABAD DIVISION, SUKKUR DIVISION, MUZAFFARABAD DIVISION, POONCH DIVISION, MIRPUR DIVISION, GILGIT DIVISION, ASTORE DIVISION, BALTISTAN DIVISION
+  ADM_LEVEL 3: 155 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  denominator: 'Total population'
+  8 group columns:
+    NAT_TPK  ->  'Pakistani population, total'
+    NAT_NPK  ->  'Non-Pakistani population, total'
+    NAT_TOTL_R  ->  'Total population, rural'
+    NAT_RPK_R  ->  'Pakistani population, rural'
+    NAT_RNPK_R  ->  'Non-Pakistani population, rural'
+    NAT_TOTL_U  ->  'Total population, urban'
+    NAT_PK_U  ->  'Pakistani population, urban'
+    NAT_NPK_U  ->  'Non-Pakistani population, urban'
+    NAT_TPK says: Pakistani population, total | Total population with Pakistani nationality (unit of enumeration: population). Original field name: "Total Population - Pakistani." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 10 Population by nationality, age group, sex, and rural/urban
+    NAT_NPK says: Non-Pakistani population, total | Total population with non- Pakistani nationality (unit of enumeration: population). Original field name: "Total Population - Non-Pakistani." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 10 Population by nationality, age group, sex, and rural/urban
+    NAT_TOTL_R says: Total population, rural | Total rural population (unit of enumeration: population). Original field name: "Rural - Total." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 10 Population by nationality, age group, sex, and rural/urban
+
+  whole country: PAKISTAN (level 0) published=207,684,626 summed=623,053,878 ratio=3.000
+    NAT_TPK        Pakistani population, total          206,287,447   99.33%
+    NAT_NPK        Non-Pakistani population, total        1,397,179    0.67%
+    NAT_TOTL_R     Total population, rural              132,013,789   63.56%
+    NAT_RPK_R      Pakistani population, rural          131,211,574   63.18%
+    NAT_RNPK_R     Non-Pakistani population, rural          802,215    0.39%
+    NAT_TOTL_U     Total population, urban               75,670,837   36.44%
+    NAT_PK_U       Pakistani population, urban           75,075,873   36.15%
+    NAT_NPK_U      Non-Pakistani population, urban          594,964    0.29%
+
+  furthest from its own total: BALOCHISTAN (level 1) published=12,335,129 summed=37,005,387 ratio=3.000
+    NAT_TPK        Pakistani population, total           11,872,340   96.25%
+    NAT_NPK        Non-Pakistani population, total          462,789    3.75%
+    NAT_TOTL_R     Total population, rural                8,928,428   72.38%
+    NAT_RPK_R      Pakistani population, rural            8,606,421   69.77%
+    NAT_RNPK_R     Non-Pakistani population, rural          322,007    2.61%
+    NAT_TOTL_U     Total population, urban                3,406,701   27.62%
+    NAT_PK_U       Pakistani population, urban            3,265,919   26.48%
+    NAT_NPK_U      Non-Pakistani population, urban          140,782    1.14%
+
+  furthest from its own total: KALAT DIVISION (level 2) published=2,513,200 summed=7,539,600 ratio=3.000
+    NAT_TPK        Pakistani population, total            2,497,020   99.36%
+    NAT_NPK        Non-Pakistani population, total           16,180    0.64%
+    NAT_TOTL_R     Total population, rural                1,740,690   69.26%
+    NAT_RPK_R      Pakistani population, rural            1,731,332   68.89%
+    NAT_RNPK_R     Non-Pakistani population, rural            9,358    0.37%
+    NAT_TOTL_U     Total population, urban                  772,510   30.74%
+    NAT_PK_U       Pakistani population, urban              765,688   30.47%
+    NAT_NPK_U      Non-Pakistani population, urban            6,822    0.27%
+
+--- Religion: 785 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 8 areas  BALOCHISTAN, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 36 areas  KALAT DIVISION, MEKRAN DIVISION, NASIRABAD DIVISION, QUETTA DIVISION, SIBI DIVISION, ZHOB DIVISION, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, BANNU DIVISION, DERA ISMAIL KHAN DIVISION, HAZARA DIVISION, KOHAT DIVISION, MALAKAND DIVISION, MARDAN DIVISION, PESHAWAR DIVISION, BAHAWALPUR DIVISION, DERA GHAZI KHAN DVISION, FAISALABAD DIVISION, GUJRANWALA DIVISION, LAHORE DIVISION, MULTAN DIVISION, RAWALPINDI DIVISION, SAHIWAL DIVISION, SARGODHA DIVISION, HYDERABAD DIVISION, KARACHI DIVISION, LARKANA DIVISION, MIRPUR KHAS DIVISION, SHAHEED BENAZIRABAD DIVISION, SUKKUR DIVISION, MUZAFFARABAD DIVISION, POONCH DIVISION, MIRPUR DIVISION, GILGIT DIVISION, ASTORE DIVISION, BALTISTAN DIVISION
+  ADM_LEVEL 3: 155 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  ADM_LEVEL 4: 585 areas  AWARAN TEHSIL, GISHKORE SUB-TEHSIL, JHAL JAO SUB-TEHSIL, MASHKAI TEHSIL, GAZG SUB-TEHSIL, JOHAN SUB-TEHSIL, KALAT TEHSIL, MANGOCHAR TEHSIL, ...
+  denominator: 'Total population'
+  6 group columns:
+    RLG_MUS  ->  'Islam'
+    RLG_CHR  ->  'Christianity'
+    RLG_HIN  ->  'Hinduism'
+    RLG_QAD  ->  'Qadiani/Ahmadi'
+    RLG_SCH  ->  'Scheduled Castes'
+    RLG_OTH  ->  'Other religion'
+    RLG_MUS says: Islam | Population who practices Islam religion (unit of enumeration: population). Original field name: "Muslim." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 9 Population by sex, religion, and rural/urban
+    RLG_CHR says: Christianity | Population who practices Christian religion (unit of enumeration: population). Original field name: "Christian." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 9 Population by sex, religion, and rural/urban
+    RLG_HIN says: Hinduism | Population who practices Hindu religion (unit of enumeration: population). Original field name: "Hindu." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 9 Population by sex, religion, and rural/urban
+
+  whole country: PAKISTAN (level 0) published=207,684,626 summed=207,684,626 ratio=1.000
+    RLG_MUS        Islam                                200,362,718   96.47%
+    RLG_CHR        Christianity                           2,642,048    1.27%
+    RLG_HIN        Hinduism                               3,595,256    1.73%
+    RLG_QAD        Qadiani/Ahmadi                           191,737    0.09%
+    RLG_SCH        Scheduled Castes                         849,614    0.41%
+    RLG_OTH        Other religion                            43,253    0.02%
+
+--- Mother Tongue: 785 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 8 areas  BALOCHISTAN, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 36 areas  KALAT DIVISION, MEKRAN DIVISION, NASIRABAD DIVISION, QUETTA DIVISION, SIBI DIVISION, ZHOB DIVISION, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, BANNU DIVISION, DERA ISMAIL KHAN DIVISION, HAZARA DIVISION, KOHAT DIVISION, MALAKAND DIVISION, MARDAN DIVISION, PESHAWAR DIVISION, BAHAWALPUR DIVISION, DERA GHAZI KHAN DVISION, FAISALABAD DIVISION, GUJRANWALA DIVISION, LAHORE DIVISION, MULTAN DIVISION, RAWALPINDI DIVISION, SAHIWAL DIVISION, SARGODHA DIVISION, HYDERABAD DIVISION, KARACHI DIVISION, LARKANA DIVISION, MIRPUR KHAS DIVISION, SHAHEED BENAZIRABAD DIVISION, SUKKUR DIVISION, MUZAFFARABAD DIVISION, POONCH DIVISION, MIRPUR DIVISION, GILGIT DIVISION, ASTORE DIVISION, BALTISTAN DIVISION
+  ADM_LEVEL 3: 155 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  ADM_LEVEL 4: 585 areas  AWARAN TEHSIL, GISHKORE SUB-TEHSIL, JHAL JAO SUB-TEHSIL, MASHKAI TEHSIL, GAZG SUB-TEHSIL, JOHAN SUB-TEHSIL, KALAT TEHSIL, MANGOCHAR TEHSIL, ...
+  denominator: 'Total population'
+  10 group columns:
+    LNG_URD  ->  'Urdu'
+    LNG_PNJ  ->  'Punjabi'
+    LNG_SND  ->  'Sindhi'
+    LNG_PST  ->  'Pushto'
+    LNG_BAL  ->  'Balochi'
+    LNG_KAS  ->  'Kashmiri'
+    LNG_SAR  ->  'Sareiki'
+    LNG_HIN  ->  'Hindko'
+    LNG_BRH  ->  'Brahvi'
+    LNG_OTH  ->  'Other language'
+    LNG_URD says: Urdu | Population whose mother tongue is Urdu (unit of enumeration: population). Original field name: "Urdu." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 11 Population by mother tongue, sex, and rural/urban
+    LNG_PNJ says: Punjabi | Population whose mother tongue is Punjabi (unit of enumeration: population). Original field name: "Punjabi." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 11 Population by mother tongue, sex, and rural/urban
+    LNG_SND says: Sindhi | Population whose mother tongue is Sindhi (unit of enumeration: population). Original field name: "Sindhi." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2021, Table 11 Population by mother tongue, sex, and rural/urban
+
+  whole country: PAKISTAN (level 0) published=207,684,626 summed=207,684,626 ratio=1.000
+    LNG_URD        Urdu                                  14,706,159    7.08%
+    LNG_PNJ        Punjabi                               80,536,390   38.78%
+    LNG_SND        Sindhi                                30,256,372   14.57%
+    LNG_PST        Pushto                                37,885,441   18.24%
+    LNG_BAL        Balochi                                6,281,087    3.02%
+    LNG_KAS        Kashmiri                                 359,669    0.17%
+    LNG_SAR        Sareiki                               25,324,637   12.19%
+    LNG_HIN        Hindko                                 5,065,879    2.44%
+    LNG_BRH        Brahvi                                 2,567,677    1.24%
+    LNG_OTH        Other language                         4,701,315    2.26%
+
+  furthest from its own total: SHARINGAL SUB-DIVISION (level 4) published=185,121 summed=184,580 ratio=0.997
+    LNG_URD        Urdu                                         576    0.31%
+    LNG_PNJ        Punjabi                                       48    0.03%
+    LNG_SND        Sindhi                                       113    0.06%
+    LNG_PST        Pushto                                   115,815   62.56%
+    LNG_BAL        Balochi                                       21    0.01%
+    LNG_OTH        Other language                            68,007   36.74%
+
+  furthest from its own total: DIR SUB-DIVISION (level 4) published=439,525 summed=438,589 ratio=0.998
+    LNG_URD        Urdu                                       1,283    0.29%
+    LNG_PNJ        Punjabi                                      133    0.03%
+    LNG_SND        Sindhi                                       181    0.04%
+    LNG_PST        Pushto                                   423,759   96.41%
+    LNG_BAL        Balochi                                      263    0.06%
+    LNG_OTH        Other language                            12,970    2.95%
+
+--- Info and Com Technology: 785 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 8 areas  BALOCHISTAN, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 36 areas  KALAT DIVISION, MEKRAN DIVISION, NASIRABAD DIVISION, QUETTA DIVISION, SIBI DIVISION, ZHOB DIVISION, FEDERALLY ADMINISTERED TRIBAL AREAS, ISLAMABAD, BANNU DIVISION, DERA ISMAIL KHAN DIVISION, HAZARA DIVISION, KOHAT DIVISION, MALAKAND DIVISION, MARDAN DIVISION, PESHAWAR DIVISION, BAHAWALPUR DIVISION, DERA GHAZI KHAN DVISION, FAISALABAD DIVISION, GUJRANWALA DIVISION, LAHORE DIVISION, MULTAN DIVISION, RAWALPINDI DIVISION, SAHIWAL DIVISION, SARGODHA DIVISION, HYDERABAD DIVISION, KARACHI DIVISION, LARKANA DIVISION, MIRPUR KHAS DIVISION, SHAHEED BENAZIRABAD DIVISION, SUKKUR DIVISION, MUZAFFARABAD DIVISION, POONCH DIVISION, MIRPUR DIVISION, GILGIT DIVISION, ASTORE DIVISION, BALTISTAN DIVISION
+  ADM_LEVEL 3: 155 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  ADM_LEVEL 4: 585 areas  AWARAN TEHSIL, GISHKORE SUB-TEHSIL, JHAL JAO SUB-TEHSIL, MASHKAI TEHSIL, GAZG SUB-TEHSIL, JOHAN SUB-TEHSIL, KALAT TEHSIL, MANGOCHAR TEHSIL, ...
+  denominator: none found
+  7 group columns:
+    ICT_MXA  ->  'Any source of information'
+    ICT_RAD  ->  'Radio'
+    ICT_TV  ->  'Television'
+    ICT_NEW  ->  'Newspaper'
+    ICT_PHN  ->  'Telephone'
+    ICT_MOB  ->  'Mobile device'
+    ICT_COM  ->  'Computer/Internet'
+    ICT_MXA says: Any source of information | Households that use a radio, TV, newspaper, telephone, or mobile phone as the sources of information. (unit of enumeration: households). Original field name: "Any source of information." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 40 Number of households by source of information and rural/urban
+    ICT_RAD says: Radio | Households that use a radio as source of information (unit of enumeration: households). Original field name: "Radio." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 40 Number of households by source of information and rural/urban
+    ICT_TV says: Television | Households that use a television as source of information (unit of enumeration: households). Original field name: "TV." (March 15, 2017) | Pakistan Population and Housing Census 2017, 2023, Table 40 Number of households by source of information and rural/urban
+
+  whole country: PAKISTAN (level 0) no published total
+    ICT_MXA        Any source of information             29,532,480    0.00%
+    ICT_RAD        Radio                                  1,946,108    0.00%
+    ICT_TV         Television                            17,503,156    0.00%
+    ICT_NEW        Newspaper                              2,027,491    0.00%
+    ICT_PHN        Telephone                              1,547,112    0.00%
+    ICT_MOB        Mobile device                         28,923,548    0.00%
+    ICT_COM        Computer/Internet                      3,697,842    0.00%
+
+--- Crops: 155 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 7 areas  BALOCHISTAN, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, FEDERALLY ADMINISTERED TRIBAL AREAS, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 147 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  denominator: none found
+  101 group columns:
+    ARA_TCR_A  ->  'Total cropland area'
+    ARA_KCR_A  ->  'Kharif cropland area'
+    ARA_RCR_A  ->  'Rabi cropland area'
+    ARA_OCR_A  ->  'Orchard cropland area'
+    FRM_KRCC_A  ->  'Both Kharif and Rabi cultivated cropland, area'
+    FRM_OKCC_A  ->  'Only Kharif cultivated cropland, area'
+    FRM_ORCC_A  ->  'Only Rabi cultivated cropland, area'
+    FRM_COR_N  ->  'Cultivated orchards, area'
+    ORC_FWO_A  ->  'Cultivated cropland with farms  that have orchards, area'
+    ORC_OFO_A  ->  'Owner farms, area of orchards'
+    ORC_OCTF_A  ->  'Owner-cum-tenant farms, area of orchards'
+    ORC_TENF_A  ->  'Tenant farms, area of orchards'
+    FRM_TFC_N  ->  'Total farms with cropland, number'
+    FRM_TFCC_N  ->  'Total farms with cultivated cropland, number'
+    FRM_FKRC_N  ->  'Farms with Kharif and Rabi cultivated cropland, number'
+    FRM_FKC_N  ->  'Farms with only Kharif cultivated cropland, number'
+    FRM_FORC_N  ->  'Farms with only Rabi cultivated cropland, number'
+    FRM_FCO_N  ->  'Farms with cultivated orchards, number'
+    ORC_FOR_N  ->  'Farms with orchards, number'
+    ORC_OFO_T  ->  'Owner farms, tenure of orchards'
+    ORC_OCTO_T  ->  'Owner-cum-tenant farms, tenure of orchards'
+    ORC_TENT_T  ->  'Tenant farms, tenure of orchards'
+    FRU_ALM_N  ->  'Almond, number of farms'
+    FRU_APP_N  ->  'Apple, number of farms'
+    ...and 77 more
+    ARA_TCR_A says: Total cropland area | Total land area used by farms for the cultivation of crops (unit of enumeration: acres). Original field name: "Total cropped area, private farms." (December 14, 2009) | Pakistan Agricultural Census 2010, 2012, Table 6.1 Classification of Cropped Area by Crop Season and by Size of Farm
+    ARA_KCR_A says: Kharif cropland area | Total land area used by farms for the cultivation of Kharif crops. Kharif crops refer to those sown between April and June, with harvesting typically taking place from October to December (unit of enumeration: acres). Original field name: "Kharif crops area, total, private farms." (December 14, 2009) | Pakistan Agricultural Census 2010, 2012, Table 6.1 Classification of Cropped Area by Crop Season and by Size of Farm
+    ARA_RCR_A says: Rabi cropland area | Total land area used by farms for the cultivation of Rabi crops. Rabi crops refer to those sown between October and December, with harvesting typically taking place from April to May (unit of enumeration: acres). Original field name: "Rabi crops area, total, private farms." (December 14, 2009) | Pakistan Agricultural Census 2010, 2012, Table 6.1 Classification of Cropped Area by Crop Season and by Size of Farm
+
+  whole country: PAKISTAN (level 0) no published total
+    ARA_TCR_A      Total cropland area                   67,907,994    0.00%
+    ARA_KCR_A      Kharif cropland area                  30,579,378    0.00%
+    ARA_RCR_A      Rabi cropland area                    36,192,828    0.00%
+    ARA_OCR_A      Orchard cropland area                  1,135,757    0.00%
+    FRM_KRCC_A     Both Kharif and Rabi cultivated cr    60,378,887    0.00%
+    FRM_OKCC_A     Only Kharif cultivated cropland, a     1,672,648    0.00%
+    FRM_ORCC_A     Only Rabi cultivated cropland, are     5,718,533    0.00%
+    FRM_COR_N      Cultivated orchards, area                137,991    0.00%
+    ORC_FWO_A      Cultivated cropland with farms  th     4,524,646    0.00%
+    ORC_OFO_A      Owner farms, area of orchards            919,609    0.00%
+    ORC_OCTF_A     Owner-cum-tenant farms, area of or       183,896    0.00%
+    ORC_TENF_A     Tenant farms, area of orchards            32,250    0.00%
+    FRM_TFC_N      Total farms with cropland, number      8,264,480    0.00%
+    FRM_TFCC_N     Total farms with cultivated cropla     7,829,558    0.00%
+    FRM_FKRC_N     Farms with Kharif and Rabi cultiva     6,385,462    0.00%
+    FRM_FKC_N      Farms with only Kharif cultivated        325,816    0.00%
+    FRM_FORC_N     Farms with only Rabi cultivated cr     1,078,970    0.00%
+    FRM_FCO_N      Farms with cultivated orchards, nu        39,322    0.00%
+    ORC_FOR_N      Farms with orchards, number              282,358    0.00%
+    ORC_OFO_T      Owner farms, tenure of orchards          248,854    0.00%
+    ORC_OCTO_T     Owner-cum-tenant farms, tenure of         21,953    0.00%
+    ORC_TENT_T     Tenant farms, tenure of orchards          11,554    0.00%
+    FRU_ALM_N      Almond, number of farms                   17,596    0.00%
+    FRU_APP_N      Apple, number of farms                   163,018    0.00%
+    FRU_APR_N      Apricot, number of farms                 105,048    0.00%
+    FRU_BER_N      Ber (Jujube), number of farms            196,871    0.00%
+    FRU_CHI_N      Chiku (sapodilla), number of farms         1,335    0.00%
+    FRU_CHE_N      Cherry, number of farms                    5,553    0.00%
+    FRU_DAT_N      Date, number of farms                    108,032    0.00%
+    FRU_GUA_N      Guava, number of farms                    96,492    0.00%
+    FRU_JAM_N      Jamun (Java plum/black plum), numb        65,769    0.00%
+    FRU_KIN_N      Kinnow (hybrid orange), number of        113,093    0.00%
+    FRU_LYC_N      Lychee, number of farms                    4,591    0.00%
+    FRU_LEM_N      Lemon, number of farms                    84,353    0.00%
+    FRU_LOQ_N      Loqat, number of farms                    18,693    0.00%
+    FRU_MAN_N      Mango, number of farms                   194,737    0.00%
+    FRU_MUL_N      Mulberry, number of farms                110,608    0.00%
+    FRU_ORA_N      Orange (malta), number of farms           61,374    0.00%
+    FRU_OTH_N      Others, number of farms                   36,327    0.00%
+    FRU_PAP_N      Papaya, number of farms                    5,108    0.00%
+    FRU_PEA_N      Peach, number of farms                    41,444    0.00%
+    FRU_PER_N      Pear, number of farms                     67,892    0.00%
+    FRU_PRS_N      Persimmon, number of farms                34,257    0.00%
+    FRU_PLU_N      Plum, number of farms                     97,540    0.00%
+    FRU_POM_N      Pomegranate, number of farms              33,204    0.00%
+    FRU_LMN_N      Sweet Lemon, number of farms              27,893    0.00%
+    FRU_WAL_N      Walnut, number of farms                  112,814    0.00%
+    WHT_WHE_N      Wheat, number of farms                 6,914,857    0.00%
+    PAD_PAD_N      Paddy, number of farms                 2,249,003    0.00%
+    PAD_PAMO_N     Paddy, grow more than one variety,       146,753    0.00%
+    PAD_PAOT_N     Paddy, grow only basmati, number o     1,349,022    0.00%
+    PAD_PAIR_N     Paddy, grow only irri, number of f       448,972    0.00%
+    PAD_PNBI_N     Paddy, grow only non-basmati and n       304,257    0.00%
+    COT_COT_N      Cotton, total farms number             2,168,855    0.00%
+    MAZ_MAIT_N     Maize,  total farms number             1,193,463    0.00%
+    SGR_SUGT_N     Sugarcane, total farms number            896,923    0.00%
+    POT_POTT_N     Potato,  total farms number              134,891    0.00%
+    OIL_OILT_N     Oil-seeds, total farms number            459,565    0.00%
+    PLS_PULT_N     Pulses, total farms number               616,042    0.00%
+    FOD_FODT_N     Fodders, total farms number            2,722,409    0.00%
+    VEG_VEGT_N     Vegetables, total, farms number          507,790    0.00%
+    WHT_WHE_A      Wheat, total cropland area            28,226,788    0.00%
+    WHT_WHEI_A     Wheat, irrigated area                 24,444,022    0.00%
+    WHT_WHEU_A     Wheat, unirrigated area                3,782,766    0.00%
+    PAD_PAD_A      Paddy, total cropland area             9,355,256    0.00%
+    PAD_PADB_A     Paddy, grow more than one variety,       666,879    0.00%
+    PAD_PADM_A     Paddy, grow more than one variety,       491,152    0.00%
+    PAD_PADI_A     Paddy, grow more than one variety,       221,198    0.00%
+    PAD_PABA_N     Paddy, grow only basmati, area         4,647,106    0.00%
+    PAD_PAIR_A     Paddy, grow only irri, area            2,328,526    0.00%
+    PAD_PNBI_A     Paddy, grow only non-basmati and n     1,000,409    0.00%
+    COT_COT_A      Cotton, total cropland area            9,226,387    0.00%
+    MAZ_MAIT_A     Maize, total cropland area             2,391,544    0.00%
+    MAZ_MAII_A     Maize, irrigated cropland area         1,422,542    0.00%
+    MAZ_MAIU_A     Maize, unirrigated cropland area         969,002    0.00%
+    SGR_SUGT_A     Sugarcane, total cropland area         2,629,165    0.00%
+    POT_POTT_A     Potato, total cropland area              433,741    0.00%
+    POT_POTK_A     Potato Kharif, cropland area             145,499    0.00%
+    POT_POTR_A     Potato Rabi, cropland area               288,242    0.00%
+    POT_POIR_A     Potato, irrigated cropland area          399,955    0.00%
+    POT_POUI_A     Potato, unirrigated cropland area         33,790    0.00%
+    OIL_OILR_A     Oil-seeds, total cropland area         1,258,923    0.00%
+    OIL_OIKT_A     Oil-seeds Kharif, cropland area          450,034    0.00%
+    OIL_OILK_A     Oil-seeds Rabi, cropland area            808,889    0.00%
+    OIL_OILI_A     Oil-seeds, irrigated cropland area       867,548    0.00%
+    OIL_OILU_A     Oil-seeds, unirrigated cropland ar       391,383    0.00%
+    PLS_PUTC_A     Pulses, total cropland area            3,413,533    0.00%
+    PLS_PULK_A     Pulses Kharif, cropland area             628,131    0.00%
+    PLS_PULR_A     Pulses Rabi, cropland area             2,785,402    0.00%
+    PLS_PUIC_A     Pulses, irrigated cropland area          880,984    0.00%
+    PLS_PUUC_A     Pulses, unirrigated cropland area      2,532,549    0.00%
+    FOD_FODT_A     Fodders, total cropland area           6,036,935    0.00%
+    FOD_FODK_A     Fodders Kharif, cropland area          3,507,569    0.00%
+    FOD_FODR_A     Fodders Rabi, cropland area            2,529,366    0.00%
+    FOD_FODI_A     Fodders, irrigated cropland area       5,078,091    0.00%
+    FOD_FODU_A     Fodders, unirrigated cropland area       958,848    0.00%
+    VEG_VETC_A     Vegetables, total cropland area        1,451,426    0.00%
+    VEG_VEGK_A     Vegetables Kharif, cropland area         490,714    0.00%
+    VEG_VEGR_A     Vegetables Rabi, cropland area           960,712    0.00%
+    VEG_VEGI_A     Vegetables, irrigated cropland are     1,335,242    0.00%
+    VEG_VEGU_A     Vegetables, unirrigated cropland a       116,188    0.00%
+
+--- Livestock: 155 rows, sexed=False ---
+  ADM_LEVEL 0: 1 areas  PAKISTAN
+  ADM_LEVEL 1: 7 areas  BALOCHISTAN, KHYBER PAKHTUNKHWA, PUNJAB, SINDH, FEDERALLY ADMINISTERED TRIBAL AREAS, AZAD KASHMIR, GILGIT-BALTISTAN
+  ADM_LEVEL 2: 147 areas  AWARAN DISTRICT, KALAT DISTRICT, KHARAN DISTRICT, KHUZDAR DISTRICT, LASBELA DISTRICT, MASTUNG DISTRICT, WASHUK DISTRICT, GWADAR DISTRICT, ...
+  denominator: none found
+  72 group columns:
+    DFT_FARM_T  ->  'Farms total, any farms'
+    DFT_FARM_F  ->  'Farms total, draft animals'
+    DFT_FARM_O  ->  'Owner farms, draft animals'
+    DFT_FARM_C  ->  'Owner-cum-tenant farms, draft animals'
+    DFT_FARM_N  ->  'Tenant farms, draft animals'
+    DFT_ANIM_T  ->  'Draft animals total'
+    DFT_ANIM_O  ->  'Draft animals, owner farms'
+    DFT_DRFT_C  ->  'Draft animals, owner-cum-tenant farms'
+    DFT_DRFT_N  ->  'Draft animals, tenant farms'
+    DFT_BULL_T  ->  'Bullocks total, draft animals'
+    DFT_BUFF_T  ->  'Male buffaloes total, draft animals'
+    DFT_CAML_T  ->  'Camels total, draft animals'
+    CAT_HOUS_T  ->  'Households total, cattle'
+    CAT_FHOU_T  ->  'Farm households, cattle'
+    CAT_NOFH_T  ->  'Non-farm households, cattle'
+    CAT_CATT_T  ->  'Cattle, total'
+    CAT_CATT_F  ->  'Cattle, farm households'
+    CAT_CATT_N  ->  'Cattle, non-farm households'
+    BUF_HOUS_T  ->  'Households total, buffaloes'
+    BUF_FHOU_T  ->  'Farm households, buffaloes'
+    BUF_NOFH_T  ->  'Non-farm households, buffaloes'
+    BUF_BUFF_T  ->  'Buffaloes, total'
+    BUF_BUFF_F  ->  'Buffaloes, farm households'
+    BUF_BUFF_N  ->  'Buffaloes, non-farm households'
+    ...and 48 more
+    DFT_FARM_T says: Farms total, any farms | Total number of farms. A farm or holding is the aggregate area of land operated by one household alone regardless of location, size, and title. The farms are normally used for agricultural production (unit of enumeration: private farms/households). Original field name: "Total farms." (December 14, 2009) | Pakistan Agricultural Census 2010, 2012, Table 11.2 Relationship of Work Animals to Size of Farm
+    DFT_FARM_F says: Farms total, draft animals | Total number of farms that own draft animals (work animals) (unit of enumeration: private farms/households). Original field name: "All farms, reporting work animals, private farms." (December 14, 2009) | Pakistan Agricultural Census 2010, 2012, Table 11.1 Farms Reporting Work Animals by Tenure and by Size of Farm
+    DFT_FARM_O says: Owner farms, draft animals | Number of owner farms that own draft animals (unit of enumeration: private farms/households). Original field name: "Owner farms, reporting work animals, private farms." (December 14, 2009) | Pakistan Agricultural Census 2010, 2012, Table 11.1 Farms Reporting Work Animals by Tenure and by Size of Farm
+
+  whole country: PAKISTAN (level 0) no published total
+    DFT_FARM_T     Farms total, any farms                 8,264,480    0.00%
+    DFT_FARM_F     Farms total, draft animals             1,422,853    0.00%
+    DFT_FARM_O     Owner farms, draft animals             1,116,822    0.00%
+    DFT_FARM_C     Owner-cum-tenant farms, draft anim       136,287    0.00%
+    DFT_FARM_N     Tenant farms, draft animals              169,752    0.00%
+    DFT_ANIM_T     Draft animals total                    3,352,235    0.00%
+    DFT_ANIM_O     Draft animals, owner farms             2,692,766    0.00%
+    DFT_DRFT_C     Draft animals, owner-cum-tenant fa       295,666    0.00%
+    DFT_DRFT_N     Draft animals, tenant farms              363,796    0.00%
+    DFT_BULL_T     Bullocks total, draft animals          1,955,676    0.00%
+    DFT_BUFF_T     Male buffaloes total, draft animal     1,068,035    0.00%
+    DFT_CAML_T     Camels total, draft animals              328,525    0.00%
+    CAT_HOUS_T     Households total, cattle               6,066,476    0.00%
+    CAT_FHOU_T     Farm households, cattle                3,907,521    0.00%
+    CAT_NOFH_T     Non-farm households, cattle            2,158,953    0.00%
+    CAT_CATT_T     Cattle, total                         24,114,455    0.00%
+    CAT_CATT_F     Cattle, farm households               15,782,739    0.00%
+    CAT_CATT_N     Cattle, non-farm households            8,331,724    0.00%
+    BUF_HOUS_T     Households total, buffaloes            5,689,937    0.00%
+    BUF_FHOU_T     Farm households, buffaloes             3,604,648    0.00%
+    BUF_NOFH_T     Non-farm households, buffaloes         2,085,307    0.00%
+    BUF_BUFF_T     Buffaloes, total                      23,468,154    0.00%
+    BUF_BUFF_F     Buffaloes, farm households            15,981,296    0.00%
+    BUF_BUFF_N     Buffaloes, non-farm households         7,486,853    0.00%
+    GOT_HOUS_T     Households total, goats                6,294,559    0.00%
+    GOT_FHOU_T     Farm households, goats                 3,481,790    0.00%
+    GOT_NOFH_T     Non-farm households, goats             2,167,560    0.00%
+    GOT_OHOU_T     Other type households, goats             645,199    0.00%
+    GOT_GOAT_T     Goats, total                          45,738,255    0.00%
+    GOT_GOAT_F     Goats, farm households                26,577,683    0.00%
+    GOT_GOAT_N     Goats, non-farm households            17,500,562    0.00%
+    GOT_GOAT_O     Goats, other type households           1,660,029    0.00%
+    SHP_HOUS_T     Households total, sheep                1,323,050    0.00%
+    SHP_FHOU_T     Farm households, sheep                   802,399    0.00%
+    SHP_NOFH_T     Non-farm households, sheep               466,739    0.00%
+    SHP_OHOU_T     Other type households, sheep              53,922    0.00%
+    SHP_SHEP_T     Sheep, total                          15,025,659    0.00%
+    SHP_SHEP_F     Sheep, farm households                 8,493,944    0.00%
+    SHP_SHEP_N     Sheep, non-farm households             6,417,566    0.00%
+    SHP_SHEP_O     Sheep, other type households             114,143    0.00%
+    CML_HOUS_T     Households total, camels                 286,588    0.00%
+    CML_FHOU_T     Farm households, camels                  160,756    0.00%
+    CML_NOFH_T     Non-farm households, camels              101,241    0.00%
+    CML_OHOU_T     Other type households, camels             24,581    0.00%
+    CML_CAML_T     Camels, total                          1,186,766    0.00%
+    CML_CAML_F     Camels, farm households                  802,014    0.00%
+    CML_CAML_N     Camels, non-farm households              250,865    0.00%
+    CML_CAML_O     Camels, other type households            133,904    0.00%
+    HRS_HOUS_T     Households total, horses                 152,808    0.00%
+    HRS_FHOU_T     Farm households, horses                   87,476    0.00%
+    HRS_NOFH_T     Non-farm households, horses               45,557    0.00%
+    HRS_OHOU_T     Other type households, horses             19,774    0.00%
+    HRS_HORS_T     Horses, total                            259,130    0.00%
+    HRS_HORS_F     Horses, farm households                  133,490    0.00%
+    HRS_HORS_N     Horses, non-farm households               86,348    0.00%
+    HRS_HORS_O     Horses, other type households             39,285    0.00%
+    MUL_HOUS_T     Households total, mules                  100,655    0.00%
+    MUL_FHOU_T     Farm households, mules                    47,271    0.00%
+    MUL_NOFH_T     Non-farm households that have mule        37,159    0.00%
+    MUL_OHOU_T     Other type households, mules              16,218    0.00%
+    MUL_MULE_T     Mules, total                             172,891    0.00%
+    MUL_MULE_F     Mules, farm households                    83,050    0.00%
+    MUL_MULE_N     Mules, non-farm households                52,357    0.00%
+    MUL_MULE_O     Mules, other type households              37,479    0.00%
+    DKY_HOUS_T     Households total, donkeys              1,561,665    0.00%
+    DKY_FHOU_T     Farm households, donkeys               1,023,328    0.00%
+    DKY_NOFH_T     Non-farm households that have donk       443,519    0.00%
+    DKY_OHOU_T     Other type households, donkeys            94,818    0.00%
+    DKY_DNKY_T     Donkeys, total                         2,792,945    0.00%
+    DKY_DNKY_F     Donkeys, farm households               2,065,076    0.00%
+    DKY_DNKY_N     Donkeys, non-farm households             587,540    0.00%
+    DKY_DNKY_O     Donkeys, other type households           140,333    0.00%
