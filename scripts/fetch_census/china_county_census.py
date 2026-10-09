@@ -124,6 +124,18 @@ PROVINCES: dict[str, dict[str, str]] = {
            "base": "http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/",
            "bureau": "Qinghai Provincial Bureau of Statistics",
            "book": "青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020)"},
+    "15": {"name": "Inner Mongolia Autonomous Region", "zh": "内蒙古",
+           "base": "https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/",
+           "bureau": "Inner Mongolia Autonomous Region Bureau of Statistics",
+           "book": "内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook "
+                   "2020)"},
+    # Shandong's workbooks sit under two paths: the Internet Archive holds
+    # Tables 1-1 and 1-4 under pcmj/ and Table 1-5 under pcsj/.
+    "37": {"name": "Shandong Province", "zh": "山东",
+           "base": "http://tjj.shandong.gov.cn/pcmj/2020/zk/html/",
+           "tables": {"A0105": "http://tjj.shandong.gov.cn/pcsj/2020/zk/html/"},
+           "bureau": "Shandong Provincial Bureau of Statistics",
+           "book": "山东省2020年人口普查年鉴 (Shandong population census yearbook 2020)"},
 }
 
 # The special units a yearbook lists outside every prefecture, and the
@@ -177,27 +189,35 @@ AGE_NOTE = ("Interpolated within the age group (0, 1-4, then five-year groups to
 def archived(url: str) -> str | None:
     query = urllib.parse.urlencode({"url": url, "output": "json", "filter": "statuscode:200",
                                     "fl": "timestamp", "limit": "-1"})
-    rows = json.loads(http_get(f"{CDX}?{query}", cache=False, retries=2, timeout=120) or "[]")
+    rows = json.loads(http_get(f"{CDX}?{query}", cache=False, retries=3, timeout=120) or "[]")
     return rows[-1][0] if len(rows) > 1 else None
 
 
 def fetch_table(base: str, table: str) -> tuple[list[list[Any]], str]:
     """A yearbook workbook's rows, and the address they were read from: the
-    bureau's own file, or the Internet Archive's newest capture of it."""
+    bureau's own file, or the Internet Archive's newest capture of it. When
+    the Archive's index refuses, its replay is asked for the capture nearest
+    to now, which it redirects to without consulting the index."""
     import xlrd
     url = f"{base}{table}.xls"
     tried = []
-    for source in ("live", "archive"):
+    for source in ("live", "archive", "nearest"):
         try:
             if source == "live":
                 where = url
                 blob = http_get(url, binary=True, cache=True, retries=1, timeout=60)
-            else:
+            elif source == "archive":
                 stamp = archived(url)
                 if not stamp:
                     tried.append("no capture in the Internet Archive")
                     continue
                 where = REPLAY.format(stamp=stamp, url=url)
+                time.sleep(PAUSE)
+                blob = http_get(where, binary=True, cache=True, retries=6, timeout=180)
+            else:
+                if any(t.startswith("no capture") for t in tried):
+                    continue
+                where = REPLAY.format(stamp=str(YEAR + 6), url=url)
                 time.sleep(PAUSE)
                 blob = http_get(where, binary=True, cache=True, retries=6, timeout=180)
             assert isinstance(blob, bytes)
@@ -661,7 +681,8 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
           seat_names: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     areas, a0101, a0104, a0105 = read_province(code, tables, names)
     where = PROVINCES[code]["name"]
-    urls = urls or {t: f"{PROVINCES[code]['base']}{t}.xls" for t in TABLES}
+    urls = urls or {t: f"{PROVINCES[code].get('tables', {}).get(t, PROVINCES[code]['base'])}{t}.xls"
+                    for t in TABLES}
     if national is not None and a0101[0]["total"] != national:
         raise SystemExit(f"china_county_census: {where}'s yearbook counts {a0101[0]['total']:,.0f}"
                          f" and the National Bureau's {national:,.0f}")
@@ -693,6 +714,7 @@ def main() -> int:
                     help="write the GB/T 2260 codes' Chinese names from Wikidata, and stop")
     ap.add_argument("--explain", action="store_true",
                     help="log every area of every province and what became of it")
+    ap.add_argument("--only", help="province codes (15,37): read and log these, write nothing")
     args = ap.parse_args()
     if args.fetch_names:
         return fetch_names()
@@ -710,12 +732,16 @@ def main() -> int:
                if isinstance(r.get("population"), dict) and "value" in r["population"]}
     admin1, admin2 = drawn("CHN", "admin1"), drawn("CHN", "admin2")
     records: list[dict[str, Any]] = []
+    only = set(args.only.split(",")) if args.only else None
     for code, province in PROVINCES.items():
+        if only and code not in only:
+            continue
         log(f"china_county_census: {province['bureau']}, {province['book']}")
         tables, urls = {}, {}
         try:
             for table in TABLES:
-                tables[table], urls[table] = fetch_table(province["base"], table)
+                base = province.get("tables", {}).get(table, province["base"])
+                tables[table], urls[table] = fetch_table(base, table)
         except SystemExit as exc:
             # The bureau refusing and the Archive busy is a gap for this run,
             # not a fault in the figures: its counties keep china_census's
@@ -724,6 +750,9 @@ def main() -> int:
             continue
         records += build(code, tables, names, code_shapes, seats, admin1, admin2,
                          nbs.get(province["name"]), urls, args.explain, seat_names)
+    if only:
+        log(f"  --only: {len(records)} records read, nothing written")
+        return 0
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {len(records)} county records to {OUT}")
     return 0
