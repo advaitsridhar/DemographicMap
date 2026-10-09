@@ -1,8 +1,14 @@
-nordic_origin: NOR
-  09817: 426 kommuner of 2017; by year read: 2017: 8, 2019: 108, 2025: 1, 2026: 309
-  named (43): Norwegian, Polish, Ukrainian, Lithuanian, Syrian, Somali, Pakistani, Swedish, Iraqi, Eritrean, German, Filipino, Afghan, Russian, Iranian, Indian, Thai, Vietnamese, Turkish, Romanian, Danish, Bosnian, British, Kosovar, Sri Lankan, Latvian, Ethiopian, Chinese, American, Moroccan, Serbian, Dutch, Spanish, Bulgarian, French, Sudanese, Chilean, Finnish, Brazilian, Icelandic, Italian, Congolese, Croatian
-  NOR admin2: 419 of 426 office units bound to 424 polygons (5 set aside as pieces)
-    office units with no polygon (7): Kvitsøy (1144); Utsira (1151); Sula (1531); Herøy (1818); Træna (1835); Røst (1856); Værøy (1857)
-    pieces left unbound (5): Frogn nor [86288312B7520340450988]; Horten nor [86288312B83701369955488]; Malvik nor [86288312B32128147413448]; Malvik nor [86288312B1781368759016]; Nome nor [86288312B29220446300399]
-  430 records: admin1 11, admin2 419; labels the group tree cannot place: none
-  wrote data/processed/norway_origin.json (1965 kB)
+japan: nationality from e-Stat 0003445244, believers from 0003282963, prior from NHK/ISSP 2018
+  e-Stat 0003445244: 816 values
+  e-Stat 0003282963: 240 values
+  nationality: the 47 prefectures reproduce the table's national row; total 126,146,099 is the published one; the imputed foreign share is +0.24 points from the recorded one (stated on every prefecture)
+  believers: 175,054,047 against 126,146,099 people, 1.39 per person; used as a relative signal only
+  prior (no answer left out): no religion 63.3, Buddhism 31.6, Shinto 3.1, Christianity 1.0, Other religions 1.0
+  religion: the five prefectures the tilt moves furthest from the national prior:
+      Okinawa Prefecture       9.9 points  Buddhism 22.0, Shinto 9.0, Christianity 5.0, Other religions 0.8  (held at the bound: Shinto, Christianity)
+      Kyoto Prefecture         6.9 points  Buddhism 25.1, Shinto 9.0, Christianity 0.7, Other religions 1.9  (held at the bound: Shinto)
+      Nagano                   5.9 points  Buddhism 26.1, Shinto 9.0, Christianity 0.8, Other religions 0.8  (held at the bound: Shinto)
+      Miyagi                   5.4 points  Buddhism 26.9, Shinto 8.4, Christianity 0.8, Other religions 0.6
+      Yamanashi                5.2 points  Buddhism 27.3, Shinto 8.2, Christianity 0.6, Other religions 0.6
+  religion: 3 prefectures hit a bound: Okinawa Prefecture, Kyoto Prefecture, Nagano
+  wrote data/processed/japan_prefecture.json (394 kB)
