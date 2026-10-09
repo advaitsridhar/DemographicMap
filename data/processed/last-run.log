@@ -1,20 +1,2 @@
-== https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx
-  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 2,681,931 bytes
-  -- 'Table 8a'
-       1: 'Table 8a. Total population by sex, Samo
-       3: 'Place of residence' | 'Total' |  |  | 'YES BORN IN SAMOA WITH CITIZEN PARENT(S |  |  | 'YES BORN ABROAD OF SAMOA WITH CITIZEN P |  |  | 'YES SAMOA  CITIZEN BY NATURALISATION' |  |  | 'NO NOT A CITIZEN OF SAMOA'
-       4:  | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE'
-       5: 'Samoa' | 205557 | 104853 | 100704 | 200508 | 102245 | 98263 | 3127 | 1572 | 1555 | 704 | 364 | 340 | 1218 | 672 | 546
-       6: '    Apia Urban Area' | 35974 | 17990 | 17984 | 34188 | 17067 | 17121 | 919 | 470 | 449 | 322 | 157 | 165 | 545 | 296 | 249
-       7: '        Vaimauga 2' | 5721 | 2857 | 2864 | 5454 | 2717 | 2737 | 201 | 100 | 101 | 29 | 18 | 11 | 37 | 22 | 15
-       8: '            Moataa' | 1420 | 715 | 705 | 1383 | 691 | 692 | 27 | 16 | 11 | 8 | 6 | 2 | 2 | 2 | 0
-       9: '            Vaivase Tai' | 824 | 422 | 402 | 755 | 387 | 368 | 53 | 25 | 28 | 8 | 5 | 3 | 8 | 5 | 3
-  -- 'Table8b'
-       1: 'Table 8a. Non citizen  population by se
-       3: 'Place of residence' | 'Total' |  |  | 'WORK (INCL. RELATIVES)' |  |  | 'RUN A BUSINESS (INCL. RELATIVES)' |  |  | 'STUDY (INCL RELATIVES)' |  |  | 'MISSIONARY (INCLU RELATIVES)' |  |  | 'MEDICAL PURPOSES' |  |  | 'MARRIED TO A SAMOAN CITIZEN' |  |  | 'OTHER REASONS'
-       4:  | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE'
-       5: 'Samoa' | 1218 | 672 | 546 | 310 | 167 | 143 | 65 | 44 | 21 | 189 | 107 | 82 | 43 | 25 | 18 | 21 | 7 | 14 | 239 | 127 | 112 | 351 | 195 | 156
-       6: '    Apia Urban Area' | 545 | 296 | 249 | 176 | 88 | 88 | 19 | 13 | 6 | 112 | 61 | 51 | 11 | 7 | 4 | 13 | 5 | 8 | 85 | 46 | 39 | 129 | 76 | 53
-       7: '        Vaimauga 2' | 37 | 22 | 15 | 9 | 6 | 3 | 2 | 1 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 10 | 6 | 4 | 14 | 8 | 6
-       8: '            Moataa' | 2 | 2 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0
-       9: '            Vaivase Tai' | 8 | 5 | 3 | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 4 | 2 | 2
+usage: oceania_probe.py [-h] {flows,struct,data,get,xlsx,csv,pages,clean} ...
+oceania_probe.py: error: unrecognized arguments: ]*(?:2016|ensus|able)[^ ]*)
