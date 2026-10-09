@@ -114,20 +114,39 @@ class Estimates(unittest.TestCase):
         self.assertEqual(paghman["sex_ratio"]["value"], round(100 * 990 / 900, 1))
         self.assertNotIn("AFG-EST-0103", records)
         self.assertEqual(records["AFG-EST-0101"]["population"]["value"], 12300)
-        self.assertIn("1979", records["AFG-EST-0101"]["median_age"]["note"])
+        self.assertEqual(records["AFG-EST-0101"]["median_age"], {"status": "not_available"})
 
     def test_median_age_is_left_to_the_survey_file_where_its_report_is_read(self):
-        # Kapisa (02) and Parwan (03) have their survey reports read, so this
-        # file leaves the field bare there, Mahmudi Raqi (Kapisa's, drawn in
-        # Parwan) included; Kabul's report is archived cut off, and says so.
+        # Kabul (01), Kapisa (02) and Parwan (03) were all surveyed and their
+        # reports are read, so this file leaves the field bare there, Mahmudi
+        # Raqi (Kapisa's, drawn in Parwan) included.
         rows, settled = sheet()
         records = self.build(rows, settled)
-        for key in ("AFG-EST-02", "AFG-EST-03", "AFG-EST-0201", "AFG-EST-0302"):
+        for key in ("AFG-EST-01", "AFG-EST-0101", "AFG-EST-02", "AFG-EST-03",
+                    "AFG-EST-0201", "AFG-EST-0302"):
             self.assertEqual(records[key]["median_age"], {"status": "not_available"}, key)
-        for key in ("AFG-EST-01", "AFG-EST-0101", "AFG-EST-0102"):
+
+    def test_elsewhere_the_median_age_says_why_there_is_none(self):
+        # Kabul's block recast as Helmand's (30), a province the survey never
+        # reached.
+        iso = {"30": "AF-HEL", "02": "AF-KAP", "03": "AF-PAR"}
+        crosswalk = {"Helmand": {"Kabul": "3001", "Paghman": "3002"},
+                     "Kapisa": CROSSWALK["Kapisa"], "Parwan": CROSSWALK["Parwan"]}
+        with mock.patch.dict(NAMES, {"30": "Helmand"}):
+            rows, settled = sheet({"30": ROWS["01"], "02": ROWS["02"], "03": ROWS["03"]})
+            units1 = [{"id": f"P{code}", "name": NAMES[code], "iso_3166_2": iso[code]}
+                      for code in iso]
+            pid = {NAMES[code]: f"P{code}" for code in iso}
+        units2 = [{"id": f"D{key}", "name": label, "parent": pid[province]}
+                  for province, districts in crosswalk.items()
+                  for label, key in districts.items()]
+        with patched(settled, PROVINCE_ISO=iso, CROSSWALK=crosswalk,
+                     TEMPORARY_PARENT={"3003": "3002"}):
+            records = by_id(ae.build(rows, units1, units2))
+        for key in ("AFG-EST-30", "AFG-EST-3001", "AFG-EST-3002"):
             note = records[key]["median_age"]["note"]
-            self.assertIn("Socio-Demographic and Economic Survey of Kabul (2013)", note)
-            self.assertIn("1 MiB", note)
+            self.assertIn("twelve provinces between 2011 and 2016", note, key)
+            self.assertIn("1979", note, key)
 
     def test_a_province_the_survey_never_reached_says_so(self):
         from scripts.fetch_census.afghanistan_sdes import age_gap

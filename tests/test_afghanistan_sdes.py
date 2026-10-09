@@ -49,17 +49,20 @@ class TableThree(unittest.TestCase):
         untitled = PAGE.replace("Median Age in Years of Population by District", "Ages")
         self.assertEqual(sd.table_rows([untitled], BALKH), {})
 
-    def test_the_table_ends_at_the_first_line_that_is_not_a_row(self):
-        cut = PAGE.replace("Balkh 16.1 16.0 16.3\n", "Note: see Appendix A1.\n"
-                           "Balkh 16.1 16.0 16.3\n")
+    def test_lines_between_rows_are_passed_over_and_the_next_table_ends_it(self):
+        noted = PAGE.replace("Balkh 16.1 16.0 16.3\n", "Note: see Appendix A1.\n"
+                             "Balkh 16.1 16.0 16.3\n")
+        self.assertEqual(len(sd.table_rows([noted], BALKH)), 4)
+        cut = PAGE.replace("Balkh 16.1 16.0 16.3\n", "Table 4. Percent Distribution of "
+                           "Population by Age Group\nBalkh 16.1 16.0 16.3\n")
         found = sd.table_rows([cut], BALKH)
         self.assertEqual(set(found), {"21", "2101"})
         with self.assertRaises(SystemExit):
             sd.check(BALKH, found)
 
     def test_a_row_read_twice_stops_the_run(self):
-        twice = PAGE.replace("Char Bolak 15.7 15.6 15.7\n",
-                             "Char Bolak 15.7 15.6 15.7\nChar Bolak 15.9 15.6 16.0\n")
+        twice = PAGE.replace("Mazar-E-Sharif 17.8 17.7 17.9\n",
+                             "Mazar-E-Sharif 17.8 17.7 17.9\nMazar-E-Sharif 17.9 17.7 18.0\n")
         with self.assertRaises(SystemExit):
             sd.table_rows([twice], BALKH)
 
@@ -177,16 +180,112 @@ class Build(unittest.TestCase):
 
 
 class Coverage(unittest.TestCase):
-    def test_reports_and_surveyed_provinces_agree(self):
-        self.assertEqual(len(sd.SURVEYED), 12)
-        self.assertTrue(sd.READ <= set(sd.SURVEYED))
-        self.assertEqual(sd.READ | sd.UNREAD, set(sd.SURVEYED))
-        self.assertFalse(sd.READ & sd.UNREAD)
+    def test_the_twelve_reports_are_consistent_with_themselves(self):
+        self.assertEqual(len(sd.REPORTS), 12)
+        self.assertEqual(len(sd.READ), 12)
         for report in sd.REPORTS:
-            self.assertTrue(all(code[:2] == report.province or report.province == "02"
-                                for code in report.rows.values()), report.name)
+            self.assertTrue(all(code[:2] == report.province for code in report.rows.values()),
+                            report.name)
             self.assertEqual(report.whole, not report.coverage, report.name)
             self.assertEqual(len(set(report.rows.values())), len(report.rows), report.name)
+            self.assertEqual(len({sd.fold(label) for label in report.rows}), len(report.rows),
+                             report.name)
+            self.assertTrue(report.url.startswith("https://web.archive.org/web/"), report.name)
+
+
+KABUL = sd.Report("01", "Kabul", "https://example.org/kabul.pdf", "December 2013", 2013,
+                  {"Kabul City": "0101", "Paghman": "0102", "Surubi": "0115"},
+                  whole=True, box=17.7)
+
+
+def cid(text: str) -> str:
+    """Text as a font with no character map prints it."""
+    return "".join(f"(cid:{ord(c) - 29})" for c in text)
+
+
+class Glyphs(unittest.TestCase):
+    def test_glyph_numbers_are_read_as_the_characters_they_are(self):
+        self.assertEqual(sd.decode(cid("Kabul City") + " " + cid("18.1")), "Kabul City 18.1")
+        self.assertEqual(sd.decode("(cid:1)(cid:200)"), "(cid:1)(cid:200)")
+
+    def test_a_table_set_partly_in_glyph_numbers_is_read_and_checked(self):
+        page = "\n".join([
+            "Table 3. Median Age in Years of the Population by District:",
+            "Kabul, December 2013",
+            "Province/District Both Sexes Male Female",
+            "Kabul 17.7 17.9 17.5",
+            f"{cid('Kabul City')} {cid('18.1')} {cid('18.3')} 17.9",
+            f"{cid('Paghman')} {cid('16.5')} {cid('16.9')} {cid('16.1')}",
+            f"{cid('Surubi')} {cid('14.5')} {cid('14.9')} {cid('14.1')}",
+        ])
+        found = sd.table_rows([page], KABUL)
+        self.assertEqual(found, {"01": (17.7, 17.9, 17.5), "0101": (18.1, 18.3, 17.9),
+                                 "0102": (16.5, 16.9, 16.1), "0115": (14.5, 14.9, 14.1)})
+        sd.check(KABUL, found)
+        with self.assertRaises(SystemExit):
+            sd.check(KABUL._replace(box=17.6), found)
+
+
+GHOR = sd.Report("23", "Ghor", "https://example.org/ghor.pdf", "September 2012", 2012,
+                 {"Chighcheran": "2301", "Pasaband": "2305", "Lal Wa Sarjangal": "2307"},
+                 whole=True, box=16.3, table="5", whole_years=True)
+
+
+class WholeYears(unittest.TestCase):
+    PAGE = "\n".join([
+        "GHOR",
+        "TABLE 5. Median Age in Years of the Population by District: Ghor,",
+        "September 2012",
+        "District Both Sexes Male Female",
+        "Ghor 16 17 16",
+        "Chighcheran 15 15 14",
+        "Pasaband 18 19 16",
+        "Lal Wa Sarjangal 16 16 16",
+        "The proportion of the population under age 15 also provides an indication as to",
+    ])
+
+    def test_a_table_in_whole_years_is_read_as_printed(self):
+        found = sd.table_rows([self.PAGE], GHOR)
+        self.assertEqual(found, {"23": (16.0, 17.0, 16.0), "2301": (15.0, 15.0, 14.0),
+                                 "2305": (18.0, 19.0, 16.0), "2307": (16.0, 16.0, 16.0)})
+        sd.check(GHOR, found)       # 16 against the later reports' 16.3
+        self.assertIn("The table prints whole years.",
+                      sd.value_note(GHOR, found["2305"], "Pasaband district"))
+        self.assertIn("Table 5 prints 18 years", sd.value_note(GHOR, found["2305"], "x"))
+
+    def test_decimals_are_not_read_where_whole_years_are_expected(self):
+        self.assertEqual(sd.table_rows([self.PAGE.replace("Ghor 16 17 16", "Ghor 16.3")],
+                                       GHOR), {})
+
+
+SAMANGAN = sd.Report("20", "Samangan", "https://example.org/samangan.pdf", "April 2015", 2015,
+                     {"Aybak": "2001", "Hazrat-e-Sultan": "2002", "Roi-Do-Ab": "2005",
+                      "Dara-e-Soof-e-Bala": "2007"},
+                     whole=True, box=17.5)
+
+
+class Spread(unittest.TestCase):
+    def test_a_pyramid_set_beside_the_table_does_not_end_it(self):
+        page = "\n".join([
+            "Table 3. Median Age in Years of the Population by District:",
+            "Samangan, April 2015",
+            "Province/District Both Sexes Male Female",
+            "+80",
+            "79-75 Samangan 17.5 17.7 17.3",
+            "74-70",
+            "Female Male",
+            "69-65 Aybak 17.4 17.4 17.5",
+            "64-60",
+            "59-55 Hazrat-e-Sultan 16.9 17.1 16.8",
+            "29-25 Roi-Do-Ab 16.8 17.0 16.6",
+            "9-5 Dara-e-Soof-e-Bala 18.0 18.7 17.3",
+            "Table 4. Percentage Distribution of Population by Age Group",
+            "Samangan 100.0 44.0 53.0 3.0 6.8",
+        ])
+        found = sd.table_rows([page], SAMANGAN)
+        self.assertEqual(set(found), {"20", "2001", "2002", "2005", "2007"})
+        self.assertEqual(found["2002"], (16.9, 17.1, 16.8))
+        sd.check(SAMANGAN, found)
 
 
 if __name__ == "__main__":
