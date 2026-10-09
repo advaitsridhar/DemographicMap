@@ -1,4 +1,51 @@
-  reading data/raw/singapore/M810771.json
-  5 planning regions, reference period 2025
-  5 regions, 4,204,520 residents in 2025
-  wrote data/processed/singapore_region.json (13 kB)
+abs: 2021 Census, LGA
+  1227 dataflows in the ABS catalogue
+  dataflows containing G14: C21_G14_CED, C21_G14_LGA, C21_G14_POA, C21_G14_RA, C21_G14_SA2, C21_G14_SAL, C21_G14_SED, C21_G14_SUA, C21_G14_UCL
+  dataflows containing G08: C21_G08_CED, C21_G08_LGA, C21_G08_POA, C21_G08_RA, C21_G08_SA2, C21_G08_SAL, C21_G08_SED, C21_G08_SUA, C21_G08_UCL
+  dataflows containing G13: C21_G13_CED, C21_G13_LGA, C21_G13_POA, C21_G13_RA, C21_G13_SA2, C21_G13_SAL, C21_G13_SED, C21_G13_SUA, C21_G13_UCL
+  religion: dataflow ABS,C21_G14_LGA,1.0.0
+  ancestry: dataflow ABS,C21_G08_LGA,1.0.0
+  language: dataflow ABS,C21_G13_LGA,1.0.0
+  religion rows 57630, ancestry rows 111870, language rows 394935
+  dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
+  using region='STATE' religion='RELP' ancestry='ANCP' language='LANP'
+  restricted SEXP='Persons' so the sexes are not counted twice
+  outermost level chosen by code tree for 9 regions
+  restricted BPPP='Total responses' so its categories are not summed
+  outermost level chosen by suffix (nothing summed to the total) for 9 regions
+  ! suffix (nothing summed to the total): ANCP for region 3; published total 5156158.0
+            '_T'     5,156,158  Total
+          '2101'     1,959,864  English
+          '1101'     1,724,651  Australian
+          '2201'       567,938  Irish
+            '_O'       565,027  Other
+          '2102'       526,983  Scottish
+            '_N'       354,209  Not stated
+          '2306'       309,715  German
+          '1102'       205,947  Australian Aboriginal
+          '6101'       160,077  Chinese
+          '3103'       152,552  Italian
+          '7106'        93,611  Indian
+          '2303'        80,838  Dutch
+          '5201'        73,826  Filipino
+          '1202'        67,263  New Zealander
+          '1201'        64,995  Maori
+          '1504'        35,239  Samoan
+          '9215'        35,234  South African
+          '2103'        34,668  Welsh
+          '5107'        33,840  Vietnamese
+          '2305'        33,139  French
+          '3307'        32,832  Polish
+          '3205'        32,721  Greek
+          '3106'        25,699  Spanish
+          '6902'        25,368  Korean
+          '3104'        22,107  Maltese
+          '3308'        17,583  Russian
+          '3204'        16,782  Croatian
+  restricted SEXP='Persons' so the sexes are not counted twice
+  restricted ENGLP='Total' so its categories are not summed
+  outermost level chosen by code tree less a duplicated parent for 9 regions
+  population from the religion table's own total for 9 of 9 regions; they sum to 25,422,828
+  sanity: largest religion category is 47.6% of the sample region's total across 8 categories
+  wrote data/processed/australia_state.json (72 kB)
+  9 records
