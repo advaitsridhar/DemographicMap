@@ -26,7 +26,11 @@ What this writes, and only this:
   in Parwan, Mata Khan in Paktia rather than Paktika, ...), and the map's own
   province polygons hold the points of five more districts than the ones
   they are linked to (``POINT_ELSEWHERE``). For those 12 the office's total
-  is not the polygon's, and the note says which districts differ.
+  is not the polygon's, and the note says which districts differ. Five of
+  them -- Parwan, Ghazni, Samangan, Zabul and Kandahar -- differ only by the
+  links, every district point inside them being linked to them and no other,
+  so the polygon is the districts drawn in it and takes their summed rows
+  (``drawn_sums``); the seven a point falls across are not written.
 
 Ages are published for the nation alone (the same release's "گروپ سنین"
 workbook has no province or district rows), so the median age is a stated
@@ -857,15 +861,78 @@ def drawn_apart(units1: list[dict[str, Any]], units2: list[dict[str, Any]]
     return apart, counted_in
 
 
-def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, Any]],
-                     apart: dict[str, list[str]]) -> list[dict[str, Any]]:
+def drawn_sums(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any]],
+               units2: list[dict[str, Any]]) -> dict[str, tuple[int, int, list[str]] | str]:
+    """Province code -> the office's females and males summed over the districts
+    the boundary file draws in it, with their names; or why that sum is not the
+    polygon's.
+
+    The sum stands for a province only where the drawn districts are the
+    polygon: no district point in it is linked elsewhere and none linked to it
+    has its point elsewhere (``POINT_ELSEWHERE``), and no district drawn in it
+    is one whose own count is refused (``SHIFTED``). Each district's figures
+    are its own row's plus its temporary districts', as on its own record;
+    both sexes are taken as females plus males, which is what every province's
+    Total row prints, a misprinted row's head count included (``MISPRINTED``).
+    """
     provinces = province_units(units1)
+    code_of_label = {u["name"]: c for c, u in provinces.items()}
+    touched = {code_of_label[p] for linked, holding in POINT_ELSEWHERE.values()
+               for p in (linked, holding)}
+    children: dict[str, list[str]] = {}
+    for temp, parent in TEMPORARY_PARENT.items():
+        children.setdefault(parent, []).append(temp)
+    out: dict[str, tuple[int, int, list[str]] | str] = {}
+    for unit, province, key in drawn_districts(units1, units2):
+        code = code_of_label[province]
+        if code in touched:
+            out[code] = "touched"
+            continue
+        if key in SHIFTED:
+            out[code] = f"refused:{shown(unit)}"
+            continue
+        if isinstance(out.get(code), str):
+            continue
+        parts = [rows[key]] + [rows[t] for t in children.get(key, ())]
+        female = sum(sexes(p)[0] for p in parts)
+        male = sum(sexes(p)[1] for p in parts)
+        f, m, names = out.get(code, (0, 0, []))
+        out[code] = (f + female, m + male, [*names, shown(unit)])
+    return out
+
+
+def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, Any]],
+                     apart: dict[str, list[str]],
+                     sums: dict[str, tuple[int, int, list[str]] | str] | None = None
+                     ) -> list[dict[str, Any]]:
+    provinces = province_units(units1)
+    sums = sums or {}
     out = []
     for code, block in sorted(placed.items()):
         unit = provinces[code]
         female, male, both = block["total"][6:9]
         fields: dict[str, Any]
-        if code in apart:
+        summed = sums.get(code)
+        if code in apart and isinstance(summed, tuple):
+            # Drawn otherwise than the office counts it, but drawn whole out of
+            # districts that each carry their own row: the polygon is their sum.
+            f, m, names = summed
+            listed = ", ".join(sorted(names))
+            said = (f"The statistics office's 1396 (2017-18) estimates of the settled "
+                    f"population summed over the {len(names)} districts the boundary "
+                    f"file draws in this province ({listed}): {f + m:,} ({m:,} males, "
+                    f"{f:,} females). The office's own total for the province, "
+                    f"{both:,}, is not this polygon's -- {'; '.join(apart[code])}. "
+                    f"Afghanistan has had no census since 1979, and the {NOMADS:,} "
+                    f"Kuchi nomads the office counts nationally are in no province.")
+            fields = {
+                "population": measure(f + m, year=YEAR, source=SOURCE),
+                "population_note": said,
+                "sex_ratio": measure(males_per_100(m, f), unit="males_per_100_females",
+                                     year=YEAR, source=SOURCE),
+                "sex_ratio_note": (f"1396 estimate, summed over the districts drawn "
+                                   f"here: {m:,} males against {f:,} females.")}
+        elif code in apart:
             reason = (f"Not written: the boundary file does not draw {shown(unit)} as the "
                       f"statistics office counts it -- {'; '.join(apart[code])} -- so the "
                       f"office's 1396 estimate for the province ({both:,} settled people, "
@@ -980,11 +1047,14 @@ def build(rows_: list[list[Any]], units1: list[dict[str, Any]],
     placed = provinces_of(summary, blocks)
     rows = district_rows(placed)
     apart, counted_in = drawn_apart(units1, units2)
-    provinces = province_records(placed, units1, apart)
+    sums = drawn_sums(rows, units1, units2)
+    provinces = province_records(placed, units1, apart, sums)
     districts, tally = district_records(rows, units1, units2, counted_in)
-    log(f"    {len(provinces) - len(apart)} provinces written and {len(apart)} not, drawn "
-        f"otherwise than the office counts them; {tally['written']} districts written, "
-        f"{tally['refused']} refused with their reason")
+    summed = sorted(code for code in apart if isinstance(sums.get(code), tuple))
+    log(f"    {len(provinces) - len(apart)} provinces written as the office counts them, "
+        f"{len(summed)} drawn otherwise written as the sum of the districts drawn in "
+        f"them ({', '.join(summed)}), {len(apart) - len(summed)} not; "
+        f"{tally['written']} districts written, {tally['refused']} refused with their reason")
     return provinces + districts
 
 

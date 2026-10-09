@@ -124,9 +124,31 @@ class Estimates(unittest.TestCase):
         self.assertIn("Kuchi", kabul["population_note"])
         self.assertEqual(kabul["sex_ratio"]["unit"], "males_per_100_females")
 
-    def test_provinces_drawn_otherwise_are_refused_and_say_why(self):
+    def test_provinces_drawn_otherwise_take_their_drawn_districts_sum(self):
+        # Kapisa is drawn with Koh Band, Tagab and Shutul (counted in Parwan)
+        # and without Mahmudi Raqi: the polygon is those three districts.
         rows, settled = sheet()
         records = self.build(rows, settled)
+        kapisa = records["AFG-EST-02"]
+        females, males = 300 + 600 + 150, 310 + 640 + 160
+        self.assertEqual(kapisa["population"]["value"], females + males)
+        self.assertEqual(kapisa["sex_ratio"]["value"], round(100 * males / females, 1))
+        self.assertIn("summed over the 3 districts", kapisa["population_note"])
+        self.assertIn("Mahmudi Raqi, which the office counts here, is drawn in Parwan",
+                      kapisa["population_note"])
+
+    def test_a_province_drawn_with_a_refused_district_is_refused_and_says_why(self):
+        # Parwan is drawn with Salang, whose own count is refused (SHIFTED).
+        rows, settled = sheet()
+        parwan = self.build(rows, settled)["AFG-EST-03"]
+        self.assertNotIn("value", parwan["population"])
+        self.assertNotIn("value", parwan["sex_ratio"])
+        self.assertIn("Shutul, which the office counts here, is drawn in Kapisa",
+                      parwan["population"]["note"])
+
+    def test_provinces_drawn_otherwise_are_refused_and_say_why(self):
+        rows, settled = sheet()
+        records = self.build(rows, settled, POINT_ELSEWHERE={"0202": ("Kapisa", "Parwan")})
         kapisa, parwan = records["AFG-EST-02"], records["AFG-EST-03"]
         for province in (kapisa, parwan):
             self.assertNotIn("value", province["population"])
