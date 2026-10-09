@@ -1,4 +1,18 @@
-samoa_census: 2021 Census Tables 1 and 2, by the 2016 Census's villages
-  https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx: 2,681,931 bytes
-  https://www.sbs.gov.ws/digi/2-2016%20Census%20Brief%20No.1%20Tables.xlsx: 106,868 bytes
-samoa_census: Table 1's single years against the Final Report's median ages (printed in brackets) disagree by more than 0.8 years at [('Apia Urban Area', 'everyone'), ('Apia Urban Area', 'females'), ('Apia Urban Area', 'males'), ('North West Upolu', 'females'), ('Rural', 'everyone'), ('Rural', 'females'), ('Samoa', 'females'), ('Savaii', 'females')]: Samoa everyone 21.4 (22), males 20.6 (20), females 22.4 (21); Apia Urban Area everyone 23.1 (21), males 22.0 (21), females 24.1 (21); North West Upolu everyone 21.4 (21), males 20.5 (20), females 22.3 (21); Rest of Upolu everyone 20.8 (20), males 20.4 (20), females 21.3 (21); Savaii everyone 20.7 (20), males 19.7 (20), females 21.9 (21); Rural everyone 21.0 (20), males 20.3 (20), females 21.9 (21)
+micronesia_census: 2023 and 2010 census workbooks
+  https://stats.gov.fm/download/18/population-statistics/2210/fsm-basic-tables-2023-population-housing-census.xlsx: 424,592 bytes
+  https://stats.gov.fm/download/18/population-statistics/600/fsm-basic-tables-2010-population-housing-census.xlsx: 2,324,606 bytes
+  https://stats.gov.fm/download/56/yap/2212/yap-basic-tables-2023-population-housing-census.xlsx: 433,736 bytes
+  https://stats.gov.fm/download/54/pohnpei/2216/pni-basic-tables-2023-population-housing-census.xlsx: 423,189 bytes
+  https://stats.gov.fm/download/55/kosrae/2217/ksa-basic-tables-2023-population-housing-census.xlsx: 416,098 bytes
+  https://stats.gov.fm/download/64/states/596/pohnpei-basic-tabulation-2010-census-of-population-and-housing.xlsx: 245,828 bytes
+  https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx: 67,733 bytes
+  https://stats.gov.fm/download/64/states/598/yap-basic-tabulation-2010-census-of-population-and-housing.xlsx: 432,551 bytes
+  https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx: 85,594 bytes
+  2000 Table P1-4: 75 municipalities, 9 regions and 4 states, every sum holding, the country 107,008
+  Yap 2023: municipalities add up to 10,741.0, the state's row 10,739.0
+  Pohnpei 2023: municipalities add up to 26,104.0, the state's row 26,102.0
+  Kosrae 2023: municipalities add up to 5,090.0, the state's row 5,092.0
+  printed medians against their own five-year groups, 57 units: within 0.1 years at most; the widest Malem 2023 24.5 v 24.4, Yap 2023 29.5 v 29.5, Wonei 2010 19.4 v 19.4, Weno 2010 21.5 v 21.5, Weloy 2023 35.3 v 35.3
+  admin1 ethnicity 4, admin1 language 4, admin1 median_age 4, admin1 population 4, admin1 religion 4, admin1 sex_ratio 4, admin2 ethnicity 31, admin2 language 21, admin2 median_age 31, admin2 population 31, admin2 religion 21, admin2 sex_ratio 31
+  wrote data/processed/micronesia_census.json (209 kB)
+  wrote 35 records
