@@ -1,11 +1,20 @@
-kiribati_census: 2020 census counts, the General Report's island tables, and SPC's age and sex tabulation
-  https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx: 190,822 bytes
-  Island Profile: 24 islands adding to 119,438, each sheet agreeing with the summary
-  General Report: Tables G-2, A-10a, A-3b for 24 islands, adding up and agreeing with the Island Profile; medians its own age groups contradict: ['Banaba']
-  2015 volume: Table 6's 24 islands make every column of the country's 110,136, and each is its Table 1a population
-  https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/cb0fd355-5326-4574-a76a-81bae7894991/download/kir_admpop_2020.xlsx: 112,348 bytes
-  no polygon: Makin (1,914 people), counted in the Gilbert Islands
-  admin1 ethnicity 3, admin1 median_age 3, admin1 population 3, admin1 religion 3, admin1 sex_ratio 5, admin2 ethnicity 23, admin2 median_age 44, admin2 population 23, admin2 religion 23, admin2 sex_ratio 45
-  wrote data/processed/kiribati_census.json (144 kB)
-  wrote data/processed/kiribati_codps_age.json (56 kB)
-  wrote 26 + 26 records
+== https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 2,681,931 bytes
+  -- 'Table 8a'
+       1: 'Table 8a. Total population by sex, Samo
+       3: 'Place of residence' | 'Total' |  |  | 'YES BORN IN SAMOA WITH CITIZEN PARENT(S |  |  | 'YES BORN ABROAD OF SAMOA WITH CITIZEN P |  |  | 'YES SAMOA  CITIZEN BY NATURALISATION' |  |  | 'NO NOT A CITIZEN OF SAMOA'
+       4:  | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE'
+       5: 'Samoa' | 205557 | 104853 | 100704 | 200508 | 102245 | 98263 | 3127 | 1572 | 1555 | 704 | 364 | 340 | 1218 | 672 | 546
+       6: '    Apia Urban Area' | 35974 | 17990 | 17984 | 34188 | 17067 | 17121 | 919 | 470 | 449 | 322 | 157 | 165 | 545 | 296 | 249
+       7: '        Vaimauga 2' | 5721 | 2857 | 2864 | 5454 | 2717 | 2737 | 201 | 100 | 101 | 29 | 18 | 11 | 37 | 22 | 15
+       8: '            Moataa' | 1420 | 715 | 705 | 1383 | 691 | 692 | 27 | 16 | 11 | 8 | 6 | 2 | 2 | 2 | 0
+       9: '            Vaivase Tai' | 824 | 422 | 402 | 755 | 387 | 368 | 53 | 25 | 28 | 8 | 5 | 3 | 8 | 5 | 3
+  -- 'Table8b'
+       1: 'Table 8a. Non citizen  population by se
+       3: 'Place of residence' | 'Total' |  |  | 'WORK (INCL. RELATIVES)' |  |  | 'RUN A BUSINESS (INCL. RELATIVES)' |  |  | 'STUDY (INCL RELATIVES)' |  |  | 'MISSIONARY (INCLU RELATIVES)' |  |  | 'MEDICAL PURPOSES' |  |  | 'MARRIED TO A SAMOAN CITIZEN' |  |  | 'OTHER REASONS'
+       4:  | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE' | 'Total' | 'MALE' | 'FEMALE'
+       5: 'Samoa' | 1218 | 672 | 546 | 310 | 167 | 143 | 65 | 44 | 21 | 189 | 107 | 82 | 43 | 25 | 18 | 21 | 7 | 14 | 239 | 127 | 112 | 351 | 195 | 156
+       6: '    Apia Urban Area' | 545 | 296 | 249 | 176 | 88 | 88 | 19 | 13 | 6 | 112 | 61 | 51 | 11 | 7 | 4 | 13 | 5 | 8 | 85 | 46 | 39 | 129 | 76 | 53
+       7: '        Vaimauga 2' | 37 | 22 | 15 | 9 | 6 | 3 | 2 | 1 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1 | 1 | 0 | 10 | 6 | 4 | 14 | 8 | 6
+       8: '            Moataa' | 2 | 2 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0
+       9: '            Vaivase Tai' | 8 | 5 | 3 | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 4 | 2 | 2
