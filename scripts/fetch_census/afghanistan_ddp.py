@@ -3,7 +3,7 @@
 
 Afghanistan has had no census since the abandoned count of 1979, and no
 official tabulation of ethnicity exists. What does exist, district by district,
-is the *district development plan*: between 2008 and 2014 the Ministry of Rural
+is the *district development plan*: from 2006 the Ministry of Rural
 Rehabilitation and Development's National Area-Based Development Programme
 (NABDP, with UNDP) had each district's development assembly draw one up, and
 published an English summary of each on www.mrrd-nabdp.org. The summary opens
@@ -19,23 +19,34 @@ its district and province, and its profile table the ethnic line, so a plan
 says where it belongs without help from its file name.
 
 **What is written, and only that.** A district whose plan states shares gets
-them, read with the same rules as ``afghanistan.shares``/``usable`` (both
-orders, "Pashtun 70%" and "70% Pashtun"; refused below 55% or above 101.5% in
-all). A share the plan gives two groups together ("10% Turkmen and Hazara") is
-not split -- it is left out of the composition, which then falls short by it,
-and the note quotes the plan's whole line. A plan that names groups without
-shares is logged and not written: turning "majority" into a number would be
-inventing it. These are the provincial authorities' figures as a planning
-summary prints them, not a count, and the note says so.
+them (``plan_shares``): "Pashtun 70%" and "70% Pashtun" alike, under the
+articles' group names (``afghanistan.GROUPS``) and the plans' own spellings
+("Uzbak", "Pashtoon", "Brahawi"), refused below 55% or above 101.5% in all
+(``afghanistan.usable``). A share the plan gives several groups together --
+"10% Turkmen and Hazara", "1% Hazara, Tajik, Arab", "Mughol, Baloch 10%" -- is
+neither split nor handed to one of them: it is left out, the composition falls
+short by it, and the note quotes the plan's whole line. A name this map does
+not know ("Palo", "Habash") is left out the same way. A plan that names groups
+without shares is logged and not written: turning "majority" into a number
+would be inventing it. These are the provincial authorities' figures as a
+planning summary prints them, not a count, and the note says so.
 
 **Which polygon.** A plan's province is read off its cover and mapped to the
 office's province code; its district is then looked for only among the drawn
 districts the office counts in that province (``afghanistan_estimates``'s
 crosswalk), under the drawn name, the office's own spelling in its 1396
 estimates, the provinces' articles' spelling (``afghanistan.DISTRICT_ON_MAP``)
-or a spelling declared here (``SPELLINGS``) -- exactly one, or nothing. Two
-plans for one district (an assembly re-elected and its plan redrawn) leave the
-later one, and say if the earlier differed.
+or a spelling declared here (``SPELLINGS``) -- exactly one, or nothing. "Farah
+Center" is the district of the provincial centre. Two plans for one district
+(an assembly re-elected and its plan redrawn) leave the later one, and say if
+the earlier differed.
+
+**Between runs.** The archive answers the runner slowly and, in bursts, not at
+all: one run had "Connection refused" for 50 of 150 plans. What each plan says
+-- its cover's lines and its ethnic line, not the PDF -- is kept in
+``afghanistan_ddp_plans.json`` beside the output, so a run asks only for the
+plans no run has read yet, and every run's records are built from all of them.
+That file is the reader's memory, not one the build reads.
 
 Usage:
     python -m scripts.fetch_census.afghanistan_ddp --probe
@@ -47,20 +58,25 @@ from __future__ import annotations
 import argparse
 import io
 import re
+import time
 import urllib.parse
 from typing import Any
 
 from ._shared import PROCESSED, http_get, http_json, log, read_json, record, write_json
-from .afghanistan import DISTRICT_ON_MAP, PROVINCE_ON_MAP, shares, usable
+from .afghanistan import AFTER, BEFORE, DISTRICT_ON_MAP, GROUPS, PROVINCE_ON_MAP, usable
 from .south_asia_common import fold, load_units
 
 OUT = "afghanistan_ddp.json"
+READINGS = "afghanistan_ddp_plans.json"
 CDX = "https://web.archive.org/cdx/search/cdx"
 PATTERN = "www.mrrd-nabdp.org/attachments/article/*"
 SOURCE = ("Ministry of Rural Rehabilitation and Development, National Area-Based "
           "Development Programme, summary of the district development plan")
 LICENCE = "Ministry of Rural Rehabilitation and Development publication"
-YEARS = "2008-2014"
+# The covers date the plans 2006-2011; a cover that prints no year gets the range.
+YEARS = "2006-2014"
+# Seconds each worker waits after a request: the archive refuses bursts.
+PAUSE = 2.0
 
 # Province names as the plans' covers may spell them, against the office's
 # province codes; the drawn and the articles' spellings are added at run time.
@@ -81,9 +97,49 @@ PROVINCE_SPELLINGS = {
 }
 # A plan's district spelling that matches no drawn, office or article name in
 # its province: (province code, plan's spelling) -> drawn name. Each was taken
-# from a probe run's leftovers and kept only where one drawn district of that
-# province is plainly the same place.
-SPELLINGS: dict[tuple[str, str], str] = {}
+# from a probe run's leftovers and kept only where exactly one drawn district
+# of that province is plainly the same place. Bost is Lashkar Gah's older
+# name, Kushk-i Robat Sangi the full name of Kushk. Not here, and so unbound:
+# Marja (counted inside Nad Ali, not drawn apart), Shotul (not drawn apart in
+# Panjshir), Mianshin (not drawn in Kandahar), "Dardad" (Darqad, or a misprint
+# of it -- not sure), Nasai, and Gizab, whose cover names no province.
+SPELLINGS: dict[tuple[str, str], str] = {
+    ("30", "BOST"): "Lashkar Gah", ("30", "NAWA"): "Nawa-I- Barak Zayi",
+    ("30", "NAHRI SERAJ"): "Nahri Sarraj", ("30", "DISHO"): "Dishu",
+    ("30", "KHANISHIN"): "Reg(Khanshin)",
+    ("32", "KUSHK ROBAT SANGI"): "Koshk", ("32", "OBEH"): "Obe",
+    ("34", "CHARBORJAK"): "Chahar Burjak", ("34", "CHAKHANSOR"): "Chakhansur",
+    ("27", "NISH"): "Nesh",
+    ("18", "ROSTAQ"): "Rustaq", ("18", "ESHKAMISH"): "Ishkamish",
+    ("18", "KHWAJA GHAAR"): "Khwaja Ghar", ("18", "KHOWAJA BAHAUDDIN"): "Khwaja Bahawuddin",
+    ("18", "CHALL"): "Chal", ("18", "Cha Ab"): "Chah Ab", ("18", "Hazar Somoch"): "Hazar Sumuch",
+    ("33", "Lash Wa Jowani"): "Lash Wa Juwayn", ("33", "KHAKI SAFID"): "Khaki Safed",
+    ("20", "AIBAK"): "Aybak", ("20", "RUYE DU AAB"): "Ruyi Du Ab",
+    ("20", "Khuram Sarbagh"): "Khuram Wa Sarbagh", ("20", "Dari Suf Payan"): "Dara-I-Sufi Payin",
+    ("17", "ISHKASHIM"): "Ishkashiem", ("17", "Faiz Abad"): "Fayzabad",
+    ("17", "SHEGHNAN"): "Shighnan", ("17", "KHOWAHAN"): "Khwahan",
+    ("17", "KERAN WA MENJAN"): "Kuran Wa Munjan",
+    ("29", "KHAN CHARBAGH"): "Khani Chahar Bagh", ("29", "SHERIN TAGAB"): "Shirin Tagab",
+    ("29", "ANDKHUY"): "Andkhoy", ("29", "KHAJA SABZPOSH WALI"): "Khwaja Sabz Posh",
+    ("24", "SANG TAKHT"): "Sangi Takht", ("24", "KIJRAN"): "Kajran",
+    ("24", "ASHTARLI"): "Ishtarlay",
+    ("21", "CHEMTAL"): "Chimtal",
+}
+# A plan whose ethnic line cannot be its own district's, and is not written.
+# Sang Takht's (Daykundi, 2007) reads "50% Pashton, 30% Uzbak, 15% Arab, 1%
+# Tajik, 2% Turkman, 2% Hazara": Uzbek, Arab and Turkmen majorities in a
+# district of the Hazarajat whose neighbours' plans (Nili, Miramor,
+# Ishtarlay) each say 100% Hazara -- a northern district's line carried into
+# its summary. (province code, plan's spelling) -> why.
+NOT_ITS_OWN: dict[tuple[str, str], str] = {
+    ("24", "SANG TAKHT"): "an ethnic line with Uzbek, Arab and Turkmen shares in the "
+                          "Hazarajat, where its neighbours' plans say 100% Hazara",
+}
+# The plans' own spellings of the groups, on top of the articles'. Each was
+# read in a probe run's plans; none is invented.
+PLAN_GROUPS = {**GROUPS, "uzbak": "Uzbek", "uzbaks": "Uzbek", "pashtoon": "Pashtun",
+               "turkeman": "Turkmen", "brahawi": "Brahui",
+               "other ethnicities": "Other", "other ethnic groups": "Other"}
 
 COVER_DISTRICT = re.compile(r"^\s*(?:the\s+)?([A-Za-z][A-Za-z'’.\- ]{1,40}?)\s+DISTRICT\s*$", re.I)
 COVER_PROVINCE = re.compile(r"^\s*([A-Za-z][A-Za-z'’.\- ]{1,30}?)\s+PROVINCE\s*$", re.I)
@@ -95,7 +151,13 @@ ETHNIC = re.compile(r"(?i)\b(?:ethnic(?:ity|al)?(?:\s*(?:diversity|groups?|compo
 NEXT_FIELD = re.compile(r"(?i)^(?:sectoral|number|no\.|average|population|area|literacy|"
                         r"percentage|access|education|health|infrastructure|main|total|"
                         r"language|religion|agricultur|economic|general|livelihood|\d+\.)")
+# A line is carried on to the next only when it stops mid-list ("10% Turkmen
+# and" / "Hazara"). Read any further, the first probe took in page numbers
+# ("100% Pashtun 2"), headings ("Situation Analysis, Development Goals") and
+# the profile's next row ("Needy groups", "Kochi population in winter").
+CONNECTOR = re.compile(r"(?i)(?:[,;&]|\band|\bor|-)\s*$")
 YEAR = re.compile(r"\b(20(?:0[5-9]|1[0-6]))\b")
+CENTRE = re.compile(r"(?i)\b(?:center|centre|central|markaz)\b")
 # The plans' file names as the archive holds them: "Chemtal DDP English
 # Summary.pdf", "Summary of the DDP in English-Bakwa.pdf", "Dawlat Abad Full
 # DDP.pdf", but also "Khost_Tani_Summary_Finalized.pdf", "Kabul_Guldara English
@@ -103,6 +165,10 @@ YEAR = re.compile(r"\b(20(?:0[5-9]|1[0-6]))\b")
 # Summery.pdf", which do not say "DDP" at all.
 PLAN_FILE = re.compile(r"(?i)ddp|summ[ae]ry")
 FULL_PLAN = re.compile(r"(?i)\bfull\b")
+# What a share after a name may not have in front of it, and a share before a
+# name may not have after it: another name with no share of its own -- the
+# share is then theirs together.
+NAME_AFTER = re.compile(r"^\s*(?:,|&|\band\b)\s*[A-Za-z][A-Za-z\- ]*?\s*(?:$|[,;&]|\band\b)")
 
 
 # ---------------------------------------------------------------------------
@@ -116,7 +182,6 @@ def captures(attempts: int = 6, wait: float = 30.0) -> list[tuple[str, str]]:
     time; the query is the same either way, so it is simply asked again, as a
     wildcard and then as a prefix, before the run gives up.
     """
-    import time                                     # noqa: PLC0415
     base = [("output", "json"), ("fl", "timestamp,original,statuscode,mimetype,length"),
             ("filter", "statuscode:200"), ("filter", "mimetype:application/pdf"),
             ("collapse", "urlkey"), ("limit", "100000")]
@@ -137,6 +202,16 @@ def captures(attempts: int = 6, wait: float = 30.0) -> list[tuple[str, str]]:
         log(f"  the archive's index did not answer ({last}); asking again in {wait:.0f}s")
         time.sleep(wait)
     raise SystemExit(f"afghanistan_ddp: the archive's index never answered: {last}")
+
+
+def capture_url(stamp: str, original: str) -> str:
+    return f"https://web.archive.org/web/{stamp}id_/{original}"
+
+
+def still_to_read(found: list[tuple[str, str]], readings: dict[str, dict[str, Any]]
+                  ) -> list[tuple[str, str]]:
+    """The captures no earlier run has an answer for (a failed PDF is an answer)."""
+    return [item for item in found if capture_url(*item) not in readings]
 
 
 def prefer_summaries(found: list[tuple[str, str]]) -> list[tuple[str, str]]:
@@ -182,17 +257,64 @@ def page_texts(blob: bytes, pages: int = 4) -> list[str]:
         return [(page.extract_text() or "") for page in pdf.pages[:pages]]
 
 
+def excerpt(texts: list[str]) -> dict[str, list[str]]:
+    """What reading a plan needs of its pages: the cover's lines and the ethnic line's.
+
+    This, not the PDF, is what is kept between runs (``READINGS``).
+    """
+    cover = [" ".join(line.split()) for line in (texts[0] if texts else "").splitlines()]
+    lines = [" ".join(line.split()) for text in texts for line in text.splitlines()]
+    at = next((i for i, line in enumerate(lines) if ETHNIC.search(line)), None)
+    return {"cover": [line for line in cover if line][:60],
+            "lines": lines[at:at + 5] if at is not None else []}
+
+
+def plan_of(ex: dict[str, list[str]], url: str) -> dict[str, Any]:
+    """What one plan says: its district, province, year and ethnic line."""
+    district = province = None
+    for line in ex.get("cover", []):
+        if district is None and (m := COVER_DISTRICT.match(line)):
+            if not re.search(r"(?i)summary|development|plan|assembly", m.group(1)):
+                district = m.group(1)
+        if province is None and (m := COVER_PROVINCE.match(line)):
+            province = m.group(1)
+    years = [int(y) for line in ex.get("cover", []) for y in YEAR.findall(line)]
+    ethnic = ""
+    lines = ex.get("lines") or []
+    if lines:
+        found = ETHNIC.search(lines[0])
+        rest = lines[0][found.end():].strip() if found else ""
+        follow = lines[1:]
+        # The label alone on its line, the answer on the next.
+        if not rest and follow and follow[0] and not NEXT_FIELD.match(follow[0]):
+            rest, follow = follow[0], follow[1:]
+        for line in follow:
+            if (not CONNECTOR.search(rest) or not line or NEXT_FIELD.match(line)
+                    or len(line) > 60):
+                break
+            rest += " " + line
+        ethnic = rest.strip()
+    return {"district": district or file_label(url), "district_from": "cover" if district
+            else "file name", "province": province, "year": max(years) if years else None,
+            "ethnic": ethnic, "url": url}
+
+
+def read_plan(texts: list[str], url: str) -> dict[str, Any]:
+    return plan_of(excerpt(texts), url)
+
+
 def read_one(stamp: str, original: str, started: float, budget: float
              ) -> tuple[str, list[str] | None, str]:
     """One archived plan's first pages, or None and why."""
-    import time                                     # noqa: PLC0415
-    url = f"https://web.archive.org/web/{stamp}id_/{original}"
+    url = capture_url(stamp, original)
     if time.monotonic() - started > budget:
         return url, None, "not read: the run's time ran out"
     try:
-        blob = http_get(url, binary=True, retries=2, timeout=90)
+        blob = http_get(url, binary=True, retries=1, timeout=90)
     except Exception as err:                        # noqa: BLE001 -- reported
         return url, None, f"{type(err).__name__} {str(err)[:80]}"
+    finally:
+        time.sleep(PAUSE)
     if blob[:4] != b"%PDF":
         return url, None, "not a PDF"
     try:
@@ -201,61 +323,75 @@ def read_one(stamp: str, original: str, started: float, budget: float
         return url, None, f"unreadable PDF ({type(err).__name__})"
 
 
-def read_plans(found: list[tuple[str, str]], workers: int = 3,
-               minutes: float = 33.0) -> tuple[list[dict[str, Any]], int]:
-    """Every plan read, a few at a time, within the runner's time.
+def read_plans(found: list[tuple[str, str]], workers: int = 2, minutes: float = 33.0
+               ) -> tuple[dict[str, dict[str, Any]], int]:
+    """What every plan says that could be fetched, within the runner's time.
 
-    One plan after another took longer than the runner's 45 minutes: the
-    archive answers each in seconds to tens of seconds. Three at once is still
-    a light load on it, and a plan not reached by ``minutes`` is counted and
-    named rather than left to kill the run with everything it had read.
-    Returns the plans and how many were not reached.
+    One plan after another took longer than the runner's 45 minutes, and
+    three at once drew "Connection refused" for a third of them; two at once,
+    each pausing between requests, is the compromise. A capture that is not a
+    readable PDF is remembered as such (it will not become one); one the
+    archive did not answer is not, and the next run asks for it again.
+    Returns {capture URL: excerpt, or {"failed": why}} and how many were not
+    reached for want of time.
     """
-    import time                                     # noqa: PLC0415
     from concurrent.futures import ThreadPoolExecutor  # noqa: PLC0415
     started = time.monotonic()
-    plans: list[dict[str, Any]] = []
+    out: dict[str, dict[str, Any]] = {}
     unread = 0
     with ThreadPoolExecutor(max_workers=workers) as pool:
         jobs = pool.map(lambda item: read_one(*item, started, minutes * 60), found)
         for n, (url, texts, why) in enumerate(jobs, 1):
-            if texts is None:
-                unread += why.startswith("not read")
-                log(f"  !! {url}: {why}")
+            if texts is not None:
+                out[url] = excerpt(texts)
             else:
-                plans.append(read_plan(texts, url))
+                log(f"  !! {url}: {why}")
+                if why.startswith("not read"):
+                    unread += 1
+                elif why == "not a PDF" or why.startswith(("unreadable PDF", "HTTPError")):
+                    out[url] = {"failed": why}
             if n % 25 == 0:
-                log(f"  {n}/{len(found)} plans fetched, {(time.monotonic() - started) / 60:.1f} min")
-    return plans, unread
+                log(f"  {n}/{len(found)} plans asked for, {(time.monotonic() - started) / 60:.1f} min")
+    return out, unread
 
 
-def read_plan(texts: list[str], url: str) -> dict[str, Any]:
-    """What one plan says: its district, province, year and ethnic line."""
-    cover = [" ".join(line.split()) for line in (texts[0] if texts else "").splitlines()]
-    district = province = None
-    for line in cover:
-        if district is None and (m := COVER_DISTRICT.match(line)):
-            if not re.search(r"(?i)summary|development|plan|assembly", m.group(1)):
-                district = m.group(1)
-        if province is None and (m := COVER_PROVINCE.match(line)):
-            province = m.group(1)
-    years = [int(y) for line in cover for y in YEAR.findall(line)]
-    ethnic = ""
-    lines = [" ".join(line.split()) for text in texts for line in text.splitlines()]
-    for i, line in enumerate(lines):
-        found = ETHNIC.search(line)
-        if not found:
-            continue
-        rest = line[found.end():].strip()
-        for follow in lines[i + 1:i + 4]:
-            if not follow or NEXT_FIELD.match(follow) or len(follow) > 60:
-                break
-            rest += " " + follow
-        ethnic = rest.strip()
-        break
-    return {"district": district or file_label(url), "district_from": "cover" if district
-            else "file name", "province": province, "year": max(years) if years else None,
-            "ethnic": ethnic, "url": url}
+# ---------------------------------------------------------------------------
+# The shares
+# ---------------------------------------------------------------------------
+
+def group_of(name: str) -> str | None:
+    return PLAN_GROUPS.get(" ".join(name.lower().split()).strip(" -"))
+
+
+def bare_name_before(head: str) -> bool:
+    """Whether a name with no share of its own stands just before, a comma apart."""
+    head = head.rstrip()
+    if not head.endswith(","):
+        return False
+    last = re.split(r"[,;&]|\band\b", head[:-1])[-1]
+    return bool(re.search(r"[A-Za-z]", last)) and not re.search(r"[\d%]", last)
+
+
+def plan_shares(text: str) -> list[dict[str, Any]]:
+    """The groups a plan's ethnic line gives a share of their own, in its order."""
+    # "Pashtun 34 % and Tajik 22%", "95% Pashtun and 5% Tajik": the "and"
+    # joins two shares, not two groups.
+    text = re.sub(r"%\s*(?:and|&)\s+", "%, ", text)
+    text = re.sub(r"(\d\s*%\s*[A-Za-z][A-Za-z\- ]*?)\s+(?:and|&)\s+(?=\d)", r"\1, ", text)
+    # "..., Pashtun, 5%" closing the list: the share is that name's.
+    text = re.sub(r"([A-Za-z])\s*,\s*(\d{1,3}(?:\.\d+)?\s*%)\s*(?=$|[,;])", r"\1 \2", text)
+    found: dict[str, float] = {}
+    for pattern, gi, pi in ((AFTER, 1, 2), (BEFORE, 2, 1)):
+        for m in pattern.finditer(text):
+            name = group_of(m.group(gi))
+            if not name:
+                continue
+            if pattern is AFTER and bare_name_before(text[:m.start()]):
+                continue
+            if pattern is BEFORE and NAME_AFTER.match(text[m.end():]):
+                continue
+            found.setdefault(name, float(m.group(pi)))
+    return [{"group": g, "pct": p} for g, p in found.items()]
 
 
 # ---------------------------------------------------------------------------
@@ -315,10 +451,8 @@ def bind_plan(plan: dict[str, Any], codes: dict[str, str],
         code = article_province.get(article_of(plan["url"]))
         if code is None:
             return None, f"no province read from its cover ({plan['province']!r})"
-    wanted = {fold(label)}
-    # "Farah Center", "Bamyan Centre": the district that holds the provincial centre.
-    wanted.add(fold(re.sub(r"(?i)\b(?:center|centre|markaz)\b", " ", label)))
-    declared = SPELLINGS.get((code, label))
+    wanted = {fold(label), fold(CENTRE.sub(" ", label))}
+    declared = {fold(k[1]): v for k, v in SPELLINGS.items() if k[0] == code}.get(fold(label))
     if declared:
         wanted.add(fold(declared))
     wanted.discard("")
@@ -341,19 +475,19 @@ def note(plan: dict[str, Any], province: str) -> str:
             f"district, {province} province -- the Ministry of Rural Rehabilitation "
             f"and Development's National Area-Based Development Programme -- whose "
             f"district profile gives the ethnic diversity as \"{plan['ethnic']}\". "
-            f"The profile is the provincial authorities' secondary information, "
-            f"reviewed by the district's development assembly: a planning estimate, "
-            f"not a count. Afghanistan has had no census since 1979, and no office "
-            f"tabulates ethnicity.")
+            f"Shares the plan gives several groups together, and names this map "
+            f"does not know, are left out rather than divided. The profile is the "
+            f"provincial authorities' secondary information, reviewed by the "
+            f"district's development assembly: a planning estimate, not a count. "
+            f"Afghanistan has had no census since 1979, and no office tabulates "
+            f"ethnicity.")
 
 
 def build(plans: list[dict[str, Any]], units1: list[dict[str, Any]],
           units2: list[dict[str, Any]], office: dict[str, str] | None = None,
           probe: bool = False) -> list[dict[str, Any]]:
-    from .afghanistan_estimates import province_units   # noqa: PLC0415
     codes = province_codes(units1)
     districts = district_names(units1, units2, office)
-    provinces = province_units(units1)
     # An article folder holds one province's plans: where a cover names no
     # province, the folder's other plans do.
     votes: dict[str, dict[str, int]] = {}
@@ -369,14 +503,21 @@ def build(plans: list[dict[str, Any]], units1: list[dict[str, Any]],
     tally = {"plans": len(plans), "bound": 0, "shares": 0, "names only": 0, "refused": 0}
     for plan in plans:
         unit, why = bind_plan(plan, codes, districts, article_province)
-        parts = shares(plan["ethnic"]) if plan["ethnic"] else []
+        parts = plan_shares(plan["ethnic"]) if plan["ethnic"] else []
         state = ("shares" if parts and usable(parts, f"{plan['district']} ({plan['url']})")
                  else ("refused" if parts else "names only"))
+        code = codes.get(fold(plan["province"])) if plan["province"] else None
+        doubt = {(k[0], fold(k[1])): v for k, v in NOT_ITS_OWN.items()}.get(
+            (code, fold(plan["district"])))
+        if doubt and state == "shares":
+            log(f"    {plan['district']}: not written -- {doubt}")
+            state = "refused"
         if probe or unit is None:
             log(f"  {plan['province'] or '?':<12} {plan['district']:<22} "
                 f"[{plan['district_from']}] {plan['year'] or '?'}  "
                 f"{(unit or {}).get('name', 'UNBOUND: ' + why):<28} {state:<10} "
-                f"{plan['ethnic'][:90]!r}")
+                f"{plan['ethnic'][:90]!r}"
+                + (f" -> {[(p['group'], p['pct']) for p in parts]}" if parts else ""))
         if unit is None:
             continue
         tally["bound"] += 1
@@ -470,18 +611,25 @@ def main() -> int:
     log(f"  {len(found)} archived plan PDFs")
     if args.limit:
         found = found[:args.limit]
-    plans, unread = read_plans(found)
-    log(f"  {len(plans)} plans read, {unread} not reached in the run's time")
-    if unread and not args.probe:
-        # A plan not read may be the later of two for a district this run
-        # would write from the earlier: write nothing rather than that.
-        raise SystemExit(f"afghanistan_ddp: {unread} plans not reached; nothing written")
+    readings: dict[str, dict[str, Any]] = read_json(PROCESSED / READINGS, {}) or {}
+    wanted = {capture_url(*item): item for item in found}
+    todo = still_to_read(found, readings)
+    log(f"  {len(wanted) - len(todo)} read by an earlier run; asking the archive for {len(todo)}")
+    fresh, unread = read_plans(todo)
+    readings.update(fresh)
+    missing = [url for url in wanted if url not in readings]
+    failed = [url for url in wanted if "failed" in readings.get(url, {})]
+    log(f"  {len(fresh)} answered now; {len(failed)} not a readable PDF; {len(missing)} "
+        f"not answered yet ({unread} for want of time) -- a later run asks for those again")
+    plans = [plan_of(readings[url], url) for url in sorted(wanted)
+             if url in readings and "failed" not in readings[url]]
     units1, units2 = load_units("AFG", "admin1"), load_units("AFG", "admin2")
     records = build(plans, units1, units2, office_names(), probe=args.probe)
     compare(records, units1, units2)
     if args.probe:
         log("--probe: nothing written")
         return 0
+    write_json(PROCESSED / READINGS, {url: readings[url] for url in sorted(readings)})
     write_json(PROCESSED / OUT, records)
     log(f"  {len(records)} records")
     return 0

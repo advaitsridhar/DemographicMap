@@ -5,6 +5,7 @@ district profile table) and synthetic drawn units bound through the office's
 district codes. No network.
 """
 
+import json
 import unittest
 from unittest import mock
 
@@ -70,7 +71,19 @@ class Reading(unittest.TestCase):
     def test_a_wrapped_line_is_joined_and_the_next_field_ends_it(self):
         p = plan("Nad Ali", "Helmand", "90% Pashtun, 10% Turkmen and", wrap="Hazara")
         self.assertEqual(p["ethnic"], "90% Pashtun, 10% Turkmen and Hazara")
-        self.assertEqual(dd.shares(p["ethnic"]), [{"group": "Pashtun", "pct": 90.0}])
+        self.assertEqual(dd.plan_shares(p["ethnic"]), [{"group": "Pashtun", "pct": 90.0}])
+
+    def test_a_page_number_or_the_next_row_is_not_taken_in(self):
+        for after in ("2", "Situation Analysis, Development Goals and Strategies",
+                      "Kochi population in winter"):
+            p = plan("Bost", "Helmand", "100% Pashtun", wrap=after)
+            self.assertEqual(p["ethnic"], "100% Pashtun")
+
+    def test_the_answer_on_the_line_below_its_label(self):
+        texts = [COVER.format(district="NILI", province="DAIKUNDI", month="May", year=2007),
+                 "District Profile\nEthnic diversity\n100 % Hazara\nSectoral Information"]
+        self.assertEqual(dd.read_plan(texts, URL.format(a="134", f="Nili.pdf"))["ethnic"],
+                         "100 % Hazara")
 
     def test_the_misspelt_label_of_some_plans_is_read(self):
         p = plan("Chemtal", "Balkh", "Pashtun, Arab, Tajik", label="Ethic Diversity")
@@ -103,25 +116,88 @@ class Reading(unittest.TestCase):
 
 
 class Fetching(unittest.TestCase):
+    def setUp(self):
+        patcher = mock.patch.object(dd, "PAUSE", 0)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
     def test_plans_are_read_in_order_and_failures_named(self):
         pages = [COVER.format(district="CHEMTAL", province="BALKH", month="May", year=2010),
                  PROFILE.format(label="Ethnic diversity", ethnic="Tajik 60%, Pashtun 40%")]
 
         def get(url, **_):
+            if "Gone" in url:
+                raise RuntimeError("GET failed after 1 retries")
             return b"<html>" if "Bad" in url else b"%PDF-1.4"
         found = [("2016", ORIGINAL.format(a="123", f="Chemtal%20DDP%20English%20Summary.pdf")),
-                 ("2016", ORIGINAL.format(a="123", f="Bad%20DDP%20English%20Summary.pdf"))]
+                 ("2016", ORIGINAL.format(a="123", f="Bad%20DDP%20English%20Summary.pdf")),
+                 ("2016", ORIGINAL.format(a="123", f="Gone%20DDP%20English%20Summary.pdf"))]
         with mock.patch.object(dd, "http_get", get), \
                 mock.patch.object(dd, "page_texts", lambda blob: pages):
-            plans, unread = dd.read_plans(found, workers=2)
-        self.assertEqual([p["district"] for p in plans], ["CHEMTAL"])
+            read, unread = dd.read_plans(found, workers=2)
+        chemtal, bad, gone = (dd.capture_url(*item) for item in found)
+        self.assertEqual(dd.plan_of(read[chemtal], chemtal)["district"], "CHEMTAL")
+        # Not a PDF is remembered; an archive that did not answer is asked again.
+        self.assertEqual(read[bad], {"failed": "not a PDF"})
+        self.assertNotIn(gone, read)
+        self.assertEqual(dd.still_to_read(found, read), [found[2]])
         self.assertEqual(unread, 0)
 
     def test_plans_past_the_runs_time_are_counted_not_read(self):
         found = [("2016", ORIGINAL.format(a="123", f="Chemtal%20DDP%20English%20Summary.pdf"))]
         with mock.patch.object(dd, "http_get", side_effect=AssertionError("fetched")):
-            plans, unread = dd.read_plans(found, minutes=-1)
-        self.assertEqual((plans, unread), ([], 1))
+            read, unread = dd.read_plans(found, minutes=-1)
+        self.assertEqual((read, unread), ({}, 1))
+
+    def test_what_is_kept_reads_back_the_same(self):
+        texts = [COVER.format(district="NAD ALI", province="HELMAND", month="May", year=2008),
+                 PROFILE.format(label="Ethnic diversity", ethnic="90% Pashtun, 10% Turkmen and")
+                 .replace("Sectoral", "Hazara\nSectoral")]
+        url = URL.format(a="131", f="Nad%20Ali%20DDP%20English%20Summary.pdf")
+        kept = json.loads(json.dumps(dd.excerpt(texts)))
+        self.assertEqual(dd.plan_of(kept, url), dd.read_plan(texts, url))
+        self.assertEqual(dd.plan_of(kept, url)["ethnic"], "90% Pashtun, 10% Turkmen and Hazara")
+
+
+class Shares(unittest.TestCase):
+    def parts(self, text):
+        return [(p["group"], p["pct"]) for p in dd.plan_shares(text)]
+
+    def test_both_orders_and_the_and_between_two_shares(self):
+        self.assertEqual(self.parts("Baloch 44%, Pashtun 34 % and Tajik 22%"),
+                         [("Baloch", 44.0), ("Pashtun", 34.0), ("Tajik", 22.0)])
+        self.assertEqual(self.parts("95% Pashtun and 5% Tajik"),
+                         [("Pashtun", 95.0), ("Tajik", 5.0)])
+        self.assertEqual(self.parts("Tajik 40%; Uzbak 40 % and Pashtun 20 %"),
+                         [("Tajik", 40.0), ("Uzbek", 40.0), ("Pashtun", 20.0)])
+
+    def test_the_plans_own_spellings(self):
+        self.assertEqual(self.parts("55% Uzbak, 35%Tajik, 5% Pashton, 5% other ethnicities"),
+                         [("Uzbek", 55.0), ("Tajik", 35.0), ("Pashtun", 5.0), ("Other", 5.0)])
+        self.assertEqual(self.parts("100 % Pashtoon"), [("Pashtun", 100.0)])
+        self.assertEqual(self.parts("Baloch 88 %, Pashtun 1 %, Brahawi 10 % and Tajik 1 %"),
+                         [("Baloch", 88.0), ("Pashtun", 1.0), ("Brahui", 10.0), ("Tajik", 1.0)])
+
+    def test_a_share_held_jointly_goes_to_none_of_them(self):
+        self.assertEqual(self.parts("99% Pashtun, 1% Hazara, Tajik, Arab"), [("Pashtun", 99.0)])
+        self.assertEqual(self.parts("Tajik 70%, Uzbak 20% and Mughol, Baloch 10%"),
+                         [("Tajik", 70.0), ("Uzbek", 20.0)])
+        self.assertEqual(self.parts("28% Pashtun, Tajik 70% and Arab and Baloch 2%"),
+                         [("Tajik", 70.0), ("Pashtun", 28.0)])
+        self.assertEqual(self.parts("90% Pashtun, 10% Turkmen and Hazara"), [("Pashtun", 90.0)])
+
+    def test_a_name_unknown_here_is_left_out_not_guessed(self):
+        self.assertEqual(self.parts("Pashtun 55%, Palo 20%, Brahawi 15%, Tajik 10%"),
+                         [("Pashtun", 55.0), ("Brahui", 15.0), ("Tajik", 10.0)])
+        self.assertEqual(self.parts("Pashtun 75% and the remaining 25% are Uzbak and Arab"),
+                         [("Pashtun", 75.0)])
+
+    def test_a_share_after_a_stray_comma_is_the_names_before_it(self):
+        self.assertEqual(self.parts("Tajik 60%, Uzbak 35%, Pashtun, 5%"),
+                         [("Tajik", 60.0), ("Uzbek", 35.0), ("Pashtun", 5.0)])
+
+    def test_names_alone_are_no_shares(self):
+        self.assertEqual(self.parts("Uzbek, Tajik, Gojor and Pashaai"), [])
 
 
 class Building(unittest.TestCase):
@@ -168,8 +244,16 @@ class Building(unittest.TestCase):
         self.assertIn("D2109", self.build([p]))
 
     def test_the_provincial_centre_is_its_district(self):
-        records = self.build([plan("Charikar Center", "Parwan", "Tajik 70%, Pashtun 30%")])
-        self.assertIn("D0301", records)
+        for name in ("Charikar Center", "Charikar Central"):
+            records = self.build([plan(name, "Parwan", "Tajik 70%, Pashtun 30%")])
+            self.assertIn("D0301", records)
+
+    def test_a_declared_spelling_binds_whatever_its_case(self):
+        texts = ["SUMMARY OF DISTRICT DEVELOPMENT PLAN",
+                 PROFILE.format(label="Ethnic diversity", ethnic="Tajik 60%, Uzbek 40%")]
+        p = dd.read_plan(texts, URL.format(a="123", f="Balkh_Chemtal_Summary_Finalized.pdf"))
+        self.assertEqual(p["district"], "Balkh Chemtal")
+        self.assertIn("D2108", self.build([p]))
 
     def test_the_later_of_two_plans_stands(self):
         early = plan("Balkh", "Balkh", "Tajik 70%, Pashtun 30%", year=2008)
@@ -177,6 +261,10 @@ class Building(unittest.TestCase):
         for order in ([early, late], [late, early]):
             records = self.build(order)
             self.assertEqual(records["D2106"]["ethnicity"][0], {"group": "Tajik", "pct": 60.0})
+
+    def test_a_line_that_cannot_be_its_districts_is_not_written(self):
+        with mock.patch.object(dd, "NOT_ITS_OWN", {("21", "BALKH"): "not its own"}):
+            self.assertEqual(self.build([plan("Balkh", "Balkh", "Tajik 60%, Pashtun 40%")]), {})
 
     def test_shares_that_overrun_are_refused(self):
         self.assertEqual(self.build([plan("Balkh", "Balkh", "Tajik 90%, Pashtun 40%")]), {})
