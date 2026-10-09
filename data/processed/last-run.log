@@ -1,10 +1,27 @@
-indonesia_age: BPS-Statistics Indonesia, The Result of Long Form Population Census 2020 (2023), Table 3.1: Population by Age Group, Urban/Rural Area, and Sex, as the U.S. Census Bureau tabulates it for HDX
-  https://data.humdata.org/dataset/6daa36c4-9ea3-4844-958b-042d2cc3d8b7/resource/2c8fce76-8ad7-4bce-ab02-374318302383/download/indonesia_uscb_202405.xlsx
-  rows with every cell blank, shapes that are no regency: DANAU TOBA
-  514 regencies make their 34 provinces and the provinces the country's 275,773,774, group by group and sex by sex
-  513 regencies bound one to one inside their provinces; no polygon for KABUPATEN KEPULAUAN SERIBU
-  the country: median 31.0, sex ratio 102.2
-  admin1: 34 units; median 26.8-35.5; sex ratio 98.0-113.5
-  admin2: 513 units; median 16.5-38.9; sex ratio 92.9-138.9
-  wrote data/processed/indonesia_age.json (2107 kB)
-  wrote indonesia_age.json: 548 records
+== https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx
+  HTTP 200 application/octet-stream 75,196 bytes
+  -- 'G-7'
+       2: Table G-7: Total population by religious
+       3:  | Sex
+       4:  | Total | Male | Female
+       5: TOTAL | 11680 | 5893 | 5787
+       6: Religion
+       7:      No Religion | 157 | 87 | 70
+       8:      Nauruan Congregational | 4001 | 2017 | 1984
+       9:      Catholic | 3959 | 2006 | 1953
+      10:      Assemblies of God (AOG) | 1365 | 670 | 695
+      11:      Nauru Independent | 410 | 211 | 199
+      12:      Pacific Light House | 706 | 364 | 342
+      13:      Seven Day Adventist | 168 | 77 | 91
+      14:      Baptist | 175 | 90 | 85
+      15:      Do not wish to answer | 57 | 35 | 22
+      16:      Protestant | 126 | 66 | 60
+      17:      Shalosh Pentecostal Church | 186 | 91 | 95
+      18:       Fishers of Men Church | 57 | 23 | 34
+      19:      Brethren Church | 47 | 18 | 29
+      20:      FOM Pentecostal Church | 81 | 40 | 41
+      21:      Christ Embassy | 48 | 24 | 24
+      22:      Hinduism | 6 | 4 | 2
+      23:      Fundamental Christian Church | 15 | 10 | 5
+      24:      Methodist Church | 18 | 10 | 8
+      25:      Other religion | 98 | 50 | 48
