@@ -1,8 +1,6 @@
-nauru_census: 2021 census tables and persons tabulations
-  https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx: 75,196 bytes
-  Tables: 15 districts adding to 11,680; 16 ethnic groups; Table G-7 churches without a Table 19 column: {'Shalosh Pentecostal Church': 186.0, 'Fishers of Men Church': 57.0, 'FOM Pentecostal Church': 81.0, 'Christ Embassy': 48.0, 'Fundamental Christian Church': 15.0}
-  Persons Tabulations: Table 19's religion of 11,215 citizens by district
-  national median from the same groups: nauru_census: Nauru 21.6 (printed 21.6)
-  admin1 ethnicity 14, admin1 median_age 14, admin1 population 14, admin1 religion 14, admin1 sex_ratio 14, admin2 ethnicity 14, admin2 median_age 14, admin2 population 14, admin2 religion 14, admin2 sex_ratio 14
-  wrote data/processed/nauru_census.json (135 kB)
-  wrote 28 records
+solomon_census: 2019 Census Basic Tables (Volume 2)
+  5,094,197 bytes, 318 pages
+  median ages from P3.1 against the summary of main indicators: Solomon Islands 21.4 (21.4), Choiseul 20.4 (20.4), Western 21.7 (21.7), Isabel 22.6 (22.6), Central 20.9 (20.9), Rennell-Bellona 25.3 (25.3), Guadalcanal 20.9 (20.9), Malaita 19.5 (19.5), Makira-Ulawa 18.6 (18.6), Temotu 22.2 (22.2), Honiara 24.2 (24.2)
+  no polygon: Temotu Pele (5,395 people in 6 wards), counted in its province
+  59 records: admin1 ethnicity 10, admin1 median_age 10, admin1 population 10, admin1 religion 10, admin1 sex_ratio 10, admin2 median_age 49, admin2 population 49, admin2 religion 49, admin2 sex_ratio 49
+  wrote data/processed/solomon_census.json (322 kB)
