@@ -1,8 +1,15 @@
-samoa_census: 2021 Census Tables 1 and 2, by the 2016 Census's villages
-  https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx: 2,681,931 bytes
-  https://www.sbs.gov.ws/digi/2-2016%20Census%20Brief%20No.1%20Tables.xlsx: 106,868 bytes
-  Table 1's single years make the Final Report's key indicators for all 6 columns: people aged 0-14, 15-64 and 65+ and of age not known, by sex, exactly
-  median ages from Table 1's single years, the Final Report's whole years in brackets (not checked; see PRINTED_MEDIANS): Samoa everyone 21.4 (22), males 20.6 (20), females 22.4 (21); Apia Urban Area everyone 23.1 (21), males 22.0 (21), females 24.1 (21); North West Upolu everyone 21.4 (21), males 20.5 (20), females 22.3 (21); Rest of Upolu everyone 20.8 (20), males 20.4 (20), females 21.3 (21); Savaii everyone 20.7 (20), males 19.7 (20), females 21.9 (21); Rural everyone 21.0 (20), males 20.3 (20), females 21.9 (21); the Fact Sheet prints Samoa's as 22.0
-  not in the 2016 list, placed with its constituency's villages: Tunaimato West (Faleata 1) -> Faleata East
-  54 records: admin1 ethnicity 11, admin1 median_age 11, admin1 population 11, admin1 religion 11, admin1 sex_ratio 11, admin2 ethnicity 43, admin2 median_age 43, admin2 population 43, admin2 religion 43, admin2 sex_ratio 43
-  wrote data/processed/samoa_census.json (302 kB)
+turkmenistan_census: 2022 census, volumes 2 and 4
+  Ashgabat city: 1,030,063 people
+  Ahal velayat: 886,845 people
+  Balkan velayat: 529,895 people
+  Dashoguz velayat 20–24 years: '168 04' read as one figure, the only reading that adds up
+  Dashoguz velayat: 1,550,354 people
+  Lebap velayat: 1,447,298 people
+  Mary velayat: 1,613,386 people
+    Ahal: 1,916,908, median 28.0, ratio 98.2, Turkmen 93.9%, Turkmen 94.2%
+    Balkan: 529,895, median 27.7, ratio 101.7, Turkmen 93.7%, Turkmen 93.9%
+    Dasoguz: 1,550,354, median 26.9, ratio 99.9, Turkmen 67.5%, Turkmen 71.6%
+    Lebap: 1,447,298, median 27.7, ratio 100.1, Turkmen 89.3%, Turkmen 96.1%
+    Mary: 1,613,386, median 27.2, ratio 101.0, Turkmen 92.1%, Turkmen 92.6%
+  admin2: 59 districts given the reason
+  wrote data/processed/turkmenistan_census.json (392 kB)
