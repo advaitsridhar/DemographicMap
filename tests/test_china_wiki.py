@@ -592,9 +592,13 @@ class TheShapeNames(unittest.TestCase):
         import canonical_groups as cg
         unplaced = sorted({label for label in cw.NATIONALITIES.values()
                            if len(cg.ancestry("ethnicity", label)) < 2})
-        # The two the tree deliberately leaves: the Yugur speak a Turkic and
-        # a Mongolic language by half, and the Gaoshan are Formosan.
-        self.assertEqual(unplaced, ["Gaoshan", "Yugur"])
+        # The Yugur, who speak a Turkic and a Mongolic language by half, are
+        # filed by their Turkic name and origin; the Gaoshan are Taiwan's
+        # indigenous peoples under China's name for them.
+        self.assertEqual(unplaced, [])
+        self.assertEqual(cg.ancestry("ethnicity", "Yugur")[1], "Turkic peoples")
+        self.assertEqual(cg.ancestry("ethnicity", "Gaoshan")[1],
+                         "Taiwanese indigenous peoples")
         self.assertEqual(cg.ancestry("ethnicity", "Yao (China)")[1],
                          "Mainland Southeast Asian peoples")
 

@@ -231,7 +231,8 @@ RELIGION: dict[str, tuple[str, ...]] = {
                  # countries under its own name on a map whose
                  # Buddhist colour they should have carried.
                  "Lamaistic Buddhist", "Lamaistic", "Lamaism"),
-    "Judaism": ("Jewish", "Judaism", "Jew", "Jews"),
+    # The last clause of the Factbook's Lebanon row, kept as its own label.
+    "Judaism": ("Jewish", "Judaism", "Jew", "Jews", "very small numbers of Jews"),
     "Sikhism": ("Sikh", "Sikhism", "Sikha", "Sikhs"),
     "Jainism": ("Jain", "Jainism", "Jains"),
     "Taoism": ("Taoist", "Taoism", "Dao", "Daoism"),
@@ -248,7 +249,12 @@ RELIGION: dict[str, tuple[str, ...]] = {
     # religion -- the tree parented "Non Christians" under Protestantism.
     "Other religions (not separately named)": (
         "Other religions (not separately named)", "Non Christians",
-        "Non Christian", "Non-Christians"),
+        "Non Christian", "Non-Christians",
+        # The Factbook's spellings of the same answer: Papua New Guinea's
+        # and Lesotho's "non-Christian", and Seychelles' "other
+        # non-Christian" after its named religions. The word rules read
+        # "Christian" in both and filed them under Protestantism.
+        "non-Christian", "other non-Christian"),
     "Zoroastrianism": ("Zoroastrian", "Zoroastrianism", "Parsi", "Parsee",
                        "Parsi/Zorastrian", "Parsi / Zorastrian", "Zorastrian"),
     "Baha'i": ("Baha'i", "Bahai", "Bahá'í", "Baha'i Faith", "Bahais",
@@ -320,6 +326,8 @@ RELIGION: dict[str, tuple[str, ...]] = {
         # cannot be split, so they stay at the level that contains both.
         "agnostic/atheist", "agnostic or atheist", "none/atheist",
         "nonbeliever/agnostic", "atheist or agnostic", "non-believer/agnostic",
+        # Croatia's country row, the same pair in other words.
+        "none or atheist",
     ),
     # Two positions several censuses count separately and side by side, and
     # which are therefore groups of their own rather than spellings of the one
@@ -1101,6 +1109,15 @@ PARENT: dict[str, dict[str, str]] = {
         # Hoa Hao Buddhism is, rather than as two religions of their own.
         "Buu Son Ky Huong": "Buddhism",
         "Tu An Hieu Nghia": "Buddhism",
+        # Pakistan's census offers "Scheduled Castes" beside "Hindu (Jati)"
+        # as an answer to its religion question: the Hindu Dalit castes
+        # scheduled under the Scheduled Castes (Declaration) Ordinance --
+        # Meghwar, Kolhi, Bheel, Oad and the rest. The census counts them
+        # apart, so they are their own group; they are Hindus, so the group
+        # is a child of Hinduism, the way Ismailism is a child of Shia
+        # Islam. Filed under "Not stated", Tharparkar's Scheduled Castes had
+        # been read as people who named no religion.
+        "Scheduled Castes": "Hinduism",
     },
     # Genealogical classification, as the standard references give it. A
     # family is one hue on the map and closely related languages are shades of
