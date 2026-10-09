@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Southeast Asia reconnaissance: what each route serves, before a reader.
 
-Read-only; nothing is written and the output is the log. Each subcommand
-answers one question and prints only what decides it.
+Read-only; nothing is written and the output is the log -- except ``strips``,
+which writes page images for a table with no readable text layer, to be
+removed once read. Each subcommand answers one question and prints only what
+decides it.
 
 * ``hdx ISO[,ISO...]`` -- every HDX dataset for the country that carries a
   population table (COD-PS, the Census Bureau's subnational series, others):
@@ -14,6 +16,11 @@ answers one question and prints only what decides it.
   for endpoints found by ``spa``.
 * ``xl URL --sheet NAME`` -- named sheets of a workbook, a window of rows.
 * ``zip URL`` -- a zip's members and the opening lines of the first few.
+* ``strips CDX-PATTERN`` -- Thailand's 2000 census provincial final reports,
+  whose text layer is font-encoded: page 1 (the key indicators) of every
+  captured report, cut to its title and three rows of the 2000 column --
+  total population, Thai nationality, Buddhism -- with their English labels,
+  stacked into a few JPEGs under ``data/processed/page_images`` to be read.
 
 Usage:
     python -m scripts.fetch_census.sea_probe hdx THA,LAO
@@ -418,6 +425,155 @@ def cmd_wpmedia(base: str, searches: list[str], pages: int) -> None:
         log(f"== {search!r}: {total} uploads")
 
 
+STRIP_DIR = "data/processed/page_images"
+# The key-indicator rows cut out, counted down the 2000 column below its
+# header as the Ranong report prints them: 1 the total population ('000),
+# 13 Thai nationality (%), 14 Buddhism (%).
+STRIP_ROWS = (1, 13, 14)
+
+
+def bands(profile: Any, gap: int) -> list[tuple[int, int]]:
+    """Runs of non-zero entries, joined across gaps of up to ``gap``."""
+    out: list[tuple[int, int]] = []
+    for i, v in enumerate(profile):
+        if not v:
+            continue
+        if out and i - out[-1][1] <= gap:
+            out[-1] = (out[-1][0], i)
+        else:
+            out.append((i, i))
+    return out
+
+
+def key_rows(gray: Any, dpi: int) -> dict[str, Any]:
+    """Where a key-indicators page puts its title and its 2000 column's rows.
+
+    The table is ruled: full-width rules above the header, below it and at
+    the foot, and three vertical lines -- before the 1990 column, between
+    1990 and 2000, after 2000. The 2000 column is the pair of neighbouring
+    lines nearest 53% across (Ranong: 49% and 56%); its rows are the runs of
+    ink between the header's rule and the foot's.
+    """
+    import numpy as np
+    dark = np.asarray(gray) < 128
+    h, w = dark.shape
+    gap = max(2, round(3 * dpi / 90))
+    vlines = bands(dark.sum(axis=0) > 0.35 * h, 1)
+    rules = bands(dark.sum(axis=1) > 0.5 * w, 1)
+    found: dict[str, Any] = {"vlines": vlines, "rules": rules, "rows": [], "title": None}
+    for y0, y1 in bands(dark.sum(axis=1) > 0, gap):
+        xs = np.where(dark[y0:y1 + 1].any(axis=0))[0]
+        if len(xs) and xs[-1] - xs[0] > 0.1 * w:
+            found["title"] = (y0, y1)
+            break
+    pairs = [(a, b) for a, b in zip(vlines, vlines[1:]) if 0.04 * w < b[0] - a[1] < 0.11 * w]
+    if not pairs or len(rules) < 3:
+        return found
+    left, right = min(pairs, key=lambda p: abs((p[0][1] + p[1][0]) / 2 - 0.528 * w))
+    top, bottom = rules[1][1] + 3, rules[-1][0] - 3
+    column = dark[top:bottom, left[1] + 3:right[0] - 2]
+    rows = [(top + a, top + b) for a, b in bands(column.sum(axis=1) > 0, gap)]
+    if rows:
+        tall = sorted(b - a for a, b in rows)[len(rows) // 2]
+        rows = [r for r in rows if r[1] - r[0] >= 0.5 * tall]
+    found.update(column=(left[0], right[1]), rows=rows)
+    return found
+
+
+def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int) -> None:
+    """Every captured report's key-indicator rows, cut out and stacked to be read."""
+    import os
+
+    import pdfplumber
+    from PIL import Image, ImageDraw
+    url = ("http://web.archive.org/cdx/search/cdx?" + urllib.parse.urlencode(
+        {"url": pattern, "output": "json", "filter": ["statuscode:200", "mimetype:application/pdf"],
+         "collapse": "urlkey"}, doseq=True))
+    status, _, body = fetch(url, timeout=180)
+    if status != 200:
+        log(f"cdx {pattern}: HTTP {status}")
+        return
+    captures = sorted((r for r in json.loads(body or b"[]")[1:]
+                       if not match or re.search(match, r[2])),
+                      key=lambda r: r[2].rsplit("/", 1)[-1])
+    log(f"cdx {pattern}: {len(captures)} reports matching {match!r}")
+    os.makedirs(STRIP_DIR, exist_ok=True)
+    pieces: list[Any] = []
+    pad = round(8 * dpi / 90)
+    for r in captures:
+        stem = r[2].rsplit("/", 1)[-1].rsplit(".", 1)[0]
+        source = f"http://web.archive.org/web/{r[1]}id_/{r[2]}"
+        try:
+            status, _, pdf_bytes = fetch(source, timeout=300)
+        except Exception as err:  # noqa: BLE001 -- reported
+            log(f"  {stem}: {type(err).__name__}: {err}")
+            continue
+        if status != 200 or pdf_bytes[:5] != b"%PDF-":
+            log(f"  {stem}: HTTP {status}, {len(pdf_bytes):,} B, not a PDF")
+            continue
+        cut: list[Any] = []
+        note = ""
+        with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+            for n in range(1, min(pages, len(pdf.pages)) + 1):
+                gray = pdf.pages[n - 1].to_image(resolution=dpi).original.convert("L")
+                where = key_rows(gray, dpi)
+                rows = where["rows"]
+                if len(rows) >= max(STRIP_ROWS) and where["title"]:
+                    w = gray.width
+                    t0, t1 = where["title"]
+                    cut.append(gray.crop((round(0.2 * w), max(0, t0 - pad), round(0.8 * w),
+                                          t1 + pad)))
+                    for k in STRIP_ROWS:
+                        y0, y1 = rows[k - 1]
+                        cut.append(gray.crop((where["column"][0] - 2, y0 - pad,
+                                              round(0.98 * w), y1 + pad)))
+                    note = (f"page {n} of {len(pdf.pages)}; 2000 column x {where['column']}; "
+                            f"{len(rows)} rows; rows {list(STRIP_ROWS)} at y "
+                            f"{[rows[k - 1][0] for k in STRIP_ROWS]}")
+                    break
+                log(f"  {stem}: page {n}: {len(where['vlines'])} vertical lines, "
+                    f"{len(where['rules'])} rules, {len(rows)} rows -- not the table")
+            else:
+                if len(pdf.pages):
+                    whole = pdf.pages[0].to_image(resolution=dpi).original.convert("L")
+                    cut.append(whole.resize((500, round(whole.height * 500 / whole.width))))
+                    note = f"no key-indicator table on pages 1-{pages}: page 1 whole"
+        label = Image.new("L", (520, 14), 255)
+        ImageDraw.Draw(label).text((2, 1), f"{len(pieces) + 1}. {stem} ({r[1][:8]})", fill=0)
+        pieces.append([label, *cut])
+        log(f"  {len(pieces)}. {stem}: {r[1]} {len(pdf_bytes):,} B; {note}")
+    for k in range(0, len(pieces), per):
+        group = pieces[k:k + per]
+        width = max(im.width for piece in group for im in piece)
+        height = sum(im.height + 3 for piece in group for im in piece) + 6 * len(group)
+        sheet = Image.new("L", (width, height), 255)
+        y = 0
+        for piece in group:
+            for im in piece:
+                sheet.paste(im, (0, y))
+                y += im.height + 3
+            ImageDraw.Draw(sheet).line((0, y + 2, width, y + 2), fill=128, width=2)
+            y += 6
+        path = f"{STRIP_DIR}/tha2000-{k // per + 1:02d}.jpg"
+        sheet.save(path, "JPEG", quality=80, optimize=True)
+        log(f"  {path}: reports {k + 1}-{k + len(group)}, {width}x{height}, "
+            f"{os.path.getsize(path):,} B")
+
+
+def cmd_unstrip(match: str) -> None:
+    """Remove the page images whose names match, once read."""
+    import os
+    if not os.path.isdir(STRIP_DIR):
+        log(f"{STRIP_DIR} is not there")
+        return
+    gone = sorted(n for n in os.listdir(STRIP_DIR) if re.search(match, n))
+    for name in gone:
+        os.remove(f"{STRIP_DIR}/{name}")
+    log(f"removed from {STRIP_DIR}: {', '.join(gone) or 'nothing'}")
+    if not os.listdir(STRIP_DIR):
+        os.rmdir(STRIP_DIR)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -466,7 +622,21 @@ def main() -> int:
     c = sub.add_parser("get")
     c.add_argument("urls", nargs="+")
     c.add_argument("--chars", type=int, default=400)
+    s = sub.add_parser("strips")
+    s.add_argument("pattern", help="a Wayback CDX URL pattern for the reports")
+    s.add_argument("--dpi", type=int, default=120)
+    s.add_argument("--per", type=int, default=16, help="reports to an image")
+    s.add_argument("--match", default="", help="only the reports whose URL matches")
+    s.add_argument("--pages", type=int, default=3, help="pages searched for the table")
+    u = sub.add_parser("unstrip")
+    u.add_argument("match", help="a pattern the image names to remove match")
     args = ap.parse_args()
+    if args.cmd == "strips":
+        cmd_strips(args.pattern, args.dpi, args.per, args.match, args.pages)
+        return 0
+    if args.cmd == "unstrip":
+        cmd_unstrip(args.match)
+        return 0
     if args.cmd == "hdx":
         cmd_hdx([x.strip().upper() for x in args.codes.split(",") if x.strip()],
                 not args.no_tables)
