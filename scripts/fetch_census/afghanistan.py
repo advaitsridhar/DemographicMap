@@ -436,6 +436,17 @@ def source_rows(table: list[list[str]]) -> list[tuple[int, str, list[dict[str, A
     return sorted(found, key=lambda r: -r[0])
 
 
+def transcription_note(article: str) -> str:
+    """What the shares are, and at how many removes from their source."""
+    return ("The ethnic shares of the district's development plan -- the "
+            "Ministry of Rural Rehabilitation and Development's National "
+            "Area-Based Development Programme, 2008-14 -- as the English "
+            f"Wikipedia article '{article}' transcribes them; the plan itself "
+            "is not read here, and the article rarely says which year's plan "
+            "it copied. A planning summary's estimate, not a count: "
+            "Afghanistan has had no census since 1979.")
+
+
 def province_record(province: str, *, probing: bool) -> dict[str, Any] | None:
     body, _ = fetch(f"{province} Province", LANG)
     if not body:
@@ -533,16 +544,20 @@ def main(argv: list[str] | None = None) -> int:
             # answer that looks exactly like a right one".
             slug = re.sub(r"[^a-z0-9]+", "-",
                           f"{row['province']} {row['district']}".lower()).strip("-")
+            article = f"{province} Province"
             records.append(record(
                 f"AFG-admin2-{slug}", row["district"], level="admin2",
                 parent="AFG", parent_name=row["province"],
                 ethnicity=row["ethnicity"],
                 ethnicity_year=YEARS,
                 ethnicity_basis="district development plan",
-                sources=[{"field": "ethnicity", "name": SOURCE,
+                ethnicity_note=transcription_note(article),
+                sources=[{"field": "ethnicity",
+                          "name": f"{SOURCE}, as the English Wikipedia article "
+                                  f"'{article}' transcribes them",
                           "licence": LICENCE, "year": YEARS,
                           "url": "https://en.wikipedia.org/wiki/"
-                                 "Administrative_divisions_of_Afghanistan"}]))
+                                 + article.replace(" ", "_")}]))
     log(f"\nAfghanistan: {len(records)} district(s) with an ethnic composition")
     if args.probe:
         log("--probe: nothing written")

@@ -455,12 +455,15 @@ def cmd_rows(args: argparse.Namespace) -> None:
 
 
 def cmd_cdx(args: argparse.Namespace) -> None:
-    query = {"url": args.pattern, "output": "json", "limit": args.limit,
-             "fl": "timestamp,original,statuscode,mimetype,length"}
+    query = [("url", args.pattern), ("output", "json"), ("limit", args.limit),
+             ("fl", "timestamp,original,statuscode,mimetype,length")]
     if not args.all:
         # One line per URL unless every capture is asked for: a capture cut
         # off by its crawler can stand beside a later, whole one.
-        query["collapse"] = "urlkey"
+        query.append(("collapse", "urlkey"))
+    # The archive's own filters ("statuscode:200", "mimetype:application/pdf"),
+    # applied before the collapse, so the one line kept per URL is a usable one.
+    query.extend(("filter", f) for f in args.filter)
     url = "https://web.archive.org/cdx/search/cdx?" + urllib.parse.urlencode(query)
     status, headers, body, _ = fetch(url)
     print(f"== CDX {args.pattern}: {status}" + (f" !! {headers.get('error')}" if headers.get("error") else ""))
@@ -627,6 +630,8 @@ def main() -> int:
     c.add_argument("--limit", type=int, default=5000)
     c.add_argument("--rows", type=int, default=80)
     c.add_argument("--all", action="store_true", help="every capture, not one per URL")
+    c.add_argument("--filter", action="append", default=[],
+                   help="a CDX filter such as statuscode:200; may repeat")
 
     d = sub.add_parser("wd")
     d.add_argument("names", nargs="+")
