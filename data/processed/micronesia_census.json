@@ -3172,22 +3172,87 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 93.0,
+        "count": 12834
+      },
+      {
+        "group": "Mortlockese",
+        "pct": 5.0,
+        "count": 691
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 0.6,
+        "count": 79
+      },
+      {
+        "group": "Filipino",
+        "pct": 0.3,
+        "count": 47
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.3,
+        "count": 46
+      },
+      {
+        "group": "U.S. American",
+        "pct": 0.2,
+        "count": 31
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.2,
+        "count": 22
+      },
+      {
+        "group": "Kosraean",
+        "pct": 0.1,
+        "count": 17
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 16
+      },
+      {
+        "group": "Pohnpei Outer Islander",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Yap Outer Islander",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3196,7 +3261,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B39467357025683",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 7,039 men, 6,817 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 7,039 men, 6,817 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 13,802 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuukfefen",
@@ -3228,22 +3295,47 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 99.9,
+        "count": 4059
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "U.S. American",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3252,7 +3344,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B58883222100719",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 1,757 men, 1,714 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 1,757 men, 1,714 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 4,062 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuukwonei",
@@ -3284,22 +3378,32 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 100.0,
+        "count": 1271
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3308,7 +3412,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B79401034886578",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 342 men, 296 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 342 men, 296 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 1,271 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuukpaata",
@@ -3340,22 +3446,42 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 99.8,
+        "count": 1947
+      },
+      {
+        "group": "Mortlockese",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "U.S. American",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3364,7 +3490,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B20321408060420",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 544 men, 563 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 544 men, 563 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 1,950 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuuktol",
@@ -3396,22 +3524,57 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 99.7,
+        "count": 5113
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "U.S. American",
+        "pct": 0.1,
+        "count": 6
+      },
+      {
+        "group": "Mortlockese",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3420,7 +3583,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B54997452530027",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 2,391 men, 2,188 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 2,391 men, 2,188 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 5,129 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuukpolle",
@@ -3452,22 +3617,37 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 99.9,
+        "count": 1849
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3476,7 +3656,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B78067123130515",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 738 men, 760 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 738 men, 760 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 1,851 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuukta",
@@ -3508,22 +3690,32 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Mortlockese",
+        "pct": 100.0,
+        "count": 253
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3532,7 +3724,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B22444960542249",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 132 men, 141 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 132 men, 141 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 253 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuukpolowat",
@@ -3564,22 +3758,32 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 100.0,
+        "count": 1015
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3588,7 +3792,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B94242414509537",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 376 men, 369 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 376 men, 369 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 1,015 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuukmakur",
@@ -3620,22 +3826,37 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 99.4,
+        "count": 155
+      },
+      {
+        "group": "Pohnpei Outer Islander",
+        "pct": 0.6,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3644,7 +3865,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B63649844160089",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 81 men, 78 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 81 men, 78 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 156 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-chuukpiherarh",
@@ -3676,22 +3899,32 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's religion is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give religion for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-10), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's religion is counted by state and region only."
     },
     "language": {
       "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's language is counted by state only."
+      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. The 2000 census's National Detailed Tables give language for Chuuk's five regions (Northern and Southern Namoneas, Faichuk, the Mortlocks, Oksoritod; Table P2-11), not its municipalities, and the 2000 state reports they say break the tables down by municipality are not among the files the office's site or the Internet Archive's copies of its former one serve. Chuuk's language is counted by state and region only."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else; the 2023 census has published no Chuuk State tables (the office's Chuuk page offers only the 2010 tabulation), and its national tables stop at the state. Chuuk's ethnicity is counted by state only."
-    },
+    "ethnicity": [
+      {
+        "group": "Chuukese",
+        "pct": 100.0,
+        "count": 227
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
         "name": "FSM Statistics Division, Federated States of Micronesia, 2010 FSM Census of Population and Housing, Chuuk State basic tabulation (Table B01)",
         "url": "https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
@@ -3700,7 +3933,9 @@
     "match_by": "shape_id",
     "shape_id": "79324940B4028665083072",
     "median_age_note": "Median age at the 2010 census, as the state's Table B01 prints it.",
-    "sex_ratio_note": "Males per 100 females, 2010 census: 109 men, 118 women."
+    "sex_ratio_note": "Males per 100 females, 2010 census: 109 men, 118 women.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 227 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Chuuk's ethnicity by municipality: the 2010 census's Chuuk State tabulation publishes age and sex (Table B01) and housing by municipality and nothing else, and the 2023 census has published no Chuuk State tables. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-pohnpeimadolenihmw",
@@ -5710,10 +5945,63 @@
         "count": 2
       }
     ],
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Kosrae State tabulation has no ethnicity table by municipality (its tables go from citizenship to marital status and religion), and the 2023 census's published tables carry no ethnicity. Kosrae's ethnicity is counted by state only (2010 national Table B08)."
-    },
+    "ethnicity": [
+      {
+        "group": "Kosraean",
+        "pct": 93.9,
+        "count": 2434
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 1.5,
+        "count": 39
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 1.3,
+        "count": 33
+      },
+      {
+        "group": "U.S. American",
+        "pct": 1.1,
+        "count": 29
+      },
+      {
+        "group": "Filipino",
+        "pct": 0.8,
+        "count": 22
+      },
+      {
+        "group": "Chuukese",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Mortlockese",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Pohnpei Outer Islander",
+        "pct": 0.2,
+        "count": 4
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
@@ -5728,6 +6016,13 @@
         "url": "https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
     "country": "FSM",
@@ -5739,7 +6034,9 @@
     "religion_year": 2010,
     "religion_note": "Religion, 2010 census (Table 22), as shares of all 2,160 people here; 'Not stated' is the census's 'Refused'. The 2023 census publishes no religion by Kosrae municipality.",
     "language_year": 2010,
-    "language_note": "Language mainly spoken at home, persons aged three and over, 2010 census (Table B10A): 1,996 people here. The 2023 census's published tables carry no language; 2010 is the latest count of it."
+    "language_note": "Language mainly spoken at home, persons aged three and over, 2010 census (Table B10A): 1,996 people here. The 2023 census's published tables carry no language; 2010 is the latest count of it.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 2,591 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Kosrae's ethnicity by municipality: the 2010 census's Kosrae State tabulation has no ethnicity table by municipality, and the 2023 census's published tables carry no ethnicity. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-kosraemalem",
@@ -5833,10 +6130,58 @@
         "count": 7
       }
     ],
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Kosrae State tabulation has no ethnicity table by municipality (its tables go from citizenship to marital status and religion), and the 2023 census's published tables carry no ethnicity. Kosrae's ethnicity is counted by state only (2010 national Table B08)."
-    },
+    "ethnicity": [
+      {
+        "group": "Kosraean",
+        "pct": 94.8,
+        "count": 1489
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 1.7,
+        "count": 26
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 0.8,
+        "count": 13
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.8,
+        "count": 12
+      },
+      {
+        "group": "Chuukese",
+        "pct": 0.6,
+        "count": 9
+      },
+      {
+        "group": "Filipino",
+        "pct": 0.4,
+        "count": 6
+      },
+      {
+        "group": "Pohnpei Outer Islander",
+        "pct": 0.4,
+        "count": 7
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.3,
+        "count": 4
+      },
+      {
+        "group": "U.S. American",
+        "pct": 0.3,
+        "count": 4
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
@@ -5851,6 +6196,13 @@
         "url": "https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
     "country": "FSM",
@@ -5862,7 +6214,9 @@
     "religion_year": 2010,
     "religion_note": "Religion, 2010 census (Table 22), as shares of all 1,300 people here; 'Not stated' is the census's 'Refused'. The 2023 census publishes no religion by Kosrae municipality.",
     "language_year": 2010,
-    "language_note": "Language mainly spoken at home, persons aged three and over, 2010 census (Table B10A): 1,218 people here. The 2023 census's published tables carry no language; 2010 is the latest count of it."
+    "language_note": "Language mainly spoken at home, persons aged three and over, 2010 census (Table B10A): 1,218 people here. The 2023 census's published tables carry no language; 2010 is the latest count of it.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 1,571 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Kosrae's ethnicity by municipality: the 2010 census's Kosrae State tabulation has no ethnicity table by municipality, and the 2023 census's published tables carry no ethnicity. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-kosraeutwe",
@@ -5941,10 +6295,43 @@
         "count": 2
       }
     ],
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Kosrae State tabulation has no ethnicity table by municipality (its tables go from citizenship to marital status and religion), and the 2023 census's published tables carry no ethnicity. Kosrae's ethnicity is counted by state only (2010 national Table B08)."
-    },
+    "ethnicity": [
+      {
+        "group": "Kosraean",
+        "pct": 97.8,
+        "count": 1043
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 1.2,
+        "count": 13
+      },
+      {
+        "group": "Pohnpei Outer Islander",
+        "pct": 0.4,
+        "count": 4
+      },
+      {
+        "group": "Chuukese",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Filipino",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
@@ -5959,6 +6346,13 @@
         "url": "https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
     "country": "FSM",
@@ -5970,7 +6364,9 @@
     "religion_year": 2010,
     "religion_note": "Religion, 2010 census (Table 22), as shares of all 983 people here; 'Not stated' is the census's 'Refused'. The 2023 census publishes no religion by Kosrae municipality.",
     "language_year": 2010,
-    "language_note": "Language mainly spoken at home, persons aged three and over, 2010 census (Table B10A): 910 people here. The 2023 census's published tables carry no language; 2010 is the latest count of it."
+    "language_note": "Language mainly spoken at home, persons aged three and over, 2010 census (Table B10A): 910 people here. The 2023 census's published tables carry no language; 2010 is the latest count of it.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 1,067 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Kosrae's ethnicity by municipality: the 2010 census's Kosrae State tabulation has no ethnicity table by municipality, and the 2023 census's published tables carry no ethnicity. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   },
   {
     "id": "FSM-CENSUS-kosraetafunsak",
@@ -6089,10 +6485,63 @@
         "count": 2
       }
     ],
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2010 census's Kosrae State tabulation has no ethnicity table by municipality (its tables go from citizenship to marital status and religion), and the 2023 census's published tables carry no ethnicity. Kosrae's ethnicity is counted by state only (2010 national Table B08)."
-    },
+    "ethnicity": [
+      {
+        "group": "Kosraean",
+        "pct": 94.2,
+        "count": 2315
+      },
+      {
+        "group": "Chuukese",
+        "pct": 1.5,
+        "count": 37
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 1.4,
+        "count": 35
+      },
+      {
+        "group": "Pohnpei Outer Islander",
+        "pct": 0.8,
+        "count": 20
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.7,
+        "count": 16
+      },
+      {
+        "group": "Filipino",
+        "pct": 0.4,
+        "count": 10
+      },
+      {
+        "group": "Mortlockese",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "U.S. American",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population/median_age/sex_ratio",
@@ -6107,6 +6556,13 @@
         "url": "https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx",
         "year": 2010,
         "license": "None stated -- FSM Statistics Division publication, cited as such"
+      },
+      {
+        "field": "ethnicity",
+        "name": "FSM Division of Statistics, Department of Economic Affairs, 2000 FSM Census of Population and Housing, National Detailed Tables (May 2002), Table P1-4A/B: Population in Municipalities by First Ethnicity",
+        "url": "http://web.archive.org/web/20201115081315id_/https://www.fsmstatistics.fm/wp-content/uploads/2019/02/2000-FSM-Detailed-Tables.pdf",
+        "year": 2000,
+        "license": "None stated -- FSM Statistics Division publication, cited as such"
       }
     ],
     "country": "FSM",
@@ -6118,6 +6574,8 @@
     "religion_year": 2010,
     "religion_note": "Religion, 2010 census (Table 22), as shares of all 2,173 people here; 'Not stated' is the census's 'Refused'. The 2023 census publishes no religion by Kosrae municipality.",
     "language_year": 2010,
-    "language_note": "Language mainly spoken at home, persons aged three and over, 2010 census (Table B10A): 1,998 people here. The 2023 census's published tables carry no language; 2010 is the latest count of it."
+    "language_note": "Language mainly spoken at home, persons aged three and over, 2010 census (Table B10A): 1,998 people here. The 2023 census's published tables carry no language; 2010 is the latest count of it.",
+    "ethnicity_year": 2000,
+    "ethnicity_note": "Ethnicity of the 2,457 people counted here at the 2000 census (National Detailed Tables, Table P1-4, 'Population in Municipalities by First Ethnicity'): a person who gave more than one is counted under the first. It is the latest count of Kosrae's ethnicity by municipality: the 2010 census's Kosrae State tabulation has no ethnicity table by municipality, and the 2023 census's published tables carry no ethnicity. 'Yap Outer Islander' and 'Pohnpei Outer Islander' are the table's columns for the outer islands' peoples of those two states."
   }
 ]
