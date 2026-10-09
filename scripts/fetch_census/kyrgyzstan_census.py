@@ -548,9 +548,25 @@ def age_label(line: str) -> tuple[str, list[str]]:
 # 3,492 between are Pristan-Przhevalsk (1,713 men, 1,779 women in table 2.5,
 # page 24), which no age block prints. The median of the polygon holding
 # Karakol is of its people whose ages are printed, and says so.
+#
+# Balykchy the same: its age block is the city without Orto-Tokoy (51,487),
+# table 3.2 the whole city (52,225); Orto-Tokoy has 738 (366 men, 372 women,
+# table 2.5).
 AGE_TABLE_LEAVES_OUT: dict[str, tuple[str, tuple[int, int, int]]] = {
     "г.каракол": ("Pristan-Przhevalsk, the urban-type settlement under Karakol city",
                   (3492, 1713, 1779)),
+    "г.балыкчы": ("Orto-Tokoy, the urban-type settlement under Balykchy city",
+                  (738, 366, 372)),
+}
+# A city's settlement that lies outside the polygon holding the city: table
+# 3.2 counts it with the city and prints no row for it apart, so the city's
+# figures stay whole on the polygon that holds the city, and say so. Orto-
+# Tokoy lies by the Orto-Tokoy reservoir, 76.0 E 42.3 N, inside the polygon
+# drawn as Tong; Balykchy itself (76.19 E 42.46 N) is inside Issyk Kul.
+OUTLYING = {
+    "г.балыкчы": ("Balykchy's figures include Orto-Tokoy (738 people), an urban-type "
+                  "settlement under the city that lies by the Orto-Tokoy reservoir, inside the "
+                  "polygon drawn as Tong; the census prints no row for it apart."),
 }
 
 # Age-group rows a book misprints, as printed (both sexes, men, women). Each
@@ -1114,6 +1130,9 @@ def build(books: dict[str, dict[str, Any]], a1: list[dict[str, Any]],
         note = (f"The polygon drawn as {shape['name']} holds {', '.join(names)}, which the "
                 f"boundary file does not draw apart; it carries their sum."
                 if len(parts) > 1 else None)
+        outlying = [OUTLYING[n] for n in names if n in OUTLYING]
+        if outlying:
+            note = " ".join([note or "", *outlying]).strip()
         out.append(record(
             f"KGZ-CENSUS-{shape['id']}", shape["name"], level="admin2",
             parent=f"KGZ-CENSUS-{shape['parent']}", parent_name=region_name[shape["parent"]],
