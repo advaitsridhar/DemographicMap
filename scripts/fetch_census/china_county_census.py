@@ -671,7 +671,7 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
          seats: dict[str, list[str]], units: dict[str, dict[str, Any]],
          lone: dict[str, tuple[str, dict[str, Any]]] | None = None,
          ground: dict[str, dict[str, Any]] | None = None,
-         towns: dict[str, list[list[Any]]] | None = None,
+         towns: dict[str, dict[str, Any]] | None = None,
          ) -> tuple[dict[int, str], Counter]:
     """{row position: shape id} for the county rows that pass all six tests,
     and why the others did not. Each county-level area carries its own
@@ -689,10 +689,21 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
     # within china_zones.NEAR of its point, so no generalised line can have
     # put it there. {shape id: [(its unit's code, its name)]}.
     inside: dict[str, list[tuple[str, str]]] = {}
-    for unit_code_, rows in (towns or {}).items():
-        for row in rows:
+    for unit_code_, unit_ in (towns or {}).items():
+        for row in unit_["townships"]:
             if len(row) >= 4 and row[2] and (row[3] or []) == [row[2]]:
                 inside.setdefault(row[2], []).append((unit_code_, row[1]))
+
+    def listed(unit_code: str, label: str) -> str | None:
+        """The county's code in the township listing: its own, or where the
+        codes still give it the code it had before a change of kind (同仁县
+        632321 is 同仁市 632301 since 2020), the one unit of its prefecture of
+        the same name."""
+        if unit_code in (towns or {}):
+            return unit_code
+        same = [c for c, u in (towns or {}).items()
+                if c[:4] == unit_code[:4] and stem(compact(u.get("name", ""))) == stem(label)]
+        return same[0] if len(same) == 1 else None
     cut: dict[str, str] = {}
     for area in areas:
         if area["kind"] == "special" and area["prefecture"] is None and area["head"] is None:
@@ -787,9 +798,10 @@ def bind(code: str, areas: list[dict[str, Any]], a0101: dict, code_shapes: dict[
         # stands deep inside the polygon (no other polygon within NEAR of it)
         # is ground the county has lost since the polygon was drawn; one of
         # its own standing more than NEAR outside it is ground it has gained.
-        own = (towns or {}).get(unit_code)
+        listed_as = listed(unit_code, area["label"])
+        own = (towns or {})[listed_as]["townships"] if listed_as else None
         if own is not None:
-            foreign = [(u, t) for u, t in inside.get(shape, []) if u != unit_code]
+            foreign = [(u, t) for u, t in inside.get(shape, []) if u != listed_as]
             outside = [row[1] for row in own if len(row) >= 4 and shape not in (row[3] or [])]
             if foreign or outside:
                 detail = {"foreign": foreign, "outside": outside}
@@ -961,7 +973,7 @@ def build(code: str, tables: dict[str, list[list[Any]]], names: dict[str, list[s
           seat_names: dict[str, dict[str, Any]] | None = None,
           missing: dict[str, str] | None = None,
           ground: dict[str, dict[str, Any]] | None = None,
-          towns: dict[str, list[list[Any]]] | None = None) -> list[dict[str, Any]]:
+          towns: dict[str, dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     """The province's county records. ``missing`` is {table: why it could
     not be read} for an OPTIONAL table that was not; ``ground`` is where
     ``china_zones`` placed the special units' townships."""

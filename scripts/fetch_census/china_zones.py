@@ -247,17 +247,24 @@ KIND_EN = {"街道": "subdistrict", "镇": "town", "乡": "township"}
 
 
 def point_for(code: str, name: str, by_code: dict[str, dict[str, Any]],
-              by_prefecture: dict[str, list[dict[str, Any]]]) -> tuple[dict[str, Any] | None, str]:
+              by_prefecture: dict[str, list[dict[str, Any]]],
+              names_by_unit: dict[str, set[str]] | None = None
+              ) -> tuple[dict[str, Any] | None, str]:
     """(the Wikidata item standing for the township, how it was found): the
     item carrying the township's own code whose label reads as its name, or
     failing that the one item in the prefecture whose label does -- of the
-    same kind (街道 a subdistrict, 镇 a town, 乡 a township) where two do."""
+    same kind (街道 a subdistrict, 镇 a town, 乡 a township) where two do.
+    An item whose code puts it under another unit that has a township of the
+    same name in the listing is that unit's (every county has its 城关镇), so
+    it is no candidate (``names_by_unit``: {unit code: its townships' names})."""
     own = ZONE_PREFIX.sub("", name)
     names = pinyins(name) | pinyins(own)
     item = by_code.get(code[:9]) or by_code.get(code)
     if item and bare_label(item.get("label", "")) in names:
         return item, "its code"
-    hits = [p for p in by_prefecture.get(code[:4], []) if bare_label(p.get("label", "")) in names]
+    hits = [p for p in by_prefecture.get(code[:4], []) if bare_label(p.get("label", "")) in names
+            and (p["code"][:6] == code[:6]
+                 or name not in (names_by_unit or {}).get(p["code"][:6], ()))]
     if len(hits) > 1:
         kind = next((en for zh, en in KIND_EN.items() if own.endswith(zh)), None)
         same = [p for p in hits if kind and re.search(rf"(?i)\b{kind}\b", p.get("label", ""))]
@@ -296,6 +303,9 @@ def place() -> int:
                 ids.append(feature["properties"]["shapeID"])
                 geoms.append(shape(feature["geometry"]))
     tree = STRtree(geoms)
+    names_by_unit: dict[str, set[str]] = {}
+    for ucode, unit in {**(listing.get("units") or {}), **listing["zones"]}.items():
+        names_by_unit.setdefault(ucode, set()).update(n for _, n in unit["townships"])
 
     def located(item: dict[str, Any]) -> dict[str, Any]:
         pt = Point(float(item["lon"]), float(item["lat"]))
@@ -310,7 +320,7 @@ def place() -> int:
         out = {"name": zone["name"], "listing": listing["source"], "townships": []}
         seen = set()
         for code, name in zone["townships"]:
-            item, how = point_for(code, name, by_code, by_prefecture)
+            item, how = point_for(code, name, by_code, by_prefecture, names_by_unit)
             entry: dict[str, Any] = {"code": code, "name": name, "how": how}
             if item:
                 entry.update(located(item))
@@ -335,12 +345,12 @@ def place() -> int:
     # Every county-level unit's townships, compactly: [code, name, the polygon
     # its point stands in, the polygons within NEAR of it] or [code, name] for
     # one with no point.
-    towns: dict[str, list[list[Any]]] = {}
+    towns: dict[str, dict[str, Any]] = {}
     placed = unplaced = 0
     for ucode, unit in sorted((listing.get("units") or {}).items()):
         rows = []
         for code, name in unit["townships"]:
-            item, _ = point_for(code, name, by_code, by_prefecture)
+            item, _ = point_for(code, name, by_code, by_prefecture, names_by_unit)
             if item:
                 spot = located(item)
                 rows.append([code, name, spot["shape"], spot["near"]])
@@ -348,7 +358,7 @@ def place() -> int:
             else:
                 rows.append([code, name])
                 unplaced += 1
-        towns[ucode] = rows
+        towns[ucode] = {"name": unit["name"], "townships": rows}
     TOWNS.write_text(json.dumps(towns, ensure_ascii=False, separators=(",", ":"),
                                 sort_keys=True) + "\n", encoding="utf-8")
     log(f"china_zones: {len(towns)} county-level units; {placed} townships placed, {unplaced} "
