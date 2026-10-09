@@ -567,6 +567,14 @@ OUTLYING = {
     "г.балыкчы": ("Balykchy's figures include Orto-Tokoy (738 people), an urban-type "
                   "settlement under the city that lies by the Orto-Tokoy reservoir, inside the "
                   "polygon drawn as Tong; the census prints no row for it apart."),
+    # Measured on the boundary file at full resolution (CGAZ ADM1 and ADM2):
+    # the point is in Batken Region at the first level and in Nookat, an Osh
+    # Region district, at the second.
+    "г.кызыл-кия": ("Kyzyl-Kiya's centre (72.13E 40.26N) lies where the boundary file's "
+                    "two levels disagree: its first level puts it in Batken Region, the "
+                    "region the census counts it in, and its second level inside the polygon "
+                    "drawn as Nookat, a district of Osh Region. It is counted here, with "
+                    "Kadamjay, Batken Region's district beside it."),
 }
 
 # Age-group rows a book misprints, as printed (both sexes, men, women). Each

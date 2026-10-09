@@ -61,6 +61,11 @@ class Placement(unittest.TestCase):
         note = kz.polygon_note("Zerendinskiy", ["Кокшетау Г.А.", "Зерендинский район"])
         self.assertIn("holds Зерендинский район and also Кокшетау Г.А.", note)
         self.assertIsNone(kz.polygon_note("Zerendinskiy", ["Зерендинский район"]))
+        # A unit whose point lies outside the polygon it is counted with says so.
+        note = kz.polygon_note("Beskaragayskiy", ["Бескарагайский район", "Курчатов г.а."])
+        self.assertIn("lies in the polygon drawn as Mayskiy", note)
+        self.assertNotIn("Mayskiy", kz.polygon_note("Zerendinskiy",
+                                                    ["Кокшетау Г.А.", "Зерендинский район"]))
 
 
 class TableTwoTwo(unittest.TestCase):

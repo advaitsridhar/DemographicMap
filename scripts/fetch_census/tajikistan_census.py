@@ -197,6 +197,15 @@ def tj_key(text: str) -> str:
     return re.sub(r"[^а-я]", "", low.translate(TAJIK))
 
 
+# A capital letter the PDF's text layer sets apart from the rest of its word
+# ('ноҳияи К ушониён'): joined again for every name a reader sees.
+SPLIT_CAPITAL = re.compile(r"(?<!\S)([А-ЯЁҚҒӮҲҶӢ]) (?=[а-яёқғӯҳҷӣ])")
+
+
+def tidy(name: str) -> str:
+    return SPLIT_CAPITAL.sub(r"\1", " ".join(name.split()))
+
+
 def unit_label(text: str) -> str:
     """The drawn polygon a Tajik unit name belongs to; exact key first, then a suffix."""
     key = tj_key(text)
@@ -530,6 +539,11 @@ def ethnicity_2010(table: dict[str, dict[str, tuple[int, int, int]]],
         counts = {k: v for k, v in listed.items() if v}
         if other:
             counts["Other"] = other
+        # The groups the 2010 census coded apart, Lakai and Kungrat among them,
+        # are named only where the review asked for them, Khatlon; elsewhere
+        # 'Other' is named for what it is -- in GBAO it is 72 people.
+        among = (", among them the groups the census coded apart, such as Lakai and "
+                 "Kungrat" if region == "Khatlon Region" else "")
         out[region] = {
             "ethnicity": shares(counts, total=total),
             "ethnicity_year": YEAR_2010,
@@ -538,9 +552,10 @@ def ethnicity_2010(table: dict[str, dict[str, tuple[int, int, int]]],
                 "the latest to tabulate it: volume III's table of individual nationalities by "
                 "sex and age groups names the seven largest -- Tajiks, Uzbeks, Russians, "
                 "Kyrgyz, Turkmen, Tatars and Kazakhs -- by region; the rest of the region's "
-                f"{total:,} people in 2010 ({other:,}) are 'Other', among them the groups "
-                "the census coded apart, such as Lakai and Kungrat. The 2020 census does not "
-                "tabulate nationality.")}
+                f"{total:,} people in 2010 ({other:,}) are 'Other'{among}. The counts are the "
+                "2010 census's and add up to that year's population, not to the 2020 "
+                "population this region carries. The 2020 census does not tabulate "
+                "nationality.")}
     return out
 
 
@@ -602,14 +617,14 @@ def build(ages: dict[str, dict[str, Any]], totals: dict[str, tuple[int, int]],
         rows = polygons[shape["id"]]
         men, women = sum(r[1] for r in rows), sum(r[2] for r in rows)
         region = name_of[shape["parent"]]
-        note = (f"The polygon drawn as {shape['name']} holds {', '.join(r[0] for r in rows)}: "
-                f"the boundary file does not draw them apart, so it carries their sum."
-                if len(rows) > 1 else None)
+        note = (f"The polygon drawn as {shape['name']} holds "
+                f"{', '.join(tidy(r[0]) for r in rows)}: the boundary file does not draw them "
+                f"apart, so it carries their sum." if len(rows) > 1 else None)
         out.append(record(
             f"TJK-CENSUS-{shape['id']}", shape["name"], level="admin2",
             parent=f"TJK-CENSUS-{shape['parent']}", parent_name=region, country=ISO3,
             match_by="shape_id", shape_id=shape["id"],
-            aliases=sorted({r[0] for r in rows}),
+            aliases=sorted({tidy(r[0]) for r in rows}),
             population=measure(men + women, year=YEAR, source=SEXES_SOURCE),
             population_note=note,
             sex_ratio=measure(round(100 * men / women, 1), year=YEAR, source=SEXES_SOURCE,

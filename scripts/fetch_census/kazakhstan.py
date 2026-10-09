@@ -342,6 +342,20 @@ def namesake(unit: str, label: str) -> bool:
     return any(fold(n) == fold(label) for n in own)
 
 
+# Units counted with a polygon that does not hold their point at full
+# resolution, and what the reader is told. Measured on the boundary file's
+# own geometry (CGAZ ADM1 and ADM2), not on the tiles.
+OUTSIDE = {
+    "курчатов": (
+        "Kurchatov's centre (78.54E 50.75N) lies in the polygon drawn as Mayskiy, a district "
+        "of Pavlodar Region, where the boundary file's second-level outlines overrun its "
+        "first-level border. The city belongs to East Kazakhstan (to Abai Region since "
+        "2022, which the map draws inside it), as the boundary file's first level has it "
+        "too, so it is counted here with Beskaragay, the district around it inside East "
+        "Kazakhstan's outline."),
+}
+
+
 def polygon_note(label: str, units: list[str]) -> str | None:
     """What a polygon holding several of the Bureau's units carries, said once."""
     if len(units) < 2:
@@ -350,8 +364,10 @@ def polygon_note(label: str, units: list[str]) -> str | None:
     rest = [u for u in units if u not in first]
     held = first[:1] or rest[:1]
     others = [u for u in units if u not in held]
+    outside = [OUTSIDE[key(u)] for u in units if key(u) in OUTSIDE]
     return (f"The polygon drawn as {label} holds {held[0]} and also {', '.join(others)}, "
-            f"which the boundary file does not draw apart; it carries their sum.")
+            f"which the boundary file does not draw apart; it carries their sum."
+            + "".join(f" {why}" for why in outside))
 
 # Beyond the Rosstat table: the Bureau's spellings and its residual rows.
 LABELS = {

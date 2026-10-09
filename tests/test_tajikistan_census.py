@@ -144,6 +144,9 @@ class Sexes(unittest.TestCase):
         self.assertEqual(tj.unit_label("ноҳияи Ҷ. Балхӣ"), "Rumi District")
         self.assertEqual(tj.unit_label("шаҳри Левакант - ҳамагӣ"), "Sarband District")
         self.assertEqual(tj.unit_label("ноҳияи К ушониён"), "Bokhtar District")
+        # The capital the PDF sets apart is joined again in what a reader sees.
+        self.assertEqual(tj.tidy("ноҳияи К ушониён"), "ноҳияи Кушониён")
+        self.assertEqual(tj.tidy("ноҳияи Ш. Шоҳтемур"), "ноҳияи Ш. Шоҳтемур")
         with self.assertRaises(SystemExit):
             tj.unit_label("ноҳияи Нестӣ")
 
@@ -248,6 +251,11 @@ class Records(unittest.TestCase):
         self.assertEqual(groups["Tajik"], 150)
         self.assertEqual(groups["Other"], 200 - 150 - 7 - 4 - 3)
         self.assertNotIn("Turkmen", groups)          # a dash in every column
+        # Lakai and Kungrat are named for Khatlon alone, and every note says
+        # its counts are 2010's.
+        self.assertNotIn("Lakai", gbao["ethnicity_note"])
+        self.assertIn("2010 census's", gbao["ethnicity_note"])
+        self.assertIn("Lakai", nationalities["Khatlon Region"]["ethnicity_note"])
         district = next(r for r in out if r["level"] == "admin2")
         self.assertEqual(district["ethnicity"]["status"], "not_available")
         self.assertIn("urban and rural", district["language"]["note"])

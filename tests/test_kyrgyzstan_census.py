@@ -387,6 +387,12 @@ class Records(unittest.TestCase):
         with self.assertRaises(SystemExit):
             kg.build(self.books, A1, A2 + [{"id": "x", "name": "Chatkal", "parent": "J"}])
 
+    def test_kyzyl_kiya_says_where_its_point_lies(self):
+        # Counted with Batken Region's Kadamjay, and the record says the
+        # boundary file's second level puts the point in Osh Region's Nookat.
+        self.assertEqual(kg.PLACE["г.кызыл-кия"], "Kadamjay")
+        self.assertIn("Nookat", kg.OUTLYING["г.кызыл-кия"])
+
     def test_people_the_age_table_leaves_out_are_named(self):
         # Karakol: the age table prints the city without Pristan-Przhevalsk.
         groups = [(0, 0, 0)] * 21
