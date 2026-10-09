@@ -1264,7 +1264,7 @@ ADAPTER_GAPS: dict[str, str] = {
     # its own stated reason.
     "IRN": "Language: no Iranian census has ever asked it, so there is "
            "nothing withheld and nothing to fetch. Eleven provinces "
-           "and 96 counties carry a figure all the same -- a population-"
+           "and 102 counties carry a figure all the same -- a population-"
            "weighted roll-up of the settlement estimates in the Atlas of the "
            "Languages of Iran, marked as the atlas's field estimates and not "
            "as anybody's count. The atlas is published province by province "
@@ -2186,7 +2186,8 @@ def weigh_adm2_parents(
 # declared with the unit the census files them under:
 # {shapeID: (ISO3, the first-level unit's name as the boundary file labels it)}.
 # Geometry stays the rule (see link_adm2_parents); this is for a polygon that
-# meets no first-level one, each entry with the count that shows it.
+# meets no first-level one, or that the boundary file's coarser first level
+# puts mostly inside a neighbour, each entry with the count that shows it.
 #
 # The parent is not decoration. It is what a first-level unit's sum is taken
 # over, so a child filed elsewhere is a child that sum leaves out: Kinmen's five
@@ -2251,6 +2252,53 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     # populations (timor_age).
     "22284137B34351426942246": ("TLS", "Dili"),  # Dom Aleixo; by area in Liquiçá
     "22284137B47375840688188": ("TLS", "Cova Lima"),  # Zumalai; by area in Ainaro
+    # Samoa: the 2021 census counts Vaisigano East (Vaisigano No. 1: Auala,
+    # Matavai (Asau), Utuloa and Vaisala) in Vaisigano. Its polygon reaches
+    # inland, so by area it is 56% in Gaga'ifomauga, whose drawn children then
+    # came to 6,896 against its census 4,797 and Vaisigano's to 4,658 against
+    # 6,757. Filed as counted, both add up to their census populations
+    # (samoa_census).
+    "51752279B16736708134398": ("WSM", "Vaisigano"),  # Vaisigano East; by area in Gaga'ifomauga
+    # Solomon Islands: the 2019 census counts West Honiara (wards Nggossi,
+    # Mbumburu and Rove/Lengakiki) in Honiara. The boundary file draws the
+    # Capital Territory narrow, so by area 76% of West Honiara lies in
+    # Guadalcanal, whose drawn constituencies then came to 190,081 against its
+    # census 154,022 and Honiara's to 93,510 against 129,569. Three island
+    # constituencies meet no province at all. Filed as counted, Honiara,
+    # Guadalcanal, Western, Malaita and Makira each add up to their census
+    # populations (solomon_census); Temotu is short only Temotu Pele, which
+    # has no polygon.
+    "97153195B79685360325521": ("SLB", "Capital Territory (Honiara)"),  # West Honiara; by area in Guadalcanal
+    "97153195B5229435776265": ("SLB", "Western"),  # Ranongga-Simbo; by area in no province
+    "97153195B283418478941": ("SLB", "Malaita"),  # Malaita Outer Island; by area in no province
+    "97153195B5813678005448": ("SLB", "Makira"),  # Ulawa-Ugi; by area in no province
+    # South Korea: the boundary file draws the metropolitan cities small, and
+    # seventeen districts fall inside a neighbouring province's polygon or
+    # outside every province's. Gwangju's drawn children came to 426,867
+    # against its 1,444,585 registered people, with four of its five districts
+    # under South Jeolla (2,778,927 against 1,853,327); Incheon's to 0.67 of
+    # it and Gyeonggi's to 1.10. The resident register files each of them
+    # under its own province (korea_nationality's DRAWN_ELSEWHERE); filed so,
+    # every province adds up to its registered population exactly, South
+    # Jeolla short only Yeonggwang-gun, which has no polygon. Gunwi-gun is
+    # Daegu's since July 2023, which is the register this follows.
+    "91817680B53616587081026": ("KOR", "Seoul"),  # Eunpyeong-gu; in Gyeonggi's polygon
+    "91817680B73279111808647": ("KOR", "Incheon"),  # Seo-gu [West District]; in Gyeonggi's polygon
+    "91817680B94833670639499": ("KOR", "Incheon"),  # Gyeyang-gu; in Gyeonggi's polygon
+    "91817680B24929628173287": ("KOR", "Incheon"),  # Ganghwa-gun; in Gyeonggi's polygon
+    "91817680B43125449030549": ("KOR", "Incheon"),  # Ongjin-gun; in no province
+    "91817680B91211823266814": ("KOR", "Busan"),  # Gangseo-gu; in South Gyeongsang's polygon
+    "91817680B54012703126739": ("KOR", "Busan"),  # Gijang-gun; in South Gyeongsang's polygon
+    "91817680B63526671374694": ("KOR", "Busan"),  # Yeongdo-gu; in no province
+    "91817680B33489673734556": ("KOR", "Daegu"),  # Dalseong-gun; in North Gyeongsang's polygon
+    "91817680B30315657457409": ("KOR", "Daegu"),  # Gunwi-gun; in North Gyeongsang's polygon
+    "91817680B89733153975870": ("KOR", "Gwangju"),  # Dong-gu [East District]; in South Jeolla's polygon
+    "91817680B87996420220515": ("KOR", "Gwangju"),  # Seo-gu [West District]; in South Jeolla's polygon
+    "91817680B68494559899558": ("KOR", "Gwangju"),  # Nam-gu [South District]; in South Jeolla's polygon
+    "91817680B16538338684661": ("KOR", "Gwangju"),  # Gwangsan-gu; in South Jeolla's polygon
+    "91817680B53543824194985": ("KOR", "Daejeon"),  # Dong-gu; in North Chungcheong's polygon
+    "91817680B88731995383072": ("KOR", "North Gyeongsang"),  # Uljin-gun; in Gangwon's polygon
+    "91817680B46467557111645": ("KOR", "South Jeolla"),  # Sinan-gun; in no province
 }
 
 
@@ -3557,6 +3605,21 @@ def year_sort_key(year: Any) -> tuple[int, str]:
     return (int(m.group()) if m else 0, str(year))
 
 
+def counted_noun(basis: Any) -> str:
+    """What the divisions' own counts are counts of, for the roll-up's note.
+
+    People, unless the basis every division counts on says otherwise.
+    Suriname's districts count households by the language most spoken in
+    them, and the country's note read "the divisions' own counts, of 123,416
+    people in 2004" above a sentence saying they are households. Gilgit-
+    Baltistan's survey, which counts the language of each household's head,
+    counts households too.
+    """
+    said = basis.casefold() if isinstance(basis, str) else ""
+    return ("households" if said.startswith("households") or "household head" in said
+            else "people")
+
+
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                   field: str, *, level: str = "second-level",
                   over_published: bool = False,
@@ -3798,8 +3861,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
             if not whole_country and (not complete or shares_of(current)):
                 return (f"{field}: children sum to {total_pop:,.0f} against a "
                         f"published {own:,.0f}{drift}")
+            # The sentence names the total it is measured against rather than
+            # pointing back at "that": other sentences can stand between the
+            # two -- the divisions' own counts, a weighting -- and Italy's
+            # note then read "...own counts, of 57,251,233 people in 2015. The
+            # unit's own published population of 60,924,851 disagrees with
+            # that by -3%", a gap that is -6% against the figure just named.
             disagrees = (f" The unit's own published population of {own:,.0f} "
-                         f"disagrees with that by "
+                         f"disagrees with the divisions' total of "
+                         f"{total_pop:,.0f} by "
                          f"{100 * (total_pop - own) / own:+.0f}%; "
                          + ("the sum was taken anyway because every division "
                             "at this level in the country carries these "
@@ -3920,7 +3990,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         when = (f" in {next(iter(years))}" if len(years) == 1 else
                 f", nearly all of them in {dated}" if dated is not None else "")
         counted = (f" The figures added are the divisions' own counts, of "
-                   f"{denominator:,.0f} people{when}.")
+                   f"{denominator:,.0f} {counted_noun(usual)}{when}.")
     parent[f"{field}_note"] = (
         f"Summed from {'all ' if not left_out else ''}{len(children)} {level} "
         # The semicolon introduces the clause that follows it, so a sum that
@@ -4119,6 +4189,12 @@ def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
         for parent in parents:
             pop = parent.get("population")
             if not (isinstance(pop, dict) and pop.get("status") == NOT_AVAILABLE):
+                continue
+            # A gap whose adapter says the divisions linked to it do not make
+            # its polygon either: Afghanistan's provinces where a district's
+            # point falls across the province's edge, whose linked districts
+            # are not the ground drawn (afghanistan_estimates' POINT_ELSEWHERE).
+            if pop.get("no_child_sum"):
                 continue
             children = kids.get(parent["id"], [])
             values = [published(c.get("population")) for c in children]
@@ -4800,6 +4876,39 @@ def say_why_empty(entity: dict[str, Any], country: str,
     return case
 
 
+# The fields the panel reads to decide that a unit is empty, in its order
+# (hintPanel in site/js/dashboard.js).
+PANEL_FIELDS = ("population", "religion", "language", "ethnicity", "median_age")
+
+
+def drop_answered_hint(entity: dict[str, Any]) -> bool:
+    """Take the adapter hint off a unit whose every empty field says why.
+
+    A hint is printed on a unit with nothing in it, as "this build has not
+    fetched demographics for this unit" and a command to fetch them. That is
+    true of a unit nobody has read. It is false of one an adapter read and
+    left empty on purpose, field by field, with the reason on each: Jerusalem
+    District's figures count East Jerusalem, which the map draws in the West
+    Bank, and its panel went on to recommend the Wikidata fetch whose count
+    had just been refused for exactly that; Turkmenistan's etraps are divided
+    differently by the census and the boundary file, and the panel offered to
+    run the census adapter that said so. Each card already gives its own
+    reason, so the hint is taken off rather than turned into one more.
+
+    A unit with any field that is a gap with no reason keeps its hint: there
+    something really has not been fetched. Runs after say_why_empty, which is
+    what gives the bare compositions their reasons.
+    """
+    if "adapter_hint" not in entity:
+        return False
+    for field in PANEL_FIELDS:
+        value = entity.get(field)
+        if not (isinstance(value, dict) and is_gap(value) and value.get("note")):
+            return False
+    entity.pop("adapter_hint")
+    return True
+
+
 # A Wikidata item joined to a district by name is sometimes the town of that
 # name, not the district. Before its population was fetched the mistake was
 # invisible; afterwards Trinidad's Siparia region -- 86,949 people, drawn as
@@ -5125,12 +5234,7 @@ def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
     named = restated = 0
     for iso3 in sorted(set(admin1) | set(admin2)):
         units = admin1.get(iso3, []) + admin2.get(iso3, [])
-        drawn: dict[str, set[str]] = defaultdict(set)
-        inside: dict[Any, set[str]] = defaultdict(set)
-        for entity in units:
-            if norm(entity.get("name")):
-                drawn[norm(entity.get("name"))].add(entity["id"])
-            inside[entity.get("parent")].add(entity["id"])
+        apart_from = drawn_apart(units)
         for entity in units:
             held = entity.get("largest_settlement")
             if not isinstance(held, dict) or "_spans" not in held:
@@ -5138,8 +5242,7 @@ def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
             spans = held.pop("_spans")
             town, people = spans["town"], spans["people"]
             unit = published(entity.get("population"))
-            near = {entity["id"], entity.get("parent")} | inside[entity["id"]]
-            apart = bool(drawn.get(norm(town), set()) - near)
+            apart = apart_from(town, entity)
             if unit is not None and people <= GEONAMES_SPANS * unit \
                     and (people <= unit or not apart):
                 entity["largest_settlement"] = town
@@ -5166,6 +5269,84 @@ def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
                                 f"part of, or a place across a boundary.")
             restated += held["note"] != was
     return named, restated
+
+
+def drawn_apart(units: list[dict[str, Any]]):
+    """A test of whether the map draws a unit named like a town somewhere
+    other than the unit itself, the units above it and the units drawn inside
+    it, over one country's units (see settle_geonames_spans)."""
+    drawn: dict[str, set[str]] = defaultdict(set)
+    inside: dict[Any, set[str]] = defaultdict(set)
+    for entity in units:
+        if norm(entity.get("name")):
+            drawn[norm(entity.get("name"))].add(entity["id"])
+        inside[entity.get("parent")].add(entity["id"])
+
+    def apart(town: str, entity: dict[str, Any]) -> bool:
+        near = {entity["id"], entity.get("parent")} | inside[entity["id"]]
+        return bool(drawn.get(norm(town), set()) - near)
+    return apart
+
+
+GEONAMES_FIGURE = "GeoNames (CC BY 4.0)"
+
+
+def settle_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
+                              admin2: dict[str, list[dict[str, Any]]]) -> tuple[int, int]:
+    """Weigh every largest settlement's figure against the unit's final population.
+
+    scripts/fetch_geonames.py gives a place its figure only where that is not
+    more than the unit's population, and names no place at all where it is
+    more than SPANS times the unit, or more than the unit while the map draws
+    a unit of its name elsewhere. It weighs against the population the map
+    carried on the day it ran, and a unit that had none then kept its town's
+    figure whatever it was. Populations filled or lowered since then turned
+    the rule over: Kritar - Sirah, a district of Aden, came out at 76,723
+    people beside Aden's 1,079,670, and Hirat district at 506,896 beside
+    Herat's 574,300. settle_geonames_spans weighs again only the places
+    fetch_geonames refused; this weighs the ones it named, against the
+    population each record is written with.
+
+    A GeoNames place more than SPANS times the unit, or more than the unit
+    and drawn as a unit of its own elsewhere, is not named, with
+    fetch_geonames' reason; one that is only more than the unit keeps its name
+    and loses its figure. Natural Earth's figures are of a metropolitan area
+    the place stands for -- Tokyo's 35,676,000 beside the prefecture's
+    14,047,594 -- so its name, found by the unit's own name rather than a
+    point, stands and only the larger figure goes.
+
+    Returns (unnamed, unfigured).
+    """
+    unnamed = unfigured = 0
+    for iso3 in sorted(set(admin1) | set(admin2)):
+        units = admin1.get(iso3, []) + admin2.get(iso3, [])
+        apart_from = drawn_apart(units)
+        for entity in units:
+            figure = entity.get("largest_settlement_population")
+            town = entity.get("largest_settlement")
+            people = published(figure)
+            unit = published(entity.get("population"))
+            if people is None or unit is None or people <= unit:
+                continue
+            if (figure.get("source") == GEONAMES_FIGURE and isinstance(town, str)
+                    and (people > GEONAMES_SPANS * unit or apart_from(town, entity))):
+                why = ("and the map draws a unit of that name apart from this one"
+                       if people <= GEONAMES_SPANS * unit else
+                       "a city it is part of, or across a boundary")
+                entity["largest_settlement"] = gap(
+                    NOT_AVAILABLE,
+                    f"No GeoNames place is named: {town} ({people:,.0f}) is more than "
+                    f"the unit ({unit:,.0f})"
+                    + (f", {why}." if people <= GEONAMES_SPANS * unit else f": {why}."))
+                entity["sources"] = [
+                    src for src in entity.get("sources", [])
+                    if not (src.get("name") == GEONAMES_SOURCE["name"]
+                            and src.get("field") == GEONAMES_SOURCE["field"])]
+                unnamed += 1
+            else:
+                unfigured += 1
+            del entity["largest_settlement_population"]
+    return unnamed, unfigured
 
 
 def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
@@ -7290,6 +7471,11 @@ def main() -> int:
     if named or restated:
         log(f"  GeoNames places weighed again against final populations: {named} "
             f"named, {restated} reasons restated")
+    # And the places that were named, for the same reason.
+    unnamed, unfigured = settle_settlement_figures(admin1_by_country, admin2_by_country)
+    if unnamed or unfigured:
+        log(f"  largest settlements larger than their unit: {unnamed} no longer "
+            f"named, {unfigured} named without their figure")
     # After the level below, so a first-level unit that was itself summed can
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.
@@ -7344,6 +7530,13 @@ def main() -> int:
         log("  every bare composition field now says why: "
             + ", ".join(f"{n} units where {k}" for k, n in
                         sorted(why.items(), key=lambda kv: -kv[1])))
+    # After the reasons are written, since it reads them.
+    answered = sum(drop_answered_hint(entity)
+                   for table in (admin1_by_country, admin2_by_country)
+                   for rows in table.values() for entity in rows)
+    if answered:
+        log(f"  {answered} adapter hints taken off units whose every empty "
+            f"field already says why")
 
     # Last check before writing: every pass that could have filled a field
     # has run, so a lake that is still water here stays water on the map.

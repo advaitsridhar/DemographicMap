@@ -180,10 +180,11 @@ SIDO: dict[str, str] = {
 # Busan's Gangseo-gu, Gijang-gun and Yeongdo-gu, Daegu's Dalseong-gun and
 # Gunwi-gun, Daejeon's Dong-gu, Gyeongbuk's Uljin-gun, Jeonnam's Sinan-gun
 # and Incheon's Ongjin-gun (the last three under the country itself). The
-# row's parent_name is the province the shape is drawn under, because that
-# is the only way the join finds a Dong-gu among six, and the note says
-# which province the district is actually part of. Jeonnam's Yeonggwang-gun
-# has no shape at all.
+# map files each of them under its own province all the same (the build's
+# DECLARED_PARENTS), so the row's parent_name is the district's own province,
+# which is what the join finds a Dong-gu among six by, and the note says
+# whose polygon the outline is drawn in. Jeonnam's Yeonggwang-gun has no
+# shape at all.
 DRAWN_ELSEWHERE: dict[tuple[str, str], str] = {
     ("Seoul", "Eunpyeong-gu"): "Gyeonggi",
     ("Incheon", "Seo-gu [West District]"): "Gyeonggi",
@@ -656,14 +657,40 @@ def published_caveat(national: dict[str, int], published: dict[str, int]) -> str
 # Records
 # ---------------------------------------------------------------------------
 
+def drawn_where(name: str, province: str, under: str) -> str:
+    """Where the boundary file draws a district it puts inside another
+    province's polygon or outside every province's, said beside its figures.
+    The map files the district under its own province all the same."""
+    outline = (f"inside {under}'s polygon" if under else "outside every province's polygon")
+    return (f"The boundary file draws {name}'s outline {outline}; it is a district of "
+            f"{province}, and is filed and counted with {province} here.")
+
+
+def either_parent(shapes: dict[tuple[str, str], str]) -> dict[tuple[str, str], str]:
+    """Drawn districts keyed by (the province the map files them under, name),
+    and also by the other province DRAWN_ELSEWHERE gives them.
+
+    The map has filed these districts under the polygon they are drawn in and,
+    since the build's DECLARED_PARENTS, under their own province, so an
+    adapter reading the drawn units finds one or the other depending on which
+    build it reads. Either key reaches the one shape; neither replaces a key
+    that is already a drawn unit's own.
+    """
+    out = dict(shapes)
+    for (home, name), under in DRAWN_ELSEWHERE.items():
+        found = out.get((home, name)) or out.get((under, name))
+        if found:
+            out.setdefault((home, name), found)
+            out.setdefault((under, name), found)
+    return out
+
+
 def note_for(name: str, province: str | None, drawn_under: str | None,
              caveat: str = "") -> str:
     where = ("this district" if province else "this province")
     placement = f" {caveat}" if caveat else ""
     if drawn_under is not None:
-        under = drawn_under or "the country itself"
-        placement += (f" The boundary file draws {name} under {under}; it is a district of "
-                      f"{province}, and is counted in {province}'s row here.")
+        placement += f" {drawn_where(name, province, drawn_under)}"
     return (
         f"Registered foreign residents by country of nationality at {AS_OF} (Ministry of "
         "Justice, 시군구별 국적(지역)별 등록외국인 체류현황) against the resident-registered "
@@ -731,8 +758,7 @@ def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str
         records.append(record(
             f"KOR-{slugify(province)}-{slugify(shape)}", shape, level="admin2",
             parent=f"KOR-{slugify(province)}",
-            parent_name=(drawn_under if drawn_under else province) if drawn_under is not None
-            else province,
+            parent_name=province,
             country="KOR", sources=sources,
             population=measure(population, year=YEAR,
                                source="resident-registered Koreans plus registered foreigners"),

@@ -32,7 +32,10 @@ nation's figures are the ones Statistics Korea published for the round
 own name, with the two names the 2015 table writes otherwise: Incheon's Nam-gu,
 renamed Michuhol-gu in 2018, and Sejong, which the table calls 세종시. Gunwi
 was North Gyeongsang's until July 2023, so in 2015 it is counted there, which
-is also where the boundary file draws it. Jeonnam's Yeonggwang-gun has no
+is also where the boundary file draws it; the map files it under Daegu, as
+the register does now, and its note says when it moved (``MOVED_SINCE``).
+The drawn units are read keyed by either province of a district the boundary
+file draws in another's polygon. Jeonnam's Yeonggwang-gun has no
 polygon and counts only towards its province.
 
 **Labels.** The census's religions in the map's words. Daesun Jinrihoe
@@ -61,10 +64,19 @@ from typing import Any
 
 from ._shared import PROCESSED, log, record, write_json
 from .east_asia_common import drawn, hundred
-from .korea_nationality import DISTRICTS, DRAWN_ELSEWHERE, KEEP, SIDO, UNDRAWN
+from .korea_nationality import (
+    DISTRICTS, DRAWN_ELSEWHERE, KEEP, SIDO, UNDRAWN, drawn_where, either_parent,
+)
 
 OUT = "korea_religion.json"
 YEAR = 2015
+# A district counted in another province in 2015 than the one the map files
+# it under now, and what the note says of it.
+MOVED_SINCE: dict[tuple[str, str], str] = {
+    ("North Gyeongsang", "Gunwi-gun"): (
+        "In 2015 Gunwi-gun was a county of North Gyeongsang, and this census counts it "
+        "there; it has been part of Daegu since July 2023."),
+}
 ORG, TABLE = "101", "DT_1PM1502"
 PAGE = f"https://kosis.kr/statHtml/statHtml.do?orgId={ORG}&tblId={TABLE}"
 MASS = "https://kosis.kr/statisticsList/mass/"
@@ -353,6 +365,8 @@ def build(rows: list[list[str]], admin1: list[dict[str, Any]],
         if key in district_shapes:
             raise SystemExit(f"korea_religion: two drawn units are {key}")
         district_shapes[key] = u["id"]
+    # A district drawn in another province's polygon, by either province.
+    district_shapes = either_parent(district_shapes)
     records: list[dict[str, Any]] = []
     for code, province in sorted(provinces.items(), key=lambda kv: kv[1]):
         if province not in province_shapes:
@@ -379,10 +393,9 @@ def build(rows: list[list[str]], admin1: list[dict[str, Any]],
             if shape in bound:
                 raise SystemExit(f"korea_religion: {shape} is bound to {bound[shape]} and {code}")
             bound[shape] = code
-            where = ""
-            if under != province:
-                where = (f"The boundary file draws {name} under {under or 'the country itself'}; "
-                         f"it is a district of {province}.")
+            where = drawn_where(name, province, under) if under != province else ""
+            if (province, name) in MOVED_SINCE:
+                where = (where + " " if where else "") + MOVED_SINCE[(province, name)]
             records.append(unit_record(f"KOR-{province}-{name}", name, level="admin2",
                                        parent=f"KOR-{province}", shape=shape,
                                        counts=areas[code]["counts"], where=where))

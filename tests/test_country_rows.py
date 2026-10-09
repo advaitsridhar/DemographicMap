@@ -150,6 +150,37 @@ class CountedPeople(unittest.TestCase):
         self.assertIn("the divisions' own counts, of 1,800 people in 2021",
                       parent["religion_note"])
 
+    def test_the_disagreement_names_the_total_it_is_measured_against(self):
+        # Italy: the divisions' own counts stood between the population total
+        # and "disagrees with that by -3%", which then read as the counts' gap.
+        parent = {"population": {"value": 60_924_851, "year": 2023},
+                  "religion": [{"group": "Islam", "pct": None}]}
+        kids = [kid("North", 30_000_000, {"Islam": 20_000_000, "Orthodox": 8_000_000},
+                    year=2015, pop_year=2023),
+                kid("South", 28_943_464, {"Islam": 20_000_000, "Orthodox": 9_251_233},
+                    year=2015, pop_year=2023)]
+        self.assertIsNone(be.roll_up_field(parent, kids, "religion", level="first-level",
+                                           over_published=True, complete=True))
+        note = parent["religion_note"]
+        self.assertRegex(note, r"own counts, of 57,25\d,\d{3} people in 2015\. The unit's")
+        self.assertIn("The unit's own published population of 60,924,851 disagrees with "
+                      "the divisions' total of 58,943,464 by -3%", note)
+        self.assertNotIn("disagrees with that", note)
+
+    def test_households_are_called_households(self):
+        # Suriname's districts count households by the language most spoken
+        # in them, not people.
+        basis = "households by the language most spoken in them"
+        parent = {"population": {"value": 2_000, "year": 2004}}
+        kids = [kid("North", 1_050, {"Dutch": 300, "Sranan": 100}, year=2004, basis=basis),
+                kid("South", 950, {"Dutch": 200, "Sranan": 150}, year=2004, basis=basis)]
+        self.assertIsNone(be.roll_up_field(parent, kids, "religion"))
+        self.assertIn("the divisions' own counts, of 750 households in 2004",
+                      parent["religion_note"])
+        self.assertEqual(be.counted_noun("language of the household head"), "households")
+        self.assertEqual(be.counted_noun("self-identification"), "people")
+        self.assertEqual(be.counted_noun(None), "people")
+
     def test_counts_of_the_populations_themselves_need_no_second_total(self):
         parent = {"population": {"value": 2_000, "year": 2021}}
         kids = [kid("North", 1_000, {"Islam": 750, "Orthodox": 250}),
@@ -366,6 +397,61 @@ class CuratedFile(unittest.TestCase):
         for r in self.rows:
             for word in ("owner's decision", "runner", "the build"):
                 self.assertNotIn(word, r.get("note", ""), (r["country"], r["field"], word))
+
+
+class SettlementFigures(unittest.TestCase):
+    """A named place's figure, weighed against the unit's final population."""
+
+    def unit(self, name, people, town, figure, source="GeoNames (CC BY 4.0)",
+             parent="P"):
+        return {"id": name, "name": name, "parent": parent,
+                "population": {"value": people, "year": 2023},
+                "largest_settlement": town,
+                "largest_settlement_population": {"value": figure, "source": source},
+                "sources": [{"field": "largest settlement", "name": "GeoNames"},
+                            {"field": "population", "name": "Census"}]}
+
+    def test_a_city_the_district_is_part_of_is_not_named(self):
+        # Kritar - Sirah, a district of Aden, given a population after the
+        # place was named.
+        e = self.unit("Kritar - Sirah", 76_723, "Aden", 1_079_670)
+        self.assertEqual(be.settle_settlement_figures({}, {"YEM": [e]}), (1, 0))
+        self.assertEqual(e["largest_settlement"]["status"], "not_available")
+        self.assertEqual(e["largest_settlement"]["note"],
+                         "No GeoNames place is named: Aden (1,079,670) is more than the "
+                         "unit (76,723): a city it is part of, or across a boundary.")
+        self.assertNotIn("largest_settlement_population", e)
+        self.assertEqual([s["name"] for s in e["sources"]], ["Census"])
+
+    def test_a_place_within_the_span_keeps_its_name_and_loses_its_figure(self):
+        e = self.unit("Hirat", 506_896, "Herāt", 574_300)
+        self.assertEqual(be.settle_settlement_figures({}, {"AFG": [e]}), (0, 1))
+        self.assertEqual(e["largest_settlement"], "Herāt")
+        self.assertNotIn("largest_settlement_population", e)
+        self.assertEqual(len(e["sources"]), 2)
+
+    def test_a_place_drawn_as_a_unit_elsewhere_is_not_named(self):
+        e = self.unit("Rudaki District", 603_337, "Dushanbe", 679_400, parent="DRS")
+        city = {"id": "DU", "name": "Dushanbe", "parent": "TJK"}
+        self.assertEqual(be.settle_settlement_figures({"TJK": [city]}, {"TJK": [e]}), (1, 0))
+        self.assertIn("the map draws a unit of that name apart from this one",
+                      e["largest_settlement"]["note"])
+
+    def test_a_metropolitan_figure_goes_and_the_name_stays(self):
+        # Natural Earth's Tokyo is the metropolitan area's.
+        e = self.unit("Tokyo", 14_047_594, "Tokyo", 35_676_000,
+                      source="Natural Earth populated places (CC0)")
+        self.assertEqual(be.settle_settlement_figures({"JPN": [e]}, {}), (0, 1))
+        self.assertEqual(e["largest_settlement"], "Tokyo")
+        self.assertNotIn("largest_settlement_population", e)
+
+    def test_a_place_that_fits_or_a_unit_with_no_population_is_left_alone(self):
+        fits = self.unit("Brest", 384_542, "Brest", 347_138)
+        bare = self.unit("Somewhere", 1, "Town", 50_000)
+        bare["population"] = {"status": "not_available"}
+        self.assertEqual(be.settle_settlement_figures({}, {"BLR": [fits, bare]}), (0, 0))
+        self.assertEqual(fits["largest_settlement_population"]["value"], 347_138)
+        self.assertEqual(bare["largest_settlement_population"]["value"], 50_000)
 
 
 class GeoNamesSpans(unittest.TestCase):

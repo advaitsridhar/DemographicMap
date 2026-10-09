@@ -170,7 +170,24 @@ class Reads(unittest.TestCase):
 
     def test_drawn_elsewhere_is_said(self):
         r = self.by_shape["S-Incheon-Ongjin-gun"]
-        self.assertIn("the country itself", r["religion_note"])
+        self.assertIn("Ongjin-gun's outline outside every province's polygon; it is a "
+                      "district of Incheon", r["religion_note"])
+
+    def test_gunwi_says_where_2015_counted_it(self):
+        note = self.by_shape["S-Daegu-Gunwi-gun"]["religion_note"]
+        self.assertIn("In 2015 Gunwi-gun was a county of North Gyeongsang", note)
+        self.assertIn("part of Daegu since July 2023", note)
+
+    def test_the_same_shapes_bind_once_the_map_files_them_under_their_province(self):
+        table, a1, a2, national = fixture()
+        refiled = [dict(u, parent="P-" + u["id"].split("-")[1])
+                   if (u["id"].split("-")[1], u["name"]) in DRAWN_ELSEWHERE else u
+                   for u in a2]
+        self.assertNotEqual(refiled, a2)
+        with mock.patch.object(kr, "NATIONAL", national):
+            again = kr.build(table, a1, refiled)
+        self.assertEqual({r["shape_id"]: r["religion"] for r in again},
+                         {r["shape_id"]: r["religion"] for r in self.records})
 
     def test_province(self):
         r = self.by_shape["P-Jeju"]

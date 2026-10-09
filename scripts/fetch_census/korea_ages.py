@@ -29,8 +29,10 @@ middle person (``east_asia_common.single_year_median``); the open class of
 **Binding.** Every district is bound to its polygon by shape id, through the
 crosswalk ``korea_nationality`` already keeps -- the register's Korean name
 under its province to the boundary file's romanised name, and the province
-the boundary file draws it under where that is not its own (twenty of the
-228 are drawn under a neighbour, three under the country). A city's own
+whose polygon the boundary file draws it in where that is not its own
+(seventeen of the 228, three of them outside every province). The map files
+those under their own province, and the drawn units are read keyed by
+either. A city's own
 districts (수원시 장안구) are listed beside the city and are skipped: the city
 is what the boundary file draws. Jeonnam's Yeonggwang-gun has no polygon
 and counts only towards its province. A province's figures are the
@@ -70,7 +72,8 @@ from typing import Any
 from ._shared import NOT_COLLECTED, PROCESSED, gap, log, measure, record, write_json
 from .east_asia_common import drawn, sex_ratio, single_year_median
 from .korea_nationality import (
-    AREA, DISTRICTS, DRAWN_ELSEWHERE, KEEP, MOJ_LICENCE, SIDO, UNDRAWN, number, post_csv,
+    AREA, DISTRICTS, DRAWN_ELSEWHERE, KEEP, MOJ_LICENCE, SIDO, UNDRAWN, drawn_where,
+    either_parent, number, post_csv,
 )
 
 OUT = "korea_ages.json"
@@ -262,8 +265,9 @@ def check_sums(national: dict[str, Any] | None, provinces: dict[str, dict[str, A
 
 def shape_ids(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
               ) -> tuple[dict[str, str], dict[tuple[str, str], str]]:
-    """({province: shape id}, {(province the boundary file draws it under, or
-    "" for the country; drawn name): shape id}) from the drawn units."""
+    """({province: shape id}, {(the province the map files it under, or "" for
+    the country; drawn name): shape id}) from the drawn units, a district the
+    boundary file draws in another province's polygon keyed by both."""
     provinces = {u["name"]: u["id"] for u in admin1}
     names = {u["id"]: u["name"] for u in admin1}
     out: dict[tuple[str, str], str] = {}
@@ -272,7 +276,7 @@ def shape_ids(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
         if key in out:
             raise SystemExit(f"korea_ages: two drawn units are {key}")
         out[key] = u["id"]
-    return provinces, out
+    return provinces, either_parent(out)
 
 
 def note_for(cell: dict[str, Any], where: str) -> tuple[str, str]:
@@ -377,10 +381,7 @@ def build(table: list[list[str]], admin1: list[dict[str, Any]],
             raise SystemExit(f"korea_ages: {shape} is bound to {bound[shape]} and "
                              f"{(province, word)}")
         bound[shape] = (province, word)
-        extra = ""
-        if under != province:
-            extra = (f"The boundary file draws {name} under {under or 'the country itself'}; "
-                     f"it is a district of {province}.")
+        extra = drawn_where(name, province, under) if under != province else ""
         records.append(unit_record(f"KOR-{province}-{name}", name, level="admin2",
                                    parent=f"KOR-{province}", shape=shape, cell=cell,
                                    where="this district", extra_note=extra))

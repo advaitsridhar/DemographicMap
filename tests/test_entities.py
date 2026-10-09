@@ -446,6 +446,15 @@ class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
         self.assertEqual(be.fill_parent_populations(a1, a2), [])
         self.assertEqual(a1["AGO"][0]["population"]["value"], 9)
 
+    def test_a_gap_that_refuses_the_sum_stays_a_gap(self):
+        # Afghanistan's Sar-e Pol: Gosfandi is linked to it and its point lies
+        # in Balkh's polygon, so its linked districts are not its polygon.
+        refused = {"status": "not_available", "note": "Not this polygon's.",
+                   "no_child_sum": True}
+        a1, a2 = self.tables([53056, 59750], parent_pop=dict(refused))
+        self.assertEqual(be.fill_parent_populations(a1, a2), [])
+        self.assertEqual(a1["AGO"][0]["population"], refused)
+
 
 class APolygonDrawnAtBothLevelsShowsOneUnit(unittest.TestCase):
     def tables(self):
@@ -5027,7 +5036,8 @@ class RollUpVintage(unittest.TestCase):
         dhaka = {"population": {"value": 49_729_000, "year": 2011}}
         self.assertIsNone(be.roll_up_field(dhaka, [self.kid(44_215_759)],
                                            "religion", whole_country=True))
-        self.assertIn("disagrees with that by", dhaka["religion_note"])
+        self.assertIn("disagrees with the divisions' total of 44,215,759 by -11%",
+                      dhaka["religion_note"])
         # The same numbers without complete coverage stay refused.
         why = be.roll_up_field({"population": {"value": 49_729_000, "year": 2011}},
                                [self.kid(44_215_759)], "religion")
@@ -5423,6 +5433,43 @@ class GapReasons(unittest.TestCase):
 
     def test_the_two_never_apply_to_the_same_country(self):
         self.assertFalse(set(be.ADAPTER_GAPS) & set(be.ADAPTER_HINTS))
+
+
+class AnsweredHints(unittest.TestCase):
+    """A unit an adapter emptied on purpose, saying why on every field, is not
+    offered a command that would fetch what was refused."""
+
+    WHY = "The CBS's Jerusalem figures count East Jerusalem."
+
+    def jerusalem(self):
+        entity = {"adapter_hint": "python scripts/fetch_wikidata.py --countries ISR"}
+        for field in be.PANEL_FIELDS:
+            entity[field] = {"status": "not_available", "note": self.WHY}
+        entity["language"] = {"status": "not_available", "note": "No CBS table."}
+        return entity
+
+    def test_every_field_saying_why_takes_the_hint_off(self):
+        entity = self.jerusalem()
+        self.assertTrue(be.drop_answered_hint(entity))
+        self.assertNotIn("adapter_hint", entity)
+        self.assertNotIn("gap_reason", entity)
+        self.assertEqual(entity["population"]["note"], self.WHY)
+
+    def test_a_field_with_no_reason_keeps_the_hint(self):
+        for field in ("population", "median_age"):
+            entity = self.jerusalem()
+            entity[field] = {"status": "not_available"}
+            self.assertFalse(be.drop_answered_hint(entity))
+            self.assertIn("adapter_hint", entity)
+        entity = self.jerusalem()
+        del entity["median_age"]
+        self.assertFalse(be.drop_answered_hint(entity))
+
+    def test_a_unit_with_a_figure_is_left_alone(self):
+        entity = self.jerusalem()
+        entity["population"] = {"value": 1_000, "year": 2021}
+        self.assertFalse(be.drop_answered_hint(entity))
+        self.assertIn("adapter_hint", entity)
 
 
 class SiteFreshness(unittest.TestCase):
@@ -8638,7 +8685,7 @@ class RollingUpWithoutAPopulationToCheckAgainst(unittest.TestCase):
         got = {g["group"]: g["pct"] for g in parent["language"]}
         self.assertEqual(got, {"Swahili": 80.0, "Sukuma": 20.0})
         note = parent["language_note"]
-        self.assertIn("disagrees with that by -20%", note)
+        self.assertIn("disagrees with the divisions' total of 4,000,000 by -20%", note)
         self.assertIn("names groups without shares (Kiswahili or Swahili, English)", note)
         self.assertNotIn("None%", note)
 

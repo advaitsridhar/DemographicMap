@@ -110,9 +110,23 @@ class Build(unittest.TestCase):
 
     def test_drawn_elsewhere_is_said(self):
         r = self.by_shape["S-Daegu-Gunwi-gun"]
-        self.assertIn("North Gyeongsang", r["median_age_note"])
+        self.assertIn("Gunwi-gun's outline inside North Gyeongsang's polygon",
+                      r["median_age_note"])
         r = self.by_shape["S-Incheon-Ongjin-gun"]
-        self.assertIn("the country itself", r["sex_ratio_note"])
+        self.assertIn("The boundary file draws Ongjin-gun's outline outside every province's "
+                      "polygon; it is a district of Incheon, and is filed and counted with "
+                      "Incheon here.", r["sex_ratio_note"])
+
+    def test_the_same_shapes_bind_once_the_map_files_them_under_their_province(self):
+        # The build now files the seventeen under their own province; the
+        # drawn units the adapter reads then key them there.
+        refiled = [dict(u, parent="P-" + u["id"].split("-")[1])
+                   if (u["id"].split("-")[1], u["name"]) in DRAWN_ELSEWHERE else u
+                   for u in self.admin2]
+        self.assertNotEqual(refiled, self.admin2)
+        again = ka.build(self.table, self.admin1, refiled)
+        self.assertEqual({r["shape_id"]: r["median_age"] for r in again},
+                         {r["shape_id"]: r["median_age"] for r in self.records})
 
     def test_a_province_says_which_districts_its_polygon_leaves_out(self):
         # Gunwi joined Daegu in 2023 and the boundary file draws it, with
