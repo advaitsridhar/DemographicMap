@@ -160,6 +160,28 @@ class TheCensus(unittest.TestCase):
                       self.by["d1324"]["population"]["note"])
         self.assertIn("counts Hamdan district whole (410 people)",
                       self.by["d2301"]["population"]["note"])
+        for sid in ("d2301", "d2305", "d1319", "d1324", "g13", "g23"):
+            self.assertEqual(self.by[sid]["population"]["displaces_before"],
+                             yc.DISPLACES_BEFORE, sid)
+
+    def test_the_outskirts_reason_displaces_an_older_encyclopaedia_figure(self):
+        # Wikidata's 111,141 (2004) for the Hamdan outskirts stood on the map
+        # beside the reason; the build's merge now drops it for the reason.
+        from scripts import build_entities as be
+        entity = {"id": "d1319"}
+        be.merge_adapter(entity, {"_source": "wikidata_admin2.json",
+                                  "population": {"value": 111141, "year": 2004,
+                                                 "source": "Wikidata (CC0)"},
+                                  "sources": [{"field": "population", "name": "Wikidata"}]})
+        row = {k: v for k, v in self.by["d1319"].items() if k != "shape_id"}
+        be.merge_adapter(entity, dict(row, _source="yemen_census.json"))
+        self.assertEqual(entity["population"]["status"], "not_available")
+        self.assertIn("Part of Hamdan district", entity["population"]["note"])
+        self.assertNotIn("Wikidata", [s.get("name") for s in entity.get("sources", [])])
+
+    def test_a_count_says_it_is_the_latest_census(self):
+        self.assertIn("no census since", self.by["d1101"]["population"]["note"])
+        self.assertNotIn("owner", self.by["g11"]["ethnicity_note"])
 
     def test_medians_come_from_the_projection_and_only_where_shapes_differ(self):
         self.assertEqual(self.age["d1101"]["median_age"]["year"], 2017)

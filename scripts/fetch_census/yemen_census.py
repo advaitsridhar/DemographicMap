@@ -77,7 +77,13 @@ PROJECTION = ("Central Statistical Organization (Yemen), 2016 Population Project
               "Bureau tabulates it for HDX")
 URL = f"https://data.humdata.org/dataset/{DATASET}"
 LICENCE = "CC BY, published via HDX"
-DECISION = "19 September 2026"
+# A unit the census counts only as part of another says so, and the statement
+# displaces an encyclopaedia's population for it dated before this year (the
+# build's ``displaces_before``): checked in 2026 against the CSO's census and
+# its projections, none of which counts the Sana'a City outskirts apart from
+# their districts. Wikidata's 111,141 (2004) for the Hamdan outskirts is more
+# than the census's 85,370 for the whole of Hamdan district.
+DISPLACES_BEFORE = 2026
 # A projection's cells are fractional people; its sums are checked to this.
 SLACK = 0.5
 # Two age structures are one when no five-year group's share differs by more.
@@ -349,7 +355,8 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                     f"YEM-CEN-{code}-{unit['id'][-6:]}", unit["name"], level=level,
                     parent=ISO3, country=ISO3, match_by="shape_id", shape_id=unit["id"],
                     parent_name=parents.get(unit["parent"]) if level == "admin2" else None,
-                    population=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
+                    population=dict(gap(NOT_AVAILABLE, why), displaces_before=DISPLACES_BEFORE),
+                    sex_ratio=gap(NOT_AVAILABLE, why),
                     median_age=gap(NOT_AVAILABLE, why), ethnicity=gap(NOT_AVAILABLE, why),
                     religion=gap(NOT_AVAILABLE, RELIGION_WHY),
                     language=gap(NOT_AVAILABLE, LANGUAGE_WHY)))
@@ -366,7 +373,8 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                 continue
             c = cen[code]
             population = measure(c["total"], year=YEAR, source=SOURCE)
-            population["note"] = "The 2004 census count (16 December 2004)." + (c.get("note") or "")
+            population["note"] = ("The 2004 census count (16 December 2004); Yemen has taken no "
+                                  "census since." + (c.get("note") or ""))
             fields: dict[str, Any] = {}
             if level == "admin1" and c["yemeni"] is not None and c["foreign"] is not None:
                 made = c["yemeni"] + c["foreign"]
@@ -378,8 +386,8 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                         "ethnicity_note": (
                             f"Nationality, not ethnicity: the 2004 census (Table 25) counts "
                             f"Yemeni nationals and others, and Yemen's census asks no ethnic "
-                            f"question. Carried on this field under the owner's decision of "
-                            f"{DECISION}. 'Yemeni citizens' is every Yemeni national, of "
+                            f"question, so the nationality it counts is shown here in place of "
+                            f"ethnicity. 'Yemeni citizens' is every Yemeni national, of "
                             f"whatever people -- Arab, Mehri, Soqotri or another. Shares of the "
                             f"{made:,.0f} people the nationality table counts (the population "
                             f"table counts {c['total']:,.0f})."),
