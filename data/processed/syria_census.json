@@ -32,11 +32,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.9,
         "count": 1260876
       },
@@ -56,24 +57,24 @@
         "count": 2
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 168
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 147
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Palestinian",
@@ -110,7 +111,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 646,968 men and 628,150 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,275,106 people the nationality table counts (the census's age table counts 1,275,118 here; the nationality table, CBS Table 3, is a separate tabulation)."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,275,106 people the nationality table counts (the census's age table counts 1,275,118 here; the nationality table, CBS Table 3, is a separate tabulation)."
   },
   {
     "id": "SYR-CEN-SY02",
@@ -145,11 +146,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.3,
         "count": 4018008
       },
@@ -174,24 +176,24 @@
         "count": 40
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 585
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 317
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 5
       }
     ],
     "sources": [
@@ -223,7 +225,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 2,090,680 men and 1,954,486 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 4,045,166 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 4,045,166 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY11",
@@ -258,11 +260,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 792629
       },
@@ -270,11 +273,6 @@
         "group": "African nationalities (non-Arab)",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 2
       },
       {
         "group": "Asian nationalities",
@@ -285,6 +283,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 42
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Other Arab nationalities",
@@ -331,7 +334,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 407,134 men and 386,380 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 793,514 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 793,514 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY13",
@@ -366,11 +369,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.1,
         "count": 310456
       },
@@ -385,11 +389,6 @@
         "count": 1
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 5
@@ -398,6 +397,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 31
       },
       {
         "group": "Other nationalities",
@@ -439,7 +443,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 155,775 men and 157,456 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 313,231 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 313,231 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY01",
@@ -474,11 +478,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 89.2,
         "count": 1343604
       },
@@ -513,12 +518,12 @@
         "count": 333
       },
       {
-        "group": "American",
+        "group": "Nationalities of the Americas",
         "pct": 0.0,
         "count": 203
       },
       {
-        "group": "Australian",
+        "group": "Oceanian nationalities",
         "pct": 0.0,
         "count": 25
       }
@@ -552,7 +557,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 796,212 men and 755,949 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,505,906 people the nationality table counts (the census's age table counts 1,552,161 here; the nationality table, CBS Table 3, is a separate tabulation)."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,505,906 people the nationality table counts (the census's age table counts 1,552,161 here; the nationality table, CBS Table 3, is a separate tabulation)."
   },
   {
     "id": "SYR-CEN-SY12",
@@ -587,11 +592,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 97.8,
         "count": 824805
       },
@@ -611,11 +617,6 @@
         "count": 2
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 25
@@ -624,6 +625,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 36
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Other nationalities",
@@ -660,7 +666,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 430,544 men and 412,934 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 843,478 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 843,478 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY09",
@@ -695,18 +701,14 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 1004316
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 5
       },
       {
         "group": "Asian nationalities",
@@ -717,6 +719,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Other Arab nationalities",
@@ -763,7 +770,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 513,925 men and 490,822 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,004,747 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,004,747 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY05",
@@ -798,11 +805,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.6,
         "count": 1379207
       },
@@ -817,11 +825,6 @@
         "count": 54
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 17
@@ -830,6 +833,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 43
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Other Arab nationalities",
@@ -871,7 +879,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 711,621 men and 673,332 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,384,953 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,384,953 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY04",
@@ -906,11 +914,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.1,
         "count": 1500951
       },
@@ -930,24 +939,24 @@
         "count": 4
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 119
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 139
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Other nationalities",
@@ -984,7 +993,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 786,414 men and 742,988 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,529,402 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,529,402 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY07",
@@ -1019,18 +1028,14 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 1257852
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 3
       },
       {
         "group": "Asian nationalities",
@@ -1041,6 +1046,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 29
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Other Arab nationalities",
@@ -1087,7 +1097,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 645,936 men and 612,491 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,258,427 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,258,427 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY06",
@@ -1122,11 +1132,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.1,
         "count": 871239
       },
@@ -1146,24 +1157,24 @@
         "count": 13
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 167
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 208
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 10
       },
       {
         "group": "Other nationalities",
@@ -1200,7 +1211,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 447,783 men and 431,768 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 879,551 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 879,551 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY14",
@@ -1217,7 +1228,7 @@
       "value": 87000.0,
       "year": 2011,
       "source": "Central Bureau of Statistics (Syria), Statistical Abstract 2011, chapter 2, table 2: estimated population on 1 January 2011, as the US Census Bureau tabulates it for HDX",
-      "note": "The Bureau's estimate for 1 January 2011; the 2004 census counted 66,627. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it."
+      "note": "The Bureau's estimate for 1 January 2011; the 2004 census counted 66,627. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023)."
     },
     "median_age": {
       "value": 18.6,
@@ -1235,11 +1246,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.0,
         "count": 65936
       },
@@ -1284,11 +1296,11 @@
     "aliases": [
       "Al Qunayţirah"
     ],
-    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2004 census's count of everyone by five-year age group (CBS, Man and Nah, Table 2). The 47 people whose age was not stated are left out. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it.",
-    "sex_ratio_note": "Males per 100 females in the 2004 census: 34,039 men and 32,588 women. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2004 census's count of everyone by five-year age group (CBS, Man and Nah, Table 2). The 47 people whose age was not stated are left out. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023).",
+    "sex_ratio_note": "Males per 100 females in the 2004 census: 34,039 men and 32,588 women. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023).",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 66,627 people the nationality table counts. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 66,627 people the nationality table counts. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023)."
   },
   {
     "id": "SYR-CEN-SY03",
@@ -1323,11 +1335,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 93.4,
         "count": 2122840
       },
@@ -1357,19 +1370,19 @@
         "count": 105
       },
       {
-        "group": "American",
+        "group": "European nationalities",
+        "pct": 0.0,
+        "count": 395
+      },
+      {
+        "group": "Nationalities of the Americas",
         "pct": 0.0,
         "count": 119
       },
       {
-        "group": "Australian",
+        "group": "Oceanian nationalities",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "European nationalities",
-        "pct": 0.0,
-        "count": 395
       }
     ],
     "sources": [
@@ -1401,7 +1414,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 1,171,746 men and 1,101,328 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 2,273,074 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 2,273,074 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY10",
@@ -1436,11 +1449,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.1,
         "count": 695232
       },
@@ -1460,24 +1474,24 @@
         "count": 5
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 28
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 55
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 198
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Other nationalities",
@@ -1514,7 +1528,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 358,101 men and 343,294 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 701,395 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 701,395 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0204",
@@ -1549,11 +1563,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 251664
       },
@@ -1601,7 +1616,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 130,529 men and 121,240 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 251,769 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 251,769 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0902",
@@ -1636,23 +1651,24 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 265043
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 4
       },
       {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "Other Arab nationalities",
@@ -1693,7 +1709,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 132,271 men and 132,871 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 265,142 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 265,142 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0203",
@@ -1728,11 +1744,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 172055
       },
@@ -1785,7 +1802,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 86,716 men and 85,379 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 172,095 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 172,095 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0206",
@@ -1820,11 +1837,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 192477
       },
@@ -1872,7 +1890,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 98,097 men and 94,416 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 192,513 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 192,513 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0202",
@@ -1907,11 +1925,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 292611
       },
@@ -1964,7 +1983,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 150,161 men and 142,552 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 292,713 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 292,713 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1402",
@@ -1981,7 +2000,7 @@
       "value": 1947.0,
       "year": 2004,
       "source": "Central Bureau of Statistics (Syria), 2004 Population and Housing Census, Census Population Bulletin -- Man and Nah (2006), as the US Census Bureau tabulates it for HDX",
-      "note": "The 2004 census count (22 September 2004). The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it."
+      "note": "The 2004 census count (22 September 2004). The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023)."
     },
     "median_age": {
       "value": 15.8,
@@ -1999,11 +2018,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 97.8,
         "count": 1905
       },
@@ -2037,11 +2057,11 @@
     "aliases": [
       "Fīq Zawīyah"
     ],
-    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2004 census's count of everyone by five-year age group (CBS, Man and Nah, Table 2). The 5 people whose age was not stated are left out. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it.",
-    "sex_ratio_note": "Males per 100 females in the 2004 census: 1,005 men and 942 women. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2004 census's count of everyone by five-year age group (CBS, Man and Nah, Table 2). The 5 people whose age was not stated are left out. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023).",
+    "sex_ratio_note": "Males per 100 females in the 2004 census: 1,005 men and 942 women. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023).",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,947 people the nationality table counts. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,947 people the nationality table counts. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023)."
   },
   {
     "id": "SYR-CEN-SY0702",
@@ -2076,11 +2096,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 372850
       },
@@ -2128,7 +2149,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 190,641 men and 182,319 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 372,960 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 372,960 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0406",
@@ -2163,11 +2184,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 52006
       },
@@ -2210,7 +2232,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 26,380 men and 25,688 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 52,068 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 52,068 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0903",
@@ -2245,11 +2267,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 247015
       },
@@ -2297,7 +2320,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 126,761 men and 120,410 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 247,171 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 247,171 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0303",
@@ -2332,11 +2355,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 119109
       },
@@ -2346,14 +2370,14 @@
         "count": 120
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Other nationalities",
@@ -2389,7 +2413,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 61,390 men and 57,893 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 119,283 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 119,283 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0603",
@@ -2424,11 +2448,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 81775
       },
@@ -2481,7 +2506,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 41,735 men and 40,113 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 81,848 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 81,848 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0800",
@@ -2516,11 +2541,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.5,
         "count": 482657
       },
@@ -2535,24 +2561,24 @@
         "count": 536
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 29
       },
       {
-        "group": "Australian",
+        "group": "European nationalities",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Nationalities of the Americas",
         "pct": 0.0,
         "count": 1
       },
       {
-        "group": "European nationalities",
+        "group": "Oceanian nationalities",
         "pct": 0.0,
-        "count": 69
+        "count": 1
       },
       {
         "group": "Palestinian",
@@ -2583,7 +2609,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 248,243 men and 236,723 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 484,961 people the nationality table counts (the census's age table counts 484,966 here; the nationality table, CBS Table 3, is a separate tabulation)."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 484,961 people the nationality table counts (the census's age table counts 484,966 here; the nationality table, CBS Table 3, is a separate tabulation)."
   },
   {
     "id": "SYR-CEN-SY0803",
@@ -2618,11 +2644,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.2,
         "count": 188163
       },
@@ -2642,11 +2669,6 @@
         "count": 1
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 10
@@ -2655,6 +2677,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 12
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Palestinian",
@@ -2685,7 +2712,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 95,091 men and 94,543 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 189,634 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 189,634 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0604",
@@ -2720,11 +2747,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 74558
       },
@@ -2772,7 +2800,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 38,246 men and 36,398 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 74,644 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 74,644 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0402",
@@ -2807,11 +2835,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 90.5,
         "count": 97796
       },
@@ -2859,7 +2888,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 55,639 men and 52,463 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 108,102 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 108,102 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0306",
@@ -2894,11 +2923,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.5,
         "count": 79634
       },
@@ -2913,11 +2943,6 @@
         "count": 87
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 10
@@ -2926,6 +2951,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Palestinian",
@@ -2953,7 +2983,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 40,193 men and 39,808 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 80,001 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 80,001 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1101",
@@ -2988,11 +3018,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 506026
       },
@@ -3045,7 +3076,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 259,946 men and 246,360 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 506,306 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 506,306 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0404",
@@ -3080,11 +3111,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 127751
       },
@@ -3127,7 +3159,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 65,874 men and 61,932 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 127,806 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 127,806 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0705",
@@ -3162,11 +3194,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 176937
       },
@@ -3219,7 +3252,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 91,084 men and 85,921 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 177,005 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 177,005 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0207",
@@ -3254,11 +3287,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 178225
       },
@@ -3311,7 +3345,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 91,670 men and 86,623 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 178,293 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 178,293 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0503",
@@ -3346,18 +3380,14 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 187032
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 1
       },
       {
         "group": "Asian nationalities",
@@ -3368,6 +3398,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 4
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Other Arab nationalities",
@@ -3408,7 +3443,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 95,302 men and 91,821 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 187,123 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 187,123 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1202",
@@ -3443,11 +3478,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 167865
       },
@@ -3490,7 +3526,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 86,117 men and 81,876 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 167,993 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 167,993 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0502",
@@ -3525,11 +3561,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 239997
       },
@@ -3577,7 +3614,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 122,589 men and 117,502 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 240,091 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 240,091 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1300",
@@ -3612,11 +3649,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.7,
         "count": 178625
       },
@@ -3631,11 +3669,6 @@
         "count": 1
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 4
@@ -3644,6 +3677,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 27
       },
       {
         "group": "Other nationalities",
@@ -3679,7 +3717,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 90,188 men and 90,719 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 180,907 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 180,907 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0304",
@@ -3714,11 +3752,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 96.9,
         "count": 112384
       },
@@ -3773,7 +3812,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 59,303 men and 56,634 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 115,937 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 115,937 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1103",
@@ -3808,11 +3847,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.8,
         "count": 159628
       },
@@ -3870,7 +3910,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 82,246 men and 77,692 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 159,938 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 159,938 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0307",
@@ -3905,11 +3945,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.7,
         "count": 103944
       },
@@ -3957,7 +3998,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 54,522 men and 50,820 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 105,342 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 105,342 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1002",
@@ -3992,11 +4033,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.8,
         "count": 176050
       },
@@ -4016,11 +4058,6 @@
         "count": 2
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 24
@@ -4029,6 +4066,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 8
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 3
       },
       {
         "group": "Other nationalities",
@@ -4059,7 +4101,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 90,356 men and 85,995 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 176,351 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 176,351 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0100",
@@ -4094,11 +4136,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 89.2,
         "count": 1343604
       },
@@ -4133,12 +4176,12 @@
         "count": 333
       },
       {
-        "group": "American",
+        "group": "Nationalities of the Americas",
         "pct": 0.0,
         "count": 203
       },
       {
-        "group": "Australian",
+        "group": "Oceanian nationalities",
         "pct": 0.0,
         "count": 25
       }
@@ -4166,7 +4209,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 796,212 men and 755,949 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,505,906 people the nationality table counts (the census's age table counts 1,552,161 here; the nationality table, CBS Table 3, is a separate tabulation)."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,505,906 people the nationality table counts (the census's age table counts 1,552,161 here; the nationality table, CBS Table 3, is a separate tabulation)."
   },
   {
     "id": "SYR-CEN-SY1200",
@@ -4201,11 +4244,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 95.8,
         "count": 410782
       },
@@ -4225,11 +4269,6 @@
         "count": 1
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 20
@@ -4238,6 +4277,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 34
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Other nationalities",
@@ -4268,7 +4312,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 218,195 men and 210,486 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 428,681 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 428,681 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0309",
@@ -4303,11 +4347,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 91.9,
         "count": 239714
       },
@@ -4332,11 +4377,6 @@
         "count": 39
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 29
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 109
@@ -4345,6 +4385,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 68
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 29
       }
     ],
     "sources": [
@@ -4370,7 +4415,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 135,798 men and 125,163 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 260,961 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 260,961 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0901",
@@ -4405,18 +4450,14 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 492258
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 1
       },
       {
         "group": "Asian nationalities",
@@ -4427,6 +4468,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Other Arab nationalities",
@@ -4467,7 +4513,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 254,893 men and 237,541 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 492,434 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 492,434 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1004",
@@ -4502,11 +4548,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.7,
         "count": 60809
       },
@@ -4549,7 +4596,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 31,038 men and 29,940 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 60,978 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 60,978 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0302",
@@ -4584,11 +4631,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 97.6,
         "count": 423464
       },
@@ -4608,11 +4656,6 @@
         "count": 1247
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 91
@@ -4621,6 +4664,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 35
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 2
       }
     ],
     "sources": [
@@ -4646,7 +4694,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 224,029 men and 209,690 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 433,719 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 433,719 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0501",
@@ -4681,11 +4729,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.2,
         "count": 639023
       },
@@ -4700,11 +4749,6 @@
         "count": 54
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 11
@@ -4713,6 +4757,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 32
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Other Arab nationalities",
@@ -4748,7 +4797,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 333,712 men and 310,733 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 644,445 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 644,445 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0703",
@@ -4783,11 +4832,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 175381
       },
@@ -4840,7 +4890,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 90,419 men and 85,063 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 175,482 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 175,482 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0401",
@@ -4875,11 +4925,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.5,
         "count": 1019801
       },
@@ -4899,11 +4950,6 @@
         "count": 3
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 117
@@ -4912,6 +4958,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 60
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 26
       },
       {
         "group": "Other nationalities",
@@ -4942,7 +4993,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 532,203 men and 502,852 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 1,035,055 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 1,035,055 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0700",
@@ -4977,18 +5028,14 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 382727
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 1
       },
       {
         "group": "Asian nationalities",
@@ -4999,6 +5046,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 15
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Other Arab nationalities",
@@ -5039,7 +5091,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 196,906 men and 186,022 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 382,928 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 382,928 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1203",
@@ -5074,11 +5126,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.7,
         "count": 246158
       },
@@ -5136,7 +5189,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 126,232 men and 120,572 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 246,804 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 246,804 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0602",
@@ -5171,11 +5224,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.8,
         "count": 195684
       },
@@ -5225,7 +5279,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 99,697 men and 96,474 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 196,171 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 196,171 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0208",
@@ -5260,11 +5314,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 58862
       },
@@ -5312,7 +5367,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 29,717 men and 29,172 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 58,889 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 58,889 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0200",
@@ -5347,11 +5402,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.9,
         "count": 2464169
       },
@@ -5376,24 +5432,24 @@
         "count": 39
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 524
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 307
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 5
       }
     ],
     "sources": [
@@ -5419,7 +5475,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 1,294,858 men and 1,195,893 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 2,490,751 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 2,490,751 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0704",
@@ -5454,18 +5510,14 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 149957
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 2
       },
       {
         "group": "Asian nationalities",
@@ -5476,6 +5528,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Other Arab nationalities",
@@ -5516,7 +5573,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 76,886 men and 73,166 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 150,052 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 150,052 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0600",
@@ -5551,11 +5608,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.5,
         "count": 519222
       },
@@ -5575,24 +5633,24 @@
         "count": 13
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 154
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 198
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 10
       },
       {
         "group": "Other nationalities",
@@ -5623,7 +5681,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 268,105 men and 258,783 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 526,888 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 526,888 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0504",
@@ -5658,11 +5716,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.9,
         "count": 169250
       },
@@ -5710,7 +5769,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 86,264 men and 83,077 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 169,341 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 169,341 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0205",
@@ -5745,11 +5804,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 407945
       },
@@ -5757,11 +5817,6 @@
         "group": "African nationalities (non-Arab)",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 2
       },
       {
         "group": "Asian nationalities",
@@ -5772,6 +5827,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Other Arab nationalities",
@@ -5812,7 +5872,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 208,932 men and 199,211 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 408,143 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 408,143 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0505",
@@ -5847,21 +5907,22 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 143905
       },
       {
-        "group": "American",
+        "group": "European nationalities",
         "pct": 0.0,
         "count": 3
       },
       {
-        "group": "European nationalities",
+        "group": "Nationalities of the Americas",
         "pct": 0.0,
         "count": 3
       },
@@ -5899,7 +5960,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 73,754 men and 70,199 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 143,953 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 143,953 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0308",
@@ -5934,11 +5995,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 92.8,
         "count": 192312
       },
@@ -5963,11 +6025,6 @@
         "count": 3
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 26
@@ -5976,6 +6033,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 11
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 2
       }
     ],
     "sources": [
@@ -6001,7 +6063,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 105,728 men and 101,517 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 207,245 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 207,245 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0802",
@@ -6036,11 +6098,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.1,
         "count": 419558
       },
@@ -6060,11 +6123,6 @@
         "count": 1
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 100
@@ -6073,6 +6131,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 58
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 39
       },
       {
         "group": "Palestinian",
@@ -6103,7 +6166,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 214,880 men and 208,488 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 423,368 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 423,368 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1400",
@@ -6120,7 +6183,7 @@
       "value": 64680.0,
       "year": 2004,
       "source": "Central Bureau of Statistics (Syria), 2004 Population and Housing Census, Census Population Bulletin -- Man and Nah (2006), as the US Census Bureau tabulates it for HDX",
-      "note": "The 2004 census count (22 September 2004). The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it."
+      "note": "The 2004 census count (22 September 2004). The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023)."
     },
     "median_age": {
       "value": 18.7,
@@ -6138,11 +6201,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.0,
         "count": 64031
       },
@@ -6181,11 +6245,11 @@
     "aliases": [
       "Markaz Al Qunayţirah"
     ],
-    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2004 census's count of everyone by five-year age group (CBS, Man and Nah, Table 2). The 42 people whose age was not stated are left out. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it.",
-    "sex_ratio_note": "Males per 100 females in the 2004 census: 33,034 men and 31,646 women. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it.",
+    "median_age_note": "Interpolated within the five-year age group holding the middle person, from the 2004 census's count of everyone by five-year age group (CBS, Man and Nah, Table 2). The 42 people whose age was not stated are left out. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023).",
+    "sex_ratio_note": "Males per 100 females in the 2004 census: 33,034 men and 31,646 women. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023).",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 64,680 people the nationality table counts. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 64,680 people the nationality table counts. The census enumerated the part of Quneitra governorate under Syrian administration; the Golan Heights, which the boundary file draws inside this unit, have been administered by Israel since 1967 and their people were not counted by it (Israel's Central Bureau of Statistics counts 56,900 people in its Golan sub-district at the end of 2023)."
   },
   {
     "id": "SYR-CEN-SY0804",
@@ -6220,11 +6284,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 96.2,
         "count": 170498
       },
@@ -6232,11 +6297,6 @@
         "group": "Other nationalities",
         "pct": 3.7,
         "count": 6497
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 9
       },
       {
         "group": "Asian nationalities",
@@ -6247,6 +6307,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 8
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 9
       },
       {
         "group": "Other Arab nationalities",
@@ -6282,7 +6347,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 88,754 men and 88,396 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 177,143 people the nationality table counts (the census's age table counts 177,150 here; the nationality table, CBS Table 3, is a separate tabulation)."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 177,143 people the nationality table counts (the census's age table counts 177,150 here; the nationality table, CBS Table 3, is a separate tabulation)."
   },
   {
     "id": "SYR-CEN-SY0301",
@@ -6317,11 +6382,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 89.1,
         "count": 804183
       },
@@ -6351,19 +6417,19 @@
         "count": 62
       },
       {
-        "group": "American",
+        "group": "European nationalities",
+        "pct": 0.0,
+        "count": 247
+      },
+      {
+        "group": "Nationalities of the Americas",
         "pct": 0.0,
         "count": 78
       },
       {
-        "group": "Australian",
+        "group": "Oceanian nationalities",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "European nationalities",
-        "pct": 0.0,
-        "count": 247
       }
     ],
     "sources": [
@@ -6389,7 +6455,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 465,993 men and 436,223 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 902,216 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 902,216 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1003",
@@ -6424,11 +6490,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.6,
         "count": 129087
       },
@@ -6438,24 +6505,24 @@
         "count": 489
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 5
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Other nationalities",
@@ -6491,7 +6558,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 66,289 men and 63,343 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 129,632 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 129,632 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1302",
@@ -6526,11 +6593,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.7,
         "count": 60190
       },
@@ -6578,7 +6646,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 29,893 men and 30,482 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 60,375 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 60,375 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1303",
@@ -6613,11 +6681,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.6,
         "count": 71641
       },
@@ -6625,11 +6694,6 @@
         "group": "Other Arab nationalities",
         "pct": 0.4,
         "count": 290
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 4
       },
       {
         "group": "Asian nationalities",
@@ -6640,6 +6704,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 4
       },
       {
         "group": "Other nationalities",
@@ -6675,7 +6744,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 35,694 men and 36,255 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 71,949 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 71,949 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1005",
@@ -6710,11 +6779,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 100.0,
         "count": 52955
       },
@@ -6757,7 +6827,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 26,963 men and 26,018 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 52,981 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 52,981 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0405",
@@ -6792,11 +6862,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.8,
         "count": 76778
       },
@@ -6811,7 +6882,7 @@
         "count": 41
       },
       {
-        "group": "American",
+        "group": "Nationalities of the Americas",
         "pct": 0.0,
         "count": 1
       },
@@ -6849,7 +6920,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 40,200 men and 36,742 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 76,942 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 76,942 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0403",
@@ -6884,11 +6955,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.0,
         "count": 126819
       },
@@ -6913,14 +6985,14 @@
         "count": 2
       },
       {
-        "group": "Australian",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "European nationalities",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Oceanian nationalities",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Palestinian",
@@ -6951,7 +7023,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 66,118 men and 63,311 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 129,429 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 129,429 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1000",
@@ -6986,11 +7058,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 98.2,
         "count": 276331
       },
@@ -7015,17 +7088,17 @@
         "count": 3
       },
       {
-        "group": "American",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
         "group": "Asian nationalities",
         "pct": 0.0,
         "count": 26
       },
       {
-        "group": "Australian",
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Oceanian nationalities",
         "pct": 0.0,
         "count": 2
       },
@@ -7058,7 +7131,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 143,455 men and 137,998 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 281,453 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 281,453 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY1102",
@@ -7093,11 +7166,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.8,
         "count": 126975
       },
@@ -7107,7 +7181,7 @@
         "count": 293
       },
       {
-        "group": "American",
+        "group": "Nationalities of the Americas",
         "pct": 0.0,
         "count": 2
       }
@@ -7135,7 +7209,7 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 64,942 men and 62,328 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 127,270 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 127,270 people the nationality table counts."
   },
   {
     "id": "SYR-CEN-SY0305",
@@ -7170,11 +7244,12 @@
       "status": "not_available"
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "Syria's 2004 census published no language table: the Central Bureau of Statistics' results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary cites no other census table; UNdata's census tables reported to the UN Statistics Division hold no language table for Syria either."
     },
     "ethnicity": [
       {
-        "group": "Syrian",
+        "group": "Syrian citizens",
         "pct": 99.4,
         "count": 48096
       },
@@ -7182,11 +7257,6 @@
         "group": "Other Arab nationalities",
         "pct": 0.5,
         "count": 239
-      },
-      {
-        "group": "American",
-        "pct": 0.0,
-        "count": 5
       },
       {
         "group": "Asian nationalities",
@@ -7197,6 +7267,11 @@
         "group": "European nationalities",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Nationalities of the Americas",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Other nationalities",
@@ -7232,6 +7307,6 @@
     "sex_ratio_note": "Males per 100 females in the 2004 census: 24,790 men and 23,580 women.",
     "ethnicity_year": 2004,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. Shares of the 48,370 people the nationality table counts."
+    "ethnicity_note": "Nationality, not ethnicity: the 2004 census asked each person's nationality and no ethnic question. Carried on this field under the owner's decision of 19 September 2026, as Japan's and Korea's nationality counts are. 'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their descendants, who are not Syrian citizens. 'Nationalities of the Americas' and 'Oceanian nationalities' are the census's 'American' and 'Australian' groups, which stand beside its European, Asian and African ones. Shares of the 48,370 people the nationality table counts."
   }
 ]
