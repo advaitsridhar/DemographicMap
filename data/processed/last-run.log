@@ -1,6 +1,7 @@
-samoa_census: 2021 Census Tables 1 and 2, by the 2016 Census's villages
-  https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx: 2,681,931 bytes
-  https://www.sbs.gov.ws/digi/2-2016%20Census%20Brief%20No.1%20Tables.xlsx: 106,868 bytes
-  not in the 2016 list, placed with its constituency's villages: Tunaimato West (Faleata 1) -> Faleata East
-  54 records: admin1 ethnicity 11, admin1 median_age 11, admin1 population 11, admin1 religion 11, admin1 sex_ratio 11, admin2 ethnicity 43, admin2 median_age 43, admin2 population 43, admin2 religion 43, admin2 sex_ratio 43
-  wrote data/processed/samoa_census.json (294 kB)
+indonesia: ethnicity by province (2010 census) and religion by province and regency, read from the Indonesian Wikipedia
+    Aceh: no total row; the rows' sum 4,407,444 stands as the total
+    Banten: The article's 'Sunda' row folds the census's Bantenese, 4.66 million nationally, into Sundanese; the two are not separated here.
+    Central Kalimantan: The table's rows add to 2,214,365 against its printed total 2,207,367; the rows are the denominator.
+    East Kalimantan: The table's rows add to 2,971,205 against its printed total 2,971,203; the rows are the denominator.
+    East Nusa Tenggara: The article's 'asal Kalimantan' row, 14.5%, is carried in 'Other ethnic groups': no census of the province supports a Kalimantan share of that size.
+indonesia: North Kalimantan: ethnic labels not in ETHNIC_LABELS: ['Gabungan Dayak, Tidung dan Bulungan']
