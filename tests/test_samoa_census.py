@@ -77,5 +77,62 @@ class Columns(unittest.TestCase):
         self.assertEqual([i for _, i in got], [4, 7, 10, 13])
 
 
+# Table 8a's national row and Moataa's as the 2021 workbook prints them; the rest of
+# the country is one village here, so that every sum the reader checks holds.
+SAMOA_8A = [205557, 104853, 100704, 200508, 102245, 98263, 3127, 1572, 1555, 704, 364, 340,
+            1218, 672, 546]
+MOATAA_8A = [1420, 715, 705, 1383, 691, 692, 27, 16, 11, 8, 6, 2, 2, 2, 0]
+HEADING_8A = ["Place of residence", "Total", None, None,
+              "YES BORN IN SAMOA WITH CITIZEN PARENT(S)", None, None,
+              "YES BORN ABROAD OF SAMOA WITH CITIZEN PARENT(S)", None, None,
+              "YES SAMOA  CITIZEN BY NATURALISATION", None, None,
+              "NO NOT A CITIZEN OF SAMOA", None, None]
+
+
+def table_8a(national=SAMOA_8A, moataa=MOATAA_8A, heading=HEADING_8A):
+    rest = [n - m for n, m in zip(national, moataa)]
+    return [["Table 8a. Total population by sex, Samoan citizenship status and place of "
+             "residence,2021"], [None], heading,
+            [None] + ["Total", "MALE", "FEMALE"] * 5,
+            ["Samoa"] + national, ["    Apia Urban Area"] + national,
+            ["        Vaimauga 2"] + national, ["            Moataa"] + moataa,
+            ["            Everywhere else"] + rest]
+
+
+class Citizenship(unittest.TestCase):
+    def test_the_answers_add_up_and_become_two_groups(self):
+        got = sm.read_citizenship(table_8a())
+        moataa = next(v for _, name, v in got["villages"] if name == "Moataa")
+        fields = sm.citizenship_fields([moataa[i] for i in (0, 3, 6, 9, 12)])
+        self.assertEqual(fields["ethnicity"], [
+            {"group": "Samoan", "pct": 99.9, "count": 1418},
+            {"group": "Foreign nationals", "pct": 0.1, "count": 2}])
+        self.assertEqual(fields["ethnicity_basis"], "nationality")
+        self.assertEqual(fields["ethnicity_year"], 2021)
+        self.assertIn("not ethnicity", fields["ethnicity_note"])
+
+    def test_answers_headed_out_of_order_stop_the_run(self):
+        heading = list(HEADING_8A)
+        heading[7], heading[10] = heading[10], heading[7]
+        with self.assertRaises(SystemExit):
+            sm.read_citizenship(table_8a(heading=heading))
+
+    def test_answers_that_miss_their_total_stop_the_run(self):
+        moataa = list(MOATAA_8A)
+        moataa[12] += 1                       # one more non-citizen, the total unchanged
+        moataa[13] += 1
+        with self.assertRaises(SystemExit):
+            sm.read_citizenship(table_8a(moataa=moataa))
+
+    def test_a_country_the_fact_sheet_counts_otherwise_stops_the_run(self):
+        national = list(SAMOA_8A)             # one non-citizen read as naturalised
+        national[9] += 1
+        national[10] += 1
+        national[12] -= 1
+        national[13] -= 1
+        with self.assertRaises(SystemExit):
+            sm.read_citizenship(table_8a(national=national))
+
+
 if __name__ == "__main__":
     unittest.main()

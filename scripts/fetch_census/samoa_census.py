@@ -32,8 +32,18 @@ left over stops the run.
 **Political districts** are their Faipule districts added up, by the
 composition the 2016 populations on the map already follow (``ITUMALO``).
 
-**Not published by place**: ethnicity and language. The 2021 workbook's 58
-tables include citizenship (Table 8a) and none of either.
+**Citizenship as ethnicity.** No Samoan census table publishes ethnicity: not
+the 2021 workbook's 58 tables or its Fact Sheet, nor the 2011 census's 93
+tables. Both give citizenship instead -- 2021's **Table 8a** by village
+(born in Samoa or abroad to a citizen parent, naturalised, or not a citizen),
+2011's Table 8 by urban and rural residence only. Under the owner's rule for
+states that count citizenship rather than ethnicity, the districts carry
+2021's count under ``ethnicity_basis: "nationality"``, as two groups:
+"Samoan" (every citizen) and "Foreign nationals".
+
+**Not published by place**: language. Neither census's tables have a
+language spoken; their only language items are literacy (the 2021 Fact
+Sheet's Samoan and English, the 2011 tables' Samoan).
 
 **Checks**, each refusing the run: Samoa is 205,557 people (2021) and 195,979
 (2016); every row's males and females make its total, its single years of age
@@ -41,6 +51,10 @@ make it too, and so do its denominations; a constituency's villages make the
 constituency; every 2021 village is placed once; every 2016 district receives
 villages, and its 2021 count lies within 40% of its 2016 one -- a wider swing
 would mean villages filed in the wrong district; every polygon is bound once.
+Table 8a lists Table 1's villages with Table 1's totals, its four answers are
+headed as ``CITIZENSHIP_HEADINGS`` says and make each row's total, each by
+sex, and the country's citizens and others are the Fact Sheet's 204,339 and
+1,218.
 
 Usage:
     python -m scripts.fetch_census.samoa_census
@@ -67,7 +81,13 @@ SOURCE = f"{OFFICE}, 2021 Census of Population and Housing, Census Tables"
 SOURCE_2016 = f"{OFFICE}, 2016 Census Brief No. 1, Table 1"
 URL = "https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx"
 URL_2016 = "https://www.sbs.gov.ws/digi/2-2016%20Census%20Brief%20No.1%20Tables.xlsx"
+FACTSHEET_URL = "https://www.sbs.gov.ws/wp-content/uploads/2022/12/Factsheet_Samoa_-PHC2021.pdf"
 NATIONAL = 205_557
+# Table 8a's four answers after its Total, by the words their headings start with, and
+# the Fact Sheet's national counts of citizens and of everyone else (DS.4).
+CITIZENSHIP_HEADINGS = ("YES BORN IN SAMOA", "YES BORN ABROAD", "YES SAMOA  CITIZEN BY "
+                        "NATURALISATION", "NO NOT A CITIZEN")
+CITIZENS_2021, NON_CITIZENS_2021 = 204_339, 1_218
 NATIONAL_2016 = 195_979
 REGIONS = ("Apia Urban Area", "North West Upolu", "Rest of Upolu", "Savaii")
 UPOLU = {"Apia Urban Area", "North West Upolu", "Rest of Upolu"}
@@ -244,6 +264,39 @@ def religion_columns(header: list[Any]) -> list[tuple[str, int]]:
     return out
 
 
+def read_citizenship(rows: list[list[Any]]) -> dict[str, Any]:
+    """Table 8a by place: [total, born in Samoa, born abroad, naturalised, not a citizen],
+    each as both sexes, male, female -- 15 figures after the name.
+
+    The heading row is found by its first cell, and its four answers must start with
+    ``CITIZENSHIP_HEADINGS`` in that order; every row's sexes make each answer and the
+    four answers make its total; the country's citizens and others are the Fact Sheet's.
+    """
+    at = next((i for i, row in enumerate(rows)
+               if row and text(row[0]).strip().lower() == "place of residence"), None)
+    check(at is not None, "samoa_census: Table 8a has no 'Place of residence' heading")
+    heading = [" ".join(text(c).split()).upper() for c in rows[at]]
+    for k, words in enumerate(CITIZENSHIP_HEADINGS, start=1):
+        check(len(heading) > 1 + 3 * k and heading[1 + 3 * k].startswith(" ".join(words.split())),
+              f"samoa_census: Table 8a's column {1 + 3 * k} is headed {heading[1 + 3 * k:2 + 3 * k]}"
+              f", not {words!r}")
+    got = read_2021(rows, 15)
+    for _, village, v in got["villages"] + [("", "Samoa", got["total"])]:
+        for k in range(5):
+            check(v[3 * k] == v[3 * k + 1] + v[3 * k + 2],
+                  f"samoa_census: Table 8a's sexes for {village} do not make column {3 * k + 1}")
+        check(v[0] == v[3] + v[6] + v[9] + v[12],
+              f"samoa_census: Table 8a's answers for {village} make "
+              f"{v[3] + v[6] + v[9] + v[12]:,.0f}, not {v[0]:,.0f}")
+    national = got["total"]
+    check((national[3] + national[6] + national[9], national[12])
+          == (CITIZENS_2021, NON_CITIZENS_2021),
+          f"samoa_census: Table 8a counts {national[3] + national[6] + national[9]:,.0f} citizens "
+          f"and {national[12]:,.0f} others, the Fact Sheet {CITIZENS_2021:,} and "
+          f"{NON_CITIZENS_2021:,}")
+    return got
+
+
 # ---------------------------------------------------------------------------
 # 2021 villages -> 2016 districts
 # ---------------------------------------------------------------------------
@@ -310,12 +363,40 @@ def districts_of(placed: dict[tuple[str, str], tuple[str, str]], new: list[tuple
 # Records
 # ---------------------------------------------------------------------------
 
+CITIZENSHIP_NOTE = (
+    "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's "
+    "58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship "
+    "instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). "
+    "Under the owner's rule for states that count citizenship rather than ethnicity, this is "
+    "the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in "
+    "Samoa or abroad to a citizen parent ({born_here:,.0f} and {born_abroad:,.0f} here), or "
+    "naturalised ({naturalised:,.0f}) -- and 'Foreign nationals' the {foreign:,.0f} who are "
+    "not. A Samoan citizen may be of any ancestry.")
+LANGUAGE_GAP = (
+    "No language spoken is published: the 2021 workbook's 58 tables have no language table and "
+    "its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), "
+    "and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural "
+    "residence.")
+
+
+def citizenship_fields(c: list[float]) -> dict[str, Any]:
+    """Table 8a's columns added up: [total, born in Samoa, born abroad, naturalised, not]."""
+    return {
+        "ethnicity": shares_of({"Samoan": c[1] + c[2] + c[3], "Foreign nationals": c[4]}, c[0]),
+        "ethnicity_year": YEAR,
+        "ethnicity_basis": "nationality",
+        "ethnicity_note": CITIZENSHIP_NOTE.format(born_here=c[1], born_abroad=c[2],
+                                                  naturalised=c[3], foreign=c[4]),
+    }
+
+
 def fields_for(totals: list[float], ages: dict[int, float], unknown: float,
-               religion: dict[str, float]) -> dict[str, Any]:
+               religion: dict[str, float], citizens: list[float]) -> dict[str, Any]:
     median = median_from_single_years(ages)
     unstated = (f" {unknown:,.0f} people whose age was not known are left out of it."
                 if unknown else "")
     return {
+        **citizenship_fields(citizens),
         "population": population(totals[0], YEAR, f"{SOURCE} (Table 1)"),
         "sex_ratio": measure(sex_ratio(totals[1], totals[2]), unit="males_per_100_females",
                              year=YEAR, source=SOURCE),
@@ -327,16 +408,17 @@ def fields_for(totals: list[float], ages: dict[int, float], unknown: float,
         "religion": shares_of(religion, totals[0]),
         "religion_year": YEAR,
         "religion_note": "Religion, 2021 Census (Table 2), in the census's own denominations.",
-        "ethnicity": gap(NOT_AVAILABLE, (
-            "The 2021 Census workbook's 58 tables by place of residence include citizenship "
-            "(Table 8a) and no ethnicity.")),
-        "language": gap(NOT_AVAILABLE, (
-            "The 2021 Census workbook's 58 tables by place of residence include no language.")),
+        "language": gap(NOT_AVAILABLE, LANGUAGE_GAP),
     }
 
 
 SOURCES = [
-    {"field": "population/median_age/sex_ratio/religion", "name": SOURCE, "url": URL,
+    {"field": "population/median_age/sex_ratio/religion/ethnicity (citizenship)",
+     "name": f"{SOURCE} (Tables 1, 2 and 8a)", "url": URL,
+     "year": YEAR, "license": "None stated -- Samoa Bureau of Statistics publication, cited "
+                              "as such"},
+    {"field": "language (why empty); ethnicity (none published)",
+     "name": f"{OFFICE}, 2021 Census Fact Sheet; 2011 Census Excel tables", "url": FACTSHEET_URL,
      "year": YEAR, "license": "None stated -- Samoa Bureau of Statistics publication, cited "
                               "as such"},
     {"field": "the district each village is in", "name": SOURCE_2016, "url": URL_2016,
@@ -357,6 +439,10 @@ def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, 
     religion = read_2021(religion_rows, max(i for _, i in faiths))
     check([(c, v) for c, v, _ in people["villages"]] == [(c, v) for c, v, _ in religion["villages"]],
           "samoa_census: Tables 1 and 2 list different villages")
+    citizenship = read_citizenship(rows_of(book, "Table 8a"))
+    check([(c, v) for c, v, _ in people["villages"]]
+          == [(c, v) for c, v, _ in citizenship["villages"]],
+          "samoa_census: Tables 1 and 8a list different villages")
 
     def cell(values: list[float], column: int) -> float:
         return values[column - 1]
@@ -369,12 +455,16 @@ def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, 
         faith = sum(cell(r, i) for _, i in faiths)
         check(r[0] == a[0] and faith == r[0],
               f"samoa_census: {village}'s denominations make {faith:,.0f}, not {r[0]:,.0f}")
+    for (_, village, a), (_, _, c) in zip(people["villages"], citizenship["villages"]):
+        check(c[0] == a[0], f"samoa_census: Table 8a counts {c[0]:,.0f} in {village}, Table 1 "
+                            f"{a[0]:,.0f}")
 
     placed, new_villages = place_villages(old, people["villages"])
     for line in new_villages:
         log(f"  not in the 2016 list, placed with its constituency's villages: {line}")
     by_age = districts_of(placed, people["villages"], age_width)
     by_faith = districts_of(placed, religion["villages"], max(i for _, i in faiths))
+    by_citizenship = districts_of(placed, citizenship["villages"], 15)
     olds = Counter()
     for district, _, count in old:
         olds[district] += count
@@ -388,9 +478,10 @@ def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, 
     def fields(keys: list[tuple[str, str]]) -> dict[str, Any]:
         a = [sum(by_age[k][i] for k in keys) for i in range(age_width)]
         r = [sum(by_faith[k][i] for k in keys) for i in range(len(by_faith[keys[0]]))]
+        c = [sum(by_citizenship[k][i] for k in keys) for i in (0, 3, 6, 9, 12)]
         return fields_for(a[:3], {age: cell(a, i) for age, i in ages_at},
                           cell(a, unknown_at) if unknown_at else 0.0,
-                          {name: cell(r, i) for name, i in faiths})
+                          {name: cell(r, i) for name, i in faiths}, c)
 
     def polygon_name(key: tuple[str, str]) -> str:
         region, district = key
