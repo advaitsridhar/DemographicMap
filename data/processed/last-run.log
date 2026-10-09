@@ -1,8 +1,16 @@
-germany: Zensus 2022 table 1000A-1018 (religion), cut by GEOBL1 (land)
-  16 areas in the GEOBL1 cut
-germany: Zensus 2022 table 1000A-1021 (nationality), cut by GEOBL1 (land)
-  16 areas in the GEOBL1 cut
+germany: Zensus 2022 table 1000A-1018 (religion), cut by GEORB1 (regierungsbezirk)
+  26 areas in the GEORB1 cut
+  + 9 Laender that are a single region
+  + Koblenz: 11 Kreise, 1,517,589
+  + Trier: 5 Kreise, 521,418
+  + Rheinhessen-Pfalz: 20 Kreise, 2,055,162
+germany: Zensus 2022 table 1000A-1021 (nationality), cut by GEORB1 (regierungsbezirk)
+  26 areas in the GEORB1 cut
+  + 9 Laender that are a single region
+  + Koblenz: 11 Kreise, 1,517,589
+  + Trier: 5 Kreise, 521,418
+  + Rheinhessen-Pfalz: 20 Kreise, 2,055,162
   named: German, Turkish, Syrian, Romanian, Polish, Ukrainian, Italian, Croatian, Bulgarian, Greek, Afghan, Kosovan, Russian, Iraqi, Serbian, Bosnian and Herzegovinian, Hungarian, Austrian
-  wrote data/processed/germany_land.json (75 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_land.json
-  16 records
+  wrote data/processed/germany_regierungsbezirk.json (178 kB)
+  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_regierungsbezirk.json
+  38 records
