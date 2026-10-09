@@ -17,6 +17,7 @@ everywhere:
   (``cod_ps_age.grouped_median``), for an office that publishes nothing finer.
 * ``ratio`` -- males per 100 females, to one decimal.
 * ``age_sex`` -- the record fields for one unit, notes and provenance included.
+* ``html_rows`` -- every table of an HTML page as rows of cell texts.
 """
 
 from __future__ import annotations
@@ -194,3 +195,46 @@ def band(label: Any) -> tuple[int, int | None] | None:
     if re.fullmatch(r"\d{1,3}", text):
         return int(text), int(text)
     return None
+
+
+def html_rows(body: bytes) -> list[list[list[str]]]:
+    """Every <table> of a page as rows of cell texts, nested tables kept apart."""
+    from html.parser import HTMLParser
+
+    class Rows(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=True)
+            self.stack: list[list[list[str]]] = []
+            self.done: list[list[list[str]]] = []
+            self.cell: list[str] | None = None
+
+        def handle_starttag(self, tag: str, attrs: Any) -> None:
+            if tag == "table":
+                self.stack.append([])
+            elif tag == "tr" and self.stack:
+                self.stack[-1].append([])
+            elif tag in ("td", "th") and self.stack:
+                if not self.stack[-1]:
+                    self.stack[-1].append([])
+                self.cell = []
+
+        def handle_endtag(self, tag: str) -> None:
+            if tag in ("td", "th") and self.cell is not None and self.stack:
+                self.stack[-1][-1].append(" ".join("".join(self.cell).split()))
+                self.cell = None
+            elif tag == "table" and self.stack:
+                self.done.append(self.stack.pop())
+
+        def handle_data(self, data: str) -> None:
+            if self.cell is not None:
+                self.cell.append(data)
+
+    for encoding in ("utf-8", "tis-620", "cp874", "latin-1"):
+        try:
+            text = body.decode(encoding)
+            break
+        except UnicodeDecodeError:
+            continue
+    parser = Rows()
+    parser.feed(text)
+    return parser.done
