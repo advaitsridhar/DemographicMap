@@ -228,6 +228,9 @@ WHOLE = re.compile(r"(?<![\d.])\d{1,2}(?![\d.])")
 TITLE = re.compile(r"(?i)median\s+age\s+in\s+years\s+of\s+(?:the\s+)?population\s+by\s+district")
 NEXT = re.compile(r"(?i)^(?:table|figure|text\s+box)\s*\d")
 CID = re.compile(r"\(cid:(\d+)\)")
+# The population pyramid's legend, which a two-page spread can set on a row's
+# line; no district is called either.
+LEGEND = re.compile(r"(?i)\b(?:fe)?males?\b")
 NO_CENSUS = ("Afghanistan has had no census since 1979, and the statistics office's "
              "yearly estimates give age for the whole country only (the 1396 release's "
              "age workbook, \"گروپ سنین\", has five-year groups by sex for the rural, "
@@ -277,7 +280,8 @@ def table_rows(pages: Iterable[str], report: Report) -> dict[str, tuple[float, .
     (the first row, taken by its place: Balkh's own district is called Balkh
     too) or one of its districts. Lines between them that are not rows are
     passed over: a two-page spread sets the population pyramid's age labels
-    on the same lines ("79-75 Samangan 17.5 17.7 17.3"). The table ends at the
+    and its legend on the same lines ("79-75 Samangan 17.5 17.7 17.3",
+    "Female Male 69-65 Aybak 17.4 17.4 17.5"). The table ends at the
     next table's or figure's title, or once every row is in. The list of
     tables names the table too, and is passed over because no rows follow it.
     """
@@ -296,7 +300,7 @@ def table_rows(pages: Iterable[str], report: Report) -> dict[str, tuple[float, .
                 figures = figure.findall(follow)
                 if len(figures) not in (1, 3) or not follow.endswith(figures[-1]):
                     continue
-                label = fold(figure.sub("", follow))
+                label = fold(LEGEND.sub("", figure.sub("", follow)))
                 if not found and label == fold(report.name):
                     code = report.province
                 elif found and label in district:

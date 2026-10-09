@@ -286,6 +286,9 @@ class Spread(unittest.TestCase):
         self.assertEqual(set(found), {"20", "2001", "2002", "2005", "2007"})
         self.assertEqual(found["2002"], (16.9, 17.1, 16.8))
         sd.check(SAMANGAN, found)
+        # The pyramid's legend can share a row's line, as it does Aybak's.
+        merged = page.replace("Female Male\n69-65 Aybak", "Female Male 69-65 Aybak")
+        self.assertEqual(sd.table_rows([merged], SAMANGAN)["2001"], (17.4, 17.4, 17.5))
 
 
 if __name__ == "__main__":
