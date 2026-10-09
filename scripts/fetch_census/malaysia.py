@@ -72,14 +72,16 @@ LABELS = {
     "bumi_malay": "Malay",
     "bumi_other": "Other Bumiputera",
     "chinese": "Chinese",
-    "indian": "Indian",
+    "indian": "Indian (Malaysia)",
     "other_citizen": "Other (Malaysian citizen)",
     "other_noncitizen": "Non-Malaysian citizen",
 }
 NOTE = ("DOSM's ethnicity dimension includes non-citizens as a category of the "
         "resident population and it is kept as one; the other five are Malaysian "
         "citizens. 'Other Bumiputera' is DOSM's own group for the indigenous "
-        "peoples of Sabah, Sarawak and the peninsula other than Malays.")
+        "peoples of Sabah, Sarawak and the peninsula other than Malays; "
+        "'Indian (Malaysia)' is DOSM's Indian, Malaysian citizens of Indian "
+        "descent, not Indian nationals.")
 
 # The boundary file's English name where DOSM's differs from it.
 STATE_ALIASES = {

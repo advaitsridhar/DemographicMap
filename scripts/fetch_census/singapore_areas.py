@@ -146,7 +146,7 @@ AREA_REGION = {area: region for region, areas in REGIONS.items() for area in are
 
 # CSV column -> display label. Trailing digits are the source's footnote markers.
 ETHNIC_COLUMNS = {"Chinese_Total": "Chinese", "Malays_Total": "Malay",
-                  "Indians_Total": "Indian", "Others_Total": "Other"}
+                  "Indians_Total": "Indian (Singapore)", "Others_Total": "Other"}
 RELIGION_COLUMNS = {
     "Buddhism": "Buddhist", "Taoism1": "Taoist", "Islam": "Muslim",
     "Hinduism": "Hindu", "Sikhism": "Sikh",
@@ -196,7 +196,8 @@ SOURCE = {"ethnicity": CENSUS, "religion": CENSUS, "language": CENSUS,
 # What each figure is, in one sentence, for the area rows.
 NOTES = {
     "ethnicity": ("Census 2020, all residents. CMIO records one administrative "
-                  "race per person, taken from the father's."),
+                  "race per person, taken from the father's; 'Indian (Singapore)' "
+                  "is the census's Indian race, not Indian nationality."),
     "religion": ("Census 2020, residents aged 15 and over -- shares of adults, "
                  "not of the whole population."),
     "language": ("Census 2020, the language most often spoken at home by "

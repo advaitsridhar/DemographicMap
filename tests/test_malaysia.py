@@ -86,6 +86,11 @@ class AgeTest(unittest.TestCase):
         self.assertEqual(records[0]["median_age"]["year"], 2026)
         self.assertEqual(records[0]["sex_ratio"]["value"], round(100 * 18.2 / 17.8, 1))
 
+    def test_the_indian_race_is_written_with_its_country(self):
+        # A bare "Indian" is the nationality a European or Korean register
+        # counts; DOSM's is Malaysia's own citizens of Indian descent.
+        self.assertEqual(m.LABELS["indian"], "Indian (Malaysia)")
+
 
 if __name__ == "__main__":
     unittest.main()

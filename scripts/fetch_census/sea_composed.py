@@ -258,8 +258,14 @@ def topic_note(country: uscb.Country, topic: uscb.Topic) -> str:
     return NOTES.get((country.iso3, topic.field)) or topic.note or country.note
 
 
-def composition(made: dict[str, Any]) -> list[dict[str, Any]]:
-    return shares(made["counts"], total=made["published"] or sum(made["counts"].values()))
+def composition(made: dict[str, Any], relabel: dict[str, str] | None = None
+                ) -> list[dict[str, Any]]:
+    """The shares of a sum, under the labels ``uscb.py`` publishes: its country's
+    ``relabel`` (Myanmar's "Burmese" is the Bamar) applied as it applies it."""
+    counts: dict[str, float] = defaultdict(float)
+    for label, n in made["counts"].items():
+        counts[(relabel or {}).get(label, label)] += n
+    return shares(dict(counts), total=made["published"] or sum(counts.values()))
 
 
 def fields_of(country: uscb.Country, parts: list[dict[str, Any]], said: str
@@ -281,7 +287,7 @@ def fields_of(country: uscb.Country, parts: list[dict[str, Any]], said: str
                 f"{'lies' if len(made['missing']) == 1 else 'lie'} in this polygon, so a sum "
                 f"here would describe only part of it."))
             continue
-        out[t.field] = composition(made)
+        out[t.field] = composition(made, country.relabel)
         out[f"{t.field}_year"] = t.year or country.year
         out[f"{t.field}_note"] = f"{topic_note(country, t)} {said}"
         cites.append({"field": t.field, "name": source,

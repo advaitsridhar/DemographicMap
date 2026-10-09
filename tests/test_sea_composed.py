@@ -91,6 +91,21 @@ class MyanmarTest(unittest.TestCase):
             self.assertEqual(recs[sid]["religion"][0]["count"], 3 * 9)
             self.assertEqual(pct(recs[sid], "ethnicity"), {"Shan": 80.0, "Bamar": 20.0})
 
+    def test_labels_are_the_ones_uscb_publishes(self):
+        # uscb.py writes the profiles' "Burmese" as "Bamar" (its relabel); the
+        # sums here must carry the same label, or one people would be two.
+        import dataclasses
+        from unittest import mock
+        sheet = burma_sheet(burma_rows())
+        sheet["Ethnicity"][1] = [("Burmese" if a == "Bamar" else a)
+                                 for a in sheet["Ethnicity"][1]]
+        relabelled = dataclasses.replace(uscb.MYANMAR, relabel={"Burmese": "Bamar"})
+        with mock.patch.object(uscb, "MYANMAR", relabelled):
+            units = s.read_units(sheet, uscb.MYANMAR.topics)
+            recs = {r["shape_id"]: r for r in s.myanmar(units, ADMIN1, ADMIN2)}
+        self.assertEqual(pct(recs["S4"], "ethnicity"), {"Bamar": 100.0})
+        self.assertEqual(pct(recs["D3"], "ethnicity"), {"Shan": 80.0, "Bamar": 20.0})
+
     def test_mandalay_holds_nay_pyi_taw(self):
         rec = self.build()["S4"]
         self.assertEqual(rec["level"], "admin1")
