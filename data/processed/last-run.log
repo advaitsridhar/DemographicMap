@@ -1,5 +1,154 @@
-mongolia_ages: National Statistics Office of Mongolia, RESIDENT POPULATION IN MONGOLIA, by sex, by soum and district (data.1212.mn, DT_NSO_0300_068V2); National Statistics Office of Mongolia, RESIDENT POPULATION IN MONGOLIA, by age group, soum and district (data.1212.mn, DT_NSO_0300_067V2)
-  339 soums and districts add up to the nation's 3,425,162 in both tables; the 18 aimags the 2025 reform left alone add up to their own rows
-  Дарив (28216) bound by its English name 'Darvi'
-  2025: 22 aimags and 339 soums written; soum medians 22.0-39.0; sex ratios outside 80-150, noted as such: ['Altanshiree 450.6', 'Bayanjargalan 222.8']
-  wrote data/processed/mongolia_ages.json (897 kB)
+== https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx
+  HTTP 200 application/octet-stream 75,196 bytes
+  -- 'A1'
+       2: Table A1: Total # of households by household type and occupa
+       3:  | Household Type
+       4:  | Total | Private household
+  -- 'A-2'
+       2: Table A-2: Total # of households by household type and distr
+       3:  | Household Type
+       4:  | Total | Private household
+  -- 'A-3'
+       2: Table A-3: Total # of households by dwelling type and buildi
+       3:  | Housing tenure
+       4:  | Total | Owned by you or someone in this HH with a mortgage or loan | Owned by you or someone in the HH free and clear | Rented | Rent from Public Rental Board | Occupied without payment | Other arrangement with owner | Other tenure | Vacant Place | Not asked/Unclassified
+  -- 'G-8'
+       2: Table G-8: Total population by single years and sex: 2021 PH
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'G-1'
+       2: Table G-1: Total population by district and sex: 2021 PHC Na
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'G-3'
+       2: Table G-3: Total population by age group and sex: 2021 PHC N
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'G-4'
+       2: Table G-4: Total population by citizenship and sex: 2021 PHC
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'G-5'
+       2: Table G-5: Total population by place of birth and sex: 2021 
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'G-6'
+       2: Table G-6: Total population by education and sex: 2021 PHC N
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'G-7'
+       2: Table G-7: Total population by religious affiliation and sex
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'H-1'
+       2: Table H-1: Total population by district and citizenship: 202
+       3:  | Citizenship
+       4:  | Total | 1 - Citizens | 2 - Non-citizens | 3 - Status unknown
+  -- 'H-2'
+       2: Table H-2: Total population by age group and citizenship: 20
+       3:  | Citizenship
+       4:  | Total | 1 - Citizens | 2 - Non-citizens | 3 - Status unknown
+  -- 'H-3'
+       2: Table H-3: Total population by place of birth and citizenshi
+       3:  | Citizenship
+       4:  | Total | 1 - Citizens | 2 - Non-citizens | 3 - Status unknown
+  -- 'H-4'
+       2: Table H-4: Total population by education and citizenship: 20
+       3:  | Citizenship
+       4:  | Total | 1 - Citizens | 2 - Non-citizens | 3 - Status unknown
+  -- 'I-1'
+       2: Table I-1: Total population by district and ethnicity: 2021 
+       3:  | Ethnicity
+       4:  | Total | Nauruan | Kiribati | Tuvaluan | Australian | New Zealander | Fijian | Solomon Islander | Filipino | Chinese | Taiwanese | Indian | Tongan | Samoan | Vanuatu | Kosraean | Other ethnicity
+  -- 'I-2'
+       2: Table I-2: Total population by age group and ethnicity: 2021
+       3:  | Ethnicity
+       4:  | Total | Nauruan | Kiribati | Tuvaluan | Australian | New Zealander | Fijian | Solomon Islander | Filipino | Chinese | Taiwanese | Indian | Tongan | Samoan | Vanuatu | Kosraean | Other ethnicity
+  -- 'I-3'
+       2: Table I-3: Total population by place of birth and ethnicity:
+       3:  | Ethnicity
+       4:  | Total | Nauruan | Kiribati | Tuvaluan | Australian | New Zealander | Fijian | Solomon Islander | Filipino | Chinese | Taiwanese | Indian | Tongan | Samoan | Vanuatu | Kosraean | Other ethnicity
+  -- 'I-4'
+       2: Table I-4: Total population by education and ethnicity: 2021
+       3:  | Ethnicity
+       4:  | Total | Nauruan | Kiribati | Tuvaluan | Australian | New Zealander | Fijian | Solomon Islander | Filipino | Chinese | Taiwanese | Indian | Tongan | Samoan | Vanuatu | Kosraean | Other ethnicity
+  -- 'J-1'
+       2: Table J-1: Total population by age group and educational lev
+       3:  | Education highest level (ISCED 11)
+       4:  | Total | X - No schooling | 0 - Early childhood education | 1 - Primary education | 2 - Lower secondary education | 3 - Upper secondary education | 5 - Short-cycle tertiary education | 6 - Bachelor's or equivalent level | 7 - Master's or equivalent level | 8 - Doctoral or equivalent level | 9 - Not elsewhere classified
+  -- 'J-2'
+       2: Table J-2: Total population by district and educational leve
+       3:  | Education highest level (ISCED 11)
+       4:  | Total | X - No schooling | 0 - Early childhood education | 1 - Primary education | 2 - Lower secondary education | 3 - Upper secondary education | 5 - Short-cycle tertiary education | 6 - Bachelor's or equivalent level | 7 - Master's or equivalent level | 8 - Doctoral or equivalent level | 9 - Not elsewhere classified
+  -- 'J-3'
+       2: Table J-3: Total population by place of birth and educationa
+       3:  | Education highest level (ISCED 11)
+       4:  | Total | X - No schooling | 0 - Early childhood education | 1 - Primary education | 2 - Lower secondary education | 3 - Upper secondary education | 5 - Short-cycle tertiary education | 6 - Bachelor's or equivalent level | 7 - Master's or equivalent level | 8 - Doctoral or equivalent level | 9 - Not elsewhere classified
+  -- 'J-4'
+       2: Table J-4: Total population by age group and attendance: 202
+       3:  | Currently attending any education
+       4:  | Total | 1 - Attending | 2 - Not attending | 3 - Don't Know
+  -- 'J-5'
+       2: Table J-5: Total population by district and educational atte
+       3:  | Currently attending any education
+       4:  | Total | 1 - Attending | 2 - Not attending | 3 - Don't Know
+  -- 'J-6'
+       2: Table J-6: Total population by age group and highest grade c
+       3:  | Highest grade completed
+       4:  | Total | Playcentre / Kindergarten | Pre-school | Prep-school | Grade 1 (Year 1) | Grade 2 (Year 2) | Grade 3 (Year 3) | Grade 4 (Year 4) | Grade 5 (Year 5) | Grade 6 (Year 6) | Form 1 (Year 7) | Form 2 (Year 8) | Form 3 (Year 9) | Form 4 (Year 10) | Form 5 (Year 11) | Form 6 (Year 12) | Form 7
+  -- 'J-7'
+       2: Table J-7: Total population by district and highest grade co
+       3:  | Highest grade completed
+       4:  | Total | Playcentre / Kindergarten | Pre-school | Prep-school | Grade 1 (Year 1) | Grade 2 (Year 2) | Grade 3 (Year 3) | Grade 4 (Year 4) | Grade 5 (Year 5) | Grade 6 (Year 6) | Form 1 (Year 7) | Form 2 (Year 8) | Form 3 (Year 9) | Form 4 (Year 10) | Form 5 (Year 11) | Form 6 (Year 12) | Form 7
+  -- 'EA-3-MALE'
+       2: Table EA3-MALE: Male total population aged 15 years and over
+       3:  | Education highest level (ISCED 11)
+       4:  | Total | X - No schooling | 0 - Early childhood education | 1 - Primary education | 2 - Lower secondary education | 3 - Upper secondary education | 5 - Short-cycle tertiary education | 6 - Bachelor's or equivalent level | 7 - Master's or equivalent level | 8 - Doctoral or equivalent level | 9 - Not elsewhere classified
+  -- 'EA-3-TOTAL'
+       2: Table EA3: Total population aged 15 years and over in urban 
+       3:  | Education highest level (ISCED 11)
+       4:  | Total | X - No schooling | 0 - Early childhood education | 1 - Primary education | 2 - Lower secondary education | 3 - Upper secondary education | 5 - Short-cycle tertiary education | 6 - Bachelor's or equivalent level | 7 - Master's or equivalent level | 8 - Doctoral or equivalent level | 9 - Not elsewhere classified
+  -- 'EA-3-FEMALE'
+       2: Table EA3-FEMALE: Female total population aged 15 years and 
+       3:  | Education highest level (ISCED 11)
+       4:  | Total | X - No schooling | 0 - Early childhood education | 1 - Primary education | 2 - Lower secondary education | 3 - Upper secondary education | 5 - Short-cycle tertiary education | 6 - Bachelor's or equivalent level | 7 - Master's or equivalent level | 8 - Doctoral or equivalent level | 9 - Not elsewhere classified
+  -- 'LF-1'
+       2: Table LF-1: Total population by Labor Force Status and sex: 
+       3:  | Labour Force Status
+       4:  | Total | 1 - Employed | 2 - Unemployed | 3 - Outside Labour Force
+  -- 'LF-2'
+       2: Table LF-2: Total population by Labor Force Status and age: 
+       3:  | Labour Force Status
+       4:  | Total | 1 - Employed | 2 - Unemployed | 3 - Outside Labour Force
+  -- 'LF-3'
+       2: Table LF-3: Total population by Labor Force Status and distr
+       3:  | Labour Force Status
+       4:  | Total | 1 - Employed | 2 - Unemployed | 3 - Outside Labour Force
+  -- 'LF-4'
+       2: Table LF-4: Total population by Main Activity and sex: 2021 
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'LF-5'
+       2: Table LF-5: Total population by Main Activity and age group:
+       3:  | Age (5-year age bands)
+       4:  | Total | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44 | 45-49 | 50-54 | 55-59 | 60-64 | 65+
+  -- 'LF-6'
+       2: Table LF-6: Total population by Main Activity and age group,
+       3:  | Age (5-year age bands)
+       4:  | Total | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44 | 45-49 | 50-54 | 55-59 | 60-64 | 65+
+  -- 'LF-7'
+       2: Table LF-7: Total population by Main Activity and sex, for i
+       3:  | Sex
+       4:  | Total | Male | Female
+  -- 'M-1'
+       2: Table M-1: Total population by age group and district: 2021 
+       3:  | District
+       4:  | Total | 1-Yaren | 2-Boe | 3-Aiwo | 4-Buada | 5-Denigomodu | 6-Nibok | 7-Uaboe | 8-Baitsi | 9-Ewa | 10-Anetan | 11-Anabar | 12-Ijuw | 13-Anibare | 14-Meneng | 15-Location
+  -- 'M-2'
+       2: Table M-2: Total population by sex and marital status: 2021 
+       3:  | Marital status
+       4:  | Total | 1 - Single | 2 - Married | 4 - Widowed | 5 - Divorced / separated
+  -- 'M-3'
+       2: Table M-3: Total population by age group and marital status:
+       3:  | Marital status
+       4:  | Total | 1 - Single | 2 - Married | 4 - Widowed | 5 - Divorced / separated
