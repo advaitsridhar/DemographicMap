@@ -165,9 +165,12 @@ def cmd_spa(url: str, rows: int) -> None:
         log(f"    {p}")
 
 
-def cmd_cdx(pattern: str, limit: int, match: str, since: str, depth: int = 0) -> None:
+def cmd_cdx(pattern: str, limit: int, match: str, since: str, depth: int = 0,
+            every: bool = False) -> None:
     params = {"url": pattern, "output": "json", "limit": str(limit),
-              "filter": "statuscode:200", "collapse": "urlkey"}
+              "filter": "statuscode:200"}
+    if not every:
+        params["collapse"] = "urlkey"
     if since:
         params["from"] = since
     url = "http://web.archive.org/cdx/search/cdx?" + urllib.parse.urlencode(params)
@@ -194,7 +197,8 @@ def cmd_cdx(pattern: str, limit: int, match: str, since: str, depth: int = 0) ->
             log(f"  {n:5d}  {folder}")
         return
     for r in keep[:400]:
-        log(f"  {r[1]} {r[4]} {r[3][:28]} {r[2]}")
+        size = r[6] if len(r) > 6 else "?"
+        log(f"  {r[1]} {r[4]} {r[3][:28]} {size:>9} {r[2]}")
 
 
 def hdx(path: str, **params: Any) -> Any:
@@ -487,6 +491,8 @@ def main() -> int:
     c.add_argument("--since", default="")
     c.add_argument("--depth", type=int, default=0,
                    help="count captures by folder, this many path segments deep")
+    c.add_argument("--every", action="store_true",
+                   help="every capture of each URL, not only the first")
     h = sub.add_parser("hdx")
     h.add_argument("codes")
     h.add_argument("--query", default="population")
@@ -517,7 +523,7 @@ def main() -> int:
     elif args.cmd == "spa":
         cmd_spa(args.url, args.rows)
     elif args.cmd == "cdx":
-        cmd_cdx(args.pattern, args.limit, args.match, args.since, args.depth)
+        cmd_cdx(args.pattern, args.limit, args.match, args.since, args.depth, args.every)
     elif args.cmd == "hdx":
         cmd_hdx([x.strip().upper() for x in args.codes.split(",") if x.strip()], args.query)
     elif args.cmd == "res":
