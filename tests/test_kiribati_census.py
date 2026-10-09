@@ -78,13 +78,31 @@ def cod_row(names, males, females):
     return names + [females, males, males + females] + spread(females) + spread(males)
 
 
-def cod_book():
+def aged_row(names, males, females):
+    """A row with the given people per five-year group (13 closed, then 65+), by sex."""
+    return names + [sum(females), sum(males), sum(males) + sum(females)] + females + males
+
+
+# Butaritari's 3,250 people in five-year groups that keep Table A-10a's own broad
+# groups -- 448 under five, 1,328 under 15, 1,421 aged 15-49, 358 aged 50-64 and
+# 143 over -- split between the sexes as Table G-2 does (1,626 and 1,624).
+BUTARITARI_M = [230, 225, 225, 100, 110, 115, 110, 100, 90, 86, 65, 60, 54, 56]
+BUTARITARI_F = [218, 215, 215, 100, 110, 115, 110, 100, 90, 85, 65, 60, 54, 87]
+
+# A country whose groups give everyone 22.7, males 21.8 and females 24.0.
+NATION_M = [110, 110, 110, 110, 166, 80, 70, 60, 50, 40, 30, 25, 20, 19]
+NATION_F = [100, 100, 100, 100, 125, 90, 80, 70, 60, 50, 40, 35, 25, 25]
+
+
+def cod_book(butaritari=False):
     adm1 = [["ADM1_EN"] + HEADER_TAIL,
             cod_row(["Gilbert Islands"], 53260, 55401), cod_row(["Line Islands"], 5894, 5385),
             cod_row(["Phoenix Islands"], 0, 0)]
     rows = []
-    for _, row in kc.ISLANDS.values():
-        if row:
+    for _, row in list(kc.ISLANDS.values()) + list(kc.UNDRAWN.values()):
+        if row == "Butaritari" and butaritari:
+            rows.append(aged_row([row], BUTARITARI_M, BUTARITARI_F))
+        elif row:
             rows.append(cod_row([row], 1000, 900))
     rows += [cod_row(["South Tarawa"], 30458, 32981), cod_row(["Betio"], 0, 0),
              cod_row(["Kanton"], 0, 0)]
@@ -215,58 +233,92 @@ class SPCsTable(unittest.TestCase):
             kc.read_cod(book)
 
 
+class TheCountrysMedians(unittest.TestCase):
+    """SPC's groups stand for the census's ages only if they give the Office's own
+    country medians (Census Atlas, Table 2: 22.9, males 21.8, females 24.0)."""
+
+    def nation(self, males=NATION_M, females=NATION_F):
+        row = aged_row(["Kiribati"], males, females)
+        book = Book({"t": [["ADM1_EN"] + HEADER_TAIL, row]})
+        return {"Kiribati": kc.age_table(kc.rows_of(book, "t"), "ADM1_EN")["Kiribati"]}
+
+    def test_the_atlas_medians_come_out_of_the_groups(self):
+        got = kc.check_national(self.nation())
+        self.assertEqual(got, {"everyone": 22.7, "males": 21.8, "females": 24.0})
+
+    def test_groups_that_miss_the_atlas_stop_the_run(self):
+        males = list(NATION_M)
+        males[4], males[5] = males[4] - 60, males[5] + 60       # the males' median moves to 22.8
+        with self.assertRaises(SystemExit):
+            kc.check_national(self.nation(males=males))
+
+    def test_table_a10a_is_not_the_atlas(self):
+        self.assertGreater(abs(kc.A10A_NATIONAL - kc.ATLAS_MEDIANS["everyone"]),
+                           kc.MEDIAN_SLACK)
+
+
 class TheRecords(unittest.TestCase):
     def setUp(self):
         counts = kc.read_profile(profile_book())
-        self.census, self.ages = kc.build(counts, kc.read_cod(cod_book()),
-                                          kc.read_report(counts),
-                                          kc.read_religion(volume_pages()),
-                                          load_units("KIR", "admin1"), load_units("KIR", "admin2"))
+        self.cod = kc.read_cod(cod_book(butaritari=True))
+        self.report = kc.read_report(counts)
+        self.census = kc.build(counts, self.cod, self.report, kc.read_religion(volume_pages()),
+                               load_units("KIR", "admin1"), load_units("KIR", "admin2"))
 
-    def named(self, records, name):
-        return next(r for r in records if r["name"] == name)
+    def named(self, name):
+        return next(r for r in self.census if r["name"] == name)
 
-    def test_every_drawn_unit_has_both_records(self):
-        for records in (self.census, self.ages):
-            self.assertEqual(sum(r["level"] == "admin1" for r in records), 3)
-            self.assertEqual(sum(r["level"] == "admin2" for r in records), 23)
+    def test_every_drawn_unit_has_a_record(self):
+        self.assertEqual(sum(r["level"] == "admin1" for r in self.census), 3)
+        self.assertEqual(sum(r["level"] == "admin2" for r in self.census), 23)
 
     def test_the_gilbert_islands_count_makin_too(self):
-        gilbert = self.named(self.census, "Gilbert Islands")
+        gilbert = self.named("Gilbert Islands")
         self.assertEqual(gilbert["population"]["value"],
                          kc.NATIONAL - 1893 - 1990 - 7369 - 41)
         self.assertIn("Makin", gilbert["population_note"])
 
-    def test_kanton_says_why_it_has_no_age(self):
-        kanton = self.named(self.ages, "Kanton")
-        self.assertEqual(kanton["median_age"]["status"], "not_available")
-        self.assertIn("41", kanton["median_age"]["note"])
+    def test_kanton_says_why_it_has_no_median(self):
+        for name in ("Kanton", "Phoenix Islands"):
+            record = self.named(name)
+            self.assertEqual(record["median_age"]["status"], "not_available")
+            self.assertIn("41", record["median_age"]["note"])
+            self.assertIn("17.9", record["median_age"]["note"])
+            self.assertNotIn("median_age", {s["field"] for s in record["sources"]})
 
-    def test_an_island_carries_spcs_figures_and_says_whose(self):
-        betio = self.named(self.ages, "Betio")
-        self.assertEqual(betio["sex_ratio"]["value"], 95.1)
-        self.assertIn("BetioEast", betio["sex_ratio_note"])
-        census = self.named(self.census, "Betio")
-        self.assertEqual(census["language"]["status"], "not_available")
+    def test_butaritari_takes_spcs_median_not_the_printed_one(self):
+        butaritari = self.named("Butaritari")
+        self.assertEqual(butaritari["median_age"]["value"], 22.2)
+        self.assertIn("Pacific Community", butaritari["median_age"]["source"])
+        self.assertIn("16.8", butaritari["median_age_note"])
+        self.assertIn("Table A-10a", butaritari["median_age_note"])
+        self.assertIn("22.9", butaritari["median_age_note"])
+        self.assertIn("median_age", {s["field"] for s in butaritari["sources"]})
+        compared = kc.compare_medians(self.report, self.cod)
+        self.assertEqual(compared["pairs"]["Butaritari"], (16.8, 22.2))
+        self.assertGreaterEqual(compared["most"], 5.4)
 
-    def test_an_island_carries_the_offices_own_age_sex_and_ethnicity(self):
-        betio = self.named(self.census, "Betio")
-        self.assertEqual(betio["median_age"]["value"], 20.8)
+    def test_every_island_and_group_with_ages_has_one_source_of_median(self):
+        for record in self.census:
+            if record["name"] in ("Kanton", "Phoenix Islands"):
+                continue
+            self.assertIn("Pacific Community", record["median_age"]["source"], record["name"])
+
+    def test_betio_is_spcs_village_and_the_offices_sex_and_ethnicity(self):
+        betio = self.named("Betio")
+        self.assertIn("BetioEast", betio["median_age_note"])
+        self.assertIn("20.8", betio["median_age_note"])
         self.assertEqual(betio["sex_ratio"]["value"], 95.0)
         self.assertEqual(betio["ethnicity"][0]["group"], "I-Kiribati")
-        kanton = self.named(self.census, "Kanton")
-        self.assertEqual(kanton["median_age"]["value"], 17.9)
-        phoenix = self.named(self.census, "Phoenix Islands")
-        self.assertEqual(phoenix["median_age"]["value"], 17.9)
-        gilbert = self.named(self.census, "Gilbert Islands")
-        self.assertNotIn("median_age_note", gilbert)
+        self.assertEqual(betio["language"]["status"], "not_available")
+        gilbert = self.named("Gilbert Islands")
+        self.assertIn("by island group", gilbert["median_age_note"])
         self.assertIn("Makin", gilbert["ethnicity_note"])
 
-    def test_a_median_its_own_age_groups_contradict_is_not_used(self):
-        banaba = self.named(self.census, "Banaba")
-        self.assertEqual(banaba["median_age"]["status"], "not_available")
-        self.assertIn("13.8", banaba["median_age"]["note"])
-        self.assertIn("150 of its 333", banaba["median_age"]["note"])
+    def test_banabas_printed_median_is_on_the_wrong_side_of_15(self):
+        banaba = self.named("Banaba")
+        self.assertIn("13.8", banaba["median_age_note"])
+        self.assertIn("150 of the island's 333", banaba["median_age_note"])
 
 
 class TheReligionOf2015(unittest.TestCase):
@@ -315,9 +367,9 @@ class TheReligionOf2015(unittest.TestCase):
 class TheReligionRecords(unittest.TestCase):
     def setUp(self):
         counts = kc.read_profile(profile_book())
-        self.census, _ = kc.build(counts, kc.read_cod(cod_book()), kc.read_report(counts),
-                                  kc.read_religion(volume_pages()), load_units("KIR", "admin1"),
-                                  load_units("KIR", "admin2"))
+        self.census = kc.build(counts, kc.read_cod(cod_book()), kc.read_report(counts),
+                               kc.read_religion(volume_pages()), load_units("KIR", "admin1"),
+                               load_units("KIR", "admin2"))
 
     def named(self, name):
         return next(r for r in self.census if r["name"] == name)
@@ -354,8 +406,8 @@ class TheReport(unittest.TestCase):
         report = kc.read_report(kc.read_profile(profile_book()))
         self.assertEqual(report["g2"]["Kiritimati"]["Male"], 3_837)
         self.assertEqual(report["a3"]["Kiritimati"]["Kiribati/Mix"], 662)
-        self.assertNotIn("Banaba", report["medians"])
-        self.assertEqual(report["medians"]["Makin"], 15.4)
+        self.assertEqual(report["wrong_side"], {"Banaba"})
+        self.assertEqual(report["a10"]["Makin"]["Median"], 15.4)
 
     def test_a_misread_figure_stops_the_run(self):
         counts = kc.read_profile(profile_book())

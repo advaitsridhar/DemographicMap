@@ -10,28 +10,33 @@ they must add up to the 119,438 the census counted. Betio is its own island
 there, and South Tarawa is the Teinainano Urban Council without it -- which is
 how the map draws them, as "Betio" and "Tarawa Teinainano".
 
-**Age, sex and ethnicity by island** the Office publishes in its General
-Report, whose tables are pictures with no text layer. Three are transcribed
-here from the rendered pages: Table G-2 (p. 18), each island's people by sex;
-Table A-10a (p. 40), each island's broad age groups and median age; Table
-A-3b (p. 26), each island's ethnicity. Each must add up across its columns and
-down to its divisions and the country, and give every island the count the
-Island Profile gives it -- four readings of one number, two of them from
-different pages. A printed median that its own age groups contradict (on the
-wrong side of 15, against the share of the island under 15) is not used, and
-the record says so: Banaba's.
+**Sex and ethnicity by island** the Office publishes in its General Report,
+whose tables are pictures with no text layer. Three are transcribed here from
+the rendered pages: Table G-2 (p. 18), each island's people by sex; Table
+A-10a (p. 40), each island's broad age groups and median age; Table A-3b
+(p. 26), each island's ethnicity. Each must add up across its columns and down
+to its divisions and the country, and give every island the count the Island
+Profile gives it -- four readings of one number, two of them from different
+pages.
 
-**The island groups' medians** have no table: the Office's medians are by
-island and division, and the map's first level is the three island groups.
-Those two (Gilbert, Line) come from the Pacific Community's tabulation of the
-same census by island and five-year age group, which UNFPA and OCHA publish as
-the Common Operational Dataset for Kiribati (``cod-ps-kir``, "Baseline used:
-Kiribati NSO"). It counts 119,940 people, 0.4% more than the final count, so
-its medians and sex ratios go to a file of their own that the build lists as
-fill-only, behind the Office's figures wherever those exist; each says how
-many people it describes. It folds Betio into South Tarawa and tabulates Betio
-as the village "BetioEast", so Betio's figures are that village's and
-Teinainano's are South Tarawa's without it.
+**The median ages are not Table A-10a's.** That column contradicts the
+census's own ages. It prints the country at 20.4, where the Office's Census
+Atlas (2022, Table 2) prints 22.9 -- males 21.8, females 24.0 -- and it runs
+below what the same census's five-year groups give on nearly every island, by
+up to six years: Butaritari 16.8 against 21.7, with 41% of its people under
+15. Banaba's 13.8 even sits on the wrong side of 15 for its own age groups.
+So every island's and island group's median here comes from one source, the
+Pacific Community's tabulation of the same census by island, five-year age
+group and sex, which UNFPA and OCHA publish as the Common Operational Dataset
+for Kiribati (``cod-ps-kir``, "Baseline used: Kiribati NSO"), interpolated
+within the group that holds the middle person. The run refuses unless that
+tabulation's country medians -- everyone, males, females -- are each within
+0.3 years of the Atlas's. It counts 119,940 people, 0.4% more than the final
+count, and each record says how many people its median describes. It folds
+Betio into South Tarawa and tabulates Betio as the village "BetioEast", so
+Betio's median is that village's and Teinainano's South Tarawa's without it.
+Kanton, 41 people, is not in it, and Kanton and the Phoenix Islands say why
+they have no median. The printed figure is quoted on every island's record.
 
 **Religion by island is the 2015 census's.** The 2020 census publishes
 religion for the country (General Report, Table G-3) and maps it by island in
@@ -78,6 +83,8 @@ from .oceania_common import (
 )
 
 OUT = "kiribati_census.json"
+# The fill-only file SPC's medians used to go to; they are this file's now, and
+# a run removes it so the build reads one source for Kiribati's ages.
 OUT_AGES = "kiribati_codps_age.json"
 YEAR = 2020
 OFFICE = "Kiribati National Statistics Office"
@@ -94,6 +101,14 @@ COD = ("Pacific Community (SPC) tabulation of the 2020 census by island, five-ye
        "and sex (UNFPA / OCHA COD-PS for Kiribati)")
 LICENCE = "None stated -- Kiribati National Statistics Office publication, cited as such"
 NATIONAL = 119_438
+# The Office's own country medians for 2020: the Kiribati Census Atlas (2022),
+# Table 2 "Key population statistics" and its key-indicators box. SPC's
+# five-year groups must reproduce each within MEDIAN_SLACK years.
+ATLAS = f"{OFFICE}, Kiribati Census Atlas 2022 (Table 2, Key population statistics)"
+ATLAS_MEDIANS = {"everyone": 22.9, "males": 21.8, "females": 24.0}
+MEDIAN_SLACK = 0.3
+# Table A-10a's own figure for the country, quoted against the Atlas's.
+A10A_NATIONAL = 20.4
 
 # The 2015 census's religion by island (Volume 1, Table 6).
 RELIGION_URL = ("https://nso.gov.ki/download/91/2015-census/1054/"
@@ -382,7 +397,9 @@ def read_report(counts: dict[str, int]) -> dict[str, Any]:
     adds_to_divisions(a3, A3B_COLUMNS, "Table A-3b")
     check(set(g2) == set(a10) == set(a3), "kiribati_census: the three tables list different "
                                           "lines")
-    medians: dict[str, float] = {}
+    check(a10["Kiribati"]["Median"] == A10A_NATIONAL,
+          f"kiribati_census: Table A-10a's country median reads {a10['Kiribati']['Median']}")
+    wrong_side: set[str] = set()
     for label, row in a10.items():
         broad = row["0-14"] + row["15-49"] + row["50-64"] + row["65+"]
         check(broad == row["Total"] and row["0-4"] <= row["0-14"],
@@ -392,17 +409,16 @@ def read_report(counts: dict[str, int]) -> dict[str, Any]:
               f"kiribati_census: {label} is {g2[label]['Total']:,.0f} in Table G-2, "
               f"{row['Total']:,.0f} in A-10a and {a3[label]['Total']:,.0f} in A-3b")
         # Fewer than half under 15 puts the median at 15 or over, and the other way round.
-        if (row["0-14"] < row["Total"] / 2) == (row["Median"] >= 15):
-            medians[label] = row["Median"]
+        if (row["0-14"] < row["Total"] / 2) != (row["Median"] >= 15):
+            wrong_side.add(label)
     for island, label in REPORT_ROWS.items():
         check(g2[label]["Total"] == counts[island],
               f"kiribati_census: {island} is {counts[island]:,} in the Island Profile and "
               f"{g2[label]['Total']:,.0f} in Table G-2")
-    contradicted = sorted(set(a10) - set(medians))
     log(f"  General Report: Tables G-2, A-10a, A-3b for {len(REPORT_ROWS)} islands, adding up "
-        f"and agreeing with the Island Profile; medians its own age groups contradict: "
-        f"{contradicted}")
-    return {"g2": g2, "a10": a10, "a3": a3, "medians": medians}
+        f"and agreeing with the Island Profile; A-10a medians on the wrong side of 15 for "
+        f"their own age groups: {sorted(wrong_side)}")
+    return {"g2": g2, "a10": a10, "a3": a3, "wrong_side": wrong_side}
 
 
 # ---------------------------------------------------------------------------
@@ -562,14 +578,8 @@ def religion_fields(labels: list[str], table6: dict[str, dict[str, list[int]]],
     }
 
 
-MEDIAN_CONTRADICTED = (
-    "The General Report prints {island}'s median age as {median} (Table A-10a), and the same "
-    "table counts {young:,.0f} of its {people:,.0f} people under 15 -- {side} half -- which "
-    "puts the median {where} 15; the printed figure is not used.")
-
-
 def report_fields(labels: list[str], report: dict[str, Any], where: str) -> dict[str, Any]:
-    """Sex and ethnicity of the islands named, added up, and one island's median."""
+    """Sex and ethnicity of the islands named, added up."""
     g2, a3 = report["g2"], report["a3"]
     male = sum(g2[label]["Male"] for label in labels)
     female = sum(g2[label]["Female"] for label in labels)
@@ -588,19 +598,6 @@ def report_fields(labels: list[str], report: dict[str, Any], where: str) -> dict
                            f"'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' "
                            f"its 'USA'.{added}"),
     }
-    if len(labels) == 1:
-        label, row = labels[0], report["a10"][labels[0]]
-        if label in report["medians"]:
-            fields["median_age"] = measure(row["Median"], unit="years", year=YEAR,
-                                           source=f"{REPORT} (Table A-10a)")
-            fields["median_age_note"] = (f"Median age of the people of {where} as the 2020 "
-                                         f"census's General Report prints it (Table A-10a).")
-        else:
-            young = row["0-14"] < row["Total"] / 2
-            fields["median_age"] = gap(NOT_AVAILABLE, MEDIAN_CONTRADICTED.format(
-                island=where, median=row["Median"], young=row["0-14"], people=row["Total"],
-                side="fewer than" if young else "more than",
-                where="at or over" if young else "under"))
     return fields
 
 
@@ -609,7 +606,11 @@ def report_fields(labels: list[str], report: dict[str, Any], where: str) -> dict
 # ---------------------------------------------------------------------------
 
 def age_table(rows: list[list[Any]], name_col: str) -> dict[str, dict[str, Any]]:
-    """{unit: {male, female, groups}} from one sheet of SPC's island table."""
+    """{unit: {male, female, groups, males, females}} from one sheet of SPC's island table.
+
+    ``groups`` is everyone's (low, high, people) by five-year group, the last
+    open; ``males`` and ``females`` the same for each sex.
+    """
     header = [str(c).strip() if c is not None else "" for c in rows[0]]
     closed = sorted({(int(m.group(2)), int(m.group(3))) for c in header if (m := AGE.match(c))})
     top = sorted({int(m.group(2)) for c in header if (m := OPEN.match(c))})
@@ -625,17 +626,22 @@ def age_table(rows: list[list[Any]], name_col: str) -> dict[str, dict[str, Any]]
         name = str(cells[index[name_col]] or "").strip()
         if not name:
             continue
-        groups, males, females = [], 0, 0
+        groups, by_male, by_female, males, females = [], [], [], 0, 0
         for low, high in closed:
             m = int(number(cells[index[f"M_{low:02d}_{high:02d}"]]) or 0)
             f = int(number(cells[index[f"F_{low:02d}_{high:02d}"]]) or 0)
             groups.append((low, high, m + f))
+            by_male.append((low, high, m))
+            by_female.append((low, high, f))
             males, females = males + m, females + f
         m = int(number(cells[index[opens["M"]]]) or 0)
         f = int(number(cells[index[opens["F"]]]) or 0)
         groups.append((top[0], None, m + f))
+        by_male.append((top[0], None, m))
+        by_female.append((top[0], None, f))
         males, females = males + m, females + f
         out[name] = {"male": males, "female": females, "groups": groups,
+                     "males": by_male, "females": by_female,
                      "printed": (number(cells[index["M_TL"]]), number(cells[index["F_TL"]]))}
     return out
 
@@ -649,18 +655,33 @@ def checked(unit: dict[str, Any], name: str) -> dict[str, Any]:
     return unit
 
 
+def combine(parts: list[dict[str, Any]], sign: list[int]) -> dict[str, Any]:
+    """Rows added (sign 1) or taken away (sign -1), group by group and sex by sex."""
+    def add(key: str) -> list[tuple[int, int | None, int]]:
+        bands = parts[0][key]
+        return [(lo, hi, sum(s * p[key][i][2] for p, s in zip(parts, sign)))
+                for i, (lo, hi, _) in enumerate(bands)]
+    return {"male": sum(s * p["male"] for p, s in zip(parts, sign)),
+            "female": sum(s * p["female"] for p, s in zip(parts, sign)),
+            "groups": add("groups"), "males": add("males"), "females": add("females")}
+
+
 def minus(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any]:
-    return {"male": a["male"] - b["male"], "female": a["female"] - b["female"],
-            "groups": [(lo, hi, n - m) for (lo, hi, n), (_, _, m) in zip(a["groups"], b["groups"])]}
+    return combine([a, b], [1, -1])
 
 
 def read_cod(book) -> dict[str, dict[str, Any]]:
-    """SPC's figures for the drawn islands and the three island groups."""
+    """SPC's figures for the drawn islands, the island groups and the country.
+
+    The country ("Kiribati") is the island groups' rows added up; each drawn
+    island is its own row, but for Betio (SPC's village "BetioEast") and
+    Tarawa Teinainano (South Tarawa without it).
+    """
     groups = age_table(rows_of(book, "kir_admpop_adm1_2020"), "ADM1_EN")
     islands = age_table(rows_of(book, "kir_admpop_adm2_2020"), "ADM2_EN")
     villages = age_table(rows_of(book, "kir_admpop_adm3_2020"), "ADM3_EN")
     out: dict[str, dict[str, Any]] = {}
-    for island, (_, row) in ISLANDS.items():
+    for island, (_, row) in list(ISLANDS.items()) + list(UNDRAWN.items()):
         if row:
             check(row in islands, f"kiribati_census: SPC has no island {row!r}")
             out[island] = checked(islands[row], row)
@@ -671,7 +692,51 @@ def read_cod(book) -> dict[str, dict[str, Any]]:
     out["Tarawa Teinainano"] = minus(checked(islands["South Tarawa"], "South Tarawa"), betio)
     for name in ("Gilbert Islands", "Line Islands"):
         out[name] = checked(groups[name], name)
+    rows = [checked(row, name) for name, row in groups.items()]
+    out["Kiribati"] = combine(rows, [1] * len(rows))
     return out
+
+
+def check_national(cod: dict[str, dict[str, Any]]) -> dict[str, float]:
+    """SPC's country medians, each within MEDIAN_SLACK of the Office's Census Atlas.
+
+    This is what licenses SPC's groups as the census's ages: the Office's own
+    published medians for the country -- everyone, males and females -- come
+    out of them. Table A-10a's country figure does not.
+    """
+    nation = cod["Kiribati"]
+    got = {"everyone": median_from_groups(nation["groups"]),
+           "males": median_from_groups(nation["males"]),
+           "females": median_from_groups(nation["females"])}
+    for who, published in ATLAS_MEDIANS.items():
+        check(got[who] is not None and abs(got[who] - published) <= MEDIAN_SLACK,
+              f"kiribati_census: SPC's groups give the country's {who} a median of {got[who]}, "
+              f"the Census Atlas {published}")
+    log(f"  SPC's country medians {got} against the Census Atlas's {ATLAS_MEDIANS} "
+        f"({nation['male'] + nation['female']:,} people); Table A-10a prints {A10A_NATIONAL}")
+    return got
+
+
+def compare_medians(report: dict[str, Any], cod: dict[str, dict[str, Any]]
+                    ) -> dict[str, Any]:
+    """Each island's Table A-10a median beside SPC's for the same island.
+
+    Measured, not assumed: how many islands the printed column puts more than a
+    year away from the census's own age groups, and how far at most.
+    """
+    pairs: dict[str, tuple[float, float]] = {}
+    for island, label in REPORT_ROWS.items():
+        if island in cod:
+            pairs[island] = (report["a10"][label]["Median"],
+                             median_from_groups(cod[island]["groups"]))
+    apart = {i: p - s for i, (p, s) in pairs.items() if abs(p - s) > 1.0}
+    lowest = min(apart.values(), default=0.0)
+    log(f"  Table A-10a against SPC's groups: {len(apart)} of {len(pairs)} islands more than a "
+        f"year apart, the printed figure lower on {sum(d < 0 for d in apart.values())}, by up "
+        f"to {abs(lowest):.1f} years: " + ", ".join(f"{i} {p} v {s}" for i, (p, s) in
+                                                     sorted(pairs.items())))
+    return {"pairs": pairs, "apart": len(apart), "islands": len(pairs),
+            "most": round(max((abs(d) for d in apart.values()), default=0.0), 1)}
 
 
 # ---------------------------------------------------------------------------
@@ -683,36 +748,68 @@ LANGUAGE_GAP = (
     "report only whether people can read and write, in any language; the 2015 census's "
     "Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's "
     "tables give literacy (Table 16) and none either.")
-AGE_NOTE = (
-    "{what}, from the Pacific Community's tabulation of the 2020 census by island, five-year "
-    "age group and sex (UNFPA and OCHA's COD-PS for Kiribati), which counts {people:,} "
-    "people here against the census's final {final:,}{extra}. The Statistics Office's own "
-    "General Report prints medians by island and division, not by island group.")
-NO_AGE = (
-    "Kanton's {people} people are not in the Pacific Community's tabulation of the 2020 census "
-    "by age and sex; the Statistics Office's General Report gives Kanton's own (Tables G-2 "
-    "and A-10a), which the census file carries.")
+MEDIAN_NOTE = (
+    "Median age interpolated within the five-year age group that holds the middle person, "
+    "from the Pacific Community's tabulation of the 2020 census by island, five-year age "
+    "group and sex (UNFPA and OCHA's COD-PS for Kiribati, \"Baseline used: Kiribati NSO\"), "
+    "which counts {people:,} people here against the census's final {final:,}{extra}. The "
+    "same tabulation gives the country a median of {national}, and the Statistics Office's "
+    "own Census Atlas prints {atlas}.{printed}")
+PRINTED = (
+    " The General Report prints {median} for {island} (Table A-10a), a column not used here: "
+    "it puts the country at {a10_nation} against the Atlas's {atlas}, and {apart} of its "
+    "{islands} islands more than a year from what the census's own five-year groups give, "
+    "by up to {most} years.")
+WRONG_SIDE = (
+    " Its own age groups contradict it besides: {young:,.0f} of the island's {people:,.0f} "
+    "people are under 15, {side} half, which puts the median {where} 15.")
+GROUP_PRINTED = (
+    " The General Report prints medians by island and division, not by island group, and its "
+    "island figures (Table A-10a) are not used, for the reason each island's record gives.")
+NO_MEDIAN = (
+    "Kanton's {people} people are not in the Pacific Community's tabulation of the 2020 "
+    "census by age, the source of every other island's median here. The General Report "
+    "prints {median} for Kanton (Table A-10a), a column not used for any island: it puts the "
+    "country at {a10_nation} against the {atlas} of the Office's own Census Atlas, and "
+    "{apart} of its {islands} islands more than a year from what the census's own five-year "
+    "groups give, by up to {most} years.")
 
 
-def age_fields(unit: str, cod: dict[str, Any], final: int) -> dict[str, Any]:
+def median_fields(unit: str, where: str, label: str | None, cod: dict[str, Any],
+                  report: dict[str, Any], compared: dict[str, Any], final: int
+                  ) -> dict[str, Any]:
+    """SPC's median for one island or island group, or why there is none.
+
+    ``label`` is the island's line in the General Report, None for an island
+    group (which the report does not tabulate).
+    """
+    context = {"a10_nation": A10A_NATIONAL, "atlas": ATLAS_MEDIANS["everyone"],
+               "apart": compared["apart"], "islands": compared["islands"],
+               "most": compared["most"]}
     figures = cod.get(unit)
     if not figures or not figures["male"] + figures["female"]:
-        why = NO_AGE.format(people=final)
-        return {"median_age": gap(NOT_AVAILABLE, why), "sex_ratio": gap(NOT_AVAILABLE, why)}
-    people = figures["male"] + figures["female"]
+        printed = report["a10"]["Kanton"]["Median"]
+        return {"median_age": gap(NOT_AVAILABLE, NO_MEDIAN.format(people=final, median=printed,
+                                                                  **context))}
+    if label is None:
+        printed = GROUP_PRINTED
+    else:
+        row = report["a10"][label]
+        printed = PRINTED.format(median=row["Median"], island=where, **context)
+        if label in report["wrong_side"]:
+            young = row["0-14"] < row["Total"] / 2
+            printed += WRONG_SIDE.format(young=row["0-14"], people=row["Total"],
+                                         side="fewer than" if young else "more than",
+                                         where="at or over" if young else "under")
     extra = (" -- its village 'BetioEast'" if unit == "Betio" else
              " -- South Tarawa without Betio" if unit == "Tarawa Teinainano" else "")
-    source = f"{COD}, {YEAR}"
+    national = median_from_groups(cod["Kiribati"]["groups"])
     return {
         "median_age": measure(median_from_groups(figures["groups"]), unit="years", year=YEAR,
-                              source=source),
-        "median_age_note": AGE_NOTE.format(what="Interpolated within the five-year age group "
-                                                "that holds the middle person", people=people,
-                                           final=final, extra=extra),
-        "sex_ratio": measure(sex_ratio(figures["male"], figures["female"]),
-                             unit="males_per_100_females", year=YEAR, source=source),
-        "sex_ratio_note": AGE_NOTE.format(what="Males per 100 females", people=people,
-                                          final=final, extra=extra),
+                              source=f"{COD}, {YEAR}"),
+        "median_age_note": MEDIAN_NOTE.format(
+            people=figures["male"] + figures["female"], final=final, extra=extra,
+            national=national, atlas=ATLAS_MEDIANS["everyone"], printed=printed),
     }
 
 
@@ -724,53 +821,60 @@ def census_fields(final: int, note: str) -> dict[str, Any]:
     }
 
 
-SOURCES = [
-    {"field": "population", "name": PROFILE, "url": PROFILE_URL, "year": YEAR,
-     "license": LICENCE},
-    {"field": "median_age/sex_ratio/ethnicity", "name": REPORT, "url": REPORT_URL,
-     "year": YEAR, "license": LICENCE},
-    {"field": "religion", "name": f"{RELIGION_REPORT}, Table 6: Population by island, sex "
-                                  f"and religion", "url": RELIGION_URL,
-     "year": RELIGION_YEAR, "license": LICENCE},
-    {"field": "language (why empty)", "name": f"{REPORT}; Kiribati Census Atlas",
-     "url": ATLAS_URL, "year": YEAR, "license": LICENCE},
-]
-AGE_SOURCES = [{"field": "median_age/sex_ratio", "name": COD, "url": COD_PAGE, "year": YEAR,
-                "license": "Creative Commons Attribution for Intergovernmental Organisations"}]
+def sources(with_median: bool) -> list[dict[str, Any]]:
+    """The record's citations, SPC's only where the record carries its median."""
+    out = [
+        {"field": "population", "name": PROFILE, "url": PROFILE_URL, "year": YEAR,
+         "license": LICENCE},
+        {"field": "sex_ratio/ethnicity", "name": REPORT, "url": REPORT_URL, "year": YEAR,
+         "license": LICENCE},
+        {"field": "religion", "name": f"{RELIGION_REPORT}, Table 6: Population by island, sex "
+                                      f"and religion", "url": RELIGION_URL,
+         "year": RELIGION_YEAR, "license": LICENCE},
+        {"field": "language (why empty)", "name": f"{REPORT}; Kiribati Census Atlas",
+         "url": ATLAS_URL, "year": YEAR, "license": LICENCE},
+    ]
+    if with_median:
+        out.insert(2, {"field": "median_age", "name": COD, "url": COD_PAGE, "year": YEAR,
+                       "license": "Creative Commons Attribution for Intergovernmental "
+                                  "Organisations"})
+    return out
 
 
 def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[str, Any],
           table6: dict[str, dict[str, list[int]]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
-          ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+          ) -> list[dict[str, Any]]:
     group_units = bind_level({g: (g, "") for g in GROUPS}, admin1, {})
     parents = {u["id"]: u["name"] for u in admin1}
     island_units = bind_level({i: (i, "") for i in ISLANDS}, admin2, parents)
     check(set(T6_ROWS.values()) == set(T6_ISLANDS),
           "kiribati_census: the drawn islands and Makin are not Table 6's 24 lines")
-    census, ages = [], []
+    compared = compare_medians(report, cod)
+    census = []
     for group, unit in group_units.items():
         final = sum(counts[i] for i in GROUPS[group])
         note = (f"The census counts of its islands added up: {', '.join(GROUPS[group])}."
                 if len(GROUPS[group]) > 1 else "Kanton, the group's one inhabited island.")
         labels = [REPORT_ROWS[i] for i in GROUPS[group]]
-        census.append(unit_record("KIR", group, unit["name"], unit, "admin1", None, SOURCES,
-                                  **census_fields(final, note),
+        median = median_fields(group, group, None, cod, report, compared, final)
+        census.append(unit_record("KIR", group, unit["name"], unit, "admin1", None,
+                                  sources("median_age_note" in median),
+                                  **census_fields(final, note), **median,
                                   **report_fields(labels, report, group),
                                   **religion_fields([T6_ROWS[i] for i in GROUPS[group]],
                                                     table6, group)))
-        ages.append(unit_record("KIR", group, unit["name"], unit, "admin1", None, AGE_SOURCES,
-                                **age_fields(group, cod, final)))
     for island, unit in island_units.items():
         note = "The 2020 census count (Island Profile tables)."
-        census.append(unit_record("KIR", island, unit["name"], unit, "admin2", None, SOURCES,
-                                  **census_fields(counts[island], note),
+        median = median_fields(island, island, REPORT_ROWS[island], cod, report, compared,
+                               counts[island])
+        census.append(unit_record("KIR", island, unit["name"], unit, "admin2", None,
+                                  sources("median_age_note" in median),
+                                  **census_fields(counts[island], note), **median,
                                   **report_fields([REPORT_ROWS[island]], report, island),
                                   **religion_fields([T6_ROWS[island]], table6, island)))
-        ages.append(unit_record("KIR", island, unit["name"], unit, "admin2", None, AGE_SOURCES,
-                                **age_fields(island, cod, counts[island])))
     log(f"  no polygon: Makin ({counts['Makin']:,} people), counted in the Gilbert Islands")
-    return census, ages
+    return census
 
 
 def pdf_pages(url: str) -> list[str]:
@@ -797,12 +901,16 @@ def main() -> int:
     report = read_report(counts)
     table6 = read_religion(pdf_pages(RELIGION_URL))
     cod = read_cod(cod_book())
-    census, ages = build(counts, cod, report, table6, load_units("KIR", "admin1"),
-                         load_units("KIR", "admin2"))
-    log("  " + summarise(census + ages))
+    check_national(cod)
+    census = build(counts, cod, report, table6, load_units("KIR", "admin1"),
+                   load_units("KIR", "admin2"))
+    log("  " + summarise(census))
     write_json(PROCESSED / OUT, census)
-    write_json(PROCESSED / OUT_AGES, ages)
-    log(f"  wrote {len(census)} + {len(ages)} records")
+    log(f"  wrote {len(census)} records")
+    stale = PROCESSED / OUT_AGES
+    if stale.exists():
+        stale.unlink()
+        log(f"  removed {OUT_AGES}: SPC's medians are this file's now")
     return 0
 
 
