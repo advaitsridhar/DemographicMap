@@ -995,9 +995,9 @@ NO_ETHNIC_COUNT = (
 ETHNICITY_GAP_DISTRICT = (
     f"{NO_ETHNIC_COUNT} The one district-level source is the Ministry of Rural "
     "Rehabilitation and Development's district development plans of 2008-14, as the "
-    "provinces' articles transcribe them, and they give this district no shares "
-    "that could be written: none at all, or a majority named without figures, or "
-    "figures for a district the map does not draw as such.")
+    "provinces' articles transcribe them, and none of their shares is written for "
+    "this district: its plan gives none, names a majority without figures, or is "
+    "transcribed under a name or a province the map does not match to this polygon.")
 ETHNICITY_GAP_PROVINCE = (
     f"{NO_ETHNIC_COUNT} The ministry's district development plans of 2008-14 give "
     "some districts' shares and no province's; the districts that have one carry it.")
