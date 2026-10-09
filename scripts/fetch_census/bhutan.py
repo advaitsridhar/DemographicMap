@@ -644,7 +644,9 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
         for cells in rows:
             texts = [t for _a, _b, t in cells]
             if not titled:
-                titled = all(word in texts for word in title or ())
+                # Bumthang prints "Table 2.2:", the others "Table 2.2".
+                bare = {t.strip(".:,;") for t in texts}
+                titled = all(word in bare for word in title or ())
                 continue
             if margin is None:
                 if strict:
@@ -792,6 +794,12 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
             # is urban. Each covers the other's blind spot.
             into = towns if (TOWN.search(name) or section == "Urban") \
                 else gewogs
+            if name in into and into is towns and title is not None:
+                # Table 2.2's towns reach no shape and are held only through
+                # its closing row, so a second town row whose name this
+                # reader could not put together (Gasa's) is kept apart, never
+                # dropped. Table 2.1, and every gewog, still refuses below.
+                name = f"{name} ({sum(1 for k in towns if k.startswith(name)) + 1})"
             if name in into:
                 raise SystemExit(
                     f"bhutan: {dzongkhag}: two rows of Table 2.1 are both "
@@ -979,6 +987,15 @@ def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
     if not found.printed or counted != found.printed:
         return None, (f"Table 2.2's rows come to {counted:,} against the "
                       f"{found.printed:,} it prints beside them")
+    # A gewog's name that wrapped onto a second line arrives cut short --
+    # Samtse's Table 2.2 prints "Sang-Ngag-" over "Chhoeling" -- and is the
+    # one Table 2.1 gewog it begins, where exactly one does.
+    for short in sorted(set(found.gewogs) - set(read.gewogs)):
+        stem = short.rstrip("-")
+        whole_names = [name for name in set(read.gewogs) - set(found.gewogs)
+                       if name.startswith(stem) and len(name) > len(stem)]
+        if len(stem) >= 4 and len(whole_names) == 1:
+            found.gewogs[whole_names[0]] = found.gewogs.pop(short)
     # The gewogs must be Table 2.1's own, name for name. The towns reach no
     # shape and are held only through the closing row above: a town whose
     # label wraps differently in the two tables is not a reason to lose the
@@ -990,6 +1007,16 @@ def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
     if over or found.printed > read.printed:
         return None, (f"Table 2.2 counts more Bhutanese than Table 2.1 counts "
                       f"people in {over or ['the dzongkhag']}")
+    # Four reports -- Lhuentse, Paro, Punakha and Trashigang -- print a
+    # Table 2.1 that is short of their own annex by 6,308 people between
+    # them, exactly what the national report counts and the twenty Table
+    # 2.1s do not, and their Table 2.2 then prints Table 2.1's own total.
+    # A dzongkhag with no one but Bhutanese in it is not what those tables
+    # say; that one of the two is not the table its title names is.
+    if found.printed == read.printed:
+        return None, (f"Table 2.2 prints the same total as Table 2.1, "
+                      f"{found.printed:,} people, so the report gives no count of "
+                      f"the non-Bhutanese here")
     return found, ""
 
 

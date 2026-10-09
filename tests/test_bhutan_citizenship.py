@@ -138,6 +138,43 @@ class Citizenship(unittest.TestCase):
         self.assertIsNone(found)
         self.assertIn("Table 2.2", why)
 
+    def test_a_title_with_a_colon_is_still_the_title(self):
+        t22 = table22()
+        t22[0] = row("Table", "2.2:", "Distribution", "of", "Bhutanese", "Population")
+        _, (found, why) = self.read(pages(t22))
+        self.assertEqual(why, "")
+        self.assertEqual(found.gewogs["Barshong"], 838)
+
+    def test_a_gewog_name_cut_short_by_its_wrap_is_the_one_it_begins(self):
+        t22 = table22()
+        at = next(i for i, r in enumerate(t22) if r[0][2] == "Patshaling")
+        t22[at] = row("Patsha-", *[w for _a, _b, w in t22[at][1:]])
+        _, (found, why) = self.read(pages(t22))
+        self.assertEqual(why, "")
+        self.assertEqual(found.gewogs, {"Barshong": 838, "Patshaling": 1151})
+
+    def test_two_town_rows_this_reader_cannot_name_are_kept_apart(self):
+        t22 = table22()
+        at = next(i for i, r in enumerate(t22) if r[0][2] == "Tsirang")
+        t22[at:at + 1] = [row("Town", "1,600", "1,550", "3,150", "50.8", "49.2"),
+                          row("Town", "22", "21", "43", "51.2", "48.8")]
+        _, (found, why) = self.read(pages(t22))
+        self.assertEqual(why, "")
+        self.assertEqual(sum(found.towns.values()), 3193)
+
+    def test_a_table_22_with_table_21s_total_is_refused(self):
+        # Lhuentse, Paro, Punakha and Trashigang: no non-Bhutanese at all is
+        # not what the report says.
+        t22 = table22(barshong=("423", "419", "842"))
+        at = next(i for i, r in enumerate(t22) if r[0][2] == "Patshaling")
+        t22[at] = row("Patshaling", "567", "592", "1,159")
+        at = next(i for i, r in enumerate(t22) if r[0][2] == "Tsirang")
+        t22[at] = row("Tsirang", "Town", "1,854", "1,594", "3,448")
+        t22[-1] = row("Both", "Areas", "2,844", "2,605", "5,449")
+        _, (found, why) = self.read(pages(t22))
+        self.assertIsNone(found)
+        self.assertIn("same total", why)
+
     def test_no_table_22_at_all_is_said(self):
         _, (found, why) = self.read([contents(), table21()])
         self.assertIsNone(found)
