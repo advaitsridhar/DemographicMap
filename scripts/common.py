@@ -468,9 +468,10 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "CHN": {
         "religion": "China's census does not ask religion; it records the 56 official "
-                    "nationalities (minzu) instead. The China Family Panel Studies asked "
-                    "it in 2012 and supports province-level figures for five provinces "
-                    "(Shanghai, Liaoning, Henan, Gansu, Guangdong), which carry them.",
+                    "nationalities (minzu) instead. The China Family Panel Studies, a "
+                    "national survey, asks it, and its 2016 wave supports province-level "
+                    "figures for five provinces (Shanghai, Liaoning, Henan, Gansu, "
+                    "Guangdong), which carry them.",
     },
     # Measured rather than recalled: MEDAS, TUIK's statistical database, lists
     # 92 subjects and not one of them is religion, ethnicity or mother tongue.

@@ -135,11 +135,6 @@ ADAPTER_FILES = [
     # 2012: 56,900 adults, 500 to 800 in each of 79 subjects). No census has
     # asked religion since 1937 (russia_religion).
     "russia_religion_survey.json",
-    # Lebanon's cazas and governorates: residents by nationality (Lebanese or
-    # not) from CAS's Labour Force and Household Living Conditions Survey
-    # 2018-19, Table HL.6A (lebanon_survey). Lebanon has held no census since
-    # 1932; a survey, so compositions only, behind any count.
-    "lebanon_survey.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
@@ -239,6 +234,17 @@ ADAPTER_FILES = [
     # article's table, or a unit that is its country less another unit of
     # the same census (wiki_table_population). Fill-only like the file above.
     "wiki_table_population.json",
+    # Lebanon's cazas and governorates: residents by nationality (Lebanese or
+    # not) from CAS's Labour Force and Household Living Conditions Survey
+    # 2018-19, Table HL.6A (lebanon_survey). Lebanon has held no census since
+    # 1932; a survey, so its compositions only fill, behind any count, as a
+    # *_survey.json's do wherever it sits. It sits below the encyclopaedic
+    # floor above for its population statements: each caza's says no count of
+    # its residents exists and displaces Wikidata's undated figure for it
+    # (Baabda's 511,200), and a statement read before that figure would have
+    # been overwritten by it -- and, where Wikidata has none, by Wikidata's
+    # own "no P1082 statement" marker (Jezzine).
+    "lebanon_survey.json",
     # The source a Wikipedia article cites, read where the article's own
     # figure garbles or contradicts it (cited_sources): Somalia's eighteen
     # regions from citypopulation.de's 2019 column, which six region articles
@@ -472,7 +478,8 @@ ADAPTER_FILES = [
     # end of August 2026 for population, median age, sex ratio and indigenous
     # status; the 2020 census's main language from the county reports' Table 6;
     # religion not_collected. The 22 counties get the register's population,
-    # median and sex ratio and keep taiwan_county.json's modelled compositions.
+    # median and sex ratio and keep taiwan_county.json's modelled religion;
+    # their ethnicity is the register's indigenous-status count.
     "taiwan_township.json",
     # China's census yearbook 2020, the bureau's own tables (china_census): 31
     # provinces' population, sex ratio, median age and 56 nationalities (after
@@ -2200,6 +2207,50 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     # Islands except Tarawa and Banaba') and stops if the map files those
     # islands anywhere but where they are drawn, which is where geometry puts
     # them.
+    # Viet Nam's first level is drawn coarser than its districts, so by area
+    # An Duong and An Lao (Hai Phong's) and Dong Trieu (Quang Ninh's) sat in
+    # Hai Duong, whose 13 drawn children added up to 2,149,590 against its
+    # census 1,892,254; Son Tay (Quang Ngai's) sat in Kon Tum and Ba Vi (Ha
+    # Noi's) in Phu Tho, and five island districts met no province at all.
+    # Each is filed under the province whose districts the General Statistics
+    # Office's 2019 table counts it among (vietnam_district.json's ids); with
+    # all 27 so filed, every one of the 19 provinces they touch adds up to its
+    # census population exactly, where by area they ran from 66% (Bac Giang)
+    # to 127% (Phu Tho).
+    "81297802B90799057915407": ("VNM", "Bình Thuận"),  # Phu Quy; by area in no province
+    "81297802B61782089337393": ("VNM", "Bắc Giang"),  # Hiep Hoa; by area in Hà Nội
+    "81297802B30186135932553": ("VNM", "Bắc Giang"),  # Viet Yen; by area in Bắc Ninh
+    "81297802B99638089462809": ("VNM", "Bắc Giang"),  # Yen Dung; by area in Bắc Ninh
+    "81297802B85996690558528": ("VNM", "Bắc Ninh"),  # Tu Son; by area in Hà Nội
+    "81297802B94958861355476": ("VNM", "Hà Nội"),  # Ba Vi; by area in Phú Thọ
+    "81297802B91668671895601": ("VNM", "Hà Nội"),  # Me Linh; by area in Vĩnh Phúc
+    "81297802B48632704069528": ("VNM", "Hà Nội"),  # My Duc; by area in Hòa Bình
+    "81297802B83594447255": ("VNM", "Hưng Yên"),  # Hung Yen; by area in Hà Nam
+    "81297802B59998896925567": ("VNM", "Hưng Yên"),  # Khoai Chau; by area in Hà Nội
+    "81297802B33082020704537": ("VNM", "Hưng Yên"),  # Van Giang; by area in Hà Nội
+    "81297802B56696175700764": ("VNM", "Hải Dương"),  # Binh Giang; by area in Hưng Yên
+    "81297802B67689154766571": ("VNM", "Hải Dương"),  # Thanh Mien; by area in Hưng Yên
+    "81297802B31270346353021": ("VNM", "Hải Phòng"),  # An Duong; by area in Hải Dương
+    "81297802B65658789050233": ("VNM", "Hải Phòng"),  # An Lao; by area in Hải Dương
+    "81297802B40834484476285": ("VNM", "Hải Phòng"),  # Bach Long Vi; by area in no province
+    "81297802B83209776142835": ("VNM", "Hậu Giang"),  # Chau Thanh; by area in Cần Thơ
+    "81297802B94036559538482": ("VNM", "Hậu Giang"),  # Chau Thanh A; by area in Cần Thơ
+    "81297802B10550571931229": ("VNM", "Kiên Giang"),  # Kien Hai; by area in no province
+    "81297802B63810165613250": ("VNM", "Quảng Ngãi"),  # Ly Son; by area in no province
+    "81297802B56181672233009": ("VNM", "Quảng Ngãi"),  # Son Tay; by area in Kon Tum
+    "81297802B76384767601248": ("VNM", "Quảng Ninh"),  # Co To; by area in no province
+    "81297802B3249391660958": ("VNM", "Quảng Ninh"),  # Dong Trieu; by area in Hải Dương
+    "81297802B38356347526872": ("VNM", "Quảng Ninh"),  # Quang Yen; by area in Hải Phòng
+    "81297802B99897160628736": ("VNM", "Thái Bình"),  # Vu Thu; by area in Nam Định
+    "81297802B72352297629850": ("VNM", "Vĩnh Phúc"),  # Song Lo; by area in Phú Thọ
+    "81297802B74371944720443": ("VNM", "Vĩnh Phúc"),  # Vinh Tuong; by area in Hà Nội
+    # Timor-Leste: the 2022 census counts Dom Aleixo (165,799) in Dili and
+    # Zumalai in Cova Lima; by area they fell in Liquica, whose four drawn
+    # children came to 249,457 against its 83,658, and in Ainaro. Filed as
+    # counted, Dili, Liquica, Ainaro and Cova Lima each add up to their census
+    # populations (timor_age).
+    "22284137B34351426942246": ("TLS", "Dili"),  # Dom Aleixo; by area in Liquiçá
+    "22284137B47375840688188": ("TLS", "Cova Lima"),  # Zumalai; by area in Ainaro
 }
 
 
@@ -2281,12 +2332,29 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # groups' Wikipedia figures -- the Gilbert group's 83,382 of 2005 -- on
 # polygons kiribati_census gives the census counts of the islands each draws,
 # named for them: the Gilbert polygon draws neither Tarawa nor Banaba.
+# Japan's municipalities are the third case. japan_municipal writes all 1,731
+# polygons from the 2020 census, bound by JIS code, but Wikidata's points
+# figures are dated 2021-2024 and so outranked it on 1,208 of them: Okuma, a
+# town under an evacuation order, showed its 10,004 registered residents
+# against the 847 the census found living there, and Masaki 39,681 against
+# 29,630.
+# Thailand's is a mismatch of concepts. Its provinces carry the Department of
+# Provincial Administration's register (through Wikidata, 2018-2022), and
+# OCHA's districts the US Census Bureau's 2023 projection of the de facto
+# population, which puts Bangkok's 50 districts at 11,479,338 against the
+# register's 5,676,648 and Mueang Samut Sakhon alone at 1,353,400 against its
+# province's 586,199. Wikidata carries the register for the districts too (877
+# of them at 2018): filed under the provinces Wikidata gives them, they add up
+# to the provinces' figures within 3% in 71 of 74. The projection's ages and
+# sexes stay, in sea_cod_ps_age.json.
 SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
                            "NPL": "nepal_district.json",
-                           "SLB": "solomon_census.json"},
+                           "SLB": "solomon_census.json",
+                           "THA": "wikidata_admin2.json"},
     "wiki_population_admin1.json": {"AFG": "afghanistan_estimates.json",
                                     "KIR": "kiribati_census.json"},
+    "wikidata_points_admin2.json": {"JPN": "japan_municipal.json"},
 }
 
 
@@ -2653,6 +2721,16 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "yemen_census_age.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
+# The figures a statistics office's stated reason may displace
+# (``displaces_before``): every fill-only file's, and Wikidata's as the points
+# files bind it by id (scripts/wikidata_points.py). Those are not fill-only --
+# a figure bound by id corrects one matched by name -- but they are still an
+# encyclopaedia's, and the reason has to reach them: Cambodia's census refuses
+# Preah Sihanouk's four districts as a 29% undercount, and Wikidata's 2019
+# figures for them, the same undercount, arrive through wikidata_points_admin2
+# after wikidata_admin2 and stood beside the reason.
+DISPLACEABLE = FILL_ONLY | {"wikidata_points_admin1.json", "wikidata_points_admin2.json"}
+
 # A survey's share is an estimate from a sample, and a census's or a
 # register's is a count of everyone: where both describe a unit, the count
 # stands, however much older it is. Survey readers written for the fields a
@@ -2819,11 +2897,16 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # census's: 1973 read as the population of Kyrenia. A count is never
         # displaced, nor an encyclopaedia's figure of that year or later, and
         # the figure is not kept aside to fall back to: the statement is
-        # that there is none for now.
+        # that there is none for now. A statement that says so
+        # (``displaces_undated``) displaces an undated figure too: Wikidata's
+        # undated 80,000 for Khavas, 88,900 for As-Salt and 511,200 for
+        # Baabda stand on shapes no count reaches, and nothing dates them.
         if (key in FILL_ONLY_FIELDS and is_gap(value) and isinstance(value, dict)
                 and isinstance(value.get("displaces_before"), int) and not encyclopaedic
-                and not is_gap(entity.get(key)) and origin.get(key) in FILL_ONLY
-                and (year_of(entity, key) or value["displaces_before"]) < value["displaces_before"]):
+                and not is_gap(entity.get(key)) and origin.get(key) in DISPLACEABLE
+                and ((year_of(entity, key) is None and value.get("displaces_undated") is True)
+                     or (year_of(entity, key) or value["displaces_before"])
+                     < value["displaces_before"])):
             entity[key] = value
             for suffix in SATELLITES:
                 if f"{key}{suffix}" not in row:

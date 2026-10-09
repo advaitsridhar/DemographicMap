@@ -2347,7 +2347,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
                         # the Ateker of Karamoja, whose sections the census
                         # counts one by one.
                         "Jopadhola", "Jonam", "Ethur", "Kakwa", "Kuku",
-                        "Jie", "Dodoth", "Ngikutio"),
+                        "Jie", "Dodoth", "Ngikutio",
+                        # The Karamojong in the constitution's spelling, which
+                        # Afrobarometer's Ugandan rounds use.
+                        "Karimojong"),
     "Mongolic and Siberian peoples": (
         "Khalkha",
         # Mongolia's own aimags, and the peoples of the Russian far east
