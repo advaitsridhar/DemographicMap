@@ -1,13 +1,173 @@
-  303,737 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf: 303,737 bytes
-  29 pages
-  368,634 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.4.pdf: 368,634 bytes
-  39 pages
-  394,452 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Non-Jordanians/Non-jordanian_8.1.pdf: 394,452 bytes
-  48 pages
-  Table 8.1 lines read as no row: ['Countries', 'Department of Statistics', 'Female Male Total Female Male Total Female Male Total', 'Nationality & Governorate', 'Rural', 'Sex & Urban/ Rural', 'Zaire']
-  estimates end of 2025: 11,937,000; census 2015: 9,496,761 inside Jordan, 34,951 Jordanians abroad
-  wrote data/processed/jordan_dos.json (67 kB)
-  wrote jordan_dos.json (12)
+probe_pdf: https://www.nso.gov.vn/wp-content/uploads/2019/03/KQ-toan-bo-1.pdf
+  3,785,552 bytes
+  901 pages
+probe_pdf: 901 pages, 887 mention ['Biểu', 'Table']
+=== front matter ===
+BAN CHỈ ĐẠO 
+TỔNG ĐIỀU TRA DÂN SỐ VÀ NHÀ Ở TRUNG ƯƠNG 
+CENTRAL POPULATION AND HOUSING CENSUS 
+ STEERING COMMITTEE 
+ 
+
+=== pages mentioning ['Biểu', 'Table'] (first 3) ===
+
+--- page 3 ----------------------------------------------------
+ iii
+LỜI NÓI ĐẦU
+Tiếp theo ba ấn phẩm : "T ổng điều
+tra dân s ố và nhà ở 0 giờ ngày 01
+tháng 4 năm 2009: Quá trình thực hiện
+và kết quả sơ b ộ", cuốn sách bỏ túi
+"Tổng điều tra dân số và nhà ở Việt
+Nam năm 2009: M ột số chỉ tiêu chủ
+yếu" và "Tổng điều tra dân số và nhà ở
+Việt Nam năm 2009: Các kết quả chủ
+yếu", ngay sau khi hoàn tất công tác
+tổng hợp kết quả điều tra toàn bộ, Ban
+Chỉ đạo Tổng điều tra dân số và nhà ở
+Trung ương ti ến hành biên soạn và
+xuất bản ấn phẩm thứ t ư v ới tên gọi
+"Tổng điều tra dân số và nhà ở Việt
+Nam năm 2009: Kết quả toàn bộ".
+Ấn phẩm gồm 16 biểu tổng hợp,
+trình bày các kết quả chủ yếu nhất của
+cuộc Tổng điều tra dân số và nhà ở
+năm 2009 theo các cấp hành chính.
+Nhân dịp công bố kết quả điều tra
+toàn bộ của cuộc Tổng điều tra dân số
+và nhà ở năm 2009, thay m ặt Ban Chỉ
+đạo Tổng điều tra dân số và nhà ở
+Trung ương, tôi xin bày t ỏ lòng biết ơn
+chân thành đến toàn thể nhân dân đã
+nhiệt tình ủng hộ cuộc Tổng điều tra.
+Tôi xin c ảm ơn g ần 30 vạn điều tra
+viên, tổ tr ưởng và cán bộ điều tra đã
+làm việc với tinh thần  trách nhi ệm cao
+để thu th ập thông tin có chất l ượng
+cho cu ộc Tổng điều tra. Tôi c ũng xin
+cảm ơn Quỹ Dân số Liên hợp quốc và
+các tổ chức khác của Liên Hợp Quốc
+đã dành nh ững trợ giúp k ỹ thuật có
+hiệu quả cho cuộc Tổng điều tra n ăm
+2009 của Việt Nam.
+ FOREWORD
+Following three publications: “The
+2009 Vietnam Population and Housing
+Census of 00.00  hours 1 st April 2009:
+Implementation and Preliminary
+Result”, pocketbook “The 2009
+Vietnam Population and Housing
+Census: Some key indicators” and
+“The 2009 Vietnam Population and
+Housing Census: Major Findings”,
+immediately after the completion of
+completed tabulations, the Central
+Population and Housing Census
+Steering Committee has undertaken
+the task of compiling and publishing
+the fourth report entitled “The 2009
+Vietnam Population and Housing
+Census: Completed Results”.
+The publ ication includes 16  detail
+tabulations, presents the most major
+results of the 2009 Vietnam Population
+and Housing Census by administrati ve
+levels.
+On the opportunity of dissemina -
+tion of completed results of the 2009
+Vietnam Population and Housing
+Census, on behalf of the Central
+Population and Housing Census
+Steering Committee , I would  like to
+express my sincere thanks to people
+throughout the country for their
+enthusiastic support to the census.  I
+would like to thank nearly 300,000
+enumerators, supervisors and census
+staffs who worked with high
+responsibility to collect well -quality
+information f or the Census. Special
+thanks are also extended to the United
+Nations Population Fund and other
+United Nations organizations for
+effective technical support to the 2009
+Vietnam Census.
+
+--- page 5 ----------------------------------------------------
+ v
+MỤC LỤC – TABLE OF CONTENTS
+Lời nói đầu – Foreword ................................ ................................ ............................iii
+Mục lục – Table of contents ................................ ................................ .....................v
+Bản đồ Việt Nam – Map of Vietnam ................................ ................................ ......viii
+PHẦN I: BIỂU TỔNG HỢP – PART I: TABULATED TABLES ................................1
+Biểu 1: Dân số chia theo thành thị/nông thôn, giới tính, các vùng ki nh
+tế - xã hội và tỉnh/thành phố, 1/4/2009
+Table 1: Population by urban/rural residence, sex, socio -economic
+region and province/city, 1/4/2009 ................................ ........................3
+Biểu 2:  Dân số chia theo thành thị/nông thôn, giới tính  và đơn v ị hành
+chính cấp huyện, 1/4/2009
+Table 2: Population by urban/rural residence, sex and district
+administration level, 1/4/2009................................ ................................6
+Biểu 3: Dân số chia theo thành thị/nông thôn, giới tính, độ tuổi và các
+vùng kinh tế - xã hội, 1/4/2009
+Table 3:  Population by urban/rural residence, sex, single  year of age
+and socio-economic region, 1/4/2009 ................................ ...................36
+Biểu 4: Dân số chia theo thành thị/nông thôn, giới tính, nhóm tuổi, các
+vùng kinh tế - xã hội và tỉnh/thành phố, 1/4/2009
+Table 4:  Population by urban/rural residence, sex, age group, socio -
+economic region and province/city, 1/4/2009 ................................ .....64
+Biểu 5: Dân s ố chia theo thành thị/nông thôn, giới tính, dân tộc, các
+vùng kinh tế - xã hội và tỉnh/thành phố, 1/4/2009
+Table 5:  Population by urban/rural residence, sex,  ethnic group, socio-
+economic region and province/city, 1/4/2009 ................................ .....134
+Biểu 6: Dân số chia theo thành thị/nông thôn, giới tính, nhóm tuổi và
+dân tộc, 1/4/2009
+Table 6:  Population by urban/rural residence, sex, age group and
+ethnic group, 1/4/2009 ................................ ................................ .............226
+Biểu 7: Dân số chia theo thành thị/nông th ôn, giới tính, tôn giáo, các
+vùng kinh tế - xã hội và tỉnh/thành phố, 1/4/2009
+Table 7:  Population by urban/rural residence, sex, religion, socio -
+economic region and province/city, 1/4/2009 ................................ .....281
+
+--- page 6 ----------------------------------------------------
+ vi
+Biểu 8: Dân số từ 5 tuổi trở lên chia theo tình trạng đi học hiện tại, giới
+tính, năm sinh, thành th ị/nông thôn, các vùng kin h tế - xã h ội
+và tỉnh/thành phố, 1/4/2009
+Table 8: Population aged 5 and over by current school attendance, sex,
+year of birth , urban/rural residence, socio -economic region
+and province/city, 1/4/2009................................ ................................ .....313
+Biểu 9: Dân s ố từ 5 tuổi trở lên đang đi h ọc chia theo bậc học mầm
+non/phổ thông cao nhất đạt được, gi ới tính, n ăm sinh, thành
+thị/nông thôn, các vùng kinh tế - xã h ội và tỉnh/thành phố ,
+1/4/2009
+Table 9: Population aged 5 and over  currently attending school by the
+attained highest level of pre -school/general education, sex,
+year of birth, urban/rural residence, socio -economic region
+and province/city, 1/4/2009................................ ................................ .....383
+Biểu 10: Dân s ố từ 15 tu ổi trở lên đang đi h ọc chia theo bậc học d ạy
+nghề/chuyên nghiệp cao nhất đạt được, giới tính, n ăm sinh,
+thành th ị/nông thôn, các vùng kinh tế - xã h ội và tỉnh/thành
+phố, 1/4/2009
+Table 1 0: Population aged 15 and over currently attending school by
+the attained highest level of trade training/voca tional school,
+sex, year of birth, urban/rural residence, socio -economic
+region and province/city, 1/4/2009................................ ........................453
+Biểu 11: Dân s ố từ 5 tuổi trở lên đã thôi h ọc chia theo bậc học mầm
+non/phổ thông cao nhất đạt được, giới tính, nhóm tuổi, thành
+thị/nông thôn , các vùng kinh t ế - xã h ội và tỉnh/thành phố ,
+1/4/2009
+Table 1 1: Population aged 5 and over ever attended by the attained
+highest level of pre -school/general education, sex, age group,
+urban/rural residence, socio -economic region and
+province/city, 1/4/2009 ................................ ................................ ............523
+Biểu 12: Dân s ố từ 15 tu ổi trở lên đã thôi h ọc chia theo bậc học dạy
+nghề/chuyên nghiệp cao nhất đạt được, giới tính, nhóm tuổi,
+thành th ị/nông thôn, các vùng kinh tế - xã h ội và tỉnh/thành
+phố, 1/4/2009
+Table 1 2: Population aged 15 and ove r ever attended school by the
+attained highest level of trade training/vocational school, sex,
+age group, urban/rural residence, socio -economic region and
+province/city, 1/4/2009 ................................ ................................ ............593
+
+... and 884 further pages match; re-run with a narrower --terms to see them.
