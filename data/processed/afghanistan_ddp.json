@@ -106,6 +106,59 @@
     "ethnicity_note": "The district development plan of 2009 for Almar district, Faryab province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Turkmen 35% and Uzbek 65%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
+    "id": "AFG-DDP-17698898B63284847438017",
+    "level": "admin2",
+    "name": "Anar Dara",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Pashtun",
+        "pct": 60.0
+      },
+      {
+        "group": "Tajik",
+        "pct": 40.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Ministry of Rural Rehabilitation and Development, National Area-Based Development Programme, summary of the district development plan, Anar Darah district",
+        "url": "https://web.archive.org/web/20131016101302id_/http://www.mrrd-nabdp.org/attachments/article/122/Anar%20Dara%20DDP%20English%20Summary.pdf",
+        "year": 2010,
+        "license": "Ministry of Rural Rehabilitation and Development publication"
+      }
+    ],
+    "country": "AFG",
+    "match_by": "shape_id",
+    "shape_id": "17698898B63284847438017",
+    "parent_name": "Farah",
+    "ethnicity_year": 2010,
+    "ethnicity_basis": "district development plan",
+    "ethnicity_note": "The district development plan of 2010 for Anar Darah district, Farah province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"60% Pashtun and 40% Tajik\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+  },
+  {
     "id": "AFG-DDP-17698898B44605407424991",
     "level": "admin2",
     "name": "Argo",
@@ -186,12 +239,20 @@
     },
     "ethnicity": [
       {
+        "group": "Uzbek",
+        "pct": 55.0
+      },
+      {
         "group": "Tajik",
+        "pct": 35.0
+      },
+      {
+        "group": "Pashtun",
         "pct": 5.0
       },
       {
-        "group": "Uzbek",
-        "pct": 55.0
+        "group": "Other",
+        "pct": 5.0
       }
     ],
     "sources": [
@@ -209,7 +270,7 @@
     "parent_name": "Samangan",
     "ethnicity_year": 2007,
     "ethnicity_basis": "district development plan",
-    "ethnicity_note": "The district development plan of 2007 for Aibak district, Samangan province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"55% Uzbak, 35%Tajik, 5%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+    "ethnicity_note": "The district development plan of 2007 for Aibak district, Samangan province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"55% Uzbak, 35%Tajik, 5% Pashton, 5% other ethnicities\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B92283953739248",
@@ -306,6 +367,10 @@
       {
         "group": "Brahui",
         "pct": 10.0
+      },
+      {
+        "group": "Tajik",
+        "pct": 1.0
       }
     ],
     "sources": [
@@ -323,7 +388,7 @@
     "parent_name": "Nimruz",
     "ethnicity_year": 2007,
     "ethnicity_basis": "district development plan",
-    "ethnicity_note": "The district development plan of 2007 for Charborjak district, Nimroz province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Baloch 88 %, Pashtun 1 %, Brahawi 10 %\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+    "ethnicity_note": "The district development plan of 2007 for Charborjak district, Nimroz province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Baloch 88 %, Pashtun 1 %, Brahawi 10 % and Tajik 1 %\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B50082095746100",
@@ -372,7 +437,56 @@
     "parent_name": "Kunduz",
     "ethnicity_year": 2007,
     "ethnicity_basis": "district development plan",
-    "ethnicity_note": "The district development plan of 2007 for Chahardara district, Kunduz province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Pashtun 75% and the remaining\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+    "ethnicity_note": "The district development plan of 2007 for Chahardara district, Kunduz province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Pashtun 75% and the remaining 25% are Uzbak and Arab\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+  },
+  {
+    "id": "AFG-DDP-17698898B79609876731743",
+    "level": "admin2",
+    "name": "Dara-I-Sufi Bala",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Hazara",
+        "pct": 99.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Ministry of Rural Rehabilitation and Development, National Area-Based Development Programme, summary of the district development plan, Dari Suf Bala district",
+        "url": "https://web.archive.org/web/20140407090159id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dari%20Suf%20Bala_DDP%20Summary-tanslated_finalized.pdf",
+        "year": 2007,
+        "license": "Ministry of Rural Rehabilitation and Development publication"
+      }
+    ],
+    "country": "AFG",
+    "match_by": "shape_id",
+    "shape_id": "17698898B79609876731743",
+    "parent_name": "Samangan",
+    "ethnicity_year": 2007,
+    "ethnicity_basis": "district development plan",
+    "ethnicity_note": "The district development plan of 2007 for Dari Suf Bala district, Samangan province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"99% Hazara\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B17027001788279",
@@ -426,6 +540,120 @@
     "ethnicity_year": 2007,
     "ethnicity_basis": "district development plan",
     "ethnicity_note": "The district development plan of 2007 for Dari Suf Payan district, Samangan province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"30% Uzbak and 70% Tajik\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+  },
+  {
+    "id": "AFG-DDP-17698898B6814893485448",
+    "level": "admin2",
+    "name": "Darayim",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Tajik",
+        "pct": 80.0
+      },
+      {
+        "group": "Uzbek",
+        "pct": 15.0
+      },
+      {
+        "group": "Hazara",
+        "pct": 5.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Ministry of Rural Rehabilitation and Development, National Area-Based Development Programme, summary of the district development plan, Daraim district",
+        "url": "https://web.archive.org/web/20140201232042id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Daraim_Summary_Finalized.pdf",
+        "year": 2009,
+        "license": "Ministry of Rural Rehabilitation and Development publication"
+      }
+    ],
+    "country": "AFG",
+    "match_by": "shape_id",
+    "shape_id": "17698898B6814893485448",
+    "parent_name": "Badakhshan",
+    "ethnicity_year": 2009,
+    "ethnicity_basis": "district development plan",
+    "ethnicity_note": "The district development plan of 2009 for Daraim district, Badakhshan province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"80% Tajik, 15% Uzbek and 5% Hazara\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+  },
+  {
+    "id": "AFG-DDP-17698898B88978758104399",
+    "level": "admin2",
+    "name": "Dashti Qala",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 60.0
+      },
+      {
+        "group": "Tajik",
+        "pct": 35.0
+      },
+      {
+        "group": "Pashtun",
+        "pct": 5.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Ministry of Rural Rehabilitation and Development, National Area-Based Development Programme, summary of the district development plan, Dasht-E-Qala district",
+        "url": "https://web.archive.org/web/20140201203200id_/http://www.mrrd-nabdp.org/attachments/article/151/Dasht%20e%20Qala%20English%20Summary%20Finalized.pdf",
+        "year": 2006,
+        "license": "Ministry of Rural Rehabilitation and Development publication"
+      }
+    ],
+    "country": "AFG",
+    "match_by": "shape_id",
+    "shape_id": "17698898B88978758104399",
+    "parent_name": "Takhar",
+    "ethnicity_year": 2006,
+    "ethnicity_basis": "district development plan",
+    "ethnicity_note": "The district development plan of 2006 for Dasht-E-Qala district, Takhar province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Uzbek 60%, Tajik 35%, Pashtun 5%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B71756880207327",
@@ -832,6 +1060,14 @@
       {
         "group": "Pashtun",
         "pct": 55.0
+      },
+      {
+        "group": "Brahui",
+        "pct": 15.0
+      },
+      {
+        "group": "Tajik",
+        "pct": 10.0
       }
     ],
     "sources": [
@@ -849,7 +1085,7 @@
     "parent_name": "Nimruz",
     "ethnicity_year": 2007,
     "ethnicity_basis": "district development plan",
-    "ethnicity_note": "The district development plan of 2007 for Khashrod district, Nimroz province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Pashtun 55%, Palo 20%, Brahawi\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+    "ethnicity_note": "The district development plan of 2007 for Khashrod district, Nimroz province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Pashtun 55%, Palo 20%, Brahawi 15%, Tajik 10%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B86175881575923",
@@ -1016,7 +1252,7 @@
     "parent_name": "Herat",
     "ethnicity_year": 2008,
     "ethnicity_basis": "district development plan",
-    "ethnicity_note": "The district development plan of 2008 for Kushk Robat Sangi district, Herat province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"28% Pashtun, Tajik 70% and Arab\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+    "ethnicity_note": "The district development plan of 2008 for Kushk Robat Sangi district, Herat province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"28% Pashtun, Tajik 70% and Arab and Baloch 2%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B50007129326451",
@@ -1423,6 +1659,63 @@
     "ethnicity_note": "The district development plan of 2007 for Pasaband district, Ghor province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Tajik 93%, Hazara 5% and Pashton 2%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
+    "id": "AFG-DDP-17698898B54717162176823",
+    "level": "admin2",
+    "name": "Pashtun Kot",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Uzbek",
+        "pct": 60.0
+      },
+      {
+        "group": "Pashtun",
+        "pct": 20.0
+      },
+      {
+        "group": "Turkmen",
+        "pct": 10.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Ministry of Rural Rehabilitation and Development, National Area-Based Development Programme, summary of the district development plan, Pashtoon Kot district",
+        "url": "https://web.archive.org/web/20151022143851id_/http://www.mrrd-nabdp.org/attachments/article/128/Pashton%20kot%20DDP%20English%20Summary.pdf",
+        "year": 2009,
+        "license": "Ministry of Rural Rehabilitation and Development publication"
+      }
+    ],
+    "country": "AFG",
+    "match_by": "shape_id",
+    "shape_id": "17698898B54717162176823",
+    "parent_name": "Faryab",
+    "ethnicity_year": 2009,
+    "ethnicity_basis": "district development plan",
+    "ethnicity_note": "The district development plan of 2009 for Pashtoon Kot district, Faryab province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Uzbek 60%, Pashtoon 20%, Turkmen 10% and Tajik and Arab 10%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+  },
+  {
     "id": "AFG-DDP-17698898B17817856005515",
     "level": "admin2",
     "name": "Saghar",
@@ -1554,6 +1847,14 @@
       {
         "group": "Pashtun",
         "pct": 10.0
+      },
+      {
+        "group": "Hazara",
+        "pct": 20.0
+      },
+      {
+        "group": "Tajik",
+        "pct": 10.0
       }
     ],
     "sources": [
@@ -1571,7 +1872,7 @@
     "parent_name": "Sar-e Pol",
     "ethnicity_year": 2007,
     "ethnicity_basis": "district development plan",
-    "ethnicity_note": "The district development plan of 2007 for Saripul Saripul Center district, Sar-E-Pul province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Uzbak 60%, Pashtun 10%, Hazara\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+    "ethnicity_note": "The district development plan of 2007 for Saripul Saripul Center district, Sar-E-Pul province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Uzbak 60%, Pashtun 10%, Hazara 20% and Tajik 10%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B86453350447825",
@@ -1709,6 +2010,14 @@
       {
         "group": "Pashtun",
         "pct": 30.0
+      },
+      {
+        "group": "Tajik",
+        "pct": 20.0
+      },
+      {
+        "group": "Hazara",
+        "pct": 10.0
       }
     ],
     "sources": [
@@ -1726,7 +2035,7 @@
     "parent_name": "Sar-e Pol",
     "ethnicity_year": 2007,
     "ethnicity_basis": "district development plan",
-    "ethnicity_note": "The district development plan of 2007 for Sozma Qala district, Sar-E-Pul province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Uzbak 40%, Pashtun 30%, Tajik\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+    "ethnicity_note": "The district development plan of 2007 for Sozma Qala district, Sar-E-Pul province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Uzbak 40%, Pashtun 30%, Tajik 20%, Hazara 10%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B67472405327916",
@@ -1776,6 +2085,169 @@
     "ethnicity_year": 2007,
     "ethnicity_basis": "district development plan",
     "ethnicity_note": "The district development plan of 2007 for Tani district, Khost province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"100 % Pashtoon\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+  },
+  {
+    "id": "AFG-DDP-17698898B22921587278202",
+    "level": "admin2",
+    "name": "Tashkan",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Tajik",
+        "pct": 70.0
+      },
+      {
+        "group": "Hazara",
+        "pct": 20.0
+      },
+      {
+        "group": "Uzbek",
+        "pct": 10.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Ministry of Rural Rehabilitation and Development, National Area-Based Development Programme, summary of the district development plan, Tushkan district",
+        "url": "https://web.archive.org/web/20140201232125id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Tushkan_Summary_English.pdf",
+        "year": 2008,
+        "license": "Ministry of Rural Rehabilitation and Development publication"
+      }
+    ],
+    "country": "AFG",
+    "match_by": "shape_id",
+    "shape_id": "17698898B22921587278202",
+    "parent_name": "Badakhshan",
+    "ethnicity_year": 2008,
+    "ethnicity_basis": "district development plan",
+    "ethnicity_note": "The district development plan of 2008 for Tushkan district, Badakhshan province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"70% Tajik, 20% Hazara, 10% Uzbek\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+  },
+  {
+    "id": "AFG-DDP-17698898B39229335816242",
+    "level": "admin2",
+    "name": "Warduj",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Tajik",
+        "pct": 90.0
+      },
+      {
+        "group": "Uzbek",
+        "pct": 10.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Ministry of Rural Rehabilitation and Development, National Area-Based Development Programme, summary of the district development plan, Wardoj district",
+        "url": "https://web.archive.org/web/20140201232028id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Wardoj_Summary_Finalized.pdf",
+        "year": 2008,
+        "license": "Ministry of Rural Rehabilitation and Development publication"
+      }
+    ],
+    "country": "AFG",
+    "match_by": "shape_id",
+    "shape_id": "17698898B39229335816242",
+    "parent_name": "Badakhshan",
+    "ethnicity_year": 2008,
+    "ethnicity_basis": "district development plan",
+    "ethnicity_note": "The district development plan of 2008 for Wardoj district, Badakhshan province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"90 % Tajik, 10% Uzbek\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
+  },
+  {
+    "id": "AFG-DDP-17698898B6830111316734",
+    "level": "admin2",
+    "name": "Yaftal Sufla",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Tajik",
+        "pct": 60.0
+      },
+      {
+        "group": "Uzbek",
+        "pct": 40.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Ministry of Rural Rehabilitation and Development, National Area-Based Development Programme, summary of the district development plan, Yaftal Sofla district",
+        "url": "https://web.archive.org/web/20131227192721id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Yaftal%20Sofla_Summary_Finalized.pdf",
+        "year": 2008,
+        "license": "Ministry of Rural Rehabilitation and Development publication"
+      }
+    ],
+    "country": "AFG",
+    "match_by": "shape_id",
+    "shape_id": "17698898B6830111316734",
+    "parent_name": "Badakhshan",
+    "ethnicity_year": 2008,
+    "ethnicity_basis": "district development plan",
+    "ethnicity_note": "The district development plan of 2008 for Yaftal Sofla district, Badakhshan province -- the Ministry of Rural Rehabilitation and Development's National Area-Based Development Programme -- whose district profile gives the ethnic diversity as \"Tajik 60% and Uzbak 40%\". Shares the plan gives several groups together, and names this map does not know, are left out rather than divided. The profile is the provincial authorities' secondary information, reviewed by the district's development assembly: a planning estimate, not a count. Afghanistan has had no census since 1979, and no office tabulates ethnicity."
   },
   {
     "id": "AFG-DDP-17698898B39156943056373",

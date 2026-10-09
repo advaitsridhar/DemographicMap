@@ -1,101 +1,52 @@
 afghanistan_ddp: district development plan summaries, as the Internet Archive holds them
-  retry 1/1 after 2s :: https://web.archive.org/cdx/search/cdx?url=www.mrrd-nabdp.org%2Fattachments%2Farticle%2F%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&filter=mimetype%3Aapplication%2Fpdf&collapse=urlkey&limit=100000 :: HTTP Error 503: Service Unavailable
+  retry 1/1 after 2s :: https://web.archive.org/cdx/search/cdx?url=www.mrrd-nabdp.org%2Fattachments%2Farticle%2F%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&filter=mimetype%3Aapplication%2Fpdf&collapse=urlkey&limit=100000 :: HTTP Error 504: Gateway Time-out
   150 archived plan PDFs
-  0 read by an earlier run; asking the archive for 150
-  25/150 plans asked for, 2.4 min
-  50/150 plans asked for, 3.6 min
-  75/150 plans asked for, 7.3 min
-  retry 1/1 after 2s :: https://web.archive.org/web/20140717153905id_/http://www.mrrd-nabdp.org/attachments/article/151/Hazar%20Smoch%20English%20Summary%20Finalized.pdf :: <urlopen error timed out>
-  !! https://web.archive.org/web/20140717153905id_/http://www.mrrd-nabdp.org/attachments/article/151/Hazar%20Smoch%20English%20Summary%20Finalized.pdf: RuntimeError GET failed after 1 retries: https://web.archive.org/web/20140717153905id_/http:/
-  100/150 plans asked for, 11.3 min
-  retry 1/1 after 2s :: https://web.archive.org/web/20141113173608id_/http://www.mrrd-nabdp.org/attachments/article/151/Baharak%20English%20Summary%20Finalized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
-  retry 1/1 after 2s :: https://web.archive.org/web/20150330085839id_/http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Sang%20Takht_%20District%20DDP%20summary-Finlized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-  retry 1/1 after 2s :: https://web.archive.org/web/20160205005856id_/http://www.mrrd-nabdp.org/attachments/article/387/Aqcha%20Summary%20of%20District%20Development%20Plan.pdf :: <urlopen error timed out>
-  125/150 plans asked for, 16.4 min
-  retry 1/1 after 2s :: https://web.archive.org/web/20160304193801id_/http://www.mrrd-nabdp.org/attachments/article/123/Balkh%20DDP%20English%20Summary.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
-  retry 1/1 after 2s :: https://web.archive.org/web/20160304202617id_/http://www.mrrd-nabdp.org/attachments/article/123/Keshindeh%20DDP%20English%20Summary.pdf :: <urlopen error timed out>
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-  !! https://web.archive.org/web/20160304203242id_/http://www.mrrd-nabdp.org/attachments/article/123/Khulm%20DDP%20English%20Summary.pdf: HTTPError HTTP Error 404: Not Found
-  retry 1/1 after 2s :: https://web.archive.org/web/20160304203846id_/http://www.mrrd-nabdp.org/attachments/article/123/Chemtal%20DDP%20English%20Summary.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
-  150/150 plans asked for, 21.6 min
-  149 answered now; 1 not a readable PDF; 1 not answered yet (0 for want of time) -- a later run asks for those again
+  149 read by an earlier run; asking the archive for 1
+  1 answered now; 1 not a readable PDF; 0 not answered yet (0 for want of time) -- a later run asks for those again
     34 provinces placed by their Total rows; every row's sexes and areas add up, every province's districts make its Total row, and the provinces make 28,224,323 settled people
   HELMAND      MARJA                  [cover] 2008  UNBOUND: no drawn district of province 30 answers to 'MARJA' shares     '95% Pashtun, 5% Tajik and Hazara' -> [('Pashtun', 95.0)]
-  HELMAND      MOSA QALA              [cover] 2008  UNBOUND: no drawn district of province 30 answers to 'MOSA QALA' names only 'Pashtun'
-  HERAT        KUSK-E-KOHNA           [cover] 2007  UNBOUND: no drawn district of province 32 answers to 'KUSK-E-KOHNA' names only 'Tajik and Pashtun'
   KANDAHAR     MIANSHIN               [cover] 2006  UNBOUND: no drawn district of province 27 answers to 'MIANSHIN' names only 'Pashtun'
-  KANDAHAR     KHAKRIZ                [cover] 2006  UNBOUND: no drawn district of province 27 answers to 'KHAKRIZ' names only 'Pashtun'
   ?            Gizab                  [file name] 2007  UNBOUND: no province read from its cover (None) names only 'Pashtun, Tajik and Hazara'
-  FARAH        SHEB KOH               [cover] 2006  UNBOUND: no drawn district of province 33 answers to 'SHEB KOH' names only ''
   FARAH        PUSHTE KOH             [cover] 2006  UNBOUND: no drawn district of province 33 answers to 'PUSHTE KOH' names only 'Pashtun, Tajik'
-  FARAH        ANAR DARAH             [cover] 2010  UNBOUND: no drawn district of province 33 answers to 'ANAR DARAH' shares     '60% Pashtun and 40% Tajik' -> [('Pashtun', 60.0), ('Tajik', 40.0)]
-  BADAKHSHAN   YAFTAL SOFLA           [cover] 2008  UNBOUND: no drawn district of province 17 answers to 'YAFTAL SOFLA' shares     'Tajik 60% and Uzbak 40%' -> [('Tajik', 60.0), ('Uzbek', 40.0)]
-  BADAKHSHAN   SHAHR-E-BOZORG         [cover] 2009  UNBOUND: no drawn district of province 17 answers to 'SHAHR-E-BOZORG' names only ''
-  BAMYAN       Bamyan Centre          [file name] 2007  UNBOUND: no drawn district of province 10 answers to 'Bamyan Centre' names only 'Hazara, Tajik'
-  TAKHAR       DASHT-E-QALA           [cover] 2006  UNBOUND: no drawn district of province 18 answers to 'DASHT-E-QALA' shares     'Uzbek 60%, Tajik 35%, Pashtun 5%' -> [('Uzbek', 60.0), ('Tajik', 35.0), ('Pashtun', 5.0)]
-  BADAKHSHAN   WARDOJ                 [cover] 2008  UNBOUND: no drawn district of province 17 answers to 'WARDOJ' shares     '90 % Tajik, 10% Uzbek' -> [('Tajik', 90.0), ('Uzbek', 10.0)]
-  BADAKHSHAN   DARAIM                 [cover] 2009  UNBOUND: no drawn district of province 17 answers to 'DARAIM' shares     '80% Tajik, 15% Uzbek and 5% Hazara' -> [('Tajik', 80.0), ('Uzbek', 15.0), ('Hazara', 5.0)]
+    RUYE DU AAB (https://web.archive.org/web/20140106032922id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Ruye%20Du%20Aab_DDP%20Summary_%20translated-%20finalized.pdf): refused, shares add to only 15.0%
     KISHM (https://web.archive.org/web/20140201232054id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Kishm_Summary_Finalized.pdf): refused, shares add to 108.0%
-  BADAKHSHAN   TUSHKAN                [cover] 2008  UNBOUND: no drawn district of province 17 answers to 'TUSHKAN' shares     '70% Tajik, 20% Hazara, 10% Uzbek' -> [('Tajik', 70.0), ('Hazara', 20.0), ('Uzbek', 10.0)]
   BADAKHSHAN   NASAI                  [cover] 2011  UNBOUND: no drawn district of province 17 answers to 'NASAI' names only 'Tajik'
-  SAMANGAN     HAZRAT SULTAN          [cover] 2007  UNBOUND: no drawn district of province 20 answers to 'HAZRAT SULTAN' names only 'Tajik, Pashton, Uzbak, Arab'
-  SAMANGAN     DARI SUF BALA          [cover] 2007  UNBOUND: no drawn district of province 20 answers to 'DARI SUF BALA' shares     '99% Hazara' -> [('Hazara', 99.0)]
   ?            Khwaja Bahawodeenl     [file name] 2006  UNBOUND: no drawn district of province 18 answers to 'Khwaja Bahawodeenl' names only ''
+  TAKHAR       HAZAR SMOOCH           [cover] 2006  UNBOUND: no drawn district of province 18 answers to 'HAZAR SMOOCH' names only ''
   ?            Dardad                 [file name] ?  UNBOUND: no drawn district of province 18 answers to 'Dardad' names only ''
   ?            Nmak Ab                [file name] 2006  UNBOUND: no drawn district of province 18 answers to 'Nmak Ab' names only ''
     SANG TAKHT: not written -- an ethnic line with Uzbek, Arab and Turkmen shares in the Hazarajat, where its neighbours' plans say 100% Hazara
-  SAR-E-PUL    GOSFANDY               [cover] 2007  UNBOUND: no drawn district of province 22 answers to 'GOSFANDY' names only 'Uzbak, Tajik, Hazara, Pashtun and Arab'
-    QORGHAN (https://web.archive.org/web/20151022143845id_/http://www.mrrd-nabdp.org/attachments/article/128/Quramqul%20DDP%20English%20Summary.pdf): refused, shares add to only 30.0%
-  FARYAB       QORGHAN                [cover] 2009  UNBOUND: no drawn district of province 29 answers to 'QORGHAN' refused    '70% Torkman and 30% Uzbak' -> [('Uzbek', 30.0)]
-  FARYAB       PASHTOON KOT           [cover] 2009  UNBOUND: no drawn district of province 29 answers to 'PASHTOON KOT' shares     'Uzbek 60%, Pashtoon 20%, Turkmen 10% and Tajik' -> [('Uzbek', 60.0), ('Pashtun', 20.0), ('Turkmen', 10.0)]
+  FARYAB       QORGHAN                [cover] 2009  UNBOUND: no drawn district of province 29 answers to 'QORGHAN' shares     '70% Torkman and 30% Uzbak' -> [('Turkmen', 70.0), ('Uzbek', 30.0)]
   PANJSHIR     SHOTOL                 [cover] 2009  UNBOUND: no drawn district of province 08 answers to 'SHOTOL' names only ''
   PANJSHIR     ONABA                  [cover] 2009  UNBOUND: no drawn district of province 08 answers to 'ONABA' names only ''
   BALKH        SHORE TEPA             [cover] 2009  UNBOUND: no drawn district of province 21 answers to 'SHORE TEPA' names only ''
     SANCHARAK (https://web.archive.org/web/20160304200247id_/http://www.mrrd-nabdp.org/attachments/article/139/Saripul_San%20Charak_Summary_Finalized.pdf): refused, shares add to only 2.0%
-    KITI (https://web.archive.org/web/20160304200452id_/http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Kiti%20%20DDP%20summary-Finalized.pdf): refused, shares add to only 15.0%
-  PANJSHIR     PARIYAN                [cover] 2009  UNBOUND: no drawn district of province 08 answers to 'PARIYAN' names only ''
+    KITI (https://web.archive.org/web/20160304200452id_/http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Kiti%20%20DDP%20summary-Finalized.pdf): refused, shares add to only 38.0%
   BALKH        DOWLAT ABAD            [cover] 2009  UNBOUND: no drawn district of province 21 answers to 'DOWLAT ABAD' names only ''
-  148 plans: 118 bound to a drawn district; of those 36 give shares, 78 only names, 4 shares that do not add up; 36 districts written
+  149 plans: 135 bound to a drawn district; of those 44 give shares, 86 only names, 5 shares that do not add up; 44 districts written
     Almar (Faryab): the plan {'Turkmen': 35.0, 'Uzbek': 65.0}, the article {'Turkmen': 60.0, 'Tajik': 10.0, 'Uzbek': 10.0, 'Pashtun': 10.0}
-    Aybak (Samangan): the plan {'Tajik': 5.0, 'Uzbek': 55.0}, the article {'Uzbek': 55.0, 'Tajik': 35.0, 'Pashtun': 5.0, 'Other': 5.0}
+    Anar Dara (Farah): the plan {'Pashtun': 60.0, 'Tajik': 40.0}, the article {'Tajik': 70.0, 'Pashtun': 30.0}
     Baharak (Badakhshan): the plan {'Tajik': 60.0, 'Uzbek': 35.0, 'Pashtun': 5.0}, the article {'Tajik': 100.0}
-    Chahar Burjak (Nimruz): the plan {'Baloch': 88.0, 'Pashtun': 1.0, 'Brahui': 10.0}, the article {'Baloch': 88.0, 'Pashtun': 1.0, 'Tajik': 1.0}
+    Chahar Burjak (Nimruz): the plan {'Baloch': 88.0, 'Pashtun': 1.0, 'Brahui': 10.0, 'Tajik': 1.0}, the article {'Baloch': 88.0, 'Pashtun': 1.0, 'Tajik': 1.0}
     Chahar Dara (Kunduz): the plan {'Pashtun': 75.0}, the article {'Uzbek': 33.0, 'Tajik': 25.0, 'Pashtun': 22.0, 'Turkmen': 17.0, 'Hazara': 3.0}
+    Darayim (Badakhshan): the plan {'Tajik': 80.0, 'Uzbek': 15.0, 'Hazara': 5.0}, the article {'Tajik': 100.0}
+    Dashti Qala (Takhar): the plan {'Uzbek': 60.0, 'Tajik': 35.0, 'Pashtun': 5.0}, the article {'Tajik': 70.0, 'Uzbek': 25.0, 'Pashtun': 5.0}
     Guldara (Kabul): the plan {'Pashtun': 30.0, 'Tajik': 70.0}, the article {'Tajik': 30.0, 'Pashtun': 30.0}
     Ishkamish (Takhar): the plan {'Tajik': 40.0, 'Uzbek': 40.0, 'Pashtun': 20.0}, the article {'Tajik': 40.0, 'Uzbek': 30.0, 'Pashtun': 20.0}
     Jurm (Badakhshan): the plan {'Tajik': 95.0, 'Uzbek': 5.0}, the article {'Tajik': 100.0}
-    Khash Rod (Nimruz): the plan {'Pashtun': 55.0}, the article {'Pashtun': 55.0, 'Baloch': 20.0, 'Tajik': 10.0}
+    Khash Rod (Nimruz): the plan {'Pashtun': 55.0, 'Brahui': 15.0, 'Tajik': 10.0}, the article {'Pashtun': 55.0, 'Baloch': 20.0, 'Tajik': 10.0}
     Khwaja Sabz Posh (Faryab): the plan {'Uzbek': 80.0, 'Tajik': 10.0, 'Pashtun': 10.0}, the article {'Tajik': 80.0, 'Hazara': 19.0, 'Pashtun': 1.0}
     Lashkar Gah (Helmand): the plan {'Pashtun': 100.0}, the article {'Pashtun': 60.0, 'Baloch': 20.0}
     Nad Ali (Helmand): the plan {'Pashtun': 90.0}, the article {'Pashtun': 80.0, 'Hazara': 10.0, 'Tajik': 5.0, 'Baloch': 5.0}
     Nawa-I- Barak Zayi (Helmand): the plan {'Pashtun': 100.0}, the article {'Pashtun': 99.0, 'Farsiwan': 1.0}
     Pasaband (Ghor): the plan {'Tajik': 93.0, 'Hazara': 5.0, 'Pashtun': 2.0}, the article {'Tajik': 84.0, 'Pashtun': 11.0, 'Hazara': 5.0}
+    Pashtun Kot (Faryab): the plan {'Uzbek': 60.0, 'Pashtun': 20.0, 'Turkmen': 10.0}, the article {'Tajik': 5.0, 'Uzbek': 65.0, 'Pashtun': 5.0}
     Sangin (Helmand): the plan {'Pashtun': 99.0}, the article {'Pashtun': 100.0}
     Tani (Khost): the plan {'Pashtun': 100.0}, the article {'Pashtun': 99.0}
-  against the articles' transcription: 2 districts the same, 16 different, 18 the articles do not carry; 184 the articles carry and no archived plan gives shares for
+    Tashkan (Badakhshan): the plan {'Tajik': 70.0, 'Hazara': 20.0, 'Uzbek': 10.0}, the article {'Tajik': 100.0}
+    Warduj (Badakhshan): the plan {'Tajik': 90.0, 'Uzbek': 10.0}, the article {'Tajik': 100.0}
+    Yaftal Sufla (Badakhshan): the plan {'Tajik': 60.0, 'Uzbek': 40.0}, the article {'Tajik': 100.0}
+  against the articles' transcription: 3 districts the same, 22 different, 19 the articles do not carry; 177 the articles carry and no archived plan gives shares for
   wrote data/processed/afghanistan_ddp_plans.json (178 kB)
-  wrote data/processed/afghanistan_ddp.json (72 kB)
-  36 records
+  wrote data/processed/afghanistan_ddp.json (90 kB)
+  44 records
