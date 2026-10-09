@@ -1,28 +1,7 @@
-== https://stats.gov.fm/download/54/pohnpei/2216/pni-basic-tables-2023-population-housing-census.xlsx
-  HTTP 200 application/octet-stream 423,189 bytes
-  -- 'Cover'
-  -- 'List of Tables'
-       2: 'Table description' |  | 'Page'
-       3: 'Population Tables'
-       4: 'Table B1. Age and Sex b |  | 1
-       5: 'Table B2. Relationship  |  | 2
-       6: 'Table B3.  Birthplace b |  | 3
-       7: 'Table B5. Marital Statu |  | 3
-       8: 'Table B6. Religion by M |  | 4
-  -- 'Basic_Tables'
-       1: 'POPULATION TABLES'
-       2: 'Table B1. Age and Sex b
-       3:  |  | 'Madole-' |  |  |  |  |  | 'Mwoak-' |  | 'Sapwu-' |  | 'Kapinga-'
-       4: 'Age group' | 'Total' | 'nihmw' | 'U' | 'Nett' | 'Sokehs' | 'Kitti' | 'Kolonia' | 'illoa' | 'Pingelap' | 'ahfik' | 'Nukuoro' | 'marangi'
-      64: 'Table B2. Relationship 
-      65:  |  | 'Madole-' |  |  |  |  |  | 'Mwoak-' |  | 'Sapwu-' |  | 'Kapinga-'
-      66: 'Relationship' | 'Total' | 'nihmw' | 'U' | 'Nett' | 'Sokehs' | 'Kitti' | 'Kolonia' | 'illoa' | 'Pingelap' | 'ahfik' | 'Nukuoro' | 'marangi'
-     118: 'Table B3.  Birthplace b
-     119:  |  | 'Madole-' |  |  |  |  |  | 'Mwoak-' |  | 'Sapwu-' |  | 'Kapinga-'
-     120: 'Birthplace' | 'Total' | 'nihmw' | 'U' | 'Nett' | 'Sokehs' | 'Kitti' | 'Kolonia' | 'illoa' | 'Pingelap' | 'ahfik' | 'Nukuoro' | 'marangi'
-     130: 'Table B5. Marital Statu
-     131:  |  | 'Madole-' |  |  |  |  |  | 'Mwoak-' |  | 'Sapwu-' |  | 'Kapinga-'
-     132: 'Marital status' | 'Total' | 'nihmw' | 'U' | 'Nett' | 'Sokehs' | 'Kitti' | 'Kolonia' | 'illoa' | 'Pingelap' | 'ahfik' | 'Nukuoro' | 'marangi'
-     159: 'Table B6. Religion by M
-     160:  |  | 'Madole-' |  |  |  |  |  | 'Mwoak-' |  | 'Sapwu-' |  | 'Kapinga-'
-     161: 'Religion' | 'Total' | 'nihmw' | 'U' | 'Nett' | 'Sokehs' | 'Kitti' | 'Kolonia' | 'illoa' | 'Pingelap' | 'ahfik' | 'Nukuoro' | 'marangi'
+  Overpass 28.5,46.5,28.95,48.6: 111 named areas
+  Overpass 28.95,46.5,29.5,47.85: 259 named areas
+    Overpass 28.95,47.85,29.5,48.6: 429, asking again in 60 s
+  Overpass 28.95,47.85,29.5,48.6: 764 named areas
+  Overpass 29.5,46.5,30.15,48.6: 69 named areas
+  census areas placed by their OSM outline: 144 of 157; not named in OSM: 13: AL-MUBARAKIYA CAMPS (معسكرات المباركية, 2,452); AL-AHMADI CITY (مدينة الأحمدي, 28,612); AL-KHAIRAN CHALETS (شاليهات الخيران, 1,336); AL-WAFRA (الوفرة, 198); AL-AHMADI GOVERNORATE DESERT (بر محافظة الأحمدي, 1,475); RAJM KHASHMAN (رجم خشمان, 114); KABAD AGRICULTURAL (كبد الزراعية, 13); AL-JAHRA GOVERNORATE DESERT (بر محافظة الجهراء, 2,669); AL-NAAYIM INDUSTRIAL (النعايم الصناعية, 94); SOUTH AL-MITLAE (جنوب المطلاع, 83); AL-ARDIYA GOVERNORATE USE (العارضية استعمال الحكومة, 176); AL-ARDIYA STORES (العارضية مخازن, 445); AL-MISILA (المسيلة, 1,056)
+  wrote data/raw/kuwait/osm_areas.json
