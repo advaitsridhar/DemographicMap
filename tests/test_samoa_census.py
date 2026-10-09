@@ -135,10 +135,11 @@ class Citizenship(unittest.TestCase):
             sm.read_citizenship(table_8a(national=national))
 
 
-def layout(males, females, top=None):
-    """(sub-header, {place: Table 1's row}, ages_at) in Table 1's layout, to age
-    ``top``: every region ten a year of each sex at the ages given, Samoa the
-    four together."""
+def layout(males, females, top=None, unknown=(3, 2, 1)):
+    """(sub-header, {place: Table 1's row}, ages_at, unknown_at) in Table 1's
+    layout, to age ``top`` and then the age not known: every region ten a year of
+    each sex at the ages given and ``unknown`` of unknown age, Samoa the four
+    together."""
     top = top or max(list(males) + list(females))
     header = ["Place of residence", "Total", "", ""]
     sub = ["", "Total", "MALE", "FEMALE"]
@@ -149,78 +150,113 @@ def layout(males, females, top=None):
         m = 10.0 if age in males else 0.0
         f = 10.0 if age in females else 0.0
         region += [m + f, m, f]
+    header += ["DK", "", ""]
+    sub += ["Total", "MALE", "FEMALE"]
+    region += [float(n) for n in unknown]
     region[:3] = [sum(region[3::3]), sum(region[4::3]), sum(region[5::3])]
-    ages_at, _ = sm.age_columns(header)
+    ages_at, unknown_at = sm.age_columns(header)
     rows = {name: list(region) for name in sm.REGIONS}
     rows["Samoa"] = [4 * v for v in region]
-    return sub, rows, ages_at
+    return sub, rows, ages_at, unknown_at
 
 
-def printed(samoa, elsewhere):
-    """The key indicators' medians: Samoa's column, and one for every other column."""
-    others = ("Apia Urban Area", "North West Upolu", "Rest of Upolu", "Savaii", "Rural")
-    return {"Samoa": dict(samoa), **{place: dict(elsewhere) for place in others}}
+# What the Final Report would print for that layout (males 0-39, females 0-45):
+# 15 years of each sex under 15, 25 of males and 31 of females at 15-64.
+REGION = {"0-14": (300, 150, 150), "15-64": (560, 250, 310), "65+": (0, 0, 0),
+          "age not known": (3, 2, 1)}
 
 
-class KeyIndicatorMedians(unittest.TestCase):
-    """Table 1's single years against every median the Final Report prints."""
+def printed_counts(times=None):
+    """The key indicators: each region REGION, Samoa four of them, Rural three."""
+    times = times or {}
+    scale = {"Samoa": 4, "Rural": 3, **times}
+    return {place: {group: tuple(scale.get(place, 1) * n for n in counts)
+                    for group, counts in REGION.items()}
+            for place in ("Samoa", "Apia Urban Area", "North West Upolu", "Rest of Upolu",
+                          "Savaii", "Rural")}
 
-    # Males 0-39 (median 20.0), females 0-45 (23.0), everyone 21.5: a country
-    # whose women are older than its men, as Samoa's are (20.5 and 22.4).
+
+class KeyIndicators(unittest.TestCase):
+    """Table 1's single years against the Final Report's key indicators."""
+
     MALES, FEMALES = range(40), range(46)
-    AS_COMPUTED = {"everyone": 22, "males": 20, "females": 23}
 
-    def test_every_column_agrees_as_printed(self):
-        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
-        with mock.patch.object(sm, "PRINTED_MEDIANS", printed(self.AS_COMPUTED, self.AS_COMPUTED)):
-            account = sm.key_indicator_medians(sub, rows, ages_at)
-        self.assertIn("Samoa everyone 21.5 (22), males 20.0 (20), females 23.0 (23)", account)
-        self.assertIn("Rural everyone 21.5 (22)", account)
-        self.assertNotIn("exchanged", account)
+    def test_every_columns_counts_agree_and_the_medians_are_logged(self):
+        sub, rows, ages_at, unknown_at = layout(self.MALES, self.FEMALES)
+        with mock.patch.object(sm, "KEY_INDICATORS", printed_counts()):
+            lines = sm.key_indicators(sub, rows, ages_at, unknown_at)
+        self.assertIn("for all 6 columns", lines[0])
+        # Males 0-39 (median 20.0), females 0-45 (23.0), everyone 21.5.
+        self.assertIn("Samoa everyone 21.5 (22), males 20.0 (20), females 23.0 (21)", lines[1])
 
-    def test_samoas_everyone_and_female_rows_exchanged_are_read_so(self):
-        # As the Final Report prints Samoa: everyone above both sexes.
-        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
-        samoa = {"everyone": 23, "males": 20, "females": 22}
-        with mock.patch.object(sm, "PRINTED_MEDIANS", printed(samoa, self.AS_COMPUTED)):
-            account = sm.key_indicator_medians(sub, rows, ages_at)
-        self.assertIn("exchanged", account)
-        self.assertIn("the country's median is 21.5", account)
+    def test_medians_far_from_the_printed_ones_do_not_stop_the_run(self):
+        sub, rows, ages_at, unknown_at = layout(self.MALES, self.FEMALES)
+        medians = {place: {"everyone": 30, "males": 30, "females": 30}
+                   for place in sm.PRINTED_MEDIANS}
+        with mock.patch.object(sm, "KEY_INDICATORS", printed_counts()), \
+                mock.patch.object(sm, "PRINTED_MEDIANS", medians):
+            lines = sm.key_indicators(sub, rows, ages_at, unknown_at)
+        self.assertIn("Savaii everyone 21.5 (30)", lines[1])
 
-    def test_the_exchange_is_not_read_when_anything_else_disagrees(self):
-        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
-        table = printed({"everyone": 23, "males": 20, "females": 22}, self.AS_COMPUTED)
-        table["Savaii"]["males"] = 22
-        with mock.patch.object(sm, "PRINTED_MEDIANS", table):
+    def test_a_broad_age_group_one_person_out_stops_the_run(self):
+        sub, rows, ages_at, unknown_at = layout(self.MALES, self.FEMALES)
+        table = printed_counts()
+        table["Rest of Upolu"]["15-64"] = (561, 251, 310)
+        with mock.patch.object(sm, "KEY_INDICATORS", table):
             with self.assertRaises(SystemExit) as caught:
-                sm.key_indicator_medians(sub, rows, ages_at)
-        self.assertIn("('Savaii', 'males')", str(caught.exception))
+                sm.key_indicators(sub, rows, ages_at, unknown_at)
+        self.assertIn("Rest of Upolu 15-64 (560.0, 250.0, 310.0) (printed (561, 251, 310))",
+                      str(caught.exception))
 
-    def test_a_region_a_year_and_more_away_stops_the_run(self):
-        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
-        table = printed(self.AS_COMPUTED, self.AS_COMPUTED)
-        table["Rest of Upolu"]["females"] = 21
-        with mock.patch.object(sm, "PRINTED_MEDIANS", table):
+    def test_the_age_not_known_is_checked_by_sex(self):
+        sub, rows, ages_at, unknown_at = layout(self.MALES, self.FEMALES)
+        table = printed_counts()
+        table["Savaii"]["age not known"] = (3, 1, 2)
+        with mock.patch.object(sm, "KEY_INDICATORS", table):
             with self.assertRaises(SystemExit):
-                sm.key_indicator_medians(sub, rows, ages_at)
+                sm.key_indicators(sub, rows, ages_at, unknown_at)
 
     def test_rural_is_samoa_less_the_apia_urban_area(self):
-        sub, rows, ages_at = layout(self.MALES, self.FEMALES, top=55)
-        _, older, _ = layout(range(50), range(56))        # an older capital
+        sub, rows, ages_at, unknown_at = layout(self.MALES, self.FEMALES, top=55)
+        _, older, _, _ = layout(range(50), range(56), top=55)      # an older capital
         rows["Apia Urban Area"] = older["Apia Urban Area"]
         rows["Samoa"] = [sum(rows[r][i] for r in sm.REGIONS) for i in range(len(rows["Samoa"]))]
-        table = printed(self.AS_COMPUTED, self.AS_COMPUTED)
-        table["Apia Urban Area"] = {"everyone": 27, "males": 25, "females": 28}
-        table["Samoa"] = {"everyone": 23, "males": 21, "females": 24}
-        with mock.patch.object(sm, "PRINTED_MEDIANS", table):
-            account = sm.key_indicator_medians(sub, rows, ages_at)
-        self.assertIn("Rural everyone 21.5 (22), males 20.0 (20), females 23.0 (23)", account)
+        table = printed_counts()
+        table["Apia Urban Area"] = {"0-14": (300, 150, 150), "15-64": (760, 350, 410),
+                                    "65+": (0, 0, 0), "age not known": (3, 2, 1)}
+        table["Samoa"] = {group: tuple(a + 3 * b for a, b in zip(table["Apia Urban Area"][group],
+                                                                 REGION[group]))
+                          for group in REGION}
+        with mock.patch.object(sm, "KEY_INDICATORS", table):
+            lines = sm.key_indicators(sub, rows, ages_at, unknown_at)
+        self.assertIn("Rural everyone 21.5 (20), males 20.0 (20), females 23.0 (21)", lines[1])
 
     def test_columns_that_are_not_total_male_female_stop_the_run(self):
-        sub, rows, ages_at = layout(self.MALES, self.FEMALES)
+        sub, rows, ages_at, unknown_at = layout(self.MALES, self.FEMALES)
         sub[5], sub[6] = "FEMALE", "MALE"
-        with self.assertRaises(SystemExit):
-            sm.key_indicator_medians(sub, rows, ages_at)
+        with mock.patch.object(sm, "KEY_INDICATORS", printed_counts()):
+            with self.assertRaises(SystemExit):
+                sm.key_indicators(sub, rows, ages_at, unknown_at)
+
+    def test_the_real_key_indicators_add_up(self):
+        # The transcription of pp. 10-11: each column's groups make its people
+        # (p. 10's Population rows), its sexes make each group, and Rural is
+        # Samoa less the Apia Urban Area.
+        people = {"Samoa": (205_557, 104_853, 100_704), "Apia Urban Area": (35_974, 17_990, 17_984),
+                  "North West Upolu": (75_307, 38_331, 36_976),
+                  "Rest of Upolu": (49_101, 25_383, 23_718), "Savaii": (45_175, 23_149, 22_026),
+                  "Rural": (169_583, 86_863, 82_720)}
+        for place, groups in sm.KEY_INDICATORS.items():
+            made = tuple(sum(g[k] for g in groups.values()) for k in range(3))
+            self.assertEqual(made, people[place], place)
+            for group, (everyone, males, females) in groups.items():
+                self.assertEqual(everyone, males + females, (place, group))
+        for group in sm.KEY_INDICATORS["Samoa"]:
+            self.assertEqual(sm.KEY_INDICATORS["Rural"][group],
+                             tuple(a - b for a, b in zip(sm.KEY_INDICATORS["Samoa"][group],
+                                                         sm.KEY_INDICATORS["Apia Urban Area"][group])))
+            regions = tuple(sum(sm.KEY_INDICATORS[r][group][k] for r in sm.REGIONS) for k in range(3))
+            self.assertEqual(regions, sm.KEY_INDICATORS["Samoa"][group], group)
 
 
 if __name__ == "__main__":

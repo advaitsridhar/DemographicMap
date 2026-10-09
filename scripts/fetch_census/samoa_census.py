@@ -53,13 +53,13 @@ make it too, and so do its denominations; a constituency's villages make the
 constituency; every 2021 village is placed once; every 2016 district receives
 villages, and its 2021 count lies within 40% of its 2016 one -- a wider swing
 would mean villages filed in the wrong district; every polygon is bound once.
-Every median age the Final Report's key indicators print (pp. 10-11: everyone,
-males and females for Samoa, its four regions and its rural part, in whole
-years) must be Table 1's single years' within ``MEDIAN_SLACK`` and the half
-year a whole year stands for. Samoa's own column prints everyone (22, the Fact
-Sheet's 22.0) above both its sexes (20 and 21), which no ages can give; read
-with its everyone and female rows exchanged it agrees, and only that reading,
-with every other figure agreeing as printed, lets the run go on.
+Table 1's single years must make the Final Report's key indicators (pp. 10-11)
+exactly: for Samoa, its four regions and its rural part, the people aged 0-14,
+15-64 and 65 and over and those whose age is not known, each by sex. The same
+pages' median ages, in whole years, do not follow those counts -- Samoa's 22
+for everyone lies above both its sexes' 20 and 21, and eight of the eighteen
+are more than 0.8 years from Table 1's -- so they are logged beside Table 1's,
+not checked (``PRINTED_MEDIANS``).
 Table 8a lists Table 1's villages with Table 1's totals, its four answers are
 headed as ``CITIZENSHIP_HEADINGS`` says and make each row's total, each by
 sex, and the country's citizens and others are the Fact Sheet's 204,339 and
@@ -79,7 +79,7 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, write_json
 from .binding import fold
 from .oceania_common import (
-    MEDIAN_SLACK, bind_level, check, load_units, median_from_single_years, number, population,
+    bind_level, check, load_units, median_from_single_years, number, population,
     rows_of, sex_ratio, shares_of, summarise, unit_record, workbook,
 )
 
@@ -98,15 +98,37 @@ CITIZENSHIP_HEADINGS = ("YES BORN IN SAMOA", "YES BORN ABROAD", "YES SAMOA  CITI
                         "NATURALISATION", "NO NOT A CITIZEN")
 CITIZENS_2021, NON_CITIZENS_2021 = 204_339, 1_218
 NATIONAL_2016 = 195_979
-# The Bureau's medians: the 2021 Final Report's key indicators (pp. 10-11) print
-# them in whole years for everyone, males and females, in seven columns -- Samoa,
+# The 2021 Final Report's key indicators (pp. 10-11), in seven columns: Samoa,
 # its four regions, "Urban" (the Apia Urban Area again) and "Rural" (the other
-# three) -- and the Fact Sheet prints Samoa's as 22.0 (indicator DS.3). Every
-# figure is checked against Table 1's single years, within MEDIAN_SLACK and the
-# half year a whole year stands for (``key_indicator_medians``).
+# three). Each column's people by sex in three broad age groups and with their
+# age not known, (everyone, males, females), which Table 1's single years must
+# make exactly (``key_indicators``).
 FINAL_REPORT_URL = ("https://sbs.gov.ws/documents/census/2021/"
                     "Census-2021-Final-Report_221122_051222.pdf")
 WHO = (("everyone", 0), ("males", 1), ("females", 2))
+BROAD_AGES = {"0-14": (0, 14), "15-64": (15, 64), "65+": (65, None)}
+KEY_INDICATORS = {
+    "Samoa": {"0-14": (79_079, 41_365, 37_714), "15-64": (114_929, 58_163, 56_766),
+              "65+": (11_373, 5_218, 6_155), "age not known": (176, 107, 69)},
+    "Apia Urban Area": {"0-14": (12_717, 6_637, 6_080), "15-64": (21_136, 10_422, 10_714),
+                        "65+": (2_084, 913, 1_171), "age not known": (37, 18, 19)},
+    "North West Upolu": {"0-14": (28_794, 15_103, 13_691), "15-64": (42_749, 21_556, 21_193),
+                         "65+": (3_695, 1_629, 2_066), "age not known": (69, 43, 26)},
+    "Rest of Upolu": {"0-14": (19_439, 10_147, 9_292), "15-64": (26_870, 13_897, 12_973),
+                      "65+": (2_753, 1_314, 1_439), "age not known": (39, 25, 14)},
+    "Savaii": {"0-14": (18_129, 9_478, 8_651), "15-64": (24_174, 12_288, 11_886),
+               "65+": (2_841, 1_362, 1_479), "age not known": (31, 21, 10)},
+    "Rural": {"0-14": (66_362, 34_728, 31_634), "15-64": (93_793, 47_741, 46_052),
+              "65+": (9_289, 4_305, 4_984), "age not known": (139, 89, 50)},
+}
+# The same pages' median ages, in whole years, are set beside Table 1's in the
+# log and not checked: they do not follow the Bureau's own counts. Against
+# Table 1's single years, 8 of the 18 are more than 0.8 years away -- every
+# column's women printed 21 where Table 1 gives 21.3 to 24.1, the Apia Urban
+# Area's 21, 21 and 21 against 23.1, 22.0 and 24.1 -- and Samoa's 22 for
+# everyone lies above both its sexes' 20 and 21, which no ages can give (run of
+# 9 October 2026). Table 1 gives Samoa 21.4; the Fact Sheet's 22.0 (indicator
+# DS.3) is the report's figure again.
 PRINTED_MEDIANS = {
     "Samoa": {"everyone": 22, "males": 20, "females": 21},
     "Apia Urban Area": {"everyone": 21, "males": 21, "females": 21},
@@ -458,58 +480,49 @@ SOURCES = [
 ]
 
 
-def key_indicator_medians(sub_header: list[Any], places: dict[str, list[float]],
-                          ages_at: list[tuple[int, int]]) -> str:
-    """Table 1's medians for every column of the Final Report's key indicators.
+def key_indicators(sub_header: list[Any], places: dict[str, list[float]],
+                   ages_at: list[tuple[int, int]], unknown_at: int | None) -> list[str]:
+    """Table 1's columns against the Final Report's key indicators; the log's lines.
 
     ``places`` is Table 1's row for Samoa and each region; "Rural" is Samoa less
-    the Apia Urban Area. Each age's Total column is followed by its MALE and
-    FEMALE ones. Every printed figure must be the single years' within
-    ``MEDIAN_SLACK`` and half a year, or the run stops -- with one exception,
-    measured: Samoa's column prints everyone (22) above both its sexes (20,
-    21), which no ages can give, and read with its everyone and female rows
-    exchanged it agrees with Table 1, as every other column does unexchanged.
-    That reading is accepted only when nothing else disagrees. Returns the
-    account for the log.
+    the Apia Urban Area. Each age's Total column, and the age-not-known one, is
+    followed by its MALE and FEMALE ones. Every column's broad age groups and its
+    people of unknown age, by sex, must be the printed counts exactly, or the run
+    stops: that is the check on how Table 1's single years were read. The
+    printed medians are set beside Table 1's, unchecked (``PRINTED_MEDIANS``).
     """
     sub = [text(c).strip().upper() for c in sub_header]
-    check(all(sub[i:i + 3] == ["TOTAL", "MALE", "FEMALE"] for _, i in ages_at),
+    check(unknown_at is not None, "samoa_census: Table 1 has no column for the age not known")
+    check(all(sub[i:i + 3] == ["TOTAL", "MALE", "FEMALE"] for _, i in ages_at + [(0, unknown_at)]),
           "samoa_census: Table 1's ages are not each Total, Male and Female")
     check(set(places) == {"Samoa", *REGIONS}, f"samoa_census: Table 1's regions are "
                                                f"{sorted(places)}")
     columns = dict(places)
     columns["Rural"] = [a - b for a, b in zip(places["Samoa"], places["Apia Urban Area"])]
-    got = {place: {who: median_from_single_years({age: values[i - 1 + shift]
-                                                  for age, i in ages_at})
-                   for who, shift in WHO}
-           for place, values in columns.items()}
-    allowed = MEDIAN_SLACK + 0.5
 
-    def fits(computed: float | None, printed: float) -> bool:
-        return computed is not None and abs(computed - printed) <= allowed + 1e-9
+    def counted(values: list[float], group: str) -> tuple[float, ...]:
+        if group == "age not known":
+            return tuple(values[unknown_at - 1 + shift] for _, shift in WHO)
+        low, high = BROAD_AGES[group]
+        return tuple(sum(values[i - 1 + shift] for age, i in ages_at
+                         if age >= low and (high is None or age <= high)) for _, shift in WHO)
 
-    off = sorted((place, who) for place, printed in PRINTED_MEDIANS.items()
-                 for who, figure in printed.items() if not fits(got[place][who], figure))
-    samoa, shown = got["Samoa"], PRINTED_MEDIANS["Samoa"]
-    impossible = not (min(shown["males"], shown["females"]) <= shown["everyone"]
-                      <= max(shown["males"], shown["females"]))
-    exchanged = (impossible and off == [("Samoa", "everyone"), ("Samoa", "females")]
-                 and fits(samoa["females"], shown["everyone"])
-                 and fits(samoa["everyone"], shown["females"]))
-    account = "; ".join(
-        f"{place} " + ", ".join(f"{who} {got[place][who]} ({figure})"
-                                for who, figure in PRINTED_MEDIANS[place].items())
+    wrong = [f"{place} {group} {counted(columns[place], group)} (printed {printed})"
+             for place, groups in KEY_INDICATORS.items() for group, printed in groups.items()
+             if counted(columns[place], group) != printed]
+    check(not wrong, f"samoa_census: Table 1's ages do not make the Final Report's key "
+                     f"indicators: {wrong}")
+    medians = "; ".join(
+        f"{place} " + ", ".join(
+            f"{who} {median_from_single_years({age: columns[place][i - 1 + shift] for age, i in ages_at})}"
+            f" ({PRINTED_MEDIANS[place][who]})" for who, shift in WHO)
         for place in PRINTED_MEDIANS)
-    check(not off or exchanged,
-          f"samoa_census: Table 1's single years against the Final Report's median ages "
-          f"(printed in brackets) disagree by more than {allowed} years at {off}: {account}")
-    return (f"median ages from Table 1's single years against the Final Report's key "
-            f"indicators (printed, whole years): {account}"
-            + (f". Samoa's column prints everyone {shown['everyone']} outside both its sexes "
-               f"({shown['males']} and {shown['females']}), which no ages can give; read "
-               f"with its everyone and female rows exchanged it agrees with Table 1, so the "
-               f"country's median is {samoa['everyone']}, not the Fact Sheet's "
-               f"{FACT_SHEET_MEDIAN}" if exchanged else ""))
+    return [f"Table 1's single years make the Final Report's key indicators for all "
+            f"{len(KEY_INDICATORS)} columns: people aged 0-14, 15-64 and 65+ and of age not "
+            f"known, by sex, exactly",
+            f"median ages from Table 1's single years, the Final Report's whole years in "
+            f"brackets (not checked; see PRINTED_MEDIANS): {medians}; the Fact Sheet prints "
+            f"Samoa's as {FACT_SHEET_MEDIAN}"]
 
 
 def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
@@ -543,8 +556,9 @@ def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, 
     for (_, village, a), (_, _, c) in zip(people["villages"], citizenship["villages"]):
         check(c[0] == a[0], f"samoa_census: Table 8a counts {c[0]:,.0f} in {village}, Table 1 "
                             f"{a[0]:,.0f}")
-    log("  " + key_indicator_medians(age_rows[2], {"Samoa": people["total"], **people["regions"]},
-                                     ages_at))
+    for line in key_indicators(age_rows[2], {"Samoa": people["total"], **people["regions"]},
+                               ages_at, unknown_at):
+        log("  " + line)
 
     placed, new_villages = place_villages(old, people["villages"])
     for line in new_villages:
