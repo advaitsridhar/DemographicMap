@@ -1,14 +1,5 @@
-sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
-  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
-    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
-    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
-  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
-  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  wrote data/processed/sea_cod_ps_age.json (4311 kB)
-  wrote sea_cod_ps_age.json: 1196 records
+dsc.gov.ae/Report/DSC-SYB-20*: 3 captures, 3 shown
+  20211227215656 https://www.dsc.gov.ae/Report/DSC-SYB-2009-09-10.pdf application/pdf 200
+  20211021050307 https://www.dsc.gov.ae/Report/DSC-SYB-2019-6-21.pdf application/pdf 200
+  20211227175500 https://www.dsc.gov.ae/Report/DSC-SYB-2019-6-21.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 200
+https://web.archive.org/cdx/search/cdx?url=dsc.gov.ae%2FReport%2FDSC_%2520SYB_2018_0%2A&output=json&limit=200&collapse=urlkey&filter=statuscode%3A200: 504 b'<html>\r\n<head><title>504 Gateway Time-out</title></head>\r\n<body>\r\n<center><h1>504 Gateway Time-out</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
