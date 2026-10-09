@@ -44,9 +44,9 @@ polygons and 17 provinces gets a row, and no polygon gets two.
 **Language** is not asked by Korea's census -- its questionnaires ask
 nationality and, in years ending in 5, religion, and nothing about the
 language a person speaks -- and no survey measures it by district; every
-record says so. **Religion** is asked, and the 2015 round's answer by
-district is in KOSIS alone, which did not answer this map's requests; every
-district says where it is (``DISTRICT_RELIGION_NOTE``).
+record says so. **Religion** is asked, in the years ending in 5, and
+``korea_religion`` reads the 2015 round's table for every province and
+district, so nothing about it is written here.
 
 Usage:
     python -m scripts.fetch_census.korea_ages            # reads the kept CSV, or asks for it
@@ -102,15 +102,6 @@ LANGUAGE_NOTE = (
     "Korea's census does not ask language: its questionnaires ask nationality and, in the "
     "years ending in 5, religion, and no question about the language a person speaks; no "
     "register or survey measures it by province or district.")
-# The districts' religion: asked, and published, but not read here.
-DISTRICT_RELIGION_NOTE = (
-    "Korea's census asks religion in the years ending in 5, of a sample of a fifth of "
-    "households, and Statistics Korea publishes the 2015 round's answer by city, county and "
-    "district only in KOSIS (table DT_1PM1502, 성, 연령 및 종교별 인구 - 시군구), which this map "
-    "has not been able to read: kosis.kr did not answer the requests made of it, and its open "
-    "API asks for an account's key. The province carries a survey's figures.")
-
-
 # ---------------------------------------------------------------------------
 # Reading
 # ---------------------------------------------------------------------------
@@ -350,8 +341,7 @@ def build(table: list[list[str]], admin1: list[dict[str, Any]],
                      f"it is a district of {province}.")
         records.append(unit_record(f"KOR-{province}-{name}", name, level="admin2",
                                    parent=f"KOR-{province}", shape=shape, cell=cell,
-                                   where="this district", extra_note=extra,
-                                   religion=gap("not_available", DISTRICT_RELIGION_NOTE)))
+                                   where="this district", extra_note=extra))
     if unknown:
         raise SystemExit(f"korea_ages: districts the crosswalk does not know: {unknown}")
     missing = sorted(set(district_shapes.values()) - set(bound))

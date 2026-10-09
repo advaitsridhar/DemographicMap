@@ -121,10 +121,11 @@ class Build(unittest.TestCase):
         # The province's religion is the survey's: a bare marker displaces nothing.
         self.assertEqual(r["religion"], {"status": "not_available"})
 
-    def test_a_district_says_where_its_religion_is(self):
+    def test_a_districts_religion_is_left_to_korea_religion(self):
+        # korea_religion writes the 2015 census's table for every district;
+        # a bare marker here displaces nothing it writes.
         r = self.by_shape["S-Seoul-Jongno-gu"]
-        self.assertEqual(r["religion"]["status"], "not_available")
-        self.assertIn("DT_1PM1502", r["religion"]["note"])
+        self.assertEqual(r["religion"], {"status": "not_available"})
 
 
 class Refusals(unittest.TestCase):

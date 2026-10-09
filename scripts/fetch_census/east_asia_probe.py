@@ -361,78 +361,14 @@ def cmd_kosis(args: argparse.Namespace) -> None:
         print("    text: " + plain(body)[:args.bytes])
 
 
-MASS = "https://kosis.kr/statisticsList/mass/"
-
-
-def kosis_mass(org: str, tbl: str, row: int = 0, log=print) -> tuple[bytes, str, str]:
-    """A KOSIS table's bulk file, fetched the way its download page's own
-    script fetches it, with one cookie jar.
-
-    mass_list.jsp lists the files as hidden inputs ``file_data_N`` holding
-    "number/name". Its fileDown() copies the number and name into the upfrm
-    form and first submits that form to mass_down_seq.jsp, whose answer calls
-    setDownNo(n) with a download number; fileDown() then submits the same form
-    to /file_mass/file_down.jsp with file_type ONE, down_cnt 1 and use_no n.
-    Returns the file, its content type and its name."""
-    import http.cookiejar
-    jar = http.cookiejar.CookieJar()
-    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
-
-    def call(url: str, fields: dict[str, str] | None, referer: str | None) -> tuple[bytes, Any]:
-        data = urllib.parse.urlencode(fields).encode() if fields is not None else None
-        headers = {"User-Agent": UA}
-        if referer:
-            headers["Referer"] = referer
-        req = urllib.request.Request(url, data=data, headers=headers,
-                                     method="POST" if data is not None else "GET")
-        last: Exception | None = None
-        for attempt in range(3):
-            try:
-                with opener.open(req, timeout=300) as resp:
-                    return resp.read(), resp.headers
-            except urllib.error.HTTPError:
-                raise
-            except Exception as exc:  # noqa: BLE001 - kosis.kr times out now and then
-                last = exc
-                log(f"  retry {attempt + 1}/3 :: {url} :: {exc!r}")
-                import time
-                time.sleep(5 * (attempt + 1))
-        raise RuntimeError(f"{url} failed: {last!r}")
-
-    listing = (f"{MASS}mass_list.jsp?org_id={org}&tbl_id={tbl}&vw_cd=MT_ZTITLE&list_id="
-               "&process=statHtml")
-    page, _ = call(listing, None, None)
-    text = decode(page, "utf-8")
-    files = form_fields(text, "myfrm")
-    up = form_fields(text, "upfrm")
-    entry = files.get(f"file_data_{row}")
-    if not entry or not up:
-        raise SystemExit(f"kosis_mass: {listing} lists no file_data_{row} or no upfrm form")
-    number, _, name = entry.partition("/")
-    log(f"  {listing}: file_data_{row} = {entry!r}, cookies {sorted(c.name for c in jar)}")
-    up.update({"filename": name, "file_no": number})
-    seq, _ = call(f"{MASS}mass_down_seq.jsp", up, listing)
-    seq_text = decode(seq, "utf-8")
-    m = re.search(r"setDownNo\(\s*['\"]?(\d+)", seq_text)
-    if not m:
-        raise SystemExit("kosis_mass: mass_down_seq.jsp named no download number: "
-                         + plain(seq_text)[:300])
-    log(f"  mass_down_seq.jsp -> download number {m.group(1)}")
-    up.update({"file_type": "ONE", "down_cnt": "1", "use_no": m.group(1)})
-    blob, headers = call("https://kosis.kr/file_mass/file_down.jsp", up, listing)
-    ctype = headers.get("Content-Type", "")
-    disp = headers.get("Content-Disposition", "")
-    log(f"  file_down.jsp -> {len(blob):,} bytes, {ctype!r} {disp!r}")
-    return blob, ctype, disp
-
-
 def cmd_kosismass(args: argparse.Namespace) -> None:
-    """A KOSIS table's bulk file (see kosis_mass), described: a zip's members
+    """A KOSIS table's bulk file (korea_religion.kosis_mass), described: a zip's members
     and the first rows of each, or a CSV's first rows, in cp949 unless
     --encoding says otherwise."""
     import zipfile
+    from .korea_religion import kosis_mass
     org, tbl = args.target.split(",")
-    blob, ctype, _ = kosis_mass(org, tbl)
+    blob, ctype = kosis_mass(org, tbl), ""
     members: list[tuple[str, bytes]] = [("answer", blob)]
     if blob[:2] == b"PK":
         with zipfile.ZipFile(io.BytesIO(blob)) as zf:
