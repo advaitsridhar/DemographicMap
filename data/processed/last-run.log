@@ -1,6 +1,16 @@
-fiji_census: 2017 ages by province and division; 2007 religion and ethnicity
-  2007 Table P01-3: 15 provinces adding to 837,271; religion unprinted for 895 people
-  2017 ages: 15 provinces adding to 884,887 and to their divisions; fiji_census: Fiji 27.5 (printed 27.5)
-  admin1 ethnicity 4, admin1 median_age 4, admin1 population 1, admin1 religion 4, admin1 sex_ratio 4, admin2 ethnicity 15, admin2 median_age 15, admin2 religion 15, admin2 sex_ratio 15
-  wrote data/processed/fiji_census.json (136 kB)
-  wrote 19 records
+vanuatu_census: 2020 Census Basic Tables, Volume 1
+  14,955,957 bytes, 384 pages
+  Table 6.16 has no [9, 7]-figure row for Aneityum: left out
+  Table 6.17 prints Port Vila's and Luganville's rows under each other's names: exchanged
+  Vanuatu's median age from Table 2.1: vanuatu_census: Vanuatu 21.0 (printed 20.9); Table 6.16 counts 239,839 people aged 3+ of 293,963 in private households
+  rural provinces' medians, Table 2.1's five-year groups against Table 4: TORBA 19.9 (19.9), SANMA 19.8 (19.8), PENAMA 19.2 (18.6), MALAMPA 20.8 (20.8), SHEFA 22.2 (22.2), TAFEA 18.0 (17.4)
+  no polygon: Emau (737 people), counted in its province
+  no polygon: Makimae (1,111 people), counted in its province
+  no polygon: Merelava (647 people), counted in its province
+  no polygon: Mota (597 people), counted in its province
+  no polygon: Nguna (1,790 people), counted in its province
+  no polygon: North Tongoa (1,606 people), counted in its province
+  no polygon: Tongariki (1,054 people), counted in its province
+  no polygon: Torres (1,190 people), counted in its province
+  64 records: admin1 ethnicity 6, admin1 language 6, admin1 median_age 6, admin1 population 6, admin1 religion 6, admin1 sex_ratio 6, admin2 ethnicity 58, admin2 language 57, admin2 median_age 58, admin2 population 58, admin2 religion 58, admin2 sex_ratio 58
+  wrote data/processed/vanuatu_census.json (339 kB)
