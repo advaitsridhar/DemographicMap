@@ -5,7 +5,7 @@ The ABS Data API serves census tables as SDMX-JSON dataflows.  This pulls:
 
 * ``C21_G14_LGA`` religious affiliation
 * ``C21_G08_LGA`` ancestry (multi-response: people may report two ancestries,
-  so shares sum above 100% and are labelled as responses, not persons)
+  so its shares are of all the responses given, not of persons, and sum to 100%)
 * ``C21_G13_LGA`` language used at home, cross-tabulated with proficiency in
   spoken English and sex; the total of both is read, so it is one answer per
   person and partitions the population
@@ -517,6 +517,14 @@ def group_by_region(rows: list[tuple[dict[str, str], float]], label_dim: str,
     return grouped, totals
 
 
+# The shares are each response's share of all the responses (shares() divides
+# by their sum), so they add up to 100 -- measured at 99.6-100.5 after
+# rounding across the 556 units. The note once said they summed above 100%,
+# which is true only of shares of people.
+ANCESTRY_NOTE = ("ABS ancestry is multi-response (up to two per person); these shares are of "
+                 "all the responses given, not of people, so they sum to 100%.")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -596,8 +604,7 @@ def main() -> int:
                           "'not stated' is retained as its own category.",
             ancestry=anc_rows or gap(NOT_AVAILABLE),
             ancestry_year=dated(anc_rows, YEAR),
-            ancestry_note="ABS ancestry is multi-response (up to two per person), so shares "
-                          "are of responses and sum above 100%.",
+            ancestry_note=ANCESTRY_NOTE,
             language=lan_rows or gap(NOT_AVAILABLE),
             language_year=dated(lan_rows, YEAR),
             language_note=f"ABS {YEAR} language used at home (G13), one answer per person, "

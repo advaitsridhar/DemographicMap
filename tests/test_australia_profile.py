@@ -164,6 +164,29 @@ class Record(unittest.TestCase):
         with self.assertRaises(SystemExit):
             ap.ratio_context("Menzies", people, chars)
 
+    def test_the_multi_response_sentence_follows_the_numbers(self):
+        # Albury: responses exceed the people, so the shares pass 100.
+        people = {"persons": 56093, "male": 27416, "female": 28677}
+        rec = ap.unit_record("10050", "Albury", ALBURY, "admin2", people=people, median=39.0,
+                             ancestry=({"English": 40000, "Australian": 33000}, 56093.0),
+                             parent_name=None)
+        self.assertIn("the 73,000 responses exceed the people, so the shares sum to more "
+                      "than 100", rec["ethnicity_note"])
+        # Maralinga Tjarutja: 87 responses for 96 people, the shares sum to 90.6.
+        small = {"persons": 96, "male": 50, "female": 46}
+        rec = ap.unit_record("4", "Maralinga Tjarutja", ALBURY, "admin2", people=small,
+                             median=None, ancestry=({"Australian Aboriginal": 66,
+                                                     "Not stated": 8, "English": 13}, 96.0),
+                             parent_name=None)
+        note = rec["ethnicity_note"]
+        self.assertNotIn("exceed", note)
+        self.assertNotIn("more than 100,", note)
+        self.assertIn("leaves 87 responses for 96 people, so the shares sum to 90.6 rather than "
+                      "more than 100", note)
+        self.assertAlmostEqual(sum(g["pct"] for g in rec["ethnicity"]), 90.6, places=1)
+        # Belyuen: as many responses as people.
+        self.assertIn("so the shares sum to 100 rather than", ap.multi_response(149, 149))
+
     def test_g08_and_g01_disagreeing_about_the_people_stop_the_run(self):
         people = {"persons": 1000, "male": 500, "female": 500}
         with self.assertRaises(SystemExit):

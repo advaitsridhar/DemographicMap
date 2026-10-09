@@ -41,5 +41,18 @@ class IndigenousLanguagesOutOfOther(unittest.TestCase):
         self.assertNotIn("Australian Indigenous Languages", kept)
 
 
+class AncestryNote(unittest.TestCase):
+    """The ancestry shares are of all responses, so they sum to 100: the note
+    said they summed above 100%, which only shares of people do."""
+
+    def test_the_note_says_what_the_shares_sum_to(self):
+        from scripts.fetch_census._shared import shares
+        rows = shares({"English": 6823, "Australian": 6500, "Irish": 2000, "Other": 17587})
+        self.assertAlmostEqual(sum(r["pct"] for r in rows), 100.0, delta=0.2)
+        self.assertIn("of all the responses given, not of people, so they sum to 100%",
+                      abs_adapter.ANCESTRY_NOTE)
+        self.assertNotIn("above 100", abs_adapter.ANCESTRY_NOTE)
+
+
 if __name__ == "__main__":
     unittest.main()

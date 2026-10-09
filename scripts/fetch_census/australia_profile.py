@@ -503,6 +503,26 @@ def bind(units: list[dict[str, Any]], level: str, parents: dict[str, dict[str, A
     return out
 
 
+def multi_response(responses: float, counted: float) -> str:
+    """What the shares add up to here, said from the numbers.
+
+    Up to two ancestries are recorded per person, so responses usually exceed
+    people and the shares of people sum past 100. Where the ABS's random
+    adjustment of small cells leaves no more responses than people -- 87
+    against 96 in Maralinga Tjarutja, 149 against 149 in Belyuen -- saying so
+    would be false.
+    """
+    head = ("Up to two ancestries are recorded for each person, and each share is the "
+            f"percentage of the {counted:,.0f} people here who reported that ancestry")
+    if responses > counted:
+        return (f"{head}: the {responses:,.0f} responses exceed the people, so the shares sum "
+                f"to more than 100, as in the ABS's own QuickStats.")
+    total = round(100.0 * responses / counted, 1) if counted else 0.0
+    return (f"{head}. Here the ABS's random adjustment of small cells leaves "
+            f"{responses:,.0f} responses for {counted:,.0f} people, so the shares sum to "
+            f"{total:g} rather than more than 100.")
+
+
 def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
                 people: dict[str, float], median: float | None,
                 ancestry: tuple[dict[str, float], float] | None,
@@ -540,11 +560,9 @@ def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
         fields["ethnicity_note"] = (
             "Ancestry, which is what Australia's census asks in place of an ethnicity question "
             "('What is the person's ancestry?'), coded by the ABS to its Standard "
-            "Classification of Cultural and Ethnic Groups. Up to two ancestries are recorded for "
-            f"each person, so the {responses:,.0f} responses here exceed the "
-            f"{counted:,.0f} people and each share is the percentage of the people "
-            "who reported that ancestry: the shares sum to more than 100, as in the ABS's own "
-            "QuickStats. G08 names 30 ancestries; every other one is in 'Other', and 'Not "
+            "Classification of Cultural and Ethnic Groups. "
+            + multi_response(responses, counted)
+            + " G08 names 30 ancestries; every other one is in 'Other', and 'Not "
             "stated' is people who gave none. ABS 2021 Census, G08 (total responses).")
     tables = (["G01"] + (["G02"] if median is not None else [])
               + (["G08"] if ancestry else []) + list(extra_tables))
