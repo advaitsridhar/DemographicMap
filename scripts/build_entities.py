@@ -2175,11 +2175,11 @@ def weigh_adm2_parents(
     return moved, unplaced
 
 
-# Second-level polygons whose first-level unit the geometry cannot give, or
-# gives wrongly, declared with the unit the census files them under:
+# Second-level polygons whose first-level unit the geometry cannot give,
+# declared with the unit the census files them under:
 # {shapeID: (ISO3, the first-level unit's name as the boundary file labels it)}.
-# Geometry stays the rule (see link_adm2_parents); this is for the two ways it
-# fails that no rule can see, each entry with the count that shows it.
+# Geometry stays the rule (see link_adm2_parents); this is for a polygon that
+# meets no first-level one, each entry with the count that shows it.
 #
 # The parent is not decoration. It is what a first-level unit's sum is taken
 # over, so a child filed elsewhere is a child that sum leaves out: Kinmen's five
@@ -2193,15 +2193,13 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     # Kinmen's 137,208 registered people are its six townships' to the person,
     # Wuqiu's 597 included (taiwan_township, taiwan_county).
     "52511910B62500214534323": ("TWN", "Kinmen"),
-    # The polygon CGAZ labels the Phoenix Islands reaches across to Tarawa and
-    # Banaba, so these four fall inside it by area (90-99% of each). The 2020
-    # census counts all four in the Gilbert Islands group, whose 108,145 people
-    # are theirs and sixteen other islands' (kiribati_census); the Phoenix
-    # Islands' 41 are Kanton's.
-    "32618148B87111691848014": ("KIR", "Gilbert Islands"),     # Banaba
-    "32618148B78495147867108": ("KIR", "Gilbert Islands"),     # Betio
-    "32618148B16368966755916": ("KIR", "Gilbert Islands"),     # Tarawa Ieta
-    "32618148B40735312671902": ("KIR", "Gilbert Islands"),     # Tarawa Teinainano
+    # Kiribati is deliberately absent. The polygon CGAZ labels the Phoenix
+    # Islands also draws Tarawa and Banaba, which the census counts in the
+    # Gilbert group; kiribati_census gives each island-group polygon the
+    # islands it draws ('Tarawa, Banaba and the Phoenix Islands', 'Gilbert
+    # Islands except Tarawa and Banaba') and stops if the map files those
+    # islands anywhere but where they are drawn, which is where geometry puts
+    # them.
 }
 
 
@@ -2274,10 +2272,21 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # year, so a district's median-age note quoted one head count (Kathmandu's
 # 2,041,587) beside another (2,181,575), and Bagmati's districts added up to
 # 6,475,167 against the province's 6,116,866.
+# The Wikipedia floor gives way the same way where an office's file pins every
+# first-level polygon of the country. It fills only what nothing else writes,
+# but a row still claims its polygon, and two rows naming different places on
+# one polygon stop the build. Afghanistan's one row is Ghazni's infobox
+# figure under the boundary file's misspelling, 'Ghanzi', on the polygon the
+# office's estimates now pin as Ghazni. Kiribati's three are the island
+# groups' Wikipedia figures -- the Gilbert group's 83,382 of 2005 -- on
+# polygons kiribati_census gives the census counts of the islands each draws,
+# named for them: the Gilbert polygon draws neither Tarawa nor Banaba.
 SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
                            "NPL": "nepal_district.json",
                            "SLB": "solomon_census.json"},
+    "wiki_population_admin1.json": {"AFG": "afghanistan_estimates.json",
+                                    "KIR": "kiribati_census.json"},
 }
 
 

@@ -75,6 +75,11 @@ class DeclaredParents(unittest.TestCase):
         with self.assertRaises(SystemExit):
             be.declare_parents(adm1, adm2, {"W": ("CHN", "Kinmen")})
 
+    def test_kiribati_s_islands_stay_where_they_are_drawn(self):
+        # kiribati_census gives each island-group polygon the islands it draws
+        # and stops if the map files Tarawa or Banaba under another polygon.
+        self.assertNotIn("KIR", {iso3 for iso3, _ in be.DECLARED_PARENTS.values()})
+
     def test_every_declaration_names_a_drawn_shape_and_a_drawn_unit(self):
         # Read off the site the last build wrote: the polygon is drawn in that
         # country, and the unit is a first-level shape of it by its label.
@@ -456,6 +461,36 @@ class NepalDistricts(unittest.TestCase):
     def test_the_census_districts_take_the_place_of_the_projection(self):
         self.assertEqual(be.SUPERSEDED_ROWS["cod_ps_admin2.json"]["NPL"], "nepal_district.json")
         self.assertIn("nepal_district.json", be.ADAPTER_FILES)
+
+
+class WikipediaFloor(unittest.TestCase):
+    """The Wikipedia floor gives way where an office's file pins every polygon."""
+
+    def rows(self, name):
+        payload = common.read_json(ROOT / "data" / "processed" / name, []) or []
+        return payload if isinstance(payload, list) else payload.get("records", [])
+
+    def test_ghazni_and_the_gilbert_islands_are_the_offices(self):
+        self.assertEqual(be.SUPERSEDED_ROWS["wiki_population_admin1.json"],
+                         {"AFG": "afghanistan_estimates.json", "KIR": "kiribati_census.json"})
+
+    def test_each_superseded_row_s_polygon_is_pinned_by_the_office_s_file(self):
+        # Dropping a Wikipedia row loses nothing only if the file it gives way
+        # to writes the same polygon.
+        wiki = self.rows("wiki_population_admin1.json")
+        for iso3, by in be.SUPERSEDED_ROWS["wiki_population_admin1.json"].items():
+            self.assertIn(by, be.ADAPTER_FILES)
+            pinned = {r.get("shape_id") for r in self.rows(by) if r.get("level") == "admin1"}
+            mine = [r for r in wiki if (r.get("country") or r.get("id", "")[:3]) == iso3]
+            self.assertTrue(mine, iso3)
+            for r in mine:
+                self.assertIn(r.get("shape_id"), pinned, (iso3, r.get("name")))
+
+    def test_the_superseded_rows_are_not_loaded(self):
+        loaded = quiet(be.load_adapters)
+        for iso3 in ("AFG", "KIR"):
+            sources = {r["_source"] for r in loaded.get(iso3, [])}
+            self.assertNotIn("wiki_population_admin1.json", sources, iso3)
 
 
 class TheBlockedLineIsGone(unittest.TestCase):
