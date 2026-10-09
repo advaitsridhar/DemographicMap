@@ -480,7 +480,22 @@ def key_rows(gray: Any, dpi: int) -> dict[str, Any]:
     return found
 
 
-def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int) -> None:
+def patient_fetch(url: str, pause: float) -> tuple[int, str, bytes]:
+    """``fetch`` after a pause, tried three times: the Wayback Machine refuses
+    connections from a client that asks for one file after another without one
+    (27 reports in, the first run, 9789a13)."""
+    import time
+    for wait in (pause, 30.0, 90.0):
+        time.sleep(wait)
+        try:
+            return fetch(url, timeout=300)
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as err:
+            log(f"    {type(err).__name__}: {err}; again after a wait")
+    return fetch(url, timeout=300)
+
+
+def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int, name: str,
+               pause: float) -> None:
     """Every captured report's key-indicator rows, cut out and stacked to be read."""
     import os
 
@@ -504,7 +519,7 @@ def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int) -> None
         stem = r[2].rsplit("/", 1)[-1].rsplit(".", 1)[0]
         source = f"http://web.archive.org/web/{r[1]}id_/{r[2]}"
         try:
-            status, _, pdf_bytes = fetch(source, timeout=300)
+            status, _, pdf_bytes = patient_fetch(source, pause)
         except Exception as err:  # noqa: BLE001 -- reported
             log(f"  {stem}: {type(err).__name__}: {err}")
             continue
@@ -554,7 +569,7 @@ def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int) -> None
                 y += im.height + 3
             ImageDraw.Draw(sheet).line((0, y + 2, width, y + 2), fill=128, width=2)
             y += 6
-        path = f"{STRIP_DIR}/tha2000-{k // per + 1:02d}.jpg"
+        path = f"{STRIP_DIR}/{name}-{k // per + 1:02d}.jpg"
         sheet.save(path, "JPEG", quality=80, optimize=True)
         log(f"  {path}: reports {k + 1}-{k + len(group)}, {width}x{height}, "
             f"{os.path.getsize(path):,} B")
@@ -628,11 +643,14 @@ def main() -> int:
     s.add_argument("--per", type=int, default=16, help="reports to an image")
     s.add_argument("--match", default="", help="only the reports whose URL matches")
     s.add_argument("--pages", type=int, default=3, help="pages searched for the table")
+    s.add_argument("--name", default="tha2000", help="the images' name, before their number")
+    s.add_argument("--pause", type=float, default=5.0, help="seconds between two reports")
     u = sub.add_parser("unstrip")
     u.add_argument("match", help="a pattern the image names to remove match")
     args = ap.parse_args()
     if args.cmd == "strips":
-        cmd_strips(args.pattern, args.dpi, args.per, args.match, args.pages)
+        cmd_strips(args.pattern, args.dpi, args.per, args.match, args.pages, args.name,
+                   args.pause)
         return 0
     if args.cmd == "unstrip":
         cmd_unstrip(args.match)
