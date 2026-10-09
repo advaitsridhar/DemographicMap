@@ -175,7 +175,7 @@ def build(text: str) -> list[dict[str, Any]]:
                     "printed; 'other religions' is the printed 'has a religion' less "
                     "Protestant, Catholic and Buddhist. "
                     f"This province is {members}. The 2015 census asked religion, and its "
-                    "count by province (korea_religion) stands in front of this survey.")))
+                    "count by province stands in front of this survey.")))
     return records
 
 

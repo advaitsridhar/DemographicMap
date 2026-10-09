@@ -427,9 +427,9 @@ CITIZENSHIP_NOTE = (
     "58 tables and its Fact Sheet, the 2016 census's four Briefs' tables and the 2011 census's "
     "93 tables have none, and 2021 and 2011 give Samoan citizenship instead (2021 Table 8a, by "
     "village; 2011 Table 8, by urban and rural residence only). "
-    "Under the owner's rule for states that count citizenship rather than ethnicity, this is "
-    "the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in "
-    "Samoa or abroad to a citizen parent ({born_here:,.0f} and {born_abroad:,.0f} here), or "
+    "This is the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- "
+    "born in Samoa or abroad to a citizen parent ({born_here:,.0f} and {born_abroad:,.0f} "
+    "here), or "
     "naturalised ({naturalised:,.0f}) -- and 'Foreign nationals' the {foreign:,.0f} who are "
     "not. A Samoan citizen may be of any ancestry.")
 LANGUAGE_GAP = (

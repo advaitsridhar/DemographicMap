@@ -144,7 +144,7 @@ COUNTY_NOTE = (
     "The 2020 census counted every county's people by age, sex and nationality (民族). The "
     "National Bureau of Statistics' census yearbook (中国人口普查年鉴-2020) publishes its "
     "tables by province, and the province carries them. Some provinces' own census yearbooks "
-    "print every county, and china_county_census writes those counts on a polygon only where "
+    "print every county, and those counts are written on a polygon only where "
     "it is still the one county counted: the boundary file's county polygons are a division "
     "of the mid-1990s (Guangdong's Panyu, Huadu, Nanhai and Shunde are drawn as the "
     "county-level cities they were before becoming districts in 2000 and 2002), and a 2020 "
