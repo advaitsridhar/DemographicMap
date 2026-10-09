@@ -95,6 +95,96 @@ def cod_book():
                  "kir_admpop_adm3_2020": adm3})
 
 
+# The 2015 census's religion by island (Volume 1, Table 6): each line's total
+# and 14 religions as the volume prints them. Its males and females are split
+# here, a half each, which keeps every sum the reader checks.
+TABLE6 = """
+Banaba | 268 176 65 15 - 11 - 1 - - - - - - -
+Makin | 1,990 1,588 317 5 1 47 8 9 - - 1 - - - 14
+Butaritari | 3,224 2,660 426 56 3 49 - 21 - - 2 - - - 7
+Marakei | 2,799 2,151 436 45 8 119 - 25 2 2 2 - - - 9
+Abaiang | 5,568 4,195 937 19 26 198 20 105 2 - 2 4 34 3 23
+NTarawa | 6,629 4,729 1,311 66 2 327 33 149 10 2 - - - - -
+STarawa | 39,058 20,984 11,944 840 186 2,999 244 878 233 81 65 42 90 21 451
+Betio | 17,330 10,403 5,258 293 21 728 34 266 68 31 1 22 9 6 190
+Maiana | 1,982 1,071 768 28 - 76 - 22 1 - - 7 7 - 2
+Abemama | 3,262 2,142 644 244 2 100 7 79 - 2 1 - - 9 32
+Kuria | 1,046 474 423 87 1 34 - 19 - - - - - - 8
+Aranuka | 1,125 602 450 16 - 51 - - - - 1 5 - - -
+Nonouti | 2,743 1,520 1,012 44 - 65 - 84 10 7 - - 1 - -
+NTabiteuea | 3,955 2,596 985 36 - 239 - 80 2 - 1 4 - 4 8
+STabiteuea | 1,306 726 381 2 - 39 - 157 - - 1 - - - -
+Beru | 2,051 602 1,339 12 - 67 - 31 - - - - - - -
+Nikunau | 1,789 899 821 5 - 30 1 28 - 5 - - - - -
+Onotoa | 1,393 378 935 - - 35 8 33 1 - - - - 2 1
+Tamana | 1,104 22 1,058 14 - 4 - 6 - - - - - - -
+Arorae | 1,011 14 991 - - - - 6 - - - - - - -
+Teeraina | 1,712 888 710 53 - 8 - 53 - - - - - - -
+Tabuaeran | 2,315 1,153 920 46 4 92 - 81 5 - - - - 6 8
+Kiritimati | 6,456 3,136 2,323 138 25 536 9 181 18 9 - 2 - - 79
+Kanton | 20 7 10 - - 3 - - - - - - - - -
+"""
+# The heading as the volume's text layer breaks it over lines.
+HEADING = ("Total  Total \n Roman \nCatholic  KPC \n Seventh \nDay \nAdventist \n Church "
+           "\nOf God \n Latter \nDay \nSaints \n \nAssembly \nof God  Bahai \n Jehova's "
+           "\nWitness \n(Te Koaua) \n \nIslam \n Four \nSquare \n Te \nRan \n All \nNation "
+           "\n No \nreligion \n \nOther ")
+
+
+def figure(n):
+    return "-" if n == 0 else f"{n:,}"
+
+
+def table6_lines(text=TABLE6):
+    """{line: {sex: [figures]}}, the country's added up from its islands."""
+    rows = {}
+    for line in text.strip().splitlines():
+        name, _, cells = (part.strip() for part in line.partition("|"))
+        total = [0 if c == "-" else int(c.replace(",", "")) for c in cells.split()]
+        male = [c // 2 for c in total[1:]]
+        female = [c - m for c, m in zip(total[1:], male)]
+        rows[name] = {"Total": total, "Male": [sum(male)] + male,
+                      "Female": [sum(female)] + female}
+    return {"Kiribati": {sex: [sum(r[sex][i] for r in rows.values()) for i in range(15)]
+                         for sex in ("Total", "Male", "Female")}, **rows}
+
+
+def volume_pages(rows=None, heading=HEADING):
+    """The 2015 volume's pages as pypdf gives them: contents, Table 1a, then Table 6
+    over four pages, the next table starting on the last."""
+    rows = rows or table6_lines()
+    names = list(rows)
+    contents = ("Table 1a: Population and No of Households by Island: 2010, 2015 ......... 31 \n"
+                "Table 6: Population by island, sex and religion: 2015 ............. 56 \n"
+                "Table 7: Population by Home Country, Sex, and Broad Age Group:  2015 ..... 60 ")
+    stated = {n: r["Total"][0] for n, r in rows.items() if n != "Kiribati"}
+    stated["STarawa"] += stated.pop("Betio")
+    table1a = ["Table 1a: Population and No of Households by Island: 2010, 2015 ", " ",
+               "Population Private Hhold Population Private Hhold",
+               f"Total 103,058        16,043               {rows['Kiribati']['Total'][0]:,}  17,772"]
+    table1a += [f"{n} 100 10 {c:,} 10" for n, c in stated.items()]
+    pages = [contents, "\n".join(table1a) + "\n2010 2015\n32 "]
+    chunks = [names[0:7], names[7:14], names[14:21], names[21:]]
+    titles = ["Table 6: Population by island, sex and religion: 2015 \n \n \n"
+              "Table 6: Population by island, sex and religion - census 2015"] + [
+              "Table 6 cont: Population by island, sex and religion: 2015 "] * 3
+    for number, (title, chunk) in enumerate(zip(titles, chunks), start=56):
+        lines = ["99 years 4 1 3", "Total Urban Rural", f"{number - 1} "] if number == 56 else []
+        lines += [title, heading]
+        for name in chunk:
+            if name != "Kiribati":
+                lines.append(f"    {name}")
+            for sex in ("Total", "Male", "Female"):
+                lines.append(f"{sex} " + "   ".join(figure(n) for n in rows[name][sex]) + " ")
+        lines.append(f"{number} ")
+        if number == 59:
+            lines += ["Table 7: Population by Home Country, Sex, and Broad Age Group:  2015 ",
+                      "Total 0-14 15-24 25-34 35-49 50+", "    Total",
+                      "Total 110,136     38,438    21,995       17,684     17,382    14,637 "]
+        pages.append("\n".join(lines))
+    return pages
+
+
 class TheOfficesCounts(unittest.TestCase):
     def test_the_islands_make_the_census(self):
         self.assertEqual(sum(COUNTS.values()), kc.NATIONAL)
@@ -129,8 +219,9 @@ class TheRecords(unittest.TestCase):
     def setUp(self):
         counts = kc.read_profile(profile_book())
         self.census, self.ages = kc.build(counts, kc.read_cod(cod_book()),
-                                          kc.read_report(counts), load_units("KIR", "admin1"),
-                                          load_units("KIR", "admin2"))
+                                          kc.read_report(counts),
+                                          kc.read_religion(volume_pages()),
+                                          load_units("KIR", "admin1"), load_units("KIR", "admin2"))
 
     def named(self, records, name):
         return next(r for r in records if r["name"] == name)
@@ -156,7 +247,7 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(betio["sex_ratio"]["value"], 95.1)
         self.assertIn("BetioEast", betio["sex_ratio_note"])
         census = self.named(self.census, "Betio")
-        self.assertEqual(census["religion"]["status"], "not_available")
+        self.assertEqual(census["language"]["status"], "not_available")
 
     def test_an_island_carries_the_offices_own_age_sex_and_ethnicity(self):
         betio = self.named(self.census, "Betio")
@@ -176,6 +267,86 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(banaba["median_age"]["status"], "not_available")
         self.assertIn("13.8", banaba["median_age"]["note"])
         self.assertIn("150 of its 333", banaba["median_age"]["note"])
+
+
+class TheReligionOf2015(unittest.TestCase):
+    def test_the_table_adds_up_and_agrees_with_table_1a(self):
+        table6 = kc.read_religion(volume_pages())
+        self.assertEqual(table6["Kiribati"]["Total"][0], kc.NATIONAL_2015)
+        self.assertEqual(table6["Betio"]["Total"][:3], [17_330, 10_403, 5_258])
+        self.assertEqual(table6["Kanton"]["Total"][0], 20)
+
+    def test_a_misread_figure_stops_the_run(self):
+        rows = table6_lines()
+        rows["Kuria"]["Total"][2] += 1          # its religions no longer make its total
+        with self.assertRaises(SystemExit):
+            kc.read_table6(volume_pages(rows))
+        rows = table6_lines()
+        rows["Kuria"]["Male"][3] += 1            # nor its sexes
+        rows["Kuria"]["Male"][0] += 1
+        with self.assertRaises(SystemExit):
+            kc.read_table6(volume_pages(rows))
+
+    def test_a_heading_out_of_order_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            kc.read_table6(volume_pages(heading=HEADING.replace("Islam", "Isl am")))
+        swapped = HEADING.replace(" Four \nSquare \n Te \nRan", " Te \nRan \n Four \nSquare")
+        self.assertNotEqual(swapped, HEADING)
+        with self.assertRaises(SystemExit):
+            kc.read_table6(volume_pages(heading=swapped))
+
+    def test_an_island_table_1a_counts_otherwise_stops_the_run(self):
+        pages = volume_pages()
+        pages[1] = pages[1].replace("Kuria 100 10 1,046 10", "Kuria 100 10 1,047 10")
+        with self.assertRaises(SystemExit):
+            kc.read_religion(pages)
+
+    def test_a_row_with_a_cell_too_many_stops_the_run(self):
+        broken = [p.replace("Total 1,982", "Total 1,982   1", 1) for p in volume_pages()]
+        with self.assertRaises(SystemExit):
+            kc.read_table6(broken)
+
+    def test_the_contents_line_is_not_the_table(self):
+        pages = volume_pages()
+        with self.assertRaises(SystemExit):
+            kc.read_table6(pages[:1])
+
+
+class TheReligionRecords(unittest.TestCase):
+    def setUp(self):
+        counts = kc.read_profile(profile_book())
+        self.census, _ = kc.build(counts, kc.read_cod(cod_book()), kc.read_report(counts),
+                                  kc.read_religion(volume_pages()), load_units("KIR", "admin1"),
+                                  load_units("KIR", "admin2"))
+
+    def named(self, name):
+        return next(r for r in self.census if r["name"] == name)
+
+    def test_an_island_carries_its_2015_religion(self):
+        betio = self.named("Betio")
+        self.assertEqual(betio["religion_year"], 2015)
+        self.assertEqual(betio["religion"][0], {"group": "Roman Catholic", "pct": 60.0,
+                                                "count": 10_403})
+        self.assertIn("KPC", betio["religion_note"])
+        self.assertIn("Table 6", betio["religion_note"])
+        self.assertEqual(sum(r["count"] for r in betio["religion"]), 17_330)
+
+    def test_te_ran_and_all_nation_are_counted_as_other_and_named(self):
+        abaiang = self.named("Abaiang")
+        other = next(r for r in abaiang["religion"] if r["group"] == "Other religion")
+        self.assertEqual(other["count"], 4 + 34 + 23)
+        self.assertIn("'Te Ran'", abaiang["religion_note"])
+        self.assertIn("'All Nation'", abaiang["religion_note"])
+        beru = self.named("Beru")
+        self.assertNotIn("Te Ran", beru["religion_note"])
+
+    def test_the_groups_add_their_islands_makin_included(self):
+        gilbert = self.named("Gilbert Islands")
+        people = sum(r["count"] for r in gilbert["religion"])
+        self.assertEqual(people, kc.NATIONAL_2015 - 1_712 - 2_315 - 6_456 - 20)
+        self.assertIn("Makin", gilbert["religion_note"])
+        phoenix = self.named("Phoenix Islands")
+        self.assertEqual(sum(r["count"] for r in phoenix["religion"]), 20)
 
 
 class TheReport(unittest.TestCase):

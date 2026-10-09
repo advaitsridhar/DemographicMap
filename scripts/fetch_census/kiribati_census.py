@@ -33,9 +33,27 @@ many people it describes. It folds Betio into South Tarawa and tabulates Betio
 as the village "BetioEast", so Betio's figures are that village's and
 Teinainano's are South Tarawa's without it.
 
-**Religion and language** the records say why are empty: religion is
-published for the country and mapped by island without figures; language is
-not tabulated at all.
+**Religion by island is the 2015 census's.** The 2020 census publishes
+religion for the country (General Report, Table G-3) and maps it by island in
+its Census Atlas (Map 18) without printing a figure. The census before it
+tabulated it by island: the 2015 *Volume 1: Management Report and Basic
+Tables*, Table 6 (pp. 56-59), "Population by island, sex and religion", 14
+columns from Roman Catholic to Other, with Betio apart from the rest of South
+Tarawa -- the two polygons the map draws -- and Makin, Banaba and Kanton on
+lines of their own. Its text layer reads, so it is parsed, not transcribed,
+and refused unless every line's sexes make its total, every line's religions
+make it too, the islands make each of the country's columns, the country is
+the 110,136 the census counted, and each island's total is its 2015
+population in the same volume's Table 1a (where South Tarawa still includes
+Betio). Its "Te Ran" and "All Nation" columns -- 86 and 141 people in the
+country -- name bodies whose tradition the volume does not state, so they are
+counted with its "Other", and the note names them. The table has one column
+for the Kiribati Protestant Church, "KPC"; the 2020 census lists the Kiribati
+Uniting Church and the KPC apart, so the record says that too.
+
+**Language** the records say why is empty: no census tabulates it -- the
+2020 General Report and Atlas report only whether people can read and write,
+as the 2015 volume (Table 15) and the 2010 tables (Table 16, literacy) do.
 
 **What the map draws.** 23 islands at the second level (Makin, 1,914 people,
 has no polygon) and the three island groups at the first: Gilbert (with
@@ -48,14 +66,15 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import re
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .oceania_common import (
-    bind_level, check, load_units, median_from_groups, number, population, rows_of, sex_ratio,
-    shares_of, summarise, transcription, unit_record, workbook,
+    FIGURE, bind_level, check, load_units, median_from_groups, number, population, rows_of,
+    sex_ratio, shares_of, summarise, transcription, unit_record, workbook,
 )
 
 OUT = "kiribati_census.json"
@@ -75,6 +94,48 @@ COD = ("Pacific Community (SPC) tabulation of the 2020 census by island, five-ye
        "and sex (UNFPA / OCHA COD-PS for Kiribati)")
 LICENCE = "None stated -- Kiribati National Statistics Office publication, cited as such"
 NATIONAL = 119_438
+
+# The 2015 census's religion by island (Volume 1, Table 6).
+RELIGION_URL = ("https://nso.gov.ki/download/91/2015-census/1054/"
+                "population-census-2015-report-volume-1-final.pdf")
+RELIGION_REPORT = (f"{OFFICE}, 2015 Population and Housing Census, Volume 1: Management "
+                   f"Report and Basic Tables (September 2016)")
+RELIGION_YEAR = 2015
+NATIONAL_2015 = 110_136
+# The table's titles, and not the contents page's line for it, which runs on to
+# its page number.
+T6_TITLE = re.compile(r"^Table 6(?: cont)?: Population by island, sex and religion"
+                      r"(?:: | - census )2015$")
+T1A_TITLE = re.compile(r"^Table 1a: Population and No of Households by Island: 2010, 2015\s*$")
+# Table 6's heading, every page of it, as its text layer reads it.
+T6_HEADER = ("Total Total Roman Catholic KPC Seventh Day Adventist Church Of God Latter Day "
+             "Saints Assembly of God Bahai Jehova's Witness (Te Koaua) Islam Four Square Te Ran "
+             "All Nation No religion Other")
+# Its columns after the Total, in order, and the name each is written under:
+# the two bodies whose tradition the volume does not say go with its "Other".
+T6_COLUMNS = (
+    ("Roman Catholic", "Roman Catholic"),
+    ("KPC", "Kiribati Protestant Church"),
+    ("Seventh Day Adventist", "Seventh-day Adventist"),
+    ("Church Of God", "Church of God"),
+    ("Latter Day Saints", "Church of Jesus Christ of Latter-day Saints"),
+    ("Assembly of God", "Assemblies of God"),
+    ("Bahai", "Baha'i"),
+    ("Jehova's Witness (Te Koaua)", "Jehovah's Witnesses"),
+    ("Islam", "Islam"),
+    ("Four Square", "Foursquare Church"),
+    ("Te Ran", "Other religion"),
+    ("All Nation", "Other religion"),
+    ("No religion", "No religion"),
+    ("Other", "Other religion"),
+)
+FOLDED = ("Te Ran", "All Nation")
+# Table 6's island lines (Table 1a's too, but for Betio, which 1a counts in STarawa).
+T6_ISLANDS = ("Banaba", "Makin", "Butaritari", "Marakei", "Abaiang", "NTarawa", "STarawa",
+              "Betio", "Maiana", "Abemama", "Kuria", "Aranuka", "Nonouti", "NTabiteuea",
+              "STabiteuea", "Beru", "Nikunau", "Onotoa", "Tamana", "Arorae", "Teeraina",
+              "Tabuaeran", "Kiritimati", "Kanton")
+SEXES = ("Total", "Male", "Female")
 
 # The island as the map draws it -> its sheet in the profile workbook, and its
 # row in SPC's island table ("" where SPC does not tabulate it as an island).
@@ -117,6 +178,11 @@ REPORT = f"{OFFICE}, 2020 Population and Housing Census General Report"
 REPORT_ROWS = {**{i: i for i in ISLANDS}, "Makin": "Makin", "Tarawa Ieta": "North Tarawa",
                "Tarawa Teinainano": "South Tarawa", "Tabiteuea North": "North Tabiteuea",
                "Tabiteuea South": "South Tabiteuea", "Teraina": "Teeraina"}
+# The island as the map draws it (or, for Makin, names it) -> its line in the
+# 2015 volume's Table 6.
+T6_ROWS = {**{i: i for i in ISLANDS}, "Makin": "Makin", "Tarawa Ieta": "NTarawa",
+           "Tarawa Teinainano": "STarawa", "Tabiteuea North": "NTabiteuea",
+           "Tabiteuea South": "STabiteuea", "Teraina": "Teeraina"}
 DIVISIONS = {
     "South Tarawa Division": ["South Tarawa", "Betio"],
     "Northern Division": ["Makin", "Butaritari", "Marakei", "Abaiang", "North Tarawa"],
@@ -339,6 +405,163 @@ def read_report(counts: dict[str, int]) -> dict[str, Any]:
     return {"g2": g2, "a10": a10, "a3": a3, "medians": medians}
 
 
+# ---------------------------------------------------------------------------
+# The 2015 volume's religion by island
+# ---------------------------------------------------------------------------
+
+def plain(text: str) -> str:
+    return " ".join(text.replace("’", "'").split())
+
+
+def figures_of(line: str) -> tuple[str, list[str]] | None:
+    """(first word, the figures after it) when every word after the first is a figure."""
+    first, _, rest = line.strip().partition(" ")
+    cells = rest.split()
+    if cells and all(FIGURE.match(c) for c in cells):
+        return first, cells
+    return None
+
+
+def as_int(cell: str) -> int:
+    return 0 if cell == "-" else int(cell.replace(",", ""))
+
+
+def read_table6(pages: list[str]) -> dict[str, dict[str, list[int]]]:
+    """{line: {"Total"/"Male"/"Female": [total, 14 religions]}}, the country as "Kiribati".
+
+    Each page of the table is read from its title on, its heading checked word
+    for word, and up to the next table's title, which the last page carries.
+    """
+    rows: dict[str, dict[str, list[int]]] = {}
+    pages_read = 0
+    for page in pages:
+        lines = page.splitlines()
+        starts = [i for i, line in enumerate(lines) if T6_TITLE.match(line.strip())]
+        if not starts:
+            continue
+        pages_read += 1
+        current = None if rows else "Kiribati"
+        heading: list[str] = []
+        reading_heading = True
+        for line in lines[starts[-1] + 1:]:
+            stripped = line.strip()
+            if re.match(r"^Table \d", stripped):
+                break
+            row = figures_of(stripped)
+            if row and row[0] in SEXES:
+                reading_heading = False
+                sex, cells = row
+                check(len(cells) == 1 + len(T6_COLUMNS),
+                      f"kiribati_census: Table 6's {current} {sex} line has {len(cells)} "
+                      f"figures for {1 + len(T6_COLUMNS)} columns: {stripped!r}")
+                check(current is not None, f"kiribati_census: Table 6 has figures before "
+                                           f"an island on a continued page: {stripped!r}")
+                check(sex not in rows.setdefault(current, {}),
+                      f"kiribati_census: Table 6 gives {current} two {sex} lines")
+                rows[current][sex] = [as_int(c) for c in cells]
+            elif stripped in T6_ISLANDS:
+                reading_heading = False
+                check(stripped not in rows, f"kiribati_census: Table 6 lists {stripped} twice")
+                current = stripped
+            elif reading_heading and stripped:
+                heading.append(stripped)
+        check(plain(" ".join(heading)) == T6_HEADER,
+              f"kiribati_census: a page of Table 6 is headed {plain(' '.join(heading))!r}")
+    check(pages_read >= 1, "kiribati_census: the 2015 volume has no Table 6")
+    check(set(rows) == {"Kiribati", *T6_ISLANDS},
+          f"kiribati_census: Table 6 lists {sorted(set(rows) ^ {'Kiribati', *T6_ISLANDS})} "
+          f"against its 24 islands and the country")
+    for name, sexes in rows.items():
+        check(set(sexes) == set(SEXES), f"kiribati_census: Table 6 gives {name} {sorted(sexes)}")
+        for sex, cells in sexes.items():
+            check(sum(cells[1:]) == cells[0],
+                  f"kiribati_census: Table 6's religions for {name} ({sex}) make "
+                  f"{sum(cells[1:]):,}, not {cells[0]:,}")
+        check([m + f for m, f in zip(sexes["Male"], sexes["Female"])] == sexes["Total"],
+              f"kiribati_census: Table 6's males and females for {name} do not make its total")
+    for i in range(1 + len(T6_COLUMNS)):
+        made = sum(rows[island]["Total"][i] for island in T6_ISLANDS)
+        check(made == rows["Kiribati"]["Total"][i],
+              f"kiribati_census: Table 6's islands make {made:,} in column {i}, the country "
+              f"{rows['Kiribati']['Total'][i]:,}")
+    check(rows["Kiribati"]["Total"][0] == NATIONAL_2015,
+          f"kiribati_census: Table 6 counts {rows['Kiribati']['Total'][0]:,} people, not "
+          f"{NATIONAL_2015:,}")
+    return rows
+
+
+def read_table1a(pages: list[str]) -> dict[str, int]:
+    """{line: 2015 population} from Table 1a, whose STarawa still holds Betio."""
+    best: dict[str, int] = {}
+    for page in pages:
+        lines = page.splitlines()
+        if not any(T1A_TITLE.match(line.strip()) for line in lines):
+            continue
+        found = {}
+        for line in lines:
+            row = figures_of(line)
+            if row and (row[0] in T6_ISLANDS or row[0] == "Total") and len(row[1]) == 4:
+                found[row[0]] = as_int(row[1][2])
+        if len(found) > len(best):
+            best = found
+    expected = {"Total", *T6_ISLANDS} - {"Betio"}
+    check(set(best) == expected, f"kiribati_census: Table 1a lists "
+                                 f"{sorted(set(best) ^ expected)} against its islands")
+    return best
+
+
+def read_religion(pages: list[str]) -> dict[str, dict[str, list[int]]]:
+    """Table 6, checked against Table 1a's island populations of the same census."""
+    table6, table1a = read_table6(pages), read_table1a(pages)
+    for island in T6_ISLANDS:
+        if island == "Betio":
+            continue
+        made = table6[island]["Total"][0] + (table6["Betio"]["Total"][0]
+                                             if island == "STarawa" else 0)
+        check(made == table1a[island],
+              f"kiribati_census: Table 6 counts {made:,} on {island}"
+              f"{' with Betio' if island == 'STarawa' else ''}, Table 1a {table1a[island]:,}")
+    check(table1a["Total"] == NATIONAL_2015,
+          f"kiribati_census: Table 1a counts {table1a['Total']:,} people in 2015")
+    log(f"  2015 volume: Table 6's 24 islands make every column of the country's "
+        f"{NATIONAL_2015:,}, and each is its Table 1a population")
+    return table6
+
+
+KPC_NOTE = (" The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 "
+            "census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the "
+            "country), so the 2015 'KPC' share is to be read against their sum.")
+
+
+def religion_fields(labels: list[str], table6: dict[str, dict[str, list[int]]],
+                    where: str) -> dict[str, Any]:
+    """The 2015 religion of the Table 6 lines named, added up."""
+    totals = [sum(table6[label]["Total"][i] for label in labels)
+              for i in range(1 + len(T6_COLUMNS))]
+    counts: dict[str, float] = {}
+    folded = {}
+    for (printed, name), count in zip(T6_COLUMNS, totals[1:]):
+        counts[name] = counts.get(name, 0) + count
+        if printed in FOLDED and count:
+            folded[printed] = count
+    added = (f" The islands added up: {', '.join(labels)}." if len(labels) > 1 else "")
+    fold_note = ""
+    if folded:
+        fold_note = (" Counted with the table's 'Other': "
+                     + " and ".join(f"{n:,} answering '{p}'" for p, n in folded.items())
+                     + (", bodies" if len(folded) > 1 else ", a body")
+                     + " whose tradition the volume does not state.")
+    return {
+        "religion": shares_of(counts, totals[0]),
+        "religion_year": RELIGION_YEAR,
+        "religion_note": (
+            f"Religion of the {totals[0]:,} people of {where} at the 2015 census (Volume 1, "
+            f"Table 6, by island), the latest count of it below the country: the 2020 census "
+            f"publishes religion for the country (General Report, Table G-3) and maps it by "
+            f"island without figures (Census Atlas, Map 18).{added}{fold_note}{KPC_NOTE}"),
+    }
+
+
 MEDIAN_CONTRADICTED = (
     "The General Report prints {island}'s median age as {median} (Table A-10a), and the same "
     "table counts {young:,.0f} of its {people:,.0f} people under 15 -- {side} half -- which "
@@ -455,14 +678,11 @@ def read_cod(book) -> dict[str, dict[str, Any]]:
 # Records
 # ---------------------------------------------------------------------------
 
-RELIGION_GAP = (
-    "The 2020 census asked religion, and the Statistics Office publishes it for the country "
-    "(General Report, Table G-3: 58.9% Catholic, 21.2% Kiribati Uniting Church, 8.4% "
-    "Kiribati Protestant Church) and by island only as a map in its Census Atlas (Map 18), "
-    "which prints no figures.")
 LANGUAGE_GAP = (
-    "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the "
-    "only language item they report is whether people can read and write, in any language.")
+    "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas "
+    "report only whether people can read and write, in any language; the 2015 census's "
+    "Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's "
+    "tables give literacy (Table 16) and none either.")
 AGE_NOTE = (
     "{what}, from the Pacific Community's tabulation of the 2020 census by island, five-year "
     "age group and sex (UNFPA and OCHA's COD-PS for Kiribati), which counts {people:,} "
@@ -500,7 +720,6 @@ def census_fields(final: int, note: str) -> dict[str, Any]:
     return {
         "population": population(final, YEAR, PROFILE),
         "population_note": note,
-        "religion": gap(NOT_AVAILABLE, RELIGION_GAP),
         "language": gap(NOT_AVAILABLE, LANGUAGE_GAP),
     }
 
@@ -510,7 +729,10 @@ SOURCES = [
      "license": LICENCE},
     {"field": "median_age/sex_ratio/ethnicity", "name": REPORT, "url": REPORT_URL,
      "year": YEAR, "license": LICENCE},
-    {"field": "religion/language (why empty)", "name": f"{REPORT}; Kiribati Census Atlas",
+    {"field": "religion", "name": f"{RELIGION_REPORT}, Table 6: Population by island, sex "
+                                  f"and religion", "url": RELIGION_URL,
+     "year": RELIGION_YEAR, "license": LICENCE},
+    {"field": "language (why empty)", "name": f"{REPORT}; Kiribati Census Atlas",
      "url": ATLAS_URL, "year": YEAR, "license": LICENCE},
 ]
 AGE_SOURCES = [{"field": "median_age/sex_ratio", "name": COD, "url": COD_PAGE, "year": YEAR,
@@ -518,11 +740,14 @@ AGE_SOURCES = [{"field": "median_age/sex_ratio", "name": COD, "url": COD_PAGE, "
 
 
 def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[str, Any],
+          table6: dict[str, dict[str, list[int]]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
           ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     group_units = bind_level({g: (g, "") for g in GROUPS}, admin1, {})
     parents = {u["id"]: u["name"] for u in admin1}
     island_units = bind_level({i: (i, "") for i in ISLANDS}, admin2, parents)
+    check(set(T6_ROWS.values()) == set(T6_ISLANDS),
+          "kiribati_census: the drawn islands and Makin are not Table 6's 24 lines")
     census, ages = [], []
     for group, unit in group_units.items():
         final = sum(counts[i] for i in GROUPS[group])
@@ -531,18 +756,28 @@ def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[s
         labels = [REPORT_ROWS[i] for i in GROUPS[group]]
         census.append(unit_record("KIR", group, unit["name"], unit, "admin1", None, SOURCES,
                                   **census_fields(final, note),
-                                  **report_fields(labels, report, group)))
+                                  **report_fields(labels, report, group),
+                                  **religion_fields([T6_ROWS[i] for i in GROUPS[group]],
+                                                    table6, group)))
         ages.append(unit_record("KIR", group, unit["name"], unit, "admin1", None, AGE_SOURCES,
                                 **age_fields(group, cod, final)))
     for island, unit in island_units.items():
         note = "The 2020 census count (Island Profile tables)."
         census.append(unit_record("KIR", island, unit["name"], unit, "admin2", None, SOURCES,
                                   **census_fields(counts[island], note),
-                                  **report_fields([REPORT_ROWS[island]], report, island)))
+                                  **report_fields([REPORT_ROWS[island]], report, island),
+                                  **religion_fields([T6_ROWS[island]], table6, island)))
         ages.append(unit_record("KIR", island, unit["name"], unit, "admin2", None, AGE_SOURCES,
                                 **age_fields(island, cod, counts[island])))
     log(f"  no polygon: Makin ({counts['Makin']:,} people), counted in the Gilbert Islands")
     return census, ages
+
+
+def pdf_pages(url: str) -> list[str]:
+    from pypdf import PdfReader  # noqa: PLC0415
+    blob = http_get(url, binary=True, timeout=600, headers={"Accept": "application/pdf,*/*"})
+    check(isinstance(blob, bytes) and blob[:5] == b"%PDF-", f"kiribati_census: {url} is no PDF")
+    return [(page.extract_text() or "") for page in PdfReader(io.BytesIO(blob)).pages]
 
 
 def cod_book():
@@ -560,8 +795,9 @@ def main() -> int:
         "age and sex tabulation")
     counts = read_profile(workbook(PROFILE_URL))
     report = read_report(counts)
+    table6 = read_religion(pdf_pages(RELIGION_URL))
     cod = read_cod(cod_book())
-    census, ages = build(counts, cod, report, load_units("KIR", "admin1"),
+    census, ages = build(counts, cod, report, table6, load_units("KIR", "admin1"),
                          load_units("KIR", "admin2"))
     log("  " + summarise(census + ages))
     write_json(PROCESSED / OUT, census)
