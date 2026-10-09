@@ -192,10 +192,17 @@ def flat_rows(rows: list[list[Any]], units: tuple[str, ...]) -> list[tuple[int, 
     known = {fold(u): u for u in units}
     out: list[tuple[int, str, dict]] = []
     columns: dict[int, str] = {}
+    above: list[Any] = []
     for n, row in enumerate(rows, start=1):
         cells = list(row)
-        heads = {i: known[fold(c)] for i, c in enumerate(cells)
-                 if isinstance(c, str) and fold(c) in known}
+        # Pohnpei's 2023 tables break a long name over two header rows:
+        # "Madole-" above "nihmw".
+        names = [(above[i].strip()[:-1] + c.strip()
+                  if i < len(above) and isinstance(above[i], str)
+                  and above[i].strip().endswith("-") else c) if isinstance(c, str) else None
+                 for i, c in enumerate(cells)]
+        above = cells
+        heads = {i: known[fold(c)] for i, c in enumerate(names) if c and fold(c) in known}
         if len(heads) >= 2:
             columns = heads
             continue

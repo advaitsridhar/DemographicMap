@@ -84,6 +84,14 @@ class Layouts(unittest.TestCase):
         with self.assertRaises(SystemExit):
             fm.add_up("Kosrae", got, 30, 2023)
 
+    def test_a_name_broken_over_two_header_rows_is_joined(self):
+        rows = [["Table B1. Age and Sex by Municipality"],
+                [None, None, "Madole-", None, "Mwoak-"],
+                ["Age group", "Total", "nihmw", "U", "illoa"],
+                ["BOTH GENDER"], ["Total", 6603, 4129, 2413, 61]]
+        flat = fm.flat_rows(rows, ("Madolenihmw", "U", "Mwoakilloa"))
+        self.assertEqual(flat[-1][2], {"Madolenihmw": 4129, "U": 2413, "Mwoakilloa": 61})
+
     def test_regions_and_totals_are_read_past(self):
         rows = [["Table B01."], ["Age Group", "Total", "Chuuk Lagoon", "Northern Namoneas",
                                  "Weno", "Fono", "Faichuk", "Tol"],
