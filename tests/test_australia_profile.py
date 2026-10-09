@@ -16,6 +16,19 @@ def g01(region, persons, male, female, name=None):
             for code, value in (("3", persons), ("1", male), ("2", female))]
 
 
+def g01_chars(region, working, other, non_private, private):
+    """G01's age and dwelling rows, each argument a (males, females) pair split evenly."""
+    rows = []
+    for codes, (male, female) in ((ap.WORKING_AGES, working), (ap.OTHER_AGES, other),
+                                  ((ap.NON_PRIVATE,), non_private), ((ap.PRIVATE,), private)):
+        for i, code in enumerate(codes):
+            share = (1 if i == 0 else 0) if len(codes) == 1 else 1 / len(codes)
+            for sex, value in (("1", male), ("2", female), ("3", male + female)):
+                rows.append(({"SEXP_CODE": sex, "PCHAR_CODE": code, "REGION_CODE": region},
+                             value * share))
+    return rows
+
+
 def g02(region, median):
     return [({"MEDAVG_CODE": "1", "REGION_CODE": region}, median),
             ({"MEDAVG_CODE": "2", "REGION_CODE": region}, 805.0)]
@@ -118,6 +131,35 @@ class Record(unittest.TestCase):
         self.assertEqual(rec["ethnicity"][0], {"group": "English", "pct": 35.7, "count": 20000})
         # Nothing the tables do not carry is claimed: population stays the map's.
         self.assertEqual(rec["population"]["status"], "not_available")
+
+    def test_an_unusual_ratio_says_where_it_lies(self):
+        # Menzies' 2021 totals, 394 males and 128 females; the split by age and
+        # dwelling is made up for the test.
+        people = {"persons": 522, "male": 394, "female": 128}
+        chars = ap.characteristics(g01_chars("51540", working=(318, 83), other=(76, 45),
+                                             non_private=(200, 20), private=(194, 108)))["51540"]
+        context = ap.ratio_context("Menzies", people, chars)
+        self.assertIn("Among those aged 20 to 64, 383.1 males per 100 females "
+                      "(318 males, 83 females); at other ages, 168.9.", context)
+        self.assertIn("220 of the people (200 males, 20 females) were counted in non-private "
+                      "dwellings", context)
+        self.assertIn("in private dwellings the ratio is 179.6.", context)
+        rec = ap.unit_record("51540", "Menzies", ALBURY, "admin2", people=people, median=None,
+                             ancestry=None, parent_name=None, context=context)
+        self.assertTrue(rec["sex_ratio_note"].endswith(context))
+        # A usual ratio says nothing more; nor does a unit with few non-private dwellers.
+        self.assertEqual(ap.ratio_context("Albury", {"persons": 200, "male": 100,
+                                                     "female": 100}, chars), "")
+        few = ap.characteristics(g01_chars("1", working=(318, 83), other=(76, 45),
+                                           non_private=(2, 0), private=(392, 128)))["1"]
+        self.assertNotIn("non-private", ap.ratio_context("Menzies", people, few))
+
+    def test_age_groups_that_do_not_make_the_sexes_stop_the_run(self):
+        people = {"persons": 522, "male": 394, "female": 128}
+        chars = ap.characteristics(g01_chars("1", working=(218, 83), other=(76, 45),
+                                             non_private=(0, 0), private=(294, 128)))["1"]
+        with self.assertRaises(SystemExit):
+            ap.ratio_context("Menzies", people, chars)
 
     def test_g08_and_g01_disagreeing_about_the_people_stop_the_run(self):
         people = {"persons": 1000, "male": 500, "female": 500}

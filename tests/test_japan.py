@@ -261,12 +261,13 @@ class Records(unittest.TestCase):
             self.assertIn("no backtest is possible", r["religion"]["note"])
             self.assertIn("no backtest is possible", r["language"]["note"])
 
-    def test_the_notes_say_what_they_are_and_when_it_was_decided(self):
+    def test_the_notes_say_what_they_are_and_not_who_decided(self):
         for r in self.records:
             for field in ("religion", "language"):
                 note = r[field]["note"]
                 self.assertTrue(note.startswith("Modelled from"), note[:80])
-                self.assertIn(m.DECISION, note)
+                self.assertNotIn("owner", note)
+                self.assertNotIn(m.DECISION, note)
                 self.assertIn("a model, not a count", note)
                 # Short: the first sentence says what it is, the caveats after
                 # it, not a paragraph.
@@ -276,7 +277,7 @@ class Records(unittest.TestCase):
             self.assertIn("NATIONALITY, not ethnicity", note)
             self.assertIn("naturalised", note)
             self.assertIn("不詳補完値", note)
-            self.assertIn(m.DECISION, note)
+            self.assertNotIn("owner", note)
             self.assertLess(len(note), 1000, f"{r['name']} ethnicity note is {len(note)}")
 
     def test_the_bounds_hold_on_every_prefecture(self):

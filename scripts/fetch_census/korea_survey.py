@@ -161,7 +161,7 @@ def build(text: str) -> list[dict[str, Any]]:
                    if len(provinces) == 1 else
                    f"one of the {len(provinces)} provinces the report pools as the residence "
                    f"region '{name}' ({', '.join(provinces)}) and carries that region's figure, "
-                   "by the map owner's decision, because no figure by province is reachable")
+                   "because the report gives no figure by province")
         for province in provinces:
             records.append(record(
                 f"KOR-{slugify(province)}", province, level="admin1", parent="KOR",

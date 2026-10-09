@@ -71,6 +71,9 @@ class Records(unittest.TestCase):
         self.assertEqual(koror["median_age"]["value"], 37.4)
         self.assertEqual(round(sum(s["pct"] for s in koror["language"])), 100)
         self.assertEqual(by_name[("admin2", "Medalaii")]["population"]["value"], 2_284)
+        # A ratio's note gives the men and women it is made of.
+        self.assertIn("(Table 23): 1,308 males, 976 females.",
+                      by_name[("admin2", "Medalaii")]["sex_ratio_note"])
         self.assertEqual(by_name[("admin2", "Idid 03")]["population"]["value"], 537)
         gaps = [r for r in records if "value" not in r["population"]]
         self.assertEqual(len(gaps), len(admin2) - len(pw.HAMLETS))

@@ -503,7 +503,7 @@ def religion_estimate(code: str, believers: dict[str, dict[str, int]]
         f"Bounds: Christianity at most {CAPS['Christianity']:.0f}%, Shinto at most "
         f"{CAPS['Shinto']:.0f}%{held_text}. The result sits {moved:.1f} points from the prior; "
         "no backtest is possible, because no prefecture-level self-identification figure "
-        f"exists. Written by the map owner's decision of {DECISION}.")
+        "exists.")
     est = estimate(MODELLED, rows, method=RELIGION_METHOD,
                    inputs=[f"nhk-issp-{PRIOR_YEAR}-japan",
                            f"estat-{BELIEVERS_TABLE}-{code}-{BELIEVERS_TIME}",
@@ -540,8 +540,7 @@ def language_estimate(code: str, row: dict[str, int], ethnicity_id: str) -> dict
         "count. It understates Japanese-speaking among Japan-born Koreans and "
         "Brazilians of Japanese descent, overstates it among naturalised citizens' "
         "families, and says nothing of Ainu or Ryukyuan; no backtest is possible, because "
-        f"no prefecture-level language figure exists. Written by the map owner's decision "
-        f"of {DECISION}.")
+        "no prefecture-level language figure exists.")
     return estimate(MODELLED, rows, method=LANGUAGE_METHOD,
                     inputs=[ethnicity_id, f"estat-{NATIONALITY_TABLE}-{code}"], note=note)
 
@@ -584,8 +583,7 @@ def build(nationality: dict[str, dict[str, int]], believers: dict[str, dict[str,
             "them); 'Korean' is the census's 韓国，朝鮮 row. Shares are of the "
             f"{known:,} people whose nationality the census recorded; {unknown:,} "
             f"({unknown / row[CODE_TOTAL] * 100:.1f}% of {row[CODE_TOTAL]:,}) recorded as "
-            f"neither Japanese nor foreign are left out. {caveat} Written by the map owner's "
-            f"decision of {DECISION}.")
+            f"neither Japanese nor foreign are left out. {caveat}")
         records.append(record(
             entity_id, name, level="admin1", parent="JPN", country="JPN",
             sources=sources,

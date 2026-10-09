@@ -676,8 +676,7 @@ def note_for(name: str, province: str | None, drawn_under: str | None,
         "ninety days who registered under the Immigration Act; overseas Koreans of foreign "
         "nationality on a domestic residence report (F-4), short-term visitors and the "
         f"undocumented are not counted, so the foreign share of {where} runs below the share "
-        f"of all foreigners present.{placement} Written by the map owner's decision of "
-        f"{DECISION}.")
+        f"of all foreigners present.{placement}")
 
 
 def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str, str], int],

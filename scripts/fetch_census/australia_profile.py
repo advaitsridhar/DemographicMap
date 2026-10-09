@@ -12,7 +12,12 @@ level and the nine states and territories at its first:
   published rather than recomputed.
 * **G01 Selected person characteristics by sex** -- total persons, males and
   females: the sex ratio (males per 100 females), and the persons every
-  ancestry share is taken of.
+  ancestry share is taken of. For an LGA it is also read by age group and by
+  kind of dwelling, so that a ratio outside 80 to 130 says where it lies: at
+  working ages (20 to 64) or the others, and, where one person in twenty or
+  more was counted in a non-private dwelling (hotels, staff quarters, hostels,
+  hospitals, prisons), how many were and what the ratio is in private homes.
+  The notes give the counts and do not guess the cause.
 * **G08 Ancestry by country of birth of parents** -- read in its "Total
   responses" column (``BPPP=_T``), which is each ancestry's count of the people
   who named it; the table's own total row (``ANCP=_T``) counts persons. Up to
@@ -101,8 +106,22 @@ LICENCE = "CC BY 4.0"
 # dataflows' structures): G01 SEXP.PCHAR.REGION.REGION_TYPE.STATE, G02
 # MEDAVG.REGION.REGION_TYPE.STATE, G08 ANCP.BPPP.REGION.REGION_TYPE.STATE. The
 # SA2+ flows are asked for their national and state rows only.
+# G01's person characteristics an LGA's unusual sex ratio is read against:
+# its age groups, split at the working ages, and its people by kind of
+# dwelling ("D_O", other dwellings, are the non-private ones).
+WORKING_AGES = ("20_24", "25_34", "35_44", "45_54", "55_64")
+OTHER_AGES = ("0_4", "5_14", "15_19", "65_74", "75_84", "GE85")
+PRIVATE, NON_PRIVATE = "D_1_3", "D_O"
+CHARACTERISTICS = WORKING_AGES + OTHER_AGES + (PRIVATE, NON_PRIVATE)
+# The band of sex ratios a place usually has; outside it the note says where
+# in the population the ratio lies.
+USUAL_RATIO = (80.0, 130.0)
+# The share of a unit's people in non-private dwellings, in per cent, from
+# which the note gives their count and the ratio in private dwellings.
+NON_PRIVATE_NOTED = 5.0
+
 KEYS = {
-    ("G01", "LGA"): "1+2+3.P_1...",
+    ("G01", "LGA"): "1+2+3.P_1+" + "+".join(CHARACTERISTICS) + "...",
     ("G02", "LGA"): "1...",
     ("G08", "LGA"): "._T...",
     # G13 SEXP.LANP.ENGLP.REGION.REGION_TYPE.STATE: persons, and only the
@@ -183,6 +202,54 @@ def persons(rows: Iterable[tuple[dict[str, str], float]]) -> dict[str, dict[str,
                              f"{counts['male']:,.0f} and females {counts['female']:,.0f} "
                              f"do not make {counts['persons']:,.0f}")
     return dict(out)
+
+
+def characteristics(rows: Iterable[tuple[dict[str, str], float]]
+                    ) -> dict[str, dict[str, dict[str, float]]]:
+    """{region: {characteristic: {"male", "female"}}} for G01's ``CHARACTERISTICS``."""
+    out: dict[str, dict[str, dict[str, float]]] = defaultdict(lambda: defaultdict(dict))
+    for labels, value in rows:
+        code, sex = labels.get("PCHAR_CODE"), SEX.get(labels.get("SEXP_CODE", ""))
+        if code in CHARACTERISTICS and sex in ("male", "female"):
+            out[labels["REGION_CODE"]][code][sex] = value
+    return {region: dict(chars) for region, chars in out.items()}
+
+
+def ratio_context(name: str, people: dict[str, float],
+                  chars: dict[str, dict[str, float]]) -> str:
+    """Where an LGA's sex ratio outside ``USUAL_RATIO`` lies, in G01's own counts; else "".
+
+    The ratio at working ages (20 to 64) and at the others, and, where at
+    least ``NON_PRIVATE_NOTED`` per cent of the people were counted in
+    non-private dwellings, their males and females and the ratio in private
+    dwellings. The age groups must make the unit's males and females, within
+    the ABS's perturbation of small cells, or the run stops.
+    """
+    ratio = 100.0 * people["male"] / people["female"]
+    if USUAL_RATIO[0] <= ratio <= USUAL_RATIO[1] or not chars:
+        return ""
+
+    def both(codes: tuple[str, ...]) -> tuple[float, float]:
+        return (sum(chars.get(c, {}).get("male", 0.0) for c in codes),
+                sum(chars.get(c, {}).get("female", 0.0) for c in codes))
+
+    (wm, wf), (om, of) = both(WORKING_AGES), both(OTHER_AGES)
+    for sex, counted in (("male", wm + om), ("female", wf + of)):
+        if abs(counted - people[sex]) > tolerance(people[sex]):
+            raise SystemExit(f"australia_profile: {name}: G01's age groups make "
+                             f"{counted:,.0f} {sex}s, not its {people[sex]:,.0f}")
+    out = []
+    if wf and of:
+        out.append(f"Among those aged 20 to 64, {100.0 * wm / wf:.1f} males per 100 females "
+                   f"({wm:,.0f} males, {wf:,.0f} females); at other ages, "
+                   f"{100.0 * om / of:.1f}.")
+    (nm, nf), (pm, pf) = both((NON_PRIVATE,)), both((PRIVATE,))
+    if pf and 100.0 * (nm + nf) / people["persons"] >= NON_PRIVATE_NOTED:
+        out.append(f"{nm + nf:,.0f} of the people ({nm:,.0f} males, {nf:,.0f} females) were "
+                   "counted in non-private dwellings, such as hotels, staff quarters, hostels, "
+                   f"hospitals and prisons; in private dwellings the ratio is "
+                   f"{100.0 * pm / pf:.1f}.")
+    return " ".join(out)
 
 
 def medians(rows: Iterable[tuple[dict[str, str], float]]) -> dict[str, float]:
@@ -433,14 +500,14 @@ def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
                 people: dict[str, float], median: float | None,
                 ancestry: tuple[dict[str, float], float] | None,
                 parent_name: str | None, extra: dict[str, Any] | None = None,
-                extra_tables: tuple[str, ...] = ()) -> dict[str, Any]:
+                extra_tables: tuple[str, ...] = (), context: str = "") -> dict[str, Any]:
     ratio = round(100.0 * people["male"] / people["female"], 1)
     fields: dict[str, Any] = {
         "sex_ratio": measure(ratio, unit="males_per_100_females", year=YEAR, source=SOURCE),
         "sex_ratio_note": (
             f"Males per 100 females among the {people['persons']:,.0f} people counted in the "
             f"2021 Census at their usual address here ({people['male']:,.0f} males, "
-            f"{people['female']:,.0f} females; ABS G01)."),
+            f"{people['female']:,.0f} females; ABS G01)." + (f" {context}" if context else "")),
     }
     # A state's own head count: the map's came from adding up the LGA tables,
     # which put the Indian Ocean Territories' 2,285 people in Western Australia.
@@ -466,8 +533,7 @@ def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
         fields["ethnicity_note"] = (
             "Ancestry, which is what Australia's census asks in place of an ethnicity question "
             "('What is the person's ancestry?'), coded by the ABS to its Standard "
-            "Classification of Cultural and Ethnic Groups; recorded on the ethnicity field by "
-            "the owner's decision of 19 September 2026. Up to two ancestries are recorded for "
+            "Classification of Cultural and Ethnic Groups. Up to two ancestries are recorded for "
             f"each person, so the {responses:,.0f} responses here exceed the "
             f"{counted:,.0f} people and each share is the percentage of the people "
             "who reported that ancestry: the shares sum to more than 100, as in the ABS's own "
@@ -490,6 +556,7 @@ def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
 def build(tables: dict[tuple[str, str], list[tuple[dict[str, str], float]]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
     people_lga = persons(tables[("G01", "LGA")])
+    chars_lga = characteristics(tables[("G01", "LGA")])
     people_top = persons(tables[("G01", "SA2")])
     median_lga = medians(tables[("G02", "LGA")])
     median_top = medians(tables[("G02", "SA2")])
@@ -552,10 +619,14 @@ def build(tables: dict[tuple[str, str], list[tuple[dict[str, str], float]]],
             extra_tables = ("G13",)
             log(f"  {unit['name']} ({code}): language from G13's coarse partition "
                 f"{ {k: int(v) for k, v in parts.items()} }")
-        records.append(unit_record(code, names.get(code, unit["name"]), unit, "admin2",
+        name = names.get(code, unit["name"])
+        context = ratio_context(name, people_lga[code], chars_lga.get(code, {}))
+        if context:
+            log(f"  {name} ({code}): {context}")
+        records.append(unit_record(code, name, unit, "admin2",
                                    people=people_lga[code], median=median_lga.get(code),
                                    ancestry=ancestry_lga.get(code), parent_name=state,
-                                   extra=extra, extra_tables=extra_tables))
+                                   extra=extra, extra_tables=extra_tables, context=context))
     missing = sorted(set(lgas_drawn) - set(people_lga))
     if missing:
         raise SystemExit(f"australia_profile: drawn LGAs the tables do not have: {missing}")

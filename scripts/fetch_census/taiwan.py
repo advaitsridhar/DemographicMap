@@ -752,8 +752,7 @@ LANGUAGE_NOTE = (
     f"{LANGUAGE_YEAR} census (DGBAS results release, Table 2-5): the main language "
     "currently used, one answer per person, for residents of ROC nationality aged 6 and "
     "over. The census also recorded a secondary language, which is not read: Hokkien is "
-    "the second language of about half the country. Written by the map owner's decision "
-    f"of {DECISION}.")
+    "the second language of about half the country.")
 
 
 def ethnicity_estimate(name: str, indigenous: int, population: int, when: tuple[int, int],
@@ -771,8 +770,7 @@ def ethnicity_estimate(name: str, indigenous: int, population: int, when: tuple[
         f"mainlander ({identity[HOKLO]:.1f} : {identity[MAINLANDER]:.1f}), which splits the "
         "rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, "
         "not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is "
-        "a survey of registered residents, and a person can be both Hakka and indigenous. "
-        f"Written by the map owner's decision of {DECISION}.")
+        "a survey of registered residents, and a person can be both Hakka and indigenous.")
     return estimate(MODELLED, hundred(shares), method=ETHNICITY_METHOD,
                     inputs=[f"moi-register-indigenous-{name}-{year}-{month:02d}",
                             f"moi-register-population-{name}-{year}-{month:02d}",
@@ -805,8 +803,7 @@ def religion_estimate(name: str, buildings: dict[str, dict[str, float]], year: i
         f"tradition only nationally), each clipped to 1/{TILT_BOUND:.0f}-{TILT_BOUND:.0f} "
         f"(temples x{ratios[TEMPLES]:.2f}, churches x{ratios[CHURCHES]:.2f}), and no religion "
         f"is held at the national figure{held_text}. It sits {moved:.1f} points from the prior; "
-        "no backtest is possible, because no county-level self-identification figure exists. "
-        f"Written by the map owner's decision of {DECISION}.")
+        "no backtest is possible, because no county-level self-identification figure exists.")
     est = estimate(MODELLED, rows, method=RELIGION_METHOD,
                    inputs=[f"pew-east-asia-{PRIOR_YEAR}-taiwan",
                            f"moi-religious-buildings-{name}-{year}",

@@ -99,7 +99,7 @@ from typing import Any
 from ._shared import NOT_COLLECTED, PROCESSED, gap, log, measure, read_json, record, write_json
 from .east_asia_common import drawn, grouped_median, hundred, pool_small, sex_ratio, unshown
 from .japan import (
-    CODE_FOREIGN, CODE_TOTAL, CODE_UNKNOWN, DECISION, ESTAT_LICENCE, NATIONALITY_CODES,
+    CODE_FOREIGN, CODE_TOTAL, CODE_UNKNOWN, ESTAT_LICENCE, NATIONALITY_CODES,
     NATIONALITY_SOURCE, NATIONALITY_TABLE, NATIONALITY_URL, PREFECTURES, fetch_values,
 )
 
@@ -795,7 +795,7 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
         "NATIONALITY, not ethnicity, which Japan's census does not ask. 'Japanese' is everyone "
         "holding Japanese nationality, naturalised citizens and people of any ancestry "
         f"included; 'Korean' is the census's 韓国，朝鮮 row. {base}" + pooled
-        + (f" {note}" if note else "") + f" Written by the map owner's decision of {DECISION}.")
+        + (f" {note}" if note else ""))
     return record(
         f"JPN-{'+'.join(codes)}", name, level="admin2", parent="JPN", country="JPN",
         codes={"jis": "+".join(codes)}, match_by="shape_id", shape_id=shape,

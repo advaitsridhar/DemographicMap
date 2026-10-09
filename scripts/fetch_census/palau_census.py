@@ -378,7 +378,8 @@ def fields_for(column: str, ages: dict[str, Any], ethnic: dict[str, Any],
         "sex_ratio": measure(sex_ratio(total - female, female), unit="males_per_100_females",
                              year=YEAR, source=f"{VOLUME} (Table {t_age})"),
         "sex_ratio_note": f"Males per 100 females among {where}'s usual residents, 2020 "
-                          f"census (Table {t_age}).",
+                          f"census (Table {t_age}): {total - female:,.0f} males, "
+                          f"{female:,.0f} females.",
         "ethnicity": shares_of({ETHNIC[k]: ethnic[k][column] for k in ETHNIC}, total),
         "ethnicity_year": YEAR,
         "ethnicity_note": (f"Ethnicity of {where}'s usual residents, 2020 census (Table "
