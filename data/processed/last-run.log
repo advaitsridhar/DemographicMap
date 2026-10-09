@@ -1,16 +1,5 @@
-== https://www.dsc.gov.ae/en-us
-   200 text/html; charset=utf-8 246 bytes
-   0 matching links
-== https://www.dubaipulse.gov.ae/
-   -1 URLError 25 bytes
-   0 matching links
-== https://bayanat.ae/en/dataset?q=population
-   200 text/html; charset=utf-8 257,128 bytes
-   - '' -> https://www.youtube.com/user/uaestatistics
-   1 matching links
-== https://fcsc.gov.ae/en-us
-   403 text/html; charset=UTF-8 3,000 bytes
-   0 matching links
-== https://www.dscd.sharjah.ae/
-   -1 URLError 52 bytes
-   0 matching links
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+  Age-Sex Estimates: 356 rows; age-column suffixes ['_6', '_7']
+    suffix _6: B0004_6 = Both Sexes 0 to 4 years, 2016 est.
+    suffix _7: B0004_7 = Both sexes 0 to 4 years, 2017 est.
