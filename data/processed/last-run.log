@@ -1,16 +1,15 @@
-germany: Zensus 2022 table 1000A-1018 (religion), cut by GEORB1 (regierungsbezirk)
-  26 areas in the GEORB1 cut
-  + 9 Laender that are a single region
-  + Koblenz: 11 Kreise, 1,517,589
-  + Trier: 5 Kreise, 521,418
-  + Rheinhessen-Pfalz: 20 Kreise, 2,055,162
-germany: Zensus 2022 table 1000A-1021 (nationality), cut by GEORB1 (regierungsbezirk)
-  26 areas in the GEORB1 cut
-  + 9 Laender that are a single region
-  + Koblenz: 11 Kreise, 1,517,589
-  + Trier: 5 Kreise, 521,418
-  + Rheinhessen-Pfalz: 20 Kreise, 2,055,162
-  named: German, Turkish, Syrian, Romanian, Polish, Ukrainian, Italian, Croatian, Bulgarian, Greek, Afghan, Kosovan, Russian, Iraqi, Serbian, Bosnian and Herzegovinian, Hungarian, Austrian
-  wrote data/processed/germany_regierungsbezirk.json (178 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/germany_regierungsbezirk.json
-  38 records
+netherlands_gemeente: CBS Kerncijfers wijken en buurten 2022, 03759ned and 84910NED, by gemeente
+  WFS: 428 features; water flags {'B': 1, 'JA': 82, 'NEE': 345}
+  345 gemeenten; Nederland 0
+  gemeenten against the Netherlands: parts sum to 17,590,672 = 17,590,672
+  men + women against the total: largest difference 0
+  03759ned against the key figures, men and women: largest difference 0.0050% (Haarlemmermeer men 79,261 / 79,257)
+  03759ned's national row: parts sum to 17,590,672 = 17,590,672
+  national median 42.7 against Eurostat's 42.7 (NL, 1 January 2022)
+  named backgrounds: Turkish, Moroccan, Surinamese, Indonesian, German, Polish, Dutch Caribbean, Syrian, Belgian, British, Chinese, Iraqi, Indian, Italian, Afghan, Spanish
+  provinces against the Netherlands, 84910NED: parts sum to 17,590,672 = 17,590,672
+  Amsterdam: Weesp added, 903,399
+  netherlands_gemeente: 0 office units unbound
+  netherlands_gemeente: 0 polygons without an office unit
+  wrote data/processed/netherlands_gemeente.json (1762 kB)
+  wrote netherlands_gemeente.json: 356 records
