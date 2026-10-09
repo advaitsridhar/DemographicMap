@@ -62,6 +62,11 @@ class TheReader(unittest.TestCase):
         self.assertEqual(r1["median_age"]["year"], 2022)
         self.assertGreater(r1["median_age"]["value"], 0)
 
+    def test_nationality_says_why_it_is_empty(self):
+        r1 = {r["shape_id"]: r for r in sc.build(rows(), ADMIN1)}["r1"]
+        self.assertEqual(r1["ethnicity"]["status"], "not_available")
+        self.assertIn("citizenship", r1["ethnicity"]["note"])
+
     def test_regions_that_miss_the_kingdom_stop_the_run(self):
         sc.NATIONAL += 1
         with self.assertRaises(SystemExit):

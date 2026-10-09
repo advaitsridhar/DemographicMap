@@ -34,7 +34,8 @@ import io
 import re
 from typing import Any
 
-from ._shared import PROCESSED, http_get, http_json, log, measure, record, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, http_json, log, measure, record,
+                      write_json)
 from .west_asia_common import HDX_API, check, key, median_age, sex_ratio, units
 
 ISO3 = "SAU"
@@ -64,6 +65,16 @@ ALIASES = {
 # The census's count of the kingdom: GASTAT, Saudi Census 2022 results
 # (published 31 May 2023), 32,175,224 people. The regions must make it.
 NATIONAL = 32_175_224
+# The census asks citizenship, which the owner's decision of 19 September 2026
+# lets stand on the ethnicity field; GASTAT's table of it by region is out of
+# reach, so the field says that rather than "not collected" (shared.patch
+# drops the SAU ethnicity policy that said so).
+NATIONALITY_WHY = (
+    "Saudi Arabia's 2022 census asks citizenship (Saudi or not, and which country), not "
+    "ethnicity; citizenship may stand on this field, but GASTAT publishes it by region only in "
+    "its census portal's interactive views (portal.saudicensus.sa), which the build could not "
+    "reach: on 9 October 2026 the portal's host did not resolve from the runner and "
+    "stats.gov.sa timed out, and OCHA's tables of the census carry region, sex and age only.")
 AGE = re.compile(r"^([TFM])_(\d{1,3})_(\d{1,3})$", re.I)
 OPEN = re.compile(r"^([TFM])_(\d{1,3})_?plus$", re.I)
 SLACK = 0.001
@@ -170,6 +181,7 @@ def build(rows: list[dict[str, str]], admin1: list[dict[str, Any]]) -> list[dict
             median_age_note=("Interpolated within the five-year age group holding the middle "
                              "person, from the 2022 census's count of the region by five-year "
                              "age group."),
+            ethnicity=gap(NOT_AVAILABLE, NATIONALITY_WHY),
             sources=[{"field": "population/median_age/sex_ratio", "name": SOURCE, "url": URL,
                       "year": YEAR, "license": LICENCE}]))
         log(f"    {name} ({pcode}) -> {label}: {total:,.0f}, median "
