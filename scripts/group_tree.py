@@ -941,7 +941,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Silte", "Burji", "Mareko", "Alaba", "Shinasha", "Wolaita",
     ),
     "Central African peoples": (
-        "Gbaya", "Banda", "Zande", "Ngbaka", "Mbum", "Sara", "Mandjia",
+        # "Baya" is the Gbaya under the spelling some census tables print.
+        "Gbaya", "Baya", "Banda", "Zande", "Ngbaka", "Mbum", "Sara", "Mandjia",
         "Yakoma", "Sango", "Nzakara", "Ngbandi", "Mbaka", "Kaba",
         "Zaghawa", "Massa", "Toupouri", "Moundang", "Baka", "Aka",
         "Mbuti", "Batwa", "Kanembu", "Ouaddai", "Hadjarai", "Tandjile",
@@ -2366,6 +2367,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
                                      "Lampung", "Gayo", "Aneuk Jamee",
                                      "Singkil", "Devayan", "Mentawai",
                                      "Rejang", "Serawai", "Minahasan",
+                                     # Indonesia's 2010 census row for the
+                                     # peoples of Maluku taken together.
+                                     "Moluccan",
                                      "Gorontalo", "Torajan", "Kutai", "Paser",
                                      "Butonese", "Berau", "Mandar",
                                      "Florenese", "Mamuju", "Palembang",
