@@ -72,9 +72,9 @@ CAVEAT = (
     "carry a registry count for 2023 to 2025, so the two are not the same "
     "measurement and should not be compared with each other.")
 TERMS = (
-    "Used by the owner's decision of 20 September 2026. The publisher's HDX "
-    "entry licenses this dataset for humanitarian use only and marks it as "
-    "not open; that is recorded here rather than omitted.")
+    "The publisher's HDX entry licenses this dataset for humanitarian use "
+    "only and marks it as not open; that is recorded here rather than "
+    "omitted.")
 
 
 def fetch() -> list[dict[str, Any]]:

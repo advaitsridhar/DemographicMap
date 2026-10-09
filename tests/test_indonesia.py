@@ -650,10 +650,12 @@ class Records(unittest.TestCase):
         self.assertEqual(fields["population"]["year"], 2020)
         self.assertEqual(fields["population_source"]["license"], hapi.LICENCE)
         self.assertIn("humanitarian use only", fields["population_source"]["license"])
-        for phrase in ("projection, not a count", "owner's decision",
+        for phrase in ("projection, not a count",
                        "humanitarian use only", "marks it as not open",
                        "the article prints no head count"):
             self.assertIn(phrase, fields["population_note"], phrase)
+        self.assertNotIn("owner", fields["population_note"])
+        self.assertNotIn("decision", fields["population_note"])
 
     def test_a_lake_says_it_is_a_lake(self):
         """Five shapes at this level are lakes, a forest and two reservoirs.

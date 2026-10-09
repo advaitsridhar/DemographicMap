@@ -74,7 +74,6 @@ from .nordic_common import (bind_rows, check_parts, load_units, request, request
                             unplaced)
 from .pxweb import unstack
 
-DECISION = "19 September 2026"
 # A country of origin is named where it holds at least this share of the
 # country's people: 0.1% is some 10,600 people in Sweden and 390 in Iceland,
 # which names twenty to forty countries each and folds the long tail.
@@ -281,7 +280,7 @@ def ethnicity_block(counts: dict[str, float], total: float, *, year: int, basis:
         "ethnicity": shares({k: v for k, v in counts.items() if v > 0}, total=total),
         "ethnicity_year": year,
         "ethnicity_basis": basis,
-        "ethnicity_note": f"{note} Written by the map owner's decision of {DECISION}.",
+        "ethnicity_note": note,
         "sources": [source],
     }
 

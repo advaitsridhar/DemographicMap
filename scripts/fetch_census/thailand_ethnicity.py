@@ -206,7 +206,7 @@ def note_for(name: str, group: str, shares: dict[str, float], rest: float,
         "ask ethnicity, so this is a model, not a count: the regional share cannot "
         "separate the Tai groups the maps count apart, and the Thai Chinese, a tenth or "
         "more of the population by descent, are counted as Thai. Transcribed by the "
-        f"Wikipedia article '{PAGE}'; owner's decision of {DECISION}; a census or survey "
+        f"Wikipedia article '{PAGE}'; a census or survey "
         "figure replaces it when one is read.")
 
 

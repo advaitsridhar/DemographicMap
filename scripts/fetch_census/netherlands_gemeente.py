@@ -53,7 +53,7 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, record, write_json
 from .central_ages import (SEX_RATIO_UNIT, age_sex_fields, check_national_median, check_sum, fold,
                            report_unbound, sex_ratio, units)
-from .central_nationality import DECISION, composition
+from .central_nationality import composition
 
 WFS = ("https://service.pdok.nl/cbs/wijkenbuurten/2022/wfs/v1_0?request=GetFeature&service=WFS"
        "&version=2.0.0&typeNames=wijkenbuurten:gemeenten&outputFormat=application/json&count=2000"
@@ -377,7 +377,7 @@ ORIGIN_NOTE = (
     "Netherlands Antilles and Aruba as CBS reports them; backgrounds below "
     f"{NAMED_SHARE:.1%} of the country are '{OTHER_BACKGROUND}'. CBS replaced the classification "
     "with 'herkomst' from 2022, and 1 January 2022 is also the date of the division the map "
-    f"draws. Written by the map owner's decision of {DECISION}.")
+    "draws.")
 
 
 def build() -> list[dict[str, Any]]:

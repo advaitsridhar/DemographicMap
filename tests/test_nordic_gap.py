@@ -56,7 +56,7 @@ class OriginLabels(unittest.TestCase):
                                "Estonian": 0}, {"Finnish", "Estonian"})
         self.assertEqual(made, {"Finnish": 50, origin.OTHER: 4, origin.UNKNOWN: 2})
 
-    def test_a_block_whose_labels_miss_the_total_stops_and_a_good_one_names_the_decision(self):
+    def test_a_block_whose_labels_miss_the_total_stops_and_a_good_one_keeps_its_note(self):
         source = {"field": "ethnicity", "name": "test", "url": "u", "year": 2026}
         with self.assertRaises(SystemExit):
             origin.ethnicity_block({"Danish": 90}, 100, year=2026, basis="b", note="n.",
@@ -64,7 +64,8 @@ class OriginLabels(unittest.TestCase):
         block = origin.ethnicity_block({"Danish": 90, origin.OTHER: 10}, 100, year=2026,
                                        basis="ancestry", note="Ancestry.", source=source)
         self.assertEqual([g["group"] for g in block["ethnicity"]], ["Danish", origin.OTHER])
-        self.assertIn(origin.DECISION, block["ethnicity_note"])
+        self.assertEqual(block["ethnicity_note"], "Ancestry.")
+        self.assertNotIn("owner", block["ethnicity_note"])
         self.assertEqual(block["ethnicity_basis"], "ancestry")
 
 
