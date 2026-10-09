@@ -134,10 +134,15 @@ ADAPTER_FILES = [
     # 2012: 56,900 adults, 500 to 800 in each of 79 subjects). No census has
     # asked religion since 1937 (russia_religion).
     "russia_religion_survey.json",
+    # Lebanon's cazas and governorates: residents by nationality (Lebanese or
+    # not) from CAS's Labour Force and Household Living Conditions Survey
+    # 2018-19, Table HL.6A (lebanon_survey). Lebanon has held no census since
+    # 1932; a survey, so compositions only, behind any count.
+    "lebanon_survey.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
-    "korea_survey_province.json",
+    "korea_province_survey.json",
     # Korea's nationality, by the owner's decision of 19 September 2026: the
     # immigration register's foreign residents by country of nationality
     # against the resident register's Koreans, written on the ethnicity
@@ -188,7 +193,8 @@ ADAPTER_FILES = [
     # office's own Vietnamese results volume: a census count.
     "vietnam_province.json",
     # Hong Kong's own census, one shape under China: ethnicity and usual
-    # spoken language from the 2021 Main Results workbook.
+    # spoken language from the 2021 Main Results workbook, on the SAR and
+    # again on 'Xianggang', the polygon the second level draws it as.
     "hongkong_census.json",
     # Laos's 18 provinces and 148 districts: ethno-linguistic category and
     # religion summed from the 2015 census's own 8,500-village indicator
@@ -261,6 +267,20 @@ ADAPTER_FILES = [
     # Afghanistan there is no count to lose to, which is the whole reason this
     # file exists.
     "afghanistan_district.json",
+    # Afghan district ethnicity read from the development plans' own PDFs (the
+    # Internet Archive's copies): where a plan states shares they replace the
+    # articles' transcription above, whose year is a range and so decides nothing.
+    # [BLOCKED: registering this file crashes build_entities.py (see problems). Do not register until afghanistan.py writes an integer ethnicity_year or roll_up_field tolerates a string year. When it lands it goes directly after "afghanistan_district.json", i.e. directly above "afghanistan_estimates.json".]
+    "afghanistan_ddp.json",
+    # The statistics office's 1396 (2017-18) estimates by district and province:
+    # settled population and sex ratio, temporary districts summed into the
+    # polygon drawn for them; a stated reason for median age and ethnicity on all.
+    "afghanistan_estimates.json",
+    # Median age by district from the office's Socio-Demographic and Economic
+    # Survey of twelve provinces (2011-16): a survey estimate from every other
+    # listed household (Bamyan's from its full listing), each record giving its
+    # basis and size. After the estimates file so its particular reasons stand.
+    "afghanistan_sdes_survey.json",
     "cod_ps_admin2.json",
     # Median age and sex ratio from the same datasets' sex and five-year age
     # breakdown, for the regions no census file gives them. Fill-only (see
@@ -277,10 +297,29 @@ ADAPTER_FILES = [
     # Where the agency counts a district the boundary file does not draw, the
     # older shape around it carries both, or a gap that says why.
     "uzbekistan_siat.json",
+    # Uzbekistan's 2026 census, preliminary results by region: population,
+    # five-year ages, sex, nationality and native language
+    # (uzbekistan_census). A count, so after SIAT's estimate for the same year.
+    "uzbekistan_census.json",
     # Iraq's 2024 census from COSIT's Annual Abstract (iraq_census): every
     # governorate, and the districts of the governorates whose census districts
     # can be placed wholly inside the boundary file's older ones.
     "iraq_census.json",
+    # Iran's 2016 census by province and shahrestan -- single-year ages, sex,
+    # citizenship as ethnicity (basis "citizenship") -- and the 1395 yearbook's
+    # religion by province, from Archive captures (iran_census). The three
+    # shahrestans drawn as two polygons take each half's own settlement count.
+    "iran_census.json",
+    # Kyrgyzstan's 2022 census Book III: age, sex, ethnic group and native
+    # language by region, district and city.
+    "kyrgyzstan_census.json",
+    # Tajikistan's 2020 census volume 2 and the 2010 census's nationality by
+    # region.
+    "tajikistan_census.json",
+    # Turkmenistan's 2022 census volumes 2 and 4 by velayat, Ashgabat inside
+    # Ahal. Every etrap carries its own reason, which displaces older
+    # Wikidata figures.
+    "turkmenistan_census.json",
     # Ecuador's 2022 census by province and canton, from INEC's workbook as
     # the Internet Archive captured it (ecuador_census): INEC's host refuses
     # the runner.
@@ -320,6 +359,46 @@ ADAPTER_FILES = [
     "europe_wiki_montenegro.json",
     "europe_wiki_serbia.json",
     "europe_wiki_bulgaria.json",
+    # Syria's 2004 census by governorate and district, from the Census Bureau's
+    # HDX workbook (syria_census): age, sex and nationality, the census's only
+    # identity question. The citizens' row is "Syrian citizens", naming no people.
+    "syria_census.json",
+    # Yemen's 2004 census by governorate and district from the same kind of
+    # workbook (yemen_census): people, sex, nationality; the units the boundary
+    # file cuts or merges say why they are empty.
+    "yemen_census.json",
+    # Median age from the CSO's 2017 district projection (yemen_census).
+    # Fill-only: a projection never replaces a count.
+    "yemen_census_age.json",
+    # Bahrain's 2020 census on data.gov.bh (bahrain_census): governorates by sex
+    # and eight nationality groups, written at both levels, the map drawing the
+    # same four polygons twice; age and religion are kingdom-only and say so.
+    "bahrain_census.json",
+    # Saudi Arabia's 2022 census by region, sex and age as OCHA's COD-PS relays
+    # GASTAT (saudi_census); the 147 governorates say why they hold no figure.
+    "saudi_census.json",
+    # Qatar's 2020 census by municipality, sex and age from data.gov.qa
+    # (qatar_census); the 79 zones say why the portal's zone table is not used.
+    "qatar_census.json",
+    # Kuwait's 2021 register-based census from the CSB (kuwait_census):
+    # governorates by sex, age and nationality group; areas by sex and Kuwaiti or
+    # not, bound by their OpenStreetMap ground, the rest saying what they may hold.
+    "kuwait_census.json",
+    # Israel's CBS Statistical Abstract 2024 tables 2.17, 2.19 and 2.15
+    # (israel_cbs): population group, median age, sex, district religion;
+    # Jerusalem's encyclopaedia figures are displaced by a stated gap.
+    "israel_cbs.json",
+    # Jordan's DoS end-2025 estimates (people, sex) and 2015 census (median age,
+    # nationality) by governorate (jordan_dos); the second-level shapes are not
+    # the DoS's liwas and say so.
+    "jordan_dos.json",
+    # Oman's NCSI Statistical Year Book 2024 (oman_ncsi): wilayats' registered
+    # population by nationality at the end of 2023, regions summed from them,
+    # median age where a region is whole governorates.
+    "oman_ncsi.json",
+    # Abu Dhabi emirate from SCAD's census site (uae_scad): 2024 population and
+    # sex ratio, written at both levels, the map drawing the emirates twice.
+    "uae_scad.json",
     # Moldova's seven units the Europe reader refused, read by the owner's
     # decision of 22 September 2026 from the Romanian articles and the
     # Transnistria article's table. After europe_wiki_moldova.json, whose gap
@@ -340,8 +419,10 @@ ADAPTER_FILES = [
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
-    # beside it. It writes no composition -- the country asks none of the
-    # three, which this file's own reading of the report is what established.
+    # beside it (males per 100 females), and Table 4's median age for the 7
+    # provinces drawn on their 2008 ground. It writes no composition -- the
+    # country asks none of the three, which this file's own reading of the
+    # report is what established.
     "northkorea_county.json",
     # NUTS-1 where it is a first-level unit -- France's regions, Germany's
     # Laender, Belgium's regions, Italy's macro-regions, Mazowieckie -- placed
@@ -373,8 +454,41 @@ ADAPTER_FILES = [
     # Sovereign Order 4,481 of 2013) and Andorra's parishes in 2025, summed
     # from the Departament d'Estadistica's settlements.
     "microstates.json",
-    # The 2020 census's median age for every municipality, bound by JIS code.
+    # Japan's 2020 census for all 1,731 municipalities, bound by JIS code
+    # (japan_municipal): population and nationality as ethnicity (e-Stat
+    # 0003445244, the owner's decision of 19 September 2026), median age
+    # (0004019308) and sex ratio (0004019309), and the prefectures' median and
+    # sex ratio; religion and language not_collected on every municipality.
     "japan_municipal.json",
+    # Korea's resident register by single year of age, 31 December 2025
+    # (korea_ages): median age and sex ratio for 17 provinces and 228
+    # districts; no population (korea_nationality's), no composition.
+    "korea_ages.json",
+    # Korea's 2015 census religion (korea_religion, KOSIS DT_1PM1502: the
+    # sample's answers weighted to every resident) for 17 provinces and 228
+    # districts. A count: it replaces the 2025 survey above wherever both reach.
+    "korea_religion.json",
+    # Taiwan's 368 townships (taiwan_townships): the household register at the
+    # end of August 2026 for population, median age, sex ratio and indigenous
+    # status; the 2020 census's main language from the county reports' Table 6;
+    # religion not_collected. The 22 counties get the register's population,
+    # median and sex ratio and keep taiwan_county.json's modelled compositions.
+    "taiwan_township.json",
+    # China's census yearbook 2020, the bureau's own tables (china_census): 31
+    # provinces' population, sex ratio, median age and 56 nationalities (after
+    # china_wiki_province, which transcribes the same tables); Hong Kong's and
+    # Macau's 2021 median age and sex ratio.
+    "china_census_province.json",
+    # China's 2,370 county polygons (china_census): a reason on each mainland
+    # polygon; Hong Kong drawn again ('Xianggang') with the SAR's median and sex
+    # ratio and a stated count gap; Macau's 1.4 km2 sliver a stated gap.
+    "china_census_county.json",
+    # The provinces' own 2020 census yearbooks by county (china_county_census):
+    # Jilin, Jiangsu, Qinghai, Inner Mongolia, Hebei and Shandong. Population,
+    # sex ratio, median age and nationalities on the 75 polygons still the
+    # county counted (six tests), a specific reason on the other 260. After
+    # china_census_county.json, whose general reason it replaces.
+    "china_county_census.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
     # says so in a generic sentence; this is the census itself.
     "romania_county.json",
@@ -385,6 +499,13 @@ ADAPTER_FILES = [
     # After the C-01 files: mother tongue is the one field these add, and a
     # later file never overwrites an earlier real value with a gap marker.
     "india_language_state.json", "india_language_district.json",
+    # Median age for every state and every district drawn as the 2011 census
+    # counted it, from table C-13's single years; shapes made or cut since say
+    # why, and nothing of a parent is put on a child.
+    "india_age.json",
+    # Place of birth (Census 2011 D-01) on the ethnicity field under its basis,
+    # by the owner's decision of 19 September 2026; same shapes as india_age.
+    "india_birthplace.json",
     "mexico_state.json", "mexico_municipality.json", "mexico_municipality_age.json",
     # Indigenous and Afro-Mexican self-identification, crossed in the extended
     # questionnaire's sample; ITER's files above carry no ethnicity.
@@ -545,17 +666,37 @@ ADAPTER_FILES = [
     # -- the 2020 questionnaire does not ask it -- and comes from
     # NOT_COLLECTED_POLICY.
     "mongolia.json",
+    # Mongolia's resident population at the end of 2025 by sex and five-year
+    # age for all 339 soums (mongolia_ages, NSO DT_NSO_0300_068V2/067V2);
+    # aimags are sums of their drawn soums, the 2025 reform's moves noted.
+    "mongolia_ages.json",
     # Religion, population and mother tongue together: this one file reads
     # Table 9 and Table 11 of the same census. It used to be a pair, the
     # language half coming from the U.S. Census Bureau's tables of the 2017
     # round, which named nine tongues and left Chitral 93.1% "Other".
     "pakistan_district.json",
-    # Population only: Bhutan's census does not ask religion, language or
-    # ethnicity, and those three are declared not_collected in common.py.
-    # This fills 205 gewogs that carried nothing at all, and Thimphu, which
-    # carried nothing because geoBoundaries spells it "Thimpu".
+    # Census 2023 Table 4 (single years by sex) by district: median age and sex
+    # ratio; Gilgit-Baltistan, which PBS tabulates apart, says why it has none.
+    "pakistan_age.json",
+    # Table 10's nationality on the ethnicity field under its basis, in the
+    # census's own categories ("Bangali" as printed).
+    "pakistan_nationality.json",
+    # Bhutan's 20 dzongkhags and 205 gewogs from the PHCB 2017 dzongkhag reports:
+    # population and sex ratio from Table 2.1, median age from annex A2.6/A2.7
+    # where its groups add up, and citizenship (Table 2.2 against 2.1) on the
+    # ethnicity field under its basis. Religion and language are declarations.
     "bhutan_gewog.json",
     "bangladesh_district.json",
+    # Every zila's 2022 median age, interpolated in the five-year groups of the
+    # Bureau's Community Series (Table C-02), each division's zilas held to
+    # National Report Table P03 group by group; dated 2022 on the record.
+    "bangladesh_zila_age.json",
+    # The Maldives' 2022 census by atoll: head count, sex ratio and the bureau's
+    # own median age; nationality on the ethnicity field under its basis.
+    # (One shared comment; maldives_census.json and maldives_nationality.json go on one line: "maldives_census.json", "maldives_nationality.json",)
+    "maldives_census.json",
+    # (same line and comment as maldives_census.json)
+    "maldives_nationality.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
     # After Afrobarometer, which is first: Kenya's counties carried the survey
@@ -569,13 +710,65 @@ ADAPTER_FILES = [
     # survey and now carry their census for the fields it publishes by region.
     "zimbabwe_province.json", "burkina_region.json",
     "thailand_province.json",
-    # Papua New Guinea's own office, two of its publications: the 2024
-    # census's head count for the 22 provinces and 71 of the 87 district
-    # shapes, and the 2011 census's one provincial religion figure. Nothing
-    # else writes PNG, so its place here is only by kind -- a census count.
+    # Papua New Guinea's own office, two of its publications: the 2024 census's
+    # head count and sex ratio for the 22 provinces and all 87 district shapes, and
+    # the 2011 census's provincial median age (20 of 22; NCD's and Milne Bay's
+    # contradict their sexes') and one provincial religion figure. Nothing else
+    # writes PNG.
     "png.json",
+    # Fiji's 2017 census by five-year age and sex for the 15 provinces and 4
+    # divisions (median age, sex ratio), and the 2007 census's Table P01-3
+    # religion and ethnicity, the latest by province. The Eastern polygon is Kadavu alone.
+    "fiji_census.json",
+    # Solomon Islands' 2019 census Basic Tables by province and ward, the wards
+    # summed into the constituencies by OCHA's ward table: count, median age,
+    # sex ratio, religion; ethnicity by province only. OCHA's 2023 projections
+    # for the same constituencies give way to it (SUPERSEDED_ROWS).
+    "solomon_census.json",
+    # Vanuatu's 2020 census, Volume 1, for the six provinces and 58 drawn area
+    # councils: count, median age (Table 4's own for the rural provinces), sex
+    # ratio, ethnic origin, religion, and first language of everyone aged 3+.
+    "vanuatu_census.json",
+    # Samoa's 2021 census villages filed into the 41 old Faipule districts by the
+    # 2016 census's village lists, and the 11 itumalo made of them: count, median
+    # age, sex ratio, religion, and citizenship on the ethnicity field.
+    "samoa_census.json",
+    # Tonga's 2021 census General Tables for the five divisions and 21 drawn
+    # districts: count, median age, sex ratio, religion, multi-response ethnic
+    # origin; language at home by division only.
+    "tonga_census.json",
+    # Kiribati's 2020 census by island: the Island Profile's counts, the General
+    # Report's sex and ethnicity, median ages from SPC's five-year tabulation of
+    # the same census (the Report's own column contradicts its age groups), and
+    # the 2015 census's religion by island. Same year as cod_ps_admin2.json's
+    # island counts, so it replaces them.
+    "kiribati_census.json",
+    # The Marshall Islands' 2021 census by atoll, the same record at both levels:
+    # count, median age, sex ratio, religion, ethnicity; language for Majuro and
+    # Kwajalein only (multi-response).
+    "marshall_census.json",
+    # Tuvalu's 2022 census by island (count, median age, sex ratio), the 2017
+    # census's religion and ethnicity by island, and its count and sex ratio for
+    # the six drawn villages.
+    "tuvalu_census.json",
+    # The FSM's 2023 census by state and municipality (count, median age, sex
+    # ratio, religion), the 2010 census's ethnicity and language, and the 2000
+    # census's first ethnicity for Chuuk's and Kosrae's municipalities.
+    "micronesia_census.json",
+    # Nauru's 2021 census by district: count, sex ratio, median age from the
+    # five-year groups above 15, ethnicity, and the religion of its citizens.
+    "nauru_census.json",
+    # Palau's 2020 census by state and Koror hamlet, transcribed from Volume I's
+    # scanned tables: count, median age, sex ratio, ethnicity, religion, and
+    # whether people speak Palauan.
+    "palau_census.json",
     "kazakhstan_region.json", "cambodia_province.json",
     "kazakhstan_oblast.json", "kazakhstan_district.json",
+    # Kazakhstan's 2021 census median age and sex ratio by region and district.
+    "kazakhstan_census.json",
+    # Religion by region from the 2021 census's brief results (table 7.1),
+    # replacing Wikipedia's transcription, and by district from the 2009 census.
+    "kazakhstan_religion.json",
     "malaysia_state.json", "malaysia_district.json",
     # After both: the same 16 states and the districts, religion only, from
     # the 2020 census; its gaps never displace the ethnicity above.
@@ -637,6 +830,47 @@ ADAPTER_FILES = [
     "bucharest_sectors.json", "north_macedonia_2002.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "peru_department.json",
+    # Southeast Asia from its offices' own tables. After indonesia, timor,
+    # singapore_planning_area, philippines_province, thailand_province,
+    # cambodia_province and myanmar_state, whose same-year figures these replace.
+    # Indonesia: population, median age and sex ratio for 34 provinces and 513
+    # regencies, BPS 2020 census Long Form (2022, Table 3.1) via USCB on HDX;
+    # stated reasons for regency ethnicity, religion and language.
+    "indonesia_age.json",
+    # Viet Nam: 2019 census district population and sex ratio (Table 1) and
+    # province median age (Table 5); religion by province from the 2009 census
+    # (Tables 7 and 1), which 2019 publishes for the country only.
+    "vietnam_district.json",
+    "vietnam_religion.json",
+    # Timor-Leste: 2022 municipality median and sex ratio; post sex ratio and
+    # count (2022) and post median (2015, tables 6 and 7); nationality by
+    # municipality (2015, table 9) as ethnicity_basis "nationality".
+    "timor_age.json",
+    "timor_nationality.json",
+    # Myanmar: median, sex ratio and count by district and state/region from the
+    # 2014 census's five-year groups; nine split or zoned polygons summed.
+    "myanmar_age.json",
+    # Philippines: median, sex ratio and count by province and region from the
+    # PSA 2020 census single years by barangay; two mismatched polygons say why.
+    "philippines_age.json",
+    # Religion and ethnicity summed onto Myanmar's composed districts and Metro
+    # Manila's districts, under uscb's labels; CLEAR Global's 2010 household
+    # language bound to Metro Manila's four districts, Isabela's row refused.
+    "sea_composed.json",
+    # Singapore: median age and sex ratio by planning area, Census 2020.
+    "singapore_age.json",
+    # Cambodia: district and province count and sex ratio, 2019 census final
+    # report (Table 2.1.1, annex P-01 to P-25), communes crosswalked by name.
+    "cambodia_census.json",
+    # Thailand, Laos, Cambodia: COD-PS medians and sex ratios (projections,
+    # FILL_ONLY), plus Thailand's district composition reasons, which replace
+    # thailand_province's generic ones.
+    "sea_cod_ps_age.json",
+    # Thailand: Thai and foreign nationals by province, 2000 census (each final
+    # report's key indicators, read off the page and checked against the
+    # census's Table 1), ethnicity_basis "nationality". A count, so it replaces
+    # thailand_ethnicity's modelled estimate on the 76 provinces.
+    "thailand_nationality.json",
     # Guatemala's 2018 census, read from INE's person database: pueblo and
     # the language each person learned to speak in, for all 22 departments
     # and 340 municipios. Below CLEAR Global, whose 2002 sample it replaces
@@ -781,6 +1015,11 @@ ADAPTER_FILES = [
     "iceland_origin.json",
     "canada_province.json", "canada_economic_region.json",
     "australia_state.json", "australia_lga.json",
+    # The ABS's 2021 General Community Profile for the 547 LGAs and nine states
+    # (australia_profile): median age (G02), sex ratio (G01), ancestry on the
+    # ethnicity field (G08); each state's own G01 count and G14/G13 religion and
+    # language (Australian Indigenous languages named) from the SA2+ tables.
+    "australia_profile.json",
     "uk_lad.json", "uk_county.json",
     # England and Wales themselves, the map's first level: the same ONS 2021
     # tables (TS021 ethnic group, TS030 religion, TS024 main language) asked
@@ -2220,7 +2459,10 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        # ratios from OCHA's COD-PS: projections (Thailand's
                        # by the US Census Bureau), read only where no office
                        # could be.
-                       "sea_cod_ps_age.json"})
+                       "sea_cod_ps_age.json",
+                       # Yemen's median ages from the CSO's 2017 district
+                       # projection: a projection never replaces a count.
+                       "yemen_census_age.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 # A survey's share is an estimate from a sample, and a census's or a
@@ -2994,6 +3236,12 @@ def covered_share(children: list[dict[str, Any]], field: str) -> float | None:
     return covered / total if total > 0 else None
 
 
+def year_sort_key(year: Any) -> tuple[int, str]:
+    """A year or year span ("2008-2014") as a sortable key: its first four-digit year."""
+    m = re.search(r"\d{4}", str(year))
+    return (int(m.group()) if m else 0, str(year))
+
+
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                   field: str, *, level: str = "second-level",
                   over_published: bool = False,
@@ -3246,10 +3494,13 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         best = max(weight, key=lambda y: weight[y])
         if weight[best] / weighed >= YEAR_MAJORITY:
             dated = best
-    aside = sorted((y, n) for y, n in (
+    # Years are sorted by their first four-digit year, so a span a source
+    # writes as text ("2008-2014", Afghanistan's district profiles) sorts
+    # beside the integer years of a sibling file instead of breaking the sort.
+    aside = sorted(((y, n) for y, n in (
         (c.get(f"{field}_year"), c.get("name", c.get("id", "?")))
         for c in children if isinstance(c.get(field), list))
-        if y is not None and y != dated)
+        if y is not None and y != dated), key=lambda t: (year_sort_key(t[0]), t[1]))
 
     counts: dict[str, float] = {}
     denominator = 0.0
@@ -3380,7 +3631,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            f" {', '.join(f'{n} ({y})' for y, n in aside)} were counted."
            if dated is not None else
            f" The divisions do not all report the same year"
-           f" ({', '.join(str(y) for y in sorted(years))}),"
+           f" ({', '.join(str(y) for y in sorted(years, key=year_sort_key))}),"
            f" so this figure carries no single date."
            if len(years) > 1 else
            " The divisions do not date their figures, so neither does this."

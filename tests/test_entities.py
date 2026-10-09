@@ -2479,6 +2479,24 @@ class LargestGroupsDoNotAddUp(unittest.TestCase):
             "religion")
         self.assertIsNone(why)
 
+    def test_a_year_span_beside_integer_years_does_not_break_the_sum(self):
+        # Afghanistan's district profiles date their ethnicity "2008-2014";
+        # the provincial development plans date theirs 2006-2010. A province
+        # whose districts mix the two once stopped the build in the sort.
+        parent = {"population": {"value": 1500}}
+        why = be.roll_up_field(parent, [
+            {"name": "A", "population": {"value": 500}, "ethnicity_year": "2008-2014",
+             "ethnicity": [{"group": "Pashtun", "pct": 100.0, "count": 500}]},
+            {"name": "B", "population": {"value": 500}, "ethnicity_year": 2010,
+             "ethnicity": [{"group": "Tajik", "pct": 100.0, "count": 500}]},
+            {"name": "C", "population": {"value": 500}, "ethnicity_year": 2006,
+             "ethnicity": [{"group": "Hazara", "pct": 100.0, "count": 500}]}],
+            "ethnicity")
+        self.assertIsNone(why)
+        self.assertIn("2008-2014", parent["ethnicity_note"])
+        self.assertEqual([be.year_sort_key(y)[0] for y in ("2008-2014", 2010, "n.d.")],
+                         [2008, 2010, 0])
+
 
 class ACountrySumNeedsItsCheck(unittest.TestCase):
     """A sum replaces a country's published composition only when checked."""
