@@ -1,11 +1,12 @@
-tonga_census: 2021 Census General Tables 1, 2, 4 and 10
-  https://tongastats.gov.to/download/266/general-tables/8089/1-population-trends.xlsx: 218,239 bytes
-  https://tongastats.gov.to/download/266/general-tables/7660/2-ethnicity.xlsx: 123,497 bytes
-  https://tongastats.gov.to/download/266/general-tables/7664/4-religion.xlsx: 96,551 bytes
-  https://tongastats.gov.to/download/266/general-tables/7665/10-literacy.xlsx: 89,481 bytes
-  median ages against the Census Report's key indicators: TONGA 22.2 (printed 22), Tongatapu 22.2 (printed 22), Vava'u 22.3 (printed 22), Ha'apai 22.3 (printed 22), 'Eua 21.1 (printed 21)
-  not checked: Ongo Niua, G 6 24.6 against the report's 23; no record carries the division's median
-  no polygon: Lulunga (723 people), counted in its division
-  no polygon: Niuatoputapu (718 people), counted in its division
-  26 records: admin1 ethnicity 5, admin1 language 4, admin1 median_age 5, admin1 population 5, admin1 religion 5, admin1 sex_ratio 5, admin2 ethnicity 21, admin2 median_age 21, admin2 population 21, admin2 religion 21, admin2 sex_ratio 21
-  wrote data/processed/tonga_census.json (126 kB)
+kiribati_census: 2020 census counts, the General Report's island tables, and SPC's age and sex tabulation
+  https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx: 190,822 bytes
+  Island Profile: 24 islands adding to 119,438, each sheet agreeing with the summary
+  General Report: Tables G-2, A-10a, A-3b for 24 islands, adding up and agreeing with the Island Profile; A-10a medians on the wrong side of 15 for their own age groups: ['Banaba']
+  2015 volume: Table 6's 24 islands make every column of the country's 110,136, and each is its Table 1a population
+  https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/cb0fd355-5326-4574-a76a-81bae7894991/download/kir_admpop_2020.xlsx: 112,348 bytes
+  SPC's country medians {'everyone': 22.9, 'males': 21.8, 'females': 24.0} against the Census Atlas's {'everyone': 22.9, 'males': 21.8, 'females': 24.0} (119,940 people); Table A-10a prints 20.4
+  Table A-10a against SPC's groups: 21 of 23 islands more than a year apart, the printed figure lower on 21, by up to 7.4 years: Abaiang 19.6 v 19.3, Abemama 22.2 v 21.5, Aranuka 19.0 v 25.1, Arorae 25.2 v 27.4, Banaba 13.8 v 21.2, Beru 24.8 v 26.1, Betio 20.8 v 23.5, Butaritari 16.8 v 21.7, Kiritimati 18.9 v 23.6, Kuria 17.1 v 22.9, Maiana 20.8 v 24.6, Makin 15.4 v 20.7, Marakei 17.0 v 21.9, Nikunau 18.7 v 22.6, Nonouti 20.5 v 23.9, Onotoa 23.0 v 26.0, Tabiteuea North 18.6 v 20.3, Tabiteuea South 18.9 v 23.8, Tabuaeran 16.9 v 22.0, Tamana 26.0 v 29.8, Tarawa Ieta 19.8 v 21.8, Tarawa Teinainano 21.2 v 23.0, Teraina 16.2 v 21.7
+  no polygon: Makin (1,914 people), counted in the Gilbert Islands
+  admin1 ethnicity 2, admin1 median_age 2, admin1 population 3, admin1 religion 2, admin1 sex_ratio 2, admin2 ethnicity 22, admin2 median_age 22, admin2 population 23, admin2 religion 22, admin2 sex_ratio 22
+  wrote data/processed/kiribati_census.json (166 kB)
+  wrote 26 records
