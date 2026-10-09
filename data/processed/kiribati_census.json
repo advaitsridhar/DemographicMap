@@ -433,39 +433,21 @@
       "note": "Kanton's 41 people are not in the Pacific Community's tabulation of the 2020 census by age, the source of every other island's median here. The General Report prints 17.9 for Kanton (Table A-10a), a column not used for any island: it puts the country at 20.4 against the 22.9 of the Office's own Census Atlas, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years."
     },
     "sex_ratio": {
-      "value": 95.2,
-      "unit": "males_per_100_females",
-      "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
+      "status": "not_available",
+      "note": "The census counts 41 people (20 men and 21 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "Kiribati Protestant Church",
-        "pct": 50.0,
-        "count": 10
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 35.0,
-        "count": 7
-      },
-      {
-        "group": "Church of Jesus Christ of Latter-day Saints",
-        "pct": 15.0,
-        "count": 3
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 41 people (20 men and 21 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "language": {
       "status": "not_available",
       "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
-    "ethnicity": [
-      {
-        "group": "I-Kiribati",
-        "pct": 100.0,
-        "count": 41
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 41 people (20 men and 21 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population",
@@ -499,12 +481,7 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "97431129B36644055464690",
-    "population_note": "Kanton, the group's one inhabited island.",
-    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 20 males, 21 females).",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "religion_year": 2015,
-    "religion_note": "Religion of the 20 people of Phoenix Islands at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
+    "population_note": "Kanton, the group's one inhabited island."
   },
   {
     "id": "KIR-CENSUS-banaba",
@@ -3855,39 +3832,21 @@
       "note": "Kanton's 41 people are not in the Pacific Community's tabulation of the 2020 census by age, the source of every other island's median here. The General Report prints 17.9 for Kanton (Table A-10a), a column not used for any island: it puts the country at 20.4 against the 22.9 of the Office's own Census Atlas, and 21 of its 23 islands more than a year from what the census's own five-year groups give, by up to 7.4 years."
     },
     "sex_ratio": {
-      "value": 95.2,
-      "unit": "males_per_100_females",
-      "year": 2020,
-      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
+      "status": "not_available",
+      "note": "The census counts 41 people (20 men and 21 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "Kiribati Protestant Church",
-        "pct": 50.0,
-        "count": 10
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 35.0,
-        "count": 7
-      },
-      {
-        "group": "Church of Jesus Christ of Latter-day Saints",
-        "pct": 15.0,
-        "count": 3
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 41 people (20 men and 21 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "language": {
       "status": "not_available",
       "note": "No Kiribati census tabulates language. The 2020 census's General Report and Census Atlas report only whether people can read and write, in any language; the 2015 census's Volume 1 likewise has literacy (Table 15) and no language table, and the 2010 census's tables give literacy (Table 16) and none either."
     },
-    "ethnicity": [
-      {
-        "group": "I-Kiribati",
-        "pct": 100.0,
-        "count": 41
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 41 people (20 men and 21 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population",
@@ -3921,11 +3880,6 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B55751535210853",
-    "population_note": "The 2020 census count (Island Profile tables).",
-    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 20 males, 21 females).",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
-    "religion_year": 2015,
-    "religion_note": "Religion of the 20 people of Kanton at the 2015 census (Volume 1, Table 6, by island), the latest count of it below the country: the 2020 census publishes religion for the country (General Report, Table G-3) and maps it by island without figures (Census Atlas, Map 18). The table has one column for the Kiribati Protestant Church ('KPC'); the 2020 census lists the Kiribati Uniting Church and the KPC apart (21.2% and 8.4% of the country), so the 2015 'KPC' share is to be read against their sum."
+    "population_note": "The 2020 census count (Island Profile tables)."
   }
 ]

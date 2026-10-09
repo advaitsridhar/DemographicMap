@@ -1,51 +1,12 @@
-australia_profile: ABS 2021 Census G01, G02, G08, G13 and G14
-  C21_G01_LGA [1+2+3.P_1...]: 1,695 observations
-  C21_G02_LGA [1...]: 565 observations
-  C21_G08_LGA [._T...]: 18,645 observations
-  C21_G13_LGA [3._T+1+O_T+8+_N._T...]: 2,825 observations
-  C21_G01_SA2 [1+2+3.P_1..AUS+STE.]: 30 observations
-  C21_G02_SA2 [1..AUS+STE.]: 10 observations
-  C21_G08_SA2 [._T..AUS+STE.]: 330 observations
-  C21_G14_SA2 [.3..AUS+STE.]: 340 observations
-  C21_G13_SA2 [3.._T..AUS+STE.]: 470 observations
-  Australia English ancestry 33.0% (published 33.0%)
-  Australia Australian ancestry 29.9% (published 29.9%)
-  state 1: LGAs sum to 8,072,171, the state's own 8,072,163
-  state 2: LGAs sum to 6,503,503, the state's own 6,503,491
-  state 3: LGAs sum to 5,156,158, the state's own 5,156,138
-  state 4: LGAs sum to 1,781,501, the state's own 1,781,516
-  state 5: LGAs sum to 2,660,019, the state's own 2,660,026
-  state 6: LGAs sum to 557,570, the state's own 557,571
-  state 7: LGAs sum to 232,621, the state's own 232,605
-  state 8: LGAs sum to 454,495, the state's own 454,499
-  state 9: LGAs sum to 4,790, the state's own 4,788
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 10 regions
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree less a duplicated parent for 10 regions
-  Australian Indigenous languages taken out of G13's 'Other': 1 5,494, 2 1,143, 3 19,498, 4 4,450, 5 11,493, 6 194, 7 36,077, 8 294, 9 12, AUS 78,656
-  Australia Christianity 43.9% (published 43.9%)
-  Australia English only 72.0% (published 72.0%)
-  East Arnhem (71300): language from G13's coarse partition {'English only': 504, 'Australian Indigenous Languages': 7676, 'Other languages': 127, 'Not stated': 469}
-  West Daly (74680): language from G13's coarse partition {'English only': 355, 'Australian Indigenous Languages': 2477, 'Other languages': 29, 'Not stated': 109}
-  no polygon, counted in its state only: No usual address (NSW) (19499, 11,371 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (NSW) (19799, 0 people)
-  no polygon, counted in its state only: No usual address (Vic.) (29499, 9,089 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Vic.) (29799, 38 people)
-  no polygon, counted in its state only: No usual address (Qld) (39499, 14,670 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Qld) (39799, 183 people)
-  no polygon, counted in its state only: No usual address (SA) (49499, 3,377 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (SA) (49799, 12 people)
-  no polygon, counted in its state only: No usual address (WA) (59499, 8,055 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (WA) (59799, 514 people)
-  no polygon, counted in its state only: No usual address (Tas.) (69499, 1,377 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Tas.) (69799, 19 people)
-  no polygon, counted in its state only: No usual address (NT) (79499, 3,500 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (NT) (79799, 99 people)
-  no polygon, counted in its state only: No usual address (ACT) (89499, 605 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (ACT) (89799, 0 people)
-  no polygon, counted in its state only: No usual address (OT) (99499, 11 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (OT) (99799, 0 people)
-  18 LGA codes have no polygon; 0 of them are not a no-usual-address or migratory code: []
-  {'admin1': 9, 'admin2': 547} records; median age on 556, ancestry on 556
-  wrote data/processed/australia_profile.json (2791 kB)
+kiribati_census: 2020 census counts, the General Report's island tables, and SPC's age and sex tabulation
+  https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx: 190,822 bytes
+  Island Profile: 24 islands adding to 119,438, each sheet agreeing with the summary
+  General Report: Tables G-2, A-10a, A-3b for 24 islands, adding up and agreeing with the Island Profile; A-10a medians on the wrong side of 15 for their own age groups: ['Banaba']
+  2015 volume: Table 6's 24 islands make every column of the country's 110,136, and each is its Table 1a population
+  https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/cb0fd355-5326-4574-a76a-81bae7894991/download/kir_admpop_2020.xlsx: 112,348 bytes
+  SPC's country medians {'everyone': 22.9, 'males': 21.8, 'females': 24.0} against the Census Atlas's {'everyone': 22.9, 'males': 21.8, 'females': 24.0} (119,940 people); Table A-10a prints 20.4
+  Table A-10a against SPC's groups: 21 of 23 islands more than a year apart, the printed figure lower on 21, by up to 7.4 years: Abaiang 19.6 v 19.3, Abemama 22.2 v 21.5, Aranuka 19.0 v 25.1, Arorae 25.2 v 27.4, Banaba 13.8 v 21.2, Beru 24.8 v 26.1, Betio 20.8 v 23.5, Butaritari 16.8 v 21.7, Kiritimati 18.9 v 23.6, Kuria 17.1 v 22.9, Maiana 20.8 v 24.6, Makin 15.4 v 20.7, Marakei 17.0 v 21.9, Nikunau 18.7 v 22.6, Nonouti 20.5 v 23.9, Onotoa 23.0 v 26.0, Tabiteuea North 18.6 v 20.3, Tabiteuea South 18.9 v 23.8, Tabuaeran 16.9 v 22.0, Tamana 26.0 v 29.8, Tarawa Ieta 19.8 v 21.8, Tarawa Teinainano 21.2 v 23.0, Teraina 16.2 v 21.7
+  no polygon: Makin (1,914 people), counted in the Gilbert Islands
+  admin1 ethnicity 2, admin1 median_age 2, admin1 population 3, admin1 religion 2, admin1 sex_ratio 2, admin2 ethnicity 22, admin2 median_age 22, admin2 population 23, admin2 religion 22, admin2 sex_ratio 22
+  wrote data/processed/kiribati_census.json (166 kB)
+  wrote 26 records
