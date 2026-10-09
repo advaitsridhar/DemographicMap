@@ -1251,11 +1251,11 @@ ADAPTER_GAPS: dict[str, str] = {
            "tried. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "
            "made public once, for 2000, in a file that is not a composition. "
-           "Ethnicity is not asked, and by the owner's decision of 19 September "
-           "2026 every province carries a modelled estimate instead: the 2000 "
-           "census's home-language minorities as printed, the rest assigned to "
-           "the region's Tai group as the Ethnolinguistic Maps of Thailand name "
-           "it, labelled as a model on every record.",
+           "Ethnicity is not asked: the provinces carry the 2000 census's count "
+           "of Thai and foreign nationals, and where that is missing a modelled "
+           "estimate -- the 2000 census's home-language minorities as printed, "
+           "the rest assigned to the region's Tai group as the Ethnolinguistic "
+           "Maps of Thailand name it, labelled as a model on every record.",
     # Only language is left for this to explain. The 2016 census's religion
     # by province now comes from iran_census.json, which reads the Statistical
     # Centre's 1395 yearbook as the Internet Archive captured it (amar.org.ir

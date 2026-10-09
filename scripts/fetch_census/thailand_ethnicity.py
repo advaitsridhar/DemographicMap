@@ -343,7 +343,7 @@ def main() -> int:
     args = ap.parse_args()
 
     log(f"thailand_ethnicity: modelled from {SOURCE} (home language) and the {MAPS_YEAR} "
-        f"Ethnolinguistic Maps' regional groups, by the owner's decision of {DECISION}")
+        f"Ethnolinguistic Maps' regional groups")
     wikitext = (Path(args.wikitext).read_text(encoding="utf-8") if args.wikitext
                 else fetch(API, PAGE))
     records = build(wikitext)

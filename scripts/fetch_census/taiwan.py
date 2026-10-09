@@ -889,8 +889,7 @@ def main() -> int:
     if args.inspect is not None:
         inspect(args.inspect or [POPULATION_URL, INDIGENOUS_URL, BUILDINGS_URL], args.rows)
         return 0
-    log(f"taiwan: language from the {LANGUAGE_YEAR} census, ethnicity and religion modelled, "
-        f"by the owner's decision of {DECISION}")
+    log(f"taiwan: language from the {LANGUAGE_YEAR} census, ethnicity and religion modelled")
 
     def text_of(saved: str | None, url: str, *, aia: bool = False) -> str:
         if saved:
