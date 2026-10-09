@@ -33,17 +33,19 @@ left over stops the run.
 composition the 2016 populations on the map already follow (``ITUMALO``).
 
 **Citizenship as ethnicity.** No Samoan census table publishes ethnicity: not
-the 2021 workbook's 58 tables or its Fact Sheet, nor the 2011 census's 93
-tables. Both give citizenship instead -- 2021's **Table 8a** by village
+the 2021 workbook's 58 tables or its Fact Sheet, the 2016 census's four Briefs
+(population by village; fertility, mortality and migration; education and
+work; housing), nor the 2011 census's 93 tables. 2021 and 2011 give
+citizenship instead -- 2021's **Table 8a** by village
 (born in Samoa or abroad to a citizen parent, naturalised, or not a citizen),
 2011's Table 8 by urban and rural residence only. Under the owner's rule for
 states that count citizenship rather than ethnicity, the districts carry
 2021's count under ``ethnicity_basis: "nationality"``, as two groups:
 "Samoan" (every citizen) and "Foreign nationals".
 
-**Not published by place**: language. Neither census's tables have a
-language spoken; their only language items are literacy (the 2021 Fact
-Sheet's Samoan and English, the 2011 tables' Samoan).
+**Not published by place**: language. No census's tables have a language
+spoken; their only language items are literacy (the 2021 Fact Sheet's Samoan
+and English, the 2016 Brief No. 3's any language, the 2011 tables' Samoan).
 
 **Checks**, each refusing the run: Samoa is 205,557 people (2021) and 195,979
 (2016); every row's males and females make its total, its single years of age
@@ -365,8 +367,9 @@ def districts_of(placed: dict[tuple[str, str], tuple[str, str]], new: list[tuple
 
 CITIZENSHIP_NOTE = (
     "Citizenship, not ethnicity. Samoa's census tables carry no ethnicity: the 2021 workbook's "
-    "58 tables and its Fact Sheet, and the 2011 census's 93 tables, give Samoan citizenship "
-    "instead (2021 Table 8a, by village; 2011 Table 8, by urban and rural residence only). "
+    "58 tables and its Fact Sheet, the 2016 census's four Briefs' tables and the 2011 census's "
+    "93 tables have none, and 2021 and 2011 give Samoan citizenship instead (2021 Table 8a, by "
+    "village; 2011 Table 8, by urban and rural residence only). "
     "Under the owner's rule for states that count citizenship rather than ethnicity, this is "
     "the 2021 count of the people here by citizenship: 'Samoan' is every citizen -- born in "
     "Samoa or abroad to a citizen parent ({born_here:,.0f} and {born_abroad:,.0f} here), or "
@@ -374,9 +377,10 @@ CITIZENSHIP_NOTE = (
     "not. A Samoan citizen may be of any ancestry.")
 LANGUAGE_GAP = (
     "No language spoken is published: the 2021 workbook's 58 tables have no language table and "
-    "its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4), "
-    "and the 2011 census's 93 tables only literacy in Samoan (Tables 23-26), by urban and rural "
-    "residence.")
+    "its Fact Sheet reports only literacy in Samoan and English (indicators Edn.3 and Edn.4); "
+    "the 2016 census's Brief No. 3 tables give literacy in any language (Tables 3-6) and the "
+    "2011 census's 93 tables literacy in Samoan (Tables 23-26), both by urban and rural "
+    "residence only.")
 
 
 def citizenship_fields(c: list[float]) -> dict[str, Any]:
