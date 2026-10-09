@@ -185,7 +185,16 @@ def main() -> int:
     ap.add_argument("--text", default=None, help="a saved probe_pdf dump instead of the PDF")
     args = ap.parse_args()
     log(f"korea_survey: {SOURCE}")
-    text = Path(args.text).read_text(encoding="utf-8") if args.text else fetch_text(URL)
+    if args.text:
+        text = Path(args.text).read_text(encoding="utf-8")
+    else:
+        try:
+            text = fetch_text(URL)
+        except Exception as exc:  # noqa: BLE001 - the pollster's host refuses the runner
+            # hrcopinion.co.kr answered 403 to the runner in October 2026; the
+            # Internet Archive's capture of the same file is the other route.
+            log(f"  {URL[:60]}... refused ({exc}); reading the Internet Archive's copy")
+            text = fetch_text(f"https://web.archive.org/web/2026id_/{URL}")
     records = build(text)
     log(f"  {len(records)} provinces from {len(GROUPINGS)} residence regions")
     if len(records) != 17:
