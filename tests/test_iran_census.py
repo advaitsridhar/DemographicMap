@@ -167,6 +167,37 @@ class Binding(unittest.TestCase):
         self.assertEqual(bound, {})
         self.assertIn("neither", notes[0])
 
+    def test_haftgel_is_ochas_haftkel(self):
+        codab = {"Khuzestan": [{"en": "Haftgol", "fa": "شهرستان هفتکل", "pcode": "IR015013"},
+                               {"en": "Shush", "fa": "شهرستان شوش", "pcode": "IR015026"}]}
+        a1 = [{"id": "K", "name": "Khuzestan"}]
+        a2 = [{"id": "h", "name": "Haftgol", "parent": "K"},
+              {"id": "s", "name": "Shush", "parent": "K"}]
+        bound, _ = ir.bind_counties([county(6, "0622", "هفتگل"), county(6, "0626", "شوش")],
+                                    codab, a1, a2)
+        self.assertEqual(bound["0622"]["id"], "h")
+        self.assertEqual(bound["0626"]["id"], "s")
+
+    def test_a_split_shahrestans_halves_carry_a_stated_gap(self):
+        a1 = [{"id": "T", "name": "Tehran"}, {"id": "I", "name": "Isfahan"},
+              {"id": "S", "name": "Semnan"}]
+        a2 = [{"id": "t1", "name": "Tehran", "parent": "T"},
+              {"id": "t2", "name": "City of Tehran", "parent": "T"},
+              {"id": "i1", "name": "Isfahan", "parent": "I"},
+              {"id": "i2", "name": "Isfahan County", "parent": "I"},
+              {"id": "s1", "name": "Mehdishahr", "parent": "S"},
+              {"id": "s2", "name": "Shahmirzad", "parent": "S"}]
+        rows = ir.split_records(a1, a2)
+        self.assertEqual(sorted(r["shape_id"] for r in rows),
+                         ["i1", "i2", "s1", "s2", "t1", "t2"])
+        for r in rows:
+            for field in ("population", "median_age", "sex_ratio", "ethnicity"):
+                self.assertEqual(r[field]["status"], "not_available")
+                self.assertIn("describes neither polygon", r[field]["note"])
+        # A half the map does not draw where it should stops the run.
+        with self.assertRaises(SystemExit):
+            ir.split_records(a1, a2[1:])
+
 
 class Kept(unittest.TestCase):
     def test_a_kept_table_reads_back_the_same(self):

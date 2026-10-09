@@ -37,7 +37,9 @@ Operational Dataset (cod-ab-irn), which names the same 2016 shahrestans in
 Persian and in English: a sheet is matched to OCHA's row by its Persian name
 inside its province, and OCHA's English name to the drawn polygon inside the
 drawn province by a folded comparison, or by ``DRAWN`` where the boundary
-file spells it differently. Every pair is one-to-one or the run stops.
+file spells it differently. Every pair is one-to-one or the run stops. One
+sheet is spelt otherwise by OCHA (``CENSUS_FA``: Khuzestan's Haftgel, "هفتگل"
+in the census and "هفتکل" in cod-ab-irn).
 
 **What the map draws differently from 2016, measured on the site's own
 tiles.**
@@ -46,7 +48,7 @@ tiles.**
   and "City of Tehran"), Isfahan ("Isfahan" and "Isfahan County") and
   Mehdishahr ("Mehdishahr" and "Shahmirzad", the county made from it in
   2020s). A 2016 figure describes the union and neither half, so none of the
-  six polygons takes one (``SPLIT``).
+  six polygons takes one (``SPLIT``); each carries a stated gap saying so.
 * Abu Musa, an island county, is not drawn.
 * Two polygons carry another county's label: the one labelled "Shahariar"
   in Alborz is Fardis (Fardis town, 35.72 N 50.98 E, lies in it; Shahriar is
@@ -176,12 +178,29 @@ SPLIT: dict[str, tuple[str, str]] = {
     "Tehran": ("Tehran", "City of Tehran"), "Isfahan": ("Isfahan", "Isfahan County"),
     "Mehdishahr": ("Mehdishahr", "Shahmirzad"),
 }
+# Each split county's drawn province, and what its two halves are (measured
+# on the site's tiles: Azadi Square, Tajrish and the Bazaar fall in "City of
+# Tehran", Soleqan in "Tehran"; Naqsh-e Jahan Square in "Isfahan", Ziar and
+# Varzaneh in "Isfahan County"; Shahmirzad town in "Shahmirzad").
+SPLIT_PROVINCE = {"Tehran": "Tehran", "Isfahan": "Isfahan", "Mehdishahr": "Semnan"}
+SPLIT_WHAT = {
+    "Tehran": "the city of Tehran and the rest of the county around it",
+    "Isfahan": "the city of Isfahan and the rest of the county around it",
+    "Mehdishahr": "Mehdishahr and Shahmirzad, the county made from its Shahmirzad district "
+                  "after the census",
+}
 # Drawn nowhere: an island county.
 NOT_DRAWN = {"Abumusa"}
 # A shahrestan drawn under another first-level polygon than its province's:
 # OCHA's English name -> the drawn province label, and which drawn polygon of
 # that label (the one holding exactly this child).
 ELSEWHERE = {"Bandar-e-Gaz": "Mazandaran"}
+# A sheet whose Persian name OCHA spells otherwise, inside the same province:
+# the Centre's sheet name -> OCHA's. Khuzestan's 0622 is "هفتگل" (Haftgel) in
+# the census and "شهرستان هفتکل" (Haftkel, IR015013, English "Haftgol") in
+# cod-ab-irn -- the two usual spellings of the one county, and the only sheet
+# and the only OCHA row of Khuzestan's 27 left over when the others are paired.
+CENSUS_FA = {"هفتگل": "هفتکل"}
 
 LABELS = {"ایران": "Iranian", "افغانستان": "Afghan", "عراق": "Iraqi", "پاکستان": "Pakistani",
           "ترکیه": "Turkish", "سایر کشورها": "Other nationalities",
@@ -467,6 +486,15 @@ def load_codab(blob: bytes) -> dict[str, list[dict[str, str]]]:
     return out
 
 
+def ocha_fa(name: str) -> str:
+    """A census sheet's Persian name, folded, as OCHA spells it (CENSUS_FA)."""
+    folded = fa(name)
+    for census, ocha in CENSUS_FA.items():
+        if folded == fa(census):
+            return fa(ocha)
+    return folded
+
+
 def drawn_units() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     a1 = as_drawn(read_json(SITE / "admin1" / shard_name(ISO3), []))
     a2 = as_drawn(read_json(SITE / "admin2" / shard_name(ISO3), []))
@@ -491,14 +519,15 @@ def bind_counties(counties: list[dict[str, Any]], codab: dict[str, list[dict[str
     problems: list[str] = []
     for county in counties:
         province = PROVINCES[county["province"]][1]
-        rows = [r for r in codab.get(province, []) if fa(r["fa"]) == fa(county["name"])]
+        wanted = ocha_fa(county["name"])
+        rows = [r for r in codab.get(province, []) if fa(r["fa"]) == wanted]
         if len(rows) != 1:
             # Excel cuts a sheet name at 31 characters; the code takes four.
             rows = [r for r in codab.get(province, [])
-                    if fa(r["fa"]).startswith(fa(county["name"])) and len(fa(county["name"])) >= 4]
+                    if fa(r["fa"]).startswith(wanted) and len(wanted) >= 4]
         if len(rows) != 1:
             unclaimed = [f"{r['en']}={r['fa']}" for r in codab.get(province, [])
-                         if not any(fa(r["fa"]) == fa(c["name"]) for c in counties
+                         if not any(fa(r["fa"]) == ocha_fa(c["name"]) for c in counties
                                     if c["province"] == county["province"])]
             problems.append(f"{province} {county['name']} ({county['code']}) matches "
                             f"{len(rows)} of OCHA's shahrestans; OCHA's unmatched there: "
@@ -650,6 +679,35 @@ def build(province_ages: dict[int, dict[str, Any]],
     return rows, notes
 
 
+def split_records(a1: list[dict[str, Any]], a2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """A stated gap on both halves of every 2016 shahrestan the map draws as two.
+
+    The census counts the shahrestan whole; a figure for the whole describes
+    neither half, and nothing it publishes divides it along the drawn line, so
+    each polygon says so rather than sitting blank.
+    """
+    name1 = {u["id"]: u["name"] for u in a1}
+    rows = []
+    for en, halves in SPLIT.items():
+        province = SPLIT_PROVINCE[en]
+        for label in halves:
+            hits = [u for u in a2 if u["name"] == label and name1.get(u.get("parent")) == province]
+            if len(hits) != 1:
+                raise SystemExit(f"iran_census: {len(hits)} drawn polygons labelled {label!r} "
+                                 f"in {province}")
+            note = (f"The 2016 census counts {en} shahrestan as one unit; the map draws it as "
+                    f"two polygons, {halves[0]!r} and {halves[1]!r} -- {SPLIT_WHAT[en]}. A "
+                    f"figure for the whole county describes neither polygon, and the census "
+                    f"publishes none along that line, so none is written here.")
+            missing = gap(NOT_AVAILABLE, note)
+            rows.append(record(
+                f"IRN-CENSUS-SPLIT-{fold(label)}", label, level="admin2", parent=ISO3,
+                country=ISO3, match_by="shape_id", shape_id=hits[0]["id"],
+                population=dict(missing), median_age=dict(missing), sex_ratio=dict(missing),
+                ethnicity=dict(missing)))
+    return rows
+
+
 # What has been read is kept, as the tables' counts, under data/raw/iran (which
 # the repository tracks): the Archive refuses a run that asks for all 64
 # workbooks at once often enough that a run reads what it can within BUDGET,
@@ -788,6 +846,7 @@ def main() -> int:
     province_ages, province_citizenship, counties, codab = read_all(only=only)
     a1, a2 = drawn_units()
     rows, notes = build(province_ages, province_citizenship, counties, codab, a1, a2)
+    gaps = split_records(a1, a2)
     for line in notes:
         log(f"  {line}")
     national = add_ages(list(province_ages.values()))
@@ -802,7 +861,9 @@ def main() -> int:
         eth = ", ".join(f"{s['group']} {s['pct']}" for s in r["ethnicity"][:3])
         log(f"    {r['level']} {r['name']} [{r['shape_id']}]: {r['population']['value']:,}, "
             f"median {r['median_age']['value']}, ratio {r['sex_ratio']['value']}; {eth}")
-    write_json(PROCESSED / OUT, rows)
+    for r in gaps:
+        log(f"    admin2 {r['name']} [{r['shape_id']}]: a stated gap (split since 2016)")
+    write_json(PROCESSED / OUT, rows + gaps)
     return 0
 
 
