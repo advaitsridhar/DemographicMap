@@ -9004,9 +9004,23 @@ Iran's census has never asked language. That declaration is in
 `NOT_COLLECTED_POLICY` and it is still true; nothing below changes it. What
 changed on 20 September 2026 is that the owner supplied twelve province files
 from the **Atlas of the Languages of Iran (ALI)**, and this map now carries a
-language figure for eleven provinces and 96 counties that is explicitly *not*
+language figure for eleven provinces and 102 counties that is explicitly *not*
 a census: a linguist's field estimate, settlement by settlement, weighted up
 by population and labelled as an estimate on every record.
+
+Every other county of the twelve provinces read carries its own stated reason
+rather than the country-wide one: Khuzestān's, Lorestān's and Kohgiluyeh va
+Boyer Ahmad's modules name no county for any settlement; Rasht and Ārān o
+Bidgol are covered too thinly (28.5% and 37.8%); the atlas counts Chardavol
+and Sirvan as one county; nine of Kermānshāh's fourteen are not in its
+module. The atlas keeps Iran's older division, so five of its districts that
+have since become counties (Asaluyeh, Ben, Sāmān, Badreh, Buin o Miān Dasht)
+and the city of Isfahan, which the boundary file draws apart from the county
+around it, are carved out of the county the atlas counts them in. Placing the
+atlas's settlement points in the boundary file's polygons shows each part
+inside its own polygon (93% for Badreh, 99-100% for the rest), and without
+the carving Darreh Shahr's figure carried Badreh's Bayray and Hinimini
+speakers and Isfahan County's was four-fifths the city's.
 
 ### What ALI is
 

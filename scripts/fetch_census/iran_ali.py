@@ -102,6 +102,18 @@ the province, publishes an estimate that sums to 90% and is refused below),
 and Kermānshāh at 18.6%, its module covering five of the province's fourteen
 shahrestans. Nothing lands between 18.6% and 73.1%.
 
+**Every shape of a province read says something.** A county of a province
+whose module is read gets a figure or a stated gap with its own reason --
+the module names no county at all (Khuzestān, Lorestān, Kohgiluyeh va Boyer
+Ahmad), the settlements cover too little of it (Rasht, Ārān o Bidgol), the
+atlas counts it with a neighbour (Chardavol and Sirvan), or the module names
+no county of its name (nine of Kermānshāh's fourteen). Without that it showed
+the country-wide reason, which is about the provinces the atlas has not
+reached. And where the boundary file draws as a polygon of its own a part of
+what the atlas counts as one county -- a district that has since become a
+county, or the city of Isfahan -- the part is carved out (``CARVED``), so that
+each figure describes the ground its polygon draws.
+
 **Refusing a share string.** ``language_distribution_estimate`` parses as
 ``<language> <number>%`` joined by semicolons, and 21,137 of the 21,152 rows
 parse and sum to exactly 100. The rest are not guessed at. Seven sum to
@@ -140,7 +152,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, RAW, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, RAW, gap, log, record, write_json
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import DERIVED, MODELLED, estimate, read_json, slugify  # noqa: E402
@@ -238,11 +250,11 @@ SHAHRESTAN_ALIASES: dict[str, dict[str, str]] = {
                   "Bashkard": "Bashagard"},
     "Isfahan": {"Borkhār": "Barkhar",
                 # The boundary file draws two shapes here, "Isfahan" and
-                # "Isfahan County". They are not duplicates: "Isfahan" is a
-                # 0.2-degree polygon over the city and "Isfahan County" is the
-                # 1.7-degree one around it. The shahrestan is the county, and
-                # the city polygon is left empty rather than given a figure
-                # for the countryside around it.
+                # "Isfahan County". They are not duplicates and they do not
+                # overlap: "Isfahan" is a 0.2-degree polygon over the city and
+                # "Isfahan County" the 1.7-degree one around it, without it.
+                # The shahrestan's countryside and towns go to the county; the
+                # city's own row is carved out to the city polygon (CARVED).
                 "Esfahān": "Isfahan County",
                 "Falāvarjān": "Falaverjan",
                 "Khomeyni Shahr": "Khomeini Shahr",
@@ -267,6 +279,42 @@ SHAHRESTAN_NO_SHAPE: dict[str, dict[str, str]] = {
                                 "as two counties where ALI writes one, and "
                                 "there is no figure for either apart.",
     },
+}
+# ... and the shapes each of those stands over, which are left without a
+# figure for that reason: {province shape: {county shape: the atlas's county}}.
+COUNTED_TOGETHER: dict[str, dict[str, str]] = {
+    "Ilam": {"Chardavol": "Shirvān va Chardāvol", "Sirvan": "Shirvān va Chardāvol"},
+}
+
+# Parts of an atlas county that the boundary file draws as polygons of their
+# own: {province shape: {the atlas's county: ((column, the atlas's name in
+# it, the map's shape), ...)}}. The atlas keeps Iran's older division, and
+# five of its districts (bakhsh) have since become counties; the boundary file
+# also draws the city of Isfahan apart from the county around it. A county
+# figure that kept them described ground its polygon does not draw: Darreh
+# Shahr's showed Bayray 13.9% and Hinimini 12.6%, every speaker of either in
+# Badreh; Fereydan's showed Georgian 6.4%, all of it in Buin and Miandasht;
+# and Isfahan County's was four-fifths the city's 1,756,126 people. A part's
+# rows make a figure of its own for its polygon, and the county's figure and
+# its own total leave them out.
+#
+# Each entry is measured, not assumed: the atlas's settlements carry their
+# coordinates, and placed in the boundary file's polygons the part's weighted
+# population falls inside the polygon named here and the rest of its county
+# inside the county's -- Asaluyeh 100% (the rest of Kangān 100%), Ben 100%,
+# Sāmān 100% (the rest of Shahr-e Kord 100%), Buin o Miān Dasht 99.1% (0.9%
+# without a point; the rest of Fereydan 100%), Badreh 93.2% (5.3% in
+# Rumeshkhan's polygon, 1.5% without a point; the rest of Darreh Shahr 100%)
+# and the city of Esfahān's own row 100% (of the rest of the county, where a
+# settlement has a point, 97.1% in Isfahan County and 2.9% in villages inside
+# the city polygon).
+CARVED: dict[str, dict[str, tuple[tuple[str, str, str], ...]]] = {
+    "Bushehr": {"Kangān": (("bakhsh_roman", "Asaluyeh", "Asaluyeh"),)},
+    "Chaharmahal and Bakhtiari": {"Shahr-e Kord": (("bakhsh_roman", "Ben", "Ben"),
+                                                   ("bakhsh_roman", "Sāmān", "Saman"))},
+    "Ilam": {"Darreh Shahr": (("bakhsh_roman", "Badreh", "Badreh"),)},
+    "Isfahan": {"Fereydan": (("bakhsh_roman", "Buin o Miān Dasht", "Buin and Miandasht"),),
+                "Esfahān": (("city_roman", "Esfahān", "Isfahan"),)},
 }
 
 FIELD = "language"
@@ -517,17 +565,41 @@ class Unit:
         return rows
 
 
-def collect(rows: list[dict[str, str]]) -> tuple[Unit, dict[str, Unit], list[str]]:
-    """The province and its shahrestans, from one file's rows.
+def collect(rows: list[dict[str, str]],
+            carved: dict[str, tuple[tuple[str, str, str], ...]] | None = None,
+            ) -> tuple[Unit, dict[str, Unit], list[str], dict[str, Unit]]:
+    """The province, its shahrestans and the parts carved out of them, from
+    one file's rows.
 
     Shahrestans are keyed on the folded name because a file may spell one unit
     two ways -- Gilān writes "Rudsar" on 357 rows and "Rud Sar" on the town's
     own row, and keeping them apart left the county reading 73.6% covered when
     it is 99.4%.
+
+    ``carved`` is the province's entry in CARVED, keyed on the folded county:
+    a row of a carved district or city goes to a unit of its own, returned
+    keyed by the shape's name, and not to its county. A carved district's own
+    total is its bakhsh row; the county's own total loses it (or, for a city,
+    which has no total row of its own, the city's weighted rows), so the
+    county is measured against the ground its polygon still draws.
     """
+    carved = carved or {}
     province = Unit("")
     counties: dict[str, Unit] = {}
+    parts: dict[str, Unit] = {}
+    carved_from: dict[str, str] = {}
     variants: list[str] = []
+
+    def part_of(row: dict[str, str], key: str) -> tuple[Unit | None, str]:
+        for column, value, shape_name in carved.get(key, ()):
+            if (row.get(column) or "").strip() == value:
+                unit = parts.get(shape_name)
+                if unit is None:
+                    unit = parts[shape_name] = Unit(value)
+                    unit.spellings.add(value)
+                    carved_from[shape_name] = key
+                return unit, column
+        return None, ""
 
     for row in rows:
         county_name = (row.get("shahrestan_roman") or "").strip()
@@ -538,6 +610,7 @@ def collect(rows: list[dict[str, str]]) -> tuple[Unit, dict[str, Unit], list[str
             if county is None:
                 county = counties[key] = Unit(county_name)
             county.spellings.add(county_name)
+        part, column = part_of(row, key) if key else (None, "")
 
         if has_language(row):
             place = ((row.get("city_roman") or "").strip()
@@ -545,7 +618,9 @@ def collect(rows: list[dict[str, str]]) -> tuple[Unit, dict[str, Unit], list[str
                      or (row.get("local_name") or "").strip()
                      or "an unnamed place")
             province.add(row, place)
-            if county is not None:
+            if part is not None:
+                part.add(row, place)
+            elif county is not None:
                 county.add(row, place)
             continue
 
@@ -558,8 +633,20 @@ def collect(rows: list[dict[str, str]]) -> tuple[Unit, dict[str, Unit], list[str
             if is_province_total(row):
                 province.own_total = max(province.own_total, weight)
             continue
+        if part is not None:
+            # A carved district's own row: its bakhsh, and nothing below it.
+            if column == "bakhsh_roman" and not any(
+                    (row.get(f"{level}_roman") or "").strip()
+                    for level in ("city", "dehestan", "settlement")):
+                part.own_total = max(part.own_total, weight)
+            continue
         if not (row.get("bakhsh_roman") or "").strip():
             county.own_total = max(county.own_total, weight)
+
+    def unit_for(row: dict[str, str]) -> Unit | None:
+        key = fold((row.get("shahrestan_roman") or "").strip())
+        part, _ = part_of(row, key) if key else (None, "")
+        return part if part is not None else counties.get(key)
 
     for row in rows:
         if has_language(row) or not is_place_row(row):
@@ -571,9 +658,9 @@ def collect(rows: list[dict[str, str]]) -> tuple[Unit, dict[str, Unit], list[str
         # the composition and it is in the denominator, which is what makes an
         # unsurveyed corner of a county show up as coverage rather than vanish.
         province.place_total += weight
-        key = fold((row.get("shahrestan_roman") or "").strip())
-        if key in counties:
-            counties[key].place_total += weight
+        unit = unit_for(row)
+        if unit is not None:
+            unit.place_total += weight
 
     for row in rows:
         if not has_language(row):
@@ -582,14 +669,22 @@ def collect(rows: list[dict[str, str]]) -> tuple[Unit, dict[str, Unit], list[str
         if weight is None:
             continue
         province.place_total += weight
-        key = fold((row.get("shahrestan_roman") or "").strip())
-        if key in counties:
-            counties[key].place_total += weight
+        unit = unit_for(row)
+        if unit is not None:
+            unit.place_total += weight
+
+    # The county's own row counts its carved parts; what it is measured
+    # against is the ground left to its polygon.
+    for shape_name, part in parts.items():
+        county = counties[carved_from[shape_name]]
+        if county.own_total:
+            county.own_total = max(0, county.own_total
+                                   - (part.own_total or part.place_total))
 
     for county in counties.values():
         if len(county.spellings) > 1:
             variants.append(f"{county.name}: {', '.join(sorted(county.spellings))}")
-    return province, counties, variants
+    return province, counties, variants, parts
 
 
 # ---------------------------------------------------------------------------
@@ -615,9 +710,18 @@ def province_shape(roman: str, by_name: dict[str, dict[str, Any]]
 
 
 def county_shape(province_name: str, roman: str,
-                 by_name: dict[str, dict[str, Any]]) -> dict[str, Any] | None:
+                 by_name: dict[str, dict[str, Any]],
+                 exact: dict[str, dict[str, Any]] | None = None) -> dict[str, Any] | None:
+    """The second-level shape an atlas county is, or None.
+
+    ``exact`` is the province's shapes by their own names. An alias names a
+    shape exactly, and folding can make two shapes one key: "Isfahan" and
+    "Isfahan County" both fold to "isfahan".
+    """
     named = SHAHRESTAN_ALIASES.get(province_name, {}).get(roman)
     if named:
+        if exact and named in exact:
+            return exact[named]
         return by_name.get(fold(named))
     return by_name.get(fold(roman))
 
@@ -676,11 +780,14 @@ def method_note(unit: Unit, label: str, entry: dict[str, Any], total: int,
                if unit.years == {2011, 2016} else
                f"the {sorted(unit.years)[0]} census population" if unit.years
                else "the census populations the atlas prints")
+    places = unit.rows - unit.uninhabited
     text = [
         f"Nothing was read for {label} itself. This is the population-weighted "
         f"sum of the language estimates the Atlas of the Languages of Iran "
-        f"publishes for {unit.rows - unit.uninhabited:,} settlements and towns "
-        f"inside it, each weighted by {weights}. Those weighted places hold "
+        f"publishes for {places:,} "
+        f"{'settlement or town' if places == 1 else 'settlements and towns'} "
+        f"inside it, {'weighted' if places == 1 else 'each weighted'} by {weights}. "
+        f"{'It holds' if places == 1 else 'Those weighted places hold'} "
         f"{unit.population:,} people, {coverage * 100:.1f}% of the "
         f"{total:,} that {where} accounts for.",
     ]
@@ -782,16 +889,47 @@ def unit_record(unit: Unit, shape: dict[str, Any], entry: dict[str, Any],
     value["settlements_refused"] = len(unit.refused)
 
     aliases = sorted({roman, *unit.spellings} - {label})
-    entity_id = (f"{ISO3}-ALI-{slugify(label)}" if level == "admin1"
-                 else f"{ISO3}-ALI-{slugify(parent_name or '')}-{slugify(label)}")
     fields: dict[str, Any] = {FIELD: value, "country": ISO3, "aliases": aliases}
     if parent_name:
         fields["parent_name"] = parent_name
     return record(
-        entity_id, label, level=level, parent=parent,
+        record_id(label, level, parent_name), label, level=level, parent=parent,
+        # Bound to the shape it was measured for, by its id: two of Isfahan's
+        # shapes fold to one name, and a name is a guess where an id is not.
+        match_by="shape_id", shape_id=shape["id"],
         sources=[{"field": FIELD, "name": citation(entry), "url": entry["url"],
                   "year": entry["year"], "license": LICENCE}],
         **fields)
+
+
+def record_id(label: str, level: str, parent_name: str | None) -> str:
+    return (f"{ISO3}-ALI-{slugify(label)}" if level == "admin1"
+            else f"{ISO3}-ALI-{slugify(parent_name or '')}-{slugify(label)}")
+
+
+# What a stated gap says first: why there is a language figure on the map at
+# all, before why there is none here.
+GAP_LEAD = ("Iran's census does not ask language. The language figures this map "
+            "shows for Iran are population-weighted sums of the settlement estimates "
+            "in the Atlas of the Languages of Iran, a research atlas published "
+            "province by province. ")
+
+
+def gap_record(shape: dict[str, Any], level: str, parent: str,
+               parent_name: str | None, why: str) -> dict[str, Any]:
+    """A shape in a province the atlas reaches that carries no figure, and why.
+
+    Without it the shape showed the country-wide reason, which says the atlas
+    has not reached the province: false of Ahvaz, in a Khuzestān whose
+    module is read and whose province carries its figure.
+    """
+    fields: dict[str, Any] = {"country": ISO3}
+    if parent_name:
+        fields["parent_name"] = parent_name
+    return record(
+        record_id(shape["name"], level, parent_name), shape["name"], level=level,
+        parent=parent, match_by="shape_id", shape_id=shape["id"],
+        **{FIELD: gap(NOT_AVAILABLE, GAP_LEAD + why)}, **fields)
 
 
 # ---------------------------------------------------------------------------
@@ -811,13 +949,16 @@ def build(directory: Path = SOURCE_DIR
     admin1 = {fold(s["name"]): s for s in shapes("admin1")}
     admin1_by_id = {s["id"]: s for s in shapes("admin1")}
     admin2: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+    drawn: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for shape in shapes("admin2"):
         parent = admin1_by_id.get(shape.get("parent", ""), {}).get("name", "")
         admin2[parent][fold(shape["name"])] = shape
+        drawn[parent].append(shape)
 
     records: list[dict[str, Any]] = []
     tally: dict[str, Any] = {"files": [], "provinces": 0, "counties": 0,
-                             "unmatched": [], "gaps": [], "licences": set()}
+                             "unmatched": [], "gaps": [], "licences": set(),
+                             "stated": 0}
     files = source_files(directory)
     log(f"iran_ali: {len(files)} province file(s) in {directory}")
     if not files:
@@ -849,7 +990,9 @@ def build(directory: Path = SOURCE_DIR
             tally["unmatched"].append(roman)
             continue
 
-        province, counties, variants = collect(rows)
+        carved = {fold(county): parts for county, parts
+                  in CARVED.get(shape["name"], {}).items()}
+        province, counties, variants, parts = collect(rows, carved)
         for line in variants:
             log(f"    one county spelled two ways, read as one: {line}")
         leaves = province.rows
@@ -862,6 +1005,7 @@ def build(directory: Path = SOURCE_DIR
         total, basis = province.total(
             held.get("value") if isinstance(held, dict) else None)
         coverage = province.population / total if total else 0.0
+        written_province = False
         if not total:
             log(f"    {shape['name']}: no total to measure coverage against; "
                 f"nothing written")
@@ -873,11 +1017,19 @@ def build(directory: Path = SOURCE_DIR
             log(f"    {shape['name']}: {reason}; below "
                 f"{MIN_COVERAGE * 100:.0f}%, so no figure is written")
             tally["gaps"].append((shape["name"], reason))
+            records.append(gap_record(
+                shape, "admin1", ISO3, None,
+                f"The atlas's module for {shape['name']} is read, but its settlements "
+                f"hold {province.population:,} people, {coverage * 100:.1f}% of the "
+                f"province's {total:,}: too few for their languages to stand for the "
+                f"province's, so no figure is written for it."))
+            tally["stated"] += 1
         else:
             built = unit_record(province, shape, entry, "admin1", ISO3, None,
                                 roman, total, basis)
             if built:
                 records.append(built)
+                written_province = True
                 tally["provinces"] += 1
                 top = built[FIELD]["estimate"][0]
                 log(f"    {shape['name']}: {coverage * 100:.1f}% covered, "
@@ -886,37 +1038,103 @@ def build(directory: Path = SOURCE_DIR
 
         parent_id = f"{ISO3}-ALI-{slugify(shape['name'])}"
         known = admin2.get(shape["name"], {})
-        for county in sorted(counties.values(), key=lambda u: u.name):
-            if not county.rows:
-                continue
-            declared = SHAHRESTAN_NO_SHAPE.get(shape["name"], {}).get(county.name)
-            county_of = county_shape(shape["name"], county.name, known)
-            if county_of is None:
-                tally["unmatched"].append(f"{shape['name']}/{county.name}")
-                log(f"    {county.name}: no second-level shape -- "
-                    f"{declared or 'undeclared; look at it'}")
-                continue
+        exact = {s["name"]: s for s in drawn.get(shape["name"], [])}
+        # Why each of the province's shapes has no figure, where it has none.
+        why: dict[str, str] = {}
+        reached: set[str] = set()
+
+        def measured(unit: Unit, county_of: dict[str, Any], roman: str) -> None:
+            """Write one county or carved part, or say why it is not written."""
+            reached.add(county_of["id"])
             held = county_of.get("population")
-            total, basis = county.total(
+            total, basis = unit.total(
                 held.get("value") if isinstance(held, dict) else None)
             if not total:
                 tally["gaps"].append((county_of["name"],
                                       "no population to measure it against"))
                 log(f"    {county_of['name']}: no total to measure coverage "
                     f"against; nothing written")
-                continue
-            coverage = county.population / total
+                why[county_of["id"]] = (
+                    f"The atlas lists {unit.rows:,} settlements in {roman}, but gives no "
+                    f"total for it and the map holds no population for it, so how much "
+                    f"of it they cover cannot be measured and no figure is written.")
+                return
+            coverage = unit.population / total
             if coverage < MIN_COVERAGE:
                 reason = (f"the atlas's settlements cover {coverage * 100:.1f}% "
                           f"of the county's {total:,} people")
                 tally["gaps"].append((county_of["name"], reason))
                 log(f"    {county_of['name']}: {reason}; nothing written")
-                continue
-            built = unit_record(county, county_of, entry, "admin2", parent_id,
-                                shape["name"], county.name, total, basis)
+                worst = sorted(unit.refused, key=lambda r: -r[1])[:1]
+                why[county_of["id"]] = (
+                    f"The atlas's settlements in {roman} that carry a population and a "
+                    f"reading hold {unit.population:,} people, {coverage * 100:.1f}% of "
+                    f"the county's {total:,}: too few for their languages to stand for "
+                    f"the county's, so no figure is written for it."
+                    + (f" The largest left out is {worst[0][0]} ({worst[0][1]:,} people), "
+                       f"whose estimate could not be read as shares: {worst[0][2]}."
+                       if worst else ""))
+                return
+            built = unit_record(unit, county_of, entry, "admin2", parent_id,
+                                shape["name"], roman, total, basis)
             if built:
                 records.append(built)
                 tally["counties"] += 1
+
+        for county in sorted(counties.values(), key=lambda u: u.name):
+            if not county.rows:
+                continue
+            declared = SHAHRESTAN_NO_SHAPE.get(shape["name"], {}).get(county.name)
+            county_of = county_shape(shape["name"], county.name, known, exact)
+            if county_of is None:
+                tally["unmatched"].append(f"{shape['name']}/{county.name}")
+                log(f"    {county.name}: no second-level shape -- "
+                    f"{declared or 'undeclared; look at it'}")
+                continue
+            measured(county, county_of, county.name)
+        for shape_name, part in sorted(parts.items()):
+            part_of = exact.get(shape_name)
+            if part_of is None:
+                raise SystemExit(f"iran_ali: CARVED names {shape_name!r} in "
+                                 f"{shape['name']}, which draws no shape of that name")
+            if not part.rows:
+                raise SystemExit(f"iran_ali: CARVED's {shape_name!r} matches no "
+                                 f"settlement in {path.name}")
+            log(f"    {shape_name}: carved out of its atlas county, "
+                f"{part.population:,} weighted people")
+            measured(part, part_of, part.name)
+
+        # Every other shape of a province the atlas reaches says why it is
+        # empty, rather than showing the country's reason, which is about the
+        # provinces the atlas has not reached.
+        named_counties = [c for c in counties.values() if c.rows]
+        together = COUNTED_TOGETHER.get(shape["name"], {})
+        for county_of in sorted(drawn.get(shape["name"], []), key=lambda s: s["name"]):
+            if any(r.get("shape_id") == county_of["id"] and r["level"] == "admin2"
+                   for r in records):
+                continue
+            reason = why.get(county_of["id"])
+            if reason is None and not named_counties:
+                reason = (f"The atlas's module for {shape['name']} is read"
+                          + (" and the province carries its figure" if written_province
+                             else "")
+                          + ", but the module names no county for any of its "
+                          f"{province.rows:,} settlements, so none can be placed in this "
+                          f"county and no county figure is written.")
+            elif reason is None and county_of["name"] in together:
+                one = together[county_of["name"]]
+                both = " and ".join(sorted(n for n, c in together.items() if c == one))
+                reason = (f"The atlas counts {one} as one county, where the map draws "
+                          f"{both} apart, and gives no figure for either alone.")
+            elif reason is None:
+                reason = (f"The atlas's module for {shape['name']} lists settlements in "
+                          f"{len(reached)} of the {len(drawn[shape['name']])} counties the "
+                          f"map draws for the province, and none under this county's name, "
+                          f"so no figure is written for it.")
+                log(f"    {county_of['name']}: no atlas county; stated as such")
+            records.append(gap_record(county_of, "admin2", parent_id, shape["name"],
+                                      reason))
+            tally["stated"] += 1
         tally["files"].append({"file": path.name, "province": roman,
                                "rows": len(rows), "language_rows": leaves})
     return records, tally
@@ -934,8 +1152,9 @@ def main() -> int:
 
     records, tally = build(Path(args.dir))
     log(f"  {tally['provinces']} province(s) and {tally['counties']} "
-        f"shahrestan(s) written; {len(tally['gaps'])} unit(s) left as a stated "
-        f"gap; {len(tally['unmatched'])} name(s) matched no shape")
+        f"shahrestan(s) written; {len(tally['gaps'])} measured unit(s) left as a "
+        f"stated gap; {tally['stated']} shape(s) of the provinces read written as a "
+        f"stated gap; {len(tally['unmatched'])} name(s) matched no shape")
     for name, reason in tally["gaps"]:
         log(f"    gap: {name} -- {reason}")
     if args.describe:
