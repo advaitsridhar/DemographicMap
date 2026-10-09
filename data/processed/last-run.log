@@ -1,14 +1,17 @@
-japan: nationality from e-Stat 0003445244, believers from 0003282963, prior from NHK/ISSP 2018
-  e-Stat 0003445244: 816 values
-  e-Stat 0003282963: 240 values
-  nationality: the 47 prefectures reproduce the table's national row; total 126,146,099 is the published one; the imputed foreign share is +0.24 points from the recorded one (stated on every prefecture)
-  believers: 175,054,047 against 126,146,099 people, 1.39 per person; used as a relative signal only
-  prior (no answer left out): no religion 63.3, Buddhism 31.6, Shinto 3.1, Christianity 1.0, Other religions 1.0
-  religion: the five prefectures the tilt moves furthest from the national prior:
-      Okinawa Prefecture       9.9 points  Buddhism 22.0, Shinto 9.0, Christianity 5.0, Other religions 0.8  (held at the bound: Shinto, Christianity)
-      Kyoto Prefecture         6.9 points  Buddhism 25.1, Shinto 9.0, Christianity 0.7, Other religions 1.9  (held at the bound: Shinto)
-      Nagano                   5.9 points  Buddhism 26.1, Shinto 9.0, Christianity 0.8, Other religions 0.8  (held at the bound: Shinto)
-      Miyagi                   5.4 points  Buddhism 26.9, Shinto 8.4, Christianity 0.8, Other religions 0.6
-      Yamanashi                5.2 points  Buddhism 27.3, Shinto 8.2, Christianity 0.6, Other religions 0.6
-  religion: 3 prefectures hit a bound: Okinawa Prefecture, Kyoto Prefecture, Nagano
-  wrote data/processed/japan_prefecture.json (394 kB)
+Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
+  1,302,201 bytes
+  Ethnicity [ETH_]: 426 rows, 33 groups, denominator 'Total population, ethnicity'
+    330 rows skipped: another level, or no area name
+    admin1: 47,798,404 against the country's own 47,798,404 -- exactly
+    admin2: 47,798,404 against the country's own 47,798,404 -- exactly
+    3 of 95 areas do not reach their published total; the map shows the remainder as unaccounted:
+      MYITKYINĀ: groups come to 406,649 against a published 399,318 (-1.8%)
+      YAMETHIN: groups come to 521,433 against a published 530,143 (+1.6%)
+      KACHIN STATE: groups come to 1,335,021 against a published 1,327,689 (-0.6%)
+  Ethnicity [RLG_]: 426 rows, 6 groups, denominator 'Total population, religion'
+    330 rows skipped: another level, or no area name
+    admin1: 49,013,525 against the country's own 49,013,525 -- exactly
+    admin2: 49,013,525 against the country's own 49,013,525 -- exactly
+    every one of 95 areas reaches its published total
+  wrote data/processed/myanmar_state.json (311 kB)
+  95 areas: 15 admin1, 80 admin2
