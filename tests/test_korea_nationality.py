@@ -212,10 +212,13 @@ class TheDistrictTable(unittest.TestCase):
                    json.loads((ROOT / "site" / "data" / "admin1" / "KOR.units.json").read_text())}
         parents["KOR"] = ""
         drawn = {(parents[r["parent"]], r["name"]) for r in shapes}
-        mapped = set()
-        for province, table in m.DISTRICTS.items():
-            for shape in table.values():
-                mapped.add((m.DRAWN_ELSEWHERE.get((province, shape), province), shape))
+        # Every district sits under its own province: the build files the
+        # ones drawn in a neighbour's polygon, or in none (DRAWN_ELSEWHERE),
+        # where the register counts them (DECLARED_PARENTS). Gunwi-gun, which
+        # the 2022 file lists under North Gyeongsang, is Daegu's since 2023.
+        moved = {(under, shape): home for (home, shape), under in m.DRAWN_ELSEWHERE.items()}
+        mapped = {(moved.get((province, shape), province), shape)
+                  for province, table in m.DISTRICTS.items() for shape in table.values()}
         self.assertEqual(len(shapes), 228)
         self.assertEqual(drawn, mapped)
 
