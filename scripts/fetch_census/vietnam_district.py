@@ -120,8 +120,10 @@ UNDRAWN = {("Quảng Trị", "Cồn Cỏ"), ("Khánh Hòa", "Trường Sa")}
 DISTRICT_AGE_GAP = ("The 2019 census publishes ages by province and above only: the Completed "
                     "Results volume gives five-year groups by province (Table 5) and single "
                     "years by region (Table 4), and no table of ages for a district.")
-RELIGION_GAP = ("The 2019 census publishes religion for the whole country only: Table 3 of "
-                "the Completed Results volume (page 210) has no province or district rows.")
+RELIGION_GAP = ("No census publishes a district's religion. The 2019 census publishes it for "
+                "the whole country only (Table 3 of its Completed Results volume, page 210, has "
+                "no province or district rows), and the 2009 census by province and above "
+                "(Table 7 of its Completed Results), which is what the provinces carry.")
 DISTRICT_ETHNICITY_GAP = ("The 2019 census publishes ethnicity by province and above only "
                           "(Completed Results, Table 2); no table gives a district's.")
 # The polygon drawn at the first level for one census district.
