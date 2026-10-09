@@ -283,6 +283,11 @@ def composition(unit: dict[str, Any], population: int) -> tuple[list[dict[str, A
     return rows, ", ".join(named)
 
 
+# A province one of whose districts the boundary file draws at the first level
+# (vietnam_district.FIRST_LEVEL): province -> that district.
+DRAWN_APART = {"Bà Rịa–Vũng Tàu": "Côn Đảo"}
+
+
 def build(units: list[dict[str, Any]], populations: dict[str, dict[str, Any]],
           admin1: list[dict[str, Any]]) -> list[dict[str, Any]]:
     keys = {vn.fold(u["name"]): u for u in admin1}
@@ -310,6 +315,12 @@ def build(units: list[dict[str, Any]], populations: dict[str, dict[str, Any]],
                 f"whole country only.")
         if other:
             note += f" \"Other religions\" here: {other}."
+        apart = [d for prov, d in DRAWN_APART.items() if vn.fold(prov) in
+                 {vn.fold(k) for k in [name, *vn.PROVINCES[name]]}]
+        if apart:
+            note += (f" The count is the whole province's, {', '.join(apart)} district included, "
+                     f"which the boundary file draws as a first-level polygon of its own; the "
+                     f"table stops at the province, so the district cannot be taken out.")
         out.append(record(
             f"VNM-REL2009-{p['code']}", shape["name"], level="admin1", parent="VNM",
             country="VNM", match_by="shape_id", shape_id=shape["id"],

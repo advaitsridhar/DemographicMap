@@ -79,6 +79,15 @@ class ReligionTest(unittest.TestCase):
         # Côn Đảo is no province: it says so, and takes nothing.
         self.assertEqual(recs["CD"]["religion"]["status"], "not_available")
 
+    def test_a_province_with_a_district_drawn_apart_says_it_is_inside(self):
+        # Bà Rịa-Vũng Tàu's count includes Côn Đảo, drawn at the first level;
+        # Hà Nội stands in for it here.
+        with unittest.mock.patch.object(v, "DRAWN_APART", {"Hà Nội": "Côn Đảo"}):
+            recs = self.run_all(pages())
+        self.assertIn("Côn Đảo district included", recs["HN"]["religion_note"])
+        self.assertNotIn("Côn Đảo", recs["HG"]["religion_note"])
+        self.assertIn("Bà Rịa–Vũng Tàu", v.DRAWN_APART)
+
     def test_religions_that_miss_the_total_refuse(self):
         with self.assertRaises(SystemExit):
             self.run_all(pages(hanoi_catholics=151))

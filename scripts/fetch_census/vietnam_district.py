@@ -420,6 +420,10 @@ def province_records(units: dict[str, dict[str, Any]], admin1: list[dict[str, An
             raise SystemExit(f"vietnam_district: {prov}: the middle person is in 85+")
         # No religion gap is said for a province: the 2009 census publishes
         # its religion, which vietnam_religion reads.
+        apart = [name for p, name in FIRST_LEVEL.values() if key(p) == key(prov)]
+        inside = (f" The count is the whole province's, {', '.join(apart)} district included, "
+                  f"which the boundary file draws as a first-level polygon of its own; a median "
+                  f"cannot have the district taken out." if apart else "")
         out.append(record(
             f"VNM-AGE-{key(prov)}", shape["name"], level="admin1", parent="VNM", country="VNM",
             match_by="shape_id", shape_id=shape["id"], sources=src,
@@ -427,7 +431,7 @@ def province_records(units: dict[str, dict[str, Any]], admin1: list[dict[str, An
             median_age_note=("Interpolated within the five-year age group that holds the "
                              "middle person, from the 2019 census's count of the province by "
                              "five-year age group to an open 85+ (Table 5); the volume gives "
-                             "single years for the country and its regions only.")))
+                             "single years for the country and its regions only." + inside)))
     return out
 
 
