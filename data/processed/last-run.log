@@ -1,9 +1,15 @@
-belgium_nationality: Eurostat cens_21ctz_r3, Belgium, 1 January 2021
-  cens_21ctz_r3: dimensions ['freq', 'citizen', 'sex', 'age', 'unit', 'geo', 'time'], sizes [1, 221, 1, 1, 1, 15, 1]
-  regions against Belgium: parts sum to 11,554,767 = 11,554,767
-  provinces against BE1: parts sum to 1,226,329 = 1,226,329
-  provinces against BE2: parts sum to 6,664,709 = 6,664,709
-  provinces against BE3: parts sum to 3,663,729 = 3,663,729
-  named: Belgian, French, Dutch, Italian, Romanian, Moroccan, Spanish, Polish, Portuguese
-  wrote data/processed/belgium_nationality.json (36 kB)
-  wrote belgium_nationality.json: 14 records
+austria_nationality: Bev_Staatsangeh_Geburtsland_Gebietseinheiten_2026.ods, sheet 'Staatsangehörigkeit'
+  Länder against Austria: parts sum to 9,215,956 = 9,215,956
+  districts against Austria: parts sum to 9,215,956 = 9,215,956
+  districts against Burgenland: parts sum to 301,695 = 301,695
+  districts against Kärnten: parts sum to 569,990 = 569,990
+  districts against Niederösterreich: parts sum to 1,729,541 = 1,729,541
+  districts against Oberösterreich: parts sum to 1,537,159 = 1,537,159
+  districts against Salzburg: parts sum to 573,526 = 573,526
+  districts against Steiermark: parts sum to 1,271,764 = 1,271,764
+  districts against Tirol: parts sum to 779,060 = 779,060
+  districts against Vorarlberg: parts sum to 412,307 = 412,307
+  districts against Wien: parts sum to 2,040,914 = 2,040,914
+  districts: 94 bound; unbound []; polygons left []
+  wrote data/processed/austria_nationality.json (312 kB)
+  wrote austria_nationality.json: 103 records
