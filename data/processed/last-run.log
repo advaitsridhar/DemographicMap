@@ -1,14 +1,19 @@
-  303,737 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.1.pdf: 303,737 bytes
-  29 pages
-  368,634 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Persons/Persons_3.4.pdf: 368,634 bytes
-  39 pages
-  394,452 bytes
-  https://dosweb.dos.gov.jo/DataBank/Census2015/Non-Jordanians/Non-jordanian_8.1.pdf: 394,452 bytes
-  48 pages
-  Table 8.1 lines read as no row: ['Countries', 'Department of Statistics', 'Female Male Total Female Male Total Female Male Total', 'Nationality & Governorate', 'Rural', 'Sex & Urban/ Rural', 'Zaire']
-  estimates end of 2025: 11,937,000; census 2015: 9,496,761 inside Jordan, 34,951 Jordanians abroad
-  52 second-level shapes written as gaps (not the DoS's liwas)
-  wrote data/processed/jordan_dos.json (275 kB)
-  wrote jordan_dos.json (64)
+  15,455,635 bytes
+  https://web.archive.org/web/20240801130251id_/https://www.ncsi.gov.om/Elibrary/LibraryContentDoc/bar_Statistical%20Year%20Book%202024%20Issue%2052_469215ea-35ad-4c19-baeb-be858bd6c934.pdf: 15,455,635 bytes
+  280 pages
+  carved wilayats' places all lie in their drawn wilayat: [('Al Jabal Al Akhdar', 'geonames:11806731 Al Jabal al Akhdar'), ('Al Jabal Al Akhdar', 'geonames:286515 Sayq'), ('Al Jabal Al Akhdar', 'geonames:288864 Wadi Bani Habib'), ('Sinaw', 'geonames:286576 Sinaw')]
+    Muscat: Table 7-2 1,455,680, Table 9-2 1,455,680
+    Dhofar: Table 7-2 521,266, Table 9-2 521,266
+    Musandam: Table 7-2 56,800, Table 9-2 56,800
+    Al Buraymi: Table 7-2 130,576, Table 9-2 130,576
+    Ad Dakhiliyah: Table 7-2 556,033, Table 9-2 555,250 (0.14% apart)
+    Al Batinah North: Table 7-2 917,546, Table 9-2 917,546
+    Al Batinah South: Table 7-2 545,449, Table 9-2 545,449
+    Ash Sharqiyah South: Table 7-2 366,501, Table 9-2 366,501
+    Ash Sharqiyah North: Table 7-2 314,557, Table 9-2 315,592 (0.33% apart)
+    Adh Dhahirah: Table 7-2 240,529, Table 9-2 240,529
+    Al Wusta: Table 7-2 60,665, Table 9-2 60,413 (0.42% apart)
+  63 wilayats, 11 governorates, 5,165,602 people at the end of 2023
+  drawn wilayats written: 61 of 61; drawn but not in the table: []; yearbook wilayats on no drawn polygon: []
+  wrote data/processed/oman_ncsi.json (202 kB)
+  wrote oman_ncsi.json (68)
