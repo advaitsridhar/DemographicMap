@@ -44,6 +44,11 @@ Subcommands:
         Wikidata's settlements, neighbourhoods and districts in the country
         whose item is QID, with their Arabic and English labels, their points
         and the drawn unit holding each.
+    osm CC [--iso ISO3] [--unit-level L] [--grep REGEX] [--rows N]
+        OpenStreetMap's named places and administrative areas (levels 5-10)
+        in the country whose ISO 3166 code is CC, from Overpass: names in
+        Arabic and English, the drawn unit holding each point, and for an
+        area the share of it in each drawn unit.
 
 Usage:
     python -m scripts.fetch_census.west_asia_probe ods https://www.data.gov.bh --search population
@@ -430,11 +435,111 @@ SELECT ?item ?ar ?en ?coord WHERE {{
         log(f"  {qid} | {en} | {ar} | {lat:.5f},{lon:.5f} | in {holder.get(qid, '?')}")
 
 
+OVERPASS = "https://overpass-api.de/api/interpreter"
+
+
+def osm_shape(element: dict[str, Any]) -> Any:
+    """An Overpass element (``out geom``) as a shapely point or area.
+
+    A closed way is its ring; a relation is the polygons its outer members'
+    lines close into, less its inner members'. Anything that does not close
+    is returned as its points' centre, so it is still placed.
+    """
+    from shapely.geometry import LineString, MultiPoint, Point, Polygon
+    from shapely.ops import polygonize, unary_union
+    if element["type"] == "node":
+        return Point(element["lon"], element["lat"])
+    if element["type"] == "way":
+        coords = [(p["lon"], p["lat"]) for p in element.get("geometry") or []]
+        if len(coords) >= 4 and coords[0] == coords[-1]:
+            return Polygon(coords).buffer(0)
+        return MultiPoint(coords).centroid if coords else None
+    lines: dict[str, list[Any]] = {"outer": [], "inner": []}
+    for member in element.get("members") or []:
+        coords = [(p["lon"], p["lat"]) for p in member.get("geometry") or []]
+        if member.get("type") == "way" and len(coords) >= 2:
+            lines["inner" if member.get("role") == "inner" else "outer"].append(LineString(coords))
+    outer = unary_union(list(polygonize(lines["outer"]))) if lines["outer"] else None
+    if outer is not None and not outer.is_empty:
+        if lines["inner"]:
+            outer = outer.difference(unary_union(list(polygonize(lines["inner"]))))
+        return outer.buffer(0)
+    centre = element.get("center")
+    return Point(centre["lon"], centre["lat"]) if centre else None
+
+
+def cmd_osm(cc: str, iso3: str | None, level: str, grep: str | None, rows: int,
+            zoom: int) -> None:
+    """OpenStreetMap's named places and administrative areas in one country.
+
+    Each is printed with its Arabic and English names, the drawn unit of
+    ``iso3`` holding its point (or its area's representative point), and,
+    for one mapped as an area, the share of that area lying in each drawn
+    unit -- the evidence for which census area a drawn polygon is.
+    """
+    query = f"""[out:json][timeout:300];
+area["ISO3166-1"="{cc}"]["admin_level"="2"]->.c;
+(
+  node["place"]["name"](area.c);
+  way["place"]["name"](area.c);
+  relation["place"]["name"](area.c);
+  way["boundary"="administrative"]["admin_level"~"^([5-9]|10)$"](area.c);
+  relation["boundary"="administrative"]["admin_level"~"^([5-9]|10)$"](area.c);
+);
+out geom;"""
+    req = urllib.request.Request(OVERPASS, data=urllib.parse.urlencode({"data": query}).encode(),
+                                 headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=400) as fh:
+            body = fh.read()
+    except Exception as err:  # noqa: BLE001 -- a probe reports
+        log(f"Overpass {cc}: {type(err).__name__}: {err}")
+        return
+    elements = json.loads(body).get("elements") or []
+    log(f"Overpass {cc}: {len(body):,} bytes, {len(elements)} elements")
+    pat = re.compile(grep, re.I) if grep else None
+    shapes: dict[str, Any] = {}
+    label: dict[str, str] = {}
+    if iso3:
+        from .sea_common import drawn, polygons
+        shapes = polygons(level, iso3, zoom)
+        label = {u["id"]: u["name"] for u in drawn(iso3, level)}
+    out = []
+    for el in elements:
+        tags = el.get("tags") or {}
+        names = [tags.get(k, "") for k in ("name", "name:ar", "name:en", "alt_name",
+                                           "official_name")]
+        if pat and not any(pat.search(n) for n in names if n):
+            continue
+        geom = osm_shape(el)
+        if geom is None or geom.is_empty:
+            continue
+        point = geom if geom.geom_type == "Point" else geom.representative_point()
+        holder = [label.get(sid, sid) for sid, g in shapes.items() if g.contains(point)]
+        split = ""
+        if geom.geom_type in ("Polygon", "MultiPolygon") and geom.area > 0 and shapes:
+            parts = sorted(((g.intersection(geom).area / geom.area, label.get(sid, sid))
+                            for sid, g in shapes.items() if g.intersects(geom)), reverse=True)
+            split = ", ".join(f"{name} {share:.0%}" for share, name in parts if share >= 0.02)
+            km2 = geom.area * (111.32 ** 2) * abs(__import__("math").cos(
+                __import__("math").radians(point.y)))
+            split = f"{km2:.2f} km2: {split}"
+        kind = tags.get("place") or f"admin{tags.get('admin_level', '?')}"
+        out.append((tags.get("name:en") or tags.get("name", ""),
+                    f"  {el['type'][0]}{el['id']} | {kind} | {tags.get('name', '')} | "
+                    f"{tags.get('name:ar', '')} | {tags.get('name:en', '')} | "
+                    f"{point.y:.5f},{point.x:.5f} | in {' + '.join(holder) or '-'}"
+                    + (f" | {split}" if split else "")))
+    log(f"{len(out)} named elements" + (f" matching {grep!r}" if grep else ""))
+    for _key, line in sorted(out)[:rows]:
+        log(line)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("cmd", choices=["ods", "odsrows", "get", "wayback", "uscb", "xlsx", "pdf",
-                                    "geonames", "wdpoints"])
+                                    "geonames", "wdpoints", "osm"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--search")
     ap.add_argument("--where")
@@ -467,6 +572,9 @@ def main() -> int:
         return 0
     if args.cmd == "wdpoints":
         cmd_wdpoints(args.target[0], args.iso, args.unit_level, args.grep, args.rows, args.zoom)
+        return 0
+    if args.cmd == "osm":
+        cmd_osm(args.target[0], args.iso, args.unit_level, args.grep, args.rows, args.zoom)
         return 0
     if args.cmd == "ods":
         for base in args.target:
