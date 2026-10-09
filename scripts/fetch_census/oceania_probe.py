@@ -81,7 +81,16 @@ def fetch(url: str, *, service: str | None = None, accept: str | None = None,
     req = urllib.request.Request(url, headers=headers_for(service, accept))
     try:
         with urllib.request.urlopen(req, timeout=timeout) as fh:
-            return fh.status, fh.headers.get("Content-Type", ""), fh.read()
+            body = fh.read()
+            # A file stored gzipped (Palau's population XML in the Archive)
+            # is read as the file it holds.
+            if body[:2] == b"\x1f\x8b":
+                import gzip
+                try:
+                    body = gzip.decompress(body)
+                except OSError:
+                    pass
+            return fh.status, fh.headers.get("Content-Type", ""), body
     except urllib.error.HTTPError as err:
         body = err.read()[:1500] if hasattr(err, "read") else b""
         return err.code, (err.headers.get("Content-Type", "") if err.headers else ""), body
@@ -232,7 +241,7 @@ def cmd_get(urls: list[str], chars: int, grep: str | None, links: str | None,
         if links:
             pattern = re.compile(links, re.I)
             seen = []
-            for href in re.findall(r'href\s*=\s*["\']([^"\']+)["\']', text, re.I):
+            for href in re.findall(r'(?:href|src)\s*=\s*["\']([^"\']+)["\']', text, re.I):
                 full = urllib.parse.urljoin(url, href)
                 if pattern.search(full) and full not in seen:
                     seen.append(full)
