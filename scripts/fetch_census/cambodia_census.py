@@ -473,9 +473,41 @@ def province_records(table: dict[int, tuple[int, int, int]], adm1_rows) -> list[
     return out
 
 
+def explain(annex: dict[int, dict[str, Any]], gaz: dict[str, list[dict[str, Any]]]) -> None:
+    """Print, province by province, each census district beside the 2018 district
+    of the same code, and for a province where any of them differ by name, every
+    commune on both sides. Nothing is written."""
+    adm2 = {str(r["ADM2_PCODE"]).strip(): str(r["ADM2_EN"]) for r in gaz["ADM2"]}
+    for p, prov in sorted(annex.items()):
+        odd = [d for d, dist in prov["districts"].items()
+               if fold(adm2.get(f"KH{d:04d}", "")) != fold(dist["name"])]
+        if not odd:
+            continue
+        log(f"  province {p:02d} {prov['name']}: census districts "
+            + "; ".join(f"{d} {dist['name']} ({len(dist['communes'])})"
+                        + ("" if d not in odd else f" [2018 KH{d:04d}: "
+                           f"{adm2.get(f'KH{d:04d}', '-')}]")
+                        for d, dist in sorted(prov["districts"].items())))
+        log("    2018 districts: " + "; ".join(f"{k} {v}" for k, v in sorted(adm2.items())
+                                                 if k[2:4] == f"{p:02d}"))
+        if len(odd) < 2 and p != 25:
+            continue
+        for d, dist in sorted(prov["districts"].items()):
+            log(f"    census {d} {dist['name']}: " + ", ".join(
+                f"{c} {com['name']}" for c, com in sorted(dist["communes"].items())))
+        for code in sorted(k for k in adm2 if k[2:4] == f"{p:02d}"):
+            log(f"    2018 {code} {adm2[code]}: " + ", ".join(
+                f"{r['ADM3_PCODE']} {r['ADM3_EN']}" for r in gaz["ADM3"]
+                if str(r["ADM2_PCODE"]).strip() == code))
+
+
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--explain", action="store_true",
+                    help="print the census's districts beside the 2018 gazetteer's where "
+                         "their codes name different districts; write nothing")
+    args = ap.parse_args()
     from pypdf import PdfReader
     log(f"cambodia_census: {SOURCE_DISTRICT}")
     pdf = download(FINAL_PDF, RAW / "cambodia" / FINAL_PDF.rsplit("/", 1)[-1])
@@ -484,6 +516,9 @@ def main() -> int:
     annex = parse_annex(pages)
     table = parse_provinces(pages, annex)
     check_annex(annex, table)
+    if args.explain:
+        explain(annex, gazetteer())
+        return 0
     low: dict[int, float] = {}
     for p, prov in annex.items():
         if prov["n"][1] > table[p][2]:
