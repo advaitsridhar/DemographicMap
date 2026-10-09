@@ -207,6 +207,27 @@ class Tables(unittest.TestCase):
         self.assertEqual(sum(alamudun.values()), 600)
         self.assertEqual(alamudun["Kyrgyz"], 545 + 15)
 
+    def test_single_years_with_1999_first_and_a_misprinted_rural_triple(self):
+        # 2022's whole, urban and rural are the last nine figures; Batken's
+        # book prints 1999 before 2009. Age 60's rural triple restates the
+        # whole (Issyk-Kul); the whole is read, and the years still make the
+        # all-ages row.
+        def row(whole, urban):
+            rural = [w - u for w, u in zip(whole, urban)]
+            return " ".join(thousands(v) for v in [9, 4, 5, 7, 3, 4, *whole, *urban, *rural])
+        lines = ["Все население " + row([300, 198, 102], [100, 98, 2])]
+        lines.append("до 1 года " + row([3, 1, 2], [1, 0, 1]))
+        for age in range(1, 100):
+            whole = [3, 2, 1] if age != 60 else [3, 1, 2]
+            text = row(whole, [1, 1, 0] if age != 60 else [1, 0, 1])
+            if age == 60:
+                text = " ".join(text.split()[:-3] + ["3", "1", "2"])
+            lines.append(f"{age} {text}")
+        lines.append("100 лет и старше " + row([0, 0, 0], [0, 0, 0]))
+        years = kg.parse_years("\n".join(lines), "X")
+        self.assertEqual(years["total"], (300, 198, 102))
+        self.assertEqual(years["both"][60], 3)
+
     def test_balykchys_misprinted_16_19_row_is_what_the_total_leaves(self):
         groups = [(10, 5, 5)] * 21
         groups[4] = (4970, 2523, 2447)

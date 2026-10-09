@@ -648,6 +648,17 @@ def parse_years(text: str, where: str) -> dict[str, Any] | None:
         def ok(v: list[int]) -> bool:
             return v[-9:-6] == [a + b for a, b in zip(v[-6:-3], v[-3:])]
         found = [v for n in (12, 15) for v in figures(tokens, n, ok, triples=True)]
+        if not found:
+            # Issyk-Kul's age-60 row prints its rural triple as the whole
+            # again. Where only one reading has every triple whole, its 2022
+            # whole is taken; the single years must still make the table's
+            # all-ages row, which is checked below.
+            loose = [v for n in (12, 15) for v in figures(tokens, n, lambda v: True,
+                                                          triples=True)]
+            if len(loose) == 1:
+                log(f"  {where} {what}: urban {loose[0][-6:-3]} and rural {loose[0][-3:]} "
+                    f"do not make the whole {loose[0][-9:-6]} as printed; the whole is read")
+                found = loose
         if len(found) != 1:
             raise SystemExit(f"kyrgyzstan_census: {where} {what}: {len(found)} readings of "
                              f"{' '.join(tokens)!r}")
