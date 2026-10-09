@@ -16,7 +16,7 @@ log. Each subcommand answers one question and prints only what decides it.
   each body, then its matching lines or links.
 * ``pages URL --pages N,N`` -- the one exception to read-only: those pages of a
   PDF as grayscale JPEGs under data/processed/page_images, for tables printed
-  as scans with no text layer, removed again once read.
+  as scans with no text layer; ``clean`` removes them again once read.
 
 Services: ``pdh`` is the Pacific Community's PDH.Stat, ``abs`` the ABS Data
 API, ``nz`` Stats NZ's Aotearoa Data Explorer. The last needs a key, which is
@@ -330,6 +330,17 @@ def cmd_pages(url: str, numbers: list[int], dpi: int, width: int, rotate: int) -
                 f"({os.path.getsize(path):,} bytes)")
 
 
+def cmd_clean() -> None:
+    """Remove the page images, once read; the run then records their removal."""
+    import shutil
+    if os.path.isdir(PAGE_DIR):
+        names = sorted(os.listdir(PAGE_DIR))
+        shutil.rmtree(PAGE_DIR)
+        log(f"removed {PAGE_DIR}: {', '.join(names)}")
+    else:
+        log(f"{PAGE_DIR} is not there")
+
+
 def cmd_csv(url: str, columns: list[str], rows: int, grep: str | None) -> None:
     """Chosen columns of a CSV, one row per line (all columns' names first)."""
     import csv
@@ -401,7 +412,11 @@ def main() -> int:
     p.add_argument("--dpi", type=int, default=150)
     p.add_argument("--width", type=int, default=1700)
     p.add_argument("--rotate", type=int, default=0, help="degrees counter-clockwise")
+    sub.add_parser("clean", help="remove the page images")
     args = ap.parse_args()
+    if args.cmd == "clean":
+        cmd_clean()
+        return 0
     if args.cmd == "pages":
         cmd_pages(args.url, [int(n) for n in args.pages.split(",") if n.strip()], args.dpi,
                   args.width, args.rotate)

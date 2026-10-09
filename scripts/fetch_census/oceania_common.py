@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import io
 import json
+import re
 import time
 from collections import Counter
 from pathlib import Path
@@ -92,6 +93,33 @@ def check(condition: bool, message: str) -> None:
     """A failed check stops the run: a mismatch is never smoothed over."""
     if not condition:
         raise SystemExit(message)
+
+
+FIGURE = re.compile(r"^(?:\d{1,3}(?:,\d{3})*(?:\.\d+)?|-)$")
+
+
+def transcription(text: str, columns: tuple[str, ...], what: str,
+                  adds_up: bool = True) -> dict[str, dict[str, float]]:
+    """{line label: {column: figure}} from a table transcribed as "label | figures".
+
+    For a table an office prints only as a picture, read off the rendered
+    page: "-" is none, every line must have one figure per column, and with
+    ``adds_up`` each line's figures after the first must make the first.
+    """
+    rows: dict[str, dict[str, float]] = {}
+    for line in text.strip().splitlines():
+        label, _, figures = (part.strip() for part in line.partition("|"))
+        cells = figures.split()
+        check(len(cells) == len(columns) and all(FIGURE.match(c) for c in cells),
+              f"{what}: {label!r} has {len(cells)} figures for {len(columns)} columns")
+        check(label not in rows, f"{what}: two lines {label!r}")
+        row = dict(zip(columns, (0.0 if c == "-" else float(c.replace(",", "")) for c in cells)))
+        if adds_up:
+            parts = sum(list(row.values())[1:])
+            check(abs(parts - row[columns[0]]) < 0.5,
+                  f"{what}: {label!r} adds up to {parts:,.0f}, not {row[columns[0]]:,.0f}")
+        rows[label] = row
+    return rows
 
 
 def close(a: float, b: float, slack: float = 0.0) -> bool:

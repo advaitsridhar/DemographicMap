@@ -129,7 +129,7 @@ class TheRecords(unittest.TestCase):
     def setUp(self):
         counts = kc.read_profile(profile_book())
         self.census, self.ages = kc.build(counts, kc.read_cod(cod_book()),
-                                          load_units("KIR", "admin1"),
+                                          kc.read_report(counts), load_units("KIR", "admin1"),
                                           load_units("KIR", "admin2"))
 
     def named(self, records, name):
@@ -157,6 +157,47 @@ class TheRecords(unittest.TestCase):
         self.assertIn("BetioEast", betio["sex_ratio_note"])
         census = self.named(self.census, "Betio")
         self.assertEqual(census["religion"]["status"], "not_available")
+
+    def test_an_island_carries_the_offices_own_age_sex_and_ethnicity(self):
+        betio = self.named(self.census, "Betio")
+        self.assertEqual(betio["median_age"]["value"], 20.8)
+        self.assertEqual(betio["sex_ratio"]["value"], 95.0)
+        self.assertEqual(betio["ethnicity"][0]["group"], "I-Kiribati")
+        kanton = self.named(self.census, "Kanton")
+        self.assertEqual(kanton["median_age"]["value"], 17.9)
+        phoenix = self.named(self.census, "Phoenix Islands")
+        self.assertEqual(phoenix["median_age"]["value"], 17.9)
+        gilbert = self.named(self.census, "Gilbert Islands")
+        self.assertNotIn("median_age_note", gilbert)
+        self.assertIn("Makin", gilbert["ethnicity_note"])
+
+    def test_a_median_its_own_age_groups_contradict_is_not_used(self):
+        banaba = self.named(self.census, "Banaba")
+        self.assertEqual(banaba["median_age"]["status"], "not_available")
+        self.assertIn("13.8", banaba["median_age"]["note"])
+        self.assertIn("150 of its 333", banaba["median_age"]["note"])
+
+
+class TheReport(unittest.TestCase):
+    def test_the_tables_add_up_and_agree_with_the_profile(self):
+        report = kc.read_report(kc.read_profile(profile_book()))
+        self.assertEqual(report["g2"]["Kiritimati"]["Male"], 3_837)
+        self.assertEqual(report["a3"]["Kiritimati"]["Kiribati/Mix"], 662)
+        self.assertNotIn("Banaba", report["medians"])
+        self.assertEqual(report["medians"]["Makin"], 15.4)
+
+    def test_a_misread_figure_stops_the_run(self):
+        counts = kc.read_profile(profile_book())
+        original = kc.G2
+        try:
+            kc.G2 = original.replace("Kuria | 1,190 605 585", "Kuria | 1,190 606 584")
+            with self.assertRaises(SystemExit):
+                kc.read_report(counts)
+            kc.G2 = original.replace("Kuria | 1,190 605 585", "Kuria | 1,190 605 586")
+            with self.assertRaises(SystemExit):
+                kc.read_report(counts)
+        finally:
+            kc.G2 = original
 
 
 if __name__ == "__main__":
