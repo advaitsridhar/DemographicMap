@@ -1,17 +1,57 @@
-marshall_census: 2021 Census basic tables and analytical report
-  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
-  https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf: RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf; reading the Internet Archive's copy
-  Basic Tables: 25 atolls adding to 42,418; religion and ethnicity of the 41,575 in private households
-  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
-  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
-  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
-  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
-  https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf: RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf; reading the Internet Archive's copy
-  Analytical Report: medians for 23 atolls; languages for Kwajalein, Majuro
-  no polygon: Lib (156 people); Bikini and Rongelap counted nobody
-  admin1 ethnicity 20, admin1 language 2, admin1 median_age 22, admin1 population 22, admin1 religion 20, admin1 sex_ratio 20, admin2 ethnicity 20, admin2 language 2, admin2 median_age 22, admin2 population 22, admin2 religion 20, admin2 sex_ratio 20
-  wrote data/processed/marshall_census.json (179 kB)
-  wrote 44 records
+
+== https://web.archive.org/web/20170511124634id_/http://cso.gov.af/Content/files/SDES%20Kapisa%20Report%20-%20Final.pdf
+    81 pages
+  -- page 20
+    on district and even smaller units, including urban subdivisions, major villages and clusters of small
+    villages. This will prove valuable for local development planning and for monitoring public service delivery.
+    The first step in the survey was to list every household in each village. Half of these listed households (i.e.
+    every other household) were taken as samples and asked detailed questions.
+    5. COVERAGE
+    Tagab and Alasay districts were not covered during the listing and enumeration due to security problems
+    in those areas.
+    6. MONITORING AND SUPERVISION
+
+== https://web.archive.org/web/20170511131324id_/http://cso.gov.af/Content/files/SDES%20Parwan%20Report%20-%20Final.pdf
+    85 pages
+  -- page 20
+    on district and even smaller units, including urban subdivisions, major villages and clusters of small
+    villages. This will prove valuable for local development planning and for monitoring public service delivery.
+    The first step in the survey was to list every household in each village. Half of these listed households (i.e.
+    every other household) were taken as samples and asked detailed questions.
+    5. MONITORING AND SUPERVISION
+    The listing and mapping activity was carried out by 186 CSO and hired cartographers and hired assistant
+    cartographers, along with 20 district statistics officers (DSOs) and assistants. The field enumeration was
+    conducted by 531 surveyors, 144 controllers, 144 team editors, 90 district editors and 100 district coders
+  -- page 24
+    Half of the population of Parwan was young at the time of the survey. The 5–9 year age group made
+    up the largest segment of the population at 15.5 percent, followed by those younger than 5 years at 15
+    pe rcent and 10–14 year age group at 14.4 percent.
+    Figure 3. Population by Age and Sex: Parwan, September 2014
+    80+
+    75 - 79 Male Female
+    70 - 74
+    65 - 69
+
+== https://web.archive.org/web/20210816023651id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Samangan%20Report%20English%20V1_Reza_13Dec2015_webquality.pdf
+  -1  0 https://web.archive.org/web/20210816023651id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Samangan%20Report%20English%20V1_Reza_13Dec2015_webquality.pdf  !! URLError: <urlopen error timed out>
+
+== https://web.archive.org/web/20170511124330id_/http://cso.gov.af/Content/files/SDES/Balkh%20FR%20Final2.pdf
+    109 pages
+  -- page 9
+    FIGURES
+    Figure 1 Map of Afghanistan
+    Figure 2 Population Density by District: Balkh, December 2015
+    Figure 3 Population by Age and Sex: Balkh, December 2015
+    Figure 4 Percent Distribution of Male Population by Marital Status and Age
+    Group: Balkh, December 2015
+    Figure 5 Percent Distribution of Female Population by Marital Status and Age
+    Group: Balkh, December 2015
+  -- page 17
+    level, SDES focuses on district and even smaller units, including urban subdivisions,
+    major villages and clusters of small villages. This will prove valuable for local
+    development planning and for monitoring public service delivery.
+    Half of the listed households (i.e., every other household) were taken as sample
+    households and respondents from each sample household were asked detailed
+    questions.
+    5. MONITORING AND SUPERVISION
+    The listing and mapping activity was carried out by 233 hired cartographers, 233
