@@ -1,16 +1,309 @@
 /home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
   certs = pkcs7.load_der_pkcs7_certificates(blob)
-== https://bbs.gov.bd/pages/files/6a0945b8522ce4e07c174594
-  200 text/html; charset=utf-8 88996 https://bbs.gov.bd/pages/files/6a0945b8522ce4e07c174594
-    not a PDF: <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-html{
---color-primary-bg:#00A63E;
---color-primary-light:#2DAB5B;
---color-primary-dark:#008532;
---color-primary-text:#ffffff;
---color-secondary-bg:#DC
+
+== GET https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220
+  200 text/html; charset=utf-8 157103 https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220
+      বাংলাদেশ জাতীয় তথ্য বাতায়ন
+    > অফিসের ধরণ নির্বাচন করুন স্বায়ত্তশাসিত মন্ত্রণালয় মন্ত্রণালয় বিভাগ অধিদপ্তর কর্পোরেশন কমিশন কোম্পানি কর্তৃপক্ষ/অথরিটি এজেন্সী কাউন্সিল ট্রাস্ট জাদুঘর ফাউন্ডেশন একাডেমি দপ্তর/সংস্থা বোর্ড ইনস্টিটিউট 
+      দেখুন
+    --
+      নিয়মিত প্রকাশনা
+    > জেলা পরিসংখ্যান ২০১১
+      স্মল এরিয়া এটলাস বাংলাদেশ
+    --
+      09-07-2025
+    > Population and Housing Census 2022 : Administrative Report
+      30-06-2025
+    --
+      30-06-2025
+    > Population and Housing Census 2022 : Urban Area Report
+      ০৯-০৩-২০২৫
+    --
+      ১০-১১-২০২৪
+    > আর্থসামাজিক ও জনমিতিক জরিপ ২০২৩ রিপোর্ট
+      ১৫-০৭-২০২৪
+    --
+      ১৫-০৭-২০২৪
+    > জনশুমারি ও গৃহগণনা ২০২২: ন্যাশনাল রিপোর্ট (ভলিউম ১)
+      15-11-2023
+    --
+      15-11-2023
+    > Preliminary Report on Population and Housing Census 2022 : English Version
+      27-09-2023
+    --
+      27-09-2023
+    > Report on Post Enumeration Check of the Population and Housing Census, 2022
+      01-06-2023
+    --
+      01-06-2023
+    > Preliminary Report on Population and Housing Census 2022 : Bangla Version
+      28-07-2022
+    --
+      28-07-2022
+    > Population & Housing Census 2022 ( District Report & Community Series)
+      District Series
+    --
+      Population & Housing Census 2022 ( District Report & Community Series)
+    > District Series
+      Community Series
+    --
+      District Series
+    > Community Series
+      BARISAL DIVISION
+    --
+      BARISHAL :
+    > PDF , Excel
+      BHOLA:
+    --
+      BHOLA:
+    > PDF , Excel
+      PIROJPUR:
+    --
+      PIROJPUR:
+    > PDF , Excel
+      PATUAKHAL:
+    --
+      PATUAKHAL:
+    > PDF , Excel
+      BARGUNA:
+    --
+      BARGUNA:
+    > PDF , Excel
+      JHALAKHATI:
+    --
+      JHALAKHATI:
+    > PDF , Excel
+      CHATTOGRAM DIVISION
+    --
+      CHATTOGRAM:
+    > PDF , Excel
+      COX’S BAZAR:
+    --
+      COX’S BAZAR:
+    > PDF , Excel
+      BANDARBAN:
+    --
+      BANDARBAN:
+    > PDF , Excel
+      RANGAMATI:
+    --
+      RANGAMATI:
+    > PDF , Excel
+      NOAKHALI :
+    --
+      NOAKHALI :
+    > PDF , Excel
+      FENI :
+    --
+      FENI :
+    > PDF , Excel
+      CUMILLA:
+    --
+      CUMILLA:
+    > PDF , Excel
+      CHANDPUR:
+    --
+      CHANDPUR:
+    > PDF , Excel
+      BRAHMMANBARIA:
+    --
+      BRAHMMANBARIA:
+    > PDF , Excel
+      KHAGRACHHARI:
+    --
+      KHAGRACHHARI:
+    > PDF , Excel
+      LAKSHMIPUR:
+    --
+      LAKSHMIPUR:
+    > PDF , Excel
+      DHAKA DIVISION
+    --
+      DHAKA:
+    > PDF , Excel
+      NARAYANGANJ:
+    --
+      NARAYANGANJ:
+    > PDF , Excel
+      GAZIPUR:
+    --
+      GAZIPUR:
+    > PDF , Excel
+      MANIKGANJ:
+    --
+      MANIKGANJ:
+    > PDF , Excel
+      NARSINGDI:
+    --
+      NARSINGDI:
+    > PDF , Excel
+      FARIDPUR:
+    --
+      FARIDPUR:
+    > PDF , Excel
+      GOPALGANJ:
+    --
+      GOPALGANJ:
+    > PDF , Excel
+      RAJBARI:
+    --
+      RAJBARI:
+    > PDF , Excel
+      SHARIATPUR:
+    --
+      SHARIATPUR:
+    > PDF , Excel
+      KISHOREGANJ:
+    --
+      KISHOREGANJ:
+    > PDF , Excel
+      MUNSHIGANJ:
+    --
+      MUNSHIGANJ:
+    > PDF , Excel
+      MADARIPUR:
+    --
+      MADARIPUR:
+    > PDF , Excel
+      TANGAIL:
+    --
+      TANGAIL:
+    > PDF , Excel
+      MYMENSING DIVISION
+    --
+      MYMENSINGH:
+    > PDF , Excel
+      JAMALPUR:
+    --
+      JAMALPUR:
+    > PDF , Excel
+      SHERPUR:
+    --
+      SHERPUR:
+    > PDF , Excel
+      NETRAKONA:
+    --
+      NETRAKONA:
+    > PDF , Excel
+      KHULNA DIVISION
+    --
+      KHULNA:
+    > PDF , Excel
+      BAGERHAT:
+    --
+      BAGERHAT:
+    > PDF , Excel
+      SATKHIRA:
+    --
+      SATKHIRA:
+    > PDF , Excel
+      JHENAIDAH:
+    --
+      JHENAIDAH:
+    > PDF , Excel
+      CHUADANGA:
+    --
+      CHUADANGA:
+    > PDF , Excel
+      MAGURA:
+    --
+      MAGURA:
+    > PDF , Excel
+      KUSHTIA:
+    --
+      KUSHTIA:
+    > PDF , Excel
+      MEHERPUR:
+    --
+      MEHERPUR:
+    > PDF , Excel
+      JASHORE:
+    --
+      JASHORE:
+    > PDF , Excel
+      NARAIL:
+    --
+      NARAIL:
+    > PDF , Excel
+      RAJSHAHI DIVISION
+    --
+      RAJSHAHI :
+    > PDF , Excel
+      NATORE:
+    --
+      NATORE:
+    > PDF , Excel
+      NAOGAON:
+    --
+      NAOGAON:
+    > PDF , Excel
+      PABNA:
+    --
+      PABNA:
+    > PDF , Excel
+      SIRAJGANJ:
+    --
+      SIRAJGANJ:
+    > PDF , Excel
+      BOGURA:
+    --
+      BOGURA:
+    > PDF , Excel
+      CHAPAI NAWABGANJ:
+    --
+      CHAPAI NAWABGANJ:
+    > PDF , Excel
+      JOYPURHAT :
+    --
+      JOYPURHAT :
+    > PDF , Excel
+      RANGPUR DIVISION
+    --
+      RANGPUR:
+    > PDF , Excel
+      GAIBANDHA:
+    --
+      GAIBANDHA:
+    > PDF , Excel
+      NILPHAMARI:
+    --
+      NILPHAMARI:
+    > PDF , Excel
+      KURIGRAM:
+    --
+      KURIGRAM:
+    > PDF , Excel
+      DINAJPUR:
+    --
+      DINAJPUR:
+    > PDF , Excel
+      THAKURGAON:
+    --
+      THAKURGAON:
+    > PDF , Excel
+      LALMONIRHAT:
+    --
+      LALMONIRHAT:
+    > PDF , Excel
+      PANCHAGARH:
+    --
+      PANCHAGARH:
+    > PDF , Excel
+      SYLHET DIVISION
+    --
+      SYLHET:
+    > PDF , Excel
+      HABIGANJ:
+    --
+      HABIGANJ:
+    > PDF , Excel
+      MAULVIBAZAR:
+    --
+      MAULVIBAZAR:
+    > PDF , Excel
+      SUNAMGANJ:
+    --
+      SUNAMGANJ:
+    > PDF , Excel
+      এই কনটেন্টটি শেয়ার করতে ক্লিক করুন
+    --
