@@ -1311,6 +1311,11 @@ ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
     # residual, since the census publishes the national total and every other
     # region. Read directly instead, which is always better than derived.
     ("KAZ", "South Kazakhstan Region"): ("Turkistan Region", "Turkistan"),
+    # Daegu's Dalseo-gu, which Wikidata calls Dalseo District. Its first word
+    # also starts Dalseong-gun, filed under Daegu with it since the county
+    # joined the city's polygons, and the prefix pass refuses a word that
+    # starts two names.
+    ("KOR", "Dalseo-gu"): ("Dalseo District",),
     ("KWT", "Al Asimah"): ("Capital Governorate",),
     ("MAR", "Fez-Meknes"): ("Fès-Meknès",),
     # Transnistria under the name Moldova gives it in law.

@@ -74,6 +74,66 @@ class Settlements(unittest.TestCase):
         self.assertEqual(entity["largest_settlement"], "Palangkaraya")
         self.assertEqual(entity["largest_settlement_population"]["value"], 293457)
 
+    def test_a_place_an_adapter_named_without_its_figure_gets_none(self):
+        # Jerusalem District: the adapter names the city and says why no
+        # figure is given (every published one counts East Jerusalem, which
+        # the map draws in the West Bank). GeoNames' whole-city 971,800 for
+        # the same point must not be attached by any later pass.
+        why = "The city's population is not shown: it counts East Jerusalem."
+        entity = {"id": "ISR-J", "name": "Jerusalem District", "country": "ISR",
+                  "level": "admin1", "largest_settlement": {"status": "not_available"},
+                  "population": {"status": "not_available", "note": "Not this shape's."},
+                  "sources": []}
+        build_entities.merge_adapter(entity, {
+            "id": "ISR-CBS-J", "level": "admin1", "name": "Jerusalem District",
+            "_source": "israel_cbs.json", "largest_settlement": "Jerusalem",
+            "largest_settlement_note": why,
+            "sources": [{"field": "largest settlement", "name": "GeoNames"}]})
+        self.fill(entity, {"ISR-J": {"name": "Jerusalem", "population": 971800}})
+        build_entities.settle_settlement_figures({"ISR": [entity]}, {})
+        self.assertEqual(entity["largest_settlement"], "Jerusalem")
+        self.assertEqual(entity["largest_settlement_note"], why)
+        self.assertNotIn("largest_settlement_population", entity)
+        self.assertEqual(len(entity["sources"]), 1)
+
+
+class NaturalEarthPlaces(unittest.TestCase):
+    """Natural Earth files a place under a first-level unit by the unit's name;
+    the place's point decides whether it is that unit's."""
+
+    def setUp(self):
+        from shapely.geometry import box
+        from shapely.strtree import STRtree
+        # Daegu, a small polygon, and North Gyeongsang around it to the east.
+        self.daegu = {"name": "Daegu", "_geom": box(0, 0, 1, 1)}
+        self.gyeongbuk = {"name": "North Gyeongsang", "_geom": box(1, 0, 3, 1)}
+        self.city = {"name": "Seoul Special City", "_geom": box(-1, 0, 0, 1)}
+        rows = [self.daegu, self.gyeongbuk, self.city]
+        self.held = (STRtree([r["_geom"] for r in rows]), rows)
+
+    def why(self, name, x, y):
+        return build_entities.natural_earth_elsewhere(
+            {"name": name, "coordinates": [x, y]}, self.daegu, self.held)
+
+    def test_a_place_inside_the_unit_stands(self):
+        self.assertIsNone(self.why("Daegu", 0.5, 0.5))
+
+    def test_a_place_well_inside_another_unit_is_that_unit_s(self):
+        # Pohang, filed under Daegu, 60 km into North Gyeongsang.
+        self.assertEqual(self.why("Pohang", 1.6, 0.5), "inside North Gyeongsang")
+
+    def test_a_place_just_across_a_simplified_border_stands(self):
+        # Neuquén's point sits 0.11 degrees into Río Negro's polygon.
+        self.assertIsNone(self.why("Riverside", 1.1, 0.5))
+
+    def test_a_place_drawn_as_a_unit_of_its_own_is_that_unit_s(self):
+        self.assertEqual(self.why("Seoul", -0.05, 0.5),
+                         "drawn as a unit of its own, Seoul Special City")
+
+    def test_a_place_in_no_polygon_stands(self):
+        # Fortaleza, off a simplified coast.
+        self.assertIsNone(self.why("Harbour", 0.5, 1.05))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -5349,6 +5349,57 @@ def settle_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
     return unnamed, unfigured
 
 
+# How far outside a first-level polygon, in degrees, Natural Earth's point for
+# the place it files under that unit may lie inside another unit's polygon
+# before the place is taken to be the other unit's. CGAZ's outlines are
+# simplified, and a city on a border river can land across it: Neuquén's
+# point is 0.11 degrees from the province's polygon, inside Río Negro's.
+NATURAL_EARTH_APART = 0.2
+
+
+def natural_earth_elsewhere(city: dict[str, Any], shape: dict[str, Any],
+                            others) -> str | None:
+    """Why Natural Earth's place for a first-level unit is another unit's, or None.
+
+    Natural Earth files its populated places under a first-level unit by that
+    unit's name (ADM1NAME), not by where the place stands, and the build
+    joined them by that name alone. Daegu came out with Pohang, a city of
+    North Gyeongsang 60 km away, and Gwangju with Yeosu in South Jeolla;
+    Thái Nguyên with Hanoi; the piece of Golestan the boundary file labels
+    Mazandaran with Sari, inside the other Mazandaran polygon. A place is
+    another unit's when its point is inside another first-level polygon and
+    either that polygon is drawn for the place itself (Minsk's region and
+    Minsk City, Selangor and Kuala Lumpur, Hadjer-Lamis and N'Djamena) or it
+    lies more than NATURAL_EARTH_APART from this unit's. A point in no
+    polygon -- Fortaleza, São Luís, Suva, a few hundred metres off a
+    simplified coast -- is left to the name.
+
+    ``others`` answers which first-level shapes hold a point (an STRtree query
+    over every first-level shape, with the shapes in the same order).
+    """
+    import shapely
+    from shapely.geometry import Point
+
+    geom = shape.get("_geom")
+    point = city.get("coordinates")
+    if geom is None or not point:
+        return None
+    point = Point(point)
+    if shapely.contains(geom, point):
+        return None
+    tree, rows = others
+    for idx in tree.query(point):
+        other = rows[int(idx)]
+        if other is shape or not shapely.contains(other["_geom"], point):
+            continue
+        if related(name_forms(city["name"]), name_forms(other["name"])):
+            return f"drawn as a unit of its own, {other['name']}"
+        if shapely.distance(geom, point) > NATURAL_EARTH_APART:
+            return f"inside {other['name']}"
+        return None
+    return None
+
+
 def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                               admin2: dict[str, list[dict[str, Any]]],
                               classes: dict[str, list[list[str]]]) -> int:
@@ -7036,10 +7087,21 @@ def main() -> int:
     # -- admin 1 -------------------------------------------------------------
     admin1_by_country: dict[str, list[dict[str, Any]]] = defaultdict(list)
     adm1_index: dict[str, dict[str, str]] = defaultdict(dict)
+    # Natural Earth's place for a unit is joined by the unit's name; its point
+    # is checked against the polygons, and a place that is another unit's is
+    # left for GeoNames' placement by point (see natural_earth_elsewhere).
+    from shapely.strtree import STRtree
+    drawn1 = [s for s in shapes.get("ADM1", []) if s.get("_geom") is not None]
+    held_by = (STRtree([s["_geom"] for s in drawn1]), drawn1) if drawn1 else None
+    elsewhere: list[str] = []
     for shape in shapes.get("ADM1", []):
         iso3 = shape["group"]
         entity = blank(shape, "admin1", iso3)
         city = cities["by_admin1"].get(f"{iso3}||{norm_city(shape['name'])}")
+        why = natural_earth_elsewhere(city, shape, held_by) if city and held_by else None
+        if why:
+            elsewhere.append(f"{iso3} {shape['name']}: {city['name']}, {why}")
+            city = None
         if city:
             entity["largest_settlement"] = city["name"]
             entity["largest_settlement_population"] = measure(city["population"], source=city["source"])
@@ -7047,6 +7109,9 @@ def main() -> int:
         mark_water(entity, iso3)
         admin1_by_country[iso3].append(entity)
         adm1_index[iso3][norm(shape["name"])] = entity["id"]
+    if elsewhere:
+        log(f"  {len(elsewhere)} Natural Earth places filed under a first-level unit "
+            f"stand in another and are left to GeoNames: " + "; ".join(elsewhere))
 
     for iso3, rows in curated_rows.items():
         prov = provenance.get(iso3, {})

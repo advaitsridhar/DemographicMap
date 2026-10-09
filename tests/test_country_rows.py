@@ -90,6 +90,26 @@ class DeclaredParents(unittest.TestCase):
             labels = {u.get("shape_name") or u["name"] for u in units1}
             self.assertIn(name, labels, (iso3, name))
 
+    def test_samoa_and_the_solomons_are_filed_where_their_censuses_count_them(self):
+        # Vaisigano East is by area mostly in Gaga'ifomauga, West Honiara in
+        # Guadalcanal, and three Solomon constituencies in no province; each
+        # census names the province it counts the polygon in, and the
+        # declaration must be that province.
+        declared = {}
+        for name in ("samoa_census.json", "solomon_census.json"):
+            data = json.loads((ROOT / "data" / "processed" / name).read_text())
+            for row in data["records"] if isinstance(data, dict) else data:
+                if row.get("shape_id") in be.DECLARED_PARENTS:
+                    iso3, unit = be.DECLARED_PARENTS[row["shape_id"]]
+                    self.assertEqual((iso3, unit), (row["country"], row["parent_name"]),
+                                     row["name"])
+                    declared[row["name"]] = unit
+        self.assertEqual(declared, {
+            "Vaisigano East": "Vaisigano",
+            "West Honiara": "Capital Territory (Honiara)",
+            "Ranongga-Simbo": "Western", "Malaita Outer Island": "Malaita",
+            "Ulawa-Ugi": "Makira"})
+
 
 class SameYearCounts(unittest.TestCase):
     def test_kinmen_keeps_its_register_count(self):

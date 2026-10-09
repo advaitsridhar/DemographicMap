@@ -5860,6 +5860,23 @@ class DeclaredSecondNames(unittest.TestCase):
         self.assertEqual([e["name"] for e in idx[be.norm("Zambezi Region")]],
                          ["Zambezi Region"])
 
+    def test_dalseo_is_found_beside_dalseong(self):
+        # Dalseong-gun is filed under Daegu with Dalseo-gu (DECLARED_PARENTS),
+        # and "Dalseo" starts both names: Wikidata's Dalseo District row,
+        # scoped to Daegu, was refused as ambiguous and the district lost its
+        # link.
+        daegu = {"id": "DG", "name": "Daegu", "country": "KOR"}
+        kids = [{"id": "DS", "name": "Dalseo-gu", "country": "KOR", "parent": "DG"},
+                {"id": "DSG", "name": "Dalseong-gun", "country": "KOR", "parent": "DG"}]
+        row = {"name": "Dalseo District", "parent_name": "Daegu"}
+        idx = self.index(kids)
+        self.assertEqual(be.match_admin2(row, idx, {"daegu": daegu})[0], None)
+        self.assertEqual(be.add_known_as(idx, kids), 1)
+        hit, how = be.match_admin2(row, idx, {"daegu": daegu})
+        self.assertEqual((hit["id"], how), ("DS", "name+state"))
+        dalseong = {"name": "Dalseong County", "parent_name": "Daegu"}
+        self.assertEqual(be.match_admin2(dalseong, idx, {"daegu": daegu})[0]["id"], "DSG")
+
     def test_nothing_is_indexed_for_a_shape_with_no_declaration(self):
         rows = [self.shape("Somewhere Undeclared", "ZZZ")]
         idx = self.index(rows)
