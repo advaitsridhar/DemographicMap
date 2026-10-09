@@ -897,7 +897,7 @@ def drawn_sums(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any]],
         female = sum(sexes(p)[0] for p in parts)
         male = sum(sexes(p)[1] for p in parts)
         f, m, names = out.get(code, (0, 0, []))
-        out[code] = (f + female, m + male, [*names, shown(unit)])
+        out[code] = (f + female, m + male, [*names, " ".join(shown(unit).split())])
     return out
 
 
