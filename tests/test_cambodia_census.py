@@ -161,8 +161,8 @@ class CrosswalkTest(unittest.TestCase):
                   if "communes of" in r.get("population_note", "")]
         self.assertTrue(summed)
         for note in summed:
-            self.assertIn(", which lie in the district as it was drawn in 2018, counting "
-                          "people in normal or regular households", note)
+            self.assertIn(", which lie in the district as it was drawn in 2018: people in "
+                          "normal or regular households", note)
 
     def test_a_province_s_note_names_the_census_once(self):
         adm1 = [{"ADM1_PCODE": "KH01", "ADM1_EN": "Banteay Meanchey"}]

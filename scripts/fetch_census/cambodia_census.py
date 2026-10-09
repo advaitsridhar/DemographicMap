@@ -574,9 +574,8 @@ def district_records(annex, placed, broken, adm2_rows,
                       population=t,
                       # Not "The 2019 census: the 2019 census's count of ...",
                       # which said the census twice.
-                      population_note=(f"{whose[0].upper()}{whose[1:]}, counting people "
-                                       f"in normal or regular households "
-                                       f"({HOUSEHOLD_NOTE})."))))
+                      population_note=(f"{whose[0].upper()}{whose[1:]}: people in normal "
+                                       f"or regular households ({HOUSEHOLD_NOTE})."))))
     log(f"  {len(out)} district polygons written, {len(skipped)} of them with stated gaps "
         f"({', '.join(skipped)}); drawn before a division and summed from their communes "
         f"({len(changed)}): {'; '.join(changed)}")
