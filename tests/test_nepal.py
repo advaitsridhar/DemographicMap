@@ -257,6 +257,30 @@ class ShapeBindings(unittest.TestCase):
         for shape in nepal.SHAPE_BOUND:
             self.assertRegex(shape, r"^79688334B\d+$", shape)
 
+    def test_a_summed_shape_says_so_on_its_population(self):
+        # The population tile shows the two halves' sum: its note names both,
+        # with their own counts and provinces, and a one-district shape
+        # carries none.
+        bound = {d for parts in nepal.SHAPE_BOUND.values() for d in parts}
+        sizes = {d: 1000 * (i + 1) for i, d in enumerate(sorted(bound))}
+        parsed = {field: {d: {"A": n, "_total": n} for d, n in sizes.items()}
+                  for field in nepal.FIELDS}
+        out = {r["shape_id"]: r for r in nepal.bound_records(parsed, min_pct=0.0)}
+        nawal = out["79688334B71878033214617"]
+        both = sizes["Nawalpur"] + sizes["Parasi"]
+        self.assertEqual(nawal["population"]["value"], both)
+        note = nawal["population_note"]
+        self.assertIn(f"Nawalpur ({sizes['Nawalpur']:,} people, Gandaki Province)", note)
+        self.assertIn(f"Parasi ({sizes['Parasi']:,} people, Lumbini Province)", note)
+        self.assertIn(f"this is their sum, {both:,}.", note)
+        self.assertIn("Nawalparasi", note)
+        rukum = out["79688334B6316349348825"]["population_note"]
+        self.assertIn("Rukum East", rukum)
+        self.assertIn("Karnali Province", rukum)
+        for shape, parts in nepal.SHAPE_BOUND.items():
+            if len(parts) == 1:
+                self.assertNotIn("population_note", out[shape], shape)
+
 
 def indv03(*rows: str) -> str:
     """Indv03's layout: a header, then one row per area and age."""

@@ -122,6 +122,23 @@ JERUSALEM_WHY = ("The CBS's Jerusalem figures count all of Jerusalem's municipal
                  "publishes no figure for the part of the district this shape is. "
                  "Encyclopaedia figures for the district or the city of Jerusalem count East "
                  "Jerusalem too, and are not shown here.")
+# The largest settlement of the two Jerusalem shapes is Jerusalem: its point
+# and its western neighbourhoods are inside them. Every published population
+# for the city counts the whole municipality, East Jerusalem included --
+# GeoNames' 971,800, which the build would otherwise attach -- so the shapes
+# name the city and give no population for it, and say why. Naming it here
+# is what keeps that figure off: the build only fills a settlement nobody
+# named.
+JERUSALEM_TOWN = "Jerusalem"
+JERUSALEM_TOWN_WHY = ("The city's population is not shown: published figures for "
+                      "Jerusalem count its whole municipal area, East Jerusalem included, "
+                      "which the map draws within the West Bank, and none is published "
+                      "for the part of the city inside this shape.")
+JERUSALEM_TOWN_SOURCE = {
+    "field": "largest settlement", "name": "GeoNames", "url": "https://www.geonames.org/",
+    "license": "CC BY 4.0",
+    "note": ("Jerusalem (GeoNames 281184): its point, 35.21633 E 31.76904 N, lies inside "
+             "this shape.")}
 # The statement displaces an encyclopaedia's population for the Jerusalem
 # shapes dated before this year (the build's ``displaces_before``): checked in
 # 2026 against the CBS's abstracts, which count East Jerusalem in every
@@ -472,12 +489,21 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
         return rec
 
     def gaps(why: str, *, displace: bool = False) -> dict[str, Any]:
-        out = {f: gap(NOT_AVAILABLE, why)
-               for f in ("population", "ethnicity", "median_age", "sex_ratio", "religion")}
+        out: dict[str, Any] = {
+            f: gap(NOT_AVAILABLE, why)
+            for f in ("population", "ethnicity", "median_age", "sex_ratio", "religion")}
         if displace:
             out["population"] = dict(out["population"], displaces_before=DISPLACES_BEFORE)
         out["language"] = gap(NOT_AVAILABLE, LANGUAGE_WHY)
         return out
+
+    def jerusalem() -> dict[str, Any]:
+        """The Jerusalem shapes: every count is a stated gap, and the city is
+        named without a population (see JERUSALEM_TOWN_WHY)."""
+        return dict(gaps(JERUSALEM_WHY, displace=True),
+                    largest_settlement=JERUSALEM_TOWN,
+                    largest_settlement_note=JERUSALEM_TOWN_WHY,
+                    sources=[dict(JERUSALEM_TOWN_SOURCE)])
 
     def jews_of(keys: list[tuple[str, str]]) -> float | None:
         """The units' Jews summed, or None where Table 2.15 was not read."""
@@ -511,7 +537,7 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
         if key_ == "JERUSALEM DISTRICT":
             out.append(record(f"ISR-CBS-{label}", label, level="admin1", parent=ISO3,
                               country=ISO3, match_by="shape_id", shape_id=unit["id"],
-                              **gaps(JERUSALEM_WHY, displace=True)))
+                              **jerusalem()))
             continue
         if key_ == "NORTHERN DISTRICT":
             kids = [n for n in ("Zefat", "Kinneret", "Yizre'el", "Akko")]
@@ -558,12 +584,11 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
         found = by_label.get(label, [])
         check(len(found) == 1, f"israel_cbs: {len(found)} drawn units labelled {label!r}")
         unit = found[0]
-        why = GOLAN_WHY if name == "Golan" else JERUSALEM_WHY if name is None else None
-        if why:
+        if name is None or name == "Golan":
             out.append(record(f"ISR-CBS-{label}", label, level="admin2", parent=ISO3,
                               country=ISO3, parent_name=parents.get(unit["parent"]),
                               match_by="shape_id", shape_id=unit["id"],
-                              **gaps(why, displace=name is None)))
+                              **(jerusalem() if name is None else gaps(GOLAN_WHY))))
             continue
         rec = record(f"ISR-CBS-{label}", label, level="admin2", parent=ISO3, country=ISO3,
                      parent_name=parents.get(unit["parent"]), match_by="shape_id",

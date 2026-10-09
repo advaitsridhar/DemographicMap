@@ -250,6 +250,39 @@ class TestMerges(unittest.TestCase):
         self.assertEqual(found, {"KHARAN": {"TOTAL": 15, "Muslim": 15}})
         self.assertIn("Washuk", pakistan.merged_note("KHARAN", assembled["KHARAN"]))
 
+    def test_a_summed_shape_says_so_on_its_population(self):
+        # The population tile shows the sum under one part's name; its note
+        # gives both parts' Table 9 counts and why they are summed.
+        found = {"SHEIKHUPURA": {"TOTAL": 4049377, "Muslim": 4049377},
+                 "NANKANA SAHIB": {"TOTAL": 1634871, "Muslim": 1634871},
+                 "LAHORE": {"TOTAL": 13004135, "Muslim": 13004135}}
+        totals = {}
+        assembled = pakistan.merge("Punjab", found, ["TOTAL", "Muslim"], totals=totals)
+        self.assertEqual(totals, {"SHEIKHUPURA": 4049377, "NANKANA SAHIB": 1634871})
+        cite = [{"field": "population/religion", "name": pakistan.SOURCE}]
+        summed = pakistan.district_record("punjab", "Punjab", "SHEIKHUPURA",
+                                          found["SHEIKHUPURA"], assembled, totals, cite, {})
+        self.assertEqual(summed["population"]["value"], 5684248)
+        note = summed["population_note"]
+        self.assertIn("Sheikhupura 4,049,377 and Nankana Sahib 1,634,871", note)
+        self.assertIn("5,684,248", note)
+        self.assertIn("carved out of it in 2005", note)
+        self.assertFalse(note.startswith(" "))
+        # The religion note keeps the same sentence, and a district that is
+        # its own shape carries no population note.
+        self.assertIn("Nankana Sahib summed", summed["religion_note"])
+        alone = pakistan.district_record("punjab", "Punjab", "LAHORE", found["LAHORE"],
+                                         assembled, totals, cite, {})
+        self.assertNotIn("population_note", alone)
+
+    def test_a_divided_shape_lists_every_part(self):
+        found = {p: {"TOTAL": 10 * (i + 1)} for i, p in enumerate(pakistan.MERGED["KARACHI"])}
+        totals = {}
+        assembled = pakistan.merge("Sindh", found, ["TOTAL"], totals=totals)
+        note = pakistan.summed_population_note("KARACHI", assembled["KARACHI"], totals)
+        self.assertIn("Karachi Central 10, Karachi East 20", note)
+        self.assertIn("and Keamari 70; this is their sum, 280.", note)
+
     def test_every_merge_says_why(self):
         self.assertEqual(set(pakistan.MERGED), set(pakistan.MERGED_WHY))
 

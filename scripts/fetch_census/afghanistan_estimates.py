@@ -962,9 +962,20 @@ def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, A
                       f"polygon's: the boundary file does not draw {shown(unit)} as the "
                       f"office counts it -- {'; '.join(apart[code])}. The districts drawn "
                       f"in it carry their own figures.")
-            fields = {"population": dict(gap(NOT_AVAILABLE, reason),
-                                         displaces_before=DISPLACES_BEFORE),
-                      "sex_ratio": gap(NOT_AVAILABLE, reason)}
+            population = dict(gap(NOT_AVAILABLE, reason), displaces_before=DISPLACES_BEFORE)
+            if summed == "touched":
+                # A district point falls across this polygon's edge
+                # (POINT_ELSEWHERE), so the districts linked to it are not the
+                # polygon either. ``no_child_sum`` tells the build, which
+                # fills a province with no population from the districts
+                # linked to it, not to: that sum is no more this polygon's
+                # than the office's total is.
+                reason = reason[:-1] + (
+                    "; their sum is not given here either, as a district lies "
+                    "across this polygon's edge.")
+                population = dict(gap(NOT_AVAILABLE, reason),
+                                  displaces_before=DISPLACES_BEFORE, no_child_sum=True)
+            fields = {"population": population, "sex_ratio": gap(NOT_AVAILABLE, reason)}
         else:
             fields = {
                 "population": measure(both, year=YEAR, source=SOURCE),

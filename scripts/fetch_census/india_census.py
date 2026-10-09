@@ -153,7 +153,18 @@ NATIONAL_CONTROLS = {
     "Sikhs": (1.72, 0.05),
     "Buddhists": (0.70, 0.05),
     "Jains": (0.37, 0.05),
+    # Females per 1,000 males: 587,584,719 females and 623,270,258 males.
+    "sex_ratio": (943, 0),
 }
+
+# A unit whose ratio of females per 1,000 males falls outside this band is far
+# from every other district's, and its note gives the counts and says the
+# figure is the census's own. The census gives no reason for any district's
+# ratio, and the note supplies none. India's districts otherwise run from
+# about 800 (Surat 787, Dadra and Nagar Haveli 774) to about 1,140 (Kannur):
+# the band leaves out Daman (534), Leh (690), Tawang (714), North District
+# (767), Nicobars (777) and Mahe (1,184).
+FAR_RATIO = (800, 1150)
 
 # Districts the 2011 census reported under a name the current boundary files
 # spell differently. Renames only -- never a merge or a split.
@@ -1228,6 +1239,36 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
     return out
 
 
+def check_sex_ratio(rows: list[dict[str, str]]) -> None:
+    """Refuse an extract whose males and females do not give the published
+    national ratio, which the far-ratio notes quote beside each unit's."""
+    males = sum(cell(r, "Male") for r in rows)
+    females = sum(cell(r, "Female") for r in rows)
+    expected, tol = NATIONAL_CONTROLS["sex_ratio"]
+    got = round(1000.0 * females / males) if males else None
+    if got is None or abs(got - expected) > tol:
+        raise SystemExit(
+            f"india_census: the extract's {males:,} males and {females:,} females give "
+            f"{got} females per 1,000 males, not the published {expected}")
+    log(f"  national sex ratio {got} females per 1,000 males ({males:,} males, "
+        f"{females:,} females)")
+
+
+def far_ratio_note(males: int, females: int) -> str | None:
+    """The sex ratio's note where it is far outside every other district's
+    (``FAR_RATIO``): the counts it comes from, beside the country's ratio.
+    None elsewhere."""
+    if not males or not females:
+        return None
+    ratio = round(1000.0 * females / males)
+    if FAR_RATIO[0] <= ratio <= FAR_RATIO[1]:
+        return None
+    return (f"Census of India 2011 table C-01: {males:,} males and {females:,} females, "
+            f"{ratio:,} females per 1,000 males against {NATIONAL_CONTROLS['sex_ratio'][0]:,} "
+            f"for India as a whole. A ratio this far from the country's is the census's "
+            f"count as published, not an error.")
+
+
 def build_record(name: str, counts: collections.Counter, *, level: str,
                  parent: str, entity_id: str, codes: dict[str, Any]) -> dict[str, Any]:
     population = counts["Population"]
@@ -1246,6 +1287,7 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
         sex_ratio=(measure(sex_ratio, unit="females_per_1000_males",
                            year=2011, source=SOURCE)
                    if sex_ratio else gap(NOT_AVAILABLE)),
+        sex_ratio_note=far_ratio_note(males, females),
         religion=shares(religion_counts, total=population) or gap(NOT_AVAILABLE),
         religion_note=("Census of India 2011 table C-01. India's next census was "
                        "postponed, so these remain the most recent official figures."),
@@ -2234,6 +2276,7 @@ def main() -> int:
         log(f"india_census: Census 2011, level={args.level}")
         rows = load_csv(args.csv_url)
         validate(rows)
+        check_sex_ratio(rows)
         if args.level != "state":
             # The Appendix is a state table, but its break-up is the only
             # account anyone publishes of what is inside "Other religions and

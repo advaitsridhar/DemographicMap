@@ -945,6 +945,19 @@ def bound_records(parsed: dict[str, dict[str, dict[str, int]]],
         total = sum(counts[field]["_total"] for field in list(counts)[:1])
         province = where[parts[0]]
         name = parts[0] if len(parts) == 1 else " and ".join(parts)
+        # A summed shape says so on its population too: the population tile
+        # shows the sum, and each half is a district of its own in the census,
+        # the two in different provinces.
+        population_note = None
+        if len(parts) > 1 and total:
+            first = list(counts)[0]
+            each = [f"{d} ({int(parsed[first][d]['_total']):,} people, {where[d]} "
+                    f"Province)" for d in parts]
+            population_note = BOUND_NOTE.format(
+                label=SHAPE_LABELS[shape_id],
+                what=BOUND_SUM.format(parts=" and ".join(parts))) + (
+                f" The census counts {' and '.join(each)}; this is their sum, "
+                f"{int(total):,}.")
         sources = [{"field": "caste/ethnicity, language, religion",
                     "name": SOURCE, "license": LICENSE}]
         if ages is not None:
@@ -965,6 +978,7 @@ def bound_records(parsed: dict[str, dict[str, dict[str, int]]],
             shape_id=shape_id, match_by="shape_id",
             population=measure(int(total), year=YEAR, source=SOURCE)
             if total else gap(NOT_AVAILABLE),
+            population_note=population_note,
             sources=sources,
             **fields,
         ))

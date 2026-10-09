@@ -263,6 +263,18 @@ class Estimates(unittest.TestCase):
                       kabul["population"]["note"])
         self.assertIn("the point of Paghman, drawn in Kabul, falls inside this one",
                       records["AFG-EST-02"]["sex_ratio"]["note"])
+        # Neither may be filled from the districts linked to it: the build is
+        # told so on the gap, and the reason says why.
+        for code in ("AFG-EST-01", "AFG-EST-02"):
+            self.assertIs(records[code]["population"]["no_child_sum"], True, code)
+            self.assertIn("their sum is not given here", records[code]["population"]["note"])
+
+    def test_a_province_drawn_as_counted_carries_no_refusal_flag(self):
+        rows, settled = sheet()
+        records = self.build(rows, settled)
+        for code, rec in records.items():
+            if rec.get("level") == "admin1":
+                self.assertNotIn("no_child_sum", rec["population"], code)
 
     def test_a_stale_point_entry_stops_the_run(self):
         rows, settled = sheet()

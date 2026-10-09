@@ -1187,6 +1187,48 @@ class RealDistrictsAreUntouched(unittest.TestCase):
         self.assertIn("Not stated", groups)
 
 
+class FarRatiosSayTheyAreTheCensuss(unittest.TestCase):
+    """A ratio far outside every other district's carries its counts."""
+
+    def daman(self):
+        return {"District code": "495", "State name": "DAMAN & DIU",
+                "District name": "Daman", "Population": "191173", "Male": "124659",
+                "Female": "66514", "Hindus": "191173", "Muslims": "0",
+                "Christians": "0", "Sikhs": "0", "Buddhists": "0", "Jains": "0",
+                "Others_Religions": "0", "Religion_Not_Stated": "0", "SC": "0",
+                "ST": "0"}
+
+    def test_daman_says_its_counts_and_the_countrys_ratio(self):
+        counts = collections.Counter({k: india_census.cell(self.daman(), k)
+                                      for k in ("Population", "Male", "Female")})
+        got = india_census.build_record("Daman", counts, level="admin2", parent="IND",
+                                        entity_id="IND-D495", codes={})
+        self.assertEqual(got["sex_ratio"]["value"], 534)
+        note = got["sex_ratio_note"]
+        self.assertIn("124,659 males and 66,514 females", note)
+        self.assertIn("534 females per 1,000 males against 943", note)
+        # The census gives no reason for the ratio, and the note invents none.
+        self.assertNotIn("migra", note)
+
+    def test_an_ordinary_ratio_carries_no_note(self):
+        got = emitted()["Raigarh"]
+        self.assertEqual(got["sex_ratio"]["value"], 991)
+        self.assertNotIn("sex_ratio_note", got)
+
+    def test_the_band_edges(self):
+        self.assertIsNone(india_census.far_ratio_note(1000, 800))
+        self.assertIsNone(india_census.far_ratio_note(1000, 1150))
+        self.assertIsNotNone(india_census.far_ratio_note(1000, 799))
+        self.assertIsNotNone(india_census.far_ratio_note(1000, 1184))
+        self.assertIsNone(india_census.far_ratio_note(0, 10))
+
+    def test_the_national_ratio_is_checked(self):
+        rows = [{"Male": "623270258", "Female": "587584719"}]
+        india_census.check_sex_ratio(rows)        # must not raise
+        with self.assertRaises(SystemExit):
+            india_census.check_sex_ratio([{"Male": "600000000", "Female": "587584719"}])
+
+
 if __name__ == "__main__":
     unittest.main()
 

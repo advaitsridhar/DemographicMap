@@ -82,6 +82,44 @@ class TheReader(unittest.TestCase):
         self.assertIn("Quneitra", self.out["s-Golan"]["population"]["note"])
         self.assertIn("East", self.out["d0"]["population"]["note"])
 
+    def test_jerusalem_names_the_city_without_a_population(self):
+        # Every published figure for the city counts East Jerusalem, which the
+        # map draws in the West Bank: the shapes name the city, say why no
+        # population is given for it, and carry none.
+        for sid in ("s-jer", "d0"):
+            rec = self.out[sid]
+            self.assertEqual(rec["largest_settlement"], "Jerusalem", sid)
+            self.assertNotIn("largest_settlement_population", rec)
+            self.assertIn("East Jerusalem", rec["largest_settlement_note"])
+            self.assertIn("largest settlement",
+                          {s["field"] for s in rec["sources"]})
+        # The Golan names no settlement and the other shapes are left to the
+        # build's own placement.
+        for sid in ("s-Golan", "s-Haifa", "d1"):
+            self.assertEqual(self.out[sid]["largest_settlement"]["status"], "not_available")
+            self.assertNotIn("largest_settlement_note", self.out[sid])
+
+    def test_jerusalem_settlement_keeps_the_build_from_attaching_a_figure(self):
+        # The build fills a settlement only where none is named, and attaches
+        # GeoNames' population when it does. Run its two steps on the record.
+        from scripts import build_entities as be
+        for sid in ("s-jer", "d0"):
+            row = dict(self.out[sid], _source=ic.OUT, _match="shape_id")
+            entity = {"id": sid, "name": row["name"], "sources": []}
+            be.merge_adapter(entity, row)
+            towns = {sid: {"name": "Jerusalem", "population": 971800,
+                           "source": "GeoNames (CC BY 4.0)"}}
+            real = be.read_json
+            be.read_json = lambda path, default=None: towns
+            try:
+                filled = be.fill_settlements_from_geonames({"ISR": [entity]}, {})
+            finally:
+                be.read_json = real
+            self.assertEqual(filled, 0, sid)
+            self.assertEqual(entity["largest_settlement"], "Jerusalem")
+            self.assertNotIn("largest_settlement_population", entity)
+            self.assertIn("East Jerusalem", entity["largest_settlement_note"])
+
     def test_sub_districts_carry_population_groups(self):
         haifa = self.out["s-Haifa"]
         self.assertEqual(haifa["population"]["value"], round(1000 * (10.2 + 76.8 + 546.4)))

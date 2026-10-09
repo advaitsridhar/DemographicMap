@@ -490,6 +490,18 @@ def merged_note(name: str, parts: tuple[str, ...]) -> str:
             f"{', '.join(p.title() for p in parts)} summed.")
 
 
+def summed_population_note(name: str, parts: tuple[str, ...],
+                           totals: dict[str, int]) -> str:
+    """The population tile's note on a summed shape: which census districts it
+    adds, each with its own Table 9 count, and why. Without it the tile shows
+    the sum under the name of one part, whose own Table 9 row is smaller."""
+    each = [f"{p.title()} {totals[p]:,}" for p in parts]
+    listed = ", ".join(each[:-1]) + " and " + each[-1]
+    return (merged_note(name, parts).strip()
+            + f" Census 2023 Table 9 counts {listed}; this is their sum, "
+              f"{sum(totals[p] for p in parts):,}.")
+
+
 # Table 9's columns, in the order the numbered header row gives them. Column 1
 # is the total, which is the denominator rather than a religion.
 COLUMNS = ["TOTAL", "Muslim", "Christian", "Hindu", "Ahmadi",
@@ -811,8 +823,13 @@ def province_row(slug: str, province: str, found: dict[str, dict[str, int]],
 
 
 def merge(province: str, found: dict[str, dict[str, int]],
-          columns: list[str] = COLUMNS) -> dict[str, tuple[str, ...]]:
-    """Sum the districts that share one boundary shape. Which ones, back."""
+          columns: list[str] = COLUMNS,
+          totals: dict[str, int] | None = None) -> dict[str, tuple[str, ...]]:
+    """Sum the districts that share one boundary shape. Which ones, back.
+
+    ``totals``, when given, is filled with each summed part's own TOTAL, so
+    the shape's population note can give the census's figures for its parts.
+    """
     assembled: dict[str, tuple[str, ...]] = {}
     for name, parts in MERGED.items():
         here = [part for part in parts if part in found]
@@ -833,6 +850,8 @@ def merge(province: str, found: dict[str, dict[str, int]],
                 "assembled from its parts here, so it would be counted twice")
         summed = {column: sum(found[part][column] for part in parts)
                   for column in columns}
+        if totals is not None and "TOTAL" in columns:
+            totals.update({part: found[part]["TOTAL"] for part in parts})
         for part in parts:
             del found[part]
         found[name] = summed
@@ -2827,6 +2846,31 @@ def say_ages(records: list[dict[str, Any]]) -> int:
     return said
 
 
+def district_record(slug: str, province: str, name: str, counts: dict[str, int],
+                    assembled: dict[str, tuple[str, ...]], part_totals: dict[str, int],
+                    cite: list[dict[str, Any]], said: dict[str, Any]) -> dict[str, Any]:
+    """One district's Table 9 record. A shape summed from several census
+    districts says so on its population as well as on its religion: the
+    population tile shows the sum under one part's name, and that part's own
+    Table 9 row is smaller."""
+    total = counts["TOTAL"]
+    parts = {k: v for k, v in counts.items() if k != "TOTAL"}
+    note = NOTE + RELIGION_DISTRICT_NOTES.get(name, "")
+    population_note = None
+    if name in assembled:
+        note += merged_note(name, assembled[name])
+        population_note = summed_population_note(name, assembled[name], part_totals)
+    return record(
+        f"PAK-{slug}-{name.lower().replace(' ', '-')}",
+        name.title(), level="admin2", parent="PAK",
+        parent_name=province, aliases=list(ALIASES.get(name.title(), ())),
+        population=measure(total, year=YEAR, source=SOURCE),
+        population_note=population_note,
+        religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
+        religion_year=YEAR, religion_note=note,
+        sources=list(cite), **said)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -2857,7 +2901,8 @@ def main() -> int:
             continue
         whole = province_row(slug, province, found, whole)
         check(province, found, whole)
-        assembled = merge(province, found)
+        part_totals: dict[str, int] = {}
+        assembled = merge(province, found, totals=part_totals)
         tongues, tongue_url = read_tongues(slug, province, set(found))
         named.update(found)
 
@@ -2893,20 +2938,9 @@ def main() -> int:
             religion_note=TERRITORY_NOTE if slug in ONE_DISTRICT else PROVINCE_NOTE,
             sources=list(cite), **here))
         for name, counts in sorted(found.items()):
-            total = counts["TOTAL"]
-            parts = {k: v for k, v in counts.items() if k != "TOTAL"}
-            note = NOTE + RELIGION_DISTRICT_NOTES.get(name, "")
-            if name in assembled:
-                note += merged_note(name, assembled[name])
             said = spoken(tongues[name], name) if name in tongues else {}
-            records.append(record(
-                f"PAK-{slug}-{name.lower().replace(' ', '-')}",
-                name.title(), level="admin2", parent="PAK",
-                parent_name=province, aliases=list(ALIASES.get(name.title(), ())),
-                population=measure(total, year=YEAR, source=SOURCE),
-                religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
-                religion_year=YEAR, religion_note=note,
-                sources=list(cite), **said))
+            records.append(district_record(slug, province, name, counts, assembled,
+                                           part_totals, cite, said))
 
     # A note keyed to a district that no longer exists reaches nobody, and
     # reaches nobody silently: the district keeps the general note and looks
