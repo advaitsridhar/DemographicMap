@@ -22,6 +22,21 @@ permanent residents, not foreigners):
   not written (the table lists their smaller religions only where they are
   large), except Tel Aviv's, which is the district.
 
+**Population groups.** Table 2.17 prints the Israelis in two groups, "Jews
+and others" and "Arabs". Filed as one bar, "Jews and others" would colour
+the map Jewish for its others too -- the non-Arab Christians, members of
+other religions and people the register classifies by no religion, 7
+points of the Haifa District. Table 2.15 lists every district's and
+sub-district's Jews on the same date, and the CBS's population group "Jews"
+is the register's religion "Jews", so the bar is written as two: the Jews
+(labelled "Jewish", as the map's country row has them), and the rest of
+the group as "Others (not Jews or Arabs)". The CBS's "Arabs" are Muslims,
+Arab Christians and the Druze together, as the note says.
+
+**Language** is in no table of the abstract by district or sub-district,
+and UNdata holds no census language table for Israel, so every unit says
+so.
+
 **Where the map and the CBS draw different ground** (the Asia brief's rule:
 bind only to the polygon the source counts):
 
@@ -36,10 +51,18 @@ bind only to the polygon the source counts):
 * *Jerusalem.* The CBS's Jerusalem District -- a single sub-district, which
   the table divides only into the Judean Mountains and Judean Foothills
   natural regions -- counts all of Jerusalem's municipal area, East
-  Jerusalem included, which the map draws within the West Bank. Its figure
-  is not the drawn polygon's, and the CBS publishes none for the district
-  without East Jerusalem, so the district and the drawn "Jerusalem"
-  sub-district both say so.
+  Jerusalem included, which the map draws within the West Bank (measured on
+  the map's tiles: the Old City, Sheikh Jarrah, Silwan, Beit Hanina,
+  Shuafat, Ramot, Pisgat Ze'ev, Neve Ya'akov, Gilo and Har Homa fall in the
+  West Bank's polygon; Rehavia, Katamon, Talpiot, Kiryat HaYovel, Mount
+  Scopus, Mevaseret Zion, Abu Ghosh and Beit Shemesh in this one). Its
+  figure is not the drawn polygon's, and the abstract gives none for the
+  district without East Jerusalem, so the district and the drawn
+  "Jerusalem" sub-district both say so. The statement displaces an
+  encyclopaedia's population for either shape dated before
+  ``DISPLACES_BEFORE`` (the build's ``displaces_before``): Wikidata's are
+  the whole district's (1,034,200, 2014) and the whole city's (1,050,151,
+  2024), both counting East Jerusalem as the CBS does.
 
 **Checks** (any failure stops the run): each row's groups make its total
 (to the table's rounding, 0.1 thousand per term); the sub-districts make
@@ -96,8 +119,26 @@ GOLAN_WHY = ("The CBS counts the Golan Heights as the Golan sub-district of the 
              "shape's.")
 JERUSALEM_WHY = ("The CBS's Jerusalem figures count all of Jerusalem's municipal area, East "
                  "Jerusalem included, which the map draws within the West Bank; the CBS "
-                 "publishes no figure for the part of the district this shape is.")
+                 "publishes no figure for the part of the district this shape is. "
+                 "Encyclopaedia figures for the district or the city of Jerusalem count East "
+                 "Jerusalem too, and are not shown here.")
+# The statement displaces an encyclopaedia's population for the Jerusalem
+# shapes dated before this year (the build's ``displaces_before``): checked in
+# 2026 against the CBS's abstracts, which count East Jerusalem in every
+# Jerusalem figure they print. A figure dated 2026 or later is newer than the
+# check and stands until the reader is looked at again.
+DISPLACES_BEFORE = 2026
 GROUPS = ("Foreign nationals", "Arabs", "Jews and others")
+# Table 2.17's "Jews and others", written as Table 2.15's Jews and the rest.
+# "Jewish" is the label the map's country row (and the group tree's node)
+# gives the same people.
+JEWS = "Jewish"
+OTHERS = "Others (not Jews or Arabs)"
+LANGUAGE_WHY = (
+    "The CBS publishes no language composition by district or sub-district: the "
+    "Statistical Abstract of Israel 2024's population chapter tabulates population group, "
+    "religion, age and sex, and UNdata's census tables reported to the UN Statistics "
+    "Division hold no language table for Israel.")
 # Table 2.19: Israelis by age and sex (average 2023), with the CBS's median.
 URL_AGES = "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx"
 SOURCE_AGES = ("Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 "
@@ -226,16 +267,12 @@ def read_ages(sheets: dict[str, list[list[Any]]]) -> dict[tuple[str, str], dict[
     return out
 
 
-def read_religion(sheets: dict[str, list[list[Any]]]) -> dict[str, dict[str, float]]:
-    """District -> people by religion and in all, 31 December 2023 (Table 2.15).
+def religion_rows(sheets: dict[str, list[list[Any]]]):
+    """(section, row, thousands) for every figure row of Table 2.15.
 
-    Sections follow their headings (TOTAL POPULATION, JEWS, MOSLEMS, ...). A
-    row is a district by its English label, or -- where the English is left
-    blank under a "Thereof" -- by its Hebrew one; sub-district rows are not
-    read, because the table lists the smaller religions only where they are
-    large.
+    Sections follow their headings (TOTAL POPULATION, JEWS, MOSLEMS, ...); the
+    section is "total" or a key of ``RELIGIONS``.
     """
-    out: dict[str, dict[str, float]] = {}
     section = None
     for rows in sheets.values():
         for row in rows:
@@ -253,22 +290,53 @@ def read_religion(sheets: dict[str, list[list[Any]]]) -> dict[str, dict[str, flo
             if section is None or len(row) <= RELIGION_COLUMN:
                 continue
             value = figure(row[RELIGION_COLUMN])
-            if value is None:
+            if value is not None:
+                yield section, row, value
+
+
+def read_religion(sheets: dict[str, list[list[Any]]]) -> dict[str, dict[str, float]]:
+    """District -> people by religion and in all, 31 December 2023 (Table 2.15).
+
+    A row is a district by its English label, or -- where the English is left
+    blank under a "Thereof" -- by its Hebrew one; sub-district rows are not
+    read, because the table lists the smaller religions only where they are
+    large.
+    """
+    out: dict[str, dict[str, float]] = {}
+    for section, row, value in religion_rows(sheets):
+        english = re.sub(r"^\s*Thereof:\s*", "", str(row[0] or ""), flags=re.I)
+        kind, name = name_of(english) if english.strip() else ("", None)
+        if kind != "district":
+            hebrew = next((str(c).strip() for c in reversed(row)
+                           if isinstance(c, str) and HEBREW.search(c)), "")
+            hebrew = hebrew.replace(THEREOF_HE, "").strip()
+            name = HEBREW_DISTRICTS.get(hebrew)
+            if name is None:
                 continue
-            english = re.sub(r"^\s*Thereof:\s*", "", str(row[0] or ""), flags=re.I)
-            kind, name = name_of(english) if english.strip() else ("", None)
-            if kind != "district":
-                hebrew = next((str(c).strip() for c in reversed(row)
-                               if isinstance(c, str) and HEBREW.search(c)), "")
-                hebrew = hebrew.replace(THEREOF_HE, "").strip()
-                name = HEBREW_DISTRICTS.get(hebrew)
-                if name is None:
-                    continue
-            key_ = "total" if section == "total" else RELIGIONS[section]
-            entry = out.setdefault(name, {})
-            check(key_ not in entry, f"israel_cbs: Table 2.15 {name} {key_} twice")
-            entry[key_] = value * 1000
+        key_ = "total" if section == "total" else RELIGIONS[section]
+        entry = out.setdefault(name, {})
+        check(key_ not in entry, f"israel_cbs: Table 2.15 {name} {key_} twice")
+        entry[key_] = value * 1000
     check(set(DISTRICTS) <= set(out), f"israel_cbs: Table 2.15 districts {sorted(out)}")
+    return out
+
+
+def read_jews(sheets: dict[str, list[list[Any]]]) -> dict[tuple[str, str], float]:
+    """(kind, name) -> Jews on 31 December 2023, for every district and sub-district.
+
+    Table 2.15 lists the Jews of every district and of every sub-district
+    under its English label (the smaller religions it lists only where they
+    are numerous, so this is the one section read below the district).
+    """
+    out: dict[tuple[str, str], float] = {}
+    for section, row, value in religion_rows(sheets):
+        if section != "JEWS" or "thereof" in str(row[0] or "").lower():
+            continue
+        kind, name = name_of(str(row[0] or ""))
+        if kind not in ("district", "subdistrict"):
+            continue
+        check((kind, name) not in out, f"israel_cbs: Table 2.15 Jews of {name} twice")
+        out[(kind, name)] = value * 1000
     return out
 
 
@@ -319,12 +387,49 @@ def religion_fields(r: dict[str, float], what: str) -> dict[str, Any]:
     }
 
 
+def population_groups(v: dict[str, float], jews: float | None, what: str
+                      ) -> tuple[dict[str, float], str]:
+    """The unit's people by population group, and the note that says what they are.
+
+    With Table 2.15's Jews for the unit, "Jews and others" is written as the
+    Jews and the rest of the group; the rest may fall below nothing only by
+    the two tables' rounding, 0.1 thousand, or the run stops.
+    """
+    tail = (" Arabs are the CBS's group of Muslims, Arab Christians and the Druze. "
+            "Foreign nationals are residents who are neither citizens nor permanent "
+            "residents. Published in thousands to one decimal.")
+    if jews is None:
+        counts = {g: v[g] for g in GROUPS if v[g]}
+        return counts, ("The CBS's population groups: Jews and others (others being non-Arab "
+                        "Christians, members of other religions and people the population "
+                        "register classifies by no religion), Arabs, and foreign nationals."
+                        + tail)
+    rest = v["Jews and others"] - jews
+    check(rest >= -1000 * 2 * ROUND, f"israel_cbs: {what}: Table 2.15 counts {jews:,.0f} Jews, "
+                                     f"more than Table 2.17's {v['Jews and others']:,.0f} "
+                                     f"Jews and others")
+    counts = {"Foreign nationals": v["Foreign nationals"], "Arabs": v["Arabs"], JEWS: jews,
+              OTHERS: max(rest, 0.0)}
+    return ({k: n for k, n in counts.items() if n},
+            "The CBS's population groups on 31 December 2023. Table 2.17 prints the Jews "
+            "with the others as one group; the Jews are Table 2.15's count of the same "
+            "date (the CBS's group 'Jews' is the register's religion), and 'Others (not Jews "
+            "or Arabs)' is the rest of that group: non-Arab Christians, members of other "
+            "religions and people the population register classifies by no religion, "
+            f"{max(rest, 0.0):,.0f} people here." + tail)
+
+
 def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str, Any]],
           admin2: list[dict[str, Any]], parents: dict[str, str],
           ages: dict[tuple[str, str], dict[str, Any]] | None = None,
-          religion: dict[str, dict[str, float]] | None = None) -> list[dict[str, Any]]:
+          religion: dict[str, dict[str, float]] | None = None,
+          jews: dict[tuple[str, str], float] | None = None) -> list[dict[str, Any]]:
     ages = ages or {}
     religion = religion or {}
+    jews = dict(jews or {})
+    if jews and ("subdistrict", "Tel Aviv") not in jews \
+            and ("district", "TEL AVIV DISTRICT") in jews:
+        jews[("subdistrict", "Tel Aviv")] = jews[("district", "TEL AVIV DISTRICT")]
     if ("subdistrict", "Tel Aviv") not in ages and ("district", "TEL AVIV DISTRICT") in ages:
         ages[("subdistrict", "Tel Aviv")] = ages[("district", "TEL AVIV DISTRICT")]
     districts = {n: v for (k, n), v in table.items() if k == "district"}
@@ -364,25 +469,36 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
             rec["sources"] = rec["sources"] + [religion_source]
         return rec
 
-    def gaps(why: str) -> dict[str, Any]:
-        return {f: gap(NOT_AVAILABLE, why)
-                for f in ("population", "ethnicity", "median_age", "sex_ratio", "religion")}
+    def gaps(why: str, *, displace: bool = False) -> dict[str, Any]:
+        out = {f: gap(NOT_AVAILABLE, why)
+               for f in ("population", "ethnicity", "median_age", "sex_ratio", "religion")}
+        if displace:
+            out["population"] = dict(out["population"], displaces_before=DISPLACES_BEFORE)
+        out["language"] = gap(NOT_AVAILABLE, LANGUAGE_WHY)
+        return out
 
-    def fields(v: dict[str, float], what: str) -> dict[str, Any]:
+    def jews_of(keys: list[tuple[str, str]]) -> float | None:
+        """The units' Jews summed, or None where Table 2.15 was not read."""
+        if not jews:
+            return None
+        missing = [k for k in keys if k not in jews]
+        check(not missing, f"israel_cbs: Table 2.15 has no Jews for {missing}")
+        return sum(jews[k] for k in keys)
+
+    def fields(v: dict[str, float], what: str, keys: list[tuple[str, str]]) -> dict[str, Any]:
         population = measure(round(v["total"]), year=YEAR, source=SOURCE)
         population["note"] = (f"The CBS's estimate for 31 December 2023 for {what}, published "
                               f"in thousands to one decimal (the nearest hundred people).")
+        counts, note = population_groups(v, jews_of(keys), what)
         return {
             "population": population,
-            "ethnicity": shares({g: v[g] for g in GROUPS if v[g]}, total=v["total"]),
+            "ethnicity": shares(counts, total=v["total"]),
             "ethnicity_year": YEAR, "ethnicity_basis": "population group",
-            "ethnicity_note": (
-                "The CBS's population groups: Jews and others (others being non-Arab "
-                "Christians, members of other religions and people the population "
-                "register classifies by no religion), Arabs, and foreigners -- residents "
-                "who are neither citizens nor permanent residents. Published in thousands "
-                "to one decimal."),
-            "sources": source,
+            "ethnicity_note": note,
+            "language": gap(NOT_AVAILABLE, LANGUAGE_WHY),
+            "sources": source + ([{"field": "ethnicity", "name": SOURCE_RELIGION,
+                                   "url": URL_RELIGION, "year": YEAR, "license": LICENCE}]
+                                 if jews else []),
         }
 
     out: list[dict[str, Any]] = []
@@ -393,7 +509,7 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
         if key_ == "JERUSALEM DISTRICT":
             out.append(record(f"ISR-CBS-{label}", label, level="admin1", parent=ISO3,
                               country=ISO3, match_by="shape_id", shape_id=unit["id"],
-                              **gaps(JERUSALEM_WHY)))
+                              **gaps(JERUSALEM_WHY, displace=True)))
             continue
         if key_ == "NORTHERN DISTRICT":
             kids = [n for n in ("Zefat", "Kinneret", "Yizre'el", "Akko")]
@@ -403,7 +519,8 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
                   "israel_cbs: the Northern District is not its sub-districts")
             rec = record(f"ISR-CBS-{label}", label, level="admin1", parent=ISO3, country=ISO3,
                          match_by="shape_id", shape_id=unit["id"],
-                         **fields(v, "the Zefat, Kinneret, Yizre'el and Akko sub-districts"))
+                         **fields(v, "the Zefat, Kinneret, Yizre'el and Akko sub-districts",
+                                  [("subdistrict", n) for n in kids]))
             rec["population"]["note"] += (
                 f" The sum of the district's sub-districts other than the Golan "
                 f"({golan:,.0f} people), which the map draws in Syria's Quneitra governorate.")
@@ -427,7 +544,7 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
             continue
         rec = record(f"ISR-CBS-{label}", label, level="admin1", parent=ISO3,
                      country=ISO3, match_by="shape_id", shape_id=unit["id"],
-                     **fields(districts[key_], f"the {key_.title()}"))
+                     **fields(districts[key_], f"the {key_.title()}", [("district", key_)]))
         age = ages.get(("district", key_))
         rel = religion.get(key_)
         out.append(more(rec, age_fields(age, f"the {key_.title()}") if age else None,
@@ -443,12 +560,13 @@ def build(table: dict[tuple[str, str], dict[str, float]], admin1: list[dict[str,
         if why:
             out.append(record(f"ISR-CBS-{label}", label, level="admin2", parent=ISO3,
                               country=ISO3, parent_name=parents.get(unit["parent"]),
-                              match_by="shape_id", shape_id=unit["id"], **gaps(why)))
+                              match_by="shape_id", shape_id=unit["id"],
+                              **gaps(why, displace=name is None)))
             continue
         rec = record(f"ISR-CBS-{label}", label, level="admin2", parent=ISO3, country=ISO3,
                      parent_name=parents.get(unit["parent"]), match_by="shape_id",
                      shape_id=unit["id"], aliases=[f"{name} sub-district"],
-                     **fields(subs[name], f"the {name} sub-district"))
+                     **fields(subs[name], f"the {name} sub-district", [("subdistrict", name)]))
         age = ages.get(("subdistrict", name))
         # Tel Aviv's one sub-district is the district, whose religions the
         # table gives in full; no other sub-district's are.
@@ -466,9 +584,15 @@ def main() -> int:
     argparse.ArgumentParser(description=__doc__).parse_args()
     table = read(workbook(URL))
     ages = read_ages(workbook(URL_AGES))
-    religion = read_religion(workbook(URL_RELIGION))
+    religion_sheets = workbook(URL_RELIGION)
+    religion = read_religion(religion_sheets)
+    jews = read_jews(religion_sheets)
+    check(bool(jews), "israel_cbs: Table 2.15 gave no Jews by district")
+    log(f"  Table 2.15: Jews of {sum(1 for k, _n in jews if k == 'district')} districts and "
+        f"{sum(1 for k, _n in jews if k == 'subdistrict')} sub-districts")
     admin1, admin2 = units(ISO3, "admin1"), units(ISO3, "admin2")
-    rows = build(table, admin1, admin2, {u["id"]: u["name"] for u in admin1}, ages, religion)
+    rows = build(table, admin1, admin2, {u["id"]: u["name"] for u in admin1}, ages, religion,
+                 jews)
     write_json(PROCESSED / OUT, rows)
     log(f"  wrote {OUT} ({len(rows)})")
     return 0

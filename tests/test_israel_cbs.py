@@ -168,6 +168,45 @@ class TheAgesAndReligions(unittest.TestCase):
         with self.assertRaises(SystemExit):
             ic.religion_fields(rel["TEL AVIV DISTRICT"], "the Tel Aviv District")
 
+    def test_jews_and_others_is_written_as_the_jews_and_the_rest(self):
+        # Table 2.15's Jews: every district, and every sub-district under its
+        # English label; one thousand fewer than Table 2.17's Jews and others.
+        rows = [[None, "TOTAL POPULATION(5)"], [None, "RELIGION"], [None, "JEWS"]]
+        for district, subs in SUBS.items():
+            rows.append(religion_row(district.title(), 1.0))
+            for name, _f, _a, j in subs:
+                rows.append(religion_row(f"   {name} S.D.", round(j - 1.0, 1)))
+        jews = ic.read_jews({"ST02-15x": rows})
+        self.assertEqual(jews[("subdistrict", "Haifa")], round(546.4 - 1.0, 1) * 1000)
+        out = {r["shape_id"]: r for r in ic.build(ic.read(sheet()), ADMIN1, ADMIN2, PARENTS,
+                                                    jews=jews)}
+        haifa = {s["group"]: s["count"] for s in out["s-Haifa"]["ethnicity"]}
+        self.assertEqual(set(haifa), {"Foreign nationals", "Arabs", "Jewish",
+                                      "Others (not Jews or Arabs)"})
+        self.assertEqual(haifa["Jewish"], round((546.4 - 1.0) * 1000))
+        self.assertEqual(haifa["Others (not Jews or Arabs)"], 1000)
+        self.assertIn("Druze", out["s-Haifa"]["ethnicity_note"])
+        # The Northern District, drawn without the Golan, sums four sub-districts.
+        north = {s["group"]: s["count"] for s in out["d1"]["ethnicity"]}
+        self.assertEqual(north["Others (not Jews or Arabs)"], 4000)
+        # Jerusalem displaces an encyclopaedia's figure older than the check.
+        self.assertEqual(out["d0"]["population"]["displaces_before"], ic.DISPLACES_BEFORE)
+        self.assertEqual(out["s-jer"]["population"]["displaces_before"], ic.DISPLACES_BEFORE)
+        self.assertNotIn("displaces_before", out["s-Golan"]["population"])
+        # Every unit says why it has no language.
+        for r in out.values():
+            self.assertEqual(r["language"]["status"], "not_available")
+
+    def test_more_jews_than_jews_and_others_stops_the_run(self):
+        rows = [[None, "TOTAL POPULATION(5)"], [None, "RELIGION"], [None, "JEWS"]]
+        for district, subs in SUBS.items():
+            rows.append(religion_row(district.title(), 1.0))
+            for name, _f, _a, j in subs:
+                rows.append(religion_row(f"   {name} S.D.", round(j + 1.0, 1)))
+        with self.assertRaises(SystemExit):
+            ic.build(ic.read(sheet()), ADMIN1, ADMIN2, PARENTS,
+                     jews=ic.read_jews({"ST02-15x": rows}))
+
     def test_build_writes_median_sex_and_religion(self):
         out = {r["shape_id"]: r for r in ic.build(
             ic.read(sheet()), ADMIN1, ADMIN2, PARENTS, ic.read_ages(ages_sheet()),
