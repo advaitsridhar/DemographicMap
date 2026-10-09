@@ -272,8 +272,12 @@ def indigenous_counts(rows: Iterable[tuple[dict[str, str], float]]
 
 def split_indigenous(parts: dict[str, float], other: str | None, indigenous: float,
                      region: str) -> dict[str, float]:
-    """``parts`` with the Indigenous languages taken out of "Other" and named."""
-    if not indigenous:
+    """``parts`` with the Indigenous languages taken out of "Other" and named.
+
+    Once abs.outermost_by_code names them itself (the shared patch of 9 October
+    2026), they arrive named and are left as they are.
+    """
+    if not indigenous or INDIGENOUS in parts:
         return parts
     held = parts.get(other or "")
     if held is None or indigenous > held + tolerance(held):
