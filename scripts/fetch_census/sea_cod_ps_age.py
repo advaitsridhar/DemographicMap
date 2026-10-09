@@ -9,7 +9,10 @@ no address, and the government's open-data portal (``data.go.th``) answers
 HTTP 403, "Your request has been blocked by our security systems" -- each
 recorded in the log of the probe that found it, and none of them evaded. Laos
 publishes its 2015 census volume as a PDF with no district ages; Cambodia's
-2019 census gives its provinces' ages in reports whose tables are not text.
+2019 census gives its provinces' ages only in three broad groups (the final
+report's Table PT 02: 0-14, 15-59 and 60 and over, too coarse for a median),
+single years only for the country (priority table A1), and its provincial
+reports' tables are not text.
 What remains for all three is OCHA's Common Operational Dataset of population
 statistics (COD-PS), which splits every unit by sex and five-year age group:
 
@@ -105,6 +108,14 @@ UNREAD = {
     "KHM": ("The National Institute of Statistics publishes no district's ages from the "
             "2019 census."),
 }
+# Why a projection rather than the office's own ages, said on every median.
+WHY_PROJECTION = {
+    "KHM": ("used because the 2019 census tabulates a province's ages only in three broad "
+            "groups -- 0-14, 15-59 and 60 and over (final report, Table PT 02), too coarse "
+            "for a median -- and single years of age only for the whole country (priority "
+            "table A1)"),
+}
+WHY_DEFAULT = "used because the office's own tables could not be read"
 
 
 # Why Thailand's districts (and its provinces' languages) carry no composition,
@@ -327,8 +338,8 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
             median_age_note=(
                 f"Interpolated within the five-year age group that holds the middle person, "
                 f"from the age breakdown of OCHA's COD-PS for the country, reference year "
-                f"{year}: a projection, not a count, used because the office's own tables "
-                f"could not be read.{basis}"),
+                f"{year}: a projection, not a count, "
+                f"{WHY_PROJECTION.get(iso3, WHY_DEFAULT)}.{basis}"),
             sex_ratio={"value": ratio(men, women), "unit": "males_per_100_females",
                        "year": year, "source": source},
             sex_ratio_note=(f"Males per 100 females in OCHA's COD-PS for the country, "

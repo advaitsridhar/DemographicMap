@@ -97,7 +97,9 @@ BELOW_PROVINCE = ("The 2019 census's final report tabulates each district by pop
                   "which tabulate below the province, set their text in a form that does not "
                   "extract: Kep's 143 pages yield none of the words District, Religion or "
                   "Mother.")
-DISTRICT_AGE_GAP = BELOW_PROVINCE.format(what="ages by province and above")
+DISTRICT_AGE_GAP = BELOW_PROVINCE.format(
+    what="ages by province only in three broad groups (Table PT 02: 0-14, 15-59, 60 and "
+         "over), single years only for the whole country (priority table A1)")
 DISTRICT_RELIGION_GAP = BELOW_PROVINCE.format(what="religion by province and above "
                                                    "(Table 2.5.1)")
 DISTRICT_LANGUAGE_GAP = BELOW_PROVINCE.format(what="mother tongue for the country only "

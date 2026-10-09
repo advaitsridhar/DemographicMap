@@ -127,6 +127,19 @@ class RecordsTest(unittest.TestCase):
         self.assertEqual(r["median_age"]["value"], 42.5)
         self.assertIn("projection", r["median_age_note"])
         self.assertIn("United States Bureau of the Census", r["median_age_note"])
+        self.assertIn("could not be read", r["median_age_note"])
+
+    def test_cambodia_says_its_census_gives_provinces_only_broad_ages(self):
+        cols_ = columns()
+        table = {"label": "khm_admpop_adm1_2024", "level": "2", "columns": cols_,
+                 "rows": [row("Lampang", "Ko Kha")]}
+        with mock.patch.object(s, "drawn", fake_drawn), \
+                mock.patch.object(s, "locate", return_value={}):
+            recs = s.level_records("KHM", "cod-ps-khm", "CC BY-IGO", "2", 2024, table,
+                                   age_columns(cols_))
+        note = recs[0]["median_age_note"]
+        self.assertIn("Table PT 02", note)
+        self.assertNotIn("could not be read", note)
 
     def test_an_implausible_ratio_leaves_the_unit_out_and_says_why(self):
         cols_ = columns()
