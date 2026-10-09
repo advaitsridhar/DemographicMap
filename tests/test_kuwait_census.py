@@ -108,14 +108,15 @@ ADMIN2 = [{"id": "a1", "name": "Dasman", "parent": "g0"},
 
 
 PLACED = {
-    "DASMAN": {"shares": {"a1": 0.95, "a2": 0.05}},
-    "AL-SHARQ": {"shares": {"a2": 0.97, "a1": 0.03}},
-    "HAWALLI": {"shares": {"a3": 1.0}},
-    "AL-FAHAHEEL": {"shares": {}},
-    "AL-JAHRA": {"shares": {}},
-    "AL-NAHDA": {"shares": {"a4": 0.10, "a5": 0.90}},
-    "KHAITAN": {"shares": {}},
-    "AL-ADAN": {"shares": {}},
+    "DASMAN": {"osm": ["r1"], "shares": {"a1": 0.95, "a2": 0.05}},
+    "AL-SHARQ": {"osm": ["r2"], "shares": {"a2": 0.97, "a1": 0.03}},
+    "HAWALLI": {"osm": ["r3"], "shares": {"a3": 1.0}},
+    # Outlined, but off the drawn land: nobody to count anywhere drawn.
+    "AL-FAHAHEEL": {"osm": ["r4"], "shares": {}},
+    "AL-JAHRA": {"osm": ["r5"], "shares": {}},
+    "AL-NAHDA": {"osm": ["r6"], "shares": {"a4": 0.10, "a5": 0.90}},
+    "KHAITAN": {"osm": ["r7"], "shares": {}},
+    "AL-ADAN": {"osm": ["r8"], "shares": {}},
 }
 
 
@@ -163,6 +164,24 @@ class TheReader(unittest.TestCase):
         self.assertEqual(out["a2"]["population"]["status"] if "status" in out["a2"]["population"]
                          else "value", "value")
 
+    def test_an_area_marked_only_by_a_point_counts_whole_where_the_point_is(self):
+        placed = dict(PLACED, **{"AL-SHARQ": {"osm": [], "shares": {}, "points": {"n9": "a1"}}})
+        out = {r["shape_id"]: r for r in self.run_it(placed)}
+        self.assertEqual(out["a1"]["population"]["status"], "not_available")
+        self.assertIn("marks it with a point", out["a1"]["population"]["note"])
+        # Hawalli's polygon is not near the point.
+        self.assertIn("value", out["a3"]["population"])
+
+    def test_an_area_neither_outlined_nor_marked_may_be_anywhere_in_its_governorate(self):
+        placed = dict(PLACED, **{"AL-SHARQ": {"osm": [], "shares": {}, "points": {}}})
+        out = {r["shape_id"]: r for r in self.run_it(placed)}
+        # Every polygon of the Capital may hold Al-Sharq's people ...
+        self.assertEqual(out["a1"]["population"]["status"], "not_available")
+        self.assertIn("may be in any polygon", out["a1"]["population"]["note"])
+        self.assertEqual(out["a5"]["population"]["status"], "not_available")
+        # ... and none of Hawalli's does.
+        self.assertIn("value", out["a3"]["population"])
+
     def test_areas_sharing_a_home_are_summed(self):
         placed = dict(PLACED, **{"DASMAN": {"shares": {"a2": 0.9, "a1": 0.1}}})
         out = {r["shape_id"]: r for r in self.run_it(placed)}
@@ -208,7 +227,7 @@ def square(x0, y0, x1, y1):
 
 
 class TheGround(unittest.TestCase):
-    def test_shares_are_measured_on_drawn_land(self):
+    def setUp(self):
         from shapely.geometry import box
         drawn = {"p1": box(0, 0, 1, 1), "p2": box(1, 0, 2, 1)}
         labels = {"p1": "One", "p2": "Two"}
@@ -217,23 +236,44 @@ class TheGround(unittest.TestCase):
         elements = [
             {"type": "way", "id": 1, "tags": {"name": "المسايل", "boundary": "administrative",
                                               "admin_level": "6"},
-             "geometry": square(0.25, 0, 1.25, 1) + []},
+             "geometry": square(0.25, -1, 1.25, 1)},
             {"type": "way", "id": 2, "tags": {"name": "الصليبخات", "place": "suburb"},
              "geometry": square(0, 0, 0.5, 1)},
+            # Ahmadi City is only a point in OSM, under the city's name.
+            {"type": "node", "id": 3, "lon": 1.5, "lat": 0.5,
+             "tags": {"name": "الأحمدي", "place": "city"}},
         ]
-        elements[0]["geometry"] = square(0.25, -1, 1.25, 1)
-        index = kc.osm_index(elements)
-        areas = {"AL-MASAYEL": {"ar": "المسايل"}, "AL-SULAIBIKHAT": {"ar": "الصليبيخات"},
-                 "NOWHERE": {"ar": "لا مكان"}}
-        placed = kc.ground(areas, index, drawn, labels)
+        areas = {"AL-MASAYEL": {"ar": "المسايل", "governorate": "Hawalli"},
+                 "AL-SULAIBIKHAT": {"ar": "الصليبيخات", "governorate": "Hawalli"},
+                 "AL-AHMADI CITY": {"ar": "مدينة الأحمدي", "governorate": "Hawalli"},
+                 "NOWHERE": {"ar": "لا مكان", "governorate": "Hawalli"},
+                 "DESERT": {"ar": "بر محافظة حولي", "governorate": "Hawalli"}}
+        self.placed = kc.ground(areas, elements, drawn, labels, {"g": box(0, 0, 2, 1)},
+                                {"g": "Hawalli"})
+
+    def test_shares_are_measured_on_drawn_land(self):
+        placed = self.placed
         self.assertAlmostEqual(placed["AL-MASAYEL"]["shares"]["p1"], 0.75, places=3)
         self.assertAlmostEqual(placed["AL-MASAYEL"]["shares"]["p2"], 0.25, places=3)
         self.assertEqual(placed["AL-MASAYEL"]["osm"], ["w1"])
+        self.assertAlmostEqual(placed["AL-MASAYEL"]["admin1"]["g"], 1.0, places=3)
         # Spelt otherwise in OSM, found through the declared name.
         self.assertAlmostEqual(placed["AL-SULAIBIKHAT"]["shares"]["p1"], 1.0, places=3)
         self.assertEqual(placed["NOWHERE"]["osm"], [])
+        self.assertEqual(placed["NOWHERE"]["points"], {})
         self.assertEqual(kc.osm_url("r18005317"),
                          "https://www.openstreetmap.org/relation/18005317")
+
+    def test_an_area_with_no_outline_is_placed_by_its_point(self):
+        self.assertEqual(self.placed["AL-AHMADI CITY"]["shares"], {})
+        self.assertEqual(self.placed["AL-AHMADI CITY"]["points"], {"n3": "p2"})
+
+    def test_a_desert_is_the_governorate_less_every_outline(self):
+        desert = self.placed["DESERT"]
+        self.assertTrue(desert["desert"])
+        # Outlines cover x 0-1.25; the rest, x 1.25-2, is all in p2.
+        self.assertAlmostEqual(desert["shares"]["p2"], 1.0, places=3)
+        self.assertNotIn("p1", desert["shares"])
 
 
 class TheArabicNames(unittest.TestCase):

@@ -32,16 +32,25 @@ must close on each governorate's Table 1 total in turn, or the run stops.
 polygons are not the census's areas: drawn "Yarmouk" holds a quarter of
 Al-Yarmouk, drawn "Rawda" holds Al-Rawda and most of Al-Adailiya, drawn
 "Messila" holds Al-Masayel and blocks of Sabah Al-Salem. So a name is no
-evidence. OpenStreetMap carries every census area's outline under its Arabic
-name (``boundary=administrative``, ``admin_level=6``, mapped from the Public
-Authority for Civil Information's areas); ``--osm`` finds each of Table 52's
-areas there by its Arabic name and measures the share of its ground (on
-drawn land) inside each drawn polygon, into ``data/raw/kuwait/osm_areas.json``.
+evidence. OpenStreetMap carries most census areas' outlines under their
+Arabic names (``boundary=administrative``, ``admin_level=6``, mapped from the
+Public Authority for Civil Information's areas). Each run reads them through
+the Overpass API, finds each of Table 52's areas by its Arabic name, and
+measures the share of its ground (on drawn land) inside each drawn polygon;
+``--osm`` stops there and writes the measurement to
+``data/raw/kuwait/osm_areas.json`` (not committed), which a later run on the
+same machine reuses. A governorate's desert (بر محافظة ...) is outlined as
+the drawn governorate less every outlined area.
+
 A drawn polygon then carries the census areas whose ground lies at least
-``HOME`` inside it, summed, and only when the ground of every other census
-area inside it would hold, at that area's own average density, no more than
-``STRAY`` of their people. Every polygon refused, every census area with no
-home, and every area OpenStreetMap does not name is logged with its numbers.
+``HOME`` inside it, summed, and only when the other census areas inside it
+would hold no more than ``STRAY`` of their people. An outlined area counts
+at its own average density over its ground there; an area OpenStreetMap only
+marks with a point counts whole in the polygon holding the point; an area
+it neither outlines nor marks counts whole in every polygon of its
+governorate, since it could be in any. Every polygon refused, every census
+area with no home, and every area OpenStreetMap does not outline is logged
+with its numbers.
 
 **Small counts.** A sex ratio is not written for fewer than ``MIN_SEX`` men or
 women, nor a nationality split for fewer than ``MIN_PEOPLE`` people: the
@@ -56,7 +65,7 @@ governorate; the areas close on the governorates; each census area is
 bound at most once.
 
 Usage:
-    python -m scripts.fetch_census.kuwait_census --osm   # measure areas' ground
+    python -m scripts.fetch_census.kuwait_census --osm   # measure areas' ground only
     python -m scripts.fetch_census.kuwait_census
 """
 
@@ -166,7 +175,11 @@ OSM_NAMES = {
     "صباح الأحمد البحرية": ["مدينة صباح الأحمد البحرية"],
     "الجواخير الجنوبية": ["الجنوبية الجواخير"],
     "الزور": ["الزور وصولة"],
+    # OSM has no outline of Ahmadi City, only the city's point, named الأحمدي.
+    "مدينة الأحمدي": ["الأحمدي"],
 }
+# A governorate's desert: the census's name begins so.
+DESERT = "بر محافظة"
 
 
 def numbers(row: list[Any]) -> list[float]:
@@ -331,13 +344,16 @@ def table52(rows: list[list[Any]], govs: dict[str, dict[str, float]] | None = No
 # --- where each census area is: OpenStreetMap's outlines on the drawn polygons ---
 
 def overpass(box: str) -> list[dict[str, Any]]:
-    """The named areas (administrative level 6, or places drawn as areas) in a box."""
+    """The named areas (administrative level 6, or places drawn as areas) and
+    the named place points in a box."""
     within = f"({box})"
+    kinds = "|".join(PLACE_KINDS)
     query = ("[out:json][timeout:240];("
              f'relation["boundary"="administrative"]["admin_level"="6"]["name"]{within};'
              f'way["boundary"="administrative"]["admin_level"="6"]["name"]{within};'
-             f'relation["place"~"^({"|".join(PLACE_KINDS)})$"]["name"]{within};'
-             f'way["place"~"^({"|".join(PLACE_KINDS)})$"]["name"]{within};'
+             f'relation["place"~"^({kinds})$"]["name"]{within};'
+             f'way["place"~"^({kinds})$"]["name"]{within};'
+             f'node["place"~"^({kinds})$"]["name"]{within};'
              ");out geom;")
     req = urllib.request.Request(
         OVERPASS, data=urllib.parse.urlencode({"data": query}).encode(),
@@ -362,6 +378,8 @@ def osm_index(elements: list[dict[str, Any]]) -> dict[str, list[tuple[str, Any]]
     from .west_asia_probe import osm_shape
     out: dict[str, list[tuple[str, Any, int]]] = defaultdict(list)
     for el in elements:
+        if el.get("type") == "node":
+            continue
         tags = el.get("tags") or {}
         geom = osm_shape(el)
         if geom is None or geom.is_empty or geom.geom_type not in ("Polygon", "MultiPolygon"):
@@ -375,140 +393,242 @@ def osm_index(elements: list[dict[str, Any]]) -> dict[str, list[tuple[str, Any]]
                 if r == min(t[2] for t in v)] for k, v in out.items()}
 
 
-def ground(areas: dict[str, dict[str, Any]], index: dict[str, list[tuple[str, Any]]],
-           drawn: dict[str, Any], labels: dict[str, str]) -> dict[str, dict[str, Any]]:
-    """Each census area's OSM outline and the share of its drawn-land ground in
-    each drawn polygon. An area OSM does not name is returned unplaced."""
+def osm_points(elements: list[dict[str, Any]]) -> dict[str, list[tuple[str, float, float]]]:
+    """Folded Arabic name -> [(OSM id, lon, lat)] of the named place points."""
+    out: dict[str, list[tuple[str, float, float]]] = defaultdict(list)
+    for el in elements:
+        if el.get("type") != "node" or "lat" not in el:
+            continue
+        tags = el.get("tags") or {}
+        for name in {tags.get("name:ar", ""), tags.get("name", "")}:
+            if name and ARABIC.search(name):
+                out[fold_ar(name)].append((f"n{el['id']}", el["lon"], el["lat"]))
+    return dict(out)
+
+
+def lookup(index: dict[str, list[Any]], name: str) -> list[Any]:
+    """An index's entries for a name, or for the name without its article."""
+    return index.get(fold_ar(name)) or index.get(fold_ar(re.sub(r"^ال", "", name))) or []
+
+
+def outlines(areas: dict[str, dict[str, Any]], index: dict[str, list[tuple[str, Any]]]
+             ) -> dict[str, tuple[list[str], Any]]:
+    """Census area -> (OSM ids, its outline), for the areas OSM outlines under
+    their name (or every name ``OSM_NAMES`` gives them)."""
     from shapely.ops import unary_union
-    land = unary_union(list(drawn.values()))
-    out: dict[str, dict[str, Any]] = {}
+    out: dict[str, tuple[list[str], Any]] = {}
     for name, a in areas.items():
-        wanted = OSM_NAMES.get(a["ar"], [a["ar"]])
         found: list[tuple[str, Any]] = []
-        for want in wanted:
-            hits = index.get(fold_ar(want)) or index.get(fold_ar(re.sub(r"^ال", "", want))) or []
+        for want in OSM_NAMES.get(a["ar"], [a["ar"]]):
+            hits = lookup(index, want)
             if not hits:
                 found = []
                 break
             # Every outline of the name: OSM maps some areas in two pieces.
             found += hits
-        if not found:
-            out[name] = {"ar": a["ar"], "osm": [], "shares": {}}
-            continue
-        outline = unary_union([g for _i, g in found])
-        on_land = outline.intersection(land).area
-        shares = {}
-        if on_land > 0:
-            for sid, poly in drawn.items():
-                if poly.intersects(outline):
-                    s = poly.intersection(outline).area / on_land
-                    if s >= 0.005:
-                        shares[sid] = round(s, 4)
-        out[name] = {"ar": a["ar"], "osm": [i for i, _g in found],
-                     "km2": round(outline.area * 111.32 ** 2 * 0.8723, 3),
-                     "on_drawn_land": round(on_land / outline.area, 4) if outline.area else 0,
-                     "shares": shares,
-                     "drawn": {labels[s]: v for s, v in sorted(shares.items(),
-                                                              key=lambda kv: -kv[1])}}
+        if found:
+            out[name] = ([i for i, _g in found], unary_union([g for _i, g in found]))
     return out
 
 
-def measure_ground(table52_rows: list[list[Any]]) -> dict[str, Any]:
-    """The ``--osm`` mode: every census area placed on the drawn polygons."""
+def spread(outline: Any, drawn: dict[str, Any], land: Any) -> dict[str, float]:
+    """The share of an outline's drawn-land ground inside each drawn polygon."""
+    on_land = outline.intersection(land).area
+    shares: dict[str, float] = {}
+    if on_land <= 0:
+        return shares
+    for sid, poly in drawn.items():
+        if poly.intersects(outline):
+            s = poly.intersection(outline).area / on_land
+            if s >= 0.005:
+                shares[sid] = round(s, 4)
+    return shares
+
+
+def holder(lon: float, lat: float, drawn: dict[str, Any]) -> str | None:
+    """The one drawn polygon holding a point, or None."""
+    from shapely.geometry import Point
+    hits = [sid for sid, poly in drawn.items() if poly.contains(Point(lon, lat))]
+    return hits[0] if len(hits) == 1 else None
+
+
+def ground(areas: dict[str, dict[str, Any]], elements: list[dict[str, Any]],
+           drawn2: dict[str, Any], labels2: dict[str, str], drawn1: dict[str, Any],
+           labels1: dict[str, str]) -> dict[str, dict[str, Any]]:
+    """Each census area placed on the drawn polygons: the share of its ground
+    in each (second level, and first level for the governorates' notes), or,
+    where OSM has no outline of it, the polygons holding its OSM points.
+
+    ``areas`` must carry each area's governorate: a desert's outline is the
+    drawn governorate less every outlined area.
+    """
+    from shapely.ops import unary_union
+    index = osm_index(elements)
+    points = osm_points(elements)
+    found = outlines(areas, index)
+    covered = unary_union([g for _ids, g in found.values()]) if found else None
+    gov_shape = {labels1[sid]: g for sid, g in drawn1.items()}
+    for name, a in areas.items():
+        if name in found or not a["ar"].startswith(DESERT):
+            continue
+        shape = gov_shape.get(GOVERNORATES.get(a.get("governorate", ""), ""))
+        if shape is not None:
+            found[name] = ([], shape.difference(covered) if covered is not None else shape)
+    land2 = unary_union(list(drawn2.values()))
+    land1 = unary_union(list(drawn1.values()))
+    out: dict[str, dict[str, Any]] = {}
+    for name, a in areas.items():
+        entry: dict[str, Any] = {"ar": a["ar"], "osm": [], "shares": {}, "admin1": {}}
+        if name in found:
+            ids, outline = found[name]
+            on_land = outline.intersection(land2).area
+            shares = spread(outline, drawn2, land2)
+            entry.update(
+                osm=ids, desert=not ids, shares=shares, admin1=spread(outline, drawn1, land1),
+                km2=round(outline.area * 111.32 ** 2 * 0.8723, 3),
+                on_drawn_land=round(on_land / outline.area, 4) if outline.area else 0,
+                drawn={labels2[s]: v for s, v in sorted(shares.items(), key=lambda kv: -kv[1])})
+        else:
+            spots = [p for want in OSM_NAMES.get(a["ar"], [a["ar"]]) for p in lookup(points, want)]
+            entry["points"] = {pid: holder(lon, lat, drawn2) for pid, lon, lat in spots}
+        out[name] = entry
+    return out
+
+
+def measure_ground(areas: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """Every census area placed on the drawn polygons, from OSM read now."""
     from .sea_common import polygons
-    areas = table52(table52_rows)
     elements: list[dict[str, Any]] = []
     for box in BOXES:
         got = overpass(box)
-        log(f"  Overpass {box}: {len(got)} named areas")
+        log(f"  Overpass {box}: {len(got)} named areas and points")
         elements += got
-    index = osm_index(elements)
-    admin2 = units(ISO3, "admin2")
-    labels = {u["id"]: u["name"] for u in admin2}
-    drawn = {sid: g for sid, g in polygons("admin2", ISO3, 8).items() if sid in labels}
-    placed = ground(areas, index, drawn, labels)
-    admin1 = units(ISO3, "admin1")
+    admin2, admin1 = units(ISO3, "admin2"), units(ISO3, "admin1")
+    labels2 = {u["id"]: u["name"] for u in admin2}
     labels1 = {u["id"]: u["name"] for u in admin1}
+    drawn2 = {sid: g for sid, g in polygons("admin2", ISO3, 8).items() if sid in labels2}
     drawn1 = {sid: g for sid, g in polygons("admin1", ISO3, 7).items() if sid in labels1}
-    placed1 = ground(areas, index, drawn1, labels1)
-    for name, p in placed.items():
-        p["admin1"] = placed1[name]["shares"]
-    unplaced = [n for n, p in placed.items() if not p["osm"]]
-    log(f"  census areas placed by their OSM outline: {len(placed) - len(unplaced)} of "
-        f"{len(placed)}; not named in OSM: {len(unplaced)}: " + "; ".join(
-            f"{n} ({areas[n]['ar']}, {areas[n]['total']:,.0f})" for n in unplaced))
+    placed = ground(areas, elements, drawn2, labels2, drawn1, labels1)
+    outlined = [n for n, p in placed.items() if p["osm"]]
+    deserts = [n for n, p in placed.items() if p.get("desert")]
+    pointed = {n: p["points"] for n, p in placed.items() if p.get("points")}
+    lost = sorted(set(placed) - set(outlined) - set(deserts) - set(pointed))
+    log(f"  census areas placed by their OSM outline: {len(outlined)} of {len(placed)}; "
+        f"governorate deserts outlined as the rest of the drawn governorate: {deserts}")
+    log("  marked by OSM points only: " + "; ".join(
+        f"{n} ({areas[n]['ar']}, {areas[n]['total']:,.0f}) in "
+        + ", ".join(labels2.get(s, "no drawn polygon") if s else "no drawn polygon"
+                    for s in pts.values()) for n, pts in sorted(pointed.items())))
+    log(f"  neither outlined nor marked: {len(lost)}: " + "; ".join(
+        f"{n} ({areas[n]['ar']}, {areas[n]['total']:,.0f})" for n in lost))
     return {"source": OSM_SOURCE, "read": date.today().isoformat(), "home": HOME,
             "areas": placed}
 
 
 # --- binding ------------------------------------------------------------------
 
+def others_inside(sid: str, names: list[str], areas: dict[str, dict[str, Any]],
+                  shares: dict[str, dict[str, float]], spots: dict[str, set[str]],
+                  anywhere: dict[str, set[str]]) -> list[tuple[float, str, str]]:
+    """The people of other census areas a drawn polygon may hold, largest
+    first: (people, area, how they are counted)."""
+    out = []
+    for m, s in shares.items():
+        if m not in names and s.get(sid, 0) > 0:
+            out.append((areas[m]["total"] * s[sid], m, f"{s[sid]:.0%} of its ground"))
+    for m, where in spots.items():
+        if m not in names and sid in where:
+            out.append((areas[m]["total"], m, "whole: OpenStreetMap marks it with a point "
+                                              "here and does not outline it"))
+    for m, where in anywhere.items():
+        if m not in names and sid in where:
+            out.append((areas[m]["total"], m, "whole: OpenStreetMap neither outlines nor "
+                                              "marks it, so it may be in any polygon of its "
+                                              "governorate"))
+    return sorted(out, reverse=True)
+
+
 def bind(areas: dict[str, dict[str, Any]], placed: dict[str, dict[str, Any]],
-         admin2: list[dict[str, Any]]) -> tuple[dict[str, dict[str, Any]],
-                                                dict[str, str]]:
+         admin2: list[dict[str, Any]], parents: dict[str, str]
+         ) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
     """Drawn polygon id -> the census areas it carries; and every other drawn
     polygon id -> why it carries none.
 
     A census area's home is the polygon holding at least ``HOME`` of its
-    ground; a polygon carries its homed areas only when the other areas'
-    ground inside it would hold at most ``STRAY`` of their people.
+    ground; a polygon carries its homed areas only when the other areas it
+    may hold (``others_inside``) come to at most ``STRAY`` of their people.
     """
     known = {n: p for n, p in placed.items() if n in areas}
     missing = sorted(set(areas) - set(known))
-    check(not missing, f"kuwait_census: {OSM_FILE.name} has no entry for {missing}; "
+    check(not missing, f"kuwait_census: the measurement has no entry for {missing}; "
                        f"re-run --osm")
     shares = {n: p["shares"] for n, p in known.items() if p.get("shares")}
+    labels = {u["id"]: u["name"] for u in admin2}
+    # Areas with no outline: where their points lie, or else anywhere in the
+    # drawn governorate the census counts them in.
+    spots = {n: {s for s in (p.get("points") or {}).values() if s}
+             for n, p in known.items()
+             if not p.get("shares") and not p.get("osm") and not p.get("desert")}
+    by_gov: dict[str, set[str]] = defaultdict(set)
+    for unit in admin2:
+        by_gov[parents.get(unit["parent"], "")].add(unit["id"])
+    anywhere = {n: by_gov[GOVERNORATES[areas[n]["governorate"]]]
+                for n, where in spots.items() if not where}
+    spots = {n: where for n, where in spots.items() if where}
     homes: dict[str, list[str]] = defaultdict(list)
     for name, s in shares.items():
         sid, best = max(s.items(), key=lambda kv: kv[1])
         if best >= HOME:
             homes[sid].append(name)
-    labels = {u["id"]: u["name"] for u in admin2}
     bound: dict[str, dict[str, Any]] = {}
     why: dict[str, str] = {}
     for unit in admin2:
         sid = unit["id"]
         names = sorted(homes.get(sid, []))
-        inside = sorted(((areas[m]["total"] * s.get(sid, 0), m) for m, s in shares.items()
-                         if m not in names and s.get(sid, 0) > 0), reverse=True)
-        stray = sum(n for n, _m in inside)
+        inside = others_inside(sid, names, areas, shares, spots, anywhere)
+        stray = sum(n for n, _m, _how in inside)
         if names:
             own = sum(areas[n]["total"] for n in names)
             if own > 0 and stray <= STRAY * own:
                 bound[sid] = {"names": names, "stray": stray, "own": own,
-                              "shares": {n: shares[n][sid] for n in names}}
+                              "shares": {n: shares[n][sid] for n in names},
+                              "deserts": [n for n in names if known[n].get("desert")]}
                 continue
             why[sid] = (
                 f"The census areas whose ground lies mostly inside this polygon -- "
                 + ", ".join(f"{n.title()} ({areas[n]['total']:,.0f} people, "
                             f"{shares[n][sid]:.0%} of its ground)" for n in names)
-                + f" -- are not all it holds: the ground of other census areas inside it "
-                  f"would hold some {stray:,.0f} people at their areas' average density "
-                  f"({stray / own:.0%} of these), chiefly "
-                + "; ".join(f"{m.title()} {n:,.0f}" for n, m in inside[:3])
+                + f" -- are not all it may hold: other census areas inside it would add some "
+                  f"{stray:,.0f} people ({stray / own:.0%} of these), chiefly "
+                + "; ".join(f"{m.title()} {n:,.0f} ({how})" for n, m, how in inside[:3])
                 + ". The boundary file's line here is not the census's, so no count is this "
                   "polygon's.") if own > 0 else "The census counts no one here."
             continue
         if inside:
-            why[sid] = ("No census area's ground lies mostly inside this polygon: it holds "
-                        + "; ".join(f"{shares[m][sid]:.0%} of {m.title()}" for _n, m in
-                                    inside[:4])
-                        + " (measured on OpenStreetMap's outlines of the census's areas), so "
-                          "no count is this polygon's.")
+            why[sid] = ("No census area's ground lies mostly inside this polygon. It may hold "
+                        + "; ".join(f"{m.title()} ({how})" for _n, m, how in inside[:4])
+                        + " -- measured on OpenStreetMap's outlines and points of the census's "
+                          "areas -- so no count is this polygon's.")
         else:
-            why[sid] = ("No census area OpenStreetMap outlines lies inside this polygon, so "
-                        "no count is known to be this polygon's.")
+            why[sid] = ("No census area OpenStreetMap outlines or marks lies inside this "
+                        "polygon, so no count is known to be this polygon's.")
     for sid, b in bound.items():
         log(f"    {labels[sid]:32} {b['own']:>9,.0f} <- " + ", ".join(
             f"{n} {b['shares'][n]:.0%}" for n in b["names"]) + f" (stray {b['stray']:,.0f})")
+    for sid, text in why.items():
+        if text.startswith("The census areas whose ground"):
+            log(f"    refused {labels[sid]}: {text}")
     homeless = sorted(n for n, s in shares.items() if max(s.values()) < HOME)
     log(f"  drawn areas carrying census areas: {len(bound)} of {len(admin2)}")
     log(f"  census areas with no home: {len(homeless)}: " + "; ".join(
         f"{n} ({labels.get(max(shares[n], key=shares[n].get), '?')} "
         f"{max(shares[n].values()):.0%})" for n in homeless))
-    unplaced = sorted(n for n, p in known.items() if not p.get("shares"))
-    log(f"  census areas OpenStreetMap does not outline: {len(unplaced)}: "
-        + "; ".join(f"{n} ({areas[n]['total']:,.0f})" for n in unplaced))
+    log(f"  census areas OpenStreetMap only marks: " + "; ".join(
+        f"{n} ({areas[n]['total']:,.0f}) in {', '.join(labels[s] for s in sorted(w))}"
+        for n, w in sorted(spots.items())))
+    log(f"  census areas OpenStreetMap neither outlines nor marks: " + "; ".join(
+        f"{n} ({areas[n]['total']:,.0f}, {areas[n]['governorate']})"
+        for n in sorted(anywhere)))
     return bound, why
 
 
@@ -524,11 +644,13 @@ def area_fields(names: list[str], areas: dict[str, dict[str, Any]],
     other_men = sum(areas[n]["other_men"] for n in names)
     which = (names[0].title() if len(names) == 1 else
              ", ".join(n.title() for n in names[:-1]) + " and " + names[-1].title())
-    ground_note = (" The census area's ground (OpenStreetMap's outline) lies "
-                   + ", ".join(f"{b['shares'][n]:.0%}" for n in names)
+    ground_note = (" The census area's ground (OpenStreetMap's outline"
+                   + ("; for a governorate's desert, the drawn governorate less every outlined "
+                      "area" if b.get("deserts") else "")
+                   + ") lies " + ", ".join(f"{b['shares'][n]:.0%}" for n in names)
                    + " inside this polygon"
-                   + (f"; other areas' ground inside it would hold some "
-                      f"{b['stray']:,.0f} people at their own areas' average density"
+                   + (f"; other census areas inside it would add some {b['stray']:,.0f} "
+                      f"people, at their own areas' average density"
                       if b["stray"] >= 1 else "") + ".")
     population = measure(total, year=YEAR, source=SOURCE.format(52))
     population["note"] = (f"The 2021 register-based census's habitual residents of {which}: "
@@ -648,7 +770,7 @@ def build(t1: list[list[Any]], t2: list[list[Any]], t6: list[list[Any]], t52: li
                       "name": SOURCE.format("1, 2 and 6"), "url": PAGE, "year": YEAR,
                       "license": LICENCE}]))
     # Areas.
-    bound, why = bind(areas, placed, admin2)
+    bound, why = bind(areas, placed, admin2, parents)
     other_men = sum(a["other_men"] for a in areas.values())
     other_women = sum(a["other_women"] for a in areas.values())
     used: set[str] = set()
@@ -695,17 +817,19 @@ def main() -> int:
     ap.add_argument("--osm", action="store_true",
                     help="measure each census area's ground on the drawn polygons")
     args = ap.parse_args()
-    if args.osm:
-        t52 = next(iter(workbook(EXPORT.format(TABLES["areas"])).values()))
-        placed = measure_ground(t52)
+    sheets = {k: next(iter(workbook(EXPORT.format(v)).values())) for k, v in TABLES.items()}
+    if args.osm or not OSM_FILE.exists():
+        measured = measure_ground(table52(sheets["areas"], table1(sheets["nationality"])))
         OSM_FILE.parent.mkdir(parents=True, exist_ok=True)
-        OSM_FILE.write_text(json.dumps(placed, ensure_ascii=False, indent=1, sort_keys=True)
+        OSM_FILE.write_text(json.dumps(measured, ensure_ascii=False, indent=1, sort_keys=True)
                             + "\n", encoding="utf-8")
         log(f"  wrote {OSM_FILE.relative_to(PROCESSED.parent.parent)}")
-        return 0
-    check(OSM_FILE.exists(), f"kuwait_census: no {OSM_FILE}; run with --osm first")
+        if args.osm:
+            return 0
+    else:
+        log(f"  areas' ground as measured on {json.loads(OSM_FILE.read_text())['read']} "
+            f"({OSM_FILE.name})")
     placed = json.loads(OSM_FILE.read_text(encoding="utf-8"))["areas"]
-    sheets = {k: next(iter(workbook(EXPORT.format(v)).values())) for k, v in TABLES.items()}
     admin1, admin2 = units(ISO3, "admin1"), units(ISO3, "admin2")
     parents = {u["id"]: u["name"] for u in admin1}
     rows = build(sheets["nationality"], sheets["ages"], sheets["groups"], sheets["areas"],
