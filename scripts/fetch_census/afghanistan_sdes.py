@@ -70,9 +70,10 @@ not says why.
 
 This file writes the median age -- a figure, or the reason there is none --
 of every drawn district the office counts in a surveyed province, and of
-those provinces; ``afghanistan_estimates`` leaves the field to it there and
-says why everywhere else (``age_gap``). The figures are survey estimates, so
-the file is named as one.
+those provinces. ``afghanistan_estimates`` writes a stated gap on every unit
+(``age_gap``: whether the survey reached the province), and this file,
+registered after it, writes in front of that. The figures are survey
+estimates, so the file is named as one.
 
 Usage:
     python -m scripts.fetch_census.afghanistan_sdes
@@ -249,16 +250,20 @@ def province_name(report: Report) -> str:
 
 
 def age_gap(code: str) -> str:
-    """Why a unit the office counts in a province the survey never reached has
-    no median age; ``code`` is its 1396 province or district code."""
-    if code[:2] in READ:
-        raise ValueError(f"{code}: the survey's own file says why")
+    """Why a unit has no median age from the census or the estimates; ``code``
+    is its 1396 province or district code. For a unit of a surveyed province
+    this file writes the figure, or a reason that says more, in front of it."""
     whose = "this province" if len(code) == 2 else "the province the office counts it in"
     names = [province_name(report) for report in REPORTS]
-    return (f"{NO_CENSUS} Below the national level the office measured age only in its "
+    said = (f"{NO_CENSUS} Below the national level the office measured age only in its "
             f"Socio-Demographic and Economic Survey, which listed every household and "
             f"interviewed half of them in twelve provinces between 2011 and 2016 "
-            f"({listed(names)}); {whose} was not one of them.")
+            f"({listed(names)}); ")
+    surveyed = {report.province: report for report in REPORTS}.get(code[:2])
+    if surveyed is None:
+        return said + f"{whose} was not one of them."
+    return said + (f"{whose} was surveyed in {surveyed.when}, and the survey's median is "
+                   f"written wherever its report gives one for the polygon drawn here.")
 
 
 def fold(label: str) -> str:

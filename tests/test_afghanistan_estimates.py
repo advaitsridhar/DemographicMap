@@ -114,19 +114,21 @@ class Estimates(unittest.TestCase):
         self.assertEqual(paghman["sex_ratio"]["value"], round(100 * 990 / 900, 1))
         self.assertNotIn("AFG-EST-0103", records)
         self.assertEqual(records["AFG-EST-0101"]["population"]["value"], 12300)
-        self.assertEqual(records["AFG-EST-0101"]["median_age"], {"status": "not_available"})
+        self.assertIn("1979", records["AFG-EST-0101"]["median_age"]["note"])
         self.assertIn("district development plans", records["AFG-EST-0101"]["ethnicity"]["note"])
         self.assertIn("no province's", records["AFG-EST-01"]["ethnicity"]["note"])
 
-    def test_median_age_is_left_to_the_survey_file_where_its_report_is_read(self):
-        # Kabul (01), Kapisa (02) and Parwan (03) were all surveyed and their
-        # reports are read, so this file leaves the field bare there, Mahmudi
-        # Raqi (Kapisa's, drawn in Parwan) included.
+    def test_where_the_survey_reached_the_province_the_gap_says_so(self):
+        # Kabul (01), Kapisa (02) and Parwan (03) were all surveyed; the survey
+        # file writes their figures in front of this gap. Mahmudi Raqi is
+        # Kapisa's, drawn in Parwan, and says Kapisa's month.
         rows, settled = sheet()
         records = self.build(rows, settled)
-        for key in ("AFG-EST-01", "AFG-EST-0101", "AFG-EST-02", "AFG-EST-03",
-                    "AFG-EST-0201", "AFG-EST-0302"):
-            self.assertEqual(records[key]["median_age"], {"status": "not_available"}, key)
+        for key, month in (("AFG-EST-01", "December 2013"), ("AFG-EST-0101", "December 2013"),
+                           ("AFG-EST-02", "September 2014"), ("AFG-EST-0201", "September 2014"),
+                           ("AFG-EST-0302", "September 2014")):
+            note = records[key]["median_age"]["note"]
+            self.assertIn(f"was surveyed in {month}", note, key)
 
     def test_elsewhere_the_median_age_says_why_there_is_none(self):
         # Kabul's block recast as Helmand's (30), a province the survey never
@@ -156,8 +158,7 @@ class Estimates(unittest.TestCase):
         self.assertIn("twelve provinces between 2011 and 2016", note)
         self.assertIn("the province the office counts it in was not one of them", note)
         self.assertIn("this province was not one of them", age_gap("30"))
-        with self.assertRaises(ValueError):
-            age_gap("1001")
+        self.assertIn("this province was surveyed in September 2011", age_gap("10"))
 
     def test_a_province_drawn_as_the_office_counts_it_takes_its_total(self):
         rows, settled = sheet()

@@ -35,10 +35,11 @@ What this writes, and only this:
 Ages are published for the nation alone (the same release's "گروپ سنین"
 workbook has no province or district rows). The office measured age below
 the nation only in its Socio-Demographic and Economic Survey of twelve
-provinces (2011-2016): where that survey's report is read,
-``afghanistan_sdes`` writes the median age or the reason there is none, and
-this file leaves the field to it; everywhere else the median age is a stated
-gap that says which of the two is the case (``afghanistan_sdes.age_gap``).
+provinces (2011-2016). This file writes the median age as a stated gap on
+every unit, saying whether the survey reached its province
+(``afghanistan_sdes.age_gap``); where it did, ``afghanistan_sdes`` --
+registered after this file -- writes the survey's figure, or a reason of its
+own that says more, in front of it.
 
 Ethnicity is a stated gap on every unit (``ETHNICITY_GAP_*``): no census, and
 the survey reports nothing on it. The districts whose development plans give
@@ -971,12 +972,12 @@ def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, A
     return out
 
 
-def age_field(code: str) -> dict[str, Any] | None:
-    """A unit's median age as this file writes it: the gap and its reason, or
-    nothing where ``afghanistan_sdes`` writes the field (a province whose
-    survey report is read, and the districts the office counts in it)."""
-    from .afghanistan_sdes import READ, age_gap      # noqa: PLC0415
-    return None if code[:2] in READ else gap(NOT_AVAILABLE, age_gap(code))
+def age_field(code: str) -> dict[str, Any]:
+    """A unit's median age as this file writes it: always a gap and its reason.
+    Where the survey reached the province, ``afghanistan_sdes`` -- registered
+    after this file -- writes the figure, or a reason of its own that says more."""
+    from .afghanistan_sdes import age_gap      # noqa: PLC0415
+    return gap(NOT_AVAILABLE, age_gap(code))
 
 
 # Why a unit has no ethnicity, for every unit: a district whose development
