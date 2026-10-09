@@ -478,7 +478,7 @@ def osm_shape(element: dict[str, Any]) -> Any:
 
 def cmd_osm(cc: str, iso3: str | None, level: str, grep: str | None, rows: int,
             zoom: int, what: str = "both", endpoint: str = OVERPASS,
-            bbox: str | None = None) -> None:
+            bbox: str | None = None, admin_levels: str = "[5-9]|10") -> None:
     """OpenStreetMap's named places and administrative areas in one country.
 
     Each is printed with its Arabic and English names, the drawn unit of
@@ -495,10 +495,15 @@ def cmd_osm(cc: str, iso3: str | None, level: str, grep: str | None, rows: int,
     parts = []
     if what in ("places", "both"):
         parts.append(f'node["place"]["name"]{within};')
+    # "boundaries" asks for the administrative relations of the levels in
+    # ``admin_levels`` alone -- a country's districts without its thousands
+    # of named places, which a busy server can answer.
     if what in ("areas", "both"):
         parts += [f'way["place"]["name"]{within};', f'relation["place"]["name"]{within};',
-                  f'way["boundary"="administrative"]["admin_level"~"^([5-9]|10)$"]{within};',
-                  f'relation["boundary"="administrative"]["admin_level"~"^([5-9]|10)$"]'
+                  f'way["boundary"="administrative"]["admin_level"~"^({admin_levels})$"]'
+                  f'{within};']
+    if what in ("areas", "both", "boundaries"):
+        parts += [f'relation["boundary"="administrative"]["admin_level"~"^({admin_levels})$"]'
                   f'{within};']
     head = "" if bbox else f'area["ISO3166-1"="{cc}"]["admin_level"="2"]->.c;'
     query = f'[out:json][timeout:240];{head}({"".join(parts)});out geom;'
@@ -576,7 +581,10 @@ def main() -> int:
     ap.add_argument("--unit-level", default="admin2")
     ap.add_argument("--classes", default="P")
     ap.add_argument("--zoom", type=int, default=8)
-    ap.add_argument("--what", choices=["places", "areas", "both"], default="both")
+    ap.add_argument("--what", choices=["places", "areas", "both", "boundaries"],
+                    default="both")
+    ap.add_argument("--admin-levels", default="[5-9]|10",
+                    help="OSM admin_level alternatives, e.g. 6 or 6|7 (no spaces)")
     ap.add_argument("--endpoint", default=OVERPASS)
     ap.add_argument("--bbox", help="south,west,north,east instead of the country's area")
     args = ap.parse_args()
@@ -593,7 +601,7 @@ def main() -> int:
         return 0
     if args.cmd == "osm":
         cmd_osm(args.target[0], args.iso, args.unit_level, args.grep, args.rows, args.zoom,
-                args.what, args.endpoint, args.bbox)
+                args.what, args.endpoint, args.bbox, args.admin_levels)
         return 0
     if args.cmd == "ods":
         for base in args.target:
