@@ -1,10 +1,17 @@
-bangladesh_zila_ages: Census 2022 Community Series, Tables C-01 and C-02 by zila
-    10,307,919 bytes of National Report from the Bureau's own storage
-  520 pages
-    Table P03: the nation and 8 divisions; every block's age groups add up to its Total row, the sexes to the persons, the printed sex ratios to the counts, and the divisions to the nation group by group
-    Table P10: every block's single years add up to its Total row, which is Table P03's, and to each of P03's five-year groups; the divisions make the nation year by year
-    BARISHAL          Barishal           2,570,446 people,   75 hijra, median 26.9
-    BHOLA             Bhola              1,932,518 people,   74 hijra, median 24.3
-    PIROJPUR          Pirojpur           1,198,195 people,   41 hijra, median 27.9
-    PATUAKHAL         Patuakhali         1,727,254 people,   36 hijra, median 27.2
-bangladesh_zila_ages: no sheet 'C-01' in ['C01', 'C02', 'C03', 'C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'C10', 'C11', 'C12', 'C13', 'C14', 'C15', 'C16', 'C17', 'C18']
+marshall_census: 2021 Census basic tables and analytical report
+  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf :: HTTP Error 406: Not Acceptable
+  https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf: RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1236/rmi-2021-census-table-report.pdf; reading the Internet Archive's copy
+  Basic Tables: 25 atolls adding to 42,418; religion and ethnicity of the 41,575 in private households
+  retry 1/4 after 2s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
+  retry 2/4 after 4s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
+  retry 3/4 after 8s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
+  retry 4/4 after 16s :: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf :: HTTP Error 406: Not Acceptable
+  https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf: RuntimeError: GET failed after 4 retries: https://rmieppso.org/download/8/census-surveys/1234/marshall_islands_census_report_2021.pdf; reading the Internet Archive's copy
+  Analytical Report: medians for 23 atolls; languages for Kwajalein, Majuro
+  no polygon: Lib (156 people); Bikini and Rongelap counted nobody
+  admin1 ethnicity 20, admin1 language 2, admin1 median_age 22, admin1 population 22, admin1 religion 20, admin1 sex_ratio 20, admin2 ethnicity 20, admin2 language 2, admin2 median_age 22, admin2 population 22, admin2 religion 20, admin2 sex_ratio 20
+  wrote data/processed/marshall_census.json (179 kB)
+  wrote 44 records
