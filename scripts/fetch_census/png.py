@@ -19,7 +19,11 @@ Two publications of one office, the National Statistical Office
   Its Table 1.7 gives each province's **median age** (of the citizen
   population, 2011), which the provinces carry too; the Summary Indicators
   print the same 22 medians again, and the run refuses unless both printings
-  agree. No age is published below the province, so the districts say so.
+  agree. They also print each province's males' and females' medians, and a
+  median of everyone cannot lie outside both: the National Capital
+  District's 23.8 (males 23.0, females 22.4) and Milne Bay's 22.7 (19.7 and
+  20.5) do, so those two provinces say why they carry none. No age is
+  published below the province, so the districts say so.
 
 **What the census asks.** Appendix 1 of the 2011 report lists the
 questionnaire's subjects: "age; sex, marital status, religion, migration,
@@ -338,6 +342,15 @@ MEDIAN_NOTE = (
     "latest age the office publishes for a province: the 2024 census asked age, "
     "one of its six questions, but its Final Figures, the one release of that "
     "census so far, counts people by sex only.")
+MEDIAN_CONTRADICTED = (
+    "The National Statistical Office's 2011 National Report prints the median age of the "
+    "province's citizen population as {total} (Table 1.7, and its provincial Summary "
+    "Indicators), and the Summary Indicators print its males' as {male} and its females' as "
+    "{female}. A median of everyone lies between its two sexes' medians, so these cannot all "
+    "be right, and the report does not say which is the misprint; the province's figure is "
+    "not used. The report has no finer age table for a province to compute it from (Table "
+    "1.5 gives three broad age groups), and the 2024 census, which asked age, has published "
+    "only its Final Figures, district counts by sex with no ages.")
 DISTRICT_AGE_GAP = (
     "The 2011 census recorded every person's age, and the National Statistical "
     "Office publishes it for the country and the 22 provinces only: the 2011 "
@@ -681,7 +694,29 @@ def tenths(text: str, width: int) -> list[float] | None:
     return [float(f) for f in figures]
 
 
-def read_median_ages(pages: list[str]) -> dict[str, float]:
+def sex_medians(lines: list[str], start: int, stop: int, width: int
+                ) -> dict[str, list[float]]:
+    """The "Male" and "Female" rows printed under a median-age row, from ``start``."""
+    out: dict[str, list[float]] = {}
+    for i in range(start, min(stop, start + 4)):
+        for sex in ("Male", "Female"):
+            if sex not in out and lines[i].startswith(sex + " "):
+                figures = tenths(lines[i][len(sex):], width)
+                if figures is not None:
+                    out[sex] = figures
+    return out
+
+
+# A median of everyone lies between the medians of its two sexes; the Summary
+# Indicators print each to a tenth, so a total more than this beyond both is
+# not the same people's. Two provinces' are (MEDIAN_CONTRADICTED); a misread
+# row would put most of them out, and refuses the run.
+SEX_SLACK = 0.1
+MOST_CONTRADICTED = 3
+
+
+def read_median_ages(pages: list[str]
+                     ) -> tuple[dict[str, float], dict[str, tuple[float, float, float]]]:
     """Table 1.7: each province's median age, checked against a second printing.
 
     The table gives the median age of the citizen population for the country,
@@ -689,6 +724,12 @@ def read_median_ages(pages: list[str]) -> dict[str, float]:
     Indicators print the same medians again, block by block, on the row
     "Median age (years) Total"; every province must read the same from both,
     and the country's row must be the 21.4 of Table 1.6.
+
+    The Summary Indicators also print the males' and females' medians under
+    it, and a median of everyone cannot lie outside both. Returns the medians
+    that pass, and {province: (total, males, females)} for those that do not
+    -- the National Capital District's 23.8 against 23.0 and 22.4, and Milne
+    Bay's 22.7 against 19.7 and 20.5, which no one population can have.
     """
     page = next((p for p in pages if "Table 1.7" in unkern(p)
                  and "child-woman ratio" in unkern(p).replace("Child", "child")), None)
@@ -720,9 +761,10 @@ def read_median_ages(pages: list[str]) -> dict[str, float]:
     lines = [line for p in pages for line in rows_of(p)]
     starts = sorted({i for _, columns in BLOCKS for i, ln in enumerate(lines)
                      if ln.endswith(" ".join(a for a, _ in columns))})
+    sexes: dict[str, tuple[float, float]] = {}
     for block, columns in BLOCKS:
         wanted = " ".join(abbr for abbr, _ in columns)
-        readings: list[list[float]] = []
+        readings: list[tuple[list[float], dict[str, list[float]]]] = []
         for header in (i for i in starts if lines[i].endswith(wanted)):
             stop = next((s for s in starts if s > header), len(lines))
             for row in range(header + 1, stop):
@@ -735,20 +777,33 @@ def read_median_ages(pages: list[str]) -> dict[str, float]:
                 if figures is None and row + 1 < stop and lines[row + 1].startswith("Total"):
                     figures = tenths(lines[row + 1][len("Total"):], len(columns))
                 if figures is not None:
-                    readings.append(figures)
+                    readings.append((figures, sex_medians(lines, row + 1, stop, len(columns))))
         if not readings:
             raise SystemExit(f"png: the {block} Summary Indicators have no median "
                              f"age row to check Table 1.7 against")
-        for figures in readings:
-            for (abbr, province), median in zip(columns, figures):
+        for figures, by_sex in readings:
+            for i, ((abbr, province), median) in enumerate(zip(columns, figures)):
                 if median != table[province]:
                     raise SystemExit(
                         f"png: {province} ({abbr}) has a median age of {median} in "
                         f"the Summary Indicators and {table[province]} in Table 1.7")
+                if set(by_sex) == {"Male", "Female"}:
+                    sexes[province] = (by_sex["Male"][i], by_sex["Female"][i])
+    missing = sorted(set(PROVINCES) - set(sexes))
+    if missing:
+        raise SystemExit(f"png: the Summary Indicators give no male and female median ages "
+                         f"for {missing}")
+    contradicted = {p: (table[p], m, f) for p, (m, f) in sexes.items()
+                    if not min(m, f) - SEX_SLACK <= table[p] <= max(m, f) + SEX_SLACK}
+    if len(contradicted) > MOST_CONTRADICTED:
+        raise SystemExit(f"png: {len(contradicted)} provinces' median ages lie outside their "
+                         f"males' and females' -- a misread row, not a misprint: "
+                         f"{contradicted}")
     log(f"  2011 Table 1.7: median ages for all 22 provinces, from "
         f"{min(table.values())} to {max(table.values())} (PNG {national}); the "
-        f"Summary Indicators print the same 22")
-    return table
+        f"Summary Indicators print the same 22; outside their males' and females' "
+        f"medians, so not used: {contradicted}")
+    return {p: m for p, m in table.items() if p not in contradicted}, contradicted
 
 
 # ---------------------------------------------------------------------------
@@ -789,12 +844,18 @@ def place_districts(province: str, districts: list[Unit]) -> dict[str, Unit]:
 
 
 def province_record(name: str, unit: Unit, religion: tuple[str, float] | None,
-                    median: float | None = None) -> dict[str, Any]:
+                    median: float | None = None,
+                    contradicted: tuple[float, float, float] | None = None
+                    ) -> dict[str, Any]:
     fields: dict[str, Any] = {}
     if median is not None:
         fields["median_age"] = measure(median, year=CENSUS_2011,
                                        source=NATIONAL_REPORT, unit="years")
         fields["median_age_note"] = MEDIAN_NOTE
+    elif contradicted is not None:
+        total, male, female = contradicted
+        fields["median_age"] = gap(NOT_AVAILABLE, MEDIAN_CONTRADICTED.format(
+            total=total, male=male, female=female))
     if religion is not None:
         group, pct = religion
         rows = [{"group": group, "pct": pct}]
@@ -1157,10 +1218,10 @@ def build() -> list[dict[str, Any]]:
     provinces = read_province_table(booklet)
     snapshots = read_snapshots(booklet)
     religion = read_main_religion(report)
-    medians = read_median_ages(report)
+    medians, contradicted = read_median_ages(report)
 
     records = [province_record(name, provinces[name], religion.get(name),
-                               medians.get(name))
+                               medians.get(name), contradicted.get(name))
                for name in PROVINCES]
     report_coverage(religion)
 

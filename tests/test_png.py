@@ -323,33 +323,63 @@ Citizen population Western Gulf Central NCD MBP Northern
 Population Total  200,200  157,525  269,135  361,222  275,932  185,737
 Median age ( years ) Total 18.6 18.1 19.6 23.8 22.7 19.5
 Male 18.4 17.9 19.4 23.0 19.7 19.6
+Female 18.8 18.3 19.9 22.4 20.5 19.5
+Dependency ratio Total 78.0 80.5 75.0 50.0 74.4 75.8
 Citizen Population Highlands Region
 SHP Enga WHP Chimbu EHP Hela Jiwaka
 Median age ( years ) Total 22.4 23.6 24.3 24.0 22.7 26.6 23.5
 Male 21.7 23.0 23.7 23.8 22.2 26.4 23.3
+Female 23.1 24.2 25.0 24.3 23.2 26.8 23.7
 """
 MEDIANS_15 = """Citizen population Momase Region
 Morobe Madang ESP WSP
 Median age ( years ) Total 21.0 19.0 19.2 19.1
 Male 20.8 18.9 18.7 18.7
+Female 21.2 19.1 19.8 19.5
 Citizen Population New Guinea Islands Region
 Manus NIP ENBP WNBP AROB
 Median age ( years )
 Total 1 9.0 18.5 18.9 19.9 19.9
 Male 18.5 18.6 18.4 20.0 19.5
+Female 19.5 18.5 19.4 19.8 20.5
 """
 
 
 class TheProvincialMedianAge(unittest.TestCase):
     def setUp(self):
-        self.read, self.log = quiet(png.read_median_ages, [MEDIANS_14, TABLE_17, MEDIANS_15])
+        (self.read, self.contradicted), self.log = quiet(
+            png.read_median_ages, [MEDIANS_14, TABLE_17, MEDIANS_15])
 
     def test_every_province_is_read_from_table_1_7(self):
-        self.assertEqual(set(self.read), set(png.PROVINCES))
+        self.assertEqual(set(self.read) | set(self.contradicted), set(png.PROVINCES))
         self.assertEqual(self.read["Hela"], 26.6)
         self.assertEqual(self.read["Gulf"], 18.1)
-        self.assertEqual(self.read["Milne Bay"], 22.7)
+        self.assertEqual(self.read["Northern"], 19.5)        # its sexes 19.6 and 19.5
         self.assertEqual(self.read["Autonomous Region of Bougainville"], 19.9)
+
+    def test_a_median_outside_both_sexes_medians_is_not_used(self):
+        self.assertEqual(self.contradicted,
+                         {"National Capital District": (23.8, 23.0, 22.4),
+                          "Milne Bay": (22.7, 19.7, 20.5)})
+        unit = png.Unit("Milne Bay", 400_000, 200_000, 200_000)
+        rec = png.province_record("Milne Bay", unit, ("United Church", 40.0), None,
+                                  self.contradicted["Milne Bay"])
+        self.assertEqual(rec["median_age"]["status"], "not_available")
+        for figure in ("22.7", "19.7", "20.5", "Table 1.7"):
+            self.assertIn(figure, rec["median_age"]["note"])
+        self.assertNotIn("median_age_note", rec)
+
+    def test_many_provinces_outside_their_sexes_is_a_misread_and_refused(self):
+        shifted = MEDIANS_15.replace("Male 20.8 18.9 18.7 18.7", "Male 25.8 25.9 25.7 25.7")
+        shifted = shifted.replace("Female 21.2 19.1 19.8 19.5", "Female 25.2 25.1 25.8 25.5")
+        with self.assertRaises(SystemExit):
+            png.read_median_ages([MEDIANS_14, TABLE_17, shifted])
+
+    def test_a_block_without_its_sexes_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            png.read_median_ages([MEDIANS_14, TABLE_17,
+                                  MEDIANS_15.replace("Female 21.2 19.1 19.8 19.5\n", "")])
+        self.assertIn("Morobe", str(caught.exception))
 
     def test_the_sector_rows_are_not_provinces(self):
         self.assertNotIn("Urban", self.read)
