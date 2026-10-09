@@ -12,6 +12,10 @@ GASTAT's census, CC BY-IGO), whose methodology line reads "Census".
 hundred females, and the median age, interpolated within the five-year group
 that holds the middle person.
 
+**The governorates** (the map's second level) are written as gaps, each
+saying why: no table of the census by governorate could be read (OCHA's
+tables are of the kingdom and its regions only).
+
 **Binding.** OCHA names a region by its own romanisation ("Makkah
 Al-Mukarramah", "Hail"); the map's labels are the boundary file's
 ("Makkah Region", "Hayel Region"). A region is bound when the two names
@@ -77,6 +81,19 @@ NATIONALITY_WHY = (
     "table file, its content being drawn by script, the Saudi open-data portal "
     "(open.data.gov.sa) did not answer, and OCHA's tables of the census carry region, sex and "
     "age only.")
+# And why the governorates the map draws hold no census figure at all
+# (probes 53337de and 63ebb11: cod-ps-sau's sheets are adm0 and adm1).
+OUT_OF_REACH = ("on 9 October 2026 the census portal's host (portal.saudicensus.sa) did not "
+                "resolve from the runner, GASTAT's census page on stats.gov.sa "
+                "(statistics?index=119025) links no table file, its content being drawn by "
+                "script, the Saudi open-data portal (open.data.gov.sa) did not answer, and "
+                "OCHA's tables of the census (cod-ps-sau) are of the kingdom and its regions "
+                "only")
+GOVERNORATE_WHY = f"No table of the 2022 census by governorate could be read: {OUT_OF_REACH}."
+GOVERNORATE_NATIONALITY_WHY = (
+    "Saudi Arabia's 2022 census asks citizenship (Saudi or not, and which country), not "
+    "ethnicity; citizenship may stand on this field, but no table of it by governorate could "
+    f"be read: {OUT_OF_REACH}.")
 AGE = re.compile(r"^([TFM])_(\d{1,3})_(\d{1,3})$", re.I)
 OPEN = re.compile(r"^([TFM])_(\d{1,3})_?plus$", re.I)
 SLACK = 0.001
@@ -196,6 +213,21 @@ def build(rows: list[dict[str, str]], admin1: list[dict[str, Any]]) -> list[dict
     return out
 
 
+def governorates(admin2: list[dict[str, Any]],
+                 admin1: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Every drawn governorate, with why its census fields are empty. Religion
+    and language are left to the country's policy (the census asks neither)."""
+    parents = {u["id"]: u["name"] for u in admin1}
+    return [record(
+        f"SAU-CEN2022-{unit['name']}-{unit['id'][-6:]}", unit["name"], level="admin2",
+        parent=ISO3, country=ISO3, parent_name=parents.get(unit.get("parent")),
+        match_by="shape_id", shape_id=unit["id"],
+        ethnicity=gap(NOT_AVAILABLE, GOVERNORATE_NATIONALITY_WHY),
+        **{f: gap(NOT_AVAILABLE, GOVERNORATE_WHY)
+           for f in ("population", "median_age", "sex_ratio")})
+        for unit in admin2]
+
+
 def main() -> int:
     argparse.ArgumentParser(description=__doc__).parse_args()
     package = http_json(f"{HDX_API}/package_show?id={DATASET}", cache=False)["result"]
@@ -203,7 +235,11 @@ def main() -> int:
     log(f"  {DATASET}: licence {package.get('license_id')}, methodology {method[:80]!r}")
     check(package.get("license_id") in ("cc-by-igo", "cc-by"),
           f"saudi_census: licence {package.get('license_id')}")
-    rows = build(table(package), units(ISO3, "admin1"))
+    admin1 = units(ISO3, "admin1")
+    rows = build(table(package), admin1)
+    shapes = governorates(units(ISO3, "admin2"), admin1)
+    log(f"  {len(shapes)} governorates written as gaps (no census table by governorate)")
+    rows += shapes
     write_json(PROCESSED / OUT, rows)
     log(f"  wrote {OUT} ({len(rows)})")
     return 0

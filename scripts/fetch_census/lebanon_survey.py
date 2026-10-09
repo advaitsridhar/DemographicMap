@@ -86,6 +86,10 @@ LANGUAGE_WHY = (f"Lebanon has taken no census since 1932, and {SURVEY} asks no l
 AGE_SEX_WHY = ("Lebanon has taken no census since 1932; the only official figures of residents "
                f"by sex and age for a caza are survey estimates ({SURVEY}), which this map takes "
                "for compositions only, never for a count, a ratio or a median.")
+POPULATION_WHY = ("Lebanon has taken no census since 1932, so no count of a governorate's or a "
+                  "caza's residents exists; the only official figures of them are survey "
+                  f"estimates ({SURVEY}), which this map takes for compositions only, never for "
+                  "a count.")
 
 # The survey's cazas as HL.6A names them -> the boundary file's labels.
 CAZAS = {
@@ -211,6 +215,7 @@ def fields(name: str, leb: float, non: float, parts: list[str] | None = None
         "ethnicity_note": note(name, leb, non, parts),
         "religion": gap(NOT_AVAILABLE, RELIGION_WHY),
         "language": gap(NOT_AVAILABLE, LANGUAGE_WHY),
+        "population": gap(NOT_AVAILABLE, POPULATION_WHY),
         "median_age": gap(NOT_AVAILABLE, AGE_SEX_WHY),
         "sex_ratio": gap(NOT_AVAILABLE, AGE_SEX_WHY),
         "sources": [{"field": "ethnicity", "name": SOURCE, "url": URL, "year": YEAR,

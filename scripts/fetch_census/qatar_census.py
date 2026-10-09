@@ -19,6 +19,14 @@ give municipalities by sex, age and household type, and the nationality
 tables in its catalogue are vital statistics (births, deaths, marriages).
 Each municipality says so on those three fields.
 
+**The zones** (the map's second level) are written as gaps, each saying why.
+The portal's only table of people by zone gives every zone the same count in
+each year from 2015 to 2019, and those counts make no census's total (2010,
+2015 or 2020), so they can be neither dated nor checked; it also holds no
+zone's people by sex, age, nationality, religion or language. The zone table
+is read on every run and its total measured: should it ever make a census's
+count, the run stops, for the zones to be bound instead.
+
 **Binding.** The portal spells three municipalities its own way ("AL Khor",
 "Al Dayyan", "Umm Salal"); those are declared below against the boundary
 file's labels, the rest agree once folded. Every drawn municipality must be
@@ -78,6 +86,21 @@ NATIONALITY_WHY = (f"{CATALOGUE}; it publishes no municipality's people by natio
                    "(Qatari or not), whose tables there are of births, deaths and marriages.")
 RELIGION_WHY = f"{CATALOGUE}; it publishes no table of religion by municipality."
 LANGUAGE_WHY = f"{CATALOGUE}; it publishes no table of language by municipality."
+# The portal's only table of people by zone (probe ecba12f lists it; its 552
+# rows were read on 9 October 2026): 92 zones a year, 2014-2019.
+ZONES = "population-area-and-population-density-per-square-kilometers-by-zone"
+ZONES_TITLE = "Population, Area and Population Density Per Square Kilometers By Zone"
+# Each census's count of the whole country (Planning and Statistics Authority):
+# a zone table that made one of them could be dated and bound.
+CENSUSES = {2010: 1_699_435, 2015: 2_404_776, 2020: NATIONAL}
+ZONE_CATALOGUE = ("Qatar's open-data portal (data.gov.qa), where the Planning and Statistics "
+                  "Authority publishes its tables, counts zones' people alone, beside each "
+                  "zone's area, and municipalities' people by sex, age and household type")
+ZONE_AGE_WHY = f"{ZONE_CATALOGUE}: no zone's people are published by sex or age."
+ZONE_NATIONALITY_WHY = (f"{ZONE_CATALOGUE}: no zone's people are published by nationality "
+                        "(Qatari or not).")
+ZONE_RELIGION_WHY = f"{ZONE_CATALOGUE}: no zone's religion is published."
+ZONE_LANGUAGE_WHY = f"{ZONE_CATALOGUE}: no zone's language is published."
 CLOSED = re.compile(r"^(\d+)\s*-\s*(\d+)$")
 SINGLE = re.compile(r"^(\d+)$")
 OPEN = re.compile(r"^(\d+)\s*(?:\+|and\s+over|or\s+more)$", re.I)
@@ -183,9 +206,72 @@ def build(male_rows: list[dict[str, Any]], female_rows: list[dict[str, Any]],
     return out
 
 
+def zone_order(zone: str) -> tuple[int, str]:
+    return (int(zone), "") if zone.isdigit() else (10 ** 6, zone)
+
+
+def zone_table(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """What the zone table holds for its latest year: the years that repeat
+    that year's counts, their total and the zones given no count. A total that
+    makes a census's count stops the run: the zones could then be bound."""
+    by_year: dict[str, dict[str, Any]] = defaultdict(dict)
+    for r in rows:
+        by_year[str(r.get("year"))][str(r.get("number_of_zone"))] = r.get("population")
+    check(by_year, f"qatar_census: {ZONES} is empty")
+    latest = max(by_year)
+    same = sorted(y for y, counts in by_year.items() if counts == by_year[latest])
+    total = round(sum(v for v in by_year[latest].values() if v is not None))
+    missing = sorted((z for z, v in by_year[latest].items() if v is None), key=zone_order)
+    for year, count in CENSUSES.items():
+        check(total != count, f"qatar_census: the zone table's {latest} counts make "
+                              f"{total:,}, the {year} census's count: bind the zones")
+    return {"years": same, "total": total, "missing": missing, "zones": len(by_year[latest])}
+
+
+def zone_why(table: dict[str, Any]) -> str:
+    years, missing = table["years"], table["missing"]
+    when = (f"the same count for every year from {years[0]} to {years[-1]}" if len(years) > 1
+            else f"its count for {years[0]}")
+    censuses = ", ".join(f"{n:,} in the {y} census" for y, n in sorted(CENSUSES.items()))
+    gaps = ""
+    if missing:
+        listed = (", ".join(missing[:-1]) + " and " + missing[-1]) if len(missing) > 1 \
+            else missing[0]
+        gaps = f", and none for zone{'s' if len(missing) > 1 else ''} {listed}"
+    return (f"The Planning and Statistics Authority's only table of people by zone, on "
+            f"Qatar's open-data portal (data.gov.qa, '{ZONES_TITLE}'), gives each zone "
+            f"{when}: {table['total']:,} people in all, which is no census's count ("
+            f"{censuses}){gaps}. A table that makes no census's count can be neither dated "
+            f"nor checked, so no zone's figure is written.")
+
+
+def zones(rows: list[dict[str, Any]], admin2: list[dict[str, Any]],
+          admin1: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Every drawn zone, with why each of its fields is empty."""
+    table = zone_table(rows)
+    why = zone_why(table)
+    parents = {u["id"]: u["name"] for u in admin1}
+    out = [record(
+        f"QAT-ZONE-{unit['name']}-{unit['id'][-6:]}", unit["name"], level="admin2",
+        parent=ISO3, country=ISO3, parent_name=parents.get(unit.get("parent")),
+        match_by="shape_id", shape_id=unit["id"],
+        population=gap(NOT_AVAILABLE, why),
+        median_age=gap(NOT_AVAILABLE, ZONE_AGE_WHY),
+        sex_ratio=gap(NOT_AVAILABLE, ZONE_AGE_WHY),
+        religion=gap(NOT_AVAILABLE, ZONE_RELIGION_WHY),
+        ethnicity=gap(NOT_AVAILABLE, ZONE_NATIONALITY_WHY),
+        language=gap(NOT_AVAILABLE, ZONE_LANGUAGE_WHY)) for unit in admin2]
+    log(f"  zone table: {table['zones']} zones, {table['total']:,} people in "
+        f"{'-'.join(table['years'][::max(1, len(table['years']) - 1)])}, no count for "
+        f"{len(table['missing'])}; {len(out)} drawn zones written as gaps")
+    return out
+
+
 def main() -> int:
     argparse.ArgumentParser(description=__doc__).parse_args()
-    rows = build(ods_records(BASE, MALES), ods_records(BASE, FEMALES), units(ISO3, "admin1"))
+    admin1 = units(ISO3, "admin1")
+    rows = build(ods_records(BASE, MALES), ods_records(BASE, FEMALES), admin1)
+    rows += zones(ods_records(BASE, ZONES), units(ISO3, "admin2"), admin1)
     write_json(PROCESSED / OUT, rows)
     log(f"  wrote {OUT} ({len(rows)})")
     return 0

@@ -106,9 +106,10 @@ class TheSurvey(unittest.TestCase):
         for r in self.rows.values():
             self.assertIn("confession", r["religion"]["note"], r["name"])
             self.assertIn("language", r["language"]["note"], r["name"])
-            for field in ("median_age", "sex_ratio"):
+            for field in ("population", "median_age", "sex_ratio"):
                 self.assertEqual(r[field]["status"], "not_available", (r["name"], field))
                 self.assertIn("compositions only", r[field]["note"], (r["name"], field))
+            self.assertIn("no count", r["population"]["note"], r["name"])
 
     def test_keserwan_jbeil_is_the_sum_of_its_two_cazas(self):
         kj = self.rows["g" + str(sorted({g for gs in ls.GOVERNORATES.values() for g in gs})

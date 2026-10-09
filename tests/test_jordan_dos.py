@@ -214,6 +214,19 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(self.rows["g4"]["median_age"]["year"], 2015)
         self.assertTrue(20 <= self.rows["g4"]["median_age"]["value"] < 25)
 
+    def test_every_second_level_shape_says_why_it_holds_no_figure(self):
+        drawn = [{"id": "s1", "name": "Wastiyyeh", "parent": "g0"},
+                 {"id": "s2", "name": "Sahab", "parent": "g1"}]
+        out = jd.second_level(drawn, ADMIN1)
+        self.assertEqual([r["shape_id"] for r in out], ["s1", "s2"])
+        self.assertEqual({r["level"] for r in out}, {"admin2"})
+        self.assertEqual(out[0]["parent_name"], ADMIN1[0]["name"])
+        for field in ("population", "median_age", "sex_ratio", "ethnicity"):
+            self.assertEqual(out[0][field]["status"], "not_available", field)
+            self.assertIn("not the places their labels name", out[0][field]["note"], field)
+        self.assertIn("publishes no religion table", out[0]["religion"]["note"])
+        self.assertEqual(out[0]["language"]["status"], "not_collected")
+
     def test_an_unknown_drawn_governorate_stops_the_run(self):
         year, est = jd.read_estimates(estimates_sheets())
         drawn = ADMIN1[:-1] + [{"id": "gx", "name": "Nowhere", "parent": "JOR"}]

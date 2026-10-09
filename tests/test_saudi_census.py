@@ -83,6 +83,20 @@ class TheReader(unittest.TestCase):
         with self.assertRaises(SystemExit):
             sc.build(rows(), ADMIN1 + [{"id": "r4", "name": "Tabuk Region", "parent": "SAU"}])
 
+    def test_every_drawn_governorate_says_why_it_holds_no_census_figure(self):
+        drawn = [{"id": "g1", "name": "Ad Diriyah", "parent": "r1"},
+                 {"id": "g2", "name": "Abha", "parent": "rx"}]
+        out = sc.governorates(drawn, ADMIN1)
+        self.assertEqual([r["shape_id"] for r in out], ["g1", "g2"])
+        self.assertEqual({r["level"] for r in out}, {"admin2"})
+        self.assertEqual(out[0]["parent_name"], "Riyadh Region")
+        for field in ("population", "median_age", "sex_ratio"):
+            self.assertEqual(out[0][field]["status"], "not_available", field)
+            self.assertIn("by governorate could be read", out[0][field]["note"], field)
+            self.assertIn("cod-ps-sau", out[0][field]["note"], field)
+        self.assertIn("citizenship", out[0]["ethnicity"]["note"])
+        self.assertIn("by governorate", out[0]["ethnicity"]["note"])
+
 
 if __name__ == "__main__":
     unittest.main()

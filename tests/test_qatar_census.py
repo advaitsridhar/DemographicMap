@@ -74,5 +74,38 @@ class TheReader(unittest.TestCase):
             qc.band("unknown")
 
 
+ADMIN2 = [{"id": "z1", "name": "51", "parent": "m1"},
+          {"id": "z2", "name": "70-71", "parent": "m2"}]
+
+
+def zone_rows(counts, years=("2015", "2016")):
+    return [{"year": y, "number_of_zone": z, "zone": f"Zone {z}", "population": n,
+             "area_in_km": 1.0} for y in years for z, n in counts.items()]
+
+
+class TheZones(unittest.TestCase):
+    def test_every_drawn_zone_says_why_it_has_no_figure(self):
+        rows = (zone_rows({"1": None, "2": 500.0, "51": 1000.0})
+                + zone_rows({"2": 400.0, "51": 900.0}, years=("2014",)))
+        out = qc.zones(rows, ADMIN2, ADMIN1)
+        self.assertEqual([r["shape_id"] for r in out], ["z1", "z2"])
+        self.assertEqual([r["level"] for r in out], ["admin2", "admin2"])
+        self.assertEqual(out[1]["parent_name"], "Umm Slal")
+        note = out[0]["population"]["note"]
+        self.assertEqual(out[0]["population"]["status"], "not_available")
+        self.assertIn("the same count for every year from 2015 to 2016", note)
+        self.assertIn("1,500 people in all", note)
+        self.assertIn("2,404,776 in the 2015 census", note)
+        self.assertIn("and none for zone 1.", note)
+        for field in ("median_age", "sex_ratio", "religion", "ethnicity", "language"):
+            self.assertEqual(out[0][field]["status"], "not_available", field)
+            self.assertIn("data.gov.qa", out[0][field]["note"], field)
+        self.assertIn("nationality", out[0]["ethnicity"]["note"])
+
+    def test_a_zone_table_that_makes_a_census_count_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            qc.zones(zone_rows({"51": 2_000_000.0, "52": 404_776.0}), ADMIN2, ADMIN1)
+
+
 if __name__ == "__main__":
     unittest.main()

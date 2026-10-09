@@ -27,7 +27,10 @@ Jordanians, the large foreign nationalities by name, the rest by region.
 second-level shapes are not the places their labels name: the shape
 labelled "Wastiyyeh" holds Irbid city, the one labelled "Jerash" holds
 Ajloun city as well as Jerash, "Ayy" holds Safi, "Faqqu" holds al-Qasr.
-No figure is bound to them.
+OpenStreetMap's liwa outlines say the same (probe 2c8bbc7): Irbid Qasabah
+liwa lies 94% in "Wastiyyeh" and Al-Wastiyyah liwa 98% in "Irbid"; "Sahab"
+holds both Marka and Sahab liwas; Salt Qasabah liwa is split among four
+shapes. No figure is bound to them; each is written as a gap that says so.
 
 **Checks** (any failure stops the run and nothing is written): in the
 estimates, each governorate's men and women make its total and the twelve
@@ -83,6 +86,17 @@ NO_RELIGION = (
 NO_LANGUAGE = (
     "Jordan's 2015 census does not ask language: its questionnaire (" + QUESTIONNAIRE + ") "
     "has no language or mother-tongue question, and no census table carries one.")
+# Why the map's second level holds no DoS figure: measured against GeoNames'
+# city points and OpenStreetMap's liwa outlines (probe 2c8bbc7, admin levels
+# 5 and 6, on the boundary file's own tiles).
+SECOND_LEVEL_WHY = (
+    "The Department of Statistics counts people by liwa and qada (Table 2.4 of its population "
+    "estimates; Table 3.1 of the 2015 census), but this map's second-level shapes are not the "
+    "places their labels name, so no liwa's or qada's figure can be put on one. Measured on 9 "
+    "October 2026: the shape labelled Wastiyyeh holds Irbid city and 94% of OpenStreetMap's "
+    "outline of Irbid Qasabah liwa, while 98% of Al-Wastiyyah liwa lies in the shape labelled "
+    "Irbid; the shape labelled Sahab holds most of Marka liwa (87%) as well as Sahab liwa "
+    "(94%); and Salt Qasabah liwa is split among four shapes (44%, 23%, 19% and 13%).")
 # The DoS's governorate names, as its tables spell them, -> the map's labels.
 GOVERNORATES = {
     "Amman": "Amman", "Capital": "Amman", "Balqa": "Balqa", "Al-Balqa": "Balqa",
@@ -443,6 +457,21 @@ def build(year: int, estimates: dict[str, dict[str, int]], totals: dict[str, lis
     return rows
 
 
+def second_level(admin2: list[dict[str, Any]],
+                 admin1: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Every drawn second-level shape, with why each of its fields is empty."""
+    parents = {u["id"]: u["name"] for u in admin1}
+    return [record(
+        f"JOR-DOS-{unit['name']}-{unit['id'][-6:]}", unit["name"], level="admin2",
+        parent=ISO3, country=ISO3, parent_name=parents.get(unit.get("parent")),
+        match_by="shape_id", shape_id=unit["id"],
+        religion=gap(NOT_AVAILABLE, NO_RELIGION),
+        language=collection_gap(ISO3, "language") or gap(NOT_COLLECTED, NO_LANGUAGE),
+        **{f: gap(NOT_AVAILABLE, SECOND_LEVEL_WHY)
+           for f in ("population", "median_age", "sex_ratio", "ethnicity")})
+        for unit in admin2]
+
+
 def pdf_text(url: str) -> str:
     blob = fetch_blob(url)
     log(f"  {url}: {len(blob):,} bytes")
@@ -455,10 +484,14 @@ def main() -> int:
     totals = read_totals(pdf_text(TOTALS))
     ages = read_ages(pdf_text(AGES))
     nats = read_nationalities(pdf_text(NATIONALITIES))
-    rows = build(year, estimates, totals, ages, nats, units(ISO3, "admin1"))
+    admin1 = units(ISO3, "admin1")
+    rows = build(year, estimates, totals, ages, nats, admin1)
     log(f"  estimates end of {year}: {sum(e['total'] for e in estimates.values()):,}; "
         f"census 2015: {totals['kingdom'][5] + totals['kingdom'][8]:,} inside Jordan, "
         f"{totals['kingdom'][2]:,} Jordanians abroad")
+    shapes = second_level(units(ISO3, "admin2"), admin1)
+    log(f"  {len(shapes)} second-level shapes written as gaps (not the DoS's liwas)")
+    rows += shapes
     write_json(PROCESSED / OUT, rows)
     log(f"  wrote {OUT} ({len(rows)})")
     return 0
