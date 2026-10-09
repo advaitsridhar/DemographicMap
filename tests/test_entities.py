@@ -5472,6 +5472,47 @@ class AnsweredHints(unittest.TestCase):
         self.assertIn("adapter_hint", entity)
 
 
+class BuildFlags(unittest.TestCase):
+    """An adapter's instructions to the build are not written to the map."""
+
+    def test_the_flags_come_off_and_the_reason_stays(self):
+        why = "The 2021 estimates draw Balkh across the census's lines."
+        entity = {"name": "Balkh",
+                  "population": {"status": "not_available", "note": why,
+                                 "displaces_before": 2026, "no_child_sum": True},
+                  "religion": {"status": "not_available", "note": "x",
+                               "displaces_undated": True},
+                  "median_age": {"value": 17.5, "year": 2016},
+                  "sources": [{"field": "population", "name": "NSIA"}]}
+        self.assertEqual(be.drop_build_flags(entity), 3)
+        self.assertEqual(entity["population"], {"status": "not_available", "note": why})
+        self.assertEqual(entity["religion"], {"status": "not_available", "note": "x"})
+        self.assertEqual(entity["median_age"], {"value": 17.5, "year": 2016})
+        self.assertEqual(be.drop_build_flags(entity), 0)
+
+    def test_the_sum_guard_still_reads_the_flag_before_it_goes(self):
+        # fill_parent_populations runs before the flags are taken off, and
+        # the write is the last thing main() does with the records.
+        import inspect
+        main = inspect.getsource(be.main)
+        self.assertLess(main.index("fill_parent_populations("),
+                        main.index("drop_build_flags("))
+        self.assertLess(main.index("drop_build_flags("), main.index('write_json(out / "admin0.json"'))
+
+    def test_a_coded_reason_is_said_in_plain_words(self):
+        entity = {"population": {"status": "not_available",
+                                 "note": "No P1082 statement on Wikidata (asked by id)."},
+                  "religion": {"status": "not_available", "note": "Not asked."}}
+        self.assertEqual(be.plain_notes(entity), 1)
+        self.assertEqual(entity["population"]["note"],
+                         "Wikidata gives no population for this unit.")
+        self.assertEqual(entity["religion"]["note"], "Not asked.")
+        main = __import__("inspect").getsource(be.main)
+        # After every pass that reads or replaces the marker, before the write.
+        self.assertLess(main.index("say_why_empty("), main.index("plain_notes("))
+        self.assertLess(main.index("plain_notes("), main.index('write_json(out / "admin0.json"'))
+
+
 class SiteFreshness(unittest.TestCase):
     """Whether the map still reflects the adapter output beside it.
 

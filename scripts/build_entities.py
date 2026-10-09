@@ -4909,6 +4909,52 @@ def drop_answered_hint(entity: dict[str, Any]) -> bool:
     return True
 
 
+# Instructions an adapter gives the build on a field's value, read while the
+# rows are merged and summed, and nothing a reader of the map is told:
+# ``displaces_before`` and ``displaces_undated`` (see merge_adapter) and
+# ``no_child_sum`` (see fill_parent_populations).
+BUILD_FLAGS = ("displaces_before", "displaces_undated", "no_child_sum")
+
+
+def drop_build_flags(entity: dict[str, Any]) -> int:
+    """Take the build's own flags off a record's values before it is written.
+
+    Afghanistan's seven provinces drawn across the census's lines went out
+    with ``"no_child_sum": true`` on their population, and 430 stated gaps
+    with the year before which they displace an encyclopaedia's figure:
+    instructions to the build, written into the published files beside the
+    figures. Returns how many were taken.
+    """
+    taken = 0
+    for value in entity.values():
+        if isinstance(value, dict):
+            for flag in BUILD_FLAGS:
+                if value.pop(flag, None) is not None:
+                    taken += 1
+    return taken
+
+
+# A reason written in a source's own vocabulary, said in plain words. The
+# Wikidata sweep marks a unit whose item has no population statement with the
+# property's number (scripts/fetch_wikidata.py), and 982 population tiles read
+# "No P1082 statement on Wikidata (asked by id)."
+PLAIN_NOTES = {
+    "No P1082 statement on Wikidata.": "Wikidata gives no population for this unit.",
+    "No P1082 statement on Wikidata (asked by id).":
+        "Wikidata gives no population for this unit.",
+}
+
+
+def plain_notes(entity: dict[str, Any]) -> int:
+    """Say a source's coded reasons in plain words; returns how many."""
+    said = 0
+    for value in entity.values():
+        if isinstance(value, dict) and value.get("note") in PLAIN_NOTES:
+            value["note"] = PLAIN_NOTES[value["note"]]
+            said += 1
+    return said
+
+
 # A Wikidata item joined to a district by name is sometimes the town of that
 # name, not the district. Before its population was fetched the mistake was
 # invisible; afterwards Trinidad's Siparia region -- 86,949 people, drawn as
@@ -5221,13 +5267,14 @@ def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
     the reason says that instead of quoting one.
 
     A place that is still more than the unit, if less than SPANS times, is
-    named only when no other unit of the country is drawn under its name. The
-    margin is for a town whose GeoNames figure is older or wider than the
-    unit's count; it is not for Dushanbe, whose point GeoNames puts inside
-    Rudaki District's polygon while the map draws the city as a first-level
-    unit of its own, of 948,251 people beside Rudaki's 603,337. The unit
-    itself, the units above it and the units drawn inside it do not count:
-    Pristina is drawn inside the District of Prishtina.
+    named only when no other unit of the country is drawn under its name, or
+    when it bears the unit's own name (see town_stands). The margin is for a
+    town whose GeoNames figure is older or wider than the unit's count; it is
+    not for Dushanbe, whose point GeoNames puts inside Rudaki District's
+    polygon while the map draws the city as a first-level unit of its own, of
+    948,251 people beside Rudaki's 603,337. The unit itself, the units above
+    it and the units drawn inside it do not count: Pristina is drawn inside
+    the District of Prishtina.
 
     Returns (named, restated).
     """
@@ -5242,9 +5289,8 @@ def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
             spans = held.pop("_spans")
             town, people = spans["town"], spans["people"]
             unit = published(entity.get("population"))
-            apart = apart_from(town, entity)
-            if unit is not None and people <= GEONAMES_SPANS * unit \
-                    and (people <= unit or not apart):
+            if unit is not None and (people <= unit
+                                     or town_stands(town, people, unit, entity, apart_from)):
                 entity["largest_settlement"] = town
                 if people <= unit:
                     entity["largest_settlement_population"] = measure(
@@ -5288,6 +5334,40 @@ def drawn_apart(units: list[dict[str, Any]]):
     return apart
 
 
+def town_stands(town: str, people: float, unit: float, entity: dict[str, Any],
+                apart_from) -> bool:
+    """Whether a GeoNames place more than its unit is still named, without its figure.
+
+    GeoNames placed the place by its point, inside this unit's polygon; what
+    is weighed here is whether its figure says it is a different place.
+
+    Within SPANS times the unit it is named unless another unit of the country
+    is drawn under its name -- and even then where the place bears this unit's
+    own name. The test of a name drawn apart reads names the way the joins
+    do, so "Kyiv Oblast" is drawn under "Kyiv", and the boundary file names
+    Baltimore County "Baltimore" and the regency of Bekasi "Bekasi"; on its
+    own it took Kyiv off the city of Kyiv, Baltimore off Baltimore city and
+    Bekasi off Kota Bekasi, each with a figure a little above a census that
+    is older or narrower than GeoNames'. Japan's two Oyamas and Portugal's
+    two Calhetas are a city and a town far apart, and the point says which
+    one this is. Dushanbe is not Rudaki District's name, and stays unnamed
+    there.
+
+    Beyond SPANS times the unit the place is a city the unit is only part of,
+    or a place across a boundary -- Aden in Kritar - Sirah, Ibadan in Ibadan
+    North East, Bratislava in Bratislava I -- unless it is the unit's very
+    name and no other unit is drawn under it: Drammen (106,013) in the
+    municipality of Drammen (68,933), Periam (6,563) in the commune of Periam
+    (4,196), where GeoNames' figure is older than the census or reaches past
+    the town.
+    """
+    mine = entity.get("name")
+    if people <= GEONAMES_SPANS * unit:
+        return (not apart_from(town, entity)
+                or related(name_forms(town), name_forms(mine)))
+    return bool(norm(town)) and norm(town) == norm(mine) and not apart_from(town, entity)
+
+
 GEONAMES_FIGURE = "GeoNames (CC BY 4.0)"
 
 
@@ -5309,8 +5389,9 @@ def settle_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
 
     A GeoNames place more than SPANS times the unit, or more than the unit
     and drawn as a unit of its own elsewhere, is not named, with
-    fetch_geonames' reason; one that is only more than the unit keeps its name
-    and loses its figure. Natural Earth's figures are of a metropolitan area
+    fetch_geonames' reason, unless town_stands finds it is the unit's own
+    town; one that is only more than the unit keeps its name and loses its
+    figure. Natural Earth's figures are of a metropolitan area
     the place stands for -- Tokyo's 35,676,000 beside the prefecture's
     14,047,594 -- so its name, found by the unit's own name rather than a
     point, stands and only the larger figure goes.
@@ -5329,7 +5410,7 @@ def settle_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
             if people is None or unit is None or people <= unit:
                 continue
             if (figure.get("source") == GEONAMES_FIGURE and isinstance(town, str)
-                    and (people > GEONAMES_SPANS * unit or apart_from(town, entity))):
+                    and not town_stands(town, people, unit, entity, apart_from)):
                 why = ("and the map draws a unit of that name apart from this one"
                        if people <= GEONAMES_SPANS * unit else
                        "a city it is part of, or across a boundary")
@@ -5356,6 +5437,39 @@ def settle_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
 # point is 0.11 degrees from the province's polygon, inside Río Negro's.
 NATURAL_EARTH_APART = 0.2
 
+# Natural Earth places filed under a first-level unit they are not in, where
+# the point cannot say so: each lands inside the unit it belongs to, but
+# within NATURAL_EARTH_APART of the unit it is filed under, as Neuquén and
+# Mobaye (on the Ubangi, its point across the river in Congo) land just
+# outside their own. (country, unit, place) -> the unit the place is in.
+NATURAL_EARTH_MISFILED: dict[tuple[str, str, str], str] = {
+    ("ALB", "Durrës", "Tirana"): "Tiranë",
+    ("BDI", "Muramvya", "Gitega"): "Gitega",
+    ("BEN", "Oueme", "Cotonou"): "Littoral",
+    ("MDA", "Bender", "Tiraspol"): "Transnistria",
+    ("SEN", "Matam", "Kaédi"): "Gorgol, Mauritania",
+    ("TCD", "Mandoul", "Sarh"): "Moyen-Chari",
+    ("TWN", "Chiayi", "Puzi"): "Chiayi County",
+    ("TWN", "Hsinchu", "Zhubei"): "Hsinchu County",
+}
+
+# The words that make a unit's name the metropolitan government of a place,
+# and the French elided article: "Municipalidad Metropolitana de Lima" is
+# Lima's own unit, and "District Autonome D'Abidjan" Abidjan's. Read only to
+# ask whether a polygon a place's point stands in is drawn for the place; a
+# join still takes "Area Metropolitana de Lisboa" for a different place from
+# Lisbon (see QUALIFIERS).
+METROPOLITAN = frozenset({"metropolitan", "metropolitana", "metropolitaine"})
+ELIDED = re.compile(r"\b([DdLl])['’]")
+
+
+def drawn_for(place: str, unit: str) -> bool:
+    """Whether a unit's name is a place's own, as a unit drawn for it."""
+    if related(name_forms(place), name_forms(unit)):
+        return True
+    words = tuple(w for w in tokens(ELIDED.sub(r"\1 ", unit)) if w not in METROPOLITAN)
+    return related(name_forms(place), (words,))
+
 
 def natural_earth_elsewhere(city: dict[str, Any], shape: dict[str, Any],
                             others) -> str | None:
@@ -5372,7 +5486,10 @@ def natural_earth_elsewhere(city: dict[str, Any], shape: dict[str, Any],
     Minsk City, Selangor and Kuala Lumpur, Hadjer-Lamis and N'Djamena) or it
     lies more than NATURAL_EARTH_APART from this unit's. A point in no
     polygon -- Fortaleza, São Luís, Suva, a few hundred metres off a
-    simplified coast -- is left to the name.
+    simplified coast -- is left to the name. So is one just across a border
+    from the unit it is filed under, unless NATURAL_EARTH_MISFILED says
+    which unit it is in: Tirana, filed under Durrës, is 0.11 degrees inside
+    Tiranë, as close as Neuquén is to its own province.
 
     ``others`` answers which first-level shapes hold a point (an STRtree query
     over every first-level shape, with the shapes in the same order).
@@ -5380,6 +5497,10 @@ def natural_earth_elsewhere(city: dict[str, Any], shape: dict[str, Any],
     import shapely
     from shapely.geometry import Point
 
+    misfiled = NATURAL_EARTH_MISFILED.get((shape.get("group"), shape.get("name"),
+                                           city.get("name")))
+    if misfiled:
+        return f"a place of {misfiled}"
     geom = shape.get("_geom")
     point = city.get("coordinates")
     if geom is None or not point:
@@ -5392,7 +5513,7 @@ def natural_earth_elsewhere(city: dict[str, Any], shape: dict[str, Any],
         other = rows[int(idx)]
         if other is shape or not shapely.contains(other["_geom"], point):
             continue
-        if related(name_forms(city["name"]), name_forms(other["name"])):
+        if drawn_for(city["name"], other["name"]):
             return f"drawn as a unit of its own, {other['name']}"
         if shapely.distance(geom, point) > NATURAL_EARTH_APART:
             return f"inside {other['name']}"
@@ -7606,6 +7727,16 @@ def main() -> int:
     # Last check before writing: every pass that could have filled a field
     # has run, so a lake that is still water here stays water on the map.
     check_water_shapes(admin1_by_country, admin2_by_country)
+    # Nothing reads the adapters' instructions to the build after this.
+    flags = sum(drop_build_flags(entity) for entity in admin0) + sum(
+        drop_build_flags(entity) for table in (admin1_by_country, admin2_by_country)
+        for rows in table.values() for entity in rows)
+    if flags:
+        log(f"  {flags} build flags taken off the values before writing")
+    reworded = sum(plain_notes(entity) for table in (admin1_by_country, admin2_by_country)
+                   for rows in table.values() for entity in rows)
+    if reworded:
+        log(f"  {reworded} coded reasons said in plain words")
 
     # -- write ---------------------------------------------------------------
     out = args.out

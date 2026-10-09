@@ -134,6 +134,40 @@ class NaturalEarthPlaces(unittest.TestCase):
         # Fortaleza, off a simplified coast.
         self.assertIsNone(self.why("Harbour", 0.5, 1.05))
 
+    def test_a_metropolitan_or_autonomous_district_is_drawn_for_its_city(self):
+        from shapely.geometry import box
+        from shapely.strtree import STRtree
+        lagunes = {"group": "CIV", "name": "Lagunes", "_geom": box(0, 0, 1, 1)}
+        for name, city in (("District Autonome D'Abidjan", "Abidjan"),
+                           ("District Autonome D’Abidjan", "Abidjan"),
+                           ("Municipalidad Metropolitana de Lima", "Lima")):
+            district = {"name": name, "_geom": box(1, 0, 2, 1)}
+            rows = [lagunes, district]
+            held = (STRtree([r["_geom"] for r in rows]), rows)
+            # 0.05 degrees across the line: too close for the distance alone.
+            self.assertEqual(build_entities.natural_earth_elsewhere(
+                {"name": city, "coordinates": [1.05, 0.5]}, lagunes, held),
+                f"drawn as a unit of its own, {name}")
+        # The join's own reading is unchanged: a metropolitan area is a
+        # different place from the city inside it.
+        self.assertFalse(build_entities.related(
+            build_entities.name_forms("Lisboa"),
+            build_entities.name_forms("Area Metropolitana de Lisboa")))
+        self.assertFalse(build_entities.drawn_for("Abidjan", "District Autonome De Yamoussoukro"))
+        self.assertFalse(build_entities.drawn_for("Lima", "Callao"))
+
+    def test_a_place_filed_under_its_neighbour_is_refused_by_name(self):
+        # Tirana, filed under Durrës, 0.11 degrees inside Tiranë; and only
+        # that place: Durrës's own town is not refused.
+        durres = {"group": "ALB", "name": "Durrës", "_geom": self.daegu["_geom"]}
+        why = build_entities.natural_earth_elsewhere(
+            {"name": "Tirana", "coordinates": [1.1, 0.5]}, durres, self.held)
+        self.assertEqual(why, "a place of Tiranë")
+        self.assertIsNone(build_entities.natural_earth_elsewhere(
+            {"name": "Durrës", "coordinates": [0.5, 0.5]}, durres, self.held))
+        for (iso3, unit, place), where in build_entities.NATURAL_EARTH_MISFILED.items():
+            self.assertNotEqual(unit, where.split(",")[0], (iso3, unit, place))
+
 
 if __name__ == "__main__":
     unittest.main()

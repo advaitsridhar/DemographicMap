@@ -457,6 +457,48 @@ class SettlementFigures(unittest.TestCase):
         self.assertIn("the map draws a unit of that name apart from this one",
                       e["largest_settlement"]["note"])
 
+    def test_a_city_beside_a_namesake_county_keeps_its_own_name(self):
+        # Kyiv's 2001 count beside GeoNames' 2,952,301; "Kyiv Oblast" is
+        # drawn under the same name, and so is Baltimore County.
+        kyiv = self.unit("Kyiv", 2_566_953, "Kyiv", 2_952_301, parent="K1")
+        oblast = {"id": "KO", "name": "Kyiv Oblast", "parent": "UKR"}
+        city = {"id": "K1", "name": "Kyiv", "parent": "UKR"}
+        self.assertEqual(be.settle_settlement_figures({"UKR": [city, oblast]},
+                                                      {"UKR": [kyiv]}), (0, 1))
+        self.assertEqual(kyiv["largest_settlement"], "Kyiv")
+        self.assertNotIn("largest_settlement_population", kyiv)
+        self.assertEqual(len(kyiv["sources"]), 2)
+
+        town = self.unit("Kota Bekasi", 2_590_257, "Bekasi", 2_648_272)
+        regency = {"id": "B", "name": "Bekasi", "parent": "P",
+                   "largest_settlement": "Cikarang"}
+        self.assertEqual(be.settle_settlement_figures({}, {"IDN": [regency, town]}), (0, 1))
+        self.assertEqual(town["largest_settlement"], "Bekasi")
+        self.assertEqual(regency["largest_settlement"], "Cikarang")
+
+    def test_a_namesake_elsewhere_still_refuses_a_town_of_another_name(self):
+        # The test is of this unit's own name, not of any name: Dushanbe in
+        # Rudaki District is refused as before (see the test above).
+        e = self.unit("San Pedro", 34_801, "San Vicente", 38_247)
+        other = {"id": "SV", "name": "San Vicente", "parent": "Q"}
+        self.assertEqual(be.settle_settlement_figures({}, {"ARG": [e, other]}), (1, 0))
+        self.assertIn("apart from this one", e["largest_settlement"]["note"])
+
+    def test_beyond_the_span_the_unit_s_very_name_stands_without_its_figure(self):
+        drammen = self.unit("Drammen", 68_933, "Drammen", 106_013)
+        self.assertEqual(be.settle_settlement_figures({}, {"NOR": [drammen]}), (0, 1))
+        self.assertEqual(drammen["largest_settlement"], "Drammen")
+        self.assertNotIn("largest_settlement_population", drammen)
+        # Only the very name: a district named for the city it is part of is
+        # still refused it.
+        old_town = self.unit("Bratislava I", 47_896, "Bratislava", 423_737)
+        self.assertEqual(be.settle_settlement_figures({}, {"SVK": [old_town]}), (1, 0))
+        self.assertIn("a city it is part of", old_town["largest_settlement"]["note"])
+        # ...and not where another unit is drawn under that name.
+        twin = self.unit("Drammen", 68_933, "Drammen", 106_013)
+        other = {"id": "D2", "name": "Drammen", "parent": "Q"}
+        self.assertEqual(be.settle_settlement_figures({}, {"NOR": [twin, other]}), (1, 0))
+
     def test_a_metropolitan_figure_goes_and_the_name_stays(self):
         # Natural Earth's Tokyo is the metropolitan area's.
         e = self.unit("Tokyo", 14_047_594, "Tokyo", 35_676_000,
@@ -538,6 +580,29 @@ class GeoNamesSpans(unittest.TestCase):
                          "unit (603,337), and the map draws a unit of that name apart from "
                          "this one.")
         self.assertNotIn("largest_settlement_population", rudaki)
+
+    def test_a_place_bearing_the_unit_s_own_name_is_named_beside_its_namesake(self):
+        # Oyama in Tochigi; the town of Oyama in Shizuoka is drawn too.
+        city = {"id": "O1", "name": "Oyama", "parent": "TOC",
+                "population": {"value": 166_666, "year": 2020},
+                "largest_settlement": self.held("Oyama", 167_647)}
+        town = {"id": "O2", "name": "Oyama", "parent": "SHZ"}
+        self.assertEqual(be.settle_geonames_spans({}, {"JPN": [city, town]}), (1, 0))
+        self.assertEqual(city["largest_settlement"], "Oyama")
+        self.assertNotIn("largest_settlement_population", city)
+
+    def test_beyond_the_span_only_the_unit_s_very_name_is_named(self):
+        commune = {"id": "C", "name": "PERIAM", "parent": "TM",
+                   "population": {"value": 4_196, "year": 2021},
+                   "largest_settlement": self.held("Periam", 6_563)}
+        lea = {"id": "L", "name": "GALWAY CITY CENTRAL LEA-6", "parent": "G",
+               "population": {"value": 29_705, "year": 2022},
+               "largest_settlement": self.held("Galway", 85_910)}
+        self.assertEqual(be.settle_geonames_spans({}, {"ROU": [commune], "IRL": [lea]}),
+                         (1, 1))
+        self.assertEqual(commune["largest_settlement"], "Periam")
+        self.assertNotIn("largest_settlement_population", commune)
+        self.assertIn("a city it is part of", lea["largest_settlement"]["note"])
 
     def test_a_place_drawn_inside_the_unit_is_still_named(self):
         district = {"id": "P", "name": "District of Prishtina", "parent": "XKX",

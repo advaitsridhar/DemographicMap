@@ -106,8 +106,9 @@ Subnational demographics are sparse here on purpose. The adapters in
 `scripts/fetch_census/` talk to `api.census.gov`, `nomisweb.co.uk`,
 `www12.statcan.gc.ca`, `apisidra.ibge.gov.br`, `ec.europa.eu`, `data.api.abs.gov.au`
 and `query.wikidata.org`; none of those hosts was reachable from the sandbox this
-build ran in, so those fields ship as `not_available` with the exact command that
-fills them shown in the app's "Filling this gap" panel. Run
+build ran in, so those fields ship as `not_available`, and each such unit's record
+keeps the exact command that fills them as `adapter_hint` (the app itself only says
+nothing has been gathered yet). Run
 `WITH_CENSUS=1 scripts/build_all.sh` on a machine with open egress and the map
 fills in.
 

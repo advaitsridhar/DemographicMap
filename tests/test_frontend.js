@@ -308,6 +308,48 @@ function factTilesCarryTheirStatedReason() {
             "a gap with no stated reason gets no info button");
 }
 
+/* An empty unit's panel is written for a reader of the map. It printed the
+ * pipeline's command -- "python scripts/fetch_wikidata.py --countries ISR" --
+ * on 1,489 units, and pointed every stated gap at docs/SOURCES.md by its path. */
+function anEmptyUnitNamesNoCommandOrFile() {
+  const rendered = [];
+  const container = {
+    set innerHTML(html) { rendered.push(html); },
+    get innerHTML() { return rendered[rendered.length - 1] || ""; },
+    scrollTop: 0,
+    querySelectorAll: () => [],
+  };
+  const context = vm.createContext({ window: {}, console });
+  vm.runInContext(source("data.js"), context);
+  vm.runInContext(source("palette.js"), context);
+  context.window.DataStore = { country: () => null, get: () => null, children: () => [] };
+  vm.runInContext(source("dashboard.js"), context);
+  const visible = (html) => html.replace(/<[^>]*>/g, " ");
+
+  context.window.Dashboard.render({
+    id: "ISR-TEST", level: "admin2", name: "Nowhere", country: "ISR",
+    population: { status: "not_available" },
+    adapter_hint: "python scripts/fetch_wikidata.py --countries ISR",
+  }, container);
+  let html = container.innerHTML;
+  assert.ok(html.includes("No figures for this unit have been gathered yet."),
+            "the unit says nothing has been gathered");
+  assert.ok(!/python|scripts\/|fetch_wikidata/.test(html), "no command is printed");
+
+  rendered.length = 0;
+  const why = "CAPMAS collected religion in the 2017 census and has not published it.";
+  context.window.Dashboard.render({
+    id: "EGY-TEST", level: "admin2", name: "Somewhere", country: "EGY",
+    population: { status: "not_available" },
+    gap_reason: why,
+  }, container);
+  html = container.innerHTML;
+  assert.ok(html.includes(why), "the stated reason is shown");
+  assert.ok(!/SOURCES\.md|docs\//.test(visible(html)), "no file is named in the text");
+  assert.ok(/<a href="https:\/\/github\.com\/[^"]+SOURCES\.md"/.test(html),
+            "the source notes are a link");
+}
+
 /* A leader is only a leader if nothing missing could beat it.
  *
  * Not every composition partitions its population. The Factbook gives the DRC
@@ -898,6 +940,7 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
   uncertainSharesKeepTheirQualifier();
   mapStateSurvivesThemeChangesAndUsesRepresentativePoints();
   factTilesCarryTheirStatedReason();
+  anEmptyUnitNamesNoCommandOrFile();
   aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt();
   groundInNoUnitReadsAsLandRatherThanSea();
   thePartialListAppliesWhenTheStyleLoadsAfterIt();
