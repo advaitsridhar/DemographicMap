@@ -1,11 +1,20 @@
-  e-Stat 0004019308: 1965 values
-  e-Stat 0004019309: 86460 values
-  e-Stat 0003445244: 33405 values
-  e-Stat 0003445259: 11790 values
-  national median 48.5, prefectures 44.1-56.4
-  ages: 1965 areas; every area's groups add to its total; Japan 61,349,581 men, 64,796,518 women
-  nationality: 1965 areas; every row's parts add up and its total is the age table's
-  the municipalities of every prefecture add up to it
-  grouped medians against the Bureau's over 1916 areas: mean gap 0.07 years, largest 0.70
-  1731 municipal polygons written (1730 bound, 1 sliver), 47 prefectures; people in no drawn polygon, by prefecture: Tokyo 2,351, Niigata 353, Kagawa Prefecture 3,103, Nagasaki Prefecture 2,288, Oita 1,725, Kagoshima Prefecture 5,520, Okinawa Prefecture 590
-  wrote data/processed/japan_municipal.json (7206 kB)
+taiwan: language from the 2020 census, ethnicity and religion modelled, by the owner's decision of 19 September 2026
+  2,277,382 bytes
+  37 pages
+  language: 22 counties read; national row rebuilt from them within 0.03 points (Mandarin 66.4, Hokkien 31.7, Hakka 1.5)
+  7,600,655 bytes
+  481 pages
+  hakka: 22 counties read; 4,669,192 of 23,561,236 (19.82%) nationally
+  identity (2021, single answer): Hakka 15.7, Hoklo Taiwanese 71.3, Mainland Chinese (waishengren) 5.0, Taiwanese indigenous peoples 3.0, Taiwanese only 3.8, Other 0.1, Don't know or refused 1.0
+  buildings (sheet '2025(區域別)', end of 2025): 12,397 temples, 2,855 churches
+  prior (don't know left out): no religion 27.6, Buddhism 28.6, Taoism 24.5, Christianity 7.1, Other religions 12.2
+  register: 641,332 indigenous of 23,213,251 (2.76%) at the end of 9/2026
+  religion: the five counties the tilt moves furthest from the national prior:
+      Taipei              17.9 points  Buddhism 20.8, Taoism 17.8, Christianity 25.0, Other religions 8.9  (280 temples, 564 churches)  (held at the bound: Christianity)
+      Taitung County      17.9 points  Buddhism 20.8, Taoism 17.8, Christianity 25.0, Other religions 8.9  (222 temples, 282 churches)  (held at the bound: Christianity)
+      Hualien County      17.9 points  Buddhism 20.8, Taoism 17.8, Christianity 25.0, Other religions 8.9  (194 temples, 260 churches)  (held at the bound: Christianity)
+      Taoyuan              8.0 points  Buddhism 25.1, Taoism 21.5, Christianity 15.2, Other religions 10.7  (312 temples, 174 churches)
+      Hsinchu County       7.1 points  Buddhism 25.5, Taoism 21.8, Christianity 14.2, Other religions 10.9  (198 temples, 102 churches)
+  religion: 3 counties hit a bound: Taipei, Taitung County, Hualien County
+  wrote data/processed/taiwan_county.json (161 kB)
+  wrote 22 records to taiwan_county.json
