@@ -31,16 +31,20 @@ the six areas make the country's 7,057,841.
 city alone (volume 1, tables 1.4-1.15; volume 2, tables 2.2-2.7), for the
 etraps as they stood in December 2022, and the boundary file draws another
 division. The two were set side by side velayat by velayat (``ETRAP_GAP``),
-with the census's own towns placed on the drawn polygons by GeoNames' points
-(whose populations are the census's): in no velayat does any drawn polygon
-hold the ground of the etrap the census counts under its name -- even in
-Ahal, where the seven names match, the towns of Babadaýhan and Gaňňaly lie in
-the polygon drawn as Tejen and Berkarar in the one drawn as Kaka, and
-Ashgabat in the one drawn as Ak Bugday. Every drawn district carries its
-velayat's reason, and the reason displaces an older encyclopaedic figure
-(``displaces_before``): Wikidata's 144,119 on Ak Bugday is the etrap without
-Ashgabat, its 123,190 on Balkanabat the city without Gumdag and Jebel, and
-its 44,716 on Hojambaz the count of 1995.
+with the census's own towns and villages placed on the drawn polygons by
+GeoNames' points (whose populations are the census's): in no velayat is a
+drawn polygon shown to hold the ground of the etrap the census counts under
+its name. Most are shown not to -- even in Ahal, where the seven names
+match, the towns of Babadaýhan and Gaňňaly lie in the polygon drawn as Tejen
+and Berkarar in the one drawn as Kaka, and Ashgabat in the one drawn as Ak
+Bugday. Eight polygons hold their etrap's placed towns and no other etrap's
+(``UNSHOWN``), but a town's point places no border, and each lies in a
+velayat whose division around it is not the census's; each says so on its
+own record. Every drawn district carries its velayat's reason, and the
+reason displaces an older encyclopaedic figure (``displaces_before``):
+Wikidata's 144,119 on Ak Bugday is the etrap without Ashgabat, its 123,190
+on Balkanabat the city without Gumdag and Jebel, and its 44,716 on Hojambaz
+the count of 1995.
 
 Usage:
     python -m scripts.fetch_census.turkmenistan_census
@@ -122,8 +126,9 @@ ETRAP_GAP = {
         "Bereket, Magtymguly, Gyzylarbat, Etrek and Türkmenbaşy -- where the map draws "
         "Avaza, Balkanabat, Bereket, Etrek, Hazar, Magtymguly and Turkmenbasy: the city of "
         "Gyzylarbat lies in the polygon drawn as Magtymguly, Esenguly in the one drawn as "
-        "Etrek, Türkmenbaşy city in the one drawn as Avaza, and Hazar, which the census "
-        "counts within Balkanabat city, is drawn as a polygon of its own."),
+        "Etrek, Türkmenbaşy city in the one drawn as Avaza, and Oglanly, a town the census "
+        "counts within Balkanabat city, in the one drawn as Turkmenbasy; Hazar, which the "
+        "census also counts within Balkanabat city, is drawn as a polygon of its own."),
     "Dasoguz": (
         "The census counts Daşoguz city and seven etraps -- Boldumsaz, Köneürgenç, Akdepe, "
         "Saparmyrat Türkmenbaşy, Görogly, Şabat and Ruhubelent -- where the map draws "
@@ -136,29 +141,110 @@ ETRAP_GAP = {
         "polygons: Dostluk, Döwletli and Farap, which the census counts within Köýtendag, "
         "Hojambaz and Çärjew etraps, are drawn as polygons of their own, one polygon has no "
         "name and Saýat is drawn twice; the city of Hojambaz lies in the polygon drawn as "
-        "Halac and Kerki in the one drawn as Dostluk."),
+        "Halac, Kerki in the one drawn as Dostluk, Seydi, a city of Danew etrap, in the one "
+        "drawn as Ferap, and Türkmenabat, a city counted apart from every etrap, in the one "
+        "drawn as Carjew."),
     "Mary": (
         "The census counts Mary and Baýramaly cities and nine etraps -- Baýramaly, "
         "Wekilbazar, Ýolöten, Garagum, Mary, Murgap, Sakarçäge, Tagtabazar and Türkmengala "
         "-- where the map draws 24 polygons: eleven with no name, Bayramaly and Mary twice "
         "each, and Oguzhan, Serhetabat and Tedzhen Sovkhoz, which the census does not count "
         "as etraps (Oguzhan is a town of Murgap etrap, Serhetabat a city of Tagtabazar); "
-        "the city of Türkmengala lies in the polygon drawn as Yoloten."),
+        "the city of Türkmengala lies in the polygon drawn as Yoloten, and Ýagtyýol, "
+        "Garagum etrap's one town, in the larger of the two drawn as Bayramaly, with "
+        "Baýramaly city, which the census counts apart from every etrap."),
+}
+# The drawn polygons that hold every town GeoNames places of the etrap whose
+# name they bear, and no town the census counts in another etrap. A
+# town's point places no border, and each of these lies in a velayat whose
+# division around it is not the census's (ETRAP_GAP), so none is shown to be
+# the census's etrap; each says what was found on its own record.
+#
+# Measured on the boundary file at full resolution: the towns by point in
+# polygon, the neighbours by shared border. Gubadag, S.A. Nyýazow and Oguzhan
+# are drawn etraps the census no longer counts, so their ground lies in some
+# census etrap, and that may be a neighbour's.
+NOT_COUNTED = "which the census does not count as an etrap"
+UNPLACED_DASOGUZ = ("the towns of Şabat and Ruhubelent, etraps the census counts and the map "
+                    "does not draw, are not placed")
+UNSHOWN = {
+    "Ahal": {
+        "Baherden": (
+            "The polygon drawn as Baherden holds Bäherden etrap's towns, Bäherden and Arçman, "
+            "and its village of Akdepe, but also Durdyhan and Tutlygala, villages GeoNames "
+            "places in Balkan velayat that are not among the settlements the census counts "
+            "in Bäherden etrap (volume 1, tables 1.5 and 1.10)."),
+    },
+    "Balkan": {
+        "Bereket": (
+            "The polygon drawn as Bereket holds Bereket, the etrap's one town, and no town "
+            "the census counts in another etrap; that places no border, and each of the "
+            "four polygons it borders -- Magtymguly, Turkmenbasy, Etrek and Balkanabat -- "
+            "holds or lacks a town the census counts elsewhere."),
+    },
+    "Dasoguz": {
+        "Gorogly": (
+            "The polygon drawn as Gorogly holds Görogly, the etrap's one town, and no town "
+            "the census counts in another etrap; that places no border, it borders the one "
+            f"drawn as S.A. Nyyazow, {NOT_COUNTED}, and {UNPLACED_DASOGUZ}."),
+        "Koneurgenc": (
+            "The polygon drawn as Koneurgenc holds Köneürgenç city and no town the census "
+            "counts in another etrap, but the etrap's other town, Bereket, is not placed; "
+            f"it borders the one drawn as Gubadag, {NOT_COUNTED}, and {UNPLACED_DASOGUZ}."),
+        "Saparmyrat Turkmenbasy": (
+            "The polygon drawn as Saparmyrat Turkmenbasy holds the etrap's two towns and no "
+            "town the census counts in another etrap; that places no border, it borders the "
+            f"one drawn as Gubadag, {NOT_COUNTED}, and {UNPLACED_DASOGUZ}."),
+    },
+    "Lebap": {
+        "Darganata": (
+            "The polygon drawn as Darganata holds Gazojak and Darganata (Birata), two of the "
+            "etrap's three towns, and no town the census counts in another etrap; that "
+            "places no border, and the one polygon of Lebap it borders has no name."),
+    },
+    "Mary": {
+        "Sakarcage": (
+            "The polygon drawn as Sakarcage holds Sakarçäge, Şatlyk and Parahat, three of "
+            "the etrap's four towns, and no town the census counts in another etrap; that "
+            "places no border, and it borders a polygon with no name and the one drawn as "
+            f"Oguzhan, {NOT_COUNTED}."),
+        "Wekilbazar": (
+            "GeoNames places neither of Wekilbazar etrap's towns (Wekilbazar and the town "
+            "named after Mollanepes), so nothing but its name ties the polygon drawn as "
+            "Wekilbazar to the census's etrap, and it borders four polygons with no name."),
+    },
 }
 ETRAP_TAIL = (
-    " No etrap's figure describes a drawn polygon, so none is written. The census publishes "
-    "population by etrap and city alone (volume 1, tables 1.4-1.15; volume 2, tables "
-    "2.2-2.7); age, nationality and mother tongue by velayat only (volumes 2 and 4).")
+    " No drawn polygon is shown to hold the ground of an etrap the census counts, so no "
+    "etrap's figure is written. The census publishes population by etrap and city alone "
+    "(volume 1, tables 1.4-1.15; volume 2, tables 2.2-2.7); age, nationality and mother "
+    "tongue by velayat only (volumes 2 and 4).")
 # An older encyclopaedic figure on a drawn etrap is not this census's either:
 # the reason displaces it (see build_entities.merge_adapter).
 DISPLACES_BEFORE = 2023
 
 
-def etrap_gap(velayat: str | None) -> dict[str, Any]:
+def etrap_gap(velayat: str | None, name: str | None = None) -> dict[str, Any]:
+    """The velayat's evidence, the polygon's own where it has some, and the rule."""
     if velayat not in ETRAP_GAP:
         raise SystemExit(f"turkmenistan_census: no etrap reason for velayat {velayat!r}")
+    own = UNSHOWN.get(velayat, {}).get(name or "")
     return gap(NOT_AVAILABLE, "Turkmenistan's 2022 census and the boundary file divide "
-               f"{velayat} differently. " + ETRAP_GAP[velayat] + ETRAP_TAIL)
+               f"{velayat} differently. " + ETRAP_GAP[velayat]
+               + (f" {own}" if own else "") + ETRAP_TAIL)
+
+
+def check_unshown(a1: list[dict[str, Any]], a2: list[dict[str, Any]]) -> None:
+    """Every polygon UNSHOWN speaks for is drawn, once, in its velayat."""
+    region = {u["id"]: u["name"] for u in a1}
+    drawn = Counter((region.get(u["parent"]), u["name"]) for u in a2)
+    for velayat, names in UNSHOWN.items():
+        if velayat not in region.values():
+            continue
+        for name in names:
+            if drawn[(velayat, name)] != 1:
+                raise SystemExit(f"turkmenistan_census: {name!r} is drawn "
+                                 f"{drawn[(velayat, name)]} times in {velayat}")
 
 
 def tokens_of(line: str) -> tuple[str, list[str]]:
@@ -418,8 +504,9 @@ def build(areas: dict[str, dict[str, Any]], a1: list[dict[str, Any]],
             religion=RELIGION_GAP,
             sources=src))
     region_name = {u["id"]: u["name"] for u in a1}
+    check_unshown(a1, a2)
     for unit in a2:
-        why = etrap_gap(region_name.get(unit["parent"]))
+        why = etrap_gap(region_name.get(unit["parent"]), unit["name"])
         out.append(record(
             f"TKM-CENSUS-{unit['id']}", unit["name"], level="admin2",
             parent=f"TKM-CENSUS-{unit['parent']}", parent_name=region_name.get(unit["parent"]),

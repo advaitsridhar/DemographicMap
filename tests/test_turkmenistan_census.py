@@ -2,6 +2,7 @@ import sys
 import unittest
 from collections import Counter
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -116,7 +117,8 @@ class Tables(unittest.TestCase):
 
 
 A1 = [{"id": "A", "name": "Ahal"}]
-A2 = [{"id": "x", "name": "Ak Bugday", "parent": "A"}]
+A2 = [{"id": "x", "name": "Ak Bugday", "parent": "A"},
+      {"id": "y", "name": "Baherden", "parent": "A"}]
 
 
 class Records(unittest.TestCase):
@@ -155,6 +157,49 @@ class Records(unittest.TestCase):
         # A velayat with no reason stops the run rather than going unexplained.
         with self.assertRaises(SystemExit):
             tm.etrap_gap("Ashgabat")
+
+    def test_each_polygon_says_what_was_found_on_it(self):
+        # A polygon holding its etrap's towns says why it still takes no
+        # figure, on its own record and no other's; and no record claims more
+        # than was measured.
+        with mock.patch.object(tm, "AREAS", {"Ahal velayat": "Ahal"}):
+            out = {r["shape_id"]: r for r in tm.build(_areas(), A1, A2)}
+        own = out["y"]["population"]["note"]
+        self.assertIn("Durdyhan and Tutlygala", own)
+        self.assertIn("No drawn polygon is shown to hold the ground", own)
+        self.assertNotIn("Durdyhan", out["x"]["population"]["note"])
+        for r in out.values():
+            for field in ("population", "median_age", "sex_ratio", "ethnicity", "language"):
+                note = (r.get(field) or {}).get("note", "") if isinstance(r.get(field), dict) \
+                    else ""
+                self.assertNotIn("No etrap's figure describes a drawn polygon", note)
+        self.assertEqual(out["y"]["sex_ratio"]["displaces_before"], 2023)
+
+    def test_a_polygon_spoken_for_must_be_drawn_once(self):
+        with mock.patch.object(tm, "AREAS", {"Ahal velayat": "Ahal"}):
+            self.assertEqual(len(tm.build(_areas(), A1, A2)), 3)
+            with self.assertRaisesRegex(SystemExit, "drawn 0 times"):
+                tm.build(_areas(), A1, A2[:1])
+            with self.assertRaisesRegex(SystemExit, "drawn 2 times"):
+                tm.build(_areas(), A1,
+                         A2 + [{"id": "z", "name": "Baherden", "parent": "A"}])
+        # Every polygon it speaks for is one the velayat's own evidence leaves
+        # standing: a name, not a shape the evidence already places elsewhere.
+        for velayat, names in tm.UNSHOWN.items():
+            self.assertIn(velayat, tm.ETRAP_GAP)
+            for name in names:
+                self.assertNotIn(f"drawn as {name},", tm.ETRAP_GAP[velayat])
+                self.assertNotIn(f"drawn as {name} ", tm.ETRAP_GAP[velayat])
+
+
+def _areas():
+    return {
+        "Ahal velayat": {"age": {"total": (11400, 6000, 5400),
+                                 "groups": [(0, 0, 0)] * 5 + [(11400, 6000, 5400)]
+                                 + [(0, 0, 0)] * 13},
+                         "nationality": Counter(Turkmen=11400),
+                         "tongues": Counter(Turkmen=11400)},
+    }
 
 
 if __name__ == "__main__":
