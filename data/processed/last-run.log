@@ -1,35 +1,625 @@
-iran_census: 2016 census tables from the Internet Archive's captures of amar.org.ir
-  province 00 Markazi: 12 shahrestans
-  province 01 Gilan: 16 shahrestans
-  province 02 Mazandaran: 22 shahrestans
-  province 03 East Azerbaijan: 20 shahrestans
-  province 04 West Azerbaijan: 17 shahrestans
-  province 05 Kermanshah: 14 shahrestans
-  province 06 Khuzestan: 27 shahrestans
-  province 07 Fars: 29 shahrestans
-  province 08 Kerman: 23 shahrestans
-  province 09 Razavi Khorasan: 28 shahrestans
-  province 10 Isfahan: 24 shahrestans
-  province 11 Sistan and Baluchestan: 19 shahrestans
-  province 12 Kurdistan: 10 shahrestans
-  province 13 Hamadan: 9 shahrestans
-  province 14 Chaharmahal and Bakhtiari: 9 shahrestans
-  province 15 Lorestan: 11 shahrestans
-  province 16 Ilam: 10 shahrestans
-  province 17 Kohgiluyeh and Boyer-Ahmad: 8 shahrestans
-  province 18 Bushehr: 10 shahrestans
-  province 19 Zanjan: 8 shahrestans
-  province 20 Semnan: 8 shahrestans
-  province 21 Yazd: 10 shahrestans
-  province 22 Hormozgan: 13 shahrestans
-  province 23 Tehran: 16 shahrestans
-  province 24 Ardabil: 10 shahrestans
-  province 25 Qom: 1 shahrestans
-  province 26 Qazvin: 6 shahrestans
-  province 27 Golestan: 14 shahrestans
-  province 28 North Khorasan: 8 shahrestans
-  province 29 South Khorasan: 11 shahrestans
-  province 30 Alborz: 6 shahrestans
-  retry 1/1 after 2s :: https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat23.xls :: <urlopen error [Errno 111] Connection refused>
-  the Archive refused jamiat23.xls (<urlopen error [Errno 111] Connection refused>); waiting 120s
-iran_census: Tehran block 1: block 1 is not headed 'نقاطشهری' over both sexes, men and women
+https://stat.gov.tm/population-census-pdfs/results/en/1.pdf: 84 pages
+--- page 1 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1. POPULATION NUMBER AND LOCATION
+1.1. The territory, size and density of population of Turkmenistan
+
+Territory, thousand km2  491.2
+Population number – total, persons 7 057 841
+              including:
+       urban population 3 321 497
+       rural population 3 736 344
+       male 3 526 421
+       female 3 531 420
+Population number – total, percentage 100.00
+              including:
+      urban population 47.06
+       rural population 52.94
+       male 49.96
+       female 50.04
+Population density, number of inhabitants on 1 km2 14.4
+1.2. Structure of the number of population of Turkmenistan by regions
+Urban population – 82.11%
+Rural population – 17.89%
+Male – 50.43%
+Female – 49.57%
+Urban population – 35.38%
+Rural population – 64.62%
+Male – 50.48%
+Female – 49.52%
+Urban population – 30.56%
+Rural population – 69.44%
+Male – 49.99%
+Female – 50.01%
+Urban population – 45.33%
+Rural population – 54.67%
+Male – 50.03%
+Female – 49.97%
+Urban population – 25.58%
+Rural population – 74.42%
+Male – 50.24%
+Female – 49.76%
+Urban population – 100%
+Male – 48.73%
+Female – 51.27%
+BALKAN
+velayat
+7.5%
+DASHOGUZ
+velayat
+            22.0%
+LEBAP
+velayat
+            20.5%
+MARY
+velayat
+            22.9%
+Ahal
+velayat 12.5%
+ASHGABAT
+            city
+                14.6%
+--- page 2 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1.3. Distribution of the number of population of Turkmenistan by sex and regions, persons
+Both sexes
+including:
+male female
+Turkmenistan 7 057 841 3 526 421 3 531 420
+urban settlements 3 321 497 1 654 781 1 666 716
+rural areas 3 736 344 1 871 640 1 864 704
+Ashgabat city 1 030 063 501 910 528 153
+urban settlements 1 030 063 501 910 528 153
+rural areas – – –
+Ahal velayat 886 845 447 717 439 128
+urban settlements 313 785 159 706 154 079
+rural areas 573 060 288 011 285 049
+Balkan velayat 529 895 267 212 262 683
+urban settlements 435 090 218 842 216 248
+rural areas 94 805 48 370 46 435
+Dashoguz velayat 1 550 354 774 945 775 409
+urban settlements 473 861 236 215 237 646
+rural areas 1 076 493 538 730 537 763
+Lebap velayat 1 447 298 724 068 723 230
+urban settlements 656 021 328 344 327 677
+rural areas 791 277 395 724 395 553
+Mary velayat 1 613 386 810 569 802 817
+urban settlements 412 677 209 764 202 913
+rural areas 1 200 709 600 805 599 904
+1.4. Distribution of the number of population of Ashgabat city by sex and territory, persons
+Both sexes
+including:
+male female
+Ashgabat city 1 030 063 501 910 528 153
+including:
+Bagtyyarlyk etrap 309 619 153 311 156 308
+Buzmeyin etrap 175 179 88 562 86 617
+Kopetdag etrap 278 840 133 517 145 323
+Berkararlyk etrap 266 425 126 520 139 905
+--- page 3 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1.5.  Distribution of the number of the urban population of Ahal velayat by sex and territory,
+persons
+Both sexes
+including:
+male female
+Urban population of Ahal velayat 313 785 159 706 154 079
+including:
+Arkadag city 567 267 300
+Ak bugday etrap 48 727 24 637 24 090
+Anev  city 28 653 14 263 14 390
+Yashlyk town 8 172 4 212 3 960
+Berkarar town 2 747 1 345 1 402
+Bokurdak  town 7 726 4 028 3 698
+Bereketli zaman town 1 429 789 640
+Baherden etrap 43 602 22 383 21 219
+Baherden city 37 588 19 340 18 248
+Archman  town 6 014 3 043 2 971
+Gokdepe etrap 39 928 20 135 19 793
+Gokdepe city 33 381 16 810 16 571
+Yzgant town 6 547 3 325 3 222
+Kaka etrap 41 720 21 523 20 197
+Kaka city 33 315 17 410 15 905
+Dushak town 8 405 4 113 4 292
+Sarahs etrap 34 849 17 964 16 885
+Sarahs  city 31 269 16 287 14 982
+Gannaly town 3 580 1 677 1 903
+Tejen etrap 90 952 46 143 44 809
+Tejen city 67 488 34 804 32 684
+Altyn asyr city 13 660 6 621 7 039
+Bagtyyarlyk  town 9 804 4 718 5 086
+Babadayhan etrap 13 440 6 654 6 786
+Babadayhan city 13 440 6 654 6 786
+--- page 4 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1.6.  Distribution of the number of the urban population of Balkan velayat by sex and
+territory, persons
+Both sexes
+including:
+male female
+Urban population of Balkan velayat 435 090 218 842 216 248
+including:
+Balkanabat city 186 246 91 356 94 890
+Balkanabat city 123 190 60 276 62 914
+Uzboy town 730 345 385
+Jebel town 15 056 7 502 7 554
+Gumdag town 30 884 15 127 15 757
+Hazar town 14 671 7 218 7 453
+Oglanly town 1 715 888 827
+Turkmenbashy city 91 745 44 792 46 953
+Esenguly etrap 25 906 14 418 11 488
+Esenguly city 12 918 6 827 6 091
+Garadepe town 9 016 5 596 3 420
+Ekerem town 3 972 1 995 1 977
+Bereket etrap 23 697 11 738 11 959
+Bereket city 23 697 11 738 11 959
+Magtymguly etrap 15 386 8 292 7 094
+Magtymguly city 15 386 8 292 7 094
+Gyzylarbat etrap 52 216 26 695 25 521
+Gyzylarbat city 48 552 24 854 23 698
+Janahyr town 3 664 1 841 1 823
+Etrek etrap 12 508 6 459 6 049
+Etrek city 12 508 6 459 6 049
+Turkmenbashy etrap 27 386 15 092 12 294
+Garabogaz city 7 877 3 929 3 948
+Turkmenbashy town 7 334 4 233 3 101
+Akdash town 6 750 4 159 2 591
+Belek town 1 720 867 853
+Gyzylgaya town 993 478 515
+Gyzylsuv town 859 450 409
+Guvlymayak town 1 853 976 877
+--- page 5 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1.7.  Distribution of the number of the urban population of Dashoguz velayat by sex and
+territory, persons
+Both sexes
+including:
+male female
+Urban population of Dashoguz velayat 473 861 236 215 237 646
+including:
+Dashoguz city 201 142 100 700 100 442
+Boldumsaz etrap 66 101 32 834 33 267
+Boldumsaz city 39 582 19 673 19 909
+Gubadag city 18 950 9 387 9 563
+Gokchage town 7 569 3 774 3 795
+Koneurgench etrap 50 725 25 438 25 287
+Koneurgench city 37 176 18 695 18 481
+Bereket town 13 549 6 743 6 806
+Akdepe etrap 75 439 37 270 38 169
+Akdepe city 28 045 13 751 14 294
+Andalyp city 36 594 18 078 18 516
+town named after Orazgeldi Ersaryyev 8 040 4 078 3 962
+town named after Rejepguly Atayev 2 760 1 363 1 397
+Saparmyrat Turkmenbashy etrap 30 323 15 458 14 865
+city named after Saparmyrat
+Turkmenbashy 20 720 10 149 10 571
+town named after Ashyr Kakabayev 9 603 5 309 4 294
+Gorogly etrap 26 770 13 136 13 634
+Gorogly city 26 770 13 136 13 634
+Shabat etrap 21 708 10 532 11 176
+Shabat city  19 392 9 380 10 012
+town named after Sadylla
+Rozmetov 2 316 1 152 1 164
+Ruhubelent etrap 1 653 847 806
+Ruhubelent town 1 653 847 806
+--- page 6 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+1.8.  Distribution of the number of urban population of Lebap velayat by sex and territory,
+persons
+Both sexes
+including:
+male female
+Urban population of Lebap velayat 656 021 328 344 327 677
+including:
+Turkmenabat city 230 861 111 040 119 821
+Darganata etrap 37 870 19 524 18 346
+ Gazojak city 21 035 11 098 9 937
+ Darganata city 13 777 6 858 6 919
+ Lebap  town 3 058 1 568 1 490
+Danev etrap 62 112 33 004 29 108
+Danev city 15 409 7 424 7 985
+Seydi city 29 670 16 598 13 072
+Bahar  town 3 090 1 544 1 546
+Garashsyzlyk town 7 136 3 561 3 575
+Asuda town 6 807 3 877 2 930
+Kerki etrap 50 895 27 289 23 606
+Kerki city 32 489 18 226 14 263
+town named after 15 years of
+Independence 1 598 786 812
+Bashsaka town 3 498 1 663 1 835
+Garamatnyyaz town 1 844 943 901
+Astanababa town 11 466 5 671 5 795
+Sayat etrap 61 007 29 897 31 110
+Sayat city 21 619 10 618 11 001
+Sakar  city 12 769 6 250 6 519
+Garabekevul city 15 135 7 441 7 694
+Suvchyoba  town 1 758 886 872
+Chaltut town 4 857 2 356 2 501
+Yslam town 4 869 2 346 2 523
+Halach etrap 28 281 14 081 14 200
+Halach city 20 778 10 330 10 448
+Chohpetde town 7 503 3 751 3 752
+Hojambaz etrap 25 398 12 712 12 686
+Hojambaz city 13 485 6 796 6 689
+Beshir town 6 971 3 439 3 532
+Dovletli town 4 942 2 477 2 465
+Charjev etrap 42 609 21 631 20 978
+Farap city 20 547 10 800 9 747
+Hojagala town 4 752 2 316 2 436
+Kishtivan town 5 989 2 930 3 059
+Charjev town 1 825 906 919
+Jeyhun town 9 496 4 679 4 817
+--- page 7 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+Ending
+Both sexes
+including:
+male female
+Koytendag etrap 116 988 59 166 57 822
+Koytendag city 18 816 9 446 9 370
+Magdanly city 44 508 23 065 21 443
+Dostluk city 13 655 6 689 6 966
+Kelif town 3 701 1 783 1 918
+Mukry town 7 013 3 498 3 515
+Garlyk town 16 9 7
+town of the Lead mine 3 953 1 932 2 021
+Amyderya town 10 330 5 110 5 220
+Kerkichi town 14 996 7 634 7 362
+1.9.  Distribution of the number of the urban population of Mary velayat by sex and territory,
+persons
+Both sexes
+including:
+male female
+Urban population of Mary velayat 412 677 209 764 202 913
+including:
+Mary city 167 027 80 890 86 137
+Bayramaly city 70 376 37 247 33 129
+Bayramaly etrap 15 250 7 746 7 504
+Berkarar town 1 408 723 685
+Bagtyyarlyk town 1 727 859 868
+Mekan town 12 115 6 164 5 951
+Vekilbazar etrap 5 710 2 779 2 931
+town named after Mollanepes 2 878 1 386 1 492
+Vekilbazar town 2 832 1 393 1 439
+Yoloten etrap 30 709 15 534 15 175
+Yoloten city 30 709 15 534 15 175
+Garagum etrap 10 488 5 132 5 356
+Yagtyyol town 10 488 5 132 5 356
+Mary etrap 14 186 7 341 6 845
+Peshanaly town 935 494 441
+Saparmyrat Turkmenbashy town 13 251 6 847 6 404
+Murgap etrap 25 938 12 592 13 346
+Murgap city 14 822 7 136 7 686
+Oguzhan town 6 430 3 147 3 283
+Dengizhan town 4 686 2 309 2 377
+--- page 8 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+Ending
+Both sexes
+including:
+male female
+Sakarchage etrap 23 092 11 419 11 673
+Sakarchage city 11 891 5 903 5 988
+Shatlyk city 7 725 3 785 3 940
+Dovletli zaman town 982 494 488
+Parahat town 2 494 1 237 1 257
+Tagtabazar etrap 29 350 18 716 10 634
+Serhetabat city 16 038 10 578 5 460
+Tagtabazar town 13 312 8 138 5 174
+Turkmengala etrap 20 551 10 368 10 183
+Turkmengala city 16 696 8 411 8 285
+Zahmet town 3 855 1 957 1 898
+1.10.  Distribution of the number of the rural population of Ahal velayat by sex and territory,
+persons
+Both sexes
+including:
+male female
+Rural population of Ahal velayat 573 060 288 011 285 049
+including:
+Ak bugday etrap 95 392 47 684 47 708
+Yashlyk town 3 471 1 744 1 727
+Yashlyk station 419 203 216
+Aksuv 474 231 243
+Balykchy 1 241 643 598
+Akyayla 1 337 667 670
+Bokurdak town 8 384 4 278 4 106
+Garryja 274 139 135
+Yerbent 2 561 1 268 1 293
+Chalysh 878 448 430
+Duyeli 99 53 46
+Bussy 201 111 90
+Garaberdi  33 15 18
+Oraz 404 201 203
+Govshakgyzyltakyr 430 218 212
+Gargalandinlisi  270 140 130
+Churchuri 876 461 415
+Gujurly 125 60 65
+Guneshli  52 29 23
+Gobekli 60 31 29
+Oyukly 194 101 93
+Gyzylsakal 426 225 201
+Kelleli 110 57 53
+--- page 9 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+Continuation
+Both sexes
+including:
+male female
+Garrychyrla 404 211 193
+Gazykly  226 113 113
+Davaly 261 137 124
+Kerpichli 7 3 4
+Mollagurban 268 136 132
+Tovekgel 127 69 58
+Hajyguly 75 39 36
+Goshalar 23 13 10
+Bereketli zaman town 4 231 2 157 2 074
+Gavers 3 396 1 733 1 663
+Gavers station 835 424 411
+Burunojar gengeshlik 2 178 1 095 1 083
+Mekan 2 178 1 095 1 083
+Bugdayly gengeshlik 3 827 1 944 1 883
+Bugdayly 2 479 1 251 1 228
+Tokay hojalygy 331 167 164
+Saryk 1 017 526 491
+Garagum gengeshlik 1 492 759 733
+Garagum 1 492 759 733
+Gami gengeshlik 18 716 9 285 9 431
+Gami 18 148 9 008 9 140
+Yeketut 568 277 291
+gengeshlik named after Magtymguly 9 173 4 537 4 636
+Magtymguly 9 173 4 537 4 636
+Bereket gengeshlik 10 597 5 268 5 329
+Bereket 10 597 5 268 5 329
+Parahat gengeshlik 4 594 2 311 2 283
+Parahat 4 594 2 311 2 283
+Tazedurmush gengeshlik 8 101 3 997 4 104
+Tazedurmush 6 945 3 400 3 545
+87 driveway 54 25 29
+88 driveway 63 38 25
+Garanur 214 112 102
+Sovutli 357 186 171
+Ginoy 62 34 28
+Gyzylgoz 406 202 204
+Yashyldepe gengeshlik 6 563 3 232 3 331
+Yashyldepe 6 563 3 232 3 331
+--- page 10 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+Continuation
+Both sexes
+including:
+male female
+Onaldy gengeshlik 5 770 2 909 2 861
+Onaldy 2 502 1 274 1 228
+Gaplan 252 130 122
+Garadamak 183 97 86
+Nazarly 762 367 395
+Torangyly 686 349 337
+Tozanly 782 392 390
+Korchay 249 120 129
+Narly 200 106 94
+Kesikburun 154 74 80
+Sahra gengeshlik 4 510 2 288 2 222
+Sahra  791 420 371
+Derya 763 391 372
+Syzaly 63 34 29
+Gypjak 74 38 36
+Chorli 386 183 203
+Bozkol 94 50 44
+Gulangyrlan 912 454 458
+Tazeoba 977 487 490
+Gysy 450 231 219
+Bereketli gengeshlik 3 785 1 880 1 905
+Bukri 1393 700 693
+Dinli  666 337 329
+Borjakly 233 120 113
+Gyzyktakyr 269 120 149
+Kukurtli 212 114 98
+Sakarchage 432 216 216
+Sozenli 278 130 148
+Gamyshly 302 143 159
+Baherden etrap 82 807 41 866 40 941
+Archman  town 2 233 1 077 1 156
+Archman station 1 860 895 965
+Keletdag 373 182 191
+Akdepe gengeshlik 9 244 4 618 4 626
+Akdepe 9 066 4 532 4 534
+97 driveway 178 86 92
+Bamy gengeshlik 8 542 4 264 4 278
+Bamy  7 884 3 929 3 955
+Ymarat 658 335 323
+--- page 11 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+Continuation
+Both sexes
+including:
+male female
+Borme gengeshlik 5 612 2 816 2 796
+Borme 5 288 2 651 2 637
+103 driveway 324 165 159
+Garavul gengeshlik 9 299 5 029 4 270
+Garavul 8 235 4 343 3 892
+Konegummez 1 064 686 378
+Garagan gengeshlik 5 788 2 882 2 906
+Garagan 5 788 2 882 2 906
+Dovgala gengeshlik 4 482 2 276 2 206
+Dovgala 4 482 2 276 2 206
+Durun gengeshlik 10 967 5 486 5 481
+Durun 10 967 5 486 5 481
+Kirpili gengeshlik 2 313 1 163 1 150
+Kirpili 1 322 670 652
+Atabeg 641 322 319
+Sozenlioyy 207 103 104
+Hajyolen 143 68 75
+Murche gengeshlik 5 211 2 668 2 543
+Murche 5 056 2 600 2 456
+Tagyoyy 76 34 42
+Etegoyy 79 34 45
+Nohur gengeshlik 6 258 3 184 3 074
+Nohur 6 258 3 184 3 074
+Sunche gengeshlik 1 919 934 985
+Sunche 1 785 868 917
+100 driveway 134 66 68
+Sayvan gengeshlik 2 305 1 149 1 156
+Sayvan 1 628 807 821
+Desht 677 342 335
+Yarajy gengeshlik 8 634 4 320 4 314
+Yarajy 6 052 3 013 3 039
+Kelete 2 582 1 307 1 275
+Gokdepe etrap 121 891 62 406 59 485
+Yzgant town 2 242 1 136 1 106
+Mammetyar                     1 184 602 582
+Sovma                             324 162 162
+Charan                              370 197 173
+Garaajy                     364 175 189
+--- page 12 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+Continuation
+Both sexes
+including:
+male female
+Akgonur gengeshlik 5 375 2 732 2 643
+Akgonur 5 375 2 732 2 643
+Ahal gengeshlik 17 093 8 520 8 573
+Ahal 16 025 7 984 8 041
+Ilek 136 68 68
+Chyrla 96 46 50
+Var 63 35 28
+Syplangyzyltakyr 104 53 51
+Gatyduyp 233 112 121
+Goshatakyr 58 28 30
+Gutlyayak 308 156 152
+Gorya 70 38 32
+Kelejar gengeshlik 7 260 3 566 3 694
+Kelejar 7 260 3 566 3 694
+Kopetdag gengeshlik 7 302 3 642 3 660
+Bovga 4 094 2 034 2 060
+Bukri 2 316 1 166 1 150
+Novata 892 442 450
+gengeshlik named after
+S.A. Niyazov 9 022 4 630 4 392
+named after S.A. Niyazov 5 530 2 945 2 585
+Ajykariz  1 239 603 636
+Garrykariz 2 145 1 030 1 115
+Galkynysh 108 52 56
+Turkmenistan gengeshlik 7 796 3 920 3 876
+Turkmenistan 7 666 3 850 3 816
+Gonurajy 41 21 20
+Orazsahet 89 49 40
+Hurmantgokje gengeshlik 9 302 4 748 4 554
+Hurmantgokje 9 302 4 748 4 554
+Shorgala gengeshlik 4 432 2 225 2 207
+Shorgala 4 432 2 225 2 207
+Taze eyyam gengeshlik 5 196 2 577 2 619
+Taze eyyam 5 196 2 577 2 619
+gengeshlik named after Tagan
+Bayramdurdyyev 9 150 4 570 4 580
+Gokdepe 9 150 4 570 4 580
+Yangala gengeshlik 9 980 5 039 4 941
+Yangala 8 657 4 380 4 277
+Sekizyap 1 005 511 494
+Shahridag 318 148 170
+--- page 13 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+Continuation
+Both sexes
+including:
+male female
+Babaarap gengeshlik 9 681 4 792 4 889
+Babaarap 9 681 4 792 4 889
+Gorjav gengeshlik 5 340 2 791 2 549
+Gorjav 5 340 2 791 2 549
+Derveze gengeshlik 5 084 2 496 2 588
+Derveze 2 166 1 056 1 110
+Ataguyy 1 370 668 702
+Bori 1 548 772 776
+Ovadandepe gengeshlik 7 636 5 022 2 614
+named after Orazov 3 777 3 052 725
+Nedir 1 396 717 679
+Sahra 129 68 61
+Talhanly 1 525 766 759
+Shapy 97 53 44
+Yandakly 159 74 85
+Artykhoja 553 292 261
+Kaka etrap 51 932 25 646 26 286
+Kaka city 444 227 217
+Hyvaabat 444 227 217
+Dushak town 12 136 5 924 6 212
+named after Shukur bagshy 12 136 5 924 6 212
+Arapgala gengeshlik 4 125 2 081 2 044
+Arapgala 4 125 2 081 2 044
+Artyk gengeshlik 2 466 1 208 1 258
+Artyk 2 466 1 208 1 258
+Garahan gengeshlik 1 832 910 922
+Garahan 1 832 910 922
+Gozgan gengeshlik 2 749 1 343 1 406
+Gozgan 2 749 1 343 1 406
+Kurengala gengeshlik 2 441 1 225 1 216
+Kurengala 1 587 779 808
+Soltandesht 854 446 408
+Govshut gengeshlik 8 703 4 295 4 408
+Govshut 7 881 3 875 4 006
+Govshut station 822 420 402
+Mehinli gengeshlik 5 680 2 798 2 882
+Mehinli 5 089 2 500 2 589
+Bukriolen 17 9 8
+Hashshan – – –
+--- page 14 ---
+RESULTS OF THE COMPLETE POPULATION AND
+HOUSING CENSUS OF TURKMENISTAN – 2022
+Continuation
+Both sexes
+including:
+male female
+Hojamengli  101 54 47
+Kumeli 113 56 57
+Bulanyk 105 52 53
+Kopguyy 150 74 76
+Hummetli 30 13 17
+Kyrkguyy 75 40 35
+Harchingan gengeshlik 1 412 712 700
+Harchingan 1 412 712 700
+Mane gengeshlik 4 877 2 413 2 464
+Mane 4 877 2 413 2 464
+Chache gengeshlik 5 067 2 510 2 557
+Chache 5 067 2 510 2 557
+Sarahs etrap 46 157 23 227 22 930
+Alam gengeshlik 2 169 1 052 1 117
+Alam 2 169 1 052 1 117
+Ata gengeshlik 3 701 1 766 1 935
+Ata  3 701 1 766 1 935
+Ashgabat gengeshlik 4 470 2 219 2 251
+Ashgabat  4 470 2 219 2 251
+Kichiaga gengeshlik 13 363 6 674 6 689
+Agzybirlik 3 813 1 880 1 933
+Berkarar 4 675 2 358 2 317
+Oraz salyr 1 194 598 596
+Rysgally 3 681 1 838 1 843
+Hanyap gengeshlik 2 282 1 138 1 144
+Hanyap 2 282 1 138 1 144
+Yalavach gengeshlik 3 541 1 747 1 794
+Yalavach 3 541 1 747 1 794
+Galkynysh gengeshlik 7 579 3 788 3 791
+Galkynysh 1 988 980 1 008
+Gozli ata 52 30 22
+Salyr 3 663 1 817 1 846
+Teke han 1 175 585 590
+Chalja 701 376 325
+Parahatchylyk gengeshlik 5 432 2 778 2 654
+Parahatchylyk 2 229 1 149 1 080
+Yenish 366 179 187
+Ak altyn 2 837 1 450 1 387
+  ... more pages match; stopped at 14
