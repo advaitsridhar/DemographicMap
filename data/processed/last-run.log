@@ -1,27 +1,27 @@
-== https://stats.gov.fm/download/54/pohnpei/2216/pni-basic-tables-2023-population-housing-census.xlsx
-  HTTP 200 text/html 12,261 bytes
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 368, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 353, in main
-    cmd_xlsx(args.url, args.sheet, args.first, args.last, args.width, args.grep, args.cols)
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 264, in cmd_xlsx
-    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 346, in load_workbook
-    reader = ExcelReader(filename, read_only, keep_vba,
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 123, in __init__
-    self.archive = _validate_archive(fn)
-                   ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 95, in _validate_archive
-    archive = ZipFile(filename, 'r')
-              ^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/zipfile.py", line 1355, in __init__
-    self._RealGetContents()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/zipfile.py", line 1422, in _RealGetContents
-    raise BadZipFile("File is not a zip file")
-zipfile.BadZipFile: File is not a zip file
+== https://stats.gov.fm/states/yap/
+  HTTP 200 text/html; charset=UTF-8 172,748 bytes
+  6 links matching '(?:stats[.]gov[.]fm/download/[-a-zA-Z0-9_./%]+)'
+    https://stats.gov.fm/download/56/yap/2115/2023-yap-census-factsheet.pdf
+    https://stats.gov.fm/download/56/yap/2212/yap-basic-tables-2023-population-housing-census.xlsx
+    https://stats.gov.fm/download/56/yap/2203/2023-yap-imts-tables.xlsx
+    https://stats.gov.fm/download/56/yap/1489/2023_cpi-detailed_yap.xlsx
+    https://stats.gov.fm/download/56/yap/1490/cpi_infographics_2023q4_yap.pdf
+    https://stats.gov.fm/download/64/states/598/yap-basic-tabulation-2010-census-of-population-and-housing.xlsx
+== https://stats.gov.fm/states/chuuk/
+  HTTP 200 text/html; charset=UTF-8 169,639 bytes
+  5 links matching '(?:stats[.]gov[.]fm/download/[-a-zA-Z0-9_./%]+)'
+    https://stats.gov.fm/download/53/chuuk/2207/2023-chk-imts-tables.xlsx
+    https://stats.gov.fm/download/53/chuuk/1464/cpi_infographics_2023q4-_chk.pdf
+    https://stats.gov.fm/download/53/chuuk/1463/2023_cpi-detailed_chuuk.xlsx
+    https://stats.gov.fm/download/64/states/599/chuuk-basic-tabulation-2010-census-of-population-and-housing.xlsx
+    https://stats.gov.fm/download/50/vehicle/610/chuuk-state-registered-vehicle.xlsx
+== https://stats.gov.fm/states/kosrae/
+  HTTP 200 text/html; charset=UTF-8 174,373 bytes
+  7 links matching '(?:stats[.]gov[.]fm/download/[-a-zA-Z0-9_./%]+)'
+    https://stats.gov.fm/download/55/kosrae/2141/2023-kosrae-census-factsheet.pdf
+    https://stats.gov.fm/download/55/kosrae/2217/ksa-basic-tables-2023-population-housing-census.xlsx
+    https://stats.gov.fm/download/55/kosrae/2206/2023-ksa-imts-tables.xlsx
+    https://stats.gov.fm/download/55/kosrae/1459/2023_cpi-detailed_kosrae.xlsx
+    https://stats.gov.fm/download/55/kosrae/1460/cpi_infographics_2023q4_ksa.pdf
+    https://stats.gov.fm/download/64/states/597/kosrae-basic-tabulation-2010-census-of-population-and-housing.xlsx
+    https://stats.gov.fm/download/50/vehicle/609/kosrae-state-registered-vehicle.xlsx
