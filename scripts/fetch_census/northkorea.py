@@ -35,8 +35,10 @@ would put a figure on the map that no census produced.
 
 So the three declarations stand, and ``scripts/common.py`` now says what was
 read rather than merely what is believed. Nationality is not written onto the
-ethnicity field here: Table 5 has no geography, and the Maldives entry settles
-the principle -- a passport is not an ethnic group.
+provinces' ethnicity field here, because Table 5 has no geography. The
+country's is Table 5 itself, read as nationality by the map owner's decision
+of 19 September 2026: a curated row in ``data/curated/admin0_detail.json``
+(23,349,326 Koreans of the 23,349,859; the 533 others are too few to draw).
 
 This file writes no composition, and it does not copy the declaration either.
 It marks the three fields ``not_available`` with a line saying the census asks
