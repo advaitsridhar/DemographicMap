@@ -224,7 +224,17 @@ def ages(rows: list[dict[str, str]], keys: tuple[str, ...], date: str
     """
     out: dict[tuple[str, ...], dict[str, Any]] = {}
     for r in rows:
-        if r["date"] != date or r["ethnicity"] != "overall":
+        if r["date"] != date:
+            continue
+        # Non-citizens by sex, where the file crosses the two: said beside a
+        # ratio far from even, never used for the figures themselves.
+        if (r["ethnicity"] == "other_noncitizen" and r["age"] == "overall"
+                and r["sex"] in ("male", "female")):
+            place = tuple(r[k] for k in keys)
+            unit = out.setdefault(place, {"groups": {}, "sex": {}})
+            unit.setdefault("noncitizen", {})[r["sex"]] = thousands(r["population"])
+            continue
+        if r["ethnicity"] != "overall":
             continue
         place = tuple(r[k] for k in keys)
         unit = out.setdefault(place, {"groups": {}, "sex": {}})
@@ -253,8 +263,31 @@ def ages(rows: list[dict[str, str]], keys: tuple[str, ...], date: str
     return out
 
 
-def age_fields(name: str, unit: dict[str, Any] | None, year: int, total: int
-               ) -> dict[str, Any]:
+# A ratio this far from even, for a whole district or state, is said to be one
+# on its record with the counts it rests on, as the Southeast Asian COD-PS
+# reader does (sea_cod_ps_age.UNUSUAL_RATIO): Bukit Mabong's 152.4 and Cameron
+# Highlands' 152.2 had only the note every district carries.
+UNUSUAL_RATIO = (85.0, 115.0)
+
+
+def unusual_ratio(men: int, women: int, year: int, unit: dict[str, Any], what: str) -> str:
+    """A sentence for a ratio far from even, with DOSM's counts; else nothing.
+
+    The non-citizens among them are given where the file crosses citizenship
+    with sex; no cause is named, as DOSM's table gives none.
+    """
+    if UNUSUAL_RATIO[0] <= 100 * men / women <= UNUSUAL_RATIO[1]:
+        return ""
+    foreign = unit.get("noncitizen") or {}
+    among = (f"; {foreign['male']:,} of the males and {foreign['female']:,} of the females "
+             f"are not Malaysian citizens" if {"male", "female"} <= set(foreign) else "")
+    return (f" An unusual ratio for a whole {what}: DOSM's estimate for {year} counts "
+            f"{men:,} males against {women:,} females here, each rounded to the nearest "
+            f"hundred{among}, and the table gives no reason.")
+
+
+def age_fields(name: str, unit: dict[str, Any] | None, year: int, total: int,
+               what: str = "district") -> dict[str, Any]:
     """median_age, sex_ratio and their notes for one place, after its checks."""
     if not unit or not total:
         return {}
@@ -283,7 +316,8 @@ def age_fields(name: str, unit: dict[str, Any] | None, year: int, total: int
         "sex_ratio": measure(round(100 * men / women, 1), unit="males_per_100_females",
                              year=year, source=SOURCE),
         "sex_ratio_note": (f"Males per 100 females in {basis}; non-citizens are part "
-                           f"of the resident population DOSM estimates."),
+                           f"of the resident population DOSM estimates."
+                           f"{unusual_ratio(men, women, year, unit, what)}"),
     }
 
 
@@ -329,7 +363,7 @@ def build_states(rows: list[dict[str, str]] | None = None) -> list[dict[str, Any
             sources=[{"field": "population/ethnicity/median age/sex ratio",
                       "name": f"{SOURCE} ({year})",
                       "url": PAGES["state"], "license": LICENCE}],
-            **age_fields(state, by_age.get((state,)), year, total),
+            **age_fields(state, by_age.get((state,)), year, total, what="state"),
         ))
     if len(records) != 16:
         raise SystemExit(f"malaysia: expected 16 states, read {len(records)}")

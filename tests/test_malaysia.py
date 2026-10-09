@@ -43,6 +43,39 @@ class AgeTest(unittest.TestCase):
         self.assertEqual(fields["sex_ratio"]["unit"], "males_per_100_females")
         self.assertIn("not a count", fields["median_age_note"])
 
+    def test_an_even_ratio_carries_no_counts(self):
+        rows = rows_for({"state": "Johor"}, "2025-01-01", [10.0] * 18, 91.0, 89.0)
+        unit = m.ages(rows, ("state",), "2025-01-01")[("Johor",)]
+        note = m.age_fields("Johor", unit, 2025, 180_000, what="state")["sex_ratio_note"]
+        self.assertNotIn("unusual", note)
+
+    def test_an_unusual_ratio_gives_dosm_s_counts_and_no_cause(self):
+        # Bukit Mabong: 6.4 thousand males and 4.2 thousand females, 152.4.
+        place = {"state": "Sarawak", "district": "Bukit Mabong"}
+        counts = [0.6] * 17 + [0.4]
+        rows = rows_for(place, "2024-01-01", counts, 6.4, 4.2)
+        unit = m.ages(rows, ("state", "district"), "2024-01-01")[("Sarawak", "Bukit Mabong")]
+        fields = m.age_fields("Sarawak/Bukit Mabong", unit, 2024, 10_600)
+        self.assertEqual(fields["sex_ratio"]["value"], 152.4)
+        note = fields["sex_ratio_note"]
+        self.assertIn("An unusual ratio for a whole district: DOSM's estimate for 2024 counts "
+                      "6,400 males against 4,200 females here, each rounded to the nearest "
+                      "hundred, and the table gives no reason.", note)
+        for cause in ("plantation", "worker", "foreign"):
+            self.assertNotIn(cause, note)
+
+    def test_an_unusual_ratio_names_the_non_citizens_where_the_file_has_them(self):
+        place = {"state": "Pahang", "district": "Cameron Highlands"}
+        rows = rows_for(place, "2026-01-01", [2.5] * 17 + [2.4], 27.1, 17.8)
+        rows += [{**place, "date": "2026-01-01", "sex": sex, "age": "overall",
+                  "ethnicity": "other_noncitizen", "population": n}
+                 for sex, n in (("male", "7.0"), ("female", "2.8"))]
+        unit = m.ages(rows, ("state", "district"), "2026-01-01")[("Pahang", "Cameron Highlands")]
+        note = m.age_fields("Pahang/Cameron Highlands", unit, 2026, 44_900)["sex_ratio_note"]
+        self.assertIn("27,100 males against 17,800 females", note)
+        self.assertIn("7,000 of the males and 2,800 of the females are not Malaysian citizens",
+                      note)
+
     def test_groups_that_miss_the_total_refuse(self):
         rows = rows_for({"state": "Johor"}, "2025-01-01", [10.0] * 18, 91.0, 89.0)
         unit = m.ages(rows, ("state",), "2025-01-01")[("Johor",)]
