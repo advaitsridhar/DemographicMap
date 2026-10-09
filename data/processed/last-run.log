@@ -1,51 +1,135 @@
-abs: 2021 Census, LGA
-  1227 dataflows in the ABS catalogue
-  dataflows containing G14: C21_G14_CED, C21_G14_LGA, C21_G14_POA, C21_G14_RA, C21_G14_SA2, C21_G14_SAL, C21_G14_SED, C21_G14_SUA, C21_G14_UCL
-  dataflows containing G08: C21_G08_CED, C21_G08_LGA, C21_G08_POA, C21_G08_RA, C21_G08_SA2, C21_G08_SAL, C21_G08_SED, C21_G08_SUA, C21_G08_UCL
-  dataflows containing G13: C21_G13_CED, C21_G13_LGA, C21_G13_POA, C21_G13_RA, C21_G13_SA2, C21_G13_SAL, C21_G13_SED, C21_G13_SUA, C21_G13_UCL
-  religion: dataflow ABS,C21_G14_LGA,1.0.0
-  ancestry: dataflow ABS,C21_G08_LGA,1.0.0
-  language: dataflow ABS,C21_G13_LGA,1.0.0
-  religion rows 57630, ancestry rows 111870, language rows 394935
-  dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
-  using region='STATE' religion='RELP' ancestry='ANCP' language='LANP'
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 9 regions
-  restricted BPPP='Total responses' so its categories are not summed
-  outermost level chosen by suffix (nothing summed to the total) for 9 regions
-  ! suffix (nothing summed to the total): ANCP for region 3; published total 5156158.0
-            '_T'     5,156,158  Total
-          '2101'     1,959,864  English
-          '1101'     1,724,651  Australian
-          '2201'       567,938  Irish
-            '_O'       565,027  Other
-          '2102'       526,983  Scottish
-            '_N'       354,209  Not stated
-          '2306'       309,715  German
-          '1102'       205,947  Australian Aboriginal
-          '6101'       160,077  Chinese
-          '3103'       152,552  Italian
-          '7106'        93,611  Indian
-          '2303'        80,838  Dutch
-          '5201'        73,826  Filipino
-          '1202'        67,263  New Zealander
-          '1201'        64,995  Maori
-          '1504'        35,239  Samoan
-          '9215'        35,234  South African
-          '2103'        34,668  Welsh
-          '5107'        33,840  Vietnamese
-          '2305'        33,139  French
-          '3307'        32,832  Polish
-          '3205'        32,721  Greek
-          '3106'        25,699  Spanish
-          '6902'        25,368  Korean
-          '3104'        22,107  Maltese
-          '3308'        17,583  Russian
-          '3204'        16,782  Croatian
-  restricted SEXP='Persons' so the sexes are not counted twice
-  restricted ENGLP='Total' so its categories are not summed
-  outermost level chosen by code tree less a duplicated parent for 9 regions
-  population from the religion table's own total for 9 of 9 regions; they sum to 25,422,828
-  sanity: largest religion category is 47.6% of the sample region's total across 8 categories
-  wrote data/processed/australia_state.json (72 kB)
-  9 records
+The Bahamas: https://data.humdata.org/dataset/73e2f949-a9c1-438d-aae1-0ce544c0ff0a/resource/0c1f9e4e-60db-4cab-a4f0-bbf43594f1f6/download/the_bahamas_uscb_202105.xlsx
+  111,394 bytes
+  Individuals [RCE_]: 19 rows, 9 groups, denominator 'Total population'
+    admin1: 351,461 against the country's own 351,461 -- exactly
+    every one of 18 areas reaches its published total
+  wrote data/processed/bahamas_island.json (31 kB)
+  18 areas: 18 admin1
+Central African Republic: https://data.humdata.org/dataset/4f41a2c7-167f-4e60-8e90-dd282383dd90/resource/1670d3a6-a89f-40cd-80c9-bf580b27e08e/download/central_african_republic_uscb_202303.xlsx
+  401,471 bytes
+  Ethnicity: 267 rows, 26 groups, denominator 'Total population'
+    177 rows skipped: another level, or no area name
+    admin1: 3,895,140 against the country's own 3,895,138 -- -2 fewer (-0.0%)
+    admin2: 3,895,111 against the country's own 3,895,138 -- 27 fewer (0.0%)
+    every one of 89 areas reaches its published total
+  Religion: 267 rows, 5 groups, denominator 'Total population'
+    177 rows skipped: another level, or no area name
+    admin1: 3,836,734 against the country's own 3,836,735 -- 1 fewer (0.0%)
+    admin2: 3,836,739 against the country's own 3,836,735 -- -4 fewer (-0.0%)
+    every one of 89 areas reaches its published total
+  Language: 267 rows, 78 groups, denominator 'Total population'
+    177 rows skipped: another level, or no area name
+    admin1: 3,726,658 against the country's own 3,726,679 -- 21 fewer (0.0%)
+    admin2: 3,726,562 against the country's own 3,726,679 -- 117 fewer (0.0%)
+    every one of 89 areas reaches its published total
+  wrote data/processed/car_prefecture.json (925 kB)
+  89 areas: 17 admin1, 72 admin2
+Democratic Republic of the Congo: https://data.humdata.org/dataset/881bdaa3-6d4c-408b-88dc-aed0ecc0d119/resource/a4a72c31-af0d-4b0d-975b-9eadf6d5c103/download/democratic-republic-of-the-congo_uscb_202103.xlsx
+  297,896 bytes
+  Tribe and Religion [TRB_]: 191 rows, 105 groups, denominator 'Sample size'
+    164 rows skipped: another level, or no area name
+    admin1: 31,755 against the country's own 31,755 -- exactly
+    every one of 26 areas reaches its published total
+  Tribe and Religion [RLG_]: 191 rows, 9 groups, denominator 'Sample size'
+    164 rows skipped: another level, or no area name
+    admin1: 31,755 against the country's own 31,755 -- exactly
+    every one of 26 areas reaches its published total
+  wrote data/processed/drc_province.json (131 kB)
+  26 areas: 26 admin1
+  2 USCB workbooks; using 'Colombia_uscb_202210.xlsx'
+Colombia: https://data.humdata.org/dataset/e72c805d-40e1-4fa1-b32d-0bc77c2bf903/resource/5469e274-3f70-4288-8dc0-cd852629ac4c/download/colombia_uscb_202210.xlsx
+  8,634,434 bytes
+  Individuals [ETH_]: 4310 rows, 7 groups, denominator 'Total population with self-reported ethnicity'
+    3154 rows skipped: another level, or no area name
+    admin1: 44,164,417 against the country's own 44,164,417 -- exactly
+    admin2: 44,164,417 against the country's own 44,164,417 -- exactly
+    every one of 1155 areas reaches its published total
+  wrote data/processed/colombia_department.json (3096 kB)
+  1155 areas: 33 admin1, 1122 admin2
+Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
+  1,759,157 bytes
+  Religion: 851 rows, 6 groups, by sex, no published denominator
+    6 groups reconcile by sex across 5070 cells
+    743 rows skipped: another level, or no area name
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  Ethnicity: 108 rows, 93 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  Language: 108 rows, 91 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  wrote data/processed/ethiopia_region.json (1586 kB)
+  97 areas: 13 admin1, 84 admin2
+  2 USCB workbooks; using 'Jamaica_uscb_202302.xlsx'
+Jamaica: https://data.humdata.org/dataset/cd75b1bc-ec9a-4ab3-9f7a-b36a0ab71626/resource/2a0c52bb-9a55-44fa-b4d2-68966bfcc85d/download/jamaica_uscb_202302.xlsx
+  438,450 bytes
+  Ethnicity and Religion [ETH_]: 15 rows, 7 groups, denominator 'Total population (ethnicity)'
+    admin1: 2,683,707 against the country's own 2,683,707 -- exactly
+    every one of 14 areas reaches its published total
+  Ethnicity and Religion [RLG_]: 15 rows, 19 groups, denominator 'Total population (religion)'
+    admin1: 2,678,981 against the country's own 2,678,981 -- exactly
+    every one of 14 areas reaches its published total
+  wrote data/processed/jamaica_parish.json (60 kB)
+  14 areas: 14 admin1
+Mali: https://data.humdata.org/dataset/54941a2a-9546-4885-a12c-80c34eaa20cf/resource/00e9ae0f-0822-4235-97b3-c2c1d125efb3/download/mali_uscb_202211.xlsx
+  594,053 bytes
+  Language: 60 rows, 22 groups, no published denominator
+    50 rows skipped: another level, or no area name
+    admin1: 11,109,312 against the country's own 11,109,312 -- exactly
+  wrote data/processed/mali_region.json (32 kB)
+  9 areas: 9 admin1
+Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
+  1,302,201 bytes
+  Ethnicity [ETH_]: 426 rows, 33 groups, denominator 'Total population, ethnicity'
+    330 rows skipped: another level, or no area name
+    admin1: 47,798,404 against the country's own 47,798,404 -- exactly
+    admin2: 47,798,404 against the country's own 47,798,404 -- exactly
+    3 of 95 areas do not reach their published total; the map shows the remainder as unaccounted:
+      MYITKYINĀ: groups come to 406,649 against a published 399,318 (-1.8%)
+      YAMETHIN: groups come to 521,433 against a published 530,143 (+1.6%)
+      KACHIN STATE: groups come to 1,335,021 against a published 1,327,689 (-0.6%)
+  Ethnicity [RLG_]: 426 rows, 6 groups, denominator 'Total population, religion'
+    330 rows skipped: another level, or no area name
+    admin1: 49,013,525 against the country's own 49,013,525 -- exactly
+    admin2: 49,013,525 against the country's own 49,013,525 -- exactly
+    every one of 95 areas reaches its published total
+  wrote data/processed/myanmar_state.json (311 kB)
+  95 areas: 15 admin1, 80 admin2
+Philippines: https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15/resource/5acff37e-0c02-4d89-bbd2-1825ee98916c/download/philippines_uscb_202402.xlsx
+  56,136,814 bytes
+  Religion: 134 rows, 129 groups, denominator 'Household population'
+    admin1: 108,667,043 against the country's own 108,667,043 -- exactly
+    admin2: 108,667,043 against the country's own 108,667,043 -- exactly
+    every one of 133 areas reaches its published total
+  Ethnicity: 134 rows, 290 groups, denominator 'Household population'
+    admin1: 108,648,489 against the country's own 108,648,407 -- -82 fewer (-0.0%)
+    admin2: 108,648,563 against the country's own 108,648,407 -- -156 fewer (-0.0%)
+    3 of 133 areas do not reach their published total; the map shows the remainder as unaccounted:
+      ORIENTAL MINDORO: groups come to 894,597 against a published 906,661 (+1.3%)
+      OCCIDENTAL MINDORO: groups come to 515,196 against a published 521,444 (+1.2%)
+      MIMAROPA: groups come to 3,193,972 against a published 3,212,287 (+0.6%)
+  wrote data/processed/philippines_province.json (4202 kB)
+  133 areas: 17 admin1, 116 admin2
+Ukraine: https://data.humdata.org/dataset/45c19756-9d0b-4673-9de4-fc47168c369a/resource/7f1ace67-fd49-4d2a-8b25-cc0561b5145b/download/ukraine_uscb_201905.xlsx
+  4,486,575 bytes
+  Language: 700 rows, 10 groups, denominator 'Total Population'
+    25 areas at level 1 built by adding up the level below
+    672 rows skipped: another level, or no area name
+    admin1: 48,121,632 against the country's own 48,121,632 -- exactly
+    3 of 27 areas do not reach their published total; the map shows the remainder as unaccounted:
+      KHERSONS’KA OBLAST’: groups come to 1,164,267 against a published 1,172,689 (+0.7%)
+      MYKOLAYIVS’KA OBLAST’: groups come to 1,253,868 against a published 1,262,899 (+0.7%)
+      KIROVOHRADS’KA OBLAST’: groups come to 1,118,568 against a published 1,125,704 (+0.6%)
+  Nationality-Language [NL_ETH_]: 700 rows, 134 groups, no published denominator
+    25 areas at level 1 built by adding up the level below
+    672 rows skipped: another level, or no area name
+    admin1: 48,186,051 against the country's own 48,186,051 -- exactly
+  wrote data/processed/ukraine_oblast.json (184 kB)
+  27 areas: 27 admin1

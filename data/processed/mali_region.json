@@ -79,6 +79,16 @@
         "count": 4475
       },
       {
+        "group": "Bozo",
+        "pct": 0.2,
+        "count": 2342
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.2,
+        "count": 2523
+      },
+      {
         "group": "Senufo",
         "pct": 0.2,
         "count": 2322
@@ -87,16 +97,6 @@
         "group": "Tamasheq",
         "pct": 0.2,
         "count": 3207
-      },
-      {
-        "group": "Minianka",
-        "pct": 0.2,
-        "count": 2523
-      },
-      {
-        "group": "Bozo",
-        "pct": 0.2,
-        "count": 2342
       },
       {
         "group": "Dafing",
@@ -109,9 +109,9 @@
         "count": 929
       },
       {
-        "group": "Moorish",
+        "group": "Arabic",
         "pct": 0.0,
-        "count": 697
+        "count": 447
       },
       {
         "group": "Hausa",
@@ -119,14 +119,14 @@
         "count": 234
       },
       {
+        "group": "Moorish",
+        "pct": 0.0,
+        "count": 697
+      },
+      {
         "group": "Samogo",
         "pct": 0.0,
         "count": 607
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 447
       }
     ],
     "ethnicity": {
@@ -210,14 +210,14 @@
         "count": 5032
       },
       {
-        "group": "Hausa",
-        "pct": 0.5,
-        "count": 1976
-      },
-      {
         "group": "Bozo",
         "pct": 0.5,
         "count": 1960
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.5,
+        "count": 1976
       },
       {
         "group": "Malinke",
@@ -230,9 +230,9 @@
         "count": 928
       },
       {
-        "group": "Maraka/soninke",
+        "group": "Bobo",
         "pct": 0.1,
-        "count": 342
+        "count": 498
       },
       {
         "group": "Dogon",
@@ -240,19 +240,9 @@
         "count": 527
       },
       {
-        "group": "Bobo",
+        "group": "Maraka/soninke",
         "pct": 0.1,
-        "count": 498
-      },
-      {
-        "group": "Kassonke",
-        "pct": 0.0,
-        "count": 197
-      },
-      {
-        "group": "Senufo",
-        "pct": 0.0,
-        "count": 119
+        "count": 342
       },
       {
         "group": "Dafing",
@@ -260,9 +250,19 @@
         "count": 62
       },
       {
+        "group": "Kassonke",
+        "pct": 0.0,
+        "count": 197
+      },
+      {
         "group": "Minianka",
         "pct": 0.0,
         "count": 78
+      },
+      {
+        "group": "Other foreign language",
+        "pct": 0.0,
+        "count": 160
       },
       {
         "group": "Samogo",
@@ -270,9 +270,9 @@
         "count": 86
       },
       {
-        "group": "Other foreign language",
+        "group": "Senufo",
         "pct": 0.0,
-        "count": 160
+        "count": 119
       }
     ],
     "ethnicity": {
@@ -356,21 +356,6 @@
         "count": 5634
       },
       {
-        "group": "Sonrai/djerma",
-        "pct": 0.1,
-        "count": 2002
-      },
-      {
-        "group": "Dogon",
-        "pct": 0.1,
-        "count": 1053
-      },
-      {
-        "group": "Tamasheq",
-        "pct": 0.1,
-        "count": 1587
-      },
-      {
         "group": "Bobo",
         "pct": 0.1,
         "count": 938
@@ -379,6 +364,11 @@
         "group": "Bozo",
         "pct": 0.1,
         "count": 1257
+      },
+      {
+        "group": "Dogon",
+        "pct": 0.1,
+        "count": 1053
       },
       {
         "group": "Other African languages",
@@ -391,9 +381,19 @@
         "count": 1351
       },
       {
-        "group": "Senufo",
+        "group": "Sonrai/djerma",
+        "pct": 0.1,
+        "count": 2002
+      },
+      {
+        "group": "Tamasheq",
+        "pct": 0.1,
+        "count": 1587
+      },
+      {
+        "group": "Arabic",
         "pct": 0.0,
-        "count": 434
+        "count": 129
       },
       {
         "group": "Dafing",
@@ -401,14 +401,14 @@
         "count": 225
       },
       {
-        "group": "Minianka",
-        "pct": 0.0,
-        "count": 493
-      },
-      {
         "group": "Hausa",
         "pct": 0.0,
         "count": 262
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.0,
+        "count": 493
       },
       {
         "group": "Samogo",
@@ -416,9 +416,9 @@
         "count": 271
       },
       {
-        "group": "Arabic",
+        "group": "Senufo",
         "pct": 0.0,
-        "count": 129
+        "count": 434
       }
     ],
     "ethnicity": {
@@ -512,19 +512,14 @@
         "count": 90
       },
       {
-        "group": "Fula/fulfulbe",
-        "pct": 0.1,
-        "count": 43
-      },
-      {
-        "group": "Maraka/soninke",
-        "pct": 0.1,
-        "count": 28
-      },
-      {
         "group": "Bobo",
         "pct": 0.1,
         "count": 63
+      },
+      {
+        "group": "Fula/fulfulbe",
+        "pct": 0.1,
+        "count": 43
       },
       {
         "group": "Hausa",
@@ -532,24 +527,29 @@
         "count": 44
       },
       {
+        "group": "Maraka/soninke",
+        "pct": 0.1,
+        "count": 28
+      },
+      {
         "group": "Other African languages",
         "pct": 0.1,
         "count": 52
       },
       {
-        "group": "Kassonke",
+        "group": "Bozo",
         "pct": 0.0,
-        "count": 18
-      },
-      {
-        "group": "Senufo",
-        "pct": 0.0,
-        "count": 23
+        "count": 17
       },
       {
         "group": "Dafing",
         "pct": 0.0,
         "count": 8
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.0,
+        "count": 18
       },
       {
         "group": "Minianka",
@@ -562,9 +562,9 @@
         "count": 11
       },
       {
-        "group": "Bozo",
+        "group": "Senufo",
         "pct": 0.0,
-        "count": 17
+        "count": 23
       }
     ],
     "ethnicity": {
@@ -638,11 +638,6 @@
         "count": 13155
       },
       {
-        "group": "Sonrai/djerma",
-        "pct": 0.6,
-        "count": 10169
-      },
-      {
         "group": "Bobo",
         "pct": 0.6,
         "count": 10405
@@ -653,9 +648,9 @@
         "count": 10236
       },
       {
-        "group": "Tamasheq",
-        "pct": 0.2,
-        "count": 4242
+        "group": "Sonrai/djerma",
+        "pct": 0.6,
+        "count": 10169
       },
       {
         "group": "Bozo",
@@ -668,24 +663,19 @@
         "count": 2978
       },
       {
+        "group": "Tamasheq",
+        "pct": 0.2,
+        "count": 4242
+      },
+      {
         "group": "Kassonke",
         "pct": 0.1,
         "count": 2290
       },
       {
-        "group": "Senufo",
-        "pct": 0.1,
-        "count": 1527
-      },
-      {
         "group": "Minianka",
         "pct": 0.1,
         "count": 2512
-      },
-      {
-        "group": "Samogo",
-        "pct": 0.1,
-        "count": 1177
       },
       {
         "group": "Other African languages",
@@ -698,6 +688,21 @@
         "count": 2024
       },
       {
+        "group": "Samogo",
+        "pct": 0.1,
+        "count": 1177
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.1,
+        "count": 1527
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 325
+      },
+      {
         "group": "Dafing",
         "pct": 0.0,
         "count": 795
@@ -706,11 +711,6 @@
         "group": "Hausa",
         "pct": 0.0,
         "count": 92
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 325
       }
     ],
     "ethnicity": {
@@ -831,14 +831,14 @@
         "count": 3264
       },
       {
-        "group": "Kassonke",
-        "pct": 0.1,
-        "count": 1436
-      },
-      {
         "group": "Arabic",
         "pct": 0.1,
         "count": 2001
+      },
+      {
+        "group": "Kassonke",
+        "pct": 0.1,
+        "count": 1436
       },
       {
         "group": "Other foreign language",
@@ -846,9 +846,9 @@
         "count": 1015
       },
       {
-        "group": "Senufo",
+        "group": "Hausa",
         "pct": 0.0,
-        "count": 442
+        "count": 274
       },
       {
         "group": "Minianka",
@@ -856,9 +856,9 @@
         "count": 728
       },
       {
-        "group": "Hausa",
+        "group": "Senufo",
         "pct": 0.0,
-        "count": 274
+        "count": 442
       }
     ],
     "ethnicity": {
@@ -947,14 +947,14 @@
         "count": 13176
       },
       {
-        "group": "Sonrai/djerma",
-        "pct": 0.3,
-        "count": 5208
-      },
-      {
         "group": "Bozo",
         "pct": 0.3,
         "count": 5337
+      },
+      {
+        "group": "Sonrai/djerma",
+        "pct": 0.3,
+        "count": 5208
       },
       {
         "group": "Maraka/soninke",
@@ -972,19 +972,29 @@
         "count": 2112
       },
       {
-        "group": "Other Mali languages",
-        "pct": 0.1,
-        "count": 1061
-      },
-      {
         "group": "Other African languages",
         "pct": 0.1,
         "count": 1435
       },
       {
+        "group": "Other Mali languages",
+        "pct": 0.1,
+        "count": 1061
+      },
+      {
         "group": "Other foreign language",
         "pct": 0.1,
         "count": 1110
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 374
       },
       {
         "group": "Kassonke",
@@ -995,16 +1005,6 @@
         "group": "Moorish",
         "pct": 0.0,
         "count": 599
-      },
-      {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 374
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 150
       }
     ],
     "ethnicity": {
@@ -1123,14 +1123,24 @@
         "count": 2268
       },
       {
+        "group": "Other foreign language",
+        "pct": 0.1,
+        "count": 2562
+      },
+      {
         "group": "Samogo",
         "pct": 0.1,
         "count": 2099
       },
       {
-        "group": "Other foreign language",
-        "pct": 0.1,
-        "count": 2562
+        "group": "Arabic",
+        "pct": 0.0,
+        "count": 234
+      },
+      {
+        "group": "Hausa",
+        "pct": 0.0,
+        "count": 148
       },
       {
         "group": "Kassonke",
@@ -1141,16 +1151,6 @@
         "group": "Senufo",
         "pct": 0.0,
         "count": 516
-      },
-      {
-        "group": "Hausa",
-        "pct": 0.0,
-        "count": 148
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.0,
-        "count": 234
       }
     ],
     "ethnicity": {
@@ -1244,14 +1244,14 @@
         "count": 945
       },
       {
-        "group": "Dogon",
-        "pct": 0.1,
-        "count": 362
-      },
-      {
         "group": "Bobo",
         "pct": 0.1,
         "count": 306
+      },
+      {
+        "group": "Dogon",
+        "pct": 0.1,
+        "count": 362
       },
       {
         "group": "Other Mali languages",
@@ -1259,24 +1259,9 @@
         "count": 270
       },
       {
-        "group": "Kassonke",
-        "pct": 0.0,
-        "count": 223
-      },
-      {
-        "group": "Senufo",
-        "pct": 0.0,
-        "count": 189
-      },
-      {
         "group": "Dafing",
         "pct": 0.0,
         "count": 52
-      },
-      {
-        "group": "Minianka",
-        "pct": 0.0,
-        "count": 107
       },
       {
         "group": "Hausa",
@@ -1284,9 +1269,14 @@
         "count": 158
       },
       {
-        "group": "Samogo",
+        "group": "Kassonke",
         "pct": 0.0,
-        "count": 131
+        "count": 223
+      },
+      {
+        "group": "Minianka",
+        "pct": 0.0,
+        "count": 107
       },
       {
         "group": "Other African languages",
@@ -1297,6 +1287,16 @@
         "group": "Other foreign language",
         "pct": 0.0,
         "count": 229
+      },
+      {
+        "group": "Samogo",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Senufo",
+        "pct": 0.0,
+        "count": 189
       }
     ],
     "ethnicity": {

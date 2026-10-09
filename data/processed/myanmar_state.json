@@ -56,7 +56,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 77.4,
         "count": 4848765
       },
@@ -81,16 +81,6 @@
         "count": 4480
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 856
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 288
-      },
-      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 185
@@ -99,6 +89,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 25
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 288
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 856
       }
     ],
     "sources": [
@@ -174,7 +174,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 92.5,
         "count": 4426314
       },
@@ -199,16 +199,6 @@
         "count": 7944
       },
       {
-        "group": "Pa'o",
-        "pct": 0.1,
-        "count": 4500
-      },
-      {
-        "group": "Palaung",
-        "pct": 0.1,
-        "count": 6654
-      },
-      {
         "group": "Danu",
         "pct": 0.1,
         "count": 3460
@@ -219,19 +209,24 @@
         "count": 3515
       },
       {
-        "group": "Taungyo",
-        "pct": 0.1,
-        "count": 2705
-      },
-      {
         "group": "Other",
         "pct": 0.1,
         "count": 4119
       },
       {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 1963
+        "group": "Pa'o",
+        "pct": 0.1,
+        "count": 4500
+      },
+      {
+        "group": "Palaung",
+        "pct": 0.1,
+        "count": 6654
+      },
+      {
+        "group": "Taungyo",
+        "pct": 0.1,
+        "count": 2705
       },
       {
         "group": "Kachin",
@@ -242,6 +237,11 @@
         "group": "Kayan",
         "pct": 0.0,
         "count": 2320
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 1963
       }
     ],
     "sources": [
@@ -302,14 +302,14 @@
         "count": 4409
       },
       {
-        "group": "Islamic",
-        "pct": 0.0,
-        "count": 105
-      },
-      {
         "group": "Hindu",
         "pct": 0.0,
         "count": 117
+      },
+      {
+        "group": "Islamic",
+        "pct": 0.0,
+        "count": 105
       }
     ],
     "language": {
@@ -327,24 +327,9 @@
         "count": 18402
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 0.7,
         "count": 3762
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 41
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 11
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 12
       },
       {
         "group": "Kachin",
@@ -352,14 +337,29 @@
         "count": 13
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
         "group": "Kayah",
         "pct": 0.0,
         "count": 3
       },
       {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 65
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 11
       }
     ],
     "sources": [
@@ -445,7 +445,7 @@
         "count": 544539
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 34.3,
         "count": 455020
       },
@@ -485,14 +485,14 @@
         "count": 2
       },
       {
-        "group": "Kayah",
-        "pct": 0.0,
-        "count": 306
-      },
-      {
         "group": "Foreign",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 306
       },
       {
         "group": "Other",
@@ -578,7 +578,7 @@
         "count": 168426
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 15.2,
         "count": 41501
       },
@@ -593,24 +593,24 @@
         "count": 21449
       },
       {
-        "group": "Rakhine",
-        "pct": 0.2,
-        "count": 516
-      },
-      {
         "group": "Chin",
         "pct": 0.2,
         "count": 460
       },
       {
-        "group": "Mon",
-        "pct": 0.1,
-        "count": 368
+        "group": "Rakhine",
+        "pct": 0.2,
+        "count": 516
       },
       {
         "group": "Kachin",
         "pct": 0.1,
         "count": 188
+      },
+      {
+        "group": "Mon",
+        "pct": 0.1,
+        "count": 368
       },
       {
         "group": "Other",
@@ -696,7 +696,7 @@
         "count": 918371
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 16.3,
         "count": 247104
       },
@@ -819,7 +819,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 97.4,
         "count": 4058145
       },
@@ -829,29 +829,14 @@
         "count": 106475
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 423
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 304
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 638
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 86
-      },
-      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 197
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 423
       },
       {
         "group": "Kayah",
@@ -859,9 +844,24 @@
         "count": 143
       },
       {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 2009
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 638
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 304
       }
     ],
     "sources": [
@@ -937,7 +937,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 96.5,
         "count": 5482273
       },
@@ -962,14 +962,14 @@
         "count": 2865
       },
       {
-        "group": "Palaung",
-        "pct": 0.1,
-        "count": 3960
-      },
-      {
         "group": "Lisu",
         "pct": 0.1,
         "count": 3270
+      },
+      {
+        "group": "Palaung",
+        "pct": 0.1,
+        "count": 3960
       },
       {
         "group": "Karen",
@@ -977,9 +977,9 @@
         "count": 2751
       },
       {
-        "group": "Rakhine",
+        "group": "Kayah",
         "pct": 0.0,
-        "count": 1484
+        "count": 274
       },
       {
         "group": "Mon",
@@ -987,9 +987,9 @@
         "count": 367
       },
       {
-        "group": "Kayah",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 274
+        "count": 1484
       }
     ],
     "sources": [
@@ -1070,7 +1070,7 @@
         "count": 827503
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 36.3,
         "count": 769501
       },
@@ -1095,14 +1095,19 @@
         "count": 4899
       },
       {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 1036
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 114
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 469
+      },
+      {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 11
       },
       {
         "group": "Kachin",
@@ -1115,14 +1120,9 @@
         "count": 103
       },
       {
-        "group": "Chinese",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 469
-      },
-      {
-        "group": "Foreign",
-        "pct": 0.0,
-        "count": 11
+        "count": 1036
       }
     ],
     "sources": [
@@ -1198,7 +1198,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 96.5,
         "count": 1057183
       },
@@ -1223,9 +1223,9 @@
         "count": 2848
       },
       {
-        "group": "Shan",
+        "group": "Indian (Myanmar)",
         "pct": 0.1,
-        "count": 923
+        "count": 1147
       },
       {
         "group": "Rakhine",
@@ -1233,19 +1233,9 @@
         "count": 666
       },
       {
-        "group": "Indian",
+        "group": "Shan",
         "pct": 0.1,
-        "count": 1147
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 200
-      },
-      {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 511
+        "count": 923
       },
       {
         "group": "Chinese",
@@ -1256,6 +1246,16 @@
         "group": "Foreign",
         "pct": 0.0,
         "count": 32
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 511
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 200
       }
     ],
     "sources": [
@@ -1346,7 +1346,7 @@
         "count": 104977
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 0.7,
         "count": 15252
       },
@@ -1356,24 +1356,14 @@
         "count": 9562
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 350
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 94
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 95
-      },
-      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 41
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 350
       },
       {
         "group": "Kayah",
@@ -1381,9 +1371,19 @@
         "count": 6
       },
       {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 101
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 94
       }
     ],
     "sources": [
@@ -1459,7 +1459,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 87.5,
         "count": 4727211
       },
@@ -1499,24 +1499,14 @@
         "count": 6349
       },
       {
-        "group": "Karen",
+        "group": "Foreign",
         "pct": 0.0,
-        "count": 976
+        "count": 51
       },
       {
-        "group": "Rakhine",
+        "group": "Indian (Myanmar)",
         "pct": 0.0,
-        "count": 1056
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 128
-      },
-      {
-        "group": "Kayah",
-        "pct": 0.0,
-        "count": 48
+        "count": 5
       },
       {
         "group": "Intha",
@@ -1524,19 +1514,29 @@
         "count": 2
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 976
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
         "group": "Lisu",
         "pct": 0.0,
         "count": 878
       },
       {
-        "group": "Indian",
+        "group": "Mon",
         "pct": 0.0,
-        "count": 5
+        "count": 128
       },
       {
-        "group": "Foreign",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 51
+        "count": 1056
       }
     ],
     "sources": [
@@ -1627,7 +1627,7 @@
         "count": 653530
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 12.2,
         "count": 597317
       },
@@ -1717,19 +1717,14 @@
         "count": 7765
       },
       {
-        "group": "Yinn",
-        "pct": 0.2,
-        "count": 11362
-      },
-      {
         "group": "Kho Lone Li Shaw",
         "pct": 0.2,
         "count": 9798
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 4752
+        "group": "Yinn",
+        "pct": 0.2,
+        "count": 11362
       },
       {
         "group": "Chin",
@@ -1737,14 +1732,24 @@
         "count": 5425
       },
       {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 4650
+      },
+      {
         "group": "Myaing",
         "pct": 0.1,
         "count": 5922
       },
       {
-        "group": "Chinese",
+        "group": "Rakhine",
         "pct": 0.1,
-        "count": 4650
+        "count": 4752
+      },
+      {
+        "group": "Htanot",
+        "pct": 0.0,
+        "count": 1261
       },
       {
         "group": "Mon",
@@ -1755,11 +1760,6 @@
         "group": "Naga",
         "pct": 0.0,
         "count": 1
-      },
-      {
-        "group": "Htanot",
-        "pct": 0.0,
-        "count": 1261
       }
     ],
     "sources": [
@@ -1835,7 +1835,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 87.6,
         "count": 1193893
       },
@@ -1855,14 +1855,14 @@
         "count": 28209
       },
       {
-        "group": "Shan",
-        "pct": 0.2,
-        "count": 3297
-      },
-      {
         "group": "Rakhine",
         "pct": 0.2,
         "count": 2197
+      },
+      {
+        "group": "Shan",
+        "pct": 0.2,
+        "count": 3297
       },
       {
         "group": "Moken",
@@ -1875,6 +1875,11 @@
         "count": 121
       },
       {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 79
@@ -1883,11 +1888,6 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 66
-      },
-      {
-        "group": "Chinese",
-        "pct": 0.0,
-        "count": 1
       }
     ],
     "sources": [
@@ -1963,7 +1963,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 93.1,
         "count": 5889662
       },
@@ -1978,9 +1978,9 @@
         "count": 76116
       },
       {
-        "group": "Shan",
+        "group": "Chin",
         "pct": 0.4,
-        "count": 23399
+        "count": 23591
       },
       {
         "group": "Mon",
@@ -1988,14 +1988,14 @@
         "count": 26147
       },
       {
-        "group": "Chin",
-        "pct": 0.4,
-        "count": 23591
-      },
-      {
         "group": "Other",
         "pct": 0.4,
         "count": 23170
+      },
+      {
+        "group": "Shan",
+        "pct": 0.4,
+        "count": 23399
       },
       {
         "group": "Kachin",
@@ -2008,14 +2008,14 @@
         "count": 4032
       },
       {
-        "group": "Indian",
-        "pct": 0.0,
-        "count": 769
-      },
-      {
         "group": "Foreign",
         "pct": 0.0,
         "count": 13
+      },
+      {
+        "group": "Indian (Myanmar)",
+        "pct": 0.0,
+        "count": 769
       }
     ],
     "sources": [
@@ -2096,7 +2096,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 91.6,
         "count": 1066255
       },
@@ -2116,14 +2116,9 @@
         "count": 3279
       },
       {
-        "group": "Shan",
+        "group": "Kachin",
         "pct": 0.0,
-        "count": 103
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 340
+        "count": 37
       },
       {
         "group": "Mon",
@@ -2131,9 +2126,14 @@
         "count": 64
       },
       {
-        "group": "Kachin",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 37
+        "count": 340
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 103
       }
     ],
     "sources": [
@@ -2210,7 +2210,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 86.6,
         "count": 561668
       },
@@ -2225,16 +2225,6 @@
         "count": 555
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 13
@@ -2243,6 +2233,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 5
       }
     ],
     "sources": [
@@ -2324,7 +2324,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 65.0,
         "count": 636894
       },
@@ -2339,21 +2339,6 @@
         "count": 8834
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 59
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 126
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 44
@@ -2362,6 +2347,21 @@
         "group": "Kachin",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 126
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 59
       }
     ],
     "sources": [
@@ -2443,7 +2443,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 52.7,
         "count": 425051
       },
@@ -2463,16 +2463,6 @@
         "count": 884
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 251
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 89
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 88
@@ -2486,6 +2476,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 15
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 89
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 251
       }
     ],
     "sources": [
@@ -2567,7 +2567,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 71.0,
         "count": 1138747
       },
@@ -2587,16 +2587,6 @@
         "count": 1020
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 403
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 78
-      },
-      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 36
@@ -2605,6 +2595,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 9
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 78
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 403
       }
     ],
     "sources": [
@@ -2676,7 +2676,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 95.7,
         "count": 1020150
       },
@@ -2691,16 +2691,6 @@
         "count": 3351
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 49
@@ -2709,6 +2699,16 @@
         "group": "Kachin",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 35
       }
     ],
     "sources": [
@@ -2785,7 +2785,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 92.5,
         "count": 1608956
       },
@@ -2820,19 +2820,14 @@
         "count": 3460
       },
       {
-        "group": "Taungyo",
-        "pct": 0.2,
-        "count": 2705
-      },
-      {
         "group": "Other",
         "pct": 0.2,
         "count": 4119
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 937
+        "group": "Taungyo",
+        "pct": 0.2,
+        "count": 2705
       },
       {
         "group": "Chin",
@@ -2843,6 +2838,11 @@
         "group": "Kayan",
         "pct": 0.1,
         "count": 2320
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 937
       },
       {
         "group": "Kachin",
@@ -2924,7 +2924,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 96.0,
         "count": 855094
       },
@@ -2944,9 +2944,9 @@
         "count": 611
       },
       {
-        "group": "Shan",
+        "group": "Kachin",
         "pct": 0.0,
-        "count": 151
+        "count": 18
       },
       {
         "group": "Mon",
@@ -2954,9 +2954,9 @@
         "count": 47
       },
       {
-        "group": "Kachin",
+        "group": "Shan",
         "pct": 0.0,
-        "count": 18
+        "count": 151
       }
     ],
     "sources": [
@@ -3033,7 +3033,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 86.9,
         "count": 918942
       },
@@ -3063,14 +3063,14 @@
         "count": 880
       },
       {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 282
-      },
-      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 92
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 282
       }
     ],
     "sources": [
@@ -3147,7 +3147,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 95.0,
         "count": 1043322
       },
@@ -3157,24 +3157,14 @@
         "count": 47853
       },
       {
-        "group": "Shan",
-        "pct": 0.2,
-        "count": 1881
-      },
-      {
         "group": "Chin",
         "pct": 0.2,
         "count": 2644
       },
       {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 133
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 26
+        "group": "Shan",
+        "pct": 0.2,
+        "count": 1881
       },
       {
         "group": "Kachin",
@@ -3185,6 +3175,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 133
       }
     ],
     "sources": [
@@ -3248,14 +3248,14 @@
         "count": 1578
       },
       {
-        "group": "Islamic",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Hindu",
         "pct": 0.0,
         "count": 72
+      },
+      {
+        "group": "Islamic",
+        "pct": 0.0,
+        "count": 1
       }
     ],
     "language": {
@@ -3268,24 +3268,9 @@
         "count": 183774
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 0.7,
         "count": 1325
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 28
       },
       {
         "group": "Kachin",
@@ -3293,9 +3278,24 @@
         "count": 10
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 65
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 3
       }
     ],
     "sources": [
@@ -3372,7 +3372,7 @@
         "count": 97660
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 1.0,
         "count": 948
       },
@@ -3463,9 +3463,14 @@
         "count": 18368
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 0.2,
         "count": 266
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 1
       },
       {
         "group": "Karen",
@@ -3473,19 +3478,14 @@
         "count": 1
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Mon",
         "pct": 0.0,
         "count": 4
       },
       {
-        "group": "Kachin",
+        "group": "Shan",
         "pct": 0.0,
-        "count": 1
+        "count": 2
       }
     ],
     "sources": [
@@ -3557,9 +3557,14 @@
         "count": 68907
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 1.7,
         "count": 1223
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Karen",
@@ -3567,7 +3572,12 @@
         "count": 7
       },
       {
-        "group": "Shan",
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Mon",
         "pct": 0.0,
         "count": 6
       },
@@ -3577,19 +3587,9 @@
         "count": 6
       },
       {
-        "group": "Mon",
+        "group": "Shan",
         "pct": 0.0,
         "count": 6
-      },
-      {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Kayah",
-        "pct": 0.0,
-        "count": 3
       }
     ],
     "sources": [
@@ -3661,7 +3661,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 44.0,
         "count": 157078
       },
@@ -3681,24 +3681,24 @@
         "count": 631
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 257
-      },
-      {
         "group": "Chin",
         "pct": 0.1,
         "count": 267
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 18
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 257
       },
       {
         "group": "Kayah",
         "pct": 0.0,
         "count": 21
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 18
       }
     ],
     "sources": [
@@ -3775,7 +3775,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 44.5,
         "count": 208473
       },
@@ -3795,14 +3795,14 @@
         "count": 2307
       },
       {
-        "group": "Karen",
-        "pct": 0.4,
-        "count": 2096
-      },
-      {
         "group": "Chin",
         "pct": 0.4,
         "count": 1675
+      },
+      {
+        "group": "Karen",
+        "pct": 0.4,
+        "count": 2096
       },
       {
         "group": "Mon",
@@ -3899,7 +3899,7 @@
         "count": 254132
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 22.0,
         "count": 88043
       },
@@ -3919,24 +3919,24 @@
         "count": 1738
       },
       {
-        "group": "Karen",
-        "pct": 0.3,
-        "count": 1206
-      },
-      {
         "group": "Chin",
         "pct": 0.3,
         "count": 1174
       },
       {
-        "group": "Mon",
-        "pct": 0.1,
-        "count": 370
+        "group": "Karen",
+        "pct": 0.3,
+        "count": 1206
       },
       {
         "group": "Kayah",
         "pct": 0.1,
         "count": 216
+      },
+      {
+        "group": "Mon",
+        "pct": 0.1,
+        "count": 370
       }
     ],
     "sources": [
@@ -4013,7 +4013,7 @@
         "count": 4362
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 1.4,
         "count": 1426
       },
@@ -4028,16 +4028,6 @@
         "count": 54
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 50
@@ -4048,19 +4038,29 @@
         "count": 2
       },
       {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 48
+      },
+      {
         "group": "Kayah",
         "pct": 0.0,
         "count": 3
       },
       {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
         "group": "Naga",
         "pct": 0.0,
         "count": 13
-      },
-      {
-        "group": "Foreign",
-        "pct": 0.0,
-        "count": 1
       }
     ],
     "sources": [
@@ -4147,7 +4147,7 @@
         "count": 6307
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 14.3,
         "count": 5267
       },
@@ -4157,14 +4157,14 @@
         "count": 161
       },
       {
-        "group": "Mon",
-        "pct": 0.2,
-        "count": 70
-      },
-      {
         "group": "Chin",
         "pct": 0.2,
         "count": 85
+      },
+      {
+        "group": "Mon",
+        "pct": 0.2,
+        "count": 70
       },
       {
         "group": "Other",
@@ -4258,7 +4258,7 @@
         "count": 160451
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 15.3,
         "count": 36234
       },
@@ -4273,24 +4273,24 @@
         "count": 4712
       },
       {
-        "group": "Rakhine",
-        "pct": 0.2,
-        "count": 355
-      },
-      {
         "group": "Chin",
         "pct": 0.2,
         "count": 375
       },
       {
-        "group": "Mon",
-        "pct": 0.1,
-        "count": 298
+        "group": "Rakhine",
+        "pct": 0.2,
+        "count": 355
       },
       {
         "group": "Kachin",
         "pct": 0.1,
         "count": 153
+      },
+      {
+        "group": "Mon",
+        "pct": 0.1,
+        "count": 298
       },
       {
         "group": "Other",
@@ -4377,7 +4377,7 @@
         "count": 544474
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 8.6,
         "count": 66135
       },
@@ -4496,7 +4496,7 @@
         "count": 222164
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 24.7,
         "count": 121952
       },
@@ -4615,7 +4615,7 @@
         "count": 57153
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 41.8,
         "count": 56545
       },
@@ -4739,7 +4739,7 @@
         "count": 5843
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 2.1,
         "count": 2472
       },
@@ -4759,11 +4759,6 @@
         "count": 3
       },
       {
-        "group": "Pa'o",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 3
@@ -4772,6 +4767,11 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 7
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 10
       }
     ],
     "sources": [
@@ -4835,7 +4835,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 94.4,
         "count": 239817
       },
@@ -4845,19 +4845,14 @@
         "count": 14151
       },
       {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 10
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 29
       },
       {
         "group": "Mon",
@@ -4865,14 +4860,19 @@
         "count": 1
       },
       {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 5
-      },
-      {
         "group": "Other",
         "pct": 0.0,
         "count": 21
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 14
       }
     ],
     "sources": [
@@ -4949,7 +4949,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 99.5,
         "count": 1341033
       },
@@ -4959,19 +4959,19 @@
         "count": 6443
       },
       {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 203
       },
       {
-        "group": "Shan",
+        "group": "Kayah",
         "pct": 0.0,
-        "count": 106
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 130
+        "count": 129
       },
       {
         "group": "Mon",
@@ -4979,14 +4979,14 @@
         "count": 46
       },
       {
-        "group": "Kachin",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 98
+        "count": 130
       },
       {
-        "group": "Kayah",
+        "group": "Shan",
         "pct": 0.0,
-        "count": 129
+        "count": 106
       }
     ],
     "sources": [
@@ -5068,7 +5068,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 94.1,
         "count": 667786
       },
@@ -5078,29 +5078,14 @@
         "count": 41595
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 46
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 217
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 22
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 26
       },
       {
         "group": "Kayah",
@@ -5108,9 +5093,24 @@
         "count": 6
       },
       {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 51
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 217
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 46
       }
     ],
     "sources": [
@@ -5182,29 +5182,9 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 99.9,
         "count": 1138453
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 95
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 90
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 169
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 21
       },
       {
         "group": "Chin",
@@ -5217,14 +5197,34 @@
         "count": 52
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
         "group": "Kayah",
         "pct": 0.0,
         "count": 5
       },
       {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 23
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 169
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 90
       }
     ],
     "sources": [
@@ -5301,7 +5301,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 93.6,
         "count": 671056
       },
@@ -5316,19 +5316,19 @@
         "count": 1914
       },
       {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 89
       },
       {
-        "group": "Shan",
+        "group": "Kayah",
         "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 93
+        "count": 3
       },
       {
         "group": "Mon",
@@ -5336,14 +5336,14 @@
         "count": 4
       },
       {
-        "group": "Kachin",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 20
+        "count": 93
       },
       {
-        "group": "Kayah",
+        "group": "Shan",
         "pct": 0.0,
-        "count": 3
+        "count": 48
       }
     ],
     "sources": [
@@ -5415,7 +5415,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 96.1,
         "count": 681895
       },
@@ -5423,26 +5423,6 @@
         "group": "Other",
         "pct": 3.8,
         "count": 26762
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 95
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 175
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 129
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 24
       },
       {
         "group": "Chin",
@@ -5455,9 +5435,29 @@
         "count": 28
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
         "group": "Kayah",
         "pct": 0.0,
         "count": 7
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 175
       }
     ],
     "sources": [
@@ -5534,7 +5534,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 98.9,
         "count": 1267375
       },
@@ -5542,16 +5542,6 @@
         "group": "Shan",
         "pct": 0.6,
         "count": 8314
-      },
-      {
-        "group": "Karen",
-        "pct": 0.1,
-        "count": 1174
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 903
       },
       {
         "group": "Chin",
@@ -5564,14 +5554,24 @@
         "count": 1599
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 252
+        "group": "Karen",
+        "pct": 0.1,
+        "count": 1174
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 903
       },
       {
         "group": "Kayah",
         "pct": 0.0,
         "count": 176
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 252
       }
     ],
     "sources": [
@@ -5643,7 +5643,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 97.5,
         "count": 895654
       },
@@ -5651,26 +5651,6 @@
         "group": "Other",
         "pct": 2.4,
         "count": 22240
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 98
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 67
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 55
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 5
       },
       {
         "group": "Chin",
@@ -5681,6 +5661,26 @@
         "group": "Kachin",
         "pct": 0.0,
         "count": 37
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 98
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 67
       }
     ],
     "sources": [
@@ -5752,29 +5752,9 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 100.0,
         "count": 873187
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 16
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 42
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 36
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 6
       },
       {
         "group": "Chin",
@@ -5787,9 +5767,29 @@
         "count": 3
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 93
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 42
       }
     ],
     "sources": [
@@ -5861,24 +5861,9 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 100.0,
         "count": 540876
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 44
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 9
       },
       {
         "group": "Chin",
@@ -5891,9 +5876,24 @@
         "count": 3
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
         "group": "Kayah",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 44
       }
     ],
     "sources": [
@@ -5970,19 +5970,19 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 84.6,
         "count": 701934
-      },
-      {
-        "group": "Shan",
-        "pct": 5.1,
-        "count": 42251
       },
       {
         "group": "Kachin",
         "pct": 5.1,
         "count": 42532
+      },
+      {
+        "group": "Shan",
+        "pct": 5.1,
+        "count": 42251
       },
       {
         "group": "Other",
@@ -6000,19 +6000,19 @@
         "count": 3270
       },
       {
-        "group": "Karen",
-        "pct": 0.2,
-        "count": 1311
-      },
-      {
         "group": "Chin",
         "pct": 0.2,
         "count": 1496
       },
       {
-        "group": "Rakhine",
+        "group": "Karen",
+        "pct": 0.2,
+        "count": 1311
+      },
+      {
+        "group": "Kayah",
         "pct": 0.0,
-        "count": 342
+        "count": 89
       },
       {
         "group": "Mon",
@@ -6020,9 +6020,9 @@
         "count": 79
       },
       {
-        "group": "Kayah",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 89
+        "count": 342
       }
     ],
     "sources": [
@@ -6094,29 +6094,9 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 98.3,
         "count": 521352
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 23
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 1
       },
       {
         "group": "Chin",
@@ -6129,9 +6109,29 @@
         "count": 2
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
         "group": "Kayah",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 23
       }
     ],
     "sources": [
@@ -6213,7 +6213,7 @@
         "count": 737722
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 26.2,
         "count": 333427
       },
@@ -6243,9 +6243,14 @@
         "count": 51
       },
       {
-        "group": "Pa'o",
+        "group": "Chinese",
         "pct": 0.0,
-        "count": 78
+        "count": 469
+      },
+      {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Kachin",
@@ -6258,14 +6263,9 @@
         "count": 81
       },
       {
-        "group": "Chinese",
+        "group": "Pa'o",
         "pct": 0.0,
-        "count": 469
-      },
-      {
-        "group": "Foreign",
-        "pct": 0.0,
-        "count": 2
+        "count": 78
       }
     ],
     "sources": [
@@ -6342,7 +6342,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 51.3,
         "count": 436074
       },
@@ -6372,14 +6372,14 @@
         "count": 2833
       },
       {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 283
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 63
+      },
+      {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 9
       },
       {
         "group": "Kachin",
@@ -6392,9 +6392,9 @@
         "count": 22
       },
       {
-        "group": "Foreign",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 9
+        "count": 283
       }
     ],
     "sources": [
@@ -6471,7 +6471,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 94.0,
         "count": 566041
       },
@@ -6496,19 +6496,9 @@
         "count": 2848
       },
       {
-        "group": "Indian",
+        "group": "Indian (Myanmar)",
         "pct": 0.2,
         "count": 1124
-      },
-      {
-        "group": "Shan",
-        "pct": 0.1,
-        "count": 863
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 647
       },
       {
         "group": "Chinese",
@@ -6516,9 +6506,19 @@
         "count": 511
       },
       {
-        "group": "Mon",
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 647
+      },
+      {
+        "group": "Shan",
+        "pct": 0.1,
+        "count": 863
+      },
+      {
+        "group": "Foreign",
         "pct": 0.0,
-        "count": 192
+        "count": 32
       },
       {
         "group": "Kachin",
@@ -6526,9 +6526,9 @@
         "count": 80
       },
       {
-        "group": "Foreign",
+        "group": "Mon",
         "pct": 0.0,
-        "count": 32
+        "count": 192
       }
     ],
     "sources": [
@@ -6605,7 +6605,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 99.5,
         "count": 491142
       },
@@ -6620,26 +6620,6 @@
         "count": 369
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 80
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 60
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 19
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 118
@@ -6650,9 +6630,29 @@
         "count": 7
       },
       {
-        "group": "Indian",
+        "group": "Indian (Myanmar)",
         "pct": 0.0,
         "count": 23
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 60
       }
     ],
     "sources": [
@@ -6739,24 +6739,9 @@
         "count": 37518
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 0.8,
         "count": 3378
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 76
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 19
       },
       {
         "group": "Kachin",
@@ -6764,9 +6749,24 @@
         "count": 9
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 76
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 101
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 20
       }
     ],
     "sources": [
@@ -6850,7 +6850,7 @@
         "count": 74849
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 3.2,
         "count": 2458
       },
@@ -6858,6 +6858,11 @@
         "group": "Chin",
         "pct": 0.2,
         "count": 139
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 2
       },
       {
         "group": "Karen",
@@ -6868,11 +6873,6 @@
         "group": "Shan",
         "pct": 0.0,
         "count": 11
-      },
-      {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 2
       }
     ],
     "sources": [
@@ -6954,9 +6954,14 @@
         "count": 50568
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 0.6,
         "count": 4350
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 19
       },
       {
         "group": "Karen",
@@ -6964,19 +6969,14 @@
         "count": 33
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 21
-      },
-      {
         "group": "Mon",
         "pct": 0.0,
         "count": 15
       },
       {
-        "group": "Kachin",
+        "group": "Shan",
         "pct": 0.0,
-        "count": 19
+        "count": 21
       }
     ],
     "sources": [
@@ -7055,7 +7055,7 @@
         "count": 556892
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 0.2,
         "count": 877
       },
@@ -7065,14 +7065,14 @@
         "count": 705
       },
       {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 19
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 1
       },
       {
         "group": "Mon",
@@ -7080,7 +7080,7 @@
         "count": 2
       },
       {
-        "group": "Kachin",
+        "group": "Shan",
         "pct": 0.0,
         "count": 1
       }
@@ -7174,7 +7174,7 @@
         "count": 9562
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 1.3,
         "count": 4189
       },
@@ -7182,16 +7182,6 @@
         "group": "Karen",
         "pct": 0.1,
         "count": 202
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 41
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 59
       },
       {
         "group": "Kachin",
@@ -7202,6 +7192,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 6
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 59
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 41
       }
     ],
     "sources": [
@@ -7283,7 +7283,7 @@
         "count": 176677
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 16.7,
         "count": 40718
       },
@@ -7308,14 +7308,14 @@
         "count": 662
       },
       {
-        "group": "Rakhine",
-        "pct": 0.2,
-        "count": 393
-      },
-      {
         "group": "Lisu",
         "pct": 0.2,
         "count": 478
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.2,
+        "count": 393
       },
       {
         "group": "Karen",
@@ -7323,14 +7323,14 @@
         "count": 91
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 27
-      },
-      {
         "group": "Kayah",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 27
       }
     ],
     "sources": [
@@ -7407,7 +7407,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 68.5,
         "count": 346236
       },
@@ -7422,19 +7422,19 @@
         "count": 1791
       },
       {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 83
       },
       {
-        "group": "Shan",
+        "group": "Kayah",
         "pct": 0.0,
-        "count": 131
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 21
+        "count": 1
       },
       {
         "group": "Mon",
@@ -7442,14 +7442,14 @@
         "count": 3
       },
       {
-        "group": "Kachin",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 23
+        "count": 21
       },
       {
-        "group": "Kayah",
+        "group": "Shan",
         "pct": 0.0,
-        "count": 1
+        "count": 131
       }
     ],
     "sources": [
@@ -7521,24 +7521,9 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 100.0,
         "count": 393776
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 24
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 23
       },
       {
         "group": "Chin",
@@ -7551,6 +7536,11 @@
         "count": 34
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
         "group": "Kayah",
         "pct": 0.0,
         "count": 17
@@ -7559,6 +7549,16 @@
         "group": "Other",
         "pct": 0.0,
         "count": 19
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 20
       }
     ],
     "sources": [
@@ -7635,7 +7635,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 78.1,
         "count": 406195
       },
@@ -7670,16 +7670,6 @@
         "count": 275
       },
       {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 92
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 55
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 135
@@ -7690,9 +7680,19 @@
         "count": 11
       },
       {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
         "group": "Naga",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 92
       }
     ],
     "sources": [
@@ -7764,7 +7764,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 99.6,
         "count": 339219
       },
@@ -7784,29 +7784,9 @@
         "count": 446
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 79
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 51
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 9
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 36
-      },
-      {
-        "group": "Kayah",
-        "pct": 0.0,
-        "count": 1
       },
       {
         "group": "Intha",
@@ -7817,6 +7797,26 @@
         "group": "Kanan",
         "pct": 0.0,
         "count": 37
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 79
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 51
       }
     ],
     "sources": [
@@ -7888,7 +7888,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 95.0,
         "count": 153789
       },
@@ -7908,6 +7908,11 @@
         "count": 265
       },
       {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 45
@@ -7916,11 +7921,6 @@
         "group": "Rakhine",
         "pct": 0.0,
         "count": 39
-      },
-      {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 54
       }
     ],
     "sources": [
@@ -7997,7 +7997,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 99.6,
         "count": 756846
       },
@@ -8012,24 +8012,19 @@
         "count": 443
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 150
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 200
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 15
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 339
+      },
+      {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Indian (Myanmar)",
+        "pct": 0.0,
+        "count": 5
       },
       {
         "group": "Kachin",
@@ -8037,14 +8032,19 @@
         "count": 63
       },
       {
-        "group": "Indian",
+        "group": "Karen",
         "pct": 0.0,
-        "count": 5
+        "count": 150
       },
       {
-        "group": "Foreign",
+        "group": "Mon",
         "pct": 0.0,
-        "count": 47
+        "count": 15
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 200
       }
     ],
     "sources": [
@@ -8126,7 +8126,7 @@
         "count": 2905
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 1.7,
         "count": 2158
       },
@@ -8141,6 +8141,11 @@
         "count": 98
       },
       {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 10
@@ -8149,11 +8154,6 @@
         "group": "Rakhine",
         "pct": 0.0,
         "count": 13
-      },
-      {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 32
       }
     ],
     "sources": [
@@ -8230,29 +8230,9 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 99.9,
         "count": 512217
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 66
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 128
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 52
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 7
       },
       {
         "group": "Chin",
@@ -8265,7 +8245,17 @@
         "count": 79
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
         "group": "Kayah",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Mon",
         "pct": 0.0,
         "count": 7
       },
@@ -8273,6 +8263,16 @@
         "group": "Other",
         "pct": 0.0,
         "count": 154
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 128
       }
     ],
     "sources": [
@@ -8349,29 +8349,9 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 99.9,
         "count": 1130301
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 87
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 205
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 116
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 6
       },
       {
         "group": "Chin",
@@ -8379,9 +8359,19 @@
         "count": 206
       },
       {
+        "group": "Foreign",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
         "group": "Kachin",
         "pct": 0.0,
         "count": 88
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 87
       },
       {
         "group": "Kayah",
@@ -8389,14 +8379,24 @@
         "count": 10
       },
       {
-        "group": "Foreign",
+        "group": "Mon",
         "pct": 0.0,
-        "count": 4
+        "count": 6
       },
       {
         "group": "Other",
         "pct": 0.0,
         "count": 15
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 116
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 205
       }
     ],
     "sources": [
@@ -8473,7 +8473,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 48.5,
         "count": 55550
       },
@@ -8493,12 +8493,12 @@
         "count": 1630
       },
       {
-        "group": "Karen",
+        "group": "Kachin",
         "pct": 0.0,
-        "count": 33
+        "count": 41
       },
       {
-        "group": "Rakhine",
+        "group": "Karen",
         "pct": 0.0,
         "count": 33
       },
@@ -8508,9 +8508,9 @@
         "count": 6
       },
       {
-        "group": "Kachin",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 41
+        "count": 33
       }
     ],
     "sources": [
@@ -8587,24 +8587,9 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 100.0,
         "count": 590206
-      },
-      {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 63
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 23
       },
       {
         "group": "Chin",
@@ -8617,9 +8602,24 @@
         "count": 30
       },
       {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
         "group": "Other",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 63
       }
     ],
     "sources": [
@@ -8708,7 +8708,7 @@
         "count": 10525
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 2.7,
         "count": 4427
       },
@@ -8728,29 +8728,9 @@
         "count": 518
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 33
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 22
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 12
-      },
-      {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 10
       },
       {
         "group": "Intha",
@@ -8758,9 +8738,29 @@
         "count": 61
       },
       {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
         "group": "Kayan",
         "pct": 0.0,
         "count": 2
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 35
       }
     ],
     "sources": [
@@ -8857,7 +8857,7 @@
         "count": 19618
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 5.4,
         "count": 17571
       },
@@ -8882,16 +8882,6 @@
         "count": 2329
       },
       {
-        "group": "Karen",
-        "pct": 0.1,
-        "count": 294
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 311
-      },
-      {
         "group": "Chin",
         "pct": 0.1,
         "count": 169
@@ -8902,14 +8892,14 @@
         "count": 178
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 83
+        "group": "Karen",
+        "pct": 0.1,
+        "count": 294
       },
       {
-        "group": "Pa'o",
-        "pct": 0.0,
-        "count": 53
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 311
       },
       {
         "group": "Danu",
@@ -8922,9 +8912,9 @@
         "count": 74
       },
       {
-        "group": "Naga",
+        "group": "Kayan",
         "pct": 0.0,
-        "count": 1
+        "count": 24
       },
       {
         "group": "Kokang",
@@ -8932,9 +8922,14 @@
         "count": 136
       },
       {
-        "group": "Kayan",
+        "group": "Lisu",
         "pct": 0.0,
-        "count": 24
+        "count": 155
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 83
       },
       {
         "group": "Mong Wong",
@@ -8942,9 +8937,14 @@
         "count": 71
       },
       {
-        "group": "Lisu",
+        "group": "Naga",
         "pct": 0.0,
-        "count": 155
+        "count": 1
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 53
       }
     ],
     "sources": [
@@ -9016,7 +9016,7 @@
         "count": 85880
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 5.8,
         "count": 5602
       },
@@ -9031,14 +9031,14 @@
         "count": 441
       },
       {
+        "group": "Chin",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 27
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 20
       },
       {
         "group": "Mon",
@@ -9046,9 +9046,9 @@
         "count": 5
       },
       {
-        "group": "Chin",
+        "group": "Rakhine",
         "pct": 0.0,
-        "count": 26
+        "count": 20
       }
     ],
     "sources": [
@@ -9130,7 +9130,7 @@
         "count": 300207
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 14.2,
         "count": 73642
       },
@@ -9175,11 +9175,6 @@
         "count": 780
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 350
-      },
-      {
         "group": "Chin",
         "pct": 0.1,
         "count": 759
@@ -9190,9 +9185,29 @@
         "count": 261
       },
       {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 350
+      },
+      {
         "group": "Wa",
         "pct": 0.1,
         "count": 739
+      },
+      {
+        "group": "Intha",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Liz",
+        "pct": 0.0,
+        "count": 48
       },
       {
         "group": "Mon",
@@ -9203,21 +9218,6 @@
         "group": "Pa'o",
         "pct": 0.0,
         "count": 7
-      },
-      {
-        "group": "Kayah",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
-        "group": "Intha",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
-        "group": "Liz",
-        "pct": 0.0,
-        "count": 48
       }
     ],
     "sources": [
@@ -9304,7 +9304,7 @@
         "count": 28133
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 3.3,
         "count": 4300
       },
@@ -9339,14 +9339,14 @@
         "count": 668
       },
       {
-        "group": "Palaung",
-        "pct": 0.4,
-        "count": 536
-      },
-      {
         "group": "Other",
         "pct": 0.4,
         "count": 482
+      },
+      {
+        "group": "Palaung",
+        "pct": 0.4,
+        "count": 536
       },
       {
         "group": "Wa",
@@ -9354,17 +9354,7 @@
         "count": 108
       },
       {
-        "group": "Karen",
-        "pct": 0.0,
-        "count": 40
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 48
-      },
-      {
-        "group": "Mon",
+        "group": "Akha",
         "pct": 0.0,
         "count": 1
       },
@@ -9372,11 +9362,6 @@
         "group": "Chin",
         "pct": 0.0,
         "count": 25
-      },
-      {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 37
       },
       {
         "group": "Danu",
@@ -9389,9 +9374,29 @@
         "count": 29
       },
       {
-        "group": "Akha",
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Karen",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Kho Lone Li Shaw",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Mon",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 48
       },
       {
         "group": "Taungyo",
@@ -9402,11 +9407,6 @@
         "group": "Yinn",
         "pct": 0.0,
         "count": 6
-      },
-      {
-        "group": "Kho Lone Li Shaw",
-        "pct": 0.0,
-        "count": 7
       }
     ],
     "sources": [
@@ -9505,7 +9505,7 @@
         "count": 61835
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 8.7,
         "count": 54712
       },
@@ -9560,24 +9560,14 @@
         "count": 1451
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 750
-      },
-      {
         "group": "Liz",
         "pct": 0.1,
         "count": 877
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 252
-      },
-      {
-        "group": "Pa'o",
-        "pct": 0.0,
-        "count": 50
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 750
       },
       {
         "group": "Danu",
@@ -9588,6 +9578,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 94
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 252
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 50
       }
     ],
     "sources": [
@@ -9679,7 +9679,7 @@
         "count": 44635
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 7.4,
         "count": 40720
       },
@@ -9714,19 +9714,9 @@
         "count": 854
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 593
-      },
-      {
         "group": "Chin",
         "pct": 0.1,
         "count": 566
-      },
-      {
-        "group": "Kachin",
-        "pct": 0.1,
-        "count": 701
       },
       {
         "group": "Danu",
@@ -9739,14 +9729,9 @@
         "count": 656
       },
       {
-        "group": "Wa",
+        "group": "Kachin",
         "pct": 0.1,
-        "count": 761
-      },
-      {
-        "group": "Taungyo",
-        "pct": 0.1,
-        "count": 416
+        "count": 701
       },
       {
         "group": "Liz",
@@ -9759,14 +9744,19 @@
         "count": 423
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 100
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 593
       },
       {
-        "group": "Kayah",
-        "pct": 0.0,
-        "count": 133
+        "group": "Taungyo",
+        "pct": 0.1,
+        "count": 416
+      },
+      {
+        "group": "Wa",
+        "pct": 0.1,
+        "count": 761
       },
       {
         "group": "Akha",
@@ -9774,9 +9764,19 @@
         "count": 140
       },
       {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
         "group": "Kayan",
         "pct": 0.0,
         "count": 217
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 100
       },
       {
         "group": "Mong Wong",
@@ -9875,7 +9875,7 @@
         "count": 9431
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 5.0,
         "count": 4737
       },
@@ -9905,9 +9905,9 @@
         "count": 107
       },
       {
-        "group": "Mon",
+        "group": "Foreign",
         "pct": 0.0,
-        "count": 3
+        "count": 38
       },
       {
         "group": "Kayah",
@@ -9920,19 +9920,19 @@
         "count": 11
       },
       {
-        "group": "Wa",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
         "group": "Liz",
         "pct": 0.0,
         "count": 5
       },
       {
-        "group": "Foreign",
+        "group": "Mon",
         "pct": 0.0,
-        "count": 38
+        "count": 3
+      },
+      {
+        "group": "Wa",
+        "pct": 0.0,
+        "count": 1
       }
     ],
     "sources": [
@@ -10039,7 +10039,7 @@
         "count": 5561
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 4.0,
         "count": 4825
       },
@@ -10079,24 +10079,19 @@
         "count": 32
       },
       {
-        "group": "Pa'o",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "Danu",
         "pct": 0.0,
         "count": 1
       },
       {
-        "group": "Kayah",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
         "group": "Intha",
         "pct": 0.0,
         "count": 21
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 8
       },
       {
         "group": "Kayan",
@@ -10112,6 +10107,11 @@
         "group": "Myaing",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 3
       }
     ],
     "sources": [
@@ -10183,7 +10183,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 63.4,
         "count": 66840
       },
@@ -10223,24 +10223,24 @@
         "count": 362
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 154
-      },
-      {
         "group": "Chin",
         "pct": 0.1,
         "count": 98
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 11
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 154
       },
       {
         "group": "Kayah",
         "pct": 0.0,
         "count": 19
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 11
       }
     ],
     "sources": [
@@ -10342,7 +10342,7 @@
         "count": 68083
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 5.8,
         "count": 26375
       },
@@ -10382,19 +10382,14 @@
         "count": 2922
       },
       {
-        "group": "Karen",
-        "pct": 0.1,
-        "count": 254
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 247
-      },
-      {
         "group": "Chin",
         "pct": 0.1,
         "count": 344
+      },
+      {
+        "group": "Karen",
+        "pct": 0.1,
+        "count": 254
       },
       {
         "group": "Myaing",
@@ -10402,9 +10397,9 @@
         "count": 317
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 84
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 247
       },
       {
         "group": "Danu",
@@ -10412,9 +10407,9 @@
         "count": 7
       },
       {
-        "group": "Lahu",
+        "group": "Intha",
         "pct": 0.0,
-        "count": 10
+        "count": 5
       },
       {
         "group": "Kayah",
@@ -10422,9 +10417,14 @@
         "count": 56
       },
       {
-        "group": "Intha",
+        "group": "Lahu",
         "pct": 0.0,
-        "count": 5
+        "count": 10
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 84
       },
       {
         "group": "Wa",
@@ -10516,17 +10516,17 @@
         "count": 5861
       },
       {
-        "group": "Shan",
-        "pct": 4.2,
-        "count": 4686
-      },
-      {
         "group": "Lisu",
         "pct": 4.2,
         "count": 4701
       },
       {
-        "group": "Burmese",
+        "group": "Shan",
+        "pct": 4.2,
+        "count": 4686
+      },
+      {
+        "group": "Bamar",
         "pct": 1.0,
         "count": 1080
       },
@@ -10541,6 +10541,11 @@
         "count": 226
       },
       {
+        "group": "Chin",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
         "group": "Karen",
         "pct": 0.0,
         "count": 40
@@ -10549,11 +10554,6 @@
         "group": "Rakhine",
         "pct": 0.0,
         "count": 10
-      },
-      {
-        "group": "Chin",
-        "pct": 0.0,
-        "count": 7
       }
     ],
     "sources": [
@@ -10640,7 +10640,7 @@
         "count": 64395
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 7.2,
         "count": 30439
       },
@@ -10695,14 +10695,9 @@
         "count": 303
       },
       {
-        "group": "Rakhine",
+        "group": "Akha",
         "pct": 0.0,
-        "count": 155
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 33
+        "count": 2
       },
       {
         "group": "Chin",
@@ -10720,9 +10715,14 @@
         "count": 12
       },
       {
-        "group": "Akha",
+        "group": "Mon",
         "pct": 0.0,
-        "count": 2
+        "count": 33
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 155
       }
     ],
     "sources": [
@@ -10819,7 +10819,7 @@
         "count": 22352
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 11.0,
         "count": 15415
       },
@@ -10864,6 +10864,11 @@
         "count": 291
       },
       {
+        "group": "Intha",
+        "pct": 0.1,
+        "count": 127
+      },
+      {
         "group": "Kayah",
         "pct": 0.1,
         "count": 126
@@ -10872,11 +10877,6 @@
         "group": "Kokang",
         "pct": 0.1,
         "count": 167
-      },
-      {
-        "group": "Intha",
-        "pct": 0.1,
-        "count": 127
       },
       {
         "group": "Lisu",
@@ -10889,16 +10889,6 @@
         "count": 147
       },
       {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 52
-      },
-      {
-        "group": "Pa'o",
-        "pct": 0.0,
-        "count": 69
-      },
-      {
         "group": "Danu",
         "pct": 0.0,
         "count": 58
@@ -10907,6 +10897,16 @@
         "group": "Kayan",
         "pct": 0.0,
         "count": 39
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 69
       }
     ],
     "sources": [
@@ -10983,7 +10983,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 25.3,
         "count": 245860
       },
@@ -11043,19 +11043,14 @@
         "count": 1724
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 1386
-      },
-      {
-        "group": "Mon",
-        "pct": 0.1,
-        "count": 535
-      },
-      {
         "group": "Chin",
         "pct": 0.1,
         "count": 1229
+      },
+      {
+        "group": "Htanot",
+        "pct": 0.1,
+        "count": 1261
       },
       {
         "group": "Kachin",
@@ -11073,14 +11068,14 @@
         "count": 611
       },
       {
-        "group": "Htanot",
+        "group": "Mon",
         "pct": 0.1,
-        "count": 1261
+        "count": 535
       },
       {
-        "group": "Lahu",
-        "pct": 0.0,
-        "count": 25
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 1386
       },
       {
         "group": "Akha",
@@ -11091,6 +11086,11 @@
         "group": "Chinese",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Lahu",
+        "pct": 0.0,
+        "count": 25
       }
     ],
     "sources": [
@@ -11192,7 +11192,7 @@
         "count": 819
       },
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 1.7,
         "count": 772
       },
@@ -11212,24 +11212,9 @@
         "count": 50
       },
       {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 17
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 17
-      },
-      {
-        "group": "Pa'o",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Palaung",
-        "pct": 0.0,
-        "count": 8
       },
       {
         "group": "Danu",
@@ -11245,6 +11230,21 @@
         "group": "Other",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Pa'o",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Palaung",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 17
       }
     ],
     "sources": [
@@ -11321,7 +11321,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 89.8,
         "count": 470580
       },
@@ -11341,16 +11341,6 @@
         "count": 4223
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 50
-      },
-      {
-        "group": "Rakhine",
-        "pct": 0.0,
-        "count": 158
-      },
-      {
         "group": "Chin",
         "pct": 0.0,
         "count": 16
@@ -11364,6 +11354,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 52
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 50
       }
     ],
     "sources": [
@@ -11440,7 +11440,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 80.7,
         "count": 139287
       },
@@ -11465,14 +11465,14 @@
         "count": 1933
       },
       {
-        "group": "Rakhine",
-        "pct": 0.6,
-        "count": 1063
-      },
-      {
         "group": "Moken",
         "pct": 0.6,
         "count": 1108
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.6,
+        "count": 1063
       },
       {
         "group": "Chin",
@@ -11566,7 +11566,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 87.6,
         "count": 584026
       },
@@ -11591,14 +11591,14 @@
         "count": 1314
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 976
-      },
-      {
         "group": "Moken",
         "pct": 0.1,
         "count": 636
+      },
+      {
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 976
       },
       {
         "group": "Chin",
@@ -11606,14 +11606,14 @@
         "count": 27
       },
       {
-        "group": "Kachin",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
         "group": "Chinese",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Kachin",
+        "pct": 0.0,
+        "count": 35
       }
     ],
     "sources": [
@@ -11690,7 +11690,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 92.5,
         "count": 747405
       },
@@ -11705,14 +11705,14 @@
         "count": 11727
       },
       {
-        "group": "Shan",
-        "pct": 0.8,
-        "count": 6104
-      },
-      {
         "group": "Other",
         "pct": 0.8,
         "count": 6795
+      },
+      {
+        "group": "Shan",
+        "pct": 0.8,
+        "count": 6104
       },
       {
         "group": "Mon",
@@ -11730,14 +11730,14 @@
         "count": 3091
       },
       {
-        "group": "Kayah",
-        "pct": 0.0,
-        "count": 368
-      },
-      {
         "group": "Foreign",
         "pct": 0.0,
         "count": 13
+      },
+      {
+        "group": "Kayah",
+        "pct": 0.0,
+        "count": 368
       }
     ],
     "sources": [
@@ -11814,7 +11814,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 94.3,
         "count": 1978726
       },
@@ -11933,7 +11933,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 92.1,
         "count": 1855222
       },
@@ -11948,14 +11948,14 @@
         "count": 18908
       },
       {
-        "group": "Shan",
-        "pct": 0.4,
-        "count": 8737
-      },
-      {
         "group": "Chin",
         "pct": 0.4,
         "count": 8742
+      },
+      {
+        "group": "Shan",
+        "pct": 0.4,
+        "count": 8737
       },
       {
         "group": "Mon",
@@ -12047,7 +12047,7 @@
     },
     "ethnicity": [
       {
-        "group": "Burmese",
+        "group": "Bamar",
         "pct": 93.2,
         "count": 1308309
       },
@@ -12062,24 +12062,14 @@
         "count": 4455
       },
       {
-        "group": "Rakhine",
-        "pct": 0.1,
-        "count": 1431
-      },
-      {
-        "group": "Indian",
+        "group": "Indian (Myanmar)",
         "pct": 0.1,
         "count": 769
       },
       {
-        "group": "Shan",
-        "pct": 0.0,
-        "count": 459
-      },
-      {
-        "group": "Mon",
-        "pct": 0.0,
-        "count": 387
+        "group": "Rakhine",
+        "pct": 0.1,
+        "count": 1431
       },
       {
         "group": "Chin",
@@ -12095,6 +12085,16 @@
         "group": "Kayah",
         "pct": 0.0,
         "count": 3
+      },
+      {
+        "group": "Mon",
+        "pct": 0.0,
+        "count": 387
+      },
+      {
+        "group": "Shan",
+        "pct": 0.0,
+        "count": 459
       }
     ],
     "sources": [
