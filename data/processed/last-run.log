@@ -1,49 +1,8 @@
-india_birthplace: Census of India 2011, table D-01
-  study 10671: 36 units, state(s) ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'], 295,176 bytes
-  study 10672: 4 units, state(s) ['35'], 37,226 bytes
-  study 10673: 24 units, state(s) ['28'], 183,930 bytes
-  study 10674: 17 units, state(s) ['12'], 121,587 bytes
-  study 10675: 28 units, state(s) ['18'], 205,356 bytes
-  study 10676: 39 units, state(s) ['10'], 280,432 bytes
-  study 10677: 2 units, state(s) ['04'], 25,193 bytes
-  study 10678: 19 units, state(s) ['22'], 142,398 bytes
-  study 10679: 2 units, state(s) ['26'], 24,179 bytes
-  study 10680: 3 units, state(s) ['25'], 30,533 bytes
-  study 10681: 10 units, state(s) ['07'], 84,482 bytes
-  study 10682: 3 units, state(s) ['30'], 33,216 bytes
-  study 10683: 27 units, state(s) ['24'], 206,636 bytes
-  study 10684: 22 units, state(s) ['06'], 170,712 bytes
-  study 10685: 13 units, state(s) ['02'], 100,748 bytes
-  study 10686: 23 units, state(s) ['01'], 162,942 bytes
-  study 10687: 25 units, state(s) ['20'], 182,821 bytes
-  study 10688: 31 units, state(s) ['29'], 230,447 bytes
-  study 10689: 15 units, state(s) ['32'], 121,582 bytes
-  study 10690: 2 units, state(s) ['31'], 22,736 bytes
-  study 10691: 51 units, state(s) ['23'], 362,586 bytes
-  study 10692: 36 units, state(s) ['27'], 271,166 bytes
-  study 10693: 10 units, state(s) ['14'], 75,311 bytes
-  study 10694: 8 units, state(s) ['17'], 63,589 bytes
-  study 10695: 9 units, state(s) ['15'], 69,007 bytes
-  study 10696: 12 units, state(s) ['13'], 89,076 bytes
-  study 10697: 31 units, state(s) ['21'], 223,768 bytes
-  study 10698: 5 units, state(s) ['34'], 44,322 bytes
-  study 10699: 21 units, state(s) ['03'], 167,086 bytes
-  study 10700: 34 units, state(s) ['08'], 250,675 bytes
-  study 10701: 5 units, state(s) ['11'], 44,319 bytes
-  study 10702: 33 units, state(s) ['33'], 249,748 bytes
-  study 10703: 5 units, state(s) ['16'], 44,883 bytes
-  study 10704: 72 units, state(s) ['09'], 516,483 bytes
-  study 10705: 14 units, state(s) ['05'], 109,672 bytes
-  study 10706: 20 units, state(s) ['19'], 156,791 bytes
-  35 states and 640 districts reconcile, label by label, to India's 1,210,854,977
-  named: Bangladeshi (2,747,062), Burmese (59,282), Nepalese (810,158), Pakistani (918,982), Sri Lankan (198,193)
-     3 2011 district with no shape (divided since)
-     1 boundary artefact
-    91 district created since 2011
-   562 district, unchanged since 2011
-    75 shape that kept a name after a split
-    36 state
-     6 successor of a district divided whole
-  wrote data/processed/india_birthplace.json (1521 kB)
-  wrote data/processed/india_birthplace_successors.json (201 kB)
-  771 records in india_birthplace.json, 75 in india_birthplace_successors.json
+palau_census: 2020 census, Volume I (transcribed) and the National Summary Data Page
+  Volume I: Tables 6, 10, 16 for 16 states and Tables 23, 27, 33 for 13 places in Koror, each adding up
+  https://www.palaugov.pw/wp-content/uploads/Palau-Population.xml: not the data file ('<html><head><link rel="icon" href="data:;"><meta http-equiv="refresh" content="0')
+  http://web.archive.org/web/20230325163450id_/https://www.palaugov.pw/wp-content/uploads/Palau-Population.xml: 9,186 bytes
+  Data Page: 17,614 people; every state as in Table 6, Koror with the people from outside Palau or of unknown residence
+  admin1 ethnicity 13, admin1 language 13, admin1 median_age 16, admin1 population 16, admin1 religion 13, admin1 sex_ratio 13, admin2 ethnicity 12, admin2 language 12, admin2 median_age 13, admin2 population 13, admin2 religion 12, admin2 sex_ratio 12
+  wrote data/processed/palau_census.json (347 kB)
+  wrote 93 records
