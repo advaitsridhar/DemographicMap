@@ -426,10 +426,21 @@ def cmd_wpmedia(base: str, searches: list[str], pages: int) -> None:
 
 
 STRIP_DIR = "data/processed/page_images"
-# The key-indicator rows cut out, counted down the 2000 column below its
-# header as the Ranong report prints them: 1 the total population ('000),
-# 13 Thai nationality (%), 14 Buddhism (%).
-STRIP_ROWS = (1, 13, 14)
+# The key-indicator rows cut out by default, counted down the 2000 column
+# below its header as the Ranong report prints them: 1 the total population
+# ('000), 13 Thai nationality (%), 14 Buddhism (%). A report with a row more
+# or fewer above them (Bangkok has no municipal-area row; Ang Thong and
+# Kanchanaburi number their age-group heading) needs a wider cut: "1,11-16".
+STRIP_ROWS = "1,13,14"
+
+
+def row_blocks(spec: str) -> list[tuple[int, int]]:
+    """"1,11-16" -> [(1, 1), (11, 16)]: rows cut alone, and blocks cut whole."""
+    out = []
+    for part in spec.split(","):
+        lo, _, hi = part.strip().partition("-")
+        out.append((int(lo), int(hi or lo)))
+    return out
 
 
 def bands(profile: Any, gap: int) -> list[tuple[int, int]]:
@@ -466,7 +477,7 @@ def key_rows(gray: Any, dpi: int) -> dict[str, Any]:
         if len(xs) and xs[-1] - xs[0] > 0.1 * w:
             found["title"] = (y0, y1)
             break
-    pairs = [(a, b) for a, b in zip(vlines, vlines[1:]) if 0.04 * w < b[0] - a[1] < 0.11 * w]
+    pairs = [(a, b) for a, b in zip(vlines, vlines[1:]) if 0.04 * w < b[0] - a[1] < 0.13 * w]
     if not pairs or len(rules) < 3:
         return found
     left, right = min(pairs, key=lambda p: abs((p[0][1] + p[1][0]) / 2 - 0.528 * w))
@@ -495,7 +506,7 @@ def patient_fetch(url: str, pause: float) -> tuple[int, str, bytes]:
 
 
 def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int, name: str,
-               pause: float) -> None:
+               pause: float, spec: str = STRIP_ROWS) -> None:
     """Every captured report's key-indicator rows, cut out and stacked to be read."""
     import os
 
@@ -515,6 +526,7 @@ def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int, name: s
     os.makedirs(STRIP_DIR, exist_ok=True)
     pieces: list[Any] = []
     pad = round(8 * dpi / 90)
+    blocks = row_blocks(spec)
     for r in captures:
         stem = r[2].rsplit("/", 1)[-1].rsplit(".", 1)[0]
         source = f"http://web.archive.org/web/{r[1]}id_/{r[2]}"
@@ -533,18 +545,17 @@ def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int, name: s
                 gray = pdf.pages[n - 1].to_image(resolution=dpi).original.convert("L")
                 where = key_rows(gray, dpi)
                 rows = where["rows"]
-                if len(rows) >= max(STRIP_ROWS) and where["title"]:
+                if len(rows) >= blocks[-1][0] and where["title"]:
                     w = gray.width
                     t0, t1 = where["title"]
                     cut.append(gray.crop((round(0.2 * w), max(0, t0 - pad), round(0.8 * w),
                                           t1 + pad)))
-                    for k in STRIP_ROWS:
-                        y0, y1 = rows[k - 1]
-                        cut.append(gray.crop((where["column"][0] - 2, y0 - pad,
-                                              round(0.98 * w), y1 + pad)))
+                    for lo, hi in blocks:
+                        hi = min(hi, len(rows))
+                        cut.append(gray.crop((where["column"][0] - 2, rows[lo - 1][0] - pad,
+                                              round(0.98 * w), rows[hi - 1][1] + pad)))
                     note = (f"page {n} of {len(pdf.pages)}; 2000 column x {where['column']}; "
-                            f"{len(rows)} rows; rows {list(STRIP_ROWS)} at y "
-                            f"{[rows[k - 1][0] for k in STRIP_ROWS]}")
+                            f"{len(rows)} rows; rows {spec} cut")
                     break
                 log(f"  {stem}: page {n}: {len(where['vlines'])} vertical lines, "
                     f"{len(where['rules'])} rules, {len(rows)} rows -- not the table")
@@ -645,12 +656,13 @@ def main() -> int:
     s.add_argument("--pages", type=int, default=3, help="pages searched for the table")
     s.add_argument("--name", default="tha2000", help="the images' name, before their number")
     s.add_argument("--pause", type=float, default=5.0, help="seconds between two reports")
+    s.add_argument("--rows", default=STRIP_ROWS, help='rows of the 2000 column, as "1,11-16"')
     u = sub.add_parser("unstrip")
     u.add_argument("match", help="a pattern the image names to remove match")
     args = ap.parse_args()
     if args.cmd == "strips":
         cmd_strips(args.pattern, args.dpi, args.per, args.match, args.pages, args.name,
-                   args.pause)
+                   args.pause, args.rows)
         return 0
     if args.cmd == "unstrip":
         cmd_unstrip(args.match)
