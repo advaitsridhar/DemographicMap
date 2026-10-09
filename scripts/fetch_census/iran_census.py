@@ -804,12 +804,14 @@ def add_religion(rows: list[dict[str, Any]], religion: dict[str, dict[str, int]]
             "results (see the adapter).")
     for r in rows:
         if r["level"] == "admin2":
-            r.setdefault("religion", gap(NOT_AVAILABLE, (
+            if isinstance(r.get("religion"), list):
+                continue
+            r["religion"] = gap(NOT_AVAILABLE, (
                 "The 2016 census's religion is published by province only (Statistical "
                 "Yearbook 1395, table 3.18). No table of religion by shahrestan is among the "
                 "Centre's archived detailed census tables (population tables 1, 2, 3 and 9; "
                 "activity, households, housing, migration, education, marriage), so no "
-                "share is written below the province.")))
+                "share is written below the province."))
             continue
         if r["level"] != "admin1":
             continue
