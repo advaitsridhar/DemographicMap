@@ -61,7 +61,7 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .oceania_common import (
     bind_level, check, load_units, median_from_groups, population, sex_ratio, shares_of,
-    summarise, unit_record,
+    summarise, unit_record, withhold_small,
 )
 
 OUT = "palau_census.json"
@@ -408,7 +408,7 @@ def fields_for(column: str, ages: dict[str, Any], ethnic: dict[str, Any],
                  f", for {total:,.0f} people.") +
         " The volume's summary Table 1 prints lower medians (36.3 for the country, against "
         "Table 6's 37.9) that Table 6's age groups do not give.")
-    return out
+    return withhold_small(out, total, total - female, female)
 
 
 def koror_note(ages: dict[str, Any]) -> str:

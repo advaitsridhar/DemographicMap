@@ -18,7 +18,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable
 
-from ._shared import NOT_COLLECTED, gap, http_get, log, measure, record
+from ._shared import NOT_AVAILABLE, NOT_COLLECTED, gap, http_get, log, measure, record
 from .binding import bind, fold
 from .cod_ps_age import grouped_median
 from .redatam import median_age as single_year_median
@@ -181,6 +181,43 @@ def shares_of(counts: dict[str, float], total: float) -> list[dict[str, Any]]:
 
 def not_collected(note: str) -> dict[str, Any]:
     return gap(NOT_COLLECTED, note)
+
+
+# Below these a ratio or a share says nothing about the place: Tuvalu's
+# Temotu, 11 people, came out at 450 men per 100 women. The same thresholds
+# as kuwait_census.MIN_SEX and MIN_PEOPLE, so the map applies one rule.
+MIN_SEX = 50
+MIN_PEOPLE = 100
+COMPOSITIONS = ("religion", "language", "ethnicity")
+
+
+def withhold_small(fields: dict[str, Any], people: float, male: float | None = None,
+                   female: float | None = None) -> dict[str, Any]:
+    """``fields`` with the sex ratio and compositions too few people stand behind withheld.
+
+    A sex ratio needs ``MIN_SEX`` of each sex and ``MIN_PEOPLE`` people; a
+    composition ``MIN_PEOPLE``. What is withheld becomes a gap naming the count.
+    """
+    out = dict(fields)
+    counted = f"{people:,.0f} people"
+    if male is not None and female is not None:
+        counted += f" ({male:,.0f} men and {female:,.0f} women)"
+    few_sexes = male is not None and female is not None and min(male, female) < MIN_SEX
+    ratio = out.get("sex_ratio")
+    if (people < MIN_PEOPLE or few_sexes) and isinstance(ratio, dict) and "value" in ratio:
+        out["sex_ratio"] = gap(NOT_AVAILABLE, (
+            f"The census counts {counted} here; with fewer than {MIN_SEX} of either sex, or "
+            f"{MIN_PEOPLE} people in all, a ratio says nothing about the place."))
+        out.pop("sex_ratio_note", None)
+    if people < MIN_PEOPLE:
+        for field in COMPOSITIONS:
+            if isinstance(out.get(field), list):
+                out[field] = gap(NOT_AVAILABLE, (
+                    f"The census counts {counted} here; with fewer than {MIN_PEOPLE}, a "
+                    f"share says nothing about the place."))
+                for suffix in ("_year", "_note", "_basis"):
+                    out.pop(field + suffix, None)
+    return out
 
 
 def population(value: float, year: int, source: str) -> dict[str, Any]:

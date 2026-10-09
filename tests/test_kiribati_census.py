@@ -397,8 +397,12 @@ class TheReligionRecords(unittest.TestCase):
         people = sum(r["count"] for r in gilbert["religion"])
         self.assertEqual(people, kc.NATIONAL_2015 - 1_712 - 2_315 - 6_456 - 20)
         self.assertIn("Makin", gilbert["religion_note"])
+        # Kanton's 41 people are too few to carry a share or a ratio.
         phoenix = self.named("Phoenix Islands")
-        self.assertEqual(sum(r["count"] for r in phoenix["religion"]), 20)
+        for field in ("religion", "ethnicity", "sex_ratio"):
+            self.assertEqual(phoenix[field]["status"], "not_available", field)
+            self.assertIn("41 people", phoenix[field]["note"])
+        self.assertNotIn("religion_note", phoenix)
 
 
 class TheReport(unittest.TestCase):

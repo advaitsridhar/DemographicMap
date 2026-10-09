@@ -76,6 +76,14 @@ class Records(unittest.TestCase):
         self.assertEqual(len(gaps), len(admin2) - len(pw.HAMLETS))
         self.assertIn("Koror", gaps[0]["population"]["note"])
         self.assertEqual(len({r["id"] for r in records}), len(records))
+        # Hatohobei's 39 people carry their count and median, not a ratio or shares.
+        hatohobei = by_name[("admin1", "Hatohobei")]
+        self.assertEqual(hatohobei["population"]["value"], 39)
+        self.assertIn("value", hatohobei["median_age"])
+        for field in ("sex_ratio", "religion", "language", "ethnicity"):
+            self.assertEqual(hatohobei[field]["status"], "not_available", field)
+            self.assertIn("39 people", hatohobei[field]["note"])
+        self.assertIsInstance(by_name[("admin1", "Angaur")]["religion"], list)
 
 
 if __name__ == "__main__":

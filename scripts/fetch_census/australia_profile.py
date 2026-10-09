@@ -28,6 +28,10 @@ state figures were the LGA tables added up, so Other Territories showed 2,505
 people for its 4,788 and none of the Indian Ocean Territories' religion or
 language. This file writes each state's own count (G01) and its own religion
 (G14) and language (G13) from the SA2+ tables, which count the main structure.
+G13's "Other" holds the Australian Indigenous languages (its code 8 sits under
+code _O), so each state's are taken out of it and written under their own name
+-- the Northern Territory's 36,082 people had been 'Other' -- and the run
+refuses a state whose Indigenous count exceeds the "Other" that holds it.
 
 **Two LGAs' language.** G13's finer listing does not add up for East Arnhem
 and West Daly, so the map had no language there; the coarse partition the
@@ -237,8 +241,50 @@ RELIGION_NOTE = (f"ABS {YEAR} religious affiliation; the question is voluntary a
                  "which counts the territories the map draws with it.")
 LANGUAGE_NOTE = (f"ABS {YEAR} language used at home (G13), one answer per person, at the "
                  "outermost level of the ABS classification; 'not stated' is retained as "
-                 "its own category. The state's own table, which counts the territories "
-                 "the map draws with it.")
+                 "its own category. The table's 'Other' holds the Australian Indigenous "
+                 "languages, which are taken out of it and named; 'Other' is every other "
+                 "language the table does not list. The state's own table, which counts the "
+                 "territories the map draws with it.")
+
+# G13's "Other" (code _O) holds the Australian Indigenous languages (code 8)
+# rather than standing beside them: in the Northern Territory the two read
+# 40,844 and 36,082, and the classification sums only with the second inside
+# the first (abs.CHILDREN_OF). Left inside, a territory where one in six
+# people speaks an Indigenous language at home showed none.
+INDIGENOUS = "Australian Indigenous Languages"
+INDIGENOUS_CODE, OTHER_CODE = "8", "_O"
+
+
+def indigenous_counts(rows: Iterable[tuple[dict[str, str], float]]
+                      ) -> tuple[dict[str, float], str | None]:
+    """{region: persons using an Australian Indigenous language}, and "Other"'s label."""
+    counts: dict[str, float] = {}
+    other = None
+    for labels, value in rows:
+        code = labels.get("LANP_CODE")
+        if code == INDIGENOUS_CODE and labels.get("ENGLP_CODE", "_T") == "_T":
+            region = labels.get("REGION_CODE")
+            counts[region] = counts.get(region, 0.0) + value
+        elif code == OTHER_CODE:
+            other = labels.get("LANP")
+    return counts, other
+
+
+def split_indigenous(parts: dict[str, float], other: str | None, indigenous: float,
+                     region: str) -> dict[str, float]:
+    """``parts`` with the Indigenous languages taken out of "Other" and named."""
+    if not indigenous:
+        return parts
+    held = parts.get(other or "")
+    if held is None or indigenous > held + tolerance(held):
+        raise SystemExit(f"australia_profile: G13 region {region}: {indigenous:,.0f} people "
+                         f"use an Australian Indigenous language, and its 'Other' "
+                         f"({other}) holds {held}")
+    out = {k: v for k, v in parts.items() if k != other}
+    out[INDIGENOUS] = indigenous
+    if held - indigenous > 0:
+        out[other] = held - indigenous
+    return out
 
 
 def state_compositions(religion_rows: list[tuple[dict[str, str], float]],
@@ -251,14 +297,20 @@ def state_compositions(religion_rows: list[tuple[dict[str, str], float]],
     own total -- because the map's states are the main structure's: the LGA
     tables file the Indian Ocean Territories under Western Australia.
     """
-    from .abs import LANGUAGE_LABELS, group_by_region
+    from .abs import LANGUAGE_LABELS, group_by_region, strip_total
     religion, _ = group_by_region(religion_rows, "RELP", "REGION")
     language, _ = group_by_region(language_rows, "LANP", "REGION", strict=True)
+    indigenous, other = indigenous_counts(language_rows)
+    other = strip_total(other) if other else None
     rel = {code: shares({k: v for k, v in parts.items() if not k.lower().startswith("total")})
            for code, parts in religion.items()}
-    lan = {code: shares({LANGUAGE_LABELS.get(k, k): v for k, v in parts.items()
-                         if not k.lower().startswith("total")})
+    lan = {code: shares(split_indigenous(
+               {LANGUAGE_LABELS.get(k, k): v for k, v in parts.items()
+                if not k.lower().startswith("total")},
+               other, indigenous.get(code, 0.0), code))
            for code, parts in language.items()}
+    log("  Australian Indigenous languages taken out of G13's 'Other': "
+        + ", ".join(f"{code} {n:,.0f}" for code, n in sorted(indigenous.items())))
     for field, table, label in (("religion", rel, "Christianity"),
                                 ("language", lan, "English only")):
         share = next((r["pct"] for r in table.get("AUS", []) if r["group"] == label), None)

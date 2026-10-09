@@ -43,7 +43,7 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .oceania_common import (
     bind_level, check, load_units, number, population, rows_of, sex_ratio, shares_of,
-    summarise, unit_record, workbook,
+    summarise, unit_record, withhold_small, workbook,
 )
 
 OUT = "tuvalu_census.json"
@@ -228,7 +228,7 @@ def island_fields(name: str, report: dict[str, dict[str, int]],
 
 def village_fields(people: tuple[int, int, int]) -> dict[str, Any]:
     total, male, female = people
-    return {
+    return withhold_small({
         "population": population(total, 2017, f"{TABLES} (Table 2)"),
         "population_note": ("People living in Tuvalu enumerated in the village at the 2017 "
                             "census (Table 2); the 2022 census publishes no village counts."),
@@ -239,7 +239,7 @@ def village_fields(people: tuple[int, int, int]) -> dict[str, Any]:
         "religion": gap(NOT_AVAILABLE, VILLAGE_GAPS["religion"]),
         "ethnicity": gap(NOT_AVAILABLE, VILLAGE_GAPS["ethnicity"]),
         "language": gap(NOT_AVAILABLE, LANGUAGE_GAP),
-    }
+    }, total, male, female)
 
 
 SOURCES = [

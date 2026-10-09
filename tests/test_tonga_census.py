@@ -200,6 +200,8 @@ class PublishedMedians(unittest.TestCase):
 
     def test_the_report_prints_the_country_and_every_division(self):
         self.assertEqual(set(tc.PUBLISHED_MEDIANS), set(tc.DIVISIONS) | {"TONGA"})
+        # Only the division no record carries goes unchecked.
+        self.assertEqual(set(tc.UNCHECKED_MEDIANS), {"Ongo Niua"})
 
     def test_a_median_that_rounds_to_the_printed_year_passes(self):
         from scripts.fetch_census.oceania_common import published_median

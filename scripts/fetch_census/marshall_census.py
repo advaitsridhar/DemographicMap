@@ -44,6 +44,7 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .oceania_common import (
     bind_level, check, load_units, population, sex_ratio, shares_of, summarise, unit_record,
+    withhold_small,
 )
 
 OUT = "marshall_census.json"
@@ -280,6 +281,8 @@ def fields_for(name: str, tables: dict[str, Any], report: dict[str, Any]) -> dic
     if spoken:
         fields["language"] = [{"group": label, "pct": pct} for label, pct in spoken.items()]
         fields["language_year"] = YEAR
+        # More than one answer a person, so the shares pass 100 (123% in Majuro).
+        fields["language_basis"] = "languages spoken (multi-response)"
         fields["language_note"] = (
             f"Languages spoken by people aged five and over, more than one allowed, 2021 "
             f"Census (Analytical Report, Table 3.3): {spoken['Marshallese']}% speak "
@@ -287,7 +290,7 @@ def fields_for(name: str, tables: dict[str, Any], report: dict[str, Any]) -> dic
             f"not publish which other language.")
     else:
         fields["language"] = gap(NOT_AVAILABLE, LANGUAGE_GAP)
-    return fields
+    return withhold_small(fields, total, male, female)
 
 
 SOURCES = [

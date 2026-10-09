@@ -193,6 +193,32 @@ class StateCompositions(unittest.TestCase):
         with self.assertRaises(SystemExit):
             ap.state_compositions(rows, g13("AUS", 25_422_788))
 
+    @staticmethod
+    def g13_indigenous(region, total, indigenous):
+        """G13 with its "Other" (code _O) holding the Indigenous languages (code 8)."""
+        return g13(region, total) + [(
+            {"LANP": "Australian Indigenous Languages", "LANP_CODE": "8", "ENGLP": "Total",
+             "ENGLP_CODE": "_T", "SEXP": "Persons", "SEXP_CODE": "3", "REGION": region,
+             "REGION_CODE": region}, indigenous)]
+
+    def test_the_indigenous_languages_come_out_of_other_and_are_named(self):
+        # The Northern Territory's shape: "Other" 20% of whom 15 points Indigenous.
+        _, language = ap.state_compositions(
+            g14("AUS", 25_422_788) + g14("7", 1000),
+            g13("AUS", 25_422_788) + self.g13_indigenous("7", 1000, 150))
+        groups = {r["group"]: r["pct"] for r in language["7"]}
+        self.assertEqual(groups["Australian Indigenous Languages"], 15.0)
+        self.assertEqual(groups["Other"], 5.0)
+        self.assertEqual(groups["English only"], 72.0)
+        self.assertAlmostEqual(sum(groups.values()), 100.0, places=1)
+        self.assertNotIn("Australian Indigenous Languages",
+                         {r["group"] for r in language["AUS"]})
+
+    def test_more_indigenous_speakers_than_other_holds_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            ap.state_compositions(g14("AUS", 25_422_788) + g14("7", 1000),
+                                  g13("AUS", 25_422_788) + self.g13_indigenous("7", 1000, 400))
+
 
 class Build(unittest.TestCase):
     NSW = 25_422_788 - 8 * 1000

@@ -59,6 +59,7 @@ from typing import Any
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json,
 )
+from .oceania_common import withhold_small
 
 BASE = "https://api.data.stats.govt.nz/rest"
 AGENCY = "STATSNZ"
@@ -488,6 +489,11 @@ def build(key: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         if not fields:
             continue
         population = population or (ages.get(code) or {}).get("total")
+        # The Area Outside Territorial Authority -- the outlying islands, 72
+        # people -- is the one area with too few to carry a ratio or a share.
+        if population:
+            fields = withhold_small(fields, population, (ages.get(code) or {}).get("male"),
+                                    (ages.get(code) or {}).get("female"))
         record_ = record(
             f"NZL-{code}", name,
             aliases=list(ALIASES.get(name, ())) or None,

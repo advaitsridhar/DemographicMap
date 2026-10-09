@@ -79,7 +79,7 @@ from typing import Any
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, write_json
 from .oceania_common import (
     FIGURE, bind_level, check, load_units, median_from_groups, number, population, rows_of,
-    sex_ratio, shares_of, summarise, transcription, unit_record, workbook,
+    sex_ratio, shares_of, summarise, transcription, unit_record, withhold_small, workbook,
 )
 
 OUT = "kiribati_census.json"
@@ -841,6 +841,13 @@ def sources(with_median: bool) -> list[dict[str, Any]]:
     return out
 
 
+def small(fields: dict[str, Any], labels: list[str], report: dict[str, Any]) -> dict[str, Any]:
+    """Withhold what Kanton's 41 people cannot carry, from Table G-2's sexes."""
+    male = sum(report["g2"][label]["Male"] for label in labels)
+    female = sum(report["g2"][label]["Female"] for label in labels)
+    return withhold_small(fields, male + female, male, female)
+
+
 def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[str, Any],
           table6: dict[str, dict[str, list[int]]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
@@ -858,21 +865,22 @@ def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[s
                 if len(GROUPS[group]) > 1 else "Kanton, the group's one inhabited island.")
         labels = [REPORT_ROWS[i] for i in GROUPS[group]]
         median = median_fields(group, group, None, cod, report, compared, final)
+        fields = small({**census_fields(final, note), **median,
+                        **report_fields(labels, report, group),
+                        **religion_fields([T6_ROWS[i] for i in GROUPS[group]], table6, group)},
+                       labels, report)
         census.append(unit_record("KIR", group, unit["name"], unit, "admin1", None,
-                                  sources("median_age_note" in median),
-                                  **census_fields(final, note), **median,
-                                  **report_fields(labels, report, group),
-                                  **religion_fields([T6_ROWS[i] for i in GROUPS[group]],
-                                                    table6, group)))
+                                  sources("median_age_note" in median), **fields))
     for island, unit in island_units.items():
         note = "The 2020 census count (Island Profile tables)."
         median = median_fields(island, island, REPORT_ROWS[island], cod, report, compared,
                                counts[island])
+        fields = small({**census_fields(counts[island], note), **median,
+                        **report_fields([REPORT_ROWS[island]], report, island),
+                        **religion_fields([T6_ROWS[island]], table6, island)},
+                       [REPORT_ROWS[island]], report)
         census.append(unit_record("KIR", island, unit["name"], unit, "admin2", None,
-                                  sources("median_age_note" in median),
-                                  **census_fields(counts[island], note), **median,
-                                  **report_fields([REPORT_ROWS[island]], report, island),
-                                  **religion_fields([T6_ROWS[island]], table6, island)))
+                                  sources("median_age_note" in median), **fields))
     log(f"  no polygon: Makin ({counts['Makin']:,} people), counted in the Gilbert Islands")
     return census
 

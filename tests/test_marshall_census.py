@@ -434,6 +434,11 @@ class Records(unittest.TestCase):
         jaluit = next(r for r in self.records if r["name"] == "Jaluit")
         self.assertIn("351", jaluit["religion_note"])
 
+    def test_majuros_languages_say_they_are_multi_response(self):
+        majuro = next(r for r in self.records if r["name"] == "Majuro" and r["level"] == "admin2")
+        self.assertEqual(majuro["language_basis"], "languages spoken (multi-response)")
+        self.assertGreater(sum(r["pct"] for r in majuro["language"]), 100)
+
 
 if __name__ == "__main__":
     unittest.main()
