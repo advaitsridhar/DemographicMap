@@ -311,14 +311,28 @@ def ancestry_shares(parts: dict[str, float], people: float) -> list[dict[str, An
 
 
 RELIGION_NOTE = (f"ABS {YEAR} religious affiliation; the question is voluntary and 'not "
-                 "stated' is retained as its own category. The state's own table (G14), "
-                 "which counts the territories the map draws with it.")
+                 "stated' is retained as its own category.")
 LANGUAGE_NOTE = (f"ABS {YEAR} language used at home (G13), one answer per person, at the "
                  "outermost level of the ABS classification; 'not stated' is retained as "
                  "its own category. The table's 'Other' holds the Australian Indigenous "
                  "languages, which are taken out of it and named; 'Other' is every other "
-                 "language the table does not list. The state's own table, which counts the "
-                 "territories the map draws with it.")
+                 "language the table does not list.")
+# Whose table a state's composition is. Only the ABS's ninth "state", Other
+# Territories, is several territories in one table, and the map draws them as
+# one unit too; the sentence used to say so of every state, which was false of
+# the other eight.
+OTHER_TERRITORIES = "9"
+TABLE_OF = {OTHER_TERRITORIES: ("The ABS table ({table}) for the Other Territories as a "
+                                "whole, which counts Jervis Bay, Christmas Island, the Cocos "
+                                "(Keeling) Islands and Norfolk Island together, as the map "
+                                "draws them.")}
+
+
+def state_note(base: str, code: str, table: str) -> str:
+    """A state's composition note: what was asked, then whose table it is."""
+    whose = TABLE_OF.get(code, "The ABS table ({table}) for the state or territory as a "
+                               "whole.")
+    return f"{base} {whose.format(table=table)}"
 
 # G13's "Other" (code _O) holds the Australian Indigenous languages (code 8)
 # rather than standing beside them: in the Northern Territory the two read
@@ -523,6 +537,24 @@ def multi_response(responses: float, counted: float) -> str:
             f"{total:g} rather than more than 100.")
 
 
+def adjusted(people: dict[str, float]) -> str:
+    """Why the males and females do not make the persons, where they do not.
+
+    The ABS adjusts every cell of a table at random by a few people, so G01's
+    males and females need not add up to its persons: Belyuen's 74 and 77
+    make 151 of its 149 people, the Northern Territory's 117,526 and 115,075
+    make 232,601 of its 232,605. Printed side by side without a word, the
+    three numbers read as an error.
+    """
+    both = round(people["male"]) + round(people["female"])
+    persons = round(people["persons"])
+    if both == persons:
+        return ""
+    return (f" The ABS adjusts each count at random by a few people to protect "
+            f"confidentiality, so the males and females make {both:,} rather than "
+            f"{persons:,}.")
+
+
 def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
                 people: dict[str, float], median: float | None,
                 ancestry: tuple[dict[str, float], float] | None,
@@ -534,7 +566,8 @@ def unit_record(code: str, name: str, unit: dict[str, Any], level: str, *,
         "sex_ratio_note": (
             f"Males per 100 females among the {people['persons']:,.0f} people counted in the "
             f"2021 Census at their usual address here ({people['male']:,.0f} males, "
-            f"{people['female']:,.0f} females; ABS G01)." + (f" {context}" if context else "")),
+            f"{people['female']:,.0f} females; ABS G01)." + adjusted(people)
+            + (f" {context}" if context else "")),
     }
     # A state's own head count: the map's came from adding up the LGA tables,
     # which put the Indian Ocean Territories' 2,285 people in Western Australia.
@@ -618,8 +651,9 @@ def build(tables: dict[tuple[str, str], list[tuple[dict[str, str], float]]],
         if not religion_top.get(code) or not language_top.get(code):
             raise SystemExit(f"australia_profile: no religion or language for state {code}")
         extra = {"religion": religion_top[code], "religion_year": YEAR,
-                 "religion_note": RELIGION_NOTE, "language": language_top[code],
-                 "language_year": YEAR, "language_note": LANGUAGE_NOTE}
+                 "religion_note": state_note(RELIGION_NOTE, code, "G14"),
+                 "language": language_top[code], "language_year": YEAR,
+                 "language_note": state_note(LANGUAGE_NOTE, code, "G13")}
         records.append(unit_record(code, names.get(code, unit["name"]), unit, "admin1",
                                    people=people_top[code], median=median_top.get(code),
                                    ancestry=ancestry_top.get(code), parent_name=None,

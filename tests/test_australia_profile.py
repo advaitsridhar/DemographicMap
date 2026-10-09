@@ -157,6 +157,28 @@ class Record(unittest.TestCase):
                                            non_private=(2, 0)))["1"]
         self.assertNotIn("non-private", ap.ratio_context("Menzies", people, few))
 
+    def test_sexes_that_miss_the_persons_say_why(self):
+        # Belyuen: 74 males and 77 females of 149 people, the ABS's random
+        # adjustment of small cells.
+        rec = ap.unit_record("70420", "Belyuen", ALBURY, "admin2",
+                             people={"persons": 149, "male": 74, "female": 77},
+                             median=None, ancestry=None, parent_name=None)
+        self.assertIn("(74 males, 77 females; ABS G01). The ABS adjusts each count at random "
+                      "by a few people to protect confidentiality, so the males and females "
+                      "make 151 rather than 149.", rec["sex_ratio_note"])
+        # Where they do make the persons, nothing is said.
+        even = ap.unit_record("10050", "Albury", ALBURY, "admin2",
+                              people={"persons": 56093, "male": 27416, "female": 28677},
+                              median=None, ancestry=None, parent_name=None)
+        self.assertNotIn("adjusts", even["sex_ratio_note"])
+        # And the sentence stands before any context about the ratio.
+        rec = ap.unit_record("70420", "Belyuen", ALBURY, "admin2",
+                             people={"persons": 149, "male": 74, "female": 77},
+                             median=None, ancestry=None, parent_name=None,
+                             context="Among those aged 20 to 64, ...")
+        self.assertTrue(rec["sex_ratio_note"].endswith(
+            "151 rather than 149. Among those aged 20 to 64, ..."))
+
     def test_age_groups_that_do_not_make_the_sexes_stop_the_run(self):
         people = {"persons": 522, "male": 394, "female": 128}
         chars = ap.characteristics(g01_chars("1", working=(218, 83), other=(76, 45),
@@ -341,6 +363,21 @@ class Build(unittest.TestCase):
         # Albury's language is the map's (abs.py's): it is written only where
         # the map has none.
         self.assertEqual(names["Albury"]["language"]["status"], "not_available")
+
+    def test_only_other_territories_counts_several_territories(self):
+        records = ap.build(self.tables(), self.admin1(), [ALBURY, BAYSIDE])
+        by_code = {r["id"].rsplit("-", 1)[-1]: r for r in records if r["level"] == "admin1"}
+        for code, rec in by_code.items():
+            for field, table in (("religion_note", "G14"), ("language_note", "G13")):
+                note = rec[field]
+                self.assertNotIn("territories the map draws with it", note)
+                self.assertIn(f"The ABS table ({table}) for", note)
+                if code == "9":
+                    self.assertIn("Jervis Bay, Christmas Island, the Cocos (Keeling) Islands "
+                                  "and Norfolk Island together, as the map draws them.", note)
+                else:
+                    self.assertTrue(note.endswith("for the state or territory as a whole."),
+                                    note)
 
     def test_the_census_file_decides_not_the_built_map(self):
         # The built map carries this file's own coarse partition from the run
