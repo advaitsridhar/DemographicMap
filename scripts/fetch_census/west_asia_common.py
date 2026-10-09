@@ -8,6 +8,7 @@ the run-stopping checks every reader makes before it writes anything.
 
 from __future__ import annotations
 
+import copy
 import io
 import json
 import re
@@ -303,3 +304,31 @@ def check(condition: bool, message: str) -> None:
 
 def report(label: str, items: list[str], limit: int = 40) -> None:
     log(f"  {label}: {len(items)}" + (": " + "; ".join(items[:limit]) if items else ""))
+
+
+def second_level_twins(rows: list[dict[str, Any]], admin2: list[dict[str, Any]]
+                       ) -> list[dict[str, Any]]:
+    """The first-level records again, for the polygons drawn at both levels.
+
+    The boundary file draws some countries' first level a second time as
+    their second (Bahrain's four governorates, the UAE's seven emirates),
+    under the same ids. The build copies a first-level figure onto such a
+    twin only where the twin holds nothing (``fill_same_polygons``), and the
+    twins already hold Wikidata's populations -- Muharraq's 176,583 against
+    the 2020 census's 268,106, Abu Dhabi's of 2016 -- so a count written once would
+    show at one zoom and not at the next. Each first-level record bound by
+    shape id whose polygon is also drawn a level down is written there too,
+    with the same figures.
+    """
+    drawn = {u["id"]: u for u in admin2}
+    out = []
+    for row in rows:
+        sid = row.get("shape_id")
+        if row.get("level") != "admin1" or sid not in drawn:
+            continue
+        twin = copy.deepcopy(row)
+        twin["id"] = f"{row['id']}-admin2"
+        twin["level"] = "admin2"
+        twin["parent_name"] = row["name"]
+        out.append(twin)
+    return out

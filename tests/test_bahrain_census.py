@@ -55,6 +55,17 @@ class TheReader(unittest.TestCase):
         labels = {s["group"] for s in capital["ethnicity"]}
         self.assertEqual(labels, set(bc.LABELS.values()))
 
+    def test_a_governorate_drawn_at_both_levels_is_written_at_both(self):
+        admin2 = [{"id": "g1", "name": "Muharraq Governorate", "parent": "g1"}]
+        rows = bc.build(*tables(), ADMIN1, admin2)
+        twins = [r for r in rows if r["level"] == "admin2"]
+        self.assertEqual([r["shape_id"] for r in twins], ["g1"])
+        first = next(r for r in rows if r["level"] == "admin1" and r["shape_id"] == "g1")
+        self.assertEqual(twins[0]["population"], first["population"])
+        self.assertEqual(twins[0]["ethnicity"], first["ethnicity"])
+        self.assertNotEqual(twins[0]["id"], first["id"])
+        self.assertEqual(twins[0]["parent_name"], first["name"])
+
     def test_median_age_and_religion_say_why_they_are_not_published(self):
         capital = bc.build(*tables(), ADMIN1)[0]
         self.assertEqual(capital["median_age"]["status"], "not_available")

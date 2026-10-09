@@ -18,8 +18,10 @@ the kingdom's open-data portal (data.gov.bh, OpenDataSoft). Three are read:
 per hundred females, and its people by nationality group on the ethnicity
 field (``ethnicity_basis`` "nationality"; the census asks no ethnic question,
 and nationality is what it counts -- the owner's decision of 19 September
-2026). The map draws the four governorates at both levels under one id, and
-the build copies a first-level figure onto its second-level twin.
+2026). The map draws the four governorates at both levels under one id; the
+build copies a first-level figure onto its second-level twin only where the
+twin holds nothing, and the twins hold Wikidata's populations, so each
+governorate is written at both levels (``second_level_twins``).
 
 **What is not, and why.** The portal publishes age groups and religion for
 the whole kingdom only (by nationality and sex), so a governorate's median
@@ -43,7 +45,7 @@ from collections import defaultdict
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
-from .west_asia_common import check, key, ods_records, sex_ratio, units
+from .west_asia_common import check, key, ods_records, second_level_twins, sex_ratio, units
 
 ISO3 = "BHR"
 OUT = "bahrain_census.json"
@@ -100,8 +102,8 @@ def cells(rows: list[dict[str, Any]], what: str, fields: tuple[str, str, str]
 
 
 def build(groups_rows: list[dict[str, Any]], totals_rows: list[dict[str, Any]],
-          ages_rows: list[dict[str, Any]], admin1: list[dict[str, Any]]
-          ) -> list[dict[str, Any]]:
+          ages_rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
+          admin2: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     groups = cells(groups_rows, GROUPS, ("governorate", "nationality_groups", "sex"))
     check({g for g, _n, _s in groups} == set(GOVERNORATES),
           f"bahrain_census: governorates {sorted({g for g, _n, _s in groups})}")
@@ -186,13 +188,15 @@ def build(groups_rows: list[dict[str, Any]], totals_rows: list[dict[str, Any]],
                 "nationals by region."),
             median_age=no_age, religion=no_religion, language=no_language,
             sources=source))
-    return rows
+    twins = second_level_twins(rows, admin2 or [])
+    log(f"  second-level twins of the same polygons: {len(twins)}")
+    return rows + twins
 
 
 def main() -> int:
     argparse.ArgumentParser(description=__doc__).parse_args()
     rows = build(ods_records(BASE, GROUPS), ods_records(BASE, TOTALS),
-                 ods_records(BASE, AGES), units(ISO3, "admin1"))
+                 ods_records(BASE, AGES), units(ISO3, "admin1"), units(ISO3, "admin2"))
     write_json(PROCESSED / OUT, rows)
     log(f"  wrote {OUT} ({len(rows)})")
     return 0
