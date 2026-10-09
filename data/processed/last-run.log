@@ -1,29 +1,4 @@
-afghanistan_sdes: SDES median age by district, twelve provincial reports
-  Bamiyan: Table 3 read, 7 district(s); the province 16.6 (Text Box 1: 16.6)
-  Ghor: Table 5 read, 10 district(s); the province 16 (Text Box 1: 16.3)
-  Daykundi: Table 5 read, 8 district(s); the province 15 (Text Box 1: 15.2)
-  Kabul: Table 3 read, 15 district(s); the province 17.7 (Text Box 1: 17.7)
-  Kapisa: Table 3 read, 5 district(s); the province 17.1 (Text Box 1: 17.1)
-  Parwan: Table 3 read, 10 district(s); the province 17.1 (Text Box 1: 17.1)
-  Samangan: Table 3 read, 7 district(s); the province 17.5 (Text Box 1: 17.5)
-  retry 1/4 after 2s :: https://web.archive.org/web/20170511124330id_/http://cso.gov.af/Content/files/SDES/Balkh%20FR%20Final2.pdf :: <urlopen error timed out>
-  retry 2/4 after 4s :: https://web.archive.org/web/20170511124330id_/http://cso.gov.af/Content/files/SDES/Balkh%20FR%20Final2.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
-  Balkh: Table 3 read, 15 district(s); the province 17.1 (Text Box 1: 17.1)
-  Takhar: Table 3 read, 17 district(s); the province 16.3 (Text Box 1: 16.3)
-  Herat: Table 3 read, 13 district(s); the province 16.8 (Text Box 1: 16.8)
-  Nimroz: Table 3 read, 4 district(s); the province 14.5 (Text Box 1: 14.5)
-  Baghlan: Table 3 read, 15 district(s); the province 15.9
-  Bamiyan (September 2011): 7 district(s) written, 0 declined, 0 not covered; the province written
-  Ghor (September 2012): 10 district(s) written, 0 declined, 0 not covered; the province written
-  Daykundi (September 2012): 8 district(s) written, 0 declined, 1 not covered; the province not written
-  Kabul (December 2013): 15 district(s) written, 0 declined, 0 not covered; the province written
-  Kapisa (September 2014): 5 district(s) written, 0 declined, 2 not covered; the province not written
-  Parwan (September 2014): 10 district(s) written, 0 declined, 0 not covered; the province not written
-  Samangan (April 2015): 7 district(s) written, 0 declined, 0 not covered; the province not written
-  Balkh (December 2015): 15 district(s) written, 0 declined, 0 not covered; the province not written
-  Takhar (September 2015): 17 district(s) written, 0 declined, 0 not covered; the province written
-  Herat (March 2016): 13 district(s) written, 0 declined, 3 not covered; the province not written
-  Nimroz (May 2016): 4 district(s) written, 0 declined, 1 not covered; the province not written
-  Baghlan (December 2016): 15 district(s) written, 0 declined, 0 not covered; the province written
-  wrote data/processed/afghanistan_sdes_survey.json (339 kB)
-  145 records
+== get https://tjj.hlj.gov.cn/tjjnianjian/2020rkpc/zk/html/A0101.xls
+  HTTP 403 Forbidden: <!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="keywords" content=""> <meta name="description" content=""> <title>403</title> <styl
+== get http://tjj.hlj.gov.cn/tjjnianjian/2020rkpc/zk/html/A0101.xls
+  HTTP 403 Forbidden: <!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="keywords" content=""> <meta name="description" content=""> <title>403</title> <styl
