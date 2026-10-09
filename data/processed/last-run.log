@@ -1,8 +1,2 @@
-
-== GET http://archive.org/wayback/available?url=pcs.icms.gov.bd/Data/PHC2022/DistrictSeries/Report/Feni.pdf
-  200 application/json 96 http://archive.org/wayback/available?url=pcs.icms.gov.bd/Data/PHC2022/DistrictSeries/Report/Feni.pdf
-    {"url": "pcs.icms.gov.bd/Data/PHC2022/DistrictSeries/Report/Feni.pdf", "archived_snapshots": {}}
-
-== GET http://archive.org/wayback/available?url=pcs.icms.gov.bd
-  200 application/json 52 http://archive.org/wayback/available?url=pcs.icms.gov.bd
-    {"url": "pcs.icms.gov.bd", "archived_snapshots": {}}
+== CDX pcs.icms.gov.bd*: 200
+    -1 capture(s), 0 shown
