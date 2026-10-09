@@ -134,5 +134,44 @@ class Citizenship(unittest.TestCase):
             sm.read_citizenship(table_8a(national=national))
 
 
+class NationalMedians(unittest.TestCase):
+    """Table 1's single years against the Bureau's own medians for the sexes."""
+
+    @staticmethod
+    def table(male_ages, female_ages):
+        """(sub-header, the country's figures, ages_at) in Table 1's layout."""
+        top = max(male_ages + female_ages)
+        header = ["Place of residence", "Total", "", ""]
+        sub = ["", "Total", "MALE", "FEMALE"]
+        nation = [0, 0, 0]
+        for age in range(top + 1):
+            header += [f"age {age}", "", ""]
+            sub += ["Total", "MALE", "FEMALE"]
+            males = 10 if age in male_ages else 0
+            females = 10 if age in female_ages else 0
+            nation += [males + females, males, females]
+        ages_at, _ = sm.age_columns(header)
+        return sub, nation, ages_at
+
+    def test_the_sexes_agree_with_the_bureaus_whole_years(self):
+        # Ten a year: males 0-40 (median 20.5), females 0-42 (median 21.5).
+        sub, nation, ages_at = self.table(list(range(41)), list(range(43)))
+        account = sm.national_medians(sub, nation, ages_at)
+        self.assertIn("males 20.5 (printed 20)", account)
+        self.assertIn("females 21.5 (printed 21)", account)
+        self.assertIn("outside the sexes'", account)
+
+    def test_a_sex_a_year_and_more_away_stops_the_run(self):
+        sub, nation, ages_at = self.table(list(range(41)), list(range(45)))   # females 22.5
+        with self.assertRaises(SystemExit):
+            sm.national_medians(sub, nation, ages_at)
+
+    def test_columns_that_are_not_total_male_female_stop_the_run(self):
+        sub, nation, ages_at = self.table(list(range(41)), list(range(43)))
+        sub[5], sub[6] = "FEMALE", "MALE"
+        with self.assertRaises(SystemExit):
+            sm.national_medians(sub, nation, ages_at)
+
+
 if __name__ == "__main__":
     unittest.main()

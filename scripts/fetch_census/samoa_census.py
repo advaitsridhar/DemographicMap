@@ -53,7 +53,11 @@ make it too, and so do its denominations; a constituency's villages make the
 constituency; every 2021 village is placed once; every 2016 district receives
 villages, and its 2021 count lies within 40% of its 2016 one -- a wider swing
 would mean villages filed in the wrong district; every polygon is bound once.
-Table 8a lists Table 1's villages with Table 1's totals, its four answers are
+The country's male and female medians from Table 1's single years must be the
+Final Report's (20 and 21, whole years) within ``MEDIAN_SLACK`` and the half
+year a whole year stands for. Its median for everyone (22, and the Fact
+Sheet's 22.0) lies outside its own sexes', which no set of ages can give, so
+the run logs Table 1's 21.4 beside it rather than checking it. Table 8a lists Table 1's villages with Table 1's totals, its four answers are
 headed as ``CITIZENSHIP_HEADINGS`` says and make each row's total, each by
 sex, and the country's citizens and others are the Fact Sheet's 204,339 and
 1,218.
@@ -92,9 +96,16 @@ CITIZENSHIP_HEADINGS = ("YES BORN IN SAMOA", "YES BORN ABROAD", "YES SAMOA  CITI
                         "NATURALISATION", "NO NOT A CITIZEN")
 CITIZENS_2021, NON_CITIZENS_2021 = 204_339, 1_218
 NATIONAL_2016 = 195_979
-# The Fact Sheet's median age for Samoa (indicator DS.3), which Table 1's single
-# years must give within oceania_common.MEDIAN_SLACK.
-NATIONAL_MEDIAN = 22.0
+# The Bureau's medians for Samoa: the 2021 Final Report's key indicators (p. 11),
+# in whole years -- everyone 22, males 20, females 21 -- and the Fact Sheet's
+# 22.0 (indicator DS.3). A median of everyone lies between its two sexes', so
+# the printed 22 is not the same people's as the 20 and 21 beside it; Table 1's
+# single years give 21.4, between the two. The run checks the sexes, within
+# oceania_common.MEDIAN_SLACK of the whole years printed, and logs the total.
+FINAL_REPORT_URL = ("https://sbs.gov.ws/documents/census/2021/"
+                    "Census-2021-Final-Report_221122_051222.pdf")
+PRINTED_MEDIANS = {"everyone": 22, "males": 20, "females": 21}
+FACT_SHEET_MEDIAN = 22.0
 REGIONS = ("Apia Urban Area", "North West Upolu", "Rest of Upolu", "Savaii")
 UPOLU = {"Apia Urban Area", "North West Upolu", "Rest of Upolu"}
 
@@ -435,6 +446,26 @@ SOURCES = [
 ]
 
 
+def national_medians(sub_header: list[Any], nation: list[float],
+                     ages_at: list[tuple[int, int]]) -> str:
+    """Samoa's medians from Table 1's single years, the sexes checked against the Bureau's.
+
+    Each age's Total column is followed by its MALE and FEMALE ones. Returns the
+    account for the log.
+    """
+    sub = [text(c).strip().upper() for c in sub_header]
+    check(all(sub[i:i + 3] == ["TOTAL", "MALE", "FEMALE"] for _, i in ages_at),
+          "samoa_census: Table 1's ages are not each Total, Male and Female")
+    got = {who: median_from_single_years({age: nation[i - 1 + shift] for age, i in ages_at})
+           for who, shift in (("everyone", 0), ("males", 1), ("females", 2))}
+    checked = [published_median(got[who], PRINTED_MEDIANS[who], f"samoa_census: Samoa's {who}",
+                                whole_years=True) for who in ("males", "females")]
+    return (f"Samoa's median ages from Table 1's single years: {', '.join(checked)}; everyone "
+            f"{got['everyone']}, where the Final Report prints {PRINTED_MEDIANS['everyone']} "
+            f"and the Fact Sheet {FACT_SHEET_MEDIAN} -- outside the sexes' "
+            f"{PRINTED_MEDIANS['males']} and {PRINTED_MEDIANS['females']}")
+
+
 def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
           ) -> list[dict[str, Any]]:
     old = read_2016(rows_of(book_2016, "Table 1 Pop by sex_sex"))
@@ -466,9 +497,7 @@ def build(book, book_2016, admin1: list[dict[str, Any]], admin2: list[dict[str, 
     for (_, village, a), (_, _, c) in zip(people["villages"], citizenship["villages"]):
         check(c[0] == a[0], f"samoa_census: Table 8a counts {c[0]:,.0f} in {village}, Table 1 "
                             f"{a[0]:,.0f}")
-    national = median_from_single_years({age: cell(people["total"], i) for age, i in ages_at})
-    log("  Samoa's median age from Table 1's single years: "
-        + published_median(national, NATIONAL_MEDIAN, "samoa_census: Samoa"))
+    log("  " + national_medians(age_rows[2], people["total"], ages_at))
 
     placed, new_villages = place_villages(old, people["villages"])
     for line in new_villages:
