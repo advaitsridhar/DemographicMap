@@ -1,11 +1,12 @@
-  e-Stat 0004019308: 1965 values
-  e-Stat 0004019309: 86460 values
-  e-Stat 0003445244: 33405 values
-  e-Stat 0003445259: 11790 values
-  national median 48.5, prefectures 44.1-56.4
-  ages: 1965 areas; every area's groups add to its total; Japan 61,349,581 men, 64,796,518 women
-  nationality: 1965 areas; every row's parts add up and its total is the age table's
-  the municipalities of every prefecture add up to it
-  grouped medians against the Bureau's over 1916 areas: mean gap 0.07 years, largest 0.70
-  1731 municipal polygons written (1730 bound, 1 sliver), 47 prefectures; people in no drawn polygon, by prefecture: Tokyo 2,351, Niigata 353, Kagawa Prefecture 3,103, Nagasaki Prefecture 2,288, Oita 1,725, Kagoshima Prefecture 5,520, Okinawa Prefecture 590
-  wrote data/processed/japan_municipal.json (7284 kB)
+liechtenstein: eTab 211.004 (2025), 213.001d and 213.011d (Volkszählung 2020), 211.002 (2025)
+  211.004.px: asked {'Jahr': 1, 'Altersjahr': 107, 'Geschlecht': 3, 'Heimat': 1, 'Wohnort': 14}, answered [1, 107, 3, 1, 14], 4494 values of type list
+  211.004: 4,034 cells; places ['Balzers', 'Eschen', 'Gamprin-Bendern', 'Liechtenstein', 'Mauren', 'Nendeln', 'Planken', 'Ruggell', 'Schaan', 'Schaanwald', 'Schellenberg', 'Triesen', 'Triesenberg', 'Vaduz']
+  Gemeinden against Liechtenstein: parts sum to 41,228 = 41,228
+  213.001d.px: asked {'Stichtag': 1, 'Religion': 13, 'Geschlecht': 1, 'Gemeinde': 12, 'Heimat': 1}, answered [1, 13, 1, 1, 12], 156 values of type list
+  213.011d.px: asked {'Stichtag': 1, 'Hauptsprache': 35, 'Geschlecht': 1, 'Gemeinde': 12}, answered [1, 35, 1, 12], 420 values of type list
+  Gemeinden against Liechtenstein, census 2020: parts sum to 39,055 = 39,055
+  211.002.px: asked {'Jahr': 1, 'Staatsbürgerschaft': 154, 'Geschlecht': 1, 'Wohngemeinde': 12}, answered [1, 154, 1, 12], 1848 values of type list
+  Gemeinden against Liechtenstein, citizenship: parts sum to 41,228 = 41,228
+  named: Liechtensteiner, Swiss, Austrian, German, Italian, Ukrainian, Portuguese, Turkish, Kosovan, Spanish, Bosnian and Herzegovinian
+  wrote data/processed/liechtenstein_gemeinde.json (158 kB)
+  wrote liechtenstein_gemeinde.json: 22 records
