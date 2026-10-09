@@ -102,9 +102,9 @@ def table21(totals):
                     {"Barshong": (m, f), "Kilkhorthang": (f, m)})
 
 
-def checked(annex, read, national=None):
+def checked(annex, read):
     """Every outcome: the dzongkhag's reason and each gewog's."""
-    reason, note = bt.single_outcome("Tsirang", annex, read, national)
+    reason, note = bt.single_outcome("Tsirang", annex, read)
     gewogs = {name: bt.gewog_outcome(name, annex["gewogs"].get(name), read)
               for name in read.gewogs}
     return reason, note, gewogs
@@ -215,16 +215,15 @@ class SingleYears(unittest.TestCase):
         self.assertIsNone(reason)
         self.assertIn("ages 88", note)
 
-    def test_a_short_table_21_needs_the_national_figure(self):
+    def test_a_table_21_short_of_its_a26_costs_the_median(self):
+        # No allowance: the four reports once read short were Table 2.2
+        # misread, and a Table 2.1 that is not A2.6's total is a misread too.
         pages, totals = report()
         annex = bt.annex_ages(pages, ["Barshong", "Kilkhorthang"])
         read = table21(totals)
         read.printed -= 100
-        reason, _note, _gewogs = checked(annex, read, national=None)
+        reason, _note, _gewogs = checked(annex, read)
         self.assertIn("Table 2.1", reason)
-        reason, note, _gewogs = checked(annex, read, national=bt.NATIONAL_ANALYSED)
-        self.assertIsNone(reason)
-        self.assertIn("100 more", note)
 
 
 def sideways(columns, labels, title=True):
@@ -325,11 +324,11 @@ class OnItsSide(unittest.TestCase):
         annex = bt.annex_ages([singles, first, second], ["Barshong", "Kilkhorthang"])
         self.assertTrue(annex["alternates"].get("Barshong"))
         read = table21(totals)
-        block, why, _note = bt.choose_gewog("Barshong", annex, read, False)
+        block, why, _note = bt.choose_gewog("Barshong", annex, read)
         self.assertIsNone(why)
         self.assertEqual(block["male"], series(MALES))
 
-    def test_a_short_table_21_admits_a_little_more_and_says_so(self):
+    def test_a_block_a_little_over_its_table_21_row_is_not_admitted(self):
         first, second = self.pages()
         singles, totals = single_years()
         annex = bt.annex_ages([singles, first, second], ["Barshong", "Kilkhorthang"])
@@ -337,15 +336,8 @@ class OnItsSide(unittest.TestCase):
         m, f = read.sexes["Barshong"]
         read.gewogs["Barshong"] -= 2
         read.sexes["Barshong"] = (m - 1, f - 1)
-        _block, why, _note = bt.choose_gewog("Barshong", annex, read, False)
+        _block, why, _note = bt.choose_gewog("Barshong", annex, read)
         self.assertIn("Table 2.1", why)
-        block, why, note = bt.choose_gewog("Barshong", annex, read, True)
-        self.assertIsNone(why)
-        self.assertIn("2 more than", note)
-        # Never fewer than Table 2.1, and never by more than the limit.
-        read.gewogs["Barshong"] += 50
-        _block, why, _note = bt.choose_gewog("Barshong", annex, read, True)
-        self.assertIsNotNone(why)
 
     def test_a_nameless_block_goes_to_the_gewog_whose_row_it_is(self):
         # A heading spelt otherwise ("GASE TSHOGOM" for Gase Tshogongm): the
@@ -357,11 +349,11 @@ class OnItsSide(unittest.TestCase):
         annex = bt.annex_ages([singles, first, second], ["Barshong", "Kilkhorthang"])
         self.assertEqual(len(annex["nameless"]), 1)
         read = table21(totals)
-        block, why, _note = bt.choose_gewog("Barshong", annex, read, False)
+        block, why, _note = bt.choose_gewog("Barshong", annex, read)
         self.assertIsNone(why)
         self.assertEqual(block["male"], series(MALES))
         # Kilkhorthang's row is not that block's, so it keeps its own.
-        block, why, _note = bt.choose_gewog("Kilkhorthang", annex, read, False)
+        block, why, _note = bt.choose_gewog("Kilkhorthang", annex, read)
         self.assertIsNone(why)
         self.assertEqual(block["male"], series(FEMALES))
 

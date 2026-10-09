@@ -223,6 +223,50 @@ class Citizenship(unittest.TestCase):
         _, (found, why) = self.read(pages(t22))
         self.assertIsNone(found)
 
+    def test_table_21_headed_name_is_table_21_not_table_22(self):
+        # Paro and Lhuentse head the column "Name". Read without the title,
+        # the first header this reader knew was Table 2.2's, and the
+        # Bhutanese population went on the map as everyone.
+        t21 = table21()
+        at = next(i for i, r in enumerate(t21) if r[0][2] == "Gewog/Town")
+        t21[at] = row("Name", "Male", "Female", "Total")
+        read, (found, why) = self.read([contents(), t21, table22()])
+        self.assertEqual(read.printed, 5449)
+        self.assertEqual(read.gewogs, {"Barshong": 842, "Patshaling": 1159})
+        self.assertEqual(why, "")
+        self.assertEqual(found.printed, 3193 + 838 + 1151)
+
+    def test_table_21_headed_gewog_space_slash_town_is_read(self):
+        # Punakha: "Gewog /Town", two words.
+        t21 = table21()
+        at = next(i for i, r in enumerate(t21) if r[0][2] == "Gewog/Town")
+        t21[at] = row("Gewog", "/Town", "Male", "Female", "Total")
+        read, _ = self.read([contents(), t21, table22()])
+        self.assertEqual(read.printed, 5449)
+
+    def test_table_21_with_its_header_on_two_lines_is_read(self):
+        # Trashigang: "Gewog/Town Persons" over "Male Female Total".
+        t21 = table21()
+        at = next(i for i, r in enumerate(t21) if r[0][2] == "Gewog/Town")
+        t21[at:at + 1] = [row("Gewog/Town", "Persons"),
+                          [(c[0] + 60.0, c[1] + 60.0, c[2])
+                           for c in row("Male", "Female", "Total")]]
+        read, _ = self.read([contents(), t21, table22()])
+        self.assertEqual(read.printed, 5449)
+        self.assertEqual(read.gewogs, {"Barshong": 842, "Patshaling": 1159})
+
+    def test_table_22_is_never_taken_for_table_21(self):
+        # A Table 2.1 header nothing here can recognise, and no title on its
+        # page: the ungated read finds Table 2.2 and the run refuses it.
+        t21 = table21()
+        t21[0] = row("Population", "Distribution", "by", "Gewog")
+        at = next(i for i, r in enumerate(t21) if r[0][2] == "Gewog/Town")
+        t21[at] = row("Place", "Male", "Female", "Total")
+        with reading([contents(), t21, table22()]), \
+                self.assertRaises(SystemExit) as stop:
+            bt.table(b"", "Tsirang")
+        self.assertIn("Table 2.2", str(stop.exception))
+
     def test_no_table_22_at_all_is_said(self):
         _, (found, why) = self.read([contents(), table21()])
         self.assertIsNone(found)

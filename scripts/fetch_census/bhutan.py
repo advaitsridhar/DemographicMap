@@ -383,19 +383,18 @@ NATIONAL_ANALYSED = 727_145   # what the report's own tables are built on
 NATIONAL_MALE = 380_453
 NATIONAL_FEMALE = 346_692
 
-# The twenty dzongkhag reports do not sum to either, and that is a
-# disagreement between NSB's own publications rather than a misread here.
-# Their Table 2.1 figures agree with the national report's Table 2.1 exactly
-# for Bumthang, Chhukha, Dagana, Gasa, Haa, Monggar and Pema Gatshel, and
-# differ for others -- Paro 43,362 against 46,316, Punakha 27,360 against
-# 28,740, Lhuentse 14,240 against 14,437. Each dzongkhag report reconciles
-# internally, gewog by gewog, to the total printed in it.
+# The twenty dzongkhag reports' Table 2.1 totals are the national report's
+# 727,145 between them, and their sexes its 380,453 and 346,692. This file
+# once read them 6,308 short and put it down to a disagreement between NSB's
+# publications: Paro 43,362 against the national 46,316, Punakha 27,360
+# against 28,740, Lhuentse 14,240 against 14,437, Trashigang 43,741 against
+# 45,518. There was none. Those four were the *Bhutanese* populations of
+# their Table 2.2, read in place of a Table 2.1 whose header this reader did
+# not recognise (see :func:`table`); Paro's own Table 2.1 prints 46,316.
 #
-# So the per-dzongkhag reconciliation is the hard check and this one is
-# reported rather than enforced: every dzongkhag is required to be read and
-# to add up to its own printed total, which is what would catch one read
-# twice or not at all. A bound here would either be loose enough to miss
-# Gasa's 3,952 or tight enough to refuse this known disagreement.
+# Each dzongkhag report reconciles internally, gewog by gewog, to the total
+# printed in it, which is the hard check per report; the national sum is
+# checked once all twenty are read (see main).
 NATIONAL = NATIONAL_ANALYSED
 
 # The header is two stacked rows -- "Gewog/Town | Persons" over
@@ -442,12 +441,11 @@ POPULATION_NOTE = (
     "report puts it. Bhutan's census does not ask religion, language or "
     "ethnicity: religion and language are declared rather than left empty, "
     "and the ethnicity field carries citizenship, the one count of identity "
-    "the census publishes. Note that "
-    "the dzongkhag reports and the national report do not agree everywhere: "
-    "the twenty come to 720,837 against the 727,145 the national report "
-    "analyses, itself 8,408 short of the 735,553 found in the country once "
-    "non-Bhutanese in hotels are counted. The figure here is the dzongkhag's "
-    "own, which its gewogs add up to exactly.")
+    "the census publishes. The twenty dzongkhag reports come to the 727,145 "
+    "people the national report analyses, which leaves out the 8,408 "
+    "non-Bhutanese and tourists found in hotels or on the move on census "
+    "night, of whom no details were taken (735,553 in all). The figure here "
+    "is the dzongkhag's own, which its gewogs and towns add up to exactly.")
 SEX_RATIO_NOTE = (
     "Females per 1,000 males, derived from the Male and Female columns of the "
     "same Table 2.1 row as the population beside it. Beside sex, the one "
@@ -554,6 +552,52 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
             yield [sorted(cells) for _top, cells in rows]
 
 
+def header_variants(cells, broken_key: float | None
+                    ) -> tuple[list[tuple[float, float, str]], float | None]:
+    """A header line with its first word put back to ``HEADER_KEY``.
+
+    The reports set that word four ways, and only a line read under its
+    table's title is rewritten (see :func:`scan`):
+
+    * "Gewog/Town" -- most of them; left as it is.
+    * "Gewog /Town" -- Punakha's Table 2.1, two words with a space before the
+      slash; joined.
+    * "Name" -- Paro's and Lhuentse's Table 2.1; taken as the key only where
+      the same line carries Male, Female and Total, so a line of prose that
+      says "name" is never a header.
+    * "Gewog/" on a line of its own and "Town Male Female ..." on the next --
+      Bumthang's Table 2.2; ``broken_key`` carries the first word's left edge
+      from one line to the next.
+
+    Returns the line and the ``broken_key`` for the line after it.
+    """
+    out = list(cells)
+    texts = [t for _a, _b, t in out]
+    start, end = HEADER_KEY.split("/")
+    joined = []
+    i = 0
+    while i < len(out):
+        x0, x1, t = out[i]
+        if (t == start and i + 1 < len(out) and out[i + 1][2] == "/" + end):
+            joined.append((x0, out[i + 1][1], HEADER_KEY))
+            i += 2
+            continue
+        joined.append((x0, x1, t))
+        i += 1
+    out = joined
+    texts = [t for _a, _b, t in out]
+    if (HEADER_KEY not in texts and "Name" in texts and HEADER_EDGE in texts
+            and "Male" in texts and "Female" in texts):
+        out = [(x0, x1, HEADER_KEY if t == "Name" else t) for x0, x1, t in out]
+    if broken_key is not None and end in texts and HEADER_KEY not in texts:
+        out = [(min(x0, broken_key), x1, HEADER_KEY) if t == end else (x0, x1, t)
+               for x0, x1, t in out]
+    texts = [t for _a, _b, t in out]
+    following = (min(x0 for x0, _x1, t in out if t == start + "/")
+                 if start + "/" in texts else None)
+    return out, following
+
+
 def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
          title: tuple[str, ...] | None = None, slack: float = 3.0) -> Read:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
@@ -652,11 +696,9 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
     # Dropping those cost Chhukha 29,793 people -- almost all of them
     # Phuentsholing, the second city of Bhutan.
     pending: list[str] = []
-    # Table 2.2 only: where "Gewog/" stood alone on the line just read, its
-    # left edge, waiting for the line that finishes the header (Bumthang).
+    # Under a title only: where "Gewog/" stood alone on the line just read,
+    # its left edge, waiting for the line that finishes the header (Bumthang).
     broken_key: float | None = None
-    key_start, key_end = HEADER_KEY.split("/")
-    key_start += "/"
 
     for rows in words_by_row(blob):
         if printed:
@@ -671,20 +713,12 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
                 titled = all(word in bare for word in title or ())
                 continue
             if margin is None:
-                # The header word broken at its slash: "Gewog/" on this line,
-                # "Town" opening the next. Table 2.2 only -- every Table 2.1
-                # reconciles as it is read already.
-                key_here = HEADER_KEY in texts
-                if (title is not None and broken_key is not None
-                        and key_end in texts):
-                    key_here = True
-                    cells = [(min(x0, broken_key), x1, HEADER_KEY)
-                             if t == key_end else (x0, x1, t)
-                             for x0, x1, t in cells]
+                # Under a title only (Table 2.2, and Table 2.1 read under its
+                # own), the header word as the reports actually set it:
+                if title is not None:
+                    cells, broken_key = header_variants(cells, broken_key)
                     texts = [t for _a, _b, t in cells]
-                broken_key = (min(x0 for x0, _x1, t in cells if t == key_start)
-                              if title is not None and key_start in texts
-                              else None)
+                key_here = HEADER_KEY in texts
                 if strict:
                     # All four header words on one baseline. This is how
                     # Tsirang, Bumthang and Chhukha print it, and it is tried
@@ -892,6 +926,18 @@ def stated_total(blob: bytes) -> int:
     return 0
 
 
+def reconciles(read: Read) -> bool:
+    """Rows read, a closing row read, and the rows making the closing row."""
+    counted = sum(read.gewogs.values()) + sum(read.towns.values())
+    return bool(read.gewogs) and bool(read.printed) and counted == read.printed
+
+
+# Table 2.1's title as the reports print it: "Table 2.1 Population
+# Distribution by Gewog/Town and Sex, Paro 2017", and variants of the words
+# after the number. The number is the part all twenty share.
+TABLE_TITLE = ("2.1",)
+
+
 def table(blob: bytes, dzongkhag: str, debug: bool = False) -> Read:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
@@ -901,18 +947,51 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False) -> Read:
     is the relaxed pass tried, which takes the header's second row from a
     following line -- Dagana's layout, and loose enough that letting it run
     first cost Bumthang its whole table.
+
+    **Both passes are first made under the table's own title**, and that is
+    the half this file had wrong for longest. Read without it, the reader
+    took the first header it could recognise, and in four reports that was
+    not Table 2.1's: Paro and Lhuentse head the column "Name", Punakha writes
+    "Gewog /Town" with a space, and Trashigang sets "Male Female Total" a line
+    below its "Gewog/Town". The first header the reader knew was then Table
+    2.2's, four pages on -- the *Bhutanese* population by gewog -- which
+    reconciles to its own closing row like any other table and was taken for
+    Table 2.1. Those four dzongkhags were short of their own reports by 6,308
+    people, every non-Bhutanese counted in them, on the map and in their sex
+    ratios, and the shortfall was put down to a disagreement between the
+    reports and the national volume that does not exist: Paro's Table 2.1
+    prints 46,316, as the national report does. So the header is now looked
+    for only on a page carrying "2.1" in a line above it, the header words as
+    those reports set them are understood there (:func:`header_variants`),
+    and the ungated read is kept only as a fallback that is refused if what
+    it read is Table 2.2.
     """
-    read = scan(blob, True, dzongkhag, debug)
-    counted = sum(read.gewogs.values()) + sum(read.towns.values())
-    if not read.gewogs or not read.printed or counted != read.printed:
-        # The strict pass either found no header or found one and did not
-        # reconcile. Either way the relaxed pass is worth asking, and only a
-        # result that reconciles is allowed to replace one that does not.
-        loose = scan(blob, False, dzongkhag, debug)
-        if loose.gewogs and loose.printed and \
-                sum(loose.gewogs.values()) + sum(loose.towns.values()) \
-                == loose.printed:
-            read = loose
+    read: Read | None = None
+    for strict in (True, False):
+        candidate = scan(blob, strict, dzongkhag, debug, title=TABLE_TITLE)
+        if candidate.gewogs and (reconciles(candidate) or not candidate.printed):
+            if read is None or reconciles(candidate):
+                read = candidate
+            if reconciles(candidate):
+                break
+    if read is None:
+        read = scan(blob, True, dzongkhag, debug)
+        if not reconciles(read):
+            # The strict pass either found no header or found one and did not
+            # reconcile. Either way the relaxed pass is worth asking, and only
+            # a result that reconciles is allowed to replace one that does not.
+            loose = scan(blob, False, dzongkhag, debug)
+            if reconciles(loose):
+                read = loose
+        # Read without its title, the table could be Table 2.2, which is
+        # laid out the same way and reconciles the same way: refused if so.
+        for strict in (True, False):
+            other = scan(blob, strict, dzongkhag, False, title=CITIZEN_TITLE)
+            if reconciles(other) and other.gewogs == read.gewogs:
+                raise SystemExit(
+                    f"bhutan: {dzongkhag}: the table read as Table 2.1 is "
+                    f"Table 2.2, the Bhutanese population, row for row; "
+                    f"Table 2.1's own header was not found under its title")
     if not read.gewogs:
         raise SystemExit(f"bhutan: {dzongkhag}: no gewog rows read from "
                          f"Table 2.1")
@@ -1057,12 +1136,11 @@ def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
     if over or found.printed > read.printed:
         return None, (f"Table 2.2 counts more Bhutanese than Table 2.1 counts "
                       f"people in {over or ['the dzongkhag']}")
-    # Four reports -- Lhuentse, Paro, Punakha and Trashigang -- print a
-    # Table 2.1 that is short of their own annex by 6,308 people between
-    # them, exactly what the national report counts and the twenty Table
-    # 2.1s do not, and their Table 2.2 then prints Table 2.1's own total.
-    # A dzongkhag with no one but Bhutanese in it is not what those tables
-    # say; that one of the two is not the table its title names is.
+    # The same total in both is not a dzongkhag with no one but Bhutanese in
+    # it: it is one table read twice. That is what this reader once did with
+    # Lhuentse, Paro, Punakha and Trashigang, taking their Table 2.2 for
+    # Table 2.1 (see :func:`table`); should it happen again, the dzongkhag
+    # loses its citizenship rather than gaining a false 100% Bhutanese.
     if found.printed == read.printed:
         return None, (f"Table 2.2 prints the same total as Table 2.1, "
                       f"{found.printed:,} people, so the report gives no count of "
@@ -1129,11 +1207,11 @@ def citizen_cite(url: str) -> list[dict[str, Any]]:
 #   and female figures do not make the total beside them, while every column
 #   still adds up across the areas and down to All Ages. The median reads the
 #   totals; the note says how many rows those are.
-# * Four reports' Table 2.1 counts fewer people than their own A2.6 --
-#   Lhuentse, Paro, Punakha and Trashigang, 6,308 between them, which is
-#   exactly the national report's 727,145 less the twenty Table 2.1 totals.
-#   Their A2.6 is taken where the twenty A2.6 totals together are the national
-#   report's figure, and the note gives both counts.
+# * A2.6's All Ages must be the report's Table 2.1 total, and each gewog's
+#   All Chiwogs its Table 2.1 row, persons, males and females, exactly. (An
+#   allowance once let four reports' A2.6 and A2.7 exceed a Table 2.1 that
+#   was short of them; that Table 2.1 was the reports' Table 2.2, misread --
+#   see :func:`table` -- and the allowance has gone with the misreading.)
 #
 # A check that fails costs that unit its median, never the run: the record
 # says why in place of a figure, and the log lists every one.
@@ -1513,14 +1591,9 @@ def annex_ages(pages, gewog_names) -> dict[str, Any]:
             "rotated": rotated, "problems": problems}
 
 
-def single_outcome(dzongkhag: str, annex: dict[str, Any], read: "Read",
-                   national_a26: int | None) -> tuple[str | None, str]:
-    """Table A2.6 against itself and Table 2.1: (reason it fails, note to add).
-
-    ``national_a26`` is the twenty reports' A2.6 totals together, where all
-    twenty were read; it is what lets a report whose Table 2.1 is short of
-    its own A2.6 keep its median (see the section comment).
-    """
+def single_outcome(dzongkhag: str, annex: dict[str, Any], read: "Read"
+                   ) -> tuple[str | None, str]:
+    """Table A2.6 against itself and Table 2.1: (reason it fails, note to add)."""
     single, all_ages = annex["single"], annex["all_ages"]
     if all_ages is None or not single:
         return ("this reader found no All Ages row or no single years in the "
@@ -1550,33 +1623,14 @@ def single_outcome(dzongkhag: str, annex: dict[str, Any], read: "Read",
                  "up across the areas and down to All Ages; the median reads the "
                  "totals.")
     if all_ages[8] != read.printed:
-        if national_a26 != NATIONAL_ANALYSED:
-            return (f"Table A2.6 counts {all_ages[8]:,} people and the report's "
-                    f"Table 2.1 {read.printed:,}, and the twenty reports' A2.6 "
-                    "totals could not be held to the national report's", "")
-        note += (f" Table A2.6 counts {all_ages[8]:,} people, {all_ages[8] - read.printed:,} "
-                 f"more than the {read.printed:,} of the report's Table 2.1 shown as "
-                 "the population; the twenty reports' A2.6 totals come to the "
-                 f"national report's {NATIONAL_ANALYSED:,}, and their Table 2.1 "
-                 "totals to less.")
+        return (f"Table A2.6 counts {all_ages[8]:,} people and the report's "
+                f"Table 2.1 {read.printed:,}", "")
     return None, note
 
 
-# How far a gewog's Table A2.7 may exceed its Table 2.1 row, in a report whose
-# Table 2.1 is known to be short of its own A2.6 (see the section comment):
-# enough for the people that table leaves out, never enough for another
-# gewog's block to pass for this one's.
-EXCESS_LIMIT = 0.03
-
-
-def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read",
-                  excess_ok: bool = False) -> str | None:
-    """A gewog's All Chiwogs block against itself and its Table 2.1 row.
-
-    ``excess_ok`` admits a block counting up to EXCESS_LIMIT more people, and
-    of each sex, than Table 2.1 -- never fewer -- in a report whose Table 2.1
-    is short of its A2.6.
-    """
+def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read"
+                  ) -> str | None:
+    """A gewog's All Chiwogs block against itself and its Table 2.1 row."""
     if rows is None:
         return ("this reader found no All Chiwogs block under the gewog's name in "
                 "the report's Table A2.7")
@@ -1595,8 +1649,6 @@ def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read",
     want = (read.gewogs[name], *read.sexes[name])
     if got == want:
         return None
-    if excess_ok and all(w <= g <= w * (1 + EXCESS_LIMIT) for g, w in zip(got, want)):
-        return None
     if got[0] != want[0]:
         return (f"Table A2.7 counts {got[0]:,} people in the gewog and Table 2.1 "
                 f"{want[0]:,}")
@@ -1604,7 +1656,7 @@ def gewog_outcome(name: str, rows: dict[str, list[int]] | None, read: "Read",
             f"Table 2.1 {want[1]:,} and {want[2]:,}")
 
 
-def choose_gewog(name: str, annex: dict[str, Any], read: "Read", excess_ok: bool
+def choose_gewog(name: str, annex: dict[str, Any], read: "Read"
                  ) -> tuple[dict[str, list[int]] | None, str | None, str]:
     """The gewog's block that passes every check: (block, reason, note).
 
@@ -1625,17 +1677,9 @@ def choose_gewog(name: str, annex: dict[str, Any], read: "Read", excess_ok: bool
     exact = [b for b in pool if b.get("persons") and b.get("male") and b.get("female")
              and (b["persons"][-1], b["male"][-1], b["female"][-1]) == want]
     for block in [*blocks, *(exact if len(exact) == 1 else [])]:
-        why = gewog_outcome(name, block, read, excess_ok)
+        why = gewog_outcome(name, block, read)
         if why is None:
-            people = block["persons"][-1]
-            note = ""
-            if people != read.gewogs[name]:
-                note = (f" Table A2.7 counts {people:,} people here, "
-                        f"{people - read.gewogs[name]:,} more than the "
-                        f"{read.gewogs[name]:,} of Table 2.1 shown as the population: "
-                        "this report's Table 2.1 is short of its own age tables "
-                        "(see the dzongkhag).")
-            return block, None, note
+            return block, None, ""
         reason = reason or why
     return None, reason, ""
 
@@ -1843,16 +1887,14 @@ def main() -> int:
             log(f"    Table 2.2: {citizen.printed:,} Bhutanese of {printed:,} -- "
                 f"{printed - citizen.printed:,} non-Bhutanese")
             dzongkhag_eth = citizenship(citizen.printed, printed)
-        reason, extra = single_outcome(dzongkhag, annex, read, national_a26)
+        reason, extra = single_outcome(dzongkhag, annex, read)
         if reason:
             declined.append(f"{dzongkhag}: {reason}")
             dzongkhag_age = age_gap(reason)
         else:
             dzongkhag_age = dzongkhag_median(annex, extra)
             medians["dzongkhag"] += 1
-        excess_ok = (not reason and annex["all_ages"] is not None
-                     and annex["all_ages"][8] > read.printed)
-        chosen = {name: choose_gewog(name, annex, read, excess_ok) for name in gewogs}
+        chosen = {name: choose_gewog(name, annex, read) for name in gewogs}
         outcomes = {name: why for name, (_block, why, _note) in chosen.items()}
         for name, why in sorted(outcomes.items()):
             if why:
@@ -2007,21 +2049,30 @@ def main() -> int:
     if not args.only:
         log(f"  the twenty dzongkhags come to {national:,}, against the "
             f"{NATIONAL_ANALYSED:,} the national report analyses and the "
-            f"{NATIONAL_FOUND:,} it says were found -- "
-            f"{national - NATIONAL_ANALYSED:+,} on the first. The two "
-            f"publications disagree for some dzongkhags; each report here "
-            f"reconciles to its own printed total.")
-        # Reported against the national report's own row, and not enforced,
-        # for exactly the reason the head count above is not: the twenty
-        # volumes and the national report disagree on several dzongkhags, and
-        # the sex split inherits that disagreement rather than adding one.
-        # What this line is for is the other kind of error -- a column read
-        # one place to the left would put the sexes wildly out here while
-        # every total still added up.
+            f"{NATIONAL_FOUND:,} it says were found once the "
+            f"{NATIONAL_FOUND - NATIONAL_ANALYSED:,} non-Bhutanese and "
+            f"tourists in hotels, of whom no details were taken, are added")
+        # Held to the national report's own figures, and enforced: the twenty
+        # Table 2.1s make the national 727,145, and a sum that does not is a
+        # report misread -- which is how four dzongkhags once came to be
+        # carried at their Bhutanese population alone (see table()). The
+        # sexes catch the other kind of error, a column read one place to the
+        # left, which would put them out while every total still added up.
+        if national != NATIONAL_ANALYSED:
+            raise SystemExit(
+                f"bhutan: the twenty reports' Table 2.1 totals come to "
+                f"{national:,}, not the national report's "
+                f"{NATIONAL_ANALYSED:,}: a report has been misread")
         log(f"  their sexes come to {males:,} male and {females:,} female, "
             f"against the {NATIONAL_MALE:,} and {NATIONAL_FEMALE:,} the "
             f"national report prints for the country -- "
             f"{males - NATIONAL_MALE:+,} and {females - NATIONAL_FEMALE:+,}.")
+        if all(r.printed_sexes for _d, _u, r, _a, _c, _w in reports) and \
+                (males, females) != (NATIONAL_MALE, NATIONAL_FEMALE):
+            raise SystemExit(
+                f"bhutan: the twenty reports' Table 2.1 sexes come to "
+                f"{males:,} and {females:,}, not the national report's "
+                f"{NATIONAL_MALE:,} and {NATIONAL_FEMALE:,}")
         if refused:
             log(f"  {len(refused)} row(s) publish no sex ratio because the "
                 f"published halves do not reach the published total: "
