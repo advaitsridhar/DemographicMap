@@ -7592,6 +7592,196 @@
     "ethnicity_note": "2020 census, Table 1-4 of Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020): the 56 nationalities (民族) of all 257,826 residents. 'Other ethnic groups' is the 4 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 339 people of the 24 nationalities too few to show at one decimal."
   },
   {
+    "id": "CHN-17275852B73146949110998",
+    "level": "admin2",
+    "name": "Wulatezhongqi",
+    "parent": "CHN-Inner Mongolia Autonomous Region",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 112159,
+      "year": 2020,
+      "source": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) prints ages by county in Table 1-5, but that workbook could not be read: the bureau's server refused it (HTTP 403) and the Internet Archive holds no capture of it. No median age is given for the county here."
+    },
+    "sex_ratio": {
+      "value": 113.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language use has been measured once nationally, by the State Language Commission's survey (中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not read them, so the field is not available rather than never collected."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 78.6,
+        "count": 88154
+      },
+      {
+        "group": "Mongol",
+        "pct": 20.3,
+        "count": 22755
+      },
+      {
+        "group": "Hui",
+        "pct": 0.4,
+        "count": 454
+      },
+      {
+        "group": "Manchu",
+        "pct": 0.4,
+        "count": 435
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.2,
+        "count": 290
+      },
+      {
+        "group": "Tujia",
+        "pct": 0.1,
+        "count": 71
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1: households, population and sex ratio by area",
+        "url": "https://web.archive.org/web/20241009155316id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "https://web.archive.org/web/20240509104832id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B73146949110998",
+    "aliases": [
+      "乌拉特中旗"
+    ],
+    "codes": {
+      "gb2260": "150824"
+    },
+    "population_note": "The 2020 census count of this county, Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its seat stands alone in it and the label Wulatezhongqi is 乌拉特中旗 in pinyin (agreement 1.00)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (9 of its 12 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
+    "sex_ratio_note": "59,688 men and 52,471 women.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020): the 56 nationalities (民族) of all 112,159 residents. 'Other ethnic groups' is the 10 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 280 people of the 25 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B97961566945863",
+    "level": "admin2",
+    "name": "Wulatehouqi",
+    "parent": "CHN-Inner Mongolia Autonomous Region",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 53946,
+      "year": 2020,
+      "source": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) prints ages by county in Table 1-5, but that workbook could not be read: the bureau's server refused it (HTTP 403) and the Internet Archive holds no capture of it. No median age is given for the county here."
+    },
+    "sex_ratio": {
+      "value": 120.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language use has been measured once nationally, by the State Language Commission's survey (中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not read them, so the field is not available rather than never collected."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 74.8,
+        "count": 40356
+      },
+      {
+        "group": "Mongol",
+        "pct": 24.3,
+        "count": 13122
+      },
+      {
+        "group": "Manchu",
+        "pct": 0.3,
+        "count": 171
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.3,
+        "count": 147
+      },
+      {
+        "group": "Hui",
+        "pct": 0.2,
+        "count": 121
+      },
+      {
+        "group": "Tibetan",
+        "pct": 0.1,
+        "count": 29
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1: households, population and sex ratio by area",
+        "url": "https://web.archive.org/web/20241009155316id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "https://web.archive.org/web/20240509104832id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B97961566945863",
+    "aliases": [
+      "乌拉特后旗"
+    ],
+    "codes": {
+      "gb2260": "150825"
+    },
+    "population_note": "The 2020 census count of this county, Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its seat stands alone in it and the label Wulatehouqi is 乌拉特后旗 in pinyin (agreement 1.00)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (5 of its 6 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
+    "sex_ratio_note": "29,437 men and 24,509 women.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020): the 56 nationalities (民族) of all 53,946 residents. 'Other ethnic groups' is the 5 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 142 people of the 22 nationalities too few to show at one decimal."
+  },
+  {
     "id": "CHN-17275852B56850756381420",
     "level": "admin2",
     "name": "Zuozixian",
@@ -8330,6 +8520,206 @@
     "sex_ratio_note": "100,614 men and 94,615 women.",
     "ethnicity_year": 2020,
     "ethnicity_note": "2020 census, Table 1-4 of Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020): the 56 nationalities (民族) of all 195,229 residents. 'Other ethnic groups' is the 11 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 318 people of the 29 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B94258836786068",
+    "level": "admin2",
+    "name": "Keerqinyouyizhongqi",
+    "parent": "CHN-Inner Mongolia Autonomous Region",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 207380,
+      "year": 2020,
+      "source": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) prints ages by county in Table 1-5, but that workbook could not be read: the bureau's server refused it (HTTP 403) and the Internet Archive holds no capture of it. No median age is given for the county here."
+    },
+    "sex_ratio": {
+      "value": 103.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language use has been measured once nationally, by the State Language Commission's survey (中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not read them, so the field is not available rather than never collected."
+    },
+    "ethnicity": [
+      {
+        "group": "Mongol",
+        "pct": 82.9,
+        "count": 172007
+      },
+      {
+        "group": "Han Chinese",
+        "pct": 15.6,
+        "count": 32282
+      },
+      {
+        "group": "Manchu",
+        "pct": 0.9,
+        "count": 1964
+      },
+      {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 587
+      },
+      {
+        "group": "Daur",
+        "pct": 0.1,
+        "count": 103
+      },
+      {
+        "group": "Hui",
+        "pct": 0.1,
+        "count": 141
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 296
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1: households, population and sex ratio by area",
+        "url": "https://web.archive.org/web/20241009155316id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "https://web.archive.org/web/20240509104832id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B94258836786068",
+    "aliases": [
+      "科尔沁右翼中旗"
+    ],
+    "codes": {
+      "gb2260": "152222"
+    },
+    "population_note": "The 2020 census count of this county, Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its seat stands alone in it and the label Keerqinyouyizhongqi is 科尔沁右翼中旗 in pinyin (agreement 1.00)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (12 of its 16 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
+    "sex_ratio_note": "105,637 men and 101,743 women.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020): the 56 nationalities (民族) of all 207,380 residents. 'Other ethnic groups' is the 16 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 280 people of the 24 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B49862163937258",
+    "level": "admin2",
+    "name": "Tuquanxian",
+    "parent": "CHN-Inner Mongolia Autonomous Region",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 220668,
+      "year": 2020,
+      "source": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) prints ages by county in Table 1-5, but that workbook could not be read: the bureau's server refused it (HTTP 403) and the Internet Archive holds no capture of it. No median age is given for the county here."
+    },
+    "sex_ratio": {
+      "value": 103.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language use has been measured once nationally, by the State Language Commission's survey (中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not read them, so the field is not available rather than never collected."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 70.1,
+        "count": 154614
+      },
+      {
+        "group": "Mongol",
+        "pct": 20.5,
+        "count": 45293
+      },
+      {
+        "group": "Manchu",
+        "pct": 8.8,
+        "count": 19556
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.3,
+        "count": 646
+      },
+      {
+        "group": "Hui",
+        "pct": 0.1,
+        "count": 190
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 191
+      },
+      {
+        "group": "Miao",
+        "pct": 0.1,
+        "count": 178
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1: households, population and sex ratio by area",
+        "url": "https://web.archive.org/web/20241009155316id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "https://web.archive.org/web/20240509104832id_/https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B49862163937258",
+    "aliases": [
+      "突泉县"
+    ],
+    "codes": {
+      "gb2260": "152224"
+    },
+    "population_note": "The 2020 census count of this county, Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Tuquanxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (8 of its 10 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 0.80 times the polygon's 2010 figure (Wikidata (CC0)), 0.99 of the median ratio of the province's 20 comparable counties (0.81), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "sex_ratio_note": "112,078 men and 108,590 women.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020): the 56 nationalities (民族) of all 220,668 residents. 'Other ethnic groups' is the 28 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 618 people of the 26 nationalities too few to show at one decimal."
   },
   {
     "id": "CHN-17275852B36655604222163",
@@ -9092,15 +9482,15 @@
     },
     "population": {
       "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 牙克石市 (150782) in 2020, but its figures are not put on this polygon: 胜利街道, which the codes list under 海拉尔区 (150702), stands inside it; 大雁镇, which the codes list under 鄂温克族自治旗 (150724), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
+      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 牙克石市 (150782) in 2020, but its figures are not put on this polygon: 大雁镇, which the codes list under 鄂温克族自治旗 (150724), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
     },
     "median_age": {
       "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 牙克石市 (150782) in 2020, but its figures are not put on this polygon: 胜利街道, which the codes list under 海拉尔区 (150702), stands inside it; 大雁镇, which the codes list under 鄂温克族自治旗 (150724), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
+      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 牙克石市 (150782) in 2020, but its figures are not put on this polygon: 大雁镇, which the codes list under 鄂温克族自治旗 (150724), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 牙克石市 (150782) in 2020, but its figures are not put on this polygon: 胜利街道, which the codes list under 海拉尔区 (150702), stands inside it; 大雁镇, which the codes list under 鄂温克族自治旗 (150724), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
+      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 牙克石市 (150782) in 2020, but its figures are not put on this polygon: 大雁镇, which the codes list under 鄂温克族自治旗 (150724), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
     },
     "religion": {
       "status": "not_available"
@@ -9110,7 +9500,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 牙克石市 (150782) in 2020, but its figures are not put on this polygon: 胜利街道, which the codes list under 海拉尔区 (150702), stands inside it; 大雁镇, which the codes list under 鄂温克族自治旗 (150724), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
+      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 牙克石市 (150782) in 2020, but its figures are not put on this polygon: 大雁镇, which the codes list under 鄂温克族自治旗 (150724), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
     },
     "sources": [],
     "country": "CHN",
@@ -9121,94 +9511,6 @@
     ],
     "codes": {
       "gb2260": "150782"
-    }
-  },
-  {
-    "id": "CHN-17275852B73146949110998",
-    "level": "admin2",
-    "name": "Wulatezhongqi",
-    "parent": "CHN-Inner Mongolia Autonomous Region",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 乌拉特中旗 (150824) in 2020, but its figures are not put on this polygon: its own township 新忽热苏木 stands more than 3 km outside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 乌拉特中旗 (150824) in 2020, but its figures are not put on this polygon: its own township 新忽热苏木 stands more than 3 km outside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 乌拉特中旗 (150824) in 2020, but its figures are not put on this polygon: its own township 新忽热苏木 stands more than 3 km outside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 乌拉特中旗 (150824) in 2020, but its figures are not put on this polygon: its own township 新忽热苏木 stands more than 3 km outside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "sources": [],
-    "country": "CHN",
-    "match_by": "shape_id",
-    "shape_id": "17275852B73146949110998",
-    "aliases": [
-      "乌拉特中旗"
-    ],
-    "codes": {
-      "gb2260": "150824"
-    }
-  },
-  {
-    "id": "CHN-17275852B97961566945863",
-    "level": "admin2",
-    "name": "Wulatehouqi",
-    "parent": "CHN-Inner Mongolia Autonomous Region",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 乌拉特后旗 (150825) in 2020, but its figures are not put on this polygon: 新忽热苏木, which the codes list under 乌拉特中旗 (150824), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 乌拉特后旗 (150825) in 2020, but its figures are not put on this polygon: 新忽热苏木, which the codes list under 乌拉特中旗 (150824), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 乌拉特后旗 (150825) in 2020, but its figures are not put on this polygon: 新忽热苏木, which the codes list under 乌拉特中旗 (150824), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 乌拉特后旗 (150825) in 2020, but its figures are not put on this polygon: 新忽热苏木, which the codes list under 乌拉特中旗 (150824), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "sources": [],
-    "country": "CHN",
-    "match_by": "shape_id",
-    "shape_id": "17275852B97961566945863",
-    "aliases": [
-      "乌拉特后旗"
-    ],
-    "codes": {
-      "gb2260": "150825"
     }
   },
   {
@@ -9385,94 +9687,6 @@
     ],
     "codes": {
       "gb2260": "152201"
-    }
-  },
-  {
-    "id": "CHN-17275852B94258836786068",
-    "level": "admin2",
-    "name": "Keerqinyouyizhongqi",
-    "parent": "CHN-Inner Mongolia Autonomous Region",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 科尔沁右翼中旗 (152222) in 2020, but its figures are not put on this polygon: its own township 杜尔基镇 stands more than 3 km outside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 科尔沁右翼中旗 (152222) in 2020, but its figures are not put on this polygon: its own township 杜尔基镇 stands more than 3 km outside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 科尔沁右翼中旗 (152222) in 2020, but its figures are not put on this polygon: its own township 杜尔基镇 stands more than 3 km outside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 科尔沁右翼中旗 (152222) in 2020, but its figures are not put on this polygon: its own township 杜尔基镇 stands more than 3 km outside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "sources": [],
-    "country": "CHN",
-    "match_by": "shape_id",
-    "shape_id": "17275852B94258836786068",
-    "aliases": [
-      "科尔沁右翼中旗"
-    ],
-    "codes": {
-      "gb2260": "152222"
-    }
-  },
-  {
-    "id": "CHN-17275852B49862163937258",
-    "level": "admin2",
-    "name": "Tuquanxian",
-    "parent": "CHN-Inner Mongolia Autonomous Region",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 突泉县 (152224) in 2020, but its figures are not put on this polygon: 杜尔基镇, which the codes list under 科尔沁右翼中旗 (152222), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 突泉县 (152224) in 2020, but its figures are not put on this polygon: 杜尔基镇, which the codes list under 科尔沁右翼中旗 (152222), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "sex_ratio": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 突泉县 (152224) in 2020, but its figures are not put on this polygon: 杜尔基镇, which the codes list under 科尔沁右翼中旗 (152222), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020) counts 突泉县 (152224) in 2020, but its figures are not put on this polygon: 杜尔基镇, which the codes list under 科尔沁右翼中旗 (152222), stands inside it (the statistical division codes of 2020, each township at its Wikidata point), so the ground the county had in 2020 is not the ground drawn here."
-    },
-    "sources": [],
-    "country": "CHN",
-    "match_by": "shape_id",
-    "shape_id": "17275852B49862163937258",
-    "aliases": [
-      "突泉县"
-    ],
-    "codes": {
-      "gb2260": "152224"
     }
   },
   {
