@@ -203,6 +203,21 @@ class AgeAndSex(unittest.TestCase):
         self.assertEqual(nz.age_fields(None), {})
 
 
+class SmallArea(unittest.TestCase):
+    def test_a_withheld_figure_says_the_counts_are_randomly_rounded(self):
+        # The Area Outside Territorial Authority: 72 people, 48 men and 27 women.
+        from scripts.fetch_census.oceania_common import withhold_small
+        fields = {"sex_ratio": {"value": 177.8, "unit": "males_per_100_females"},
+                  "religion": [{"group": "No religion", "pct": 100.0}],
+                  "median_age": {"value": 54.5}, "median_age_note": "Stats NZ's own median."}
+        out = withhold_small(fields, 72, 48, 27, counting=nz.ROUNDING)
+        said = ("72 people (48 men and 27 women; Stats NZ randomly rounds every count to base 3, "
+                "so the men and the women need not add up to the total)")
+        for field in ("religion", "sex_ratio"):
+            self.assertIn(said, out[field]["note"])
+        self.assertIn(said, out["median_age_note"])
+
+
 class Chatham(unittest.TestCase):
     def test_the_territory_is_written_for_its_first_level_polygon(self):
         territory = nz.record("NZL-067", "Chatham Islands Territory", level="admin2",

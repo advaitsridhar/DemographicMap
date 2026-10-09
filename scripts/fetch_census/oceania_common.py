@@ -192,17 +192,22 @@ COMPOSITIONS = ("religion", "language", "ethnicity")
 
 
 def withhold_small(fields: dict[str, Any], people: float, male: float | None = None,
-                   female: float | None = None) -> dict[str, Any]:
+                   female: float | None = None, counting: str = "") -> dict[str, Any]:
     """``fields`` with the sex ratio and compositions too few people stand behind withheld.
 
     A sex ratio needs ``MIN_SEX`` of each sex and ``MIN_PEOPLE`` people; a
     composition ``MIN_PEOPLE``. What is withheld becomes a gap naming the count.
     A median under ``MIN_PEOPLE`` people is kept, and its note names the count.
+    ``counting`` is what the office does to its counts that a reader adding
+    them up should know -- Stats NZ's random rounding to base 3, under which
+    the men and the women need not make the total -- said in the parentheses
+    beside them.
     """
     out = dict(fields)
     counted = f"{people:,.0f} people"
     if male is not None and female is not None:
-        counted += f" ({male:,.0f} men and {female:,.0f} women)"
+        counted += f" ({male:,.0f} men and {female:,.0f} women"
+        counted += f"; {counting})" if counting else ")"
     few_sexes = male is not None and female is not None and min(male, female) < MIN_SEX
     ratio = out.get("sex_ratio")
     if (people < MIN_PEOPLE or few_sexes) and isinstance(ratio, dict) and "value" in ratio:

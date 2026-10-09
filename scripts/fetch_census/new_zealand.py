@@ -95,6 +95,10 @@ SEX_AT_BIRTH = {"999": "total", "11": "male", "22": "female"}
 # regional-council code Stats NZ files it under with other outlying islands.
 CHATHAM_TA, OUTSIDE_REGION = "067", "99"
 
+# Said beside a small area's men and women, which need not make its total.
+ROUNDING = ("Stats NZ randomly rounds every count to base 3, so the men and the women need not "
+            "add up to the total")
+
 # A suppressed or unavailable cell is not a zero. Stats NZ randomly rounds
 # every count to base 3 and withholds cells too small to publish; reading
 # either as an absence would turn "we will not say" into "nobody".
@@ -493,7 +497,7 @@ def build(key: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         # people -- is the one area with too few to carry a ratio or a share.
         if population:
             fields = withhold_small(fields, population, (ages.get(code) or {}).get("male"),
-                                    (ages.get(code) or {}).get("female"))
+                                    (ages.get(code) or {}).get("female"), counting=ROUNDING)
         record_ = record(
             f"NZL-{code}", name,
             aliases=list(ALIASES.get(name, ())) or None,
