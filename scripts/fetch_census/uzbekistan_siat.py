@@ -23,8 +23,11 @@ read rather than assumed:
 
   * one district lost at least 60% of the new unit's first figure and no
     other lost 5%: the old shape is the two together, and says so;
-  * several did: none of them is the shape the boundary file draws, and each
-    is left a gap that says why;
+  * several did: each is drawn as it was before the new unit, so each takes
+    the agency's own figure for the last 1 January before it (Kegeyli and
+    Chimbay their 2019 figures, before Bozatau), with that year and its
+    ages; a district touched by more than one change is left a gap that says
+    why;
   * a unit in the series from its start and not drawn (Shirin, a city of
     regional rank) is placed by declaration, measured against the shapes.
 
@@ -134,6 +137,10 @@ UNDRAWN = {"Shirin city": ("Khavas", "Bekabad")}
 # its only source, and how much any other may have lost for that to hold.
 SOLE_SOURCE = 0.6
 ALSO_SOURCE = 0.05
+# A district the agency's figure cannot be put on says why, and the statement
+# displaces an encyclopaedia's population for it dated before this year (the
+# build's ``displaces_before``), undated ones included (``displaces_undated``).
+DISPLACES_BEFORE = 2026
 # Why no unit here carries a composition: what was searched, and where. The
 # 2026 census's preliminary results give nationality and native language by
 # region, which uzbekistan_census reads for the regions; for the districts
@@ -143,8 +150,8 @@ CENSUS_2026 = (
     "aholi.stat.uz, 2026) give {census}; the final results are due by 1 July 2027")
 SIAT_SEARCH = (
     "SIAT, the agency's open-data catalogue (api.siat.stat.uz/sdmx/json/, about 4,700 "
-    "indicators), was searched in October 2026 for nationality, ethnic group, language and "
-    "religion in English and Russian and has none, and the agency's demography page "
+    "indicators), searched for nationality, ethnic group, language and religion in English "
+    "and Russian, has none, and the agency's demography page "
     "(stat.uz/ru/ofitsialnaya-statistika/demography) links none; the government open-data "
     "portal data.egov.uz refused the connection.")
 COMPOSITION_NOTE = (
@@ -223,17 +230,21 @@ def age_tables() -> dict[int, list[dict[str, Any]]]:
     return out
 
 
-def age_profiles(tables: dict[int, list[dict[str, Any]]]
+def age_profiles(tables: dict[int, list[dict[str, Any]]], year: str | None = None
                  ) -> tuple[str, dict[str, dict[str, list[tuple[int, int | None, float]]]]]:
     """(year, {SOATO code: {"men": groups, "women": groups}}) for the newest
-    year every table carries; a unit missing from any table is left out."""
+    year every table carries, or for ``year``; a unit missing from any table
+    is left out, and a year some table lacks gives no profiles."""
     common = None
     for rows in tables.values():
         span = set(years(rows))
         common = span if common is None else common & span
     if not common:
         raise SystemExit("uzbekistan_siat: the age tables share no year")
-    year = max(common)
+    if year is None:
+        year = max(common)
+    elif year not in common:
+        return year, {}
     out: dict[str, dict[str, list[tuple[int, int | None, float]]]] = {}
     codes = set.intersection(*({r["Code"] for r in rows} for rows in tables.values()))
     by_code = {ident: {r["Code"]: r for r in rows} for ident, rows in tables.items()}
@@ -359,13 +370,24 @@ def sources_of(new: dict[str, Any], siblings: list[dict[str, Any]],
 
 def build(data: list[dict[str, Any]], by_region: dict[str, list[dict[str, Any]]],
           ages: tuple[str, dict[str, Any]] | None = None,
-          region_ids: dict[str, str] | None = None
+          region_ids: dict[str, str] | None = None,
+          age_tables: dict[int, list[dict[str, Any]]] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
     """Records for the regions and the districts the map draws.
 
     ``ages`` is ``age_profiles``' answer, (year, {code: groups by sex}); with
     it, every record whose units all carry groups gets a median age and a sex
     ratio. ``region_ids`` binds the regions to their shapes by id.
+    ``age_tables`` (the raw age-by-sex tables) lets a district drawn as it was
+    before a carve-out take its ages for the year it is drawn at.
+
+    A district part of which went into a new unit together with part of
+    another is drawn as it was before: Kegeyli and Chimbay both gave ground to
+    Bozatau, which first appears on 1 January 2020, and the boundary file
+    draws neither without it. The agency's own figure for the last 1 January
+    before the new unit (2019) is that ground, so each such district takes
+    it, with its year and the reason; only a district touched by more than
+    one change, or with no figure that year, is left blank.
     """
     span = years(data)
     latest = span[-1]
@@ -395,6 +417,7 @@ def build(data: list[dict[str, Any]], by_region: dict[str, list[dict[str, Any]]]
     # What the boundary file does not draw, and whose ground it is on.
     extra: dict[str, list[dict[str, Any]]] = defaultdict(list)   # shape id -> units
     refused: dict[str, str] = {}                                  # shape id -> why
+    shared: dict[str, list[tuple[str, str, str, str, dict[str, Any]]]] = defaultdict(list)
     shape_of = {u["Code"]: s for u in units if (s := placed.get(u["Code"]))}
     for unit in units:
         if unit["Code"] in placed:
@@ -423,26 +446,49 @@ def build(data: list[dict[str, Any]], by_region: dict[str, list[dict[str, Any]]]
             extra[placed[drawn[0][0]["Code"]]["id"]].append(unit)
             notes.append(f"{name}: carved from {drawn[0][0]['Klassifikator_en']} in {year}")
             continue
+        last = span[span.index(year) - 1]
         for source_unit, _ in drawn:
-            refused[placed[source_unit["Code"]]["id"]] = (
-                f"Part of this district became {name} in {year}, which the boundary "
-                f"file does not draw, together with part of "
-                + ", ".join(u["Klassifikator_en"] for u, _ in found
-                            if u is not source_unit)
-                + "; how much came from each is not published, so the agency's "
-                  "figure is left out.")
+            names = [u["Klassifikator_en"] for u, _ in found if u is not source_unit]
+            others = ("part of " + names[0] if len(names) == 1 else
+                      "parts of " + ", ".join(names[:-1]) + " and " + names[-1])
+            shared[placed[source_unit["Code"]]["id"]].append((year, last, name, others,
+                                                              source_unit))
         notes.append(f"{name}: carved from {[u['Klassifikator_en'] for u, _ in found]} "
-                     f"in {year}; those shapes left blank")
+                     f"in {year}; those shapes take their figure for {last}")
+    # A shape that gave ground to one shared carve-out and to nothing else
+    # takes its figure for the year before it; any other is left blank.
+    before: dict[str, tuple[str, str]] = {}                       # shape id -> (year, why)
+    for shape_id, changes in shared.items():
+        year, last, name, others, source_unit = changes[0]
+        if len(changes) == 1 and shape_id not in extra and shape_id not in refused \
+                and source_unit.get(last):
+            before[shape_id] = (last, (
+                f"The boundary file draws this district as it was before part of it became "
+                f"{name} in {year}, together with {others}; the agency's figure for "
+                f"1 January {last}, the last before, is the district as drawn."))
+            continue
+        refused.setdefault(shape_id, " ".join(
+            f"Part of this district became {n} in {y}, which the boundary file does not "
+            f"draw, together with {o}; how much came from each is not published, "
+            f"so the agency's figure is left out." for y, _l, n, o, _u in changes))
 
     age_year, profiles = ages if ages else ("", {})
+    by_year: dict[str, dict[str, Any]] = {age_year: profiles} if profiles else {}
+
+    def profiles_for(year: str) -> dict[str, Any]:
+        if year not in by_year:
+            by_year[year] = age_profiles(age_tables, year)[1] if age_tables else {}
+        return by_year[year]
 
     def with_ages(fields: dict[str, Any], parts: list[dict[str, Any]], label: str,
-                  population: float | None) -> dict[str, Any]:
+                  population: float | None, year: str | None = None) -> dict[str, Any]:
         """The unit's median age and sex ratio, where every part has its groups."""
-        found = [profiles.get(p["Code"]) for p in parts]
-        if not profiles or any(f is None for f in found):
+        year = year or age_year
+        table = profiles_for(year) if year != age_year else profiles
+        found = [table.get(p["Code"]) for p in parts]
+        if not table or any(f is None for f in found):
             return fields
-        extra_fields = age_fields(summed(found), age_year, population, label)
+        extra_fields = age_fields(summed(found), year, population, label)
         age_source = extra_fields.pop("_age_source")
         if len(parts) > 1:
             extra_fields["median_age_note"] += (
@@ -479,10 +525,33 @@ def build(data: list[dict[str, Any]], by_region: dict[str, list[dict[str, Any]]]
             continue
         parts = [unit, *extra.get(shape["id"], [])]
         why = refused.get(shape["id"])
+        vintage = before.get(shape["id"])
         if why:
-            population = gap(NOT_AVAILABLE, why)
+            # The statement displaces an encyclopaedia's figure for the shape,
+            # dated or not: none is the drawn ground's (Wikidata's undated
+            # 80,000 on Khavas, its 73,598 of 2022 on Kegeyli).
+            population = dict(gap(NOT_AVAILABLE, why), displaces_before=DISPLACES_BEFORE,
+                              displaces_undated=True)
             fields: dict[str, Any] = {"sources": [], "median_age": gap(NOT_AVAILABLE, why),
                                       "sex_ratio": gap(NOT_AVAILABLE, why)}
+        elif vintage:
+            last, note = vintage
+            then = (f"Statistics Agency of Uzbekistan, SIAT indicator {CODE}, permanent "
+                    f"population on 1 January {last}")
+            value = round(unit[last] * 1000)
+            population = measure(value, year=int(last), source=then)
+            population["note"] = note
+            fields = with_ages({"sources": [{"field": "population", "name": then, "url": PAGE,
+                                             "license": LICENCE}]},
+                               [unit], shape["name"], value, year=last)
+            if "median_age" not in fields:
+                missing = (f"{note} The agency's age tables carry no figures for 1 January "
+                           f"{last}, so no median age or ratio is taken for that ground.")
+                fields.update(median_age=gap(NOT_AVAILABLE, missing),
+                              sex_ratio=gap(NOT_AVAILABLE, missing))
+            else:
+                for key in ("median_age_note", "sex_ratio_note"):
+                    fields[key] += " " + note
         else:
             value = round(sum(p[latest] for p in parts) * 1000)
             population = measure(value, year=int(latest), source=source)
@@ -548,14 +617,19 @@ def main() -> int:
         return 0
     data = json.loads(blob)[0]["data"]
     ages = None
+    tables = None
     if not (args.offline or args.no_ages):
-        year, profiles = age_profiles(age_tables())
-        log(f"  age groups by sex for {len(profiles)} units, 1 January {year}")
+        tables = age_tables()
+        year, profiles = age_profiles(tables)
+        shared_years = set.intersection(*(set(years(rows)) for rows in tables.values()))
+        log(f"  age groups by sex for {len(profiles)} units, 1 January {year}; the tables "
+            f"share the years {min(shared_years)}-{max(shared_years)}")
         if year != years(data)[-1]:
             log(f"  note: the age tables' newest year is {year}, the population "
                 f"table's {years(data)[-1]}; units are checked against neither")
         ages = (year, profiles)
-    rows, notes = build(data, shapes(), ages=ages, region_ids=region_shapes())
+    rows, notes = build(data, shapes(), ages=ages, region_ids=region_shapes(),
+                        age_tables=tables)
     for line in notes:
         log(f"  {line}")
     districts = [r for r in rows if r["level"] == "admin2"]

@@ -41,16 +41,73 @@ class CarvedOut(unittest.TestCase):
         self.assertEqual(chirakchi["population"]["value"], 420_000)
         self.assertIn("Kukdala", chirakchi["population"]["note"])
 
-    def test_several_sources_leave_each_blank(self):
+    def test_several_sources_each_take_the_year_before(self):
+        # Kegeyli and Chimbay both gave ground to Bozatau: each is drawn as it
+        # was, and the agency's figure for the year before is that ground.
         data = [REGION,
                 unit("1710201", "Chirakchi district", "Chiroqchi tumani", [400, 405, 330, 335]),
                 unit("1710202", "Kasbi district", "Kasbi tumani", [300, 305, 230, 232]),
                 unit("1710240", "Kukdala district", "Ko'kdala tumani", [0, 0, 150, 152])]
         rows, _ = uz.build(data, SHAPES)
-        for name in ("Chirakchi", "Kasbi"):
+        for name, value in (("Chirakchi", 405_000), ("Kasbi", 305_000)):
+            row = next(r for r in rows if r["name"] == name)
+            self.assertEqual(row["population"]["value"], value)
+            self.assertEqual(row["population"]["year"], 2021)
+            self.assertIn("Kukdala", row["population"]["note"])
+            self.assertIn("1 January 2021", row["population"]["note"])
+            # No age tables: the medians say why they are empty.
+            self.assertIn("age tables", row["median_age"]["note"])
+
+    def test_the_year_before_takes_that_year_s_ages(self):
+        data = [REGION,
+                unit("1710201", "Chirakchi district", "Chiroqchi tumani", [3.0, 2.1, 1.5, 1.52]),
+                unit("1710202", "Kasbi district", "Kasbi tumani", [3.0, 2.0, 1.4, 1.42]),
+                unit("1710240", "Kukdala district", "Ko'kdala tumani", [0, 0, 1.2, 1.21])]
+        tables = merge(age_rows("1710201", WOMEN, MEN, "2021"),
+                       age_rows("1710201", WOMEN, MEN, "2023"))
+        # One row per unit and table, every year a key on it.
+        for ident, rows_ in tables.items():
+            merged = {}
+            for row in rows_:
+                merged.update(row)
+            tables[ident] = [merged]
+        rows, _ = uz.build(data, SHAPES, age_tables=tables)
+        chirakchi = next(r for r in rows if r["name"] == "Chirakchi")
+        self.assertEqual(chirakchi["median_age"]["year"], 2021)
+        self.assertEqual(chirakchi["sex_ratio"]["value"], round(100 * 1040 / 1060, 1))
+        self.assertIn("Kukdala", chirakchi["median_age_note"])
+
+    def test_a_district_touched_twice_is_left_blank_and_displaces(self):
+        data = [REGION,
+                unit("1710201", "Chirakchi district", "Chiroqchi tumani", [400, 330, 260, 262]),
+                unit("1710202", "Kasbi district", "Kasbi tumani", [300, 230, 160, 162]),
+                unit("1710240", "Kukdala district", "Ko'kdala tumani", [0, 140, 141, 142]),
+                unit("1710241", "Newdala district", "Yangi tumani", [0, 0, 140, 141])]
+        rows, _ = uz.build(data, SHAPES)
+        chirakchi = next(r for r in rows if r["name"] == "Chirakchi")
+        self.assertNotIn("value", chirakchi["population"])
+        self.assertIn("Kukdala", chirakchi["population"]["note"])
+        self.assertIn("Newdala", chirakchi["population"]["note"])
+        self.assertEqual(chirakchi["population"]["displaces_before"], uz.DISPLACES_BEFORE)
+        self.assertIs(chirakchi["population"]["displaces_undated"], True)
+
+    def test_an_undrawn_city_on_a_border_blanks_both_and_displaces(self):
+        region = unit("1724", "Syrdarya region", "Sirdaryo viloyati", [800, 801, 802, 803])
+        shapes = {"Sirdaryo Region": [{"id": "k", "name": "Khavas"}],
+                  "Tashkent Region": [{"id": "b", "name": "Bekabad"}]}
+        data = [region, unit("1727", "Tashkent region", "Toshkent viloyati", [9, 9, 9, 9]),
+                unit("1724410", "Shirin city", "Shirin shahri", [18, 18, 19, 19]),
+                unit("1724213", "Khavas district", "Xovos tumani", [80, 81, 82, 83]),
+                unit("1727220", "Bekabad district", "Bekobod tumani", [150, 152, 154, 156])]
+        rows, _ = uz.build(data, shapes)
+        for name in ("Khavas", "Bekabad"):
             row = next(r for r in rows if r["name"] == name)
             self.assertNotIn("value", row["population"])
-            self.assertIn("Kukdala", row["population"]["note"])
+            self.assertIn("Shirin", row["population"]["note"])
+            self.assertEqual(row["population"]["displaces_before"], uz.DISPLACES_BEFORE)
+            self.assertIs(row["population"]["displaces_undated"], True)
+        for row in rows:
+            self.assertNotIn("October", row["ethnicity"]["note"])
 
 
 def age_rows(code, women, men, year="2026"):
