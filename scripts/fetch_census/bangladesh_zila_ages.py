@@ -174,6 +174,7 @@ SPELLINGS = {
     "Chapainawabganj": ("Nawabganj", "Chapai Nawabganj", "Chapainababganj"),
     "Chapai Nawabganj": ("Nawabganj", "Chapainawabganj", "Chapainababganj"),
     "Netrokona": ("Netrakona",),
+    "Jhalokathi": ("Jhalokati",),
     "Jhalakathi": ("Jhalokati",),
     "Jhalakati": ("Jhalokati",),
     "Brahmanbaria": ("Brahamanbaria",),
@@ -317,8 +318,8 @@ def read_zila(c01_rows: list[list[Any]], c02_rows: list[list[Any]],
     if c01["population"] != c02["population"]:
         raise SystemExit(f"bangladesh_zila_ages: {where}: C-01 counts "
                          f"{c01['population']:,} people and C-02 {c02['population']:,}")
-    page = fold(LABEL_SPELLINGS.get(label, label))
-    if page not in {fold(n) for n in names_of(c01["name"])} | {fold(c01["name"])}:
+    page = {fold(n) for n in names_of(LABEL_SPELLINGS.get(label, label))}
+    if not page & {fold(n) for n in names_of(c01["name"])}:
         raise SystemExit(f"bangladesh_zila_ages: the page links {label!r} to a "
                          f"workbook whose zila is {c01['name']!r}")
     return {**c01, "groups": c02["groups"], "division": division, "label": label,
@@ -525,14 +526,24 @@ def main() -> int:
     args = ap.parse_args()
     log("bangladesh_zila_ages: Census 2022 Community Series, Tables C-01 and C-02 by zila")
     p03, p10, _said = report_tables()
-    zilas = []
+    zilas, refused = [], []
     for division, label, key in ZILAS:
         url = STORE.format(key)
         blob = http_get(url, binary=True, cache_dir=RAW / "bangladesh" / "community")
-        zila = read_workbook(blob, division, label, url)
+        # Every workbook is read before any is refused, so one run names every
+        # problem rather than the first.
+        try:
+            zila = read_workbook(blob, division, label, url)
+        except SystemExit as err:
+            refused.append(str(err))
+            log(f"    {label:<17} REFUSED: {err}")
+            continue
         log(f"    {label:<17} {zila['name']:<16} {zila['population']:>11,} people, "
             f"{zila['hijra']:>4} hijra, median {median_of(zila['groups'])}")
         zilas.append(zila)
+    if refused:
+        raise SystemExit(f"bangladesh_zila_ages: {len(refused)} of {len(ZILAS)} workbooks "
+                         "refused -- " + "; ".join(refused))
     check_divisions(zilas, p03)
     check_nation(zilas, p03, p10)
     records = build(zilas, load_units("BGD", "admin2"), load_units("BGD", "admin1"),
