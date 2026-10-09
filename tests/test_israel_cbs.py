@@ -193,9 +193,10 @@ class TheAgesAndReligions(unittest.TestCase):
         self.assertEqual(out["d0"]["population"]["displaces_before"], ic.DISPLACES_BEFORE)
         self.assertEqual(out["s-jer"]["population"]["displaces_before"], ic.DISPLACES_BEFORE)
         self.assertNotIn("displaces_before", out["s-Golan"]["population"])
-        # Every unit says why it has no language.
+        # Every unit says why it has no language, and what was looked at.
         for r in out.values():
             self.assertEqual(r["language"]["status"], "not_available")
+            self.assertIn("Statistical Abstract", r["language"]["note"])
 
     def test_more_jews_than_jews_and_others_stops_the_run(self):
         rows = [[None, "TOTAL POPULATION(5)"], [None, "RELIGION"], [None, "JEWS"]]
