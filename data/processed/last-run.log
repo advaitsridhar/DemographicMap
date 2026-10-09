@@ -1,13 +1,10 @@
-nordic_origin: DNK
-  FOLK1C 2026K3: 101,640 rows, 105 areas
-    FOLK1C regions -> Denmark: 5 parts sum to 6,031,699 against 6,031,699
-    FOLK1C kommuner -> Region Nordjylland: 11 parts sum to 593,299 against 593,299
-    FOLK1C kommuner -> Region Midtjylland: 19 parts sum to 1,385,488 against 1,385,488
-    FOLK1C kommuner -> Region Syddanmark: 22 parts sum to 1,244,118 against 1,244,118
-    FOLK1C kommuner -> Region Hovedstaden: 30 parts sum to 1,949,336 against 1,949,336
-    FOLK1C kommuner -> Region Sjælland: 17 parts sum to 859,458 against 859,458
-  named (42): Danish, Turkish, Ukrainian, Polish, Romanian, Syrian, German, Iraqi, Pakistani, Iranian, Lebanese, Indian, Bosnian, Afghan, Somali, Vietnamese, British, Swedish, Chinese, Norwegian, Lithuanian, Nepalese, Filipino, Italian, Thai, Bulgarian, Sri Lankan, Moroccan, American, Yugoslav, Russian, Icelandic, Spanish, Dutch, French, Eritrean, Bangladeshi, Hungarian, North Macedonian, Latvian, Argentine, Brazilian
-  DNK admin2: 98 of 99 office units bound to 98 polygons (0 set aside as pieces)
-    office units with no polygon (1): Christiansø (411)
-  103 records: admin1 5, admin2 98; labels the group tree cannot place: none
-  wrote data/processed/denmark_origin.json (545 kB)
+nordic_origin: ISL
+  53 of 74 municipalities of 2017 are the same territory today; merged since: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Skagafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
+  MAN04203 2026: 394,324 people; named (31): Icelandic, Polish, Lithuanian, Ukrainian, Romanian, Latvian, Venezuelan, Spanish, Portuguese, Filipino, German, Vietnamese, Czech, American, Italian, Croatian, Palestinian, British, Greek, Hungarian, Danish, French, Syrian, Slovak, Indian, Thai, Nigerian, Afghan, Bulgarian, Swedish, Iraqi
+    MAN04203 2026: municipalities -> Iceland: 62 parts sum to 394,324 against 394,324
+  ISL admin2: 73 of 74 office units bound to 73 polygons (0 set aside as pieces)
+    office units with no polygon (1): Vestmannaeyjabær (8000)
+    MAN04203 2026: regions -> Iceland: 8 parts sum to 394,324 against 394,324
+  municipalities given no figure, merged since 2017: ['Akrahreppur', 'Blönduósbær', 'Borgarfjarðarhreppur', 'Breiðdalshreppur', 'Djúpavogshreppur', 'Fjarðabyggð', 'Fljótsdalshérað', 'Helgafellssveit', 'Húnavatnshreppur', 'Langanesbyggð', 'Sandgerðisbær', 'Seyðisfjarðarkaupstaður', 'Skagabyggð', 'Skútustaðahreppur', 'Stykkishólmsbær', 'Svalbarðshreppur', 'Sveitarfélagið Garður', 'Sveitarfélagið Skagafjörður', 'Tálknafjarðarhreppur', 'Vesturbyggð', 'Þingeyjarsveit']
+  81 records: admin1 8, admin2 73; labels the group tree cannot place: none
+  wrote data/processed/iceland_origin.json (229 kB)
