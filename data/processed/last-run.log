@@ -1,12 +1,41 @@
-kiribati_census: 2020 census counts, the General Report's island tables, and SPC's age and sex tabulation
-  https://nso.gov.ki/download/146/2020-census/1931/island-profile-table-final.xlsx: 190,822 bytes
-  Island Profile: 24 islands adding to 119,438, each sheet agreeing with the summary
-  General Report: Tables G-2, A-10a, A-3b for 24 islands, adding up and agreeing with the Island Profile; A-10a medians on the wrong side of 15 for their own age groups: ['Banaba']
-  2015 volume: Table 6's 24 islands make every column of the country's 110,136, and each is its Table 1a population
-  https://data.humdata.org/dataset/e656842e-9643-4ef7-97f9-18c33654022d/resource/cb0fd355-5326-4574-a76a-81bae7894991/download/kir_admpop_2020.xlsx: 112,348 bytes
-  SPC's country medians {'everyone': 22.9, 'males': 21.8, 'females': 24.0} against the Census Atlas's {'everyone': 22.9, 'males': 21.8, 'females': 24.0} (119,940 people); Table A-10a prints 20.4
-  Table A-10a against SPC's groups: 21 of 23 islands more than a year apart, the printed figure lower on 21, by up to 7.4 years: Abaiang 19.6 v 19.3, Abemama 22.2 v 21.5, Aranuka 19.0 v 25.1, Arorae 25.2 v 27.4, Banaba 13.8 v 21.2, Beru 24.8 v 26.1, Betio 20.8 v 23.5, Butaritari 16.8 v 21.7, Kiritimati 18.9 v 23.6, Kuria 17.1 v 22.9, Maiana 20.8 v 24.6, Makin 15.4 v 20.7, Marakei 17.0 v 21.9, Nikunau 18.7 v 22.6, Nonouti 20.5 v 23.9, Onotoa 23.0 v 26.0, Tabiteuea North 18.6 v 20.3, Tabiteuea South 18.9 v 23.8, Tabuaeran 16.9 v 22.0, Tamana 26.0 v 29.8, Tarawa Ieta 19.8 v 21.8, Tarawa Teinainano 21.2 v 23.0, Teraina 16.2 v 21.7
-  no polygon: Makin (1,914 people), counted in the Gilbert Islands
-  admin1 ethnicity 3, admin1 median_age 3, admin1 population 3, admin1 religion 3, admin1 sex_ratio 3, admin2 ethnicity 22, admin2 median_age 22, admin2 population 23, admin2 religion 22, admin2 sex_ratio 22
-  wrote data/processed/kiribati_census.json (171 kB)
-  wrote 26 records
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+    ARKHABĪL SUQUŢRÁ (32): no 2004 count (a unit made since)
+    governorate 19: drawn as the sum of its districts, 984,428 (the census row counts 1,028,548)
+    governorate 32: drawn as the sum of its districts, 44,120 (no census row)
+  census: 333 districts, 22 governorates, 19,682,162 people
+  projected national median age for 2017: 17.5
+    governorate 11: 20 districts, largest age-share departure from the governorate's 0.0369
+    governorate 12: 11 districts, largest age-share departure from the governorate's 0.0329
+    governorate 13: 10 districts, largest age-share departure from the governorate's 0.0358
+    governorate 14: 20 districts, largest age-share departure from the governorate's 0.0360
+    governorate 15: 23 districts, largest age-share departure from the governorate's 0.0413
+    governorate 16: 12 districts, largest age-share departure from the governorate's 0.1448
+    governorate 17: 31 districts, largest age-share departure from the governorate's 0.0668
+    governorate 18: 26 districts, largest age-share departure from the governorate's 0.0596
+    governorate 19: 28 districts, largest age-share departure from the governorate's 0.0563
+    governorate 20: 12 districts, largest age-share departure from the governorate's 0.0310
+    governorate 21: 17 districts, largest age-share departure from the governorate's 0.0666
+    governorate 22: 15 districts, largest age-share departure from the governorate's 0.0888
+    governorate 23: 16 districts, largest age-share departure from the governorate's 0.0397
+    governorate 24: 8 districts, largest age-share departure from the governorate's 0.0247
+    governorate 25: 15 districts, largest age-share departure from the governorate's 0.0451
+    governorate 26: 14 districts, largest age-share departure from the governorate's 0.0574
+    governorate 27: 9 districts, largest age-share departure from the governorate's 0.0305
+    governorate 28: 9 districts, largest age-share departure from the governorate's 0.0281
+    governorate 29: 20 districts, largest age-share departure from the governorate's 0.0468
+    governorate 30: 9 districts, largest age-share departure from the governorate's 0.0211
+    governorate 31: 6 districts, largest age-share departure from the governorate's 0.0097
+    governorate 32: 2 districts, largest age-share departure from the governorate's 0.0131
+  districts whose projected median lies outside every governorate's: 22
+  governorates paired with OCHA's: 22 of 22
+  districts not bound: 0
+  OCHA districts no drawn unit took: 0
+  bound districts the census has no row for: 2: 1319; 1324
+    Sana'a City Outskirts - Hamdan (1319): the outskirts part of HAMDĀN (2301)
+    Sana'a City Outskirts -Sanhan wa Bani Bahlul (1324): the outskirts part of SANḨAN (2305)
+  bound by code, spelt differently: 48: Dhamar City = MADĪNAT DHAMĀR (2008); Qalansiyah wa Abd Al Kuri = QULANSĪYAH WA ‘ABD AL KŪRĪ (3202); Brum Mayf'ah = BURŪM MAYFA‘ (1925); Dhibain = DHĪ BĪN (2909); Al Mutun = AL MATŪN (1606); Sarar = SIRĀR (1207); Melhan = MILḨĀN (2705); Zamakh wa Manwokh = ZAMŪKH WA MANWAKH (1904); Al Qaff = AL QUFF (1903); Eyal Surayh = ‘IYĀL SURAYḨ (2918); Al Mudhaffar = AL MUZ̧AFFAR (1517); Jardan = JIRDĀN (2103); Rassd = RAŞAD (1206); Nu'man = NA‘AMĀN (1401); Thula = THILĀ’ (2917); Barat Al Anan = BARŢ AL ‘ANĀN (1610); Hajjah City = MADĪNAT ḨAJJAH (1728); Saqin = SĀQAYN (2209); Al Khukhah = AL KHAWKHAH (1820); Ar Rujum = AR RUJM (2703); Al Bayda City = MADĪNAT AL BAYḐĀ’ (1409); Al Mukalla City = MADĪNAT AL MUKALLĀ (1927); Al Mahwit City = MADĪNAT AL MAḨWĪT (2708); Radum = RUḐŪM (2117); Mahliyah = MĀHILĪYAH (2610); Halmin = ḨĀLIMAYN (2506); Wald Rabi' = WALAD RABĪ‘ (1415); Al Hasayn = AL ḨUŞAYN (3005); Al Ghaydhah = AL GHAYZ̧AH (2804); Kritar - Sirah = ŞĪRAH (2407); Ad Dohi = AḐ ḐAḨĪ (1809); Al Makha = AL MUKHĀ’ (1505); Al Ma'afer = AL MA‘ĀFIR (1521); Adh Dhihar = AZ̧ Z̧IHĀR (1119); Old City = ŞAN‘Ā’ AL QADĪMAH (1301); Shahin = SHIḨAN (2801); Adh Dhahir = AZ̧ Z̧ĀHIR (2207); Khur Maksar = KHAWR MAKSAR (2408); Hatib = ḨUŢAYB (2111); Al Qatn = AL QAŢAN (1907); Ad Dulay'ah = AḐ ḐALĪ‘AH (1922); Alluhayah = AL LUḨAYYAH (1802); Haridah = ḨURAYḐAH (1928); Al Malah = AL MILĀḨ (2508); Ma'rib City = MADĪNAT MA’RIB (2612); Al Mu'alla = AL MA‘ALLĀ (2406); Maghrib Ans = MAGHIRIB ‘ANS (2004); Dhulaymat Habur = ḨABŪR Z̧ULAYMAH (2908)
+  census: 22 governorates and 335 districts; projection medians: 20 governorates and 331 districts
+  wrote data/processed/yemen_census.json (1053 kB)
+  wrote data/processed/yemen_census_age.json (597 kB)
+  wrote yemen_census.json (357) and yemen_census_age.json (351)
