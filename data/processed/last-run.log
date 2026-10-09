@@ -1,8 +1,269 @@
-nauru_census: 2021 census tables and persons tabulations
-  https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx: 75,196 bytes
-  Tables: 15 districts adding to 11,680; 16 ethnic groups; Table G-7 churches without a Table 19 column: {'Shalosh Pentecostal Church': 186.0, 'Fishers of Men Church': 57.0, 'FOM Pentecostal Church': 81.0, 'Christ Embassy': 48.0, 'Fundamental Christian Church': 15.0}
-  Persons Tabulations: Table 19's religion of 11,215 citizens by district
-  national median from the same groups: 21.6 (report: 21.6)
-  admin1 ethnicity 14, admin1 median_age 14, admin1 population 14, admin1 religion 14, admin1 sex_ratio 14, admin2 ethnicity 14, admin2 median_age 14, admin2 population 14, admin2 religion 14, admin2 sex_ratio 14
-  wrote data/processed/nauru_census.json (135 kB)
-  wrote 28 records
+probe_pdf: https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Tsirang.pdf
+  1,161,606 bytes
+  69 pages
+probe_pdf: 70 pages, 4 mention ['Bhutanese', 'citizen', 'Nationality', 'nationality']
+=== front matter ===
+2017 N
+A
+UT
+POPULATION BH
+OF
+CENSUS
+& HOUSING
+འབྲུག་གི་མི་རློབས་དང་ཁྱིམ་གྱི་གྲངས་རྩིས་༢༠༡༧།།
+2017
+POPULATION & HOUSING
+CENSUS OF BHUTAN
+TSIRANG DZONGKHAG
+ISBN 978-99936-28-68-2
+National Statistics Bureau
+Royal Government of Bhutan
+www.nsb.gov.bt
+NATIONAL STATISTICS BUREAU ROYAL GOVERNMENT OF BHUTAN
+9 789993 628682
+[40 words in 18 rows]
+
+
+འབྲུག་གི་མི་རློབས་དང་ཁྱིམ་གྱི་གྲངས་རྩིས་༢༠༡༧།།
+2017
+POPULATION & HOUSING
+CENSUS OF BHUTAN
+TSIRANG DZONGKHAG
+[10 words in 5 rows]
+
+
+© 2018 National Statistics Bureau of Bhutan
+All rights reserved.
+Printed in Bhutan.
+ISBN 978-99936-28-68-2
+Layout and design: Loday Natshog Communications, Thimphu
+Editor: Kuenga Wangmo
+National Statistics Bureau
+Royal Government of Bhutan
+PO Box No 338
+Thimphu, Bhutan
+Tel: +975 2 333296, +975 2 335848
+Fax: +975 2 323069
+www.nsb.gov.bt
+ii
+[51 words in 14 rows]
+
+
+CONTENTS
+Foreword.....................................................................................................................................iv
+Acknowledgement .....................................................................................................................v
+Summary Table of Key Findings .............................................................................................vi
+List of Tables .............................................................................................................................vii
+List of Figures ...........................................................................................................................vii
+List of Accronyms ....................................................................................................................viii
+Section 1: INTRODUCTION ........................................................................................................1
+1.1 Background ..............................................................................................................1
+1.2 Legal Basis ..............................................................................................................1
+1.3 Administrative set up at the Dzongkhag/Thromde level ................................................2
+Section 2: DEMOGRAPHIC CHARACTERISTICS ......................................................................3
+Introduction .....................................................................................................................3
+2.1 Concepts and Definition ............................................................................................3
+2.2 Population of Tsirang .................................................................................................4
+2.3 Size and Change of Population ..................................................................................4
+2.4 Population by Area ....................................................................................................4
+2.5 Sex Ratio .................................................................................................................4
+2.6 Population by Selected Broad Age Groups ...................................................................5
+2.7 Dependency Ratios ...................................................................................................5
+2.8 Population Age-Sex Pyramid ......................................................................................6
+2.9 Population by Type of Household ................................................................................7
+2.10 Bhutanese and Non-Bhutanese Population ................................................................8
+Section 3: EDUCATION ...............................................................................................................9
+Introduction .....................................................................................................................9
+3.1 Literacy ...................................................................................................................9
+3.2 School Attendance .................................................................................................10
+3.3 Educational Attainment ..........................................................................................11
+3.4 Attendance of Traditional Learning ...........................................................................12
+Section 4: HEALTH ..................................................................................................................13
+Introduction ...................................................................................................................13
+4.1 Fertility ...................................................................................................................13
+4.2 Mortality ................................................................................................................14
+4.3 Disability ................................................................................................................14
+Section 5: LABOUR AND EMPLOYMENT ...............................................................................15
+Introduction ...................................................................................................................15
+5.1 Working-age Population, Economically Active and Inactive Population ..........................15
+5.2 Labour Force Rates .................................................................................................16
+Section 6: MIGRATION ............................................................................................................17
+Introduction ...................................................................................................................17
+6.1 Concepts and Measures ..........................................................................................17
+6.2 Lifetime Migration ...................................................................................................18
+Section 7: HOUSING, HOUSEHOLD AMENITIES, AND FOOD SUFFICIENCY .......................19
+Introduction ...................................................................................................................19
+
+=== pages mentioning ['Bhutanese', 'citizen', 'Nationality', 'nationality'] (first 8) ===
+
+--- page 4 ----------------------------------------------------
+CONTENTS
+Foreword.....................................................................................................................................iv
+Acknowledgement .....................................................................................................................v
+Summary Table of Key Findings .............................................................................................vi
+List of Tables .............................................................................................................................vii
+List of Figures ...........................................................................................................................vii
+List of Accronyms ....................................................................................................................viii
+Section 1: INTRODUCTION ........................................................................................................1
+1.1 Background ..............................................................................................................1
+1.2 Legal Basis ..............................................................................................................1
+1.3 Administrative set up at the Dzongkhag/Thromde level ................................................2
+Section 2: DEMOGRAPHIC CHARACTERISTICS ......................................................................3
+Introduction .....................................................................................................................3
+2.1 Concepts and Definition ............................................................................................3
+2.2 Population of Tsirang .................................................................................................4
+2.3 Size and Change of Population ..................................................................................4
+2.4 Population by Area ....................................................................................................4
+2.5 Sex Ratio .................................................................................................................4
+2.6 Population by Selected Broad Age Groups ...................................................................5
+2.7 Dependency Ratios ...................................................................................................5
+2.8 Population Age-Sex Pyramid ......................................................................................6
+2.9 Population by Type of Household ................................................................................7
+2.10 Bhutanese and Non-Bhutanese Population ................................................................8
+Section 3: EDUCATION ...............................................................................................................9
+Introduction .....................................................................................................................9
+3.1 Literacy ...................................................................................................................9
+3.2 School Attendance .................................................................................................10
+3.3 Educational Attainment ..........................................................................................11
+3.4 Attendance of Traditional Learning ..............................................
+
+--- page 8 ----------------------------------------------------
+LIST OF TABLES
+Table 2.1 Population Distribution by Gewog and Town, Tsirang 2017 ...............................................................................................4
+Table 2.2 Distribution of Bhutanese Population by Sex and Gewog/Town, Tsirang 2017 ..................................................................8
+Table 3.1 School Attendance for Persons Aged 6 Years and Above by Age Group, Tsirang 2017 ......................................................10
+Table 3.2 Population 6 Years and Above by Highest Level of Education Completed, Sex and Area, Tsirang 2017 .............................11
+Table 3.3 Population 6 Years and Above by Attendance of Traditional Learning, Sex and Area, Tsirang 2017 ..................................12
+Table 4.1 Disability Prevalence Rate by Gewog/Town, Tsirang 2017 ..............................................................................................14
+Table 5.1 Population 15 Years and Over by Usual Activity Status, Tsirang 2017 ..............................................................................15
+Table 5.2 Labour Force Rates, Tsirang 2017 ..................................................................................................................................16
+Table 7.1 Room Density (person per room) by Area, Tsirang 2017 ...............................................................................................21
+Table 7.2 Distribution of Households by Wall, Roof and Floor Materials by Area, Tsirang 2017 .......................................................23
+Table 7.3 Distribution of Households by Main Type of Energy for Lighting and Cooking by Area, Tsirang 2017 ...............................23
+Table 7.4 Distribution of Households by Main Source of Drinking Water and by Area, Tsirang 2017 ..............................................25
+Table 7.5 Distribution of Households Experiencing Food Insufficiency in the last 12 months by Area, Tsirang 2017 .....................27
+LIST OF FIGURES
+Figure 2.1 Population Area of Residence, Tsirang 2017 ...................................................................................................................5
+Figure 2.2 Age Sex Structure of Population, Tsirang 2005 and 2017 ...............................................................................................6
+Figure 2.3 Population by Type of Household, Tsirang 2005 and 2017 .............................................................................................7
+Figure 3.1 Literacy Rate by Sex and Area, Tsirang 2017 ..................................................................................................................9
+Figure 3.2 School Attendance for Persons Aged 6 Years and Above, Tsirang 2005 and 2017 ..........................................................10
+Figure 7.1 Mean Household Size by Gewog/Town, Tsirang 2017 ...................................................................................................20
+Figure 7.2 Percent Distribution of Housing Units by Tenancy, Tsirang 2017 ..................................................................................21
+Figure 7.3 Distribution of Households with Improved Sanitation Facilities by Gewog/Town, Tsirang 2017 ....................................22
+Figure 7.4 Distribution of Households Without Improved Sanitation Facilities by Gewog/Town, Tsirang 2017 ...............................22
+Figure 7.5 Distribution of Households with Access to Improved Sources of Drinking
+
+--- page 13 ----------------------------------------------------
+2017 POPULATION AND HOUSING CENSUS OF BHUTAN (PHCB)
+provides population data of Tsirang as of Table 2.1 Population Distribution by Gewog and
+Town, Tsirang 2017
+00:00 hours on 30th May 2017.
+The 2017 PHCB was conducted Persons
+Gewog/Town Male Female Total
+based on the de-facto method of enumer-
+Urban
+ation (the enumeration is done on the Tsirang Town 1,854 1,594 3,448
+basis of where a person is found at the Mendrelgang Town 31 31 62
+Rural
+census moment) though in some isolated
+Barshong 423 419 842
+cases, a combination of the de-facto and Patshaling 567 592 1,159
+Kilkhorthang 1,099 1,046 2,145
+de-jure methods was also adopted.
+Mendrelgang 1,276 1,231 2,507
+2.2 Population of Tsirang Rangthangling 803 782 1,585
+Tsholingkhar 892 853 1,745
+Doonglagang 779 767 1,546
+The total population of Tsirang
+Gosarling 925 939 1,864
+Dzongkhag as of 30 May 2017 is 22,376
+Sergithang 731 648 1,379
+persons (Annex Table A2.1). This is the Pungtenchhu 665 666 1,331
+Semjong 712 600 1,312
+total number of people found within the
+Tsirang Toed 769 682 1,451
+territory of Tsirang on the census refer-
+Total 11,526 10,850 22,376
+ence day irrespective of their nationality.
+Of the total, 22,376 persons, 51.5% are 2.4 Population by Area
+males and 48.5% are females. The total
+In 2017, for every 100 persons in the
+population of Tsirang Dzongkhag rep-
+Dzongkhag, 84 persons lived in rural
+resents 3.1 % of the total population of
+areas, while 16 persons lived in the urban
+Bhutan.
+areas (Figure 2.1). At the national level,
+2.3 Size and Change of 62.2% of the total population live in rural
+Population areas, while 37.8% live in urban areas. The
+proportion of urban population in Tsirang
+Tsirang Dzongkhag has experienced
+Dzongkhag is 15.7%, which is an increase
+an increase in population size by about
+of 6.8 percentage points from 2005.
+4,183 persons during the intercensal
+period, a growth of about 22.4% between 2.5 Sex Ratio
+2005 and 2017. This change could be
+Sex ratios of a population vary depend-
+attributed to migration and other factors.
+ing on age. In general, at birth, the sex
+The population of Tsirang Dzongkhag in
+ratio is normally high as there are more
+2005 was 18,667 persons.
+boys than girls born each year. As this
+Tsirang Dzongkhag ranks thir-
+population grows older, sex ratio changes
+teenth highest in population size among
+because males and females have different
+all Dzongkhags in the country.
+exposures to risks of dying.
+4
+[407 words in 64 rows]
+
+--- page 17 ----------------------------------------------------
+2017 POPULATION AND HOUSING CENSUS OF BHUTAN (PHCB)
+towns in Tsirang Dzongkhag, Tsirang and 70 persons respectively. Among the
+Town with 2,434 persons (97.6%) has towns, Tsirang town alone accounts for
+the majority of the regular household 99.8% of the total urban institutional
+population, while Mandrelgang Town population of the Dzongkhag with 906
+has 59 persons (2.4%). persons.
+Among the gewogs, Kilkhorthang
+2.10 Bhutanese and Non-
+Gewog has the highest number of reg-
+Bhutanese Population
+ular household population with 2,114
+persons (12.0%), closely followed by The total Bhutanese population in Tsirang
+Gosarling Gewog and Tsholingkhar Dzongkhag as of 30 May 2017 is 21,514
+Gewog with 1,808 persons (10.3%) persons (Table 2.2). Of the total, 10,795
+and 1,716 persons (9.8%) respectively. persons are males and 10,719 persons
+Barshong Gewog with 842 persons are females. Across the Dzongkhag, 3,255
+(4.8%) has the lowest regular household persons live in urban areas and 18,259
+population in Tsirang Dzongkhag. persons live in rural areas. The total
+In terms of institutional popu- number of non-Bhutanese population in
+lation, Mendrelgang Gewog has the Tsirang Dzongkhag is 862 persons.
+highest number of people with 878 per-
+sons (69.5%), followed by Tsirang Toed
+Gewog and Sergithang Gewog with 78
+Table 2.2 Distribution of Bhutanese Population by Sex and Gewog/Town, Tsirang 2017
+Number of Persons Percent
+Gewog/Town Male Female Total Male Female Total Sex Ratio
+Urban 1,653 1,602 3,255 50.8 49.2 100.0 103
+Tsirang Town 1,622 1,571 3,193 50.8 49.2 100.0 103
+Mendrelgang Town 31 31 62 50.0 50.0 100.0 100
+Rural 9142 9117 18259 50.1 49.9 100.0 100
+Barshong 421 417 838 50.2 49.8 100.0 101
+Patshaling 565 586 1,151 49.1 50.9 100.0 96
+Kilkhorthang 1,054 1,040 2,094 50.3 49.7 100.0 101
+Mendrelgang 1,160 1,207 2,367 49.0 51.0 100.0 96
+Rangthangling 766 773 1,539 49.8 50.2 100.0 99
+Tsholingkhar 879 844 1,723 51.0 49.0 100.0 104
+Doonglagang 751 764 1,515 49.6 50.4 100.0 98
+Gosarling 863 922 1,785 48.3 51.7 100.0 94
+Sergithang 678 643 1,321 51.3 48.7 100.0 105
+Pungtenchhu 659 662 1,321 49.9 50.1 100.0 100
+Semjong 662 596 1,258 52.6 47.4 100.0 111
+Tsirang Toed 684 663 1,347 50.8 49.2 100.0 103
+Both Areas 10,795 10,719 21,514 50.2 49.8 100.0 101
+8
+[366 words in 44 rows]
