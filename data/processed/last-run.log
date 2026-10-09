@@ -1,32 +1,8 @@
-taiwan_townships: Ministry of the Interior, Department of Household Registration, the end of August 2026
-  ODRP014: 7,781 villages in 4 pages
-  ODRP013: 7,781 villages in 4 pages
-  ODRP018: 7,781 villages in 4 pages
-  7,781 villages, every one adding up in all three datasets, in 368 townships; 23,224,721 registered people
-  kept ris_townships_11508.json (495 kB)
-  the 2020 census's county reports, Table 6
-  新北市: 29 townships, 4,055,599 residents 6+
-  臺北市: 12 townships, 2,388,957 residents 6+
-  桃園市: 13 townships, 2,176,570 residents 6+
-  基隆市: 7 townships, 345,649 residents 6+
-  新竹市: 3 townships, 446,737 residents 6+
-  宜蘭縣: 12 townships, 394,287 residents 6+
-  新竹縣: 13 townships, 558,797 residents 6+
-  臺中市: 29 townships, 2,748,097 residents 6+
-  苗栗縣: 18 townships, 468,167 residents 6+
-  彰化縣: 26 townships, 1,061,247 residents 6+
-  南投縣: 13 townships, 393,818 residents 6+
-  雲林縣: 20 townships, 537,327 residents 6+
-  臺南市: 37 townships, 1,715,534 residents 6+
-  高雄市: 38 townships, 2,527,744 residents 6+
-  嘉義市: 2 townships, 234,885 residents 6+
-  嘉義縣: 18 townships, 427,516 residents 6+
-  屏東縣: 33 townships, 702,009 residents 6+
-  澎湖縣: 6 townships, 74,333 residents 6+
-  臺東縣: 16 townships, 176,353 residents 6+
-  花蓮縣: 13 townships, 278,530 residents 6+
-  金門縣: 6 townships, 61,014 residents 6+
-  連江縣: 4 townships, 11,199 residents 6+
-  the Hakka survey's share quoted for 22 of 22 counties
-  368 townships and 22 counties written, 23,224,721 people; township medians 37.0-60.0
-  wrote data/processed/taiwan_township.json (2352 kB)
+https://stat.bora.dopa.go.th/new_stat/webPage/statByYear.php: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+https://stat.bora.dopa.go.th/: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+https://catalog.dopa.go.th/: URLError: <urlopen error timed out>
+https://gdcatalog.dopa.go.th/: URLError: <urlopen error [Errno -2] Name or service not known>
+https://www.dopa.go.th/: HTTP 403 text/html 854 B
+  <html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/_Incapsula_Resourc
+https://data.go.th/dataset: HTTP 403 text/html; charset=UTF-8 1369 B
+  <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Access Denied</title> <style> body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f3f4f6; color: #333; } .container { 
