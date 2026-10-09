@@ -1,3 +1,15 @@
-https://nada.stat.tj/index.php/api/catalog/search?ps=100: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nada.stat.tj'. (_ssl.c:1016)>
-https://nada.stat.tj/index.php/catalog: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nada.stat.tj'. (_ssl.c:1016)>
-https://nada.stat.tj/: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nada.stat.tj'. (_ssl.c:1016)>
+http://nada.stat.tj/index.php/catalog: HTTP 200 text/html; charset=UTF-8 78,909 B
+  Border Tourism Survey 2023 -> http://nada.stat.tj/index.php/catalog/7
+  SURVEY OF THE AVAILABILITY AND MOVEMENT OF FIXED ASSETS 2023 -> http://nada.stat.tj/index.php/catalog/8
+  Survey of the cost structure of enterprises and organizations for the production and sale of products, works and service -> http://nada.stat.tj/index.php/catalog/22
+  Tajikistan Modular survey as part of the Household Budget Survey in the Republic of Tajikistan (МS) 2023 -> http://nada.stat.tj/index.php/catalog/19
+  Tajikistan Surveys Use of time budget (SUTB) 2023 -> http://nada.stat.tj/index.php/catalog/20
+  Tajikistan Комплексной оценки положения инвалидов и лиц с ограниченными возможностями (КОПИ) 2023 -> http://nada.stat.tj/index.php/catalog/12
+  ВЫБОРОЧНОГО СТАТИСТИЧЕСКОГО ОБСЛЕДОВАНИЯ ТОРГОВЫХ СУБЪЕКТОВ ВЫБОРОЧНОГО СТАТИСТИЧЕСКОГО ОБСЛЕДОВАНИЯ ТОРГОВЫХ СУБЪЕКТОВ  -> http://nada.stat.tj/index.php/catalog/29
+  Медико-демографическое исследование Таджикистана 2023 года -> http://nada.stat.tj/index.php/catalog/24
+  Обследование бюджетов домашних хозяйств Национальное выборочное обследование домохозяйств -> http://nada.stat.tj/index.php/catalog/25
+  Обследование о деятельности ремеселенников в сфере производства -> http://nada.stat.tj/index.php/catalog/6
+  ОБСЛЕДОВАНИЯ НА ГРАНИЦЕ РЕСПУБЛИКИ ТАДЖИКИСТАН (ЧЕЛНОЧНАЯ ТОРГОВЛЯ) ЕДИНОВРЕМЕННОГО ВЫБОРОЧНОГО СТАТИСТИЧЕСКОГО ОБСЛЕДОВ -> http://nada.stat.tj/index.php/catalog/28
+  11 links match '(?i)(?:census|perepis|2010|2020|catalog/[0-9]|download|related|pdf)'
+http://nada.stat.tj/index.php/api/catalog/search?ps=100: HTTP 200 application/json; charset=utf-8 8,120 B
+  0 links match '(?i)(?:census|perepis|2010|2020|catalog/[0-9]|download|related|pdf)'
