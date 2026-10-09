@@ -1,11 +1,51 @@
-tonga_census: 2021 Census General Tables 1, 2, 4 and 10
-  https://tongastats.gov.to/download/266/general-tables/8089/1-population-trends.xlsx: 218,239 bytes
-  https://tongastats.gov.to/download/266/general-tables/7660/2-ethnicity.xlsx: 123,497 bytes
-  https://tongastats.gov.to/download/266/general-tables/7664/4-religion.xlsx: 96,551 bytes
-  https://tongastats.gov.to/download/266/general-tables/7665/10-literacy.xlsx: 89,481 bytes
-  median ages against the Census Report's key indicators: TONGA 22.2 (printed 22), Tongatapu 22.2 (printed 22), Vava'u 22.3 (printed 22), Ha'apai 22.3 (printed 22), 'Eua 21.1 (printed 21)
-  not checked: Ongo Niua, G 6 24.6 against the report's 23; no record carries the division's median
-  no polygon: Lulunga (723 people), counted in its division
-  no polygon: Niuatoputapu (718 people), counted in its division
-  26 records: admin1 ethnicity 5, admin1 language 4, admin1 median_age 5, admin1 population 5, admin1 religion 5, admin1 sex_ratio 5, admin2 ethnicity 21, admin2 median_age 21, admin2 population 21, admin2 religion 21, admin2 sex_ratio 21
-  wrote data/processed/tonga_census.json (126 kB)
+
+== https://web.archive.org/web/20170511164651id_/http://cso.gov.af/Content/files/Afghanistan%20SDES%20Bamiyan%20Final%20Report%20-%2024%20April%202013.pdf
+    103 pages
+  -- page 16
+    subdivisions, major villages and clusters of smaller villages, which will prove valuable for local
+    development planning and the monitoring of public service delivery.
+    The survey first involved a listing of every household in all the villages taking into account all its
+    members by age and sex. This results to the generation of the total population by age and sex in
+    every village and urban area of Bamiyan province.
+    Half of these listed households (i.e. every other household) were taken as samples for the survey
+    and were asked questions on education, literacy, employment, migration, functional difficulty,
+    fertility, mortality and housing characteristics. The listing and enumeration of sample households
+    were undertaken simultaneously, that is, as the households were listed every other household was
+    taken as samples.
+    Two questionnaires were used: a long version with the indicators for use with the sampled
+    households and a short version to collect only age and sex of the non-sampled household members.
+    6
+
+== https://web.archive.org/web/20210816022526id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/SDES-Ghor-English-Low-Resolution-Version.pdf
+    88 pages
+  -- page 5
+    The large scale Socio-Demographic Economic Survey (SDES) is an effective mechanism for
+    obtaining quality provincial, district and village data for key development indicators. The survey
+    compiles data on population distribution, education, employment, migration, functional disability,
+    fertility and mortality disaggregated by age and sex, and housing. Reliable and valid data provided
+    by the SDES is required for responsive and evidence-based policy and planning, monitoring and
+    evaluation of development and humanitarian programmes.
+    The availability of results of the provincial SDES undertaken in Ghor Province substantiates the
+    dedication of the staff of the Central Statistics Office (CSO) and the contribution of the Ghor
+  -- page 19
+    SOCIO-DEMOGRAPHIC AND ECONOMIC SURVEY
+    The survey first involved a listing of every household in all the villages. Half of these listed households
+    (i.e. every other household) were taken as samples for the survey and were asked questions on
+    education, literacy, employment, migration, functional difficulty, fertility, mortality, parent’s living status,
+    birth registration and housing characteristics
+    5. MONITORING AND SUPERVISION
+    The listing and mapping activity was handled by 40 CSO cartographers and hired local assistants
+
+== https://web.archive.org/web/20210816022918id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/SDES-DaikundiReport-Part1-pag-1-50.pdf
+    50 pages
+  -- page 19
+    SOCIO-DEMOGRAPHIC AND ECONOMIC SURVEY
+    (cid:55)(cid:75)(cid:72)(cid:3)(cid:86)(cid:88)(cid:85)(cid:89)(cid:72)(cid:92)(cid:3)(cid:76)(cid:81)(cid:89)(cid:82)(cid:79)(cid:89)(cid:72)(cid:71)(cid:3)(cid:68)(cid:3)(cid:79)(cid:76)(cid:86)(cid:87)(cid:76)(cid:81)
+    (i.e. every other household) were taken as samples and asked questions on education, literacy,
+    (cid:72)(cid:80)(cid:83)(cid:79)(cid:82)(cid:92)(cid:80)(cid:72)(cid:81)(cid:87)(cid:15)(cid:3)(cid:80)(cid:76)(cid:74)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81)(cid:15)(cid:3)(cid:73)(cid:88)(cid:81)(cid:70)(cid:8
+    housing characteristics.
+    5. MONITORING
+    AND SUPERVISION
+
+== https://web.archive.org/web/20210816022304id_/https://afghanistan.unfpa.org/sites/default/files/pub-pdf/Kabul_Socio-demographic-Economic-Survey_English.pdf
+    102 pages
