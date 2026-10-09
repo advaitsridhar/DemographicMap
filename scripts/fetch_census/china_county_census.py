@@ -111,13 +111,27 @@ LICENCE = "Official statistics of the provincial bureau of statistics, cited as 
 
 # Polygons whose label misspells the one county whose seat they hold, beyond
 # what AGREE accepts, each checked by hand: the label is that county's name
-# with a letter or two wrong, and no other county's. {code: (the label, why)}.
-# A label below AGREE that is another place's name is not here: 和安县's seat
-# stands alone in "Hetianxian", but 和安 was cut from 和田县 in 2020, so the
-# polygon is 和田县's old ground and not 和安's.
+# (or the name it had when the polygon was drawn) with a letter or two wrong,
+# or a misreading of one character, and no other county's. {code: (the
+# label, why)}. A label below AGREE that is another place's name is here only
+# where that place has a polygon of its own holding its own seat, so the
+# label is a copy: Henan's polygon repeats Banma's. 和安县 is not here: its
+# seat stands alone in "Hetianxian", but 和安 was cut from 和田县 in 2020, so
+# the polygon is 和田县's old ground and not 和安's.
 MISSPELT: dict[str, tuple[str, str]] = {
     "220382": ("Suanliaoxian", "双辽, Shuangliao, spelt 'Suanliao' by the boundary file"),
     "220621": ("Wushongxian", "抚松, Fusong, spelt 'Wushong' by the boundary file"),
+    "370724": ("Linjuxian", "临朐, Linqu, spelt 'Linju' by the boundary file"),
+    "371481": ("Leningshi", "乐陵, Leling, spelt 'Lening' by the boundary file"),
+    "371623": ("Wulixian", "无棣, Wudi, spelt 'Wuli' by the boundary file"),
+    "371726": ("Zhenchengxian", "鄄城, Juancheng, whose first character the boundary file "
+                                "reads as 甄 (zhen)"),
+    "371324": ("Changshangxian", "苍山, Cangshan, spelt 'Changshang' by the boundary file: the "
+                                 "county has been called 兰陵 (Lanling) since 2014"),
+    "632324": ("Banmaxian", "a copy of its neighbour Banma's: the boundary file draws Banma "
+                            "(班玛县) as a polygon of its own holding Banma's seat, about 210 km "
+                            "to the south-west, and this one holds the seat of 河南 (Henan) "
+                            "alone"),
 }
 
 # The provinces whose 2020 census yearbook prints the three tables by county,

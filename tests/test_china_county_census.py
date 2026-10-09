@@ -263,6 +263,15 @@ class Binding(unittest.TestCase):
         lone = {"653229": ("S-Y", {"code": "653229", "label": "Hetianxian", "zh": "和安县",
                                    "agreement": 0.889})}
         self.assertIsNone(cc.polygon_for("653229", {}, lone)[0])
+        # Henan's polygon carries a copy of Banma's label; it is Henan's
+        # only under that exact label.
+        lone = {"632324": ("S-Z", {"code": "632324", "label": "Banmaxian",
+                                   "zh": "河南蒙古族自治县", "agreement": 0.452})}
+        shape, how = cc.polygon_for("632324", {}, lone)
+        self.assertEqual(shape, "S-Z")
+        self.assertIn("a copy of its neighbour Banma's", how)
+        lone["632324"][1]["label"] = "Banmashi"
+        self.assertIsNone(cc.polygon_for("632324", {}, lone)[0])
 
     def test_a_record(self):
         r = self.build()["S-DATONG"]
