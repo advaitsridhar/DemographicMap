@@ -218,10 +218,8 @@
       "source": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea"
     },
     "median_age": {
-      "value": 23.8,
-      "unit": "years",
-      "year": 2011,
-      "source": "Papua New Guinea 2011 National Report (2011 census), National Statistical Office of Papua New Guinea"
+      "status": "not_available",
+      "note": "The National Statistical Office's 2011 National Report prints the median age of the province's citizen population as 23.8 (Table 1.7, and its provincial Summary Indicators), and the Summary Indicators print its males' as 23.0 and its females' as 22.4. A median of everyone lies between its two sexes' medians, so these cannot all be right, and the report does not say which is the misprint; the province's figure is not used. The report has no finer age table for a province to compute it from (Table 1.5 gives three broad age groups), and the 2024 census, which asked age, has published only its Final Figures, district counts by sex with no ages."
     },
     "sex_ratio": {
       "value": 114,
@@ -263,7 +261,6 @@
     "aliases": [
       "National Capital District"
     ],
-    "median_age_note": "The median age of the province's citizen population at the 2011 census, from Table 1.7 of the National Statistical Office's 2011 National Report (its provincial Summary Indicators print the same figure). Non-citizens -- 20,882 people in the whole country, 0.3% of it -- are not in it. It is the latest age the office publishes for a province: the 2024 census asked age, one of its six questions, but its Final Figures, the one release of that census so far, counts people by sex only.",
     "religion_year": 2011,
     "religion_note": "United Church was the largest denomination in this province at the 2011 census, with 23.0% of its citizen population -- and it is the only religion figure published for a province, the \"Main religion\" row of the Summary Indicators in the National Statistical Office's 2011 National Report. The remaining 77.0% is not a gap in the census but in what was published: the office sells the provincial tables rather than publishing them -- its Provincial Report at K40 a province and its 31 cross-classified Basic Tables at K40 a set, on paper and CD-ROM -- and no denominational breakdown for any province is online anywhere this project could reach."
   },
@@ -285,10 +282,8 @@
       "source": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea"
     },
     "median_age": {
-      "value": 22.7,
-      "unit": "years",
-      "year": 2011,
-      "source": "Papua New Guinea 2011 National Report (2011 census), National Statistical Office of Papua New Guinea"
+      "status": "not_available",
+      "note": "The National Statistical Office's 2011 National Report prints the median age of the province's citizen population as 22.7 (Table 1.7, and its provincial Summary Indicators), and the Summary Indicators print its males' as 19.7 and its females' as 20.5. A median of everyone lies between its two sexes' medians, so these cannot all be right, and the report does not say which is the misprint; the province's figure is not used. The report has no finer age table for a province to compute it from (Table 1.5 gives three broad age groups), and the 2024 census, which asked age, has published only its Final Figures, district counts by sex with no ages."
     },
     "sex_ratio": {
       "value": 111,
@@ -330,7 +325,6 @@
     "aliases": [
       "Milne Bay Province"
     ],
-    "median_age_note": "The median age of the province's citizen population at the 2011 census, from Table 1.7 of the National Statistical Office's 2011 National Report (its provincial Summary Indicators print the same figure). Non-citizens -- 20,882 people in the whole country, 0.3% of it -- are not in it. It is the latest age the office publishes for a province: the 2024 census asked age, one of its six questions, but its Final Figures, the one release of that census so far, counts people by sex only.",
     "religion_year": 2011,
     "religion_note": "United Church was the largest denomination in this province at the 2011 census, with 54.9% of its citizen population -- and it is the only religion figure published for a province, the \"Main religion\" row of the Summary Indicators in the National Statistical Office's 2011 National Report. The remaining 45.1% is not a gap in the census but in what was published: the office sells the provincial tables rather than publishing them -- its Provincial Report at K40 a province and its 31 cross-classified Basic Tables at K40 a set, on paper and CD-ROM -- and no denominational breakdown for any province is online anywhere this project could reach."
   },
