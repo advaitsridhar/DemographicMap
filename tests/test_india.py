@@ -231,6 +231,31 @@ class NewDistricts(unittest.TestCase):
         self.assertIsNone(got["population"].get("value"))
         self.assertIn("count them twice", got["population"]["note"])
 
+    def test_an_encyclopaedia_count_beside_the_predecessors_row_is_displaced(self):
+        # Gujarat's districts summed to 64,476,108 against the state's
+        # 60,439,692: Wikidata's 2011 figures for the four districts cut from
+        # shapes that keep the undivided count were counting their people twice.
+        got = emitted()
+        self.assertEqual(got["Palghar"]["population"]["displaces_before"],
+                         india_census.DISPLACES_BEFORE)
+        self.assertEqual(got["Balrampur"]["population"]["displaces_before"],
+                         india_census.DISPLACES_BEFORE)
+        # Warangal was divided whole: no shape carries its row, so a figure for
+        # Jangaon counts nobody twice and is left to fill the gap.
+        self.assertNotIn("displaces_before", got["Jangaon"]["population"])
+
+    def test_the_build_drops_the_double_count(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+        import build_entities  # noqa: PLC0415
+        row = dict(emitted()["Palghar"], _source="india_district.json")
+        entity = {"population": {"value": 2990116, "year": 2011, "source": "Wikidata (CC0)"},
+                  "_from": {"population": "wikidata_admin2.json"}, "sources": []}
+        build_entities.merge_adapter(entity, row)
+        self.assertNotIn("value", entity["population"])
+        self.assertIn("count them twice", entity["population"]["note"])
+
     def test_ethnicity_keeps_its_own_kind_of_absence(self):
         # India does not ask the question of anyone, anywhere, so this is not
         # something an estimate could fill.
@@ -730,6 +755,19 @@ class ResidualDetail(unittest.TestCase):
             india_census.religion_with_detail(
                 ARUNACHAL, self.unit({"Doni Polo / Sidonyi Polo": 1}, bucket=2))
         self.assertIn("against an enumerated 1,383,727", str(caught.exception))
+
+    def test_a_residual_too_small_to_name_anything_keeps_c01s_row(self):
+        # Leh: 54 people in "Other religions" out of 133,487. Jammu & Kashmir's
+        # split names nothing at that size, and its note printed "()".
+        state = {"name": "State - JAMMU & KASHMIR", "bucket": 2000,
+                 "counts": collections.Counter({"Faith A": 1200, "Faith B": 800})}
+        self.assertFalse(india_census.names_a_religion(
+            india_census.district_detail(state, 54), 133487))
+        self.assertTrue(india_census.names_a_religion(
+            india_census.district_detail(self.unit({"Doni Polo / Sidonyi Polo": 324742}),
+                                         362553), ARUNACHAL["Population"]))
+        self.assertFalse(india_census.names_a_religion(
+            {"bucket": 54, "counts": {}}, 133487))
 
     def test_the_note_says_it_is_a_state_figure_with_no_district_below_it(self):
         counts = collections.Counter({"Doni Polo / Sidonyi Polo": 324742,

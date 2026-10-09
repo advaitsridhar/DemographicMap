@@ -124,6 +124,14 @@ LOW_HOUSEHOLDS = ("The 2019 census's district tables count only the people of no
 HOUSEHOLD_NOTE = ("the census's district tables count the population of normal or regular "
                   "households, leaving out the 1.6% of the country in institutions, homeless, on "
                   "boats or in transit, which it counts by province only")
+# Where a province's district tables are not used, an encyclopaedia's figure
+# for one of its districts dated before this year is not shown either (the
+# build's ``displaces_before``): it is the same undercount. Wikidata's 2019
+# figures for Preah Sihanouk's four districts -- 73,036, 105,053, 25,791 and
+# 15,985 -- are exactly the regular-household counts of Tables P-01 to P-25,
+# 219,865 together, 70.9% of the province's 310,072 in Table 2.1.1. A figure
+# from a later year is not this census's and is left to stand.
+DISPLACES_BEFORE = YEAR + 1
 
 
 def number(text: str) -> int:
@@ -528,7 +536,8 @@ def district_records(annex, placed, broken, adm2_rows,
             out.append(record(
                 f"KHM-D-{pcode}", unit["name"], level="admin2", parent="KHM", country="KHM",
                 match_by="shape_id", shape_id=unit["id"], codes={"pcode": pcode},
-                population=gap(NOT_AVAILABLE, note), sex_ratio=gap(NOT_AVAILABLE, note),
+                population=dict(gap(NOT_AVAILABLE, note), displaces_before=DISPLACES_BEFORE),
+                sex_ratio=gap(NOT_AVAILABLE, note),
                 median_age=gap(NOT_AVAILABLE, DISTRICT_AGE_GAP),
                 religion=gap(NOT_AVAILABLE, DISTRICT_RELIGION_GAP),
                 language=gap(NOT_AVAILABLE, DISTRICT_LANGUAGE_GAP)))

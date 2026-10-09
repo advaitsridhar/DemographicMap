@@ -1098,7 +1098,10 @@ def inherited_fields(whole: collections.Counter, estimate: str,
     # districts created out of Arunachal's after 2011 -- Kamle, Shi Yomi,
     # Leparada, Siang and the rest -- from being the only Indian shapes left
     # whose largest group is the word "other".
-    if detail and detail["counts"] and whole["Others_Religions"]:
+    split = (detail and detail["counts"] and whole["Others_Religions"]
+             and names_a_religion(district_detail(detail, whole["Others_Religions"]),
+                                  total))
+    if split:
         religion = without_counts(religion_with_detail(
             whole, district_detail(detail, whole["Others_Religions"])))
     else:
@@ -1112,7 +1115,7 @@ def inherited_fields(whole: collections.Counter, estimate: str,
     if religion:
         fields["religion"] = religion
         fields["religion_note"] = estimate
-        if detail and detail["counts"] and whole["Others_Religions"]:
+        if split:
             # Two estimates ride on this composition rather than one, and a
             # reader owed the first is owed the second: the shares are the
             # predecessor's, and the split inside "Other religions" is the
@@ -1137,6 +1140,22 @@ def inherited_fields(whole: collections.Counter, estimate: str,
     if religion:
         fields["population"] = gap(NOT_AVAILABLE, estimate)
     return fields
+
+
+# A district created after 2011 out of one whose shape keeps the 2011 row
+# shows no head count, and an encyclopaedia's figure for it dated before this
+# year is not shown either (the build's ``displaces_before``): the people it
+# counts are already in the predecessor's count beside it. Wikidata's 2011
+# figures for Chhota Udaipur, Devbhumi Dwarka, Gir Somnath and Mahisagar put
+# Gujarat's districts at 64,476,108 against the state's 60,439,692. Checked in
+# 2026, with no census held since 2011; a later figure is newer than the check.
+DISPLACES_BEFORE = 2026
+
+
+def counted_on_a_shape(predecessors: tuple[str, ...]) -> bool:
+    """Whether any predecessor's 2011 row is on a shape of this map -- every one
+    not in ``SUBDIVIDED_SINCE_2011`` is (``check_lost_territory``)."""
+    return any(p.casefold() not in SUBDIVIDED_SINCE_2011 for p in predecessors)
 
 
 def new_districts(measured: dict[tuple[str, str], collections.Counter]
@@ -1180,6 +1199,9 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
                 fields = inherited_fields(
                     whole, inherited_note(name, year, predecessors), reason,
                     (detail or {}).get(state_key(state_2011)))
+            if counted_on_a_shape(predecessors) and isinstance(fields["population"], dict):
+                fields["population"] = dict(fields["population"],
+                                            displaces_before=DISPLACES_BEFORE)
             out.append(record(
                 f"IND-NEW-{state.replace(' ', '-')}-{name.replace(' ', '-')}",
                 name, level="admin2", parent="IND",
@@ -1327,7 +1349,7 @@ def districts(rows: list[dict[str, str]],
         bucket = counts["Others_Religions"]
         if unit and unit["counts"] and bucket and isinstance(record_["religion"], list):
             scaled = district_detail(unit, bucket)
-            if scaled["counts"]:
+            if names_a_religion(scaled, counts["Population"]):
                 record_["religion"] = religion_with_detail(counts, scaled)
                 record_["religion_note"] = (
                     record_.get("religion_note", "") + " "
@@ -1747,6 +1769,21 @@ def district_detail(unit: dict[str, Any], bucket: int) -> dict[str, Any]:
     for label in sorted(exact, key=lambda k: -(exact[k] - scaled[k]))[:max(short, 0)]:
         scaled[label] += 1
     return {**unit, "bucket": bucket, "counts": scaled}
+
+
+def names_a_religion(scaled: dict[str, Any], population: int) -> bool:
+    """Whether the state's split, scaled to one district's residual, names any
+    religion at all at the district's size.
+
+    Leh's residual is 54 people of 133,487: no religion of Jammu & Kashmir's
+    Appendix comes to a share worth showing there, so the split would only
+    rename C-01's "Other religions" row and call the renamed row an estimate --
+    and its note printed the split it did not show as "()". C-01's row stands.
+    """
+    if not scaled["counts"]:
+        return False
+    kept = named_residual(scaled["counts"], scaled["bucket"], population)
+    return any(label != ORP_REMAINDER for label in kept)
 
 
 def district_residual_note(state: str, kept: dict[str, int], bucket: int,

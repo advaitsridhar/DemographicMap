@@ -222,6 +222,37 @@ class Estimates(unittest.TestCase):
         self.assertIn("The office counts it in Kapisa; the boundary file draws it in "
                       "Parwan.", raqi["population_note"])
 
+    def test_a_refused_province_displaces_an_older_encyclopaedia_figure(self):
+        """Kapisa's polygon kept Wikidata's 2009 figure for the office's province
+        beside districts adding up to more; the stated reason now replaces it."""
+        rows, settled = sheet()
+        records = self.build(rows, settled, POINT_ELSEWHERE={"0202": ("Kapisa", "Parwan")})
+        pop = records["AFG-EST-02"]["population"]
+        self.assertEqual(pop["displaces_before"], ae.DISPLACES_BEFORE)
+        self.assertTrue(pop["note"].startswith("The statistics office's 1396 estimate"))
+        self.assertNotIn("Not written", pop["note"])
+        self.assertNotIn("displaces_before", records["AFG-EST-02"]["sex_ratio"])
+        # A province drawn as the office counts it carries a figure, not a gap.
+        self.assertIn("value", records["AFG-EST-01"]["population"])
+        import sys
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+        import build_entities as be
+        for year, kept in ((2009, False), (2025, False), (2026, True)):
+            entity = {"population": {"value": 399500, "year": year, "source": "Wikidata (CC0)"},
+                      "_from": {"population": "wikidata_admin1.json"}, "sources": []}
+            be.merge_adapter(entity, dict(records["AFG-EST-02"], _source=ae.OUT))
+            self.assertEqual("value" in entity["population"], kept, year)
+
+    def test_a_misspelt_boundary_label_is_written_as_the_office_spells_it(self):
+        units1 = [{"id": "P11", "name": "Ghanzi", "iso_3166_2": None}]
+        self.assertEqual(ae.OFFICE_NAMES["Ghanzi"], "Ghazni")
+        self.assertEqual(ae.shown(units1[0]), "Ghazni")
+        self.assertEqual(ae.shown({"name": "Kapisa"}), "Kapisa")
+
+    def test_the_ethnicity_reason_names_the_archived_plans(self):
+        self.assertIn("Internet Archive", ae.ETHNICITY_GAP_DISTRICT)
+        self.assertIn("Wikipedia articles", ae.ETHNICITY_GAP_DISTRICT)
+
     def test_a_point_in_another_polygon_refuses_both_provinces(self):
         rows, settled = sheet()
         records = self.build(rows, settled,

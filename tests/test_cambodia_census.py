@@ -150,6 +150,41 @@ class CrosswalkTest(unittest.TestCase):
         self.assertEqual(recs["KH0103"]["sex_ratio"]["value"], 100.0)
         self.assertIn("regular households", recs["KH0103"]["population_note"])
 
+    def low_household_records(self):
+        placed, _, broken = kh.crosswalk(annex_2019(), ADM3, ADM2)
+        adm2 = [{"ADM2_PCODE": "KH0102", "ADM2_EN": "Mongkol Borei",
+                 "ADM1_EN": "Banteay Meanchey"},
+                {"ADM2_PCODE": "KH0103", "ADM2_EN": "Phnum Srok", "ADM1_EN": "Banteay Meanchey"}]
+
+        def bind(iso3, level, rows, unit_col, parent_col):
+            return ({i: {"id": r["ADM2_PCODE"], "name": r["ADM2_EN"]}
+                     for i, r in enumerate(rows)}, [], [])
+        with mock.patch.object(kh, "bind_rows", bind):
+            return {r["shape_id"]: r for r in kh.district_records(
+                annex_2019(), placed, broken, adm2, low={1: 0.709})}
+
+    def test_a_province_below_the_floor_states_why_and_displaces_the_undercount(self):
+        """Preah Sihanouk: its district tables leave out 29% of the province, and
+        Wikidata's 2019 district figures are those same undercounts."""
+        recs = self.low_household_records()
+        pop = recs["KH0103"]["population"]
+        self.assertEqual(pop["status"], kh.NOT_AVAILABLE)
+        self.assertIn("lived outside them", pop["note"])
+        self.assertEqual(pop["displaces_before"], 2020)
+        self.assertNotIn("displaces_before", recs["KH0103"]["sex_ratio"])
+
+    def test_the_build_drops_an_encyclopaedia_figure_of_the_census_year(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+        import build_entities as be
+        row = dict(self.low_household_records()["KH0103"], _source=kh.OUT)
+        for year, kept in ((2019, False), (2023, True)):
+            entity = {"population": {"value": 73036, "year": year, "source": "Wikidata (CC0)"},
+                      "_from": {"population": "wikidata_admin2.json"}, "sources": []}
+            be.merge_adapter(entity, dict(row))
+            self.assertEqual("value" in entity["population"], kept, year)
+
 
 def renumbered():
     """Tboung Khmum: the census numbers its districts and communes afresh, so its

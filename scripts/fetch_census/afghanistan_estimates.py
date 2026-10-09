@@ -106,6 +106,20 @@ LICENCE = "Afghanistan Central Statistics Organization publication"
 SETTLED = 28_224_323
 NOMADS = 1_500_000
 
+# A province the boundary file does not draw as the office counts it states
+# that its figure is not the polygon's, and an encyclopaedia's figure for the
+# province dated before this year is not shown in its place (the build's
+# ``displaces_before``): Wikidata's figures for Kapisa (399,500, 2009),
+# Paktika (393,800, 2009) and Sar-e Pol (532,000, 2012) -- or Paktia's of
+# 2025 -- are the office's province, not the polygon, and stood beside
+# districts that add up to more. Checked in 2026; a figure dated 2026 or later
+# is newer than the check and stands until the reader is looked at again.
+DISPLACES_BEFORE = 2026
+
+# The boundary file's labels that misspell the province they draw, and the
+# name the office prints: the build names a polygon after the row bound to it.
+OFFICE_NAMES = {"Ghanzi": "Ghazni"}
+
 # Province code -> the drawn first-level unit's ISO 3166-2 code, as the units
 # carry it. Ghazni's polygon carries none (the boundary file spells it
 # "Ghanzi") and is named instead.
@@ -808,8 +822,9 @@ def province_units(units1: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
 
 
 def shown(unit: dict[str, Any]) -> str:
-    """A unit's name as the map shows it."""
-    return unit.get("site_name") or unit["name"]
+    """A unit's name as the map shows it, a misspelt label in the office's spelling."""
+    name = unit.get("site_name") or unit["name"]
+    return OFFICE_NAMES.get(name, name)
 
 
 def drawn_districts(units1: list[dict[str, Any]], units2: list[dict[str, Any]]
@@ -942,12 +957,13 @@ def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, A
                 "sex_ratio_note": (f"1396 estimate, summed over the districts drawn "
                                    f"here: {m:,} males against {f:,} females.")}
         elif code in apart:
-            reason = (f"Not written: the boundary file does not draw {shown(unit)} as the "
-                      f"statistics office counts it -- {'; '.join(apart[code])} -- so the "
-                      f"office's 1396 estimate for the province ({both:,} settled people, "
-                      f"{male:,} males and {female:,} females) is not this polygon's. The "
-                      f"districts drawn in it carry their own.")
-            fields = {"population": gap(NOT_AVAILABLE, reason),
+            reason = (f"The statistics office's 1396 estimate for the province ({both:,} "
+                      f"settled people, {male:,} males and {female:,} females) is not this "
+                      f"polygon's: the boundary file does not draw {shown(unit)} as the "
+                      f"office counts it -- {'; '.join(apart[code])}. The districts drawn "
+                      f"in it carry their own figures.")
+            fields = {"population": dict(gap(NOT_AVAILABLE, reason),
+                                         displaces_before=DISPLACES_BEFORE),
                       "sex_ratio": gap(NOT_AVAILABLE, reason)}
         else:
             fields = {
@@ -962,8 +978,8 @@ def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, A
                                      year=YEAR, source=SOURCE),
                 "sex_ratio_note": f"1396 estimate: {male:,} males against {female:,} females."}
         out.append(record(
-            f"AFG-EST-{code}", unit["name"], level="admin1", parent="AFG", country="AFG",
-            match_by="shape_id", shape_id=unit["id"],
+            f"AFG-EST-{code}", OFFICE_NAMES.get(unit["name"], unit["name"]), level="admin1",
+            parent="AFG", country="AFG", match_by="shape_id", shape_id=unit["id"],
             median_age=age_field(code),
             ethnicity=gap(NOT_AVAILABLE, ETHNICITY_GAP_PROVINCE),
             sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
@@ -994,12 +1010,14 @@ NO_ETHNIC_COUNT = (
     "nothing on ethnicity or language.")
 ETHNICITY_GAP_DISTRICT = (
     f"{NO_ETHNIC_COUNT} The one district-level source is the Ministry of Rural "
-    "Rehabilitation and Development's district development plans of 2008-14, as the "
-    "provinces' articles transcribe them, and none of their shares is written for "
-    "this district: its plan gives none, names a majority without figures, or is "
-    "transcribed under a name or a province the map does not match to this polygon.")
+    "Rehabilitation and Development's district development plans of 2006-14 -- the "
+    "plans' own PDFs, which the Internet Archive keeps for about 150 districts, and the "
+    "provinces' Wikipedia articles, which transcribe others -- and neither gives this "
+    "district shares that can be shown: its plan states none, names its peoples "
+    "without figures, gives shares that do not add up, or is archived or transcribed "
+    "under a name or a province the map does not match to this polygon.")
 ETHNICITY_GAP_PROVINCE = (
-    f"{NO_ETHNIC_COUNT} The ministry's district development plans of 2008-14 give "
+    f"{NO_ETHNIC_COUNT} The ministry's district development plans of 2006-14 give "
     "some districts' shares and no province's; the districts that have one carry it.")
 
 
