@@ -90,7 +90,11 @@ ESTIMATE = ("Central Bureau of Statistics (Syria), Statistical Abstract 2011, ch
             "tabulates it for HDX")
 URL = f"https://data.humdata.org/dataset/{DATASET}"
 LICENCE = "CC BY, published via HDX"
-DECISION = "19 September 2026"
+# The citizens' row, the census's own residual, and the share below which a
+# group is counted in that residual (one that would read 0.0%).
+CITIZENS = "Syrian citizens"
+OTHER = "Other nationalities"
+SMALL = 0.0005
 
 # The nationality table's groups, by the Bureau's field name -> the label
 # the map files them under. The citizens' row names no people (see the
@@ -214,16 +218,49 @@ def nests(table: dict[str, dict[str, Any]], what: str) -> None:
           f"not {table['SY']['total']:,.0f}")
 
 
-def nationality_note(code: str, nat: dict[str, Any], age_total: float) -> str:
+def folded(counts: dict[str, float], total: float
+           ) -> tuple[dict[str, float], list[tuple[str, float]]]:
+    """The groups under ``SMALL`` of the people moved into "Other nationalities".
+
+    A district of 172,095 people listed five foreign groups of 1 to 19
+    people each, every one a bar reading 0.0%. Each is counted in the
+    census's own residual instead, and the note names what went there. The
+    citizens' row is never moved.
+    """
+    out = {k: v for k, v in counts.items() if v}
+    moved = sorted(((k, v) for k, v in out.items()
+                    if k not in (CITIZENS, OTHER) and total and v / total < SMALL),
+                   key=lambda kv: (-kv[1], kv[0]))
+    for k, v in moved:
+        out[OTHER] = out.get(OTHER, 0) + out.pop(k)
+    return out, moved
+
+
+def nationality_note(code: str, nat: dict[str, Any], age_total: float,
+                     moved: list[tuple[str, float]] | None = None) -> str:
+    shown = {k for k, v in nat["counts"].items() if v} - {k for k, _v in moved or []}
     note = (f"Nationality, not ethnicity: the 2004 census asked each person's "
-            f"nationality and no ethnic question. Carried on this field under the "
-            f"owner's decision of {DECISION}, as Japan's and Korea's nationality counts are. "
+            f"nationality and no ethnic question, so the nationality it counts is shown "
+            f"here in place of ethnicity, as Japan's and Korea's nationality counts are. "
             f"'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, "
-            f"Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their "
-            f"descendants, who are not Syrian citizens. 'Nationalities of the Americas' and "
-            f"'Oceanian nationalities' are the census's 'American' and 'Australian' groups, "
-            f"which stand beside its European, Asian and African ones. "
-            f"Shares of the {nat['total']:,.0f} people the nationality table counts")
+            f"Armenian, Assyrian or Turkmen.")
+    if "Palestinian" in shown:
+        note += (" 'Palestinian' is Palestinian refugees and their descendants, who are not "
+                 "Syrian citizens.")
+    named = [k for k in ("Nationalities of the Americas", "Oceanian nationalities") if k in shown]
+    if named:
+        census = {"Nationalities of the Americas": "'American'",
+                  "Oceanian nationalities": "'Australian'"}
+        many = len(named) > 1
+        note += (" " + " and ".join(f"'{k}'" for k in named)
+                 + (" are" if many else " is") + " the census's "
+                 + " and ".join(census[k] for k in named)
+                 + (" groups, which stand" if many else " group, which stands")
+                 + " beside its European, Asian and African ones.")
+    if moved:
+        note += (" Groups of under 0.05% of the people here are counted in 'Other "
+                 "nationalities': " + ", ".join(f"{k} ({v:,.0f})" for k, v in moved) + ".")
+    note += f" Shares of the {nat['total']:,.0f} people the nationality table counts"
     if round(nat["total"]) != round(age_total):
         note += (f" (the census's age table counts {age_total:,.0f} here; the "
                  f"nationality table, CBS Table 3, is a separate tabulation)")
@@ -269,6 +306,7 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                   f"syria_census: {unit['name']} is OCHA's {code}, which the census "
                   f"tables do not have")
             a, n = age[code], nat[code]
+            counts, moved = folded(n["counts"], n["total"])
             golan = GOLAN_NOTE if code in GOLAN else ""
             if level == "admin1":
                 check(code in est, f"syria_census: no 2011 estimate for {code}")
@@ -295,10 +333,9 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                 sex_ratio=sex_ratio(a["men"], a["women"], year=YEAR, source=SOURCE),
                 sex_ratio_note=(f"Males per 100 females in the 2004 census: "
                                 f"{a['men']:,.0f} men and {a['women']:,.0f} women." + golan),
-                ethnicity=shares({k: v for k, v in n["counts"].items() if v},
-                                 total=n["total"]),
+                ethnicity=shares(counts, total=n["total"]),
                 ethnicity_year=YEAR, ethnicity_basis="nationality",
-                ethnicity_note=nationality_note(code, n, a["total"]),
+                ethnicity_note=nationality_note(code, n, a["total"], moved),
                 language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
                 sources=sources + ([{"field": "population", "name": ESTIMATE, "url": URL,
                                      "year": EST_YEAR, "license": LICENCE}]

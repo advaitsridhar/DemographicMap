@@ -132,6 +132,36 @@ class TheReader(unittest.TestCase):
         self.assertNotIn("d3", {r["shape_id"] for r in rows})
 
 
+class TinyGroups(unittest.TestCase):
+    """Afrin's 172,095 people listed five foreign groups of 1 to 19 people."""
+
+    COUNTS = {"Syrian citizens": 172055, "Asian nationalities": 19,
+              "European nationalities": 3, "Other Arab nationalities": 5,
+              "Other nationalities": 12, "Palestinian": 1, "Oceanian nationalities": 0}
+
+    def test_groups_under_the_threshold_go_to_the_census_residual(self):
+        out, moved = sc.folded(self.COUNTS, 172095)
+        self.assertEqual(out, {"Syrian citizens": 172055, "Other nationalities": 40})
+        self.assertEqual([k for k, _v in moved], ["Asian nationalities", "Other Arab nationalities",
+                                                  "European nationalities", "Palestinian"])
+        self.assertEqual(sum(out.values()), 172095)
+
+    def test_a_group_at_or_over_the_threshold_keeps_its_bar(self):
+        out, moved = sc.folded({"Syrian citizens": 9900, "Palestinian": 100}, 10000)
+        self.assertEqual(out, {"Syrian citizens": 9900, "Palestinian": 100})
+        self.assertEqual(moved, [])
+
+    def test_the_note_names_what_was_moved_and_explains_only_what_is_shown(self):
+        out, moved = sc.folded(self.COUNTS, 172095)
+        nat = {"total": 172095, "counts": self.COUNTS}
+        note = sc.nationality_note("SY0200", nat, 172095, moved)
+        self.assertIn("Asian nationalities (19)", note)
+        self.assertIn("Palestinian (1)", note)
+        self.assertNotIn("refugees", note)       # no Palestinian bar is shown here
+        self.assertNotIn("owner", note)
+        self.assertNotIn("decision", note)
+
+
 class TheHelpers(unittest.TestCase):
     def test_age_groups_must_run_without_a_gap(self):
         row = {"AREA_NAME": "x", "B0004": 1, "B1014": 1, "B15PL": 1}
