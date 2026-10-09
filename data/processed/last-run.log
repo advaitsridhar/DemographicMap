@@ -1,62 +1,8 @@
-china_county_census: Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020)
-  retry 1/5 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error timed out>
-  retry 2/5 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 504: Gateway Time-out
-  retry 1/5 after 2s :: https://web.archive.org/web/20250216154147id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls :: <urlopen error timed out>
-    province   全省                       630000 
-    prefecture 西宁市                      630100 
-    county     城东区                      630102 a district
-    county     城中区                      630103 a district
-    county     城西区                      630104 a district
-    county     城北区                      630105 a district
-    county     湟中区                      630106 a district
-    county     大通回族土族自治县                630121 bound to Datonghuizutuzuzizhixian (17275852B12680287585482)
-    county     湟源县                      630123 bound to Huangyuanxian (17275852B75021358121292), ratio 0.80 (0.81 of the median)
-    prefecture 海东市                      632100 
-    county     乐都区                      630202 a district
-    county     平安区                      630203 a district
-    county     民和回族土族自治县                630222 bound to Minhehuizutuzuzizhixian (17275852B36383935837338)
-    county     互助土族自治县                  630223 bound to Huzhutuzuzizhixian (17275852B41190012362593), ratio 0.95 (0.96 of the median)
-    county     化隆回族自治县                  630224 bound to Hualonghuizuzizhixian (17275852B64856383532767), ratio 0.99 (0.99 of the median)
-    county     循化撒拉族自治县                 630225 bound to Xunhuasalazuzizhixian (17275852B74412727274506)
-    prefecture 海北藏族自治州                  632200 
-    county     门源回族自治县                  632221 bound to Menyuanhuizuzizhixian (17275852B50621998812160), ratio 0.94 (0.94 of the median)
-    county     祁连县                      632222 bound to Qilianxian (17275852B88619993156988), ratio 1.04 (1.05 of the median)
-    county     海晏县                      632223 bound to Haiyanxian (17275852B58564753780047), ratio 1.00 (1.01 of the median)
-    county     刚察县                      632224 bound to Gangchaxian (17275852B65042092306901)
-    prefecture 黄南藏族自治州                  632300 
-    county     同仁县                      632301 bound to Tongrenxian (17275852B20463865371353), ratio 1.10 (1.11 of the median)
-    county     尖扎县                      632322 bound to Jianzhaxian (17275852B71786988816730)
-    county     泽库县                      632323 bound to Zekuxian (17275852B98267999500175)
-    county     河南蒙古族自治县                 632324 bound to Banmaxian (17275852B99290886399570)
-    prefecture 海南藏族自治州                  632500 
-    county     共和县                      632521 bound to Gonghexian (17275852B58957248362912), ratio 1.08 (1.09 of the median)
-    county     同德县                      632522 bound to Tongdexian (17275852B73285144447377), ratio 0.94 (0.94 of the median)
-    county     贵德县                      632523 bound to Guidexian (17275852B8640595389907), ratio 1.04 (1.05 of the median)
-    county     兴海县                      632524 bound to Xinghaixian (17275852B81098989654744), ratio 1.00 (1.01 of the median)
-    county     贵南县                      632525 bound to Guinanxian (17275852B54009314236158), ratio 0.94 (0.95 of the median)
-    prefecture 果洛藏族自治州                  632600 
-    county     玛沁县                      632621 bound to Maqinxian (17275852B82919928587081)
-    county     班玛县                      632622 its 2020 townships are not its polygon's: 满掌乡 (632624) inside; 上红科乡 (632624) inside; 下红科乡 (632624) inside
-    county     甘德县                      632623 no polygon is this county: no polygon holds its seat alone or names it
-    county     达日县                      632624 no polygon is this county: no polygon holds its seat alone or names it
-    county     久治县                      632625 bound to Jiuzhixian (17275852B2182407224263)
-    county     玛多县                      632626 bound to Maduoxian (17275852B66695118162266)
-    prefecture 玉树藏族自治州                  632700 
-    county     玉树市                      632701 bound to Yushuxian (17275852B66736115774382), ratio 1.17 (1.18 of the median)
-    county     杂多县                      632722 no polygon is this county: no polygon holds its seat alone or names it
-    county     称多县                      632723 bound to Chengduoxian (17275852B27939254726366)
-    county     治多县                      632724 bound to Zhiduoxian (17275852B13951895453383)
-    county     囊谦县                      632725 bound to Nangqianxian (17275852B24277287807877)
-    county     曲麻莱县                     632726 bound to Qumalaixian (17275852B19636254999944)
-    prefecture 海西蒙古族藏族自治州               632800 
-    county     格尔木市                     632801 its 2020 townships are not its polygon's: 唐古拉镇 outside; 大格勒乡 outside
-    county     德令哈市                     632802 no polygon is this county: no polygon holds its seat alone or names it
-    county     茫崖市                      632803 no polygon is this county: no polygon holds its seat alone or names it
-    county     乌兰县                      632821 no polygon is this county: no polygon holds its seat alone or names it
-    county     都兰县                      632822 its 2020 townships are not its polygon's: 大格勒乡 (632801) inside
-    county     天峻县                      632823 a jump from the polygon's older figure: 23,203 against 33,923 (2010), ratio 0.68, 0.69 of the median 0.99
-    county     大柴旦行政委员会                 632857 no polygon is this county: no polygon holds its seat alone or names it
-  Qinghai Province: 8 prefectures, 45 county-level areas, 0 special; 27 bound; not bound: {'a district': 7, 'no polygon is this county': 7, "its 2020 townships are not its polygon's": 3, "a jump from the polygon's older figure": 1}; 4 polygons told why
-  --add: 31 records read for ['63']; 308 kept from the current china_county_census.json
-  wrote data/processed/china_county_census.json (1357 kB)
-  wrote 339 county records to china_county_census.json
+korea_ages: Ministry of the Interior and Safety, resident registration population by single year of age and sex, every city, county and district, December 2025 (주민등록 인구통계, 연령별 인구현황, jumin.mois.go.kr)
+  reading the kept jumin_age_202512_sigungu.json
+  13 branch offices (출장소) listed with nobody registered, skipped
+  294 rows: 17 provinces, 229 districts, 35 districts of cities skipped (their city carries them)
+  17 provinces and 229 districts add up, age by age; 51,117,378 registered people (the file prints no national row)
+  South Jeolla 영광군 (Yeonggwang-gun): no polygon; counted in its province only
+  245 records: 17 provinces, 228 districts; district medians 40.9-64.7; the register's national median 47.4
+  wrote data/processed/korea_ages.json (679 kB)
