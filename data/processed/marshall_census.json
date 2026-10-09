@@ -709,29 +709,21 @@
       "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Analytical Report (Table 2.4)"
     },
     "sex_ratio": {
-      "value": 120.6,
-      "unit": "males_per_100_females",
-      "year": 2021,
-      "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Report, Volume 1: Basic tables and administrative report (Table 3)"
+      "status": "not_available",
+      "note": "The census counts 75 people (41 men and 34 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "United Church of Christ",
-        "pct": 100.0,
-        "count": 75
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 75 people (41 men and 34 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "language": {
       "status": "not_available",
       "note": "The 2021 census asked which languages each person speaks, and the office publishes the answer for Majuro, Kwajalein and the rural atolls taken together (Analytical Report, Table 3.3): 98.3% of rural people aged five and over speak Marshallese and 11.5% another language. No atoll outside Majuro and Kwajalein has a figure of its own, and the Basic Tables have no language table."
     },
-    "ethnicity": [
-      {
-        "group": "Marshallese",
-        "pct": 100.0,
-        "count": 75
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 75 people (41 men and 34 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population/sex_ratio/religion/ethnicity",
@@ -751,12 +743,7 @@
     "country": "MHL",
     "match_by": "shape_id",
     "shape_id": "77969171B260410775552",
-    "sex_ratio_note": "Males per 100 females, 2021 Census (Table 3); the Analytical Report prints 121.",
-    "median_age_note": "Median age at the 2021 census, as the Analytical Report prints it (Table 2.4), in whole years.",
-    "religion_year": 2021,
-    "religion_note": "Religion, 2021 Census (Basic Tables, Table 9): shares of the 75 people in this atoll's private households.",
-    "ethnicity_year": 2021,
-    "ethnicity_note": "Ethnicity, 2021 Census (Basic Tables, Table 10): shares of the 75 people in this atoll's private households."
+    "median_age_note": "Median age at the 2021 census, as the Analytical Report prints it (Table 2.4), in whole years."
   },
   {
     "id": "MHL-CENSUS-jaluit",
@@ -1205,6 +1192,7 @@
     "ethnicity_year": 2021,
     "ethnicity_note": "Ethnicity, 2021 Census (Basic Tables, Table 10): shares of the 9,739 people in this atoll's private households; the 50 counted in its institutions -- boarding schools, hospitals, hostels -- are in neither table.",
     "language_year": 2021,
+    "language_basis": "languages spoken (multi-response)",
     "language_note": "Languages spoken by people aged five and over, more than one allowed, 2021 Census (Analytical Report, Table 3.3): 97.2% speak Marshallese and 24.0% another language. The census does not publish which other language."
   },
   {
@@ -1594,6 +1582,7 @@
     "ethnicity_year": 2021,
     "ethnicity_note": "Ethnicity, 2021 Census (Basic Tables, Table 10): shares of the 22,873 people in this atoll's private households; the 283 counted in its institutions -- boarding schools, hospitals, hostels -- are in neither table.",
     "language_year": 2021,
+    "language_basis": "languages spoken (multi-response)",
     "language_note": "Languages spoken by people aged five and over, more than one allowed, 2021 Census (Analytical Report, Table 3.3): 94.7% speak Marshallese and 28.6% another language. The census does not publish which other language."
   },
   {
@@ -2328,44 +2317,21 @@
       "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Analytical Report (Table 2.4)"
     },
     "sex_ratio": {
-      "value": 100.0,
-      "unit": "males_per_100_females",
-      "year": 2021,
-      "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Report, Volume 1: Basic tables and administrative report (Table 3)"
+      "status": "not_available",
+      "note": "The census counts 88 people (44 men and 44 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "United Church of Christ",
-        "pct": 90.9,
-        "count": 80
-      },
-      {
-        "group": "Assemblies of God",
-        "pct": 8.0,
-        "count": 7
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 1.1,
-        "count": 1
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 88 people (44 men and 44 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "language": {
       "status": "not_available",
       "note": "The 2021 census asked which languages each person speaks, and the office publishes the answer for Majuro, Kwajalein and the rural atolls taken together (Analytical Report, Table 3.3): 98.3% of rural people aged five and over speak Marshallese and 11.5% another language. No atoll outside Majuro and Kwajalein has a figure of its own, and the Basic Tables have no language table."
     },
-    "ethnicity": [
-      {
-        "group": "Marshallese",
-        "pct": 98.9,
-        "count": 87
-      },
-      {
-        "group": "American",
-        "pct": 1.1,
-        "count": 1
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 88 people (44 men and 44 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population/sex_ratio/religion/ethnicity",
@@ -2385,12 +2351,7 @@
     "country": "MHL",
     "match_by": "shape_id",
     "shape_id": "77969171B89836250003833",
-    "sex_ratio_note": "Males per 100 females, 2021 Census (Table 3); the Analytical Report prints 100.",
-    "median_age_note": "Median age at the 2021 census, as the Analytical Report prints it (Table 2.4), in whole years.",
-    "religion_year": 2021,
-    "religion_note": "Religion, 2021 Census (Basic Tables, Table 9): shares of the 88 people in this atoll's private households.",
-    "ethnicity_year": 2021,
-    "ethnicity_note": "Ethnicity, 2021 Census (Basic Tables, Table 10): shares of the 88 people in this atoll's private households."
+    "median_age_note": "Median age at the 2021 census, as the Analytical Report prints it (Table 2.4), in whole years."
   },
   {
     "id": "MHL-CENSUS-wotje",
@@ -3249,29 +3210,21 @@
       "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Analytical Report (Table 2.4)"
     },
     "sex_ratio": {
-      "value": 120.6,
-      "unit": "males_per_100_females",
-      "year": 2021,
-      "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Report, Volume 1: Basic tables and administrative report (Table 3)"
+      "status": "not_available",
+      "note": "The census counts 75 people (41 men and 34 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "United Church of Christ",
-        "pct": 100.0,
-        "count": 75
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 75 people (41 men and 34 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "language": {
       "status": "not_available",
       "note": "The 2021 census asked which languages each person speaks, and the office publishes the answer for Majuro, Kwajalein and the rural atolls taken together (Analytical Report, Table 3.3): 98.3% of rural people aged five and over speak Marshallese and 11.5% another language. No atoll outside Majuro and Kwajalein has a figure of its own, and the Basic Tables have no language table."
     },
-    "ethnicity": [
-      {
-        "group": "Marshallese",
-        "pct": 100.0,
-        "count": 75
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 75 people (41 men and 34 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population/sex_ratio/religion/ethnicity",
@@ -3291,12 +3244,7 @@
     "country": "MHL",
     "match_by": "shape_id",
     "shape_id": "77969171B260410775552",
-    "sex_ratio_note": "Males per 100 females, 2021 Census (Table 3); the Analytical Report prints 121.",
-    "median_age_note": "Median age at the 2021 census, as the Analytical Report prints it (Table 2.4), in whole years.",
-    "religion_year": 2021,
-    "religion_note": "Religion, 2021 Census (Basic Tables, Table 9): shares of the 75 people in this atoll's private households.",
-    "ethnicity_year": 2021,
-    "ethnicity_note": "Ethnicity, 2021 Census (Basic Tables, Table 10): shares of the 75 people in this atoll's private households."
+    "median_age_note": "Median age at the 2021 census, as the Analytical Report prints it (Table 2.4), in whole years."
   },
   {
     "id": "MHL-CENSUS-jaluit",
@@ -3745,6 +3693,7 @@
     "ethnicity_year": 2021,
     "ethnicity_note": "Ethnicity, 2021 Census (Basic Tables, Table 10): shares of the 9,739 people in this atoll's private households; the 50 counted in its institutions -- boarding schools, hospitals, hostels -- are in neither table.",
     "language_year": 2021,
+    "language_basis": "languages spoken (multi-response)",
     "language_note": "Languages spoken by people aged five and over, more than one allowed, 2021 Census (Analytical Report, Table 3.3): 97.2% speak Marshallese and 24.0% another language. The census does not publish which other language."
   },
   {
@@ -4134,6 +4083,7 @@
     "ethnicity_year": 2021,
     "ethnicity_note": "Ethnicity, 2021 Census (Basic Tables, Table 10): shares of the 22,873 people in this atoll's private households; the 283 counted in its institutions -- boarding schools, hospitals, hostels -- are in neither table.",
     "language_year": 2021,
+    "language_basis": "languages spoken (multi-response)",
     "language_note": "Languages spoken by people aged five and over, more than one allowed, 2021 Census (Analytical Report, Table 3.3): 94.7% speak Marshallese and 28.6% another language. The census does not publish which other language."
   },
   {
@@ -4868,44 +4818,21 @@
       "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Analytical Report (Table 2.4)"
     },
     "sex_ratio": {
-      "value": 100.0,
-      "unit": "males_per_100_females",
-      "year": 2021,
-      "source": "Economic Policy, Planning and Statistics Office (EPPSO), Republic of the Marshall Islands, RMI 2021 Census Report, Volume 1: Basic tables and administrative report (Table 3)"
+      "status": "not_available",
+      "note": "The census counts 88 people (44 men and 44 women) here; with fewer than 50 of either sex, or 100 people in all, a ratio says nothing about the place."
     },
-    "religion": [
-      {
-        "group": "United Church of Christ",
-        "pct": 90.9,
-        "count": 80
-      },
-      {
-        "group": "Assemblies of God",
-        "pct": 8.0,
-        "count": 7
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 1.1,
-        "count": 1
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "The census counts 88 people (44 men and 44 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "language": {
       "status": "not_available",
       "note": "The 2021 census asked which languages each person speaks, and the office publishes the answer for Majuro, Kwajalein and the rural atolls taken together (Analytical Report, Table 3.3): 98.3% of rural people aged five and over speak Marshallese and 11.5% another language. No atoll outside Majuro and Kwajalein has a figure of its own, and the Basic Tables have no language table."
     },
-    "ethnicity": [
-      {
-        "group": "Marshallese",
-        "pct": 98.9,
-        "count": 87
-      },
-      {
-        "group": "American",
-        "pct": 1.1,
-        "count": 1
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The census counts 88 people (44 men and 44 women) here; with fewer than 100, a share says nothing about the place."
+    },
     "sources": [
       {
         "field": "population/sex_ratio/religion/ethnicity",
@@ -4925,12 +4852,7 @@
     "country": "MHL",
     "match_by": "shape_id",
     "shape_id": "77969171B89836250003833",
-    "sex_ratio_note": "Males per 100 females, 2021 Census (Table 3); the Analytical Report prints 100.",
-    "median_age_note": "Median age at the 2021 census, as the Analytical Report prints it (Table 2.4), in whole years.",
-    "religion_year": 2021,
-    "religion_note": "Religion, 2021 Census (Basic Tables, Table 9): shares of the 88 people in this atoll's private households.",
-    "ethnicity_year": 2021,
-    "ethnicity_note": "Ethnicity, 2021 Census (Basic Tables, Table 10): shares of the 88 people in this atoll's private households."
+    "median_age_note": "Median age at the 2021 census, as the Analytical Report prints it (Table 2.4), in whole years."
   },
   {
     "id": "MHL-CENSUS-wotje",
