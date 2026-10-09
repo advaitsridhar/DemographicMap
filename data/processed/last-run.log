@@ -1,207 +1,165 @@
-  Akmola Region: 19 units, 737,495 people
-  West Kazakhstan Region: 13 units, 598,880 people
-  Mangystau Region: 7 units, 485,392 people
-  Aktobe Region: 13 units, 757,768 people
-  Atyrau Region: 8 units, 510,377 people
-  Karaganda Region: 18 units, 1,341,700 people
-  Pavlodar Region: 13 units, 742,475 people
-  Almaty Region: 19 units, 1,807,894 people
-  East Kazakhstan Region: 21 units, 1,396,593 people
-  Kostanay Region: 20 units, 885,570 people
-  North Kazakhstan Region: 14 units, 596,535 people
-  Almaty: 1 units, 1,365,632 people
-  Jambyl Region: 11 units, 1,022,129 people
-  Kyzylorda Region: 9 units, 678,794 people
-  South Kazakhstan Region: 15 units, 2,469,357 people
-  2021 by region: 16 drawn regions from 17 regions, 19,186,015 people
-kazakhstan_religion: 190 records
-    Akmola Region: Islam 46.2, Orthodox 36.2, Not stated 15.0
-    Aktobe Region: Islam 84.0, Orthodox 9.8, Not stated 4.3
-    Almaty: Islam 57.8, Not stated 19.9, Orthodox 17.2
-    Almaty Region: Islam 69.1, Not stated 19.4, Orthodox 9.9
-    Astana: Islam 78.5, Orthodox 10.8, Not stated 7.9
-    Atyrau Region: Islam 83.7, Not stated 10.9, Orthodox 4.4
-    East Kazakhstan Region: Islam 63.1, Orthodox 33.2, No religion 2.1
-    Jambyl Region: Islam 84.2, Orthodox 7.5, Not stated 6.9
-    Karaganda Region: Islam 52.0, Orthodox 32.5, Not stated 11.0
-    Kostanay Region: Orthodox 43.8, Islam 36.9, Not stated 13.9
-    Kyzylorda Region: Islam 96.2, Orthodox 1.8, Not stated 1.6
-    Mangystau Region: Islam 69.2, Not stated 22.1, No religion 4.4
-    North Kazakhstan Region: Orthodox 54.2, Islam 38.7, Not stated 4.1
-    Pavlodar Region: Islam 57.1, Orthodox 37.6, Not stated 2.7
-    South Kazakhstan Region: Islam 84.0, Not stated 11.2, Orthodox 3.3
-    West Kazakhstan Region: Islam 78.4, Orthodox 15.8, Not stated 3.9
-    Tselinogradskiy: Islam 75.5, Christianity 22.3, No religion 2.1
-    Atbasarskiy: Christianity 53.3, Islam 40.4, No religion 5.5
-    Shortandinskiy: Christianity 56.8, Islam 37.5, No religion 5.2
-    Korgalzhynskiy: Islam 88.2, Christianity 10.5, No religion 0.9
-    Ereymengauskiy: Islam 66.5, Christianity 29.6, No religion 3.4
-    Astrakhansiy: Christianity 48.8, Islam 44.7, No religion 5.8
-    Esil`skiy: Christianity 56.3, Islam 32.2, No religion 9.1
-    Egindykol`skiy: Islam 45.9, Christianity 43.9, No religion 8.5
-    Sandyktauskiy: Christianity 63.6, Islam 28.0, No religion 8.1
-    Shuchinskiy: Christianity 53.8, Islam 40.5, No religion 4.6
-    Enbekshil`derskiy: Islam 68.1, Christianity 30.4, No religion 1.1
-    Zerendinskiy: Islam 58.8, Christianity 38.8, No religion 2.1
-    Zhaksynskiy: Islam 51.8, Christianity 44.1, No religion 3.6
-    Zharkainskiy: Islam 49.5, Christianity 46.1, No religion 4.0
-    Bulandynskiy: Christianity 52.4, Islam 38.1, No religion 7.5
-    Arshalynskiy: Christianity 56.8, Islam 39.0, No religion 3.5
-    Akkol`skiy: Christianity 53.0, Islam 39.2, No religion 7.1
-    Urdinskiy: Islam 99.5, Christianity 0.3, No religion 0.2
-    Karatobinskiy: Islam 99.8, Christianity 0.1, No religion 0.1
-    Taskalinskiy: Islam 86.7, Christianity 10.5, No religion 2.3
-    Akzhaikskiy: Islam 94.3, Christianity 4.3, No religion 1.1
-    Dzhanybekskiy: Islam 96.5, Christianity 1.8, No religion 1.2
-    Dzhangalinskiy: Islam 99.0, Christianity 0.5, No religion 0.3
-    Burlinskiy: Islam 68.0, Christianity 27.9, No religion 3.4
-    Syrymskiy: Islam 98.8, Christianity 0.8, No religion 0.3
-    Kaztalovskiy: Islam 99.0, Christianity 0.7, No religion 0.2
-    Chingirlauskiy: Islam 88.0, Christianity 11.2, No religion 0.6
-    Terektinskiy: Islam 71.2, Christianity 16.4, No religion 11.8
-    Zelenovskiy: Islam 56.4, Christianity 39.9, No religion 3.0
-    Beyneuskiy: Islam 99.7, Christianity 0.2, Buddhism 0.0
-    Manghystauskiy: Islam 99.5, Christianity 0.3, No religion 0.1
-    Karakiyanskiy: Islam 98.8, Christianity 0.9, No religion 0.1
-    Aqtau: Islam 80.5, Christianity 17.4, No religion 1.4
-    Tupkaraganskiy: Islam 98.7, Christianity 1.1, No religion 0.1
-    Bayganinskiy: Islam 99.5, No religion 0.3, Christianity 0.1
-    Shalkarskiy: Islam 98.8, Christianity 1.0, No religion 0.1
-    Uilskiy: Islam 99.2, Christianity 0.7, Buddhism 0.0
-    Irgizskiy: Islam 99.8, Christianity 0.2, Buddhism 0.0
-    Aqtobe: Islam 73.3, Christianity 22.6, No religion 3.2
-    Temirskiy: Islam 91.2, Christianity 3.3, No religion 3.2
-    Aytekebiyskiy: Islam 93.9, Christianity 5.6, Not stated 0.3
-    Martukskiy: Islam 60.0, Christianity 34.8, No religion 4.5
-    Kargalinskiy: Islam 60.6, Christianity 30.0, No religion 8.0
-    Alginskiy: Islam 78.7, Christianity 19.6, No religion 1.5
-    Khromtauskiy: Islam 77.3, Christianity 19.4, No religion 2.8
-    Mugalzharskiy: Islam 90.9, Christianity 8.0, No religion 0.9
-    Khobdinskiy: Islam 82.3, Christianity 16.9, No religion 0.7
-    Zhylyoyskiy: Islam 98.8, Christianity 1.1, Buddhism 0.1
-    Kzylkoginskiy: Islam 99.9, Buddhism 0.0, Christianity 0.0
-    Kurmangazinskiy: Islam 97.4, Christianity 2.5, Buddhism 0.0
-    Makatskiy: Islam 97.9, Christianity 1.7, Not stated 0.3
-    Makhambetskiy: Islam 97.0, Christianity 2.4, Buddhism 0.3
-    Atyrau: Islam 84.7, Christianity 13.3, No religion 1.1
-    Isatayskiy: Islam 99.8, Christianity 0.1, Buddhism 0.0
-    Inderskiy: Islam 96.2, Christianity 3.5, No religion 0.2
-    Karkaralinskiy: Islam 96.2, Christianity 3.6, No religion 0.1
-    Aktogayskiy: Islam 64.0, Christianity 28.6, No religion 6.0
-    Abayskiy: Christianity 59.6, Islam 29.1, No religion 9.5
-    Nurinskiy: Islam 68.4, Christianity 28.7, No religion 2.2
-    Bukhar-Zhyrauskiy: Christianity 55.9, Islam 37.6, No religion 5.2
-    Ulytauskiy: Islam 65.2, Christianity 29.0, No religion 4.9
-    Zhanaarkinskiy: Islam 83.6, Christianity 12.9, No religion 2.8
-    Osakarovskiy: Christianity 60.5, Islam 32.9, No religion 5.3
-    Shetskiy: Islam 88.1, Christianity 10.2, No religion 0.9
-    Lebyazhinskiy: Islam 83.5, Christianity 15.0, No religion 1.3
-    Sherbaktinskiy: Christianity 45.9, Islam 42.1, No religion 9.5
-    Uspenskiy: Christianity 54.8, Islam 35.3, No religion 9.5
-    Ekibastuz: Islam 54.2, Christianity 43.1, No religion 2.3
-    Aktogayskiy: Islam 76.3, Christianity 22.1, No religion 1.4
-    Pavlodarskiy: Christianity 52.9, Islam 42.2, No religion 4.1
-    Aksuskiy: Islam 51.2, Christianity 43.4, No religion 4.8
-    Irtyshskiy: Islam 59.7, Christianity 34.9, No religion 4.4
-    Bayanaul`skiy: Islam 89.4, Christianity 10.0, No religion 0.4
-    Mayskiy: Islam 88.0, Christianity 11.0, No religion 0.7
-    Kachirskiy: Christianity 51.9, Islam 39.6, No religion 7.8
-    Zhelezinskiy: Christianity 47.7, Islam 41.7, No religion 10.2
-    Panfilovskiy: Islam 95.8, Christianity 4.0, No religion 0.1
-    Uygurskiy: Islam 98.6, Christianity 1.3, No religion 0.1
-    Karatal`skiy: Islam 65.5, Christianity 24.6, No religion 7.2
-    Aksuskiy: Islam 95.6, Christianity 4.0, No religion 0.2
-    Sarkandskiy: Islam 80.7, Christianity 18.3, No religion 0.9
-    Alakolskiy: Islam 83.7, Christianity 15.7, No religion 0.3
-    Zhambylskiy: Islam 88.6, Christianity 10.3, Not stated 0.6
-    Koksuskiy: Islam 85.1, Christianity 13.3, No religion 1.1
-    Iliyskiy: Islam 67.7, Christianity 29.5, No religion 2.2
-    Enbekshikazakhskiy: Islam 82.6, Christianity 16.4, No religion 0.6
-    Raiymbekskiy: Islam 99.7, Christianity 0.1, No religion 0.1
-    Karasayskiy: Islam 81.0, Christianity 18.1, No religion 0.6
-    Balkhashskiy: Islam 92.0, Christianity 6.6, No religion 1.0
-    Taldyqorghan: Islam 67.3, Christianity 27.4, No religion 4.3
-    Kerbulakskiy: Islam 89.3, Christianity 10.0, No religion 0.4
-    Talgarskiy: Islam 75.3, Christianity 23.6, No religion 0.8
-    Ayagozskiy: Islam 96.2, Christianity 3.5, No religion 0.2
-    Beskaragayskiy: Islam 62.5, Christianity 33.6, No religion 3.4
-    Semipalatinskiy: Islam 67.7, Christianity 30.1, No religion 1.8
-    Shemonaikhinskiy: Christianity 67.4, No religion 19.0, Islam 13.1
-    Zharminskiy: Islam 90.5, Christianity 7.6, No religion 1.8
-    Zyryanovsk: Christianity 63.2, No religion 19.0, Islam 17.2
-    Tarbagatayskiy: Islam 99.3, Christianity 0.6, No religion 0.1
-    Katon-Karagayskiy: Islam 79.0, Christianity 17.4, No religion 3.3
-    Kurchumskiy: Islam 91.4, Christianity 8.2, No religion 0.4
-    Borodulikhinskiy: Christianity 53.3, Islam 36.3, No religion 9.4
-    Abayskiy: Islam 99.3, Christianity 0.6, No religion 0.1
-    Glubokovskiy: Christianity 64.6, Islam 23.0, No religion 11.8
-    Leninogorsk: Christianity 80.3, Islam 11.1, No religion 8.0
-    Kokpektinskiy: Islam 76.5, Christianity 21.2, No religion 2.0
-    Zaysanskiy: Islam 96.2, Christianity 3.3, No religion 0.5
-    Urdzharskiy: Islam 91.6, Christianity 8.1, No religion 0.2
-    Ulanskiy: Christianity 53.9, Islam 36.3, No religion 9.0
-    Kamystinskiy: Islam 51.3, Christianity 41.8, No religion 6.4
-    Denisovskiy: Christianity 58.8, Islam 31.6, No religion 9.2
-    Qostanay: Christianity 59.8, Islam 31.2, No religion 8.1
-    Karasuskiy: Christianity 58.4, Islam 32.6, No religion 7.6
-    Arkalyk: Islam 76.8, Christianity 21.4, No religion 1.4
-    Karabalykskiy: Christianity 53.7, Islam 31.6, No religion 13.4
-    Zhitikarinskiy: Christianity 51.1, Islam 43.8, No religion 4.6
-    Naurzumskiy: Islam 74.4, Christianity 23.9, No religion 1.5
-    Sarykol`skiy: Christianity 60.7, Islam 36.0, No religion 3.0
-    Mendykarinskiy: Christianity 56.0, Islam 40.2, No religion 3.3
-    Dzhangil`dinskiy: Islam 99.5, Christianity 0.4, Judaism 0.1
-    Fyodorovskiy: Christianity 70.2, Islam 19.4, No religion 9.5
-    Amangel`dinskiy: Islam 98.2, Christianity 1.6, No religion 0.1
-    Altynsarinskiy: Christianity 50.6, Islam 38.2, No religion 10.2
-    Auliekol`skiy: Islam 53.2, Christianity 43.1, No religion 3.0
-    Taranovskiy: Christianity 64.4, Islam 25.7, No religion 9.0
-    Uzunkol`skiy: Christianity 55.7, Islam 40.5, No religion 2.8
-    Bulaevskiy: Christianity 63.3, Islam 30.5, No religion 5.0
-    Mamlyutskiy: Christianity 64.1, Islam 32.3, No religion 3.0
-    Kyzylzharskiy: Christianity 68.4, Islam 26.8, No religion 4.1
-    Tselinniy: Christianity 55.6, Islam 33.5, No religion 10.0
-    Ayyrtauskiy: Christianity 49.0, Islam 39.5, No religion 10.7
-    Akzharskiy: Islam 78.7, Christianity 19.9, No religion 0.9
-    Timiryazevskiy: Christianity 53.4, Islam 41.0, No religion 4.6
-    Zhambylskiy: Islam 48.0, Christianity 47.3, No religion 4.0
-    Ualikhanovskiy: Islam 89.9, Christianity 9.5, No religion 0.3
-    Esil`skiy: Christianity 56.7, Islam 41.3, No religion 1.8
-    Shal Akyna: Christianity 48.7, Islam 46.6, No religion 4.4
-    Taiynshinskiy: Christianity 67.4, Islam 27.5, No religion 3.9
-    Sovetskiy: Christianity 58.2, Islam 35.3, No religion 5.6
-    Almaty (Alma-Ata): Islam 61.2, Christianity 33.7, No religion 3.6
-    Zhualynskiy: Islam 92.0, Christianity 7.8, No religion 0.1
-    Merkenskiy: Islam 89.7, Christianity 10.1, No religion 0.1
-    Talasskiy: Islam 90.2, Christianity 9.0, No religion 0.6
-    Lugovskoy: Islam 94.3, Christianity 5.4, No religion 0.1
-    Zhamb.: Islam 74.0, Christianity 23.7, No religion 1.6
-    Shuskiy: Islam 86.5, Christianity 12.9, No religion 0.3
-    Bayzakskiy: Islam 96.0, Christianity 3.5, No religion 0.2
-    Zhambylskiy: Islam 92.9, Christianity 6.9, Buddhism 0.1
-    Moyynkumskiy: Islam 91.6, Christianity 8.0, No religion 0.2
-    Sarysuskiy: Islam 93.3, Christianity 5.9, No religion 0.6
-    Kordayskiy: Islam 86.3, Christianity 13.3, No religion 0.2
-    Kazalinskiy: Islam 99.4, Christianity 0.5, No religion 0.1
-    Aral`skiy: Islam 99.8, Christianity 0.1, No religion 0.1
-    Karmakchinskiy: Islam 96.0, Christianity 3.3, No religion 0.4
-    Zhalagashskiy: Islam 99.3, Christianity 0.4, Buddhism 0.2
-    Shieliyskiy: Islam 96.1, Christianity 2.8, No religion 0.6
-    Qyzylorda: Islam 92.0, Christianity 5.6, No religion 1.8
-    Terenozekskiy: Islam 98.8, Christianity 1.0, No religion 0.1
-    Zhanakorganskiy: Islam 99.4, Christianity 0.4, Buddhism 0.1
-    Otrarskiy: Islam 99.3, Christianity 0.7, Buddhism 0.0
-    Ordabasynskiy: Islam 98.1, Christianity 1.8, No religion 0.1
-    Tyul`kubaskiy: Islam 92.4, Christianity 7.4, No religion 0.1
-    Baydibekskiy: Islam 99.7, Christianity 0.3, Buddhism 0.0
-    Maktaaral`skiy: Islam 97.3, Christianity 2.2, Buddhism 0.2
-    Tolebiyskiy: Islam 92.5, Christianity 7.4, No religion 0.1
-    Chardarinskiy: Islam 96.7, Christianity 3.1, No religion 0.1
-    Shymkent: Islam 82.1, Christianity 16.8, No religion 0.7
-    Turkestan: Islam 97.5, Christianity 2.3, No religion 0.1
-    Sayramskiy: Islam 96.9, Christianity 2.9, Buddhism 0.1
-    Suzakskiy: Islam 97.7, Christianity 2.3, Buddhism 0.0
-    Saryagashskiy: Islam 98.5, Christianity 1.4, Buddhism 0.0
-    Kazygurtskiy: Islam 99.4, Christianity 0.4, Not stated 0.1
-    Arysskiy: Islam 96.2, Christianity 3.7, No religion 0.1
-  wrote data/processed/kazakhstan_religion.json (472 kB)
+kyrgyzstan_census: Chuy: https://www.stat.gov.kg/media/publicationarchive/390cc065-9ead-4ac7-9f6f-2ddfa38a8cbe.pdf
+  Chuy азербайджанцы: men and women 140 + 128 do not make 288 as printed
+  Chuy другие: men and women 82 + 115 do not make 177 as printed
+  Chuy г.токмок Пакистанцы и Индийцы: table 3.4 has 198, table 3.2 197
+  Chuy чуйская область Dungan: the units make 59,629 against the region's 59,635 in table 3.4 (the region's row is not used)
+  Chuy чуйская область Turkish: the units make 6,747 against the region's 6,758 in table 3.4 (the region's row is not used)
+  Chuy чуйская область Tajik: the units make 5,173 against the region's 5,194 in table 3.4 (the region's row is not used)
+  Chuy чуйская область Kurdish: the units make 3,989 against the region's 3,996 in table 3.4 (the region's row is not used)
+  Chuy чуйская область Korean: the units make 1,467 against the region's 1,489 in table 3.4 (the region's row is not used)
+  Chuy чуйская область Lezgin: the units make 1,453 against the region's 1,470 in table 3.4 (the region's row is not used)
+  Chuy чуйская область Dargin: the units make 1,671 against the region's 1,732 in table 3.4 (the region's row is not used)
+  9 units: г.токмок, аламудунский район, жайылский район, кеминский район, московский район, панфиловский район, сокулукский район, чуйский район, ысык-атинский район; single years read
+kyrgyzstan_census: Bishkek: https://www.stat.gov.kg/media/publicationarchive/2a645aed-5154-4518-b114-dc97239a3a83.pdf
+  Bishkek г.бишкек дунгане: table 3.4 has 2,779, table 3.2 1,784
+  1 units: г.бишкек; single years read
+kyrgyzstan_census: Osh: https://www.stat.gov.kg/media/publicationarchive/f76c9a54-0edf-4cfd-91df-8d01379a128b.pdf
+  Osh ноокатский район: the printed groups make 314,877 of 315,011; the 134 left are counted as other
+  Osh узгенский район: the printed groups make 286,853 of 287,109; the 256 left are counted as other
+  Osh ошская область Uzbek: the units make 416,964 against the region's 417,040 in table 3.4 (the region's row is not used)
+  Osh ошская область Uyghur: the units make 7,806 against the region's 7,850 in table 3.4 (the region's row is not used)
+  Osh ошская область Turkish: the units make 8,051 against the region's 8,430 in table 3.4 (the region's row is not used)
+  Osh ошская область Tajik: the units make 8,470 against the region's 8,512 in table 3.4 (the region's row is not used)
+  Osh ошская область Azerbaijani: the units make 4,930 against the region's 5,019 in table 3.4 (the region's row is not used)
+  Osh ошская область Russian: the units make 1,133 against the region's 1,276 in table 3.4 (the region's row is not used)
+  Osh ошская область Tatar: the units make 327 against the region's 462 in table 3.4 (the region's row is not used)
+  Osh ошская область Dungan: the units make 562 against the region's 564 in table 3.4 (the region's row is not used)
+  7 units: алайский район, араванский район, кара-кулжинский район, кара-сууский район, ноокатский район, узгенский район, чон-алайский район; single years read
+kyrgyzstan_census: Osh city: https://www.stat.gov.kg/media/publicationarchive/6d075a2f-51ec-4cec-bf59-455c631ce39b.pdf
+  1 units: г.ош; single years read
+kyrgyzstan_census: Batken: https://www.stat.gov.kg/media/publicationarchive/dfe4b339-3f9c-4bb7-887e-96e55e15dde0.pdf
+  Batken баткенская область: table 3.4 prints [561443, 548760, 10196, 503, 1030, 954], its units make [561443, 548752, 10196, 503, 1030, 962]; the units' sum is kept
+  Batken баткенская область Uzbek: the units make 77,181 against the region's 77,226 in table 3.4 (the region's row is not used)
+  Batken баткенская область Tajik: the units make 36,321 against the region's 36,337 in table 3.4 (the region's row is not used)
+  Batken баткенская область Russian: the units make 2,036 against the region's 2,069 in table 3.4 (the region's row is not used)
+  Batken баткенская область Tatar: the units make 371 against the region's 472 in table 3.4 (the region's row is not used)
+  Batken баткенская область Kazakh: the units make 243 against the region's 319 in table 3.4 (the region's row is not used)
+  Batken баткенская область Turkmen: the units make 107 against the region's 163 in table 3.4 (the region's row is not used)
+  Batken баткенская область Uyghur: the units make 76 against the region's 113 in table 3.4 (the region's row is not used)
+  6 units: г.баткен, г.кызыл-кия, г.сулюкта, баткенский район, кадамжайский район, лейлекский район; single years read
+kyrgyzstan_census: Jalal-Abad: https://www.stat.gov.kg/media/publicationarchive/ad52f290-cb14-4ff1-9179-d0ad0f38b09d.pdf
+  Jalal-Abad жалал-абадская область Tajik: the units make 6,905 against the region's 7,058 in table 3.4 (the region's row is not used)
+  Jalal-Abad жалал-абадская область Russian: the units make 5,102 against the region's 5,170 in table 3.4 (the region's row is not used)
+  Jalal-Abad жалал-абадская область Turkish: the units make 2,893 against the region's 2,933 in table 3.4 (the region's row is not used)
+  Jalal-Abad жалал-абадская область Uyghur: the units make 1,351 against the region's 1,438 in table 3.4 (the region's row is not used)
+  Jalal-Abad жалал-абадская область Kurdish: the units make 979 against the region's 1,015 in table 3.4 (the region's row is not used)
+  Jalal-Abad жалал-абадская область Tatar: the units make 884 against the region's 971 in table 3.4 (the region's row is not used)
+  Jalal-Abad жалал-абадская область Kazakh: the units make 826 against the region's 894 in table 3.4 (the region's row is not used)
+  12 units: г.жалал-абад, г.кара-куль, г.майлуу-суу, г.таш-кумыр, аксыйский район, ала-букинский район, базар-коргонский район, ноокенский район, сузакский район, тогуз-тороуский район, токтогульский район, чаткальский район; single years read
+kyrgyzstan_census: Issyk-Kul: https://www.stat.gov.kg/media/publicationarchive/8b892242-eaa9-446d-94b2-7ba7aadcb340.pdf
+  Issyk-Kul узбеки: men and women 110 + 125 do not make 317 as printed
+  Issyk-Kul другие: men and women 376 + 291 do not make 585 as printed
+  Issyk-Kul узбеки: men and women 7 + 29 do not make 59 as printed
+  Issyk-Kul другие: men and women 196 + 204 do not make 377 as printed
+  Issyk-Kul г.балыкчы: 16-19 printed as (4970, 2523, 2447), read as (3045, 1545, 1500) -- what the block's total leaves (see MISPRINTED_GROUPS)
+  Issyk-Kul жети-огузский район: 16-19 printed as (10888, 5606, 5282), read as (6990, 3599, 3391) -- what the block's total leaves (see MISPRINTED_GROUPS)
+  Issyk-Kul иссык-кульская область татары: table 3.4 has 1,129, table 3.2 1,116
+  Issyk-Kul г.каракол уйгуры: table 3.4 has 1,257, table 3.2 1,314
+  Issyk-Kul г.каракол татары: table 3.4 has 636, table 3.2 634
+  Issyk-Kul г.балыкчы татары: table 3.4 has 65, table 3.2 63
+  Issyk-Kul ак-суйский район татары: table 3.4 has 55, table 3.2 54
+  Issyk-Kul жети-огузский район татары: table 3.4 has 181, table 3.2 178
+  Issyk-Kul иссык-кульский район узбеки: table 3.4 has 235, table 3.2 317
+  Issyk-Kul иссык-кульский район татары: table 3.4 has 118, table 3.2 115
+  Issyk-Kul age 60: urban [1214, 511, 703] and rural [4723, 2164, 2559] do not make the whole [4723, 2164, 2559] as printed; the whole is read
+  Issyk-Kul age 61: urban [1485, 645, 840] and rural [4935, 2294, 2641] do not make the whole [4935, 2294, 2641] as printed; the whole is read
+  Issyk-Kul age 62: urban [1238, 524, 714] and rural [4298, 1958, 2340] do not make the whole [4298, 1958, 2340] as printed; the whole is read
+  Issyk-Kul age 63: urban [1219, 549, 670] and rural [4119, 1916, 2203] do not make the whole [4119, 1916, 2203] as printed; the whole is read
+  Issyk-Kul age 64: urban [1164, 488, 676] and rural [3940, 1807, 2133] do not make the whole [3940, 1807, 2133] as printed; the whole is read
+  Issyk-Kul age 65: urban [1062, 483, 579] and rural [2227, 939, 1288] do not make the whole [3376, 1545, 1831] as printed; the whole is read
+  Issyk-Kul age 66: urban [1095, 498, 597] and rural [2246, 944, 1302] do not make the whole [3424, 1523, 1901] as printed; the whole is read
+  Issyk-Kul age 67: urban [924, 411, 513] and rural [1813, 774, 1039] do not make the whole [2909, 1282, 1627] as printed; the whole is read
+  Issyk-Kul age 68: urban [818, 369, 449] and rural [1544, 631, 913] do not make the whole [2553, 1157, 1396] as printed; the whole is read
+  Issyk-Kul age 69: urban [772, 309, 463] and rural [1326, 583, 743] do not make the whole [2422, 1031, 1391] as printed; the whole is read
+  Issyk-Kul age 70: urban [729, 302, 427] and rural [3509, 1653, 1856] do not make the whole [2227, 939, 1288] as printed; the whole is read
+  Issyk-Kul age 71: urban [777, 332, 445] and rural [3450, 1649, 1801] do not make the whole [2246, 944, 1302] as printed; the whole is read
+  Issyk-Kul age 72: urban [604, 266, 338] and rural [3060, 1434, 1626] do not make the whole [1813, 774, 1039] as printed; the whole is read
+  Issyk-Kul age 73: urban [513, 230, 283] and rural [2900, 1367, 1533] do not make the whole [1544, 631, 913] as printed; the whole is read
+  Issyk-Kul age 74: urban [429, 174, 255] and rural [2776, 1319, 1457] do not make the whole [1326, 583, 743] as printed; the whole is read
+  Issyk-Kul г.каракол: the age table leaves out Pristan-Przhevalsk, the urban-type settlement under Karakol city (3,492 people), which table 3.2 counts with it
+  Issyk-Kul г.балыкчы: the age table leaves out Orto-Tokoy, the urban-type settlement under Balykchy city (738 people), which table 3.2 counts with it
+  Issyk-Kul иссык-кульская область Kazakh: the units make 5,822 against the region's 5,888 in table 3.4 (the region's row is not used)
+  Issyk-Kul иссык-кульская область Uyghur: the units make 2,049 against the region's 2,153 in table 3.4 (the region's row is not used)
+  Issyk-Kul иссык-кульская область Kalmyk: the units make 958 against the region's 1,038 in table 3.4 (the region's row is not used)
+  Issyk-Kul иссык-кульская область Dungan: the units make 2,990 against the region's 3,116 in table 3.4 (the region's row is not used)
+  Issyk-Kul иссык-кульская область Uzbek: the units make 3,331 against the region's 3,479 in table 3.4 (the region's row is not used)
+  Issyk-Kul иссык-кульская область Tatar: the units make 1,055 against the region's 1,129 in table 3.4 (the region's row is not used)
+  Issyk-Kul иссык-кульская область Ukrainian: the units make 158 against the region's 192 in table 3.4 (the region's row is not used)
+  7 units: г.каракол, г.балыкчы, ак-суйский район, жети-огузский район, иссык-кульский район, тонский район, тюпский район; single years read
+kyrgyzstan_census: Naryn: https://www.stat.gov.kg/media/publicationarchive/e790d125-ecd1-471e-b31b-0eb9dc7c4894.pdf
+  Naryn нарынская область: 15-19 holds the 15-year-olds again; 16-19 is 21,915
+  Naryn г.нарын: 15-19 holds the 15-year-olds again; 16-19 is 2,808
+  Naryn ак-талинский район: 15-19 holds the 15-year-olds again; 16-19 is 2,480
+  Naryn ат-башинский район: 15-19 holds the 15-year-olds again; 16-19 is 4,348
+  Naryn жумгальский район: 15-19 holds the 15-year-olds again; 16-19 is 3,625
+  Naryn кочкорский район: 15-19 holds the 15-year-olds again; 16-19 is 4,798
+  Naryn нарынский район: 15-19 holds the 15-year-olds again; 16-19 is 3,856
+  Naryn нарынская область: table 3.4's columns make 306,575 against the row's 306,573; the region's rows are held to its units
+  Naryn нарынская область кыргызы: table 3.4's columns make 305,334 against the row's 305,333; the region's rows are held to its units
+  Naryn нарынская область узбеки: table 3.4's columns make 294 against the row's 292; the region's rows are held to its units
+  Naryn нарынская область дунгане: table 3.4's columns make 368 against the row's 369; the region's rows are held to its units
+  Naryn нарынская область казахи: table 3.4 has 26, table 3.2 186
+  Naryn нарынская область: table 3.4 prints [306573, 305677, 700, 41, 11, 2, 144], its units make [306573, 305677, 700, 41, 11, 2, 142]; the units' sum is kept
+  Naryn нарынская область Kyrgyz: table 3.4 prints [305333, 305153, 0, 36, 11, 1, 133], its units make [305333, 305153, 0, 36, 11, 1, 132]; the units' sum is kept
+  Naryn нарынская область Uzbek: table 3.4 prints [292, 68, 224, 0, 0, 0, 2], its units make [292, 68, 224, 0, 0, 0, 0]; the units' sum is kept
+  Naryn нарынская область Dungan: table 3.4 prints [369, 281, 85, 1, 0, 0, 1], its units make [369, 281, 85, 1, 0, 0, 2]; the units' sum is kept
+  Naryn нарынская область Kazakh: the units make 186 against the region's 26 in table 3.4 (the region's row is not used)
+  Naryn нарынская область Other: the units make 160 against the region's 320 in table 3.4 (the region's row is not used)
+  6 units: г.нарын, ак-талинский район, ат-башинский район, жумгальский район, кочкорский район, нарынский район; single years read
+kyrgyzstan_census: Talas: https://www.stat.gov.kg/media/publicationarchive/d79c0e75-073d-4a50-92fe-3c735b1a2dfc.pdf
+  Talas таласская область Kazakh: the units make 2,050 against the region's 2,131 in table 3.4 (the region's row is not used)
+  Talas таласская область Uzbek: the units make 947 against the region's 998 in table 3.4 (the region's row is not used)
+  Talas таласская область Turkish: the units make 912 against the region's 914 in table 3.4 (the region's row is not used)
+  Talas таласская область German: the units make 80 against the region's 143 in table 3.4 (the region's row is not used)
+  Talas таласская область Tatar: the units make 59 against the region's 118 in table 3.4 (the region's row is not used)
+  Talas таласская область Ukrainian: the units make 0 against the region's 66 in table 3.4 (the region's row is not used)
+  5 units: г.талас, бакай-атинский район, айтматовский район, манасский район, таласский район; single years read
+    admin2 Ak-Suu: 154,186, median 25.6, ratio 97.9, Kyrgyz 86.8%, Kyrgyz 88.7%
+    admin2 Ak-Talaa: 33,979, median 24.0, ratio 104.5, Kyrgyz 99.9%, Kyrgyz 99.9%
+    admin2 Aksy: 175,433, median 22.4, ratio 101.3, Kyrgyz 94.8%, Kyrgyz 96.9%
+    admin2 Ala-Buka: 114,515, median 24.1, ratio 99.8, Kyrgyz 62.6%, Kyrgyz 64.0%
+    admin2 Alamudun: 1,315,208, median 32.0, ratio 84.9, Kyrgyz 83.9%, Kyrgyz 85.0%
+    admin2 Alay: 91,919, median 22.0, ratio 99.6, Kyrgyz 99.8%, Kyrgyz 99.8%
+    admin2 Aravan: 141,560, median 24.3, ratio 101.3, Uzbek 57.9%, Uzbek 56.1%
+    admin2 At-Bashy: 60,874, median 25.9, ratio 101.2, Kyrgyz 99.5%, Kyrgyz 99.9%
+    admin2 Bakay-Ata: 54,161, median 23.5, ratio 104.0, Kyrgyz 99.5%, Kyrgyz 99.6%
+    admin2 Batken: 126,753, median 21.8, ratio 101.5, Kyrgyz 99.7%, Kyrgyz 99.8%
+    admin2 Bazar-Korgon: 190,226, median 22.4, ratio 101.0, Kyrgyz 58.9%, Kyrgyz 64.5%
+    admin2 Chatkal: 29,937, median 23.3, ratio 104.1, Kyrgyz 98.5%, Kyrgyz 98.8%
+    admin2 Chong-Alay: 36,221, median 20.6, ratio 106.2, Kyrgyz 99.9%, Kyrgyz 99.9%
+    admin2 Chuy: 58,442, median 27.4, ratio 102.4, Kyrgyz 88.0%, Kyrgyz 88.9%
+    admin2 City of Tomok: 73,433, median 27.6, ratio 93.1, Kyrgyz 62.6%, Kyrgyz 63.4%
+    admin2 Issyk Kul: 149,973, median 27.5, ratio 97.7, Kyrgyz 90.8%, Kyrgyz 92.3%
+    admin2 Jayyl: 114,852, median 28.4, ratio 95.8, Kyrgyz 76.2%, Kyrgyz 77.5%
+    admin2 Jeti-Oguz: 99,055, median 24.3, ratio 101.4, Kyrgyz 93.9%, Kyrgyz 94.7%
+    admin2 Jumgal: 48,513, median 25.2, ratio 102.4, Kyrgyz 99.8%, Kyrgyz 99.8%
+    admin2 Kadamjay: 260,591, median 23.5, ratio 98.3, Kyrgyz 75.8%, Kyrgyz 77.7%
+    admin2 Kara-Buura: 70,623, median 22.8, ratio 101.7, Kyrgyz 92.5%, Kyrgyz 94.1%
+    admin2 Kara-Kulja: 99,490, median 22.7, ratio 104.0, Kyrgyz 99.9%, Kyrgyz 99.8%
+    admin2 Kara-Suu: 821,403, median 25.0, ratio 102.0, Kyrgyz 57.3%, Kyrgyz 60.8%
+    admin2 Kemin: 51,067, median 28.4, ratio 100.2, Kyrgyz 91.0%, Kyrgyz 91.7%
+    admin2 Kochkor: 68,962, median 25.5, ratio 102.7, Kyrgyz 99.2%, Kyrgyz 99.5%
+    admin2 Leilek: 174,099, median 21.1, ratio 107.8, Kyrgyz 68.7%, Kyrgyz 71.2%
+    admin2 Manas: 35,493, median 23.9, ratio 102.4, Kyrgyz 85.2%, Kyrgyz 87.8%
+    admin2 Moskva: 100,929, median 27.7, ratio 100.1, Kyrgyz 59.5%, Kyrgyz 60.3%
+    admin2 Naryn: 94,245, median 24.9, ratio 100.6, Kyrgyz 99.7%, Kyrgyz 99.8%
+    admin2 Nookat: 315,011, median 22.7, ratio 102.8, Kyrgyz 72.1%, Kyrgyz 77.1%
+    admin2 Nooken: 175,707, median 24.0, ratio 97.5, Kyrgyz 73.7%, Kyrgyz 80.1%
+    admin2 Panfilov: 48,879, median 27.1, ratio 102.0, Kyrgyz 80.8%, Kyrgyz 81.7%
+    admin2 Sokuluk: 257,959, median 26.8, ratio 99.9, Kyrgyz 83.1%, Kyrgyz 84.1%
+    admin2 Suzak: 446,463, median 22.2, ratio 102.9, Kyrgyz 63.0%, Kyrgyz 67.7%
+    admin2 Talas: 110,673, median 22.6, ratio 100.6, Kyrgyz 97.6%, Kyrgyz 97.7%
+    admin2 Toguz-Toro: 27,615, median 23.6, ratio 103.0, Kyrgyz 99.7%, Kyrgyz 99.8%
+    admin2 Toktogul: 132,524, median 22.7, ratio 100.4, Kyrgyz 99.0%, Kyrgyz 99.2%
+    admin2 Tong: 59,876, median 26.1, ratio 102.4, Kyrgyz 98.7%, Kyrgyz 98.8%
+    admin2 Tup: 71,382, median 24.8, ratio 102.0, Kyrgyz 92.4%, Kyrgyz 95.5%
+    admin2 Uzgen: 287,109, median 22.6, ratio 101.0, Kyrgyz 74.5%, Kyrgyz 77.4%
+    admin2 Ysyk-Ata: 156,816, median 28.1, ratio 98.4, Kyrgyz 57.4%, Kyrgyz 58.7%
+    admin1 Batken Region: 561,443, median 22.3, ratio 101.9, Kyrgyz 79.0%, Kyrgyz 80.7%
+    admin1 Chuy Region: 2,177,585, median 30.5, ratio 90.2, Kyrgyz 79.8%, Kyrgyz 80.9%
+    admin1 Issyk-Kul Region: 534,472, median 25.9, ratio 99.5, Kyrgyz 91.4%, Kyrgyz 92.8%
+    admin1 Jalal-Abad Region: 1,264,805, median 22.7, ratio 101.1, Kyrgyz 72.9%, Kyrgyz 76.7%
+    admin1 Naryn Region: 334,188, median 25.1, ratio 102.0, Kyrgyz 99.6%, Kyrgyz 99.8%
+    admin1 Osh Region: 1,792,713, median 23.9, ratio 102.0, Kyrgyz 66.7%, Kyrgyz 69.9%
+    admin1 Talas Region: 270,950, median 22.9, ratio 101.8, Kyrgyz 95.0%, Kyrgyz 95.9%
+  wrote data/processed/kyrgyzstan_census.json (240 kB)
