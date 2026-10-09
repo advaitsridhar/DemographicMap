@@ -65,7 +65,9 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import time
 import unicodedata
+import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
@@ -126,10 +128,11 @@ MIN_PEOPLE = 100
 # More men per woman than this is explained in the note.
 SKEWED = 3
 
-# OpenStreetMap's areas, read in three boxes (south, west, north, east) so a
+# OpenStreetMap's areas, read in four boxes (south, west, north, east) so a
 # busy server answers each.
 OVERPASS = "https://overpass-api.de/api/interpreter"
-BOXES = ("28.5,46.5,28.95,48.6", "28.95,46.5,29.5,48.6", "29.5,46.5,30.15,48.6")
+BOXES = ("28.5,46.5,28.95,48.6", "28.95,46.5,29.5,47.85", "28.95,47.85,29.5,48.6",
+         "29.5,46.5,30.15,48.6")
 PLACE_KINDS = ("suburb", "quarter", "city", "town", "village", "locality", "island",
                "neighbourhood")
 # Table 52's Arabic names that OpenStreetMap writes otherwise: the census's
@@ -340,8 +343,18 @@ def overpass(box: str) -> list[dict[str, Any]]:
         OVERPASS, data=urllib.parse.urlencode({"data": query}).encode(),
         headers={"User-Agent": "DemographicMap/1.0 (+https://github.com/advaitsridhar/"
                                "DemographicMap) python-urllib"})
-    with urllib.request.urlopen(req, timeout=400) as fh:
-        return json.loads(fh.read()).get("elements") or []
+    # A busy public server answers 429 or 504 now and then; it is asked again
+    # after a pause, and a fifth refusal stops the run.
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req, timeout=400) as fh:
+                return json.loads(fh.read()).get("elements") or []
+        except urllib.error.HTTPError as err:
+            if err.code not in (429, 502, 503, 504) or attempt == 4:
+                raise
+            log(f"    Overpass {box}: {err.code}, asking again in {60 * (attempt + 1)} s")
+            time.sleep(60 * (attempt + 1))
+    return []
 
 
 def osm_index(elements: list[dict[str, Any]]) -> dict[str, list[tuple[str, Any]]]:
