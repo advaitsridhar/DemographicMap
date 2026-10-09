@@ -1,36 +1,14 @@
-probe_xlsx: https://inetl-ip.gov.tl/wp-content/uploads/2023/05/Chapter-4-TLPHC-Census-report-Basic-tables.xlsx
-  468,067 bytes
-  25 sheet(s): Index, 4.01, 4.02, 4.03, 4.04, 4.05, 4.06, 4.07, 4.08, 4.09, 4.10, 4.11, 4.12, 4.13, 4.14, 4.15, 4.16, 4.17, 4.18, 4.19, 4.20, 4.21, 4.22, 4.23, 4.24
-
---- sheet '4.07' (63 rows x 13 cols) --------------------
-  Table 4.07: Population in priv
-  Sex, five-year age group | Religion |  |  |  |  |  |  |  |  |  |  | Bas. 2.04
-   | Total | Catholicism | Protestan-tism/ Evan-gelicalis | Islam | Buddhism | Hinduism | Indigenous religion | Other | No religion | No answer
-  
-  
-  -1 | -2 | -3 | -4 | -5 | -6 | -7 | -8 | -9 | -10 | -11
-  Total | 1248705 | 1217157 | 25511 | 3202 | 378 | 161 | 240 | 1020 | 797 | 239
-  3-4 | 67642 | 65944 | 1225 | 144 | - | - | 18 | 91 | 167 | 48
-  5-9 | 159582 | 155787 | 3103 | 335 | - | - | 29 | 148 | 128 | 43
-  10-14 | 147511 | 144195 | 2853 | 272 | 4 | 6 | 11 | 103 | 50 | 17
-  15-19 | 157451 | 154034 | 2970 | 273 | 12 | 11 | - | 111 | 27 | 11
-  20-24 | 132541 | 129579 | 2561 | 260 | 18 | 9 | 4 | 67 | 28 | 15
-  25-29 | 109553 | 106964 | 2106 | 307 | 36 | 15 | - | 61 | 50 | 12
-  30-34 | 93692 | 91167 | 2043 | 300 | 49 | 19 | 6 | 58 | 40 | 10
-  35-39 | 81581 | 79224 | 1806 | 337 | 51 | 24 | 8 | 75 | 40 | 16
-  40-44 | 52980 | 51310 | 1241 | 250 | 44 | 16 | 6 | 62 | 34 | 17
-  45-49 | 55226 | 53546 | 1261 | 251 | 39 | 16 | 6 | 60 | 34 | 13
-  50-54 | 50106 | 48663 | 1078 | 191 | 44 | 22 | 10 | 47 | 38 | 13
-  55-59 | 36283 | 35358 | 703 | 108 | 29 | 10 | 13 | 27 | 24 | 11
-  60-64 | 29484 | 28663 | 658 | 66 | 19 | - | 17 | 27 | 23 | -
-  65-69 | 21152 | 20566 | 475 | 36 | 14 | - | 13 | 22 | 25 | -
-  70-74 | 24281 | 23583 | 566 | 29 | 6 | 0 | 33 | 23 | 35 | 6
-  75+ | 29640 | 28574 | 862 | 43 | 4 | 0 | 62 | 38 | 54 | 3
-  Male | 633483 | 617096 | 12971 | 1850 | 235 | 103 | 122 | 536 | 432 | 138
-  3-4 | 34557 | 33653 | 650 | 72 | - | - | 11 | 56 | 84 | 29
-  5-9 | 81773 | 79826 | 1584 | 171 | - | - | 14 | 80 | 75 | 16
-  10-14 | 75563 | 73891 | 1444 | 139 | - | - | 4 | 45 | 28 | 7
-  15-19 | 80268 | 78516 | 1517 | 147 | 4 | 5 | 0 | 61 | 11 | 7
-  20-24 | 67096 | 65590 | 1288 | 139 | 8 | 5 | 4 | 35 | 19 | 8
-  25-29 | 54699 | 53402 | 1023 | 170 | 23 | - | - | 27 | 33 | 10
-
+japan: nationality from e-Stat 0003445244, believers from 0003282963, prior from NHK/ISSP 2018
+  e-Stat 0003445244: 816 values
+  e-Stat 0003282963: 240 values
+  nationality: the 47 prefectures reproduce the table's national row; total 126,146,099 is the published one; the imputed foreign share is +0.24 points from the recorded one (stated on every prefecture)
+  believers: 175,054,047 against 126,146,099 people, 1.39 per person; used as a relative signal only
+  prior (no answer left out): no religion 63.3, Buddhism 31.6, Shinto 3.1, Christianity 1.0, Other religions 1.0
+  religion: the five prefectures the tilt moves furthest from the national prior:
+      Okinawa Prefecture       9.9 points  Buddhism 22.0, Shinto 9.0, Christianity 5.0, Other religions 0.8  (held at the bound: Shinto, Christianity)
+      Kyoto Prefecture         6.9 points  Buddhism 25.1, Shinto 9.0, Christianity 0.7, Other religions 1.9  (held at the bound: Shinto)
+      Nagano                   5.9 points  Buddhism 26.1, Shinto 9.0, Christianity 0.8, Other religions 0.8  (held at the bound: Shinto)
+      Miyagi                   5.4 points  Buddhism 26.9, Shinto 8.4, Christianity 0.8, Other religions 0.6
+      Yamanashi                5.2 points  Buddhism 27.3, Shinto 8.2, Christianity 0.6, Other religions 0.6
+  religion: 3 prefectures hit a bound: Okinawa Prefecture, Kyoto Prefecture, Nagano
+  wrote data/processed/japan_prefecture.json (389 kB)
