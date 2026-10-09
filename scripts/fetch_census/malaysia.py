@@ -42,6 +42,20 @@ W.P. Kuala Lumpur); the boundary file has the English exonym (Malacca, Penang,
 Kuala Lumpur). The record keeps DOSM's name and carries the boundary file's as
 an alias. Districts are matched within their state, since the CSV names it.
 
+**Which year a state's districts are read at.** The map draws the districts
+of the boundary file's vintage, and DOSM's table follows the districts as
+they are now: its 2026 rows divide Sabah's Beaufort and Papar to make
+Membakut, and five of Sarawak's (Serian, Simunjan, Sri Aman among them) to
+make Gedong, Lingga, Pantu, Sebuyau and Siburan. A divided district's 2026
+figure is what is left of it, and on the polygon of the whole district it
+would be a third too small (Simunjan 37,300 in 2025, 12,000 in 2026). So
+each state's districts are read at the latest date at which every district
+in the table is one the map draws (by name, alias, or a name DOSM has used at
+every date, such as W.P. Putrajaya); a state whose latest rows name a
+district the map does not draw is read at the date before the division, and
+its records say so (``vintages``). A renamed district (Cameron Highland,
+Sp Utara) is not a division: its new name is drawn.
+
 Usage:
     python -m scripts.fetch_census.malaysia --level both
 """
@@ -94,6 +108,23 @@ STATE_ALIASES = {
 # geoBoundaries' spelling of a district where it is not DOSM's. Each is the
 # same place under an older or alternative name; none is a guess at a
 # different one.
+# The map's districts, folded, against which DOSM's are tested (``vintages``).
+WP = re.compile(r"(?i)^w\.?\s*p\.?\s+")
+
+
+def district_key(name: str) -> str:
+    """A district name reduced for comparison: W.P. dropped, letters and digits."""
+    import unicodedata
+    text = unicodedata.normalize("NFKD", WP.sub("", str(name or "")).lower())
+    return "".join(c for c in text if c.isalnum() and not unicodedata.combining(c))
+
+
+def drawn_districts() -> set[str]:
+    """The boundary file's district labels for Malaysia, folded."""
+    from .sea_common import drawn
+    return {district_key(u["name"]) for u in drawn("MYS", "admin2")}
+
+
 DISTRICT_ALIASES = {
     "Hulu Langat": ["Ulu Langat"],
     "Hulu Selangor": ["Ulu Selangor"],
@@ -305,33 +336,90 @@ def build_states(rows: list[dict[str, str]] | None = None) -> list[dict[str, Any
     return records
 
 
+def vintages(rows: list[dict[str, str]], drawn: set[str]
+             ) -> dict[str, tuple[str, list[str]]]:
+    """state -> (the date its districts are read at, the districts the latest
+    date names that the map does not draw).
+
+    The date is the latest at which every district of the state is drawn
+    (``district_key`` of its name or an alias) or is one the table names at
+    every date (W.P. Putrajaya, which the map draws as its state). A state
+    none of whose dates passes is read at the latest, and logged.
+    """
+    by_state: dict[str, dict[str, set[str]]] = {}
+    for r in rows:
+        if r["sex"] == "both" and r["age"] == "overall" and r["ethnicity"] == "overall":
+            by_state.setdefault(r["state"], {}).setdefault(r["date"], set()).add(r["district"])
+
+    def is_drawn(district: str) -> bool:
+        return any(district_key(n) in drawn
+                   for n in [district, *DISTRICT_ALIASES.get(district, [])])
+
+    out: dict[str, tuple[str, list[str]]] = {}
+    for state, by_date in sorted(by_state.items()):
+        if len(by_date) < 2:
+            raise SystemExit(f"malaysia: {state}'s districts have one date only, so a "
+                             "district divided since the map's vintage cannot be told apart")
+        always = set.intersection(*by_date.values())
+        dates = sorted(by_date, reverse=True)
+        undrawn = {d: sorted(x for x in by_date[d] if not is_drawn(x) and x not in always)
+                   for d in dates}
+        chosen = next((d for d in dates if not undrawn[d]), dates[0])
+        out[state] = (chosen, undrawn[dates[0]])
+        if chosen != dates[0]:
+            log(f"  {state}: DOSM's {dates[0]} rows name districts the map does not draw "
+                f"({', '.join(undrawn[dates[0]])}), so its districts are read at {chosen}")
+        elif undrawn[dates[0]]:
+            log(f"  {state}: no date's districts are all drawn; read at {dates[0]}, its "
+                f"undrawn {', '.join(undrawn[dates[0]])} left to the build")
+    return out
+
+
+# How many districts a run may write: the 2025 table had 160, the 2026 one 166.
+DISTRICTS_EXPECTED = (150, 170)
+VINTAGE_NOTE = ("DOSM's {latest} table divides districts of {state} that the map draws whole "
+                "({new} are new), so {state}'s districts are read at {date}, the latest date "
+                "whose districts are the map's.")
+
+
 def build_districts(rows: list[dict[str, str]] | None = None,
-                    state_rows: list[dict[str, str]] | None = None) -> list[dict[str, Any]]:
+                    state_rows: list[dict[str, str]] | None = None,
+                    drawn: set[str] | None = None) -> list[dict[str, Any]]:
     rows = rows if rows is not None else read_csv(DISTRICT_URL)
-    date, comps = compositions(rows, ("state", "district"))
-    year = int(date[:4])
-    log(f"  districts: {len(comps)} at {date}")
-    by_age = ages(rows, ("state", "district"), date)
-    check_against_states(comps, state_rows if state_rows is not None
-                         else read_csv(STATE_URL), date)
+    state_rows = state_rows if state_rows is not None else read_csv(STATE_URL)
+    chosen = vintages(rows, drawn if drawn is not None else drawn_districts())
+    latest = max(date for date, _ in chosen.values())
     records = []
-    for (state, district), counts in sorted(comps.items()):
-        total = check(f"{state}/{district}", counts)
-        bars = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
-        records.append(record(
-            f"MYS-{slug(state)}-{slug(district)}", district, level="admin2",
-            parent=f"MYS-{slug(state)}", parent_name=state, country="MYS",
-            aliases=DISTRICT_ALIASES.get(district, []),
-            population=measure(total, year=year, source=SOURCE) if total else gap(NOT_AVAILABLE),
-            ethnicity=bars or gap(NOT_AVAILABLE),
-            ethnicity_year=dated(bars, year),
-            ethnicity_note=NOTE,
-            sources=[{"field": "population/ethnicity/median age/sex ratio",
-                      "name": f"{SOURCE} ({year})",
-                      "url": PAGES["district"], "license": LICENCE}],
-            **age_fields(f"{state}/{district}", by_age.get((state, district)), year, total),
-        ))
-    if not 150 <= len(records) <= 170:
+    for state, (date, new) in sorted(chosen.items()):
+        own = [r for r in rows if r["state"] == state and r["date"] == date]
+        _, comps = compositions(own, ("state", "district"))
+        year = int(date[:4])
+        by_age = ages(own, ("state", "district"), date)
+        check_against_states(comps, state_rows, date)
+        vintage = (VINTAGE_NOTE.format(latest=latest[:4], state=state, new=", ".join(new),
+                                       date=date) if date != latest else "")
+        for (_, district), counts in sorted(comps.items()):
+            total = check(f"{state}/{district}", counts)
+            bars = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)
+            records.append(record(
+                f"MYS-{slug(state)}-{slug(district)}", district, level="admin2",
+                parent=f"MYS-{slug(state)}", parent_name=state, country="MYS",
+                aliases=DISTRICT_ALIASES.get(district, []),
+                population=(measure(total, year=year, source=SOURCE) if total
+                            else gap(NOT_AVAILABLE)),
+                population_note=vintage or None,
+                ethnicity=bars or gap(NOT_AVAILABLE),
+                ethnicity_year=dated(bars, year),
+                ethnicity_note=f"{NOTE} {vintage}".strip(),
+                sources=[{"field": "population/ethnicity/median age/sex ratio",
+                          "name": f"{SOURCE} ({year})",
+                          "url": PAGES["district"], "license": LICENCE}],
+                **age_fields(f"{state}/{district}", by_age.get((state, district)), year, total),
+            ))
+    log(f"  districts: {len(records)}, read at "
+        + ", ".join(f"{d} ({sum(1 for x, _ in chosen.values() if x == d)} states)"
+                    for d in sorted({x for x, _ in chosen.values()}, reverse=True)))
+    if not DISTRICTS_EXPECTED[0] <= len(records) <= DISTRICTS_EXPECTED[1]:
         raise SystemExit(f"malaysia: expected about 160 districts, read {len(records)}")
     return records
 

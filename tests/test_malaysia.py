@@ -5,6 +5,7 @@ No network: the rows are built here in the files' own layout
 """
 
 import unittest
+from unittest import mock
 
 from scripts.fetch_census import malaysia as m
 
@@ -85,6 +86,41 @@ class AgeTest(unittest.TestCase):
         self.assertEqual(records[0]["median_age"]["value"], 45.0)
         self.assertEqual(records[0]["median_age"]["year"], 2026)
         self.assertEqual(records[0]["sex_ratio"]["value"], round(100 * 18.2 / 17.8, 1))
+
+    def test_a_state_whose_latest_rows_divide_a_drawn_district_is_read_before(self):
+        # Sabah's 2026 rows carve Membakut out of Beaufort; the map draws the
+        # Beaufort of before, so Sabah is read at 2025. Johor's districts are
+        # all drawn in 2026, and W.P. Putrajaya, at every date and drawn as its
+        # state only, holds no state back.
+        rows, states = [], []
+        layout = {"Johor": {"2025-01-01": {"Batu Pahat": 10.0},
+                            "2026-01-01": {"Batu Pahat": 11.0}},
+                  "Sabah": {"2025-01-01": {"Beaufort": 8.0},
+                            "2026-01-01": {"Beaufort": 6.0, "Membakut": 2.0}},
+                  "W.P. Putrajaya": {"2025-01-01": {"W.P. Putrajaya": 1.0},
+                                     "2026-01-01": {"W.P. Putrajaya": 1.0}}}
+        for state, dates in layout.items():
+            for date, districts in dates.items():
+                for district, people in districts.items():
+                    rows += rows_for({"state": state, "district": district}, date,
+                                     [people / 18] * 18, people / 2, people / 2)
+                total = sum(districts.values())
+                states.append({"state": state, "date": date, "sex": "both", "age": "overall",
+                               "ethnicity": "overall", "population": f"{total:.1f}"})
+        drawn = {m.district_key(n) for n in ("Batu Pahat", "Beaufort")}
+        chosen = m.vintages(rows, drawn)
+        self.assertEqual(chosen["Johor"], ("2026-01-01", []))
+        self.assertEqual(chosen["Sabah"], ("2025-01-01", ["Membakut"]))
+        self.assertEqual(chosen["W.P. Putrajaya"][0], "2026-01-01")
+        with mock.patch.object(m, "DISTRICTS_EXPECTED", (1, 10)):
+            recs = {r["name"]: r for r in m.build_districts(rows, states, drawn)}
+        self.assertEqual(recs["Batu Pahat"]["population"]["value"], 11000)
+        self.assertEqual(recs["Batu Pahat"]["population"]["year"], 2026)
+        self.assertEqual(recs["Beaufort"]["population"]["value"], 8000)
+        self.assertEqual(recs["Beaufort"]["population"]["year"], 2025)
+        self.assertIn("Membakut", recs["Beaufort"]["population_note"])
+        self.assertNotIn("Membakut", recs)
+        self.assertFalse(recs["Batu Pahat"].get("population_note"))
 
     def test_the_indian_race_is_written_with_its_country(self):
         # A bare "Indian" is the nationality a European or Korean register
