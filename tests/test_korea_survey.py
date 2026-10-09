@@ -74,6 +74,14 @@ class Reading(unittest.TestCase):
         self.assertEqual(by_name["Ulsan"]["id"], "KOR-ulsan")
         self.assertEqual({r["parent"] for r in records}, {"KOR"})
 
+    def test_it_is_a_survey_to_the_build(self):
+        # A census count (korea_religion) stands in front of it however much
+        # older: the build ranks by the *_survey.json name and the basis.
+        self.assertTrue(korea_survey.OUT.endswith("_survey.json"))
+        records = korea_survey.build(PAGE)
+        self.assertTrue(all(r["religion_basis"].startswith("survey estimate")
+                            for r in records))
+
 
 class Refusals(unittest.TestCase):
     def test_has_and_none_must_sum_to_100(self):
