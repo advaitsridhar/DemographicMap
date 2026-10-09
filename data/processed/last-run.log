@@ -1,354 +1,156 @@
-== https://stats.gov.tv/download/85/population-and-housing-census/902/2012-census-tables_final.xlsx
-  HTTP 200 application/octet-stream 1,458,925 bytes
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Notes!$A:$AB.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  -- 'Cover'
-  -- 'Acknowledgements'
-       1: ACKNOWLEDGEMENT
-       3: The National Population and Housing Census is the largest and very expensive undertaking that the 
-  -- 'Notes'
-       1: NOTES
-       3: All the tables in this publication are formatted in a particular same style. Therefore, to avoid any
-  -- 'Indicators'
-       2:  | SUMMARY OF MAIN INDICATORS
-  -- 'Contents'
-       1:  | CONTENTS | page
-       2: Acknowledgement |  | i
-       3: Notes |  | ii
-  -- '1'
-       1: Table 1: Total population by place of enumeration, place of residence and sex
-       2:    Place of enumeration
-       3: Island | Resident
-  -- '2'
-       1: Table 2: Total population by resident status, island and village of enumeration and sex
-       2: Island by villages | Resident
-       3:  | Tuvaluan
-  -- '3'
-       1: Table 3: Total population by single years of age and sex
-       2: Age | T | M | F
-       3: 0 | 259 | 142 | 117
-  -- '4'
-       1: Table 4: Resident population by single years of age and sex
-       2: Age | T | M | F
-       3: 0 | 256 | 139 | 117
-  -- '5'
-       1: Table 5: Total population by place of enumeration, five-year age group and sex
-       2: Age group | Total
-       3:  | T | M | F
-  -- '6'
-       1: Table 6: Resident population by place of residence, five-year age group and sex
-       2: Age group | Total
-       3:  | T | M | F
-  -- '7,8'
-       1: Table 7: Non-resident population by country of usual residence and five-year age group
-       2: Age group | Fiji | New Zealand | Australia
-       3: Total | 42 | 16 | 17
-  -- '9'
-       1: Table 9: Resident population by island of birth, five-year age group and sex
-       2: Age group | Island of Birth
-       3:  | Total
-  -- '10'
-       1: Table 10: Resident population three years and older by place of residence, place of residence in 200
-       2: Age group | Residence in 2009
-       3:  | Total
-  -- '11'
-       1: Table 11: Resident population by place of residence, home island, five-year age year group and sex
-       2: Age group | Home Island
-       3:  | Total
-  -- '12'
-       1: Table 12: Resident population by place of residence, place of birth, five-year age group and sex
-       2:  | Place of Birth
-       3: Age group | Total
-  -- '13'
-       1: Table 13: Resident population by place of residence, ethnicity by five-year age group and sex
-       2: Age group | Ethnicity
-       3:  | Total
-  -- '14'
-       1: Table 14: Resident population by place of residence, religious denomination by five-year age group a
-       2: Age group | Religious Denomination
-       3:  | Total
-  -- '15'
-       1: Table 15: Resident population aged 15 years and older by place of residence, marital status by five-
-       2: Age group | Marital Status
-       3:  | Total
-  -- '16'
-       1: Table 16:  Resident population by place of residence, biological mother whether still alive by five-
-       2: Age group | Biological Mother Still Alive
-       3:  | Total
-  -- '17'
-       1: Table 17: Resident population by place of residence, biological mother still alive and whether livin
-       2: Age group | Biological Mother Living In Household
-       3:  | Total
-  -- '18'
-       1: Table 18: Resident population by place of residence, biological father whether still alive by five-y
-       2: Age group | Biological Father Still Alive
-       3:  | Total
-  -- '19'
-       1: Table 19: Resident population by place of residence, biological father still alive and whether livin
-       2: Age group | Biological Father Living In Household
-       3:  | Total
-  -- '20'
-       1: Table 20: Resident population aged 3 years and older by place of residence, current school attendanc
-       2: Age group | Currently Attending School
-       3:  | Total
-  -- '21'
-       1: Table 21: Resident population aged 3 years and older by place of residence, current level of school 
-       2: Age group | Current Level Of School Attendance
-       3:  | Total
-  -- '22'
-       1: Table 22: Resident population aged 3 years and older by place of residence, highest educational leve
-       2: Age group | Highest Education Level Completed
-       3:  | Total
-  -- '23'
-       1: Table 23: Resident population aged three to twenty nine years by place of residence, current school 
-       2: Age | Current School Attendance
-       3:  | Total
-  -- '24'
-       1: Table 24:  Resident population aged 15 years and older by place of residence, highest education qual
-       2: Age group | Highest Education Qualification Completed
-       3:  | Total
-  -- '25'
-       1: Table 25: Literacy results of resident population 15 years and older persons by age group and sex
-       2: Age group | Total
-  -- '26'
-       1: Table 26 : Smoking habits for resident population 15 years and over by place of residence, 5-year ag
-       2: Age group | Smoking Habits
-       3:  | Total
-  -- '27'
-       1: Table 27: Alcoholic drinking habits for resident population 15 years and over by place of residence,
-       2: Age group | Alcoholic Drinking Habits
-       3:  | Total
-  -- '28'
-       1: Table 28: Kava drinking habits for resident population 15 years and over by place of residence, five
-       2: Age group | Kava Drinking Habits
-       3:  | Total
-  -- '29'
-       1: Table 29: Resident population affected by ciguatera food poisoning by place of residence, five-year 
-       2: Age group | Affected By Ciguatera Food Poisoning
-       3:  | Total
-  -- '30'
-       1: Table 30: Resident population affected by ciguatera food poisioning by number of times affected, pla
-       2: Age group | Number Of Times Affected By Ciguatera Food Poisoning
-       3:  | Total
-  -- '31'
-       1: Table 31: Types of fish or shellfish consumed by resident population affected by ciguatera, place of
-       2: Age group | Types Of Fish Or Shellfish Consumed
-       3:  | Fasua
-  -- '32'
-       1: Table 32: Main symptoms experienced among the resident population affected by ciguatera food poisoni
-       2: Age group | Main Symtoms Experienced
-       3:  | Total
-  -- '33'
-       1: Table 33: Resident population aged 60 years and below whether affected by disability by place of res
-       2: Age group | Affected By Disability
-       3:  | Total
-  -- '34'
-       1: Table 34: Types of disability affecting the resident population by place of residence, 5-year age gr
-       2: Age group | Types Of Disabilities
-       3:  | Physical
-  -- '35'
-       1: Table 35:  Causes of disability among the resident population by place of residence, 5-year age grou
-       2: Age group | Causes Of Disability
-       3:  | Disability since birth
-  -- '36'
-       1: Table 36: Main caretaker for the disabled among the resident population by place of residence, 5-yea
-       2: Age group | Main Caretaker For The Disabled
-       3:  | Total
-  -- '37'
-       1: Table 37: Sources of cash and in-kind assistance received among the disabled resident population fro
-       3: Age group | Sources Of Assistance Received By The Disabled
-  -- '38'
-       1: Table 38: Resident population aged 6 years and older whether have use of a mobile phone in the last 
-       2: Age group | Used A Mobile Phone
-       3:  | Total
-  -- '39'
-       1: Table 39: Resident population aged 6 years and older whether used a computer from any location in th
-       2: Age group | Have Used A Computer
-       3:  | Total
-  -- '40'
-       1: Table 40: Resident population aged 6 years whether has used the internet from any location in the la
-       2: Age group | Have Used The Internet
-       3:  | Total
-  -- '41'
-       1: Table 41: Reasons for internet use among the resident population aged 6 years and older by place of 
-       3: Age group | Reasons For Internet Uses
-  -- '42'
-       1: Table 42:  Reasons for internet use by highest educational qualification completed for resident popu
-       2: Highest educational qualification completed | Reasons For Internet Uses
-       3:  | Getting information on goods and services
-  -- '43'
-       1:  Table 43: Main occupational activity the week before the census for resident population 15 years an
-       2: Age group | Main Occupational Activity
-       3:  | Total
-  -- '44'
-       1: Table 44: Occupations of resident population 15 years and older by place of residence, 5-year age gr
-       2: Age group | Types Of Occupations
-       3:  | Total
-  -- '45'
-       1: Table 45: Occupations by highest education qualification of resident population 15 years and older, 
-       2: Education   qualifications | Types Of Occupations
-       3:  | Total
-  -- '46'
-       1: Table 46:  Resident population 15 years and over by 5-year age group and place of residence, industr
-       2: Age group | Major Industry Groups
-       3:  | Total
-  -- '47'
-       1: Table 47:  Resident population 15 years and over by highest educational qualification completed by p
-       2:  Highest educational qualification completed | Major Industry Groups
-       3:  | Total
-  -- '48'
-       1:  Table 48: Secondary economic activity of resident population 15 years and over by place of residenc
-       2: Age group | Secondary Economic Activity
-       3:  | Total
-  -- '49'
-       1: Table 49: Reason for not looking for work for resident population 15 years and older who did not hav
-       2: Age group | Reasons For Not Looking For Work
-       3:  | Total
-  -- '50'
-       1: Table 50: Willingness and availability to start work the week before census for resident population 
-       2: Age group | Willingness And Availability To Start Work
-       3:  | Total
-  -- '51'
-       1: Table 51:  Persons actively looking for work the week before census for resident population 15 years
-       2: Age group | Actively Looked For Work
-       3:  | Total
-  -- '52'
-       1: Table 52:  Persons actively looking for work the week before census of resident population 15 years 
-       3: Highest education qualification | Actively Looked For Work
-  -- '53'
-       1: Table 53: Reason for not looking for work for the resident population 15 years and older who did not
-       2: Education qualification | Reasons For Not Looking For Work
-       3:  | Total
-  -- '54'
-       1: Table 54: Willingness and availability to start work the week before the Census among the resident p
-       3: Education qualification | Willingness And Availability To Start Work
-  -- '55'
-       1: Table 55: Possession of traditional skills for resident population 15 years and older by place of re
-       3: Age group | Possession Of Traditional Skills
-  -- '56'
-       1: Table 56: Types of traditional skills possessed among the resident population 15 years and older by 
-       2: Age group | Types Of Traditional Skills
-       3:  | Faaite Fale
-  -- '57'
-       1: Table 57: Number of households that possess a cultural artefact by island
-       2: Island | Types Of Cultral Artefacts
-       3:  | Uaniu | Umaga | Mulivaka
-  -- '58'
-       1: Table 58: Number of ever-married women active in island community participation among resident popul
-       3: Age group | Island Communities
-  -- '59'
-       1: Table 59:  Number of children ever born for resident women aged 15 years and over by place of reside
-       2: Age group | Mothers Who Ever Gave Birth
-       3:  | Total women | Ever given birth | Males ever born
-  -- '60-63'
-       1: Table 60: Number of houses by type of living quarters and island
-       2: Island | Types Of Living Quarters | Type Of Living Quarters | Type Of Living Quarters
-       3:  | One family house detached from any other house | One family house attached to one or more houses | Building with two or more apartments
-  -- '64-67'
-       1: Table 64: Number of houses by land ownership arrangement and island
-       2: Island | Land Ownership Arrangement
-       3:  | Own land | Government lease | Private lease
-  -- '68-71'
-       1: Table 68: Number of houses by type of finished metal roofing and island 
-       2: Island | Types Of Finished Metal Roofing
-       3:  | Gable roofing | Mono - pitch roofing | Flat roof
-  -- '72-74'
-       1: Table 72: Number of houses with kitchen types by island
-       2: Island | Types Of Kitchens
-       3:  | Traditional | Modern | Traditional and modern
-  -- '75-76'
-       1: Table 75: Type of toilet facility by island
-       2: Island | Types Of Toilet Facilities
-       3:  | Flush or Pour Flush Toilet
-  -- '77-80'
-       1: Table 77:  Main source of household lighting by island
-       2: Island | Sources of Lighting
-       3:  | Electricity | Solar | Kerosene
-  -- '81-84'
-       1: Table 81: Main source of household cooking energy by island
-       2: Island | Sources Of Cooking Energy
-       3:  | Electricity | Gas | Kerosene
-  -- '85-87'
-       1: Table 85: Reason for preference of cooking method used by island
-       2: Purpose | Cooking Methods
-       3:  | Traditional | Modern | Traditional and Modern
-  -- '88'
-       1: Table 88: Type of crops grown among households and purpose grown by island
-       2: Island | Types Of Crops And Purpose Grown
-       3:  | Coconut
-  -- '89-91'
-       1: Table 89: Households whether cut toddy and toddy volumes (litres) they collected in a day by island
-       2: Island | Cut Toddy
-       3:  | Total | Yes | No
-  -- '92'
-       1: Table 92: Weekly weights (kg) of harvested vegetables among households owning a home garden by islan
-       2: Island | Types Of Vegetables And Weights In Kilograms
-       3:  | Cabbage
-  -- '93-95'
-       1: Table 93: Number of crop cycles in the past 12 months among households owning a home garden by islan
-       2: Island | Types Of Crops And Crop Cycles
-       3:  | Cabbage
-  -- '96-98'
-       1: Table 96: Number of households owning livestock and pets by island
-       2: Island | Types Of Animals
-       3:  | Pigs | Chicken | Ducks
-  -- '99-100'
-       1: Table 99:  Methods of livestock waste kept by the households in all islands
-       2: Island | Types Of Animals And Methods Of Keeping Animal Wastes
-       3:  | Pigs 
-  -- '101-102'
-       1: Table 101: Number of households with any members involved in catching birds, crabs or turtles by isl
-       2: Island | Types Of Food Hunted Or Caught
-       3:  | Birds | Tupa | Kaipea/ Paikea
-  -- '103'
-       1: Table 103: Frequency of catching birds, crabs or turtles among households  by island
-       2: Island | Types of Food Hunted Or Caught  and Frequency
-       3:  | Birds
-  -- '104-105'
-       1: Table 104: Number of households with any member catching fish or collecting shellfish
-       2: Island | Fishing Locations
-       3:  | Collecting on reef flat | Collecting on lagoon flat | Collecting on ocean flat
-  -- '106'
-       1: Table 106: Frequency of catching fish or collecting shellfish among households by fishing location a
-       2: Island | Fishing Locations And Frequency Of Fishing
-       3:  | Collecting on reef flat
-  -- '107-109'
-       1: Table 107: Method of catching fish or collecting shellfish among households by island
-       2: Island | Common Fishing Methods
-       3:  | Total | Trolling | Hand lining
-  -- '110-111'
-       1: Table 110: Fish commonly purchased by households and frequency of purchase by island
-       2: Island | Types Of Fish And Frequency Of Fish Purchased
-       3:  | Reef fish
-  -- '112-116'
-       1: Table 112: Purpose and type of handicraft activity among households by island
-       2: Island | Types Of Handicrafts And Purpose Of Making Handicrafts
-       3:  | Necklace
-  -- '117-120'
-       1: Table 117: Number of households with entertainment appliances by island
-       2: Island | Types Of Entertainment Appliances
-       3:  | Stereo | TV monitor | Video deck
-  -- '121-124'
-       1: Table 121: Number of households owning agricultural tools by island
-       2: Island | Types Of Agricultural Tools
-       3:  | Spade | Shovel | Rake
-  -- '125-126'
-       1: Table 125: Number of households by island with access to types of  ICT items at home
-       2: Island | Types Of ICT Items
-       3:  | Radio | Mobile phone | Fixed telephone
-  -- '127'
-       1: Table 127: Number of households receiving cash from various sources of income and frequency of incom
-       2: Island | Types Of Incomes And Frequency Of Receiving Incomes
-       3:  | Wages & salary
-  -- '128-129'
-       1: Table 128:  Number of households whether receiving remittances by source of remittance and island
-       2: Island | Sources Of Remittances
-       3:  | Total | No remittance | Within Tuvalu only
-  -- '130'
-       1: Table 130: Households with deceased 3 years prior to census, age groups and sex of deceased by islan
-       2: Age group | Islands And Sex
-       3:  | Total | Nanumea | Nanumaga
-  -- '131'
-       1: Table 131: Female deaths aged 16-49, causes of death 3 years prior to the census by island
-       2: Islands | Causes Of Female Deaths
-       3:  | Pregnant | Giving birth | Within six weeks of pregnancy
+cambodia_census: National Institute of Statistics, General Population Census of the Kingdom of Cambodia 2019, final results, Tables P-01 to P-25: population in normal or regular households by province, district and commune, and sex
+  fetched Final-General-Population-Census-2019-English.pdf (26.6 MB)
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140413379828688), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  304 pages
+  the district row '211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0' is read as district 314, its communes' code
+  Table 2.1.1 'Tbong Khmum' read as province 25 (Tboung Khmum)
+  Table 2.1.1: 25 provinces making 15,552,211
+  district 302 Chamkar Leu: its row (5160, 5160, 5160, 5160) is not its communes' sum (24280, 101675, 48956, 52719); the communes' sum makes the province's total, and stands
+  district 801 Kandal Stueng: its row (74303, 332843, 160647, 172196) is not its communes' sum (22649, 100565, 48071, 52494); the communes' sum makes the province's total, and stands
+  province 14 Prey Veng: its total row (266934, 1049361, 492221, 557140) is not its districts' sum (266934, 1056866, 495906, 560960); the households agree and the districts' people fit in its 1,057,720 (Table 2.1.1), so the districts stand
+  province 17 Siemreap: its total row (224672, 994540, 484524, 510016) is not its districts' sum (224672, 989303, 481931, 507372); the households agree and the districts' people fit in its 1,014,234 (Table 2.1.1), so the districts stand
+  district 2202 Banteay Ampil: its row (12534, 54716, 27775, 26941) is not its communes' sum (12534, 51605, 25448, 26157); the communes' sum makes the province's total, and stands
+  Tables P-01..P-25: 202 districts and 1646 communes in 25 provinces, each district's communes and each province's districts making its row; 15,186,779 people in regular households
+  regular households' share of each province's people: lowest Preah Sihanouk 70.9%, Stung Treng 95.6%, Phnom Penh 95.9%, Pailin 96.1%, Otdar Meanchey 97.3%; provinces below 95%, whose district tables are not used: Preah Sihanouk (70.9%)
+  fetched KHM_AdminBoundaries_TabularData.xlsx (0.1 MB)
+  2018 gazetteer: ADM1 25, ADM2 197, ADM3 1633
+  commune 10509 Ou Beichaon read as the 2018 Ou Beichoan (KH010509, 0.90)
+  commune 11001 Nimit read as the 2018 Nimitt (KH011001, 0.91)
+  commune 20301 Tuol Ta Aek read as the 2018 Tuol Ta Ek (KH020301, 0.94)
+  commune 20302 Preaek Preah Sdach read as the 2018 Prek Preah Sdach (KH020302, 0.93)
+  commune 20303 Rotanak read as the 2018 Rottanak (KH020303, 0.93)
+  commune 20304 Chamkar Samraong read as the 2018 Chomkar Somraong (KH020304, 0.87)
+  commune 20305 Sla Kaet read as the 2018 Sla Ket (KH020305, 0.92)
+  commune 20306 Kdol Daun Teav read as the 2018 Kdol Doun Teav (KH020306, 0.92)
+  commune 20307 Ou Mal read as the 2018 Omal (KH020307, 0.89)
+  commune 20310 Svay Pao read as the 2018 Svay Por (KH020310, 0.86)
+  commune 20407 Boeng Pram read as the 2018 Boeung Pram (KH020408, 0.95)
+  commune 20408 Khlang Meas read as the 2018 Khlaeng Meas (KH020407, 0.95)
+  commune 20705 Reakhsmei Sangha read as the 2018 Reaksmei Songha (KH020705, 0.90)
+  commune 20810 Vaot Ta Moem read as the 2018 Vaot Ta Muem (KH020810, 0.90)
+  commune 20903 Ou Samrel read as the 2018 Ou Samril (KH020903, 0.88)
+  commune 21101 Phnom Proek read as the 2018 Phnum Proek (KH021101, 0.90)
+  commune 21202 Boeung Reang read as the 2018 Boeng Reang (KH021202, 0.95)
+  commune 21306 Chhnal Mean read as the 2018 Chhnal Moan (KH021306, 0.90)
+  commune 21403 Mukh Rea read as the 2018 Mukh Reah (KH021403, 0.93)
+  commune 30201 Bos Khnaor read as the 2018 Bos Khnor (KH030201, 0.94)
+  commune 30308 Soutip read as the 2018 Soutib (KH030308, 0.83)
+  commune 30309 Srama read as the 2018 Sramar (KH030309, 0.91)
+  commune 31406 Phteas Kandal read as the 2018 Phteah Kandal (KH031406, 0.92)
+  commune 31413 Svaysach Phnum read as the 2018 Svay Khsach Phnum (KH031413, 0.93)
+  commune 40108 Pech Changva read as the 2018 Pech Changvar (KH040108, 0.96)
+  commune 40608 Prasneb read as the 2018 Prasnoeb (KH040608, 0.93)
+  commune 50114 Svay Rumpea read as the 2018 Svay Rumpear (KH050114, 0.95)
+  commune 50203 Roka Thum read as the 2018 Rokar Thum (KH050203, 0.94)
+  commune 50501 Chant Saen read as the 2018 Chan Saen (KH050501, 0.94)
+  commune 50504 Khsem Khsan read as the 2018 Khsem Khsant (KH050504, 0.95)
+  commune 50515 Phnum Touch read as the 2018 Phnom Touch (KH050515, 0.90)
+  commune 50707 Samraong Tong read as the 2018 Samrong Tong (KH050707, 0.96)
+  commune 50715 Voa Sa read as the 2018 Voa Sar (KH050715, 0.91)
+  commune 50804 Prambei Mom read as the 2018 Prambei Mum (KH050804, 0.90)
+  commune 50808 Yeang Angk read as the 2018 Yea Angk (KH050808, 0.88)
+  commune 60101 Bak Snar read as the 2018 Bak Sna (KH060101, 0.92)
+  commune 60205 Nipechr read as the 2018 Nipech (KH060205, 0.92)
+  commune 60802 Chamnar Kraom read as the 2018 Chamna Kraom (KH060802, 0.96)
+  commune 60803 Chamnar Leu read as the 2018 Chamna Leu (KH060803, 0.95)
+  commune 60806 Msar Krang read as the 2018 Msa Krang (KH060806, 0.94)
+  commune 70312 Satr Pong read as the 2018 Satv Pong (KH070312, 0.88)
+  commune 70509 Angkor Meas read as the 2018 Angk Romeas (KH070509, 0.90)
+  commune 70607 Prasat Phnum Khyang read as the 2018 Prasat Phnom Khyang (KH070607, 0.94)
+  commune 70608 Phnum Prasat read as the 2018 Phnom Prasat (KH070608, 0.91)
+  commune 70609 Angk Sophy read as the 2018 Ang Sophy (KH070609, 0.94)
+  commune 70804 Andoung Khmaer read as the 2018 Andoung Khmer (KH070804, 0.96)
+  commune 80122 Siemreap read as the 2018 Siem Reab (KH080122, 0.88)
+  commune 80306 Preaek Prasab read as the 2018 Preah Prasab (KH080306, 0.87)
+  commune 80412 Sampov Pun read as the 2018 Sampeou Poun (KH080412, 0.80)
+  commune 80504 Pea Reang read as the 2018 Peam Reang (KH080504, 0.94)
+  commune 80601 Akreiy Ksatv read as the 2018 Akreiy Ksatr (KH080601, 0.91)
+  commune 80606 Lvea Sa read as the 2018 Lvea Sar (KH080606, 0.92)
+  commune 80609 Preaek Khmeng read as the 2018 Preaek Kmeng (KH080609, 0.96)
+  commune 80707 Roka Kaong Ti Muoy read as the 2018 Roka Kong Ti Muoy (KH080707, 0.97)
+  commune 80708 Roka Kaong Ti Pir read as the 2018 Roka Kong Ti Pir (KH080708, 0.96)
+  commune 80907 Popnhea Lueu read as the 2018 Ponhea Lueu (KH080907, 0.95)
+  commune 81014 Ta Long read as the 2018 Ta Lon (KH081014, 0.91)
+  commune 81103 Daeum Mien read as the 2018 Doeum Mien (KH081103, 0.89)
+  commune 81104 Ta Khmau read as the 2018 Ta Khmao (KH081104, 0.86)
+  commune 90101 Andaung Tuek read as the 2018 Andoung Tuek (KH090101, 0.91)
+  commune 90501 Bak Khlang read as the 2018 Pak Khlang (KH090501, 0.89)
+  commune 100106 Khsach Andaet read as the 2018 Khsach Andeth (KH100106, 0.92)
+  commune 100301 Chambak read as the 2018 Chamb├ók (KH100301, 0.86)
+  commune 100304 Kaoh Ta Suy read as the 2018 Koh Ta Suy (KH100304, 0.94)
+  commune 100308 Ta Mau read as the 2018 Ta Mao (KH100308, 0.80)
+  commune 110201 Nang Khi Loek read as the 2018 Nang Khi Lik (KH110201, 0.86)
+  commune 110202 Ou Buon Leu read as the 2018 A Buon Leu (KH110202, 0.82)
+  commune 110206 Srae Sangkom read as the 2018 Srae Sangkum (KH110206, 0.91)
+  commune 110402 Pou Chrei read as the 2018 Pu Chrey (KH110402, 0.80)
+  commune 120306 Mittakpheap read as the 2018 Mittapheap (KH120306, 0.95)
+  commune 120308 Boeng Prolit read as the 2018 Boeng Proluet (KH120308, 0.87)
+  commune 120601 Stueng Mean chey TI 1 read as the 2018 Stueng Mean Chey (KH120601, 0.90)
+  commune 120602 Stueng Mean cheyTI 2 read as the 2018 Stueng Mean Chey (KH120601, 0.90)
+  commune 120603 Stueng Mean cheyTI 3 read as the 2018 Stueng Mean Chey (KH120601, 0.90)
+  commune 120604 Boeng Tumpun Ti 1 read as the 2018 Boeng Tumpun (KH120602, 0.88)
+  commune 120605 Boeng Tumpun Ti 2 read as the 2018 Boeng Tumpun (KH120602, 0.88)
+  commune 120701 Tuol Sangkae 1 read as the 2018 Tuol Sangke (KH120702, 0.91)
+  commune 120702 Tuol Sangkae 2 read as the 2018 Tuol Sangke (KH120702, 0.91)
+  commune 120806 Krang Thnoang read as the 2018 Krang Thnong (KH120807, 0.96)
+  commune 120905 Chaom Chau Ti 1 read as the 2018 Chaom Chau (KH120904, 0.86)
+  commune 120906 Chaom Chau Ti 2 read as the 2018 Chaom Chau (KH120904, 0.86)
+  commune 120907 Chaom Chau Ti 3 read as the 2018 Chaom Chau (KH120904, 0.86)
+  commune 121202 Chhbar Ampov Ti Pir read as the 2018 Chbar Ampov Ti Pir (KH121202, 0.97)
+  commune 121301 Boeng Keng Kang Muoy read as the 2018 Boeng Keng Kang Ti Muoy (KH120102, 0.94)
+  commune 121302 Boeng Keng Kang Pir read as the 2018 Boeng Keng Kang Ti Pir (KH120103, 0.94)
+  commune 121303 Boeng Keng Kang Bei read as the 2018 Boeng Keng Kang Ti Bei (KH120104, 0.94)
+  commune 130301 Choam Khsant read as the 2018 Choam Ksant (KH130301, 0.95)
+  commune 130504 Rung Raeung read as the 2018 Rung Roeang (KH130504, 0.80)
+  commune 130506 Ruos Rean read as the 2018 Ruos Roan (KH130506, 0.88)
+  commune 130509 Raksa read as the 2018 Reaksa (KH130509, 0.91)
+  commune 130511 Romtom read as the 2018 Romtum (KH130511, 0.83)
+  commune 130512 Romoniy read as the 2018 Romoneiy (KH130512, 0.93)
+  commune 140805 Mesa Prachan read as the 2018 Mesar Prachan (KH140805, 0.96)
+  commune 150101 Boeng Bat Kandal read as the 2018 Boeng Bat Kandaol (KH150101, 0.97)
+  commune 150301 Anlong Tnot read as the 2018 Anlong Tnaot (KH150301, 0.95)
+  commune 150307 Bkal Trach read as the 2018 Kbal Trach (KH150307, 0.89)
+  commune 150311 Tnot Chum read as the 2018 Tnaot Chum (KH150311, 0.94)
+  commune 150503 Lolork Sa read as the 2018 Lolok Sa (KH150503, 0.93)
+  commune 160305 Saeng read as the 2018 Saeung (KH160305, 0.91)
+  commune 160505 Pa Tang read as the 2018 Ba Tang (KH160505, 0.83)
+  commune 160601 Char Ung read as the 2018 Cha Ung (KH160601, 0.92)
+  commune 170102 Doun Peaeng read as the 2018 Doun Peng (KH170102, 0.89)
+  commune 170105 Norkor Pheas read as the 2018 Nokor Pheas (KH170105, 0.95)
+  commune 170106 Srae Kvav read as the 2018 Srae Khvav (KH170106, 0.94)
+  commune 170412 Spean Thnot read as the 2018 Spean Tnaot (KH170412, 0.90)
+  commune 171003 Kouk Chak read as the 2018 Kok Chak (KH171003, 0.93)
+  commune 171004 Sala Kamraeuk read as the 2018 Sala Kamreuk (KH171004, 0.96)
+  commune 171007 Chong Knies read as the 2018 Chong Khnies (KH171007, 0.95)
+  commune 171101 Chan Sar read as the 2018 Chan Sa (KH171101, 0.92)
+  commune 190104 Samkuoy read as the 2018 Samkhuoy (KH190104, 0.93)
+  commune 200105 Me Sa Thngak read as the 2018 Me Sar Thngak (KH200105, 0.95)
+  commune 200203 Ksetr read as the 2018 Khsaetr (KH200203, 0.83)
+  commune 200212 Tnot read as the 2018 Tnaot (KH200212, 0.89)
+  commune 200702 Kokir Saom read as the 2018 Koki Saom (KH200702, 0.94)
+  commune 200711 Svay Rumpea read as the 2018 Svay Rumpear (KH200711, 0.95)
+  commune 210211 Souphi read as the 2018 Sour Phi (KH210211, 0.92)
+  commune 210802 Roka Khnong read as the 2018 Roka Knong (KH210802, 0.95)
+  commune 210901 Ang Ta Saom read as the 2018 Angk Ta Saom (KH210901, 0.95)
+  commune 210907 Trapeang Kranhung read as the 2018 Trapeang Kranhoung (KH210907, 0.97)
+  commune 210908 Otdam Souriya read as the 2018 Otdam Soriya (KH210908, 0.96)
+  commune 211002 Angk Khnaor read as the 2018 Angk Khnor (KH211002, 0.95)
+  commune 211003 Chi Khnar read as the 2018 Chi Khma (KH211003, 0.80)
+  commune 211005 Prambei Mom read as the 2018 Prambei Mum (KH211005, 0.90)
+  commune 211013 Thlaok read as the 2018 Thlok (KH211013, 0.91)
+  commune 220104 Trapeang Prey read as the 2018 Trapeang Prei (KH220104, 0.92)
+  commune 220505 Tomnop Dach read as the 2018 Tumnob Dach (KH220505, 0.80)
+  commune 220506 Trapeang Prasath read as the 2018 Trapeang Prasat (KH220506, 0.97)
+  commune 250221 Thma Pechr read as the 2018 Thma Pech (KH250713, 0.94)
+  commune 250303 Damrel read as the 2018 Damril (KH250403, 0.83)
+  commune 250308 Tuol Sophi read as the 2018 Tuol Souphi (KH250407, 0.95)
+  commune 250409 Roka Khnaor read as the 2018 Roka Khnor (KH250209, 0.95)
+  commune 250702 Chaom read as the 2018 Choam (KH250302, 0.80)
+  commune 250703 Chaom Kravien read as the 2018 Choam Kravien (KH250303, 0.92)
+  commune 250704 Chaom Ta Mau read as the 2018 Choam Ta Mau (KH250304, 0.90)
+cambodia_census: communes away from their own district: 171008 Sambuor of 1710 Krong Siem Reab (2018 KH1710) found in KH1706; 81102 Preaek Ruessei of 811 Krong Ta Khmau (2018 KH0811) found in KH0806
