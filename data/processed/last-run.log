@@ -1,14 +1,6 @@
-sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
-  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
-    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
-    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
-  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
-  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
-  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
-  wrote data/processed/sea_cod_ps_age.json (4330 kB)
-  wrote sea_cod_ps_age.json: 1196 records
+china_census: National Bureau of Statistics of China, China Population Census Yearbook 2020 (中国人口普查年鉴-2020)
+  31 provinces: the three tables agree on every count, every composition adds up, the provinces make the nation's 1,409,778,724; national median 39.4 from single years, 39.4 from the groups
+  33 first-level records; medians (31.3, 'Tibet Autonomous Region') .. (46.8, 'Liaoning Province')
+  wrote data/processed/china_census_province.json (163 kB)
+  2370 second-level polygons: 2368 mainland ones with their reasons; inside the SARs, ['Xianggang'] with the SAR's own median age and sex ratio and 1 fragment(s) with theirs
+  wrote data/processed/china_census_county.json (11840 kB)
