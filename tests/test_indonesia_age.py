@@ -137,5 +137,12 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(a.key("KABUPATEN ADMINISTRASI KEPULAUAN SERIBU"), "kepulauanseribu")
 
 
+
+class GapTextTest(unittest.TestCase):
+    def test_the_religion_gap_rests_on_the_official_sources_tried(self):
+        # An encyclopaedia is not evidence that a figure does not exist.
+        self.assertNotIn("Wikipedia", a.RELIGION_GAP)
+        self.assertIn("403", a.RELIGION_GAP)
+
 if __name__ == "__main__":
     unittest.main()

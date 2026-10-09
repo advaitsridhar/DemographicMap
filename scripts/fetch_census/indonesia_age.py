@@ -117,10 +117,10 @@ ETHNICITY_GAP = (
     "disability and migration tables -- have no ethnicity.")
 RELIGION_GAP = (
     "No table of this regency's religion could be read. BPS answers this project's reader "
-    "HTTP 403 on every bps.go.id host; the regency's Indonesian Wikipedia infobox cites no "
-    "figure; and neither its own nor its province's open-data portal publishes one "
-    "(docs/SOURCES.md, \"Indonesia: what BPS's refusal left reachable\", lists the 110 portals "
-    "tried). The 2020 census's Long Form tables that reach the regencies have no religion.")
+    "HTTP 403 on every bps.go.id host, and neither the regency's own nor its province's "
+    "open-data portal publishes one (docs/SOURCES.md, \"Indonesia: what BPS's refusal left "
+    "reachable\", lists the 110 portals tried). The 2020 census's Long Form tables that "
+    "reach the regencies have no religion.")
 # Why a regency or province has no language, said wherever no composition
 # stands: the Long Form's first-language table (indonesia_language) is kinds
 # of language, and a survey that fills only if the build reads it.
