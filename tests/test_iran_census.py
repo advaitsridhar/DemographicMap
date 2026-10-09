@@ -149,9 +149,12 @@ class Binding(unittest.TestCase):
         self.assertEqual(by_shape["G"]["population"]["value"], 2 * one)
         self.assertEqual(by_shape["M2"]["population"]["value"], one)
         self.assertEqual(by_shape["M1"]["population"]["value"], 2 * one)
-        afghan = next(s for s in by_shape["G"]["ethnicity"] if s["group"] == "Afghan")
+        afghan = next(s for s in by_shape["G"]["ethnicity"] if s["group"] == "Afghan national")
         self.assertEqual(afghan["count"], 4)
         self.assertEqual(by_shape["g2"]["ethnicity_basis"], "citizenship")
+        # Citizenship is written as a nationality, never as a people's name.
+        groups = {s["group"] for r in rows for s in r["ethnicity"]}
+        self.assertEqual(groups, {"Iranian national", "Afghan national"})
 
     def test_an_unmatched_shahrestan_stops(self):
         counties = self.counties() + [county(27, "2709", "ناشناخته")]
@@ -178,7 +181,125 @@ class Binding(unittest.TestCase):
         self.assertEqual(bound["0622"]["id"], "h")
         self.assertEqual(bound["0626"]["id"], "s")
 
-    def test_a_split_shahrestans_halves_carry_a_stated_gap(self):
+
+# --------------------------------------------------------------------------
+# The shahrestans the map draws as two polygons.
+
+TRIPLE = ["مردوزن", "مرد", "زن"]
+U_MEN, U_WOMEN = [20, 20, 18, 16, 14, 12, 10, 30], [19, 19, 18, 16, 15, 13, 11, 35]
+R_MEN, R_WOMEN = [3, 3, 2, 2, 2, 1, 1, 4], [2, 2, 2, 2, 1, 1, 1, 5]
+S_MEN, S_WOMEN = [0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0]
+
+
+def four_block_sheet(blocks):
+    """A Table 1 sheet with its four blocks: all, urban, rural, unsettled."""
+    total = ([sum(b[0][i] for b in blocks) for i in range(len(blocks[0][0]))],
+             [sum(b[1][i] for b in blocks) for i in range(len(blocks[0][1]))])
+    blocks = [total] + list(blocks)
+    rows = [["", "جدول 1- جمعيت برحسب سن"] + [""] * 12,
+            ["", "سن", "جمع", "", "", "نقاط شهري", "", "", "نقاط روستايي", "", "",
+             "غير ساکن", "", ""],
+            ["", ""] + TRIPLE * 4]
+
+    def line(label, pick):
+        out = ["", label]
+        for men, women in blocks:
+            m, w = pick(men), pick(women)
+            out += [float(m + w), float(m), float(w)]
+        return out
+    rows.append(line("تمامي سنين", sum))
+    labels = ["كمتر از يك ساله"] + [f"{a} ساله" for a in range(1, 7)] + ["7 ساله و بيشتر"]
+    for i, label in enumerate(labels):
+        rows.append(line(label, lambda xs, i=i: xs[i]))
+    return rows
+
+
+SETTLEMENT_HEAD = ["كد", "نام", "كد", "نام", "كد", "نام", "كد", "نام", "شماره حوزه", "كد",
+                   "نام", "كد ركورد", "ShahrTop", "SwDiv", "خانوار", "جمعيت", "مرد", "زن"]
+
+
+def settlement_row(county, district, code, kind, p, m, w, top=None):
+    return ["23", "تهران", county, "x", district, "y", code, "z", None, None, None,
+            str(kind), top, None, 1, p, m, w]
+
+
+def tehran_settlements(city=None):
+    u = (sum(U_MEN) + sum(U_WOMEN), sum(U_MEN), sum(U_WOMEN))
+    city = city or u
+    r = (sum(R_MEN) + sum(R_WOMEN) + sum(S_MEN) + sum(S_WOMEN),
+         sum(R_MEN) + sum(S_MEN), sum(R_WOMEN) + sum(S_WOMEN))
+    county = (u[0] + r[0], u[1] + r[1], u[2] + r[2])
+    rows = [["استان"], SETTLEMENT_HEAD,
+            settlement_row("01", None, None, 2, *county),
+            settlement_row("01", "02", None, 3, *u),
+            settlement_row("01", "02", "1576", 5, *city),
+            settlement_row("01", "02", "1601", 5, 100, 50, 50, top="1576"),
+            settlement_row("01", "02", "1602", 5, city[0] - 100, city[1] - 50, city[2] - 50,
+                           top="1576"),
+            settlement_row("02", None, None, 2, 9, 4, 5)]
+    return rows
+
+
+class Split(unittest.TestCase):
+    def test_a_block_of_table_1_is_read_under_its_heading(self):
+        sheet = four_block_sheet([(U_MEN, U_WOMEN), (R_MEN, R_WOMEN), (S_MEN, S_WOMEN)])
+        urban = ir.parse_ages(sheet, "t", block=1)
+        self.assertEqual(urban["total"], (sum(U_MEN) + sum(U_WOMEN), sum(U_MEN), sum(U_WOMEN)))
+        self.assertEqual(urban["men"][7], 30)
+        unsettled = ir.parse_ages(sheet, "t", block=3)
+        self.assertEqual(unsettled["total"], (3, 2, 1))
+        # A block whose heading is not the one expected stops the run.
+        sheet[1][5] = "جمع"
+        with self.assertRaises(SystemExit):
+            ir.parse_ages(sheet, "t", block=1)
+
+    def test_settlement_rows_of_one_county(self):
+        got = ir.read_settlements(tehran_settlements(), "01", "t")
+        self.assertEqual(got["county"][0], sum(U_MEN + U_WOMEN + R_MEN + R_WOMEN + S_MEN + S_WOMEN))
+        self.assertEqual(set(got["cities"]), {"1576"})
+        self.assertEqual(got["regions"]["1576"], got["cities"]["1576"])
+        self.assertEqual(set(got["districts"]), {"02"})
+
+    def test_regions_that_do_not_make_their_city_stop(self):
+        rows = tehran_settlements()
+        rows[5][15] = 101
+        rows[5][16] = 51
+        with self.assertRaises(SystemExit):
+            ir.read_settlements(rows, "01", "t")
+
+    def test_tehran_the_city_is_the_urban_block(self):
+        sheet = four_block_sheet([(U_MEN, U_WOMEN), (R_MEN, R_WOMEN), (S_MEN, S_WOMEN)])
+        settlements = ir.read_settlements(tehran_settlements(), "01", "t")
+        whole = ir.parse_ages(sheet, "t")
+        made = ir.split_figures("Tehran", settlements, whole, sheet)
+        self.assertEqual(made["part"], [sum(U_MEN) + sum(U_WOMEN), sum(U_MEN), sum(U_WOMEN)])
+        self.assertEqual(made["rest"][0], sum(R_MEN + R_WOMEN + S_MEN + S_WOMEN))
+        self.assertEqual(made["unsettled"], [3, 2, 1])
+        rest = ir.table_from(made["ages"]["rest"])
+        self.assertEqual(rest["men"][3], R_MEN[3] + S_MEN[3])
+        # A city the urban block does not match to the person stops the run.
+        u = (sum(U_MEN) + sum(U_WOMEN), sum(U_MEN), sum(U_WOMEN))
+        wrong = ir.read_settlements(tehran_settlements(city=(u[0] + 1, u[1] + 1, u[2])), "01",
+                                    "t")
+        wrong["county"] = whole["total"]
+        with self.assertRaises(SystemExit):
+            ir.split_figures("Tehran", wrong, whole, sheet)
+        # And so does a settlement table that counts the county otherwise.
+        settlements["county"] = (1, 1, 0)
+        with self.assertRaises(SystemExit):
+            ir.split_figures("Tehran", settlements, whole, sheet)
+
+    def figures(self):
+        sheet = four_block_sheet([(U_MEN, U_WOMEN), (R_MEN, R_WOMEN), (S_MEN, S_WOMEN)])
+        tehran = ir.split_figures("Tehran", ir.read_settlements(tehran_settlements(), "01", "t"),
+                                  ir.parse_ages(sheet, "t"), sheet)
+        isfahan = {"county": [1000, 510, 490], "part": [870, 440, 430], "rest": [130, 70, 60],
+                   "other_cities": 13, "ages": None}
+        mehdishahr = {"county": [47475, 23844, 23631], "part": [16694, 8377, 8317],
+                      "rest": [30781, 15467, 15314], "other_cities": 2, "ages": None}
+        return {"Tehran": tehran, "Isfahan": isfahan, "Mehdishahr": mehdishahr}
+
+    def test_each_half_takes_its_own_count(self):
         a1 = [{"id": "T", "name": "Tehran"}, {"id": "I", "name": "Isfahan"},
               {"id": "S", "name": "Semnan"}]
         a2 = [{"id": "t1", "name": "Tehran", "parent": "T"},
@@ -187,16 +308,25 @@ class Binding(unittest.TestCase):
               {"id": "i2", "name": "Isfahan County", "parent": "I"},
               {"id": "s1", "name": "Mehdishahr", "parent": "S"},
               {"id": "s2", "name": "Shahmirzad", "parent": "S"}]
-        rows = ir.split_records(a1, a2)
-        self.assertEqual(sorted(r["shape_id"] for r in rows),
-                         ["i1", "i2", "s1", "s2", "t1", "t2"])
-        for r in rows:
-            for field in ("population", "median_age", "sex_ratio", "ethnicity"):
-                self.assertEqual(r[field]["status"], "not_available")
-                self.assertIn("describes neither polygon", r[field]["note"])
+        rows = {r["shape_id"]: r for r in ir.split_records(a1, a2, self.figures())}
+        self.assertEqual(sorted(rows), ["i1", "i2", "s1", "s2", "t1", "t2"])
+        self.assertEqual(rows["t2"]["population"]["value"], sum(U_MEN) + sum(U_WOMEN))
+        self.assertIn("median_age", rows["t2"])
+        self.assertIsInstance(rows["t1"]["median_age"]["value"], float)
+        self.assertEqual(rows["i1"]["population"]["value"], 870)
+        self.assertEqual(rows["i2"]["sex_ratio"]["value"], round(100 * 70 / 60, 1))
+        self.assertEqual(rows["i2"]["median_age"]["status"], "not_available")
+        self.assertIn("13 other cities", rows["i2"]["median_age"]["note"])
+        self.assertIn("13 other cities", rows["i2"]["population_note"])
+        self.assertEqual(rows["s2"]["population"]["value"], 16694)
+        self.assertEqual(rows["s1"]["population"]["value"], 30781)
+        for r in rows.values():
+            self.assertEqual(r["ethnicity"]["status"], "not_available")
+            self.assertIn("by shahrestan only", r["ethnicity"]["note"])
+            self.assertEqual(r["match_by"], "shape_id")
         # A half the map does not draw where it should stops the run.
         with self.assertRaises(SystemExit):
-            ir.split_records(a1, a2[1:])
+            ir.split_records(a1, a2[1:], self.figures())
 
 
 def yearbook_pages(swapped=True, yazd_total=1138533):
