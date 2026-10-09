@@ -176,6 +176,110 @@ class Build(unittest.TestCase):
         self.assertEqual(r["level"], "admin1")
         self.assertEqual(r["median_age"]["value"], self.f["median"]["13000"])
         self.assertEqual(r["population"]["status"], "not_available")
+        men, women = self.f["ages"]["13000"]["1"]["00"], self.f["ages"]["13000"]["2"]["00"]
+        self.assertEqual(r["sex_ratio_note"], f"{men:,} men and {women:,} women.")
+        self.assertEqual({s["field"] for s in r["sources"]}, {"median_age", "sex_ratio"})
+
+    def test_a_union_cites_the_table_its_median_comes_from(self):
+        r = self.by_shape["SNUMATA"]
+        self.assertEqual(r["median_age"]["source"], jm.UNION_MEDIAN_SOURCE)
+        self.assertIn("0004019309", r["median_age"]["source"])
+        fields = {s["field"]: s["name"] for s in r["sources"]}
+        self.assertEqual(fields["median_age/sex_ratio"], jm.SEX_SOURCE)
+        self.assertNotIn("median_age", fields)
+        self.assertIn("Numata takes in Showa.", r["sex_ratio_note"])
+        # A municipality on its own still cites the Bureau's medians.
+        alone = {s["field"]: s["name"] for s in self.by_shape["S01201"]["sources"]}
+        self.assertEqual(alone["median_age"], jm.SOURCE)
+
+    def test_every_municipality_states_its_men_and_women(self):
+        r = self.by_shape["S01201"]
+        men, women = self.f["ages"]["01201"]["1"]["00"], self.f["ages"]["01201"]["2"]["00"]
+        self.assertEqual(r["sex_ratio_note"], f"{men:,} men and {women:,} women.")
+
+
+def ages_of(men_by_group, women_by_group):
+    """Five-year groups by sex: {group code: people}, with the all-ages row."""
+    out = {}
+    for sex, groups in (("1", men_by_group), ("2", women_by_group)):
+        row = {a: groups.get(a, 0) for a in AGES}
+        row["00"] = sum(row.values())
+        out[sex] = row
+    return out
+
+
+class Notes(unittest.TestCase):
+    def nat(self, japanese, foreign, unknown=0, **by_code):
+        row = {c: 0 for c in NATIONALITY_CODES}
+        row.update(by_code)
+        row["2"] = japanese
+        row["1"] = foreign
+        row["3"] = unknown
+        row["0"] = japanese + foreign + unknown
+        return row
+
+    def test_a_pool_too_small_to_show_is_counted_not_described(self):
+        # Abu: one Filipino among 3,055 people, the census's own "other" empty.
+        row = self.nat(3029, 26, **{"106": 18, "101": 5, "102": 2, "103": 1})
+        shares, known, unknown, total, sentence = jm.nationality_shares([row])
+        self.assertNotIn(jm.OTHER, {g["group"] for g in shares})
+        self.assertEqual(sentence, " 1 person of another nationality (Filipino), too few to show "
+                                   "at one decimal, is counted in the base but not drawn.")
+
+    def test_a_pool_that_shows_says_what_it_holds(self):
+        row = self.nat(3562, 30, **{"106": 11, "101": 5, "113": 11, "110": 1, "102": 1, "108": 1})
+        shares, *_, sentence = jm.nationality_shares([row])
+        self.assertIn(jm.OTHER, {g["group"] for g in shares})
+        self.assertEqual(sentence, f" '{jm.OTHER}' is the census's own other nationalities and the "
+                                   "3 people of 3 nationalities too few here to show at one decimal "
+                                   "(American, Chinese, Nepalese).")
+
+    def test_a_census_other_too_small_to_show_is_named_as_such(self):
+        row = self.nat(5000, 2, **{"113": 2})
+        shares, *_, sentence = jm.nationality_shares([row])
+        self.assertEqual(sentence, " 2 people of other nationalities (nationalities the census "
+                                   "does not name), too few to show at one decimal, are counted in "
+                                   "the base but not drawn.")
+
+    def test_no_unknown_nationality_reads_as_everyone(self):
+        f = fixture()
+        f["nat"]["01201"]["2"] += f["nat"]["01201"]["3"]
+        f["nat"]["01201"]["3"] = 0
+        r = {x.get("shape_id"): x for x in build(f)}["S01201"]
+        self.assertIn("every one with a recorded nationality", r["ethnicity_note"])
+        self.assertNotIn("left out", r["ethnicity_note"])
+
+    def test_a_far_out_ratio_gives_the_working_ages_and_the_record(self):
+        # Okuma-like: 754 men and 93 women, the men at working ages.
+        men = {"05": 100, "08": 300, "11": 300, "14": 54}
+        women = {"05": 10, "08": 20, "11": 20, "14": 43}
+        ages = {"07545": ages_of(men, women)}
+        nat = {"07545": self.nat(846, 1, **{"113": 1})}
+        note = jm.sex_note(("07545",), ages, nat)
+        self.assertTrue(note.startswith("754 men and 93 women. Among those aged 20 to 64, 1400.0 "
+                                        "men per 100 women (700 men, 50 women); at other ages, "
+                                        "125.6."), note)
+        self.assertIn("evacuation order issued after the 2011 Fukushima Daiichi nuclear accident",
+                      note)
+        self.assertNotIn("foreign nationals", note)
+
+    def test_many_foreign_nationals_are_counted_in_the_note(self):
+        # Kawakami-like: a fifth of the village foreign, men outnumbering women.
+        ages = {"20304": ages_of({"05": 1500, "14": 1090}, {"05": 1000, "14": 754})}
+        nat = {"20304": self.nat(3519, 825, **{"103": 263, "105": 180, "102": 162, "106": 146,
+                                               "113": 74})}
+        note = jm.sex_note(("20304",), ages, nat)
+        self.assertIn(" The census counted 825 foreign nationals here, 19.0% of the people whose "
+                      "nationality it recorded.", note)
+
+    def test_a_usual_ratio_gives_the_counts_only(self):
+        ages = {"01201": ages_of({"05": 100}, {"05": 110})}
+        nat = {"01201": self.nat(200, 10)}
+        self.assertEqual(jm.sex_note(("01201",), ages, nat), "100 men and 110 women.")
+
+    def test_the_context_is_for_far_out_places_only(self):
+        for code in jm.SEX_CONTEXT:
+            self.assertRegex(code, r"^\d{5}$")
 
 
 class Refusals(unittest.TestCase):

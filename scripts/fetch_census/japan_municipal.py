@@ -554,6 +554,35 @@ def prefecture_shapes(units: list[dict[str, Any]]) -> dict[str, tuple[str, str]]
 OTHER = "Other nationalities"
 
 
+def people_count(n: int) -> str:
+    return "1 person" if n == 1 else f"{n:,} people"
+
+
+def pool_sentence(pooled: dict[str, float], moved: list[str], people: int,
+                  census_other: int) -> str:
+    """What the note says of 'Other nationalities': what it holds where it
+    shows, and where it is too few to show, how many people are counted in the
+    base but not drawn -- never a group the composition does not have."""
+    names = ", ".join(sorted(moved))
+    nationalities = "one nationality" if len(moved) == 1 else f"{len(moved)} nationalities"
+    if any(row["group"] == OTHER for row in hundred(pooled)):
+        if not moved:
+            return ""
+        own = "the census's own other nationalities and " if census_other else ""
+        return (f" '{OTHER}' is {own}the {people_count(people)} of {nationalities} too few here "
+                f"to show at one decimal ({names}).")
+    left = unshown(pooled)
+    if not left:
+        return ""
+    listed = ([f"{names}"] if moved else []) + (["nationalities the census does not name"]
+                                               if census_other else [])
+    which = "another nationality" if left == 1 else "other nationalities"
+    verb = "is" if left == 1 else "are"
+    head = people_count(left)
+    return (f" {head[0].upper()}{head[1:]} of {which} ({' and '.join(listed)}), too few to show "
+            f"at one decimal, {verb} counted in the base but not drawn.")
+
+
 def nationality_shares(rows: list[dict[str, int]]) -> tuple[list[dict[str, Any]], int, int, int,
                                                              str]:
     """(shares, people with a recorded nationality, people without, total, a
@@ -561,7 +590,7 @@ def nationality_shares(rows: list[dict[str, int]]) -> tuple[list[dict[str, Any]]
     A nationality too few to show at one decimal is counted in 'Other
     nationalities' rather than dropped, so the counts shown are everyone with
     a recorded nationality, but for the residual itself when it is too small
-    to show, which the sentence then counts."""
+    to show, which the sentence then counts instead of describing it."""
     counts: Counter = Counter()
     unknown = total = 0
     for row in rows:
@@ -571,23 +600,99 @@ def nationality_shares(rows: list[dict[str, int]]) -> tuple[list[dict[str, Any]]
         total += row[CODE_TOTAL]
     known = sum(counts.values())
     pooled, moved, people = pool_small({k: float(v) for k, v in counts.items()}, OTHER)
-    sentence = ""
-    if moved:
-        sentence = (f" The {people:,} people of {len(moved)} nationalities too few here to show "
-                    f"at one decimal ({', '.join(sorted(moved))}) are counted in '{OTHER}'.")
-    left = unshown(pooled)
-    if left:
-        sentence += (f" {left:,} people of other nationalities, too few to show at one decimal, "
-                     "are counted in the base but not drawn.")
+    sentence = pool_sentence(pooled, moved, people, counts[OTHER])
     return hundred(pooled), known, unknown, total, sentence
 
 
-def sources() -> list[dict[str, Any]]:
+def age_sources(union: bool = False) -> list[dict[str, Any]]:
+    """The age tables' citations. A polygon of two municipalities takes its
+    median from 0004019309's five-year groups, as its sex ratio, and cites that
+    table for both."""
+    if union:
+        return [{"field": "median_age/sex_ratio", "name": SEX_SOURCE, "url": SEX_URL,
+                 "license": ESTAT_LICENCE}]
     return [{"field": "median_age", "name": SOURCE, "url": URL, "license": ESTAT_LICENCE},
             {"field": "sex_ratio", "name": SEX_SOURCE, "url": SEX_URL,
-             "license": ESTAT_LICENCE},
-            {"field": "population/ethnicity", "name": NATIONALITY_SOURCE,
-             "url": NATIONALITY_URL, "year": YEAR, "license": ESTAT_LICENCE}]
+             "license": ESTAT_LICENCE}]
+
+
+def nationality_source() -> dict[str, Any]:
+    return {"field": "population/ethnicity", "name": NATIONALITY_SOURCE,
+            "url": NATIONALITY_URL, "year": YEAR, "license": ESTAT_LICENCE}
+
+
+def sources(union: bool = False) -> list[dict[str, Any]]:
+    return age_sources(union) + [nationality_source()]
+
+
+# The median of a polygon that holds two municipalities, interpolated from
+# 0004019309's five-year groups rather than read from 0004019308.
+UNION_MEDIAN_SOURCE = ("Statistics Bureau of Japan, 2020 Census (e-Stat 0004019309, imputed "
+                       "five-year age groups)")
+
+# A sex ratio outside this band gets the working ages apart in its note, from
+# the same five-year groups (20-24 to 60-64), and the foreign nationals where
+# they are FOREIGN_NOTED per cent or more of the people with a nationality:
+# what the census shows about the imbalance, not a cause it does not record.
+USUAL_RATIO = (80.0, 130.0)
+WORKING = tuple(f"{i:02d}" for i in range(5, 14))
+FOREIGN_NOTED = 5.0
+
+# What is on the record about a municipality whose sex ratio is far out: the
+# evacuation orders issued after the 2011 Fukushima Daiichi nuclear accident,
+# as they stood on census day, and the islands of Ogasawara. {JIS code: text}.
+SEX_CONTEXT: dict[str, str] = {
+    "07545": ("On census day, 1 October 2020, most of Okuma was still under the evacuation order "
+              "issued after the 2011 Fukushima Daiichi nuclear accident; it had been lifted for "
+              "the Okawara and Chuyashiki districts in April 2019."),
+    "07543": ("On census day, 1 October 2020, part of Tomioka was still under the evacuation "
+              "order issued after the 2011 Fukushima Daiichi nuclear accident; it had been "
+              "lifted for the rest of the town in April 2017."),
+    "07547": ("On census day, 1 October 2020, most of Namie's land was still under the evacuation "
+              "order issued after the 2011 Fukushima Daiichi nuclear accident; it had been "
+              "lifted for the town's centre and coast in March 2017."),
+    "07548": ("On census day, 1 October 2020, the Noyuki district of Katsurao was still under the "
+              "evacuation order issued after the 2011 Fukushima Daiichi nuclear accident; it had "
+              "been lifted for the rest of the village in June 2016."),
+    "07542": ("The evacuation order issued for Naraha after the 2011 Fukushima Daiichi nuclear "
+              "accident was lifted in September 2015."),
+    "07541": ("Hirono lies 20 to 30 km from the Fukushima Daiichi nuclear plant; after the 2011 "
+              "accident its people were told to prepare to evacuate, an order lifted in "
+              "September 2011."),
+    "13421": ("Besides Chichijima and Hahajima, the village's islands include Iōtō and "
+              "Minami-Torishima, which have no civilian residents and are staffed by the "
+              "Self-Defense Forces and other national agencies."),
+}
+
+
+def per_hundred(men: int, women: int) -> str:
+    return f"{100 * men / women:.1f}" if women else "no women among"
+
+
+def sex_note(codes: tuple[str, ...], ages: dict[str, dict[str, dict[str, int]]],
+             nat: dict[str, dict[str, int]]) -> str:
+    """The men and women, and for a ratio outside USUAL_RATIO what the census
+    shows about it: the working ages apart, the foreign nationals where they
+    are many, and what SEX_CONTEXT records."""
+    men = sum(ages[c]["1"][AGE_TOTAL] for c in codes)
+    women = sum(ages[c]["2"][AGE_TOTAL] for c in codes)
+    note = f"{men:,} men and {women:,} women."
+    if not women or USUAL_RATIO[0] <= 100 * men / women <= USUAL_RATIO[1]:
+        return note
+    work_m = sum(ages[c]["1"].get(g, 0) for c in codes for g in WORKING)
+    work_f = sum(ages[c]["2"].get(g, 0) for c in codes for g in WORKING)
+    note += (f" Among those aged 20 to 64, {per_hundred(work_m, work_f)} men per 100 women "
+             f"({work_m:,} men, {work_f:,} women); at other ages, "
+             f"{per_hundred(men - work_m, women - work_f)}.")
+    foreign = sum(nat[c][CODE_FOREIGN] for c in codes if c in nat)
+    known = sum(nat[c]["2"] + nat[c][CODE_FOREIGN] for c in codes if c in nat)
+    if known and 100 * foreign / known >= FOREIGN_NOTED:
+        note += (f" The census counted {foreign:,} foreign nationals here, "
+                 f"{100 * foreign / known:.1f}% of the people whose nationality it recorded.")
+    for code in codes:
+        if code in SEX_CONTEXT:
+            note += f" {SEX_CONTEXT[code]}"
+    return note
 
 
 def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
@@ -596,15 +701,15 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
     men = sum(ages[c]["1"][AGE_TOTAL] for c in codes)
     women = sum(ages[c]["2"][AGE_TOTAL] for c in codes)
     union = len(codes) > 1
-    extra: dict[str, Any] = {}
+    extra: dict[str, Any] = {"sex_ratio_note": sex_note(codes, ages, nat)}
     if union:
-        med = measure(grouped(ages, codes), unit="years", year=YEAR, source=SEX_SOURCE)
+        med = measure(grouped(ages, codes), unit="years", year=YEAR, source=UNION_MEDIAN_SOURCE)
         extra["median_age_note"] = (
             "Interpolated within the five-year age group from the two municipalities' "
-            "imputed age tables added together, because the Bureau's medians are for each "
-            "municipality alone. " + note)
+            f"imputed age groups (e-Stat {SEX_TABLE}) added together, because the Bureau's "
+            f"medians (e-Stat {TABLE}) are for each municipality alone. " + note)
         extra["population_note"] = note
-        extra["sex_ratio_note"] = note
+        extra["sex_ratio_note"] = f"{extra['sex_ratio_note']} {note}"
     else:
         med = (measure(median[codes[0]], unit="years", year=YEAR, source=SOURCE)
                if codes[0] in median else None)
@@ -612,15 +717,19 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
     if total == 0:
         return empty_record(shape, codes, name)
     where = "these two municipalities" if union else "this municipality"
+    if unknown:
+        base = (f"Shares are of the {known:,} people of {where} whose nationality the census "
+                f"recorded; {unknown:,} ({unknown / total * 100:.1f}% of {total:,}) recorded as "
+                "neither Japanese nor foreign are left out.")
+    else:
+        base = (f"Shares are of all {known:,} people of {where}, every one with a recorded "
+                "nationality.")
     ethnicity_note = (
         f"2020 Population Census (e-Stat table {NATIONALITY_TABLE}): population by "
         "NATIONALITY, not ethnicity, which Japan's census does not ask. 'Japanese' is everyone "
         "holding Japanese nationality, naturalised citizens and people of any ancestry "
-        "included; 'Korean' is the census's 韓国，朝鮮 row. Shares are of the "
-        f"{known:,} people of {where} whose nationality the census recorded; {unknown:,} "
-        f"({(unknown / total * 100) if total else 0:.1f}% of {total:,}) recorded as neither "
-        "Japanese nor foreign are left out." + pooled + (f" {note}" if note else "")
-        + f" Written by the map owner's decision of {DECISION}.")
+        f"included; 'Korean' is the census's 韓国，朝鮮 row. {base}" + pooled
+        + (f" {note}" if note else "") + f" Written by the map owner's decision of {DECISION}.")
     return record(
         f"JPN-{'+'.join(codes)}", name, level="admin2", parent="JPN", country="JPN",
         codes={"jis": "+".join(codes)}, match_by="shape_id", shape_id=shape,
@@ -631,7 +740,7 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
         ethnicity_note=ethnicity_note,
         religion=gap(NOT_COLLECTED, RELIGION_NOTE),
         language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
-        sources=sources())
+        sources=sources(union))
 
 
 # Futaba, in Fukushima, was wholly under an evacuation order on census day
@@ -652,7 +761,7 @@ def empty_record(shape: str, codes: tuple[str, ...], name: str) -> dict[str, Any
         median_age=gap("not_available", EMPTY_NOTE), sex_ratio=gap("not_available", EMPTY_NOTE),
         ethnicity=gap("not_available", EMPTY_NOTE),
         religion=gap(NOT_COLLECTED, RELIGION_NOTE), language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
-        sources=[sources()[2]])
+        sources=[nationality_source()])
 
 
 def build(median: dict[str, float], ages: dict[str, dict[str, dict[str, int]]],
@@ -712,7 +821,8 @@ def build(median: dict[str, float], ages: dict[str, dict[str, dict[str, int]]],
             median_age=measure(median[code], unit="years", year=YEAR, source=SOURCE),
             sex_ratio=sex_ratio(ages[code]["1"][AGE_TOTAL], ages[code]["2"][AGE_TOTAL],
                                 year=YEAR, source=SEX_SOURCE),
-            sources=sources()[:2]))
+            sex_ratio_note=sex_note((code,), ages, nat),
+            sources=age_sources()))
     # Coverage of each prefecture by the polygons written, and their sum
     # never exceeding it.
     covered: Counter = Counter()
