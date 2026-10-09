@@ -59,7 +59,7 @@ every table and add up to their state (within the few people the 2023
 tables' own rows disagree by), so none goes unread; the states add up to the
 country; every
 unit's men and women add up to its total; a published median lies inside the
-five-year group that holds the unit's middle person, and within a year of
+five-year group that holds the unit's middle person, and within half a year of
 the one interpolated in its groups; ethnicity's single groups and its
 mixed answers add up to the unit's people, and religion's and language's
 categories to their tables' totals. In Table P1-4 every line's groups make
@@ -575,10 +575,12 @@ def check_age(unit: str, got: dict[str, Any], year: int) -> None:
 # that holds the middle person; more is a misread.
 GROUP_SLACK = 0.05
 # How far the office's printed median (from single years) may lie from the one
-# interpolated within its own five-year groups: interpolation within a group
-# runs off in small, young populations by up to about half a year here
-# (measured on every state and municipality; see the run's log).
-MEDIAN_SLACK_GROUPED = 1.0
+# interpolated within its own five-year groups. Measured on all 57 states and
+# municipalities with groups (run of 9 October 2026), the widest gap is 0.1
+# years (Malem 2023, 24.5 against 24.4); half a year leaves a small, young
+# unit's coarser interpolation room and still stops a figure read off the
+# wrong row.
+MEDIAN_SLACK_GROUPED = 0.5
 # (difference, unit, year, printed, interpolated) for every unit checked, for the log.
 SPREAD: list[tuple[float, str, int, float, float]] = []
 

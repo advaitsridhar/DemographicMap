@@ -153,7 +153,7 @@ class Layouts(unittest.TestCase):
 
     def test_2023_blocks_one_above_the_other(self):
         rows = b1_2023([
-            {"Gagil": (854, 418, 436, 31.4, (200, 200, 200, 254)),
+            {"Gagil": (854, 418, 436, 31.8, (200, 200, 200, 254)),
              "Rull": (2080, 1007, 1073, 31.0, (520, 500, 500, 560))},
             {"Woleai": (838, 359, 478, 26.1, (250, 250, 170, 168)),
              "Ulithi": (704, 332, 371, 26.4, (200, 200, 150, 154))},
@@ -173,9 +173,9 @@ class Layouts(unittest.TestCase):
             fm.check_age("Gagil", got["Gagil"], 2023)
 
     def test_a_printed_median_outside_its_middle_persons_group_stops_the_run(self):
-        # 426 of 854 are under 30, so the middle person is 30 or over: 29.5 is
-        # another row's, though it is within a year of the groups' 30.1.
-        rows = b1_2023([{"Gagil": (854, 418, 436, 29.5, (200, 226, 200, 228)),
+        # 426 of 854 are under 30, so the middle person is 30 or over: 29.7 is
+        # another row's, though it is within half a year of the groups' 30.1.
+        rows = b1_2023([{"Gagil": (854, 418, 436, 29.7, (200, 226, 200, 228)),
                          "Rull": (2080, 1007, 1073, 31.0, (520, 500, 500, 560))}])
         got = fm.age_sex(rows, ("Gagil", "Rull"))
         self.assertEqual(fm.middle_group(sorted(got["Gagil"]["groups"]))[0], 30)
@@ -183,12 +183,20 @@ class Layouts(unittest.TestCase):
             fm.check_age("Gagil", got["Gagil"], 2023)
         self.assertIn("middle person", str(caught.exception))
 
-    def test_a_printed_median_more_than_a_year_from_its_groups_stops_the_run(self):
-        rows = b1_2023([{"Gagil": (854, 418, 436, 33.4, (200, 200, 200, 254)),
+    def test_a_printed_median_more_than_half_a_year_from_its_groups_stops_the_run(self):
+        # The groups give 32.0, and 32.6 lies inside the middle person's 30-44.
+        rows = b1_2023([{"Gagil": (854, 418, 436, 32.6, (200, 200, 200, 254)),
                          "Rull": (2080, 1007, 1073, 31.0, (520, 500, 500, 560))}])
         got = fm.age_sex(rows, ("Gagil", "Rull"))
-        with self.assertRaises(SystemExit):
+        with self.assertRaises(SystemExit) as caught:
             fm.check_age("Gagil", got["Gagil"], 2023)
+        self.assertIn("its five-year groups give 32.0", str(caught.exception))
+
+    def test_a_printed_median_within_half_a_year_of_its_groups_passes(self):
+        rows = b1_2023([{"Gagil": (854, 418, 436, 32.4, (200, 200, 200, 254)),
+                         "Rull": (2080, 1007, 1073, 31.0, (520, 500, 500, 560))}])
+        got = fm.age_sex(rows, ("Gagil", "Rull"))
+        fm.check_age("Gagil", got["Gagil"], 2023)
 
     def test_2010_side_by_side_blocks_with_their_sexes_on_their_own_rows(self):
         head = ["Age Group", "Total", "Yap Proper", "Gagil", "Rull", "Age Group",
