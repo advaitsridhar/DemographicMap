@@ -69,10 +69,23 @@ A polygon some of whose parts carry no figures for a question -- the Wa
 division's Mongmao, Pangwaun, Narphan and Pangsang carry none for either --
 gets a gap naming them, never the sum of the rest.
 
+A census state's or district's own row, which ``uscb.py`` puts on the polygon
+of its name, can leave out townships the same way: Shan State's row is the
+sum of its townships that carry figures, and the polygon's population and
+median age, which count the Wa division's four, stood beside its shares with
+nothing said. The row stands -- it is the census's figure for the unit -- and
+is written again here with a note naming the townships it leaves out and how
+many people the census's count by sex and age (the workbook's Age-Sex sheet)
+puts in them (``left_out``, ``partial``). The row must be the sum of the
+units under it that carry figures, and the shares must be the ones
+``uscb.py`` publishes for it.
+
 **Checks**, each a refusal: in Myanmar every district's and zone's townships
 make it, group by group, for both questions; every census district and zone
-township is on exactly one polygon; the polygons make the Union's row; and a
-state or region the map draws whole is the sum of the polygons inside it. In
+township is on exactly one polygon; the polygons make the Union's row; a
+state or region the map draws whole is the sum of the polygons inside it; and
+a row that leaves townships out is the sum of the rest, with the shares
+``uscb.py`` publishes for it. In
 the Philippines the region's seventeen places make its row, group by group,
 and every one of them is the First District's or one of the three summed
 here, exactly once.
@@ -105,6 +118,10 @@ GROUP_SLACK = 0.001
 # know: the census calls West Yangon district "YANGON" (myanmar_age.ALIASES),
 # and the site's Yangon (West) carries no religion or ethnicity.
 MMR_BY_ALIAS = frozenset({"Yangon (West)"})
+# The workbook's census count by sex and age, which myanmar_age.py reads: it
+# counts every township, those the religion and ethnicity columns leave empty
+# among them.
+AGE_SHEET = "Age-Sex"
 
 NCR = "National Capital Region"
 # The Philippine Statistics Authority's four districts of the National
@@ -283,11 +300,14 @@ def composition(made: dict[str, Any], relabel: dict[str, str] | None = None
     return shares(dict(counts), total=made["published"] or sum(counts.values()))
 
 
-def fields_of(country: uscb.Country, parts: list[dict[str, Any]], said: str
+def fields_of(country: uscb.Country, parts: list[dict[str, Any]], said: str,
+              left: dict[str, str] | None = None
               ) -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, dict[str, Any]]]:
     """A record's fields from the sum of its parts, its citations, and the sums.
 
     A field some part has no figures for is a gap that names those parts.
+    ``left`` is, per field, what a part's own row leaves out (``left_out``),
+    said after the rest of the note.
     """
     out: dict[str, Any] = {}
     cites: list[dict[str, Any]] = []
@@ -304,7 +324,8 @@ def fields_of(country: uscb.Country, parts: list[dict[str, Any]], said: str
             continue
         out[t.field] = composition(made, country.relabel)
         out[f"{t.field}_year"] = t.year or country.year
-        out[f"{t.field}_note"] = f"{topic_note(country, t)} {said}"
+        out[f"{t.field}_note"] = " ".join(
+            x for x in (topic_note(country, t), said, (left or {}).get(t.field)) if x)
         cites.append({"field": t.field, "name": source,
                       "url": uscb.dataset_url(country.dataset), "year": t.year or country.year,
                       "license": country.licence})
@@ -321,8 +342,150 @@ def described(sums: dict[str, dict[str, Any]]) -> str:
 # Myanmar
 # --------------------------------------------------------------------------
 
+def children(units: list[dict[str, Any]], row: dict[str, Any]) -> list[dict[str, Any]]:
+    """A census state's districts and zones, or a district's or zone's townships."""
+    if row["level"] == 1:
+        return [u for u in units if u["level"] == 2 and fold(u["adm1"]) == fold(row["adm1"])]
+    if row["level"] == 2:
+        return [u for u in units if u["level"] == 3 and fold(u["adm1"]) == fold(row["adm1"])
+                and fold(u["adm2"]) == fold(row["adm2"])]
+    return []
+
+
+def left_out(units: list[dict[str, Any]], row: dict[str, Any], field: str
+             ) -> list[dict[str, Any]]:
+    """The townships (or districts) a state's or district's figures for a field leave out.
+
+    The row stands for the whole unit on the map, but where some of the units
+    under it carry no figures it is the sum of the others -- Shan State's
+    religion leaves out four townships of the Wa division -- and that has to
+    be measured, not assumed: a row that is not the sum of the units under it
+    that carry figures, group by group, refuses the run, and so does a unit
+    with no figures whose own townships have some.
+    """
+    if not has(row, field):
+        return []
+    kids = children(units, row)
+    out: list[dict[str, Any]] = []
+    for kid in kids:
+        if has(kid, field):
+            out += left_out(units, kid, field)
+            continue
+        towns = children(units, kid)
+        if any(has(t, field) for t in towns):
+            raise SystemExit(f"sea_composed: {kid['where']} carries no {field} figures and "
+                             f"some of its townships do")
+        out += towns or [kid]
+    if out:
+        off = differs(row["fields"][field], add(kids, field))
+        if off:
+            raise SystemExit(f"sea_composed: {row['where']}'s {field} is not the sum of the "
+                             f"units under it that carry figures, which leave out "
+                             f"{', '.join(unit_name(t) for t in out)}: {'; '.join(off[:6])}")
+    return out
+
+
+def township_key(adm1: str, adm2: str, adm3: str) -> tuple[str, str, str]:
+    return fold(adm1), fold(adm2), fold(adm3)
+
+
+def census_counts(rows: list[list[Any]]) -> dict[tuple[str, str, str], float]:
+    """Each township's 2014 census count, from the workbook's Age-Sex sheet.
+
+    The sheet counts every township, the Wa division's four among them, which
+    the religion and ethnicity columns carry nothing for.
+    """
+    names, _ = uscb.columns(rows)
+    at = {n: i for i, n in enumerate(names) if n}
+    wanted = ("ADM_LEVEL", "ADM1_NAME", "ADM2_NAME", "ADM3_NAME", "BTOTL")
+    if any(c not in at for c in wanted):
+        raise SystemExit(f"sea_composed: the Age-Sex sheet has no "
+                         f"{[c for c in wanted if c not in at]} column")
+    out: dict[tuple[str, str, str], float] = {}
+    for row in rows[2:]:
+        level = uscb.number(row[at["ADM_LEVEL"]])
+        if level is None or int(level) != 3:
+            continue
+        key = township_key(*(str(row[at[c]] or "").strip()
+                             for c in ("ADM1_NAME", "ADM2_NAME", "ADM3_NAME")))
+        total = uscb.number(row[at["BTOTL"]])
+        if not total or key in out:
+            raise SystemExit(f"sea_composed: the Age-Sex sheet has "
+                             f"{'two rows' if key in out else 'no count'} for {key}")
+        out[key] = total
+    return out
+
+
+def and_join(names: list[str]) -> str:
+    return names[0] if len(names) == 1 else f"{', '.join(names[:-1])} and {names[-1]}"
+
+
+def left_out_note(field: str, towns: list[dict[str, Any]], whole: str,
+                  counted: dict[tuple[str, str, str], float] | None) -> str:
+    """What a figure leaves out, said where it is shown.
+
+    "The table has no religion figures for Mongmao, Pangwaun, Narphan and
+    Pangsang (townships of the Wa Self-Administered Division), in which the 2014
+    census counted N people; these shares are of the rest of Shan State." The
+    people come from the census's own count by sex and age (``counted``).
+    """
+    def place(unit: dict[str, Any]) -> str:
+        return (f"the {unit['adm2'].title()}" if myanmar_age.zone_of(unit["adm2"])
+                else f"{unit['adm2'].title()} district")
+
+    where: dict[str, list[str]] = {}
+    for t in towns:
+        if t["level"] == 3:
+            where.setdefault(place(t), []).append(unit_name(t))
+        else:
+            where.setdefault(place(t), [])
+    said = " or for ".join(
+        f"{and_join(names)} ({'a township' if len(names) == 1 else 'townships'} of {at})"
+        if names else at for at, names in where.items())
+    people = ""
+    if counted is not None:
+        n = 0.0
+        for t in towns:
+            key = township_key(t["adm1"], t["adm2"], t["adm3"])
+            # A district left out whole counts every township under it.
+            hits = ([counted[key]] if t["level"] == 3 and key in counted else
+                    [v for k, v in counted.items() if k[:2] == key[:2]]
+                    if t["level"] == 2 else [])
+            if not hits:
+                raise SystemExit(f"sea_composed: the Age-Sex sheet has no count for "
+                                 f"{t['where']}")
+            n += sum(hits)
+        people = f", in which the 2014 census counted {n:,.0f} people"
+    return (f"The table has no {field} figures for {said}{people}; these shares are of "
+            f"the rest of {whole}.")
+
+
+def caveats(units: list[dict[str, Any]], parts: list[dict[str, Any]], whole: str,
+            fields: tuple[str, ...], counted: dict[tuple[str, str, str], float] | None
+            ) -> dict[str, str]:
+    """Per field, what the parts' own rows leave out, where they leave anything out."""
+    out = {}
+    for field in fields:
+        towns = [t for p in parts for t in left_out(units, p, field)]
+        if towns:
+            out[field] = left_out_note(field, towns, whole, counted)
+    return out
+
+
 def myanmar(units: list[dict[str, Any]], admin1: list[dict[str, Any]],
-            admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+            admin2: list[dict[str, Any]],
+            counted: dict[tuple[str, str, str], float] | None = None,
+            published: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    """The records for the polygons uscb.py's binding by name gets wrong.
+
+    ``counted`` is each township's census count (``census_counts``): with it,
+    a note that names townships a figure leaves out also says how many people
+    the census counted there. ``published`` is uscb.py's own output for
+    Myanmar, which a census row written again here with such a note must
+    match (``partial``).
+    """
+    index = None if published is None else {
+        (r.get("level"), r.get("name"), r.get("parent_name")): r for r in published}
     country = uscb.MYANMAR
     fields = tuple(t.field for t in country.topics)
     check_children(units, fields)
@@ -348,12 +511,19 @@ def myanmar(units: list[dict[str, Any]], admin1: list[dict[str, Any]],
     for sid, cw in sorted(walk.items(), key=lambda kv: names2[kv[0]]):
         name = names2[sid]
         if cw["kind"] != "composed" and name not in MMR_BY_ALIAS:
+            # One census district, whose row uscb.py binds by name -- unless
+            # that row leaves some of its townships out, which is said here.
+            row = cw["units"][0]
+            left = caveats(units, [row], f"{row['adm2'].title()} district", fields, counted)
+            if left:
+                out.append(partial(country, row, left, sid, name, "admin2", index))
             continue
         said = (f"The boundary file draws one polygon here where the census counted "
                 f"{'; '.join(cw['parts'])}, so this is their sum."
                 if cw["kind"] == "composed" else
                 f"The census calls this district {cw['units'][0]['adm2']!r}.")
-        values, cites, sums = fields_of(country, cw["units"], said)
+        values, cites, sums = fields_of(country, cw["units"], said,
+                                        caveats(units, cw["units"], name, fields, counted))
         out.append(record(f"MMR-COMP-{fold(name)}", name, level="admin2", parent="MMR",
                           country="MMR", match_by="shape_id", shape_id=sid,
                           sources=cites, **values))
@@ -378,15 +548,67 @@ def myanmar(units: list[dict[str, Any]], admin1: list[dict[str, Any]],
                 raise SystemExit(f"sea_composed: {region['name']}'s polygons do not make "
                                  f"{' and '.join(held)}'s {f}: {'; '.join(off[:6])}")
         if len(held) == 1:
+            # One census state or region, whose row uscb.py binds by name.
+            # Where some of its townships carry no figures that row is the
+            # sum of the others -- Shan State's leaves out four townships of
+            # the Wa division -- and the polygon's population and ages, which
+            # count them, would otherwise stand beside it unremarked.
+            row = states[fold(held[0])]
+            left = caveats(units, [row], held[0].title(), fields, counted)
+            if left:
+                out.append(partial(country, row, left, region["id"], region["name"], "admin1",
+                                   index))
             continue
         said = (f"The map draws one polygon here where the census counted "
                 f"{' and '.join(h.title() for h in held)}, so this is their sum.")
-        values, cites, sums = fields_of(country, parts, said)
+        values, cites, sums = fields_of(country, parts, said,
+                                        caveats(units, parts, region["name"], fields, counted))
         out.append(record(f"MMR-COMP-R-{fold(region['name'])}", region["name"],
                           level="admin1", parent="MMR", country="MMR", match_by="shape_id",
                           shape_id=region["id"], sources=cites, **values))
         log(f"    {region['name']} (first level): {' and '.join(held)} -- {described(sums)}")
     return out
+
+
+def published_key(row: dict[str, Any]) -> tuple[str, str, str | None]:
+    """How uscb.py names a census state's or district's record: level, name, parent."""
+    if row["level"] == 1:
+        return "admin1", row["adm1"].title(), None
+    return "admin2", row["adm2"].title(), row["adm1"].title()
+
+
+def partial(country: uscb.Country, row: dict[str, Any], left: dict[str, str], sid: str,
+            name: str, level: str,
+            published: dict[tuple[str, str, str | None], dict[str, Any]] | None
+            ) -> dict[str, Any]:
+    """The record of a polygon whose one census row leaves townships out.
+
+    Its figures are the row's own, which uscb.py publishes for the polygon;
+    only the fields whose row leaves something out are written, each with a
+    note that says what. ``published`` is uscb.py's output by
+    ``published_key``: a share written here that is not the one published
+    there means the two readers took the row differently, and the run stops.
+    """
+    values, cites, _ = fields_of(country, [row], "", left)
+    values = {k: v for k, v in values.items()
+              if k in left or any(k == f"{f}{s}" for f in left for s in ("_year", "_note"))}
+    if published is not None:
+        theirs = published.get(published_key(row)) or {}
+        for field in left:
+            shown = theirs.get(field)
+            if not isinstance(shown, list):
+                raise SystemExit(f"sea_composed: no published {field} for {row['where']} to "
+                                 f"hold its figures to")
+            if ({g["group"]: g.get("count") for g in values[field]}
+                    != {g["group"]: g.get("count") for g in shown}):
+                raise SystemExit(f"sea_composed: {row['where']}'s {field} read here is not "
+                                 f"the one published for it")
+    log(f"    {name}: {row['where']}'s own row, which leaves townships out of its "
+        f"{' and '.join(sorted(left))}")
+    tag = "R-" if level == "admin1" else ""
+    return record(f"MMR-PART-{tag}{fold(name)}", name, level=level, parent="MMR",
+                  country="MMR", match_by="shape_id", shape_id=sid,
+                  sources=[c for c in cites if c["field"] in left], **values)
 
 
 # --------------------------------------------------------------------------
@@ -940,13 +1162,16 @@ def with_language(records: list[dict[str, Any]], clear: dict[str, dict[str, Any]
     return out
 
 
-def workbook(country: uscb.Country) -> dict[str, list[list[Any]]]:
+def workbook(country: uscb.Country, extra: tuple[str, ...] = ()
+             ) -> dict[str, list[list[Any]]]:
+    """The country's topic sheets, and the ``extra`` sheets named, from its workbook."""
     import openpyxl
     url = uscb.workbook_url(country.dataset)
     log(f"  {country.name}: {url}")
     book = openpyxl.load_workbook(io.BytesIO(http_get(url, binary=True, cache=False)),
                                   read_only=True, data_only=True)
-    sheets = {t.sheet: uscb.sheet_rows(book, t.sheet) for t in country.topics}
+    sheets = {name: uscb.sheet_rows(book, name)
+              for name in [*(t.sheet for t in country.topics), *extra]}
     book.close()
     return sheets
 
@@ -956,7 +1181,10 @@ def main() -> int:
                             formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
     log("sea_composed: religion and ethnicity on the polygons no one census area is")
     mmr1, mmr2 = drawn("MMR", "admin1"), drawn("MMR", "admin2")
-    records = myanmar(read_units(workbook(uscb.MYANMAR), uscb.MYANMAR.topics), mmr1, mmr2)
+    sheets = workbook(uscb.MYANMAR, extra=(AGE_SHEET,))
+    records = myanmar(read_units(sheets, uscb.MYANMAR.topics), mmr1, mmr2,
+                      counted=census_counts(sheets[AGE_SHEET]),
+                      published=read_json(PROCESSED / uscb.MYANMAR.out, []))
     log(f"  Myanmar's population from {MMR_CODPS}, on the polygons that are not one of its "
         f"rows and on the states and regions:")
     census = {r["shape_id"]: r["population"]["value"]

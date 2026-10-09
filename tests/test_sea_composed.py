@@ -165,6 +165,147 @@ class MyanmarTest(unittest.TestCase):
             self.build(rows)
 
 
+def partial_sheet(rows):
+    """rows: (level, adm1, adm2, adm3, bamar, shan, buddhist, christian), None for no figures."""
+    names = GEO + ["ETH_TOTL", "ETH_BAMR", "ETH_SHAN", "RLG_TOTL", "RLG_BUDD", "RLG_CHRS"]
+    aliases = ["Area", "State", "District", "Township", "Level",
+               "Total population", "Bamar", "Shan", "Total population", "Buddhist",
+               "Christian"]
+    out = [names, aliases]
+    for level, adm1, adm2, adm3, bamar, shan, budd, chri in rows:
+        area = adm3 or adm2 or adm1 or "MYANMAR"
+        eth = [None] * 3 if bamar is None else [bamar + shan, bamar, shan]
+        rlg = [None] * 3 if budd is None else [budd + chri, budd, chri]
+        out.append([area, adm1, adm2, adm3, level, *eth, *rlg])
+    return {"Ethnicity": out}
+
+
+# Shan State as the workbook has it: Kengtung's Mongla and four of the Wa
+# division's six townships carry no figures, and the district's, the
+# division's and the state's own rows are the sums of the rest.
+NONE4 = (None, None, None, None)
+SHAN_TOWNS = [
+    ("KENGTUNG", "KENGTUNG", (10, 20, 25, 5)), ("KENGTUNG", "MONGYANG", (0, 10, 10, 0)),
+    ("KENGTUNG", "MONGLA", NONE4),
+    ("WA SELF-ADMINISTERED DIVISION", "HOPAN", (2, 8, 9, 1)),
+    ("WA SELF-ADMINISTERED DIVISION", "MONGMAO", NONE4),
+    ("WA SELF-ADMINISTERED DIVISION", "PANGWAUN", NONE4),
+    ("WA SELF-ADMINISTERED DIVISION", "MAKMAN", (2, 8, 9, 1)),
+    ("WA SELF-ADMINISTERED DIVISION", "NARPHAN", NONE4),
+    ("WA SELF-ADMINISTERED DIVISION", "PANGSANG", NONE4),
+]
+# The census's count by sex and age, which has every township.
+COUNTED = {s.township_key("SHAN STATE", d, t): n for (d, t, _), n in zip(SHAN_TOWNS, (
+    100, 40, 30, 20, 1000, 200, 25, 300, 400))}
+
+
+def partial_rows(shan_extra=0, kengtung_extra=0):
+    rows, states = [], {}
+
+    def plus(a, b):
+        return tuple(x + y for x, y in zip(a, b))
+    for adm1, adm2, *v in DISTRICTS:
+        if adm2 == "KENGTUNG":
+            continue
+        rows.append((2, adm1, adm2, "", *v))
+        states[adm1] = plus(states.get(adm1, (0, 0, 0, 0)), v)
+    shan = (0, 0, 0, 0)
+    for district in ("KENGTUNG", "WA SELF-ADMINISTERED DIVISION"):
+        made = (0, 0, 0, 0)
+        for d, t, v in SHAN_TOWNS:
+            if d == district:
+                rows.append((3, "SHAN STATE", d, t, *v))
+                if v[0] is not None:
+                    made = plus(made, v)
+        if district == "KENGTUNG":
+            made = plus(made, (kengtung_extra, 0, kengtung_extra, 0))
+        rows.append((2, "SHAN STATE", district, "", *made))
+        shan = plus(shan, made)
+    states["SHAN STATE"] = plus(shan, (shan_extra, 0, shan_extra, 0))
+    for adm1, v in states.items():
+        rows.append((1, adm1, "", "", *v))
+    union = (0, 0, 0, 0)
+    for v in states.values():
+        union = plus(union, v)
+    rows.append((0, "", "", "", *union))
+    return rows
+
+
+class RowsThatLeaveTownshipsOutTest(unittest.TestCase):
+    """Shan State's and Kengtung's rows leave out townships with no figures, and say so."""
+
+    def build(self, rows=None, published=None):
+        units = s.read_units(partial_sheet(rows or partial_rows()), uscb.MYANMAR.topics)
+        return {r["shape_id"]: r for r in s.myanmar(units, ADMIN1, ADMIN2, counted=COUNTED,
+                                                     published=published)}
+
+    def test_the_state_keeps_its_row_and_names_the_townships_it_leaves_out(self):
+        rec = self.build()["S2"]
+        self.assertEqual(rec["id"], "MMR-PART-R-shan")
+        self.assertEqual(rec["level"], "admin1")
+        # The state's own row: Kengtung's 35 + 5 and the division's 18 + 2.
+        self.assertEqual({g["group"]: g["count"] for g in rec["religion"]},
+                         {"Buddhist": 53, "Christian": 7})
+        note = rec["religion_note"]
+        self.assertTrue(note.startswith(uscb.MYANMAR.note), note)
+        self.assertIn("The table has no religion figures for Mongla (a township of Kengtung "
+                      "district) or for Mongmao, Pangwaun, Narphan and Pangsang (townships of "
+                      "the Wa Self-Administered Division), in which the 2014 census counted "
+                      "1,930 people; these shares are of the rest of Shan State.", note)
+        self.assertIn("The table has no ethnicity figures for Mongla", rec["ethnicity_note"])
+        self.assertTrue(rec["ethnicity_note"].startswith("2018 Township Profiles"))
+        self.assertEqual(rec["religion_year"], 2014)
+        self.assertEqual(rec["ethnicity_year"], 2017)
+        self.assertEqual(sorted(c["field"] for c in rec["sources"]), ["ethnicity", "religion"])
+
+    def test_the_district_says_so_too(self):
+        rec = self.build()["D2"]
+        self.assertEqual(rec["level"], "admin2")
+        self.assertEqual({g["group"]: g["count"] for g in rec["religion"]},
+                         {"Buddhist": 35, "Christian": 5})
+        self.assertIn("The table has no religion figures for Mongla (a township of Kengtung "
+                      "district), in which the 2014 census counted 30 people; these shares "
+                      "are of the rest of Kengtung district.", rec["religion_note"])
+
+    def test_a_district_that_leaves_nothing_out_is_left_to_its_own_record(self):
+        recs = self.build()
+        self.assertNotIn("D6", recs)                  # Mandalay district, whole
+        self.assertNotIn("S3", recs)                  # Yangon region, whole
+
+    def test_a_row_that_is_not_the_sum_of_the_rest_refuses(self):
+        for rows in (partial_rows(shan_extra=3), partial_rows(kengtung_extra=3)):
+            with self.assertRaises(SystemExit):
+                self.build(rows)
+
+    def test_the_figures_must_be_the_ones_published_for_the_row(self):
+        recs = self.build()
+        published = [
+            {"level": "admin1", "name": "Shan State", "parent_name": None,
+             "religion": recs["S2"]["religion"], "ethnicity": recs["S2"]["ethnicity"]},
+            {"level": "admin2", "name": "Kengtung", "parent_name": "Shan State",
+             "religion": recs["D2"]["religion"], "ethnicity": recs["D2"]["ethnicity"]}]
+        self.assertEqual(self.build(published=published)["S2"]["religion"],
+                         recs["S2"]["religion"])
+        other = [dict(published[0], religion=[{"group": "Buddhist", "pct": 100.0,
+                                                "count": 60}]), published[1]]
+        with self.assertRaises(SystemExit):
+            self.build(published=other)
+        with self.assertRaises(SystemExit):
+            self.build(published=published[1:])     # nothing published for the state
+
+    def test_census_counts_reads_every_township(self):
+        names = ["ADM_LEVEL", "ADM1_NAME", "ADM2_NAME", "ADM3_NAME", "BTOTL"]
+        rows = [names, ["Level", "State", "District", "Township", "Total"],
+                [2, "SHAN STATE", "KENGTUNG", None, 170],
+                [3, "SHAN STATE", "KENGTUNG", "MONGLA", 30],
+                [3, "Shan State", "Kengtung", "Kengtung", 140]]
+        self.assertEqual(s.census_counts(rows),
+                         {("shanstate", "kengtung", "mongla"): 30.0,
+                          ("shanstate", "kengtung", "kengtung"): 140.0})
+        with self.assertRaises(SystemExit):
+            s.census_counts(rows + [[3, "SHAN STATE", "KENGTUNG", "MONGLA", 31]])
+
+
 NCR_PLACES = ["Manila", "Mandaluyong", "Marikina", "Pasig", "Quezon", "San Juan", "Caloocan",
               "Malabon", "Navotas", "Valenzuela", "Las Piñas", "Makati", "Muntinlupa",
               "Parañaque", "Pasay", "Pateros", "Taguig"]
