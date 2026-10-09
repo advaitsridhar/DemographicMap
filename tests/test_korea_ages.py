@@ -114,6 +114,27 @@ class Build(unittest.TestCase):
         r = self.by_shape["S-Incheon-Ongjin-gun"]
         self.assertIn("the country itself", r["sex_ratio_note"])
 
+    def test_a_province_says_which_districts_its_polygon_leaves_out(self):
+        # Gunwi joined Daegu in 2023 and the boundary file draws it, with
+        # Dalseong, inside North Gyeongsang: Daegu's figures count both, as
+        # its population does, and both provinces' notes say so.
+        daegu = self.by_shape["P-Daegu"]["median_age_note"]
+        self.assertIn("The boundary file draws Dalseong-gun and Gunwi-gun inside North "
+                      "Gyeongsang's polygon: the figures here are the register's for the whole "
+                      "province, those districts included", daegu)
+        gyeongbuk = self.by_shape["P-North Gyeongsang"]["sex_ratio_note"]
+        self.assertIn("Uljin-gun inside Gangwon's polygon", gyeongbuk)
+        self.assertIn("It also draws Daegu's Dalseong-gun and Gunwi-gun inside this "
+                      "province's polygon; they are counted with the province the register "
+                      "files them under, not here.", gyeongbuk)
+        incheon = self.by_shape["P-Incheon"]["median_age_note"]
+        self.assertIn("Seo-gu, Gyeyang-gu and Ganghwa-gun inside Gyeonggi's polygon; "
+                      "Ongjin-gun outside every province's polygon", incheon)
+        self.assertIn("The boundary file draws Seoul's Eunpyeong-gu; Incheon's Seo-gu, "
+                      "Gyeyang-gu and Ganghwa-gun inside this province's polygon",
+                      self.by_shape["P-Gyeonggi"]["median_age_note"])
+        self.assertNotIn("boundary file", self.by_shape["P-Jeju"]["median_age_note"])
+
     def test_province(self):
         r = self.by_shape["P-Jeju"]
         self.assertEqual(r["level"], "admin1")

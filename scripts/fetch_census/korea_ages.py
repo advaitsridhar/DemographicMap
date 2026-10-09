@@ -33,7 +33,12 @@ the boundary file draws it under where that is not its own (twenty of the
 228 are drawn under a neighbour, three under the country). A city's own
 districts (수원시 장안구) are listed beside the city and are skipped: the city
 is what the boundary file draws. Jeonnam's Yeonggwang-gun has no polygon
-and counts only towards its province.
+and counts only towards its province. A province's figures are the
+register's for its whole territory, as is the population the map shows for
+it, and where the boundary file draws one of its districts under a
+neighbour (Daegu's Dalseong and Gunwi under North Gyeongsang) both
+provinces' notes say so: the district is counted where the register files
+it.
 
 **Checks**, each a refusal: in every row the years of age add up to the
 연령구간인구수 and that to the 총인구수, for both sexes and each sex; men and
@@ -280,6 +285,43 @@ def note_for(cell: dict[str, Any], where: str) -> tuple[str, str]:
             f"{base} {men:,} men and {women:,} women.")
 
 
+def listed(names: list[str]) -> str:
+    return names[0] if len(names) == 1 else f"{', '.join(names[:-1])} and {names[-1]}"
+
+
+def drawn_note(province: str) -> str:
+    """What a province's figures hold that its polygon does not draw, and
+    what its polygon draws that its figures do not. The boundary file puts
+    seventeen districts under a neighbour or under no province at all
+    (``DRAWN_ELSEWHERE``): Daegu's polygon holds neither Dalseong nor Gunwi,
+    and Gwangju's holds one of its five districts. The province's figures
+    stay the register's for its whole territory, as its population on the
+    map does; the note says which ground that is."""
+    def plain(name: str) -> str:
+        return re.sub(r"\s*\[.*\]$", "", name)
+    away: dict[str, list[str]] = {}
+    held: dict[str, list[str]] = {}
+    for (home, name), under in DRAWN_ELSEWHERE.items():
+        if home == province:
+            away.setdefault(under, []).append(plain(name))
+        if under and under == province:
+            held.setdefault(home, []).append(plain(name))
+    out = []
+    if away:
+        parts = [f"{listed(names)} inside {under}'s polygon" if under else
+                 f"{listed(names)} outside every province's polygon"
+                 for under, names in away.items()]
+        out.append(f"The boundary file draws {'; '.join(parts)}: the figures here are the "
+                   "register's for the whole province, those districts included, as is the "
+                   "population the map shows for it.")
+    if held:
+        parts = [f"{home}'s {listed(names)}" for home, names in held.items()]
+        out.append(f"{'It also draws' if away else 'The boundary file draws'} "
+                   f"{'; '.join(parts)} inside this province's polygon; they are counted with "
+                   "the province the register files them under, not here.")
+    return " ".join(out)
+
+
 def unit_record(rid: str, name: str, *, level: str, parent: str, shape: str,
                 cell: dict[str, Any], where: str, extra_note: str = "",
                 **extra: Any) -> dict[str, Any]:
@@ -315,7 +357,7 @@ def build(table: list[list[str]], admin1: list[dict[str, Any]],
             raise SystemExit(f"korea_ages: no drawn province called {province!r}")
         records.append(unit_record(f"KOR-{province}", province, level="admin1", parent="KOR",
                                    shape=province_shapes[province], cell=cell,
-                                   where="this province"))
+                                   where="this province", extra_note=drawn_note(province)))
     bound: dict[str, tuple[str, str]] = {}
     unknown: list[str] = []
     for (province, word), cell in sorted(districts.items()):
