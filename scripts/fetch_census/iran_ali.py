@@ -369,8 +369,7 @@ def parse_shares(text: str) -> tuple[dict[str, float], str]:
         shares[name] = shares.get(name, 0.0) + float(found.group("pct"))
     total = sum(shares.values())
     if abs(total - 100.0) > SHARE_TOLERANCE:
-        return {}, (f"its shares add to {total:g}%, not to 100 "
-                    f"(tolerance {SHARE_TOLERANCE}%)")
+        return {}, f"its shares add to {total:g}%, not to 100"
     return shares, ""
 
 
@@ -544,7 +543,6 @@ def collect(rows: list[dict[str, str]]) -> tuple[Unit, dict[str, Unit], list[str
             place = ((row.get("city_roman") or "").strip()
                      or (row.get("settlement_roman") or "").strip()
                      or (row.get("local_name") or "").strip()
-                     or (row.get("ALI_unique_ID_place") or "").strip()
                      or "an unnamed place")
             province.add(row, place)
             if county is not None:

@@ -215,6 +215,15 @@ class TheShareParser(unittest.TestCase):
         self.assertEqual(province["language"]["settlements_refused"], 1)
         self.assertIn("Bābārshāni (200 people)", province["language"]["note"])
         self.assertIn("add to 80%", province["language"]["note"])
+        self.assertNotIn("tolerance", province["language"]["note"])
+
+    def test_a_refused_place_without_a_name_is_not_called_by_its_atlas_id(self):
+        rows = province_rows(second_language="Turkic 60%; Southern Kurdish 20%")
+        rows[-1] = rows[-1].replace('"Bābārshāni"', '""')
+        records, _, _ = build(rows)
+        note = only(records, "Kurdistan")["language"]["note"]
+        self.assertIn("an unnamed place (200 people)", note)
+        self.assertNotIn("1120005", note)
 
 
 class TheWeights(unittest.TestCase):
