@@ -1,9 +1,83 @@
-https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat23.xls: HTTP 200 320,000 B
-  sheets (16): ['تهران2301', 'دماوند2302', 'رئ2303', 'شميرانات2304', 'ورامين2306', 'شهريار2309', 'اسلامشهر2310', 'رباطكريم2312', 'پاكدشت2313', 'فيروزكوه2314', 'قدس2316', 'ملارد2317', 'پيشوا2318', 'بهارستان2319', 'پرديس2320', 'قرچک2321']
-  -- 'تهران2301'
-  r3: جدول 1- جمعيت 
-  r5: سن | جمع | نقاط شهري | نقاط روستايي | غير ساکن
-  r6: مردوزن | مرد | زن | مردوزن | مرد | زن | مردوزن | مرد | زن | مردوزن | مرد | زن
-  r7: تمامي سنين | 8737510.0 | 4347534.0 | 4389976.0 | 8693706.0 | 4324155.0 | 4369551.0 | 43221.0 | 22895.0 | 20326.0 | 583.0 | 484.0 | 99.0
-  r8: 0-4 ساله | 541180.0 | 277964.0 | 263216.0 | 537137.0 | 275943.0 | 261194.0 | 4038.0 | 2019.0 | 2019.0 | 5.0 | 2.0 | 3.0
-  ... more rows; stopped at 5
+thailand_nationality: 2000 census, provincial final reports' key indicators
+  Table 1: 76 provinces making the kingdom's 60,916,441
+  Phuket: the report prints 249.5 thousand, Table 1 counts 249,446
+  76 reports' populations agree with Table 1 and their Buddhist shares with thailand_province.json
+  the provinces weighted by Table 1: 99.28% of Thai nationality
+    Amnat Charoen Province           Thai 99.8, Foreign nationals 0.2
+    Ang Thong Province               Thai 99.8, Foreign nationals 0.2
+    Bangkok                          Thai 99.0, Foreign nationals 1.0
+    Buri Ram Province                Thai 99.8, Foreign nationals 0.2
+    Chachoengsao Province            Thai 99.8, Foreign nationals 0.2
+    Chai Nat Province                Thai 99.8, Foreign nationals 0.2
+    Chaiyaphum Province              Thai 99.9, Foreign nationals 0.1
+    Chanthaburi Province             Thai 99.8, Foreign nationals 0.2
+    Chiang Mai Province              Thai 96.6, Foreign nationals 3.4
+    Chiang Rai Province              Thai 92.0, Foreign nationals 8.0
+    Chon Buri Province               Thai 99.4, Foreign nationals 0.6
+    Chumphon Province                Thai 99.2, Foreign nationals 0.8
+    Kalasin                          Thai 99.8, Foreign nationals 0.2
+    Kamphaeng Phet Province          Thai 99.8, Foreign nationals 0.2
+    Kanchanaburi Province            Thai 96.0, Foreign nationals 4.0
+    Khon Kaen Province               Thai 99.8, Foreign nationals 0.2
+    Krabi Province                   Thai 99.8, Foreign nationals 0.2
+    Lampang Province                 Thai 99.8, Foreign nationals 0.2
+    Lamphun Province                 Thai 99.8, Foreign nationals 0.2
+    Loei Province                    Thai 99.4, Foreign nationals 0.6
+    Lopburi Province                 Thai 99.8, Foreign nationals 0.2
+    Mae Hong Son Province            Thai 94.0, Foreign nationals 6.0
+    Maha Sarakham Province           Thai 99.9, Foreign nationals 0.1
+    Mukdahan Province                Thai 99.2, Foreign nationals 0.8
+    Nakhon Nayok Province            Thai 99.8, Foreign nationals 0.2
+    Nakhon Pathom Province           Thai 99.8, Foreign nationals 0.2
+    Nakhon Phanom Province           Thai 99.5, Foreign nationals 0.5
+    Nakhon Ratchasima Province       Thai 99.8, Foreign nationals 0.2
+    Nakhon Sawan Province            Thai 99.4, Foreign nationals 0.6
+    Nakhon Si Thammarat Province     Thai 99.9, Foreign nationals 0.1
+    Nan Province                     Thai 99.7, Foreign nationals 0.3
+    Narathiwat Province              Thai 99.8, Foreign nationals 0.2
+    Nong Bua Lam Phu Province        Thai 99.9, Foreign nationals 0.1
+    Nong Khai Province               Thai 99.5, Foreign nationals 0.5
+    Nonthaburi Province              Thai 99.6, Foreign nationals 0.4
+    Pathum Thani Province            Thai 99.7, Foreign nationals 0.3
+    Pattani Province                 Thai 99.9, Foreign nationals 0.1
+    Phangnga Province                Thai 97.8, Foreign nationals 2.2
+    Phatthalung Province             Thai 99.9, Foreign nationals 0.1
+    Phayao Province                  Thai 99.6, Foreign nationals 0.4
+    Phetchabun Province              Thai 99.8, Foreign nationals 0.2
+    Phetchaburi Province             Thai 99.7, Foreign nationals 0.3
+    Phichit Province                 Thai 99.9, Foreign nationals 0.1
+    Phitsanulok Province             Thai 99.8, Foreign nationals 0.2
+    Phra Nakhon Si Ayutthaya Province Thai 99.8, Foreign nationals 0.2
+    Phrae Province                   Thai 99.9, Foreign nationals 0.1
+    Phuket Province                  Thai 98.5, Foreign nationals 1.5
+    Prachin Buri Province            Thai 99.8, Foreign nationals 0.2
+    Prachuap Khiri Khan Province     Thai 99.3, Foreign nationals 0.7
+    Ranong Province                  Thai 93.4, Foreign nationals 6.6
+    Ratchaburi Province              Thai 99.3, Foreign nationals 0.7
+    Rayong Province                  Thai 99.7, Foreign nationals 0.3
+    Roi Et Province                  Thai 99.9, Foreign nationals 0.1
+    Sa Kaeo Province                 Thai 99.7, Foreign nationals 0.3
+    Sakon Nakhon Province            Thai 99.8, Foreign nationals 0.2
+    Samut Prakan Province            Thai 99.8, Foreign nationals 0.2
+    Samut Sakhon Province            Thai 99.0, Foreign nationals 1.0
+    Samut Songkhram Province         Thai 99.6, Foreign nationals 0.4
+    Saraburi Province                Thai 99.6, Foreign nationals 0.4
+    Satun Province                   Thai 99.9, Foreign nationals 0.1
+    Si Sa Ket Province               Thai 99.9, Foreign nationals 0.1
+    Sing Buri Province               Thai 99.8, Foreign nationals 0.2
+    Songkhla Province                Thai 99.8, Foreign nationals 0.2
+    Sukhothai Province               Thai 99.8, Foreign nationals 0.2
+    Suphan Buri Province             Thai 99.8, Foreign nationals 0.2
+    Surat Thani Province             Thai 99.7, Foreign nationals 0.3
+    Surin Province                   Thai 99.5, Foreign nationals 0.5
+    Tak Province                     Thai 93.3, Foreign nationals 6.7
+    Trang Province                   Thai 99.8, Foreign nationals 0.2
+    Trat Province                    Thai 97.0, Foreign nationals 3.0
+    Ubon Ratchathani Province        Thai 99.7, Foreign nationals 0.3
+    Udon Thani Province              Thai 99.8, Foreign nationals 0.2
+    Uthai Thani Province             Thai 99.9, Foreign nationals 0.1
+    Uttaradit Province               Thai 99.7, Foreign nationals 0.3
+    Yala Province                    Thai 99.8, Foreign nationals 0.2
+    Yasothon Province                Thai 99.9, Foreign nationals 0.1
+  wrote data/processed/thailand_nationality.json (140 kB)
+  wrote thailand_nationality.json: 77 records
