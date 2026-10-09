@@ -179,7 +179,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "BTN": {
         "religion": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either.",
         "language": "Bhutan's census does not ask language or mother tongue.",
-        "ethnicity": "Bhutan's census does not ask ethnicity. It publishes citizenship -- the Bhutanese and everyone else, by dzongkhag and by gewog (each dzongkhag report's Tables 2.1 and 2.2) -- which this map shows on the ethnicity field under its basis, by its owner's decision of 19 September 2026, wherever the two tables reconcile.",
+        "ethnicity": "Bhutan's census does not ask ethnicity. It publishes citizenship -- the Bhutanese and everyone else, by dzongkhag and by gewog (each dzongkhag report's Tables 2.1 and 2.2) -- which this map shows on the ethnicity field under its basis, wherever the two tables reconcile.",
     },
     "FRA": {
         "ethnicity": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007).",
@@ -280,13 +280,17 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # seven-group "ethnicity" composition with no year and no note.
     #
     # That composition is the Factbook's Ethnic groups vector, and for Pakistan
-    # it is the 1998 census's *mother tongue* shares with the labels swapped:
-    # Pashto printed as Pashtun, Urdu as Muhajir. The map already carries those
-    # figures, correctly, on the language field. Publishing them again under
-    # ethnicity is the mis-match this project treats as worse than a gap --
-    # invisible, because it looks like an answer.
+    # it follows the census's *mother tongue* groups under ethnic names: Pashto
+    # printed as Pashtun, Urdu as Muhajir. The map carries the census's own
+    # figures, correctly, on the language field.
+    #
+    # Since the instruction of 27 September 2026 a Factbook line stands where
+    # the census does not ask, with this declaration as its note
+    # (fetch_factbook.factbook_notes), so the country row shows the vector. The
+    # declaration therefore says what the vector is rather than that it is not
+    # used: it said "so it is not used here" above the very figure on screen.
     "PAK": {
-        "ethnicity": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked. Its count of nationality -- Pakistani or not, by district (Table 10 of the 2023 census) -- is shown on the ethnicity field under its basis, by the map owner's decision of 19 September 2026. The Bureau publishes no Table 10 for Gilgit-Baltistan or for Azad Jammu and Kashmir, which it tabulates apart from the four provinces, so their units carry no nationality.",
+        "ethnicity": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups line for Pakistan follows the census's mother-tongue groups under ethnic names (Pashto speakers as Pashtun, Urdu speakers as Muhajir) and gives no year; the census's own mother-tongue counts are on the language field, which is the question that was actually asked. Its count of nationality -- Pakistani or not, by district (Table 10 of the 2023 census) -- is shown on the ethnicity field of the provinces and districts under its basis. The Bureau publishes no Table 10 for Gilgit-Baltistan or for Azad Jammu and Kashmir, which it tabulates apart from the four provinces, so their units carry no nationality.",
     },
     # Measured against e-Stat's catalogue rather than against the census
     # questionnaire alone -- see docs/SOURCES.md. The catalogue is the reason
@@ -304,7 +308,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # hold the substance of the declarations that used to sit here -- and an
     # entry here would make check_no_estimate_on_policy_field refuse it.
     "IND": {
-        "ethnicity": "India does not collect ethnicity; Scheduled Caste and Scheduled Tribe shares and mother tongue are collected instead. Its census does count place of birth (table D-01, 2011), which this map shows on the ethnicity field under its basis, by its owner's decision of 19 September 2026, for every state and for every district drawn as the 2011 census counted it. A district created, divided or cut down since has no count of its own.",
+        "ethnicity": "India does not collect ethnicity; Scheduled Caste and Scheduled Tribe shares and mother tongue are collected instead. Its census does count place of birth (table D-01, 2011), which this map shows on the ethnicity field under its basis, for every state and for every district drawn as the 2011 census counted it. A district created, divided or cut down since has no count of its own.",
     },
     # Laos asks ethnicity and religion and is here for the third field only.
     # Measured rather than assumed, the way Bhutan's declaration was: the 2015
@@ -634,7 +638,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # near-universal is a true sentence and not a published figure.
     "MDV": {
         "religion": "The Maldives census does not ask religion. The only question on its form about who a person is asks nationality -- Maldivian or foreigner -- and no output of the 2022 round, across some sixty published tables, is a religion table. The constitution requires a citizen to be Muslim; that is the law, not a count, and no census figure for it exists.",
-        "ethnicity": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables, and this map shows it on the ethnicity field under its basis, by its owner's decision of 19 September 2026, for every atoll and island the 2022 atoll sheet gives it for.",
+        "ethnicity": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables, and this map shows it on the ethnicity field under its basis, for every atoll and island the 2022 atoll sheet gives it for.",
         "language": "The Maldives census does not ask language. It asks literacy in mother tongue and literacy in English -- Census 2022 tables ED1, ED2, ED16 and ED3-ED4 -- which count an ability and never record which language the mother tongue is. Dhivehi being near-universal is not a figure the census published.",
     },
     "VEN": {

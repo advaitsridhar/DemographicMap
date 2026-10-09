@@ -5046,11 +5046,24 @@ class RollUpVintage(unittest.TestCase):
         # Finland's register; the country carried 5,550,449 for 2025 from the
         # Factbook. An itemised count against a general estimate, with the
         # language shares already taken from the register.
+        # That is a country's estimate, so roll_up_countries says so.
         parent = {"population": {"value": 5_550_449, "year": 2025}}
         be.roll_up_field(parent, [self.kid(5_652_881, 2025)], "religion",
-                         whole_country=True)
+                         whole_country=True, restate_same_year=True)
         self.assertEqual(parent["population"]["value"], 5_652_881)
         self.assertIn("5,550,449", parent["population_note"])
+
+    def test_a_first_level_count_of_the_same_year_is_not_replaced_by_a_sum(self):
+        # Kinmen's five drawn townships added up to 136,611 against the
+        # county's registered 137,208, both for August 2026: the register's
+        # sixth township was drawn apart from the county. A same-year count
+        # that the children fall short of is not an estimate they improve on.
+        parent = {"population": {"value": 137_208, "year": 2026}}
+        self.assertIsNone(be.roll_up_field(parent, [self.kid(136_611, 2026)],
+                                           "religion"))
+        self.assertEqual(parent["population"]["value"], 137_208)
+        self.assertNotIn("population_note", parent)
+        self.assertEqual(parent["religion"][0]["group"], "Muslim")
 
     def test_a_population_the_children_agree_with_is_left_alone(self):
         # Ladakh's Leh and Kargil sum to exactly the 274,289 Wikidata gives it.
@@ -8696,7 +8709,10 @@ class CountryDetail(unittest.TestCase):
     def test_every_row_names_a_country_a_field_and_a_note(self):
         for row in self.rows():
             self.assertRegex(row.get("country", ""), r"^[A-Z]{3}$", row)
-            self.assertIn(row.get("field"), ("religion", "language", "ethnicity"))
+            # A census figure for the country (population, median age, sex
+            # ratio) or one of the three compositions.
+            self.assertIn(row.get("field"), ("religion", "language", "ethnicity",
+                                              *be.FIGURE_ROWS))
             self.assertGreater(len(row.get("note", "")), 80,
                                f"{row['country']} {row['field']}: a note that "
                                f"does not explain is worse than none")

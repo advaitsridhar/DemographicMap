@@ -42,6 +42,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import canonical_groups
 import group_tree
+from fetch_geonames import SPANS as GEONAMES_SPANS  # noqa: E402
 from common import (  # noqa: E402
     DERIVED, MODELLED, NOT_APPLICABLE, NOT_AVAILABLE, NOT_COLLECTED, PROCESSED,
     RAW, ROOT,
@@ -270,7 +271,6 @@ ADAPTER_FILES = [
     # Afghan district ethnicity read from the development plans' own PDFs (the
     # Internet Archive's copies): where a plan states shares they replace the
     # articles' transcription above, whose year is a range and so decides nothing.
-    # [BLOCKED: registering this file crashes build_entities.py (see problems). Do not register until afghanistan.py writes an integer ethnicity_year or roll_up_field tolerates a string year. When it lands it goes directly after "afghanistan_district.json", i.e. directly above "afghanistan_estimates.json".]
     "afghanistan_ddp.json",
     # The statistics office's 1396 (2017-18) estimates by district and province:
     # settled population and sex ratio, temporary districts summed into the
@@ -2175,6 +2175,78 @@ def weigh_adm2_parents(
     return moved, unplaced
 
 
+# Second-level polygons whose first-level unit the geometry cannot give, or
+# gives wrongly, declared with the unit the census files them under:
+# {shapeID: (ISO3, the first-level unit's name as the boundary file labels it)}.
+# Geometry stays the rule (see link_adm2_parents); this is for the two ways it
+# fails that no rule can see, each entry with the count that shows it.
+#
+# The parent is not decoration. It is what a first-level unit's sum is taken
+# over, so a child filed elsewhere is a child that sum leaves out: Kinmen's five
+# drawn townships added up to 136,611 against the county's registered 137,208,
+# and the sum replaced the count.
+DECLARED_PARENTS: dict[str, tuple[str, str]] = {
+    # Wuqiu township lies off the Fujian coast, about a degree from both Kinmen
+    # and the Matsu Islands, and its polygon meets no first-level one. The
+    # household register files it under Kinmen County: its register code
+    # 09020060 is Kinmen's (09020), its register name 金門縣烏坵鄉, and
+    # Kinmen's 137,208 registered people are its six townships' to the person,
+    # Wuqiu's 597 included (taiwan_township, taiwan_county).
+    "52511910B62500214534323": ("TWN", "Kinmen"),
+    # The polygon CGAZ labels the Phoenix Islands reaches across to Tarawa and
+    # Banaba, so these four fall inside it by area (90-99% of each). The 2020
+    # census counts all four in the Gilbert Islands group, whose 108,145 people
+    # are theirs and sixteen other islands' (kiribati_census); the Phoenix
+    # Islands' 41 are Kanton's.
+    "32618148B87111691848014": ("KIR", "Gilbert Islands"),     # Banaba
+    "32618148B78495147867108": ("KIR", "Gilbert Islands"),     # Betio
+    "32618148B16368966755916": ("KIR", "Gilbert Islands"),     # Tarawa Ieta
+    "32618148B40735312671902": ("KIR", "Gilbert Islands"),     # Tarawa Teinainano
+}
+
+
+def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
+                    declared: dict[str, tuple[str, str]] | None = None) -> list[str]:
+    """Give the declared second-level polygons the first-level unit they belong to.
+
+    A declaration names its unit by the boundary file's label, so it reads as
+    what it claims; the label must name exactly one first-level shape of that
+    country, and the polygon must be drawn in it. Either failing stops the
+    build: a stale declaration would file a district under nothing, or under
+    a namesake, and say nothing.
+    """
+    declared = DECLARED_PARENTS if declared is None else declared
+    by_name: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for row in adm1:
+        by_name[(row["group"], row["name"])].append(row)
+    seen: set[str] = set()
+    done: list[str] = []
+    for row in adm2:
+        wanted = declared.get(row.get("shape_id") or "")
+        if wanted is None:
+            continue
+        iso3, name = wanted
+        if row["group"] != iso3:
+            raise SystemExit(
+                f"DECLARED_PARENTS: {row['shape_id']} ({row['name']}) is drawn in "
+                f"{row['group']}, not {iso3}")
+        found = by_name.get((iso3, name), [])
+        if len(found) != 1:
+            raise SystemExit(
+                f"DECLARED_PARENTS: {iso3} draws {len(found)} first-level shapes "
+                f"labelled {name!r}, where {row['name']} needs exactly one")
+        was = row.get("parent_shape")
+        row["parent_shape"] = found[0]["shape_id"]
+        seen.add(row["shape_id"])
+        if was != row["parent_shape"]:
+            done.append(f"{row['name']} ({iso3}) under {name}")
+    missing = sorted(set(declared) - seen)
+    if missing:
+        raise SystemExit(f"DECLARED_PARENTS: no second-level shape drawn with id "
+                         f"{', '.join(missing)}")
+    return done
+
+
 # ---------------------------------------------------------------------------
 # Attribute side
 # ---------------------------------------------------------------------------
@@ -2195,8 +2267,16 @@ def weigh_adm2_parents(
 # front of the count -- 6.5-6.9% above it, over the census's ages, sexes and
 # religions -- where cod_ps_admin2.json's own entry says the office's census
 # file should win. A projection is not a count.
+# Nepal's is the same case. OCHA's table is the 2023 projection of the 77
+# districts; nepal_district.json counts all 75 the map draws in the 2021
+# census, the census every other field of those districts comes from, and
+# the provinces carry the same census. The projection stood on 64 of them by
+# year, so a district's median-age note quoted one head count (Kathmandu's
+# 2,041,587) beside another (2,181,575), and Bagmati's districts added up to
+# 6,475,167 against the province's 6,116,866.
 SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
+                           "NPL": "nepal_district.json",
                            "SLB": "solomon_census.json"},
 }
 
@@ -2248,20 +2328,35 @@ def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
 # quarter of the country -- the question the reader has is what is inside it,
 # and the Factbook's line cannot answer it.
 #
-# Two kinds of answer go in data/curated/admin0_detail.json. A row with
-# ``groups`` replaces the field with a census's own division of it, which is
-# always the better answer and is used wherever such a table exists -- or,
-# where the census does not ask, a survey's, marked as one by its ``basis``
-# (the European Social Survey's pooled national samples). A row with
-# only a ``note`` says what the bucket holds and why it is not divided, which
-# is what is left when the census published one number and no break-up of it.
-# Neither invents a split.
+# Three kinds of answer go in data/curated/admin0_detail.json for a
+# composition. A row with ``groups`` replaces the field with a census's own
+# division of it, which is always the better answer and is used wherever such
+# a table exists -- or, where the census does not ask, a survey's, marked as
+# one by its ``basis`` (the European Social Survey's pooled national samples).
+# A row with only a ``note`` says what the bucket holds and why it is not
+# divided, which is what is left when the census published one number and no
+# break-up of it. A row with a ``status`` replaces a line that is not a
+# composition at all with a stated gap -- Kazakhstan's Factbook "languages" are
+# the shares of people who know Kazakh, Russian and English, 199% in all. None
+# of them invents a split.
+#
+# And a row for ``population``, ``median_age`` or ``sex_ratio`` gives the
+# country a census's own figure where the Factbook's estimate cannot be the
+# same people as the census its divisions carry: the Marshall Islands' 82,011
+# against the 2021 census's 42,418, Nauru's median of 28.2 against the
+# census's 21.6. Those are applied before the roll-ups, because the population
+# is what a sum of the divisions is checked against.
 #
 # This is the admin-0 counterpart of data/curated/admin1_seed.json, and it is a
 # curated file for the same reason that one is: an adapter cannot reach admin0.
 # Adapter output lands on admin1 and admin2 shapes; the country record is the
 # Factbook profile plus whatever its children roll up into it, and there is no
 # third door.
+
+COMPOSITION_ROWS = ("religion", "language", "ethnicity")
+FIGURE_ROWS = {"population": None, "median_age": "years",
+               "sex_ratio": "males_per_1000_females"}
+CURATED_GAPS = (NOT_AVAILABLE, NOT_COLLECTED)
 
 
 def load_country_detail() -> dict[str, list[dict[str, Any]]]:
@@ -2271,6 +2366,73 @@ def load_country_detail() -> dict[str, list[dict[str, Any]]]:
     for row in payload.get("rows", []):
         rows[row["country"]].append(row)
     return rows
+
+
+def _curated_country(by_id: dict[str, dict[str, Any]], iso3: str) -> dict[str, Any]:
+    entity = by_id.get(iso3)
+    if entity is None:
+        raise SystemExit(
+            f"admin0_detail: no country record with id {iso3!r}. The "
+            f"curated rows for it would go nowhere and nothing would say "
+            f"so.")
+    return entity
+
+
+def _cite(entity: dict[str, Any], field: str, row: dict[str, Any]) -> None:
+    """The row's source on the record, in place of what the field held before.
+
+    A source goes with the figure it produced, as in merge_adapter: Uganda kept
+    Afrobarometer beside the census table that had replaced its figure, and
+    Austria ten regional survey citations beside the national table, each read
+    as a source of the number on screen. Entries that cite this field and
+    nothing else go; one citing several fields stays, for the others.
+    """
+    sources = entity.setdefault("sources", [])
+    sources[:] = [src for src in sources
+                  if not set(str(src.get("field") or "").split("/")) <= {field}]
+    if row.get("source"):
+        sources.append({"field": field, "name": row["source"],
+                        "url": row.get("url"), "year": row.get("year"),
+                        "license": row.get("license", "See docs/SOURCES.md")})
+
+
+def apply_country_figures(admin0: list[dict[str, Any]],
+                          rows: dict[str, list[dict[str, Any]]]) -> set[str]:
+    """Put the curated population, median age and sex ratio on the countries.
+
+    Run before the roll-ups, which check a sum of the divisions against the
+    country's population: a Factbook estimate twice the census's count refused
+    every sum the Marshall Islands' atolls could give. Returns the countries
+    whose population is now a census count, for roll_up_countries.
+
+    A row must give a value, a year and a source; one that does not stops the
+    build, as an unmatched country does.
+    """
+    by_id = {entity["id"]: entity for entity in admin0}
+    counted: set[str] = set()
+    applied = 0
+    for iso3, country_rows in sorted(rows.items()):
+        for row in country_rows:
+            field = row["field"]
+            if field not in FIGURE_ROWS:
+                continue
+            entity = _curated_country(by_id, iso3)
+            if not isinstance(row.get("value"), (int, float)) or not row.get("year") \
+                    or not row.get("source"):
+                raise SystemExit(f"admin0_detail: {iso3} {field} needs a value, a year "
+                                 f"and a source")
+            entity[field] = measure(row["value"], unit=FIGURE_ROWS[field],
+                                    year=row["year"], source=row["source"])
+            entity[f"{field}_note"] = row["note"]
+            _cite(entity, field, row)
+            if field == "population":
+                counted.add(iso3)
+            applied += 1
+    if applied:
+        log(f"  admin0 detail: {applied} curated figures on "
+            f"{len({r['country'] for rs in rows.values() for r in rs if r['field'] in FIGURE_ROWS})} "
+            f"countries")
+    return counted
 
 
 def apply_country_detail(admin0: list[dict[str, Any]],
@@ -2290,30 +2452,47 @@ def apply_country_detail(admin0: list[dict[str, Any]],
     by_id = {entity["id"]: entity for entity in admin0}
     applied = 0
     for iso3, country_rows in sorted(rows.items()):
-        entity = by_id.get(iso3)
-        if entity is None:
-            raise SystemExit(
-                f"admin0_detail: no country record with id {iso3!r}. The "
-                f"curated rows for it would go nowhere and nothing would say "
-                f"so.")
+        entity = _curated_country(by_id, iso3)
         for row in country_rows:
             field = row["field"]
-            if field not in ("religion", "language", "ethnicity"):
+            if field in FIGURE_ROWS:
+                continue                     # apply_country_figures' rows
+            if field not in COMPOSITION_ROWS:
                 raise SystemExit(
                     f"admin0_detail: {iso3} names field {field!r}, which is "
                     f"not one of the three compositions.")
+            if row.get("status"):
+                if row["status"] not in CURATED_GAPS or row.get("groups"):
+                    raise SystemExit(
+                        f"admin0_detail: {iso3} {field} gives status "
+                        f"{row['status']!r}; a row states a gap "
+                        f"({' or '.join(CURATED_GAPS)}) or gives groups, not both")
+                # The reason is the gap's own note, as everywhere else; a
+                # separate field note would say it twice.
+                entity[field] = gap(row["status"], row["note"])
+                for suffix in SATELLITES:
+                    entity.pop(f"{field}{suffix}", None)
+                _cite(entity, field, row)
+                applied += 1
+                continue
             if row.get("groups"):
                 entity[field] = row["groups"]
+                for suffix in ("_year", "_basis"):
+                    entity.pop(f"{field}{suffix}", None)
                 if row.get("year"):
                     entity[f"{field}_year"] = row["year"]
-                if row.get("basis"):
-                    entity[f"{field}_basis"] = row["basis"]
-            entity[f"{field}_note"] = row["note"]
-            if row.get("source"):
+                _cite(entity, field, row)
+            elif row.get("source"):
                 entity.setdefault("sources", []).append(
                     {"field": field, "name": row["source"],
                      "url": row.get("url"), "year": row.get("year"),
                      "license": row.get("license", "See docs/SOURCES.md")})
+            # A basis on a note-only row says what the line already there
+            # counts: Thailand's Factbook "ethnic groups" are nationality, by
+            # the Factbook's own note, and read as ethnicity without it.
+            if row.get("basis"):
+                entity[f"{field}_basis"] = row["basis"]
+            entity[f"{field}_note"] = row["note"]
             applied += 1
     log(f"  admin0 detail: {applied} curated rows on "
         f"{len(rows)} countries")
@@ -3064,6 +3243,19 @@ SAMPLE_SHARE = 0.05
 VARIANTS = {"language": group_tree.LANGUAGE_VARIANTS,
             "ethnicity": group_tree.ETHNIC_VARIANTS}
 
+# What a division's composition is when it is not a count at all, and so is
+# never added up into its parent. Afghanistan's districts carry the ethnic line
+# of their development plans (afghanistan, afghanistan_ddp): the provincial
+# authorities' estimate as a planning summary prints it, from plans drawn up
+# between 2007 and 2014, many of them naming only part of the district
+# ("Pashtun 75% and the remaining 25% are Uzbak and Arab"), most of them as an
+# encyclopaedia transcribes them. Each line stands on its own district,
+# labelled as what it is. Priced at the office's 2017 populations and added
+# up, they gave provinces compositions that no plan and no office states --
+# Kunduz's came to 95.5% with nothing said about the rest -- so a province
+# keeps the reason its own source gives instead.
+UNSUMMED_BASES = frozenset({"district development plan"})
+
 # How much the population gate widens per year between the two figures' dates,
 # and the most it will ever widen by. A census and an estimate of the same
 # territory taken years apart are the same people counted at different times,
@@ -3247,7 +3439,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                   over_published: bool = False,
                   whole_country: bool = False,
                   complete: bool | None = None,
-                  min_coverage: float | None = None) -> str | None:
+                  min_coverage: float | None = None,
+                  restate_same_year: bool = False) -> str | None:
     """Fill a parent's composition by summing a complete set of its children.
 
     Ladakh is the case this exists for. It became a union territory in 2019, so
@@ -3281,6 +3474,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     the two divisions that have no published population of their own to be
     checked against. Pakistan is why it is not assumed -- 114 of its 126
     districts join, so its provinces are genuinely short and stay refused.
+
+    ``restate_same_year`` lets the children's total replace a published
+    population of its own year. A country's own figure is usually the
+    Factbook's estimate, and an itemised count of the same year is the better
+    number (Finland, below). A first-level unit's is an office's count, and
+    children of the same year that add up to something else are short of a
+    child or counted apart, not better: Kinmen's five drawn townships made
+    136,611 against the county's registered 137,208 -- the register's sixth
+    township, Wuqiu, is drawn apart from it -- and the sum replaced the count.
     """
     current = parent.get(field)
     if isinstance(current, list) and not over_published:
@@ -3320,6 +3522,9 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
              and c.get(f"{field}_basis") != usual]
     if apart:
         children = [c for c in children if c not in apart]
+    if usual in UNSUMMED_BASES:
+        return (f"{field}: its divisions carry {usual} estimates, which are not "
+                f"added up into a figure for the unit")
 
     # A division that names only its largest group has not published a
     # composition, and largest groups do not add up to one. Papua New Guinea's
@@ -3580,6 +3785,19 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         displaced = (f" Replaces a list that names groups without shares "
                      f"({named}{', ...' if len(current) > 3 else ''}), which "
                      f"gives this sum nothing to be checked against.")
+    # The people the added counts are of, where that is not the populations the
+    # note quotes. Kazakhstan's regions carry the register's 2025 populations
+    # and the 2021 census's religion, which counts 19.2 million people, not
+    # their 20.3 million; Tajikistan's carry 2020 populations and the 2010
+    # census's nationalities. Quoting only the populations put a total and a
+    # year on the figure that are not its own.
+    counted = ""
+    if (not weighted and denominator > 0 and total_pop
+            and abs(denominator - total_pop) > ROLLUP_TOLERANCE * total_pop):
+        when = (f" in {next(iter(years))}" if len(years) == 1 else
+                f", nearly all of them in {dated}" if dated is not None else "")
+        counted = (f" The figures added are the divisions' own counts, of "
+                   f"{denominator:,.0f} people{when}.")
     parent[f"{field}_note"] = (
         f"Summed from {'all ' if not left_out else ''}{len(children)} {level} "
         # The semicolon introduces the clause that follows it, so a sum that
@@ -3612,6 +3830,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
               f"against it")
            + "; it was summed because every division at this level in "
              "the country has these figures, so these are all of its children.")
+        + counted
         + (f" Weighted by population: {len(sampled)} of them count a survey's "
            "respondents and the rest count people, so every division's shares "
            "are taken of its own published population." if weighted else
@@ -3722,9 +3941,13 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     one_year = bool(years_seen) and (
         max(years_seen) - min(years_seen) <= 1
         or on_child_year >= ONE_MOMENT * sum(v for _, v in stamped))
+    # A published figure of the children's own year is replaced only where the
+    # caller says it is an estimate an itemised count improves on
+    # (``restate_same_year``); otherwise only an older one is.
     if child_year and not waived and not left_out and (
             own is None or (one_year and round(total_pop) != round(own)
-                            and (own_year is None or own_year <= child_year))):
+                            and (own_year is None or own_year < child_year
+                                 or (own_year == child_year and restate_same_year)))):
         if own is not None:
             parent["population_note"] = (
                 f"Summed from all {len(children)} {level} divisions. Replaces "
@@ -3972,11 +4195,46 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # country carries that.
     ("KIR", "religion"): "its island groups' religion is the 2015 census's, and the "
                          "country's is the 2020 census's",
+    # vietnam_religion gives the 63 provinces the 2009 census's Table 7, the
+    # newest religion by province: the 2019 census published religion for the
+    # country only (Completed Results, Table 3), and the country carries that
+    # table (data/curated/admin0_detail.json).
+    ("VNM", "religion"): "its provinces' religion is the 2009 census's, and the "
+                         "country's is the 2019 census's",
+    # thailand_nationality and thailand give the 76 provinces the 2000
+    # census's provincial reports, the last to print nationality and religion
+    # by province. The country's figures are later: the Factbook's 2015
+    # nationality line (Thai 97.5%, Burmese 1.3%) and its 2021 religion line.
+    # A sum would put a count from 2000 over both.
+    ("THA", "ethnicity"): "its provinces' nationality is the 2000 census's, and the "
+                          "country's figure is of 2015",
+    ("THA", "religion"): "its provinces' religion is the 2000 census's, and the "
+                         "country's figure is of 2021",
+    # vanuatu_census gives each province Table 6.16 of the 2020 census, first
+    # language learned, which the census asked only of the people who speak
+    # one of the islands' own languages: 84-97% of each province, every share
+    # taken of everyone. A sum would leave out the rest and look whole. The
+    # country keeps the Analytical Report's four-way split of everyone
+    # (indigenous languages, Bislama, English, French), which its note
+    # describes.
+    ("VUT", "language"): "its provinces' first language was asked only of the people "
+                         "who speak one of the islands' own languages, 84-97% of each "
+                         "province",
+    # lebanon_survey gives the governorates the LFHLCS 2018-19's residents by
+    # nationality, a survey of residential dwellings: the refugee camps and
+    # their gatherings, informal settlements, barracks and work sites are
+    # outside it, which is where many of the country's foreign nationals live.
+    # Each governorate's own record says so; a country total would read as
+    # Lebanon's share of foreign nationals and understate it.
+    ("LBN", "ethnicity"): "its governorates' nationality is a survey of residential "
+                          "dwellings, which leaves out the refugee camps and informal "
+                          "settlements",
 }
 
 
 def roll_up_countries(admin0: list[dict[str, Any]],
-                      admin1_by_country: dict[str, list[dict[str, Any]]]) -> None:
+                      admin1_by_country: dict[str, list[dict[str, Any]]],
+                      counted: frozenset[str] | set[str] = frozenset()) -> None:
     """Sum a country from its first-level divisions, where they are all there.
 
     Unlike the level below, this never fills a gap: every country record
@@ -4010,6 +4268,12 @@ def roll_up_countries(admin0: list[dict[str, Any]],
     than faults, and widening the bound for them is a separate decision from
     this one; it is left tight here so that nothing is rewritten on a looser
     rule than the one that has been tested.
+
+    ``counted`` names the countries whose population is a census count rather
+    than the Factbook's estimate (data/curated/admin0_detail.json). Their
+    divisions' total replaces it only when it is newer, as at the level below:
+    the Marshall Islands' drawn atolls add up to 42,262, Lib's 156 people
+    having no polygon, against the census's 42,418 for the same day.
     """
     filled: list[str] = []
     refused: list[str] = []
@@ -4033,7 +4297,8 @@ def roll_up_countries(admin0: list[dict[str, Any]],
             why = roll_up_field(country, children, field,
                                 level="first-level", over_published=True,
                                 complete=True,
-                                min_coverage=COUNTRY_MIN_COVERAGE)
+                                min_coverage=COUNTRY_MIN_COVERAGE,
+                                restate_same_year=iso3 not in counted)
             if why:
                 refused.append(f"{iso3}: {why}")
             elif country.get(field) is not before:
@@ -4674,6 +4939,14 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                         entity["largest_settlement"] = gap(
                             held.get("status") or NOT_AVAILABLE,
                             f"No GeoNames place is named: {town['none']}.")
+                        # The one refusal that turns on the unit's population,
+                        # which is weighed again once the populations are
+                        # final (settle_geonames_spans).
+                        spans = SPANS_REASON.match(town["none"])
+                        if spans:
+                            entity["largest_settlement"]["_spans"] = {
+                                "town": spans["town"],
+                                "people": int(spans["people"].replace(",", ""))}
                     continue
                 entity["largest_settlement"] = town["name"]
                 if town.get("population"):
@@ -4682,6 +4955,66 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                 entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
                 filled += 1
     return filled
+
+
+# scripts/fetch_geonames.py names no settlement where the most populous place
+# inside a unit outnumbers the unit SPANS times over -- a city the unit is only
+# part of, or a place across a boundary -- and says so in these words, with
+# the unit's population as the map showed it when the places were placed.
+SPANS_REASON = re.compile(r"^(?P<town>.+) \((?P<people>\d{1,3}(?:,\d{3})*)\) is more than "
+                          r"the unit \((?P<unit>\d{1,3}(?:,\d{3})*)\)")
+
+
+def settle_geonames_spans(admin1: dict[str, list[dict[str, Any]]],
+                          admin2: dict[str, list[dict[str, Any]]]) -> tuple[int, int]:
+    """Weigh GeoNames' 'more than the unit' refusals against the final populations.
+
+    The refusal is a comparison with the unit's population, and fetch_geonames
+    made it against whatever population the map carried on the day it ran.
+    Populations change after that, and the reason then quotes a figure the map
+    no longer shows: Bukhar-Zhyrauskiy's said Temirtau (170,600) outnumbered
+    the unit's 52,263 while the map gave the district 798,840, and Kulob
+    District's that Kulob (214,700) outnumbered 96,000 against the census's
+    216,830. So the comparison is made again here, against the population the
+    record is written with. Where the place no longer outnumbers the unit
+    SPANS times over it is named, as fetch_geonames would have named it, with
+    its population only where that is not more than the unit's; where it still
+    does, the reason quotes the population shown; and where the unit has none,
+    the reason says that instead of quoting one.
+
+    Returns (named, restated).
+    """
+    named = restated = 0
+    for table in (admin1, admin2):
+        for rows in table.values():
+            for entity in rows:
+                held = entity.get("largest_settlement")
+                if not isinstance(held, dict) or "_spans" not in held:
+                    continue
+                spans = held.pop("_spans")
+                town, people = spans["town"], spans["people"]
+                unit = published(entity.get("population"))
+                if unit is not None and people <= GEONAMES_SPANS * unit:
+                    entity["largest_settlement"] = town
+                    if people <= unit:
+                        entity["largest_settlement_population"] = measure(
+                            people, source="GeoNames (CC BY 4.0)")
+                    entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
+                    named += 1
+                    continue
+                was = held.get("note")
+                if unit is not None:
+                    held["note"] = (f"No GeoNames place is named: {town} ({people:,}) is "
+                                    f"more than the unit ({unit:,.0f}): a city it is part "
+                                    f"of, or across a boundary.")
+                else:
+                    held["note"] = (f"No GeoNames place is named: the most populous place "
+                                    f"GeoNames puts inside it, {town} ({people:,}), cannot "
+                                    f"be weighed against a population for the unit, which "
+                                    f"has none here, so it may be a city the unit is only "
+                                    f"part of, or a place across a boundary.")
+                restated += held["note"] != was
+    return named, restated
 
 
 def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
@@ -6263,6 +6596,8 @@ def main() -> int:
     shapes = {level: read_shapes(level) for level in args.levels}
     if "ADM1" in shapes and "ADM2" in shapes:
         link_adm2_parents(shapes["ADM1"], shapes["ADM2"])
+        for line in declare_parents(shapes["ADM1"], shapes["ADM2"]):
+            log(f"  declared parent: {line}")
         shapes["ADM2"].extend(read_remainders())
         replaced, redrawn = read_redrawn()
         if redrawn:
@@ -6362,6 +6697,9 @@ def main() -> int:
         admin0.append(entity)
 
     admin0.sort(key=lambda e: e["name"])
+    # Before anything is summed: a country's population is what the sums of
+    # its divisions are checked against.
+    counted = apply_country_figures(admin0, country_detail)
 
     # -- admin 1 -------------------------------------------------------------
     admin1_by_country: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -6795,11 +7133,17 @@ def main() -> int:
     if twinned:
         log(f"  {twinned} second-level fields filled from the same polygon "
             f"drawn a level up")
+    # After every pass that sets a unit's population, so GeoNames' refusals
+    # are weighed against the figure each record is written with.
+    named, restated = settle_geonames_spans(admin1_by_country, admin2_by_country)
+    if named or restated:
+        log(f"  GeoNames places weighed again against final populations: {named} "
+            f"named, {restated} reasons restated")
     # After the level below, so a first-level unit that was itself summed can
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.
     check_no_stale_country_declaration(admin0, admin1_by_country)
-    roll_up_countries(admin0, admin1_by_country)
+    roll_up_countries(admin0, admin1_by_country, counted)
 
     # Last, so a curated country row is the last word on the field it names.
     apply_country_detail(admin0, country_detail)
