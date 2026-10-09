@@ -123,6 +123,59 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(by["R4"]["sex_ratio"]["value"], 100.0)
         self.assertIn("Maguindanao, Cotabato City", by["R4"]["median_age_note"])
 
+    def test_a_pre_2019_region_counts_its_own_ground(self):
+        admin1 = ADMIN1 + [{"id": "R4", "name": "ARMM"}]
+        regions = {"ARMM": ["Maguindanao", "Cotabato City"]}
+        with mock.patch.object(p, "REGIONS", regions):
+            recs = p.build(self.units(), 80, admin1, ADMIN2)
+        by = {r["shape_id"]: r for r in recs}
+        self.assertEqual(by["R4"]["population"]["value"], 18 * 81)
+        self.assertEqual(by["R4"]["population"]["year"], 2020)
+        self.assertIn("for more ground than this polygon draws",
+                      by["R4"]["population_note"])
+        self.assertEqual(by["R4"]["sources"][0]["field"], "population/median_age/sex_ratio")
+
+    def visayas(self, drawn, elsewhere=()):
+        rows = [row("Region VII", "CEBU", "C1", flat(6), flat(5)),
+                row("Region VII", "NEGROS ORIENTAL", "C2", flat(3), flat(3)),
+                row("Region VII", "SIQUIJOR", "C3", flat(1), flat(1))]
+        units = self.units(rows)
+        admin1 = ADMIN1 + [{"id": "R7", "name": "Central Visayas"}]
+        admin2 = ADMIN2 + [{"id": f"V{i}", "name": n, "parent": "R7"}
+                           for i, n in enumerate(drawn)]
+        admin2 += [{"id": f"E{i}", "name": n, "parent": "R3"} for i, n in enumerate(elsewhere)]
+        return {r["shape_id"]: r for r in p.build(units, 80, admin1, admin2)}
+
+    def test_a_region_drawn_before_2024_counts_its_own_ground(self):
+        by = self.visayas(["Cebu", "Negros Oriental", "Siquijor"])
+        cv = by["R7"]
+        # The polygon's own ground in 2020, Negros Oriental and Siquijor
+        # included, not the smaller region of 2024.
+        self.assertEqual(cv["population"]["value"], (11 + 6 + 2) * 81)
+        self.assertEqual(cv["population"]["year"], 2020)
+        note = cv["population_note"]
+        self.assertTrue(note.startswith("The 2020 Census of Population and Housing's count"))
+        self.assertIn("(Cebu, Negros Oriental, Siquijor)", note)
+        self.assertIn("Negros Island Region since 2024", note)
+        self.assertEqual(cv["sources"][0]["field"], "population/median_age/sex_ratio")
+        # A region whose polygon is the PSA's region of today gets no count:
+        # its later figure is for the ground it draws.
+        self.assertNotIn("value", by["R2"]["population"])
+        self.assertEqual(by["R2"]["sources"][0]["field"], "median_age/sex_ratio")
+        # A province's count says what it is once.
+        self.assertTrue(by["V0"]["population_note"].startswith(
+            "The 2020 Census of Population and Housing's count of everyone in the"))
+
+    def test_a_redrawn_region_without_its_negros_provinces_refuses(self):
+        # Every province binds, but Negros Oriental is drawn in another region:
+        # the polygon is then not the region as it stood in 2020.
+        with self.assertRaises(SystemExit) as caught:
+            self.visayas(["Cebu", "Siquijor"], elsewhere=["Negros Oriental"])
+        self.assertIn("Negros Oriental", str(caught.exception))
+
+    def test_every_region_given_its_own_count_says_why(self):
+        self.assertEqual(set(p.LATER), set(p.REGIONS) | set(p.REDRAWN))
+
     def test_a_province_with_no_polygon_refuses(self):
         cols = p.columns(HEADER)
         units = self.units()

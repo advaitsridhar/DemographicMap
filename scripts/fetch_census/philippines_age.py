@@ -54,7 +54,12 @@ sum of the provinces the map draws inside that region's polygon, which is
 what the polygon holds; the note says so. The ARMM and Soccsksargen, two of
 whose drawn provinces get no figure, are instead the sum of the census
 provinces that made them before 2019 (``REGIONS``), placed on the map's admin1
-tiles.
+tiles. Central and Western Visayas are drawn as they stood before the Negros
+Island Region took Negros Oriental, Siquijor, Negros Occidental and Bacolod
+from them in 2024 (``REDRAWN``). These four regions' later figures are for
+other ground than their polygons, so each is also given the 2020 count of the
+ground it draws, as its population, and the note says why (``LATER``); the
+other regions' later figures are for the ground they draw and are left alone.
 
 **Checks**, each a refusal: every barangay's ages make its own total for both
 sexes and for each, and its males and females make its total; the country's
@@ -127,6 +132,34 @@ REGIONS = {
     "ARMM": ["Basilan", "Lanao del Sur", "Maguindanao", "Sulu", "Tawi-Tawi"],
     "Soccsksargen": ["Cotabato", "Interim Province", "Sarangani", "South Cotabato",
                      "Sultan Kudarat", "Cotabato City"],
+}
+# Two regions whose polygons hold provinces the PSA's region of the same name
+# has not held since Republic Act 12000 made the Negros Island Region in 2024:
+# the region's name -> the drawn provinces it lost. Its later figures (the
+# 2024 census's 6,640,875 and 4,861,911, which Wikidata carries) are for less
+# ground than the polygon, whose provinces, ages and compositions are all the
+# 2020 region's -- so its population is the 2020 count of the provinces drawn
+# inside it. A region named here whose drawn provinces do not include these
+# refuses the run: the polygon is then not what this says it is.
+REDRAWN = {
+    "Central Visayas": ("Negros Oriental", "Siquijor"),
+    "Western Visayas": ("Negros Occidental",),
+}
+# Why the region's later figures are for other ground than its polygon, said
+# on the population the census gives it instead.
+LATER = {
+    "ARMM": ("The Bangsamoro region, which replaced the ARMM in 2019, also took in "
+             "Cotabato City and 63 barangays of Cotabato, so its figures are for more "
+             "ground than this polygon draws."),
+    "Soccsksargen": ("Cotabato City and 63 barangays of Cotabato have been part of the "
+                     "Bangsamoro region since 2019, so Soccsksargen's figures since then "
+                     "are for less ground than this polygon draws."),
+    "Central Visayas": ("Negros Oriental and Siquijor have been part of the Negros Island "
+                        "Region since 2024, so Central Visayas' figures since then are for "
+                        "less ground than this polygon draws."),
+    "Western Visayas": ("Negros Occidental and the city of Bacolod have been part of the "
+                        "Negros Island Region since 2024, so Western Visayas' figures since "
+                        "then are for less ground than this polygon draws."),
 }
 SEXES = ("MF", "M", "F")
 HEADER = re.compile(r"^(?P<age>.+?)_(?P<sex>MF|M|F)$")
@@ -353,7 +386,7 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
                                    f"holds the middle person, from {whose}, by single "
                                    f"year of age to an open {top}+."),
                       ratio_note=f"Males per 100 females in {whose}.",
-                      population_note=f"The census count of {YEAR}: {whose}."),
+                      population_note=f"{whose[0].upper()}{whose[1:]}."),
         ))
     # The polygons left out say why, rather than carrying a bare gap.
     for shape in sorted(admin2, key=lambda s: s["name"]):
@@ -393,7 +426,13 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
                     f"{missing or '(none)'} have no count")
                 continue
             pieces = [figs[s["id"]] for s in kids]
-            parts = ", ".join(sorted(names2[s["id"]] for s in kids))
+            drawn_names = {names2[s["id"]] for s in kids}
+            lost = set(REDRAWN.get(region["name"], ()))
+            if not lost <= drawn_names:
+                raise SystemExit(f"philippines_age: {region['name']} draws "
+                                 f"{sorted(drawn_names)}, without {sorted(lost - drawn_names)}"
+                                 f" that its 2020 region held")
+            parts = ", ".join(sorted(drawn_names))
             whose = (f"the 2020 Census of Population and Housing's count of everyone in the "
                      f"{len(kids)} provinces the map draws inside this region ({parts})")
         ages = {s: Counter() for s in SEXES}
@@ -401,16 +440,24 @@ def build(units: dict[tuple[str, str], dict[str, Any]], top: int,
             for sex in SEXES:
                 ages[sex].update(piece["ages"][sex])
         median, men, women, total = figures(ages, top, region["name"])
+        # A region whose polygon is not the PSA's region of today gets the
+        # count of the ground it draws: the region's later figures, which
+        # Wikidata carries, are for other ground. The other regions keep
+        # those later figures, which are for the ground they draw.
+        own = region["name"] in LATER
         records.append(record(
             f"PHL-CPH2020-R-{fold(region['name'])}", region["name"], level="admin1",
             parent="PHL", country="PHL", match_by="shape_id", shape_id=region["id"],
-            sources=[{"field": "median_age/sex_ratio", "name": SOURCE, "url": PAGE,
-                      "year": YEAR, "license": LICENCE}],
+            sources=[{"field": ("population/" if own else "") + "median_age/sex_ratio",
+                      "name": SOURCE, "url": PAGE, "year": YEAR, "license": LICENCE}],
             **age_sex(median=median, men=men, women=women, year=YEAR, source=SOURCE,
                       median_note=(f"Interpolated within the single year of age that "
                                    f"holds the middle person, from {whose}, by single "
                                    f"year of age to an open {top}+."),
-                      ratio_note=f"Males per 100 females in {whose}."),
+                      ratio_note=f"Males per 100 females in {whose}.",
+                      population=total if own else None,
+                      population_note=(f"{whose[0].upper()}{whose[1:]}. "
+                                       f"{LATER[region['name']]}" if own else None)),
         ))
     return records
 
