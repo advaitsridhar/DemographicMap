@@ -1,5 +1,11 @@
-afghanistan_estimates: CSO estimated settled population 1396 (2017-18)
-    34 provinces placed by their Total rows; every row's sexes and areas add up, every province's districts make its Total row, and the provinces make 28,224,323 settled people
-    22 provinces written as the office counts them, 5 drawn otherwise written as the sum of the districts drawn in them (03, 11, 20, 26, 27), 7 not; 396 districts written, 2 refused with their reason
-  wrote data/processed/afghanistan_estimates.json (1630 kB)
-  432 records
+https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/3/3-jamiat-23-k.xls: HTTP 200 34,304 B
+  sheets (16): ['تهران2301', 'دماوند2302', 'رئ2303', 'شميرانات2304', 'ورامين2306', 'شهريار2309', 'اسلامشهر2310', 'رباطكريم2312', 'پاكدشت2313', 'فيروزكوه2314', 'قدس2316', 'ملارد2317', 'پيشوا2318', 'بهارستان2319', 'پرديس2320', 'قرچک2321']
+  -- 'تهران2301'
+  r3: جدول 3 - جمعيت ب
+  r5: جنس واستان | جمع | ايران | افغانستان | عراق | پاكستان | تركيه | ساير كشورها | اظهار نشده
+  r6: مردوزن | 8737510.0 | 8554382.0 | 160198.0 | 4278.0 | 864.0 | 115.0 | 2375.0 | 15298.0
+  r7: تهران | 8737510.0 | 8554382.0 | 160198.0 | 4278.0 | 864.0 | 115.0 | 2375.0 | 15298.0
+  r8: مرد | 4347534.0 | 4244095.0 | 90887.0 | 2497.0 | 542.0 | 79.0 | 1476.0 | 7958.0
+  r9: تهران | 4347534.0 | 4244095.0 | 90887.0 | 2497.0 | 542.0 | 79.0 | 1476.0 | 7958.0
+  r10: زن | 4389976.0 | 4310287.0 | 69311.0 | 1781.0 | 322.0 | 36.0 | 899.0 | 7340.0
+  r11: تهران | 4389976.0 | 4310287.0 | 69311.0 | 1781.0 | 322.0 | 36.0 | 899.0 | 7340.0
