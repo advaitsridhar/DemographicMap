@@ -36,6 +36,15 @@ districts (``NCR_DISTRICTS``). Cotabato City, which the boundary file also
 draws on its own, has no row at all -- its people are inside Maguindanao's --
 and its record says so (``cotabato_city``).
 
+**Household language** in the Philippines comes from CLEAR Global's
+tabulation of the 2010 census (``clear_global.py``), whose second-level rows
+the build joins only by a name unique in the country. Five of them miss
+polygons the boundary file does draw -- Metro Manila's four districts, which
+it labels "NCR, ... District", and Isabela, a name the City of Isabela also
+answers to -- and are bound here by the PSGC code each row carries
+(``CLEAR_PHL``). The City of Isabela and Cotabato City, which the table has
+no row for, say so.
+
 A polygon some of whose parts carry no figures for a question -- the Wa
 division's Mongmao, Pangwaun, Narphan and Pangsang carry none for either --
 gets a gap naming them, never the sum of the rest.
@@ -60,7 +69,8 @@ from collections import defaultdict
 from typing import Any
 
 from . import myanmar_age, uscb
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, read_json, record, shares,
+                      write_json)
 from .sea_common import drawn, fold
 
 OUT = "sea_composed.json"
@@ -441,6 +451,83 @@ def cotabato_city(units: list[dict[str, Any]], fields: tuple[str, ...],
                    **{f: gap(NOT_AVAILABLE, why) for f in fields})]
 
 
+# Household language reaches the Philippines' provinces on this map from CLEAR
+# Global's tabulation of the 2010 census (clear_global.py), whose second-level
+# rows the build joins only by a name unique in the country. Five of its rows
+# are polygons the boundary file draws under other labels, or under a label
+# another polygon answers to: Metro Manila's four districts, which it calls
+# "NCR, ... District", and Isabela, whose name the City of Isabela in Basilan
+# shares. Each is bound here by the PSGC code the table gives as its location
+# code: row id -> (the table's name, the polygon's label).
+CLEAR_FILE = "clear_global_language.json"
+CLEAR_PHL = {
+    "PHL-CG-PH13039": ("Metropolitan Manila First District",
+                       "NCR, City of Manila, First District"),
+    "PHL-CG-PH13074": ("Metropolitan Manila Second District", "NCR, Second District"),
+    "PHL-CG-PH13075": ("Metropolitan Manila Third District", "NCR, Third District"),
+    "PHL-CG-PH13076": ("Metropolitan Manila Fourth District", "NCR, Fourth District"),
+    "PHL-CG-PH02031": ("Isabela", "Isabela"),
+}
+# And the two cities the boundary file draws on their own, which the table
+# has no row for.
+CLEAR_NONE = ("City of Isabela", COTABATO_CITY)
+
+
+def clear_language(admin2: list[dict[str, Any]], rows: list[dict[str, Any]]
+                   ) -> dict[str, dict[str, Any]]:
+    """Polygon id -> its language fields, for the polygons CLEAR's rows miss."""
+    by_label = defaultdict(list)
+    for s in admin2:
+        by_label[s["name"]].append(s)
+    table = {r["id"]: r for r in rows if r.get("country") == "PHL" and r["level"] == "admin2"}
+    out: dict[str, dict[str, Any]] = {}
+    for rid, (name, label) in CLEAR_PHL.items():
+        row, shapes = table.get(rid), by_label.get(label, [])
+        if row is None or row["name"] != name or len(shapes) != 1 \
+                or not isinstance(row.get("language"), list) or not row["language"]:
+            raise SystemExit(f"sea_composed: {CLEAR_FILE} has no {rid} named {name!r} with a "
+                             f"language, or {len(shapes)} polygons are labelled {label!r}")
+        code = rid.rsplit("-", 1)[-1]
+        out[shapes[0]["id"]] = {
+            "name": label, "language": row["language"],
+            "language_year": row.get("language_year"),
+            "language_note": (f"{row.get('language_note', '')} The table calls this unit "
+                              f"\"{name}\", location code {code}, which is its PSGC code; it is "
+                              f"bound to the polygon by that code."),
+            "sources": [s for s in row.get("sources") or [] if s.get("field") == "language"]}
+        log(f"    {label}: CLEAR Global's {name} ({code}), "
+            + ", ".join(f"{g['group']} {g['pct']}" for g in row["language"][:3]))
+    names = {fold(r["name"]) for r in table.values()}
+    for label in CLEAR_NONE:
+        shapes = by_label.get(label, [])
+        if len(shapes) != 1 or fold(label) in names:
+            raise SystemExit(f"sea_composed: {len(shapes)} polygons labelled {label!r}, or "
+                             f"{CLEAR_FILE} has a row for it after all")
+        out[shapes[0]["id"]] = {"name": label, "language": gap(NOT_AVAILABLE, (
+            f"CLEAR Global's tabulation of the 2010 census, which carries household language "
+            f"for the Philippines' provinces on this map, has no row for {label}, which the "
+            f"boundary file draws apart from the province around it."))}
+    return out
+
+
+def with_language(records: list[dict[str, Any]], clear: dict[str, dict[str, Any]]
+                  ) -> list[dict[str, Any]]:
+    """The language fields onto the polygon's record, or a record of their own."""
+    out = []
+    left = dict(clear)
+    for r in records:
+        extra = left.pop(r.get("shape_id"), None)
+        if extra:
+            r = {**r, **{k: v for k, v in extra.items() if k not in ("name", "sources")},
+                 "sources": [*r.get("sources", []), *extra.get("sources", [])]}
+        out.append(r)
+    for sid, extra in left.items():
+        out.append(record(f"PHL-LANG-{fold(extra['name'])}", extra["name"], level="admin2",
+                          parent="PHL", country="PHL", match_by="shape_id", shape_id=sid,
+                          **{k: v for k, v in extra.items() if k != "name"}))
+    return out
+
+
 def workbook(country: uscb.Country) -> dict[str, list[list[Any]]]:
     import openpyxl
     url = uscb.workbook_url(country.dataset)
@@ -458,8 +545,12 @@ def main() -> int:
     log("sea_composed: religion and ethnicity on the polygons no one census area is")
     records = myanmar(read_units(workbook(uscb.MYANMAR), uscb.MYANMAR.topics),
                       drawn("MMR", "admin1"), drawn("MMR", "admin2"))
+    admin2 = drawn("PHL", "admin2")
     records += philippines(read_units(workbook(uscb.PHILIPPINES), uscb.PHILIPPINES.topics),
-                           drawn("PHL", "admin2"))
+                           admin2)
+    log(f"  household language for the polygons {CLEAR_FILE}'s rows miss:")
+    records = with_language(records, clear_language(admin2, read_json(PROCESSED / CLEAR_FILE,
+                                                                       [])))
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {OUT}: {len(records)} records")
     return 0

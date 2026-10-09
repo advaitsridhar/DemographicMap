@@ -220,5 +220,42 @@ class CotabatoCityTest(unittest.TestCase):
             s.cotabato_city(self.units(12), ("religion", "ethnicity"), shapes)
 
 
+CLEAR_ROWS = [
+    {"id": rid, "level": "admin2", "country": "PHL", "name": name,
+     "language": [{"group": "Tagalog", "pct": 90.0}, {"group": "Cebuano", "pct": 10.0}],
+     "language_year": 2010, "language_note": "Tabulated by CLEAR Global.",
+     "sources": [{"field": "language", "name": "CLEAR Global"}]}
+    for rid, (name, _) in s.CLEAR_PHL.items()]
+CLEAR_SHAPES = PHL2 + [{"id": "IS", "name": "Isabela"}, {"id": "CI", "name": "City of Isabela"},
+                       {"id": "C1", "name": "Cotabato City"}]
+
+
+class ClearLanguageTest(unittest.TestCase):
+    def test_rows_bound_by_their_codes_and_cities_without_one_say_so(self):
+        got = s.clear_language(CLEAR_SHAPES, CLEAR_ROWS)
+        self.assertEqual(set(got), {"N1", "N2", "N3", "N4", "IS", "CI", "C1"})
+        self.assertEqual(got["IS"]["language"][0]["group"], "Tagalog")
+        self.assertIn("PH02031", got["IS"]["language_note"])
+        self.assertEqual(got["CI"]["language"]["status"], "not_available")
+        self.assertIn("no row for City of Isabela", got["CI"]["language"]["note"])
+
+    def test_merged_onto_a_record_or_written_alone(self):
+        got = s.clear_language(CLEAR_SHAPES, CLEAR_ROWS)
+        units = s.read_units(philippine_sheets(), uscb.PHILIPPINES.topics)
+        recs = {r["shape_id"]: r for r in s.with_language(s.philippines(units, PHL2), got)}
+        self.assertEqual(set(recs), {"N1", "N2", "N3", "N4", "IS", "CI", "C1"})
+        # A summed district keeps its religion and gains the language and its source.
+        self.assertEqual(recs["N2"]["religion"][0]["count"], 45000)
+        self.assertEqual(recs["N2"]["language"][0]["group"], "Tagalog")
+        self.assertIn("language", {c["field"] for c in recs["N2"]["sources"]})
+        self.assertEqual(recs["N1"]["match_by"], "shape_id")
+
+    def test_a_row_under_another_name_refuses(self):
+        rows = [dict(r, name="Isabela City") if r["id"].endswith("PH02031") else r
+                for r in CLEAR_ROWS]
+        with self.assertRaises(SystemExit):
+            s.clear_language(CLEAR_SHAPES, rows)
+
+
 if __name__ == "__main__":
     unittest.main()

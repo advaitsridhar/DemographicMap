@@ -98,7 +98,7 @@ class BuildTest(unittest.TestCase):
         # Maguindanao's polygon is excluded, and says why; Soccsksargen therefore
         # unwritten.
         self.assertEqual(set(by), {"S1", "S2", "S3", "S4", "S5", "S6", "R1", "R2"})
-        for field in ("median_age", "sex_ratio"):
+        for field in ("median_age", "sex_ratio", "religion", "ethnicity", "language"):
             self.assertNotIn("value", by["S6"][field])
             self.assertIn("Sultan Kudarat", by["S6"][field]["note"])
         self.assertNotIn("value", by["S6"]["population"])
