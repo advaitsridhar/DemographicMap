@@ -3820,7 +3820,7 @@
     ],
     "religion_note": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either. The figure shown is the CIA World Factbook's estimate, which reads: \"Lamaistic Buddhist 75.3%, Indian- and Nepali-influenced Hinduism 22.1%, other 2.6% (2005 est.)\".",
     "language_note": "Bhutan's census does not ask language or mother tongue. The figure shown is the CIA World Factbook's estimate, which reads: \"Sharchopkha 28%, Dzongkha (official) 24%, Lhotshamkha 22%, other 26% (includes foreign languages) (2005 est.)\".",
-    "ethnicity_note": "Bhutan's census does not ask ethnicity. It publishes citizenship -- the Bhutanese and everyone else, by dzongkhag and by gewog (each dzongkhag report's Tables 2.1 and 2.2) -- which this map shows on the ethnicity field under its basis, by its owner's decision of 19 September 2026, wherever the two tables reconcile. The figure shown is the CIA World Factbook's estimate, which reads: \"Ngalop (also known as Bhote) 50%, ethnic Nepali 35% (predominantly Lhotshampas), indigenous or migrant tribes 15%\"."
+    "ethnicity_note": "Bhutan's census does not ask ethnicity. It publishes citizenship -- the Bhutanese and everyone else, by dzongkhag and by gewog (each dzongkhag report's Tables 2.1 and 2.2) -- which this map shows on the ethnicity field under its basis, wherever the two tables reconcile. The figure shown is the CIA World Factbook's estimate, which reads: \"Ngalop (also known as Bhote) 50%, ethnic Nepali 35% (predominantly Lhotshampas), indigenous or migrant tribes 15%\"."
   },
   {
     "id": "BOL",
@@ -15833,7 +15833,7 @@
         "retrieved_via": "factbook/factbook.json mirror"
       }
     ],
-    "ethnicity_note": "India does not collect ethnicity; Scheduled Caste and Scheduled Tribe shares and mother tongue are collected instead. Its census does count place of birth (table D-01, 2011), which this map shows on the ethnicity field under its basis, by its owner's decision of 19 September 2026, for every state and for every district drawn as the 2011 census counted it. A district created, divided or cut down since has no count of its own. The figure shown is the CIA World Factbook's estimate, which reads: \"Indo-Aryan 72%, Dravidian 25%, and other 3% (2000)\"."
+    "ethnicity_note": "India does not collect ethnicity; Scheduled Caste and Scheduled Tribe shares and mother tongue are collected instead. Its census does count place of birth (table D-01, 2011), which this map shows on the ethnicity field under its basis, for every state and for every district drawn as the 2011 census counted it. A district created, divided or cut down since has no count of its own. The figure shown is the CIA World Factbook's estimate, which reads: \"Indo-Aryan 72%, Dravidian 25%, and other 3% (2000)\"."
   },
   {
     "id": "IDN",
@@ -20838,7 +20838,7 @@
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
-      "note": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables, and this map shows it on the ethnicity field under its basis, by its owner's decision of 19 September 2026, for every atoll and island the 2022 atoll sheet gives it for."
+      "note": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables, and this map shows it on the ethnicity field under its basis, for every atoll and island the 2022 atoll sheet gives it for."
     },
     "ethnicity_year": null,
     "sources": [
@@ -25675,7 +25675,7 @@
         "retrieved_via": "factbook/factbook.json mirror"
       }
     ],
-    "ethnicity_note": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked. Its count of nationality -- Pakistani or not, by district (Table 10 of the 2023 census) -- is shown on the ethnicity field under its basis, by the map owner's decision of 19 September 2026. The Bureau publishes no Table 10 for Gilgit-Baltistan or for Azad Jammu and Kashmir, which it tabulates apart from the four provinces, so their units carry no nationality. The figure shown is the CIA World Factbook's estimate, which reads: \"Punjabi 44.7%, Pashtun (Pathan) 15.4%, Sindhi 14.1%, Saraiki 8.4%, Muhajirs 7.6%, Baloch 3.6%, other 6.3%\"."
+    "ethnicity_note": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups line for Pakistan follows the census's mother-tongue groups under ethnic names (Pashto speakers as Pashtun, Urdu speakers as Muhajir) and gives no year; the census's own mother-tongue counts are on the language field, which is the question that was actually asked. Its count of nationality -- Pakistani or not, by district (Table 10 of the 2023 census) -- is shown on the ethnicity field of the provinces and districts under its basis. The Bureau publishes no Table 10 for Gilgit-Baltistan or for Azad Jammu and Kashmir, which it tabulates apart from the four provinces, so their units carry no nationality. The figure shown is the CIA World Factbook's estimate, which reads: \"Punjabi 44.7%, Pashtun (Pathan) 15.4%, Sindhi 14.1%, Saraiki 8.4%, Muhajirs 7.6%, Baloch 3.6%, other 6.3%\"."
   },
   {
     "id": "PLW",
