@@ -1,25 +1,32 @@
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=www.stats.gov.cn%2Fsj%2Ftjbz%2Ftjyqhdmhcxhfdm%2F2023%2F63%2F&matchType=prefix&output=json&filter=statuscode%3A200&fl=original%2Ctimestamp%2Cmimetype%2Clength&collapse=urlkey&limit=5000&filter=original%3A.%2A%2F%5B0-9%5D%7B4%7D%28%3F%3A7%5B1-9%5D%7C80%29.html :: <urlopen error [Errno 110] Connection timed out>
-== cdx www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/22/
-  0 shown of -1 captured under www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/22/
-== cdx www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/32/
-  20201129174842 text/html                         1938 http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/32/05/320571.html
-  1 shown of 1 captured under www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/32/
-== cdx www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2021/22/
-  20220714215710 text/html                         2063 http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2021/22/08/220871.html
-  1 shown of 1 captured under www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2021/22/
-== cdx www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/
-  0 shown of -1 captured under www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/
-== cdx www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/
-  20240813191210 text/html                         2081 https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/07/320771.html
-  1 shown of 1 captured under www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/32/
-== cdx www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/
-  0 shown of -1 captured under www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/63/
-== cdx www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/
-  20240123113544 text/html                         1835 https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/25/152571.html
-  1 shown of 1 captured under www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/15/
-== cdx www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/
-  20240814164249 text/html                         2041 https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/07/370772.html
-  20240428000625 text/html                         1790 https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/10/371071.html
-  20240612143514 text/html                         1785 https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/17/371771.html
-  20240612142012 text/html                         1763 https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/17/371772.html
-  4 shown of 4 captured under www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/37/
+== https://census.scad.gov.ae/
+   200 text/html; charset=utf-8 176,679 bytes
+   - 'Themes' -> https://census.scad.gov.ae/Home/index?lang=ar
+   - 'Introduction' -> https://census.scad.gov.ae/Home/About?tab=Overview&lang=en
+   - 'Methodology' -> https://census.scad.gov.ae/Home/About?tab=Methodology&lang=en
+   - 'Quality Framework' -> https://census.scad.gov.ae/Home/About?tab=QualityFramework&lang=en
+   - 'Future Applications of Census Data' -> https://census.scad.gov.ae/Home/About?tab=Development&lang=en
+   - 'History of Abu Dhabi Census' -> https://census.scad.gov.ae/Home/About?tab=History&lang=en
+   - 'FAQs' -> https://census.scad.gov.ae/Home/About?tab=FAQ&lang=en
+   - 'Revised' -> https://census.scad.gov.ae/Home/About?tab=RevisionPolicy&lang=en
+   8 matching links
+   ~ data chart.data = [{ "city": "AbuDhabi", "male": 2767060, "female": 1368925, }]; // Create axes var categoryAxis =
+   ~ data chart.data = [{ "city": "AbuDhabi", "male": 2560240, "female": 1287345, }]; // Create axes var categoryAxis =
+   ~ data chart.data = [{ "city": "AbuDhabi", "male": 1881460, "female": 941880, }]; // Create axes var categoryAxis =
+   ~ data chart.data = [{ "city": "AbuDhabi", "male": 1724010, "female": 871380, }]; // Create axes var categoryAxis =
+   ~ dd data chart.data = [{ "city": "AlAin", "male": 622295, "female": 364615, }]; // Create axes var categoryAxis =
+   ~ dd data chart.data = [{ "city": "AlAin", "male": 597190, "female": 348415, }]; // Create axes var categoryAxis =
+   ~ data chart.data = [{ "city": "AlDhafra", "male": 263305, "female": 62430, }]; // Create axes var categoryAxis = c
+   ~ data chart.data = [{ "city": "AlDhafra", "male": 239040, "female": 67550, }]; // Create axes var categoryAxis = c
+   ~ <h2>Abu Dhabi’s population reached 4.14 million in 2024, marking a 7.5% increase from 2023. Males comprise 66.9% (2.77 million) of the population, while fem
+   ~ 3,970 units. Of these, residential units account for 59.5% (466,700) and non-residential units 40.5% (317,270).</h2> </div>
+   ~ </div> <script> var pageLink = window.location.href; var pageTitle = String(document.title).replace
+   ~ var pageLink = window.location.href; var pageTitle = String(document.title).replace(/\&/g, '%26'); function fbs_click() { window.open(`http://www
+   ~ Act = "13d20e16-9c1a-4cef-84fd-5d81dbb77757"; var showInfographicImage = function (title, year, element) { var lang = "en"; $(".rounded-pill").removeClass("active");
+   ~ 3,970 units. Of these, residential units account for 59.5% (466,700) and non-residential units 40.5% (317,270).'; var real
+   ~ 6% since 2011, reaching 754,555 units. Of these units, 58% (441,410) are residential, and 42% (313,145) are non-residential.'; var population_2023 ='Abu Dha
+   ~ ation_2023 ='Abu Dhabi’s population reached 4.14 million in 2024, marking a 7.5% increase from 2023. Males comprise 66.9% (2.77 million) of the population, while fem
+   ~ .9% (986,910), and Al Dhafra 7.9% (325,735).'; var population_2011 ='Abu Dhabi&#39;s population reached 3.85 million in the 2023 R1 update, mar
+   ~ illion in the 2023 R1 update, marking an 86% increase since 2011. Males constitute 67% (2.56M), while females account for 33% (1.29M). The population distribution is 67
+   ~ expanding opportunities within these fields.'; var labourForce_2011 ='The employed population aged 15 and above grew by 83.1% from 2011, reaching 2.5 million in 2023 compared to 1.4 million in 2011.'; var labourForce_2011 = 'The employed populatio
+   ~ ion in 2023 compared to 1.4 million in 2011.'; var labourForce_2011 = 'The employed population aged 15 and above grew by 83.1% from 2011, reaching 2.5 million in 2023 compared to 1.4 million in 2011.'; var ComparinyTo = 'Comparing to';
+   20 matches for '(?i)(?:var[^;]{0,40}(?:pop|male|female|citizen|national|age|median)[^;]{0,160};|[0-9][0-9,.]{4,}[^<]{0,60}(?:citizen|emirati|non|male|female|median))'
