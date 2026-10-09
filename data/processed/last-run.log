@@ -1,4 +1,407 @@
-== https://sbs.gov.ws/documents/census/2021/Census-2021-Final-Report_221122_051222.pdf
-  HTTP 200 application/pdf 2,776,136 bytes
-  93 pages
-  page 10: 1700x1203 -> data/processed/page_images/Census-2021-Final-Report-221122-051222-p10.jpg (160,621 bytes)
+china_county_census: Hebei Provincial Bureau of Statistics, 河北省2020年人口普查年鉴 (Hebei population census yearbook 2020)
+    province   河北省                      130000 
+    prefecture 石家庄市                     130100 
+    county     长安区                      130102 a district
+    county     桥西区                      130104 a district
+    county     新华区                      130105 a district
+    county     井陉矿区                     130107 a district
+    county     裕华区                      130108 a district
+    county     藁城区                      130109 a district
+    county     鹿泉区                      130110 a district
+    county     栾城区                      130111 a district
+    county     井陉县                      130121 no polygon is this county: no polygon holds its seat alone or names it
+    county     正定县                      130123 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     行唐县                      130125 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     灵寿县                      130126 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     高邑县                      130127 no polygon is this county: its seat stands alone in Gaochengxian, whose label is not 高邑县 (agreement 0.80)
+    county     深泽县                      130128 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     赞皇县                      130129 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     无极县                      130130 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     平山县                      130131 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     元氏县                      130132 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     赵县                       130133 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    special    石家庄高新技术产业开发区             130171 
+    special    石家庄循环化工园区                130172 
+    county     晋州市                      130183 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     新乐市                      130184 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    county     辛集市                      130181 a zone in its prefecture: 1 of 石家庄高新技术产业开发区's 4 townships has no point to place it by (太行街道)
+    prefecture 唐山市                      130200 
+    county     路南区                      130202 a district
+    county     路北区                      130203 a district
+    county     古冶区                      130204 a district
+    county     开平区                      130205 a district
+    county     丰南区                      130207 a district
+    county     丰润区                      130208 a district
+    county     曹妃甸区                     130209 a district
+    county     滦南县                      130224 a zone in its prefecture: 2 of 河北唐山芦台经济开发区's 2 townships have no point to place them by (芦台开发区海北镇、芦台开发区新华路街道); 2 of 唐山市汉沽管理区's 3 townships have no point to place them by (汉沽管理区汉丰镇、汉沽管理区振兴街道); 3 of 唐山高新技术产业开发区's 4 townships have no point to place them by (街道、庆北办事处、三女河办事处); 3 of 河北唐山海港经济开发区's 4 townships have no point to place them by (河北唐山海港经济开发区综合执法大队、唐山湾国际旅游岛、大清河)
+    county     乐亭县                      130225 no polygon is this county: its seat stands alone in Letingxian, whose label is not 乐亭县 (agreement 0.86)
+    county     迁西县                      130227 a zone in its prefecture: 2 of 河北唐山芦台经济开发区's 2 townships have no point to place them by (芦台开发区海北镇、芦台开发区新华路街道); 2 of 唐山市汉沽管理区's 3 townships have no point to place them by (汉沽管理区汉丰镇、汉沽管理区振兴街道); 3 of 唐山高新技术产业开发区's 4 townships have no point to place them by (街道、庆北办事处、三女河办事处); 3 of 河北唐山海港经济开发区's 4 townships have no point to place them by (河北唐山海港经济开发区综合执法大队、唐山湾国际旅游岛、大清河)
+    county     玉田县                      130229 a zone in its prefecture: 2 of 河北唐山芦台经济开发区's 2 townships have no point to place them by (芦台开发区海北镇、芦台开发区新华路街道); 2 of 唐山市汉沽管理区's 3 townships have no point to place them by (汉沽管理区汉丰镇、汉沽管理区振兴街道); 3 of 唐山高新技术产业开发区's 4 townships have no point to place them by (街道、庆北办事处、三女河办事处); 3 of 河北唐山海港经济开发区's 4 townships have no point to place them by (河北唐山海港经济开发区综合执法大队、唐山湾国际旅游岛、大清河)
+    special    河北唐山芦台经济开发区              130271 
+    special    唐山市汉沽管理区                 130272 
+    special    唐山高新技术产业开发区              130273 
+    special    河北唐山海港经济开发区              130274 
+    county     遵化市                      130281 a zone in its prefecture: 2 of 河北唐山芦台经济开发区's 2 townships have no point to place them by (芦台开发区海北镇、芦台开发区新华路街道); 2 of 唐山市汉沽管理区's 3 townships have no point to place them by (汉沽管理区汉丰镇、汉沽管理区振兴街道); 3 of 唐山高新技术产业开发区's 4 townships have no point to place them by (街道、庆北办事处、三女河办事处); 3 of 河北唐山海港经济开发区's 4 townships have no point to place them by (河北唐山海港经济开发区综合执法大队、唐山湾国际旅游岛、大清河)
+    county     迁安市                      130283 a zone in its prefecture: 2 of 河北唐山芦台经济开发区's 2 townships have no point to place them by (芦台开发区海北镇、芦台开发区新华路街道); 2 of 唐山市汉沽管理区's 3 townships have no point to place them by (汉沽管理区汉丰镇、汉沽管理区振兴街道); 3 of 唐山高新技术产业开发区's 4 townships have no point to place them by (街道、庆北办事处、三女河办事处); 3 of 河北唐山海港经济开发区's 4 townships have no point to place them by (河北唐山海港经济开发区综合执法大队、唐山湾国际旅游岛、大清河)
+    county     滦州市                      130284 a zone in its prefecture: 2 of 河北唐山芦台经济开发区's 2 townships have no point to place them by (芦台开发区海北镇、芦台开发区新华路街道); 2 of 唐山市汉沽管理区's 3 townships have no point to place them by (汉沽管理区汉丰镇、汉沽管理区振兴街道); 3 of 唐山高新技术产业开发区's 4 townships have no point to place them by (街道、庆北办事处、三女河办事处); 3 of 河北唐山海港经济开发区's 4 townships have no point to place them by (河北唐山海港经济开发区综合执法大队、唐山湾国际旅游岛、大清河)
+    prefecture 秦皇岛市                     130300 
+    county     海港区                      130302 a district
+    county     山海关区                     130303 a district
+    county     北戴河区                     130304 a district
+    county     抚宁区                      130306 a district
+    county     青龙满族自治县                  130321 a zone in its prefecture: 3 of 秦皇岛市经济技术开发区's 5 townships have no point to place them by (珠江道街道、黄河道街道、腾飞路街道); 4 of 北戴河新区's 4 townships have no point to place them by (南戴河街道、大蒲河管理处、团林管理处、留守营管理处)
+    county     昌黎县                      130322 a zone in its prefecture: 3 of 秦皇岛市经济技术开发区's 5 townships have no point to place them by (珠江道街道、黄河道街道、腾飞路街道); 4 of 北戴河新区's 4 townships have no point to place them by (南戴河街道、大蒲河管理处、团林管理处、留守营管理处)
+    county     卢龙县                      130324 a zone in its prefecture: 3 of 秦皇岛市经济技术开发区's 5 townships have no point to place them by (珠江道街道、黄河道街道、腾飞路街道); 4 of 北戴河新区's 4 townships have no point to place them by (南戴河街道、大蒲河管理处、团林管理处、留守营管理处)
+    special    秦皇岛市经济技术开发区              130371 
+    special    北戴河新区                    130372 
+    prefecture 邯郸市                      130400 
+    county     邯山区                      130402 a district
+    county     丛台区                      130403 a district
+    county     复兴区                      130404 a district
+    county     峰峰矿区                     130406 a district
+    county     肥乡区                      130407 a district
+    county     永年区                      130408 a district
+    county     临漳县                      130423 no polygon is this county: no polygon holds its seat alone or names it
+    county     成安县                      130424 its polygon holds other seats: Chenganxian holds ['130423', '130424']
+    county     大名县                      130425 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    county     涉县                       130426 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    county     磁县                       130427 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    county     邱县                       130430 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    county     鸡泽县                      130431 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    county     广平县                      130432 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    county     馆陶县                      130433 no polygon is this county: no polygon holds its seat alone or names it
+    county     魏县                       130434 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    county     曲周县                      130435 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    special    邯郸经济技术开发区                130471 
+    special    邯郸冀南新区                   130473 
+    county     武安市                      130481 a zone in its prefecture: 1 of 邯郸经济技术开发区's 5 townships has no point to place it by (开发区街道); 1 of 邯郸冀南新区's 10 townships has no point to place it by (城南街道)
+    prefecture 邢台市                      130500 
+    county     襄都区                      130502 a district
+    county     信都区                      130503 a district
+    county     任泽区                      130505 a district
+    county     南和区                      130506 a district
+    county     临城县                      130522 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     内丘县                      130523 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     柏乡县                      130524 no polygon is this county: its seat stands alone in Boxiangxian, whose label is not 柏乡县 (agreement 0.87)
+    county     隆尧县                      130525 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     宁晋县                      130528 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     巨鹿县                      130529 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     新河县                      130530 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     广宗县                      130531 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     平乡县                      130532 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     威县                       130533 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     清河县                      130534 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     临西县                      130535 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    special    河北邢台经济开发区                130571 
+    special    河北邢台邢东新区                 -      
+    county     南宫市                      130581 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    county     沙河市                      130582 a zone in its prefecture: 2 of 河北邢台经济开发区's 5 townships have no point to place them by (留村镇、市高新技术开发区); 河北邢台邢东新区 is not among the units the statistical division codes list for the prefecture
+    prefecture 保定市                      130600 
+    county     竞秀区                      130602 a district
+    county     莲池区                      130606 a district
+    county     满城区                      130607 a district
+    county     清苑区                      130608 a district
+    county     徐水区                      130609 a district
+    county     涞水县                      130623 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     阜平县                      130624 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     定兴县                      130626 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     唐县                       130627 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     高阳县                      130628 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     容城县                      130629 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     涞源县                      130630 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     望都县                      130631 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     安新县                      130632 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     易县                       130633 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     曲阳县                      130634 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     蠡县                       130635 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     顺平县                      130636 no polygon is this county: its seat stands alone in Wanxian, whose label is not 顺平县 (agreement 0.63)
+    county     博野县                      130637 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     雄县                       130638 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    special    保定高新技术产业开发区              130671 
+    special    保定白沟新城                   130672 
+    county     涿州市                      130681 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     安国市                      130683 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    county     高碑店市                     130684 no polygon is this county: its seat stands alone in Xinchengxian, whose label is not 高碑店市 (agreement 0.36)
+    county     定州市                      130682 a zone in its prefecture: 1 of 保定高新技术产业开发区's 3 townships has no point to place it by (保定国家高新区)
+    prefecture 张家口市                     130700 
+    county     桥东区                      130702 a district
+    county     桥西区                      130703 a district
+    county     宣化区                      130705 a district
+    county     下花园区                     130706 a district
+    county     万全区                      130708 a district
+    county     崇礼区                      130709 a district
+    county     张北县                      130722 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     康保县                      130723 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     沽源县                      130724 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     尚义县                      130725 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     蔚县                       130726 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     阳原县                      130727 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     怀安县                      130728 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     怀来县                      130730 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     涿鹿县                      130731 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    county     赤城县                      130732 a zone in its prefecture: 6 of 张家口市察北管理区's 7 townships have no point to place them by (沙沟镇、察北管理区黄山管理处、察北管理区石门管理处、察北管理区乌兰管理处)
+    special    张家口经济开发区                 130771 
+    special    张家口市察北管理区                130772 
+    special    张家口市塞北管理区                130773 
+    prefecture 承德市                      130800 
+    county     双桥区                      130802 a district
+    county     双滦区                      130803 a district
+    county     鹰手营子矿区                   130804 a district
+    county     承德县                      130821 a zone in its prefecture: 1 of 承德高新技术产业开发区's 2 townships has no point to place it by (上板城镇)
+    county     兴隆县                      130822 its polygon holds other seats: Xinglongxian holds ['130804', '130822']
+    county     滦平县                      130824 a zone in its prefecture: 1 of 承德高新技术产业开发区's 2 townships has no point to place it by (上板城镇)
+    county     隆化县                      130825 a zone in its prefecture: 1 of 承德高新技术产业开发区's 2 townships has no point to place it by (上板城镇)
+    county     丰宁满族自治县                  130826 a zone in its prefecture: 1 of 承德高新技术产业开发区's 2 townships has no point to place it by (上板城镇)
+    county     宽城满族自治县                  130827 a zone in its prefecture: 1 of 承德高新技术产业开发区's 2 townships has no point to place it by (上板城镇)
+    county     围场满族蒙古族自治县               130828 a zone in its prefecture: 1 of 承德高新技术产业开发区's 2 townships has no point to place it by (上板城镇)
+    special    承德高新技术产业开发区              130871 
+    county     平泉市                      130881 a zone in its prefecture: 1 of 承德高新技术产业开发区's 2 townships has no point to place it by (上板城镇)
+    prefecture 沧州市                      130900 
+    county     新华区                      130902 a district
+    county     运河区                      130903 a district
+    county     沧县                       130921 no polygon is this county: no polygon holds its seat alone or names it
+    county     青县                       130922 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     东光县                      130923 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     海兴县                      130924 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     盐山县                      130925 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     肃宁县                      130926 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     南皮县                      130927 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     吴桥县                      130928 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     献县                       130929 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     孟村回族自治县                  130930 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    special    河北沧州经济开发区                130971 
+    special    沧州高新技术产业开发区              130972 
+    special    沧州渤海新区                   130973 
+    county     泊头市                      130981 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     任丘市                      130982 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     黄骅市                      130983 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    county     河间市                      130984 a zone in its prefecture: 1 of 河北沧州经济开发区's 1 townships has no point to place it by (开发区乡); 1 of 沧州高新技术产业开发区's 1 townships has no point to place it by (高新乡); 3 of 沧州渤海新区's 5 townships have no point to place them by (新村回族乡、港城街道、临港化工园区)
+    prefecture 廊坊市                      131000 
+    county     安次区                      131002 a district
+    county     广阳区                      131003 a district
+    county     固安县                      131022 a zone in its prefecture: 2 of 廊坊经济技术开发区's 2 townships have no point to place them by (耀华道街道办事处、云鹏道街道办事处)
+    county     永清县                      131023 a zone in its prefecture: 2 of 廊坊经济技术开发区's 2 townships have no point to place them by (耀华道街道办事处、云鹏道街道办事处)
+    county     香河县                      131024 a zone in its prefecture: 2 of 廊坊经济技术开发区's 2 townships have no point to place them by (耀华道街道办事处、云鹏道街道办事处)
+    county     大城县                      131025 a zone in its prefecture: 2 of 廊坊经济技术开发区's 2 townships have no point to place them by (耀华道街道办事处、云鹏道街道办事处)
+    county     文安县                      131026 a zone in its prefecture: 2 of 廊坊经济技术开发区's 2 townships have no point to place them by (耀华道街道办事处、云鹏道街道办事处)
+    county     大厂回族自治县                  131028 no polygon is this county: no polygon holds its seat alone or names it
+    special    廊坊经济技术开发区                131071 
+    county     霸州市                      131081 no polygon is this county: its seat stands alone in Baxian, whose label is not 霸州市 (agreement 0.50)
+    county     三河市                      131082 no polygon is this county: no polygon holds its seat alone or names it
+    prefecture 衡水市                      131100 
+    county     桃城区                      131102 a district
+    county     冀州区                      131103 a district
+    county     枣强县                      131121 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+    county     武邑县                      131122 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+    county     武强县                      131123 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+    county     饶阳县                      131124 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+    county     安平县                      131125 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+    county     故城县                      131126 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+    county     景县                       131127 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+    county     阜城县                      131128 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+    special    河北衡水高新技术产业开发区            131171 
+    special    衡水滨湖新区                   131172 
+    county     深州市                      131182 a zone in its prefecture: 3 of 河北衡水高新技术产业开发区's 4 townships have no point to place them by (衡水高新技术产业开发区、新型功能材料产业园、苏正办事处); 2 of 衡水滨湖新区's 3 townships have no point to place them by (魏家屯镇、滨湖新区教育园区)
+  Hebei Province: 11 prefectures, 167 county-level areas, 24 special; 0 bound; not bound: {'a district': 49, 'no polygon is this county': 12, 'its polygon holds other seats': 2, 'a zone in its prefecture': 104}; 104 polygons told why
+china_county_census: Shandong Provincial Bureau of Statistics, 山东省2020年人口普查年鉴 (Shandong population census yearbook 2020)
+  retry 1/5 after 2s :: https://web.archive.org/web/20260117192702id_/http://tjj.shandong.gov.cn/pcmj/2020/zk/html/A0101.xls :: <urlopen error timed out>
+  retry 2/5 after 4s :: https://web.archive.org/web/20260117192702id_/http://tjj.shandong.gov.cn/pcmj/2020/zk/html/A0101.xls :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 1/5 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.shandong.gov.cn%2Fpcmj%2F2020%2Fzk%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 2/5 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.shandong.gov.cn%2Fpcmj%2F2020%2Fzk%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+    province   山东                       370000 
+    prefecture 济南市                      370100 
+    county     历下区                      370102 a district
+    county     市中区                      370103 a district
+    county     槐荫区                      370104 a district
+    county     天桥区                      370105 a district
+    county     历城区                      370112 a district
+    county     长清区                      370113 a district
+    county     章丘区                      370114 a district
+    county     济阳区                      370115 a district
+    county     莱芜区                      370116 a district
+    county     钢城区                      370117 a district
+    county     平阴县                      370124 a zone in its prefecture: 2 of 济南高新技术产业开发区's 7 townships have no point to place them by (创新谷街道办事处、章锦街道); 莱芜高新区 is not among the units the statistical division codes list for the prefecture; 新旧动能转换先行区 is not among the units the statistical division codes list for the prefecture; 南部山区管委会 is not among the units the statistical division codes list for the prefecture
+    county     商河县                      370126 a zone in its prefecture: 2 of 济南高新技术产业开发区's 7 townships have no point to place them by (创新谷街道办事处、章锦街道); 莱芜高新区 is not among the units the statistical division codes list for the prefecture; 新旧动能转换先行区 is not among the units the statistical division codes list for the prefecture; 南部山区管委会 is not among the units the statistical division codes list for the prefecture
+    special    济南高新技术产业开发区              -      
+    special    莱芜高新区                    -      
+    special    新旧动能转换先行区                -      
+    special    南部山区管委会                  -      
+    prefecture 青岛市                      370200 
+    county     市南区                      370202 a district
+    county     市北区                      370203 a district
+    county     黄岛区                      370211 a district
+    county     崂山区                      370212 a district
+    county     李沧区                      370213 a district
+    county     城阳区                      370214 a district
+    county     即墨区                      370215 a district
+    county     胶州市                      370281 bound to Jiaozhoushi (17275852B18968160632662)
+    county     平度市                      370283 bound to Pingdushi (17275852B8795599021471)
+    county     莱西市                      370285 bound to Laixishi (17275852B1364012400924)
+    prefecture 淄博市                      370300 
+    county     淄川区                      370302 a district
+    county     张店区                      370303 a district
+    county     博山区                      370304 a district
+    county     临淄区                      370305 a district
+    county     周村区                      370306 a district
+    county     桓台县                      370321 a zone in its prefecture: 淄博高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 淄博文昌湖省级旅游度假区 is not among the units the statistical division codes list for the prefecture; 淄博经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     高青县                      370322 a zone in its prefecture: 淄博高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 淄博文昌湖省级旅游度假区 is not among the units the statistical division codes list for the prefecture; 淄博经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     沂源县                      370323 a zone in its prefecture: 淄博高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 淄博文昌湖省级旅游度假区 is not among the units the statistical division codes list for the prefecture; 淄博经济开发区 is not among the units the statistical division codes list for the prefecture
+    special    淄博高新技术产业开发区              -      
+    special    淄博文昌湖省级旅游度假区             -      
+    special    淄博经济开发区                  -      
+    prefecture 枣庄市                      370400 
+    county     市中区                      370402 a district
+    county     薛城区                      370403 a district
+    county     峄城区                      370404 a district
+    county     台儿庄区                     370405 a district
+    county     山亭区                      370406 a district
+    special    枣庄高新区                    -      
+    county     滕州市                      370481 its polygon holds other seats: Tengzhoushi holds ['370406', '370481']
+    prefecture 东营市                      370500 
+    county     东营区                      370502 a district
+    county     河口区                      370503 a district
+    county     垦利区                      370505 a district
+    county     利津县                      370522 no polygon is this county: no polygon holds its seat alone or names it
+    county     广饶县                      370523 a zone in its prefecture: 1 of 东营经济技术开发区's 1 townships has no point to place it by (经济开发区直属乡镇); 1 of 东营港经济开发区's 1 townships has no point to place it by (经济开发区直属乡镇)
+    special    东营经济技术开发区                -      
+    special    东营港经济开发区                 -      
+    prefecture 烟台市                      370600 
+    county     芝罘区                      370602 a district
+    county     福山区                      370611 a district
+    county     牟平区                      370612 a district
+    county     莱山区                      370613 a district
+    county     蓬莱区                      370614 a district
+    special    烟台高新技术产业开发区              -      
+    special    烟台经济技术开发区                -      
+    county     龙口市                      370681 bound to Longkoushi (17275852B67438977719884)
+    county     莱阳市                      370682 bound to Laiyangshi (17275852B81072603241187)
+    county     莱州市                      370683 bound to Laizhoushi (17275852B10208475755367), ratio 0.96 (1.00 of the median)
+    county     招远市                      370685 bound to Zhaoyuanshi (17275852B54632216874023)
+    county     栖霞市                      370686 its 2020 townships are not its polygon's: 臧家庄镇 (370611) inside
+    county     海阳市                      370687 bound to Haiyangxian (17275852B48136438053745)
+    prefecture 潍坊市                      370700 
+    county     潍城区                      370702 a district
+    county     寒亭区                      370703 a district
+    county     坊子区                      370704 a district
+    county     奎文区                      370705 a district
+    county     临朐县                      370724 a zone in its prefecture: 潍坊高新技术开发区 is not among the units the statistical division codes list for the prefecture; 潍坊经济开发区 is not among the units the statistical division codes list for the prefecture; 潍坊峡山生态经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     昌乐县                      370725 a zone in its prefecture: 潍坊高新技术开发区 is not among the units the statistical division codes list for the prefecture; 潍坊经济开发区 is not among the units the statistical division codes list for the prefecture; 潍坊峡山生态经济开发区 is not among the units the statistical division codes list for the prefecture
+    special    潍坊高新技术开发区                -      
+    special    潍坊滨海经济技术开发区              -      
+    special    潍坊经济开发区                  -      
+    special    潍坊峡山生态经济开发区              -      
+    county     青州市                      370781 a zone in its prefecture: 潍坊高新技术开发区 is not among the units the statistical division codes list for the prefecture; 潍坊经济开发区 is not among the units the statistical division codes list for the prefecture; 潍坊峡山生态经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     诸城市                      370782 a zone in its prefecture: 潍坊高新技术开发区 is not among the units the statistical division codes list for the prefecture; 潍坊经济开发区 is not among the units the statistical division codes list for the prefecture; 潍坊峡山生态经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     寿光市                      370783 a zone in its prefecture: 潍坊高新技术开发区 is not among the units the statistical division codes list for the prefecture; 潍坊经济开发区 is not among the units the statistical division codes list for the prefecture; 潍坊峡山生态经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     安丘市                      370784 a zone in its prefecture: 潍坊高新技术开发区 is not among the units the statistical division codes list for the prefecture; 潍坊经济开发区 is not among the units the statistical division codes list for the prefecture; 潍坊峡山生态经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     高密市                      370785 a zone in its prefecture: 潍坊高新技术开发区 is not among the units the statistical division codes list for the prefecture; 潍坊经济开发区 is not among the units the statistical division codes list for the prefecture; 潍坊峡山生态经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     昌邑市                      370786 a zone in its prefecture: 潍坊高新技术开发区 is not among the units the statistical division codes list for the prefecture; 潍坊经济开发区 is not among the units the statistical division codes list for the prefecture; 潍坊峡山生态经济开发区 is not among the units the statistical division codes list for the prefecture
+    prefecture 济宁市                      370800 
+    county     任城区                      370811 a district
+    county     兖州区                      370812 a district
+    county     微山县                      370826 its polygon holds other seats: Weishanxian holds ['370403', '370826']
+    county     鱼台县                      370827 a zone in its prefecture: 济宁太白湖新区 is not among the units the statistical division codes list for the prefecture; 济宁经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     金乡县                      370828 a zone in its prefecture: 济宁太白湖新区 is not among the units the statistical division codes list for the prefecture; 济宁经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     嘉祥县                      370829 a zone in its prefecture: 济宁太白湖新区 is not among the units the statistical division codes list for the prefecture; 济宁经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     汶上县                      370830 a zone in its prefecture: 济宁太白湖新区 is not among the units the statistical division codes list for the prefecture; 济宁经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     泗水县                      370831 a zone in its prefecture: 济宁太白湖新区 is not among the units the statistical division codes list for the prefecture; 济宁经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     梁山县                      370832 a zone in its prefecture: 济宁太白湖新区 is not among the units the statistical division codes list for the prefecture; 济宁经济开发区 is not among the units the statistical division codes list for the prefecture
+    special    济宁高新技术产业开发区              -      
+    special    济宁太白湖新区                  -      
+    special    济宁经济开发区                  -      
+    county     曲阜市                      370881 a zone in its prefecture: 济宁太白湖新区 is not among the units the statistical division codes list for the prefecture; 济宁经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     邹城市                      370883 no polygon is this county: no polygon holds its seat alone or names it
+    prefecture 泰安市                      370900 
+    county     泰山区                      370902 a district
+    county     岱岳区                      370911 a district
+    county     宁阳县                      370921 a zone in its prefecture: 泰安高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 泰安市泰山风景名胜区管理委员会 is not among the units the statistical division codes list for the prefecture; 泰安市徂徕山汶河风景名胜区 is not among the units the statistical division codes list for the prefecture
+    county     东平县                      370923 a zone in its prefecture: 泰安高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 泰安市泰山风景名胜区管理委员会 is not among the units the statistical division codes list for the prefecture; 泰安市徂徕山汶河风景名胜区 is not among the units the statistical division codes list for the prefecture
+    special    泰安高新技术产业开发区              -      
+    special    泰安市泰山风景名胜区管理委员会          -      
+    special    泰安市徂徕山汶河风景名胜区            -      
+    county     新泰市                      370982 a zone in its prefecture: 泰安高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 泰安市泰山风景名胜区管理委员会 is not among the units the statistical division codes list for the prefecture; 泰安市徂徕山汶河风景名胜区 is not among the units the statistical division codes list for the prefecture
+    county     肥城市                      370983 a zone in its prefecture: 泰安高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 泰安市泰山风景名胜区管理委员会 is not among the units the statistical division codes list for the prefecture; 泰安市徂徕山汶河风景名胜区 is not among the units the statistical division codes list for the prefecture
+    prefecture 威海市                      371000 
+    county     环翠区                      371002 a district
+    county     文登区                      371003 a district
+    special    威海火炬高技术产业开发区             -      
+    special    威海经济技术开发区                -      
+    special    威海临港经济技术开发区              -      
+    special    威海南海新区                   -      
+    county     荣成市                      371082 a zone in its prefecture: 2 of 威海火炬高技术产业开发区's 4 townships have no point to place them by (初村镇、双岛街道筹建处); 2 of 威海临港经济技术开发区's 4 townships have no point to place them by (苘山镇、黄岚办事处); 威海南海新区 is not among the units the statistical division codes list for the prefecture
+    county     乳山市                      371083 a zone in its prefecture: 2 of 威海火炬高技术产业开发区's 4 townships have no point to place them by (初村镇、双岛街道筹建处); 2 of 威海临港经济技术开发区's 4 townships have no point to place them by (苘山镇、黄岚办事处); 威海南海新区 is not among the units the statistical division codes list for the prefecture
+    prefecture 日照市                      371100 
+    county     东港区                      371102 a district
+    county     岚山区                      371103 a district
+    county     五莲县                      371121 a zone in its prefecture: 日照市高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 日照市山海天旅游度假区 is not among the units the statistical division codes list for the prefecture
+    county     莒县                       371122 a zone in its prefecture: 日照市高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 日照市山海天旅游度假区 is not among the units the statistical division codes list for the prefecture
+    special    日照经济技术开发区                -      
+    special    日照市高新技术产业开发区             -      
+    special    日照市山海天旅游度假区              -      
+    prefecture 临沂市                      371300 
+    county     兰山区                      371302 a district
+    county     罗庄区                      371311 a district
+    county     河东区                      371312 a district
+    county     沂南县                      371321 bound to Yinanxian (17275852B4692792810033)
+    county     郯城县                      371322 its 2020 townships are not its polygon's: 黄山镇 (371311) inside; 庄坞镇 (371324) inside
+    county     沂水县                      371323 bound to Yishuixian (17275852B95240086472657)
+    county     兰陵县                      371324 its 2020 townships are not its polygon's: 庄坞镇 outside
+    county     费县                       371325 its 2020 townships are not its polygon's: 方城镇 (371302) inside; 汪沟镇 (371302) inside
+    county     平邑县                      371326 bound to Pingyixian (17275852B95440277175473)
+    county     莒南县                      371327 bound to Junanxian (17275852B41312334217118), ratio 0.95 (0.99 of the median)
+    county     蒙阴县                      371328 bound to Mengyinxian (17275852B77679479199341)
+    county     临沭县                      371329 bound to Linshuxian (17275852B3689978228404), ratio 0.95 (0.99 of the median)
+    special    临沂高新技术产业开发区              371371 
+    prefecture 德州市                      371400 
+    county     德城区                      371402 a district
+    county     陵城区                      371403 a district
+    county     宁津县                      371422 a zone stands on its polygon: 德州经济技术开发区: 赵虎镇
+    county     庆云县                      371423 its 2020 townships are not its polygon's: 庆云镇 (130925) inside
+    county     临邑县                      371424 bound to Linyixian (17275852B92506097004923)
+    county     齐河县                      371425 its 2020 townships are not its polygon's: 桑梓店街道 (370105) inside
+    county     平原县                      371426 bound to Pingyuanxian (17275852B58391528789088), ratio 0.91 (0.95 of the median)
+    county     夏津县                      371427 bound to Xiajinxian (17275852B86517244462494), ratio 0.88 (0.92 of the median)
+    county     武城县                      371428 bound to Wuchengxian (17275852B99732539673783), ratio 0.91 (0.95 of the median)
+    special    德州经济技术开发区                -      
+    special    德州运河经济开发区                -      
+    county     乐陵市                      371481 its 2020 townships are not its polygon's: 市中街道 outside
+    county     禹城市                      371482 its 2020 townships are not its polygon's: 市中街道 (371481) inside
+    prefecture 聊城市                      371500 
+    county     东昌府区                     371502 a district
+    county     茌平区                      371503 a district
+    county     阳谷县                      371521 its polygon holds other seats: Yangguxian holds ['371521', '410927']
+    county     莘县                       371522 a zone in its prefecture: 聊城高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 聊城经济技术开发区 is not among the units the statistical division codes list for the prefecture; 聊城江北水城旅游度假区 is not among the units the statistical division codes list for the prefecture
+    county     东阿县                      371524 a zone in its prefecture: 聊城高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 聊城经济技术开发区 is not among the units the statistical division codes list for the prefecture; 聊城江北水城旅游度假区 is not among the units the statistical division codes list for the prefecture
+    county     冠县                       371525 its polygon holds other seats: Guanxian holds ['130433', '371525']
+    county     高唐县                      371526 a zone in its prefecture: 聊城高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 聊城经济技术开发区 is not among the units the statistical division codes list for the prefecture; 聊城江北水城旅游度假区 is not among the units the statistical division codes list for the prefecture
+    special    聊城高新技术产业开发区              -      
+    special    聊城经济技术开发区                -      
+    special    聊城江北水城旅游度假区              -      
+    county     临清市                      371581 a zone in its prefecture: 聊城高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 聊城经济技术开发区 is not among the units the statistical division codes list for the prefecture; 聊城江北水城旅游度假区 is not among the units the statistical division codes list for the prefecture
+    prefecture 滨州市                      371600 
+    county     滨城区                      371602 a district
+    county     沾化区                      371603 a district
+    county     惠民县                      371621 a zone in its prefecture: 滨州市高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 滨州市经济技术开发区 is not among the units the statistical division codes list for the prefecture; 滨州市北海经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     阳信县                      371622 a zone in its prefecture: 滨州市高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 滨州市经济技术开发区 is not among the units the statistical division codes list for the prefecture; 滨州市北海经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     无棣县                      371623 a zone in its prefecture: 滨州市高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 滨州市经济技术开发区 is not among the units the statistical division codes list for the prefecture; 滨州市北海经济开发区 is not among the units the statistical division codes list for the prefecture
+    county     博兴县                      371625 a zone in its prefecture: 滨州市高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 滨州市经济技术开发区 is not among the units the statistical division codes list for the prefecture; 滨州市北海经济开发区 is not among the units the statistical division codes list for the prefecture
+    special    滨州市高新技术产业开发区             -      
+    special    滨州市经济技术开发区               -      
+    special    滨州市北海经济开发区               -      
+    county     邹平市                      371681 a zone in its prefecture: 滨州市高新技术产业开发区 is not among the units the statistical division codes list for the prefecture; 滨州市经济技术开发区 is not among the units the statistical division codes list for the prefecture; 滨州市北海经济开发区 is not among the units the statistical division codes list for the prefecture
+    prefecture 菏泽市                      371700 
+    county     牡丹区                      371702 a district
+    county     定陶区                      371703 a district
+    county     曹县                       371721 a zone in its prefecture: 1 of 菏泽经济技术开发区's 4 townships has no point to place it by (岳程街道); 1 of 菏泽高新技术开发区's 3 townships has no point to place it by (吕陵镇)
+    county     单县                       371722 its polygon holds other seats: None holds None
+    county     成武县                      371723 a zone in its prefecture: 1 of 菏泽经济技术开发区's 4 townships has no point to place it by (岳程街道); 1 of 菏泽高新技术开发区's 3 townships has no point to place it by (吕陵镇)
+    county     巨野县                      371724 a zone in its prefecture: 1 of 菏泽经济技术开发区's 4 townships has no point to place it by (岳程街道); 1 of 菏泽高新技术开发区's 3 townships has no point to place it by (吕陵镇)
+    county     郓城县                      371725 a zone in its prefecture: 1 of 菏泽经济技术开发区's 4 townships has no point to place it by (岳程街道); 1 of 菏泽高新技术开发区's 3 townships has no point to place it by (吕陵镇)
+    county     鄄城县                      371726 a zone in its prefecture: 1 of 菏泽经济技术开发区's 4 townships has no point to place it by (岳程街道); 1 of 菏泽高新技术开发区's 3 townships has no point to place it by (吕陵镇)
+    county     东明县                      371728 a zone in its prefecture: 1 of 菏泽经济技术开发区's 4 townships has no point to place it by (岳程街道); 1 of 菏泽高新技术开发区's 3 townships has no point to place it by (吕陵镇)
+    special    菏泽经济技术开发区                -      
+    special    菏泽高新技术开发区                -      
+  Shandong Province: 16 prefectures, 136 county-level areas, 40 special; 18 bound; not bound: {'a district': 58, 'its polygon holds other seats': 5, 'no polygon is this county': 2, 'a zone in its prefecture': 44, "its 2020 townships are not its polygon's": 8, 'a zone stands on its polygon': 1}; 53 polygons told why
+  --add: 175 records read for ['13', '37']; 160 kept from the current china_county_census.json
+  wrote data/processed/china_county_census.json (1316 kB)
+  wrote 335 county records to china_county_census.json
