@@ -117,6 +117,27 @@ class Citizenship(unittest.TestCase):
         self.assertIsNone(found)
         self.assertIn("5,183", why)
 
+    def test_town_names_wrapped_above_the_word_town_are_put_back(self):
+        # Gasa sets a town's name on one line and "Town" beside its figures
+        # on the next; two rows both called "Town" used to stop the run.
+        t22 = table22()
+        at = next(i for i, r in enumerate(t22) if r[0][2] == "Tsirang")
+        t22[at:at + 1] = [row("Tsirang"),
+                          row("Town", "1,600", "1,550", "3,150", "50.8", "49.2",
+                              "100.0", "103"),
+                          row("Damji"),
+                          row("Town", "22", "21", "43", "51.2", "48.8", "100.0", "105")]
+        _, (found, why) = self.read(pages(t22))
+        self.assertEqual(why, "")
+        self.assertEqual(found.towns, {"Tsirang Town": 3150, "Damji Town": 43})
+
+    def test_a_refusal_inside_the_reading_costs_only_the_citizenship(self):
+        t22 = table22()
+        t22.insert(7, row("Barshong", "1", "1", "2", "50.0", "50.0", "100.0", "100"))
+        _, (found, why) = self.read(pages(t22))
+        self.assertIsNone(found)
+        self.assertIn("Table 2.2", why)
+
     def test_no_table_22_at_all_is_said(self):
         _, (found, why) = self.read([contents(), table21()])
         self.assertIsNone(found)

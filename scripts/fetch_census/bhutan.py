@@ -748,7 +748,14 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False,
             # The pending label is used only by a row that has no name of
             # its own. Otherwise a stray one-word line above the table gets
             # glued on -- Dagana read "Population Gozhi" for Gozhi.
-            name = " ".join(words[:at] if at else pending).strip()
+            own = list(words[:at]) if at else []
+            if pending and own and TOWN.fullmatch(" ".join(own)):
+                # Except a town whose name wrapped above its own word "Town":
+                # Gasa's Table 2.2 sets each town's name on one line and
+                # "Town" beside the figures on the next, and two rows both
+                # called "Town" stopped the run.
+                own = pending + own
+            name = " ".join(own if at else pending).strip()
             pending = []
             if not name or NUMBER.match(name):
                 continue
@@ -950,11 +957,22 @@ def citizens(blob: bytes, dzongkhag: str, read: Read, debug: bool = False
         return bool(table22.gewogs) and bool(table22.printed) \
             and counted == table22.printed
 
-    found = scan(blob, True, dzongkhag, debug, title=CITIZEN_TITLE)
-    if not whole(found):
-        loose = scan(blob, False, dzongkhag, debug, title=CITIZEN_TITLE)
-        if whole(loose):
+    def attempt(strict: bool) -> Read | str:
+        # scan's refusals are written for Table 2.1, where they must stop
+        # the run; here they cost the dzongkhag its citizenship and are kept
+        # as the reason.
+        try:
+            return scan(blob, strict, dzongkhag, debug, title=CITIZEN_TITLE)
+        except SystemExit as stop:
+            return str(stop).replace("Table 2.1", "Table 2.2")
+
+    found = attempt(True)
+    if isinstance(found, str) or not whole(found):
+        loose = attempt(False)
+        if not isinstance(loose, str) and whole(loose):
             found = loose
+    if isinstance(found, str):
+        return None, found.removeprefix(f"bhutan: {dzongkhag}: ")
     if not found.gewogs:
         return None, "Table 2.2 was not found under its title"
     counted = sum(found.gewogs.values()) + sum(found.towns.values())
