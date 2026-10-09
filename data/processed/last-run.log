@@ -1,70 +1,21 @@
-  retry 1/4 after 2s :: https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx :: <urlopen error timed out>
-  retry 2/4 after 4s :: https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx :: <urlopen error timed out>
-  retry 3/4 after 8s :: https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx :: <urlopen error timed out>
-  retry 4/4 after 16s :: https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx :: <urlopen error timed out>
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1361, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1046, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1404, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1364, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/israel_cbs.py", line 604, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/israel_cbs.py", line 587, in main
-    table = read(workbook(URL))
-                 ^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/west_asia_common.py", line 118, in workbook
-    blob = http_get(url, binary=True, cache=False)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1067, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_17.xlsx
+  key from NZ_STATS_API (32 characters)
+  17 regional councils, 89 territorial authorities and local boards
+  CEN23_ECI_017 [2023...9999.99]: 70,784 observations
+  CEN23_ECI_017 [2023..999..99]: 108,704 observations
+  CEN23_ECI_011 [2023...9999.99]: 50,560 observations
+  religion No religion: 2,576,049 vs published 2,576,049 (0.0000%)
+  religion Catholicism: 449,466 vs published 449,466 (0.0000%)
+  religion Hinduism: 144,753 vs published 144,753 (0.0000%)
+  religion Islam: 75,138 vs published 75,138 (0.0000%)
+  ethnicity European: 3,383,742 vs published 3,383,742 (0.0000%)
+  ethnicity Māori: 887,493 vs published 887,493 (0.0000%)
+  ethnicity Asian: 861,576 vs published 861,576 (0.0000%)
+  ethnicity Pacific Peoples: 442,632 vs published 442,632 (0.0000%)
+  language English: 4,750,056 vs published 4,750,056 (0.0000%)
+  language Māori: 213,849 vs published 213,849 (0.0000%)
+  language Samoan: 110,541 vs published 110,541 (0.0000%)
+  CEN23_POP_006 [2023..999.Median+99.999+11+22]: 15,168 observations
+  age: national median 38.1, 2,470,893 males and 2,523,030 females by sex at birth
+  wrote data/processed/nz_region.json (126 kB)
+  wrote data/processed/nz_territorial.json (645 kB)
+  17 regions, 89 territorial authorities
