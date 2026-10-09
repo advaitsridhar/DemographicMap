@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """Indonesia: median age and sex ratio from two provinces' civil registries.
 
+**Not registered in ADAPTER_FILES, and not to be.** It was written before the
+2020 census's Long Form reached the regencies; ``indonesia_age.py`` now gives
+every regency and province of West Sumatra and Bengkulu (and the other 32
+provinces) a median and a sex ratio from that census, which a register's
+should not compete with. It is kept because it is the one reader of a
+province's civil register by age, and the 31 units its output gives a median
+are the comparison a reader of the Long Form's figures may want: the
+register's residents against the census's. Its other 516 records state a gap
+("no table of them reaches this map") that the Long Form has since made
+untrue -- one more reason it must not be built from. Run it to compare.
+
 BPS answers this project's reader 403 on every host it owns, its key-only
 API has no key here, and Dukcapil's national dashboards time out
 (docs/SOURCES.md, "Indonesia: what BPS's refusal left reachable"), so no

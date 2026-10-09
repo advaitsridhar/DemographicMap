@@ -18,7 +18,11 @@ Sheet ``2.9`` is the country and sheets ``2.9.a`` to ``2.9.m`` the thirteen
 municipalities of 2015 -- the thirteen polygons, Atauro then a post of Dili --
 each with a Total row of Timorese and "other nationality/citizenship" for both
 sexes, males and females. The 2022 census asked citizenship too and published
-no table of it by municipality, so 2015 is the newest.
+no table of it by municipality, so 2015 is the newest: the 24 basic tables of
+its main report (chapter 4, ``Chapter-4-TLPHC-Census-report-Basic-tables.xlsx``
+on inetl-ip.gov.tl, whose index sheet lists them) carry citizenship once, in
+Table 4.10, "Population in private households, by five-year age group, and by
+sex, Timor-Leste or foreign country of citizenship" -- for the whole country.
 
 Two labels, both already in the group tree: "East Timorese" (the nationality,
 which names no one people -- Tetum, Mambai, Makasae and thirty others are all
@@ -54,7 +58,8 @@ TITLE_SPELLINGS = {"Liquicia": "Liquiçá"}
 NOTE = ("Timor-Leste's census asks citizenship, not ethnicity; this is the 2015 census's "
         "count of the municipality's people by nationality -- Timorese against every other -- "
         "which stands in for ethnicity under the owner's rule for states that count "
-        "nationality instead. \"East Timorese\" is a nationality, not one people.")
+        "nationality instead. \"East Timorese\" is a nationality, not one people. The 2022 "
+        "census's basic tables count citizenship for the whole country only (Table 4.10).")
 
 
 def total_row(grid: list[list[Any]], where: str) -> list[float]:
