@@ -444,23 +444,33 @@ LANGUAGE = collection_gap("BGD", "language")
 def zila_note(name: str, ethnic: int, whole: int) -> str:
     """Two categories, both counted, and where the detail lives.
 
-    This is as fine as the census goes. Table P28 gives each district's
-    scheduled-group total and Table P29 names the fifty-one categories only by
-    division, so a zila can honestly carry the split and not the breakdown.
-    Saying which of the two it is matters: a reader who sees "Scheduled ethnic
-    groups 57.6%" in Rangamati should know that Chakma, Marma and Tripura are
-    inside it and that the map can show them one level up, not that the census
-    declined to look.
+    Table P28 gives each district's scheduled-group total and Table P29 names
+    the fifty-one categories only by division, so a zila carries the split and
+    not the breakdown. Saying which of the two it is matters: a reader who sees
+    "Scheduled ethnic groups 57.6%" in Rangamati should know that Chakma, Marma
+    and Tripura are inside it and that the map can show them one level up, not
+    that the census declined to look.
+
+    The Bureau's Community Series does print a little more by zila -- Table
+    C-13 of each zila's workbook names its three largest groups and an
+    "Others" -- and it is not used, because its headings can be wrong where
+    nothing below the division can check them: Rangamati's prints "Bedia" over
+    a column of 276,048 people, where Table P29 counts 1,147 Bedia in all of
+    Chattogram division (probe of 9 October 2026).
     """
     return (f"Census 2022, Table P28. {ethnic:,} of {name}'s {whole:,} people "
             f"({ethnic / whole * 100:.2f}%) are counted in the ethnic groups "
             "scheduled under the Khudra Nri-goshthi Sangskritik Pratisthan Ain "
             "2010; the rest are shown as Bengali, the census's own framing for "
             "the population those schedules are set apart from. Both figures "
-            "are counted rather than inferred, but the district is as fine as "
-            "the naming goes: the Bureau publishes the fifty-one categories "
-            "behind that total only by division, so which peoples these are is "
-            "on the division above this one, not here.")
+            "are counted rather than inferred. The National Report names the "
+            "fifty-one categories behind that total only by division, so which "
+            "peoples these are is on the division above this one. (The Bureau's "
+            "Community Series workbook for each zila names its three largest "
+            "groups in Table C-13, under headings that cannot be checked below "
+            "the division and are not always right -- Rangamati's prints "
+            "'Bedia' over 276,048 people, where Table P29 counts 1,147 Bedia "
+            "in all of Chattogram division -- so they are not used.)")
 
 
 NOTE = ("Census 2022. The religion table classifies the male and female "
@@ -960,22 +970,25 @@ def check_sexes(districts: list[dict[str, Any]], printed: dict[str, float]) -> N
         "sex ratio is the one Table P11 prints, to the hundredth")
 
 
-# Why a zila has no median age: measured by the census, published no lower
-# than the division. Each claim here was read, not recalled -- the sheet
-# list in the module docstring, the report's table list (probe of 4 October
-# 2026), and the COD-PS table's own national row.
+# Why this file gives a zila no median age: its workbook has no age sheet,
+# and the National Report's age tables stop at the division. The census does
+# publish age by zila, in the Bureau's Community Series, which
+# bangladesh_zila_ages reads and which stands in front of this marker. Each
+# claim here was read, not recalled -- the sheet list in the module docstring,
+# the report's table list (probe of 4 October 2026), the census page's list of
+# Community Series workbooks (probe of 9 October 2026) and the COD-PS table's
+# own national row.
 ZILA_AGE_GAP = (
-    "The 2022 census publishes age for the nation and its eight divisions "
-    "and for no smaller unit. The National Report's age tables -- P03 "
-    "(five-year groups), P10 (single years), P05, P07 and P17 -- are all by "
-    "division, none of its tables by district or upazila gives age, and none "
-    "of the district workbook's 42 sheets is an age table. The Bureau's census "
-    "page lists district volumes (Zila Reports) for the 2011 census and none "
-    "for 2022. The 2022 age table "
-    "by zila on HDX's COD-PS (UNFPA and the US Census Bureau) is not the census "
-    "count -- it totals 165,650,475 people against the census's 165,150,492 "
-    "males and females, and 14.19 million aged 0-4 against Table P03's 15.58 "
-    "million -- so it is not used.")
+    "Not in the district indicators workbook read here, none of whose 42 "
+    "sheets is an age table, nor in the National Report, whose age tables -- "
+    "P03 (five-year groups), P10 (single years), P05, P07 and P17 -- are all "
+    "by division. The census does publish age by zila: the Bureau's Community "
+    "Series, one workbook per zila on its census page, prints the population "
+    "by five-year age group in Table C-02, and that is where a zila's median "
+    "comes from. The 2022 age table by zila on HDX's COD-PS (UNFPA and the US "
+    "Census Bureau) is not the census count -- it totals 165,650,475 people "
+    "against the census's 165,150,492 males and females, and 14.19 million "
+    "aged 0-4 against Table P03's 15.58 million -- so it is not used.")
 
 
 def zila_sex_ratio(row: dict[str, Any]) -> dict[str, Any]:
