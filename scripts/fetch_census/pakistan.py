@@ -450,8 +450,11 @@ MERGED_WHY: dict[str, str] = {
     "KOHISTAN": "the boundary file draws Kohistan undivided; it was split "
                 "into Upper and Lower Kohistan in 2014, and Kolai-Palas was "
                 "cut from Lower Kohistan in 2017",
-    "KARACHI": "the boundary file draws Karachi as one shape; the census counts "
-               "its seven districts",
+    # The note lists the seven districts and adds "and the census counts
+    # them apart", so this says only what the boundary file does: "the census
+    # counts its seven districts, and the census counts them apart" said it
+    # twice.
+    "KARACHI": "the boundary file draws Karachi as one shape",
     "MANSEHRA": "the boundary file draws Mansehra as it was before Torghar "
                 "(the Kala Dhaka area) became a district of its own in 2011",
     "JHANG": "the boundary file draws Jhang as it was before Chiniot was "
@@ -460,7 +463,7 @@ MERGED_WHY: dict[str, str] = {
                    "Nankana Sahib was carved out of it in 2005",
     "KAMBAR SHAHDAD KOT": "the boundary file draws, under the name Qambar "
                           "Shahdadkot, the undivided Larkana district of "
-                          "before 2004 -- Larkana city lies inside the shape",
+                          "before 2004 (Larkana city lies inside the shape)",
     "THATTA": "the boundary file draws Thatta as it was before Sujawal was "
               "carved out of it in 2013",
     "KILLA ABDULLAH": "the boundary file draws Killa Abdullah as it was before "

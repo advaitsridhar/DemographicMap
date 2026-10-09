@@ -286,6 +286,16 @@ class TestMerges(unittest.TestCase):
     def test_every_merge_says_why(self):
         self.assertEqual(set(pakistan.MERGED), set(pakistan.MERGED_WHY))
 
+    def test_no_sum_note_says_the_census_counts_twice(self):
+        # Karachi's read "the census counts its seven districts, and the
+        # census counts them apart".
+        for name, parts in pakistan.MERGED.items():
+            note = pakistan.merged_note(name, parts)
+            self.assertEqual(note.lower().count("the census"), 1, note)
+        karachi = pakistan.merged_note("KARACHI", pakistan.MERGED["KARACHI"])
+        self.assertIn("Malir and Keamari summed: the boundary file draws Karachi as one "
+                      "shape, and the census counts them apart.", karachi)
+
 
 if __name__ == "__main__":
     unittest.main()
