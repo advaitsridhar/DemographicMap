@@ -143,7 +143,10 @@ def p1_4_pages(rows_a=None, rows_b=None, rule=None):
             "Table P1-4B. Population in Municipalities by First Ethnicity, Federated "
             "States of Micronesia: 2000\n[For definitions] - continued\n" + head
             + (rows_b or P1_4_ROWS_B) + "Source: 2000 FSM Census",
-            "Table P2-9. Ethnicity by Usual Residence, Federated States of Micronesia: 2000"]
+            "Table P2-9. Ethnicity by Usual Residence, Federated States of Micronesia: 2000",
+            # The contents page names the table too, running on to its page number.
+            "Table P1-4A. Population in Municipalities by First Ethnicity, Federated States of "
+            "Micronesia: 2000......7\nTable P1-5A1. Population in Municipality by Place of birth"]
 
 
 class Layouts(unittest.TestCase):

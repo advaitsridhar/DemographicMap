@@ -123,8 +123,10 @@ T2000 = ("FSM Division of Statistics, Department of Economic Affairs, 2000 FSM C
          "Population and Housing, National Detailed Tables (May 2002)")
 DETAILED_2000 = _WAYBACK.format(20201115081315, "2000-FSM-Detailed-Tables.pdf")
 FSM_2000 = 107_008
+# The table's titles, and not the contents page's lines for them, which run on
+# to their page numbers.
 P1_4_TITLE = re.compile(r"^Table P1-4[AB]\. Population in Municipalities by First Ethnicity, "
-                        r"Federated States of Micronesia: 2000")
+                        r"Federated States of Micronesia: 2000\s*$")
 P1_4_HEADING = ("dd Yap-d YapdChuuk-dMort-dPohn-dOuterdKos-dOtherdFili-dOtherdd",
                 "Municipality dTotald esedO.Is.d esedlockdpeiandIslanddraeandPacIsdpinodAsiandUSA"
                 "dOther")
