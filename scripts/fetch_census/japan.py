@@ -99,12 +99,15 @@ ESTAT_LICENCE = ("e-Stat terms of use (compatible with CC BY 4.0): source to be 
 
 # The table's 国籍 codes, in the map's words. The census prints 韓国，朝鮮 as
 # one row -- the two Korean nationalities the Japanese register records --
-# and 中国 as the census records it.
+# and 中国 as the census records it. A foreign row is a passport and is
+# written as one ("Korean national"), so that it is never read as the people
+# of the same name; "Japanese" is everyone holding Japanese nationality.
 NATIONALITY_CODES: dict[str, str] = {
     "2": "Japanese",
-    "101": "Korean", "102": "Chinese", "103": "Filipino", "104": "Thai",
-    "105": "Indonesian", "106": "Vietnamese", "107": "Indian", "108": "Nepalese",
-    "109": "British", "110": "American", "111": "Brazilian", "112": "Peruvian",
+    "101": "Korean national", "102": "Chinese national", "103": "Filipino national",
+    "104": "Thai national", "105": "Indonesian national", "106": "Vietnamese national",
+    "107": "Indian national", "108": "Nepalese national", "109": "British national",
+    "110": "American national", "111": "Brazilian national", "112": "Peruvian national",
     "113": "Other nationalities",
 }
 CODE_TOTAL, CODE_FOREIGN, CODE_UNKNOWN = "0", "1", "3"
@@ -176,11 +179,13 @@ LANGUAGE_METHOD = "tier1-nationality-to-language"
 
 # --- the assumption: a nationality's majority home language ----------------
 LANGUAGE_OF: dict[str, str] = {
-    "Japanese": "Japanese", "Korean": "Korean", "Chinese": "Chinese (Mandarin)",
-    "Filipino": "Filipino", "Thai": "Thai", "Indonesian": "Indonesian",
-    "Vietnamese": "Vietnamese", "Indian": "Hindi", "Nepalese": "Nepali",
-    "British": "English", "American": "English", "Brazilian": "Portuguese",
-    "Peruvian": "Spanish", "Other nationalities": "Other languages",
+    "Japanese": "Japanese", "Korean national": "Korean",
+    "Chinese national": "Chinese (Mandarin)", "Filipino national": "Filipino",
+    "Thai national": "Thai", "Indonesian national": "Indonesian",
+    "Vietnamese national": "Vietnamese", "Indian national": "Hindi",
+    "Nepalese national": "Nepali", "British national": "English",
+    "American national": "English", "Brazilian national": "Portuguese",
+    "Peruvian national": "Spanish", "Other nationalities": "Other languages",
 }
 
 # e-Stat's prefecture codes, as both tables use them, with the census's name
@@ -580,7 +585,7 @@ def build(nationality: dict[str, dict[str, int]], believers: dict[str, dict[str,
             "NATIONALITY, not ethnicity, which Japan's census does not ask. 'Japanese' is "
             "everyone holding Japanese nationality, naturalised citizens and people of any "
             "ancestry included (Ainu, Ryukyuans and naturalised Japan-born Koreans among "
-            "them); 'Korean' is the census's 韓国，朝鮮 row. Shares are of the "
+            "them); 'Korean national' is the census's 韓国，朝鮮 row. Shares are of the "
             f"{known:,} people whose nationality the census recorded; {unknown:,} "
             f"({unknown / row[CODE_TOTAL] * 100:.1f}% of {row[CODE_TOTAL]:,}) recorded as "
             f"neither Japanese nor foreign are left out. {caveat}")

@@ -81,8 +81,17 @@ CHINESE_SHARE = 91.6
 CANTONESE_SHARE = 88.2
 
 # The census's labels, as the workbook prints them, to the map's words.
-# Everything else is kept as printed, singular, without "people".
-ETHNICITY_LABELS = {"Others": "Other ethnic groups"}
+# Everything else is kept as printed, singular, without "people". The five
+# rows that also name a people or a nationality in other countries' tables
+# carry the place, so that each is read as Hong Kong's census category.
+ETHNICITY_LABELS = {
+    "Others": "Other ethnic groups",
+    "Indian": "Indian (Hong Kong)",
+    "Nepalese": "Nepalese (Hong Kong)",
+    "Pakistani": "Pakistani (Hong Kong)",
+    "Indonesian": "Indonesian (Hong Kong)",
+    "Thai": "Thai (Hong Kong)",
+}
 LANGUAGE_LABELS = {"Others": "Other languages"}
 # Rows that are a sum of the rows beneath them, or of the whole table.
 ETHNICITY_PARENTS = ("South Asian",)

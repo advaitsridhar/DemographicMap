@@ -207,6 +207,36 @@ class Reading(unittest.TestCase):
         self.assertEqual({s["field"] for s in rec["sources"]}, {"ethnicity", "language"})
         self.assertTrue(all(s["url"] == hk.URL for s in rec["sources"]))
 
+    def test_rows_that_name_a_people_elsewhere_carry_hong_kong(self):
+        counts, printed = hk.read_ethnicity(ETHNICITY)
+        self.assertEqual(counts["Indian (Hong Kong)"], 42569)
+        self.assertEqual(counts["Nepalese (Hong Kong)"], 29701)
+        self.assertEqual(counts["Pakistani (Hong Kong)"], 24385)
+        self.assertEqual(counts["Indonesian (Hong Kong)"], 142065)
+        self.assertEqual(counts["Thai (Hong Kong)"], 12972)
+        self.assertEqual(printed["Indonesian (Hong Kong)"], 1.9)
+        for bare in ("Indian", "Nepalese", "Pakistani", "Indonesian", "Thai", "Others"):
+            self.assertNotIn(bare, counts)
+        # The rest keep the census's own words.
+        for kept in ("Chinese", "Filipino", "Japanese", "Korean", "White", "Other Asian",
+                     "Other South Asian"):
+            self.assertIn(kept, counts)
+
+    def test_the_tree_files_each_relabelled_row(self):
+        import group_tree as gt
+        for label in hk.ETHNICITY_LABELS.values():
+            self.assertIsNotNone(gt.parent_of("ethnicity", label), label)
+        self.assertEqual(gt.parent_of("ethnicity", "Indian (Hong Kong)"),
+                         "Indian (census category)")
+        self.assertEqual(gt.parent_of("ethnicity", "Nepalese (Hong Kong)"),
+                         "South Asian (census category)")
+        self.assertEqual(gt.parent_of("ethnicity", "Pakistani (Hong Kong)"),
+                         "South Asian (census category)")
+        self.assertEqual(gt.parent_of("ethnicity", "Indonesian (Hong Kong)"),
+                         "Malay and Indonesian peoples")
+        self.assertEqual(gt.parent_of("ethnicity", "Thai (Hong Kong)"),
+                         "Mainland Southeast Asian peoples")
+
     def test_a_footnote_mark_is_not_part_of_a_label(self):
         counts, _ = hk.read_ethnicity(ETHNICITY)
         self.assertNotIn("Others[3]", counts)

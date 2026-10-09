@@ -128,7 +128,9 @@ class Build(unittest.TestCase):
         self.assertAlmostEqual(sum(g["pct"] for g in r["ethnicity"]), 100.0, places=6)
         groups = {g["group"] for g in r["ethnicity"]}
         self.assertIn("Japanese", groups)
-        self.assertIn("Korean", groups)
+        self.assertIn("Korean national", groups)
+        self.assertNotIn("Korean", groups)
+        self.assertIn("'Korean national' is the census's", r["ethnicity_note"])
         self.assertIn("left out", r["ethnicity_note"])
         self.assertEqual(r["religion"]["status"], "not_collected")
         self.assertEqual(r["language"]["status"], "not_collected")

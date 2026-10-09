@@ -106,6 +106,22 @@ class MyanmarTest(unittest.TestCase):
         self.assertEqual(pct(recs["S4"], "ethnicity"), {"Bamar": 100.0})
         self.assertEqual(pct(recs["D3"], "ethnicity"), {"Shan": 80.0, "Bamar": 20.0})
 
+    def test_myanmar_s_relabel_is_applied_and_the_tree_files_it_there(self):
+        # The profiles' "Burmese", "Indian" and "Naga" are Myanmar's Bamar,
+        # its citizens of South Asian descent and its Naga; the sums here
+        # carry uscb.py's labels, and each lands with Myanmar's peoples.
+        import group_tree as gt
+        self.assertEqual(uscb.MYANMAR.relabel, {"Burmese": "Bamar", "Indian": "Indian (Myanmar)",
+                                                "Naga": "Naga (Myanmar)"})
+        made = {"counts": {"Burmese": 50.0, "Naga": 30.0, "Indian": 20.0}, "published": 100.0}
+        self.assertEqual(pct({"e": s.composition(made, uscb.MYANMAR.relabel)}, "e"),
+                         {"Bamar": 50.0, "Naga (Myanmar)": 30.0, "Indian (Myanmar)": 20.0})
+        for label in ("Bamar", "Naga (Myanmar)"):
+            self.assertEqual(gt.parent_of("ethnicity", label),
+                             "Tibeto-Burman peoples of China and Southeast Asia", label)
+        self.assertEqual(gt.parent_of("ethnicity", "Indian (Myanmar)"),
+                         "Indian (census category)")
+
     def test_mandalay_holds_nay_pyi_taw(self):
         rec = self.build()["S4"]
         self.assertEqual(rec["level"], "admin1")

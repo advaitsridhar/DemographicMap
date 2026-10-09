@@ -576,8 +576,10 @@ def pool_sentence(pooled: dict[str, float], moved: list[str], people: int,
                   census_other: int) -> str:
     """What the note says of 'Other nationalities': what it holds where it
     shows, and where it is too few to show, how many people are counted in the
-    base but not drawn -- never a group the composition does not have."""
-    names = ", ".join(sorted(moved))
+    base but not drawn -- never a group the composition does not have. The
+    sentence already says "nationality", so a pooled label is named by its
+    country alone ("American", not "American national")."""
+    names = ", ".join(sorted(m.removesuffix(" national") for m in moved))
     nationalities = "one nationality" if len(moved) == 1 else f"{len(moved)} nationalities"
     if any(row["group"] == OTHER for row in hundred(pooled)):
         if not moved:
@@ -794,7 +796,7 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
         f"2020 Population Census (e-Stat table {NATIONALITY_TABLE}): population by "
         "NATIONALITY, not ethnicity, which Japan's census does not ask. 'Japanese' is everyone "
         "holding Japanese nationality, naturalised citizens and people of any ancestry "
-        f"included; 'Korean' is the census's 韓国，朝鮮 row. {base}" + pooled
+        f"included; 'Korean national' is the census's 韓国，朝鮮 row. {base}" + pooled
         + (f" {note}" if note else ""))
     return record(
         f"JPN-{'+'.join(codes)}", name, level="admin2", parent="JPN", country="JPN",

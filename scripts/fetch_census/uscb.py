@@ -517,8 +517,11 @@ MYANMAR = Country(
     # The profiles' "Burmese" is the Bamar, Myanmar's majority people, and
     # their "Indian" the country's own citizens of South Asian descent; read
     # as written, the group tree files both as the nationalities a European
-    # or Korean register means by those words.
-    relabel={"Burmese": "Bamar", "Indian": "Indian (Myanmar)"},
+    # or Korean register means by those words. Their "Naga" is the Naga of
+    # Myanmar's Sagaing Region, written with the country for the same reason:
+    # the bare word is also India's Naga, filed with India's peoples.
+    relabel={"Burmese": "Bamar", "Indian": "Indian (Myanmar)",
+             "Naga": "Naga (Myanmar)"},
     # None needed for the states and regions: the census writes "KACHIN STATE"
     # where geoBoundaries writes "Kachin", and norm() drops the word "state"
     # on both sides. Two boundary names are misspelled rather than differently
