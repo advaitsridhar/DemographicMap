@@ -1,10 +1,69 @@
-xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
-usage: east_asia_probe.py [-h] [--encoding ENCODING] [--wayback WAYBACK]
-                          [--aia] [--links LINKS] [--grep GREP]
-                          [--context CONTEXT] [--rows ROWS] [--cols COLS]
-                          [--width WIDTH] [--sheets SHEETS] [--bytes BYTES]
-                          [--options OPTIONS] [--field FIELD]
-                          [--periods PERIODS]
-                          {page,form,post,get,pxweb,ris,nlsc,kosis,kosismass}
-                          target [target ...]
-east_asia_probe.py: error: argument --grep: expected one argument
+== https://web.archive.org/web/20170511164651id_/http://cso.gov.af/Content/files/Afghanistan%20SDES%20Bamiyan%20Final%20Report%20-%2024%20April%202013.pdf
+  200 application/pdf 2524212 https://web.archive.org/web/20170511164651id_/http://cso.gov.af/Content/files/Afghanistan%20SDES%20Bamiyan%20Final%20Report%20-%2024%20April%202013.pdf
+    103 pages
+
+  -- page 6
+    Table 1 Percent Distribution of Population by District: Bamiyan, September 2011
+    Table 2 Sex Ratio of the Population, by Age Group and District: Bamiyan, September 2011
+    Table 3 Median Age in Years of the Population by District: Bamiyan, September 2011
+    Table 4 Percent Distribution of Population by Age Group, Aged-Child Ratio, and District:
+    Table 5 Age Dependency Ratios by District: Bamiyan, September 2011
+    Table 6 Indexes of Age Preference by District: Bamiyan, September 2011
+    Table 7 Age-Sex Accuracy Index by District: Bamiyan, September 2011
+    Table 8 Median Age at First Marriage and Mean Age at First Marriage by Sex and District:
+    Table 13 Percent Distribution of the Population by Province of Birth and District: Bamiyan,
+    Table 14 Percent Distribution of Population Who Have Lived in another District, Province or
+    Table 15 Percent Distribution of In-Migrants by Residence in Nawroz 1390 and District:
+    Table 17 Percent Distribution of Children 5-17 Years Old by Work Status, Sex, Age Group and
+
+  -- page 7
+    Table 29 Percentage Distribution of Households by Source of Drinking Water and District:
+    Table 31 Percentage Distribution of Households by Main Material of the Roof and District:
+    Table 33 Percentage Distribution of Households by Main Material of the Floor, by District:
+    Table 34 Percentage Distribution of Households by Tenure Status of the Dwelling and District:
+    Table 35 Percentage Distribution of Households by Type of Toilet Facility and District:
+
+  -- page 22
+    A population with a median age of under 20 is considered a young population. Bamiyan has a very
+    young population as reflected by its median age of 16.6 years, which means that half of the
+    were older than that age. Among the districts, Shibar had the highest median age at 17.2 years. The
+    The male population of Bamiyan had a median age of 16.9 years while its female population had a
+    counterpart. This is true for all districts except in Waras where the median ages of male and female
+    Kahmard was the youngest with a median age of 15.2 years.
+
+  -- page 23
+    Median Age in Years of the Population by District: Bamiyan, September 2011
+
+  -- page 25
+    Table 5 shows the age dependency ratios for Bamiyan and its districts. For the calculation of
+
+  -- page 30
+    Table 8 shows the median age at first marriage for Bamiyan and its districts. These were estimated
+    proportion never married which is used in calculating the median age at first marriage through linear
+    interpolation. The median age at first marriage represents the age below which and above which
+    districts, Saighan had the highest median age at first marriage for both women and men at 22.5
+    marriage are some decimal points higher than the estimates of median age at first marriage. The
+    Median Age at First Marriage and Mean Age at First Marriage by Sex and District:
+    Median Age At First Mean Age At First
+
+  -- page 32
+    Table 9 also shows the literacy rates for men and women in the age group 15-24. Further, it shows
+
+  -- page 41
+    Table 14 presents the data on the length of stay in the district of residence at the time of survey of
+
+  -- page 46
+    data in Table 16 for five districts of Bamiyan tend to support this observation. However, the data for
+    Table 16. In all districts, except for Yakawlang, the unemployed-to-population ratio was higher for
+
+  -- page 67
+    Appendix Table 3 presents the distribution of ever-married women by CEB for the districts of
+
+  -- page 69
+    29 and 30-34 shown in Figure 32a and Appendix Table 4. Also, the P/F ratios for age group 30-34 for
+
+  -- page 70
+    in Table 21 depict very high fertility levels in all districts. Panjab had the highest fertility with the
+
+  -- page 92
+    number of rooms, at 11.2 percent (Table 37). In the other districts, the percentage ranged from 1.9
