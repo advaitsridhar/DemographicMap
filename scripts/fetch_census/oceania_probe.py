@@ -263,7 +263,7 @@ def cmd_get(urls: list[str], chars: int, grep: str | None, links: str | None,
 
 
 def cmd_xlsx(url: str, sheets: list[str], first: int, last: int, width: int,
-             grep: str | None, cols: int) -> None:
+             grep: str | None, cols: int, as_repr: bool = False) -> None:
     """Rows ``first``..``last`` of named sheets of a workbook (all sheets if none)."""
     import openpyxl
     status, ctype, body = fetch(url)
@@ -281,7 +281,8 @@ def cmd_xlsx(url: str, sheets: list[str], first: int, last: int, width: int,
                 continue
             if n > last:
                 break
-            cells = ["" if c is None else str(c)[:width] for c in row[:cols]]
+            cells = ["" if c is None else (repr(c) if as_repr else str(c))[:width]
+                     for c in row[:cols]]
             while cells and cells[-1] == "":
                 cells.pop()
             line = " | ".join(cells)
@@ -349,6 +350,8 @@ def main() -> int:
     x.add_argument("--width", type=int, default=40)
     x.add_argument("--cols", type=int, default=40)
     x.add_argument("--grep")
+    x.add_argument("--repr", action="store_true",
+                   help="print each cell's repr, so line breaks and odd spaces show")
     c = sub.add_parser("csv")
     c.add_argument("url")
     c.add_argument("--col", action="append", default=[])
@@ -359,7 +362,8 @@ def main() -> int:
         cmd_csv(args.url, args.col, args.rows, args.grep)
         return 0
     if args.cmd == "xlsx":
-        cmd_xlsx(args.url, args.sheet, args.first, args.last, args.width, args.grep, args.cols)
+        cmd_xlsx(args.url, args.sheet, args.first, args.last, args.width, args.grep, args.cols,
+                 args.repr)
         return 0
     if args.cmd == "flows":
         cmd_flows(args.service, args.match)
