@@ -253,7 +253,10 @@ class Religion(unittest.TestCase):
                           sources=[])]
         religion = {"Yazd": {"Islam": 9, "Zoroastrianism": 1}}
         ages = {21: {"total": (10, 5, 5)}}
-        ir.add_religion(rows, religion, ages)
+        county = ir.record("IRN-CENSUS-2101", "Yazd", level="admin2", parent="IRN",
+                           country="IRN", sources=[])
+        ir.add_religion(rows + [county], religion, ages)
+        self.assertIn("province only", county["religion"]["note"])
         self.assertEqual(rows[0]["religion"]["status"], "not_available")
         self.assertEqual(rows[1]["religion"]["status"], "not_available")
         self.assertEqual(rows[2]["religion"][0], {"group": "Islam", "pct": 90.0, "count": 9})

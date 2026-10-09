@@ -803,6 +803,14 @@ def add_religion(rows: list[dict[str, Any]], religion: dict[str, dict[str, int]]
             "Zoroastrian headings swapped; they are restored from the Centre's Persian "
             "results (see the adapter).")
     for r in rows:
+        if r["level"] == "admin2":
+            r.setdefault("religion", gap(NOT_AVAILABLE, (
+                "The 2016 census's religion is published by province only (Statistical "
+                "Yearbook 1395, table 3.18). No table of religion by shahrestan is among the "
+                "Centre's archived detailed census tables (population tables 1, 2, 3 and 9; "
+                "activity, households, housing, migration, education, marriage), so no "
+                "share is written below the province.")))
+            continue
         if r["level"] != "admin1":
             continue
         name = r["name"]
@@ -993,8 +1001,8 @@ def main() -> int:
     a1, a2 = drawn_units()
     rows, notes = build(province_ages, province_citizenship, counties, codab, a1, a2)
     religion = read_religion()
-    add_religion(rows, religion, province_ages)
     gaps = split_records(a1, a2)
+    add_religion(rows + gaps, religion, province_ages)
     for line in notes:
         log(f"  {line}")
     national = add_ages(list(province_ages.values()))
