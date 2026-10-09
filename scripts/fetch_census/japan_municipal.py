@@ -83,7 +83,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import NOT_COLLECTED, PROCESSED, gap, log, measure, read_json, record, write_json
-from .east_asia_common import drawn, grouped_median, hundred, sex_ratio
+from .east_asia_common import drawn, grouped_median, hundred, pool_small, sex_ratio, unshown
 from .japan import (
     CODE_FOREIGN, CODE_TOTAL, CODE_UNKNOWN, DECISION, ESTAT_LICENCE, NATIONALITY_CODES,
     NATIONALITY_SOURCE, NATIONALITY_TABLE, NATIONALITY_URL, PREFECTURES, fetch_values,
@@ -551,9 +551,17 @@ def prefecture_shapes(units: list[dict[str, Any]]) -> dict[str, tuple[str, str]]
 # Records
 # ---------------------------------------------------------------------------
 
-def nationality_shares(rows: list[dict[str, int]]) -> tuple[list[dict[str, Any]], int, int, int]:
-    """(shares, people with a recorded nationality, people without, total) over
-    one or more areas' rows."""
+OTHER = "Other nationalities"
+
+
+def nationality_shares(rows: list[dict[str, int]]) -> tuple[list[dict[str, Any]], int, int, int,
+                                                             str]:
+    """(shares, people with a recorded nationality, people without, total, a
+    sentence on what 'Other nationalities' holds) over one or more areas' rows.
+    A nationality too few to show at one decimal is counted in 'Other
+    nationalities' rather than dropped, so the counts shown are everyone with
+    a recorded nationality, but for the residual itself when it is too small
+    to show, which the sentence then counts."""
     counts: Counter = Counter()
     unknown = total = 0
     for row in rows:
@@ -562,7 +570,16 @@ def nationality_shares(rows: list[dict[str, int]]) -> tuple[list[dict[str, Any]]
         unknown += row[CODE_UNKNOWN]
         total += row[CODE_TOTAL]
     known = sum(counts.values())
-    return hundred({k: float(v) for k, v in counts.items()}), known, unknown, total
+    pooled, moved, people = pool_small({k: float(v) for k, v in counts.items()}, OTHER)
+    sentence = ""
+    if moved:
+        sentence = (f" The {people:,} people of {len(moved)} nationalities too few here to show "
+                    f"at one decimal ({', '.join(sorted(moved))}) are counted in '{OTHER}'.")
+    left = unshown(pooled)
+    if left:
+        sentence += (f" {left:,} people of other nationalities, too few to show at one decimal, "
+                     "are counted in the base but not drawn.")
+    return hundred(pooled), known, unknown, total, sentence
 
 
 def sources() -> list[dict[str, Any]]:
@@ -591,7 +608,7 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
     else:
         med = (measure(median[codes[0]], unit="years", year=YEAR, source=SOURCE)
                if codes[0] in median else None)
-    shares, known, unknown, total = nationality_shares([nat[c] for c in codes])
+    shares, known, unknown, total, pooled = nationality_shares([nat[c] for c in codes])
     if total == 0:
         return empty_record(shape, codes, name)
     where = "these two municipalities" if union else "this municipality"
@@ -602,7 +619,7 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
         "included; 'Korean' is the census's 韓国，朝鮮 row. Shares are of the "
         f"{known:,} people of {where} whose nationality the census recorded; {unknown:,} "
         f"({(unknown / total * 100) if total else 0:.1f}% of {total:,}) recorded as neither "
-        "Japanese nor foreign are left out." + (f" {note}" if note else "")
+        "Japanese nor foreign are left out." + pooled + (f" {note}" if note else "")
         + f" Written by the map owner's decision of {DECISION}.")
     return record(
         f"JPN-{'+'.join(codes)}", name, level="admin2", parent="JPN", country="JPN",

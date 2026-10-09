@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """South Korea: religion by province and district, from the 2015 census.
 
-Korea's census asks religion in the years ending in 5, of the fifth of
-households it enumerates in full (the sample survey of the register-based
-census), and Statistics Korea publishes the answers weighted to the whole
-population. The 2015 round's table by city, county and district is KOSIS
+Korea's census asks religion in the years ending in 5: the register-based
+census counts everyone from the registers, and its sample survey enumerates a
+fifth of households in the field and asks them; Statistics Korea publishes
+the answers weighted to the whole population. The 2015 round's table by city, county and district is KOSIS
 DT_1PM1502 (성, 연령 및 종교별 인구 - 시군구). KOSIS's viewer builds it in the
 browser, but the table's bulk download (대용량 다운로드) is one file:
 mass_list.jsp lists it as a hidden input ``file_data_0`` ("5581/
@@ -100,8 +100,9 @@ NAMES_2015: dict[tuple[str, str], str] = {
 URBAN_RURAL = ("03", "04", "05")                  # 동부, 읍부, 면부
 
 RELIGION_NOTE = (
-    "Statistics Korea's 2015 census asked religion of the fifth of households it enumerated in "
-    "full, and publishes the answers weighted to the whole population (KOSIS DT_1PM1502); the "
+    "Statistics Korea's 2015 census counted everyone from the registers and asked religion in "
+    "its sample survey, which enumerated a fifth of households in the field; the answers are "
+    "published weighted to the whole population (KOSIS DT_1PM1502), and the "
     "table counts {total:,} people here, {religious:,} with a religion and {none:,} with none. "
     "The question is asked in the years ending in 5; KOSIS's table by district holds the 2015 "
     "round.{pooled}{where}")

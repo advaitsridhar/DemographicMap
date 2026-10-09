@@ -80,6 +80,36 @@ def sex_ratio(men: float, women: float, *, year: int, source: str,
                    year=year, source=source, **extra)
 
 
+def pool_small(counts: dict[str, float], residual: str) -> tuple[dict[str, float], list[str], int]:
+    """The groups as ``hundred`` shows them, every one too small to show at one
+    decimal added to ``residual`` rather than dropped: (counts, the groups
+    pooled, how many people they are). Only a group under 0.1% can fail to
+    show, and pooling one can move the rounding of another, so it repeats
+    until every group left but the residual shows. The residual itself can
+    still be too small to show; ``unshown`` says how many people that leaves
+    out, for the note."""
+    counts = {g: v for g, v in counts.items() if v}
+    moved: list[str] = []
+    people = 0.0
+    while True:
+        shown = {row["group"] for row in hundred(counts)}
+        small = [g for g in counts if g != residual and g not in shown]
+        if not small:
+            return counts, moved, int(round(people))
+        for group in small:
+            value = counts.pop(group)
+            counts[residual] = counts.get(residual, 0) + value
+            people += value
+            moved.append(group)
+
+
+def unshown(counts: dict[str, float]) -> int:
+    """People in ``counts`` whom ``hundred`` does not show (groups rounding to
+    0.0)."""
+    return int(round(sum(v for v in counts.values() if v and v > 0)
+                     - sum(r["count"] for r in hundred(counts))))
+
+
 def hundred(counts: dict[str, float], *, keep_counts: bool = True) -> list[dict[str, Any]]:
     """Counts to shares of one decimal that add to exactly 100.0, by largest
     remainder; largest first, the name breaking a tie. A group that rounds to

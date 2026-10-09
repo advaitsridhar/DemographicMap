@@ -301,6 +301,12 @@ def combine(sex_rows: list[dict[str, float]], age_rows: list[dict[str, Any]]
     return sex, {"total": sum(r["total"] for r in age_rows), "groups": dict(groups)}
 
 
+# A soum's men per hundred women outside this band is said to be far out in its
+# note: at the end of 2025 nine soums in ten lay between 94 and 128, and two
+# beyond 150.
+OUTLIER = (80, 150)
+
+
 def unit_record(unit: dict[str, Any], level: str, parent: str, year: int,
                 sex: dict[str, float], age: dict[str, Any], what: str,
                 extra: str = "") -> dict[str, Any]:
@@ -360,6 +366,11 @@ def build(sex_payload: dict[str, Any], age_payload: dict[str, Any],
         sex_row, age_row = combine([sex[c] for c in children], [ages[c] for c in children])
         records.append(unit_record(unit, "admin1", "MNG", year, sex_row, age_row,
                                    "this aimag", extra))
+    national = 100 * sex[TOTAL]["men"] / sex[TOTAL]["women"]
+    spread = sorted(100 * sex[c]["men"] / sex[c]["women"] for c in soum_units
+                    if sex[c]["women"])
+    p5, p95 = spread[len(spread) // 20], spread[-(len(spread) // 20) - 1]
+    outliers = []
     for code, unit in sorted(soum_units.items()):
         what = ("this district" if aimags[code[:3]] == "Ulaanbaatar" and code not in MOVED
                 else "this soum")
@@ -367,15 +378,28 @@ def build(sex_payload: dict[str, Any], age_payload: dict[str, Any],
         if code in MOVED:
             extra = (f"The office files this soum under {aimags[code[:3]]} since the 2025 "
                      f"reform; the map draws it in {MOVED[code][1]}.")
-        records.append(unit_record(unit, "admin2", f"MNG-{unit.get('parent')}", year,
-                                   sex[code], ages[code], what, extra))
+        record_ = unit_record(unit, "admin2", f"MNG-{unit.get('parent')}", year,
+                              sex[code], ages[code], what, extra)
+        ratio = 100 * sex[code]["men"] / sex[code]["women"] if sex[code]["women"] else None
+        if ratio is not None and not OUTLIER[0] <= ratio <= OUTLIER[1]:
+            # Read as published, and said to be far out: the office gives no
+            # reason, and the map invents none.
+            outliers.append(f"{unit['name']} {ratio:.1f}")
+            record_["sex_ratio_note"] += (
+                f" Far outside the country's soums, nine in ten of which have between "
+                f"{p5:.0f} and {p95:.0f} men per hundred women (the nation {national:.1f}); "
+                "it is the office's count, read as published, and the table says nothing of "
+                "why. A worksite or an institution whose people are registered as residents "
+                "of a small soum would do it.")
+        records.append(record_)
     total = sum(r["population"]["value"] for r in records if r["level"] == "admin1")
     if total != sex[TOTAL]["total"]:
         raise SystemExit(f"mongolia_ages: the aimags written hold {total:,}, the nation "
                          f"{sex[TOTAL]['total']:,.0f}")
     medians = [r["median_age"]["value"] for r in records if r["level"] == "admin2"]
     log(f"  {year}: {len(aimag_units)} aimags and {len(soum_units)} soums written; soum "
-        f"medians {min(medians):.1f}-{max(medians):.1f}")
+        f"medians {min(medians):.1f}-{max(medians):.1f}; sex ratios outside "
+        f"{OUTLIER[0]}-{OUTLIER[1]}, noted as such: {outliers}")
     return records
 
 

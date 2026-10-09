@@ -82,7 +82,7 @@ from collections import Counter, defaultdict
 from typing import Any
 
 from ._shared import NOT_COLLECTED, PROCESSED, RAW, gap, http_get, log, measure, record, write_json
-from .east_asia_common import drawn, hundred, sex_ratio, single_year_median
+from .east_asia_common import drawn, hundred, pool_small, sex_ratio, single_year_median, unshown
 from .taiwan import (
     LANGUAGE_BASIS, LANGUAGE_COLUMNS, LANGUAGE_LICENCE, LANGUAGE_ROW_TOLERANCE, LANGUAGE_YEAR,
 )
@@ -119,6 +119,7 @@ PEOPLES: dict[str, str] = {
     "undeclared": "Indigenous Taiwanese (people not declared)",
 }
 NON_INDIGENOUS = "Taiwanese (non-indigenous)"
+OTHER_PEOPLES = "Indigenous Taiwanese (other peoples)"
 ETHNICITY_BASIS = "indigenous status (household register)"
 
 RELIGION_NOTE = (
@@ -454,13 +455,24 @@ def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str
     counts = Counter({k: v for k, v in town["peoples"].items() if v})
     indigenous = sum(counts.values())
     counts[NON_INDIGENOUS] = town["men"] + town["women"] - indigenous
+    # A people too few here to show at one decimal joins the other peoples
+    # rather than being dropped, so the counts are everyone registered.
+    pooled, moved, people = pool_small(dict(counts), OTHER_PEOPLES)
+    held = ""
+    if moved:
+        held = (f" '{OTHER_PEOPLES}' is the {people:,} people of {len(moved)} peoples too few "
+                f"here to show at one decimal ({', '.join(sorted(moved))}).")
+    left = unshown(pooled)
+    if left:
+        held += (f" {left:,} people of other indigenous peoples, too few to show at one decimal, "
+                 "are counted in the total but not drawn.")
     note = (
         f"The household register's indigenous status at {AS_OF}: {indigenous:,} of the "
         f"{town['men'] + town['women']:,} registered people of this township hold indigenous "
         "status, by the people they declared; everyone else is 'Taiwanese (non-indigenous)', "
         "a category the register does not divide -- Hoklo, Hakka, mainlander and naturalised "
-        "citizens are all in it. The ten Pingpu peoples are written together. Not an ethnicity "
-        "question: the register records a legal status.")
+        "citizens are all in it. The ten Pingpu peoples are written together." + held
+        + " Not an ethnicity question: the register records a legal status.")
     sources = [{"field": "population/median_age/sex_ratio", "name": SOURCES["ODRP014"],
                 "url": PAGE_URL, "year": YEAR, "license": LICENCE},
                {"field": "ethnicity", "name": SOURCES["ODRP018"], "url": PAGE_URL,
@@ -493,7 +505,7 @@ def township_record(shape: str, code: str, town: dict[str, Any], drawn_name: str
         f"TWN-{code}", name, "admin2", parent, shape, town["men"], town["women"],
         town["ages"], "this township",
         codes={"ris": code}, aliases=aliases,
-        ethnicity=hundred(dict(counts)), ethnicity_year=YEAR,
+        ethnicity=hundred(pooled), ethnicity_year=YEAR,
         ethnicity_basis=ETHNICITY_BASIS, ethnicity_note=note,
         religion=gap(NOT_COLLECTED, RELIGION_NOTE),
         **spoken,
