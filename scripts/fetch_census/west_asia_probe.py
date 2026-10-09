@@ -44,7 +44,7 @@ Subcommands:
         Wikidata's settlements, neighbourhoods and districts in the country
         whose item is QID, with their Arabic and English labels, their points
         and the drawn unit holding each.
-    osm CC [--iso ISO3] [--unit-level L] [--grep REGEX] [--rows N]
+    osm CC [--iso ISO3] [--unit-level L] [--grep REGEX] [--rows N] [--what W] [--endpoint URL]
         OpenStreetMap's named places and administrative areas (levels 5-10)
         in the country whose ISO 3166 code is CC, from Overpass: names in
         Arabic and English, the drawn unit holding each point, and for an
@@ -308,10 +308,13 @@ def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
     status, ctype, body = fetch(url)
     log(f"{dataset}: {url} {status} {len(body):,} bytes")
     book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+    log(f"  sheets: {', '.join(book.sheetnames)}")
     if dictionary:
         # The data dictionary says what each field is: its definition, the
-        # office's own field name and the table it was read from.
+        # office's own field name and the table it was read from. The
+        # distinct tables are listed at the end: what the Bureau read.
         pat = re.compile(dictionary)
+        tables: dict[str, int] = {}
         for name in book.sheetnames:
             if name.strip().lower() != "data dictionary":
                 continue
@@ -319,6 +322,11 @@ def cmd_uscb(dataset: str, sheet: str, grep: str | None, rows: int,
                 cells = ["" if v is None else " ".join(str(v).split()) for v in row]
                 if cells and cells[0] and pat.search(cells[0]):
                     log(f"  {cells[0]}: " + " | ".join(c[:300] for c in cells[1:] if c))
+                last = next((c for c in reversed(cells[2:]) if c), "")
+                if cells and cells[0] and last:
+                    tables[last[:200]] = tables.get(last[:200], 0) + 1
+        for table, n in tables.items():
+            log(f"  source table ({n} fields): {table}")
     # A sheet name with a space cannot be one argument; '-' or '_' stands for it.
     wanted = re.sub(r"[-_]", " ", sheet).strip().lower()
     actual = next((s for s in book.sheetnames
@@ -469,7 +477,7 @@ def osm_shape(element: dict[str, Any]) -> Any:
 
 
 def cmd_osm(cc: str, iso3: str | None, level: str, grep: str | None, rows: int,
-            zoom: int) -> None:
+            zoom: int, what: str = "both", endpoint: str = OVERPASS) -> None:
     """OpenStreetMap's named places and administrative areas in one country.
 
     Each is printed with its Arabic and English names, the drawn unit of
@@ -477,17 +485,20 @@ def cmd_osm(cc: str, iso3: str | None, level: str, grep: str | None, rows: int,
     for one mapped as an area, the share of that area lying in each drawn
     unit -- the evidence for which census area a drawn polygon is.
     """
-    query = f"""[out:json][timeout:300];
-area["ISO3166-1"="{cc}"]["admin_level"="2"]->.c;
-(
-  node["place"]["name"](area.c);
-  way["place"]["name"](area.c);
-  relation["place"]["name"](area.c);
-  way["boundary"="administrative"]["admin_level"~"^([5-9]|10)$"](area.c);
-  relation["boundary"="administrative"]["admin_level"~"^([5-9]|10)$"](area.c);
-);
-out geom;"""
-    req = urllib.request.Request(OVERPASS, data=urllib.parse.urlencode({"data": query}).encode(),
+    # "places" asks for the named place points only, which a busy server
+    # answers when it times out on the areas' geometry; "areas" for the
+    # mapped outlines only.
+    parts = []
+    if what in ("places", "both"):
+        parts.append('node["place"]["name"](area.c);')
+    if what in ("areas", "both"):
+        parts += ['way["place"]["name"](area.c);', 'relation["place"]["name"](area.c);',
+                  'way["boundary"="administrative"]["admin_level"~"^([5-9]|10)$"](area.c);',
+                  'relation["boundary"="administrative"]["admin_level"~"^([5-9]|10)$"]'
+                  '(area.c);']
+    query = (f'[out:json][timeout:240];area["ISO3166-1"="{cc}"]["admin_level"="2"]->.c;'
+             f'({"".join(parts)});out geom;')
+    req = urllib.request.Request(endpoint, data=urllib.parse.urlencode({"data": query}).encode(),
                                  headers={"User-Agent": UA})
     try:
         with urllib.request.urlopen(req, timeout=400) as fh:
@@ -561,6 +572,8 @@ def main() -> int:
     ap.add_argument("--unit-level", default="admin2")
     ap.add_argument("--classes", default="P")
     ap.add_argument("--zoom", type=int, default=8)
+    ap.add_argument("--what", choices=["places", "areas", "both"], default="both")
+    ap.add_argument("--endpoint", default=OVERPASS)
     args = ap.parse_args()
     if args.cmd == "uscb":
         cmd_uscb(args.target[0], args.target[1], args.grep, args.rows, args.level,
@@ -574,7 +587,8 @@ def main() -> int:
         cmd_wdpoints(args.target[0], args.iso, args.unit_level, args.grep, args.rows, args.zoom)
         return 0
     if args.cmd == "osm":
-        cmd_osm(args.target[0], args.iso, args.unit_level, args.grep, args.rows, args.zoom)
+        cmd_osm(args.target[0], args.iso, args.unit_level, args.grep, args.rows, args.zoom,
+                args.what, args.endpoint)
         return 0
     if args.cmd == "ods":
         for base in args.target:
