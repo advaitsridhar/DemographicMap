@@ -1,10 +1,150 @@
 afghanistan_ddp: district development plan summaries, as the Internet Archive holds them
-  111 archived plan PDFs
-  retry 1/4 after 2s :: https://web.archive.org/web/20130728114214id_/http://www.mrrd-nabdp.org/attachments/article/143/Herat_Kushk_Robat%20Sangi_DDP%20Summary-translated_Draft.pdf :: <urlopen error timed out>
-  retry 1/4 after 2s :: https://web.archive.org/web/20131016100224id_/http://www.mrrd-nabdp.org/attachments/article/122/Purchaman%20DDP%20English%20Summary.pdf :: <urlopen error timed out>
-  retry 1/4 after 2s :: https://web.archive.org/web/20140717085018id_/http://www.mrrd-nabdp.org/attachments/article/151/Bangi%20Full%20DDP%20Edited.pdf :: <urlopen error timed out>
-  retry 1/4 after 2s :: https://web.archive.org/web/20140717194548id_/http://www.mrrd-nabdp.org/attachments/article/151/Dardad%20Full%20DDP%20Finalized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
-  retry 1/4 after 2s :: https://web.archive.org/web/20151022124559id_/http://www.mrrd-nabdp.org/attachments/article/128/Khowaja%20Sabzposh%20DDP%20English%20Summary.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  150 archived plan PDFs
+  retry 1/2 after 2s :: https://web.archive.org/web/20130705064307id_/http://www.mrrd-nabdp.org/attachments/article/131/Mousa%20Qala%20DDP%20Englihs%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20130728110144id_/http://www.mrrd-nabdp.org/attachments/article/143/Ghoryan%20DDP%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20130728111726id_/http://www.mrrd-nabdp.org/attachments/article/143/Pashtun%20Zarghun%20DDP%20Summary%20finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20130728110144id_/http://www.mrrd-nabdp.org/attachments/article/143/Ghoryan%20DDP%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20130728111726id_/http://www.mrrd-nabdp.org/attachments/article/143/Pashtun%20Zarghun%20DDP%20Summary%20finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20130705064307id_/http://www.mrrd-nabdp.org/attachments/article/131/Mousa%20Qala%20DDP%20Englihs%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20130705064307id_/http://www.mrrd-nabdp.org/attachments/article/131/Mousa%20Qala%20DDP%20Englihs%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20130705064307id_/http:/
+  !! https://web.archive.org/web/20130728110144id_/http://www.mrrd-nabdp.org/attachments/article/143/Ghoryan%20DDP%20English%20Summary%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20130728110144id_/http:/
+  !! https://web.archive.org/web/20130728111726id_/http://www.mrrd-nabdp.org/attachments/article/143/Pashtun%20Zarghun%20DDP%20Summary%20finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20130728111726id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20130728124422id_/http://www.mrrd-nabdp.org/attachments/article/143/Kushk_E_k%20Kohna%20DDP%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20130729155627id_/http://www.mrrd-nabdp.org/attachments/article/126/Ghorak%20DDP%20%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20130729160449id_/http://www.mrrd-nabdp.org/attachments/article/126/Khakriz%20DDP%20%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20130728124422id_/http://www.mrrd-nabdp.org/attachments/article/143/Kushk_E_k%20Kohna%20DDP%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20130729155627id_/http://www.mrrd-nabdp.org/attachments/article/126/Ghorak%20DDP%20%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20130729160449id_/http://www.mrrd-nabdp.org/attachments/article/126/Khakriz%20DDP%20%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20130728124422id_/http://www.mrrd-nabdp.org/attachments/article/143/Kushk_E_k%20Kohna%20DDP%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20130728124422id_/http:/
+  25/150 plans fetched, 2.0 min
+  !! https://web.archive.org/web/20130729155627id_/http://www.mrrd-nabdp.org/attachments/article/126/Ghorak%20DDP%20%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20130729155627id_/http:/
+  !! https://web.archive.org/web/20130729160449id_/http://www.mrrd-nabdp.org/attachments/article/126/Khakriz%20DDP%20%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20130729160449id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20130729160945id_/http://www.mrrd-nabdp.org/attachments/article/126/Maiwand%20DDP%20%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20130729191805id_/http://www.mrrd-nabdp.org/attachments/article/131/Garmser%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131016100224id_/http://www.mrrd-nabdp.org/attachments/article/122/Purchaman%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131016100339id_/http://www.mrrd-nabdp.org/attachments/article/122/Gulistan%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20130729191805id_/http://www.mrrd-nabdp.org/attachments/article/131/Garmser%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131016100224id_/http://www.mrrd-nabdp.org/attachments/article/122/Purchaman%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131016100339id_/http://www.mrrd-nabdp.org/attachments/article/122/Gulistan%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20130729191805id_/http://www.mrrd-nabdp.org/attachments/article/131/Garmser%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20130729191805id_/http:/
+  !! https://web.archive.org/web/20131016100224id_/http://www.mrrd-nabdp.org/attachments/article/122/Purchaman%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131016100224id_/http:/
+  !! https://web.archive.org/web/20131016100339id_/http://www.mrrd-nabdp.org/attachments/article/122/Gulistan%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131016100339id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20131016100926id_/http://www.mrrd-nabdp.org/attachments/article/122/Lash%20Wa%20Jowani%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131016101100id_/http://www.mrrd-nabdp.org/attachments/article/122/Sheb%20Koh%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131016101223id_/http://www.mrrd-nabdp.org/attachments/article/122/Poshti%20Koh%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131016101302id_/http://www.mrrd-nabdp.org/attachments/article/122/Anar%20Dara%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131016101100id_/http://www.mrrd-nabdp.org/attachments/article/122/Sheb%20Koh%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131016101223id_/http://www.mrrd-nabdp.org/attachments/article/122/Poshti%20Koh%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131016101302id_/http://www.mrrd-nabdp.org/attachments/article/122/Anar%20Dara%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20131016101100id_/http://www.mrrd-nabdp.org/attachments/article/122/Sheb%20Koh%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131016101100id_/http:/
+  !! https://web.archive.org/web/20131016101223id_/http://www.mrrd-nabdp.org/attachments/article/122/Poshti%20Koh%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131016101223id_/http:/
+  !! https://web.archive.org/web/20131016101302id_/http://www.mrrd-nabdp.org/attachments/article/122/Anar%20Dara%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131016101302id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20131227192721id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Yaftal%20Sofla_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131227192812id_/http://www.mrrd-nabdp.org/attachments/article/151/Kalafgan%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131227192816id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Shahr-e-Bbozorg_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131227192812id_/http://www.mrrd-nabdp.org/attachments/article/151/Kalafgan%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131227192816id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Shahr-e-Bbozorg_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131227192820id_/http://www.mrrd-nabdp.org/attachments/article/151/Khwaja%20Ghar%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131227192824id_/http://www.mrrd-nabdp.org/attachments/article/144/Argo%20DDP%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131227192820id_/http://www.mrrd-nabdp.org/attachments/article/151/Khwaja%20Ghar%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131227192824id_/http://www.mrrd-nabdp.org/attachments/article/144/Argo%20DDP%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20131227192916id_/http://www.mrrd-nabdp.org/attachments/article/151/Yangi%20Qala%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131227192721id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Yaftal%20Sofla_Summary_Finalized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131227192916id_/http://www.mrrd-nabdp.org/attachments/article/151/Yangi%20Qala%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20131227192721id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Yaftal%20Sofla_Summary_Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131227192721id_/http:/
+  !! https://web.archive.org/web/20131227192812id_/http://www.mrrd-nabdp.org/attachments/article/151/Kalafgan%20English%20Summary%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131227192812id_/http:/
+  !! https://web.archive.org/web/20131227192816id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Shahr-e-Bbozorg_Summary_Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131227192816id_/http:/
+  50/150 plans fetched, 6.5 min
+  !! https://web.archive.org/web/20131227192824id_/http://www.mrrd-nabdp.org/attachments/article/144/Argo%20DDP%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131227192824id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20131227193021id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Baharak_Summary_Finalized%20_Problem%20Tree_.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20131227192916id_/http://www.mrrd-nabdp.org/attachments/article/151/Yangi%20Qala%20English%20Summary%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20131227192916id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201163000id_/http://www.mrrd-nabdp.org/attachments/article/130/Bamyan%20Centre%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20131227193021id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Baharak_Summary_Finalized%20_Problem%20Tree_.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201203155id_/http://www.mrrd-nabdp.org/attachments/article/151/Darqad%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201163000id_/http://www.mrrd-nabdp.org/attachments/article/130/Bamyan%20Centre%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201203200id_/http://www.mrrd-nabdp.org/attachments/article/151/Dasht%20e%20Qala%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201203155id_/http://www.mrrd-nabdp.org/attachments/article/151/Darqad%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140201163000id_/http://www.mrrd-nabdp.org/attachments/article/130/Bamyan%20Centre%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140201163000id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201203200id_/http://www.mrrd-nabdp.org/attachments/article/151/Dasht%20e%20Qala%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140201203155id_/http://www.mrrd-nabdp.org/attachments/article/151/Darqad%20English%20Summary%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140201203155id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201203203id_/http://www.mrrd-nabdp.org/attachments/article/151/Farkhar%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140201203200id_/http://www.mrrd-nabdp.org/attachments/article/151/Dasht%20e%20Qala%20English%20Summary%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140201203200id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201203205id_/http://www.mrrd-nabdp.org/attachments/article/151/Bangi%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201203207id_/http://www.mrrd-nabdp.org/attachments/article/151/Chah%20Ab%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201232028id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Wardoj_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201203207id_/http://www.mrrd-nabdp.org/attachments/article/151/Chah%20Ab%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201203203id_/http://www.mrrd-nabdp.org/attachments/article/151/Farkhar%20English%20Summary%20Finalized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  !! https://web.archive.org/web/20140201203207id_/http://www.mrrd-nabdp.org/attachments/article/151/Chah%20Ab%20English%20Summary%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140201203207id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201232042id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Daraim_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201232028id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Wardoj_Summary_Finalized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201232042id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Daraim_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140201232028id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Wardoj_Summary_Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140201232028id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201232031id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_DDP%20Summary-Shuhada-Translated_English.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201232045id_/http://www.mrrd-nabdp.org/attachments/article/144/Khowahan_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140201232042id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Daraim_Summary_Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140201232042id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201232125id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Tushkan_Summary_English.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140201232138id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Summary_Jerm_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140220103039id_/http://www.mrrd-nabdp.org/attachments/article/123/Nahri%20Shahi%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201232125id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Tushkan_Summary_English.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140201232138id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Summary_Jerm_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140220103039id_/http://www.mrrd-nabdp.org/attachments/article/123/Nahri%20Shahi%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140201232125id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Tushkan_Summary_English.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140201232125id_/http:/
+  75/150 plans fetched, 11.3 min
+  !! https://web.archive.org/web/20140201232138id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Summary_Jerm_Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140201232138id_/http:/
+  !! https://web.archive.org/web/20140220103039id_/http://www.mrrd-nabdp.org/attachments/article/123/Nahri%20Shahi%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140220103039id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140407084503id_/http://www.mrrd-nabdp.org/attachments/article/137/Khost_Tani_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140407085727id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Hazrat_DDP%20Summary-translated_finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140407090152id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dara-e%20Sufi%20Payan_DDP%20Summary-translated_finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140407090159id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dari%20Suf%20Bala_DDP%20Summary-tanslated_finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140407085727id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Hazrat_DDP%20Summary-translated_finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140407090159id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dari%20Suf%20Bala_DDP%20Summary-tanslated_finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140407085727id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Hazrat_DDP%20Summary-translated_finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140407085727id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140407091036id_/http://www.mrrd-nabdp.org/attachments/article/141/Nimroz_Khashrod_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140407091057id_/http://www.mrrd-nabdp.org/attachments/article/141/Nimroz_Kang_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140715015830id_/http://www.mrrd-nabdp.org/attachments/article/128/Dawlat%20Abad%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140715015830id_/http://www.mrrd-nabdp.org/attachments/article/128/Dawlat%20Abad%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140407090152id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dara-e%20Sufi%20Payan_DDP%20Summary-translated_finalized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  !! https://web.archive.org/web/20140407090152id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dara-e%20Sufi%20Payan_DDP%20Summary-translated_finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140407090152id_/http:/
+  !! https://web.archive.org/web/20140407090159id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Dari%20Suf%20Bala_DDP%20Summary-tanslated_finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140407090159id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20140715020633id_/http://www.mrrd-nabdp.org/attachments/article/128/Andkhoy%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140717110059id_/http://www.mrrd-nabdp.org/attachments/article/151/Khwaja%20Bahawodeenl%20%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140717110059id_/http://www.mrrd-nabdp.org/attachments/article/151/Khwaja%20Bahawodeenl%20%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140407091057id_/http://www.mrrd-nabdp.org/attachments/article/141/Nimroz_Kang_Summary_Finalized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140717153905id_/http://www.mrrd-nabdp.org/attachments/article/151/Hazar%20Smoch%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140715015830id_/http://www.mrrd-nabdp.org/attachments/article/128/Dawlat%20Abad%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140715015830id_/http:/
+  !! https://web.archive.org/web/20140717110059id_/http://www.mrrd-nabdp.org/attachments/article/151/Khwaja%20Bahawodeenl%20%20Full%20DDP%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140717110059id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20140717153905id_/http://www.mrrd-nabdp.org/attachments/article/151/Hazar%20Smoch%20English%20Summary%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140717172543id_/http://www.mrrd-nabdp.org/attachments/article/151/Cha%20Ab%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140717185217id_/http://www.mrrd-nabdp.org/attachments/article/151/Rustaq%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140717153905id_/http://www.mrrd-nabdp.org/attachments/article/151/Hazar%20Smoch%20English%20Summary%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140717153905id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20140717172543id_/http://www.mrrd-nabdp.org/attachments/article/151/Cha%20Ab%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140717185217id_/http://www.mrrd-nabdp.org/attachments/article/151/Rustaq%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140717191729id_/http://www.mrrd-nabdp.org/attachments/article/151/Chall%20%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140717194548id_/http://www.mrrd-nabdp.org/attachments/article/151/Dardad%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140717185217id_/http://www.mrrd-nabdp.org/attachments/article/151/Rustaq%20Full%20DDP%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140717185217id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20140717191729id_/http://www.mrrd-nabdp.org/attachments/article/151/Chall%20%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140718003702id_/http://www.mrrd-nabdp.org/attachments/article/151/Hazar%20Somoch%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20140718031258id_/http://www.mrrd-nabdp.org/attachments/article/151/Nmak%20Ab%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140717191729id_/http://www.mrrd-nabdp.org/attachments/article/151/Chall%20%20Full%20DDP%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140717191729id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20140718003702id_/http://www.mrrd-nabdp.org/attachments/article/151/Hazar%20Somoch%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20140718031258id_/http://www.mrrd-nabdp.org/attachments/article/151/Nmak%20Ab%20Full%20DDP%20Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  100/150 plans fetched, 16.1 min
+  retry 1/2 after 2s :: https://web.archive.org/web/20150402202424id_/http://www.mrrd-nabdp.org/attachments/article/128/Qurghan%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20140718031258id_/http://www.mrrd-nabdp.org/attachments/article/151/Nmak%20Ab%20Full%20DDP%20Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20140718031258id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20150402202424id_/http://www.mrrd-nabdp.org/attachments/article/128/Qurghan%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20150524154025id_/http://www.mrrd-nabdp.org/attachments/article/147/Zurmat%20District%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20150524154025id_/http://www.mrrd-nabdp.org/attachments/article/147/Zurmat%20District%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20150610212212id_/http://www.mrrd-nabdp.org/attachments/article/139/SariPul_Gosfandy_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20150330085839id_/http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Sang%20Takht_%20District%20DDP%20summary-Finlized.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 1/2 after 2s :: https://web.archive.org/web/20151022140603id_/http://www.mrrd-nabdp.org/attachments/article/128/Kohistan%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20150402202424id_/http://www.mrrd-nabdp.org/attachments/article/128/Qurghan%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20150402202424id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20150610212212id_/http://www.mrrd-nabdp.org/attachments/article/139/SariPul_Gosfandy_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20151022140603id_/http://www.mrrd-nabdp.org/attachments/article/128/Kohistan%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20151022143845id_/http://www.mrrd-nabdp.org/attachments/article/128/Quramqul%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20150610212212id_/http://www.mrrd-nabdp.org/attachments/article/139/SariPul_Gosfandy_Summary_Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20150610212212id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20151022143845id_/http://www.mrrd-nabdp.org/attachments/article/128/Quramqul%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20151022140603id_/http://www.mrrd-nabdp.org/attachments/article/128/Kohistan%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20151022140603id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20151022143851id_/http://www.mrrd-nabdp.org/attachments/article/128/Pashton%20kot%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
@@ -13,6 +153,9 @@ Could not get FontBBox from font descriptor because None cannot be parsed as 4 f
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+  !! https://web.archive.org/web/20151022143845id_/http://www.mrrd-nabdp.org/attachments/article/128/Quramqul%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20151022143845id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20160205005856id_/http://www.mrrd-nabdp.org/attachments/article/387/Aqcha%20Summary%20of%20District%20Development%20Plan.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20151022143851id_/http://www.mrrd-nabdp.org/attachments/article/128/Pashton%20kot%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
@@ -21,4 +164,176 @@ Could not get FontBBox from font descriptor because None cannot be parsed as 4 f
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
 Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-  retry 1/4 after 2s :: https://web.archive.org/web/20160304191107id_/http://www.mrrd-nabdp.org/attachments/article/125/Dara%20DDP%20English%20Summary.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160205005856id_/http://www.mrrd-nabdp.org/attachments/article/387/Aqcha%20Summary%20of%20District%20Development%20Plan.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20151022143851id_/http://www.mrrd-nabdp.org/attachments/article/128/Pashton%20kot%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20151022143851id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20160303223649id_/http://www.mrrd-nabdp.org/attachments/article/145/Deh%20Yak%20DDP%20Summary-Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160303235942id_/http://www.mrrd-nabdp.org/attachments/article/125/Anaba%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20160205005856id_/http://www.mrrd-nabdp.org/attachments/article/387/Aqcha%20Summary%20of%20District%20Development%20Plan.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160205005856id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20160303223649id_/http://www.mrrd-nabdp.org/attachments/article/145/Deh%20Yak%20DDP%20Summary-Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304003539id_/http://www.mrrd-nabdp.org/attachments/article/125/Bazarak%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160303235942id_/http://www.mrrd-nabdp.org/attachments/article/125/Anaba%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304191107id_/http://www.mrrd-nabdp.org/attachments/article/125/Dara%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20160303235942id_/http://www.mrrd-nabdp.org/attachments/article/125/Anaba%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160303235942id_/http:/
+  125/150 plans fetched, 19.8 min
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304192036id_/http://www.mrrd-nabdp.org/attachments/article/123/Charbolak%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304191107id_/http://www.mrrd-nabdp.org/attachments/article/125/Dara%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304193257id_/http://www.mrrd-nabdp.org/attachments/article/123/Charkent%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304192036id_/http://www.mrrd-nabdp.org/attachments/article/123/Charbolak%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20160304191107id_/http://www.mrrd-nabdp.org/attachments/article/125/Dara%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160304191107id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304193257id_/http://www.mrrd-nabdp.org/attachments/article/123/Charkent%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304193520id_/http://www.mrrd-nabdp.org/attachments/article/123/Shortepa%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20160304193257id_/http://www.mrrd-nabdp.org/attachments/article/123/Charkent%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160304193257id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304193520id_/http://www.mrrd-nabdp.org/attachments/article/123/Shortepa%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304193813id_/http://www.mrrd-nabdp.org/attachments/article/123/Dehdadi%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304200452id_/http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Kiti%20%20DDP%20summary-Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20160304193520id_/http://www.mrrd-nabdp.org/attachments/article/123/Shortepa%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160304193520id_/http:/
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304193813id_/http://www.mrrd-nabdp.org/attachments/article/123/Dehdadi%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304200452id_/http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Kiti%20%20DDP%20summary-Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304200724id_/http://www.mrrd-nabdp.org/attachments/article/139/Saripul_Saripul%20Center_Summary_Finalized.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20160304193813id_/http://www.mrrd-nabdp.org/attachments/article/123/Dehdadi%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160304193813id_/http:/
+  !! https://web.archive.org/web/20160304200452id_/http://www.mrrd-nabdp.org/attachments/article/134/Daikundi_Kiti%20%20DDP%20summary-Finalized.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160304200452id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304202503id_/http://www.mrrd-nabdp.org/attachments/article/123/Shulgara%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304202826id_/http://www.mrrd-nabdp.org/attachments/article/125/Paryan%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304202838id_/http://www.mrrd-nabdp.org/attachments/article/123/Dawlat%20Abad%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304202503id_/http://www.mrrd-nabdp.org/attachments/article/123/Shulgara%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304202826id_/http://www.mrrd-nabdp.org/attachments/article/125/Paryan%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160304202838id_/http://www.mrrd-nabdp.org/attachments/article/123/Dawlat%20Abad%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+  !! https://web.archive.org/web/20160304202503id_/http://www.mrrd-nabdp.org/attachments/article/123/Shulgara%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160304202503id_/http:/
+  !! https://web.archive.org/web/20160304202826id_/http://www.mrrd-nabdp.org/attachments/article/125/Paryan%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160304202826id_/http:/
+  !! https://web.archive.org/web/20160304202838id_/http://www.mrrd-nabdp.org/attachments/article/123/Dawlat%20Abad%20DDP%20English%20Summary.pdf: RuntimeError GET failed after 2 retries: https://web.archive.org/web/20160304202838id_/http:/
+  retry 1/2 after 2s :: https://web.archive.org/web/20160304203242id_/http://www.mrrd-nabdp.org/attachments/article/123/Khulm%20DDP%20English%20Summary.pdf :: <urlopen error [Errno 111] Connection refused>
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+  retry 1/2 after 2s :: https://web.archive.org/web/20160505044147id_/http://www.mrrd-nabdp.org/attachments/article/140/Chardara%20Summery.pdf :: <urlopen error [Errno 111] Connection refused>
+  retry 2/2 after 4s :: https://web.archive.org/web/20160505044147id_/http://www.mrrd-nabdp.org/attachments/article/140/Chardara%20Summery.pdf :: <urlopen error [Errno 111] Connection refused>
+  150/150 plans fetched, 23.3 min
+  100 plans read, 0 not reached in the run's time
+  retry 1/4 after 2s :: https://web.archive.org/web/20170703022722id_/http://cso.gov.af/Content/files/%D8%AA%D8%AE%D9%85%DB%8C%D9%86%20%D9%86%D9%81%D9%88%D8%B3/%D8%A8%D8%B1%D8%A2%D9%88%D8%B1%D8%AF%20%D9%86%D9%81%D9%88%D8%B3%20%D8%B3%D8%A7%D9%84%201396.xlsx :: <urlopen error [Errno 111] Connection refused>
+  retry 2/4 after 4s :: https://web.archive.org/web/20170703022722id_/http://cso.gov.af/Content/files/%D8%AA%D8%AE%D9%85%DB%8C%D9%86%20%D9%86%D9%81%D9%88%D8%B3/%D8%A8%D8%B1%D8%A2%D9%88%D8%B1%D8%AF%20%D9%86%D9%81%D9%88%D8%B3%20%D8%B3%D8%A7%D9%84%201396.xlsx :: <urlopen error [Errno 111] Connection refused>
+  retry 3/4 after 8s :: https://web.archive.org/web/20170703022722id_/http://cso.gov.af/Content/files/%D8%AA%D8%AE%D9%85%DB%8C%D9%86%20%D9%86%D9%81%D9%88%D8%B3/%D8%A8%D8%B1%D8%A2%D9%88%D8%B1%D8%AF%20%D9%86%D9%81%D9%88%D8%B3%20%D8%B3%D8%A7%D9%84%201396.xlsx :: <urlopen error [Errno 111] Connection refused>
+    34 provinces placed by their Total rows; every row's sexes and areas add up, every province's districts make its Total row, and the provinces make 28,224,323 settled people
+  HELMAND      WASHIR                 [cover] 2006  Washer                       names only 'Pashtun'
+  HELMAND      BAGHRAN                [cover] 2006  Baghran                      names only 'Pashtun Situation Analysis, Development Goals and Strategies'
+  HELMAND      NAD ALI                [cover] 2008  Nad Ali                      shares     '90% Pashtun, 10% Turkmen and Hazara'
+  HELMAND      MARJA                  [cover] 2008  UNBOUND: no drawn district of province 30 answers to 'MARJA' shares     '95% Pashtun, 5% Tajik and Hazara'
+  HELMAND      DISHO                  [cover] 2006  UNBOUND: no drawn district of province 30 answers to 'DISHO' names only ''
+  HELMAND      NAHRI SERAJ            [cover] 2008  UNBOUND: no drawn district of province 30 answers to 'NAHRI SERAJ' names only 'Pashtun'
+  HELMAND      BOST                   [cover] 2009  UNBOUND: no drawn district of province 30 answers to 'BOST' shares     '100% Pashtun 2'
+  HELMAND      KAJAKI                 [cover] 2008  Kajaki                       names only ''
+  HELMAND      SANGIN                 [cover] 2008  Sangin                       shares     '99% Pashtun, 1% Hazara, Tajik, Arab'
+  HELMAND      KHANISHIN              [cover] 2006  UNBOUND: no drawn district of province 30 answers to 'KHANISHIN' names only 'Pashtun'
+  HELMAND      NAWZAD                 [cover] 2006  Naw Zad                      names only ''
+  HELMAND      NAWA                   [cover] 2009  UNBOUND: no drawn district of province 30 answers to 'NAWA' shares     '100% Pashtun 2'
+    ADRASKAN (https://web.archive.org/web/20130728113308id_/http://www.mrrd-nabdp.org/attachments/article/143/Adraskan%20DDP%20Summary.pdf): refused, shares add to only 5.0%
+  HERAT        ADRASKAN               [cover] 2009  Adraskan                     refused    '95% Pashtun and 5% Tajik 2'
+  HERAT        KUSHK ROBAT SANGI      [cover] 2008  UNBOUND: no drawn district of province 32 answers to 'KUSHK ROBAT SANGI' shares     '28% Pashtun, Tajik 70% and Arab and Baloch 2%'
+  HERAT        OBEH                   [cover] 2007  UNBOUND: no drawn district of province 32 answers to 'OBEH' names only ''
+  NIMROZ       ZARANJ                 [cover] 2007  Zaranj                       shares     'Baloch 44%, Pashtun 34 % and Tajik 22%'
+  NIMROZ       CHARBORJAK             [cover] 2007  UNBOUND: no drawn district of province 34 answers to 'CHARBORJAK' shares     'Baloch 88 %, Pashtun 1 %, Brahawi 10 % and Tajik 1 %'
+  KANDAHAR     NISH                   [cover] 2006  UNBOUND: no drawn district of province 27 answers to 'NISH' names only 'Pashtun'
+  KANDAHAR     ARGHISTAN              [cover] 2006  Arghistan                    names only 'Pashtun'
+  KANDAHAR     MIANSHIN               [cover] 2006  UNBOUND: no drawn district of province 27 answers to 'MIANSHIN' names only 'Pashtun Situation Analysis, Development Goals and Strategies'
+  KANDAHAR     DAMAN                  [cover] 2009  Daman                        names only ''
+  KANDAHAR     MARUF                  [cover] 2006  Maruf                        names only 'Pashtun Situation Analysis, Development Goals and Strategies'
+  KANDAHAR     MAIWAND                [cover] 2006  Maywand                      shares     '95% Pashtun, 5% Other'
+  KANDAHAR     ARGHANDAB              [cover] 2006  Arghandab                    names only 'Pashtun'
+  TAKHAR       ROSTAQ                 [cover] 2006  UNBOUND: no drawn district of province 18 answers to 'ROSTAQ' names only 'Uzbek, Tajik, Gojor and Pashaai'
+  ?            Gizab                  [file name] 2007  UNBOUND: no province read from its cover (None) names only 'Pashtun, Tajik and Hazara'
+  KABUL        GULDARA                [cover] 2008  Guldara                      shares     'Pashtun 30%, Tajik 70% Needy groups Affected families'
+  FARAH        FARAH CENTRAL          [cover] ?  UNBOUND: no drawn district of province 33 answers to 'FARAH CENTRAL' names only 'Pashtun and Tajik'
+  FARAH        BAKWA                  [cover] 2006  Bakwa                        names only ''
+  FARAH        Lash Wa Jowani         [file name] 2006  UNBOUND: no drawn district of province 33 answers to 'Lash Wa Jowani' names only 'Pashtun, Tajik'
+  FARAH        KHAKI SAFID            [cover] 2010  UNBOUND: no drawn district of province 33 answers to 'KHAKI SAFID' names only ''
+  FARAH        KHAKI SAFID            [cover] 2010  UNBOUND: no drawn district of province 33 answers to 'KHAKI SAFID' names only ''
+    AIBAK (https://web.archive.org/web/20131101192520id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Aibak_DDP%20Summary-translated-finalized.pdf): refused, shares add to only 40.0%
+  SAMANGAN     AIBAK                  [cover] 2007  UNBOUND: no drawn district of province 20 answers to 'AIBAK' refused    '55% Uzbak, 35%Tajik, 5% Pashton, 5% other ethnicities'
+  TAKHAR       WARSAJ                 [cover] 2006  Warsaj                       names only 'Uzbek, Tajik, Gojor, Pashaai and Hazara Mixture of population Uzbak, Tajik, Pashaai and Go'
+    ESHKAMISH (https://web.archive.org/web/20131227192814id_/http://www.mrrd-nabdp.org/attachments/article/151/Eshkamish%20English%20Summary%20Finalized.pdf): refused, shares add to only 40.0%
+  TAKHAR       ESHKAMISH              [cover] 2006  UNBOUND: no drawn district of province 18 answers to 'ESHKAMISH' refused    'Tajik 40%; Uzbak 40 % and Pashtun 20 %'
+  TAKHAR       KHWAJA GHAAR           [cover] 2006  UNBOUND: no drawn district of province 18 answers to 'KHWAJA GHAAR' names only ''
+  BADAKHSHAN   ISHKASHIM              [cover] 2007  UNBOUND: no drawn district of province 17 answers to 'ISHKASHIM' names only ''
+  TAKHAR       NAMAK AB               [cover] 2006  Namak Ab                     names only ''
+  BADAKHSHAN   BAHARAK                [cover] 2008  Baharak                      shares     'Tajik 60%, Uzbak 35%, Pashtun, 5%'
+    RUYE DU AAB (https://web.archive.org/web/20140106032922id_/http://www.mrrd-nabdp.org/attachments/article/133/Samangan_Ruye%20Du%20Aab_DDP%20Summary_%20translated-%20finalized.pdf): refused, shares add to only 15.0%
+  SAMANGAN     RUYE DU AAB            [cover] 2007  UNBOUND: no drawn district of province 20 answers to 'RUYE DU AAB' refused    '65% Tatar, 20% Habash, 15% Hazara'
+  TAKHAR       FARKHAR                [cover] 2006  Farkhar                      names only ''
+  TAKHAR       BANGI                  [cover] 2006  Bangi                        names only ''
+  BADAKHSHAN   SHUHADA                [cover] 2007  Shahada                      shares     '99 % Tajik, 1% others'
+  BADAKHASHAN  KHASH                  [cover] 2008  Khash                        shares     'Tajik 70%, Uzbak 20% and Mughol, Baloch 10%'
+  ?            Faiz Abad              [file name] 2008  UNBOUND: no drawn district of province 17 answers to 'Faiz Abad' names only ''
+  BADAKHSHAN   SHEGHNAN               [cover] 2008  UNBOUND: no drawn district of province 17 answers to 'SHEGHNAN' names only 'Tajik and Qizilbash'
+  BADAKHSHAN   KHOWAHAN               [cover] 2011  UNBOUND: no drawn district of province 17 answers to 'KHOWAHAN' names only 'Tajik'
+    KISHM (https://web.archive.org/web/20140201232054id_/http://www.mrrd-nabdp.org/attachments/article/144/Badakhshan_Kishm_Summary_Finalized.pdf): refused, shares add to 107.0%
+  BADAKHSHAN   KISHM                  [cover] 2008  Kishim                       refused    '60% Tajik, 37% Uzbek, 10% Baluch, 1% Hazara and 1% Bayat'
+  BADAKHSHAN   KERAN WA MENJAN        [cover] 2008  UNBOUND: no drawn district of province 17 answers to 'KERAN WA MENJAN' shares     '100% Tajik'
+  BADAKHSHAN   WAKHAN                 [cover] 2008  Wakhan                       names only 'Tajik Kochi population in winter The people in Pamir change their residences in Spring, Su'
+  BADAKHSHAN   NASAI                  [cover] 2011  UNBOUND: no drawn district of province 17 answers to 'NASAI' names only 'Tajik'
+  KHOST        TANI                   [cover] 2007  Tani                         names only '100 % Pashtoon District Development Vision'
+  SAMANGAN     FEROZ NAKHCHIR         [cover] 2007  Feroz Nakhchir               names only 'Uzbak, Pashton, Tajik'
+  ?            Khuram Sarbagh         [file name] 2007  UNBOUND: no drawn district of province 20 answers to 'Khuram Sarbagh' names only ''
+  NIMROZ       KHASHROD               [cover] 2007  Khash Rod                    shares     'Pashtun 55%, Palo 20%, Brahawi 15%, Tajik 10%'
+  NIMROZ       KANG                   [cover] 2007  Kang                         shares     'Pashtun 60 %, Baloch 25 %, Tajik 15 %'
+  TAKHAR       KHOWAJA BAHAUDDIN      [cover] 2006  UNBOUND: no drawn district of province 18 answers to 'KHOWAJA BAHAUDDIN' names only 'Uzbek, Tajik, Pashtun'
+  FARYAB       KHAN CHARBAGH          [cover] 2009  UNBOUND: no drawn district of province 29 answers to 'KHAN CHARBAGH' shares     'Uzbek 65%, Turkmen 35% 2'
+    ALMAR (https://web.archive.org/web/20140715015834id_/http://www.mrrd-nabdp.org/attachments/article/128/Almar%20DDP%20English%20Summary.pdf): refused, shares add to only 35.0%
+  FARYAB       ALMAR                  [cover] 2009  Almar                        refused    'Turkmen 35% and Uzbek 65% 2'
+  FARYAB       GURZIWAN               [cover] 2006  Gurziwan                     names only 'Pashtun, Tajik, Uzbek'
+  FARYAB       SHERIN TAGAB           [cover] 2009  UNBOUND: no drawn district of province 29 answers to 'SHERIN TAGAB' names only 'Uzbak, Tajik and Arab'
+  FARYAB       ANDKHUY                [cover] 2006  UNBOUND: no drawn district of province 29 answers to 'ANDKHUY' names only 'Pashtun, Tajik, Uzbek'
+  ?            Cha Ab                 [file name] ?  UNBOUND: no drawn district of province 18 answers to 'Cha Ab' names only ''
+  ?            Dardad                 [file name] ?  UNBOUND: no drawn district of province 18 answers to 'Dardad' names only ''
+  ?            Hazar Somoch           [file name] 2006  UNBOUND: no drawn district of province 18 answers to 'Hazar Somoch' names only ''
+  TAKHAR       CHALL                  [cover] 2006  UNBOUND: no drawn district of province 18 answers to 'CHALL' names only 'Uzbek, Tajik, Pashtun, Hazara, Pashayee and Gojar District Development Vision'
+  TAKHAR       BAHARAK                [cover] 2006  Baharak                      names only ''
+  DAIKUNDI     SANG TAKHT             [cover] 2006  UNBOUND: no drawn district of province 24 answers to 'SANG TAKHT' shares     '50% Pashton, 30% Uzbak, 15% Arab,1% Tajik, 2% Turkman, 2% Hazara'
+  DAIKUNDI     KIJRAN                 [cover] 2007  UNBOUND: no drawn district of province 24 answers to 'KIJRAN' names only ''
+  PAKTIA       ZURMAT                 [cover] 2007  Zurmat                       shares     'Pashtun 90 % Tajik 10 %'
+  ?            Dari Suf Payan         [file name] 2007  UNBOUND: no drawn district of province 20 answers to 'Dari Suf Payan' names only ''
+  SAR-E-PUL    BALKHAB                [cover] 2007  Balkhab                      names only 'Tajik, Hazara and Sadat'
+  FARYAB       DAWLAT ABAD            [cover] 2009  Dawlatabad                   names only 'Pashtun, Tajik, Hazara and Uzbak'
+  FARYAB       QAISAR                 [cover] 2009  Qaysar                       names only ''
+    KHAJA SABZPOSH WALI (https://web.archive.org/web/20151022124559id_/http://www.mrrd-nabdp.org/attachments/article/128/Khowaja%20Sabzposh%20DDP%20English%20Summary.pdf): refused, shares add to only 10.0%
+  FARYAB       KHAJA SABZPOSH WALI    [cover] 2009  UNBOUND: no drawn district of province 29 answers to 'KHAJA SABZPOSH WALI' refused    '80% Uzbak, 10% Tajik and 10% Pashtun'
+  GHOR         PASABAND               [cover] 2007  Pasaband                     shares     'Tajik 93%, Hazara 5% and Pashton 2%'
+  GHOR         SAGHAR                 [cover] 2007  Saghar                       shares     '100% Tajik'
+  GHOR         SHAHRAK                [cover] 2007  Shahrak                      shares     '100% Tajik'
+  NIMROZ       CHAKHANSOR             [cover] 2007  UNBOUND: no drawn district of province 34 answers to 'CHAKHANSOR' names only 'Pashtun, Tajik, Baloch and Hazara'
+  PANJSHIR     SHOTOL                 [cover] 2009  UNBOUND: no drawn district of province 08 answers to 'SHOTOL' names only ''
+  JOWZ JAN     FAIZ ABAD              [cover] 2011  Fayzabad                     names only ''
+  PANJSHIR     RUKHA                  [cover] 2009  Rukha                        names only ''
+  GHAZNI       DEHYAK                 [cover] 2009  Dih Yak                      names only ''
+  PANJSHIR     BAZARAK                [cover] 2009  Bazarak                      names only ''
+  DAIKUNDI     ASHTARLI               [cover] 2007  UNBOUND: no drawn district of province 24 answers to 'ASHTARLI' shares     '100% Hazara'
+  SAR-E-PUL    KOHISTANAT             [cover] 2007  Kohistanat                   shares     'Uzbak 5%, Hazara 5%, Tajik 90%'
+  DAIKUNDI     NILI                   [cover] 2007  Nili                         shares     '100 % Hazara'
+  BALKH        ZARI                   [cover] 2010  Zari                         names only ''
+  BALKH        CHARBOLAK              [cover] 2009  Chahar Bolak                 names only ''
+  SAR-E-PUL    SOZMA QALA             [cover] 2007  Sozma Qala                   shares     'Uzbak 40%, Pashtun 30%, Tajik 20%, Hazara 10%'
+  BALKH        BALKH                  [cover] 2006  Balkh                        names only 'Pashtun, Tajik'
+  BALKH        MARMUL                 [cover] 2009  Marmul                       names only 'Tajik 2'
+    SANCHARAK (https://web.archive.org/web/20160304200247id_/http://www.mrrd-nabdp.org/attachments/article/139/Saripul_San%20Charak_Summary_Finalized.pdf): refused, shares add to only 2.0%
+  SAR-E-PUL    SANCHARAK              [cover] 2007  Sangcharak                   refused    'Pashtun 2%'
+    Saripul Saripul Center (https://web.archive.org/web/20160304200724id_/http://www.mrrd-nabdp.org/attachments/article/139/Saripul_Saripul%20Center_Summary_Finalized.pdf): refused, shares add to only 30.0%
+  SAR-E-PUL    Saripul Saripul Center [file name] 2007  Sari Pul                     refused    'Uzbak 60%, Pashtun 10%, Hazara 20% and Tajik 10% 2'
+  HERAT        GULRAN                 [cover] 2009  Gulran                       names only ''
+  DAIKUNDI     MIRAMOR                [cover] 2007  Miramor                      shares     '100 % Hazara'
+  BALKH        KISHINDIH              [cover] 2009  Kishindih                    names only 'Uzbak, Tajik, Pashton and Hazara 2'
+  BALKH        KHULM                  [cover] ?  Khulm                        names only ''
+  BALKH        CHEMTAL                [cover] 2009  UNBOUND: no drawn district of province 21 answers to 'CHEMTAL' names only 'Pashtun, Arab, Tajik, Hazara and Turkeman'
+  KUNDUZ       CHAHARDARA             [cover] 2007  Chahar Dara                  shares     'Pashtun 75% and the remaining 25% are Uzbak and Arab'
+  100 plans: 56 bound to a drawn district; of those 19 give shares, 32 only names, 5 shares that do not add up; 19 districts written
+    Baharak (Badakhshan): the plan {'Tajik': 60.0}, the article {'Tajik': 100.0}
+    Chahar Dara (Kunduz): the plan {'Pashtun': 75.0}, the article {'Uzbek': 33.0, 'Tajik': 25.0, 'Pashtun': 22.0, 'Turkmen': 17.0, 'Hazara': 3.0}
+    Guldara (Kabul): the plan {'Pashtun': 30.0, 'Tajik': 70.0}, the article {'Tajik': 30.0, 'Pashtun': 30.0}
+    Khash Rod (Nimruz): the plan {'Pashtun': 55.0, 'Tajik': 10.0}, the article {'Pashtun': 55.0, 'Baloch': 20.0, 'Tajik': 10.0}
+    Nad Ali (Helmand): the plan {'Pashtun': 90.0}, the article {'Pashtun': 80.0, 'Hazara': 10.0, 'Tajik': 5.0, 'Baloch': 5.0}
+    Pasaband (Ghor): the plan {'Tajik': 93.0, 'Hazara': 5.0}, the article {'Tajik': 84.0, 'Pashtun': 11.0, 'Hazara': 5.0}
+    Sangin (Helmand): the plan {'Pashtun': 99.0, 'Hazara': 1.0}, the article {'Pashtun': 100.0}
+    Zaranj (Nimruz): the plan {'Baloch': 44.0, 'Pashtun': 34.0}, the article {'Baloch': 44.0, 'Pashtun': 34.0, 'Tajik': 22.0}
+  against the articles' transcription: 1 districts the same, 8 different, 10 the articles do not carry; 193 the articles carry and no archived plan gives shares for
+--probe: nothing written
