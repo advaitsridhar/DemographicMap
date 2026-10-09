@@ -1,61 +1,8 @@
-cdx amar.org.ir/english/*: 2090 captures, 250 matching '(?i)(?:yearbook|census|religio|population|1395|1390)'
-      4  /english/about-sci/organization
-      1  /english/census-2011
-      1  /english/census-2011/ctl
-      1  /english/census-of-agriculture
-      1  /english/census-of-agriculture/ctl
-      1  /english/iran-statistical-yearbook
-      1  /english/iran-statistical-yearbook/-iran-statistical-yearbook-2021-
-      1  /english/iran-statistical-yearbook/-iran-statistical-yearbook-2021-2022
-      1  /english/iran-statistical-yearbook/ctl
-      2  /english/iran-statistical-yearbook/eogu9grmyktfyhzg5pjper2dwbbajcsbb50isdvyw36xkzryq1kpt1ecuarki1k77dreueugrljv7ranweryntbxvv9uqxn
-      1  /english/iran-statistical-yearbook/gknxo4qqiw6q5iekdyxzkisa3txntewr9frjymitqoaidf2kgi6bleyj9twl6kgv3gzvwehv52diuqgrqdkxpilsdd5dpz4jgw4hqngek76n
-      1  /english/iran-statistical-yearbook/iran-
-      1  /english/iran-statistical-yearbook/iran-statistical-yearbook-2019-
-      2  /english/iran-statistical-yearbook/iran-statistical-yearbook-2019-2020
-      1  /english/iran-statistical-yearbook/iran-statistical-yearbook-2019-2020(accessed
-      1  /english/iran-statistical-yearbook/statistical-yearbook-
-      1  /english/iran-statistical-yearbook/statistical-yearbook-1996
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2006-2007
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2009-2010
-      2  /english/iran-statistical-yearbook/statistical-yearbook-2010-2011
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2011-2012
-      2  /english/iran-statistical-yearbook/statistical-yearbook-2012-2013
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2013-2014
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2014-2015
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2015-2016
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2016-
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2016-2017
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2016-2017statistical
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2017-2018
-      2  /english/iran-statistical-yearbook/statistical-yearbook-2018-2019
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2018-2019tabatabai
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2019-2020
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2020-2021
-      1  /english/iran-statistical-yearbook/statistical-yearbook-2021-2022
-     19  /english/latest-releases-page/articletype
-     52  /english/latest-releases-page/id
-     25  /english/login
-      2  /english/metadata/definitions-concepts
-      1  /english/population-and-housing-censuses
-      1  /english/population-and-housing-censuses/census-2016
-      1  /english/population-and-housing-censuses/census-2016-
-      1  /english/population-and-housing-censuses/census-2016-detailed-
-      2  /english/population-and-housing-censuses/census-2016-detailed-results
-      1  /english/population-and-housing-censuses/census-2016-detailed-results(accessed
-      1  /english/population-and-housing-censuses/census-2016-detailed-results6
-      1  /english/population-and-housing-censuses/census-2016-detailed-results[14
-      1  /english/population-and-housing-censuses/census-2016-general-
-      1  /english/population-and-housing-censuses/census-2016-general-res
-      2  /english/population-and-housing-censuses/census-2016-general-results
-      1  /english/population-and-housing-censuses/ctl
-      1  /english/population-estimation
-      2  /english/population-estimation/countrys-households-rural-and-urban-areas-1996-20
-      1  /english/population-estimation/countrys-population-urban-and-
-      2  /english/population-estimation/countrys-population-urban-and-rural-areas
-      1  /english/population-estimation/ctl
-      2  /english/population-help
-      1  /english/population-help/ctl
-     29  /english/sci-news-archive/articletype
-     55  /english/sci-news-archive/id
-      2  /english/statistics-by-topic/population
+bangladesh_zila_ages: Census 2011 five-year age groups by zila (USCB extraction)
+    64 zilas, 8 divisions: every row's groups make its total by sex, the zilas make their divisions group by group, and the divisions make the census's 144,043,697
+    the national median from the same groups: 23.5
+  divisions: 8 bound by shape id; 0 row(s) and 0 unit(s) left over
+  zilas: 58 bound by shape id; 6 row(s) and 6 unit(s) left over
+    rows with no single unit: BARISHAL|JHĀLAKĀTI, CHATTOGRAM|KHAGRĀCHARI, DHAKA|KISHORGANJ, DHAKA|SHARIYATPUR, RĀJSHĀHI|JAIPURHĀT, RĀJSHĀHI|NATOR
+    units no row reached: Jhalokati, Joypurhat, Khagrachhari, Kishoreganj, Natore, Shariatpur
+bangladesh_zila_ages: every zila must bind to one drawn polygon and every polygon to one zila
