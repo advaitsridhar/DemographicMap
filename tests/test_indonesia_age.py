@@ -99,6 +99,22 @@ class BuildTest(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.build(rows(), break_band="KOTA BENGKULU")
 
+    def test_a_blank_row_must_be_water(self):
+        lake = sheet(rows())
+        blank = ["DANAU TOBA", "SUMATERA UTARA", "DANAU TOBA", 2, "", "DANAU TOBA"] + [None] * (
+            len(lake[0]) - 6)
+        parsed = a.read_rows(lake[:2] + [blank] + lake[2:])
+        national = sum(sum(r["groups"]["B"].values()) for r in parsed if r["level"] == 0)
+        with unittest.mock.patch.object(a, "NATIONAL", national):
+            recs = a.build(parsed, ADMIN1, ADMIN2)
+        self.assertNotIn("L", {r["shape_id"] for r in recs})
+        town = ["KOTA NOWHERE", "SUMATERA UTARA", "KOTA NOWHERE", 2, "", ""] + [None] * (
+            len(lake[0]) - 6)
+        parsed = a.read_rows(lake[:2] + [town] + lake[2:])
+        with unittest.mock.patch.object(a, "NATIONAL", national):
+            with self.assertRaises(SystemExit):
+                a.build(parsed, ADMIN1, ADMIN2)
+
     def test_names(self):
         self.assertEqual(a.key("KABUPATEN SIMEULUE"), "simeulue")
         self.assertEqual(a.key("KOTA ADMINISTRASI JAKARTA BARAT"), "kotajakartabarat")

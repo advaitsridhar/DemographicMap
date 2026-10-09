@@ -132,6 +132,15 @@ def read_rows(rows: list[list[Any]]) -> list[dict[str, Any]]:
                 "nso": str(row[at["NSO_NAME"]] or "").strip() if "NSO_NAME" in at else "",
                 "code": str(row[at["NSO_CODE"]] or "").strip() if "NSO_CODE" in at else ""}
         where = unit["adm2"] or unit["adm1"] or "the country"
+        cells = [row[at[t]] for t in ("BTOTL", "MTOTL", "FTOTL")] + [
+            row[i] for s in SEXES for i in cols[s].values()]
+        if level == 2 and all(c is None or str(c).strip() == "" for c in cells):
+            # The Bureau lists Lake Toba among the regencies with every cell
+            # blank; a row with no figures at all is carried as such, and
+            # build() requires it to be a shape that is no regency.
+            unit["groups"] = None
+            out.append(unit)
+            continue
         unit["groups"] = {s: {b: count(row[i], f"{where} {s}{b}") for b, i in cols[s].items()}
                           for s in SEXES}
         for s, total in (("B", "BTOTL"), ("M", "MTOTL"), ("F", "FTOTL")):
@@ -162,7 +171,13 @@ def check_sums(rows: list[dict[str, Any]]) -> None:
     """Regencies make their province, and provinces the country, group by group."""
     country = [r for r in rows if r["level"] == 0]
     provinces = [r for r in rows if r["level"] == 1]
-    regencies = [r for r in rows if r["level"] == 2]
+    regencies = [r for r in rows if r["level"] == 2 and r["groups"] is not None]
+    blank = [r["adm2"] for r in rows if r["level"] == 2 and r["groups"] is None]
+    strange = [n for n in blank if key(n) not in NOT_REGENCIES]
+    if strange or any(r["groups"] is None for r in country + provinces):
+        raise SystemExit(f"indonesia_age: rows with no figures that are not water: {strange}")
+    if blank:
+        log(f"  rows with every cell blank, shapes that are no regency: {', '.join(blank)}")
     if len(country) != 1 or sum(country[0]["groups"]["B"].values()) != NATIONAL:
         raise SystemExit(f"indonesia_age: the country's row is not BPS's {NATIONAL:,}")
     if len(provinces) != len(indonesia.PROVINCES):
@@ -224,7 +239,8 @@ def bind(rows: list[dict[str, Any]], admin1: list[dict[str, Any]],
         by_key: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for s in shapes:
             by_key[fold(s["name"])].append(s)
-        rows_here = [r for r in rows if r["level"] == 2 and fold(r["adm1"]) == fold(prov["adm1"])]
+        rows_here = [r for r in rows if r["level"] == 2 and r["groups"] is not None
+                     and fold(r["adm1"]) == fold(prov["adm1"])]
         left_rows = []
         for r in rows_here:
             if any((prov["adm1"].upper(), k) in NO_POLYGON for k in keys_of(r)):
