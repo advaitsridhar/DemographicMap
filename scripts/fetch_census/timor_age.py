@@ -112,6 +112,9 @@ POST_ALIASES_2015 = {"Hatolia": ["Hatulia"]}
 # single years, for the country and each municipality, where the volume gives
 # single years (tables 5 and 5.1a-m): beyond it the groups are being misread.
 GROUPED_TOLERANCE = 0.5
+# How far a table 5 sheet's single years may sit from its own printed total
+# (and from table 6's count of the same people) and still check the groups.
+SINGLE_SLACK = 0.0001
 
 
 def header_columns(grid: list[list[Any]], first: str = "timorleste"
@@ -376,9 +379,16 @@ def read_2015_single(grid: list[list[Any]], where: str) -> tuple[Counter, float]
             ages[int(text)] += value
         elif m := re.fullmatch(r"(\d{1,3})\s*\+", text):
             ages[int(m.group(1))] += value
-    if total is None or sum(ages.values()) != total:
-        raise SystemExit(f"timor_age: {where}: single years make {sum(ages.values()):,.0f}, "
-                         f"against its total {total}")
+    # These single years only check the groups' median (they are not
+    # published), so a sheet a person or two off its own total is noted and
+    # kept: the country's sheet makes 1,183,645 against its 1,183,643.
+    made = sum(ages.values())
+    if total is None or abs(made - total) > max(2, SINGLE_SLACK * total):
+        raise SystemExit(f"timor_age: {where}: single years make {made:,.0f}, against its "
+                         f"total {total}")
+    if made != total:
+        log(f"  {where}: single years make {made:,.0f}, {made - total:+,.0f} on its total "
+            f"{total:,.0f}")
     return ages, total
 
 
@@ -392,7 +402,8 @@ def check_2015_groups(units: dict[tuple, dict[str, Any]], singles: dict[str, Cou
         if who not in singles:
             raise SystemExit(f"timor_age: no 2015 single years for {who}")
         ages = singles[who]
-        if abs(sum(ages.values()) - sum(n for _, _, n in u["groups"]["T"])) > 0.5:
+        grouped_total = sum(n for _, _, n in u["groups"]["T"])
+        if abs(sum(ages.values()) - grouped_total) > max(2, SINGLE_SLACK * grouped_total):
             raise SystemExit(f"timor_age: 2015 {who}: tables 5 and 6 count different people")
         exact = single_median(ages)
         rough = fine_median(u["groups"]["T"])
