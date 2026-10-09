@@ -1,25 +1,14 @@
-malaysia: ethnicity, median age and sex ratio by state and district, OpenDOSM
-  states: 16 at 2026-01-01
-  Sabah: DOSM's 2026-01-01 rows name districts the map does not draw (Membakut), so its districts are read at 2024-01-01
-  Sarawak: DOSM's 2026-01-01 rows name districts the map does not draw (Gedong, Lingga, Pantu, Sebuyau, Siburan), so its districts are read at 2024-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2024-01-01
-  1 states' districts each make the state's own figure for 2024-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  1 states' districts each make the state's own figure for 2026-01-01
-  districts: 160, read at 2026-01-01 (14 states), 2024-01-01 (2 states)
-  malaysia_state.json: 16 of 16 with a median age (26.6-36.5) and a sex ratio (96.9-117.2)
-  wrote data/processed/malaysia_state.json (46 kB)
-  malaysia_district.json: 160 of 160 with a median age (23.3-38.5) and a sex ratio (91.8-152.4)
-  wrote data/processed/malaysia_district.json (494 kB)
+sea_cod_ps_age: THA from cod-ps-tha, ['admin1', 'admin2']
+  THA admin1: 77 units from tha_admpop_2023.xlsx tha_admpop_adm1_2023_ (2023); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+    Bang Sai (1) (TH1404) placed by its seat on Bang Sai (78962969B26505935473539)
+    Bang Sai (2) (TH1413) placed by its seat on Bang Sai (78962969B611560347556)
+    left out Ban Kha: 48.2 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+    left out Suan Phueng: 76.9 males per 100 females is outside (80.0, 160.0), implausible for a whole district or province
+  THA admin2: 928 units from tha_admpop_2023.xlsx tha_admpop_adm2_2023_ (2023); 2 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: LAO from cod-ps-lao, ['admin1', 'admin2']
+  LAO admin1: 18 units from lao_admpop_2024.xlsx lao_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  LAO admin2: 148 units from lao_admpop_2024.xlsx lao_admpop_adm2_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+sea_cod_ps_age: KHM from cod-ps-khm, ['admin1']
+  KHM admin1: 25 units from khm_admpop_2024.xlsx khm_admpop_adm1_2024_ (2024); 0 refused by the checks; rows on no polygon (0): ; polygons with no row (0): 
+  wrote data/processed/sea_cod_ps_age.json (4311 kB)
+  wrote sea_cod_ps_age.json: 1196 records
