@@ -1,5 +1,6 @@
-hongkong_census: Census and Statistics Department, Hong Kong SAR, 2021 Population Census: Main Results (December 2022)
-  1,005,709 bytes
-  ethnicity: 13 groups over 7,413,070 people; language: 11 over 7,179,127 aged 5 and over
-  wrote data/processed/hongkong_census.json (11 kB)
-  wrote 2 record to hongkong_census.json
+china_census: National Bureau of Statistics of China, China Population Census Yearbook 2020 (中国人口普查年鉴-2020)
+  31 provinces: the three tables agree on every count, every composition adds up, the provinces make the nation's 1,409,778,724; national median 39.4 from single years, 39.4 from the groups
+  33 first-level records; medians (31.3, 'Tibet Autonomous Region') .. (46.8, 'Liaoning Province')
+  wrote data/processed/china_census_province.json (151 kB)
+  2370 second-level polygons: 2368 mainland ones with their reasons; inside the SARs, ['Xianggang'] with the SAR's own median age and sex ratio and 1 fragment(s) with theirs
+  wrote data/processed/china_census_county.json (11236 kB)

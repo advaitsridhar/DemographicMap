@@ -74579,7 +74579,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "This polygon is Hong Kong as the boundary file's second level draws it ('Xianggang'), and these are the whole SAR's 2021 census figures, the same as on the first level. The boundary file draws Hong Kong without Hong Kong Island and Lantau at both levels: the first-level polygon is 561 km² of the SAR's 1,110 or so km² of land, and this one 441 km² of it, about two-fifths of the SAR's land, though Kowloon and the New Territories it covers hold most of its people. The SAR's own count is on its first-level polygon and is not written on this one: a median, a ratio or a share describes the SAR's people, most of whom this polygon holds, but a count here would be read as the people inside it, and Hong Kong Island and Lantau, which it leaves out, are home to many of them. No census area of Hong Kong follows the polygon's edge, so no count of its own exists."
     },
     "median_age": {
       "value": 46.3,
