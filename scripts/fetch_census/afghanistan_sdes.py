@@ -83,7 +83,7 @@ from __future__ import annotations
 import argparse
 import io
 import re
-from typing import Any, NamedTuple
+from typing import Any, Iterable, Iterator, NamedTuple
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 from .south_asia_common import load_units
@@ -268,7 +268,7 @@ def decode(line: str) -> str:
                    else m.group(0), line)
 
 
-def table_rows(pages: list[str], report: Report) -> dict[str, tuple[float, ...]]:
+def table_rows(pages: Iterable[str], report: Report) -> dict[str, tuple[float, ...]]:
     """The report's table of median ages: {1396 code: (both sexes[, male, female])}.
 
     The table follows its title ("Median Age in Years of (the) Population by
@@ -436,10 +436,13 @@ def build(found_by_report: dict[str, dict[str, tuple[float, ...]]],
     return out
 
 
-def pages_of(blob: bytes) -> list[str]:
+def pages_of(blob: bytes) -> Iterator[str]:
+    """Each page's text, read only as far as the table is looked for: a
+    report runs to a hundred pages and its table is in the first thirty."""
     import pdfplumber                               # noqa: PLC0415
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
-        return [page.extract_text() or "" for page in pdf.pages]
+        for page in pdf.pages:
+            yield page.extract_text() or ""
 
 
 def main() -> int:

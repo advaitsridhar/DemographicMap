@@ -40,6 +40,10 @@ provinces (2011-2016): where that survey's report is read,
 this file leaves the field to it; everywhere else the median age is a stated
 gap that says which of the two is the case (``afghanistan_sdes.age_gap``).
 
+Ethnicity is a stated gap on every unit (``ETHNICITY_GAP_*``): no census, and
+the survey reports nothing on it. The districts whose development plans give
+shares carry them from ``afghanistan_district.json``, in front of the gap.
+
 **The drawn districts are the office's 398 "original" units** -- 364
 districts and the 34 provincial centres -- and the 19 *temporary* districts
 the 1396 table lists beside them (each starred, "... is temporary") were cut
@@ -960,6 +964,7 @@ def province_records(placed: dict[str, dict[str, Any]], units1: list[dict[str, A
             f"AFG-EST-{code}", unit["name"], level="admin1", parent="AFG", country="AFG",
             match_by="shape_id", shape_id=unit["id"],
             median_age=age_field(code),
+            ethnicity=gap(NOT_AVAILABLE, ETHNICITY_GAP_PROVINCE),
             sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
                       "year": YEAR, "license": LICENCE}],
             **fields))
@@ -972,6 +977,29 @@ def age_field(code: str) -> dict[str, Any] | None:
     survey report is read, and the districts the office counts in it)."""
     from .afghanistan_sdes import READ, age_gap      # noqa: PLC0415
     return None if code[:2] in READ else gap(NOT_AVAILABLE, age_gap(code))
+
+
+# Why a unit has no ethnicity, for every unit: a district whose development
+# plan gives shares carries them from afghanistan_district.json, and a figure
+# always stands in front of a gap. What was looked at: the census (none since
+# 1979) and the office's one survey with district figures, whose reports list
+# their subjects (the Samangan report's section 3.5, the Herat report's
+# foreword) and name neither ethnicity nor language.
+NO_ETHNIC_COUNT = (
+    "Not measured: Afghanistan has had no census since the abandoned count of 1979, "
+    "and the statistics office's Socio-Demographic and Economic Survey of 2011-16 -- "
+    "its only survey with district figures -- reports population, literacy, "
+    "education, migration, work, disability, fertility, mortality and housing, and "
+    "nothing on ethnicity or language.")
+ETHNICITY_GAP_DISTRICT = (
+    f"{NO_ETHNIC_COUNT} The one district-level source is the Ministry of Rural "
+    "Rehabilitation and Development's district development plans of 2008-14, as the "
+    "provinces' articles transcribe them, and they give this district no shares "
+    "that could be written: none at all, or a majority named without figures, or "
+    "figures for a district the map does not draw as such.")
+ETHNICITY_GAP_PROVINCE = (
+    f"{NO_ETHNIC_COUNT} The ministry's district development plans of 2008-14 give "
+    "some districts' shares and no province's; the districts that have one carry it.")
 
 
 def temporary_note(names: list[str]) -> str:
@@ -1035,6 +1063,7 @@ def district_records(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any
             f"AFG-EST-{key}", unit["name"], level="admin2", parent="AFG", country="AFG",
             match_by="shape_id", shape_id=unit["id"], parent_name=province,
             median_age=age_field(key),
+            ethnicity=gap(NOT_AVAILABLE, ETHNICITY_GAP_DISTRICT),
             sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
                       "year": YEAR, "license": LICENCE}],
             **fields))

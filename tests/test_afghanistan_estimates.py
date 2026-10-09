@@ -115,6 +115,8 @@ class Estimates(unittest.TestCase):
         self.assertNotIn("AFG-EST-0103", records)
         self.assertEqual(records["AFG-EST-0101"]["population"]["value"], 12300)
         self.assertEqual(records["AFG-EST-0101"]["median_age"], {"status": "not_available"})
+        self.assertIn("district development plans", records["AFG-EST-0101"]["ethnicity"]["note"])
+        self.assertIn("no province's", records["AFG-EST-01"]["ethnicity"]["note"])
 
     def test_median_age_is_left_to_the_survey_file_where_its_report_is_read(self):
         # Kabul (01), Kapisa (02) and Parwan (03) were all surveyed and their
