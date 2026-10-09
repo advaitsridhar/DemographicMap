@@ -3554,11 +3554,471 @@
     "codes": {
       "gb2260": "630123"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Huangyuanxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (9 of its 9 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 0.80 times the polygon's 2010 figure (Wikidata (CC0)), 0.81 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Huangyuanxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (9 of its 9 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "56,065 men and 53,737 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
     "ethnicity_note": "2020 census, Table 1-4 of Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020): the 56 nationalities (民族) of all 109,802 residents. 'Other ethnic groups' is the 3 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 128 people of the 20 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B36383935837338",
+    "level": "admin2",
+    "name": "Minhehuizutuzuzizhixian",
+    "parent": "CHN-Qinghai Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 326964,
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1"
+    },
+    "median_age": {
+      "value": 36.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 103.5,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language use has been measured once nationally, by the State Language Commission's survey (中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not read them, so the field is not available rather than never collected."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 42.9,
+        "count": 140197
+      },
+      {
+        "group": "Hui",
+        "pct": 42.0,
+        "count": 137245
+      },
+      {
+        "group": "Tu",
+        "pct": 10.4,
+        "count": 33994
+      },
+      {
+        "group": "Tibetan",
+        "pct": 4.1,
+        "count": 13551
+      },
+      {
+        "group": "Tujia",
+        "pct": 0.2,
+        "count": 703
+      },
+      {
+        "group": "Dongxiang",
+        "pct": 0.1,
+        "count": 473
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.1,
+        "count": 215
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 241
+      },
+      {
+        "group": "Salar",
+        "pct": 0.1,
+        "count": 345
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1: households, population and sex ratio by area",
+        "url": "https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "https://web.archive.org/web/20250216153853id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-5: population by age and sex, by area",
+        "url": "https://web.archive.org/web/20250216154147id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B36383935837338",
+    "aliases": [
+      "民和回族土族自治县"
+    ],
+    "codes": {
+      "gb2260": "630222"
+    },
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its seat stands alone in it and the label Minhehuizutuzuzizhixian is 民和回族土族自治县 in pinyin (agreement 1.00)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (22 of its 22 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
+    "sex_ratio_note": "166,284 men and 160,680 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020): the 56 nationalities (民族) of all 326,964 residents. 'Other ethnic groups' is the 1 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 240 people of the 23 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B41190012362593",
+    "level": "admin2",
+    "name": "Huzhutuzuzizhixian",
+    "parent": "CHN-Qinghai Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 337941,
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1"
+    },
+    "median_age": {
+      "value": 40.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 108.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language use has been measured once nationally, by the State Language Commission's survey (中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not read them, so the field is not available rather than never collected."
+    },
+    "ethnicity": [
+      {
+        "group": "Han Chinese",
+        "pct": 72.3,
+        "count": 244307
+      },
+      {
+        "group": "Tu",
+        "pct": 17.8,
+        "count": 60161
+      },
+      {
+        "group": "Tibetan",
+        "pct": 6.5,
+        "count": 22095
+      },
+      {
+        "group": "Hui",
+        "pct": 3.0,
+        "count": 10250
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.1,
+        "count": 372
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 338
+      },
+      {
+        "group": "Salar",
+        "pct": 0.1,
+        "count": 275
+      },
+      {
+        "group": "Tujia",
+        "pct": 0.1,
+        "count": 143
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1: households, population and sex ratio by area",
+        "url": "https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "https://web.archive.org/web/20250216153853id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-5: population by age and sex, by area",
+        "url": "https://web.archive.org/web/20250216154147id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B41190012362593",
+    "aliases": [
+      "互助土族自治县"
+    ],
+    "codes": {
+      "gb2260": "630223"
+    },
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Huzhutuzuzizhixian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (19 of its 20 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 0.95 times the polygon's 2010 figure (Wikidata (CC0)), 1.00 of the median ratio of the province's 5 comparable counties (0.95), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "sex_ratio_note": "175,438 men and 162,503 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020): the 56 nationalities (民族) of all 337,941 residents. 'Other ethnic groups' is the 2 people whose nationality is not identified (未定族称) and naturalised citizens (入籍) and the 336 people of the 28 nationalities too few to show at one decimal."
+  },
+  {
+    "id": "CHN-17275852B64856383532767",
+    "level": "admin2",
+    "name": "Hualonghuizuzizhixian",
+    "parent": "CHN-Qinghai Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 200474,
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1"
+    },
+    "median_age": {
+      "value": 30.7,
+      "unit": "years",
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 101.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language use has been measured once nationally, by the State Language Commission's survey (中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not read them, so the field is not available rather than never collected."
+    },
+    "ethnicity": [
+      {
+        "group": "Hui",
+        "pct": 56.0,
+        "count": 112236
+      },
+      {
+        "group": "Tibetan",
+        "pct": 20.4,
+        "count": 40940
+      },
+      {
+        "group": "Han Chinese",
+        "pct": 17.3,
+        "count": 34736
+      },
+      {
+        "group": "Salar",
+        "pct": 5.9,
+        "count": 11777
+      },
+      {
+        "group": "Tu",
+        "pct": 0.2,
+        "count": 453
+      },
+      {
+        "group": "Dongxiang",
+        "pct": 0.1,
+        "count": 153
+      },
+      {
+        "group": "Mongol",
+        "pct": 0.1,
+        "count": 90
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1: households, population and sex ratio by area",
+        "url": "https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "https://web.archive.org/web/20250216153853id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-5: population by age and sex, by area",
+        "url": "https://web.archive.org/web/20250216154147id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B64856383532767",
+    "aliases": [
+      "化隆回族自治县"
+    ],
+    "codes": {
+      "gb2260": "630224"
+    },
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Hualonghuizuzizhixian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (17 of its 17 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 0.99 times the polygon's 2010 figure (Wikidata (CC0)), 1.04 of the median ratio of the province's 5 comparable counties (0.95), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "sex_ratio_note": "100,720 men and 99,754 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020): the 56 nationalities (民族) of all 200,474 residents. 'Other ethnic groups' is the 89 people of the 15 nationalities too few to show at one decimal. Together they are 89 people, too few to show at one decimal themselves: they are counted in the base but not drawn."
+  },
+  {
+    "id": "CHN-17275852B74412727274506",
+    "level": "admin2",
+    "name": "Xunhuasalazuzizhixian",
+    "parent": "CHN-Qinghai Province",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 134260,
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1"
+    },
+    "median_age": {
+      "value": 29.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-5"
+    },
+    "sex_ratio": {
+      "value": 99.5,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "China's census asks no question about language: the 2020 census forms record nationality (民族) and nothing about the language a person speaks, and no volume of the census yearbook -- 概要, 民族, 年龄, 教育 and the rest -- carries a table of it. Language use has been measured once nationally, by the State Language Commission's survey (中国语言文字使用情况调查, fielded 1998-2000), whose provincial tables are printed in a book (中国语言文字使用情况调查资料, 2006) and published nowhere as data; this map has not read them, so the field is not available rather than never collected."
+    },
+    "ethnicity": [
+      {
+        "group": "Salar",
+        "pct": 65.2,
+        "count": 87489
+      },
+      {
+        "group": "Tibetan",
+        "pct": 20.2,
+        "count": 27091
+      },
+      {
+        "group": "Hui",
+        "pct": 8.1,
+        "count": 10889
+      },
+      {
+        "group": "Han Chinese",
+        "pct": 6.0,
+        "count": 8053
+      },
+      {
+        "group": "Dongxiang",
+        "pct": 0.2,
+        "count": 349
+      },
+      {
+        "group": "Bonan",
+        "pct": 0.1,
+        "count": 105
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.1,
+        "count": 131
+      },
+      {
+        "group": "Tu",
+        "pct": 0.1,
+        "count": 153
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1: households, population and sex ratio by area",
+        "url": "https://web.archive.org/web/20250216155825id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-4: population by sex and nationality (民族), by area",
+        "url": "https://web.archive.org/web/20250216153853id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0104.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      },
+      {
+        "field": "median_age",
+        "name": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-5: population by age and sex, by area",
+        "url": "https://web.archive.org/web/20250216154147id_/http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls",
+        "year": 2020,
+        "license": "Official statistics of the provincial bureau of statistics, cited as published"
+      }
+    ],
+    "country": "CHN",
+    "match_by": "shape_id",
+    "shape_id": "17275852B74412727274506",
+    "aliases": [
+      "循化撒拉族自治县"
+    ],
+    "codes": {
+      "gb2260": "630225"
+    },
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its seat stands alone in it and the label Xunhuasalazuzizhixian is 循化撒拉族自治县 in pinyin (agreement 1.00)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (9 of its 9 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
+    "sex_ratio_note": "66,974 men and 67,286 women.",
+    "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "2020 census, Table 1-4 of Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020): the 56 nationalities (民族) of all 134,260 residents. 'Other ethnic groups' is the 131 people of the 19 nationalities too few to show at one decimal."
   },
   {
     "id": "CHN-17275852B50621998812160",
@@ -3669,7 +4129,7 @@
     "codes": {
       "gb2260": "632221"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Menyuanhuizuzizhixian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (12 of its 14 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 0.94 times the polygon's 2010 figure (Wikidata (CC0)), 0.94 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Menyuanhuizuzizhixian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (12 of its 14 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "70,194 men and 68,141 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -3804,7 +4264,7 @@
     "codes": {
       "gb2260": "632222"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Qilianxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (7 of its 7 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 1.04 times the polygon's 2010 figure (Wikidata (CC0)), 1.05 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Qilianxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (7 of its 7 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "24,992 men and 23,546 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -3924,7 +4384,7 @@
     "codes": {
       "gb2260": "632223"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Haiyanxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (6 of its 6 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 1.00 times the polygon's 2010 figure (Wikidata (CC0)), 1.00 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Haiyanxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (6 of its 6 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "19,171 men and 18,558 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -4164,7 +4624,7 @@
     "codes": {
       "gb2260": "632301"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Tongrenxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (11 of its 11 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 1.10 times the polygon's 2010 figure (Wikidata (CC0)), 1.10 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Tongrenxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (11 of its 11 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "51,556 men and 49,963 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -4619,7 +5079,7 @@
     "codes": {
       "gb2260": "632521"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Gonghexian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (12 of its 15 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 1.08 times the polygon's 2010 figure (Wikidata (CC0)), 1.09 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Gonghexian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (12 of its 15 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "67,764 men and 65,645 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -4734,7 +5194,7 @@
     "codes": {
       "gb2260": "632522"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Tongdexian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (5 of its 6 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 0.94 times the polygon's 2010 figure (Wikidata (CC0)), 0.94 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Tongdexian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (5 of its 6 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "30,551 men and 29,717 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -4854,7 +5314,7 @@
     "codes": {
       "gb2260": "632523"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Guidexian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (7 of its 7 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 1.04 times the polygon's 2010 figure (Wikidata (CC0)), 1.04 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Guidexian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (7 of its 7 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "53,169 men and 52,476 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -4974,7 +5434,7 @@
     "codes": {
       "gb2260": "632524"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Xinghaixian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (7 of its 7 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 1.00 times the polygon's 2010 figure (Wikidata (CC0)), 1.00 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Xinghaixian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (7 of its 7 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "38,160 men and 37,673 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -5089,7 +5549,7 @@
     "codes": {
       "gb2260": "632525"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Guinanxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (6 of its 6 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 0.94 times the polygon's 2010 figure (Wikidata (CC0)), 0.94 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Guinanxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (6 of its 6 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "36,164 men and 35,677 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -5539,7 +5999,7 @@
     "codes": {
       "gb2260": "632701"
     },
-    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Yushuxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (12 of its 12 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the count is 1.17 times the polygon's 2010 figure (Wikidata (CC0)), 1.18 of the median ratio of the province's 14 comparable counties (1.00), within the 0.8-1.25 this map accepts; a transfer of a township or two since the polygon was drawn would not show in such a test.",
+    "population_note": "The 2020 census count of this county, Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020), Table 1-1, read for the polygon because the polygon is still this one county: it holds the county's seat and no other county-level seat of today (its Wikidata item stands in it and names it (Yushuxian)), its prefecture lists no development zone counted apart, its townships of 2020 stand in it and no other unit's does (12 of its 12 townships in the statistical division codes have a Wikidata point, and each stands in the polygon or within 3 km of it; no township the codes list under another unit stands inside it), and the polygon carries no older figure to compare the count with, so a change of ground too small to move a seat would not show.",
     "sex_ratio_note": "72,140 men and 69,168 women.",
     "median_age_note": "Interpolated within the age group (0, 1-4, then five-year groups to 95-99, and 100 and over) that holds the middle person, from Table 1-5 of the same yearbook, which prints no single years below the nation.",
     "ethnicity_year": 2020,
@@ -6105,15 +6565,15 @@
     },
     "population": {
       "status": "not_available",
-      "note": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020) counts 天峻县 (632823) at 23,203 in 2020, but its figures are not put on this polygon: that is 0.68 times the polygon's 2010 figure of 33,923, 0.69 of the median ratio of the province's comparable counties, a departure no decade of migration explains, so the county's ground has likely changed since the polygon was drawn."
+      "note": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020) counts 天峻县 (632823) at 23,203 in 2020, but its figures are not put on this polygon: that is 0.68 times the polygon's 2010 figure of 33,923, 0.72 of the median ratio of the province's comparable counties, a departure no decade of migration explains, so the county's ground has likely changed since the polygon was drawn."
     },
     "median_age": {
       "status": "not_available",
-      "note": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020) counts 天峻县 (632823) at 23,203 in 2020, but its figures are not put on this polygon: that is 0.68 times the polygon's 2010 figure of 33,923, 0.69 of the median ratio of the province's comparable counties, a departure no decade of migration explains, so the county's ground has likely changed since the polygon was drawn."
+      "note": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020) counts 天峻县 (632823) at 23,203 in 2020, but its figures are not put on this polygon: that is 0.68 times the polygon's 2010 figure of 33,923, 0.72 of the median ratio of the province's comparable counties, a departure no decade of migration explains, so the county's ground has likely changed since the polygon was drawn."
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020) counts 天峻县 (632823) at 23,203 in 2020, but its figures are not put on this polygon: that is 0.68 times the polygon's 2010 figure of 33,923, 0.69 of the median ratio of the province's comparable counties, a departure no decade of migration explains, so the county's ground has likely changed since the polygon was drawn."
+      "note": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020) counts 天峻县 (632823) at 23,203 in 2020, but its figures are not put on this polygon: that is 0.68 times the polygon's 2010 figure of 33,923, 0.72 of the median ratio of the province's comparable counties, a departure no decade of migration explains, so the county's ground has likely changed since the polygon was drawn."
     },
     "religion": {
       "status": "not_available"
@@ -6123,7 +6583,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020) counts 天峻县 (632823) at 23,203 in 2020, but its figures are not put on this polygon: that is 0.68 times the polygon's 2010 figure of 33,923, 0.69 of the median ratio of the province's comparable counties, a departure no decade of migration explains, so the county's ground has likely changed since the polygon was drawn."
+      "note": "Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020) counts 天峻县 (632823) at 23,203 in 2020, but its figures are not put on this polygon: that is 0.68 times the polygon's 2010 figure of 33,923, 0.72 of the median ratio of the province's comparable counties, a departure no decade of migration explains, so the county's ground has likely changed since the polygon was drawn."
     },
     "sources": [],
     "country": "CHN",
