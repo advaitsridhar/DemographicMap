@@ -6,8 +6,9 @@ again at the second level as one polygon, "Xianggang", which gets the same
 shares (``china_census.SAR_COVERAGE`` measures it as the SAR drawn again) --
 and its census is not China's: the Census and Statistics Department runs its own
 count every ten years and asks ethnicity and usual spoken language, which
-the mainland census does not. Religion it does not ask, and the shape's
-religion stays declared not collected under the China policy.
+the mainland census does not. Religion it does not ask, and both records say
+so in Hong Kong's own words (``china_census.HK_RELIGION_NOTE``) rather than
+the China policy's, which is about the mainland's census.
 
 The figures are the *2021 Population Census -- Main Results* (C&SD,
 December 2022). The Department publishes the report as a PDF and, beside
@@ -56,8 +57,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, record, shares, write_json
-from .china_census import SAR_COVERAGE, WHOLE
+from ._shared import NOT_COLLECTED, PROCESSED, gap, http_get, log, record, shares, write_json
+from .china_census import HK_RELIGION_NOTE, SAR_COVERAGE, WHOLE
 
 OUT = "hongkong_census.json"
 YEAR = 2021
@@ -286,7 +287,8 @@ def build(blob: bytes) -> list[dict[str, Any]]:
         sources=sources,
         ethnicity=ethnicity, ethnicity_year=YEAR, ethnicity_note=ethnicity_note,
         language=language, language_year=YEAR, language_basis=LANGUAGE_BASIS,
-        language_note=language_note)
+        language_note=language_note,
+        religion=gap(NOT_COLLECTED, HK_RELIGION_NOTE))
     # The boundary file draws the SAR again at the second level, as one
     # polygon ("Xianggang") covering 79% of the first-level one; china_census
     # measures that (SAR_COVERAGE) and writes the SAR's median age and sex ratio
@@ -300,7 +302,8 @@ def build(blob: bytes) -> list[dict[str, Any]]:
         country="CHN", match_by="shape_id", shape_id=SECOND_LEVEL, sources=sources,
         ethnicity=ethnicity, ethnicity_year=YEAR, ethnicity_note=f"{what} {ethnicity_note}",
         language=language, language_year=YEAR, language_basis=LANGUAGE_BASIS,
-        language_note=f"{what} {language_note}")
+        language_note=f"{what} {language_note}",
+        religion=gap(NOT_COLLECTED, HK_RELIGION_NOTE))
     return [whole, drawn_again]
 
 

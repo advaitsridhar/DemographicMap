@@ -162,6 +162,12 @@ class Build(unittest.TestCase):
         # rather than never collected.
         self.assertEqual(r["language"]["status"], "not_available")
         self.assertIn("中国语言文字使用情况调查", r["language"]["note"])
+        # Religion: the census does not ask; the survey's wave the provinces
+        # carry is 2016's, which the note names.
+        self.assertEqual(r["religion"], {"status": "not_collected",
+                                         "note": cc.PROVINCE_RELIGION_NOTE})
+        self.assertIn("2016 wave", r["religion"]["note"])
+        self.assertNotIn("2012", r["religion"]["note"])
 
     def test_the_sars(self):
         hk, mo = self.records["S-HK"], self.records["S-MO"]
@@ -169,6 +175,11 @@ class Build(unittest.TestCase):
         self.assertEqual(hk["sex_ratio"]["value"], 83.9)
         self.assertEqual(mo["median_age"]["value"], 38.4)
         self.assertEqual(mo["sex_ratio"]["value"], round(100 * 320285 / 361785, 1))
+        # Their own censuses, not the mainland's, are what does not ask religion.
+        self.assertEqual(hk["religion"], {"status": "not_collected", "note": cc.HK_RELIGION_NOTE})
+        self.assertEqual(mo["religion"], {"status": "not_collected", "note": cc.MO_RELIGION_NOTE})
+        for note in (cc.HK_RELIGION_NOTE, cc.MO_RELIGION_NOTE):
+            self.assertNotIn("56 official nationalities", note)
 
 
 def admin2():
@@ -201,6 +212,13 @@ class Counties(unittest.TestCase):
             self.assertEqual(r[field], {"status": "not_available", "note": cc.COUNTY_NOTE})
         self.assertEqual(r["parent"], "CHN-Guangdong")
         self.assertEqual(self.records["C-3"]["parent"], "CHN")
+        self.assertEqual(r["religion"], {"status": "not_collected",
+                                         "note": cc.COUNTY_RELIGION_NOTE})
+        self.assertIn("no survey measures religion by county", r["religion"]["note"])
+
+    def test_the_sar_polygons_say_their_own_census_does_not_ask_religion(self):
+        self.assertEqual(self.records[XIANGGANG]["religion"]["note"], cc.HK_RELIGION_NOTE)
+        self.assertEqual(self.records[COLOANE]["religion"]["note"], cc.MO_RELIGION_NOTE)
 
     def test_hong_kong_drawn_again_takes_its_own_figures(self):
         hk = self.records[XIANGGANG]

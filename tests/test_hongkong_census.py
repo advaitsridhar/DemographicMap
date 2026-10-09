@@ -198,8 +198,12 @@ class Reading(unittest.TestCase):
         self.assertEqual(rec["language_basis"], "usual spoken language, population aged 5 and over")
         self.assertIn("aged 5 and over", rec["language_note"])
         self.assertIn("Table 3.9", rec["ethnicity_note"])
-        # Religion is the China policy's business, not this file's.
-        self.assertEqual(rec["religion"], {"status": "not_available"})
+        # Religion: Hong Kong's own census does not ask it, said in Hong
+        # Kong's words rather than the mainland policy's, on both records.
+        self.assertEqual(rec["religion"]["status"], "not_collected")
+        self.assertIn("Hong Kong's own census does not ask religion", rec["religion"]["note"])
+        self.assertNotIn("Family Panel", rec["religion"]["note"])
+        self.assertEqual(records[1]["religion"], rec["religion"])
         self.assertEqual({s["field"] for s in rec["sources"]}, {"ethnicity", "language"})
         self.assertTrue(all(s["url"] == hk.URL for s in rec["sources"]))
 

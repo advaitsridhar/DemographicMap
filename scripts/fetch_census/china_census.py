@@ -36,7 +36,13 @@ files ``hongkong_census`` and ``macau_census`` read, for those two fields.
 **Language.** The census asks no question about language: its long and
 short forms record 民族 (nationality) and no language, and none of the
 yearbook's volumes -- 概要, 民族, 年龄, 教育, ... -- carries a table of
-it. Every province's record says so. Religion is the China policy's.
+it. Every province's record says so. Religion the census does not ask
+either, and every record says so in its own words (``PROVINCE_RELIGION_NOTE``,
+``COUNTY_RELIGION_NOTE``): the China policy's sentence names the China Family
+Panel Studies' 2012 wave where the five provinces it reaches carry the 2016
+one. Hong Kong and Macau take their own censuses, which do not ask religion
+either, and their records say that instead (``HK_RELIGION_NOTE``,
+``MO_RELIGION_NOTE``).
 
 **The county polygons** (``china_census_county.json``). The yearbook's
 tables stop at the province, and the 2,370 second-level polygons the map
@@ -72,7 +78,7 @@ import re
 from collections import Counter
 from typing import Any, Callable
 
-from ._shared import PROCESSED, gap, http_get, log, measure, record, write_json
+from ._shared import NOT_COLLECTED, PROCESSED, gap, http_get, log, measure, record, write_json
 from .china_wiki import DIVISIONS, NATIONALITIES, RESIDUAL
 from .east_asia_common import (drawn, grouped_median, hundred, pool_small, sex_ratio,
                                single_year_median)
@@ -107,6 +113,32 @@ LANGUAGE_NOTE = (
 # Not "not_collected": a survey did measure it (BRIEF: that status is only for
 # a field nothing measures).
 LANGUAGE_STATUS = "not_available"
+
+# Religion, said on every unit this file writes rather than left to the China
+# policy's sentence, which names the survey's 2012 wave where the five
+# provinces carry its 2016 one, and which is about the mainland's census --
+# the SARs take their own censuses, which do not ask it either.
+PROVINCE_RELIGION_NOTE = (
+    "China's census does not ask religion; it records the 56 official nationalities (民族) "
+    "instead. The China Family Panel Studies, a national survey, asks it, and its 2016 wave "
+    "supports province-level figures for five provinces (Shanghai, Liaoning, Henan, Gansu, "
+    "Guangdong), which carry them; for the other provinces its sample is not drawn to be read "
+    "by province.")
+COUNTY_RELIGION_NOTE = (
+    "China's census does not ask religion; it records the 56 official nationalities (民族) "
+    "instead, and no survey measures religion by county. The China Family Panel Studies' 2016 "
+    "wave supports province-level figures for five provinces (Shanghai, Liaoning, Henan, Gansu, "
+    "Guangdong), which carry them.")
+HK_RELIGION_NOTE = (
+    "Hong Kong's own census does not ask religion: the 2021 Population Census, like the "
+    "censuses and by-censuses before it, asks ethnicity, language and place of birth but no "
+    "question on religion, and the mainland's census, which does not ask it either, is not "
+    "taken in the Special Administrative Region. The Hong Kong Yearbook gives the religious "
+    "bodies' own estimates of their followers, which are not a count of residents.")
+MO_RELIGION_NOTE = (
+    "Macau's own census does not ask religion: neither the 2021 Population Census's Detailed "
+    "Results nor the 2016 By-census's mentions it, and the mainland's census, which does not "
+    "ask it either, is not taken in the Special Administrative Region.")
 
 COUNTY_NOTE = (
     "The 2020 census counted every county's people by age, sex and nationality (民族). The "
@@ -449,6 +481,7 @@ def province_record(label: str, shape: str, name: str, a0101: dict[str, float],
             f"is the {int(residual):,} people whose nationality is not identified (未定族称) "
             f"and naturalised citizens (入籍){tail}."),
         language=gap(LANGUAGE_STATUS, LANGUAGE_NOTE),
+        religion=gap(NOT_COLLECTED, PROVINCE_RELIGION_NOTE),
         sources=sources())
 
 
@@ -480,6 +513,7 @@ def hong_kong(rows: list[list[Any]], shape: str) -> dict[str, Any]:
                           source=HK_SOURCE),
         sex_ratio_note=(f"{found['sex']:.0f} males per 1,000 females, foreign domestic helpers "
                         "included, as the 2021 census's key statistics print it."),
+        religion=gap(NOT_COLLECTED, HK_RELIGION_NOTE),
         sources=[{"field": "median_age/sex_ratio", "name": HK_SOURCE, "url": HK_URL,
                   "year": 2021, "license": HK_LICENCE}])
 
@@ -503,6 +537,7 @@ def macau(text: str, shape: str) -> dict[str, Any]:
                          "non-local students)."),
         sex_ratio=sex_ratio(men, women, year=2021, source=MO_SOURCE),
         sex_ratio_note=f"{men:,} males and {women:,} females, the whole population.",
+        religion=gap(NOT_COLLECTED, MO_RELIGION_NOTE),
         sources=[{"field": "median_age/sex_ratio", "name": MO_SOURCE, "url": MO_URL,
                   "year": 2021, "license": MO_LICENCE}])
 
@@ -557,7 +592,9 @@ def sar_polygon(unit: dict[str, Any], parent: dict[str, Any], sar: dict[str, Any
         raise SystemExit(f"china_census: {unit['id']} is measured to cover {coverage:.0%} of "
                          f"{name} but its box covers {boxed:.0%} of the SAR's")
     common = dict(level="admin2", parent=f"CHN-{name}", country="CHN",
-                  match_by="shape_id", shape_id=unit["id"])
+                  match_by="shape_id", shape_id=unit["id"],
+                  religion=gap(NOT_COLLECTED, HK_RELIGION_NOTE if name == HK_NAME
+                               else MO_RELIGION_NOTE))
     if coverage < WHOLE:
         return record(f"CHN-{unit['id']}", unit["name"], **common,
                       **{field: gap("not_available", what) for field in
@@ -598,7 +635,8 @@ def county_records(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
             median_age=gap("not_available", COUNTY_NOTE),
             sex_ratio=gap("not_available", COUNTY_NOTE),
             ethnicity=gap("not_available", COUNTY_NOTE),
-            language=gap(LANGUAGE_STATUS, LANGUAGE_NOTE)))
+            language=gap(LANGUAGE_STATUS, LANGUAGE_NOTE),
+            religion=gap(NOT_COLLECTED, COUNTY_RELIGION_NOTE)))
     whole = [r["name"] for r in inside if "value" in (r.get("median_age") or {})]
     log(f"  {len(out)} second-level polygons: {len(out) - len(inside)} mainland ones with "
         f"their reasons; inside the SARs, {whole} with the SAR's own median age and sex ratio "

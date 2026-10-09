@@ -272,6 +272,42 @@ class Notes(unittest.TestCase):
         self.assertIn(" The census counted 825 foreign nationals here, 19.0% of the people whose "
                       "nationality it recorded.", note)
 
+    def test_people_in_institutions_are_counted_in_the_note(self):
+        # Ogasawara-like: barracks on islands with no civilians.
+        ages = {"13421": ages_of({"05": 1200, "14": 600}, {"05": 700, "14": 421})}
+        nat = {"13421": self.nat(2905, 24)}
+        institutions = {"13421": {"24": 400, "22": 3, "25": 0}}
+        note = jm.sex_note(("13421",), ages, nat, institutions)
+        self.assertIn(" The census counted 400 Self-Defense Forces personnel living in barracks "
+                      "here, 13.7% of its people.", note)
+        self.assertNotIn("hospital", note)
+        self.assertIn("Iōtō and Minami-Torishima", note)
+
+    def test_a_record_whose_note_counts_institutions_cites_the_table(self):
+        f = fixture()
+        for sex, scale in (("1", 3), ("2", 1)):
+            f["ages"]["02201"][sex] = {k: v * scale for k, v in f["ages"]["02201"][sex].items()}
+        f["ages"]["02000"] = copy.deepcopy(f["ages"]["02201"])
+        f["ages"][NATIONAL] = add([f["ages"][p] for p in PREFECTURES])
+        total = f["ages"]["02201"]["1"]["00"] + f["ages"]["02201"]["2"]["00"]
+        f["nat"]["02201"] = nat_row(total)
+        f["nat"]["02000"] = dict(f["nat"]["02201"])
+        f["nat"][NATIONAL] = add_nat([f["nat"][p] for p in PREFECTURES])
+        records = jm.build(f["median"], f["ages"], f["nat"], f["levels"], f["code_shapes"],
+                           f["admin1"], f["admin2"], extra=f["extra"], unions=f["unions"],
+                           slivers=f["slivers"], institutions={"02201": {"25": total // 4}})
+        r = {x.get("shape_id"): x for x in records}["S02201"]
+        self.assertIn("inmates of correctional institutions here", r["sex_ratio_note"])
+        self.assertIn(jm.INSTITUTIONS_SOURCE, [s["name"] for s in r["sources"]])
+        other = {x.get("shape_id"): x for x in records}["S01201"]
+        self.assertNotIn(jm.INSTITUTIONS_SOURCE, [s["name"] for s in other["sources"]])
+
+    def test_the_institutions_table_is_read_by_kind(self):
+        values = [{"@area": "01430", "@cat01": "0", "@cat02": "25", "$": "1170"},
+                  {"@area": "01430", "@cat01": "0", "@cat02": "2", "$": "1300"},
+                  {"@area": "01430", "@cat01": "0", "@cat02": "24", "$": "-"}]
+        self.assertEqual(jm.read_institutions(values), {"01430": {"25": 1170, "24": 0}})
+
     def test_a_usual_ratio_gives_the_counts_only(self):
         ages = {"01201": ages_of({"05": 100}, {"05": 110})}
         nat = {"01201": self.nat(200, 10)}

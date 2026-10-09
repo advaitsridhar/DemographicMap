@@ -19,7 +19,21 @@ and every municipality and ward, 1,965 areas keyed by their JIS codes:
   municipality. It is written on the ethnicity field under
   ``ethnicity_basis: "nationality"`` by the owner's decision of 19 September
   2026 -- a passport is not an ethnicity, and the note says so -- and its
-  total is the census count written as the population.
+  total is the census count written as the population;
+* **0003445259** (人口等基本集計: 世帯の種類・施設等の世帯の種類別世帯人員) --
+  the people living in institutions by kind (school dormitories, hospitals,
+  social-welfare institutions, the Self-Defense Forces' barracks,
+  correctional institutions, other), read only for the sex-ratio note of a
+  municipality whose ratio is far out (below).
+
+**Sex-ratio notes.** Every municipality's names its men and women. One whose
+ratio is outside ``USUAL_RATIO`` adds what the census shows about it: the
+working ages (20-64) apart from the rest, any kind of institution holding
+``INSTITUTION_NOTED`` per cent of its people, the foreign nationals where
+they are ``FOREIGN_NOTED`` per cent or more, and for the Fukushima towns and
+Ogasawara the facts ``SEX_CONTEXT`` records (the evacuation orders as they
+stood on census day; the islands staffed by the Self-Defense Forces). None
+of it is a cause the census does not record.
 
 **Binding.** The tables name areas by JIS code and in Japanese; the map's
 polygons have romanised names of geoBoundaries' own spelling ("Aashikawa",
@@ -669,21 +683,64 @@ def per_hundred(men: int, women: int) -> str:
     return f"{100 * men / women:.1f}" if women else "no women among"
 
 
+# The same census's people in institutions (施設等の世帯), by kind, for every
+# area: 0003445259, 世帯の種類・施設等の世帯の種類別世帯人員. A kind holding
+# INSTITUTION_NOTED per cent or more of a far-out municipality's people is
+# named in its sex-ratio note -- a prison's inmates, the Self-Defense Forces'
+# barracks -- because the census itself counts them there.
+INSTITUTIONS_TABLE = "0003445259"
+INSTITUTIONS_SOURCE = ("Statistics Bureau of Japan, 2020 Population Census, 人口等基本集計: "
+                       "household members by type of household and of institution (e-Stat "
+                       f"table {INSTITUTIONS_TABLE})")
+INSTITUTIONS_URL = f"https://www.e-stat.go.jp/dbview?sid={INSTITUTIONS_TABLE}"
+INSTITUTIONS: dict[str, str] = {
+    "21": "students living in school dormitories",
+    "22": "hospital inpatients",
+    "23": "residents of social-welfare institutions",
+    "24": "Self-Defense Forces personnel living in barracks",
+    "25": "inmates of correctional institutions",
+    "26": "people living in other institutions",
+}
+INSTITUTION_NOTED = 5.0
+
+
+def read_institutions(values: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
+    """{area: {institution code: people}} from 0003445259's 世帯人員 cells."""
+    out: dict[str, dict[str, int]] = {}
+    for v in values:
+        kind = str(v.get("@cat02"))
+        n = count(v.get("$"))
+        if kind in INSTITUTIONS and n is not None:
+            out.setdefault(str(v.get("@area")), {})[kind] = n
+    return out
+
+
+def far_out(men: int, women: int) -> bool:
+    return bool(women) and not USUAL_RATIO[0] <= 100 * men / women <= USUAL_RATIO[1]
+
+
 def sex_note(codes: tuple[str, ...], ages: dict[str, dict[str, dict[str, int]]],
-             nat: dict[str, dict[str, int]]) -> str:
+             nat: dict[str, dict[str, int]],
+             institutions: dict[str, dict[str, int]] | None = None) -> str:
     """The men and women, and for a ratio outside USUAL_RATIO what the census
-    shows about it: the working ages apart, the foreign nationals where they
-    are many, and what SEX_CONTEXT records."""
+    shows about it: the working ages apart, the people in institutions and the
+    foreign nationals where they are many, and what SEX_CONTEXT records."""
     men = sum(ages[c]["1"][AGE_TOTAL] for c in codes)
     women = sum(ages[c]["2"][AGE_TOTAL] for c in codes)
     note = f"{men:,} men and {women:,} women."
-    if not women or USUAL_RATIO[0] <= 100 * men / women <= USUAL_RATIO[1]:
+    if not far_out(men, women):
         return note
     work_m = sum(ages[c]["1"].get(g, 0) for c in codes for g in WORKING)
     work_f = sum(ages[c]["2"].get(g, 0) for c in codes for g in WORKING)
     note += (f" Among those aged 20 to 64, {per_hundred(work_m, work_f)} men per 100 women "
              f"({work_m:,} men, {work_f:,} women); at other ages, "
              f"{per_hundred(men - work_m, women - work_f)}.")
+    people = men + women
+    for kind, what in INSTITUTIONS.items():
+        n = sum((institutions or {}).get(c, {}).get(kind, 0) for c in codes)
+        if people and 100 * n / people >= INSTITUTION_NOTED:
+            note += (f" The census counted {n:,} {what} here, {100 * n / people:.1f}% of its "
+                     "people.")
     foreign = sum(nat[c][CODE_FOREIGN] for c in codes if c in nat)
     known = sum(nat[c]["2"] + nat[c][CODE_FOREIGN] for c in codes if c in nat)
     if known and 100 * foreign / known >= FOREIGN_NOTED:
@@ -695,13 +752,22 @@ def sex_note(codes: tuple[str, ...], ages: dict[str, dict[str, dict[str, int]]],
     return note
 
 
+def institutions_source() -> dict[str, Any]:
+    return {"field": "sex_ratio (the institutions its note counts)", "name": INSTITUTIONS_SOURCE,
+            "url": INSTITUTIONS_URL, "year": YEAR, "license": ESTAT_LICENCE}
+
+
 def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
                      median: dict[str, float], ages: dict[str, dict[str, dict[str, int]]],
-                     nat: dict[str, dict[str, int]], note: str = "") -> dict[str, Any]:
+                     nat: dict[str, dict[str, int]], note: str = "",
+                     institutions: dict[str, dict[str, int]] | None = None) -> dict[str, Any]:
     men = sum(ages[c]["1"][AGE_TOTAL] for c in codes)
     women = sum(ages[c]["2"][AGE_TOTAL] for c in codes)
     union = len(codes) > 1
-    extra: dict[str, Any] = {"sex_ratio_note": sex_note(codes, ages, nat)}
+    extra: dict[str, Any] = {"sex_ratio_note": sex_note(codes, ages, nat, institutions)}
+    cited = sources(union)
+    if any(f" {what} here," in extra["sex_ratio_note"] for what in INSTITUTIONS.values()):
+        cited.append(institutions_source())
     if union:
         med = measure(grouped(ages, codes), unit="years", year=YEAR, source=UNION_MEDIAN_SOURCE)
         extra["median_age_note"] = (
@@ -740,7 +806,7 @@ def municipal_record(shape: str, codes: tuple[str, ...], name: str, *,
         ethnicity_note=ethnicity_note,
         religion=gap(NOT_COLLECTED, RELIGION_NOTE),
         language=gap(NOT_COLLECTED, LANGUAGE_NOTE),
-        sources=sources(union))
+        sources=cited)
 
 
 # Futaba, in Fukushima, was wholly under an evacuation order on census day
@@ -770,7 +836,8 @@ def build(median: dict[str, float], ages: dict[str, dict[str, dict[str, int]]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]], *,
           extra: dict[str, tuple[str, str]] | None = None,
           unions: dict[str, tuple[tuple[str, ...], str, str]] | None = None,
-          slivers: dict[str, str] | None = None) -> list[dict[str, Any]]:
+          slivers: dict[str, str] | None = None,
+          institutions: dict[str, dict[str, int]] | None = None) -> list[dict[str, Any]]:
     check_medians(median)
     check_ages(ages)
     check_nationality(nat, ages)
@@ -791,7 +858,8 @@ def build(median: dict[str, float], ages: dict[str, dict[str, dict[str, int]]],
                              "municipalities (e-Stat levels "
                              f"{[levels.get(c, ('?',))[0] for c in codes]})")
         note = unions[shape][2] if shape in unions else ""
-        rec = municipal_record(shape, codes, name, median=median, ages=ages, nat=nat, note=note)
+        rec = municipal_record(shape, codes, name, median=median, ages=ages, nat=nat, note=note,
+                               institutions=institutions)
         aliases = [levels[c][1] for c in codes]
         if named_here and labels[shape] != name and labels[shape] != shape:
             aliases.insert(0, labels[shape])
@@ -853,10 +921,12 @@ def main() -> int:
         "cdCat03": "1,2", "cdTime": TIME}, limit=100_000))
     nat = read_nationality(fetch_values(key, NATIONALITY_TABLE, {
         "cdCat01": "0", "cdTime": TIME}, limit=100_000))
+    institutions = read_institutions(fetch_values(key, INSTITUTIONS_TABLE, {
+        "cdCat01": "0", "cdCat02": ",".join(INSTITUTIONS), "cdTime": TIME}, limit=100_000))
     levels = area_levels(call("getMetaInfo", {"statsDataId": NATIONALITY_TABLE}, key))
     shapes = (read_json(PROCESSED / "code_shapes.json", {}) or {}).get("JPN", {})
     records = build(median, ages, nat, levels, shapes, drawn("JPN", "admin1"),
-                    drawn("JPN", "admin2"))
+                    drawn("JPN", "admin2"), institutions=institutions)
     write_json(PROCESSED / OUT, records)
     return 0
 
