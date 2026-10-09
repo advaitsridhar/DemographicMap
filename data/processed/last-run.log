@@ -1,13 +1,35 @@
-== https://www.cbs.gov.il/en/subjects/Pages/Social-Survey.aspx
-   200 text/html; charset=utf-8 38,567 bytes
-   0 matching links
-   0 matches for '(?i)(?:language|mother.tongue|spoken).{0,120}'
-== https://www.cbs.gov.il/en/subjects/Pages/Census-of-Population-and-Housing-2008.aspx
-   200  2,056 bytes
-   0 matching links
-   0 matches for '(?i)(?:language|mother.tongue|spoken).{0,120}'
-== https://www.cbs.gov.il/en/subjects/Pages/Population-Census.aspx
-   200 text/html; charset=utf-8 38,598 bytes
-   - 'כניסה' -> https://www.cbs.gov.il/en/subjects/_layouts/15/Authenticate.aspx?Source=%2Fen%2Fsubjects%2FPages%2FPopulation%2DCensus%2Easpx
-   1 matching links
-   0 matches for '(?i)(?:language|mother.tongue|spoken).{0,120}'
+sea_composed: religion and ethnicity on the polygons no one census area is
+  Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
+    SHAN STATE / WA SELF-ADMINISTERED DIVISION: 4 of 6 townships carry no ethnicity figures (Mongmao, Pangwaun, Pangsang, Narphan)
+    SHAN STATE / WA SELF-ADMINISTERED DIVISION: 4 of 6 townships carry no religion figures (Mongmao, Pangwaun, Pangsang, Narphan)
+    SHAN STATE / KENGTUNG: 1 of 5 townships carry no ethnicity figures (Mongla)
+    SHAN STATE / KENGTUNG: 1 of 5 townships carry no religion figures (Mongla)
+  districts and zones whose townships make them: 78 for ethnicity, 78 for religion
+  ethnicity: the 74 polygons make the Union's 47,809,979; units with no figures: Mongmao, Pangwaun, Narphan, Pangsang
+  religion: the 74 polygons make the Union's 49,011,760; units with no figures: Mongmao, Pangwaun, Narphan, Pangsang
+    Hkamti: Hkamti district; Lay Shi, Lahe, Nanyun of the Naga self-administered zone -- ethnicity 373,352, religion 370,874
+    Hopang: Hopan, Mongmao, Pangwaun of the Wa self-administered division -- ethnicity none (2 parts without figures), religion none (2 parts without figures)
+    Katha: Katha district; Kawlin district -- ethnicity 860,522, religion 861,061
+    Kyaukme: Kyaukme district; Namhsan, Manton of the Palaung self-administered zone -- ethnicity 629,121, religion 635,279
+    Laukkaing: Laukine, Konkyan of the Kokang self-administered zone -- ethnicity 97,395, religion 97,395
+    Matman: Makman, Narphan, Pangsang of the Wa self-administered division -- ethnicity none (2 parts without figures), religion none (2 parts without figures)
+    Mindat: Mindat district; Matupi district -- ethnicity 227,897, religion 228,045
+    Tachileik: Tachileik district; Mong Hpayak district -- ethnicity 235,018, religion 235,018
+    Taunggyi: Taunggyi district; Pindaya, Ywangan of the Danu self-administered zone; Hopong, Hsihseng, Pinlaung of the Pa-O self-administered zone -- ethnicity 1,559,537, religion 1,569,134
+    Yangon (West): Yangon -- ethnicity 808,369, religion 867,881
+    Mandalay (first level): MANDALAY and NAY PYI TAW -- ethnicity 6,778,236, religion 6,841,080
+  Philippines: https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15/resource/5acff37e-0c02-4d89-bbd2-1825ee98916c/download/philippines_uscb_202402.xlsx
+    groups a whole and its parts print differently, 30 people in all: Buhid Mangyan 19 against 49
+  the National Capital Region's 17 places make its row, and each is in one district
+  Cotabato City: no row; the Bangsamoro region's religion 4,723,191 against its provinces' 4,723,191; ethnicity 4,723,191 against its provinces' 4,723,191 (Basilan, Lanao Del Sur, Maguindanao, Sulu, Tawi-Tawi)
+    NCR, Second District: Mandaluyong, Marikina, Pasig, Quezon City, San Juan -- religion 4,748,925, ethnicity 4,748,925
+    NCR, Third District: Caloocan, Malabon, Navotas, Valenzuela -- religion 2,998,412, ethnicity 2,998,412
+    NCR, Fourth District: Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig -- religion 3,818,429, ethnicity 3,818,429
+  household language for the polygons clear_global_language.json's rows miss:
+    NCR, City of Manila, First District: CLEAR Global's Metropolitan Manila First District (PH13039), Tagalog 91.6, Cebuano 1.8, Maranao 1.8
+    NCR, Second District: CLEAR Global's Metropolitan Manila Second District (PH13074), Tagalog 94.9, Cebuano 1.5, Iloko 0.8
+    NCR, Third District: CLEAR Global's Metropolitan Manila Third District (PH13075), Tagalog 97.6, Cebuano 1.0, Bikol 0.3
+    NCR, Fourth District: CLEAR Global's Metropolitan Manila Fourth District (PH13076), Tagalog 94.7, Cebuano 1.5, Bikol 0.7
+    Isabela: CLEAR Global's PHL-CG-PH02031 not used -- CLEAR Global's tabulation of the 2010 census has a row for Isabela (PSGC 02031), and it is not used: beside the province...
+  wrote data/processed/sea_composed.json (173 kB)
+  wrote sea_composed.json: 18 records

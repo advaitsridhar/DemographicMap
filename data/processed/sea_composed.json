@@ -7807,152 +7807,17 @@
     "religion": {
       "status": "not_available"
     },
-    "language": [
-      {
-        "group": "Iloko",
-        "pct": 40.8
-      },
-      {
-        "group": "Tagalog",
-        "pct": 24.4
-      },
-      {
-        "group": "Cebuano",
-        "pct": 13.0
-      },
-      {
-        "group": "Ibanag",
-        "pct": 7.8
-      },
-      {
-        "group": "Hiligaynon",
-        "pct": 4.0
-      },
-      {
-        "group": "Boholano",
-        "pct": 1.2
-      },
-      {
-        "group": "Cuyonon",
-        "pct": 1.2
-      },
-      {
-        "group": "Romblomanon",
-        "pct": 0.9
-      },
-      {
-        "group": "Waray (Philippines)",
-        "pct": 0.9
-      },
-      {
-        "group": "Yogad",
-        "pct": 0.9
-      },
-      {
-        "group": "Paranan",
-        "pct": 0.8
-      },
-      {
-        "group": "Nuclear Palawan",
-        "pct": 0.6
-      },
-      {
-        "group": "Ifugaw",
-        "pct": 0.4
-      },
-      {
-        "group": "Gaddang",
-        "pct": 0.3
-      },
-      {
-        "group": "Itawit",
-        "pct": 0.3
-      },
-      {
-        "group": "Tausug",
-        "pct": 0.3
-      },
-      {
-        "group": "Kalinga",
-        "pct": 0.2
-      },
-      {
-        "group": "Manobo",
-        "pct": 0.2
-      },
-      {
-        "group": "Balangingi",
-        "pct": 0.1
-      },
-      {
-        "group": "Bikol",
-        "pct": 0.1
-      },
-      {
-        "group": "Itneg",
-        "pct": 0.1
-      },
-      {
-        "group": "Kagayanen",
-        "pct": 0.1
-      },
-      {
-        "group": "Kankanaey",
-        "pct": 0.1
-      },
-      {
-        "group": "Kinaray-a",
-        "pct": 0.1
-      },
-      {
-        "group": "Maguindanao",
-        "pct": 0.1
-      },
-      {
-        "group": "Maranao",
-        "pct": 0.1
-      },
-      {
-        "group": "Masbatenyo",
-        "pct": 0.1
-      },
-      {
-        "group": "Pangasinan",
-        "pct": 0.1
-      },
-      {
-        "group": "Subanen",
-        "pct": 0.1
-      },
-      {
-        "group": "Tagbanwa",
-        "pct": 0.1
-      },
-      {
-        "group": "Unknown",
-        "pct": 0.1
-      },
-      {
-        "group": "Zamboangueño",
-        "pct": 0.1
-      }
-    ],
+    "language": {
+      "status": "not_available",
+      "note": "CLEAR Global's tabulation of the 2010 census has a row for Isabela (PSGC 02031), and it is not used: beside the province's own 2020 census ethnicity it gives 13.0% Cebuano where 1.0% of the province is Cebuano or Bisaya, 4.0% Hiligaynon where 0.2% is Ilonggo, and 2.7% in languages of Palawan and Romblon (Cuyonon, Palawan, Romblomanon) whose peoples the province does not count, while its Ibanag share (7.8%) is half the census's (16.1%). The row reads as Isabela pooled with same-named towns elsewhere (Roxas and Quezon in Palawan, San Agustin in Romblon), not as Isabela's households."
+    },
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [
-      {
-        "field": "language",
-        "name": "CLEAR Global (formerly Translators without Borders), Philippines: Languages",
-        "url": "https://data.humdata.org/dataset/philippines-languages",
-        "license": "Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True"
-      }
-    ],
+    "sources": [],
     "country": "PHL",
     "match_by": "shape_id",
-    "shape_id": "2640588B52568839586340",
-    "language_year": 2010,
-    "language_note": "The main language spoken in the household, as a share of the population. Tabulated by CLEAR Global (formerly Translators without Borders) from Philippines Census 2010 (IPUMS extract) (IPUMS International), 2010. Methodology as the publisher states it: Census; representivity very_high. Licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True. The table calls this unit \"Isabela\", location code PH02031, which is its PSGC code; it is bound to the polygon by that code."
+    "shape_id": "2640588B52568839586340"
   },
   {
     "id": "PHL-LANG-cityofisabela",
