@@ -1,4 +1,8 @@
-samoa_census: 2021 Census Tables 1 and 2, by the 2016 Census's villages
-  https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx: 2,681,931 bytes
-  https://www.sbs.gov.ws/digi/2-2016%20Census%20Brief%20No.1%20Tables.xlsx: 106,868 bytes
-samoa_census: Samoa: the census's ages give a median of 21.4, and the office prints 22.0, more than 0.3 apart
+nauru_census: 2021 census tables and persons tabulations
+  https://stats.gov.nr/download/49/2021/182/population-housing-census-2021-tables-vol1.xlsx: 75,196 bytes
+  Tables: 15 districts adding to 11,680; 16 ethnic groups; Table G-7 churches without a Table 19 column: {'Shalosh Pentecostal Church': 186.0, 'Fishers of Men Church': 57.0, 'FOM Pentecostal Church': 81.0, 'Christ Embassy': 48.0, 'Fundamental Christian Church': 15.0}
+  Persons Tabulations: Table 19's religion of 11,215 citizens by district
+  national median from the same groups: nauru_census: Nauru 21.6 (printed 21.6)
+  admin1 ethnicity 14, admin1 median_age 14, admin1 population 14, admin1 religion 14, admin1 sex_ratio 14, admin2 ethnicity 14, admin2 median_age 14, admin2 population 14, admin2 religion 14, admin2 sex_ratio 14
+  wrote data/processed/nauru_census.json (135 kB)
+  wrote 28 records
