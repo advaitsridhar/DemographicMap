@@ -428,6 +428,24 @@ def code_of(name: str, prefix: str, names: dict[str, list[str]],
     return by_stem[0] if len(by_stem) == 1 else None
 
 
+def renumbered(name: str, province: str, names: dict[str, list[str]]) -> str | None:
+    """A county's code under a prefecture whose own current code the bridge lacks.
+
+    Haidong became a prefecture-level city in 2013 and was renumbered from
+    632100 to 630200. Wikidata gives the city only its old code and its
+    counties their new ones (630222 民和回族土族自治县 ...), so none of them was
+    found under the city's prefix and all six were taken for special units --
+    and four polygons that hold their own county's seat alone were told no
+    county could be tied to them. A row's exact name is looked up under such an
+    orphaned prefix (no prefecture code of its own in the bridge), within the
+    province, and taken only where one code has it.
+    """
+    hits = [c for c, zh in names.items()
+            if c.startswith(province) and not c.endswith("00")
+            and f"{c[:4]}00" not in names and name in zh]
+    return hits[0] if len(hits) == 1 else None
+
+
 def kind_of(label: str, code: str | None) -> str:
     """'zone', 'district' or 'county' for a row below a prefecture. A
     development zone carries a code ending 71 to 80 where it carries one at
@@ -484,7 +502,8 @@ def hierarchy(labels: list[str], totals: list[float], code: str,
                         "prefecture": None, "head": None})
             prefix = prefs[i][:4]
             for j in range(i + 1, end + 1):
-                county = code_of(labels[j], prefix, names, "county")
+                county = (code_of(labels[j], prefix, names, "county")
+                          or renumbered(labels[j], code, names))
                 kind = "special" if kind_of(labels[j], county) == "zone" else "county"
                 out.append({"index": j, "label": labels[j], "kind": kind, "code": county,
                             "prefecture": prefs[i], "head": None})

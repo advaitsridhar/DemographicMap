@@ -144,6 +144,29 @@ class Hierarchy(unittest.TestCase):
         self.assertEqual(self.by_label["湟源县"]["prefecture"], "630100")
         self.assertIsNone(self.by_label["海西经济开发区"]["code"])
 
+    def test_a_renumbered_prefecture_s_counties_keep_their_codes(self):
+        # Haidong: Wikidata gives the city its pre-2013 code 632100 and its
+        # counties their current 6302xx ones; they were all taken for zones.
+        names = {"630000": ["青海省"], "632100": ["海东市"], "630202": ["乐都区"],
+                 "630222": ["民和回族土族自治县"], "630223": ["互助土族自治县"]}
+        labels = ["全省", "海东市", "乐都区", "民和回族土族自治县", "互助土族自治县", "某开发区"]
+        areas = cc.hierarchy(labels, [40.0, 40.0, 10.0, 20.0, 9.0, 1.0], "63", names)
+        got = {a["label"]: (a["kind"], a["code"], a["prefecture"]) for a in areas}
+        self.assertEqual(got["海东市"], ("prefecture", "632100", None))
+        self.assertEqual(got["民和回族土族自治县"], ("county", "630222", "632100"))
+        self.assertEqual(got["互助土族自治县"], ("county", "630223", "632100"))
+        self.assertEqual(got["乐都区"], ("county", "630202", "632100"))
+        self.assertEqual(got["某开发区"], ("special", None, "632100"))
+
+    def test_a_prefecture_with_its_own_code_is_not_searched_past(self):
+        names = {"630000": ["青海省"], "630200": ["海东市"], "632100": ["别的州"],
+                 "630222": ["民和回族土族自治县"]}
+        self.assertIsNone(cc.renumbered("民和回族土族自治县", "63", names))
+        names.pop("630200")
+        self.assertEqual(cc.renumbered("民和回族土族自治县", "63", names), "630222")
+        names["630322"] = ["民和回族土族自治县"]     # two codes: neither taken
+        self.assertIsNone(cc.renumbered("民和回族土族自治县", "63", names))
+
     def test_a_prefecture_that_does_not_add_up_is_refused(self):
         t = tables()
         for table in t.values():

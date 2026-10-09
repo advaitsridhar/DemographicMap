@@ -148,9 +148,35 @@ COUNTY_NOTE = (
     "it is still the one county counted: the boundary file's county polygons are a division "
     "of the mid-1990s (Guangdong's Panyu, Huadu, Nanhai and Shunde are drawn as the "
     "county-level cities they were before becoming districts in 2000 and 2002), and a 2020 "
-    "county's figure on a polygon whose ground has changed would be another place's. No 2020 "
-    "county count has been placed on this polygon: its province's yearbook has not been read, "
-    "or the polygon is not one county of today.")
+    "county's figure on a polygon whose ground has changed would be another place's.")
+# Why no county count is on a polygon, said for the polygon rather than as an
+# either-or: the build knows which provinces' yearbooks have been read
+# (china_county_census.PROVINCES). A polygon those readings bound or refused
+# carries their record instead of this one.
+COUNTY_UNREAD = ("No 2020 county count is placed on this polygon: {province}'s own census "
+                 "yearbook has not been read.")
+COUNTY_UNMATCHED = ("No 2020 county count is placed on this polygon: {province}'s own census "
+                    "yearbook has been read, but none of the counties it counts could be shown "
+                    "to be this polygon.")
+COUNTY_UNPLACED = ("No 2020 county count is placed on this polygon, which the boundary file "
+                   "does not place inside any province.")
+
+
+def county_note(province: str | None, read: set[str]) -> str:
+    """COUNTY_NOTE with the reason that holds for a polygon in ``province``."""
+    if not province:
+        why = COUNTY_UNPLACED
+    elif province in read:
+        why = COUNTY_UNMATCHED.format(province=province)
+    else:
+        why = COUNTY_UNREAD.format(province=province)
+    return f"{COUNTY_NOTE} {why}"
+
+
+def read_provinces() -> set[str]:
+    """The first-level names whose own census yearbook china_county_census reads."""
+    from .china_county_census import PROVINCES     # it imports this module
+    return {p["name"] for p in PROVINCES.values()}
 
 # The second-level polygons drawn inside the SARs, measured once against the
 # SAR's first-level polygon in the CGAZ files the map is built from
@@ -609,10 +635,15 @@ def sar_polygon(unit: dict[str, Any], parent: dict[str, Any], sar: dict[str, Any
 
 
 def county_records(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
-                   provinces: list[dict[str, Any]]) -> list[dict[str, Any]]:
+                   provinces: list[dict[str, Any]], read: set[str] | None = None
+                   ) -> list[dict[str, Any]]:
     """A record for every second-level polygon: the reasons for the mainland's;
     inside a SAR, the SAR's median age and sex ratio for the polygon that is
-    the SAR drawn again, and its reason for a fragment of one."""
+    the SAR drawn again, and its reason for a fragment of one.
+
+    ``read`` names the provinces whose own yearbooks have been read
+    (``read_provinces()`` by default), which decides the reason given."""
+    read = read_provinces() if read is None else read
     names = {u["id"]: u["name"] for u in admin1}
     first = {u["id"]: u for u in admin1}
     sars = {r["shape_id"]: r for r in provinces if r["name"] in (HK_NAME, MO_NAME)}
@@ -628,13 +659,14 @@ def county_records(admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
             out.append(inside[-1])
             continue
         parent = f"CHN-{names[parent_shape]}" if parent_shape in names else "CHN"
+        note = county_note(names.get(parent_shape), read)
         out.append(record(
             f"CHN-{unit['id']}", unit["name"], level="admin2", parent=parent, country="CHN",
             match_by="shape_id", shape_id=unit["id"],
-            population=gap("not_available", COUNTY_NOTE),
-            median_age=gap("not_available", COUNTY_NOTE),
-            sex_ratio=gap("not_available", COUNTY_NOTE),
-            ethnicity=gap("not_available", COUNTY_NOTE),
+            population=gap("not_available", note),
+            median_age=gap("not_available", note),
+            sex_ratio=gap("not_available", note),
+            ethnicity=gap("not_available", note),
             language=gap(LANGUAGE_STATUS, LANGUAGE_NOTE),
             religion=gap(NOT_COLLECTED, COUNTY_RELIGION_NOTE)))
     whole = [r["name"] for r in inside if "value" in (r.get("median_age") or {})]

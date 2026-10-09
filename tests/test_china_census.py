@@ -209,12 +209,39 @@ class Counties(unittest.TestCase):
         r = self.records["C-1"]
         self.assertEqual(r["language"]["status"], "not_available")
         for field in ("population", "median_age", "sex_ratio", "ethnicity"):
-            self.assertEqual(r[field], {"status": "not_available", "note": cc.COUNTY_NOTE})
+            self.assertEqual(r[field], {"status": "not_available",
+                                        "note": cc.county_note("Guangdong", cc.read_provinces())})
+        self.assertTrue(r["population"]["note"].startswith(cc.COUNTY_NOTE))
+        self.assertTrue(r["population"]["note"].endswith(
+            "Guangdong's own census yearbook has not been read."))
         self.assertEqual(r["parent"], "CHN-Guangdong")
         self.assertEqual(self.records["C-3"]["parent"], "CHN")
         self.assertEqual(r["religion"], {"status": "not_collected",
                                          "note": cc.COUNTY_RELIGION_NOTE})
         self.assertIn("no survey measures religion by county", r["religion"]["note"])
+
+    def test_each_polygon_gets_the_one_reason_that_holds(self):
+        # Finding: "its province's yearbook has not been read, or the polygon is
+        # not one county of today" stood on every polygon, false in one half or
+        # the other for each.
+        provinces = cc.build(tables(), admin1(), HK_ROWS, MO_TEXT)
+        records = {r["shape_id"]: r for r in cc.county_records(
+            admin1(), admin2(), provinces, read={"Gansu Province"})}
+        unread = records["C-1"]["median_age"]["note"]
+        self.assertIn("Guangdong's own census yearbook has not been read.", unread)
+        matched = records["C-2"]["median_age"]["note"]
+        self.assertIn("Gansu Province's own census yearbook has been read, but none of the "
+                      "counties it counts could be shown to be this polygon.", matched)
+        self.assertIn("does not place inside any province", records["C-3"]["median_age"]["note"])
+        for r in records.values():
+            for field in ("population", "median_age", "sex_ratio", "ethnicity"):
+                self.assertNotIn(", or the polygon", (r.get(field) or {}).get("note", ""))
+
+    def test_the_read_provinces_are_the_yearbook_reader_s(self):
+        # The names the map's first level uses, which the polygons' parents carry.
+        names = set(cc.province_names().values())
+        self.assertEqual(len(cc.read_provinces()), 6)
+        self.assertLessEqual(cc.read_provinces(), names)
 
     def test_the_sar_polygons_say_their_own_census_does_not_ask_religion(self):
         self.assertEqual(self.records[XIANGGANG]["religion"]["note"], cc.HK_RELIGION_NOTE)
