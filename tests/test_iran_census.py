@@ -199,6 +199,72 @@ class Binding(unittest.TestCase):
             ir.split_records(a1, a2[1:])
 
 
+def yearbook_pages(swapped=True, yazd_total=1138533):
+    """Tables 3.17 and 3.18 as pypdf reads the English yearbook, two ostans only."""
+    christian, zoroastrian = ("19823 10127 9696 25271 13880 11391 23109 12542 10567",
+                              "109415 54751 54664 117704 63927 53777 130158 69075 61083")
+    if not swapped:
+        christian, zoroastrian = zoroastrian, christian
+    p31 = "\n".join([
+        "3.17. POPULATION BY SEX AND RELIGION", "Description",
+        "     Total  .........  70495782 35866362 34629420 75149669 37905669 37244000 79926270 "
+        "40498442 39427828",
+        f"Christian ............  {christian}",
+        f"Zoroastrian ..........  {zoroastrian}",
+        "Source: Statistical Centre of Iran."])
+    p32 = "\n".join([
+        "3.18. POPULATION BY RELIGION AND OSTAN, 1395 CENSUS",
+        "Ostan Total Muslim Christian Zoroastrian Jew Other Not stated",
+        "    Total country ......  14406170 14311161 12179 45209 5098 10368 22155",
+        "Tehran  ................  13267637 13179434 8579 43987 5067 9568 21002",
+        f"Yazd  ..................  {yazd_total} 1131727 3600 1222 31 800 1153",
+        "Source: Statistical Centre of Iran."])
+    return [p31, p32]
+
+
+class Religion(unittest.TestCase):
+    def setUp(self):
+        self.old = ir.PROVINCES
+        ir.PROVINCES = {21: ("یزد", "Yazd"), 23: ("تهران", "Tehran")}
+
+    def tearDown(self):
+        ir.PROVINCES = self.old
+
+    def test_the_swapped_headings_are_restored(self):
+        table = ir.parse_religion(yearbook_pages())
+        self.assertEqual(table["Yazd"]["Zoroastrianism"], 3600)
+        self.assertEqual(table["Tehran"]["Christianity"], 43987)
+        self.assertEqual(sum(table["Tehran"].values()), 13267637)
+
+    def test_headings_no_longer_swapped_stop_the_run(self):
+        with self.assertRaises(SystemExit):
+            ir.parse_religion(yearbook_pages(swapped=False))
+
+    def test_a_row_that_does_not_add_up_stops(self):
+        with self.assertRaises(SystemExit):
+            ir.parse_religion(yearbook_pages(yazd_total=1138534))
+
+    def test_golestan_without_bandar_e_gaz_takes_no_share(self):
+        rows = [ir.record("IRN-CENSUS-P27", "Golestan", level="admin1", parent="IRN", country="IRN",
+                          sources=[]),
+                ir.record("IRN-CENSUS-P02-GAZ", "Mazandaran", level="admin1", parent="IRN", country="IRN",
+                          sources=[]),
+                ir.record("IRN-CENSUS-P21", "Yazd", level="admin1", parent="IRN", country="IRN",
+                          sources=[])]
+        religion = {"Yazd": {"Islam": 9, "Zoroastrianism": 1}}
+        ages = {21: {"total": (10, 5, 5)}}
+        ir.add_religion(rows, religion, ages)
+        self.assertEqual(rows[0]["religion"]["status"], "not_available")
+        self.assertEqual(rows[1]["religion"]["status"], "not_available")
+        self.assertEqual(rows[2]["religion"][0], {"group": "Islam", "pct": 90.0, "count": 9})
+        # A province whose religions are not the census's count stops the run.
+        ages[21] = {"total": (11, 5, 6)}
+        rows[2] = ir.record("IRN-CENSUS-P21", "Yazd", level="admin1", parent="IRN", country="IRN",
+                            sources=[])
+        with self.assertRaises(SystemExit):
+            ir.add_religion(rows, religion, ages)
+
+
 class Kept(unittest.TestCase):
     def test_a_kept_table_reads_back_the_same(self):
         table = ir.parse_ages(age_sheet(MEN, WOMEN), "t")

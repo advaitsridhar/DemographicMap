@@ -27,8 +27,12 @@ citizenship composition as the ethnicity field under ``ethnicity_basis:
 "citizenship"``, by the owner's decision of 19 September 2026 (the model is
 Japan's and Korea's nationality files). Iran's census asks no ethnicity; it
 counts citizenship, and that count is what this is -- a person's country of
-citizenship, not their ethnic group. Religion was asked in 2016 too, but no
-table of it at any level below the country is among the archived files.
+citizenship, not their ethnic group. Religion was asked in 2016 too: the
+Centre's Statistical Yearbook 1395 (English, chapter 3, table 3.18) counts
+it by province, and that is written on every first-level polygon that is a
+whole province (its Christian and Zoroastrian headings are swapped in the
+English edition, and are restored -- see RELIGION_COLUMNS). No table of
+religion below the province is among the archived census files.
 
 **Binding.** The map's shahrestans are geoBoundaries' and their English
 labels follow no one transliteration ("Kahlkhal", "Savdkuh", "Sharekurd").
@@ -207,6 +211,44 @@ LABELS = {"ایران": "Iranian", "افغانستان": "Afghan", "عراق": "
           "اظهار نشده": "Not stated"}
 
 PERSIAN_DIGITS = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "01234567890123456789")
+
+# Religion by province: the Statistical Centre's English Statistical Yearbook
+# 1395 (2016-17), chapter 3, table 3.18 "Population by religion and ostan,
+# 1395 census". No table of religion below the province is among the
+# archived census tables (jamiat 1, 2, 3 and 9; faaliat, khanevar, maskan,
+# mohajerat, tahsilat, zanashui), so the shahrestans carry none.
+YEARBOOK = "https://www.amar.org.ir/Portals/1/yearbook/1395/03.pdf"
+YEARBOOK_SOURCE = ("Statistical Centre of Iran, Iran Statistical Yearbook 1395 (2016-17), "
+                   "chapter 3 (Population), table 3.18: population by religion and ostan, "
+                   "1395 census")
+# The yearbook's English province names -> the map's labels.
+YEARBOOK_OSTAN = {
+    "East Azarbayejan": "East Azerbaijan", "West Azarbayejan": "West Azerbaijan",
+    "Ardebil": "Ardabil", "Esfahan": "Isfahan", "Alborz": "Alborz", "Ilam": "Ilam",
+    "Bushehr": "Bushehr", "Tehran": "Tehran",
+    "Chaharmahal & Bakhtiyari": "Chaharmahal and Bakhtiari",
+    "South Khorasan": "South Khorasan", "Khorasan-e-Razavi": "Razavi Khorasan",
+    "North Khorasan": "North Khorasan", "Khuzestan": "Khuzestan", "Zanjan": "Zanjan",
+    "Semnan": "Semnan", "Sistan & Baluchestan": "Sistan and Baluchestan", "Fars": "Fars",
+    "Qazvin": "Qazvin", "Qom": "Qom", "Kordestan": "Kurdistan", "Kerman": "Kerman",
+    "Kermanshah": "Kermanshah", "Kohgiluyeh & Boyerahmad": "Kohgiluyeh and Boyer-Ahmad",
+    "Golestan": "Golestan", "Gilan": "Gilan", "Lorestan": "Lorestan",
+    "Mazandaran": "Mazandaran", "Markazi": "Markazi", "Hormozgan": "Hormozgan",
+    "Hamedan": "Hamadan", "Yazd": "Yazd",
+}
+# Table 3.18's columns after the total, as printed, and the map's labels.
+# The English yearbook swaps two headings: its table 3.17 prints the 2011
+# census's 117,704 under "Zoroastrian" and 25,271 under "Christian", where
+# the Centre's own Persian selected results of that census (census-90-
+# results.pdf, table 3) count 117,704 Christians (مسیحی) and 25,271
+# Zoroastrians (زرتشتی). Table 3.18 is set the same way: its "Christian"
+# column has Yazd's 3,600 and Tehran's 8,579, its "Zoroastrian" column
+# Tehran's 43,987, Isfahan's 8,628 and West Azerbaijan's 7,647 -- the
+# Armenian and Assyrian churches. read_religion checks table 3.17 before
+# trusting this.
+RELIGION_COLUMNS = ("Islam", "Zoroastrianism", "Christianity", "Judaism", "Other religions",
+                    "Not stated")
+CENSUS_2011_PERSIAN = {"Christianity": 117_704, "Zoroastrianism": 25_271}
 
 
 def fa(text: Any) -> str:
@@ -679,6 +721,110 @@ def build(province_ages: dict[int, dict[str, Any]],
     return rows, notes
 
 
+def parse_religion(pages: list[str]) -> dict[str, dict[str, int]]:
+    """{map label: {religion: count}} from table 3.18, with table 3.17's check.
+
+    Every row's religions make its total, the provinces make the country's
+    row, and table 3.17's 2011 column must carry the swapped headings that
+    RELIGION_COLUMNS undoes (see there) -- otherwise the run stops.
+    """
+    text = "\n".join(pages)
+    head = re.search(r"3\.17\.\s*POPULATION BY SEX AND RELIGION(.*?)Source", text, re.S)
+    if not head:
+        raise SystemExit("iran_census: the yearbook has no table 3.17")
+    printed = {}
+    for label in ("Christian", "Zoroastrian"):
+        m = re.search(rf"^{label}\s*\.*\s*((?:\d+\s+){{8}}\d+)\s*$", head.group(1), re.M)
+        if not m:
+            raise SystemExit(f"iran_census: table 3.17 has no {label} row")
+        printed[label] = int(m.group(1).split()[3])        # 1390, both sexes
+    if (printed["Zoroastrian"], printed["Christian"]) != (
+            CENSUS_2011_PERSIAN["Christianity"], CENSUS_2011_PERSIAN["Zoroastrianism"]):
+        raise SystemExit(f"iran_census: table 3.17's 2011 column reads {printed}; the "
+                         f"heading swap RELIGION_COLUMNS undoes is not there")
+    body = re.search(r"3\.18\.\s*POPULATION BY RELIGION AND OSTAN(.*?)Source", text, re.S)
+    if not body:
+        raise SystemExit("iran_census: the yearbook has no table 3.18")
+    out: dict[str, dict[str, int]] = {}
+    for line in body.group(1).splitlines():
+        m = re.match(r"^\s*(.+?)\s*\.{2,}\s*((?:\d+\s+){6}\d+)\s*$", line)
+        if not m:
+            continue
+        name = " ".join(m.group(1).split())
+        total, *counts = (int(x) for x in m.group(2).split())
+        if sum(counts) != total:
+            raise SystemExit(f"iran_census: table 3.18's {name}: religions make "
+                             f"{sum(counts):,} against {total:,}")
+        if name == "Total country":
+            out["*"] = dict(zip(RELIGION_COLUMNS, counts))
+            continue
+        if name not in YEARBOOK_OSTAN:
+            raise SystemExit(f"iran_census: table 3.18's {name!r} is not a known ostan")
+        out[YEARBOOK_OSTAN[name]] = dict(zip(RELIGION_COLUMNS, counts))
+    if "*" not in out or len(out) != len(PROVINCES) + 1:
+        raise SystemExit(f"iran_census: table 3.18 has {len(out) - ('*' in out)} ostans")
+    made = {k: sum(v[k] for name, v in out.items() if name != "*") for k in RELIGION_COLUMNS}
+    if made != out["*"]:
+        raise SystemExit(f"iran_census: table 3.18's ostans make {made} against {out['*']}")
+    return out
+
+
+def read_religion() -> dict[str, dict[str, int]]:
+    kept = cached("religion")
+    if kept is None:
+        import logging
+
+        from pypdf import PdfReader
+        logging.getLogger("pypdf").setLevel(logging.ERROR)
+        blob = http_get(WAYBACK.replace("2019id_", "2023id_").format(url=YEARBOOK),
+                        binary=True, timeout=300)
+        assert isinstance(blob, bytes)
+        if blob[:5] != b"%PDF-":
+            raise SystemExit(f"iran_census: {YEARBOOK} came back as something other than a "
+                             f"PDF: {blob[:80]!r}")
+        pages = [(p.extract_text() or "") for p in PdfReader(io.BytesIO(blob)).pages]
+        kept = parse_religion(pages)
+        keep("religion", kept)
+    return kept
+
+
+def add_religion(rows: list[dict[str, Any]], religion: dict[str, dict[str, int]],
+                 province_ages: dict[int, dict[str, Any]]) -> None:
+    """Religion on every first-level record that is a whole province.
+
+    Golestan is drawn without Bandar-e Gaz, which has a first-level polygon
+    of its own; the yearbook counts the province whole and publishes nothing
+    for the county, so neither polygon takes a share, and each says why.
+    """
+    note = ("Religion as each person declared it in the 2016 census (the Centre's "
+            "categories: Muslim, Christian, Zoroastrian, Jewish, other, not stated), from "
+            "table 3.18 of the Statistical Yearbook 1395, read from the Internet Archive's "
+            "capture of amar.org.ir. The English yearbook prints the Christian and "
+            "Zoroastrian headings swapped; they are restored from the Centre's Persian "
+            "results (see the adapter).")
+    for r in rows:
+        if r["level"] != "admin1":
+            continue
+        name = r["name"]
+        if r["id"].endswith("-GAZ") or name == "Golestan":
+            r["religion"] = gap(NOT_AVAILABLE, (
+                "The 2016 census's religion is published by province only (Statistical "
+                "Yearbook 1395, table 3.18). The map draws Bandar-e Gaz county under a "
+                "first-level polygon of its own, so neither it nor Golestan without it is a "
+                "unit the table counts, and no share is written for either."))
+            continue
+        counts = religion[name]
+        nn = next(k for k, v in PROVINCES.items() if v[1] == name)
+        if sum(counts.values()) != province_ages[nn]["total"][0]:
+            raise SystemExit(f"iran_census: {name}'s religions make {sum(counts.values()):,} "
+                             f"against the census's {province_ages[nn]['total'][0]:,}")
+        r["religion"] = shares({k: v for k, v in counts.items() if v})
+        r["religion_year"] = YEAR
+        r["religion_note"] = note
+        r["sources"].append({"field": "religion", "name": YEARBOOK_SOURCE, "url": YEARBOOK,
+                             "year": YEAR, "license": LICENCE})
+
+
 def split_records(a1: list[dict[str, Any]], a2: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """A stated gap on both halves of every 2016 shahrestan the map draws as two.
 
@@ -846,6 +992,8 @@ def main() -> int:
     province_ages, province_citizenship, counties, codab = read_all(only=only)
     a1, a2 = drawn_units()
     rows, notes = build(province_ages, province_citizenship, counties, codab, a1, a2)
+    religion = read_religion()
+    add_religion(rows, religion, province_ages)
     gaps = split_records(a1, a2)
     for line in notes:
         log(f"  {line}")
@@ -863,6 +1011,10 @@ def main() -> int:
             f"median {r['median_age']['value']}, ratio {r['sex_ratio']['value']}; {eth}")
     for r in gaps:
         log(f"    admin2 {r['name']} [{r['shape_id']}]: a stated gap (split since 2016)")
+    for r in rows:
+        if r["level"] == "admin1" and isinstance(r.get("religion"), list):
+            log(f"    religion {r['name']}: " + ", ".join(
+                f"{s['group']} {s['pct']}" for s in r["religion"][:3]))
     write_json(PROCESSED / OUT, rows + gaps)
     return 0
 
