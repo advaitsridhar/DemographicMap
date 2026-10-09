@@ -1,309 +1,276 @@
 /home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 1] }
   certs = pkcs7.load_der_pkcs7_certificates(blob)
 
-== GET https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220
-  200 text/html; charset=utf-8 157103 https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220
-      বাংলাদেশ জাতীয় তথ্য বাতায়ন
-    > অফিসের ধরণ নির্বাচন করুন স্বায়ত্তশাসিত মন্ত্রণালয় মন্ত্রণালয় বিভাগ অধিদপ্তর কর্পোরেশন কমিশন কোম্পানি কর্তৃপক্ষ/অথরিটি এজেন্সী কাউন্সিল ট্রাস্ট জাদুঘর ফাউন্ডেশন একাডেমি দপ্তর/সংস্থা বোর্ড ইনস্টিটিউট 
-      দেখুন
-    --
-      নিয়মিত প্রকাশনা
-    > জেলা পরিসংখ্যান ২০১১
-      স্মল এরিয়া এটলাস বাংলাদেশ
-    --
-      09-07-2025
-    > Population and Housing Census 2022 : Administrative Report
-      30-06-2025
-    --
-      30-06-2025
-    > Population and Housing Census 2022 : Urban Area Report
-      ০৯-০৩-২০২৫
-    --
-      ১০-১১-২০২৪
-    > আর্থসামাজিক ও জনমিতিক জরিপ ২০২৩ রিপোর্ট
-      ১৫-০৭-২০২৪
-    --
-      ১৫-০৭-২০২৪
-    > জনশুমারি ও গৃহগণনা ২০২২: ন্যাশনাল রিপোর্ট (ভলিউম ১)
-      15-11-2023
-    --
-      15-11-2023
-    > Preliminary Report on Population and Housing Census 2022 : English Version
-      27-09-2023
-    --
-      27-09-2023
-    > Report on Post Enumeration Check of the Population and Housing Census, 2022
-      01-06-2023
-    --
-      01-06-2023
-    > Preliminary Report on Population and Housing Census 2022 : Bangla Version
-      28-07-2022
-    --
-      28-07-2022
-    > Population & Housing Census 2022 ( District Report & Community Series)
-      District Series
-    --
-      Population & Housing Census 2022 ( District Report & Community Series)
-    > District Series
-      Community Series
-    --
-      District Series
-    > Community Series
-      BARISAL DIVISION
-    --
-      BARISHAL :
-    > PDF , Excel
-      BHOLA:
-    --
-      BHOLA:
-    > PDF , Excel
-      PIROJPUR:
-    --
-      PIROJPUR:
-    > PDF , Excel
-      PATUAKHAL:
-    --
-      PATUAKHAL:
-    > PDF , Excel
-      BARGUNA:
-    --
-      BARGUNA:
-    > PDF , Excel
-      JHALAKHATI:
-    --
-      JHALAKHATI:
-    > PDF , Excel
-      CHATTOGRAM DIVISION
-    --
-      CHATTOGRAM:
-    > PDF , Excel
-      COX’S BAZAR:
-    --
-      COX’S BAZAR:
-    > PDF , Excel
-      BANDARBAN:
-    --
-      BANDARBAN:
-    > PDF , Excel
-      RANGAMATI:
-    --
-      RANGAMATI:
-    > PDF , Excel
-      NOAKHALI :
-    --
-      NOAKHALI :
-    > PDF , Excel
-      FENI :
-    --
-      FENI :
-    > PDF , Excel
-      CUMILLA:
-    --
-      CUMILLA:
-    > PDF , Excel
-      CHANDPUR:
-    --
-      CHANDPUR:
-    > PDF , Excel
-      BRAHMMANBARIA:
-    --
-      BRAHMMANBARIA:
-    > PDF , Excel
-      KHAGRACHHARI:
-    --
-      KHAGRACHHARI:
-    > PDF , Excel
-      LAKSHMIPUR:
-    --
-      LAKSHMIPUR:
-    > PDF , Excel
-      DHAKA DIVISION
-    --
-      DHAKA:
-    > PDF , Excel
-      NARAYANGANJ:
-    --
-      NARAYANGANJ:
-    > PDF , Excel
-      GAZIPUR:
-    --
-      GAZIPUR:
-    > PDF , Excel
-      MANIKGANJ:
-    --
-      MANIKGANJ:
-    > PDF , Excel
-      NARSINGDI:
-    --
-      NARSINGDI:
-    > PDF , Excel
-      FARIDPUR:
-    --
-      FARIDPUR:
-    > PDF , Excel
-      GOPALGANJ:
-    --
-      GOPALGANJ:
-    > PDF , Excel
-      RAJBARI:
-    --
-      RAJBARI:
-    > PDF , Excel
-      SHARIATPUR:
-    --
-      SHARIATPUR:
-    > PDF , Excel
-      KISHOREGANJ:
-    --
-      KISHOREGANJ:
-    > PDF , Excel
-      MUNSHIGANJ:
-    --
-      MUNSHIGANJ:
-    > PDF , Excel
-      MADARIPUR:
-    --
-      MADARIPUR:
-    > PDF , Excel
-      TANGAIL:
-    --
-      TANGAIL:
-    > PDF , Excel
-      MYMENSING DIVISION
-    --
-      MYMENSINGH:
-    > PDF , Excel
-      JAMALPUR:
-    --
-      JAMALPUR:
-    > PDF , Excel
-      SHERPUR:
-    --
-      SHERPUR:
-    > PDF , Excel
-      NETRAKONA:
-    --
-      NETRAKONA:
-    > PDF , Excel
-      KHULNA DIVISION
-    --
-      KHULNA:
-    > PDF , Excel
-      BAGERHAT:
-    --
-      BAGERHAT:
-    > PDF , Excel
-      SATKHIRA:
-    --
-      SATKHIRA:
-    > PDF , Excel
-      JHENAIDAH:
-    --
-      JHENAIDAH:
-    > PDF , Excel
-      CHUADANGA:
-    --
-      CHUADANGA:
-    > PDF , Excel
-      MAGURA:
-    --
-      MAGURA:
-    > PDF , Excel
-      KUSHTIA:
-    --
-      KUSHTIA:
-    > PDF , Excel
-      MEHERPUR:
-    --
-      MEHERPUR:
-    > PDF , Excel
-      JASHORE:
-    --
-      JASHORE:
-    > PDF , Excel
-      NARAIL:
-    --
-      NARAIL:
-    > PDF , Excel
-      RAJSHAHI DIVISION
-    --
-      RAJSHAHI :
-    > PDF , Excel
-      NATORE:
-    --
-      NATORE:
-    > PDF , Excel
-      NAOGAON:
-    --
-      NAOGAON:
-    > PDF , Excel
-      PABNA:
-    --
-      PABNA:
-    > PDF , Excel
-      SIRAJGANJ:
-    --
-      SIRAJGANJ:
-    > PDF , Excel
-      BOGURA:
-    --
-      BOGURA:
-    > PDF , Excel
-      CHAPAI NAWABGANJ:
-    --
-      CHAPAI NAWABGANJ:
-    > PDF , Excel
-      JOYPURHAT :
-    --
-      JOYPURHAT :
-    > PDF , Excel
-      RANGPUR DIVISION
-    --
-      RANGPUR:
-    > PDF , Excel
-      GAIBANDHA:
-    --
-      GAIBANDHA:
-    > PDF , Excel
-      NILPHAMARI:
-    --
-      NILPHAMARI:
-    > PDF , Excel
-      KURIGRAM:
-    --
-      KURIGRAM:
-    > PDF , Excel
-      DINAJPUR:
-    --
-      DINAJPUR:
-    > PDF , Excel
-      THAKURGAON:
-    --
-      THAKURGAON:
-    > PDF , Excel
-      LALMONIRHAT:
-    --
-      LALMONIRHAT:
-    > PDF , Excel
-      PANCHAGARH:
-    --
-      PANCHAGARH:
-    > PDF , Excel
-      SYLHET DIVISION
-    --
-      SYLHET:
-    > PDF , Excel
-      HABIGANJ:
-    --
-      HABIGANJ:
-    > PDF , Excel
-      MAULVIBAZAR:
-    --
-      MAULVIBAZAR:
-    > PDF , Excel
-      SUNAMGANJ:
-    --
-      SUNAMGANJ:
-    > PDF , Excel
-      এই কনটেন্টটি শেয়ার করতে ক্লিক করুন
-    --
+== https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/c56515ca45314f6586d9d7ffae0e89a7.xlsx
+  200 application/vnd.openxmlformats-officedoc 3961264 https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/c56515ca45314f6586d9d7ffae0e89a7.xlsx
+    19 sheet(s): ['C-01', 'C-02', 'C-03', 'C-04', 'C-05', 'C-06', 'C-07', 'C-08', 'C-09', 'C-10', 'C-11 ', 'C-12', 'C-13', 'C-14', 'C-15', 'C-16', 'C-17', 'C-18', 'SDG_Union']
+  -- sheet 'C-01' 5480x18
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-01: Househ |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |   |  |  |  |  |  | 
+    |  | District | City Corporation | Upazila/Thana | Paurashava | Union/Ward | Mauza | Village/Mahalla | Administrative Uni | Household (Except  |  |  |  | Population (Includ
+    |  |  |  |  |  |  |  |  |  | Total | General | Institutional | Others | Total
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-02' 2095x20
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-02: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Total | Age Group (in Year |  |  |  |  |  |  |  |  |  | 
+    |  |  |  | 0-4 | 5-9 | 10-14 | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44 | 45-49 | 50-54
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-03' 2094x11
+    |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-03: Popula |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Total | Muslim | Hindu | Christian | Buddhist | Others |  |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 |  |  | 
+    |  | Barishal | 2570446 | 2283728 | 275263 | 11138 | 253 | 64 |  |  | 
+  -- sheet 'C-04' 5480x19
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-04: Marita |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Male |  |  |  |  |  |  | Female |  |  |  | 
+    |  |  | Population (Number | Total | Never Married | Currently Married | Widowed/ Widower | Divorced | Separated | Population (Number | Total | Never Married | Currently Married | Widowed/ Widower
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-05' 5480x14
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-05: Litera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | 5 Years and above |  |  | 7 Years and above |  |  | 15 Years and above |  |  |  |  | 
+    |  |  | Total  | Male | Female | Total  | Male | Female | Total  | Male | Female |  |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |  |  | 
+  -- sheet 'C-06' 2095x22
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-06: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Population (Number | Field  of Educatio |  |  |  |  | Highest Level of E |  |  |  |  | 
+    |  |  |  | Total  | General | Technical | Religious | Others | Total  | Attended School bu | Play/Nursery/KG/Pr | Student-Class I  | Class I- V | Class VI- IX 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-07' 2095x17
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-07: Curren |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Total  |  | 5-9 Years |  | 10-14 Years |  | 15-19 Years |  | 20-24 Years |  | 25-29 Years | 
+    |  |  | Male | Female | Male | Female | Male | Female | Male | Female | Male | Female | Male | Female
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-08' 2095x20
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-08: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Population |  |  | Employed |  |  | Household Work |  |  | Looking for Work |  | 
+    |  |  | Total   | Male | Female | Total   | Male | Female | Total   | Male | Female | Total   | Male | Female
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-09' 2095x17
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-09: Employ |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Total |  |  | Agriculture |  |  | Industry |  |  | Service |  | 
+    |  |  | Total   | Male | Female | Total   | Male | Female | Total   | Male | Female | Total   | Male | Female
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-10' 5480x14
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-10: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  | (In Percent) |  |  | 
+    |  | Administrative Uni | Total |  |  | Male  |  |  | Female |  |  |  |  | 
+    |  |  | Total |   15-19 Years |   20-24 Years | Total |   15-19 Years |   20-24 Years | Total |   15-19 Years |   20-24 Years |  |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |  |  | 
+  -- sheet 'C-11 ' 5481x17
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-11: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | (In Percent)
+    |  | Administrative Uni | Population having  |  |  |  |  |  | Internet User |  |  |  |  | 
+    |  |  | 5 Years and above |  |  | 15 Years and above |  |  | 5 Years and above |  |  | 15 Years and above |  | 
+    |  |  | Total | Male | Female | Total | Male | Female | Total | Male | Female | Total | Male | Female
+  -- sheet 'C-12' 5480x11
+    |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-12: Popula |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  | (In Percent) |  |  | 
+    |  | Administrative Uni | Having Account in  |  |  | Having Mobile Bank |  |  |  |  | 
+    |  |  | Total | Male | Female | Total | Male | Female |  |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 |  |  | 
+  -- sheet 'C-13' 219x12
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-13: Ethnic |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Ethnic Population |  |  | Ethnic Population  |  |  |  |  |  | 
+    |  |  | Total | Male | Female | Barman | Koch | Garo | Others |  |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |  |  | 
+  -- sheet 'C-14' 5478x17
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-14: Genera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | (In Percent)
+    |  | Administrative Uni | General Household | Type of Structure |  |  |  |  | Ownership Status |  |  |  |  | 
+    |  |  |  | Total | Pucca | Semi-pucca | Kancha | Jhupri | Total | Own dwelling unit | Rented but having  | Rented and having  | Rent free but havi | Rent free and havi
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-15' 5478x15
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-15: Genera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  | (In Percent) |  | 
+    |  | Administrative Uni | General Household | Source of Drinking |  |  |  |  |  |  |  |  |  | 
+    |  |  |  | Total | Tap/Pipe (Supply)  | Tube-well (Deep/Sh | Bottled/Jar Water | Well | Pond/River/ Canal/ | Spring | Rain Water | Others |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |  | 
+  -- sheet 'C-16' 5478x13
+    |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-16: Genera |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  | (In Percent) |  |  | 
+    |  | Administrative Uni | General Household | Toilet Facilities |  |  |  |  |  |  |  |  | 
+    |  |  |  | Total | Safe Disposal with | Unsafe Disposal wi | Pit Latrine with S | Pit Latrine withou | Raw/Open/ Hanging  | Open Defecation/ N |  |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |  |  | 
+  -- sheet 'C-17' 5478x18
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-17: Genera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | General Household | Source of Cooking  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  | Total | Straw/Leaf/ Bran/H | Wood/Chalk/ Choppe | Wood-coal/ Charcoa | Kerosene/ Paraffin | Petrol/Diesel | Electricity | Supply Gas | LP Gas | Biogas | Others
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-18' 5478x18
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-18: Compri |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | General Household | Household Comprisi |  |  |  |  |  |  |  |  |  | 
+    |  |  |  | 1 Person | 2 Person | 3 Person | 4 Person | 5 Person | 6 Person | 7 Person | 8 Person | 9 Person | 10 Person | 10 Person+
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'SDG_Union' 218x12
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Union and Location | SDG Indicators |  |  |  |  |  |  |  |  | 
+    |  |  | Participation in O | Ownership of Mobil | Basic Sanitation S | Basic Handwashing  | Access to Electric | Clean Fuel (7.1.2) | NEET Youth Populat | Financial Inclusio | Urban Slum (11.1.1 | Internet User (17.
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+    |  | Barishal | 61.53 | 57.73 | 67.28 | 71.74 | 99.51 | 13.96 | 33.17 | 49.71 | 3.68 | 26.37
+
+== https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/2b9c505de31e463582957bc16a96ed2f.xlsx
+  200 application/vnd.openxmlformats-officedoc 3211970 https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/2b9c505de31e463582957bc16a96ed2f.xlsx
+    19 sheet(s): ['C-01', 'C-02', 'C-03', 'C-04', 'C-05', 'C-06', 'C-07', 'C-08', 'C-09', 'C-10', 'C-11 ', 'C-12', 'C-13', 'C-14', 'C-15', 'C-16', 'C-17', 'C-18', 'SDG Indicator by Union']
+  -- sheet 'C-01' 3466x20
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-01: Househ |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |   |  |  |  |  |  |  | 
+    |  | District | Upazila/Thana | Paurashava | Union/Ward | Mauza | Village/Mahalla | Administrative Uni | Household (Except  |  |  |  | Population (Includ | 
+  -- sheet 'C-02' 3090x24
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-02: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Total | Age Group (in year |  |  |  |  |  |  |  |  |  | 
+    |  |  |  | 0-4 | 5-9 | 10-14 | 15-19 | 20-24 | 25-29 | 30-34 | 35-39 | 40-44 | 45-49 | 50-54
+  -- sheet 'C-03' 3868x12
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-03: Popula |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Total | Muslim | Hindu | Christian | Buddhist | Others |  |  |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 |  |  |  | 
+  -- sheet 'C-04' 3870x20
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-04: Marita |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Male |  |  |  |  |  |  | Female |  |  |  | 
+  -- sheet 'C-05' 3463x14
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-05: Litera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | 5 Years and above |  |  | 7 Years and above |  |  | 15 Years and above |  |  |  |  | 
+    |  |  | Total  | Male | Female | Total  | Male | Female | Total  | Male | Female |  |  | 
+  -- sheet 'C-06' 3090x22
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-06: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Population (Number | Field  of Educatio |  |  |  |  | Highest Level of E |  |  |  |  | 
+    |  |  |  | Total  | General | Technical | Religious | Others | Total  | Attended School bu | Play/Nursery/KG/Pr | Student-Class I  | Class I- V | Class VI- IX 
+  -- sheet 'C-07' 3464x17
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-07: Curren |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Total  |  | 5-9 Years |  | 10-14 Years |  | 15-19 Years |  | 20-24 Years |  | 25-29 Years | 
+  -- sheet 'C-08' 3090x20
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-08: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Population |  |  | Employed |  |  | Household Work |  |  | Looking for Work |  | 
+    |  |  | Total   | Male | Female | Total   | Male | Female | Total   | Male | Female | Total   | Male | Female
+  -- sheet 'C-09' 3090x17
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-09: Employ |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Total |  |  | Agriculture |  |  | Industry |  |  | Service |  | 
+    |  |  | Total   | Male | Female | Total   | Male | Female | Total   | Male | Female | Total   | Male | Female
+  -- sheet 'C-10' 3463x14
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-10: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  | (In Percent) |  |  | 
+    |  | Administrative Uni | Total |  |  | Male  |  |  | Female |  |  |  |  | 
+    |  |  | Total |   15-19 Years |   20-24 Years | Total |   15-19 Years |   20-24 Years | Total |   15-19 Years |   20-24 Years |  |  | 
+  -- sheet 'C-11 ' 3464x17
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-11: Popula |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | (In Percent)
+    |  | Administrative Uni | Population having  |  |  |  |  |  | Internet User |  |  |  |  | 
+    |  |  | 5 Years and above |  |  | 15 Years and above |  |  | 5 Years and above |  |  | 15 Years and above |  | 
+  -- sheet 'C-12' 3464x11
+    |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-12: Popula |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  | (In Percent) |  |  | 
+    |  | Administrative Uni | Having Account in  |  |  | Having Mobile Bank |  |  |  |  | 
+  -- sheet 'C-13' 208x12
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-13: Ethnic |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | Ethnic Population |  |  | Ethnic Population  |  |  |  |  |  | 
+    |  |  | Total | Male | Female | Chakma | Tripura | Marma | Others |  |  | 
+  -- sheet 'C-14' 3465x18
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-14: Genera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | (In Percent)
+    |  | Administrative Uni | General Household | Type of Structure |  |  |  |  | Ownership Status |  |  |  |  | 
+    |  |  |  | Total | Pucca | Semi-pucca | Kancha | Jhupri | Total | Own dwelling unit | Rented but having  | Rented and having  | Rent free but havi | Rent free and havi
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'C-15' 3465x17
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-15: Genera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  | (In Percent) |  | 
+    |  | Administrative Uni | General Household | Source of Drinking |  |  |  |  |  |  |  |  |  | 
+    |  |  |  | Total | Tap/pipe (Supply)  | Tube-well (Deep/Sh | Bottled/Jar Water | Well | Pond/River/ Canal/ | Spring | Rain Water | Others |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |  | 
+  -- sheet 'C-16' 3466x14
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-16: Genera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  | (In Percent) |  |  |  | 
+    |  | Administrative Uni | General Household | Toilet Facilities |  |  |  |  |  |  |  |  |  | 
+    |  |  |  | Total | Safe Disposal with | Unsafe Disposal wi | Pit Latrine with S | Pit Latrine withou | Raw/Open/ Hanging  | Open Defecation/ N |  |  |  | 
+  -- sheet 'C-17' 3467x19
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-17: Genera |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | General Household | Source of Cooking  |  |  |  |  |  |  |  |  |  | 
+  -- sheet 'C-18' 3465x19
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Table C-18: Compri |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Administrative Uni | General Household | Household Comprisi |  |  |  |  |  |  |  |  |  | 
+    |  |  |  | 1 Person | 2 Person | 3 Person | 4 Person | 5 Person | 6 Person | 7 Person | 8 Person | 9 Person | 10 Person | 10 Person+
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13
+  -- sheet 'SDG Indicator by Union' 147x16
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+    |  | Union & Location | SDG Indicators |  |  |  |  |  |  |  |  |  |  | 
+    |  |  | Participation in O | Ownership of mobil | Basic Sanitation S | Basic Handwashing  | Access to Electric | Clean Fuel (7.1.2) | NEET Youth Populat | Financial Inclusio | Urban Slum (11.1.1 | Internet User (17. |  | 
+    |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |  | 
