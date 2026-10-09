@@ -1,11 +1,57 @@
-https://web.archive.org/web/2019id_/https://www.amar.org.ir/Portals/0/census/1395/results/tables/jamiat/tafsili/shahrestan/jamiat23.xls: HTTP 200 320,000 B
-  sheets (16): ['تهران2301', 'دماوند2302', 'رئ2303', 'شميرانات2304', 'ورامين2306', 'شهريار2309', 'اسلامشهر2310', 'رباطكريم2312', 'پاكدشت2313', 'فيروزكوه2314', 'قدس2316', 'ملارد2317', 'پيشوا2318', 'بهارستان2319', 'پرديس2320', 'قرچک2321']
-  -- 'تهران2301'
-  r1: 
-  r2: 
-  r3: c1='جدول 1- جمعيت '
-  r4: 
-  r5: c1='سن' | c2='جمع' | c5='نقاط شهري' | c9='نقاط روستايي' | c12='غير ساکن'
-  r6: c2='مردوزن' | c3='مرد' | c4='زن' | c5='مردوزن' | c6='مرد' | c8='زن' | c9='مردوزن' | c10='مرد' | c11='زن' | c12='مردوزن' | c13='مرد' | c14='زن'
-  r7: c1='تمامي سنين' | c2='8737510.0' | c3='4347534.0' | c4='4389976.0' | c5='8693706.0' | c6='4324155.0' | c8='4369551.0' | c9='43221.0' | c10='22895.0' | c11='20326.0' | c12='583.0' | c13='484.0' | c14='99.0'
-  r8: c1='0-4 ساله' | c2='541180.0' | c3='277964.0' | c4='263216.0' | c5='537137.0' | c6='275943.0' | c8='261194.0' | c9='4038.0' | c10='2019.0' | c11='2019.0' | c12='5.0' | c13='2.0' | c14='3.0'
+probe_pdf: https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/2020_Vanuatu_National_Population_and_Housing_Census_-_Analytical_report_Volume_2.pdf
+  10,628,723 bytes
+  119 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/LOULFM+Bauhaus-Medium', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 86, '/FontDescriptor': IndirectObject(51, 0, 139997337978960), '/LastChar': 117, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 556, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 333, 500]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 119 pages, 4 mention ['edian']
+=== front matter ===
+1
+Vanuatu 2020 National Population and Housing Census – Analytical Report
+Volume 2
+VANUATU VANUATU 
+20202020 NATIONAL POPULATION  NATIONAL POPULATION 
+
+=== pages mentioning ['edian'] (first 8) ===
+
+--- page 8 ----------------------------------------------------
+Table 2. Population density (number of people/km2) by province, Vanuatu: 1999, 2009 and 2020 ................................5
+Table 3. Male and female Myers’ indices, Vanuatu: 2020 ...............................................................................................................11
+Table 4. Population distribution by broad age group, dependency ratio, median age, and sex ratio, Vanuatu:
+2009 and 2020  ...............................................................................................................................................................................................12
+Table 5. Degree of urbanisation, Vanuatu: 1967–2020  ...................................................................................................................15
+
+--- page 14 ----------------------------------------------------
+Population (25–59) 110,206 28,353 81,854 4,061 22,071 12,004 15,175 42,498 14,401
+Older population (60+) 19,325 3,595 15,729 735 3,577 2,535 3,509 6,270 2,698
+Median age 20 23 19 19 20 18 20 23 17
+Dependency ratio (15–64) 75 56 81 84 79 84 82 64 92
+Sex ratio 102 101 102 102 105 103 102 101 100
+
+--- page 29 ----------------------------------------------------
+Figure 15. Five-year moving average of the sex ratio by age: Vanuatu and Sanma province, 2020
+From the overall population structure illustrated by the population pyramids, several indicators can be
+calculated, such as the median age and age dependency ratio. Vanuatu’s population has a relatively
+young age structure: 38.6% of the population is younger than 15 years of age; 55.0% is in the so-called
+working age groups 15–59; and 6.4% are older than 60 years (Table 4).
+There is a direct link between the size and proportion of the number of young people and the median
+age. The age structure is also illustrated by the median age of 20.9 years, meaning that half of the
+Vanuatu population was younger and the other half older than 20.9 years. The median age in 2009
+was 20.5 years, indicating that the population structure was slightly older in 2020 compared to 2009.
+Over 55% of Shefa’s population was in the 15–59 age group as a result of the influx of migrants from
+other provinces. The median age of 22.2 years was the highest in the country. On the other hand,
+Shefa, like Sanma, had the lowest proportion of people aged over 60 years.
+Figure 17 shows a comparison of the median age by province, which varies widely. While the median
+age was within the range of 19–22 years for all provinces, it was much less for Tafea, at only 17.4 years.
+Table 4. Population distribution by broad age group, dependency ratio, median age, and sex ratio,
+Vanuatu: 2009 and 2020
+Province Year Percentage of population by broad age groups Age dependency
+ratio (15–59)
+Median age
+(years)
+Sex ratio (males
+
+--- page 30 ----------------------------------------------------
+Province Year Percentage of population by broad age groups Age dependency
+ratio (15–59)
+Median age
+(years)
+Sex ratio (males
