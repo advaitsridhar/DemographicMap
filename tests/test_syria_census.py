@@ -99,6 +99,20 @@ class TheReader(unittest.TestCase):
         self.assertEqual(groups["Palestinian"], 20)
         self.assertIn("not ethnicity", d1["ethnicity_note"])
 
+    def test_labels_name_no_people_the_census_did_not_count(self):
+        labels = set(sc.NATIONALITY.values())
+        self.assertIn("Syrian citizens", labels)
+        # The continents' groups, never read as the US or Australia.
+        self.assertFalse(labels & {"Syrian", "American", "Australian"})
+        d1 = self.by["d1"]
+        self.assertIn("Syrian citizens", {g["group"] for g in d1["ethnicity"]})
+        self.assertIn("Kurd", d1["ethnicity_note"])
+
+    def test_language_says_why_it_is_empty(self):
+        for row in self.rows:
+            self.assertEqual(row["language"]["status"], "not_available")
+            self.assertIn("no language table", row["language"]["note"])
+
     def test_the_golan_districts_say_what_the_census_did_not_count(self):
         gaz = {"syr_adm1": [["adm1_name", "adm1_pcode"], ["Quneitra", "SY14"]],
                "syr_adm2": [["adm1_name", "adm2_name", "adm2_pcode"]]}

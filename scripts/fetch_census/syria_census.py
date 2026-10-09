@@ -30,8 +30,21 @@ asked in 1960). By the owner's decision of 19 September 2026 a state's count
 of nationality is carried on the ethnicity field under
 ``ethnicity_basis: "nationality"``, as Japan's and Korea's are, and each note
 says it is citizenship. "Palestinian" here is Palestinian refugees and their
-descendants, who are not Syrian citizens; "Syrian" is every Syrian citizen,
-Kurd, Armenian, Assyrian and Arab alike.
+descendants, who are not Syrian citizens.
+
+The citizens' row is written "Syrian citizens", a label that names no
+people, and filed as a nationality: Syria's citizens are Arab, Kurd,
+Armenian, Assyrian and Turkmen alike, and a row read as "Syrian" would be
+coloured Arab, showing Kurdish Afrin and Ain al-Arab as wholly Arab, which
+the census never said. The census's "American" and "Australian" groups
+stand beside its European, Asian and African ones -- continents, not
+countries -- so they are written "Nationalities of the Americas" and
+"Oceanian nationalities", which no settler-nation identity can be read
+into.
+
+**Language** is in no table the census published (the Bureau's workbook
+reproduces age, sex and nationality, and its data dictionary cites no other
+table), so every unit says so.
 
 **Quneitra.** The census enumerated the part of Quneitra governorate under
 Syrian administration. The boundary file draws the whole governorate,
@@ -58,7 +71,7 @@ from collections import defaultdict
 from typing import Any
 
 from . import uscb
-from ._shared import PROCESSED, log, measure, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
 from .west_asia_common import (age_groups, bind_by_gazetteer, check, count, gazetteer,
                                hdx_resource, median_age, parents_by_id, report,
                                sex_ratio, units, uscb_table, workbook)
@@ -80,19 +93,28 @@ LICENCE = "CC BY, published via HDX"
 DECISION = "19 September 2026"
 
 # The nationality table's groups, by the Bureau's field name -> the label
-# the map files them under.
+# the map files them under. The citizens' row names no people (see the
+# docstring); "American" and "Australian" are continents' groups in the
+# table (the data dictionary's "American, Total." beside "European, Total."
+# and "Asian, Total."), not the United States and Australia.
 NATIONALITY = {
-    "ETH_SYR_B": "Syrian",
+    "ETH_SYR_B": "Syrian citizens",
     "ETH_PAL_B": "Palestinian",
     "ETH_ARAB_B": "Other Arab nationalities",
     "ETH_EURO_B": "European nationalities",
     "ETH_AFNA_B": "African nationalities (non-Arab)",
     "ETH_ASIA_B": "Asian nationalities",
-    "ETH_AUS_B": "Australian",
-    "ETH_USA_B": "American",
+    "ETH_AUS_B": "Oceanian nationalities",
+    "ETH_USA_B": "Nationalities of the Americas",
     "ETH_OTHR_B": "Other nationalities",
 }
 NAT_TOTAL = "ETH_TPOP_B"
+LANGUAGE_WHY = (
+    "Syria's 2004 census published no language table: the Central Bureau of Statistics' "
+    "results bulletin (Man and Nah, 2006) is reproduced in the US Census Bureau's workbook "
+    "as age by sex (Table 2) and nationality (Table 3), and the workbook's data dictionary "
+    "cites no other census table; UNdata's census tables reported to the UN Statistics "
+    "Division hold no language table for Syria either.")
 
 # The governorate the census could only partly enumerate (see the docstring),
 # by OCHA P-code, and its districts.
@@ -100,7 +122,8 @@ GOLAN = {"SY14", "SY1400", "SY1402"}
 GOLAN_NOTE = (" The census enumerated the part of Quneitra governorate under Syrian "
               "administration; the Golan Heights, which the boundary file draws inside "
               "this unit, have been administered by Israel since 1967 and their people "
-              "were not counted by it.")
+              "were not counted by it (Israel's Central Bureau of Statistics counts 56,900 "
+              "people in its Golan sub-district at the end of 2023).")
 
 
 def ages(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -195,8 +218,11 @@ def nationality_note(code: str, nat: dict[str, Any], age_total: float) -> str:
     note = (f"Nationality, not ethnicity: the 2004 census asked each person's "
             f"nationality and no ethnic question. Carried on this field under the "
             f"owner's decision of {DECISION}, as Japan's and Korea's nationality counts are. "
-            f"'Syrian' is every Syrian citizen, of whatever people; 'Palestinian' is "
-            f"Palestinian refugees and their descendants, who are not Syrian citizens. "
+            f"'Syrian citizens' is every Syrian citizen, of whatever people -- Arab, Kurd, "
+            f"Armenian, Assyrian or Turkmen; 'Palestinian' is Palestinian refugees and their "
+            f"descendants, who are not Syrian citizens. 'Nationalities of the Americas' and "
+            f"'Oceanian nationalities' are the census's 'American' and 'Australian' groups, "
+            f"which stand beside its European, Asian and African ones. "
             f"Shares of the {nat['total']:,.0f} people the nationality table counts")
     if round(nat["total"]) != round(age_total):
         note += (f" (the census's age table counts {age_total:,.0f} here; the "
@@ -273,6 +299,7 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                                  total=n["total"]),
                 ethnicity_year=YEAR, ethnicity_basis="nationality",
                 ethnicity_note=nationality_note(code, n, a["total"]),
+                language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
                 sources=sources + ([{"field": "population", "name": ESTIMATE, "url": URL,
                                      "year": EST_YEAR, "license": LICENCE}]
                                    if level == "admin1" else [])))
