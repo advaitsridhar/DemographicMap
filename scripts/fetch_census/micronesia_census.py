@@ -36,9 +36,10 @@ municipalities: ten of Yap's 20, ten of Chuuk's 40, seven of Pohnpei's 11 and
 Kosrae's four. The census spells one of them Piherarh, the boundary file
 Piherech: the islet of Namonuito Atoll the other spellings call Pisaras.
 
-**Checks**, each refusing the run: every table's municipalities are the ones
-listed here and no others; they add up to their state (within the few people
-the 2023 tables' own rows disagree by), and the states to the country; every
+**Checks**, each refusing the run: the municipalities listed here are all in
+every table and add up to their state (within the few people the 2023
+tables' own rows disagree by), so none goes unread; the states add up to the
+country; every
 unit's men and women add up to its total; a published median lies within two
 years of the one its five-year groups give; ethnicity's single groups and its
 mixed answers add up to the unit's people, and religion's and language's
@@ -116,8 +117,6 @@ MUNICIPALITIES = {
                 "Pingelap", "Sapwuahfik", "Nukuoro", "Kapingamarangi"),
     "Kosrae": ("Lelu", "Malem", "Utwe", "Tafunsak"),
 }
-REGIONS = ("yapproper", "yapouter", "pohnpeiproper", "pohnpeiouter", "chuuklagoon",
-           "chuukouter", "northernnamon", "southernnamon", "faichuk", "mortlock", "northwest")
 # The census's spelling -> the boundary file's.
 ALIASES = {"Piherarh": "Piherech"}
 # The 2023 tables' rows disagree by a person or two (Sokehs's and Pingelap's
@@ -178,16 +177,6 @@ def value(cell: Any) -> float | None:
     return number(cell)
 
 
-# The words a block's label column is headed with, where a workbook sets its
-# municipalities in blocks side by side.
-LABEL_HEADS = ("age", "single", "ethnic", "religion", "literacy", "marital", "school",
-               "language", "birth", "place", "relationship", "citizenship", "residence")
-
-
-def is_region(name: str) -> bool:
-    return any(fold(name).startswith(r) for r in REGIONS)
-
-
 def flat_rows(rows: list[list[Any]], units: tuple[str, ...]) -> list[tuple[int, str, dict]]:
     """Every labelled row as (row number, label, {unit: value}).
 
@@ -195,9 +184,10 @@ def flat_rows(rows: list[list[Any]], units: tuple[str, ...]) -> list[tuple[int, 
     holds which unit until the next header; the label is the row's first
     cell. A workbook that sets its municipalities in two blocks side by side
     (Yap's and Chuuk's) repeats the label in each block, so the first cell
-    labels both. A header cell naming none of the units is checked: a region's
-    subtotal or "Total" is read past, anything else stops the run, because a
-    municipality the list does not know would otherwise go unread.
+    labels both. Columns the header does not name -- "Total", a region's
+    subtotal -- are read past; a municipality missing from the list would be
+    too, which is why every state's listed municipalities must add up to the
+    state (``add_up``).
     """
     known = {fold(u): u for u in units}
     out: list[tuple[int, str, dict]] = []
@@ -207,14 +197,6 @@ def flat_rows(rows: list[list[Any]], units: tuple[str, ...]) -> list[tuple[int, 
         heads = {i: known[fold(c)] for i, c in enumerate(cells)
                  if isinstance(c, str) and fold(c) in known}
         if len(heads) >= 2:
-            first = min(heads)
-            for i, c in enumerate(cells):
-                if i <= first or i in heads or not isinstance(c, str) or not c.strip():
-                    continue
-                text = fold(c)
-                check(text == "total" or is_region(c) or text.startswith(LABEL_HEADS),
-                      f"micronesia_census: row {n} heads a column {c!r} that is neither a "
-                      f"known unit nor a subtotal")
             columns = heads
             continue
         label = cells[0] if cells else None

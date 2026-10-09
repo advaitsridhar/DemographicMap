@@ -72,11 +72,14 @@ class Layouts(unittest.TestCase):
         self.assertEqual(got["Ulithi"]["median_both"], 21.1)
         self.assertEqual(got["Rull"]["median_male"], 28.3)
 
-    def test_a_column_nobody_listed_stops_the_run(self):
-        rows = [["Table B01."], ["Age Group", "Total", "Gagil", "Rull", "Mogmog"],
-                ["Total", 10, 4, 5, 1]]
+    def test_a_municipality_nobody_listed_breaks_the_state_sum(self):
+        got = {name: {"total": 10} for name in fm.MUNICIPALITIES["Kosrae"]}
+        fm.add_up("Kosrae", got, 40, 2023)
         with self.assertRaises(SystemExit):
-            fm.flat_rows(rows, ("Gagil", "Rull"))
+            fm.add_up("Kosrae", got, 52, 2023)
+        del got["Utwe"]
+        with self.assertRaises(SystemExit):
+            fm.add_up("Kosrae", got, 30, 2023)
 
     def test_regions_and_totals_are_read_past(self):
         rows = [["Table B01."], ["Age Group", "Total", "Chuuk Lagoon", "Northern Namoneas",
