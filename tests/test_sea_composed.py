@@ -240,7 +240,7 @@ CLEAR_ROWS = [
      "language": [{"group": "Tagalog", "pct": 90.0}, {"group": "Cebuano", "pct": 10.0}],
      "language_year": 2010, "language_note": "Tabulated by CLEAR Global.",
      "sources": [{"field": "language", "name": "CLEAR Global"}]}
-    for rid, (name, _) in s.CLEAR_PHL.items()]
+    for rid, (name, _) in [*s.CLEAR_PHL.items(), ("PHL-CG-PH02031", ("Isabela", ""))]]
 CLEAR_SHAPES = PHL2 + [{"id": "IS", "name": "Isabela"}, {"id": "CI", "name": "City of Isabela"},
                        {"id": "C1", "name": "Cotabato City"}]
 
@@ -249,8 +249,10 @@ class ClearLanguageTest(unittest.TestCase):
     def test_rows_bound_by_their_codes_and_cities_without_one_say_so(self):
         got = s.clear_language(CLEAR_SHAPES, CLEAR_ROWS)
         self.assertEqual(set(got), {"N1", "N2", "N3", "N4", "IS", "CI", "C1"})
-        self.assertEqual(got["IS"]["language"][0]["group"], "Tagalog")
-        self.assertIn("PH02031", got["IS"]["language_note"])
+        # Isabela's row is there and is not used: the polygon says why.
+        self.assertEqual(got["IS"]["language"]["status"], "not_available")
+        self.assertIn("PSGC 02031", got["IS"]["language"]["note"])
+        self.assertIn("16.1%", got["IS"]["language"]["note"])
         self.assertEqual(got["CI"]["language"]["status"], "not_available")
         self.assertIn("no row for City of Isabela", got["CI"]["language"]["note"])
 
@@ -265,8 +267,13 @@ class ClearLanguageTest(unittest.TestCase):
         self.assertIn("language", {c["field"] for c in recs["N2"]["sources"]})
         self.assertEqual(recs["N1"]["match_by"], "shape_id")
 
+    def test_a_refused_row_the_table_no_longer_has_refuses(self):
+        rows = [r for r in CLEAR_ROWS if not r["id"].endswith("PH02031")]
+        with self.assertRaises(SystemExit):
+            s.clear_language(CLEAR_SHAPES, rows)
+
     def test_a_row_under_another_name_refuses(self):
-        rows = [dict(r, name="Isabela City") if r["id"].endswith("PH02031") else r
+        rows = [dict(r, name="Metro Manila") if r["id"].endswith("PH13074") else r
                 for r in CLEAR_ROWS]
         with self.assertRaises(SystemExit):
             s.clear_language(CLEAR_SHAPES, rows)

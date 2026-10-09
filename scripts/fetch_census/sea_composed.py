@@ -38,12 +38,14 @@ and its record says so (``cotabato_city``).
 
 **Household language** in the Philippines comes from CLEAR Global's
 tabulation of the 2010 census (``clear_global.py``), whose second-level rows
-the build joins only by a name unique in the country. Five of them miss
+the build joins only by a name unique in the country. Four of them miss
 polygons the boundary file does draw -- Metro Manila's four districts, which
-it labels "NCR, ... District", and Isabela, a name the City of Isabela also
-answers to -- and are bound here by the PSGC code each row carries
-(``CLEAR_PHL``). The City of Isabela and Cotabato City, which the table has
-no row for, say so.
+it labels "NCR, ... District" -- and are bound here by the PSGC code each row
+carries (``CLEAR_PHL``). A fifth, Isabela's (a name the City of Isabela also
+answers to), is not bound: measured against the province's own 2020 census
+ethnicity it is not Isabela's people (``CLEAR_REFUSED``), and the polygon says
+so. The City of Isabela and Cotabato City, which the table has no row for,
+say so too.
 
 A polygon some of whose parts carry no figures for a question -- the Wa
 division's Mongmao, Pangwaun, Narphan and Pangsang carry none for either --
@@ -459,12 +461,11 @@ def cotabato_city(units: list[dict[str, Any]], fields: tuple[str, ...],
 
 # Household language reaches the Philippines' provinces on this map from CLEAR
 # Global's tabulation of the 2010 census (clear_global.py), whose second-level
-# rows the build joins only by a name unique in the country. Five of its rows
-# are polygons the boundary file draws under other labels, or under a label
-# another polygon answers to: Metro Manila's four districts, which it calls
-# "NCR, ... District", and Isabela, whose name the City of Isabela in Basilan
-# shares. Each is bound here by the PSGC code the table gives as its location
-# code: row id -> (the table's name, the polygon's label).
+# rows the build joins only by a name unique in the country. Four of its rows
+# are polygons the boundary file draws under other labels: Metro Manila's four
+# districts, which it calls "NCR, ... District". Each is bound here by the PSGC
+# code the table gives as its location code: row id -> (the table's name, the
+# polygon's label).
 CLEAR_FILE = "clear_global_language.json"
 CLEAR_PHL = {
     "PHL-CG-PH13039": ("Metropolitan Manila First District",
@@ -472,11 +473,31 @@ CLEAR_PHL = {
     "PHL-CG-PH13074": ("Metropolitan Manila Second District", "NCR, Second District"),
     "PHL-CG-PH13075": ("Metropolitan Manila Third District", "NCR, Third District"),
     "PHL-CG-PH13076": ("Metropolitan Manila Fourth District", "NCR, Fourth District"),
-    "PHL-CG-PH02031": ("Isabela", "Isabela"),
 }
 # And the two cities the boundary file draws on their own, which the table
 # has no row for.
 CLEAR_NONE = ("City of Isabela", COTABATO_CITY)
+# A row the table has and which is not bound, with what was measured against
+# it. Isabela's row (PSGC 02031) is not Isabela's people: set beside the
+# province's own 2020 census ethnicity (uscb's philippines_province), it
+# gives 13.0% Cebuano where 1.0% of the province is Cebuano or Bisaya, 4.0%
+# Hiligaynon where 0.2% is Ilonggo, and 1.2% Cuyonon, 0.6% Palawan and 0.9%
+# Romblomanon -- languages of Palawan and Romblon -- where none of their
+# peoples is counted, while its Ibanag (7.8%) is half the province's (16.1%).
+# Isabela's towns share their names with towns of Palawan (Roxas, Quezon),
+# Romblon (San Agustin), Bohol (Alicia, San Isidro) and Iloilo (Cabatuan),
+# which is what a tabulation that pooled towns by name would produce.
+CLEAR_REFUSED = {
+    "Isabela": ("PHL-CG-PH02031", (
+        "CLEAR Global's tabulation of the 2010 census has a row for Isabela (PSGC 02031), "
+        "and it is not used: beside the province's own 2020 census ethnicity it gives 13.0% "
+        "Cebuano where 1.0% of the province is Cebuano or Bisaya, 4.0% Hiligaynon where "
+        "0.2% is Ilonggo, and 2.7% in languages of Palawan and Romblon (Cuyonon, Palawan, "
+        "Romblomanon) whose peoples the province does not count, while its Ibanag share "
+        "(7.8%) is half the census's (16.1%). The row reads as Isabela pooled with "
+        "same-named towns elsewhere (Roxas and Quezon in Palawan, San Agustin in Romblon), "
+        "not as Isabela's households.")),
+}
 
 
 def clear_language(admin2: list[dict[str, Any]], rows: list[dict[str, Any]]
@@ -503,6 +524,13 @@ def clear_language(admin2: list[dict[str, Any]], rows: list[dict[str, Any]]
             "sources": [s for s in row.get("sources") or [] if s.get("field") == "language"]}
         log(f"    {label}: CLEAR Global's {name} ({code}), "
             + ", ".join(f"{g['group']} {g['pct']}" for g in row["language"][:3]))
+    for label, (rid, why) in CLEAR_REFUSED.items():
+        shapes = by_label.get(label, [])
+        if len(shapes) != 1 or rid not in table:
+            raise SystemExit(f"sea_composed: {len(shapes)} polygons labelled {label!r}, or "
+                             f"{CLEAR_FILE} no longer has {rid}")
+        out[shapes[0]["id"]] = {"name": label, "language": gap(NOT_AVAILABLE, why)}
+        log(f"    {label}: CLEAR Global's {rid} not used -- " + why[:120] + "...")
     names = {fold(r["name"]) for r in table.values()}
     for label in CLEAR_NONE:
         shapes = by_label.get(label, [])
