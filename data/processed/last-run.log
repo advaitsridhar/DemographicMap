@@ -1,11 +1,10 @@
-== https://stats.gov.fm/download/54/pohnpei/2216/pni-basic-tables-2023-population-housing-census.xlsx
-  HTTP 200 application/octet-stream 423,189 bytes
-  -- 'Basic_Tables'
-       1: 'POPULATION TABLES'
-       2: 'Table B1. Age and Sex by Muni
-       3:  |  | 'Madole-' |  |  |  |  |  | 'Mwoak-' |  | 'Sapwu-' |  | 'Kapinga-'
-       4: 'Age group' | 'Total' | 'nihmw' | 'U' | 'Nett' | 'Sokehs' | 'Kitti' | 'Kolonia' | 'illoa' | 'Pingelap' | 'ahfik' | 'Nukuoro' | 'marangi'
-       5: 'BOTH GENDER'
-       6: 'Total' | 26102 | 4129 | 2413 | 4673 | 4903 | 4687 | 4496 | 61 | 167 | 300 | 109 | 166
-       7: '0-4' | 2495 | 378 | 194 | 418 | 496 | 541 | 397 | '*' | '*' | 31 | '*' | '*'
-       8: '5-9' | 2599 | 408 | 248 | 428 | 496 | 503 | 407 | '*' | 24 | 51 | '*' | '*'
+  e-Stat 0004019308: 1965 values
+  e-Stat 0004019309: 86460 values
+  e-Stat 0003445244: 33405 values
+  national median 48.5, prefectures 44.1-56.4
+  ages: 1965 areas; every area's groups add to its total; Japan 61,349,581 men, 64,796,518 women
+  nationality: 1965 areas; every row's parts add up and its total is the age table's
+  the municipalities of every prefecture add up to it
+  grouped medians against the Bureau's over 1916 areas: mean gap 0.07 years, largest 0.70
+  1731 municipal polygons written (1730 bound, 1 sliver), 47 prefectures; people in no drawn polygon, by prefecture: Tokyo 2,351, Niigata 353, Kagawa Prefecture 3,103, Nagasaki Prefecture 2,288, Oita 1,725, Kagoshima Prefecture 5,520, Okinawa Prefecture 590
+  wrote data/processed/japan_municipal.json (7199 kB)
