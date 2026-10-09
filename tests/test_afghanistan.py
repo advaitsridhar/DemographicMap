@@ -304,11 +304,16 @@ class TheAliasesNameShapesThatExist(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         import json
+        from common import as_drawn
         root = Path(__file__).resolve().parent.parent
+        # Under the boundary file's own labels, as the build matches them: a
+        # polygon bound to a census row by id shows the row's name on the site
+        # (Ghazni) and keeps its label as shape_name (Ghanzi).
         cls.a1 = {s["id"]: s["name"]
-                  for s in json.loads((root / "site/data/admin1/AFG.units.json")
-                                      .read_text())}
-        cls.shapes = json.loads((root / "site/data/admin2/AFG.units.json").read_text())
+                  for s in as_drawn(json.loads((root / "site/data/admin1/AFG.units.json")
+                                               .read_text()))}
+        cls.shapes = as_drawn(json.loads((root / "site/data/admin2/AFG.units.json")
+                                         .read_text()))
         cls.provinces = set(cls.a1.values())
         cls.by_province = {}
         for s in cls.shapes:
