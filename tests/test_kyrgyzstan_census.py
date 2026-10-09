@@ -207,6 +207,61 @@ class Tables(unittest.TestCase):
         self.assertEqual(sum(alamudun.values()), 600)
         self.assertEqual(alamudun["Kyrgyz"], 545 + 15)
 
+    def test_balykchys_misprinted_16_19_row_is_what_the_total_leaves(self):
+        groups = [(10, 5, 5)] * 21
+        groups[4] = (4970, 2523, 2447)
+        total = (200 + 3045, 100 + 1545, 100 + 1500)
+        block = {"name": "г.балыкчы", "labels": list(kg.GROUP_LABELS),
+                 "groups": list(groups), "total": total}
+        kg.correct_misprints(block, "Issyk-Kul")
+        self.assertEqual(block["groups"][4], (3045, 1545, 1500))
+        # Another unit's row is left alone; a row no longer as printed stops.
+        other = dict(block, name="г.каракол", groups=list(groups))
+        kg.correct_misprints(other, "Issyk-Kul")
+        self.assertEqual(other["groups"][4], (4970, 2523, 2447))
+        changed = dict(block, groups=list(groups))
+        changed["groups"][4] = (4971, 2524, 2447)
+        with self.assertRaises(SystemExit):
+            kg.correct_misprints(changed, "Issyk-Kul")
+
+    def test_a_misprinted_region_row_is_held_to_its_units(self):
+        # Naryn: the region's "other" column prints 144 where its districts
+        # make 142, and its Kyrgyz row 133 where they make 132.
+        text = "\n".join([
+            "47", "своей", "этнической", "группы", "кыргызский русский другие",
+            " Нарынская область",
+            "   Все население 1 573 1 377 50 4 144",
+            "в том числе:",
+            "кыргызы 1 333 1 153 - 47 134",
+            "  г.Нарын",
+            "   Все население 700 600 40 2 58",
+            "в том числе:",
+            "кыргызы 650 590 - 2 58",
+            "  Нарынский район",
+            "   Все население 873 777 10 2 84",
+            "в том числе:",
+            "кыргызы 683 563 - 45 75"])
+        ethnic = {"нарынская область": {"total": (1573, 0, 0),
+                                        "groups": {"Kyrgyz": 1333}},
+                  "г.нарын": {"total": (700, 0, 0), "groups": {"Kyrgyz": 650}},
+                  "нарынский район": {"total": (873, 0, 0), "groups": {"Kyrgyz": 683}}}
+        # Read as a unit's row, the misprint stops the run.
+        with self.assertRaises(SystemExit):
+            kg.parse_language(text, "Naryn", ethnic)
+        language = kg.parse_language(text, "Naryn", ethnic, "нарынская область")
+        self.assertEqual(language["нарынская область"]["total"], [1573, 1377, 50, 4, 144])
+        kg.hold_region_to_units(language, "нарынская область", ["г.нарын", "нарынский район"],
+                                "Naryn")
+        self.assertEqual(language["нарынская область"]["total"], [1573, 1377, 50, 4, 142])
+        self.assertEqual(language["нарынская область"]["groups"]["Kyrgyz"],
+                         [1333, 1153, 0, 47, 133])
+        self.assertEqual(sum(kg.languages(language["нарынская область"]).values()), 1573)
+        # A total the units do not make stops the run.
+        language["г.нарын"]["total"][0] -= 1
+        with self.assertRaises(SystemExit):
+            kg.hold_region_to_units(language, "нарынская область",
+                                    ["г.нарын", "нарынский район"], "Naryn")
+
     def test_page_kinds(self):
         pages = ["СОДЕРЖАНИЕ 2.8. Численность ... 29",
                  "data 2.7. Численность постоянного городского и сельского населения по полу и "

@@ -539,12 +539,50 @@ def age_label(line: str) -> tuple[str, list[str]]:
     return "", []
 
 
+# Age-group rows a book misprints, as printed (both sexes, men, women). Each
+# is replaced by what the block's total leaves once its other rows are
+# counted, and only while it still reads as printed.
+#
+# Issyk-Kul's Balykchy: table 2.8 prints 16-19 as 4,970 (2,523 men, 2,447
+# women) in a block whose rows then make 53,412 against its 51,487. The
+# residual puts 16-19 at 3,045 (1,545 and 1,500), and the same book's table
+# 3.3 (ethnic groups by age, page 56) shows that is the misprinted row: its
+# Balykchy column runs 1.011-1.023 times table 2.8's in every other group
+# (0-4 5,872 against 5,770, 20-24 3,115 against 3,081 ...) and prints 16-19
+# as 3,090, 1.015 times 3,045 and 0.62 times 4,970. The block's own "0-14"
+# and "18 and over" rows then give 16-17 as 1,827 and 18-19 as 1,218, where
+# 4,970 would need 3,143 people aged 18-19 beside 962 aged 15.
+MISPRINTED_GROUPS: dict[tuple[str, str], tuple[int, int, int]] = {
+    ("г.балыкчы", "16-19"): (4970, 2523, 2447),
+}
+
+
+def correct_misprints(block: dict[str, Any], where: str) -> None:
+    for (unit, label), printed in MISPRINTED_GROUPS.items():
+        if block["name"] != unit or label not in block["labels"]:
+            continue
+        i = block["labels"].index(label)
+        if tuple(block["groups"][i]) != printed:
+            raise SystemExit(f"kyrgyzstan_census: {where} {unit} {label}: reads "
+                             f"{block['groups'][i]}, not the misprint {printed} it was "
+                             f"corrected for")
+        rest = [sum(g[k] for j, g in enumerate(block["groups"]) if j != i) for k in range(3)]
+        fixed = tuple(t - r for t, r in zip(block["total"], rest))
+        if min(fixed) < 0 or fixed[0] != fixed[1] + fixed[2]:
+            raise SystemExit(f"kyrgyzstan_census: {where} {unit} {label}: the residual "
+                             f"{fixed} cannot replace the misprint")
+        block["groups"][i] = fixed
+        log(f"  {where} {unit}: {label} printed as {printed}, read as {fixed} -- what the "
+            f"block's total leaves (see MISPRINTED_GROUPS)")
+
+
 def finish_groups(block: dict[str, Any], out: dict[str, dict[str, Any]], where: str) -> None:
     if "15-19" in block["labels"]:
         settle_fifteen(block, where)
     if block["labels"] != GROUP_LABELS:
         raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: age groups "
                          f"{block['labels']}")
+    correct_misprints(block, where)
     made = tuple(sum(g[i] for g in block["groups"]) for i in range(3))
     if made != block["total"]:
         raise SystemExit(f"kyrgyzstan_census: {where} {block['name']}: age groups make "
@@ -733,12 +771,20 @@ def language_columns(text: str) -> list[str | None]:
     raise SystemExit("kyrgyzstan_census: table 3.4 has no heading naming its languages")
 
 
-def parse_language(text: str, where: str,
-                   ethnic: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+def parse_language(text: str, where: str, ethnic: dict[str, dict[str, Any]],
+                   region: str | None = None) -> dict[str, dict[str, Any]]:
     """{territory: {'total': [...], 'groups': {label: [...]}, 'columns': [...]}}.
 
     Each row is the total, then one figure per column, and must add up; a
     total that table 3.2 also gives must be the same.
+
+    The ``region``'s own rows are the one exception. Nothing is taken from
+    them -- a region's languages are its units' summed -- and Naryn's book
+    prints two of them with a column that its districts' rows do not make
+    (the region's "other languages" 144 where its six districts make 142).
+    A region row that does not add up is read with table 3.2's total, when
+    exactly one such reading comes within a thousandth of it, and marked;
+    read_book then holds every region row to its units' sum and keeps that.
     """
     columns = language_columns(text)
     n = len(columns) + 1
@@ -748,11 +794,18 @@ def parse_language(text: str, where: str,
     current = ""
     before = ""
 
-    def read(tokens: list[str], what: str, total: int | None) -> list[int]:
+    def read(tokens: list[str], what: str, total: int | None,
+             own_region: bool = False) -> list[int]:
         """The one reading that adds up -- and that has table 3.2's total, where it has one."""
         found = figures(tokens, n, lambda v: v[0] == sum(v[1:]))
         if total is not None and len(found) > 1:
             found = [v for v in found if v[0] == total] or found
+        if not found and own_region and total is not None:
+            found = figures(tokens, n, lambda v: v[0] == total
+                            and abs(sum(v[1:]) - total) <= max(5, total // 1000))
+            if len(found) == 1:
+                log(f"  {where} {what}: table 3.4's columns make {sum(found[0][1:]):,} "
+                    f"against the row's {total:,}; the region's rows are held to its units")
         if len(found) != 1:
             raise SystemExit(f"kyrgyzstan_census: {where} {what}: {len(found)} readings of "
                              f"{' '.join(tokens)!r} in table 3.4")
@@ -782,7 +835,7 @@ def parse_language(text: str, where: str,
                 block = None
                 continue
             known = ethnic.get(pending, {}).get("total", (None,))[0]
-            block = {"total": read(tokens, pending, known), "groups": {},
+            block = {"total": read(tokens, pending, known, pending == region), "groups": {},
                      "columns": columns}
             if known is not None and block["total"][0] != known:
                 raise SystemExit(f"kyrgyzstan_census: {where} {pending}: table 3.4 counts "
@@ -801,8 +854,41 @@ def parse_language(text: str, where: str,
                              f"table 3.4")
         known = None if group == "Other" else ethnic.get(current, {}).get(
             "groups", {}).get(group)
-        block["groups"][group] = read(tokens, f"{current} {label}", known)
+        block["groups"][group] = read(tokens, f"{current} {label}", known, current == region)
     return out
+
+
+def hold_region_to_units(language: dict[str, dict[str, Any]], region: str,
+                         units: list[str], where: str) -> None:
+    """A region's table 3.4 rows against its units' rows, column by column.
+
+    The units' sum is kept (nothing is taken from the region's own rows), and
+    every difference is logged; a total its units do not make stops the run.
+    """
+    block = language[region]
+    parts = [language[u] for u in units]
+    width = len(block["total"])
+    made = [sum(p["total"][i] for p in parts) for i in range(width)]
+    if made[0] != block["total"][0]:
+        raise SystemExit(f"kyrgyzstan_census: {where}: the units' table 3.4 totals make "
+                         f"{made[0]:,} against the region's {block['total'][0]:,}")
+    if made != list(block["total"]):
+        log(f"  {where} {region}: table 3.4 prints {list(block['total'])}, its units make "
+            f"{made}; the units' sum is kept")
+        block["total"] = made
+    for group, row in list(block["groups"].items()):
+        summed = [sum((p["groups"].get(group) or [0] * width)[i] for p in parts)
+                  for i in range(width)]
+        if summed[0] != row[0]:
+            # The groups a book lists apart can differ between a region and its
+            # units; nothing is taken from the region's rows, so this is told.
+            log(f"  {where} {region} {group}: the units make {summed[0]:,} against the "
+                f"region's {row[0]:,} in table 3.4 (the region's row is not used)")
+            continue
+        if summed != list(row):
+            log(f"  {where} {region} {group}: table 3.4 prints {list(row)}, its units make "
+                f"{summed}; the units' sum is kept")
+            block["groups"][group] = summed
 
 
 def languages(block: dict[str, Any]) -> Counter:
@@ -846,7 +932,7 @@ def read_book(name: str, pages: list[str]) -> dict[str, Any]:
     _, region, _ = BOOKS[name]
     ethnic = parse_ethnic(text["ethnic"], name)
     groups = parse_groups(text["groups"], name)
-    language = parse_language(text["language"], name, ethnic)
+    language = parse_language(text["language"], name, ethnic, region)
     years = parse_years(text["years"], name)
     units = [t for t in ethnic if t in PLACE]
     if region not in ethnic:
@@ -868,6 +954,8 @@ def read_book(name: str, pages: list[str]) -> dict[str, Any]:
                              f"{groups[unit]['total']}, table 3.2 {ethnic[unit]['total']}")
         if unit not in language:
             raise SystemExit(f"kyrgyzstan_census: {name}: no table 3.4 block for {unit}")
+    if region not in PLACE:
+        hold_region_to_units(language, region, units, name)
     if years and years["total"] != ethnic[region]["total"]:
         raise SystemExit(f"kyrgyzstan_census: {name}: single years make {years['total']}, "
                          f"table 3.2 {ethnic[region]['total']}")
