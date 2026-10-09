@@ -29,6 +29,12 @@ published) and the group is simply absent. A province whose three shares add
 to more than 100.5% refuses the run: that would mean the columns were read in
 the wrong order.
 
+**One row is the report's, not the article's.** The article has Sukhothai's
+"Thai nationality" and "Buddhism" rows the wrong way round: the report's page
+1, read off the page (``thailand_nationality``; ``sea_probe strips``, 0e94189),
+prints 99.8 and 99.6, the article 99.6 and 99.8. ``CORRECTIONS`` puts the
+report's figure in, and refuses if the article's cell becomes anything else.
+
 **Bueng Kan** was carved out of Nong Khai in 2011, so the 2000 census has no
 row for it and it stays empty; Nong Khai's figure is Nong Khai's alone and is
 not stretched over both.
@@ -78,6 +84,10 @@ ALIASES = {
     "Samutprakan": ["Samut Prakan Province", "Samut Prakan"],
     "Sisaket": ["Si Sa Ket Province", "Si Sa Ket"],
 }
+
+# province -> (faith, the article's figure, the report's), where the article
+# misread the report (see the module's docstring).
+CORRECTIONS = {"Sukhothai": ("Buddhism", 99.8, 99.6)}
 
 LINK = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]*))?\]\]")
 REF = re.compile(r"<ref[^>]*>.*?</ref>|<ref[^>]*/>", re.S)
@@ -133,6 +143,22 @@ def province(cell: str) -> tuple[str, str | None]:
     return target, cited.group(1) if cited else None
 
 
+def correct(bare: str, shares: dict[str, float | None]) -> str:
+    """The report's figure where the article misread it; the note's sentence, or ''."""
+    if bare not in CORRECTIONS:
+        return ""
+    faith, article, report = CORRECTIONS[bare]
+    if shares.get(faith) == report:
+        return ""                                   # the article has been put right
+    if shares.get(faith) != article:
+        raise SystemExit(f"thailand: {bare}'s {faith} in the article is now "
+                         f"{shares.get(faith)}, neither the {article} corrected here nor the "
+                         f"report's {report}")
+    shares[faith] = report
+    return (f" {faith} is the report's {report}%, not the article's {article}%: the article "
+            f"has the report's 'Thai nationality' and '{faith}' rows the wrong way round.")
+
+
 def build(wikitext: str) -> list[dict[str, Any]]:
     rows = table(wikitext)
     header = [plain(c) for c in rows[0]]
@@ -145,6 +171,7 @@ def build(wikitext: str) -> list[dict[str, Any]]:
             raise SystemExit(f"thailand: row has {len(cells)} cells: {cells[0][:60]!r}")
         bare, report = province(cells[0])
         shares = {faith: percent(cells[i]) for faith, i in COLUMNS.items()}
+        corrected = correct(bare, shares)
         known = {faith: pct for faith, pct in shares.items() if pct is not None}
         if not known:
             log(f"  {bare}: no 2000 religion in the table")
@@ -172,7 +199,7 @@ def build(wikitext: str) -> list[dict[str, Any]]:
             religion_note=(f"{SOURCE}, {COMPILED_BY}. Shares as printed in the "
                            f"provincial report; '{REMAINDER}' is what the three named "
                            f"faiths leave of 100%. A faith the report did not give "
-                           f"is absent, not zero."),
+                           f"is absent, not zero." + corrected),
             sources=[source],
         ))
     return records
