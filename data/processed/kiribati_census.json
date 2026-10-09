@@ -19,7 +19,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 96.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -29,10 +32,73 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 96.1,
+        "count": 103883
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 3.5,
+        "count": 3778
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.2,
+        "count": 233
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Asian",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "European",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "New Zealander",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.0,
+        "count": 35
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -42,9 +108,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -52,7 +125,10 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "97431129B55805139245338",
-    "population_note": "The census counts of its islands added up: Banaba, Butaritari, Marakei, Abaiang, Tarawa Ieta, Tarawa Teinainano, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, Tabiteuea North, Tabiteuea South, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin."
+    "population_note": "The census counts of its islands added up: Banaba, Butaritari, Marakei, Abaiang, Tarawa Ieta, Tarawa Teinainano, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, Tabiteuea North, Tabiteuea South, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin.",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 52,993 males, 55,152 females). The islands added up: Banaba, Butaritari, Marakei, Abaiang, North Tarawa, South Tarawa, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, North Tabiteuea, South Tabiteuea, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'. The islands added up: Banaba, Butaritari, Marakei, Abaiang, North Tarawa, South Tarawa, Betio, Maiana, Abemama, Kuria, Aranuka, Nonouti, North Tabiteuea, South Tabiteuea, Beru, Nikunau, Onotoa, Tamana, Arorae, Makin."
   },
   {
     "id": "KIR-CENSUS-lineislands",
@@ -74,7 +150,10 @@
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 109.9,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -84,10 +163,73 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 92.4,
+        "count": 10392
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 6.3,
+        "count": 713
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.5,
+        "count": 59
+      },
+      {
+        "group": "Asian",
+        "pct": 0.3,
+        "count": 37
+      },
+      {
+        "group": "American",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.1,
+        "count": 12
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "New Zealander",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -97,9 +239,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -107,7 +256,10 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "97431129B35506555718846",
-    "population_note": "The census counts of its islands added up: Teraina, Tabuaeran, Kiritimati."
+    "population_note": "The census counts of its islands added up: Teraina, Tabuaeran, Kiritimati.",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 5,891 males, 5,361 females). The islands added up: Teeraina, Tabuaeran, Kiritimati.",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'. The islands added up: Teeraina, Tabuaeran, Kiritimati."
   },
   {
     "id": "KIR-CENSUS-phoenixislands",
@@ -126,10 +278,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -139,10 +297,13 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 100.0,
+        "count": 41
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -152,9 +313,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -162,7 +330,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "97431129B36644055464690",
-    "population_note": "Kanton, the group's one inhabited island."
+    "population_note": "Kanton, the group's one inhabited island.",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 20 males, 21 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Phoenix Islands as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-banaba",
@@ -181,10 +353,14 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The General Report prints Banaba's median age as 13.8 (Table A-10a), and the same table counts 150 of its 333 people under 15 -- fewer than half -- which puts the median at or over 15; the printed figure is not used."
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 122.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -194,10 +370,23 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 95.2,
+        "count": 317
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 4.5,
+        "count": 15
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.3,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -207,9 +396,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -217,7 +413,10 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B87111691848014",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 183 males, 150 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'."
   },
   {
     "id": "KIR-CENSUS-butaritari",
@@ -236,10 +435,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -249,10 +454,33 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 98.1,
+        "count": 3187
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 1.8,
+        "count": 57
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -262,9 +490,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -272,7 +507,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B6165010807042",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,626 males, 1,624 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Butaritari as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-marakei",
@@ -291,10 +530,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 97.3,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -304,10 +549,18 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.8,
+        "count": 2733
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.2,
+        "count": 5
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -317,9 +570,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -327,7 +587,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B21694904403100",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,350 males, 1,388 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Marakei as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-abaiang",
@@ -346,10 +610,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.6,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 104.5,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -359,10 +629,48 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 97.7,
+        "count": 5680
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 2.1,
+        "count": 124
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "European",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -372,9 +680,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -382,7 +697,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B42331431520024",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 2,972 males, 2,843 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Abaiang as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-tarawaieta",
@@ -401,10 +720,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 96.3,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -414,10 +739,53 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 98.7,
+        "count": 6926
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 1.0,
+        "count": 72
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.1,
+        "count": 8
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "European",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -427,9 +795,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -437,7 +812,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B16368966755916",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 3,443 males, 3,575 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Tarawa Ieta as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-tarawateinainano",
@@ -456,10 +835,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 21.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 91.3,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -469,10 +854,73 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 94.7,
+        "count": 42296
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 4.6,
+        "count": 2035
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.3,
+        "count": 152
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 50
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.1,
+        "count": 26
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.1,
+        "count": 35
+      },
+      {
+        "group": "American",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Asian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "European",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "New Zealander",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.0,
+        "count": 16
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -482,9 +930,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -492,7 +947,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B40735312671902",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 21,302 males, 23,341 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Tarawa Teinainano as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-betio",
@@ -511,10 +970,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -524,10 +989,68 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 94.1,
+        "count": 17346
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 5.4,
+        "count": 994
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.3,
+        "count": 47
+      },
+      {
+        "group": "Asian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "European",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "New Zealander",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -537,9 +1060,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -547,7 +1077,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B78495147867108",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 8,979 males, 9,450 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Betio as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-maiana",
@@ -566,10 +1100,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -579,10 +1119,28 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.0,
+        "count": 2321
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.9,
+        "count": 22
+      },
+      {
+        "group": "Asian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -592,9 +1150,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -602,7 +1167,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B78617285071843",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,193 males, 1,152 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Maiana as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-abemama",
@@ -621,10 +1190,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 22.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.4,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -634,10 +1209,43 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.6,
+        "count": 3243
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -647,9 +1255,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -657,7 +1272,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B16013882827848",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,614 males, 1,641 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Abemama as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-kuria",
@@ -676,10 +1295,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.1,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 103.4,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -689,10 +1314,28 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 93.2,
+        "count": 1109
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 6.6,
+        "count": 79
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -702,9 +1345,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -712,7 +1362,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B42959533583830",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 605 males, 585 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Kuria as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-aranuka",
@@ -731,10 +1385,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 104.5,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -744,10 +1404,33 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 98.9,
+        "count": 1208
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.7,
+        "count": 8
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -757,9 +1440,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -767,7 +1457,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B26151812099760",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 624 males, 597 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Aranuka as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-nonouti",
@@ -786,10 +1480,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -799,10 +1499,33 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 97.3,
+        "count": 2674
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 2.4,
+        "count": 65
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -812,9 +1535,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -822,7 +1552,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B22079414883536",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,415 males, 1,334 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Nonouti as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-tabiteueanorth",
@@ -841,10 +1575,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.6,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 99.1,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -854,10 +1594,43 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 96.1,
+        "count": 4016
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 3.7,
+        "count": 153
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.2,
+        "count": 7
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -867,9 +1640,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -877,7 +1657,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B33947365829415",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 2,081 males, 2,100 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Tabiteuea North as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-tabiteueasouth",
@@ -896,10 +1680,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 98.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -909,10 +1699,23 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.4,
+        "count": 1348
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.5,
+        "count": 7
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -922,9 +1725,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -932,7 +1742,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B54053699932419",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 674 males, 682 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Tabiteuea South as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-beru",
@@ -951,10 +1765,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 24.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 101.8,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -964,10 +1784,18 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.6,
+        "count": 2205
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.4,
+        "count": 9
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -977,9 +1805,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -987,7 +1822,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B12909082170422",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,117 males, 1,097 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Beru as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-nikunau",
@@ -1006,10 +1845,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.7,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 112.7,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -1019,10 +1864,28 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 94.5,
+        "count": 1943
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 5.3,
+        "count": 109
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -1032,9 +1895,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -1042,7 +1912,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B56585078959297",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,089 males, 966 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Nikunau as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-onotoa",
@@ -1061,10 +1935,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 23.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.9,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -1074,10 +1954,23 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.7,
+        "count": 1413
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.2,
+        "count": 3
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -1087,9 +1980,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -1097,7 +1997,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B56222397665525",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 732 males, 685 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Onotoa as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-tamana",
@@ -1116,10 +2020,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 26.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 100.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -1129,10 +2039,23 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.2,
+        "count": 1020
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.7,
+        "count": 7
+      },
+      {
+        "group": "Australian",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -1142,9 +2065,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -1152,7 +2082,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B45307539397185",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 514 males, 514 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Tamana as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-arorae",
@@ -1171,10 +2105,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 25.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -1184,10 +2124,18 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.7,
+        "count": 991
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.3,
+        "count": 3
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -1197,9 +2145,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -1207,7 +2162,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B36396887967874",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 512 males, 482 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Arorae as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-teraina",
@@ -1226,10 +2185,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 110.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -1239,10 +2204,28 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 99.0,
+        "count": 1875
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 0.7,
+        "count": 13
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.2,
+        "count": 3
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -1252,9 +2235,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -1262,7 +2252,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B26248094198225",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 994 males, 899 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Teraina as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-tabuaeran",
@@ -1281,10 +2275,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 114.0,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -1294,10 +2294,33 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 97.7,
+        "count": 1945
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 1.9,
+        "count": 38
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -1307,9 +2330,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -1317,7 +2347,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B24149842741451",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 1,060 males, 930 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Tabuaeran as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-kiritimati",
@@ -1336,10 +2370,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108.6,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -1349,10 +2389,73 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 89.2,
+        "count": 6572
+      },
+      {
+        "group": "I-Kiribati/mixed",
+        "pct": 9.0,
+        "count": 662
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.7,
+        "count": 52
+      },
+      {
+        "group": "Asian",
+        "pct": 0.5,
+        "count": 37
+      },
+      {
+        "group": "Other Pacific Islander",
+        "pct": 0.2,
+        "count": 12
+      },
+      {
+        "group": "American",
+        "pct": 0.1,
+        "count": 7
+      },
+      {
+        "group": "European",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Solomon Islander",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Australian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "New Zealander",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Other ethnicity",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -1362,9 +2465,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -1372,7 +2482,11 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B33309898613409",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 3,837 males, 3,532 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Kiritimati as the 2020 census's General Report prints it (Table A-10a)."
   },
   {
     "id": "KIR-CENSUS-kanton",
@@ -1391,10 +2505,16 @@
       "source": "Kiribati National Statistics Office, 2020 Population and Housing Census, Island Profile tables"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table A-10a)"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 95.2,
+      "unit": "males_per_100_females",
+      "year": 2020,
+      "source": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report (Table G-2)"
     },
     "religion": {
       "status": "not_available",
@@ -1404,10 +2524,13 @@
       "status": "not_available",
       "note": "Neither the 2020 census's General Report nor its Census Atlas tabulates language; the only language item they report is whether people can read and write, in any language."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2020 census asked ethnicity, and the General Report tabulates it by island (Table A-3b) only as a picture of the table: the PDF carries no text for its figures, and no other release prints them."
-    },
+    "ethnicity": [
+      {
+        "group": "I-Kiribati",
+        "pct": 100.0,
+        "count": 41
+      }
+    ],
     "sources": [
       {
         "field": "population",
@@ -1417,9 +2540,16 @@
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       },
       {
-        "field": "religion/ethnicity/language (why empty)",
-        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "field": "median_age/sex_ratio/ethnicity",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report",
         "url": "https://nso.gov.ki/download/146/2020-census/1965/population-and-housing-census-report-2020.pdf",
+        "year": 2020,
+        "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
+      },
+      {
+        "field": "religion/language (why empty)",
+        "name": "Kiribati National Statistics Office, 2020 Population and Housing Census General Report; Kiribati Census Atlas",
+        "url": "https://nso.gov.ki/download/117/other-reports/2022/kiribati-census-atlas-2022.pdf",
         "year": 2020,
         "license": "None stated -- Kiribati National Statistics Office publication, cited as such"
       }
@@ -1427,6 +2557,10 @@
     "country": "KIR",
     "match_by": "shape_id",
     "shape_id": "32618148B55751535210853",
-    "population_note": "The 2020 census count (Island Profile tables)."
+    "population_note": "The 2020 census count (Island Profile tables).",
+    "sex_ratio_note": "Males per 100 females, 2020 census (General Report, Table G-2: 20 males, 21 females).",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Ethnicity, 2020 census (General Report, Table A-3b, which the report prints as a picture of the table; transcribed). 'I-Kiribati/mixed' is the table's 'Kiribati/Mix' and 'American' its 'USA'.",
+    "median_age_note": "Median age of the people of Kanton as the 2020 census's General Report prints it (Table A-10a)."
   }
 ]
