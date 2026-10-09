@@ -134,21 +134,32 @@ UNDRAWN = {"Shirin city": ("Khavas", "Bekabad")}
 # its only source, and how much any other may have lost for that to hold.
 SOLE_SOURCE = 0.6
 ALSO_SOURCE = 0.05
-# Why no unit carries a composition: what was searched, and where.
-COMPOSITION_NOTE = (
-    "The Statistics Agency publishes no table of {what} for any region or district. SIAT, "
-    "its open-data catalogue (api.siat.stat.uz/sdmx/json/, about 4,700 indicators), was "
-    "searched in October 2026 for nationality, ethnic group, language and religion in "
-    "English and Russian and has none, and the agency's demography page "
+# Why no unit here carries a composition: what was searched, and where. The
+# 2026 census's preliminary results give nationality and native language by
+# region, which uzbekistan_census reads for the regions; for the districts
+# nothing is published, and religion is published for no unit at all.
+CENSUS_2026 = (
+    "the 2026 census's preliminary results (the Statistics Committee's 67-page compendium, "
+    "aholi.stat.uz, 2026) give {census}; the final results are due by 1 July 2027")
+SIAT_SEARCH = (
+    "SIAT, the agency's open-data catalogue (api.siat.stat.uz/sdmx/json/, about 4,700 "
+    "indicators), was searched in October 2026 for nationality, ethnic group, language and "
+    "religion in English and Russian and has none, and the agency's demography page "
     "(stat.uz/ru/ofitsialnaya-statistika/demography) links none; the government open-data "
     "portal data.egov.uz refused the connection.")
+COMPOSITION_NOTE = (
+    "No table of {what} is published for any district of Uzbekistan: " + CENSUS_2026
+    + ". " + SIAT_SEARCH)
 
 
 def composition_gaps() -> dict[str, Any]:
-    return {"religion": gap(NOT_AVAILABLE, COMPOSITION_NOTE.format(what="religion")),
-            "language": gap(NOT_AVAILABLE, COMPOSITION_NOTE.format(what="language")),
-            "ethnicity": gap(NOT_AVAILABLE,
-                             COMPOSITION_NOTE.format(what="nationality or ethnic group"))}
+    return {"religion": gap(NOT_AVAILABLE, COMPOSITION_NOTE.format(
+                what="religion", census="no table of religion, for the republic or any "
+                                        "region")),
+            "language": gap(NOT_AVAILABLE, COMPOSITION_NOTE.format(
+                what="language", census="native language by region only")),
+            "ethnicity": gap(NOT_AVAILABLE, COMPOSITION_NOTE.format(
+                what="nationality or ethnic group", census="nationality by region only"))}
 
 HOMOGLYPHS = str.maketrans("аеорсухкмтвАЕОРСУХКМТВ", "aeopcyxkmtbAEOPCYXKMTB")
 FOLDS = (("dzh", "j"), ("dj", "j"), ("zh", "j"), ("kh", "h"), ("x", "h"), ("q", "k"),
