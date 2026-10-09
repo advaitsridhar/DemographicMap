@@ -1,45 +1,122 @@
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.stats.gov.cn%2Fsj%2Ftjbz%2Ftjyqhdmhcxhfdm%2F2023%2F22%2F2201.html&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
-  retry 1/2 after 2s :: https://web.archive.org/web/20240619163501id_/https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/index.html :: <urlopen error [Errno 111] Connection refused>
-  retry 2/2 after 4s :: https://web.archive.org/web/20240619163501id_/https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/index.html :: <urlopen error [Errno 111] Connection refused>
-  retry 1/2 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.stats.gov.cn%2Ftjsj%2Ftjbz%2Ftjyqhdmhcxhfdm%2F2020%2F22%2F2201.html&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
-  retry 2/2 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.stats.gov.cn%2Ftjsj%2Ftjbz%2Ftjyqhdmhcxhfdm%2F2020%2F22%2F2201.html&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error [Errno 111] Connection refused>
-== page https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2201.html
-  via https://web.archive.org/web/20240123183049id_/https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/2201.html
-  4,829 bytes, charset utf-8
-  link: '220102000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220102.html
-  link: '南关区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220102.html
-  link: '220103000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220103.html
-  link: '宽城区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220103.html
-  link: '220104000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220104.html
-  link: '朝阳区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220104.html
-  link: '220105000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220105.html
-  link: '二道区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220105.html
-  link: '220106000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220106.html
-  link: '绿园区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220106.html
-  link: '220112000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220112.html
-  link: '双阳区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220112.html
-  link: '220113000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220113.html
-  link: '九台区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220113.html
-  link: '220122000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220122.html
-  link: '农安县' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220122.html
-  link: '220171000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220171.html
-  link: '长春经济技术开发区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220171.html
-  link: '220172000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220172.html
-  link: '长春净月高新技术产业开发区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220172.html
-  link: '220173000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220173.html
-  link: '长春高新技术产业开发区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220173.html
-  link: '220174000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220174.html
-  link: '长春汽车经济技术开发区' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220174.html
-  link: '220182000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220182.html
-  link: '榆树市' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220182.html
-  link: '220183000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220183.html
-  link: '德惠市' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220183.html
-  link: '220184000000' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220184.html
-  link: '公主岭市' -> https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/22/01/220184.html
-  link: '京ICP备05034670号' -> http://www.miibeian.gov.cn/
-  (31 links shown)
-== page https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/index.html
-  via https://web.archive.org/web/20240619163501id_/https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/index.html
-  failed: RuntimeError('GET failed after 2 retries: https://web.archive.org/web/20240619163501id_/https://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2023/index.html')
-== page http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/22/2201.html
-  stopped: no capture of http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2020/22/2201.html
+== https://nso.gov.ki/download/96/previous-to-2010/1142/census-tables-kiribati-2010.xlsx
+  HTTP 200 application/octet-stream 331,557 bytes
+  -- 'Kiribati 2010 Age'
+       1: Table 1. Age and Sex by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:     Total | 103058 | 295 | 1798 | 4346
+  -- 'Age Sex'
+       1: Table 2. Age5 short by Islands and Sex
+       2:  | Total |  |  | Banaba
+       3:  | Total | Male | Female | Total
+       4:       Total | 103058 | 50796 | 52262 | 295
+  -- 'Age1 sex'
+       1: Table 3.  Single Year of Age by Sex and Island, Kiribati: 2010
+       2:  | Total |  |  | Banaba
+       3:  | Total | Male | Female | Total
+       4:    Total | 103057 | 50796 | 52261 | 294
+  -- 'Relationship'
+       1: Table 4. Relationship by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:        Total | 103058 | 295 | 1798 | 4346
+  -- 'Mo Vital'
+       1: Table 5.  Vital Status of Biological Mother by Island and Age, Kiribati: 2010
+       2:  | Total |  |  | Banaba
+       3:  | Total | Male | Female | Total
+       4:     Total    | 103058 | 50796 | 52262 | 295
+  -- 'Fa Vital'
+       1: Table 6.Vital Status of Biological Father by Island and Age, Kiribati: 2010
+       2:  | Total |  |  | Banaba
+       3:  | Total | Male | Female | Total
+       4:      Total | 103058 | 50796 | 52262 | 295
+  -- 'Ethnicity'
+       1: Table 7. Ethnic Origin by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:        Total | 103058 | 295 | 1798 | 4346
+  -- 'Marital'
+       1: Table 8.  Marital Status by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:      Total | 103058 | 295 | 1798 | 4346
+  -- 'SMAM'
+       1: Table 9. Singulate Mean Age at Marriage (SMAM) by Island, Kiribati: 2010
+       2:  | Total |  |  | Never married
+       3:  | Total | Male | Female | Total
+       4:      Total | 57296 | 28039 | 29257 | 17743
+  -- 'Religion'
+       1: Table 10. Religion by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:     Total | 103058 | 295 | 1798 | 4346
+  -- 'Usual Res'
+       1: Table 11 Usual Residence by Current Residence, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:     Total | 103058 | 295 | 1798 | 4346
+  -- 'Home Is'
+       1: Table 12.  Home Island by Current Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:     Total | 103058 | 295 | 1798 | 4346
+  -- 'Birthplace'
+       1: Table 13. Birthplace by Island of Residence, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:    Total | 103058 | 295 | 1798 | 4346
+  -- 'Res in 2009'
+       1: Table 14. Residence in 2009 by Current Residence, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4:      Total | 94312 | 273 | 1607 | 4017
+  -- 'Schooling'
+       1: Table 15 School Attendance by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4: SCHOOL ATTENDANCE
+  -- 'Literacy'
+       1: Table 16. Literacy by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4: READING AND WRITING ENGLISH
+  -- 'Internet'
+       1: Table 17. Playing Sports and Using Internet by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4: PLAYING SPORTS
+  -- 'Habits'
+       1: Table 18. Habits by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4: SMOKING
+  -- 'Educ Attn'
+       1: Table 19. Highest Level of Education and Field of Study by Island, Kiribati: 2010
+       2:  |  |  |  | Buta-
+       3:  | Total | Banaba | Makin | itari
+       4: HIGHEST LEVEL OF EDUCATION
+  -- 'Work last week'
+       1: Table 20 Work Last week by Age and Sex, Kiribati: 2010
+       2:  | Total
+       3:  | Total | 15 - 29 | 30 - 44 | 45 - 59
+       4: DID WORK LAST WEEK
+  -- 'Occupation'
+       1: Table 21.  Main Occupation by Sex and Age, Kiribati: 2010
+       2:  | Total
+       3:  | Total | 15 - 29 | 30 - 44 | 45 - 59
+       4: Total | 28747 | 10044 | 10826 | 6190
+  -- 'Industry'
+       1: Table 22 Industry by Age and Sex, Kiribati: 2010
+       2:  | Total
+       3:  | Total | 15 - 29 | 30 - 44 | 45 - 59
+       4: Total | 28747 | 10044 | 10826 | 6190
+  -- 'Indus age'
+       1: Table 23. Major Indistry by Age and Sex, Kiribati: 2010
+       2:  | Total
+       3:  | Total | 15 - 29 | 30 - 44 | 45 - 59
+       4:      Total | 28747 | 10044 | 10826 | 6190
+  -- 'Looking'
+       1: Table 24.  Looking for Work by Age and Sex, Kiribati: 2010
+       2:  | Total
+       3:  | Total | 15 - 29 | 30 - 44 | 45 - 59
+       4: LOOKING FOR WORK 
