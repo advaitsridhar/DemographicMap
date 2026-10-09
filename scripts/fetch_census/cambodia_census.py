@@ -554,10 +554,12 @@ def district_records(annex, placed, broken, adm2_rows,
                                  f"{districts[parts[0]]['n'][1]:,}")
             label = f"{districts[parts[0]]['name']} district"
         else:
-            label = ("the 2019 communes of " + ", ".join(
-                f"{districts[d]['name']} ({len([1 for dd, _, _ in items if dd == d])} of "
-                f"{len(districts[d]['communes'])} communes)" for d in parts)
-                + " -- the polygon is the district as drawn in 2018")
+            named = [f"{districts[d]['name']} ({len([1 for dd, _, _ in items if dd == d])} "
+                     f"of {len(districts[d]['communes'])} communes)" for d in parts]
+            label = ("the 2019 communes of "
+                     + (named[0] if len(named) == 1
+                        else ", ".join(named[:-1]) + " and " + named[-1])
+                     + ", which lie in the district as it was drawn in 2018")
             changed.append(f"{unit['name']} <- {', '.join(districts[d]['name'] for d in parts)}")
         whose = f"the 2019 census's count of {label}"
         out.append(record(
@@ -570,8 +572,11 @@ def district_records(annex, placed, broken, adm2_rows,
                       median_note="", ratio_note=f"Males per 100 females in {whose} (Tables "
                                                  "P-01 to P-25).",
                       population=t,
-                      population_note=(f"The 2019 census: {whose}, people in normal or "
-                                       f"regular households ({HOUSEHOLD_NOTE})."))))
+                      # Not "The 2019 census: the 2019 census's count of ...",
+                      # which said the census twice.
+                      population_note=(f"{whose[0].upper()}{whose[1:]}, counting people "
+                                       f"in normal or regular households "
+                                       f"({HOUSEHOLD_NOTE})."))))
     log(f"  {len(out)} district polygons written, {len(skipped)} of them with stated gaps "
         f"({', '.join(skipped)}); drawn before a division and summed from their communes "
         f"({len(changed)}): {'; '.join(changed)}")
@@ -598,8 +603,8 @@ def province_records(table: dict[int, tuple[int, int, int]], adm1_rows) -> list[
                       median_note="", ratio_note=f"Males per 100 females in {whose} "
                                                  "(Table 2.1.1).",
                       population=total,
-                      population_note=(f"The 2019 census: {whose}, migrants working abroad "
-                                       "left out (Table 2.1.1)."))))
+                      population_note=(f"{whose[0].upper()}{whose[1:]}, migrants working "
+                                       "abroad left out (Table 2.1.1)."))))
     return out
 
 

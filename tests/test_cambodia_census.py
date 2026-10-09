@@ -149,6 +149,31 @@ class CrosswalkTest(unittest.TestCase):
         self.assertEqual(recs["KH0103"]["population"]["value"], 16)
         self.assertEqual(recs["KH0103"]["sex_ratio"]["value"], 100.0)
         self.assertIn("regular households", recs["KH0103"]["population_note"])
+        # The note names the census once, and a polygon summed from communes
+        # says so in a clause of its own.
+        for rec in recs.values():
+            note = rec.get("population_note", "")
+            if note:
+                self.assertTrue(note.startswith("The 2019 census's count of "), note)
+                self.assertNotIn("The 2019 census:", note)
+                self.assertNotIn(" -- ", note)
+        summed = [r["population_note"] for r in recs.values()
+                  if "communes of" in r.get("population_note", "")]
+        self.assertTrue(summed)
+        for note in summed:
+            self.assertIn(", which lie in the district as it was drawn in 2018, counting "
+                          "people in normal or regular households", note)
+
+    def test_a_province_s_note_names_the_census_once(self):
+        adm1 = [{"ADM1_PCODE": "KH01", "ADM1_EN": "Banteay Meanchey"}]
+
+        def bind(iso3, level, rows, unit_col, parent_col):
+            return ({0: {"id": "P1", "name": "Banteay Meanchey"}}, [], [])
+        with mock.patch.object(kh, "bind_rows", bind):
+            rec = kh.province_records({1: (40, 60, 100)}, adm1)[0]
+        self.assertEqual(rec["population_note"],
+                         "The 2019 census's count of the province's whole population, "
+                         "migrants working abroad left out (Table 2.1.1).")
 
     def low_household_records(self):
         placed, _, broken = kh.crosswalk(annex_2019(), ADM3, ADM2)
