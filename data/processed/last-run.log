@@ -1,68 +1,27 @@
-  retry 1/4 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fwww.stats.gov.cn%2Ftjsj%2Ftjbz%2Ftjyqhdmhcxhfdm%2F2020%2F32%2F05%2F320571.html&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
-  checked against the Bureau's own page: 320571: 8 townships, the same in both
-  130171 石家庄高新技术产业开发区: 4 townships
-  130172 石家庄循环化工园区: 1 townships
-  130271 河北唐山芦台经济开发区: 2 townships
-  130272 唐山市汉沽管理区: 3 townships
-  130273 唐山高新技术产业开发区: 4 townships
-  130274 河北唐山海港经济开发区: 4 townships
-  130371 秦皇岛市经济技术开发区: 5 townships
-  130372 北戴河新区: 4 townships
-  130471 邯郸经济技术开发区: 5 townships
-  130473 邯郸冀南新区: 9 townships
-  130571 河北邢台经济开发区: 5 townships
-  130671 保定高新技术产业开发区: 3 townships
-  130672 保定白沟新城: 1 townships
-  130771 张家口经济开发区: 6 townships
-  130772 张家口市察北管理区: 7 townships
-  130773 张家口市塞北管理区: 4 townships
-  130871 承德高新技术产业开发区: 2 townships
-  130971 河北沧州经济开发区: 1 townships
-  130972 沧州高新技术产业开发区: 1 townships
-  130973 沧州渤海新区: 5 townships
-  131071 廊坊经济技术开发区: 2 townships
-  131171 河北衡水高新技术产业开发区: 4 townships
-  131172 衡水滨湖新区: 3 townships
-  150172 呼和浩特经济技术开发区: 6 townships
-  150271 包头稀土高新技术产业开发区: 3 townships
-  150571 通辽经济技术开发区: 5 townships
-  152571 乌拉盖管委会: 4 townships
-  152971 内蒙古阿拉善经济开发区: 1 townships
-  220171 长春经济技术开发区: 5 townships
-  220172 长春净月高新技术产业开发区: 10 townships
-  220173 长春高新技术产业开发区: 4 townships
-  220174 长春汽车经济技术开发区: 3 townships
-  220271 吉林经济开发区: 2 townships
-  220272 吉林高新技术产业开发区: 2 townships
-  220273 吉林中国新加坡食品区: 1 townships
-  220771 吉林松原经济开发区: 2 townships
-  220871 吉林白城经济开发区: 3 townships
-  320371 徐州经济技术开发区: 6 townships
-  320571 苏州工业园区: 8 townships
-  320671 南通经济技术开发区: 7 townships
-  320771 连云港经济技术开发区: 4 townships
-  320772 连云港高新技术产业开发区: 5 townships
-  320871 淮安经济技术开发区: 12 townships
-  320971 盐城经济技术开发区: 2 townships
-  321071 扬州经济技术开发区: 5 townships
-  321171 镇江新区: 5 townships
-  321271 泰州医药高新技术产业开发区: 8 townships
-  321371 宿迁经济技术开发区: 4 townships
-  370171 济南高新技术产业开发区: 7 townships
-  370271 青岛高新技术产业开发区: 1 townships
-  370571 东营经济技术开发区: 1 townships
-  370572 东营港经济开发区: 1 townships
-  370671 烟台高新技术产业开发区: 1 townships
-  370672 烟台经济技术开发区: 4 townships
-  370772 潍坊滨海经济技术开发区: 2 townships
-  370871 济宁高新技术产业开发区: 5 townships
-  371071 威海火炬高技术产业开发区: 4 townships
-  371072 威海经济技术开发区: 6 townships
-  371073 威海临港经济技术开发区: 4 townships
-  371171 日照经济技术开发区: 2 townships
-  371371 临沂高新技术产业开发区: 2 townships
-  371471 德州经济技术开发区: 5 townships
-  371472 德州运河经济开发区: 1 townships
-  371771 菏泽经济技术开发区: 4 townships
-  371772 菏泽高新技术开发区: 3 townships
-china_zones: 65 zones in 22,32,63,15,37,13 -> china_zone_townships.json
+== https://www.sbs.gov.ws/digi/3-2016-Census-Brief-No.2Tables.xlsx
+  HTTP 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 109,568 bytes
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 444, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 428, in main
+    cmd_xlsx(args.url, args.sheet, args.first, args.last, args.width, args.grep, args.cols,
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/oceania_probe.py", line 276, in cmd_xlsx
+    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 346, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/zipfile.py", line 1355, in __init__
+    self._RealGetContents()
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/zipfile.py", line 1422, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
