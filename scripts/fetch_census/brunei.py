@@ -313,6 +313,15 @@ def age_fields(name: str, unit: dict[str, Any]) -> dict[str, Any]:
                    ratio_note=f"Males per 100 females in {whose} (annex table A2).")
 
 
+# Below this many people a mukim's ratio is given with the counts it rests on:
+# Kuala Balai's 45.5 is 5 men and 11 women, and a camp or a household or two
+# sets a figure that small. Singapore's planning areas withhold theirs below
+# the same mark (singapore_age.MIN_RESIDENTS), because the census rounds every
+# cell there to tens; Brunei's table C1 counts people exactly, so the ratio is
+# the census's own and stays, with its counts beside it.
+SMALL_MUKIM = 1_000
+
+
 def mukim_sex_fields(name: str, parts: tuple[str, ...], sexes: dict[str, tuple[int, int, int]]
                      ) -> dict[str, Any]:
     men = sum(sexes[p][1] for p in parts)
@@ -320,9 +329,14 @@ def mukim_sex_fields(name: str, parts: tuple[str, ...], sexes: dict[str, tuple[i
     source = f"{CENSUS}, annex table C1: population by mukim, residential status and sex"
     whose = (f"the 2021 census's count of {' and '.join(parts)} together" if len(parts) > 1
              else f"the 2021 census's count of {name}")
+    note = f"Males per 100 females in {whose} (annex table C1)."
+    if men + women < SMALL_MUKIM:
+        note += (f" The census counts {men:,} male{'s' if men != 1 else ''} and "
+                 f"{women:,} female{'s' if women != 1 else ''} here, so few that a single "
+                 f"household or workers' camp moves the ratio far; it describes these "
+                 f"{men + women:,} people, not a typical mukim.")
     return age_sex(median=None, men=men, women=women, year=YEAR, source=source,
-                   median_note="", ratio_note=f"Males per 100 females in {whose} "
-                                              f"(annex table C1).")
+                   median_note="", ratio_note=note)
 
 
 def mukim_gap_note(people: int, merged: tuple[str, ...] | None) -> str:

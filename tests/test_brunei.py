@@ -238,6 +238,15 @@ class TheRecords(unittest.TestCase):
             self.assertIn("39,324", mentiri[field]["note"])
         self.assertIsNone(mentiri.get("ethnicity_year"))
 
+    def test_a_small_mukims_ratio_gives_the_counts_it_rests_on(self):
+        small = bn.mukim_sex_fields("Kuala Balai", ("Kuala Balai",),
+                                    {"Kuala Balai": (16, 5, 11)})
+        self.assertEqual(small["sex_ratio"]["value"], 45.5)
+        self.assertIn("5 males and 11 females", small["sex_ratio_note"])
+        self.assertIn("these 16 people", small["sex_ratio_note"])
+        large = bn.mukim_sex_fields("Mentiri", ("Mentiri",), {"Mentiri": (2000, 1050, 950)})
+        self.assertNotIn("females here", large["sex_ratio_note"])
+
     def test_language_is_asked_and_unpublished_everywhere(self):
         for row in self.rows:
             self.assertEqual(row["language"]["status"], common.NOT_AVAILABLE)

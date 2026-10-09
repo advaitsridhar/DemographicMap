@@ -92,6 +92,15 @@ class BuildTest(unittest.TestCase):
         self.assertIn("this regency's languages", recs["M"]["language"]["note"])
         self.assertIn("this province's languages", recs["Bengkulu"]["language"]["note"])
 
+    def test_the_median_and_ratio_say_how_many_people_they_describe(self):
+        # Papua's head count on the map is its regencies' 2024 sum; its median
+        # is the Long Form's, and the note gives the Long Form's own total.
+        recs = self.build(rows())
+        self.assertIn(f"to {16 * 9:,} people here, for 2022", recs["M"]["median_age_note"])
+        self.assertIn(f"to {16 * 9:,} people here, for 2022", recs["M"]["sex_ratio_note"])
+        for field in ("ethnicity", "religion", "language"):
+            self.assertNotIn("this project", recs["M"][field]["note"])
+
     def test_the_forest_says_why_it_has_no_ages(self):
         forest = {"id": "H", "name": "Hutan", "parent": OTHERS[0]}
         recs = self.build(rows(), ADMIN2 + [forest])

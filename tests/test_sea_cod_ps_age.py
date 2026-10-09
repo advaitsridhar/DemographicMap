@@ -127,7 +127,27 @@ class RecordsTest(unittest.TestCase):
         self.assertEqual(r["median_age"]["value"], 42.5)
         self.assertIn("projection", r["median_age_note"])
         self.assertIn("United States Bureau of the Census", r["median_age_note"])
-        self.assertIn("could not be read", r["median_age_note"])
+        self.assertIn("population register", r["median_age_note"])
+        for word in ("could not be read", "runner", "this project"):
+            self.assertNotIn(word, r["median_age_note"])
+        self.assertNotIn("unusual", r["sex_ratio_note"])
+
+    def test_an_unusual_ratio_says_so_with_its_counts(self):
+        cols_ = columns()
+        table = {"label": "x adm2_", "level": "2", "columns": cols_,
+                 "rows": [row("Lampang", "Ko Kha", per_band_f=10, per_band_m=13)],
+                 "method": ""}
+        with mock.patch.object(s, "drawn", fake_drawn), \
+                mock.patch.object(s, "locate", return_value={}):
+            recs = s.level_records("THA", "cod-ps-tha", "CC BY-IGO", "2", 2023, table,
+                                   age_columns(cols_))
+        self.assertEqual(recs[0]["sex_ratio"]["value"], 130.0)
+        self.assertIn("unusual ratio for a whole district", recs[0]["sex_ratio_note"])
+        self.assertIn("221 males against 170 females", recs[0]["sex_ratio_note"])
+
+    def test_laos_says_its_census_gives_no_district_ages(self):
+        self.assertIn("no district's ages", s.why_projection("LAO", "admin2"))
+        self.assertEqual(s.why_projection("XXX", "admin2"), s.WHY_DEFAULT)
 
     def test_cambodia_says_its_census_gives_provinces_only_broad_ages(self):
         cols_ = columns()

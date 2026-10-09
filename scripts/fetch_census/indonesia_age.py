@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Indonesia: population, median age and sex ratio by province and regency, 2020 census Long Form.
 
-Statistics Indonesia (BPS) answers this project's reader 403 on every host it
+Statistics Indonesia (BPS) answers automated requests with 403 on every host it
 owns (docs/SOURCES.md). Its figures reach the map through the US Census
 Bureau's "Subnational Population and Housing Data Tables" for Indonesia on
 HDX (CC BY), whose workbook carries an ``Age-Sex`` sheet from *The Result of
@@ -110,14 +110,14 @@ FOREST_GAP = (
 # figure stands (a gap never displaces a value).
 ETHNICITY_GAP = (
     "Indonesia's 2010 census asked ethnicity (suku bangsa) and BPS published it by province, "
-    "which is what the map's provinces carry; no table of it by regency could be read here: "
-    "BPS answers this project's reader HTTP 403 on every bps.go.id host, and its 2010 census "
+    "which is what the map's provinces carry; no table of it by regency could be retrieved: "
+    "BPS answers automated requests with HTTP 403 on every bps.go.id host, and its 2010 census "
     "site (sp2010.bps.go.id) serves one identical page at every address. The 2020 census's "
     "tables that reach the regencies -- the Long Form's age, household, language, mortality, "
     "disability and migration tables -- have no ethnicity.")
 RELIGION_GAP = (
-    "No table of this regency's religion could be read. BPS answers this project's reader "
-    "HTTP 403 on every bps.go.id host, and neither the regency's own nor its province's "
+    "No table of this regency's religion could be retrieved. BPS answers automated requests "
+    "with HTTP 403 on every bps.go.id host, and neither the regency's own nor its province's "
     "open-data portal publishes one (docs/SOURCES.md, \"Indonesia: what BPS's refusal left "
     "reachable\", lists the 110 portals tried). The 2020 census's Long Form tables that "
     "reach the regencies have no religion.")
@@ -125,9 +125,10 @@ RELIGION_GAP = (
 # stands: the Long Form's first-language table (indonesia_language) is kinds
 # of language, and a survey that fills only if the build reads it.
 LANGUAGE_GAP = (
-    "No count of this {unit}'s languages could be read. The 2010 census's household language "
-    "reaches the map through CLEAR Global's tabulation of its IPUMS sample, for some units "
-    "only; BPS answers this project's reader HTTP 403 on every bps.go.id host; and the 2020 "
+    "No count of this {unit}'s languages could be retrieved. The 2010 census's household "
+    "language reaches the map through CLEAR Global's tabulation of its IPUMS sample, for some "
+    "units only; BPS answers automated requests with HTTP 403 on every bps.go.id host; and the "
+    "2020 "
     "census asked language only in its Long Form, a 2022 sample, which counts the language a "
     "person first learned in four kinds -- Indonesian, a regional language, a foreign language "
     "and sign language (Table 6.3 of its 2023 results) -- and not language by language.")
@@ -324,11 +325,18 @@ def fields(groups: dict[str, dict[tuple[int, int | None], int]], whose: str) -> 
     if median is None or not women:
         raise SystemExit(f"indonesia_age: {whose}: no median below 75, or no women")
     text = said(whose)
+    total = sum(groups["B"].values())
+    # The people the median and the ratio describe, said beside them: where the
+    # map's head count is another source's -- a newer civil register count, or a
+    # province summed from its regencies, as Papua's is (4,497,369 for 2024 against
+    # the Long Form's 4,418,581) -- the two figures describe different counts.
+    base = f" The Long Form weights its sample to {total:,} people here, for 2022."
     return age_sex(median=median, men=men, women=women, year=YEAR, source=SOURCE,
                    median_note=(f"Interpolated within the five-year age group that holds the "
-                                f"middle person (the finest the table publishes), from {text}."),
-                   ratio_note=f"Males per 100 females in {text}.",
-                   population=sum(groups["B"].values()),
+                                f"middle person (the finest the table publishes), from {text}."
+                                + base),
+                   ratio_note=f"Males per 100 females in {text}.{base}",
+                   population=total,
                    population_note=f"The Long Form's weighted total for 2022: {text}.")
 
 

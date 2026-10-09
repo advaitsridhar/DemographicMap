@@ -378,8 +378,15 @@ def vintages(rows: list[dict[str, str]], drawn: set[str]
 # How many districts a run may write: the 2025 table had 160, the 2026 one 166.
 DISTRICTS_EXPECTED = (150, 170)
 VINTAGE_NOTE = ("DOSM's {latest} table divides districts of {state} that the map draws whole "
-                "({new} are new), so {state}'s districts are read at {date}, the latest date "
+                "({new}), so {state}'s districts are read at {date}, the latest date "
                 "whose districts are the map's.")
+
+
+def new_districts(names: list[str]) -> str:
+    """'Membakut is new'; 'Gedong, Lingga and Pantu are new'."""
+    if len(names) == 1:
+        return f"{names[0]} is new"
+    return f"{', '.join(names[:-1])} and {names[-1]} are new"
 
 
 def build_districts(rows: list[dict[str, str]] | None = None,
@@ -396,8 +403,9 @@ def build_districts(rows: list[dict[str, str]] | None = None,
         year = int(date[:4])
         by_age = ages(own, ("state", "district"), date)
         check_against_states(comps, state_rows, date)
-        vintage = (VINTAGE_NOTE.format(latest=latest[:4], state=state, new=", ".join(new),
-                                       date=date) if date != latest else "")
+        vintage = (VINTAGE_NOTE.format(latest=latest[:4], state=state,
+                                       new=new_districts(list(new)), date=date)
+                   if date != latest else "")
         for (_, district), counts in sorted(comps.items()):
             total = check(f"{state}/{district}", counts)
             bars = shares({k: v for k, v in counts.items() if k != "__total__"}, total=total)

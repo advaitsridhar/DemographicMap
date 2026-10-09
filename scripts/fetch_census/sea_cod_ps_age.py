@@ -2,12 +2,13 @@
 """Median age and sex ratio from OCHA's COD-PS where no Southeast Asian office can be read.
 
 **Why a projection.** Thailand counts its people by age and sex in two places,
-and neither answers this map's reader. The Department of Provincial
-Administration's register (``stat.bora.dopa.go.th``) has no DNS answer from
-the runner, the National Statistical Office's tables (``statbbi.nso.go.th``)
-no address, and the government's open-data portal (``data.go.th``) answers
-HTTP 403, "Your request has been blocked by our security systems" -- each
-recorded in the log of the probe that found it, and none of them evaded. Laos
+and neither can be retrieved. The Department of Provincial Administration's
+register (``stat.bora.dopa.go.th``) does not resolve, the National Statistical
+Office's tables (``statbbi.nso.go.th``) have no address, and the government's
+open-data portal (``data.go.th``) answers HTTP 403, "Your request has been
+blocked by our security systems" -- each recorded in the log of the probe that
+found it (the register's again in fa71356, with ``www.dopa.go.th`` answering
+403 and ``catalog.dopa.go.th`` timing out), and none of them evaded. Laos
 publishes its 2015 census volume as a PDF with no district ages; Cambodia's
 2019 census gives its provinces' ages only in three broad groups (the final
 report's Table PT 02: 0-14, 15-59 and 60 and over, too coarse for a median),
@@ -100,22 +101,34 @@ RATIO_BOUNDS = (80.0, 160.0)
 # Why the office's own figures are not read instead, said on a unit the
 # bounds leave out (docs/SOURCES.md and this reader's report have the runs).
 UNREAD = {
-    "THA": ("Thailand's own figures were not reachable: the Department of Provincial "
-            "Administration's register statistics (stat.bora.dopa.go.th) do not resolve "
-            "from the runner, and the National Statistical Office's hosts answer HTTP 418 "
-            "or 403 to this project's reader."),
+    "THA": ("Thailand's own figures could not be retrieved: the Department of Provincial "
+            "Administration's register statistics (stat.bora.dopa.go.th) do not resolve, "
+            "and the National Statistical Office's hosts and the government's open-data "
+            "portal answer HTTP 418 or 403 to automated requests."),
     "LAO": ("The Lao Statistics Bureau's 2015 census volume tabulates no district's ages."),
     "KHM": ("The National Institute of Statistics publishes no district's ages from the "
             "2019 census."),
 }
-# Why a projection rather than the office's own ages, said on every median.
+# Why a projection rather than the office's own ages, said on every median:
+# by country, or by country and level where the two differ.
 WHY_PROJECTION = {
     "KHM": ("used because the 2019 census tabulates a province's ages only in three broad "
             "groups -- 0-14, 15-59 and 60 and over (final report, Table PT 02), too coarse "
             "for a median -- and single years of age only for the whole country (priority "
             "table A1)"),
+    "THA": ("used because Thailand's own count of each district's people by age -- the "
+            "Department of Provincial Administration's population register -- could not be "
+            "retrieved: its statistics host does not resolve, and the government's "
+            "open-data portal and the National Statistical Office's census hosts answer "
+            "HTTP 403 or 418 to automated requests"),
+    "LAO": ("used because the Lao Statistics Bureau publishes no district's ages from the "
+            "2015 census: its results volume crosses age with the province at most"),
 }
-WHY_DEFAULT = "used because the office's own tables could not be read"
+WHY_DEFAULT = "used because no table of the office's own gives these ages"
+# A ratio this far from even, for a whole district or province, is said to be
+# one on its record with the counts it rests on (Thailand's Ko Kut 137.4 and
+# Khao Saming 136.8, Laos's Longcheng 142.5); inside RATIO_BOUNDS it stands.
+UNUSUAL_RATIO = (85.0, 115.0)
 
 
 # Why Thailand's districts (and its provinces' languages) carry no composition,
@@ -133,13 +146,13 @@ COMPOSITION_GAPS: dict[tuple[str, str], dict[str, str]] = {
             "census's provincial final reports give a district (amphoe) only its population by "
             "sex, household type and five-year age group (tables 1 and 2) and put religion only "
             f"among the province's key indicators (Ranong's tables, {RANONG_2000}); the "
-            "National Statistical Office's later census hosts refuse this project's reader."),
+            "National Statistical Office's later census hosts refuse automated requests."),
         "language": (
             "Thailand's 2000 census asked the language spoken at home, and its provincial final "
             "reports give only the province's largest minority languages, as shares among its "
             "key indicators (Ranong: Malay 0.5%, Burmese and Mon 7.0%); no table gives a "
             f"district's languages (Ranong's tables, {RANONG_2000}). The National Statistical "
-            "Office's later census hosts refuse this project's reader."),
+            "Office's later census hosts refuse automated requests."),
         "ethnicity": (
             "Thailand's census does not ask ethnicity; it asks nationality, religion and the "
             "language spoken at home, and the 2000 census published those for the province "
@@ -152,10 +165,24 @@ COMPOSITION_GAPS: dict[tuple[str, str], dict[str, str]] = {
             "report gives only its largest minority languages, as shares among the key "
             "indicators (Ranong: Malay 0.5%, Burmese and Mon 7.0% in 2000), never the whole "
             "distribution, so no province has a language composition that adds up "
-            f"({RANONG_2000}). The National Statistical Office's later census hosts refuse this "
-            "project's reader."),
+            f"({RANONG_2000}). The National Statistical Office's later census hosts refuse "
+            "automated requests."),
     },
 }
+
+
+def why_projection(iso3: str, level: str) -> str:
+    return WHY_PROJECTION.get((iso3, level)) or WHY_PROJECTION.get(iso3) or WHY_DEFAULT
+
+
+def unusual_ratio(men: float, women: float, level: str) -> str:
+    """A sentence for a ratio far from even, with the counts it rests on; else nothing."""
+    value = ratio(men, women)
+    if UNUSUAL_RATIO[0] <= value <= UNUSUAL_RATIO[1]:
+        return ""
+    unit = "district" if level == "admin2" else "province"
+    return (f" An unusual ratio for a whole {unit}: the projection counts {round(men):,} "
+            f"males against {round(women):,} females here, and the dataset gives no reason.")
 
 
 def composition_gaps(iso3: str, level: str) -> dict[str, Any]:
@@ -338,12 +365,12 @@ def level_records(iso3: str, stub: str, licence: str, cod_level: str, year: int,
             median_age_note=(
                 f"Interpolated within the five-year age group that holds the middle person, "
                 f"from the age breakdown of OCHA's COD-PS for the country, reference year "
-                f"{year}: a projection, not a count, "
-                f"{WHY_PROJECTION.get(iso3, WHY_DEFAULT)}.{basis}"),
+                f"{year}: a projection, not a count, {why_projection(iso3, level)}.{basis}"),
             sex_ratio={"value": ratio(men, women), "unit": "males_per_100_females",
                        "year": year, "source": source},
             sex_ratio_note=(f"Males per 100 females in OCHA's COD-PS for the country, "
-                            f"reference year {year}: a projection, not a count.{basis}"),
+                            f"reference year {year}: a projection, not a count."
+                            f"{unusual_ratio(men, women, level)}{basis}"),
             sources=[{"field": ("population/median_age/sex_ratio" if twin
                                 else "median_age/sex_ratio"), "name": source,
                       "url": cod_ps.DATASET_PAGE.format(stub=stub), "year": year,

@@ -118,9 +118,14 @@ class AgeTest(unittest.TestCase):
         self.assertEqual(recs["Batu Pahat"]["population"]["year"], 2026)
         self.assertEqual(recs["Beaufort"]["population"]["value"], 8000)
         self.assertEqual(recs["Beaufort"]["population"]["year"], 2025)
-        self.assertIn("Membakut", recs["Beaufort"]["population_note"])
+        self.assertIn("(Membakut is new)", recs["Beaufort"]["population_note"])
         self.assertNotIn("Membakut", recs)
         self.assertFalse(recs["Batu Pahat"].get("population_note"))
+
+    def test_the_new_districts_are_listed_in_a_sentence(self):
+        self.assertEqual(m.new_districts(["Membakut"]), "Membakut is new")
+        self.assertEqual(m.new_districts(["Gedong", "Lingga", "Pantu"]),
+                         "Gedong, Lingga and Pantu are new")
 
     def test_the_indian_race_is_written_with_its_country(self):
         # A bare "Indian" is the nationality a European or Korean register

@@ -16,6 +16,9 @@ decides it.
   for endpoints found by ``spa``.
 * ``xl URL --sheet NAME`` -- named sheets of a workbook, a window of rows.
 * ``zip URL`` -- a zip's members and the opening lines of the first few.
+* ``pdf URL --grep RE`` -- a PDF's text layer: the pages whose text matches,
+  with the matching lines and a few after each, so a table's page and whether
+  its figures extract can be seen before a reader is written.
 * ``strips CDX-PATTERN`` -- Thailand's 2000 census provincial final reports,
   whose text layer is font-encoded: page 1 (the key indicators) of every
   captured report, cut to its title and three rows of the 2000 column --
@@ -206,6 +209,40 @@ def cmd_xl(url: str, sheets: list[str], rows: int, cols: int, width: int,
         for i, row in enumerate(table[start:start + rows], start=start):
             cells = ["" if c is None else str(c).strip()[:width] for c in row[:cols]]
             log(f"   {i:>4} | " + " | ".join(cells))
+
+
+def cmd_pdf(url: str, grep: str, after: int, pages: str, limit: int) -> None:
+    """Lines of a PDF's text layer matching ``grep``, page by page."""
+    from pypdf import PdfReader
+    status, ctype, body = fetch(url, timeout=300)
+    log(f"{url}: HTTP {status} {ctype} {len(body)} B")
+    if status != 200:
+        return
+    reader = PdfReader(io.BytesIO(body))
+    wanted: set[int] | None = None
+    if pages:
+        wanted = set()
+        for part in pages.split(","):
+            lo, _, hi = part.partition("-")
+            wanted |= set(range(int(lo), int(hi or lo) + 1))
+    log(f"  {len(reader.pages)} pages")
+    shown = 0
+    pattern = re.compile(grep, re.I) if grep else None
+    for number, page in enumerate(reader.pages, start=1):
+        if wanted is not None and number not in wanted:
+            continue
+        lines = (page.extract_text() or "").splitlines()
+        hits = [i for i, line in enumerate(lines) if pattern is None or pattern.search(line)]
+        if not hits:
+            continue
+        log(f"  p{number}: {len(lines)} lines, {len(hits)} matching")
+        for i in hits[:6]:
+            for line in lines[i:i + after + 1]:
+                log(f"    {line[:160]}")
+        shown += 1
+        if shown >= limit:
+            log(f"  stopped after {limit} pages")
+            break
 
 
 def cmd_zip(url: str, members: int, lines: int, encoding: str) -> None:
@@ -581,6 +618,12 @@ def main() -> int:
     z.add_argument("--members", type=int, default=3)
     z.add_argument("--lines", type=int, default=8)
     z.add_argument("--encoding", default="utf-8")
+    pd = sub.add_parser("pdf")
+    pd.add_argument("url")
+    pd.add_argument("--grep", default="")
+    pd.add_argument("--after", type=int, default=3, help="lines shown after each match")
+    pd.add_argument("--pages", default="", help='page numbers to read, as "1-5,9"')
+    pd.add_argument("--limit", type=int, default=12, help="pages shown at most")
     x = sub.add_parser("cdx")
     x.add_argument("pattern")
     x.add_argument("--limit", type=int, default=2000)
@@ -636,6 +679,8 @@ def main() -> int:
         cmd_xl(args.url, args.sheet, args.rows, args.cols, args.width, args.start, args.find)
     elif args.cmd == "zip":
         cmd_zip(args.url, args.members, args.lines, args.encoding)
+    elif args.cmd == "pdf":
+        cmd_pdf(args.url, args.grep, args.after, args.pages, args.limit)
     elif args.cmd == "cdx":
         cmd_cdx(args.pattern, args.limit, args.match)
     elif args.cmd == "wpmedia":
