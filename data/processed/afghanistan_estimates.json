@@ -106,16 +106,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Parwan as the statistics office counts it -- Mahmudi Raqi, drawn here, is counted by the office in Kapisa; Shutul, drawn here, is counted by the office in Panjshir -- so the office's 1396 estimate for the province (687,243 settled people, 348,582 males and 338,661 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 766590,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "The statistics office publishes age only for the whole country -- its 1396 release's age workbook (\"گروپ سنین\") gives five-year groups by sex for the rural, urban and nomadic population of Afghanistan and for no province or district -- and Afghanistan has had no census since 1979. OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Parwan as the statistics office counts it -- Mahmudi Raqi, drawn here, is counted by the office in Kapisa; Shutul, drawn here, is counted by the office in Panjshir -- so the office's 1396 estimate for the province (687,243 settled people, 348,582 males and 338,661 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 102.9,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -137,7 +140,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B66863807863315"
+    "shape_id": "12653393B66863807863315",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 12 districts the boundary file draws in this province (Bagram, Chaharikar, Jabalussaraj, Kohi Safi, Mahmudi Raqi, Salang, Sayd Khel, Shekh  Ali, Shinwari, Shutul, Sia Gird ( Ghorbund), Surkhi Parsa): 766,590 (388,866 males, 377,724 females). The office's own total for the province, 687,243, is not this polygon's -- Mahmudi Raqi, drawn here, is counted by the office in Kapisa; Shutul, drawn here, is counted by the office in Panjshir. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 388,866 males against 377,724 females."
   },
   {
     "id": "AFG-EST-04",
@@ -496,16 +501,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Ghanzi as the statistics office counts it -- Naw Bahar, drawn here, is counted by the office in Zabul -- so the office's 1396 estimate for the province (1,270,192 settled people, 651,342 males and 618,850 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 1290026,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "The statistics office publishes age only for the whole country -- its 1396 release's age workbook (\"گروپ سنین\") gives five-year groups by sex for the rural, urban and nomadic population of Afghanistan and for no province or district -- and Afghanistan has had no census since 1979. OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Ghanzi as the statistics office counts it -- Naw Bahar, drawn here, is counted by the office in Zabul -- so the office's 1396 estimate for the province (1,270,192 settled people, 651,342 males and 618,850 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 105.2,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -527,7 +535,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B29313712249365"
+    "shape_id": "12653393B29313712249365",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 20 districts the boundary file draws in this province (Ab Band, Ajristan, Andar, Bahrami Shahid (Jaghatu), Dih Yak, Gelan, Ghazni, Giro, Jaghuri, Khwaja Umari, Malistan, Muqur, Naw Bahar, Nawa, Nawur, Qarabagh, Rashidan, Waghaz, Wali Muhammadi Shahid, Zana Khan): 1,290,026 (661,428 males, 628,598 females). The office's own total for the province, 1,270,192, is not this polygon's -- Naw Bahar, drawn here, is counted by the office in Zabul. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 661,428 males against 628,598 females."
   },
   {
     "id": "AFG-EST-12",
@@ -926,16 +936,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Samangan as the statistics office counts it -- Feroz Nakhchir, which the office counts here, is drawn in Balkh -- so the office's 1396 estimate for the province (401,134 settled people, 205,962 males and 195,172 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 387374,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "The statistics office publishes age only for the whole country -- its 1396 release's age workbook (\"گروپ سنین\") gives five-year groups by sex for the rural, urban and nomadic population of Afghanistan and for no province or district -- and Afghanistan has had no census since 1979. OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Samangan as the statistics office counts it -- Feroz Nakhchir, which the office counts here, is drawn in Balkh -- so the office's 1396 estimate for the province (401,134 settled people, 205,962 males and 195,172 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 105.5,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -957,7 +970,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B17428819721147"
+    "shape_id": "12653393B17428819721147",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 6 districts the boundary file draws in this province (Aybak, Dara-I-Sufi Bala, Dara-I-Sufi Payin, Hazrati Sultan, Khuram Wa Sarbagh, Ruyi Du Ab): 387,374 (198,865 males, 188,509 females). The office's own total for the province, 401,134, is not this polygon's -- Feroz Nakhchir, which the office counts here, is drawn in Balkh. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 198,865 males against 188,509 females."
   },
   {
     "id": "AFG-EST-21",
@@ -1211,16 +1226,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Zabul as the statistics office counts it -- Miya Nishin, drawn here, is counted by the office in Kandahar; Naw Bahar, which the office counts here, is drawn in Ghanzi -- so the office's 1396 estimate for the province (314,325 settled people, 161,808 males and 152,517 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 310359,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "The statistics office publishes age only for the whole country -- its 1396 release's age workbook (\"گروپ سنین\") gives five-year groups by sex for the rural, urban and nomadic population of Afghanistan and for no province or district -- and Afghanistan has had no census since 1979. OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Zabul as the statistics office counts it -- Miya Nishin, drawn here, is counted by the office in Kandahar; Naw Bahar, which the office counts here, is drawn in Ghanzi -- so the office's 1396 estimate for the province (314,325 settled people, 161,808 males and 152,517 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 106.3,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1242,7 +1260,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B56617740339660"
+    "shape_id": "12653393B56617740339660",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 11 districts the boundary file draws in this province (Arghandab, Atghar, Daychopan, Kakar, Miya Nishin, Mizan, Qalat, Shahjoy, Shamulzayi, Shinkay, Tarnak Wa Jaldak): 310,359 (159,940 males, 150,419 females). The office's own total for the province, 314,325, is not this polygon's -- Miya Nishin, drawn here, is counted by the office in Kandahar; Naw Bahar, which the office counts here, is drawn in Ghanzi. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 159,940 males against 150,419 females."
   },
   {
     "id": "AFG-EST-27",
@@ -1256,16 +1276,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Kandahar as the statistics office counts it -- Miya Nishin, which the office counts here, is drawn in Zabul -- so the office's 1396 estimate for the province (1,279,520 settled people, 654,998 males and 624,522 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 1263652,
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "median_age": {
       "status": "not_available",
       "note": "The statistics office publishes age only for the whole country -- its 1396 release's age workbook (\"گروپ سنین\") gives five-year groups by sex for the rural, urban and nomadic population of Afghanistan and for no province or district -- and Afghanistan has had no census since 1979. OCHA's 2021 provincial age table (cod-ps-afg) applies one national age structure to every province, so it measures nothing about any one of them."
     },
     "sex_ratio": {
-      "status": "not_available",
-      "note": "Not written: the boundary file does not draw Kandahar as the statistics office counts it -- Miya Nishin, which the office counts here, is drawn in Zabul -- so the office's 1396 estimate for the province (1,279,520 settled people, 654,998 males and 624,522 females) is not this polygon's. The districts drawn in it carry their own."
+      "value": 104.8,
+      "unit": "males_per_100_females",
+      "year": 2017,
+      "source": "Central Statistics Organization of Afghanistan (now the National Statistics and Information Authority), Estimated Population of Afghanistan 1396 (2017-18): estimated settled population by civil division, urban, rural and sex"
     },
     "religion": {
       "status": "not_available"
@@ -1287,7 +1310,9 @@
     ],
     "country": "AFG",
     "match_by": "shape_id",
-    "shape_id": "12653393B40111500734429"
+    "shape_id": "12653393B40111500734429",
+    "population_note": "The statistics office's 1396 (2017-18) estimates of the settled population summed over the 15 districts the boundary file draws in this province (Arghandab, Arghistan, Daman, Ghorak, Kandahar, Khakrez, Maruf, Maywand, Nesh, Panjwayi, Registan, Shah Wali Kot, Shorabak, Spin Boldak, Zhari): 1,263,652 (646,780 males, 616,872 females). The office's own total for the province, 1,279,520, is not this polygon's -- Miya Nishin, which the office counts here, is drawn in Zabul. Afghanistan has had no census since 1979, and the 1,500,000 Kuchi nomads the office counts nationally are in no province.",
+    "sex_ratio_note": "1396 estimate, summed over the districts drawn here: 646,780 males against 616,872 females."
   },
   {
     "id": "AFG-EST-28",
