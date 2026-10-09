@@ -1,48 +1,6 @@
-== https://census.scad.gov.ae/
-   200 text/html; charset=utf-8 176,679 bytes
-   ~ chart.data = [{ "city": "AbuDhabi", "male": 2767060, "female": 1368925, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": 2560240, "female": 1287345, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": 1881460, "female": 941880, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": 1724010, "female": 871380, }];
-   ~ chart.data = [{ "city": "AlAin", "male": 622295, "female": 364615, }];
-   ~ chart.data = [{ "city": "AlAin", "male": 597190, "female": 348415, }];
-   ~ chart.data = [{ "city": "AlDhafra", "male": 263305, "female": 62430, }];
-   ~ chart.data = [{ "city": "AlDhafra", "male": 239040, "female": 67550, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "2762715" }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "2531690" }];
-   ~ chart.data = [{ "type": '2023 R1*'+" \n Blue-collar", "value": 1367890 }, { "type": '2023 R1*'+" \n White-collar", "value": 1163805 }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "299360" }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "281780" }];
-   ~ chart.data = [{ "city": "Abu Dhabi", '2024': 161930, '2023': 148655, }, { "city": "", '2024': 114715, '2023': 110740, }, { "city": "Al Dhafra", '2024': 22715, '2023': 22385, }];
-   ~ chart.data = [{ "city": "Abu Dhabi", '2024': 161930, '2023': 148655, }, { "city": "", '2024': 114715, '2023': 110740, }, { "city": "Al Dhafra", '2024': 22715, '2023': 22385, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "783970" }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "754555" }];
-   ~ chart.data = [{ "city": "Abu Dhabi", '2024': 535925, '2023': 513455, }, { "city": "", '2024': 196175, '2023': 189680, }, { "city": "Al Dhafra", '2024': 51870, '2023': 51425, }];
-   ~ chart.data = [{ "city": "Abu Dhabi", '2024': 535925, '2023': 513455, }, { "city": "", '2024': 196175, '2023': 189680, }, { "city": "Al Dhafra", '2024': 51870, '2023': 51425, }];
-   ~ var labourForce_2011 ='The employed population aged 15 and above grew by 83.1% from 2011, reaching 2.5 million in 2023 compared to 1.4 million in 2011.';
-   ~ var labourForce_2011 = 'The employed population aged 15 and above grew by 83.1% from 2011, reaching 2.5 million in 2023 compared to 1.4 million in 2011.';
-   21 matches for '(?i)(?:chart[.]data[^;]{0,1200};|var[^;=]{0,40}=[^;]{0,40}(?:citizen|emirati|nationalit|median|age)[^;]{0,300};)'
-== https://census.scad.gov.ae/Home/index?lang=en
-   200 text/html; charset=utf-8 176,679 bytes
-   ~ chart.data = [{ "city": "AbuDhabi", "male": 2767060, "female": 1368925, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": 2560240, "female": 1287345, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": 1881460, "female": 941880, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": 1724010, "female": 871380, }];
-   ~ chart.data = [{ "city": "AlAin", "male": 622295, "female": 364615, }];
-   ~ chart.data = [{ "city": "AlAin", "male": 597190, "female": 348415, }];
-   ~ chart.data = [{ "city": "AlDhafra", "male": 263305, "female": 62430, }];
-   ~ chart.data = [{ "city": "AlDhafra", "male": 239040, "female": 67550, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "2762715" }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "2531690" }];
-   ~ chart.data = [{ "type": '2023 R1*'+" \n Blue-collar", "value": 1367890 }, { "type": '2023 R1*'+" \n White-collar", "value": 1163805 }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "299360" }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "281780" }];
-   ~ chart.data = [{ "city": "Abu Dhabi", '2024': 161930, '2023': 148655, }, { "city": "", '2024': 114715, '2023': 110740, }, { "city": "Al Dhafra", '2024': 22715, '2023': 22385, }];
-   ~ chart.data = [{ "city": "Abu Dhabi", '2024': 161930, '2023': 148655, }, { "city": "", '2024': 114715, '2023': 110740, }, { "city": "Al Dhafra", '2024': 22715, '2023': 22385, }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "783970" }];
-   ~ chart.data = [{ "city": "AbuDhabi", "male": "754555" }];
-   ~ chart.data = [{ "city": "Abu Dhabi", '2024': 535925, '2023': 513455, }, { "city": "", '2024': 196175, '2023': 189680, }, { "city": "Al Dhafra", '2024': 51870, '2023': 51425, }];
-   ~ chart.data = [{ "city": "Abu Dhabi", '2024': 535925, '2023': 513455, }, { "city": "", '2024': 196175, '2023': 189680, }, { "city": "Al Dhafra", '2024': 51870, '2023': 51425, }];
-   ~ var labourForce_2011 ='The employed population aged 15 and above grew by 83.1% from 2011, reaching 2.5 million in 2023 compared to 1.4 million in 2011.';
-   ~ var labourForce_2011 = 'The employed population aged 15 and above grew by 83.1% from 2011, reaching 2.5 million in 2023 compared to 1.4 million in 2011.';
-   21 matches for '(?i)(?:chart[.]data[^;]{0,1200};|var[^;=]{0,40}=[^;]{0,40}(?:citizen|emirati|nationalit|median|age)[^;]{0,300};)'
+cdx oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a*: 5 captures, 5 matching ''
+  20220303065659 200 application/pdf   2063731 https://oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a_1356711239.pdf
+  20191020234317 200 application/pdf   1000314 http://oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a_1356711769.pdf
+  20220120055334 200 application/pdf   7141358 http://oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a_1356711769.pdf
+  20220331213738 200 application/pdf   7133896 https://oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a_1356711769.pdf
+  20220303072124 200 application/pdf   3960532 https://oldstat.ww.tj/ru/img/2336a7fa84c06406cfe3606ccfe6d58a_1356711816.pdf
