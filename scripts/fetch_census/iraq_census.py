@@ -134,6 +134,13 @@ RELIGION_WHY = ("Iraq's 2024 census asked religion (not sect), but COSIT has pub
                 "religion table from it: the Annual Abstract of Statistics 2024-25 gives the "
                 "census by governorate and district as people, sex and age only "
                 "(https://cosit.gov.iq/documents/AAS2024/02.pdf).")
+# Ages are published by governorate only: Table 10/2 is the census by
+# governorate, five-year age group and sex, and the district table (11/2)
+# gives people and sex alone, so no district's median age can be taken.
+DISTRICT_AGE_WHY = ("COSIT's Annual Abstract of Statistics 2024-25 gives the 2024 census's "
+                    "ages by governorate only (Table 10/2); its district table (Table 11/2) "
+                    "counts people and sex, so no district's median age is published "
+                    "(https://cosit.gov.iq/documents/AAS2024/02.pdf).")
 
 # COSIT's governorate codes to OCHA's (and the map's) governorate names.
 GOVERNORATE = {
@@ -1193,6 +1200,8 @@ def build(text: str, gazetteer_text: str, places_text: str = "",
                 parent_name=entry["governorate"],
                 aliases=[a for a in (entry["arabic"],) if a],
                 population=gap(NOT_AVAILABLE, entry["why"]),
+                sex_ratio=gap(NOT_AVAILABLE, entry["why"]),
+                median_age=gap(NOT_AVAILABLE, DISTRICT_AGE_WHY),
                 religion=gap(NOT_AVAILABLE, RELIGION_WHY)))
             continue
         population = measure(entry["value"], year=YEAR, source=SOURCE)
@@ -1208,6 +1217,7 @@ def build(text: str, gazetteer_text: str, places_text: str = "",
             parent_name=entry["governorate"],
             aliases=[a for a in (entry["arabic"],) if a],
             population=population, religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+            median_age=gap(NOT_AVAILABLE, DISTRICT_AGE_WHY),
             sources=cite, **sex_fields(entry, "district")))
     written = sum(1 for r in rows if r["level"] == "admin2" and "value" in r["population"])
     log(f"  {written} map districts with a figure, "

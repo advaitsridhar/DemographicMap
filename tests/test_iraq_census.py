@@ -232,6 +232,41 @@ class AgesAndSexes(unittest.TestCase):
         self.assertEqual(ic.sex_fields({"value": 11, "sexes": (5, 5)}, "district"), {})
 
 
+AGES = ROOT / "data" / "raw" / "iraq" / "aas2024_table10.txt"
+
+
+@unittest.skipUnless(DUMP.exists() and GAZ.exists() and AGES.exists(), "Iraq dumps not present")
+class EveryEmptyFieldSaysWhy(unittest.TestCase):
+    """A district's empty median age or sex ratio carries the reason, not a bare gap."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.rows = ic.build(DUMP.read_text(encoding="utf-8"), GAZ.read_text(encoding="utf-8"),
+                            PLACES.read_text(encoding="utf-8") if PLACES.exists() else "",
+                            AGES.read_text(encoding="utf-8"))
+
+    def test_every_district_says_why_it_has_no_median_age(self):
+        districts = [r for r in self.rows if r["level"] == "admin2"]
+        self.assertTrue(districts)
+        for row in districts:
+            self.assertEqual(row["median_age"]["status"], "not_available", row["name"])
+            self.assertIn("Table 10/2", row["median_age"]["note"], row["name"])
+
+    def test_a_district_with_no_count_says_why_it_has_no_sex_ratio(self):
+        empty = [r for r in self.rows if r["level"] == "admin2"
+                 and "value" not in r["population"]]
+        self.assertTrue(empty)
+        for row in empty:
+            self.assertEqual(row["sex_ratio"]["note"], row["population"]["note"], row["name"])
+
+    def test_no_empty_field_is_left_without_a_note(self):
+        for row in self.rows:
+            for field in ("population", "median_age", "sex_ratio", "religion"):
+                value = row[field]
+                if isinstance(value, dict) and value.get("status"):
+                    self.assertTrue(value.get("note"), f"{row['name']} {field}")
+
+
 @unittest.skipUnless(DUMP.exists() and GAZ.exists(), "Iraq dumps not present")
 class SexesInTheTable(unittest.TestCase):
     def test_every_unit_of_the_table_has_women_and_men_making_its_count(self):

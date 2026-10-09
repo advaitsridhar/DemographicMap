@@ -109,6 +109,20 @@ PUBLISHED = ("the US Census Bureau's workbook of the census reproduces its table
              "UN Statistics Division hold none for Yemen either")
 RELIGION_WHY = f"Yemen's 2004 census published no religion table: {PUBLISHED}."
 LANGUAGE_WHY = f"Yemen's 2004 census published no language table: {PUBLISHED}."
+# Nationality is the census's Table 25, "Total Resident Population by
+# Nationality, Gender and Governorates" (the workbook's data dictionary, probe
+# d19e048): a governorate table, so no district has it; and a governorate
+# drawn as the sum of its districts is not the row's ground.
+DISTRICT_NATIONALITY_WHY = (
+    "The 2004 census's nationality table (Table 25, resident population by nationality, "
+    "gender and governorate) is published by governorate only, as the US Census Bureau's "
+    "workbook reproduces it, so no district's split of Yemeni and foreign nationals is "
+    "known.")
+SUMMED_NATIONALITY_WHY = (
+    "The 2004 census publishes nationality (Table 25) for its own governorate rows only, and "
+    "this governorate is drawn as the sum of its census districts, not as the census's row "
+    "(which also counts ground the map draws in another governorate), so no nationality "
+    "split is this shape's.")
 
 
 def code_of(row: dict[str, Any]) -> str:
@@ -336,7 +350,7 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                     parent=ISO3, country=ISO3, match_by="shape_id", shape_id=unit["id"],
                     parent_name=parents.get(unit["parent"]) if level == "admin2" else None,
                     population=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
-                    median_age=gap(NOT_AVAILABLE, why),
+                    median_age=gap(NOT_AVAILABLE, why), ethnicity=gap(NOT_AVAILABLE, why),
                     religion=gap(NOT_AVAILABLE, RELIGION_WHY),
                     language=gap(NOT_AVAILABLE, LANGUAGE_WHY)))
                 continue
@@ -373,6 +387,14 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                 else:
                     log(f"    {unit['name']}: nationality makes {made:,.0f} against "
                         f"{c['total']:,.0f}; not written")
+                    fields = {"ethnicity": gap(NOT_AVAILABLE, (
+                        f"The 2004 census's nationality table (Table 25) counts {made:,.0f} "
+                        f"people here and its population table {c['total']:,.0f}, more than "
+                        f"{NAT_TOLERANCE:.1%} apart, so its shares are not written."))}
+            elif level == "admin1":
+                fields = {"ethnicity": gap(NOT_AVAILABLE, SUMMED_NATIONALITY_WHY)}
+            else:
+                fields = {"ethnicity": gap(NOT_AVAILABLE, DISTRICT_NATIONALITY_WHY)}
             rows.append(record(
                 f"YEM-CEN-{code}", unit["name"], level=level, parent=ISO3, country=ISO3,
                 parent_name=parents.get(unit["parent"]) if level == "admin2" else None,
@@ -385,7 +407,8 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                 religion=gap(NOT_AVAILABLE, RELIGION_WHY),
                 language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
                 sources=sources + ([{"field": "ethnicity", "name": SOURCE, "url": URL,
-                                     "year": YEAR, "license": LICENCE}] if fields else []),
+                                     "year": YEAR, "license": LICENCE}]
+                                   if isinstance(fields.get("ethnicity"), list) else []),
                 **fields))
             p = proj.get(code)
             if p is None or (level == "admin2" and code[:2] in copies):

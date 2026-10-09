@@ -155,6 +155,18 @@ class TheReader(unittest.TestCase):
         self.assertIn("Jahra", out["a5"]["population"]["note"])
         self.assertIn("No census area", out["a4"]["population"]["note"])
 
+    def test_every_empty_field_says_why(self):
+        for rec in self.run_it():
+            for field in ("population", "median_age", "sex_ratio", "religion", "ethnicity",
+                          "language"):
+                value = rec[field]
+                if isinstance(value, dict) and value.get("status"):
+                    self.assertTrue(value.get("note"), f"{rec['name']} {field}")
+        out = {r["shape_id"]: r for r in self.run_it()}
+        self.assertIn("118 tables", out["g0"]["religion"]["note"])
+        self.assertIn("Table 53", out["a1"]["median_age"]["note"])
+        self.assertIn("Table 53", out["a4"]["median_age"]["note"])
+
     def test_a_polygon_holding_too_many_others_is_refused(self):
         placed = dict(PLACED, **{"AL-SHARQ": {"shares": {"a2": 0.8, "a1": 0.2}}})
         out = {r["shape_id"]: r for r in self.run_it(placed)}

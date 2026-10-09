@@ -51,7 +51,7 @@ from __future__ import annotations
 import argparse
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json
 from .west_asia_common import check, units
 
 ISO3 = "LBN"
@@ -71,6 +71,21 @@ OTHERS = "Foreign nationals"
 RELIABLE = 2.5      # thousands
 # Lebanese and non-Lebanese must make a caza's total within this (thousands).
 ROUNDING = 0.01
+# What no official source gives by caza or governorate. The survey's report
+# (116 pages, probe 058fd4a) names no religion, confession or sect, and uses
+# "language" only in its disability module ("communicating in one's own
+# language"); and a survey's sex and age estimates are not counts.
+SURVEY = ("the Central Administration of Statistics' Labour Force and Household Living "
+          "Conditions Survey 2018-2019, the one official source with tables for every caza")
+RELIGION_WHY = ("Lebanon has taken no census since 1932 and publishes no religious statistics: "
+                f"{SURVEY}, asks no religion (its 116-page report names no religion, "
+                "confession or sect).")
+LANGUAGE_WHY = (f"Lebanon has taken no census since 1932, and {SURVEY} asks no language "
+                "question (its 116-page report uses the word only in the disability module's "
+                "'communicating in one's own language').")
+AGE_SEX_WHY = ("Lebanon has taken no census since 1932; the only official figures of residents "
+               f"by sex and age for a caza are survey estimates ({SURVEY}), which this map takes "
+               "for compositions only, never for a count, a ratio or a median.")
 
 # The survey's cazas as HL.6A names them -> the boundary file's labels.
 CAZAS = {
@@ -194,6 +209,10 @@ def fields(name: str, leb: float, non: float, parts: list[str] | None = None
         "ethnicity_year": YEAR,
         "ethnicity_basis": BASIS,
         "ethnicity_note": note(name, leb, non, parts),
+        "religion": gap(NOT_AVAILABLE, RELIGION_WHY),
+        "language": gap(NOT_AVAILABLE, LANGUAGE_WHY),
+        "median_age": gap(NOT_AVAILABLE, AGE_SEX_WHY),
+        "sex_ratio": gap(NOT_AVAILABLE, AGE_SEX_WHY),
         "sources": [{"field": "ethnicity", "name": SOURCE, "url": URL, "year": YEAR,
                      "license": LICENCE},
                     {"field": "ethnicity (design)", "name": "LFHLCS 2018-2019 report, "

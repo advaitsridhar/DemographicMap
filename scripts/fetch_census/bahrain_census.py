@@ -23,7 +23,8 @@ the build copies a first-level figure onto its second-level twin.
 
 **What is not, and why.** The portal publishes age groups and religion for
 the whole kingdom only (by nationality and sex), so a governorate's median
-age and religion are not published; each says so.
+age and religion are not published; and no census table is by language.
+Each says so.
 
 **Checks** (any failure stops the run and nothing is written): every
 governorate has every group of both sexes once; the two tabulations agree
@@ -58,6 +59,14 @@ URL = f"{BASE}/explore/dataset/{GROUPS}/"
 LICENCE = "Bahrain Open Data Portal terms (open government data)"
 DECISION = "19 September 2026"
 GOVERNORATES = ("Capital", "Muharraq", "Northern", "Southern")
+# The portal's population catalogue (60 datasets, read on 4 October 2026,
+# probe ecba12f) holds the 2020 census by governorate, nationality, sex, age,
+# religion (the kingdom only), education, labour force, disability, households
+# and housing, and nothing by language.
+LANGUAGE_WHY = ("Bahrain's 2020 census publishes no language table: of the 60 population "
+                "datasets on data.gov.bh, the census's are by governorate, nationality, sex, "
+                "age, religion (the whole kingdom only), education, labour force, disability, "
+                "households and housing, and none is by language.")
 SEXES = ("Male", "Female")
 # The census's nationality groups, as the map writes them. GCC nationals are
 # the other five Gulf states' citizens; the portal's Arabic is "دول مجلس التعاون".
@@ -145,6 +154,7 @@ def build(groups_rows: list[dict[str, Any]], totals_rows: list[dict[str, Any]],
     no_religion = gap(NOT_AVAILABLE, (
         "Bahrain's 2020 census counts religion, but publishes it for the whole kingdom "
         f"only, by nationality and sex (data.gov.bh: {RELIGION}), not by governorate."))
+    no_language = gap(NOT_AVAILABLE, LANGUAGE_WHY)
     for unit in admin1:
         gov = bound[unit["id"]]
         mine = {(n, s): v for (g, n, s), v in groups.items() if g == gov}
@@ -174,7 +184,7 @@ def build(groups_rows: list[dict[str, Any]], totals_rows: list[dict[str, Any]],
                 "citizens of the other Gulf Cooperation Council states; the Arab, Asian, "
                 "African, European and North American groups are other countries' "
                 "nationals by region."),
-            median_age=no_age, religion=no_religion,
+            median_age=no_age, religion=no_religion, language=no_language,
             sources=source))
     return rows
 

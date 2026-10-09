@@ -49,6 +49,13 @@ class TheReader(unittest.TestCase):
         self.assertEqual(out["m1"]["sex_ratio"]["value"], 150.0)
         self.assertIsNotNone(out["m1"]["median_age"])
 
+    def test_compositions_say_why_they_are_empty(self):
+        rec = qc.build(*tables(), ADMIN1)[0]
+        for field in ("religion", "ethnicity", "language"):
+            self.assertEqual(rec[field]["status"], "not_available", field)
+            self.assertIn("data.gov.qa", rec[field]["note"], field)
+        self.assertIn("nationality", rec["ethnicity"]["note"])
+
     def test_a_missing_age_group_stops_the_run(self):
         men, women = tables(skip="5 - 9")
         with self.assertRaises(SystemExit):

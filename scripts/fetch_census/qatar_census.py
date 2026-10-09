@@ -13,6 +13,12 @@ and those are what is read.
 per hundred females, and the median age, interpolated within the age group
 that holds the middle person (single years below five, then five-year groups).
 
+**What is not, and why.** The portal publishes no municipality's people by
+nationality (Qatari or not), religion or language: its 2020 census tables
+give municipalities by sex, age and household type, and the nationality
+tables in its catalogue are vital statistics (births, deaths, marriages).
+Each municipality says so on those three fields.
+
 **Binding.** The portal spells three municipalities its own way ("AL Khor",
 "Al Dayyan", "Umm Salal"); those are declared below against the boundary
 file's labels, the rest agree once folded. Every drawn municipality must be
@@ -33,7 +39,7 @@ import re
 from collections import defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, write_json
 from .west_asia_common import check, key, median_age, ods_records, sex_ratio, units
 
 ISO3 = "QAT"
@@ -59,6 +65,19 @@ ALIASES = {
     "Al Dayyan": "Al Daayen",
     "Umm Salal": "Umm Slal",
 }
+# What the portal does not publish by municipality, as its catalogue showed
+# on 4 and 9 October 2026 (searches for population, census, religion and
+# nationality; probes c500305, ecba12f and 431d457): no table of people by
+# nationality, religion or language for a municipality. Its nationality
+# tables are of births, deaths and marriages, and its "Population and Labour
+# Force by Municipality" counts people by labour-force status only.
+CATALOGUE = ("Qatar's open-data portal (data.gov.qa), where the Planning and Statistics "
+             "Authority publishes the 2020 census by municipality, gives municipalities' "
+             "people by sex, age and household type only")
+NATIONALITY_WHY = (f"{CATALOGUE}; it publishes no municipality's people by nationality "
+                   "(Qatari or not), whose tables there are of births, deaths and marriages.")
+RELIGION_WHY = f"{CATALOGUE}; it publishes no table of religion by municipality."
+LANGUAGE_WHY = f"{CATALOGUE}; it publishes no table of language by municipality."
 CLOSED = re.compile(r"^(\d+)\s*-\s*(\d+)$")
 SINGLE = re.compile(r"^(\d+)$")
 OPEN = re.compile(r"^(\d+)\s*(?:\+|and\s+over|or\s+more)$", re.I)
@@ -148,6 +167,9 @@ def build(male_rows: list[dict[str, Any]], female_rows: list[dict[str, Any]],
             median_age_note=("Interpolated within the age group holding the middle person, "
                              "from the 2020 census's count of the municipality by age group "
                              "(single years under five, five-year groups above)."),
+            religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+            ethnicity=gap(NOT_AVAILABLE, NATIONALITY_WHY),
+            language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
             sources=[{"field": "population/median_age/sex_ratio", "name": SOURCE, "url": URL,
                       "year": YEAR, "license": LICENCE}])
         out.append(rec)

@@ -60,6 +60,8 @@ class TheReader(unittest.TestCase):
         self.assertEqual(capital["median_age"]["status"], "not_available")
         self.assertIn("whole kingdom", capital["median_age"]["note"])
         self.assertIn("religion", capital["religion"]["note"])
+        self.assertEqual(capital["language"]["status"], "not_available")
+        self.assertIn("none is by language", capital["language"]["note"])
 
     def test_tabulations_that_disagree_stop_the_run(self):
         groups, totals, ages = tables()

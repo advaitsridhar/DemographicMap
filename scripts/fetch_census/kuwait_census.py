@@ -137,6 +137,19 @@ MIN_SEX = 50
 MIN_PEOPLE = 100
 # More men per woman than this is explained in the note.
 SKEWED = 3
+# What the census does not publish, read off its list of 118 tables
+# (CensusData_EN?id=1, probe 3fc32eb) and Table 53 itself (probe d6e67dd): no
+# table by religion or language, and ages by governorate (Tables 2-4) or for
+# the whole country (Table 53) only.
+TABLE_LIST = ("none of the 118 tables the census publishes on census.csb.gov.kw "
+              "(CensusData_EN?id=1)")
+RELIGION_WHY = (f"Kuwait's 2021 register-based census publishes no religion table: {TABLE_LIST} "
+                "is by religion.")
+LANGUAGE_WHY = (f"Kuwait's 2021 register-based census publishes no language table: "
+                f"{TABLE_LIST} is by language.")
+AREA_AGE_WHY = ("The 2021 census counts each area's residents by nationality and sex only "
+                "(Table 52); its age tables are by governorate (Tables 2-4) or for the whole "
+                "country (Table 53), so no area's median age is published.")
 
 # OpenStreetMap's areas, read in four boxes (south, west, north, east) so a
 # busy server answers each.
@@ -800,6 +813,8 @@ def build(t1: list[list[Any]], t2: list[list[Any]], t6: list[list[Any]], t52: li
                 "Kuwaitis; the rest are Table 6's groups of other countries' citizens, its "
                 "'Australian' group (the continent's, beside the others) written as "
                 "'Oceanian nationalities'."),
+            religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+            language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
             sources=[{"field": "population/sex_ratio/median_age/ethnicity",
                       "name": SOURCE.format("1, 2 and 6"), "url": PAGE, "year": YEAR,
                       "license": LICENCE}]))
@@ -816,6 +831,9 @@ def build(t1: list[list[Any]], t2: list[list[Any]], t6: list[list[Any]], t52: li
                 f"KWT-CEN2021-{unit['name']}-{sid[-6:]}", unit["name"], level="admin2",
                 parent=ISO3, country=ISO3, parent_name=drawn_gov, match_by="shape_id",
                 shape_id=sid,
+                median_age=gap(NOT_AVAILABLE, AREA_AGE_WHY),
+                religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+                language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
                 **{f: gap(NOT_AVAILABLE, why[sid])
                    for f in ("population", "sex_ratio", "ethnicity")}))
             continue
@@ -827,6 +845,9 @@ def build(t1: list[list[Any]], t2: list[list[Any]], t6: list[list[Any]], t52: li
             f"KWT-CEN2021-{unit['name']}-{sid[-6:]}", unit["name"], level="admin2",
             parent=ISO3, country=ISO3, parent_name=drawn_gov, match_by="shape_id",
             shape_id=sid, aliases=[n.title() for n in b["names"]],
+            median_age=gap(NOT_AVAILABLE, AREA_AGE_WHY),
+            religion=gap(NOT_AVAILABLE, RELIGION_WHY),
+            language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
             **area_fields(b["names"], areas, b, other_men, other_women),
             sources=[{"field": "population/sex_ratio/ethnicity", "name": SOURCE.format(52),
                       "url": PAGE, "year": YEAR, "license": LICENCE},

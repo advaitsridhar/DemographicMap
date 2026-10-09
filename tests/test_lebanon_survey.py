@@ -102,6 +102,14 @@ class TheSurvey(unittest.TestCase):
         # Compositions only: no population from a survey.
         self.assertEqual(beirut["population"]["status"], "not_available")
 
+    def test_every_unit_says_why_it_has_no_religion_language_age_or_ratio(self):
+        for r in self.rows.values():
+            self.assertIn("confession", r["religion"]["note"], r["name"])
+            self.assertIn("language", r["language"]["note"], r["name"])
+            for field in ("median_age", "sex_ratio"):
+                self.assertEqual(r[field]["status"], "not_available", (r["name"], field))
+                self.assertIn("compositions only", r[field]["note"], (r["name"], field))
+
     def test_keserwan_jbeil_is_the_sum_of_its_two_cazas(self):
         kj = self.rows["g" + str(sorted({g for gs in ls.GOVERNORATES.values() for g in gs})
                                   .index("Keserwan-Jbeil"))]

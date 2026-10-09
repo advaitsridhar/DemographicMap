@@ -137,6 +137,19 @@ class TheCensus(unittest.TestCase):
                 self.assertEqual(r[field]["status"], "not_available", (r["name"], field))
                 self.assertIn("Table 25", r[field]["note"])
 
+    def test_every_unit_without_nationality_says_why(self):
+        for r in self.by.values():
+            if isinstance(r["ethnicity"], list):
+                continue
+            self.assertEqual(r["ethnicity"]["status"], "not_available", r["name"])
+            self.assertTrue(r["ethnicity"].get("note"), r["name"])
+        self.assertIn("published by governorate only", self.by["d1101"]["ethnicity"]["note"])
+        self.assertEqual(self.by["d2301"]["ethnicity"]["note"],
+                         self.by["d2301"]["population"]["note"])
+        cited = [s["field"] for s in self.by["d1101"]["sources"]]
+        self.assertNotIn("ethnicity", cited)
+        self.assertIn("ethnicity", [s["field"] for s in self.by["g11"]["sources"]])
+
     def test_the_split_districts_and_their_outskirts_say_why_they_are_empty(self):
         for sid in ("d2301", "d2305", "d1319", "d1324", "g13", "g23"):
             r = self.by[sid]
