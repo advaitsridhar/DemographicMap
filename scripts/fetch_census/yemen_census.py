@@ -40,6 +40,16 @@ governorate's own gives its districts no median, and the log says which.
 The median is written fill-only (``yemen_census_age.json``), so a census
 median for the same unit would always win.
 
+**A district unlike every governorate says so.** The projection's district
+rows differ far more than its governorates do: in Al Jawf alone, under-fives
+are 4.6% of Al Khalaq's people and 32.8% of Rajuzah's, so the district
+medians run from 9.7 to 24.8 where the 22 governorates' run from 13.9 to
+22.1. The rows are the CSO's own -- their age groups make their printed
+totals, and the 2016 column gives near the same medians -- so they are written,
+and a district whose median lies outside every governorate's says how young
+or old the projection makes it, against the country and the governorates
+(``outlying``).
+
 **Checks** (any failure stops the run and nothing is written): districts make
 their governorate and governorates the country, for the census population and
 for the projection; men and women make every total; age groups make every
@@ -57,6 +67,7 @@ from typing import Any
 
 from . import uscb
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
+from .cod_ps_age import grouped_median
 from .west_asia_common import (age_groups, bind_by_gazetteer, check, count, gazetteer,
                                hdx_resource, infer_parents, key, median_age, parents_by_id,
                                report, sex_ratio, units, uscb_table, workbook)
@@ -232,6 +243,38 @@ def copied_governorates(proj: dict[str, dict[str, Any]]) -> set[str]:
     return out
 
 
+def under_five(groups: list[tuple[int, int | None, float]]) -> float:
+    """The share of a projected population under five, in percent."""
+    total = sum(g[2] for g in groups) or 1.0
+    return 100 * sum(g[2] for g in groups if g[0] < 5) / total
+
+
+def outlying(proj: dict[str, dict[str, Any]]) -> dict[str, str]:
+    """A sentence for each district whose projected median lies outside every
+    governorate's: its under-fives and median against the country's and the
+    governorates' medians."""
+    govs = {c: grouped_median(p["groups"]) for c, p in proj.items()
+            if len(c) == 2 and c != "YE"}
+    if not govs:
+        return {}
+    low, high = min(govs.values()), max(govs.values())
+    country = grouped_median(proj["YE"]["groups"])
+    country_young = under_five(proj["YE"]["groups"])
+    out: dict[str, str] = {}
+    for code, p in proj.items():
+        median = grouped_median(p["groups"]) if len(code) == 4 else None
+        if median is None or low <= median <= high:
+            continue
+        out[code] = (
+            f" The projection makes this district {'younger' if median < low else 'older'} "
+            f"than any governorate taken whole: {under_five(p['groups']):.1f}% of its people "
+            f"are under five and its median is {median:.1f}, against {country_young:.1f}% "
+            f"and {country:.1f} for the country, and medians of {low:.1f} to {high:.1f} for "
+            f"the {len(govs)} governorates. The figures are the CSO's own: the district's "
+            f"age groups make its projected total.")
+    return out
+
+
 def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
           parents: dict[str, str]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -275,6 +318,9 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
     national = median_age(proj["YE"]["groups"], year=PROJECTION_YEAR, source=PROJECTION)
     log(f"  projected national median age for 2017: {national['value'] if national else None}")
     copies = copied_governorates(proj)
+    unlike = outlying(proj)
+    log(f"  districts whose projected median lies outside every governorate's: "
+        f"{len(unlike)}")
 
     g2 = gazetteer(gaz, 2)
     # The boundary file's governorates are "Hajjah Governorate", "Hadhramaut";
@@ -430,7 +476,8 @@ def build(book: dict[str, list[list[Any]]], gaz: dict[str, list[list[Any]]],
                     "Interpolated within the five-year age group holding the middle person, "
                     "from the CSO's projection of this unit's population by five-year age "
                     "group for 2017 -- a projection from the 2004 census, not a count, made "
-                    "before the war's displacement."),
+                    "before the war's displacement."
+                    + (unlike.get(code, "") if level == "admin2" else "")),
                 sources=[{"field": "median_age", "name": PROJECTION, "url": URL,
                           "year": PROJECTION_YEAR, "license": LICENCE}]))
     log(f"  census: {sum(1 for r in rows if r['level'] == 'admin1')} governorates and "

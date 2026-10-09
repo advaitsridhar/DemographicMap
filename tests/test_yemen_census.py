@@ -205,6 +205,30 @@ class TheCensus(unittest.TestCase):
         self.assertNotIn("d1102", by)
 
 
+class Outliers(unittest.TestCase):
+    def test_a_district_outside_every_governorate_says_how_and_by_how_much(self):
+        _rows, ages = run()
+        age = {r["shape_id"]: r for r in ages}
+        young = age["d1101"]["median_age_note"]
+        self.assertIn("younger than any governorate taken whole", young)
+        self.assertIn("% of its people are under five", young)
+        self.assertIn("for the 3 governorates", young)
+        self.assertIn("older than any governorate", age["d1102"]["median_age_note"])
+        # A governorate is never compared with the governorates.
+        self.assertNotIn("governorate taken whole", age["g11"]["median_age_note"])
+
+    def test_the_sentence_gives_the_district_s_own_figures(self):
+        proj = {"YE": {"groups": [(0, 4, 10.0), (5, None, 10.0)]},
+                "11": {"groups": [(0, 4, 6.0), (5, None, 6.0)]},
+                "12": {"groups": [(0, 4, 4.0), (5, None, 4.0)]},
+                "1101": {"groups": [(0, 4, 3.0), (5, None, 1.0)]},
+                "1201": {"groups": [(0, 4, 2.0), (5, None, 2.0)]}}
+        out = yc.outlying(proj)
+        self.assertEqual(set(out), {"1101"})
+        self.assertIn("75.0% of its people are under five", out["1101"])
+        self.assertIn("against 50.0% and", out["1101"])
+
+
 class TheChecks(unittest.TestCase):
     def test_districts_that_miss_their_governorate_stop_the_run(self):
         with self.assertRaises(SystemExit):
