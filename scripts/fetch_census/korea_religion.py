@@ -331,8 +331,9 @@ def composition(counts: dict[str, int]) -> tuple[list[dict[str, Any]], str]:
             label = "Other religions"
         groups[label] = groups.get(label, 0) + counts[column]
     groups[NO_RELIGION] = counts[NONE]
-    note = (f" 'Other religions' is the table's own 기타 with {' and '.join(held)}, which the "
-            "map's group tree does not place." if held else "")
+    # Said as what the figures are, not as a limit of this map's labels.
+    note = (f" 'Other religions' joins the table's own 기타 ('other') with "
+            f"{' and '.join(held)}, which the census counts apart." if held else "")
     return hundred(groups), note
 
 

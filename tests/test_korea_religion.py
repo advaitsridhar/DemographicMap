@@ -155,6 +155,13 @@ class Reads(unittest.TestCase):
         self.assertEqual(other["count"], counts(1)[-2] + counts(1)[-4])
         self.assertIn("Daesun Jinrihoe", r["religion_note"])
         self.assertNotIn("Daejongism", r["religion_note"])     # none counted here
+        # Said as what the figures are, with nothing about the map's labels.
+        self.assertIn("'Other religions' joins the table's own 기타 ('other') with Daesun "
+                      "Jinrihoe", r["religion_note"])
+        self.assertIn("which the census counts apart.", r["religion_note"])
+        for rec in self.records:
+            self.assertNotIn("group tree", rec.get("religion_note", ""))
+            self.assertNotIn("does not place", rec.get("religion_note", ""))
 
     def test_counts_add_up_to_the_table(self):
         r = self.by_shape["S-Sejong-Sejong-si"]
