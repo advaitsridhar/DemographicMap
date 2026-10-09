@@ -36,6 +36,9 @@ Subcommands:
         KOSIS's table viewer walked with one cookie jar, as a browser walks
         it: statHtml.do, the right-hand frame its script submits, and every
         form or frame that one names; each step's endpoints, forms and status.
+    kosismass ORG,TABLE [--grep REGEX] [--rows N] [--bytes N]
+        A KOSIS table's bulk download (대용량 다운로드), fetched as its page's
+        script fetches it: a zip's members, or a CSV's first rows (cp949).
     nlsc LEVEL
         Every drawn Taiwanese unit's label point (site/data/LEVEL/TWN.units.json)
         put to the National Land Surveying and Mapping Center's point query
@@ -358,6 +361,102 @@ def cmd_kosis(args: argparse.Namespace) -> None:
         print("    text: " + plain(body)[:args.bytes])
 
 
+MASS = "https://kosis.kr/statisticsList/mass/"
+
+
+def kosis_mass(org: str, tbl: str, row: int = 0, log=print) -> tuple[bytes, str, str]:
+    """A KOSIS table's bulk file, fetched the way its download page's own
+    script fetches it, with one cookie jar.
+
+    mass_list.jsp lists the files as hidden inputs ``file_data_N`` holding
+    "number/name". Its fileDown() copies the number and name into the upfrm
+    form and first submits that form to mass_down_seq.jsp, whose answer calls
+    setDownNo(n) with a download number; fileDown() then submits the same form
+    to /file_mass/file_down.jsp with file_type ONE, down_cnt 1 and use_no n.
+    Returns the file, its content type and its name."""
+    import http.cookiejar
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+
+    def call(url: str, fields: dict[str, str] | None, referer: str | None) -> tuple[bytes, Any]:
+        data = urllib.parse.urlencode(fields).encode() if fields is not None else None
+        headers = {"User-Agent": UA}
+        if referer:
+            headers["Referer"] = referer
+        req = urllib.request.Request(url, data=data, headers=headers,
+                                     method="POST" if data is not None else "GET")
+        last: Exception | None = None
+        for attempt in range(3):
+            try:
+                with opener.open(req, timeout=300) as resp:
+                    return resp.read(), resp.headers
+            except urllib.error.HTTPError:
+                raise
+            except Exception as exc:  # noqa: BLE001 - kosis.kr times out now and then
+                last = exc
+                log(f"  retry {attempt + 1}/3 :: {url} :: {exc!r}")
+                import time
+                time.sleep(5 * (attempt + 1))
+        raise RuntimeError(f"{url} failed: {last!r}")
+
+    listing = (f"{MASS}mass_list.jsp?org_id={org}&tbl_id={tbl}&vw_cd=MT_ZTITLE&list_id="
+               "&process=statHtml")
+    page, _ = call(listing, None, None)
+    text = decode(page, "utf-8")
+    files = form_fields(text, "myfrm")
+    up = form_fields(text, "upfrm")
+    entry = files.get(f"file_data_{row}")
+    if not entry or not up:
+        raise SystemExit(f"kosis_mass: {listing} lists no file_data_{row} or no upfrm form")
+    number, _, name = entry.partition("/")
+    log(f"  {listing}: file_data_{row} = {entry!r}, cookies {sorted(c.name for c in jar)}")
+    up.update({"filename": name, "file_no": number})
+    seq, _ = call(f"{MASS}mass_down_seq.jsp", up, listing)
+    seq_text = decode(seq, "utf-8")
+    m = re.search(r"setDownNo\(\s*['\"]?(\d+)", seq_text)
+    if not m:
+        raise SystemExit("kosis_mass: mass_down_seq.jsp named no download number: "
+                         + plain(seq_text)[:300])
+    log(f"  mass_down_seq.jsp -> download number {m.group(1)}")
+    up.update({"file_type": "ONE", "down_cnt": "1", "use_no": m.group(1)})
+    blob, headers = call("https://kosis.kr/file_mass/file_down.jsp", up, listing)
+    ctype = headers.get("Content-Type", "")
+    disp = headers.get("Content-Disposition", "")
+    log(f"  file_down.jsp -> {len(blob):,} bytes, {ctype!r} {disp!r}")
+    return blob, ctype, disp
+
+
+def cmd_kosismass(args: argparse.Namespace) -> None:
+    """A KOSIS table's bulk file (see kosis_mass), described: a zip's members
+    and the first rows of each, or a CSV's first rows, in cp949 unless
+    --encoding says otherwise."""
+    import zipfile
+    org, tbl = args.target.split(",")
+    blob, ctype, _ = kosis_mass(org, tbl)
+    members: list[tuple[str, bytes]] = [("answer", blob)]
+    if blob[:2] == b"PK":
+        with zipfile.ZipFile(io.BytesIO(blob)) as zf:
+            print(f"  zip: {[(i.filename, i.file_size) for i in zf.infolist()][:args.rows]}")
+            members = [(i.filename, zf.read(i)) for i in zf.infolist()[:args.sheets]]
+    for name, data in members:
+        print(f"  == {name}: {len(data):,} bytes, begins {data[:16]!r}")
+        if data[:2] == b"PK" or data[:8] == bytes.fromhex("d0cf11e0a1b11ae1"):
+            describe(data, args, ctype)
+            continue
+        text = data.decode(args.encoding or "cp949", "replace").lstrip("﻿")
+        lines = text.splitlines()
+        print(f"  {len(lines):,} lines")
+        grep = re.compile(args.grep) if args.grep else None
+        shown = 0
+        for i, line in enumerate(lines):
+            if grep and i > 2 and not grep.search(line):
+                continue
+            print(f"    l{i}: {line[:args.bytes]}")
+            shown += 1
+            if shown >= args.rows:
+                break
+
+
 NLSC = "https://api.nlsc.gov.tw/other/TownVillagePointQuery1/{lon}/{lat}"
 
 
@@ -383,7 +482,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("cmd", choices=["page", "form", "post", "get", "pxweb", "ris", "nlsc",
-                                    "kosis"])
+                                    "kosis", "kosismass"])
     ap.add_argument("target", nargs="+")
     ap.add_argument("--encoding")
     ap.add_argument("--wayback")
@@ -407,7 +506,8 @@ def main() -> int:
         try:
             {"page": cmd_page, "form": cmd_form, "post": cmd_post, "get": cmd_get,
              "pxweb": cmd_pxweb,
-             "ris": cmd_ris, "nlsc": cmd_nlsc, "kosis": cmd_kosis}[args.cmd](args)
+             "ris": cmd_ris, "nlsc": cmd_nlsc, "kosis": cmd_kosis,
+             "kosismass": cmd_kosismass}[args.cmd](args)
         except urllib.error.HTTPError as exc:
             print(f"  HTTP {exc.code} {exc.reason}: "
                   + " ".join(exc.read()[:300].decode("utf-8", "replace").split()))
