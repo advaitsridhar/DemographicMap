@@ -272,19 +272,54 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(sum(r["level"] == "admin1" for r in self.census), 3)
         self.assertEqual(sum(r["level"] == "admin2" for r in self.census), 23)
 
-    def test_the_gilbert_islands_count_makin_too(self):
-        gilbert = self.named("Gilbert Islands")
+    def test_the_gilbert_polygon_counts_its_own_islands_and_makin(self):
+        # The boundary file draws Tarawa and Banaba inside its "Phoenix
+        # Islands" polygon, so the Gilbert polygon's figure is the group
+        # without them.
+        gilbert = self.named("Gilbert Islands except Tarawa and Banaba")
+        tarawa_banaba = 7018 + 44643 + 18429 + 333
         self.assertEqual(gilbert["population"]["value"],
-                         kc.NATIONAL - 1893 - 1990 - 7369 - 41)
+                         kc.NATIONAL - 1893 - 1990 - 7369 - 41 - tarawa_banaba)
         self.assertIn("Makin", gilbert["population_note"])
+        self.assertIn("Phoenix Islands, not in this one", gilbert["population_note"])
+        self.assertIn("The Gilbert group as a whole counted 108,145.",
+                      gilbert["population_note"])
+
+    def test_the_phoenix_polygon_is_tarawa_banaba_and_kanton(self):
+        drawn = self.named("Tarawa, Banaba and the Phoenix Islands")
+        self.assertEqual(drawn["population"]["value"], 7018 + 44643 + 18429 + 333 + 41)
+        self.assertIn("also draws North and South Tarawa", drawn["population_note"])
+        self.assertEqual(drawn["sex_ratio"]["unit"], "males_per_100_females")
+        self.assertIn("Pacific Community", drawn["median_age"]["source"])
+        self.assertIn("I-Kiribati", {g["group"] for g in drawn["ethnicity"]})
+        # Its figures are its islands' added up, the same as theirs.
+        islands = [r for r in self.census if r["level"] == "admin2"
+                   and r["name"] in ("Tarawa Ieta", "Tarawa Teinainano", "Betio", "Banaba",
+                                     "Kanton")]
+        self.assertEqual(sum(r["population"]["value"] for r in islands),
+                         drawn["population"]["value"])
+
+    def test_each_polygon_is_its_drawn_islands_and_the_country_is_whole(self):
+        groups = [r for r in self.census if r["level"] == "admin1"]
+        self.assertEqual(sorted(r["name"] for r in groups),
+                         sorted(["Gilbert Islands except Tarawa and Banaba", "Line Islands", "Tarawa, Banaba and the Phoenix Islands"]))
+        self.assertEqual(sum(r["population"]["value"] for r in groups), kc.NATIONAL)
+
+    def test_the_map_drawing_the_islands_otherwise_stops_the_run(self):
+        admin1, admin2 = load_units("KIR", "admin1"), load_units("KIR", "admin2")
+        gilbert = next(u["id"] for u in admin1 if u["name"] == "Gilbert Islands")
+        moved = [dict(u, parent=gilbert) if u["name"] == "Betio" else u for u in admin2]
+        counts = kc.read_profile(profile_book())
+        with self.assertRaises(SystemExit):
+            kc.build(counts, self.cod, self.report, kc.read_religion(volume_pages()),
+                     admin1, moved)
 
     def test_kanton_says_why_it_has_no_median(self):
-        for name in ("Kanton", "Phoenix Islands"):
-            record = self.named(name)
-            self.assertEqual(record["median_age"]["status"], "not_available")
-            self.assertIn("41", record["median_age"]["note"])
-            self.assertIn("17.9", record["median_age"]["note"])
-            self.assertNotIn("median_age", {s["field"] for s in record["sources"]})
+        record = self.named("Kanton")
+        self.assertEqual(record["median_age"]["status"], "not_available")
+        self.assertIn("41", record["median_age"]["note"])
+        self.assertIn("17.9", record["median_age"]["note"])
+        self.assertNotIn("median_age", {s["field"] for s in record["sources"]})
 
     def test_butaritari_takes_spcs_median_not_the_printed_one(self):
         butaritari = self.named("Butaritari")
@@ -300,7 +335,7 @@ class TheRecords(unittest.TestCase):
 
     def test_every_island_and_group_with_ages_has_one_source_of_median(self):
         for record in self.census:
-            if record["name"] in ("Kanton", "Phoenix Islands"):
+            if record["name"] == "Kanton":
                 continue
             self.assertIn("Pacific Community", record["median_age"]["source"], record["name"])
 
@@ -311,7 +346,7 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(betio["sex_ratio"]["value"], 95.0)
         self.assertEqual(betio["ethnicity"][0]["group"], "I-Kiribati")
         self.assertEqual(betio["language"]["status"], "not_available")
-        gilbert = self.named("Gilbert Islands")
+        gilbert = self.named("Gilbert Islands except Tarawa and Banaba")
         self.assertIn("by island group", gilbert["median_age_note"])
         self.assertIn("Makin", gilbert["ethnicity_note"])
 
@@ -393,16 +428,20 @@ class TheReligionRecords(unittest.TestCase):
         self.assertNotIn("Te Ran", beru["religion_note"])
 
     def test_the_groups_add_their_islands_makin_included(self):
-        gilbert = self.named("Gilbert Islands")
+        gilbert = self.named("Gilbert Islands except Tarawa and Banaba")
         people = sum(r["count"] for r in gilbert["religion"])
-        self.assertEqual(people, kc.NATIONAL_2015 - 1_712 - 2_315 - 6_456 - 20)
+        tarawa_banaba = 6_629 + 39_058 + 17_330 + 268
+        self.assertEqual(people,
+                         kc.NATIONAL_2015 - 1_712 - 2_315 - 6_456 - 20 - tarawa_banaba)
         self.assertIn("Makin", gilbert["religion_note"])
-        # Kanton's 41 people are too few to carry a share or a ratio.
-        phoenix = self.named("Phoenix Islands")
+        drawn = self.named("Tarawa, Banaba and the Phoenix Islands")
+        self.assertEqual(sum(r["count"] for r in drawn["religion"]), tarawa_banaba + 20)
+        # Kanton's 41 people are too few to carry a share or a ratio on their own.
+        kanton = self.named("Kanton")
         for field in ("religion", "ethnicity", "sex_ratio"):
-            self.assertEqual(phoenix[field]["status"], "not_available", field)
-            self.assertIn("41 people", phoenix[field]["note"])
-        self.assertNotIn("religion_note", phoenix)
+            self.assertEqual(kanton[field]["status"], "not_available", field)
+            self.assertIn("41 people", kanton[field]["note"])
+        self.assertNotIn("religion_note", kanton)
 
 
 class TheReport(unittest.TestCase):

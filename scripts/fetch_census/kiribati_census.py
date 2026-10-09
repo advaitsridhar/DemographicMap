@@ -61,8 +61,15 @@ Uniting Church and the KPC apart, so the record says that too.
 as the 2015 volume (Table 15) and the 2010 tables (Table 16, literacy) do.
 
 **What the map draws.** 23 islands at the second level (Makin, 1,914 people,
-has no polygon) and the three island groups at the first: Gilbert (with
-Banaba), Line and Phoenix, whose only inhabited island is Kanton.
+has no polygon) and three polygons at the first, labelled with the island
+groups but not drawn as the census groups them: the one labelled the Phoenix
+Islands also draws North and South Tarawa (Betio included) and Banaba, which
+are Gilbert islands, and the one labelled the Gilbert Islands draws the rest
+of that group (``DRAWN_GROUPS``). Each first-level record is the census
+counts of the islands its polygon draws, named for them -- "Gilbert Islands
+except Tarawa and Banaba", "Line Islands", "Tarawa, Banaba and the Phoenix
+Islands" -- so a figure never stands for ground its polygon does not draw;
+the run stops if the map's island parents ever disagree with that table.
 
 Usage:
     python -m scripts.fetch_census.kiribati_census
@@ -180,10 +187,41 @@ ISLANDS: dict[str, tuple[str, str]] = {
     "Kanton": ("Kanton", ""),
 }
 UNDRAWN = {"Makin": ("Makin", "Makin")}
+# The census's island groups.
 GROUPS = {"Gilbert Islands": [k for k in ISLANDS if k not in ("Teraina", "Tabuaeran",
                                                               "Kiritimati", "Kanton")] + ["Makin"],
           "Line Islands": ["Teraina", "Tabuaeran", "Kiritimati"],
           "Phoenix Islands": ["Kanton"]}
+
+# The island groups as the boundary file draws them, which is not as the census
+# groups them. Its first-level polygon labelled "Phoenix Islands" is 22 parts:
+# seven at Kanton, one at Banaba and fourteen at Tarawa (measured on
+# geoBoundariesCGAZ_ADM1); Betio, Tarawa Teinainano, Tarawa Ieta and Banaba
+# lie 92-99% inside it, and the polygon labelled "Gilbert Islands" draws the
+# group's other islands. A figure goes on the ground its polygon draws, so each
+# first-level record is the census counts of the islands drawn inside it,
+# named for what that is: {boundary label: (name, islands, what it is)}. Makin
+# (1,914 people) is drawn at neither level and is counted where its group's
+# other northern islands are. ``drawn_groups`` checks this against the parents
+# the map gives the island polygons and stops the run if they disagree.
+DRAWN_GROUPS: dict[str, tuple[str, list[str], str]] = {
+    "Gilbert Islands": (
+        "Gilbert Islands except Tarawa and Banaba",
+        [k for k in GROUPS["Gilbert Islands"]
+         if k not in ("Tarawa Ieta", "Tarawa Teinainano", "Betio", "Banaba")],
+        "The boundary file draws North and South Tarawa (Betio included) and Banaba inside the "
+        "polygon it labels the Phoenix Islands, not in this one, so this is the Gilbert group "
+        "without them: the census counts of the islands this polygon draws, added up, and of "
+        "Makin, which no polygon draws."),
+    "Line Islands": ("Line Islands", list(GROUPS["Line Islands"]), ""),
+    "Phoenix Islands": (
+        "Tarawa, Banaba and the Phoenix Islands",
+        ["Tarawa Ieta", "Tarawa Teinainano", "Betio", "Banaba", "Kanton"],
+        "The boundary file's polygon labelled the Phoenix Islands also draws North and South "
+        "Tarawa (Betio included) and Banaba, which belong to the Gilbert group, so this is the "
+        "census counts of every island it draws, added up: Kanton, the Phoenix group's one "
+        "inhabited island, and those four."),
+}
 # The summary sheet's own spellings, for the cross-check.
 SUMMARY_NAMES = {"North Tarawa": "NTarawa", "South Tarawa": "STarawa", "Teraina": "Teeraina"}
 
@@ -848,6 +886,27 @@ def small(fields: dict[str, Any], labels: list[str], report: dict[str, Any]) -> 
     return withhold_small(fields, male + female, male, female)
 
 
+def drawn_groups(island_units: dict[str, dict[str, Any]],
+                 group_units: dict[str, dict[str, Any]]) -> dict[str, list[str]]:
+    """{boundary label: the drawn islands the map puts under that polygon}, which
+    must be ``DRAWN_GROUPS``' islands (Makin aside, which no polygon draws): the
+    parents the build gave the island polygons, by where most of each lies."""
+    by_shape = {unit["id"]: label for label, unit in group_units.items()}
+    out: dict[str, list[str]] = {label: [] for label in group_units}
+    for island, unit in island_units.items():
+        label = by_shape.get(unit.get("parent"))
+        check(label is not None, f"kiribati_census: {island} is drawn under no island group "
+                                 f"({unit.get('parent')})")
+        out[label].append(island)
+    for label, (_, islands, _) in DRAWN_GROUPS.items():
+        expected = sorted(i for i in islands if i in ISLANDS)
+        check(sorted(out.get(label, [])) == expected,
+              f"kiribati_census: the map draws {sorted(out.get(label, []))} under the polygon "
+              f"labelled {label}, where DRAWN_GROUPS has {expected}; measure the boundary file "
+              "again")
+    return out
+
+
 def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[str, Any],
           table6: dict[str, dict[str, list[int]]],
           admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
@@ -855,21 +914,38 @@ def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[s
     group_units = bind_level({g: (g, "") for g in GROUPS}, admin1, {})
     parents = {u["id"]: u["name"] for u in admin1}
     island_units = bind_level({i: (i, "") for i in ISLANDS}, admin2, parents)
+    drawn_groups(island_units, group_units)
     check(set(T6_ROWS.values()) == set(T6_ISLANDS),
           "kiribati_census: the drawn islands and Makin are not Table 6's 24 lines")
+    check(sorted(i for _, islands, _ in DRAWN_GROUPS.values() for i in islands)
+          == sorted(i for islands in GROUPS.values() for i in islands),
+          "kiribati_census: DRAWN_GROUPS does not hold every island once")
     compared = compare_medians(report, cod)
     census = []
-    for group, unit in group_units.items():
-        final = sum(counts[i] for i in GROUPS[group])
-        note = (f"The census counts of its islands added up: {', '.join(GROUPS[group])}."
-                if len(GROUPS[group]) > 1 else "Kanton, the group's one inhabited island.")
-        labels = [REPORT_ROWS[i] for i in GROUPS[group]]
-        median = median_fields(group, group, None, cod, report, compared, final)
+    for label, unit in group_units.items():
+        name, islands, why = DRAWN_GROUPS[label]
+        final = sum(counts[i] for i in islands)
+        whole = sorted(islands) == sorted(GROUPS.get(label, []))
+        note = (f"{why} " if why else "") + (
+            f"The census counts of its islands added up: {', '.join(islands)}."
+            if len(islands) > 1 else "Kanton, the group's one inhabited island.")
+        if not whole and label in GROUPS:
+            group = sum(counts[i] for i in GROUPS[label])
+            note += f" The {label.replace(' Islands', '')} group as a whole counted {group:,}."
+        labels = [REPORT_ROWS[i] for i in islands]
+        # SPC tabulates the group the census groups it; a polygon that draws
+        # another set of islands takes the sum of those islands' rows.
+        ages = dict(cod)
+        if not whole:
+            parts = [cod[i] for i in islands if i in cod]
+            ages[name] = combine(parts, [1] * len(parts))
+        median = median_fields(label if whole else name, name, None, ages, report, compared,
+                               final)
         fields = small({**census_fields(final, note), **median,
-                        **report_fields(labels, report, group),
-                        **religion_fields([T6_ROWS[i] for i in GROUPS[group]], table6, group)},
+                        **report_fields(labels, report, name),
+                        **religion_fields([T6_ROWS[i] for i in islands], table6, name)},
                        labels, report)
-        census.append(unit_record("KIR", group, unit["name"], unit, "admin1", None,
+        census.append(unit_record("KIR", label, name, unit, "admin1", None,
                                   sources("median_age_note" in median), **fields))
     for island, unit in island_units.items():
         note = "The 2020 census count (Island Profile tables)."
