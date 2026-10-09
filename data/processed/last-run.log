@@ -1,12 +1,36 @@
-india_census: Census 2011, level=state
-  validated against published national totals: 640 districts, 1,210,854,977 people
-  national sex ratio 943 females per 1,000 males (623,270,258 males, 587,584,719 females)
-  C-01 Appendix: https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx
-  C-01 Appendix: /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW00C-01 Appendix MDDS.xlsx
-  C-01 Appendix: 35 states, 83 named religions, 7,788,066 of the 7,937,734 people in 'Other religions and persuasions'
-  split Jammu And Kashmir: Ladakh 274,289, Jammu and Kashmir 12,267,013
-  split Andhra Pradesh: Telangana 35,193,978, Andhra Pradesh 49,386,799
-  merged Dadra and Nagar Haveli and Daman and Diu: 586,956 from Dadra and Nagar Haveli 343,709, Daman and Diu 243,247
-  wrote data/processed/india_state.json (180 kB)
-  36 records, 36 with religion shares, 0 explicit gaps carrying their reason
-  groups beyond C-01's eight columns (20): ADI DHARM, Addi Bassi, Adim dhamm, Animist, Atheist, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Khasi, Nani Intiya, Niamtre, Nocte, Other religions (not separately named), Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Tribal Religion, Yumasam
+  512 pages
+  Indv03: 7,136,898 characters from https://censusresults.nsonepal.gov.np/files/longform-dataset/Indv03_PopulationBySingleYear.csv
+  recovered 339 justified row(s)
+  ethnicity: 85 areas
+  ethnicity _total: 29,164,578 vs published 29,164,578 (0.0000%)
+  ethnicity Kshetri: 4,796,995 vs published 4,796,995 (0.0000%)
+  ethnicity Brahman - Hill: 3,292,373 vs published 3,292,373 (0.0000%)
+  ethnicity Magar: 2,013,498 vs published 2,013,498 (0.0000%)
+  ethnicity Tharu: 1,807,124 vs published 1,807,124 (0.0000%)
+  ethnicity Tamang: 1,639,866 vs published 1,639,866 (0.0000%)
+  language: 85 areas
+  language Nepali: 13,084,457 vs published 13,084,457 (0.0000%)
+  language Maithili: 3,222,389 vs published 3,222,389 (0.0000%)
+  language Bhojpuri: 1,820,795 vs published 1,820,795 (0.0000%)
+  language Tharu: 1,714,091 vs published 1,714,091 (0.0000%)
+  language Tamang: 1,423,075 vs published 1,423,075 (0.0000%)
+  religion: 85 areas
+  religion _total: 29,164,578 vs published 29,164,578 (0.0000%)
+  religion Hindu: 23,677,744 vs published 23,677,744 (0.0000%)
+  religion Bouddha: 2,393,549 vs published 2,393,549 (0.0000%)
+  religion Islam: 1,483,066 vs published 1,483,066 (0.0000%)
+  religion Kirat: 924,204 vs published 924,204 (0.0000%)
+  religion Christian: 512,313 vs published 512,313 (0.0000%)
+  Indv03: 85 areas; every area's single years add up, the districts make their provinces and the provinces Nepal, age by age, and every area's persons, males and females are Annex 1's
+  Bara -> shape 79688334B75970147852459 (labelled 'Bara'), 763,137 people
+  Parsa -> shape 79688334B59716070388160 (labelled 'Bara'), 654,471 people
+  Siraha -> shape 79688334B4946100078623 (labelled 'Saptari'), 739,953 people
+  Saptari -> shape 79688334B89786345808010 (labelled 'Saptari'), 706,255 people
+  Dailekh -> shape 79688334B23259783147235 (labelled 'Jajarkot'), 252,313 people
+  Jajarkot -> shape 79688334B34133508701345 (labelled 'Rukum_W'), 189,360 people
+  Rupandehi -> shape 79688334B17767934844471 (labelled 'Nawalapur'), 1,121,957 people
+  Rukum East and Rukum West -> shape 79688334B6316349348825 (labelled 'Rukum_E'), 223,526 people
+  Nawalpur and Parasi -> shape 79688334B71878033214617 (labelled 'Nawalparasi'), 764,947 people
+  wrote data/processed/nepal_province.json (68 kB)
+  wrote data/processed/nepal_district.json (581 kB)
+  7 provinces, 75 districts
