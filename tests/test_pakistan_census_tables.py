@@ -209,6 +209,13 @@ class TestTable10(unittest.TestCase):
                          ["Pakistani", "Afghan"])
         self.assertIn("not as ethnicity", fields["ethnicity_note"])
 
+    def test_the_census_bangali_is_kept_as_printed(self):
+        # The census's word names a people; whose citizens they are it does not say.
+        fields = t.nationality_fields({"PAKISTANI": 90, "AFGHANI": 0, "BANGALI": 10,
+                                       "CHINESE": 0, "OTHERS": 0}, 100, "u")
+        self.assertEqual([g["group"] for g in fields["ethnicity"]], ["Pakistani", "Bangali"])
+        self.assertNotIn("Bangladeshi", fields["ethnicity_note"])
+
 
 class TestMerges(unittest.TestCase):
     def test_drawn_parent_takes_its_carved_out_district(self):

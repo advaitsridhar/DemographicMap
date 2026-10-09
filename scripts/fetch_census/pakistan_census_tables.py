@@ -100,12 +100,16 @@ AGE_LABEL = re.compile(r"^(?:ALL AGES|BELOW 1|(\d{1,3}) -- (\d{1,3})|"
 OPEN_FROM = 75
 
 NATIONALITIES = ("PAKISTANI", "AFGHANI", "BANGALI", "CHINESE", "OTHERS")
-# Nationality adjectives, as the owner's rule asks. "Bangali" is the census's
-# printing of the category; Bangladeshi is the nationality it names.
+# Nationality adjectives, as the owner's rule asks, where the census's word is
+# one ("Afghani" is the currency's name, Afghan the people's). "Bangali" is
+# kept as the census prints it: it is the Urdu name of the Bengali people, not
+# of a state, and nothing the Bureau publishes says that the people it counts
+# under it -- 23,850 of them in Karachi, where Bengalis long settled in
+# Pakistan live -- hold Bangladesh's citizenship rather than none.
 NATIONALITY_LABELS = {
     "PAKISTANI": "Pakistani",
     "AFGHANI": "Afghan",
-    "BANGALI": "Bangladeshi",
+    "BANGALI": "Bangali",
     "CHINESE": "Chinese",
     "OTHERS": "Other nationalities",
 }
@@ -446,8 +450,9 @@ def nationality_fields(counts: dict[str, int], persons: int, url: str,
         "ethnicity_basis": "nationality",
         "ethnicity_note": (
             "Nationality, not ethnicity: Census 2023 Table 10 counts everyone "
-            "enumerated by nationality -- Pakistani, Afghani, Bangali (shown "
-            "as Bangladeshi), Chinese and others -- and the Bureau's own "
+            "enumerated by nationality -- Pakistani, Afghani, Bangali, Chinese "
+            "and others; 'Bangali' is kept as printed, the census not saying "
+            "whose citizenship those it counts under it hold -- and the Bureau's own "
             "National Census Report says the question \"can be called and "
             "understood as citizenship, or more generally as subject or "
             "belonging to a sovereign state, and not as ethnicity\". The census "
