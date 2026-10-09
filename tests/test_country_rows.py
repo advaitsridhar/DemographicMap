@@ -156,7 +156,7 @@ class CountedPeople(unittest.TestCase):
 class CountriesNotSummed(unittest.TestCase):
     def test_an_older_census_does_not_replace_a_newer_national_figure(self):
         for key in (("VNM", "religion"), ("THA", "ethnicity"), ("THA", "religion"),
-                    ("VUT", "language"), ("LBN", "ethnicity")):
+                    ("VUT", "language"), ("LBN", "ethnicity"), ("TLS", "religion")):
             self.assertIn(key, be.COUNTRY_NOT_SUMMED)
         country = {"id": "VNM", "codes": {"iso3": "VNM"},
                    "population": {"value": 2_000, "year": 2019},
@@ -316,7 +316,7 @@ class CuratedFile(unittest.TestCase):
             if (r["country"], r["field"]) not in {
                     ("VNM", "religion"), ("IRN", "religion"), ("KGZ", "ethnicity"),
                     ("KGZ", "language"), ("TKM", "ethnicity"), ("TKM", "language"),
-                    ("MNG", "ethnicity"), ("PRK", "ethnicity")}:
+                    ("MNG", "ethnicity"), ("PRK", "ethnicity"), ("TLS", "religion")}:
                 continue
             for g in r.get("groups") or []:
                 placed = (group_tree.parent_of(r["field"], g["group"]) is not None
@@ -330,10 +330,20 @@ class CuratedFile(unittest.TestCase):
                                         ("KGZ", "language"): 6_936_156,
                                         ("TKM", "ethnicity"): 7_057_841,
                                         ("TKM", "language"): 7_057_841,
-                                        ("MNG", "ethnicity"): 3_174_565}.items():
+                                        ("MNG", "ethnicity"): 3_174_565,
+                                        ("TLS", "religion"): 1_248_705}.items():
             r = self.row(country, field)
             self.assertEqual(sum(g["count"] for g in r["groups"]), total, (country, field))
             self.assertIn(f"{total:,}", r["note"], (country, field))
+
+    def test_timor_leste_s_2022_table(self):
+        r = self.row("TLS", "religion")
+        self.assertEqual(r["year"], 2022)
+        self.assertIn("basic table 4.07", r["source"])
+        counts = {g["group"]: g["count"] for g in r["groups"]}
+        self.assertEqual((counts["Catholic"], counts["Traditional religion"],
+                          counts["Not stated"]), (1_217_157, 240, 239))
+        self.assertIn("3 and over in private households", r["note"])
 
     def test_north_korea_s_military_camps(self):
         note = self.row("PRK", "ethnicity")["note"]

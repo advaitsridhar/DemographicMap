@@ -4201,6 +4201,12 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # table (data/curated/admin0_detail.json).
     ("VNM", "religion"): "its provinces' religion is the 2009 census's, and the "
                          "country's is the 2019 census's",
+    # timor gives the 13 municipalities the 2015 census's priority table 11,
+    # the newest religion by municipality: the 2022 census published religion
+    # for the country only (Main Report basic table 4.07), and the country
+    # carries that table (data/curated/admin0_detail.json).
+    ("TLS", "religion"): "its municipalities' religion is the 2015 census's, and the "
+                         "country's is the 2022 census's",
     # thailand_nationality and thailand give the 76 provinces the 2000
     # census's provincial reports, the last to print nationality and religion
     # by province. The country's figures are later: the Factbook's 2015

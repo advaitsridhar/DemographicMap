@@ -5588,6 +5588,62 @@
    "url": "https://statistics.gov.sb/download/60/solomon-islands-2019-population-and-housing-census-national-report_volume-1-and-2/1207/solomon-islands-2019-census-report-vol-2_basic-tables_operations.pdf",
    "license": "None stated -- Solomon Islands National Statistics Office publication, cited as such",
    "note": "The median age of the Solomon Islands' 720,956 people in the 2019 census, as the report's summary of main indicators prints it, which its own five-year age groups (Table P3.1) reproduce. It stands in place of the Factbook's 25.5 for 2025. The provinces carry medians from the same census."
+  },
+  {
+   "country": "TLS",
+   "field": "religion",
+   "year": 2022,
+   "source": "Population and Housing Census 2022, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Main Report basic table 4.07: population in private households 3 years of age and older, by sex, five-year age group, and by religion",
+   "url": "https://inetl-ip.gov.tl/wp-content/uploads/2023/05/Chapter-4-TLPHC-Census-report-Basic-tables.xlsx",
+   "license": "Official statistics of INETL, I.P., cited as published",
+   "note": "Religion as each person declared it in the 2022 census, for the whole country: the Total row of basic table 4.07 of the census's Main Report, the 1,248,705 people aged 3 and over in private households, with the counts as printed; its columns make that total exactly. 'Traditional religion' is the table's 'Indigenous religion', the 2015 census's 'Traditional', and 'Not stated' its 'No answer'. The 2022 census published religion for the country only, so the municipalities carry the 2015 census's, the latest by municipality.",
+   "groups": [
+    {
+     "group": "Catholic",
+     "pct": 97.5,
+     "count": 1217157
+    },
+    {
+     "group": "Protestant/Evangelical",
+     "pct": 2.0,
+     "count": 25511
+    },
+    {
+     "group": "Muslim",
+     "pct": 0.3,
+     "count": 3202
+    },
+    {
+     "group": "No religion",
+     "pct": 0.1,
+     "count": 797
+    },
+    {
+     "group": "Buddhism",
+     "pct": 0.0,
+     "count": 378
+    },
+    {
+     "group": "Traditional religion",
+     "pct": 0.0,
+     "count": 240
+    },
+    {
+     "group": "Hinduism",
+     "pct": 0.0,
+     "count": 161
+    },
+    {
+     "group": "Other religion",
+     "pct": 0.1,
+     "count": 1020
+    },
+    {
+     "group": "Not stated",
+     "pct": 0.0,
+     "count": 239
+    }
+   ]
   }
  ]
 }
