@@ -1,8 +1,6 @@
-https://stat.bora.dopa.go.th/new_stat/webPage/statByYear.php: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
-https://stat.bora.dopa.go.th/: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
-https://catalog.dopa.go.th/: URLError: <urlopen error timed out>
-https://gdcatalog.dopa.go.th/: URLError: <urlopen error [Errno -2] Name or service not known>
-https://www.dopa.go.th/: HTTP 403 text/html 854 B
-  <html style="height:100%"><head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/_Incapsula_Resourc
-https://data.go.th/dataset: HTTP 403 text/html; charset=UTF-8 1369 B
-  <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Access Denied</title> <style> body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f3f4f6; color: #333; } .container { 
+india_census: Census 2011, level=district
+  validated against published national totals: 640 districts, 1,210,854,977 people
+  C-01 Appendix: /home/runner/work/DemographicMap/DemographicMap/data/raw/india/c01/DDW00C-01 Appendix MDDS.xlsx
+  wrote data/processed/india_district.json (2822 kB)
+  735 records, 734 with religion shares, 1 explicit gaps carrying their reason
+  groups beyond C-01's eight columns (31): ADI DHARM, Addi Bassi, Adi, Adim dhamm, Animist, Atheist, Bahai / Bahais, Bidin, Doni Polo / Sidonyi Polo, Gond / Gondi, Heraka, Idu / Idu Mishmi, Intaya, Jews / Judaism, Khasi, Nani Intiya, Niamtre, Nocte, Non Christians, Nyarino, Other religions (not separately named), Pagan, Parsi/Zorastrian, Rangfra, Sanamahi, Sari Dharma, Sarna, Songsarek, Traditional Religion, Tribal Religion, Yumasam
