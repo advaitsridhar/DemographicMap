@@ -1,5 +1,6 @@
-== https://vbos.gov.vu/images/Public_Documents/Census_Surveys/Census/2020/2020_Vanuatu_National_Population_and_Housing_Census_-_Analytical_report_Volume_2.pdf
-  HTTP 200 application/pdf 10,628,723 bytes
-  119 pages
-  page 29: 1241x1754 -> data/processed/page_images/2020-Vanuatu-National-Population-and-Hou-p29.jpg (316,658 bytes)
-  page 30: 1241x1754 -> data/processed/page_images/2020-Vanuatu-National-Population-and-Hou-p30.jpg (396,812 bytes)
+kazakhstan: /home/runner/work/DemographicMap/DemographicMap/data/raw/kazakhstan/ethnic-groups-2025.xlsx
+  РКобл: 20 columns, 73 rows
+  admin1: 16 records
+  wrote data/processed/kazakhstan_oblast.json (123 kB)
+  admin2: 174 records
+  wrote data/processed/kazakhstan_district.json (889 kB)
