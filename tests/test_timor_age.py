@@ -113,5 +113,88 @@ class PostsTest(unittest.TestCase):
             t.post_records(posts, [{"id": "1", "name": "Hatolia"}])
 
 
+# 2015 tables 6 and 7, for one municipality (Ermera) with two posts.
+def six_row(name, g):
+    """g: (0-14, 15-64, 65+, 17-60, 60+) for males; females the same."""
+    return [name] + [2 * v for v in g] + list(g) + list(g)
+
+
+def seven_row(name, g):
+    """g: (3-5, 6-11, 12-14, 15-17, 18-21, 22-24, 25-29) for males; females the same."""
+    return [name] + [2 * v for v in g] + list(g) + list(g)
+
+
+YOUNG = ((50, 40, 10, 35, 15), (8, 16, 8, 8, 10, 6, 10))   # middle person under 30
+OLD = ((10, 70, 20, 60, 25), (2, 4, 2, 2, 3, 2, 4))         # middle person 30-64
+
+
+def tables_2015(old=OLD, extra=0):
+    labels6 = ["0 - 14", "15 - 64", "65+", "17-60", "60+"] * 3
+    labels7 = ["3 - 5", "6 - 11", "12-14", "15 - 17", "18 - 21", "22-24", "25-29"] * 3
+    add = lambda a, b: tuple(x + y for x, y in zip(a, b))  # noqa: E731
+    mun6, mun7 = add(YOUNG[0], old[0]), add(YOUNG[1], old[1])
+    grid6 = [["Table 6 Child..."], [""], ["Municipality", "Population/Age"],
+             ["", "Total", "", "", "", "", "Male"], [""] + labels6,
+             [float(i) for i in range(1, 17)], [""],
+             six_row("TIMOR-LESTE", mun6), [""],
+             six_row("ERMERA", add(mun6, (extra, 0, 0, 0, 0))),
+             six_row("Hatulia", YOUNG[0]), six_row("Ermera", old[0]), [""],
+             ["1Special Administrative Region"]]
+    grid7 = [["Table 7 Popu..."], [""], ["Municipality", "Population/Age"],
+             ["", "Total"], [""] + labels7, [float(i) for i in range(1, 23)], [""],
+             seven_row("TIMOR-LESTE", mun7), [""], seven_row("ERMERA", mun7),
+             seven_row("Hatulia", YOUNG[1]), seven_row("Ermera", old[1]), [""]]
+    return grid6, grid7
+
+
+class Posts2015Test(unittest.TestCase):
+    def test_ten_groups_and_the_median(self):
+        units = t.read_2015_groups(*tables_2015())
+        hatulia = next(u for u in units.values() if u["name"] == "Hatulia")
+        groups = hatulia["groups"]["T"]
+        self.assertEqual(groups[0], (0, 2, 2 * (50 - 8 - 16 - 8)))       # 0-2 from table 6
+        self.assertEqual(groups[-2], (30, 64, 2 * (40 - 8 - 10 - 6 - 10)))  # 30-64
+        self.assertEqual(sum(n for *_, n in groups), 2 * 100)
+        # 200 people: 36 + 16 + 32 + 16 = 100 by age 14, so the middle is the
+        # 14/15 boundary.
+        self.assertEqual(t.fine_median(groups), 15.0)
+        medians = t.post_medians_2015(units, [{"id": "1", "name": "Hatolia"},
+                                             {"id": "2", "name": "Ermera"}])
+        self.assertEqual(medians["Hatolia"]["median_age"]["value"], 15.0)
+        self.assertEqual(medians["Hatolia"]["median_age"]["year"], 2015)
+        # Ermera's middle person is in 30-64: a stated gap, not a guess.
+        self.assertEqual(medians["Ermera"]["median_age"]["status"], "not_available")
+
+    def test_parts_must_make_their_municipality(self):
+        with self.assertRaises(SystemExit):
+            t.read_2015_groups(*tables_2015(extra=1))
+
+    def test_school_ages_beyond_the_broad_group_refuse(self):
+        bad = ((10, 70, 20, 60, 25), (20, 4, 2, 2, 3, 2, 4))      # 3-14 over 0-14
+        with self.assertRaises(SystemExit):
+            t.read_2015_groups(*tables_2015(old=bad))
+
+    def test_a_polygon_with_no_2015_post_refuses(self):
+        units = t.read_2015_groups(*tables_2015())
+        with self.assertRaises(SystemExit):
+            t.post_medians_2015(units, [{"id": "1", "name": "Hatolia"},
+                                        {"id": "2", "name": "Ermera"},
+                                        {"id": "3", "name": "Railaco"}])
+
+    def test_single_years_check_the_groups(self):
+        units = t.read_2015_groups(*tables_2015())
+        country = next(u for u in units.values() if u["kind"] == "country")
+        ages = t.Counter()
+        for lo, hi, n in country["groups"]["T"]:
+            top = 85 if hi is None else hi
+            for a in range(lo, top + 1):
+                ages[a] += n / (top - lo + 1)
+        singles = {"country": ages, "Ermera": ages}
+        t.check_2015_groups(units, singles)          # the groups' own spread: agrees
+        skew = t.Counter({0: sum(ages.values())})
+        with self.assertRaises(SystemExit):
+            t.check_2015_groups(units, {"country": skew, "Ermera": skew})
+
+
 if __name__ == "__main__":
     unittest.main()
