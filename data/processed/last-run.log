@@ -1,35 +1,98 @@
-sea_composed: religion and ethnicity on the polygons no one census area is
-  Myanmar: https://data.humdata.org/dataset/2689fec5-6a1a-4773-8a0b-304445c52fe7/resource/788f18ae-67a2-456b-8111-c4edf97baa34/download/burma_uscb_202003.xlsx
-    SHAN STATE / WA SELF-ADMINISTERED DIVISION: 4 of 6 townships carry no ethnicity figures (Mongmao, Pangwaun, Pangsang, Narphan)
-    SHAN STATE / WA SELF-ADMINISTERED DIVISION: 4 of 6 townships carry no religion figures (Mongmao, Pangwaun, Pangsang, Narphan)
-    SHAN STATE / KENGTUNG: 1 of 5 townships carry no ethnicity figures (Mongla)
-    SHAN STATE / KENGTUNG: 1 of 5 townships carry no religion figures (Mongla)
-  districts and zones whose townships make them: 78 for ethnicity, 78 for religion
-  ethnicity: the 74 polygons make the Union's 47,809,979; units with no figures: Mongmao, Pangwaun, Narphan, Pangsang
-  religion: the 74 polygons make the Union's 49,011,760; units with no figures: Mongmao, Pangwaun, Narphan, Pangsang
-    Hkamti: Hkamti district; Lay Shi, Lahe, Nanyun of the Naga self-administered zone -- ethnicity 373,352, religion 370,874
-    Hopang: Hopan, Mongmao, Pangwaun of the Wa self-administered division -- ethnicity none (2 parts without figures), religion none (2 parts without figures)
-    Katha: Katha district; Kawlin district -- ethnicity 860,522, religion 861,061
-    Kyaukme: Kyaukme district; Namhsan, Manton of the Palaung self-administered zone -- ethnicity 629,121, religion 635,279
-    Laukkaing: Laukine, Konkyan of the Kokang self-administered zone -- ethnicity 97,395, religion 97,395
-    Matman: Makman, Narphan, Pangsang of the Wa self-administered division -- ethnicity none (2 parts without figures), religion none (2 parts without figures)
-    Mindat: Mindat district; Matupi district -- ethnicity 227,897, religion 228,045
-    Tachileik: Tachileik district; Mong Hpayak district -- ethnicity 235,018, religion 235,018
-    Taunggyi: Taunggyi district; Pindaya, Ywangan of the Danu self-administered zone; Hopong, Hsihseng, Pinlaung of the Pa-O self-administered zone -- ethnicity 1,559,537, religion 1,569,134
-    Yangon (West): Yangon -- ethnicity 808,369, religion 867,881
-    Mandalay (first level): MANDALAY and NAY PYI TAW -- ethnicity 6,778,236, religion 6,841,080
-  Philippines: https://data.humdata.org/dataset/809dfb22-77f4-482c-8560-79b07d20fc15/resource/5acff37e-0c02-4d89-bbd2-1825ee98916c/download/philippines_uscb_202402.xlsx
-    groups a whole and its parts print differently, 30 people in all: Buhid Mangyan 19 against 49
-  the National Capital Region's 17 places make its row, and each is in one district
-  Cotabato City: no row; the Bangsamoro region's religion 4,723,191 against its provinces' 4,723,191; ethnicity 4,723,191 against its provinces' 4,723,191 (Basilan, Lanao Del Sur, Maguindanao, Sulu, Tawi-Tawi)
-    NCR, Second District: Mandaluyong, Marikina, Pasig, Quezon City, San Juan -- religion 4,748,925, ethnicity 4,748,925
-    NCR, Third District: Caloocan, Malabon, Navotas, Valenzuela -- religion 2,998,412, ethnicity 2,998,412
-    NCR, Fourth District: Las Piñas, Makati, Muntinlupa, Parañaque, Pasay, Pateros, Taguig -- religion 3,818,429, ethnicity 3,818,429
-  household language for the polygons clear_global_language.json's rows miss:
-    NCR, City of Manila, First District: CLEAR Global's Metropolitan Manila First District (PH13039), Tagalog 91.6, Cebuano 1.8, Maranao 1.8
-    NCR, Second District: CLEAR Global's Metropolitan Manila Second District (PH13074), Tagalog 94.9, Cebuano 1.5, Iloko 0.8
-    NCR, Third District: CLEAR Global's Metropolitan Manila Third District (PH13075), Tagalog 97.6, Cebuano 1.0, Bikol 0.3
-    NCR, Fourth District: CLEAR Global's Metropolitan Manila Fourth District (PH13076), Tagalog 94.7, Cebuano 1.5, Bikol 0.7
-    Isabela: CLEAR Global's PHL-CG-PH02031 not used -- CLEAR Global's tabulation of the 2010 census has a row for Isabela (PSGC 02031), and it is not used: beside the province...
-  wrote data/processed/sea_composed.json (173 kB)
-  wrote sea_composed.json: 18 records
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
+  warn("""Cannot parse header or footer so it will be ignored""")
+  Age-Sex Estimates: 356 rows; age-column suffixes ['_6', '_7']
+    suffix _6: B0004_6 = Both Sexes 0 to 4 years, 2016 est.
+    suffix _7: B0004_7 = Both sexes 0 to 4 years, 2017 est.
+  national YEMEN (level 0.0)
+    _6: total 27,431,707 (printed 27431706.645733256), men 13956000.0, women 13475706.645733252, median 17.6; shares 0:18.2 5:15.7 10:10.9 15:10.1 20:9.8 25:8.7 30:6.7 35:5.2 40:3.7 45:2.8 50:2.4 55:1.9 60:1.4 65:1.0 70:0.7 75:0.4 80:0.4
+    _7: total 28,177,859 (printed 28177858.80273334), men 14334000.000000004, women 13843858.802733341, median 17.5; shares 0:17.9 5:15.7 10:11.5 15:9.8 20:9.6 25:8.7 30:6.9 35:5.3 40:3.9 45:2.8 50:2.4 55:1.9 60:1.4 65:1.0 70:0.7 75:0.4 80:0.4
+  13 AMĀNAT AL ‘ĀŞIMAH (level 1.0)
+    _6: total 2,821,334 (printed 2821333.6250885697), men 1530409.2208966112, women 1290924.4041919596, median 14.3; shares 0:22.9 5:19.5 10:8.8 15:7.1 20:7.6 25:7.4 30:7.1 35:6.0 40:3.8 45:2.6 50:2.3 55:1.8 60:1.2 65:0.8 70:0.5 75:0.3 80:0.2
+    _7: total 2,948,472 (printed 2948472.3191673253), men 1597580.125409727, women 1350892.193757598, median 13.9; shares 0:22.4 5:19.3 10:10.6 15:6.6 20:7.3 25:7.2 30:6.8 35:6.0 40:4.1 45:2.6 50:2.2 55:1.8 60:1.2 65:0.8 70:0.5 75:0.3 80:0.2
+  1301 ŞAN‘Ā’ AL QADĪMAH (level 2.0)
+    _6: total 107,840 (printed 107839.59413483462), men 57139.818755631975, women 50699.77537920262, median 17.4; shares 0:19.6 5:18.1 10:8.8 15:7.3 20:8.1 25:7.9 30:7.6 35:6.5 40:4.0 45:2.8 50:2.5 55:2.2 60:1.7 65:1.2 70:0.8 75:0.5 80:0.4
+    _7: total 112,743 (printed 112742.6099051193), men 59688.443142729186, women 53054.166762390116, median 16.7; shares 0:19.2 5:17.9 10:10.5 15:6.8 20:7.7 25:7.7 30:7.3 35:6.5 40:4.3 45:2.8 50:2.5 55:2.2 60:1.7 65:1.2 70:0.8 75:0.5 80:0.4
+  1302 SHU‘ŪB (level 2.0)
+    _6: total 378,360 (printed 378360.30585133727), men 201497.70244681125, women 176862.603404526, median 13.6; shares 0:23.2 5:20.1 10:9.3 15:7.3 20:7.3 25:7.0 30:6.8 35:5.9 40:3.8 45:2.6 50:2.2 55:1.7 60:1.1 65:0.8 70:0.5 75:0.3 80:0.2
+    _7: total 395,863 (printed 395863.0108225593), men 210622.98444988613, women 185240.02637267302, median 13.3; shares 0:22.6 5:19.9 10:11.2 15:6.8 20:6.9 25:6.7 30:6.6 35:5.9 40:4.0 45:2.6 50:2.1 55:1.7 60:1.2 65:0.8 70:0.5 75:0.3 80:0.2
+  1303 AZĀL (level 2.0)
+    _6: total 207,831 (printed 207830.6344492647), men 110203.44134158509, women 97627.1931076796, median 13.2; shares 0:23.9 5:20.3 10:9.1 15:7.2 20:7.3 25:6.9 30:6.4 35:5.4 40:3.4 45:2.4 50:2.3 55:1.9 60:1.4 65:0.9 70:0.6 75:0.3 80:0.3
+    _7: total 217,365 (printed 217364.8919215457), men 115146.5338102626, women 102218.35811128303, median 13.0; shares 0:23.4 5:20.0 10:11.0 15:6.7 20:6.9 25:6.6 30:6.1 35:5.4 40:3.7 45:2.4 50:2.3 55:1.9 60:1.4 65:0.9 70:0.6 75:0.3 80:0.3
+  1304 AŞ ŞĀFĪYAH (level 2.0)
+    _6: total 183,564 (printed 183563.97570047865), men 102394.55788406047, women 81169.41781641814, median 15.1; shares 0:22.3 5:18.9 10:8.6 15:7.1 20:8.0 25:7.9 30:7.3 35:6.1 40:3.8 45:2.6 50:2.3 55:1.9 60:1.3 65:0.8 70:0.5 75:0.3 80:0.2
+    _7: total 191,695 (printed 191695.15177308896), men 106780.68685724644, women 84914.4649158425, median 14.5; shares 0:21.8 5:18.8 10:10.4 15:6.6 20:7.6 25:7.6 30:7.0 35:6.1 40:4.1 45:2.6 50:2.3 55:1.9 60:1.3 65:0.8 70:0.5 75:0.3 80:0.2
+  1305 AS SAB‘ĪN (level 2.0)
+    _6: total 542,984 (printed 542984.4800947118), men 295650.9338817061, women 247333.5462130057, median 14.3; shares 0:22.3 5:19.7 10:9.2 15:7.3 20:7.6 25:7.3 30:7.0 35:6.0 40:4.0 45:2.7 50:2.3 55:1.8 60:1.1 65:0.7 70:0.4 75:0.2 80:0.2
+    _7: total 567,974 (printed 567973.8680714404), men 308975.3576943079, women 258998.51037713265, median 13.9; shares 0:21.8 5:19.5 10:11.1 15:6.9 20:7.2 25:7.0 30:6.7 35:6.1 40:4.2 45:2.7 50:2.3 55:1.8 60:1.1 65:0.7 70:0.4 75:0.2 80:0.2
+  1306 AL WAḨDAH (level 2.0)
+    _6: total 171,159 (printed 171158.97870542298), men 94283.5532208393, women 76875.4254845837, median 18.9; shares 0:19.7 5:17.0 10:7.9 15:6.9 20:8.9 25:8.9 30:8.1 35:6.8 40:4.2 45:2.9 50:2.7 55:2.3 60:1.5 65:1.0 70:0.6 75:0.3 80:0.2
+    _7: total 178,486 (printed 178486.36504962796), men 98164.9801151346, women 80321.38493449331, median 18.3; shares 0:19.3 5:16.9 10:9.5 15:6.5 20:8.5 25:8.6 30:7.8 35:6.8 40:4.5 45:2.9 50:2.7 55:2.3 60:1.6 65:1.0 70:0.6 75:0.3 80:0.2
+  1307 AT TAḨRĪR (level 2.0)
+    _6: total 111,995 (printed 111995.3269758439), men 63143.92543826923, women 48851.40153757465, median 20.0; shares 0:19.4 5:16.4 10:7.6 15:6.7 20:8.9 25:9.1 30:8.8 35:7.4 40:4.3 45:2.9 50:2.6 55:2.1 60:1.5 65:1.0 70:0.7 75:0.4 80:0.3
+    _7: total 116,704 (printed 116704.13793438354), men 65692.11284277354, women 51012.02509161, median 19.4; shares 0:19.0 5:16.3 10:9.1 15:6.3 20:8.5 25:8.8 30:8.4 35:7.4 40:4.6 45:2.9 50:2.5 55:2.1 60:1.6 65:1.1 70:0.7 75:0.4 80:0.3
+  1308 MA‘ĪN (level 2.0)
+    _6: total 473,979 (printed 473978.602664752), men 261664.33657994072, women 212314.26608481127, median 14.3; shares 0:23.8 5:19.0 10:8.3 15:6.8 20:8.0 25:7.9 30:7.3 35:6.1 40:3.8 45:2.5 50:2.1 55:1.6 60:1.1 65:0.7 70:0.4 75:0.3 80:0.2
+    _7: total 494,512 (printed 494512.00823145354), men 272592.40335212124, women 221919.60487933227, median 13.9; shares 0:23.3 5:18.9 10:10.0 15:6.4 20:7.6 25:7.6 30:7.1 35:6.1 40:4.0 45:2.5 50:2.1 55:1.6 60:1.1 65:0.7 70:0.4 75:0.3 80:0.2
+  1309 ATH THAWRAH (level 2.0)
+    _6: total 299,090 (printed 299089.8550501975), men 162742.57883085075, women 136347.2762193468, median 15.0; shares 0:22.3 5:19.0 10:8.7 15:7.1 20:8.1 25:7.9 30:7.2 35:6.0 40:3.9 45:2.7 50:2.3 55:1.8 60:1.2 65:0.7 70:0.4 75:0.3 80:0.2
+    _7: total 312,372 (printed 312372.44285895565), men 169754.92681432248, women 142617.51604463335, median 14.4; shares 0:21.9 5:18.9 10:10.5 15:6.7 20:7.7 25:7.6 30:7.0 35:6.1 40:4.1 45:2.7 50:2.2 55:1.8 60:1.2 65:0.8 70:0.5 75:0.3 80:0.2
+  1310 BANĪ AL ḨĀRITH (level 2.0)
+    _6: total 344,532 (printed 344531.87146172696), men 181688.3725169164, women 162843.49894481062, median 10.9; shares 0:26.7 5:21.7 10:9.4 15:6.9 20:6.0 25:5.6 30:6.2 35:5.5 40:3.4 45:2.3 50:1.9 55:1.5 60:1.1 65:0.8 70:0.5 75:0.3 80:0.3
+    _7: total 360,758 (printed 360757.8325991509), men 190161.69633094297, women 170596.13626820783, median 11.1; shares 0:26.0 5:21.4 10:11.3 15:6.5 20:5.7 25:5.4 30:6.0 35:5.5 40:3.6 45:2.3 50:1.8 55:1.5 60:1.1 65:0.8 70:0.5 75:0.3 80:0.3
+  20 DHAMĀR (level 1.0)
+    _6: total 1,862,000 (printed 1862000.0000000002), men 926000.0000000001, women 935999.9999999999, median 15.5; shares 0:20.5 5:16.6 10:11.8 15:10.5 20:9.4 25:7.9 30:5.9 35:4.5 40:3.1 45:2.3 50:2.1 55:1.7 60:1.3 65:0.9 70:0.7 75:0.4 80:0.4
+    _7: total 1,913,000 (printed 1912999.9999999995), men 952000.0, women 961000.0, median 15.4; shares 0:20.4 5:16.6 10:12.2 15:10.3 20:9.3 25:7.9 30:6.1 35:4.5 40:3.2 45:2.3 50:2.0 55:1.7 60:1.3 65:0.9 70:0.6 75:0.4 80:0.3
+  23 ŞAN‘Ā’ (level 1.0)
+    _6: total 1,405,666 (printed 1405666.3749114298), men 718590.7791033884, women 687075.5958080409, median 17.1; shares 0:18.9 5:15.8 10:11.0 15:10.2 20:9.6 25:8.5 30:6.8 35:5.3 40:3.5 45:2.6 50:2.2 55:1.8 60:1.3 65:1.0 70:0.7 75:0.4 80:0.4
+    _7: total 1,435,528 (printed 1435527.680832675), men 733419.8745902729, women 702107.8062424017, median 17.1; shares 0:18.7 5:15.9 10:11.4 15:9.8 20:9.4 25:8.5 30:6.9 35:5.4 40:3.8 45:2.6 50:2.1 55:1.8 60:1.3 65:1.0 70:0.7 75:0.4 80:0.4
+  2301 HAMDĀN (level 2.0)
+    _6: total 154,641 (printed 154641.2962570042), men 79484.46760739514, women 75156.82864960906, median 16.6; shares 0:19.4 5:16.5 10:10.9 15:10.0 20:9.5 25:8.4 30:6.9 35:5.4 40:3.4 45:2.4 50:2.1 55:1.7 60:1.3 65:0.9 70:0.6 75:0.4 80:0.3
+    _7: total 158,508 (printed 158507.90967825954), men 81428.10508553138, women 77079.80459272816, median 16.5; shares 0:19.1 5:16.5 10:11.6 15:9.6 20:9.2 25:8.3 30:6.9 35:5.5 40:3.6 45:2.4 50:2.0 55:1.7 60:1.3 65:0.9 70:0.6 75:0.4 80:0.3
+  2302 ARḨAB (level 2.0)
+    _6: total 110,876 (printed 110876.45972500501), men 56873.18227060941, women 54003.27745439559, median 18.5; shares 0:16.5 5:14.2 10:11.4 15:11.2 20:11.1 25:9.6 30:6.7 35:4.9 40:3.4 45:2.5 50:2.2 55:1.9 60:1.5 65:1.1 70:0.8 75:0.5 80:0.4
+    _7: total 112,497 (printed 112496.87119918362), men 57640.89057976658, women 54855.98061941702, median 18.6; shares 0:16.3 5:14.3 10:11.6 15:10.8 20:10.9 25:9.7 30:6.9 35:5.0 40:3.6 45:2.5 50:2.2 55:1.9 60:1.5 65:1.1 70:0.8 75:0.5 80:0.4
+  2303 NIHM (level 2.0)
+    _6: total 51,586 (printed 51586.18488869986), men 26588.656155753706, women 24997.528732946175, median 17.2; shares 0:19.2 5:15.1 10:11.1 15:10.4 20:10.1 25:8.9 30:7.3 35:5.5 40:3.2 45:2.2 50:2.0 55:1.7 60:1.3 65:0.9 70:0.6 75:0.4 80:0.3
+    _7: total 52,366 (printed 52366.09522558595), men 26969.33271115675, women 25396.762514429203, median 17.3; shares 0:19.0 5:15.2 10:11.2 15:10.1 20:9.9 25:9.0 30:7.6 35:5.6 40:3.3 45:2.2 50:2.0 55:1.7 60:1.3 65:0.9 70:0.6 75:0.3 80:0.2
+  2304 BANĪ ḨUSHAYSH (level 2.0)
+    _6: total 91,430 (printed 91429.9311873336), men 46063.54752805114, women 45366.38365928247, median 18.7; shares 0:16.2 5:14.1 10:11.4 15:11.2 20:11.3 25:9.9 30:7.1 35:5.2 40:3.4 45:2.4 50:2.1 55:1.7 60:1.3 65:1.0 70:0.7 75:0.4 80:0.4
+    _7: total 92,790 (printed 92790.37317724903), men 46707.43209131745, women 46082.94108593158, median 18.8; shares 0:16.0 5:14.2 10:11.6 15:10.9 20:11.1 25:10.0 30:7.3 35:5.3 40:3.6 45:2.5 50:2.1 55:1.8 60:1.3 65:1.0 70:0.7 75:0.4 80:0.4
+  2305 SANḨAN (level 2.0)
+    _6: total 322,210 (printed 322209.6317425869), men 169895.31901077827, women 152314.3127318086, median 13.7; shares 0:23.1 5:19.4 10:10.2 15:8.4 20:7.6 25:6.8 30:6.5 35:5.5 40:3.6 45:2.5 50:2.0 55:1.5 60:1.1 65:0.8 70:0.5 75:0.3 80:0.3
+    _7: total 334,240 (printed 334240.2282007798), men 176219.9595889348, women 158020.26861184512, median 13.5; shares 0:22.6 5:19.3 10:11.6 15:8.0 20:7.2 25:6.7 30:6.4 35:5.6 40:3.8 45:2.5 50:1.9 55:1.5 60:1.1 65:0.8 70:0.5 75:0.3 80:0.3
+  2306 BILĀD AR RŪS (level 2.0)
+    _6: total 38,608 (printed 38607.85190796942), men 19469.989681785126, women 19137.862226184283, median 18.0; shares 0:18.5 5:14.6 10:10.8 15:10.3 20:10.4 25:9.2 30:6.9 35:5.2 40:3.5 45:2.6 50:2.3 55:1.9 60:1.4 65:1.0 70:0.7 75:0.4 80:0.4
+    _7: total 39,187 (printed 39186.67833453336), men 19744.665468387495, women 19442.012866145862, median 18.1; shares 0:18.3 5:14.7 10:10.9 15:10.0 20:10.2 25:9.3 30:7.1 35:5.3 40:3.7 45:2.6 50:2.2 55:1.9 60:1.4 65:1.0 70:0.7 75:0.4 80:0.4
+  2307 BANĪ MAŢAR (level 2.0)
+    _6: total 122,649 (printed 122649.07636877995), men 62193.38387466151, women 60455.69249411843, median 18.4; shares 0:16.5 5:14.3 10:11.5 15:11.1 20:10.6 25:9.2 30:6.7 35:5.0 40:3.5 45:2.6 50:2.4 55:2.1 60:1.5 65:1.2 70:0.8 75:0.6 80:0.5
+    _7: total 124,452 (printed 124451.84337143139), men 63032.258774397495, women 61419.58459703392, median 18.5; shares 0:16.4 5:14.4 10:11.6 15:10.8 20:10.4 25:9.2 30:6.9 35:5.1 40:3.7 45:2.6 50:2.4 55:2.1 60:1.5 65:1.1 70:0.8 75:0.5 80:0.4
+  2308 AL ḨAYMAH AD DĀKHLĪYAH (level 2.0)
+    _6: total 102,953 (printed 102953.43335325114), men 52134.44594774538, women 50818.987405505744, median 17.9; shares 0:18.5 5:14.7 10:10.8 15:10.3 20:10.2 25:9.0 30:6.9 35:5.3 40:3.6 45:2.6 50:2.2 55:1.8 60:1.4 65:1.1 70:0.8 75:0.5 80:0.4
+    _7: total 104,510 (printed 104509.95487654285), men 52874.06422048229, women 51635.89065606053, median 18.0; shares 0:18.3 5:14.7 10:10.9 15:10.0 20:10.0 25:9.1 30:7.1 35:5.4 40:3.8 45:2.6 50:2.1 55:1.8 60:1.4 65:1.1 70:0.7 75:0.5 80:0.4
+  2309 AL ḨAYMAH AL KHĀRJĪYAH (level 2.0)
+    _6: total 72,384 (printed 72383.91346982776), men 36320.883178770026, women 36063.03029105772, median 17.7; shares 0:19.4 5:14.8 10:10.5 15:9.8 20:9.8 25:8.7 30:6.8 35:5.3 40:3.7 45:2.7 50:2.4 55:2.0 60:1.5 65:1.1 70:0.7 75:0.5 80:0.4
+    _7: total 73,485 (printed 73485.06340956534), men 36838.721697056506, women 36646.34171250882, median 17.8; shares 0:19.2 5:14.9 10:10.6 15:9.5 20:9.6 25:8.8 30:7.0 35:5.4 40:3.9 45:2.7 50:2.3 55:2.0 60:1.5 65:1.1 70:0.7 75:0.5 80:0.3
+  2310 MANĀKHAH (level 2.0)
+    _6: total 97,013 (printed 97013.14397445641), men 47432.382610279084, women 49580.76136417731, median 18.5; shares 0:17.3 5:14.3 10:11.0 15:10.4 20:9.6 25:8.4 30:7.1 35:5.7 40:4.0 45:2.9 50:2.4 55:2.0 60:1.5 65:1.2 70:0.9 75:0.6 80:0.5
+    _7: total 98,524 (printed 98523.66954984573), men 48120.7639958321, women 50402.90555401361, median 18.6; shares 0:17.1 5:14.4 10:11.1 15:10.1 20:9.4 25:8.5 30:7.3 35:5.8 40:4.2 45:2.9 50:2.4 55:2.0 60:1.5 65:1.2 70:0.9 75:0.6 80:0.5
+  2311 ŞA‘AFĀN (level 2.0)
+    _6: total 41,446 (printed 41446.14885176002), men 20025.7014261779, women 21420.44742558212, median 19.3; shares 0:15.7 5:13.8 10:11.2 15:10.8 20:9.9 25:8.7 30:7.2 35:5.8 40:4.0 45:3.0 50:2.4 55:2.1 60:1.7 65:1.4 70:1.0 75:0.6 80:0.5
+    _7: total 42,095 (printed 42095.11585497554), men 20315.652556878136, women 21779.463298097413, median 19.4; shares 0:15.5 5:13.9 10:11.4 15:10.5 20:9.7 25:8.8 30:7.4 35:5.9 40:4.3 45:3.0 50:2.4 55:2.1 60:1.7 65:1.3 70:1.0 75:0.6 80:0.5
+  2312 KHAWLĀN (level 2.0)
+    _6: total 35,662 (printed 35661.6687076834), men 18517.69911654477, women 17143.96959113864, median 17.1; shares 0:18.2 5:15.3 10:11.9 15:11.1 20:9.5 25:8.2 30:7.4 35:5.7 40:3.5 45:2.4 50:1.9 55:1.5 60:1.2 65:0.9 70:0.7 75:0.4 80:0.4
+    _7: total 36,210 (printed 36209.54589982417), men 18780.893059564256, women 17428.6528402599, median 17.1; shares 0:18.0 5:15.4 10:12.1 15:10.8 20:9.3 25:8.2 30:7.6 35:5.8 40:3.7 45:2.4 50:1.8 55:1.5 60:1.2 65:0.9 70:0.6 75:0.4 80:0.3
+  2313 AŢ ŢĪYĀL (level 2.0)
+    _6: total 44,579 (printed 44579.004457794304), men 22643.828830507853, women 21935.175627286466, median 18.0; shares 0:16.9 5:14.7 10:11.8 15:11.2 20:9.9 25:8.6 30:7.1 35:5.5 40:3.7 45:2.6 50:2.2 55:1.8 60:1.4 65:1.1 70:0.7 75:0.5 80:0.4
+    _7: total 45,257 (printed 45257.14223670908), men 22964.10146474574, women 22293.04077196334, median 18.0; shares 0:16.7 5:14.7 10:11.9 15:10.9 20:9.7 25:8.6 30:7.3 35:5.6 40:3.9 45:2.7 50:2.2 55:1.8 60:1.4 65:1.0 70:0.7 75:0.5 80:0.4
+  2314 BANĪ ḐABYĀN (level 2.0)
+    _6: total 20,098 (printed 20097.906187527165), men 10446.435748493483, women 9651.470439033686, median 16.9; shares 0:18.3 5:15.4 10:12.0 15:11.3 20:9.9 25:8.6 30:7.6 35:5.7 40:3.3 45:2.2 50:1.7 55:1.3 60:1.0 65:0.7 70:0.5 75:0.3 80:0.2
+    _7: total 20,407 (printed 20406.502672943985), men 10596.766610309647, women 9809.736062634342, median 16.9; shares 0:18.1 5:15.5 10:12.1 15:10.9 20:9.7 25:8.7 30:7.8 35:5.8 40:3.5 45:2.2 50:1.6 55:1.3 60:1.0 65:0.7 70:0.5 75:0.3 80:0.2
+  2315 AL ḨIŞN (level 2.0)
+    _6: total 37,152 (printed 37151.61400122689), men 18742.75849532077, women 18408.855505906115, median 18.2; shares 0:17.9 5:14.5 10:10.9 15:10.4 20:10.3 25:9.0 30:6.8 35:5.2 40:3.6 45:2.6 50:2.3 55:2.0 60:1.7 65:1.3 70:0.8 75:0.5 80:0.4
+    _7: total 37,709 (printed 37709.3541858521), men 18999.38502666143, women 18709.969159190667, median 18.3; shares 0:17.7 5:14.5 10:11.0 15:10.1 20:10.0 25:9.1 30:7.0 35:5.3 40:3.8 45:2.7 50:2.2 55:2.0 60:1.7 65:1.2 70:0.8 75:0.5 80:0.4
+  2316 JIḨĀNAH (level 2.0)
+    _6: total 62,379 (printed 62379.10983052368), men 31758.0976205152, women 30621.012210008492, median 18.5; shares 0:16.1 5:14.2 10:11.7 15:11.4 20:11.1 25:9.6 30:6.7 35:4.9 40:3.4 45:2.6 50:2.3 55:1.9 60:1.3 65:1.0 70:0.7 75:0.5 80:0.4
+    _7: total 63,291 (printed 63291.3329593931), men 32186.88165925088, women 31104.451300142224, median 18.6; shares 0:16.0 5:14.3 10:11.8 15:11.1 20:10.9 25:9.7 30:6.9 35:5.0 40:3.6 45:2.6 50:2.3 55:1.9 60:1.3 65:1.0 70:0.7 75:0.5 80:0.4
+  24 ‘ADAN (level 1.0)
+    _6: total 894,000 (printed 893999.9999999997), men 478999.99999999977, women 415000.0000000001, median 18.9; shares 0:18.3 5:17.4 10:8.7 15:7.2 20:7.4 25:7.2 30:7.1 35:6.4 40:5.1 45:4.1 50:3.4 55:2.7 60:1.9 65:1.3 70:0.9 75:0.5 80:0.4
+    _7: total 925,000 (printed 924999.9999999999), men 495999.99999999994, women 429000.00000000006, median 18.5; shares 0:17.8 5:17.0 10:10.4 15:6.9 20:7.1 25:7.1 30:6.9 35:6.4 40:5.2 45:4.2 50:3.4 55:2.7 60:1.9 65:1.3 70:0.9 75:0.5 80:0.4
