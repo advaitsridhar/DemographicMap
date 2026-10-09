@@ -1,69 +1,47 @@
-australia_profile: ABS 2021 Census G01, G02, G08, G13 and G14
-  C21_G01_LGA [1+2+3.P_1+20_24+25_34+35_44+45_54+55_64+0_4+5_14+15_19+65_74+75_84+GE85+D_O...]: 22,008 observations
-  C21_G02_LGA [1...]: 565 observations
-  C21_G08_LGA [._T...]: 18,645 observations
-  C21_G13_LGA [3._T+1+O_T+8+_N._T...]: 2,825 observations
-  C21_G01_SA2 [1+2+3.P_1..AUS+STE.]: 30 observations
-  C21_G02_SA2 [1..AUS+STE.]: 10 observations
-  C21_G08_SA2 [._T..AUS+STE.]: 330 observations
-  C21_G14_SA2 [.3..AUS+STE.]: 340 observations
-  C21_G13_SA2 [3.._T..AUS+STE.]: 470 observations
-  Australia English ancestry 33.0% (published 33.0%)
-  Australia Australian ancestry 29.9% (published 29.9%)
-  state 1: LGAs sum to 8,072,171, the state's own 8,072,163
-  state 2: LGAs sum to 6,503,503, the state's own 6,503,491
-  state 3: LGAs sum to 5,156,158, the state's own 5,156,138
-  state 4: LGAs sum to 1,781,501, the state's own 1,781,516
-  state 5: LGAs sum to 2,660,019, the state's own 2,660,026
-  state 6: LGAs sum to 557,570, the state's own 557,571
-  state 7: LGAs sum to 232,621, the state's own 232,605
-  state 8: LGAs sum to 454,495, the state's own 454,499
-  state 9: LGAs sum to 4,790, the state's own 4,788
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree for 10 regions
-  restricted SEXP='Persons' so the sexes are not counted twice
-  outermost level chosen by code tree less a duplicated parent for 10 regions
-  Australian Indigenous languages taken out of G13's 'Other': 1 5,494, 2 1,143, 3 19,498, 4 4,450, 5 11,493, 6 194, 7 36,077, 8 294, 9 12, AUS 78,656
-  Australia Christianity 43.9% (published 43.9%)
-  Australia English only 72.0% (published 72.0%)
-  Junee (14300): Among those aged 20 to 64, 157.1 males per 100 females (2,323 males, 1,479 females); at other ages, 105.3. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,332 people (1,127 males, 205 females), a count of where people were that night, whether or not they live here.
-  Burke (31950): Among those aged 20 to 64, 153.8 males per 100 females (160 males, 104 females); at other ages, 110.8. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 874 people (506 males, 368 females), a count of where people were that night, whether or not they live here.
-  Cloncurry (32450): Among those aged 20 to 64, 137.0 males per 100 females (1,369 males, 999 females); at other ages, 116.2. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 2,966 people (1,994 males, 972 females), a count of where people were that night, whether or not they live here.
-  Coober Pedy (41330): Among those aged 20 to 64, 122.3 males per 100 females (471 males, 385 females); at other ages, 144.4. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 900 people (515 males, 385 females), a count of where people were that night, whether or not they live here.
-  Unincorporated SA (49399): Among those aged 20 to 64, 143.7 males per 100 females (1,177 males, 819 females); at other ages, 120.8. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 4,063 people (2,932 males, 1,131 females), a count of where people were that night, whether or not they live here.
-  Ashburton (50250): Among those aged 20 to 64, 152.1 males per 100 females (3,111 males, 2,046 females); at other ages, 111.6. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 11,159 people (8,247 males, 2,912 females), a count of where people were that night, whether or not they live here.
-  Christmas Island (51710): Among those aged 20 to 64, 154.3 males per 100 females (682 males, 442 females); at other ages, 137.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 931 people (617 males, 314 females), a count of where people were that night, whether or not they live here.
-  Cue (52380): Among those aged 20 to 64, 223.8 males per 100 females (94 males, 42 females); at other ages, 144.4. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 448 people (343 males, 105 females), a count of where people were that night, whether or not they live here.
-  East Pilbara (53220): Among those aged 20 to 64, 205.4 males per 100 females (5,049 males, 2,458 females); at other ages, 116.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 15,846 people (12,650 males, 3,196 females), a count of where people were that night, whether or not they live here.
-  Laverton (54970): Among those aged 20 to 64, 246.6 males per 100 females (772 males, 313 females); at other ages, 136.6. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 3,422 people (2,821 males, 601 females), a count of where people were that night, whether or not they live here.
-  Leonora (55040): Among those aged 20 to 64, 184.8 males per 100 females (754 males, 408 females); at other ages, 119.3. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 2,936 people (2,351 males, 585 females), a count of where people were that night, whether or not they live here.
-  Meekatharra (55250): Among those aged 20 to 64, 161.5 males per 100 females (525 males, 325 females); at other ages, 127.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,676 people (1,283 males, 393 females), a count of where people were that night, whether or not they live here.
-  Menzies (55390): Among those aged 20 to 64, 313.0 males per 100 females (338 males, 108 females); at other ages, 162.5. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,225 people (1,021 males, 204 females), a count of where people were that night, whether or not they live here.
-  Peppermint Grove (56930): Among those aged 20 to 64, 87.1 males per 100 females (357 males, 410 females); at other ages, 63.4. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 182 people (16 males, 166 females), a count of where people were that night, whether or not they live here.
-  Perenjori (57000): Among those aged 20 to 64, 185.5 males per 100 females (282 males, 152 females); at other ages, 120.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 771 people (616 males, 155 females), a count of where people were that night, whether or not they live here.
-  Sandstone (57630): Among those aged 20 to 64, 204.0 males per 100 females (51 males, 25 females); at other ages, 272.7. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 223 people (167 males, 56 females), a count of where people were that night, whether or not they live here.
-  Wiluna (59250): Among those aged 20 to 64, 213.4 males per 100 females (254 males, 119 females); at other ages, 118.3. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,071 people (854 males, 217 females), a count of where people were that night, whether or not they live here.
-  Yalgoo (59350): Among those aged 20 to 64, 312.5 males per 100 females (200 males, 64 females); at other ages, 125.0. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 947 people (742 males, 205 females), a count of where people were that night, whether or not they live here.
-  Yilgarn (59360): Among those aged 20 to 64, 177.4 males per 100 females (541 males, 305 females); at other ages, 130.7. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 1,154 people (948 males, 206 females), a count of where people were that night, whether or not they live here.
-  Darwin Waterfront Precinct (71150): Among those aged 20 to 64, 149.0 males per 100 females (149 males, 100 females); at other ages, 166.7. On census night its non-private dwellings -- hotels and motels, staff quarters, hostels, hospitals, prisons and the like -- held 386 people (197 males, 189 females), a count of where people were that night, whether or not they live here.
-  no polygon, counted in its state only: No usual address (NSW) (19499, 11,371 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (NSW) (19799, 0 people)
-  no polygon, counted in its state only: No usual address (Vic.) (29499, 9,089 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Vic.) (29799, 38 people)
-  no polygon, counted in its state only: No usual address (Qld) (39499, 14,670 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Qld) (39799, 183 people)
-  no polygon, counted in its state only: No usual address (SA) (49499, 3,377 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (SA) (49799, 12 people)
-  no polygon, counted in its state only: No usual address (WA) (59499, 8,055 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (WA) (59799, 514 people)
-  no polygon, counted in its state only: No usual address (Tas.) (69499, 1,377 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (Tas.) (69799, 19 people)
-  no polygon, counted in its state only: No usual address (NT) (79499, 3,500 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (NT) (79799, 99 people)
-  no polygon, counted in its state only: No usual address (ACT) (89499, 605 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (ACT) (89799, 0 people)
-  no polygon, counted in its state only: No usual address (OT) (99499, 11 people)
-  no polygon, counted in its state only: Migratory - Offshore - Shipping (OT) (99799, 0 people)
-  18 LGA codes have no polygon; 0 of them are not a no-usual-address or migratory code: []
-  {'admin1': 9, 'admin2': 547} records; median age on 556, ancestry on 556
-  wrote data/processed/australia_profile.json (2753 kB)
+iran_ali: 12 province file(s) in /home/runner/work/DemographicMap/DemographicMap/data/raw/iran
+  Language_Distribution_Bushehr_20260921.csv: 747 rows, province Bushehr (بوشهر)
+    655 rows carry a language estimate; 78 of them no population in either year; 0 refused; 0 uninhabited
+    Bushehr: 99.7% covered, modelled, largest group Dashtesuni 21.9%
+  Language_Distribution_Chahar_Mahal_va_Bakhtiari_20260921.csv: 873 rows, province Chahār Mahāl va Bakhtiāri (چهارمحال و بختیاری)
+    797 rows carry a language estimate; 42 of them no population in either year; 0 refused; 0 uninhabited
+    Chaharmahal and Bakhtiari: 99.8% covered, modelled, largest group Bakhtiāri 58.2%
+  Language_Distribution_Esfahan_20260921.csv: 2,129 rows, province Esfahān (اصفهان)
+    1,926 rows carry a language estimate; 467 of them no population in either year; 3 refused; 0 uninhabited
+    Isfahan: 98.6% covered, modelled, largest group Tehrāni type Persian 30.0%
+    Aran and Bidgol: the atlas's settlements cover 37.8% of the county's 97,409 people; nothing written
+  Language_Distribution_Gilan_20260921.csv: 3,125 rows, province Gilān (گیلان)
+    one county spelled two ways, read as one: Rudsar: Rud Sar, Rudsar
+    2,956 rows carry a language estimate; 86 of them no population in either year; 3 refused; 338 uninhabited
+    Gilan: 73.1% covered, modelled, largest group Standard type Persian 55.9%
+    Rasht: the atlas's settlements cover 28.5% of the county's 956,971 people; nothing written
+  Language_Distribution_Hamadan_20260921.csv: 1,094 rows, province Hamadān (همدان)
+    1,085 rows carry a language estimate; 27 of them no population in either year; 1 refused; 0 uninhabited
+    Hamadan: 100.1% covered, modelled, largest group Turkic 35.0%
+  Language_Distribution_Hormozgan_20260921.csv: 1,908 rows, province Hormozgān (هرمزگان)
+    1,765 rows carry a language estimate; 155 of them no population in either year; 0 refused; 0 uninhabited
+    Hormozgan: 99.7% covered, modelled, largest group Banderi of Bandar Abbās 19.8%
+    Abu Musā: no second-level shape -- geoBoundaries draws no second-level shape for the island; Hormozgan's twelve do not include it.
+  Language_Distribution_Ilam_20260921.csv: 779 rows, province Ilām (ایلام)
+    689 rows carry a language estimate; 118 of them no population in either year; 0 refused; 0 uninhabited
+    Ilam: 99.0% covered, modelled, largest group Ēlāmi 33.7%
+    Shirvān va Chardāvol: no second-level shape -- the boundary file draws Chardavol and Sirvan as two counties where ALI writes one, and there is no figure for either apart.
+  Language_Distribution_Kermanshah_20260921.csv: 849 rows, province Kermānshāh (کرمانشاه)
+    792 rows carry a language estimate; 92 of them no population in either year; 0 refused; 0 uninhabited
+    Kermanshah: the atlas's settlements cover 18.6% of the province's 1,945,227 people; below 60%, so no figure is written
+  Language_Distribution_Khuzestan_20260921.csv: 6,777 rows, province Khuzestān (خوزستان)
+    4,090 rows carry a language estimate; 702 of them no population in either year; 1 refused; 0 uninhabited
+    Khuzestan: 101.3% covered, modelled, largest group Khuzestāni Arabic 33.7%
+  Language_Distribution_Kohgiluyeh_va_Boyer_Ahmad_20260921.csv: 2,327 rows, province Kohgiluyeh va Boyer Ahmad ()
+    1,660 rows carry a language estimate; 265 of them no population in either year; 0 refused; 0 uninhabited
+    Kohgiluyeh and Boyer-Ahmad: 99.4% covered, modelled, largest group Boyerahmadi 39.4%
+  Language_Distribution_Kordestan_20260921.csv: 1,850 rows, province Kordestān (کردستان)
+    1,729 rows carry a language estimate; 62 of them no population in either year; 0 refused; 0 uninhabited
+    Kurdistan: 100.0% covered, modelled, largest group Central Kurdish 78.7%
+  Language_Distribution_Lorestan_20260921.csv: 3,568 rows, province Lorestān ()
+    3,008 rows carry a language estimate; 396 of them no population in either year; 0 refused; 0 uninhabited
+    Lorestan: 99.5% covered, modelled, largest group Laki of Lorestan 27.9%
+  11 province(s) and 96 shahrestan(s) written; 3 unit(s) left as a stated gap; 2 name(s) matched no shape
+    gap: Aran and Bidgol -- the atlas's settlements cover 37.8% of the county's 97,409 people
+    gap: Rasht -- the atlas's settlements cover 28.5% of the county's 956,971 people
+    gap: Kermanshah -- the atlas's settlements cover 18.6% of the province's 1,945,227 people
+  wrote data/processed/iran_ali_language.json (331 kB)
