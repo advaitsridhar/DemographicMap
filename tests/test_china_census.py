@@ -215,7 +215,8 @@ class Counties(unittest.TestCase):
         # Its count is a stated gap, not a bare one: the SAR's count would be
         # read as the polygon's own.
         self.assertEqual(hk["population"]["status"], "not_available")
-        self.assertIn("is not written on this one", hk["population"]["note"])
+        self.assertIn("is not written here", hk["population"]["note"])
+        self.assertIn("441 km²", hk["population"]["note"])
 
     def test_the_coloane_fragment_is_not_macau(self):
         sliver = self.records[COLOANE]
