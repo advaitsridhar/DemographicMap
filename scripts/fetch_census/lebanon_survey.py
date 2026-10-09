@@ -64,7 +64,6 @@ SOURCE = ("Central Administration of Statistics (Lebanon), Labour Force and Hous
           "Conditions Survey 2018-2019, Table HL.6A: residents by group of nationality and caza")
 LICENCE = "Central Administration of Statistics (Lebanon), published survey tables"
 BASIS = "survey estimate: nationality, residents of residential dwellings"
-DECISION = "19 September 2026"
 CITIZENS = "Lebanese"
 OTHERS = "Foreign nationals"
 # CAS: "Estimation below 2500 have a relative standard error above 20%".
@@ -86,6 +85,8 @@ LANGUAGE_WHY = (f"Lebanon has taken no census since 1932, and {SURVEY} asks no l
 AGE_SEX_WHY = ("Lebanon has taken no census since 1932; the only official figures of residents "
                f"by sex and age for a caza are survey estimates ({SURVEY}), which this map takes "
                "for compositions only, never for a count, a ratio or a median.")
+# The year the cazas' population statement was checked (see fields).
+DISPLACES_BEFORE = 2026
 POPULATION_WHY = ("Lebanon has taken no census since 1932, so no count of a governorate's or a "
                   "caza's residents exists; the only official figures of them are survey "
                   f"estimates ({SURVEY}), which this map takes for compositions only, never for "
@@ -195,8 +196,9 @@ def note(name: str, leb: float, non: float, parts: list[str] | None = None) -> s
         f"workers living there are not in these figures. CAS publishes no sample size per "
         f"caza; each caza is one of the design's 26 strata, allocated at least 68 of its about "
         f"2,700 sample ilots (a few slightly fewer after fieldwork). Lebanon has held no census "
-        f"since 1932. Nationality, not ethnicity: carried on this field under the owner's "
-        f"decision of {DECISION}; 'Lebanese' is every Lebanese citizen, of whatever community.")
+        f"since 1932. Nationality, not ethnicity: the survey tabulates nationality and no "
+        f"ethnic or confessional group, so nationality is shown here in place of ethnicity; "
+        f"'Lebanese' is every Lebanese citizen, of whatever community.")
     if parts:
         text_ += " The sum of the survey's estimates for the cazas " + ", ".join(parts) + "."
     if non < RELIABLE:
@@ -206,8 +208,20 @@ def note(name: str, leb: float, non: float, parts: list[str] | None = None) -> s
     return text_
 
 
-def fields(name: str, leb: float, non: float, parts: list[str] | None = None
-           ) -> dict[str, Any]:
+def fields(name: str, leb: float, non: float, parts: list[str] | None = None,
+           displace: bool = False) -> dict[str, Any]:
+    """A unit's nationality shares and why its other fields are empty.
+
+    ``displace`` (the cazas): the population statement also displaces an
+    encyclopaedia's figure for the caza, dated before ``DISPLACES_BEFORE`` or
+    undated (the build's ``displaces_before`` and ``displaces_undated``), so
+    that every caza says the same thing: Wikidata's undated 511,200 stood on
+    Baabda alone of the 26, against the survey's 553,801 residents there.
+    """
+    population = gap(NOT_AVAILABLE, POPULATION_WHY)
+    if displace:
+        population = dict(population, displaces_before=DISPLACES_BEFORE,
+                          displaces_undated=True)
     return {
         "ethnicity": shares({CITIZENS: leb * 1000, OTHERS: non * 1000}),
         "ethnicity_year": YEAR,
@@ -215,7 +229,7 @@ def fields(name: str, leb: float, non: float, parts: list[str] | None = None
         "ethnicity_note": note(name, leb, non, parts),
         "religion": gap(NOT_AVAILABLE, RELIGION_WHY),
         "language": gap(NOT_AVAILABLE, LANGUAGE_WHY),
-        "population": gap(NOT_AVAILABLE, POPULATION_WHY),
+        "population": population,
         "median_age": gap(NOT_AVAILABLE, AGE_SEX_WHY),
         "sex_ratio": gap(NOT_AVAILABLE, AGE_SEX_WHY),
         "sources": [{"field": "ethnicity", "name": SOURCE, "url": URL, "year": YEAR,
@@ -260,7 +274,7 @@ def build(hl6: list[list[Any]], hl5: list[list[Any]], admin1: list[dict[str, Any
                 f"LBN-LFHLCS-{CAZAS[caza]}", unit["name"], level="admin2", parent=ISO3,
                 country=ISO3, parent_name=region, match_by="shape_id", shape_id=unit["id"],
                 aliases=[caza] if caza != unit["name"] else None,
-                **fields(caza, leb, non)))
+                **fields(caza, leb, non, displace=True)))
     drawn1 = {u["name"]: u for u in admin1}
     check(sorted(by_region) == sorted(drawn1),
           f"lebanon_survey: cazas fall in {sorted(by_region)}, drawn {sorted(drawn1)}")

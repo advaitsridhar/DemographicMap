@@ -111,6 +111,18 @@ class TheSurvey(unittest.TestCase):
                 self.assertIn("compositions only", r[field]["note"], (r["name"], field))
             self.assertIn("no count", r["population"]["note"], r["name"])
 
+    def test_every_caza_and_only_a_caza_displaces_an_encyclopaedia_figure(self):
+        # Wikidata's undated 511,200 stood on Baabda alone of the 26 cazas;
+        # the governorates keep what fills them.
+        for r in self.rows.values():
+            pop = r["population"]
+            if r["level"] == "admin2":
+                self.assertEqual(pop["displaces_before"], ls.DISPLACES_BEFORE, r["name"])
+                self.assertIs(pop["displaces_undated"], True, r["name"])
+            else:
+                self.assertNotIn("displaces_before", pop, r["name"])
+            self.assertNotIn("owner", r["ethnicity_note"], r["name"])
+
     def test_keserwan_jbeil_is_the_sum_of_its_two_cazas(self):
         kj = self.rows["g" + str(sorted({g for gs in ls.GOVERNORATES.values() for g in gs})
                                   .index("Keserwan-Jbeil"))]

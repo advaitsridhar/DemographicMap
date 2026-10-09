@@ -76,19 +76,17 @@ NATIONAL = 32_175_224
 NATIONALITY_WHY = (
     "Saudi Arabia's 2022 census asks citizenship (Saudi or not, and which country), not "
     "ethnicity; citizenship may stand on this field, but no table of it by region could be "
-    "read: on 9 October 2026 the census portal's host (portal.saudicensus.sa) did not resolve "
-    "from the runner, GASTAT's census page on stats.gov.sa (statistics?index=119025) links no "
-    "table file, its content being drawn by script, the Saudi open-data portal "
-    "(open.data.gov.sa) did not answer, and OCHA's tables of the census carry region, sex and "
-    "age only.")
+    "read: the census portal (portal.saudicensus.sa) could not be reached, GASTAT's census "
+    "page on stats.gov.sa (statistics?index=119025) links no table file, its content being "
+    "drawn by script, the Saudi open-data portal (open.data.gov.sa) did not answer, and "
+    "OCHA's tables of the census carry region, sex and age only.")
 # And why the governorates the map draws hold no census figure at all
 # (probes 53337de and 63ebb11: cod-ps-sau's sheets are adm0 and adm1).
-OUT_OF_REACH = ("on 9 October 2026 the census portal's host (portal.saudicensus.sa) did not "
-                "resolve from the runner, GASTAT's census page on stats.gov.sa "
-                "(statistics?index=119025) links no table file, its content being drawn by "
-                "script, the Saudi open-data portal (open.data.gov.sa) did not answer, and "
-                "OCHA's tables of the census (cod-ps-sau) are of the kingdom and its regions "
-                "only")
+OUT_OF_REACH = ("the census portal (portal.saudicensus.sa) could not be reached, GASTAT's "
+                "census page on stats.gov.sa (statistics?index=119025) links no table file, "
+                "its content being drawn by script, the Saudi open-data portal "
+                "(open.data.gov.sa) did not answer, and OCHA's tables of the census "
+                "(cod-ps-sau) are of the kingdom and its regions only")
 GOVERNORATE_WHY = f"No table of the 2022 census by governorate could be read: {OUT_OF_REACH}."
 GOVERNORATE_NATIONALITY_WHY = (
     "Saudi Arabia's 2022 census asks citizenship (Saudi or not, and which country), not "

@@ -226,6 +226,12 @@ class TheRecords(unittest.TestCase):
             self.assertIn("not the places their labels name", out[0][field]["note"], field)
         self.assertIn("publishes no religion table", out[0]["religion"]["note"])
         self.assertEqual(out[0]["language"]["status"], "not_collected")
+        # The statement displaces an encyclopaedia's figure, dated or not:
+        # the shape is not the place its label names at any date.
+        self.assertEqual(out[0]["population"]["displaces_before"], jd.DISPLACES_BEFORE)
+        self.assertIs(out[0]["population"]["displaces_undated"], True)
+        self.assertNotIn("displaces_before", out[0]["sex_ratio"])
+        self.assertNotIn("October", out[0]["population"]["note"])
 
     def test_an_unknown_drawn_governorate_stops_the_run(self):
         year, est = jd.read_estimates(estimates_sheets())

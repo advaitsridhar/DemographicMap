@@ -138,9 +138,9 @@ LANGUAGE_WHY = (
     "No CBS table of language by district or sub-district could be found: the Statistical "
     "Abstract of Israel 2024's population chapter tabulates population group, religion, age "
     "and sex; UNdata's census tables reported to the UN Statistics Division hold no language "
-    "table for Israel; and the CBS's census and social-survey pages could not be read on 9 "
-    "October 2026 (their content is drawn by script, and the Internet Archive's index of the "
-    "2008 census site did not answer).")
+    "table for Israel; and the CBS's census and social-survey pages could not be read (their "
+    "content is drawn by script, and the Internet Archive's index of the 2008 census site did "
+    "not answer).")
 # Table 2.19: Israelis by age and sex (average 2023), with the CBS's median.
 URL_AGES = "https://www.cbs.gov.il/he/publications/doclib/2024/2.shnatonpopulation/st02_19x.xlsx"
 SOURCE_AGES = ("Central Bureau of Statistics (Israel), Statistical Abstract of Israel 2024 "

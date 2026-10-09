@@ -76,7 +76,9 @@ SOURCE_ESTIMATES = ("Department of Statistics (Jordan), Estimated Population of 
 SOURCE_CENSUS = ("Department of Statistics (Jordan), Population and Housing Census 2015, "
                  "Tables 3.1, 3.4 and 8.1")
 LICENCE = "Department of Statistics (Jordan), published statistics"
-DECISION = "19 September 2026"
+# The year the second-level statement was checked: an encyclopaedia's figure
+# dated before it gives way to the statement (see second_level).
+DISPLACES_BEFORE = 2026
 NO_RELIGION = (
     "Jordan's 2015 census asked each person's religion (its household form puts it beside "
     "sex and nationality: " + QUESTIONNAIRE + "), but the Department of Statistics publishes "
@@ -92,8 +94,9 @@ NO_LANGUAGE = (
 SECOND_LEVEL_WHY = (
     "The Department of Statistics counts people by liwa and qada (Table 2.4 of its population "
     "estimates; Table 3.1 of the 2015 census), but this map's second-level shapes are not the "
-    "places their labels name, so no liwa's or qada's figure can be put on one. Measured on 9 "
-    "October 2026: the shape labelled Wastiyyeh holds Irbid city and 94% of OpenStreetMap's "
+    "places their labels name, so no liwa's or qada's figure can be put on one. Measured on "
+    "the map's own shapes: the shape labelled Wastiyyeh holds Irbid city and 94% of "
+    "OpenStreetMap's "
     "outline of Irbid Qasabah liwa, while 98% of Al-Wastiyyah liwa lies in the shape labelled "
     "Irbid; the shape labelled Sahab holds most of Marka liwa (87%) as well as Sahab liwa "
     "(94%); and Salt Qasabah liwa is split among four shapes (44%, 23%, 19% and 13%).")
@@ -444,8 +447,8 @@ def build(year: int, estimates: dict[str, dict[str, int]], totals: dict[str, lis
             ethnicity_year=CENSUS_YEAR, ethnicity_basis="nationality",
             ethnicity_note=(
                 "Nationality, not ethnicity: the 2015 census records each person's "
-                "nationality and asks no ethnic question. Carried on this field under the "
-                f"owner's decision of {DECISION}. Everyone counted inside Jordan "
+                "nationality and asks no ethnic question, so the nationality it counts is "
+                "shown here in place of ethnicity. Everyone counted inside Jordan "
                 f"({everyone:,} people; Jordanians abroad left out): Jordanians from Table "
                 "3.1, everyone else by country of nationality from Table 8.1, the largest by "
                 "name and the rest by region. 'Palestinian' is Palestinian nationality "
@@ -459,7 +462,14 @@ def build(year: int, estimates: dict[str, dict[str, int]], totals: dict[str, lis
 
 def second_level(admin2: list[dict[str, Any]],
                  admin1: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Every drawn second-level shape, with why each of its fields is empty."""
+    """Every drawn second-level shape, with why each of its fields is empty.
+
+    The population statement displaces an encyclopaedia's figure for the
+    shape, dated or not (the build's ``displaces_before`` and
+    ``displaces_undated``): a figure for the place a label names is not the
+    shape's at any date. Wikidata's 88,900, undated, stood on the shape
+    labelled As-Salt, while Salt Qasabah liwa is split among four shapes.
+    """
     parents = {u["id"]: u["name"] for u in admin1}
     return [record(
         f"JOR-DOS-{unit['name']}-{unit['id'][-6:]}", unit["name"], level="admin2",
@@ -467,8 +477,10 @@ def second_level(admin2: list[dict[str, Any]],
         match_by="shape_id", shape_id=unit["id"],
         religion=gap(NOT_AVAILABLE, NO_RELIGION),
         language=collection_gap(ISO3, "language") or gap(NOT_COLLECTED, NO_LANGUAGE),
+        population=dict(gap(NOT_AVAILABLE, SECOND_LEVEL_WHY),
+                        displaces_before=DISPLACES_BEFORE, displaces_undated=True),
         **{f: gap(NOT_AVAILABLE, SECOND_LEVEL_WHY)
-           for f in ("population", "median_age", "sex_ratio", "ethnicity")})
+           for f in ("median_age", "sex_ratio", "ethnicity")})
         for unit in admin2]
 
 

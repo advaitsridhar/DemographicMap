@@ -59,7 +59,6 @@ SOURCE = ("Information & eGovernment Authority (Bahrain), Census 2020: Populatio
           "Governorate, Nationality Groups and Sex")
 URL = f"{BASE}/explore/dataset/{GROUPS}/"
 LICENCE = "Bahrain Open Data Portal terms (open government data)"
-DECISION = "19 September 2026"
 GOVERNORATES = ("Capital", "Muharraq", "Northern", "Southern")
 # The portal's population catalogue (60 datasets, read on 4 October 2026,
 # probe ecba12f) holds the 2020 census by governorate, nationality, sex, age,
@@ -181,8 +180,8 @@ def build(groups_rows: list[dict[str, Any]], totals_rows: list[dict[str, Any]],
             ethnicity_year=YEAR, ethnicity_basis="nationality",
             ethnicity_note=(
                 "Nationality, not ethnicity: the 2020 census tabulates each person's "
-                "nationality in eight groups, and no ethnic group. Carried on this "
-                f"field under the owner's decision of {DECISION}. GCC nationals are "
+                "nationality in eight groups, and no ethnic group, so the nationality it "
+                "counts is shown here in place of ethnicity. GCC nationals are "
                 "citizens of the other Gulf Cooperation Council states; the Arab, Asian, "
                 "African, European and North American groups are other countries' "
                 "nationals by region."),

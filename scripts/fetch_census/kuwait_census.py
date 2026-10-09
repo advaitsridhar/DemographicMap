@@ -98,9 +98,15 @@ SOURCE = ("Central Statistical Bureau (Kuwait), Register-based Census 2021, Tabl
 LICENCE = "Central Statistical Bureau of Kuwait, published census tables"
 OSM_SOURCE = ("OpenStreetMap contributors (ODbL), the areas' outlines "
               "(boundary=administrative, admin_level=6) read through the Overpass API")
-DECISION = "19 September 2026"
 # The census's total, the first figure on census.csb.gov.kw: 4,385,717.
 NATIONAL = 4_385_717
+# A polygon no census area can be bound to says why, and the statement
+# displaces an encyclopaedia's population for it dated before this year (the
+# build's ``displaces_before``), undated ones included (``displaces_undated``):
+# the polygon is not the census's area at any date. Wikidata's 393,432 (2014)
+# stood on the polygon labelled Jahra, which holds 38% of the census's
+# Al-Jahra area's ground and no census area mostly.
+DISPLACES_BEFORE = 2026
 # Table 1's governorates, in the order the area table lists them, and the
 # boundary file's labels for them.
 GOVERNORATES = {
@@ -722,8 +728,9 @@ def area_fields(names: list[str], areas: dict[str, dict[str, Any]],
             ethnicity=nationality_shares(kuwaiti, other, total), ethnicity_year=YEAR,
             ethnicity_basis="nationality",
             ethnicity_note=("Nationality, not ethnicity: Kuwaiti citizens and everyone else, "
-                            f"as Table 52 counts them. Carried on this field under the owner's "
-                            f"decision of {DECISION}."))
+                            "as Table 52 counts them. The census counts citizenship and no "
+                            "ethnic group, so citizenship is shown here in place of "
+                            "ethnicity."))
     return fields
 
 
@@ -808,7 +815,7 @@ def build(t1: list[list[Any]], t2: list[list[Any]], t6: list[list[Any]], t52: li
             ethnicity_year=YEAR, ethnicity_basis="nationality",
             ethnicity_note=(
                 "Nationality, not ethnicity: the census counts citizenship and no ethnic "
-                f"group. Carried on this field under the owner's decision of {DECISION}. "
+                "group, so citizenship is shown here in place of ethnicity. "
                 "Kuwaitis are Table 1's; GCC nationals are Table 6's Gulf group less the "
                 "Kuwaitis; the rest are Table 6's groups of other countries' citizens, its "
                 "'Australian' group (the continent's, beside the others) written as "
@@ -834,8 +841,9 @@ def build(t1: list[list[Any]], t2: list[list[Any]], t6: list[list[Any]], t52: li
                 median_age=gap(NOT_AVAILABLE, AREA_AGE_WHY),
                 religion=gap(NOT_AVAILABLE, RELIGION_WHY),
                 language=gap(NOT_AVAILABLE, LANGUAGE_WHY),
-                **{f: gap(NOT_AVAILABLE, why[sid])
-                   for f in ("population", "sex_ratio", "ethnicity")}))
+                population=dict(gap(NOT_AVAILABLE, why[sid]),
+                                displaces_before=DISPLACES_BEFORE, displaces_undated=True),
+                **{f: gap(NOT_AVAILABLE, why[sid]) for f in ("sex_ratio", "ethnicity")}))
             continue
         b = bound[sid]
         for n in b["names"]:

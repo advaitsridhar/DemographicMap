@@ -74,7 +74,6 @@ SOURCE_AGES = ("National Centre for Statistics and Information (Oman), Statistic
                "2024 (Issue 52), Table 9-2: population registered by age group and "
                "governorate, end of December 2023")
 LICENCE = "National Centre for Statistics and Information (Oman), published yearbook"
-DECISION = "19 September 2026"
 CITIZENS = "Omani citizens"
 # Table 9-2's governorates may differ from Table 7-2's by this share.
 AGES_SLACK = 0.005
@@ -292,7 +291,7 @@ def nationality(omani: float, expat: float) -> dict[str, Any]:
         "ethnicity_note": (
             "Nationality, not ethnicity: the NCSI's registers count Omanis (the civil "
             "register) and expatriates (the residence register), and no ethnic group. "
-            f"Carried on this field under the owner's decision of {DECISION}. 'Omani "
+            "Nationality is shown here in place of ethnicity. 'Omani "
             "citizens' is every Omani, of whatever people -- Arab, Baluchi, Jibbali, Mahri "
             "or another -- and the label names none of them."),
     }

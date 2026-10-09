@@ -154,6 +154,11 @@ class TheReader(unittest.TestCase):
         self.assertEqual(out["a4"]["population"]["status"], "not_available")
         self.assertIn("Jahra", out["a5"]["population"]["note"])
         self.assertIn("No census area", out["a4"]["population"]["note"])
+        # An unbound polygon's statement displaces an encyclopaedia's figure.
+        self.assertEqual(out["a4"]["population"]["displaces_before"], kc.DISPLACES_BEFORE)
+        self.assertIs(out["a4"]["population"]["displaces_undated"], True)
+        self.assertNotIn("displaces_before", out["a4"]["sex_ratio"])
+        self.assertNotIn("displaces_before", out["a1"]["population"])
 
     def test_every_empty_field_says_why(self):
         for rec in self.run_it():
