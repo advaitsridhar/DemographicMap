@@ -1,44 +1,118 @@
-cambodia_census: National Institute of Statistics, General Population Census of the Kingdom of Cambodia 2019, final results, Tables P-01 to P-25: population in normal or regular households by province, district and commune, and sex
-  fetched Final-General-Population-Census-2019-English.pdf (26.6 MB)
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139624657906768), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139624657906768), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139624657906768), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139624657906768), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139624657906768), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 139624657906768), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-  304 pages
-  the district row '211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0' is read as district 314, its communes' code
-  Table 2.1.1 'Tbong Khmum' read as province 25 (Tboung Khmum)
-  Table 2.1.1: 25 provinces making 15,552,211
-  district 302 Chamkar Leu: its row (5160, 5160, 5160, 5160) is not its communes' sum (24280, 101675, 48956, 52719); the communes' sum makes the province's total, and stands
-  district 801 Kandal Stueng: its row (74303, 332843, 160647, 172196) is not its communes' sum (22649, 100565, 48071, 52494); the communes' sum makes the province's total, and stands
-  province 14 Prey Veng: its total row (266934, 1049361, 492221, 557140) is not its districts' sum (266934, 1056866, 495906, 560960); the households agree and the districts' people fit in its 1,057,720 (Table 2.1.1), so the districts stand
-  province 17 Siemreap: its total row (224672, 994540, 484524, 510016) is not its districts' sum (224672, 989303, 481931, 507372); the households agree and the districts' people fit in its 1,014,234 (Table 2.1.1), so the districts stand
-  district 2202 Banteay Ampil: its row (12534, 54716, 27775, 26941) is not its communes' sum (12534, 51605, 25448, 26157); the communes' sum makes the province's total, and stands
-  Tables P-01..P-25: 202 districts and 1646 communes in 25 provinces, each district's communes and each province's districts making its row; 15,186,779 people in regular households
-  regular households' share of each province's people: lowest Preah Sihanouk 70.9%, Stung Treng 95.6%, Phnom Penh 95.9%, Pailin 96.1%, Otdar Meanchey 97.3%; provinces below 95%, whose district tables are not used: Preah Sihanouk (70.9%)
-  fetched KHM_AdminBoundaries_TabularData.xlsx (0.1 MB)
-  2018 gazetteer: ADM1 25, ADM2 197, ADM3 1633
-  commune 120603 Stueng Mean cheyTI 3 read as the 2018 Stueng Mean Chey (KH120601, 0.90)
-  commune 120604 Boeng Tumpun Ti 1 read as the 2018 Boeng Tumpun (KH120602, 0.88)
-  commune 120605 Boeng Tumpun Ti 2 read as the 2018 Boeng Tumpun (KH120602, 0.88)
-  commune 120701 Tuol Sangkae 1 read as the 2018 Tuol Sangke (KH120702, 0.91)
-  commune 120806 Krang Thnoang read as the 2018 Krang Thnong (KH120807, 0.96)
-  commune 120907 Chaom Chau Ti 3 read as the 2018 Chaom Chau (KH120904, 0.86)
-  commune 250221 Thma Pechr read as the 2018 Thma Pech (KH250713, 0.94)
-  commune 250303 Damrel read as the 2018 Damril (KH250403, 0.83)
-  commune 250308 Tuol Sophi read as the 2018 Tuol Souphi (KH250407, 0.95)
-  commune 250409 Roka Khnaor read as the 2018 Roka Khnor (KH250209, 0.95)
-  commune 250702 Chaom read as the 2018 Choam (KH250302, 0.80)
-  commune 250703 Chaom Kravien read as the 2018 Choam Kravien (KH250303, 0.92)
-  commune 250704 Chaom Ta Mau read as the 2018 Choam Ta Mau (KH250304, 0.90)
-  communes with no 2018 counterpart, counted with their own district (6): 40809 Kdol Senchey, 100506 Kranhung Saen Chey, 120808 Ou Baek K'am, 141004 Sangkat Ta Kao, 180106 Kaoh Rung Sanloeum, 180215 Ta Ney
-  commune 121301 Boeng Keng Kang Muoy read as the 2018 Boeng Keng Kang Ti Muoy (KH120102, 0.94)
-  commune 121302 Boeng Keng Kang Pir read as the 2018 Boeng Keng Kang Ti Pir (KH120103, 0.94)
-  commune 121303 Boeng Keng Kang Bei read as the 2018 Boeng Keng Kang Ti Bei (KH120104, 0.94)
-  census districts that are 2018 districts by name: 197, each whole in it; 2501 Krong Suong is KH2506; 2502 Tboung Khmum is KH2507; 2503 Ou Reang Ov is KH2504; 2504 Krouch Chhmar is KH2502; 2505 Dambae is KH2501; 2506 Ponhea Kraek is KH2505; 2507 Memot is KH2503
-  communes placed in 2018 districts: 1646; not placed (0): ; 2018 districts left incomplete (0): 
-  2018 districts on no polygon (0): ; polygons with no district (0): 
-  197 district polygons written, 4 of them with stated gaps (Kampong Seila, Preah Sihanouk, Prey Nob, Stueng Hav); drawn before a division and summed from their communes (7): Bakan <- Bakan, Ta Lou; Baray <- Baray, Taing Kouk; Chamkar Mon <- Chamkar Mon, Boeng Keng Kang; Dangkao <- Dangkao, Kambol; Phnum Kravanh <- Phnum Kravanh, Ta Lou; Pur SenChey <- Pou Saenchey, Kambol; Thala Barivat <- Thala Barivat, Borei O'Svay Sen Chey
-  wrote data/processed/cambodia_census.json (713 kB)
-  wrote cambodia_census.json: 222 records
+pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
+  Khyber Pakhtunkhwa
+    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
+    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+    MANSEHRA is one shape in the boundaries: summed 2 districts, 1,990,069 people
+    and its 31 districts are Table 9's districts
+  Punjab
+    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 36 districts add up to the province
+    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
+    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
+    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 36 districts add up to the province
+    JHANG is one shape in the boundaries: summed 2 districts, 4,628,663 people
+    SHEIKHUPURA is one shape in the boundaries: summed 2 districts, 5,684,248 people
+    and its 34 districts are Table 9's districts
+  Sindh
+    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
+    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
+    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+    KAMBAR SHAHDAD KOT is one shape in the boundaries: summed 2 districts, 3,299,322 people
+    THATTA is one shape in the boundaries: summed 2 districts, 1,922,483 people
+    and its 22 districts are Table 9's districts
+  Balochistan
+    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 34 districts add up to the province
+    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
+    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
+    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
+    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
+    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
+    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
+    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
+    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 34 districts add up to the province
+    KILLA ABDULLAH is one shape in the boundaries: summed 2 districts, 828,189 people
+    LORALAI is one shape in the boundaries: summed 2 districts, 474,408 people
+    SIBI is one shape in the boundaries: summed 2 districts, 351,719 people
+    ZHOB is one shape in the boundaries: summed 2 districts, 547,229 people
+    JAFFARABAD is one shape in the boundaries: summed 2 districts, 834,664 people
+    KALAT is one shape in the boundaries: summed 2 districts, 550,598 people
+    KHARAN is one shape in the boundaries: summed 2 districts, 562,719 people
+    and its 27 districts are Table 9's districts
+  Islamabad Capital Territory
+    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's religions sum to its own printed total
+    and the 1 districts add up to the province
+    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's mother tongues sum to its own printed total
+    and the 1 districts add up to the province
+    and its 1 districts are Table 9's districts
+  Azad Jammu and Kashmir
+  Gilgit-Baltistan
+  6 districts say what their Other language holds, and 1 what their Other religion does
+  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  Azad Jammu and Kashmir, from the territory's own yearbook
+    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
+    Table 15.24 named on page 15 with no rows under it: the contents, not the table
+    Table 15.24 on page 209: 10 districts
+    all 7 columns sum to the printed AJ&K row
+    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
+    Table 15.33 named on page 16 with no heading row under it: the contents, not the table
+    Table 15.33 on page 213: 10 districts, 8 languages
+    Mirpur: Table 15.33 sums to 97%, rescaled to 100 across its own languages
+    AJ&K languages: Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%
+    AJ&K Table 15.8: the row labelled 61 under 60-64 is age 62 by its place
+    AJ&K Table 15.8 misprint corrected -- age 26 territory males: +1,000 by its row and by its 25-29 group
+    AJ&K Table 15.8 misprint corrected -- age 26 territory persons: +1,000 by its row and by its 25-29 group
+    AJ&K Table 15.8 misprint corrected -- age 49 rural males: +4 by its row and by its 45-49 group
+    AJ&K Table 15.8 misprint corrected -- age 49 rural persons: +4 by its row and by its 45-49 group
+    AJ&K Table 15.8 misprint corrected -- age 60 rural males: -36 by its row and by its 60-64 group
+    AJ&K Table 15.8 misprint corrected -- age 60 rural persons: -36 by its row and by its 60-64 group
+    Table 15.8: 76 single years add up to their 15 groups and to the territory's 4,032,363, Table 15.24's population, in the rural, urban and territory columns alike
+  Gilgit-Baltistan, from the territory's own At a Glance
+    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
+    10 districts on page 3, summing to the territory's own printed 1,709,049
+  Gilgit-Baltistan's language, from the territory's own MICS
+    22,827,802 bytes from https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf
+    Table SR.3.1 named on page 6 with no language block under it: the contents, not the table
+    Table SR.3.1 on page 57: 6 languages over 6,929 households, 2025
+  11 records declaring what is not published, rather than leaving the field empty
+  133 units say why their ethnicity field is empty, which is that the census does not ask it
+  22 territory fields say why no age or sex ratio is published for them
+  wrote data/processed/pakistan_district.json (806 kB)
+  126 districts and 7 provinces
