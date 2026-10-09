@@ -124,6 +124,17 @@ SPELLINGS: dict[tuple[str, str], str] = {
     ("24", "SANG TAKHT"): "Sangi Takht", ("24", "KIJRAN"): "Kajran",
     ("24", "ASHTARLI"): "Ishtarlay",
     ("21", "CHEMTAL"): "Chimtal",
+    # From the first full run's leftovers.
+    ("33", "ANAR DARAH"): "Anar Dara", ("33", "SHEB KOH"): "Shib Koh",
+    ("17", "YAFTAL SOFLA"): "Yaftal Sufla", ("17", "WARDOJ"): "Warduj",
+    ("17", "DARAIM"): "Darayim", ("17", "TUSHKAN"): "Tashkan",
+    ("17", "SHAHR-E-BOZORG"): "Shahri Buzurg",
+    ("18", "DASHT-E-QALA"): "Dashti Qala",
+    ("20", "DARI SUF BALA"): "Dara-I-Sufi Bala", ("20", "HAZRAT SULTAN"): "Hazrati Sultan",
+    ("29", "PASHTOON KOT"): "Pashtun Kot",
+    ("30", "MOSA QALA"): "Musa Qala", ("27", "KHAKRIZ"): "Khakrez",
+    ("32", "KUSK-E-KOHNA"): "Koshki Kohna", ("22", "GOSFANDY"): "Gosfandi",
+    ("08", "PARIYAN"): "Paryan",
 }
 # A plan whose ethnic line cannot be its own district's, and is not written.
 # Sang Takht's (Daykundi, 2007) reads "50% Pashton, 30% Uzbak, 15% Arab, 1%
@@ -138,8 +149,9 @@ NOT_ITS_OWN: dict[tuple[str, str], str] = {
 # The plans' own spellings of the groups, on top of the articles'. Each was
 # read in a probe run's plans; none is invented.
 PLAN_GROUPS = {**GROUPS, "uzbak": "Uzbek", "uzbaks": "Uzbek", "pashtoon": "Pashtun",
-               "turkeman": "Turkmen", "brahawi": "Brahui",
-               "other ethnicities": "Other", "other ethnic groups": "Other"}
+               "turkeman": "Turkmen", "torkman": "Turkmen", "brahawi": "Brahui",
+               "other ethnicity": "Other", "other ethnicities": "Other",
+               "other ethnic groups": "Other"}
 
 COVER_DISTRICT = re.compile(r"^\s*(?:the\s+)?([A-Za-z][A-Za-z'’.\- ]{1,40}?)\s+DISTRICT\s*$", re.I)
 COVER_PROVINCE = re.compile(r"^\s*([A-Za-z][A-Za-z'’.\- ]{1,30}?)\s+PROVINCE\s*$", re.I)
@@ -151,13 +163,21 @@ ETHNIC = re.compile(r"(?i)\b(?:ethnic(?:ity|al)?(?:\s*(?:diversity|groups?|compo
 NEXT_FIELD = re.compile(r"(?i)^(?:sectoral|number|no\.|average|population|area|literacy|"
                         r"percentage|access|education|health|infrastructure|main|total|"
                         r"language|religion|agricultur|economic|general|livelihood|\d+\.)")
-# A line is carried on to the next only when it stops mid-list ("10% Turkmen
-# and" / "Hazara"). Read any further, the first probe took in page numbers
-# ("100% Pashtun 2"), headings ("Situation Analysis, Development Goals") and
-# the profile's next row ("Needy groups", "Kochi population in winter").
+# A line is carried on to the next only when the list plainly runs on: it
+# stops on a connector ("10% Turkmen and" / "Hazara"), the next line starts
+# with one or with a share ("Brahawi 10 %" / "and Tajik 1 %", "Palo 20%,
+# Brahawi" / "15%, Tajik 10%"), or a list that puts its shares first stops on
+# a share ("35%Tajik, 5%" / "Pashton, 5% other ethnicities"). Read any further,
+# the first probe took in page numbers ("100% Pashtun 2"), headings
+# ("Situation Analysis, Development Goals") and the profile's next row
+# ("Needy groups", "Kochi population in winter").
 CONNECTOR = re.compile(r"(?i)(?:[,;&]|\band|\bor|-)\s*$")
+RUNS_ON = re.compile(r"(?i)^(?:[,;&]|and\b|or\b|\d{1,3}(?:\.\d+)?\s*%)")
+SHARE_LAST = re.compile(r"\d\s*%\s*$")
+SHARE_FIRST = re.compile(r"^\s*\d")
 YEAR = re.compile(r"\b(20(?:0[5-9]|1[0-6]))\b")
 CENTRE = re.compile(r"(?i)\b(?:center|centre|central|markaz)\b")
+CENTRE_NOT_NAMESAKE = {"21"}
 # The plans' file names as the archive holds them: "Chemtal DDP English
 # Summary.pdf", "Summary of the DDP in English-Bakwa.pdf", "Dawlat Abad Full
 # DDP.pdf", but also "Khost_Tani_Summary_Finalized.pdf", "Kabul_Guldara English
@@ -289,8 +309,10 @@ def plan_of(ex: dict[str, list[str]], url: str) -> dict[str, Any]:
         if not rest and follow and follow[0] and not NEXT_FIELD.match(follow[0]):
             rest, follow = follow[0], follow[1:]
         for line in follow:
-            if (not CONNECTOR.search(rest) or not line or NEXT_FIELD.match(line)
-                    or len(line) > 60):
+            if not line or NEXT_FIELD.match(line) or line.isdigit() or len(line) > 60:
+                break
+            if not (CONNECTOR.search(rest) or RUNS_ON.match(line)
+                    or (SHARE_FIRST.match(rest) and SHARE_LAST.search(rest))):
                 break
             rest += " " + line
         ethnic = rest.strip()
@@ -437,24 +459,32 @@ def bind_plan(plan: dict[str, Any], codes: dict[str, str],
               article_province: dict[str, str]) -> tuple[dict[str, Any] | None, str]:
     """The one drawn district a plan is for, or None and why."""
     code = codes.get(fold(plan["province"])) if plan["province"] else None
-    label = plan["district"]
+    labels = [plan["district"]]
     if plan["district_from"] == "file name":
-        # "Khost Tani", "Samangan Aibak": a file name that leads with its province.
-        words = label.split()
+        # "Khost Tani", "Samangan Aibak": a file name that leads with its
+        # province -- and "Bamyan Centre", which names the province's centre
+        # district after it, so the whole name is tried as well.
+        words = labels[0].split()
         for cut in (1, 2):
             head = fold(" ".join(words[:cut]))
             if len(words) > cut and head in codes:
                 code = code or codes[head]
-                label = " ".join(words[cut:])
+                labels.append(" ".join(words[cut:]))
                 break
     if code is None:
         code = article_province.get(article_of(plan["url"]))
         if code is None:
             return None, f"no province read from its cover ({plan['province']!r})"
-    wanted = {fold(label), fold(CENTRE.sub(" ", label))}
-    declared = {fold(k[1]): v for k, v in SPELLINGS.items() if k[0] == code}.get(fold(label))
-    if declared:
-        wanted.add(fold(declared))
+    declared = {fold(k[1]): v for k, v in SPELLINGS.items() if k[0] == code}
+    wanted = set()
+    for label in labels:
+        wanted.add(fold(label))
+        # "Balkh Center" would be Mazar-i-Sharif's district, not Balkh's: the
+        # one province whose namesake district is not its centre.
+        if code not in CENTRE_NOT_NAMESAKE:
+            wanted.add(fold(CENTRE.sub(" ", label)))
+        if fold(label) in declared:
+            wanted.add(fold(declared[fold(label)]))
     wanted.discard("")
     hits = [unit for unit, names in districts.get(code, []) if names & wanted]
     if len(hits) == 1:

@@ -79,6 +79,29 @@ class Reading(unittest.TestCase):
             p = plan("Bost", "Helmand", "100% Pashtun", wrap=after)
             self.assertEqual(p["ethnic"], "100% Pashtun")
 
+    def test_a_list_that_runs_on_is_followed_to_its_end(self):
+        # As the archived plans break them: Charborjak, Khashrod, Aibak, Kishm.
+        for first, wrap, whole in (
+                ("Baloch 88 %, Pashtun 1 %, Brahawi 10 %", "and Tajik 1 %",
+                 "Baloch 88 %, Pashtun 1 %, Brahawi 10 % and Tajik 1 %"),
+                ("Pashtun 55%, Palo 20%, Brahawi", "15%, Tajik 10%",
+                 "Pashtun 55%, Palo 20%, Brahawi 15%, Tajik 10%"),
+                ("55% Uzbak, 35%Tajik, 5%", "Pashton, 5% other ethnicities",
+                 "55% Uzbak, 35%Tajik, 5% Pashton, 5% other ethnicities"),
+                ("60% Tajik, 37% Uzbek, 1% Hazara and 1%", "Bayat",
+                 "60% Tajik, 37% Uzbek, 1% Hazara and 1% Bayat")):
+            self.assertEqual(plan("Kang", "Nimroz", first, wrap=wrap)["ethnic"], whole)
+        self.assertEqual(
+            [(p["group"], p["pct"]) for p in dd.plan_shares(
+                "55% Uzbak, 35%Tajik, 5% Pashton, 5% other ethnicities")],
+            [("Uzbek", 55.0), ("Tajik", 35.0), ("Pashtun", 5.0), ("Other", 5.0)])
+
+    def test_a_complete_list_stops_before_the_next_row(self):
+        for first, wrap in (("Pashtun 30%, Tajik 70%", "Needy groups"),
+                            ("Uzbek 65%, Turkmen 35%", "2"),
+                            ("Tajik", "Kochi population in winter")):
+            self.assertEqual(plan("Kang", "Nimroz", first, wrap=wrap)["ethnic"], first)
+
     def test_the_answer_on_the_line_below_its_label(self):
         texts = [COVER.format(district="NILI", province="DAIKUNDI", month="May", year=2007),
                  "District Profile\nEthnic diversity\n100 % Hazara\nSectoral Information"]
@@ -247,6 +270,18 @@ class Building(unittest.TestCase):
         for name in ("Charikar Center", "Charikar Central"):
             records = self.build([plan(name, "Parwan", "Tajik 70%, Pashtun 30%")])
             self.assertIn("D0301", records)
+
+    def test_a_centre_named_after_its_province_in_a_file_name(self):
+        # "Bamyan Centre DDP English Summary.pdf": the file name leads with the
+        # province, and the centre district bears the province's name.
+        texts = ["SUMMARY OF DISTRICT DEVELOPMENT PLAN",
+                 PROFILE.format(label="Ethnic diversity", ethnic="Tajik 70%, Pashtun 30%")]
+        p = dd.read_plan(texts, URL.format(a="123", f="Balkh%20Centre%20DDP%20English%20Summary.pdf"))
+        self.assertEqual(p["district"], "Balkh Centre")
+        with mock.patch.object(dd, "CENTRE_NOT_NAMESAKE", set()):
+            self.assertIn("D2106", self.build([p]))
+        # Balkh's own centre is Mazar-i-Sharif, not the district called Balkh.
+        self.assertNotIn("D2106", self.build([p]))
 
     def test_a_declared_spelling_binds_whatever_its_case(self):
         texts = ["SUMMARY OF DISTRICT DEVELOPMENT PLAN",
