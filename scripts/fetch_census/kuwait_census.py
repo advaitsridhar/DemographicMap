@@ -46,11 +46,12 @@ A drawn polygon then carries the census areas whose ground lies at least
 ``HOME`` inside it, summed, and only when the other census areas inside it
 would hold no more than ``STRAY`` of their people. An outlined area counts
 at its own average density over its ground there; an area OpenStreetMap only
-marks with a point counts whole in the polygon holding the point; an area
-it neither outlines nor marks counts whole in every polygon of its
-governorate, since it could be in any. Every polygon refused, every census
-area with no home, and every area OpenStreetMap does not outline is logged
-with its numbers.
+marks with a point (or, failing that, a declared GeoNames point,
+``GEONAMES``) counts whole in the polygon holding the point; an area with
+neither outline nor point counts whole in every polygon of its governorate,
+since it could be in any. Every polygon refused, every census area with no
+home, and every area OpenStreetMap does not outline is logged with its
+numbers.
 
 **Small counts.** A sex ratio is not written for fewer than ``MIN_SEX`` men or
 women, nor a nationality split for fewer than ``MIN_PEOPLE`` people: the
@@ -180,6 +181,22 @@ OSM_NAMES = {
 }
 # A governorate's desert: the census's name begins so.
 DESERT = "بر محافظة"
+# Census areas OpenStreetMap neither outlines nor marks, placed instead by
+# GeoNames points (runner probe 95a9b67): its area features (ADM2), which
+# follow the Public Authority for Civil Information's areas, and the village
+# the Khairan chalets stand by. Each point counts its area whole in the
+# polygon holding it, as an OSM point does; Al-Misila has two, and counts in
+# both polygons. GeoNames has one area for Ardiya's storage and
+# government-use zones, which the census counts apart, so both take it.
+ARDIYA = ("geonames:12216345 Al Aridiyah Takhzin wa Isti'malat al Hukumiyah", 29.27910,
+          47.91486)
+GEONAMES = {
+    "المسيلة": [("geonames:12216417 Al Masilah (area)", 29.23720, 48.08749),
+                ("geonames:387962 Al Masilah (locality)", 29.26194, 48.07972)],
+    "العارضية مخازن": [ARDIYA],
+    "العارضية استعمال الحكومة": [ARDIYA],
+    "شاليهات الخيران": [("geonames:285790 Al Khiran (village)", 28.66300, 48.37900)],
+}
 
 
 def numbers(row: list[Any]) -> list[float]:
@@ -490,6 +507,8 @@ def ground(areas: dict[str, dict[str, Any]], elements: list[dict[str, Any]],
                 drawn={labels2[s]: v for s, v in sorted(shares.items(), key=lambda kv: -kv[1])})
         else:
             spots = [p for want in OSM_NAMES.get(a["ar"], [a["ar"]]) for p in lookup(points, want)]
+            if not spots:
+                spots = [(pid, lon, lat) for pid, lat, lon in GEONAMES.get(a["ar"], [])]
             entry["points"] = {pid: holder(lon, lat, drawn2) for pid, lon, lat in spots}
         out[name] = entry
     return out
@@ -515,11 +534,12 @@ def measure_ground(areas: dict[str, dict[str, Any]]) -> dict[str, Any]:
     lost = sorted(set(placed) - set(outlined) - set(deserts) - set(pointed))
     log(f"  census areas placed by their OSM outline: {len(outlined)} of {len(placed)}; "
         f"governorate deserts outlined as the rest of the drawn governorate: {deserts}")
-    log("  marked by OSM points only: " + "; ".join(
+    log("  placed by points only (OSM's, or GeoNames' where OSM has none): " + "; ".join(
         f"{n} ({areas[n]['ar']}, {areas[n]['total']:,.0f}) in "
-        + ", ".join(labels2.get(s, "no drawn polygon") if s else "no drawn polygon"
-                    for s in pts.values()) for n, pts in sorted(pointed.items())))
-    log(f"  neither outlined nor marked: {len(lost)}: " + "; ".join(
+        + ", ".join(f"{labels2.get(s, 'no drawn polygon') if s else 'no drawn polygon'} "
+                    f"({pid})" for pid, s in pts.items())
+        for n, pts in sorted(pointed.items())))
+    log(f"  neither outlined nor pointed: {len(lost)}: " + "; ".join(
         f"{n} ({areas[n]['ar']}, {areas[n]['total']:,.0f})" for n in lost))
     return {"source": OSM_SOURCE, "read": date.today().isoformat(), "home": HOME,
             "areas": placed}
@@ -529,17 +549,20 @@ def measure_ground(areas: dict[str, dict[str, Any]]) -> dict[str, Any]:
 
 def others_inside(sid: str, names: list[str], areas: dict[str, dict[str, Any]],
                   shares: dict[str, dict[str, float]], spots: dict[str, set[str]],
-                  anywhere: dict[str, set[str]]) -> list[tuple[float, str, str]]:
+                  anywhere: dict[str, set[str]],
+                  gazetteer: dict[str, str] | None = None) -> list[tuple[float, str, str]]:
     """The people of other census areas a drawn polygon may hold, largest
-    first: (people, area, how they are counted)."""
+    first: (people, area, how they are counted). ``gazetteer`` names the
+    source of each placed-by-point area's point (OpenStreetMap by default)."""
     out = []
     for m, s in shares.items():
         if m not in names and s.get(sid, 0) > 0:
             out.append((areas[m]["total"] * s[sid], m, f"{s[sid]:.0%} of its ground"))
     for m, where in spots.items():
         if m not in names and sid in where:
-            out.append((areas[m]["total"], m, "whole: OpenStreetMap marks it with a point "
-                                              "here and does not outline it"))
+            source = (gazetteer or {}).get(m, "OpenStreetMap")
+            out.append((areas[m]["total"], m, f"whole: {source} places it here by a point, "
+                                              f"and OpenStreetMap does not outline it"))
     for m, where in anywhere.items():
         if m not in names and sid in where:
             out.append((areas[m]["total"], m, "whole: OpenStreetMap neither outlines nor "
@@ -575,6 +598,8 @@ def bind(areas: dict[str, dict[str, Any]], placed: dict[str, dict[str, Any]],
     anywhere = {n: by_gov[GOVERNORATES[areas[n]["governorate"]]]
                 for n, where in spots.items() if not where}
     spots = {n: where for n, where in spots.items() if where}
+    gazetteer = {n: "GeoNames" for n in spots
+                 if all(p.startswith("geonames:") for p in known[n].get("points") or {})}
     homes: dict[str, list[str]] = defaultdict(list)
     for name, s in shares.items():
         sid, best = max(s.items(), key=lambda kv: kv[1])
@@ -585,7 +610,7 @@ def bind(areas: dict[str, dict[str, Any]], placed: dict[str, dict[str, Any]],
     for unit in admin2:
         sid = unit["id"]
         names = sorted(homes.get(sid, []))
-        inside = others_inside(sid, names, areas, shares, spots, anywhere)
+        inside = others_inside(sid, names, areas, shares, spots, anywhere, gazetteer)
         stray = sum(n for n, _m, _how in inside)
         if names:
             own = sum(areas[n]["total"] for n in names)
@@ -623,10 +648,10 @@ def bind(areas: dict[str, dict[str, Any]], placed: dict[str, dict[str, Any]],
     log(f"  census areas with no home: {len(homeless)}: " + "; ".join(
         f"{n} ({labels.get(max(shares[n], key=shares[n].get), '?')} "
         f"{max(shares[n].values()):.0%})" for n in homeless))
-    log(f"  census areas OpenStreetMap only marks: " + "; ".join(
-        f"{n} ({areas[n]['total']:,.0f}) in {', '.join(labels[s] for s in sorted(w))}"
-        for n, w in sorted(spots.items())))
-    log(f"  census areas OpenStreetMap neither outlines nor marks: " + "; ".join(
+    log("  census areas placed by points only: " + "; ".join(
+        f"{n} ({areas[n]['total']:,.0f}, {gazetteer.get(n, 'OpenStreetMap')}) in "
+        f"{', '.join(labels[s] for s in sorted(w))}" for n, w in sorted(spots.items())))
+    log("  census areas with neither outline nor point: " + "; ".join(
         f"{n} ({areas[n]['total']:,.0f}, {areas[n]['governorate']})"
         for n in sorted(anywhere)))
     return bound, why
@@ -644,28 +669,30 @@ def area_fields(names: list[str], areas: dict[str, dict[str, Any]],
     other_men = sum(areas[n]["other_men"] for n in names)
     which = (names[0].title() if len(names) == 1 else
              ", ".join(n.title() for n in names[:-1]) + " and " + names[-1].title())
-    ground_note = (" The census area's ground (OpenStreetMap's outline"
+    several = len(names) > 1
+    ground_note = ((" The census areas' ground (OpenStreetMap's outlines" if several else
+                    " The census area's ground (OpenStreetMap's outline")
                    + ("; for a governorate's desert, the drawn governorate less every outlined "
                       "area" if b.get("deserts") else "")
                    + ") lies " + ", ".join(f"{b['shares'][n]:.0%}" for n in names)
-                   + " inside this polygon"
+                   + " inside this polygon" + (", in that order" if several else "")
                    + (f"; other census areas inside it would add some {b['stray']:,.0f} "
                       f"people, at their own areas' average density"
                       if b["stray"] >= 1 else "") + ".")
+    both = people(men, women)
     population = measure(total, year=YEAR, source=SOURCE.format(52))
     population["note"] = (f"The 2021 register-based census's habitual residents of {which}: "
-                          f"{men:,.0f} men and {women:,.0f} women."
+                          f"{both}."
                           + (" The sum of the census's areas whose ground this polygon is."
-                             if len(names) > 1 else "") + ground_note)
+                             if several else "") + ground_note)
     fields: dict[str, Any] = {"population": population}
     if men < MIN_SEX or women < MIN_SEX or total < MIN_PEOPLE:
         fields["sex_ratio"] = gap(NOT_AVAILABLE, (
-            f"The census counts {men:,.0f} men and {women:,.0f} women here; with fewer than "
-            f"{MIN_SEX} of either, or {MIN_PEOPLE} people in all, a ratio says nothing about "
-            f"the place."))
+            f"The census counts {both} here; with fewer than {MIN_SEX} of either, or "
+            f"{MIN_PEOPLE} people in all, a ratio says nothing about the place."))
     else:
         fields["sex_ratio"] = sex_ratio(men, women, year=YEAR, source=SOURCE.format(52))
-        note = f"Males per 100 females in the 2021 census: {men:,.0f} men and {women:,.0f} women."
+        note = f"Males per 100 females in the 2021 census: {both}."
         if men > SKEWED * women:
             note += (f" A ratio this high is the census's count, not an error: {other_men:,.0f} "
                      f"of the men here are non-Kuwaiti, and Kuwait's non-Kuwaiti residents "
@@ -684,6 +711,12 @@ def area_fields(names: list[str], areas: dict[str, dict[str, Any]],
                             f"as Table 52 counts them. Carried on this field under the owner's "
                             f"decision of {DECISION}."))
     return fields
+
+
+def people(men: float, women: float) -> str:
+    """'1 man and 2 women', '7,539 men and 42 women'."""
+    return (f"{men:,.0f} {'man' if men == 1 else 'men'} and "
+            f"{women:,.0f} {'woman' if women == 1 else 'women'}")
 
 
 def osm_url(osm_id: str) -> str:

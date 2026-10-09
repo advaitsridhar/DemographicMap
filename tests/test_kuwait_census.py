@@ -168,7 +168,7 @@ class TheReader(unittest.TestCase):
         placed = dict(PLACED, **{"AL-SHARQ": {"osm": [], "shares": {}, "points": {"n9": "a1"}}})
         out = {r["shape_id"]: r for r in self.run_it(placed)}
         self.assertEqual(out["a1"]["population"]["status"], "not_available")
-        self.assertIn("marks it with a point", out["a1"]["population"]["note"])
+        self.assertIn("OpenStreetMap places it here by a point", out["a1"]["population"]["note"])
         # Hawalli's polygon is not near the point.
         self.assertIn("value", out["a3"]["population"])
 
@@ -195,6 +195,7 @@ class TheReader(unittest.TestCase):
                        "other_men": 1, "other_women": 1}}
         fields = kc.area_fields(["X"], areas, b, 2000, 1000)
         self.assertEqual(fields["population"]["value"], 3)
+        self.assertIn("1 man and 2 women", fields["population"]["note"])
         self.assertEqual(fields["sex_ratio"]["status"], "not_available")
         self.assertEqual(fields["ethnicity"]["status"], "not_available")
 
@@ -247,7 +248,9 @@ class TheGround(unittest.TestCase):
                  "AL-SULAIBIKHAT": {"ar": "الصليبيخات", "governorate": "Hawalli"},
                  "AL-AHMADI CITY": {"ar": "مدينة الأحمدي", "governorate": "Hawalli"},
                  "NOWHERE": {"ar": "لا مكان", "governorate": "Hawalli"},
-                 "DESERT": {"ar": "بر محافظة حولي", "governorate": "Hawalli"}}
+                 "DESERT": {"ar": "بر محافظة حولي", "governorate": "Hawalli"},
+                 # Neither outlined nor marked in OSM: placed by GeoNames.
+                 "AL-MISILA": {"ar": "المسيلة", "governorate": "Hawalli"}}
         self.placed = kc.ground(areas, elements, drawn, labels, {"g": box(0, 0, 2, 1)},
                                 {"g": "Hawalli"})
 
@@ -267,6 +270,13 @@ class TheGround(unittest.TestCase):
     def test_an_area_with_no_outline_is_placed_by_its_point(self):
         self.assertEqual(self.placed["AL-AHMADI CITY"]["shares"], {})
         self.assertEqual(self.placed["AL-AHMADI CITY"]["points"], {"n3": "p2"})
+
+    def test_an_area_osm_does_not_know_falls_back_to_geonames(self):
+        points = self.placed["AL-MISILA"]["points"]
+        self.assertEqual(len(points), 2)
+        self.assertTrue(all(p.startswith("geonames:") for p in points))
+        # Kuwait's coordinates lie in neither test polygon.
+        self.assertEqual(set(points.values()), {None})
 
     def test_a_desert_is_the_governorate_less_every_outline(self):
         desert = self.placed["DESERT"]
