@@ -8449,18 +8449,19 @@ runs below the share of all foreigners present, and the Korean-Chinese
 figure in particular is the registered part of that community.
 
 **The shapes.** All 228 districts are matched. geoBoundaries CGAZ draws
-twenty of them under the wrong province or under the country itself --
-Seoul's Eunpyeong-gu under Gyeonggi; Incheon's Seo-gu, Gyeyang-gu and
-Ganghwa-gun under Gyeonggi and Ongjin-gun under the country; Gwangju's
-Dong-gu, Seo-gu, Nam-gu and Gwangsan-gu under South Jeolla; Busan's
-Gangseo-gu and Gijang-gun under South Gyeongsang and Yeongdo-gu under the
-country; Daegu's Dalseong-gun and Gunwi-gun under North Gyeongsang;
-Daejeon's Dong-gu under North Chungcheong; Gyeongbuk's Uljin-gun under
-Gangwon; Jeonnam's Sinan-gun under the country. Each of those rows names the
-province the shape is drawn under as its `parent_name`, because that is the
-only way the join finds a Dong-gu among six, and its note says which
-province it is actually part of; the province rows sum the districts by
-their real province. Jeonnam's Yeonggwang-gun has no shape at all and counts
+seventeen of them inside a neighbouring province's polygon or outside every
+province's -- Seoul's Eunpyeong-gu inside Gyeonggi; Incheon's Seo-gu,
+Gyeyang-gu and Ganghwa-gun inside Gyeonggi and Ongjin-gun outside every
+province; Gwangju's Dong-gu, Seo-gu, Nam-gu and Gwangsan-gu inside South
+Jeolla; Busan's Gangseo-gu and Gijang-gun inside South Gyeongsang and
+Yeongdo-gu outside every province; Daegu's Dalseong-gun and Gunwi-gun inside
+North Gyeongsang; Daejeon's Dong-gu inside North Chungcheong; Gyeongbuk's
+Uljin-gun inside Gangwon; Jeonnam's Sinan-gun outside every province. The
+map files each of them under its own province all the same, so each of
+those rows names that province, the district's own, as its `parent_name`
+(which is how the join finds a Dong-gu among six), and its note says whose
+polygon the outline is drawn in; the province rows sum the districts by
+their own province. Jeonnam's Yeonggwang-gun has no shape at all and counts
 in South Jeolla only. Cities with districts (Suwon, Seongnam, Goyang, Yongin,
 Ansan, Anyang, Cheongju, Cheonan, Jeonju, Pohang, Changwon) are one shape
 each and are summed from the file's district rows.

@@ -175,7 +175,8 @@ SIDO: dict[str, str] = {
 # file's 시군구, so the districts of a city that has them (수원시 장안구,
 # 수원시 권선구, ...) sum into the city the boundary file draws.
 #
-# geoBoundaries CGAZ files twenty of the 228 under the wrong province:
+# geoBoundaries CGAZ draws seventeen of the 228 inside another province's
+# polygon or outside every province's:
 # Seoul's Eunpyeong-gu, four of Incheon's ten, four of Gwangju's five,
 # Busan's Gangseo-gu, Gijang-gun and Yeongdo-gu, Daegu's Dalseong-gun and
 # Gunwi-gun, Daejeon's Dong-gu, Gyeongbuk's Uljin-gun, Jeonnam's Sinan-gun
