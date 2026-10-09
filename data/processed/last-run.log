@@ -1,63 +1,31 @@
-== https://stats.gov.tv/download/85/population-and-housing-census/902/2012-census-tables_final.xlsx
-  HTTP 200 application/octet-stream 1,458,925 bytes
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Notes!$A:$AB.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  -- '2'
-       1: Table 2: Tot
-       2: Island by vi | Resident |  |  |  |  |  | Non resident |  |  | Total enumer
-       3:  | Tuvaluan |  |  | Non Tuvaluan
-       5: Total | 10514 | 5376 | 5138 | 126 | 48 | 78 | 142 | 91 | 51 | 10782 | 5515 | 5267
-      20: Nui | 529 | 280 | 249 | 13 | 1 | 12 | - | - | - | 542 | 281 | 261
-      23: Vaitupu | 1541 | 740 | 801 | 14 | 7 | 7 | 3 | 2 | 1 | 1558 | 749 | 809
-      31: Nukufetau | 536 | 267 | 269 | - | - | - | - | - | - | 536 | 267 | 269
-      34: Funafuti | 5935 | 3061 | 2874 | 90 | 40 | 50 | 127 | 87 | 40 | 6152 | 3188 | 2964
-  -- '5'
-       1: Table 5: Tot
-       2: Age group | Total |  |  | Nanumea |  |  | Nanumaga |  |  | Niutao |  |  | Nui
-       4: Total | 10782 | 5515 | 5267 | 556 | 294 | 262 | 481 | 258 | 223 | 606 | 298 | 308 | 542 | 281 | 261
-       5: 0-4 | 1320 | 691 | 629 | 73 | 39 | 34 | 59 | 37 | 22 | 80 | 42 | 38 | 73 | 38 | 35
-      13: 40-44 | 545 | 282 | 263 | 24 | 9 | 15 | 33 | 16 | 17 | 35 | 17 | 18 | 26 | 17 | 9
-      23:  | Vaitupu |  |  | Nukufetau |  |  | Funafuti |  |  | Nukulaelae |  |  | Niulakita
-      25: Total | 1558 | 749 | 809 | 536 | 267 | 269 | 6152 | 3188 | 2964 | 324 | 164 | 160 | 27 | 16 | 11
-      26: 0-4 | 139 | 73 | 66 | 66 | 30 | 36 | 787 | 413 | 374 | 40 | 18 | 22 | 3 | 1 | 2
-      34: 40-44 | 67 | 37 | 30 | 27 | 12 | 15 | 310 | 161 | 149 | 22 | 12 | 10 | 1 | 1 | -
-  -- '13'
-       1: Table 13: Re
-       2: Age group | Ethnicity
-       3:  | Total |  |  | Tuvaluan |  |  | Tuvaluan/I-K |  |  | Tuvaluan/Oth |  |  | Other
-       6: Total | 10640 | 5424 | 5216 | 9234 | 4702 | 4532 | 598 | 301 | 297 | 712 | 378 | 334 | 96 | 43 | 53
-       7: 0-4 | 1305 | 684 | 621 | 1119 | 580 | 539 | 70 | 39 | 31 | 114 | 64 | 50 | 2 | 1 | 1
-      15: 40-44 | 537 | 275 | 262 | 463 | 244 | 219 | 28 | 12 | 16 | 35 | 16 | 19 | 11 | 3 | 8
-      25: Total | 612 | 322 | 290 | 384 | 209 | 175 | 57 | 24 | 33 | 170 | 89 | 81 | 1 | - | 1
-      26: 0-4 | 70 | 40 | 30 | 33 | 19 | 14 | 6 | 2 | 4 | 31 | 19 | 12 | - | - | -
-      34: 40-44 | 26 | 9 | 17 | 15 | 4 | 11 | 3 | 2 | 1 | 8 | 3 | 5 | - | - | -
-      44: Total | 551 | 297 | 254 | 530 | 289 | 241 | 6 | 2 | 4 | 14 | 6 | 8 | 1 | - | 1
-      45: 0-4 | 71 | 41 | 30 | 67 | 39 | 28 | 1 | - | 1 | 3 | 2 | 1 | - | - | -
-      53: 40-44 | 34 | 18 | 16 | 33 | 18 | 15 | - | - | - | 1 | - | 1 | - | - | -
-      62: Table 13: Re
-      63: Age group | Ethnicity
-      64:  | Total |  |  | Tuvaluan |  |  | Tuvaluan/I-K |  |  | Tuvaluan/Oth |  |  | Other
-      67: Total | 694 | 340 | 354 | 465 | 221 | 244 | 98 | 56 | 42 | 128 | 63 | 65 | 3 | - | 3
-      68: 0-4 | 82 | 42 | 40 | 46 | 22 | 24 | 14 | 9 | 5 | 22 | 11 | 11 | - | - | -
-      76: 40-44 | 37 | 18 | 19 | 24 | 12 | 12 | 2 | 1 | 1 | 10 | 5 | 5 | 1 | - | 1
-      85:     Nui
-      86: Total | 729 | 370 | 359 | 654 | 333 | 321 | 57 | 30 | 27 | 8 | 7 | 1 | 10 | - | 10
-      87: 0-4 | 84 | 44 | 40 | 76 | 41 | 35 | 7 | 2 | 5 | 1 | 1 | - | - | - | -
-      95: 40-44 | 34 | 21 | 13 | 31 | 21 | 10 | 2 | - | 2 | - | - | - | 1 | - | 1
-     104:     Vaitupu
-     105: Total | 1542 | 772 | 770 | 1390 | 686 | 704 | 103 | 54 | 49 | 41 | 28 | 13 | 8 | 4 | 4
-     106: 0-4 | 151 | 82 | 69 | 139 | 74 | 65 | 7 | 4 | 3 | 5 | 4 | 1 | - | - | -
-     114: 40-44 | 70 | 37 | 33 | 65 | 34 | 31 | 5 | 3 | 2 | - | - | - | - | - | -
-     124: Total | 666 | 328 | 338 | 640 | 319 | 321 | 11 | 5 | 6 | 13 | 4 | 9 | 2 | - | 2
-     125: 0-4 | 75 | 36 | 39 | 73 | 35 | 38 | 1 | 1 | - | 1 | - | 1 | - | - | -
-     133: 40-44 | 34 | 14 | 20 | 32 | 14 | 18 | - | - | - | 2 | - | 2 | - | - | -
-     142:     Funafuti
-     143: Total | 5436 | 2796 | 2640 | 4796 | 2463 | 2333 | 252 | 124 | 128 | 318 | 170 | 148 | 70 | 39 | 31
-     144: 0-4 | 722 | 378 | 344 | 636 | 330 | 306 | 34 | 21 | 13 | 50 | 26 | 24 | 2 | 1 | 1
-     152: 40-44 | 277 | 145 | 132 | 238 | 128 | 110 | 16 | 6 | 10 | 14 | 8 | 6 | 9 | 3 | 6
-     162: Total | 364 | 174 | 190 | 333 | 159 | 174 | 14 | 6 | 8 | 16 | 9 | 7 | 1 | - | 1
-     163: 0-4 | 43 | 18 | 25 | 42 | 17 | 25 | - | - | - | 1 | 1 | - | - | - | -
-     171: 40-44 | 24 | 12 | 12 | 24 | 12 | 12 | - | - | - | - | - | - | - | - | -
-     181: Total | 46 | 25 | 21 | 42 | 23 | 19 | - | - | - | 4 | 2 | 2 | - | - | -
-     182: 0-4 | 7 | 3 | 4 | 7 | 3 | 4 | - | - | - | - | - | - | - | - | -
-     190: 40-44 | 1 | 1 | - | 1 | 1 | - | - | - | - | - | - | - | - | - | -
+== https://census.scad.gov.ae/
+   200 text/html; charset=utf-8 176,679 bytes
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/west_asia_probe.py", line 618, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/west_asia_probe.py", line 605, in main
+    cmd_get(args.target, args.grep, args.links, args.chars, args.context, max(40, args.rows),
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/west_asia_probe.py", line 202, in cmd_get
+    for m in re.finditer(grep, text, flags=re.I):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/__init__.py", line 223, in finditer
+    return _compile(pattern, flags).finditer(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/re/_parser.py", line 874, in _parse
+    raise source.error("missing ), unterminated subpattern",
+re.error: missing ), unterminated subpattern at position 4
