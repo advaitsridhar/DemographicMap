@@ -1071,6 +1071,134 @@
    ]
   },
   {
+   "country": "MNG",
+   "field": "ethnicity",
+   "year": 2020,
+   "source": "National Statistics Office of Mongolia, 2020 Population and Housing Census of Mongolia: National Report (English edition), Table 3.2: population and ethnic groups, 2010, 2020",
+   "url": "https://web.archive.org/web/20211122214957id_/https://www.1212.mn/BookLibraryDownload.ashx?url=Census2020_Main_report_Eng.pdf&ln=En",
+   "license": "Official statistics of the National Statistics Office of Mongolia, cited as published",
+   "note": "Mongolia's 2020 census asked every citizen's ethnic group (үндэс угсаа). This is Table 3.2 of the National Statistics Office's English national report: the 3,174,565 Mongolian citizens it counted, by the census's own groups, with the counts as printed. 'Other ethnic groups' is the 143 people the table prints as other and the 2,364 people of the 6 groups too few to show at one decimal (Eljigen, Khamnigan, Tsaatan (Dukha), Uzbek (Chantuu), Kharchin and Khoshuud); 'Other nationals' are citizens of foreign origin. The base is citizens, so the 22,418 foreign nationals the census counted apart are outside it, as they are in the aimags' own shares (Appendix Table 3.6 of the same report). It replaces the Factbook's line, the same census's first seven groups with an 'other' of 4.1%.",
+   "groups": [
+    {
+     "group": "Khalkh",
+     "pct": 83.8,
+     "count": 2659985
+    },
+    {
+     "group": "Kazakh",
+     "pct": 3.8,
+     "count": 120999
+    },
+    {
+     "group": "Durvud",
+     "pct": 2.6,
+     "count": 83719
+    },
+    {
+     "group": "Bayad",
+     "pct": 2.0,
+     "count": 63775
+    },
+    {
+     "group": "Buriad",
+     "pct": 1.4,
+     "count": 43661
+    },
+    {
+     "group": "Zakhchin",
+     "pct": 1.2,
+     "count": 37407
+    },
+    {
+     "group": "Dariganga",
+     "pct": 1.1,
+     "count": 36419
+    },
+    {
+     "group": "Uriankhai",
+     "pct": 0.9,
+     "count": 29021
+    },
+    {
+     "group": "Darkhad",
+     "pct": 0.8,
+     "count": 24549
+    },
+    {
+     "group": "Torguud",
+     "pct": 0.5,
+     "count": 15596
+    },
+    {
+     "group": "Khoton",
+     "pct": 0.4,
+     "count": 12057
+    },
+    {
+     "group": "Uuld",
+     "pct": 0.4,
+     "count": 14666
+    },
+    {
+     "group": "Khotgoid",
+     "pct": 0.3,
+     "count": 8583
+    },
+    {
+     "group": "Myangad",
+     "pct": 0.2,
+     "count": 8125
+    },
+    {
+     "group": "Barga",
+     "pct": 0.1,
+     "count": 2832
+    },
+    {
+     "group": "Other ethnic groups",
+     "pct": 0.1,
+     "count": 2507
+    },
+    {
+     "group": "Other nationals (Mongolian citizens)",
+     "pct": 0.1,
+     "count": 3979
+    },
+    {
+     "group": "Sartuul",
+     "pct": 0.1,
+     "count": 2023
+    },
+    {
+     "group": "Tuva",
+     "pct": 0.1,
+     "count": 2354
+    },
+    {
+     "group": "Uzemchin",
+     "pct": 0.1,
+     "count": 2308
+    }
+   ]
+  },
+  {
+   "country": "PRK",
+   "field": "ethnicity",
+   "year": 2008,
+   "source": "Central Bureau of Statistics, DPR Korea, 2008 Population Census -- National Report (Pyongyang, 2009), Table 5: population by nationality, by 5-year age group and by sex",
+   "url": "https://unstats.un.org/unsd/demographic/sources/census/wphc/North_Korea/Final%20national%20census%20report.pdf",
+   "license": "Central Bureau of Statistics, DPR Korea. Official publication; copy served by the UN Statistics Division.",
+   "basis": "nationality",
+   "note": "North Korea's 2008 census asked nationality, not ethnicity: question P7, 'What is ____'s nationality?', answered Korean or Others. Table 5 of the National Report, the only table built from it, is national: 23,349,326 Koreans and 533 people of other nationalities, the 23,349,859 people the census counted in households and institutional living quarters (the 702,373 in military camps were enumerated on a shorter form and are not in it). The 533 are 0.002% and too few to draw at one decimal. Written as nationality by the map owner's decision of 19 September 2026; no table crosses nationality with a province, so the provinces carry the census's declaration instead.",
+   "groups": [
+    {
+     "group": "Korean",
+     "pct": 100.0,
+     "count": 23349326
+    }
+   ]
+  },
+  {
    "country": "AUT",
    "field": "religion",
    "year": 2023,
@@ -4626,6 +4754,108 @@
    "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__vaerak/statfin_vaerak_pxt_11rx.px",
    "license": "CC BY 4.0 (Statistics Finland)",
    "note": "Membership of a religious community as Finland's population register records it for every resident on 31 December 2025: 5,652,881 people (Statistics Finland, table 11rx). A count of registered membership, not of belief. 'Not a member of any religious community' is everyone in no registered community, which Statistics Finland calls no religious affiliation; it also holds people of faith who belong to none. 'Other Christian' joins the smaller Christian bodies the table names (Adventists, the Anglican churches, Baptists, the Lutheran free congregations, Methodists, the free churches and other Christians); 'Other religions' the Bahá'í, the Christian Community, the Liberal Catholic Church, the indigenous religions and neo-paganism and the rest of the other religious groups. Statistics Finland counts the communities apart for the whole country only: the regions and sub-regions carry the same register's three groups (the Lutheran church, every other community together, and none) for the same day, so this figure is the itemised whole of theirs."
+  },
+  {
+   "country": "UZB",
+   "field": "ethnicity",
+   "year": 2026,
+   "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026): population by nationality, and by region and native language",
+   "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+   "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan",
+   "note": "Nationality as each person declared it in Uzbekistan's first census since 1989, taken at 15 January 2026: the preliminary results' national table, 39,047,321 people (the permanent population, the 2,090,953 temporarily away included). It is the exact sum of the fourteen regions the map draws, which carry the same table; the sum is not taken by the build only because the country's population on record is the Factbook's 2025 estimate, 37,015,151, 5.5% below the census's count. The preliminary results name seven nationalities and print the rest, 300,019 people, as 'other' (другие) without naming them; they replace the Factbook's older estimate. The final results are due by 1 July 2027.",
+   "groups": [
+    {
+     "group": "Uzbek",
+     "pct": 89.4,
+     "count": 34901261
+    },
+    {
+     "group": "Tajik",
+     "pct": 3.3,
+     "count": 1276941
+    },
+    {
+     "group": "Karakalpak",
+     "pct": 2.2,
+     "count": 841397
+    },
+    {
+     "group": "Kazakh",
+     "pct": 1.8,
+     "count": 707329
+    },
+    {
+     "group": "Russian",
+     "pct": 1.6,
+     "count": 606526
+    },
+    {
+     "group": "Other",
+     "pct": 0.8,
+     "count": 300019
+    },
+    {
+     "group": "Kyrgyz",
+     "pct": 0.6,
+     "count": 219091
+    },
+    {
+     "group": "Turkmen",
+     "pct": 0.5,
+     "count": 194757
+    }
+   ]
+  },
+  {
+   "country": "UZB",
+   "field": "language",
+   "year": 2026,
+   "source": "Statistics Committee of the Republic of Uzbekistan, Preliminary results of the Population and Agricultural Census of the Republic of Uzbekistan 2026 (Tashkent, 2026): population by nationality, and by region and native language",
+   "url": "https://aholi.stat.uz/ru/publikatsii/predvaritelnye-rezultaty-perepisi-naseleniya-i-selskogo-khozyajstva-v-respublike-uzbekistan-v-2026-godu",
+   "license": "Official statistics of the Statistics Committee of the Republic of Uzbekistan",
+   "note": "Native language as each person named it in the 2026 census (critical moment 15 January 2026): the preliminary results' table by region, summed over the fourteen regions the map draws, which is the republic's own row, 39,047,321 people. Seven languages are named and the rest, 88,244 people, are 'other languages'. It replaces the Factbook's figure, which is not a count from this census. The final results are due by 1 July 2027.",
+   "groups": [
+    {
+     "group": "Uzbek",
+     "pct": 91.3,
+     "count": 35654647
+    },
+    {
+     "group": "Karakalpak",
+     "pct": 2.3,
+     "count": 910462
+    },
+    {
+     "group": "Tajik",
+     "pct": 2.2,
+     "count": 851326
+    },
+    {
+     "group": "Russian",
+     "pct": 2.0,
+     "count": 787493
+    },
+    {
+     "group": "Kazakh",
+     "pct": 1.4,
+     "count": 561316
+    },
+    {
+     "group": "Turkmen",
+     "pct": 0.3,
+     "count": 114274
+    },
+    {
+     "group": "Kyrgyz",
+     "pct": 0.2,
+     "count": 79559
+    },
+    {
+     "group": "Other languages",
+     "pct": 0.2,
+     "count": 88244
+    }
+   ]
   }
  ]
 }

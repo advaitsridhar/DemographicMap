@@ -179,7 +179,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "BTN": {
         "religion": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either.",
         "language": "Bhutan's census does not ask language or mother tongue.",
-        "ethnicity": "Bhutan's census does not ask ethnicity. It does publish citizenship -- Bhutanese against non-Bhutanese, down to gewog -- which is not the same question and is not used as a proxy for it here: citizenship is the contested variable in Bhutan, the 1985 Citizenship Act being how much of the Lhotshampa population lost its legal standing before leaving.",
+        "ethnicity": "Bhutan's census does not ask ethnicity. It publishes citizenship -- the Bhutanese and everyone else, by dzongkhag and by gewog (each dzongkhag report's Tables 2.1 and 2.2) -- which this map shows on the ethnicity field under its basis, by its owner's decision of 19 September 2026, wherever the two tables reconcile.",
     },
     "FRA": {
         "ethnicity": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007).",
@@ -286,7 +286,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # ethnicity is the mis-match this project treats as worse than a gap --
     # invisible, because it looks like an answer.
     "PAK": {
-        "ethnicity": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked.",
+        "ethnicity": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked. Its count of nationality -- Pakistani or not, by district (Table 10 of the 2023 census) -- is shown on the ethnicity field under its basis, by the map owner's decision of 19 September 2026. The Bureau publishes no Table 10 for Gilgit-Baltistan or for Azad Jammu and Kashmir, which it tabulates apart from the four provinces, so their units carry no nationality.",
     },
     # Measured against e-Stat's catalogue rather than against the census
     # questionnaire alone -- see docs/SOURCES.md. The catalogue is the reason
@@ -304,7 +304,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # hold the substance of the declarations that used to sit here -- and an
     # entry here would make check_no_estimate_on_policy_field refuse it.
     "IND": {
-        "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
+        "ethnicity": "India does not collect ethnicity; Scheduled Caste and Scheduled Tribe shares and mother tongue are collected instead. Its census does count place of birth (table D-01, 2011), which this map shows on the ethnicity field under its basis, by its owner's decision of 19 September 2026, for every state and for every district drawn as the 2011 census counted it. A district created, divided or cut down since has no count of its own.",
     },
     # Laos asks ethnicity and religion and is here for the third field only.
     # Measured rather than assumed, the way Bhutan's declaration was: the 2015
@@ -511,12 +511,21 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "SAU": {
         "religion": "Saudi Arabia's 2022 census asks citizenship (Saudi or non-Saudi, and country of citizenship) and not religion; there are no official religious statistics at any level.",
-        "ethnicity": "Saudi Arabia's 2022 census records citizenship, not ethnicity.",
+        # No ethnicity entry: the census asks citizenship, which may stand on
+        # that field (the owner's decision of 19 September 2026), so its
+        # absence is not "not collected"; saudi_census says why each
+        # region's is empty (GASTAT's table by region is out of reach).
         "language": "Saudi Arabia's 2022 census does not ask language.",
     },
     "IRQ": {
         "ethnicity": "Iraq's 2024 census, the first nationwide count since 1987, deliberately excluded ethnicity from the questionnaire; religion was asked, sect was not.",
         "language": "Iraq's 2024 census deliberately excluded language from the questionnaire with ethnicity.",
+    },
+    # Read off the 2015 census's English questionnaire (8 pages): it asks
+    # religion and nationality beside sex and date of birth, and nothing
+    # about language or mother tongue.
+    "JOR": {
+        "language": "Jordan's 2015 census does not ask language: its questionnaire (https://dosweb.dos.gov.jo/DataBank/census2015/Questionare_en.pdf) has no language or mother-tongue question, and no census table carries one.",
     },
     # Corrected: the 1897 census of the Empire and the Soviet census of 1937
     # both asked religion (the 1937 results were suppressed); none since has.
@@ -531,7 +540,14 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "language": "Brazil's census does not ask language of the population; the 2022 census asks which indigenous languages an indigenous person speaks, which is not a composition.",
     },
     "IRN": {
-        "ethnicity": "Iran's census does not ask ethnicity; the 2016 census asked religion in the state's recognised categories, not ethnic group.",
+        # Ethnicity is absent for the same reason, by the owner's decision of
+        # 19 September 2026: nationality or citizenship may stand for it where
+        # the state counts that instead. The 2016 census counts every
+        # resident's country of citizenship, by province and by shahrestan,
+        # and iran_census.json carries it under ethnicity_basis "citizenship"
+        # (labelled as nationalities: "Iranian national", "Afghan national");
+        # an entry here would forbid exactly that. The census still asks no
+        # ethnic group, and every one of those records says so in its note.
         # Language is deliberately absent, by the owner's decision of 20
         # September 2026. Iran's census does not ask it -- that remains true,
         # and every ALI record says so in its own note -- but this table means
@@ -618,7 +634,7 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # near-universal is a true sentence and not a published figure.
     "MDV": {
         "religion": "The Maldives census does not ask religion. The only question on its form about who a person is asks nationality -- Maldivian or foreigner -- and no output of the 2022 round, across some sixty published tables, is a religion table. The constitution requires a citizen to be Muslim; that is the law, not a count, and no census figure for it exists.",
-        "ethnicity": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables.",
+        "ethnicity": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables, and this map shows it on the ethnicity field under its basis, by its owner's decision of 19 September 2026, for every atoll and island the 2022 atoll sheet gives it for.",
         "language": "The Maldives census does not ask language. It asks literacy in mother tongue and literacy in English -- Census 2022 tables ED1, ED2, ED16 and ED3-ED4 -- which count an ability and never record which language the mother tongue is. Dhivehi being near-universal is not a figure the census published.",
     },
     "VEN": {
@@ -660,12 +676,13 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # Demographic and Health Survey 2014, 167 pages, matches none of those
     # words on any page.
     #
-    # Nationality is not carried onto the ethnicity field, for the Maldives'
-    # reason: a passport is not an ethnic group, and Table 5 has no geography
-    # to put one on in any case.
+    # Nationality is carried onto the country's ethnicity field, as the map
+    # owner decided on 19 September 2026 that a census asking nationality
+    # instead may be read that way (data/curated/admin0_detail.json, Table 5);
+    # Table 5 has no geography, so the provinces keep this declaration.
     "PRK": {
         "religion": "North Korea's census does not ask religion. Its 2008 questionnaire has 53 questions -- H1 to H14 on the household, P1 to P29 on the person, M1 to M10 on deaths -- and none of them is about religion; in the 278 pages of the National Report the word occurs once, as the occupation 'religious professionals', 103 people, in Table 37. No table of the 53 is a religion table and the state publishes no other figures.",
-        "ethnicity": "North Korea's census does not ask ethnicity. The one question on its form about who a person is, P7, asks nationality -- 1 Korean or 2 Others -- and the only table built from it, Table 5, is national: 23,349,326 Koreans and 533 people of other nationalities, by age and by sex. Nationality is not ethnicity, and nothing in the round crosses either with a province.",
+        "ethnicity": "North Korea's census does not ask ethnicity. The one question on its form about who a person is, P7, asks nationality -- 1 Korean or 2 Others -- and the only table built from it, Table 5, is national: 23,349,326 Koreans and 533 people of other nationalities, by age and by sex. The country carries it as nationality; nothing in the round crosses nationality, or any other origin, with a province.",
         "language": "North Korea's census does not ask language. In the 278 pages of the 2008 National Report 'mother tongue' appears nowhere and 'language' appears once, in Table 22's definition of literacy -- the ability to read and write a simple message in any language -- which counts an ability and records no language. No table of the 53 is a language table.",
     },
     "SYR": {
@@ -823,6 +840,31 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # carries those tongues, counted, on the language field, and putting the
     # same division under ethnicity would publish one question's answer as
     # another's.
+    # Cambodia, read off the census's own list of what Form B asked (final
+    # report, chapter 1): name, relationship, sex, age, marital status,
+    # mother tongue, religion, birth place, previous residence and migration,
+    # literacy and education, disability, activity and occupation. Mother
+    # tongue and religion are on their fields; the thematic report on "ethnic
+    # minorities" is built from the mother-tongue answer.
+    "KHM": {
+        "ethnicity": "Cambodia's census does not ask ethnicity. The 2019 General Population Census's individual questionnaire (Form B), as the National Institute of Statistics' final report lists it in chapter 1, asks name, relationship to the head of household, sex, age, marital status, mother tongue, religion, birth place, previous residence, duration of stay and reason for migration, literacy and education, disability, main activity, occupation and industry -- and nothing about ethnicity, race or tribe. The census's thematic report on ethnic minorities is built from the mother-tongue answer, which the map carries on the language field.",
+    },
+    # Myanmar, read off the 2014 main questionnaire itself, reproduced as
+    # Annex 1 of Census Report Volume 2-B (pp. 107-112 of the English
+    # edition on Open Development Mekong): the one question naming a
+    # language is literacy.
+    "MMR": {
+        "language": "Myanmar's census does not ask language. The 2014 Population and Housing Census main questionnaire, reproduced as Annex 1 of Census Report Volume 2-B, asks religion and ethnicity but names language once, in the literacy question \"Can [name] read and write in any language?\", which records whether a person can, not which language they speak.",
+    },
+    # Viet Nam publishes no language composition at any level -- the mapping
+    # form, because whether the 2019 questionnaire asked one is not what the
+    # evidence shows: what it shows is that nothing was published.
+    "VNM": {
+        "language": {
+            "status": NOT_AVAILABLE,
+            "note": "Viet Nam's 2019 Population and Housing Census publishes no language composition at any level. Its 842-page Completed Results volume (General Statistics Office, December 2019) tabulates ethnicity by province (Table 2) and religion for the country (Table 3) and has no language or mother-tongue table among its tables: the volume is bilingual, and no page of its English text mentions language, mother tongue or speaking.",
+        },
+    },
     "TLS": {
         "ethnicity": "Timor-Leste's census does not ask ethnicity. The 2022 questionnaire, reproduced as Annex III of INETL's census main report, runs its individual module from E1 to E77 -- marital status, parents, birth registration, place of birth, migration, citizenship, literacy, education, labour, religion, mother tongues, disability, fertility, birth attendance -- and asks nothing about ethnicity, race, tribe or ancestry. What it does ask, at E58, is \"what languages did <Name> learn as a child?\", and Timorese identity largely tracks that answer; the Factbook's ethnic-groups line for Timor-Leste is the census's mother-tongue list sorted into Austronesian and Papuan, with no shares, so it is not used here. The mother tongues themselves are on the language field, which is the question that was actually asked.",
     },

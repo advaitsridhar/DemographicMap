@@ -853,10 +853,24 @@ ADAPTER_HINTS: dict[str, str] = {
            "by kraj and okres: python -m scripts.fetch_census.czechia",
     "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "
            "županija and grad/općina: python -m scripts.fetch_census.croatia",
-    "KAZ": "2021 census religion by region, transcribed on Wikipedia "
-           "(python -m scripts.fetch_census.wiki_census --country KAZ); ethnicity by "
+    "KAZ": "2021 census religion by region from the Bureau's brief results, and by "
+           "district from the 2009 census's regional volumes "
+           "(python -m scripts.fetch_census.kazakhstan_religion); ethnicity by "
            "region and district from the Bureau's start-of-2025 workbook "
-           "(python -m scripts.fetch_census.kazakhstan)",
+           "(python -m scripts.fetch_census.kazakhstan); median age and sex ratio "
+           "from the 2021 census (python -m scripts.fetch_census.kazakhstan_census)",
+    "UZB": "Population, median age and sex ratio by region and district from SIAT "
+           "(python -m scripts.fetch_census.uzbekistan_siat); the 2026 census's "
+           "preliminary results by region -- population, age, sex, nationality, "
+           "native language (python -m scripts.fetch_census.uzbekistan_census)",
+    "KGZ": "2022 census Book III, the nine regional books: population, age, sex, "
+           "ethnic group and native language by region, district and city: "
+           "python -m scripts.fetch_census.kyrgyzstan_census",
+    "TJK": "2020 census volume 2 (age and sex by region; men and women by city and "
+           "district) and the 2010 census's volume III (nationality by region): "
+           "python -m scripts.fetch_census.tajikistan_census",
+    "TKM": "2022 census volumes 2 and 4 by velayat (age, sex, nationality, mother "
+           "tongue): python -m scripts.fetch_census.turkmenistan_census",
     "KHM": "2019 census religion by province, transcribed on Wikipedia: "
            "python -m scripts.fetch_census.wiki_census --country KHM",
     "VNM": "2019 census Table 2 (population by ethnic group and province) from the "
@@ -996,13 +1010,14 @@ ADAPTER_GAPS: dict[str, str] = {
            "census's home-language minorities as printed, the rest assigned to "
            "the region's Tai group as the Ethnolinguistic Maps of Thailand name "
            "it, labelled as a model on every record.",
-    "IRN": "The 2016 census asked religion and the Statistical Centre publishes "
-           "it by province, but amar.org.ir ends the TLS handshake before a "
-           "standard client can read a page (an EOF in the protocol, measured "
-           "on the runner), and this project does not turn verification off. "
-           "The data exists and is not reachable from here. Language is a "
-           "different kind of gap: no Iranian census has ever asked it, so "
-           "there is nothing withheld and nothing to fetch. Eleven provinces "
+    # Only language is left for this to explain. The 2016 census's religion
+    # by province now comes from iran_census.json, which reads the Statistical
+    # Centre's 1395 yearbook as the Internet Archive captured it (amar.org.ir
+    # itself still ends the TLS handshake), and every unit it cannot fill --
+    # each county, Golestan, the polygon drawn for Bandar-e Gaz -- carries
+    # its own stated reason.
+    "IRN": "Language: no Iranian census has ever asked it, so there is "
+           "nothing withheld and nothing to fetch. Eleven provinces "
            "and 96 counties carry a figure all the same -- a population-"
            "weighted roll-up of the settlement estimates in the Atlas of the "
            "Languages of Iran, marked as the atlas's field estimates and not "
@@ -1010,7 +1025,9 @@ ADAPTER_GAPS: dict[str, str] = {
            "and has reached twelve of the thirty-one; the rest of the country "
            "is empty because those modules do not exist yet, and Kermanshah "
            "is empty because its module reaches five of its fourteen counties "
-           "and under a fifth of its people.",
+           "and under a fifth of its people. Religion is a different gap: the "
+           "2016 census asked it and the Statistical Centre publishes it by "
+           "province only, so no county carries it.",
     "EGY": "CAPMAS collected religion in the 2017 census and has not published "
            "it, nationally or by governorate; the last published figures are "
            "the 2006 census, national only. The data exists and is withheld. "
@@ -1923,6 +1940,34 @@ def weigh_adm2_parents(
 # Attribute side
 # ---------------------------------------------------------------------------
 
+# A file's rows for a country, dropped where another registered file counts
+# the same units outright: {file: {country: the file that counts them}}.
+# OCHA's Afghan table (cod-ps-afg, reference year 2026) totals 48.6 million
+# people and binds about 266 of the 398 drawn districts; the statistics
+# office's own 1396 (2017-18) estimates total 28.2 million settled people,
+# bind every district but two, and make their provinces to the person. The
+# year rule put OCHA's figure in front of the office's wherever both reached
+# a district, so a province's districts added up to neither year's total.
+# One vintage per level: the office's.
+# OCHA's Solomon Islands table is the National Statistics Office's projection
+# for 2023, by constituency; solomon_census.json sums the 2019 census's own
+# ward counts into the same 49 drawn constituencies (OCHA's fiftieth row,
+# Temotu Pele, has no polygon). The year rule let the projection stand in
+# front of the count -- 6.5-6.9% above it, over the census's ages, sexes and
+# religions -- where cod_ps_admin2.json's own entry says the office's census
+# file should win. A projection is not a count.
+SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
+    "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
+                           "SLB": "solomon_census.json"},
+}
+
+
+def superseded(filename: str) -> set[str]:
+    """The countries whose rows in ``filename`` give way to a registered file with rows."""
+    return {iso3 for iso3, by in SUPERSEDED_ROWS.get(filename, {}).items()
+            if by in ADAPTER_FILES and read_json(PROCESSED / by, None)}
+
+
 def load_adapters() -> dict[str, list[dict[str, Any]]]:
     """Every adapter record, bucketed by country, in authority order."""
     by_country: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -1932,8 +1977,11 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
         if not rows:
             continue
         log(f"  adapter {filename}: {len(rows)} records")
+        dropped = superseded(filename)
         for row in rows:
             iso3 = (row.get("country") or (row.get("id") or "")[:3]).upper()
+            if iso3 in dropped:
+                continue
             # Which file a row came from decides whether two rows landing on one
             # shape are a conflict. Across files it is normal -- India's C-01 and
             # C-16 both describe Kargil -- and within one file it means one of
@@ -2167,7 +2215,12 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        # fills a sector no census median reaches.
                        "bucharest_sectors.json",
                        # Turkey's districts as OCHA relays TUIK's 2022 register.
-                       "turkey_districts.json"})
+                       "turkey_districts.json",
+                       # Thailand's, Laos's and Cambodia's medians and sex
+                       # ratios from OCHA's COD-PS: projections (Thailand's
+                       # by the US Census Bureau), read only where no office
+                       # could be.
+                       "sea_cod_ps_age.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 # A survey's share is an estimate from a sample, and a census's or a
@@ -3652,6 +3705,22 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
                           "country's is the 2022 census's",
     ("ARM", "religion"): "its marzes' religion is the 2011 census's, and the "
                          "country's is the 2022 census's",
+    # fiji_census gives the four divisions Table P01-3's 2007 religion and
+    # ethnicity, but the polygon the boundary file labels Eastern is Kadavu
+    # alone and carries Kadavu's: Lau, Lomaiviti and Rotuma (26,779 people in
+    # 2017) are drawn only at the second level. A sum would leave them out and
+    # look whole. The country keeps the 2007 census's national table, the
+    # same census, as the Factbook prints it.
+    ("FJI", "religion"): "its Eastern polygon is Kadavu alone; Lau, Lomaiviti and "
+                         "Rotuma are drawn only at the second level",
+    ("FJI", "ethnicity"): "its Eastern polygon is Kadavu alone; Lau, Lomaiviti and "
+                          "Rotuma are drawn only at the second level",
+    # kiribati_census gives the three island groups the 2015 census's religion
+    # (Volume 1, Table 6), the latest by island: the 2020 census published
+    # religion for the country only (General Report, Table G-3), and the
+    # country carries that.
+    ("KIR", "religion"): "its island groups' religion is the 2015 census's, and the "
+                         "country's is the 2020 census's",
 }
 
 

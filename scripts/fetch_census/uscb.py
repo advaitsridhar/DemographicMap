@@ -297,6 +297,10 @@ PHILIPPINES = Country(
     #
     # The cities are not here but in no_shape below: they are absent rather
     # than misnamed, and an alias cannot conjure a boundary.
+    # The PSA's "Batak" is the Batak of Palawan, a Negrito people of a few
+    # thousand, and not Sumatra's Batak, eight million strong, whose name the
+    # group tree files among the Malay and Indonesian peoples.
+    relabel={"Batak": "Batak (Palawan)"},
     aliases={
         "Bangsamoro Autonomous Region Of Muslim Mindanao": ("ARMM",),
         "Cordillera Administrative Region": ("CAR",),
@@ -348,6 +352,15 @@ PHILIPPINES = Country(
         ("Soccsksargen", "General Santos"),
         ("Davao Region", "Davao"),
         ("Zamboanga Peninsula", "Zamboanga"),
+        # Two provinces whose polygons are not the provinces, measured on the
+        # map's own tiles (philippines_age.EXCLUDE): the boundary file's
+        # "Maguindanao" spans 9,144 km2 and takes in Sultan Kudarat, which it
+        # does not draw (Maguindanao is some 4,900 km2), and its "Cotabato"
+        # covers some 5,900 km2 of the province's 9,008, the rest lying inside
+        # that "Maguindanao". Either province's composition on them would be
+        # the wrong people's.
+        ("Bangsamoro Autonomous Region Of Muslim Mindanao", "Maguindanao"),
+        ("Soccsksargen", "Province Of Cotabato"),
     )),
     note=("2020 Census of Population and Housing. The census records religious "
           "affiliation as the individual church or denomination a person names, "
@@ -492,6 +505,11 @@ MYANMAR = Country(
         # sheet, which is the other reason they cannot be read together.
         Topic("Ethnicity", "religion", prefix="RLG_"),
     ),
+    # The profiles' "Burmese" is the Bamar, Myanmar's majority people, and
+    # their "Indian" the country's own citizens of South Asian descent; read
+    # as written, the group tree files both as the nationalities a European
+    # or Korean register means by those words.
+    relabel={"Burmese": "Bamar", "Indian": "Indian (Myanmar)"},
     # None needed for the states and regions: the census writes "KACHIN STATE"
     # where geoBoundaries writes "Kachin", and norm() drops the word "state"
     # on both sides. Two boundary names are misspelled rather than differently

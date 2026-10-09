@@ -7867,12 +7867,20 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
 * **Iran** -- the 2016 census asked religion and the Statistical Centre
   publishes it by province, but `amar.org.ir` ends the TLS handshake before a
   standard client reads a page (`SSL: UNEXPECTED_EOF_WHILE_READING`, measured
-  on the runner). Verification is not turned off for it. The country carries a
-  `gap_reason` saying the data exists and is unreachable; ethnicity and
-  language were already declared not collected. The language declaration still
-  stands — no Iranian census has asked it — and eleven provinces carry a
-  figure from a research atlas instead, marked as one: see *Iran: language
-  from a research atlas, twelve provinces at a time* below.
+  on the runner). Verification is not turned off for it. Since the Asia round
+  the Internet Archive's captures of the same files are read instead
+  (`iran_census.py`): the census's detailed tables by province and shahrestan
+  (age, sex, citizenship) and the 1395 yearbook's religion by province, whose
+  English edition swaps the Christian and Zoroastrian headings. The three
+  shahrestans the map draws as two polygons (Tehran, Isfahan, Mehdishahr) take
+  each half's own count from the province's settlement table -- the city and
+  the rest of the county, or the two districts. Religion is published for no
+  unit below the province. Citizenship stands for ethnicity, which the census
+  does not ask (the owner's rule of 19 September 2026), labelled as
+  nationalities. The language declaration still stands — no Iranian census has
+  asked it — and eleven provinces carry a figure from a research atlas
+  instead, marked as one: see *Iran: language from a research atlas, twelve
+  provinces at a time* below.
 * **South Korea** -- the 2015 census asked religion and KOSIS publishes it by
   province, behind an API that needs a registered key; *Religion in South
   Korea* carries the national series only. Declared a gap at first; the

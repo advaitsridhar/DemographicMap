@@ -258,7 +258,9 @@ class TreeAndBuild(unittest.TestCase):
             self.assertEqual(cg.family("ethnicity", label), "East and Southeast Asian ancestry",
                              label)
         self.assertEqual(cg.ancestry("ethnicity", "Burmese and Mon")[1],
-                         "Himalayan and Tibeto-Burman peoples")
+                         "Tibeto-Burman peoples of China and Southeast Asia")
+        self.assertEqual(cg.family("ethnicity", "Burmese and Mon"),
+                         "East and Southeast Asian ancestry")
         self.assertEqual(cg.ancestry("ethnicity", "Thai Chinese")[1], "Han and Sinitic peoples")
         for label in m.CATEGORIES.values():
             self.assertGreater(len(cg.ancestry("ethnicity", label)), 1, label)
@@ -267,9 +269,12 @@ class TreeAndBuild(unittest.TestCase):
         files = be.ADAPTER_FILES
         self.assertIn("thailand_ethnicity.json", files)
         # After Korea's survey (and the nationality file that sits with it),
-        # before every census file.
-        self.assertGreater(files.index("thailand_ethnicity.json"),
-                           files.index("korea_survey_province.json"))
+        # before every census file. korea_survey's output is named
+        # korea_province_survey.json, a *_survey.json; the list may still
+        # carry its older name.
+        survey = next(name for name in ("korea_province_survey.json",
+                                        "korea_survey_province.json") if name in files)
+        self.assertGreater(files.index("thailand_ethnicity.json"), files.index(survey))
         self.assertLess(files.index("thailand_ethnicity.json"),
                         files.index("japan_prefecture.json"))
 

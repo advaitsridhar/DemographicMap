@@ -63,6 +63,12 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Protestant (Mixed)", "Mixed Catholic / Protestant",
         "Non-denominational Christian", "Christian Fellowship Church",
         "Independent", "African Independent Church",
+        # The Pacific censuses' rows for the churches they do not name
+        # (Vanuatu, Samoa), and the smaller bodies Samoa's, Tonga's and
+        # Nauru's censuses do name whose tradition their tables do not state:
+        # Christian, and no more is claimed for them here.
+        "Other churches", "Bible Study", "Peace Chapel", "Samoa Evangelism",
+        "Mo'ui Fo'ou 'ia Kalaisi", "Pacific Light House",
     ),
     "Catholicism": (
         "Catholic", "Roman Catholic", "Catholicism", "Catholics",
@@ -106,6 +112,9 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Independent Congregation of Hafnarfjordur",
         "Evangelical Church of the Augsburg Confession",
         "Kiribati Protestant Church", "Kiribati Uniting Church",
+        # Samoa's 2021 census: the Church of the Nazarene (Wesleyan-Holiness)
+        # and the Samoa Independent Seventh-day Adventist Church.
+        "Nazarene", "Aso Fitu (SISDAC)",
         "Congregational Christian Church", "Ekalesia Niue",
         "Church of Jesus Christ in Madagascar/Malagasy Lutheran Church/Anglican Church",
         "Awakening Churches/Christian Revival", "Apostolic Sect",
@@ -271,6 +280,8 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Traditional/Ethnic religion", "Traditional/ethnic religion",
         # Brazil's 2022 column for the religions of its indigenous peoples.
         "Indigenous traditions",
+        # Solomon Islands' 2019 census column (solomon_census).
+        "Custom beliefs or animism",
     ),
     # Maori churches. Stats NZ classifies these apart from Christian and this
     # follows it: Ratana and Ringatu are Christian in origin but are counted,
@@ -1083,6 +1094,13 @@ PARENT: dict[str, dict[str, str]] = {
         # respondent saying they are not religious, which the lower-case
         # "believer" pattern would file with the unaffiliated.
         "Indifferent / non-believer": "No religion",
+        # Viet Nam's 2009 census (vietnam_religion) counts two lay Buddhist
+        # movements of the Mekong delta apart, under their own names: Buu Son
+        # Ky Huong, the millenarian Buddhist tradition Hoa Hao Buddhism grew
+        # from, and Tu An Hieu Nghia, which grew from it in turn. Filed where
+        # Hoa Hao Buddhism is, rather than as two religions of their own.
+        "Buu Son Ky Huong": "Buddhism",
+        "Tu An Hieu Nghia": "Buddhism",
     },
     # Genealogical classification, as the standard references give it. A
     # family is one hue on the map and closely related languages are shades of

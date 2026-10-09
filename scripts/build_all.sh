@@ -276,6 +276,24 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.bangladesh
   soft python3 -m scripts.fetch_census.south_africa
   soft python3 -m scripts.fetch_census.nepal
+  # South Asia's later readers, each after the file it reads: the India
+  # readers check against the C-01 shapes india_census writes,
+  # pakistan_census_tables against pakistan_district.json (pakistan),
+  # bangladesh_zila_ages against bangladesh_district.json (bangladesh), and
+  # afghanistan_sdes takes each figure's size from afghanistan_estimates.
+  # afghanistan reads the district development plans' ethnic shares as the
+  # provinces' articles transcribe them, afghanistan_ddp the plans' own PDFs
+  # in the Internet Archive (and compares the two, so it runs after).
+  soft python3 -m scripts.fetch_census.india_ages
+  soft python3 -m scripts.fetch_census.india_birthplace
+  soft python3 -m scripts.fetch_census.pakistan_census_tables
+  soft python3 -m scripts.fetch_census.bangladesh_zila_ages
+  soft python3 -m scripts.fetch_census.bhutan
+  soft python3 -m scripts.fetch_census.maldives_census
+  soft python3 -m scripts.fetch_census.afghanistan
+  soft python3 -m scripts.fetch_census.afghanistan_ddp
+  soft python3 -m scripts.fetch_census.afghanistan_estimates
+  soft python3 -m scripts.fetch_census.afghanistan_sdes
   soft python3 -m scripts.fetch_census.new_zealand
   # One reader, every country in the U.S. Census Bureau's subnational series:
   # the Philippines (2020 census) and Ethiopia (2007, the last it completed).
