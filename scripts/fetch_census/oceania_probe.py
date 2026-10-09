@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Oceania reconnaissance: what each SDMX service and office serves, before a reader.
 
-Read-only: nothing is written and the output is the log. Each subcommand
-answers one question and prints only what decides it.
+Read-only but for ``pages``: nothing else is written and the output is the
+log. Each subcommand answers one question and prints only what decides it.
 
 * ``flows SERVICE [--match RE]`` -- the dataflows of an SDMX service whose id
   or name matches: id, agency, version and English name.
@@ -14,6 +14,9 @@ answers one question and prints only what decides it.
   rows (or the rows matching ``--grep``).
 * ``get URL [URL...] [--grep RE] [--links RE]`` -- status, type and length of
   each body, then its matching lines or links.
+* ``pages URL --pages N,N`` -- the one exception to read-only: those pages of a
+  PDF as grayscale JPEGs under data/processed/page_images, for tables printed
+  as scans with no text layer, removed again once read.
 
 Services: ``pdh`` is the Pacific Community's PDH.Stat, ``abs`` the ABS Data
 API, ``nz`` Stats NZ's Aotearoa Data Explorer. The last needs a key, which is
@@ -292,6 +295,41 @@ def cmd_xlsx(url: str, sheets: list[str], first: int, last: int, width: int,
                 log(f"    {n:>4}: {line}")
 
 
+PAGE_DIR = "data/processed/page_images"
+
+
+def cmd_pages(url: str, numbers: list[int], dpi: int, width: int, rotate: int) -> None:
+    """Pages of a PDF as grayscale JPEGs under PAGE_DIR, for tables printed as scans.
+
+    The one subcommand that writes: a table with no text layer can only be
+    read by looking at it, and the runner is the only way to the file. The
+    images are removed once the tables are read.
+    """
+    import pdfplumber
+    status, ctype, body = fetch(url, timeout=600)
+    log(f"== {url}\n  HTTP {status} {ctype} {len(body):,} bytes")
+    if status != 200 or body[:5] != b"%PDF-":
+        log("  " + body[:300].decode("utf-8", "replace"))
+        return
+    os.makedirs(PAGE_DIR, exist_ok=True)
+    stem = re.sub(r"[^A-Za-z0-9]+", "-", url.rsplit("/", 1)[-1].rsplit(".", 1)[0])[:40]
+    with pdfplumber.open(io.BytesIO(body)) as pdf:
+        log(f"  {len(pdf.pages)} pages")
+        for n in numbers:
+            if not 1 <= n <= len(pdf.pages):
+                log(f"  page {n}: outside the document")
+                continue
+            image = pdf.pages[n - 1].to_image(resolution=dpi).original.convert("L")
+            if rotate:
+                image = image.rotate(rotate, expand=True)
+            if image.width > width:
+                image = image.resize((width, round(image.height * width / image.width)))
+            path = f"{PAGE_DIR}/{stem}-p{n}.jpg"
+            image.save(path, "JPEG", quality=70, optimize=True)
+            log(f"  page {n}: {image.width}x{image.height} -> {path} "
+                f"({os.path.getsize(path):,} bytes)")
+
+
 def cmd_csv(url: str, columns: list[str], rows: int, grep: str | None) -> None:
     """Chosen columns of a CSV, one row per line (all columns' names first)."""
     import csv
@@ -357,7 +395,17 @@ def main() -> int:
     c.add_argument("--col", action="append", default=[])
     c.add_argument("--rows", type=int, default=300)
     c.add_argument("--grep")
+    p = sub.add_parser("pages")
+    p.add_argument("url")
+    p.add_argument("--pages", required=True, help="comma-separated page numbers, from 1")
+    p.add_argument("--dpi", type=int, default=150)
+    p.add_argument("--width", type=int, default=1700)
+    p.add_argument("--rotate", type=int, default=0, help="degrees counter-clockwise")
     args = ap.parse_args()
+    if args.cmd == "pages":
+        cmd_pages(args.url, [int(n) for n in args.pages.split(",") if n.strip()], args.dpi,
+                  args.width, args.rotate)
+        return 0
     if args.cmd == "csv":
         cmd_csv(args.url, args.col, args.rows, args.grep)
         return 0
