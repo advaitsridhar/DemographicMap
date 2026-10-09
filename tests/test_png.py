@@ -593,12 +593,26 @@ class TheDeclarationsAboutWhatTheCensusAsks(unittest.TestCase):
 
     def test_the_note_says_the_figure_is_the_largest_denomination(self):
         note = png.RELIGION_NOTE.format(group="Roman Catholic", pct="40.0",
-                                        rest="60.0")
+                                        rest="60.0", kind="province")
         self.assertIn("largest denomination", note)
         self.assertIn("40.0%", note)
         # And what the other 60% is: unpublished, not uncounted.
         self.assertIn("60.0%", note)
         self.assertIn("sells", note)
+
+    def test_bougainville_and_the_capital_are_not_called_provinces(self):
+        unit = png.Unit("Autonomous Region of Bougainville", 1000, 510, 490)
+        rec = png.province_record("Autonomous Region of Bougainville", unit,
+                                  ("Roman Catholic", 68.4), 19.9)
+        self.assertIn("in this autonomous region at the 2011 census", rec["religion_note"])
+        self.assertIn("the autonomous region's citizen population", rec["median_age_note"])
+        self.assertNotIn("this province", rec["religion_note"])
+        self.assertNotIn("the province's", rec["median_age_note"])
+        ncd = png.province_record("National Capital District", unit, ("Roman Catholic", 30.0),
+                                  22.0)
+        self.assertIn("in this capital district", ncd["religion_note"])
+        other = png.province_record("Hela", unit, ("Evangelical Alliance", 19.7), 26.6)
+        self.assertIn("in this province", other["religion_note"])
 
     def test_the_run_says_what_every_route_answered(self):
         # A measured negative is only a result while the measurement is on

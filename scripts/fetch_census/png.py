@@ -311,10 +311,22 @@ UNION_REST = (" -- which together cover it and nothing else, every other distric
 CARVED_WHY = (" {new} was carved out of this district after the boundary file "
               "was drawn and the census booklet does not say from which, so "
               "where it came from is established rather than published: {why}.")
+# What a first-level unit is called in its notes. The census tabulates all
+# 22 as provinces; two of them are not.
+KINDS: dict[str, str] = {
+    "Autonomous Region of Bougainville": "autonomous region",
+    "National Capital District": "capital district",
+}
+
+
+def kind_of(name: str) -> str:
+    return KINDS.get(name, "province")
+
+
 RELIGION_NOTE = (
-    "{group} was the largest denomination in this province at the 2011 "
+    "{group} was the largest denomination in this {kind} at the 2011 "
     "census, with {pct}% of its citizen population -- and it is the only "
-    "religion figure published for a province, the \"Main religion\" row of "
+    "religion figure published for a province or region, the \"Main religion\" row of "
     "the Summary Indicators in the National Statistical Office's 2011 National "
     "Report. The remaining {rest}% is not a gap in the census but in what was "
     "published: the office sells the provincial tables rather than publishing "
@@ -333,22 +345,22 @@ DISTRICT_RELIGION_GAP = (
 PROVINCE_RELIGION_GAP = (
     "The 2011 census asked religion, but the Summary Indicators of the "
     "National Statistical Office's 2011 National Report, the only provincial "
-    "religion figure it publishes, could not be read for this province.")
+    "religion figure it publishes, could not be read for this {kind}.")
 MEDIAN_NOTE = (
-    "The median age of the province's citizen population at the 2011 census, "
+    "The median age of the {kind}'s citizen population at the 2011 census, "
     "from Table 1.7 of the National Statistical Office's 2011 National Report "
     "(its provincial Summary Indicators print the same figure). Non-citizens -- "
     "20,882 people in the whole country, 0.3% of it -- are not in it. It is the "
-    "latest age the office publishes for a province: the 2024 census asked age, "
+    "latest age the office publishes for a province or region: the 2024 census asked age, "
     "one of its six questions, but its Final Figures, the one release of that "
     "census so far, counts people by sex only.")
 MEDIAN_CONTRADICTED = (
     "The National Statistical Office's 2011 National Report prints the median age of the "
-    "province's citizen population as {total} (Table 1.7, and its provincial Summary "
+    "{kind}'s citizen population as {total} (Table 1.7, and its provincial Summary "
     "Indicators), and the Summary Indicators print its males' as {male} and its females' as "
     "{female}. A median of everyone lies between its two sexes' medians, so these cannot all "
-    "be right, and the report does not say which is the misprint; the province's figure is "
-    "not used. The report has no finer age table for a province to compute it from (Table "
+    "be right, and the report does not say which is the misprint; the {kind}'s figure is "
+    "not used. The report has no finer age table for a province or region to compute it from (Table "
     "1.5 gives three broad age groups), and the 2024 census, which asked age, has published "
     "only its Final Figures, district counts by sex with no ages.")
 DISTRICT_AGE_GAP = (
@@ -851,20 +863,20 @@ def province_record(name: str, unit: Unit, religion: tuple[str, float] | None,
     if median is not None:
         fields["median_age"] = measure(median, year=CENSUS_2011,
                                        source=NATIONAL_REPORT, unit="years")
-        fields["median_age_note"] = MEDIAN_NOTE
+        fields["median_age_note"] = MEDIAN_NOTE.format(kind=kind_of(name))
     elif contradicted is not None:
         total, male, female = contradicted
         fields["median_age"] = gap(NOT_AVAILABLE, MEDIAN_CONTRADICTED.format(
-            total=total, male=male, female=female))
+            total=total, male=male, female=female, kind=kind_of(name)))
     if religion is not None:
         group, pct = religion
         rows = [{"group": group, "pct": pct}]
         fields["religion"] = rows
         fields["religion_year"] = dated(rows, CENSUS_2011)
         fields["religion_note"] = RELIGION_NOTE.format(
-            group=group, pct=f"{pct:.1f}", rest=f"{100.0 - pct:.1f}")
+            group=group, pct=f"{pct:.1f}", rest=f"{100.0 - pct:.1f}", kind=kind_of(name))
     else:
-        fields["religion"] = gap(NOT_AVAILABLE, PROVINCE_RELIGION_GAP)
+        fields["religion"] = gap(NOT_AVAILABLE, PROVINCE_RELIGION_GAP.format(kind=kind_of(name)))
     return record(
         f"PNG-{slug(name)}", name, level="admin1", parent="PNG", country="PNG",
         aliases=[PROVINCES[name]],

@@ -289,6 +289,7 @@ class TheRecords(unittest.TestCase):
         drawn = self.named("Tarawa, Banaba and the Phoenix Islands")
         self.assertEqual(drawn["population"]["value"], 7018 + 44643 + 18429 + 333 + 41)
         self.assertIn("also draws North and South Tarawa", drawn["population_note"])
+        self.assertNotIn("as a whole", drawn["population_note"])
         self.assertEqual(drawn["sex_ratio"]["unit"], "males_per_100_females")
         self.assertIn("Pacific Community", drawn["median_age"]["source"])
         self.assertIn("I-Kiribati", {g["group"] for g in drawn["ethnicity"]})

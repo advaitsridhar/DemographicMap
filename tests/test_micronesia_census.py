@@ -376,6 +376,15 @@ class FirstEthnicity2000(unittest.TestCase):
         self.assertIn("Kosrae State tabulation", lelu["ethnicity_note"])
 
 
+class ChuukVintage(unittest.TestCase):
+    def test_the_note_names_the_year_and_the_state_s_two_counts(self):
+        note = fm.CHUUK_VINTAGE.format(people23=33_885, people10=48_654)
+        self.assertIn("The 2010 census count", note)
+        self.assertIn("latest by municipality", note)
+        self.assertIn("counted 33,885 people in 2023 against 48,654 in 2010", note)
+        self.assertIn("not to be added up against the state's 2023 figure", note)
+
+
 class Binding(unittest.TestCase):
 
     def test_every_drawn_municipality_is_a_census_one(self):

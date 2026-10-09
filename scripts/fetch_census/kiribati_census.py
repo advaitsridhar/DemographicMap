@@ -929,7 +929,9 @@ def build(counts: dict[str, int], cod: dict[str, dict[str, Any]], report: dict[s
         note = (f"{why} " if why else "") + (
             f"The census counts of its islands added up: {', '.join(islands)}."
             if len(islands) > 1 else "Kanton, the group's one inhabited island.")
-        if not whole and label in GROUPS:
+        if set(GROUPS.get(label, [])) - set(islands):
+            # A polygon that draws only part of its group says how many the
+            # whole group counted, so its figure is not read as the group's.
             group = sum(counts[i] for i in GROUPS[label])
             note += f" The {label.replace(' Islands', '')} group as a whole counted {group:,}."
         labels = [REPORT_ROWS[i] for i in islands]

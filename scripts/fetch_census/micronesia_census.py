@@ -712,6 +712,14 @@ CHUUK_GAP = ("The 2010 census's Chuuk State tabulation publishes age and sex (Ta
              "the office's site or the Internet Archive's copies of its former one serve. "
              "Chuuk's {what} is counted by state and region only.")
 CHUUK_GAP_TABLES = {"religion": "P2-10", "language": "P2-11"}
+# Why a Chuuk municipality's people, median age and sex ratio are 2010's
+# when its state's are 2023's, said beside the count.
+CHUUK_VINTAGE = ("The 2010 census count (Chuuk State basic tabulation, Table B01), the latest "
+                 "by municipality: the 2023 census has published no Chuuk State tables, and its "
+                 "national tables stop at the state, which counted {people23:,} people in 2023 "
+                 "against {people10:,} in 2010. The median age and sex ratio here are of the same "
+                 "2010 count; Chuuk's municipalities are not to be added up against the state's "
+                 "2023 figure.")
 
 
 def read_workbook(url: str):
@@ -798,6 +806,8 @@ def municipal_fields(state: str, n23: dict, books23: dict, books10: dict, eth200
             check_age(name, ages10[name], 2010)
             fields = fields_municipality(state, name, ages10, 2010, f"{T2010}, Chuuk State "
                                          "basic tabulation", None, None, None, None)
+            fields["population_note"] = CHUUK_VINTAGE.format(
+                people23=int(n23[state]["total"]), people10=int(sum(people10.values())))
             for field in ("religion", "language"):
                 fields[field] = gap(NOT_AVAILABLE, CHUUK_GAP.format(
                     what=field, table=CHUUK_GAP_TABLES[field]))

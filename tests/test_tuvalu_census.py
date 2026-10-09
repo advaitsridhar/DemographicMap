@@ -171,6 +171,10 @@ class TheRecords(unittest.TestCase):
         self.assertEqual(motufoua["sex_ratio"]["value"], 63.8)
         self.assertEqual(motufoua["religion"]["status"], "not_available")
         self.assertEqual(motufoua["parent_name"], "Vaitupu")
+        # Its ratio is the boarding school's, and the note says so.
+        self.assertIn("127 males, 199 females", motufoua["sex_ratio_note"])
+        self.assertIn("Motufoua Secondary School", motufoua["sex_ratio_note"])
+        self.assertNotIn("Secondary School", self.named("Saniuta").get("sex_ratio_note", ""))
 
     def test_a_village_of_eleven_people_has_no_sex_ratio(self):
         temotu = self.named("Temotu")

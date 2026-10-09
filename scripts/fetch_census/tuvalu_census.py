@@ -226,7 +226,17 @@ def island_fields(name: str, report: dict[str, dict[str, int]],
     }
 
 
-def village_fields(people: tuple[int, int, int]) -> dict[str, Any]:
+# What a village is, where that is what its sex ratio reflects: the census
+# counts Motufoua, the national secondary boarding school's compound, as a
+# village of its own.
+VILLAGE_CONTEXT: dict[str, str] = {
+    "Motufoua": ("Motufoua is the compound of Motufoua Secondary School, Tuvalu's national "
+                 "boarding secondary school, which the census counts as a village of its own; "
+                 "its people are the school's boarders and staff."),
+}
+
+
+def village_fields(people: tuple[int, int, int], name: str = "") -> dict[str, Any]:
     total, male, female = people
     return withhold_small({
         "population": population(total, 2017, f"{TABLES} (Table 2)"),
@@ -234,7 +244,9 @@ def village_fields(people: tuple[int, int, int]) -> dict[str, Any]:
                             "census (Table 2); the 2022 census publishes no village counts."),
         "sex_ratio": measure(sex_ratio(male, female), unit="males_per_100_females", year=2017,
                              source=f"{TABLES} (Table 2)"),
-        "sex_ratio_note": "Males per 100 females, 2017 census (Table 2).",
+        "sex_ratio_note": (f"Males per 100 females, 2017 census (Table 2): {male:,} males, "
+                           f"{female:,} females."
+                           + (f" {VILLAGE_CONTEXT[name]}" if name in VILLAGE_CONTEXT else "")),
         "median_age": gap(NOT_AVAILABLE, VILLAGE_GAPS["median_age"]),
         "religion": gap(NOT_AVAILABLE, VILLAGE_GAPS["religion"]),
         "ethnicity": gap(NOT_AVAILABLE, VILLAGE_GAPS["ethnicity"]),
@@ -268,7 +280,7 @@ def build(report: dict[str, dict[str, int]], villages: dict[tuple[str, str], tup
         unit = village_units[key]
         island, village = key.split("|")
         records.append(unit_record("TUV", key, unit["name"], unit, "admin2", island, SOURCES,
-                                   **village_fields(villages[(island, village)])))
+                                   **village_fields(villages[(island, village)], village)))
     return records
 
 
