@@ -1,49 +1,268 @@
-india_birthplace: Census of India 2011, table D-01
-  study 10671: 36 units, state(s) ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35'], 295,176 bytes
-  study 10672: 4 units, state(s) ['35'], 37,226 bytes
-  study 10673: 24 units, state(s) ['28'], 183,930 bytes
-  study 10674: 17 units, state(s) ['12'], 121,587 bytes
-  study 10675: 28 units, state(s) ['18'], 205,356 bytes
-  study 10676: 39 units, state(s) ['10'], 280,432 bytes
-  study 10677: 2 units, state(s) ['04'], 25,193 bytes
-  study 10678: 19 units, state(s) ['22'], 142,398 bytes
-  study 10679: 2 units, state(s) ['26'], 24,179 bytes
-  study 10680: 3 units, state(s) ['25'], 30,533 bytes
-  study 10681: 10 units, state(s) ['07'], 84,482 bytes
-  study 10682: 3 units, state(s) ['30'], 33,216 bytes
-  study 10683: 27 units, state(s) ['24'], 206,636 bytes
-  study 10684: 22 units, state(s) ['06'], 170,712 bytes
-  study 10685: 13 units, state(s) ['02'], 100,748 bytes
-  study 10686: 23 units, state(s) ['01'], 162,942 bytes
-  study 10687: 25 units, state(s) ['20'], 182,821 bytes
-  study 10688: 31 units, state(s) ['29'], 230,447 bytes
-  study 10689: 15 units, state(s) ['32'], 121,582 bytes
-  study 10690: 2 units, state(s) ['31'], 22,736 bytes
-  study 10691: 51 units, state(s) ['23'], 362,586 bytes
-  study 10692: 36 units, state(s) ['27'], 271,166 bytes
-  study 10693: 10 units, state(s) ['14'], 75,311 bytes
-  study 10694: 8 units, state(s) ['17'], 63,589 bytes
-  study 10695: 9 units, state(s) ['15'], 69,007 bytes
-  study 10696: 12 units, state(s) ['13'], 89,076 bytes
-  study 10697: 31 units, state(s) ['21'], 223,768 bytes
-  study 10698: 5 units, state(s) ['34'], 44,322 bytes
-  study 10699: 21 units, state(s) ['03'], 167,086 bytes
-  study 10700: 34 units, state(s) ['08'], 250,675 bytes
-  study 10701: 5 units, state(s) ['11'], 44,319 bytes
-  study 10702: 33 units, state(s) ['33'], 249,748 bytes
-  study 10703: 5 units, state(s) ['16'], 44,883 bytes
-  study 10704: 72 units, state(s) ['09'], 516,483 bytes
-  study 10705: 14 units, state(s) ['05'], 109,672 bytes
-  study 10706: 20 units, state(s) ['19'], 156,791 bytes
-  35 states and 640 districts reconcile, label by label, to India's 1,210,854,977
-  named: Bangladeshi (2,747,062), Burmese (59,282), Nepalese (810,158), Pakistani (918,982), Sri Lankan (198,193)
-     3 2011 district with no shape (divided since)
-     1 boundary artefact
-    91 district created since 2011
-   562 district, unchanged since 2011
-    75 shape that kept a name after a split
-    36 state
-     6 successor of a district divided whole
-  wrote data/processed/india_birthplace.json (1502 kB)
-  wrote data/processed/india_birthplace_successors.json (198 kB)
-  771 records in india_birthplace.json, 75 in india_birthplace_successors.json
+china_county_census: Qinghai Provincial Bureau of Statistics, 青海省2020年人口普查年鉴 (Qinghai population census yearbook 2020)
+  retry 1/1 after 2s :: http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0101.xls :: HTTP Error 502: Bad Gateway
+  retry 1/1 after 2s :: http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0104.xls :: HTTP Error 502: Bad Gateway
+  retry 1/3 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error timed out>
+  retry 2/3 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 1/1 after 2s :: http://tjj.qinghai.gov.cn/nj/rkpc/zk/html/A0105.xls :: HTTP Error 502: Bad Gateway
+  retry 1/3 after 2s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0105.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 2/3 after 4s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0105.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error timed out>
+  retry 3/3 after 8s :: https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Ftjj.qinghai.gov.cn%2Fnj%2Frkpc%2Fzk%2Fhtml%2FA0105.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+    province   全省                       630000 
+    prefecture 西宁市                      630100 
+    county     城东区                      630102 a district
+    county     城中区                      630103 a district
+    county     城西区                      630104 a district
+    county     城北区                      630105 a district
+    county     湟中区                      630106 a district
+    county     大通回族土族自治县                630121 bound to Datonghuizutuzuzizhixian (17275852B12680287585482)
+    county     湟源县                      630123 bound to Huangyuanxian (17275852B75021358121292), ratio 0.80 (0.81 of the median)
+    prefecture 海东市                      632100 
+    special    乐都区                      -      
+    special    平安区                      -      
+    special    民和回族土族自治县                -      
+    special    互助土族自治县                  -      
+    special    化隆回族自治县                  -      
+    special    循化撒拉族自治县                 -      
+    prefecture 海北藏族自治州                  632200 
+    county     门源回族自治县                  632221 bound to Menyuanhuizuzizhixian (17275852B50621998812160), ratio 0.94 (0.94 of the median)
+    county     祁连县                      632222 bound to Qilianxian (17275852B88619993156988), ratio 1.04 (1.05 of the median)
+    county     海晏县                      632223 bound to Haiyanxian (17275852B58564753780047), ratio 1.00 (1.00 of the median)
+    county     刚察县                      632224 bound to Gangchaxian (17275852B65042092306901)
+    prefecture 黄南藏族自治州                  632300 
+    county     同仁县                      632301 bound to Tongrenxian (17275852B20463865371353), ratio 1.10 (1.10 of the median)
+    county     尖扎县                      632322 bound to Jianzhaxian (17275852B71786988816730)
+    county     泽库县                      632323 bound to Zekuxian (17275852B98267999500175)
+    county     河南蒙古族自治县                 632324 no polygon is this county: its seat stands alone in Banmaxian, whose label is not 河南蒙古族自治县 (agreement 0.45)
+    prefecture 海南藏族自治州                  632500 
+    county     共和县                      632521 bound to Gonghexian (17275852B58957248362912), ratio 1.08 (1.09 of the median)
+    county     同德县                      632522 bound to Tongdexian (17275852B73285144447377), ratio 0.94 (0.94 of the median)
+    county     贵德县                      632523 bound to Guidexian (17275852B8640595389907), ratio 1.04 (1.04 of the median)
+    county     兴海县                      632524 bound to Xinghaixian (17275852B81098989654744), ratio 1.00 (1.00 of the median)
+    county     贵南县                      632525 bound to Guinanxian (17275852B54009314236158), ratio 0.94 (0.94 of the median)
+    prefecture 果洛藏族自治州                  632600 
+    county     玛沁县                      632621 bound to Maqinxian (17275852B82919928587081)
+    county     班玛县                      632622 bound to Banmaxian (17275852B52151949988531), ratio 1.17 (1.17 of the median)
+    county     甘德县                      632623 no polygon is this county: no polygon holds its seat alone or names it
+    county     达日县                      632624 no polygon is this county: no polygon holds its seat alone or names it
+    county     久治县                      632625 bound to Jiuzhixian (17275852B2182407224263)
+    county     玛多县                      632626 bound to Maduoxian (17275852B66695118162266)
+    prefecture 玉树藏族自治州                  632700 
+    county     玉树市                      632701 bound to Yushuxian (17275852B66736115774382), ratio 1.17 (1.18 of the median)
+    county     杂多县                      632722 no polygon is this county: no polygon holds its seat alone or names it
+    county     称多县                      632723 bound to Chengduoxian (17275852B27939254726366)
+    county     治多县                      632724 bound to Zhiduoxian (17275852B13951895453383)
+    county     囊谦县                      632725 bound to Nangqianxian (17275852B24277287807877)
+    county     曲麻莱县                     632726 bound to Qumalaixian (17275852B19636254999944)
+    prefecture 海西蒙古族藏族自治州               632800 
+    county     格尔木市                     632801 bound to Geermushi (17275852B26523048151757)
+    county     德令哈市                     632802 no polygon is this county: no polygon holds its seat alone or names it
+    county     茫崖市                      632803 no polygon is this county: no polygon holds its seat alone or names it
+    county     乌兰县                      632821 no polygon is this county: no polygon holds its seat alone or names it
+    county     都兰县                      632822 bound to Dulanxian (17275852B26921956360688), ratio 0.89 (0.89 of the median)
+    county     天峻县                      632823 a jump from the polygon's older figure: 23,203 against 33,923 (2010), ratio 0.68, 0.69 of the median 1.00
+    county     大柴旦行政委员会                 632857 no polygon is this county: no polygon holds its seat alone or names it
+  Qinghai Province: 8 prefectures, 39 county-level areas, 6 special; 25 bound; not bound: {'a district': 5, 'no polygon is this county': 8, "a jump from the polygon's older figure": 1}; 1 polygons told why
+china_county_census: Inner Mongolia Autonomous Region Bureau of Statistics, 内蒙古自治区2020年人口普查年鉴 (Inner Mongolia population census yearbook 2020)
+  retry 1/1 after 2s :: https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0101.xls :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 1/3 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0101.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error timed out>
+  retry 2/3 after 4s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0101.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  retry 3/3 after 8s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0101.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 1/3 after 2s :: https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Ftj.nmg.gov.cn%2Ffiles_pub%2Fcontent%2FPAGEPACK%2Fzk2020%2Fhtml%2FA0104.xls&output=json&filter=statuscode%3A200&fl=timestamp&limit=-1 :: HTTP Error 503: Service Unavailable
+  retry 1/1 after 2s :: https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0105.xls :: <urlopen error _ssl.c:999: The handshake operation timed out>
+  Inner Mongolia Autonomous Region skipped: china_county_census: https://tj.nmg.gov.cn/files_pub/content/PAGEPACK/zk2020/html/A0105.xls could not be read (live: HTTPError: HTTP Error 403: Forbidden; no capture in the Internet Archive)
+china_county_census: Shandong Provincial Bureau of Statistics, 山东省2020年人口普查年鉴 (Shandong population census yearbook 2020)
+    province   山东                       370000 
+    prefecture 济南市                      370100 
+    county     历下区                      370102 a district
+    county     市中区                      370103 a district
+    county     槐荫区                      370104 a district
+    county     天桥区                      370105 a district
+    county     历城区                      370112 a district
+    county     长清区                      370113 a district
+    county     章丘区                      370114 a district
+    county     济阳区                      370115 a district
+    county     莱芜区                      370116 a district
+    county     钢城区                      370117 a district
+    county     平阴县                      370124 a zone in its prefecture
+    county     商河县                      370126 a zone in its prefecture
+    special    济南高新技术产业开发区              -      
+    special    莱芜高新区                    -      
+    special    新旧动能转换先行区                -      
+    special    南部山区管委会                  -      
+    prefecture 青岛市                      370200 
+    county     市南区                      370202 a district
+    county     市北区                      370203 a district
+    county     黄岛区                      370211 a district
+    county     崂山区                      370212 a district
+    county     李沧区                      370213 a district
+    county     城阳区                      370214 a district
+    county     即墨区                      370215 a district
+    county     胶州市                      370281 bound to Jiaozhoushi (17275852B18968160632662)
+    county     平度市                      370283 bound to Pingdushi (17275852B8795599021471)
+    county     莱西市                      370285 bound to Laixishi (17275852B1364012400924)
+    prefecture 淄博市                      370300 
+    county     淄川区                      370302 a district
+    county     张店区                      370303 a district
+    county     博山区                      370304 a district
+    county     临淄区                      370305 a district
+    county     周村区                      370306 a district
+    county     桓台县                      370321 a zone in its prefecture
+    county     高青县                      370322 a zone in its prefecture
+    county     沂源县                      370323 a zone in its prefecture
+    special    淄博高新技术产业开发区              -      
+    special    淄博文昌湖省级旅游度假区             -      
+    special    淄博经济开发区                  -      
+    prefecture 枣庄市                      370400 
+    county     市中区                      370402 a district
+    county     薛城区                      370403 a district
+    county     峄城区                      370404 a district
+    county     台儿庄区                     370405 a district
+    county     山亭区                      370406 a district
+    special    枣庄高新区                    -      
+    county     滕州市                      370481 its polygon holds other seats: Tengzhoushi holds ['370406', '370481']
+    prefecture 东营市                      370500 
+    county     东营区                      370502 a district
+    county     河口区                      370503 a district
+    county     垦利区                      370505 a district
+    county     利津县                      370522 no polygon is this county: no polygon holds its seat alone or names it
+    county     广饶县                      370523 a zone in its prefecture
+    special    东营经济技术开发区                -      
+    special    东营港经济开发区                 -      
+    prefecture 烟台市                      370600 
+    county     芝罘区                      370602 a district
+    county     福山区                      370611 a district
+    county     牟平区                      370612 a district
+    county     莱山区                      370613 a district
+    county     蓬莱区                      370614 a district
+    special    烟台高新技术产业开发区              -      
+    special    烟台经济技术开发区                -      
+    county     龙口市                      370681 a zone in its prefecture
+    county     莱阳市                      370682 a zone in its prefecture
+    county     莱州市                      370683 a zone in its prefecture
+    county     招远市                      370685 a zone in its prefecture
+    county     栖霞市                      370686 a zone in its prefecture
+    county     海阳市                      370687 a zone in its prefecture
+    prefecture 潍坊市                      370700 
+    county     潍城区                      370702 a district
+    county     寒亭区                      370703 a district
+    county     坊子区                      370704 a district
+    county     奎文区                      370705 a district
+    county     临朐县                      370724 no polygon is this county: its seat stands alone in Linjuxian, whose label is not 临朐县 (agreement 0.89)
+    county     昌乐县                      370725 a zone in its prefecture
+    special    潍坊高新技术开发区                -      
+    special    潍坊滨海经济技术开发区              -      
+    special    潍坊经济开发区                  -      
+    special    潍坊峡山生态经济开发区              -      
+    county     青州市                      370781 a zone in its prefecture
+    county     诸城市                      370782 a zone in its prefecture
+    county     寿光市                      370783 a zone in its prefecture
+    county     安丘市                      370784 a zone in its prefecture
+    county     高密市                      370785 a zone in its prefecture
+    county     昌邑市                      370786 a zone in its prefecture
+    prefecture 济宁市                      370800 
+    county     任城区                      370811 a district
+    county     兖州区                      370812 a district
+    county     微山县                      370826 its polygon holds other seats: Weishanxian holds ['370403', '370826']
+    county     鱼台县                      370827 a zone in its prefecture
+    county     金乡县                      370828 a zone in its prefecture
+    county     嘉祥县                      370829 a zone in its prefecture
+    county     汶上县                      370830 a zone in its prefecture
+    county     泗水县                      370831 a zone in its prefecture
+    county     梁山县                      370832 a zone in its prefecture
+    special    济宁高新技术产业开发区              -      
+    special    济宁太白湖新区                  -      
+    special    济宁经济开发区                  -      
+    county     曲阜市                      370881 a zone in its prefecture
+    county     邹城市                      370883 no polygon is this county: no polygon holds its seat alone or names it
+    prefecture 泰安市                      370900 
+    county     泰山区                      370902 a district
+    county     岱岳区                      370911 a district
+    county     宁阳县                      370921 a zone in its prefecture
+    county     东平县                      370923 a zone in its prefecture
+    special    泰安高新技术产业开发区              -      
+    special    泰安市泰山风景名胜区管理委员会          -      
+    special    泰安市徂徕山汶河风景名胜区            -      
+    county     新泰市                      370982 a zone in its prefecture
+    county     肥城市                      370983 a zone in its prefecture
+    prefecture 威海市                      371000 
+    county     环翠区                      371002 a district
+    county     文登区                      371003 a district
+    special    威海火炬高技术产业开发区             -      
+    special    威海经济技术开发区                -      
+    special    威海临港经济技术开发区              -      
+    special    威海南海新区                   -      
+    county     荣成市                      371082 a zone in its prefecture
+    county     乳山市                      371083 a zone in its prefecture
+    prefecture 日照市                      371100 
+    county     东港区                      371102 a district
+    county     岚山区                      371103 a district
+    county     五莲县                      371121 a zone in its prefecture
+    county     莒县                       371122 a zone in its prefecture
+    special    日照经济技术开发区                -      
+    special    日照市高新技术产业开发区             -      
+    special    日照市山海天旅游度假区              -      
+    prefecture 临沂市                      371300 
+    county     兰山区                      371302 a district
+    county     罗庄区                      371311 a district
+    county     河东区                      371312 a district
+    county     沂南县                      371321 a zone in its prefecture
+    county     郯城县                      371322 a zone in its prefecture
+    county     沂水县                      371323 a zone in its prefecture
+    county     兰陵县                      371324 no polygon is this county: its seat stands alone in Changshangxian, whose label is not 兰陵县 (agreement 0.64)
+    county     费县                       371325 a zone in its prefecture
+    county     平邑县                      371326 a zone in its prefecture
+    county     莒南县                      371327 a zone in its prefecture
+    county     蒙阴县                      371328 a zone in its prefecture
+    county     临沭县                      371329 a zone in its prefecture
+    special    临沂高新技术产业开发区              371371 
+    prefecture 德州市                      371400 
+    county     德城区                      371402 a district
+    county     陵城区                      371403 a district
+    county     宁津县                      371422 a zone in its prefecture
+    county     庆云县                      371423 a zone in its prefecture
+    county     临邑县                      371424 a zone in its prefecture
+    county     齐河县                      371425 a zone in its prefecture
+    county     平原县                      371426 a zone in its prefecture
+    county     夏津县                      371427 a zone in its prefecture
+    county     武城县                      371428 a zone in its prefecture
+    special    德州经济技术开发区                -      
+    special    德州运河经济开发区                -      
+    county     乐陵市                      371481 no polygon is this county: its seat stands alone in Leningshi, whose label is not 乐陵市 (agreement 0.89)
+    county     禹城市                      371482 a zone in its prefecture
+    prefecture 聊城市                      371500 
+    county     东昌府区                     371502 a district
+    county     茌平区                      371503 a district
+    county     阳谷县                      371521 its polygon holds other seats: Yangguxian holds ['371521', '410927']
+    county     莘县                       371522 a zone in its prefecture
+    county     东阿县                      371524 a zone in its prefecture
+    county     冠县                       371525 its polygon holds other seats: Guanxian holds ['130433', '371525']
+    county     高唐县                      371526 a zone in its prefecture
+    special    聊城高新技术产业开发区              -      
+    special    聊城经济技术开发区                -      
+    special    聊城江北水城旅游度假区              -      
+    county     临清市                      371581 a zone in its prefecture
+    prefecture 滨州市                      371600 
+    county     滨城区                      371602 a district
+    county     沾化区                      371603 a district
+    county     惠民县                      371621 a zone in its prefecture
+    county     阳信县                      371622 a zone in its prefecture
+    county     无棣县                      371623 no polygon is this county: its seat stands alone in Wulixian, whose label is not 无棣县 (agreement 0.88)
+    county     博兴县                      371625 a zone in its prefecture
+    special    滨州市高新技术产业开发区             -      
+    special    滨州市经济技术开发区               -      
+    special    滨州市北海经济开发区               -      
+    county     邹平市                      371681 a zone in its prefecture
+    prefecture 菏泽市                      371700 
+    county     牡丹区                      371702 a district
+    county     定陶区                      371703 a district
+    county     曹县                       371721 a zone in its prefecture
+    county     单县                       371722 its polygon holds other seats: None holds None
+    county     成武县                      371723 a zone in its prefecture
+    county     巨野县                      371724 a zone in its prefecture
+    county     郓城县                      371725 a zone in its prefecture
+    county     鄄城县                      371726 no polygon is this county: its seat stands alone in Zhenchengxian, whose label is not 鄄城县 (agreement 0.77)
+    county     东明县                      371728 a zone in its prefecture
+    special    菏泽经济技术开发区                -      
+    special    菏泽高新技术开发区                -      
+  Shandong Province: 16 prefectures, 136 county-level areas, 40 special; 3 bound; not bound: {'a district': 58, 'its polygon holds other seats': 5, 'no polygon is this county': 7, 'a zone in its prefecture': 63}; 63 polygons told why
+  --only: 92 records read, nothing written
