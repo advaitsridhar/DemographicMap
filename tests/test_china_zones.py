@@ -85,10 +85,24 @@ class Placing(unittest.TestCase):
         item, _ = cz.point_for("220172102", "玉潭镇", *self.index())
         self.assertEqual(item["qid"], "Q3")
 
-    def test_a_name_two_items_carry_places_nothing(self):
+    def test_of_two_items_with_its_name_the_one_of_its_kind(self):
         item, how = cz.point_for("220172109", "和平镇", *self.index())
+        self.assertEqual(item["qid"], "Q4")
+
+    def test_two_items_of_its_name_and_kind_place_nothing(self):
+        by_code, by_pref = self.index()
+        by_pref["2201"].append({"qid": "Q6", "label": "Heping Town", "code": "220183101",
+                                "lon": 125.7, "lat": 44.5})
+        item, how = cz.point_for("220172109", "和平镇", by_code, by_pref)
         self.assertIsNone(item)
-        self.assertIn("2 items", how)
+        self.assertIn("3 items", how)
+
+    def test_the_zone_s_name_in_front_of_a_township_s_is_left_out(self):
+        by_code, by_pref = self.index()
+        by_pref["2201"].append({"qid": "Q7", "label": "Haibei Town", "code": "220112105",
+                                "lon": 125.8, "lat": 43.5})
+        item, _ = cz.point_for("220172110", "芦台开发区海北镇", by_code, by_pref)
+        self.assertEqual(item["qid"], "Q7")
 
 
 if __name__ == "__main__":

@@ -215,16 +215,28 @@ def pinyins(name: str) -> set[str]:
     return {r.replace("v", "u") for r in readings(SUFFIX_ZH.sub("", name) or name)}
 
 
+# A zone's township named with the zone in front of it ("芦台开发区海北镇",
+# "察北管理区黄山管理处"): the township's own name is what follows.
+ZONE_PREFIX = re.compile(r"^.+?(开发区|管理区|新区)(?=.{2,}$)")
+KIND_EN = {"街道": "subdistrict", "镇": "town", "乡": "township"}
+
+
 def point_for(code: str, name: str, by_code: dict[str, dict[str, Any]],
               by_prefecture: dict[str, list[dict[str, Any]]]) -> tuple[dict[str, Any] | None, str]:
     """(the Wikidata item standing for the township, how it was found): the
     item carrying the township's own code whose label reads as its name, or
-    failing that the one item in the prefecture whose label does."""
-    names = pinyins(name)
+    failing that the one item in the prefecture whose label does -- of the
+    same kind (街道 a subdistrict, 镇 a town, 乡 a township) where two do."""
+    own = ZONE_PREFIX.sub("", name)
+    names = pinyins(name) | pinyins(own)
     item = by_code.get(code[:9]) or by_code.get(code)
     if item and bare_label(item.get("label", "")) in names:
         return item, "its code"
     hits = [p for p in by_prefecture.get(code[:4], []) if bare_label(p.get("label", "")) in names]
+    if len(hits) > 1:
+        kind = next((en for zh, en in KIND_EN.items() if own.endswith(zh)), None)
+        same = [p for p in hits if kind and re.search(rf"(?i)\b{kind}\b", p.get("label", ""))]
+        hits = same if len(same) == 1 else hits
     if len(hits) == 1:
         return hits[0], f"its name, in the prefecture (as {hits[0]['code']})"
     if item and not hits:
