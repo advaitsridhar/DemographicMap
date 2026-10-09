@@ -357,8 +357,11 @@ class TheRecords(unittest.TestCase):
 class Integration(unittest.TestCase):
     def test_registered_right_after_the_korea_survey(self):
         files = be.ADAPTER_FILES
-        self.assertEqual(files[files.index("korea_survey_province.json") + 1],
-                         "korea_nationality.json")
+        # korea_survey writes korea_province_survey.json, a *_survey.json the
+        # build keeps fill-only; the list may still name its older output.
+        survey = next(name for name in ("korea_province_survey.json",
+                                        "korea_survey_province.json") if name in files)
+        self.assertEqual(files[files.index(survey) + 1], "korea_nationality.json")
 
     def test_korea_no_longer_declares_ethnicity_uncollected(self):
         # The owner's decision of 19 September 2026: the declaration's
