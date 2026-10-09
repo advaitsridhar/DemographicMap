@@ -11,7 +11,8 @@ people and in per cent, for both sexes, men and women.
 It is the only religion below the region the Bureau has published. The 2021
 census asked the question again, and its national volume (*National
 composition, religion and language proficiency*, 2023) tabulates religion by
-nationality, age and education, and by region; nothing finer.
+nationality, age and education (tables 12-14, printed pages 391-421) for the
+republic and its urban and rural population only: no region, no district.
 
 **Reading the volumes.** The PDFs set their text in a font without a map to
 characters, so a text extractor returns glyph names ('/g570' for 'А'); the
@@ -80,8 +81,10 @@ LICENCE = "Official statistics of the Bureau of National Statistics; free to use
 GROUPS = ("Islam", "Christianity", "Judaism", "Buddhism", "Other religions", "No religion",
           "Not stated")
 NOTE = ("Religion the person named at the 2009 census: Islam, Christianity, Judaism, "
-        "Buddhism, another religion, non-believer, or declined to say. The 2021 census's "
-        "religion is published by region only.")
+        "Buddhism, another religion, non-believer, or declined to say. The 2021 census asked "
+        "it again, and its national volume (National composition, religion and language "
+        "proficiency, 2023, tables 12-14) tabulates it for the republic and its urban and "
+        "rural population only, for no district.")
 CITY_TOTAL = {"Almaty": "г.Алматы"}
 
 
