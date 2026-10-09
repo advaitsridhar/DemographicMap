@@ -1017,6 +1017,41 @@ def temporary_note(names: list[str]) -> str:
             f"cut from this one; the boundary file draws no polygon for them.")
 
 
+def same_figures(rows: dict[str, dict[str, Any]], children: dict[str, list[str]],
+                 districts: list[tuple[dict[str, Any], str, str]]) -> dict[str, list[str]]:
+    """Each written district -> the other districts the office gives the same total.
+
+    The estimates are the 2003-05 listing carried forward by formula, and the
+    table repeats itself: 64 of its totals recur in unrelated districts, some
+    with the same sexes too (Mir Bacha Kot in Kabul and Shahri Buzurg in
+    Badakhshan are both 27,148 females and 28,016 males). That is the office's
+    arithmetic, not a misreading -- every row still makes its province's
+    total -- and the note says so where it happens, so nobody "corrects" it.
+    """
+    by_total: dict[int, list[tuple[str, str]]] = {}
+    for unit, province, key in districts:
+        if key in SHIFTED or key in MISPRINTED or key not in rows:
+            continue
+        parts = [rows[key]] + [rows[t] for t in children.get(key, ())]
+        both = sum(sexes(p)[2] for p in parts)
+        by_total.setdefault(both, []).append(
+            (key, f"{' '.join(shown(unit).split())} ({province})"))
+    out: dict[str, list[str]] = {}
+    for named in by_total.values():
+        if len(named) > 1:
+            for key, _ in named:
+                out[key] = [label for other, label in named if other != key]
+    return out
+
+
+def alike_note(others: list[str] | None) -> str:
+    if not others:
+        return ""
+    listed = others[0] if len(others) == 1 else ", ".join(others[:-1]) + " and " + others[-1]
+    return (f" The office prints the same total for {listed}: its estimates carry the "
+            f"2003-05 listing forward by formula, and districts listed alike stay alike.")
+
+
 def district_records(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any]],
                      units2: list[dict[str, Any]], counted_in: dict[str, str]
                      ) -> tuple[list[dict[str, Any]], dict[str, int]]:
@@ -1032,6 +1067,7 @@ def district_records(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any
     out = []
     tally = {"written": 0, "refused": 0}
     districts = drawn_districts(units1, units2)
+    alike = same_figures(rows, children, districts)
     for unit, province, key in districts:
         if key not in rows:
             raise SystemExit(f"afghanistan_estimates: the 1396 table has no row {key}")
@@ -1054,7 +1090,7 @@ def district_records(rows: dict[str, dict[str, Any]], units1: list[dict[str, Any
                 fields["population_note"] = (
                     f"The statistics office's estimate of the settled population for 1396 "
                     f"(2017-18), projected from the 2003-05 household listing; Afghanistan "
-                    f"has had no census since 1979.{said}")
+                    f"has had no census since 1979.{said}{alike_note(alike.get(key))}")
             fields["sex_ratio"] = measure(males_per_100(male, female),
                                           unit="males_per_100_females", year=YEAR, source=SOURCE)
             fields["sex_ratio_note"] = (f"1396 estimate: {male:,} males against {female:,} "

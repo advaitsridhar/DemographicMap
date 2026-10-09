@@ -118,6 +118,19 @@ class Estimates(unittest.TestCase):
         self.assertIn("district development plans", records["AFG-EST-0101"]["ethnicity"]["note"])
         self.assertIn("no province's", records["AFG-EST-01"]["ethnicity"]["note"])
 
+    def test_a_total_the_office_repeats_is_said_to_be_its_own(self):
+        # The 1396 table carries the 2003-05 listing forward by formula, and
+        # unrelated districts print one total; each says so, naming the other.
+        same = {**ROWS, "03": [ROWS["03"][0], ("02", "Shutul", 300, 310, 0, 0),
+                               ROWS["03"][2]]}
+        rows, settled = sheet(same)
+        records = self.build(rows, settled)
+        self.assertIn("same total for Shutul (Kapisa)",
+                      records["AFG-EST-0202"]["population_note"])
+        self.assertIn("same total for Koh Band (Kapisa)",
+                      records["AFG-EST-0302"]["population_note"])
+        self.assertNotIn("same total", records["AFG-EST-0101"]["population_note"])
+
     def test_where_the_survey_reached_the_province_the_gap_says_so(self):
         # Kabul (01), Kapisa (02) and Parwan (03) were all surveyed; the survey
         # file writes their figures in front of this gap. Mahmudi Raqi is

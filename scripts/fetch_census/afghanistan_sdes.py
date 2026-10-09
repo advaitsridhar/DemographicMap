@@ -13,9 +13,15 @@ each member's age, sex, education, work and migration ("listing and mapping
 of all households and establishments and enumeration of half of the
 households in each enumeration area/village", as the Herat report puts it).
 So the figures are the office's own **survey estimates from a half sample**,
-not a count; per district that half is thousands of people, far above any
-threshold for an estimate. Each provincial report has a table "Median Age in
-Years of the Population by District", for both sexes, males and females
+not a count -- except Bamyan's: the first report says its listing recorded
+the age and sex of every member of every household, on a short form for the
+households not interviewed, so its ages are a count of everyone listed. No
+later report describes that form, and their figures are marked as survey
+estimates (``median_age_basis``). Per district the half is thousands of
+people -- the reports print shares and no counts, and each note gives the
+office's 1396 estimate for the polygon as the order of magnitude -- far above
+any threshold for an estimate. Each provincial report has a table "Median Age
+in Years of the Population by District", for both sexes, males and females
 (Table 3; Table 5 in the 2012 reports, which print whole years).
 
 The survey reached twelve provinces (``REPORTS``, in its own order), and every
@@ -111,6 +117,7 @@ class Report(NamedTuple):
     box: float | None = None      # the province's median in later reports' Text Box 1
     table: str = "3"              # the table's number in the report
     whole_years: bool = False     # the table prints whole years
+    listing: bool = False         # the listing recorded every member's age and sex
 
 
 REPORTS: list[Report] = [
@@ -120,7 +127,7 @@ REPORTS: list[Report] = [
            "September 2011", 2011,
            {"Provincial Center": "1001", "Shibar": "1002", "Saighan": "1003",
             "Kahmard": "1004", "Yakawlang": "1005", "Panjab": "1006", "Waras": "1007"},
-           whole=True, box=16.6),
+           whole=True, box=16.6, listing=True),
     Report("23", "Ghor",
            UNFPA.format(stamp="20210816022526", path="SDES-Ghor-English-Low-Resolution-Version.pdf"),
            "September 2012", 2012,
@@ -347,25 +354,74 @@ def check(report: Report, found: dict[str, tuple[float, ...]]) -> None:
 
 
 def survey(report: Report) -> str:
+    if report.listing:
+        # Bamyan's report, p. 16: "The survey first involved a listing of every
+        # household in all the villages taking into account all its members by
+        # age and sex. This results to the generation of the total population by
+        # age and sex in every village and urban area of Bamiyan province ...
+        # Two questionnaires were used: a long version with the indicators for
+        # use with the sampled households and a short version to collect only
+        # age and sex of the non-sampled household members." No later report
+        # describes the short form (a search of all twelve for "short version",
+        # "two questionnaires", "non-sampled" and the like found only this one).
+        return (f"The statistics office's Socio-Demographic and Economic Survey of "
+                f"{province_name(report)}, {report.when}, which listed every household "
+                f"of the districts it covered with the age and sex of every member -- a "
+                f"short form for the households it did not interview, the report says "
+                f"-- and interviewed every other household in detail: its ages are a "
+                f"count of everyone listed, not a sample.")
     return (f"The statistics office's Socio-Demographic and Economic Survey of "
             f"{province_name(report)}, {report.when}, which listed every household of "
             f"the districts it covered and interviewed every other one about each "
-            f"member's age and sex: an estimate from half the households, not a count.")
+            f"member's age and sex: an estimate from half the households, not a count. "
+            f"Its report describes no form recording the ages of the households not "
+            f"interviewed (Bamyan's, the first, does).")
 
 
-def value_note(report: Report, figures: tuple[float, ...], scope: str, extra: str = "") -> str:
+def basis(report: Report) -> str:
+    """What the median is of, in the words the build's survey files use."""
+    if report.listing:
+        return "household listing: the age and sex of every member of every household"
+    return "survey estimate: every other listed household, all of its members"
+
+
+def size(report: Report, population: int | None) -> str:
+    """How many people the figure rests on, as far as anything printed says.
+
+    The reports print each district's share of its province and no count (the
+    Ghor report: "it does not include population counts per district, this
+    data is available from the CSO on request"). The office's 1396 estimate
+    for the same polygon gives the order of magnitude.
+    """
+    if not population:
+        return (" The report prints no count of the people it rests on, only each "
+                "district's share of its province.")
+    if report.listing:
+        return (f" The report prints no count, only shares; the office's 1396 (2017-18) "
+                f"estimate puts this polygon at {population:,} settled people.")
+    half = int(round(population / 2, -2))
+    return (f" The report prints no count, only shares; the office's 1396 (2017-18) "
+            f"estimate puts this polygon at {population:,} settled people, so the "
+            f"households interviewed held some {half:,}.")
+
+
+def value_note(report: Report, figures: tuple[float, ...], scope: str, extra: str = "",
+               population: int | None = None) -> str:
     shown = [f"{f:g}" for f in figures]
     sexes = (f" (males {shown[1]}, females {shown[2]})" if len(figures) == 3 else "")
     whole = " The table prints whole years." if report.whole_years else ""
     return (f"{survey(report)} Its Table {report.table} prints {shown[0]} years as the "
-            f"median age of {scope}{sexes}.{whole}{extra} Afghanistan has had no census "
-            f"since 1979, and this survey is the office's only measurement of age below "
-            f"the national level.")
+            f"median age of {scope}{sexes}.{whole}{extra}{size(report, population)} "
+            f"Afghanistan has had no census since 1979, and this survey is the office's "
+            f"only measurement of age below the national level.")
 
 
 def build(found_by_report: dict[str, dict[str, tuple[float, ...]]],
-          units1: list[dict[str, Any]], units2: list[dict[str, Any]]
-          ) -> list[dict[str, Any]]:
+          units1: list[dict[str, Any]], units2: list[dict[str, Any]],
+          population: dict[str, int] | None = None) -> list[dict[str, Any]]:
+    """Every record; ``population`` is the 1396 estimate by shape id, which the
+    notes give as the size of what each figure rests on."""
+    population = population or {}
     from .afghanistan_estimates import (TEMPORARY_PARENT, drawn_apart, drawn_districts,
                                         province_units, shown)
     apart, _counted_in = drawn_apart(units1, units2)
@@ -408,8 +464,10 @@ def build(found_by_report: dict[str, dict[str, tuple[float, ...]]],
                          "within it." if parts else "")
                 fields = {"median_age": measure(figures[0], unit="years", year=report.year,
                                                 source=SOURCE),
+                          "median_age_basis": basis(report),
                           "median_age_note": value_note(report, figures,
-                                                        f"{label_of[key]} district", extra),
+                                                        f"{label_of[key]} district", extra,
+                                                        population.get(unit["id"])),
                           "sources": cite}
                 written += 1
             out.append(record(
@@ -433,8 +491,10 @@ def build(found_by_report: dict[str, dict[str, tuple[float, ...]]],
         else:
             fields = {"median_age": measure(figures[0], unit="years", year=report.year,
                                             source=SOURCE),
+                      "median_age_basis": basis(report),
                       "median_age_note": value_note(report, figures,
-                                                    "the province's whole population"),
+                                                    "the province's whole population",
+                                                    population=population.get(unit["id"])),
                       "sources": cite}
         out.append(record(
             f"AFG-SDES-{report.province}", unit["name"], level="admin1", parent="AFG",
@@ -442,6 +502,21 @@ def build(found_by_report: dict[str, dict[str, tuple[float, ...]]],
         log(f"  {report.name} ({report.when}): {written} district(s) written, "
             f"{declined} declined, {uncovered} not covered; the province "
             + ("written" if "median_age_note" in fields else "not written"))
+    return out
+
+
+def estimates() -> dict[str, int]:
+    """Shape id -> the office's 1396 settled population, as afghanistan_estimates wrote it."""
+    import json                                     # noqa: PLC0415
+    path = PROCESSED / "afghanistan_estimates.json"
+    if not path.exists():
+        log("  (no afghanistan_estimates.json: the notes give no size)")
+        return {}
+    out = {}
+    for row in json.loads(path.read_text(encoding="utf-8")):
+        value = (row.get("population") or {}).get("value")
+        if row.get("shape_id") and isinstance(value, int):
+            out[row["shape_id"]] = value
     return out
 
 
@@ -469,7 +544,8 @@ def main() -> int:
         log(f"  {report.name}: Table {report.table} read, {len(found) - 1} district(s); "
             f"the province {found[report.province][0]:g}"
             + (f" (Text Box 1: {report.box:g})" if report.box is not None else ""))
-    records = build(found_by_report, load_units("AFG", "admin1"), load_units("AFG", "admin2"))
+    records = build(found_by_report, load_units("AFG", "admin1"), load_units("AFG", "admin2"),
+                    estimates())
     write_json(PROCESSED / OUT, records)
     log(f"  {len(records)} records")
     return 0

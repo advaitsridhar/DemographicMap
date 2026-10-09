@@ -171,6 +171,33 @@ class Build(unittest.TestCase):
         self.assertEqual(records["AFG-SDES-1001"]["median_age"]["value"], 16.5)
         self.assertNotIn("value", records["AFG-SDES-10"]["median_age"])
 
+    def test_a_half_sample_is_marked_a_survey_estimate_and_sized(self):
+        units1, units2 = units()
+        with mock.patch.multiple(ae, PROVINCE_ISO=ISO, CROSSWALK=CROSSWALK,
+                                 POINT_ELSEWHERE={}, TEMPORARY_PARENT={"1008": "1005"}), \
+                mock.patch.object(sd, "REPORTS", REPORTS):
+            records = {r["id"]: r for r in sd.build(FOUND, units1, units2,
+                                                     {"D0302": 52_340})}
+        bagram = records["AFG-SDES-0302"]
+        self.assertTrue(bagram["median_age_basis"].startswith("survey estimate"))
+        self.assertIn("an estimate from half the households", bagram["median_age_note"])
+        self.assertIn("52,340 settled people", bagram["median_age_note"])
+        self.assertIn("some 26,200", bagram["median_age_note"])
+        # No size where the 1396 estimate is not to hand, and never a guess.
+        self.assertIn("prints no count", records["AFG-SDES-0301"]["median_age_note"])
+        self.assertNotIn("median_age_basis", records["AFG-SDES-0206"])     # a gap
+
+    def test_a_listing_of_every_member_is_not_called_a_sample(self):
+        listed = [REPORTS[0]._replace(listing=True), *REPORTS[1:]]
+        records = self.build(reports=listed)
+        for key in ("AFG-SDES-1001", "AFG-SDES-10"):
+            self.assertTrue(records[key]["median_age_basis"].startswith("household listing"))
+            self.assertIn("a count of everyone listed", records[key]["median_age_note"])
+            self.assertNotIn("half the households", records[key]["median_age_note"])
+
+    def test_only_bamyans_report_describes_the_short_form(self):
+        self.assertEqual([r.name for r in sd.REPORTS if r.listing], ["Bamiyan"])
+
     def test_every_district_counted_in_a_read_province_gets_a_record(self):
         records = self.build()
         districts = {k for k, r in records.items() if r["level"] == "admin2"}
