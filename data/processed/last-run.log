@@ -1,10 +1,44 @@
-philippines_age: Philippine Statistics Authority, 2020 Census of Population and Housing: total population by single-year age, sex, region, province, city/municipality and barangay (published on HDX by OCHA Philippines)
-  fetched 2020 Census Total Popn_Single Age_MaleFemale_Admin4.xlsx (48.7 MB)
-  42,041 barangays in 1,655 cities and municipalities of 87 provinces, every one making its own totals
-  the barangays make 109,033,245 (-2,098 on the proclaimed 109,035,343); national median 25.3 against the PSA's 25.3; top class 80+
-  CITY OF COTABATO (325,079) taken out of MAGUINDANAO for the polygon Cotabato City
-  84 polygons with a count; polygons without: ['Cotabato', 'Maguindanao']; census provinces written nowhere: COTABATO (NORTH COTABATO) (its polygon 'Cotabato' is left out: the boundary file's polygon covers some 5,900 km2 of the province's 9,008; the rest lies inside its 'Maguindanao'); INTERIM PROVINCE (the boundary file draws no polygon for it); MAGUINDANAO (its polygon 'Maguindanao' is left out: the boundary file's polygon takes in Sultan Kudarat, which it does not draw, and more (9,144 km2 against Maguindanao's ~4,900)); SULTAN KUDARAT (the boundary file draws no polygon for it)
-  admin1: 17 units, 17 with figures; median 18.5-27.5; sex ratio 99.9-105.8
-  admin2: 86 units, 84 with figures; median 18.4-29.9; sex ratio 97.9-109.8
-  wrote data/processed/philippines_age.json (261 kB)
-  wrote philippines_age.json: 103 records
+cambodia_census: National Institute of Statistics, General Population Census of the Kingdom of Cambodia 2019, final results, Tables P-01 to P-25: population in normal or regular households by province, district and commune, and sex
+  fetched Final-General-Population-Census-2019-English.pdf (26.6 MB)
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140280654110032), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 0, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140280654110032), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 0, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140280654110032), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 0, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140280654110032), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140280654110032), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XBQHVU+MyriadPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 47, '/FontDescriptor': IndirectObject(3587, 0, 140280654110032), '/LastChar': 54, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [343, 0, 513, 513, 513, 513, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  304 pages
+  the district row '211 Srei Santhor 20,268 81,687 38,589 43,098 89.5 4.0' is read as district 314, its communes' code
+  Table 2.1.1 'Tbong Khmum' read as province 25 (Tboung Khmum)
+  Table 2.1.1: 25 provinces making 15,552,211
+  district 302 Chamkar Leu: its row (5160, 5160, 5160, 5160) is not its communes' sum (24280, 101675, 48956, 52719); the communes' sum makes the province's total, and stands
+  district 801 Kandal Stueng: its row (74303, 332843, 160647, 172196) is not its communes' sum (22649, 100565, 48071, 52494); the communes' sum makes the province's total, and stands
+  province 14 Prey Veng: its total row (266934, 1049361, 492221, 557140) is not its districts' sum (266934, 1056866, 495906, 560960); the households agree and the districts' people fit in its 1,057,720 (Table 2.1.1), so the districts stand
+  province 17 Siemreap: its total row (224672, 994540, 484524, 510016) is not its districts' sum (224672, 989303, 481931, 507372); the households agree and the districts' people fit in its 1,014,234 (Table 2.1.1), so the districts stand
+  district 2202 Banteay Ampil: its row (12534, 54716, 27775, 26941) is not its communes' sum (12534, 51605, 25448, 26157); the communes' sum makes the province's total, and stands
+  Tables P-01..P-25: 202 districts and 1646 communes in 25 provinces, each district's communes and each province's districts making its row; 15,186,779 people in regular households
+  regular households' share of each province's people: lowest Preah Sihanouk 70.9%, Stung Treng 95.6%, Phnom Penh 95.9%, Pailin 96.1%, Otdar Meanchey 97.3%; provinces below 95%, whose district tables are not used: Preah Sihanouk (70.9%)
+  fetched KHM_AdminBoundaries_TabularData.xlsx (0.1 MB)
+  2018 gazetteer: ADM1 25, ADM2 197, ADM3 1633
+  commune 120603 Stueng Mean cheyTI 3 read as the 2018 Stueng Mean Chey (KH120601, 0.90)
+  commune 120604 Boeng Tumpun Ti 1 read as the 2018 Boeng Tumpun (KH120602, 0.88)
+  commune 120605 Boeng Tumpun Ti 2 read as the 2018 Boeng Tumpun (KH120602, 0.88)
+  commune 120701 Tuol Sangkae 1 read as the 2018 Tuol Sangke (KH120702, 0.91)
+  commune 120806 Krang Thnoang read as the 2018 Krang Thnong (KH120807, 0.96)
+  commune 120907 Chaom Chau Ti 3 read as the 2018 Chaom Chau (KH120904, 0.86)
+  commune 250221 Thma Pechr read as the 2018 Thma Pech (KH250713, 0.94)
+  commune 250303 Damrel read as the 2018 Damril (KH250403, 0.83)
+  commune 250308 Tuol Sophi read as the 2018 Tuol Souphi (KH250407, 0.95)
+  commune 250409 Roka Khnaor read as the 2018 Roka Khnor (KH250209, 0.95)
+  commune 250702 Chaom read as the 2018 Choam (KH250302, 0.80)
+  commune 250703 Chaom Kravien read as the 2018 Choam Kravien (KH250303, 0.92)
+  commune 250704 Chaom Ta Mau read as the 2018 Choam Ta Mau (KH250304, 0.90)
+  communes with no 2018 counterpart, counted with their own district (6): 40809 Kdol Senchey, 100506 Kranhung Saen Chey, 120808 Ou Baek K'am, 141004 Sangkat Ta Kao, 180106 Kaoh Rung Sanloeum, 180215 Ta Ney
+  commune 121301 Boeng Keng Kang Muoy read as the 2018 Boeng Keng Kang Ti Muoy (KH120102, 0.94)
+  commune 121302 Boeng Keng Kang Pir read as the 2018 Boeng Keng Kang Ti Pir (KH120103, 0.94)
+  commune 121303 Boeng Keng Kang Bei read as the 2018 Boeng Keng Kang Ti Bei (KH120104, 0.94)
+  census districts that are 2018 districts by name: 197, each whole in it; 2501 Krong Suong is KH2506; 2502 Tboung Khmum is KH2507; 2503 Ou Reang Ov is KH2504; 2504 Krouch Chhmar is KH2502; 2505 Dambae is KH2501; 2506 Ponhea Kraek is KH2505; 2507 Memot is KH2503
+  communes placed in 2018 districts: 1646; not placed (0): ; 2018 districts left incomplete (0): 
+  2018 districts on no polygon (0): ; polygons with no district (0): 
+  197 district polygons written, 4 of them with stated gaps (Kampong Seila, Preah Sihanouk, Prey Nob, Stueng Hav); drawn before a division and summed from their communes (7): Bakan <- Bakan, Ta Lou; Baray <- Baray, Taing Kouk; Chamkar Mon <- Chamkar Mon, Boeng Keng Kang; Dangkao <- Dangkao, Kambol; Phnum Kravanh <- Phnum Kravanh, Ta Lou; Pur SenChey <- Pou Saenchey, Kambol; Thala Barivat <- Thala Barivat, Borei O'Svay Sen Chey
+  wrote data/processed/cambodia_census.json (714 kB)
+  wrote cambodia_census.json: 222 records
