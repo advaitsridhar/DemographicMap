@@ -21,6 +21,8 @@ switched off.
 * ``xls URL`` -- a workbook's sheets and their first rows.
 * ``pdf URL`` -- page count, and the text of chosen pages or of the pages
   matching ``--grep``.
+* ``pdfgrep URL...`` -- the lines matching ``--grep`` (with ``--before`` and
+  ``--after`` lines around them) in each of several PDFs, in one run.
 * ``cdx PATTERN`` -- the Internet Archive's captures of a URL pattern.
 * ``wd NAME...`` -- Wikidata items by name with their point and parent: a
   locator for binding, never a figure.
@@ -330,6 +332,44 @@ def cmd_pdf(args: argparse.Namespace) -> None:
                 print("    " + ln[:args.width])
 
 
+def cmd_pdfgrep(args: argparse.Namespace) -> None:
+    """``pdf --grep`` over several PDFs in one run: each file's matching lines.
+
+    For the same question put to a family of reports (a table's title and the
+    rows under it), where a run per file would be a dozen dispatches.
+    """
+    import pdfplumber                               # noqa: PLC0415
+    pattern = re.compile(args.grep, re.I)
+    for url in args.urls:
+        status, headers, body, _ = fetch(url, aia=args.aia)
+        print(f"\n== {url}")
+        if status != 200 or body[:4] != b"%PDF":
+            describe(url, status, headers, body)
+            continue
+        hits = 0
+        try:
+            with pdfplumber.open(io.BytesIO(body)) as pdf:
+                print(f"    {len(pdf.pages)} pages")
+                for number, page in enumerate(pdf.pages, 1):
+                    if hits >= args.max_pages:
+                        break
+                    text = page.extract_text() or ""
+                    lines = [ln.rstrip() for ln in text.splitlines() if ln.strip()]
+                    keep: set[int] = set()
+                    for i, ln in enumerate(lines):
+                        if pattern.search(ln):
+                            keep.update(range(max(0, i - args.before),
+                                              min(len(lines), i + args.after + 1)))
+                    if not keep:
+                        continue
+                    hits += 1
+                    print(f"  -- page {number}")
+                    for i in sorted(keep)[:args.lines]:
+                        print("    " + lines[i][:args.width])
+        except Exception as err:                   # noqa: BLE001 -- reported
+            print(f"    unreadable: {type(err).__name__}: {err}")
+
+
 def cmd_pdftitles(args: argparse.Namespace) -> None:
     """The opening lines of each PDF's first pages: which table a file is."""
     import pdfplumber                               # noqa: PLC0415
@@ -539,6 +579,16 @@ def main() -> int:
     p.add_argument("--layout", action="store_true")
     p.add_argument("--aia", action="store_true")
 
+    m = sub.add_parser("pdfgrep")
+    m.add_argument("urls", nargs="+")
+    m.add_argument("--grep", required=True)
+    m.add_argument("--before", type=int, default=0)
+    m.add_argument("--after", type=int, default=0)
+    m.add_argument("--max-pages", type=int, default=4)
+    m.add_argument("--lines", type=int, default=60)
+    m.add_argument("--width", type=int, default=200)
+    m.add_argument("--aia", action="store_true")
+
     t = sub.add_parser("pdftitles")
     t.add_argument("template")
     t.add_argument("--values", default="")
@@ -573,7 +623,7 @@ def main() -> int:
 
     args = ap.parse_args()
     {"get": cmd_get, "heads": cmd_heads, "nada": cmd_nada, "nadafiles": cmd_nadafiles,
-     "xls": cmd_xls, "pdf": cmd_pdf, "pdftitles": cmd_pdftitles,
+     "xls": cmd_xls, "pdf": cmd_pdf, "pdfgrep": cmd_pdfgrep, "pdftitles": cmd_pdftitles,
      "rows": cmd_rows, "cdx": cmd_cdx, "wd": cmd_wd}[args.cmd](args)
     return 0
 
