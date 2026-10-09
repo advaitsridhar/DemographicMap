@@ -91,6 +91,7 @@ class AnnexTest(unittest.TestCase):
             kh.check_annex(annex)
 
 
+ADM2 = {"KH0102": "Mongkol Borei", "KH0103": "Phnum Srok"}
 ADM3 = [{"ADM3_PCODE": "KH010201", "ADM3_EN": "Banteay Neang", "ADM2_PCODE": "KH0102"},
         {"ADM3_PCODE": "KH010202", "ADM3_EN": "Bat Trang", "ADM2_PCODE": "KH0102"},
         {"ADM3_PCODE": "KH010301", "ADM3_EN": "Nam Tau", "ADM2_PCODE": "KH0103"}]
@@ -111,7 +112,7 @@ def annex_2019():
 
 class CrosswalkTest(unittest.TestCase):
     def test_communes_go_to_their_2018_district(self):
-        placed, left, broken = kh.crosswalk(annex_2019(), ADM3, {"KH0102", "KH0103"})
+        placed, left, broken = kh.crosswalk(annex_2019(), ADM3, ADM2)
         self.assertEqual(sorted(c for _, c, _ in placed["KH0102"]), [10201, 10203, 11101])
         self.assertEqual([c for _, c, _ in placed["KH0103"]], [10301])
         self.assertEqual((left, broken), ([], set()))
@@ -127,12 +128,12 @@ class CrosswalkTest(unittest.TestCase):
             1213: {"name": "Boeng Keng Kang", "n": n, "communes": {
                 121301: {"name": "Boeng Keng Kang Muoy", "n": n},
                 121304: {"name": "Oulampik", "n": n}}}}}}
-        placed, left, broken = kh.crosswalk(annex, adm3, {"KH1201"})
+        placed, left, broken = kh.crosswalk(annex, adm3, {"KH1201": "Chamkar Mon"})
         self.assertEqual(sorted(c for _, c, _ in placed["KH1201"]), [120102, 121301, 121304])
         self.assertEqual((left, broken), ([], set()))
 
     def test_records_sum_the_parts_and_check_a_whole_district(self):
-        placed, _, broken = kh.crosswalk(annex_2019(), ADM3, {"KH0102", "KH0103"})
+        placed, _, broken = kh.crosswalk(annex_2019(), ADM3, ADM2)
         adm2 = [{"ADM2_PCODE": "KH0102", "ADM2_EN": "Mongkol Borei",
                  "ADM1_EN": "Banteay Meanchey"},
                 {"ADM2_PCODE": "KH0103", "ADM2_EN": "Phnum Srok", "ADM1_EN": "Banteay Meanchey"}]
@@ -148,6 +149,74 @@ class CrosswalkTest(unittest.TestCase):
         self.assertEqual(recs["KH0103"]["population"]["value"], 16)
         self.assertEqual(recs["KH0103"]["sex_ratio"]["value"], 100.0)
         self.assertIn("regular households", recs["KH0103"]["population_note"])
+
+
+def renumbered():
+    """Tboung Khmum: the census numbers its districts and communes afresh, so its
+    2501 is Krong Suong where the 2018 gazetteer's KH2501 is Dambae."""
+    adm2 = {"KH2501": "Dambae", "KH2506": "Suong"}
+    adm3 = [{"ADM3_PCODE": "KH250101", "ADM3_EN": "Chong Cheach", "ADM2_PCODE": "KH2501"},
+            {"ADM3_PCODE": "KH250102", "ADM3_EN": "Dambae", "ADM2_PCODE": "KH2501"},
+            {"ADM3_PCODE": "KH250601", "ADM3_EN": "Suong", "ADM2_PCODE": "KH2506"},
+            {"ADM3_PCODE": "KH250602", "ADM3_EN": "Vihear Luong", "ADM2_PCODE": "KH2506"}]
+    annex = {25: {"name": "Tboung Khmum", "n": (6, 24, 12, 12), "districts": {
+        2501: {"name": "Krong Suong", "n": (2, 8, 4, 4), "communes": {
+            250101: {"name": "Suong", "n": (1, 4, 2, 2)},
+            250102: {"name": "Vihear Luong", "n": (1, 4, 2, 2)}}},
+        2505: {"name": "Dambae", "n": (4, 16, 8, 8), "communes": {
+            250501: {"name": "Chong Cheach", "n": (2, 8, 4, 4)},
+            250502: {"name": "Dambae", "n": (2, 8, 4, 4)}}}}}}
+    return annex, adm3, adm2
+
+
+class RenumberedTest(unittest.TestCase):
+    def test_a_code_whose_name_differs_is_another_communes(self):
+        annex, adm3, adm2 = renumbered()
+        placed, left, broken = kh.crosswalk(annex, adm3, adm2)
+        self.assertEqual(sorted(c for _, c, _ in placed["KH2506"]), [250101, 250102])
+        self.assertEqual(sorted(c for _, c, _ in placed["KH2501"]), [250501, 250502])
+        self.assertEqual((left, broken), ([], set()))
+
+    def test_districts_are_matched_by_name_not_code(self):
+        annex, _, adm2 = renumbered()
+        self.assertEqual(kh.homes(annex, adm2), {2501: "KH2506", 2505: "KH2501"})
+        annex = {2: {"name": "Battambang", "districts": {
+            203: {"name": "Krong Bat Dambang"}, 211: {"name": "Phnom Proek"}}},
+            12: {"name": "Phnom Penh", "districts": {
+                1207: {"name": "Ruessei Kaev"}, 1214: {"name": "Kambol"}}}}
+        adm2 = {"KH0203": "Battambang", "KH0211": "Phnum Proek", "KH1201": "Chamkar Mon",
+                "KH1207": "Russey Keo", "KH1205": "Dangkao"}
+        self.assertEqual(kh.homes(annex, adm2), {203: "KH0203", 211: "KH0211",
+                                                 1207: "KH1207"})
+
+    def test_a_commune_away_from_its_own_district_refuses(self):
+        annex, adm3, adm2 = renumbered()
+        # The census puts Suong's commune under Dambae, where the gazetteer has
+        # it in Suong: a misreading or an undeclared transfer.
+        annex[25]["districts"][2505]["communes"][250503] = {"name": "Vihear Luong",
+                                                            "n": (1, 4, 2, 2)}
+        del annex[25]["districts"][2501]["communes"][250102]
+        with self.assertRaises(SystemExit):
+            kh.crosswalk(annex, adm3, adm2)
+
+    def test_a_renumbered_district_comes_back_to_its_own_row(self):
+        annex, adm3, adm2 = renumbered()
+        placed, _, broken = kh.crosswalk(annex, adm3, adm2)
+        rows = [{"ADM2_PCODE": pc, "ADM2_EN": name, "ADM1_EN": "Tboung Khmum"}
+                for pc, name in adm2.items()]
+
+        def bind(iso3, level, rows, unit_col, parent_col):
+            return ({i: {"id": r["ADM2_PCODE"], "name": r["ADM2_EN"]}
+                     for i, r in enumerate(rows)}, [], [])
+        with mock.patch.object(kh, "bind_rows", bind):
+            recs = {r["shape_id"]: r for r in kh.district_records(annex, placed, broken, rows)}
+        self.assertEqual(recs["KH2501"]["population"]["value"], 16)
+        self.assertIn("Dambae district", recs["KH2501"]["population_note"])
+        self.assertEqual(recs["KH2506"]["population"]["value"], 8)
+        self.assertIn("Krong Suong district", recs["KH2506"]["population_note"])
+        annex[25]["districts"][2505]["n"] = (4, 18, 9, 9)     # its row no longer its sum
+        with mock.patch.object(kh, "bind_rows", bind), self.assertRaises(SystemExit):
+            kh.district_records(annex, placed, broken, rows)
 
 
 if __name__ == "__main__":

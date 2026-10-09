@@ -21,16 +21,24 @@ Population Census --
   says so.
 
 **Which polygon a district is.** The boundary file draws the 197 districts of
-OCHA's 2018 administrative boundaries; the census counts 204, Phnom Penh's
+OCHA's 2018 administrative boundaries; the census counts 202, Phnom Penh's
 khans and several provinces having been divided since. So the census is
 bound one level down, commune by commune: each 2019 commune is the 2018
-commune with its own code and name, or failing that the one commune of its
-name in its province (2018 gazetteer, OCHA's ``cod-ps-khm`` tabular data,
-CC BY-IGO); a commune neither finds, in a district every other commune of
-which stayed whole, goes with its district. Each 2018 district then takes
-the sum of the 2019 communes that were in it, so a polygon drawn before a
-division takes the parts it was divided into. A district the census left
-whole must come back to its own row exactly; a commune that cannot be placed
+commune with its own code *and* its own name, or failing that the one commune
+of its name in its province (2018 gazetteer, OCHA's ``cod-ps-khm`` tabular
+data, CC BY-IGO); a commune neither finds, in a district every other commune
+of which stayed whole, goes with its district. A code alone is never trusted:
+the census numbers Tboung Khmum's districts and communes afresh (its 2501 is
+Krong Suong, the gazetteer's KH2501 Dambae; its 250201 Anhchaeum, the
+gazetteer's KH250201 Chhuk), so a code whose name differs is someone else's.
+Each 2018 district then takes the sum of the 2019 communes that were in it,
+so a polygon drawn before a division takes the parts it was divided into.
+
+A census district that the 2018 gazetteer also has -- the same name in the
+same province, ``Krong``/``Khan``/``Srok`` aside and a romanisation apart
+(``homes``) -- must have every one of its communes in that 2018 district, or
+the run refuses; and a polygon that takes one such district whole must come
+back to that district's own row exactly. A commune that cannot be placed
 leaves its polygon out, logged.
 
 **Checks**, each a refusal: in every commune row males and females make the
@@ -324,11 +332,56 @@ def gazetteer() -> dict[str, list[dict[str, Any]]]:
     return out
 
 
+# A census district and a 2018 district are one district when their names,
+# the words Krong, Khan and Srok aside, are this alike and no other 2018
+# district of the province comes within MARGIN of the best: measured on the
+# 202 census districts, the furthest true pair is Phnom Penh's "Ruessei Kaev"
+# and "Russey Keo" (0.70) and the closest false best Kambol's "Chamkar Mon"
+# (0.50), and the runner-up is never within 0.2 of a true pair.
+SAME_DISTRICT = 0.7
+MARGIN = 0.1
+DISTRICT_WORD = re.compile(r"(?i)^(?:krong|khan|srok)\s+")
+
+
+def district_key(name: Any) -> str:
+    return fold(DISTRICT_WORD.sub("", str(name or "").strip()))
+
+
+def homes(annex: dict[int, dict[str, Any]], adm2: dict[str, str]) -> dict[int, str]:
+    """Census district -> the 2018 district (pcode) that is the same district by
+    name, for every census district the 2018 gazetteer also has. Codes play no
+    part: the census renumbered Tboung Khmum's."""
+    from difflib import SequenceMatcher
+    out: dict[int, str] = {}
+    for p, prov in annex.items():
+        pool = {pc: district_key(n) for pc, n in adm2.items() if pc[2:4] == f"{p:02d}"}
+        taken: dict[str, int] = {}
+        for d, dist in sorted(prov["districts"].items()):
+            if d in DIVIDED_FROM:
+                continue
+            key = district_key(dist["name"])
+            scored = sorted(((SequenceMatcher(None, key, k).ratio(), pc) for pc, k in pool.items()),
+                            reverse=True)
+            if not scored or scored[0][0] < SAME_DISTRICT or (
+                    len(scored) > 1 and scored[1][0] > scored[0][0] - MARGIN):
+                continue
+            pcode = scored[0][1]
+            if pcode in taken:
+                raise SystemExit(f"cambodia_census: census districts {taken[pcode]} and {d} "
+                                 f"both read as the 2018 {adm2[pcode]} ({pcode})")
+            taken[pcode] = d
+            out[d] = pcode
+    return out
+
+
 def crosswalk(annex: dict[int, dict[str, Any]], adm3: list[dict[str, Any]],
-              adm2_codes: set[str]) -> tuple[dict[str, list[tuple[int, int, dict[str, Any]]]],
+              adm2: dict[str, str]) -> tuple[dict[str, list[tuple[int, int, dict[str, Any]]]],
                                              list[str], set[str]]:
     """2018 district pcode -> [(2019 district, 2019 commune, its row)]; the communes
-    that could not be placed; and the 2018 districts those make incomplete."""
+    that could not be placed; and the 2018 districts those make incomplete.
+
+    ``adm2`` is the gazetteer's 2018 districts, pcode -> name."""
+    home = homes(annex, adm2)
     by_code = {str(r["ADM3_PCODE"]).strip(): r for r in adm3}
     by_name: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for r in adm3:
@@ -338,13 +391,16 @@ def crosswalk(annex: dict[int, dict[str, Any]], adm3: list[dict[str, Any]],
     for p, prov in annex.items():
         for d, dist in prov["districts"].items():
             for c, com in dist["communes"].items():
-                pcode = f"KH{c:06d}"
-                hit = by_code.get(pcode)
-                if hit is not None and fold(hit["ADM3_EN"]) != fold(com["name"]) \
-                        and str(hit["ADM2_PCODE"]) != f"KH{d:04d}":
-                    hit = None                     # the code was reused elsewhere
+                hit = by_code.get(f"KH{c:06d}")
+                if hit is not None and fold(hit["ADM3_EN"]) != fold(com["name"]):
+                    hit = None                     # the code is another commune's
                 if hit is None:
                     named = by_name.get((f"KH{p:02d}", fold(com["name"])), [])
+                    if len(named) > 1:
+                        # Two communes of the name in the province: the one in
+                        # the census district's own 2018 district, if it has one.
+                        named = [r for r in named
+                                 if str(r["ADM2_PCODE"]).strip() == home.get(d)]
                     hit = named[0] if len(named) == 1 else None
                 if hit is None:
                     waiting.append((d, c, com))
@@ -353,15 +409,14 @@ def crosswalk(annex: dict[int, dict[str, Any]], adm3: list[dict[str, Any]],
     # A commune neither its code nor its name finds is placed, in turn: by a
     # close spelling of a 2018 commune of its province, if that commune lies
     # in a 2018 district its own district's other communes went to (or the
-    # one its district was cut from); else with its district, where every
-    # other commune of that district stayed in one 2018 district.
+    # one its district was cut from, or its own); else with its district,
+    # where every other commune of that district stayed in one 2018 district.
     from difflib import SequenceMatcher
     left: list[str] = []
     broken: set[str] = set()
     for d, c, com in waiting:
-        home = f"KH{d:04d}"
         others = {pc for pc, items in placed.items() for (dd, _, _) in items if dd == d}
-        target = DIVIDED_FROM.get(d) or (home if home in adm2_codes else None)
+        target = DIVIDED_FROM.get(d) or home.get(d)
         allowed = others | ({target} if target else set())
         scored = sorted(((SequenceMatcher(None, fold(com["name"]), fold(r["ADM3_EN"])).ratio(), r)
                          for r in adm3 if str(r["ADM2_PCODE"])[:4] == f"KH{d // 100:02d}"),
@@ -380,12 +435,25 @@ def crosswalk(annex: dict[int, dict[str, Any]], adm3: list[dict[str, Any]],
         near = ", ".join(f"{r['ADM3_EN']} {r['ADM3_PCODE']} {s:.2f}" for s, r in scored[:2])
         left.append(f"{c} {com['name']} (district {d}; nearest {near})")
         broken |= others | ({target} if target else set())
+    # A district both lists have must be whole in its 2018 self: a commune of
+    # it found anywhere else is a misreading (or a transfer, to be declared).
+    strays = [f"{c} {com['name']} of {d} {annex[d // 100]['districts'][d]['name']} "
+              f"(2018 {home[d]}) found in {pc}"
+              for pc, items in placed.items() for d, c, com in items
+              if d in home and pc != home[d]]
+    if strays:
+        raise SystemExit("cambodia_census: communes away from their own district: "
+                         + "; ".join(sorted(strays)))
+    log(f"  census districts that are 2018 districts by name: {len(home)}, each whole in it"
+        + "".join(f"; {d} {annex[d // 100]['districts'][d]['name']} is {pc}"
+                  for d, pc in sorted(home.items()) if int(pc[2:]) != d))
     return placed, left, broken
 
 
 def district_records(annex, placed, broken, adm2_rows,
                      low: dict[int, float] | None = None) -> list[dict[str, Any]]:
     districts = {d: dist for prov in annex.values() for d, dist in prov["districts"].items()}
+    home = homes(annex, {str(r["ADM2_PCODE"]).strip(): str(r["ADM2_EN"]) for r in adm2_rows})
     rows = [r for r in adm2_rows if str(r["ADM2_PCODE"]).strip() in placed
             and str(r["ADM2_PCODE"]).strip() not in broken]
     bound, left, unbound = bind_rows("KHM", "admin2", rows, "ADM2_EN", "ADM1_EN")
@@ -418,7 +486,7 @@ def district_records(annex, placed, broken, adm2_rows,
         parts = sorted({d for d, _, _ in items})
         whole = [d for d in parts
                  if {c for dd, c, _ in items if dd == d} == set(districts[d]["communes"])]
-        if parts == [int(pcode[2:])] and whole == parts:
+        if parts == whole and len(parts) == 1 and home.get(parts[0]) == pcode:
             if (t, m, f) != districts[parts[0]]["n"][1:]:
                 raise SystemExit(f"cambodia_census: {pcode} adds to {t:,}, not its own row "
                                  f"{districts[parts[0]]['n'][1]:,}")
@@ -534,8 +602,8 @@ def main() -> int:
         + f"; provinces below {HOUSEHOLD_FLOOR:.0%}, whose district tables are not used: "
         + (", ".join(f"{annex[p]['name']} ({s:.1%})" for p, s in sorted(low.items())) or "none"))
     gaz = gazetteer()
-    adm2_codes = {str(r["ADM2_PCODE"]).strip() for r in gaz["ADM2"]}
-    placed, left, broken = crosswalk(annex, gaz["ADM3"], adm2_codes)
+    adm2 = {str(r["ADM2_PCODE"]).strip(): str(r["ADM2_EN"]) for r in gaz["ADM2"]}
+    placed, left, broken = crosswalk(annex, gaz["ADM3"], adm2)
     log(f"  communes placed in 2018 districts: {sum(len(v) for v in placed.values())}; not "
         f"placed ({len(left)}): {'; '.join(left[:60])}; 2018 districts left incomplete "
         f"({len(broken)}): {', '.join(sorted(broken))}")

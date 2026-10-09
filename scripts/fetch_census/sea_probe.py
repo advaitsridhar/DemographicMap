@@ -164,8 +164,9 @@ def cmd_res(datasets: list[str], peek: bool, rows: int = 5) -> None:
 
 
 def cmd_xl(url: str, sheets: list[str], rows: int, cols: int, width: int,
-           start: int) -> None:
-    """Named sheets of a workbook (xlsx or xls), rows ``start`` to ``start + rows``."""
+           start: int, find: str = "") -> None:
+    """Named sheets of a workbook (xlsx or xls), rows ``start`` to ``start + rows``;
+    with ``find``, instead every cell of those sheets matching that pattern."""
     status, _, body = fetch(url, timeout=600)
     log(f"{url}: HTTP {status} {len(body):,} B")
     if status != 200:
@@ -188,6 +189,12 @@ def cmd_xl(url: str, sheets: list[str], rows: int, cols: int, width: int,
             continue
         table = get(name)
         log(f"  -- {name!r}: {len(table)} rows")
+        if find:
+            for i, row in enumerate(table):
+                for j, c in enumerate(row):
+                    if c is not None and re.search(find, str(c)):
+                        log(f"   r{i} c{j}: {str(c).strip()[:width]}")
+            continue
         for i, row in enumerate(table[start:start + rows], start=start):
             cells = ["" if c is None else str(c).strip()[:width] for c in row[:cols]]
             log(f"   {i:>4} | " + " | ".join(cells))
@@ -362,6 +369,8 @@ def main() -> int:
     xl.add_argument("--from", dest="start", type=int, default=0)
     xl.add_argument("--cols", type=int, default=16)
     xl.add_argument("--width", type=int, default=24)
+    xl.add_argument("--find", default="",
+                    help="print only the cells matching this pattern, with their places")
     z = sub.add_parser("zip")
     z.add_argument("url")
     z.add_argument("--members", type=int, default=3)
@@ -395,7 +404,7 @@ def main() -> int:
     elif args.cmd == "res":
         cmd_res(args.datasets, args.peek, args.rows)
     elif args.cmd == "xl":
-        cmd_xl(args.url, args.sheet, args.rows, args.cols, args.width, args.start)
+        cmd_xl(args.url, args.sheet, args.rows, args.cols, args.width, args.start, args.find)
     elif args.cmd == "zip":
         cmd_zip(args.url, args.members, args.lines, args.encoding)
     elif args.cmd == "cdx":
