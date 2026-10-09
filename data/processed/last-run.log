@@ -1,47 +1,8 @@
-iran_ali: 12 province file(s) in /home/runner/work/DemographicMap/DemographicMap/data/raw/iran
-  Language_Distribution_Bushehr_20260921.csv: 747 rows, province Bushehr (بوشهر)
-    655 rows carry a language estimate; 78 of them no population in either year; 0 refused; 0 uninhabited
-    Bushehr: 99.7% covered, modelled, largest group Dashtesuni 21.9%
-  Language_Distribution_Chahar_Mahal_va_Bakhtiari_20260921.csv: 873 rows, province Chahār Mahāl va Bakhtiāri (چهارمحال و بختیاری)
-    797 rows carry a language estimate; 42 of them no population in either year; 0 refused; 0 uninhabited
-    Chaharmahal and Bakhtiari: 99.8% covered, modelled, largest group Bakhtiāri 58.2%
-  Language_Distribution_Esfahan_20260921.csv: 2,129 rows, province Esfahān (اصفهان)
-    1,926 rows carry a language estimate; 467 of them no population in either year; 3 refused; 0 uninhabited
-    Isfahan: 98.6% covered, modelled, largest group Tehrāni type Persian 30.0%
-    Aran and Bidgol: the atlas's settlements cover 37.8% of the county's 97,409 people; nothing written
-  Language_Distribution_Gilan_20260921.csv: 3,125 rows, province Gilān (گیلان)
-    one county spelled two ways, read as one: Rudsar: Rud Sar, Rudsar
-    2,956 rows carry a language estimate; 86 of them no population in either year; 3 refused; 338 uninhabited
-    Gilan: 73.1% covered, modelled, largest group Standard type Persian 55.9%
-    Rasht: the atlas's settlements cover 28.5% of the county's 956,971 people; nothing written
-  Language_Distribution_Hamadan_20260921.csv: 1,094 rows, province Hamadān (همدان)
-    1,085 rows carry a language estimate; 27 of them no population in either year; 1 refused; 0 uninhabited
-    Hamadan: 100.1% covered, modelled, largest group Turkic 35.0%
-  Language_Distribution_Hormozgan_20260921.csv: 1,908 rows, province Hormozgān (هرمزگان)
-    1,765 rows carry a language estimate; 155 of them no population in either year; 0 refused; 0 uninhabited
-    Hormozgan: 99.7% covered, modelled, largest group Banderi of Bandar Abbās 19.8%
-    Abu Musā: no second-level shape -- geoBoundaries draws no second-level shape for the island; Hormozgan's twelve do not include it.
-  Language_Distribution_Ilam_20260921.csv: 779 rows, province Ilām (ایلام)
-    689 rows carry a language estimate; 118 of them no population in either year; 0 refused; 0 uninhabited
-    Ilam: 99.0% covered, modelled, largest group Ēlāmi 33.7%
-    Shirvān va Chardāvol: no second-level shape -- the boundary file draws Chardavol and Sirvan as two counties where ALI writes one, and there is no figure for either apart.
-  Language_Distribution_Kermanshah_20260921.csv: 849 rows, province Kermānshāh (کرمانشاه)
-    792 rows carry a language estimate; 92 of them no population in either year; 0 refused; 0 uninhabited
-    Kermanshah: the atlas's settlements cover 18.6% of the province's 1,945,227 people; below 60%, so no figure is written
-  Language_Distribution_Khuzestan_20260921.csv: 6,777 rows, province Khuzestān (خوزستان)
-    4,090 rows carry a language estimate; 702 of them no population in either year; 1 refused; 0 uninhabited
-    Khuzestan: 101.3% covered, modelled, largest group Khuzestāni Arabic 33.7%
-  Language_Distribution_Kohgiluyeh_va_Boyer_Ahmad_20260921.csv: 2,327 rows, province Kohgiluyeh va Boyer Ahmad ()
-    1,660 rows carry a language estimate; 265 of them no population in either year; 0 refused; 0 uninhabited
-    Kohgiluyeh and Boyer-Ahmad: 99.4% covered, modelled, largest group Boyerahmadi 39.4%
-  Language_Distribution_Kordestan_20260921.csv: 1,850 rows, province Kordestān (کردستان)
-    1,729 rows carry a language estimate; 62 of them no population in either year; 0 refused; 0 uninhabited
-    Kurdistan: 100.0% covered, modelled, largest group Central Kurdish 78.7%
-  Language_Distribution_Lorestan_20260921.csv: 3,568 rows, province Lorestān ()
-    3,008 rows carry a language estimate; 396 of them no population in either year; 0 refused; 0 uninhabited
-    Lorestan: 99.5% covered, modelled, largest group Laki of Lorestan 27.9%
-  11 province(s) and 96 shahrestan(s) written; 3 unit(s) left as a stated gap; 2 name(s) matched no shape
-    gap: Aran and Bidgol -- the atlas's settlements cover 37.8% of the county's 97,409 people
-    gap: Rasht -- the atlas's settlements cover 28.5% of the county's 956,971 people
-    gap: Kermanshah -- the atlas's settlements cover 18.6% of the province's 1,945,227 people
-  wrote data/processed/iran_ali_language.json (331 kB)
+samoa_census: 2021 Census Tables 1 and 2, by the 2016 Census's villages
+  https://www.sbs.gov.ws/wp-content/uploads/2022/12/CensusTablesEXCELFiles.xlsx: 2,681,931 bytes
+  https://www.sbs.gov.ws/digi/2-2016%20Census%20Brief%20No.1%20Tables.xlsx: 106,868 bytes
+  Table 1's single years make the Final Report's key indicators for all 6 columns: people aged 0-14, 15-64 and 65+ and of age not known, by sex, exactly
+  median ages from Table 1's single years, the Final Report's whole years in brackets (not checked; see PRINTED_MEDIANS): Samoa everyone 21.4 (22), males 20.6 (20), females 22.4 (21); Apia Urban Area everyone 23.1 (21), males 22.0 (21), females 24.1 (21); North West Upolu everyone 21.4 (21), males 20.5 (20), females 22.3 (21); Rest of Upolu everyone 20.8 (20), males 20.4 (20), females 21.3 (21); Savaii everyone 20.7 (20), males 19.7 (20), females 21.9 (21); Rural everyone 21.0 (20), males 20.3 (20), females 21.9 (21); the Fact Sheet prints Samoa's as 22.0
+  not in the 2016 list, placed with its constituency's villages: Tunaimato West (Faleata 1) -> Faleata East
+  54 records: admin1 ethnicity 11, admin1 median_age 11, admin1 population 11, admin1 religion 11, admin1 sex_ratio 11, admin2 ethnicity 43, admin2 median_age 43, admin2 population 43, admin2 religion 43, admin2 sex_ratio 43
+  wrote data/processed/samoa_census.json (298 kB)
