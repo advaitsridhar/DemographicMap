@@ -267,6 +267,36 @@ class EveryEmptyFieldSaysWhy(unittest.TestCase):
                     self.assertTrue(value.get("note"), f"{row['name']} {field}")
 
 
+class Crossings(unittest.TestCase):
+    """A district the map files under another governorate's polygon says so."""
+
+    MAPPED = {
+        "Kerbala/Al-Hindiya": {"governorate": "Kerbala", "district": "Al-Hindiya",
+                               "value": 352503},
+        "Kerbala/Kerbela": {"governorate": "Kerbala", "district": "Kerbela", "value": 1368059},
+        "Baghdad/Al-Mahmoudiya": {"governorate": "Baghdad", "district": "Al-Mahmoudiya",
+                                  "value": None},
+    }
+    DRAWN = {"Al-Hindiya": "Babil", "Kerbela": "Karbala", "Al-Mahmoudiya": "Babil"}
+
+    def test_a_district_filed_elsewhere_and_both_governorates_say_so(self):
+        district, governorate = ic.crossings(self.MAPPED, self.DRAWN)
+        self.assertEqual(sorted(district), ["Baghdad/Al-Mahmoudiya", "Kerbala/Al-Hindiya"])
+        self.assertIn("counts it in Kerbala governorate", district["Kerbala/Al-Hindiya"])
+        self.assertIn("labelled Babil", district["Kerbala/Al-Hindiya"])
+        self.assertIn("Al-Hindiya (352,503 people, counted in Kerbala)", governorate["Babil"])
+        self.assertIn("Al-Mahmoudiya (counted in Baghdad)", governorate["Babil"])
+        self.assertIn("not in this figure", governorate["Babil"])
+        self.assertIn("Al-Hindiya (352,503 people, filed under Babil) in Kerbala",
+                      governorate["Kerbala"])
+        # The map's spelling of a governorate is the census's under another name.
+        self.assertNotIn("Kerbala/Kerbela", district)
+
+    def test_no_drawn_parent_no_note(self):
+        district, governorate = ic.crossings(self.MAPPED, {})
+        self.assertEqual((district, governorate), ({}, {}))
+
+
 @unittest.skipUnless(DUMP.exists() and GAZ.exists(), "Iraq dumps not present")
 class SexesInTheTable(unittest.TestCase):
     def test_every_unit_of_the_table_has_women_and_men_making_its_count(self):

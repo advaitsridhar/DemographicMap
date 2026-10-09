@@ -45,6 +45,14 @@ The governorates are the census's count of the ground the map draws, which
 for Duhok, Ninewa, Erbil, Sulaymaniyah and Diyala is not the census's own
 total; each says what moved.
 
+The boundary file's own first-level polygons do not follow OCHA's
+governorates everywhere: the map files Al-Hindiya (Kerbala's) and
+Al-Mahmoudiya (Baghdad's) under Babil, Al-Mada'in under Diyala and
+Al-Kadhmiyah under Salah al-Din, each under the polygon holding most of it.
+No figure is moved for that -- a governorate keeps the census's count -- but
+each such district, and each governorate on either side, says so, which is
+why a polygon's drawn districts need not add up to it (``crossings``).
+
 **Sex ratio** comes from the same rows: Table 11/2 prints every sub-district
 by women and men as well as in all, so each district and governorate placed
 here is also given its men per hundred women, summed from exactly the rows
@@ -80,7 +88,7 @@ from ._shared import PROCESSED, log, record, write_json
 from .cod_ps_age import grouped_median
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import NOT_AVAILABLE, gap, measure, slugify  # noqa: E402
+from common import NOT_AVAILABLE, as_drawn, gap, measure, read_json, shard_name, slugify  # noqa: E402
 from probe_pdf import PAGE_BREAK, fetch_blob, laid_out  # noqa: E402
 
 URL = "https://cosit.gov.iq/documents/AAS2024/02.pdf"
@@ -824,7 +832,7 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
                 bits += [f"no census unit lands on {r[5:]}, so the people there were put "
                          f"somewhere else" for r in reasons if r.startswith("EMPTY")]
                 entry["why"] = (
-                    "The 2024 census counts this governorate on districts redrawn since "
+                    f"The 2024 census counts {gov} governorate on districts redrawn since "
                     "the boundary file's, and " + "; ".join(bits) + ", so this district's "
                     "figure is not known on its shape. The governorate's own count is on "
                     "the governorate.")
@@ -1146,8 +1154,79 @@ def sex_fields(entry: dict[str, Any], what: str) -> dict[str, Any]:
                                f"its population.")}
 
 
+SITE = ROOT / "site" / "data"
+
+
+def drawn_parents() -> dict[str, str]:
+    """The map's own first-level polygon for each drawn district, by its label.
+
+    The boundary file's two levels are not one partition of Iraq: its
+    first-level polygons labelled Babil, Diyala and Salah al-Din hold most of
+    Al-Hindiya, Al-Mada'in and Al-Kadhmiyah, which OCHA's gazetteer and the
+    census put in Kerbala and Baghdad, and the map files each district under
+    the polygon holding most of it. Labels drawn more than once are left out.
+    """
+    a1 = as_drawn(read_json(SITE / "admin1" / shard_name("IRQ"), []))
+    a2 = as_drawn(read_json(SITE / "admin2" / shard_name("IRQ"), []))
+    names1 = {u["id"]: u["name"] for u in a1}
+    seen = Counter(u["name"] for u in a2)
+    return {u["name"]: names1.get(u.get("parent"), "") for u in a2 if seen[u["name"]] == 1}
+
+
+def crossings(mapped: dict[str, dict[str, Any]], drawn: dict[str, str]
+              ) -> tuple[dict[str, str], dict[str, str]]:
+    """Where the map files a district under another first-level polygon than
+    the governorate the census counts it in: a sentence for the district (by
+    its key in ``mapped``) and one for each governorate concerned (by name).
+
+    The figures are not moved: the governorate's is the census's count of the
+    governorate, and the district's is its own. What the notes say is why a
+    polygon's districts do not add up to it -- Babil's five drawn districts
+    make 2,834,827 against its 2,482,324, Al-Hindiya's 352,503 being
+    Kerbala's.
+    """
+    canon = {alias: gov for gov, aliases in MAP_NAMES.items() for alias in aliases}
+    canon.update({gov: gov for gov in GOVERNORATE.values()})
+    district: dict[str, str] = {}
+    away: dict[str, list[str]] = defaultdict(list)
+    into: dict[str, list[str]] = defaultdict(list)
+    for key, entry in sorted(mapped.items()):
+        label = drawn.get(entry["district"])
+        map_gov = canon.get(label or "")
+        gov = entry["governorate"]
+        if not map_gov or map_gov == gov:
+            continue
+        people = (f"{entry['value']:,} people, " if entry.get("value") is not None else "")
+        district[key] = (f" The census counts it in {gov} governorate; the boundary file "
+                         f"draws most of its ground inside its first-level polygon labelled "
+                         f"{label}, so the map files it there, and its people are in {gov}'s "
+                         f"figure, not {label}'s.")
+        away[gov].append(f"{entry['district']} ({people}filed under {label})")
+        into[map_gov].append(f"{entry['district']} ({people}counted in {gov})")
+
+    def listed(items: list[str]) -> str:
+        return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " and " + items[-1]
+
+    governorate: dict[str, str] = {}
+    for gov in sorted(set(away) | set(into)):
+        text = (" The boundary file's first-level polygons do not follow the census's "
+                "governorate lines here.")
+        if into.get(gov):
+            many = len(into[gov]) > 1
+            text += (f" The map files {listed(into[gov])} under this polygon; "
+                     + ("their" if many else "its") + " people are not in this figure.")
+        if away.get(gov):
+            many = len(away[gov]) > 1
+            text += (f" The census counts {listed(away[gov])} in {gov}, and "
+                     + ("their" if many else "its") + " people are in this figure although "
+                     "the map files " + ("them" if many else "it")
+                     + " under another polygon.")
+        governorate[gov] = text
+    return district, governorate
+
+
 def build(text: str, gazetteer_text: str, places_text: str = "",
-          ages_text: str = "") -> list[dict[str, Any]]:
+          ages_text: str = "", drawn: dict[str, str] | None = None) -> list[dict[str, Any]]:
     table = parse(text)
     govs = table["governorates"]
     bad = {g: (v, table["sums"][g]) for g, v in govs.items() if table["sums"][g] != v}
@@ -1174,14 +1253,18 @@ def build(text: str, gazetteer_text: str, places_text: str = "",
     if ages_text and len(ages) != len(GOVERNORATE):
         raise SystemExit(f"iraq_census: Table 10/2 gives {len(ages)} of "
                          f"{len(GOVERNORATE)} governorates")
+    crossed, gov_crossed = crossings(mapped, drawn_parents() if drawn is None else drawn)
+    for line in gov_crossed.values():
+        log(f"  crossing:{line}")
     for gov, entry in result["governorates"].items():
         extra: dict[str, Any] = {}
         if entry["value"] is None:
-            population = gap(NOT_AVAILABLE, entry["why"])
+            population = gap(NOT_AVAILABLE, entry["why"] + gov_crossed.get(gov, ""))
         else:
             population = measure(entry["value"], year=YEAR, source=SOURCE)
-            if entry.get("note"):
-                population["note"] = entry["note"]
+            note = (entry.get("note") or "") + gov_crossed.get(gov, "")
+            if note:
+                population["note"] = note.strip()
             extra = sex_fields(entry, "governorate")
             extra.update(age_fields(gov, codes[gov], entry, ages))
         rows.append(record(f"IRQ-CEN-{codes[gov]}", gov, level="admin1", parent="IRQ",
@@ -1192,25 +1275,28 @@ def build(text: str, gazetteer_text: str, places_text: str = "",
                                               "url": URL}] if "median_age" in extra else []))
                            if entry["value"] is not None else None,
                            **extra))
-    for entry in mapped.values():
+    for key, entry in mapped.items():
+        crossing = crossed.get(key, "")
         if entry["value"] is None:
             rows.append(record(
                 f"IRQ-CEN-{slugify(entry['governorate'])}-{slugify(entry['district'])}",
                 entry["district"], level="admin2", parent="IRQ", country="IRQ",
                 parent_name=entry["governorate"],
                 aliases=[a for a in (entry["arabic"],) if a],
-                population=gap(NOT_AVAILABLE, entry["why"]),
-                sex_ratio=gap(NOT_AVAILABLE, entry["why"]),
+                population=gap(NOT_AVAILABLE, entry["why"] + crossing),
+                sex_ratio=gap(NOT_AVAILABLE, entry["why"] + crossing),
                 median_age=gap(NOT_AVAILABLE, DISTRICT_AGE_WHY),
                 religion=gap(NOT_AVAILABLE, RELIGION_WHY)))
             continue
         population = measure(entry["value"], year=YEAR, source=SOURCE)
+        note = ""
         if len(entry["parts"]) > 1:
-            population["note"] = (
-                "The census counts this ground as " + str(len(entry["parts"]))
-                + " units, on boundaries redrawn since the boundary file's: "
-                + ", ".join(f"{n} ({v:,})" for n, v in entry["parts"])
-                + ". The figure is their sum.")
+            note = ("The census counts this ground as " + str(len(entry["parts"]))
+                    + " units, on boundaries redrawn since the boundary file's: "
+                    + ", ".join(f"{n} ({v:,})" for n, v in entry["parts"])
+                    + ". The figure is their sum.")
+        if note or crossing:
+            population["note"] = (note + crossing).strip()
         rows.append(record(
             f"IRQ-CEN-{slugify(entry['governorate'])}-{slugify(entry['district'])}",
             entry["district"], level="admin2", parent="IRQ", country="IRQ",
