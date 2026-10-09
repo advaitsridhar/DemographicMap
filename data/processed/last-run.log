@@ -1,19 +1,10 @@
-== https://stats.gov.fm/download/18/population-statistics/2210/fsm-basic-tables-2023-population-housing-census.xlsx
-  HTTP 200 application/octet-stream 424,592 bytes
-  -- 'Cover'
-       4: National Basic Tables
-       5: 2023 FSM Population and Housing Census
-  -- 'List of Tables'
-       1: 2023 FSM Population and Housing Census |  | National Basic Tables
-       2: Table description |  | Page
-       3: Population Tables
-       4: Table B1. Age and Sex by State, FSM: 2023 |  | 1
-       5: Table B2. Relationship by State, FSM: 2023 |  | 2
-       6: Table B3.  Birthplace by State, FSM: 2023 |  | 3
-  -- 'Basic_Tables'
-       1: POPULATION TABLES
-       2: Table B1. Age and Sex by State, FSM: 2023
-       3: Age group | Total | Yap | Chuuk | Pohnpei | Kosrae
-       4: BOTH GENDER
-       5: Total | 75817 | 10739 | 33885 | 26102 | 5092
-       6: 0-4 | 7607 | 1070 | 3537 | 2495 | 505
+== https://stats.gov.fm/download/74/2023-phc-ig-and-tables/
+  HTTP 404 text/html; charset=UTF-8 1,500 bytes
+  0 links matching '(?:stats[.]gov[.]fm/download/|xlsx?|pdf)'
+== https://stats.gov.fm/download-category/2023-phc-ig-and-tables/
+  HTTP 404 text/html; charset=UTF-8 1,500 bytes
+  0 links matching '(?:stats[.]gov[.]fm/download/|xlsx?|pdf)'
+== https://stats.gov.fm/topics/social/
+  HTTP 200 text/html; charset=UTF-8 158,775 bytes
+  1 links matching '(?:stats[.]gov[.]fm/download/|xlsx?|pdf)'
+    https://stats.gov.fm/topics/social/{{openpdflink}}
